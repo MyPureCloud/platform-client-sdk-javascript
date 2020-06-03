@@ -14,6 +14,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**deleteRoutingQueueWrapupcode**](RoutingApi.html#deleteRoutingQueueWrapupcode) | **DELETE** /api/v2/routing/queues/{queueId}/wrapupcodes/{codeId} | Delete a wrap-up code from a queue
 [**deleteRoutingSettings**](RoutingApi.html#deleteRoutingSettings) | **DELETE** /api/v2/routing/settings | Delete an organization&#39;s routing settings
 [**deleteRoutingSkill**](RoutingApi.html#deleteRoutingSkill) | **DELETE** /api/v2/routing/skills/{skillId} | Delete Routing Skill
+[**deleteRoutingSmsAddress**](RoutingApi.html#deleteRoutingSmsAddress) | **DELETE** /api/v2/routing/sms/addresses/{addressId} | Delete an Address by Id for SMS
 [**deleteRoutingSmsPhonenumber**](RoutingApi.html#deleteRoutingSmsPhonenumber) | **DELETE** /api/v2/routing/sms/phonenumbers/{addressId} | Delete a phone number provisioned for SMS.
 [**deleteRoutingUserUtilization**](RoutingApi.html#deleteRoutingUserUtilization) | **DELETE** /api/v2/routing/users/{userId}/utilization | Delete the user&#39;s max utilization settings and revert to the organization-wide default.
 [**deleteRoutingUtilization**](RoutingApi.html#deleteRoutingUtilization) | **DELETE** /api/v2/routing/utilization | Delete the organization-wide max utilization settings and revert to the system default.
@@ -474,6 +475,61 @@ apiInstance.deleteRoutingSkill(skillId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **skillId** | **String** | Skill ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
+
+<a name="deleteRoutingSmsAddress"></a>
+
+# void deleteRoutingSmsAddress(addressId)
+
+
+
+DELETE /api/v2/routing/sms/addresses/{addressId}
+
+Delete an Address by Id for SMS
+
+
+
+Requires ALL permissions: 
+
+* sms:phoneNumber:delete
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.RoutingApi();
+
+let addressId = "addressId_example"; // String | Address ID
+
+apiInstance.deleteRoutingSmsAddress(addressId)
+  .then(() => {
+    console.log('deleteRoutingSmsAddress returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteRoutingSmsAddress');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **addressId** | **String** | Address ID |  |
 {: class="table table-striped"}
 
 ### Return type

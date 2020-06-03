@@ -5,7 +5,7 @@ class ExternalContactsApi {
 	/**
 	 * ExternalContacts service.
 	 * @module purecloud-platform-client-v2/api/ExternalContactsApi
-	 * @version 79.0.1
+	 * @version 80.0.0
 	 */
 
 	/**
@@ -65,6 +65,31 @@ class ExternalContactsApi {
 			'/api/v2/externalcontacts/contacts/{contactId}/notes/{noteId}', 
 			'DELETE', 
 			{ 'contactId': contactId,'noteId': noteId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete a schema
+	 * 
+	 * @param {String} schemaId Schema ID
+	 */
+	deleteExternalcontactsContactsSchema(schemaId) { 
+		// verify the required parameter 'schemaId' is set
+		if (schemaId === undefined || schemaId === null) {
+			throw 'Missing the required parameter "schemaId" when calling deleteExternalcontactsContactsSchema';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/externalcontacts/contacts/schemas/{schemaId}', 
+			'DELETE', 
+			{ 'schemaId': schemaId }, 
 			{  }, 
 			{  }, 
 			{  }, 
@@ -304,6 +329,106 @@ class ExternalContactsApi {
 	}
 
 	/**
+	 * Get a schema
+	 * 
+	 * @param {String} schemaId Schema ID
+	 */
+	getExternalcontactsContactsSchema(schemaId) { 
+		// verify the required parameter 'schemaId' is set
+		if (schemaId === undefined || schemaId === null) {
+			throw 'Missing the required parameter "schemaId" when calling getExternalcontactsContactsSchema';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/externalcontacts/contacts/schemas/{schemaId}', 
+			'GET', 
+			{ 'schemaId': schemaId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a specific version of a schema
+	 * 
+	 * @param {String} schemaId Schema ID
+	 * @param {String} versionId Schema version
+	 */
+	getExternalcontactsContactsSchemaVersion(schemaId, versionId) { 
+		// verify the required parameter 'schemaId' is set
+		if (schemaId === undefined || schemaId === null) {
+			throw 'Missing the required parameter "schemaId" when calling getExternalcontactsContactsSchemaVersion';
+		}
+		// verify the required parameter 'versionId' is set
+		if (versionId === undefined || versionId === null) {
+			throw 'Missing the required parameter "versionId" when calling getExternalcontactsContactsSchemaVersion';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/externalcontacts/contacts/schemas/{schemaId}/versions/{versionId}', 
+			'GET', 
+			{ 'schemaId': schemaId,'versionId': versionId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get all versions of an external contact&#39;s schema
+	 * 
+	 * @param {String} schemaId Schema ID
+	 */
+	getExternalcontactsContactsSchemaVersions(schemaId) { 
+		// verify the required parameter 'schemaId' is set
+		if (schemaId === undefined || schemaId === null) {
+			throw 'Missing the required parameter "schemaId" when calling getExternalcontactsContactsSchemaVersions';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/externalcontacts/contacts/schemas/{schemaId}/versions', 
+			'GET', 
+			{ 'schemaId': schemaId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a list of schemas.
+	 * 
+	 */
+	getExternalcontactsContactsSchemas() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/externalcontacts/contacts/schemas', 
+			'GET', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
 	 * Fetch an external organization
 	 * 
 	 * @param {String} externalOrganizationId External Organization ID
@@ -495,6 +620,106 @@ class ExternalContactsApi {
 	}
 
 	/**
+	 * Get a schema
+	 * 
+	 * @param {String} schemaId Schema ID
+	 */
+	getExternalcontactsOrganizationsSchema(schemaId) { 
+		// verify the required parameter 'schemaId' is set
+		if (schemaId === undefined || schemaId === null) {
+			throw 'Missing the required parameter "schemaId" when calling getExternalcontactsOrganizationsSchema';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/externalcontacts/organizations/schemas/{schemaId}', 
+			'GET', 
+			{ 'schemaId': schemaId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a specific version of a schema
+	 * 
+	 * @param {String} schemaId Schema ID
+	 * @param {String} versionId Schema version
+	 */
+	getExternalcontactsOrganizationsSchemaVersion(schemaId, versionId) { 
+		// verify the required parameter 'schemaId' is set
+		if (schemaId === undefined || schemaId === null) {
+			throw 'Missing the required parameter "schemaId" when calling getExternalcontactsOrganizationsSchemaVersion';
+		}
+		// verify the required parameter 'versionId' is set
+		if (versionId === undefined || versionId === null) {
+			throw 'Missing the required parameter "versionId" when calling getExternalcontactsOrganizationsSchemaVersion';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/externalcontacts/organizations/schemas/{schemaId}/versions/{versionId}', 
+			'GET', 
+			{ 'schemaId': schemaId,'versionId': versionId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get all versions of an external organization&#39;s schema
+	 * 
+	 * @param {String} schemaId Schema ID
+	 */
+	getExternalcontactsOrganizationsSchemaVersions(schemaId) { 
+		// verify the required parameter 'schemaId' is set
+		if (schemaId === undefined || schemaId === null) {
+			throw 'Missing the required parameter "schemaId" when calling getExternalcontactsOrganizationsSchemaVersions';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/externalcontacts/organizations/schemas/{schemaId}/versions', 
+			'GET', 
+			{ 'schemaId': schemaId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a list of schemas.
+	 * 
+	 */
+	getExternalcontactsOrganizationsSchemas() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/externalcontacts/organizations/schemas', 
+			'GET', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
 	 * Fetch a relationship
 	 * 
 	 * @param {String} relationshipId Relationship Id
@@ -608,6 +833,31 @@ class ExternalContactsApi {
 	}
 
 	/**
+	 * Create a schema
+	 * 
+	 * @param {Object} body Schema
+	 */
+	postExternalcontactsContactsSchemas(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postExternalcontactsContactsSchemas';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/externalcontacts/contacts/schemas', 
+			'POST', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
 	 * Create a note for an external organization
 	 * 
 	 * @param {String} externalOrganizationId External Organization Id
@@ -650,6 +900,31 @@ class ExternalContactsApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/externalcontacts/organizations', 
+			'POST', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Create a schema
+	 * 
+	 * @param {Object} body Schema
+	 */
+	postExternalcontactsOrganizationsSchemas(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postExternalcontactsOrganizationsSchemas';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/externalcontacts/organizations/schemas', 
 			'POST', 
 			{  }, 
 			{  }, 
@@ -742,6 +1017,36 @@ class ExternalContactsApi {
 			'/api/v2/externalcontacts/contacts/{contactId}/notes/{noteId}', 
 			'PUT', 
 			{ 'contactId': contactId,'noteId': noteId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update a schema
+	 * 
+	 * @param {String} schemaId Schema ID
+	 * @param {Object} body Data Schema
+	 */
+	putExternalcontactsContactsSchema(schemaId, body) { 
+		// verify the required parameter 'schemaId' is set
+		if (schemaId === undefined || schemaId === null) {
+			throw 'Missing the required parameter "schemaId" when calling putExternalcontactsContactsSchema';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putExternalcontactsContactsSchema';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/externalcontacts/contacts/schemas/{schemaId}', 
+			'PUT', 
+			{ 'schemaId': schemaId }, 
 			{  }, 
 			{  }, 
 			{  }, 
@@ -871,6 +1176,36 @@ class ExternalContactsApi {
 			{  }, 
 			{  }, 
 			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update a schema
+	 * 
+	 * @param {String} schemaId Schema ID
+	 * @param {Object} body Data Schema
+	 */
+	putExternalcontactsOrganizationsSchema(schemaId, body) { 
+		// verify the required parameter 'schemaId' is set
+		if (schemaId === undefined || schemaId === null) {
+			throw 'Missing the required parameter "schemaId" when calling putExternalcontactsOrganizationsSchema';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putExternalcontactsOrganizationsSchema';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/externalcontacts/organizations/schemas/{schemaId}', 
+			'PUT', 
+			{ 'schemaId': schemaId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
 			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']

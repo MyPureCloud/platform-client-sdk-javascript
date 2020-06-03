@@ -1007,9 +1007,19 @@ declare namespace ConversationsApi {
 	}
 }
 
+declare class DataExtensionsApi {  
+  	getDataextensionsCoretype(coretypeName: string): Promise<Models.Coretype>; 
+  	getDataextensionsCoretypes(): Promise<Models.CoretypeListing>; 
+  	getDataextensionsLimits(): Promise<Models.SchemaQuantityLimits>;
+}
+
+declare namespace DataExtensionsApi { 
+}
+
 declare class ExternalContactsApi {  
   	deleteExternalcontactsContact(contactId: string): Promise<Models.Empty>; 
   	deleteExternalcontactsContactNote(contactId: string, noteId: string): Promise<Models.Empty>; 
+  	deleteExternalcontactsContactsSchema(schemaId: string): Promise<void>; 
   	deleteExternalcontactsOrganization(externalOrganizationId: string): Promise<Models.Empty>; 
   	deleteExternalcontactsOrganizationNote(externalOrganizationId: string, noteId: string): Promise<Models.Empty>; 
   	deleteExternalcontactsOrganizationTrustor(externalOrganizationId: string): Promise<void>; 
@@ -1018,25 +1028,37 @@ declare class ExternalContactsApi {
   	getExternalcontactsContactNote(contactId: string, noteId: string, opts?: ExternalContactsApi.getExternalcontactsContactNoteOptions): Promise<Models.Note>; 
   	getExternalcontactsContactNotes(contactId: string, opts?: ExternalContactsApi.getExternalcontactsContactNotesOptions): Promise<Models.NoteListing>; 
   	getExternalcontactsContacts(opts?: ExternalContactsApi.getExternalcontactsContactsOptions): Promise<Models.ContactListing>; 
+  	getExternalcontactsContactsSchema(schemaId: string): Promise<Models.DataSchema>; 
+  	getExternalcontactsContactsSchemaVersion(schemaId: string, versionId: string): Promise<Models.DataSchema>; 
+  	getExternalcontactsContactsSchemaVersions(schemaId: string): Promise<Models.DataSchema>; 
+  	getExternalcontactsContactsSchemas(): Promise<Models.DataSchemaListing>; 
   	getExternalcontactsOrganization(externalOrganizationId: string, opts?: ExternalContactsApi.getExternalcontactsOrganizationOptions): Promise<Models.ExternalOrganization>; 
   	getExternalcontactsOrganizationContacts(externalOrganizationId: string, opts?: ExternalContactsApi.getExternalcontactsOrganizationContactsOptions): Promise<Models.ContactListing>; 
   	getExternalcontactsOrganizationNote(externalOrganizationId: string, noteId: string, opts?: ExternalContactsApi.getExternalcontactsOrganizationNoteOptions): Promise<Models.Note>; 
   	getExternalcontactsOrganizationNotes(externalOrganizationId: string, opts?: ExternalContactsApi.getExternalcontactsOrganizationNotesOptions): Promise<Models.NoteListing>; 
   	getExternalcontactsOrganizationRelationships(externalOrganizationId: string, opts?: ExternalContactsApi.getExternalcontactsOrganizationRelationshipsOptions): Promise<Models.RelationshipListing>; 
   	getExternalcontactsOrganizations(opts?: ExternalContactsApi.getExternalcontactsOrganizationsOptions): Promise<Models.ExternalOrganizationListing>; 
+  	getExternalcontactsOrganizationsSchema(schemaId: string): Promise<Models.DataSchema>; 
+  	getExternalcontactsOrganizationsSchemaVersion(schemaId: string, versionId: string): Promise<Models.DataSchema>; 
+  	getExternalcontactsOrganizationsSchemaVersions(schemaId: string): Promise<Models.DataSchema>; 
+  	getExternalcontactsOrganizationsSchemas(): Promise<Models.DataSchemaListing>; 
   	getExternalcontactsRelationship(relationshipId: string, opts?: ExternalContactsApi.getExternalcontactsRelationshipOptions): Promise<Models.Relationship>; 
   	getExternalcontactsReversewhitepageslookup(lookupVal: string, opts?: ExternalContactsApi.getExternalcontactsReversewhitepageslookupOptions): Promise<Models.ReverseWhitepagesLookupResult>; 
   	postExternalcontactsContactNotes(contactId: string, body: Models.Note): Promise<Models.Note>; 
   	postExternalcontactsContacts(body: Models.ExternalContact): Promise<Models.ExternalContact>; 
+  	postExternalcontactsContactsSchemas(body: Models.DataSchema): Promise<Models.DataSchema>; 
   	postExternalcontactsOrganizationNotes(externalOrganizationId: string, body: Models.Note): Promise<Models.Note>; 
   	postExternalcontactsOrganizations(body: Models.ExternalOrganization): Promise<Models.ExternalOrganization>; 
+  	postExternalcontactsOrganizationsSchemas(body: Models.DataSchema): Promise<Models.DataSchema>; 
   	postExternalcontactsRelationships(body: Models.Relationship): Promise<Models.Relationship>; 
   	putExternalcontactsContact(contactId: string, body: Models.ExternalContact): Promise<Models.ExternalContact>; 
   	putExternalcontactsContactNote(contactId: string, noteId: string, body: Models.Note): Promise<Models.Note>; 
+  	putExternalcontactsContactsSchema(schemaId: string, body: Models.DataSchema): Promise<Models.DataSchema>; 
   	putExternalcontactsConversation(conversationId: string, body: Models.ConversationAssociation): Promise<void>; 
   	putExternalcontactsOrganization(externalOrganizationId: string, body: Models.ExternalOrganization): Promise<Models.ExternalOrganization>; 
   	putExternalcontactsOrganizationNote(externalOrganizationId: string, noteId: string, body: Models.Note): Promise<Models.Note>; 
   	putExternalcontactsOrganizationTrustorTrustorId(externalOrganizationId: string, trustorId: string): Promise<Models.ExternalOrganizationTrustorLink>; 
+  	putExternalcontactsOrganizationsSchema(schemaId: string, body: Models.DataSchema): Promise<Models.DataSchema>; 
   	putExternalcontactsRelationship(relationshipId: string, body: Models.Relationship): Promise<Models.Relationship>;
 }
 
@@ -1534,6 +1556,68 @@ declare namespace KnowledgeApi {
 	}
 	export interface postKnowledgeKnowledgebaseSearchOptions { 
 		"body"?: Models.KnowledgeSearchRequest;
+	}
+}
+
+declare class LanguageUnderstandingApi {  
+  	deleteLanguageunderstandingDomain(domainId: string): Promise<void>; 
+  	deleteLanguageunderstandingDomainFeedbackFeedbackId(domainId: string, feedbackId: string): Promise<void>; 
+  	getLanguageunderstandingDomain(domainId: string): Promise<Models.NluDomain>; 
+  	getLanguageunderstandingDomainFeedback(domainId: string, opts?: LanguageUnderstandingApi.getLanguageunderstandingDomainFeedbackOptions): Promise<Models.NluFeedbackListing>; 
+  	getLanguageunderstandingDomainFeedbackFeedbackId(domainId: string, feedbackId: string, opts?: LanguageUnderstandingApi.getLanguageunderstandingDomainFeedbackFeedbackIdOptions): Promise<Models.NluFeedbackResponse>; 
+  	getLanguageunderstandingDomainVersion(domainId: string, domainVersionId: string, opts?: LanguageUnderstandingApi.getLanguageunderstandingDomainVersionOptions): Promise<Models.NluDomainVersion>; 
+  	getLanguageunderstandingDomainVersionReport(domainId: string, domainVersionId: string): Promise<Models.NluDomainVersionQualityReport>; 
+  	getLanguageunderstandingDomainVersions(domainId: string, opts?: LanguageUnderstandingApi.getLanguageunderstandingDomainVersionsOptions): Promise<Models.NluDomainVersionListing>; 
+  	getLanguageunderstandingDomains(opts?: LanguageUnderstandingApi.getLanguageunderstandingDomainsOptions): Promise<Models.NluDomainListing>; 
+  	patchLanguageunderstandingDomain(domainId: string, opts?: LanguageUnderstandingApi.patchLanguageunderstandingDomainOptions): Promise<Models.NluDomain>; 
+  	postLanguageunderstandingDomainFeedback(domainId: string, opts?: LanguageUnderstandingApi.postLanguageunderstandingDomainFeedbackOptions): Promise<Models.NluFeedbackResponse>; 
+  	postLanguageunderstandingDomainVersionDetect(domainId: string, domainVersionId: string, opts?: LanguageUnderstandingApi.postLanguageunderstandingDomainVersionDetectOptions): Promise<Models.NluDetectionResponse>; 
+  	postLanguageunderstandingDomainVersionPublish(domainId: string, domainVersionId: string): Promise<Models.NluDomainVersion>; 
+  	postLanguageunderstandingDomainVersionTrain(domainId: string, domainVersionId: string): Promise<Models.NluDomainVersionTrainingResponse>; 
+  	postLanguageunderstandingDomains(opts?: LanguageUnderstandingApi.postLanguageunderstandingDomainsOptions): Promise<Models.NluDomain>; 
+  	putLanguageunderstandingDomainVersion(domainId: string, domainVersionId: string, opts?: LanguageUnderstandingApi.putLanguageunderstandingDomainVersionOptions): Promise<Models.NluDomainVersion>;
+}
+
+declare namespace LanguageUnderstandingApi { 
+	export interface getLanguageunderstandingDomainFeedbackOptions { 
+		"intentName"?: string;
+		"assessment"?: string;
+		"dateStart"?: string;
+		"dateEnd"?: string;
+		"includeDeleted"?: boolean;
+		"pageNumber"?: number;
+		"pageSize"?: number;
+		"fields"?: Array<string>;
+	}
+	export interface getLanguageunderstandingDomainFeedbackFeedbackIdOptions { 
+		"fields"?: Array<string>;
+	}
+	export interface getLanguageunderstandingDomainVersionOptions { 
+		"includeUtterances"?: boolean;
+	}
+	export interface getLanguageunderstandingDomainVersionsOptions { 
+		"includeUtterances"?: boolean;
+		"pageNumber"?: number;
+		"pageSize"?: number;
+	}
+	export interface getLanguageunderstandingDomainsOptions { 
+		"pageNumber"?: number;
+		"pageSize"?: number;
+	}
+	export interface patchLanguageunderstandingDomainOptions { 
+		"body"?: Models.NluDomain;
+	}
+	export interface postLanguageunderstandingDomainFeedbackOptions { 
+		"body"?: Models.NluFeedbackRequest;
+	}
+	export interface postLanguageunderstandingDomainVersionDetectOptions { 
+		"body"?: Models.NluDetectionRequest;
+	}
+	export interface postLanguageunderstandingDomainsOptions { 
+		"body"?: Models.NluDomain;
+	}
+	export interface putLanguageunderstandingDomainVersionOptions { 
+		"body"?: Models.NluDomainVersion;
 	}
 }
 
@@ -2472,6 +2556,7 @@ declare class RoutingApi {
   	deleteRoutingQueueWrapupcode(queueId: string, codeId: string): Promise<void>; 
   	deleteRoutingSettings(): Promise<void>; 
   	deleteRoutingSkill(skillId: string): Promise<void>; 
+  	deleteRoutingSmsAddress(addressId: string): Promise<void>; 
   	deleteRoutingSmsPhonenumber(addressId: string): Promise<void>; 
   	deleteRoutingUserUtilization(userId: string): Promise<void>; 
   	deleteRoutingUtilization(): Promise<void>; 
@@ -3325,6 +3410,13 @@ declare class TokensApi {
 declare namespace TokensApi { 
 }
 
+declare class UploadsApi {  
+  	postUploadsPublicassetsImages(body: Models.UploadUrlRequest): Promise<Models.UploadUrlResponse>;
+}
+
+declare namespace UploadsApi { 
+}
+
 declare class UserRecordingsApi {  
   	deleteUserrecording(recordingId: string): Promise<void>; 
   	getUserrecording(recordingId: string, opts?: UserRecordingsApi.getUserrecordingOptions): Promise<Models.UserRecording>; 
@@ -3685,24 +3777,24 @@ declare class WorkforceManagementApi {
   	getWorkforcemanagementManagementunitAdherence(managementUnitId: string, opts?: WorkforceManagementApi.getWorkforcemanagementManagementunitAdherenceOptions): Promise<Models.UserScheduleAdherenceListing>; 
   	getWorkforcemanagementManagementunitAgent(managementUnitId: string, agentId: string): Promise<Models.WfmAgent>; 
   	getWorkforcemanagementManagementunitAgentShifttrades(managementUnitId: string, agentId: string): Promise<Models.ShiftTradeListResponse>; 
-  	getWorkforcemanagementManagementunitIntradayQueues(muId: string, _date: string): Promise<Models.WfmIntradayQueueListing>; 
-  	getWorkforcemanagementManagementunitSchedulingRun(managementUnitId: string, runId: string): Promise<Models.SchedulingRunResponse>; 
-  	getWorkforcemanagementManagementunitSchedulingRunResult(managementUnitId: string, runId: string): Promise<Models.RescheduleResult>; 
-  	getWorkforcemanagementManagementunitSchedulingRuns(managementUnitId: string): Promise<Models.SchedulingRunListResponse>; 
-  	getWorkforcemanagementManagementunitServicegoalgroup(managementUnitId: string, serviceGoalGroupId: string): Promise<Models.ServiceGoalGroup>; 
-  	getWorkforcemanagementManagementunitServicegoalgroups(managementUnitId: string): Promise<Models.ServiceGoalGroupList>; 
-  	getWorkforcemanagementManagementunitSettings(muId: string): Promise<Models.ManagementUnitSettingsResponse>; 
+  	getWorkforcemanagementManagementunitIntradayQueues(muId: string): Promise<void>; 
+  	getWorkforcemanagementManagementunitSchedulingRun(managementUnitId: string, runId: string): Promise<void>; 
+  	getWorkforcemanagementManagementunitSchedulingRunResult(managementUnitId: string, runId: string): Promise<void>; 
+  	getWorkforcemanagementManagementunitSchedulingRuns(managementUnitId: string): Promise<void>; 
+  	getWorkforcemanagementManagementunitServicegoalgroup(managementUnitId: string, serviceGoalGroupId: string): Promise<void>; 
+  	getWorkforcemanagementManagementunitServicegoalgroups(managementUnitId: string): Promise<void>; 
+  	getWorkforcemanagementManagementunitSettings(muId: string): Promise<void>; 
   	getWorkforcemanagementManagementunitShifttradesMatched(muId: string): Promise<Models.ShiftTradeMatchesSummaryResponse>; 
   	getWorkforcemanagementManagementunitShifttradesUsers(muId: string): Promise<Models.WfmUserEntityListing>; 
   	getWorkforcemanagementManagementunitUserTimeoffrequest(muId: string, userId: string, timeOffRequestId: string): Promise<Models.TimeOffRequestResponse>; 
   	getWorkforcemanagementManagementunitUserTimeoffrequests(muId: string, userId: string, opts?: WorkforceManagementApi.getWorkforcemanagementManagementunitUserTimeoffrequestsOptions): Promise<Models.TimeOffRequestList>; 
   	getWorkforcemanagementManagementunitUsers(muId: string): Promise<Models.WfmUserEntityListing>; 
   	getWorkforcemanagementManagementunitWeekSchedule(managementUnitId: string, weekId: string, scheduleId: string, opts?: WorkforceManagementApi.getWorkforcemanagementManagementunitWeekScheduleOptions): Promise<Models.WeekScheduleResponse>; 
-  	getWorkforcemanagementManagementunitWeekScheduleGenerationresults(managementUnitId: string, weekId: string, scheduleId: string): Promise<Models.WeekScheduleGenerationResult>; 
+  	getWorkforcemanagementManagementunitWeekScheduleGenerationresults(managementUnitId: string, weekId: string, scheduleId: string): Promise<void>; 
   	getWorkforcemanagementManagementunitWeekSchedules(managementUnitId: string, weekId: string, opts?: WorkforceManagementApi.getWorkforcemanagementManagementunitWeekSchedulesOptions): Promise<Models.WeekScheduleListResponse>; 
   	getWorkforcemanagementManagementunitWeekShifttrades(managementUnitId: string, weekDateId: string, opts?: WorkforceManagementApi.getWorkforcemanagementManagementunitWeekShifttradesOptions): Promise<Models.WeekShiftTradeListResponse>; 
-  	getWorkforcemanagementManagementunitWeekShorttermforecastFinal(managementUnitId: string, weekDateId: string, forecastId: string, opts?: WorkforceManagementApi.getWorkforcemanagementManagementunitWeekShorttermforecastFinalOptions): Promise<Models.ForecastResultResponse>; 
-  	getWorkforcemanagementManagementunitWeekShorttermforecasts(managementUnitId: string, weekDateId: string): Promise<Models.ShortTermForecastListResponse>; 
+  	getWorkforcemanagementManagementunitWeekShorttermforecastFinal(managementUnitId: string, weekDateId: string, forecastId: string): Promise<void>; 
+  	getWorkforcemanagementManagementunitWeekShorttermforecasts(managementUnitId: string, weekDateId: string): Promise<void>; 
   	getWorkforcemanagementManagementunitWorkplan(managementUnitId: string, workPlanId: string): Promise<Models.WorkPlan>; 
   	getWorkforcemanagementManagementunitWorkplans(managementUnitId: string, opts?: WorkforceManagementApi.getWorkforcemanagementManagementunitWorkplansOptions): Promise<Models.WorkPlanListResponse>; 
   	getWorkforcemanagementManagementunits(opts?: WorkforceManagementApi.getWorkforcemanagementManagementunitsOptions): Promise<Models.ManagementUnitListing>; 
@@ -3718,12 +3810,12 @@ declare class WorkforceManagementApi {
   	patchWorkforcemanagementBusinessunitSchedulingRun(businessUnitId: string, runId: string, opts?: WorkforceManagementApi.patchWorkforcemanagementBusinessunitSchedulingRunOptions): Promise<void>; 
   	patchWorkforcemanagementBusinessunitServicegoaltemplate(businessUnitId: string, serviceGoalTemplateId: string, opts?: WorkforceManagementApi.patchWorkforcemanagementBusinessunitServicegoaltemplateOptions): Promise<Models.ServiceGoalTemplate>; 
   	patchWorkforcemanagementManagementunit(muId: string, opts?: WorkforceManagementApi.patchWorkforcemanagementManagementunitOptions): Promise<Models.ManagementUnit>; 
-  	patchWorkforcemanagementManagementunitActivitycode(muId: string, acId: string, opts?: WorkforceManagementApi.patchWorkforcemanagementManagementunitActivitycodeOptions): Promise<Models.ActivityCode>; 
-  	patchWorkforcemanagementManagementunitSchedulingRun(managementUnitId: string, runId: string, opts?: WorkforceManagementApi.patchWorkforcemanagementManagementunitSchedulingRunOptions): Promise<Models.RescheduleResult>; 
-  	patchWorkforcemanagementManagementunitServicegoalgroup(managementUnitId: string, serviceGoalGroupId: string, opts?: WorkforceManagementApi.patchWorkforcemanagementManagementunitServicegoalgroupOptions): Promise<Models.ServiceGoalGroup>; 
-  	patchWorkforcemanagementManagementunitSettings(muId: string, opts?: WorkforceManagementApi.patchWorkforcemanagementManagementunitSettingsOptions): Promise<Models.ManagementUnitSettingsResponse>; 
+  	patchWorkforcemanagementManagementunitActivitycode(muId: string, acId: string, opts?: WorkforceManagementApi.patchWorkforcemanagementManagementunitActivitycodeOptions): Promise<void>; 
+  	patchWorkforcemanagementManagementunitSchedulingRun(managementUnitId: string, runId: string, opts?: WorkforceManagementApi.patchWorkforcemanagementManagementunitSchedulingRunOptions): Promise<void>; 
+  	patchWorkforcemanagementManagementunitServicegoalgroup(managementUnitId: string, serviceGoalGroupId: string): Promise<void>; 
+  	patchWorkforcemanagementManagementunitSettings(muId: string): Promise<void>; 
   	patchWorkforcemanagementManagementunitUserTimeoffrequest(muId: string, userId: string, timeOffRequestId: string, opts?: WorkforceManagementApi.patchWorkforcemanagementManagementunitUserTimeoffrequestOptions): Promise<Models.TimeOffRequestResponse>; 
-  	patchWorkforcemanagementManagementunitWeekSchedule(managementUnitId: string, weekId: string, scheduleId: string, opts?: WorkforceManagementApi.patchWorkforcemanagementManagementunitWeekScheduleOptions): Promise<Models.AsyncWeekScheduleResponse>; 
+  	patchWorkforcemanagementManagementunitWeekSchedule(managementUnitId: string, weekId: string, scheduleId: string): Promise<void>; 
   	patchWorkforcemanagementManagementunitWeekShifttrade(managementUnitId: string, weekDateId: string, body: Models.PatchShiftTradeRequest, tradeId: string): Promise<Models.ShiftTradeResponse>; 
   	patchWorkforcemanagementManagementunitWorkplan(managementUnitId: string, workPlanId: string, opts?: WorkforceManagementApi.patchWorkforcemanagementManagementunitWorkplanOptions): Promise<Models.WorkPlan>; 
   	patchWorkforcemanagementTimeoffrequest(timeOffRequestId: string, opts?: WorkforceManagementApi.patchWorkforcemanagementTimeoffrequestOptions): Promise<Models.TimeOffRequestResponse>; 
@@ -3742,29 +3834,29 @@ declare class WorkforceManagementApi {
   	postWorkforcemanagementBusinessunitWeekShorttermforecastCopy(businessUnitId: string, weekDateId: string, forecastId: string, body: Models.CopyBuForecastRequest, opts?: WorkforceManagementApi.postWorkforcemanagementBusinessunitWeekShorttermforecastCopyOptions): Promise<Models.AsyncForecastOperationResult>; 
   	postWorkforcemanagementBusinessunitWeekShorttermforecastsGenerate(businessUnitId: string, weekDateId: string, body: Models.GenerateBuForecastRequest, opts?: WorkforceManagementApi.postWorkforcemanagementBusinessunitWeekShorttermforecastsGenerateOptions): Promise<Models.AsyncForecastOperationResult>; 
   	postWorkforcemanagementBusinessunits(opts?: WorkforceManagementApi.postWorkforcemanagementBusinessunitsOptions): Promise<Models.BusinessUnit>; 
-  	postWorkforcemanagementManagementunitActivitycodes(muId: string, opts?: WorkforceManagementApi.postWorkforcemanagementManagementunitActivitycodesOptions): Promise<Models.ActivityCode>; 
+  	postWorkforcemanagementManagementunitActivitycodes(muId: string): Promise<void>; 
   	postWorkforcemanagementManagementunitAgentschedulesSearch(muId: string, opts?: WorkforceManagementApi.postWorkforcemanagementManagementunitAgentschedulesSearchOptions): Promise<Models.BuAsyncAgentSchedulesSearchResponse>; 
   	postWorkforcemanagementManagementunitHistoricaladherencequery(muId: string, opts?: WorkforceManagementApi.postWorkforcemanagementManagementunitHistoricaladherencequeryOptions): Promise<Models.WfmHistoricalAdherenceResponse>; 
-  	postWorkforcemanagementManagementunitIntraday(muId: string, opts?: WorkforceManagementApi.postWorkforcemanagementManagementunitIntradayOptions): Promise<Models.IntradayResponse>; 
+  	postWorkforcemanagementManagementunitIntraday(muId: string): Promise<void>; 
   	postWorkforcemanagementManagementunitMove(muId: string, opts?: WorkforceManagementApi.postWorkforcemanagementManagementunitMoveOptions): Promise<Models.MoveManagementUnitResponse>; 
   	postWorkforcemanagementManagementunitSchedulesSearch(muId: string, opts?: WorkforceManagementApi.postWorkforcemanagementManagementunitSchedulesSearchOptions): Promise<Models.UserScheduleContainer>; 
-  	postWorkforcemanagementManagementunitServicegoalgroups(managementUnitId: string, opts?: WorkforceManagementApi.postWorkforcemanagementManagementunitServicegoalgroupsOptions): Promise<Models.ServiceGoalGroup>; 
+  	postWorkforcemanagementManagementunitServicegoalgroups(managementUnitId: string): Promise<void>; 
   	postWorkforcemanagementManagementunitTimeoffrequests(muId: string, opts?: WorkforceManagementApi.postWorkforcemanagementManagementunitTimeoffrequestsOptions): Promise<Models.TimeOffRequestList>; 
-  	postWorkforcemanagementManagementunitTimeoffrequestsFetchdetails(muId: string, opts?: WorkforceManagementApi.postWorkforcemanagementManagementunitTimeoffrequestsFetchdetailsOptions): Promise<Models.TimeOffRequestEntityList>; 
-  	postWorkforcemanagementManagementunitTimeoffrequestsQuery(muId: string, opts?: WorkforceManagementApi.postWorkforcemanagementManagementunitTimeoffrequestsQueryOptions): Promise<Models.TimeOffRequestLookupList>; 
-  	postWorkforcemanagementManagementunitWeekScheduleCopy(managementUnitId: string, weekId: string, scheduleId: string, opts?: WorkforceManagementApi.postWorkforcemanagementManagementunitWeekScheduleCopyOptions): Promise<Models.AsyncWeekScheduleResponse>; 
-  	postWorkforcemanagementManagementunitWeekScheduleReschedule(managementUnitId: string, weekId: string, scheduleId: string, opts?: WorkforceManagementApi.postWorkforcemanagementManagementunitWeekScheduleRescheduleOptions): Promise<Models.AsyncWeekScheduleResponse>; 
-  	postWorkforcemanagementManagementunitWeekSchedules(managementUnitId: string, weekId: string, opts?: WorkforceManagementApi.postWorkforcemanagementManagementunitWeekSchedulesOptions): Promise<Models.AsyncWeekScheduleResponse>; 
-  	postWorkforcemanagementManagementunitWeekSchedulesGenerate(managementUnitId: string, weekId: string, opts?: WorkforceManagementApi.postWorkforcemanagementManagementunitWeekSchedulesGenerateOptions): Promise<Models.GenerateWeekScheduleResponse>; 
-  	postWorkforcemanagementManagementunitWeekSchedulesPartialupload(managementUnitId: string, weekId: string, opts?: WorkforceManagementApi.postWorkforcemanagementManagementunitWeekSchedulesPartialuploadOptions): Promise<Models.PartialUploadResponse>; 
+  	postWorkforcemanagementManagementunitTimeoffrequestsFetchdetails(muId: string, opts?: WorkforceManagementApi.postWorkforcemanagementManagementunitTimeoffrequestsFetchdetailsOptions): Promise<void>; 
+  	postWorkforcemanagementManagementunitTimeoffrequestsQuery(muId: string, opts?: WorkforceManagementApi.postWorkforcemanagementManagementunitTimeoffrequestsQueryOptions): Promise<Models.TimeOffRequestListing>; 
+  	postWorkforcemanagementManagementunitWeekScheduleCopy(managementUnitId: string, weekId: string, scheduleId: string): Promise<void>; 
+  	postWorkforcemanagementManagementunitWeekScheduleReschedule(managementUnitId: string, weekId: string, scheduleId: string): Promise<void>; 
+  	postWorkforcemanagementManagementunitWeekSchedules(managementUnitId: string, weekId: string): Promise<void>; 
+  	postWorkforcemanagementManagementunitWeekSchedulesGenerate(managementUnitId: string, weekId: string): Promise<void>; 
+  	postWorkforcemanagementManagementunitWeekSchedulesPartialupload(managementUnitId: string, weekId: string): Promise<void>; 
   	postWorkforcemanagementManagementunitWeekShifttradeMatch(managementUnitId: string, weekDateId: string, body: Models.MatchShiftTradeRequest, tradeId: string): Promise<Models.MatchShiftTradeResponse>; 
   	postWorkforcemanagementManagementunitWeekShifttrades(managementUnitId: string, weekDateId: string, body: Models.AddShiftTradeRequest): Promise<Models.ShiftTradeResponse>; 
   	postWorkforcemanagementManagementunitWeekShifttradesSearch(managementUnitId: string, weekDateId: string, body: Models.SearchShiftTradesRequest): Promise<Models.SearchShiftTradesResponse>; 
   	postWorkforcemanagementManagementunitWeekShifttradesStateBulk(managementUnitId: string, weekDateId: string, body: Models.BulkShiftTradeStateUpdateRequest, opts?: WorkforceManagementApi.postWorkforcemanagementManagementunitWeekShifttradesStateBulkOptions): Promise<Models.BulkUpdateShiftTradeStateResponse>; 
-  	postWorkforcemanagementManagementunitWeekShorttermforecastCopy(managementUnitId: string, weekDateId: string, forecastId: string, body: Models.CopyShortTermForecastRequest, opts?: WorkforceManagementApi.postWorkforcemanagementManagementunitWeekShorttermforecastCopyOptions): Promise<Models.ShortTermForecastResponse>; 
-  	postWorkforcemanagementManagementunitWeekShorttermforecasts(managementUnitId: string, weekDateId: string, body: Models.ImportShortTermForecastRequest, opts?: WorkforceManagementApi.postWorkforcemanagementManagementunitWeekShorttermforecastsOptions): Promise<Models.ShortTermForecastResponse>; 
-  	postWorkforcemanagementManagementunitWeekShorttermforecastsGenerate(managementUnitId: string, weekDateId: string, body: Models.GenerateShortTermForecastRequest, opts?: WorkforceManagementApi.postWorkforcemanagementManagementunitWeekShorttermforecastsGenerateOptions): Promise<Models.GenerateShortTermForecastResponse>; 
-  	postWorkforcemanagementManagementunitWeekShorttermforecastsPartialupload(managementUnitId: string, weekDateId: string, body: Models.RouteGroupList): Promise<Models.PartialUploadResponse>; 
+  	postWorkforcemanagementManagementunitWeekShorttermforecastCopy(managementUnitId: string, weekDateId: string, forecastId: string): Promise<void>; 
+  	postWorkforcemanagementManagementunitWeekShorttermforecasts(managementUnitId: string, weekDateId: string): Promise<void>; 
+  	postWorkforcemanagementManagementunitWeekShorttermforecastsGenerate(managementUnitId: string, weekDateId: string): Promise<void>; 
+  	postWorkforcemanagementManagementunitWeekShorttermforecastsPartialupload(managementUnitId: string, weekDateId: string): Promise<void>; 
   	postWorkforcemanagementManagementunitWorkplanCopy(managementUnitId: string, workPlanId: string, opts?: WorkforceManagementApi.postWorkforcemanagementManagementunitWorkplanCopyOptions): Promise<Models.WorkPlan>; 
   	postWorkforcemanagementManagementunitWorkplans(managementUnitId: string, opts?: WorkforceManagementApi.postWorkforcemanagementManagementunitWorkplansOptions): Promise<Models.WorkPlan>; 
   	postWorkforcemanagementManagementunits(opts?: WorkforceManagementApi.postWorkforcemanagementManagementunitsOptions): Promise<Models.ManagementUnit>; 
@@ -3823,9 +3915,6 @@ declare namespace WorkforceManagementApi {
 	export interface getWorkforcemanagementManagementunitWeekShifttradesOptions { 
 		"evaluateMatches"?: boolean;
 	}
-	export interface getWorkforcemanagementManagementunitWeekShorttermforecastFinalOptions { 
-		"forceDownloadService"?: boolean;
-	}
 	export interface getWorkforcemanagementManagementunitWorkplansOptions { 
 		"expand"?: Array<string>;
 	}
@@ -3866,19 +3955,8 @@ declare namespace WorkforceManagementApi {
 	export interface patchWorkforcemanagementManagementunitSchedulingRunOptions { 
 		"body"?: Models.UpdateSchedulingRunRequest;
 	}
-	export interface patchWorkforcemanagementManagementunitServicegoalgroupOptions { 
-		"body"?: Models.ServiceGoalGroup;
-	}
-	export interface patchWorkforcemanagementManagementunitSettingsOptions { 
-		"body"?: Models.ManagementUnitSettingsRequest;
-	}
 	export interface patchWorkforcemanagementManagementunitUserTimeoffrequestOptions { 
 		"body"?: Models.AdminTimeOffRequestPatch;
-	}
-	export interface patchWorkforcemanagementManagementunitWeekScheduleOptions { 
-		"forceAsync"?: boolean;
-		"forceDownloadService"?: boolean;
-		"body"?: Models.UpdateWeekScheduleRequest;
 	}
 	export interface patchWorkforcemanagementManagementunitWorkplanOptions { 
 		"body"?: Models.WorkPlan;
@@ -3923,9 +4001,6 @@ declare namespace WorkforceManagementApi {
 	export interface postWorkforcemanagementBusinessunitsOptions { 
 		"body"?: Models.CreateBusinessUnitRequest;
 	}
-	export interface postWorkforcemanagementManagementunitActivitycodesOptions { 
-		"body"?: Models.CreateActivityCodeRequest;
-	}
 	export interface postWorkforcemanagementManagementunitAgentschedulesSearchOptions { 
 		"body"?: Models.BuSearchAgentSchedulesRequest;
 		"forceAsync"?: boolean;
@@ -3934,56 +4009,22 @@ declare namespace WorkforceManagementApi {
 	export interface postWorkforcemanagementManagementunitHistoricaladherencequeryOptions { 
 		"body"?: Models.WfmHistoricalAdherenceQuery;
 	}
-	export interface postWorkforcemanagementManagementunitIntradayOptions { 
-		"body"?: Models.IntradayQueryDataCommand;
-	}
 	export interface postWorkforcemanagementManagementunitMoveOptions { 
 		"body"?: Models.MoveManagementUnitRequest;
 	}
 	export interface postWorkforcemanagementManagementunitSchedulesSearchOptions { 
 		"body"?: Models.UserListScheduleRequestBody;
 	}
-	export interface postWorkforcemanagementManagementunitServicegoalgroupsOptions { 
-		"body"?: Models.CreateServiceGoalGroupRequest;
-	}
 	export interface postWorkforcemanagementManagementunitTimeoffrequestsOptions { 
 		"body"?: Models.CreateAdminTimeOffRequest;
 	}
 	export interface postWorkforcemanagementManagementunitTimeoffrequestsFetchdetailsOptions { 
-		"body"?: Models.TimeOffRequestLookupList;
+		"body"?: Models.TimeOffRequestListing;
 	}
 	export interface postWorkforcemanagementManagementunitTimeoffrequestsQueryOptions { 
 		"body"?: Models.TimeOffRequestQueryBody;
 	}
-	export interface postWorkforcemanagementManagementunitWeekScheduleCopyOptions { 
-		"forceAsync"?: boolean;
-		"forceDownloadService"?: boolean;
-		"body"?: Models.CopyWeekScheduleRequest;
-	}
-	export interface postWorkforcemanagementManagementunitWeekScheduleRescheduleOptions { 
-		"body"?: Models.RescheduleRequest;
-	}
-	export interface postWorkforcemanagementManagementunitWeekSchedulesOptions { 
-		"forceAsync"?: boolean;
-		"forceDownloadService"?: boolean;
-		"body"?: Models.ImportWeekScheduleRequest;
-	}
-	export interface postWorkforcemanagementManagementunitWeekSchedulesGenerateOptions { 
-		"body"?: Models.GenerateWeekScheduleRequest;
-	}
-	export interface postWorkforcemanagementManagementunitWeekSchedulesPartialuploadOptions { 
-		"body"?: Models.UserSchedulesPartialUploadRequest;
-	}
 	export interface postWorkforcemanagementManagementunitWeekShifttradesStateBulkOptions { 
-		"forceAsync"?: boolean;
-	}
-	export interface postWorkforcemanagementManagementunitWeekShorttermforecastCopyOptions { 
-		"forceAsync"?: boolean;
-	}
-	export interface postWorkforcemanagementManagementunitWeekShorttermforecastsOptions { 
-		"forceAsync"?: boolean;
-	}
-	export interface postWorkforcemanagementManagementunitWeekShorttermforecastsGenerateOptions { 
 		"forceAsync"?: boolean;
 	}
 	export interface postWorkforcemanagementManagementunitWorkplanCopyOptions { 
@@ -4393,8 +4434,8 @@ declare namespace Models {
 		"calibrationId"?: string;
 		"rescored"?: boolean;
 		"deleted"?: boolean;
-		"oTotalScore"?: number;
 		"oTotalCriticalScore"?: number;
+		"oTotalScore"?: number;
 	}
 	
 	export interface AnalyticsFlow { 
@@ -4892,13 +4933,6 @@ declare namespace Models {
 		"routingStatusFilters"?: Array<Models.RoutingStatusDetailQueryFilter>;
 		"order"?: string;
 		"limit"?: number;
-	}
-	
-	export interface AsyncWeekScheduleResponse { 
-		"result"?: Models.WeekSchedule;
-		"downloadUrl"?: string;
-		"status"?: string;
-		"operationId"?: string;
 	}
 	
 	export interface Attachment { 
@@ -5774,6 +5808,7 @@ declare namespace Models {
 		"uuiData"?: string;
 		"self"?: Models.Address;
 		"other"?: Models.Address;
+		"wrapup"?: Models.Wrapup;
 	}
 	
 	export interface CallBasic { 
@@ -5802,6 +5837,7 @@ declare namespace Models {
 		"uuiData"?: string;
 		"self"?: Models.Address;
 		"other"?: Models.Address;
+		"wrapup"?: Models.Wrapup;
 	}
 	
 	export interface CallCommand { 
@@ -6057,6 +6093,7 @@ declare namespace Models {
 		"automatedCallbackConfigId"?: string;
 		"provider"?: string;
 		"peerId"?: string;
+		"wrapup"?: Models.Wrapup;
 	}
 	
 	export interface CallbackBasic { 
@@ -6082,6 +6119,7 @@ declare namespace Models {
 		"automatedCallbackConfigId"?: string;
 		"provider"?: string;
 		"peerId"?: string;
+		"wrapup"?: Models.Wrapup;
 	}
 	
 	export interface CallbackConversation { 
@@ -6686,6 +6724,7 @@ declare namespace Models {
 		"provider"?: string;
 		"peerId"?: string;
 		"segments"?: Array<Models.Segment>;
+		"wrapup"?: Models.Wrapup;
 	}
 	
 	export interface CommandStatus { 
@@ -7049,6 +7088,14 @@ declare namespace Models {
 		"ascending"?: boolean;
 	}
 	
+	export interface ContextEntity { 
+		"name": string;
+	}
+	
+	export interface ContextIntent { 
+		"name": string;
+	}
+	
 	export interface Conversation { 
 		"id"?: string;
 		"name"?: string;
@@ -7316,6 +7363,7 @@ declare namespace Models {
 		"callbackNumbers"?: Array<string>;
 		"callbackUserName"?: string;
 		"skipEnabled"?: boolean;
+		"externalCampaign"?: boolean;
 		"timeoutSeconds"?: number;
 		"callbackScheduledTime"?: string;
 		"automatedCallbackConfigId"?: string;
@@ -7432,6 +7480,7 @@ declare namespace Models {
 		"peerId"?: string;
 		"avatarImageUrl"?: string;
 		"journeyContext"?: Models.JourneyContext;
+		"wrapup"?: Models.Wrapup;
 	}
 	
 	export interface ConversationChatEventTopicChatConversation { 
@@ -7906,6 +7955,7 @@ declare namespace Models {
 		"callbackUserName"?: string;
 		"scriptId"?: string;
 		"peerId"?: string;
+		"externalCampaign"?: boolean;
 		"skipEnabled"?: boolean;
 		"provider"?: string;
 		"timeoutSeconds"?: number;
@@ -8769,24 +8819,34 @@ declare namespace Models {
 		"weekDate": string;
 	}
 	
-	export interface CopyShortTermForecastRequest { 
-		"weekDate": string;
-		"description": string;
-	}
-	
 	export interface CopyVoicemailMessage { 
 		"voicemailMessageId": string;
 		"userId"?: string;
 		"groupId"?: string;
 	}
 	
-	export interface CopyWeekScheduleRequest { 
-		"description": string;
-		"weekDate": string;
-	}
-	
 	export interface CopyWorkPlan { 
 		"name": string;
+	}
+	
+	export interface Coretype { 
+		"id"?: string;
+		"name"?: string;
+		"version"?: number;
+		"dateCreated"?: string;
+		"schema"?: Models.Schema;
+		"current"?: boolean;
+		"validationFields"?: Array<string>;
+		"validationLimits"?: Models.ValidationLimits;
+		"itemValidationFields"?: Array<string>;
+		"itemValidationLimits"?: Models.ItemValidationLimits;
+		"selfUri"?: string;
+	}
+	
+	export interface CoretypeListing { 
+		"total"?: number;
+		"entities"?: Array<Models.Coretype>;
+		"selfUri"?: string;
 	}
 	
 	export interface CoverSheet { 
@@ -8940,12 +9000,6 @@ declare namespace Models {
 		"serviceGoalTemplateId": string;
 	}
 	
-	export interface CreateQueueMediaAssociationRequest { 
-		"id"?: string;
-		"queue"?: Models.QueueReference;
-		"mediaTypes"?: Array<string>;
-	}
-	
 	export interface CreateQueueRequest { 
 		"id"?: string;
 		"name": string;
@@ -8977,12 +9031,6 @@ declare namespace Models {
 		"flowId": string;
 		"userData": string;
 		"disconnect"?: boolean;
-	}
-	
-	export interface CreateServiceGoalGroupRequest { 
-		"name": string;
-		"goals"?: Models.ServiceGoalGroupGoals;
-		"queueMediaAssociations"?: Array<Models.CreateQueueMediaAssociationRequest>;
 	}
 	
 	export interface CreateServiceGoalTemplate { 
@@ -9273,6 +9321,12 @@ declare namespace Models {
 		"selfUri"?: string;
 	}
 	
+	export interface DataSchemaListing { 
+		"total"?: number;
+		"entities"?: Array<Models.DataSchema>;
+		"selfUri"?: string;
+	}
+	
 	export interface DataTable { 
 		"id"?: string;
 		"name"?: string;
@@ -9446,6 +9500,29 @@ declare namespace Models {
 		"fieldName"?: string;
 		"entityId"?: string;
 		"entityName"?: string;
+	}
+	
+	export interface DetectedDialogAct { 
+		"name"?: string;
+		"probability"?: number;
+	}
+	
+	export interface DetectedIntent { 
+		"name"?: string;
+		"probability"?: number;
+		"entities"?: Array<Models.DetectedNamedEntity>;
+	}
+	
+	export interface DetectedNamedEntity { 
+		"name"?: string;
+		"entityType"?: string;
+		"probability"?: number;
+		"value"?: Models.DetectedNamedEntityValue;
+	}
+	
+	export interface DetectedNamedEntityValue { 
+		"raw"?: string;
+		"resolved"?: string;
 	}
 	
 	export interface DialerAction { 
@@ -9989,6 +10066,7 @@ declare namespace Models {
 		"project"?: Models.DialogflowProject;
 		"languages"?: Array<string>;
 		"intents"?: Array<Models.DialogflowIntent>;
+		"environments"?: Array<string>;
 		"selfUri"?: string;
 	}
 	
@@ -11025,6 +11103,7 @@ declare namespace Models {
 		"messageId"?: string;
 		"draftAttachments"?: Array<Models.Attachment>;
 		"spam"?: boolean;
+		"wrapup"?: Models.Wrapup;
 	}
 	
 	export interface EmailAddress { 
@@ -11245,11 +11324,7 @@ declare namespace Models {
 	}
 	
 	export interface EntityListing { 
-		"entities"?: Array<Models.DataTableImportJob>;
-		"pageSize"?: number;
-		"pageNumber"?: number;
-		"total"?: number;
-		"pageCount"?: number;
+		"entities"?: Array<object>;
 	}
 	
 	export interface Entry { 
@@ -12047,6 +12122,8 @@ declare namespace Models {
 		"type"?: string;
 		"inputSchema"?: Models.JsonSchemaDocument;
 		"outputSchema"?: Models.JsonSchemaDocument;
+		"publishedVersion"?: Models.FlowVersion;
+		"debugVersion"?: Models.FlowVersion;
 		"selfUri"?: string;
 	}
 	
@@ -12171,15 +12248,6 @@ declare namespace Models {
 		"seconds"?: number;
 	}
 	
-	export interface ForecastGenerationResult { 
-		"routeGroupResults"?: Array<Models.ForecastGenerationRouteGroupResult>;
-	}
-	
-	export interface ForecastGenerationRouteGroupResult { 
-		"routeGroup"?: Models.RouteGroupAttributes;
-		"metricResults"?: Array<Models.ForecastTimeSeriesResult>;
-	}
-	
 	export interface ForecastPlanningGroupData { 
 		"planningGroupId"?: string;
 		"offeredPerInterval"?: Array<number>;
@@ -12195,11 +12263,6 @@ declare namespace Models {
 	
 	export interface ForecastPlanningGroupsResponse { 
 		"entities"?: Array<Models.ForecastPlanningGroupResponse>;
-	}
-	
-	export interface ForecastResultResponse { 
-		"result"?: Models.RouteGroupList;
-		"downloadUrl"?: string;
 	}
 	
 	export interface ForecastServiceGoalTemplateResponse { 
@@ -12219,11 +12282,6 @@ declare namespace Models {
 		"date"?: string;
 		"fileName"?: string;
 		"dataKey"?: string;
-	}
-	
-	export interface ForecastTimeSeriesResult { 
-		"metric"?: string;
-		"forecastingMethod"?: string;
 	}
 	
 	export interface FreeSeatingConfiguration { 
@@ -12340,28 +12398,6 @@ declare namespace Models {
 	export interface GenerateBuForecastRequest { 
 		"description": string;
 		"weekCount"?: number;
-	}
-	
-	export interface GenerateShortTermForecastRequest { 
-		"description": string;
-	}
-	
-	export interface GenerateShortTermForecastResponse { 
-		"status"?: string;
-		"result"?: Models.ShortTermForecast;
-		"operationId"?: string;
-		"progress"?: number;
-	}
-	
-	export interface GenerateWeekScheduleRequest { 
-		"description": string;
-		"shortTermForecastId": string;
-	}
-	
-	export interface GenerateWeekScheduleResponse { 
-		"downloadUrl"?: string;
-		"status"?: string;
-		"operationId"?: string;
 	}
 	
 	export interface Geolocation { 
@@ -12754,27 +12790,12 @@ declare namespace Models {
 		"message"?: string;
 	}
 	
-	export interface ImportShortTermForecastRequest { 
-		"fileName"?: string;
-		"description": string;
-		"routeGroupList": Models.RouteGroupList;
-		"partialUploadIds"?: Array<string>;
-	}
-	
 	export interface ImportStatus { 
 		"state": string;
 		"totalRecords": number;
 		"completedRecords": number;
 		"percentComplete": number;
 		"failureReason"?: string;
-	}
-	
-	export interface ImportWeekScheduleRequest { 
-		"description": string;
-		"userSchedules"?: { [key: string]: Models.UserSchedule; };
-		"published"?: boolean;
-		"shortTermForecastId"?: string;
-		"partialUploadIds"?: Array<string>;
 	}
 	
 	export interface InboundDomain { 
@@ -12975,6 +12996,19 @@ declare namespace Models {
 		"pageCount"?: number;
 	}
 	
+	export interface IntentDefinition { 
+		"name": string;
+		"entityTypeBindings": Array<Models.NamedEntityTypeBinding>;
+		"utterances": Array<Models.NluUtterance>;
+	}
+	
+	export interface IntentFeedback { 
+		"name"?: string;
+		"probability"?: number;
+		"entities"?: Array<Models.DetectedNamedEntity>;
+		"assessment"?: string;
+	}
+	
 	export interface InteractionStatsAlert { 
 		"id"?: string;
 		"name": string;
@@ -13038,57 +13072,10 @@ declare namespace Models {
 		"pageCount"?: number;
 	}
 	
-	export interface IntradayDataGroup { 
-		"mediaType"?: string;
-		"forecastDataPerInterval"?: Array<Models.IntradayForecastData>;
-		"scheduleDataPerInterval"?: Array<Models.IntradayScheduleData>;
-		"historicalAgentDataPerInterval"?: Array<Models.IntradayHistoricalAgentData>;
-		"historicalQueueDataPerInterval"?: Array<Models.IntradayHistoricalQueueData>;
-		"performancePredictionAgentDataPerInterval"?: Array<Models.IntradayPerformancePredictionAgentData>;
-		"performancePredictionQueueDataPerInterval"?: Array<Models.IntradayPerformancePredictionQueueData>;
-	}
-	
-	export interface IntradayForecastData { 
-		"offered"?: number;
-		"averageTalkTimeSeconds"?: number;
-		"averageAfterCallWorkSeconds"?: number;
-	}
-	
-	export interface IntradayHistoricalAgentData { 
-		"onQueueTimeSeconds"?: number;
-		"interactingTimeSeconds"?: number;
-	}
-	
-	export interface IntradayHistoricalQueueData { 
-		"offered"?: number;
-		"completed"?: number;
-		"answered"?: number;
-		"abandoned"?: number;
-		"averageTalkTimeSeconds"?: number;
-		"averageAfterCallWorkSeconds"?: number;
-		"serviceLevelPercent"?: number;
-		"averageSpeedOfAnswerSeconds"?: number;
-	}
-	
-	export interface IntradayMetric { 
-		"category"?: string;
-		"version"?: string;
-	}
-	
-	export interface IntradayPerformancePredictionAgentData { 
-		"interactingTimeSeconds"?: number;
-	}
-	
 	export interface IntradayPerformancePredictionData { 
 		"serviceLevelPercent"?: number;
 		"averageSpeedOfAnswerSeconds"?: number;
 		"occupancyPercent"?: number;
-	}
-	
-	export interface IntradayPerformancePredictionQueueData { 
-		"serviceLevelPercent"?: number;
-		"averageSpeedOfAnswerSeconds"?: number;
-		"numberOfInteractions"?: number;
 	}
 	
 	export interface IntradayPlanningGroupRequest { 
@@ -13096,36 +13083,6 @@ declare namespace Models {
 		"categories": Array<string>;
 		"planningGroupIds"?: Array<string>;
 		"intervalLengthMinutes"?: number;
-	}
-	
-	export interface IntradayQueryDataCommand { 
-		"startDate": string;
-		"endDate": string;
-		"metrics": Array<Models.IntradayMetric>;
-		"queueIds"?: Array<string>;
-		"intervalLengthMinutes"?: number;
-	}
-	
-	export interface IntradayQueue { 
-		"id"?: string;
-		"name"?: string;
-		"mediaTypes"?: Array<string>;
-	}
-	
-	export interface IntradayResponse { 
-		"startDate"?: string;
-		"endDate"?: string;
-		"intervalLengthMinutes"?: number;
-		"numberOfIntervals"?: number;
-		"metrics"?: Array<Models.IntradayMetric>;
-		"noDataReason"?: string;
-		"queueIds"?: Array<string>;
-		"intradayDataGroupings"?: Array<Models.IntradayDataGroup>;
-	}
-	
-	export interface IntradayScheduleData { 
-		"onQueueTimeSeconds"?: number;
-		"scheduledTimeSeconds"?: number;
 	}
 	
 	export interface IpAddressRange { 
@@ -13136,6 +13093,16 @@ declare namespace Models {
 	
 	export interface IpAddressRangeListing { 
 		"entities"?: Array<Models.IpAddressRange>;
+	}
+	
+	export interface ItemValidationLimits { 
+		"minLength": Models.MinLength;
+		"maxLength": Models.MaxLength;
+	}
+	
+	export interface Items { 
+		"type"?: string;
+		"pattern"?: string;
 	}
 	
 	export interface JourneyAction { 
@@ -13739,20 +13706,12 @@ declare namespace Models {
 		"userId"?: string;
 	}
 	
-	export interface ListWrapperForecastSourceDayPointer { 
-		"values"?: Array<Models.ForecastSourceDayPointer>;
-	}
-	
 	export interface ListWrapperInterval { 
 		"values"?: Array<string>;
 	}
 	
 	export interface ListWrapperShiftStartVariance { 
 		"values"?: Array<Models.ShiftStartVariance>;
-	}
-	
-	export interface ListWrapperWfmForecastModification { 
-		"values"?: Array<Models.WfmForecastModification>;
 	}
 	
 	export interface LocalEncryptionConfiguration { 
@@ -13992,6 +13951,11 @@ declare namespace Models {
 		"adminReviewViolations"?: Array<Models.ShiftTradeMatchViolation>;
 	}
 	
+	export interface MaxLength { 
+		"min": number;
+		"max": number;
+	}
+	
 	export interface MaxParticipants { 
 		"maxParticipants"?: number;
 	}
@@ -14090,6 +14054,7 @@ declare namespace Models {
 		"toAddress"?: Models.Address;
 		"fromAddress"?: Models.Address;
 		"messages"?: Array<Models.MessageDetails>;
+		"wrapup"?: Models.Wrapup;
 	}
 	
 	export interface MessageConversation { 
@@ -14349,6 +14314,11 @@ declare namespace Models {
 		"timeInterval"?: Models.TimeInterval;
 	}
 	
+	export interface MinLength { 
+		"min": number;
+		"max": number;
+	}
+	
 	export interface ModelNumber { 
 		"start"?: string;
 		"end"?: string;
@@ -14386,6 +14356,175 @@ declare namespace Models {
 	export interface NamedEntity { 
 		"id"?: string;
 		"name"?: string;
+	}
+	
+	export interface NamedEntityAnnotation { 
+		"name": string;
+	}
+	
+	export interface NamedEntityTypeBinding { 
+		"entityType": string;
+		"entityName": string;
+	}
+	
+	export interface NamedEntityTypeDefinition { 
+		"name": string;
+		"description"?: string;
+		"mechanism": Models.NamedEntityTypeMechanism;
+	}
+	
+	export interface NamedEntityTypeItem { 
+		"value": string;
+		"synonyms"?: Array<string>;
+	}
+	
+	export interface NamedEntityTypeMechanism { 
+		"items": Array<Models.NamedEntityTypeItem>;
+		"restricted"?: boolean;
+		"type": string;
+	}
+	
+	export interface NluConfusionMatrixColumn { 
+		"name": string;
+		"value": number;
+	}
+	
+	export interface NluConfusionMatrixRow { 
+		"name": string;
+		"columns": Array<Models.NluConfusionMatrixColumn>;
+	}
+	
+	export interface NluDetectionContext { 
+		"intent"?: Models.ContextIntent;
+		"entity"?: Models.ContextEntity;
+	}
+	
+	export interface NluDetectionInput { 
+		"text": string;
+	}
+	
+	export interface NluDetectionOutput { 
+		"intents"?: Array<Models.DetectedIntent>;
+		"dialogActs"?: Array<Models.DetectedDialogAct>;
+	}
+	
+	export interface NluDetectionRequest { 
+		"input": Models.NluDetectionInput;
+		"context"?: Models.NluDetectionContext;
+	}
+	
+	export interface NluDetectionResponse { 
+		"version"?: Models.NluDomainVersion;
+		"output"?: Models.NluDetectionOutput;
+		"input"?: Models.NluDetectionInput;
+	}
+	
+	export interface NluDomain { 
+		"id"?: string;
+		"name": string;
+		"draftVersion"?: Models.NluDomainVersion;
+		"lastPublishedVersion"?: Models.NluDomainVersion;
+		"dateCreated"?: string;
+		"dateModified"?: string;
+		"selfUri"?: string;
+	}
+	
+	export interface NluDomainListing { 
+		"entities"?: Array<Models.NluDomain>;
+		"pageSize"?: number;
+		"pageNumber"?: number;
+		"total"?: number;
+		"firstUri"?: string;
+		"selfUri"?: string;
+		"nextUri"?: string;
+		"lastUri"?: string;
+		"previousUri"?: string;
+		"pageCount"?: number;
+	}
+	
+	export interface NluDomainVersion { 
+		"id"?: string;
+		"domain"?: Models.NluDomain;
+		"description"?: string;
+		"language"?: string;
+		"dateCreated"?: string;
+		"dateModified"?: string;
+		"dateTrained"?: string;
+		"datePublished"?: string;
+		"trainingStatus"?: string;
+		"intents"?: Array<Models.IntentDefinition>;
+		"entityTypes"?: Array<Models.NamedEntityTypeDefinition>;
+		"selfUri"?: string;
+	}
+	
+	export interface NluDomainVersionListing { 
+		"entities"?: Array<Models.NluDomainVersion>;
+		"pageSize"?: number;
+		"pageNumber"?: number;
+		"total"?: number;
+		"firstUri"?: string;
+		"selfUri"?: string;
+		"nextUri"?: string;
+		"lastUri"?: string;
+		"previousUri"?: string;
+		"pageCount"?: number;
+	}
+	
+	export interface NluDomainVersionQualityReport { 
+		"version": Models.NluDomainVersion;
+		"confusionMatrix": Array<Models.NluConfusionMatrixRow>;
+		"summary": Models.NluQualityReportSummary;
+	}
+	
+	export interface NluDomainVersionTrainingResponse { 
+		"message"?: string;
+		"version"?: Models.NluDomainVersion;
+	}
+	
+	export interface NluFeedbackListing { 
+		"entities"?: Array<Models.NluFeedbackResponse>;
+		"pageSize"?: number;
+		"pageNumber"?: number;
+		"total"?: number;
+		"firstUri"?: string;
+		"selfUri"?: string;
+		"nextUri"?: string;
+		"lastUri"?: string;
+		"previousUri"?: string;
+		"pageCount"?: number;
+	}
+	
+	export interface NluFeedbackRequest { 
+		"text": string;
+		"intents": Array<Models.IntentFeedback>;
+		"versionId": string;
+	}
+	
+	export interface NluFeedbackResponse { 
+		"id"?: string;
+		"text"?: string;
+		"intents"?: Array<Models.IntentFeedback>;
+		"version"?: Models.NluDomainVersion;
+		"dateCreated"?: string;
+		"selfUri"?: string;
+	}
+	
+	export interface NluQualityReportSummary { 
+		"metrics": Array<Models.NluQualityReportSummaryMetric>;
+	}
+	
+	export interface NluQualityReportSummaryMetric { 
+		"name": string;
+		"value": number;
+	}
+	
+	export interface NluUtterance { 
+		"segments": Array<Models.NluUtteranceSegment>;
+	}
+	
+	export interface NluUtteranceSegment { 
+		"text": string;
+		"entity"?: Models.NamedEntityAnnotation;
 	}
 	
 	export interface Note { 
@@ -14935,10 +15074,6 @@ declare namespace Models {
 	
 	export interface ParsedCertificate { 
 		"certificateDetails"?: Array<Models.CertificateDetails>;
-	}
-	
-	export interface PartialUploadResponse { 
-		"id"?: string;
 	}
 	
 	export interface Participant { 
@@ -15806,6 +15941,7 @@ declare namespace Models {
 		"callbackNumbers"?: Array<string>;
 		"callbackUserName"?: string;
 		"skipEnabled"?: boolean;
+		"externalCampaign"?: boolean;
 		"timeoutSeconds"?: number;
 		"callbackScheduledTime"?: string;
 		"automatedCallbackConfigId"?: string;
@@ -16334,6 +16470,7 @@ declare namespace Models {
 		"callbackUserName"?: string;
 		"scriptId"?: string;
 		"peerId"?: string;
+		"externalCampaign"?: boolean;
 		"skipEnabled"?: boolean;
 		"provider"?: string;
 		"timeoutSeconds"?: number;
@@ -16965,6 +17102,7 @@ declare namespace Models {
 		"callbackUserName"?: string;
 		"scriptId"?: string;
 		"peerId"?: string;
+		"externalCampaign"?: boolean;
 		"skipEnabled"?: boolean;
 		"provider"?: string;
 		"timeoutSeconds"?: number;
@@ -17333,6 +17471,7 @@ declare namespace Models {
 		"callbackUserName"?: string;
 		"scriptId"?: string;
 		"peerId"?: string;
+		"externalCampaign"?: boolean;
 		"skipEnabled"?: boolean;
 		"provider"?: string;
 		"timeoutSeconds"?: number;
@@ -17660,13 +17799,6 @@ declare namespace Models {
 		"lastUri"?: string;
 		"previousUri"?: string;
 		"pageCount"?: number;
-	}
-	
-	export interface QueueMediaAssociation { 
-		"id"?: string;
-		"queue"?: Models.QueueReference;
-		"mediaTypes"?: Array<string>;
-		"delete"?: boolean;
 	}
 	
 	export interface QueueMember { 
@@ -18122,6 +18254,7 @@ declare namespace Models {
 		"hasSplitFilters"?: boolean;
 		"selectedColumns"?: Array<Models.SelectedColumns>;
 		"hasCustomParticipantAttributes"?: boolean;
+		"recipientEmails"?: Array<string>;
 	}
 	
 	export interface ReportingExportJobResponse { 
@@ -18145,6 +18278,8 @@ declare namespace Models {
 		"hasSplitFilters"?: boolean;
 		"selectedColumns"?: Array<Models.SelectedColumns>;
 		"hasCustomParticipantAttributes"?: boolean;
+		"recipientEmails"?: Array<string>;
+		"emailStatuses"?: { [key: string]: string; };
 		"selfUri"?: string;
 	}
 	
@@ -18182,37 +18317,9 @@ declare namespace Models {
 		"headers"?: { [key: string]: string; };
 	}
 	
-	export interface RescheduleRequest { 
-		"startDate": string;
-		"endDate": string;
-		"agentIds"?: Array<string>;
-		"activityCodeIds"?: Array<string>;
-		"doNotChangeWeeklyPaidTime": boolean;
-		"doNotChangeDailyPaidTime": boolean;
-		"doNotChangeShiftStartTimes": boolean;
-		"doNotChangeManuallyEditedShifts": boolean;
-	}
-	
-	export interface RescheduleResult { 
-		"downloadUrl"?: string;
-	}
-	
 	export interface ReschedulingManagementUnitResponse { 
 		"managementUnit"?: Models.ManagementUnitReference;
 		"applied"?: boolean;
-	}
-	
-	export interface ReschedulingOptionsResponse { 
-		"startDate": string;
-		"endDate": string;
-		"agentIds"?: Array<string>;
-		"activityCodeIds"?: Array<string>;
-		"doNotChangeWeeklyPaidTime": boolean;
-		"doNotChangeDailyPaidTime": boolean;
-		"doNotChangeShiftStartTimes": boolean;
-		"doNotChangeManuallyEditedShifts": boolean;
-		"existingScheduleId"?: string;
-		"existingScheduleVersion"?: number;
 	}
 	
 	export interface ReschedulingOptionsRunResponse { 
@@ -18386,27 +18493,6 @@ declare namespace Models {
 	export interface RoleDivisionPair { 
 		"roleId": string;
 		"divisionId": string;
-	}
-	
-	export interface RouteGroup { 
-		"attributes": Models.RouteGroupAttributes;
-		"offeredPerInterval": Array<number>;
-		"averageTalkTimeSecondsPerInterval": Array<number>;
-		"averageAfterCallWorkSecondsPerInterval": Array<number>;
-		"completedPerInterval"?: Array<number>;
-		"abandonedPerInterval"?: Array<number>;
-	}
-	
-	export interface RouteGroupAttributes { 
-		"queue": Models.QueueReference;
-		"mediaType": string;
-		"language"?: Models.LanguageReference;
-		"skills"?: Array<Models.RoutingSkillReference>;
-	}
-	
-	export interface RouteGroupList { 
-		"startDate"?: string;
-		"routeGroups": Array<Models.RouteGroup>;
 	}
 	
 	export interface RoutePathRequest { 
@@ -18651,29 +18737,6 @@ declare namespace Models {
 		"description"?: string;
 	}
 	
-	export interface SchedulingRunListResponse { 
-		"entities"?: Array<Models.SchedulingRunResponse>;
-	}
-	
-	export interface SchedulingRunResponse { 
-		"runId"?: string;
-		"schedulerRunId"?: string;
-		"intradayRescheduling"?: boolean;
-		"state"?: string;
-		"percentComplete"?: number;
-		"targetWeek"?: string;
-		"scheduleId"?: string;
-		"scheduleDescription"?: string;
-		"schedulingStartTime"?: string;
-		"schedulingStartedBy"?: Models.UserReference;
-		"schedulingCanceledBy"?: Models.UserReference;
-		"schedulingCompletedTime"?: string;
-		"reschedulingOptions"?: Models.ReschedulingOptionsResponse;
-		"reschedulingResultExpiration"?: string;
-		"applied"?: boolean;
-		"unscheduledAgents"?: Array<Models.UnscheduledAgentWarning>;
-	}
-	
 	export interface SchedulingSettingsRequest { 
 		"maxOccupancyPercentForDeferredWork"?: number;
 		"defaultShrinkagePercent"?: number;
@@ -18699,6 +18762,14 @@ declare namespace Models {
 		"delayScheduling"?: boolean;
 		"failScheduling"?: boolean;
 		"populateWarnings"?: boolean;
+	}
+	
+	export interface Schema { 
+		"title"?: string;
+		"description"?: string;
+		"type"?: Array<string>;
+		"items"?: Models.Items;
+		"pattern"?: string;
 	}
 	
 	export interface SchemaCategory { 
@@ -18727,6 +18798,23 @@ declare namespace Models {
 		"lastUri"?: string;
 		"previousUri"?: string;
 		"pageCount"?: number;
+	}
+	
+	export interface SchemaQuantityLimits { 
+		"id"?: string;
+		"name"?: string;
+		"minFieldNameCharacters"?: number;
+		"maxFieldNameCharacters"?: number;
+		"minFieldDescriptionCharacters"?: number;
+		"maxFieldDescriptionCharacters"?: number;
+		"minSchemaNameCharacters"?: number;
+		"maxSchemaNameCharacters"?: number;
+		"minSchemaDescriptionCharacters"?: number;
+		"maxSchemaDescriptionCharacters"?: number;
+		"maxNumberOfSchemasPerOrg"?: number;
+		"maxNumberOfFieldsPerSchema"?: number;
+		"maxNumberOfFieldsPerOrg"?: number;
+		"selfUri"?: string;
 	}
 	
 	export interface SchemaReferenceEntityListing { 
@@ -18884,6 +18972,7 @@ declare namespace Models {
 		"division"?: string;
 		"department"?: string;
 		"manager"?: Models.Manager;
+		"employeeNumber"?: string;
 	}
 	
 	export interface ScimV2Group { 
@@ -19023,6 +19112,7 @@ declare namespace Models {
 		"provider"?: string;
 		"peerId"?: string;
 		"segments"?: Array<Models.Segment>;
+		"wrapup"?: Models.Wrapup;
 	}
 	
 	export interface Script { 
@@ -19223,26 +19313,6 @@ declare namespace Models {
 		"name"?: string;
 	}
 	
-	export interface ServiceGoalGroup { 
-		"id"?: string;
-		"name"?: string;
-		"goals"?: Models.ServiceGoalGroupGoals;
-		"queueMediaAssociations"?: Array<Models.QueueMediaAssociation>;
-		"metadata": Models.WfmVersionedEntityMetadata;
-		"selfUri"?: string;
-	}
-	
-	export interface ServiceGoalGroupGoals { 
-		"serviceLevel": Models.WfmServiceLevel;
-		"averageSpeedOfAnswer": Models.WfmAverageSpeedOfAnswer;
-		"abandonRate"?: Models.WfmAbandonRate;
-	}
-	
-	export interface ServiceGoalGroupList { 
-		"entities"?: Array<Models.ServiceGoalGroup>;
-		"metadata"?: Models.WfmVersionedEntityMetadata;
-	}
-	
 	export interface ServiceGoalTemplate { 
 		"id"?: string;
 		"name"?: string;
@@ -19416,43 +19486,11 @@ declare namespace Models {
 		"activityCategoryRules"?: Array<Models.ShiftTradeActivityRule>;
 	}
 	
-	export interface ShortTermForecast { 
-		"id"?: string;
-		"selfUri"?: string;
-		"weekDate": string;
-		"description"?: string;
-		"creationMethod"?: string;
-		"metadata": Models.WfmVersionedEntityMetadata;
-		"sourceData"?: Models.ListWrapperForecastSourceDayPointer;
-		"referenceStartDate"?: string;
-		"modifications"?: Models.ListWrapperWfmForecastModification;
-		"generationResults"?: Models.ForecastGenerationResult;
-	}
-	
-	export interface ShortTermForecastListItemResponse { 
-		"id"?: string;
-		"selfUri"?: string;
-		"weekDate": string;
-		"description"?: string;
-		"creationMethod"?: string;
-		"metadata": Models.WfmVersionedEntityMetadata;
-	}
-	
-	export interface ShortTermForecastListResponse { 
-		"entities"?: Array<Models.ShortTermForecastListItemResponse>;
-	}
-	
 	export interface ShortTermForecastReference { 
 		"id"?: string;
 		"selfUri"?: string;
 		"weekDate": string;
 		"description"?: string;
-	}
-	
-	export interface ShortTermForecastResponse { 
-		"status"?: string;
-		"result"?: Models.ShortTermForecast;
-		"operationId"?: string;
 	}
 	
 	export interface ShortTermForecastingSettings { 
@@ -19664,6 +19702,7 @@ declare namespace Models {
 		"provider"?: string;
 		"scriptId"?: string;
 		"peerId"?: string;
+		"wrapup"?: Models.Wrapup;
 	}
 	
 	export interface SocialHandle { 
@@ -20200,18 +20239,7 @@ declare namespace Models {
 		"hours"?: number;
 	}
 	
-	export interface TimeOffRequestEntityList { 
-		"entities"?: Array<Models.TimeOffRequestResponse>;
-	}
-	
-	export interface TimeOffRequestList { 
-		"id"?: string;
-		"name"?: string;
-		"timeOffRequests"?: Array<Models.TimeOffRequestResponse>;
-		"selfUri"?: string;
-	}
-	
-	export interface TimeOffRequestLookup { 
+	export interface TimeOffRequest { 
 		"id": string;
 		"user": Models.UserReference;
 		"isFullDayRequest"?: boolean;
@@ -20230,8 +20258,15 @@ declare namespace Models {
 		"selfUri"?: string;
 	}
 	
-	export interface TimeOffRequestLookupList { 
-		"entities": Array<Models.TimeOffRequestLookup>;
+	export interface TimeOffRequestList { 
+		"id"?: string;
+		"name"?: string;
+		"timeOffRequests"?: Array<Models.TimeOffRequestResponse>;
+		"selfUri"?: string;
+	}
+	
+	export interface TimeOffRequestListing { 
+		"entities": Array<Models.TimeOffRequest>;
 	}
 	
 	export interface TimeOffRequestNotification { 
@@ -20789,11 +20824,6 @@ declare namespace Models {
 		"unread"?: boolean;
 	}
 	
-	export interface UnscheduledAgentWarning { 
-		"agent"?: Models.UserReference;
-		"unscheduledReason"?: string;
-	}
-	
 	export interface UpdateActionInput { 
 		"category"?: string;
 		"name"?: string;
@@ -20895,16 +20925,15 @@ declare namespace Models {
 		"selfUri"?: string;
 	}
 	
-	export interface UpdateWeekScheduleRequest { 
-		"description"?: string;
-		"published"?: boolean;
-		"userSchedules"?: { [key: string]: Models.UserSchedule; };
-		"partialUploadIds"?: Array<string>;
-		"metadata": Models.WfmVersionedEntityMetadata;
-		"agentSchedulesVersion": number;
-		"shortTermForecast"?: Models.ShortTermForecastReference;
-		"headcountForecast"?: Models.HeadcountForecast;
-		"agentUpdateFilter"?: string;
+	export interface UploadUrlRequest { 
+		"fileName"?: string;
+		"contentMd5"?: string;
+		"signedUrlTimeoutSeconds"?: number;
+	}
+	
+	export interface UploadUrlResponse { 
+		"url"?: string;
+		"headers"?: { [key: string]: string; };
 	}
 	
 	export interface Usage { 
@@ -21539,10 +21568,6 @@ declare namespace Models {
 		"manuallyEdited"?: boolean;
 	}
 	
-	export interface UserSchedulesPartialUploadRequest { 
-		"userSchedules": { [key: string]: Models.UserSchedule; };
-	}
-	
 	export interface UserSearchCriteria { 
 		"endValue"?: string;
 		"values"?: Array<string>;
@@ -21648,6 +21673,15 @@ declare namespace Models {
 		"response"?: Models.SubscriberResponse;
 	}
 	
+	export interface ValidationLimits { 
+		"minLength"?: Models.MinLength;
+		"maxLength"?: Models.MaxLength;
+		"minItems"?: Models.MinLength;
+		"maxItems"?: Models.MaxLength;
+		"minimum"?: Models.MinLength;
+		"maximum"?: Models.MaxLength;
+	}
+	
 	export interface ValueWrapperDate { 
 		"value"?: string;
 	}
@@ -21682,6 +21716,7 @@ declare namespace Models {
 		"peerId"?: string;
 		"msids"?: Array<string>;
 		"self"?: Models.Address;
+		"wrapup"?: Models.Wrapup;
 	}
 	
 	export interface ViewFilter { 
@@ -22124,11 +22159,6 @@ declare namespace Models {
 		"id"?: string;
 	}
 	
-	export interface WfmAbandonRate { 
-		"include": boolean;
-		"percent"?: number;
-	}
-	
 	export interface WfmAgent { 
 		"id"?: string;
 		"user"?: Models.UserReference;
@@ -22187,11 +22217,6 @@ declare namespace Models {
 		"startDate"?: string;
 		"lengthInMinutes"?: number;
 		"activities"?: Array<Models.WfmAgentScheduleUpdateTopicWfmScheduleActivity>;
-	}
-	
-	export interface WfmAverageSpeedOfAnswer { 
-		"include": boolean;
-		"seconds"?: number;
 	}
 	
 	export interface WfmBuIntradayDataUpdateTopicBuIntradayDataGroup { 
@@ -22396,24 +22421,6 @@ declare namespace Models {
 		"dateModified"?: string;
 	}
 	
-	export interface WfmForecastModification { 
-		"type": string;
-		"startIntervalIndex"?: number;
-		"endIntervalIndex"?: number;
-		"metric": string;
-		"value"?: number;
-		"values"?: Array<Models.WfmForecastModificationIntervalOffsetValue>;
-		"enabled": boolean;
-		"attributes": Models.WfmForecastModificationAttributes;
-	}
-	
-	export interface WfmForecastModificationAttributes { 
-		"queues"?: Array<Models.QueueReference>;
-		"mediaTypes"?: Array<string>;
-		"languages"?: Array<Models.LanguageReference>;
-		"skillSets"?: Array<Array<Models.RoutingSkillReference>>;
-	}
-	
 	export interface WfmForecastModificationIntervalOffsetValue { 
 		"intervalIndex": number;
 		"value": number;
@@ -22516,11 +22523,6 @@ declare namespace Models {
 		"noDataReason"?: string;
 	}
 	
-	export interface WfmIntradayQueueListing { 
-		"entities"?: Array<Models.IntradayQueue>;
-		"noDataReason"?: string;
-	}
-	
 	export interface WfmMoveAgentsCompleteTopicManagementUnit { 
 		"id"?: string;
 	}
@@ -22555,12 +22557,6 @@ declare namespace Models {
 		"downloadUrl"?: string;
 		"percentComplete"?: number;
 		"eventType"?: string;
-	}
-	
-	export interface WfmServiceLevel { 
-		"include": boolean;
-		"percent"?: number;
-		"seconds"?: number;
 	}
 	
 	export interface WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate { 

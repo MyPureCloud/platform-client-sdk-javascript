@@ -5,7 +5,7 @@ class WidgetsApi {
 	/**
 	 * Widgets service.
 	 * @module purecloud-platform-client-v2/api/WidgetsApi
-	 * @version 79.0.1
+	 * @version 80.0.0
 	 */
 
 	/**

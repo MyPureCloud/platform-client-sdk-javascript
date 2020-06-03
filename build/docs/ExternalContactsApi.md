@@ -9,6 +9,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | ------------- | ------------- | ------------- |
 [**deleteExternalcontactsContact**](ExternalContactsApi.html#deleteExternalcontactsContact) | **DELETE** /api/v2/externalcontacts/contacts/{contactId} | Delete an external contact
 [**deleteExternalcontactsContactNote**](ExternalContactsApi.html#deleteExternalcontactsContactNote) | **DELETE** /api/v2/externalcontacts/contacts/{contactId}/notes/{noteId} | Delete a note for an external contact
+[**deleteExternalcontactsContactsSchema**](ExternalContactsApi.html#deleteExternalcontactsContactsSchema) | **DELETE** /api/v2/externalcontacts/contacts/schemas/{schemaId} | Delete a schema
 [**deleteExternalcontactsOrganization**](ExternalContactsApi.html#deleteExternalcontactsOrganization) | **DELETE** /api/v2/externalcontacts/organizations/{externalOrganizationId} | Delete an external organization
 [**deleteExternalcontactsOrganizationNote**](ExternalContactsApi.html#deleteExternalcontactsOrganizationNote) | **DELETE** /api/v2/externalcontacts/organizations/{externalOrganizationId}/notes/{noteId} | Delete a note for an external organization
 [**deleteExternalcontactsOrganizationTrustor**](ExternalContactsApi.html#deleteExternalcontactsOrganizationTrustor) | **DELETE** /api/v2/externalcontacts/organizations/{externalOrganizationId}/trustor | Unlink the Trustor for this External Organization
@@ -17,25 +18,37 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getExternalcontactsContactNote**](ExternalContactsApi.html#getExternalcontactsContactNote) | **GET** /api/v2/externalcontacts/contacts/{contactId}/notes/{noteId} | Fetch a note for an external contact
 [**getExternalcontactsContactNotes**](ExternalContactsApi.html#getExternalcontactsContactNotes) | **GET** /api/v2/externalcontacts/contacts/{contactId}/notes | List notes for an external contact
 [**getExternalcontactsContacts**](ExternalContactsApi.html#getExternalcontactsContacts) | **GET** /api/v2/externalcontacts/contacts | Search for external contacts
+[**getExternalcontactsContactsSchema**](ExternalContactsApi.html#getExternalcontactsContactsSchema) | **GET** /api/v2/externalcontacts/contacts/schemas/{schemaId} | Get a schema
+[**getExternalcontactsContactsSchemaVersion**](ExternalContactsApi.html#getExternalcontactsContactsSchemaVersion) | **GET** /api/v2/externalcontacts/contacts/schemas/{schemaId}/versions/{versionId} | Get a specific version of a schema
+[**getExternalcontactsContactsSchemaVersions**](ExternalContactsApi.html#getExternalcontactsContactsSchemaVersions) | **GET** /api/v2/externalcontacts/contacts/schemas/{schemaId}/versions | Get all versions of an external contact&#39;s schema
+[**getExternalcontactsContactsSchemas**](ExternalContactsApi.html#getExternalcontactsContactsSchemas) | **GET** /api/v2/externalcontacts/contacts/schemas | Get a list of schemas.
 [**getExternalcontactsOrganization**](ExternalContactsApi.html#getExternalcontactsOrganization) | **GET** /api/v2/externalcontacts/organizations/{externalOrganizationId} | Fetch an external organization
 [**getExternalcontactsOrganizationContacts**](ExternalContactsApi.html#getExternalcontactsOrganizationContacts) | **GET** /api/v2/externalcontacts/organizations/{externalOrganizationId}/contacts | Search for external contacts in an external organization
 [**getExternalcontactsOrganizationNote**](ExternalContactsApi.html#getExternalcontactsOrganizationNote) | **GET** /api/v2/externalcontacts/organizations/{externalOrganizationId}/notes/{noteId} | Fetch a note for an external organization
 [**getExternalcontactsOrganizationNotes**](ExternalContactsApi.html#getExternalcontactsOrganizationNotes) | **GET** /api/v2/externalcontacts/organizations/{externalOrganizationId}/notes | List notes for an external organization
 [**getExternalcontactsOrganizationRelationships**](ExternalContactsApi.html#getExternalcontactsOrganizationRelationships) | **GET** /api/v2/externalcontacts/organizations/{externalOrganizationId}/relationships | Fetch a relationship for an external organization
 [**getExternalcontactsOrganizations**](ExternalContactsApi.html#getExternalcontactsOrganizations) | **GET** /api/v2/externalcontacts/organizations | Search for external organizations
+[**getExternalcontactsOrganizationsSchema**](ExternalContactsApi.html#getExternalcontactsOrganizationsSchema) | **GET** /api/v2/externalcontacts/organizations/schemas/{schemaId} | Get a schema
+[**getExternalcontactsOrganizationsSchemaVersion**](ExternalContactsApi.html#getExternalcontactsOrganizationsSchemaVersion) | **GET** /api/v2/externalcontacts/organizations/schemas/{schemaId}/versions/{versionId} | Get a specific version of a schema
+[**getExternalcontactsOrganizationsSchemaVersions**](ExternalContactsApi.html#getExternalcontactsOrganizationsSchemaVersions) | **GET** /api/v2/externalcontacts/organizations/schemas/{schemaId}/versions | Get all versions of an external organization&#39;s schema
+[**getExternalcontactsOrganizationsSchemas**](ExternalContactsApi.html#getExternalcontactsOrganizationsSchemas) | **GET** /api/v2/externalcontacts/organizations/schemas | Get a list of schemas.
 [**getExternalcontactsRelationship**](ExternalContactsApi.html#getExternalcontactsRelationship) | **GET** /api/v2/externalcontacts/relationships/{relationshipId} | Fetch a relationship
 [**getExternalcontactsReversewhitepageslookup**](ExternalContactsApi.html#getExternalcontactsReversewhitepageslookup) | **GET** /api/v2/externalcontacts/reversewhitepageslookup | Look up contacts and externalOrganizations based on an attribute. Maximum of 25 values returned.
 [**postExternalcontactsContactNotes**](ExternalContactsApi.html#postExternalcontactsContactNotes) | **POST** /api/v2/externalcontacts/contacts/{contactId}/notes | Create a note for an external contact
 [**postExternalcontactsContacts**](ExternalContactsApi.html#postExternalcontactsContacts) | **POST** /api/v2/externalcontacts/contacts | Create an external contact
+[**postExternalcontactsContactsSchemas**](ExternalContactsApi.html#postExternalcontactsContactsSchemas) | **POST** /api/v2/externalcontacts/contacts/schemas | Create a schema
 [**postExternalcontactsOrganizationNotes**](ExternalContactsApi.html#postExternalcontactsOrganizationNotes) | **POST** /api/v2/externalcontacts/organizations/{externalOrganizationId}/notes | Create a note for an external organization
 [**postExternalcontactsOrganizations**](ExternalContactsApi.html#postExternalcontactsOrganizations) | **POST** /api/v2/externalcontacts/organizations | Create an external organization
+[**postExternalcontactsOrganizationsSchemas**](ExternalContactsApi.html#postExternalcontactsOrganizationsSchemas) | **POST** /api/v2/externalcontacts/organizations/schemas | Create a schema
 [**postExternalcontactsRelationships**](ExternalContactsApi.html#postExternalcontactsRelationships) | **POST** /api/v2/externalcontacts/relationships | Create a relationship
 [**putExternalcontactsContact**](ExternalContactsApi.html#putExternalcontactsContact) | **PUT** /api/v2/externalcontacts/contacts/{contactId} | Update an external contact
 [**putExternalcontactsContactNote**](ExternalContactsApi.html#putExternalcontactsContactNote) | **PUT** /api/v2/externalcontacts/contacts/{contactId}/notes/{noteId} | Update a note for an external contact
+[**putExternalcontactsContactsSchema**](ExternalContactsApi.html#putExternalcontactsContactsSchema) | **PUT** /api/v2/externalcontacts/contacts/schemas/{schemaId} | Update a schema
 [**putExternalcontactsConversation**](ExternalContactsApi.html#putExternalcontactsConversation) | **PUT** /api/v2/externalcontacts/conversations/{conversationId} | Associate an external contact with a conversation
 [**putExternalcontactsOrganization**](ExternalContactsApi.html#putExternalcontactsOrganization) | **PUT** /api/v2/externalcontacts/organizations/{externalOrganizationId} | Update an external organization
 [**putExternalcontactsOrganizationNote**](ExternalContactsApi.html#putExternalcontactsOrganizationNote) | **PUT** /api/v2/externalcontacts/organizations/{externalOrganizationId}/notes/{noteId} | Update a note for an external organization
 [**putExternalcontactsOrganizationTrustorTrustorId**](ExternalContactsApi.html#putExternalcontactsOrganizationTrustorTrustorId) | **PUT** /api/v2/externalcontacts/organizations/{externalOrganizationId}/trustor/{trustorId} | Links a Trustor with an External Organization
+[**putExternalcontactsOrganizationsSchema**](ExternalContactsApi.html#putExternalcontactsOrganizationsSchema) | **PUT** /api/v2/externalcontacts/organizations/schemas/{schemaId} | Update a schema
 [**putExternalcontactsRelationship**](ExternalContactsApi.html#putExternalcontactsRelationship) | **PUT** /api/v2/externalcontacts/relationships/{relationshipId} | Update a relationship
 {: class="table table-striped"}
 
@@ -150,6 +163,61 @@ apiInstance.deleteExternalcontactsContactNote(contactId, noteId)
 ### Return type
 
 **Empty**
+
+<a name="deleteExternalcontactsContactsSchema"></a>
+
+# void deleteExternalcontactsContactsSchema(schemaId)
+
+
+
+DELETE /api/v2/externalcontacts/contacts/schemas/{schemaId}
+
+Delete a schema
+
+
+
+Requires ANY permissions: 
+
+* externalContacts:customFields:edit
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ExternalContactsApi();
+
+let schemaId = "schemaId_example"; // String | Schema ID
+
+apiInstance.deleteExternalcontactsContactsSchema(schemaId)
+  .then(() => {
+    console.log('deleteExternalcontactsContactsSchema returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteExternalcontactsContactsSchema');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **schemaId** | **String** | Schema ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
 
 <a name="deleteExternalcontactsOrganization"></a>
 
@@ -624,6 +692,223 @@ apiInstance.getExternalcontactsContacts(opts)
 
 **ContactListing**
 
+<a name="getExternalcontactsContactsSchema"></a>
+
+# DataSchema getExternalcontactsContactsSchema(schemaId)
+
+
+
+GET /api/v2/externalcontacts/contacts/schemas/{schemaId}
+
+Get a schema
+
+
+
+Requires ANY permissions: 
+
+* externalContacts:customFields:view
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ExternalContactsApi();
+
+let schemaId = "schemaId_example"; // String | Schema ID
+
+apiInstance.getExternalcontactsContactsSchema(schemaId)
+  .then((data) => {
+    console.log(`getExternalcontactsContactsSchema success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getExternalcontactsContactsSchema');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **schemaId** | **String** | Schema ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+**DataSchema**
+
+<a name="getExternalcontactsContactsSchemaVersion"></a>
+
+# DataSchema getExternalcontactsContactsSchemaVersion(schemaId, versionId)
+
+
+
+GET /api/v2/externalcontacts/contacts/schemas/{schemaId}/versions/{versionId}
+
+Get a specific version of a schema
+
+
+
+Requires ANY permissions: 
+
+* externalContacts:customFields:view
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ExternalContactsApi();
+
+let schemaId = "schemaId_example"; // String | Schema ID
+let versionId = "versionId_example"; // String | Schema version
+
+apiInstance.getExternalcontactsContactsSchemaVersion(schemaId, versionId)
+  .then((data) => {
+    console.log(`getExternalcontactsContactsSchemaVersion success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getExternalcontactsContactsSchemaVersion');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **schemaId** | **String** | Schema ID |  |
+ **versionId** | **String** | Schema version |  |
+{: class="table table-striped"}
+
+### Return type
+
+**DataSchema**
+
+<a name="getExternalcontactsContactsSchemaVersions"></a>
+
+# DataSchema getExternalcontactsContactsSchemaVersions(schemaId)
+
+
+
+GET /api/v2/externalcontacts/contacts/schemas/{schemaId}/versions
+
+Get all versions of an external contact&#39;s schema
+
+
+
+Requires ANY permissions: 
+
+* externalContacts:customFields:view
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ExternalContactsApi();
+
+let schemaId = "schemaId_example"; // String | Schema ID
+
+apiInstance.getExternalcontactsContactsSchemaVersions(schemaId)
+  .then((data) => {
+    console.log(`getExternalcontactsContactsSchemaVersions success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getExternalcontactsContactsSchemaVersions');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **schemaId** | **String** | Schema ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+**DataSchema**
+
+<a name="getExternalcontactsContactsSchemas"></a>
+
+# DataSchemaListing getExternalcontactsContactsSchemas()
+
+
+
+GET /api/v2/externalcontacts/contacts/schemas
+
+Get a list of schemas.
+
+
+
+Requires ANY permissions: 
+
+* externalContacts:customFields:view
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ExternalContactsApi();
+
+apiInstance.getExternalcontactsContactsSchemas()
+  .then((data) => {
+    console.log(`getExternalcontactsContactsSchemas success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getExternalcontactsContactsSchemas');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+{: class="table table-striped"}
+
+### Return type
+
+**DataSchemaListing**
+
 <a name="getExternalcontactsOrganization"></a>
 
 # ExternalOrganization getExternalcontactsOrganization(externalOrganizationId, opts)
@@ -1015,6 +1300,223 @@ apiInstance.getExternalcontactsOrganizations(opts)
 ### Return type
 
 **ExternalOrganizationListing**
+
+<a name="getExternalcontactsOrganizationsSchema"></a>
+
+# DataSchema getExternalcontactsOrganizationsSchema(schemaId)
+
+
+
+GET /api/v2/externalcontacts/organizations/schemas/{schemaId}
+
+Get a schema
+
+
+
+Requires ANY permissions: 
+
+* externalContacts:customFields:view
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ExternalContactsApi();
+
+let schemaId = "schemaId_example"; // String | Schema ID
+
+apiInstance.getExternalcontactsOrganizationsSchema(schemaId)
+  .then((data) => {
+    console.log(`getExternalcontactsOrganizationsSchema success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getExternalcontactsOrganizationsSchema');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **schemaId** | **String** | Schema ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+**DataSchema**
+
+<a name="getExternalcontactsOrganizationsSchemaVersion"></a>
+
+# DataSchema getExternalcontactsOrganizationsSchemaVersion(schemaId, versionId)
+
+
+
+GET /api/v2/externalcontacts/organizations/schemas/{schemaId}/versions/{versionId}
+
+Get a specific version of a schema
+
+
+
+Requires ANY permissions: 
+
+* externalContacts:customFields:view
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ExternalContactsApi();
+
+let schemaId = "schemaId_example"; // String | Schema ID
+let versionId = "versionId_example"; // String | Schema version
+
+apiInstance.getExternalcontactsOrganizationsSchemaVersion(schemaId, versionId)
+  .then((data) => {
+    console.log(`getExternalcontactsOrganizationsSchemaVersion success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getExternalcontactsOrganizationsSchemaVersion');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **schemaId** | **String** | Schema ID |  |
+ **versionId** | **String** | Schema version |  |
+{: class="table table-striped"}
+
+### Return type
+
+**DataSchema**
+
+<a name="getExternalcontactsOrganizationsSchemaVersions"></a>
+
+# DataSchema getExternalcontactsOrganizationsSchemaVersions(schemaId)
+
+
+
+GET /api/v2/externalcontacts/organizations/schemas/{schemaId}/versions
+
+Get all versions of an external organization&#39;s schema
+
+
+
+Requires ANY permissions: 
+
+* externalContacts:customFields:view
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ExternalContactsApi();
+
+let schemaId = "schemaId_example"; // String | Schema ID
+
+apiInstance.getExternalcontactsOrganizationsSchemaVersions(schemaId)
+  .then((data) => {
+    console.log(`getExternalcontactsOrganizationsSchemaVersions success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getExternalcontactsOrganizationsSchemaVersions');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **schemaId** | **String** | Schema ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+**DataSchema**
+
+<a name="getExternalcontactsOrganizationsSchemas"></a>
+
+# DataSchemaListing getExternalcontactsOrganizationsSchemas()
+
+
+
+GET /api/v2/externalcontacts/organizations/schemas
+
+Get a list of schemas.
+
+
+
+Requires ANY permissions: 
+
+* externalContacts:customFields:view
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ExternalContactsApi();
+
+apiInstance.getExternalcontactsOrganizationsSchemas()
+  .then((data) => {
+    console.log(`getExternalcontactsOrganizationsSchemas success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getExternalcontactsOrganizationsSchemas');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+{: class="table table-striped"}
+
+### Return type
+
+**DataSchemaListing**
 
 <a name="getExternalcontactsRelationship"></a>
 
@@ -2669,6 +3171,107 @@ apiInstance.postExternalcontactsContacts(body)
 
 **ExternalContact**
 
+<a name="postExternalcontactsContactsSchemas"></a>
+
+# DataSchema postExternalcontactsContactsSchemas(body)
+
+
+
+POST /api/v2/externalcontacts/contacts/schemas
+
+Create a schema
+
+
+
+Requires ANY permissions: 
+
+* externalContacts:customFields:add
+
+
+### Request Body Schema
+
+<script type="text/javascript">
+	function copyDataSchemaExample() {
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#DataSchemaExample').text()).select();
+		document.execCommand("copy");
+		temp.remove();
+		return false;
+	}
+</script>
+
+DataSchema <a href="#" onclick="return copyDataSchemaExample()">Copy</a>
+
+<div id="DataSchemaExample">
+
+```{"language":"json", "maxHeight": "250px"}
+{ 
+  "id": String, 
+  "name": String, 
+  "version": Number, 
+  "appliesTo": [String], 
+  "enabled": Boolean, 
+  "createdBy": { 
+    "id": String, 
+    "name": String, 
+    "selfUri": String, 
+  },  
+  "dateCreated": Date, 
+  "jsonSchema": { 
+    "id": String, 
+    "$schema": String, 
+    "title": String, 
+    "description": String, 
+    "type": String, 
+    "required": [String], 
+    "properties": {String: Object}, 
+    "additionalProperties": Object, 
+  },  
+  "selfUri": String, 
+}
+```
+
+</div>
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ExternalContactsApi();
+
+let body = {}; // Object | Schema
+
+apiInstance.postExternalcontactsContactsSchemas(body)
+  .then((data) => {
+    console.log(`postExternalcontactsContactsSchemas success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postExternalcontactsContactsSchemas');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | Schema |  |
+{: class="table table-striped"}
+
+### Return type
+
+**DataSchema**
+
 <a name="postExternalcontactsOrganizationNotes"></a>
 
 # Note postExternalcontactsOrganizationNotes(externalOrganizationId, body)
@@ -4133,6 +4736,107 @@ apiInstance.postExternalcontactsOrganizations(body)
 ### Return type
 
 **ExternalOrganization**
+
+<a name="postExternalcontactsOrganizationsSchemas"></a>
+
+# DataSchema postExternalcontactsOrganizationsSchemas(body)
+
+
+
+POST /api/v2/externalcontacts/organizations/schemas
+
+Create a schema
+
+
+
+Requires ANY permissions: 
+
+* externalContacts:customFields:add
+
+
+### Request Body Schema
+
+<script type="text/javascript">
+	function copyDataSchemaExample() {
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#DataSchemaExample').text()).select();
+		document.execCommand("copy");
+		temp.remove();
+		return false;
+	}
+</script>
+
+DataSchema <a href="#" onclick="return copyDataSchemaExample()">Copy</a>
+
+<div id="DataSchemaExample">
+
+```{"language":"json", "maxHeight": "250px"}
+{ 
+  "id": String, 
+  "name": String, 
+  "version": Number, 
+  "appliesTo": [String], 
+  "enabled": Boolean, 
+  "createdBy": { 
+    "id": String, 
+    "name": String, 
+    "selfUri": String, 
+  },  
+  "dateCreated": Date, 
+  "jsonSchema": { 
+    "id": String, 
+    "$schema": String, 
+    "title": String, 
+    "description": String, 
+    "type": String, 
+    "required": [String], 
+    "properties": {String: Object}, 
+    "additionalProperties": Object, 
+  },  
+  "selfUri": String, 
+}
+```
+
+</div>
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ExternalContactsApi();
+
+let body = {}; // Object | Schema
+
+apiInstance.postExternalcontactsOrganizationsSchemas(body)
+  .then((data) => {
+    console.log(`postExternalcontactsOrganizationsSchemas success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postExternalcontactsOrganizationsSchemas');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | Schema |  |
+{: class="table table-striped"}
+
+### Return type
+
+**DataSchema**
 
 <a name="postExternalcontactsRelationships"></a>
 
@@ -7037,6 +7741,109 @@ apiInstance.putExternalcontactsContactNote(contactId, noteId, body)
 
 **Note**
 
+<a name="putExternalcontactsContactsSchema"></a>
+
+# DataSchema putExternalcontactsContactsSchema(schemaId, body)
+
+
+
+PUT /api/v2/externalcontacts/contacts/schemas/{schemaId}
+
+Update a schema
+
+
+
+Requires ANY permissions: 
+
+* externalContacts:customFields:edit
+
+
+### Request Body Schema
+
+<script type="text/javascript">
+	function copyDataSchemaExample() {
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#DataSchemaExample').text()).select();
+		document.execCommand("copy");
+		temp.remove();
+		return false;
+	}
+</script>
+
+DataSchema <a href="#" onclick="return copyDataSchemaExample()">Copy</a>
+
+<div id="DataSchemaExample">
+
+```{"language":"json", "maxHeight": "250px"}
+{ 
+  "id": String, 
+  "name": String, 
+  "version": Number, 
+  "appliesTo": [String], 
+  "enabled": Boolean, 
+  "createdBy": { 
+    "id": String, 
+    "name": String, 
+    "selfUri": String, 
+  },  
+  "dateCreated": Date, 
+  "jsonSchema": { 
+    "id": String, 
+    "$schema": String, 
+    "title": String, 
+    "description": String, 
+    "type": String, 
+    "required": [String], 
+    "properties": {String: Object}, 
+    "additionalProperties": Object, 
+  },  
+  "selfUri": String, 
+}
+```
+
+</div>
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ExternalContactsApi();
+
+let schemaId = "schemaId_example"; // String | Schema ID
+let body = {}; // Object | Data Schema
+
+apiInstance.putExternalcontactsContactsSchema(schemaId, body)
+  .then((data) => {
+    console.log(`putExternalcontactsContactsSchema success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putExternalcontactsContactsSchema');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **schemaId** | **String** | Schema ID |  |
+ **body** | **Object** | Data Schema |  |
+{: class="table table-striped"}
+
+### Return type
+
+**DataSchema**
+
 <a name="putExternalcontactsConversation"></a>
 
 # void putExternalcontactsConversation(conversationId, body)
@@ -8646,6 +9453,109 @@ apiInstance.putExternalcontactsOrganizationTrustorTrustorId(externalOrganization
 ### Return type
 
 **ExternalOrganizationTrustorLink**
+
+<a name="putExternalcontactsOrganizationsSchema"></a>
+
+# DataSchema putExternalcontactsOrganizationsSchema(schemaId, body)
+
+
+
+PUT /api/v2/externalcontacts/organizations/schemas/{schemaId}
+
+Update a schema
+
+
+
+Requires ANY permissions: 
+
+* externalContacts:customFields:edit
+
+
+### Request Body Schema
+
+<script type="text/javascript">
+	function copyDataSchemaExample() {
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#DataSchemaExample').text()).select();
+		document.execCommand("copy");
+		temp.remove();
+		return false;
+	}
+</script>
+
+DataSchema <a href="#" onclick="return copyDataSchemaExample()">Copy</a>
+
+<div id="DataSchemaExample">
+
+```{"language":"json", "maxHeight": "250px"}
+{ 
+  "id": String, 
+  "name": String, 
+  "version": Number, 
+  "appliesTo": [String], 
+  "enabled": Boolean, 
+  "createdBy": { 
+    "id": String, 
+    "name": String, 
+    "selfUri": String, 
+  },  
+  "dateCreated": Date, 
+  "jsonSchema": { 
+    "id": String, 
+    "$schema": String, 
+    "title": String, 
+    "description": String, 
+    "type": String, 
+    "required": [String], 
+    "properties": {String: Object}, 
+    "additionalProperties": Object, 
+  },  
+  "selfUri": String, 
+}
+```
+
+</div>
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ExternalContactsApi();
+
+let schemaId = "schemaId_example"; // String | Schema ID
+let body = {}; // Object | Data Schema
+
+apiInstance.putExternalcontactsOrganizationsSchema(schemaId, body)
+  .then((data) => {
+    console.log(`putExternalcontactsOrganizationsSchema success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putExternalcontactsOrganizationsSchema');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **schemaId** | **String** | Schema ID |  |
+ **body** | **Object** | Data Schema |  |
+{: class="table table-striped"}
+
+### Return type
+
+**DataSchema**
 
 <a name="putExternalcontactsRelationship"></a>
 

@@ -5,7 +5,7 @@ class RoutingApi {
 	/**
 	 * Routing service.
 	 * @module purecloud-platform-client-v2/api/RoutingApi
-	 * @version 79.0.1
+	 * @version 80.0.0
 	 */
 
 	/**
@@ -199,6 +199,31 @@ class RoutingApi {
 			'/api/v2/routing/skills/{skillId}', 
 			'DELETE', 
 			{ 'skillId': skillId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete an Address by Id for SMS
+	 * 
+	 * @param {String} addressId Address ID
+	 */
+	deleteRoutingSmsAddress(addressId) { 
+		// verify the required parameter 'addressId' is set
+		if (addressId === undefined || addressId === null) {
+			throw 'Missing the required parameter "addressId" when calling deleteRoutingSmsAddress';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/sms/addresses/{addressId}', 
+			'DELETE', 
+			{ 'addressId': addressId }, 
 			{  }, 
 			{  }, 
 			{  }, 

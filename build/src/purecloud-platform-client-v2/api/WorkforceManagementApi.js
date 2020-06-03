@@ -5,7 +5,7 @@ class WorkforceManagementApi {
 	/**
 	 * WorkforceManagement service.
 	 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-	 * @version 79.0.1
+	 * @version 80.0.0
 	 */
 
 	/**
@@ -261,7 +261,7 @@ class WorkforceManagementApi {
 	}
 
 	/**
-	 * Deletes an activity code
+	 * Deprecated/Gone: Use the new business unit activity code resources
 	 * 
 	 * @param {String} muId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
 	 * @param {String} acId The ID of the activity code to delete
@@ -291,9 +291,9 @@ class WorkforceManagementApi {
 	}
 
 	/**
-	 * Cancel a schedule run
+	 * Gone.  Scheduling has moved under business units
 	 * 
-	 * @param {String} managementUnitId The ID of the management unit.
+	 * @param {String} managementUnitId (Deprecated/gone): The ID of the management unit.
 	 * @param {String} runId The ID of the schedule run
 	 */
 	deleteWorkforcemanagementManagementunitSchedulingRun(managementUnitId, runId) { 
@@ -321,10 +321,10 @@ class WorkforceManagementApi {
 	}
 
 	/**
-	 * Delete a service goal group
+	 * Gone. Replaced with service goal templates and planning groups under business units
 	 * 
-	 * @param {String} managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
-	 * @param {String} serviceGoalGroupId The ID of the service goal group to delete
+	 * @param {String} managementUnitId (Deprecated/gone): The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+	 * @param {String} serviceGoalGroupId Gone. The ID of the service goal group to delete
 	 */
 	deleteWorkforcemanagementManagementunitServicegoalgroup(managementUnitId, serviceGoalGroupId) { 
 		// verify the required parameter 'managementUnitId' is set
@@ -351,11 +351,11 @@ class WorkforceManagementApi {
 	}
 
 	/**
-	 * Delete a schedule
+	 * Gone.  Scheduling has moved under business units
 	 * 
 	 * @param {String} managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
 	 * @param {String} weekId First day of schedule week in yyyy-MM-dd format.
-	 * @param {String} scheduleId The ID of theschedule to delete
+	 * @param {String} scheduleId Gone/deprecated. The ID of the schedule to delete
 	 */
 	deleteWorkforcemanagementManagementunitWeekSchedule(managementUnitId, weekId, scheduleId) { 
 		// verify the required parameter 'managementUnitId' is set
@@ -386,11 +386,11 @@ class WorkforceManagementApi {
 	}
 
 	/**
-	 * Delete a short term forecast
-	 * Must not be tied to any schedules
-	 * @param {String} managementUnitId The management unit ID of the management unit to which the forecast belongs
-	 * @param {String} weekDateId The week start date of the forecast in yyyy-MM-dd format
-	 * @param {String} forecastId The ID of the forecast
+	 * Gone. Use equivalent business unit resource instead
+	 * 
+	 * @param {String} managementUnitId (Deprecated/gone): The id of the management unit.
+	 * @param {String} weekDateId (Deprecated/gone): The week start date of the forecast in yyyy-MM-dd format
+	 * @param {String} forecastId (Gone/Deprecated): The ID of the forecast
 	 */
 	deleteWorkforcemanagementManagementunitWeekShorttermforecast(managementUnitId, weekDateId, forecastId) { 
 		// verify the required parameter 'managementUnitId' is set
@@ -1395,26 +1395,21 @@ class WorkforceManagementApi {
 	}
 
 	/**
-	 * Get intraday queues for the given date
+	 * Gone.  Moved under business units
 	 * 
 	 * @param {String} muId The management unit ID of the management unit
-	 * @param {String} _date yyyy-MM-dd date string interpreted in the configured management unit time zone
 	 */
-	getWorkforcemanagementManagementunitIntradayQueues(muId, _date) { 
+	getWorkforcemanagementManagementunitIntradayQueues(muId) { 
 		// verify the required parameter 'muId' is set
 		if (muId === undefined || muId === null) {
 			throw 'Missing the required parameter "muId" when calling getWorkforcemanagementManagementunitIntradayQueues';
-		}
-		// verify the required parameter '_date' is set
-		if (_date === undefined || _date === null) {
-			throw 'Missing the required parameter "_date" when calling getWorkforcemanagementManagementunitIntradayQueues';
 		}
 
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/managementunits/{muId}/intraday/queues', 
 			'GET', 
 			{ 'muId': muId }, 
-			{ 'date': _date }, 
+			{  }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -1425,9 +1420,9 @@ class WorkforceManagementApi {
 	}
 
 	/**
-	 * Gets the status for a specific scheduling run
+	 * Gone.  Scheduling has moved under business units
 	 * 
-	 * @param {String} managementUnitId The ID of the management unit.
+	 * @param {String} managementUnitId (Deprecated/gone): The ID of the management unit.
 	 * @param {String} runId The ID of the schedule run
 	 */
 	getWorkforcemanagementManagementunitSchedulingRun(managementUnitId, runId) { 
@@ -1455,9 +1450,9 @@ class WorkforceManagementApi {
 	}
 
 	/**
-	 * Gets the result of a specific scheduling run
+	 * Gone.  Scheduling has moved under business units
 	 * 
-	 * @param {String} managementUnitId The ID of the management unit.
+	 * @param {String} managementUnitId (Deprecated/gone): The ID of the management unit.
 	 * @param {String} runId The ID of the schedule run
 	 */
 	getWorkforcemanagementManagementunitSchedulingRunResult(managementUnitId, runId) { 
@@ -1485,9 +1480,9 @@ class WorkforceManagementApi {
 	}
 
 	/**
-	 * Get the status of all the ongoing schedule runs
+	 * Gone.  Scheduling has moved under business units
 	 * 
-	 * @param {String} managementUnitId The ID of the management unit.
+	 * @param {String} managementUnitId (Deprecated/gone): The ID of the management unit.
 	 */
 	getWorkforcemanagementManagementunitSchedulingRuns(managementUnitId) { 
 		// verify the required parameter 'managementUnitId' is set
@@ -1510,10 +1505,10 @@ class WorkforceManagementApi {
 	}
 
 	/**
-	 * Get a service goal group
+	 * Gone. Replaced with service goal templates and planning groups under business units
 	 * 
-	 * @param {String} managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
-	 * @param {String} serviceGoalGroupId The ID of the service goal group to fetch
+	 * @param {String} managementUnitId (Deprecated/gone): The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+	 * @param {String} serviceGoalGroupId Gone.  The ID of the service goal group to fetch
 	 */
 	getWorkforcemanagementManagementunitServicegoalgroup(managementUnitId, serviceGoalGroupId) { 
 		// verify the required parameter 'managementUnitId' is set
@@ -1540,9 +1535,9 @@ class WorkforceManagementApi {
 	}
 
 	/**
-	 * Get service goal groups
+	 * Gone. Replaced with service goal templates and planning groups under business units
 	 * 
-	 * @param {String} managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+	 * @param {String} managementUnitId (Deprecated/gone): The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
 	 */
 	getWorkforcemanagementManagementunitServicegoalgroups(managementUnitId) { 
 		// verify the required parameter 'managementUnitId' is set
@@ -1565,7 +1560,7 @@ class WorkforceManagementApi {
 	}
 
 	/**
-	 * Get the settings for the requested management unit. Deprecated, use the GET management unit route instead
+	 * Gone. Get management unit settings via expand parameters on the GET management unit
 	 * 
 	 * @param {String} muId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
 	 */
@@ -1734,7 +1729,7 @@ class WorkforceManagementApi {
 	}
 
 	/**
-	 * Get a week schedule
+	 * Deprecated.  Use the equivalent business unit resource instead. Get a week schedule
 	 * 
 	 * @param {String} managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
 	 * @param {String} weekId First day of schedule week in yyyy-MM-dd format.
@@ -1774,11 +1769,11 @@ class WorkforceManagementApi {
 	}
 
 	/**
-	 * Get week schedule generation results
+	 * Gone.  Scheduling has moved under business units
 	 * 
 	 * @param {String} managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
 	 * @param {String} weekId First day of schedule week in yyyy-MM-dd format.
-	 * @param {String} scheduleId The ID of the schedule to fetch generation results
+	 * @param {String} scheduleId Gone/deprecated. The ID of the schedule to fetch generation results
 	 */
 	getWorkforcemanagementManagementunitWeekScheduleGenerationresults(managementUnitId, weekId, scheduleId) { 
 		// verify the required parameter 'managementUnitId' is set
@@ -1809,7 +1804,7 @@ class WorkforceManagementApi {
 	}
 
 	/**
-	 * Get the list of schedules in a week in management unit
+	 * Deprecated.  Use the equivalent business unit resource instead. Get the list of schedules in a week in management unit
 	 * 
 	 * @param {String} managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
 	 * @param {String} weekId First day of schedule week in yyyy-MM-dd format.
@@ -1879,17 +1874,13 @@ class WorkforceManagementApi {
 	}
 
 	/**
-	 * Get the final result of a short term forecast calculation with modifications applied
+	 * Gone. Use equivalent business unit resource instead
 	 * 
-	 * @param {String} managementUnitId The management unit ID of the management unit to which the forecast belongs
-	 * @param {String} weekDateId The week start date of the forecast in yyyy-MM-dd format
-	 * @param {String} forecastId The ID of the forecast
-	 * @param {Object} opts Optional parameters
-	 * @param {Boolean} opts.forceDownloadService Force the result of this operation to be sent via download service.  For testing/app development purposes
+	 * @param {String} managementUnitId (Deprecated/gone): The id of the management unit.
+	 * @param {String} weekDateId (Deprecated/gone): The week start date of the forecast in yyyy-MM-dd format
+	 * @param {String} forecastId (Gone/Deprecated): The ID of the forecast
 	 */
-	getWorkforcemanagementManagementunitWeekShorttermforecastFinal(managementUnitId, weekDateId, forecastId, opts) { 
-		opts = opts || {};
-		
+	getWorkforcemanagementManagementunitWeekShorttermforecastFinal(managementUnitId, weekDateId, forecastId) { 
 		// verify the required parameter 'managementUnitId' is set
 		if (managementUnitId === undefined || managementUnitId === null) {
 			throw 'Missing the required parameter "managementUnitId" when calling getWorkforcemanagementManagementunitWeekShorttermforecastFinal';
@@ -1907,7 +1898,7 @@ class WorkforceManagementApi {
 			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}/final', 
 			'GET', 
 			{ 'managementUnitId': managementUnitId,'weekDateId': weekDateId,'forecastId': forecastId }, 
-			{ 'forceDownloadService': opts['forceDownloadService'] }, 
+			{  }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -1918,10 +1909,10 @@ class WorkforceManagementApi {
 	}
 
 	/**
-	 * Get short term forecasts
-	 * Use \&quot;recent\&quot; for the `weekDateId` path parameter to fetch all forecasts for +/- 26 weeks from the current date
-	 * @param {String} managementUnitId The management unit ID of the management unit to which the forecast belongs
-	 * @param {String} weekDateId The week start date of the forecast in yyyy-MM-dd format
+	 * Gone. Use equivalent business unit resource instead
+	 * 
+	 * @param {String} managementUnitId (Deprecated/gone): The id of the management unit.
+	 * @param {String} weekDateId (Deprecated/gone): The week start date of the forecast in yyyy-MM-dd format
 	 */
 	getWorkforcemanagementManagementunitWeekShorttermforecasts(managementUnitId, weekDateId) { 
 		// verify the required parameter 'managementUnitId' is set
@@ -2367,7 +2358,7 @@ class WorkforceManagementApi {
 	}
 
 	/**
-	 * Update an activity code
+	 * Deprecated/Gone: Use the new business unit activity code resources
 	 * 
 	 * @param {String} muId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
 	 * @param {String} acId The ID of the activity code to update
@@ -2401,9 +2392,9 @@ class WorkforceManagementApi {
 	}
 
 	/**
-	 * Marks a specific scheduling run as applied, allowing a new rescheduling run to be started
+	 * Gone.  Scheduling has moved under business units
 	 * 
-	 * @param {String} managementUnitId The ID of the management unit.
+	 * @param {String} managementUnitId (Deprecated/gone): The ID of the management unit.
 	 * @param {String} runId The ID of the schedule run
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body body
@@ -2435,16 +2426,12 @@ class WorkforceManagementApi {
 	}
 
 	/**
-	 * Update a service goal group
+	 * Gone. Replaced with service goal templates and planning groups under business units
 	 * 
-	 * @param {String} managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
-	 * @param {String} serviceGoalGroupId The ID of the service goal group to update
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body body
+	 * @param {String} managementUnitId (Deprecated/gone): The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+	 * @param {String} serviceGoalGroupId Gone. The ID of the service goal group to update
 	 */
-	patchWorkforcemanagementManagementunitServicegoalgroup(managementUnitId, serviceGoalGroupId, opts) { 
-		opts = opts || {};
-		
+	patchWorkforcemanagementManagementunitServicegoalgroup(managementUnitId, serviceGoalGroupId) { 
 		// verify the required parameter 'managementUnitId' is set
 		if (managementUnitId === undefined || managementUnitId === null) {
 			throw 'Missing the required parameter "managementUnitId" when calling patchWorkforcemanagementManagementunitServicegoalgroup';
@@ -2461,7 +2448,7 @@ class WorkforceManagementApi {
 			{  }, 
 			{  }, 
 			{  }, 
-			opts['body'], 
+			null, 
 			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
@@ -2469,15 +2456,11 @@ class WorkforceManagementApi {
 	}
 
 	/**
-	 * Update the settings for the requested management unit
+	 * Gone. Update settings by PATCHing the management unit
 	 * 
 	 * @param {String} muId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body config
 	 */
-	patchWorkforcemanagementManagementunitSettings(muId, opts) { 
-		opts = opts || {};
-		
+	patchWorkforcemanagementManagementunitSettings(muId) { 
 		// verify the required parameter 'muId' is set
 		if (muId === undefined || muId === null) {
 			throw 'Missing the required parameter "muId" when calling patchWorkforcemanagementManagementunitSettings';
@@ -2490,7 +2473,7 @@ class WorkforceManagementApi {
 			{  }, 
 			{  }, 
 			{  }, 
-			opts['body'], 
+			null, 
 			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
@@ -2537,19 +2520,13 @@ class WorkforceManagementApi {
 	}
 
 	/**
-	 * Update a week schedule
+	 * Gone.  Scheduling has moved under business units
 	 * 
 	 * @param {String} managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
 	 * @param {String} weekId First day of schedule week in yyyy-MM-dd format.
-	 * @param {String} scheduleId The ID of the schedule to update. Use partial uploads of user schedules if activity count in schedule is greater than 17500
-	 * @param {Object} opts Optional parameters
-	 * @param {Boolean} opts.forceAsync Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes
-	 * @param {Boolean} opts.forceDownloadService Force the result of this operation to be sent via download service.  For testing/app development purposes
-	 * @param {Object} opts.body body
+	 * @param {String} scheduleId Gone/deprecated. The ID of the schedule to update. Use partial uploads of user schedules if activity count in schedule is greater than 17500
 	 */
-	patchWorkforcemanagementManagementunitWeekSchedule(managementUnitId, weekId, scheduleId, opts) { 
-		opts = opts || {};
-		
+	patchWorkforcemanagementManagementunitWeekSchedule(managementUnitId, weekId, scheduleId) { 
 		// verify the required parameter 'managementUnitId' is set
 		if (managementUnitId === undefined || managementUnitId === null) {
 			throw 'Missing the required parameter "managementUnitId" when calling patchWorkforcemanagementManagementunitWeekSchedule';
@@ -2567,10 +2544,10 @@ class WorkforceManagementApi {
 			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekId}/schedules/{scheduleId}', 
 			'PATCH', 
 			{ 'managementUnitId': managementUnitId,'weekId': weekId,'scheduleId': scheduleId }, 
-			{ 'forceAsync': opts['forceAsync'],'forceDownloadService': opts['forceDownloadService'] }, 
 			{  }, 
 			{  }, 
-			opts['body'], 
+			{  }, 
+			null, 
 			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
@@ -3179,15 +3156,11 @@ class WorkforceManagementApi {
 	}
 
 	/**
-	 * Create a new activity code
+	 * Deprecated/Gone: Use the new business unit activity code resources
 	 * 
 	 * @param {String} muId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body body
 	 */
-	postWorkforcemanagementManagementunitActivitycodes(muId, opts) { 
-		opts = opts || {};
-		
+	postWorkforcemanagementManagementunitActivitycodes(muId) { 
 		// verify the required parameter 'muId' is set
 		if (muId === undefined || muId === null) {
 			throw 'Missing the required parameter "muId" when calling postWorkforcemanagementManagementunitActivitycodes';
@@ -3200,7 +3173,7 @@ class WorkforceManagementApi {
 			{  }, 
 			{  }, 
 			{  }, 
-			opts['body'], 
+			null, 
 			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
@@ -3268,15 +3241,11 @@ class WorkforceManagementApi {
 	}
 
 	/**
-	 * Get intraday data for the given date for the requested queueIds
+	 * Gone.  Moved under business units
 	 * 
 	 * @param {String} muId The management unit ID of the management unit
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body body
 	 */
-	postWorkforcemanagementManagementunitIntraday(muId, opts) { 
-		opts = opts || {};
-		
+	postWorkforcemanagementManagementunitIntraday(muId) { 
 		// verify the required parameter 'muId' is set
 		if (muId === undefined || muId === null) {
 			throw 'Missing the required parameter "muId" when calling postWorkforcemanagementManagementunitIntraday';
@@ -3289,7 +3258,7 @@ class WorkforceManagementApi {
 			{  }, 
 			{  }, 
 			{  }, 
-			opts['body'], 
+			null, 
 			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
@@ -3355,15 +3324,11 @@ class WorkforceManagementApi {
 	}
 
 	/**
-	 * Create a new service goal group
+	 * Gone. Replaced with service goal templates and planning groups under business units
 	 * 
-	 * @param {String} managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body body
+	 * @param {String} managementUnitId (Deprecated/gone): The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
 	 */
-	postWorkforcemanagementManagementunitServicegoalgroups(managementUnitId, opts) { 
-		opts = opts || {};
-		
+	postWorkforcemanagementManagementunitServicegoalgroups(managementUnitId) { 
 		// verify the required parameter 'managementUnitId' is set
 		if (managementUnitId === undefined || managementUnitId === null) {
 			throw 'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitServicegoalgroups';
@@ -3376,7 +3341,7 @@ class WorkforceManagementApi {
 			{  }, 
 			{  }, 
 			{  }, 
-			opts['body'], 
+			null, 
 			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
@@ -3413,7 +3378,7 @@ class WorkforceManagementApi {
 	}
 
 	/**
-	 * Gets a list of time off requests from lookup ids
+	 * Gone.  All data is now returned in the query route
 	 * 
 	 * @param {String} muId The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
 	 * @param {Object} opts Optional parameters
@@ -3471,19 +3436,13 @@ class WorkforceManagementApi {
 	}
 
 	/**
-	 * Copy a week schedule
+	 * Gone.  Scheduling has moved under business units
 	 * 
 	 * @param {String} managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
 	 * @param {String} weekId First day of schedule week in yyyy-MM-dd format.
-	 * @param {String} scheduleId The ID of the schedule to copy from
-	 * @param {Object} opts Optional parameters
-	 * @param {Boolean} opts.forceAsync Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes
-	 * @param {Boolean} opts.forceDownloadService Force the result of this operation to be sent via download service.  For testing/app development purposes
-	 * @param {Object} opts.body body
+	 * @param {String} scheduleId Gone/deprecated. The ID of the schedule to copy from
 	 */
-	postWorkforcemanagementManagementunitWeekScheduleCopy(managementUnitId, weekId, scheduleId, opts) { 
-		opts = opts || {};
-		
+	postWorkforcemanagementManagementunitWeekScheduleCopy(managementUnitId, weekId, scheduleId) { 
 		// verify the required parameter 'managementUnitId' is set
 		if (managementUnitId === undefined || managementUnitId === null) {
 			throw 'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitWeekScheduleCopy';
@@ -3501,10 +3460,10 @@ class WorkforceManagementApi {
 			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekId}/schedules/{scheduleId}/copy', 
 			'POST', 
 			{ 'managementUnitId': managementUnitId,'weekId': weekId,'scheduleId': scheduleId }, 
-			{ 'forceAsync': opts['forceAsync'],'forceDownloadService': opts['forceDownloadService'] }, 
 			{  }, 
 			{  }, 
-			opts['body'], 
+			{  }, 
+			null, 
 			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
@@ -3512,17 +3471,13 @@ class WorkforceManagementApi {
 	}
 
 	/**
-	 * Start a scheduling run to compute the reschedule. When the scheduling run finishes, a client can get the reschedule changes and then the client can apply them to the schedule, save the schedule, and mark the scheduling run as applied
+	 * Gone.  Scheduling has moved under business units
 	 * 
 	 * @param {String} managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
 	 * @param {String} weekId First day of schedule week in yyyy-MM-dd format.
-	 * @param {String} scheduleId The ID of the schedule to re-optimize
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body body
+	 * @param {String} scheduleId Gone/deprecated. The ID of the schedule to re-optimize
 	 */
-	postWorkforcemanagementManagementunitWeekScheduleReschedule(managementUnitId, weekId, scheduleId, opts) { 
-		opts = opts || {};
-		
+	postWorkforcemanagementManagementunitWeekScheduleReschedule(managementUnitId, weekId, scheduleId) { 
 		// verify the required parameter 'managementUnitId' is set
 		if (managementUnitId === undefined || managementUnitId === null) {
 			throw 'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitWeekScheduleReschedule';
@@ -3543,7 +3498,7 @@ class WorkforceManagementApi {
 			{  }, 
 			{  }, 
 			{  }, 
-			opts['body'], 
+			null, 
 			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
@@ -3551,18 +3506,12 @@ class WorkforceManagementApi {
 	}
 
 	/**
-	 * Add a schedule for a week in management unit using imported data. Use partial uploads of user schedules if activity count in schedule is greater than 17500
+	 * Gone.  Scheduling has moved under business units
 	 * 
 	 * @param {String} managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
 	 * @param {String} weekId First day of schedule week in yyyy-MM-dd format.
-	 * @param {Object} opts Optional parameters
-	 * @param {Boolean} opts.forceAsync Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes
-	 * @param {Boolean} opts.forceDownloadService Force the result of this operation to be sent via download service.  For testing/app development purposes
-	 * @param {Object} opts.body body
 	 */
-	postWorkforcemanagementManagementunitWeekSchedules(managementUnitId, weekId, opts) { 
-		opts = opts || {};
-		
+	postWorkforcemanagementManagementunitWeekSchedules(managementUnitId, weekId) { 
 		// verify the required parameter 'managementUnitId' is set
 		if (managementUnitId === undefined || managementUnitId === null) {
 			throw 'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitWeekSchedules';
@@ -3576,10 +3525,10 @@ class WorkforceManagementApi {
 			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekId}/schedules', 
 			'POST', 
 			{ 'managementUnitId': managementUnitId,'weekId': weekId }, 
-			{ 'forceAsync': opts['forceAsync'],'forceDownloadService': opts['forceDownloadService'] }, 
 			{  }, 
 			{  }, 
-			opts['body'], 
+			{  }, 
+			null, 
 			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
@@ -3587,16 +3536,12 @@ class WorkforceManagementApi {
 	}
 
 	/**
-	 * Generate a week schedule
+	 * Gone.  Scheduling has moved under business units
 	 * 
 	 * @param {String} managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
 	 * @param {String} weekId First day of schedule week in yyyy-MM-dd format.
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body body
 	 */
-	postWorkforcemanagementManagementunitWeekSchedulesGenerate(managementUnitId, weekId, opts) { 
-		opts = opts || {};
-		
+	postWorkforcemanagementManagementunitWeekSchedulesGenerate(managementUnitId, weekId) { 
 		// verify the required parameter 'managementUnitId' is set
 		if (managementUnitId === undefined || managementUnitId === null) {
 			throw 'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitWeekSchedulesGenerate';
@@ -3613,7 +3558,7 @@ class WorkforceManagementApi {
 			{  }, 
 			{  }, 
 			{  }, 
-			opts['body'], 
+			null, 
 			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
@@ -3621,16 +3566,12 @@ class WorkforceManagementApi {
 	}
 
 	/**
-	 * Partial upload of user schedules where activity count is greater than 17500
+	 * Gone.  Scheduling has moved under business units
 	 * 
 	 * @param {String} managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
 	 * @param {String} weekId First day of schedule week in yyyy-MM-dd format.
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body body
 	 */
-	postWorkforcemanagementManagementunitWeekSchedulesPartialupload(managementUnitId, weekId, opts) { 
-		opts = opts || {};
-		
+	postWorkforcemanagementManagementunitWeekSchedulesPartialupload(managementUnitId, weekId) { 
 		// verify the required parameter 'managementUnitId' is set
 		if (managementUnitId === undefined || managementUnitId === null) {
 			throw 'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitWeekSchedulesPartialupload';
@@ -3647,7 +3588,7 @@ class WorkforceManagementApi {
 			{  }, 
 			{  }, 
 			{  }, 
-			opts['body'], 
+			null, 
 			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
@@ -3804,18 +3745,13 @@ class WorkforceManagementApi {
 	}
 
 	/**
-	 * Copy a short term forecast
+	 * Gone. Use equivalent business unit resource instead
 	 * 
-	 * @param {String} managementUnitId The management unit ID of the management unit to which the forecast belongs
-	 * @param {String} weekDateId The week start date of the forecast in yyyy-MM-dd format
-	 * @param {String} forecastId The ID of the forecast to copy
-	 * @param {Object} body body
-	 * @param {Object} opts Optional parameters
-	 * @param {Boolean} opts.forceAsync Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes
+	 * @param {String} managementUnitId (Deprecated/gone): The id of the management unit.
+	 * @param {String} weekDateId (Deprecated/gone): The week start date of the forecast in yyyy-MM-dd format
+	 * @param {String} forecastId (Gone/Deprecated): The ID of the forecast
 	 */
-	postWorkforcemanagementManagementunitWeekShorttermforecastCopy(managementUnitId, weekDateId, forecastId, body, opts) { 
-		opts = opts || {};
-		
+	postWorkforcemanagementManagementunitWeekShorttermforecastCopy(managementUnitId, weekDateId, forecastId) { 
 		// verify the required parameter 'managementUnitId' is set
 		if (managementUnitId === undefined || managementUnitId === null) {
 			throw 'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitWeekShorttermforecastCopy';
@@ -3828,19 +3764,15 @@ class WorkforceManagementApi {
 		if (forecastId === undefined || forecastId === null) {
 			throw 'Missing the required parameter "forecastId" when calling postWorkforcemanagementManagementunitWeekShorttermforecastCopy';
 		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postWorkforcemanagementManagementunitWeekShorttermforecastCopy';
-		}
 
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}/copy', 
 			'POST', 
 			{ 'managementUnitId': managementUnitId,'weekDateId': weekDateId,'forecastId': forecastId }, 
-			{ 'forceAsync': opts['forceAsync'] }, 
 			{  }, 
 			{  }, 
-			body, 
+			{  }, 
+			null, 
 			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
@@ -3848,17 +3780,12 @@ class WorkforceManagementApi {
 	}
 
 	/**
-	 * Import a short term forecast
+	 * Gone. Use equivalent business unit resource instead
 	 * 
-	 * @param {String} managementUnitId The management unit ID of the management unit to which the forecast belongs
-	 * @param {String} weekDateId The week start date of the forecast in yyyy-MM-dd format
-	 * @param {Object} body body
-	 * @param {Object} opts Optional parameters
-	 * @param {Boolean} opts.forceAsync Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes
+	 * @param {String} managementUnitId (Deprecated/gone): The id of the management unit.
+	 * @param {String} weekDateId (Deprecated/gone): The week start date of the forecast in yyyy-MM-dd format
 	 */
-	postWorkforcemanagementManagementunitWeekShorttermforecasts(managementUnitId, weekDateId, body, opts) { 
-		opts = opts || {};
-		
+	postWorkforcemanagementManagementunitWeekShorttermforecasts(managementUnitId, weekDateId) { 
 		// verify the required parameter 'managementUnitId' is set
 		if (managementUnitId === undefined || managementUnitId === null) {
 			throw 'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitWeekShorttermforecasts';
@@ -3867,19 +3794,15 @@ class WorkforceManagementApi {
 		if (weekDateId === undefined || weekDateId === null) {
 			throw 'Missing the required parameter "weekDateId" when calling postWorkforcemanagementManagementunitWeekShorttermforecasts';
 		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postWorkforcemanagementManagementunitWeekShorttermforecasts';
-		}
 
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shorttermforecasts', 
 			'POST', 
 			{ 'managementUnitId': managementUnitId,'weekDateId': weekDateId }, 
-			{ 'forceAsync': opts['forceAsync'] }, 
 			{  }, 
 			{  }, 
-			body, 
+			{  }, 
+			null, 
 			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
@@ -3887,17 +3810,12 @@ class WorkforceManagementApi {
 	}
 
 	/**
-	 * Generate a short term forecast
+	 * Gone. Use equivalent business unit resource instead
 	 * 
-	 * @param {String} managementUnitId The management unit ID of the management unit to which the forecast belongs
-	 * @param {String} weekDateId The week start date of the forecast in yyyy-MM-dd format
-	 * @param {Object} body 
-	 * @param {Object} opts Optional parameters
-	 * @param {Boolean} opts.forceAsync Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes
+	 * @param {String} managementUnitId (Deprecated/gone): The id of the management unit.
+	 * @param {String} weekDateId (Deprecated/gone): The week start date of the forecast in yyyy-MM-dd format
 	 */
-	postWorkforcemanagementManagementunitWeekShorttermforecastsGenerate(managementUnitId, weekDateId, body, opts) { 
-		opts = opts || {};
-		
+	postWorkforcemanagementManagementunitWeekShorttermforecastsGenerate(managementUnitId, weekDateId) { 
 		// verify the required parameter 'managementUnitId' is set
 		if (managementUnitId === undefined || managementUnitId === null) {
 			throw 'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitWeekShorttermforecastsGenerate';
@@ -3906,19 +3824,15 @@ class WorkforceManagementApi {
 		if (weekDateId === undefined || weekDateId === null) {
 			throw 'Missing the required parameter "weekDateId" when calling postWorkforcemanagementManagementunitWeekShorttermforecastsGenerate';
 		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postWorkforcemanagementManagementunitWeekShorttermforecastsGenerate';
-		}
 
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shorttermforecasts/generate', 
 			'POST', 
 			{ 'managementUnitId': managementUnitId,'weekDateId': weekDateId }, 
-			{ 'forceAsync': opts['forceAsync'] }, 
 			{  }, 
 			{  }, 
-			body, 
+			{  }, 
+			null, 
 			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
@@ -3926,13 +3840,12 @@ class WorkforceManagementApi {
 	}
 
 	/**
-	 * Import a short term forecast
+	 * Gone. Use equivalent business unit resource instead
 	 * 
-	 * @param {String} managementUnitId The management unit ID of the management unit to which the forecast belongs
-	 * @param {String} weekDateId The week start date of the forecast in yyyy-MM-dd format
-	 * @param {Object} body body
+	 * @param {String} managementUnitId (Deprecated/gone): The id of the management unit.
+	 * @param {String} weekDateId (Deprecated/gone): The week start date of the forecast in yyyy-MM-dd format
 	 */
-	postWorkforcemanagementManagementunitWeekShorttermforecastsPartialupload(managementUnitId, weekDateId, body) { 
+	postWorkforcemanagementManagementunitWeekShorttermforecastsPartialupload(managementUnitId, weekDateId) { 
 		// verify the required parameter 'managementUnitId' is set
 		if (managementUnitId === undefined || managementUnitId === null) {
 			throw 'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitWeekShorttermforecastsPartialupload';
@@ -3940,10 +3853,6 @@ class WorkforceManagementApi {
 		// verify the required parameter 'weekDateId' is set
 		if (weekDateId === undefined || weekDateId === null) {
 			throw 'Missing the required parameter "weekDateId" when calling postWorkforcemanagementManagementunitWeekShorttermforecastsPartialupload';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postWorkforcemanagementManagementunitWeekShorttermforecastsPartialupload';
 		}
 
 		return this.apiClient.callApi(
@@ -3953,7 +3862,7 @@ class WorkforceManagementApi {
 			{  }, 
 			{  }, 
 			{  }, 
-			body, 
+			null, 
 			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']

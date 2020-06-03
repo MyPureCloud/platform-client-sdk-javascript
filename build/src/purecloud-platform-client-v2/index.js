@@ -9,6 +9,7 @@ import AuthorizationApi from './api/AuthorizationApi.js';
 import BillingApi from './api/BillingApi.js';
 import ContentManagementApi from './api/ContentManagementApi.js';
 import ConversationsApi from './api/ConversationsApi.js';
+import DataExtensionsApi from './api/DataExtensionsApi.js';
 import ExternalContactsApi from './api/ExternalContactsApi.js';
 import FaxApi from './api/FaxApi.js';
 import FlowsApi from './api/FlowsApi.js';
@@ -19,6 +20,7 @@ import GroupsApi from './api/GroupsApi.js';
 import IdentityProviderApi from './api/IdentityProviderApi.js';
 import IntegrationsApi from './api/IntegrationsApi.js';
 import KnowledgeApi from './api/KnowledgeApi.js';
+import LanguageUnderstandingApi from './api/LanguageUnderstandingApi.js';
 import LanguagesApi from './api/LanguagesApi.js';
 import LicenseApi from './api/LicenseApi.js';
 import LocationsApi from './api/LocationsApi.js';
@@ -42,6 +44,7 @@ import SuggestApi from './api/SuggestApi.js';
 import TelephonyApi from './api/TelephonyApi.js';
 import TelephonyProvidersEdgeApi from './api/TelephonyProvidersEdgeApi.js';
 import TokensApi from './api/TokensApi.js';
+import UploadsApi from './api/UploadsApi.js';
 import UserRecordingsApi from './api/UserRecordingsApi.js';
 import UsersApi from './api/UsersApi.js';
 import UtilitiesApi from './api/UtilitiesApi.js';
@@ -80,7 +83,7 @@ import WorkforceManagementApi from './api/WorkforceManagementApi.js';
  * </pre>
  * </p>
  * @module purecloud-platform-client-v2/index
- * @version 79.0.1
+ * @version 80.0.0
  */
 class platformClient {
 	constructor() {
@@ -135,6 +138,11 @@ class platformClient {
 		 */
 		this.ConversationsApi = ConversationsApi;
 		/**
+		 * The DataExtensionsApi service constructor.
+		 * @property {module:purecloud-platform-client-v2/api/DataExtensionsApi}
+		 */
+		this.DataExtensionsApi = DataExtensionsApi;
+		/**
 		 * The ExternalContactsApi service constructor.
 		 * @property {module:purecloud-platform-client-v2/api/ExternalContactsApi}
 		 */
@@ -184,6 +192,11 @@ class platformClient {
 		 * @property {module:purecloud-platform-client-v2/api/KnowledgeApi}
 		 */
 		this.KnowledgeApi = KnowledgeApi;
+		/**
+		 * The LanguageUnderstandingApi service constructor.
+		 * @property {module:purecloud-platform-client-v2/api/LanguageUnderstandingApi}
+		 */
+		this.LanguageUnderstandingApi = LanguageUnderstandingApi;
 		/**
 		 * The LanguagesApi service constructor.
 		 * @property {module:purecloud-platform-client-v2/api/LanguagesApi}
@@ -299,6 +312,11 @@ class platformClient {
 		 * @property {module:purecloud-platform-client-v2/api/TokensApi}
 		 */
 		this.TokensApi = TokensApi;
+		/**
+		 * The UploadsApi service constructor.
+		 * @property {module:purecloud-platform-client-v2/api/UploadsApi}
+		 */
+		this.UploadsApi = UploadsApi;
 		/**
 		 * The UserRecordingsApi service constructor.
 		 * @property {module:purecloud-platform-client-v2/api/UserRecordingsApi}

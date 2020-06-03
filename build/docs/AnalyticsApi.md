@@ -2575,6 +2575,7 @@ ReportingExportJobRequest <a href="#" onclick="return copyReportingExportJobRequ
     "columnName": String, 
   },  
   "hasCustomParticipantAttributes": Boolean, 
+  "recipientEmails": [String], 
 }
 ```
 

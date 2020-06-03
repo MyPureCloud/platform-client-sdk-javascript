@@ -4004,6 +4004,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
         "addressRaw": String, 
         "addressDisplayable": String, 
       },  
+      "wrapup": { 
+        "code": String, 
+        "name": String, 
+        "notes": String, 
+        "tags": [String], 
+        "durationSeconds": Number, 
+        "endTime": Date, 
+        "provisional": Boolean, 
+      },  
     },  
     "callbacks": { 
       "state": String, 
@@ -4046,6 +4055,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
       "automatedCallbackConfigId": String, 
       "provider": String, 
       "peerId": String, 
+      "wrapup": { 
+        "code": String, 
+        "name": String, 
+        "notes": String, 
+        "tags": [String], 
+        "durationSeconds": Number, 
+        "endTime": Date, 
+        "provisional": Boolean, 
+      },  
     },  
     "chats": { 
       "state": String, 
@@ -4087,6 +4105,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
           },  
         },  
       },  
+      "wrapup": { 
+        "code": String, 
+        "name": String, 
+        "notes": String, 
+        "tags": [String], 
+        "durationSeconds": Number, 
+        "endTime": Date, 
+        "provisional": Boolean, 
+      },  
     },  
     "cobrowsesessions": { 
       "state": String, 
@@ -4115,6 +4142,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
         "type": String, 
         "howEnded": String, 
         "disconnectType": String, 
+      },  
+      "wrapup": { 
+        "code": String, 
+        "name": String, 
+        "notes": String, 
+        "tags": [String], 
+        "durationSeconds": Number, 
+        "endTime": Date, 
+        "provisional": Boolean, 
       },  
     },  
     "emails": { 
@@ -4227,6 +4263,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
         "inlineImage": Boolean, 
       },  
       "spam": Boolean, 
+      "wrapup": { 
+        "code": String, 
+        "name": String, 
+        "notes": String, 
+        "tags": [String], 
+        "durationSeconds": Number, 
+        "endTime": Date, 
+        "provisional": Boolean, 
+      },  
     },  
     "messages": { 
       "state": String, 
@@ -4360,6 +4405,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
           "id": String, 
         },  
       },  
+      "wrapup": { 
+        "code": String, 
+        "name": String, 
+        "notes": String, 
+        "tags": [String], 
+        "durationSeconds": Number, 
+        "endTime": Date, 
+        "provisional": Boolean, 
+      },  
     },  
     "screenshares": { 
       "state": String, 
@@ -4379,6 +4433,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
         "type": String, 
         "howEnded": String, 
         "disconnectType": String, 
+      },  
+      "wrapup": { 
+        "code": String, 
+        "name": String, 
+        "notes": String, 
+        "tags": [String], 
+        "durationSeconds": Number, 
+        "endTime": Date, 
+        "provisional": Boolean, 
       },  
     },  
     "socialExpressions": { 
@@ -4405,6 +4468,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
       "provider": String, 
       "scriptId": String, 
       "peerId": String, 
+      "wrapup": { 
+        "code": String, 
+        "name": String, 
+        "notes": String, 
+        "tags": [String], 
+        "durationSeconds": Number, 
+        "endTime": Date, 
+        "provisional": Boolean, 
+      },  
     },  
     "videos": { 
       "state": String, 
@@ -4427,6 +4499,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
         "addressNormalized": String, 
         "addressRaw": String, 
         "addressDisplayable": String, 
+      },  
+      "wrapup": { 
+        "code": String, 
+        "name": String, 
+        "notes": String, 
+        "tags": [String], 
+        "durationSeconds": Number, 
+        "endTime": Date, 
+        "provisional": Boolean, 
       },  
     },  
     "evaluations": { 
@@ -4558,6 +4639,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "addressRaw": String, 
               "addressDisplayable": String, 
             },  
+            "wrapup": { 
+              "code": String, 
+              "name": String, 
+              "notes": String, 
+              "tags": [String], 
+              "durationSeconds": Number, 
+              "endTime": Date, 
+              "provisional": Boolean, 
+            },  
           },  
           "callbacks": { 
             "state": String, 
@@ -4600,6 +4690,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
             "automatedCallbackConfigId": String, 
             "provider": String, 
             "peerId": String, 
+            "wrapup": { 
+              "code": String, 
+              "name": String, 
+              "notes": String, 
+              "tags": [String], 
+              "durationSeconds": Number, 
+              "endTime": Date, 
+              "provisional": Boolean, 
+            },  
           },  
           "chats": { 
             "state": String, 
@@ -4638,6 +4737,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "actionMap": JourneyActionMap, 
               },  
             },  
+            "wrapup": { 
+              "code": String, 
+              "name": String, 
+              "notes": String, 
+              "tags": [String], 
+              "durationSeconds": Number, 
+              "endTime": Date, 
+              "provisional": Boolean, 
+            },  
           },  
           "cobrowsesessions": { 
             "state": String, 
@@ -4666,6 +4774,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "type": String, 
               "howEnded": String, 
               "disconnectType": String, 
+            },  
+            "wrapup": { 
+              "code": String, 
+              "name": String, 
+              "notes": String, 
+              "tags": [String], 
+              "durationSeconds": Number, 
+              "endTime": Date, 
+              "provisional": Boolean, 
             },  
           },  
           "emails": { 
@@ -4730,6 +4847,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "inlineImage": Boolean, 
             },  
             "spam": Boolean, 
+            "wrapup": { 
+              "code": String, 
+              "name": String, 
+              "notes": String, 
+              "tags": [String], 
+              "durationSeconds": Number, 
+              "endTime": Date, 
+              "provisional": Boolean, 
+            },  
           },  
           "messages": { 
             "state": String, 
@@ -4815,6 +4941,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "id": String, 
               },  
             },  
+            "wrapup": { 
+              "code": String, 
+              "name": String, 
+              "notes": String, 
+              "tags": [String], 
+              "durationSeconds": Number, 
+              "endTime": Date, 
+              "provisional": Boolean, 
+            },  
           },  
           "screenshares": { 
             "state": String, 
@@ -4834,6 +4969,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "type": String, 
               "howEnded": String, 
               "disconnectType": String, 
+            },  
+            "wrapup": { 
+              "code": String, 
+              "name": String, 
+              "notes": String, 
+              "tags": [String], 
+              "durationSeconds": Number, 
+              "endTime": Date, 
+              "provisional": Boolean, 
             },  
           },  
           "socialExpressions": { 
@@ -4860,6 +5004,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
             "provider": String, 
             "scriptId": String, 
             "peerId": String, 
+            "wrapup": { 
+              "code": String, 
+              "name": String, 
+              "notes": String, 
+              "tags": [String], 
+              "durationSeconds": Number, 
+              "endTime": Date, 
+              "provisional": Boolean, 
+            },  
           },  
           "videos": { 
             "state": String, 
@@ -4882,6 +5035,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "addressNormalized": String, 
               "addressRaw": String, 
               "addressDisplayable": String, 
+            },  
+            "wrapup": { 
+              "code": String, 
+              "name": String, 
+              "notes": String, 
+              "tags": [String], 
+              "durationSeconds": Number, 
+              "endTime": Date, 
+              "provisional": Boolean, 
             },  
           },  
           "evaluations": { 
@@ -5991,6 +6153,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "addressRaw": String, 
                 "addressDisplayable": String, 
               },  
+              "wrapup": { 
+                "code": String, 
+                "name": String, 
+                "notes": String, 
+                "tags": [String], 
+                "durationSeconds": Number, 
+                "endTime": Date, 
+                "provisional": Boolean, 
+              },  
             },  
             "callbacks": { 
               "state": String, 
@@ -6030,6 +6201,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "automatedCallbackConfigId": String, 
               "provider": String, 
               "peerId": String, 
+              "wrapup": { 
+                "code": String, 
+                "name": String, 
+                "notes": String, 
+                "tags": [String], 
+                "durationSeconds": Number, 
+                "endTime": Date, 
+                "provisional": Boolean, 
+              },  
             },  
             "chats": { 
               "state": String, 
@@ -6059,6 +6239,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "customerSession": JourneyCustomerSession, 
                 "triggeringAction": JourneyAction, 
               },  
+              "wrapup": { 
+                "code": String, 
+                "name": String, 
+                "notes": String, 
+                "tags": [String], 
+                "durationSeconds": Number, 
+                "endTime": Date, 
+                "provisional": Boolean, 
+              },  
             },  
             "cobrowsesessions": { 
               "state": String, 
@@ -6087,6 +6276,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "type": String, 
                 "howEnded": String, 
                 "disconnectType": String, 
+              },  
+              "wrapup": { 
+                "code": String, 
+                "name": String, 
+                "notes": String, 
+                "tags": [String], 
+                "durationSeconds": Number, 
+                "endTime": Date, 
+                "provisional": Boolean, 
               },  
             },  
             "emails": { 
@@ -6135,6 +6333,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "inlineImage": Boolean, 
               },  
               "spam": Boolean, 
+              "wrapup": { 
+                "code": String, 
+                "name": String, 
+                "notes": String, 
+                "tags": [String], 
+                "durationSeconds": Number, 
+                "endTime": Date, 
+                "provisional": Boolean, 
+              },  
             },  
             "messages": { 
               "state": String, 
@@ -6195,6 +6402,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "media": [MessageMedia], 
                 "stickers": [MessageSticker], 
               },  
+              "wrapup": { 
+                "code": String, 
+                "name": String, 
+                "notes": String, 
+                "tags": [String], 
+                "durationSeconds": Number, 
+                "endTime": Date, 
+                "provisional": Boolean, 
+              },  
             },  
             "screenshares": { 
               "state": String, 
@@ -6214,6 +6430,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "type": String, 
                 "howEnded": String, 
                 "disconnectType": String, 
+              },  
+              "wrapup": { 
+                "code": String, 
+                "name": String, 
+                "notes": String, 
+                "tags": [String], 
+                "durationSeconds": Number, 
+                "endTime": Date, 
+                "provisional": Boolean, 
               },  
             },  
             "socialExpressions": { 
@@ -6240,6 +6465,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "provider": String, 
               "scriptId": String, 
               "peerId": String, 
+              "wrapup": { 
+                "code": String, 
+                "name": String, 
+                "notes": String, 
+                "tags": [String], 
+                "durationSeconds": Number, 
+                "endTime": Date, 
+                "provisional": Boolean, 
+              },  
             },  
             "videos": { 
               "state": String, 
@@ -6262,6 +6496,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "addressNormalized": String, 
                 "addressRaw": String, 
                 "addressDisplayable": String, 
+              },  
+              "wrapup": { 
+                "code": String, 
+                "name": String, 
+                "notes": String, 
+                "tags": [String], 
+                "durationSeconds": Number, 
+                "endTime": Date, 
+                "provisional": Boolean, 
               },  
             },  
             "evaluations": { 
@@ -6587,6 +6830,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "uuiData": String, 
                 "self": Address, 
                 "other": Address, 
+                "wrapup": Wrapup, 
               },  
               "callbacks": { 
                 "state": String, 
@@ -6611,6 +6855,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "automatedCallbackConfigId": String, 
                 "provider": String, 
                 "peerId": String, 
+                "wrapup": Wrapup, 
               },  
               "chats": { 
                 "state": String, 
@@ -6630,6 +6875,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "peerId": String, 
                 "avatarImageUrl": String, 
                 "journeyContext": JourneyContext, 
+                "wrapup": Wrapup, 
               },  
               "cobrowsesessions": { 
                 "state": String, 
@@ -6647,6 +6893,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "provider": String, 
                 "peerId": String, 
                 "segments": [Segment], 
+                "wrapup": Wrapup, 
               },  
               "emails": { 
                 "state": String, 
@@ -6670,6 +6917,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "messageId": String, 
                 "draftAttachments": [Attachment], 
                 "spam": Boolean, 
+                "wrapup": Wrapup, 
               },  
               "messages": { 
                 "state": String, 
@@ -6693,6 +6941,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "toAddress": Address, 
                 "fromAddress": Address, 
                 "messages": [MessageDetails], 
+                "wrapup": Wrapup, 
               },  
               "screenshares": { 
                 "state": String, 
@@ -6707,6 +6956,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "provider": String, 
                 "peerId": String, 
                 "segments": [Segment], 
+                "wrapup": Wrapup, 
               },  
               "socialExpressions": { 
                 "state": String, 
@@ -6726,6 +6976,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "provider": String, 
                 "scriptId": String, 
                 "peerId": String, 
+                "wrapup": Wrapup, 
               },  
               "videos": { 
                 "state": String, 
@@ -6743,6 +6994,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "peerId": String, 
                 "msids": [String], 
                 "self": Address, 
+                "wrapup": Wrapup, 
               },  
               "evaluations": { 
                 "id": String, 
@@ -7732,6 +7984,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "uuiData": String, 
                 "self": Address, 
                 "other": Address, 
+                "wrapup": Wrapup, 
               },  
               "callbacks": { 
                 "state": String, 
@@ -7756,6 +8009,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "automatedCallbackConfigId": String, 
                 "provider": String, 
                 "peerId": String, 
+                "wrapup": Wrapup, 
               },  
               "chats": { 
                 "state": String, 
@@ -7775,6 +8029,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "peerId": String, 
                 "avatarImageUrl": String, 
                 "journeyContext": JourneyContext, 
+                "wrapup": Wrapup, 
               },  
               "cobrowsesessions": { 
                 "state": String, 
@@ -7792,6 +8047,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "provider": String, 
                 "peerId": String, 
                 "segments": [Segment], 
+                "wrapup": Wrapup, 
               },  
               "emails": { 
                 "state": String, 
@@ -7815,6 +8071,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "messageId": String, 
                 "draftAttachments": [Attachment], 
                 "spam": Boolean, 
+                "wrapup": Wrapup, 
               },  
               "messages": { 
                 "state": String, 
@@ -7838,6 +8095,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "toAddress": Address, 
                 "fromAddress": Address, 
                 "messages": [MessageDetails], 
+                "wrapup": Wrapup, 
               },  
               "screenshares": { 
                 "state": String, 
@@ -7852,6 +8110,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "provider": String, 
                 "peerId": String, 
                 "segments": [Segment], 
+                "wrapup": Wrapup, 
               },  
               "socialExpressions": { 
                 "state": String, 
@@ -7871,6 +8130,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "provider": String, 
                 "scriptId": String, 
                 "peerId": String, 
+                "wrapup": Wrapup, 
               },  
               "videos": { 
                 "state": String, 
@@ -7888,6 +8148,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "peerId": String, 
                 "msids": [String], 
                 "self": Address, 
+                "wrapup": Wrapup, 
               },  
               "evaluations": { 
                 "id": String, 
@@ -9593,6 +9854,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
         "addressRaw": String, 
         "addressDisplayable": String, 
       },  
+      "wrapup": { 
+        "code": String, 
+        "name": String, 
+        "notes": String, 
+        "tags": [String], 
+        "durationSeconds": Number, 
+        "endTime": Date, 
+        "provisional": Boolean, 
+      },  
     },  
     "callbacks": { 
       "state": String, 
@@ -9635,6 +9905,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
       "automatedCallbackConfigId": String, 
       "provider": String, 
       "peerId": String, 
+      "wrapup": { 
+        "code": String, 
+        "name": String, 
+        "notes": String, 
+        "tags": [String], 
+        "durationSeconds": Number, 
+        "endTime": Date, 
+        "provisional": Boolean, 
+      },  
     },  
     "chats": { 
       "state": String, 
@@ -9676,6 +9955,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
           },  
         },  
       },  
+      "wrapup": { 
+        "code": String, 
+        "name": String, 
+        "notes": String, 
+        "tags": [String], 
+        "durationSeconds": Number, 
+        "endTime": Date, 
+        "provisional": Boolean, 
+      },  
     },  
     "cobrowsesessions": { 
       "state": String, 
@@ -9704,6 +9992,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
         "type": String, 
         "howEnded": String, 
         "disconnectType": String, 
+      },  
+      "wrapup": { 
+        "code": String, 
+        "name": String, 
+        "notes": String, 
+        "tags": [String], 
+        "durationSeconds": Number, 
+        "endTime": Date, 
+        "provisional": Boolean, 
       },  
     },  
     "emails": { 
@@ -9816,6 +10113,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
         "inlineImage": Boolean, 
       },  
       "spam": Boolean, 
+      "wrapup": { 
+        "code": String, 
+        "name": String, 
+        "notes": String, 
+        "tags": [String], 
+        "durationSeconds": Number, 
+        "endTime": Date, 
+        "provisional": Boolean, 
+      },  
     },  
     "messages": { 
       "state": String, 
@@ -9949,6 +10255,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
           "id": String, 
         },  
       },  
+      "wrapup": { 
+        "code": String, 
+        "name": String, 
+        "notes": String, 
+        "tags": [String], 
+        "durationSeconds": Number, 
+        "endTime": Date, 
+        "provisional": Boolean, 
+      },  
     },  
     "screenshares": { 
       "state": String, 
@@ -9968,6 +10283,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
         "type": String, 
         "howEnded": String, 
         "disconnectType": String, 
+      },  
+      "wrapup": { 
+        "code": String, 
+        "name": String, 
+        "notes": String, 
+        "tags": [String], 
+        "durationSeconds": Number, 
+        "endTime": Date, 
+        "provisional": Boolean, 
       },  
     },  
     "socialExpressions": { 
@@ -9994,6 +10318,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
       "provider": String, 
       "scriptId": String, 
       "peerId": String, 
+      "wrapup": { 
+        "code": String, 
+        "name": String, 
+        "notes": String, 
+        "tags": [String], 
+        "durationSeconds": Number, 
+        "endTime": Date, 
+        "provisional": Boolean, 
+      },  
     },  
     "videos": { 
       "state": String, 
@@ -10016,6 +10349,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
         "addressNormalized": String, 
         "addressRaw": String, 
         "addressDisplayable": String, 
+      },  
+      "wrapup": { 
+        "code": String, 
+        "name": String, 
+        "notes": String, 
+        "tags": [String], 
+        "durationSeconds": Number, 
+        "endTime": Date, 
+        "provisional": Boolean, 
       },  
     },  
     "evaluations": { 
@@ -10147,6 +10489,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "addressRaw": String, 
               "addressDisplayable": String, 
             },  
+            "wrapup": { 
+              "code": String, 
+              "name": String, 
+              "notes": String, 
+              "tags": [String], 
+              "durationSeconds": Number, 
+              "endTime": Date, 
+              "provisional": Boolean, 
+            },  
           },  
           "callbacks": { 
             "state": String, 
@@ -10189,6 +10540,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
             "automatedCallbackConfigId": String, 
             "provider": String, 
             "peerId": String, 
+            "wrapup": { 
+              "code": String, 
+              "name": String, 
+              "notes": String, 
+              "tags": [String], 
+              "durationSeconds": Number, 
+              "endTime": Date, 
+              "provisional": Boolean, 
+            },  
           },  
           "chats": { 
             "state": String, 
@@ -10227,6 +10587,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "actionMap": JourneyActionMap, 
               },  
             },  
+            "wrapup": { 
+              "code": String, 
+              "name": String, 
+              "notes": String, 
+              "tags": [String], 
+              "durationSeconds": Number, 
+              "endTime": Date, 
+              "provisional": Boolean, 
+            },  
           },  
           "cobrowsesessions": { 
             "state": String, 
@@ -10255,6 +10624,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "type": String, 
               "howEnded": String, 
               "disconnectType": String, 
+            },  
+            "wrapup": { 
+              "code": String, 
+              "name": String, 
+              "notes": String, 
+              "tags": [String], 
+              "durationSeconds": Number, 
+              "endTime": Date, 
+              "provisional": Boolean, 
             },  
           },  
           "emails": { 
@@ -10319,6 +10697,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "inlineImage": Boolean, 
             },  
             "spam": Boolean, 
+            "wrapup": { 
+              "code": String, 
+              "name": String, 
+              "notes": String, 
+              "tags": [String], 
+              "durationSeconds": Number, 
+              "endTime": Date, 
+              "provisional": Boolean, 
+            },  
           },  
           "messages": { 
             "state": String, 
@@ -10404,6 +10791,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "id": String, 
               },  
             },  
+            "wrapup": { 
+              "code": String, 
+              "name": String, 
+              "notes": String, 
+              "tags": [String], 
+              "durationSeconds": Number, 
+              "endTime": Date, 
+              "provisional": Boolean, 
+            },  
           },  
           "screenshares": { 
             "state": String, 
@@ -10423,6 +10819,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "type": String, 
               "howEnded": String, 
               "disconnectType": String, 
+            },  
+            "wrapup": { 
+              "code": String, 
+              "name": String, 
+              "notes": String, 
+              "tags": [String], 
+              "durationSeconds": Number, 
+              "endTime": Date, 
+              "provisional": Boolean, 
             },  
           },  
           "socialExpressions": { 
@@ -10449,6 +10854,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
             "provider": String, 
             "scriptId": String, 
             "peerId": String, 
+            "wrapup": { 
+              "code": String, 
+              "name": String, 
+              "notes": String, 
+              "tags": [String], 
+              "durationSeconds": Number, 
+              "endTime": Date, 
+              "provisional": Boolean, 
+            },  
           },  
           "videos": { 
             "state": String, 
@@ -10471,6 +10885,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "addressNormalized": String, 
               "addressRaw": String, 
               "addressDisplayable": String, 
+            },  
+            "wrapup": { 
+              "code": String, 
+              "name": String, 
+              "notes": String, 
+              "tags": [String], 
+              "durationSeconds": Number, 
+              "endTime": Date, 
+              "provisional": Boolean, 
             },  
           },  
           "evaluations": { 
@@ -11580,6 +12003,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "addressRaw": String, 
                 "addressDisplayable": String, 
               },  
+              "wrapup": { 
+                "code": String, 
+                "name": String, 
+                "notes": String, 
+                "tags": [String], 
+                "durationSeconds": Number, 
+                "endTime": Date, 
+                "provisional": Boolean, 
+              },  
             },  
             "callbacks": { 
               "state": String, 
@@ -11619,6 +12051,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "automatedCallbackConfigId": String, 
               "provider": String, 
               "peerId": String, 
+              "wrapup": { 
+                "code": String, 
+                "name": String, 
+                "notes": String, 
+                "tags": [String], 
+                "durationSeconds": Number, 
+                "endTime": Date, 
+                "provisional": Boolean, 
+              },  
             },  
             "chats": { 
               "state": String, 
@@ -11648,6 +12089,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "customerSession": JourneyCustomerSession, 
                 "triggeringAction": JourneyAction, 
               },  
+              "wrapup": { 
+                "code": String, 
+                "name": String, 
+                "notes": String, 
+                "tags": [String], 
+                "durationSeconds": Number, 
+                "endTime": Date, 
+                "provisional": Boolean, 
+              },  
             },  
             "cobrowsesessions": { 
               "state": String, 
@@ -11676,6 +12126,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "type": String, 
                 "howEnded": String, 
                 "disconnectType": String, 
+              },  
+              "wrapup": { 
+                "code": String, 
+                "name": String, 
+                "notes": String, 
+                "tags": [String], 
+                "durationSeconds": Number, 
+                "endTime": Date, 
+                "provisional": Boolean, 
               },  
             },  
             "emails": { 
@@ -11724,6 +12183,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "inlineImage": Boolean, 
               },  
               "spam": Boolean, 
+              "wrapup": { 
+                "code": String, 
+                "name": String, 
+                "notes": String, 
+                "tags": [String], 
+                "durationSeconds": Number, 
+                "endTime": Date, 
+                "provisional": Boolean, 
+              },  
             },  
             "messages": { 
               "state": String, 
@@ -11784,6 +12252,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "media": [MessageMedia], 
                 "stickers": [MessageSticker], 
               },  
+              "wrapup": { 
+                "code": String, 
+                "name": String, 
+                "notes": String, 
+                "tags": [String], 
+                "durationSeconds": Number, 
+                "endTime": Date, 
+                "provisional": Boolean, 
+              },  
             },  
             "screenshares": { 
               "state": String, 
@@ -11803,6 +12280,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "type": String, 
                 "howEnded": String, 
                 "disconnectType": String, 
+              },  
+              "wrapup": { 
+                "code": String, 
+                "name": String, 
+                "notes": String, 
+                "tags": [String], 
+                "durationSeconds": Number, 
+                "endTime": Date, 
+                "provisional": Boolean, 
               },  
             },  
             "socialExpressions": { 
@@ -11829,6 +12315,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "provider": String, 
               "scriptId": String, 
               "peerId": String, 
+              "wrapup": { 
+                "code": String, 
+                "name": String, 
+                "notes": String, 
+                "tags": [String], 
+                "durationSeconds": Number, 
+                "endTime": Date, 
+                "provisional": Boolean, 
+              },  
             },  
             "videos": { 
               "state": String, 
@@ -11851,6 +12346,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "addressNormalized": String, 
                 "addressRaw": String, 
                 "addressDisplayable": String, 
+              },  
+              "wrapup": { 
+                "code": String, 
+                "name": String, 
+                "notes": String, 
+                "tags": [String], 
+                "durationSeconds": Number, 
+                "endTime": Date, 
+                "provisional": Boolean, 
               },  
             },  
             "evaluations": { 
@@ -12176,6 +12680,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "uuiData": String, 
                 "self": Address, 
                 "other": Address, 
+                "wrapup": Wrapup, 
               },  
               "callbacks": { 
                 "state": String, 
@@ -12200,6 +12705,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "automatedCallbackConfigId": String, 
                 "provider": String, 
                 "peerId": String, 
+                "wrapup": Wrapup, 
               },  
               "chats": { 
                 "state": String, 
@@ -12219,6 +12725,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "peerId": String, 
                 "avatarImageUrl": String, 
                 "journeyContext": JourneyContext, 
+                "wrapup": Wrapup, 
               },  
               "cobrowsesessions": { 
                 "state": String, 
@@ -12236,6 +12743,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "provider": String, 
                 "peerId": String, 
                 "segments": [Segment], 
+                "wrapup": Wrapup, 
               },  
               "emails": { 
                 "state": String, 
@@ -12259,6 +12767,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "messageId": String, 
                 "draftAttachments": [Attachment], 
                 "spam": Boolean, 
+                "wrapup": Wrapup, 
               },  
               "messages": { 
                 "state": String, 
@@ -12282,6 +12791,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "toAddress": Address, 
                 "fromAddress": Address, 
                 "messages": [MessageDetails], 
+                "wrapup": Wrapup, 
               },  
               "screenshares": { 
                 "state": String, 
@@ -12296,6 +12806,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "provider": String, 
                 "peerId": String, 
                 "segments": [Segment], 
+                "wrapup": Wrapup, 
               },  
               "socialExpressions": { 
                 "state": String, 
@@ -12315,6 +12826,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "provider": String, 
                 "scriptId": String, 
                 "peerId": String, 
+                "wrapup": Wrapup, 
               },  
               "videos": { 
                 "state": String, 
@@ -12332,6 +12844,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "peerId": String, 
                 "msids": [String], 
                 "self": Address, 
+                "wrapup": Wrapup, 
               },  
               "evaluations": { 
                 "id": String, 
@@ -13321,6 +13834,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "uuiData": String, 
                 "self": Address, 
                 "other": Address, 
+                "wrapup": Wrapup, 
               },  
               "callbacks": { 
                 "state": String, 
@@ -13345,6 +13859,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "automatedCallbackConfigId": String, 
                 "provider": String, 
                 "peerId": String, 
+                "wrapup": Wrapup, 
               },  
               "chats": { 
                 "state": String, 
@@ -13364,6 +13879,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "peerId": String, 
                 "avatarImageUrl": String, 
                 "journeyContext": JourneyContext, 
+                "wrapup": Wrapup, 
               },  
               "cobrowsesessions": { 
                 "state": String, 
@@ -13381,6 +13897,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "provider": String, 
                 "peerId": String, 
                 "segments": [Segment], 
+                "wrapup": Wrapup, 
               },  
               "emails": { 
                 "state": String, 
@@ -13404,6 +13921,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "messageId": String, 
                 "draftAttachments": [Attachment], 
                 "spam": Boolean, 
+                "wrapup": Wrapup, 
               },  
               "messages": { 
                 "state": String, 
@@ -13427,6 +13945,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "toAddress": Address, 
                 "fromAddress": Address, 
                 "messages": [MessageDetails], 
+                "wrapup": Wrapup, 
               },  
               "screenshares": { 
                 "state": String, 
@@ -13441,6 +13960,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "provider": String, 
                 "peerId": String, 
                 "segments": [Segment], 
+                "wrapup": Wrapup, 
               },  
               "socialExpressions": { 
                 "state": String, 
@@ -13460,6 +13980,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "provider": String, 
                 "scriptId": String, 
                 "peerId": String, 
+                "wrapup": Wrapup, 
               },  
               "videos": { 
                 "state": String, 
@@ -13477,6 +13998,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "peerId": String, 
                 "msids": [String], 
                 "self": Address, 
+                "wrapup": Wrapup, 
               },  
               "evaluations": { 
                 "id": String, 
@@ -15099,6 +15621,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
         "addressRaw": String, 
         "addressDisplayable": String, 
       },  
+      "wrapup": { 
+        "code": String, 
+        "name": String, 
+        "notes": String, 
+        "tags": [String], 
+        "durationSeconds": Number, 
+        "endTime": Date, 
+        "provisional": Boolean, 
+      },  
     },  
     "callbacks": { 
       "state": String, 
@@ -15141,6 +15672,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
       "automatedCallbackConfigId": String, 
       "provider": String, 
       "peerId": String, 
+      "wrapup": { 
+        "code": String, 
+        "name": String, 
+        "notes": String, 
+        "tags": [String], 
+        "durationSeconds": Number, 
+        "endTime": Date, 
+        "provisional": Boolean, 
+      },  
     },  
     "chats": { 
       "state": String, 
@@ -15182,6 +15722,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
           },  
         },  
       },  
+      "wrapup": { 
+        "code": String, 
+        "name": String, 
+        "notes": String, 
+        "tags": [String], 
+        "durationSeconds": Number, 
+        "endTime": Date, 
+        "provisional": Boolean, 
+      },  
     },  
     "cobrowsesessions": { 
       "state": String, 
@@ -15210,6 +15759,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
         "type": String, 
         "howEnded": String, 
         "disconnectType": String, 
+      },  
+      "wrapup": { 
+        "code": String, 
+        "name": String, 
+        "notes": String, 
+        "tags": [String], 
+        "durationSeconds": Number, 
+        "endTime": Date, 
+        "provisional": Boolean, 
       },  
     },  
     "emails": { 
@@ -15322,6 +15880,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
         "inlineImage": Boolean, 
       },  
       "spam": Boolean, 
+      "wrapup": { 
+        "code": String, 
+        "name": String, 
+        "notes": String, 
+        "tags": [String], 
+        "durationSeconds": Number, 
+        "endTime": Date, 
+        "provisional": Boolean, 
+      },  
     },  
     "messages": { 
       "state": String, 
@@ -15455,6 +16022,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
           "id": String, 
         },  
       },  
+      "wrapup": { 
+        "code": String, 
+        "name": String, 
+        "notes": String, 
+        "tags": [String], 
+        "durationSeconds": Number, 
+        "endTime": Date, 
+        "provisional": Boolean, 
+      },  
     },  
     "screenshares": { 
       "state": String, 
@@ -15474,6 +16050,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
         "type": String, 
         "howEnded": String, 
         "disconnectType": String, 
+      },  
+      "wrapup": { 
+        "code": String, 
+        "name": String, 
+        "notes": String, 
+        "tags": [String], 
+        "durationSeconds": Number, 
+        "endTime": Date, 
+        "provisional": Boolean, 
       },  
     },  
     "socialExpressions": { 
@@ -15500,6 +16085,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
       "provider": String, 
       "scriptId": String, 
       "peerId": String, 
+      "wrapup": { 
+        "code": String, 
+        "name": String, 
+        "notes": String, 
+        "tags": [String], 
+        "durationSeconds": Number, 
+        "endTime": Date, 
+        "provisional": Boolean, 
+      },  
     },  
     "videos": { 
       "state": String, 
@@ -15522,6 +16116,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
         "addressNormalized": String, 
         "addressRaw": String, 
         "addressDisplayable": String, 
+      },  
+      "wrapup": { 
+        "code": String, 
+        "name": String, 
+        "notes": String, 
+        "tags": [String], 
+        "durationSeconds": Number, 
+        "endTime": Date, 
+        "provisional": Boolean, 
       },  
     },  
     "evaluations": { 
@@ -15653,6 +16256,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "addressRaw": String, 
               "addressDisplayable": String, 
             },  
+            "wrapup": { 
+              "code": String, 
+              "name": String, 
+              "notes": String, 
+              "tags": [String], 
+              "durationSeconds": Number, 
+              "endTime": Date, 
+              "provisional": Boolean, 
+            },  
           },  
           "callbacks": { 
             "state": String, 
@@ -15695,6 +16307,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
             "automatedCallbackConfigId": String, 
             "provider": String, 
             "peerId": String, 
+            "wrapup": { 
+              "code": String, 
+              "name": String, 
+              "notes": String, 
+              "tags": [String], 
+              "durationSeconds": Number, 
+              "endTime": Date, 
+              "provisional": Boolean, 
+            },  
           },  
           "chats": { 
             "state": String, 
@@ -15733,6 +16354,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "actionMap": JourneyActionMap, 
               },  
             },  
+            "wrapup": { 
+              "code": String, 
+              "name": String, 
+              "notes": String, 
+              "tags": [String], 
+              "durationSeconds": Number, 
+              "endTime": Date, 
+              "provisional": Boolean, 
+            },  
           },  
           "cobrowsesessions": { 
             "state": String, 
@@ -15761,6 +16391,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "type": String, 
               "howEnded": String, 
               "disconnectType": String, 
+            },  
+            "wrapup": { 
+              "code": String, 
+              "name": String, 
+              "notes": String, 
+              "tags": [String], 
+              "durationSeconds": Number, 
+              "endTime": Date, 
+              "provisional": Boolean, 
             },  
           },  
           "emails": { 
@@ -15825,6 +16464,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "inlineImage": Boolean, 
             },  
             "spam": Boolean, 
+            "wrapup": { 
+              "code": String, 
+              "name": String, 
+              "notes": String, 
+              "tags": [String], 
+              "durationSeconds": Number, 
+              "endTime": Date, 
+              "provisional": Boolean, 
+            },  
           },  
           "messages": { 
             "state": String, 
@@ -15910,6 +16558,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "id": String, 
               },  
             },  
+            "wrapup": { 
+              "code": String, 
+              "name": String, 
+              "notes": String, 
+              "tags": [String], 
+              "durationSeconds": Number, 
+              "endTime": Date, 
+              "provisional": Boolean, 
+            },  
           },  
           "screenshares": { 
             "state": String, 
@@ -15929,6 +16586,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "type": String, 
               "howEnded": String, 
               "disconnectType": String, 
+            },  
+            "wrapup": { 
+              "code": String, 
+              "name": String, 
+              "notes": String, 
+              "tags": [String], 
+              "durationSeconds": Number, 
+              "endTime": Date, 
+              "provisional": Boolean, 
             },  
           },  
           "socialExpressions": { 
@@ -15955,6 +16621,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
             "provider": String, 
             "scriptId": String, 
             "peerId": String, 
+            "wrapup": { 
+              "code": String, 
+              "name": String, 
+              "notes": String, 
+              "tags": [String], 
+              "durationSeconds": Number, 
+              "endTime": Date, 
+              "provisional": Boolean, 
+            },  
           },  
           "videos": { 
             "state": String, 
@@ -15977,6 +16652,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "addressNormalized": String, 
               "addressRaw": String, 
               "addressDisplayable": String, 
+            },  
+            "wrapup": { 
+              "code": String, 
+              "name": String, 
+              "notes": String, 
+              "tags": [String], 
+              "durationSeconds": Number, 
+              "endTime": Date, 
+              "provisional": Boolean, 
             },  
           },  
           "evaluations": { 
@@ -17086,6 +17770,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "addressRaw": String, 
                 "addressDisplayable": String, 
               },  
+              "wrapup": { 
+                "code": String, 
+                "name": String, 
+                "notes": String, 
+                "tags": [String], 
+                "durationSeconds": Number, 
+                "endTime": Date, 
+                "provisional": Boolean, 
+              },  
             },  
             "callbacks": { 
               "state": String, 
@@ -17125,6 +17818,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "automatedCallbackConfigId": String, 
               "provider": String, 
               "peerId": String, 
+              "wrapup": { 
+                "code": String, 
+                "name": String, 
+                "notes": String, 
+                "tags": [String], 
+                "durationSeconds": Number, 
+                "endTime": Date, 
+                "provisional": Boolean, 
+              },  
             },  
             "chats": { 
               "state": String, 
@@ -17154,6 +17856,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "customerSession": JourneyCustomerSession, 
                 "triggeringAction": JourneyAction, 
               },  
+              "wrapup": { 
+                "code": String, 
+                "name": String, 
+                "notes": String, 
+                "tags": [String], 
+                "durationSeconds": Number, 
+                "endTime": Date, 
+                "provisional": Boolean, 
+              },  
             },  
             "cobrowsesessions": { 
               "state": String, 
@@ -17182,6 +17893,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "type": String, 
                 "howEnded": String, 
                 "disconnectType": String, 
+              },  
+              "wrapup": { 
+                "code": String, 
+                "name": String, 
+                "notes": String, 
+                "tags": [String], 
+                "durationSeconds": Number, 
+                "endTime": Date, 
+                "provisional": Boolean, 
               },  
             },  
             "emails": { 
@@ -17230,6 +17950,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "inlineImage": Boolean, 
               },  
               "spam": Boolean, 
+              "wrapup": { 
+                "code": String, 
+                "name": String, 
+                "notes": String, 
+                "tags": [String], 
+                "durationSeconds": Number, 
+                "endTime": Date, 
+                "provisional": Boolean, 
+              },  
             },  
             "messages": { 
               "state": String, 
@@ -17290,6 +18019,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "media": [MessageMedia], 
                 "stickers": [MessageSticker], 
               },  
+              "wrapup": { 
+                "code": String, 
+                "name": String, 
+                "notes": String, 
+                "tags": [String], 
+                "durationSeconds": Number, 
+                "endTime": Date, 
+                "provisional": Boolean, 
+              },  
             },  
             "screenshares": { 
               "state": String, 
@@ -17309,6 +18047,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "type": String, 
                 "howEnded": String, 
                 "disconnectType": String, 
+              },  
+              "wrapup": { 
+                "code": String, 
+                "name": String, 
+                "notes": String, 
+                "tags": [String], 
+                "durationSeconds": Number, 
+                "endTime": Date, 
+                "provisional": Boolean, 
               },  
             },  
             "socialExpressions": { 
@@ -17335,6 +18082,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "provider": String, 
               "scriptId": String, 
               "peerId": String, 
+              "wrapup": { 
+                "code": String, 
+                "name": String, 
+                "notes": String, 
+                "tags": [String], 
+                "durationSeconds": Number, 
+                "endTime": Date, 
+                "provisional": Boolean, 
+              },  
             },  
             "videos": { 
               "state": String, 
@@ -17357,6 +18113,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "addressNormalized": String, 
                 "addressRaw": String, 
                 "addressDisplayable": String, 
+              },  
+              "wrapup": { 
+                "code": String, 
+                "name": String, 
+                "notes": String, 
+                "tags": [String], 
+                "durationSeconds": Number, 
+                "endTime": Date, 
+                "provisional": Boolean, 
               },  
             },  
             "evaluations": { 
@@ -17682,6 +18447,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "uuiData": String, 
                 "self": Address, 
                 "other": Address, 
+                "wrapup": Wrapup, 
               },  
               "callbacks": { 
                 "state": String, 
@@ -17706,6 +18472,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "automatedCallbackConfigId": String, 
                 "provider": String, 
                 "peerId": String, 
+                "wrapup": Wrapup, 
               },  
               "chats": { 
                 "state": String, 
@@ -17725,6 +18492,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "peerId": String, 
                 "avatarImageUrl": String, 
                 "journeyContext": JourneyContext, 
+                "wrapup": Wrapup, 
               },  
               "cobrowsesessions": { 
                 "state": String, 
@@ -17742,6 +18510,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "provider": String, 
                 "peerId": String, 
                 "segments": [Segment], 
+                "wrapup": Wrapup, 
               },  
               "emails": { 
                 "state": String, 
@@ -17765,6 +18534,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "messageId": String, 
                 "draftAttachments": [Attachment], 
                 "spam": Boolean, 
+                "wrapup": Wrapup, 
               },  
               "messages": { 
                 "state": String, 
@@ -17788,6 +18558,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "toAddress": Address, 
                 "fromAddress": Address, 
                 "messages": [MessageDetails], 
+                "wrapup": Wrapup, 
               },  
               "screenshares": { 
                 "state": String, 
@@ -17802,6 +18573,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "provider": String, 
                 "peerId": String, 
                 "segments": [Segment], 
+                "wrapup": Wrapup, 
               },  
               "socialExpressions": { 
                 "state": String, 
@@ -17821,6 +18593,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "provider": String, 
                 "scriptId": String, 
                 "peerId": String, 
+                "wrapup": Wrapup, 
               },  
               "videos": { 
                 "state": String, 
@@ -17838,6 +18611,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "peerId": String, 
                 "msids": [String], 
                 "self": Address, 
+                "wrapup": Wrapup, 
               },  
               "evaluations": { 
                 "id": String, 
@@ -18827,6 +19601,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "uuiData": String, 
                 "self": Address, 
                 "other": Address, 
+                "wrapup": Wrapup, 
               },  
               "callbacks": { 
                 "state": String, 
@@ -18851,6 +19626,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "automatedCallbackConfigId": String, 
                 "provider": String, 
                 "peerId": String, 
+                "wrapup": Wrapup, 
               },  
               "chats": { 
                 "state": String, 
@@ -18870,6 +19646,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "peerId": String, 
                 "avatarImageUrl": String, 
                 "journeyContext": JourneyContext, 
+                "wrapup": Wrapup, 
               },  
               "cobrowsesessions": { 
                 "state": String, 
@@ -18887,6 +19664,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "provider": String, 
                 "peerId": String, 
                 "segments": [Segment], 
+                "wrapup": Wrapup, 
               },  
               "emails": { 
                 "state": String, 
@@ -18910,6 +19688,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "messageId": String, 
                 "draftAttachments": [Attachment], 
                 "spam": Boolean, 
+                "wrapup": Wrapup, 
               },  
               "messages": { 
                 "state": String, 
@@ -18933,6 +19712,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "toAddress": Address, 
                 "fromAddress": Address, 
                 "messages": [MessageDetails], 
+                "wrapup": Wrapup, 
               },  
               "screenshares": { 
                 "state": String, 
@@ -18947,6 +19727,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "provider": String, 
                 "peerId": String, 
                 "segments": [Segment], 
+                "wrapup": Wrapup, 
               },  
               "socialExpressions": { 
                 "state": String, 
@@ -18966,6 +19747,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "provider": String, 
                 "scriptId": String, 
                 "peerId": String, 
+                "wrapup": Wrapup, 
               },  
               "videos": { 
                 "state": String, 
@@ -18983,6 +19765,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "peerId": String, 
                 "msids": [String], 
                 "self": Address, 
+                "wrapup": Wrapup, 
               },  
               "evaluations": { 
                 "id": String, 
@@ -20605,6 +21388,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
         "addressRaw": String, 
         "addressDisplayable": String, 
       },  
+      "wrapup": { 
+        "code": String, 
+        "name": String, 
+        "notes": String, 
+        "tags": [String], 
+        "durationSeconds": Number, 
+        "endTime": Date, 
+        "provisional": Boolean, 
+      },  
     },  
     "callbacks": { 
       "state": String, 
@@ -20647,6 +21439,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
       "automatedCallbackConfigId": String, 
       "provider": String, 
       "peerId": String, 
+      "wrapup": { 
+        "code": String, 
+        "name": String, 
+        "notes": String, 
+        "tags": [String], 
+        "durationSeconds": Number, 
+        "endTime": Date, 
+        "provisional": Boolean, 
+      },  
     },  
     "chats": { 
       "state": String, 
@@ -20688,6 +21489,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
           },  
         },  
       },  
+      "wrapup": { 
+        "code": String, 
+        "name": String, 
+        "notes": String, 
+        "tags": [String], 
+        "durationSeconds": Number, 
+        "endTime": Date, 
+        "provisional": Boolean, 
+      },  
     },  
     "cobrowsesessions": { 
       "state": String, 
@@ -20716,6 +21526,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
         "type": String, 
         "howEnded": String, 
         "disconnectType": String, 
+      },  
+      "wrapup": { 
+        "code": String, 
+        "name": String, 
+        "notes": String, 
+        "tags": [String], 
+        "durationSeconds": Number, 
+        "endTime": Date, 
+        "provisional": Boolean, 
       },  
     },  
     "emails": { 
@@ -20828,6 +21647,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
         "inlineImage": Boolean, 
       },  
       "spam": Boolean, 
+      "wrapup": { 
+        "code": String, 
+        "name": String, 
+        "notes": String, 
+        "tags": [String], 
+        "durationSeconds": Number, 
+        "endTime": Date, 
+        "provisional": Boolean, 
+      },  
     },  
     "messages": { 
       "state": String, 
@@ -20961,6 +21789,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
           "id": String, 
         },  
       },  
+      "wrapup": { 
+        "code": String, 
+        "name": String, 
+        "notes": String, 
+        "tags": [String], 
+        "durationSeconds": Number, 
+        "endTime": Date, 
+        "provisional": Boolean, 
+      },  
     },  
     "screenshares": { 
       "state": String, 
@@ -20980,6 +21817,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
         "type": String, 
         "howEnded": String, 
         "disconnectType": String, 
+      },  
+      "wrapup": { 
+        "code": String, 
+        "name": String, 
+        "notes": String, 
+        "tags": [String], 
+        "durationSeconds": Number, 
+        "endTime": Date, 
+        "provisional": Boolean, 
       },  
     },  
     "socialExpressions": { 
@@ -21006,6 +21852,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
       "provider": String, 
       "scriptId": String, 
       "peerId": String, 
+      "wrapup": { 
+        "code": String, 
+        "name": String, 
+        "notes": String, 
+        "tags": [String], 
+        "durationSeconds": Number, 
+        "endTime": Date, 
+        "provisional": Boolean, 
+      },  
     },  
     "videos": { 
       "state": String, 
@@ -21028,6 +21883,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
         "addressNormalized": String, 
         "addressRaw": String, 
         "addressDisplayable": String, 
+      },  
+      "wrapup": { 
+        "code": String, 
+        "name": String, 
+        "notes": String, 
+        "tags": [String], 
+        "durationSeconds": Number, 
+        "endTime": Date, 
+        "provisional": Boolean, 
       },  
     },  
     "evaluations": { 
@@ -21159,6 +22023,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "addressRaw": String, 
               "addressDisplayable": String, 
             },  
+            "wrapup": { 
+              "code": String, 
+              "name": String, 
+              "notes": String, 
+              "tags": [String], 
+              "durationSeconds": Number, 
+              "endTime": Date, 
+              "provisional": Boolean, 
+            },  
           },  
           "callbacks": { 
             "state": String, 
@@ -21201,6 +22074,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
             "automatedCallbackConfigId": String, 
             "provider": String, 
             "peerId": String, 
+            "wrapup": { 
+              "code": String, 
+              "name": String, 
+              "notes": String, 
+              "tags": [String], 
+              "durationSeconds": Number, 
+              "endTime": Date, 
+              "provisional": Boolean, 
+            },  
           },  
           "chats": { 
             "state": String, 
@@ -21239,6 +22121,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "actionMap": JourneyActionMap, 
               },  
             },  
+            "wrapup": { 
+              "code": String, 
+              "name": String, 
+              "notes": String, 
+              "tags": [String], 
+              "durationSeconds": Number, 
+              "endTime": Date, 
+              "provisional": Boolean, 
+            },  
           },  
           "cobrowsesessions": { 
             "state": String, 
@@ -21267,6 +22158,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "type": String, 
               "howEnded": String, 
               "disconnectType": String, 
+            },  
+            "wrapup": { 
+              "code": String, 
+              "name": String, 
+              "notes": String, 
+              "tags": [String], 
+              "durationSeconds": Number, 
+              "endTime": Date, 
+              "provisional": Boolean, 
             },  
           },  
           "emails": { 
@@ -21331,6 +22231,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "inlineImage": Boolean, 
             },  
             "spam": Boolean, 
+            "wrapup": { 
+              "code": String, 
+              "name": String, 
+              "notes": String, 
+              "tags": [String], 
+              "durationSeconds": Number, 
+              "endTime": Date, 
+              "provisional": Boolean, 
+            },  
           },  
           "messages": { 
             "state": String, 
@@ -21416,6 +22325,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "id": String, 
               },  
             },  
+            "wrapup": { 
+              "code": String, 
+              "name": String, 
+              "notes": String, 
+              "tags": [String], 
+              "durationSeconds": Number, 
+              "endTime": Date, 
+              "provisional": Boolean, 
+            },  
           },  
           "screenshares": { 
             "state": String, 
@@ -21435,6 +22353,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "type": String, 
               "howEnded": String, 
               "disconnectType": String, 
+            },  
+            "wrapup": { 
+              "code": String, 
+              "name": String, 
+              "notes": String, 
+              "tags": [String], 
+              "durationSeconds": Number, 
+              "endTime": Date, 
+              "provisional": Boolean, 
             },  
           },  
           "socialExpressions": { 
@@ -21461,6 +22388,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
             "provider": String, 
             "scriptId": String, 
             "peerId": String, 
+            "wrapup": { 
+              "code": String, 
+              "name": String, 
+              "notes": String, 
+              "tags": [String], 
+              "durationSeconds": Number, 
+              "endTime": Date, 
+              "provisional": Boolean, 
+            },  
           },  
           "videos": { 
             "state": String, 
@@ -21483,6 +22419,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "addressNormalized": String, 
               "addressRaw": String, 
               "addressDisplayable": String, 
+            },  
+            "wrapup": { 
+              "code": String, 
+              "name": String, 
+              "notes": String, 
+              "tags": [String], 
+              "durationSeconds": Number, 
+              "endTime": Date, 
+              "provisional": Boolean, 
             },  
           },  
           "evaluations": { 
@@ -22592,6 +23537,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "addressRaw": String, 
                 "addressDisplayable": String, 
               },  
+              "wrapup": { 
+                "code": String, 
+                "name": String, 
+                "notes": String, 
+                "tags": [String], 
+                "durationSeconds": Number, 
+                "endTime": Date, 
+                "provisional": Boolean, 
+              },  
             },  
             "callbacks": { 
               "state": String, 
@@ -22631,6 +23585,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "automatedCallbackConfigId": String, 
               "provider": String, 
               "peerId": String, 
+              "wrapup": { 
+                "code": String, 
+                "name": String, 
+                "notes": String, 
+                "tags": [String], 
+                "durationSeconds": Number, 
+                "endTime": Date, 
+                "provisional": Boolean, 
+              },  
             },  
             "chats": { 
               "state": String, 
@@ -22660,6 +23623,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "customerSession": JourneyCustomerSession, 
                 "triggeringAction": JourneyAction, 
               },  
+              "wrapup": { 
+                "code": String, 
+                "name": String, 
+                "notes": String, 
+                "tags": [String], 
+                "durationSeconds": Number, 
+                "endTime": Date, 
+                "provisional": Boolean, 
+              },  
             },  
             "cobrowsesessions": { 
               "state": String, 
@@ -22688,6 +23660,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "type": String, 
                 "howEnded": String, 
                 "disconnectType": String, 
+              },  
+              "wrapup": { 
+                "code": String, 
+                "name": String, 
+                "notes": String, 
+                "tags": [String], 
+                "durationSeconds": Number, 
+                "endTime": Date, 
+                "provisional": Boolean, 
               },  
             },  
             "emails": { 
@@ -22736,6 +23717,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "inlineImage": Boolean, 
               },  
               "spam": Boolean, 
+              "wrapup": { 
+                "code": String, 
+                "name": String, 
+                "notes": String, 
+                "tags": [String], 
+                "durationSeconds": Number, 
+                "endTime": Date, 
+                "provisional": Boolean, 
+              },  
             },  
             "messages": { 
               "state": String, 
@@ -22796,6 +23786,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "media": [MessageMedia], 
                 "stickers": [MessageSticker], 
               },  
+              "wrapup": { 
+                "code": String, 
+                "name": String, 
+                "notes": String, 
+                "tags": [String], 
+                "durationSeconds": Number, 
+                "endTime": Date, 
+                "provisional": Boolean, 
+              },  
             },  
             "screenshares": { 
               "state": String, 
@@ -22815,6 +23814,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "type": String, 
                 "howEnded": String, 
                 "disconnectType": String, 
+              },  
+              "wrapup": { 
+                "code": String, 
+                "name": String, 
+                "notes": String, 
+                "tags": [String], 
+                "durationSeconds": Number, 
+                "endTime": Date, 
+                "provisional": Boolean, 
               },  
             },  
             "socialExpressions": { 
@@ -22841,6 +23849,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "provider": String, 
               "scriptId": String, 
               "peerId": String, 
+              "wrapup": { 
+                "code": String, 
+                "name": String, 
+                "notes": String, 
+                "tags": [String], 
+                "durationSeconds": Number, 
+                "endTime": Date, 
+                "provisional": Boolean, 
+              },  
             },  
             "videos": { 
               "state": String, 
@@ -22863,6 +23880,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "addressNormalized": String, 
                 "addressRaw": String, 
                 "addressDisplayable": String, 
+              },  
+              "wrapup": { 
+                "code": String, 
+                "name": String, 
+                "notes": String, 
+                "tags": [String], 
+                "durationSeconds": Number, 
+                "endTime": Date, 
+                "provisional": Boolean, 
               },  
             },  
             "evaluations": { 
@@ -23188,6 +24214,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "uuiData": String, 
                 "self": Address, 
                 "other": Address, 
+                "wrapup": Wrapup, 
               },  
               "callbacks": { 
                 "state": String, 
@@ -23212,6 +24239,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "automatedCallbackConfigId": String, 
                 "provider": String, 
                 "peerId": String, 
+                "wrapup": Wrapup, 
               },  
               "chats": { 
                 "state": String, 
@@ -23231,6 +24259,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "peerId": String, 
                 "avatarImageUrl": String, 
                 "journeyContext": JourneyContext, 
+                "wrapup": Wrapup, 
               },  
               "cobrowsesessions": { 
                 "state": String, 
@@ -23248,6 +24277,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "provider": String, 
                 "peerId": String, 
                 "segments": [Segment], 
+                "wrapup": Wrapup, 
               },  
               "emails": { 
                 "state": String, 
@@ -23271,6 +24301,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "messageId": String, 
                 "draftAttachments": [Attachment], 
                 "spam": Boolean, 
+                "wrapup": Wrapup, 
               },  
               "messages": { 
                 "state": String, 
@@ -23294,6 +24325,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "toAddress": Address, 
                 "fromAddress": Address, 
                 "messages": [MessageDetails], 
+                "wrapup": Wrapup, 
               },  
               "screenshares": { 
                 "state": String, 
@@ -23308,6 +24340,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "provider": String, 
                 "peerId": String, 
                 "segments": [Segment], 
+                "wrapup": Wrapup, 
               },  
               "socialExpressions": { 
                 "state": String, 
@@ -23327,6 +24360,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "provider": String, 
                 "scriptId": String, 
                 "peerId": String, 
+                "wrapup": Wrapup, 
               },  
               "videos": { 
                 "state": String, 
@@ -23344,6 +24378,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "peerId": String, 
                 "msids": [String], 
                 "self": Address, 
+                "wrapup": Wrapup, 
               },  
               "evaluations": { 
                 "id": String, 
@@ -24333,6 +25368,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "uuiData": String, 
                 "self": Address, 
                 "other": Address, 
+                "wrapup": Wrapup, 
               },  
               "callbacks": { 
                 "state": String, 
@@ -24357,6 +25393,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "automatedCallbackConfigId": String, 
                 "provider": String, 
                 "peerId": String, 
+                "wrapup": Wrapup, 
               },  
               "chats": { 
                 "state": String, 
@@ -24376,6 +25413,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "peerId": String, 
                 "avatarImageUrl": String, 
                 "journeyContext": JourneyContext, 
+                "wrapup": Wrapup, 
               },  
               "cobrowsesessions": { 
                 "state": String, 
@@ -24393,6 +25431,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "provider": String, 
                 "peerId": String, 
                 "segments": [Segment], 
+                "wrapup": Wrapup, 
               },  
               "emails": { 
                 "state": String, 
@@ -24416,6 +25455,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "messageId": String, 
                 "draftAttachments": [Attachment], 
                 "spam": Boolean, 
+                "wrapup": Wrapup, 
               },  
               "messages": { 
                 "state": String, 
@@ -24439,6 +25479,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "toAddress": Address, 
                 "fromAddress": Address, 
                 "messages": [MessageDetails], 
+                "wrapup": Wrapup, 
               },  
               "screenshares": { 
                 "state": String, 
@@ -24453,6 +25494,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "provider": String, 
                 "peerId": String, 
                 "segments": [Segment], 
+                "wrapup": Wrapup, 
               },  
               "socialExpressions": { 
                 "state": String, 
@@ -24472,6 +25514,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "provider": String, 
                 "scriptId": String, 
                 "peerId": String, 
+                "wrapup": Wrapup, 
               },  
               "videos": { 
                 "state": String, 
@@ -24489,6 +25532,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "peerId": String, 
                 "msids": [String], 
                 "self": Address, 
+                "wrapup": Wrapup, 
               },  
               "evaluations": { 
                 "id": String, 
@@ -26115,6 +27159,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
         "addressRaw": String, 
         "addressDisplayable": String, 
       },  
+      "wrapup": { 
+        "code": String, 
+        "name": String, 
+        "notes": String, 
+        "tags": [String], 
+        "durationSeconds": Number, 
+        "endTime": Date, 
+        "provisional": Boolean, 
+      },  
     },  
     "callbacks": { 
       "state": String, 
@@ -26157,6 +27210,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
       "automatedCallbackConfigId": String, 
       "provider": String, 
       "peerId": String, 
+      "wrapup": { 
+        "code": String, 
+        "name": String, 
+        "notes": String, 
+        "tags": [String], 
+        "durationSeconds": Number, 
+        "endTime": Date, 
+        "provisional": Boolean, 
+      },  
     },  
     "chats": { 
       "state": String, 
@@ -26198,6 +27260,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
           },  
         },  
       },  
+      "wrapup": { 
+        "code": String, 
+        "name": String, 
+        "notes": String, 
+        "tags": [String], 
+        "durationSeconds": Number, 
+        "endTime": Date, 
+        "provisional": Boolean, 
+      },  
     },  
     "cobrowsesessions": { 
       "state": String, 
@@ -26226,6 +27297,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
         "type": String, 
         "howEnded": String, 
         "disconnectType": String, 
+      },  
+      "wrapup": { 
+        "code": String, 
+        "name": String, 
+        "notes": String, 
+        "tags": [String], 
+        "durationSeconds": Number, 
+        "endTime": Date, 
+        "provisional": Boolean, 
       },  
     },  
     "emails": { 
@@ -26338,6 +27418,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
         "inlineImage": Boolean, 
       },  
       "spam": Boolean, 
+      "wrapup": { 
+        "code": String, 
+        "name": String, 
+        "notes": String, 
+        "tags": [String], 
+        "durationSeconds": Number, 
+        "endTime": Date, 
+        "provisional": Boolean, 
+      },  
     },  
     "messages": { 
       "state": String, 
@@ -26471,6 +27560,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
           "id": String, 
         },  
       },  
+      "wrapup": { 
+        "code": String, 
+        "name": String, 
+        "notes": String, 
+        "tags": [String], 
+        "durationSeconds": Number, 
+        "endTime": Date, 
+        "provisional": Boolean, 
+      },  
     },  
     "screenshares": { 
       "state": String, 
@@ -26490,6 +27588,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
         "type": String, 
         "howEnded": String, 
         "disconnectType": String, 
+      },  
+      "wrapup": { 
+        "code": String, 
+        "name": String, 
+        "notes": String, 
+        "tags": [String], 
+        "durationSeconds": Number, 
+        "endTime": Date, 
+        "provisional": Boolean, 
       },  
     },  
     "socialExpressions": { 
@@ -26516,6 +27623,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
       "provider": String, 
       "scriptId": String, 
       "peerId": String, 
+      "wrapup": { 
+        "code": String, 
+        "name": String, 
+        "notes": String, 
+        "tags": [String], 
+        "durationSeconds": Number, 
+        "endTime": Date, 
+        "provisional": Boolean, 
+      },  
     },  
     "videos": { 
       "state": String, 
@@ -26538,6 +27654,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
         "addressNormalized": String, 
         "addressRaw": String, 
         "addressDisplayable": String, 
+      },  
+      "wrapup": { 
+        "code": String, 
+        "name": String, 
+        "notes": String, 
+        "tags": [String], 
+        "durationSeconds": Number, 
+        "endTime": Date, 
+        "provisional": Boolean, 
       },  
     },  
     "evaluations": { 
@@ -26669,6 +27794,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "addressRaw": String, 
               "addressDisplayable": String, 
             },  
+            "wrapup": { 
+              "code": String, 
+              "name": String, 
+              "notes": String, 
+              "tags": [String], 
+              "durationSeconds": Number, 
+              "endTime": Date, 
+              "provisional": Boolean, 
+            },  
           },  
           "callbacks": { 
             "state": String, 
@@ -26711,6 +27845,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
             "automatedCallbackConfigId": String, 
             "provider": String, 
             "peerId": String, 
+            "wrapup": { 
+              "code": String, 
+              "name": String, 
+              "notes": String, 
+              "tags": [String], 
+              "durationSeconds": Number, 
+              "endTime": Date, 
+              "provisional": Boolean, 
+            },  
           },  
           "chats": { 
             "state": String, 
@@ -26749,6 +27892,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "actionMap": JourneyActionMap, 
               },  
             },  
+            "wrapup": { 
+              "code": String, 
+              "name": String, 
+              "notes": String, 
+              "tags": [String], 
+              "durationSeconds": Number, 
+              "endTime": Date, 
+              "provisional": Boolean, 
+            },  
           },  
           "cobrowsesessions": { 
             "state": String, 
@@ -26777,6 +27929,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "type": String, 
               "howEnded": String, 
               "disconnectType": String, 
+            },  
+            "wrapup": { 
+              "code": String, 
+              "name": String, 
+              "notes": String, 
+              "tags": [String], 
+              "durationSeconds": Number, 
+              "endTime": Date, 
+              "provisional": Boolean, 
             },  
           },  
           "emails": { 
@@ -26841,6 +28002,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "inlineImage": Boolean, 
             },  
             "spam": Boolean, 
+            "wrapup": { 
+              "code": String, 
+              "name": String, 
+              "notes": String, 
+              "tags": [String], 
+              "durationSeconds": Number, 
+              "endTime": Date, 
+              "provisional": Boolean, 
+            },  
           },  
           "messages": { 
             "state": String, 
@@ -26926,6 +28096,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "id": String, 
               },  
             },  
+            "wrapup": { 
+              "code": String, 
+              "name": String, 
+              "notes": String, 
+              "tags": [String], 
+              "durationSeconds": Number, 
+              "endTime": Date, 
+              "provisional": Boolean, 
+            },  
           },  
           "screenshares": { 
             "state": String, 
@@ -26945,6 +28124,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "type": String, 
               "howEnded": String, 
               "disconnectType": String, 
+            },  
+            "wrapup": { 
+              "code": String, 
+              "name": String, 
+              "notes": String, 
+              "tags": [String], 
+              "durationSeconds": Number, 
+              "endTime": Date, 
+              "provisional": Boolean, 
             },  
           },  
           "socialExpressions": { 
@@ -26971,6 +28159,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
             "provider": String, 
             "scriptId": String, 
             "peerId": String, 
+            "wrapup": { 
+              "code": String, 
+              "name": String, 
+              "notes": String, 
+              "tags": [String], 
+              "durationSeconds": Number, 
+              "endTime": Date, 
+              "provisional": Boolean, 
+            },  
           },  
           "videos": { 
             "state": String, 
@@ -26993,6 +28190,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "addressNormalized": String, 
               "addressRaw": String, 
               "addressDisplayable": String, 
+            },  
+            "wrapup": { 
+              "code": String, 
+              "name": String, 
+              "notes": String, 
+              "tags": [String], 
+              "durationSeconds": Number, 
+              "endTime": Date, 
+              "provisional": Boolean, 
             },  
           },  
           "evaluations": { 
@@ -28102,6 +29308,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "addressRaw": String, 
                 "addressDisplayable": String, 
               },  
+              "wrapup": { 
+                "code": String, 
+                "name": String, 
+                "notes": String, 
+                "tags": [String], 
+                "durationSeconds": Number, 
+                "endTime": Date, 
+                "provisional": Boolean, 
+              },  
             },  
             "callbacks": { 
               "state": String, 
@@ -28141,6 +29356,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "automatedCallbackConfigId": String, 
               "provider": String, 
               "peerId": String, 
+              "wrapup": { 
+                "code": String, 
+                "name": String, 
+                "notes": String, 
+                "tags": [String], 
+                "durationSeconds": Number, 
+                "endTime": Date, 
+                "provisional": Boolean, 
+              },  
             },  
             "chats": { 
               "state": String, 
@@ -28170,6 +29394,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "customerSession": JourneyCustomerSession, 
                 "triggeringAction": JourneyAction, 
               },  
+              "wrapup": { 
+                "code": String, 
+                "name": String, 
+                "notes": String, 
+                "tags": [String], 
+                "durationSeconds": Number, 
+                "endTime": Date, 
+                "provisional": Boolean, 
+              },  
             },  
             "cobrowsesessions": { 
               "state": String, 
@@ -28198,6 +29431,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "type": String, 
                 "howEnded": String, 
                 "disconnectType": String, 
+              },  
+              "wrapup": { 
+                "code": String, 
+                "name": String, 
+                "notes": String, 
+                "tags": [String], 
+                "durationSeconds": Number, 
+                "endTime": Date, 
+                "provisional": Boolean, 
               },  
             },  
             "emails": { 
@@ -28246,6 +29488,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "inlineImage": Boolean, 
               },  
               "spam": Boolean, 
+              "wrapup": { 
+                "code": String, 
+                "name": String, 
+                "notes": String, 
+                "tags": [String], 
+                "durationSeconds": Number, 
+                "endTime": Date, 
+                "provisional": Boolean, 
+              },  
             },  
             "messages": { 
               "state": String, 
@@ -28306,6 +29557,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "media": [MessageMedia], 
                 "stickers": [MessageSticker], 
               },  
+              "wrapup": { 
+                "code": String, 
+                "name": String, 
+                "notes": String, 
+                "tags": [String], 
+                "durationSeconds": Number, 
+                "endTime": Date, 
+                "provisional": Boolean, 
+              },  
             },  
             "screenshares": { 
               "state": String, 
@@ -28325,6 +29585,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "type": String, 
                 "howEnded": String, 
                 "disconnectType": String, 
+              },  
+              "wrapup": { 
+                "code": String, 
+                "name": String, 
+                "notes": String, 
+                "tags": [String], 
+                "durationSeconds": Number, 
+                "endTime": Date, 
+                "provisional": Boolean, 
               },  
             },  
             "socialExpressions": { 
@@ -28351,6 +29620,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "provider": String, 
               "scriptId": String, 
               "peerId": String, 
+              "wrapup": { 
+                "code": String, 
+                "name": String, 
+                "notes": String, 
+                "tags": [String], 
+                "durationSeconds": Number, 
+                "endTime": Date, 
+                "provisional": Boolean, 
+              },  
             },  
             "videos": { 
               "state": String, 
@@ -28373,6 +29651,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "addressNormalized": String, 
                 "addressRaw": String, 
                 "addressDisplayable": String, 
+              },  
+              "wrapup": { 
+                "code": String, 
+                "name": String, 
+                "notes": String, 
+                "tags": [String], 
+                "durationSeconds": Number, 
+                "endTime": Date, 
+                "provisional": Boolean, 
               },  
             },  
             "evaluations": { 
@@ -28698,6 +29985,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "uuiData": String, 
                 "self": Address, 
                 "other": Address, 
+                "wrapup": Wrapup, 
               },  
               "callbacks": { 
                 "state": String, 
@@ -28722,6 +30010,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "automatedCallbackConfigId": String, 
                 "provider": String, 
                 "peerId": String, 
+                "wrapup": Wrapup, 
               },  
               "chats": { 
                 "state": String, 
@@ -28741,6 +30030,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "peerId": String, 
                 "avatarImageUrl": String, 
                 "journeyContext": JourneyContext, 
+                "wrapup": Wrapup, 
               },  
               "cobrowsesessions": { 
                 "state": String, 
@@ -28758,6 +30048,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "provider": String, 
                 "peerId": String, 
                 "segments": [Segment], 
+                "wrapup": Wrapup, 
               },  
               "emails": { 
                 "state": String, 
@@ -28781,6 +30072,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "messageId": String, 
                 "draftAttachments": [Attachment], 
                 "spam": Boolean, 
+                "wrapup": Wrapup, 
               },  
               "messages": { 
                 "state": String, 
@@ -28804,6 +30096,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "toAddress": Address, 
                 "fromAddress": Address, 
                 "messages": [MessageDetails], 
+                "wrapup": Wrapup, 
               },  
               "screenshares": { 
                 "state": String, 
@@ -28818,6 +30111,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "provider": String, 
                 "peerId": String, 
                 "segments": [Segment], 
+                "wrapup": Wrapup, 
               },  
               "socialExpressions": { 
                 "state": String, 
@@ -28837,6 +30131,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "provider": String, 
                 "scriptId": String, 
                 "peerId": String, 
+                "wrapup": Wrapup, 
               },  
               "videos": { 
                 "state": String, 
@@ -28854,6 +30149,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "peerId": String, 
                 "msids": [String], 
                 "self": Address, 
+                "wrapup": Wrapup, 
               },  
               "evaluations": { 
                 "id": String, 
@@ -29843,6 +31139,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "uuiData": String, 
                 "self": Address, 
                 "other": Address, 
+                "wrapup": Wrapup, 
               },  
               "callbacks": { 
                 "state": String, 
@@ -29867,6 +31164,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "automatedCallbackConfigId": String, 
                 "provider": String, 
                 "peerId": String, 
+                "wrapup": Wrapup, 
               },  
               "chats": { 
                 "state": String, 
@@ -29886,6 +31184,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "peerId": String, 
                 "avatarImageUrl": String, 
                 "journeyContext": JourneyContext, 
+                "wrapup": Wrapup, 
               },  
               "cobrowsesessions": { 
                 "state": String, 
@@ -29903,6 +31202,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "provider": String, 
                 "peerId": String, 
                 "segments": [Segment], 
+                "wrapup": Wrapup, 
               },  
               "emails": { 
                 "state": String, 
@@ -29926,6 +31226,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "messageId": String, 
                 "draftAttachments": [Attachment], 
                 "spam": Boolean, 
+                "wrapup": Wrapup, 
               },  
               "messages": { 
                 "state": String, 
@@ -29949,6 +31250,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "toAddress": Address, 
                 "fromAddress": Address, 
                 "messages": [MessageDetails], 
+                "wrapup": Wrapup, 
               },  
               "screenshares": { 
                 "state": String, 
@@ -29963,6 +31265,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "provider": String, 
                 "peerId": String, 
                 "segments": [Segment], 
+                "wrapup": Wrapup, 
               },  
               "socialExpressions": { 
                 "state": String, 
@@ -29982,6 +31285,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "provider": String, 
                 "scriptId": String, 
                 "peerId": String, 
+                "wrapup": Wrapup, 
               },  
               "videos": { 
                 "state": String, 
@@ -29999,6 +31303,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "peerId": String, 
                 "msids": [String], 
                 "self": Address, 
+                "wrapup": Wrapup, 
               },  
               "evaluations": { 
                 "id": String, 
@@ -31621,6 +32926,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
         "addressRaw": String, 
         "addressDisplayable": String, 
       },  
+      "wrapup": { 
+        "code": String, 
+        "name": String, 
+        "notes": String, 
+        "tags": [String], 
+        "durationSeconds": Number, 
+        "endTime": Date, 
+        "provisional": Boolean, 
+      },  
     },  
     "callbacks": { 
       "state": String, 
@@ -31663,6 +32977,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
       "automatedCallbackConfigId": String, 
       "provider": String, 
       "peerId": String, 
+      "wrapup": { 
+        "code": String, 
+        "name": String, 
+        "notes": String, 
+        "tags": [String], 
+        "durationSeconds": Number, 
+        "endTime": Date, 
+        "provisional": Boolean, 
+      },  
     },  
     "chats": { 
       "state": String, 
@@ -31704,6 +33027,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
           },  
         },  
       },  
+      "wrapup": { 
+        "code": String, 
+        "name": String, 
+        "notes": String, 
+        "tags": [String], 
+        "durationSeconds": Number, 
+        "endTime": Date, 
+        "provisional": Boolean, 
+      },  
     },  
     "cobrowsesessions": { 
       "state": String, 
@@ -31732,6 +33064,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
         "type": String, 
         "howEnded": String, 
         "disconnectType": String, 
+      },  
+      "wrapup": { 
+        "code": String, 
+        "name": String, 
+        "notes": String, 
+        "tags": [String], 
+        "durationSeconds": Number, 
+        "endTime": Date, 
+        "provisional": Boolean, 
       },  
     },  
     "emails": { 
@@ -31844,6 +33185,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
         "inlineImage": Boolean, 
       },  
       "spam": Boolean, 
+      "wrapup": { 
+        "code": String, 
+        "name": String, 
+        "notes": String, 
+        "tags": [String], 
+        "durationSeconds": Number, 
+        "endTime": Date, 
+        "provisional": Boolean, 
+      },  
     },  
     "messages": { 
       "state": String, 
@@ -31977,6 +33327,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
           "id": String, 
         },  
       },  
+      "wrapup": { 
+        "code": String, 
+        "name": String, 
+        "notes": String, 
+        "tags": [String], 
+        "durationSeconds": Number, 
+        "endTime": Date, 
+        "provisional": Boolean, 
+      },  
     },  
     "screenshares": { 
       "state": String, 
@@ -31996,6 +33355,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
         "type": String, 
         "howEnded": String, 
         "disconnectType": String, 
+      },  
+      "wrapup": { 
+        "code": String, 
+        "name": String, 
+        "notes": String, 
+        "tags": [String], 
+        "durationSeconds": Number, 
+        "endTime": Date, 
+        "provisional": Boolean, 
       },  
     },  
     "socialExpressions": { 
@@ -32022,6 +33390,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
       "provider": String, 
       "scriptId": String, 
       "peerId": String, 
+      "wrapup": { 
+        "code": String, 
+        "name": String, 
+        "notes": String, 
+        "tags": [String], 
+        "durationSeconds": Number, 
+        "endTime": Date, 
+        "provisional": Boolean, 
+      },  
     },  
     "videos": { 
       "state": String, 
@@ -32044,6 +33421,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
         "addressNormalized": String, 
         "addressRaw": String, 
         "addressDisplayable": String, 
+      },  
+      "wrapup": { 
+        "code": String, 
+        "name": String, 
+        "notes": String, 
+        "tags": [String], 
+        "durationSeconds": Number, 
+        "endTime": Date, 
+        "provisional": Boolean, 
       },  
     },  
     "evaluations": { 
@@ -32175,6 +33561,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "addressRaw": String, 
               "addressDisplayable": String, 
             },  
+            "wrapup": { 
+              "code": String, 
+              "name": String, 
+              "notes": String, 
+              "tags": [String], 
+              "durationSeconds": Number, 
+              "endTime": Date, 
+              "provisional": Boolean, 
+            },  
           },  
           "callbacks": { 
             "state": String, 
@@ -32217,6 +33612,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
             "automatedCallbackConfigId": String, 
             "provider": String, 
             "peerId": String, 
+            "wrapup": { 
+              "code": String, 
+              "name": String, 
+              "notes": String, 
+              "tags": [String], 
+              "durationSeconds": Number, 
+              "endTime": Date, 
+              "provisional": Boolean, 
+            },  
           },  
           "chats": { 
             "state": String, 
@@ -32255,6 +33659,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "actionMap": JourneyActionMap, 
               },  
             },  
+            "wrapup": { 
+              "code": String, 
+              "name": String, 
+              "notes": String, 
+              "tags": [String], 
+              "durationSeconds": Number, 
+              "endTime": Date, 
+              "provisional": Boolean, 
+            },  
           },  
           "cobrowsesessions": { 
             "state": String, 
@@ -32283,6 +33696,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "type": String, 
               "howEnded": String, 
               "disconnectType": String, 
+            },  
+            "wrapup": { 
+              "code": String, 
+              "name": String, 
+              "notes": String, 
+              "tags": [String], 
+              "durationSeconds": Number, 
+              "endTime": Date, 
+              "provisional": Boolean, 
             },  
           },  
           "emails": { 
@@ -32347,6 +33769,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "inlineImage": Boolean, 
             },  
             "spam": Boolean, 
+            "wrapup": { 
+              "code": String, 
+              "name": String, 
+              "notes": String, 
+              "tags": [String], 
+              "durationSeconds": Number, 
+              "endTime": Date, 
+              "provisional": Boolean, 
+            },  
           },  
           "messages": { 
             "state": String, 
@@ -32432,6 +33863,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "id": String, 
               },  
             },  
+            "wrapup": { 
+              "code": String, 
+              "name": String, 
+              "notes": String, 
+              "tags": [String], 
+              "durationSeconds": Number, 
+              "endTime": Date, 
+              "provisional": Boolean, 
+            },  
           },  
           "screenshares": { 
             "state": String, 
@@ -32451,6 +33891,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "type": String, 
               "howEnded": String, 
               "disconnectType": String, 
+            },  
+            "wrapup": { 
+              "code": String, 
+              "name": String, 
+              "notes": String, 
+              "tags": [String], 
+              "durationSeconds": Number, 
+              "endTime": Date, 
+              "provisional": Boolean, 
             },  
           },  
           "socialExpressions": { 
@@ -32477,6 +33926,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
             "provider": String, 
             "scriptId": String, 
             "peerId": String, 
+            "wrapup": { 
+              "code": String, 
+              "name": String, 
+              "notes": String, 
+              "tags": [String], 
+              "durationSeconds": Number, 
+              "endTime": Date, 
+              "provisional": Boolean, 
+            },  
           },  
           "videos": { 
             "state": String, 
@@ -32499,6 +33957,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "addressNormalized": String, 
               "addressRaw": String, 
               "addressDisplayable": String, 
+            },  
+            "wrapup": { 
+              "code": String, 
+              "name": String, 
+              "notes": String, 
+              "tags": [String], 
+              "durationSeconds": Number, 
+              "endTime": Date, 
+              "provisional": Boolean, 
             },  
           },  
           "evaluations": { 
@@ -33608,6 +35075,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "addressRaw": String, 
                 "addressDisplayable": String, 
               },  
+              "wrapup": { 
+                "code": String, 
+                "name": String, 
+                "notes": String, 
+                "tags": [String], 
+                "durationSeconds": Number, 
+                "endTime": Date, 
+                "provisional": Boolean, 
+              },  
             },  
             "callbacks": { 
               "state": String, 
@@ -33647,6 +35123,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "automatedCallbackConfigId": String, 
               "provider": String, 
               "peerId": String, 
+              "wrapup": { 
+                "code": String, 
+                "name": String, 
+                "notes": String, 
+                "tags": [String], 
+                "durationSeconds": Number, 
+                "endTime": Date, 
+                "provisional": Boolean, 
+              },  
             },  
             "chats": { 
               "state": String, 
@@ -33676,6 +35161,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "customerSession": JourneyCustomerSession, 
                 "triggeringAction": JourneyAction, 
               },  
+              "wrapup": { 
+                "code": String, 
+                "name": String, 
+                "notes": String, 
+                "tags": [String], 
+                "durationSeconds": Number, 
+                "endTime": Date, 
+                "provisional": Boolean, 
+              },  
             },  
             "cobrowsesessions": { 
               "state": String, 
@@ -33704,6 +35198,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "type": String, 
                 "howEnded": String, 
                 "disconnectType": String, 
+              },  
+              "wrapup": { 
+                "code": String, 
+                "name": String, 
+                "notes": String, 
+                "tags": [String], 
+                "durationSeconds": Number, 
+                "endTime": Date, 
+                "provisional": Boolean, 
               },  
             },  
             "emails": { 
@@ -33752,6 +35255,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "inlineImage": Boolean, 
               },  
               "spam": Boolean, 
+              "wrapup": { 
+                "code": String, 
+                "name": String, 
+                "notes": String, 
+                "tags": [String], 
+                "durationSeconds": Number, 
+                "endTime": Date, 
+                "provisional": Boolean, 
+              },  
             },  
             "messages": { 
               "state": String, 
@@ -33812,6 +35324,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "media": [MessageMedia], 
                 "stickers": [MessageSticker], 
               },  
+              "wrapup": { 
+                "code": String, 
+                "name": String, 
+                "notes": String, 
+                "tags": [String], 
+                "durationSeconds": Number, 
+                "endTime": Date, 
+                "provisional": Boolean, 
+              },  
             },  
             "screenshares": { 
               "state": String, 
@@ -33831,6 +35352,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "type": String, 
                 "howEnded": String, 
                 "disconnectType": String, 
+              },  
+              "wrapup": { 
+                "code": String, 
+                "name": String, 
+                "notes": String, 
+                "tags": [String], 
+                "durationSeconds": Number, 
+                "endTime": Date, 
+                "provisional": Boolean, 
               },  
             },  
             "socialExpressions": { 
@@ -33857,6 +35387,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "provider": String, 
               "scriptId": String, 
               "peerId": String, 
+              "wrapup": { 
+                "code": String, 
+                "name": String, 
+                "notes": String, 
+                "tags": [String], 
+                "durationSeconds": Number, 
+                "endTime": Date, 
+                "provisional": Boolean, 
+              },  
             },  
             "videos": { 
               "state": String, 
@@ -33879,6 +35418,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "addressNormalized": String, 
                 "addressRaw": String, 
                 "addressDisplayable": String, 
+              },  
+              "wrapup": { 
+                "code": String, 
+                "name": String, 
+                "notes": String, 
+                "tags": [String], 
+                "durationSeconds": Number, 
+                "endTime": Date, 
+                "provisional": Boolean, 
               },  
             },  
             "evaluations": { 
@@ -34204,6 +35752,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "uuiData": String, 
                 "self": Address, 
                 "other": Address, 
+                "wrapup": Wrapup, 
               },  
               "callbacks": { 
                 "state": String, 
@@ -34228,6 +35777,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "automatedCallbackConfigId": String, 
                 "provider": String, 
                 "peerId": String, 
+                "wrapup": Wrapup, 
               },  
               "chats": { 
                 "state": String, 
@@ -34247,6 +35797,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "peerId": String, 
                 "avatarImageUrl": String, 
                 "journeyContext": JourneyContext, 
+                "wrapup": Wrapup, 
               },  
               "cobrowsesessions": { 
                 "state": String, 
@@ -34264,6 +35815,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "provider": String, 
                 "peerId": String, 
                 "segments": [Segment], 
+                "wrapup": Wrapup, 
               },  
               "emails": { 
                 "state": String, 
@@ -34287,6 +35839,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "messageId": String, 
                 "draftAttachments": [Attachment], 
                 "spam": Boolean, 
+                "wrapup": Wrapup, 
               },  
               "messages": { 
                 "state": String, 
@@ -34310,6 +35863,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "toAddress": Address, 
                 "fromAddress": Address, 
                 "messages": [MessageDetails], 
+                "wrapup": Wrapup, 
               },  
               "screenshares": { 
                 "state": String, 
@@ -34324,6 +35878,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "provider": String, 
                 "peerId": String, 
                 "segments": [Segment], 
+                "wrapup": Wrapup, 
               },  
               "socialExpressions": { 
                 "state": String, 
@@ -34343,6 +35898,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "provider": String, 
                 "scriptId": String, 
                 "peerId": String, 
+                "wrapup": Wrapup, 
               },  
               "videos": { 
                 "state": String, 
@@ -34360,6 +35916,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "peerId": String, 
                 "msids": [String], 
                 "self": Address, 
+                "wrapup": Wrapup, 
               },  
               "evaluations": { 
                 "id": String, 
@@ -35349,6 +36906,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "uuiData": String, 
                 "self": Address, 
                 "other": Address, 
+                "wrapup": Wrapup, 
               },  
               "callbacks": { 
                 "state": String, 
@@ -35373,6 +36931,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "automatedCallbackConfigId": String, 
                 "provider": String, 
                 "peerId": String, 
+                "wrapup": Wrapup, 
               },  
               "chats": { 
                 "state": String, 
@@ -35392,6 +36951,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "peerId": String, 
                 "avatarImageUrl": String, 
                 "journeyContext": JourneyContext, 
+                "wrapup": Wrapup, 
               },  
               "cobrowsesessions": { 
                 "state": String, 
@@ -35409,6 +36969,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "provider": String, 
                 "peerId": String, 
                 "segments": [Segment], 
+                "wrapup": Wrapup, 
               },  
               "emails": { 
                 "state": String, 
@@ -35432,6 +36993,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "messageId": String, 
                 "draftAttachments": [Attachment], 
                 "spam": Boolean, 
+                "wrapup": Wrapup, 
               },  
               "messages": { 
                 "state": String, 
@@ -35455,6 +37017,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "toAddress": Address, 
                 "fromAddress": Address, 
                 "messages": [MessageDetails], 
+                "wrapup": Wrapup, 
               },  
               "screenshares": { 
                 "state": String, 
@@ -35469,6 +37032,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "provider": String, 
                 "peerId": String, 
                 "segments": [Segment], 
+                "wrapup": Wrapup, 
               },  
               "socialExpressions": { 
                 "state": String, 
@@ -35488,6 +37052,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "provider": String, 
                 "scriptId": String, 
                 "peerId": String, 
+                "wrapup": Wrapup, 
               },  
               "videos": { 
                 "state": String, 
@@ -35505,6 +37070,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "peerId": String, 
                 "msids": [String], 
                 "self": Address, 
+                "wrapup": Wrapup, 
               },  
               "evaluations": { 
                 "id": String, 
@@ -38664,6 +40230,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
         "addressRaw": String, 
         "addressDisplayable": String, 
       },  
+      "wrapup": { 
+        "code": String, 
+        "name": String, 
+        "notes": String, 
+        "tags": [String], 
+        "durationSeconds": Number, 
+        "endTime": Date, 
+        "provisional": Boolean, 
+      },  
     },  
     "callbacks": { 
       "state": String, 
@@ -38706,6 +40281,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
       "automatedCallbackConfigId": String, 
       "provider": String, 
       "peerId": String, 
+      "wrapup": { 
+        "code": String, 
+        "name": String, 
+        "notes": String, 
+        "tags": [String], 
+        "durationSeconds": Number, 
+        "endTime": Date, 
+        "provisional": Boolean, 
+      },  
     },  
     "chats": { 
       "state": String, 
@@ -38747,6 +40331,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
           },  
         },  
       },  
+      "wrapup": { 
+        "code": String, 
+        "name": String, 
+        "notes": String, 
+        "tags": [String], 
+        "durationSeconds": Number, 
+        "endTime": Date, 
+        "provisional": Boolean, 
+      },  
     },  
     "cobrowsesessions": { 
       "state": String, 
@@ -38775,6 +40368,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
         "type": String, 
         "howEnded": String, 
         "disconnectType": String, 
+      },  
+      "wrapup": { 
+        "code": String, 
+        "name": String, 
+        "notes": String, 
+        "tags": [String], 
+        "durationSeconds": Number, 
+        "endTime": Date, 
+        "provisional": Boolean, 
       },  
     },  
     "emails": { 
@@ -38887,6 +40489,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
         "inlineImage": Boolean, 
       },  
       "spam": Boolean, 
+      "wrapup": { 
+        "code": String, 
+        "name": String, 
+        "notes": String, 
+        "tags": [String], 
+        "durationSeconds": Number, 
+        "endTime": Date, 
+        "provisional": Boolean, 
+      },  
     },  
     "messages": { 
       "state": String, 
@@ -39020,6 +40631,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
           "id": String, 
         },  
       },  
+      "wrapup": { 
+        "code": String, 
+        "name": String, 
+        "notes": String, 
+        "tags": [String], 
+        "durationSeconds": Number, 
+        "endTime": Date, 
+        "provisional": Boolean, 
+      },  
     },  
     "screenshares": { 
       "state": String, 
@@ -39039,6 +40659,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
         "type": String, 
         "howEnded": String, 
         "disconnectType": String, 
+      },  
+      "wrapup": { 
+        "code": String, 
+        "name": String, 
+        "notes": String, 
+        "tags": [String], 
+        "durationSeconds": Number, 
+        "endTime": Date, 
+        "provisional": Boolean, 
       },  
     },  
     "socialExpressions": { 
@@ -39065,6 +40694,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
       "provider": String, 
       "scriptId": String, 
       "peerId": String, 
+      "wrapup": { 
+        "code": String, 
+        "name": String, 
+        "notes": String, 
+        "tags": [String], 
+        "durationSeconds": Number, 
+        "endTime": Date, 
+        "provisional": Boolean, 
+      },  
     },  
     "videos": { 
       "state": String, 
@@ -39087,6 +40725,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
         "addressNormalized": String, 
         "addressRaw": String, 
         "addressDisplayable": String, 
+      },  
+      "wrapup": { 
+        "code": String, 
+        "name": String, 
+        "notes": String, 
+        "tags": [String], 
+        "durationSeconds": Number, 
+        "endTime": Date, 
+        "provisional": Boolean, 
       },  
     },  
     "evaluations": { 
@@ -39218,6 +40865,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "addressRaw": String, 
               "addressDisplayable": String, 
             },  
+            "wrapup": { 
+              "code": String, 
+              "name": String, 
+              "notes": String, 
+              "tags": [String], 
+              "durationSeconds": Number, 
+              "endTime": Date, 
+              "provisional": Boolean, 
+            },  
           },  
           "callbacks": { 
             "state": String, 
@@ -39260,6 +40916,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
             "automatedCallbackConfigId": String, 
             "provider": String, 
             "peerId": String, 
+            "wrapup": { 
+              "code": String, 
+              "name": String, 
+              "notes": String, 
+              "tags": [String], 
+              "durationSeconds": Number, 
+              "endTime": Date, 
+              "provisional": Boolean, 
+            },  
           },  
           "chats": { 
             "state": String, 
@@ -39298,6 +40963,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "actionMap": JourneyActionMap, 
               },  
             },  
+            "wrapup": { 
+              "code": String, 
+              "name": String, 
+              "notes": String, 
+              "tags": [String], 
+              "durationSeconds": Number, 
+              "endTime": Date, 
+              "provisional": Boolean, 
+            },  
           },  
           "cobrowsesessions": { 
             "state": String, 
@@ -39326,6 +41000,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "type": String, 
               "howEnded": String, 
               "disconnectType": String, 
+            },  
+            "wrapup": { 
+              "code": String, 
+              "name": String, 
+              "notes": String, 
+              "tags": [String], 
+              "durationSeconds": Number, 
+              "endTime": Date, 
+              "provisional": Boolean, 
             },  
           },  
           "emails": { 
@@ -39390,6 +41073,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "inlineImage": Boolean, 
             },  
             "spam": Boolean, 
+            "wrapup": { 
+              "code": String, 
+              "name": String, 
+              "notes": String, 
+              "tags": [String], 
+              "durationSeconds": Number, 
+              "endTime": Date, 
+              "provisional": Boolean, 
+            },  
           },  
           "messages": { 
             "state": String, 
@@ -39475,6 +41167,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "id": String, 
               },  
             },  
+            "wrapup": { 
+              "code": String, 
+              "name": String, 
+              "notes": String, 
+              "tags": [String], 
+              "durationSeconds": Number, 
+              "endTime": Date, 
+              "provisional": Boolean, 
+            },  
           },  
           "screenshares": { 
             "state": String, 
@@ -39494,6 +41195,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "type": String, 
               "howEnded": String, 
               "disconnectType": String, 
+            },  
+            "wrapup": { 
+              "code": String, 
+              "name": String, 
+              "notes": String, 
+              "tags": [String], 
+              "durationSeconds": Number, 
+              "endTime": Date, 
+              "provisional": Boolean, 
             },  
           },  
           "socialExpressions": { 
@@ -39520,6 +41230,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
             "provider": String, 
             "scriptId": String, 
             "peerId": String, 
+            "wrapup": { 
+              "code": String, 
+              "name": String, 
+              "notes": String, 
+              "tags": [String], 
+              "durationSeconds": Number, 
+              "endTime": Date, 
+              "provisional": Boolean, 
+            },  
           },  
           "videos": { 
             "state": String, 
@@ -39542,6 +41261,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "addressNormalized": String, 
               "addressRaw": String, 
               "addressDisplayable": String, 
+            },  
+            "wrapup": { 
+              "code": String, 
+              "name": String, 
+              "notes": String, 
+              "tags": [String], 
+              "durationSeconds": Number, 
+              "endTime": Date, 
+              "provisional": Boolean, 
             },  
           },  
           "evaluations": { 
@@ -40651,6 +42379,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "addressRaw": String, 
                 "addressDisplayable": String, 
               },  
+              "wrapup": { 
+                "code": String, 
+                "name": String, 
+                "notes": String, 
+                "tags": [String], 
+                "durationSeconds": Number, 
+                "endTime": Date, 
+                "provisional": Boolean, 
+              },  
             },  
             "callbacks": { 
               "state": String, 
@@ -40690,6 +42427,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "automatedCallbackConfigId": String, 
               "provider": String, 
               "peerId": String, 
+              "wrapup": { 
+                "code": String, 
+                "name": String, 
+                "notes": String, 
+                "tags": [String], 
+                "durationSeconds": Number, 
+                "endTime": Date, 
+                "provisional": Boolean, 
+              },  
             },  
             "chats": { 
               "state": String, 
@@ -40719,6 +42465,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "customerSession": JourneyCustomerSession, 
                 "triggeringAction": JourneyAction, 
               },  
+              "wrapup": { 
+                "code": String, 
+                "name": String, 
+                "notes": String, 
+                "tags": [String], 
+                "durationSeconds": Number, 
+                "endTime": Date, 
+                "provisional": Boolean, 
+              },  
             },  
             "cobrowsesessions": { 
               "state": String, 
@@ -40747,6 +42502,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "type": String, 
                 "howEnded": String, 
                 "disconnectType": String, 
+              },  
+              "wrapup": { 
+                "code": String, 
+                "name": String, 
+                "notes": String, 
+                "tags": [String], 
+                "durationSeconds": Number, 
+                "endTime": Date, 
+                "provisional": Boolean, 
               },  
             },  
             "emails": { 
@@ -40795,6 +42559,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "inlineImage": Boolean, 
               },  
               "spam": Boolean, 
+              "wrapup": { 
+                "code": String, 
+                "name": String, 
+                "notes": String, 
+                "tags": [String], 
+                "durationSeconds": Number, 
+                "endTime": Date, 
+                "provisional": Boolean, 
+              },  
             },  
             "messages": { 
               "state": String, 
@@ -40855,6 +42628,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "media": [MessageMedia], 
                 "stickers": [MessageSticker], 
               },  
+              "wrapup": { 
+                "code": String, 
+                "name": String, 
+                "notes": String, 
+                "tags": [String], 
+                "durationSeconds": Number, 
+                "endTime": Date, 
+                "provisional": Boolean, 
+              },  
             },  
             "screenshares": { 
               "state": String, 
@@ -40874,6 +42656,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "type": String, 
                 "howEnded": String, 
                 "disconnectType": String, 
+              },  
+              "wrapup": { 
+                "code": String, 
+                "name": String, 
+                "notes": String, 
+                "tags": [String], 
+                "durationSeconds": Number, 
+                "endTime": Date, 
+                "provisional": Boolean, 
               },  
             },  
             "socialExpressions": { 
@@ -40900,6 +42691,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "provider": String, 
               "scriptId": String, 
               "peerId": String, 
+              "wrapup": { 
+                "code": String, 
+                "name": String, 
+                "notes": String, 
+                "tags": [String], 
+                "durationSeconds": Number, 
+                "endTime": Date, 
+                "provisional": Boolean, 
+              },  
             },  
             "videos": { 
               "state": String, 
@@ -40922,6 +42722,15 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "addressNormalized": String, 
                 "addressRaw": String, 
                 "addressDisplayable": String, 
+              },  
+              "wrapup": { 
+                "code": String, 
+                "name": String, 
+                "notes": String, 
+                "tags": [String], 
+                "durationSeconds": Number, 
+                "endTime": Date, 
+                "provisional": Boolean, 
               },  
             },  
             "evaluations": { 
@@ -41247,6 +43056,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "uuiData": String, 
                 "self": Address, 
                 "other": Address, 
+                "wrapup": Wrapup, 
               },  
               "callbacks": { 
                 "state": String, 
@@ -41271,6 +43081,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "automatedCallbackConfigId": String, 
                 "provider": String, 
                 "peerId": String, 
+                "wrapup": Wrapup, 
               },  
               "chats": { 
                 "state": String, 
@@ -41290,6 +43101,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "peerId": String, 
                 "avatarImageUrl": String, 
                 "journeyContext": JourneyContext, 
+                "wrapup": Wrapup, 
               },  
               "cobrowsesessions": { 
                 "state": String, 
@@ -41307,6 +43119,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "provider": String, 
                 "peerId": String, 
                 "segments": [Segment], 
+                "wrapup": Wrapup, 
               },  
               "emails": { 
                 "state": String, 
@@ -41330,6 +43143,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "messageId": String, 
                 "draftAttachments": [Attachment], 
                 "spam": Boolean, 
+                "wrapup": Wrapup, 
               },  
               "messages": { 
                 "state": String, 
@@ -41353,6 +43167,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "toAddress": Address, 
                 "fromAddress": Address, 
                 "messages": [MessageDetails], 
+                "wrapup": Wrapup, 
               },  
               "screenshares": { 
                 "state": String, 
@@ -41367,6 +43182,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "provider": String, 
                 "peerId": String, 
                 "segments": [Segment], 
+                "wrapup": Wrapup, 
               },  
               "socialExpressions": { 
                 "state": String, 
@@ -41386,6 +43202,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "provider": String, 
                 "scriptId": String, 
                 "peerId": String, 
+                "wrapup": Wrapup, 
               },  
               "videos": { 
                 "state": String, 
@@ -41403,6 +43220,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "peerId": String, 
                 "msids": [String], 
                 "self": Address, 
+                "wrapup": Wrapup, 
               },  
               "evaluations": { 
                 "id": String, 
@@ -42392,6 +44210,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "uuiData": String, 
                 "self": Address, 
                 "other": Address, 
+                "wrapup": Wrapup, 
               },  
               "callbacks": { 
                 "state": String, 
@@ -42416,6 +44235,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "automatedCallbackConfigId": String, 
                 "provider": String, 
                 "peerId": String, 
+                "wrapup": Wrapup, 
               },  
               "chats": { 
                 "state": String, 
@@ -42435,6 +44255,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "peerId": String, 
                 "avatarImageUrl": String, 
                 "journeyContext": JourneyContext, 
+                "wrapup": Wrapup, 
               },  
               "cobrowsesessions": { 
                 "state": String, 
@@ -42452,6 +44273,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "provider": String, 
                 "peerId": String, 
                 "segments": [Segment], 
+                "wrapup": Wrapup, 
               },  
               "emails": { 
                 "state": String, 
@@ -42475,6 +44297,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "messageId": String, 
                 "draftAttachments": [Attachment], 
                 "spam": Boolean, 
+                "wrapup": Wrapup, 
               },  
               "messages": { 
                 "state": String, 
@@ -42498,6 +44321,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "toAddress": Address, 
                 "fromAddress": Address, 
                 "messages": [MessageDetails], 
+                "wrapup": Wrapup, 
               },  
               "screenshares": { 
                 "state": String, 
@@ -42512,6 +44336,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "provider": String, 
                 "peerId": String, 
                 "segments": [Segment], 
+                "wrapup": Wrapup, 
               },  
               "socialExpressions": { 
                 "state": String, 
@@ -42531,6 +44356,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "provider": String, 
                 "scriptId": String, 
                 "peerId": String, 
+                "wrapup": Wrapup, 
               },  
               "videos": { 
                 "state": String, 
@@ -42548,6 +44374,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "peerId": String, 
                 "msids": [String], 
                 "self": Address, 
+                "wrapup": Wrapup, 
               },  
               "evaluations": { 
                 "id": String, 

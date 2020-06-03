@@ -5,7 +5,7 @@ class OutboundApi {
 	/**
 	 * Outbound service.
 	 * @module purecloud-platform-client-v2/api/OutboundApi
-	 * @version 79.0.1
+	 * @version 80.0.0
 	 */
 
 	/**

@@ -16,7 +16,7 @@ define(['superagent'], function (superagent) { 'use strict';
 
    /**
     * @module purecloud-platform-client-v2/ApiClient
-    * @version 79.0.1
+    * @version 80.0.0
     */
    class ApiClient {
    	/**
@@ -772,7 +772,7 @@ define(['superagent'], function (superagent) { 'use strict';
 
    		// set header parameters
    		request.set(this.defaultHeaders).set(this.normalizeParams(headerParams));
-   		//request.set({ 'purecloud-sdk': '79.0.1' });
+   		//request.set({ 'purecloud-sdk': '80.0.0' });
 
    		// set request timeout
    		request.timeout(this.timeout);
@@ -897,7 +897,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Alerting service.
    	 * @module purecloud-platform-client-v2/api/AlertingApi
-   	 * @version 79.0.1
+   	 * @version 80.0.0
    	 */
 
    	/**
@@ -1211,7 +1211,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Analytics service.
    	 * @module purecloud-platform-client-v2/api/AnalyticsApi
-   	 * @version 79.0.1
+   	 * @version 80.0.0
    	 */
 
    	/**
@@ -2176,7 +2176,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Architect service.
    	 * @module purecloud-platform-client-v2/api/ArchitectApi
-   	 * @version 79.0.1
+   	 * @version 80.0.0
    	 */
 
    	/**
@@ -4829,7 +4829,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Audit service.
    	 * @module purecloud-platform-client-v2/api/AuditApi
-   	 * @version 79.0.1
+   	 * @version 80.0.0
    	 */
 
    	/**
@@ -4931,7 +4931,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Authorization service.
    	 * @module purecloud-platform-client-v2/api/AuthorizationApi
-   	 * @version 79.0.1
+   	 * @version 80.0.0
    	 */
 
    	/**
@@ -6018,7 +6018,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Billing service.
    	 * @module purecloud-platform-client-v2/api/BillingApi
-   	 * @version 79.0.1
+   	 * @version 80.0.0
    	 */
 
    	/**
@@ -6098,7 +6098,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * ContentManagement service.
    	 * @module purecloud-platform-client-v2/api/ContentManagementApi
-   	 * @version 79.0.1
+   	 * @version 80.0.0
    	 */
 
    	/**
@@ -7238,7 +7238,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Conversations service.
    	 * @module purecloud-platform-client-v2/api/ConversationsApi
-   	 * @version 79.0.1
+   	 * @version 80.0.0
    	 */
 
    	/**
@@ -11196,11 +11196,97 @@ define(['superagent'], function (superagent) { 'use strict';
 
    }
 
+   class DataExtensionsApi {
+   	/**
+   	 * DataExtensions service.
+   	 * @module purecloud-platform-client-v2/api/DataExtensionsApi
+   	 * @version 80.0.0
+   	 */
+
+   	/**
+   	 * Constructs a new DataExtensionsApi. 
+   	 * @alias module:purecloud-platform-client-v2/api/DataExtensionsApi
+   	 * @class
+   	 * @param {module:purecloud-platform-client-v2/ApiClient} apiClient Optional API client implementation to use,
+   	 * default to {@link module:purecloud-platform-client-v2/ApiClient#instance} if unspecified.
+   	 */
+   	constructor(apiClient) {
+   		this.apiClient = apiClient || ApiClient.instance;
+   	}
+
+
+   	/**
+   	 * Get a specific named core type.
+   	 * 
+   	 * @param {Object} coretypeName The core type&#39;s name
+   	 */
+   	getDataextensionsCoretype(coretypeName) { 
+   		// verify the required parameter 'coretypeName' is set
+   		if (coretypeName === undefined || coretypeName === null) {
+   			throw 'Missing the required parameter "coretypeName" when calling getDataextensionsCoretype';
+   		}
+
+   		return this.apiClient.callApi(
+   			'/api/v2/dataextensions/coretypes/{coretypeName}', 
+   			'GET', 
+   			{ 'coretypeName': coretypeName }, 
+   			{  }, 
+   			{  }, 
+   			{  }, 
+   			null, 
+   			['PureCloud OAuth'], 
+   			['application/json'], 
+   			['application/json']
+   		);
+   	}
+
+   	/**
+   	 * Get the core types from which all schemas are built.
+   	 * 
+   	 */
+   	getDataextensionsCoretypes() { 
+
+   		return this.apiClient.callApi(
+   			'/api/v2/dataextensions/coretypes', 
+   			'GET', 
+   			{  }, 
+   			{  }, 
+   			{  }, 
+   			{  }, 
+   			null, 
+   			['PureCloud OAuth'], 
+   			['application/json'], 
+   			['application/json']
+   		);
+   	}
+
+   	/**
+   	 * Get quantitative limits on schemas
+   	 * 
+   	 */
+   	getDataextensionsLimits() { 
+
+   		return this.apiClient.callApi(
+   			'/api/v2/dataextensions/limits', 
+   			'GET', 
+   			{  }, 
+   			{  }, 
+   			{  }, 
+   			{  }, 
+   			null, 
+   			['PureCloud OAuth'], 
+   			['application/json'], 
+   			['application/json']
+   		);
+   	}
+
+   }
+
    class ExternalContactsApi {
    	/**
    	 * ExternalContacts service.
    	 * @module purecloud-platform-client-v2/api/ExternalContactsApi
-   	 * @version 79.0.1
+   	 * @version 80.0.0
    	 */
 
    	/**
@@ -11260,6 +11346,31 @@ define(['superagent'], function (superagent) { 'use strict';
    			'/api/v2/externalcontacts/contacts/{contactId}/notes/{noteId}', 
    			'DELETE', 
    			{ 'contactId': contactId,'noteId': noteId }, 
+   			{  }, 
+   			{  }, 
+   			{  }, 
+   			null, 
+   			['PureCloud OAuth'], 
+   			['application/json'], 
+   			['application/json']
+   		);
+   	}
+
+   	/**
+   	 * Delete a schema
+   	 * 
+   	 * @param {String} schemaId Schema ID
+   	 */
+   	deleteExternalcontactsContactsSchema(schemaId) { 
+   		// verify the required parameter 'schemaId' is set
+   		if (schemaId === undefined || schemaId === null) {
+   			throw 'Missing the required parameter "schemaId" when calling deleteExternalcontactsContactsSchema';
+   		}
+
+   		return this.apiClient.callApi(
+   			'/api/v2/externalcontacts/contacts/schemas/{schemaId}', 
+   			'DELETE', 
+   			{ 'schemaId': schemaId }, 
    			{  }, 
    			{  }, 
    			{  }, 
@@ -11499,6 +11610,106 @@ define(['superagent'], function (superagent) { 'use strict';
    	}
 
    	/**
+   	 * Get a schema
+   	 * 
+   	 * @param {String} schemaId Schema ID
+   	 */
+   	getExternalcontactsContactsSchema(schemaId) { 
+   		// verify the required parameter 'schemaId' is set
+   		if (schemaId === undefined || schemaId === null) {
+   			throw 'Missing the required parameter "schemaId" when calling getExternalcontactsContactsSchema';
+   		}
+
+   		return this.apiClient.callApi(
+   			'/api/v2/externalcontacts/contacts/schemas/{schemaId}', 
+   			'GET', 
+   			{ 'schemaId': schemaId }, 
+   			{  }, 
+   			{  }, 
+   			{  }, 
+   			null, 
+   			['PureCloud OAuth'], 
+   			['application/json'], 
+   			['application/json']
+   		);
+   	}
+
+   	/**
+   	 * Get a specific version of a schema
+   	 * 
+   	 * @param {String} schemaId Schema ID
+   	 * @param {String} versionId Schema version
+   	 */
+   	getExternalcontactsContactsSchemaVersion(schemaId, versionId) { 
+   		// verify the required parameter 'schemaId' is set
+   		if (schemaId === undefined || schemaId === null) {
+   			throw 'Missing the required parameter "schemaId" when calling getExternalcontactsContactsSchemaVersion';
+   		}
+   		// verify the required parameter 'versionId' is set
+   		if (versionId === undefined || versionId === null) {
+   			throw 'Missing the required parameter "versionId" when calling getExternalcontactsContactsSchemaVersion';
+   		}
+
+   		return this.apiClient.callApi(
+   			'/api/v2/externalcontacts/contacts/schemas/{schemaId}/versions/{versionId}', 
+   			'GET', 
+   			{ 'schemaId': schemaId,'versionId': versionId }, 
+   			{  }, 
+   			{  }, 
+   			{  }, 
+   			null, 
+   			['PureCloud OAuth'], 
+   			['application/json'], 
+   			['application/json']
+   		);
+   	}
+
+   	/**
+   	 * Get all versions of an external contact&#39;s schema
+   	 * 
+   	 * @param {String} schemaId Schema ID
+   	 */
+   	getExternalcontactsContactsSchemaVersions(schemaId) { 
+   		// verify the required parameter 'schemaId' is set
+   		if (schemaId === undefined || schemaId === null) {
+   			throw 'Missing the required parameter "schemaId" when calling getExternalcontactsContactsSchemaVersions';
+   		}
+
+   		return this.apiClient.callApi(
+   			'/api/v2/externalcontacts/contacts/schemas/{schemaId}/versions', 
+   			'GET', 
+   			{ 'schemaId': schemaId }, 
+   			{  }, 
+   			{  }, 
+   			{  }, 
+   			null, 
+   			['PureCloud OAuth'], 
+   			['application/json'], 
+   			['application/json']
+   		);
+   	}
+
+   	/**
+   	 * Get a list of schemas.
+   	 * 
+   	 */
+   	getExternalcontactsContactsSchemas() { 
+
+   		return this.apiClient.callApi(
+   			'/api/v2/externalcontacts/contacts/schemas', 
+   			'GET', 
+   			{  }, 
+   			{  }, 
+   			{  }, 
+   			{  }, 
+   			null, 
+   			['PureCloud OAuth'], 
+   			['application/json'], 
+   			['application/json']
+   		);
+   	}
+
+   	/**
    	 * Fetch an external organization
    	 * 
    	 * @param {String} externalOrganizationId External Organization ID
@@ -11690,6 +11901,106 @@ define(['superagent'], function (superagent) { 'use strict';
    	}
 
    	/**
+   	 * Get a schema
+   	 * 
+   	 * @param {String} schemaId Schema ID
+   	 */
+   	getExternalcontactsOrganizationsSchema(schemaId) { 
+   		// verify the required parameter 'schemaId' is set
+   		if (schemaId === undefined || schemaId === null) {
+   			throw 'Missing the required parameter "schemaId" when calling getExternalcontactsOrganizationsSchema';
+   		}
+
+   		return this.apiClient.callApi(
+   			'/api/v2/externalcontacts/organizations/schemas/{schemaId}', 
+   			'GET', 
+   			{ 'schemaId': schemaId }, 
+   			{  }, 
+   			{  }, 
+   			{  }, 
+   			null, 
+   			['PureCloud OAuth'], 
+   			['application/json'], 
+   			['application/json']
+   		);
+   	}
+
+   	/**
+   	 * Get a specific version of a schema
+   	 * 
+   	 * @param {String} schemaId Schema ID
+   	 * @param {String} versionId Schema version
+   	 */
+   	getExternalcontactsOrganizationsSchemaVersion(schemaId, versionId) { 
+   		// verify the required parameter 'schemaId' is set
+   		if (schemaId === undefined || schemaId === null) {
+   			throw 'Missing the required parameter "schemaId" when calling getExternalcontactsOrganizationsSchemaVersion';
+   		}
+   		// verify the required parameter 'versionId' is set
+   		if (versionId === undefined || versionId === null) {
+   			throw 'Missing the required parameter "versionId" when calling getExternalcontactsOrganizationsSchemaVersion';
+   		}
+
+   		return this.apiClient.callApi(
+   			'/api/v2/externalcontacts/organizations/schemas/{schemaId}/versions/{versionId}', 
+   			'GET', 
+   			{ 'schemaId': schemaId,'versionId': versionId }, 
+   			{  }, 
+   			{  }, 
+   			{  }, 
+   			null, 
+   			['PureCloud OAuth'], 
+   			['application/json'], 
+   			['application/json']
+   		);
+   	}
+
+   	/**
+   	 * Get all versions of an external organization&#39;s schema
+   	 * 
+   	 * @param {String} schemaId Schema ID
+   	 */
+   	getExternalcontactsOrganizationsSchemaVersions(schemaId) { 
+   		// verify the required parameter 'schemaId' is set
+   		if (schemaId === undefined || schemaId === null) {
+   			throw 'Missing the required parameter "schemaId" when calling getExternalcontactsOrganizationsSchemaVersions';
+   		}
+
+   		return this.apiClient.callApi(
+   			'/api/v2/externalcontacts/organizations/schemas/{schemaId}/versions', 
+   			'GET', 
+   			{ 'schemaId': schemaId }, 
+   			{  }, 
+   			{  }, 
+   			{  }, 
+   			null, 
+   			['PureCloud OAuth'], 
+   			['application/json'], 
+   			['application/json']
+   		);
+   	}
+
+   	/**
+   	 * Get a list of schemas.
+   	 * 
+   	 */
+   	getExternalcontactsOrganizationsSchemas() { 
+
+   		return this.apiClient.callApi(
+   			'/api/v2/externalcontacts/organizations/schemas', 
+   			'GET', 
+   			{  }, 
+   			{  }, 
+   			{  }, 
+   			{  }, 
+   			null, 
+   			['PureCloud OAuth'], 
+   			['application/json'], 
+   			['application/json']
+   		);
+   	}
+
+   	/**
    	 * Fetch a relationship
    	 * 
    	 * @param {String} relationshipId Relationship Id
@@ -11803,6 +12114,31 @@ define(['superagent'], function (superagent) { 'use strict';
    	}
 
    	/**
+   	 * Create a schema
+   	 * 
+   	 * @param {Object} body Schema
+   	 */
+   	postExternalcontactsContactsSchemas(body) { 
+   		// verify the required parameter 'body' is set
+   		if (body === undefined || body === null) {
+   			throw 'Missing the required parameter "body" when calling postExternalcontactsContactsSchemas';
+   		}
+
+   		return this.apiClient.callApi(
+   			'/api/v2/externalcontacts/contacts/schemas', 
+   			'POST', 
+   			{  }, 
+   			{  }, 
+   			{  }, 
+   			{  }, 
+   			body, 
+   			['PureCloud OAuth'], 
+   			['application/json'], 
+   			['application/json']
+   		);
+   	}
+
+   	/**
    	 * Create a note for an external organization
    	 * 
    	 * @param {String} externalOrganizationId External Organization Id
@@ -11845,6 +12181,31 @@ define(['superagent'], function (superagent) { 'use strict';
 
    		return this.apiClient.callApi(
    			'/api/v2/externalcontacts/organizations', 
+   			'POST', 
+   			{  }, 
+   			{  }, 
+   			{  }, 
+   			{  }, 
+   			body, 
+   			['PureCloud OAuth'], 
+   			['application/json'], 
+   			['application/json']
+   		);
+   	}
+
+   	/**
+   	 * Create a schema
+   	 * 
+   	 * @param {Object} body Schema
+   	 */
+   	postExternalcontactsOrganizationsSchemas(body) { 
+   		// verify the required parameter 'body' is set
+   		if (body === undefined || body === null) {
+   			throw 'Missing the required parameter "body" when calling postExternalcontactsOrganizationsSchemas';
+   		}
+
+   		return this.apiClient.callApi(
+   			'/api/v2/externalcontacts/organizations/schemas', 
    			'POST', 
    			{  }, 
    			{  }, 
@@ -11937,6 +12298,36 @@ define(['superagent'], function (superagent) { 'use strict';
    			'/api/v2/externalcontacts/contacts/{contactId}/notes/{noteId}', 
    			'PUT', 
    			{ 'contactId': contactId,'noteId': noteId }, 
+   			{  }, 
+   			{  }, 
+   			{  }, 
+   			body, 
+   			['PureCloud OAuth'], 
+   			['application/json'], 
+   			['application/json']
+   		);
+   	}
+
+   	/**
+   	 * Update a schema
+   	 * 
+   	 * @param {String} schemaId Schema ID
+   	 * @param {Object} body Data Schema
+   	 */
+   	putExternalcontactsContactsSchema(schemaId, body) { 
+   		// verify the required parameter 'schemaId' is set
+   		if (schemaId === undefined || schemaId === null) {
+   			throw 'Missing the required parameter "schemaId" when calling putExternalcontactsContactsSchema';
+   		}
+   		// verify the required parameter 'body' is set
+   		if (body === undefined || body === null) {
+   			throw 'Missing the required parameter "body" when calling putExternalcontactsContactsSchema';
+   		}
+
+   		return this.apiClient.callApi(
+   			'/api/v2/externalcontacts/contacts/schemas/{schemaId}', 
+   			'PUT', 
+   			{ 'schemaId': schemaId }, 
    			{  }, 
    			{  }, 
    			{  }, 
@@ -12073,6 +12464,36 @@ define(['superagent'], function (superagent) { 'use strict';
    	}
 
    	/**
+   	 * Update a schema
+   	 * 
+   	 * @param {String} schemaId Schema ID
+   	 * @param {Object} body Data Schema
+   	 */
+   	putExternalcontactsOrganizationsSchema(schemaId, body) { 
+   		// verify the required parameter 'schemaId' is set
+   		if (schemaId === undefined || schemaId === null) {
+   			throw 'Missing the required parameter "schemaId" when calling putExternalcontactsOrganizationsSchema';
+   		}
+   		// verify the required parameter 'body' is set
+   		if (body === undefined || body === null) {
+   			throw 'Missing the required parameter "body" when calling putExternalcontactsOrganizationsSchema';
+   		}
+
+   		return this.apiClient.callApi(
+   			'/api/v2/externalcontacts/organizations/schemas/{schemaId}', 
+   			'PUT', 
+   			{ 'schemaId': schemaId }, 
+   			{  }, 
+   			{  }, 
+   			{  }, 
+   			body, 
+   			['PureCloud OAuth'], 
+   			['application/json'], 
+   			['application/json']
+   		);
+   	}
+
+   	/**
    	 * Update a relationship
    	 * 
    	 * @param {String} relationshipId Relationship Id
@@ -12108,7 +12529,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Fax service.
    	 * @module purecloud-platform-client-v2/api/FaxApi
-   	 * @version 79.0.1
+   	 * @version 80.0.0
    	 */
 
    	/**
@@ -12279,7 +12700,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Flows service.
    	 * @module purecloud-platform-client-v2/api/FlowsApi
-   	 * @version 79.0.1
+   	 * @version 80.0.0
    	 */
 
    	/**
@@ -12350,7 +12771,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * GeneralDataProtectionRegulation service.
    	 * @module purecloud-platform-client-v2/api/GeneralDataProtectionRegulationApi
-   	 * @version 79.0.1
+   	 * @version 80.0.0
    	 */
 
    	/**
@@ -12480,7 +12901,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Geolocation service.
    	 * @module purecloud-platform-client-v2/api/GeolocationApi
-   	 * @version 79.0.1
+   	 * @version 80.0.0
    	 */
 
    	/**
@@ -12611,7 +13032,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Greetings service.
    	 * @module purecloud-platform-client-v2/api/GreetingsApi
-   	 * @version 79.0.1
+   	 * @version 80.0.0
    	 */
 
    	/**
@@ -13066,7 +13487,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Groups service.
    	 * @module purecloud-platform-client-v2/api/GroupsApi
-   	 * @version 79.0.1
+   	 * @version 80.0.0
    	 */
 
    	/**
@@ -13471,7 +13892,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * IdentityProvider service.
    	 * @module purecloud-platform-client-v2/api/IdentityProviderApi
-   	 * @version 79.0.1
+   	 * @version 80.0.0
    	 */
 
    	/**
@@ -14162,7 +14583,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Integrations service.
    	 * @module purecloud-platform-client-v2/api/IntegrationsApi
-   	 * @version 79.0.1
+   	 * @version 80.0.0
    	 */
 
    	/**
@@ -15654,7 +16075,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Knowledge service.
    	 * @module purecloud-platform-client-v2/api/KnowledgeApi
-   	 * @version 79.0.1
+   	 * @version 80.0.0
    	 */
 
    	/**
@@ -16369,11 +16790,512 @@ define(['superagent'], function (superagent) { 'use strict';
 
    }
 
+   class LanguageUnderstandingApi {
+   	/**
+   	 * LanguageUnderstanding service.
+   	 * @module purecloud-platform-client-v2/api/LanguageUnderstandingApi
+   	 * @version 80.0.0
+   	 */
+
+   	/**
+   	 * Constructs a new LanguageUnderstandingApi. 
+   	 * @alias module:purecloud-platform-client-v2/api/LanguageUnderstandingApi
+   	 * @class
+   	 * @param {module:purecloud-platform-client-v2/ApiClient} apiClient Optional API client implementation to use,
+   	 * default to {@link module:purecloud-platform-client-v2/ApiClient#instance} if unspecified.
+   	 */
+   	constructor(apiClient) {
+   		this.apiClient = apiClient || ApiClient.instance;
+   	}
+
+
+   	/**
+   	 * Delete an NLU Domain.
+   	 * 
+   	 * @param {String} domainId ID of the NLU domain.
+   	 */
+   	deleteLanguageunderstandingDomain(domainId) { 
+   		// verify the required parameter 'domainId' is set
+   		if (domainId === undefined || domainId === null) {
+   			throw 'Missing the required parameter "domainId" when calling deleteLanguageunderstandingDomain';
+   		}
+
+   		return this.apiClient.callApi(
+   			'/api/v2/languageunderstanding/domains/{domainId}', 
+   			'DELETE', 
+   			{ 'domainId': domainId }, 
+   			{  }, 
+   			{  }, 
+   			{  }, 
+   			null, 
+   			['PureCloud OAuth'], 
+   			['application/json'], 
+   			['application/json']
+   		);
+   	}
+
+   	/**
+   	 * Delete the feedback on the NLU Domain Version.
+   	 * 
+   	 * @param {String} domainId ID of the NLU domain.
+   	 * @param {String} feedbackId ID of the Feedback
+   	 */
+   	deleteLanguageunderstandingDomainFeedbackFeedbackId(domainId, feedbackId) { 
+   		// verify the required parameter 'domainId' is set
+   		if (domainId === undefined || domainId === null) {
+   			throw 'Missing the required parameter "domainId" when calling deleteLanguageunderstandingDomainFeedbackFeedbackId';
+   		}
+   		// verify the required parameter 'feedbackId' is set
+   		if (feedbackId === undefined || feedbackId === null) {
+   			throw 'Missing the required parameter "feedbackId" when calling deleteLanguageunderstandingDomainFeedbackFeedbackId';
+   		}
+
+   		return this.apiClient.callApi(
+   			'/api/v2/languageunderstanding/domains/{domainId}/feedback/{feedbackId}', 
+   			'DELETE', 
+   			{ 'domainId': domainId,'feedbackId': feedbackId }, 
+   			{  }, 
+   			{  }, 
+   			{  }, 
+   			null, 
+   			['PureCloud OAuth'], 
+   			['application/json'], 
+   			['application/json']
+   		);
+   	}
+
+   	/**
+   	 * Find an NLU Domain.
+   	 * 
+   	 * @param {String} domainId ID of the NLU domain.
+   	 */
+   	getLanguageunderstandingDomain(domainId) { 
+   		// verify the required parameter 'domainId' is set
+   		if (domainId === undefined || domainId === null) {
+   			throw 'Missing the required parameter "domainId" when calling getLanguageunderstandingDomain';
+   		}
+
+   		return this.apiClient.callApi(
+   			'/api/v2/languageunderstanding/domains/{domainId}', 
+   			'GET', 
+   			{ 'domainId': domainId }, 
+   			{  }, 
+   			{  }, 
+   			{  }, 
+   			null, 
+   			['PureCloud OAuth'], 
+   			['application/json'], 
+   			['application/json']
+   		);
+   	}
+
+   	/**
+   	 * Get all feedback in the given NLU Domain Version.
+   	 * 
+   	 * @param {String} domainId ID of the NLU domain.
+   	 * @param {Object} opts Optional parameters
+   	 * @param {String} opts.intentName The top intent name to retrieve feedback for.
+   	 * @param {Object} opts.assessment The top assessment to retrieve feedback for.
+   	 * @param {String} opts.dateStart Begin of time window as ISO-8601 date.
+   	 * @param {String} opts.dateEnd End of time window as ISO-8601 date.
+   	 * @param {Boolean} opts.includeDeleted Whether to include soft-deleted items in the result.
+   	 * @param {Number} opts.pageNumber Page number (default to 1)
+   	 * @param {Number} opts.pageSize Page size (default to 25)
+   	 * @param {Array.<String>} opts.fields Fields and properties to get, comma-separated
+   	 */
+   	getLanguageunderstandingDomainFeedback(domainId, opts) { 
+   		opts = opts || {};
+   		
+   		// verify the required parameter 'domainId' is set
+   		if (domainId === undefined || domainId === null) {
+   			throw 'Missing the required parameter "domainId" when calling getLanguageunderstandingDomainFeedback';
+   		}
+
+   		return this.apiClient.callApi(
+   			'/api/v2/languageunderstanding/domains/{domainId}/feedback', 
+   			'GET', 
+   			{ 'domainId': domainId }, 
+   			{ 'intentName': opts['intentName'],'assessment': opts['assessment'],'dateStart': opts['dateStart'],'dateEnd': opts['dateEnd'],'includeDeleted': opts['includeDeleted'],'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'fields': this.apiClient.buildCollectionParam(opts['fields'], 'multi') }, 
+   			{  }, 
+   			{  }, 
+   			null, 
+   			['PureCloud OAuth'], 
+   			['application/json'], 
+   			['application/json']
+   		);
+   	}
+
+   	/**
+   	 * Find a Feedback
+   	 * 
+   	 * @param {String} domainId ID of the NLU domain.
+   	 * @param {String} feedbackId ID of the Feedback
+   	 * @param {Object} opts Optional parameters
+   	 * @param {Array.<String>} opts.fields Fields and properties to get, comma-separated
+   	 */
+   	getLanguageunderstandingDomainFeedbackFeedbackId(domainId, feedbackId, opts) { 
+   		opts = opts || {};
+   		
+   		// verify the required parameter 'domainId' is set
+   		if (domainId === undefined || domainId === null) {
+   			throw 'Missing the required parameter "domainId" when calling getLanguageunderstandingDomainFeedbackFeedbackId';
+   		}
+   		// verify the required parameter 'feedbackId' is set
+   		if (feedbackId === undefined || feedbackId === null) {
+   			throw 'Missing the required parameter "feedbackId" when calling getLanguageunderstandingDomainFeedbackFeedbackId';
+   		}
+
+   		return this.apiClient.callApi(
+   			'/api/v2/languageunderstanding/domains/{domainId}/feedback/{feedbackId}', 
+   			'GET', 
+   			{ 'domainId': domainId,'feedbackId': feedbackId }, 
+   			{ 'fields': this.apiClient.buildCollectionParam(opts['fields'], 'multi') }, 
+   			{  }, 
+   			{  }, 
+   			null, 
+   			['PureCloud OAuth'], 
+   			['application/json'], 
+   			['application/json']
+   		);
+   	}
+
+   	/**
+   	 * Find an NLU Domain Version.
+   	 * 
+   	 * @param {String} domainId ID of the NLU domain.
+   	 * @param {String} domainVersionId ID of the NLU domain version.
+   	 * @param {Object} opts Optional parameters
+   	 * @param {Boolean} opts.includeUtterances Whether utterances for intent definition should be included when marshalling response.
+   	 */
+   	getLanguageunderstandingDomainVersion(domainId, domainVersionId, opts) { 
+   		opts = opts || {};
+   		
+   		// verify the required parameter 'domainId' is set
+   		if (domainId === undefined || domainId === null) {
+   			throw 'Missing the required parameter "domainId" when calling getLanguageunderstandingDomainVersion';
+   		}
+   		// verify the required parameter 'domainVersionId' is set
+   		if (domainVersionId === undefined || domainVersionId === null) {
+   			throw 'Missing the required parameter "domainVersionId" when calling getLanguageunderstandingDomainVersion';
+   		}
+
+   		return this.apiClient.callApi(
+   			'/api/v2/languageunderstanding/domains/{domainId}/versions/{domainVersionId}', 
+   			'GET', 
+   			{ 'domainId': domainId,'domainVersionId': domainVersionId }, 
+   			{ 'includeUtterances': opts['includeUtterances'] }, 
+   			{  }, 
+   			{  }, 
+   			null, 
+   			['PureCloud OAuth'], 
+   			['application/json'], 
+   			['application/json']
+   		);
+   	}
+
+   	/**
+   	 * Retrieved quality report for the specified NLU Domain Version
+   	 * 
+   	 * @param {String} domainId ID of the NLU domain.
+   	 * @param {String} domainVersionId ID of the NLU domain version.
+   	 */
+   	getLanguageunderstandingDomainVersionReport(domainId, domainVersionId) { 
+   		// verify the required parameter 'domainId' is set
+   		if (domainId === undefined || domainId === null) {
+   			throw 'Missing the required parameter "domainId" when calling getLanguageunderstandingDomainVersionReport';
+   		}
+   		// verify the required parameter 'domainVersionId' is set
+   		if (domainVersionId === undefined || domainVersionId === null) {
+   			throw 'Missing the required parameter "domainVersionId" when calling getLanguageunderstandingDomainVersionReport';
+   		}
+
+   		return this.apiClient.callApi(
+   			'/api/v2/languageunderstanding/domains/{domainId}/versions/{domainVersionId}/report', 
+   			'GET', 
+   			{ 'domainId': domainId,'domainVersionId': domainVersionId }, 
+   			{  }, 
+   			{  }, 
+   			{  }, 
+   			null, 
+   			['PureCloud OAuth'], 
+   			['application/json'], 
+   			['application/json']
+   		);
+   	}
+
+   	/**
+   	 * Get all NLU Domain Versions for a given Domain.
+   	 * 
+   	 * @param {String} domainId ID of the NLU domain.
+   	 * @param {Object} opts Optional parameters
+   	 * @param {Boolean} opts.includeUtterances Whether utterances for intent definition should be included when marshalling response.
+   	 * @param {Number} opts.pageNumber Page number (default to 1)
+   	 * @param {Number} opts.pageSize Page size (default to 25)
+   	 */
+   	getLanguageunderstandingDomainVersions(domainId, opts) { 
+   		opts = opts || {};
+   		
+   		// verify the required parameter 'domainId' is set
+   		if (domainId === undefined || domainId === null) {
+   			throw 'Missing the required parameter "domainId" when calling getLanguageunderstandingDomainVersions';
+   		}
+
+   		return this.apiClient.callApi(
+   			'/api/v2/languageunderstanding/domains/{domainId}/versions', 
+   			'GET', 
+   			{ 'domainId': domainId }, 
+   			{ 'includeUtterances': opts['includeUtterances'],'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'] }, 
+   			{  }, 
+   			{  }, 
+   			null, 
+   			['PureCloud OAuth'], 
+   			['application/json'], 
+   			['application/json']
+   		);
+   	}
+
+   	/**
+   	 * Get all NLU Domains.
+   	 * 
+   	 * @param {Object} opts Optional parameters
+   	 * @param {Number} opts.pageNumber Page number (default to 1)
+   	 * @param {Number} opts.pageSize Page size (default to 25)
+   	 */
+   	getLanguageunderstandingDomains(opts) { 
+   		opts = opts || {};
+   		
+
+   		return this.apiClient.callApi(
+   			'/api/v2/languageunderstanding/domains', 
+   			'GET', 
+   			{  }, 
+   			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'] }, 
+   			{  }, 
+   			{  }, 
+   			null, 
+   			['PureCloud OAuth'], 
+   			['application/json'], 
+   			['application/json']
+   		);
+   	}
+
+   	/**
+   	 * Update an NLU Domain.
+   	 * 
+   	 * @param {String} domainId ID of the NLU domain.
+   	 * @param {Object} opts Optional parameters
+   	 * @param {Object} opts.body 
+   	 */
+   	patchLanguageunderstandingDomain(domainId, opts) { 
+   		opts = opts || {};
+   		
+   		// verify the required parameter 'domainId' is set
+   		if (domainId === undefined || domainId === null) {
+   			throw 'Missing the required parameter "domainId" when calling patchLanguageunderstandingDomain';
+   		}
+
+   		return this.apiClient.callApi(
+   			'/api/v2/languageunderstanding/domains/{domainId}', 
+   			'PATCH', 
+   			{ 'domainId': domainId }, 
+   			{  }, 
+   			{  }, 
+   			{  }, 
+   			opts['body'], 
+   			['PureCloud OAuth'], 
+   			['application/json'], 
+   			['application/json']
+   		);
+   	}
+
+   	/**
+   	 * Create feedback for the NLU Domain Version.
+   	 * 
+   	 * @param {String} domainId ID of the NLU domain.
+   	 * @param {Object} opts Optional parameters
+   	 * @param {Object} opts.body 
+   	 */
+   	postLanguageunderstandingDomainFeedback(domainId, opts) { 
+   		opts = opts || {};
+   		
+   		// verify the required parameter 'domainId' is set
+   		if (domainId === undefined || domainId === null) {
+   			throw 'Missing the required parameter "domainId" when calling postLanguageunderstandingDomainFeedback';
+   		}
+
+   		return this.apiClient.callApi(
+   			'/api/v2/languageunderstanding/domains/{domainId}/feedback', 
+   			'POST', 
+   			{ 'domainId': domainId }, 
+   			{  }, 
+   			{  }, 
+   			{  }, 
+   			opts['body'], 
+   			['PureCloud OAuth'], 
+   			['application/json'], 
+   			['application/json']
+   		);
+   	}
+
+   	/**
+   	 * Detect intent, entities, etc. in the submitted text using the specified NLU domain version.
+   	 * 
+   	 * @param {String} domainId ID of the NLU domain.
+   	 * @param {String} domainVersionId ID of the NLU domain version.
+   	 * @param {Object} opts Optional parameters
+   	 * @param {Object} opts.body 
+   	 */
+   	postLanguageunderstandingDomainVersionDetect(domainId, domainVersionId, opts) { 
+   		opts = opts || {};
+   		
+   		// verify the required parameter 'domainId' is set
+   		if (domainId === undefined || domainId === null) {
+   			throw 'Missing the required parameter "domainId" when calling postLanguageunderstandingDomainVersionDetect';
+   		}
+   		// verify the required parameter 'domainVersionId' is set
+   		if (domainVersionId === undefined || domainVersionId === null) {
+   			throw 'Missing the required parameter "domainVersionId" when calling postLanguageunderstandingDomainVersionDetect';
+   		}
+
+   		return this.apiClient.callApi(
+   			'/api/v2/languageunderstanding/domains/{domainId}/versions/{domainVersionId}/detect', 
+   			'POST', 
+   			{ 'domainId': domainId,'domainVersionId': domainVersionId }, 
+   			{  }, 
+   			{  }, 
+   			{  }, 
+   			opts['body'], 
+   			['PureCloud OAuth'], 
+   			['application/json'], 
+   			['application/json']
+   		);
+   	}
+
+   	/**
+   	 * Publish the draft NLU Domain Version.
+   	 * 
+   	 * @param {String} domainId ID of the NLU domain.
+   	 * @param {String} domainVersionId ID of the NLU domain version.
+   	 */
+   	postLanguageunderstandingDomainVersionPublish(domainId, domainVersionId) { 
+   		// verify the required parameter 'domainId' is set
+   		if (domainId === undefined || domainId === null) {
+   			throw 'Missing the required parameter "domainId" when calling postLanguageunderstandingDomainVersionPublish';
+   		}
+   		// verify the required parameter 'domainVersionId' is set
+   		if (domainVersionId === undefined || domainVersionId === null) {
+   			throw 'Missing the required parameter "domainVersionId" when calling postLanguageunderstandingDomainVersionPublish';
+   		}
+
+   		return this.apiClient.callApi(
+   			'/api/v2/languageunderstanding/domains/{domainId}/versions/{domainVersionId}/publish', 
+   			'POST', 
+   			{ 'domainId': domainId,'domainVersionId': domainVersionId }, 
+   			{  }, 
+   			{  }, 
+   			{  }, 
+   			null, 
+   			['PureCloud OAuth'], 
+   			['application/json'], 
+   			['application/json']
+   		);
+   	}
+
+   	/**
+   	 * Train the draft NLU Domain Version.
+   	 * 
+   	 * @param {String} domainId ID of the NLU domain.
+   	 * @param {String} domainVersionId ID of the NLU domain version.
+   	 */
+   	postLanguageunderstandingDomainVersionTrain(domainId, domainVersionId) { 
+   		// verify the required parameter 'domainId' is set
+   		if (domainId === undefined || domainId === null) {
+   			throw 'Missing the required parameter "domainId" when calling postLanguageunderstandingDomainVersionTrain';
+   		}
+   		// verify the required parameter 'domainVersionId' is set
+   		if (domainVersionId === undefined || domainVersionId === null) {
+   			throw 'Missing the required parameter "domainVersionId" when calling postLanguageunderstandingDomainVersionTrain';
+   		}
+
+   		return this.apiClient.callApi(
+   			'/api/v2/languageunderstanding/domains/{domainId}/versions/{domainVersionId}/train', 
+   			'POST', 
+   			{ 'domainId': domainId,'domainVersionId': domainVersionId }, 
+   			{  }, 
+   			{  }, 
+   			{  }, 
+   			null, 
+   			['PureCloud OAuth'], 
+   			['application/json'], 
+   			['application/json']
+   		);
+   	}
+
+   	/**
+   	 * Create an NLU Domain.
+   	 * 
+   	 * @param {Object} opts Optional parameters
+   	 * @param {Object} opts.body 
+   	 */
+   	postLanguageunderstandingDomains(opts) { 
+   		opts = opts || {};
+   		
+
+   		return this.apiClient.callApi(
+   			'/api/v2/languageunderstanding/domains', 
+   			'POST', 
+   			{  }, 
+   			{  }, 
+   			{  }, 
+   			{  }, 
+   			opts['body'], 
+   			['PureCloud OAuth'], 
+   			['application/json'], 
+   			['application/json']
+   		);
+   	}
+
+   	/**
+   	 * Update an NLU Domain Version.
+   	 * 
+   	 * @param {String} domainId ID of the NLU domain.
+   	 * @param {String} domainVersionId ID of the NLU domain version.
+   	 * @param {Object} opts Optional parameters
+   	 * @param {Object} opts.body 
+   	 */
+   	putLanguageunderstandingDomainVersion(domainId, domainVersionId, opts) { 
+   		opts = opts || {};
+   		
+   		// verify the required parameter 'domainId' is set
+   		if (domainId === undefined || domainId === null) {
+   			throw 'Missing the required parameter "domainId" when calling putLanguageunderstandingDomainVersion';
+   		}
+   		// verify the required parameter 'domainVersionId' is set
+   		if (domainVersionId === undefined || domainVersionId === null) {
+   			throw 'Missing the required parameter "domainVersionId" when calling putLanguageunderstandingDomainVersion';
+   		}
+
+   		return this.apiClient.callApi(
+   			'/api/v2/languageunderstanding/domains/{domainId}/versions/{domainVersionId}', 
+   			'PUT', 
+   			{ 'domainId': domainId,'domainVersionId': domainVersionId }, 
+   			{  }, 
+   			{  }, 
+   			{  }, 
+   			opts['body'], 
+   			['PureCloud OAuth'], 
+   			['application/json'], 
+   			['application/json']
+   		);
+   	}
+
+   }
+
    class LanguagesApi {
    	/**
    	 * Languages service.
    	 * @module purecloud-platform-client-v2/api/LanguagesApi
-   	 * @version 79.0.1
+   	 * @version 80.0.0
    	 */
 
    	/**
@@ -16641,7 +17563,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * License service.
    	 * @module purecloud-platform-client-v2/api/LicenseApi
-   	 * @version 79.0.1
+   	 * @version 80.0.0
    	 */
 
    	/**
@@ -16879,7 +17801,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Locations service.
    	 * @module purecloud-platform-client-v2/api/LocationsApi
-   	 * @version 79.0.1
+   	 * @version 80.0.0
    	 */
 
    	/**
@@ -17115,7 +18037,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * MobileDevices service.
    	 * @module purecloud-platform-client-v2/api/MobileDevicesApi
-   	 * @version 79.0.1
+   	 * @version 80.0.0
    	 */
 
    	/**
@@ -17266,7 +18188,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Notifications service.
    	 * @module purecloud-platform-client-v2/api/NotificationsApi
-   	 * @version 79.0.1
+   	 * @version 80.0.0
    	 */
 
    	/**
@@ -17465,7 +18387,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * OAuth service.
    	 * @module purecloud-platform-client-v2/api/OAuthApi
-   	 * @version 79.0.1
+   	 * @version 80.0.0
    	 */
 
    	/**
@@ -17734,7 +18656,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Objects service.
    	 * @module purecloud-platform-client-v2/api/ObjectsApi
-   	 * @version 79.0.1
+   	 * @version 80.0.0
    	 */
 
    	/**
@@ -17975,7 +18897,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Organization service.
    	 * @module purecloud-platform-client-v2/api/OrganizationApi
-   	 * @version 79.0.1
+   	 * @version 80.0.0
    	 */
 
    	/**
@@ -18185,7 +19107,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * OrganizationAuthorization service.
    	 * @module purecloud-platform-client-v2/api/OrganizationAuthorizationApi
-   	 * @version 79.0.1
+   	 * @version 80.0.0
    	 */
 
    	/**
@@ -18895,7 +19817,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Outbound service.
    	 * @module purecloud-platform-client-v2/api/OutboundApi
-   	 * @version 79.0.1
+   	 * @version 80.0.0
    	 */
 
    	/**
@@ -21558,7 +22480,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Presence service.
    	 * @module purecloud-platform-client-v2/api/PresenceApi
-   	 * @version 79.0.1
+   	 * @version 80.0.0
    	 */
 
    	/**
@@ -21825,7 +22747,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Quality service.
    	 * @module purecloud-platform-client-v2/api/QualityApi
-   	 * @version 79.0.1
+   	 * @version 80.0.0
    	 */
 
    	/**
@@ -23497,7 +24419,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Recording service.
    	 * @module purecloud-platform-client-v2/api/RecordingApi
-   	 * @version 79.0.1
+   	 * @version 80.0.0
    	 */
 
    	/**
@@ -24737,7 +25659,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * ResponseManagement service.
    	 * @module purecloud-platform-client-v2/api/ResponseManagementApi
-   	 * @version 79.0.1
+   	 * @version 80.0.0
    	 */
 
    	/**
@@ -25062,7 +25984,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Routing service.
    	 * @module purecloud-platform-client-v2/api/RoutingApi
-   	 * @version 79.0.1
+   	 * @version 80.0.0
    	 */
 
    	/**
@@ -25256,6 +26178,31 @@ define(['superagent'], function (superagent) { 'use strict';
    			'/api/v2/routing/skills/{skillId}', 
    			'DELETE', 
    			{ 'skillId': skillId }, 
+   			{  }, 
+   			{  }, 
+   			{  }, 
+   			null, 
+   			['PureCloud OAuth'], 
+   			['application/json'], 
+   			['application/json']
+   		);
+   	}
+
+   	/**
+   	 * Delete an Address by Id for SMS
+   	 * 
+   	 * @param {String} addressId Address ID
+   	 */
+   	deleteRoutingSmsAddress(addressId) { 
+   		// verify the required parameter 'addressId' is set
+   		if (addressId === undefined || addressId === null) {
+   			throw 'Missing the required parameter "addressId" when calling deleteRoutingSmsAddress';
+   		}
+
+   		return this.apiClient.callApi(
+   			'/api/v2/routing/sms/addresses/{addressId}', 
+   			'DELETE', 
+   			{ 'addressId': addressId }, 
    			{  }, 
    			{  }, 
    			{  }, 
@@ -27335,7 +28282,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * SCIM service.
    	 * @module purecloud-platform-client-v2/api/SCIMApi
-   	 * @version 79.0.1
+   	 * @version 80.0.0
    	 */
 
    	/**
@@ -27648,7 +28595,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	 * 
    	 * @param {String} userId The ID of a user. Returned with GET /api/v2/scim/users.
    	 * @param {Object} opts Optional parameters
-   	 * @param {Array.<String>} opts.attributes Indicates which attributes to include. Returns these attributes ant the &#39;id&#39;, &#39;userName&#39;, &#39;active&#39;, and &#39;meta&#39; attributes. Use \&quot;attributes\&quot; to avoid expensive secondary calls for the default attributes.
+   	 * @param {Array.<String>} opts.attributes Indicates which attributes to include. Returns these attributes and the &#39;id&#39;, &#39;userName&#39;, &#39;active&#39;, and &#39;meta&#39; attributes. Use \&quot;attributes\&quot; to avoid expensive secondary calls for the default attributes.
    	 * @param {Array.<String>} opts.excludedAttributes Indicates which attributes to exclude. Returns the default attributes minus \&quot;excludedAttributes\&quot;. Use \&quot;excludedAttributes\&quot; to avoid expensive secondary calls for the default attributes. The &#39;id&#39;, &#39;userName&#39;, &#39;active&#39;, &#39;meta&#39; attributes  will always be present in output.
    	 * @param {String} opts.ifNoneMatch TThe ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/users/{userId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns the current configuration of the resource. If the ETag is current, returns 304 Not Modified.
    	 */
@@ -27680,7 +28627,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	 * @param {Object} opts Optional parameters
    	 * @param {Number} opts.startIndex The 1-based index of the first query result. (default to 1)
    	 * @param {Number} opts.count The requested number of items per page. A value of 0 returns \&quot;totalResults\&quot;. (default to 25)
-   	 * @param {Array.<String>} opts.attributes Indicates which attributes to include. Returns these attributes ant the &#39;id&#39;, &#39;userName&#39;, &#39;active&#39;, and &#39;meta&#39; attributes. Use \&quot;attributes\&quot; to avoid expensive secondary calls for the default attributes.
+   	 * @param {Array.<String>} opts.attributes Indicates which attributes to include. Returns these attributes and the &#39;id&#39;, &#39;userName&#39;, &#39;active&#39;, and &#39;meta&#39; attributes. Use \&quot;attributes\&quot; to avoid expensive secondary calls for the default attributes.
    	 * @param {Array.<String>} opts.excludedAttributes Indicates which attributes to exclude. Returns the default attributes minus \&quot;excludedAttributes\&quot;. Use \&quot;excludedAttributes\&quot; to avoid expensive secondary calls for the default attributes. The &#39;id&#39;, &#39;userName&#39;, &#39;active&#39;, &#39;meta&#39; attributes  will always be present in output.
    	 * @param {String} opts.filter Filters results. If nothing is specified, returns all active users. Examples of valid values: \&quot;id eq 857449b0-d9e7-4cd0-acbf-a6adfb9ef1e9\&quot;, \&quot;userName eq search@sample.org\&quot;, \&quot;manager eq 16e10e2f-1136-43fe-bb84-eac073168a49\&quot;, \&quot;email eq search@sample.org\&quot;, \&quot;division eq divisionName\&quot;, \&quot;externalId eq 167844\&quot;, \&quot;active eq false\&quot;.
    	 */
@@ -27888,7 +28835,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	 * 
    	 * @param {String} userId The ID of a user. Returned with GET /api/v2/scim/v2/users.
    	 * @param {Object} opts Optional parameters
-   	 * @param {Array.<String>} opts.attributes Indicates which attributes to include. Returns these attributes ant the &#39;id&#39;, &#39;userName&#39;, &#39;active&#39;, and &#39;meta&#39; attributes. Use \&quot;attributes\&quot; to avoid expensive secondary calls for the default attributes.
+   	 * @param {Array.<String>} opts.attributes Indicates which attributes to include. Returns these attributes and the &#39;id&#39;, &#39;userName&#39;, &#39;active&#39;, and &#39;meta&#39; attributes. Use \&quot;attributes\&quot; to avoid expensive secondary calls for the default attributes.
    	 * @param {Array.<String>} opts.excludedAttributes Indicates which attributes to exclude. Returns the default attributes minus \&quot;excludedAttributes\&quot;. Use \&quot;excludedAttributes\&quot; to avoid expensive secondary calls for the default attributes. The &#39;id&#39;, &#39;userName&#39;, &#39;active&#39;, &#39;meta&#39; attributes  will always be present in output.
    	 * @param {String} opts.ifNoneMatch The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/users/{userId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns the current configuration of the resource. If the ETag is current, returns 304 Not Modified.
    	 */
@@ -27920,7 +28867,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	 * @param {Object} opts Optional parameters
    	 * @param {Number} opts.startIndex The 1-based index of the first query result. (default to 1)
    	 * @param {Number} opts.count The requested number of items per page. A value of 0 returns \&quot;totalResults\&quot;. (default to 25)
-   	 * @param {Array.<String>} opts.attributes Indicates which attributes to include. Returns these attributes ant the &#39;id&#39;, &#39;userName&#39;, &#39;active&#39;, and &#39;meta&#39; attributes. Use \&quot;attributes\&quot; to avoid expensive secondary calls for the default attributes.
+   	 * @param {Array.<String>} opts.attributes Indicates which attributes to include. Returns these attributes and the &#39;id&#39;, &#39;userName&#39;, &#39;active&#39;, and &#39;meta&#39; attributes. Use \&quot;attributes\&quot; to avoid expensive secondary calls for the default attributes.
    	 * @param {Array.<String>} opts.excludedAttributes Indicates which attributes to exclude. Returns the default attributes minus \&quot;excludedAttributes\&quot;. Use \&quot;excludedAttributes\&quot; to avoid expensive secondary calls for the default attributes. The &#39;id&#39;, &#39;userName&#39;, &#39;active&#39;, &#39;meta&#39; attributes  will always be present in output.
    	 * @param {String} opts.filter Filters results. If nothing is specified, returns all active users. Examples of valid values: \&quot;id eq 857449b0-d9e7-4cd0-acbf-a6adfb9ef1e9\&quot;, \&quot;userName eq search@sample.org\&quot;, \&quot;manager eq 16e10e2f-1136-43fe-bb84-eac073168a49\&quot;, \&quot;email eq search@sample.org\&quot;, \&quot;division eq divisionName\&quot;, \&quot;externalId eq 167844\&quot;, \&quot;active eq false\&quot;.
    	 */
@@ -28320,7 +29267,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Scripts service.
    	 * @module purecloud-platform-client-v2/api/ScriptsApi
-   	 * @version 79.0.1
+   	 * @version 80.0.0
    	 */
 
    	/**
@@ -28673,7 +29620,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Search service.
    	 * @module purecloud-platform-client-v2/api/SearchApi
-   	 * @version 79.0.1
+   	 * @version 80.0.0
    	 */
 
    	/**
@@ -29157,7 +30104,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Stations service.
    	 * @module purecloud-platform-client-v2/api/StationsApi
-   	 * @version 79.0.1
+   	 * @version 80.0.0
    	 */
 
    	/**
@@ -29304,7 +30251,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Suggest service.
    	 * @module purecloud-platform-client-v2/api/SuggestApi
-   	 * @version 79.0.1
+   	 * @version 80.0.0
    	 */
 
    	/**
@@ -29443,7 +30390,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Telephony service.
    	 * @module purecloud-platform-client-v2/api/TelephonyApi
-   	 * @version 79.0.1
+   	 * @version 80.0.0
    	 */
 
    	/**
@@ -29551,7 +30498,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * TelephonyProvidersEdge service.
    	 * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-   	 * @version 79.0.1
+   	 * @version 80.0.0
    	 */
 
    	/**
@@ -33126,7 +34073,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Tokens service.
    	 * @module purecloud-platform-client-v2/api/TokensApi
-   	 * @version 79.0.1
+   	 * @version 80.0.0
    	 */
 
    	/**
@@ -33208,11 +34155,57 @@ define(['superagent'], function (superagent) { 'use strict';
 
    }
 
+   class UploadsApi {
+   	/**
+   	 * Uploads service.
+   	 * @module purecloud-platform-client-v2/api/UploadsApi
+   	 * @version 80.0.0
+   	 */
+
+   	/**
+   	 * Constructs a new UploadsApi. 
+   	 * @alias module:purecloud-platform-client-v2/api/UploadsApi
+   	 * @class
+   	 * @param {module:purecloud-platform-client-v2/ApiClient} apiClient Optional API client implementation to use,
+   	 * default to {@link module:purecloud-platform-client-v2/ApiClient#instance} if unspecified.
+   	 */
+   	constructor(apiClient) {
+   		this.apiClient = apiClient || ApiClient.instance;
+   	}
+
+
+   	/**
+   	 * Creates presigned url for uploading a public asset image
+   	 * 
+   	 * @param {Object} body query
+   	 */
+   	postUploadsPublicassetsImages(body) { 
+   		// verify the required parameter 'body' is set
+   		if (body === undefined || body === null) {
+   			throw 'Missing the required parameter "body" when calling postUploadsPublicassetsImages';
+   		}
+
+   		return this.apiClient.callApi(
+   			'/api/v2/uploads/publicassets/images', 
+   			'POST', 
+   			{  }, 
+   			{  }, 
+   			{  }, 
+   			{  }, 
+   			body, 
+   			['PureCloud OAuth'], 
+   			['application/json'], 
+   			['application/json']
+   		);
+   	}
+
+   }
+
    class UserRecordingsApi {
    	/**
    	 * UserRecordings service.
    	 * @module purecloud-platform-client-v2/api/UserRecordingsApi
-   	 * @version 79.0.1
+   	 * @version 80.0.0
    	 */
 
    	/**
@@ -33396,7 +34389,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Users service.
    	 * @module purecloud-platform-client-v2/api/UsersApi
-   	 * @version 79.0.1
+   	 * @version 80.0.0
    	 */
 
    	/**
@@ -35461,7 +36454,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Utilities service.
    	 * @module purecloud-platform-client-v2/api/UtilitiesApi
-   	 * @version 79.0.1
+   	 * @version 80.0.0
    	 */
 
    	/**
@@ -35572,7 +36565,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Voicemail service.
    	 * @module purecloud-platform-client-v2/api/VoicemailApi
-   	 * @version 79.0.1
+   	 * @version 80.0.0
    	 */
 
    	/**
@@ -36209,7 +37202,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * WebChat service.
    	 * @module purecloud-platform-client-v2/api/WebChatApi
-   	 * @version 79.0.1
+   	 * @version 80.0.0
    	 */
 
    	/**
@@ -36753,7 +37746,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Widgets service.
    	 * @module purecloud-platform-client-v2/api/WidgetsApi
-   	 * @version 79.0.1
+   	 * @version 80.0.0
    	 */
 
    	/**
@@ -36899,7 +37892,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * WorkforceManagement service.
    	 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-   	 * @version 79.0.1
+   	 * @version 80.0.0
    	 */
 
    	/**
@@ -37155,7 +38148,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	}
 
    	/**
-   	 * Deletes an activity code
+   	 * Deprecated/Gone: Use the new business unit activity code resources
    	 * 
    	 * @param {String} muId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
    	 * @param {String} acId The ID of the activity code to delete
@@ -37185,9 +38178,9 @@ define(['superagent'], function (superagent) { 'use strict';
    	}
 
    	/**
-   	 * Cancel a schedule run
+   	 * Gone.  Scheduling has moved under business units
    	 * 
-   	 * @param {String} managementUnitId The ID of the management unit.
+   	 * @param {String} managementUnitId (Deprecated/gone): The ID of the management unit.
    	 * @param {String} runId The ID of the schedule run
    	 */
    	deleteWorkforcemanagementManagementunitSchedulingRun(managementUnitId, runId) { 
@@ -37215,10 +38208,10 @@ define(['superagent'], function (superagent) { 'use strict';
    	}
 
    	/**
-   	 * Delete a service goal group
+   	 * Gone. Replaced with service goal templates and planning groups under business units
    	 * 
-   	 * @param {String} managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
-   	 * @param {String} serviceGoalGroupId The ID of the service goal group to delete
+   	 * @param {String} managementUnitId (Deprecated/gone): The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+   	 * @param {String} serviceGoalGroupId Gone. The ID of the service goal group to delete
    	 */
    	deleteWorkforcemanagementManagementunitServicegoalgroup(managementUnitId, serviceGoalGroupId) { 
    		// verify the required parameter 'managementUnitId' is set
@@ -37245,11 +38238,11 @@ define(['superagent'], function (superagent) { 'use strict';
    	}
 
    	/**
-   	 * Delete a schedule
+   	 * Gone.  Scheduling has moved under business units
    	 * 
    	 * @param {String} managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
    	 * @param {String} weekId First day of schedule week in yyyy-MM-dd format.
-   	 * @param {String} scheduleId The ID of theschedule to delete
+   	 * @param {String} scheduleId Gone/deprecated. The ID of the schedule to delete
    	 */
    	deleteWorkforcemanagementManagementunitWeekSchedule(managementUnitId, weekId, scheduleId) { 
    		// verify the required parameter 'managementUnitId' is set
@@ -37280,11 +38273,11 @@ define(['superagent'], function (superagent) { 'use strict';
    	}
 
    	/**
-   	 * Delete a short term forecast
-   	 * Must not be tied to any schedules
-   	 * @param {String} managementUnitId The management unit ID of the management unit to which the forecast belongs
-   	 * @param {String} weekDateId The week start date of the forecast in yyyy-MM-dd format
-   	 * @param {String} forecastId The ID of the forecast
+   	 * Gone. Use equivalent business unit resource instead
+   	 * 
+   	 * @param {String} managementUnitId (Deprecated/gone): The id of the management unit.
+   	 * @param {String} weekDateId (Deprecated/gone): The week start date of the forecast in yyyy-MM-dd format
+   	 * @param {String} forecastId (Gone/Deprecated): The ID of the forecast
    	 */
    	deleteWorkforcemanagementManagementunitWeekShorttermforecast(managementUnitId, weekDateId, forecastId) { 
    		// verify the required parameter 'managementUnitId' is set
@@ -38289,26 +39282,21 @@ define(['superagent'], function (superagent) { 'use strict';
    	}
 
    	/**
-   	 * Get intraday queues for the given date
+   	 * Gone.  Moved under business units
    	 * 
    	 * @param {String} muId The management unit ID of the management unit
-   	 * @param {String} _date yyyy-MM-dd date string interpreted in the configured management unit time zone
    	 */
-   	getWorkforcemanagementManagementunitIntradayQueues(muId, _date) { 
+   	getWorkforcemanagementManagementunitIntradayQueues(muId) { 
    		// verify the required parameter 'muId' is set
    		if (muId === undefined || muId === null) {
    			throw 'Missing the required parameter "muId" when calling getWorkforcemanagementManagementunitIntradayQueues';
-   		}
-   		// verify the required parameter '_date' is set
-   		if (_date === undefined || _date === null) {
-   			throw 'Missing the required parameter "_date" when calling getWorkforcemanagementManagementunitIntradayQueues';
    		}
 
    		return this.apiClient.callApi(
    			'/api/v2/workforcemanagement/managementunits/{muId}/intraday/queues', 
    			'GET', 
    			{ 'muId': muId }, 
-   			{ 'date': _date }, 
+   			{  }, 
    			{  }, 
    			{  }, 
    			null, 
@@ -38319,9 +39307,9 @@ define(['superagent'], function (superagent) { 'use strict';
    	}
 
    	/**
-   	 * Gets the status for a specific scheduling run
+   	 * Gone.  Scheduling has moved under business units
    	 * 
-   	 * @param {String} managementUnitId The ID of the management unit.
+   	 * @param {String} managementUnitId (Deprecated/gone): The ID of the management unit.
    	 * @param {String} runId The ID of the schedule run
    	 */
    	getWorkforcemanagementManagementunitSchedulingRun(managementUnitId, runId) { 
@@ -38349,9 +39337,9 @@ define(['superagent'], function (superagent) { 'use strict';
    	}
 
    	/**
-   	 * Gets the result of a specific scheduling run
+   	 * Gone.  Scheduling has moved under business units
    	 * 
-   	 * @param {String} managementUnitId The ID of the management unit.
+   	 * @param {String} managementUnitId (Deprecated/gone): The ID of the management unit.
    	 * @param {String} runId The ID of the schedule run
    	 */
    	getWorkforcemanagementManagementunitSchedulingRunResult(managementUnitId, runId) { 
@@ -38379,9 +39367,9 @@ define(['superagent'], function (superagent) { 'use strict';
    	}
 
    	/**
-   	 * Get the status of all the ongoing schedule runs
+   	 * Gone.  Scheduling has moved under business units
    	 * 
-   	 * @param {String} managementUnitId The ID of the management unit.
+   	 * @param {String} managementUnitId (Deprecated/gone): The ID of the management unit.
    	 */
    	getWorkforcemanagementManagementunitSchedulingRuns(managementUnitId) { 
    		// verify the required parameter 'managementUnitId' is set
@@ -38404,10 +39392,10 @@ define(['superagent'], function (superagent) { 'use strict';
    	}
 
    	/**
-   	 * Get a service goal group
+   	 * Gone. Replaced with service goal templates and planning groups under business units
    	 * 
-   	 * @param {String} managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
-   	 * @param {String} serviceGoalGroupId The ID of the service goal group to fetch
+   	 * @param {String} managementUnitId (Deprecated/gone): The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+   	 * @param {String} serviceGoalGroupId Gone.  The ID of the service goal group to fetch
    	 */
    	getWorkforcemanagementManagementunitServicegoalgroup(managementUnitId, serviceGoalGroupId) { 
    		// verify the required parameter 'managementUnitId' is set
@@ -38434,9 +39422,9 @@ define(['superagent'], function (superagent) { 'use strict';
    	}
 
    	/**
-   	 * Get service goal groups
+   	 * Gone. Replaced with service goal templates and planning groups under business units
    	 * 
-   	 * @param {String} managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+   	 * @param {String} managementUnitId (Deprecated/gone): The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
    	 */
    	getWorkforcemanagementManagementunitServicegoalgroups(managementUnitId) { 
    		// verify the required parameter 'managementUnitId' is set
@@ -38459,7 +39447,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	}
 
    	/**
-   	 * Get the settings for the requested management unit. Deprecated, use the GET management unit route instead
+   	 * Gone. Get management unit settings via expand parameters on the GET management unit
    	 * 
    	 * @param {String} muId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
    	 */
@@ -38628,7 +39616,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	}
 
    	/**
-   	 * Get a week schedule
+   	 * Deprecated.  Use the equivalent business unit resource instead. Get a week schedule
    	 * 
    	 * @param {String} managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
    	 * @param {String} weekId First day of schedule week in yyyy-MM-dd format.
@@ -38668,11 +39656,11 @@ define(['superagent'], function (superagent) { 'use strict';
    	}
 
    	/**
-   	 * Get week schedule generation results
+   	 * Gone.  Scheduling has moved under business units
    	 * 
    	 * @param {String} managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
    	 * @param {String} weekId First day of schedule week in yyyy-MM-dd format.
-   	 * @param {String} scheduleId The ID of the schedule to fetch generation results
+   	 * @param {String} scheduleId Gone/deprecated. The ID of the schedule to fetch generation results
    	 */
    	getWorkforcemanagementManagementunitWeekScheduleGenerationresults(managementUnitId, weekId, scheduleId) { 
    		// verify the required parameter 'managementUnitId' is set
@@ -38703,7 +39691,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	}
 
    	/**
-   	 * Get the list of schedules in a week in management unit
+   	 * Deprecated.  Use the equivalent business unit resource instead. Get the list of schedules in a week in management unit
    	 * 
    	 * @param {String} managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
    	 * @param {String} weekId First day of schedule week in yyyy-MM-dd format.
@@ -38773,17 +39761,13 @@ define(['superagent'], function (superagent) { 'use strict';
    	}
 
    	/**
-   	 * Get the final result of a short term forecast calculation with modifications applied
+   	 * Gone. Use equivalent business unit resource instead
    	 * 
-   	 * @param {String} managementUnitId The management unit ID of the management unit to which the forecast belongs
-   	 * @param {String} weekDateId The week start date of the forecast in yyyy-MM-dd format
-   	 * @param {String} forecastId The ID of the forecast
-   	 * @param {Object} opts Optional parameters
-   	 * @param {Boolean} opts.forceDownloadService Force the result of this operation to be sent via download service.  For testing/app development purposes
+   	 * @param {String} managementUnitId (Deprecated/gone): The id of the management unit.
+   	 * @param {String} weekDateId (Deprecated/gone): The week start date of the forecast in yyyy-MM-dd format
+   	 * @param {String} forecastId (Gone/Deprecated): The ID of the forecast
    	 */
-   	getWorkforcemanagementManagementunitWeekShorttermforecastFinal(managementUnitId, weekDateId, forecastId, opts) { 
-   		opts = opts || {};
-   		
+   	getWorkforcemanagementManagementunitWeekShorttermforecastFinal(managementUnitId, weekDateId, forecastId) { 
    		// verify the required parameter 'managementUnitId' is set
    		if (managementUnitId === undefined || managementUnitId === null) {
    			throw 'Missing the required parameter "managementUnitId" when calling getWorkforcemanagementManagementunitWeekShorttermforecastFinal';
@@ -38801,7 +39785,7 @@ define(['superagent'], function (superagent) { 'use strict';
    			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}/final', 
    			'GET', 
    			{ 'managementUnitId': managementUnitId,'weekDateId': weekDateId,'forecastId': forecastId }, 
-   			{ 'forceDownloadService': opts['forceDownloadService'] }, 
+   			{  }, 
    			{  }, 
    			{  }, 
    			null, 
@@ -38812,10 +39796,10 @@ define(['superagent'], function (superagent) { 'use strict';
    	}
 
    	/**
-   	 * Get short term forecasts
-   	 * Use \&quot;recent\&quot; for the `weekDateId` path parameter to fetch all forecasts for +/- 26 weeks from the current date
-   	 * @param {String} managementUnitId The management unit ID of the management unit to which the forecast belongs
-   	 * @param {String} weekDateId The week start date of the forecast in yyyy-MM-dd format
+   	 * Gone. Use equivalent business unit resource instead
+   	 * 
+   	 * @param {String} managementUnitId (Deprecated/gone): The id of the management unit.
+   	 * @param {String} weekDateId (Deprecated/gone): The week start date of the forecast in yyyy-MM-dd format
    	 */
    	getWorkforcemanagementManagementunitWeekShorttermforecasts(managementUnitId, weekDateId) { 
    		// verify the required parameter 'managementUnitId' is set
@@ -39261,7 +40245,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	}
 
    	/**
-   	 * Update an activity code
+   	 * Deprecated/Gone: Use the new business unit activity code resources
    	 * 
    	 * @param {String} muId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
    	 * @param {String} acId The ID of the activity code to update
@@ -39295,9 +40279,9 @@ define(['superagent'], function (superagent) { 'use strict';
    	}
 
    	/**
-   	 * Marks a specific scheduling run as applied, allowing a new rescheduling run to be started
+   	 * Gone.  Scheduling has moved under business units
    	 * 
-   	 * @param {String} managementUnitId The ID of the management unit.
+   	 * @param {String} managementUnitId (Deprecated/gone): The ID of the management unit.
    	 * @param {String} runId The ID of the schedule run
    	 * @param {Object} opts Optional parameters
    	 * @param {Object} opts.body body
@@ -39329,16 +40313,12 @@ define(['superagent'], function (superagent) { 'use strict';
    	}
 
    	/**
-   	 * Update a service goal group
+   	 * Gone. Replaced with service goal templates and planning groups under business units
    	 * 
-   	 * @param {String} managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
-   	 * @param {String} serviceGoalGroupId The ID of the service goal group to update
-   	 * @param {Object} opts Optional parameters
-   	 * @param {Object} opts.body body
+   	 * @param {String} managementUnitId (Deprecated/gone): The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+   	 * @param {String} serviceGoalGroupId Gone. The ID of the service goal group to update
    	 */
-   	patchWorkforcemanagementManagementunitServicegoalgroup(managementUnitId, serviceGoalGroupId, opts) { 
-   		opts = opts || {};
-   		
+   	patchWorkforcemanagementManagementunitServicegoalgroup(managementUnitId, serviceGoalGroupId) { 
    		// verify the required parameter 'managementUnitId' is set
    		if (managementUnitId === undefined || managementUnitId === null) {
    			throw 'Missing the required parameter "managementUnitId" when calling patchWorkforcemanagementManagementunitServicegoalgroup';
@@ -39355,7 +40335,7 @@ define(['superagent'], function (superagent) { 'use strict';
    			{  }, 
    			{  }, 
    			{  }, 
-   			opts['body'], 
+   			null, 
    			['PureCloud OAuth'], 
    			['application/json'], 
    			['application/json']
@@ -39363,15 +40343,11 @@ define(['superagent'], function (superagent) { 'use strict';
    	}
 
    	/**
-   	 * Update the settings for the requested management unit
+   	 * Gone. Update settings by PATCHing the management unit
    	 * 
    	 * @param {String} muId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
-   	 * @param {Object} opts Optional parameters
-   	 * @param {Object} opts.body config
    	 */
-   	patchWorkforcemanagementManagementunitSettings(muId, opts) { 
-   		opts = opts || {};
-   		
+   	patchWorkforcemanagementManagementunitSettings(muId) { 
    		// verify the required parameter 'muId' is set
    		if (muId === undefined || muId === null) {
    			throw 'Missing the required parameter "muId" when calling patchWorkforcemanagementManagementunitSettings';
@@ -39384,7 +40360,7 @@ define(['superagent'], function (superagent) { 'use strict';
    			{  }, 
    			{  }, 
    			{  }, 
-   			opts['body'], 
+   			null, 
    			['PureCloud OAuth'], 
    			['application/json'], 
    			['application/json']
@@ -39431,19 +40407,13 @@ define(['superagent'], function (superagent) { 'use strict';
    	}
 
    	/**
-   	 * Update a week schedule
+   	 * Gone.  Scheduling has moved under business units
    	 * 
    	 * @param {String} managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
    	 * @param {String} weekId First day of schedule week in yyyy-MM-dd format.
-   	 * @param {String} scheduleId The ID of the schedule to update. Use partial uploads of user schedules if activity count in schedule is greater than 17500
-   	 * @param {Object} opts Optional parameters
-   	 * @param {Boolean} opts.forceAsync Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes
-   	 * @param {Boolean} opts.forceDownloadService Force the result of this operation to be sent via download service.  For testing/app development purposes
-   	 * @param {Object} opts.body body
+   	 * @param {String} scheduleId Gone/deprecated. The ID of the schedule to update. Use partial uploads of user schedules if activity count in schedule is greater than 17500
    	 */
-   	patchWorkforcemanagementManagementunitWeekSchedule(managementUnitId, weekId, scheduleId, opts) { 
-   		opts = opts || {};
-   		
+   	patchWorkforcemanagementManagementunitWeekSchedule(managementUnitId, weekId, scheduleId) { 
    		// verify the required parameter 'managementUnitId' is set
    		if (managementUnitId === undefined || managementUnitId === null) {
    			throw 'Missing the required parameter "managementUnitId" when calling patchWorkforcemanagementManagementunitWeekSchedule';
@@ -39461,10 +40431,10 @@ define(['superagent'], function (superagent) { 'use strict';
    			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekId}/schedules/{scheduleId}', 
    			'PATCH', 
    			{ 'managementUnitId': managementUnitId,'weekId': weekId,'scheduleId': scheduleId }, 
-   			{ 'forceAsync': opts['forceAsync'],'forceDownloadService': opts['forceDownloadService'] }, 
    			{  }, 
    			{  }, 
-   			opts['body'], 
+   			{  }, 
+   			null, 
    			['PureCloud OAuth'], 
    			['application/json'], 
    			['application/json']
@@ -40073,15 +41043,11 @@ define(['superagent'], function (superagent) { 'use strict';
    	}
 
    	/**
-   	 * Create a new activity code
+   	 * Deprecated/Gone: Use the new business unit activity code resources
    	 * 
    	 * @param {String} muId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
-   	 * @param {Object} opts Optional parameters
-   	 * @param {Object} opts.body body
    	 */
-   	postWorkforcemanagementManagementunitActivitycodes(muId, opts) { 
-   		opts = opts || {};
-   		
+   	postWorkforcemanagementManagementunitActivitycodes(muId) { 
    		// verify the required parameter 'muId' is set
    		if (muId === undefined || muId === null) {
    			throw 'Missing the required parameter "muId" when calling postWorkforcemanagementManagementunitActivitycodes';
@@ -40094,7 +41060,7 @@ define(['superagent'], function (superagent) { 'use strict';
    			{  }, 
    			{  }, 
    			{  }, 
-   			opts['body'], 
+   			null, 
    			['PureCloud OAuth'], 
    			['application/json'], 
    			['application/json']
@@ -40162,15 +41128,11 @@ define(['superagent'], function (superagent) { 'use strict';
    	}
 
    	/**
-   	 * Get intraday data for the given date for the requested queueIds
+   	 * Gone.  Moved under business units
    	 * 
    	 * @param {String} muId The management unit ID of the management unit
-   	 * @param {Object} opts Optional parameters
-   	 * @param {Object} opts.body body
    	 */
-   	postWorkforcemanagementManagementunitIntraday(muId, opts) { 
-   		opts = opts || {};
-   		
+   	postWorkforcemanagementManagementunitIntraday(muId) { 
    		// verify the required parameter 'muId' is set
    		if (muId === undefined || muId === null) {
    			throw 'Missing the required parameter "muId" when calling postWorkforcemanagementManagementunitIntraday';
@@ -40183,7 +41145,7 @@ define(['superagent'], function (superagent) { 'use strict';
    			{  }, 
    			{  }, 
    			{  }, 
-   			opts['body'], 
+   			null, 
    			['PureCloud OAuth'], 
    			['application/json'], 
    			['application/json']
@@ -40249,15 +41211,11 @@ define(['superagent'], function (superagent) { 'use strict';
    	}
 
    	/**
-   	 * Create a new service goal group
+   	 * Gone. Replaced with service goal templates and planning groups under business units
    	 * 
-   	 * @param {String} managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
-   	 * @param {Object} opts Optional parameters
-   	 * @param {Object} opts.body body
+   	 * @param {String} managementUnitId (Deprecated/gone): The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
    	 */
-   	postWorkforcemanagementManagementunitServicegoalgroups(managementUnitId, opts) { 
-   		opts = opts || {};
-   		
+   	postWorkforcemanagementManagementunitServicegoalgroups(managementUnitId) { 
    		// verify the required parameter 'managementUnitId' is set
    		if (managementUnitId === undefined || managementUnitId === null) {
    			throw 'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitServicegoalgroups';
@@ -40270,7 +41228,7 @@ define(['superagent'], function (superagent) { 'use strict';
    			{  }, 
    			{  }, 
    			{  }, 
-   			opts['body'], 
+   			null, 
    			['PureCloud OAuth'], 
    			['application/json'], 
    			['application/json']
@@ -40307,7 +41265,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	}
 
    	/**
-   	 * Gets a list of time off requests from lookup ids
+   	 * Gone.  All data is now returned in the query route
    	 * 
    	 * @param {String} muId The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
    	 * @param {Object} opts Optional parameters
@@ -40365,19 +41323,13 @@ define(['superagent'], function (superagent) { 'use strict';
    	}
 
    	/**
-   	 * Copy a week schedule
+   	 * Gone.  Scheduling has moved under business units
    	 * 
    	 * @param {String} managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
    	 * @param {String} weekId First day of schedule week in yyyy-MM-dd format.
-   	 * @param {String} scheduleId The ID of the schedule to copy from
-   	 * @param {Object} opts Optional parameters
-   	 * @param {Boolean} opts.forceAsync Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes
-   	 * @param {Boolean} opts.forceDownloadService Force the result of this operation to be sent via download service.  For testing/app development purposes
-   	 * @param {Object} opts.body body
+   	 * @param {String} scheduleId Gone/deprecated. The ID of the schedule to copy from
    	 */
-   	postWorkforcemanagementManagementunitWeekScheduleCopy(managementUnitId, weekId, scheduleId, opts) { 
-   		opts = opts || {};
-   		
+   	postWorkforcemanagementManagementunitWeekScheduleCopy(managementUnitId, weekId, scheduleId) { 
    		// verify the required parameter 'managementUnitId' is set
    		if (managementUnitId === undefined || managementUnitId === null) {
    			throw 'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitWeekScheduleCopy';
@@ -40395,10 +41347,10 @@ define(['superagent'], function (superagent) { 'use strict';
    			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekId}/schedules/{scheduleId}/copy', 
    			'POST', 
    			{ 'managementUnitId': managementUnitId,'weekId': weekId,'scheduleId': scheduleId }, 
-   			{ 'forceAsync': opts['forceAsync'],'forceDownloadService': opts['forceDownloadService'] }, 
    			{  }, 
    			{  }, 
-   			opts['body'], 
+   			{  }, 
+   			null, 
    			['PureCloud OAuth'], 
    			['application/json'], 
    			['application/json']
@@ -40406,17 +41358,13 @@ define(['superagent'], function (superagent) { 'use strict';
    	}
 
    	/**
-   	 * Start a scheduling run to compute the reschedule. When the scheduling run finishes, a client can get the reschedule changes and then the client can apply them to the schedule, save the schedule, and mark the scheduling run as applied
+   	 * Gone.  Scheduling has moved under business units
    	 * 
    	 * @param {String} managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
    	 * @param {String} weekId First day of schedule week in yyyy-MM-dd format.
-   	 * @param {String} scheduleId The ID of the schedule to re-optimize
-   	 * @param {Object} opts Optional parameters
-   	 * @param {Object} opts.body body
+   	 * @param {String} scheduleId Gone/deprecated. The ID of the schedule to re-optimize
    	 */
-   	postWorkforcemanagementManagementunitWeekScheduleReschedule(managementUnitId, weekId, scheduleId, opts) { 
-   		opts = opts || {};
-   		
+   	postWorkforcemanagementManagementunitWeekScheduleReschedule(managementUnitId, weekId, scheduleId) { 
    		// verify the required parameter 'managementUnitId' is set
    		if (managementUnitId === undefined || managementUnitId === null) {
    			throw 'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitWeekScheduleReschedule';
@@ -40437,7 +41385,7 @@ define(['superagent'], function (superagent) { 'use strict';
    			{  }, 
    			{  }, 
    			{  }, 
-   			opts['body'], 
+   			null, 
    			['PureCloud OAuth'], 
    			['application/json'], 
    			['application/json']
@@ -40445,18 +41393,12 @@ define(['superagent'], function (superagent) { 'use strict';
    	}
 
    	/**
-   	 * Add a schedule for a week in management unit using imported data. Use partial uploads of user schedules if activity count in schedule is greater than 17500
+   	 * Gone.  Scheduling has moved under business units
    	 * 
    	 * @param {String} managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
    	 * @param {String} weekId First day of schedule week in yyyy-MM-dd format.
-   	 * @param {Object} opts Optional parameters
-   	 * @param {Boolean} opts.forceAsync Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes
-   	 * @param {Boolean} opts.forceDownloadService Force the result of this operation to be sent via download service.  For testing/app development purposes
-   	 * @param {Object} opts.body body
    	 */
-   	postWorkforcemanagementManagementunitWeekSchedules(managementUnitId, weekId, opts) { 
-   		opts = opts || {};
-   		
+   	postWorkforcemanagementManagementunitWeekSchedules(managementUnitId, weekId) { 
    		// verify the required parameter 'managementUnitId' is set
    		if (managementUnitId === undefined || managementUnitId === null) {
    			throw 'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitWeekSchedules';
@@ -40470,10 +41412,10 @@ define(['superagent'], function (superagent) { 'use strict';
    			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekId}/schedules', 
    			'POST', 
    			{ 'managementUnitId': managementUnitId,'weekId': weekId }, 
-   			{ 'forceAsync': opts['forceAsync'],'forceDownloadService': opts['forceDownloadService'] }, 
    			{  }, 
    			{  }, 
-   			opts['body'], 
+   			{  }, 
+   			null, 
    			['PureCloud OAuth'], 
    			['application/json'], 
    			['application/json']
@@ -40481,16 +41423,12 @@ define(['superagent'], function (superagent) { 'use strict';
    	}
 
    	/**
-   	 * Generate a week schedule
+   	 * Gone.  Scheduling has moved under business units
    	 * 
    	 * @param {String} managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
    	 * @param {String} weekId First day of schedule week in yyyy-MM-dd format.
-   	 * @param {Object} opts Optional parameters
-   	 * @param {Object} opts.body body
    	 */
-   	postWorkforcemanagementManagementunitWeekSchedulesGenerate(managementUnitId, weekId, opts) { 
-   		opts = opts || {};
-   		
+   	postWorkforcemanagementManagementunitWeekSchedulesGenerate(managementUnitId, weekId) { 
    		// verify the required parameter 'managementUnitId' is set
    		if (managementUnitId === undefined || managementUnitId === null) {
    			throw 'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitWeekSchedulesGenerate';
@@ -40507,7 +41445,7 @@ define(['superagent'], function (superagent) { 'use strict';
    			{  }, 
    			{  }, 
    			{  }, 
-   			opts['body'], 
+   			null, 
    			['PureCloud OAuth'], 
    			['application/json'], 
    			['application/json']
@@ -40515,16 +41453,12 @@ define(['superagent'], function (superagent) { 'use strict';
    	}
 
    	/**
-   	 * Partial upload of user schedules where activity count is greater than 17500
+   	 * Gone.  Scheduling has moved under business units
    	 * 
    	 * @param {String} managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
    	 * @param {String} weekId First day of schedule week in yyyy-MM-dd format.
-   	 * @param {Object} opts Optional parameters
-   	 * @param {Object} opts.body body
    	 */
-   	postWorkforcemanagementManagementunitWeekSchedulesPartialupload(managementUnitId, weekId, opts) { 
-   		opts = opts || {};
-   		
+   	postWorkforcemanagementManagementunitWeekSchedulesPartialupload(managementUnitId, weekId) { 
    		// verify the required parameter 'managementUnitId' is set
    		if (managementUnitId === undefined || managementUnitId === null) {
    			throw 'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitWeekSchedulesPartialupload';
@@ -40541,7 +41475,7 @@ define(['superagent'], function (superagent) { 'use strict';
    			{  }, 
    			{  }, 
    			{  }, 
-   			opts['body'], 
+   			null, 
    			['PureCloud OAuth'], 
    			['application/json'], 
    			['application/json']
@@ -40698,18 +41632,13 @@ define(['superagent'], function (superagent) { 'use strict';
    	}
 
    	/**
-   	 * Copy a short term forecast
+   	 * Gone. Use equivalent business unit resource instead
    	 * 
-   	 * @param {String} managementUnitId The management unit ID of the management unit to which the forecast belongs
-   	 * @param {String} weekDateId The week start date of the forecast in yyyy-MM-dd format
-   	 * @param {String} forecastId The ID of the forecast to copy
-   	 * @param {Object} body body
-   	 * @param {Object} opts Optional parameters
-   	 * @param {Boolean} opts.forceAsync Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes
+   	 * @param {String} managementUnitId (Deprecated/gone): The id of the management unit.
+   	 * @param {String} weekDateId (Deprecated/gone): The week start date of the forecast in yyyy-MM-dd format
+   	 * @param {String} forecastId (Gone/Deprecated): The ID of the forecast
    	 */
-   	postWorkforcemanagementManagementunitWeekShorttermforecastCopy(managementUnitId, weekDateId, forecastId, body, opts) { 
-   		opts = opts || {};
-   		
+   	postWorkforcemanagementManagementunitWeekShorttermforecastCopy(managementUnitId, weekDateId, forecastId) { 
    		// verify the required parameter 'managementUnitId' is set
    		if (managementUnitId === undefined || managementUnitId === null) {
    			throw 'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitWeekShorttermforecastCopy';
@@ -40722,19 +41651,15 @@ define(['superagent'], function (superagent) { 'use strict';
    		if (forecastId === undefined || forecastId === null) {
    			throw 'Missing the required parameter "forecastId" when calling postWorkforcemanagementManagementunitWeekShorttermforecastCopy';
    		}
-   		// verify the required parameter 'body' is set
-   		if (body === undefined || body === null) {
-   			throw 'Missing the required parameter "body" when calling postWorkforcemanagementManagementunitWeekShorttermforecastCopy';
-   		}
 
    		return this.apiClient.callApi(
    			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}/copy', 
    			'POST', 
    			{ 'managementUnitId': managementUnitId,'weekDateId': weekDateId,'forecastId': forecastId }, 
-   			{ 'forceAsync': opts['forceAsync'] }, 
    			{  }, 
    			{  }, 
-   			body, 
+   			{  }, 
+   			null, 
    			['PureCloud OAuth'], 
    			['application/json'], 
    			['application/json']
@@ -40742,17 +41667,12 @@ define(['superagent'], function (superagent) { 'use strict';
    	}
 
    	/**
-   	 * Import a short term forecast
+   	 * Gone. Use equivalent business unit resource instead
    	 * 
-   	 * @param {String} managementUnitId The management unit ID of the management unit to which the forecast belongs
-   	 * @param {String} weekDateId The week start date of the forecast in yyyy-MM-dd format
-   	 * @param {Object} body body
-   	 * @param {Object} opts Optional parameters
-   	 * @param {Boolean} opts.forceAsync Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes
+   	 * @param {String} managementUnitId (Deprecated/gone): The id of the management unit.
+   	 * @param {String} weekDateId (Deprecated/gone): The week start date of the forecast in yyyy-MM-dd format
    	 */
-   	postWorkforcemanagementManagementunitWeekShorttermforecasts(managementUnitId, weekDateId, body, opts) { 
-   		opts = opts || {};
-   		
+   	postWorkforcemanagementManagementunitWeekShorttermforecasts(managementUnitId, weekDateId) { 
    		// verify the required parameter 'managementUnitId' is set
    		if (managementUnitId === undefined || managementUnitId === null) {
    			throw 'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitWeekShorttermforecasts';
@@ -40761,19 +41681,15 @@ define(['superagent'], function (superagent) { 'use strict';
    		if (weekDateId === undefined || weekDateId === null) {
    			throw 'Missing the required parameter "weekDateId" when calling postWorkforcemanagementManagementunitWeekShorttermforecasts';
    		}
-   		// verify the required parameter 'body' is set
-   		if (body === undefined || body === null) {
-   			throw 'Missing the required parameter "body" when calling postWorkforcemanagementManagementunitWeekShorttermforecasts';
-   		}
 
    		return this.apiClient.callApi(
    			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shorttermforecasts', 
    			'POST', 
    			{ 'managementUnitId': managementUnitId,'weekDateId': weekDateId }, 
-   			{ 'forceAsync': opts['forceAsync'] }, 
    			{  }, 
    			{  }, 
-   			body, 
+   			{  }, 
+   			null, 
    			['PureCloud OAuth'], 
    			['application/json'], 
    			['application/json']
@@ -40781,17 +41697,12 @@ define(['superagent'], function (superagent) { 'use strict';
    	}
 
    	/**
-   	 * Generate a short term forecast
+   	 * Gone. Use equivalent business unit resource instead
    	 * 
-   	 * @param {String} managementUnitId The management unit ID of the management unit to which the forecast belongs
-   	 * @param {String} weekDateId The week start date of the forecast in yyyy-MM-dd format
-   	 * @param {Object} body 
-   	 * @param {Object} opts Optional parameters
-   	 * @param {Boolean} opts.forceAsync Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes
+   	 * @param {String} managementUnitId (Deprecated/gone): The id of the management unit.
+   	 * @param {String} weekDateId (Deprecated/gone): The week start date of the forecast in yyyy-MM-dd format
    	 */
-   	postWorkforcemanagementManagementunitWeekShorttermforecastsGenerate(managementUnitId, weekDateId, body, opts) { 
-   		opts = opts || {};
-   		
+   	postWorkforcemanagementManagementunitWeekShorttermforecastsGenerate(managementUnitId, weekDateId) { 
    		// verify the required parameter 'managementUnitId' is set
    		if (managementUnitId === undefined || managementUnitId === null) {
    			throw 'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitWeekShorttermforecastsGenerate';
@@ -40800,19 +41711,15 @@ define(['superagent'], function (superagent) { 'use strict';
    		if (weekDateId === undefined || weekDateId === null) {
    			throw 'Missing the required parameter "weekDateId" when calling postWorkforcemanagementManagementunitWeekShorttermforecastsGenerate';
    		}
-   		// verify the required parameter 'body' is set
-   		if (body === undefined || body === null) {
-   			throw 'Missing the required parameter "body" when calling postWorkforcemanagementManagementunitWeekShorttermforecastsGenerate';
-   		}
 
    		return this.apiClient.callApi(
    			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shorttermforecasts/generate', 
    			'POST', 
    			{ 'managementUnitId': managementUnitId,'weekDateId': weekDateId }, 
-   			{ 'forceAsync': opts['forceAsync'] }, 
    			{  }, 
    			{  }, 
-   			body, 
+   			{  }, 
+   			null, 
    			['PureCloud OAuth'], 
    			['application/json'], 
    			['application/json']
@@ -40820,13 +41727,12 @@ define(['superagent'], function (superagent) { 'use strict';
    	}
 
    	/**
-   	 * Import a short term forecast
+   	 * Gone. Use equivalent business unit resource instead
    	 * 
-   	 * @param {String} managementUnitId The management unit ID of the management unit to which the forecast belongs
-   	 * @param {String} weekDateId The week start date of the forecast in yyyy-MM-dd format
-   	 * @param {Object} body body
+   	 * @param {String} managementUnitId (Deprecated/gone): The id of the management unit.
+   	 * @param {String} weekDateId (Deprecated/gone): The week start date of the forecast in yyyy-MM-dd format
    	 */
-   	postWorkforcemanagementManagementunitWeekShorttermforecastsPartialupload(managementUnitId, weekDateId, body) { 
+   	postWorkforcemanagementManagementunitWeekShorttermforecastsPartialupload(managementUnitId, weekDateId) { 
    		// verify the required parameter 'managementUnitId' is set
    		if (managementUnitId === undefined || managementUnitId === null) {
    			throw 'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitWeekShorttermforecastsPartialupload';
@@ -40834,10 +41740,6 @@ define(['superagent'], function (superagent) { 'use strict';
    		// verify the required parameter 'weekDateId' is set
    		if (weekDateId === undefined || weekDateId === null) {
    			throw 'Missing the required parameter "weekDateId" when calling postWorkforcemanagementManagementunitWeekShorttermforecastsPartialupload';
-   		}
-   		// verify the required parameter 'body' is set
-   		if (body === undefined || body === null) {
-   			throw 'Missing the required parameter "body" when calling postWorkforcemanagementManagementunitWeekShorttermforecastsPartialupload';
    		}
 
    		return this.apiClient.callApi(
@@ -40847,7 +41749,7 @@ define(['superagent'], function (superagent) { 'use strict';
    			{  }, 
    			{  }, 
    			{  }, 
-   			body, 
+   			null, 
    			['PureCloud OAuth'], 
    			['application/json'], 
    			['application/json']
@@ -41044,7 +41946,7 @@ define(['superagent'], function (superagent) { 'use strict';
     * </pre>
     * </p>
     * @module purecloud-platform-client-v2/index
-    * @version 79.0.1
+    * @version 80.0.0
     */
    class platformClient {
    	constructor() {
@@ -41099,6 +42001,11 @@ define(['superagent'], function (superagent) { 'use strict';
    		 */
    		this.ConversationsApi = ConversationsApi;
    		/**
+   		 * The DataExtensionsApi service constructor.
+   		 * @property {module:purecloud-platform-client-v2/api/DataExtensionsApi}
+   		 */
+   		this.DataExtensionsApi = DataExtensionsApi;
+   		/**
    		 * The ExternalContactsApi service constructor.
    		 * @property {module:purecloud-platform-client-v2/api/ExternalContactsApi}
    		 */
@@ -41148,6 +42055,11 @@ define(['superagent'], function (superagent) { 'use strict';
    		 * @property {module:purecloud-platform-client-v2/api/KnowledgeApi}
    		 */
    		this.KnowledgeApi = KnowledgeApi;
+   		/**
+   		 * The LanguageUnderstandingApi service constructor.
+   		 * @property {module:purecloud-platform-client-v2/api/LanguageUnderstandingApi}
+   		 */
+   		this.LanguageUnderstandingApi = LanguageUnderstandingApi;
    		/**
    		 * The LanguagesApi service constructor.
    		 * @property {module:purecloud-platform-client-v2/api/LanguagesApi}
@@ -41263,6 +42175,11 @@ define(['superagent'], function (superagent) { 'use strict';
    		 * @property {module:purecloud-platform-client-v2/api/TokensApi}
    		 */
    		this.TokensApi = TokensApi;
+   		/**
+   		 * The UploadsApi service constructor.
+   		 * @property {module:purecloud-platform-client-v2/api/UploadsApi}
+   		 */
+   		this.UploadsApi = UploadsApi;
    		/**
    		 * The UserRecordingsApi service constructor.
    		 * @property {module:purecloud-platform-client-v2/api/UserRecordingsApi}

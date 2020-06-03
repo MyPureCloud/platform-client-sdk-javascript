@@ -3079,6 +3079,15 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
           "addressRaw": String, 
           "addressDisplayable": String, 
         },  
+        "wrapup": { 
+          "code": String, 
+          "name": String, 
+          "notes": String, 
+          "tags": [String], 
+          "durationSeconds": Number, 
+          "endTime": Date, 
+          "provisional": Boolean, 
+        },  
       },  
       "callbacks": { 
         "state": String, 
@@ -3121,6 +3130,15 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
         "automatedCallbackConfigId": String, 
         "provider": String, 
         "peerId": String, 
+        "wrapup": { 
+          "code": String, 
+          "name": String, 
+          "notes": String, 
+          "tags": [String], 
+          "durationSeconds": Number, 
+          "endTime": Date, 
+          "provisional": Boolean, 
+        },  
       },  
       "chats": { 
         "state": String, 
@@ -3162,6 +3180,15 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
             },  
           },  
         },  
+        "wrapup": { 
+          "code": String, 
+          "name": String, 
+          "notes": String, 
+          "tags": [String], 
+          "durationSeconds": Number, 
+          "endTime": Date, 
+          "provisional": Boolean, 
+        },  
       },  
       "cobrowsesessions": { 
         "state": String, 
@@ -3190,6 +3217,15 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
           "type": String, 
           "howEnded": String, 
           "disconnectType": String, 
+        },  
+        "wrapup": { 
+          "code": String, 
+          "name": String, 
+          "notes": String, 
+          "tags": [String], 
+          "durationSeconds": Number, 
+          "endTime": Date, 
+          "provisional": Boolean, 
         },  
       },  
       "emails": { 
@@ -3286,6 +3322,15 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
           "inlineImage": Boolean, 
         },  
         "spam": Boolean, 
+        "wrapup": { 
+          "code": String, 
+          "name": String, 
+          "notes": String, 
+          "tags": [String], 
+          "durationSeconds": Number, 
+          "endTime": Date, 
+          "provisional": Boolean, 
+        },  
       },  
       "messages": { 
         "state": String, 
@@ -3403,6 +3448,15 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
             "id": String, 
           },  
         },  
+        "wrapup": { 
+          "code": String, 
+          "name": String, 
+          "notes": String, 
+          "tags": [String], 
+          "durationSeconds": Number, 
+          "endTime": Date, 
+          "provisional": Boolean, 
+        },  
       },  
       "screenshares": { 
         "state": String, 
@@ -3422,6 +3476,15 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
           "type": String, 
           "howEnded": String, 
           "disconnectType": String, 
+        },  
+        "wrapup": { 
+          "code": String, 
+          "name": String, 
+          "notes": String, 
+          "tags": [String], 
+          "durationSeconds": Number, 
+          "endTime": Date, 
+          "provisional": Boolean, 
         },  
       },  
       "socialExpressions": { 
@@ -3448,6 +3511,15 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
         "provider": String, 
         "scriptId": String, 
         "peerId": String, 
+        "wrapup": { 
+          "code": String, 
+          "name": String, 
+          "notes": String, 
+          "tags": [String], 
+          "durationSeconds": Number, 
+          "endTime": Date, 
+          "provisional": Boolean, 
+        },  
       },  
       "videos": { 
         "state": String, 
@@ -3470,6 +3542,15 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
           "addressNormalized": String, 
           "addressRaw": String, 
           "addressDisplayable": String, 
+        },  
+        "wrapup": { 
+          "code": String, 
+          "name": String, 
+          "notes": String, 
+          "tags": [String], 
+          "durationSeconds": Number, 
+          "endTime": Date, 
+          "provisional": Boolean, 
         },  
       },  
       "evaluations": { 
@@ -3598,6 +3679,15 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
                 "addressRaw": String, 
                 "addressDisplayable": String, 
               },  
+              "wrapup": { 
+                "code": String, 
+                "name": String, 
+                "notes": String, 
+                "tags": [String], 
+                "durationSeconds": Number, 
+                "endTime": Date, 
+                "provisional": Boolean, 
+              },  
             },  
             "callbacks": { 
               "state": String, 
@@ -3637,6 +3727,15 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
               "automatedCallbackConfigId": String, 
               "provider": String, 
               "peerId": String, 
+              "wrapup": { 
+                "code": String, 
+                "name": String, 
+                "notes": String, 
+                "tags": [String], 
+                "durationSeconds": Number, 
+                "endTime": Date, 
+                "provisional": Boolean, 
+              },  
             },  
             "chats": { 
               "state": String, 
@@ -3666,6 +3765,15 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
                 "customerSession": JourneyCustomerSession, 
                 "triggeringAction": JourneyAction, 
               },  
+              "wrapup": { 
+                "code": String, 
+                "name": String, 
+                "notes": String, 
+                "tags": [String], 
+                "durationSeconds": Number, 
+                "endTime": Date, 
+                "provisional": Boolean, 
+              },  
             },  
             "cobrowsesessions": { 
               "state": String, 
@@ -3694,6 +3802,15 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
                 "type": String, 
                 "howEnded": String, 
                 "disconnectType": String, 
+              },  
+              "wrapup": { 
+                "code": String, 
+                "name": String, 
+                "notes": String, 
+                "tags": [String], 
+                "durationSeconds": Number, 
+                "endTime": Date, 
+                "provisional": Boolean, 
               },  
             },  
             "emails": { 
@@ -3742,6 +3859,15 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
                 "inlineImage": Boolean, 
               },  
               "spam": Boolean, 
+              "wrapup": { 
+                "code": String, 
+                "name": String, 
+                "notes": String, 
+                "tags": [String], 
+                "durationSeconds": Number, 
+                "endTime": Date, 
+                "provisional": Boolean, 
+              },  
             },  
             "messages": { 
               "state": String, 
@@ -3802,6 +3928,15 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
                 "media": [MessageMedia], 
                 "stickers": [MessageSticker], 
               },  
+              "wrapup": { 
+                "code": String, 
+                "name": String, 
+                "notes": String, 
+                "tags": [String], 
+                "durationSeconds": Number, 
+                "endTime": Date, 
+                "provisional": Boolean, 
+              },  
             },  
             "screenshares": { 
               "state": String, 
@@ -3821,6 +3956,15 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
                 "type": String, 
                 "howEnded": String, 
                 "disconnectType": String, 
+              },  
+              "wrapup": { 
+                "code": String, 
+                "name": String, 
+                "notes": String, 
+                "tags": [String], 
+                "durationSeconds": Number, 
+                "endTime": Date, 
+                "provisional": Boolean, 
               },  
             },  
             "socialExpressions": { 
@@ -3847,6 +3991,15 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
               "provider": String, 
               "scriptId": String, 
               "peerId": String, 
+              "wrapup": { 
+                "code": String, 
+                "name": String, 
+                "notes": String, 
+                "tags": [String], 
+                "durationSeconds": Number, 
+                "endTime": Date, 
+                "provisional": Boolean, 
+              },  
             },  
             "videos": { 
               "state": String, 
@@ -3869,6 +4022,15 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
                 "addressNormalized": String, 
                 "addressRaw": String, 
                 "addressDisplayable": String, 
+              },  
+              "wrapup": { 
+                "code": String, 
+                "name": String, 
+                "notes": String, 
+                "tags": [String], 
+                "durationSeconds": Number, 
+                "endTime": Date, 
+                "provisional": Boolean, 
               },  
             },  
             "evaluations": { 
@@ -5993,6 +6155,7 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
                 "uuiData": String, 
                 "self": Address, 
                 "other": Address, 
+                "wrapup": Wrapup, 
               },  
               "callbacks": { 
                 "state": String, 
@@ -6017,6 +6180,7 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
                 "automatedCallbackConfigId": String, 
                 "provider": String, 
                 "peerId": String, 
+                "wrapup": Wrapup, 
               },  
               "chats": { 
                 "state": String, 
@@ -6036,6 +6200,7 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
                 "peerId": String, 
                 "avatarImageUrl": String, 
                 "journeyContext": JourneyContext, 
+                "wrapup": Wrapup, 
               },  
               "cobrowsesessions": { 
                 "state": String, 
@@ -6053,6 +6218,7 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
                 "provider": String, 
                 "peerId": String, 
                 "segments": [Segment], 
+                "wrapup": Wrapup, 
               },  
               "emails": { 
                 "state": String, 
@@ -6076,6 +6242,7 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
                 "messageId": String, 
                 "draftAttachments": [Attachment], 
                 "spam": Boolean, 
+                "wrapup": Wrapup, 
               },  
               "messages": { 
                 "state": String, 
@@ -6099,6 +6266,7 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
                 "toAddress": Address, 
                 "fromAddress": Address, 
                 "messages": [MessageDetails], 
+                "wrapup": Wrapup, 
               },  
               "screenshares": { 
                 "state": String, 
@@ -6113,6 +6281,7 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
                 "provider": String, 
                 "peerId": String, 
                 "segments": [Segment], 
+                "wrapup": Wrapup, 
               },  
               "socialExpressions": { 
                 "state": String, 
@@ -6132,6 +6301,7 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
                 "provider": String, 
                 "scriptId": String, 
                 "peerId": String, 
+                "wrapup": Wrapup, 
               },  
               "videos": { 
                 "state": String, 
@@ -6149,6 +6319,7 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
                 "peerId": String, 
                 "msids": [String], 
                 "self": Address, 
+                "wrapup": Wrapup, 
               },  
               "evaluations": { 
                 "id": String, 
@@ -17784,6 +17955,15 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
           "addressRaw": String, 
           "addressDisplayable": String, 
         },  
+        "wrapup": { 
+          "code": String, 
+          "name": String, 
+          "notes": String, 
+          "tags": [String], 
+          "durationSeconds": Number, 
+          "endTime": Date, 
+          "provisional": Boolean, 
+        },  
       },  
       "callbacks": { 
         "state": String, 
@@ -17826,6 +18006,15 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
         "automatedCallbackConfigId": String, 
         "provider": String, 
         "peerId": String, 
+        "wrapup": { 
+          "code": String, 
+          "name": String, 
+          "notes": String, 
+          "tags": [String], 
+          "durationSeconds": Number, 
+          "endTime": Date, 
+          "provisional": Boolean, 
+        },  
       },  
       "chats": { 
         "state": String, 
@@ -17867,6 +18056,15 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
             },  
           },  
         },  
+        "wrapup": { 
+          "code": String, 
+          "name": String, 
+          "notes": String, 
+          "tags": [String], 
+          "durationSeconds": Number, 
+          "endTime": Date, 
+          "provisional": Boolean, 
+        },  
       },  
       "cobrowsesessions": { 
         "state": String, 
@@ -17895,6 +18093,15 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
           "type": String, 
           "howEnded": String, 
           "disconnectType": String, 
+        },  
+        "wrapup": { 
+          "code": String, 
+          "name": String, 
+          "notes": String, 
+          "tags": [String], 
+          "durationSeconds": Number, 
+          "endTime": Date, 
+          "provisional": Boolean, 
         },  
       },  
       "emails": { 
@@ -17991,6 +18198,15 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
           "inlineImage": Boolean, 
         },  
         "spam": Boolean, 
+        "wrapup": { 
+          "code": String, 
+          "name": String, 
+          "notes": String, 
+          "tags": [String], 
+          "durationSeconds": Number, 
+          "endTime": Date, 
+          "provisional": Boolean, 
+        },  
       },  
       "messages": { 
         "state": String, 
@@ -18108,6 +18324,15 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
             "id": String, 
           },  
         },  
+        "wrapup": { 
+          "code": String, 
+          "name": String, 
+          "notes": String, 
+          "tags": [String], 
+          "durationSeconds": Number, 
+          "endTime": Date, 
+          "provisional": Boolean, 
+        },  
       },  
       "screenshares": { 
         "state": String, 
@@ -18127,6 +18352,15 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
           "type": String, 
           "howEnded": String, 
           "disconnectType": String, 
+        },  
+        "wrapup": { 
+          "code": String, 
+          "name": String, 
+          "notes": String, 
+          "tags": [String], 
+          "durationSeconds": Number, 
+          "endTime": Date, 
+          "provisional": Boolean, 
         },  
       },  
       "socialExpressions": { 
@@ -18153,6 +18387,15 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
         "provider": String, 
         "scriptId": String, 
         "peerId": String, 
+        "wrapup": { 
+          "code": String, 
+          "name": String, 
+          "notes": String, 
+          "tags": [String], 
+          "durationSeconds": Number, 
+          "endTime": Date, 
+          "provisional": Boolean, 
+        },  
       },  
       "videos": { 
         "state": String, 
@@ -18175,6 +18418,15 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
           "addressNormalized": String, 
           "addressRaw": String, 
           "addressDisplayable": String, 
+        },  
+        "wrapup": { 
+          "code": String, 
+          "name": String, 
+          "notes": String, 
+          "tags": [String], 
+          "durationSeconds": Number, 
+          "endTime": Date, 
+          "provisional": Boolean, 
         },  
       },  
       "evaluations": { 
@@ -18303,6 +18555,15 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
                 "addressRaw": String, 
                 "addressDisplayable": String, 
               },  
+              "wrapup": { 
+                "code": String, 
+                "name": String, 
+                "notes": String, 
+                "tags": [String], 
+                "durationSeconds": Number, 
+                "endTime": Date, 
+                "provisional": Boolean, 
+              },  
             },  
             "callbacks": { 
               "state": String, 
@@ -18342,6 +18603,15 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
               "automatedCallbackConfigId": String, 
               "provider": String, 
               "peerId": String, 
+              "wrapup": { 
+                "code": String, 
+                "name": String, 
+                "notes": String, 
+                "tags": [String], 
+                "durationSeconds": Number, 
+                "endTime": Date, 
+                "provisional": Boolean, 
+              },  
             },  
             "chats": { 
               "state": String, 
@@ -18371,6 +18641,15 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
                 "customerSession": JourneyCustomerSession, 
                 "triggeringAction": JourneyAction, 
               },  
+              "wrapup": { 
+                "code": String, 
+                "name": String, 
+                "notes": String, 
+                "tags": [String], 
+                "durationSeconds": Number, 
+                "endTime": Date, 
+                "provisional": Boolean, 
+              },  
             },  
             "cobrowsesessions": { 
               "state": String, 
@@ -18399,6 +18678,15 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
                 "type": String, 
                 "howEnded": String, 
                 "disconnectType": String, 
+              },  
+              "wrapup": { 
+                "code": String, 
+                "name": String, 
+                "notes": String, 
+                "tags": [String], 
+                "durationSeconds": Number, 
+                "endTime": Date, 
+                "provisional": Boolean, 
               },  
             },  
             "emails": { 
@@ -18447,6 +18735,15 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
                 "inlineImage": Boolean, 
               },  
               "spam": Boolean, 
+              "wrapup": { 
+                "code": String, 
+                "name": String, 
+                "notes": String, 
+                "tags": [String], 
+                "durationSeconds": Number, 
+                "endTime": Date, 
+                "provisional": Boolean, 
+              },  
             },  
             "messages": { 
               "state": String, 
@@ -18507,6 +18804,15 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
                 "media": [MessageMedia], 
                 "stickers": [MessageSticker], 
               },  
+              "wrapup": { 
+                "code": String, 
+                "name": String, 
+                "notes": String, 
+                "tags": [String], 
+                "durationSeconds": Number, 
+                "endTime": Date, 
+                "provisional": Boolean, 
+              },  
             },  
             "screenshares": { 
               "state": String, 
@@ -18526,6 +18832,15 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
                 "type": String, 
                 "howEnded": String, 
                 "disconnectType": String, 
+              },  
+              "wrapup": { 
+                "code": String, 
+                "name": String, 
+                "notes": String, 
+                "tags": [String], 
+                "durationSeconds": Number, 
+                "endTime": Date, 
+                "provisional": Boolean, 
               },  
             },  
             "socialExpressions": { 
@@ -18552,6 +18867,15 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
               "provider": String, 
               "scriptId": String, 
               "peerId": String, 
+              "wrapup": { 
+                "code": String, 
+                "name": String, 
+                "notes": String, 
+                "tags": [String], 
+                "durationSeconds": Number, 
+                "endTime": Date, 
+                "provisional": Boolean, 
+              },  
             },  
             "videos": { 
               "state": String, 
@@ -18574,6 +18898,15 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
                 "addressNormalized": String, 
                 "addressRaw": String, 
                 "addressDisplayable": String, 
+              },  
+              "wrapup": { 
+                "code": String, 
+                "name": String, 
+                "notes": String, 
+                "tags": [String], 
+                "durationSeconds": Number, 
+                "endTime": Date, 
+                "provisional": Boolean, 
               },  
             },  
             "evaluations": { 
@@ -20698,6 +21031,7 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
                 "uuiData": String, 
                 "self": Address, 
                 "other": Address, 
+                "wrapup": Wrapup, 
               },  
               "callbacks": { 
                 "state": String, 
@@ -20722,6 +21056,7 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
                 "automatedCallbackConfigId": String, 
                 "provider": String, 
                 "peerId": String, 
+                "wrapup": Wrapup, 
               },  
               "chats": { 
                 "state": String, 
@@ -20741,6 +21076,7 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
                 "peerId": String, 
                 "avatarImageUrl": String, 
                 "journeyContext": JourneyContext, 
+                "wrapup": Wrapup, 
               },  
               "cobrowsesessions": { 
                 "state": String, 
@@ -20758,6 +21094,7 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
                 "provider": String, 
                 "peerId": String, 
                 "segments": [Segment], 
+                "wrapup": Wrapup, 
               },  
               "emails": { 
                 "state": String, 
@@ -20781,6 +21118,7 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
                 "messageId": String, 
                 "draftAttachments": [Attachment], 
                 "spam": Boolean, 
+                "wrapup": Wrapup, 
               },  
               "messages": { 
                 "state": String, 
@@ -20804,6 +21142,7 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
                 "toAddress": Address, 
                 "fromAddress": Address, 
                 "messages": [MessageDetails], 
+                "wrapup": Wrapup, 
               },  
               "screenshares": { 
                 "state": String, 
@@ -20818,6 +21157,7 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
                 "provider": String, 
                 "peerId": String, 
                 "segments": [Segment], 
+                "wrapup": Wrapup, 
               },  
               "socialExpressions": { 
                 "state": String, 
@@ -20837,6 +21177,7 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
                 "provider": String, 
                 "scriptId": String, 
                 "peerId": String, 
+                "wrapup": Wrapup, 
               },  
               "videos": { 
                 "state": String, 
@@ -20854,6 +21195,7 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
                 "peerId": String, 
                 "msids": [String], 
                 "self": Address, 
+                "wrapup": Wrapup, 
               },  
               "evaluations": { 
                 "id": String, 
