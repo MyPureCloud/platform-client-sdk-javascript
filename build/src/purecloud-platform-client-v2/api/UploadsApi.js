@@ -5,7 +5,7 @@ class UploadsApi {
 	/**
 	 * Uploads service.
 	 * @module purecloud-platform-client-v2/api/UploadsApi
-	 * @version 80.0.3
+	 * @version 81.0.0
 	 */
 
 	/**

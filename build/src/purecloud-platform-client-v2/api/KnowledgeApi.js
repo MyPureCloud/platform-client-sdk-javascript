@@ -5,7 +5,7 @@ class KnowledgeApi {
 	/**
 	 * Knowledge service.
 	 * @module purecloud-platform-client-v2/api/KnowledgeApi
-	 * @version 80.0.3
+	 * @version 81.0.0
 	 */
 
 	/**

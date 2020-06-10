@@ -5,7 +5,7 @@ class GeneralDataProtectionRegulationApi {
 	/**
 	 * GeneralDataProtectionRegulation service.
 	 * @module purecloud-platform-client-v2/api/GeneralDataProtectionRegulationApi
-	 * @version 80.0.3
+	 * @version 81.0.0
 	 */
 
 	/**

@@ -6053,7 +6053,7 @@ function isSlowBuffer (obj) {
 
 /**
  * @module purecloud-platform-client-v2/ApiClient
- * @version 80.0.3
+ * @version 81.0.0
  */
 class ApiClient {
 	/**
@@ -6809,7 +6809,7 @@ class ApiClient {
 
 		// set header parameters
 		request.set(this.defaultHeaders).set(this.normalizeParams(headerParams));
-		//request.set({ 'purecloud-sdk': '80.0.3' });
+		//request.set({ 'purecloud-sdk': '81.0.0' });
 
 		// set request timeout
 		request.timeout(this.timeout);
@@ -6934,7 +6934,7 @@ class AlertingApi {
 	/**
 	 * Alerting service.
 	 * @module purecloud-platform-client-v2/api/AlertingApi
-	 * @version 80.0.3
+	 * @version 81.0.0
 	 */
 
 	/**
@@ -7248,7 +7248,7 @@ class AnalyticsApi {
 	/**
 	 * Analytics service.
 	 * @module purecloud-platform-client-v2/api/AnalyticsApi
-	 * @version 80.0.3
+	 * @version 81.0.0
 	 */
 
 	/**
@@ -8213,7 +8213,7 @@ class ArchitectApi {
 	/**
 	 * Architect service.
 	 * @module purecloud-platform-client-v2/api/ArchitectApi
-	 * @version 80.0.3
+	 * @version 81.0.0
 	 */
 
 	/**
@@ -10866,7 +10866,7 @@ class AuditApi {
 	/**
 	 * Audit service.
 	 * @module purecloud-platform-client-v2/api/AuditApi
-	 * @version 80.0.3
+	 * @version 81.0.0
 	 */
 
 	/**
@@ -10968,7 +10968,7 @@ class AuthorizationApi {
 	/**
 	 * Authorization service.
 	 * @module purecloud-platform-client-v2/api/AuthorizationApi
-	 * @version 80.0.3
+	 * @version 81.0.0
 	 */
 
 	/**
@@ -12055,7 +12055,7 @@ class BillingApi {
 	/**
 	 * Billing service.
 	 * @module purecloud-platform-client-v2/api/BillingApi
-	 * @version 80.0.3
+	 * @version 81.0.0
 	 */
 
 	/**
@@ -12131,11 +12131,495 @@ class BillingApi {
 
 }
 
+class CoachingApi {
+	/**
+	 * Coaching service.
+	 * @module purecloud-platform-client-v2/api/CoachingApi
+	 * @version 81.0.0
+	 */
+
+	/**
+	 * Constructs a new CoachingApi. 
+	 * @alias module:purecloud-platform-client-v2/api/CoachingApi
+	 * @class
+	 * @param {module:purecloud-platform-client-v2/ApiClient} apiClient Optional API client implementation to use,
+	 * default to {@link module:purecloud-platform-client-v2/ApiClient#instance} if unspecified.
+	 */
+	constructor(apiClient) {
+		this.apiClient = apiClient || ApiClient.instance;
+	}
+
+
+	/**
+	 * Delete an existing appointment
+	 * Permission not required if you are the creator of the appointment
+	 * @param {String} appointmentId The ID of the coaching appointment.
+	 */
+	deleteCoachingAppointment(appointmentId) { 
+		// verify the required parameter 'appointmentId' is set
+		if (appointmentId === undefined || appointmentId === null) {
+			throw 'Missing the required parameter "appointmentId" when calling deleteCoachingAppointment';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/coaching/appointments/{appointmentId}', 
+			'DELETE', 
+			{ 'appointmentId': appointmentId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete an existing annotation
+	 * You must have the appropriate permission for the type of annotation you are updating. Permission not required if you are the creator or facilitator of the appointment
+	 * @param {String} appointmentId The ID of the coaching appointment.
+	 * @param {String} annotationId The ID of the annotation.
+	 */
+	deleteCoachingAppointmentAnnotation(appointmentId, annotationId) { 
+		// verify the required parameter 'appointmentId' is set
+		if (appointmentId === undefined || appointmentId === null) {
+			throw 'Missing the required parameter "appointmentId" when calling deleteCoachingAppointmentAnnotation';
+		}
+		// verify the required parameter 'annotationId' is set
+		if (annotationId === undefined || annotationId === null) {
+			throw 'Missing the required parameter "annotationId" when calling deleteCoachingAppointmentAnnotation';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/coaching/appointments/{appointmentId}/annotations/{annotationId}', 
+			'DELETE', 
+			{ 'appointmentId': appointmentId,'annotationId': annotationId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Retrieve an appointment
+	 * Permission not required if you are the attendee, creator or facilitator of the appointment
+	 * @param {String} appointmentId The ID of the coaching appointment.
+	 */
+	getCoachingAppointment(appointmentId) { 
+		// verify the required parameter 'appointmentId' is set
+		if (appointmentId === undefined || appointmentId === null) {
+			throw 'Missing the required parameter "appointmentId" when calling getCoachingAppointment';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/coaching/appointments/{appointmentId}', 
+			'GET', 
+			{ 'appointmentId': appointmentId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Retrieve an annotation.
+	 * You must have the appropriate permission for the type of annotation you are creating. Permission not required if you are related to the appointment (only the creator or facilitator can view private annotations).
+	 * @param {String} appointmentId The ID of the coaching appointment.
+	 * @param {String} annotationId The ID of the annotation.
+	 */
+	getCoachingAppointmentAnnotation(appointmentId, annotationId) { 
+		// verify the required parameter 'appointmentId' is set
+		if (appointmentId === undefined || appointmentId === null) {
+			throw 'Missing the required parameter "appointmentId" when calling getCoachingAppointmentAnnotation';
+		}
+		// verify the required parameter 'annotationId' is set
+		if (annotationId === undefined || annotationId === null) {
+			throw 'Missing the required parameter "annotationId" when calling getCoachingAppointmentAnnotation';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/coaching/appointments/{appointmentId}/annotations/{annotationId}', 
+			'GET', 
+			{ 'appointmentId': appointmentId,'annotationId': annotationId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a list of annotations.
+	 * You must have the appropriate permission for the type of annotation you are creating. Permission not required if you are related to the appointment (only the creator or facilitator can view private annotations).
+	 * @param {String} appointmentId The ID of the coaching appointment.
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 */
+	getCoachingAppointmentAnnotations(appointmentId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'appointmentId' is set
+		if (appointmentId === undefined || appointmentId === null) {
+			throw 'Missing the required parameter "appointmentId" when calling getCoachingAppointmentAnnotations';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/coaching/appointments/{appointmentId}/annotations', 
+			'GET', 
+			{ 'appointmentId': appointmentId }, 
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'] }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get the list of status changes for a coaching appointment.
+	 * Permission not required if you are an attendee, creator or facilitator of the appointment
+	 * @param {String} appointmentId The ID of the coaching appointment.
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 */
+	getCoachingAppointmentStatuses(appointmentId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'appointmentId' is set
+		if (appointmentId === undefined || appointmentId === null) {
+			throw 'Missing the required parameter "appointmentId" when calling getCoachingAppointmentStatuses';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/coaching/appointments/{appointmentId}/statuses', 
+			'GET', 
+			{ 'appointmentId': appointmentId }, 
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'] }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get appointments for users and optional date range
+	 * 
+	 * @param {Array.<String>} userIds The user IDs for which to retrieve appointments
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.interval Interval string; format is ISO-8601. Separate start and end times with forward slash &#39;/&#39;
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {Array.<String>} opts.statuses Appointment Statuses to filter by
+	 * @param {Array.<String>} opts.facilitatorIds The facilitator IDs for which to retrieve appointments
+	 * @param {Object} opts.sortOrder Sort (by due date) either Asc or Desc
+	 */
+	getCoachingAppointments(userIds, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'userIds' is set
+		if (userIds === undefined || userIds === null) {
+			throw 'Missing the required parameter "userIds" when calling getCoachingAppointments';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/coaching/appointments', 
+			'GET', 
+			{  }, 
+			{ 'userIds': this.apiClient.buildCollectionParam(userIds, 'multi'),'interval': opts['interval'],'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'statuses': this.apiClient.buildCollectionParam(opts['statuses'], 'multi'),'facilitatorIds': this.apiClient.buildCollectionParam(opts['facilitatorIds'], 'multi'),'sortOrder': opts['sortOrder'] }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get my appointments for a given date range
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.interval Interval string; format is ISO-8601. Separate start and end times with forward slash &#39;/&#39;
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {Array.<String>} opts.statuses Appointment Statuses to filter by
+	 * @param {Array.<String>} opts.facilitatorIds The facilitator IDs for which to retrieve appointments
+	 * @param {Object} opts.sortOrder Sort (by due date) either Asc or Desc
+	 */
+	getCoachingAppointmentsMe(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/coaching/appointments/me', 
+			'GET', 
+			{  }, 
+			{ 'interval': opts['interval'],'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'statuses': this.apiClient.buildCollectionParam(opts['statuses'], 'multi'),'facilitatorIds': this.apiClient.buildCollectionParam(opts['facilitatorIds'], 'multi'),'sortOrder': opts['sortOrder'] }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get an existing notification
+	 * Permission not required if you are the owner of the notification.
+	 * @param {String} notificationId The ID of the notification.
+	 */
+	getCoachingNotification(notificationId) { 
+		// verify the required parameter 'notificationId' is set
+		if (notificationId === undefined || notificationId === null) {
+			throw 'Missing the required parameter "notificationId" when calling getCoachingNotification';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/coaching/notifications/{notificationId}', 
+			'GET', 
+			{ 'notificationId': notificationId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Retrieve the list of your notifications.
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 */
+	getCoachingNotifications(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/coaching/notifications', 
+			'GET', 
+			{  }, 
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'] }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update an existing appointment
+	 * Permission not required if you are the creator or facilitator of the appointment
+	 * @param {String} appointmentId The ID of the coaching appointment.
+	 * @param {Object} body The new version of the appointment
+	 */
+	patchCoachingAppointment(appointmentId, body) { 
+		// verify the required parameter 'appointmentId' is set
+		if (appointmentId === undefined || appointmentId === null) {
+			throw 'Missing the required parameter "appointmentId" when calling patchCoachingAppointment';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchCoachingAppointment';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/coaching/appointments/{appointmentId}', 
+			'PATCH', 
+			{ 'appointmentId': appointmentId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update an existing annotation.
+	 * You must have the appropriate permission for the type of annotation you are updating. Permission not required if you are the creator or facilitator of the appointment
+	 * @param {String} appointmentId The ID of the coaching appointment.
+	 * @param {String} annotationId The ID of the annotation.
+	 * @param {Object} body The new version of the annotation
+	 */
+	patchCoachingAppointmentAnnotation(appointmentId, annotationId, body) { 
+		// verify the required parameter 'appointmentId' is set
+		if (appointmentId === undefined || appointmentId === null) {
+			throw 'Missing the required parameter "appointmentId" when calling patchCoachingAppointmentAnnotation';
+		}
+		// verify the required parameter 'annotationId' is set
+		if (annotationId === undefined || annotationId === null) {
+			throw 'Missing the required parameter "annotationId" when calling patchCoachingAppointmentAnnotation';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchCoachingAppointmentAnnotation';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/coaching/appointments/{appointmentId}/annotations/{annotationId}', 
+			'PATCH', 
+			{ 'appointmentId': appointmentId,'annotationId': annotationId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update the status of a coaching appointment
+	 * Permission not required if you are an attendee, creator or facilitator of the appointment
+	 * @param {String} appointmentId The ID of the coaching appointment.
+	 * @param {Object} body Updated status of the coaching appointment
+	 */
+	patchCoachingAppointmentStatus(appointmentId, body) { 
+		// verify the required parameter 'appointmentId' is set
+		if (appointmentId === undefined || appointmentId === null) {
+			throw 'Missing the required parameter "appointmentId" when calling patchCoachingAppointmentStatus';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchCoachingAppointmentStatus';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/coaching/appointments/{appointmentId}/status', 
+			'PATCH', 
+			{ 'appointmentId': appointmentId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update an existing notification.
+	 * Can only update your own notifications.
+	 * @param {String} notificationId The ID of the notification.
+	 * @param {Object} body Change the read state of a notification
+	 */
+	patchCoachingNotification(notificationId, body) { 
+		// verify the required parameter 'notificationId' is set
+		if (notificationId === undefined || notificationId === null) {
+			throw 'Missing the required parameter "notificationId" when calling patchCoachingNotification';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchCoachingNotification';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/coaching/notifications/{notificationId}', 
+			'PATCH', 
+			{ 'notificationId': notificationId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Create a new annotation.
+	 * You must have the appropriate permission for the type of annotation you are creating. Permission not required if you are related to the appointment (only the creator or facilitator can create private annotations).
+	 * @param {String} appointmentId The ID of the coaching appointment.
+	 * @param {Object} body The annotation to add
+	 */
+	postCoachingAppointmentAnnotations(appointmentId, body) { 
+		// verify the required parameter 'appointmentId' is set
+		if (appointmentId === undefined || appointmentId === null) {
+			throw 'Missing the required parameter "appointmentId" when calling postCoachingAppointmentAnnotations';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postCoachingAppointmentAnnotations';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/coaching/appointments/{appointmentId}/annotations', 
+			'POST', 
+			{ 'appointmentId': appointmentId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Create a new appointment
+	 * 
+	 * @param {Object} body The appointment to add
+	 */
+	postCoachingAppointments(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postCoachingAppointments';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/coaching/appointments', 
+			'POST', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+}
+
 class ContentManagementApi {
 	/**
 	 * ContentManagement service.
 	 * @module purecloud-platform-client-v2/api/ContentManagementApi
-	 * @version 80.0.3
+	 * @version 81.0.0
 	 */
 
 	/**
@@ -13275,7 +13759,7 @@ class ConversationsApi {
 	/**
 	 * Conversations service.
 	 * @module purecloud-platform-client-v2/api/ConversationsApi
-	 * @version 80.0.3
+	 * @version 81.0.0
 	 */
 
 	/**
@@ -17237,7 +17721,7 @@ class DataExtensionsApi {
 	/**
 	 * DataExtensions service.
 	 * @module purecloud-platform-client-v2/api/DataExtensionsApi
-	 * @version 80.0.3
+	 * @version 81.0.0
 	 */
 
 	/**
@@ -17323,7 +17807,7 @@ class ExternalContactsApi {
 	/**
 	 * ExternalContacts service.
 	 * @module purecloud-platform-client-v2/api/ExternalContactsApi
-	 * @version 80.0.3
+	 * @version 81.0.0
 	 */
 
 	/**
@@ -18566,7 +19050,7 @@ class FaxApi {
 	/**
 	 * Fax service.
 	 * @module purecloud-platform-client-v2/api/FaxApi
-	 * @version 80.0.3
+	 * @version 81.0.0
 	 */
 
 	/**
@@ -18737,7 +19221,7 @@ class FlowsApi {
 	/**
 	 * Flows service.
 	 * @module purecloud-platform-client-v2/api/FlowsApi
-	 * @version 80.0.3
+	 * @version 81.0.0
 	 */
 
 	/**
@@ -18808,7 +19292,7 @@ class GeneralDataProtectionRegulationApi {
 	/**
 	 * GeneralDataProtectionRegulation service.
 	 * @module purecloud-platform-client-v2/api/GeneralDataProtectionRegulationApi
-	 * @version 80.0.3
+	 * @version 81.0.0
 	 */
 
 	/**
@@ -18938,7 +19422,7 @@ class GeolocationApi {
 	/**
 	 * Geolocation service.
 	 * @module purecloud-platform-client-v2/api/GeolocationApi
-	 * @version 80.0.3
+	 * @version 81.0.0
 	 */
 
 	/**
@@ -19069,7 +19553,7 @@ class GreetingsApi {
 	/**
 	 * Greetings service.
 	 * @module purecloud-platform-client-v2/api/GreetingsApi
-	 * @version 80.0.3
+	 * @version 81.0.0
 	 */
 
 	/**
@@ -19524,7 +20008,7 @@ class GroupsApi {
 	/**
 	 * Groups service.
 	 * @module purecloud-platform-client-v2/api/GroupsApi
-	 * @version 80.0.3
+	 * @version 81.0.0
 	 */
 
 	/**
@@ -19929,7 +20413,7 @@ class IdentityProviderApi {
 	/**
 	 * IdentityProvider service.
 	 * @module purecloud-platform-client-v2/api/IdentityProviderApi
-	 * @version 80.0.3
+	 * @version 81.0.0
 	 */
 
 	/**
@@ -20620,7 +21104,7 @@ class IntegrationsApi {
 	/**
 	 * Integrations service.
 	 * @module purecloud-platform-client-v2/api/IntegrationsApi
-	 * @version 80.0.3
+	 * @version 81.0.0
 	 */
 
 	/**
@@ -22112,7 +22596,7 @@ class KnowledgeApi {
 	/**
 	 * Knowledge service.
 	 * @module purecloud-platform-client-v2/api/KnowledgeApi
-	 * @version 80.0.3
+	 * @version 81.0.0
 	 */
 
 	/**
@@ -22831,7 +23315,7 @@ class LanguageUnderstandingApi {
 	/**
 	 * LanguageUnderstanding service.
 	 * @module purecloud-platform-client-v2/api/LanguageUnderstandingApi
-	 * @version 80.0.3
+	 * @version 81.0.0
 	 */
 
 	/**
@@ -23332,7 +23816,7 @@ class LanguagesApi {
 	/**
 	 * Languages service.
 	 * @module purecloud-platform-client-v2/api/LanguagesApi
-	 * @version 80.0.3
+	 * @version 81.0.0
 	 */
 
 	/**
@@ -23600,7 +24084,7 @@ class LicenseApi {
 	/**
 	 * License service.
 	 * @module purecloud-platform-client-v2/api/LicenseApi
-	 * @version 80.0.3
+	 * @version 81.0.0
 	 */
 
 	/**
@@ -23838,7 +24322,7 @@ class LocationsApi {
 	/**
 	 * Locations service.
 	 * @module purecloud-platform-client-v2/api/LocationsApi
-	 * @version 80.0.3
+	 * @version 81.0.0
 	 */
 
 	/**
@@ -24074,7 +24558,7 @@ class MobileDevicesApi {
 	/**
 	 * MobileDevices service.
 	 * @module purecloud-platform-client-v2/api/MobileDevicesApi
-	 * @version 80.0.3
+	 * @version 81.0.0
 	 */
 
 	/**
@@ -24225,7 +24709,7 @@ class NotificationsApi {
 	/**
 	 * Notifications service.
 	 * @module purecloud-platform-client-v2/api/NotificationsApi
-	 * @version 80.0.3
+	 * @version 81.0.0
 	 */
 
 	/**
@@ -24424,7 +24908,7 @@ class OAuthApi {
 	/**
 	 * OAuth service.
 	 * @module purecloud-platform-client-v2/api/OAuthApi
-	 * @version 80.0.3
+	 * @version 81.0.0
 	 */
 
 	/**
@@ -24693,7 +25177,7 @@ class ObjectsApi {
 	/**
 	 * Objects service.
 	 * @module purecloud-platform-client-v2/api/ObjectsApi
-	 * @version 80.0.3
+	 * @version 81.0.0
 	 */
 
 	/**
@@ -24934,7 +25418,7 @@ class OrganizationApi {
 	/**
 	 * Organization service.
 	 * @module purecloud-platform-client-v2/api/OrganizationApi
-	 * @version 80.0.3
+	 * @version 81.0.0
 	 */
 
 	/**
@@ -25144,7 +25628,7 @@ class OrganizationAuthorizationApi {
 	/**
 	 * OrganizationAuthorization service.
 	 * @module purecloud-platform-client-v2/api/OrganizationAuthorizationApi
-	 * @version 80.0.3
+	 * @version 81.0.0
 	 */
 
 	/**
@@ -25854,7 +26338,7 @@ class OutboundApi {
 	/**
 	 * Outbound service.
 	 * @module purecloud-platform-client-v2/api/OutboundApi
-	 * @version 80.0.3
+	 * @version 81.0.0
 	 */
 
 	/**
@@ -28517,7 +29001,7 @@ class PresenceApi {
 	/**
 	 * Presence service.
 	 * @module purecloud-platform-client-v2/api/PresenceApi
-	 * @version 80.0.3
+	 * @version 81.0.0
 	 */
 
 	/**
@@ -28784,7 +29268,7 @@ class QualityApi {
 	/**
 	 * Quality service.
 	 * @module purecloud-platform-client-v2/api/QualityApi
-	 * @version 80.0.3
+	 * @version 81.0.0
 	 */
 
 	/**
@@ -30456,7 +30940,7 @@ class RecordingApi {
 	/**
 	 * Recording service.
 	 * @module purecloud-platform-client-v2/api/RecordingApi
-	 * @version 80.0.3
+	 * @version 81.0.0
 	 */
 
 	/**
@@ -31696,7 +32180,7 @@ class ResponseManagementApi {
 	/**
 	 * ResponseManagement service.
 	 * @module purecloud-platform-client-v2/api/ResponseManagementApi
-	 * @version 80.0.3
+	 * @version 81.0.0
 	 */
 
 	/**
@@ -32021,7 +32505,7 @@ class RoutingApi {
 	/**
 	 * Routing service.
 	 * @module purecloud-platform-client-v2/api/RoutingApi
-	 * @version 80.0.3
+	 * @version 81.0.0
 	 */
 
 	/**
@@ -34319,7 +34803,7 @@ class SCIMApi {
 	/**
 	 * SCIM service.
 	 * @module purecloud-platform-client-v2/api/SCIMApi
-	 * @version 80.0.3
+	 * @version 81.0.0
 	 */
 
 	/**
@@ -35304,7 +35788,7 @@ class ScriptsApi {
 	/**
 	 * Scripts service.
 	 * @module purecloud-platform-client-v2/api/ScriptsApi
-	 * @version 80.0.3
+	 * @version 81.0.0
 	 */
 
 	/**
@@ -35657,7 +36141,7 @@ class SearchApi {
 	/**
 	 * Search service.
 	 * @module purecloud-platform-client-v2/api/SearchApi
-	 * @version 80.0.3
+	 * @version 81.0.0
 	 */
 
 	/**
@@ -36141,7 +36625,7 @@ class StationsApi {
 	/**
 	 * Stations service.
 	 * @module purecloud-platform-client-v2/api/StationsApi
-	 * @version 80.0.3
+	 * @version 81.0.0
 	 */
 
 	/**
@@ -36288,7 +36772,7 @@ class SuggestApi {
 	/**
 	 * Suggest service.
 	 * @module purecloud-platform-client-v2/api/SuggestApi
-	 * @version 80.0.3
+	 * @version 81.0.0
 	 */
 
 	/**
@@ -36427,7 +36911,7 @@ class TelephonyApi {
 	/**
 	 * Telephony service.
 	 * @module purecloud-platform-client-v2/api/TelephonyApi
-	 * @version 80.0.3
+	 * @version 81.0.0
 	 */
 
 	/**
@@ -36535,7 +37019,7 @@ class TelephonyProvidersEdgeApi {
 	/**
 	 * TelephonyProvidersEdge service.
 	 * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-	 * @version 80.0.3
+	 * @version 81.0.0
 	 */
 
 	/**
@@ -40110,7 +40594,7 @@ class TokensApi {
 	/**
 	 * Tokens service.
 	 * @module purecloud-platform-client-v2/api/TokensApi
-	 * @version 80.0.3
+	 * @version 81.0.0
 	 */
 
 	/**
@@ -40196,7 +40680,7 @@ class UploadsApi {
 	/**
 	 * Uploads service.
 	 * @module purecloud-platform-client-v2/api/UploadsApi
-	 * @version 80.0.3
+	 * @version 81.0.0
 	 */
 
 	/**
@@ -40242,7 +40726,7 @@ class UserRecordingsApi {
 	/**
 	 * UserRecordings service.
 	 * @module purecloud-platform-client-v2/api/UserRecordingsApi
-	 * @version 80.0.3
+	 * @version 81.0.0
 	 */
 
 	/**
@@ -40426,7 +40910,7 @@ class UsersApi {
 	/**
 	 * Users service.
 	 * @module purecloud-platform-client-v2/api/UsersApi
-	 * @version 80.0.3
+	 * @version 81.0.0
 	 */
 
 	/**
@@ -42491,7 +42975,7 @@ class UtilitiesApi {
 	/**
 	 * Utilities service.
 	 * @module purecloud-platform-client-v2/api/UtilitiesApi
-	 * @version 80.0.3
+	 * @version 81.0.0
 	 */
 
 	/**
@@ -42602,7 +43086,7 @@ class VoicemailApi {
 	/**
 	 * Voicemail service.
 	 * @module purecloud-platform-client-v2/api/VoicemailApi
-	 * @version 80.0.3
+	 * @version 81.0.0
 	 */
 
 	/**
@@ -43239,7 +43723,7 @@ class WebChatApi {
 	/**
 	 * WebChat service.
 	 * @module purecloud-platform-client-v2/api/WebChatApi
-	 * @version 80.0.3
+	 * @version 81.0.0
 	 */
 
 	/**
@@ -43783,7 +44267,7 @@ class WidgetsApi {
 	/**
 	 * Widgets service.
 	 * @module purecloud-platform-client-v2/api/WidgetsApi
-	 * @version 80.0.3
+	 * @version 81.0.0
 	 */
 
 	/**
@@ -43929,7 +44413,7 @@ class WorkforceManagementApi {
 	/**
 	 * WorkforceManagement service.
 	 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-	 * @version 80.0.3
+	 * @version 81.0.0
 	 */
 
 	/**
@@ -47983,7 +48467,7 @@ class WorkforceManagementApi {
  * </pre>
  * </p>
  * @module purecloud-platform-client-v2/index
- * @version 80.0.3
+ * @version 81.0.0
  */
 class platformClient {
 	constructor() {
@@ -48027,6 +48511,11 @@ class platformClient {
 		 * @property {module:purecloud-platform-client-v2/api/BillingApi}
 		 */
 		this.BillingApi = BillingApi;
+		/**
+		 * The CoachingApi service constructor.
+		 * @property {module:purecloud-platform-client-v2/api/CoachingApi}
+		 */
+		this.CoachingApi = CoachingApi;
 		/**
 		 * The ContentManagementApi service constructor.
 		 * @property {module:purecloud-platform-client-v2/api/ContentManagementApi}

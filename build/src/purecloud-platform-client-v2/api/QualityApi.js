@@ -5,7 +5,7 @@ class QualityApi {
 	/**
 	 * Quality service.
 	 * @module purecloud-platform-client-v2/api/QualityApi
-	 * @version 80.0.3
+	 * @version 81.0.0
 	 */
 
 	/**

@@ -5,7 +5,7 @@ class IdentityProviderApi {
 	/**
 	 * IdentityProvider service.
 	 * @module purecloud-platform-client-v2/api/IdentityProviderApi
-	 * @version 80.0.3
+	 * @version 81.0.0
 	 */
 
 	/**

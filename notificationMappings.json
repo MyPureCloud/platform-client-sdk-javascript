@@ -173,6 +173,18 @@
       "class": "QueueUserEventTopicQueueMember"
     },
     {
+      "topic": "v2.system.no_longer_subscribed.{id}",
+      "class": "SystemMessageSystemMessage"
+    },
+    {
+      "topic": "v2.system.socket_closing",
+      "class": "SystemMessageSystemMessage"
+    },
+    {
+      "topic": "v2.system.token_revoked.{id}",
+      "class": "SystemMessageSystemMessage"
+    },
+    {
       "topic": "v2.system.{id}.{id}",
       "class": "SystemMessageSystemMessage"
     },
@@ -305,6 +317,10 @@
       "class": "WemCoachingAppointmentTopicCoachingAppointmentNotification"
     },
     {
+      "topic": "v2.users.{id}.wem.learning.assignment",
+      "class": "WemLearningAssignmentTopicLearningAssignmentNotification"
+    },
+    {
       "topic": "v2.users.{id}.workforcemanagement.adherence",
       "class": "WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate"
     },
@@ -323,6 +339,10 @@
     {
       "topic": "v2.users.{id}.workforcemanagement.timeoffrequests",
       "class": "WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate"
+    },
+    {
+      "topic": "v2.wem.learning.assignments.modules.{id}",
+      "class": "WemLearningAssignmentRuleRunTopicLearningAssignmentRuleRunNotification"
     },
     {
       "topic": "v2.workforcemanagement.agents",

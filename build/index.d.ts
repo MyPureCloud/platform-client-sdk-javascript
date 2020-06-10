@@ -624,6 +624,56 @@ declare namespace BillingApi {
 	}
 }
 
+declare class CoachingApi {  
+  	deleteCoachingAppointment(appointmentId: string): Promise<void>; 
+  	deleteCoachingAppointmentAnnotation(appointmentId: string, annotationId: string): Promise<void>; 
+  	getCoachingAppointment(appointmentId: string): Promise<Models.CoachingAppointmentResponse>; 
+  	getCoachingAppointmentAnnotation(appointmentId: string, annotationId: string): Promise<Models.CoachingAnnotation>; 
+  	getCoachingAppointmentAnnotations(appointmentId: string, opts?: CoachingApi.getCoachingAppointmentAnnotationsOptions): Promise<Models.CoachingAnnotationList>; 
+  	getCoachingAppointmentStatuses(appointmentId: string, opts?: CoachingApi.getCoachingAppointmentStatusesOptions): Promise<Models.CoachingAppointmentStatusDtoList>; 
+  	getCoachingAppointments(userIds: Array<string>, opts?: CoachingApi.getCoachingAppointmentsOptions): Promise<Models.CoachingAppointmentResponseList>; 
+  	getCoachingAppointmentsMe(opts?: CoachingApi.getCoachingAppointmentsMeOptions): Promise<Models.CoachingAppointmentResponseList>; 
+  	getCoachingNotification(notificationId: string): Promise<Models.CoachingNotification>; 
+  	getCoachingNotifications(opts?: CoachingApi.getCoachingNotificationsOptions): Promise<Models.CoachingNotificationList>; 
+  	patchCoachingAppointment(appointmentId: string, body: Models.UpdateCoachingAppointmentRequest): Promise<Models.CoachingAppointmentResponse>; 
+  	patchCoachingAppointmentAnnotation(appointmentId: string, annotationId: string, body: Models.CoachingAnnotation): Promise<Models.CoachingAnnotation>; 
+  	patchCoachingAppointmentStatus(appointmentId: string, body: Models.CoachingAppointmentStatusDto): Promise<Models.CoachingAppointmentStatusDto>; 
+  	patchCoachingNotification(notificationId: string, body: Models.CoachingNotification): Promise<Models.CoachingNotification>; 
+  	postCoachingAppointmentAnnotations(appointmentId: string, body: Models.CoachingAnnotationCreateRequest): Promise<Models.CoachingAnnotation>; 
+  	postCoachingAppointments(body: Models.CreateCoachingAppointmentRequest): Promise<Models.CoachingAppointmentResponse>;
+}
+
+declare namespace CoachingApi { 
+	export interface getCoachingAppointmentAnnotationsOptions { 
+		"pageNumber"?: number;
+		"pageSize"?: number;
+	}
+	export interface getCoachingAppointmentStatusesOptions { 
+		"pageNumber"?: number;
+		"pageSize"?: number;
+	}
+	export interface getCoachingAppointmentsOptions { 
+		"interval"?: string;
+		"pageNumber"?: number;
+		"pageSize"?: number;
+		"statuses"?: Array<string>;
+		"facilitatorIds"?: Array<string>;
+		"sortOrder"?: string;
+	}
+	export interface getCoachingAppointmentsMeOptions { 
+		"interval"?: string;
+		"pageNumber"?: number;
+		"pageSize"?: number;
+		"statuses"?: Array<string>;
+		"facilitatorIds"?: Array<string>;
+		"sortOrder"?: string;
+	}
+	export interface getCoachingNotificationsOptions { 
+		"pageNumber"?: number;
+		"pageSize"?: number;
+	}
+}
+
 declare class ContentManagementApi {  
   	deleteContentmanagementDocument(documentId: string, opts?: ContentManagementApi.deleteContentmanagementDocumentOptions): Promise<void>; 
   	deleteContentmanagementShare(shareId: string): Promise<void>; 
@@ -4434,8 +4484,8 @@ declare namespace Models {
 		"calibrationId"?: string;
 		"rescored"?: boolean;
 		"deleted"?: boolean;
-		"oTotalCriticalScore"?: number;
 		"oTotalScore"?: number;
+		"oTotalCriticalScore"?: number;
 	}
 	
 	export interface AnalyticsFlow { 
@@ -6646,6 +6696,114 @@ declare namespace Models {
 		"pageCount"?: number;
 	}
 	
+	export interface CoachingAnnotation { 
+		"id"?: string;
+		"createdBy"?: Models.UserReference;
+		"dateCreated"?: string;
+		"modifiedBy"?: Models.UserReference;
+		"dateModified"?: string;
+		"text": string;
+		"isDeleted"?: boolean;
+		"accessType"?: string;
+		"selfUri"?: string;
+	}
+	
+	export interface CoachingAnnotationCreateRequest { 
+		"text": string;
+		"accessType": string;
+	}
+	
+	export interface CoachingAnnotationList { 
+		"entities"?: Array<Models.CoachingAnnotation>;
+		"pageSize"?: number;
+		"pageNumber"?: number;
+		"total"?: number;
+		"firstUri"?: string;
+		"selfUri"?: string;
+		"nextUri"?: string;
+		"lastUri"?: string;
+		"previousUri"?: string;
+		"pageCount"?: number;
+	}
+	
+	export interface CoachingAppointmentReference { 
+		"id"?: string;
+		"selfUri"?: string;
+	}
+	
+	export interface CoachingAppointmentResponse { 
+		"id"?: string;
+		"name"?: string;
+		"description"?: string;
+		"dateStart"?: string;
+		"lengthInMinutes"?: number;
+		"status"?: string;
+		"facilitator"?: Models.UserReference;
+		"attendees"?: Array<Models.UserReference>;
+		"createdBy"?: Models.UserReference;
+		"dateCreated"?: string;
+		"modifiedBy"?: Models.UserReference;
+		"dateModified"?: string;
+		"conversations"?: Array<Models.ConversationReference>;
+		"documents"?: Array<Models.DocumentReference>;
+		"selfUri"?: string;
+	}
+	
+	export interface CoachingAppointmentResponseList { 
+		"entities"?: Array<Models.CoachingAppointmentResponse>;
+		"pageSize"?: number;
+		"pageNumber"?: number;
+		"total"?: number;
+		"firstUri"?: string;
+		"selfUri"?: string;
+		"nextUri"?: string;
+		"lastUri"?: string;
+		"previousUri"?: string;
+		"pageCount"?: number;
+	}
+	
+	export interface CoachingAppointmentStatusDto { 
+		"appointment"?: Models.CoachingAppointmentReference;
+		"createdBy"?: Models.UserReference;
+		"dateCreated"?: string;
+		"status": string;
+	}
+	
+	export interface CoachingAppointmentStatusDtoList { 
+		"entities"?: Array<Models.CoachingAppointmentStatusDto>;
+		"pageSize"?: number;
+		"pageNumber"?: number;
+		"total"?: number;
+		"pageCount"?: number;
+	}
+	
+	export interface CoachingNotification { 
+		"id"?: string;
+		"name"?: string;
+		"markedAsRead"?: boolean;
+		"actionType"?: string;
+		"relationship"?: string;
+		"dateStart"?: string;
+		"lengthInMinutes"?: number;
+		"status"?: string;
+		"user"?: Models.UserReference;
+		"appointment"?: Models.CoachingAppointmentReference;
+		"selfUri"?: string;
+	}
+	
+	export interface CoachingNotificationList { 
+		"entities"?: Array<Models.CoachingNotification>;
+		"pageSize"?: number;
+		"pageNumber"?: number;
+		"total"?: number;
+		"firstUri"?: string;
+		"selfUri"?: string;
+		"nextUri"?: string;
+		"lastUri"?: string;
+		"previousUri"?: string;
+		"pageCount"?: number;
+	}
+	
 	export interface CobrowseConversation { 
 		"id"?: string;
 		"name"?: string;
@@ -7939,6 +8097,7 @@ declare namespace Models {
 		"disconnectReasons"?: Array<Models.ConversationEventTopicDisconnectReason>;
 		"faxStatus"?: Models.ConversationEventTopicFaxStatus;
 		"uuiData"?: string;
+		"wrapup"?: Models.ConversationEventTopicWrapup;
 		"additionalProperties"?: object;
 	}
 	
@@ -7963,6 +8122,7 @@ declare namespace Models {
 		"disconnectedTime"?: string;
 		"callbackScheduledTime"?: string;
 		"automatedCallbackConfigId"?: string;
+		"wrapup"?: Models.ConversationEventTopicWrapup;
 		"additionalProperties"?: object;
 	}
 	
@@ -7980,6 +8140,7 @@ declare namespace Models {
 		"connectedTime"?: string;
 		"disconnectedTime"?: string;
 		"journeyContext"?: Models.ConversationEventTopicJourneyContext;
+		"wrapup"?: Models.ConversationEventTopicWrapup;
 		"additionalProperties"?: object;
 	}
 	
@@ -7999,6 +8160,7 @@ declare namespace Models {
 		"providerEventTime"?: string;
 		"connectedTime"?: string;
 		"disconnectedTime"?: string;
+		"wrapup"?: Models.ConversationEventTopicWrapup;
 		"additionalProperties"?: object;
 	}
 	
@@ -8052,6 +8214,7 @@ declare namespace Models {
 		"direction"?: string;
 		"draftAttachments"?: Array<Models.ConversationEventTopicAttachment>;
 		"spam"?: boolean;
+		"wrapup"?: Models.ConversationEventTopicWrapup;
 		"additionalProperties"?: object;
 	}
 	
@@ -8121,6 +8284,7 @@ declare namespace Models {
 		"type"?: string;
 		"recipientCountry"?: string;
 		"recipientType"?: string;
+		"wrapup"?: Models.ConversationEventTopicWrapup;
 		"additionalProperties"?: object;
 	}
 	
@@ -8208,6 +8372,7 @@ declare namespace Models {
 		"disconnectType"?: string;
 		"connectedTime"?: string;
 		"disconnectedTime"?: string;
+		"wrapup"?: Models.ConversationEventTopicWrapup;
 		"additionalProperties"?: object;
 	}
 	
@@ -8227,6 +8392,7 @@ declare namespace Models {
 		"startHoldTime"?: string;
 		"connectedTime"?: string;
 		"disconnectedTime"?: string;
+		"wrapup"?: Models.ConversationEventTopicWrapup;
 		"additionalProperties"?: object;
 	}
 	
@@ -8250,6 +8416,7 @@ declare namespace Models {
 		"connectedTime"?: string;
 		"disconnectedTime"?: string;
 		"msids"?: Array<string>;
+		"wrapup"?: Models.ConversationEventTopicWrapup;
 		"additionalProperties"?: object;
 	}
 	
@@ -8435,6 +8602,11 @@ declare namespace Models {
 		"orderBy"?: string;
 		"aggregations"?: Array<Models.AnalyticsQueryAggregation>;
 		"paging"?: Models.PagingSpec;
+	}
+	
+	export interface ConversationReference { 
+		"id"?: string;
+		"selfUri"?: string;
 	}
 	
 	export interface ConversationRoutingData { 
@@ -8941,6 +9113,17 @@ declare namespace Models {
 	export interface CreateCallbackResponse { 
 		"conversation": Models.DomainEntityRef;
 		"callbackIdentifiers": Array<Models.CallbackIdentifier>;
+	}
+	
+	export interface CreateCoachingAppointmentRequest { 
+		"name": string;
+		"description": string;
+		"dateStart": string;
+		"lengthInMinutes": number;
+		"facilitatorId"?: string;
+		"attendeeIds": Array<string>;
+		"conversationIds": Array<string>;
+		"documentIds": Array<string>;
 	}
 	
 	export interface CreateEmailRequest { 
@@ -10337,6 +10520,11 @@ declare namespace Models {
 		"previousUri"?: string;
 	}
 	
+	export interface DocumentReference { 
+		"id"?: string;
+		"selfUri"?: string;
+	}
+	
 	export interface DocumentThumbnail { 
 		"resolution"?: string;
 		"imageUri"?: string;
@@ -11324,7 +11512,11 @@ declare namespace Models {
 	}
 	
 	export interface EntityListing { 
-		"entities"?: Array<object>;
+		"entities"?: Array<Models.DataTableImportJob>;
+		"pageSize"?: number;
+		"pageNumber"?: number;
+		"total"?: number;
+		"pageCount"?: number;
 	}
 	
 	export interface Entry { 
@@ -16454,6 +16646,7 @@ declare namespace Models {
 		"disconnectReasons"?: Array<Models.QueueConversationEventTopicDisconnectReason>;
 		"faxStatus"?: Models.QueueConversationEventTopicFaxStatus;
 		"uuiData"?: string;
+		"wrapup"?: Models.QueueConversationEventTopicWrapup;
 		"additionalProperties"?: object;
 	}
 	
@@ -16478,6 +16671,7 @@ declare namespace Models {
 		"disconnectedTime"?: string;
 		"callbackScheduledTime"?: string;
 		"automatedCallbackConfigId"?: string;
+		"wrapup"?: Models.QueueConversationEventTopicWrapup;
 		"additionalProperties"?: object;
 	}
 	
@@ -16495,6 +16689,7 @@ declare namespace Models {
 		"connectedTime"?: string;
 		"disconnectedTime"?: string;
 		"journeyContext"?: Models.QueueConversationEventTopicJourneyContext;
+		"wrapup"?: Models.QueueConversationEventTopicWrapup;
 		"additionalProperties"?: object;
 	}
 	
@@ -16514,6 +16709,7 @@ declare namespace Models {
 		"providerEventTime"?: string;
 		"connectedTime"?: string;
 		"disconnectedTime"?: string;
+		"wrapup"?: Models.QueueConversationEventTopicWrapup;
 		"additionalProperties"?: object;
 	}
 	
@@ -16567,6 +16763,7 @@ declare namespace Models {
 		"direction"?: string;
 		"draftAttachments"?: Array<Models.QueueConversationEventTopicAttachment>;
 		"spam"?: boolean;
+		"wrapup"?: Models.QueueConversationEventTopicWrapup;
 		"additionalProperties"?: object;
 	}
 	
@@ -16636,6 +16833,7 @@ declare namespace Models {
 		"type"?: string;
 		"recipientCountry"?: string;
 		"recipientType"?: string;
+		"wrapup"?: Models.QueueConversationEventTopicWrapup;
 		"additionalProperties"?: object;
 	}
 	
@@ -16723,6 +16921,7 @@ declare namespace Models {
 		"disconnectType"?: string;
 		"connectedTime"?: string;
 		"disconnectedTime"?: string;
+		"wrapup"?: Models.QueueConversationEventTopicWrapup;
 		"additionalProperties"?: object;
 	}
 	
@@ -16742,6 +16941,7 @@ declare namespace Models {
 		"startHoldTime"?: string;
 		"connectedTime"?: string;
 		"disconnectedTime"?: string;
+		"wrapup"?: Models.QueueConversationEventTopicWrapup;
 		"additionalProperties"?: object;
 	}
 	
@@ -16765,6 +16965,7 @@ declare namespace Models {
 		"connectedTime"?: string;
 		"disconnectedTime"?: string;
 		"msids"?: Array<string>;
+		"wrapup"?: Models.QueueConversationEventTopicWrapup;
 		"additionalProperties"?: object;
 	}
 	
@@ -17086,6 +17287,7 @@ declare namespace Models {
 		"disconnectReasons"?: Array<Models.QueueConversationSocialExpressionEventTopicDisconnectReason>;
 		"faxStatus"?: Models.QueueConversationSocialExpressionEventTopicFaxStatus;
 		"uuiData"?: string;
+		"wrapup"?: Models.QueueConversationSocialExpressionEventTopicWrapup;
 		"additionalProperties"?: object;
 	}
 	
@@ -17110,6 +17312,7 @@ declare namespace Models {
 		"disconnectedTime"?: string;
 		"callbackScheduledTime"?: string;
 		"automatedCallbackConfigId"?: string;
+		"wrapup"?: Models.QueueConversationSocialExpressionEventTopicWrapup;
 		"additionalProperties"?: object;
 	}
 	
@@ -17127,6 +17330,7 @@ declare namespace Models {
 		"connectedTime"?: string;
 		"disconnectedTime"?: string;
 		"journeyContext"?: Models.QueueConversationSocialExpressionEventTopicJourneyContext;
+		"wrapup"?: Models.QueueConversationSocialExpressionEventTopicWrapup;
 		"additionalProperties"?: object;
 	}
 	
@@ -17146,6 +17350,7 @@ declare namespace Models {
 		"providerEventTime"?: string;
 		"connectedTime"?: string;
 		"disconnectedTime"?: string;
+		"wrapup"?: Models.QueueConversationSocialExpressionEventTopicWrapup;
 		"additionalProperties"?: object;
 	}
 	
@@ -17199,6 +17404,7 @@ declare namespace Models {
 		"direction"?: string;
 		"draftAttachments"?: Array<Models.QueueConversationSocialExpressionEventTopicAttachment>;
 		"spam"?: boolean;
+		"wrapup"?: Models.QueueConversationSocialExpressionEventTopicWrapup;
 		"additionalProperties"?: object;
 	}
 	
@@ -17268,6 +17474,7 @@ declare namespace Models {
 		"type"?: string;
 		"recipientCountry"?: string;
 		"recipientType"?: string;
+		"wrapup"?: Models.QueueConversationSocialExpressionEventTopicWrapup;
 		"additionalProperties"?: object;
 	}
 	
@@ -17355,6 +17562,7 @@ declare namespace Models {
 		"disconnectType"?: string;
 		"connectedTime"?: string;
 		"disconnectedTime"?: string;
+		"wrapup"?: Models.QueueConversationSocialExpressionEventTopicWrapup;
 		"additionalProperties"?: object;
 	}
 	
@@ -17374,6 +17582,7 @@ declare namespace Models {
 		"startHoldTime"?: string;
 		"connectedTime"?: string;
 		"disconnectedTime"?: string;
+		"wrapup"?: Models.QueueConversationSocialExpressionEventTopicWrapup;
 		"additionalProperties"?: object;
 	}
 	
@@ -17397,6 +17606,7 @@ declare namespace Models {
 		"connectedTime"?: string;
 		"disconnectedTime"?: string;
 		"msids"?: Array<string>;
+		"wrapup"?: Models.QueueConversationSocialExpressionEventTopicWrapup;
 		"additionalProperties"?: object;
 	}
 	
@@ -17455,6 +17665,7 @@ declare namespace Models {
 		"disconnectReasons"?: Array<Models.QueueConversationVideoEventTopicDisconnectReason>;
 		"faxStatus"?: Models.QueueConversationVideoEventTopicFaxStatus;
 		"uuiData"?: string;
+		"wrapup"?: Models.QueueConversationVideoEventTopicWrapup;
 		"additionalProperties"?: object;
 	}
 	
@@ -17479,6 +17690,7 @@ declare namespace Models {
 		"disconnectedTime"?: string;
 		"callbackScheduledTime"?: string;
 		"automatedCallbackConfigId"?: string;
+		"wrapup"?: Models.QueueConversationVideoEventTopicWrapup;
 		"additionalProperties"?: object;
 	}
 	
@@ -17496,6 +17708,7 @@ declare namespace Models {
 		"connectedTime"?: string;
 		"disconnectedTime"?: string;
 		"journeyContext"?: Models.QueueConversationVideoEventTopicJourneyContext;
+		"wrapup"?: Models.QueueConversationVideoEventTopicWrapup;
 		"additionalProperties"?: object;
 	}
 	
@@ -17515,6 +17728,7 @@ declare namespace Models {
 		"providerEventTime"?: string;
 		"connectedTime"?: string;
 		"disconnectedTime"?: string;
+		"wrapup"?: Models.QueueConversationVideoEventTopicWrapup;
 		"additionalProperties"?: object;
 	}
 	
@@ -17568,6 +17782,7 @@ declare namespace Models {
 		"direction"?: string;
 		"draftAttachments"?: Array<Models.QueueConversationVideoEventTopicAttachment>;
 		"spam"?: boolean;
+		"wrapup"?: Models.QueueConversationVideoEventTopicWrapup;
 		"additionalProperties"?: object;
 	}
 	
@@ -17637,6 +17852,7 @@ declare namespace Models {
 		"type"?: string;
 		"recipientCountry"?: string;
 		"recipientType"?: string;
+		"wrapup"?: Models.QueueConversationVideoEventTopicWrapup;
 		"additionalProperties"?: object;
 	}
 	
@@ -17724,6 +17940,7 @@ declare namespace Models {
 		"disconnectType"?: string;
 		"connectedTime"?: string;
 		"disconnectedTime"?: string;
+		"wrapup"?: Models.QueueConversationVideoEventTopicWrapup;
 		"additionalProperties"?: object;
 	}
 	
@@ -17743,6 +17960,7 @@ declare namespace Models {
 		"startHoldTime"?: string;
 		"connectedTime"?: string;
 		"disconnectedTime"?: string;
+		"wrapup"?: Models.QueueConversationVideoEventTopicWrapup;
 		"additionalProperties"?: object;
 	}
 	
@@ -17766,6 +17984,7 @@ declare namespace Models {
 		"connectedTime"?: string;
 		"disconnectedTime"?: string;
 		"msids"?: Array<string>;
+		"wrapup"?: Models.QueueConversationVideoEventTopicWrapup;
 		"additionalProperties"?: object;
 	}
 	
@@ -20854,6 +21073,15 @@ declare namespace Models {
 		"metadata": Models.WfmVersionedEntityMetadata;
 	}
 	
+	export interface UpdateCoachingAppointmentRequest { 
+		"name"?: string;
+		"description"?: string;
+		"dateStart"?: string;
+		"lengthInMinutes"?: number;
+		"conversationIds"?: Array<string>;
+		"documentIds"?: Array<string>;
+	}
+	
 	export interface UpdateDraftInput { 
 		"category"?: string;
 		"name"?: string;
@@ -22156,6 +22384,42 @@ declare namespace Models {
 	}
 	
 	export interface WemCoachingAppointmentTopicUserReference { 
+		"id"?: string;
+	}
+	
+	export interface WemLearningAssignmentRuleRunTopicLearningAssignmentRuleRunNotification { 
+		"entities"?: Array<Models.WemLearningAssignmentRuleRunTopicWemLearningAssignmentsCreated>;
+		"total"?: number;
+	}
+	
+	export interface WemLearningAssignmentRuleRunTopicLearningModuleReference { 
+		"id"?: string;
+		"name"?: string;
+	}
+	
+	export interface WemLearningAssignmentRuleRunTopicWemLearningAssignmentsCreated { 
+		"module"?: Models.WemLearningAssignmentRuleRunTopicLearningModuleReference;
+	}
+	
+	export interface WemLearningAssignmentTopicLearningAssignmentNotification { 
+		"id"?: string;
+		"user"?: Models.WemLearningAssignmentTopicUserReference;
+		"module"?: Models.WemLearningAssignmentTopicLearningModuleReference;
+		"version"?: number;
+		"state"?: string;
+		"dateRecommendedForCompletion"?: string;
+		"createdBy"?: Models.WemLearningAssignmentTopicUserReference;
+		"dateCreated"?: string;
+		"modifiedBy"?: Models.WemLearningAssignmentTopicUserReference;
+		"dateModified"?: string;
+	}
+	
+	export interface WemLearningAssignmentTopicLearningModuleReference { 
+		"id"?: string;
+		"name"?: string;
+	}
+	
+	export interface WemLearningAssignmentTopicUserReference { 
 		"id"?: string;
 	}
 	

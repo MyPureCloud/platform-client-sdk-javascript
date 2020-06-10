@@ -7,6 +7,7 @@ import ArchitectApi from './api/ArchitectApi.js';
 import AuditApi from './api/AuditApi.js';
 import AuthorizationApi from './api/AuthorizationApi.js';
 import BillingApi from './api/BillingApi.js';
+import CoachingApi from './api/CoachingApi.js';
 import ContentManagementApi from './api/ContentManagementApi.js';
 import ConversationsApi from './api/ConversationsApi.js';
 import DataExtensionsApi from './api/DataExtensionsApi.js';
@@ -83,7 +84,7 @@ import WorkforceManagementApi from './api/WorkforceManagementApi.js';
  * </pre>
  * </p>
  * @module purecloud-platform-client-v2/index
- * @version 80.0.3
+ * @version 81.0.0
  */
 class platformClient {
 	constructor() {
@@ -127,6 +128,11 @@ class platformClient {
 		 * @property {module:purecloud-platform-client-v2/api/BillingApi}
 		 */
 		this.BillingApi = BillingApi;
+		/**
+		 * The CoachingApi service constructor.
+		 * @property {module:purecloud-platform-client-v2/api/CoachingApi}
+		 */
+		this.CoachingApi = CoachingApi;
 		/**
 		 * The ContentManagementApi service constructor.
 		 * @property {module:purecloud-platform-client-v2/api/ContentManagementApi}

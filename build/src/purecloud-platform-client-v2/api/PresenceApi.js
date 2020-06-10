@@ -5,7 +5,7 @@ class PresenceApi {
 	/**
 	 * Presence service.
 	 * @module purecloud-platform-client-v2/api/PresenceApi
-	 * @version 80.0.3
+	 * @version 81.0.0
 	 */
 
 	/**
