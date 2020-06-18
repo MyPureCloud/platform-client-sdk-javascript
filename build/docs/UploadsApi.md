@@ -49,6 +49,7 @@ UploadUrlRequest <a href="#" onclick="return copyUploadUrlRequestExample()">Copy
   "fileName": String, 
   "contentMd5": String, 
   "signedUrlTimeoutSeconds": Number, 
+  "serverSideEncryption": String, 
 }
 ```
 

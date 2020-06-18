@@ -639,6 +639,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
                 "dateTrained": Date, 
                 "datePublished": Date, 
                 "trainingStatus": String, 
+                "evaluationStatus": String, 
                 "intents": [IntentDefinition], 
                 "entityTypes": [NamedEntityTypeDefinition], 
                 "selfUri": String, 
@@ -653,6 +654,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
                 "dateTrained": Date, 
                 "datePublished": Date, 
                 "trainingStatus": String, 
+                "evaluationStatus": String, 
                 "intents": [IntentDefinition], 
                 "entityTypes": [NamedEntityTypeDefinition], 
                 "selfUri": String, 
@@ -668,6 +670,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
             "dateTrained": Date, 
             "datePublished": Date, 
             "trainingStatus": String, 
+            "evaluationStatus": String, 
             "intents": { 
               "name": String, 
               "entityTypeBindings": { 
@@ -704,6 +707,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
                 "dateTrained": Date, 
                 "datePublished": Date, 
                 "trainingStatus": String, 
+                "evaluationStatus": String, 
                 "intents": [IntentDefinition], 
                 "entityTypes": [NamedEntityTypeDefinition], 
                 "selfUri": String, 
@@ -718,6 +722,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
                 "dateTrained": Date, 
                 "datePublished": Date, 
                 "trainingStatus": String, 
+                "evaluationStatus": String, 
                 "intents": [IntentDefinition], 
                 "entityTypes": [NamedEntityTypeDefinition], 
                 "selfUri": String, 
@@ -733,6 +738,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
             "dateTrained": Date, 
             "datePublished": Date, 
             "trainingStatus": String, 
+            "evaluationStatus": String, 
             "intents": { 
               "name": String, 
               "entityTypeBindings": { 
@@ -765,6 +771,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
         "dateTrained": Date, 
         "datePublished": Date, 
         "trainingStatus": String, 
+        "evaluationStatus": String, 
         "intents": { 
           "name": String, 
           "entityTypeBindings": { 
@@ -814,6 +821,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
                 "dateTrained": Date, 
                 "datePublished": Date, 
                 "trainingStatus": String, 
+                "evaluationStatus": String, 
                 "intents": [IntentDefinition], 
                 "entityTypes": [NamedEntityTypeDefinition], 
                 "selfUri": String, 
@@ -828,6 +836,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
                 "dateTrained": Date, 
                 "datePublished": Date, 
                 "trainingStatus": String, 
+                "evaluationStatus": String, 
                 "intents": [IntentDefinition], 
                 "entityTypes": [NamedEntityTypeDefinition], 
                 "selfUri": String, 
@@ -843,6 +852,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
             "dateTrained": Date, 
             "datePublished": Date, 
             "trainingStatus": String, 
+            "evaluationStatus": String, 
             "intents": { 
               "name": String, 
               "entityTypeBindings": { 
@@ -879,6 +889,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
                 "dateTrained": Date, 
                 "datePublished": Date, 
                 "trainingStatus": String, 
+                "evaluationStatus": String, 
                 "intents": [IntentDefinition], 
                 "entityTypes": [NamedEntityTypeDefinition], 
                 "selfUri": String, 
@@ -893,6 +904,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
                 "dateTrained": Date, 
                 "datePublished": Date, 
                 "trainingStatus": String, 
+                "evaluationStatus": String, 
                 "intents": [IntentDefinition], 
                 "entityTypes": [NamedEntityTypeDefinition], 
                 "selfUri": String, 
@@ -908,6 +920,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
             "dateTrained": Date, 
             "datePublished": Date, 
             "trainingStatus": String, 
+            "evaluationStatus": String, 
             "intents": { 
               "name": String, 
               "entityTypeBindings": { 
@@ -940,6 +953,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
         "dateTrained": Date, 
         "datePublished": Date, 
         "trainingStatus": String, 
+        "evaluationStatus": String, 
         "intents": { 
           "name": String, 
           "entityTypeBindings": { 
@@ -980,6 +994,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
     "dateTrained": Date, 
     "datePublished": Date, 
     "trainingStatus": String, 
+    "evaluationStatus": String, 
     "intents": { 
       "name": String, 
       "entityTypeBindings": { 
@@ -1034,6 +1049,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
                 "dateTrained": Date, 
                 "datePublished": Date, 
                 "trainingStatus": String, 
+                "evaluationStatus": String, 
                 "intents": [IntentDefinition], 
                 "entityTypes": [NamedEntityTypeDefinition], 
                 "selfUri": String, 
@@ -1048,6 +1064,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
                 "dateTrained": Date, 
                 "datePublished": Date, 
                 "trainingStatus": String, 
+                "evaluationStatus": String, 
                 "intents": [IntentDefinition], 
                 "entityTypes": [NamedEntityTypeDefinition], 
                 "selfUri": String, 
@@ -1063,6 +1080,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
             "dateTrained": Date, 
             "datePublished": Date, 
             "trainingStatus": String, 
+            "evaluationStatus": String, 
             "intents": { 
               "name": String, 
               "entityTypeBindings": { 
@@ -1099,6 +1117,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
                 "dateTrained": Date, 
                 "datePublished": Date, 
                 "trainingStatus": String, 
+                "evaluationStatus": String, 
                 "intents": [IntentDefinition], 
                 "entityTypes": [NamedEntityTypeDefinition], 
                 "selfUri": String, 
@@ -1113,6 +1132,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
                 "dateTrained": Date, 
                 "datePublished": Date, 
                 "trainingStatus": String, 
+                "evaluationStatus": String, 
                 "intents": [IntentDefinition], 
                 "entityTypes": [NamedEntityTypeDefinition], 
                 "selfUri": String, 
@@ -1128,6 +1148,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
             "dateTrained": Date, 
             "datePublished": Date, 
             "trainingStatus": String, 
+            "evaluationStatus": String, 
             "intents": { 
               "name": String, 
               "entityTypeBindings": { 
@@ -1160,6 +1181,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
         "dateTrained": Date, 
         "datePublished": Date, 
         "trainingStatus": String, 
+        "evaluationStatus": String, 
         "intents": { 
           "name": String, 
           "entityTypeBindings": { 
@@ -1209,6 +1231,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
                 "dateTrained": Date, 
                 "datePublished": Date, 
                 "trainingStatus": String, 
+                "evaluationStatus": String, 
                 "intents": [IntentDefinition], 
                 "entityTypes": [NamedEntityTypeDefinition], 
                 "selfUri": String, 
@@ -1223,6 +1246,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
                 "dateTrained": Date, 
                 "datePublished": Date, 
                 "trainingStatus": String, 
+                "evaluationStatus": String, 
                 "intents": [IntentDefinition], 
                 "entityTypes": [NamedEntityTypeDefinition], 
                 "selfUri": String, 
@@ -1238,6 +1262,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
             "dateTrained": Date, 
             "datePublished": Date, 
             "trainingStatus": String, 
+            "evaluationStatus": String, 
             "intents": { 
               "name": String, 
               "entityTypeBindings": { 
@@ -1274,6 +1299,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
                 "dateTrained": Date, 
                 "datePublished": Date, 
                 "trainingStatus": String, 
+                "evaluationStatus": String, 
                 "intents": [IntentDefinition], 
                 "entityTypes": [NamedEntityTypeDefinition], 
                 "selfUri": String, 
@@ -1288,6 +1314,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
                 "dateTrained": Date, 
                 "datePublished": Date, 
                 "trainingStatus": String, 
+                "evaluationStatus": String, 
                 "intents": [IntentDefinition], 
                 "entityTypes": [NamedEntityTypeDefinition], 
                 "selfUri": String, 
@@ -1303,6 +1330,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
             "dateTrained": Date, 
             "datePublished": Date, 
             "trainingStatus": String, 
+            "evaluationStatus": String, 
             "intents": { 
               "name": String, 
               "entityTypeBindings": { 
@@ -1335,6 +1363,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
         "dateTrained": Date, 
         "datePublished": Date, 
         "trainingStatus": String, 
+        "evaluationStatus": String, 
         "intents": { 
           "name": String, 
           "entityTypeBindings": { 
@@ -1375,6 +1404,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
     "dateTrained": Date, 
     "datePublished": Date, 
     "trainingStatus": String, 
+    "evaluationStatus": String, 
     "intents": { 
       "name": String, 
       "entityTypeBindings": { 
@@ -1831,6 +1861,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
                 "dateTrained": Date, 
                 "datePublished": Date, 
                 "trainingStatus": String, 
+                "evaluationStatus": String, 
                 "intents": [IntentDefinition], 
                 "entityTypes": [NamedEntityTypeDefinition], 
                 "selfUri": String, 
@@ -1845,6 +1876,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
                 "dateTrained": Date, 
                 "datePublished": Date, 
                 "trainingStatus": String, 
+                "evaluationStatus": String, 
                 "intents": [IntentDefinition], 
                 "entityTypes": [NamedEntityTypeDefinition], 
                 "selfUri": String, 
@@ -1860,6 +1892,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
             "dateTrained": Date, 
             "datePublished": Date, 
             "trainingStatus": String, 
+            "evaluationStatus": String, 
             "intents": { 
               "name": String, 
               "entityTypeBindings": { 
@@ -1896,6 +1929,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
                 "dateTrained": Date, 
                 "datePublished": Date, 
                 "trainingStatus": String, 
+                "evaluationStatus": String, 
                 "intents": [IntentDefinition], 
                 "entityTypes": [NamedEntityTypeDefinition], 
                 "selfUri": String, 
@@ -1910,6 +1944,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
                 "dateTrained": Date, 
                 "datePublished": Date, 
                 "trainingStatus": String, 
+                "evaluationStatus": String, 
                 "intents": [IntentDefinition], 
                 "entityTypes": [NamedEntityTypeDefinition], 
                 "selfUri": String, 
@@ -1925,6 +1960,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
             "dateTrained": Date, 
             "datePublished": Date, 
             "trainingStatus": String, 
+            "evaluationStatus": String, 
             "intents": { 
               "name": String, 
               "entityTypeBindings": { 
@@ -1957,6 +1993,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
         "dateTrained": Date, 
         "datePublished": Date, 
         "trainingStatus": String, 
+        "evaluationStatus": String, 
         "intents": { 
           "name": String, 
           "entityTypeBindings": { 
@@ -2006,6 +2043,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
                 "dateTrained": Date, 
                 "datePublished": Date, 
                 "trainingStatus": String, 
+                "evaluationStatus": String, 
                 "intents": [IntentDefinition], 
                 "entityTypes": [NamedEntityTypeDefinition], 
                 "selfUri": String, 
@@ -2020,6 +2058,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
                 "dateTrained": Date, 
                 "datePublished": Date, 
                 "trainingStatus": String, 
+                "evaluationStatus": String, 
                 "intents": [IntentDefinition], 
                 "entityTypes": [NamedEntityTypeDefinition], 
                 "selfUri": String, 
@@ -2035,6 +2074,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
             "dateTrained": Date, 
             "datePublished": Date, 
             "trainingStatus": String, 
+            "evaluationStatus": String, 
             "intents": { 
               "name": String, 
               "entityTypeBindings": { 
@@ -2071,6 +2111,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
                 "dateTrained": Date, 
                 "datePublished": Date, 
                 "trainingStatus": String, 
+                "evaluationStatus": String, 
                 "intents": [IntentDefinition], 
                 "entityTypes": [NamedEntityTypeDefinition], 
                 "selfUri": String, 
@@ -2085,6 +2126,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
                 "dateTrained": Date, 
                 "datePublished": Date, 
                 "trainingStatus": String, 
+                "evaluationStatus": String, 
                 "intents": [IntentDefinition], 
                 "entityTypes": [NamedEntityTypeDefinition], 
                 "selfUri": String, 
@@ -2100,6 +2142,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
             "dateTrained": Date, 
             "datePublished": Date, 
             "trainingStatus": String, 
+            "evaluationStatus": String, 
             "intents": { 
               "name": String, 
               "entityTypeBindings": { 
@@ -2132,6 +2175,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
         "dateTrained": Date, 
         "datePublished": Date, 
         "trainingStatus": String, 
+        "evaluationStatus": String, 
         "intents": { 
           "name": String, 
           "entityTypeBindings": { 
@@ -2172,6 +2216,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
     "dateTrained": Date, 
     "datePublished": Date, 
     "trainingStatus": String, 
+    "evaluationStatus": String, 
     "intents": { 
       "name": String, 
       "entityTypeBindings": { 
@@ -2226,6 +2271,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
                 "dateTrained": Date, 
                 "datePublished": Date, 
                 "trainingStatus": String, 
+                "evaluationStatus": String, 
                 "intents": [IntentDefinition], 
                 "entityTypes": [NamedEntityTypeDefinition], 
                 "selfUri": String, 
@@ -2240,6 +2286,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
                 "dateTrained": Date, 
                 "datePublished": Date, 
                 "trainingStatus": String, 
+                "evaluationStatus": String, 
                 "intents": [IntentDefinition], 
                 "entityTypes": [NamedEntityTypeDefinition], 
                 "selfUri": String, 
@@ -2255,6 +2302,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
             "dateTrained": Date, 
             "datePublished": Date, 
             "trainingStatus": String, 
+            "evaluationStatus": String, 
             "intents": { 
               "name": String, 
               "entityTypeBindings": { 
@@ -2291,6 +2339,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
                 "dateTrained": Date, 
                 "datePublished": Date, 
                 "trainingStatus": String, 
+                "evaluationStatus": String, 
                 "intents": [IntentDefinition], 
                 "entityTypes": [NamedEntityTypeDefinition], 
                 "selfUri": String, 
@@ -2305,6 +2354,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
                 "dateTrained": Date, 
                 "datePublished": Date, 
                 "trainingStatus": String, 
+                "evaluationStatus": String, 
                 "intents": [IntentDefinition], 
                 "entityTypes": [NamedEntityTypeDefinition], 
                 "selfUri": String, 
@@ -2320,6 +2370,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
             "dateTrained": Date, 
             "datePublished": Date, 
             "trainingStatus": String, 
+            "evaluationStatus": String, 
             "intents": { 
               "name": String, 
               "entityTypeBindings": { 
@@ -2352,6 +2403,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
         "dateTrained": Date, 
         "datePublished": Date, 
         "trainingStatus": String, 
+        "evaluationStatus": String, 
         "intents": { 
           "name": String, 
           "entityTypeBindings": { 
@@ -2401,6 +2453,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
                 "dateTrained": Date, 
                 "datePublished": Date, 
                 "trainingStatus": String, 
+                "evaluationStatus": String, 
                 "intents": [IntentDefinition], 
                 "entityTypes": [NamedEntityTypeDefinition], 
                 "selfUri": String, 
@@ -2415,6 +2468,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
                 "dateTrained": Date, 
                 "datePublished": Date, 
                 "trainingStatus": String, 
+                "evaluationStatus": String, 
                 "intents": [IntentDefinition], 
                 "entityTypes": [NamedEntityTypeDefinition], 
                 "selfUri": String, 
@@ -2430,6 +2484,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
             "dateTrained": Date, 
             "datePublished": Date, 
             "trainingStatus": String, 
+            "evaluationStatus": String, 
             "intents": { 
               "name": String, 
               "entityTypeBindings": { 
@@ -2466,6 +2521,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
                 "dateTrained": Date, 
                 "datePublished": Date, 
                 "trainingStatus": String, 
+                "evaluationStatus": String, 
                 "intents": [IntentDefinition], 
                 "entityTypes": [NamedEntityTypeDefinition], 
                 "selfUri": String, 
@@ -2480,6 +2536,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
                 "dateTrained": Date, 
                 "datePublished": Date, 
                 "trainingStatus": String, 
+                "evaluationStatus": String, 
                 "intents": [IntentDefinition], 
                 "entityTypes": [NamedEntityTypeDefinition], 
                 "selfUri": String, 
@@ -2495,6 +2552,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
             "dateTrained": Date, 
             "datePublished": Date, 
             "trainingStatus": String, 
+            "evaluationStatus": String, 
             "intents": { 
               "name": String, 
               "entityTypeBindings": { 
@@ -2527,6 +2585,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
         "dateTrained": Date, 
         "datePublished": Date, 
         "trainingStatus": String, 
+        "evaluationStatus": String, 
         "intents": { 
           "name": String, 
           "entityTypeBindings": { 
@@ -2567,6 +2626,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
     "dateTrained": Date, 
     "datePublished": Date, 
     "trainingStatus": String, 
+    "evaluationStatus": String, 
     "intents": { 
       "name": String, 
       "entityTypeBindings": { 
@@ -2713,6 +2773,7 @@ NluDomainVersion <a href="#" onclick="return copyNluDomainVersionExample()">Copy
               "dateTrained": Date, 
               "datePublished": Date, 
               "trainingStatus": String, 
+              "evaluationStatus": String, 
               "intents": { 
                 "name": String, 
                 "entityTypeBindings": [NamedEntityTypeBinding], 
@@ -2743,6 +2804,7 @@ NluDomainVersion <a href="#" onclick="return copyNluDomainVersionExample()">Copy
               "dateTrained": Date, 
               "datePublished": Date, 
               "trainingStatus": String, 
+              "evaluationStatus": String, 
               "intents": { 
                 "name": String, 
                 "entityTypeBindings": [NamedEntityTypeBinding], 
@@ -2766,6 +2828,7 @@ NluDomainVersion <a href="#" onclick="return copyNluDomainVersionExample()">Copy
           "dateTrained": Date, 
           "datePublished": Date, 
           "trainingStatus": String, 
+          "evaluationStatus": String, 
           "intents": { 
             "name": String, 
             "entityTypeBindings": { 
@@ -2816,6 +2879,7 @@ NluDomainVersion <a href="#" onclick="return copyNluDomainVersionExample()">Copy
               "dateTrained": Date, 
               "datePublished": Date, 
               "trainingStatus": String, 
+              "evaluationStatus": String, 
               "intents": { 
                 "name": String, 
                 "entityTypeBindings": [NamedEntityTypeBinding], 
@@ -2846,6 +2910,7 @@ NluDomainVersion <a href="#" onclick="return copyNluDomainVersionExample()">Copy
               "dateTrained": Date, 
               "datePublished": Date, 
               "trainingStatus": String, 
+              "evaluationStatus": String, 
               "intents": { 
                 "name": String, 
                 "entityTypeBindings": [NamedEntityTypeBinding], 
@@ -2869,6 +2934,7 @@ NluDomainVersion <a href="#" onclick="return copyNluDomainVersionExample()">Copy
           "dateTrained": Date, 
           "datePublished": Date, 
           "trainingStatus": String, 
+          "evaluationStatus": String, 
           "intents": { 
             "name": String, 
             "entityTypeBindings": { 
@@ -2907,6 +2973,7 @@ NluDomainVersion <a href="#" onclick="return copyNluDomainVersionExample()">Copy
       "dateTrained": Date, 
       "datePublished": Date, 
       "trainingStatus": String, 
+      "evaluationStatus": String, 
       "intents": { 
         "name": String, 
         "entityTypeBindings": { 
@@ -2964,6 +3031,7 @@ NluDomainVersion <a href="#" onclick="return copyNluDomainVersionExample()">Copy
               "dateTrained": Date, 
               "datePublished": Date, 
               "trainingStatus": String, 
+              "evaluationStatus": String, 
               "intents": { 
                 "name": String, 
                 "entityTypeBindings": [NamedEntityTypeBinding], 
@@ -2994,6 +3062,7 @@ NluDomainVersion <a href="#" onclick="return copyNluDomainVersionExample()">Copy
               "dateTrained": Date, 
               "datePublished": Date, 
               "trainingStatus": String, 
+              "evaluationStatus": String, 
               "intents": { 
                 "name": String, 
                 "entityTypeBindings": [NamedEntityTypeBinding], 
@@ -3017,6 +3086,7 @@ NluDomainVersion <a href="#" onclick="return copyNluDomainVersionExample()">Copy
           "dateTrained": Date, 
           "datePublished": Date, 
           "trainingStatus": String, 
+          "evaluationStatus": String, 
           "intents": { 
             "name": String, 
             "entityTypeBindings": { 
@@ -3067,6 +3137,7 @@ NluDomainVersion <a href="#" onclick="return copyNluDomainVersionExample()">Copy
               "dateTrained": Date, 
               "datePublished": Date, 
               "trainingStatus": String, 
+              "evaluationStatus": String, 
               "intents": { 
                 "name": String, 
                 "entityTypeBindings": [NamedEntityTypeBinding], 
@@ -3097,6 +3168,7 @@ NluDomainVersion <a href="#" onclick="return copyNluDomainVersionExample()">Copy
               "dateTrained": Date, 
               "datePublished": Date, 
               "trainingStatus": String, 
+              "evaluationStatus": String, 
               "intents": { 
                 "name": String, 
                 "entityTypeBindings": [NamedEntityTypeBinding], 
@@ -3120,6 +3192,7 @@ NluDomainVersion <a href="#" onclick="return copyNluDomainVersionExample()">Copy
           "dateTrained": Date, 
           "datePublished": Date, 
           "trainingStatus": String, 
+          "evaluationStatus": String, 
           "intents": { 
             "name": String, 
             "entityTypeBindings": { 
@@ -3158,6 +3231,7 @@ NluDomainVersion <a href="#" onclick="return copyNluDomainVersionExample()">Copy
       "dateTrained": Date, 
       "datePublished": Date, 
       "trainingStatus": String, 
+      "evaluationStatus": String, 
       "intents": { 
         "name": String, 
         "entityTypeBindings": { 
@@ -3198,6 +3272,7 @@ NluDomainVersion <a href="#" onclick="return copyNluDomainVersionExample()">Copy
   "dateTrained": Date, 
   "datePublished": Date, 
   "trainingStatus": String, 
+  "evaluationStatus": String, 
   "intents": { 
     "name": String, 
     "entityTypeBindings": { 

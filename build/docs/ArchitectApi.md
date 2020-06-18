@@ -62,6 +62,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getFlowsDatatableRows**](ArchitectApi.html#getFlowsDatatableRows) | **GET** /api/v2/flows/datatables/{datatableId}/rows | Returns the rows for the datatable with the given id
 [**getFlowsDatatables**](ArchitectApi.html#getFlowsDatatables) | **GET** /api/v2/flows/datatables | Retrieve a list of datatables for the org
 [**getFlowsDivisionviews**](ArchitectApi.html#getFlowsDivisionviews) | **GET** /api/v2/flows/divisionviews | Get a pageable list of basic flow information objects filterable by query parameters.
+[**getFlowsExecution**](ArchitectApi.html#getFlowsExecution) | **GET** /api/v2/flows/executions/{flowExecutionId} | Get a flow execution&#39;s details. Flow execution details are available for several days after the flow is started.
 [**getFlowsOutcome**](ArchitectApi.html#getFlowsOutcome) | **GET** /api/v2/flows/outcomes/{flowOutcomeId} | Get a flow outcome
 [**getFlowsOutcomes**](ArchitectApi.html#getFlowsOutcomes) | **GET** /api/v2/flows/outcomes | Get a pageable list of flow outcomes, filtered by query parameters
 [**postArchitectDependencytrackingBuild**](ArchitectApi.html#postArchitectDependencytrackingBuild) | **POST** /api/v2/architect/dependencytracking/build | Rebuild Dependency Tracking data for an organization
@@ -86,6 +87,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postFlowsDatatableImportJobs**](ArchitectApi.html#postFlowsDatatableImportJobs) | **POST** /api/v2/flows/datatables/{datatableId}/import/jobs | Begin an import process for importing rows into a datatable
 [**postFlowsDatatableRows**](ArchitectApi.html#postFlowsDatatableRows) | **POST** /api/v2/flows/datatables/{datatableId}/rows | Create a new row entry for the datatable.
 [**postFlowsDatatables**](ArchitectApi.html#postFlowsDatatables) | **POST** /api/v2/flows/datatables | Create a new datatable with the specified json-schema definition
+[**postFlowsExecutions**](ArchitectApi.html#postFlowsExecutions) | **POST** /api/v2/flows/executions | Launch an instance of a flow definition, for flow types that support it such as the &#39;workflow&#39; type.
 [**postFlowsOutcomes**](ArchitectApi.html#postFlowsOutcomes) | **POST** /api/v2/flows/outcomes | Create a flow outcome
 [**putArchitectEmergencygroup**](ArchitectApi.html#putArchitectEmergencygroup) | **PUT** /api/v2/architect/emergencygroups/{emergencyGroupId} | Updates a emergency group by ID
 [**putArchitectIvr**](ArchitectApi.html#putArchitectIvr) | **PUT** /api/v2/architect/ivrs/{ivrId} | Update an IVR Config.
@@ -3481,6 +3483,61 @@ apiInstance.getFlowsDivisionviews(opts)
 ### Return type
 
 **FlowDivisionViewEntityListing**
+
+<a name="getFlowsExecution"></a>
+
+# FlowRuntimeExecution getFlowsExecution(flowExecutionId)
+
+
+
+GET /api/v2/flows/executions/{flowExecutionId}
+
+Get a flow execution&#39;s details. Flow execution details are available for several days after the flow is started.
+
+
+
+Requires ANY permissions: 
+
+* architect:flowExecution:view
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ArchitectApi();
+
+let flowExecutionId = "flowExecutionId_example"; // String | flow execution ID
+
+apiInstance.getFlowsExecution(flowExecutionId)
+  .then((data) => {
+    console.log(`getFlowsExecution success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getFlowsExecution');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **flowExecutionId** | **String** | flow execution ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+**FlowRuntimeExecution**
 
 <a name="getFlowsOutcome"></a>
 
@@ -7190,6 +7247,89 @@ apiInstance.postFlowsDatatables(body)
 ### Return type
 
 **DataTable**
+
+<a name="postFlowsExecutions"></a>
+
+# FlowExecutionLaunchResponse postFlowsExecutions(flowLaunchRequest)
+
+
+
+POST /api/v2/flows/executions
+
+Launch an instance of a flow definition, for flow types that support it such as the &#39;workflow&#39; type.
+
+The launch is asynchronous, it returns as soon as the flow starts. You can use the returned ID to query its status if you need.
+
+Requires ANY permissions: 
+
+* architect:flow:launch
+
+
+### Request Body Schema
+
+<script type="text/javascript">
+	function copyFlowExecutionLaunchRequestExample() {
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#FlowExecutionLaunchRequestExample').text()).select();
+		document.execCommand("copy");
+		temp.remove();
+		return false;
+	}
+</script>
+
+FlowExecutionLaunchRequest <a href="#" onclick="return copyFlowExecutionLaunchRequestExample()">Copy</a>
+
+<div id="FlowExecutionLaunchRequestExample">
+
+```{"language":"json", "maxHeight": "250px"}
+{ 
+  "flowId": String, 
+  "flowVersion": String, 
+  "inputData": {String: Object}, 
+  "name": String, 
+}
+```
+
+</div>
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ArchitectApi();
+
+let flowLaunchRequest = {}; // Object | 
+
+apiInstance.postFlowsExecutions(flowLaunchRequest)
+  .then((data) => {
+    console.log(`postFlowsExecutions success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postFlowsExecutions');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **flowLaunchRequest** | **Object** |  |  |
+{: class="table table-striped"}
+
+### Return type
+
+**FlowExecutionLaunchResponse**
 
 <a name="postFlowsOutcomes"></a>
 

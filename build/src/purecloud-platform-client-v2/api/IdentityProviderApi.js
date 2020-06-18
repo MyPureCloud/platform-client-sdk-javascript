@@ -5,7 +5,7 @@ class IdentityProviderApi {
 	/**
 	 * IdentityProvider service.
 	 * @module purecloud-platform-client-v2/api/IdentityProviderApi
-	 * @version 82.0.0
+	 * @version 83.0.0
 	 */
 
 	/**
@@ -48,6 +48,26 @@ class IdentityProviderApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/identityproviders/cic', 
+			'DELETE', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete Generic SAML Identity Provider
+	 * 
+	 */
+	deleteIdentityprovidersGeneric() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/identityproviders/generic', 
 			'DELETE', 
 			{  }, 
 			{  }, 
@@ -281,6 +301,26 @@ class IdentityProviderApi {
 	}
 
 	/**
+	 * Get Generic SAML Identity Provider
+	 * 
+	 */
+	getIdentityprovidersGeneric() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/identityproviders/generic', 
+			'GET', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get G Suite Identity Provider
 	 * 
 	 */
@@ -478,6 +518,31 @@ class IdentityProviderApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/identityproviders/cic', 
+			'PUT', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update/Create Generic SAML Identity Provider
+	 * 
+	 * @param {Object} body Provider
+	 */
+	putIdentityprovidersGeneric(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putIdentityprovidersGeneric';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/identityproviders/generic', 
 			'PUT', 
 			{  }, 
 			{  }, 

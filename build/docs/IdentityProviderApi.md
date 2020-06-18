@@ -9,6 +9,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | ------------- | ------------- | ------------- |
 [**deleteIdentityprovidersAdfs**](IdentityProviderApi.html#deleteIdentityprovidersAdfs) | **DELETE** /api/v2/identityproviders/adfs | Delete ADFS Identity Provider
 [**deleteIdentityprovidersCic**](IdentityProviderApi.html#deleteIdentityprovidersCic) | **DELETE** /api/v2/identityproviders/cic | Delete Customer Interaction Center (CIC) Identity Provider
+[**deleteIdentityprovidersGeneric**](IdentityProviderApi.html#deleteIdentityprovidersGeneric) | **DELETE** /api/v2/identityproviders/generic | Delete Generic SAML Identity Provider
 [**deleteIdentityprovidersGsuite**](IdentityProviderApi.html#deleteIdentityprovidersGsuite) | **DELETE** /api/v2/identityproviders/gsuite | Delete G Suite Identity Provider
 [**deleteIdentityprovidersIdentitynow**](IdentityProviderApi.html#deleteIdentityprovidersIdentitynow) | **DELETE** /api/v2/identityproviders/identitynow | Delete IdentityNow Provider
 [**deleteIdentityprovidersOkta**](IdentityProviderApi.html#deleteIdentityprovidersOkta) | **DELETE** /api/v2/identityproviders/okta | Delete Okta Identity Provider
@@ -20,6 +21,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getIdentityproviders**](IdentityProviderApi.html#getIdentityproviders) | **GET** /api/v2/identityproviders | The list of identity providers
 [**getIdentityprovidersAdfs**](IdentityProviderApi.html#getIdentityprovidersAdfs) | **GET** /api/v2/identityproviders/adfs | Get ADFS Identity Provider
 [**getIdentityprovidersCic**](IdentityProviderApi.html#getIdentityprovidersCic) | **GET** /api/v2/identityproviders/cic | Get Customer Interaction Center (CIC) Identity Provider
+[**getIdentityprovidersGeneric**](IdentityProviderApi.html#getIdentityprovidersGeneric) | **GET** /api/v2/identityproviders/generic | Get Generic SAML Identity Provider
 [**getIdentityprovidersGsuite**](IdentityProviderApi.html#getIdentityprovidersGsuite) | **GET** /api/v2/identityproviders/gsuite | Get G Suite Identity Provider
 [**getIdentityprovidersIdentitynow**](IdentityProviderApi.html#getIdentityprovidersIdentitynow) | **GET** /api/v2/identityproviders/identitynow | Get IdentityNow Provider
 [**getIdentityprovidersOkta**](IdentityProviderApi.html#getIdentityprovidersOkta) | **GET** /api/v2/identityproviders/okta | Get Okta Identity Provider
@@ -30,6 +32,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getIdentityprovidersSalesforce**](IdentityProviderApi.html#getIdentityprovidersSalesforce) | **GET** /api/v2/identityproviders/salesforce | Get Salesforce Identity Provider
 [**putIdentityprovidersAdfs**](IdentityProviderApi.html#putIdentityprovidersAdfs) | **PUT** /api/v2/identityproviders/adfs | Update/Create ADFS Identity Provider
 [**putIdentityprovidersCic**](IdentityProviderApi.html#putIdentityprovidersCic) | **PUT** /api/v2/identityproviders/cic | Update/Create Customer Interaction Center (CIC) Identity Provider
+[**putIdentityprovidersGeneric**](IdentityProviderApi.html#putIdentityprovidersGeneric) | **PUT** /api/v2/identityproviders/generic | Update/Create Generic SAML Identity Provider
 [**putIdentityprovidersGsuite**](IdentityProviderApi.html#putIdentityprovidersGsuite) | **PUT** /api/v2/identityproviders/gsuite | Update/Create G Suite Identity Provider
 [**putIdentityprovidersIdentitynow**](IdentityProviderApi.html#putIdentityprovidersIdentitynow) | **PUT** /api/v2/identityproviders/identitynow | Update/Create IdentityNow Provider
 [**putIdentityprovidersOkta**](IdentityProviderApi.html#putIdentityprovidersOkta) | **PUT** /api/v2/identityproviders/okta | Update/Create Okta Identity Provider
@@ -127,6 +130,56 @@ apiInstance.deleteIdentityprovidersCic()
   })
   .catch((err) => {
     console.log('There was a failure calling deleteIdentityprovidersCic');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+{: class="table table-striped"}
+
+### Return type
+
+**Empty**
+
+<a name="deleteIdentityprovidersGeneric"></a>
+
+# Empty deleteIdentityprovidersGeneric()
+
+
+
+DELETE /api/v2/identityproviders/generic
+
+Delete Generic SAML Identity Provider
+
+
+
+Requires ANY permissions: 
+
+* sso:provider:delete
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.IdentityProviderApi();
+
+apiInstance.deleteIdentityprovidersGeneric()
+  .then((data) => {
+    console.log(`deleteIdentityprovidersGeneric success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteIdentityprovidersGeneric');
     console.error(err);
   });
 ```
@@ -690,6 +743,56 @@ This endpoint does not need any parameter.
 
 **CustomerInteractionCenter**
 
+<a name="getIdentityprovidersGeneric"></a>
+
+# GenericSAML getIdentityprovidersGeneric()
+
+
+
+GET /api/v2/identityproviders/generic
+
+Get Generic SAML Identity Provider
+
+
+
+Requires ANY permissions: 
+
+* sso:provider:view
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.IdentityProviderApi();
+
+apiInstance.getIdentityprovidersGeneric()
+  .then((data) => {
+    console.log(`getIdentityprovidersGeneric success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getIdentityprovidersGeneric');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+{: class="table table-striped"}
+
+### Return type
+
+**GenericSAML**
+
 <a name="getIdentityprovidersGsuite"></a>
 
 # GSuite getIdentityprovidersGsuite()
@@ -1249,6 +1352,96 @@ apiInstance.putIdentityprovidersCic(body)
   })
   .catch((err) => {
     console.log('There was a failure calling putIdentityprovidersCic');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | Provider |  |
+{: class="table table-striped"}
+
+### Return type
+
+**OAuthProvider**
+
+<a name="putIdentityprovidersGeneric"></a>
+
+# OAuthProvider putIdentityprovidersGeneric(body)
+
+
+
+PUT /api/v2/identityproviders/generic
+
+Update/Create Generic SAML Identity Provider
+
+
+
+Requires ANY permissions: 
+
+* sso:provider:add
+* sso:provider:edit
+
+
+### Request Body Schema
+
+<script type="text/javascript">
+	function copyGenericSAMLExample() {
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#GenericSAMLExample').text()).select();
+		document.execCommand("copy");
+		temp.remove();
+		return false;
+	}
+</script>
+
+GenericSAML <a href="#" onclick="return copyGenericSAMLExample()">Copy</a>
+
+<div id="GenericSAMLExample">
+
+```{"language":"json", "maxHeight": "250px"}
+{ 
+  "id": String, 
+  "name": String, 
+  "logoImageData": String, 
+  "relyingPartyIdentifier": String, 
+  "endpointCompression": Boolean, 
+  "certificate": String, 
+  "issuerURI": String, 
+  "ssoTargetURI": String, 
+  "disabled": Boolean, 
+  "selfUri": String, 
+}
+```
+
+</div>
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.IdentityProviderApi();
+
+let body = {}; // Object | Provider
+
+apiInstance.putIdentityprovidersGeneric(body)
+  .then((data) => {
+    console.log(`putIdentityprovidersGeneric success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putIdentityprovidersGeneric');
     console.error(err);
   });
 ```

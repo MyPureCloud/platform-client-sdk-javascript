@@ -5,7 +5,7 @@ class ArchitectApi {
 	/**
 	 * Architect service.
 	 * @module purecloud-platform-client-v2/api/ArchitectApi
-	 * @version 82.0.0
+	 * @version 83.0.0
 	 */
 
 	/**
@@ -1656,6 +1656,31 @@ class ArchitectApi {
 	}
 
 	/**
+	 * Get a flow execution&#39;s details. Flow execution details are available for several days after the flow is started.
+	 * 
+	 * @param {String} flowExecutionId flow execution ID
+	 */
+	getFlowsExecution(flowExecutionId) { 
+		// verify the required parameter 'flowExecutionId' is set
+		if (flowExecutionId === undefined || flowExecutionId === null) {
+			throw 'Missing the required parameter "flowExecutionId" when calling getFlowsExecution';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/flows/executions/{flowExecutionId}', 
+			'GET', 
+			{ 'flowExecutionId': flowExecutionId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get a flow outcome
 	 * Returns a specified flow outcome
 	 * @param {String} flowOutcomeId flow outcome ID
@@ -2279,6 +2304,31 @@ class ArchitectApi {
 			{  }, 
 			{  }, 
 			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Launch an instance of a flow definition, for flow types that support it such as the &#39;workflow&#39; type.
+	 * The launch is asynchronous, it returns as soon as the flow starts. You can use the returned ID to query its status if you need.
+	 * @param {Object} flowLaunchRequest 
+	 */
+	postFlowsExecutions(flowLaunchRequest) { 
+		// verify the required parameter 'flowLaunchRequest' is set
+		if (flowLaunchRequest === undefined || flowLaunchRequest === null) {
+			throw 'Missing the required parameter "flowLaunchRequest" when calling postFlowsExecutions';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/flows/executions', 
+			'POST', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			flowLaunchRequest, 
 			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']

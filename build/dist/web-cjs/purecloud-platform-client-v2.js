@@ -6053,7 +6053,7 @@ function isSlowBuffer (obj) {
 
 /**
  * @module purecloud-platform-client-v2/ApiClient
- * @version 82.0.0
+ * @version 83.0.0
  */
 class ApiClient {
 	/**
@@ -6809,7 +6809,7 @@ class ApiClient {
 
 		// set header parameters
 		request.set(this.defaultHeaders).set(this.normalizeParams(headerParams));
-		//request.set({ 'purecloud-sdk': '82.0.0' });
+		//request.set({ 'purecloud-sdk': '83.0.0' });
 
 		// set request timeout
 		request.timeout(this.timeout);
@@ -6934,7 +6934,7 @@ class AlertingApi {
 	/**
 	 * Alerting service.
 	 * @module purecloud-platform-client-v2/api/AlertingApi
-	 * @version 82.0.0
+	 * @version 83.0.0
 	 */
 
 	/**
@@ -7248,7 +7248,7 @@ class AnalyticsApi {
 	/**
 	 * Analytics service.
 	 * @module purecloud-platform-client-v2/api/AnalyticsApi
-	 * @version 82.0.0
+	 * @version 83.0.0
 	 */
 
 	/**
@@ -8213,7 +8213,7 @@ class ArchitectApi {
 	/**
 	 * Architect service.
 	 * @module purecloud-platform-client-v2/api/ArchitectApi
-	 * @version 82.0.0
+	 * @version 83.0.0
 	 */
 
 	/**
@@ -9864,6 +9864,31 @@ class ArchitectApi {
 	}
 
 	/**
+	 * Get a flow execution&#39;s details. Flow execution details are available for several days after the flow is started.
+	 * 
+	 * @param {String} flowExecutionId flow execution ID
+	 */
+	getFlowsExecution(flowExecutionId) { 
+		// verify the required parameter 'flowExecutionId' is set
+		if (flowExecutionId === undefined || flowExecutionId === null) {
+			throw 'Missing the required parameter "flowExecutionId" when calling getFlowsExecution';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/flows/executions/{flowExecutionId}', 
+			'GET', 
+			{ 'flowExecutionId': flowExecutionId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get a flow outcome
 	 * Returns a specified flow outcome
 	 * @param {String} flowOutcomeId flow outcome ID
@@ -10494,6 +10519,31 @@ class ArchitectApi {
 	}
 
 	/**
+	 * Launch an instance of a flow definition, for flow types that support it such as the &#39;workflow&#39; type.
+	 * The launch is asynchronous, it returns as soon as the flow starts. You can use the returned ID to query its status if you need.
+	 * @param {Object} flowLaunchRequest 
+	 */
+	postFlowsExecutions(flowLaunchRequest) { 
+		// verify the required parameter 'flowLaunchRequest' is set
+		if (flowLaunchRequest === undefined || flowLaunchRequest === null) {
+			throw 'Missing the required parameter "flowLaunchRequest" when calling postFlowsExecutions';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/flows/executions', 
+			'POST', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			flowLaunchRequest, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
 	 * Create a flow outcome
 	 * Asynchronous.  Notification topic: v2.flows.outcomes.{flowOutcomeId}
 	 * @param {Object} opts Optional parameters
@@ -10866,7 +10916,7 @@ class AuditApi {
 	/**
 	 * Audit service.
 	 * @module purecloud-platform-client-v2/api/AuditApi
-	 * @version 82.0.0
+	 * @version 83.0.0
 	 */
 
 	/**
@@ -10880,6 +10930,26 @@ class AuditApi {
 		this.apiClient = apiClient || ApiClient.instance;
 	}
 
+
+	/**
+	 * Get service mapping information used in audits.
+	 * 
+	 */
+	getAuditsQueryServicemapping() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/audits/query/servicemapping', 
+			'GET', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
 
 	/**
 	 * Get status of audit query execution
@@ -10968,7 +11038,7 @@ class AuthorizationApi {
 	/**
 	 * Authorization service.
 	 * @module purecloud-platform-client-v2/api/AuthorizationApi
-	 * @version 82.0.0
+	 * @version 83.0.0
 	 */
 
 	/**
@@ -12055,7 +12125,7 @@ class BillingApi {
 	/**
 	 * Billing service.
 	 * @module purecloud-platform-client-v2/api/BillingApi
-	 * @version 82.0.0
+	 * @version 83.0.0
 	 */
 
 	/**
@@ -12135,7 +12205,7 @@ class CoachingApi {
 	/**
 	 * Coaching service.
 	 * @module purecloud-platform-client-v2/api/CoachingApi
-	 * @version 82.0.0
+	 * @version 83.0.0
 	 */
 
 	/**
@@ -12619,7 +12689,7 @@ class ContentManagementApi {
 	/**
 	 * ContentManagement service.
 	 * @module purecloud-platform-client-v2/api/ContentManagementApi
-	 * @version 82.0.0
+	 * @version 83.0.0
 	 */
 
 	/**
@@ -13759,7 +13829,7 @@ class ConversationsApi {
 	/**
 	 * Conversations service.
 	 * @module purecloud-platform-client-v2/api/ConversationsApi
-	 * @version 82.0.0
+	 * @version 83.0.0
 	 */
 
 	/**
@@ -17721,7 +17791,7 @@ class DataExtensionsApi {
 	/**
 	 * DataExtensions service.
 	 * @module purecloud-platform-client-v2/api/DataExtensionsApi
-	 * @version 82.0.0
+	 * @version 83.0.0
 	 */
 
 	/**
@@ -17807,7 +17877,7 @@ class ExternalContactsApi {
 	/**
 	 * ExternalContacts service.
 	 * @module purecloud-platform-client-v2/api/ExternalContactsApi
-	 * @version 82.0.0
+	 * @version 83.0.0
 	 */
 
 	/**
@@ -19050,7 +19120,7 @@ class FaxApi {
 	/**
 	 * Fax service.
 	 * @module purecloud-platform-client-v2/api/FaxApi
-	 * @version 82.0.0
+	 * @version 83.0.0
 	 */
 
 	/**
@@ -19221,7 +19291,7 @@ class FlowsApi {
 	/**
 	 * Flows service.
 	 * @module purecloud-platform-client-v2/api/FlowsApi
-	 * @version 82.0.0
+	 * @version 83.0.0
 	 */
 
 	/**
@@ -19292,7 +19362,7 @@ class GeneralDataProtectionRegulationApi {
 	/**
 	 * GeneralDataProtectionRegulation service.
 	 * @module purecloud-platform-client-v2/api/GeneralDataProtectionRegulationApi
-	 * @version 82.0.0
+	 * @version 83.0.0
 	 */
 
 	/**
@@ -19422,7 +19492,7 @@ class GeolocationApi {
 	/**
 	 * Geolocation service.
 	 * @module purecloud-platform-client-v2/api/GeolocationApi
-	 * @version 82.0.0
+	 * @version 83.0.0
 	 */
 
 	/**
@@ -19553,7 +19623,7 @@ class GreetingsApi {
 	/**
 	 * Greetings service.
 	 * @module purecloud-platform-client-v2/api/GreetingsApi
-	 * @version 82.0.0
+	 * @version 83.0.0
 	 */
 
 	/**
@@ -20008,7 +20078,7 @@ class GroupsApi {
 	/**
 	 * Groups service.
 	 * @module purecloud-platform-client-v2/api/GroupsApi
-	 * @version 82.0.0
+	 * @version 83.0.0
 	 */
 
 	/**
@@ -20413,7 +20483,7 @@ class IdentityProviderApi {
 	/**
 	 * IdentityProvider service.
 	 * @module purecloud-platform-client-v2/api/IdentityProviderApi
-	 * @version 82.0.0
+	 * @version 83.0.0
 	 */
 
 	/**
@@ -20456,6 +20526,26 @@ class IdentityProviderApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/identityproviders/cic', 
+			'DELETE', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete Generic SAML Identity Provider
+	 * 
+	 */
+	deleteIdentityprovidersGeneric() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/identityproviders/generic', 
 			'DELETE', 
 			{  }, 
 			{  }, 
@@ -20689,6 +20779,26 @@ class IdentityProviderApi {
 	}
 
 	/**
+	 * Get Generic SAML Identity Provider
+	 * 
+	 */
+	getIdentityprovidersGeneric() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/identityproviders/generic', 
+			'GET', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get G Suite Identity Provider
 	 * 
 	 */
@@ -20886,6 +20996,31 @@ class IdentityProviderApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/identityproviders/cic', 
+			'PUT', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update/Create Generic SAML Identity Provider
+	 * 
+	 * @param {Object} body Provider
+	 */
+	putIdentityprovidersGeneric(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putIdentityprovidersGeneric';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/identityproviders/generic', 
 			'PUT', 
 			{  }, 
 			{  }, 
@@ -21104,7 +21239,7 @@ class IntegrationsApi {
 	/**
 	 * Integrations service.
 	 * @module purecloud-platform-client-v2/api/IntegrationsApi
-	 * @version 82.0.0
+	 * @version 83.0.0
 	 */
 
 	/**
@@ -22596,7 +22731,7 @@ class KnowledgeApi {
 	/**
 	 * Knowledge service.
 	 * @module purecloud-platform-client-v2/api/KnowledgeApi
-	 * @version 82.0.0
+	 * @version 83.0.0
 	 */
 
 	/**
@@ -23315,7 +23450,7 @@ class LanguageUnderstandingApi {
 	/**
 	 * LanguageUnderstanding service.
 	 * @module purecloud-platform-client-v2/api/LanguageUnderstandingApi
-	 * @version 82.0.0
+	 * @version 83.0.0
 	 */
 
 	/**
@@ -23816,7 +23951,7 @@ class LanguagesApi {
 	/**
 	 * Languages service.
 	 * @module purecloud-platform-client-v2/api/LanguagesApi
-	 * @version 82.0.0
+	 * @version 83.0.0
 	 */
 
 	/**
@@ -24084,7 +24219,7 @@ class LicenseApi {
 	/**
 	 * License service.
 	 * @module purecloud-platform-client-v2/api/LicenseApi
-	 * @version 82.0.0
+	 * @version 83.0.0
 	 */
 
 	/**
@@ -24322,7 +24457,7 @@ class LocationsApi {
 	/**
 	 * Locations service.
 	 * @module purecloud-platform-client-v2/api/LocationsApi
-	 * @version 82.0.0
+	 * @version 83.0.0
 	 */
 
 	/**
@@ -24558,7 +24693,7 @@ class MobileDevicesApi {
 	/**
 	 * MobileDevices service.
 	 * @module purecloud-platform-client-v2/api/MobileDevicesApi
-	 * @version 82.0.0
+	 * @version 83.0.0
 	 */
 
 	/**
@@ -24709,7 +24844,7 @@ class NotificationsApi {
 	/**
 	 * Notifications service.
 	 * @module purecloud-platform-client-v2/api/NotificationsApi
-	 * @version 82.0.0
+	 * @version 83.0.0
 	 */
 
 	/**
@@ -24908,7 +25043,7 @@ class OAuthApi {
 	/**
 	 * OAuth service.
 	 * @module purecloud-platform-client-v2/api/OAuthApi
-	 * @version 82.0.0
+	 * @version 83.0.0
 	 */
 
 	/**
@@ -25019,6 +25154,65 @@ class OAuthApi {
 	}
 
 	/**
+	 * Get the results of a usage query
+	 * 
+	 * @param {String} executionId ID of the query execution
+	 * @param {String} clientId Client ID
+	 */
+	getOauthClientUsageQueryResult(executionId, clientId) { 
+		// verify the required parameter 'executionId' is set
+		if (executionId === undefined || executionId === null) {
+			throw 'Missing the required parameter "executionId" when calling getOauthClientUsageQueryResult';
+		}
+		// verify the required parameter 'clientId' is set
+		if (clientId === undefined || clientId === null) {
+			throw 'Missing the required parameter "clientId" when calling getOauthClientUsageQueryResult';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/oauth/clients/{clientId}/usage/query/results/{executionId}', 
+			'GET', 
+			{ 'executionId': executionId,'clientId': clientId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a summary of OAuth client API usage
+	 * After calling this method, you will then need to poll for the query results based on the returned execution Id
+	 * @param {String} clientId Client ID
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.days Previous number of days to query (default to 7)
+	 */
+	getOauthClientUsageSummary(clientId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'clientId' is set
+		if (clientId === undefined || clientId === null) {
+			throw 'Missing the required parameter "clientId" when calling getOauthClientUsageSummary';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/oauth/clients/{clientId}/usage/summary', 
+			'GET', 
+			{ 'clientId': clientId }, 
+			{ 'days': opts['days'] }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
 	 * The list of OAuth clients
 	 * 
 	 */
@@ -25117,6 +25311,36 @@ class OAuthApi {
 	}
 
 	/**
+	 * Query for OAuth client API usage
+	 * After calling this method, you will then need to poll for the query results based on the returned execution Id
+	 * @param {String} clientId Client ID
+	 * @param {Object} body Query
+	 */
+	postOauthClientUsageQuery(clientId, body) { 
+		// verify the required parameter 'clientId' is set
+		if (clientId === undefined || clientId === null) {
+			throw 'Missing the required parameter "clientId" when calling postOauthClientUsageQuery';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postOauthClientUsageQuery';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/oauth/clients/{clientId}/usage/query', 
+			'POST', 
+			{ 'clientId': clientId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
 	 * Create OAuth client
 	 * The OAuth Grant/Client is required in order to create an authentication token and gain access to PureCloud.  The preferred authorizedGrantTypes is &#39;CODE&#39; which requires applications to send a client ID and client secret. This is typically a web server.  If the client is unable to secure the client secret then the &#39;TOKEN&#39; grant type aka IMPLICIT should be used. This is would be for browser or mobile apps.  If a client is to be used outside of the context of a user then the &#39;CLIENT-CREDENTIALS&#39; grant may be used. In this case the client must be granted roles  via the &#39;roleIds&#39; field.
 	 * @param {Object} body Client
@@ -25177,7 +25401,7 @@ class ObjectsApi {
 	/**
 	 * Objects service.
 	 * @module purecloud-platform-client-v2/api/ObjectsApi
-	 * @version 82.0.0
+	 * @version 83.0.0
 	 */
 
 	/**
@@ -25418,7 +25642,7 @@ class OrganizationApi {
 	/**
 	 * Organization service.
 	 * @module purecloud-platform-client-v2/api/OrganizationApi
-	 * @version 82.0.0
+	 * @version 83.0.0
 	 */
 
 	/**
@@ -25466,6 +25690,26 @@ class OrganizationApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/organizations/embeddedintegration', 
+			'GET', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get organization IP address whitelist settings
+	 * 
+	 */
+	getOrganizationsIpaddressauthentication() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/organizations/ipaddressauthentication', 
 			'GET', 
 			{  }, 
 			{  }, 
@@ -25574,6 +25818,31 @@ class OrganizationApi {
 	}
 
 	/**
+	 * Update organization IP address whitelist settings
+	 * 
+	 * @param {Object} body IP address Whitelist settings
+	 */
+	putOrganizationsIpaddressauthentication(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putOrganizationsIpaddressauthentication';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/organizations/ipaddressauthentication', 
+			'PUT', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
 	 * Update organization.
 	 * 
 	 * @param {Object} opts Optional parameters
@@ -25628,7 +25897,7 @@ class OrganizationAuthorizationApi {
 	/**
 	 * OrganizationAuthorization service.
 	 * @module purecloud-platform-client-v2/api/OrganizationAuthorizationApi
-	 * @version 82.0.0
+	 * @version 83.0.0
 	 */
 
 	/**
@@ -26338,7 +26607,7 @@ class OutboundApi {
 	/**
 	 * Outbound service.
 	 * @module purecloud-platform-client-v2/api/OutboundApi
-	 * @version 82.0.0
+	 * @version 83.0.0
 	 */
 
 	/**
@@ -29001,7 +29270,7 @@ class PresenceApi {
 	/**
 	 * Presence service.
 	 * @module purecloud-platform-client-v2/api/PresenceApi
-	 * @version 82.0.0
+	 * @version 83.0.0
 	 */
 
 	/**
@@ -29268,7 +29537,7 @@ class QualityApi {
 	/**
 	 * Quality service.
 	 * @module purecloud-platform-client-v2/api/QualityApi
-	 * @version 82.0.0
+	 * @version 83.0.0
 	 */
 
 	/**
@@ -30940,7 +31209,7 @@ class RecordingApi {
 	/**
 	 * Recording service.
 	 * @module purecloud-platform-client-v2/api/RecordingApi
-	 * @version 82.0.0
+	 * @version 83.0.0
 	 */
 
 	/**
@@ -31097,6 +31366,9 @@ class RecordingApi {
 	 * @param {String} recordingId Recording ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.formatId The desired media format. (default to WEBM)
+	 * @param {Object} opts.emailFormatId The desired media format when downloading an email recording. (default to EML)
+	 * @param {Object} opts.chatFormatId The desired media format when downloading a chat recording. (default to ZIP)
+	 * @param {Object} opts.messageFormatId The desired media format when downloading a message recording. (default to ZIP)
 	 * @param {Boolean} opts.download requesting a download format of the recording (default to false)
 	 * @param {String} opts.fileName the name of the downloaded fileName
 	 * @param {String} opts.locale The locale for the requested file when downloading, as an ISO 639-1 code
@@ -31117,7 +31389,7 @@ class RecordingApi {
 			'/api/v2/conversations/{conversationId}/recordings/{recordingId}', 
 			'GET', 
 			{ 'conversationId': conversationId,'recordingId': recordingId }, 
-			{ 'formatId': opts['formatId'],'download': opts['download'],'fileName': opts['fileName'],'locale': opts['locale'] }, 
+			{ 'formatId': opts['formatId'],'emailFormatId': opts['emailFormatId'],'chatFormatId': opts['chatFormatId'],'messageFormatId': opts['messageFormatId'],'download': opts['download'],'fileName': opts['fileName'],'locale': opts['locale'] }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -31308,6 +31580,9 @@ class RecordingApi {
 	 * @param {String} orphanId Orphan ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.formatId The desired media format. (default to WEBM)
+	 * @param {Object} opts.emailFormatId The desired media format when downloading an email recording. (default to EML)
+	 * @param {Object} opts.chatFormatId The desired media format when downloading a chat recording. (default to ZIP)
+	 * @param {Object} opts.messageFormatId The desired media format when downloading a message recording. (default to ZIP)
 	 * @param {Boolean} opts.download requesting a download format of the recording (default to false)
 	 * @param {String} opts.fileName the name of the downloaded fileName
 	 * @param {String} opts.locale The locale for the requested file when downloading, as an ISO 639-1 code
@@ -31324,7 +31599,7 @@ class RecordingApi {
 			'/api/v2/orphanrecordings/{orphanId}/media', 
 			'GET', 
 			{ 'orphanId': orphanId }, 
-			{ 'formatId': opts['formatId'],'download': opts['download'],'fileName': opts['fileName'],'locale': opts['locale'] }, 
+			{ 'formatId': opts['formatId'],'emailFormatId': opts['emailFormatId'],'chatFormatId': opts['chatFormatId'],'messageFormatId': opts['messageFormatId'],'download': opts['download'],'fileName': opts['fileName'],'locale': opts['locale'] }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -32180,7 +32455,7 @@ class ResponseManagementApi {
 	/**
 	 * ResponseManagement service.
 	 * @module purecloud-platform-client-v2/api/ResponseManagementApi
-	 * @version 82.0.0
+	 * @version 83.0.0
 	 */
 
 	/**
@@ -32505,7 +32780,7 @@ class RoutingApi {
 	/**
 	 * Routing service.
 	 * @module purecloud-platform-client-v2/api/RoutingApi
-	 * @version 82.0.0
+	 * @version 83.0.0
 	 */
 
 	/**
@@ -34803,7 +35078,7 @@ class SCIMApi {
 	/**
 	 * SCIM service.
 	 * @module purecloud-platform-client-v2/api/SCIMApi
-	 * @version 82.0.0
+	 * @version 83.0.0
 	 */
 
 	/**
@@ -34970,7 +35245,7 @@ class SCIMApi {
 	 * 
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.startIndex The 1-based index of the first query result. (default to 1)
-	 * @param {Number} opts.count The requested number of items per page. A value of 0 returns \&quot;totalResults\&quot;. (default to 25)
+	 * @param {Number} opts.count The requested number of items per page. A value of 0 returns \&quot;totalResults\&quot;. Note that page size over 25 will likely cause a 429 error by exceeding the internal resource limits. Page sizes over 25 will require using excludedAttributes and includeAttributes query parameters to exclude secondary lookup values -- (i.e. for Users externalId, roles, urn:ietf:params:scim:schemas:extension:genesys:purecloud:2.0:User:routingLanguages, urn:ietf:params:scim:schemas:extension:genesys:purecloud:2.0:User:routingSkills, and for Groups externalId, members). (default to 25)
 	 * @param {Array.<String>} opts.attributes Indicates which attributes to include. Returns these attributes and the &#39;id&#39;, &#39;active&#39;, and &#39;meta attributes . Use \&quot;attributes\&quot; to avoid expensive secondary calls for the default attributes.
 	 * @param {Array.<String>} opts.excludedAttributes Indicates which attributes to exclude. Returns the default attributes minus \&quot;excludedAttributes\&quot;. Use \&quot;excludedAttributes\&quot; to avoid expensive secondary calls for the default attributes. The&#39;id&#39;, &#39;active&#39;, and &#39;meta&#39;  attributes will always be present in the output.
 	 * @param {String} opts.filter Filters results.
@@ -35147,7 +35422,7 @@ class SCIMApi {
 	 * To return all active users, do not use a filter parameter. To return inactive users, set \&quot;filter\&quot; to \&quot;active eq false\&quot;. By default, returns SCIM attributes externalId, enterprise-user:manager, and roles. To exclude these attributes, set \&quot;attributes\&quot; to \&quot;id,active\&quot; or \&quot;excludeAttributes\&quot; to \&quot;externalId,roles,urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:division\&quot;.
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.startIndex The 1-based index of the first query result. (default to 1)
-	 * @param {Number} opts.count The requested number of items per page. A value of 0 returns \&quot;totalResults\&quot;. (default to 25)
+	 * @param {Number} opts.count The requested number of items per page. A value of 0 returns \&quot;totalResults\&quot;. Note that page size over 25 will likely cause a 429 error by exceeding the internal resource limits. Page sizes over 25 will require using excludedAttributes and includeAttributes query parameters to exclude secondary lookup values -- (i.e. for Users externalId, roles, urn:ietf:params:scim:schemas:extension:genesys:purecloud:2.0:User:routingLanguages, urn:ietf:params:scim:schemas:extension:genesys:purecloud:2.0:User:routingSkills, and for Groups externalId, members). (default to 25)
 	 * @param {Array.<String>} opts.attributes Indicates which attributes to include. Returns these attributes and the &#39;id&#39;, &#39;userName&#39;, &#39;active&#39;, and &#39;meta&#39; attributes. Use \&quot;attributes\&quot; to avoid expensive secondary calls for the default attributes.
 	 * @param {Array.<String>} opts.excludedAttributes Indicates which attributes to exclude. Returns the default attributes minus \&quot;excludedAttributes\&quot;. Use \&quot;excludedAttributes\&quot; to avoid expensive secondary calls for the default attributes. The &#39;id&#39;, &#39;userName&#39;, &#39;active&#39;, &#39;meta&#39; attributes  will always be present in output.
 	 * @param {String} opts.filter Filters results. If nothing is specified, returns all active users. Examples of valid values: \&quot;id eq 857449b0-d9e7-4cd0-acbf-a6adfb9ef1e9\&quot;, \&quot;userName eq search@sample.org\&quot;, \&quot;manager eq 16e10e2f-1136-43fe-bb84-eac073168a49\&quot;, \&quot;email eq search@sample.org\&quot;, \&quot;division eq divisionName\&quot;, \&quot;externalId eq 167844\&quot;, \&quot;active eq false\&quot;.
@@ -35207,7 +35482,7 @@ class SCIMApi {
 	 * @param {String} filter Filters results.
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.startIndex The 1-based index of the first query result. (default to 1)
-	 * @param {Number} opts.count The requested number of items per page. A value of 0 returns \&quot;totalResults\&quot;. (default to 25)
+	 * @param {Number} opts.count The requested number of items per page. A value of 0 returns \&quot;totalResults\&quot;. Note that page size over 25 will likely cause a 429 error by exceeding the internal resource limits. Page sizes over 25 will require using excludedAttributes and includeAttributes query parameters to exclude secondary lookup values -- (i.e. for Users externalId, roles, urn:ietf:params:scim:schemas:extension:genesys:purecloud:2.0:User:routingLanguages, urn:ietf:params:scim:schemas:extension:genesys:purecloud:2.0:User:routingSkills, and for Groups externalId, members). (default to 25)
 	 * @param {Array.<String>} opts.attributes Indicates which attributes to include. Returns these attributes and the &#39;id&#39;, &#39;active&#39;, and &#39;meta attributes . Use \&quot;attributes\&quot; to avoid expensive secondary calls for the default attributes.
 	 * @param {Array.<String>} opts.excludedAttributes Indicates which attributes to exclude. Returns the default attributes minus \&quot;excludedAttributes\&quot;. Use \&quot;excludedAttributes\&quot; to avoid expensive secondary calls for the default attributes. The&#39;id&#39;, &#39;active&#39;, and &#39;meta&#39;  attributes will always be present in the output.
 	 */
@@ -35387,7 +35662,7 @@ class SCIMApi {
 	 * To return all active users, do not use a filter parameter. To return inactive users, set \&quot;filter\&quot; to \&quot;active eq false\&quot;. By default, returns SCIM attributes externalId, enterprise-user:manager, and roles. To exclude these attributes, set \&quot;attributes\&quot; to \&quot;id,active\&quot; or \&quot;excludeAttributes\&quot; to \&quot;externalId,roles,urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:division\&quot;.
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.startIndex The 1-based index of the first query result. (default to 1)
-	 * @param {Number} opts.count The requested number of items per page. A value of 0 returns \&quot;totalResults\&quot;. (default to 25)
+	 * @param {Number} opts.count The requested number of items per page. A value of 0 returns \&quot;totalResults\&quot;. Note that page size over 25 will likely cause a 429 error by exceeding the internal resource limits. Page sizes over 25 will require using excludedAttributes and includeAttributes query parameters to exclude secondary lookup values -- (i.e. for Users externalId, roles, urn:ietf:params:scim:schemas:extension:genesys:purecloud:2.0:User:routingLanguages, urn:ietf:params:scim:schemas:extension:genesys:purecloud:2.0:User:routingSkills, and for Groups externalId, members). (default to 25)
 	 * @param {Array.<String>} opts.attributes Indicates which attributes to include. Returns these attributes and the &#39;id&#39;, &#39;userName&#39;, &#39;active&#39;, and &#39;meta&#39; attributes. Use \&quot;attributes\&quot; to avoid expensive secondary calls for the default attributes.
 	 * @param {Array.<String>} opts.excludedAttributes Indicates which attributes to exclude. Returns the default attributes minus \&quot;excludedAttributes\&quot;. Use \&quot;excludedAttributes\&quot; to avoid expensive secondary calls for the default attributes. The &#39;id&#39;, &#39;userName&#39;, &#39;active&#39;, &#39;meta&#39; attributes  will always be present in output.
 	 * @param {String} opts.filter Filters results. If nothing is specified, returns all active users. Examples of valid values: \&quot;id eq 857449b0-d9e7-4cd0-acbf-a6adfb9ef1e9\&quot;, \&quot;userName eq search@sample.org\&quot;, \&quot;manager eq 16e10e2f-1136-43fe-bb84-eac073168a49\&quot;, \&quot;email eq search@sample.org\&quot;, \&quot;division eq divisionName\&quot;, \&quot;externalId eq 167844\&quot;, \&quot;active eq false\&quot;.
@@ -35788,7 +36063,7 @@ class ScriptsApi {
 	/**
 	 * Scripts service.
 	 * @module purecloud-platform-client-v2/api/ScriptsApi
-	 * @version 82.0.0
+	 * @version 83.0.0
 	 */
 
 	/**
@@ -36141,7 +36416,7 @@ class SearchApi {
 	/**
 	 * Search service.
 	 * @module purecloud-platform-client-v2/api/SearchApi
-	 * @version 82.0.0
+	 * @version 83.0.0
 	 */
 
 	/**
@@ -36625,7 +36900,7 @@ class StationsApi {
 	/**
 	 * Stations service.
 	 * @module purecloud-platform-client-v2/api/StationsApi
-	 * @version 82.0.0
+	 * @version 83.0.0
 	 */
 
 	/**
@@ -36772,7 +37047,7 @@ class SuggestApi {
 	/**
 	 * Suggest service.
 	 * @module purecloud-platform-client-v2/api/SuggestApi
-	 * @version 82.0.0
+	 * @version 83.0.0
 	 */
 
 	/**
@@ -36911,7 +37186,7 @@ class TelephonyApi {
 	/**
 	 * Telephony service.
 	 * @module purecloud-platform-client-v2/api/TelephonyApi
-	 * @version 82.0.0
+	 * @version 83.0.0
 	 */
 
 	/**
@@ -37019,7 +37294,7 @@ class TelephonyProvidersEdgeApi {
 	/**
 	 * TelephonyProvidersEdge service.
 	 * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-	 * @version 82.0.0
+	 * @version 83.0.0
 	 */
 
 	/**
@@ -40594,7 +40869,7 @@ class TokensApi {
 	/**
 	 * Tokens service.
 	 * @module purecloud-platform-client-v2/api/TokensApi
-	 * @version 82.0.0
+	 * @version 83.0.0
 	 */
 
 	/**
@@ -40680,7 +40955,7 @@ class UploadsApi {
 	/**
 	 * Uploads service.
 	 * @module purecloud-platform-client-v2/api/UploadsApi
-	 * @version 82.0.0
+	 * @version 83.0.0
 	 */
 
 	/**
@@ -40722,11 +40997,82 @@ class UploadsApi {
 
 }
 
+class UsageApi {
+	/**
+	 * Usage service.
+	 * @module purecloud-platform-client-v2/api/UsageApi
+	 * @version 83.0.0
+	 */
+
+	/**
+	 * Constructs a new UsageApi. 
+	 * @alias module:purecloud-platform-client-v2/api/UsageApi
+	 * @class
+	 * @param {module:purecloud-platform-client-v2/ApiClient} apiClient Optional API client implementation to use,
+	 * default to {@link module:purecloud-platform-client-v2/ApiClient#instance} if unspecified.
+	 */
+	constructor(apiClient) {
+		this.apiClient = apiClient || ApiClient.instance;
+	}
+
+
+	/**
+	 * Get the results of a usage query
+	 * 
+	 * @param {String} executionId ID of the query execution
+	 */
+	getUsageQueryExecutionIdResults(executionId) { 
+		// verify the required parameter 'executionId' is set
+		if (executionId === undefined || executionId === null) {
+			throw 'Missing the required parameter "executionId" when calling getUsageQueryExecutionIdResults';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/usage/query/{executionId}/results', 
+			'GET', 
+			{ 'executionId': executionId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Query organization API Usage - 
+	 * After calling this method, you will then need to poll for the query results based on the returned execution Id
+	 * @param {Object} body Query
+	 */
+	postUsageQuery(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postUsageQuery';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/usage/query', 
+			'POST', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+}
+
 class UserRecordingsApi {
 	/**
 	 * UserRecordings service.
 	 * @module purecloud-platform-client-v2/api/UserRecordingsApi
-	 * @version 82.0.0
+	 * @version 83.0.0
 	 */
 
 	/**
@@ -40910,7 +41256,7 @@ class UsersApi {
 	/**
 	 * Users service.
 	 * @module purecloud-platform-client-v2/api/UsersApi
-	 * @version 82.0.0
+	 * @version 83.0.0
 	 */
 
 	/**
@@ -42975,7 +43321,7 @@ class UtilitiesApi {
 	/**
 	 * Utilities service.
 	 * @module purecloud-platform-client-v2/api/UtilitiesApi
-	 * @version 82.0.0
+	 * @version 83.0.0
 	 */
 
 	/**
@@ -43086,7 +43432,7 @@ class VoicemailApi {
 	/**
 	 * Voicemail service.
 	 * @module purecloud-platform-client-v2/api/VoicemailApi
-	 * @version 82.0.0
+	 * @version 83.0.0
 	 */
 
 	/**
@@ -43723,7 +44069,7 @@ class WebChatApi {
 	/**
 	 * WebChat service.
 	 * @module purecloud-platform-client-v2/api/WebChatApi
-	 * @version 82.0.0
+	 * @version 83.0.0
 	 */
 
 	/**
@@ -44267,7 +44613,7 @@ class WidgetsApi {
 	/**
 	 * Widgets service.
 	 * @module purecloud-platform-client-v2/api/WidgetsApi
-	 * @version 82.0.0
+	 * @version 83.0.0
 	 */
 
 	/**
@@ -44413,7 +44759,7 @@ class WorkforceManagementApi {
 	/**
 	 * WorkforceManagement service.
 	 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-	 * @version 82.0.0
+	 * @version 83.0.0
 	 */
 
 	/**
@@ -48467,7 +48813,7 @@ class WorkforceManagementApi {
  * </pre>
  * </p>
  * @module purecloud-platform-client-v2/index
- * @version 82.0.0
+ * @version 83.0.0
  */
 class platformClient {
 	constructor() {
@@ -48706,6 +49052,11 @@ class platformClient {
 		 * @property {module:purecloud-platform-client-v2/api/UploadsApi}
 		 */
 		this.UploadsApi = UploadsApi;
+		/**
+		 * The UsageApi service constructor.
+		 * @property {module:purecloud-platform-client-v2/api/UsageApi}
+		 */
+		this.UsageApi = UsageApi;
 		/**
 		 * The UserRecordingsApi service constructor.
 		 * @property {module:purecloud-platform-client-v2/api/UserRecordingsApi}

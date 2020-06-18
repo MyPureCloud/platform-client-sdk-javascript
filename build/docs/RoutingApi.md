@@ -4112,6 +4112,11 @@ UserQueue <a href="#" onclick="return copyUserQueueExample()">Copy</a>
       "durationMs": Number, 
     },  
   },  
+  "routingRules": { 
+    "operator": String, 
+    "threshold": Number, 
+    "waitSeconds": Number, 
+  },  
   "bullseye": { 
     "rings": { 
       "expansionCriteria": { 
@@ -4419,6 +4424,11 @@ UserQueue <a href="#" onclick="return copyUserQueueExample()">Copy</a>
       "percentage": Number, 
       "durationMs": Number, 
     },  
+  },  
+  "routingRules": { 
+    "operator": String, 
+    "threshold": Number, 
+    "waitSeconds": Number, 
   },  
   "bullseye": { 
     "rings": { 
@@ -5804,6 +5814,11 @@ CreateQueueRequest <a href="#" onclick="return copyCreateQueueRequestExample()">
       "percentage": Number, 
       "durationMs": Number, 
     },  
+  },  
+  "routingRules": { 
+    "operator": String, 
+    "threshold": Number, 
+    "waitSeconds": Number, 
   },  
   "bullseye": { 
     "rings": { 
@@ -8773,6 +8788,11 @@ QueueRequest <a href="#" onclick="return copyQueueRequestExample()">Copy</a>
       "percentage": Number, 
       "durationMs": Number, 
     },  
+  },  
+  "routingRules": { 
+    "operator": String, 
+    "threshold": Number, 
+    "waitSeconds": Number, 
   },  
   "bullseye": { 
     "rings": { 

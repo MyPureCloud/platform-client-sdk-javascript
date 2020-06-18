@@ -5,7 +5,7 @@ class OrganizationApi {
 	/**
 	 * Organization service.
 	 * @module purecloud-platform-client-v2/api/OrganizationApi
-	 * @version 82.0.0
+	 * @version 83.0.0
 	 */
 
 	/**
@@ -53,6 +53,26 @@ class OrganizationApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/organizations/embeddedintegration', 
+			'GET', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get organization IP address whitelist settings
+	 * 
+	 */
+	getOrganizationsIpaddressauthentication() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/organizations/ipaddressauthentication', 
 			'GET', 
 			{  }, 
 			{  }, 
@@ -148,6 +168,31 @@ class OrganizationApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/organizations/embeddedintegration', 
+			'PUT', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update organization IP address whitelist settings
+	 * 
+	 * @param {Object} body IP address Whitelist settings
+	 */
+	putOrganizationsIpaddressauthentication(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putOrganizationsIpaddressauthentication';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/organizations/ipaddressauthentication', 
 			'PUT', 
 			{  }, 
 			{  }, 

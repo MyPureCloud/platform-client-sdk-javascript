@@ -11,10 +11,13 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getOauthAuthorization**](OAuthApi.html#getOauthAuthorization) | **GET** /api/v2/oauth/authorizations/{clientId} | Get a client that is authorized by the resource owner
 [**getOauthAuthorizations**](OAuthApi.html#getOauthAuthorizations) | **GET** /api/v2/oauth/authorizations | List clients that are authorized by the resource owner
 [**getOauthClient**](OAuthApi.html#getOauthClient) | **GET** /api/v2/oauth/clients/{clientId} | Get OAuth Client
+[**getOauthClientUsageQueryResult**](OAuthApi.html#getOauthClientUsageQueryResult) | **GET** /api/v2/oauth/clients/{clientId}/usage/query/results/{executionId} | Get the results of a usage query
+[**getOauthClientUsageSummary**](OAuthApi.html#getOauthClientUsageSummary) | **GET** /api/v2/oauth/clients/{clientId}/usage/summary | Get a summary of OAuth client API usage
 [**getOauthClients**](OAuthApi.html#getOauthClients) | **GET** /api/v2/oauth/clients | The list of OAuth clients
 [**getOauthScope**](OAuthApi.html#getOauthScope) | **GET** /api/v2/oauth/scopes/{scopeId} | An OAuth scope
 [**getOauthScopes**](OAuthApi.html#getOauthScopes) | **GET** /api/v2/oauth/scopes | The list of OAuth scopes
 [**postOauthClientSecret**](OAuthApi.html#postOauthClientSecret) | **POST** /api/v2/oauth/clients/{clientId}/secret | Regenerate Client Secret
+[**postOauthClientUsageQuery**](OAuthApi.html#postOauthClientUsageQuery) | **POST** /api/v2/oauth/clients/{clientId}/usage/query | Query for OAuth client API usage
 [**postOauthClients**](OAuthApi.html#postOauthClients) | **POST** /api/v2/oauth/clients | Create OAuth client
 [**putOauthClient**](OAuthApi.html#putOauthClient) | **PUT** /api/v2/oauth/clients/{clientId} | Update OAuth Client
 {: class="table table-striped"}
@@ -234,6 +237,122 @@ apiInstance.getOauthClient(clientId)
 
 **OAuthClient**
 
+<a name="getOauthClientUsageQueryResult"></a>
+
+# ApiUsageQueryResult getOauthClientUsageQueryResult(executionId, clientId)
+
+
+
+GET /api/v2/oauth/clients/{clientId}/usage/query/results/{executionId}
+
+Get the results of a usage query
+
+
+
+Requires ANY permissions: 
+
+* oauth:client:view
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OAuthApi();
+
+let executionId = "executionId_example"; // String | ID of the query execution
+let clientId = "clientId_example"; // String | Client ID
+
+apiInstance.getOauthClientUsageQueryResult(executionId, clientId)
+  .then((data) => {
+    console.log(`getOauthClientUsageQueryResult success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getOauthClientUsageQueryResult');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **executionId** | **String** | ID of the query execution |  |
+ **clientId** | **String** | Client ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+**ApiUsageQueryResult**
+
+<a name="getOauthClientUsageSummary"></a>
+
+# UsageExecutionResult getOauthClientUsageSummary(clientId, opts)
+
+
+
+GET /api/v2/oauth/clients/{clientId}/usage/summary
+
+Get a summary of OAuth client API usage
+
+After calling this method, you will then need to poll for the query results based on the returned execution Id
+
+Requires ANY permissions: 
+
+* oauth:client:view
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OAuthApi();
+
+let clientId = "clientId_example"; // String | Client ID
+let opts = { 
+  'days': "7" // String | Previous number of days to query
+};
+
+apiInstance.getOauthClientUsageSummary(clientId, opts)
+  .then((data) => {
+    console.log(`getOauthClientUsageSummary success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getOauthClientUsageSummary');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **clientId** | **String** | Client ID |  |
+ **days** | **String** | Previous number of days to query | [optional] [default to 7] |
+{: class="table table-striped"}
+
+### Return type
+
+**UsageExecutionResult**
+
 <a name="getOauthClients"></a>
 
 # OAuthClientEntityListing getOauthClients()
@@ -452,6 +571,91 @@ apiInstance.postOauthClientSecret(clientId)
 ### Return type
 
 **OAuthClient**
+
+<a name="postOauthClientUsageQuery"></a>
+
+# UsageExecutionResult postOauthClientUsageQuery(clientId, body)
+
+
+
+POST /api/v2/oauth/clients/{clientId}/usage/query
+
+Query for OAuth client API usage
+
+After calling this method, you will then need to poll for the query results based on the returned execution Id
+
+Requires ANY permissions: 
+
+* oauth:client:view
+
+
+### Request Body Schema
+
+<script type="text/javascript">
+	function copyApiUsageQueryExample() {
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#ApiUsageQueryExample').text()).select();
+		document.execCommand("copy");
+		temp.remove();
+		return false;
+	}
+</script>
+
+ApiUsageQuery <a href="#" onclick="return copyApiUsageQueryExample()">Copy</a>
+
+<div id="ApiUsageQueryExample">
+
+```{"language":"json", "maxHeight": "250px"}
+{ 
+  "interval": String, 
+  "granularity": String, 
+  "groupBy": [String], 
+  "metrics": [String], 
+}
+```
+
+</div>
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OAuthApi();
+
+let clientId = "clientId_example"; // String | Client ID
+let body = {}; // Object | Query
+
+apiInstance.postOauthClientUsageQuery(clientId, body)
+  .then((data) => {
+    console.log(`postOauthClientUsageQuery success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postOauthClientUsageQuery');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **clientId** | **String** | Client ID |  |
+ **body** | **Object** | Query |  |
+{: class="table table-striped"}
+
+### Return type
+
+**UsageExecutionResult**
 
 <a name="postOauthClients"></a>
 

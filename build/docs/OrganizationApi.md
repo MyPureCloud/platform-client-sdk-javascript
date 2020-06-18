@@ -9,10 +9,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 | ------------- | ------------- | ------------- |
 [**getFieldconfig**](OrganizationApi.html#getFieldconfig) | **GET** /api/v2/fieldconfig | Fetch field config for an entity type
 [**getOrganizationsEmbeddedintegration**](OrganizationApi.html#getOrganizationsEmbeddedintegration) | **GET** /api/v2/organizations/embeddedintegration | Get the list of domains that will be allowed to embed PureCloud applications
+[**getOrganizationsIpaddressauthentication**](OrganizationApi.html#getOrganizationsIpaddressauthentication) | **GET** /api/v2/organizations/ipaddressauthentication | Get organization IP address whitelist settings
 [**getOrganizationsMe**](OrganizationApi.html#getOrganizationsMe) | **GET** /api/v2/organizations/me | Get organization.
 [**getOrganizationsWhitelist**](OrganizationApi.html#getOrganizationsWhitelist) | **GET** /api/v2/organizations/whitelist | Use PUT /api/v2/organizations/embeddedintegration instead
 [**patchOrganizationsFeature**](OrganizationApi.html#patchOrganizationsFeature) | **PATCH** /api/v2/organizations/features/{featureName} | Update organization
 [**putOrganizationsEmbeddedintegration**](OrganizationApi.html#putOrganizationsEmbeddedintegration) | **PUT** /api/v2/organizations/embeddedintegration | Update the list of domains that will be allowed to embed PureCloud applications
+[**putOrganizationsIpaddressauthentication**](OrganizationApi.html#putOrganizationsIpaddressauthentication) | **PUT** /api/v2/organizations/ipaddressauthentication | Update organization IP address whitelist settings
 [**putOrganizationsMe**](OrganizationApi.html#putOrganizationsMe) | **PUT** /api/v2/organizations/me | Update organization.
 [**putOrganizationsWhitelist**](OrganizationApi.html#putOrganizationsWhitelist) | **PUT** /api/v2/organizations/whitelist | Use PUT /api/v2/organizations/embeddedintegration instead
 {: class="table table-striped"}
@@ -119,6 +121,56 @@ This endpoint does not need any parameter.
 ### Return type
 
 **EmbeddedIntegration**
+
+<a name="getOrganizationsIpaddressauthentication"></a>
+
+# IpAddressAuthentication getOrganizationsIpaddressauthentication()
+
+
+
+GET /api/v2/organizations/ipaddressauthentication
+
+Get organization IP address whitelist settings
+
+
+
+Requires ANY permissions: 
+
+* directory:organization:admin
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OrganizationApi();
+
+apiInstance.getOrganizationsIpaddressauthentication()
+  .then((data) => {
+    console.log(`getOrganizationsIpaddressauthentication success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getOrganizationsIpaddressauthentication');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+{: class="table table-striped"}
+
+### Return type
+
+**IpAddressAuthentication**
 
 <a name="getOrganizationsMe"></a>
 
@@ -380,6 +432,86 @@ apiInstance.putOrganizationsEmbeddedintegration(body)
 ### Return type
 
 **EmbeddedIntegration**
+
+<a name="putOrganizationsIpaddressauthentication"></a>
+
+# IpAddressAuthentication putOrganizationsIpaddressauthentication(body)
+
+
+
+PUT /api/v2/organizations/ipaddressauthentication
+
+Update organization IP address whitelist settings
+
+
+
+Requires ANY permissions: 
+
+* directory:organization:admin
+
+
+### Request Body Schema
+
+<script type="text/javascript">
+	function copyIpAddressAuthenticationExample() {
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#IpAddressAuthenticationExample').text()).select();
+		document.execCommand("copy");
+		temp.remove();
+		return false;
+	}
+</script>
+
+IpAddressAuthentication <a href="#" onclick="return copyIpAddressAuthenticationExample()">Copy</a>
+
+<div id="IpAddressAuthenticationExample">
+
+```{"language":"json", "maxHeight": "250px"}
+{ 
+  "networkWhitelist": [String], 
+}
+```
+
+</div>
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OrganizationApi();
+
+let body = {}; // Object | IP address Whitelist settings
+
+apiInstance.putOrganizationsIpaddressauthentication(body)
+  .then((data) => {
+    console.log(`putOrganizationsIpaddressauthentication success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putOrganizationsIpaddressauthentication');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | IP address Whitelist settings |  |
+{: class="table table-striped"}
+
+### Return type
+
+**IpAddressAuthentication**
 
 <a name="putOrganizationsMe"></a>
 

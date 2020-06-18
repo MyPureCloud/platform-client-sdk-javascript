@@ -7,10 +7,61 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
+[**getAuditsQueryServicemapping**](AuditApi.html#getAuditsQueryServicemapping) | **GET** /api/v2/audits/query/servicemapping | Get service mapping information used in audits.
 [**getAuditsQueryTransactionId**](AuditApi.html#getAuditsQueryTransactionId) | **GET** /api/v2/audits/query/{transactionId} | Get status of audit query execution
 [**getAuditsQueryTransactionIdResults**](AuditApi.html#getAuditsQueryTransactionIdResults) | **GET** /api/v2/audits/query/{transactionId}/results | Get results of audit query
 [**postAuditsQuery**](AuditApi.html#postAuditsQuery) | **POST** /api/v2/audits/query | Create audit query execution
 {: class="table table-striped"}
+
+<a name="getAuditsQueryServicemapping"></a>
+
+# AuditQueryServiceMapping getAuditsQueryServicemapping()
+
+
+
+GET /api/v2/audits/query/servicemapping
+
+Get service mapping information used in audits.
+
+
+
+Requires ALL permissions: 
+
+* audits:audit:view
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AuditApi();
+
+apiInstance.getAuditsQueryServicemapping()
+  .then((data) => {
+    console.log(`getAuditsQueryServicemapping success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getAuditsQueryServicemapping');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+{: class="table table-striped"}
+
+### Return type
+
+**AuditQueryServiceMapping**
 
 <a name="getAuditsQueryTransactionId"></a>
 
@@ -171,6 +222,10 @@ AuditQueryRequest <a href="#" onclick="return copyAuditQueryRequestExample()">Co
   "filters": { 
     "property": String, 
     "value": String, 
+  },  
+  "sort": { 
+    "name": String, 
+    "sortOrder": String, 
   },  
 }
 ```

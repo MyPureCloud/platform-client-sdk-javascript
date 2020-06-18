@@ -1729,6 +1729,11 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
               "durationMs": Number, 
             },  
           },  
+          "routingRules": { 
+            "operator": String, 
+            "threshold": Number, 
+            "waitSeconds": Number, 
+          },  
           "bullseye": { 
             "rings": { 
               "expansionCriteria": { 
@@ -2152,6 +2157,11 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
                 "durationMs": Number, 
               },  
             },  
+            "routingRules": { 
+              "operator": String, 
+              "threshold": Number, 
+              "waitSeconds": Number, 
+            },  
             "bullseye": { 
               "rings": { 
                 "expansionCriteria": [ExpansionCriterium], 
@@ -2423,6 +2433,11 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
                 "alertingTimeoutSeconds": Number, 
                 "serviceLevel": ServiceLevel, 
               },  
+              "routingRules": { 
+                "operator": String, 
+                "threshold": Number, 
+                "waitSeconds": Number, 
+              },  
               "bullseye": { 
                 "rings": [Ring], 
               },  
@@ -2524,6 +2539,7 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
                 "createdBy": String, 
                 "memberCount": Number, 
                 "mediaSettings": {String: MediaSetting}, 
+                "routingRules": [RoutingRule], 
                 "bullseye": Bullseye, 
                 "acwSettings": AcwSettings, 
                 "skillEvaluationMethod": String, 
@@ -2566,8 +2582,8 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
   },  
   "userCount": Number, 
   "roleNeedsUpdate": Boolean, 
-  "base": Boolean, 
   "default": Boolean, 
+  "base": Boolean, 
   "selfUri": String, 
 }
 ```
@@ -3302,6 +3318,11 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
               "durationMs": Number, 
             },  
           },  
+          "routingRules": { 
+            "operator": String, 
+            "threshold": Number, 
+            "waitSeconds": Number, 
+          },  
           "bullseye": { 
             "rings": { 
               "expansionCriteria": { 
@@ -3725,6 +3746,11 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
                 "durationMs": Number, 
               },  
             },  
+            "routingRules": { 
+              "operator": String, 
+              "threshold": Number, 
+              "waitSeconds": Number, 
+            },  
             "bullseye": { 
               "rings": { 
                 "expansionCriteria": [ExpansionCriterium], 
@@ -3996,6 +4022,11 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
                 "alertingTimeoutSeconds": Number, 
                 "serviceLevel": ServiceLevel, 
               },  
+              "routingRules": { 
+                "operator": String, 
+                "threshold": Number, 
+                "waitSeconds": Number, 
+              },  
               "bullseye": { 
                 "rings": [Ring], 
               },  
@@ -4097,6 +4128,7 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
                 "createdBy": String, 
                 "memberCount": Number, 
                 "mediaSettings": {String: MediaSetting}, 
+                "routingRules": [RoutingRule], 
                 "bullseye": Bullseye, 
                 "acwSettings": AcwSettings, 
                 "skillEvaluationMethod": String, 
@@ -4139,8 +4171,8 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
   },  
   "userCount": Number, 
   "roleNeedsUpdate": Boolean, 
-  "base": Boolean, 
   "default": Boolean, 
+  "base": Boolean, 
   "selfUri": String, 
 }
 ```
@@ -4646,6 +4678,11 @@ DomainOrganizationRoleCreate <a href="#" onclick="return copyDomainOrganizationR
               "durationMs": Number, 
             },  
           },  
+          "routingRules": { 
+            "operator": String, 
+            "threshold": Number, 
+            "waitSeconds": Number, 
+          },  
           "bullseye": { 
             "rings": { 
               "expansionCriteria": { 
@@ -5069,6 +5106,11 @@ DomainOrganizationRoleCreate <a href="#" onclick="return copyDomainOrganizationR
                 "durationMs": Number, 
               },  
             },  
+            "routingRules": { 
+              "operator": String, 
+              "threshold": Number, 
+              "waitSeconds": Number, 
+            },  
             "bullseye": { 
               "rings": { 
                 "expansionCriteria": [ExpansionCriterium], 
@@ -5340,6 +5382,11 @@ DomainOrganizationRoleCreate <a href="#" onclick="return copyDomainOrganizationR
                 "alertingTimeoutSeconds": Number, 
                 "serviceLevel": ServiceLevel, 
               },  
+              "routingRules": { 
+                "operator": String, 
+                "threshold": Number, 
+                "waitSeconds": Number, 
+              },  
               "bullseye": { 
                 "rings": [Ring], 
               },  
@@ -5441,6 +5488,7 @@ DomainOrganizationRoleCreate <a href="#" onclick="return copyDomainOrganizationR
                 "createdBy": String, 
                 "memberCount": Number, 
                 "mediaSettings": {String: MediaSetting}, 
+                "routingRules": [RoutingRule], 
                 "bullseye": Bullseye, 
                 "acwSettings": AcwSettings, 
                 "skillEvaluationMethod": String, 
@@ -5483,8 +5531,8 @@ DomainOrganizationRoleCreate <a href="#" onclick="return copyDomainOrganizationR
   },  
   "userCount": Number, 
   "roleNeedsUpdate": Boolean, 
-  "base": Boolean, 
   "default": Boolean, 
+  "base": Boolean, 
   "selfUri": String, 
 }
 ```
@@ -6367,6 +6415,11 @@ DomainOrganizationRoleUpdate <a href="#" onclick="return copyDomainOrganizationR
               "durationMs": Number, 
             },  
           },  
+          "routingRules": { 
+            "operator": String, 
+            "threshold": Number, 
+            "waitSeconds": Number, 
+          },  
           "bullseye": { 
             "rings": { 
               "expansionCriteria": { 
@@ -6790,6 +6843,11 @@ DomainOrganizationRoleUpdate <a href="#" onclick="return copyDomainOrganizationR
                 "durationMs": Number, 
               },  
             },  
+            "routingRules": { 
+              "operator": String, 
+              "threshold": Number, 
+              "waitSeconds": Number, 
+            },  
             "bullseye": { 
               "rings": { 
                 "expansionCriteria": [ExpansionCriterium], 
@@ -7061,6 +7119,11 @@ DomainOrganizationRoleUpdate <a href="#" onclick="return copyDomainOrganizationR
                 "alertingTimeoutSeconds": Number, 
                 "serviceLevel": ServiceLevel, 
               },  
+              "routingRules": { 
+                "operator": String, 
+                "threshold": Number, 
+                "waitSeconds": Number, 
+              },  
               "bullseye": { 
                 "rings": [Ring], 
               },  
@@ -7162,6 +7225,7 @@ DomainOrganizationRoleUpdate <a href="#" onclick="return copyDomainOrganizationR
                 "createdBy": String, 
                 "memberCount": Number, 
                 "mediaSettings": {String: MediaSetting}, 
+                "routingRules": [RoutingRule], 
                 "bullseye": Bullseye, 
                 "acwSettings": AcwSettings, 
                 "skillEvaluationMethod": String, 
@@ -7204,8 +7268,8 @@ DomainOrganizationRoleUpdate <a href="#" onclick="return copyDomainOrganizationR
   },  
   "userCount": Number, 
   "roleNeedsUpdate": Boolean, 
-  "base": Boolean, 
   "default": Boolean, 
+  "base": Boolean, 
   "selfUri": String, 
 }
 ```
@@ -7823,6 +7887,11 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
               "durationMs": Number, 
             },  
           },  
+          "routingRules": { 
+            "operator": String, 
+            "threshold": Number, 
+            "waitSeconds": Number, 
+          },  
           "bullseye": { 
             "rings": { 
               "expansionCriteria": { 
@@ -8246,6 +8315,11 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
                 "durationMs": Number, 
               },  
             },  
+            "routingRules": { 
+              "operator": String, 
+              "threshold": Number, 
+              "waitSeconds": Number, 
+            },  
             "bullseye": { 
               "rings": { 
                 "expansionCriteria": [ExpansionCriterium], 
@@ -8517,6 +8591,11 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
                 "alertingTimeoutSeconds": Number, 
                 "serviceLevel": ServiceLevel, 
               },  
+              "routingRules": { 
+                "operator": String, 
+                "threshold": Number, 
+                "waitSeconds": Number, 
+              },  
               "bullseye": { 
                 "rings": [Ring], 
               },  
@@ -8618,6 +8697,7 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
                 "createdBy": String, 
                 "memberCount": Number, 
                 "mediaSettings": {String: MediaSetting}, 
+                "routingRules": [RoutingRule], 
                 "bullseye": Bullseye, 
                 "acwSettings": AcwSettings, 
                 "skillEvaluationMethod": String, 
@@ -8660,8 +8740,8 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
   },  
   "userCount": Number, 
   "roleNeedsUpdate": Boolean, 
-  "base": Boolean, 
   "default": Boolean, 
+  "base": Boolean, 
   "selfUri": String, 
 }
 ```

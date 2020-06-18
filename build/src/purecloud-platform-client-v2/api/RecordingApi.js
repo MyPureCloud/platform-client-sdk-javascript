@@ -5,7 +5,7 @@ class RecordingApi {
 	/**
 	 * Recording service.
 	 * @module purecloud-platform-client-v2/api/RecordingApi
-	 * @version 82.0.0
+	 * @version 83.0.0
 	 */
 
 	/**
@@ -162,6 +162,9 @@ class RecordingApi {
 	 * @param {String} recordingId Recording ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.formatId The desired media format. (default to WEBM)
+	 * @param {Object} opts.emailFormatId The desired media format when downloading an email recording. (default to EML)
+	 * @param {Object} opts.chatFormatId The desired media format when downloading a chat recording. (default to ZIP)
+	 * @param {Object} opts.messageFormatId The desired media format when downloading a message recording. (default to ZIP)
 	 * @param {Boolean} opts.download requesting a download format of the recording (default to false)
 	 * @param {String} opts.fileName the name of the downloaded fileName
 	 * @param {String} opts.locale The locale for the requested file when downloading, as an ISO 639-1 code
@@ -182,7 +185,7 @@ class RecordingApi {
 			'/api/v2/conversations/{conversationId}/recordings/{recordingId}', 
 			'GET', 
 			{ 'conversationId': conversationId,'recordingId': recordingId }, 
-			{ 'formatId': opts['formatId'],'download': opts['download'],'fileName': opts['fileName'],'locale': opts['locale'] }, 
+			{ 'formatId': opts['formatId'],'emailFormatId': opts['emailFormatId'],'chatFormatId': opts['chatFormatId'],'messageFormatId': opts['messageFormatId'],'download': opts['download'],'fileName': opts['fileName'],'locale': opts['locale'] }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -373,6 +376,9 @@ class RecordingApi {
 	 * @param {String} orphanId Orphan ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.formatId The desired media format. (default to WEBM)
+	 * @param {Object} opts.emailFormatId The desired media format when downloading an email recording. (default to EML)
+	 * @param {Object} opts.chatFormatId The desired media format when downloading a chat recording. (default to ZIP)
+	 * @param {Object} opts.messageFormatId The desired media format when downloading a message recording. (default to ZIP)
 	 * @param {Boolean} opts.download requesting a download format of the recording (default to false)
 	 * @param {String} opts.fileName the name of the downloaded fileName
 	 * @param {String} opts.locale The locale for the requested file when downloading, as an ISO 639-1 code
@@ -389,7 +395,7 @@ class RecordingApi {
 			'/api/v2/orphanrecordings/{orphanId}/media', 
 			'GET', 
 			{ 'orphanId': orphanId }, 
-			{ 'formatId': opts['formatId'],'download': opts['download'],'fileName': opts['fileName'],'locale': opts['locale'] }, 
+			{ 'formatId': opts['formatId'],'emailFormatId': opts['emailFormatId'],'chatFormatId': opts['chatFormatId'],'messageFormatId': opts['messageFormatId'],'download': opts['download'],'fileName': opts['fileName'],'locale': opts['locale'] }, 
 			{  }, 
 			{  }, 
 			null, 
