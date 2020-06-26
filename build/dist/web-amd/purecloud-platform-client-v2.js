@@ -16,7 +16,7 @@ define(['superagent'], function (superagent) { 'use strict';
 
    /**
     * @module purecloud-platform-client-v2/ApiClient
-    * @version 83.0.0
+    * @version 84.0.0
     */
    class ApiClient {
    	/**
@@ -772,7 +772,7 @@ define(['superagent'], function (superagent) { 'use strict';
 
    		// set header parameters
    		request.set(this.defaultHeaders).set(this.normalizeParams(headerParams));
-   		//request.set({ 'purecloud-sdk': '83.0.0' });
+   		//request.set({ 'purecloud-sdk': '84.0.0' });
 
    		// set request timeout
    		request.timeout(this.timeout);
@@ -897,7 +897,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Alerting service.
    	 * @module purecloud-platform-client-v2/api/AlertingApi
-   	 * @version 83.0.0
+   	 * @version 84.0.0
    	 */
 
    	/**
@@ -1211,7 +1211,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Analytics service.
    	 * @module purecloud-platform-client-v2/api/AnalyticsApi
-   	 * @version 83.0.0
+   	 * @version 84.0.0
    	 */
 
    	/**
@@ -2176,7 +2176,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Architect service.
    	 * @module purecloud-platform-client-v2/api/ArchitectApi
-   	 * @version 83.0.0
+   	 * @version 84.0.0
    	 */
 
    	/**
@@ -4879,7 +4879,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Audit service.
    	 * @module purecloud-platform-client-v2/api/AuditApi
-   	 * @version 83.0.0
+   	 * @version 84.0.0
    	 */
 
    	/**
@@ -5001,7 +5001,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Authorization service.
    	 * @module purecloud-platform-client-v2/api/AuthorizationApi
-   	 * @version 83.0.0
+   	 * @version 84.0.0
    	 */
 
    	/**
@@ -6088,7 +6088,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Billing service.
    	 * @module purecloud-platform-client-v2/api/BillingApi
-   	 * @version 83.0.0
+   	 * @version 84.0.0
    	 */
 
    	/**
@@ -6168,7 +6168,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Coaching service.
    	 * @module purecloud-platform-client-v2/api/CoachingApi
-   	 * @version 83.0.0
+   	 * @version 84.0.0
    	 */
 
    	/**
@@ -6652,7 +6652,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * ContentManagement service.
    	 * @module purecloud-platform-client-v2/api/ContentManagementApi
-   	 * @version 83.0.0
+   	 * @version 84.0.0
    	 */
 
    	/**
@@ -7792,7 +7792,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Conversations service.
    	 * @module purecloud-platform-client-v2/api/ConversationsApi
-   	 * @version 83.0.0
+   	 * @version 84.0.0
    	 */
 
    	/**
@@ -11754,7 +11754,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * DataExtensions service.
    	 * @module purecloud-platform-client-v2/api/DataExtensionsApi
-   	 * @version 83.0.0
+   	 * @version 84.0.0
    	 */
 
    	/**
@@ -11840,7 +11840,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * ExternalContacts service.
    	 * @module purecloud-platform-client-v2/api/ExternalContactsApi
-   	 * @version 83.0.0
+   	 * @version 84.0.0
    	 */
 
    	/**
@@ -13083,7 +13083,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Fax service.
    	 * @module purecloud-platform-client-v2/api/FaxApi
-   	 * @version 83.0.0
+   	 * @version 84.0.0
    	 */
 
    	/**
@@ -13254,7 +13254,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Flows service.
    	 * @module purecloud-platform-client-v2/api/FlowsApi
-   	 * @version 83.0.0
+   	 * @version 84.0.0
    	 */
 
    	/**
@@ -13325,7 +13325,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * GeneralDataProtectionRegulation service.
    	 * @module purecloud-platform-client-v2/api/GeneralDataProtectionRegulationApi
-   	 * @version 83.0.0
+   	 * @version 84.0.0
    	 */
 
    	/**
@@ -13455,7 +13455,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Geolocation service.
    	 * @module purecloud-platform-client-v2/api/GeolocationApi
-   	 * @version 83.0.0
+   	 * @version 84.0.0
    	 */
 
    	/**
@@ -13586,7 +13586,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Greetings service.
    	 * @module purecloud-platform-client-v2/api/GreetingsApi
-   	 * @version 83.0.0
+   	 * @version 84.0.0
    	 */
 
    	/**
@@ -14041,7 +14041,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Groups service.
    	 * @module purecloud-platform-client-v2/api/GroupsApi
-   	 * @version 83.0.0
+   	 * @version 84.0.0
    	 */
 
    	/**
@@ -14220,7 +14220,7 @@ define(['superagent'], function (superagent) { 'use strict';
 
    	/**
    	 * Get group profile
-   	 * 
+   	 * This api is deprecated. Use /api/v2/groups instead
    	 * @param {String} groupId groupId
    	 * @param {Object} opts Optional parameters
    	 * @param {String} opts.fields Comma separated fields to return.  Allowable values can be found by querying /api/v2/fieldconfig?type=group and using the key for the elements returned by the fieldList
@@ -14306,7 +14306,7 @@ define(['superagent'], function (superagent) { 'use strict';
 
    	/**
    	 * Get group profile listing
-   	 * 
+   	 * This api is deprecated. Use /api/v2/groups instead.
    	 * @param {Object} opts Optional parameters
    	 * @param {Number} opts.pageSize Page size (default to 25)
    	 * @param {Number} opts.pageNumber Page number (default to 1)
@@ -14446,7 +14446,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * IdentityProvider service.
    	 * @module purecloud-platform-client-v2/api/IdentityProviderApi
-   	 * @version 83.0.0
+   	 * @version 84.0.0
    	 */
 
    	/**
@@ -15202,7 +15202,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Integrations service.
    	 * @module purecloud-platform-client-v2/api/IntegrationsApi
-   	 * @version 83.0.0
+   	 * @version 84.0.0
    	 */
 
    	/**
@@ -16694,7 +16694,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Knowledge service.
    	 * @module purecloud-platform-client-v2/api/KnowledgeApi
-   	 * @version 83.0.0
+   	 * @version 84.0.0
    	 */
 
    	/**
@@ -17413,7 +17413,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * LanguageUnderstanding service.
    	 * @module purecloud-platform-client-v2/api/LanguageUnderstandingApi
-   	 * @version 83.0.0
+   	 * @version 84.0.0
    	 */
 
    	/**
@@ -17914,7 +17914,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Languages service.
    	 * @module purecloud-platform-client-v2/api/LanguagesApi
-   	 * @version 83.0.0
+   	 * @version 84.0.0
    	 */
 
    	/**
@@ -18182,7 +18182,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * License service.
    	 * @module purecloud-platform-client-v2/api/LicenseApi
-   	 * @version 83.0.0
+   	 * @version 84.0.0
    	 */
 
    	/**
@@ -18420,7 +18420,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Locations service.
    	 * @module purecloud-platform-client-v2/api/LocationsApi
-   	 * @version 83.0.0
+   	 * @version 84.0.0
    	 */
 
    	/**
@@ -18656,7 +18656,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * MobileDevices service.
    	 * @module purecloud-platform-client-v2/api/MobileDevicesApi
-   	 * @version 83.0.0
+   	 * @version 84.0.0
    	 */
 
    	/**
@@ -18807,7 +18807,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Notifications service.
    	 * @module purecloud-platform-client-v2/api/NotificationsApi
-   	 * @version 83.0.0
+   	 * @version 84.0.0
    	 */
 
    	/**
@@ -19006,7 +19006,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * OAuth service.
    	 * @module purecloud-platform-client-v2/api/OAuthApi
-   	 * @version 83.0.0
+   	 * @version 84.0.0
    	 */
 
    	/**
@@ -19364,7 +19364,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Objects service.
    	 * @module purecloud-platform-client-v2/api/ObjectsApi
-   	 * @version 83.0.0
+   	 * @version 84.0.0
    	 */
 
    	/**
@@ -19605,7 +19605,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Organization service.
    	 * @module purecloud-platform-client-v2/api/OrganizationApi
-   	 * @version 83.0.0
+   	 * @version 84.0.0
    	 */
 
    	/**
@@ -19860,7 +19860,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * OrganizationAuthorization service.
    	 * @module purecloud-platform-client-v2/api/OrganizationAuthorizationApi
-   	 * @version 83.0.0
+   	 * @version 84.0.0
    	 */
 
    	/**
@@ -20570,7 +20570,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Outbound service.
    	 * @module purecloud-platform-client-v2/api/OutboundApi
-   	 * @version 83.0.0
+   	 * @version 84.0.0
    	 */
 
    	/**
@@ -23233,7 +23233,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Presence service.
    	 * @module purecloud-platform-client-v2/api/PresenceApi
-   	 * @version 83.0.0
+   	 * @version 84.0.0
    	 */
 
    	/**
@@ -23500,7 +23500,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Quality service.
    	 * @module purecloud-platform-client-v2/api/QualityApi
-   	 * @version 83.0.0
+   	 * @version 84.0.0
    	 */
 
    	/**
@@ -25172,7 +25172,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Recording service.
    	 * @module purecloud-platform-client-v2/api/RecordingApi
-   	 * @version 83.0.0
+   	 * @version 84.0.0
    	 */
 
    	/**
@@ -26418,7 +26418,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * ResponseManagement service.
    	 * @module purecloud-platform-client-v2/api/ResponseManagementApi
-   	 * @version 83.0.0
+   	 * @version 84.0.0
    	 */
 
    	/**
@@ -26743,7 +26743,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Routing service.
    	 * @module purecloud-platform-client-v2/api/RoutingApi
-   	 * @version 83.0.0
+   	 * @version 84.0.0
    	 */
 
    	/**
@@ -29041,7 +29041,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * SCIM service.
    	 * @module purecloud-platform-client-v2/api/SCIMApi
-   	 * @version 83.0.0
+   	 * @version 84.0.0
    	 */
 
    	/**
@@ -29208,7 +29208,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	 * 
    	 * @param {Object} opts Optional parameters
    	 * @param {Number} opts.startIndex The 1-based index of the first query result. (default to 1)
-   	 * @param {Number} opts.count The requested number of items per page. A value of 0 returns \&quot;totalResults\&quot;. Note that page size over 25 will likely cause a 429 error by exceeding the internal resource limits. Page sizes over 25 will require using excludedAttributes and includeAttributes query parameters to exclude secondary lookup values -- (i.e. for Users externalId, roles, urn:ietf:params:scim:schemas:extension:genesys:purecloud:2.0:User:routingLanguages, urn:ietf:params:scim:schemas:extension:genesys:purecloud:2.0:User:routingSkills, and for Groups externalId, members). (default to 25)
+   	 * @param {Number} opts.count The requested number of items per page. A value of 0 returns \&quot;totalResults\&quot;. (default to 25)
    	 * @param {Array.<String>} opts.attributes Indicates which attributes to include. Returns these attributes and the &#39;id&#39;, &#39;active&#39;, and &#39;meta attributes . Use \&quot;attributes\&quot; to avoid expensive secondary calls for the default attributes.
    	 * @param {Array.<String>} opts.excludedAttributes Indicates which attributes to exclude. Returns the default attributes minus \&quot;excludedAttributes\&quot;. Use \&quot;excludedAttributes\&quot; to avoid expensive secondary calls for the default attributes. The&#39;id&#39;, &#39;active&#39;, and &#39;meta&#39;  attributes will always be present in the output.
    	 * @param {String} opts.filter Filters results.
@@ -29385,7 +29385,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	 * To return all active users, do not use a filter parameter. To return inactive users, set \&quot;filter\&quot; to \&quot;active eq false\&quot;. By default, returns SCIM attributes externalId, enterprise-user:manager, and roles. To exclude these attributes, set \&quot;attributes\&quot; to \&quot;id,active\&quot; or \&quot;excludeAttributes\&quot; to \&quot;externalId,roles,urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:division\&quot;.
    	 * @param {Object} opts Optional parameters
    	 * @param {Number} opts.startIndex The 1-based index of the first query result. (default to 1)
-   	 * @param {Number} opts.count The requested number of items per page. A value of 0 returns \&quot;totalResults\&quot;. Note that page size over 25 will likely cause a 429 error by exceeding the internal resource limits. Page sizes over 25 will require using excludedAttributes and includeAttributes query parameters to exclude secondary lookup values -- (i.e. for Users externalId, roles, urn:ietf:params:scim:schemas:extension:genesys:purecloud:2.0:User:routingLanguages, urn:ietf:params:scim:schemas:extension:genesys:purecloud:2.0:User:routingSkills, and for Groups externalId, members). (default to 25)
+   	 * @param {Number} opts.count The requested number of items per page. A value of 0 returns \&quot;totalResults\&quot;. (default to 25)
    	 * @param {Array.<String>} opts.attributes Indicates which attributes to include. Returns these attributes and the &#39;id&#39;, &#39;userName&#39;, &#39;active&#39;, and &#39;meta&#39; attributes. Use \&quot;attributes\&quot; to avoid expensive secondary calls for the default attributes.
    	 * @param {Array.<String>} opts.excludedAttributes Indicates which attributes to exclude. Returns the default attributes minus \&quot;excludedAttributes\&quot;. Use \&quot;excludedAttributes\&quot; to avoid expensive secondary calls for the default attributes. The &#39;id&#39;, &#39;userName&#39;, &#39;active&#39;, &#39;meta&#39; attributes  will always be present in output.
    	 * @param {String} opts.filter Filters results. If nothing is specified, returns all active users. Examples of valid values: \&quot;id eq 857449b0-d9e7-4cd0-acbf-a6adfb9ef1e9\&quot;, \&quot;userName eq search@sample.org\&quot;, \&quot;manager eq 16e10e2f-1136-43fe-bb84-eac073168a49\&quot;, \&quot;email eq search@sample.org\&quot;, \&quot;division eq divisionName\&quot;, \&quot;externalId eq 167844\&quot;, \&quot;active eq false\&quot;.
@@ -29445,7 +29445,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	 * @param {String} filter Filters results.
    	 * @param {Object} opts Optional parameters
    	 * @param {Number} opts.startIndex The 1-based index of the first query result. (default to 1)
-   	 * @param {Number} opts.count The requested number of items per page. A value of 0 returns \&quot;totalResults\&quot;. Note that page size over 25 will likely cause a 429 error by exceeding the internal resource limits. Page sizes over 25 will require using excludedAttributes and includeAttributes query parameters to exclude secondary lookup values -- (i.e. for Users externalId, roles, urn:ietf:params:scim:schemas:extension:genesys:purecloud:2.0:User:routingLanguages, urn:ietf:params:scim:schemas:extension:genesys:purecloud:2.0:User:routingSkills, and for Groups externalId, members). (default to 25)
+   	 * @param {Number} opts.count The requested number of items per page. A value of 0 returns \&quot;totalResults\&quot;. (default to 25)
    	 * @param {Array.<String>} opts.attributes Indicates which attributes to include. Returns these attributes and the &#39;id&#39;, &#39;active&#39;, and &#39;meta attributes . Use \&quot;attributes\&quot; to avoid expensive secondary calls for the default attributes.
    	 * @param {Array.<String>} opts.excludedAttributes Indicates which attributes to exclude. Returns the default attributes minus \&quot;excludedAttributes\&quot;. Use \&quot;excludedAttributes\&quot; to avoid expensive secondary calls for the default attributes. The&#39;id&#39;, &#39;active&#39;, and &#39;meta&#39;  attributes will always be present in the output.
    	 */
@@ -29625,7 +29625,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	 * To return all active users, do not use a filter parameter. To return inactive users, set \&quot;filter\&quot; to \&quot;active eq false\&quot;. By default, returns SCIM attributes externalId, enterprise-user:manager, and roles. To exclude these attributes, set \&quot;attributes\&quot; to \&quot;id,active\&quot; or \&quot;excludeAttributes\&quot; to \&quot;externalId,roles,urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:division\&quot;.
    	 * @param {Object} opts Optional parameters
    	 * @param {Number} opts.startIndex The 1-based index of the first query result. (default to 1)
-   	 * @param {Number} opts.count The requested number of items per page. A value of 0 returns \&quot;totalResults\&quot;. Note that page size over 25 will likely cause a 429 error by exceeding the internal resource limits. Page sizes over 25 will require using excludedAttributes and includeAttributes query parameters to exclude secondary lookup values -- (i.e. for Users externalId, roles, urn:ietf:params:scim:schemas:extension:genesys:purecloud:2.0:User:routingLanguages, urn:ietf:params:scim:schemas:extension:genesys:purecloud:2.0:User:routingSkills, and for Groups externalId, members). (default to 25)
+   	 * @param {Number} opts.count The requested number of items per page. A value of 0 returns \&quot;totalResults\&quot;. (default to 25)
    	 * @param {Array.<String>} opts.attributes Indicates which attributes to include. Returns these attributes and the &#39;id&#39;, &#39;userName&#39;, &#39;active&#39;, and &#39;meta&#39; attributes. Use \&quot;attributes\&quot; to avoid expensive secondary calls for the default attributes.
    	 * @param {Array.<String>} opts.excludedAttributes Indicates which attributes to exclude. Returns the default attributes minus \&quot;excludedAttributes\&quot;. Use \&quot;excludedAttributes\&quot; to avoid expensive secondary calls for the default attributes. The &#39;id&#39;, &#39;userName&#39;, &#39;active&#39;, &#39;meta&#39; attributes  will always be present in output.
    	 * @param {String} opts.filter Filters results. If nothing is specified, returns all active users. Examples of valid values: \&quot;id eq 857449b0-d9e7-4cd0-acbf-a6adfb9ef1e9\&quot;, \&quot;userName eq search@sample.org\&quot;, \&quot;manager eq 16e10e2f-1136-43fe-bb84-eac073168a49\&quot;, \&quot;email eq search@sample.org\&quot;, \&quot;division eq divisionName\&quot;, \&quot;externalId eq 167844\&quot;, \&quot;active eq false\&quot;.
@@ -30026,7 +30026,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Scripts service.
    	 * @module purecloud-platform-client-v2/api/ScriptsApi
-   	 * @version 83.0.0
+   	 * @version 84.0.0
    	 */
 
    	/**
@@ -30379,7 +30379,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Search service.
    	 * @module purecloud-platform-client-v2/api/SearchApi
-   	 * @version 83.0.0
+   	 * @version 84.0.0
    	 */
 
    	/**
@@ -30863,7 +30863,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Stations service.
    	 * @module purecloud-platform-client-v2/api/StationsApi
-   	 * @version 83.0.0
+   	 * @version 84.0.0
    	 */
 
    	/**
@@ -31010,7 +31010,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Suggest service.
    	 * @module purecloud-platform-client-v2/api/SuggestApi
-   	 * @version 83.0.0
+   	 * @version 84.0.0
    	 */
 
    	/**
@@ -31149,7 +31149,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Telephony service.
    	 * @module purecloud-platform-client-v2/api/TelephonyApi
-   	 * @version 83.0.0
+   	 * @version 84.0.0
    	 */
 
    	/**
@@ -31257,7 +31257,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * TelephonyProvidersEdge service.
    	 * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-   	 * @version 83.0.0
+   	 * @version 84.0.0
    	 */
 
    	/**
@@ -34832,7 +34832,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Tokens service.
    	 * @module purecloud-platform-client-v2/api/TokensApi
-   	 * @version 83.0.0
+   	 * @version 84.0.0
    	 */
 
    	/**
@@ -34918,7 +34918,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Uploads service.
    	 * @module purecloud-platform-client-v2/api/UploadsApi
-   	 * @version 83.0.0
+   	 * @version 84.0.0
    	 */
 
    	/**
@@ -34964,7 +34964,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Usage service.
    	 * @module purecloud-platform-client-v2/api/UsageApi
-   	 * @version 83.0.0
+   	 * @version 84.0.0
    	 */
 
    	/**
@@ -35035,7 +35035,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * UserRecordings service.
    	 * @module purecloud-platform-client-v2/api/UserRecordingsApi
-   	 * @version 83.0.0
+   	 * @version 84.0.0
    	 */
 
    	/**
@@ -35219,7 +35219,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Users service.
    	 * @module purecloud-platform-client-v2/api/UsersApi
-   	 * @version 83.0.0
+   	 * @version 84.0.0
    	 */
 
    	/**
@@ -35675,7 +35675,7 @@ define(['superagent'], function (superagent) { 'use strict';
 
    	/**
    	 * Get a user profile listing
-   	 * 
+   	 * This api is deprecated. User /api/v2/users
    	 * @param {Object} opts Optional parameters
    	 * @param {Number} opts.pageSize Page size (default to 25)
    	 * @param {Number} opts.pageNumber Page number (default to 1)
@@ -35929,7 +35929,7 @@ define(['superagent'], function (superagent) { 'use strict';
 
    	/**
    	 * Get user profile
-   	 * 
+   	 * This api has been deprecated. Use api/v2/users instead
    	 * @param {String} userId userId
    	 * @param {Object} opts Optional parameters
    	 * @param {Array.<String>} opts.expand Which fields, if any, to expand
@@ -37284,7 +37284,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Utilities service.
    	 * @module purecloud-platform-client-v2/api/UtilitiesApi
-   	 * @version 83.0.0
+   	 * @version 84.0.0
    	 */
 
    	/**
@@ -37395,7 +37395,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Voicemail service.
    	 * @module purecloud-platform-client-v2/api/VoicemailApi
-   	 * @version 83.0.0
+   	 * @version 84.0.0
    	 */
 
    	/**
@@ -38032,7 +38032,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * WebChat service.
    	 * @module purecloud-platform-client-v2/api/WebChatApi
-   	 * @version 83.0.0
+   	 * @version 84.0.0
    	 */
 
    	/**
@@ -38576,7 +38576,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Widgets service.
    	 * @module purecloud-platform-client-v2/api/WidgetsApi
-   	 * @version 83.0.0
+   	 * @version 84.0.0
    	 */
 
    	/**
@@ -38722,7 +38722,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * WorkforceManagement service.
    	 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-   	 * @version 83.0.0
+   	 * @version 84.0.0
    	 */
 
    	/**
@@ -42776,7 +42776,7 @@ define(['superagent'], function (superagent) { 'use strict';
     * </pre>
     * </p>
     * @module purecloud-platform-client-v2/index
-    * @version 83.0.0
+    * @version 84.0.0
     */
    class platformClient {
    	constructor() {

@@ -1,10 +1,10 @@
 ---
-title: JavaScript SDK
+title: Platform API Client SDK - JavaScript
 ---
 
 # Platform API Javascript Client
 
-A JavaScript library to interface with the PureCloud Platform API. View the documentation on the [PureCloud Developer Center](https://developer.mypurecloud.com/api/rest/client-libraries/javascript/). Browse the source code on [Github](https://github.com/MyPureCloud/platform-client-sdk-javascript).
+A JavaScript library to interface with the Genesys Cloud Platform API. View the documentation on the [Genesys Cloud Developer Center](https://developer.mypurecloud.com/api/rest/client-libraries/javascript/). Browse the source code on [Github](https://github.com/MyPureCloud/platform-client-sdk-javascript).
 
 [![GitHub release](https://img.shields.io/github/release/mypurecloud/platform-client-sdk-javascript.svg)]()
 [![npm](https://img.shields.io/npm/v/purecloud-platform-client-v2.svg)](https://www.npmjs.com/package/purecloud-platform-client-v2)
@@ -26,7 +26,7 @@ For direct use in a browser script:
 
 ```{"language":"html"}
 <!-- Include the CJS SDK -->
-<script src="https://sdk-cdn.mypurecloud.com/javascript/83.0.0/purecloud-platform-client-v2.min.js"></script>
+<script src="https://sdk-cdn.mypurecloud.com/javascript/84.0.0/purecloud-platform-client-v2.min.js"></script>
 
 <script type="text/javascript">
   // Obtain a reference to the platformClient object
@@ -43,7 +43,7 @@ For direct use in a browser script:
 
 <script type="text/javascript">
   // Obtain a reference to the platformClient object
-  requirejs(['https://sdk-cdn.mypurecloud.com/javascript/amd/83.0.0/purecloud-platform-client-v2.min.js'], (platformClient) => {
+  requirejs(['https://sdk-cdn.mypurecloud.com/javascript/amd/84.0.0/purecloud-platform-client-v2.min.js'], (platformClient) => {
     console.log(platformClient);
   });
 </script>
@@ -105,7 +105,7 @@ client.loginSaml2BearerGrant(clientId,clientSecret,orgName,encodedAssertionStrin
 
 **Web** [Implicit grant](https://developer.mypurecloud.com/api/rest/authorization/use-implicit-grant.html)
 
-The Implicit grant only works when used in a browser. This is because a node.js application does not have a browser interface that can display the PureCloud login window.
+The Implicit grant only works when used in a browser. This is because a node.js application does not have a browser interface that can display the Genesys Cloud login window.
 
 Optional parameters may be specified in the optional third parameter for `loginImplicitGrant`. This parameter accepts an object with key/value pairs. Supported properties:
 
@@ -139,7 +139,7 @@ When authenticating in a browser using `loginClientCredentialsGrant(...)`, if th
 
 ## Environments
 
-If connecting to a PureCloud environment other than mypurecloud.com (e.g. mypurecloud.ie), set the environment on the `ApiClient` instance with the PureCloudRegionHosts object.
+If connecting to a Genesys Cloud environment other than mypurecloud.com (e.g. mypurecloud.ie), set the environment on the `ApiClient` instance with the PureCloudRegionHosts object.
 
 ```{"language":"javascript"}
 const client = platformClient.ApiClient.instance;
@@ -315,6 +315,6 @@ The SDK's version is incremented according to the [Semantic Versioning Specifica
 
 ## Support
 
-This package is intended to be forwards compatible with v2 of PureCloud's Platform API. While the general policy for the API is not to introduce breaking changes, there are certain additions and changes to the API that cause breaking changes for the SDK, often due to the way the API is expressed in its swagger definition. Because of this, the SDK can have a major version bump while the API remains at major version 2. While the SDK is intended to be forward compatible, patches will only be released to the latest version. For these reasons, it is strongly recommended that all applications using this SDK are kept up to date and use the latest version of the SDK.
+This package is intended to be forwards compatible with v2 of Genesys Cloud's Platform API. While the general policy for the API is not to introduce breaking changes, there are certain additions and changes to the API that cause breaking changes for the SDK, often due to the way the API is expressed in its swagger definition. Because of this, the SDK can have a major version bump while the API remains at major version 2. While the SDK is intended to be forward compatible, patches will only be released to the latest version. For these reasons, it is strongly recommended that all applications using this SDK are kept up to date and use the latest version of the SDK.
 
-For any issues, questions, or suggestions for the SDK, visit the [PureCloud Developer Forum](https://developer.mypurecloud.com/forum/).
+For any issues, questions, or suggestions for the SDK, visit the [Genesys Cloud Developer Forum](https://developer.mypurecloud.com/forum/).

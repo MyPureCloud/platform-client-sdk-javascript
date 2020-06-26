@@ -375,7 +375,7 @@ let apiInstance = new platformClient.SCIMApi();
 
 let opts = { 
   'startIndex': 1, // Number | The 1-based index of the first query result.
-  'count': 25, // Number | The requested number of items per page. A value of 0 returns \"totalResults\". Note that page size over 25 will likely cause a 429 error by exceeding the internal resource limits. Page sizes over 25 will require using excludedAttributes and includeAttributes query parameters to exclude secondary lookup values -- (i.e. for Users externalId, roles, urn:ietf:params:scim:schemas:extension:genesys:purecloud:2.0:User:routingLanguages, urn:ietf:params:scim:schemas:extension:genesys:purecloud:2.0:User:routingSkills, and for Groups externalId, members).
+  'count': 25, // Number | The requested number of items per page. A value of 0 returns \"totalResults\".
   'attributes': ["attributes_example"], // [String] | Indicates which attributes to include. Returns these attributes and the 'id', 'active', and 'meta attributes . Use \"attributes\" to avoid expensive secondary calls for the default attributes.
   'excludedAttributes': ["excludedAttributes_example"], // [String] | Indicates which attributes to exclude. Returns the default attributes minus \"excludedAttributes\". Use \"excludedAttributes\" to avoid expensive secondary calls for the default attributes. The'id', 'active', and 'meta'  attributes will always be present in the output.
   'filter': "displayName eq groupName" // String | Filters results.
@@ -397,7 +397,7 @@ apiInstance.getScimGroups(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **startIndex** | **Number** | The 1-based index of the first query result. | [optional] [default to 1] |
- **count** | **Number** | The requested number of items per page. A value of 0 returns \&quot;totalResults\&quot;. Note that page size over 25 will likely cause a 429 error by exceeding the internal resource limits. Page sizes over 25 will require using excludedAttributes and includeAttributes query parameters to exclude secondary lookup values -- (i.e. for Users externalId, roles, urn:ietf:params:scim:schemas:extension:genesys:purecloud:2.0:User:routingLanguages, urn:ietf:params:scim:schemas:extension:genesys:purecloud:2.0:User:routingSkills, and for Groups externalId, members). | [optional] [default to 25] |
+ **count** | **Number** | The requested number of items per page. A value of 0 returns \&quot;totalResults\&quot;. | [optional] [default to 25] |
  **attributes** | **[String]** | Indicates which attributes to include. Returns these attributes and the &#39;id&#39;, &#39;active&#39;, and &#39;meta attributes . Use \&quot;attributes\&quot; to avoid expensive secondary calls for the default attributes. | [optional] <br />**Values**: id, displayName, members, externalId, urn:ietf:params:scim:schemas:core:2.0:Group:id, urn:ietf:params:scim:schemas:core:2.0:Group:displayName, urn:ietf:params:scim:schemas:core:2.0:Group:members, urn:ietf:params:scim:schemas:core:2.0:Group:externalId |
  **excludedAttributes** | **[String]** | Indicates which attributes to exclude. Returns the default attributes minus \&quot;excludedAttributes\&quot;. Use \&quot;excludedAttributes\&quot; to avoid expensive secondary calls for the default attributes. The&#39;id&#39;, &#39;active&#39;, and &#39;meta&#39;  attributes will always be present in the output. | [optional] <br />**Values**: id, displayName, members, externalId, urn:ietf:params:scim:schemas:core:2.0:Group:id, urn:ietf:params:scim:schemas:core:2.0:Group:displayName, urn:ietf:params:scim:schemas:core:2.0:Group:members, urn:ietf:params:scim:schemas:core:2.0:Group:externalId |
  **filter** | **String** | Filters results. | [optional]  |
@@ -688,8 +688,11 @@ Get a user
 
 
 
-Requires NO permissions: 
+Requires ANY permissions: 
 
+* authorization:grant:view
+* authorization:grant:add
+* authorization:grant:delete
 
 
 
@@ -750,8 +753,11 @@ Get a list of users
 
 To return all active users, do not use a filter parameter. To return inactive users, set \&quot;filter\&quot; to \&quot;active eq false\&quot;. By default, returns SCIM attributes externalId, enterprise-user:manager, and roles. To exclude these attributes, set \&quot;attributes\&quot; to \&quot;id,active\&quot; or \&quot;excludeAttributes\&quot; to \&quot;externalId,roles,urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:division\&quot;.
 
-Requires NO permissions: 
+Requires ANY permissions: 
 
+* authorization:grant:view
+* authorization:grant:add
+* authorization:grant:delete
 
 
 
@@ -770,7 +776,7 @@ let apiInstance = new platformClient.SCIMApi();
 
 let opts = { 
   'startIndex': 1, // Number | The 1-based index of the first query result.
-  'count': 25, // Number | The requested number of items per page. A value of 0 returns \"totalResults\". Note that page size over 25 will likely cause a 429 error by exceeding the internal resource limits. Page sizes over 25 will require using excludedAttributes and includeAttributes query parameters to exclude secondary lookup values -- (i.e. for Users externalId, roles, urn:ietf:params:scim:schemas:extension:genesys:purecloud:2.0:User:routingLanguages, urn:ietf:params:scim:schemas:extension:genesys:purecloud:2.0:User:routingSkills, and for Groups externalId, members).
+  'count': 25, // Number | The requested number of items per page. A value of 0 returns \"totalResults\".
   'attributes': ["attributes_example"], // [String] | Indicates which attributes to include. Returns these attributes and the 'id', 'userName', 'active', and 'meta' attributes. Use \"attributes\" to avoid expensive secondary calls for the default attributes.
   'excludedAttributes': ["excludedAttributes_example"], // [String] | Indicates which attributes to exclude. Returns the default attributes minus \"excludedAttributes\". Use \"excludedAttributes\" to avoid expensive secondary calls for the default attributes. The 'id', 'userName', 'active', 'meta' attributes  will always be present in output.
   'filter': "filter_example" // String | Filters results. If nothing is specified, returns all active users. Examples of valid values: \"id eq 857449b0-d9e7-4cd0-acbf-a6adfb9ef1e9\", \"userName eq search@sample.org\", \"manager eq 16e10e2f-1136-43fe-bb84-eac073168a49\", \"email eq search@sample.org\", \"division eq divisionName\", \"externalId eq 167844\", \"active eq false\".
@@ -792,7 +798,7 @@ apiInstance.getScimUsers(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **startIndex** | **Number** | The 1-based index of the first query result. | [optional] [default to 1] |
- **count** | **Number** | The requested number of items per page. A value of 0 returns \&quot;totalResults\&quot;. Note that page size over 25 will likely cause a 429 error by exceeding the internal resource limits. Page sizes over 25 will require using excludedAttributes and includeAttributes query parameters to exclude secondary lookup values -- (i.e. for Users externalId, roles, urn:ietf:params:scim:schemas:extension:genesys:purecloud:2.0:User:routingLanguages, urn:ietf:params:scim:schemas:extension:genesys:purecloud:2.0:User:routingSkills, and for Groups externalId, members). | [optional] [default to 25] |
+ **count** | **Number** | The requested number of items per page. A value of 0 returns \&quot;totalResults\&quot;. | [optional] [default to 25] |
  **attributes** | **[String]** | Indicates which attributes to include. Returns these attributes and the &#39;id&#39;, &#39;userName&#39;, &#39;active&#39;, and &#39;meta&#39; attributes. Use \&quot;attributes\&quot; to avoid expensive secondary calls for the default attributes. | [optional] <br />**Values**: id, userName, displayName, title, active, externalId, phoneNumbers, emails, groups, roles, urn:ietf:params:scim:schemas:core:2.0:User:id, urn:ietf:params:scim:schemas:core:2.0:User:userName, urn:ietf:params:scim:schemas:core:2.0:User:displayName, urn:ietf:params:scim:schemas:core:2.0:User:title, urn:ietf:params:scim:schemas:core:2.0:User:active, urn:ietf:params:scim:schemas:core:2.0:User:externalId, urn:ietf:params:scim:schemas:core:2.0:User:phoneNumbers, urn:ietf:params:scim:schemas:core:2.0:User:emails, urn:ietf:params:scim:schemas:core:2.0:User:groups, urn:ietf:params:scim:schemas:core:2.0:User:roles, urn:ietf:params:scim:schemas:extension:enterprise:2.0:User, urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:division, urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department, urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:manager, urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:manager.value, urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:employeeNumber, urn:ietf:params:scim:schemas:extension:genesys:purecloud:2.0:User, urn:ietf:params:scim:schemas:extension:genesys:purecloud:2.0:User:routingSkills, urn:ietf:params:scim:schemas:extension:genesys:purecloud:2.0:User:routingLanguages |
  **excludedAttributes** | **[String]** | Indicates which attributes to exclude. Returns the default attributes minus \&quot;excludedAttributes\&quot;. Use \&quot;excludedAttributes\&quot; to avoid expensive secondary calls for the default attributes. The &#39;id&#39;, &#39;userName&#39;, &#39;active&#39;, &#39;meta&#39; attributes  will always be present in output. | [optional] <br />**Values**: id, userName, displayName, title, active, externalId, phoneNumbers, emails, groups, roles, urn:ietf:params:scim:schemas:core:2.0:User:id, urn:ietf:params:scim:schemas:core:2.0:User:userName, urn:ietf:params:scim:schemas:core:2.0:User:displayName, urn:ietf:params:scim:schemas:core:2.0:User:title, urn:ietf:params:scim:schemas:core:2.0:User:active, urn:ietf:params:scim:schemas:core:2.0:User:externalId, urn:ietf:params:scim:schemas:core:2.0:User:phoneNumbers, urn:ietf:params:scim:schemas:core:2.0:User:emails, urn:ietf:params:scim:schemas:core:2.0:User:groups, urn:ietf:params:scim:schemas:core:2.0:User:roles, urn:ietf:params:scim:schemas:extension:enterprise:2.0:User, urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:division, urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department, urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:manager, urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:manager.value, urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:employeeNumber, urn:ietf:params:scim:schemas:extension:genesys:purecloud:2.0:User, urn:ietf:params:scim:schemas:extension:genesys:purecloud:2.0:User:routingSkills, urn:ietf:params:scim:schemas:extension:genesys:purecloud:2.0:User:routingLanguages |
  **filter** | **String** | Filters results. If nothing is specified, returns all active users. Examples of valid values: \&quot;id eq 857449b0-d9e7-4cd0-acbf-a6adfb9ef1e9\&quot;, \&quot;userName eq search@sample.org\&quot;, \&quot;manager eq 16e10e2f-1136-43fe-bb84-eac073168a49\&quot;, \&quot;email eq search@sample.org\&quot;, \&quot;division eq divisionName\&quot;, \&quot;externalId eq 167844\&quot;, \&quot;active eq false\&quot;. | [optional]  |
@@ -899,7 +905,7 @@ let apiInstance = new platformClient.SCIMApi();
 let filter = "displayName eq groupName"; // String | Filters results.
 let opts = { 
   'startIndex': 1, // Number | The 1-based index of the first query result.
-  'count': 25, // Number | The requested number of items per page. A value of 0 returns \"totalResults\". Note that page size over 25 will likely cause a 429 error by exceeding the internal resource limits. Page sizes over 25 will require using excludedAttributes and includeAttributes query parameters to exclude secondary lookup values -- (i.e. for Users externalId, roles, urn:ietf:params:scim:schemas:extension:genesys:purecloud:2.0:User:routingLanguages, urn:ietf:params:scim:schemas:extension:genesys:purecloud:2.0:User:routingSkills, and for Groups externalId, members).
+  'count': 25, // Number | The requested number of items per page. A value of 0 returns \"totalResults\".
   'attributes': ["attributes_example"], // [String] | Indicates which attributes to include. Returns these attributes and the 'id', 'active', and 'meta attributes . Use \"attributes\" to avoid expensive secondary calls for the default attributes.
   'excludedAttributes': ["excludedAttributes_example"] // [String] | Indicates which attributes to exclude. Returns the default attributes minus \"excludedAttributes\". Use \"excludedAttributes\" to avoid expensive secondary calls for the default attributes. The'id', 'active', and 'meta'  attributes will always be present in the output.
 };
@@ -921,7 +927,7 @@ apiInstance.getScimV2Groups(filter, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **filter** | **String** | Filters results. |  |
  **startIndex** | **Number** | The 1-based index of the first query result. | [optional] [default to 1] |
- **count** | **Number** | The requested number of items per page. A value of 0 returns \&quot;totalResults\&quot;. Note that page size over 25 will likely cause a 429 error by exceeding the internal resource limits. Page sizes over 25 will require using excludedAttributes and includeAttributes query parameters to exclude secondary lookup values -- (i.e. for Users externalId, roles, urn:ietf:params:scim:schemas:extension:genesys:purecloud:2.0:User:routingLanguages, urn:ietf:params:scim:schemas:extension:genesys:purecloud:2.0:User:routingSkills, and for Groups externalId, members). | [optional] [default to 25] |
+ **count** | **Number** | The requested number of items per page. A value of 0 returns \&quot;totalResults\&quot;. | [optional] [default to 25] |
  **attributes** | **[String]** | Indicates which attributes to include. Returns these attributes and the &#39;id&#39;, &#39;active&#39;, and &#39;meta attributes . Use \&quot;attributes\&quot; to avoid expensive secondary calls for the default attributes. | [optional] <br />**Values**: id, displayName, members, externalId, urn:ietf:params:scim:schemas:core:2.0:Group:id, urn:ietf:params:scim:schemas:core:2.0:Group:displayName, urn:ietf:params:scim:schemas:core:2.0:Group:members, urn:ietf:params:scim:schemas:core:2.0:Group:externalId |
  **excludedAttributes** | **[String]** | Indicates which attributes to exclude. Returns the default attributes minus \&quot;excludedAttributes\&quot;. Use \&quot;excludedAttributes\&quot; to avoid expensive secondary calls for the default attributes. The&#39;id&#39;, &#39;active&#39;, and &#39;meta&#39;  attributes will always be present in the output. | [optional] <br />**Values**: id, displayName, members, externalId, urn:ietf:params:scim:schemas:core:2.0:Group:id, urn:ietf:params:scim:schemas:core:2.0:Group:displayName, urn:ietf:params:scim:schemas:core:2.0:Group:members, urn:ietf:params:scim:schemas:core:2.0:Group:externalId |
 {: class="table table-striped"}
@@ -1211,8 +1217,11 @@ Get a user
 
 
 
-Requires NO permissions: 
+Requires ANY permissions: 
 
+* authorization:grant:view
+* authorization:grant:add
+* authorization:grant:delete
 
 
 
@@ -1273,8 +1282,11 @@ Get a list of users
 
 To return all active users, do not use a filter parameter. To return inactive users, set \&quot;filter\&quot; to \&quot;active eq false\&quot;. By default, returns SCIM attributes externalId, enterprise-user:manager, and roles. To exclude these attributes, set \&quot;attributes\&quot; to \&quot;id,active\&quot; or \&quot;excludeAttributes\&quot; to \&quot;externalId,roles,urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:division\&quot;.
 
-Requires NO permissions: 
+Requires ANY permissions: 
 
+* authorization:grant:view
+* authorization:grant:add
+* authorization:grant:delete
 
 
 
@@ -1293,7 +1305,7 @@ let apiInstance = new platformClient.SCIMApi();
 
 let opts = { 
   'startIndex': 1, // Number | The 1-based index of the first query result.
-  'count': 25, // Number | The requested number of items per page. A value of 0 returns \"totalResults\". Note that page size over 25 will likely cause a 429 error by exceeding the internal resource limits. Page sizes over 25 will require using excludedAttributes and includeAttributes query parameters to exclude secondary lookup values -- (i.e. for Users externalId, roles, urn:ietf:params:scim:schemas:extension:genesys:purecloud:2.0:User:routingLanguages, urn:ietf:params:scim:schemas:extension:genesys:purecloud:2.0:User:routingSkills, and for Groups externalId, members).
+  'count': 25, // Number | The requested number of items per page. A value of 0 returns \"totalResults\".
   'attributes': ["attributes_example"], // [String] | Indicates which attributes to include. Returns these attributes and the 'id', 'userName', 'active', and 'meta' attributes. Use \"attributes\" to avoid expensive secondary calls for the default attributes.
   'excludedAttributes': ["excludedAttributes_example"], // [String] | Indicates which attributes to exclude. Returns the default attributes minus \"excludedAttributes\". Use \"excludedAttributes\" to avoid expensive secondary calls for the default attributes. The 'id', 'userName', 'active', 'meta' attributes  will always be present in output.
   'filter': "filter_example" // String | Filters results. If nothing is specified, returns all active users. Examples of valid values: \"id eq 857449b0-d9e7-4cd0-acbf-a6adfb9ef1e9\", \"userName eq search@sample.org\", \"manager eq 16e10e2f-1136-43fe-bb84-eac073168a49\", \"email eq search@sample.org\", \"division eq divisionName\", \"externalId eq 167844\", \"active eq false\".
@@ -1315,7 +1327,7 @@ apiInstance.getScimV2Users(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **startIndex** | **Number** | The 1-based index of the first query result. | [optional] [default to 1] |
- **count** | **Number** | The requested number of items per page. A value of 0 returns \&quot;totalResults\&quot;. Note that page size over 25 will likely cause a 429 error by exceeding the internal resource limits. Page sizes over 25 will require using excludedAttributes and includeAttributes query parameters to exclude secondary lookup values -- (i.e. for Users externalId, roles, urn:ietf:params:scim:schemas:extension:genesys:purecloud:2.0:User:routingLanguages, urn:ietf:params:scim:schemas:extension:genesys:purecloud:2.0:User:routingSkills, and for Groups externalId, members). | [optional] [default to 25] |
+ **count** | **Number** | The requested number of items per page. A value of 0 returns \&quot;totalResults\&quot;. | [optional] [default to 25] |
  **attributes** | **[String]** | Indicates which attributes to include. Returns these attributes and the &#39;id&#39;, &#39;userName&#39;, &#39;active&#39;, and &#39;meta&#39; attributes. Use \&quot;attributes\&quot; to avoid expensive secondary calls for the default attributes. | [optional] <br />**Values**: id, userName, displayName, title, active, externalId, phoneNumbers, emails, groups, roles, urn:ietf:params:scim:schemas:core:2.0:User:id, urn:ietf:params:scim:schemas:core:2.0:User:userName, urn:ietf:params:scim:schemas:core:2.0:User:displayName, urn:ietf:params:scim:schemas:core:2.0:User:title, urn:ietf:params:scim:schemas:core:2.0:User:active, urn:ietf:params:scim:schemas:core:2.0:User:externalId, urn:ietf:params:scim:schemas:core:2.0:User:phoneNumbers, urn:ietf:params:scim:schemas:core:2.0:User:emails, urn:ietf:params:scim:schemas:core:2.0:User:groups, urn:ietf:params:scim:schemas:core:2.0:User:roles, urn:ietf:params:scim:schemas:extension:enterprise:2.0:User, urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:division, urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department, urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:manager, urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:manager.value, urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:employeeNumber, urn:ietf:params:scim:schemas:extension:genesys:purecloud:2.0:User, urn:ietf:params:scim:schemas:extension:genesys:purecloud:2.0:User:routingSkills, urn:ietf:params:scim:schemas:extension:genesys:purecloud:2.0:User:routingLanguages |
  **excludedAttributes** | **[String]** | Indicates which attributes to exclude. Returns the default attributes minus \&quot;excludedAttributes\&quot;. Use \&quot;excludedAttributes\&quot; to avoid expensive secondary calls for the default attributes. The &#39;id&#39;, &#39;userName&#39;, &#39;active&#39;, &#39;meta&#39; attributes  will always be present in output. | [optional] <br />**Values**: id, userName, displayName, title, active, externalId, phoneNumbers, emails, groups, roles, urn:ietf:params:scim:schemas:core:2.0:User:id, urn:ietf:params:scim:schemas:core:2.0:User:userName, urn:ietf:params:scim:schemas:core:2.0:User:displayName, urn:ietf:params:scim:schemas:core:2.0:User:title, urn:ietf:params:scim:schemas:core:2.0:User:active, urn:ietf:params:scim:schemas:core:2.0:User:externalId, urn:ietf:params:scim:schemas:core:2.0:User:phoneNumbers, urn:ietf:params:scim:schemas:core:2.0:User:emails, urn:ietf:params:scim:schemas:core:2.0:User:groups, urn:ietf:params:scim:schemas:core:2.0:User:roles, urn:ietf:params:scim:schemas:extension:enterprise:2.0:User, urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:division, urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department, urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:manager, urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:manager.value, urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:employeeNumber, urn:ietf:params:scim:schemas:extension:genesys:purecloud:2.0:User, urn:ietf:params:scim:schemas:extension:genesys:purecloud:2.0:User:routingSkills, urn:ietf:params:scim:schemas:extension:genesys:purecloud:2.0:User:routingLanguages |
  **filter** | **String** | Filters results. If nothing is specified, returns all active users. Examples of valid values: \&quot;id eq 857449b0-d9e7-4cd0-acbf-a6adfb9ef1e9\&quot;, \&quot;userName eq search@sample.org\&quot;, \&quot;manager eq 16e10e2f-1136-43fe-bb84-eac073168a49\&quot;, \&quot;email eq search@sample.org\&quot;, \&quot;division eq divisionName\&quot;, \&quot;externalId eq 167844\&quot;, \&quot;active eq false\&quot;. | [optional]  |
@@ -1371,20 +1383,20 @@ ScimV2PatchRequest <a href="#" onclick="return copyScimV2PatchRequestExample()">
       "number": Boolean, 
       "boolean": Boolean, 
       "object": Boolean, 
-      "valueNode": Boolean, 
-      "containerNode": Boolean, 
       "missingNode": Boolean, 
+      "valueNode": Boolean, 
+      "binary": Boolean, 
       "pojo": Boolean, 
-      "floatingPointNumber": Boolean, 
+      "containerNode": Boolean, 
+      "int": Boolean, 
       "integralNumber": Boolean, 
       "short": Boolean, 
-      "int": Boolean, 
       "long": Boolean, 
+      "floatingPointNumber": Boolean, 
       "double": Boolean, 
       "bigDecimal": Boolean, 
       "bigInteger": Boolean, 
       "textual": Boolean, 
-      "binary": Boolean, 
       "array": Boolean, 
       "null": Boolean, 
     },  
@@ -1489,20 +1501,20 @@ ScimV2PatchRequest <a href="#" onclick="return copyScimV2PatchRequestExample()">
       "number": Boolean, 
       "boolean": Boolean, 
       "object": Boolean, 
-      "valueNode": Boolean, 
-      "containerNode": Boolean, 
       "missingNode": Boolean, 
+      "valueNode": Boolean, 
+      "binary": Boolean, 
       "pojo": Boolean, 
-      "floatingPointNumber": Boolean, 
+      "containerNode": Boolean, 
+      "int": Boolean, 
       "integralNumber": Boolean, 
       "short": Boolean, 
-      "int": Boolean, 
       "long": Boolean, 
+      "floatingPointNumber": Boolean, 
       "double": Boolean, 
       "bigDecimal": Boolean, 
       "bigInteger": Boolean, 
       "textual": Boolean, 
-      "binary": Boolean, 
       "array": Boolean, 
       "null": Boolean, 
     },  
@@ -1602,20 +1614,20 @@ ScimV2PatchRequest <a href="#" onclick="return copyScimV2PatchRequestExample()">
       "number": Boolean, 
       "boolean": Boolean, 
       "object": Boolean, 
-      "valueNode": Boolean, 
-      "containerNode": Boolean, 
       "missingNode": Boolean, 
+      "valueNode": Boolean, 
+      "binary": Boolean, 
       "pojo": Boolean, 
-      "floatingPointNumber": Boolean, 
+      "containerNode": Boolean, 
+      "int": Boolean, 
       "integralNumber": Boolean, 
       "short": Boolean, 
-      "int": Boolean, 
       "long": Boolean, 
+      "floatingPointNumber": Boolean, 
       "double": Boolean, 
       "bigDecimal": Boolean, 
       "bigInteger": Boolean, 
       "textual": Boolean, 
-      "binary": Boolean, 
       "array": Boolean, 
       "null": Boolean, 
     },  
@@ -1720,20 +1732,20 @@ ScimV2PatchRequest <a href="#" onclick="return copyScimV2PatchRequestExample()">
       "number": Boolean, 
       "boolean": Boolean, 
       "object": Boolean, 
-      "valueNode": Boolean, 
-      "containerNode": Boolean, 
       "missingNode": Boolean, 
+      "valueNode": Boolean, 
+      "binary": Boolean, 
       "pojo": Boolean, 
-      "floatingPointNumber": Boolean, 
+      "containerNode": Boolean, 
+      "int": Boolean, 
       "integralNumber": Boolean, 
       "short": Boolean, 
-      "int": Boolean, 
       "long": Boolean, 
+      "floatingPointNumber": Boolean, 
       "double": Boolean, 
       "bigDecimal": Boolean, 
       "bigInteger": Boolean, 
       "textual": Boolean, 
-      "binary": Boolean, 
       "array": Boolean, 
       "null": Boolean, 
     },  

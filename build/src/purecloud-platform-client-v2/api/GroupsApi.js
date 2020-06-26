@@ -5,7 +5,7 @@ class GroupsApi {
 	/**
 	 * Groups service.
 	 * @module purecloud-platform-client-v2/api/GroupsApi
-	 * @version 83.0.0
+	 * @version 84.0.0
 	 */
 
 	/**
@@ -184,7 +184,7 @@ class GroupsApi {
 
 	/**
 	 * Get group profile
-	 * 
+	 * This api is deprecated. Use /api/v2/groups instead
 	 * @param {String} groupId groupId
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.fields Comma separated fields to return.  Allowable values can be found by querying /api/v2/fieldconfig?type=group and using the key for the elements returned by the fieldList
@@ -270,7 +270,7 @@ class GroupsApi {
 
 	/**
 	 * Get group profile listing
-	 * 
+	 * This api is deprecated. Use /api/v2/groups instead.
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)

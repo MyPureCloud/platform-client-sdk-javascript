@@ -987,13 +987,13 @@ apiInstance.getFieldconfig(type)
 
 # UserProfileEntityListing getProfilesUsers(opts)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 GET /api/v2/profiles/users
 
 Get a user profile listing
 
-
+This api is deprecated. User /api/v2/users
 
 Requires NO permissions: 
 
@@ -1513,13 +1513,13 @@ apiInstance.getUserOutofoffice(userId)
 
 # UserProfile getUserProfile(userId, opts)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 GET /api/v2/users/{userId}/profile
 
 Get user profile
 
-
+This api has been deprecated. Use api/v2/users instead
 
 Requires NO permissions: 
 
@@ -1560,7 +1560,7 @@ apiInstance.getUserProfile(userId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | userId |  |
- **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography |
+ **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team |
 {: class="table table-striped"}
 
 ### Return type

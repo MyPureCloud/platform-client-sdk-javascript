@@ -5,7 +5,7 @@ class UsersApi {
 	/**
 	 * Users service.
 	 * @module purecloud-platform-client-v2/api/UsersApi
-	 * @version 83.0.0
+	 * @version 84.0.0
 	 */
 
 	/**
@@ -461,7 +461,7 @@ class UsersApi {
 
 	/**
 	 * Get a user profile listing
-	 * 
+	 * This api is deprecated. User /api/v2/users
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
@@ -715,7 +715,7 @@ class UsersApi {
 
 	/**
 	 * Get user profile
-	 * 
+	 * This api has been deprecated. Use api/v2/users instead
 	 * @param {String} userId userId
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand Which fields, if any, to expand
