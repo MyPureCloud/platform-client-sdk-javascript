@@ -1,86 +1,54 @@
-Platform API version: 4032
+Platform API version: 4049
 
 
-# Major Changes (11 changes)
+# Major Changes (1 change)
 
-**GET /api/v2/groups/{groupId}/profile** (1 change)
+**EntityListing** (1 change)
 
-* Has been deprecated
-
-**GET /api/v2/profiles/users** (1 change)
-
-* Has been deprecated
-
-**GET /api/v2/profiles/groups** (1 change)
-
-* Has been deprecated
-
-**GET /api/v2/users/{userId}/profile** (1 change)
-
-* Has been deprecated
-
-**PromptAsset** (1 change)
-
-* Values are now constrained by enum members
-
-**EntityListing** (5 changes)
-
-* Property pageSize was removed
-* Property pageNumber was removed
-* Property total was removed
-* Property pageCount was removed
-* Property entities was changed from DataTableImportJob[] to object[]
-
-**PromptAssetCreate** (1 change)
-
-* Values are now constrained by enum members
+* Property entities was changed from object[] to DataTableImportJob[]
 
 
-# Minor Changes (3 changes)
+# Minor Changes (16 changes)
 
-**CoachingAppointmentResponse** (1 change)
+**EntityListing** (4 changes)
 
-* Enum value InvalidSchedule was added to property status
+* Optional property pageSize was added
+* Optional property pageNumber was added
+* Optional property total was added
+* Optional property pageCount was added
 
-**CoachingNotification** (1 change)
+**BuAgentScheduleActivity** (2 changes)
 
-* Enum value InvalidSchedule was added to property status
+* Optional property externalActivityId was added
+* Optional property externalActivityType was added
 
-**EventMessage** (1 change)
+**ViewFilter** (2 changes)
 
-* Enum value CAMPAIGN_QUEUE_MEMBERS_LIMIT_EXCEEDED was added to property code
+* Optional property callbackNumberList was added
+* Optional property callbackInterval was added
+
+**AuditQueryEntity** (2 changes)
+
+* Enum value Schedule was added to property name
+* Enum value Unpublish was added to property actions
+
+**AuditQueryService** (1 change)
+
+* Enum value WorkforceManagement was added to property name
+
+**AuditQueryExecutionStatusResponse** (1 change)
+
+* Enum value WorkforceManagement was added to property serviceName
+
+**AuditLogMessage** (3 changes)
+
+* Enum value WorkforceManagement was added to property serviceName
+* Enum value Unpublish was added to property action
+* Enum value Schedule was added to property entityType
+
+**AuditQueryRequest** (1 change)
+
+* Enum value WorkforceManagement was added to property serviceName
 
 
-# Point Changes (8 changes)
-
-**GET /api/v2/scim/v2/users** (1 change)
-
-* Description was changed for parameter count
-
-**GET /api/v2/scim/groups** (1 change)
-
-* Description was changed for parameter count
-
-**GET /api/v2/groups/{groupId}/profile** (1 change)
-
-* Description was changed
-
-**GET /api/v2/scim/users** (1 change)
-
-* Description was changed for parameter count
-
-**GET /api/v2/profiles/users** (1 change)
-
-* Description was changed
-
-**GET /api/v2/profiles/groups** (1 change)
-
-* Description was changed
-
-**GET /api/v2/users/{userId}/profile** (1 change)
-
-* Description was changed
-
-**GET /api/v2/scim/v2/groups** (1 change)
-
-* Description was changed for parameter count
+# Point Changes (0 changes)

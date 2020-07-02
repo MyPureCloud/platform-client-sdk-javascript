@@ -2565,6 +2565,8 @@ ReportingExportJobRequest <a href="#" onclick="return copyReportingExportJobRequ
     "locationIds": [String], 
     "flowOutTypes": [String], 
     "providerList": [String], 
+    "callbackNumberList": [String], 
+    "callbackInterval": String, 
   },  
   "read": Boolean, 
   "locale": String, 

@@ -357,6 +357,10 @@
       "class": "WfmBuScheduleRunTopicBuSchedulingRunProgressNotification"
     },
     {
+      "topic": "v2.workforcemanagement.businessunits.{id}.shorttermforecasts.import",
+      "class": "WfmBuShortTermForecastImportCompleteTopicBuShortTermForecastNotification"
+    },
+    {
       "topic": "v2.workforcemanagement.managementunits.{id}",
       "class": "WfmMoveManagementUnitTopicMoveManagementUnitNotification"
     },
