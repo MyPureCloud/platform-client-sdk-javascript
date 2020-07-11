@@ -18,7 +18,7 @@ var PureCloudRegionHosts = {
 
 /**
  * @module purecloud-platform-client-v2/ApiClient
- * @version 85.0.0
+ * @version 86.0.0
  */
 class ApiClient {
 	/**
@@ -774,7 +774,7 @@ class ApiClient {
 
 		// set header parameters
 		request.set(this.defaultHeaders).set(this.normalizeParams(headerParams));
-		//request.set({ 'purecloud-sdk': '85.0.0' });
+		//request.set({ 'purecloud-sdk': '86.0.0' });
 
 		// set request timeout
 		request.timeout(this.timeout);
@@ -899,7 +899,7 @@ class AlertingApi {
 	/**
 	 * Alerting service.
 	 * @module purecloud-platform-client-v2/api/AlertingApi
-	 * @version 85.0.0
+	 * @version 86.0.0
 	 */
 
 	/**
@@ -1213,7 +1213,7 @@ class AnalyticsApi {
 	/**
 	 * Analytics service.
 	 * @module purecloud-platform-client-v2/api/AnalyticsApi
-	 * @version 85.0.0
+	 * @version 86.0.0
 	 */
 
 	/**
@@ -2178,7 +2178,7 @@ class ArchitectApi {
 	/**
 	 * Architect service.
 	 * @module purecloud-platform-client-v2/api/ArchitectApi
-	 * @version 85.0.0
+	 * @version 86.0.0
 	 */
 
 	/**
@@ -4881,7 +4881,7 @@ class AuditApi {
 	/**
 	 * Audit service.
 	 * @module purecloud-platform-client-v2/api/AuditApi
-	 * @version 85.0.0
+	 * @version 86.0.0
 	 */
 
 	/**
@@ -4997,13 +4997,42 @@ class AuditApi {
 		);
 	}
 
+	/**
+	 * This endpoint will only retrieve 7 days worth of audits for certain services. Please use /query to get a full list and older audits.
+	 * 
+	 * @param {Object} body query
+	 * @param {Object} opts Optional parameters
+	 * @param {Array.<String>} opts.expand Which fields, if any, to expand
+	 */
+	postAuditsQueryRealtime(body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postAuditsQueryRealtime';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/audits/query/realtime', 
+			'POST', 
+			{  }, 
+			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
 }
 
 class AuthorizationApi {
 	/**
 	 * Authorization service.
 	 * @module purecloud-platform-client-v2/api/AuthorizationApi
-	 * @version 85.0.0
+	 * @version 86.0.0
 	 */
 
 	/**
@@ -6090,7 +6119,7 @@ class BillingApi {
 	/**
 	 * Billing service.
 	 * @module purecloud-platform-client-v2/api/BillingApi
-	 * @version 85.0.0
+	 * @version 86.0.0
 	 */
 
 	/**
@@ -6170,7 +6199,7 @@ class CoachingApi {
 	/**
 	 * Coaching service.
 	 * @module purecloud-platform-client-v2/api/CoachingApi
-	 * @version 85.0.0
+	 * @version 86.0.0
 	 */
 
 	/**
@@ -6654,7 +6683,7 @@ class ContentManagementApi {
 	/**
 	 * ContentManagement service.
 	 * @module purecloud-platform-client-v2/api/ContentManagementApi
-	 * @version 85.0.0
+	 * @version 86.0.0
 	 */
 
 	/**
@@ -7794,7 +7823,7 @@ class ConversationsApi {
 	/**
 	 * Conversations service.
 	 * @module purecloud-platform-client-v2/api/ConversationsApi
-	 * @version 85.0.0
+	 * @version 86.0.0
 	 */
 
 	/**
@@ -11756,7 +11785,7 @@ class DataExtensionsApi {
 	/**
 	 * DataExtensions service.
 	 * @module purecloud-platform-client-v2/api/DataExtensionsApi
-	 * @version 85.0.0
+	 * @version 86.0.0
 	 */
 
 	/**
@@ -11842,7 +11871,7 @@ class ExternalContactsApi {
 	/**
 	 * ExternalContacts service.
 	 * @module purecloud-platform-client-v2/api/ExternalContactsApi
-	 * @version 85.0.0
+	 * @version 86.0.0
 	 */
 
 	/**
@@ -13085,7 +13114,7 @@ class FaxApi {
 	/**
 	 * Fax service.
 	 * @module purecloud-platform-client-v2/api/FaxApi
-	 * @version 85.0.0
+	 * @version 86.0.0
 	 */
 
 	/**
@@ -13256,7 +13285,7 @@ class FlowsApi {
 	/**
 	 * Flows service.
 	 * @module purecloud-platform-client-v2/api/FlowsApi
-	 * @version 85.0.0
+	 * @version 86.0.0
 	 */
 
 	/**
@@ -13327,7 +13356,7 @@ class GeneralDataProtectionRegulationApi {
 	/**
 	 * GeneralDataProtectionRegulation service.
 	 * @module purecloud-platform-client-v2/api/GeneralDataProtectionRegulationApi
-	 * @version 85.0.0
+	 * @version 86.0.0
 	 */
 
 	/**
@@ -13457,7 +13486,7 @@ class GeolocationApi {
 	/**
 	 * Geolocation service.
 	 * @module purecloud-platform-client-v2/api/GeolocationApi
-	 * @version 85.0.0
+	 * @version 86.0.0
 	 */
 
 	/**
@@ -13588,7 +13617,7 @@ class GreetingsApi {
 	/**
 	 * Greetings service.
 	 * @module purecloud-platform-client-v2/api/GreetingsApi
-	 * @version 85.0.0
+	 * @version 86.0.0
 	 */
 
 	/**
@@ -14043,7 +14072,7 @@ class GroupsApi {
 	/**
 	 * Groups service.
 	 * @module purecloud-platform-client-v2/api/GroupsApi
-	 * @version 85.0.0
+	 * @version 86.0.0
 	 */
 
 	/**
@@ -14448,7 +14477,7 @@ class IdentityProviderApi {
 	/**
 	 * IdentityProvider service.
 	 * @module purecloud-platform-client-v2/api/IdentityProviderApi
-	 * @version 85.0.0
+	 * @version 86.0.0
 	 */
 
 	/**
@@ -15204,7 +15233,7 @@ class IntegrationsApi {
 	/**
 	 * Integrations service.
 	 * @module purecloud-platform-client-v2/api/IntegrationsApi
-	 * @version 85.0.0
+	 * @version 86.0.0
 	 */
 
 	/**
@@ -16696,7 +16725,7 @@ class KnowledgeApi {
 	/**
 	 * Knowledge service.
 	 * @module purecloud-platform-client-v2/api/KnowledgeApi
-	 * @version 85.0.0
+	 * @version 86.0.0
 	 */
 
 	/**
@@ -17415,7 +17444,7 @@ class LanguageUnderstandingApi {
 	/**
 	 * LanguageUnderstanding service.
 	 * @module purecloud-platform-client-v2/api/LanguageUnderstandingApi
-	 * @version 85.0.0
+	 * @version 86.0.0
 	 */
 
 	/**
@@ -17475,6 +17504,36 @@ class LanguageUnderstandingApi {
 			'/api/v2/languageunderstanding/domains/{domainId}/feedback/{feedbackId}', 
 			'DELETE', 
 			{ 'domainId': domainId,'feedbackId': feedbackId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete an NLU Domain Version
+	 * 
+	 * @param {String} domainId ID of the NLU domain.
+	 * @param {String} domainVersionId ID of the NLU domain version.
+	 */
+	deleteLanguageunderstandingDomainVersion(domainId, domainVersionId) { 
+		// verify the required parameter 'domainId' is set
+		if (domainId === undefined || domainId === null) {
+			throw 'Missing the required parameter "domainId" when calling deleteLanguageunderstandingDomainVersion';
+		}
+		// verify the required parameter 'domainVersionId' is set
+		if (domainVersionId === undefined || domainVersionId === null) {
+			throw 'Missing the required parameter "domainVersionId" when calling deleteLanguageunderstandingDomainVersion';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/languageunderstanding/domains/{domainId}/versions/{domainVersionId}', 
+			'DELETE', 
+			{ 'domainId': domainId,'domainVersionId': domainVersionId }, 
 			{  }, 
 			{  }, 
 			{  }, 
@@ -17704,15 +17763,16 @@ class LanguageUnderstandingApi {
 	 * Update an NLU Domain.
 	 * 
 	 * @param {String} domainId ID of the NLU domain.
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body 
+	 * @param {Object} body The updated NLU Domain.
 	 */
-	patchLanguageunderstandingDomain(domainId, opts) { 
-		opts = opts || {};
-		
+	patchLanguageunderstandingDomain(domainId, body) { 
 		// verify the required parameter 'domainId' is set
 		if (domainId === undefined || domainId === null) {
 			throw 'Missing the required parameter "domainId" when calling patchLanguageunderstandingDomain';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchLanguageunderstandingDomain';
 		}
 
 		return this.apiClient.callApi(
@@ -17722,7 +17782,7 @@ class LanguageUnderstandingApi {
 			{  }, 
 			{  }, 
 			{  }, 
-			opts['body'], 
+			body, 
 			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
@@ -17733,15 +17793,16 @@ class LanguageUnderstandingApi {
 	 * Create feedback for the NLU Domain Version.
 	 * 
 	 * @param {String} domainId ID of the NLU domain.
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body 
+	 * @param {Object} body The Feedback to create.
 	 */
-	postLanguageunderstandingDomainFeedback(domainId, opts) { 
-		opts = opts || {};
-		
+	postLanguageunderstandingDomainFeedback(domainId, body) { 
 		// verify the required parameter 'domainId' is set
 		if (domainId === undefined || domainId === null) {
 			throw 'Missing the required parameter "domainId" when calling postLanguageunderstandingDomainFeedback';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postLanguageunderstandingDomainFeedback';
 		}
 
 		return this.apiClient.callApi(
@@ -17751,7 +17812,7 @@ class LanguageUnderstandingApi {
 			{  }, 
 			{  }, 
 			{  }, 
-			opts['body'], 
+			body, 
 			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
@@ -17763,12 +17824,9 @@ class LanguageUnderstandingApi {
 	 * 
 	 * @param {String} domainId ID of the NLU domain.
 	 * @param {String} domainVersionId ID of the NLU domain version.
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body 
+	 * @param {Object} body The input data to perform detection on.
 	 */
-	postLanguageunderstandingDomainVersionDetect(domainId, domainVersionId, opts) { 
-		opts = opts || {};
-		
+	postLanguageunderstandingDomainVersionDetect(domainId, domainVersionId, body) { 
 		// verify the required parameter 'domainId' is set
 		if (domainId === undefined || domainId === null) {
 			throw 'Missing the required parameter "domainId" when calling postLanguageunderstandingDomainVersionDetect';
@@ -17776,6 +17834,10 @@ class LanguageUnderstandingApi {
 		// verify the required parameter 'domainVersionId' is set
 		if (domainVersionId === undefined || domainVersionId === null) {
 			throw 'Missing the required parameter "domainVersionId" when calling postLanguageunderstandingDomainVersionDetect';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postLanguageunderstandingDomainVersionDetect';
 		}
 
 		return this.apiClient.callApi(
@@ -17785,7 +17847,7 @@ class LanguageUnderstandingApi {
 			{  }, 
 			{  }, 
 			{  }, 
-			opts['body'], 
+			body, 
 			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
@@ -17853,14 +17915,45 @@ class LanguageUnderstandingApi {
 	}
 
 	/**
+	 * Create an NLU Domain Version.
+	 * 
+	 * @param {String} domainId ID of the NLU domain.
+	 * @param {Object} body The NLU Domain Version to create.
+	 */
+	postLanguageunderstandingDomainVersions(domainId, body) { 
+		// verify the required parameter 'domainId' is set
+		if (domainId === undefined || domainId === null) {
+			throw 'Missing the required parameter "domainId" when calling postLanguageunderstandingDomainVersions';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postLanguageunderstandingDomainVersions';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/languageunderstanding/domains/{domainId}/versions', 
+			'POST', 
+			{ 'domainId': domainId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
 	 * Create an NLU Domain.
 	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body 
+	 * @param {Object} body The NLU Domain to create.
 	 */
-	postLanguageunderstandingDomains(opts) { 
-		opts = opts || {};
-		
+	postLanguageunderstandingDomains(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postLanguageunderstandingDomains';
+		}
 
 		return this.apiClient.callApi(
 			'/api/v2/languageunderstanding/domains', 
@@ -17869,7 +17962,7 @@ class LanguageUnderstandingApi {
 			{  }, 
 			{  }, 
 			{  }, 
-			opts['body'], 
+			body, 
 			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
@@ -17881,12 +17974,9 @@ class LanguageUnderstandingApi {
 	 * 
 	 * @param {String} domainId ID of the NLU domain.
 	 * @param {String} domainVersionId ID of the NLU domain version.
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body 
+	 * @param {Object} body The updated NLU Domain Version.
 	 */
-	putLanguageunderstandingDomainVersion(domainId, domainVersionId, opts) { 
-		opts = opts || {};
-		
+	putLanguageunderstandingDomainVersion(domainId, domainVersionId, body) { 
 		// verify the required parameter 'domainId' is set
 		if (domainId === undefined || domainId === null) {
 			throw 'Missing the required parameter "domainId" when calling putLanguageunderstandingDomainVersion';
@@ -17894,6 +17984,10 @@ class LanguageUnderstandingApi {
 		// verify the required parameter 'domainVersionId' is set
 		if (domainVersionId === undefined || domainVersionId === null) {
 			throw 'Missing the required parameter "domainVersionId" when calling putLanguageunderstandingDomainVersion';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putLanguageunderstandingDomainVersion';
 		}
 
 		return this.apiClient.callApi(
@@ -17903,7 +17997,7 @@ class LanguageUnderstandingApi {
 			{  }, 
 			{  }, 
 			{  }, 
-			opts['body'], 
+			body, 
 			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
@@ -17916,7 +18010,7 @@ class LanguagesApi {
 	/**
 	 * Languages service.
 	 * @module purecloud-platform-client-v2/api/LanguagesApi
-	 * @version 85.0.0
+	 * @version 86.0.0
 	 */
 
 	/**
@@ -18184,7 +18278,7 @@ class LicenseApi {
 	/**
 	 * License service.
 	 * @module purecloud-platform-client-v2/api/LicenseApi
-	 * @version 85.0.0
+	 * @version 86.0.0
 	 */
 
 	/**
@@ -18422,7 +18516,7 @@ class LocationsApi {
 	/**
 	 * Locations service.
 	 * @module purecloud-platform-client-v2/api/LocationsApi
-	 * @version 85.0.0
+	 * @version 86.0.0
 	 */
 
 	/**
@@ -18658,7 +18752,7 @@ class MobileDevicesApi {
 	/**
 	 * MobileDevices service.
 	 * @module purecloud-platform-client-v2/api/MobileDevicesApi
-	 * @version 85.0.0
+	 * @version 86.0.0
 	 */
 
 	/**
@@ -18809,7 +18903,7 @@ class NotificationsApi {
 	/**
 	 * Notifications service.
 	 * @module purecloud-platform-client-v2/api/NotificationsApi
-	 * @version 85.0.0
+	 * @version 86.0.0
 	 */
 
 	/**
@@ -19008,7 +19102,7 @@ class OAuthApi {
 	/**
 	 * OAuth service.
 	 * @module purecloud-platform-client-v2/api/OAuthApi
-	 * @version 85.0.0
+	 * @version 86.0.0
 	 */
 
 	/**
@@ -19366,7 +19460,7 @@ class ObjectsApi {
 	/**
 	 * Objects service.
 	 * @module purecloud-platform-client-v2/api/ObjectsApi
-	 * @version 85.0.0
+	 * @version 86.0.0
 	 */
 
 	/**
@@ -19607,7 +19701,7 @@ class OrganizationApi {
 	/**
 	 * Organization service.
 	 * @module purecloud-platform-client-v2/api/OrganizationApi
-	 * @version 85.0.0
+	 * @version 86.0.0
 	 */
 
 	/**
@@ -19862,7 +19956,7 @@ class OrganizationAuthorizationApi {
 	/**
 	 * OrganizationAuthorization service.
 	 * @module purecloud-platform-client-v2/api/OrganizationAuthorizationApi
-	 * @version 85.0.0
+	 * @version 86.0.0
 	 */
 
 	/**
@@ -20572,7 +20666,7 @@ class OutboundApi {
 	/**
 	 * Outbound service.
 	 * @module purecloud-platform-client-v2/api/OutboundApi
-	 * @version 85.0.0
+	 * @version 86.0.0
 	 */
 
 	/**
@@ -23235,7 +23329,7 @@ class PresenceApi {
 	/**
 	 * Presence service.
 	 * @module purecloud-platform-client-v2/api/PresenceApi
-	 * @version 85.0.0
+	 * @version 86.0.0
 	 */
 
 	/**
@@ -23502,7 +23596,7 @@ class QualityApi {
 	/**
 	 * Quality service.
 	 * @module purecloud-platform-client-v2/api/QualityApi
-	 * @version 85.0.0
+	 * @version 86.0.0
 	 */
 
 	/**
@@ -25174,7 +25268,7 @@ class RecordingApi {
 	/**
 	 * Recording service.
 	 * @module purecloud-platform-client-v2/api/RecordingApi
-	 * @version 85.0.0
+	 * @version 86.0.0
 	 */
 
 	/**
@@ -26420,7 +26514,7 @@ class ResponseManagementApi {
 	/**
 	 * ResponseManagement service.
 	 * @module purecloud-platform-client-v2/api/ResponseManagementApi
-	 * @version 85.0.0
+	 * @version 86.0.0
 	 */
 
 	/**
@@ -26745,7 +26839,7 @@ class RoutingApi {
 	/**
 	 * Routing service.
 	 * @module purecloud-platform-client-v2/api/RoutingApi
-	 * @version 85.0.0
+	 * @version 86.0.0
 	 */
 
 	/**
@@ -29043,7 +29137,7 @@ class SCIMApi {
 	/**
 	 * SCIM service.
 	 * @module purecloud-platform-client-v2/api/SCIMApi
-	 * @version 85.0.0
+	 * @version 86.0.0
 	 */
 
 	/**
@@ -30028,7 +30122,7 @@ class ScriptsApi {
 	/**
 	 * Scripts service.
 	 * @module purecloud-platform-client-v2/api/ScriptsApi
-	 * @version 85.0.0
+	 * @version 86.0.0
 	 */
 
 	/**
@@ -30381,7 +30475,7 @@ class SearchApi {
 	/**
 	 * Search service.
 	 * @module purecloud-platform-client-v2/api/SearchApi
-	 * @version 85.0.0
+	 * @version 86.0.0
 	 */
 
 	/**
@@ -30865,7 +30959,7 @@ class StationsApi {
 	/**
 	 * Stations service.
 	 * @module purecloud-platform-client-v2/api/StationsApi
-	 * @version 85.0.0
+	 * @version 86.0.0
 	 */
 
 	/**
@@ -31012,7 +31106,7 @@ class SuggestApi {
 	/**
 	 * Suggest service.
 	 * @module purecloud-platform-client-v2/api/SuggestApi
-	 * @version 85.0.0
+	 * @version 86.0.0
 	 */
 
 	/**
@@ -31151,7 +31245,7 @@ class TelephonyApi {
 	/**
 	 * Telephony service.
 	 * @module purecloud-platform-client-v2/api/TelephonyApi
-	 * @version 85.0.0
+	 * @version 86.0.0
 	 */
 
 	/**
@@ -31259,7 +31353,7 @@ class TelephonyProvidersEdgeApi {
 	/**
 	 * TelephonyProvidersEdge service.
 	 * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-	 * @version 85.0.0
+	 * @version 86.0.0
 	 */
 
 	/**
@@ -34830,11 +34924,57 @@ class TelephonyProvidersEdgeApi {
 
 }
 
+class TextbotsApi {
+	/**
+	 * Textbots service.
+	 * @module purecloud-platform-client-v2/api/TextbotsApi
+	 * @version 86.0.0
+	 */
+
+	/**
+	 * Constructs a new TextbotsApi. 
+	 * @alias module:purecloud-platform-client-v2/api/TextbotsApi
+	 * @class
+	 * @param {module:purecloud-platform-client-v2/ApiClient} apiClient Optional API client implementation to use,
+	 * default to {@link module:purecloud-platform-client-v2/ApiClient#instance} if unspecified.
+	 */
+	constructor(apiClient) {
+		this.apiClient = apiClient || ApiClient.instance;
+	}
+
+
+	/**
+	 * Send an intent to a bot to start a dialog/interact with it via text
+	 * This will either start a bot with the given id or relay a communication to an existing bot session.
+	 * @param {Object} postTextRequest 
+	 */
+	postTextbotsBotsExecute(postTextRequest) { 
+		// verify the required parameter 'postTextRequest' is set
+		if (postTextRequest === undefined || postTextRequest === null) {
+			throw 'Missing the required parameter "postTextRequest" when calling postTextbotsBotsExecute';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/textbots/bots/execute', 
+			'POST', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			postTextRequest, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+}
+
 class TokensApi {
 	/**
 	 * Tokens service.
 	 * @module purecloud-platform-client-v2/api/TokensApi
-	 * @version 85.0.0
+	 * @version 86.0.0
 	 */
 
 	/**
@@ -34920,7 +35060,7 @@ class UploadsApi {
 	/**
 	 * Uploads service.
 	 * @module purecloud-platform-client-v2/api/UploadsApi
-	 * @version 85.0.0
+	 * @version 86.0.0
 	 */
 
 	/**
@@ -34966,7 +35106,7 @@ class UsageApi {
 	/**
 	 * Usage service.
 	 * @module purecloud-platform-client-v2/api/UsageApi
-	 * @version 85.0.0
+	 * @version 86.0.0
 	 */
 
 	/**
@@ -35037,7 +35177,7 @@ class UserRecordingsApi {
 	/**
 	 * UserRecordings service.
 	 * @module purecloud-platform-client-v2/api/UserRecordingsApi
-	 * @version 85.0.0
+	 * @version 86.0.0
 	 */
 
 	/**
@@ -35221,7 +35361,7 @@ class UsersApi {
 	/**
 	 * Users service.
 	 * @module purecloud-platform-client-v2/api/UsersApi
-	 * @version 85.0.0
+	 * @version 86.0.0
 	 */
 
 	/**
@@ -37286,7 +37426,7 @@ class UtilitiesApi {
 	/**
 	 * Utilities service.
 	 * @module purecloud-platform-client-v2/api/UtilitiesApi
-	 * @version 85.0.0
+	 * @version 86.0.0
 	 */
 
 	/**
@@ -37397,7 +37537,7 @@ class VoicemailApi {
 	/**
 	 * Voicemail service.
 	 * @module purecloud-platform-client-v2/api/VoicemailApi
-	 * @version 85.0.0
+	 * @version 86.0.0
 	 */
 
 	/**
@@ -38034,7 +38174,7 @@ class WebChatApi {
 	/**
 	 * WebChat service.
 	 * @module purecloud-platform-client-v2/api/WebChatApi
-	 * @version 85.0.0
+	 * @version 86.0.0
 	 */
 
 	/**
@@ -38578,7 +38718,7 @@ class WidgetsApi {
 	/**
 	 * Widgets service.
 	 * @module purecloud-platform-client-v2/api/WidgetsApi
-	 * @version 85.0.0
+	 * @version 86.0.0
 	 */
 
 	/**
@@ -38724,7 +38864,7 @@ class WorkforceManagementApi {
 	/**
 	 * WorkforceManagement service.
 	 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-	 * @version 85.0.0
+	 * @version 86.0.0
 	 */
 
 	/**
@@ -42778,7 +42918,7 @@ class WorkforceManagementApi {
  * </pre>
  * </p>
  * @module purecloud-platform-client-v2/index
- * @version 85.0.0
+ * @version 86.0.0
  */
 class platformClient {
 	constructor() {
@@ -43007,6 +43147,11 @@ class platformClient {
 		 * @property {module:purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi}
 		 */
 		this.TelephonyProvidersEdgeApi = TelephonyProvidersEdgeApi;
+		/**
+		 * The TextbotsApi service constructor.
+		 * @property {module:purecloud-platform-client-v2/api/TextbotsApi}
+		 */
+		this.TextbotsApi = TextbotsApi;
 		/**
 		 * The TokensApi service constructor.
 		 * @property {module:purecloud-platform-client-v2/api/TokensApi}

@@ -487,13 +487,17 @@ declare class AuditApi {
   	getAuditsQueryServicemapping(): Promise<Models.AuditQueryServiceMapping>; 
   	getAuditsQueryTransactionId(transactionId: string): Promise<Models.AuditQueryExecutionStatusResponse>; 
   	getAuditsQueryTransactionIdResults(transactionId: string, opts?: AuditApi.getAuditsQueryTransactionIdResultsOptions): Promise<Models.AuditQueryExecutionResultsResponse>; 
-  	postAuditsQuery(body: Models.AuditQueryRequest): Promise<Models.AuditQueryExecutionStatusResponse>;
+  	postAuditsQuery(body: Models.AuditQueryRequest): Promise<Models.AuditQueryExecutionStatusResponse>; 
+  	postAuditsQueryRealtime(body: Models.AuditRealtimeQueryRequest, opts?: AuditApi.postAuditsQueryRealtimeOptions): Promise<Models.AuditRealtimeQueryResultsResponse>;
 }
 
 declare namespace AuditApi { 
 	export interface getAuditsQueryTransactionIdResultsOptions { 
 		"cursor"?: string;
 		"pageSize"?: number;
+		"expand"?: Array<string>;
+	}
+	export interface postAuditsQueryRealtimeOptions { 
 		"expand"?: Array<string>;
 	}
 }
@@ -1618,6 +1622,7 @@ declare namespace KnowledgeApi {
 declare class LanguageUnderstandingApi {  
   	deleteLanguageunderstandingDomain(domainId: string): Promise<void>; 
   	deleteLanguageunderstandingDomainFeedbackFeedbackId(domainId: string, feedbackId: string): Promise<void>; 
+  	deleteLanguageunderstandingDomainVersion(domainId: string, domainVersionId: string): Promise<void>; 
   	getLanguageunderstandingDomain(domainId: string): Promise<Models.NluDomain>; 
   	getLanguageunderstandingDomainFeedback(domainId: string, opts?: LanguageUnderstandingApi.getLanguageunderstandingDomainFeedbackOptions): Promise<Models.NluFeedbackListing>; 
   	getLanguageunderstandingDomainFeedbackFeedbackId(domainId: string, feedbackId: string, opts?: LanguageUnderstandingApi.getLanguageunderstandingDomainFeedbackFeedbackIdOptions): Promise<Models.NluFeedbackResponse>; 
@@ -1625,13 +1630,14 @@ declare class LanguageUnderstandingApi {
   	getLanguageunderstandingDomainVersionReport(domainId: string, domainVersionId: string): Promise<Models.NluDomainVersionQualityReport>; 
   	getLanguageunderstandingDomainVersions(domainId: string, opts?: LanguageUnderstandingApi.getLanguageunderstandingDomainVersionsOptions): Promise<Models.NluDomainVersionListing>; 
   	getLanguageunderstandingDomains(opts?: LanguageUnderstandingApi.getLanguageunderstandingDomainsOptions): Promise<Models.NluDomainListing>; 
-  	patchLanguageunderstandingDomain(domainId: string, opts?: LanguageUnderstandingApi.patchLanguageunderstandingDomainOptions): Promise<Models.NluDomain>; 
-  	postLanguageunderstandingDomainFeedback(domainId: string, opts?: LanguageUnderstandingApi.postLanguageunderstandingDomainFeedbackOptions): Promise<Models.NluFeedbackResponse>; 
-  	postLanguageunderstandingDomainVersionDetect(domainId: string, domainVersionId: string, opts?: LanguageUnderstandingApi.postLanguageunderstandingDomainVersionDetectOptions): Promise<Models.NluDetectionResponse>; 
+  	patchLanguageunderstandingDomain(domainId: string, body: Models.NluDomain): Promise<Models.NluDomain>; 
+  	postLanguageunderstandingDomainFeedback(domainId: string, body: Models.NluFeedbackRequest): Promise<Models.NluFeedbackResponse>; 
+  	postLanguageunderstandingDomainVersionDetect(domainId: string, domainVersionId: string, body: Models.NluDetectionRequest): Promise<Models.NluDetectionResponse>; 
   	postLanguageunderstandingDomainVersionPublish(domainId: string, domainVersionId: string): Promise<Models.NluDomainVersion>; 
   	postLanguageunderstandingDomainVersionTrain(domainId: string, domainVersionId: string): Promise<Models.NluDomainVersionTrainingResponse>; 
-  	postLanguageunderstandingDomains(opts?: LanguageUnderstandingApi.postLanguageunderstandingDomainsOptions): Promise<Models.NluDomain>; 
-  	putLanguageunderstandingDomainVersion(domainId: string, domainVersionId: string, opts?: LanguageUnderstandingApi.putLanguageunderstandingDomainVersionOptions): Promise<Models.NluDomainVersion>;
+  	postLanguageunderstandingDomainVersions(domainId: string, body: Models.NluDomainVersion): Promise<Models.NluDomainVersion>; 
+  	postLanguageunderstandingDomains(body: Models.NluDomain): Promise<Models.NluDomain>; 
+  	putLanguageunderstandingDomainVersion(domainId: string, domainVersionId: string, body: Models.NluDomainVersion): Promise<Models.NluDomainVersion>;
 }
 
 declare namespace LanguageUnderstandingApi { 
@@ -1659,21 +1665,6 @@ declare namespace LanguageUnderstandingApi {
 	export interface getLanguageunderstandingDomainsOptions { 
 		"pageNumber"?: number;
 		"pageSize"?: number;
-	}
-	export interface patchLanguageunderstandingDomainOptions { 
-		"body"?: Models.NluDomain;
-	}
-	export interface postLanguageunderstandingDomainFeedbackOptions { 
-		"body"?: Models.NluFeedbackRequest;
-	}
-	export interface postLanguageunderstandingDomainVersionDetectOptions { 
-		"body"?: Models.NluDetectionRequest;
-	}
-	export interface postLanguageunderstandingDomainsOptions { 
-		"body"?: Models.NluDomain;
-	}
-	export interface putLanguageunderstandingDomainVersionOptions { 
-		"body"?: Models.NluDomainVersion;
 	}
 }
 
@@ -3471,6 +3462,13 @@ declare namespace TelephonyProvidersEdgeApi {
 	}
 }
 
+declare class TextbotsApi {  
+  	postTextbotsBotsExecute(postTextRequest: Models.PostTextRequest): Promise<Models.PostTextResponse>;
+}
+
+declare namespace TextbotsApi { 
+}
+
 declare class TokensApi {  
   	deleteToken(userId: string): Promise<void>; 
   	deleteTokensMe(): Promise<void>; 
@@ -4431,6 +4429,11 @@ declare namespace Models {
 		"lt"?: number;
 	}
 	
+	export interface AmazonLexRequest { 
+		"requestAttributes"?: { [key: string]: string; };
+		"sessionAttributes"?: { [key: string]: string; };
+	}
+	
 	export interface AnalyticsConversation { 
 		"conversationId"?: string;
 		"conversationStart"?: string;
@@ -4512,8 +4515,8 @@ declare namespace Models {
 		"calibrationId"?: string;
 		"rescored"?: boolean;
 		"deleted"?: boolean;
-		"oTotalScore"?: number;
 		"oTotalCriticalScore"?: number;
+		"oTotalScore"?: number;
 	}
 	
 	export interface AnalyticsFlow { 
@@ -5225,6 +5228,23 @@ declare namespace Models {
 		"sortOrder": string;
 	}
 	
+	export interface AuditRealtimeQueryRequest { 
+		"interval": string;
+		"serviceName": string;
+		"filters"?: Array<Models.AuditQueryFilter>;
+		"sort"?: Array<Models.AuditQuerySort>;
+		"pageNumber"?: number;
+		"pageSize"?: number;
+	}
+	
+	export interface AuditRealtimeQueryResultsResponse { 
+		"entities"?: Array<Models.AuditLogMessage>;
+		"pageSize"?: number;
+		"pageNumber"?: number;
+		"total"?: number;
+		"pageCount"?: number;
+	}
+	
 	export interface AuditSearchResult { 
 		"pageNumber"?: number;
 		"pageSize"?: number;
@@ -5851,6 +5871,13 @@ declare namespace Models {
 		"timeZone": string;
 		"shortTermForecasting"?: Models.BuShortTermForecastingSettings;
 		"metadata": Models.WfmVersionedEntityMetadata;
+	}
+	
+	export interface ButtonComponent { 
+		"id"?: string;
+		"text"?: string;
+		"title"?: string;
+		"actions"?: Models.ContentActions;
 	}
 	
 	export interface Calibration { 
@@ -7225,6 +7252,24 @@ declare namespace Models {
 		"additionalProperties"?: object;
 	}
 	
+	export interface ContentActions { 
+		"url"?: string;
+		"urlTarget"?: string;
+		"textback"?: string;
+		"commandName"?: string;
+		"context"?: { [key: string]: object; };
+	}
+	
+	export interface ContentAttachment { 
+		"id"?: string;
+		"mediaType": string;
+		"url"?: string;
+		"mime"?: string;
+		"text"?: string;
+		"sha256"?: string;
+		"filename"?: string;
+	}
+	
 	export interface ContentAttributeFilterItem { 
 		"id"?: string;
 		"operator"?: string;
@@ -7243,6 +7288,34 @@ declare namespace Models {
 		"type"?: string;
 		"operator"?: string;
 		"values"?: Array<string>;
+	}
+	
+	export interface ContentGeneric { 
+		"id"?: string;
+		"title"?: string;
+		"description"?: string;
+		"image"?: string;
+		"video"?: string;
+		"actions"?: Models.ContentActions;
+		"components"?: Array<Models.ButtonComponent>;
+	}
+	
+	export interface ContentList { 
+		"id"?: string;
+		"listType"?: string;
+		"title"?: string;
+		"description"?: string;
+		"submitLabel"?: string;
+		"actions"?: Models.ContentActions;
+		"components"?: Array<Models.ListItemComponent>;
+	}
+	
+	export interface ContentLocation { 
+		"url"?: string;
+		"address"?: string;
+		"text"?: string;
+		"latitude"?: number;
+		"longitude"?: number;
 	}
 	
 	export interface ContentManagementSingleDocumentTopicDocumentDataV2 { 
@@ -7309,6 +7382,14 @@ declare namespace Models {
 		"id"?: string;
 	}
 	
+	export interface ContentNotificationTemplate { 
+		"id"?: string;
+		"language"?: string;
+		"header"?: Models.NotificationTemplateHeader;
+		"body": Models.NotificationTemplateBody;
+		"footer"?: Models.NotificationTemplateFooter;
+	}
+	
 	export interface ContentQueryRequest { 
 		"queryPhrase"?: string;
 		"pageNumber"?: number;
@@ -7318,6 +7399,13 @@ declare namespace Models {
 		"filters"?: Array<Models.ContentFacetFilterItem>;
 		"attributeFilters"?: Array<Models.ContentAttributeFilterItem>;
 		"includeShares"?: boolean;
+	}
+	
+	export interface ContentQuickReply { 
+		"id"?: string;
+		"text": string;
+		"image"?: string;
+		"action"?: string;
 	}
 	
 	export interface ContentSortItem { 
@@ -11119,6 +11207,7 @@ declare namespace Models {
 		"modifiedByApp"?: string;
 		"createdByApp"?: string;
 		"managed"?: boolean;
+		"hybrid"?: boolean;
 		"edgeTrunkBaseAssignment": Models.TrunkBaseAssignment;
 		"phoneTrunkBases": Array<Models.TrunkBase>;
 		"selfUri"?: string;
@@ -11592,11 +11681,7 @@ declare namespace Models {
 	}
 	
 	export interface EntityListing { 
-		"entities"?: Array<Models.DataTableImportJob>;
-		"pageSize"?: number;
-		"pageNumber"?: number;
-		"total"?: number;
-		"pageCount"?: number;
+		"entities"?: Array<object>;
 	}
 	
 	export interface Entry { 
@@ -12745,6 +12830,10 @@ declare namespace Models {
 		"enabled"?: boolean;
 		"mapboxKey"?: string;
 		"selfUri"?: string;
+	}
+	
+	export interface GoogleDialogflowCustomSettings { 
+		"environment"?: string;
 	}
 	
 	export interface Greeting { 
@@ -14027,6 +14116,16 @@ declare namespace Models {
 		"userId"?: string;
 	}
 	
+	export interface ListItemComponent { 
+		"id"?: string;
+		"rmid"?: string;
+		"type"?: string;
+		"image"?: string;
+		"title"?: string;
+		"description"?: string;
+		"actions"?: Models.ContentActions;
+	}
+	
 	export interface ListWrapperInterval { 
 		"values"?: Array<string>;
 	}
@@ -14376,6 +14475,16 @@ declare namespace Models {
 		"fromAddress"?: Models.Address;
 		"messages"?: Array<Models.MessageDetails>;
 		"wrapup"?: Models.Wrapup;
+	}
+	
+	export interface MessageContent { 
+		"contentType": string;
+		"location"?: Models.ContentLocation;
+		"attachment"?: Models.ContentAttachment;
+		"quickReply"?: Models.ContentQuickReply;
+		"generic"?: Models.ContentGeneric;
+		"list"?: Models.ContentList;
+		"template"?: Models.ContentNotificationTemplate;
 	}
 	
 	export interface MessageConversation { 
@@ -14767,7 +14876,8 @@ declare namespace Models {
 		"id"?: string;
 		"domain"?: Models.NluDomain;
 		"description"?: string;
-		"language"?: string;
+		"language": string;
+		"published"?: boolean;
 		"dateCreated"?: string;
 		"dateModified"?: string;
 		"dateTrained"?: string;
@@ -14871,6 +14981,27 @@ declare namespace Models {
 		"lastUri"?: string;
 		"previousUri"?: string;
 		"pageCount"?: number;
+	}
+	
+	export interface NotificationTemplateBody { 
+		"text"?: string;
+		"parameters": Array<Models.NotificationTemplateParameter>;
+	}
+	
+	export interface NotificationTemplateFooter { 
+		"text"?: string;
+	}
+	
+	export interface NotificationTemplateHeader { 
+		"type": string;
+		"text"?: string;
+		"media"?: Models.ContentAttachment;
+		"parameters"?: Array<Models.NotificationTemplateParameter>;
+	}
+	
+	export interface NotificationTemplateParameter { 
+		"name"?: string;
+		"text": string;
 	}
 	
 	export interface NotificationsResponse { 
@@ -15826,6 +15957,37 @@ declare namespace Models {
 	
 	export interface PostOutputContract { 
 		"successSchema": Models.JsonSchemaDocument;
+	}
+	
+	export interface PostTextMessage { 
+		"type": string;
+		"text"?: string;
+		"content"?: Array<Models.MessageContent>;
+	}
+	
+	export interface PostTextRequest { 
+		"botId": string;
+		"botAlias"?: string;
+		"integrationId": string;
+		"botSessionId": string;
+		"postTextMessage": Models.PostTextMessage;
+		"languageCode"?: string;
+		"botSessionTimeoutMinutes"?: number;
+		"botChannels"?: Array<string>;
+		"botCorrelationId"?: string;
+		"amazonLexRequest"?: Models.AmazonLexRequest;
+		"googleDialogflow"?: Models.GoogleDialogflowCustomSettings;
+	}
+	
+	export interface PostTextResponse { 
+		"botState": string;
+		"replyMessages"?: Array<Models.PostTextMessage>;
+		"intentName"?: string;
+		"slots"?: { [key: string]: string; };
+		"botCorrelationId"?: string;
+		"amazonLex"?: { [key: string]: object; };
+		"googleDialogFlow"?: { [key: string]: object; };
+		"genesysDialogEngine"?: { [key: string]: object; };
 	}
 	
 	export interface PredictionResults { 
@@ -20347,8 +20509,6 @@ declare namespace Models {
 		"disabled"?: boolean;
 		"contextId": string;
 		"language": string;
-		"headerImageId"?: string;
-		"headerImageUrl"?: string;
 		"header"?: string;
 		"footer"?: string;
 		"questionGroups": Array<Models.SurveyQuestionGroup>;

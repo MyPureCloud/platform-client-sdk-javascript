@@ -6256,6 +6256,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
     "modifiedByApp": String, 
     "createdByApp": String, 
     "managed": Boolean, 
+    "hybrid": Boolean, 
     "edgeTrunkBaseAssignment": { 
       "family": Number, 
       "trunkBase": { 
@@ -6381,6 +6382,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
         "modifiedByApp": String, 
         "createdByApp": String, 
         "managed": Boolean, 
+        "hybrid": Boolean, 
         "edgeTrunkBaseAssignment": { 
           "family": Number, 
           "trunkBase": { 
@@ -6506,6 +6508,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
             "modifiedByApp": String, 
             "createdByApp": String, 
             "managed": Boolean, 
+            "hybrid": Boolean, 
             "edgeTrunkBaseAssignment": { 
               "family": Number, 
               "trunkBase": { 
@@ -6623,6 +6626,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "modifiedByApp": String, 
                 "createdByApp": String, 
                 "managed": Boolean, 
+                "hybrid": Boolean, 
                 "edgeTrunkBaseAssignment": TrunkBaseAssignment, 
                 "phoneTrunkBases": [TrunkBase], 
                 "selfUri": String, 
@@ -6726,6 +6730,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "modifiedByApp": String, 
                 "createdByApp": String, 
                 "managed": Boolean, 
+                "hybrid": Boolean, 
                 "edgeTrunkBaseAssignment": TrunkBaseAssignment, 
                 "phoneTrunkBases": [TrunkBase], 
                 "selfUri": String, 
@@ -6836,6 +6841,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "modifiedByApp": String, 
                 "createdByApp": String, 
                 "managed": Boolean, 
+                "hybrid": Boolean, 
                 "edgeTrunkBaseAssignment": TrunkBaseAssignment, 
                 "phoneTrunkBases": [TrunkBase], 
                 "selfUri": String, 
@@ -7033,6 +7039,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
             "modifiedByApp": String, 
             "createdByApp": String, 
             "managed": Boolean, 
+            "hybrid": Boolean, 
             "edgeTrunkBaseAssignment": { 
               "family": Number, 
               "trunkBase": { 
@@ -7150,6 +7157,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "modifiedByApp": String, 
                 "createdByApp": String, 
                 "managed": Boolean, 
+                "hybrid": Boolean, 
                 "edgeTrunkBaseAssignment": TrunkBaseAssignment, 
                 "phoneTrunkBases": [TrunkBase], 
                 "selfUri": String, 
@@ -7253,6 +7261,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "modifiedByApp": String, 
                 "createdByApp": String, 
                 "managed": Boolean, 
+                "hybrid": Boolean, 
                 "edgeTrunkBaseAssignment": TrunkBaseAssignment, 
                 "phoneTrunkBases": [TrunkBase], 
                 "selfUri": String, 
@@ -7363,6 +7372,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "modifiedByApp": String, 
                 "createdByApp": String, 
                 "managed": Boolean, 
+                "hybrid": Boolean, 
                 "edgeTrunkBaseAssignment": TrunkBaseAssignment, 
                 "phoneTrunkBases": [TrunkBase], 
                 "selfUri": String, 
@@ -7567,6 +7577,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
             "modifiedByApp": String, 
             "createdByApp": String, 
             "managed": Boolean, 
+            "hybrid": Boolean, 
             "edgeTrunkBaseAssignment": { 
               "family": Number, 
               "trunkBase": { 
@@ -7684,6 +7695,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "modifiedByApp": String, 
                 "createdByApp": String, 
                 "managed": Boolean, 
+                "hybrid": Boolean, 
                 "edgeTrunkBaseAssignment": TrunkBaseAssignment, 
                 "phoneTrunkBases": [TrunkBase], 
                 "selfUri": String, 
@@ -7787,6 +7799,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "modifiedByApp": String, 
                 "createdByApp": String, 
                 "managed": Boolean, 
+                "hybrid": Boolean, 
                 "edgeTrunkBaseAssignment": TrunkBaseAssignment, 
                 "phoneTrunkBases": [TrunkBase], 
                 "selfUri": String, 
@@ -7897,6 +7910,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "modifiedByApp": String, 
                 "createdByApp": String, 
                 "managed": Boolean, 
+                "hybrid": Boolean, 
                 "edgeTrunkBaseAssignment": TrunkBaseAssignment, 
                 "phoneTrunkBases": [TrunkBase], 
                 "selfUri": String, 
@@ -8184,6 +8198,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
         "modifiedByApp": String, 
         "createdByApp": String, 
         "managed": Boolean, 
+        "hybrid": Boolean, 
         "edgeTrunkBaseAssignment": { 
           "family": Number, 
           "trunkBase": { 
@@ -8309,6 +8324,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
             "modifiedByApp": String, 
             "createdByApp": String, 
             "managed": Boolean, 
+            "hybrid": Boolean, 
             "edgeTrunkBaseAssignment": { 
               "family": Number, 
               "trunkBase": { 
@@ -8426,6 +8442,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "modifiedByApp": String, 
                 "createdByApp": String, 
                 "managed": Boolean, 
+                "hybrid": Boolean, 
                 "edgeTrunkBaseAssignment": TrunkBaseAssignment, 
                 "phoneTrunkBases": [TrunkBase], 
                 "selfUri": String, 
@@ -8529,6 +8546,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "modifiedByApp": String, 
                 "createdByApp": String, 
                 "managed": Boolean, 
+                "hybrid": Boolean, 
                 "edgeTrunkBaseAssignment": TrunkBaseAssignment, 
                 "phoneTrunkBases": [TrunkBase], 
                 "selfUri": String, 
@@ -8639,6 +8657,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "modifiedByApp": String, 
                 "createdByApp": String, 
                 "managed": Boolean, 
+                "hybrid": Boolean, 
                 "edgeTrunkBaseAssignment": TrunkBaseAssignment, 
                 "phoneTrunkBases": [TrunkBase], 
                 "selfUri": String, 
@@ -8836,6 +8855,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
             "modifiedByApp": String, 
             "createdByApp": String, 
             "managed": Boolean, 
+            "hybrid": Boolean, 
             "edgeTrunkBaseAssignment": { 
               "family": Number, 
               "trunkBase": { 
@@ -8953,6 +8973,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "modifiedByApp": String, 
                 "createdByApp": String, 
                 "managed": Boolean, 
+                "hybrid": Boolean, 
                 "edgeTrunkBaseAssignment": TrunkBaseAssignment, 
                 "phoneTrunkBases": [TrunkBase], 
                 "selfUri": String, 
@@ -9056,6 +9077,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "modifiedByApp": String, 
                 "createdByApp": String, 
                 "managed": Boolean, 
+                "hybrid": Boolean, 
                 "edgeTrunkBaseAssignment": TrunkBaseAssignment, 
                 "phoneTrunkBases": [TrunkBase], 
                 "selfUri": String, 
@@ -9166,6 +9188,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "modifiedByApp": String, 
                 "createdByApp": String, 
                 "managed": Boolean, 
+                "hybrid": Boolean, 
                 "edgeTrunkBaseAssignment": TrunkBaseAssignment, 
                 "phoneTrunkBases": [TrunkBase], 
                 "selfUri": String, 
@@ -9370,6 +9393,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
             "modifiedByApp": String, 
             "createdByApp": String, 
             "managed": Boolean, 
+            "hybrid": Boolean, 
             "edgeTrunkBaseAssignment": { 
               "family": Number, 
               "trunkBase": { 
@@ -9487,6 +9511,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "modifiedByApp": String, 
                 "createdByApp": String, 
                 "managed": Boolean, 
+                "hybrid": Boolean, 
                 "edgeTrunkBaseAssignment": TrunkBaseAssignment, 
                 "phoneTrunkBases": [TrunkBase], 
                 "selfUri": String, 
@@ -9590,6 +9615,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "modifiedByApp": String, 
                 "createdByApp": String, 
                 "managed": Boolean, 
+                "hybrid": Boolean, 
                 "edgeTrunkBaseAssignment": TrunkBaseAssignment, 
                 "phoneTrunkBases": [TrunkBase], 
                 "selfUri": String, 
@@ -9700,6 +9726,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "modifiedByApp": String, 
                 "createdByApp": String, 
                 "managed": Boolean, 
+                "hybrid": Boolean, 
                 "edgeTrunkBaseAssignment": TrunkBaseAssignment, 
                 "phoneTrunkBases": [TrunkBase], 
                 "selfUri": String, 
@@ -9994,6 +10021,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
         "modifiedByApp": String, 
         "createdByApp": String, 
         "managed": Boolean, 
+        "hybrid": Boolean, 
         "edgeTrunkBaseAssignment": { 
           "family": Number, 
           "trunkBase": { 
@@ -10119,6 +10147,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
             "modifiedByApp": String, 
             "createdByApp": String, 
             "managed": Boolean, 
+            "hybrid": Boolean, 
             "edgeTrunkBaseAssignment": { 
               "family": Number, 
               "trunkBase": { 
@@ -10236,6 +10265,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "modifiedByApp": String, 
                 "createdByApp": String, 
                 "managed": Boolean, 
+                "hybrid": Boolean, 
                 "edgeTrunkBaseAssignment": TrunkBaseAssignment, 
                 "phoneTrunkBases": [TrunkBase], 
                 "selfUri": String, 
@@ -10339,6 +10369,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "modifiedByApp": String, 
                 "createdByApp": String, 
                 "managed": Boolean, 
+                "hybrid": Boolean, 
                 "edgeTrunkBaseAssignment": TrunkBaseAssignment, 
                 "phoneTrunkBases": [TrunkBase], 
                 "selfUri": String, 
@@ -10449,6 +10480,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "modifiedByApp": String, 
                 "createdByApp": String, 
                 "managed": Boolean, 
+                "hybrid": Boolean, 
                 "edgeTrunkBaseAssignment": TrunkBaseAssignment, 
                 "phoneTrunkBases": [TrunkBase], 
                 "selfUri": String, 
@@ -10646,6 +10678,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
             "modifiedByApp": String, 
             "createdByApp": String, 
             "managed": Boolean, 
+            "hybrid": Boolean, 
             "edgeTrunkBaseAssignment": { 
               "family": Number, 
               "trunkBase": { 
@@ -10763,6 +10796,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "modifiedByApp": String, 
                 "createdByApp": String, 
                 "managed": Boolean, 
+                "hybrid": Boolean, 
                 "edgeTrunkBaseAssignment": TrunkBaseAssignment, 
                 "phoneTrunkBases": [TrunkBase], 
                 "selfUri": String, 
@@ -10866,6 +10900,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "modifiedByApp": String, 
                 "createdByApp": String, 
                 "managed": Boolean, 
+                "hybrid": Boolean, 
                 "edgeTrunkBaseAssignment": TrunkBaseAssignment, 
                 "phoneTrunkBases": [TrunkBase], 
                 "selfUri": String, 
@@ -10976,6 +11011,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "modifiedByApp": String, 
                 "createdByApp": String, 
                 "managed": Boolean, 
+                "hybrid": Boolean, 
                 "edgeTrunkBaseAssignment": TrunkBaseAssignment, 
                 "phoneTrunkBases": [TrunkBase], 
                 "selfUri": String, 
@@ -11180,6 +11216,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
             "modifiedByApp": String, 
             "createdByApp": String, 
             "managed": Boolean, 
+            "hybrid": Boolean, 
             "edgeTrunkBaseAssignment": { 
               "family": Number, 
               "trunkBase": { 
@@ -11297,6 +11334,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "modifiedByApp": String, 
                 "createdByApp": String, 
                 "managed": Boolean, 
+                "hybrid": Boolean, 
                 "edgeTrunkBaseAssignment": TrunkBaseAssignment, 
                 "phoneTrunkBases": [TrunkBase], 
                 "selfUri": String, 
@@ -11400,6 +11438,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "modifiedByApp": String, 
                 "createdByApp": String, 
                 "managed": Boolean, 
+                "hybrid": Boolean, 
                 "edgeTrunkBaseAssignment": TrunkBaseAssignment, 
                 "phoneTrunkBases": [TrunkBase], 
                 "selfUri": String, 
@@ -11510,6 +11549,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "modifiedByApp": String, 
                 "createdByApp": String, 
                 "managed": Boolean, 
+                "hybrid": Boolean, 
                 "edgeTrunkBaseAssignment": TrunkBaseAssignment, 
                 "phoneTrunkBases": [TrunkBase], 
                 "selfUri": String, 
@@ -12209,6 +12249,7 @@ EdgeGroup <a href="#" onclick="return copyEdgeGroupExample()">Copy</a>
   "modifiedByApp": String, 
   "createdByApp": String, 
   "managed": Boolean, 
+  "hybrid": Boolean, 
   "edgeTrunkBaseAssignment": { 
     "family": Number, 
     "trunkBase": { 
@@ -12524,6 +12565,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
         "modifiedByApp": String, 
         "createdByApp": String, 
         "managed": Boolean, 
+        "hybrid": Boolean, 
         "edgeTrunkBaseAssignment": { 
           "family": Number, 
           "trunkBase": { 
@@ -12649,6 +12691,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
             "modifiedByApp": String, 
             "createdByApp": String, 
             "managed": Boolean, 
+            "hybrid": Boolean, 
             "edgeTrunkBaseAssignment": { 
               "family": Number, 
               "trunkBase": { 
@@ -12766,6 +12809,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "modifiedByApp": String, 
                 "createdByApp": String, 
                 "managed": Boolean, 
+                "hybrid": Boolean, 
                 "edgeTrunkBaseAssignment": TrunkBaseAssignment, 
                 "phoneTrunkBases": [TrunkBase], 
                 "selfUri": String, 
@@ -12869,6 +12913,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "modifiedByApp": String, 
                 "createdByApp": String, 
                 "managed": Boolean, 
+                "hybrid": Boolean, 
                 "edgeTrunkBaseAssignment": TrunkBaseAssignment, 
                 "phoneTrunkBases": [TrunkBase], 
                 "selfUri": String, 
@@ -12979,6 +13024,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "modifiedByApp": String, 
                 "createdByApp": String, 
                 "managed": Boolean, 
+                "hybrid": Boolean, 
                 "edgeTrunkBaseAssignment": TrunkBaseAssignment, 
                 "phoneTrunkBases": [TrunkBase], 
                 "selfUri": String, 
@@ -13176,6 +13222,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
             "modifiedByApp": String, 
             "createdByApp": String, 
             "managed": Boolean, 
+            "hybrid": Boolean, 
             "edgeTrunkBaseAssignment": { 
               "family": Number, 
               "trunkBase": { 
@@ -13293,6 +13340,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "modifiedByApp": String, 
                 "createdByApp": String, 
                 "managed": Boolean, 
+                "hybrid": Boolean, 
                 "edgeTrunkBaseAssignment": TrunkBaseAssignment, 
                 "phoneTrunkBases": [TrunkBase], 
                 "selfUri": String, 
@@ -13396,6 +13444,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "modifiedByApp": String, 
                 "createdByApp": String, 
                 "managed": Boolean, 
+                "hybrid": Boolean, 
                 "edgeTrunkBaseAssignment": TrunkBaseAssignment, 
                 "phoneTrunkBases": [TrunkBase], 
                 "selfUri": String, 
@@ -13506,6 +13555,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "modifiedByApp": String, 
                 "createdByApp": String, 
                 "managed": Boolean, 
+                "hybrid": Boolean, 
                 "edgeTrunkBaseAssignment": TrunkBaseAssignment, 
                 "phoneTrunkBases": [TrunkBase], 
                 "selfUri": String, 
@@ -13710,6 +13760,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
             "modifiedByApp": String, 
             "createdByApp": String, 
             "managed": Boolean, 
+            "hybrid": Boolean, 
             "edgeTrunkBaseAssignment": { 
               "family": Number, 
               "trunkBase": { 
@@ -13827,6 +13878,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "modifiedByApp": String, 
                 "createdByApp": String, 
                 "managed": Boolean, 
+                "hybrid": Boolean, 
                 "edgeTrunkBaseAssignment": TrunkBaseAssignment, 
                 "phoneTrunkBases": [TrunkBase], 
                 "selfUri": String, 
@@ -13930,6 +13982,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "modifiedByApp": String, 
                 "createdByApp": String, 
                 "managed": Boolean, 
+                "hybrid": Boolean, 
                 "edgeTrunkBaseAssignment": TrunkBaseAssignment, 
                 "phoneTrunkBases": [TrunkBase], 
                 "selfUri": String, 
@@ -14040,6 +14093,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "modifiedByApp": String, 
                 "createdByApp": String, 
                 "managed": Boolean, 
+                "hybrid": Boolean, 
                 "edgeTrunkBaseAssignment": TrunkBaseAssignment, 
                 "phoneTrunkBases": [TrunkBase], 
                 "selfUri": String, 
@@ -14327,6 +14381,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
         "modifiedByApp": String, 
         "createdByApp": String, 
         "managed": Boolean, 
+        "hybrid": Boolean, 
         "edgeTrunkBaseAssignment": { 
           "family": Number, 
           "trunkBase": { 
@@ -14452,6 +14507,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
             "modifiedByApp": String, 
             "createdByApp": String, 
             "managed": Boolean, 
+            "hybrid": Boolean, 
             "edgeTrunkBaseAssignment": { 
               "family": Number, 
               "trunkBase": { 
@@ -14569,6 +14625,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "modifiedByApp": String, 
                 "createdByApp": String, 
                 "managed": Boolean, 
+                "hybrid": Boolean, 
                 "edgeTrunkBaseAssignment": TrunkBaseAssignment, 
                 "phoneTrunkBases": [TrunkBase], 
                 "selfUri": String, 
@@ -14672,6 +14729,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "modifiedByApp": String, 
                 "createdByApp": String, 
                 "managed": Boolean, 
+                "hybrid": Boolean, 
                 "edgeTrunkBaseAssignment": TrunkBaseAssignment, 
                 "phoneTrunkBases": [TrunkBase], 
                 "selfUri": String, 
@@ -14782,6 +14840,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "modifiedByApp": String, 
                 "createdByApp": String, 
                 "managed": Boolean, 
+                "hybrid": Boolean, 
                 "edgeTrunkBaseAssignment": TrunkBaseAssignment, 
                 "phoneTrunkBases": [TrunkBase], 
                 "selfUri": String, 
@@ -14979,6 +15038,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
             "modifiedByApp": String, 
             "createdByApp": String, 
             "managed": Boolean, 
+            "hybrid": Boolean, 
             "edgeTrunkBaseAssignment": { 
               "family": Number, 
               "trunkBase": { 
@@ -15096,6 +15156,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "modifiedByApp": String, 
                 "createdByApp": String, 
                 "managed": Boolean, 
+                "hybrid": Boolean, 
                 "edgeTrunkBaseAssignment": TrunkBaseAssignment, 
                 "phoneTrunkBases": [TrunkBase], 
                 "selfUri": String, 
@@ -15199,6 +15260,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "modifiedByApp": String, 
                 "createdByApp": String, 
                 "managed": Boolean, 
+                "hybrid": Boolean, 
                 "edgeTrunkBaseAssignment": TrunkBaseAssignment, 
                 "phoneTrunkBases": [TrunkBase], 
                 "selfUri": String, 
@@ -15309,6 +15371,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "modifiedByApp": String, 
                 "createdByApp": String, 
                 "managed": Boolean, 
+                "hybrid": Boolean, 
                 "edgeTrunkBaseAssignment": TrunkBaseAssignment, 
                 "phoneTrunkBases": [TrunkBase], 
                 "selfUri": String, 
@@ -15513,6 +15576,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
             "modifiedByApp": String, 
             "createdByApp": String, 
             "managed": Boolean, 
+            "hybrid": Boolean, 
             "edgeTrunkBaseAssignment": { 
               "family": Number, 
               "trunkBase": { 
@@ -15630,6 +15694,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "modifiedByApp": String, 
                 "createdByApp": String, 
                 "managed": Boolean, 
+                "hybrid": Boolean, 
                 "edgeTrunkBaseAssignment": TrunkBaseAssignment, 
                 "phoneTrunkBases": [TrunkBase], 
                 "selfUri": String, 
@@ -15733,6 +15798,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "modifiedByApp": String, 
                 "createdByApp": String, 
                 "managed": Boolean, 
+                "hybrid": Boolean, 
                 "edgeTrunkBaseAssignment": TrunkBaseAssignment, 
                 "phoneTrunkBases": [TrunkBase], 
                 "selfUri": String, 
@@ -15843,6 +15909,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "modifiedByApp": String, 
                 "createdByApp": String, 
                 "managed": Boolean, 
+                "hybrid": Boolean, 
                 "edgeTrunkBaseAssignment": TrunkBaseAssignment, 
                 "phoneTrunkBases": [TrunkBase], 
                 "selfUri": String, 
@@ -16137,6 +16204,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
         "modifiedByApp": String, 
         "createdByApp": String, 
         "managed": Boolean, 
+        "hybrid": Boolean, 
         "edgeTrunkBaseAssignment": { 
           "family": Number, 
           "trunkBase": { 
@@ -16262,6 +16330,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
             "modifiedByApp": String, 
             "createdByApp": String, 
             "managed": Boolean, 
+            "hybrid": Boolean, 
             "edgeTrunkBaseAssignment": { 
               "family": Number, 
               "trunkBase": { 
@@ -16379,6 +16448,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "modifiedByApp": String, 
                 "createdByApp": String, 
                 "managed": Boolean, 
+                "hybrid": Boolean, 
                 "edgeTrunkBaseAssignment": TrunkBaseAssignment, 
                 "phoneTrunkBases": [TrunkBase], 
                 "selfUri": String, 
@@ -16482,6 +16552,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "modifiedByApp": String, 
                 "createdByApp": String, 
                 "managed": Boolean, 
+                "hybrid": Boolean, 
                 "edgeTrunkBaseAssignment": TrunkBaseAssignment, 
                 "phoneTrunkBases": [TrunkBase], 
                 "selfUri": String, 
@@ -16592,6 +16663,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "modifiedByApp": String, 
                 "createdByApp": String, 
                 "managed": Boolean, 
+                "hybrid": Boolean, 
                 "edgeTrunkBaseAssignment": TrunkBaseAssignment, 
                 "phoneTrunkBases": [TrunkBase], 
                 "selfUri": String, 
@@ -16789,6 +16861,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
             "modifiedByApp": String, 
             "createdByApp": String, 
             "managed": Boolean, 
+            "hybrid": Boolean, 
             "edgeTrunkBaseAssignment": { 
               "family": Number, 
               "trunkBase": { 
@@ -16906,6 +16979,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "modifiedByApp": String, 
                 "createdByApp": String, 
                 "managed": Boolean, 
+                "hybrid": Boolean, 
                 "edgeTrunkBaseAssignment": TrunkBaseAssignment, 
                 "phoneTrunkBases": [TrunkBase], 
                 "selfUri": String, 
@@ -17009,6 +17083,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "modifiedByApp": String, 
                 "createdByApp": String, 
                 "managed": Boolean, 
+                "hybrid": Boolean, 
                 "edgeTrunkBaseAssignment": TrunkBaseAssignment, 
                 "phoneTrunkBases": [TrunkBase], 
                 "selfUri": String, 
@@ -17119,6 +17194,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "modifiedByApp": String, 
                 "createdByApp": String, 
                 "managed": Boolean, 
+                "hybrid": Boolean, 
                 "edgeTrunkBaseAssignment": TrunkBaseAssignment, 
                 "phoneTrunkBases": [TrunkBase], 
                 "selfUri": String, 
@@ -17323,6 +17399,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
             "modifiedByApp": String, 
             "createdByApp": String, 
             "managed": Boolean, 
+            "hybrid": Boolean, 
             "edgeTrunkBaseAssignment": { 
               "family": Number, 
               "trunkBase": { 
@@ -17440,6 +17517,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "modifiedByApp": String, 
                 "createdByApp": String, 
                 "managed": Boolean, 
+                "hybrid": Boolean, 
                 "edgeTrunkBaseAssignment": TrunkBaseAssignment, 
                 "phoneTrunkBases": [TrunkBase], 
                 "selfUri": String, 
@@ -17543,6 +17621,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "modifiedByApp": String, 
                 "createdByApp": String, 
                 "managed": Boolean, 
+                "hybrid": Boolean, 
                 "edgeTrunkBaseAssignment": TrunkBaseAssignment, 
                 "phoneTrunkBases": [TrunkBase], 
                 "selfUri": String, 
@@ -17653,6 +17732,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "modifiedByApp": String, 
                 "createdByApp": String, 
                 "managed": Boolean, 
+                "hybrid": Boolean, 
                 "edgeTrunkBaseAssignment": TrunkBaseAssignment, 
                 "phoneTrunkBases": [TrunkBase], 
                 "selfUri": String, 
@@ -18324,6 +18404,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
         "modifiedByApp": String, 
         "createdByApp": String, 
         "managed": Boolean, 
+        "hybrid": Boolean, 
         "edgeTrunkBaseAssignment": { 
           "family": Number, 
           "trunkBase": { 
@@ -18449,6 +18530,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
             "modifiedByApp": String, 
             "createdByApp": String, 
             "managed": Boolean, 
+            "hybrid": Boolean, 
             "edgeTrunkBaseAssignment": { 
               "family": Number, 
               "trunkBase": { 
@@ -18566,6 +18648,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
                 "modifiedByApp": String, 
                 "createdByApp": String, 
                 "managed": Boolean, 
+                "hybrid": Boolean, 
                 "edgeTrunkBaseAssignment": TrunkBaseAssignment, 
                 "phoneTrunkBases": [TrunkBase], 
                 "selfUri": String, 
@@ -18669,6 +18752,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
                 "modifiedByApp": String, 
                 "createdByApp": String, 
                 "managed": Boolean, 
+                "hybrid": Boolean, 
                 "edgeTrunkBaseAssignment": TrunkBaseAssignment, 
                 "phoneTrunkBases": [TrunkBase], 
                 "selfUri": String, 
@@ -18779,6 +18863,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
                 "modifiedByApp": String, 
                 "createdByApp": String, 
                 "managed": Boolean, 
+                "hybrid": Boolean, 
                 "edgeTrunkBaseAssignment": TrunkBaseAssignment, 
                 "phoneTrunkBases": [TrunkBase], 
                 "selfUri": String, 
@@ -18976,6 +19061,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
             "modifiedByApp": String, 
             "createdByApp": String, 
             "managed": Boolean, 
+            "hybrid": Boolean, 
             "edgeTrunkBaseAssignment": { 
               "family": Number, 
               "trunkBase": { 
@@ -19093,6 +19179,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
                 "modifiedByApp": String, 
                 "createdByApp": String, 
                 "managed": Boolean, 
+                "hybrid": Boolean, 
                 "edgeTrunkBaseAssignment": TrunkBaseAssignment, 
                 "phoneTrunkBases": [TrunkBase], 
                 "selfUri": String, 
@@ -19196,6 +19283,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
                 "modifiedByApp": String, 
                 "createdByApp": String, 
                 "managed": Boolean, 
+                "hybrid": Boolean, 
                 "edgeTrunkBaseAssignment": TrunkBaseAssignment, 
                 "phoneTrunkBases": [TrunkBase], 
                 "selfUri": String, 
@@ -19306,6 +19394,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
                 "modifiedByApp": String, 
                 "createdByApp": String, 
                 "managed": Boolean, 
+                "hybrid": Boolean, 
                 "edgeTrunkBaseAssignment": TrunkBaseAssignment, 
                 "phoneTrunkBases": [TrunkBase], 
                 "selfUri": String, 
@@ -19510,6 +19599,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
             "modifiedByApp": String, 
             "createdByApp": String, 
             "managed": Boolean, 
+            "hybrid": Boolean, 
             "edgeTrunkBaseAssignment": { 
               "family": Number, 
               "trunkBase": { 
@@ -19627,6 +19717,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
                 "modifiedByApp": String, 
                 "createdByApp": String, 
                 "managed": Boolean, 
+                "hybrid": Boolean, 
                 "edgeTrunkBaseAssignment": TrunkBaseAssignment, 
                 "phoneTrunkBases": [TrunkBase], 
                 "selfUri": String, 
@@ -19730,6 +19821,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
                 "modifiedByApp": String, 
                 "createdByApp": String, 
                 "managed": Boolean, 
+                "hybrid": Boolean, 
                 "edgeTrunkBaseAssignment": TrunkBaseAssignment, 
                 "phoneTrunkBases": [TrunkBase], 
                 "selfUri": String, 
@@ -19840,6 +19932,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
                 "modifiedByApp": String, 
                 "createdByApp": String, 
                 "managed": Boolean, 
+                "hybrid": Boolean, 
                 "edgeTrunkBaseAssignment": TrunkBaseAssignment, 
                 "phoneTrunkBases": [TrunkBase], 
                 "selfUri": String, 
@@ -20127,6 +20220,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
         "modifiedByApp": String, 
         "createdByApp": String, 
         "managed": Boolean, 
+        "hybrid": Boolean, 
         "edgeTrunkBaseAssignment": { 
           "family": Number, 
           "trunkBase": { 
@@ -20252,6 +20346,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
             "modifiedByApp": String, 
             "createdByApp": String, 
             "managed": Boolean, 
+            "hybrid": Boolean, 
             "edgeTrunkBaseAssignment": { 
               "family": Number, 
               "trunkBase": { 
@@ -20369,6 +20464,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
                 "modifiedByApp": String, 
                 "createdByApp": String, 
                 "managed": Boolean, 
+                "hybrid": Boolean, 
                 "edgeTrunkBaseAssignment": TrunkBaseAssignment, 
                 "phoneTrunkBases": [TrunkBase], 
                 "selfUri": String, 
@@ -20472,6 +20568,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
                 "modifiedByApp": String, 
                 "createdByApp": String, 
                 "managed": Boolean, 
+                "hybrid": Boolean, 
                 "edgeTrunkBaseAssignment": TrunkBaseAssignment, 
                 "phoneTrunkBases": [TrunkBase], 
                 "selfUri": String, 
@@ -20582,6 +20679,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
                 "modifiedByApp": String, 
                 "createdByApp": String, 
                 "managed": Boolean, 
+                "hybrid": Boolean, 
                 "edgeTrunkBaseAssignment": TrunkBaseAssignment, 
                 "phoneTrunkBases": [TrunkBase], 
                 "selfUri": String, 
@@ -20779,6 +20877,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
             "modifiedByApp": String, 
             "createdByApp": String, 
             "managed": Boolean, 
+            "hybrid": Boolean, 
             "edgeTrunkBaseAssignment": { 
               "family": Number, 
               "trunkBase": { 
@@ -20896,6 +20995,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
                 "modifiedByApp": String, 
                 "createdByApp": String, 
                 "managed": Boolean, 
+                "hybrid": Boolean, 
                 "edgeTrunkBaseAssignment": TrunkBaseAssignment, 
                 "phoneTrunkBases": [TrunkBase], 
                 "selfUri": String, 
@@ -20999,6 +21099,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
                 "modifiedByApp": String, 
                 "createdByApp": String, 
                 "managed": Boolean, 
+                "hybrid": Boolean, 
                 "edgeTrunkBaseAssignment": TrunkBaseAssignment, 
                 "phoneTrunkBases": [TrunkBase], 
                 "selfUri": String, 
@@ -21109,6 +21210,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
                 "modifiedByApp": String, 
                 "createdByApp": String, 
                 "managed": Boolean, 
+                "hybrid": Boolean, 
                 "edgeTrunkBaseAssignment": TrunkBaseAssignment, 
                 "phoneTrunkBases": [TrunkBase], 
                 "selfUri": String, 
@@ -21313,6 +21415,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
             "modifiedByApp": String, 
             "createdByApp": String, 
             "managed": Boolean, 
+            "hybrid": Boolean, 
             "edgeTrunkBaseAssignment": { 
               "family": Number, 
               "trunkBase": { 
@@ -21430,6 +21533,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
                 "modifiedByApp": String, 
                 "createdByApp": String, 
                 "managed": Boolean, 
+                "hybrid": Boolean, 
                 "edgeTrunkBaseAssignment": TrunkBaseAssignment, 
                 "phoneTrunkBases": [TrunkBase], 
                 "selfUri": String, 
@@ -21533,6 +21637,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
                 "modifiedByApp": String, 
                 "createdByApp": String, 
                 "managed": Boolean, 
+                "hybrid": Boolean, 
                 "edgeTrunkBaseAssignment": TrunkBaseAssignment, 
                 "phoneTrunkBases": [TrunkBase], 
                 "selfUri": String, 
@@ -21643,6 +21748,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
                 "modifiedByApp": String, 
                 "createdByApp": String, 
                 "managed": Boolean, 
+                "hybrid": Boolean, 
                 "edgeTrunkBaseAssignment": TrunkBaseAssignment, 
                 "phoneTrunkBases": [TrunkBase], 
                 "selfUri": String, 
@@ -22015,6 +22121,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
       "modifiedByApp": String, 
       "createdByApp": String, 
       "managed": Boolean, 
+      "hybrid": Boolean, 
       "edgeTrunkBaseAssignment": { 
         "family": Number, 
         "trunkBase": { 
@@ -22140,6 +22247,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
           "modifiedByApp": String, 
           "createdByApp": String, 
           "managed": Boolean, 
+          "hybrid": Boolean, 
           "edgeTrunkBaseAssignment": { 
             "family": Number, 
             "trunkBase": { 
@@ -22265,6 +22373,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
               "modifiedByApp": String, 
               "createdByApp": String, 
               "managed": Boolean, 
+              "hybrid": Boolean, 
               "edgeTrunkBaseAssignment": { 
                 "family": Number, 
                 "trunkBase": TrunkBase, 
@@ -22565,6 +22674,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
               "modifiedByApp": String, 
               "createdByApp": String, 
               "managed": Boolean, 
+              "hybrid": Boolean, 
               "edgeTrunkBaseAssignment": { 
                 "family": Number, 
                 "trunkBase": TrunkBase, 
@@ -22872,6 +22982,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
               "modifiedByApp": String, 
               "createdByApp": String, 
               "managed": Boolean, 
+              "hybrid": Boolean, 
               "edgeTrunkBaseAssignment": { 
                 "family": Number, 
                 "trunkBase": TrunkBase, 
@@ -23262,6 +23373,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
           "modifiedByApp": String, 
           "createdByApp": String, 
           "managed": Boolean, 
+          "hybrid": Boolean, 
           "edgeTrunkBaseAssignment": { 
             "family": Number, 
             "trunkBase": { 
@@ -23387,6 +23499,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
               "modifiedByApp": String, 
               "createdByApp": String, 
               "managed": Boolean, 
+              "hybrid": Boolean, 
               "edgeTrunkBaseAssignment": { 
                 "family": Number, 
                 "trunkBase": TrunkBase, 
@@ -23687,6 +23800,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
               "modifiedByApp": String, 
               "createdByApp": String, 
               "managed": Boolean, 
+              "hybrid": Boolean, 
               "edgeTrunkBaseAssignment": { 
                 "family": Number, 
                 "trunkBase": TrunkBase, 
@@ -23994,6 +24108,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
               "modifiedByApp": String, 
               "createdByApp": String, 
               "managed": Boolean, 
+              "hybrid": Boolean, 
               "edgeTrunkBaseAssignment": { 
                 "family": Number, 
                 "trunkBase": TrunkBase, 
@@ -24391,6 +24506,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
           "modifiedByApp": String, 
           "createdByApp": String, 
           "managed": Boolean, 
+          "hybrid": Boolean, 
           "edgeTrunkBaseAssignment": { 
             "family": Number, 
             "trunkBase": { 
@@ -24516,6 +24632,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
               "modifiedByApp": String, 
               "createdByApp": String, 
               "managed": Boolean, 
+              "hybrid": Boolean, 
               "edgeTrunkBaseAssignment": { 
                 "family": Number, 
                 "trunkBase": TrunkBase, 
@@ -24816,6 +24933,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
               "modifiedByApp": String, 
               "createdByApp": String, 
               "managed": Boolean, 
+              "hybrid": Boolean, 
               "edgeTrunkBaseAssignment": { 
                 "family": Number, 
                 "trunkBase": TrunkBase, 
@@ -25123,6 +25241,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
               "modifiedByApp": String, 
               "createdByApp": String, 
               "managed": Boolean, 
+              "hybrid": Boolean, 
               "edgeTrunkBaseAssignment": { 
                 "family": Number, 
                 "trunkBase": TrunkBase, 
@@ -25603,6 +25722,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
       "modifiedByApp": String, 
       "createdByApp": String, 
       "managed": Boolean, 
+      "hybrid": Boolean, 
       "edgeTrunkBaseAssignment": { 
         "family": Number, 
         "trunkBase": { 
@@ -25728,6 +25848,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
           "modifiedByApp": String, 
           "createdByApp": String, 
           "managed": Boolean, 
+          "hybrid": Boolean, 
           "edgeTrunkBaseAssignment": { 
             "family": Number, 
             "trunkBase": { 
@@ -25853,6 +25974,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
               "modifiedByApp": String, 
               "createdByApp": String, 
               "managed": Boolean, 
+              "hybrid": Boolean, 
               "edgeTrunkBaseAssignment": { 
                 "family": Number, 
                 "trunkBase": TrunkBase, 
@@ -26153,6 +26275,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
               "modifiedByApp": String, 
               "createdByApp": String, 
               "managed": Boolean, 
+              "hybrid": Boolean, 
               "edgeTrunkBaseAssignment": { 
                 "family": Number, 
                 "trunkBase": TrunkBase, 
@@ -26460,6 +26583,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
               "modifiedByApp": String, 
               "createdByApp": String, 
               "managed": Boolean, 
+              "hybrid": Boolean, 
               "edgeTrunkBaseAssignment": { 
                 "family": Number, 
                 "trunkBase": TrunkBase, 
@@ -26850,6 +26974,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
           "modifiedByApp": String, 
           "createdByApp": String, 
           "managed": Boolean, 
+          "hybrid": Boolean, 
           "edgeTrunkBaseAssignment": { 
             "family": Number, 
             "trunkBase": { 
@@ -26975,6 +27100,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
               "modifiedByApp": String, 
               "createdByApp": String, 
               "managed": Boolean, 
+              "hybrid": Boolean, 
               "edgeTrunkBaseAssignment": { 
                 "family": Number, 
                 "trunkBase": TrunkBase, 
@@ -27275,6 +27401,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
               "modifiedByApp": String, 
               "createdByApp": String, 
               "managed": Boolean, 
+              "hybrid": Boolean, 
               "edgeTrunkBaseAssignment": { 
                 "family": Number, 
                 "trunkBase": TrunkBase, 
@@ -27582,6 +27709,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
               "modifiedByApp": String, 
               "createdByApp": String, 
               "managed": Boolean, 
+              "hybrid": Boolean, 
               "edgeTrunkBaseAssignment": { 
                 "family": Number, 
                 "trunkBase": TrunkBase, 
@@ -27979,6 +28107,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
           "modifiedByApp": String, 
           "createdByApp": String, 
           "managed": Boolean, 
+          "hybrid": Boolean, 
           "edgeTrunkBaseAssignment": { 
             "family": Number, 
             "trunkBase": { 
@@ -28104,6 +28233,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
               "modifiedByApp": String, 
               "createdByApp": String, 
               "managed": Boolean, 
+              "hybrid": Boolean, 
               "edgeTrunkBaseAssignment": { 
                 "family": Number, 
                 "trunkBase": TrunkBase, 
@@ -28404,6 +28534,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
               "modifiedByApp": String, 
               "createdByApp": String, 
               "managed": Boolean, 
+              "hybrid": Boolean, 
               "edgeTrunkBaseAssignment": { 
                 "family": Number, 
                 "trunkBase": TrunkBase, 
@@ -28711,6 +28842,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
               "modifiedByApp": String, 
               "createdByApp": String, 
               "managed": Boolean, 
+              "hybrid": Boolean, 
               "edgeTrunkBaseAssignment": { 
                 "family": Number, 
                 "trunkBase": TrunkBase, 
@@ -29529,6 +29661,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
       "modifiedByApp": String, 
       "createdByApp": String, 
       "managed": Boolean, 
+      "hybrid": Boolean, 
       "edgeTrunkBaseAssignment": { 
         "family": Number, 
         "trunkBase": { 
@@ -29654,6 +29787,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
           "modifiedByApp": String, 
           "createdByApp": String, 
           "managed": Boolean, 
+          "hybrid": Boolean, 
           "edgeTrunkBaseAssignment": { 
             "family": Number, 
             "trunkBase": { 
@@ -29779,6 +29913,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "modifiedByApp": String, 
               "createdByApp": String, 
               "managed": Boolean, 
+              "hybrid": Boolean, 
               "edgeTrunkBaseAssignment": { 
                 "family": Number, 
                 "trunkBase": TrunkBase, 
@@ -30079,6 +30214,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "modifiedByApp": String, 
               "createdByApp": String, 
               "managed": Boolean, 
+              "hybrid": Boolean, 
               "edgeTrunkBaseAssignment": { 
                 "family": Number, 
                 "trunkBase": TrunkBase, 
@@ -30386,6 +30522,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "modifiedByApp": String, 
               "createdByApp": String, 
               "managed": Boolean, 
+              "hybrid": Boolean, 
               "edgeTrunkBaseAssignment": { 
                 "family": Number, 
                 "trunkBase": TrunkBase, 
@@ -30776,6 +30913,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
           "modifiedByApp": String, 
           "createdByApp": String, 
           "managed": Boolean, 
+          "hybrid": Boolean, 
           "edgeTrunkBaseAssignment": { 
             "family": Number, 
             "trunkBase": { 
@@ -30901,6 +31039,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "modifiedByApp": String, 
               "createdByApp": String, 
               "managed": Boolean, 
+              "hybrid": Boolean, 
               "edgeTrunkBaseAssignment": { 
                 "family": Number, 
                 "trunkBase": TrunkBase, 
@@ -31201,6 +31340,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "modifiedByApp": String, 
               "createdByApp": String, 
               "managed": Boolean, 
+              "hybrid": Boolean, 
               "edgeTrunkBaseAssignment": { 
                 "family": Number, 
                 "trunkBase": TrunkBase, 
@@ -31508,6 +31648,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "modifiedByApp": String, 
               "createdByApp": String, 
               "managed": Boolean, 
+              "hybrid": Boolean, 
               "edgeTrunkBaseAssignment": { 
                 "family": Number, 
                 "trunkBase": TrunkBase, 
@@ -31905,6 +32046,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
           "modifiedByApp": String, 
           "createdByApp": String, 
           "managed": Boolean, 
+          "hybrid": Boolean, 
           "edgeTrunkBaseAssignment": { 
             "family": Number, 
             "trunkBase": { 
@@ -32030,6 +32172,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "modifiedByApp": String, 
               "createdByApp": String, 
               "managed": Boolean, 
+              "hybrid": Boolean, 
               "edgeTrunkBaseAssignment": { 
                 "family": Number, 
                 "trunkBase": TrunkBase, 
@@ -32330,6 +32473,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "modifiedByApp": String, 
               "createdByApp": String, 
               "managed": Boolean, 
+              "hybrid": Boolean, 
               "edgeTrunkBaseAssignment": { 
                 "family": Number, 
                 "trunkBase": TrunkBase, 
@@ -32637,6 +32781,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "modifiedByApp": String, 
               "createdByApp": String, 
               "managed": Boolean, 
+              "hybrid": Boolean, 
               "edgeTrunkBaseAssignment": { 
                 "family": Number, 
                 "trunkBase": TrunkBase, 
@@ -33117,6 +33262,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
       "modifiedByApp": String, 
       "createdByApp": String, 
       "managed": Boolean, 
+      "hybrid": Boolean, 
       "edgeTrunkBaseAssignment": { 
         "family": Number, 
         "trunkBase": { 
@@ -33242,6 +33388,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
           "modifiedByApp": String, 
           "createdByApp": String, 
           "managed": Boolean, 
+          "hybrid": Boolean, 
           "edgeTrunkBaseAssignment": { 
             "family": Number, 
             "trunkBase": { 
@@ -33367,6 +33514,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "modifiedByApp": String, 
               "createdByApp": String, 
               "managed": Boolean, 
+              "hybrid": Boolean, 
               "edgeTrunkBaseAssignment": { 
                 "family": Number, 
                 "trunkBase": TrunkBase, 
@@ -33667,6 +33815,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "modifiedByApp": String, 
               "createdByApp": String, 
               "managed": Boolean, 
+              "hybrid": Boolean, 
               "edgeTrunkBaseAssignment": { 
                 "family": Number, 
                 "trunkBase": TrunkBase, 
@@ -33974,6 +34123,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "modifiedByApp": String, 
               "createdByApp": String, 
               "managed": Boolean, 
+              "hybrid": Boolean, 
               "edgeTrunkBaseAssignment": { 
                 "family": Number, 
                 "trunkBase": TrunkBase, 
@@ -34364,6 +34514,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
           "modifiedByApp": String, 
           "createdByApp": String, 
           "managed": Boolean, 
+          "hybrid": Boolean, 
           "edgeTrunkBaseAssignment": { 
             "family": Number, 
             "trunkBase": { 
@@ -34489,6 +34640,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "modifiedByApp": String, 
               "createdByApp": String, 
               "managed": Boolean, 
+              "hybrid": Boolean, 
               "edgeTrunkBaseAssignment": { 
                 "family": Number, 
                 "trunkBase": TrunkBase, 
@@ -34789,6 +34941,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "modifiedByApp": String, 
               "createdByApp": String, 
               "managed": Boolean, 
+              "hybrid": Boolean, 
               "edgeTrunkBaseAssignment": { 
                 "family": Number, 
                 "trunkBase": TrunkBase, 
@@ -35096,6 +35249,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "modifiedByApp": String, 
               "createdByApp": String, 
               "managed": Boolean, 
+              "hybrid": Boolean, 
               "edgeTrunkBaseAssignment": { 
                 "family": Number, 
                 "trunkBase": TrunkBase, 
@@ -35493,6 +35647,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
           "modifiedByApp": String, 
           "createdByApp": String, 
           "managed": Boolean, 
+          "hybrid": Boolean, 
           "edgeTrunkBaseAssignment": { 
             "family": Number, 
             "trunkBase": { 
@@ -35618,6 +35773,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "modifiedByApp": String, 
               "createdByApp": String, 
               "managed": Boolean, 
+              "hybrid": Boolean, 
               "edgeTrunkBaseAssignment": { 
                 "family": Number, 
                 "trunkBase": TrunkBase, 
@@ -35918,6 +36074,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "modifiedByApp": String, 
               "createdByApp": String, 
               "managed": Boolean, 
+              "hybrid": Boolean, 
               "edgeTrunkBaseAssignment": { 
                 "family": Number, 
                 "trunkBase": TrunkBase, 
@@ -36225,6 +36382,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "modifiedByApp": String, 
               "createdByApp": String, 
               "managed": Boolean, 
+              "hybrid": Boolean, 
               "edgeTrunkBaseAssignment": { 
                 "family": Number, 
                 "trunkBase": TrunkBase, 
@@ -36712,6 +36870,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
       "modifiedByApp": String, 
       "createdByApp": String, 
       "managed": Boolean, 
+      "hybrid": Boolean, 
       "edgeTrunkBaseAssignment": { 
         "family": Number, 
         "trunkBase": { 
@@ -36837,6 +36996,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
           "modifiedByApp": String, 
           "createdByApp": String, 
           "managed": Boolean, 
+          "hybrid": Boolean, 
           "edgeTrunkBaseAssignment": { 
             "family": Number, 
             "trunkBase": { 
@@ -36962,6 +37122,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "modifiedByApp": String, 
               "createdByApp": String, 
               "managed": Boolean, 
+              "hybrid": Boolean, 
               "edgeTrunkBaseAssignment": { 
                 "family": Number, 
                 "trunkBase": TrunkBase, 
@@ -37262,6 +37423,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "modifiedByApp": String, 
               "createdByApp": String, 
               "managed": Boolean, 
+              "hybrid": Boolean, 
               "edgeTrunkBaseAssignment": { 
                 "family": Number, 
                 "trunkBase": TrunkBase, 
@@ -37569,6 +37731,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "modifiedByApp": String, 
               "createdByApp": String, 
               "managed": Boolean, 
+              "hybrid": Boolean, 
               "edgeTrunkBaseAssignment": { 
                 "family": Number, 
                 "trunkBase": TrunkBase, 
@@ -37959,6 +38122,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
           "modifiedByApp": String, 
           "createdByApp": String, 
           "managed": Boolean, 
+          "hybrid": Boolean, 
           "edgeTrunkBaseAssignment": { 
             "family": Number, 
             "trunkBase": { 
@@ -38084,6 +38248,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "modifiedByApp": String, 
               "createdByApp": String, 
               "managed": Boolean, 
+              "hybrid": Boolean, 
               "edgeTrunkBaseAssignment": { 
                 "family": Number, 
                 "trunkBase": TrunkBase, 
@@ -38384,6 +38549,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "modifiedByApp": String, 
               "createdByApp": String, 
               "managed": Boolean, 
+              "hybrid": Boolean, 
               "edgeTrunkBaseAssignment": { 
                 "family": Number, 
                 "trunkBase": TrunkBase, 
@@ -38691,6 +38857,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "modifiedByApp": String, 
               "createdByApp": String, 
               "managed": Boolean, 
+              "hybrid": Boolean, 
               "edgeTrunkBaseAssignment": { 
                 "family": Number, 
                 "trunkBase": TrunkBase, 
@@ -39088,6 +39255,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
           "modifiedByApp": String, 
           "createdByApp": String, 
           "managed": Boolean, 
+          "hybrid": Boolean, 
           "edgeTrunkBaseAssignment": { 
             "family": Number, 
             "trunkBase": { 
@@ -39213,6 +39381,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "modifiedByApp": String, 
               "createdByApp": String, 
               "managed": Boolean, 
+              "hybrid": Boolean, 
               "edgeTrunkBaseAssignment": { 
                 "family": Number, 
                 "trunkBase": TrunkBase, 
@@ -39513,6 +39682,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "modifiedByApp": String, 
               "createdByApp": String, 
               "managed": Boolean, 
+              "hybrid": Boolean, 
               "edgeTrunkBaseAssignment": { 
                 "family": Number, 
                 "trunkBase": TrunkBase, 
@@ -39820,6 +39990,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "modifiedByApp": String, 
               "createdByApp": String, 
               "managed": Boolean, 
+              "hybrid": Boolean, 
               "edgeTrunkBaseAssignment": { 
                 "family": Number, 
                 "trunkBase": TrunkBase, 
@@ -40533,6 +40704,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
     "modifiedByApp": String, 
     "createdByApp": String, 
     "managed": Boolean, 
+    "hybrid": Boolean, 
     "edgeTrunkBaseAssignment": { 
       "family": Number, 
       "trunkBase": { 
@@ -40658,6 +40830,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
         "modifiedByApp": String, 
         "createdByApp": String, 
         "managed": Boolean, 
+        "hybrid": Boolean, 
         "edgeTrunkBaseAssignment": { 
           "family": Number, 
           "trunkBase": { 
@@ -40783,6 +40956,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
             "modifiedByApp": String, 
             "createdByApp": String, 
             "managed": Boolean, 
+            "hybrid": Boolean, 
             "edgeTrunkBaseAssignment": { 
               "family": Number, 
               "trunkBase": { 
@@ -40900,6 +41074,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "modifiedByApp": String, 
                 "createdByApp": String, 
                 "managed": Boolean, 
+                "hybrid": Boolean, 
                 "edgeTrunkBaseAssignment": TrunkBaseAssignment, 
                 "phoneTrunkBases": [TrunkBase], 
                 "selfUri": String, 
@@ -41003,6 +41178,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "modifiedByApp": String, 
                 "createdByApp": String, 
                 "managed": Boolean, 
+                "hybrid": Boolean, 
                 "edgeTrunkBaseAssignment": TrunkBaseAssignment, 
                 "phoneTrunkBases": [TrunkBase], 
                 "selfUri": String, 
@@ -41113,6 +41289,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "modifiedByApp": String, 
                 "createdByApp": String, 
                 "managed": Boolean, 
+                "hybrid": Boolean, 
                 "edgeTrunkBaseAssignment": TrunkBaseAssignment, 
                 "phoneTrunkBases": [TrunkBase], 
                 "selfUri": String, 
@@ -41310,6 +41487,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
             "modifiedByApp": String, 
             "createdByApp": String, 
             "managed": Boolean, 
+            "hybrid": Boolean, 
             "edgeTrunkBaseAssignment": { 
               "family": Number, 
               "trunkBase": { 
@@ -41427,6 +41605,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "modifiedByApp": String, 
                 "createdByApp": String, 
                 "managed": Boolean, 
+                "hybrid": Boolean, 
                 "edgeTrunkBaseAssignment": TrunkBaseAssignment, 
                 "phoneTrunkBases": [TrunkBase], 
                 "selfUri": String, 
@@ -41530,6 +41709,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "modifiedByApp": String, 
                 "createdByApp": String, 
                 "managed": Boolean, 
+                "hybrid": Boolean, 
                 "edgeTrunkBaseAssignment": TrunkBaseAssignment, 
                 "phoneTrunkBases": [TrunkBase], 
                 "selfUri": String, 
@@ -41640,6 +41820,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "modifiedByApp": String, 
                 "createdByApp": String, 
                 "managed": Boolean, 
+                "hybrid": Boolean, 
                 "edgeTrunkBaseAssignment": TrunkBaseAssignment, 
                 "phoneTrunkBases": [TrunkBase], 
                 "selfUri": String, 
@@ -41844,6 +42025,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
             "modifiedByApp": String, 
             "createdByApp": String, 
             "managed": Boolean, 
+            "hybrid": Boolean, 
             "edgeTrunkBaseAssignment": { 
               "family": Number, 
               "trunkBase": { 
@@ -41961,6 +42143,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "modifiedByApp": String, 
                 "createdByApp": String, 
                 "managed": Boolean, 
+                "hybrid": Boolean, 
                 "edgeTrunkBaseAssignment": TrunkBaseAssignment, 
                 "phoneTrunkBases": [TrunkBase], 
                 "selfUri": String, 
@@ -42064,6 +42247,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "modifiedByApp": String, 
                 "createdByApp": String, 
                 "managed": Boolean, 
+                "hybrid": Boolean, 
                 "edgeTrunkBaseAssignment": TrunkBaseAssignment, 
                 "phoneTrunkBases": [TrunkBase], 
                 "selfUri": String, 
@@ -42174,6 +42358,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "modifiedByApp": String, 
                 "createdByApp": String, 
                 "managed": Boolean, 
+                "hybrid": Boolean, 
                 "edgeTrunkBaseAssignment": TrunkBaseAssignment, 
                 "phoneTrunkBases": [TrunkBase], 
                 "selfUri": String, 
@@ -42461,6 +42646,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
         "modifiedByApp": String, 
         "createdByApp": String, 
         "managed": Boolean, 
+        "hybrid": Boolean, 
         "edgeTrunkBaseAssignment": { 
           "family": Number, 
           "trunkBase": { 
@@ -42586,6 +42772,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
             "modifiedByApp": String, 
             "createdByApp": String, 
             "managed": Boolean, 
+            "hybrid": Boolean, 
             "edgeTrunkBaseAssignment": { 
               "family": Number, 
               "trunkBase": { 
@@ -42703,6 +42890,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "modifiedByApp": String, 
                 "createdByApp": String, 
                 "managed": Boolean, 
+                "hybrid": Boolean, 
                 "edgeTrunkBaseAssignment": TrunkBaseAssignment, 
                 "phoneTrunkBases": [TrunkBase], 
                 "selfUri": String, 
@@ -42806,6 +42994,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "modifiedByApp": String, 
                 "createdByApp": String, 
                 "managed": Boolean, 
+                "hybrid": Boolean, 
                 "edgeTrunkBaseAssignment": TrunkBaseAssignment, 
                 "phoneTrunkBases": [TrunkBase], 
                 "selfUri": String, 
@@ -42916,6 +43105,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "modifiedByApp": String, 
                 "createdByApp": String, 
                 "managed": Boolean, 
+                "hybrid": Boolean, 
                 "edgeTrunkBaseAssignment": TrunkBaseAssignment, 
                 "phoneTrunkBases": [TrunkBase], 
                 "selfUri": String, 
@@ -43113,6 +43303,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
             "modifiedByApp": String, 
             "createdByApp": String, 
             "managed": Boolean, 
+            "hybrid": Boolean, 
             "edgeTrunkBaseAssignment": { 
               "family": Number, 
               "trunkBase": { 
@@ -43230,6 +43421,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "modifiedByApp": String, 
                 "createdByApp": String, 
                 "managed": Boolean, 
+                "hybrid": Boolean, 
                 "edgeTrunkBaseAssignment": TrunkBaseAssignment, 
                 "phoneTrunkBases": [TrunkBase], 
                 "selfUri": String, 
@@ -43333,6 +43525,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "modifiedByApp": String, 
                 "createdByApp": String, 
                 "managed": Boolean, 
+                "hybrid": Boolean, 
                 "edgeTrunkBaseAssignment": TrunkBaseAssignment, 
                 "phoneTrunkBases": [TrunkBase], 
                 "selfUri": String, 
@@ -43443,6 +43636,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "modifiedByApp": String, 
                 "createdByApp": String, 
                 "managed": Boolean, 
+                "hybrid": Boolean, 
                 "edgeTrunkBaseAssignment": TrunkBaseAssignment, 
                 "phoneTrunkBases": [TrunkBase], 
                 "selfUri": String, 
@@ -43647,6 +43841,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
             "modifiedByApp": String, 
             "createdByApp": String, 
             "managed": Boolean, 
+            "hybrid": Boolean, 
             "edgeTrunkBaseAssignment": { 
               "family": Number, 
               "trunkBase": { 
@@ -43764,6 +43959,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "modifiedByApp": String, 
                 "createdByApp": String, 
                 "managed": Boolean, 
+                "hybrid": Boolean, 
                 "edgeTrunkBaseAssignment": TrunkBaseAssignment, 
                 "phoneTrunkBases": [TrunkBase], 
                 "selfUri": String, 
@@ -43867,6 +44063,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "modifiedByApp": String, 
                 "createdByApp": String, 
                 "managed": Boolean, 
+                "hybrid": Boolean, 
                 "edgeTrunkBaseAssignment": TrunkBaseAssignment, 
                 "phoneTrunkBases": [TrunkBase], 
                 "selfUri": String, 
@@ -43977,6 +44174,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "modifiedByApp": String, 
                 "createdByApp": String, 
                 "managed": Boolean, 
+                "hybrid": Boolean, 
                 "edgeTrunkBaseAssignment": TrunkBaseAssignment, 
                 "phoneTrunkBases": [TrunkBase], 
                 "selfUri": String, 
@@ -44271,6 +44469,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
         "modifiedByApp": String, 
         "createdByApp": String, 
         "managed": Boolean, 
+        "hybrid": Boolean, 
         "edgeTrunkBaseAssignment": { 
           "family": Number, 
           "trunkBase": { 
@@ -44396,6 +44595,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
             "modifiedByApp": String, 
             "createdByApp": String, 
             "managed": Boolean, 
+            "hybrid": Boolean, 
             "edgeTrunkBaseAssignment": { 
               "family": Number, 
               "trunkBase": { 
@@ -44513,6 +44713,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "modifiedByApp": String, 
                 "createdByApp": String, 
                 "managed": Boolean, 
+                "hybrid": Boolean, 
                 "edgeTrunkBaseAssignment": TrunkBaseAssignment, 
                 "phoneTrunkBases": [TrunkBase], 
                 "selfUri": String, 
@@ -44616,6 +44817,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "modifiedByApp": String, 
                 "createdByApp": String, 
                 "managed": Boolean, 
+                "hybrid": Boolean, 
                 "edgeTrunkBaseAssignment": TrunkBaseAssignment, 
                 "phoneTrunkBases": [TrunkBase], 
                 "selfUri": String, 
@@ -44726,6 +44928,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "modifiedByApp": String, 
                 "createdByApp": String, 
                 "managed": Boolean, 
+                "hybrid": Boolean, 
                 "edgeTrunkBaseAssignment": TrunkBaseAssignment, 
                 "phoneTrunkBases": [TrunkBase], 
                 "selfUri": String, 
@@ -44923,6 +45126,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
             "modifiedByApp": String, 
             "createdByApp": String, 
             "managed": Boolean, 
+            "hybrid": Boolean, 
             "edgeTrunkBaseAssignment": { 
               "family": Number, 
               "trunkBase": { 
@@ -45040,6 +45244,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "modifiedByApp": String, 
                 "createdByApp": String, 
                 "managed": Boolean, 
+                "hybrid": Boolean, 
                 "edgeTrunkBaseAssignment": TrunkBaseAssignment, 
                 "phoneTrunkBases": [TrunkBase], 
                 "selfUri": String, 
@@ -45143,6 +45348,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "modifiedByApp": String, 
                 "createdByApp": String, 
                 "managed": Boolean, 
+                "hybrid": Boolean, 
                 "edgeTrunkBaseAssignment": TrunkBaseAssignment, 
                 "phoneTrunkBases": [TrunkBase], 
                 "selfUri": String, 
@@ -45253,6 +45459,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "modifiedByApp": String, 
                 "createdByApp": String, 
                 "managed": Boolean, 
+                "hybrid": Boolean, 
                 "edgeTrunkBaseAssignment": TrunkBaseAssignment, 
                 "phoneTrunkBases": [TrunkBase], 
                 "selfUri": String, 
@@ -45457,6 +45664,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
             "modifiedByApp": String, 
             "createdByApp": String, 
             "managed": Boolean, 
+            "hybrid": Boolean, 
             "edgeTrunkBaseAssignment": { 
               "family": Number, 
               "trunkBase": { 
@@ -45574,6 +45782,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "modifiedByApp": String, 
                 "createdByApp": String, 
                 "managed": Boolean, 
+                "hybrid": Boolean, 
                 "edgeTrunkBaseAssignment": TrunkBaseAssignment, 
                 "phoneTrunkBases": [TrunkBase], 
                 "selfUri": String, 
@@ -45677,6 +45886,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "modifiedByApp": String, 
                 "createdByApp": String, 
                 "managed": Boolean, 
+                "hybrid": Boolean, 
                 "edgeTrunkBaseAssignment": TrunkBaseAssignment, 
                 "phoneTrunkBases": [TrunkBase], 
                 "selfUri": String, 
@@ -45787,6 +45997,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "modifiedByApp": String, 
                 "createdByApp": String, 
                 "managed": Boolean, 
+                "hybrid": Boolean, 
                 "edgeTrunkBaseAssignment": TrunkBaseAssignment, 
                 "phoneTrunkBases": [TrunkBase], 
                 "selfUri": String, 
@@ -46261,6 +46472,7 @@ EdgeLine <a href="#" onclick="return copyEdgeLineExample()">Copy</a>
       "modifiedByApp": String, 
       "createdByApp": String, 
       "managed": Boolean, 
+      "hybrid": Boolean, 
       "edgeTrunkBaseAssignment": { 
         "family": Number, 
         "trunkBase": { 
@@ -46386,6 +46598,7 @@ EdgeLine <a href="#" onclick="return copyEdgeLineExample()">Copy</a>
           "modifiedByApp": String, 
           "createdByApp": String, 
           "managed": Boolean, 
+          "hybrid": Boolean, 
           "edgeTrunkBaseAssignment": { 
             "family": Number, 
             "trunkBase": { 
@@ -46511,6 +46724,7 @@ EdgeLine <a href="#" onclick="return copyEdgeLineExample()">Copy</a>
               "modifiedByApp": String, 
               "createdByApp": String, 
               "managed": Boolean, 
+              "hybrid": Boolean, 
               "edgeTrunkBaseAssignment": { 
                 "family": Number, 
                 "trunkBase": TrunkBase, 
@@ -46811,6 +47025,7 @@ EdgeLine <a href="#" onclick="return copyEdgeLineExample()">Copy</a>
               "modifiedByApp": String, 
               "createdByApp": String, 
               "managed": Boolean, 
+              "hybrid": Boolean, 
               "edgeTrunkBaseAssignment": { 
                 "family": Number, 
                 "trunkBase": TrunkBase, 
@@ -47118,6 +47333,7 @@ EdgeLine <a href="#" onclick="return copyEdgeLineExample()">Copy</a>
               "modifiedByApp": String, 
               "createdByApp": String, 
               "managed": Boolean, 
+              "hybrid": Boolean, 
               "edgeTrunkBaseAssignment": { 
                 "family": Number, 
                 "trunkBase": TrunkBase, 
@@ -47508,6 +47724,7 @@ EdgeLine <a href="#" onclick="return copyEdgeLineExample()">Copy</a>
           "modifiedByApp": String, 
           "createdByApp": String, 
           "managed": Boolean, 
+          "hybrid": Boolean, 
           "edgeTrunkBaseAssignment": { 
             "family": Number, 
             "trunkBase": { 
@@ -47633,6 +47850,7 @@ EdgeLine <a href="#" onclick="return copyEdgeLineExample()">Copy</a>
               "modifiedByApp": String, 
               "createdByApp": String, 
               "managed": Boolean, 
+              "hybrid": Boolean, 
               "edgeTrunkBaseAssignment": { 
                 "family": Number, 
                 "trunkBase": TrunkBase, 
@@ -47933,6 +48151,7 @@ EdgeLine <a href="#" onclick="return copyEdgeLineExample()">Copy</a>
               "modifiedByApp": String, 
               "createdByApp": String, 
               "managed": Boolean, 
+              "hybrid": Boolean, 
               "edgeTrunkBaseAssignment": { 
                 "family": Number, 
                 "trunkBase": TrunkBase, 
@@ -48240,6 +48459,7 @@ EdgeLine <a href="#" onclick="return copyEdgeLineExample()">Copy</a>
               "modifiedByApp": String, 
               "createdByApp": String, 
               "managed": Boolean, 
+              "hybrid": Boolean, 
               "edgeTrunkBaseAssignment": { 
                 "family": Number, 
                 "trunkBase": TrunkBase, 
@@ -48637,6 +48857,7 @@ EdgeLine <a href="#" onclick="return copyEdgeLineExample()">Copy</a>
           "modifiedByApp": String, 
           "createdByApp": String, 
           "managed": Boolean, 
+          "hybrid": Boolean, 
           "edgeTrunkBaseAssignment": { 
             "family": Number, 
             "trunkBase": { 
@@ -48762,6 +48983,7 @@ EdgeLine <a href="#" onclick="return copyEdgeLineExample()">Copy</a>
               "modifiedByApp": String, 
               "createdByApp": String, 
               "managed": Boolean, 
+              "hybrid": Boolean, 
               "edgeTrunkBaseAssignment": { 
                 "family": Number, 
                 "trunkBase": TrunkBase, 
@@ -49062,6 +49284,7 @@ EdgeLine <a href="#" onclick="return copyEdgeLineExample()">Copy</a>
               "modifiedByApp": String, 
               "createdByApp": String, 
               "managed": Boolean, 
+              "hybrid": Boolean, 
               "edgeTrunkBaseAssignment": { 
                 "family": Number, 
                 "trunkBase": TrunkBase, 
@@ -49369,6 +49592,7 @@ EdgeLine <a href="#" onclick="return copyEdgeLineExample()">Copy</a>
               "modifiedByApp": String, 
               "createdByApp": String, 
               "managed": Boolean, 
+              "hybrid": Boolean, 
               "edgeTrunkBaseAssignment": { 
                 "family": Number, 
                 "trunkBase": TrunkBase, 
@@ -49808,6 +50032,7 @@ EdgeLine <a href="#" onclick="return copyEdgeLineExample()">Copy</a>
     "modifiedByApp": String, 
     "createdByApp": String, 
     "managed": Boolean, 
+    "hybrid": Boolean, 
     "edgeTrunkBaseAssignment": { 
       "family": Number, 
       "trunkBase": { 
@@ -50546,6 +50771,7 @@ EdgeGroup <a href="#" onclick="return copyEdgeGroupExample()">Copy</a>
   "modifiedByApp": String, 
   "createdByApp": String, 
   "managed": Boolean, 
+  "hybrid": Boolean, 
   "edgeTrunkBaseAssignment": { 
     "family": Number, 
     "trunkBase": { 
@@ -51072,6 +51298,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
         "modifiedByApp": String, 
         "createdByApp": String, 
         "managed": Boolean, 
+        "hybrid": Boolean, 
         "edgeTrunkBaseAssignment": { 
           "family": Number, 
           "trunkBase": { 
@@ -51197,6 +51424,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
             "modifiedByApp": String, 
             "createdByApp": String, 
             "managed": Boolean, 
+            "hybrid": Boolean, 
             "edgeTrunkBaseAssignment": { 
               "family": Number, 
               "trunkBase": { 
@@ -51314,6 +51542,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "modifiedByApp": String, 
                 "createdByApp": String, 
                 "managed": Boolean, 
+                "hybrid": Boolean, 
                 "edgeTrunkBaseAssignment": TrunkBaseAssignment, 
                 "phoneTrunkBases": [TrunkBase], 
                 "selfUri": String, 
@@ -51417,6 +51646,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "modifiedByApp": String, 
                 "createdByApp": String, 
                 "managed": Boolean, 
+                "hybrid": Boolean, 
                 "edgeTrunkBaseAssignment": TrunkBaseAssignment, 
                 "phoneTrunkBases": [TrunkBase], 
                 "selfUri": String, 
@@ -51527,6 +51757,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "modifiedByApp": String, 
                 "createdByApp": String, 
                 "managed": Boolean, 
+                "hybrid": Boolean, 
                 "edgeTrunkBaseAssignment": TrunkBaseAssignment, 
                 "phoneTrunkBases": [TrunkBase], 
                 "selfUri": String, 
@@ -51724,6 +51955,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
             "modifiedByApp": String, 
             "createdByApp": String, 
             "managed": Boolean, 
+            "hybrid": Boolean, 
             "edgeTrunkBaseAssignment": { 
               "family": Number, 
               "trunkBase": { 
@@ -51841,6 +52073,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "modifiedByApp": String, 
                 "createdByApp": String, 
                 "managed": Boolean, 
+                "hybrid": Boolean, 
                 "edgeTrunkBaseAssignment": TrunkBaseAssignment, 
                 "phoneTrunkBases": [TrunkBase], 
                 "selfUri": String, 
@@ -51944,6 +52177,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "modifiedByApp": String, 
                 "createdByApp": String, 
                 "managed": Boolean, 
+                "hybrid": Boolean, 
                 "edgeTrunkBaseAssignment": TrunkBaseAssignment, 
                 "phoneTrunkBases": [TrunkBase], 
                 "selfUri": String, 
@@ -52054,6 +52288,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "modifiedByApp": String, 
                 "createdByApp": String, 
                 "managed": Boolean, 
+                "hybrid": Boolean, 
                 "edgeTrunkBaseAssignment": TrunkBaseAssignment, 
                 "phoneTrunkBases": [TrunkBase], 
                 "selfUri": String, 
@@ -52258,6 +52493,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
             "modifiedByApp": String, 
             "createdByApp": String, 
             "managed": Boolean, 
+            "hybrid": Boolean, 
             "edgeTrunkBaseAssignment": { 
               "family": Number, 
               "trunkBase": { 
@@ -52375,6 +52611,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "modifiedByApp": String, 
                 "createdByApp": String, 
                 "managed": Boolean, 
+                "hybrid": Boolean, 
                 "edgeTrunkBaseAssignment": TrunkBaseAssignment, 
                 "phoneTrunkBases": [TrunkBase], 
                 "selfUri": String, 
@@ -52478,6 +52715,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "modifiedByApp": String, 
                 "createdByApp": String, 
                 "managed": Boolean, 
+                "hybrid": Boolean, 
                 "edgeTrunkBaseAssignment": TrunkBaseAssignment, 
                 "phoneTrunkBases": [TrunkBase], 
                 "selfUri": String, 
@@ -52588,6 +52826,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "modifiedByApp": String, 
                 "createdByApp": String, 
                 "managed": Boolean, 
+                "hybrid": Boolean, 
                 "edgeTrunkBaseAssignment": TrunkBaseAssignment, 
                 "phoneTrunkBases": [TrunkBase], 
                 "selfUri": String, 
@@ -52875,6 +53114,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
         "modifiedByApp": String, 
         "createdByApp": String, 
         "managed": Boolean, 
+        "hybrid": Boolean, 
         "edgeTrunkBaseAssignment": { 
           "family": Number, 
           "trunkBase": { 
@@ -53000,6 +53240,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
             "modifiedByApp": String, 
             "createdByApp": String, 
             "managed": Boolean, 
+            "hybrid": Boolean, 
             "edgeTrunkBaseAssignment": { 
               "family": Number, 
               "trunkBase": { 
@@ -53117,6 +53358,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "modifiedByApp": String, 
                 "createdByApp": String, 
                 "managed": Boolean, 
+                "hybrid": Boolean, 
                 "edgeTrunkBaseAssignment": TrunkBaseAssignment, 
                 "phoneTrunkBases": [TrunkBase], 
                 "selfUri": String, 
@@ -53220,6 +53462,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "modifiedByApp": String, 
                 "createdByApp": String, 
                 "managed": Boolean, 
+                "hybrid": Boolean, 
                 "edgeTrunkBaseAssignment": TrunkBaseAssignment, 
                 "phoneTrunkBases": [TrunkBase], 
                 "selfUri": String, 
@@ -53330,6 +53573,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "modifiedByApp": String, 
                 "createdByApp": String, 
                 "managed": Boolean, 
+                "hybrid": Boolean, 
                 "edgeTrunkBaseAssignment": TrunkBaseAssignment, 
                 "phoneTrunkBases": [TrunkBase], 
                 "selfUri": String, 
@@ -53527,6 +53771,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
             "modifiedByApp": String, 
             "createdByApp": String, 
             "managed": Boolean, 
+            "hybrid": Boolean, 
             "edgeTrunkBaseAssignment": { 
               "family": Number, 
               "trunkBase": { 
@@ -53644,6 +53889,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "modifiedByApp": String, 
                 "createdByApp": String, 
                 "managed": Boolean, 
+                "hybrid": Boolean, 
                 "edgeTrunkBaseAssignment": TrunkBaseAssignment, 
                 "phoneTrunkBases": [TrunkBase], 
                 "selfUri": String, 
@@ -53747,6 +53993,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "modifiedByApp": String, 
                 "createdByApp": String, 
                 "managed": Boolean, 
+                "hybrid": Boolean, 
                 "edgeTrunkBaseAssignment": TrunkBaseAssignment, 
                 "phoneTrunkBases": [TrunkBase], 
                 "selfUri": String, 
@@ -53857,6 +54104,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "modifiedByApp": String, 
                 "createdByApp": String, 
                 "managed": Boolean, 
+                "hybrid": Boolean, 
                 "edgeTrunkBaseAssignment": TrunkBaseAssignment, 
                 "phoneTrunkBases": [TrunkBase], 
                 "selfUri": String, 
@@ -54061,6 +54309,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
             "modifiedByApp": String, 
             "createdByApp": String, 
             "managed": Boolean, 
+            "hybrid": Boolean, 
             "edgeTrunkBaseAssignment": { 
               "family": Number, 
               "trunkBase": { 
@@ -54178,6 +54427,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "modifiedByApp": String, 
                 "createdByApp": String, 
                 "managed": Boolean, 
+                "hybrid": Boolean, 
                 "edgeTrunkBaseAssignment": TrunkBaseAssignment, 
                 "phoneTrunkBases": [TrunkBase], 
                 "selfUri": String, 
@@ -54281,6 +54531,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "modifiedByApp": String, 
                 "createdByApp": String, 
                 "managed": Boolean, 
+                "hybrid": Boolean, 
                 "edgeTrunkBaseAssignment": TrunkBaseAssignment, 
                 "phoneTrunkBases": [TrunkBase], 
                 "selfUri": String, 
@@ -54391,6 +54642,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "modifiedByApp": String, 
                 "createdByApp": String, 
                 "managed": Boolean, 
+                "hybrid": Boolean, 
                 "edgeTrunkBaseAssignment": TrunkBaseAssignment, 
                 "phoneTrunkBases": [TrunkBase], 
                 "selfUri": String, 
@@ -54685,6 +54937,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
         "modifiedByApp": String, 
         "createdByApp": String, 
         "managed": Boolean, 
+        "hybrid": Boolean, 
         "edgeTrunkBaseAssignment": { 
           "family": Number, 
           "trunkBase": { 
@@ -54810,6 +55063,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
             "modifiedByApp": String, 
             "createdByApp": String, 
             "managed": Boolean, 
+            "hybrid": Boolean, 
             "edgeTrunkBaseAssignment": { 
               "family": Number, 
               "trunkBase": { 
@@ -54927,6 +55181,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "modifiedByApp": String, 
                 "createdByApp": String, 
                 "managed": Boolean, 
+                "hybrid": Boolean, 
                 "edgeTrunkBaseAssignment": TrunkBaseAssignment, 
                 "phoneTrunkBases": [TrunkBase], 
                 "selfUri": String, 
@@ -55030,6 +55285,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "modifiedByApp": String, 
                 "createdByApp": String, 
                 "managed": Boolean, 
+                "hybrid": Boolean, 
                 "edgeTrunkBaseAssignment": TrunkBaseAssignment, 
                 "phoneTrunkBases": [TrunkBase], 
                 "selfUri": String, 
@@ -55140,6 +55396,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "modifiedByApp": String, 
                 "createdByApp": String, 
                 "managed": Boolean, 
+                "hybrid": Boolean, 
                 "edgeTrunkBaseAssignment": TrunkBaseAssignment, 
                 "phoneTrunkBases": [TrunkBase], 
                 "selfUri": String, 
@@ -55337,6 +55594,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
             "modifiedByApp": String, 
             "createdByApp": String, 
             "managed": Boolean, 
+            "hybrid": Boolean, 
             "edgeTrunkBaseAssignment": { 
               "family": Number, 
               "trunkBase": { 
@@ -55454,6 +55712,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "modifiedByApp": String, 
                 "createdByApp": String, 
                 "managed": Boolean, 
+                "hybrid": Boolean, 
                 "edgeTrunkBaseAssignment": TrunkBaseAssignment, 
                 "phoneTrunkBases": [TrunkBase], 
                 "selfUri": String, 
@@ -55557,6 +55816,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "modifiedByApp": String, 
                 "createdByApp": String, 
                 "managed": Boolean, 
+                "hybrid": Boolean, 
                 "edgeTrunkBaseAssignment": TrunkBaseAssignment, 
                 "phoneTrunkBases": [TrunkBase], 
                 "selfUri": String, 
@@ -55667,6 +55927,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "modifiedByApp": String, 
                 "createdByApp": String, 
                 "managed": Boolean, 
+                "hybrid": Boolean, 
                 "edgeTrunkBaseAssignment": TrunkBaseAssignment, 
                 "phoneTrunkBases": [TrunkBase], 
                 "selfUri": String, 
@@ -55871,6 +56132,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
             "modifiedByApp": String, 
             "createdByApp": String, 
             "managed": Boolean, 
+            "hybrid": Boolean, 
             "edgeTrunkBaseAssignment": { 
               "family": Number, 
               "trunkBase": { 
@@ -55988,6 +56250,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "modifiedByApp": String, 
                 "createdByApp": String, 
                 "managed": Boolean, 
+                "hybrid": Boolean, 
                 "edgeTrunkBaseAssignment": TrunkBaseAssignment, 
                 "phoneTrunkBases": [TrunkBase], 
                 "selfUri": String, 
@@ -56091,6 +56354,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "modifiedByApp": String, 
                 "createdByApp": String, 
                 "managed": Boolean, 
+                "hybrid": Boolean, 
                 "edgeTrunkBaseAssignment": TrunkBaseAssignment, 
                 "phoneTrunkBases": [TrunkBase], 
                 "selfUri": String, 
@@ -56201,6 +56465,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "modifiedByApp": String, 
                 "createdByApp": String, 
                 "managed": Boolean, 
+                "hybrid": Boolean, 
                 "edgeTrunkBaseAssignment": TrunkBaseAssignment, 
                 "phoneTrunkBases": [TrunkBase], 
                 "selfUri": String, 
@@ -56692,6 +56957,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
         "modifiedByApp": String, 
         "createdByApp": String, 
         "managed": Boolean, 
+        "hybrid": Boolean, 
         "edgeTrunkBaseAssignment": { 
           "family": Number, 
           "trunkBase": { 
@@ -56817,6 +57083,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
             "modifiedByApp": String, 
             "createdByApp": String, 
             "managed": Boolean, 
+            "hybrid": Boolean, 
             "edgeTrunkBaseAssignment": { 
               "family": Number, 
               "trunkBase": { 
@@ -56934,6 +57201,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
                 "modifiedByApp": String, 
                 "createdByApp": String, 
                 "managed": Boolean, 
+                "hybrid": Boolean, 
                 "edgeTrunkBaseAssignment": TrunkBaseAssignment, 
                 "phoneTrunkBases": [TrunkBase], 
                 "selfUri": String, 
@@ -57037,6 +57305,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
                 "modifiedByApp": String, 
                 "createdByApp": String, 
                 "managed": Boolean, 
+                "hybrid": Boolean, 
                 "edgeTrunkBaseAssignment": TrunkBaseAssignment, 
                 "phoneTrunkBases": [TrunkBase], 
                 "selfUri": String, 
@@ -57147,6 +57416,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
                 "modifiedByApp": String, 
                 "createdByApp": String, 
                 "managed": Boolean, 
+                "hybrid": Boolean, 
                 "edgeTrunkBaseAssignment": TrunkBaseAssignment, 
                 "phoneTrunkBases": [TrunkBase], 
                 "selfUri": String, 
@@ -57344,6 +57614,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
             "modifiedByApp": String, 
             "createdByApp": String, 
             "managed": Boolean, 
+            "hybrid": Boolean, 
             "edgeTrunkBaseAssignment": { 
               "family": Number, 
               "trunkBase": { 
@@ -57461,6 +57732,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
                 "modifiedByApp": String, 
                 "createdByApp": String, 
                 "managed": Boolean, 
+                "hybrid": Boolean, 
                 "edgeTrunkBaseAssignment": TrunkBaseAssignment, 
                 "phoneTrunkBases": [TrunkBase], 
                 "selfUri": String, 
@@ -57564,6 +57836,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
                 "modifiedByApp": String, 
                 "createdByApp": String, 
                 "managed": Boolean, 
+                "hybrid": Boolean, 
                 "edgeTrunkBaseAssignment": TrunkBaseAssignment, 
                 "phoneTrunkBases": [TrunkBase], 
                 "selfUri": String, 
@@ -57674,6 +57947,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
                 "modifiedByApp": String, 
                 "createdByApp": String, 
                 "managed": Boolean, 
+                "hybrid": Boolean, 
                 "edgeTrunkBaseAssignment": TrunkBaseAssignment, 
                 "phoneTrunkBases": [TrunkBase], 
                 "selfUri": String, 
@@ -57878,6 +58152,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
             "modifiedByApp": String, 
             "createdByApp": String, 
             "managed": Boolean, 
+            "hybrid": Boolean, 
             "edgeTrunkBaseAssignment": { 
               "family": Number, 
               "trunkBase": { 
@@ -57995,6 +58270,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
                 "modifiedByApp": String, 
                 "createdByApp": String, 
                 "managed": Boolean, 
+                "hybrid": Boolean, 
                 "edgeTrunkBaseAssignment": TrunkBaseAssignment, 
                 "phoneTrunkBases": [TrunkBase], 
                 "selfUri": String, 
@@ -58098,6 +58374,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
                 "modifiedByApp": String, 
                 "createdByApp": String, 
                 "managed": Boolean, 
+                "hybrid": Boolean, 
                 "edgeTrunkBaseAssignment": TrunkBaseAssignment, 
                 "phoneTrunkBases": [TrunkBase], 
                 "selfUri": String, 
@@ -58208,6 +58485,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
                 "modifiedByApp": String, 
                 "createdByApp": String, 
                 "managed": Boolean, 
+                "hybrid": Boolean, 
                 "edgeTrunkBaseAssignment": TrunkBaseAssignment, 
                 "phoneTrunkBases": [TrunkBase], 
                 "selfUri": String, 
@@ -58495,6 +58773,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
         "modifiedByApp": String, 
         "createdByApp": String, 
         "managed": Boolean, 
+        "hybrid": Boolean, 
         "edgeTrunkBaseAssignment": { 
           "family": Number, 
           "trunkBase": { 
@@ -58620,6 +58899,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
             "modifiedByApp": String, 
             "createdByApp": String, 
             "managed": Boolean, 
+            "hybrid": Boolean, 
             "edgeTrunkBaseAssignment": { 
               "family": Number, 
               "trunkBase": { 
@@ -58737,6 +59017,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
                 "modifiedByApp": String, 
                 "createdByApp": String, 
                 "managed": Boolean, 
+                "hybrid": Boolean, 
                 "edgeTrunkBaseAssignment": TrunkBaseAssignment, 
                 "phoneTrunkBases": [TrunkBase], 
                 "selfUri": String, 
@@ -58840,6 +59121,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
                 "modifiedByApp": String, 
                 "createdByApp": String, 
                 "managed": Boolean, 
+                "hybrid": Boolean, 
                 "edgeTrunkBaseAssignment": TrunkBaseAssignment, 
                 "phoneTrunkBases": [TrunkBase], 
                 "selfUri": String, 
@@ -58950,6 +59232,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
                 "modifiedByApp": String, 
                 "createdByApp": String, 
                 "managed": Boolean, 
+                "hybrid": Boolean, 
                 "edgeTrunkBaseAssignment": TrunkBaseAssignment, 
                 "phoneTrunkBases": [TrunkBase], 
                 "selfUri": String, 
@@ -59147,6 +59430,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
             "modifiedByApp": String, 
             "createdByApp": String, 
             "managed": Boolean, 
+            "hybrid": Boolean, 
             "edgeTrunkBaseAssignment": { 
               "family": Number, 
               "trunkBase": { 
@@ -59264,6 +59548,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
                 "modifiedByApp": String, 
                 "createdByApp": String, 
                 "managed": Boolean, 
+                "hybrid": Boolean, 
                 "edgeTrunkBaseAssignment": TrunkBaseAssignment, 
                 "phoneTrunkBases": [TrunkBase], 
                 "selfUri": String, 
@@ -59367,6 +59652,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
                 "modifiedByApp": String, 
                 "createdByApp": String, 
                 "managed": Boolean, 
+                "hybrid": Boolean, 
                 "edgeTrunkBaseAssignment": TrunkBaseAssignment, 
                 "phoneTrunkBases": [TrunkBase], 
                 "selfUri": String, 
@@ -59477,6 +59763,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
                 "modifiedByApp": String, 
                 "createdByApp": String, 
                 "managed": Boolean, 
+                "hybrid": Boolean, 
                 "edgeTrunkBaseAssignment": TrunkBaseAssignment, 
                 "phoneTrunkBases": [TrunkBase], 
                 "selfUri": String, 
@@ -59681,6 +59968,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
             "modifiedByApp": String, 
             "createdByApp": String, 
             "managed": Boolean, 
+            "hybrid": Boolean, 
             "edgeTrunkBaseAssignment": { 
               "family": Number, 
               "trunkBase": { 
@@ -59798,6 +60086,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
                 "modifiedByApp": String, 
                 "createdByApp": String, 
                 "managed": Boolean, 
+                "hybrid": Boolean, 
                 "edgeTrunkBaseAssignment": TrunkBaseAssignment, 
                 "phoneTrunkBases": [TrunkBase], 
                 "selfUri": String, 
@@ -59901,6 +60190,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
                 "modifiedByApp": String, 
                 "createdByApp": String, 
                 "managed": Boolean, 
+                "hybrid": Boolean, 
                 "edgeTrunkBaseAssignment": TrunkBaseAssignment, 
                 "phoneTrunkBases": [TrunkBase], 
                 "selfUri": String, 
@@ -60011,6 +60301,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
                 "modifiedByApp": String, 
                 "createdByApp": String, 
                 "managed": Boolean, 
+                "hybrid": Boolean, 
                 "edgeTrunkBaseAssignment": TrunkBaseAssignment, 
                 "phoneTrunkBases": [TrunkBase], 
                 "selfUri": String, 
@@ -60383,6 +60674,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
       "modifiedByApp": String, 
       "createdByApp": String, 
       "managed": Boolean, 
+      "hybrid": Boolean, 
       "edgeTrunkBaseAssignment": { 
         "family": Number, 
         "trunkBase": { 
@@ -60508,6 +60800,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
           "modifiedByApp": String, 
           "createdByApp": String, 
           "managed": Boolean, 
+          "hybrid": Boolean, 
           "edgeTrunkBaseAssignment": { 
             "family": Number, 
             "trunkBase": { 
@@ -60633,6 +60926,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
               "modifiedByApp": String, 
               "createdByApp": String, 
               "managed": Boolean, 
+              "hybrid": Boolean, 
               "edgeTrunkBaseAssignment": { 
                 "family": Number, 
                 "trunkBase": TrunkBase, 
@@ -60933,6 +61227,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
               "modifiedByApp": String, 
               "createdByApp": String, 
               "managed": Boolean, 
+              "hybrid": Boolean, 
               "edgeTrunkBaseAssignment": { 
                 "family": Number, 
                 "trunkBase": TrunkBase, 
@@ -61240,6 +61535,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
               "modifiedByApp": String, 
               "createdByApp": String, 
               "managed": Boolean, 
+              "hybrid": Boolean, 
               "edgeTrunkBaseAssignment": { 
                 "family": Number, 
                 "trunkBase": TrunkBase, 
@@ -61630,6 +61926,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
           "modifiedByApp": String, 
           "createdByApp": String, 
           "managed": Boolean, 
+          "hybrid": Boolean, 
           "edgeTrunkBaseAssignment": { 
             "family": Number, 
             "trunkBase": { 
@@ -61755,6 +62052,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
               "modifiedByApp": String, 
               "createdByApp": String, 
               "managed": Boolean, 
+              "hybrid": Boolean, 
               "edgeTrunkBaseAssignment": { 
                 "family": Number, 
                 "trunkBase": TrunkBase, 
@@ -62055,6 +62353,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
               "modifiedByApp": String, 
               "createdByApp": String, 
               "managed": Boolean, 
+              "hybrid": Boolean, 
               "edgeTrunkBaseAssignment": { 
                 "family": Number, 
                 "trunkBase": TrunkBase, 
@@ -62362,6 +62661,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
               "modifiedByApp": String, 
               "createdByApp": String, 
               "managed": Boolean, 
+              "hybrid": Boolean, 
               "edgeTrunkBaseAssignment": { 
                 "family": Number, 
                 "trunkBase": TrunkBase, 
@@ -62759,6 +63059,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
           "modifiedByApp": String, 
           "createdByApp": String, 
           "managed": Boolean, 
+          "hybrid": Boolean, 
           "edgeTrunkBaseAssignment": { 
             "family": Number, 
             "trunkBase": { 
@@ -62884,6 +63185,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
               "modifiedByApp": String, 
               "createdByApp": String, 
               "managed": Boolean, 
+              "hybrid": Boolean, 
               "edgeTrunkBaseAssignment": { 
                 "family": Number, 
                 "trunkBase": TrunkBase, 
@@ -63184,6 +63486,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
               "modifiedByApp": String, 
               "createdByApp": String, 
               "managed": Boolean, 
+              "hybrid": Boolean, 
               "edgeTrunkBaseAssignment": { 
                 "family": Number, 
                 "trunkBase": TrunkBase, 
@@ -63491,6 +63794,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
               "modifiedByApp": String, 
               "createdByApp": String, 
               "managed": Boolean, 
+              "hybrid": Boolean, 
               "edgeTrunkBaseAssignment": { 
                 "family": Number, 
                 "trunkBase": TrunkBase, 
@@ -63971,6 +64275,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
       "modifiedByApp": String, 
       "createdByApp": String, 
       "managed": Boolean, 
+      "hybrid": Boolean, 
       "edgeTrunkBaseAssignment": { 
         "family": Number, 
         "trunkBase": { 
@@ -64096,6 +64401,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
           "modifiedByApp": String, 
           "createdByApp": String, 
           "managed": Boolean, 
+          "hybrid": Boolean, 
           "edgeTrunkBaseAssignment": { 
             "family": Number, 
             "trunkBase": { 
@@ -64221,6 +64527,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
               "modifiedByApp": String, 
               "createdByApp": String, 
               "managed": Boolean, 
+              "hybrid": Boolean, 
               "edgeTrunkBaseAssignment": { 
                 "family": Number, 
                 "trunkBase": TrunkBase, 
@@ -64521,6 +64828,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
               "modifiedByApp": String, 
               "createdByApp": String, 
               "managed": Boolean, 
+              "hybrid": Boolean, 
               "edgeTrunkBaseAssignment": { 
                 "family": Number, 
                 "trunkBase": TrunkBase, 
@@ -64828,6 +65136,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
               "modifiedByApp": String, 
               "createdByApp": String, 
               "managed": Boolean, 
+              "hybrid": Boolean, 
               "edgeTrunkBaseAssignment": { 
                 "family": Number, 
                 "trunkBase": TrunkBase, 
@@ -65218,6 +65527,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
           "modifiedByApp": String, 
           "createdByApp": String, 
           "managed": Boolean, 
+          "hybrid": Boolean, 
           "edgeTrunkBaseAssignment": { 
             "family": Number, 
             "trunkBase": { 
@@ -65343,6 +65653,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
               "modifiedByApp": String, 
               "createdByApp": String, 
               "managed": Boolean, 
+              "hybrid": Boolean, 
               "edgeTrunkBaseAssignment": { 
                 "family": Number, 
                 "trunkBase": TrunkBase, 
@@ -65643,6 +65954,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
               "modifiedByApp": String, 
               "createdByApp": String, 
               "managed": Boolean, 
+              "hybrid": Boolean, 
               "edgeTrunkBaseAssignment": { 
                 "family": Number, 
                 "trunkBase": TrunkBase, 
@@ -65950,6 +66262,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
               "modifiedByApp": String, 
               "createdByApp": String, 
               "managed": Boolean, 
+              "hybrid": Boolean, 
               "edgeTrunkBaseAssignment": { 
                 "family": Number, 
                 "trunkBase": TrunkBase, 
@@ -66347,6 +66660,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
           "modifiedByApp": String, 
           "createdByApp": String, 
           "managed": Boolean, 
+          "hybrid": Boolean, 
           "edgeTrunkBaseAssignment": { 
             "family": Number, 
             "trunkBase": { 
@@ -66472,6 +66786,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
               "modifiedByApp": String, 
               "createdByApp": String, 
               "managed": Boolean, 
+              "hybrid": Boolean, 
               "edgeTrunkBaseAssignment": { 
                 "family": Number, 
                 "trunkBase": TrunkBase, 
@@ -66772,6 +67087,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
               "modifiedByApp": String, 
               "createdByApp": String, 
               "managed": Boolean, 
+              "hybrid": Boolean, 
               "edgeTrunkBaseAssignment": { 
                 "family": Number, 
                 "trunkBase": TrunkBase, 
@@ -67079,6 +67395,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
               "modifiedByApp": String, 
               "createdByApp": String, 
               "managed": Boolean, 
+              "hybrid": Boolean, 
               "edgeTrunkBaseAssignment": { 
                 "family": Number, 
                 "trunkBase": TrunkBase, 
@@ -67791,6 +68108,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
       "modifiedByApp": String, 
       "createdByApp": String, 
       "managed": Boolean, 
+      "hybrid": Boolean, 
       "edgeTrunkBaseAssignment": { 
         "family": Number, 
         "trunkBase": { 
@@ -67916,6 +68234,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
           "modifiedByApp": String, 
           "createdByApp": String, 
           "managed": Boolean, 
+          "hybrid": Boolean, 
           "edgeTrunkBaseAssignment": { 
             "family": Number, 
             "trunkBase": { 
@@ -68041,6 +68360,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "modifiedByApp": String, 
               "createdByApp": String, 
               "managed": Boolean, 
+              "hybrid": Boolean, 
               "edgeTrunkBaseAssignment": { 
                 "family": Number, 
                 "trunkBase": TrunkBase, 
@@ -68341,6 +68661,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "modifiedByApp": String, 
               "createdByApp": String, 
               "managed": Boolean, 
+              "hybrid": Boolean, 
               "edgeTrunkBaseAssignment": { 
                 "family": Number, 
                 "trunkBase": TrunkBase, 
@@ -68648,6 +68969,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "modifiedByApp": String, 
               "createdByApp": String, 
               "managed": Boolean, 
+              "hybrid": Boolean, 
               "edgeTrunkBaseAssignment": { 
                 "family": Number, 
                 "trunkBase": TrunkBase, 
@@ -69038,6 +69360,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
           "modifiedByApp": String, 
           "createdByApp": String, 
           "managed": Boolean, 
+          "hybrid": Boolean, 
           "edgeTrunkBaseAssignment": { 
             "family": Number, 
             "trunkBase": { 
@@ -69163,6 +69486,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "modifiedByApp": String, 
               "createdByApp": String, 
               "managed": Boolean, 
+              "hybrid": Boolean, 
               "edgeTrunkBaseAssignment": { 
                 "family": Number, 
                 "trunkBase": TrunkBase, 
@@ -69463,6 +69787,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "modifiedByApp": String, 
               "createdByApp": String, 
               "managed": Boolean, 
+              "hybrid": Boolean, 
               "edgeTrunkBaseAssignment": { 
                 "family": Number, 
                 "trunkBase": TrunkBase, 
@@ -69770,6 +70095,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "modifiedByApp": String, 
               "createdByApp": String, 
               "managed": Boolean, 
+              "hybrid": Boolean, 
               "edgeTrunkBaseAssignment": { 
                 "family": Number, 
                 "trunkBase": TrunkBase, 
@@ -70167,6 +70493,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
           "modifiedByApp": String, 
           "createdByApp": String, 
           "managed": Boolean, 
+          "hybrid": Boolean, 
           "edgeTrunkBaseAssignment": { 
             "family": Number, 
             "trunkBase": { 
@@ -70292,6 +70619,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "modifiedByApp": String, 
               "createdByApp": String, 
               "managed": Boolean, 
+              "hybrid": Boolean, 
               "edgeTrunkBaseAssignment": { 
                 "family": Number, 
                 "trunkBase": TrunkBase, 
@@ -70592,6 +70920,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "modifiedByApp": String, 
               "createdByApp": String, 
               "managed": Boolean, 
+              "hybrid": Boolean, 
               "edgeTrunkBaseAssignment": { 
                 "family": Number, 
                 "trunkBase": TrunkBase, 
@@ -70899,6 +71228,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "modifiedByApp": String, 
               "createdByApp": String, 
               "managed": Boolean, 
+              "hybrid": Boolean, 
               "edgeTrunkBaseAssignment": { 
                 "family": Number, 
                 "trunkBase": TrunkBase, 
@@ -71379,6 +71709,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
       "modifiedByApp": String, 
       "createdByApp": String, 
       "managed": Boolean, 
+      "hybrid": Boolean, 
       "edgeTrunkBaseAssignment": { 
         "family": Number, 
         "trunkBase": { 
@@ -71504,6 +71835,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
           "modifiedByApp": String, 
           "createdByApp": String, 
           "managed": Boolean, 
+          "hybrid": Boolean, 
           "edgeTrunkBaseAssignment": { 
             "family": Number, 
             "trunkBase": { 
@@ -71629,6 +71961,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "modifiedByApp": String, 
               "createdByApp": String, 
               "managed": Boolean, 
+              "hybrid": Boolean, 
               "edgeTrunkBaseAssignment": { 
                 "family": Number, 
                 "trunkBase": TrunkBase, 
@@ -71929,6 +72262,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "modifiedByApp": String, 
               "createdByApp": String, 
               "managed": Boolean, 
+              "hybrid": Boolean, 
               "edgeTrunkBaseAssignment": { 
                 "family": Number, 
                 "trunkBase": TrunkBase, 
@@ -72236,6 +72570,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "modifiedByApp": String, 
               "createdByApp": String, 
               "managed": Boolean, 
+              "hybrid": Boolean, 
               "edgeTrunkBaseAssignment": { 
                 "family": Number, 
                 "trunkBase": TrunkBase, 
@@ -72626,6 +72961,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
           "modifiedByApp": String, 
           "createdByApp": String, 
           "managed": Boolean, 
+          "hybrid": Boolean, 
           "edgeTrunkBaseAssignment": { 
             "family": Number, 
             "trunkBase": { 
@@ -72751,6 +73087,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "modifiedByApp": String, 
               "createdByApp": String, 
               "managed": Boolean, 
+              "hybrid": Boolean, 
               "edgeTrunkBaseAssignment": { 
                 "family": Number, 
                 "trunkBase": TrunkBase, 
@@ -73051,6 +73388,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "modifiedByApp": String, 
               "createdByApp": String, 
               "managed": Boolean, 
+              "hybrid": Boolean, 
               "edgeTrunkBaseAssignment": { 
                 "family": Number, 
                 "trunkBase": TrunkBase, 
@@ -73358,6 +73696,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "modifiedByApp": String, 
               "createdByApp": String, 
               "managed": Boolean, 
+              "hybrid": Boolean, 
               "edgeTrunkBaseAssignment": { 
                 "family": Number, 
                 "trunkBase": TrunkBase, 
@@ -73755,6 +74094,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
           "modifiedByApp": String, 
           "createdByApp": String, 
           "managed": Boolean, 
+          "hybrid": Boolean, 
           "edgeTrunkBaseAssignment": { 
             "family": Number, 
             "trunkBase": { 
@@ -73880,6 +74220,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "modifiedByApp": String, 
               "createdByApp": String, 
               "managed": Boolean, 
+              "hybrid": Boolean, 
               "edgeTrunkBaseAssignment": { 
                 "family": Number, 
                 "trunkBase": TrunkBase, 
@@ -74180,6 +74521,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "modifiedByApp": String, 
               "createdByApp": String, 
               "managed": Boolean, 
+              "hybrid": Boolean, 
               "edgeTrunkBaseAssignment": { 
                 "family": Number, 
                 "trunkBase": TrunkBase, 
@@ -74487,6 +74829,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "modifiedByApp": String, 
               "createdByApp": String, 
               "managed": Boolean, 
+              "hybrid": Boolean, 
               "edgeTrunkBaseAssignment": { 
                 "family": Number, 
                 "trunkBase": TrunkBase, 
@@ -74974,6 +75317,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
       "modifiedByApp": String, 
       "createdByApp": String, 
       "managed": Boolean, 
+      "hybrid": Boolean, 
       "edgeTrunkBaseAssignment": { 
         "family": Number, 
         "trunkBase": { 
@@ -75099,6 +75443,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
           "modifiedByApp": String, 
           "createdByApp": String, 
           "managed": Boolean, 
+          "hybrid": Boolean, 
           "edgeTrunkBaseAssignment": { 
             "family": Number, 
             "trunkBase": { 
@@ -75224,6 +75569,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "modifiedByApp": String, 
               "createdByApp": String, 
               "managed": Boolean, 
+              "hybrid": Boolean, 
               "edgeTrunkBaseAssignment": { 
                 "family": Number, 
                 "trunkBase": TrunkBase, 
@@ -75524,6 +75870,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "modifiedByApp": String, 
               "createdByApp": String, 
               "managed": Boolean, 
+              "hybrid": Boolean, 
               "edgeTrunkBaseAssignment": { 
                 "family": Number, 
                 "trunkBase": TrunkBase, 
@@ -75831,6 +76178,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "modifiedByApp": String, 
               "createdByApp": String, 
               "managed": Boolean, 
+              "hybrid": Boolean, 
               "edgeTrunkBaseAssignment": { 
                 "family": Number, 
                 "trunkBase": TrunkBase, 
@@ -76221,6 +76569,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
           "modifiedByApp": String, 
           "createdByApp": String, 
           "managed": Boolean, 
+          "hybrid": Boolean, 
           "edgeTrunkBaseAssignment": { 
             "family": Number, 
             "trunkBase": { 
@@ -76346,6 +76695,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "modifiedByApp": String, 
               "createdByApp": String, 
               "managed": Boolean, 
+              "hybrid": Boolean, 
               "edgeTrunkBaseAssignment": { 
                 "family": Number, 
                 "trunkBase": TrunkBase, 
@@ -76646,6 +76996,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "modifiedByApp": String, 
               "createdByApp": String, 
               "managed": Boolean, 
+              "hybrid": Boolean, 
               "edgeTrunkBaseAssignment": { 
                 "family": Number, 
                 "trunkBase": TrunkBase, 
@@ -76953,6 +77304,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "modifiedByApp": String, 
               "createdByApp": String, 
               "managed": Boolean, 
+              "hybrid": Boolean, 
               "edgeTrunkBaseAssignment": { 
                 "family": Number, 
                 "trunkBase": TrunkBase, 
@@ -77350,6 +77702,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
           "modifiedByApp": String, 
           "createdByApp": String, 
           "managed": Boolean, 
+          "hybrid": Boolean, 
           "edgeTrunkBaseAssignment": { 
             "family": Number, 
             "trunkBase": { 
@@ -77475,6 +77828,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "modifiedByApp": String, 
               "createdByApp": String, 
               "managed": Boolean, 
+              "hybrid": Boolean, 
               "edgeTrunkBaseAssignment": { 
                 "family": Number, 
                 "trunkBase": TrunkBase, 
@@ -77775,6 +78129,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "modifiedByApp": String, 
               "createdByApp": String, 
               "managed": Boolean, 
+              "hybrid": Boolean, 
               "edgeTrunkBaseAssignment": { 
                 "family": Number, 
                 "trunkBase": TrunkBase, 
@@ -78082,6 +78437,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "modifiedByApp": String, 
               "createdByApp": String, 
               "managed": Boolean, 
+              "hybrid": Boolean, 
               "edgeTrunkBaseAssignment": { 
                 "family": Number, 
                 "trunkBase": TrunkBase, 

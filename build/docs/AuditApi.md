@@ -11,6 +11,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getAuditsQueryTransactionId**](AuditApi.html#getAuditsQueryTransactionId) | **GET** /api/v2/audits/query/{transactionId} | Get status of audit query execution
 [**getAuditsQueryTransactionIdResults**](AuditApi.html#getAuditsQueryTransactionIdResults) | **GET** /api/v2/audits/query/{transactionId}/results | Get results of audit query
 [**postAuditsQuery**](AuditApi.html#postAuditsQuery) | **POST** /api/v2/audits/query | Create audit query execution
+[**postAuditsQueryRealtime**](AuditApi.html#postAuditsQueryRealtime) | **POST** /api/v2/audits/query/realtime | This endpoint will only retrieve 7 days worth of audits for certain services. Please use /query to get a full list and older audits.
 {: class="table table-striped"}
 
 <a name="getAuditsQueryServicemapping"></a>
@@ -269,4 +270,99 @@ apiInstance.postAuditsQuery(body)
 ### Return type
 
 **AuditQueryExecutionStatusResponse**
+
+<a name="postAuditsQueryRealtime"></a>
+
+# AuditRealtimeQueryResultsResponse postAuditsQueryRealtime(body, opts)
+
+
+
+POST /api/v2/audits/query/realtime
+
+This endpoint will only retrieve 7 days worth of audits for certain services. Please use /query to get a full list and older audits.
+
+
+
+Requires ALL permissions: 
+
+* audits:audit:view
+
+
+### Request Body Schema
+
+<script type="text/javascript">
+	function copyAuditRealtimeQueryRequestExample() {
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#AuditRealtimeQueryRequestExample').text()).select();
+		document.execCommand("copy");
+		temp.remove();
+		return false;
+	}
+</script>
+
+AuditRealtimeQueryRequest <a href="#" onclick="return copyAuditRealtimeQueryRequestExample()">Copy</a>
+
+<div id="AuditRealtimeQueryRequestExample">
+
+```{"language":"json", "maxHeight": "250px"}
+{ 
+  "interval": String, 
+  "serviceName": String, 
+  "filters": { 
+    "property": String, 
+    "value": String, 
+  },  
+  "sort": { 
+    "name": String, 
+    "sortOrder": String, 
+  },  
+  "pageNumber": Number, 
+  "pageSize": Number, 
+}
+```
+
+</div>
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AuditApi();
+
+let body = {}; // Object | query
+let opts = { 
+  'expand': ["expand_example"] // [String] | Which fields, if any, to expand
+};
+
+apiInstance.postAuditsQueryRealtime(body, opts)
+  .then((data) => {
+    console.log(`postAuditsQueryRealtime success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postAuditsQueryRealtime');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | query |  |
+ **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: user |
+{: class="table table-striped"}
+
+### Return type
+
+**AuditRealtimeQueryResultsResponse**
 

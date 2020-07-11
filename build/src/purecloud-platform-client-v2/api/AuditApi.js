@@ -5,7 +5,7 @@ class AuditApi {
 	/**
 	 * Audit service.
 	 * @module purecloud-platform-client-v2/api/AuditApi
-	 * @version 85.0.0
+	 * @version 86.0.0
 	 */
 
 	/**
@@ -112,6 +112,35 @@ class AuditApi {
 			'POST', 
 			{  }, 
 			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * This endpoint will only retrieve 7 days worth of audits for certain services. Please use /query to get a full list and older audits.
+	 * 
+	 * @param {Object} body query
+	 * @param {Object} opts Optional parameters
+	 * @param {Array.<String>} opts.expand Which fields, if any, to expand
+	 */
+	postAuditsQueryRealtime(body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postAuditsQueryRealtime';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/audits/query/realtime', 
+			'POST', 
+			{  }, 
+			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') }, 
 			{  }, 
 			{  }, 
 			body, 

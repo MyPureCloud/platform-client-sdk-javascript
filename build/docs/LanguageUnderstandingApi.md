@@ -9,6 +9,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | ------------- | ------------- | ------------- |
 [**deleteLanguageunderstandingDomain**](LanguageUnderstandingApi.html#deleteLanguageunderstandingDomain) | **DELETE** /api/v2/languageunderstanding/domains/{domainId} | Delete an NLU Domain.
 [**deleteLanguageunderstandingDomainFeedbackFeedbackId**](LanguageUnderstandingApi.html#deleteLanguageunderstandingDomainFeedbackFeedbackId) | **DELETE** /api/v2/languageunderstanding/domains/{domainId}/feedback/{feedbackId} | Delete the feedback on the NLU Domain Version.
+[**deleteLanguageunderstandingDomainVersion**](LanguageUnderstandingApi.html#deleteLanguageunderstandingDomainVersion) | **DELETE** /api/v2/languageunderstanding/domains/{domainId}/versions/{domainVersionId} | Delete an NLU Domain Version
 [**getLanguageunderstandingDomain**](LanguageUnderstandingApi.html#getLanguageunderstandingDomain) | **GET** /api/v2/languageunderstanding/domains/{domainId} | Find an NLU Domain.
 [**getLanguageunderstandingDomainFeedback**](LanguageUnderstandingApi.html#getLanguageunderstandingDomainFeedback) | **GET** /api/v2/languageunderstanding/domains/{domainId}/feedback | Get all feedback in the given NLU Domain Version.
 [**getLanguageunderstandingDomainFeedbackFeedbackId**](LanguageUnderstandingApi.html#getLanguageunderstandingDomainFeedbackFeedbackId) | **GET** /api/v2/languageunderstanding/domains/{domainId}/feedback/{feedbackId} | Find a Feedback
@@ -21,6 +22,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postLanguageunderstandingDomainVersionDetect**](LanguageUnderstandingApi.html#postLanguageunderstandingDomainVersionDetect) | **POST** /api/v2/languageunderstanding/domains/{domainId}/versions/{domainVersionId}/detect | Detect intent, entities, etc. in the submitted text using the specified NLU domain version.
 [**postLanguageunderstandingDomainVersionPublish**](LanguageUnderstandingApi.html#postLanguageunderstandingDomainVersionPublish) | **POST** /api/v2/languageunderstanding/domains/{domainId}/versions/{domainVersionId}/publish | Publish the draft NLU Domain Version.
 [**postLanguageunderstandingDomainVersionTrain**](LanguageUnderstandingApi.html#postLanguageunderstandingDomainVersionTrain) | **POST** /api/v2/languageunderstanding/domains/{domainId}/versions/{domainVersionId}/train | Train the draft NLU Domain Version.
+[**postLanguageunderstandingDomainVersions**](LanguageUnderstandingApi.html#postLanguageunderstandingDomainVersions) | **POST** /api/v2/languageunderstanding/domains/{domainId}/versions | Create an NLU Domain Version.
 [**postLanguageunderstandingDomains**](LanguageUnderstandingApi.html#postLanguageunderstandingDomains) | **POST** /api/v2/languageunderstanding/domains | Create an NLU Domain.
 [**putLanguageunderstandingDomainVersion**](LanguageUnderstandingApi.html#putLanguageunderstandingDomainVersion) | **PUT** /api/v2/languageunderstanding/domains/{domainId}/versions/{domainVersionId} | Update an NLU Domain Version.
 {: class="table table-striped"}
@@ -133,6 +135,64 @@ apiInstance.deleteLanguageunderstandingDomainFeedbackFeedbackId(domainId, feedba
 | ------------- | ------------- | ------------- | ------------- |
  **domainId** | **String** | ID of the NLU domain. |  |
  **feedbackId** | **String** | ID of the Feedback |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
+
+<a name="deleteLanguageunderstandingDomainVersion"></a>
+
+# void deleteLanguageunderstandingDomainVersion(domainId, domainVersionId)
+
+
+
+DELETE /api/v2/languageunderstanding/domains/{domainId}/versions/{domainVersionId}
+
+Delete an NLU Domain Version
+
+
+
+Requires ANY permissions: 
+
+* languageUnderstanding:nluDomainVersion:delete
+* dialog:botVersion:delete
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.LanguageUnderstandingApi();
+
+let domainId = "domainId_example"; // String | ID of the NLU domain.
+let domainVersionId = "domainVersionId_example"; // String | ID of the NLU domain version.
+
+apiInstance.deleteLanguageunderstandingDomainVersion(domainId, domainVersionId)
+  .then(() => {
+    console.log('deleteLanguageunderstandingDomainVersion returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteLanguageunderstandingDomainVersion');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **domainId** | **String** | ID of the NLU domain. |  |
+ **domainVersionId** | **String** | ID of the NLU domain version. |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -577,7 +637,7 @@ apiInstance.getLanguageunderstandingDomains(opts)
 
 <a name="patchLanguageunderstandingDomain"></a>
 
-# NluDomain patchLanguageunderstandingDomain(domainId, opts)
+# NluDomain patchLanguageunderstandingDomain(domainId, body)
 
 
 
@@ -634,6 +694,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
                 "domain": NluDomain, 
                 "description": String, 
                 "language": String, 
+                "published": Boolean, 
                 "dateCreated": Date, 
                 "dateModified": Date, 
                 "dateTrained": Date, 
@@ -649,6 +710,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
                 "domain": NluDomain, 
                 "description": String, 
                 "language": String, 
+                "published": Boolean, 
                 "dateCreated": Date, 
                 "dateModified": Date, 
                 "dateTrained": Date, 
@@ -665,6 +727,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
             },  
             "description": String, 
             "language": String, 
+            "published": Boolean, 
             "dateCreated": Date, 
             "dateModified": Date, 
             "dateTrained": Date, 
@@ -702,6 +765,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
                 "domain": NluDomain, 
                 "description": String, 
                 "language": String, 
+                "published": Boolean, 
                 "dateCreated": Date, 
                 "dateModified": Date, 
                 "dateTrained": Date, 
@@ -717,6 +781,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
                 "domain": NluDomain, 
                 "description": String, 
                 "language": String, 
+                "published": Boolean, 
                 "dateCreated": Date, 
                 "dateModified": Date, 
                 "dateTrained": Date, 
@@ -733,6 +798,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
             },  
             "description": String, 
             "language": String, 
+            "published": Boolean, 
             "dateCreated": Date, 
             "dateModified": Date, 
             "dateTrained": Date, 
@@ -766,6 +832,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
         },  
         "description": String, 
         "language": String, 
+        "published": Boolean, 
         "dateCreated": Date, 
         "dateModified": Date, 
         "dateTrained": Date, 
@@ -816,6 +883,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
                 "domain": NluDomain, 
                 "description": String, 
                 "language": String, 
+                "published": Boolean, 
                 "dateCreated": Date, 
                 "dateModified": Date, 
                 "dateTrained": Date, 
@@ -831,6 +899,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
                 "domain": NluDomain, 
                 "description": String, 
                 "language": String, 
+                "published": Boolean, 
                 "dateCreated": Date, 
                 "dateModified": Date, 
                 "dateTrained": Date, 
@@ -847,6 +916,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
             },  
             "description": String, 
             "language": String, 
+            "published": Boolean, 
             "dateCreated": Date, 
             "dateModified": Date, 
             "dateTrained": Date, 
@@ -884,6 +954,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
                 "domain": NluDomain, 
                 "description": String, 
                 "language": String, 
+                "published": Boolean, 
                 "dateCreated": Date, 
                 "dateModified": Date, 
                 "dateTrained": Date, 
@@ -899,6 +970,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
                 "domain": NluDomain, 
                 "description": String, 
                 "language": String, 
+                "published": Boolean, 
                 "dateCreated": Date, 
                 "dateModified": Date, 
                 "dateTrained": Date, 
@@ -915,6 +987,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
             },  
             "description": String, 
             "language": String, 
+            "published": Boolean, 
             "dateCreated": Date, 
             "dateModified": Date, 
             "dateTrained": Date, 
@@ -948,6 +1021,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
         },  
         "description": String, 
         "language": String, 
+        "published": Boolean, 
         "dateCreated": Date, 
         "dateModified": Date, 
         "dateTrained": Date, 
@@ -989,6 +1063,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
     },  
     "description": String, 
     "language": String, 
+    "published": Boolean, 
     "dateCreated": Date, 
     "dateModified": Date, 
     "dateTrained": Date, 
@@ -1044,6 +1119,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
                 "domain": NluDomain, 
                 "description": String, 
                 "language": String, 
+                "published": Boolean, 
                 "dateCreated": Date, 
                 "dateModified": Date, 
                 "dateTrained": Date, 
@@ -1059,6 +1135,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
                 "domain": NluDomain, 
                 "description": String, 
                 "language": String, 
+                "published": Boolean, 
                 "dateCreated": Date, 
                 "dateModified": Date, 
                 "dateTrained": Date, 
@@ -1075,6 +1152,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
             },  
             "description": String, 
             "language": String, 
+            "published": Boolean, 
             "dateCreated": Date, 
             "dateModified": Date, 
             "dateTrained": Date, 
@@ -1112,6 +1190,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
                 "domain": NluDomain, 
                 "description": String, 
                 "language": String, 
+                "published": Boolean, 
                 "dateCreated": Date, 
                 "dateModified": Date, 
                 "dateTrained": Date, 
@@ -1127,6 +1206,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
                 "domain": NluDomain, 
                 "description": String, 
                 "language": String, 
+                "published": Boolean, 
                 "dateCreated": Date, 
                 "dateModified": Date, 
                 "dateTrained": Date, 
@@ -1143,6 +1223,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
             },  
             "description": String, 
             "language": String, 
+            "published": Boolean, 
             "dateCreated": Date, 
             "dateModified": Date, 
             "dateTrained": Date, 
@@ -1176,6 +1257,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
         },  
         "description": String, 
         "language": String, 
+        "published": Boolean, 
         "dateCreated": Date, 
         "dateModified": Date, 
         "dateTrained": Date, 
@@ -1226,6 +1308,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
                 "domain": NluDomain, 
                 "description": String, 
                 "language": String, 
+                "published": Boolean, 
                 "dateCreated": Date, 
                 "dateModified": Date, 
                 "dateTrained": Date, 
@@ -1241,6 +1324,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
                 "domain": NluDomain, 
                 "description": String, 
                 "language": String, 
+                "published": Boolean, 
                 "dateCreated": Date, 
                 "dateModified": Date, 
                 "dateTrained": Date, 
@@ -1257,6 +1341,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
             },  
             "description": String, 
             "language": String, 
+            "published": Boolean, 
             "dateCreated": Date, 
             "dateModified": Date, 
             "dateTrained": Date, 
@@ -1294,6 +1379,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
                 "domain": NluDomain, 
                 "description": String, 
                 "language": String, 
+                "published": Boolean, 
                 "dateCreated": Date, 
                 "dateModified": Date, 
                 "dateTrained": Date, 
@@ -1309,6 +1395,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
                 "domain": NluDomain, 
                 "description": String, 
                 "language": String, 
+                "published": Boolean, 
                 "dateCreated": Date, 
                 "dateModified": Date, 
                 "dateTrained": Date, 
@@ -1325,6 +1412,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
             },  
             "description": String, 
             "language": String, 
+            "published": Boolean, 
             "dateCreated": Date, 
             "dateModified": Date, 
             "dateTrained": Date, 
@@ -1358,6 +1446,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
         },  
         "description": String, 
         "language": String, 
+        "published": Boolean, 
         "dateCreated": Date, 
         "dateModified": Date, 
         "dateTrained": Date, 
@@ -1399,6 +1488,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
     },  
     "description": String, 
     "language": String, 
+    "published": Boolean, 
     "dateCreated": Date, 
     "dateModified": Date, 
     "dateTrained": Date, 
@@ -1457,11 +1547,9 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.LanguageUnderstandingApi();
 
 let domainId = "domainId_example"; // String | ID of the NLU domain.
-let opts = { 
-  'body': {} // Object | 
-};
+let body = {}; // Object | The updated NLU Domain.
 
-apiInstance.patchLanguageunderstandingDomain(domainId, opts)
+apiInstance.patchLanguageunderstandingDomain(domainId, body)
   .then((data) => {
     console.log(`patchLanguageunderstandingDomain success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1477,7 +1565,7 @@ apiInstance.patchLanguageunderstandingDomain(domainId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **domainId** | **String** | ID of the NLU domain. |  |
- **body** | **Object** |  | [optional]  |
+ **body** | **Object** | The updated NLU Domain. |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1486,7 +1574,7 @@ apiInstance.patchLanguageunderstandingDomain(domainId, opts)
 
 <a name="postLanguageunderstandingDomainFeedback"></a>
 
-# NluFeedbackResponse postLanguageunderstandingDomainFeedback(domainId, opts)
+# NluFeedbackResponse postLanguageunderstandingDomainFeedback(domainId, body)
 
 
 
@@ -1557,11 +1645,9 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.LanguageUnderstandingApi();
 
 let domainId = "domainId_example"; // String | ID of the NLU domain.
-let opts = { 
-  'body': {} // Object | 
-};
+let body = {}; // Object | The Feedback to create.
 
-apiInstance.postLanguageunderstandingDomainFeedback(domainId, opts)
+apiInstance.postLanguageunderstandingDomainFeedback(domainId, body)
   .then((data) => {
     console.log(`postLanguageunderstandingDomainFeedback success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1577,7 +1663,7 @@ apiInstance.postLanguageunderstandingDomainFeedback(domainId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **domainId** | **String** | ID of the NLU domain. |  |
- **body** | **Object** |  | [optional]  |
+ **body** | **Object** | The Feedback to create. |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1586,7 +1672,7 @@ apiInstance.postLanguageunderstandingDomainFeedback(domainId, opts)
 
 <a name="postLanguageunderstandingDomainVersionDetect"></a>
 
-# NluDetectionResponse postLanguageunderstandingDomainVersionDetect(domainId, domainVersionId, opts)
+# NluDetectionResponse postLanguageunderstandingDomainVersionDetect(domainId, domainVersionId, body)
 
 
 
@@ -1653,11 +1739,9 @@ let apiInstance = new platformClient.LanguageUnderstandingApi();
 
 let domainId = "domainId_example"; // String | ID of the NLU domain.
 let domainVersionId = "domainVersionId_example"; // String | ID of the NLU domain version.
-let opts = { 
-  'body': {} // Object | 
-};
+let body = {}; // Object | The input data to perform detection on.
 
-apiInstance.postLanguageunderstandingDomainVersionDetect(domainId, domainVersionId, opts)
+apiInstance.postLanguageunderstandingDomainVersionDetect(domainId, domainVersionId, body)
   .then((data) => {
     console.log(`postLanguageunderstandingDomainVersionDetect success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1674,7 +1758,7 @@ apiInstance.postLanguageunderstandingDomainVersionDetect(domainId, domainVersion
 | ------------- | ------------- | ------------- | ------------- |
  **domainId** | **String** | ID of the NLU domain. |  |
  **domainVersionId** | **String** | ID of the NLU domain version. |  |
- **body** | **Object** |  | [optional]  |
+ **body** | **Object** | The input data to perform detection on. |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1797,9 +1881,666 @@ apiInstance.postLanguageunderstandingDomainVersionTrain(domainId, domainVersionI
 
 **NluDomainVersionTrainingResponse**
 
+<a name="postLanguageunderstandingDomainVersions"></a>
+
+# NluDomainVersion postLanguageunderstandingDomainVersions(domainId, body)
+
+
+
+POST /api/v2/languageunderstanding/domains/{domainId}/versions
+
+Create an NLU Domain Version.
+
+
+
+Requires ANY permissions: 
+
+* languageUnderstanding:nluDomainVersion:add
+* dialog:botVersion:add
+
+
+### Request Body Schema
+
+<script type="text/javascript">
+	function copyNluDomainVersionExample() {
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#NluDomainVersionExample').text()).select();
+		document.execCommand("copy");
+		temp.remove();
+		return false;
+	}
+</script>
+
+NluDomainVersion <a href="#" onclick="return copyNluDomainVersionExample()">Copy</a>
+
+<div id="NluDomainVersionExample">
+
+```{"language":"json", "maxHeight": "250px"}
+{ 
+  "id": String, 
+  "domain": { 
+    "id": String, 
+    "name": String, 
+    "draftVersion": { 
+      "id": String, 
+      "domain": { 
+        "id": String, 
+        "name": String, 
+        "draftVersion": { 
+          "id": String, 
+          "domain": { 
+            "id": String, 
+            "name": String, 
+            "draftVersion": { 
+              "id": String, 
+              "domain": { 
+                "id": String, 
+                "name": String, 
+                "draftVersion": NluDomainVersion, 
+                "lastPublishedVersion": NluDomainVersion, 
+                "dateCreated": Date, 
+                "dateModified": Date, 
+                "selfUri": String, 
+              },  
+              "description": String, 
+              "language": String, 
+              "published": Boolean, 
+              "dateCreated": Date, 
+              "dateModified": Date, 
+              "dateTrained": Date, 
+              "datePublished": Date, 
+              "trainingStatus": String, 
+              "evaluationStatus": String, 
+              "intents": { 
+                "name": String, 
+                "entityTypeBindings": [NamedEntityTypeBinding], 
+                "utterances": [NluUtterance], 
+              },  
+              "entityTypes": { 
+                "name": String, 
+                "description": String, 
+                "mechanism": NamedEntityTypeMechanism, 
+              },  
+              "selfUri": String, 
+            },  
+            "lastPublishedVersion": { 
+              "id": String, 
+              "domain": { 
+                "id": String, 
+                "name": String, 
+                "draftVersion": NluDomainVersion, 
+                "lastPublishedVersion": NluDomainVersion, 
+                "dateCreated": Date, 
+                "dateModified": Date, 
+                "selfUri": String, 
+              },  
+              "description": String, 
+              "language": String, 
+              "published": Boolean, 
+              "dateCreated": Date, 
+              "dateModified": Date, 
+              "dateTrained": Date, 
+              "datePublished": Date, 
+              "trainingStatus": String, 
+              "evaluationStatus": String, 
+              "intents": { 
+                "name": String, 
+                "entityTypeBindings": [NamedEntityTypeBinding], 
+                "utterances": [NluUtterance], 
+              },  
+              "entityTypes": { 
+                "name": String, 
+                "description": String, 
+                "mechanism": NamedEntityTypeMechanism, 
+              },  
+              "selfUri": String, 
+            },  
+            "dateCreated": Date, 
+            "dateModified": Date, 
+            "selfUri": String, 
+          },  
+          "description": String, 
+          "language": String, 
+          "published": Boolean, 
+          "dateCreated": Date, 
+          "dateModified": Date, 
+          "dateTrained": Date, 
+          "datePublished": Date, 
+          "trainingStatus": String, 
+          "evaluationStatus": String, 
+          "intents": { 
+            "name": String, 
+            "entityTypeBindings": { 
+              "entityType": String, 
+              "entityName": String, 
+            },  
+            "utterances": { 
+              "segments": { 
+                "text": String, 
+                "entity": NamedEntityAnnotation, 
+              },  
+            },  
+          },  
+          "entityTypes": { 
+            "name": String, 
+            "description": String, 
+            "mechanism": { 
+              "items": { 
+                "value": String, 
+                "synonyms": [String], 
+              },  
+              "restricted": Boolean, 
+              "type": String, 
+            },  
+          },  
+          "selfUri": String, 
+        },  
+        "lastPublishedVersion": { 
+          "id": String, 
+          "domain": { 
+            "id": String, 
+            "name": String, 
+            "draftVersion": { 
+              "id": String, 
+              "domain": { 
+                "id": String, 
+                "name": String, 
+                "draftVersion": NluDomainVersion, 
+                "lastPublishedVersion": NluDomainVersion, 
+                "dateCreated": Date, 
+                "dateModified": Date, 
+                "selfUri": String, 
+              },  
+              "description": String, 
+              "language": String, 
+              "published": Boolean, 
+              "dateCreated": Date, 
+              "dateModified": Date, 
+              "dateTrained": Date, 
+              "datePublished": Date, 
+              "trainingStatus": String, 
+              "evaluationStatus": String, 
+              "intents": { 
+                "name": String, 
+                "entityTypeBindings": [NamedEntityTypeBinding], 
+                "utterances": [NluUtterance], 
+              },  
+              "entityTypes": { 
+                "name": String, 
+                "description": String, 
+                "mechanism": NamedEntityTypeMechanism, 
+              },  
+              "selfUri": String, 
+            },  
+            "lastPublishedVersion": { 
+              "id": String, 
+              "domain": { 
+                "id": String, 
+                "name": String, 
+                "draftVersion": NluDomainVersion, 
+                "lastPublishedVersion": NluDomainVersion, 
+                "dateCreated": Date, 
+                "dateModified": Date, 
+                "selfUri": String, 
+              },  
+              "description": String, 
+              "language": String, 
+              "published": Boolean, 
+              "dateCreated": Date, 
+              "dateModified": Date, 
+              "dateTrained": Date, 
+              "datePublished": Date, 
+              "trainingStatus": String, 
+              "evaluationStatus": String, 
+              "intents": { 
+                "name": String, 
+                "entityTypeBindings": [NamedEntityTypeBinding], 
+                "utterances": [NluUtterance], 
+              },  
+              "entityTypes": { 
+                "name": String, 
+                "description": String, 
+                "mechanism": NamedEntityTypeMechanism, 
+              },  
+              "selfUri": String, 
+            },  
+            "dateCreated": Date, 
+            "dateModified": Date, 
+            "selfUri": String, 
+          },  
+          "description": String, 
+          "language": String, 
+          "published": Boolean, 
+          "dateCreated": Date, 
+          "dateModified": Date, 
+          "dateTrained": Date, 
+          "datePublished": Date, 
+          "trainingStatus": String, 
+          "evaluationStatus": String, 
+          "intents": { 
+            "name": String, 
+            "entityTypeBindings": { 
+              "entityType": String, 
+              "entityName": String, 
+            },  
+            "utterances": { 
+              "segments": { 
+                "text": String, 
+                "entity": NamedEntityAnnotation, 
+              },  
+            },  
+          },  
+          "entityTypes": { 
+            "name": String, 
+            "description": String, 
+            "mechanism": { 
+              "items": { 
+                "value": String, 
+                "synonyms": [String], 
+              },  
+              "restricted": Boolean, 
+              "type": String, 
+            },  
+          },  
+          "selfUri": String, 
+        },  
+        "dateCreated": Date, 
+        "dateModified": Date, 
+        "selfUri": String, 
+      },  
+      "description": String, 
+      "language": String, 
+      "published": Boolean, 
+      "dateCreated": Date, 
+      "dateModified": Date, 
+      "dateTrained": Date, 
+      "datePublished": Date, 
+      "trainingStatus": String, 
+      "evaluationStatus": String, 
+      "intents": { 
+        "name": String, 
+        "entityTypeBindings": { 
+          "entityType": String, 
+          "entityName": String, 
+        },  
+        "utterances": { 
+          "segments": { 
+            "text": String, 
+            "entity": { 
+              "name": String, 
+            },  
+          },  
+        },  
+      },  
+      "entityTypes": { 
+        "name": String, 
+        "description": String, 
+        "mechanism": { 
+          "items": { 
+            "value": String, 
+            "synonyms": [String], 
+          },  
+          "restricted": Boolean, 
+          "type": String, 
+        },  
+      },  
+      "selfUri": String, 
+    },  
+    "lastPublishedVersion": { 
+      "id": String, 
+      "domain": { 
+        "id": String, 
+        "name": String, 
+        "draftVersion": { 
+          "id": String, 
+          "domain": { 
+            "id": String, 
+            "name": String, 
+            "draftVersion": { 
+              "id": String, 
+              "domain": { 
+                "id": String, 
+                "name": String, 
+                "draftVersion": NluDomainVersion, 
+                "lastPublishedVersion": NluDomainVersion, 
+                "dateCreated": Date, 
+                "dateModified": Date, 
+                "selfUri": String, 
+              },  
+              "description": String, 
+              "language": String, 
+              "published": Boolean, 
+              "dateCreated": Date, 
+              "dateModified": Date, 
+              "dateTrained": Date, 
+              "datePublished": Date, 
+              "trainingStatus": String, 
+              "evaluationStatus": String, 
+              "intents": { 
+                "name": String, 
+                "entityTypeBindings": [NamedEntityTypeBinding], 
+                "utterances": [NluUtterance], 
+              },  
+              "entityTypes": { 
+                "name": String, 
+                "description": String, 
+                "mechanism": NamedEntityTypeMechanism, 
+              },  
+              "selfUri": String, 
+            },  
+            "lastPublishedVersion": { 
+              "id": String, 
+              "domain": { 
+                "id": String, 
+                "name": String, 
+                "draftVersion": NluDomainVersion, 
+                "lastPublishedVersion": NluDomainVersion, 
+                "dateCreated": Date, 
+                "dateModified": Date, 
+                "selfUri": String, 
+              },  
+              "description": String, 
+              "language": String, 
+              "published": Boolean, 
+              "dateCreated": Date, 
+              "dateModified": Date, 
+              "dateTrained": Date, 
+              "datePublished": Date, 
+              "trainingStatus": String, 
+              "evaluationStatus": String, 
+              "intents": { 
+                "name": String, 
+                "entityTypeBindings": [NamedEntityTypeBinding], 
+                "utterances": [NluUtterance], 
+              },  
+              "entityTypes": { 
+                "name": String, 
+                "description": String, 
+                "mechanism": NamedEntityTypeMechanism, 
+              },  
+              "selfUri": String, 
+            },  
+            "dateCreated": Date, 
+            "dateModified": Date, 
+            "selfUri": String, 
+          },  
+          "description": String, 
+          "language": String, 
+          "published": Boolean, 
+          "dateCreated": Date, 
+          "dateModified": Date, 
+          "dateTrained": Date, 
+          "datePublished": Date, 
+          "trainingStatus": String, 
+          "evaluationStatus": String, 
+          "intents": { 
+            "name": String, 
+            "entityTypeBindings": { 
+              "entityType": String, 
+              "entityName": String, 
+            },  
+            "utterances": { 
+              "segments": { 
+                "text": String, 
+                "entity": NamedEntityAnnotation, 
+              },  
+            },  
+          },  
+          "entityTypes": { 
+            "name": String, 
+            "description": String, 
+            "mechanism": { 
+              "items": { 
+                "value": String, 
+                "synonyms": [String], 
+              },  
+              "restricted": Boolean, 
+              "type": String, 
+            },  
+          },  
+          "selfUri": String, 
+        },  
+        "lastPublishedVersion": { 
+          "id": String, 
+          "domain": { 
+            "id": String, 
+            "name": String, 
+            "draftVersion": { 
+              "id": String, 
+              "domain": { 
+                "id": String, 
+                "name": String, 
+                "draftVersion": NluDomainVersion, 
+                "lastPublishedVersion": NluDomainVersion, 
+                "dateCreated": Date, 
+                "dateModified": Date, 
+                "selfUri": String, 
+              },  
+              "description": String, 
+              "language": String, 
+              "published": Boolean, 
+              "dateCreated": Date, 
+              "dateModified": Date, 
+              "dateTrained": Date, 
+              "datePublished": Date, 
+              "trainingStatus": String, 
+              "evaluationStatus": String, 
+              "intents": { 
+                "name": String, 
+                "entityTypeBindings": [NamedEntityTypeBinding], 
+                "utterances": [NluUtterance], 
+              },  
+              "entityTypes": { 
+                "name": String, 
+                "description": String, 
+                "mechanism": NamedEntityTypeMechanism, 
+              },  
+              "selfUri": String, 
+            },  
+            "lastPublishedVersion": { 
+              "id": String, 
+              "domain": { 
+                "id": String, 
+                "name": String, 
+                "draftVersion": NluDomainVersion, 
+                "lastPublishedVersion": NluDomainVersion, 
+                "dateCreated": Date, 
+                "dateModified": Date, 
+                "selfUri": String, 
+              },  
+              "description": String, 
+              "language": String, 
+              "published": Boolean, 
+              "dateCreated": Date, 
+              "dateModified": Date, 
+              "dateTrained": Date, 
+              "datePublished": Date, 
+              "trainingStatus": String, 
+              "evaluationStatus": String, 
+              "intents": { 
+                "name": String, 
+                "entityTypeBindings": [NamedEntityTypeBinding], 
+                "utterances": [NluUtterance], 
+              },  
+              "entityTypes": { 
+                "name": String, 
+                "description": String, 
+                "mechanism": NamedEntityTypeMechanism, 
+              },  
+              "selfUri": String, 
+            },  
+            "dateCreated": Date, 
+            "dateModified": Date, 
+            "selfUri": String, 
+          },  
+          "description": String, 
+          "language": String, 
+          "published": Boolean, 
+          "dateCreated": Date, 
+          "dateModified": Date, 
+          "dateTrained": Date, 
+          "datePublished": Date, 
+          "trainingStatus": String, 
+          "evaluationStatus": String, 
+          "intents": { 
+            "name": String, 
+            "entityTypeBindings": { 
+              "entityType": String, 
+              "entityName": String, 
+            },  
+            "utterances": { 
+              "segments": { 
+                "text": String, 
+                "entity": NamedEntityAnnotation, 
+              },  
+            },  
+          },  
+          "entityTypes": { 
+            "name": String, 
+            "description": String, 
+            "mechanism": { 
+              "items": { 
+                "value": String, 
+                "synonyms": [String], 
+              },  
+              "restricted": Boolean, 
+              "type": String, 
+            },  
+          },  
+          "selfUri": String, 
+        },  
+        "dateCreated": Date, 
+        "dateModified": Date, 
+        "selfUri": String, 
+      },  
+      "description": String, 
+      "language": String, 
+      "published": Boolean, 
+      "dateCreated": Date, 
+      "dateModified": Date, 
+      "dateTrained": Date, 
+      "datePublished": Date, 
+      "trainingStatus": String, 
+      "evaluationStatus": String, 
+      "intents": { 
+        "name": String, 
+        "entityTypeBindings": { 
+          "entityType": String, 
+          "entityName": String, 
+        },  
+        "utterances": { 
+          "segments": { 
+            "text": String, 
+            "entity": { 
+              "name": String, 
+            },  
+          },  
+        },  
+      },  
+      "entityTypes": { 
+        "name": String, 
+        "description": String, 
+        "mechanism": { 
+          "items": { 
+            "value": String, 
+            "synonyms": [String], 
+          },  
+          "restricted": Boolean, 
+          "type": String, 
+        },  
+      },  
+      "selfUri": String, 
+    },  
+    "dateCreated": Date, 
+    "dateModified": Date, 
+    "selfUri": String, 
+  },  
+  "description": String, 
+  "language": String, 
+  "published": Boolean, 
+  "dateCreated": Date, 
+  "dateModified": Date, 
+  "dateTrained": Date, 
+  "datePublished": Date, 
+  "trainingStatus": String, 
+  "evaluationStatus": String, 
+  "intents": { 
+    "name": String, 
+    "entityTypeBindings": { 
+      "entityType": String, 
+      "entityName": String, 
+    },  
+    "utterances": { 
+      "segments": { 
+        "text": String, 
+        "entity": { 
+          "name": String, 
+        },  
+      },  
+    },  
+  },  
+  "entityTypes": { 
+    "name": String, 
+    "description": String, 
+    "mechanism": { 
+      "items": { 
+        "value": String, 
+        "synonyms": [String], 
+      },  
+      "restricted": Boolean, 
+      "type": String, 
+    },  
+  },  
+  "selfUri": String, 
+}
+```
+
+</div>
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.LanguageUnderstandingApi();
+
+let domainId = "domainId_example"; // String | ID of the NLU domain.
+let body = {}; // Object | The NLU Domain Version to create.
+
+apiInstance.postLanguageunderstandingDomainVersions(domainId, body)
+  .then((data) => {
+    console.log(`postLanguageunderstandingDomainVersions success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postLanguageunderstandingDomainVersions');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **domainId** | **String** | ID of the NLU domain. |  |
+ **body** | **Object** | The NLU Domain Version to create. |  |
+{: class="table table-striped"}
+
+### Return type
+
+**NluDomainVersion**
+
 <a name="postLanguageunderstandingDomains"></a>
 
-# NluDomain postLanguageunderstandingDomains(opts)
+# NluDomain postLanguageunderstandingDomains(body)
 
 
 
@@ -1856,6 +2597,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
                 "domain": NluDomain, 
                 "description": String, 
                 "language": String, 
+                "published": Boolean, 
                 "dateCreated": Date, 
                 "dateModified": Date, 
                 "dateTrained": Date, 
@@ -1871,6 +2613,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
                 "domain": NluDomain, 
                 "description": String, 
                 "language": String, 
+                "published": Boolean, 
                 "dateCreated": Date, 
                 "dateModified": Date, 
                 "dateTrained": Date, 
@@ -1887,6 +2630,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
             },  
             "description": String, 
             "language": String, 
+            "published": Boolean, 
             "dateCreated": Date, 
             "dateModified": Date, 
             "dateTrained": Date, 
@@ -1924,6 +2668,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
                 "domain": NluDomain, 
                 "description": String, 
                 "language": String, 
+                "published": Boolean, 
                 "dateCreated": Date, 
                 "dateModified": Date, 
                 "dateTrained": Date, 
@@ -1939,6 +2684,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
                 "domain": NluDomain, 
                 "description": String, 
                 "language": String, 
+                "published": Boolean, 
                 "dateCreated": Date, 
                 "dateModified": Date, 
                 "dateTrained": Date, 
@@ -1955,6 +2701,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
             },  
             "description": String, 
             "language": String, 
+            "published": Boolean, 
             "dateCreated": Date, 
             "dateModified": Date, 
             "dateTrained": Date, 
@@ -1988,6 +2735,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
         },  
         "description": String, 
         "language": String, 
+        "published": Boolean, 
         "dateCreated": Date, 
         "dateModified": Date, 
         "dateTrained": Date, 
@@ -2038,6 +2786,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
                 "domain": NluDomain, 
                 "description": String, 
                 "language": String, 
+                "published": Boolean, 
                 "dateCreated": Date, 
                 "dateModified": Date, 
                 "dateTrained": Date, 
@@ -2053,6 +2802,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
                 "domain": NluDomain, 
                 "description": String, 
                 "language": String, 
+                "published": Boolean, 
                 "dateCreated": Date, 
                 "dateModified": Date, 
                 "dateTrained": Date, 
@@ -2069,6 +2819,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
             },  
             "description": String, 
             "language": String, 
+            "published": Boolean, 
             "dateCreated": Date, 
             "dateModified": Date, 
             "dateTrained": Date, 
@@ -2106,6 +2857,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
                 "domain": NluDomain, 
                 "description": String, 
                 "language": String, 
+                "published": Boolean, 
                 "dateCreated": Date, 
                 "dateModified": Date, 
                 "dateTrained": Date, 
@@ -2121,6 +2873,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
                 "domain": NluDomain, 
                 "description": String, 
                 "language": String, 
+                "published": Boolean, 
                 "dateCreated": Date, 
                 "dateModified": Date, 
                 "dateTrained": Date, 
@@ -2137,6 +2890,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
             },  
             "description": String, 
             "language": String, 
+            "published": Boolean, 
             "dateCreated": Date, 
             "dateModified": Date, 
             "dateTrained": Date, 
@@ -2170,6 +2924,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
         },  
         "description": String, 
         "language": String, 
+        "published": Boolean, 
         "dateCreated": Date, 
         "dateModified": Date, 
         "dateTrained": Date, 
@@ -2211,6 +2966,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
     },  
     "description": String, 
     "language": String, 
+    "published": Boolean, 
     "dateCreated": Date, 
     "dateModified": Date, 
     "dateTrained": Date, 
@@ -2266,6 +3022,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
                 "domain": NluDomain, 
                 "description": String, 
                 "language": String, 
+                "published": Boolean, 
                 "dateCreated": Date, 
                 "dateModified": Date, 
                 "dateTrained": Date, 
@@ -2281,6 +3038,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
                 "domain": NluDomain, 
                 "description": String, 
                 "language": String, 
+                "published": Boolean, 
                 "dateCreated": Date, 
                 "dateModified": Date, 
                 "dateTrained": Date, 
@@ -2297,6 +3055,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
             },  
             "description": String, 
             "language": String, 
+            "published": Boolean, 
             "dateCreated": Date, 
             "dateModified": Date, 
             "dateTrained": Date, 
@@ -2334,6 +3093,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
                 "domain": NluDomain, 
                 "description": String, 
                 "language": String, 
+                "published": Boolean, 
                 "dateCreated": Date, 
                 "dateModified": Date, 
                 "dateTrained": Date, 
@@ -2349,6 +3109,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
                 "domain": NluDomain, 
                 "description": String, 
                 "language": String, 
+                "published": Boolean, 
                 "dateCreated": Date, 
                 "dateModified": Date, 
                 "dateTrained": Date, 
@@ -2365,6 +3126,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
             },  
             "description": String, 
             "language": String, 
+            "published": Boolean, 
             "dateCreated": Date, 
             "dateModified": Date, 
             "dateTrained": Date, 
@@ -2398,6 +3160,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
         },  
         "description": String, 
         "language": String, 
+        "published": Boolean, 
         "dateCreated": Date, 
         "dateModified": Date, 
         "dateTrained": Date, 
@@ -2448,6 +3211,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
                 "domain": NluDomain, 
                 "description": String, 
                 "language": String, 
+                "published": Boolean, 
                 "dateCreated": Date, 
                 "dateModified": Date, 
                 "dateTrained": Date, 
@@ -2463,6 +3227,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
                 "domain": NluDomain, 
                 "description": String, 
                 "language": String, 
+                "published": Boolean, 
                 "dateCreated": Date, 
                 "dateModified": Date, 
                 "dateTrained": Date, 
@@ -2479,6 +3244,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
             },  
             "description": String, 
             "language": String, 
+            "published": Boolean, 
             "dateCreated": Date, 
             "dateModified": Date, 
             "dateTrained": Date, 
@@ -2516,6 +3282,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
                 "domain": NluDomain, 
                 "description": String, 
                 "language": String, 
+                "published": Boolean, 
                 "dateCreated": Date, 
                 "dateModified": Date, 
                 "dateTrained": Date, 
@@ -2531,6 +3298,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
                 "domain": NluDomain, 
                 "description": String, 
                 "language": String, 
+                "published": Boolean, 
                 "dateCreated": Date, 
                 "dateModified": Date, 
                 "dateTrained": Date, 
@@ -2547,6 +3315,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
             },  
             "description": String, 
             "language": String, 
+            "published": Boolean, 
             "dateCreated": Date, 
             "dateModified": Date, 
             "dateTrained": Date, 
@@ -2580,6 +3349,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
         },  
         "description": String, 
         "language": String, 
+        "published": Boolean, 
         "dateCreated": Date, 
         "dateModified": Date, 
         "dateTrained": Date, 
@@ -2621,6 +3391,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
     },  
     "description": String, 
     "language": String, 
+    "published": Boolean, 
     "dateCreated": Date, 
     "dateModified": Date, 
     "dateTrained": Date, 
@@ -2678,11 +3449,9 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.LanguageUnderstandingApi();
 
-let opts = { 
-  'body': {} // Object | 
-};
+let body = {}; // Object | The NLU Domain to create.
 
-apiInstance.postLanguageunderstandingDomains(opts)
+apiInstance.postLanguageunderstandingDomains(body)
   .then((data) => {
     console.log(`postLanguageunderstandingDomains success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2697,7 +3466,7 @@ apiInstance.postLanguageunderstandingDomains(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **Object** |  | [optional]  |
+ **body** | **Object** | The NLU Domain to create. |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2706,7 +3475,7 @@ apiInstance.postLanguageunderstandingDomains(opts)
 
 <a name="putLanguageunderstandingDomainVersion"></a>
 
-# NluDomainVersion putLanguageunderstandingDomainVersion(domainId, domainVersionId, opts)
+# NluDomainVersion putLanguageunderstandingDomainVersion(domainId, domainVersionId, body)
 
 
 
@@ -2768,6 +3537,7 @@ NluDomainVersion <a href="#" onclick="return copyNluDomainVersionExample()">Copy
               },  
               "description": String, 
               "language": String, 
+              "published": Boolean, 
               "dateCreated": Date, 
               "dateModified": Date, 
               "dateTrained": Date, 
@@ -2799,6 +3569,7 @@ NluDomainVersion <a href="#" onclick="return copyNluDomainVersionExample()">Copy
               },  
               "description": String, 
               "language": String, 
+              "published": Boolean, 
               "dateCreated": Date, 
               "dateModified": Date, 
               "dateTrained": Date, 
@@ -2823,6 +3594,7 @@ NluDomainVersion <a href="#" onclick="return copyNluDomainVersionExample()">Copy
           },  
           "description": String, 
           "language": String, 
+          "published": Boolean, 
           "dateCreated": Date, 
           "dateModified": Date, 
           "dateTrained": Date, 
@@ -2874,6 +3646,7 @@ NluDomainVersion <a href="#" onclick="return copyNluDomainVersionExample()">Copy
               },  
               "description": String, 
               "language": String, 
+              "published": Boolean, 
               "dateCreated": Date, 
               "dateModified": Date, 
               "dateTrained": Date, 
@@ -2905,6 +3678,7 @@ NluDomainVersion <a href="#" onclick="return copyNluDomainVersionExample()">Copy
               },  
               "description": String, 
               "language": String, 
+              "published": Boolean, 
               "dateCreated": Date, 
               "dateModified": Date, 
               "dateTrained": Date, 
@@ -2929,6 +3703,7 @@ NluDomainVersion <a href="#" onclick="return copyNluDomainVersionExample()">Copy
           },  
           "description": String, 
           "language": String, 
+          "published": Boolean, 
           "dateCreated": Date, 
           "dateModified": Date, 
           "dateTrained": Date, 
@@ -2968,6 +3743,7 @@ NluDomainVersion <a href="#" onclick="return copyNluDomainVersionExample()">Copy
       },  
       "description": String, 
       "language": String, 
+      "published": Boolean, 
       "dateCreated": Date, 
       "dateModified": Date, 
       "dateTrained": Date, 
@@ -3026,6 +3802,7 @@ NluDomainVersion <a href="#" onclick="return copyNluDomainVersionExample()">Copy
               },  
               "description": String, 
               "language": String, 
+              "published": Boolean, 
               "dateCreated": Date, 
               "dateModified": Date, 
               "dateTrained": Date, 
@@ -3057,6 +3834,7 @@ NluDomainVersion <a href="#" onclick="return copyNluDomainVersionExample()">Copy
               },  
               "description": String, 
               "language": String, 
+              "published": Boolean, 
               "dateCreated": Date, 
               "dateModified": Date, 
               "dateTrained": Date, 
@@ -3081,6 +3859,7 @@ NluDomainVersion <a href="#" onclick="return copyNluDomainVersionExample()">Copy
           },  
           "description": String, 
           "language": String, 
+          "published": Boolean, 
           "dateCreated": Date, 
           "dateModified": Date, 
           "dateTrained": Date, 
@@ -3132,6 +3911,7 @@ NluDomainVersion <a href="#" onclick="return copyNluDomainVersionExample()">Copy
               },  
               "description": String, 
               "language": String, 
+              "published": Boolean, 
               "dateCreated": Date, 
               "dateModified": Date, 
               "dateTrained": Date, 
@@ -3163,6 +3943,7 @@ NluDomainVersion <a href="#" onclick="return copyNluDomainVersionExample()">Copy
               },  
               "description": String, 
               "language": String, 
+              "published": Boolean, 
               "dateCreated": Date, 
               "dateModified": Date, 
               "dateTrained": Date, 
@@ -3187,6 +3968,7 @@ NluDomainVersion <a href="#" onclick="return copyNluDomainVersionExample()">Copy
           },  
           "description": String, 
           "language": String, 
+          "published": Boolean, 
           "dateCreated": Date, 
           "dateModified": Date, 
           "dateTrained": Date, 
@@ -3226,6 +4008,7 @@ NluDomainVersion <a href="#" onclick="return copyNluDomainVersionExample()">Copy
       },  
       "description": String, 
       "language": String, 
+      "published": Boolean, 
       "dateCreated": Date, 
       "dateModified": Date, 
       "dateTrained": Date, 
@@ -3267,6 +4050,7 @@ NluDomainVersion <a href="#" onclick="return copyNluDomainVersionExample()">Copy
   },  
   "description": String, 
   "language": String, 
+  "published": Boolean, 
   "dateCreated": Date, 
   "dateModified": Date, 
   "dateTrained": Date, 
@@ -3322,11 +4106,9 @@ let apiInstance = new platformClient.LanguageUnderstandingApi();
 
 let domainId = "domainId_example"; // String | ID of the NLU domain.
 let domainVersionId = "domainVersionId_example"; // String | ID of the NLU domain version.
-let opts = { 
-  'body': {} // Object | 
-};
+let body = {}; // Object | The updated NLU Domain Version.
 
-apiInstance.putLanguageunderstandingDomainVersion(domainId, domainVersionId, opts)
+apiInstance.putLanguageunderstandingDomainVersion(domainId, domainVersionId, body)
   .then((data) => {
     console.log(`putLanguageunderstandingDomainVersion success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3343,7 +4125,7 @@ apiInstance.putLanguageunderstandingDomainVersion(domainId, domainVersionId, opt
 | ------------- | ------------- | ------------- | ------------- |
  **domainId** | **String** | ID of the NLU domain. |  |
  **domainVersionId** | **String** | ID of the NLU domain version. |  |
- **body** | **Object** |  | [optional]  |
+ **body** | **Object** | The updated NLU Domain Version. |  |
 {: class="table table-striped"}
 
 ### Return type

@@ -2345,8 +2345,6 @@ SurveyForm <a href="#" onclick="return copySurveyFormExample()">Copy</a>
   "disabled": Boolean, 
   "contextId": String, 
   "language": String, 
-  "headerImageId": String, 
-  "headerImageUrl": String, 
   "header": String, 
   "footer": String, 
   "questionGroups": { 
@@ -2386,8 +2384,6 @@ SurveyForm <a href="#" onclick="return copySurveyFormExample()">Copy</a>
       "disabled": Boolean, 
       "contextId": String, 
       "language": String, 
-      "headerImageId": String, 
-      "headerImageUrl": String, 
       "header": String, 
       "footer": String, 
       "questionGroups": { 
@@ -2427,8 +2423,6 @@ SurveyForm <a href="#" onclick="return copySurveyFormExample()">Copy</a>
           "disabled": Boolean, 
           "contextId": String, 
           "language": String, 
-          "headerImageId": String, 
-          "headerImageUrl": String, 
           "header": String, 
           "footer": String, 
           "questionGroups": { 
@@ -2468,8 +2462,6 @@ SurveyForm <a href="#" onclick="return copySurveyFormExample()">Copy</a>
               "disabled": Boolean, 
               "contextId": String, 
               "language": String, 
-              "headerImageId": String, 
-              "headerImageUrl": String, 
               "header": String, 
               "footer": String, 
               "questionGroups": { 
@@ -55655,8 +55647,6 @@ SurveyForm <a href="#" onclick="return copySurveyFormExample()">Copy</a>
   "disabled": Boolean, 
   "contextId": String, 
   "language": String, 
-  "headerImageId": String, 
-  "headerImageUrl": String, 
   "header": String, 
   "footer": String, 
   "questionGroups": { 
@@ -55696,8 +55686,6 @@ SurveyForm <a href="#" onclick="return copySurveyFormExample()">Copy</a>
       "disabled": Boolean, 
       "contextId": String, 
       "language": String, 
-      "headerImageId": String, 
-      "headerImageUrl": String, 
       "header": String, 
       "footer": String, 
       "questionGroups": { 
@@ -55737,8 +55725,6 @@ SurveyForm <a href="#" onclick="return copySurveyFormExample()">Copy</a>
           "disabled": Boolean, 
           "contextId": String, 
           "language": String, 
-          "headerImageId": String, 
-          "headerImageUrl": String, 
           "header": String, 
           "footer": String, 
           "questionGroups": { 
@@ -55778,8 +55764,6 @@ SurveyForm <a href="#" onclick="return copySurveyFormExample()">Copy</a>
               "disabled": Boolean, 
               "contextId": String, 
               "language": String, 
-              "headerImageId": String, 
-              "headerImageUrl": String, 
               "header": String, 
               "footer": String, 
               "questionGroups": { 
@@ -57603,8 +57587,6 @@ SurveyFormAndScoringSet <a href="#" onclick="return copySurveyFormAndScoringSetE
     "disabled": Boolean, 
     "contextId": String, 
     "language": String, 
-    "headerImageId": String, 
-    "headerImageUrl": String, 
     "header": String, 
     "footer": String, 
     "questionGroups": { 
@@ -57644,8 +57626,6 @@ SurveyFormAndScoringSet <a href="#" onclick="return copySurveyFormAndScoringSetE
         "disabled": Boolean, 
         "contextId": String, 
         "language": String, 
-        "headerImageId": String, 
-        "headerImageUrl": String, 
         "header": String, 
         "footer": String, 
         "questionGroups": { 
@@ -57685,8 +57665,6 @@ SurveyFormAndScoringSet <a href="#" onclick="return copySurveyFormAndScoringSetE
             "disabled": Boolean, 
             "contextId": String, 
             "language": String, 
-            "headerImageId": String, 
-            "headerImageUrl": String, 
             "header": String, 
             "footer": String, 
             "questionGroups": { 
@@ -57719,8 +57697,6 @@ SurveyFormAndScoringSet <a href="#" onclick="return copySurveyFormAndScoringSetE
                 "disabled": Boolean, 
                 "contextId": String, 
                 "language": String, 
-                "headerImageId": String, 
-                "headerImageUrl": String, 
                 "header": String, 
                 "footer": String, 
                 "questionGroups": [SurveyQuestionGroup], 
@@ -110393,8 +110369,6 @@ SurveyForm <a href="#" onclick="return copySurveyFormExample()">Copy</a>
   "disabled": Boolean, 
   "contextId": String, 
   "language": String, 
-  "headerImageId": String, 
-  "headerImageUrl": String, 
   "header": String, 
   "footer": String, 
   "questionGroups": { 
@@ -110434,8 +110408,6 @@ SurveyForm <a href="#" onclick="return copySurveyFormExample()">Copy</a>
       "disabled": Boolean, 
       "contextId": String, 
       "language": String, 
-      "headerImageId": String, 
-      "headerImageUrl": String, 
       "header": String, 
       "footer": String, 
       "questionGroups": { 
@@ -110475,8 +110447,6 @@ SurveyForm <a href="#" onclick="return copySurveyFormExample()">Copy</a>
           "disabled": Boolean, 
           "contextId": String, 
           "language": String, 
-          "headerImageId": String, 
-          "headerImageUrl": String, 
           "header": String, 
           "footer": String, 
           "questionGroups": { 
@@ -110516,8 +110486,6 @@ SurveyForm <a href="#" onclick="return copySurveyFormExample()">Copy</a>
               "disabled": Boolean, 
               "contextId": String, 
               "language": String, 
-              "headerImageId": String, 
-              "headerImageUrl": String, 
               "header": String, 
               "footer": String, 
               "questionGroups": { 
@@ -111384,8 +111352,6 @@ ScorableSurvey <a href="#" onclick="return copyScorableSurveyExample()">Copy</a>
     "disabled": Boolean, 
     "contextId": String, 
     "language": String, 
-    "headerImageId": String, 
-    "headerImageUrl": String, 
     "header": String, 
     "footer": String, 
     "questionGroups": { 
@@ -111425,8 +111391,6 @@ ScorableSurvey <a href="#" onclick="return copyScorableSurveyExample()">Copy</a>
         "disabled": Boolean, 
         "contextId": String, 
         "language": String, 
-        "headerImageId": String, 
-        "headerImageUrl": String, 
         "header": String, 
         "footer": String, 
         "questionGroups": { 
@@ -111466,8 +111430,6 @@ ScorableSurvey <a href="#" onclick="return copyScorableSurveyExample()">Copy</a>
             "disabled": Boolean, 
             "contextId": String, 
             "language": String, 
-            "headerImageId": String, 
-            "headerImageUrl": String, 
             "header": String, 
             "footer": String, 
             "questionGroups": { 
@@ -111500,8 +111462,6 @@ ScorableSurvey <a href="#" onclick="return copyScorableSurveyExample()">Copy</a>
                 "disabled": Boolean, 
                 "contextId": String, 
                 "language": String, 
-                "headerImageId": String, 
-                "headerImageUrl": String, 
                 "header": String, 
                 "footer": String, 
                 "questionGroups": [SurveyQuestionGroup], 

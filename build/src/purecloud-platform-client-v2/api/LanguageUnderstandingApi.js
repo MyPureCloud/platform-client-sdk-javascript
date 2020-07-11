@@ -5,7 +5,7 @@ class LanguageUnderstandingApi {
 	/**
 	 * LanguageUnderstanding service.
 	 * @module purecloud-platform-client-v2/api/LanguageUnderstandingApi
-	 * @version 85.0.0
+	 * @version 86.0.0
 	 */
 
 	/**
@@ -65,6 +65,36 @@ class LanguageUnderstandingApi {
 			'/api/v2/languageunderstanding/domains/{domainId}/feedback/{feedbackId}', 
 			'DELETE', 
 			{ 'domainId': domainId,'feedbackId': feedbackId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete an NLU Domain Version
+	 * 
+	 * @param {String} domainId ID of the NLU domain.
+	 * @param {String} domainVersionId ID of the NLU domain version.
+	 */
+	deleteLanguageunderstandingDomainVersion(domainId, domainVersionId) { 
+		// verify the required parameter 'domainId' is set
+		if (domainId === undefined || domainId === null) {
+			throw 'Missing the required parameter "domainId" when calling deleteLanguageunderstandingDomainVersion';
+		}
+		// verify the required parameter 'domainVersionId' is set
+		if (domainVersionId === undefined || domainVersionId === null) {
+			throw 'Missing the required parameter "domainVersionId" when calling deleteLanguageunderstandingDomainVersion';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/languageunderstanding/domains/{domainId}/versions/{domainVersionId}', 
+			'DELETE', 
+			{ 'domainId': domainId,'domainVersionId': domainVersionId }, 
 			{  }, 
 			{  }, 
 			{  }, 
@@ -294,15 +324,16 @@ class LanguageUnderstandingApi {
 	 * Update an NLU Domain.
 	 * 
 	 * @param {String} domainId ID of the NLU domain.
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body 
+	 * @param {Object} body The updated NLU Domain.
 	 */
-	patchLanguageunderstandingDomain(domainId, opts) { 
-		opts = opts || {};
-		
+	patchLanguageunderstandingDomain(domainId, body) { 
 		// verify the required parameter 'domainId' is set
 		if (domainId === undefined || domainId === null) {
 			throw 'Missing the required parameter "domainId" when calling patchLanguageunderstandingDomain';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchLanguageunderstandingDomain';
 		}
 
 		return this.apiClient.callApi(
@@ -312,7 +343,7 @@ class LanguageUnderstandingApi {
 			{  }, 
 			{  }, 
 			{  }, 
-			opts['body'], 
+			body, 
 			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
@@ -323,15 +354,16 @@ class LanguageUnderstandingApi {
 	 * Create feedback for the NLU Domain Version.
 	 * 
 	 * @param {String} domainId ID of the NLU domain.
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body 
+	 * @param {Object} body The Feedback to create.
 	 */
-	postLanguageunderstandingDomainFeedback(domainId, opts) { 
-		opts = opts || {};
-		
+	postLanguageunderstandingDomainFeedback(domainId, body) { 
 		// verify the required parameter 'domainId' is set
 		if (domainId === undefined || domainId === null) {
 			throw 'Missing the required parameter "domainId" when calling postLanguageunderstandingDomainFeedback';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postLanguageunderstandingDomainFeedback';
 		}
 
 		return this.apiClient.callApi(
@@ -341,7 +373,7 @@ class LanguageUnderstandingApi {
 			{  }, 
 			{  }, 
 			{  }, 
-			opts['body'], 
+			body, 
 			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
@@ -353,12 +385,9 @@ class LanguageUnderstandingApi {
 	 * 
 	 * @param {String} domainId ID of the NLU domain.
 	 * @param {String} domainVersionId ID of the NLU domain version.
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body 
+	 * @param {Object} body The input data to perform detection on.
 	 */
-	postLanguageunderstandingDomainVersionDetect(domainId, domainVersionId, opts) { 
-		opts = opts || {};
-		
+	postLanguageunderstandingDomainVersionDetect(domainId, domainVersionId, body) { 
 		// verify the required parameter 'domainId' is set
 		if (domainId === undefined || domainId === null) {
 			throw 'Missing the required parameter "domainId" when calling postLanguageunderstandingDomainVersionDetect';
@@ -366,6 +395,10 @@ class LanguageUnderstandingApi {
 		// verify the required parameter 'domainVersionId' is set
 		if (domainVersionId === undefined || domainVersionId === null) {
 			throw 'Missing the required parameter "domainVersionId" when calling postLanguageunderstandingDomainVersionDetect';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postLanguageunderstandingDomainVersionDetect';
 		}
 
 		return this.apiClient.callApi(
@@ -375,7 +408,7 @@ class LanguageUnderstandingApi {
 			{  }, 
 			{  }, 
 			{  }, 
-			opts['body'], 
+			body, 
 			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
@@ -443,14 +476,45 @@ class LanguageUnderstandingApi {
 	}
 
 	/**
+	 * Create an NLU Domain Version.
+	 * 
+	 * @param {String} domainId ID of the NLU domain.
+	 * @param {Object} body The NLU Domain Version to create.
+	 */
+	postLanguageunderstandingDomainVersions(domainId, body) { 
+		// verify the required parameter 'domainId' is set
+		if (domainId === undefined || domainId === null) {
+			throw 'Missing the required parameter "domainId" when calling postLanguageunderstandingDomainVersions';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postLanguageunderstandingDomainVersions';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/languageunderstanding/domains/{domainId}/versions', 
+			'POST', 
+			{ 'domainId': domainId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
 	 * Create an NLU Domain.
 	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body 
+	 * @param {Object} body The NLU Domain to create.
 	 */
-	postLanguageunderstandingDomains(opts) { 
-		opts = opts || {};
-		
+	postLanguageunderstandingDomains(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postLanguageunderstandingDomains';
+		}
 
 		return this.apiClient.callApi(
 			'/api/v2/languageunderstanding/domains', 
@@ -459,7 +523,7 @@ class LanguageUnderstandingApi {
 			{  }, 
 			{  }, 
 			{  }, 
-			opts['body'], 
+			body, 
 			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
@@ -471,12 +535,9 @@ class LanguageUnderstandingApi {
 	 * 
 	 * @param {String} domainId ID of the NLU domain.
 	 * @param {String} domainVersionId ID of the NLU domain version.
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body 
+	 * @param {Object} body The updated NLU Domain Version.
 	 */
-	putLanguageunderstandingDomainVersion(domainId, domainVersionId, opts) { 
-		opts = opts || {};
-		
+	putLanguageunderstandingDomainVersion(domainId, domainVersionId, body) { 
 		// verify the required parameter 'domainId' is set
 		if (domainId === undefined || domainId === null) {
 			throw 'Missing the required parameter "domainId" when calling putLanguageunderstandingDomainVersion';
@@ -484,6 +545,10 @@ class LanguageUnderstandingApi {
 		// verify the required parameter 'domainVersionId' is set
 		if (domainVersionId === undefined || domainVersionId === null) {
 			throw 'Missing the required parameter "domainVersionId" when calling putLanguageunderstandingDomainVersion';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putLanguageunderstandingDomainVersion';
 		}
 
 		return this.apiClient.callApi(
@@ -493,7 +558,7 @@ class LanguageUnderstandingApi {
 			{  }, 
 			{  }, 
 			{  }, 
-			opts['body'], 
+			body, 
 			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
