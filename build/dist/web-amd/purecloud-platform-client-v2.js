@@ -16,7 +16,7 @@ define(['superagent'], function (superagent) { 'use strict';
 
    /**
     * @module purecloud-platform-client-v2/ApiClient
-    * @version 86.0.0
+    * @version 87.0.0
     */
    class ApiClient {
    	/**
@@ -772,7 +772,7 @@ define(['superagent'], function (superagent) { 'use strict';
 
    		// set header parameters
    		request.set(this.defaultHeaders).set(this.normalizeParams(headerParams));
-   		//request.set({ 'purecloud-sdk': '86.0.0' });
+   		//request.set({ 'purecloud-sdk': '87.0.0' });
 
    		// set request timeout
    		request.timeout(this.timeout);
@@ -897,7 +897,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Alerting service.
    	 * @module purecloud-platform-client-v2/api/AlertingApi
-   	 * @version 86.0.0
+   	 * @version 87.0.0
    	 */
 
    	/**
@@ -1211,7 +1211,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Analytics service.
    	 * @module purecloud-platform-client-v2/api/AnalyticsApi
-   	 * @version 86.0.0
+   	 * @version 87.0.0
    	 */
 
    	/**
@@ -2176,7 +2176,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Architect service.
    	 * @module purecloud-platform-client-v2/api/ArchitectApi
-   	 * @version 86.0.0
+   	 * @version 87.0.0
    	 */
 
    	/**
@@ -3140,6 +3140,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	 * @param {String} opts.sortBy Sort by (default to name)
    	 * @param {String} opts.sortOrder Sort order (default to ASC)
    	 * @param {String} opts.name Name of the Schedule Group to filter by.
+   	 * @param {String} opts.scheduleIds A comma-delimited list of Schedule IDs to filter by.
    	 */
    	getArchitectSchedulegroups(opts) { 
    		opts = opts || {};
@@ -3149,7 +3150,7 @@ define(['superagent'], function (superagent) { 'use strict';
    			'/api/v2/architect/schedulegroups', 
    			'GET', 
    			{  }, 
-   			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'name': opts['name'] }, 
+   			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'name': opts['name'],'scheduleIds': opts['scheduleIds'] }, 
    			{  }, 
    			{  }, 
    			null, 
@@ -4879,7 +4880,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Audit service.
    	 * @module purecloud-platform-client-v2/api/AuditApi
-   	 * @version 86.0.0
+   	 * @version 87.0.0
    	 */
 
    	/**
@@ -5030,7 +5031,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Authorization service.
    	 * @module purecloud-platform-client-v2/api/AuthorizationApi
-   	 * @version 86.0.0
+   	 * @version 87.0.0
    	 */
 
    	/**
@@ -6117,7 +6118,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Billing service.
    	 * @module purecloud-platform-client-v2/api/BillingApi
-   	 * @version 86.0.0
+   	 * @version 87.0.0
    	 */
 
    	/**
@@ -6197,7 +6198,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Coaching service.
    	 * @module purecloud-platform-client-v2/api/CoachingApi
-   	 * @version 86.0.0
+   	 * @version 87.0.0
    	 */
 
    	/**
@@ -6387,7 +6388,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	 * 
    	 * @param {Array.<String>} userIds The user IDs for which to retrieve appointments
    	 * @param {Object} opts Optional parameters
-   	 * @param {String} opts.interval Interval string; format is ISO-8601. Separate start and end times with forward slash &#39;/&#39;
+   	 * @param {String} opts.interval Interval to filter data by. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
    	 * @param {Number} opts.pageNumber Page number (default to 1)
    	 * @param {Number} opts.pageSize Page size (default to 25)
    	 * @param {Array.<String>} opts.statuses Appointment Statuses to filter by
@@ -6420,7 +6421,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	 * Get my appointments for a given date range
    	 * 
    	 * @param {Object} opts Optional parameters
-   	 * @param {String} opts.interval Interval string; format is ISO-8601. Separate start and end times with forward slash &#39;/&#39;
+   	 * @param {String} opts.interval Interval to filter data by. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
    	 * @param {Number} opts.pageNumber Page number (default to 1)
    	 * @param {Number} opts.pageSize Page size (default to 25)
    	 * @param {Array.<String>} opts.statuses Appointment Statuses to filter by
@@ -6681,7 +6682,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * ContentManagement service.
    	 * @module purecloud-platform-client-v2/api/ContentManagementApi
-   	 * @version 86.0.0
+   	 * @version 87.0.0
    	 */
 
    	/**
@@ -7821,7 +7822,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Conversations service.
    	 * @module purecloud-platform-client-v2/api/ConversationsApi
-   	 * @version 86.0.0
+   	 * @version 87.0.0
    	 */
 
    	/**
@@ -10628,7 +10629,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	}
 
    	/**
-   	 * Performs a full conversation teardown. Issues disconnect requests for any connected media. Applies a system wrap-up code to any participants that are pending wrap-up. This is not intended to be the normal way of ending interactions but is available in the event of problems with the application to allow a resyncronization of state across all components. It is recommended that users submit a support case if they are relying on this endpoint systematically as there is likely something that needs investigation.
+   	 * Performs a full conversation teardown. Issues disconnect requests for any connected media. Applies a system wrap-up code to any participants that are pending wrap-up. This is not intended to be the normal way of ending interactions but is available in the event of problems with the application to allow a resynchronization of state across all components. It is recommended that users submit a support case if they are relying on this endpoint systematically as there is likely something that needs investigation.
    	 * 
    	 * @param {String} conversationId conversation ID
    	 */
@@ -11624,7 +11625,7 @@ define(['superagent'], function (superagent) { 'use strict';
 
    	/**
    	 * Create a WhatsApp Integration
-   	 * 
+   	 * You must be approved by WhatsApp to use this feature. Your approved e164-formatted phone number and valid WhatsApp certificate for your number are required. Your WhatsApp certificate must have valid base64 encoding. Please paste carefully and do not add any leading or trailing spaces. Do not alter any characters. An integration must be activated within 7 days of certificate generation. If you cannot complete the addition and activation of the number within 7 days, please obtain a new certificate before creating the integration. Integrations created with an invalid number or certificate may immediately incur additional integration fees. Please carefully enter your number and certificate as described.
    	 * @param {Object} body WhatsAppIntegrationRequest
    	 */
    	postConversationsMessagingIntegrationsWhatsapp(body) { 
@@ -11783,7 +11784,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * DataExtensions service.
    	 * @module purecloud-platform-client-v2/api/DataExtensionsApi
-   	 * @version 86.0.0
+   	 * @version 87.0.0
    	 */
 
    	/**
@@ -11869,7 +11870,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * ExternalContacts service.
    	 * @module purecloud-platform-client-v2/api/ExternalContactsApi
-   	 * @version 86.0.0
+   	 * @version 87.0.0
    	 */
 
    	/**
@@ -12922,8 +12923,8 @@ define(['superagent'], function (superagent) { 'use strict';
    	}
 
    	/**
-   	 * Associate an external contact with a conversation
-   	 * 
+   	 * Associate/disassociate an external contact with a conversation
+   	 * To associate, supply a value for the externalContactId.  To disassociate, do not include the property at all.
    	 * @param {String} conversationId Conversation ID
    	 * @param {Object} body ConversationAssociation
    	 */
@@ -13112,7 +13113,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Fax service.
    	 * @module purecloud-platform-client-v2/api/FaxApi
-   	 * @version 86.0.0
+   	 * @version 87.0.0
    	 */
 
    	/**
@@ -13283,7 +13284,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Flows service.
    	 * @module purecloud-platform-client-v2/api/FlowsApi
-   	 * @version 86.0.0
+   	 * @version 87.0.0
    	 */
 
    	/**
@@ -13354,7 +13355,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * GeneralDataProtectionRegulation service.
    	 * @module purecloud-platform-client-v2/api/GeneralDataProtectionRegulationApi
-   	 * @version 86.0.0
+   	 * @version 87.0.0
    	 */
 
    	/**
@@ -13484,7 +13485,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Geolocation service.
    	 * @module purecloud-platform-client-v2/api/GeolocationApi
-   	 * @version 86.0.0
+   	 * @version 87.0.0
    	 */
 
    	/**
@@ -13615,7 +13616,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Greetings service.
    	 * @module purecloud-platform-client-v2/api/GreetingsApi
-   	 * @version 86.0.0
+   	 * @version 87.0.0
    	 */
 
    	/**
@@ -14070,7 +14071,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Groups service.
    	 * @module purecloud-platform-client-v2/api/GroupsApi
-   	 * @version 86.0.0
+   	 * @version 87.0.0
    	 */
 
    	/**
@@ -14475,7 +14476,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * IdentityProvider service.
    	 * @module purecloud-platform-client-v2/api/IdentityProviderApi
-   	 * @version 86.0.0
+   	 * @version 87.0.0
    	 */
 
    	/**
@@ -15231,7 +15232,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Integrations service.
    	 * @module purecloud-platform-client-v2/api/IntegrationsApi
-   	 * @version 86.0.0
+   	 * @version 87.0.0
    	 */
 
    	/**
@@ -16723,7 +16724,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Knowledge service.
    	 * @module purecloud-platform-client-v2/api/KnowledgeApi
-   	 * @version 86.0.0
+   	 * @version 87.0.0
    	 */
 
    	/**
@@ -17442,7 +17443,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * LanguageUnderstanding service.
    	 * @module purecloud-platform-client-v2/api/LanguageUnderstandingApi
-   	 * @version 86.0.0
+   	 * @version 87.0.0
    	 */
 
    	/**
@@ -18008,7 +18009,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Languages service.
    	 * @module purecloud-platform-client-v2/api/LanguagesApi
-   	 * @version 86.0.0
+   	 * @version 87.0.0
    	 */
 
    	/**
@@ -18276,7 +18277,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * License service.
    	 * @module purecloud-platform-client-v2/api/LicenseApi
-   	 * @version 86.0.0
+   	 * @version 87.0.0
    	 */
 
    	/**
@@ -18514,7 +18515,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Locations service.
    	 * @module purecloud-platform-client-v2/api/LocationsApi
-   	 * @version 86.0.0
+   	 * @version 87.0.0
    	 */
 
    	/**
@@ -18750,7 +18751,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * MobileDevices service.
    	 * @module purecloud-platform-client-v2/api/MobileDevicesApi
-   	 * @version 86.0.0
+   	 * @version 87.0.0
    	 */
 
    	/**
@@ -18901,7 +18902,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Notifications service.
    	 * @module purecloud-platform-client-v2/api/NotificationsApi
-   	 * @version 86.0.0
+   	 * @version 87.0.0
    	 */
 
    	/**
@@ -19100,7 +19101,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * OAuth service.
    	 * @module purecloud-platform-client-v2/api/OAuthApi
-   	 * @version 86.0.0
+   	 * @version 87.0.0
    	 */
 
    	/**
@@ -19458,7 +19459,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Objects service.
    	 * @module purecloud-platform-client-v2/api/ObjectsApi
-   	 * @version 86.0.0
+   	 * @version 87.0.0
    	 */
 
    	/**
@@ -19699,7 +19700,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Organization service.
    	 * @module purecloud-platform-client-v2/api/OrganizationApi
-   	 * @version 86.0.0
+   	 * @version 87.0.0
    	 */
 
    	/**
@@ -19954,7 +19955,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * OrganizationAuthorization service.
    	 * @module purecloud-platform-client-v2/api/OrganizationAuthorizationApi
-   	 * @version 86.0.0
+   	 * @version 87.0.0
    	 */
 
    	/**
@@ -20664,7 +20665,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Outbound service.
    	 * @module purecloud-platform-client-v2/api/OutboundApi
-   	 * @version 86.0.0
+   	 * @version 87.0.0
    	 */
 
    	/**
@@ -20990,6 +20991,31 @@ define(['superagent'], function (superagent) { 'use strict';
    	}
 
    	/**
+   	 * Delete an Outbound Messaging Campaign
+   	 * 
+   	 * @param {String} messagingCampaignId The Messaging Campaign ID
+   	 */
+   	deleteOutboundMessagingcampaign(messagingCampaignId) { 
+   		// verify the required parameter 'messagingCampaignId' is set
+   		if (messagingCampaignId === undefined || messagingCampaignId === null) {
+   			throw 'Missing the required parameter "messagingCampaignId" when calling deleteOutboundMessagingcampaign';
+   		}
+
+   		return this.apiClient.callApi(
+   			'/api/v2/outbound/messagingcampaigns/{messagingCampaignId}', 
+   			'DELETE', 
+   			{ 'messagingCampaignId': messagingCampaignId }, 
+   			{  }, 
+   			{  }, 
+   			{  }, 
+   			null, 
+   			['PureCloud OAuth'], 
+   			['application/json'], 
+   			['application/json']
+   		);
+   	}
+
+   	/**
    	 * Delete a Rule set.
    	 * 
    	 * @param {String} ruleSetId Rule Set ID
@@ -21120,6 +21146,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	 * @param {Object} opts Optional parameters
    	 * @param {Number} opts.pageSize Page size. The max that will be returned is 100. (default to 25)
    	 * @param {Number} opts.pageNumber Page number (default to 1)
+   	 * @param {Boolean} opts.allowEmptyResult Whether to return an empty page when there are no results for that page (default to false)
    	 * @param {Object} opts.filterType Filter type (default to Prefix)
    	 * @param {String} opts.name Name
    	 * @param {String} opts.sortBy Sort by
@@ -21133,7 +21160,7 @@ define(['superagent'], function (superagent) { 'use strict';
    			'/api/v2/outbound/attemptlimits', 
    			'GET', 
    			{  }, 
-   			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'filterType': opts['filterType'],'name': opts['name'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] }, 
+   			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'allowEmptyResult': opts['allowEmptyResult'],'filterType': opts['filterType'],'name': opts['name'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] }, 
    			{  }, 
    			{  }, 
    			null, 
@@ -21174,6 +21201,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	 * @param {Object} opts Optional parameters
    	 * @param {Number} opts.pageSize Page size. The max that will be returned is 100. (default to 25)
    	 * @param {Number} opts.pageNumber Page number (default to 1)
+   	 * @param {Boolean} opts.allowEmptyResult Whether to return an empty page when there are no results for that page (default to false)
    	 * @param {Object} opts.filterType Filter type (default to Prefix)
    	 * @param {String} opts.name Name
    	 * @param {String} opts.sortBy Sort by
@@ -21187,7 +21215,7 @@ define(['superagent'], function (superagent) { 'use strict';
    			'/api/v2/outbound/callabletimesets', 
    			'GET', 
    			{  }, 
-   			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'filterType': opts['filterType'],'name': opts['name'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] }, 
+   			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'allowEmptyResult': opts['allowEmptyResult'],'filterType': opts['filterType'],'name': opts['name'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] }, 
    			{  }, 
    			{  }, 
    			null, 
@@ -21228,6 +21256,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	 * @param {Object} opts Optional parameters
    	 * @param {Number} opts.pageSize Page size. The max that will be returned is 100. (default to 25)
    	 * @param {Number} opts.pageNumber Page number (default to 1)
+   	 * @param {Boolean} opts.allowEmptyResult Whether to return an empty page when there are no results for that page (default to false)
    	 * @param {Object} opts.filterType Filter type (default to Prefix)
    	 * @param {String} opts.name Name
    	 * @param {String} opts.sortBy Sort by
@@ -21241,7 +21270,7 @@ define(['superagent'], function (superagent) { 'use strict';
    			'/api/v2/outbound/callanalysisresponsesets', 
    			'GET', 
    			{  }, 
-   			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'filterType': opts['filterType'],'name': opts['name'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] }, 
+   			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'allowEmptyResult': opts['allowEmptyResult'],'filterType': opts['filterType'],'name': opts['name'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] }, 
    			{  }, 
    			{  }, 
    			null, 
@@ -21407,6 +21436,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	 * @param {Object} opts Optional parameters
    	 * @param {Number} opts.pageSize Page size. The max that will be returned is 100. (default to 25)
    	 * @param {Number} opts.pageNumber Page number (default to 1)
+   	 * @param {Boolean} opts.allowEmptyResult Whether to return an empty page when there are no results for that page (default to false)
    	 * @param {Object} opts.filterType Filter type (default to Prefix)
    	 * @param {String} opts.name Name
    	 * @param {String} opts.sortBy Sort by
@@ -21420,7 +21450,7 @@ define(['superagent'], function (superagent) { 'use strict';
    			'/api/v2/outbound/campaignrules', 
    			'GET', 
    			{  }, 
-   			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'filterType': opts['filterType'],'name': opts['name'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] }, 
+   			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'allowEmptyResult': opts['allowEmptyResult'],'filterType': opts['filterType'],'name': opts['name'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] }, 
    			{  }, 
    			{  }, 
    			null, 
@@ -21457,6 +21487,66 @@ define(['superagent'], function (superagent) { 'use strict';
    			'GET', 
    			{  }, 
    			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'filterType': opts['filterType'],'name': opts['name'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'contactListId': opts['contactListId'],'dncListIds': opts['dncListIds'],'distributionQueueId': opts['distributionQueueId'],'edgeGroupId': opts['edgeGroupId'],'callAnalysisResponseSetId': opts['callAnalysisResponseSetId'],'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi'),'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] }, 
+   			{  }, 
+   			{  }, 
+   			null, 
+   			['PureCloud OAuth'], 
+   			['application/json'], 
+   			['application/json']
+   		);
+   	}
+
+   	/**
+   	 * Query across all types of campaigns by division
+   	 * 
+   	 * @param {Object} opts Optional parameters
+   	 * @param {Number} opts.pageSize Page size (default to 25)
+   	 * @param {Number} opts.pageNumber Page number (default to 1)
+   	 * @param {Array.<String>} opts.id Campaign ID(s)
+   	 * @param {String} opts.name Campaign name(s)
+   	 * @param {Array.<String>} opts.divisionId Division ID(s)
+   	 * @param {Array.<String>} opts.mediaType Media type(s)
+   	 * @param {Object} opts.sortOrder Sort order (default to a)
+   	 */
+   	getOutboundCampaignsAll(opts) { 
+   		opts = opts || {};
+   		
+
+   		return this.apiClient.callApi(
+   			'/api/v2/outbound/campaigns/all', 
+   			'GET', 
+   			{  }, 
+   			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'name': opts['name'],'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi'),'mediaType': this.apiClient.buildCollectionParam(opts['mediaType'], 'multi'),'sortOrder': opts['sortOrder'] }, 
+   			{  }, 
+   			{  }, 
+   			null, 
+   			['PureCloud OAuth'], 
+   			['application/json'], 
+   			['application/json']
+   		);
+   	}
+
+   	/**
+   	 * Query across all types of campaigns
+   	 * 
+   	 * @param {Object} opts Optional parameters
+   	 * @param {Number} opts.pageSize Page size (default to 25)
+   	 * @param {Number} opts.pageNumber Page number (default to 1)
+   	 * @param {Array.<String>} opts.id Campaign ID(s)
+   	 * @param {String} opts.name Campaign name(s)
+   	 * @param {Array.<String>} opts.divisionId Division ID(s)
+   	 * @param {Array.<String>} opts.mediaType Media type(s)
+   	 * @param {Object} opts.sortOrder Sort order (default to a)
+   	 */
+   	getOutboundCampaignsAllDivisionviews(opts) { 
+   		opts = opts || {};
+   		
+
+   		return this.apiClient.callApi(
+   			'/api/v2/outbound/campaigns/all/divisionviews', 
+   			'GET', 
+   			{  }, 
+   			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'name': opts['name'],'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi'),'mediaType': this.apiClient.buildCollectionParam(opts['mediaType'], 'multi'),'sortOrder': opts['sortOrder'] }, 
    			{  }, 
    			{  }, 
    			null, 
@@ -21691,6 +21781,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	 * @param {Object} opts Optional parameters
    	 * @param {Number} opts.pageSize Page size. The max that will be returned is 100. (default to 25)
    	 * @param {Number} opts.pageNumber Page number (default to 1)
+   	 * @param {Boolean} opts.allowEmptyResult Whether to return an empty page when there are no results for that page (default to false)
    	 * @param {Object} opts.filterType Filter type (default to Prefix)
    	 * @param {String} opts.name Name
    	 * @param {String} opts.sortBy Sort by
@@ -21705,7 +21796,7 @@ define(['superagent'], function (superagent) { 'use strict';
    			'/api/v2/outbound/contactlistfilters', 
    			'GET', 
    			{  }, 
-   			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'filterType': opts['filterType'],'name': opts['name'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'contactListId': opts['contactListId'] }, 
+   			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'allowEmptyResult': opts['allowEmptyResult'],'filterType': opts['filterType'],'name': opts['name'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'contactListId': opts['contactListId'] }, 
    			{  }, 
    			{  }, 
    			null, 
@@ -21723,6 +21814,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	 * @param {Boolean} opts.includeSize Include size (default to false)
    	 * @param {Number} opts.pageSize Page size. The max that will be returned is 100. (default to 25)
    	 * @param {Number} opts.pageNumber Page number (default to 1)
+   	 * @param {Boolean} opts.allowEmptyResult Whether to return an empty page when there are no results for that page (default to false)
    	 * @param {Object} opts.filterType Filter type (default to Prefix)
    	 * @param {String} opts.name Name
    	 * @param {Array.<String>} opts.id id
@@ -21738,7 +21830,7 @@ define(['superagent'], function (superagent) { 'use strict';
    			'/api/v2/outbound/contactlists', 
    			'GET', 
    			{  }, 
-   			{ 'includeImportStatus': opts['includeImportStatus'],'includeSize': opts['includeSize'],'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'filterType': opts['filterType'],'name': opts['name'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi'),'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] }, 
+   			{ 'includeImportStatus': opts['includeImportStatus'],'includeSize': opts['includeSize'],'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'allowEmptyResult': opts['allowEmptyResult'],'filterType': opts['filterType'],'name': opts['name'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi'),'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] }, 
    			{  }, 
    			{  }, 
    			null, 
@@ -21902,6 +21994,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	 * @param {Boolean} opts.includeSize Include size (default to false)
    	 * @param {Number} opts.pageSize Page size. The max that will be returned is 100. (default to 25)
    	 * @param {Number} opts.pageNumber Page number (default to 1)
+   	 * @param {Boolean} opts.allowEmptyResult Whether to return an empty page when there are no results for that page (default to false)
    	 * @param {Object} opts.filterType Filter type (default to Prefix)
    	 * @param {String} opts.name Name
    	 * @param {Object} opts.dncSourceType DncSourceType
@@ -21917,7 +22010,7 @@ define(['superagent'], function (superagent) { 'use strict';
    			'/api/v2/outbound/dnclists', 
    			'GET', 
    			{  }, 
-   			{ 'includeImportStatus': opts['includeImportStatus'],'includeSize': opts['includeSize'],'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'filterType': opts['filterType'],'name': opts['name'],'dncSourceType': opts['dncSourceType'],'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi'),'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] }, 
+   			{ 'includeImportStatus': opts['includeImportStatus'],'includeSize': opts['includeSize'],'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'allowEmptyResult': opts['allowEmptyResult'],'filterType': opts['filterType'],'name': opts['name'],'dncSourceType': opts['dncSourceType'],'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi'),'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] }, 
    			{  }, 
    			{  }, 
    			null, 
@@ -22045,6 +22138,143 @@ define(['superagent'], function (superagent) { 'use strict';
    	}
 
    	/**
+   	 * Get an Outbound Messaging Campaign
+   	 * 
+   	 * @param {String} messagingCampaignId The Messaging Campaign ID
+   	 */
+   	getOutboundMessagingcampaign(messagingCampaignId) { 
+   		// verify the required parameter 'messagingCampaignId' is set
+   		if (messagingCampaignId === undefined || messagingCampaignId === null) {
+   			throw 'Missing the required parameter "messagingCampaignId" when calling getOutboundMessagingcampaign';
+   		}
+
+   		return this.apiClient.callApi(
+   			'/api/v2/outbound/messagingcampaigns/{messagingCampaignId}', 
+   			'GET', 
+   			{ 'messagingCampaignId': messagingCampaignId }, 
+   			{  }, 
+   			{  }, 
+   			{  }, 
+   			null, 
+   			['PureCloud OAuth'], 
+   			['application/json'], 
+   			['application/json']
+   		);
+   	}
+
+   	/**
+   	 * Get messaging campaign&#39;s progress
+   	 * 
+   	 * @param {String} messagingCampaignId The Messaging Campaign ID
+   	 */
+   	getOutboundMessagingcampaignProgress(messagingCampaignId) { 
+   		// verify the required parameter 'messagingCampaignId' is set
+   		if (messagingCampaignId === undefined || messagingCampaignId === null) {
+   			throw 'Missing the required parameter "messagingCampaignId" when calling getOutboundMessagingcampaignProgress';
+   		}
+
+   		return this.apiClient.callApi(
+   			'/api/v2/outbound/messagingcampaigns/{messagingCampaignId}/progress', 
+   			'GET', 
+   			{ 'messagingCampaignId': messagingCampaignId }, 
+   			{  }, 
+   			{  }, 
+   			{  }, 
+   			null, 
+   			['PureCloud OAuth'], 
+   			['application/json'], 
+   			['application/json']
+   		);
+   	}
+
+   	/**
+   	 * Query a list of Messaging Campaigns
+   	 * 
+   	 * @param {Object} opts Optional parameters
+   	 * @param {Number} opts.pageSize Page size. The max that will be returned is 100. (default to 25)
+   	 * @param {Number} opts.pageNumber Page number (default to 1)
+   	 * @param {Object} opts.sortBy The field to sort by (default to name)
+   	 * @param {Object} opts.sortOrder The direction to sort (default to ascending)
+   	 * @param {String} opts.name Name
+   	 * @param {String} opts.contactListId Contact List ID
+   	 * @param {Array.<String>} opts.divisionId Division ID(s)
+   	 * @param {Object} opts.type Campaign Type
+   	 * @param {String} opts.senderSmsPhoneNumber Sender SMS Phone Number
+   	 * @param {Array.<String>} opts.id A list of messaging campaign ids to bulk fetch
+   	 */
+   	getOutboundMessagingcampaigns(opts) { 
+   		opts = opts || {};
+   		
+
+   		return this.apiClient.callApi(
+   			'/api/v2/outbound/messagingcampaigns', 
+   			'GET', 
+   			{  }, 
+   			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'name': opts['name'],'contactListId': opts['contactListId'],'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi'),'type': opts['type'],'senderSmsPhoneNumber': opts['senderSmsPhoneNumber'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi') }, 
+   			{  }, 
+   			{  }, 
+   			null, 
+   			['PureCloud OAuth'], 
+   			['application/json'], 
+   			['application/json']
+   		);
+   	}
+
+   	/**
+   	 * Get a basic Messaging Campaign information object
+   	 * This returns a simplified version of a Messaging Campaign, consisting of id, name, and division.
+   	 * @param {String} messagingCampaignId The Messaging Campaign ID
+   	 */
+   	getOutboundMessagingcampaignsDivisionview(messagingCampaignId) { 
+   		// verify the required parameter 'messagingCampaignId' is set
+   		if (messagingCampaignId === undefined || messagingCampaignId === null) {
+   			throw 'Missing the required parameter "messagingCampaignId" when calling getOutboundMessagingcampaignsDivisionview';
+   		}
+
+   		return this.apiClient.callApi(
+   			'/api/v2/outbound/messagingcampaigns/divisionviews/{messagingCampaignId}', 
+   			'GET', 
+   			{ 'messagingCampaignId': messagingCampaignId }, 
+   			{  }, 
+   			{  }, 
+   			{  }, 
+   			null, 
+   			['PureCloud OAuth'], 
+   			['application/json'], 
+   			['application/json']
+   		);
+   	}
+
+   	/**
+   	 * Query a list of basic Messaging Campaign information objects
+   	 * This returns a listing of simplified Messaging Campaigns, each consisting of id, name, and division.
+   	 * @param {Object} opts Optional parameters
+   	 * @param {Number} opts.pageSize Page size. The max that will be returned is 100. (default to 25)
+   	 * @param {Number} opts.pageNumber Page number (default to 1)
+   	 * @param {Object} opts.sortOrder The direction to sort (default to a)
+   	 * @param {String} opts.name Name
+   	 * @param {Array.<String>} opts.id id
+   	 * @param {String} opts.senderSmsPhoneNumber Sender SMS Phone Number
+   	 */
+   	getOutboundMessagingcampaignsDivisionviews(opts) { 
+   		opts = opts || {};
+   		
+
+   		return this.apiClient.callApi(
+   			'/api/v2/outbound/messagingcampaigns/divisionviews', 
+   			'GET', 
+   			{  }, 
+   			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortOrder': opts['sortOrder'],'name': opts['name'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'senderSmsPhoneNumber': opts['senderSmsPhoneNumber'] }, 
+   			{  }, 
+   			{  }, 
+   			null, 
+   			['PureCloud OAuth'], 
+   			['application/json'], 
+   			['application/json']
+   		);
+   	}
+
+   	/**
    	 * Get a Rule Set by ID.
    	 * 
    	 * @param {String} ruleSetId Rule Set ID
@@ -22075,6 +22305,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	 * @param {Object} opts Optional parameters
    	 * @param {Number} opts.pageSize Page size. The max that will be returned is 100. (default to 25)
    	 * @param {Number} opts.pageNumber Page number (default to 1)
+   	 * @param {Boolean} opts.allowEmptyResult Whether to return an empty page when there are no results for that page (default to false)
    	 * @param {Object} opts.filterType Filter type (default to Prefix)
    	 * @param {String} opts.name Name
    	 * @param {String} opts.sortBy Sort by
@@ -22088,7 +22319,7 @@ define(['superagent'], function (superagent) { 'use strict';
    			'/api/v2/outbound/rulesets', 
    			'GET', 
    			{  }, 
-   			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'filterType': opts['filterType'],'name': opts['name'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] }, 
+   			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'allowEmptyResult': opts['allowEmptyResult'],'filterType': opts['filterType'],'name': opts['name'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] }, 
    			{  }, 
    			{  }, 
    			null, 
@@ -22219,6 +22450,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	 * @param {Object} opts Optional parameters
    	 * @param {Number} opts.pageSize Page size. The max that will be returned is 100. (default to 25)
    	 * @param {Number} opts.pageNumber Page number (default to 1)
+   	 * @param {Boolean} opts.allowEmptyResult Whether to return an empty page when there are no results for that page (default to false)
    	 * @param {Object} opts.filterType Filter type (default to Prefix)
    	 * @param {String} opts.name Name
    	 * @param {String} opts.sortBy Sort by
@@ -22232,7 +22464,7 @@ define(['superagent'], function (superagent) { 'use strict';
    			'/api/v2/outbound/sequences', 
    			'GET', 
    			{  }, 
-   			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'filterType': opts['filterType'],'name': opts['name'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] }, 
+   			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'allowEmptyResult': opts['allowEmptyResult'],'filterType': opts['filterType'],'name': opts['name'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] }, 
    			{  }, 
    			{  }, 
    			null, 
@@ -22817,6 +23049,56 @@ define(['superagent'], function (superagent) { 'use strict';
    	}
 
    	/**
+   	 * Create a Messaging Campaign
+   	 * 
+   	 * @param {Object} body Messaging Campaign
+   	 */
+   	postOutboundMessagingcampaigns(body) { 
+   		// verify the required parameter 'body' is set
+   		if (body === undefined || body === null) {
+   			throw 'Missing the required parameter "body" when calling postOutboundMessagingcampaigns';
+   		}
+
+   		return this.apiClient.callApi(
+   			'/api/v2/outbound/messagingcampaigns', 
+   			'POST', 
+   			{  }, 
+   			{  }, 
+   			{  }, 
+   			{  }, 
+   			body, 
+   			['PureCloud OAuth'], 
+   			['application/json'], 
+   			['application/json']
+   		);
+   	}
+
+   	/**
+   	 * Get progress for a list of messaging campaigns
+   	 * 
+   	 * @param {Array.<Object>} body Messaging Campaign IDs
+   	 */
+   	postOutboundMessagingcampaignsProgress(body) { 
+   		// verify the required parameter 'body' is set
+   		if (body === undefined || body === null) {
+   			throw 'Missing the required parameter "body" when calling postOutboundMessagingcampaignsProgress';
+   		}
+
+   		return this.apiClient.callApi(
+   			'/api/v2/outbound/messagingcampaigns/progress', 
+   			'POST', 
+   			{  }, 
+   			{  }, 
+   			{  }, 
+   			{  }, 
+   			body, 
+   			['PureCloud OAuth'], 
+   			['application/json'], 
+   			['application/json']
+   		);
+   	}
+
+   	/**
    	 * Create a Dialer Call Analysis Response Set.
    	 * 
    	 * @param {Object} body RuleSet
@@ -23177,6 +23459,36 @@ define(['superagent'], function (superagent) { 'use strict';
    	}
 
    	/**
+   	 * Update an Outbound Messaging Campaign
+   	 * 
+   	 * @param {String} messagingCampaignId The Messaging Campaign ID
+   	 * @param {Object} body MessagingCampaign
+   	 */
+   	putOutboundMessagingcampaign(messagingCampaignId, body) { 
+   		// verify the required parameter 'messagingCampaignId' is set
+   		if (messagingCampaignId === undefined || messagingCampaignId === null) {
+   			throw 'Missing the required parameter "messagingCampaignId" when calling putOutboundMessagingcampaign';
+   		}
+   		// verify the required parameter 'body' is set
+   		if (body === undefined || body === null) {
+   			throw 'Missing the required parameter "body" when calling putOutboundMessagingcampaign';
+   		}
+
+   		return this.apiClient.callApi(
+   			'/api/v2/outbound/messagingcampaigns/{messagingCampaignId}', 
+   			'PUT', 
+   			{ 'messagingCampaignId': messagingCampaignId }, 
+   			{  }, 
+   			{  }, 
+   			{  }, 
+   			body, 
+   			['PureCloud OAuth'], 
+   			['application/json'], 
+   			['application/json']
+   		);
+   	}
+
+   	/**
    	 * Update a RuleSet.
    	 * 
    	 * @param {String} ruleSetId Rule Set ID
@@ -23327,7 +23639,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Presence service.
    	 * @module purecloud-platform-client-v2/api/PresenceApi
-   	 * @version 86.0.0
+   	 * @version 87.0.0
    	 */
 
    	/**
@@ -23594,7 +23906,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Quality service.
    	 * @module purecloud-platform-client-v2/api/QualityApi
-   	 * @version 86.0.0
+   	 * @version 87.0.0
    	 */
 
    	/**
@@ -25266,7 +25578,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Recording service.
    	 * @module purecloud-platform-client-v2/api/RecordingApi
-   	 * @version 86.0.0
+   	 * @version 87.0.0
    	 */
 
    	/**
@@ -26512,7 +26824,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * ResponseManagement service.
    	 * @module purecloud-platform-client-v2/api/ResponseManagementApi
-   	 * @version 86.0.0
+   	 * @version 87.0.0
    	 */
 
    	/**
@@ -26837,7 +27149,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Routing service.
    	 * @module purecloud-platform-client-v2/api/RoutingApi
-   	 * @version 86.0.0
+   	 * @version 87.0.0
    	 */
 
    	/**
@@ -29135,7 +29447,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * SCIM service.
    	 * @module purecloud-platform-client-v2/api/SCIMApi
-   	 * @version 86.0.0
+   	 * @version 87.0.0
    	 */
 
    	/**
@@ -29151,11 +29463,11 @@ define(['superagent'], function (superagent) { 'use strict';
 
 
    	/**
-   	 * Delete a group.
+   	 * Delete a group
    	 * 
-   	 * @param {String} groupId The ID of a group. Returned with GET /api/v2/scim/v2/groups.
+   	 * @param {String} groupId The ID of a group. Returned with GET /api/v2/scim/groups or GET /api/v2/scim/v2/groups.
    	 * @param {Object} opts Optional parameters
-   	 * @param {String} opts.ifMatch The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/groups/{groupId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns 400 with a \&quot;scimType\&quot; of \&quot;invalidVers\&quot;.
+   	 * @param {String} opts.ifMatch The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/groups/{groupId} or GET /api/v2/scim/v2/groups/{groupId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns 400 with a \&quot;scimType\&quot; of \&quot;invalidVers\&quot;.
    	 */
    	deleteScimGroup(groupId, opts) { 
    		opts = opts || {};
@@ -29209,11 +29521,11 @@ define(['superagent'], function (superagent) { 'use strict';
    	}
 
    	/**
-   	 * Delete a group.
+   	 * Delete a group
    	 * 
-   	 * @param {String} groupId The ID of a group. Returned with GET /api/v2/scim/v2/groups.
+   	 * @param {String} groupId The ID of a group. Returned with GET /api/v2/scim/groups or GET /api/v2/scim/v2/groups.
    	 * @param {Object} opts Optional parameters
-   	 * @param {String} opts.ifMatch The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/groups/{groupId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns 400 with a \&quot;scimType\&quot; of \&quot;invalidVers\&quot;.
+   	 * @param {String} opts.ifMatch The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/groups/{groupId} or GET /api/v2/scim/v2/groups/{groupId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns 400 with a \&quot;scimType\&quot; of \&quot;invalidVers\&quot;.
    	 */
    	deleteScimV2Group(groupId, opts) { 
    		opts = opts || {};
@@ -29271,8 +29583,8 @@ define(['superagent'], function (superagent) { 'use strict';
    	 * 
    	 * @param {String} groupId The ID of a group. Returned with GET /api/v2/scim/groups.
    	 * @param {Object} opts Optional parameters
-   	 * @param {Array.<String>} opts.attributes Indicates which attributes to include. Returns these attributes and the &#39;id&#39;, &#39;active&#39;, and &#39;meta attributes . Use \&quot;attributes\&quot; to avoid expensive secondary calls for the default attributes.
-   	 * @param {Array.<String>} opts.excludedAttributes Indicates which attributes to exclude. Returns the default attributes minus \&quot;excludedAttributes\&quot;. Use \&quot;excludedAttributes\&quot; to avoid expensive secondary calls for the default attributes. The&#39;id&#39;, &#39;active&#39;, and &#39;meta&#39;  attributes will always be present in the output.
+   	 * @param {Array.<String>} opts.attributes Indicates which attributes to include. Returns these attributes and the \&quot;id\&quot;, \&quot;active\&quot;, and \&quot;meta\&quot; attributes. Use \&quot;attributes\&quot; to avoid expensive additional calls for the default attributes.
+   	 * @param {Array.<String>} opts.excludedAttributes Indicates which attributes to exclude. Always returns the \&quot;id\&quot;, \&quot;active\&quot;, and \&quot;meta\&quot; attributes. Returns the default attributes minus \&quot;excludedAttributes\&quot;. Use \&quot;excludedAttributes\&quot; to avoid expensive additional calls for the default attributes.
    	 * @param {String} opts.ifNoneMatch The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/groups/{groupId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns the current configuration of the resource. If the ETag is current, returns 304 Not Modified.
    	 */
    	getScimGroup(groupId, opts) { 
@@ -29302,10 +29614,10 @@ define(['superagent'], function (superagent) { 'use strict';
    	 * 
    	 * @param {Object} opts Optional parameters
    	 * @param {Number} opts.startIndex The 1-based index of the first query result. (default to 1)
-   	 * @param {Number} opts.count The requested number of items per page. A value of 0 returns \&quot;totalResults\&quot;. (default to 25)
-   	 * @param {Array.<String>} opts.attributes Indicates which attributes to include. Returns these attributes and the &#39;id&#39;, &#39;active&#39;, and &#39;meta attributes . Use \&quot;attributes\&quot; to avoid expensive secondary calls for the default attributes.
-   	 * @param {Array.<String>} opts.excludedAttributes Indicates which attributes to exclude. Returns the default attributes minus \&quot;excludedAttributes\&quot;. Use \&quot;excludedAttributes\&quot; to avoid expensive secondary calls for the default attributes. The&#39;id&#39;, &#39;active&#39;, and &#39;meta&#39;  attributes will always be present in the output.
-   	 * @param {String} opts.filter Filters results.
+   	 * @param {Number} opts.count The requested number of items per page. A value of 0 returns \&quot;totalResults\&quot;. Note that a page size over 25 will likely cause a 429 error by exceeding internal resource limits. Page sizes over 25 will require using excludedAttributes and includeAttributes query parameters to exclude secondary lookup values -- (i.e. externalId, roles, urn:ietf:params:scim:schemas:extension:genesys:purecloud:2.0:User:routingLanguages, urn:ietf:params:scim:schemas:extension:genesys:purecloud:2.0:User:routingSkills) (default to 25)
+   	 * @param {Array.<String>} opts.attributes Indicates which attributes to include. Returns these attributes and the \&quot;id\&quot;, \&quot;active\&quot;, and \&quot;meta\&quot; attributes. Use \&quot;attributes\&quot; to avoid expensive additional calls for the default attributes.
+   	 * @param {Array.<String>} opts.excludedAttributes Indicates which attributes to exclude. Always returns the \&quot;id\&quot;, \&quot;active\&quot;, and \&quot;meta\&quot; attributes. Returns the default attributes minus \&quot;excludedAttributes\&quot;. Use \&quot;excludedAttributes\&quot; to avoid expensive additional calls for the default attributes.
+   	 * @param {String} opts.filter Filters results. If nothing is specified, returns all groups. Examples of valid values: \&quot;id eq 5f4bc742-a019-4e38-8e2a-d39d5bc0b0f3\&quot;, \&quot;displayname eq Sales\&quot;.
    	 */
    	getScimGroups(opts) { 
    		opts = opts || {};
@@ -29371,9 +29683,9 @@ define(['superagent'], function (superagent) { 'use strict';
    	}
 
    	/**
-   	 * Get the SCIM schema by id
+   	 * Get a SCIM schema
    	 * 
-   	 * @param {Object} schemaId The ID of a schema.
+   	 * @param {Object} schemaId The ID of a schema. Returned with GET /api/v2/scim/schemas.
    	 */
    	getScimSchema(schemaId) { 
    		// verify the required parameter 'schemaId' is set
@@ -29396,10 +29708,10 @@ define(['superagent'], function (superagent) { 'use strict';
    	}
 
    	/**
-   	 * Get the SCIM schemas
+   	 * Get a list of SCIM schemas
    	 * 
    	 * @param {Object} opts Optional parameters
-   	 * @param {String} opts.filter Filtered results are invalid and will result in a 403 (Unauthorized) return.
+   	 * @param {String} opts.filter Filtered results are invalid and return 403 Unauthorized.
    	 */
    	getScimSchemas(opts) { 
    		opts = opts || {};
@@ -29448,8 +29760,8 @@ define(['superagent'], function (superagent) { 'use strict';
    	 * 
    	 * @param {String} userId The ID of a user. Returned with GET /api/v2/scim/users.
    	 * @param {Object} opts Optional parameters
-   	 * @param {Array.<String>} opts.attributes Indicates which attributes to include. Returns these attributes and the &#39;id&#39;, &#39;userName&#39;, &#39;active&#39;, and &#39;meta&#39; attributes. Use \&quot;attributes\&quot; to avoid expensive secondary calls for the default attributes.
-   	 * @param {Array.<String>} opts.excludedAttributes Indicates which attributes to exclude. Returns the default attributes minus \&quot;excludedAttributes\&quot;. Use \&quot;excludedAttributes\&quot; to avoid expensive secondary calls for the default attributes. The &#39;id&#39;, &#39;userName&#39;, &#39;active&#39;, &#39;meta&#39; attributes  will always be present in output.
+   	 * @param {Array.<String>} opts.attributes Indicates which attributes to include. Returns these attributes and the \&quot;id\&quot;, \&quot;userName\&quot;, \&quot;active\&quot;, and \&quot;meta\&quot; attributes. Use \&quot;attributes\&quot; to avoid expensive additional calls for the default attributes.
+   	 * @param {Array.<String>} opts.excludedAttributes Indicates which attributes to exclude. Returns the default attributes minus \&quot;excludedAttributes\&quot;. Always returns the \&quot;id\&quot;, \&quot;userName\&quot;, \&quot;active\&quot;, and \&quot;meta\&quot; attributes. Use \&quot;excludedAttributes\&quot; to avoid expensive additional calls for the default attributes.
    	 * @param {String} opts.ifNoneMatch TThe ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/users/{userId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns the current configuration of the resource. If the ETag is current, returns 304 Not Modified.
    	 */
    	getScimUser(userId, opts) { 
@@ -29476,12 +29788,12 @@ define(['superagent'], function (superagent) { 'use strict';
 
    	/**
    	 * Get a list of users
-   	 * To return all active users, do not use a filter parameter. To return inactive users, set \&quot;filter\&quot; to \&quot;active eq false\&quot;. By default, returns SCIM attributes externalId, enterprise-user:manager, and roles. To exclude these attributes, set \&quot;attributes\&quot; to \&quot;id,active\&quot; or \&quot;excludeAttributes\&quot; to \&quot;externalId,roles,urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:division\&quot;.
+   	 * To return all active users, do not use the filter parameter. To return inactive users, set the filter parameter to \&quot;active eq false\&quot;. By default, returns SCIM attributes \&quot;externalId\&quot;, \&quot;enterprise-user:manager\&quot;, and \&quot;roles\&quot;. To exclude these attributes, set the attributes parameter to \&quot;id,active\&quot; or the excludeAttributes parameter to \&quot;externalId,roles,urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:division\&quot;.
    	 * @param {Object} opts Optional parameters
    	 * @param {Number} opts.startIndex The 1-based index of the first query result. (default to 1)
-   	 * @param {Number} opts.count The requested number of items per page. A value of 0 returns \&quot;totalResults\&quot;. (default to 25)
-   	 * @param {Array.<String>} opts.attributes Indicates which attributes to include. Returns these attributes and the &#39;id&#39;, &#39;userName&#39;, &#39;active&#39;, and &#39;meta&#39; attributes. Use \&quot;attributes\&quot; to avoid expensive secondary calls for the default attributes.
-   	 * @param {Array.<String>} opts.excludedAttributes Indicates which attributes to exclude. Returns the default attributes minus \&quot;excludedAttributes\&quot;. Use \&quot;excludedAttributes\&quot; to avoid expensive secondary calls for the default attributes. The &#39;id&#39;, &#39;userName&#39;, &#39;active&#39;, &#39;meta&#39; attributes  will always be present in output.
+   	 * @param {Number} opts.count The requested number of items per page. A value of 0 returns \&quot;totalResults\&quot;. Note that a page size over 25 will likely cause a 429 error by exceeding internal resource limits. Page sizes over 25 will require using excludedAttributes and includeAttributes query parameters to exclude secondary lookup values -- (i.e. externalId, roles, urn:ietf:params:scim:schemas:extension:genesys:purecloud:2.0:User:routingLanguages, urn:ietf:params:scim:schemas:extension:genesys:purecloud:2.0:User:routingSkills) (default to 25)
+   	 * @param {Array.<String>} opts.attributes Indicates which attributes to include. Returns these attributes and the \&quot;id\&quot;, \&quot;userName\&quot;, \&quot;active\&quot;, and \&quot;meta\&quot; attributes. Use \&quot;attributes\&quot; to avoid expensive additional calls for the default attributes.
+   	 * @param {Array.<String>} opts.excludedAttributes Indicates which attributes to exclude. Returns the default attributes minus \&quot;excludedAttributes\&quot;. Always returns the \&quot;id\&quot;, \&quot;userName\&quot;, \&quot;active\&quot;, and \&quot;meta\&quot; attributes. Use \&quot;excludedAttributes\&quot; to avoid expensive additional calls for the default attributes.
    	 * @param {String} opts.filter Filters results. If nothing is specified, returns all active users. Examples of valid values: \&quot;id eq 857449b0-d9e7-4cd0-acbf-a6adfb9ef1e9\&quot;, \&quot;userName eq search@sample.org\&quot;, \&quot;manager eq 16e10e2f-1136-43fe-bb84-eac073168a49\&quot;, \&quot;email eq search@sample.org\&quot;, \&quot;division eq divisionName\&quot;, \&quot;externalId eq 167844\&quot;, \&quot;active eq false\&quot;.
    	 */
    	getScimUsers(opts) { 
@@ -29507,9 +29819,9 @@ define(['superagent'], function (superagent) { 'use strict';
    	 * 
    	 * @param {String} groupId The ID of a group. Returned with GET /api/v2/scim/v2/groups.
    	 * @param {Object} opts Optional parameters
-   	 * @param {Array.<String>} opts.attributes Indicates which attributes to include. Returns these attributes and the &#39;id&#39;, &#39;active&#39;, and &#39;meta attributes . Use \&quot;attributes\&quot; to avoid expensive secondary calls for the default attributes.
-   	 * @param {Array.<String>} opts.excludedAttributes Indicates which attributes to exclude. Returns the default attributes minus \&quot;excludedAttributes\&quot;. Use \&quot;excludedAttributes\&quot; to avoid expensive secondary calls for the default attributes. The&#39;id&#39;, &#39;active&#39;, and &#39;meta&#39;  attributes will always be present in the output.
-   	 * @param {String} opts.ifNoneMatch TThe ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/groups/{groupId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns the current configuration of the resource. If the ETag is current, returns 304 Not Modified. 
+   	 * @param {Array.<String>} opts.attributes Indicates which attributes to include. Returns these attributes and the \&quot;id\&quot;, \&quot;active\&quot;, and \&quot;meta\&quot; attributes. Use \&quot;attributes\&quot; to avoid expensive additional calls for the default attributes.
+   	 * @param {Array.<String>} opts.excludedAttributes Indicates which attributes to exclude. Always returns the \&quot;id\&quot;, \&quot;active\&quot;, and \&quot;meta\&quot; attributes. Returns the default attributes minus \&quot;excludedAttributes\&quot;. Use \&quot;excludedAttributes\&quot; to avoid expensive additional calls for the default attributes.
+   	 * @param {String} opts.ifNoneMatch TThe ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/groups/{groupId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns the current configuration of the resource. If the ETag is current, returns 304 Not Modified.
    	 */
    	getScimV2Group(groupId, opts) { 
    		opts = opts || {};
@@ -29536,12 +29848,12 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Get a list of groups
    	 * 
-   	 * @param {String} filter Filters results.
+   	 * @param {String} filter Filters results. If nothing is specified, returns all groups. Examples of valid values: \&quot;id eq 5f4bc742-a019-4e38-8e2a-d39d5bc0b0f3\&quot;, \&quot;displayname eq Sales\&quot;.
    	 * @param {Object} opts Optional parameters
    	 * @param {Number} opts.startIndex The 1-based index of the first query result. (default to 1)
-   	 * @param {Number} opts.count The requested number of items per page. A value of 0 returns \&quot;totalResults\&quot;. (default to 25)
-   	 * @param {Array.<String>} opts.attributes Indicates which attributes to include. Returns these attributes and the &#39;id&#39;, &#39;active&#39;, and &#39;meta attributes . Use \&quot;attributes\&quot; to avoid expensive secondary calls for the default attributes.
-   	 * @param {Array.<String>} opts.excludedAttributes Indicates which attributes to exclude. Returns the default attributes minus \&quot;excludedAttributes\&quot;. Use \&quot;excludedAttributes\&quot; to avoid expensive secondary calls for the default attributes. The&#39;id&#39;, &#39;active&#39;, and &#39;meta&#39;  attributes will always be present in the output.
+   	 * @param {Number} opts.count The requested number of items per page. A value of 0 returns \&quot;totalResults\&quot;. Note that a page size over 25 will likely cause a 429 error by exceeding internal resource limits. Page sizes over 25 will require using excludedAttributes and includeAttributes query parameters to exclude secondary lookup values -- (i.e. externalId, roles, urn:ietf:params:scim:schemas:extension:genesys:purecloud:2.0:User:routingLanguages, urn:ietf:params:scim:schemas:extension:genesys:purecloud:2.0:User:routingSkills) (default to 25)
+   	 * @param {Array.<String>} opts.attributes Indicates which attributes to include. Returns these attributes and the \&quot;id\&quot;, \&quot;active\&quot;, and \&quot;meta\&quot; attributes. Use \&quot;attributes\&quot; to avoid expensive additional calls for the default attributes.
+   	 * @param {Array.<String>} opts.excludedAttributes Indicates which attributes to exclude. Always returns the \&quot;id\&quot;, \&quot;active\&quot;, and \&quot;meta\&quot; attributes. Returns the default attributes minus \&quot;excludedAttributes\&quot;. Use \&quot;excludedAttributes\&quot; to avoid expensive additional calls for the default attributes.
    	 */
    	getScimV2Groups(filter, opts) { 
    		opts = opts || {};
@@ -29611,9 +29923,9 @@ define(['superagent'], function (superagent) { 'use strict';
    	}
 
    	/**
-   	 * Get the SCIM schema by id
+   	 * Get a SCIM schema
    	 * 
-   	 * @param {Object} schemaId The ID of a schema.
+   	 * @param {Object} schemaId The ID of a schema. Returned with GET /api/v2/scim/v2/schemas.
    	 */
    	getScimV2Schema(schemaId) { 
    		// verify the required parameter 'schemaId' is set
@@ -29636,10 +29948,10 @@ define(['superagent'], function (superagent) { 'use strict';
    	}
 
    	/**
-   	 * Get the SCIM schemas
+   	 * Get a list of SCIM schemas
    	 * 
    	 * @param {Object} opts Optional parameters
-   	 * @param {String} opts.filter Filtered results are invalid and will result in a 403 (Unauthorized) return.
+   	 * @param {String} opts.filter Filtered results are invalid and return 403 Unauthorized.
    	 */
    	getScimV2Schemas(opts) { 
    		opts = opts || {};
@@ -29688,8 +30000,8 @@ define(['superagent'], function (superagent) { 'use strict';
    	 * 
    	 * @param {String} userId The ID of a user. Returned with GET /api/v2/scim/v2/users.
    	 * @param {Object} opts Optional parameters
-   	 * @param {Array.<String>} opts.attributes Indicates which attributes to include. Returns these attributes and the &#39;id&#39;, &#39;userName&#39;, &#39;active&#39;, and &#39;meta&#39; attributes. Use \&quot;attributes\&quot; to avoid expensive secondary calls for the default attributes.
-   	 * @param {Array.<String>} opts.excludedAttributes Indicates which attributes to exclude. Returns the default attributes minus \&quot;excludedAttributes\&quot;. Use \&quot;excludedAttributes\&quot; to avoid expensive secondary calls for the default attributes. The &#39;id&#39;, &#39;userName&#39;, &#39;active&#39;, &#39;meta&#39; attributes  will always be present in output.
+   	 * @param {Array.<String>} opts.attributes Indicates which attributes to include. Returns these attributes and the \&quot;id\&quot;, \&quot;userName\&quot;, \&quot;active\&quot;, and \&quot;meta\&quot; attributes. Use \&quot;attributes\&quot; to avoid expensive additional calls for the default attributes.
+   	 * @param {Array.<String>} opts.excludedAttributes Indicates which attributes to exclude. Returns the default attributes minus \&quot;excludedAttributes\&quot;. Always returns the \&quot;id\&quot;, \&quot;userName\&quot;, \&quot;active\&quot;, and \&quot;meta\&quot; attributes. Use \&quot;excludedAttributes\&quot; to avoid expensive additional calls for the default attributes.
    	 * @param {String} opts.ifNoneMatch The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/users/{userId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns the current configuration of the resource. If the ETag is current, returns 304 Not Modified.
    	 */
    	getScimV2User(userId, opts) { 
@@ -29716,12 +30028,12 @@ define(['superagent'], function (superagent) { 'use strict';
 
    	/**
    	 * Get a list of users
-   	 * To return all active users, do not use a filter parameter. To return inactive users, set \&quot;filter\&quot; to \&quot;active eq false\&quot;. By default, returns SCIM attributes externalId, enterprise-user:manager, and roles. To exclude these attributes, set \&quot;attributes\&quot; to \&quot;id,active\&quot; or \&quot;excludeAttributes\&quot; to \&quot;externalId,roles,urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:division\&quot;.
+   	 * To return all active users, do not use the filter parameter. To return inactive users, set the filter parameter to \&quot;active eq false\&quot;. By default, returns SCIM attributes \&quot;externalId\&quot;, \&quot;enterprise-user:manager\&quot;, and \&quot;roles\&quot;. To exclude these attributes, set the attributes parameter to \&quot;id,active\&quot; or the excludeAttributes parameter to \&quot;externalId,roles,urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:division\&quot;.
    	 * @param {Object} opts Optional parameters
    	 * @param {Number} opts.startIndex The 1-based index of the first query result. (default to 1)
-   	 * @param {Number} opts.count The requested number of items per page. A value of 0 returns \&quot;totalResults\&quot;. (default to 25)
-   	 * @param {Array.<String>} opts.attributes Indicates which attributes to include. Returns these attributes and the &#39;id&#39;, &#39;userName&#39;, &#39;active&#39;, and &#39;meta&#39; attributes. Use \&quot;attributes\&quot; to avoid expensive secondary calls for the default attributes.
-   	 * @param {Array.<String>} opts.excludedAttributes Indicates which attributes to exclude. Returns the default attributes minus \&quot;excludedAttributes\&quot;. Use \&quot;excludedAttributes\&quot; to avoid expensive secondary calls for the default attributes. The &#39;id&#39;, &#39;userName&#39;, &#39;active&#39;, &#39;meta&#39; attributes  will always be present in output.
+   	 * @param {Number} opts.count The requested number of items per page. A value of 0 returns \&quot;totalResults\&quot;. Note that a page size over 25 will likely cause a 429 error by exceeding internal resource limits. Page sizes over 25 will require using excludedAttributes and includeAttributes query parameters to exclude secondary lookup values -- (i.e. externalId, roles, urn:ietf:params:scim:schemas:extension:genesys:purecloud:2.0:User:routingLanguages, urn:ietf:params:scim:schemas:extension:genesys:purecloud:2.0:User:routingSkills) (default to 25)
+   	 * @param {Array.<String>} opts.attributes Indicates which attributes to include. Returns these attributes and the \&quot;id\&quot;, \&quot;userName\&quot;, \&quot;active\&quot;, and \&quot;meta\&quot; attributes. Use \&quot;attributes\&quot; to avoid expensive additional calls for the default attributes.
+   	 * @param {Array.<String>} opts.excludedAttributes Indicates which attributes to exclude. Returns the default attributes minus \&quot;excludedAttributes\&quot;. Always returns the \&quot;id\&quot;, \&quot;userName\&quot;, \&quot;active\&quot;, and \&quot;meta\&quot; attributes. Use \&quot;excludedAttributes\&quot; to avoid expensive additional calls for the default attributes.
    	 * @param {String} opts.filter Filters results. If nothing is specified, returns all active users. Examples of valid values: \&quot;id eq 857449b0-d9e7-4cd0-acbf-a6adfb9ef1e9\&quot;, \&quot;userName eq search@sample.org\&quot;, \&quot;manager eq 16e10e2f-1136-43fe-bb84-eac073168a49\&quot;, \&quot;email eq search@sample.org\&quot;, \&quot;division eq divisionName\&quot;, \&quot;externalId eq 167844\&quot;, \&quot;active eq false\&quot;.
    	 */
    	getScimV2Users(opts) { 
@@ -29879,8 +30191,8 @@ define(['superagent'], function (superagent) { 'use strict';
    	}
 
    	/**
-   	 * The information used to create a group.
-   	 * PureCloud group will be created as \&quot;Official\&quot; group with visibility set \&quot;Public\&quot;, and rules visibility True. Will auto-create an external ID if one is not provided on create. External ID is used to determine if delete should be allowed.
+   	 * Creates a group
+   	 * Creates a Genesys Cloud group with group visibility set to \&quot;public\&quot; and rules visibility set to \&quot;true\&quot;. Auto-creates an \&quot;externalId\&quot;. \&quot;externalId\&quot; is used to determine if DELETE /api/v2/scim/groups/{groupId} or DELETE /api/v2/scim/v2/groups/{groupId} should be allowed.
    	 * @param {Object} body The information used to create a group.
    	 */
    	postScimGroups(body) { 
@@ -29929,9 +30241,9 @@ define(['superagent'], function (superagent) { 'use strict';
    	}
 
    	/**
-   	 * The information used to create a group.
-   	 * PureCloud group will be created as \&quot;Official\&quot; group with visibility set \&quot;Public\&quot;, and rules visibility True. Will auto-create an external ID if one is not provided on create. External ID is used to determine if delete should be allowed.
-   	 * @param {Object} body The information used to create a group.
+   	 * Create a group
+   	 * Creates an \&quot;official\&quot; Genesys Cloud group with group visibility set to \&quot;public\&quot; and rules visibility set to \&quot;true\&quot;. Auto-creates an \&quot;externalId\&quot;. \&quot;externalId\&quot; is used to determine if DELETE /api/v2/scim/groups/{groupId} or DELETE /api/v2/scim/v2/groups/{groupId} should be allowed.
+   	 * @param {Object} body Creates a group.
    	 */
    	postScimV2Groups(body) { 
    		// verify the required parameter 'body' is set
@@ -30120,7 +30432,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Scripts service.
    	 * @module purecloud-platform-client-v2/api/ScriptsApi
-   	 * @version 86.0.0
+   	 * @version 87.0.0
    	 */
 
    	/**
@@ -30473,7 +30785,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Search service.
    	 * @module purecloud-platform-client-v2/api/SearchApi
-   	 * @version 86.0.0
+   	 * @version 87.0.0
    	 */
 
    	/**
@@ -30957,7 +31269,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Stations service.
    	 * @module purecloud-platform-client-v2/api/StationsApi
-   	 * @version 86.0.0
+   	 * @version 87.0.0
    	 */
 
    	/**
@@ -31104,7 +31416,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Suggest service.
    	 * @module purecloud-platform-client-v2/api/SuggestApi
-   	 * @version 86.0.0
+   	 * @version 87.0.0
    	 */
 
    	/**
@@ -31243,7 +31555,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Telephony service.
    	 * @module purecloud-platform-client-v2/api/TelephonyApi
-   	 * @version 86.0.0
+   	 * @version 87.0.0
    	 */
 
    	/**
@@ -31351,7 +31663,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * TelephonyProvidersEdge service.
    	 * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-   	 * @version 86.0.0
+   	 * @version 87.0.0
    	 */
 
    	/**
@@ -34926,7 +35238,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Textbots service.
    	 * @module purecloud-platform-client-v2/api/TextbotsApi
-   	 * @version 86.0.0
+   	 * @version 87.0.0
    	 */
 
    	/**
@@ -34972,7 +35284,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Tokens service.
    	 * @module purecloud-platform-client-v2/api/TokensApi
-   	 * @version 86.0.0
+   	 * @version 87.0.0
    	 */
 
    	/**
@@ -35058,7 +35370,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Uploads service.
    	 * @module purecloud-platform-client-v2/api/UploadsApi
-   	 * @version 86.0.0
+   	 * @version 87.0.0
    	 */
 
    	/**
@@ -35104,7 +35416,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Usage service.
    	 * @module purecloud-platform-client-v2/api/UsageApi
-   	 * @version 86.0.0
+   	 * @version 87.0.0
    	 */
 
    	/**
@@ -35175,7 +35487,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * UserRecordings service.
    	 * @module purecloud-platform-client-v2/api/UserRecordingsApi
-   	 * @version 86.0.0
+   	 * @version 87.0.0
    	 */
 
    	/**
@@ -35359,7 +35671,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Users service.
    	 * @module purecloud-platform-client-v2/api/UsersApi
-   	 * @version 86.0.0
+   	 * @version 87.0.0
    	 */
 
    	/**
@@ -37424,7 +37736,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Utilities service.
    	 * @module purecloud-platform-client-v2/api/UtilitiesApi
-   	 * @version 86.0.0
+   	 * @version 87.0.0
    	 */
 
    	/**
@@ -37535,7 +37847,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Voicemail service.
    	 * @module purecloud-platform-client-v2/api/VoicemailApi
-   	 * @version 86.0.0
+   	 * @version 87.0.0
    	 */
 
    	/**
@@ -38172,7 +38484,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * WebChat service.
    	 * @module purecloud-platform-client-v2/api/WebChatApi
-   	 * @version 86.0.0
+   	 * @version 87.0.0
    	 */
 
    	/**
@@ -38716,7 +39028,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Widgets service.
    	 * @module purecloud-platform-client-v2/api/WidgetsApi
-   	 * @version 86.0.0
+   	 * @version 87.0.0
    	 */
 
    	/**
@@ -38862,7 +39174,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * WorkforceManagement service.
    	 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-   	 * @version 86.0.0
+   	 * @version 87.0.0
    	 */
 
    	/**
@@ -42916,7 +43228,7 @@ define(['superagent'], function (superagent) { 'use strict';
     * </pre>
     * </p>
     * @module purecloud-platform-client-v2/index
-    * @version 86.0.0
+    * @version 87.0.0
     */
    class platformClient {
    	constructor() {

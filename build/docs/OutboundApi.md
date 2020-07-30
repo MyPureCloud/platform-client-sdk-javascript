@@ -19,6 +19,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**deleteOutboundContactlistfilter**](OutboundApi.html#deleteOutboundContactlistfilter) | **DELETE** /api/v2/outbound/contactlistfilters/{contactListFilterId} | Delete Contact List Filter
 [**deleteOutboundContactlists**](OutboundApi.html#deleteOutboundContactlists) | **DELETE** /api/v2/outbound/contactlists | Delete multiple contact lists.
 [**deleteOutboundDnclist**](OutboundApi.html#deleteOutboundDnclist) | **DELETE** /api/v2/outbound/dnclists/{dncListId} | Delete dialer DNC list
+[**deleteOutboundMessagingcampaign**](OutboundApi.html#deleteOutboundMessagingcampaign) | **DELETE** /api/v2/outbound/messagingcampaigns/{messagingCampaignId} | Delete an Outbound Messaging Campaign
 [**deleteOutboundRuleset**](OutboundApi.html#deleteOutboundRuleset) | **DELETE** /api/v2/outbound/rulesets/{ruleSetId} | Delete a Rule set.
 [**deleteOutboundSchedulesCampaign**](OutboundApi.html#deleteOutboundSchedulesCampaign) | **DELETE** /api/v2/outbound/schedules/campaigns/{campaignId} | Delete a dialer campaign schedule.
 [**deleteOutboundSchedulesSequence**](OutboundApi.html#deleteOutboundSchedulesSequence) | **DELETE** /api/v2/outbound/schedules/sequences/{sequenceId} | Delete a dialer sequence schedule.
@@ -37,6 +38,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getOutboundCampaignrule**](OutboundApi.html#getOutboundCampaignrule) | **GET** /api/v2/outbound/campaignrules/{campaignRuleId} | Get Campaign Rule
 [**getOutboundCampaignrules**](OutboundApi.html#getOutboundCampaignrules) | **GET** /api/v2/outbound/campaignrules | Query Campaign Rule list
 [**getOutboundCampaigns**](OutboundApi.html#getOutboundCampaigns) | **GET** /api/v2/outbound/campaigns | Query a list of dialer campaigns.
+[**getOutboundCampaignsAll**](OutboundApi.html#getOutboundCampaignsAll) | **GET** /api/v2/outbound/campaigns/all | Query across all types of campaigns by division
+[**getOutboundCampaignsAllDivisionviews**](OutboundApi.html#getOutboundCampaignsAllDivisionviews) | **GET** /api/v2/outbound/campaigns/all/divisionviews | Query across all types of campaigns
 [**getOutboundCampaignsDivisionview**](OutboundApi.html#getOutboundCampaignsDivisionview) | **GET** /api/v2/outbound/campaigns/divisionviews/{campaignId} | Get a basic Campaign information object
 [**getOutboundCampaignsDivisionviews**](OutboundApi.html#getOutboundCampaignsDivisionviews) | **GET** /api/v2/outbound/campaigns/divisionviews | Query a list of basic Campaign information objects
 [**getOutboundContactlist**](OutboundApi.html#getOutboundContactlist) | **GET** /api/v2/outbound/contactlists/{contactListId} | Get a dialer contact list.
@@ -57,6 +60,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getOutboundDnclistsDivisionviews**](OutboundApi.html#getOutboundDnclistsDivisionviews) | **GET** /api/v2/outbound/dnclists/divisionviews | Query a list of simplified dnc list objects.
 [**getOutboundEvent**](OutboundApi.html#getOutboundEvent) | **GET** /api/v2/outbound/events/{eventId} | Get Dialer Event
 [**getOutboundEvents**](OutboundApi.html#getOutboundEvents) | **GET** /api/v2/outbound/events | Query Event Logs
+[**getOutboundMessagingcampaign**](OutboundApi.html#getOutboundMessagingcampaign) | **GET** /api/v2/outbound/messagingcampaigns/{messagingCampaignId} | Get an Outbound Messaging Campaign
+[**getOutboundMessagingcampaignProgress**](OutboundApi.html#getOutboundMessagingcampaignProgress) | **GET** /api/v2/outbound/messagingcampaigns/{messagingCampaignId}/progress | Get messaging campaign&#39;s progress
+[**getOutboundMessagingcampaigns**](OutboundApi.html#getOutboundMessagingcampaigns) | **GET** /api/v2/outbound/messagingcampaigns | Query a list of Messaging Campaigns
+[**getOutboundMessagingcampaignsDivisionview**](OutboundApi.html#getOutboundMessagingcampaignsDivisionview) | **GET** /api/v2/outbound/messagingcampaigns/divisionviews/{messagingCampaignId} | Get a basic Messaging Campaign information object
+[**getOutboundMessagingcampaignsDivisionviews**](OutboundApi.html#getOutboundMessagingcampaignsDivisionviews) | **GET** /api/v2/outbound/messagingcampaigns/divisionviews | Query a list of basic Messaging Campaign information objects
 [**getOutboundRuleset**](OutboundApi.html#getOutboundRuleset) | **GET** /api/v2/outbound/rulesets/{ruleSetId} | Get a Rule Set by ID.
 [**getOutboundRulesets**](OutboundApi.html#getOutboundRulesets) | **GET** /api/v2/outbound/rulesets | Query a list of Rule Sets.
 [**getOutboundSchedulesCampaign**](OutboundApi.html#getOutboundSchedulesCampaign) | **GET** /api/v2/outbound/schedules/campaigns/{campaignId} | Get a dialer campaign schedule.
@@ -87,6 +95,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postOutboundDnclistExport**](OutboundApi.html#postOutboundDnclistExport) | **POST** /api/v2/outbound/dnclists/{dncListId}/export | Initiate the export of a dnc list.
 [**postOutboundDnclistPhonenumbers**](OutboundApi.html#postOutboundDnclistPhonenumbers) | **POST** /api/v2/outbound/dnclists/{dncListId}/phonenumbers | Add phone numbers to a Dialer DNC list.
 [**postOutboundDnclists**](OutboundApi.html#postOutboundDnclists) | **POST** /api/v2/outbound/dnclists | Create dialer DNC list
+[**postOutboundMessagingcampaigns**](OutboundApi.html#postOutboundMessagingcampaigns) | **POST** /api/v2/outbound/messagingcampaigns | Create a Messaging Campaign
+[**postOutboundMessagingcampaignsProgress**](OutboundApi.html#postOutboundMessagingcampaignsProgress) | **POST** /api/v2/outbound/messagingcampaigns/progress | Get progress for a list of messaging campaigns
 [**postOutboundRulesets**](OutboundApi.html#postOutboundRulesets) | **POST** /api/v2/outbound/rulesets | Create a Dialer Call Analysis Response Set.
 [**postOutboundSequences**](OutboundApi.html#postOutboundSequences) | **POST** /api/v2/outbound/sequences | Create a new campaign sequence.
 [**putOutboundAttemptlimit**](OutboundApi.html#putOutboundAttemptlimit) | **PUT** /api/v2/outbound/attemptlimits/{attemptLimitsId} | Update attempt limits
@@ -99,6 +109,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**putOutboundContactlistContact**](OutboundApi.html#putOutboundContactlistContact) | **PUT** /api/v2/outbound/contactlists/{contactListId}/contacts/{contactId} | Update a contact.
 [**putOutboundContactlistfilter**](OutboundApi.html#putOutboundContactlistfilter) | **PUT** /api/v2/outbound/contactlistfilters/{contactListFilterId} | Update Contact List Filter
 [**putOutboundDnclist**](OutboundApi.html#putOutboundDnclist) | **PUT** /api/v2/outbound/dnclists/{dncListId} | Update dialer DNC list
+[**putOutboundMessagingcampaign**](OutboundApi.html#putOutboundMessagingcampaign) | **PUT** /api/v2/outbound/messagingcampaigns/{messagingCampaignId} | Update an Outbound Messaging Campaign
 [**putOutboundRuleset**](OutboundApi.html#putOutboundRuleset) | **PUT** /api/v2/outbound/rulesets/{ruleSetId} | Update a RuleSet.
 [**putOutboundSchedulesCampaign**](OutboundApi.html#putOutboundSchedulesCampaign) | **PUT** /api/v2/outbound/schedules/campaigns/{campaignId} | Update a new campaign schedule.
 [**putOutboundSchedulesSequence**](OutboundApi.html#putOutboundSchedulesSequence) | **PUT** /api/v2/outbound/schedules/sequences/{sequenceId} | Update a new sequence schedule.
@@ -770,6 +781,61 @@ apiInstance.deleteOutboundDnclist(dncListId)
 
 void (no response body)
 
+<a name="deleteOutboundMessagingcampaign"></a>
+
+# MessagingCampaign deleteOutboundMessagingcampaign(messagingCampaignId)
+
+
+
+DELETE /api/v2/outbound/messagingcampaigns/{messagingCampaignId}
+
+Delete an Outbound Messaging Campaign
+
+
+
+Requires ANY permissions: 
+
+* outbound:campaign:delete
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OutboundApi();
+
+let messagingCampaignId = "messagingCampaignId_example"; // String | The Messaging Campaign ID
+
+apiInstance.deleteOutboundMessagingcampaign(messagingCampaignId)
+  .then((data) => {
+    console.log(`deleteOutboundMessagingcampaign success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteOutboundMessagingcampaign');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **messagingCampaignId** | **String** | The Messaging Campaign ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+**MessagingCampaign**
+
 <a name="deleteOutboundRuleset"></a>
 
 # void deleteOutboundRuleset(ruleSetId)
@@ -1079,6 +1145,7 @@ let apiInstance = new platformClient.OutboundApi();
 let opts = { 
   'pageSize': 25, // Number | Page size. The max that will be returned is 100.
   'pageNumber': 1, // Number | Page number
+  'allowEmptyResult': false, // Boolean | Whether to return an empty page when there are no results for that page
   'filterType': "Prefix", // String | Filter type
   'name': "name_example", // String | Name
   'sortBy': "sortBy_example", // String | Sort by
@@ -1102,6 +1169,7 @@ apiInstance.getOutboundAttemptlimits(opts)
 | ------------- | ------------- | ------------- | ------------- |
  **pageSize** | **Number** | Page size. The max that will be returned is 100. | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **allowEmptyResult** | **Boolean** | Whether to return an empty page when there are no results for that page | [optional] [default to false] |
  **filterType** | **String** | Filter type | [optional] [default to Prefix]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith |
  **name** | **String** | Name | [optional]  |
  **sortBy** | **String** | Sort by | [optional]  |
@@ -1201,6 +1269,7 @@ let apiInstance = new platformClient.OutboundApi();
 let opts = { 
   'pageSize': 25, // Number | Page size. The max that will be returned is 100.
   'pageNumber': 1, // Number | Page number
+  'allowEmptyResult': false, // Boolean | Whether to return an empty page when there are no results for that page
   'filterType': "Prefix", // String | Filter type
   'name': "name_example", // String | Name
   'sortBy': "sortBy_example", // String | Sort by
@@ -1224,6 +1293,7 @@ apiInstance.getOutboundCallabletimesets(opts)
 | ------------- | ------------- | ------------- | ------------- |
  **pageSize** | **Number** | Page size. The max that will be returned is 100. | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **allowEmptyResult** | **Boolean** | Whether to return an empty page when there are no results for that page | [optional] [default to false] |
  **filterType** | **String** | Filter type | [optional] [default to Prefix]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith |
  **name** | **String** | Name | [optional]  |
  **sortBy** | **String** | Sort by | [optional]  |
@@ -1323,6 +1393,7 @@ let apiInstance = new platformClient.OutboundApi();
 let opts = { 
   'pageSize': 25, // Number | Page size. The max that will be returned is 100.
   'pageNumber': 1, // Number | Page number
+  'allowEmptyResult': false, // Boolean | Whether to return an empty page when there are no results for that page
   'filterType': "Prefix", // String | Filter type
   'name': "name_example", // String | Name
   'sortBy': "sortBy_example", // String | Sort by
@@ -1346,6 +1417,7 @@ apiInstance.getOutboundCallanalysisresponsesets(opts)
 | ------------- | ------------- | ------------- | ------------- |
  **pageSize** | **Number** | Page size. The max that will be returned is 100. | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **allowEmptyResult** | **Boolean** | Whether to return an empty page when there are no results for that page | [optional] [default to false] |
  **filterType** | **String** | Filter type | [optional] [default to Prefix]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith |
  **name** | **String** | Name | [optional]  |
  **sortBy** | **String** | Sort by | [optional]  |
@@ -1720,6 +1792,7 @@ let apiInstance = new platformClient.OutboundApi();
 let opts = { 
   'pageSize': 25, // Number | Page size. The max that will be returned is 100.
   'pageNumber': 1, // Number | Page number
+  'allowEmptyResult': false, // Boolean | Whether to return an empty page when there are no results for that page
   'filterType': "Prefix", // String | Filter type
   'name': "name_example", // String | Name
   'sortBy': "sortBy_example", // String | Sort by
@@ -1743,6 +1816,7 @@ apiInstance.getOutboundCampaignrules(opts)
 | ------------- | ------------- | ------------- | ------------- |
  **pageSize** | **Number** | Page size. The max that will be returned is 100. | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **allowEmptyResult** | **Boolean** | Whether to return an empty page when there are no results for that page | [optional] [default to false] |
  **filterType** | **String** | Filter type | [optional] [default to Prefix]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith |
  **name** | **String** | Name | [optional]  |
  **sortBy** | **String** | Sort by | [optional]  |
@@ -1833,6 +1907,146 @@ apiInstance.getOutboundCampaigns(opts)
 ### Return type
 
 **CampaignEntityListing**
+
+<a name="getOutboundCampaignsAll"></a>
+
+# CommonCampaignEntityListing getOutboundCampaignsAll(opts)
+
+
+
+GET /api/v2/outbound/campaigns/all
+
+Query across all types of campaigns by division
+
+
+
+Requires ANY permissions: 
+
+* outbound:campaign:view
+* outbound:messagingCampaign:view
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OutboundApi();
+
+let opts = { 
+  'pageSize': 25, // Number | Page size
+  'pageNumber': 1, // Number | Page number
+  'id': ["id_example"], // [String] | Campaign ID(s)
+  'name': "name_example", // String | Campaign name(s)
+  'divisionId': ["divisionId_example"], // [String] | Division ID(s)
+  'mediaType': ["mediaType_example"], // [String] | Media type(s)
+  'sortOrder': "a" // String | Sort order
+};
+
+apiInstance.getOutboundCampaignsAll(opts)
+  .then((data) => {
+    console.log(`getOutboundCampaignsAll success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getOutboundCampaignsAll');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **id** | **[String]** | Campaign ID(s) | [optional]  |
+ **name** | **String** | Campaign name(s) | [optional]  |
+ **divisionId** | **[String]** | Division ID(s) | [optional]  |
+ **mediaType** | **[String]** | Media type(s) | [optional] <br />**Values**: sms, voice |
+ **sortOrder** | **String** | Sort order | [optional] [default to a]<br />**Values**: ascending, descending |
+{: class="table table-striped"}
+
+### Return type
+
+**CommonCampaignEntityListing**
+
+<a name="getOutboundCampaignsAllDivisionviews"></a>
+
+# CommonCampaignDivisionViewEntityListing getOutboundCampaignsAllDivisionviews(opts)
+
+
+
+GET /api/v2/outbound/campaigns/all/divisionviews
+
+Query across all types of campaigns
+
+
+
+Requires ANY permissions: 
+
+* outbound:campaign:search
+* outbound:messagingCampaign:search
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OutboundApi();
+
+let opts = { 
+  'pageSize': 25, // Number | Page size
+  'pageNumber': 1, // Number | Page number
+  'id': ["id_example"], // [String] | Campaign ID(s)
+  'name': "name_example", // String | Campaign name(s)
+  'divisionId': ["divisionId_example"], // [String] | Division ID(s)
+  'mediaType': ["mediaType_example"], // [String] | Media type(s)
+  'sortOrder': "a" // String | Sort order
+};
+
+apiInstance.getOutboundCampaignsAllDivisionviews(opts)
+  .then((data) => {
+    console.log(`getOutboundCampaignsAllDivisionviews success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getOutboundCampaignsAllDivisionviews');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **id** | **[String]** | Campaign ID(s) | [optional]  |
+ **name** | **String** | Campaign name(s) | [optional]  |
+ **divisionId** | **[String]** | Division ID(s) | [optional]  |
+ **mediaType** | **[String]** | Media type(s) | [optional] <br />**Values**: sms, voice |
+ **sortOrder** | **String** | Sort order | [optional] [default to a]<br />**Values**: ascending, descending |
+{: class="table table-striped"}
+
+### Return type
+
+**CommonCampaignDivisionViewEntityListing**
 
 <a name="getOutboundCampaignsDivisionview"></a>
 
@@ -2335,6 +2549,7 @@ let apiInstance = new platformClient.OutboundApi();
 let opts = { 
   'pageSize': 25, // Number | Page size. The max that will be returned is 100.
   'pageNumber': 1, // Number | Page number
+  'allowEmptyResult': false, // Boolean | Whether to return an empty page when there are no results for that page
   'filterType': "Prefix", // String | Filter type
   'name': "name_example", // String | Name
   'sortBy': "sortBy_example", // String | Sort by
@@ -2359,6 +2574,7 @@ apiInstance.getOutboundContactlistfilters(opts)
 | ------------- | ------------- | ------------- | ------------- |
  **pageSize** | **Number** | Page size. The max that will be returned is 100. | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **allowEmptyResult** | **Boolean** | Whether to return an empty page when there are no results for that page | [optional] [default to false] |
  **filterType** | **String** | Filter type | [optional] [default to Prefix]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith |
  **name** | **String** | Name | [optional]  |
  **sortBy** | **String** | Sort by | [optional]  |
@@ -2406,6 +2622,7 @@ let opts = {
   'includeSize': false, // Boolean | Include size
   'pageSize': 25, // Number | Page size. The max that will be returned is 100.
   'pageNumber': 1, // Number | Page number
+  'allowEmptyResult': false, // Boolean | Whether to return an empty page when there are no results for that page
   'filterType': "Prefix", // String | Filter type
   'name': "name_example", // String | Name
   'id': ["id_example"], // [String] | id
@@ -2433,6 +2650,7 @@ apiInstance.getOutboundContactlists(opts)
  **includeSize** | **Boolean** | Include size | [optional] [default to false] |
  **pageSize** | **Number** | Page size. The max that will be returned is 100. | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **allowEmptyResult** | **Boolean** | Whether to return an empty page when there are no results for that page | [optional] [default to false] |
  **filterType** | **String** | Filter type | [optional] [default to Prefix]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith |
  **name** | **String** | Name | [optional]  |
  **id** | **[String]** | id | [optional]  |
@@ -2791,6 +3009,7 @@ let opts = {
   'includeSize': false, // Boolean | Include size
   'pageSize': 25, // Number | Page size. The max that will be returned is 100.
   'pageNumber': 1, // Number | Page number
+  'allowEmptyResult': false, // Boolean | Whether to return an empty page when there are no results for that page
   'filterType': "Prefix", // String | Filter type
   'name': "name_example", // String | Name
   'dncSourceType': "dncSourceType_example", // String | DncSourceType
@@ -2818,6 +3037,7 @@ apiInstance.getOutboundDnclists(opts)
  **includeSize** | **Boolean** | Include size | [optional] [default to false] |
  **pageSize** | **Number** | Page size. The max that will be returned is 100. | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **allowEmptyResult** | **Boolean** | Whether to return an empty page when there are no results for that page | [optional] [default to false] |
  **filterType** | **String** | Filter type | [optional] [default to Prefix]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith |
  **name** | **String** | Name | [optional]  |
  **dncSourceType** | **String** | DncSourceType | [optional] <br />**Values**: rds, dnc.com, gryphon |
@@ -3088,6 +3308,313 @@ apiInstance.getOutboundEvents(opts)
 
 **DialerEventEntityListing**
 
+<a name="getOutboundMessagingcampaign"></a>
+
+# MessagingCampaign getOutboundMessagingcampaign(messagingCampaignId)
+
+
+
+GET /api/v2/outbound/messagingcampaigns/{messagingCampaignId}
+
+Get an Outbound Messaging Campaign
+
+
+
+Requires ANY permissions: 
+
+* outbound:messagingCampaign:view
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OutboundApi();
+
+let messagingCampaignId = "messagingCampaignId_example"; // String | The Messaging Campaign ID
+
+apiInstance.getOutboundMessagingcampaign(messagingCampaignId)
+  .then((data) => {
+    console.log(`getOutboundMessagingcampaign success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getOutboundMessagingcampaign');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **messagingCampaignId** | **String** | The Messaging Campaign ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+**MessagingCampaign**
+
+<a name="getOutboundMessagingcampaignProgress"></a>
+
+# CampaignProgress getOutboundMessagingcampaignProgress(messagingCampaignId)
+
+
+
+GET /api/v2/outbound/messagingcampaigns/{messagingCampaignId}/progress
+
+Get messaging campaign&#39;s progress
+
+
+
+Requires ANY permissions: 
+
+* outbound:messagingCampaign:view
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OutboundApi();
+
+let messagingCampaignId = "messagingCampaignId_example"; // String | The Messaging Campaign ID
+
+apiInstance.getOutboundMessagingcampaignProgress(messagingCampaignId)
+  .then((data) => {
+    console.log(`getOutboundMessagingcampaignProgress success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getOutboundMessagingcampaignProgress');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **messagingCampaignId** | **String** | The Messaging Campaign ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+**CampaignProgress**
+
+<a name="getOutboundMessagingcampaigns"></a>
+
+# MessagingCampaignEntityListing getOutboundMessagingcampaigns(opts)
+
+
+
+GET /api/v2/outbound/messagingcampaigns
+
+Query a list of Messaging Campaigns
+
+
+
+Requires ANY permissions: 
+
+* outbound:messagingCampaign:view
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OutboundApi();
+
+let opts = { 
+  'pageSize': 25, // Number | Page size. The max that will be returned is 100.
+  'pageNumber': 1, // Number | Page number
+  'sortBy': "name", // String | The field to sort by
+  'sortOrder': "ascending", // String | The direction to sort
+  'name': "name_example", // String | Name
+  'contactListId': "contactListId_example", // String | Contact List ID
+  'divisionId': ["divisionId_example"], // [String] | Division ID(s)
+  'type': "type_example", // String | Campaign Type
+  'senderSmsPhoneNumber': "senderSmsPhoneNumber_example", // String | Sender SMS Phone Number
+  'id': ["id_example"] // [String] | A list of messaging campaign ids to bulk fetch
+};
+
+apiInstance.getOutboundMessagingcampaigns(opts)
+  .then((data) => {
+    console.log(`getOutboundMessagingcampaigns success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getOutboundMessagingcampaigns');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **pageSize** | **Number** | Page size. The max that will be returned is 100. | [optional] [default to 25] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **sortBy** | **String** | The field to sort by | [optional] [default to name]<br />**Values**: campaignStatus, name, type |
+ **sortOrder** | **String** | The direction to sort | [optional] [default to ascending]<br />**Values**: ascending, descending |
+ **name** | **String** | Name | [optional]  |
+ **contactListId** | **String** | Contact List ID | [optional]  |
+ **divisionId** | **[String]** | Division ID(s) | [optional]  |
+ **type** | **String** | Campaign Type | [optional] <br />**Values**: SMS |
+ **senderSmsPhoneNumber** | **String** | Sender SMS Phone Number | [optional]  |
+ **id** | **[String]** | A list of messaging campaign ids to bulk fetch | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**MessagingCampaignEntityListing**
+
+<a name="getOutboundMessagingcampaignsDivisionview"></a>
+
+# MessagingCampaignDivisionView getOutboundMessagingcampaignsDivisionview(messagingCampaignId)
+
+
+
+GET /api/v2/outbound/messagingcampaigns/divisionviews/{messagingCampaignId}
+
+Get a basic Messaging Campaign information object
+
+This returns a simplified version of a Messaging Campaign, consisting of id, name, and division.
+
+Requires ALL permissions: 
+
+* outbound:messagingCampaign:search
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OutboundApi();
+
+let messagingCampaignId = "messagingCampaignId_example"; // String | The Messaging Campaign ID
+
+apiInstance.getOutboundMessagingcampaignsDivisionview(messagingCampaignId)
+  .then((data) => {
+    console.log(`getOutboundMessagingcampaignsDivisionview success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getOutboundMessagingcampaignsDivisionview');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **messagingCampaignId** | **String** | The Messaging Campaign ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+**MessagingCampaignDivisionView**
+
+<a name="getOutboundMessagingcampaignsDivisionviews"></a>
+
+# MessagingCampaignDivisionViewEntityListing getOutboundMessagingcampaignsDivisionviews(opts)
+
+
+
+GET /api/v2/outbound/messagingcampaigns/divisionviews
+
+Query a list of basic Messaging Campaign information objects
+
+This returns a listing of simplified Messaging Campaigns, each consisting of id, name, and division.
+
+Requires ALL permissions: 
+
+* outbound:messagingCampaign:search
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OutboundApi();
+
+let opts = { 
+  'pageSize': 25, // Number | Page size. The max that will be returned is 100.
+  'pageNumber': 1, // Number | Page number
+  'sortOrder': "a", // String | The direction to sort
+  'name': "name_example", // String | Name
+  'id': ["id_example"], // [String] | id
+  'senderSmsPhoneNumber': "senderSmsPhoneNumber_example" // String | Sender SMS Phone Number
+};
+
+apiInstance.getOutboundMessagingcampaignsDivisionviews(opts)
+  .then((data) => {
+    console.log(`getOutboundMessagingcampaignsDivisionviews success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getOutboundMessagingcampaignsDivisionviews');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **pageSize** | **Number** | Page size. The max that will be returned is 100. | [optional] [default to 25] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **sortOrder** | **String** | The direction to sort | [optional] [default to a]<br />**Values**: ascending, descending |
+ **name** | **String** | Name | [optional]  |
+ **id** | **[String]** | id | [optional]  |
+ **senderSmsPhoneNumber** | **String** | Sender SMS Phone Number | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**MessagingCampaignDivisionViewEntityListing**
+
 <a name="getOutboundRuleset"></a>
 
 # RuleSet getOutboundRuleset(ruleSetId)
@@ -3177,6 +3704,7 @@ let apiInstance = new platformClient.OutboundApi();
 let opts = { 
   'pageSize': 25, // Number | Page size. The max that will be returned is 100.
   'pageNumber': 1, // Number | Page number
+  'allowEmptyResult': false, // Boolean | Whether to return an empty page when there are no results for that page
   'filterType': "Prefix", // String | Filter type
   'name': "name_example", // String | Name
   'sortBy': "sortBy_example", // String | Sort by
@@ -3200,6 +3728,7 @@ apiInstance.getOutboundRulesets(opts)
 | ------------- | ------------- | ------------- | ------------- |
  **pageSize** | **Number** | Page size. The max that will be returned is 100. | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **allowEmptyResult** | **Boolean** | Whether to return an empty page when there are no results for that page | [optional] [default to false] |
  **filterType** | **String** | Filter type | [optional] [default to Prefix]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith |
  **name** | **String** | Name | [optional]  |
  **sortBy** | **String** | Sort by | [optional]  |
@@ -3509,6 +4038,7 @@ let apiInstance = new platformClient.OutboundApi();
 let opts = { 
   'pageSize': 25, // Number | Page size. The max that will be returned is 100.
   'pageNumber': 1, // Number | Page number
+  'allowEmptyResult': false, // Boolean | Whether to return an empty page when there are no results for that page
   'filterType': "Prefix", // String | Filter type
   'name': "name_example", // String | Name
   'sortBy': "sortBy_example", // String | Sort by
@@ -3532,6 +4062,7 @@ apiInstance.getOutboundSequences(opts)
 | ------------- | ------------- | ------------- | ------------- |
  **pageSize** | **Number** | Page size. The max that will be returned is 100. | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **allowEmptyResult** | **Boolean** | Whether to return an empty page when there are no results for that page | [optional] [default to false] |
  **filterType** | **String** | Filter type | [optional] [default to Prefix]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith |
  **name** | **String** | Name | [optional]  |
  **sortBy** | **String** | Sort by | [optional]  |
@@ -5416,6 +5947,186 @@ apiInstance.postOutboundDnclists(body)
 
 **DncList**
 
+<a name="postOutboundMessagingcampaigns"></a>
+
+# MessagingCampaign postOutboundMessagingcampaigns(body)
+
+
+
+POST /api/v2/outbound/messagingcampaigns
+
+Create a Messaging Campaign
+
+
+
+Requires ANY permissions: 
+
+* outbound:messagingCampaign:add
+
+
+### Request Body Schema
+
+<script type="text/javascript">
+	function copyMessagingCampaignExample() {
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#MessagingCampaignExample').text()).select();
+		document.execCommand("copy");
+		temp.remove();
+		return false;
+	}
+</script>
+
+MessagingCampaign <a href="#" onclick="return copyMessagingCampaignExample()">Copy</a>
+
+<div id="MessagingCampaignExample">
+
+```{"language":"json", "maxHeight": "250px"}
+{ 
+  "id": String, 
+  "name": String, 
+  "dateCreated": Date, 
+  "dateModified": Date, 
+  "version": Number, 
+  "division": { 
+    "id": String, 
+    "name": String, 
+    "selfUri": String, 
+  },  
+  "campaignStatus": String, 
+  "callableTimeSet": { 
+    "id": String, 
+    "name": String, 
+    "selfUri": String, 
+  },  
+  "contactList": { 
+    "id": String, 
+    "name": String, 
+    "selfUri": String, 
+  },  
+  "dncLists": { 
+    "id": String, 
+    "name": String, 
+    "selfUri": String, 
+  },  
+  "alwaysRunning": Boolean, 
+  "contactSorts": { 
+    "fieldName": String, 
+    "direction": String, 
+    "numeric": Boolean, 
+  },  
+  "messagesPerMinute": Number, 
+  "errors": { 
+    "error": String, 
+    "details": String, 
+  },  
+  "smsConfig": { 
+    "messageColumn": String, 
+    "phoneColumn": String, 
+    "senderSmsPhoneNumber": { 
+      "phoneNumber": String, 
+      "selfUri": String, 
+    },  
+  },  
+  "selfUri": String, 
+}
+```
+
+</div>
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OutboundApi();
+
+let body = {}; // Object | Messaging Campaign
+
+apiInstance.postOutboundMessagingcampaigns(body)
+  .then((data) => {
+    console.log(`postOutboundMessagingcampaigns success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postOutboundMessagingcampaigns');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | Messaging Campaign |  |
+{: class="table table-striped"}
+
+### Return type
+
+**MessagingCampaign**
+
+<a name="postOutboundMessagingcampaignsProgress"></a>
+
+# [CampaignProgress] postOutboundMessagingcampaignsProgress(body)
+
+
+
+POST /api/v2/outbound/messagingcampaigns/progress
+
+Get progress for a list of messaging campaigns
+
+
+
+Requires ANY permissions: 
+
+* outbound:messagingCampaign:view
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OutboundApi();
+
+let body = [{}]; // Object | Messaging Campaign IDs
+
+apiInstance.postOutboundMessagingcampaignsProgress(body)
+  .then((data) => {
+    console.log(`postOutboundMessagingcampaignsProgress success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postOutboundMessagingcampaignsProgress');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | Messaging Campaign IDs |  |
+{: class="table table-striped"}
+
+### Return type
+
+**[CampaignProgress]**
+
 <a name="postOutboundRulesets"></a>
 
 # RuleSet postOutboundRulesets(body)
@@ -6727,6 +7438,133 @@ apiInstance.putOutboundDnclist(dncListId, body)
 ### Return type
 
 **DncList**
+
+<a name="putOutboundMessagingcampaign"></a>
+
+# MessagingCampaign putOutboundMessagingcampaign(messagingCampaignId, body)
+
+
+
+PUT /api/v2/outbound/messagingcampaigns/{messagingCampaignId}
+
+Update an Outbound Messaging Campaign
+
+
+
+Requires ANY permissions: 
+
+* outbound:messagingCampaign:edit
+
+
+### Request Body Schema
+
+<script type="text/javascript">
+	function copyMessagingCampaignExample() {
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#MessagingCampaignExample').text()).select();
+		document.execCommand("copy");
+		temp.remove();
+		return false;
+	}
+</script>
+
+MessagingCampaign <a href="#" onclick="return copyMessagingCampaignExample()">Copy</a>
+
+<div id="MessagingCampaignExample">
+
+```{"language":"json", "maxHeight": "250px"}
+{ 
+  "id": String, 
+  "name": String, 
+  "dateCreated": Date, 
+  "dateModified": Date, 
+  "version": Number, 
+  "division": { 
+    "id": String, 
+    "name": String, 
+    "selfUri": String, 
+  },  
+  "campaignStatus": String, 
+  "callableTimeSet": { 
+    "id": String, 
+    "name": String, 
+    "selfUri": String, 
+  },  
+  "contactList": { 
+    "id": String, 
+    "name": String, 
+    "selfUri": String, 
+  },  
+  "dncLists": { 
+    "id": String, 
+    "name": String, 
+    "selfUri": String, 
+  },  
+  "alwaysRunning": Boolean, 
+  "contactSorts": { 
+    "fieldName": String, 
+    "direction": String, 
+    "numeric": Boolean, 
+  },  
+  "messagesPerMinute": Number, 
+  "errors": { 
+    "error": String, 
+    "details": String, 
+  },  
+  "smsConfig": { 
+    "messageColumn": String, 
+    "phoneColumn": String, 
+    "senderSmsPhoneNumber": { 
+      "phoneNumber": String, 
+      "selfUri": String, 
+    },  
+  },  
+  "selfUri": String, 
+}
+```
+
+</div>
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OutboundApi();
+
+let messagingCampaignId = "messagingCampaignId_example"; // String | The Messaging Campaign ID
+let body = {}; // Object | MessagingCampaign
+
+apiInstance.putOutboundMessagingcampaign(messagingCampaignId, body)
+  .then((data) => {
+    console.log(`putOutboundMessagingcampaign success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putOutboundMessagingcampaign');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **messagingCampaignId** | **String** | The Messaging Campaign ID |  |
+ **body** | **Object** | MessagingCampaign |  |
+{: class="table table-striped"}
+
+### Return type
+
+**MessagingCampaign**
 
 <a name="putOutboundRuleset"></a>
 

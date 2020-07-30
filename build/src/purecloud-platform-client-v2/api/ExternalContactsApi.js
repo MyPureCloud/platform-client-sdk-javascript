@@ -5,7 +5,7 @@ class ExternalContactsApi {
 	/**
 	 * ExternalContacts service.
 	 * @module purecloud-platform-client-v2/api/ExternalContactsApi
-	 * @version 86.0.0
+	 * @version 87.0.0
 	 */
 
 	/**
@@ -1058,8 +1058,8 @@ class ExternalContactsApi {
 	}
 
 	/**
-	 * Associate an external contact with a conversation
-	 * 
+	 * Associate/disassociate an external contact with a conversation
+	 * To associate, supply a value for the externalContactId.  To disassociate, do not include the property at all.
 	 * @param {String} conversationId Conversation ID
 	 * @param {Object} body ConversationAssociation
 	 */

@@ -5,7 +5,7 @@ class ArchitectApi {
 	/**
 	 * Architect service.
 	 * @module purecloud-platform-client-v2/api/ArchitectApi
-	 * @version 86.0.0
+	 * @version 87.0.0
 	 */
 
 	/**
@@ -969,6 +969,7 @@ class ArchitectApi {
 	 * @param {String} opts.sortBy Sort by (default to name)
 	 * @param {String} opts.sortOrder Sort order (default to ASC)
 	 * @param {String} opts.name Name of the Schedule Group to filter by.
+	 * @param {String} opts.scheduleIds A comma-delimited list of Schedule IDs to filter by.
 	 */
 	getArchitectSchedulegroups(opts) { 
 		opts = opts || {};
@@ -978,7 +979,7 @@ class ArchitectApi {
 			'/api/v2/architect/schedulegroups', 
 			'GET', 
 			{  }, 
-			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'name': opts['name'] }, 
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'name': opts['name'],'scheduleIds': opts['scheduleIds'] }, 
 			{  }, 
 			{  }, 
 			null, 

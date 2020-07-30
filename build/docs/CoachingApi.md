@@ -27,7 +27,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 <a name="deleteCoachingAppointment"></a>
 
-# void deleteCoachingAppointment(appointmentId)
+# CoachingAppointmentReference deleteCoachingAppointment(appointmentId)
 
 
 
@@ -59,8 +59,8 @@ let apiInstance = new platformClient.CoachingApi();
 let appointmentId = "appointmentId_example"; // String | The ID of the coaching appointment.
 
 apiInstance.deleteCoachingAppointment(appointmentId)
-  .then(() => {
-    console.log('deleteCoachingAppointment returned successfully.');
+  .then((data) => {
+    console.log(`deleteCoachingAppointment success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch((err) => {
     console.log('There was a failure calling deleteCoachingAppointment');
@@ -78,7 +78,7 @@ apiInstance.deleteCoachingAppointment(appointmentId)
 
 ### Return type
 
-void (no response body)
+**CoachingAppointmentReference**
 
 <a name="deleteCoachingAppointmentAnnotation"></a>
 
@@ -407,7 +407,7 @@ let apiInstance = new platformClient.CoachingApi();
 
 let userIds = ["userIds_example"]; // [String] | The user IDs for which to retrieve appointments
 let opts = { 
-  'interval': "interval_example", // String | Interval string; format is ISO-8601. Separate start and end times with forward slash '/'
+  'interval': "interval_example", // String | Interval to filter data by. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
   'pageNumber': 1, // Number | Page number
   'pageSize': 25, // Number | Page size
   'statuses': ["statuses_example"], // [String] | Appointment Statuses to filter by
@@ -431,7 +431,7 @@ apiInstance.getCoachingAppointments(userIds, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **userIds** | **[String]** | The user IDs for which to retrieve appointments |  |
- **interval** | **String** | Interval string; format is ISO-8601. Separate start and end times with forward slash &#39;/&#39; | [optional]  |
+ **interval** | **String** | Interval to filter data by. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss | [optional]  |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **statuses** | **[String]** | Appointment Statuses to filter by | [optional] <br />**Values**: Scheduled, InProgress, Completed, InvalidSchedule |
@@ -474,7 +474,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.CoachingApi();
 
 let opts = { 
-  'interval': "interval_example", // String | Interval string; format is ISO-8601. Separate start and end times with forward slash '/'
+  'interval': "interval_example", // String | Interval to filter data by. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
   'pageNumber': 1, // Number | Page number
   'pageSize': 25, // Number | Page size
   'statuses': ["statuses_example"], // [String] | Appointment Statuses to filter by
@@ -497,7 +497,7 @@ apiInstance.getCoachingAppointmentsMe(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **interval** | **String** | Interval string; format is ISO-8601. Separate start and end times with forward slash &#39;/&#39; | [optional]  |
+ **interval** | **String** | Interval to filter data by. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss | [optional]  |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **statuses** | **[String]** | Appointment Statuses to filter by | [optional] <br />**Values**: Scheduled, InProgress, Completed |

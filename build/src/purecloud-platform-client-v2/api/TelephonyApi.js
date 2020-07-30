@@ -5,7 +5,7 @@ class TelephonyApi {
 	/**
 	 * Telephony service.
 	 * @module purecloud-platform-client-v2/api/TelephonyApi
-	 * @version 86.0.0
+	 * @version 87.0.0
 	 */
 
 	/**

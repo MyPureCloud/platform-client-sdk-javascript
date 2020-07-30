@@ -344,6 +344,7 @@ declare namespace ArchitectApi {
 		"sortBy"?: string;
 		"sortOrder"?: string;
 		"name"?: string;
+		"scheduleIds"?: string;
 	}
 	export interface getArchitectSchedulesOptions { 
 		"pageNumber"?: number;
@@ -632,7 +633,7 @@ declare namespace BillingApi {
 }
 
 declare class CoachingApi {  
-  	deleteCoachingAppointment(appointmentId: string): Promise<void>; 
+  	deleteCoachingAppointment(appointmentId: string): Promise<Models.CoachingAppointmentReference>; 
   	deleteCoachingAppointmentAnnotation(appointmentId: string, annotationId: string): Promise<void>; 
   	getCoachingAppointment(appointmentId: string): Promise<Models.CoachingAppointmentResponse>; 
   	getCoachingAppointmentAnnotation(appointmentId: string, annotationId: string): Promise<Models.CoachingAnnotation>; 
@@ -1931,6 +1932,7 @@ declare class OutboundApi {
   	deleteOutboundContactlistfilter(contactListFilterId: string): Promise<void>; 
   	deleteOutboundContactlists(id: Array<string>): Promise<void>; 
   	deleteOutboundDnclist(dncListId: string): Promise<void>; 
+  	deleteOutboundMessagingcampaign(messagingCampaignId: string): Promise<Models.MessagingCampaign>; 
   	deleteOutboundRuleset(ruleSetId: string): Promise<void>; 
   	deleteOutboundSchedulesCampaign(campaignId: string): Promise<void>; 
   	deleteOutboundSchedulesSequence(sequenceId: string): Promise<void>; 
@@ -1949,6 +1951,8 @@ declare class OutboundApi {
   	getOutboundCampaignrule(campaignRuleId: string): Promise<Models.CampaignRule>; 
   	getOutboundCampaignrules(opts?: OutboundApi.getOutboundCampaignrulesOptions): Promise<Models.CampaignRuleEntityListing>; 
   	getOutboundCampaigns(opts?: OutboundApi.getOutboundCampaignsOptions): Promise<Models.CampaignEntityListing>; 
+  	getOutboundCampaignsAll(opts?: OutboundApi.getOutboundCampaignsAllOptions): Promise<Models.CommonCampaignEntityListing>; 
+  	getOutboundCampaignsAllDivisionviews(opts?: OutboundApi.getOutboundCampaignsAllDivisionviewsOptions): Promise<Models.CommonCampaignDivisionViewEntityListing>; 
   	getOutboundCampaignsDivisionview(campaignId: string): Promise<Models.CampaignDivisionView>; 
   	getOutboundCampaignsDivisionviews(opts?: OutboundApi.getOutboundCampaignsDivisionviewsOptions): Promise<Models.CampaignDivisionViewListing>; 
   	getOutboundContactlist(contactListId: string, opts?: OutboundApi.getOutboundContactlistOptions): Promise<Models.ContactList>; 
@@ -1969,6 +1973,11 @@ declare class OutboundApi {
   	getOutboundDnclistsDivisionviews(opts?: OutboundApi.getOutboundDnclistsDivisionviewsOptions): Promise<Models.DncListDivisionViewListing>; 
   	getOutboundEvent(eventId: string): Promise<Models.EventLog>; 
   	getOutboundEvents(opts?: OutboundApi.getOutboundEventsOptions): Promise<Models.DialerEventEntityListing>; 
+  	getOutboundMessagingcampaign(messagingCampaignId: string): Promise<Models.MessagingCampaign>; 
+  	getOutboundMessagingcampaignProgress(messagingCampaignId: string): Promise<Models.CampaignProgress>; 
+  	getOutboundMessagingcampaigns(opts?: OutboundApi.getOutboundMessagingcampaignsOptions): Promise<Models.MessagingCampaignEntityListing>; 
+  	getOutboundMessagingcampaignsDivisionview(messagingCampaignId: string): Promise<Models.MessagingCampaignDivisionView>; 
+  	getOutboundMessagingcampaignsDivisionviews(opts?: OutboundApi.getOutboundMessagingcampaignsDivisionviewsOptions): Promise<Models.MessagingCampaignDivisionViewEntityListing>; 
   	getOutboundRuleset(ruleSetId: string): Promise<Models.RuleSet>; 
   	getOutboundRulesets(opts?: OutboundApi.getOutboundRulesetsOptions): Promise<Models.RuleSetEntityListing>; 
   	getOutboundSchedulesCampaign(campaignId: string): Promise<Models.CampaignSchedule>; 
@@ -1999,6 +2008,8 @@ declare class OutboundApi {
   	postOutboundDnclistExport(dncListId: string): Promise<Models.DomainEntityRef>; 
   	postOutboundDnclistPhonenumbers(dncListId: string, body: Array<string>): Promise<void>; 
   	postOutboundDnclists(body: Models.DncListCreate): Promise<Models.DncList>; 
+  	postOutboundMessagingcampaigns(body: Models.MessagingCampaign): Promise<Models.MessagingCampaign>; 
+  	postOutboundMessagingcampaignsProgress(body: Array<string>): Promise<Array<Models.CampaignProgress>>; 
   	postOutboundRulesets(body: Models.RuleSet): Promise<Models.RuleSet>; 
   	postOutboundSequences(body: Models.CampaignSequence): Promise<Models.CampaignSequence>; 
   	putOutboundAttemptlimit(attemptLimitsId: string, body: Models.AttemptLimits): Promise<Models.AttemptLimits>; 
@@ -2011,6 +2022,7 @@ declare class OutboundApi {
   	putOutboundContactlistContact(contactListId: string, contactId: string, body: Models.DialerContact): Promise<Models.DialerContact>; 
   	putOutboundContactlistfilter(contactListFilterId: string, body: Models.ContactListFilter): Promise<Models.ContactListFilter>; 
   	putOutboundDnclist(dncListId: string, body: Models.DncList): Promise<Models.DncList>; 
+  	putOutboundMessagingcampaign(messagingCampaignId: string, body: Models.MessagingCampaign): Promise<Models.MessagingCampaign>; 
   	putOutboundRuleset(ruleSetId: string, body: Models.RuleSet): Promise<Models.RuleSet>; 
   	putOutboundSchedulesCampaign(campaignId: string, body: Models.CampaignSchedule): Promise<Models.CampaignSchedule>; 
   	putOutboundSchedulesSequence(sequenceId: string, body: Models.SequenceSchedule): Promise<Models.SequenceSchedule>; 
@@ -2022,6 +2034,7 @@ declare namespace OutboundApi {
 	export interface getOutboundAttemptlimitsOptions { 
 		"pageSize"?: number;
 		"pageNumber"?: number;
+		"allowEmptyResult"?: boolean;
 		"filterType"?: string;
 		"name"?: string;
 		"sortBy"?: string;
@@ -2030,6 +2043,7 @@ declare namespace OutboundApi {
 	export interface getOutboundCallabletimesetsOptions { 
 		"pageSize"?: number;
 		"pageNumber"?: number;
+		"allowEmptyResult"?: boolean;
 		"filterType"?: string;
 		"name"?: string;
 		"sortBy"?: string;
@@ -2038,6 +2052,7 @@ declare namespace OutboundApi {
 	export interface getOutboundCallanalysisresponsesetsOptions { 
 		"pageSize"?: number;
 		"pageNumber"?: number;
+		"allowEmptyResult"?: boolean;
 		"filterType"?: string;
 		"name"?: string;
 		"sortBy"?: string;
@@ -2046,6 +2061,7 @@ declare namespace OutboundApi {
 	export interface getOutboundCampaignrulesOptions { 
 		"pageSize"?: number;
 		"pageNumber"?: number;
+		"allowEmptyResult"?: boolean;
 		"filterType"?: string;
 		"name"?: string;
 		"sortBy"?: string;
@@ -2064,6 +2080,24 @@ declare namespace OutboundApi {
 		"callAnalysisResponseSetId"?: string;
 		"divisionId"?: Array<string>;
 		"sortBy"?: string;
+		"sortOrder"?: string;
+	}
+	export interface getOutboundCampaignsAllOptions { 
+		"pageSize"?: number;
+		"pageNumber"?: number;
+		"id"?: Array<string>;
+		"name"?: string;
+		"divisionId"?: Array<string>;
+		"mediaType"?: Array<string>;
+		"sortOrder"?: string;
+	}
+	export interface getOutboundCampaignsAllDivisionviewsOptions { 
+		"pageSize"?: number;
+		"pageNumber"?: number;
+		"id"?: Array<string>;
+		"name"?: string;
+		"divisionId"?: Array<string>;
+		"mediaType"?: Array<string>;
 		"sortOrder"?: string;
 	}
 	export interface getOutboundCampaignsDivisionviewsOptions { 
@@ -2085,6 +2119,7 @@ declare namespace OutboundApi {
 	export interface getOutboundContactlistfiltersOptions { 
 		"pageSize"?: number;
 		"pageNumber"?: number;
+		"allowEmptyResult"?: boolean;
 		"filterType"?: string;
 		"name"?: string;
 		"sortBy"?: string;
@@ -2096,6 +2131,7 @@ declare namespace OutboundApi {
 		"includeSize"?: boolean;
 		"pageSize"?: number;
 		"pageNumber"?: number;
+		"allowEmptyResult"?: boolean;
 		"filterType"?: string;
 		"name"?: string;
 		"id"?: Array<string>;
@@ -2130,6 +2166,7 @@ declare namespace OutboundApi {
 		"includeSize"?: boolean;
 		"pageSize"?: number;
 		"pageNumber"?: number;
+		"allowEmptyResult"?: boolean;
 		"filterType"?: string;
 		"name"?: string;
 		"dncSourceType"?: string;
@@ -2161,9 +2198,30 @@ declare namespace OutboundApi {
 		"sortBy"?: string;
 		"sortOrder"?: string;
 	}
+	export interface getOutboundMessagingcampaignsOptions { 
+		"pageSize"?: number;
+		"pageNumber"?: number;
+		"sortBy"?: string;
+		"sortOrder"?: string;
+		"name"?: string;
+		"contactListId"?: string;
+		"divisionId"?: Array<string>;
+		"type"?: string;
+		"senderSmsPhoneNumber"?: string;
+		"id"?: Array<string>;
+	}
+	export interface getOutboundMessagingcampaignsDivisionviewsOptions { 
+		"pageSize"?: number;
+		"pageNumber"?: number;
+		"sortOrder"?: string;
+		"name"?: string;
+		"id"?: Array<string>;
+		"senderSmsPhoneNumber"?: string;
+	}
 	export interface getOutboundRulesetsOptions { 
 		"pageSize"?: number;
 		"pageNumber"?: number;
+		"allowEmptyResult"?: boolean;
 		"filterType"?: string;
 		"name"?: string;
 		"sortBy"?: string;
@@ -2172,6 +2230,7 @@ declare namespace OutboundApi {
 	export interface getOutboundSequencesOptions { 
 		"pageSize"?: number;
 		"pageNumber"?: number;
+		"allowEmptyResult"?: boolean;
 		"filterType"?: string;
 		"name"?: string;
 		"sortBy"?: string;
@@ -4515,8 +4574,8 @@ declare namespace Models {
 		"calibrationId"?: string;
 		"rescored"?: boolean;
 		"deleted"?: boolean;
-		"oTotalCriticalScore"?: number;
 		"oTotalScore"?: number;
+		"oTotalCriticalScore"?: number;
 	}
 	
 	export interface AnalyticsFlow { 
@@ -4661,6 +4720,10 @@ declare namespace Models {
 		"remote"?: string;
 		"mediaCount"?: number;
 		"flowOutType"?: string;
+		"requestedRoutings"?: Array<string>;
+		"usedRouting"?: string;
+		"selectedAgentId"?: string;
+		"selectedAgentRank"?: number;
 	}
 	
 	export interface AnalyticsSessionMetric { 
@@ -7015,6 +7078,48 @@ declare namespace Models {
 		"pageCount"?: number;
 	}
 	
+	export interface CommonCampaign { 
+		"id"?: string;
+		"name"?: string;
+		"division"?: Models.Division;
+		"mediaType"?: string;
+		"selfUri"?: string;
+	}
+	
+	export interface CommonCampaignDivisionView { 
+		"id"?: string;
+		"name"?: string;
+		"division"?: Models.Division;
+		"mediaType"?: string;
+		"selfUri"?: string;
+	}
+	
+	export interface CommonCampaignDivisionViewEntityListing { 
+		"entities"?: Array<Models.CommonCampaignDivisionView>;
+		"pageSize"?: number;
+		"pageNumber"?: number;
+		"total"?: number;
+		"firstUri"?: string;
+		"selfUri"?: string;
+		"nextUri"?: string;
+		"lastUri"?: string;
+		"previousUri"?: string;
+		"pageCount"?: number;
+	}
+	
+	export interface CommonCampaignEntityListing { 
+		"entities"?: Array<Models.CommonCampaign>;
+		"pageSize"?: number;
+		"pageNumber"?: number;
+		"total"?: number;
+		"firstUri"?: string;
+		"selfUri"?: string;
+		"nextUri"?: string;
+		"lastUri"?: string;
+		"previousUri"?: string;
+		"pageCount"?: number;
+	}
+	
 	export interface Condition { 
 		"type"?: string;
 		"inverted"?: boolean;
@@ -8437,6 +8542,7 @@ declare namespace Models {
 		"id"?: string;
 		"state"?: string;
 		"held"?: boolean;
+		"errorInfo"?: Models.ConversationEventTopicErrorDetails;
 		"provider"?: string;
 		"scriptId"?: string;
 		"peerId"?: string;
@@ -13055,6 +13161,50 @@ declare namespace Models {
 		"description"?: string;
 	}
 	
+	export interface HistoricalAdherenceActuals { 
+		"actualActivityCategory"?: string;
+		"startOffsetSeconds"?: number;
+		"endOffsetSeconds"?: number;
+	}
+	
+	export interface HistoricalAdherenceDayMetrics { 
+		"dayStartOffsetSecs"?: number;
+		"adherenceScheduleSecs"?: number;
+		"conformanceScheduleSecs"?: number;
+		"conformanceActualSecs"?: number;
+		"exceptionCount"?: number;
+		"exceptionDurationSecs"?: number;
+		"impactSeconds"?: number;
+		"scheduleLengthSecs"?: number;
+		"actualLengthSecs"?: number;
+		"adherencePercentage"?: number;
+		"conformancePercentage"?: number;
+	}
+	
+	export interface HistoricalAdherenceExceptionInfo { 
+		"startOffsetSeconds"?: number;
+		"endOffsetSeconds"?: number;
+		"scheduledActivityCodeId"?: string;
+		"scheduledActivityCategory"?: string;
+		"actualActivityCategory"?: string;
+		"systemPresence"?: string;
+		"routingStatus"?: Models.RoutingStatus;
+		"impact"?: string;
+		"secondaryPresenceLookupId"?: string;
+	}
+	
+	export interface HistoricalAdherenceQueryResult { 
+		"userId"?: string;
+		"startDate"?: string;
+		"endDate"?: string;
+		"adherencePercentage"?: number;
+		"conformancePercentage"?: number;
+		"impact"?: string;
+		"exceptionInfo"?: Array<Models.HistoricalAdherenceExceptionInfo>;
+		"dayMetrics"?: Array<Models.HistoricalAdherenceDayMetrics>;
+		"actuals"?: Array<Models.HistoricalAdherenceActuals>;
+	}
+	
 	export interface HistoryEntry { 
 		"action"?: string;
 		"resource"?: string;
@@ -13813,9 +13963,9 @@ declare namespace Models {
 	
 	export interface KnowledgeSearchRequest { 
 		"query": string;
-		"pageSize": number;
-		"pageNumber": number;
-		"documentType": string;
+		"pageSize"?: number;
+		"pageNumber"?: number;
+		"documentType"?: string;
 		"languageCode": string;
 		"searchOnDraftDocuments"?: boolean;
 	}
@@ -14642,6 +14792,58 @@ declare namespace Models {
 		"id"?: string;
 	}
 	
+	export interface MessagingCampaign { 
+		"id"?: string;
+		"name"?: string;
+		"dateCreated"?: string;
+		"dateModified"?: string;
+		"version"?: number;
+		"division"?: Models.DomainEntityRef;
+		"campaignStatus"?: string;
+		"callableTimeSet"?: Models.DomainEntityRef;
+		"contactList": Models.DomainEntityRef;
+		"dncLists"?: Array<Models.DomainEntityRef>;
+		"alwaysRunning"?: boolean;
+		"contactSorts"?: Array<Models.ContactSort>;
+		"messagesPerMinute": number;
+		"errors"?: Array<Models.RestErrorDetail>;
+		"smsConfig"?: Models.SmsConfig;
+		"selfUri"?: string;
+	}
+	
+	export interface MessagingCampaignDivisionView { 
+		"id"?: string;
+		"name"?: string;
+		"division"?: Models.Division;
+		"selfUri"?: string;
+	}
+	
+	export interface MessagingCampaignDivisionViewEntityListing { 
+		"entities"?: Array<Models.MessagingCampaignDivisionView>;
+		"pageSize"?: number;
+		"pageNumber"?: number;
+		"total"?: number;
+		"firstUri"?: string;
+		"selfUri"?: string;
+		"nextUri"?: string;
+		"lastUri"?: string;
+		"previousUri"?: string;
+		"pageCount"?: number;
+	}
+	
+	export interface MessagingCampaignEntityListing { 
+		"entities"?: Array<Models.MessagingCampaign>;
+		"pageSize"?: number;
+		"pageNumber"?: number;
+		"total"?: number;
+		"firstUri"?: string;
+		"selfUri"?: string;
+		"nextUri"?: string;
+		"lastUri"?: string;
+		"previousUri"?: string;
+		"pageCount"?: number;
+	}
+	
 	export interface MessagingIntegration { 
 		"id": string;
 		"name": string;
@@ -15173,6 +15375,8 @@ declare namespace Models {
 		"ani"?: string;
 		"dnis"?: string;
 		"teamId"?: string;
+		"requestedRoutings"?: Array<string>;
+		"usedRouting"?: string;
 		"scoredAgents"?: Array<Models.AnalyticsScoredAgent>;
 	}
 	
@@ -17112,6 +17316,7 @@ declare namespace Models {
 		"id"?: string;
 		"state"?: string;
 		"held"?: boolean;
+		"errorInfo"?: Models.QueueConversationEventTopicErrorDetails;
 		"provider"?: string;
 		"scriptId"?: string;
 		"peerId"?: string;
@@ -17753,6 +17958,7 @@ declare namespace Models {
 		"id"?: string;
 		"state"?: string;
 		"held"?: boolean;
+		"errorInfo"?: Models.QueueConversationSocialExpressionEventTopicErrorDetails;
 		"provider"?: string;
 		"scriptId"?: string;
 		"peerId"?: string;
@@ -18131,6 +18337,7 @@ declare namespace Models {
 		"id"?: string;
 		"state"?: string;
 		"held"?: boolean;
+		"errorInfo"?: Models.QueueConversationVideoEventTopicErrorDetails;
 		"provider"?: string;
 		"scriptId"?: string;
 		"peerId"?: string;
@@ -18766,6 +18973,8 @@ declare namespace Models {
 		"locale": string;
 		"hasFormatDurations"?: boolean;
 		"hasSplitFilters"?: boolean;
+		"excludeEmptyRows"?: boolean;
+		"hasSplitByMedia"?: boolean;
 		"selectedColumns"?: Array<Models.SelectedColumns>;
 		"hasCustomParticipantAttributes"?: boolean;
 		"recipientEmails"?: Array<string>;
@@ -18790,10 +18999,13 @@ declare namespace Models {
 		"percentageComplete": number;
 		"hasFormatDurations"?: boolean;
 		"hasSplitFilters"?: boolean;
+		"excludeEmptyRows"?: boolean;
+		"hasSplitByMedia"?: boolean;
 		"selectedColumns"?: Array<Models.SelectedColumns>;
 		"hasCustomParticipantAttributes"?: boolean;
 		"recipientEmails"?: Array<string>;
 		"emailStatuses"?: { [key: string]: string; };
+		"enabled"?: boolean;
 		"selfUri"?: string;
 	}
 	
@@ -20152,6 +20364,12 @@ declare namespace Models {
 		"selfUri"?: string;
 	}
 	
+	export interface SmsConfig { 
+		"messageColumn": string;
+		"phoneColumn": string;
+		"senderSmsPhoneNumber": Models.SmsPhoneNumberRef;
+	}
+	
 	export interface SmsPhoneNumber { 
 		"id"?: string;
 		"name"?: string;
@@ -20195,6 +20413,11 @@ declare namespace Models {
 		"phoneNumberType": string;
 		"countryCode": string;
 		"addressId"?: string;
+		"selfUri"?: string;
+	}
+	
+	export interface SmsPhoneNumberRef { 
+		"phoneNumber": string;
 		"selfUri"?: string;
 	}
 	
@@ -22483,6 +22706,7 @@ declare namespace Models {
 		"alertTimeoutSeconds"?: number;
 		"pin"?: string;
 		"modifiedDate"?: string;
+		"sendEmailNotifications"?: boolean;
 	}
 	
 	export interface VoicemailsSearchResponse { 
@@ -23056,6 +23280,11 @@ declare namespace Models {
 		"dateModified"?: string;
 	}
 	
+	export interface WfmBusinessUnitReference { 
+		"id"?: string;
+		"selfUri"?: string;
+	}
+	
 	export interface WfmForecastModificationIntervalOffsetValue { 
 		"intervalIndex": number;
 		"value": number;
@@ -23087,8 +23316,33 @@ declare namespace Models {
 	export interface WfmHistoricalAdherenceResponse { 
 		"id"?: string;
 		"downloadUrl"?: string;
+		"downloadResult"?: Models.WfmHistoricalAdherenceResultWrapper;
 		"downloadUrls"?: Array<string>;
 		"queryState"?: string;
+	}
+	
+	export interface WfmHistoricalAdherenceResultWrapper { 
+		"entityId"?: string;
+		"data"?: Array<Models.HistoricalAdherenceQueryResult>;
+		"lookupIdToSecondaryPresenceId"?: { [key: string]: string; };
+	}
+	
+	export interface WfmHistoricalDataUploadRequestStatusTopicDateTime { 
+		"iMillis"?: number;
+		"beforeNow"?: boolean;
+		"afterNow"?: boolean;
+		"equalNow"?: boolean;
+	}
+	
+	export interface WfmHistoricalDataUploadRequestStatusTopicHistoricalDataUploadRequestUpdate { 
+		"requestId"?: string;
+		"dateImportStarted"?: Models.WfmHistoricalDataUploadRequestStatusTopicDateTime;
+		"dateImportEnded"?: Models.WfmHistoricalDataUploadRequestStatusTopicDateTime;
+		"dateCreated"?: Models.WfmHistoricalDataUploadRequestStatusTopicDateTime;
+		"dateModified"?: Models.WfmHistoricalDataUploadRequestStatusTopicDateTime;
+		"status"?: string;
+		"error"?: string;
+		"active"?: boolean;
 	}
 	
 	export interface WfmIntradayDataUpdateTopicIntradayDataGroup { 
@@ -23184,6 +23438,13 @@ declare namespace Models {
 	export interface WfmMoveManagementUnitTopicMoveManagementUnitNotification { 
 		"businessUnit"?: Models.WfmMoveManagementUnitTopicBusinessUnit;
 		"status"?: string;
+	}
+	
+	export interface WfmScheduleReference { 
+		"id"?: string;
+		"businessUnit"?: Models.WfmBusinessUnitReference;
+		"weekDate"?: string;
+		"selfUri"?: string;
 	}
 	
 	export interface WfmScheduleTopicWfmScheduleNotification { 

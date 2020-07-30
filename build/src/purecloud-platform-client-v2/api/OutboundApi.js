@@ -5,7 +5,7 @@ class OutboundApi {
 	/**
 	 * Outbound service.
 	 * @module purecloud-platform-client-v2/api/OutboundApi
-	 * @version 86.0.0
+	 * @version 87.0.0
 	 */
 
 	/**
@@ -331,6 +331,31 @@ class OutboundApi {
 	}
 
 	/**
+	 * Delete an Outbound Messaging Campaign
+	 * 
+	 * @param {String} messagingCampaignId The Messaging Campaign ID
+	 */
+	deleteOutboundMessagingcampaign(messagingCampaignId) { 
+		// verify the required parameter 'messagingCampaignId' is set
+		if (messagingCampaignId === undefined || messagingCampaignId === null) {
+			throw 'Missing the required parameter "messagingCampaignId" when calling deleteOutboundMessagingcampaign';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/outbound/messagingcampaigns/{messagingCampaignId}', 
+			'DELETE', 
+			{ 'messagingCampaignId': messagingCampaignId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
 	 * Delete a Rule set.
 	 * 
 	 * @param {String} ruleSetId Rule Set ID
@@ -461,6 +486,7 @@ class OutboundApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize Page size. The max that will be returned is 100. (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Boolean} opts.allowEmptyResult Whether to return an empty page when there are no results for that page (default to false)
 	 * @param {Object} opts.filterType Filter type (default to Prefix)
 	 * @param {String} opts.name Name
 	 * @param {String} opts.sortBy Sort by
@@ -474,7 +500,7 @@ class OutboundApi {
 			'/api/v2/outbound/attemptlimits', 
 			'GET', 
 			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'filterType': opts['filterType'],'name': opts['name'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] }, 
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'allowEmptyResult': opts['allowEmptyResult'],'filterType': opts['filterType'],'name': opts['name'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -515,6 +541,7 @@ class OutboundApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize Page size. The max that will be returned is 100. (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Boolean} opts.allowEmptyResult Whether to return an empty page when there are no results for that page (default to false)
 	 * @param {Object} opts.filterType Filter type (default to Prefix)
 	 * @param {String} opts.name Name
 	 * @param {String} opts.sortBy Sort by
@@ -528,7 +555,7 @@ class OutboundApi {
 			'/api/v2/outbound/callabletimesets', 
 			'GET', 
 			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'filterType': opts['filterType'],'name': opts['name'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] }, 
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'allowEmptyResult': opts['allowEmptyResult'],'filterType': opts['filterType'],'name': opts['name'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -569,6 +596,7 @@ class OutboundApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize Page size. The max that will be returned is 100. (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Boolean} opts.allowEmptyResult Whether to return an empty page when there are no results for that page (default to false)
 	 * @param {Object} opts.filterType Filter type (default to Prefix)
 	 * @param {String} opts.name Name
 	 * @param {String} opts.sortBy Sort by
@@ -582,7 +610,7 @@ class OutboundApi {
 			'/api/v2/outbound/callanalysisresponsesets', 
 			'GET', 
 			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'filterType': opts['filterType'],'name': opts['name'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] }, 
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'allowEmptyResult': opts['allowEmptyResult'],'filterType': opts['filterType'],'name': opts['name'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -748,6 +776,7 @@ class OutboundApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize Page size. The max that will be returned is 100. (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Boolean} opts.allowEmptyResult Whether to return an empty page when there are no results for that page (default to false)
 	 * @param {Object} opts.filterType Filter type (default to Prefix)
 	 * @param {String} opts.name Name
 	 * @param {String} opts.sortBy Sort by
@@ -761,7 +790,7 @@ class OutboundApi {
 			'/api/v2/outbound/campaignrules', 
 			'GET', 
 			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'filterType': opts['filterType'],'name': opts['name'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] }, 
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'allowEmptyResult': opts['allowEmptyResult'],'filterType': opts['filterType'],'name': opts['name'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -798,6 +827,66 @@ class OutboundApi {
 			'GET', 
 			{  }, 
 			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'filterType': opts['filterType'],'name': opts['name'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'contactListId': opts['contactListId'],'dncListIds': opts['dncListIds'],'distributionQueueId': opts['distributionQueueId'],'edgeGroupId': opts['edgeGroupId'],'callAnalysisResponseSetId': opts['callAnalysisResponseSetId'],'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi'),'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Query across all types of campaigns by division
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Array.<String>} opts.id Campaign ID(s)
+	 * @param {String} opts.name Campaign name(s)
+	 * @param {Array.<String>} opts.divisionId Division ID(s)
+	 * @param {Array.<String>} opts.mediaType Media type(s)
+	 * @param {Object} opts.sortOrder Sort order (default to a)
+	 */
+	getOutboundCampaignsAll(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/outbound/campaigns/all', 
+			'GET', 
+			{  }, 
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'name': opts['name'],'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi'),'mediaType': this.apiClient.buildCollectionParam(opts['mediaType'], 'multi'),'sortOrder': opts['sortOrder'] }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Query across all types of campaigns
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Array.<String>} opts.id Campaign ID(s)
+	 * @param {String} opts.name Campaign name(s)
+	 * @param {Array.<String>} opts.divisionId Division ID(s)
+	 * @param {Array.<String>} opts.mediaType Media type(s)
+	 * @param {Object} opts.sortOrder Sort order (default to a)
+	 */
+	getOutboundCampaignsAllDivisionviews(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/outbound/campaigns/all/divisionviews', 
+			'GET', 
+			{  }, 
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'name': opts['name'],'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi'),'mediaType': this.apiClient.buildCollectionParam(opts['mediaType'], 'multi'),'sortOrder': opts['sortOrder'] }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -1032,6 +1121,7 @@ class OutboundApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize Page size. The max that will be returned is 100. (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Boolean} opts.allowEmptyResult Whether to return an empty page when there are no results for that page (default to false)
 	 * @param {Object} opts.filterType Filter type (default to Prefix)
 	 * @param {String} opts.name Name
 	 * @param {String} opts.sortBy Sort by
@@ -1046,7 +1136,7 @@ class OutboundApi {
 			'/api/v2/outbound/contactlistfilters', 
 			'GET', 
 			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'filterType': opts['filterType'],'name': opts['name'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'contactListId': opts['contactListId'] }, 
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'allowEmptyResult': opts['allowEmptyResult'],'filterType': opts['filterType'],'name': opts['name'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'contactListId': opts['contactListId'] }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -1064,6 +1154,7 @@ class OutboundApi {
 	 * @param {Boolean} opts.includeSize Include size (default to false)
 	 * @param {Number} opts.pageSize Page size. The max that will be returned is 100. (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Boolean} opts.allowEmptyResult Whether to return an empty page when there are no results for that page (default to false)
 	 * @param {Object} opts.filterType Filter type (default to Prefix)
 	 * @param {String} opts.name Name
 	 * @param {Array.<String>} opts.id id
@@ -1079,7 +1170,7 @@ class OutboundApi {
 			'/api/v2/outbound/contactlists', 
 			'GET', 
 			{  }, 
-			{ 'includeImportStatus': opts['includeImportStatus'],'includeSize': opts['includeSize'],'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'filterType': opts['filterType'],'name': opts['name'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi'),'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] }, 
+			{ 'includeImportStatus': opts['includeImportStatus'],'includeSize': opts['includeSize'],'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'allowEmptyResult': opts['allowEmptyResult'],'filterType': opts['filterType'],'name': opts['name'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi'),'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -1243,6 +1334,7 @@ class OutboundApi {
 	 * @param {Boolean} opts.includeSize Include size (default to false)
 	 * @param {Number} opts.pageSize Page size. The max that will be returned is 100. (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Boolean} opts.allowEmptyResult Whether to return an empty page when there are no results for that page (default to false)
 	 * @param {Object} opts.filterType Filter type (default to Prefix)
 	 * @param {String} opts.name Name
 	 * @param {Object} opts.dncSourceType DncSourceType
@@ -1258,7 +1350,7 @@ class OutboundApi {
 			'/api/v2/outbound/dnclists', 
 			'GET', 
 			{  }, 
-			{ 'includeImportStatus': opts['includeImportStatus'],'includeSize': opts['includeSize'],'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'filterType': opts['filterType'],'name': opts['name'],'dncSourceType': opts['dncSourceType'],'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi'),'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] }, 
+			{ 'includeImportStatus': opts['includeImportStatus'],'includeSize': opts['includeSize'],'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'allowEmptyResult': opts['allowEmptyResult'],'filterType': opts['filterType'],'name': opts['name'],'dncSourceType': opts['dncSourceType'],'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi'),'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -1386,6 +1478,143 @@ class OutboundApi {
 	}
 
 	/**
+	 * Get an Outbound Messaging Campaign
+	 * 
+	 * @param {String} messagingCampaignId The Messaging Campaign ID
+	 */
+	getOutboundMessagingcampaign(messagingCampaignId) { 
+		// verify the required parameter 'messagingCampaignId' is set
+		if (messagingCampaignId === undefined || messagingCampaignId === null) {
+			throw 'Missing the required parameter "messagingCampaignId" when calling getOutboundMessagingcampaign';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/outbound/messagingcampaigns/{messagingCampaignId}', 
+			'GET', 
+			{ 'messagingCampaignId': messagingCampaignId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get messaging campaign&#39;s progress
+	 * 
+	 * @param {String} messagingCampaignId The Messaging Campaign ID
+	 */
+	getOutboundMessagingcampaignProgress(messagingCampaignId) { 
+		// verify the required parameter 'messagingCampaignId' is set
+		if (messagingCampaignId === undefined || messagingCampaignId === null) {
+			throw 'Missing the required parameter "messagingCampaignId" when calling getOutboundMessagingcampaignProgress';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/outbound/messagingcampaigns/{messagingCampaignId}/progress', 
+			'GET', 
+			{ 'messagingCampaignId': messagingCampaignId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Query a list of Messaging Campaigns
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageSize Page size. The max that will be returned is 100. (default to 25)
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Object} opts.sortBy The field to sort by (default to name)
+	 * @param {Object} opts.sortOrder The direction to sort (default to ascending)
+	 * @param {String} opts.name Name
+	 * @param {String} opts.contactListId Contact List ID
+	 * @param {Array.<String>} opts.divisionId Division ID(s)
+	 * @param {Object} opts.type Campaign Type
+	 * @param {String} opts.senderSmsPhoneNumber Sender SMS Phone Number
+	 * @param {Array.<String>} opts.id A list of messaging campaign ids to bulk fetch
+	 */
+	getOutboundMessagingcampaigns(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/outbound/messagingcampaigns', 
+			'GET', 
+			{  }, 
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'name': opts['name'],'contactListId': opts['contactListId'],'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi'),'type': opts['type'],'senderSmsPhoneNumber': opts['senderSmsPhoneNumber'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi') }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a basic Messaging Campaign information object
+	 * This returns a simplified version of a Messaging Campaign, consisting of id, name, and division.
+	 * @param {String} messagingCampaignId The Messaging Campaign ID
+	 */
+	getOutboundMessagingcampaignsDivisionview(messagingCampaignId) { 
+		// verify the required parameter 'messagingCampaignId' is set
+		if (messagingCampaignId === undefined || messagingCampaignId === null) {
+			throw 'Missing the required parameter "messagingCampaignId" when calling getOutboundMessagingcampaignsDivisionview';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/outbound/messagingcampaigns/divisionviews/{messagingCampaignId}', 
+			'GET', 
+			{ 'messagingCampaignId': messagingCampaignId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Query a list of basic Messaging Campaign information objects
+	 * This returns a listing of simplified Messaging Campaigns, each consisting of id, name, and division.
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageSize Page size. The max that will be returned is 100. (default to 25)
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Object} opts.sortOrder The direction to sort (default to a)
+	 * @param {String} opts.name Name
+	 * @param {Array.<String>} opts.id id
+	 * @param {String} opts.senderSmsPhoneNumber Sender SMS Phone Number
+	 */
+	getOutboundMessagingcampaignsDivisionviews(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/outbound/messagingcampaigns/divisionviews', 
+			'GET', 
+			{  }, 
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortOrder': opts['sortOrder'],'name': opts['name'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'senderSmsPhoneNumber': opts['senderSmsPhoneNumber'] }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get a Rule Set by ID.
 	 * 
 	 * @param {String} ruleSetId Rule Set ID
@@ -1416,6 +1645,7 @@ class OutboundApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize Page size. The max that will be returned is 100. (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Boolean} opts.allowEmptyResult Whether to return an empty page when there are no results for that page (default to false)
 	 * @param {Object} opts.filterType Filter type (default to Prefix)
 	 * @param {String} opts.name Name
 	 * @param {String} opts.sortBy Sort by
@@ -1429,7 +1659,7 @@ class OutboundApi {
 			'/api/v2/outbound/rulesets', 
 			'GET', 
 			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'filterType': opts['filterType'],'name': opts['name'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] }, 
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'allowEmptyResult': opts['allowEmptyResult'],'filterType': opts['filterType'],'name': opts['name'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -1560,6 +1790,7 @@ class OutboundApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize Page size. The max that will be returned is 100. (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Boolean} opts.allowEmptyResult Whether to return an empty page when there are no results for that page (default to false)
 	 * @param {Object} opts.filterType Filter type (default to Prefix)
 	 * @param {String} opts.name Name
 	 * @param {String} opts.sortBy Sort by
@@ -1573,7 +1804,7 @@ class OutboundApi {
 			'/api/v2/outbound/sequences', 
 			'GET', 
 			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'filterType': opts['filterType'],'name': opts['name'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] }, 
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'allowEmptyResult': opts['allowEmptyResult'],'filterType': opts['filterType'],'name': opts['name'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -2158,6 +2389,56 @@ class OutboundApi {
 	}
 
 	/**
+	 * Create a Messaging Campaign
+	 * 
+	 * @param {Object} body Messaging Campaign
+	 */
+	postOutboundMessagingcampaigns(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postOutboundMessagingcampaigns';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/outbound/messagingcampaigns', 
+			'POST', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get progress for a list of messaging campaigns
+	 * 
+	 * @param {Array.<Object>} body Messaging Campaign IDs
+	 */
+	postOutboundMessagingcampaignsProgress(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postOutboundMessagingcampaignsProgress';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/outbound/messagingcampaigns/progress', 
+			'POST', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
 	 * Create a Dialer Call Analysis Response Set.
 	 * 
 	 * @param {Object} body RuleSet
@@ -2507,6 +2788,36 @@ class OutboundApi {
 			'/api/v2/outbound/dnclists/{dncListId}', 
 			'PUT', 
 			{ 'dncListId': dncListId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update an Outbound Messaging Campaign
+	 * 
+	 * @param {String} messagingCampaignId The Messaging Campaign ID
+	 * @param {Object} body MessagingCampaign
+	 */
+	putOutboundMessagingcampaign(messagingCampaignId, body) { 
+		// verify the required parameter 'messagingCampaignId' is set
+		if (messagingCampaignId === undefined || messagingCampaignId === null) {
+			throw 'Missing the required parameter "messagingCampaignId" when calling putOutboundMessagingcampaign';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putOutboundMessagingcampaign';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/outbound/messagingcampaigns/{messagingCampaignId}', 
+			'PUT', 
+			{ 'messagingCampaignId': messagingCampaignId }, 
 			{  }, 
 			{  }, 
 			{  }, 

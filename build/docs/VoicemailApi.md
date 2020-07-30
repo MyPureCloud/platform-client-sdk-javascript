@@ -2874,6 +2874,7 @@ VoicemailUserPolicy <a href="#" onclick="return copyVoicemailUserPolicyExample()
   "alertTimeoutSeconds": Number, 
   "pin": String, 
   "modifiedDate": Date, 
+  "sendEmailNotifications": Boolean, 
 }
 ```
 
@@ -17535,6 +17536,7 @@ VoicemailUserPolicy <a href="#" onclick="return copyVoicemailUserPolicyExample()
   "alertTimeoutSeconds": Number, 
   "pin": String, 
   "modifiedDate": Date, 
+  "sendEmailNotifications": Boolean, 
 }
 ```
 

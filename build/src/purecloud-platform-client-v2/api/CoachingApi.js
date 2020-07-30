@@ -5,7 +5,7 @@ class CoachingApi {
 	/**
 	 * Coaching service.
 	 * @module purecloud-platform-client-v2/api/CoachingApi
-	 * @version 86.0.0
+	 * @version 87.0.0
 	 */
 
 	/**
@@ -195,7 +195,7 @@ class CoachingApi {
 	 * 
 	 * @param {Array.<String>} userIds The user IDs for which to retrieve appointments
 	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.interval Interval string; format is ISO-8601. Separate start and end times with forward slash &#39;/&#39;
+	 * @param {String} opts.interval Interval to filter data by. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Array.<String>} opts.statuses Appointment Statuses to filter by
@@ -228,7 +228,7 @@ class CoachingApi {
 	 * Get my appointments for a given date range
 	 * 
 	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.interval Interval string; format is ISO-8601. Separate start and end times with forward slash &#39;/&#39;
+	 * @param {String} opts.interval Interval to filter data by. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Array.<String>} opts.statuses Appointment Statuses to filter by

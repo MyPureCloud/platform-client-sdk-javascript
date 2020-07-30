@@ -2572,6 +2572,8 @@ ReportingExportJobRequest <a href="#" onclick="return copyReportingExportJobRequ
   "locale": String, 
   "hasFormatDurations": Boolean, 
   "hasSplitFilters": Boolean, 
+  "excludeEmptyRows": Boolean, 
+  "hasSplitByMedia": Boolean, 
   "selectedColumns": { 
     "columnOrder": Number, 
     "columnName": String, 
