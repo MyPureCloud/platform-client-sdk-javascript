@@ -5,7 +5,7 @@ class PresenceApi {
 	/**
 	 * Presence service.
 	 * @module purecloud-platform-client-v2/api/PresenceApi
-	 * @version 87.0.0
+	 * @version 88.0.0
 	 */
 
 	/**
@@ -123,9 +123,9 @@ class PresenceApi {
 
 	/**
 	 * Get a user&#39;s Presence
-	 * 
+	 * Get a user&#39;s presence for the specified source that is not specifically listed.  Used to support custom presence sources.
 	 * @param {String} userId user Id
-	 * @param {String} sourceId Source
+	 * @param {String} sourceId Presence source ID
 	 */
 	getUserPresence(userId, sourceId) { 
 		// verify the required parameter 'userId' is set
@@ -152,10 +152,60 @@ class PresenceApi {
 	}
 
 	/**
-	 * Patch a user&#39;s Presence
-	 * The presence object can be patched one of three ways. Option 1: Set the &#39;primary&#39; property to true. This will set the &#39;source&#39; defined in the path as the user&#39;s primary presence source. Option 2: Provide the presenceDefinition value. The &#39;id&#39; is the only value required within the presenceDefinition. Option 3: Provide the message value. Option 1 can be combined with Option 2 and/or Option 3.
+	 * Get a user&#39;s Microsoft Teams presence.
+	 * Gets the presence for a Microsoft Teams user.  This will return the Microsoft Teams presence mapped to GenesysCloud presence with additional activity details in the message field. This presence source is read-only.
 	 * @param {String} userId user Id
-	 * @param {String} sourceId Source
+	 */
+	getUserPresencesMicrosoftteams(userId) { 
+		// verify the required parameter 'userId' is set
+		if (userId === undefined || userId === null) {
+			throw 'Missing the required parameter "userId" when calling getUserPresencesMicrosoftteams';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/users/{userId}/presences/microsoftteams', 
+			'GET', 
+			{ 'userId': userId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a user&#39;s GenesysCloud presence.
+	 * Get the default GenesysCloud user presence source PURECLOUD
+	 * @param {String} userId user Id
+	 */
+	getUserPresencesPurecloud(userId) { 
+		// verify the required parameter 'userId' is set
+		if (userId === undefined || userId === null) {
+			throw 'Missing the required parameter "userId" when calling getUserPresencesPurecloud';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/users/{userId}/presences/purecloud', 
+			'GET', 
+			{ 'userId': userId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Patch a user&#39;s Presence
+	 * Patch a user&#39;s presence for the specified source that is not specifically listed. The presence object can be patched one of three ways. Option 1: Set the &#39;primary&#39; property to true. This will set the &#39;source&#39; defined in the path as the user&#39;s primary presence source. Option 2: Provide the presenceDefinition value. The &#39;id&#39; is the only value required within the presenceDefinition. Option 3: Provide the message value. Option 1 can be combined with Option 2 and/or Option 3.
+	 * @param {String} userId user Id
+	 * @param {String} sourceId Presence source ID
 	 * @param {Object} body User presence
 	 */
 	patchUserPresence(userId, sourceId, body) { 
@@ -176,6 +226,36 @@ class PresenceApi {
 			'/api/v2/users/{userId}/presences/{sourceId}', 
 			'PATCH', 
 			{ 'userId': userId,'sourceId': sourceId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Patch a GenesysCloud user&#39;s presence
+	 * The presence object can be patched one of three ways. Option 1: Set the &#39;primary&#39; property to true. This will set the PURECLOUD source as the user&#39;s primary presence source. Option 2: Provide the presenceDefinition value. The &#39;id&#39; is the only value required within the presenceDefinition. Option 3: Provide the message value. Option 1 can be combined with Option 2 and/or Option 3.
+	 * @param {String} userId user Id
+	 * @param {Object} body User presence
+	 */
+	patchUserPresencesPurecloud(userId, body) { 
+		// verify the required parameter 'userId' is set
+		if (userId === undefined || userId === null) {
+			throw 'Missing the required parameter "userId" when calling patchUserPresencesPurecloud';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchUserPresencesPurecloud';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/users/{userId}/presences/purecloud', 
+			'PATCH', 
+			{ 'userId': userId }, 
 			{  }, 
 			{  }, 
 			{  }, 

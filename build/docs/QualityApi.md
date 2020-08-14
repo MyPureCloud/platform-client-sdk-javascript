@@ -495,12 +495,12 @@ let opts = {
   'pageSize': 25, // Number | The total page size requested
   'pageNumber': 1, // Number | The page number requested
   'sortBy': "sortBy_example", // String | variable name requested to sort by
-  'expand': ["expand_example"], // [String] | variable name requested by expand list
+  'expand': null, // [Object] | variable name requested by expand list
   'nextPage': "nextPage_example", // String | next page token
   'previousPage': "previousPage_example", // String | Previous page token
   'startTime': new Date("2013-10-20T19:20:30+01:00"), // Date | Start time of agent activity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
   'endTime': new Date("2013-10-20T19:20:30+01:00"), // Date | End time of agent activity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
-  'agentUserId': ["agentUserId_example"], // [String] | user id of agent requested
+  'agentUserId': null, // [Object] | user id of agent requested
   'evaluatorUserId': "evaluatorUserId_example", // String | user id of the evaluator
   'name': "name_example", // String | name
   'group': "group_example" // String | group id
@@ -524,12 +524,12 @@ apiInstance.getQualityAgentsActivity(opts)
  **pageSize** | **Number** | The total page size requested | [optional] [default to 25] |
  **pageNumber** | **Number** | The page number requested | [optional] [default to 1] |
  **sortBy** | **String** | variable name requested to sort by | [optional]  |
- **expand** | **[String]** | variable name requested by expand list | [optional]  |
+ **expand** | **[Object]** | variable name requested by expand list | [optional]  |
  **nextPage** | **String** | next page token | [optional]  |
  **previousPage** | **String** | Previous page token | [optional]  |
  **startTime** | **Date** | Start time of agent activity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ | [optional]  |
  **endTime** | **Date** | End time of agent activity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ | [optional]  |
- **agentUserId** | **[String]** | user id of agent requested | [optional]  |
+ **agentUserId** | **[Object]** | user id of agent requested | [optional]  |
  **evaluatorUserId** | **String** | user id of the evaluator | [optional]  |
  **name** | **String** | name | [optional]  |
  **group** | **String** | group id | [optional]  |
@@ -636,7 +636,7 @@ let opts = {
   'pageSize': 25, // Number | The total page size requested
   'pageNumber': 1, // Number | The page number requested
   'sortBy': "sortBy_example", // String | variable name requested to sort by
-  'expand': ["expand_example"], // [String] | variable name requested by expand list
+  'expand': null, // [Object] | variable name requested by expand list
   'nextPage': "nextPage_example", // String | next page token
   'previousPage': "previousPage_example", // String | Previous page token
   'conversationId': "conversationId_example", // String | conversation id
@@ -663,7 +663,7 @@ apiInstance.getQualityCalibrations(calibratorId, opts)
  **pageSize** | **Number** | The total page size requested | [optional] [default to 25] |
  **pageNumber** | **Number** | The page number requested | [optional] [default to 1] |
  **sortBy** | **String** | variable name requested to sort by | [optional]  |
- **expand** | **[String]** | variable name requested by expand list | [optional]  |
+ **expand** | **[Object]** | variable name requested by expand list | [optional]  |
  **nextPage** | **String** | next page token | [optional]  |
  **previousPage** | **String** | Previous page token | [optional]  |
  **conversationId** | **String** | conversation id | [optional]  |
@@ -716,7 +716,7 @@ let opts = {
   'pageSize': 25, // Number | The total page size requested
   'pageNumber': 1, // Number | The page number requested
   'sortBy': "sortBy_example", // String | variable name requested to sort by
-  'expand': ["expand_example"], // [String] | variable name requested by expand list
+  'expand': null, // [Object] | variable name requested by expand list
   'nextPage': "nextPage_example", // String | next page token
   'previousPage': "previousPage_example", // String | Previous page token
   'recordingId': "recordingId_example", // String | id of the recording
@@ -742,7 +742,7 @@ apiInstance.getQualityConversationAudits(conversationId, opts)
  **pageSize** | **Number** | The total page size requested | [optional] [default to 25] |
  **pageNumber** | **Number** | The page number requested | [optional] [default to 1] |
  **sortBy** | **String** | variable name requested to sort by | [optional]  |
- **expand** | **[String]** | variable name requested by expand list | [optional]  |
+ **expand** | **[Object]** | variable name requested by expand list | [optional]  |
  **nextPage** | **String** | next page token | [optional]  |
  **previousPage** | **String** | Previous page token | [optional]  |
  **recordingId** | **String** | id of the recording | [optional]  |
@@ -904,7 +904,7 @@ let opts = {
   'pageSize': 25, // Number | The total page size requested
   'pageNumber': 1, // Number | The page number requested
   'sortBy': "sortBy_example", // String | variable name requested to sort by
-  'expand': ["expand_example"], // [String] | variable name requested by expand list
+  'expand': null, // [Object] | variable name requested by expand list
   'nextPage': "nextPage_example", // String | next page token
   'previousPage': "previousPage_example", // String | Previous page token
   'conversationId': "conversationId_example", // String | conversationId specified
@@ -913,7 +913,7 @@ let opts = {
   'queueId': "queueId_example", // String | queue id
   'startTime': "startTime_example", // String | start time of the evaluation query
   'endTime': "endTime_example", // String | end time of the evaluation query
-  'evaluationState': ["evaluationState_example"], // [String] | 
+  'evaluationState': null, // [Object] | 
   'isReleased': true, // Boolean | the evaluation has been released
   'agentHasRead': true, // Boolean | agent has the evaluation
   'expandAnswerTotalScores': true, // Boolean | get the total scores for evaluations
@@ -939,7 +939,7 @@ apiInstance.getQualityEvaluationsQuery(opts)
  **pageSize** | **Number** | The total page size requested | [optional] [default to 25] |
  **pageNumber** | **Number** | The page number requested | [optional] [default to 1] |
  **sortBy** | **String** | variable name requested to sort by | [optional]  |
- **expand** | **[String]** | variable name requested by expand list | [optional]  |
+ **expand** | **[Object]** | variable name requested by expand list | [optional]  |
  **nextPage** | **String** | next page token | [optional]  |
  **previousPage** | **String** | Previous page token | [optional]  |
  **conversationId** | **String** | conversationId specified | [optional]  |
@@ -948,7 +948,7 @@ apiInstance.getQualityEvaluationsQuery(opts)
  **queueId** | **String** | queue id | [optional]  |
  **startTime** | **String** | start time of the evaluation query | [optional]  |
  **endTime** | **String** | end time of the evaluation query | [optional]  |
- **evaluationState** | **[String]** |  | [optional]  |
+ **evaluationState** | **[Object]** |  | [optional]  |
  **isReleased** | **Boolean** | the evaluation has been released | [optional]  |
  **agentHasRead** | **Boolean** | agent has the evaluation | [optional]  |
  **expandAnswerTotalScores** | **Boolean** | get the total scores for evaluations | [optional]  |
@@ -995,13 +995,13 @@ let opts = {
   'pageSize': 25, // Number | The total page size requested
   'pageNumber': 1, // Number | The page number requested
   'sortBy': "sortBy_example", // String | variable name requested to sort by
-  'expand': ["expand_example"], // [String] | variable name requested by expand list
+  'expand': null, // [Object] | variable name requested by expand list
   'nextPage': "nextPage_example", // String | next page token
   'previousPage': "previousPage_example", // String | Previous page token
   'startTime': new Date("2013-10-20T19:20:30+01:00"), // Date | The start time specified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
   'endTime': new Date("2013-10-20T19:20:30+01:00"), // Date | The end time specified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
   'name': "name_example", // String | Evaluator name
-  'permission': ["permission_example"], // [String] | permission strings
+  'permission': null, // [Object] | permission strings
   'group': "group_example" // String | group id
 };
 
@@ -1023,13 +1023,13 @@ apiInstance.getQualityEvaluatorsActivity(opts)
  **pageSize** | **Number** | The total page size requested | [optional] [default to 25] |
  **pageNumber** | **Number** | The page number requested | [optional] [default to 1] |
  **sortBy** | **String** | variable name requested to sort by | [optional]  |
- **expand** | **[String]** | variable name requested by expand list | [optional]  |
+ **expand** | **[Object]** | variable name requested by expand list | [optional]  |
  **nextPage** | **String** | next page token | [optional]  |
  **previousPage** | **String** | Previous page token | [optional]  |
  **startTime** | **Date** | The start time specified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ | [optional]  |
  **endTime** | **Date** | The end time specified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ | [optional]  |
  **name** | **String** | Evaluator name | [optional]  |
- **permission** | **[String]** | permission strings | [optional]  |
+ **permission** | **[Object]** | permission strings | [optional]  |
  **group** | **String** | group id | [optional]  |
 {: class="table table-striped"}
 
@@ -1802,7 +1802,7 @@ let opts = {
   'pageSize': 25, // Number | The total page size requested
   'pageNumber': 1, // Number | The page number requested
   'sortBy': "sortBy_example", // String | variable name requested to sort by
-  'expand': ["expand_example"], // [String] | variable name requested by expand list
+  'expand': null, // [Object] | variable name requested by expand list
   'nextPage': "nextPage_example", // String | next page token
   'previousPage': "previousPage_example", // String | Previous page token
   'name': "name_example", // String | the keyword set name - used for filtering results in searches.
@@ -1829,7 +1829,7 @@ apiInstance.getQualityKeywordsets(opts)
  **pageSize** | **Number** | The total page size requested | [optional] [default to 25] |
  **pageNumber** | **Number** | The page number requested | [optional] [default to 1] |
  **sortBy** | **String** | variable name requested to sort by | [optional]  |
- **expand** | **[String]** | variable name requested by expand list | [optional]  |
+ **expand** | **[Object]** | variable name requested by expand list | [optional]  |
  **nextPage** | **String** | next page token | [optional]  |
  **previousPage** | **String** | Previous page token | [optional]  |
  **name** | **String** | the keyword set name - used for filtering results in searches. | [optional]  |
@@ -2480,8 +2480,8 @@ SurveyForm <a href="#" onclick="return copySurveyFormExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -2492,8 +2492,8 @@ SurveyForm <a href="#" onclick="return copySurveyFormExample()">Copy</a>
             "firstUri": String, 
             "selfUri": String, 
             "nextUri": String, 
-            "lastUri": String, 
             "previousUri": String, 
+            "lastUri": String, 
             "pageCount": Number, 
           },  
           "selfUri": String, 
@@ -2504,8 +2504,8 @@ SurveyForm <a href="#" onclick="return copySurveyFormExample()">Copy</a>
         "firstUri": String, 
         "selfUri": String, 
         "nextUri": String, 
-        "lastUri": String, 
         "previousUri": String, 
+        "lastUri": String, 
         "pageCount": Number, 
       },  
       "selfUri": String, 
@@ -2516,8 +2516,8 @@ SurveyForm <a href="#" onclick="return copySurveyFormExample()">Copy</a>
     "firstUri": String, 
     "selfUri": String, 
     "nextUri": String, 
-    "lastUri": String, 
     "previousUri": String, 
+    "lastUri": String, 
     "pageCount": Number, 
   },  
   "selfUri": String, 
@@ -2873,6 +2873,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
       "mediaType": String, 
       "type": String, 
       "extension": String, 
+      "countryCode": String, 
     },  
     "addresses": { 
       "address": String, 
@@ -2880,6 +2881,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
       "mediaType": String, 
       "type": String, 
       "extension": String, 
+      "countryCode": String, 
     },  
     "state": String, 
     "title": String, 
@@ -2896,6 +2898,13 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
       "interests": [String], 
       "hobbies": [String], 
       "spouse": String, 
+      "education": { 
+        "school": String, 
+        "fieldOfStudy": String, 
+        "notes": String, 
+        "dateStart": String, 
+        "dateEnd": String, 
+      },  
     },  
     "employerInfo": { 
       "officialName": String, 
@@ -3399,6 +3408,11 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
           "endTime": Date, 
           "provisional": Boolean, 
         },  
+        "afterCallWork": { 
+          "startTime": Date, 
+          "endTime": Date, 
+          "state": String, 
+        },  
       },  
       "callbacks": { 
         "state": String, 
@@ -3450,6 +3464,11 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
           "endTime": Date, 
           "provisional": Boolean, 
         },  
+        "afterCallWork": { 
+          "startTime": Date, 
+          "endTime": Date, 
+          "state": String, 
+        },  
       },  
       "chats": { 
         "state": String, 
@@ -3500,6 +3519,11 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
           "endTime": Date, 
           "provisional": Boolean, 
         },  
+        "afterCallWork": { 
+          "startTime": Date, 
+          "endTime": Date, 
+          "state": String, 
+        },  
       },  
       "cobrowsesessions": { 
         "state": String, 
@@ -3537,6 +3561,11 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
           "durationSeconds": Number, 
           "endTime": Date, 
           "provisional": Boolean, 
+        },  
+        "afterCallWork": { 
+          "startTime": Date, 
+          "endTime": Date, 
+          "state": String, 
         },  
       },  
       "emails": { 
@@ -3641,6 +3670,11 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
           "durationSeconds": Number, 
           "endTime": Date, 
           "provisional": Boolean, 
+        },  
+        "afterCallWork": { 
+          "startTime": Date, 
+          "endTime": Date, 
+          "state": String, 
         },  
       },  
       "messages": { 
@@ -3768,6 +3802,11 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
           "endTime": Date, 
           "provisional": Boolean, 
         },  
+        "afterCallWork": { 
+          "startTime": Date, 
+          "endTime": Date, 
+          "state": String, 
+        },  
       },  
       "screenshares": { 
         "state": String, 
@@ -3796,6 +3835,11 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
           "durationSeconds": Number, 
           "endTime": Date, 
           "provisional": Boolean, 
+        },  
+        "afterCallWork": { 
+          "startTime": Date, 
+          "endTime": Date, 
+          "state": String, 
         },  
       },  
       "socialExpressions": { 
@@ -3831,6 +3875,11 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
           "endTime": Date, 
           "provisional": Boolean, 
         },  
+        "afterCallWork": { 
+          "startTime": Date, 
+          "endTime": Date, 
+          "state": String, 
+        },  
       },  
       "videos": { 
         "state": String, 
@@ -3862,6 +3911,11 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
           "durationSeconds": Number, 
           "endTime": Date, 
           "provisional": Boolean, 
+        },  
+        "afterCallWork": { 
+          "startTime": Date, 
+          "endTime": Date, 
+          "state": String, 
         },  
       },  
       "evaluations": { 
@@ -3999,6 +4053,11 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "endTime": Date, 
                 "provisional": Boolean, 
               },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
+              },  
             },  
             "callbacks": { 
               "state": String, 
@@ -4047,6 +4106,11 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "endTime": Date, 
                 "provisional": Boolean, 
               },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
+              },  
             },  
             "chats": { 
               "state": String, 
@@ -4085,6 +4149,11 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "endTime": Date, 
                 "provisional": Boolean, 
               },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
+              },  
             },  
             "cobrowsesessions": { 
               "state": String, 
@@ -4122,6 +4191,11 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "durationSeconds": Number, 
                 "endTime": Date, 
                 "provisional": Boolean, 
+              },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
               },  
             },  
             "emails": { 
@@ -4178,6 +4252,11 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "durationSeconds": Number, 
                 "endTime": Date, 
                 "provisional": Boolean, 
+              },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
               },  
             },  
             "messages": { 
@@ -4248,6 +4327,11 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "endTime": Date, 
                 "provisional": Boolean, 
               },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
+              },  
             },  
             "screenshares": { 
               "state": String, 
@@ -4276,6 +4360,11 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "durationSeconds": Number, 
                 "endTime": Date, 
                 "provisional": Boolean, 
+              },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
               },  
             },  
             "socialExpressions": { 
@@ -4311,6 +4400,11 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "endTime": Date, 
                 "provisional": Boolean, 
               },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
+              },  
             },  
             "videos": { 
               "state": String, 
@@ -4342,6 +4436,11 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "durationSeconds": Number, 
                 "endTime": Date, 
                 "provisional": Boolean, 
+              },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
               },  
             },  
             "evaluations": { 
@@ -4600,8 +4699,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -4612,8 +4711,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
             "firstUri": String, 
             "selfUri": String, 
             "nextUri": String, 
-            "lastUri": String, 
             "previousUri": String, 
+            "lastUri": String, 
             "pageCount": Number, 
           },  
           "selfUri": String, 
@@ -4637,6 +4736,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
             "mediaType": String, 
             "type": String, 
             "extension": String, 
+            "countryCode": String, 
           },  
           "addresses": { 
             "address": String, 
@@ -4644,6 +4744,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
             "mediaType": String, 
             "type": String, 
             "extension": String, 
+            "countryCode": String, 
           },  
           "state": String, 
           "title": String, 
@@ -4660,6 +4761,13 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
             "interests": [String], 
             "hobbies": [String], 
             "spouse": String, 
+            "education": { 
+              "school": String, 
+              "fieldOfStudy": String, 
+              "notes": String, 
+              "dateStart": String, 
+              "dateEnd": String, 
+            },  
           },  
           "employerInfo": { 
             "officialName": String, 
@@ -5019,6 +5127,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
             "mediaType": String, 
             "type": String, 
             "extension": String, 
+            "countryCode": String, 
           },  
           "addresses": { 
             "address": String, 
@@ -5026,6 +5135,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
             "mediaType": String, 
             "type": String, 
             "extension": String, 
+            "countryCode": String, 
           },  
           "state": String, 
           "title": String, 
@@ -5042,6 +5152,13 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
             "interests": [String], 
             "hobbies": [String], 
             "spouse": String, 
+            "education": { 
+              "school": String, 
+              "fieldOfStudy": String, 
+              "notes": String, 
+              "dateStart": String, 
+              "dateEnd": String, 
+            },  
           },  
           "employerInfo": { 
             "officialName": String, 
@@ -5404,6 +5521,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "addresses": { 
               "address": String, 
@@ -5411,6 +5529,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "state": String, 
             "title": String, 
@@ -5427,6 +5546,13 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
               "interests": [String], 
               "hobbies": [String], 
               "spouse": String, 
+              "education": { 
+                "school": String, 
+                "fieldOfStudy": String, 
+                "notes": String, 
+                "dateStart": String, 
+                "dateEnd": String, 
+              },  
             },  
             "employerInfo": { 
               "officialName": String, 
@@ -5746,6 +5872,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "self": Address, 
                 "other": Address, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "callbacks": { 
                 "state": String, 
@@ -5771,6 +5898,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "provider": String, 
                 "peerId": String, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "chats": { 
                 "state": String, 
@@ -5791,6 +5919,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "avatarImageUrl": String, 
                 "journeyContext": JourneyContext, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "cobrowsesessions": { 
                 "state": String, 
@@ -5809,6 +5938,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "peerId": String, 
                 "segments": [Segment], 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "emails": { 
                 "state": String, 
@@ -5833,6 +5963,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "draftAttachments": [Attachment], 
                 "spam": Boolean, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "messages": { 
                 "state": String, 
@@ -5857,6 +5988,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "fromAddress": Address, 
                 "messages": [MessageDetails], 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "screenshares": { 
                 "state": String, 
@@ -5872,6 +6004,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "peerId": String, 
                 "segments": [Segment], 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "socialExpressions": { 
                 "state": String, 
@@ -5892,6 +6025,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "scriptId": String, 
                 "peerId": String, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "videos": { 
                 "state": String, 
@@ -5910,6 +6044,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "msids": [String], 
                 "self": Address, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "evaluations": { 
                 "id": String, 
@@ -6009,8 +6144,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -6111,8 +6246,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -6136,6 +6271,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "addresses": { 
                 "address": String, 
@@ -6143,6 +6279,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "state": String, 
               "title": String, 
@@ -6159,6 +6296,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "interests": [String], 
                 "hobbies": [String], 
                 "spouse": String, 
+                "education": [Education], 
               },  
               "employerInfo": { 
                 "officialName": String, 
@@ -6300,6 +6438,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "addresses": { 
                 "address": String, 
@@ -6307,6 +6446,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "state": String, 
               "title": String, 
@@ -6323,6 +6463,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "interests": [String], 
                 "hobbies": [String], 
                 "spouse": String, 
+                "education": [Education], 
               },  
               "employerInfo": { 
                 "officialName": String, 
@@ -6772,8 +6913,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -6797,6 +6938,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "addresses": { 
                 "address": String, 
@@ -6804,6 +6946,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "state": String, 
               "title": String, 
@@ -6820,6 +6963,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "interests": [String], 
                 "hobbies": [String], 
                 "spouse": String, 
+                "education": [Education], 
               },  
               "employerInfo": { 
                 "officialName": String, 
@@ -6961,6 +7105,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "addresses": { 
                 "address": String, 
@@ -6968,6 +7113,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "state": String, 
               "title": String, 
@@ -6984,6 +7130,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "interests": [String], 
                 "hobbies": [String], 
                 "spouse": String, 
+                "education": [Education], 
               },  
               "employerInfo": { 
                 "officialName": String, 
@@ -7682,8 +7829,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -7694,8 +7841,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
           "firstUri": String, 
           "selfUri": String, 
           "nextUri": String, 
-          "lastUri": String, 
           "previousUri": String, 
+          "lastUri": String, 
           "pageCount": Number, 
         },  
         "selfUri": String, 
@@ -7706,8 +7853,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
       "firstUri": String, 
       "selfUri": String, 
       "nextUri": String, 
-      "lastUri": String, 
       "previousUri": String, 
+      "lastUri": String, 
       "pageCount": Number, 
     },  
     "selfUri": String, 
@@ -7855,6 +8002,11 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
             "endTime": Date, 
             "provisional": Boolean, 
           },  
+          "afterCallWork": { 
+            "startTime": Date, 
+            "endTime": Date, 
+            "state": String, 
+          },  
         },  
         "callbacks": { 
           "state": String, 
@@ -7906,6 +8058,11 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
             "endTime": Date, 
             "provisional": Boolean, 
           },  
+          "afterCallWork": { 
+            "startTime": Date, 
+            "endTime": Date, 
+            "state": String, 
+          },  
         },  
         "chats": { 
           "state": String, 
@@ -7956,6 +8113,11 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
             "endTime": Date, 
             "provisional": Boolean, 
           },  
+          "afterCallWork": { 
+            "startTime": Date, 
+            "endTime": Date, 
+            "state": String, 
+          },  
         },  
         "cobrowsesessions": { 
           "state": String, 
@@ -7993,6 +8155,11 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
             "durationSeconds": Number, 
             "endTime": Date, 
             "provisional": Boolean, 
+          },  
+          "afterCallWork": { 
+            "startTime": Date, 
+            "endTime": Date, 
+            "state": String, 
           },  
         },  
         "emails": { 
@@ -8081,6 +8248,11 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
             "durationSeconds": Number, 
             "endTime": Date, 
             "provisional": Boolean, 
+          },  
+          "afterCallWork": { 
+            "startTime": Date, 
+            "endTime": Date, 
+            "state": String, 
           },  
         },  
         "messages": { 
@@ -8192,6 +8364,11 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
             "endTime": Date, 
             "provisional": Boolean, 
           },  
+          "afterCallWork": { 
+            "startTime": Date, 
+            "endTime": Date, 
+            "state": String, 
+          },  
         },  
         "screenshares": { 
           "state": String, 
@@ -8220,6 +8397,11 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
             "durationSeconds": Number, 
             "endTime": Date, 
             "provisional": Boolean, 
+          },  
+          "afterCallWork": { 
+            "startTime": Date, 
+            "endTime": Date, 
+            "state": String, 
           },  
         },  
         "socialExpressions": { 
@@ -8255,6 +8437,11 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
             "endTime": Date, 
             "provisional": Boolean, 
           },  
+          "afterCallWork": { 
+            "startTime": Date, 
+            "endTime": Date, 
+            "state": String, 
+          },  
         },  
         "videos": { 
           "state": String, 
@@ -8286,6 +8473,11 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
             "durationSeconds": Number, 
             "endTime": Date, 
             "provisional": Boolean, 
+          },  
+          "afterCallWork": { 
+            "startTime": Date, 
+            "endTime": Date, 
+            "state": String, 
           },  
         },  
         "evaluations": { 
@@ -8369,6 +8561,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "self": Address, 
                 "other": Address, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "callbacks": { 
                 "state": String, 
@@ -8394,6 +8587,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "provider": String, 
                 "peerId": String, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "chats": { 
                 "state": String, 
@@ -8414,6 +8608,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "avatarImageUrl": String, 
                 "journeyContext": JourneyContext, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "cobrowsesessions": { 
                 "state": String, 
@@ -8432,6 +8627,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "peerId": String, 
                 "segments": [Segment], 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "emails": { 
                 "state": String, 
@@ -8456,6 +8652,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "draftAttachments": [Attachment], 
                 "spam": Boolean, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "messages": { 
                 "state": String, 
@@ -8480,6 +8677,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "fromAddress": Address, 
                 "messages": [MessageDetails], 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "screenshares": { 
                 "state": String, 
@@ -8495,6 +8693,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "peerId": String, 
                 "segments": [Segment], 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "socialExpressions": { 
                 "state": String, 
@@ -8515,6 +8714,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "scriptId": String, 
                 "peerId": String, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "videos": { 
                 "state": String, 
@@ -8533,6 +8733,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "msids": [String], 
                 "self": Address, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "evaluations": { 
                 "id": String, 
@@ -8632,8 +8833,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -8657,6 +8858,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "addresses": { 
               "address": String, 
@@ -8664,6 +8866,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "state": String, 
             "title": String, 
@@ -8680,6 +8883,13 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
               "interests": [String], 
               "hobbies": [String], 
               "spouse": String, 
+              "education": { 
+                "school": String, 
+                "fieldOfStudy": String, 
+                "notes": String, 
+                "dateStart": String, 
+                "dateEnd": String, 
+              },  
             },  
             "employerInfo": { 
               "officialName": String, 
@@ -8939,6 +9149,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "addresses": { 
               "address": String, 
@@ -8946,6 +9157,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "state": String, 
             "title": String, 
@@ -8962,6 +9174,13 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
               "interests": [String], 
               "hobbies": [String], 
               "spouse": String, 
+              "education": { 
+                "school": String, 
+                "fieldOfStudy": String, 
+                "notes": String, 
+                "dateStart": String, 
+                "dateEnd": String, 
+              },  
             },  
             "employerInfo": { 
               "officialName": String, 
@@ -9224,6 +9443,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "addresses": { 
                 "address": String, 
@@ -9231,6 +9451,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "state": String, 
               "title": String, 
@@ -9247,6 +9468,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "interests": [String], 
                 "hobbies": [String], 
                 "spouse": String, 
+                "education": [Education], 
               },  
               "employerInfo": { 
                 "officialName": String, 
@@ -9458,8 +9680,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -10091,8 +10313,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -10103,8 +10325,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
             "firstUri": String, 
             "selfUri": String, 
             "nextUri": String, 
-            "lastUri": String, 
             "previousUri": String, 
+            "lastUri": String, 
             "pageCount": Number, 
           },  
           "selfUri": String, 
@@ -10115,8 +10337,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
         "firstUri": String, 
         "selfUri": String, 
         "nextUri": String, 
-        "lastUri": String, 
         "previousUri": String, 
+        "lastUri": String, 
         "pageCount": Number, 
       },  
       "selfUri": String, 
@@ -10140,6 +10362,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
         "mediaType": String, 
         "type": String, 
         "extension": String, 
+        "countryCode": String, 
       },  
       "addresses": { 
         "address": String, 
@@ -10147,6 +10370,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
         "mediaType": String, 
         "type": String, 
         "extension": String, 
+        "countryCode": String, 
       },  
       "state": String, 
       "title": String, 
@@ -10163,6 +10387,13 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
         "interests": [String], 
         "hobbies": [String], 
         "spouse": String, 
+        "education": { 
+          "school": String, 
+          "fieldOfStudy": String, 
+          "notes": String, 
+          "dateStart": String, 
+          "dateEnd": String, 
+        },  
       },  
       "employerInfo": { 
         "officialName": String, 
@@ -10540,6 +10771,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
         "mediaType": String, 
         "type": String, 
         "extension": String, 
+        "countryCode": String, 
       },  
       "addresses": { 
         "address": String, 
@@ -10547,6 +10779,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
         "mediaType": String, 
         "type": String, 
         "extension": String, 
+        "countryCode": String, 
       },  
       "state": String, 
       "title": String, 
@@ -10563,6 +10796,13 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
         "interests": [String], 
         "hobbies": [String], 
         "spouse": String, 
+        "education": { 
+          "school": String, 
+          "fieldOfStudy": String, 
+          "notes": String, 
+          "dateStart": String, 
+          "dateEnd": String, 
+        },  
       },  
       "employerInfo": { 
         "officialName": String, 
@@ -10943,6 +11183,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
           "mediaType": String, 
           "type": String, 
           "extension": String, 
+          "countryCode": String, 
         },  
         "addresses": { 
           "address": String, 
@@ -10950,6 +11191,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
           "mediaType": String, 
           "type": String, 
           "extension": String, 
+          "countryCode": String, 
         },  
         "state": String, 
         "title": String, 
@@ -10966,6 +11208,13 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
           "interests": [String], 
           "hobbies": [String], 
           "spouse": String, 
+          "education": { 
+            "school": String, 
+            "fieldOfStudy": String, 
+            "notes": String, 
+            "dateStart": String, 
+            "dateEnd": String, 
+          },  
         },  
         "employerInfo": { 
           "officialName": String, 
@@ -11451,6 +11700,11 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
               "endTime": Date, 
               "provisional": Boolean, 
             },  
+            "afterCallWork": { 
+              "startTime": Date, 
+              "endTime": Date, 
+              "state": String, 
+            },  
           },  
           "callbacks": { 
             "state": String, 
@@ -11502,6 +11756,11 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
               "endTime": Date, 
               "provisional": Boolean, 
             },  
+            "afterCallWork": { 
+              "startTime": Date, 
+              "endTime": Date, 
+              "state": String, 
+            },  
           },  
           "chats": { 
             "state": String, 
@@ -11549,6 +11808,11 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
               "endTime": Date, 
               "provisional": Boolean, 
             },  
+            "afterCallWork": { 
+              "startTime": Date, 
+              "endTime": Date, 
+              "state": String, 
+            },  
           },  
           "cobrowsesessions": { 
             "state": String, 
@@ -11586,6 +11850,11 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
               "durationSeconds": Number, 
               "endTime": Date, 
               "provisional": Boolean, 
+            },  
+            "afterCallWork": { 
+              "startTime": Date, 
+              "endTime": Date, 
+              "state": String, 
             },  
           },  
           "emails": { 
@@ -11658,6 +11927,11 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
               "durationSeconds": Number, 
               "endTime": Date, 
               "provisional": Boolean, 
+            },  
+            "afterCallWork": { 
+              "startTime": Date, 
+              "endTime": Date, 
+              "state": String, 
             },  
           },  
           "messages": { 
@@ -11753,6 +12027,11 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
               "endTime": Date, 
               "provisional": Boolean, 
             },  
+            "afterCallWork": { 
+              "startTime": Date, 
+              "endTime": Date, 
+              "state": String, 
+            },  
           },  
           "screenshares": { 
             "state": String, 
@@ -11781,6 +12060,11 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
               "durationSeconds": Number, 
               "endTime": Date, 
               "provisional": Boolean, 
+            },  
+            "afterCallWork": { 
+              "startTime": Date, 
+              "endTime": Date, 
+              "state": String, 
             },  
           },  
           "socialExpressions": { 
@@ -11816,6 +12100,11 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
               "endTime": Date, 
               "provisional": Boolean, 
             },  
+            "afterCallWork": { 
+              "startTime": Date, 
+              "endTime": Date, 
+              "state": String, 
+            },  
           },  
           "videos": { 
             "state": String, 
@@ -11847,6 +12136,11 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
               "durationSeconds": Number, 
               "endTime": Date, 
               "provisional": Boolean, 
+            },  
+            "afterCallWork": { 
+              "startTime": Date, 
+              "endTime": Date, 
+              "state": String, 
             },  
           },  
           "evaluations": { 
@@ -11940,8 +12234,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -11965,6 +12259,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "addresses": { 
                 "address": String, 
@@ -11972,6 +12267,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "state": String, 
               "title": String, 
@@ -11988,6 +12284,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "interests": [String], 
                 "hobbies": [String], 
                 "spouse": String, 
+                "education": [Education], 
               },  
               "employerInfo": { 
                 "officialName": String, 
@@ -12129,6 +12426,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "addresses": { 
                 "address": String, 
@@ -12136,6 +12434,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "state": String, 
               "title": String, 
@@ -12152,6 +12451,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "interests": [String], 
                 "hobbies": [String], 
                 "spouse": String, 
+                "education": [Education], 
               },  
               "employerInfo": { 
                 "officialName": String, 
@@ -12621,8 +12921,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -12633,8 +12933,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
           "firstUri": String, 
           "selfUri": String, 
           "nextUri": String, 
-          "lastUri": String, 
           "previousUri": String, 
+          "lastUri": String, 
           "pageCount": Number, 
         },  
         "selfUri": String, 
@@ -12779,6 +13079,11 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "endTime": Date, 
                 "provisional": Boolean, 
               },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
+              },  
             },  
             "callbacks": { 
               "state": String, 
@@ -12827,6 +13132,11 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "endTime": Date, 
                 "provisional": Boolean, 
               },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
+              },  
             },  
             "chats": { 
               "state": String, 
@@ -12865,6 +13175,11 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "endTime": Date, 
                 "provisional": Boolean, 
               },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
+              },  
             },  
             "cobrowsesessions": { 
               "state": String, 
@@ -12902,6 +13217,11 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "durationSeconds": Number, 
                 "endTime": Date, 
                 "provisional": Boolean, 
+              },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
               },  
             },  
             "emails": { 
@@ -12958,6 +13278,11 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "durationSeconds": Number, 
                 "endTime": Date, 
                 "provisional": Boolean, 
+              },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
               },  
             },  
             "messages": { 
@@ -13028,6 +13353,11 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "endTime": Date, 
                 "provisional": Boolean, 
               },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
+              },  
             },  
             "screenshares": { 
               "state": String, 
@@ -13056,6 +13386,11 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "durationSeconds": Number, 
                 "endTime": Date, 
                 "provisional": Boolean, 
+              },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
               },  
             },  
             "socialExpressions": { 
@@ -13091,6 +13426,11 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "endTime": Date, 
                 "provisional": Boolean, 
               },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
+              },  
             },  
             "videos": { 
               "state": String, 
@@ -13122,6 +13462,11 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "durationSeconds": Number, 
                 "endTime": Date, 
                 "provisional": Boolean, 
+              },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
               },  
             },  
             "evaluations": { 
@@ -13380,8 +13725,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -13392,8 +13737,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
             "firstUri": String, 
             "selfUri": String, 
             "nextUri": String, 
-            "lastUri": String, 
             "previousUri": String, 
+            "lastUri": String, 
             "pageCount": Number, 
           },  
           "selfUri": String, 
@@ -13417,6 +13762,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
             "mediaType": String, 
             "type": String, 
             "extension": String, 
+            "countryCode": String, 
           },  
           "addresses": { 
             "address": String, 
@@ -13424,6 +13770,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
             "mediaType": String, 
             "type": String, 
             "extension": String, 
+            "countryCode": String, 
           },  
           "state": String, 
           "title": String, 
@@ -13440,6 +13787,13 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
             "interests": [String], 
             "hobbies": [String], 
             "spouse": String, 
+            "education": { 
+              "school": String, 
+              "fieldOfStudy": String, 
+              "notes": String, 
+              "dateStart": String, 
+              "dateEnd": String, 
+            },  
           },  
           "employerInfo": { 
             "officialName": String, 
@@ -13799,6 +14153,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
             "mediaType": String, 
             "type": String, 
             "extension": String, 
+            "countryCode": String, 
           },  
           "addresses": { 
             "address": String, 
@@ -13806,6 +14161,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
             "mediaType": String, 
             "type": String, 
             "extension": String, 
+            "countryCode": String, 
           },  
           "state": String, 
           "title": String, 
@@ -13822,6 +14178,13 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
             "interests": [String], 
             "hobbies": [String], 
             "spouse": String, 
+            "education": { 
+              "school": String, 
+              "fieldOfStudy": String, 
+              "notes": String, 
+              "dateStart": String, 
+              "dateEnd": String, 
+            },  
           },  
           "employerInfo": { 
             "officialName": String, 
@@ -14184,6 +14547,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "addresses": { 
               "address": String, 
@@ -14191,6 +14555,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "state": String, 
             "title": String, 
@@ -14207,6 +14572,13 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
               "interests": [String], 
               "hobbies": [String], 
               "spouse": String, 
+              "education": { 
+                "school": String, 
+                "fieldOfStudy": String, 
+                "notes": String, 
+                "dateStart": String, 
+                "dateEnd": String, 
+              },  
             },  
             "employerInfo": { 
               "officialName": String, 
@@ -14526,6 +14898,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "self": Address, 
                 "other": Address, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "callbacks": { 
                 "state": String, 
@@ -14551,6 +14924,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "provider": String, 
                 "peerId": String, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "chats": { 
                 "state": String, 
@@ -14571,6 +14945,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "avatarImageUrl": String, 
                 "journeyContext": JourneyContext, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "cobrowsesessions": { 
                 "state": String, 
@@ -14589,6 +14964,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "peerId": String, 
                 "segments": [Segment], 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "emails": { 
                 "state": String, 
@@ -14613,6 +14989,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "draftAttachments": [Attachment], 
                 "spam": Boolean, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "messages": { 
                 "state": String, 
@@ -14637,6 +15014,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "fromAddress": Address, 
                 "messages": [MessageDetails], 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "screenshares": { 
                 "state": String, 
@@ -14652,6 +15030,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "peerId": String, 
                 "segments": [Segment], 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "socialExpressions": { 
                 "state": String, 
@@ -14672,6 +15051,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "scriptId": String, 
                 "peerId": String, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "videos": { 
                 "state": String, 
@@ -14690,6 +15070,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "msids": [String], 
                 "self": Address, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "evaluations": { 
                 "id": String, 
@@ -14789,8 +15170,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -14891,8 +15272,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -14916,6 +15297,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "addresses": { 
                 "address": String, 
@@ -14923,6 +15305,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "state": String, 
               "title": String, 
@@ -14939,6 +15322,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "interests": [String], 
                 "hobbies": [String], 
                 "spouse": String, 
+                "education": [Education], 
               },  
               "employerInfo": { 
                 "officialName": String, 
@@ -15080,6 +15464,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "addresses": { 
                 "address": String, 
@@ -15087,6 +15472,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "state": String, 
               "title": String, 
@@ -15103,6 +15489,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "interests": [String], 
                 "hobbies": [String], 
                 "spouse": String, 
+                "education": [Education], 
               },  
               "employerInfo": { 
                 "officialName": String, 
@@ -15552,8 +15939,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -15577,6 +15964,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "addresses": { 
                 "address": String, 
@@ -15584,6 +15972,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "state": String, 
               "title": String, 
@@ -15600,6 +15989,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "interests": [String], 
                 "hobbies": [String], 
                 "spouse": String, 
+                "education": [Education], 
               },  
               "employerInfo": { 
                 "officialName": String, 
@@ -15741,6 +16131,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "addresses": { 
                 "address": String, 
@@ -15748,6 +16139,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "state": String, 
               "title": String, 
@@ -15764,6 +16156,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "interests": [String], 
                 "hobbies": [String], 
                 "spouse": String, 
+                "education": [Education], 
               },  
               "employerInfo": { 
                 "officialName": String, 
@@ -16446,6 +16839,11 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "endTime": Date, 
                 "provisional": Boolean, 
               },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
+              },  
             },  
             "callbacks": { 
               "state": String, 
@@ -16494,6 +16892,11 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "endTime": Date, 
                 "provisional": Boolean, 
               },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
+              },  
             },  
             "chats": { 
               "state": String, 
@@ -16532,6 +16935,11 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "endTime": Date, 
                 "provisional": Boolean, 
               },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
+              },  
             },  
             "cobrowsesessions": { 
               "state": String, 
@@ -16569,6 +16977,11 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "durationSeconds": Number, 
                 "endTime": Date, 
                 "provisional": Boolean, 
+              },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
               },  
             },  
             "emails": { 
@@ -16625,6 +17038,11 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "durationSeconds": Number, 
                 "endTime": Date, 
                 "provisional": Boolean, 
+              },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
               },  
             },  
             "messages": { 
@@ -16695,6 +17113,11 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "endTime": Date, 
                 "provisional": Boolean, 
               },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
+              },  
             },  
             "screenshares": { 
               "state": String, 
@@ -16723,6 +17146,11 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "durationSeconds": Number, 
                 "endTime": Date, 
                 "provisional": Boolean, 
+              },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
               },  
             },  
             "socialExpressions": { 
@@ -16758,6 +17186,11 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "endTime": Date, 
                 "provisional": Boolean, 
               },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
+              },  
             },  
             "videos": { 
               "state": String, 
@@ -16789,6 +17222,11 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "durationSeconds": Number, 
                 "endTime": Date, 
                 "provisional": Boolean, 
+              },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
               },  
             },  
             "evaluations": { 
@@ -17047,8 +17485,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -17059,8 +17497,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
             "firstUri": String, 
             "selfUri": String, 
             "nextUri": String, 
-            "lastUri": String, 
             "previousUri": String, 
+            "lastUri": String, 
             "pageCount": Number, 
           },  
           "selfUri": String, 
@@ -17084,6 +17522,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
             "mediaType": String, 
             "type": String, 
             "extension": String, 
+            "countryCode": String, 
           },  
           "addresses": { 
             "address": String, 
@@ -17091,6 +17530,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
             "mediaType": String, 
             "type": String, 
             "extension": String, 
+            "countryCode": String, 
           },  
           "state": String, 
           "title": String, 
@@ -17107,6 +17547,13 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
             "interests": [String], 
             "hobbies": [String], 
             "spouse": String, 
+            "education": { 
+              "school": String, 
+              "fieldOfStudy": String, 
+              "notes": String, 
+              "dateStart": String, 
+              "dateEnd": String, 
+            },  
           },  
           "employerInfo": { 
             "officialName": String, 
@@ -17466,6 +17913,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
             "mediaType": String, 
             "type": String, 
             "extension": String, 
+            "countryCode": String, 
           },  
           "addresses": { 
             "address": String, 
@@ -17473,6 +17921,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
             "mediaType": String, 
             "type": String, 
             "extension": String, 
+            "countryCode": String, 
           },  
           "state": String, 
           "title": String, 
@@ -17489,6 +17938,13 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
             "interests": [String], 
             "hobbies": [String], 
             "spouse": String, 
+            "education": { 
+              "school": String, 
+              "fieldOfStudy": String, 
+              "notes": String, 
+              "dateStart": String, 
+              "dateEnd": String, 
+            },  
           },  
           "employerInfo": { 
             "officialName": String, 
@@ -17851,6 +18307,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "addresses": { 
               "address": String, 
@@ -17858,6 +18315,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "state": String, 
             "title": String, 
@@ -17874,6 +18332,13 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
               "interests": [String], 
               "hobbies": [String], 
               "spouse": String, 
+              "education": { 
+                "school": String, 
+                "fieldOfStudy": String, 
+                "notes": String, 
+                "dateStart": String, 
+                "dateEnd": String, 
+              },  
             },  
             "employerInfo": { 
               "officialName": String, 
@@ -18193,6 +18658,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "self": Address, 
                 "other": Address, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "callbacks": { 
                 "state": String, 
@@ -18218,6 +18684,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "provider": String, 
                 "peerId": String, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "chats": { 
                 "state": String, 
@@ -18238,6 +18705,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "avatarImageUrl": String, 
                 "journeyContext": JourneyContext, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "cobrowsesessions": { 
                 "state": String, 
@@ -18256,6 +18724,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "peerId": String, 
                 "segments": [Segment], 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "emails": { 
                 "state": String, 
@@ -18280,6 +18749,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "draftAttachments": [Attachment], 
                 "spam": Boolean, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "messages": { 
                 "state": String, 
@@ -18304,6 +18774,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "fromAddress": Address, 
                 "messages": [MessageDetails], 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "screenshares": { 
                 "state": String, 
@@ -18319,6 +18790,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "peerId": String, 
                 "segments": [Segment], 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "socialExpressions": { 
                 "state": String, 
@@ -18339,6 +18811,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "scriptId": String, 
                 "peerId": String, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "videos": { 
                 "state": String, 
@@ -18357,6 +18830,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "msids": [String], 
                 "self": Address, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "evaluations": { 
                 "id": String, 
@@ -18456,8 +18930,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -18558,8 +19032,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -18583,6 +19057,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "addresses": { 
                 "address": String, 
@@ -18590,6 +19065,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "state": String, 
               "title": String, 
@@ -18606,6 +19082,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "interests": [String], 
                 "hobbies": [String], 
                 "spouse": String, 
+                "education": [Education], 
               },  
               "employerInfo": { 
                 "officialName": String, 
@@ -18747,6 +19224,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "addresses": { 
                 "address": String, 
@@ -18754,6 +19232,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "state": String, 
               "title": String, 
@@ -18770,6 +19249,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "interests": [String], 
                 "hobbies": [String], 
                 "spouse": String, 
+                "education": [Education], 
               },  
               "employerInfo": { 
                 "officialName": String, 
@@ -19219,8 +19699,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -19244,6 +19724,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "addresses": { 
                 "address": String, 
@@ -19251,6 +19732,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "state": String, 
               "title": String, 
@@ -19267,6 +19749,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "interests": [String], 
                 "hobbies": [String], 
                 "spouse": String, 
+                "education": [Education], 
               },  
               "employerInfo": { 
                 "officialName": String, 
@@ -19408,6 +19891,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "addresses": { 
                 "address": String, 
@@ -19415,6 +19899,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "state": String, 
               "title": String, 
@@ -19431,6 +19916,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "interests": [String], 
                 "hobbies": [String], 
                 "spouse": String, 
+                "education": [Education], 
               },  
               "employerInfo": { 
                 "officialName": String, 
@@ -20354,6 +20840,11 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
             "endTime": Date, 
             "provisional": Boolean, 
           },  
+          "afterCallWork": { 
+            "startTime": Date, 
+            "endTime": Date, 
+            "state": String, 
+          },  
         },  
         "callbacks": { 
           "state": String, 
@@ -20405,6 +20896,11 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
             "endTime": Date, 
             "provisional": Boolean, 
           },  
+          "afterCallWork": { 
+            "startTime": Date, 
+            "endTime": Date, 
+            "state": String, 
+          },  
         },  
         "chats": { 
           "state": String, 
@@ -20455,6 +20951,11 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
             "endTime": Date, 
             "provisional": Boolean, 
           },  
+          "afterCallWork": { 
+            "startTime": Date, 
+            "endTime": Date, 
+            "state": String, 
+          },  
         },  
         "cobrowsesessions": { 
           "state": String, 
@@ -20492,6 +20993,11 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
             "durationSeconds": Number, 
             "endTime": Date, 
             "provisional": Boolean, 
+          },  
+          "afterCallWork": { 
+            "startTime": Date, 
+            "endTime": Date, 
+            "state": String, 
           },  
         },  
         "emails": { 
@@ -20580,6 +21086,11 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
             "durationSeconds": Number, 
             "endTime": Date, 
             "provisional": Boolean, 
+          },  
+          "afterCallWork": { 
+            "startTime": Date, 
+            "endTime": Date, 
+            "state": String, 
           },  
         },  
         "messages": { 
@@ -20691,6 +21202,11 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
             "endTime": Date, 
             "provisional": Boolean, 
           },  
+          "afterCallWork": { 
+            "startTime": Date, 
+            "endTime": Date, 
+            "state": String, 
+          },  
         },  
         "screenshares": { 
           "state": String, 
@@ -20719,6 +21235,11 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
             "durationSeconds": Number, 
             "endTime": Date, 
             "provisional": Boolean, 
+          },  
+          "afterCallWork": { 
+            "startTime": Date, 
+            "endTime": Date, 
+            "state": String, 
           },  
         },  
         "socialExpressions": { 
@@ -20754,6 +21275,11 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
             "endTime": Date, 
             "provisional": Boolean, 
           },  
+          "afterCallWork": { 
+            "startTime": Date, 
+            "endTime": Date, 
+            "state": String, 
+          },  
         },  
         "videos": { 
           "state": String, 
@@ -20785,6 +21311,11 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
             "durationSeconds": Number, 
             "endTime": Date, 
             "provisional": Boolean, 
+          },  
+          "afterCallWork": { 
+            "startTime": Date, 
+            "endTime": Date, 
+            "state": String, 
           },  
         },  
         "evaluations": { 
@@ -20868,6 +21399,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "self": Address, 
                 "other": Address, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "callbacks": { 
                 "state": String, 
@@ -20893,6 +21425,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "provider": String, 
                 "peerId": String, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "chats": { 
                 "state": String, 
@@ -20913,6 +21446,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "avatarImageUrl": String, 
                 "journeyContext": JourneyContext, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "cobrowsesessions": { 
                 "state": String, 
@@ -20931,6 +21465,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "peerId": String, 
                 "segments": [Segment], 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "emails": { 
                 "state": String, 
@@ -20955,6 +21490,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "draftAttachments": [Attachment], 
                 "spam": Boolean, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "messages": { 
                 "state": String, 
@@ -20979,6 +21515,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "fromAddress": Address, 
                 "messages": [MessageDetails], 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "screenshares": { 
                 "state": String, 
@@ -20994,6 +21531,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "peerId": String, 
                 "segments": [Segment], 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "socialExpressions": { 
                 "state": String, 
@@ -21014,6 +21552,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "scriptId": String, 
                 "peerId": String, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "videos": { 
                 "state": String, 
@@ -21032,6 +21571,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "msids": [String], 
                 "self": Address, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "evaluations": { 
                 "id": String, 
@@ -21131,8 +21671,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -21156,6 +21696,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "addresses": { 
               "address": String, 
@@ -21163,6 +21704,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "state": String, 
             "title": String, 
@@ -21179,6 +21721,13 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
               "interests": [String], 
               "hobbies": [String], 
               "spouse": String, 
+              "education": { 
+                "school": String, 
+                "fieldOfStudy": String, 
+                "notes": String, 
+                "dateStart": String, 
+                "dateEnd": String, 
+              },  
             },  
             "employerInfo": { 
               "officialName": String, 
@@ -21438,6 +21987,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "addresses": { 
               "address": String, 
@@ -21445,6 +21995,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "state": String, 
             "title": String, 
@@ -21461,6 +22012,13 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
               "interests": [String], 
               "hobbies": [String], 
               "spouse": String, 
+              "education": { 
+                "school": String, 
+                "fieldOfStudy": String, 
+                "notes": String, 
+                "dateStart": String, 
+                "dateEnd": String, 
+              },  
             },  
             "employerInfo": { 
               "officialName": String, 
@@ -21723,6 +22281,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "addresses": { 
                 "address": String, 
@@ -21730,6 +22289,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "state": String, 
               "title": String, 
@@ -21746,6 +22306,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "interests": [String], 
                 "hobbies": [String], 
                 "spouse": String, 
+                "education": [Education], 
               },  
               "employerInfo": { 
                 "officialName": String, 
@@ -21957,8 +22518,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -22590,8 +23151,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -22602,8 +23163,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
             "firstUri": String, 
             "selfUri": String, 
             "nextUri": String, 
-            "lastUri": String, 
             "previousUri": String, 
+            "lastUri": String, 
             "pageCount": Number, 
           },  
           "selfUri": String, 
@@ -22614,8 +23175,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
         "firstUri": String, 
         "selfUri": String, 
         "nextUri": String, 
-        "lastUri": String, 
         "previousUri": String, 
+        "lastUri": String, 
         "pageCount": Number, 
       },  
       "selfUri": String, 
@@ -22639,6 +23200,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
         "mediaType": String, 
         "type": String, 
         "extension": String, 
+        "countryCode": String, 
       },  
       "addresses": { 
         "address": String, 
@@ -22646,6 +23208,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
         "mediaType": String, 
         "type": String, 
         "extension": String, 
+        "countryCode": String, 
       },  
       "state": String, 
       "title": String, 
@@ -22662,6 +23225,13 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
         "interests": [String], 
         "hobbies": [String], 
         "spouse": String, 
+        "education": { 
+          "school": String, 
+          "fieldOfStudy": String, 
+          "notes": String, 
+          "dateStart": String, 
+          "dateEnd": String, 
+        },  
       },  
       "employerInfo": { 
         "officialName": String, 
@@ -23039,6 +23609,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
         "mediaType": String, 
         "type": String, 
         "extension": String, 
+        "countryCode": String, 
       },  
       "addresses": { 
         "address": String, 
@@ -23046,6 +23617,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
         "mediaType": String, 
         "type": String, 
         "extension": String, 
+        "countryCode": String, 
       },  
       "state": String, 
       "title": String, 
@@ -23062,6 +23634,13 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
         "interests": [String], 
         "hobbies": [String], 
         "spouse": String, 
+        "education": { 
+          "school": String, 
+          "fieldOfStudy": String, 
+          "notes": String, 
+          "dateStart": String, 
+          "dateEnd": String, 
+        },  
       },  
       "employerInfo": { 
         "officialName": String, 
@@ -23442,6 +24021,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
           "mediaType": String, 
           "type": String, 
           "extension": String, 
+          "countryCode": String, 
         },  
         "addresses": { 
           "address": String, 
@@ -23449,6 +24029,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
           "mediaType": String, 
           "type": String, 
           "extension": String, 
+          "countryCode": String, 
         },  
         "state": String, 
         "title": String, 
@@ -23465,6 +24046,13 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
           "interests": [String], 
           "hobbies": [String], 
           "spouse": String, 
+          "education": { 
+            "school": String, 
+            "fieldOfStudy": String, 
+            "notes": String, 
+            "dateStart": String, 
+            "dateEnd": String, 
+          },  
         },  
         "employerInfo": { 
           "officialName": String, 
@@ -23950,6 +24538,11 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
               "endTime": Date, 
               "provisional": Boolean, 
             },  
+            "afterCallWork": { 
+              "startTime": Date, 
+              "endTime": Date, 
+              "state": String, 
+            },  
           },  
           "callbacks": { 
             "state": String, 
@@ -24001,6 +24594,11 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
               "endTime": Date, 
               "provisional": Boolean, 
             },  
+            "afterCallWork": { 
+              "startTime": Date, 
+              "endTime": Date, 
+              "state": String, 
+            },  
           },  
           "chats": { 
             "state": String, 
@@ -24048,6 +24646,11 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
               "endTime": Date, 
               "provisional": Boolean, 
             },  
+            "afterCallWork": { 
+              "startTime": Date, 
+              "endTime": Date, 
+              "state": String, 
+            },  
           },  
           "cobrowsesessions": { 
             "state": String, 
@@ -24085,6 +24688,11 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
               "durationSeconds": Number, 
               "endTime": Date, 
               "provisional": Boolean, 
+            },  
+            "afterCallWork": { 
+              "startTime": Date, 
+              "endTime": Date, 
+              "state": String, 
             },  
           },  
           "emails": { 
@@ -24157,6 +24765,11 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
               "durationSeconds": Number, 
               "endTime": Date, 
               "provisional": Boolean, 
+            },  
+            "afterCallWork": { 
+              "startTime": Date, 
+              "endTime": Date, 
+              "state": String, 
             },  
           },  
           "messages": { 
@@ -24252,6 +24865,11 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
               "endTime": Date, 
               "provisional": Boolean, 
             },  
+            "afterCallWork": { 
+              "startTime": Date, 
+              "endTime": Date, 
+              "state": String, 
+            },  
           },  
           "screenshares": { 
             "state": String, 
@@ -24280,6 +24898,11 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
               "durationSeconds": Number, 
               "endTime": Date, 
               "provisional": Boolean, 
+            },  
+            "afterCallWork": { 
+              "startTime": Date, 
+              "endTime": Date, 
+              "state": String, 
             },  
           },  
           "socialExpressions": { 
@@ -24315,6 +24938,11 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
               "endTime": Date, 
               "provisional": Boolean, 
             },  
+            "afterCallWork": { 
+              "startTime": Date, 
+              "endTime": Date, 
+              "state": String, 
+            },  
           },  
           "videos": { 
             "state": String, 
@@ -24346,6 +24974,11 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
               "durationSeconds": Number, 
               "endTime": Date, 
               "provisional": Boolean, 
+            },  
+            "afterCallWork": { 
+              "startTime": Date, 
+              "endTime": Date, 
+              "state": String, 
             },  
           },  
           "evaluations": { 
@@ -24439,8 +25072,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -24464,6 +25097,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "addresses": { 
                 "address": String, 
@@ -24471,6 +25105,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "state": String, 
               "title": String, 
@@ -24487,6 +25122,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "interests": [String], 
                 "hobbies": [String], 
                 "spouse": String, 
+                "education": [Education], 
               },  
               "employerInfo": { 
                 "officialName": String, 
@@ -24628,6 +25264,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "addresses": { 
                 "address": String, 
@@ -24635,6 +25272,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "state": String, 
               "title": String, 
@@ -24651,6 +25289,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "interests": [String], 
                 "hobbies": [String], 
                 "spouse": String, 
+                "education": [Education], 
               },  
               "employerInfo": { 
                 "officialName": String, 
@@ -25120,8 +25759,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -25132,8 +25771,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
           "firstUri": String, 
           "selfUri": String, 
           "nextUri": String, 
-          "lastUri": String, 
           "previousUri": String, 
+          "lastUri": String, 
           "pageCount": Number, 
         },  
         "selfUri": String, 
@@ -25278,6 +25917,11 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "endTime": Date, 
                 "provisional": Boolean, 
               },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
+              },  
             },  
             "callbacks": { 
               "state": String, 
@@ -25326,6 +25970,11 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "endTime": Date, 
                 "provisional": Boolean, 
               },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
+              },  
             },  
             "chats": { 
               "state": String, 
@@ -25364,6 +26013,11 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "endTime": Date, 
                 "provisional": Boolean, 
               },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
+              },  
             },  
             "cobrowsesessions": { 
               "state": String, 
@@ -25401,6 +26055,11 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "durationSeconds": Number, 
                 "endTime": Date, 
                 "provisional": Boolean, 
+              },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
               },  
             },  
             "emails": { 
@@ -25457,6 +26116,11 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "durationSeconds": Number, 
                 "endTime": Date, 
                 "provisional": Boolean, 
+              },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
               },  
             },  
             "messages": { 
@@ -25527,6 +26191,11 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "endTime": Date, 
                 "provisional": Boolean, 
               },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
+              },  
             },  
             "screenshares": { 
               "state": String, 
@@ -25555,6 +26224,11 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "durationSeconds": Number, 
                 "endTime": Date, 
                 "provisional": Boolean, 
+              },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
               },  
             },  
             "socialExpressions": { 
@@ -25590,6 +26264,11 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "endTime": Date, 
                 "provisional": Boolean, 
               },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
+              },  
             },  
             "videos": { 
               "state": String, 
@@ -25621,6 +26300,11 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "durationSeconds": Number, 
                 "endTime": Date, 
                 "provisional": Boolean, 
+              },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
               },  
             },  
             "evaluations": { 
@@ -25879,8 +26563,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -25891,8 +26575,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
             "firstUri": String, 
             "selfUri": String, 
             "nextUri": String, 
-            "lastUri": String, 
             "previousUri": String, 
+            "lastUri": String, 
             "pageCount": Number, 
           },  
           "selfUri": String, 
@@ -25916,6 +26600,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
             "mediaType": String, 
             "type": String, 
             "extension": String, 
+            "countryCode": String, 
           },  
           "addresses": { 
             "address": String, 
@@ -25923,6 +26608,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
             "mediaType": String, 
             "type": String, 
             "extension": String, 
+            "countryCode": String, 
           },  
           "state": String, 
           "title": String, 
@@ -25939,6 +26625,13 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
             "interests": [String], 
             "hobbies": [String], 
             "spouse": String, 
+            "education": { 
+              "school": String, 
+              "fieldOfStudy": String, 
+              "notes": String, 
+              "dateStart": String, 
+              "dateEnd": String, 
+            },  
           },  
           "employerInfo": { 
             "officialName": String, 
@@ -26298,6 +26991,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
             "mediaType": String, 
             "type": String, 
             "extension": String, 
+            "countryCode": String, 
           },  
           "addresses": { 
             "address": String, 
@@ -26305,6 +26999,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
             "mediaType": String, 
             "type": String, 
             "extension": String, 
+            "countryCode": String, 
           },  
           "state": String, 
           "title": String, 
@@ -26321,6 +27016,13 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
             "interests": [String], 
             "hobbies": [String], 
             "spouse": String, 
+            "education": { 
+              "school": String, 
+              "fieldOfStudy": String, 
+              "notes": String, 
+              "dateStart": String, 
+              "dateEnd": String, 
+            },  
           },  
           "employerInfo": { 
             "officialName": String, 
@@ -26683,6 +27385,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "addresses": { 
               "address": String, 
@@ -26690,6 +27393,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "state": String, 
             "title": String, 
@@ -26706,6 +27410,13 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
               "interests": [String], 
               "hobbies": [String], 
               "spouse": String, 
+              "education": { 
+                "school": String, 
+                "fieldOfStudy": String, 
+                "notes": String, 
+                "dateStart": String, 
+                "dateEnd": String, 
+              },  
             },  
             "employerInfo": { 
               "officialName": String, 
@@ -27025,6 +27736,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "self": Address, 
                 "other": Address, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "callbacks": { 
                 "state": String, 
@@ -27050,6 +27762,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "provider": String, 
                 "peerId": String, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "chats": { 
                 "state": String, 
@@ -27070,6 +27783,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "avatarImageUrl": String, 
                 "journeyContext": JourneyContext, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "cobrowsesessions": { 
                 "state": String, 
@@ -27088,6 +27802,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "peerId": String, 
                 "segments": [Segment], 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "emails": { 
                 "state": String, 
@@ -27112,6 +27827,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "draftAttachments": [Attachment], 
                 "spam": Boolean, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "messages": { 
                 "state": String, 
@@ -27136,6 +27852,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "fromAddress": Address, 
                 "messages": [MessageDetails], 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "screenshares": { 
                 "state": String, 
@@ -27151,6 +27868,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "peerId": String, 
                 "segments": [Segment], 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "socialExpressions": { 
                 "state": String, 
@@ -27171,6 +27889,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "scriptId": String, 
                 "peerId": String, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "videos": { 
                 "state": String, 
@@ -27189,6 +27908,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "msids": [String], 
                 "self": Address, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "evaluations": { 
                 "id": String, 
@@ -27288,8 +28008,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -27390,8 +28110,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -27415,6 +28135,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "addresses": { 
                 "address": String, 
@@ -27422,6 +28143,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "state": String, 
               "title": String, 
@@ -27438,6 +28160,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "interests": [String], 
                 "hobbies": [String], 
                 "spouse": String, 
+                "education": [Education], 
               },  
               "employerInfo": { 
                 "officialName": String, 
@@ -27579,6 +28302,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "addresses": { 
                 "address": String, 
@@ -27586,6 +28310,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "state": String, 
               "title": String, 
@@ -27602,6 +28327,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "interests": [String], 
                 "hobbies": [String], 
                 "spouse": String, 
+                "education": [Education], 
               },  
               "employerInfo": { 
                 "officialName": String, 
@@ -28051,8 +28777,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -28076,6 +28802,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "addresses": { 
                 "address": String, 
@@ -28083,6 +28810,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "state": String, 
               "title": String, 
@@ -28099,6 +28827,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "interests": [String], 
                 "hobbies": [String], 
                 "spouse": String, 
+                "education": [Education], 
               },  
               "employerInfo": { 
                 "officialName": String, 
@@ -28240,6 +28969,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "addresses": { 
                 "address": String, 
@@ -28247,6 +28977,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "state": String, 
               "title": String, 
@@ -28263,6 +28994,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "interests": [String], 
                 "hobbies": [String], 
                 "spouse": String, 
+                "education": [Education], 
               },  
               "employerInfo": { 
                 "officialName": String, 
@@ -28945,6 +29677,11 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "endTime": Date, 
                 "provisional": Boolean, 
               },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
+              },  
             },  
             "callbacks": { 
               "state": String, 
@@ -28993,6 +29730,11 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "endTime": Date, 
                 "provisional": Boolean, 
               },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
+              },  
             },  
             "chats": { 
               "state": String, 
@@ -29031,6 +29773,11 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "endTime": Date, 
                 "provisional": Boolean, 
               },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
+              },  
             },  
             "cobrowsesessions": { 
               "state": String, 
@@ -29068,6 +29815,11 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "durationSeconds": Number, 
                 "endTime": Date, 
                 "provisional": Boolean, 
+              },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
               },  
             },  
             "emails": { 
@@ -29124,6 +29876,11 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "durationSeconds": Number, 
                 "endTime": Date, 
                 "provisional": Boolean, 
+              },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
               },  
             },  
             "messages": { 
@@ -29194,6 +29951,11 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "endTime": Date, 
                 "provisional": Boolean, 
               },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
+              },  
             },  
             "screenshares": { 
               "state": String, 
@@ -29222,6 +29984,11 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "durationSeconds": Number, 
                 "endTime": Date, 
                 "provisional": Boolean, 
+              },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
               },  
             },  
             "socialExpressions": { 
@@ -29257,6 +30024,11 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "endTime": Date, 
                 "provisional": Boolean, 
               },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
+              },  
             },  
             "videos": { 
               "state": String, 
@@ -29288,6 +30060,11 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "durationSeconds": Number, 
                 "endTime": Date, 
                 "provisional": Boolean, 
+              },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
               },  
             },  
             "evaluations": { 
@@ -29546,8 +30323,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -29558,8 +30335,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
             "firstUri": String, 
             "selfUri": String, 
             "nextUri": String, 
-            "lastUri": String, 
             "previousUri": String, 
+            "lastUri": String, 
             "pageCount": Number, 
           },  
           "selfUri": String, 
@@ -29583,6 +30360,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
             "mediaType": String, 
             "type": String, 
             "extension": String, 
+            "countryCode": String, 
           },  
           "addresses": { 
             "address": String, 
@@ -29590,6 +30368,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
             "mediaType": String, 
             "type": String, 
             "extension": String, 
+            "countryCode": String, 
           },  
           "state": String, 
           "title": String, 
@@ -29606,6 +30385,13 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
             "interests": [String], 
             "hobbies": [String], 
             "spouse": String, 
+            "education": { 
+              "school": String, 
+              "fieldOfStudy": String, 
+              "notes": String, 
+              "dateStart": String, 
+              "dateEnd": String, 
+            },  
           },  
           "employerInfo": { 
             "officialName": String, 
@@ -29965,6 +30751,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
             "mediaType": String, 
             "type": String, 
             "extension": String, 
+            "countryCode": String, 
           },  
           "addresses": { 
             "address": String, 
@@ -29972,6 +30759,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
             "mediaType": String, 
             "type": String, 
             "extension": String, 
+            "countryCode": String, 
           },  
           "state": String, 
           "title": String, 
@@ -29988,6 +30776,13 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
             "interests": [String], 
             "hobbies": [String], 
             "spouse": String, 
+            "education": { 
+              "school": String, 
+              "fieldOfStudy": String, 
+              "notes": String, 
+              "dateStart": String, 
+              "dateEnd": String, 
+            },  
           },  
           "employerInfo": { 
             "officialName": String, 
@@ -30350,6 +31145,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "addresses": { 
               "address": String, 
@@ -30357,6 +31153,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "state": String, 
             "title": String, 
@@ -30373,6 +31170,13 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
               "interests": [String], 
               "hobbies": [String], 
               "spouse": String, 
+              "education": { 
+                "school": String, 
+                "fieldOfStudy": String, 
+                "notes": String, 
+                "dateStart": String, 
+                "dateEnd": String, 
+              },  
             },  
             "employerInfo": { 
               "officialName": String, 
@@ -30692,6 +31496,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "self": Address, 
                 "other": Address, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "callbacks": { 
                 "state": String, 
@@ -30717,6 +31522,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "provider": String, 
                 "peerId": String, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "chats": { 
                 "state": String, 
@@ -30737,6 +31543,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "avatarImageUrl": String, 
                 "journeyContext": JourneyContext, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "cobrowsesessions": { 
                 "state": String, 
@@ -30755,6 +31562,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "peerId": String, 
                 "segments": [Segment], 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "emails": { 
                 "state": String, 
@@ -30779,6 +31587,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "draftAttachments": [Attachment], 
                 "spam": Boolean, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "messages": { 
                 "state": String, 
@@ -30803,6 +31612,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "fromAddress": Address, 
                 "messages": [MessageDetails], 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "screenshares": { 
                 "state": String, 
@@ -30818,6 +31628,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "peerId": String, 
                 "segments": [Segment], 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "socialExpressions": { 
                 "state": String, 
@@ -30838,6 +31649,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "scriptId": String, 
                 "peerId": String, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "videos": { 
                 "state": String, 
@@ -30856,6 +31668,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "msids": [String], 
                 "self": Address, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "evaluations": { 
                 "id": String, 
@@ -30955,8 +31768,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -31057,8 +31870,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -31082,6 +31895,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "addresses": { 
                 "address": String, 
@@ -31089,6 +31903,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "state": String, 
               "title": String, 
@@ -31105,6 +31920,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "interests": [String], 
                 "hobbies": [String], 
                 "spouse": String, 
+                "education": [Education], 
               },  
               "employerInfo": { 
                 "officialName": String, 
@@ -31246,6 +32062,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "addresses": { 
                 "address": String, 
@@ -31253,6 +32070,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "state": String, 
               "title": String, 
@@ -31269,6 +32087,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "interests": [String], 
                 "hobbies": [String], 
                 "spouse": String, 
+                "education": [Education], 
               },  
               "employerInfo": { 
                 "officialName": String, 
@@ -31718,8 +32537,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -31743,6 +32562,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "addresses": { 
                 "address": String, 
@@ -31750,6 +32570,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "state": String, 
               "title": String, 
@@ -31766,6 +32587,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "interests": [String], 
                 "hobbies": [String], 
                 "spouse": String, 
+                "education": [Education], 
               },  
               "employerInfo": { 
                 "officialName": String, 
@@ -31907,6 +32729,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "addresses": { 
                 "address": String, 
@@ -31914,6 +32737,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "state": String, 
               "title": String, 
@@ -31930,6 +32754,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "interests": [String], 
                 "hobbies": [String], 
                 "spouse": String, 
+                "education": [Education], 
               },  
               "employerInfo": { 
                 "officialName": String, 
@@ -32936,6 +33761,11 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
           "endTime": Date, 
           "provisional": Boolean, 
         },  
+        "afterCallWork": { 
+          "startTime": Date, 
+          "endTime": Date, 
+          "state": String, 
+        },  
       },  
       "callbacks": { 
         "state": String, 
@@ -32987,6 +33817,11 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
           "endTime": Date, 
           "provisional": Boolean, 
         },  
+        "afterCallWork": { 
+          "startTime": Date, 
+          "endTime": Date, 
+          "state": String, 
+        },  
       },  
       "chats": { 
         "state": String, 
@@ -33037,6 +33872,11 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
           "endTime": Date, 
           "provisional": Boolean, 
         },  
+        "afterCallWork": { 
+          "startTime": Date, 
+          "endTime": Date, 
+          "state": String, 
+        },  
       },  
       "cobrowsesessions": { 
         "state": String, 
@@ -33074,6 +33914,11 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
           "durationSeconds": Number, 
           "endTime": Date, 
           "provisional": Boolean, 
+        },  
+        "afterCallWork": { 
+          "startTime": Date, 
+          "endTime": Date, 
+          "state": String, 
         },  
       },  
       "emails": { 
@@ -33178,6 +34023,11 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
           "durationSeconds": Number, 
           "endTime": Date, 
           "provisional": Boolean, 
+        },  
+        "afterCallWork": { 
+          "startTime": Date, 
+          "endTime": Date, 
+          "state": String, 
         },  
       },  
       "messages": { 
@@ -33305,6 +34155,11 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
           "endTime": Date, 
           "provisional": Boolean, 
         },  
+        "afterCallWork": { 
+          "startTime": Date, 
+          "endTime": Date, 
+          "state": String, 
+        },  
       },  
       "screenshares": { 
         "state": String, 
@@ -33333,6 +34188,11 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
           "durationSeconds": Number, 
           "endTime": Date, 
           "provisional": Boolean, 
+        },  
+        "afterCallWork": { 
+          "startTime": Date, 
+          "endTime": Date, 
+          "state": String, 
         },  
       },  
       "socialExpressions": { 
@@ -33368,6 +34228,11 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
           "endTime": Date, 
           "provisional": Boolean, 
         },  
+        "afterCallWork": { 
+          "startTime": Date, 
+          "endTime": Date, 
+          "state": String, 
+        },  
       },  
       "videos": { 
         "state": String, 
@@ -33399,6 +34264,11 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
           "durationSeconds": Number, 
           "endTime": Date, 
           "provisional": Boolean, 
+        },  
+        "afterCallWork": { 
+          "startTime": Date, 
+          "endTime": Date, 
+          "state": String, 
         },  
       },  
       "evaluations": { 
@@ -33536,6 +34406,11 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "endTime": Date, 
                 "provisional": Boolean, 
               },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
+              },  
             },  
             "callbacks": { 
               "state": String, 
@@ -33584,6 +34459,11 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "endTime": Date, 
                 "provisional": Boolean, 
               },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
+              },  
             },  
             "chats": { 
               "state": String, 
@@ -33622,6 +34502,11 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "endTime": Date, 
                 "provisional": Boolean, 
               },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
+              },  
             },  
             "cobrowsesessions": { 
               "state": String, 
@@ -33659,6 +34544,11 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "durationSeconds": Number, 
                 "endTime": Date, 
                 "provisional": Boolean, 
+              },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
               },  
             },  
             "emails": { 
@@ -33715,6 +34605,11 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "durationSeconds": Number, 
                 "endTime": Date, 
                 "provisional": Boolean, 
+              },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
               },  
             },  
             "messages": { 
@@ -33785,6 +34680,11 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "endTime": Date, 
                 "provisional": Boolean, 
               },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
+              },  
             },  
             "screenshares": { 
               "state": String, 
@@ -33813,6 +34713,11 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "durationSeconds": Number, 
                 "endTime": Date, 
                 "provisional": Boolean, 
+              },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
               },  
             },  
             "socialExpressions": { 
@@ -33848,6 +34753,11 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "endTime": Date, 
                 "provisional": Boolean, 
               },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
+              },  
             },  
             "videos": { 
               "state": String, 
@@ -33879,6 +34789,11 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "durationSeconds": Number, 
                 "endTime": Date, 
                 "provisional": Boolean, 
+              },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
               },  
             },  
             "evaluations": { 
@@ -34137,8 +35052,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -34149,8 +35064,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
             "firstUri": String, 
             "selfUri": String, 
             "nextUri": String, 
-            "lastUri": String, 
             "previousUri": String, 
+            "lastUri": String, 
             "pageCount": Number, 
           },  
           "selfUri": String, 
@@ -34174,6 +35089,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
             "mediaType": String, 
             "type": String, 
             "extension": String, 
+            "countryCode": String, 
           },  
           "addresses": { 
             "address": String, 
@@ -34181,6 +35097,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
             "mediaType": String, 
             "type": String, 
             "extension": String, 
+            "countryCode": String, 
           },  
           "state": String, 
           "title": String, 
@@ -34197,6 +35114,13 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
             "interests": [String], 
             "hobbies": [String], 
             "spouse": String, 
+            "education": { 
+              "school": String, 
+              "fieldOfStudy": String, 
+              "notes": String, 
+              "dateStart": String, 
+              "dateEnd": String, 
+            },  
           },  
           "employerInfo": { 
             "officialName": String, 
@@ -34556,6 +35480,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
             "mediaType": String, 
             "type": String, 
             "extension": String, 
+            "countryCode": String, 
           },  
           "addresses": { 
             "address": String, 
@@ -34563,6 +35488,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
             "mediaType": String, 
             "type": String, 
             "extension": String, 
+            "countryCode": String, 
           },  
           "state": String, 
           "title": String, 
@@ -34579,6 +35505,13 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
             "interests": [String], 
             "hobbies": [String], 
             "spouse": String, 
+            "education": { 
+              "school": String, 
+              "fieldOfStudy": String, 
+              "notes": String, 
+              "dateStart": String, 
+              "dateEnd": String, 
+            },  
           },  
           "employerInfo": { 
             "officialName": String, 
@@ -34941,6 +35874,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "addresses": { 
               "address": String, 
@@ -34948,6 +35882,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "state": String, 
             "title": String, 
@@ -34964,6 +35899,13 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "interests": [String], 
               "hobbies": [String], 
               "spouse": String, 
+              "education": { 
+                "school": String, 
+                "fieldOfStudy": String, 
+                "notes": String, 
+                "dateStart": String, 
+                "dateEnd": String, 
+              },  
             },  
             "employerInfo": { 
               "officialName": String, 
@@ -35283,6 +36225,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "self": Address, 
                 "other": Address, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "callbacks": { 
                 "state": String, 
@@ -35308,6 +36251,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "provider": String, 
                 "peerId": String, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "chats": { 
                 "state": String, 
@@ -35328,6 +36272,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "avatarImageUrl": String, 
                 "journeyContext": JourneyContext, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "cobrowsesessions": { 
                 "state": String, 
@@ -35346,6 +36291,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "peerId": String, 
                 "segments": [Segment], 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "emails": { 
                 "state": String, 
@@ -35370,6 +36316,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "draftAttachments": [Attachment], 
                 "spam": Boolean, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "messages": { 
                 "state": String, 
@@ -35394,6 +36341,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "fromAddress": Address, 
                 "messages": [MessageDetails], 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "screenshares": { 
                 "state": String, 
@@ -35409,6 +36357,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "peerId": String, 
                 "segments": [Segment], 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "socialExpressions": { 
                 "state": String, 
@@ -35429,6 +36378,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "scriptId": String, 
                 "peerId": String, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "videos": { 
                 "state": String, 
@@ -35447,6 +36397,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "msids": [String], 
                 "self": Address, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "evaluations": { 
                 "id": String, 
@@ -35546,8 +36497,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -35648,8 +36599,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -35673,6 +36624,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "addresses": { 
                 "address": String, 
@@ -35680,6 +36632,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "state": String, 
               "title": String, 
@@ -35696,6 +36649,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "interests": [String], 
                 "hobbies": [String], 
                 "spouse": String, 
+                "education": [Education], 
               },  
               "employerInfo": { 
                 "officialName": String, 
@@ -35837,6 +36791,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "addresses": { 
                 "address": String, 
@@ -35844,6 +36799,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "state": String, 
               "title": String, 
@@ -35860,6 +36816,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "interests": [String], 
                 "hobbies": [String], 
                 "spouse": String, 
+                "education": [Education], 
               },  
               "employerInfo": { 
                 "officialName": String, 
@@ -36309,8 +37266,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -36334,6 +37291,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "addresses": { 
                 "address": String, 
@@ -36341,6 +37299,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "state": String, 
               "title": String, 
@@ -36357,6 +37316,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "interests": [String], 
                 "hobbies": [String], 
                 "spouse": String, 
+                "education": [Education], 
               },  
               "employerInfo": { 
                 "officialName": String, 
@@ -36498,6 +37458,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "addresses": { 
                 "address": String, 
@@ -36505,6 +37466,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "state": String, 
               "title": String, 
@@ -36521,6 +37483,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "interests": [String], 
                 "hobbies": [String], 
                 "spouse": String, 
+                "education": [Education], 
               },  
               "employerInfo": { 
                 "officialName": String, 
@@ -37219,8 +38182,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -37231,8 +38194,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
           "firstUri": String, 
           "selfUri": String, 
           "nextUri": String, 
-          "lastUri": String, 
           "previousUri": String, 
+          "lastUri": String, 
           "pageCount": Number, 
         },  
         "selfUri": String, 
@@ -37243,8 +38206,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
       "firstUri": String, 
       "selfUri": String, 
       "nextUri": String, 
-      "lastUri": String, 
       "previousUri": String, 
+      "lastUri": String, 
       "pageCount": Number, 
     },  
     "selfUri": String, 
@@ -37268,6 +38231,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
       "mediaType": String, 
       "type": String, 
       "extension": String, 
+      "countryCode": String, 
     },  
     "addresses": { 
       "address": String, 
@@ -37275,6 +38239,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
       "mediaType": String, 
       "type": String, 
       "extension": String, 
+      "countryCode": String, 
     },  
     "state": String, 
     "title": String, 
@@ -37291,6 +38256,13 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
       "interests": [String], 
       "hobbies": [String], 
       "spouse": String, 
+      "education": { 
+        "school": String, 
+        "fieldOfStudy": String, 
+        "notes": String, 
+        "dateStart": String, 
+        "dateEnd": String, 
+      },  
     },  
     "employerInfo": { 
       "officialName": String, 
@@ -37677,6 +38649,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
       "mediaType": String, 
       "type": String, 
       "extension": String, 
+      "countryCode": String, 
     },  
     "addresses": { 
       "address": String, 
@@ -37684,6 +38657,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
       "mediaType": String, 
       "type": String, 
       "extension": String, 
+      "countryCode": String, 
     },  
     "state": String, 
     "title": String, 
@@ -37700,6 +38674,13 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
       "interests": [String], 
       "hobbies": [String], 
       "spouse": String, 
+      "education": { 
+        "school": String, 
+        "fieldOfStudy": String, 
+        "notes": String, 
+        "dateStart": String, 
+        "dateEnd": String, 
+      },  
     },  
     "employerInfo": { 
       "officialName": String, 
@@ -38089,6 +39070,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
         "mediaType": String, 
         "type": String, 
         "extension": String, 
+        "countryCode": String, 
       },  
       "addresses": { 
         "address": String, 
@@ -38096,6 +39078,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
         "mediaType": String, 
         "type": String, 
         "extension": String, 
+        "countryCode": String, 
       },  
       "state": String, 
       "title": String, 
@@ -38112,6 +39095,13 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
         "interests": [String], 
         "hobbies": [String], 
         "spouse": String, 
+        "education": { 
+          "school": String, 
+          "fieldOfStudy": String, 
+          "notes": String, 
+          "dateStart": String, 
+          "dateEnd": String, 
+        },  
       },  
       "employerInfo": { 
         "officialName": String, 
@@ -38606,6 +39596,11 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
             "endTime": Date, 
             "provisional": Boolean, 
           },  
+          "afterCallWork": { 
+            "startTime": Date, 
+            "endTime": Date, 
+            "state": String, 
+          },  
         },  
         "callbacks": { 
           "state": String, 
@@ -38657,6 +39652,11 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
             "endTime": Date, 
             "provisional": Boolean, 
           },  
+          "afterCallWork": { 
+            "startTime": Date, 
+            "endTime": Date, 
+            "state": String, 
+          },  
         },  
         "chats": { 
           "state": String, 
@@ -38707,6 +39707,11 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
             "endTime": Date, 
             "provisional": Boolean, 
           },  
+          "afterCallWork": { 
+            "startTime": Date, 
+            "endTime": Date, 
+            "state": String, 
+          },  
         },  
         "cobrowsesessions": { 
           "state": String, 
@@ -38744,6 +39749,11 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
             "durationSeconds": Number, 
             "endTime": Date, 
             "provisional": Boolean, 
+          },  
+          "afterCallWork": { 
+            "startTime": Date, 
+            "endTime": Date, 
+            "state": String, 
           },  
         },  
         "emails": { 
@@ -38832,6 +39842,11 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
             "durationSeconds": Number, 
             "endTime": Date, 
             "provisional": Boolean, 
+          },  
+          "afterCallWork": { 
+            "startTime": Date, 
+            "endTime": Date, 
+            "state": String, 
           },  
         },  
         "messages": { 
@@ -38943,6 +39958,11 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
             "endTime": Date, 
             "provisional": Boolean, 
           },  
+          "afterCallWork": { 
+            "startTime": Date, 
+            "endTime": Date, 
+            "state": String, 
+          },  
         },  
         "screenshares": { 
           "state": String, 
@@ -38971,6 +39991,11 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
             "durationSeconds": Number, 
             "endTime": Date, 
             "provisional": Boolean, 
+          },  
+          "afterCallWork": { 
+            "startTime": Date, 
+            "endTime": Date, 
+            "state": String, 
           },  
         },  
         "socialExpressions": { 
@@ -39006,6 +40031,11 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
             "endTime": Date, 
             "provisional": Boolean, 
           },  
+          "afterCallWork": { 
+            "startTime": Date, 
+            "endTime": Date, 
+            "state": String, 
+          },  
         },  
         "videos": { 
           "state": String, 
@@ -39037,6 +40067,11 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
             "durationSeconds": Number, 
             "endTime": Date, 
             "provisional": Boolean, 
+          },  
+          "afterCallWork": { 
+            "startTime": Date, 
+            "endTime": Date, 
+            "state": String, 
           },  
         },  
         "evaluations": { 
@@ -39120,6 +40155,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "self": Address, 
                 "other": Address, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "callbacks": { 
                 "state": String, 
@@ -39145,6 +40181,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "provider": String, 
                 "peerId": String, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "chats": { 
                 "state": String, 
@@ -39165,6 +40202,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "avatarImageUrl": String, 
                 "journeyContext": JourneyContext, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "cobrowsesessions": { 
                 "state": String, 
@@ -39183,6 +40221,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "peerId": String, 
                 "segments": [Segment], 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "emails": { 
                 "state": String, 
@@ -39207,6 +40246,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "draftAttachments": [Attachment], 
                 "spam": Boolean, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "messages": { 
                 "state": String, 
@@ -39231,6 +40271,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "fromAddress": Address, 
                 "messages": [MessageDetails], 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "screenshares": { 
                 "state": String, 
@@ -39246,6 +40287,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "peerId": String, 
                 "segments": [Segment], 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "socialExpressions": { 
                 "state": String, 
@@ -39266,6 +40308,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "scriptId": String, 
                 "peerId": String, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "videos": { 
                 "state": String, 
@@ -39284,6 +40327,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "msids": [String], 
                 "self": Address, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "evaluations": { 
                 "id": String, 
@@ -39383,8 +40427,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -39408,6 +40452,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "addresses": { 
               "address": String, 
@@ -39415,6 +40460,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "state": String, 
             "title": String, 
@@ -39431,6 +40477,13 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "interests": [String], 
               "hobbies": [String], 
               "spouse": String, 
+              "education": { 
+                "school": String, 
+                "fieldOfStudy": String, 
+                "notes": String, 
+                "dateStart": String, 
+                "dateEnd": String, 
+              },  
             },  
             "employerInfo": { 
               "officialName": String, 
@@ -39690,6 +40743,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "addresses": { 
               "address": String, 
@@ -39697,6 +40751,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "state": String, 
             "title": String, 
@@ -39713,6 +40768,13 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "interests": [String], 
               "hobbies": [String], 
               "spouse": String, 
+              "education": { 
+                "school": String, 
+                "fieldOfStudy": String, 
+                "notes": String, 
+                "dateStart": String, 
+                "dateEnd": String, 
+              },  
             },  
             "employerInfo": { 
               "officialName": String, 
@@ -39975,6 +41037,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "addresses": { 
                 "address": String, 
@@ -39982,6 +41045,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "state": String, 
               "title": String, 
@@ -39998,6 +41062,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "interests": [String], 
                 "hobbies": [String], 
                 "spouse": String, 
+                "education": [Education], 
               },  
               "employerInfo": { 
                 "officialName": String, 
@@ -40209,8 +41274,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -40842,8 +41907,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -40854,8 +41919,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
             "firstUri": String, 
             "selfUri": String, 
             "nextUri": String, 
-            "lastUri": String, 
             "previousUri": String, 
+            "lastUri": String, 
             "pageCount": Number, 
           },  
           "selfUri": String, 
@@ -40866,8 +41931,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
         "firstUri": String, 
         "selfUri": String, 
         "nextUri": String, 
-        "lastUri": String, 
         "previousUri": String, 
+        "lastUri": String, 
         "pageCount": Number, 
       },  
       "selfUri": String, 
@@ -41015,6 +42080,11 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "endTime": Date, 
               "provisional": Boolean, 
             },  
+            "afterCallWork": { 
+              "startTime": Date, 
+              "endTime": Date, 
+              "state": String, 
+            },  
           },  
           "callbacks": { 
             "state": String, 
@@ -41066,6 +42136,11 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "endTime": Date, 
               "provisional": Boolean, 
             },  
+            "afterCallWork": { 
+              "startTime": Date, 
+              "endTime": Date, 
+              "state": String, 
+            },  
           },  
           "chats": { 
             "state": String, 
@@ -41113,6 +42188,11 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "endTime": Date, 
               "provisional": Boolean, 
             },  
+            "afterCallWork": { 
+              "startTime": Date, 
+              "endTime": Date, 
+              "state": String, 
+            },  
           },  
           "cobrowsesessions": { 
             "state": String, 
@@ -41150,6 +42230,11 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "durationSeconds": Number, 
               "endTime": Date, 
               "provisional": Boolean, 
+            },  
+            "afterCallWork": { 
+              "startTime": Date, 
+              "endTime": Date, 
+              "state": String, 
             },  
           },  
           "emails": { 
@@ -41222,6 +42307,11 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "durationSeconds": Number, 
               "endTime": Date, 
               "provisional": Boolean, 
+            },  
+            "afterCallWork": { 
+              "startTime": Date, 
+              "endTime": Date, 
+              "state": String, 
             },  
           },  
           "messages": { 
@@ -41317,6 +42407,11 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "endTime": Date, 
               "provisional": Boolean, 
             },  
+            "afterCallWork": { 
+              "startTime": Date, 
+              "endTime": Date, 
+              "state": String, 
+            },  
           },  
           "screenshares": { 
             "state": String, 
@@ -41345,6 +42440,11 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "durationSeconds": Number, 
               "endTime": Date, 
               "provisional": Boolean, 
+            },  
+            "afterCallWork": { 
+              "startTime": Date, 
+              "endTime": Date, 
+              "state": String, 
             },  
           },  
           "socialExpressions": { 
@@ -41380,6 +42480,11 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "endTime": Date, 
               "provisional": Boolean, 
             },  
+            "afterCallWork": { 
+              "startTime": Date, 
+              "endTime": Date, 
+              "state": String, 
+            },  
           },  
           "videos": { 
             "state": String, 
@@ -41411,6 +42516,11 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "durationSeconds": Number, 
               "endTime": Date, 
               "provisional": Boolean, 
+            },  
+            "afterCallWork": { 
+              "startTime": Date, 
+              "endTime": Date, 
+              "state": String, 
             },  
           },  
           "evaluations": { 
@@ -41504,8 +42614,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -41529,6 +42639,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "addresses": { 
                 "address": String, 
@@ -41536,6 +42647,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "state": String, 
               "title": String, 
@@ -41552,6 +42664,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "interests": [String], 
                 "hobbies": [String], 
                 "spouse": String, 
+                "education": [Education], 
               },  
               "employerInfo": { 
                 "officialName": String, 
@@ -41693,6 +42806,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "addresses": { 
                 "address": String, 
@@ -41700,6 +42814,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "state": String, 
               "title": String, 
@@ -41716,6 +42831,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "interests": [String], 
                 "hobbies": [String], 
                 "spouse": String, 
+                "education": [Education], 
               },  
               "employerInfo": { 
                 "officialName": String, 
@@ -42185,8 +43301,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -42197,8 +43313,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
           "firstUri": String, 
           "selfUri": String, 
           "nextUri": String, 
-          "lastUri": String, 
           "previousUri": String, 
+          "lastUri": String, 
           "pageCount": Number, 
         },  
         "selfUri": String, 
@@ -42222,6 +43338,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
           "mediaType": String, 
           "type": String, 
           "extension": String, 
+          "countryCode": String, 
         },  
         "addresses": { 
           "address": String, 
@@ -42229,6 +43346,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
           "mediaType": String, 
           "type": String, 
           "extension": String, 
+          "countryCode": String, 
         },  
         "state": String, 
         "title": String, 
@@ -42245,6 +43363,13 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
           "interests": [String], 
           "hobbies": [String], 
           "spouse": String, 
+          "education": { 
+            "school": String, 
+            "fieldOfStudy": String, 
+            "notes": String, 
+            "dateStart": String, 
+            "dateEnd": String, 
+          },  
         },  
         "employerInfo": { 
           "officialName": String, 
@@ -42613,6 +43738,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
           "mediaType": String, 
           "type": String, 
           "extension": String, 
+          "countryCode": String, 
         },  
         "addresses": { 
           "address": String, 
@@ -42620,6 +43746,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
           "mediaType": String, 
           "type": String, 
           "extension": String, 
+          "countryCode": String, 
         },  
         "state": String, 
         "title": String, 
@@ -42636,6 +43763,13 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
           "interests": [String], 
           "hobbies": [String], 
           "spouse": String, 
+          "education": { 
+            "school": String, 
+            "fieldOfStudy": String, 
+            "notes": String, 
+            "dateStart": String, 
+            "dateEnd": String, 
+          },  
         },  
         "employerInfo": { 
           "officialName": String, 
@@ -43007,6 +44141,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
             "mediaType": String, 
             "type": String, 
             "extension": String, 
+            "countryCode": String, 
           },  
           "addresses": { 
             "address": String, 
@@ -43014,6 +44149,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
             "mediaType": String, 
             "type": String, 
             "extension": String, 
+            "countryCode": String, 
           },  
           "state": String, 
           "title": String, 
@@ -43030,6 +44166,13 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
             "interests": [String], 
             "hobbies": [String], 
             "spouse": String, 
+            "education": { 
+              "school": String, 
+              "fieldOfStudy": String, 
+              "notes": String, 
+              "dateStart": String, 
+              "dateEnd": String, 
+            },  
           },  
           "employerInfo": { 
             "officialName": String, 
@@ -43503,6 +44646,11 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "endTime": Date, 
                 "provisional": Boolean, 
               },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
+              },  
             },  
             "callbacks": { 
               "state": String, 
@@ -43551,6 +44699,11 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "endTime": Date, 
                 "provisional": Boolean, 
               },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
+              },  
             },  
             "chats": { 
               "state": String, 
@@ -43589,6 +44742,11 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "endTime": Date, 
                 "provisional": Boolean, 
               },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
+              },  
             },  
             "cobrowsesessions": { 
               "state": String, 
@@ -43626,6 +44784,11 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "durationSeconds": Number, 
                 "endTime": Date, 
                 "provisional": Boolean, 
+              },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
               },  
             },  
             "emails": { 
@@ -43682,6 +44845,11 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "durationSeconds": Number, 
                 "endTime": Date, 
                 "provisional": Boolean, 
+              },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
               },  
             },  
             "messages": { 
@@ -43752,6 +44920,11 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "endTime": Date, 
                 "provisional": Boolean, 
               },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
+              },  
             },  
             "screenshares": { 
               "state": String, 
@@ -43780,6 +44953,11 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "durationSeconds": Number, 
                 "endTime": Date, 
                 "provisional": Boolean, 
+              },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
               },  
             },  
             "socialExpressions": { 
@@ -43815,6 +44993,11 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "endTime": Date, 
                 "provisional": Boolean, 
               },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
+              },  
             },  
             "videos": { 
               "state": String, 
@@ -43846,6 +45029,11 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "durationSeconds": Number, 
                 "endTime": Date, 
                 "provisional": Boolean, 
+              },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
               },  
             },  
             "evaluations": { 
@@ -44104,8 +45292,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -44116,8 +45304,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
             "firstUri": String, 
             "selfUri": String, 
             "nextUri": String, 
-            "lastUri": String, 
             "previousUri": String, 
+            "lastUri": String, 
             "pageCount": Number, 
           },  
           "selfUri": String, 
@@ -44208,6 +45396,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "self": Address, 
                 "other": Address, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "callbacks": { 
                 "state": String, 
@@ -44233,6 +45422,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "provider": String, 
                 "peerId": String, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "chats": { 
                 "state": String, 
@@ -44253,6 +45443,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "avatarImageUrl": String, 
                 "journeyContext": JourneyContext, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "cobrowsesessions": { 
                 "state": String, 
@@ -44271,6 +45462,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "peerId": String, 
                 "segments": [Segment], 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "emails": { 
                 "state": String, 
@@ -44295,6 +45487,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "draftAttachments": [Attachment], 
                 "spam": Boolean, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "messages": { 
                 "state": String, 
@@ -44319,6 +45512,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "fromAddress": Address, 
                 "messages": [MessageDetails], 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "screenshares": { 
                 "state": String, 
@@ -44334,6 +45528,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "peerId": String, 
                 "segments": [Segment], 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "socialExpressions": { 
                 "state": String, 
@@ -44354,6 +45549,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "scriptId": String, 
                 "peerId": String, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "videos": { 
                 "state": String, 
@@ -44372,6 +45568,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "msids": [String], 
                 "self": Address, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "evaluations": { 
                 "id": String, 
@@ -44471,8 +45668,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -44496,6 +45693,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "addresses": { 
               "address": String, 
@@ -44503,6 +45701,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "state": String, 
             "title": String, 
@@ -44519,6 +45718,13 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "interests": [String], 
               "hobbies": [String], 
               "spouse": String, 
+              "education": { 
+                "school": String, 
+                "fieldOfStudy": String, 
+                "notes": String, 
+                "dateStart": String, 
+                "dateEnd": String, 
+              },  
             },  
             "employerInfo": { 
               "officialName": String, 
@@ -44778,6 +45984,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "addresses": { 
               "address": String, 
@@ -44785,6 +45992,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "state": String, 
             "title": String, 
@@ -44801,6 +46009,13 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "interests": [String], 
               "hobbies": [String], 
               "spouse": String, 
+              "education": { 
+                "school": String, 
+                "fieldOfStudy": String, 
+                "notes": String, 
+                "dateStart": String, 
+                "dateEnd": String, 
+              },  
             },  
             "employerInfo": { 
               "officialName": String, 
@@ -45063,6 +46278,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "addresses": { 
                 "address": String, 
@@ -45070,6 +46286,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "state": String, 
               "title": String, 
@@ -45086,6 +46303,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "interests": [String], 
                 "hobbies": [String], 
                 "spouse": String, 
+                "education": [Education], 
               },  
               "employerInfo": { 
                 "officialName": String, 
@@ -45297,8 +46515,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -45883,6 +47101,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "self": Address, 
                 "other": Address, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "callbacks": { 
                 "state": String, 
@@ -45908,6 +47127,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "provider": String, 
                 "peerId": String, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "chats": { 
                 "state": String, 
@@ -45928,6 +47148,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "avatarImageUrl": String, 
                 "journeyContext": JourneyContext, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "cobrowsesessions": { 
                 "state": String, 
@@ -45946,6 +47167,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "peerId": String, 
                 "segments": [Segment], 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "emails": { 
                 "state": String, 
@@ -45970,6 +47192,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "draftAttachments": [Attachment], 
                 "spam": Boolean, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "messages": { 
                 "state": String, 
@@ -45994,6 +47217,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "fromAddress": Address, 
                 "messages": [MessageDetails], 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "screenshares": { 
                 "state": String, 
@@ -46009,6 +47233,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "peerId": String, 
                 "segments": [Segment], 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "socialExpressions": { 
                 "state": String, 
@@ -46029,6 +47254,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "scriptId": String, 
                 "peerId": String, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "videos": { 
                 "state": String, 
@@ -46047,6 +47273,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "msids": [String], 
                 "self": Address, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "evaluations": { 
                 "id": String, 
@@ -46146,8 +47373,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -46171,6 +47398,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "addresses": { 
               "address": String, 
@@ -46178,6 +47406,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "state": String, 
             "title": String, 
@@ -46194,6 +47423,13 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "interests": [String], 
               "hobbies": [String], 
               "spouse": String, 
+              "education": { 
+                "school": String, 
+                "fieldOfStudy": String, 
+                "notes": String, 
+                "dateStart": String, 
+                "dateEnd": String, 
+              },  
             },  
             "employerInfo": { 
               "officialName": String, 
@@ -46453,6 +47689,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "addresses": { 
               "address": String, 
@@ -46460,6 +47697,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "state": String, 
             "title": String, 
@@ -46476,6 +47714,13 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "interests": [String], 
               "hobbies": [String], 
               "spouse": String, 
+              "education": { 
+                "school": String, 
+                "fieldOfStudy": String, 
+                "notes": String, 
+                "dateStart": String, 
+                "dateEnd": String, 
+              },  
             },  
             "employerInfo": { 
               "officialName": String, 
@@ -46738,6 +47983,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "addresses": { 
                 "address": String, 
@@ -46745,6 +47991,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "state": String, 
               "title": String, 
@@ -46761,6 +48008,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "interests": [String], 
                 "hobbies": [String], 
                 "spouse": String, 
+                "education": [Education], 
               },  
               "employerInfo": { 
                 "officialName": String, 
@@ -46972,8 +48220,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -47827,6 +49075,11 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "endTime": Date, 
               "provisional": Boolean, 
             },  
+            "afterCallWork": { 
+              "startTime": Date, 
+              "endTime": Date, 
+              "state": String, 
+            },  
           },  
           "callbacks": { 
             "state": String, 
@@ -47878,6 +49131,11 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "endTime": Date, 
               "provisional": Boolean, 
             },  
+            "afterCallWork": { 
+              "startTime": Date, 
+              "endTime": Date, 
+              "state": String, 
+            },  
           },  
           "chats": { 
             "state": String, 
@@ -47925,6 +49183,11 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "endTime": Date, 
               "provisional": Boolean, 
             },  
+            "afterCallWork": { 
+              "startTime": Date, 
+              "endTime": Date, 
+              "state": String, 
+            },  
           },  
           "cobrowsesessions": { 
             "state": String, 
@@ -47962,6 +49225,11 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "durationSeconds": Number, 
               "endTime": Date, 
               "provisional": Boolean, 
+            },  
+            "afterCallWork": { 
+              "startTime": Date, 
+              "endTime": Date, 
+              "state": String, 
             },  
           },  
           "emails": { 
@@ -48034,6 +49302,11 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "durationSeconds": Number, 
               "endTime": Date, 
               "provisional": Boolean, 
+            },  
+            "afterCallWork": { 
+              "startTime": Date, 
+              "endTime": Date, 
+              "state": String, 
             },  
           },  
           "messages": { 
@@ -48129,6 +49402,11 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "endTime": Date, 
               "provisional": Boolean, 
             },  
+            "afterCallWork": { 
+              "startTime": Date, 
+              "endTime": Date, 
+              "state": String, 
+            },  
           },  
           "screenshares": { 
             "state": String, 
@@ -48157,6 +49435,11 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "durationSeconds": Number, 
               "endTime": Date, 
               "provisional": Boolean, 
+            },  
+            "afterCallWork": { 
+              "startTime": Date, 
+              "endTime": Date, 
+              "state": String, 
             },  
           },  
           "socialExpressions": { 
@@ -48192,6 +49475,11 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "endTime": Date, 
               "provisional": Boolean, 
             },  
+            "afterCallWork": { 
+              "startTime": Date, 
+              "endTime": Date, 
+              "state": String, 
+            },  
           },  
           "videos": { 
             "state": String, 
@@ -48223,6 +49511,11 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "durationSeconds": Number, 
               "endTime": Date, 
               "provisional": Boolean, 
+            },  
+            "afterCallWork": { 
+              "startTime": Date, 
+              "endTime": Date, 
+              "state": String, 
             },  
           },  
           "evaluations": { 
@@ -48316,8 +49609,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -48341,6 +49634,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "addresses": { 
                 "address": String, 
@@ -48348,6 +49642,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "state": String, 
               "title": String, 
@@ -48364,6 +49659,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "interests": [String], 
                 "hobbies": [String], 
                 "spouse": String, 
+                "education": [Education], 
               },  
               "employerInfo": { 
                 "officialName": String, 
@@ -48505,6 +49801,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "addresses": { 
                 "address": String, 
@@ -48512,6 +49809,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "state": String, 
               "title": String, 
@@ -48528,6 +49826,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "interests": [String], 
                 "hobbies": [String], 
                 "spouse": String, 
+                "education": [Education], 
               },  
               "employerInfo": { 
                 "officialName": String, 
@@ -48997,8 +50296,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -49009,8 +50308,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
           "firstUri": String, 
           "selfUri": String, 
           "nextUri": String, 
-          "lastUri": String, 
           "previousUri": String, 
+          "lastUri": String, 
           "pageCount": Number, 
         },  
         "selfUri": String, 
@@ -49034,6 +50333,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
           "mediaType": String, 
           "type": String, 
           "extension": String, 
+          "countryCode": String, 
         },  
         "addresses": { 
           "address": String, 
@@ -49041,6 +50341,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
           "mediaType": String, 
           "type": String, 
           "extension": String, 
+          "countryCode": String, 
         },  
         "state": String, 
         "title": String, 
@@ -49057,6 +50358,13 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
           "interests": [String], 
           "hobbies": [String], 
           "spouse": String, 
+          "education": { 
+            "school": String, 
+            "fieldOfStudy": String, 
+            "notes": String, 
+            "dateStart": String, 
+            "dateEnd": String, 
+          },  
         },  
         "employerInfo": { 
           "officialName": String, 
@@ -49425,6 +50733,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
           "mediaType": String, 
           "type": String, 
           "extension": String, 
+          "countryCode": String, 
         },  
         "addresses": { 
           "address": String, 
@@ -49432,6 +50741,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
           "mediaType": String, 
           "type": String, 
           "extension": String, 
+          "countryCode": String, 
         },  
         "state": String, 
         "title": String, 
@@ -49448,6 +50758,13 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
           "interests": [String], 
           "hobbies": [String], 
           "spouse": String, 
+          "education": { 
+            "school": String, 
+            "fieldOfStudy": String, 
+            "notes": String, 
+            "dateStart": String, 
+            "dateEnd": String, 
+          },  
         },  
         "employerInfo": { 
           "officialName": String, 
@@ -49819,6 +51136,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
             "mediaType": String, 
             "type": String, 
             "extension": String, 
+            "countryCode": String, 
           },  
           "addresses": { 
             "address": String, 
@@ -49826,6 +51144,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
             "mediaType": String, 
             "type": String, 
             "extension": String, 
+            "countryCode": String, 
           },  
           "state": String, 
           "title": String, 
@@ -49842,6 +51161,13 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
             "interests": [String], 
             "hobbies": [String], 
             "spouse": String, 
+            "education": { 
+              "school": String, 
+              "fieldOfStudy": String, 
+              "notes": String, 
+              "dateStart": String, 
+              "dateEnd": String, 
+            },  
           },  
           "employerInfo": { 
             "officialName": String, 
@@ -50315,6 +51641,11 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "endTime": Date, 
                 "provisional": Boolean, 
               },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
+              },  
             },  
             "callbacks": { 
               "state": String, 
@@ -50363,6 +51694,11 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "endTime": Date, 
                 "provisional": Boolean, 
               },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
+              },  
             },  
             "chats": { 
               "state": String, 
@@ -50401,6 +51737,11 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "endTime": Date, 
                 "provisional": Boolean, 
               },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
+              },  
             },  
             "cobrowsesessions": { 
               "state": String, 
@@ -50438,6 +51779,11 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "durationSeconds": Number, 
                 "endTime": Date, 
                 "provisional": Boolean, 
+              },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
               },  
             },  
             "emails": { 
@@ -50494,6 +51840,11 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "durationSeconds": Number, 
                 "endTime": Date, 
                 "provisional": Boolean, 
+              },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
               },  
             },  
             "messages": { 
@@ -50564,6 +51915,11 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "endTime": Date, 
                 "provisional": Boolean, 
               },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
+              },  
             },  
             "screenshares": { 
               "state": String, 
@@ -50592,6 +51948,11 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "durationSeconds": Number, 
                 "endTime": Date, 
                 "provisional": Boolean, 
+              },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
               },  
             },  
             "socialExpressions": { 
@@ -50627,6 +51988,11 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "endTime": Date, 
                 "provisional": Boolean, 
               },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
+              },  
             },  
             "videos": { 
               "state": String, 
@@ -50658,6 +52024,11 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "durationSeconds": Number, 
                 "endTime": Date, 
                 "provisional": Boolean, 
+              },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
               },  
             },  
             "evaluations": { 
@@ -50916,8 +52287,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -50928,8 +52299,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
             "firstUri": String, 
             "selfUri": String, 
             "nextUri": String, 
-            "lastUri": String, 
             "previousUri": String, 
+            "lastUri": String, 
             "pageCount": Number, 
           },  
           "selfUri": String, 
@@ -51020,6 +52391,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "self": Address, 
                 "other": Address, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "callbacks": { 
                 "state": String, 
@@ -51045,6 +52417,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "provider": String, 
                 "peerId": String, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "chats": { 
                 "state": String, 
@@ -51065,6 +52438,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "avatarImageUrl": String, 
                 "journeyContext": JourneyContext, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "cobrowsesessions": { 
                 "state": String, 
@@ -51083,6 +52457,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "peerId": String, 
                 "segments": [Segment], 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "emails": { 
                 "state": String, 
@@ -51107,6 +52482,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "draftAttachments": [Attachment], 
                 "spam": Boolean, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "messages": { 
                 "state": String, 
@@ -51131,6 +52507,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "fromAddress": Address, 
                 "messages": [MessageDetails], 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "screenshares": { 
                 "state": String, 
@@ -51146,6 +52523,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "peerId": String, 
                 "segments": [Segment], 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "socialExpressions": { 
                 "state": String, 
@@ -51166,6 +52544,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "scriptId": String, 
                 "peerId": String, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "videos": { 
                 "state": String, 
@@ -51184,6 +52563,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "msids": [String], 
                 "self": Address, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "evaluations": { 
                 "id": String, 
@@ -51283,8 +52663,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -51308,6 +52688,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "addresses": { 
               "address": String, 
@@ -51315,6 +52696,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "state": String, 
             "title": String, 
@@ -51331,6 +52713,13 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "interests": [String], 
               "hobbies": [String], 
               "spouse": String, 
+              "education": { 
+                "school": String, 
+                "fieldOfStudy": String, 
+                "notes": String, 
+                "dateStart": String, 
+                "dateEnd": String, 
+              },  
             },  
             "employerInfo": { 
               "officialName": String, 
@@ -51590,6 +52979,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "addresses": { 
               "address": String, 
@@ -51597,6 +52987,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "state": String, 
             "title": String, 
@@ -51613,6 +53004,13 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "interests": [String], 
               "hobbies": [String], 
               "spouse": String, 
+              "education": { 
+                "school": String, 
+                "fieldOfStudy": String, 
+                "notes": String, 
+                "dateStart": String, 
+                "dateEnd": String, 
+              },  
             },  
             "employerInfo": { 
               "officialName": String, 
@@ -51875,6 +53273,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "addresses": { 
                 "address": String, 
@@ -51882,6 +53281,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "state": String, 
               "title": String, 
@@ -51898,6 +53298,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "interests": [String], 
                 "hobbies": [String], 
                 "spouse": String, 
+                "education": [Education], 
               },  
               "employerInfo": { 
                 "officialName": String, 
@@ -52109,8 +53510,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -52695,6 +54096,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "self": Address, 
                 "other": Address, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "callbacks": { 
                 "state": String, 
@@ -52720,6 +54122,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "provider": String, 
                 "peerId": String, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "chats": { 
                 "state": String, 
@@ -52740,6 +54143,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "avatarImageUrl": String, 
                 "journeyContext": JourneyContext, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "cobrowsesessions": { 
                 "state": String, 
@@ -52758,6 +54162,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "peerId": String, 
                 "segments": [Segment], 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "emails": { 
                 "state": String, 
@@ -52782,6 +54187,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "draftAttachments": [Attachment], 
                 "spam": Boolean, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "messages": { 
                 "state": String, 
@@ -52806,6 +54212,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "fromAddress": Address, 
                 "messages": [MessageDetails], 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "screenshares": { 
                 "state": String, 
@@ -52821,6 +54228,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "peerId": String, 
                 "segments": [Segment], 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "socialExpressions": { 
                 "state": String, 
@@ -52841,6 +54249,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "scriptId": String, 
                 "peerId": String, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "videos": { 
                 "state": String, 
@@ -52859,6 +54268,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "msids": [String], 
                 "self": Address, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "evaluations": { 
                 "id": String, 
@@ -52958,8 +54368,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -52983,6 +54393,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "addresses": { 
               "address": String, 
@@ -52990,6 +54401,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "state": String, 
             "title": String, 
@@ -53006,6 +54418,13 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "interests": [String], 
               "hobbies": [String], 
               "spouse": String, 
+              "education": { 
+                "school": String, 
+                "fieldOfStudy": String, 
+                "notes": String, 
+                "dateStart": String, 
+                "dateEnd": String, 
+              },  
             },  
             "employerInfo": { 
               "officialName": String, 
@@ -53265,6 +54684,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "addresses": { 
               "address": String, 
@@ -53272,6 +54692,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "state": String, 
             "title": String, 
@@ -53288,6 +54709,13 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "interests": [String], 
               "hobbies": [String], 
               "spouse": String, 
+              "education": { 
+                "school": String, 
+                "fieldOfStudy": String, 
+                "notes": String, 
+                "dateStart": String, 
+                "dateEnd": String, 
+              },  
             },  
             "employerInfo": { 
               "officialName": String, 
@@ -53550,6 +54978,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "addresses": { 
                 "address": String, 
@@ -53557,6 +54986,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "state": String, 
               "title": String, 
@@ -53573,6 +55003,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "interests": [String], 
                 "hobbies": [String], 
                 "spouse": String, 
+                "education": [Education], 
               },  
               "employerInfo": { 
                 "officialName": String, 
@@ -53784,8 +55215,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -54969,8 +56400,8 @@ EvaluationFormAndScoringSet <a href="#" onclick="return copyEvaluationFormAndSco
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -54981,8 +56412,8 @@ EvaluationFormAndScoringSet <a href="#" onclick="return copyEvaluationFormAndSco
           "firstUri": String, 
           "selfUri": String, 
           "nextUri": String, 
-          "lastUri": String, 
           "previousUri": String, 
+          "lastUri": String, 
           "pageCount": Number, 
         },  
         "selfUri": String, 
@@ -54993,8 +56424,8 @@ EvaluationFormAndScoringSet <a href="#" onclick="return copyEvaluationFormAndSco
       "firstUri": String, 
       "selfUri": String, 
       "nextUri": String, 
-      "lastUri": String, 
       "previousUri": String, 
+      "lastUri": String, 
       "pageCount": Number, 
     },  
     "selfUri": String, 
@@ -55255,8 +56686,8 @@ EvaluationForm <a href="#" onclick="return copyEvaluationFormExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -55267,8 +56698,8 @@ EvaluationForm <a href="#" onclick="return copyEvaluationFormExample()">Copy</a>
             "firstUri": String, 
             "selfUri": String, 
             "nextUri": String, 
-            "lastUri": String, 
             "previousUri": String, 
+            "lastUri": String, 
             "pageCount": Number, 
           },  
           "selfUri": String, 
@@ -55279,8 +56710,8 @@ EvaluationForm <a href="#" onclick="return copyEvaluationFormExample()">Copy</a>
         "firstUri": String, 
         "selfUri": String, 
         "nextUri": String, 
-        "lastUri": String, 
         "previousUri": String, 
+        "lastUri": String, 
         "pageCount": Number, 
       },  
       "selfUri": String, 
@@ -55291,8 +56722,8 @@ EvaluationForm <a href="#" onclick="return copyEvaluationFormExample()">Copy</a>
     "firstUri": String, 
     "selfUri": String, 
     "nextUri": String, 
-    "lastUri": String, 
     "previousUri": String, 
+    "lastUri": String, 
     "pageCount": Number, 
   },  
   "selfUri": String, 
@@ -55520,8 +56951,8 @@ EvaluationForm <a href="#" onclick="return copyEvaluationFormExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -55532,8 +56963,8 @@ EvaluationForm <a href="#" onclick="return copyEvaluationFormExample()">Copy</a>
             "firstUri": String, 
             "selfUri": String, 
             "nextUri": String, 
-            "lastUri": String, 
             "previousUri": String, 
+            "lastUri": String, 
             "pageCount": Number, 
           },  
           "selfUri": String, 
@@ -55544,8 +56975,8 @@ EvaluationForm <a href="#" onclick="return copyEvaluationFormExample()">Copy</a>
         "firstUri": String, 
         "selfUri": String, 
         "nextUri": String, 
-        "lastUri": String, 
         "previousUri": String, 
+        "lastUri": String, 
         "pageCount": Number, 
       },  
       "selfUri": String, 
@@ -55556,8 +56987,8 @@ EvaluationForm <a href="#" onclick="return copyEvaluationFormExample()">Copy</a>
     "firstUri": String, 
     "selfUri": String, 
     "nextUri": String, 
-    "lastUri": String, 
     "previousUri": String, 
+    "lastUri": String, 
     "pageCount": Number, 
   },  
   "selfUri": String, 
@@ -55782,8 +57213,8 @@ SurveyForm <a href="#" onclick="return copySurveyFormExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -55794,8 +57225,8 @@ SurveyForm <a href="#" onclick="return copySurveyFormExample()">Copy</a>
             "firstUri": String, 
             "selfUri": String, 
             "nextUri": String, 
-            "lastUri": String, 
             "previousUri": String, 
+            "lastUri": String, 
             "pageCount": Number, 
           },  
           "selfUri": String, 
@@ -55806,8 +57237,8 @@ SurveyForm <a href="#" onclick="return copySurveyFormExample()">Copy</a>
         "firstUri": String, 
         "selfUri": String, 
         "nextUri": String, 
-        "lastUri": String, 
         "previousUri": String, 
+        "lastUri": String, 
         "pageCount": Number, 
       },  
       "selfUri": String, 
@@ -55818,8 +57249,8 @@ SurveyForm <a href="#" onclick="return copySurveyFormExample()">Copy</a>
     "firstUri": String, 
     "selfUri": String, 
     "nextUri": String, 
-    "lastUri": String, 
     "previousUri": String, 
+    "lastUri": String, 
     "pageCount": Number, 
   },  
   "selfUri": String, 
@@ -56131,6 +57562,7 @@ KeywordSet <a href="#" onclick="return copyKeywordSetExample()">Copy</a>
       "mediaType": String, 
       "type": String, 
       "extension": String, 
+      "countryCode": String, 
     },  
     "addresses": { 
       "address": String, 
@@ -56138,6 +57570,7 @@ KeywordSet <a href="#" onclick="return copyKeywordSetExample()">Copy</a>
       "mediaType": String, 
       "type": String, 
       "extension": String, 
+      "countryCode": String, 
     },  
     "state": String, 
     "title": String, 
@@ -56154,6 +57587,13 @@ KeywordSet <a href="#" onclick="return copyKeywordSetExample()">Copy</a>
       "interests": [String], 
       "hobbies": [String], 
       "spouse": String, 
+      "education": { 
+        "school": String, 
+        "fieldOfStudy": String, 
+        "notes": String, 
+        "dateStart": String, 
+        "dateEnd": String, 
+      },  
     },  
     "employerInfo": { 
       "officialName": String, 
@@ -57092,6 +58532,7 @@ KeywordSet <a href="#" onclick="return copyKeywordSetExample()">Copy</a>
       "mediaType": String, 
       "type": String, 
       "extension": String, 
+      "countryCode": String, 
     },  
     "addresses": { 
       "address": String, 
@@ -57099,6 +58540,7 @@ KeywordSet <a href="#" onclick="return copyKeywordSetExample()">Copy</a>
       "mediaType": String, 
       "type": String, 
       "extension": String, 
+      "countryCode": String, 
     },  
     "state": String, 
     "title": String, 
@@ -57115,6 +58557,13 @@ KeywordSet <a href="#" onclick="return copyKeywordSetExample()">Copy</a>
       "interests": [String], 
       "hobbies": [String], 
       "spouse": String, 
+      "education": { 
+        "school": String, 
+        "fieldOfStudy": String, 
+        "notes": String, 
+        "dateStart": String, 
+        "dateEnd": String, 
+      },  
     },  
     "employerInfo": { 
       "officialName": String, 
@@ -57709,8 +59158,8 @@ SurveyFormAndScoringSet <a href="#" onclick="return copySurveyFormAndScoringSetE
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -57721,8 +59170,8 @@ SurveyFormAndScoringSet <a href="#" onclick="return copySurveyFormAndScoringSetE
           "firstUri": String, 
           "selfUri": String, 
           "nextUri": String, 
-          "lastUri": String, 
           "previousUri": String, 
+          "lastUri": String, 
           "pageCount": Number, 
         },  
         "selfUri": String, 
@@ -57733,8 +59182,8 @@ SurveyFormAndScoringSet <a href="#" onclick="return copySurveyFormAndScoringSetE
       "firstUri": String, 
       "selfUri": String, 
       "nextUri": String, 
-      "lastUri": String, 
       "previousUri": String, 
+      "lastUri": String, 
       "pageCount": Number, 
     },  
     "selfUri": String, 
@@ -57858,6 +59307,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
       "mediaType": String, 
       "type": String, 
       "extension": String, 
+      "countryCode": String, 
     },  
     "addresses": { 
       "address": String, 
@@ -57865,6 +59315,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
       "mediaType": String, 
       "type": String, 
       "extension": String, 
+      "countryCode": String, 
     },  
     "state": String, 
     "title": String, 
@@ -57881,6 +59332,13 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
       "interests": [String], 
       "hobbies": [String], 
       "spouse": String, 
+      "education": { 
+        "school": String, 
+        "fieldOfStudy": String, 
+        "notes": String, 
+        "dateStart": String, 
+        "dateEnd": String, 
+      },  
     },  
     "employerInfo": { 
       "officialName": String, 
@@ -58384,6 +59842,11 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
           "endTime": Date, 
           "provisional": Boolean, 
         },  
+        "afterCallWork": { 
+          "startTime": Date, 
+          "endTime": Date, 
+          "state": String, 
+        },  
       },  
       "callbacks": { 
         "state": String, 
@@ -58435,6 +59898,11 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
           "endTime": Date, 
           "provisional": Boolean, 
         },  
+        "afterCallWork": { 
+          "startTime": Date, 
+          "endTime": Date, 
+          "state": String, 
+        },  
       },  
       "chats": { 
         "state": String, 
@@ -58485,6 +59953,11 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
           "endTime": Date, 
           "provisional": Boolean, 
         },  
+        "afterCallWork": { 
+          "startTime": Date, 
+          "endTime": Date, 
+          "state": String, 
+        },  
       },  
       "cobrowsesessions": { 
         "state": String, 
@@ -58522,6 +59995,11 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
           "durationSeconds": Number, 
           "endTime": Date, 
           "provisional": Boolean, 
+        },  
+        "afterCallWork": { 
+          "startTime": Date, 
+          "endTime": Date, 
+          "state": String, 
         },  
       },  
       "emails": { 
@@ -58626,6 +60104,11 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
           "durationSeconds": Number, 
           "endTime": Date, 
           "provisional": Boolean, 
+        },  
+        "afterCallWork": { 
+          "startTime": Date, 
+          "endTime": Date, 
+          "state": String, 
         },  
       },  
       "messages": { 
@@ -58753,6 +60236,11 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
           "endTime": Date, 
           "provisional": Boolean, 
         },  
+        "afterCallWork": { 
+          "startTime": Date, 
+          "endTime": Date, 
+          "state": String, 
+        },  
       },  
       "screenshares": { 
         "state": String, 
@@ -58781,6 +60269,11 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
           "durationSeconds": Number, 
           "endTime": Date, 
           "provisional": Boolean, 
+        },  
+        "afterCallWork": { 
+          "startTime": Date, 
+          "endTime": Date, 
+          "state": String, 
         },  
       },  
       "socialExpressions": { 
@@ -58816,6 +60309,11 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
           "endTime": Date, 
           "provisional": Boolean, 
         },  
+        "afterCallWork": { 
+          "startTime": Date, 
+          "endTime": Date, 
+          "state": String, 
+        },  
       },  
       "videos": { 
         "state": String, 
@@ -58847,6 +60345,11 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
           "durationSeconds": Number, 
           "endTime": Date, 
           "provisional": Boolean, 
+        },  
+        "afterCallWork": { 
+          "startTime": Date, 
+          "endTime": Date, 
+          "state": String, 
         },  
       },  
       "evaluations": { 
@@ -58984,6 +60487,11 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "endTime": Date, 
                 "provisional": Boolean, 
               },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
+              },  
             },  
             "callbacks": { 
               "state": String, 
@@ -59032,6 +60540,11 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "endTime": Date, 
                 "provisional": Boolean, 
               },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
+              },  
             },  
             "chats": { 
               "state": String, 
@@ -59070,6 +60583,11 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "endTime": Date, 
                 "provisional": Boolean, 
               },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
+              },  
             },  
             "cobrowsesessions": { 
               "state": String, 
@@ -59107,6 +60625,11 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "durationSeconds": Number, 
                 "endTime": Date, 
                 "provisional": Boolean, 
+              },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
               },  
             },  
             "emails": { 
@@ -59163,6 +60686,11 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "durationSeconds": Number, 
                 "endTime": Date, 
                 "provisional": Boolean, 
+              },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
               },  
             },  
             "messages": { 
@@ -59233,6 +60761,11 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "endTime": Date, 
                 "provisional": Boolean, 
               },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
+              },  
             },  
             "screenshares": { 
               "state": String, 
@@ -59261,6 +60794,11 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "durationSeconds": Number, 
                 "endTime": Date, 
                 "provisional": Boolean, 
+              },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
               },  
             },  
             "socialExpressions": { 
@@ -59296,6 +60834,11 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "endTime": Date, 
                 "provisional": Boolean, 
               },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
+              },  
             },  
             "videos": { 
               "state": String, 
@@ -59327,6 +60870,11 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "durationSeconds": Number, 
                 "endTime": Date, 
                 "provisional": Boolean, 
+              },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
               },  
             },  
             "evaluations": { 
@@ -59585,8 +61133,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -59597,8 +61145,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
             "firstUri": String, 
             "selfUri": String, 
             "nextUri": String, 
-            "lastUri": String, 
             "previousUri": String, 
+            "lastUri": String, 
             "pageCount": Number, 
           },  
           "selfUri": String, 
@@ -59622,6 +61170,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
             "mediaType": String, 
             "type": String, 
             "extension": String, 
+            "countryCode": String, 
           },  
           "addresses": { 
             "address": String, 
@@ -59629,6 +61178,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
             "mediaType": String, 
             "type": String, 
             "extension": String, 
+            "countryCode": String, 
           },  
           "state": String, 
           "title": String, 
@@ -59645,6 +61195,13 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
             "interests": [String], 
             "hobbies": [String], 
             "spouse": String, 
+            "education": { 
+              "school": String, 
+              "fieldOfStudy": String, 
+              "notes": String, 
+              "dateStart": String, 
+              "dateEnd": String, 
+            },  
           },  
           "employerInfo": { 
             "officialName": String, 
@@ -60004,6 +61561,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
             "mediaType": String, 
             "type": String, 
             "extension": String, 
+            "countryCode": String, 
           },  
           "addresses": { 
             "address": String, 
@@ -60011,6 +61569,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
             "mediaType": String, 
             "type": String, 
             "extension": String, 
+            "countryCode": String, 
           },  
           "state": String, 
           "title": String, 
@@ -60027,6 +61586,13 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
             "interests": [String], 
             "hobbies": [String], 
             "spouse": String, 
+            "education": { 
+              "school": String, 
+              "fieldOfStudy": String, 
+              "notes": String, 
+              "dateStart": String, 
+              "dateEnd": String, 
+            },  
           },  
           "employerInfo": { 
             "officialName": String, 
@@ -60389,6 +61955,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "addresses": { 
               "address": String, 
@@ -60396,6 +61963,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "state": String, 
             "title": String, 
@@ -60412,6 +61980,13 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
               "interests": [String], 
               "hobbies": [String], 
               "spouse": String, 
+              "education": { 
+                "school": String, 
+                "fieldOfStudy": String, 
+                "notes": String, 
+                "dateStart": String, 
+                "dateEnd": String, 
+              },  
             },  
             "employerInfo": { 
               "officialName": String, 
@@ -60731,6 +62306,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "self": Address, 
                 "other": Address, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "callbacks": { 
                 "state": String, 
@@ -60756,6 +62332,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "provider": String, 
                 "peerId": String, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "chats": { 
                 "state": String, 
@@ -60776,6 +62353,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "avatarImageUrl": String, 
                 "journeyContext": JourneyContext, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "cobrowsesessions": { 
                 "state": String, 
@@ -60794,6 +62372,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "peerId": String, 
                 "segments": [Segment], 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "emails": { 
                 "state": String, 
@@ -60818,6 +62397,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "draftAttachments": [Attachment], 
                 "spam": Boolean, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "messages": { 
                 "state": String, 
@@ -60842,6 +62422,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "fromAddress": Address, 
                 "messages": [MessageDetails], 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "screenshares": { 
                 "state": String, 
@@ -60857,6 +62438,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "peerId": String, 
                 "segments": [Segment], 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "socialExpressions": { 
                 "state": String, 
@@ -60877,6 +62459,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "scriptId": String, 
                 "peerId": String, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "videos": { 
                 "state": String, 
@@ -60895,6 +62478,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "msids": [String], 
                 "self": Address, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "evaluations": { 
                 "id": String, 
@@ -60994,8 +62578,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -61096,8 +62680,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -61121,6 +62705,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "addresses": { 
                 "address": String, 
@@ -61128,6 +62713,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "state": String, 
               "title": String, 
@@ -61144,6 +62730,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "interests": [String], 
                 "hobbies": [String], 
                 "spouse": String, 
+                "education": [Education], 
               },  
               "employerInfo": { 
                 "officialName": String, 
@@ -61285,6 +62872,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "addresses": { 
                 "address": String, 
@@ -61292,6 +62880,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "state": String, 
               "title": String, 
@@ -61308,6 +62897,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "interests": [String], 
                 "hobbies": [String], 
                 "spouse": String, 
+                "education": [Education], 
               },  
               "employerInfo": { 
                 "officialName": String, 
@@ -61757,8 +63347,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -61782,6 +63372,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "addresses": { 
                 "address": String, 
@@ -61789,6 +63380,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "state": String, 
               "title": String, 
@@ -61805,6 +63397,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "interests": [String], 
                 "hobbies": [String], 
                 "spouse": String, 
+                "education": [Education], 
               },  
               "employerInfo": { 
                 "officialName": String, 
@@ -61946,6 +63539,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "addresses": { 
                 "address": String, 
@@ -61953,6 +63547,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "state": String, 
               "title": String, 
@@ -61969,6 +63564,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "interests": [String], 
                 "hobbies": [String], 
                 "spouse": String, 
+                "education": [Education], 
               },  
               "employerInfo": { 
                 "officialName": String, 
@@ -62667,8 +64263,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -62679,8 +64275,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
           "firstUri": String, 
           "selfUri": String, 
           "nextUri": String, 
-          "lastUri": String, 
           "previousUri": String, 
+          "lastUri": String, 
           "pageCount": Number, 
         },  
         "selfUri": String, 
@@ -62691,8 +64287,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
       "firstUri": String, 
       "selfUri": String, 
       "nextUri": String, 
-      "lastUri": String, 
       "previousUri": String, 
+      "lastUri": String, 
       "pageCount": Number, 
     },  
     "selfUri": String, 
@@ -62840,6 +64436,11 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
             "endTime": Date, 
             "provisional": Boolean, 
           },  
+          "afterCallWork": { 
+            "startTime": Date, 
+            "endTime": Date, 
+            "state": String, 
+          },  
         },  
         "callbacks": { 
           "state": String, 
@@ -62891,6 +64492,11 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
             "endTime": Date, 
             "provisional": Boolean, 
           },  
+          "afterCallWork": { 
+            "startTime": Date, 
+            "endTime": Date, 
+            "state": String, 
+          },  
         },  
         "chats": { 
           "state": String, 
@@ -62941,6 +64547,11 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
             "endTime": Date, 
             "provisional": Boolean, 
           },  
+          "afterCallWork": { 
+            "startTime": Date, 
+            "endTime": Date, 
+            "state": String, 
+          },  
         },  
         "cobrowsesessions": { 
           "state": String, 
@@ -62978,6 +64589,11 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
             "durationSeconds": Number, 
             "endTime": Date, 
             "provisional": Boolean, 
+          },  
+          "afterCallWork": { 
+            "startTime": Date, 
+            "endTime": Date, 
+            "state": String, 
           },  
         },  
         "emails": { 
@@ -63066,6 +64682,11 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
             "durationSeconds": Number, 
             "endTime": Date, 
             "provisional": Boolean, 
+          },  
+          "afterCallWork": { 
+            "startTime": Date, 
+            "endTime": Date, 
+            "state": String, 
           },  
         },  
         "messages": { 
@@ -63177,6 +64798,11 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
             "endTime": Date, 
             "provisional": Boolean, 
           },  
+          "afterCallWork": { 
+            "startTime": Date, 
+            "endTime": Date, 
+            "state": String, 
+          },  
         },  
         "screenshares": { 
           "state": String, 
@@ -63205,6 +64831,11 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
             "durationSeconds": Number, 
             "endTime": Date, 
             "provisional": Boolean, 
+          },  
+          "afterCallWork": { 
+            "startTime": Date, 
+            "endTime": Date, 
+            "state": String, 
           },  
         },  
         "socialExpressions": { 
@@ -63240,6 +64871,11 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
             "endTime": Date, 
             "provisional": Boolean, 
           },  
+          "afterCallWork": { 
+            "startTime": Date, 
+            "endTime": Date, 
+            "state": String, 
+          },  
         },  
         "videos": { 
           "state": String, 
@@ -63271,6 +64907,11 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
             "durationSeconds": Number, 
             "endTime": Date, 
             "provisional": Boolean, 
+          },  
+          "afterCallWork": { 
+            "startTime": Date, 
+            "endTime": Date, 
+            "state": String, 
           },  
         },  
         "evaluations": { 
@@ -63354,6 +64995,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "self": Address, 
                 "other": Address, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "callbacks": { 
                 "state": String, 
@@ -63379,6 +65021,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "provider": String, 
                 "peerId": String, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "chats": { 
                 "state": String, 
@@ -63399,6 +65042,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "avatarImageUrl": String, 
                 "journeyContext": JourneyContext, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "cobrowsesessions": { 
                 "state": String, 
@@ -63417,6 +65061,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "peerId": String, 
                 "segments": [Segment], 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "emails": { 
                 "state": String, 
@@ -63441,6 +65086,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "draftAttachments": [Attachment], 
                 "spam": Boolean, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "messages": { 
                 "state": String, 
@@ -63465,6 +65111,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "fromAddress": Address, 
                 "messages": [MessageDetails], 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "screenshares": { 
                 "state": String, 
@@ -63480,6 +65127,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "peerId": String, 
                 "segments": [Segment], 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "socialExpressions": { 
                 "state": String, 
@@ -63500,6 +65148,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "scriptId": String, 
                 "peerId": String, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "videos": { 
                 "state": String, 
@@ -63518,6 +65167,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "msids": [String], 
                 "self": Address, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "evaluations": { 
                 "id": String, 
@@ -63617,8 +65267,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -63642,6 +65292,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "addresses": { 
               "address": String, 
@@ -63649,6 +65300,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "state": String, 
             "title": String, 
@@ -63665,6 +65317,13 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
               "interests": [String], 
               "hobbies": [String], 
               "spouse": String, 
+              "education": { 
+                "school": String, 
+                "fieldOfStudy": String, 
+                "notes": String, 
+                "dateStart": String, 
+                "dateEnd": String, 
+              },  
             },  
             "employerInfo": { 
               "officialName": String, 
@@ -63924,6 +65583,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "addresses": { 
               "address": String, 
@@ -63931,6 +65591,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "state": String, 
             "title": String, 
@@ -63947,6 +65608,13 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
               "interests": [String], 
               "hobbies": [String], 
               "spouse": String, 
+              "education": { 
+                "school": String, 
+                "fieldOfStudy": String, 
+                "notes": String, 
+                "dateStart": String, 
+                "dateEnd": String, 
+              },  
             },  
             "employerInfo": { 
               "officialName": String, 
@@ -64209,6 +65877,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "addresses": { 
                 "address": String, 
@@ -64216,6 +65885,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "state": String, 
               "title": String, 
@@ -64232,6 +65902,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "interests": [String], 
                 "hobbies": [String], 
                 "spouse": String, 
+                "education": [Education], 
               },  
               "employerInfo": { 
                 "officialName": String, 
@@ -64443,8 +66114,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -65076,8 +66747,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -65088,8 +66759,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
             "firstUri": String, 
             "selfUri": String, 
             "nextUri": String, 
-            "lastUri": String, 
             "previousUri": String, 
+            "lastUri": String, 
             "pageCount": Number, 
           },  
           "selfUri": String, 
@@ -65100,8 +66771,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
         "firstUri": String, 
         "selfUri": String, 
         "nextUri": String, 
-        "lastUri": String, 
         "previousUri": String, 
+        "lastUri": String, 
         "pageCount": Number, 
       },  
       "selfUri": String, 
@@ -65125,6 +66796,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
         "mediaType": String, 
         "type": String, 
         "extension": String, 
+        "countryCode": String, 
       },  
       "addresses": { 
         "address": String, 
@@ -65132,6 +66804,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
         "mediaType": String, 
         "type": String, 
         "extension": String, 
+        "countryCode": String, 
       },  
       "state": String, 
       "title": String, 
@@ -65148,6 +66821,13 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
         "interests": [String], 
         "hobbies": [String], 
         "spouse": String, 
+        "education": { 
+          "school": String, 
+          "fieldOfStudy": String, 
+          "notes": String, 
+          "dateStart": String, 
+          "dateEnd": String, 
+        },  
       },  
       "employerInfo": { 
         "officialName": String, 
@@ -65525,6 +67205,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
         "mediaType": String, 
         "type": String, 
         "extension": String, 
+        "countryCode": String, 
       },  
       "addresses": { 
         "address": String, 
@@ -65532,6 +67213,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
         "mediaType": String, 
         "type": String, 
         "extension": String, 
+        "countryCode": String, 
       },  
       "state": String, 
       "title": String, 
@@ -65548,6 +67230,13 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
         "interests": [String], 
         "hobbies": [String], 
         "spouse": String, 
+        "education": { 
+          "school": String, 
+          "fieldOfStudy": String, 
+          "notes": String, 
+          "dateStart": String, 
+          "dateEnd": String, 
+        },  
       },  
       "employerInfo": { 
         "officialName": String, 
@@ -65928,6 +67617,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
           "mediaType": String, 
           "type": String, 
           "extension": String, 
+          "countryCode": String, 
         },  
         "addresses": { 
           "address": String, 
@@ -65935,6 +67625,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
           "mediaType": String, 
           "type": String, 
           "extension": String, 
+          "countryCode": String, 
         },  
         "state": String, 
         "title": String, 
@@ -65951,6 +67642,13 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
           "interests": [String], 
           "hobbies": [String], 
           "spouse": String, 
+          "education": { 
+            "school": String, 
+            "fieldOfStudy": String, 
+            "notes": String, 
+            "dateStart": String, 
+            "dateEnd": String, 
+          },  
         },  
         "employerInfo": { 
           "officialName": String, 
@@ -66436,6 +68134,11 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
               "endTime": Date, 
               "provisional": Boolean, 
             },  
+            "afterCallWork": { 
+              "startTime": Date, 
+              "endTime": Date, 
+              "state": String, 
+            },  
           },  
           "callbacks": { 
             "state": String, 
@@ -66487,6 +68190,11 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
               "endTime": Date, 
               "provisional": Boolean, 
             },  
+            "afterCallWork": { 
+              "startTime": Date, 
+              "endTime": Date, 
+              "state": String, 
+            },  
           },  
           "chats": { 
             "state": String, 
@@ -66534,6 +68242,11 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
               "endTime": Date, 
               "provisional": Boolean, 
             },  
+            "afterCallWork": { 
+              "startTime": Date, 
+              "endTime": Date, 
+              "state": String, 
+            },  
           },  
           "cobrowsesessions": { 
             "state": String, 
@@ -66571,6 +68284,11 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
               "durationSeconds": Number, 
               "endTime": Date, 
               "provisional": Boolean, 
+            },  
+            "afterCallWork": { 
+              "startTime": Date, 
+              "endTime": Date, 
+              "state": String, 
             },  
           },  
           "emails": { 
@@ -66643,6 +68361,11 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
               "durationSeconds": Number, 
               "endTime": Date, 
               "provisional": Boolean, 
+            },  
+            "afterCallWork": { 
+              "startTime": Date, 
+              "endTime": Date, 
+              "state": String, 
             },  
           },  
           "messages": { 
@@ -66738,6 +68461,11 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
               "endTime": Date, 
               "provisional": Boolean, 
             },  
+            "afterCallWork": { 
+              "startTime": Date, 
+              "endTime": Date, 
+              "state": String, 
+            },  
           },  
           "screenshares": { 
             "state": String, 
@@ -66766,6 +68494,11 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
               "durationSeconds": Number, 
               "endTime": Date, 
               "provisional": Boolean, 
+            },  
+            "afterCallWork": { 
+              "startTime": Date, 
+              "endTime": Date, 
+              "state": String, 
             },  
           },  
           "socialExpressions": { 
@@ -66801,6 +68534,11 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
               "endTime": Date, 
               "provisional": Boolean, 
             },  
+            "afterCallWork": { 
+              "startTime": Date, 
+              "endTime": Date, 
+              "state": String, 
+            },  
           },  
           "videos": { 
             "state": String, 
@@ -66832,6 +68570,11 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
               "durationSeconds": Number, 
               "endTime": Date, 
               "provisional": Boolean, 
+            },  
+            "afterCallWork": { 
+              "startTime": Date, 
+              "endTime": Date, 
+              "state": String, 
             },  
           },  
           "evaluations": { 
@@ -66925,8 +68668,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -66950,6 +68693,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "addresses": { 
                 "address": String, 
@@ -66957,6 +68701,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "state": String, 
               "title": String, 
@@ -66973,6 +68718,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "interests": [String], 
                 "hobbies": [String], 
                 "spouse": String, 
+                "education": [Education], 
               },  
               "employerInfo": { 
                 "officialName": String, 
@@ -67114,6 +68860,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "addresses": { 
                 "address": String, 
@@ -67121,6 +68868,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "state": String, 
               "title": String, 
@@ -67137,6 +68885,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "interests": [String], 
                 "hobbies": [String], 
                 "spouse": String, 
+                "education": [Education], 
               },  
               "employerInfo": { 
                 "officialName": String, 
@@ -67606,8 +69355,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -67618,8 +69367,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
           "firstUri": String, 
           "selfUri": String, 
           "nextUri": String, 
-          "lastUri": String, 
           "previousUri": String, 
+          "lastUri": String, 
           "pageCount": Number, 
         },  
         "selfUri": String, 
@@ -67764,6 +69513,11 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "endTime": Date, 
                 "provisional": Boolean, 
               },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
+              },  
             },  
             "callbacks": { 
               "state": String, 
@@ -67812,6 +69566,11 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "endTime": Date, 
                 "provisional": Boolean, 
               },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
+              },  
             },  
             "chats": { 
               "state": String, 
@@ -67850,6 +69609,11 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "endTime": Date, 
                 "provisional": Boolean, 
               },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
+              },  
             },  
             "cobrowsesessions": { 
               "state": String, 
@@ -67887,6 +69651,11 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "durationSeconds": Number, 
                 "endTime": Date, 
                 "provisional": Boolean, 
+              },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
               },  
             },  
             "emails": { 
@@ -67943,6 +69712,11 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "durationSeconds": Number, 
                 "endTime": Date, 
                 "provisional": Boolean, 
+              },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
               },  
             },  
             "messages": { 
@@ -68013,6 +69787,11 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "endTime": Date, 
                 "provisional": Boolean, 
               },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
+              },  
             },  
             "screenshares": { 
               "state": String, 
@@ -68041,6 +69820,11 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "durationSeconds": Number, 
                 "endTime": Date, 
                 "provisional": Boolean, 
+              },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
               },  
             },  
             "socialExpressions": { 
@@ -68076,6 +69860,11 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "endTime": Date, 
                 "provisional": Boolean, 
               },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
+              },  
             },  
             "videos": { 
               "state": String, 
@@ -68107,6 +69896,11 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "durationSeconds": Number, 
                 "endTime": Date, 
                 "provisional": Boolean, 
+              },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
               },  
             },  
             "evaluations": { 
@@ -68365,8 +70159,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -68377,8 +70171,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
             "firstUri": String, 
             "selfUri": String, 
             "nextUri": String, 
-            "lastUri": String, 
             "previousUri": String, 
+            "lastUri": String, 
             "pageCount": Number, 
           },  
           "selfUri": String, 
@@ -68402,6 +70196,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
             "mediaType": String, 
             "type": String, 
             "extension": String, 
+            "countryCode": String, 
           },  
           "addresses": { 
             "address": String, 
@@ -68409,6 +70204,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
             "mediaType": String, 
             "type": String, 
             "extension": String, 
+            "countryCode": String, 
           },  
           "state": String, 
           "title": String, 
@@ -68425,6 +70221,13 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
             "interests": [String], 
             "hobbies": [String], 
             "spouse": String, 
+            "education": { 
+              "school": String, 
+              "fieldOfStudy": String, 
+              "notes": String, 
+              "dateStart": String, 
+              "dateEnd": String, 
+            },  
           },  
           "employerInfo": { 
             "officialName": String, 
@@ -68784,6 +70587,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
             "mediaType": String, 
             "type": String, 
             "extension": String, 
+            "countryCode": String, 
           },  
           "addresses": { 
             "address": String, 
@@ -68791,6 +70595,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
             "mediaType": String, 
             "type": String, 
             "extension": String, 
+            "countryCode": String, 
           },  
           "state": String, 
           "title": String, 
@@ -68807,6 +70612,13 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
             "interests": [String], 
             "hobbies": [String], 
             "spouse": String, 
+            "education": { 
+              "school": String, 
+              "fieldOfStudy": String, 
+              "notes": String, 
+              "dateStart": String, 
+              "dateEnd": String, 
+            },  
           },  
           "employerInfo": { 
             "officialName": String, 
@@ -69169,6 +70981,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "addresses": { 
               "address": String, 
@@ -69176,6 +70989,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "state": String, 
             "title": String, 
@@ -69192,6 +71006,13 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
               "interests": [String], 
               "hobbies": [String], 
               "spouse": String, 
+              "education": { 
+                "school": String, 
+                "fieldOfStudy": String, 
+                "notes": String, 
+                "dateStart": String, 
+                "dateEnd": String, 
+              },  
             },  
             "employerInfo": { 
               "officialName": String, 
@@ -69511,6 +71332,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "self": Address, 
                 "other": Address, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "callbacks": { 
                 "state": String, 
@@ -69536,6 +71358,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "provider": String, 
                 "peerId": String, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "chats": { 
                 "state": String, 
@@ -69556,6 +71379,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "avatarImageUrl": String, 
                 "journeyContext": JourneyContext, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "cobrowsesessions": { 
                 "state": String, 
@@ -69574,6 +71398,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "peerId": String, 
                 "segments": [Segment], 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "emails": { 
                 "state": String, 
@@ -69598,6 +71423,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "draftAttachments": [Attachment], 
                 "spam": Boolean, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "messages": { 
                 "state": String, 
@@ -69622,6 +71448,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "fromAddress": Address, 
                 "messages": [MessageDetails], 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "screenshares": { 
                 "state": String, 
@@ -69637,6 +71464,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "peerId": String, 
                 "segments": [Segment], 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "socialExpressions": { 
                 "state": String, 
@@ -69657,6 +71485,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "scriptId": String, 
                 "peerId": String, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "videos": { 
                 "state": String, 
@@ -69675,6 +71504,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "msids": [String], 
                 "self": Address, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "evaluations": { 
                 "id": String, 
@@ -69774,8 +71604,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -69876,8 +71706,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -69901,6 +71731,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "addresses": { 
                 "address": String, 
@@ -69908,6 +71739,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "state": String, 
               "title": String, 
@@ -69924,6 +71756,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "interests": [String], 
                 "hobbies": [String], 
                 "spouse": String, 
+                "education": [Education], 
               },  
               "employerInfo": { 
                 "officialName": String, 
@@ -70065,6 +71898,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "addresses": { 
                 "address": String, 
@@ -70072,6 +71906,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "state": String, 
               "title": String, 
@@ -70088,6 +71923,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "interests": [String], 
                 "hobbies": [String], 
                 "spouse": String, 
+                "education": [Education], 
               },  
               "employerInfo": { 
                 "officialName": String, 
@@ -70537,8 +72373,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -70562,6 +72398,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "addresses": { 
                 "address": String, 
@@ -70569,6 +72406,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "state": String, 
               "title": String, 
@@ -70585,6 +72423,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "interests": [String], 
                 "hobbies": [String], 
                 "spouse": String, 
+                "education": [Education], 
               },  
               "employerInfo": { 
                 "officialName": String, 
@@ -70726,6 +72565,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "addresses": { 
                 "address": String, 
@@ -70733,6 +72573,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "state": String, 
               "title": String, 
@@ -70749,6 +72590,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "interests": [String], 
                 "hobbies": [String], 
                 "spouse": String, 
+                "education": [Education], 
               },  
               "employerInfo": { 
                 "officialName": String, 
@@ -71431,6 +73273,11 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "endTime": Date, 
                 "provisional": Boolean, 
               },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
+              },  
             },  
             "callbacks": { 
               "state": String, 
@@ -71479,6 +73326,11 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "endTime": Date, 
                 "provisional": Boolean, 
               },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
+              },  
             },  
             "chats": { 
               "state": String, 
@@ -71517,6 +73369,11 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "endTime": Date, 
                 "provisional": Boolean, 
               },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
+              },  
             },  
             "cobrowsesessions": { 
               "state": String, 
@@ -71554,6 +73411,11 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "durationSeconds": Number, 
                 "endTime": Date, 
                 "provisional": Boolean, 
+              },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
               },  
             },  
             "emails": { 
@@ -71610,6 +73472,11 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "durationSeconds": Number, 
                 "endTime": Date, 
                 "provisional": Boolean, 
+              },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
               },  
             },  
             "messages": { 
@@ -71680,6 +73547,11 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "endTime": Date, 
                 "provisional": Boolean, 
               },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
+              },  
             },  
             "screenshares": { 
               "state": String, 
@@ -71708,6 +73580,11 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "durationSeconds": Number, 
                 "endTime": Date, 
                 "provisional": Boolean, 
+              },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
               },  
             },  
             "socialExpressions": { 
@@ -71743,6 +73620,11 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "endTime": Date, 
                 "provisional": Boolean, 
               },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
+              },  
             },  
             "videos": { 
               "state": String, 
@@ -71774,6 +73656,11 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "durationSeconds": Number, 
                 "endTime": Date, 
                 "provisional": Boolean, 
+              },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
               },  
             },  
             "evaluations": { 
@@ -72032,8 +73919,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -72044,8 +73931,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
             "firstUri": String, 
             "selfUri": String, 
             "nextUri": String, 
-            "lastUri": String, 
             "previousUri": String, 
+            "lastUri": String, 
             "pageCount": Number, 
           },  
           "selfUri": String, 
@@ -72069,6 +73956,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
             "mediaType": String, 
             "type": String, 
             "extension": String, 
+            "countryCode": String, 
           },  
           "addresses": { 
             "address": String, 
@@ -72076,6 +73964,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
             "mediaType": String, 
             "type": String, 
             "extension": String, 
+            "countryCode": String, 
           },  
           "state": String, 
           "title": String, 
@@ -72092,6 +73981,13 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
             "interests": [String], 
             "hobbies": [String], 
             "spouse": String, 
+            "education": { 
+              "school": String, 
+              "fieldOfStudy": String, 
+              "notes": String, 
+              "dateStart": String, 
+              "dateEnd": String, 
+            },  
           },  
           "employerInfo": { 
             "officialName": String, 
@@ -72451,6 +74347,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
             "mediaType": String, 
             "type": String, 
             "extension": String, 
+            "countryCode": String, 
           },  
           "addresses": { 
             "address": String, 
@@ -72458,6 +74355,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
             "mediaType": String, 
             "type": String, 
             "extension": String, 
+            "countryCode": String, 
           },  
           "state": String, 
           "title": String, 
@@ -72474,6 +74372,13 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
             "interests": [String], 
             "hobbies": [String], 
             "spouse": String, 
+            "education": { 
+              "school": String, 
+              "fieldOfStudy": String, 
+              "notes": String, 
+              "dateStart": String, 
+              "dateEnd": String, 
+            },  
           },  
           "employerInfo": { 
             "officialName": String, 
@@ -72836,6 +74741,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "addresses": { 
               "address": String, 
@@ -72843,6 +74749,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "state": String, 
             "title": String, 
@@ -72859,6 +74766,13 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
               "interests": [String], 
               "hobbies": [String], 
               "spouse": String, 
+              "education": { 
+                "school": String, 
+                "fieldOfStudy": String, 
+                "notes": String, 
+                "dateStart": String, 
+                "dateEnd": String, 
+              },  
             },  
             "employerInfo": { 
               "officialName": String, 
@@ -73178,6 +75092,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "self": Address, 
                 "other": Address, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "callbacks": { 
                 "state": String, 
@@ -73203,6 +75118,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "provider": String, 
                 "peerId": String, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "chats": { 
                 "state": String, 
@@ -73223,6 +75139,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "avatarImageUrl": String, 
                 "journeyContext": JourneyContext, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "cobrowsesessions": { 
                 "state": String, 
@@ -73241,6 +75158,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "peerId": String, 
                 "segments": [Segment], 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "emails": { 
                 "state": String, 
@@ -73265,6 +75183,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "draftAttachments": [Attachment], 
                 "spam": Boolean, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "messages": { 
                 "state": String, 
@@ -73289,6 +75208,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "fromAddress": Address, 
                 "messages": [MessageDetails], 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "screenshares": { 
                 "state": String, 
@@ -73304,6 +75224,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "peerId": String, 
                 "segments": [Segment], 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "socialExpressions": { 
                 "state": String, 
@@ -73324,6 +75245,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "scriptId": String, 
                 "peerId": String, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "videos": { 
                 "state": String, 
@@ -73342,6 +75264,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "msids": [String], 
                 "self": Address, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "evaluations": { 
                 "id": String, 
@@ -73441,8 +75364,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -73543,8 +75466,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -73568,6 +75491,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "addresses": { 
                 "address": String, 
@@ -73575,6 +75499,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "state": String, 
               "title": String, 
@@ -73591,6 +75516,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "interests": [String], 
                 "hobbies": [String], 
                 "spouse": String, 
+                "education": [Education], 
               },  
               "employerInfo": { 
                 "officialName": String, 
@@ -73732,6 +75658,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "addresses": { 
                 "address": String, 
@@ -73739,6 +75666,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "state": String, 
               "title": String, 
@@ -73755,6 +75683,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "interests": [String], 
                 "hobbies": [String], 
                 "spouse": String, 
+                "education": [Education], 
               },  
               "employerInfo": { 
                 "officialName": String, 
@@ -74204,8 +76133,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -74229,6 +76158,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "addresses": { 
                 "address": String, 
@@ -74236,6 +76166,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "state": String, 
               "title": String, 
@@ -74252,6 +76183,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "interests": [String], 
                 "hobbies": [String], 
                 "spouse": String, 
+                "education": [Education], 
               },  
               "employerInfo": { 
                 "officialName": String, 
@@ -74393,6 +76325,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "addresses": { 
                 "address": String, 
@@ -74400,6 +76333,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "state": String, 
               "title": String, 
@@ -74416,6 +76350,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "interests": [String], 
                 "hobbies": [String], 
                 "spouse": String, 
+                "education": [Education], 
               },  
               "employerInfo": { 
                 "officialName": String, 
@@ -75339,6 +77274,11 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
             "endTime": Date, 
             "provisional": Boolean, 
           },  
+          "afterCallWork": { 
+            "startTime": Date, 
+            "endTime": Date, 
+            "state": String, 
+          },  
         },  
         "callbacks": { 
           "state": String, 
@@ -75390,6 +77330,11 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
             "endTime": Date, 
             "provisional": Boolean, 
           },  
+          "afterCallWork": { 
+            "startTime": Date, 
+            "endTime": Date, 
+            "state": String, 
+          },  
         },  
         "chats": { 
           "state": String, 
@@ -75440,6 +77385,11 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
             "endTime": Date, 
             "provisional": Boolean, 
           },  
+          "afterCallWork": { 
+            "startTime": Date, 
+            "endTime": Date, 
+            "state": String, 
+          },  
         },  
         "cobrowsesessions": { 
           "state": String, 
@@ -75477,6 +77427,11 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
             "durationSeconds": Number, 
             "endTime": Date, 
             "provisional": Boolean, 
+          },  
+          "afterCallWork": { 
+            "startTime": Date, 
+            "endTime": Date, 
+            "state": String, 
           },  
         },  
         "emails": { 
@@ -75565,6 +77520,11 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
             "durationSeconds": Number, 
             "endTime": Date, 
             "provisional": Boolean, 
+          },  
+          "afterCallWork": { 
+            "startTime": Date, 
+            "endTime": Date, 
+            "state": String, 
           },  
         },  
         "messages": { 
@@ -75676,6 +77636,11 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
             "endTime": Date, 
             "provisional": Boolean, 
           },  
+          "afterCallWork": { 
+            "startTime": Date, 
+            "endTime": Date, 
+            "state": String, 
+          },  
         },  
         "screenshares": { 
           "state": String, 
@@ -75704,6 +77669,11 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
             "durationSeconds": Number, 
             "endTime": Date, 
             "provisional": Boolean, 
+          },  
+          "afterCallWork": { 
+            "startTime": Date, 
+            "endTime": Date, 
+            "state": String, 
           },  
         },  
         "socialExpressions": { 
@@ -75739,6 +77709,11 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
             "endTime": Date, 
             "provisional": Boolean, 
           },  
+          "afterCallWork": { 
+            "startTime": Date, 
+            "endTime": Date, 
+            "state": String, 
+          },  
         },  
         "videos": { 
           "state": String, 
@@ -75770,6 +77745,11 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
             "durationSeconds": Number, 
             "endTime": Date, 
             "provisional": Boolean, 
+          },  
+          "afterCallWork": { 
+            "startTime": Date, 
+            "endTime": Date, 
+            "state": String, 
           },  
         },  
         "evaluations": { 
@@ -75853,6 +77833,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "self": Address, 
                 "other": Address, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "callbacks": { 
                 "state": String, 
@@ -75878,6 +77859,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "provider": String, 
                 "peerId": String, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "chats": { 
                 "state": String, 
@@ -75898,6 +77880,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "avatarImageUrl": String, 
                 "journeyContext": JourneyContext, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "cobrowsesessions": { 
                 "state": String, 
@@ -75916,6 +77899,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "peerId": String, 
                 "segments": [Segment], 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "emails": { 
                 "state": String, 
@@ -75940,6 +77924,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "draftAttachments": [Attachment], 
                 "spam": Boolean, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "messages": { 
                 "state": String, 
@@ -75964,6 +77949,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "fromAddress": Address, 
                 "messages": [MessageDetails], 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "screenshares": { 
                 "state": String, 
@@ -75979,6 +77965,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "peerId": String, 
                 "segments": [Segment], 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "socialExpressions": { 
                 "state": String, 
@@ -75999,6 +77986,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "scriptId": String, 
                 "peerId": String, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "videos": { 
                 "state": String, 
@@ -76017,6 +78005,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "msids": [String], 
                 "self": Address, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "evaluations": { 
                 "id": String, 
@@ -76116,8 +78105,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -76141,6 +78130,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "addresses": { 
               "address": String, 
@@ -76148,6 +78138,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "state": String, 
             "title": String, 
@@ -76164,6 +78155,13 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
               "interests": [String], 
               "hobbies": [String], 
               "spouse": String, 
+              "education": { 
+                "school": String, 
+                "fieldOfStudy": String, 
+                "notes": String, 
+                "dateStart": String, 
+                "dateEnd": String, 
+              },  
             },  
             "employerInfo": { 
               "officialName": String, 
@@ -76423,6 +78421,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "addresses": { 
               "address": String, 
@@ -76430,6 +78429,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "state": String, 
             "title": String, 
@@ -76446,6 +78446,13 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
               "interests": [String], 
               "hobbies": [String], 
               "spouse": String, 
+              "education": { 
+                "school": String, 
+                "fieldOfStudy": String, 
+                "notes": String, 
+                "dateStart": String, 
+                "dateEnd": String, 
+              },  
             },  
             "employerInfo": { 
               "officialName": String, 
@@ -76708,6 +78715,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "addresses": { 
                 "address": String, 
@@ -76715,6 +78723,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "state": String, 
               "title": String, 
@@ -76731,6 +78740,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "interests": [String], 
                 "hobbies": [String], 
                 "spouse": String, 
+                "education": [Education], 
               },  
               "employerInfo": { 
                 "officialName": String, 
@@ -76942,8 +78952,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -77575,8 +79585,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -77587,8 +79597,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
             "firstUri": String, 
             "selfUri": String, 
             "nextUri": String, 
-            "lastUri": String, 
             "previousUri": String, 
+            "lastUri": String, 
             "pageCount": Number, 
           },  
           "selfUri": String, 
@@ -77599,8 +79609,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
         "firstUri": String, 
         "selfUri": String, 
         "nextUri": String, 
-        "lastUri": String, 
         "previousUri": String, 
+        "lastUri": String, 
         "pageCount": Number, 
       },  
       "selfUri": String, 
@@ -77624,6 +79634,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
         "mediaType": String, 
         "type": String, 
         "extension": String, 
+        "countryCode": String, 
       },  
       "addresses": { 
         "address": String, 
@@ -77631,6 +79642,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
         "mediaType": String, 
         "type": String, 
         "extension": String, 
+        "countryCode": String, 
       },  
       "state": String, 
       "title": String, 
@@ -77647,6 +79659,13 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
         "interests": [String], 
         "hobbies": [String], 
         "spouse": String, 
+        "education": { 
+          "school": String, 
+          "fieldOfStudy": String, 
+          "notes": String, 
+          "dateStart": String, 
+          "dateEnd": String, 
+        },  
       },  
       "employerInfo": { 
         "officialName": String, 
@@ -78024,6 +80043,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
         "mediaType": String, 
         "type": String, 
         "extension": String, 
+        "countryCode": String, 
       },  
       "addresses": { 
         "address": String, 
@@ -78031,6 +80051,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
         "mediaType": String, 
         "type": String, 
         "extension": String, 
+        "countryCode": String, 
       },  
       "state": String, 
       "title": String, 
@@ -78047,6 +80068,13 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
         "interests": [String], 
         "hobbies": [String], 
         "spouse": String, 
+        "education": { 
+          "school": String, 
+          "fieldOfStudy": String, 
+          "notes": String, 
+          "dateStart": String, 
+          "dateEnd": String, 
+        },  
       },  
       "employerInfo": { 
         "officialName": String, 
@@ -78427,6 +80455,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
           "mediaType": String, 
           "type": String, 
           "extension": String, 
+          "countryCode": String, 
         },  
         "addresses": { 
           "address": String, 
@@ -78434,6 +80463,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
           "mediaType": String, 
           "type": String, 
           "extension": String, 
+          "countryCode": String, 
         },  
         "state": String, 
         "title": String, 
@@ -78450,6 +80480,13 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
           "interests": [String], 
           "hobbies": [String], 
           "spouse": String, 
+          "education": { 
+            "school": String, 
+            "fieldOfStudy": String, 
+            "notes": String, 
+            "dateStart": String, 
+            "dateEnd": String, 
+          },  
         },  
         "employerInfo": { 
           "officialName": String, 
@@ -78935,6 +80972,11 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
               "endTime": Date, 
               "provisional": Boolean, 
             },  
+            "afterCallWork": { 
+              "startTime": Date, 
+              "endTime": Date, 
+              "state": String, 
+            },  
           },  
           "callbacks": { 
             "state": String, 
@@ -78986,6 +81028,11 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
               "endTime": Date, 
               "provisional": Boolean, 
             },  
+            "afterCallWork": { 
+              "startTime": Date, 
+              "endTime": Date, 
+              "state": String, 
+            },  
           },  
           "chats": { 
             "state": String, 
@@ -79033,6 +81080,11 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
               "endTime": Date, 
               "provisional": Boolean, 
             },  
+            "afterCallWork": { 
+              "startTime": Date, 
+              "endTime": Date, 
+              "state": String, 
+            },  
           },  
           "cobrowsesessions": { 
             "state": String, 
@@ -79070,6 +81122,11 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
               "durationSeconds": Number, 
               "endTime": Date, 
               "provisional": Boolean, 
+            },  
+            "afterCallWork": { 
+              "startTime": Date, 
+              "endTime": Date, 
+              "state": String, 
             },  
           },  
           "emails": { 
@@ -79142,6 +81199,11 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
               "durationSeconds": Number, 
               "endTime": Date, 
               "provisional": Boolean, 
+            },  
+            "afterCallWork": { 
+              "startTime": Date, 
+              "endTime": Date, 
+              "state": String, 
             },  
           },  
           "messages": { 
@@ -79237,6 +81299,11 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
               "endTime": Date, 
               "provisional": Boolean, 
             },  
+            "afterCallWork": { 
+              "startTime": Date, 
+              "endTime": Date, 
+              "state": String, 
+            },  
           },  
           "screenshares": { 
             "state": String, 
@@ -79265,6 +81332,11 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
               "durationSeconds": Number, 
               "endTime": Date, 
               "provisional": Boolean, 
+            },  
+            "afterCallWork": { 
+              "startTime": Date, 
+              "endTime": Date, 
+              "state": String, 
             },  
           },  
           "socialExpressions": { 
@@ -79300,6 +81372,11 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
               "endTime": Date, 
               "provisional": Boolean, 
             },  
+            "afterCallWork": { 
+              "startTime": Date, 
+              "endTime": Date, 
+              "state": String, 
+            },  
           },  
           "videos": { 
             "state": String, 
@@ -79331,6 +81408,11 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
               "durationSeconds": Number, 
               "endTime": Date, 
               "provisional": Boolean, 
+            },  
+            "afterCallWork": { 
+              "startTime": Date, 
+              "endTime": Date, 
+              "state": String, 
             },  
           },  
           "evaluations": { 
@@ -79424,8 +81506,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -79449,6 +81531,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "addresses": { 
                 "address": String, 
@@ -79456,6 +81539,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "state": String, 
               "title": String, 
@@ -79472,6 +81556,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "interests": [String], 
                 "hobbies": [String], 
                 "spouse": String, 
+                "education": [Education], 
               },  
               "employerInfo": { 
                 "officialName": String, 
@@ -79613,6 +81698,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "addresses": { 
                 "address": String, 
@@ -79620,6 +81706,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "state": String, 
               "title": String, 
@@ -79636,6 +81723,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "interests": [String], 
                 "hobbies": [String], 
                 "spouse": String, 
+                "education": [Education], 
               },  
               "employerInfo": { 
                 "officialName": String, 
@@ -80105,8 +82193,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -80117,8 +82205,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
           "firstUri": String, 
           "selfUri": String, 
           "nextUri": String, 
-          "lastUri": String, 
           "previousUri": String, 
+          "lastUri": String, 
           "pageCount": Number, 
         },  
         "selfUri": String, 
@@ -80263,6 +82351,11 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "endTime": Date, 
                 "provisional": Boolean, 
               },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
+              },  
             },  
             "callbacks": { 
               "state": String, 
@@ -80311,6 +82404,11 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "endTime": Date, 
                 "provisional": Boolean, 
               },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
+              },  
             },  
             "chats": { 
               "state": String, 
@@ -80349,6 +82447,11 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "endTime": Date, 
                 "provisional": Boolean, 
               },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
+              },  
             },  
             "cobrowsesessions": { 
               "state": String, 
@@ -80386,6 +82489,11 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "durationSeconds": Number, 
                 "endTime": Date, 
                 "provisional": Boolean, 
+              },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
               },  
             },  
             "emails": { 
@@ -80442,6 +82550,11 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "durationSeconds": Number, 
                 "endTime": Date, 
                 "provisional": Boolean, 
+              },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
               },  
             },  
             "messages": { 
@@ -80512,6 +82625,11 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "endTime": Date, 
                 "provisional": Boolean, 
               },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
+              },  
             },  
             "screenshares": { 
               "state": String, 
@@ -80540,6 +82658,11 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "durationSeconds": Number, 
                 "endTime": Date, 
                 "provisional": Boolean, 
+              },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
               },  
             },  
             "socialExpressions": { 
@@ -80575,6 +82698,11 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "endTime": Date, 
                 "provisional": Boolean, 
               },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
+              },  
             },  
             "videos": { 
               "state": String, 
@@ -80606,6 +82734,11 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "durationSeconds": Number, 
                 "endTime": Date, 
                 "provisional": Boolean, 
+              },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
               },  
             },  
             "evaluations": { 
@@ -80864,8 +82997,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -80876,8 +83009,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
             "firstUri": String, 
             "selfUri": String, 
             "nextUri": String, 
-            "lastUri": String, 
             "previousUri": String, 
+            "lastUri": String, 
             "pageCount": Number, 
           },  
           "selfUri": String, 
@@ -80901,6 +83034,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
             "mediaType": String, 
             "type": String, 
             "extension": String, 
+            "countryCode": String, 
           },  
           "addresses": { 
             "address": String, 
@@ -80908,6 +83042,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
             "mediaType": String, 
             "type": String, 
             "extension": String, 
+            "countryCode": String, 
           },  
           "state": String, 
           "title": String, 
@@ -80924,6 +83059,13 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
             "interests": [String], 
             "hobbies": [String], 
             "spouse": String, 
+            "education": { 
+              "school": String, 
+              "fieldOfStudy": String, 
+              "notes": String, 
+              "dateStart": String, 
+              "dateEnd": String, 
+            },  
           },  
           "employerInfo": { 
             "officialName": String, 
@@ -81283,6 +83425,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
             "mediaType": String, 
             "type": String, 
             "extension": String, 
+            "countryCode": String, 
           },  
           "addresses": { 
             "address": String, 
@@ -81290,6 +83433,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
             "mediaType": String, 
             "type": String, 
             "extension": String, 
+            "countryCode": String, 
           },  
           "state": String, 
           "title": String, 
@@ -81306,6 +83450,13 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
             "interests": [String], 
             "hobbies": [String], 
             "spouse": String, 
+            "education": { 
+              "school": String, 
+              "fieldOfStudy": String, 
+              "notes": String, 
+              "dateStart": String, 
+              "dateEnd": String, 
+            },  
           },  
           "employerInfo": { 
             "officialName": String, 
@@ -81668,6 +83819,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "addresses": { 
               "address": String, 
@@ -81675,6 +83827,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "state": String, 
             "title": String, 
@@ -81691,6 +83844,13 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
               "interests": [String], 
               "hobbies": [String], 
               "spouse": String, 
+              "education": { 
+                "school": String, 
+                "fieldOfStudy": String, 
+                "notes": String, 
+                "dateStart": String, 
+                "dateEnd": String, 
+              },  
             },  
             "employerInfo": { 
               "officialName": String, 
@@ -82010,6 +84170,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "self": Address, 
                 "other": Address, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "callbacks": { 
                 "state": String, 
@@ -82035,6 +84196,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "provider": String, 
                 "peerId": String, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "chats": { 
                 "state": String, 
@@ -82055,6 +84217,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "avatarImageUrl": String, 
                 "journeyContext": JourneyContext, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "cobrowsesessions": { 
                 "state": String, 
@@ -82073,6 +84236,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "peerId": String, 
                 "segments": [Segment], 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "emails": { 
                 "state": String, 
@@ -82097,6 +84261,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "draftAttachments": [Attachment], 
                 "spam": Boolean, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "messages": { 
                 "state": String, 
@@ -82121,6 +84286,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "fromAddress": Address, 
                 "messages": [MessageDetails], 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "screenshares": { 
                 "state": String, 
@@ -82136,6 +84302,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "peerId": String, 
                 "segments": [Segment], 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "socialExpressions": { 
                 "state": String, 
@@ -82156,6 +84323,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "scriptId": String, 
                 "peerId": String, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "videos": { 
                 "state": String, 
@@ -82174,6 +84342,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "msids": [String], 
                 "self": Address, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "evaluations": { 
                 "id": String, 
@@ -82273,8 +84442,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -82375,8 +84544,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -82400,6 +84569,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "addresses": { 
                 "address": String, 
@@ -82407,6 +84577,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "state": String, 
               "title": String, 
@@ -82423,6 +84594,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "interests": [String], 
                 "hobbies": [String], 
                 "spouse": String, 
+                "education": [Education], 
               },  
               "employerInfo": { 
                 "officialName": String, 
@@ -82564,6 +84736,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "addresses": { 
                 "address": String, 
@@ -82571,6 +84744,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "state": String, 
               "title": String, 
@@ -82587,6 +84761,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "interests": [String], 
                 "hobbies": [String], 
                 "spouse": String, 
+                "education": [Education], 
               },  
               "employerInfo": { 
                 "officialName": String, 
@@ -83036,8 +85211,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -83061,6 +85236,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "addresses": { 
                 "address": String, 
@@ -83068,6 +85244,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "state": String, 
               "title": String, 
@@ -83084,6 +85261,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "interests": [String], 
                 "hobbies": [String], 
                 "spouse": String, 
+                "education": [Education], 
               },  
               "employerInfo": { 
                 "officialName": String, 
@@ -83225,6 +85403,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "addresses": { 
                 "address": String, 
@@ -83232,6 +85411,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "state": String, 
               "title": String, 
@@ -83248,6 +85428,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "interests": [String], 
                 "hobbies": [String], 
                 "spouse": String, 
+                "education": [Education], 
               },  
               "employerInfo": { 
                 "officialName": String, 
@@ -83930,6 +86111,11 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "endTime": Date, 
                 "provisional": Boolean, 
               },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
+              },  
             },  
             "callbacks": { 
               "state": String, 
@@ -83978,6 +86164,11 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "endTime": Date, 
                 "provisional": Boolean, 
               },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
+              },  
             },  
             "chats": { 
               "state": String, 
@@ -84016,6 +86207,11 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "endTime": Date, 
                 "provisional": Boolean, 
               },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
+              },  
             },  
             "cobrowsesessions": { 
               "state": String, 
@@ -84053,6 +86249,11 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "durationSeconds": Number, 
                 "endTime": Date, 
                 "provisional": Boolean, 
+              },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
               },  
             },  
             "emails": { 
@@ -84109,6 +86310,11 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "durationSeconds": Number, 
                 "endTime": Date, 
                 "provisional": Boolean, 
+              },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
               },  
             },  
             "messages": { 
@@ -84179,6 +86385,11 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "endTime": Date, 
                 "provisional": Boolean, 
               },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
+              },  
             },  
             "screenshares": { 
               "state": String, 
@@ -84207,6 +86418,11 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "durationSeconds": Number, 
                 "endTime": Date, 
                 "provisional": Boolean, 
+              },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
               },  
             },  
             "socialExpressions": { 
@@ -84242,6 +86458,11 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "endTime": Date, 
                 "provisional": Boolean, 
               },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
+              },  
             },  
             "videos": { 
               "state": String, 
@@ -84273,6 +86494,11 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "durationSeconds": Number, 
                 "endTime": Date, 
                 "provisional": Boolean, 
+              },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
               },  
             },  
             "evaluations": { 
@@ -84531,8 +86757,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -84543,8 +86769,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
             "firstUri": String, 
             "selfUri": String, 
             "nextUri": String, 
-            "lastUri": String, 
             "previousUri": String, 
+            "lastUri": String, 
             "pageCount": Number, 
           },  
           "selfUri": String, 
@@ -84568,6 +86794,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
             "mediaType": String, 
             "type": String, 
             "extension": String, 
+            "countryCode": String, 
           },  
           "addresses": { 
             "address": String, 
@@ -84575,6 +86802,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
             "mediaType": String, 
             "type": String, 
             "extension": String, 
+            "countryCode": String, 
           },  
           "state": String, 
           "title": String, 
@@ -84591,6 +86819,13 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
             "interests": [String], 
             "hobbies": [String], 
             "spouse": String, 
+            "education": { 
+              "school": String, 
+              "fieldOfStudy": String, 
+              "notes": String, 
+              "dateStart": String, 
+              "dateEnd": String, 
+            },  
           },  
           "employerInfo": { 
             "officialName": String, 
@@ -84950,6 +87185,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
             "mediaType": String, 
             "type": String, 
             "extension": String, 
+            "countryCode": String, 
           },  
           "addresses": { 
             "address": String, 
@@ -84957,6 +87193,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
             "mediaType": String, 
             "type": String, 
             "extension": String, 
+            "countryCode": String, 
           },  
           "state": String, 
           "title": String, 
@@ -84973,6 +87210,13 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
             "interests": [String], 
             "hobbies": [String], 
             "spouse": String, 
+            "education": { 
+              "school": String, 
+              "fieldOfStudy": String, 
+              "notes": String, 
+              "dateStart": String, 
+              "dateEnd": String, 
+            },  
           },  
           "employerInfo": { 
             "officialName": String, 
@@ -85335,6 +87579,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "addresses": { 
               "address": String, 
@@ -85342,6 +87587,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "state": String, 
             "title": String, 
@@ -85358,6 +87604,13 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
               "interests": [String], 
               "hobbies": [String], 
               "spouse": String, 
+              "education": { 
+                "school": String, 
+                "fieldOfStudy": String, 
+                "notes": String, 
+                "dateStart": String, 
+                "dateEnd": String, 
+              },  
             },  
             "employerInfo": { 
               "officialName": String, 
@@ -85677,6 +87930,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "self": Address, 
                 "other": Address, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "callbacks": { 
                 "state": String, 
@@ -85702,6 +87956,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "provider": String, 
                 "peerId": String, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "chats": { 
                 "state": String, 
@@ -85722,6 +87977,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "avatarImageUrl": String, 
                 "journeyContext": JourneyContext, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "cobrowsesessions": { 
                 "state": String, 
@@ -85740,6 +87996,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "peerId": String, 
                 "segments": [Segment], 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "emails": { 
                 "state": String, 
@@ -85764,6 +88021,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "draftAttachments": [Attachment], 
                 "spam": Boolean, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "messages": { 
                 "state": String, 
@@ -85788,6 +88046,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "fromAddress": Address, 
                 "messages": [MessageDetails], 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "screenshares": { 
                 "state": String, 
@@ -85803,6 +88062,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "peerId": String, 
                 "segments": [Segment], 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "socialExpressions": { 
                 "state": String, 
@@ -85823,6 +88083,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "scriptId": String, 
                 "peerId": String, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "videos": { 
                 "state": String, 
@@ -85841,6 +88102,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "msids": [String], 
                 "self": Address, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "evaluations": { 
                 "id": String, 
@@ -85940,8 +88202,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -86042,8 +88304,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -86067,6 +88329,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "addresses": { 
                 "address": String, 
@@ -86074,6 +88337,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "state": String, 
               "title": String, 
@@ -86090,6 +88354,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "interests": [String], 
                 "hobbies": [String], 
                 "spouse": String, 
+                "education": [Education], 
               },  
               "employerInfo": { 
                 "officialName": String, 
@@ -86231,6 +88496,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "addresses": { 
                 "address": String, 
@@ -86238,6 +88504,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "state": String, 
               "title": String, 
@@ -86254,6 +88521,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "interests": [String], 
                 "hobbies": [String], 
                 "spouse": String, 
+                "education": [Education], 
               },  
               "employerInfo": { 
                 "officialName": String, 
@@ -86703,8 +88971,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -86728,6 +88996,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "addresses": { 
                 "address": String, 
@@ -86735,6 +89004,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "state": String, 
               "title": String, 
@@ -86751,6 +89021,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "interests": [String], 
                 "hobbies": [String], 
                 "spouse": String, 
+                "education": [Education], 
               },  
               "employerInfo": { 
                 "officialName": String, 
@@ -86892,6 +89163,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "addresses": { 
                 "address": String, 
@@ -86899,6 +89171,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "state": String, 
               "title": String, 
@@ -86915,6 +89188,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "interests": [String], 
                 "hobbies": [String], 
                 "spouse": String, 
+                "education": [Education], 
               },  
               "employerInfo": { 
                 "officialName": String, 
@@ -87921,6 +90195,11 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
           "endTime": Date, 
           "provisional": Boolean, 
         },  
+        "afterCallWork": { 
+          "startTime": Date, 
+          "endTime": Date, 
+          "state": String, 
+        },  
       },  
       "callbacks": { 
         "state": String, 
@@ -87972,6 +90251,11 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
           "endTime": Date, 
           "provisional": Boolean, 
         },  
+        "afterCallWork": { 
+          "startTime": Date, 
+          "endTime": Date, 
+          "state": String, 
+        },  
       },  
       "chats": { 
         "state": String, 
@@ -88022,6 +90306,11 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
           "endTime": Date, 
           "provisional": Boolean, 
         },  
+        "afterCallWork": { 
+          "startTime": Date, 
+          "endTime": Date, 
+          "state": String, 
+        },  
       },  
       "cobrowsesessions": { 
         "state": String, 
@@ -88059,6 +90348,11 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
           "durationSeconds": Number, 
           "endTime": Date, 
           "provisional": Boolean, 
+        },  
+        "afterCallWork": { 
+          "startTime": Date, 
+          "endTime": Date, 
+          "state": String, 
         },  
       },  
       "emails": { 
@@ -88163,6 +90457,11 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
           "durationSeconds": Number, 
           "endTime": Date, 
           "provisional": Boolean, 
+        },  
+        "afterCallWork": { 
+          "startTime": Date, 
+          "endTime": Date, 
+          "state": String, 
         },  
       },  
       "messages": { 
@@ -88290,6 +90589,11 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
           "endTime": Date, 
           "provisional": Boolean, 
         },  
+        "afterCallWork": { 
+          "startTime": Date, 
+          "endTime": Date, 
+          "state": String, 
+        },  
       },  
       "screenshares": { 
         "state": String, 
@@ -88318,6 +90622,11 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
           "durationSeconds": Number, 
           "endTime": Date, 
           "provisional": Boolean, 
+        },  
+        "afterCallWork": { 
+          "startTime": Date, 
+          "endTime": Date, 
+          "state": String, 
         },  
       },  
       "socialExpressions": { 
@@ -88353,6 +90662,11 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
           "endTime": Date, 
           "provisional": Boolean, 
         },  
+        "afterCallWork": { 
+          "startTime": Date, 
+          "endTime": Date, 
+          "state": String, 
+        },  
       },  
       "videos": { 
         "state": String, 
@@ -88384,6 +90698,11 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
           "durationSeconds": Number, 
           "endTime": Date, 
           "provisional": Boolean, 
+        },  
+        "afterCallWork": { 
+          "startTime": Date, 
+          "endTime": Date, 
+          "state": String, 
         },  
       },  
       "evaluations": { 
@@ -88521,6 +90840,11 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "endTime": Date, 
                 "provisional": Boolean, 
               },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
+              },  
             },  
             "callbacks": { 
               "state": String, 
@@ -88569,6 +90893,11 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "endTime": Date, 
                 "provisional": Boolean, 
               },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
+              },  
             },  
             "chats": { 
               "state": String, 
@@ -88607,6 +90936,11 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "endTime": Date, 
                 "provisional": Boolean, 
               },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
+              },  
             },  
             "cobrowsesessions": { 
               "state": String, 
@@ -88644,6 +90978,11 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "durationSeconds": Number, 
                 "endTime": Date, 
                 "provisional": Boolean, 
+              },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
               },  
             },  
             "emails": { 
@@ -88700,6 +91039,11 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "durationSeconds": Number, 
                 "endTime": Date, 
                 "provisional": Boolean, 
+              },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
               },  
             },  
             "messages": { 
@@ -88770,6 +91114,11 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "endTime": Date, 
                 "provisional": Boolean, 
               },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
+              },  
             },  
             "screenshares": { 
               "state": String, 
@@ -88798,6 +91147,11 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "durationSeconds": Number, 
                 "endTime": Date, 
                 "provisional": Boolean, 
+              },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
               },  
             },  
             "socialExpressions": { 
@@ -88833,6 +91187,11 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "endTime": Date, 
                 "provisional": Boolean, 
               },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
+              },  
             },  
             "videos": { 
               "state": String, 
@@ -88864,6 +91223,11 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "durationSeconds": Number, 
                 "endTime": Date, 
                 "provisional": Boolean, 
+              },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
               },  
             },  
             "evaluations": { 
@@ -89122,8 +91486,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -89134,8 +91498,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
             "firstUri": String, 
             "selfUri": String, 
             "nextUri": String, 
-            "lastUri": String, 
             "previousUri": String, 
+            "lastUri": String, 
             "pageCount": Number, 
           },  
           "selfUri": String, 
@@ -89159,6 +91523,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
             "mediaType": String, 
             "type": String, 
             "extension": String, 
+            "countryCode": String, 
           },  
           "addresses": { 
             "address": String, 
@@ -89166,6 +91531,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
             "mediaType": String, 
             "type": String, 
             "extension": String, 
+            "countryCode": String, 
           },  
           "state": String, 
           "title": String, 
@@ -89182,6 +91548,13 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
             "interests": [String], 
             "hobbies": [String], 
             "spouse": String, 
+            "education": { 
+              "school": String, 
+              "fieldOfStudy": String, 
+              "notes": String, 
+              "dateStart": String, 
+              "dateEnd": String, 
+            },  
           },  
           "employerInfo": { 
             "officialName": String, 
@@ -89541,6 +91914,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
             "mediaType": String, 
             "type": String, 
             "extension": String, 
+            "countryCode": String, 
           },  
           "addresses": { 
             "address": String, 
@@ -89548,6 +91922,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
             "mediaType": String, 
             "type": String, 
             "extension": String, 
+            "countryCode": String, 
           },  
           "state": String, 
           "title": String, 
@@ -89564,6 +91939,13 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
             "interests": [String], 
             "hobbies": [String], 
             "spouse": String, 
+            "education": { 
+              "school": String, 
+              "fieldOfStudy": String, 
+              "notes": String, 
+              "dateStart": String, 
+              "dateEnd": String, 
+            },  
           },  
           "employerInfo": { 
             "officialName": String, 
@@ -89926,6 +92308,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "addresses": { 
               "address": String, 
@@ -89933,6 +92316,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "state": String, 
             "title": String, 
@@ -89949,6 +92333,13 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "interests": [String], 
               "hobbies": [String], 
               "spouse": String, 
+              "education": { 
+                "school": String, 
+                "fieldOfStudy": String, 
+                "notes": String, 
+                "dateStart": String, 
+                "dateEnd": String, 
+              },  
             },  
             "employerInfo": { 
               "officialName": String, 
@@ -90268,6 +92659,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "self": Address, 
                 "other": Address, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "callbacks": { 
                 "state": String, 
@@ -90293,6 +92685,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "provider": String, 
                 "peerId": String, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "chats": { 
                 "state": String, 
@@ -90313,6 +92706,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "avatarImageUrl": String, 
                 "journeyContext": JourneyContext, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "cobrowsesessions": { 
                 "state": String, 
@@ -90331,6 +92725,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "peerId": String, 
                 "segments": [Segment], 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "emails": { 
                 "state": String, 
@@ -90355,6 +92750,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "draftAttachments": [Attachment], 
                 "spam": Boolean, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "messages": { 
                 "state": String, 
@@ -90379,6 +92775,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "fromAddress": Address, 
                 "messages": [MessageDetails], 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "screenshares": { 
                 "state": String, 
@@ -90394,6 +92791,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "peerId": String, 
                 "segments": [Segment], 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "socialExpressions": { 
                 "state": String, 
@@ -90414,6 +92812,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "scriptId": String, 
                 "peerId": String, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "videos": { 
                 "state": String, 
@@ -90432,6 +92831,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "msids": [String], 
                 "self": Address, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "evaluations": { 
                 "id": String, 
@@ -90531,8 +92931,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -90633,8 +93033,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -90658,6 +93058,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "addresses": { 
                 "address": String, 
@@ -90665,6 +93066,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "state": String, 
               "title": String, 
@@ -90681,6 +93083,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "interests": [String], 
                 "hobbies": [String], 
                 "spouse": String, 
+                "education": [Education], 
               },  
               "employerInfo": { 
                 "officialName": String, 
@@ -90822,6 +93225,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "addresses": { 
                 "address": String, 
@@ -90829,6 +93233,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "state": String, 
               "title": String, 
@@ -90845,6 +93250,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "interests": [String], 
                 "hobbies": [String], 
                 "spouse": String, 
+                "education": [Education], 
               },  
               "employerInfo": { 
                 "officialName": String, 
@@ -91294,8 +93700,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -91319,6 +93725,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "addresses": { 
                 "address": String, 
@@ -91326,6 +93733,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "state": String, 
               "title": String, 
@@ -91342,6 +93750,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "interests": [String], 
                 "hobbies": [String], 
                 "spouse": String, 
+                "education": [Education], 
               },  
               "employerInfo": { 
                 "officialName": String, 
@@ -91483,6 +93892,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "addresses": { 
                 "address": String, 
@@ -91490,6 +93900,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "state": String, 
               "title": String, 
@@ -91506,6 +93917,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "interests": [String], 
                 "hobbies": [String], 
                 "spouse": String, 
+                "education": [Education], 
               },  
               "employerInfo": { 
                 "officialName": String, 
@@ -92204,8 +94616,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -92216,8 +94628,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
           "firstUri": String, 
           "selfUri": String, 
           "nextUri": String, 
-          "lastUri": String, 
           "previousUri": String, 
+          "lastUri": String, 
           "pageCount": Number, 
         },  
         "selfUri": String, 
@@ -92228,8 +94640,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
       "firstUri": String, 
       "selfUri": String, 
       "nextUri": String, 
-      "lastUri": String, 
       "previousUri": String, 
+      "lastUri": String, 
       "pageCount": Number, 
     },  
     "selfUri": String, 
@@ -92253,6 +94665,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
       "mediaType": String, 
       "type": String, 
       "extension": String, 
+      "countryCode": String, 
     },  
     "addresses": { 
       "address": String, 
@@ -92260,6 +94673,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
       "mediaType": String, 
       "type": String, 
       "extension": String, 
+      "countryCode": String, 
     },  
     "state": String, 
     "title": String, 
@@ -92276,6 +94690,13 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
       "interests": [String], 
       "hobbies": [String], 
       "spouse": String, 
+      "education": { 
+        "school": String, 
+        "fieldOfStudy": String, 
+        "notes": String, 
+        "dateStart": String, 
+        "dateEnd": String, 
+      },  
     },  
     "employerInfo": { 
       "officialName": String, 
@@ -92662,6 +95083,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
       "mediaType": String, 
       "type": String, 
       "extension": String, 
+      "countryCode": String, 
     },  
     "addresses": { 
       "address": String, 
@@ -92669,6 +95091,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
       "mediaType": String, 
       "type": String, 
       "extension": String, 
+      "countryCode": String, 
     },  
     "state": String, 
     "title": String, 
@@ -92685,6 +95108,13 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
       "interests": [String], 
       "hobbies": [String], 
       "spouse": String, 
+      "education": { 
+        "school": String, 
+        "fieldOfStudy": String, 
+        "notes": String, 
+        "dateStart": String, 
+        "dateEnd": String, 
+      },  
     },  
     "employerInfo": { 
       "officialName": String, 
@@ -93074,6 +95504,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
         "mediaType": String, 
         "type": String, 
         "extension": String, 
+        "countryCode": String, 
       },  
       "addresses": { 
         "address": String, 
@@ -93081,6 +95512,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
         "mediaType": String, 
         "type": String, 
         "extension": String, 
+        "countryCode": String, 
       },  
       "state": String, 
       "title": String, 
@@ -93097,6 +95529,13 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
         "interests": [String], 
         "hobbies": [String], 
         "spouse": String, 
+        "education": { 
+          "school": String, 
+          "fieldOfStudy": String, 
+          "notes": String, 
+          "dateStart": String, 
+          "dateEnd": String, 
+        },  
       },  
       "employerInfo": { 
         "officialName": String, 
@@ -93591,6 +96030,11 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
             "endTime": Date, 
             "provisional": Boolean, 
           },  
+          "afterCallWork": { 
+            "startTime": Date, 
+            "endTime": Date, 
+            "state": String, 
+          },  
         },  
         "callbacks": { 
           "state": String, 
@@ -93642,6 +96086,11 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
             "endTime": Date, 
             "provisional": Boolean, 
           },  
+          "afterCallWork": { 
+            "startTime": Date, 
+            "endTime": Date, 
+            "state": String, 
+          },  
         },  
         "chats": { 
           "state": String, 
@@ -93692,6 +96141,11 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
             "endTime": Date, 
             "provisional": Boolean, 
           },  
+          "afterCallWork": { 
+            "startTime": Date, 
+            "endTime": Date, 
+            "state": String, 
+          },  
         },  
         "cobrowsesessions": { 
           "state": String, 
@@ -93729,6 +96183,11 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
             "durationSeconds": Number, 
             "endTime": Date, 
             "provisional": Boolean, 
+          },  
+          "afterCallWork": { 
+            "startTime": Date, 
+            "endTime": Date, 
+            "state": String, 
           },  
         },  
         "emails": { 
@@ -93817,6 +96276,11 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
             "durationSeconds": Number, 
             "endTime": Date, 
             "provisional": Boolean, 
+          },  
+          "afterCallWork": { 
+            "startTime": Date, 
+            "endTime": Date, 
+            "state": String, 
           },  
         },  
         "messages": { 
@@ -93928,6 +96392,11 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
             "endTime": Date, 
             "provisional": Boolean, 
           },  
+          "afterCallWork": { 
+            "startTime": Date, 
+            "endTime": Date, 
+            "state": String, 
+          },  
         },  
         "screenshares": { 
           "state": String, 
@@ -93956,6 +96425,11 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
             "durationSeconds": Number, 
             "endTime": Date, 
             "provisional": Boolean, 
+          },  
+          "afterCallWork": { 
+            "startTime": Date, 
+            "endTime": Date, 
+            "state": String, 
           },  
         },  
         "socialExpressions": { 
@@ -93991,6 +96465,11 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
             "endTime": Date, 
             "provisional": Boolean, 
           },  
+          "afterCallWork": { 
+            "startTime": Date, 
+            "endTime": Date, 
+            "state": String, 
+          },  
         },  
         "videos": { 
           "state": String, 
@@ -94022,6 +96501,11 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
             "durationSeconds": Number, 
             "endTime": Date, 
             "provisional": Boolean, 
+          },  
+          "afterCallWork": { 
+            "startTime": Date, 
+            "endTime": Date, 
+            "state": String, 
           },  
         },  
         "evaluations": { 
@@ -94105,6 +96589,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "self": Address, 
                 "other": Address, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "callbacks": { 
                 "state": String, 
@@ -94130,6 +96615,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "provider": String, 
                 "peerId": String, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "chats": { 
                 "state": String, 
@@ -94150,6 +96636,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "avatarImageUrl": String, 
                 "journeyContext": JourneyContext, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "cobrowsesessions": { 
                 "state": String, 
@@ -94168,6 +96655,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "peerId": String, 
                 "segments": [Segment], 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "emails": { 
                 "state": String, 
@@ -94192,6 +96680,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "draftAttachments": [Attachment], 
                 "spam": Boolean, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "messages": { 
                 "state": String, 
@@ -94216,6 +96705,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "fromAddress": Address, 
                 "messages": [MessageDetails], 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "screenshares": { 
                 "state": String, 
@@ -94231,6 +96721,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "peerId": String, 
                 "segments": [Segment], 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "socialExpressions": { 
                 "state": String, 
@@ -94251,6 +96742,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "scriptId": String, 
                 "peerId": String, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "videos": { 
                 "state": String, 
@@ -94269,6 +96761,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "msids": [String], 
                 "self": Address, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "evaluations": { 
                 "id": String, 
@@ -94368,8 +96861,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -94393,6 +96886,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "addresses": { 
               "address": String, 
@@ -94400,6 +96894,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "state": String, 
             "title": String, 
@@ -94416,6 +96911,13 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "interests": [String], 
               "hobbies": [String], 
               "spouse": String, 
+              "education": { 
+                "school": String, 
+                "fieldOfStudy": String, 
+                "notes": String, 
+                "dateStart": String, 
+                "dateEnd": String, 
+              },  
             },  
             "employerInfo": { 
               "officialName": String, 
@@ -94675,6 +97177,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "addresses": { 
               "address": String, 
@@ -94682,6 +97185,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "state": String, 
             "title": String, 
@@ -94698,6 +97202,13 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "interests": [String], 
               "hobbies": [String], 
               "spouse": String, 
+              "education": { 
+                "school": String, 
+                "fieldOfStudy": String, 
+                "notes": String, 
+                "dateStart": String, 
+                "dateEnd": String, 
+              },  
             },  
             "employerInfo": { 
               "officialName": String, 
@@ -94960,6 +97471,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "addresses": { 
                 "address": String, 
@@ -94967,6 +97479,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "state": String, 
               "title": String, 
@@ -94983,6 +97496,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "interests": [String], 
                 "hobbies": [String], 
                 "spouse": String, 
+                "education": [Education], 
               },  
               "employerInfo": { 
                 "officialName": String, 
@@ -95194,8 +97708,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -95827,8 +98341,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -95839,8 +98353,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
             "firstUri": String, 
             "selfUri": String, 
             "nextUri": String, 
-            "lastUri": String, 
             "previousUri": String, 
+            "lastUri": String, 
             "pageCount": Number, 
           },  
           "selfUri": String, 
@@ -95851,8 +98365,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
         "firstUri": String, 
         "selfUri": String, 
         "nextUri": String, 
-        "lastUri": String, 
         "previousUri": String, 
+        "lastUri": String, 
         "pageCount": Number, 
       },  
       "selfUri": String, 
@@ -96000,6 +98514,11 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "endTime": Date, 
               "provisional": Boolean, 
             },  
+            "afterCallWork": { 
+              "startTime": Date, 
+              "endTime": Date, 
+              "state": String, 
+            },  
           },  
           "callbacks": { 
             "state": String, 
@@ -96051,6 +98570,11 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "endTime": Date, 
               "provisional": Boolean, 
             },  
+            "afterCallWork": { 
+              "startTime": Date, 
+              "endTime": Date, 
+              "state": String, 
+            },  
           },  
           "chats": { 
             "state": String, 
@@ -96098,6 +98622,11 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "endTime": Date, 
               "provisional": Boolean, 
             },  
+            "afterCallWork": { 
+              "startTime": Date, 
+              "endTime": Date, 
+              "state": String, 
+            },  
           },  
           "cobrowsesessions": { 
             "state": String, 
@@ -96135,6 +98664,11 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "durationSeconds": Number, 
               "endTime": Date, 
               "provisional": Boolean, 
+            },  
+            "afterCallWork": { 
+              "startTime": Date, 
+              "endTime": Date, 
+              "state": String, 
             },  
           },  
           "emails": { 
@@ -96207,6 +98741,11 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "durationSeconds": Number, 
               "endTime": Date, 
               "provisional": Boolean, 
+            },  
+            "afterCallWork": { 
+              "startTime": Date, 
+              "endTime": Date, 
+              "state": String, 
             },  
           },  
           "messages": { 
@@ -96302,6 +98841,11 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "endTime": Date, 
               "provisional": Boolean, 
             },  
+            "afterCallWork": { 
+              "startTime": Date, 
+              "endTime": Date, 
+              "state": String, 
+            },  
           },  
           "screenshares": { 
             "state": String, 
@@ -96330,6 +98874,11 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "durationSeconds": Number, 
               "endTime": Date, 
               "provisional": Boolean, 
+            },  
+            "afterCallWork": { 
+              "startTime": Date, 
+              "endTime": Date, 
+              "state": String, 
             },  
           },  
           "socialExpressions": { 
@@ -96365,6 +98914,11 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "endTime": Date, 
               "provisional": Boolean, 
             },  
+            "afterCallWork": { 
+              "startTime": Date, 
+              "endTime": Date, 
+              "state": String, 
+            },  
           },  
           "videos": { 
             "state": String, 
@@ -96396,6 +98950,11 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "durationSeconds": Number, 
               "endTime": Date, 
               "provisional": Boolean, 
+            },  
+            "afterCallWork": { 
+              "startTime": Date, 
+              "endTime": Date, 
+              "state": String, 
             },  
           },  
           "evaluations": { 
@@ -96489,8 +99048,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -96514,6 +99073,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "addresses": { 
                 "address": String, 
@@ -96521,6 +99081,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "state": String, 
               "title": String, 
@@ -96537,6 +99098,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "interests": [String], 
                 "hobbies": [String], 
                 "spouse": String, 
+                "education": [Education], 
               },  
               "employerInfo": { 
                 "officialName": String, 
@@ -96678,6 +99240,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "addresses": { 
                 "address": String, 
@@ -96685,6 +99248,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "state": String, 
               "title": String, 
@@ -96701,6 +99265,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "interests": [String], 
                 "hobbies": [String], 
                 "spouse": String, 
+                "education": [Education], 
               },  
               "employerInfo": { 
                 "officialName": String, 
@@ -97170,8 +99735,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -97182,8 +99747,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
           "firstUri": String, 
           "selfUri": String, 
           "nextUri": String, 
-          "lastUri": String, 
           "previousUri": String, 
+          "lastUri": String, 
           "pageCount": Number, 
         },  
         "selfUri": String, 
@@ -97207,6 +99772,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
           "mediaType": String, 
           "type": String, 
           "extension": String, 
+          "countryCode": String, 
         },  
         "addresses": { 
           "address": String, 
@@ -97214,6 +99780,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
           "mediaType": String, 
           "type": String, 
           "extension": String, 
+          "countryCode": String, 
         },  
         "state": String, 
         "title": String, 
@@ -97230,6 +99797,13 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
           "interests": [String], 
           "hobbies": [String], 
           "spouse": String, 
+          "education": { 
+            "school": String, 
+            "fieldOfStudy": String, 
+            "notes": String, 
+            "dateStart": String, 
+            "dateEnd": String, 
+          },  
         },  
         "employerInfo": { 
           "officialName": String, 
@@ -97598,6 +100172,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
           "mediaType": String, 
           "type": String, 
           "extension": String, 
+          "countryCode": String, 
         },  
         "addresses": { 
           "address": String, 
@@ -97605,6 +100180,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
           "mediaType": String, 
           "type": String, 
           "extension": String, 
+          "countryCode": String, 
         },  
         "state": String, 
         "title": String, 
@@ -97621,6 +100197,13 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
           "interests": [String], 
           "hobbies": [String], 
           "spouse": String, 
+          "education": { 
+            "school": String, 
+            "fieldOfStudy": String, 
+            "notes": String, 
+            "dateStart": String, 
+            "dateEnd": String, 
+          },  
         },  
         "employerInfo": { 
           "officialName": String, 
@@ -97992,6 +100575,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
             "mediaType": String, 
             "type": String, 
             "extension": String, 
+            "countryCode": String, 
           },  
           "addresses": { 
             "address": String, 
@@ -97999,6 +100583,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
             "mediaType": String, 
             "type": String, 
             "extension": String, 
+            "countryCode": String, 
           },  
           "state": String, 
           "title": String, 
@@ -98015,6 +100600,13 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
             "interests": [String], 
             "hobbies": [String], 
             "spouse": String, 
+            "education": { 
+              "school": String, 
+              "fieldOfStudy": String, 
+              "notes": String, 
+              "dateStart": String, 
+              "dateEnd": String, 
+            },  
           },  
           "employerInfo": { 
             "officialName": String, 
@@ -98488,6 +101080,11 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "endTime": Date, 
                 "provisional": Boolean, 
               },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
+              },  
             },  
             "callbacks": { 
               "state": String, 
@@ -98536,6 +101133,11 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "endTime": Date, 
                 "provisional": Boolean, 
               },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
+              },  
             },  
             "chats": { 
               "state": String, 
@@ -98574,6 +101176,11 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "endTime": Date, 
                 "provisional": Boolean, 
               },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
+              },  
             },  
             "cobrowsesessions": { 
               "state": String, 
@@ -98611,6 +101218,11 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "durationSeconds": Number, 
                 "endTime": Date, 
                 "provisional": Boolean, 
+              },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
               },  
             },  
             "emails": { 
@@ -98667,6 +101279,11 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "durationSeconds": Number, 
                 "endTime": Date, 
                 "provisional": Boolean, 
+              },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
               },  
             },  
             "messages": { 
@@ -98737,6 +101354,11 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "endTime": Date, 
                 "provisional": Boolean, 
               },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
+              },  
             },  
             "screenshares": { 
               "state": String, 
@@ -98765,6 +101387,11 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "durationSeconds": Number, 
                 "endTime": Date, 
                 "provisional": Boolean, 
+              },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
               },  
             },  
             "socialExpressions": { 
@@ -98800,6 +101427,11 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "endTime": Date, 
                 "provisional": Boolean, 
               },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
+              },  
             },  
             "videos": { 
               "state": String, 
@@ -98831,6 +101463,11 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "durationSeconds": Number, 
                 "endTime": Date, 
                 "provisional": Boolean, 
+              },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
               },  
             },  
             "evaluations": { 
@@ -99089,8 +101726,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -99101,8 +101738,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
             "firstUri": String, 
             "selfUri": String, 
             "nextUri": String, 
-            "lastUri": String, 
             "previousUri": String, 
+            "lastUri": String, 
             "pageCount": Number, 
           },  
           "selfUri": String, 
@@ -99193,6 +101830,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "self": Address, 
                 "other": Address, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "callbacks": { 
                 "state": String, 
@@ -99218,6 +101856,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "provider": String, 
                 "peerId": String, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "chats": { 
                 "state": String, 
@@ -99238,6 +101877,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "avatarImageUrl": String, 
                 "journeyContext": JourneyContext, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "cobrowsesessions": { 
                 "state": String, 
@@ -99256,6 +101896,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "peerId": String, 
                 "segments": [Segment], 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "emails": { 
                 "state": String, 
@@ -99280,6 +101921,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "draftAttachments": [Attachment], 
                 "spam": Boolean, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "messages": { 
                 "state": String, 
@@ -99304,6 +101946,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "fromAddress": Address, 
                 "messages": [MessageDetails], 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "screenshares": { 
                 "state": String, 
@@ -99319,6 +101962,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "peerId": String, 
                 "segments": [Segment], 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "socialExpressions": { 
                 "state": String, 
@@ -99339,6 +101983,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "scriptId": String, 
                 "peerId": String, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "videos": { 
                 "state": String, 
@@ -99357,6 +102002,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "msids": [String], 
                 "self": Address, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "evaluations": { 
                 "id": String, 
@@ -99456,8 +102102,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -99481,6 +102127,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "addresses": { 
               "address": String, 
@@ -99488,6 +102135,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "state": String, 
             "title": String, 
@@ -99504,6 +102152,13 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "interests": [String], 
               "hobbies": [String], 
               "spouse": String, 
+              "education": { 
+                "school": String, 
+                "fieldOfStudy": String, 
+                "notes": String, 
+                "dateStart": String, 
+                "dateEnd": String, 
+              },  
             },  
             "employerInfo": { 
               "officialName": String, 
@@ -99763,6 +102418,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "addresses": { 
               "address": String, 
@@ -99770,6 +102426,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "state": String, 
             "title": String, 
@@ -99786,6 +102443,13 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "interests": [String], 
               "hobbies": [String], 
               "spouse": String, 
+              "education": { 
+                "school": String, 
+                "fieldOfStudy": String, 
+                "notes": String, 
+                "dateStart": String, 
+                "dateEnd": String, 
+              },  
             },  
             "employerInfo": { 
               "officialName": String, 
@@ -100048,6 +102712,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "addresses": { 
                 "address": String, 
@@ -100055,6 +102720,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "state": String, 
               "title": String, 
@@ -100071,6 +102737,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "interests": [String], 
                 "hobbies": [String], 
                 "spouse": String, 
+                "education": [Education], 
               },  
               "employerInfo": { 
                 "officialName": String, 
@@ -100282,8 +102949,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -100868,6 +103535,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "self": Address, 
                 "other": Address, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "callbacks": { 
                 "state": String, 
@@ -100893,6 +103561,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "provider": String, 
                 "peerId": String, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "chats": { 
                 "state": String, 
@@ -100913,6 +103582,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "avatarImageUrl": String, 
                 "journeyContext": JourneyContext, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "cobrowsesessions": { 
                 "state": String, 
@@ -100931,6 +103601,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "peerId": String, 
                 "segments": [Segment], 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "emails": { 
                 "state": String, 
@@ -100955,6 +103626,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "draftAttachments": [Attachment], 
                 "spam": Boolean, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "messages": { 
                 "state": String, 
@@ -100979,6 +103651,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "fromAddress": Address, 
                 "messages": [MessageDetails], 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "screenshares": { 
                 "state": String, 
@@ -100994,6 +103667,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "peerId": String, 
                 "segments": [Segment], 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "socialExpressions": { 
                 "state": String, 
@@ -101014,6 +103688,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "scriptId": String, 
                 "peerId": String, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "videos": { 
                 "state": String, 
@@ -101032,6 +103707,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "msids": [String], 
                 "self": Address, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "evaluations": { 
                 "id": String, 
@@ -101131,8 +103807,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -101156,6 +103832,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "addresses": { 
               "address": String, 
@@ -101163,6 +103840,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "state": String, 
             "title": String, 
@@ -101179,6 +103857,13 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "interests": [String], 
               "hobbies": [String], 
               "spouse": String, 
+              "education": { 
+                "school": String, 
+                "fieldOfStudy": String, 
+                "notes": String, 
+                "dateStart": String, 
+                "dateEnd": String, 
+              },  
             },  
             "employerInfo": { 
               "officialName": String, 
@@ -101438,6 +104123,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "addresses": { 
               "address": String, 
@@ -101445,6 +104131,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "state": String, 
             "title": String, 
@@ -101461,6 +104148,13 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "interests": [String], 
               "hobbies": [String], 
               "spouse": String, 
+              "education": { 
+                "school": String, 
+                "fieldOfStudy": String, 
+                "notes": String, 
+                "dateStart": String, 
+                "dateEnd": String, 
+              },  
             },  
             "employerInfo": { 
               "officialName": String, 
@@ -101723,6 +104417,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "addresses": { 
                 "address": String, 
@@ -101730,6 +104425,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "state": String, 
               "title": String, 
@@ -101746,6 +104442,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "interests": [String], 
                 "hobbies": [String], 
                 "spouse": String, 
+                "education": [Education], 
               },  
               "employerInfo": { 
                 "officialName": String, 
@@ -101957,8 +104654,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -102812,6 +105509,11 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "endTime": Date, 
               "provisional": Boolean, 
             },  
+            "afterCallWork": { 
+              "startTime": Date, 
+              "endTime": Date, 
+              "state": String, 
+            },  
           },  
           "callbacks": { 
             "state": String, 
@@ -102863,6 +105565,11 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "endTime": Date, 
               "provisional": Boolean, 
             },  
+            "afterCallWork": { 
+              "startTime": Date, 
+              "endTime": Date, 
+              "state": String, 
+            },  
           },  
           "chats": { 
             "state": String, 
@@ -102910,6 +105617,11 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "endTime": Date, 
               "provisional": Boolean, 
             },  
+            "afterCallWork": { 
+              "startTime": Date, 
+              "endTime": Date, 
+              "state": String, 
+            },  
           },  
           "cobrowsesessions": { 
             "state": String, 
@@ -102947,6 +105659,11 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "durationSeconds": Number, 
               "endTime": Date, 
               "provisional": Boolean, 
+            },  
+            "afterCallWork": { 
+              "startTime": Date, 
+              "endTime": Date, 
+              "state": String, 
             },  
           },  
           "emails": { 
@@ -103019,6 +105736,11 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "durationSeconds": Number, 
               "endTime": Date, 
               "provisional": Boolean, 
+            },  
+            "afterCallWork": { 
+              "startTime": Date, 
+              "endTime": Date, 
+              "state": String, 
             },  
           },  
           "messages": { 
@@ -103114,6 +105836,11 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "endTime": Date, 
               "provisional": Boolean, 
             },  
+            "afterCallWork": { 
+              "startTime": Date, 
+              "endTime": Date, 
+              "state": String, 
+            },  
           },  
           "screenshares": { 
             "state": String, 
@@ -103142,6 +105869,11 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "durationSeconds": Number, 
               "endTime": Date, 
               "provisional": Boolean, 
+            },  
+            "afterCallWork": { 
+              "startTime": Date, 
+              "endTime": Date, 
+              "state": String, 
             },  
           },  
           "socialExpressions": { 
@@ -103177,6 +105909,11 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "endTime": Date, 
               "provisional": Boolean, 
             },  
+            "afterCallWork": { 
+              "startTime": Date, 
+              "endTime": Date, 
+              "state": String, 
+            },  
           },  
           "videos": { 
             "state": String, 
@@ -103208,6 +105945,11 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "durationSeconds": Number, 
               "endTime": Date, 
               "provisional": Boolean, 
+            },  
+            "afterCallWork": { 
+              "startTime": Date, 
+              "endTime": Date, 
+              "state": String, 
             },  
           },  
           "evaluations": { 
@@ -103301,8 +106043,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -103326,6 +106068,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "addresses": { 
                 "address": String, 
@@ -103333,6 +106076,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "state": String, 
               "title": String, 
@@ -103349,6 +106093,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "interests": [String], 
                 "hobbies": [String], 
                 "spouse": String, 
+                "education": [Education], 
               },  
               "employerInfo": { 
                 "officialName": String, 
@@ -103490,6 +106235,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "addresses": { 
                 "address": String, 
@@ -103497,6 +106243,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "state": String, 
               "title": String, 
@@ -103513,6 +106260,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "interests": [String], 
                 "hobbies": [String], 
                 "spouse": String, 
+                "education": [Education], 
               },  
               "employerInfo": { 
                 "officialName": String, 
@@ -103982,8 +106730,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -103994,8 +106742,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
           "firstUri": String, 
           "selfUri": String, 
           "nextUri": String, 
-          "lastUri": String, 
           "previousUri": String, 
+          "lastUri": String, 
           "pageCount": Number, 
         },  
         "selfUri": String, 
@@ -104019,6 +106767,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
           "mediaType": String, 
           "type": String, 
           "extension": String, 
+          "countryCode": String, 
         },  
         "addresses": { 
           "address": String, 
@@ -104026,6 +106775,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
           "mediaType": String, 
           "type": String, 
           "extension": String, 
+          "countryCode": String, 
         },  
         "state": String, 
         "title": String, 
@@ -104042,6 +106792,13 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
           "interests": [String], 
           "hobbies": [String], 
           "spouse": String, 
+          "education": { 
+            "school": String, 
+            "fieldOfStudy": String, 
+            "notes": String, 
+            "dateStart": String, 
+            "dateEnd": String, 
+          },  
         },  
         "employerInfo": { 
           "officialName": String, 
@@ -104410,6 +107167,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
           "mediaType": String, 
           "type": String, 
           "extension": String, 
+          "countryCode": String, 
         },  
         "addresses": { 
           "address": String, 
@@ -104417,6 +107175,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
           "mediaType": String, 
           "type": String, 
           "extension": String, 
+          "countryCode": String, 
         },  
         "state": String, 
         "title": String, 
@@ -104433,6 +107192,13 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
           "interests": [String], 
           "hobbies": [String], 
           "spouse": String, 
+          "education": { 
+            "school": String, 
+            "fieldOfStudy": String, 
+            "notes": String, 
+            "dateStart": String, 
+            "dateEnd": String, 
+          },  
         },  
         "employerInfo": { 
           "officialName": String, 
@@ -104804,6 +107570,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
             "mediaType": String, 
             "type": String, 
             "extension": String, 
+            "countryCode": String, 
           },  
           "addresses": { 
             "address": String, 
@@ -104811,6 +107578,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
             "mediaType": String, 
             "type": String, 
             "extension": String, 
+            "countryCode": String, 
           },  
           "state": String, 
           "title": String, 
@@ -104827,6 +107595,13 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
             "interests": [String], 
             "hobbies": [String], 
             "spouse": String, 
+            "education": { 
+              "school": String, 
+              "fieldOfStudy": String, 
+              "notes": String, 
+              "dateStart": String, 
+              "dateEnd": String, 
+            },  
           },  
           "employerInfo": { 
             "officialName": String, 
@@ -105300,6 +108075,11 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "endTime": Date, 
                 "provisional": Boolean, 
               },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
+              },  
             },  
             "callbacks": { 
               "state": String, 
@@ -105348,6 +108128,11 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "endTime": Date, 
                 "provisional": Boolean, 
               },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
+              },  
             },  
             "chats": { 
               "state": String, 
@@ -105386,6 +108171,11 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "endTime": Date, 
                 "provisional": Boolean, 
               },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
+              },  
             },  
             "cobrowsesessions": { 
               "state": String, 
@@ -105423,6 +108213,11 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "durationSeconds": Number, 
                 "endTime": Date, 
                 "provisional": Boolean, 
+              },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
               },  
             },  
             "emails": { 
@@ -105479,6 +108274,11 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "durationSeconds": Number, 
                 "endTime": Date, 
                 "provisional": Boolean, 
+              },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
               },  
             },  
             "messages": { 
@@ -105549,6 +108349,11 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "endTime": Date, 
                 "provisional": Boolean, 
               },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
+              },  
             },  
             "screenshares": { 
               "state": String, 
@@ -105577,6 +108382,11 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "durationSeconds": Number, 
                 "endTime": Date, 
                 "provisional": Boolean, 
+              },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
               },  
             },  
             "socialExpressions": { 
@@ -105612,6 +108422,11 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "endTime": Date, 
                 "provisional": Boolean, 
               },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
+              },  
             },  
             "videos": { 
               "state": String, 
@@ -105643,6 +108458,11 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "durationSeconds": Number, 
                 "endTime": Date, 
                 "provisional": Boolean, 
+              },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
               },  
             },  
             "evaluations": { 
@@ -105901,8 +108721,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -105913,8 +108733,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
             "firstUri": String, 
             "selfUri": String, 
             "nextUri": String, 
-            "lastUri": String, 
             "previousUri": String, 
+            "lastUri": String, 
             "pageCount": Number, 
           },  
           "selfUri": String, 
@@ -106005,6 +108825,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "self": Address, 
                 "other": Address, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "callbacks": { 
                 "state": String, 
@@ -106030,6 +108851,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "provider": String, 
                 "peerId": String, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "chats": { 
                 "state": String, 
@@ -106050,6 +108872,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "avatarImageUrl": String, 
                 "journeyContext": JourneyContext, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "cobrowsesessions": { 
                 "state": String, 
@@ -106068,6 +108891,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "peerId": String, 
                 "segments": [Segment], 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "emails": { 
                 "state": String, 
@@ -106092,6 +108916,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "draftAttachments": [Attachment], 
                 "spam": Boolean, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "messages": { 
                 "state": String, 
@@ -106116,6 +108941,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "fromAddress": Address, 
                 "messages": [MessageDetails], 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "screenshares": { 
                 "state": String, 
@@ -106131,6 +108957,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "peerId": String, 
                 "segments": [Segment], 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "socialExpressions": { 
                 "state": String, 
@@ -106151,6 +108978,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "scriptId": String, 
                 "peerId": String, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "videos": { 
                 "state": String, 
@@ -106169,6 +108997,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "msids": [String], 
                 "self": Address, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "evaluations": { 
                 "id": String, 
@@ -106268,8 +109097,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -106293,6 +109122,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "addresses": { 
               "address": String, 
@@ -106300,6 +109130,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "state": String, 
             "title": String, 
@@ -106316,6 +109147,13 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "interests": [String], 
               "hobbies": [String], 
               "spouse": String, 
+              "education": { 
+                "school": String, 
+                "fieldOfStudy": String, 
+                "notes": String, 
+                "dateStart": String, 
+                "dateEnd": String, 
+              },  
             },  
             "employerInfo": { 
               "officialName": String, 
@@ -106575,6 +109413,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "addresses": { 
               "address": String, 
@@ -106582,6 +109421,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "state": String, 
             "title": String, 
@@ -106598,6 +109438,13 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "interests": [String], 
               "hobbies": [String], 
               "spouse": String, 
+              "education": { 
+                "school": String, 
+                "fieldOfStudy": String, 
+                "notes": String, 
+                "dateStart": String, 
+                "dateEnd": String, 
+              },  
             },  
             "employerInfo": { 
               "officialName": String, 
@@ -106860,6 +109707,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "addresses": { 
                 "address": String, 
@@ -106867,6 +109715,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "state": String, 
               "title": String, 
@@ -106883,6 +109732,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "interests": [String], 
                 "hobbies": [String], 
                 "spouse": String, 
+                "education": [Education], 
               },  
               "employerInfo": { 
                 "officialName": String, 
@@ -107094,8 +109944,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -107680,6 +110530,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "self": Address, 
                 "other": Address, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "callbacks": { 
                 "state": String, 
@@ -107705,6 +110556,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "provider": String, 
                 "peerId": String, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "chats": { 
                 "state": String, 
@@ -107725,6 +110577,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "avatarImageUrl": String, 
                 "journeyContext": JourneyContext, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "cobrowsesessions": { 
                 "state": String, 
@@ -107743,6 +110596,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "peerId": String, 
                 "segments": [Segment], 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "emails": { 
                 "state": String, 
@@ -107767,6 +110621,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "draftAttachments": [Attachment], 
                 "spam": Boolean, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "messages": { 
                 "state": String, 
@@ -107791,6 +110646,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "fromAddress": Address, 
                 "messages": [MessageDetails], 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "screenshares": { 
                 "state": String, 
@@ -107806,6 +110662,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "peerId": String, 
                 "segments": [Segment], 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "socialExpressions": { 
                 "state": String, 
@@ -107826,6 +110683,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "scriptId": String, 
                 "peerId": String, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "videos": { 
                 "state": String, 
@@ -107844,6 +110702,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "msids": [String], 
                 "self": Address, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "evaluations": { 
                 "id": String, 
@@ -107943,8 +110802,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -107968,6 +110827,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "addresses": { 
               "address": String, 
@@ -107975,6 +110835,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "state": String, 
             "title": String, 
@@ -107991,6 +110852,13 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "interests": [String], 
               "hobbies": [String], 
               "spouse": String, 
+              "education": { 
+                "school": String, 
+                "fieldOfStudy": String, 
+                "notes": String, 
+                "dateStart": String, 
+                "dateEnd": String, 
+              },  
             },  
             "employerInfo": { 
               "officialName": String, 
@@ -108250,6 +111118,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "addresses": { 
               "address": String, 
@@ -108257,6 +111126,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "state": String, 
             "title": String, 
@@ -108273,6 +111143,13 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "interests": [String], 
               "hobbies": [String], 
               "spouse": String, 
+              "education": { 
+                "school": String, 
+                "fieldOfStudy": String, 
+                "notes": String, 
+                "dateStart": String, 
+                "dateEnd": String, 
+              },  
             },  
             "employerInfo": { 
               "officialName": String, 
@@ -108535,6 +111412,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "addresses": { 
                 "address": String, 
@@ -108542,6 +111420,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "state": String, 
               "title": String, 
@@ -108558,6 +111437,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "interests": [String], 
                 "hobbies": [String], 
                 "spouse": String, 
+                "education": [Education], 
               },  
               "employerInfo": { 
                 "officialName": String, 
@@ -108769,8 +111649,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -109973,8 +112853,8 @@ EvaluationForm <a href="#" onclick="return copyEvaluationFormExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -109985,8 +112865,8 @@ EvaluationForm <a href="#" onclick="return copyEvaluationFormExample()">Copy</a>
             "firstUri": String, 
             "selfUri": String, 
             "nextUri": String, 
-            "lastUri": String, 
             "previousUri": String, 
+            "lastUri": String, 
             "pageCount": Number, 
           },  
           "selfUri": String, 
@@ -109997,8 +112877,8 @@ EvaluationForm <a href="#" onclick="return copyEvaluationFormExample()">Copy</a>
         "firstUri": String, 
         "selfUri": String, 
         "nextUri": String, 
-        "lastUri": String, 
         "previousUri": String, 
+        "lastUri": String, 
         "pageCount": Number, 
       },  
       "selfUri": String, 
@@ -110009,8 +112889,8 @@ EvaluationForm <a href="#" onclick="return copyEvaluationFormExample()">Copy</a>
     "firstUri": String, 
     "selfUri": String, 
     "nextUri": String, 
-    "lastUri": String, 
     "previousUri": String, 
+    "lastUri": String, 
     "pageCount": Number, 
   },  
   "selfUri": String, 
@@ -110240,8 +113120,8 @@ EvaluationForm <a href="#" onclick="return copyEvaluationFormExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -110252,8 +113132,8 @@ EvaluationForm <a href="#" onclick="return copyEvaluationFormExample()">Copy</a>
             "firstUri": String, 
             "selfUri": String, 
             "nextUri": String, 
-            "lastUri": String, 
             "previousUri": String, 
+            "lastUri": String, 
             "pageCount": Number, 
           },  
           "selfUri": String, 
@@ -110264,8 +113144,8 @@ EvaluationForm <a href="#" onclick="return copyEvaluationFormExample()">Copy</a>
         "firstUri": String, 
         "selfUri": String, 
         "nextUri": String, 
-        "lastUri": String, 
         "previousUri": String, 
+        "lastUri": String, 
         "pageCount": Number, 
       },  
       "selfUri": String, 
@@ -110276,8 +113156,8 @@ EvaluationForm <a href="#" onclick="return copyEvaluationFormExample()">Copy</a>
     "firstUri": String, 
     "selfUri": String, 
     "nextUri": String, 
-    "lastUri": String, 
     "previousUri": String, 
+    "lastUri": String, 
     "pageCount": Number, 
   },  
   "selfUri": String, 
@@ -110504,8 +113384,8 @@ SurveyForm <a href="#" onclick="return copySurveyFormExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -110516,8 +113396,8 @@ SurveyForm <a href="#" onclick="return copySurveyFormExample()">Copy</a>
             "firstUri": String, 
             "selfUri": String, 
             "nextUri": String, 
-            "lastUri": String, 
             "previousUri": String, 
+            "lastUri": String, 
             "pageCount": Number, 
           },  
           "selfUri": String, 
@@ -110528,8 +113408,8 @@ SurveyForm <a href="#" onclick="return copySurveyFormExample()">Copy</a>
         "firstUri": String, 
         "selfUri": String, 
         "nextUri": String, 
-        "lastUri": String, 
         "previousUri": String, 
+        "lastUri": String, 
         "pageCount": Number, 
       },  
       "selfUri": String, 
@@ -110540,8 +113420,8 @@ SurveyForm <a href="#" onclick="return copySurveyFormExample()">Copy</a>
     "firstUri": String, 
     "selfUri": String, 
     "nextUri": String, 
-    "lastUri": String, 
     "previousUri": String, 
+    "lastUri": String, 
     "pageCount": Number, 
   },  
   "selfUri": String, 
@@ -110855,6 +113735,7 @@ KeywordSet <a href="#" onclick="return copyKeywordSetExample()">Copy</a>
       "mediaType": String, 
       "type": String, 
       "extension": String, 
+      "countryCode": String, 
     },  
     "addresses": { 
       "address": String, 
@@ -110862,6 +113743,7 @@ KeywordSet <a href="#" onclick="return copyKeywordSetExample()">Copy</a>
       "mediaType": String, 
       "type": String, 
       "extension": String, 
+      "countryCode": String, 
     },  
     "state": String, 
     "title": String, 
@@ -110878,6 +113760,13 @@ KeywordSet <a href="#" onclick="return copyKeywordSetExample()">Copy</a>
       "interests": [String], 
       "hobbies": [String], 
       "spouse": String, 
+      "education": { 
+        "school": String, 
+        "fieldOfStudy": String, 
+        "notes": String, 
+        "dateStart": String, 
+        "dateEnd": String, 
+      },  
     },  
     "employerInfo": { 
       "officialName": String, 
@@ -111474,8 +114363,8 @@ ScorableSurvey <a href="#" onclick="return copyScorableSurveyExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -111486,8 +114375,8 @@ ScorableSurvey <a href="#" onclick="return copyScorableSurveyExample()">Copy</a>
           "firstUri": String, 
           "selfUri": String, 
           "nextUri": String, 
-          "lastUri": String, 
           "previousUri": String, 
+          "lastUri": String, 
           "pageCount": Number, 
         },  
         "selfUri": String, 
@@ -111498,8 +114387,8 @@ ScorableSurvey <a href="#" onclick="return copyScorableSurveyExample()">Copy</a>
       "firstUri": String, 
       "selfUri": String, 
       "nextUri": String, 
-      "lastUri": String, 
       "previousUri": String, 
+      "lastUri": String, 
       "pageCount": Number, 
     },  
     "selfUri": String, 

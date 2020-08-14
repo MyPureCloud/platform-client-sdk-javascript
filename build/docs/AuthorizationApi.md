@@ -311,11 +311,11 @@ let opts = {
   'pageSize': 25, // Number | The total page size requested
   'pageNumber': 1, // Number | The page number requested
   'sortBy': "sortBy_example", // String | variable name requested to sort by
-  'expand': ["expand_example"], // [String] | variable name requested by expand list
+  'expand': null, // [Object] | variable name requested by expand list
   'nextPage': "nextPage_example", // String | next page token
   'previousPage': "previousPage_example", // String | Previous page token
   'objectCount': false, // Boolean | Include the count of objects contained in the division
-  'id': ["id_example"], // [String] | Optionally request specific divisions by their IDs
+  'id': null, // [Object] | Optionally request specific divisions by their IDs
   'name': "name_example" // String | Search term to filter by division name
 };
 
@@ -337,11 +337,11 @@ apiInstance.getAuthorizationDivisions(opts)
  **pageSize** | **Number** | The total page size requested | [optional] [default to 25] |
  **pageNumber** | **Number** | The page number requested | [optional] [default to 1] |
  **sortBy** | **String** | variable name requested to sort by | [optional]  |
- **expand** | **[String]** | variable name requested by expand list | [optional]  |
+ **expand** | **[Object]** | variable name requested by expand list | [optional]  |
  **nextPage** | **String** | next page token | [optional]  |
  **previousPage** | **String** | Previous page token | [optional]  |
  **objectCount** | **Boolean** | Include the count of objects contained in the division | [optional] [default to false] |
- **id** | **[String]** | Optionally request specific divisions by their IDs | [optional]  |
+ **id** | **[Object]** | Optionally request specific divisions by their IDs | [optional]  |
  **name** | **String** | Search term to filter by division name | [optional]  |
 {: class="table table-striped"}
 
@@ -886,7 +886,7 @@ let opts = {
   'pageSize': 25, // Number | The total page size requested
   'pageNumber': 1, // Number | The page number requested
   'sortBy': "sortBy_example", // String | variable name requested to sort by
-  'expand': ["expand_example"], // [String] | variable name requested by expand list
+  'expand': null, // [Object] | variable name requested by expand list
   'nextPage': "nextPage_example", // String | next page token
   'previousPage': "previousPage_example" // String | Previous page token
 };
@@ -910,7 +910,7 @@ apiInstance.getAuthorizationRoleSubjectgrants(roleId, opts)
  **pageSize** | **Number** | The total page size requested | [optional] [default to 25] |
  **pageNumber** | **Number** | The page number requested | [optional] [default to 1] |
  **sortBy** | **String** | variable name requested to sort by | [optional]  |
- **expand** | **[String]** | variable name requested by expand list | [optional]  |
+ **expand** | **[Object]** | variable name requested by expand list | [optional]  |
  **nextPage** | **String** | next page token | [optional]  |
  **previousPage** | **String** | Previous page token | [optional]  |
 {: class="table table-striped"}
@@ -1014,12 +1014,12 @@ let opts = {
   'pageSize': 25, // Number | The total page size requested
   'pageNumber': 1, // Number | The page number requested
   'sortBy': "sortBy_example", // String | variable name requested to sort by
-  'expand': ["expand_example"], // [String] | variable name requested by expand list
+  'expand': null, // [Object] | variable name requested by expand list
   'nextPage': "nextPage_example", // String | next page token
   'previousPage': "previousPage_example", // String | Previous page token
   'name': "name_example", // String | 
-  'permission': ["permission_example"], // [String] | 
-  'defaultRoleId': ["defaultRoleId_example"], // [String] | 
+  'permission': null, // [Object] | 
+  'defaultRoleId': null, // [Object] | 
   'userCount': true, // Boolean | 
   'id': ["id_example"] // [String] | id
 };
@@ -1042,12 +1042,12 @@ apiInstance.getAuthorizationRoles(opts)
  **pageSize** | **Number** | The total page size requested | [optional] [default to 25] |
  **pageNumber** | **Number** | The page number requested | [optional] [default to 1] |
  **sortBy** | **String** | variable name requested to sort by | [optional]  |
- **expand** | **[String]** | variable name requested by expand list | [optional]  |
+ **expand** | **[Object]** | variable name requested by expand list | [optional]  |
  **nextPage** | **String** | next page token | [optional]  |
  **previousPage** | **String** | Previous page token | [optional]  |
  **name** | **String** |  | [optional]  |
- **permission** | **[String]** |  | [optional]  |
- **defaultRoleId** | **[String]** |  | [optional]  |
+ **permission** | **[Object]** |  | [optional]  |
+ **defaultRoleId** | **[Object]** |  | [optional]  |
  **userCount** | **Boolean** |  | [optional] [default to true] |
  **id** | **[String]** | id | [optional]  |
 {: class="table table-striped"}
@@ -1345,6 +1345,7 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
             "mediaType": String, 
             "type": String, 
             "extension": String, 
+            "countryCode": String, 
           },  
           "addresses": { 
             "address": String, 
@@ -1352,6 +1353,7 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
             "mediaType": String, 
             "type": String, 
             "extension": String, 
+            "countryCode": String, 
           },  
           "state": String, 
           "title": String, 
@@ -1368,6 +1370,13 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
             "interests": [String], 
             "hobbies": [String], 
             "spouse": String, 
+            "education": { 
+              "school": String, 
+              "fieldOfStudy": String, 
+              "notes": String, 
+              "dateStart": String, 
+              "dateEnd": String, 
+            },  
           },  
           "employerInfo": { 
             "officialName": String, 
@@ -1873,6 +1882,7 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "addresses": { 
               "address": String, 
@@ -1880,6 +1890,7 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "state": String, 
             "title": String, 
@@ -1896,6 +1907,13 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
               "interests": [String], 
               "hobbies": [String], 
               "spouse": String, 
+              "education": { 
+                "school": String, 
+                "fieldOfStudy": String, 
+                "notes": String, 
+                "dateStart": String, 
+                "dateEnd": String, 
+              },  
             },  
             "employerInfo": { 
               "officialName": String, 
@@ -2270,6 +2288,7 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "addresses": { 
                 "address": String, 
@@ -2277,6 +2296,7 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "state": String, 
               "title": String, 
@@ -2293,6 +2313,7 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
                 "interests": [String], 
                 "hobbies": [String], 
                 "spouse": String, 
+                "education": [Education], 
               },  
               "employerInfo": { 
                 "officialName": String, 
@@ -2934,6 +2955,7 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
             "mediaType": String, 
             "type": String, 
             "extension": String, 
+            "countryCode": String, 
           },  
           "addresses": { 
             "address": String, 
@@ -2941,6 +2963,7 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
             "mediaType": String, 
             "type": String, 
             "extension": String, 
+            "countryCode": String, 
           },  
           "state": String, 
           "title": String, 
@@ -2957,6 +2980,13 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
             "interests": [String], 
             "hobbies": [String], 
             "spouse": String, 
+            "education": { 
+              "school": String, 
+              "fieldOfStudy": String, 
+              "notes": String, 
+              "dateStart": String, 
+              "dateEnd": String, 
+            },  
           },  
           "employerInfo": { 
             "officialName": String, 
@@ -3462,6 +3492,7 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "addresses": { 
               "address": String, 
@@ -3469,6 +3500,7 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "state": String, 
             "title": String, 
@@ -3485,6 +3517,13 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
               "interests": [String], 
               "hobbies": [String], 
               "spouse": String, 
+              "education": { 
+                "school": String, 
+                "fieldOfStudy": String, 
+                "notes": String, 
+                "dateStart": String, 
+                "dateEnd": String, 
+              },  
             },  
             "employerInfo": { 
               "officialName": String, 
@@ -3859,6 +3898,7 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "addresses": { 
                 "address": String, 
@@ -3866,6 +3906,7 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "state": String, 
               "title": String, 
@@ -3882,6 +3923,7 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
                 "interests": [String], 
                 "hobbies": [String], 
                 "spouse": String, 
+                "education": [Education], 
               },  
               "employerInfo": { 
                 "officialName": String, 
@@ -4294,6 +4336,7 @@ DomainOrganizationRoleCreate <a href="#" onclick="return copyDomainOrganizationR
             "mediaType": String, 
             "type": String, 
             "extension": String, 
+            "countryCode": String, 
           },  
           "addresses": { 
             "address": String, 
@@ -4301,6 +4344,7 @@ DomainOrganizationRoleCreate <a href="#" onclick="return copyDomainOrganizationR
             "mediaType": String, 
             "type": String, 
             "extension": String, 
+            "countryCode": String, 
           },  
           "state": String, 
           "title": String, 
@@ -4317,6 +4361,13 @@ DomainOrganizationRoleCreate <a href="#" onclick="return copyDomainOrganizationR
             "interests": [String], 
             "hobbies": [String], 
             "spouse": String, 
+            "education": { 
+              "school": String, 
+              "fieldOfStudy": String, 
+              "notes": String, 
+              "dateStart": String, 
+              "dateEnd": String, 
+            },  
           },  
           "employerInfo": { 
             "officialName": String, 
@@ -4822,6 +4873,7 @@ DomainOrganizationRoleCreate <a href="#" onclick="return copyDomainOrganizationR
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "addresses": { 
               "address": String, 
@@ -4829,6 +4881,7 @@ DomainOrganizationRoleCreate <a href="#" onclick="return copyDomainOrganizationR
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "state": String, 
             "title": String, 
@@ -4845,6 +4898,13 @@ DomainOrganizationRoleCreate <a href="#" onclick="return copyDomainOrganizationR
               "interests": [String], 
               "hobbies": [String], 
               "spouse": String, 
+              "education": { 
+                "school": String, 
+                "fieldOfStudy": String, 
+                "notes": String, 
+                "dateStart": String, 
+                "dateEnd": String, 
+              },  
             },  
             "employerInfo": { 
               "officialName": String, 
@@ -5219,6 +5279,7 @@ DomainOrganizationRoleCreate <a href="#" onclick="return copyDomainOrganizationR
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "addresses": { 
                 "address": String, 
@@ -5226,6 +5287,7 @@ DomainOrganizationRoleCreate <a href="#" onclick="return copyDomainOrganizationR
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "state": String, 
               "title": String, 
@@ -5242,6 +5304,7 @@ DomainOrganizationRoleCreate <a href="#" onclick="return copyDomainOrganizationR
                 "interests": [String], 
                 "hobbies": [String], 
                 "spouse": String, 
+                "education": [Education], 
               },  
               "employerInfo": { 
                 "officialName": String, 
@@ -6031,6 +6094,7 @@ DomainOrganizationRoleUpdate <a href="#" onclick="return copyDomainOrganizationR
             "mediaType": String, 
             "type": String, 
             "extension": String, 
+            "countryCode": String, 
           },  
           "addresses": { 
             "address": String, 
@@ -6038,6 +6102,7 @@ DomainOrganizationRoleUpdate <a href="#" onclick="return copyDomainOrganizationR
             "mediaType": String, 
             "type": String, 
             "extension": String, 
+            "countryCode": String, 
           },  
           "state": String, 
           "title": String, 
@@ -6054,6 +6119,13 @@ DomainOrganizationRoleUpdate <a href="#" onclick="return copyDomainOrganizationR
             "interests": [String], 
             "hobbies": [String], 
             "spouse": String, 
+            "education": { 
+              "school": String, 
+              "fieldOfStudy": String, 
+              "notes": String, 
+              "dateStart": String, 
+              "dateEnd": String, 
+            },  
           },  
           "employerInfo": { 
             "officialName": String, 
@@ -6559,6 +6631,7 @@ DomainOrganizationRoleUpdate <a href="#" onclick="return copyDomainOrganizationR
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "addresses": { 
               "address": String, 
@@ -6566,6 +6639,7 @@ DomainOrganizationRoleUpdate <a href="#" onclick="return copyDomainOrganizationR
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "state": String, 
             "title": String, 
@@ -6582,6 +6656,13 @@ DomainOrganizationRoleUpdate <a href="#" onclick="return copyDomainOrganizationR
               "interests": [String], 
               "hobbies": [String], 
               "spouse": String, 
+              "education": { 
+                "school": String, 
+                "fieldOfStudy": String, 
+                "notes": String, 
+                "dateStart": String, 
+                "dateEnd": String, 
+              },  
             },  
             "employerInfo": { 
               "officialName": String, 
@@ -6956,6 +7037,7 @@ DomainOrganizationRoleUpdate <a href="#" onclick="return copyDomainOrganizationR
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "addresses": { 
                 "address": String, 
@@ -6963,6 +7045,7 @@ DomainOrganizationRoleUpdate <a href="#" onclick="return copyDomainOrganizationR
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "state": String, 
               "title": String, 
@@ -6979,6 +7062,7 @@ DomainOrganizationRoleUpdate <a href="#" onclick="return copyDomainOrganizationR
                 "interests": [String], 
                 "hobbies": [String], 
                 "spouse": String, 
+                "education": [Education], 
               },  
               "employerInfo": { 
                 "officialName": String, 
@@ -7503,6 +7587,7 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
             "mediaType": String, 
             "type": String, 
             "extension": String, 
+            "countryCode": String, 
           },  
           "addresses": { 
             "address": String, 
@@ -7510,6 +7595,7 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
             "mediaType": String, 
             "type": String, 
             "extension": String, 
+            "countryCode": String, 
           },  
           "state": String, 
           "title": String, 
@@ -7526,6 +7612,13 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
             "interests": [String], 
             "hobbies": [String], 
             "spouse": String, 
+            "education": { 
+              "school": String, 
+              "fieldOfStudy": String, 
+              "notes": String, 
+              "dateStart": String, 
+              "dateEnd": String, 
+            },  
           },  
           "employerInfo": { 
             "officialName": String, 
@@ -8031,6 +8124,7 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "addresses": { 
               "address": String, 
@@ -8038,6 +8132,7 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "state": String, 
             "title": String, 
@@ -8054,6 +8149,13 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
               "interests": [String], 
               "hobbies": [String], 
               "spouse": String, 
+              "education": { 
+                "school": String, 
+                "fieldOfStudy": String, 
+                "notes": String, 
+                "dateStart": String, 
+                "dateEnd": String, 
+              },  
             },  
             "employerInfo": { 
               "officialName": String, 
@@ -8428,6 +8530,7 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "addresses": { 
                 "address": String, 
@@ -8435,6 +8538,7 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "state": String, 
               "title": String, 
@@ -8451,6 +8555,7 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
                 "interests": [String], 
                 "hobbies": [String], 
                 "spouse": String, 
+                "education": [Education], 
               },  
               "employerInfo": { 
                 "officialName": String, 

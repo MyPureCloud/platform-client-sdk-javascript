@@ -5,7 +5,7 @@ class AnalyticsApi {
 	/**
 	 * Analytics service.
 	 * @module purecloud-platform-client-v2/api/AnalyticsApi
-	 * @version 87.0.0
+	 * @version 88.0.0
 	 */
 
 	/**
@@ -710,6 +710,31 @@ class AnalyticsApi {
 	}
 
 	/**
+	 * Query for journey aggregates
+	 * 
+	 * @param {Object} body query
+	 */
+	postAnalyticsJourneysAggregatesQuery(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postAnalyticsJourneysAggregatesQuery';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/journeys/aggregates/query', 
+			'POST', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
 	 * Query for queue observations
 	 * 
 	 * @param {Object} body query
@@ -736,7 +761,7 @@ class AnalyticsApi {
 
 	/**
 	 * Generate a view export request
-	 * 
+	 * This API creates a reporting export but the desired way to export analytics data is to use the analytics query APIs instead
 	 * @param {Object} body ReportingExportJobRequest
 	 */
 	postAnalyticsReportingExports(body) { 

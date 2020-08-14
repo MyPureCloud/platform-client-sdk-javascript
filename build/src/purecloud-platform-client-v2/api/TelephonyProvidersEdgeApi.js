@@ -5,7 +5,7 @@ class TelephonyProvidersEdgeApi {
 	/**
 	 * TelephonyProvidersEdge service.
 	 * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-	 * @version 87.0.0
+	 * @version 88.0.0
 	 */
 
 	/**
@@ -1152,6 +1152,7 @@ class TelephonyProvidersEdgeApi {
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {String} opts.sortBy Sort by (default to number)
+	 * @param {Array.<String>} opts.id Filter by a specific list of ID&#39;s
 	 */
 	getTelephonyProvidersEdgesDidpools(opts) { 
 		opts = opts || {};
@@ -1161,7 +1162,7 @@ class TelephonyProvidersEdgeApi {
 			'/api/v2/telephony/providers/edges/didpools', 
 			'GET', 
 			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'] }, 
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi') }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -1182,6 +1183,7 @@ class TelephonyProvidersEdgeApi {
 	 * @param {String} opts.phoneNumber Filter by phoneNumber
 	 * @param {String} opts.ownerId Filter by the owner of a phone number
 	 * @param {String} opts.didPoolId Filter by the DID Pool assignment
+	 * @param {Array.<String>} opts.id Filter by a specific list of ID&#39;s
 	 */
 	getTelephonyProvidersEdgesDids(opts) { 
 		opts = opts || {};
@@ -1191,7 +1193,7 @@ class TelephonyProvidersEdgeApi {
 			'/api/v2/telephony/providers/edges/dids', 
 			'GET', 
 			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'phoneNumber': opts['phoneNumber'],'owner.id': opts['ownerId'],'didPool.id': opts['didPoolId'] }, 
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'phoneNumber': opts['phoneNumber'],'owner.id': opts['ownerId'],'didPool.id': opts['didPoolId'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi') }, 
 			{  }, 
 			{  }, 
 			null, 

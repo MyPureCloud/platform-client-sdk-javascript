@@ -12,7 +12,10 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getPresencedefinitions**](PresenceApi.html#getPresencedefinitions) | **GET** /api/v2/presencedefinitions | Get an Organization&#39;s list of Presence Definitions
 [**getSystempresences**](PresenceApi.html#getSystempresences) | **GET** /api/v2/systempresences | Get the list of SystemPresences
 [**getUserPresence**](PresenceApi.html#getUserPresence) | **GET** /api/v2/users/{userId}/presences/{sourceId} | Get a user&#39;s Presence
+[**getUserPresencesMicrosoftteams**](PresenceApi.html#getUserPresencesMicrosoftteams) | **GET** /api/v2/users/{userId}/presences/microsoftteams | Get a user&#39;s Microsoft Teams presence.
+[**getUserPresencesPurecloud**](PresenceApi.html#getUserPresencesPurecloud) | **GET** /api/v2/users/{userId}/presences/purecloud | Get a user&#39;s GenesysCloud presence.
 [**patchUserPresence**](PresenceApi.html#patchUserPresence) | **PATCH** /api/v2/users/{userId}/presences/{sourceId} | Patch a user&#39;s Presence
+[**patchUserPresencesPurecloud**](PresenceApi.html#patchUserPresencesPurecloud) | **PATCH** /api/v2/users/{userId}/presences/purecloud | Patch a GenesysCloud user&#39;s presence
 [**postPresencedefinitions**](PresenceApi.html#postPresencedefinitions) | **POST** /api/v2/presencedefinitions | Create a Presence Definition
 [**putPresencedefinition**](PresenceApi.html#putPresencedefinition) | **PUT** /api/v2/presencedefinitions/{presenceId} | Update a Presence Definition
 [**putUsersPresencesBulk**](PresenceApi.html#putUsersPresencesBulk) | **PUT** /api/v2/users/presences/bulk | Update bulk user Presences
@@ -252,7 +255,7 @@ GET /api/v2/users/{userId}/presences/{sourceId}
 
 Get a user&#39;s Presence
 
-
+Get a user&#39;s presence for the specified source that is not specifically listed.  Used to support custom presence sources.
 
 Requires NO permissions: 
 
@@ -273,7 +276,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.PresenceApi();
 
 let userId = "userId_example"; // String | user Id
-let sourceId = "sourceId_example"; // String | Source
+let sourceId = "sourceId_example"; // String | Presence source ID
 
 apiInstance.getUserPresence(userId, sourceId)
   .then((data) => {
@@ -291,7 +294,117 @@ apiInstance.getUserPresence(userId, sourceId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | user Id |  |
- **sourceId** | **String** | Source |  |
+ **sourceId** | **String** | Presence source ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+**UserPresence**
+
+<a name="getUserPresencesMicrosoftteams"></a>
+
+# PresenceExpand getUserPresencesMicrosoftteams(userId)
+
+
+
+GET /api/v2/users/{userId}/presences/microsoftteams
+
+Get a user&#39;s Microsoft Teams presence.
+
+Gets the presence for a Microsoft Teams user.  This will return the Microsoft Teams presence mapped to GenesysCloud presence with additional activity details in the message field. This presence source is read-only.
+
+Requires ANY permissions: 
+
+* integration:microsoftTeams:view
+* integrations:integration:view
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.PresenceApi();
+
+let userId = "userId_example"; // String | user Id
+
+apiInstance.getUserPresencesMicrosoftteams(userId)
+  .then((data) => {
+    console.log(`getUserPresencesMicrosoftteams success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getUserPresencesMicrosoftteams');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **userId** | **String** | user Id |  |
+{: class="table table-striped"}
+
+### Return type
+
+**PresenceExpand**
+
+<a name="getUserPresencesPurecloud"></a>
+
+# UserPresence getUserPresencesPurecloud(userId)
+
+
+
+GET /api/v2/users/{userId}/presences/purecloud
+
+Get a user&#39;s GenesysCloud presence.
+
+Get the default GenesysCloud user presence source PURECLOUD
+
+Requires NO permissions: 
+
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.PresenceApi();
+
+let userId = "userId_example"; // String | user Id
+
+apiInstance.getUserPresencesPurecloud(userId)
+  .then((data) => {
+    console.log(`getUserPresencesPurecloud success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getUserPresencesPurecloud');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **userId** | **String** | user Id |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -308,7 +421,7 @@ PATCH /api/v2/users/{userId}/presences/{sourceId}
 
 Patch a user&#39;s Presence
 
-The presence object can be patched one of three ways. Option 1: Set the &#39;primary&#39; property to true. This will set the &#39;source&#39; defined in the path as the user&#39;s primary presence source. Option 2: Provide the presenceDefinition value. The &#39;id&#39; is the only value required within the presenceDefinition. Option 3: Provide the message value. Option 1 can be combined with Option 2 and/or Option 3.
+Patch a user&#39;s presence for the specified source that is not specifically listed. The presence object can be patched one of three ways. Option 1: Set the &#39;primary&#39; property to true. This will set the &#39;source&#39; defined in the path as the user&#39;s primary presence source. Option 2: Provide the presenceDefinition value. The &#39;id&#39; is the only value required within the presenceDefinition. Option 3: Provide the message value. Option 1 can be combined with Option 2 and/or Option 3.
 
 Requires NO permissions: 
 
@@ -365,7 +478,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.PresenceApi();
 
 let userId = "userId_example"; // String | user Id
-let sourceId = "sourceId_example"; // String | Source
+let sourceId = "sourceId_example"; // String | Presence source ID
 let body = {}; // Object | User presence
 
 apiInstance.patchUserPresence(userId, sourceId, body)
@@ -384,7 +497,99 @@ apiInstance.patchUserPresence(userId, sourceId, body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | user Id |  |
- **sourceId** | **String** | Source |  |
+ **sourceId** | **String** | Presence source ID |  |
+ **body** | **Object** | User presence |  |
+{: class="table table-striped"}
+
+### Return type
+
+**UserPresence**
+
+<a name="patchUserPresencesPurecloud"></a>
+
+# UserPresence patchUserPresencesPurecloud(userId, body)
+
+
+
+PATCH /api/v2/users/{userId}/presences/purecloud
+
+Patch a GenesysCloud user&#39;s presence
+
+The presence object can be patched one of three ways. Option 1: Set the &#39;primary&#39; property to true. This will set the PURECLOUD source as the user&#39;s primary presence source. Option 2: Provide the presenceDefinition value. The &#39;id&#39; is the only value required within the presenceDefinition. Option 3: Provide the message value. Option 1 can be combined with Option 2 and/or Option 3.
+
+Requires NO permissions: 
+
+
+
+### Request Body Schema
+
+<script type="text/javascript">
+	function copyUserPresenceExample() {
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#UserPresenceExample').text()).select();
+		document.execCommand("copy");
+		temp.remove();
+		return false;
+	}
+</script>
+
+UserPresence <a href="#" onclick="return copyUserPresenceExample()">Copy</a>
+
+<div id="UserPresenceExample">
+
+```{"language":"json", "maxHeight": "250px"}
+{ 
+  "id": String, 
+  "name": String, 
+  "source": String, 
+  "primary": Boolean, 
+  "presenceDefinition": { 
+    "id": String, 
+    "systemPresence": String, 
+    "selfUri": String, 
+  },  
+  "message": String, 
+  "modifiedDate": Date, 
+  "selfUri": String, 
+}
+```
+
+</div>
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.PresenceApi();
+
+let userId = "userId_example"; // String | user Id
+let body = {}; // Object | User presence
+
+apiInstance.patchUserPresencesPurecloud(userId, body)
+  .then((data) => {
+    console.log(`patchUserPresencesPurecloud success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchUserPresencesPurecloud');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **userId** | **String** | user Id |  |
  **body** | **Object** | User presence |  |
 {: class="table table-striped"}
 
@@ -453,6 +658,7 @@ OrganizationPresence <a href="#" onclick="return copyOrganizationPresenceExample
       "mediaType": String, 
       "type": String, 
       "extension": String, 
+      "countryCode": String, 
     },  
     "addresses": { 
       "address": String, 
@@ -460,6 +666,7 @@ OrganizationPresence <a href="#" onclick="return copyOrganizationPresenceExample
       "mediaType": String, 
       "type": String, 
       "extension": String, 
+      "countryCode": String, 
     },  
     "state": String, 
     "title": String, 
@@ -476,6 +683,13 @@ OrganizationPresence <a href="#" onclick="return copyOrganizationPresenceExample
       "interests": [String], 
       "hobbies": [String], 
       "spouse": String, 
+      "education": { 
+        "school": String, 
+        "fieldOfStudy": String, 
+        "notes": String, 
+        "dateStart": String, 
+        "dateEnd": String, 
+      },  
     },  
     "employerInfo": { 
       "officialName": String, 
@@ -863,6 +1077,7 @@ OrganizationPresence <a href="#" onclick="return copyOrganizationPresenceExample
       "mediaType": String, 
       "type": String, 
       "extension": String, 
+      "countryCode": String, 
     },  
     "addresses": { 
       "address": String, 
@@ -870,6 +1085,7 @@ OrganizationPresence <a href="#" onclick="return copyOrganizationPresenceExample
       "mediaType": String, 
       "type": String, 
       "extension": String, 
+      "countryCode": String, 
     },  
     "state": String, 
     "title": String, 
@@ -886,6 +1102,13 @@ OrganizationPresence <a href="#" onclick="return copyOrganizationPresenceExample
       "interests": [String], 
       "hobbies": [String], 
       "spouse": String, 
+      "education": { 
+        "school": String, 
+        "fieldOfStudy": String, 
+        "notes": String, 
+        "dateStart": String, 
+        "dateEnd": String, 
+      },  
     },  
     "employerInfo": { 
       "officialName": String, 
@@ -1359,6 +1582,7 @@ OrganizationPresence <a href="#" onclick="return copyOrganizationPresenceExample
       "mediaType": String, 
       "type": String, 
       "extension": String, 
+      "countryCode": String, 
     },  
     "addresses": { 
       "address": String, 
@@ -1366,6 +1590,7 @@ OrganizationPresence <a href="#" onclick="return copyOrganizationPresenceExample
       "mediaType": String, 
       "type": String, 
       "extension": String, 
+      "countryCode": String, 
     },  
     "state": String, 
     "title": String, 
@@ -1382,6 +1607,13 @@ OrganizationPresence <a href="#" onclick="return copyOrganizationPresenceExample
       "interests": [String], 
       "hobbies": [String], 
       "spouse": String, 
+      "education": { 
+        "school": String, 
+        "fieldOfStudy": String, 
+        "notes": String, 
+        "dateStart": String, 
+        "dateEnd": String, 
+      },  
     },  
     "employerInfo": { 
       "officialName": String, 
@@ -1769,6 +2001,7 @@ OrganizationPresence <a href="#" onclick="return copyOrganizationPresenceExample
       "mediaType": String, 
       "type": String, 
       "extension": String, 
+      "countryCode": String, 
     },  
     "addresses": { 
       "address": String, 
@@ -1776,6 +2009,7 @@ OrganizationPresence <a href="#" onclick="return copyOrganizationPresenceExample
       "mediaType": String, 
       "type": String, 
       "extension": String, 
+      "countryCode": String, 
     },  
     "state": String, 
     "title": String, 
@@ -1792,6 +2026,13 @@ OrganizationPresence <a href="#" onclick="return copyOrganizationPresenceExample
       "interests": [String], 
       "hobbies": [String], 
       "spouse": String, 
+      "education": { 
+        "school": String, 
+        "fieldOfStudy": String, 
+        "notes": String, 
+        "dateStart": String, 
+        "dateEnd": String, 
+      },  
     },  
     "employerInfo": { 
       "officialName": String, 

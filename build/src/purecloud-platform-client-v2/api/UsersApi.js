@@ -5,7 +5,7 @@ class UsersApi {
 	/**
 	 * Users service.
 	 * @module purecloud-platform-client-v2/api/UsersApi
-	 * @version 87.0.0
+	 * @version 88.0.0
 	 */
 
 	/**
@@ -469,6 +469,7 @@ class UsersApi {
 	 * @param {Array.<String>} opts.jid jid
 	 * @param {Object} opts.sortOrder Ascending or descending sort order (default to ASC)
 	 * @param {Array.<String>} opts.expand Which fields, if any, to expand
+	 * @param {Object} opts.integrationPresenceSource Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an \&quot;expand\&quot;.
 	 */
 	getProfilesUsers(opts) { 
 		opts = opts || {};
@@ -478,7 +479,7 @@ class UsersApi {
 			'/api/v2/profiles/users', 
 			'GET', 
 			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'jid': this.apiClient.buildCollectionParam(opts['jid'], 'multi'),'sortOrder': opts['sortOrder'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') }, 
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'jid': this.apiClient.buildCollectionParam(opts['jid'], 'multi'),'sortOrder': opts['sortOrder'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'integrationPresenceSource': opts['integrationPresenceSource'] }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -519,6 +520,7 @@ class UsersApi {
 	 * @param {String} userId User ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand Which fields, if any, to expand
+	 * @param {Object} opts.integrationPresenceSource Gets an integration presence for a user instead of their default.
 	 * @param {Object} opts.state Search for a user with this state (default to active)
 	 */
 	getUser(userId, opts) { 
@@ -533,7 +535,7 @@ class UsersApi {
 			'/api/v2/users/{userId}', 
 			'GET', 
 			{ 'userId': userId }, 
-			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'state': opts['state'] }, 
+			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'integrationPresenceSource': opts['integrationPresenceSource'],'state': opts['state'] }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -719,6 +721,7 @@ class UsersApi {
 	 * @param {String} userId userId
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand Which fields, if any, to expand
+	 * @param {Object} opts.integrationPresenceSource Gets an integration presence for a user instead of their default.
 	 */
 	getUserProfile(userId, opts) { 
 		opts = opts || {};
@@ -732,7 +735,7 @@ class UsersApi {
 			'/api/v2/users/{userId}/profile', 
 			'GET', 
 			{ 'userId': userId }, 
-			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') }, 
+			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'integrationPresenceSource': opts['integrationPresenceSource'] }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -1005,6 +1008,7 @@ class UsersApi {
 	 * @param {Array.<String>} opts.jabberId A list of jabberIds to fetch by bulk (cannot be used with the \&quot;id\&quot; parameter)
 	 * @param {Object} opts.sortOrder Ascending or descending sort order (default to ASC)
 	 * @param {Array.<String>} opts.expand Which fields, if any, to expand
+	 * @param {Object} opts.integrationPresenceSource Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an \&quot;expand\&quot;. When using this parameter the maximum number of users that can be returned is 10.
 	 * @param {Object} opts.state Only list users of this state (default to active)
 	 */
 	getUsers(opts) { 
@@ -1015,7 +1019,7 @@ class UsersApi {
 			'/api/v2/users', 
 			'GET', 
 			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'jabberId': this.apiClient.buildCollectionParam(opts['jabberId'], 'multi'),'sortOrder': opts['sortOrder'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'state': opts['state'] }, 
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'jabberId': this.apiClient.buildCollectionParam(opts['jabberId'], 'multi'),'sortOrder': opts['sortOrder'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'integrationPresenceSource': opts['integrationPresenceSource'],'state': opts['state'] }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -1030,6 +1034,7 @@ class UsersApi {
 	 * This request is not valid when using the Client Credentials OAuth grant.
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand Which fields, if any, to expand.
+	 * @param {Object} opts.integrationPresenceSource Get your presence for a given integration. This parameter will only be used when presence is provided as an \&quot;expand\&quot;.
 	 */
 	getUsersMe(opts) { 
 		opts = opts || {};
@@ -1039,7 +1044,7 @@ class UsersApi {
 			'/api/v2/users/me', 
 			'GET', 
 			{  }, 
-			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') }, 
+			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'integrationPresenceSource': opts['integrationPresenceSource'] }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -1055,6 +1060,7 @@ class UsersApi {
 	 * @param {String} q64 q64
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand expand
+	 * @param {Object} opts.integrationPresenceSource integrationPresenceSource
 	 */
 	getUsersSearch(q64, opts) { 
 		opts = opts || {};
@@ -1068,7 +1074,7 @@ class UsersApi {
 			'/api/v2/users/search', 
 			'GET', 
 			{  }, 
-			{ 'q64': q64,'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') }, 
+			{ 'q64': q64,'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'integrationPresenceSource': opts['integrationPresenceSource'] }, 
 			{  }, 
 			{  }, 
 			null, 

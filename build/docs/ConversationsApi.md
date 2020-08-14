@@ -97,6 +97,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**patchConversationsMessageParticipant**](ConversationsApi.html#patchConversationsMessageParticipant) | **PATCH** /api/v2/conversations/messages/{conversationId}/participants/{participantId} | Update conversation participant
 [**patchConversationsMessageParticipantAttributes**](ConversationsApi.html#patchConversationsMessageParticipantAttributes) | **PATCH** /api/v2/conversations/messages/{conversationId}/participants/{participantId}/attributes | Update the attributes on a conversation participant.
 [**patchConversationsMessageParticipantCommunication**](ConversationsApi.html#patchConversationsMessageParticipantCommunication) | **PATCH** /api/v2/conversations/messages/{conversationId}/participants/{participantId}/communications/{communicationId} | Update conversation participant&#39;s communication by disconnecting it.
+[**patchConversationsMessagingIntegrationsFacebookIntegrationId**](ConversationsApi.html#patchConversationsMessagingIntegrationsFacebookIntegrationId) | **PATCH** /api/v2/conversations/messaging/integrations/facebook/{integrationId} | Update Facebook messaging integration
 [**patchConversationsMessagingIntegrationsWhatsappIntegrationId**](ConversationsApi.html#patchConversationsMessagingIntegrationsWhatsappIntegrationId) | **PATCH** /api/v2/conversations/messaging/integrations/whatsapp/{integrationId} | Activate a WhatsApp messaging integration.
 [**postAnalyticsConversationDetailsProperties**](ConversationsApi.html#postAnalyticsConversationDetailsProperties) | **POST** /api/v2/analytics/conversations/{conversationId}/details/properties | Index conversation properties
 [**postAnalyticsConversationsAggregatesQuery**](ConversationsApi.html#postAnalyticsConversationsAggregatesQuery) | **POST** /api/v2/analytics/conversations/aggregates/query | Query for conversation aggregates
@@ -4013,6 +4014,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
         "endTime": Date, 
         "provisional": Boolean, 
       },  
+      "afterCallWork": { 
+        "startTime": Date, 
+        "endTime": Date, 
+        "state": String, 
+      },  
     },  
     "callbacks": { 
       "state": String, 
@@ -4064,6 +4070,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
         "endTime": Date, 
         "provisional": Boolean, 
       },  
+      "afterCallWork": { 
+        "startTime": Date, 
+        "endTime": Date, 
+        "state": String, 
+      },  
     },  
     "chats": { 
       "state": String, 
@@ -4114,6 +4125,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
         "endTime": Date, 
         "provisional": Boolean, 
       },  
+      "afterCallWork": { 
+        "startTime": Date, 
+        "endTime": Date, 
+        "state": String, 
+      },  
     },  
     "cobrowsesessions": { 
       "state": String, 
@@ -4151,6 +4167,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
         "durationSeconds": Number, 
         "endTime": Date, 
         "provisional": Boolean, 
+      },  
+      "afterCallWork": { 
+        "startTime": Date, 
+        "endTime": Date, 
+        "state": String, 
       },  
     },  
     "emails": { 
@@ -4271,6 +4292,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
         "durationSeconds": Number, 
         "endTime": Date, 
         "provisional": Boolean, 
+      },  
+      "afterCallWork": { 
+        "startTime": Date, 
+        "endTime": Date, 
+        "state": String, 
       },  
     },  
     "messages": { 
@@ -4414,6 +4440,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
         "endTime": Date, 
         "provisional": Boolean, 
       },  
+      "afterCallWork": { 
+        "startTime": Date, 
+        "endTime": Date, 
+        "state": String, 
+      },  
     },  
     "screenshares": { 
       "state": String, 
@@ -4442,6 +4473,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
         "durationSeconds": Number, 
         "endTime": Date, 
         "provisional": Boolean, 
+      },  
+      "afterCallWork": { 
+        "startTime": Date, 
+        "endTime": Date, 
+        "state": String, 
       },  
     },  
     "socialExpressions": { 
@@ -4477,6 +4513,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
         "endTime": Date, 
         "provisional": Boolean, 
       },  
+      "afterCallWork": { 
+        "startTime": Date, 
+        "endTime": Date, 
+        "state": String, 
+      },  
     },  
     "videos": { 
       "state": String, 
@@ -4508,6 +4549,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
         "durationSeconds": Number, 
         "endTime": Date, 
         "provisional": Boolean, 
+      },  
+      "afterCallWork": { 
+        "startTime": Date, 
+        "endTime": Date, 
+        "state": String, 
       },  
     },  
     "evaluations": { 
@@ -4648,6 +4694,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "endTime": Date, 
               "provisional": Boolean, 
             },  
+            "afterCallWork": { 
+              "startTime": Date, 
+              "endTime": Date, 
+              "state": String, 
+            },  
           },  
           "callbacks": { 
             "state": String, 
@@ -4699,6 +4750,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "endTime": Date, 
               "provisional": Boolean, 
             },  
+            "afterCallWork": { 
+              "startTime": Date, 
+              "endTime": Date, 
+              "state": String, 
+            },  
           },  
           "chats": { 
             "state": String, 
@@ -4746,6 +4802,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "endTime": Date, 
               "provisional": Boolean, 
             },  
+            "afterCallWork": { 
+              "startTime": Date, 
+              "endTime": Date, 
+              "state": String, 
+            },  
           },  
           "cobrowsesessions": { 
             "state": String, 
@@ -4783,6 +4844,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "durationSeconds": Number, 
               "endTime": Date, 
               "provisional": Boolean, 
+            },  
+            "afterCallWork": { 
+              "startTime": Date, 
+              "endTime": Date, 
+              "state": String, 
             },  
           },  
           "emails": { 
@@ -4855,6 +4921,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "durationSeconds": Number, 
               "endTime": Date, 
               "provisional": Boolean, 
+            },  
+            "afterCallWork": { 
+              "startTime": Date, 
+              "endTime": Date, 
+              "state": String, 
             },  
           },  
           "messages": { 
@@ -4950,6 +5021,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "endTime": Date, 
               "provisional": Boolean, 
             },  
+            "afterCallWork": { 
+              "startTime": Date, 
+              "endTime": Date, 
+              "state": String, 
+            },  
           },  
           "screenshares": { 
             "state": String, 
@@ -4978,6 +5054,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "durationSeconds": Number, 
               "endTime": Date, 
               "provisional": Boolean, 
+            },  
+            "afterCallWork": { 
+              "startTime": Date, 
+              "endTime": Date, 
+              "state": String, 
             },  
           },  
           "socialExpressions": { 
@@ -5013,6 +5094,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "endTime": Date, 
               "provisional": Boolean, 
             },  
+            "afterCallWork": { 
+              "startTime": Date, 
+              "endTime": Date, 
+              "state": String, 
+            },  
           },  
           "videos": { 
             "state": String, 
@@ -5044,6 +5130,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "durationSeconds": Number, 
               "endTime": Date, 
               "provisional": Boolean, 
+            },  
+            "afterCallWork": { 
+              "startTime": Date, 
+              "endTime": Date, 
+              "state": String, 
             },  
           },  
           "evaluations": { 
@@ -5137,8 +5228,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -5162,6 +5253,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "addresses": { 
                 "address": String, 
@@ -5169,6 +5261,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "state": String, 
               "title": String, 
@@ -5185,6 +5278,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "interests": [String], 
                 "hobbies": [String], 
                 "spouse": String, 
+                "education": [Education], 
               },  
               "employerInfo": { 
                 "officialName": String, 
@@ -5620,8 +5714,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -5632,8 +5726,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
           "firstUri": String, 
           "selfUri": String, 
           "nextUri": String, 
-          "lastUri": String, 
           "previousUri": String, 
+          "lastUri": String, 
           "pageCount": Number, 
         },  
         "selfUri": String, 
@@ -5657,6 +5751,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
           "mediaType": String, 
           "type": String, 
           "extension": String, 
+          "countryCode": String, 
         },  
         "addresses": { 
           "address": String, 
@@ -5664,6 +5759,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
           "mediaType": String, 
           "type": String, 
           "extension": String, 
+          "countryCode": String, 
         },  
         "state": String, 
         "title": String, 
@@ -5680,6 +5776,13 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
           "interests": [String], 
           "hobbies": [String], 
           "spouse": String, 
+          "education": { 
+            "school": String, 
+            "fieldOfStudy": String, 
+            "notes": String, 
+            "dateStart": String, 
+            "dateEnd": String, 
+          },  
         },  
         "employerInfo": { 
           "officialName": String, 
@@ -6167,6 +6270,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "endTime": Date, 
                 "provisional": Boolean, 
               },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
+              },  
             },  
             "callbacks": { 
               "state": String, 
@@ -6215,6 +6323,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "endTime": Date, 
                 "provisional": Boolean, 
               },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
+              },  
             },  
             "chats": { 
               "state": String, 
@@ -6253,6 +6366,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "endTime": Date, 
                 "provisional": Boolean, 
               },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
+              },  
             },  
             "cobrowsesessions": { 
               "state": String, 
@@ -6290,6 +6408,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "durationSeconds": Number, 
                 "endTime": Date, 
                 "provisional": Boolean, 
+              },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
               },  
             },  
             "emails": { 
@@ -6346,6 +6469,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "durationSeconds": Number, 
                 "endTime": Date, 
                 "provisional": Boolean, 
+              },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
               },  
             },  
             "messages": { 
@@ -6416,6 +6544,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "endTime": Date, 
                 "provisional": Boolean, 
               },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
+              },  
             },  
             "screenshares": { 
               "state": String, 
@@ -6444,6 +6577,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "durationSeconds": Number, 
                 "endTime": Date, 
                 "provisional": Boolean, 
+              },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
               },  
             },  
             "socialExpressions": { 
@@ -6479,6 +6617,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "endTime": Date, 
                 "provisional": Boolean, 
               },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
+              },  
             },  
             "videos": { 
               "state": String, 
@@ -6510,6 +6653,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "durationSeconds": Number, 
                 "endTime": Date, 
                 "provisional": Boolean, 
+              },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
               },  
             },  
             "evaluations": { 
@@ -6733,8 +6881,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -6745,8 +6893,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
             "firstUri": String, 
             "selfUri": String, 
             "nextUri": String, 
-            "lastUri": String, 
             "previousUri": String, 
+            "lastUri": String, 
             "pageCount": Number, 
           },  
           "selfUri": String, 
@@ -6837,6 +6985,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "self": Address, 
                 "other": Address, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "callbacks": { 
                 "state": String, 
@@ -6862,6 +7011,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "provider": String, 
                 "peerId": String, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "chats": { 
                 "state": String, 
@@ -6882,6 +7032,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "avatarImageUrl": String, 
                 "journeyContext": JourneyContext, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "cobrowsesessions": { 
                 "state": String, 
@@ -6900,6 +7051,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "peerId": String, 
                 "segments": [Segment], 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "emails": { 
                 "state": String, 
@@ -6924,6 +7076,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "draftAttachments": [Attachment], 
                 "spam": Boolean, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "messages": { 
                 "state": String, 
@@ -6948,6 +7101,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "fromAddress": Address, 
                 "messages": [MessageDetails], 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "screenshares": { 
                 "state": String, 
@@ -6963,6 +7117,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "peerId": String, 
                 "segments": [Segment], 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "socialExpressions": { 
                 "state": String, 
@@ -6983,6 +7138,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "scriptId": String, 
                 "peerId": String, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "videos": { 
                 "state": String, 
@@ -7001,6 +7157,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "msids": [String], 
                 "self": Address, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "evaluations": { 
                 "id": String, 
@@ -7100,8 +7257,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -7125,6 +7282,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "addresses": { 
               "address": String, 
@@ -7132,6 +7290,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "state": String, 
             "title": String, 
@@ -7148,6 +7307,13 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "interests": [String], 
               "hobbies": [String], 
               "spouse": String, 
+              "education": { 
+                "school": String, 
+                "fieldOfStudy": String, 
+                "notes": String, 
+                "dateStart": String, 
+                "dateEnd": String, 
+              },  
             },  
             "employerInfo": { 
               "officialName": String, 
@@ -7482,8 +7648,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -7998,6 +8164,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "self": Address, 
                 "other": Address, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "callbacks": { 
                 "state": String, 
@@ -8023,6 +8190,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "provider": String, 
                 "peerId": String, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "chats": { 
                 "state": String, 
@@ -8043,6 +8211,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "avatarImageUrl": String, 
                 "journeyContext": JourneyContext, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "cobrowsesessions": { 
                 "state": String, 
@@ -8061,6 +8230,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "peerId": String, 
                 "segments": [Segment], 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "emails": { 
                 "state": String, 
@@ -8085,6 +8255,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "draftAttachments": [Attachment], 
                 "spam": Boolean, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "messages": { 
                 "state": String, 
@@ -8109,6 +8280,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "fromAddress": Address, 
                 "messages": [MessageDetails], 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "screenshares": { 
                 "state": String, 
@@ -8124,6 +8296,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "peerId": String, 
                 "segments": [Segment], 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "socialExpressions": { 
                 "state": String, 
@@ -8144,6 +8317,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "scriptId": String, 
                 "peerId": String, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "videos": { 
                 "state": String, 
@@ -8162,6 +8336,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "msids": [String], 
                 "self": Address, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "evaluations": { 
                 "id": String, 
@@ -8261,8 +8436,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -8286,6 +8461,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "addresses": { 
               "address": String, 
@@ -8293,6 +8469,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "state": String, 
             "title": String, 
@@ -8309,6 +8486,13 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "interests": [String], 
               "hobbies": [String], 
               "spouse": String, 
+              "education": { 
+                "school": String, 
+                "fieldOfStudy": String, 
+                "notes": String, 
+                "dateStart": String, 
+                "dateEnd": String, 
+              },  
             },  
             "employerInfo": { 
               "officialName": String, 
@@ -8643,8 +8827,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -9888,6 +10072,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
         "endTime": Date, 
         "provisional": Boolean, 
       },  
+      "afterCallWork": { 
+        "startTime": Date, 
+        "endTime": Date, 
+        "state": String, 
+      },  
     },  
     "callbacks": { 
       "state": String, 
@@ -9939,6 +10128,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
         "endTime": Date, 
         "provisional": Boolean, 
       },  
+      "afterCallWork": { 
+        "startTime": Date, 
+        "endTime": Date, 
+        "state": String, 
+      },  
     },  
     "chats": { 
       "state": String, 
@@ -9989,6 +10183,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
         "endTime": Date, 
         "provisional": Boolean, 
       },  
+      "afterCallWork": { 
+        "startTime": Date, 
+        "endTime": Date, 
+        "state": String, 
+      },  
     },  
     "cobrowsesessions": { 
       "state": String, 
@@ -10026,6 +10225,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
         "durationSeconds": Number, 
         "endTime": Date, 
         "provisional": Boolean, 
+      },  
+      "afterCallWork": { 
+        "startTime": Date, 
+        "endTime": Date, 
+        "state": String, 
       },  
     },  
     "emails": { 
@@ -10146,6 +10350,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
         "durationSeconds": Number, 
         "endTime": Date, 
         "provisional": Boolean, 
+      },  
+      "afterCallWork": { 
+        "startTime": Date, 
+        "endTime": Date, 
+        "state": String, 
       },  
     },  
     "messages": { 
@@ -10289,6 +10498,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
         "endTime": Date, 
         "provisional": Boolean, 
       },  
+      "afterCallWork": { 
+        "startTime": Date, 
+        "endTime": Date, 
+        "state": String, 
+      },  
     },  
     "screenshares": { 
       "state": String, 
@@ -10317,6 +10531,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
         "durationSeconds": Number, 
         "endTime": Date, 
         "provisional": Boolean, 
+      },  
+      "afterCallWork": { 
+        "startTime": Date, 
+        "endTime": Date, 
+        "state": String, 
       },  
     },  
     "socialExpressions": { 
@@ -10352,6 +10571,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
         "endTime": Date, 
         "provisional": Boolean, 
       },  
+      "afterCallWork": { 
+        "startTime": Date, 
+        "endTime": Date, 
+        "state": String, 
+      },  
     },  
     "videos": { 
       "state": String, 
@@ -10383,6 +10607,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
         "durationSeconds": Number, 
         "endTime": Date, 
         "provisional": Boolean, 
+      },  
+      "afterCallWork": { 
+        "startTime": Date, 
+        "endTime": Date, 
+        "state": String, 
       },  
     },  
     "evaluations": { 
@@ -10523,6 +10752,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "endTime": Date, 
               "provisional": Boolean, 
             },  
+            "afterCallWork": { 
+              "startTime": Date, 
+              "endTime": Date, 
+              "state": String, 
+            },  
           },  
           "callbacks": { 
             "state": String, 
@@ -10574,6 +10808,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "endTime": Date, 
               "provisional": Boolean, 
             },  
+            "afterCallWork": { 
+              "startTime": Date, 
+              "endTime": Date, 
+              "state": String, 
+            },  
           },  
           "chats": { 
             "state": String, 
@@ -10621,6 +10860,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "endTime": Date, 
               "provisional": Boolean, 
             },  
+            "afterCallWork": { 
+              "startTime": Date, 
+              "endTime": Date, 
+              "state": String, 
+            },  
           },  
           "cobrowsesessions": { 
             "state": String, 
@@ -10658,6 +10902,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "durationSeconds": Number, 
               "endTime": Date, 
               "provisional": Boolean, 
+            },  
+            "afterCallWork": { 
+              "startTime": Date, 
+              "endTime": Date, 
+              "state": String, 
             },  
           },  
           "emails": { 
@@ -10730,6 +10979,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "durationSeconds": Number, 
               "endTime": Date, 
               "provisional": Boolean, 
+            },  
+            "afterCallWork": { 
+              "startTime": Date, 
+              "endTime": Date, 
+              "state": String, 
             },  
           },  
           "messages": { 
@@ -10825,6 +11079,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "endTime": Date, 
               "provisional": Boolean, 
             },  
+            "afterCallWork": { 
+              "startTime": Date, 
+              "endTime": Date, 
+              "state": String, 
+            },  
           },  
           "screenshares": { 
             "state": String, 
@@ -10853,6 +11112,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "durationSeconds": Number, 
               "endTime": Date, 
               "provisional": Boolean, 
+            },  
+            "afterCallWork": { 
+              "startTime": Date, 
+              "endTime": Date, 
+              "state": String, 
             },  
           },  
           "socialExpressions": { 
@@ -10888,6 +11152,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "endTime": Date, 
               "provisional": Boolean, 
             },  
+            "afterCallWork": { 
+              "startTime": Date, 
+              "endTime": Date, 
+              "state": String, 
+            },  
           },  
           "videos": { 
             "state": String, 
@@ -10919,6 +11188,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "durationSeconds": Number, 
               "endTime": Date, 
               "provisional": Boolean, 
+            },  
+            "afterCallWork": { 
+              "startTime": Date, 
+              "endTime": Date, 
+              "state": String, 
             },  
           },  
           "evaluations": { 
@@ -11012,8 +11286,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -11037,6 +11311,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "addresses": { 
                 "address": String, 
@@ -11044,6 +11319,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "state": String, 
               "title": String, 
@@ -11060,6 +11336,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "interests": [String], 
                 "hobbies": [String], 
                 "spouse": String, 
+                "education": [Education], 
               },  
               "employerInfo": { 
                 "officialName": String, 
@@ -11495,8 +11772,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -11507,8 +11784,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
           "firstUri": String, 
           "selfUri": String, 
           "nextUri": String, 
-          "lastUri": String, 
           "previousUri": String, 
+          "lastUri": String, 
           "pageCount": Number, 
         },  
         "selfUri": String, 
@@ -11532,6 +11809,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
           "mediaType": String, 
           "type": String, 
           "extension": String, 
+          "countryCode": String, 
         },  
         "addresses": { 
           "address": String, 
@@ -11539,6 +11817,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
           "mediaType": String, 
           "type": String, 
           "extension": String, 
+          "countryCode": String, 
         },  
         "state": String, 
         "title": String, 
@@ -11555,6 +11834,13 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
           "interests": [String], 
           "hobbies": [String], 
           "spouse": String, 
+          "education": { 
+            "school": String, 
+            "fieldOfStudy": String, 
+            "notes": String, 
+            "dateStart": String, 
+            "dateEnd": String, 
+          },  
         },  
         "employerInfo": { 
           "officialName": String, 
@@ -12042,6 +12328,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "endTime": Date, 
                 "provisional": Boolean, 
               },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
+              },  
             },  
             "callbacks": { 
               "state": String, 
@@ -12090,6 +12381,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "endTime": Date, 
                 "provisional": Boolean, 
               },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
+              },  
             },  
             "chats": { 
               "state": String, 
@@ -12128,6 +12424,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "endTime": Date, 
                 "provisional": Boolean, 
               },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
+              },  
             },  
             "cobrowsesessions": { 
               "state": String, 
@@ -12165,6 +12466,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "durationSeconds": Number, 
                 "endTime": Date, 
                 "provisional": Boolean, 
+              },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
               },  
             },  
             "emails": { 
@@ -12221,6 +12527,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "durationSeconds": Number, 
                 "endTime": Date, 
                 "provisional": Boolean, 
+              },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
               },  
             },  
             "messages": { 
@@ -12291,6 +12602,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "endTime": Date, 
                 "provisional": Boolean, 
               },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
+              },  
             },  
             "screenshares": { 
               "state": String, 
@@ -12319,6 +12635,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "durationSeconds": Number, 
                 "endTime": Date, 
                 "provisional": Boolean, 
+              },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
               },  
             },  
             "socialExpressions": { 
@@ -12354,6 +12675,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "endTime": Date, 
                 "provisional": Boolean, 
               },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
+              },  
             },  
             "videos": { 
               "state": String, 
@@ -12385,6 +12711,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "durationSeconds": Number, 
                 "endTime": Date, 
                 "provisional": Boolean, 
+              },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
               },  
             },  
             "evaluations": { 
@@ -12608,8 +12939,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -12620,8 +12951,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
             "firstUri": String, 
             "selfUri": String, 
             "nextUri": String, 
-            "lastUri": String, 
             "previousUri": String, 
+            "lastUri": String, 
             "pageCount": Number, 
           },  
           "selfUri": String, 
@@ -12712,6 +13043,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "self": Address, 
                 "other": Address, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "callbacks": { 
                 "state": String, 
@@ -12737,6 +13069,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "provider": String, 
                 "peerId": String, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "chats": { 
                 "state": String, 
@@ -12757,6 +13090,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "avatarImageUrl": String, 
                 "journeyContext": JourneyContext, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "cobrowsesessions": { 
                 "state": String, 
@@ -12775,6 +13109,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "peerId": String, 
                 "segments": [Segment], 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "emails": { 
                 "state": String, 
@@ -12799,6 +13134,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "draftAttachments": [Attachment], 
                 "spam": Boolean, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "messages": { 
                 "state": String, 
@@ -12823,6 +13159,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "fromAddress": Address, 
                 "messages": [MessageDetails], 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "screenshares": { 
                 "state": String, 
@@ -12838,6 +13175,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "peerId": String, 
                 "segments": [Segment], 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "socialExpressions": { 
                 "state": String, 
@@ -12858,6 +13196,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "scriptId": String, 
                 "peerId": String, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "videos": { 
                 "state": String, 
@@ -12876,6 +13215,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "msids": [String], 
                 "self": Address, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "evaluations": { 
                 "id": String, 
@@ -12975,8 +13315,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -13000,6 +13340,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "addresses": { 
               "address": String, 
@@ -13007,6 +13348,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "state": String, 
             "title": String, 
@@ -13023,6 +13365,13 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "interests": [String], 
               "hobbies": [String], 
               "spouse": String, 
+              "education": { 
+                "school": String, 
+                "fieldOfStudy": String, 
+                "notes": String, 
+                "dateStart": String, 
+                "dateEnd": String, 
+              },  
             },  
             "employerInfo": { 
               "officialName": String, 
@@ -13357,8 +13706,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -13873,6 +14222,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "self": Address, 
                 "other": Address, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "callbacks": { 
                 "state": String, 
@@ -13898,6 +14248,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "provider": String, 
                 "peerId": String, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "chats": { 
                 "state": String, 
@@ -13918,6 +14269,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "avatarImageUrl": String, 
                 "journeyContext": JourneyContext, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "cobrowsesessions": { 
                 "state": String, 
@@ -13936,6 +14288,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "peerId": String, 
                 "segments": [Segment], 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "emails": { 
                 "state": String, 
@@ -13960,6 +14313,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "draftAttachments": [Attachment], 
                 "spam": Boolean, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "messages": { 
                 "state": String, 
@@ -13984,6 +14338,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "fromAddress": Address, 
                 "messages": [MessageDetails], 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "screenshares": { 
                 "state": String, 
@@ -13999,6 +14354,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "peerId": String, 
                 "segments": [Segment], 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "socialExpressions": { 
                 "state": String, 
@@ -14019,6 +14375,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "scriptId": String, 
                 "peerId": String, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "videos": { 
                 "state": String, 
@@ -14037,6 +14394,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "msids": [String], 
                 "self": Address, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "evaluations": { 
                 "id": String, 
@@ -14136,8 +14494,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -14161,6 +14519,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "addresses": { 
               "address": String, 
@@ -14168,6 +14527,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "state": String, 
             "title": String, 
@@ -14184,6 +14544,13 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "interests": [String], 
               "hobbies": [String], 
               "spouse": String, 
+              "education": { 
+                "school": String, 
+                "fieldOfStudy": String, 
+                "notes": String, 
+                "dateStart": String, 
+                "dateEnd": String, 
+              },  
             },  
             "employerInfo": { 
               "officialName": String, 
@@ -14518,8 +14885,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -15680,6 +16047,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
         "endTime": Date, 
         "provisional": Boolean, 
       },  
+      "afterCallWork": { 
+        "startTime": Date, 
+        "endTime": Date, 
+        "state": String, 
+      },  
     },  
     "callbacks": { 
       "state": String, 
@@ -15731,6 +16103,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
         "endTime": Date, 
         "provisional": Boolean, 
       },  
+      "afterCallWork": { 
+        "startTime": Date, 
+        "endTime": Date, 
+        "state": String, 
+      },  
     },  
     "chats": { 
       "state": String, 
@@ -15781,6 +16158,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
         "endTime": Date, 
         "provisional": Boolean, 
       },  
+      "afterCallWork": { 
+        "startTime": Date, 
+        "endTime": Date, 
+        "state": String, 
+      },  
     },  
     "cobrowsesessions": { 
       "state": String, 
@@ -15818,6 +16200,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
         "durationSeconds": Number, 
         "endTime": Date, 
         "provisional": Boolean, 
+      },  
+      "afterCallWork": { 
+        "startTime": Date, 
+        "endTime": Date, 
+        "state": String, 
       },  
     },  
     "emails": { 
@@ -15938,6 +16325,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
         "durationSeconds": Number, 
         "endTime": Date, 
         "provisional": Boolean, 
+      },  
+      "afterCallWork": { 
+        "startTime": Date, 
+        "endTime": Date, 
+        "state": String, 
       },  
     },  
     "messages": { 
@@ -16081,6 +16473,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
         "endTime": Date, 
         "provisional": Boolean, 
       },  
+      "afterCallWork": { 
+        "startTime": Date, 
+        "endTime": Date, 
+        "state": String, 
+      },  
     },  
     "screenshares": { 
       "state": String, 
@@ -16109,6 +16506,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
         "durationSeconds": Number, 
         "endTime": Date, 
         "provisional": Boolean, 
+      },  
+      "afterCallWork": { 
+        "startTime": Date, 
+        "endTime": Date, 
+        "state": String, 
       },  
     },  
     "socialExpressions": { 
@@ -16144,6 +16546,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
         "endTime": Date, 
         "provisional": Boolean, 
       },  
+      "afterCallWork": { 
+        "startTime": Date, 
+        "endTime": Date, 
+        "state": String, 
+      },  
     },  
     "videos": { 
       "state": String, 
@@ -16175,6 +16582,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
         "durationSeconds": Number, 
         "endTime": Date, 
         "provisional": Boolean, 
+      },  
+      "afterCallWork": { 
+        "startTime": Date, 
+        "endTime": Date, 
+        "state": String, 
       },  
     },  
     "evaluations": { 
@@ -16315,6 +16727,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "endTime": Date, 
               "provisional": Boolean, 
             },  
+            "afterCallWork": { 
+              "startTime": Date, 
+              "endTime": Date, 
+              "state": String, 
+            },  
           },  
           "callbacks": { 
             "state": String, 
@@ -16366,6 +16783,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "endTime": Date, 
               "provisional": Boolean, 
             },  
+            "afterCallWork": { 
+              "startTime": Date, 
+              "endTime": Date, 
+              "state": String, 
+            },  
           },  
           "chats": { 
             "state": String, 
@@ -16413,6 +16835,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "endTime": Date, 
               "provisional": Boolean, 
             },  
+            "afterCallWork": { 
+              "startTime": Date, 
+              "endTime": Date, 
+              "state": String, 
+            },  
           },  
           "cobrowsesessions": { 
             "state": String, 
@@ -16450,6 +16877,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "durationSeconds": Number, 
               "endTime": Date, 
               "provisional": Boolean, 
+            },  
+            "afterCallWork": { 
+              "startTime": Date, 
+              "endTime": Date, 
+              "state": String, 
             },  
           },  
           "emails": { 
@@ -16522,6 +16954,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "durationSeconds": Number, 
               "endTime": Date, 
               "provisional": Boolean, 
+            },  
+            "afterCallWork": { 
+              "startTime": Date, 
+              "endTime": Date, 
+              "state": String, 
             },  
           },  
           "messages": { 
@@ -16617,6 +17054,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "endTime": Date, 
               "provisional": Boolean, 
             },  
+            "afterCallWork": { 
+              "startTime": Date, 
+              "endTime": Date, 
+              "state": String, 
+            },  
           },  
           "screenshares": { 
             "state": String, 
@@ -16645,6 +17087,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "durationSeconds": Number, 
               "endTime": Date, 
               "provisional": Boolean, 
+            },  
+            "afterCallWork": { 
+              "startTime": Date, 
+              "endTime": Date, 
+              "state": String, 
             },  
           },  
           "socialExpressions": { 
@@ -16680,6 +17127,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "endTime": Date, 
               "provisional": Boolean, 
             },  
+            "afterCallWork": { 
+              "startTime": Date, 
+              "endTime": Date, 
+              "state": String, 
+            },  
           },  
           "videos": { 
             "state": String, 
@@ -16711,6 +17163,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "durationSeconds": Number, 
               "endTime": Date, 
               "provisional": Boolean, 
+            },  
+            "afterCallWork": { 
+              "startTime": Date, 
+              "endTime": Date, 
+              "state": String, 
             },  
           },  
           "evaluations": { 
@@ -16804,8 +17261,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -16829,6 +17286,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "addresses": { 
                 "address": String, 
@@ -16836,6 +17294,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "state": String, 
               "title": String, 
@@ -16852,6 +17311,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "interests": [String], 
                 "hobbies": [String], 
                 "spouse": String, 
+                "education": [Education], 
               },  
               "employerInfo": { 
                 "officialName": String, 
@@ -17287,8 +17747,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -17299,8 +17759,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
           "firstUri": String, 
           "selfUri": String, 
           "nextUri": String, 
-          "lastUri": String, 
           "previousUri": String, 
+          "lastUri": String, 
           "pageCount": Number, 
         },  
         "selfUri": String, 
@@ -17324,6 +17784,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
           "mediaType": String, 
           "type": String, 
           "extension": String, 
+          "countryCode": String, 
         },  
         "addresses": { 
           "address": String, 
@@ -17331,6 +17792,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
           "mediaType": String, 
           "type": String, 
           "extension": String, 
+          "countryCode": String, 
         },  
         "state": String, 
         "title": String, 
@@ -17347,6 +17809,13 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
           "interests": [String], 
           "hobbies": [String], 
           "spouse": String, 
+          "education": { 
+            "school": String, 
+            "fieldOfStudy": String, 
+            "notes": String, 
+            "dateStart": String, 
+            "dateEnd": String, 
+          },  
         },  
         "employerInfo": { 
           "officialName": String, 
@@ -17834,6 +18303,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "endTime": Date, 
                 "provisional": Boolean, 
               },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
+              },  
             },  
             "callbacks": { 
               "state": String, 
@@ -17882,6 +18356,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "endTime": Date, 
                 "provisional": Boolean, 
               },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
+              },  
             },  
             "chats": { 
               "state": String, 
@@ -17920,6 +18399,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "endTime": Date, 
                 "provisional": Boolean, 
               },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
+              },  
             },  
             "cobrowsesessions": { 
               "state": String, 
@@ -17957,6 +18441,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "durationSeconds": Number, 
                 "endTime": Date, 
                 "provisional": Boolean, 
+              },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
               },  
             },  
             "emails": { 
@@ -18013,6 +18502,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "durationSeconds": Number, 
                 "endTime": Date, 
                 "provisional": Boolean, 
+              },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
               },  
             },  
             "messages": { 
@@ -18083,6 +18577,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "endTime": Date, 
                 "provisional": Boolean, 
               },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
+              },  
             },  
             "screenshares": { 
               "state": String, 
@@ -18111,6 +18610,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "durationSeconds": Number, 
                 "endTime": Date, 
                 "provisional": Boolean, 
+              },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
               },  
             },  
             "socialExpressions": { 
@@ -18146,6 +18650,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "endTime": Date, 
                 "provisional": Boolean, 
               },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
+              },  
             },  
             "videos": { 
               "state": String, 
@@ -18177,6 +18686,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "durationSeconds": Number, 
                 "endTime": Date, 
                 "provisional": Boolean, 
+              },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
               },  
             },  
             "evaluations": { 
@@ -18400,8 +18914,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -18412,8 +18926,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
             "firstUri": String, 
             "selfUri": String, 
             "nextUri": String, 
-            "lastUri": String, 
             "previousUri": String, 
+            "lastUri": String, 
             "pageCount": Number, 
           },  
           "selfUri": String, 
@@ -18504,6 +19018,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "self": Address, 
                 "other": Address, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "callbacks": { 
                 "state": String, 
@@ -18529,6 +19044,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "provider": String, 
                 "peerId": String, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "chats": { 
                 "state": String, 
@@ -18549,6 +19065,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "avatarImageUrl": String, 
                 "journeyContext": JourneyContext, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "cobrowsesessions": { 
                 "state": String, 
@@ -18567,6 +19084,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "peerId": String, 
                 "segments": [Segment], 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "emails": { 
                 "state": String, 
@@ -18591,6 +19109,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "draftAttachments": [Attachment], 
                 "spam": Boolean, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "messages": { 
                 "state": String, 
@@ -18615,6 +19134,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "fromAddress": Address, 
                 "messages": [MessageDetails], 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "screenshares": { 
                 "state": String, 
@@ -18630,6 +19150,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "peerId": String, 
                 "segments": [Segment], 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "socialExpressions": { 
                 "state": String, 
@@ -18650,6 +19171,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "scriptId": String, 
                 "peerId": String, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "videos": { 
                 "state": String, 
@@ -18668,6 +19190,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "msids": [String], 
                 "self": Address, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "evaluations": { 
                 "id": String, 
@@ -18767,8 +19290,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -18792,6 +19315,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "addresses": { 
               "address": String, 
@@ -18799,6 +19323,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "state": String, 
             "title": String, 
@@ -18815,6 +19340,13 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "interests": [String], 
               "hobbies": [String], 
               "spouse": String, 
+              "education": { 
+                "school": String, 
+                "fieldOfStudy": String, 
+                "notes": String, 
+                "dateStart": String, 
+                "dateEnd": String, 
+              },  
             },  
             "employerInfo": { 
               "officialName": String, 
@@ -19149,8 +19681,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -19665,6 +20197,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "self": Address, 
                 "other": Address, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "callbacks": { 
                 "state": String, 
@@ -19690,6 +20223,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "provider": String, 
                 "peerId": String, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "chats": { 
                 "state": String, 
@@ -19710,6 +20244,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "avatarImageUrl": String, 
                 "journeyContext": JourneyContext, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "cobrowsesessions": { 
                 "state": String, 
@@ -19728,6 +20263,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "peerId": String, 
                 "segments": [Segment], 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "emails": { 
                 "state": String, 
@@ -19752,6 +20288,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "draftAttachments": [Attachment], 
                 "spam": Boolean, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "messages": { 
                 "state": String, 
@@ -19776,6 +20313,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "fromAddress": Address, 
                 "messages": [MessageDetails], 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "screenshares": { 
                 "state": String, 
@@ -19791,6 +20329,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "peerId": String, 
                 "segments": [Segment], 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "socialExpressions": { 
                 "state": String, 
@@ -19811,6 +20350,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "scriptId": String, 
                 "peerId": String, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "videos": { 
                 "state": String, 
@@ -19829,6 +20369,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "msids": [String], 
                 "self": Address, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "evaluations": { 
                 "id": String, 
@@ -19928,8 +20469,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -19953,6 +20494,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "addresses": { 
               "address": String, 
@@ -19960,6 +20502,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "state": String, 
             "title": String, 
@@ -19976,6 +20519,13 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "interests": [String], 
               "hobbies": [String], 
               "spouse": String, 
+              "education": { 
+                "school": String, 
+                "fieldOfStudy": String, 
+                "notes": String, 
+                "dateStart": String, 
+                "dateEnd": String, 
+              },  
             },  
             "employerInfo": { 
               "officialName": String, 
@@ -20310,8 +20860,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -21472,6 +22022,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
         "endTime": Date, 
         "provisional": Boolean, 
       },  
+      "afterCallWork": { 
+        "startTime": Date, 
+        "endTime": Date, 
+        "state": String, 
+      },  
     },  
     "callbacks": { 
       "state": String, 
@@ -21523,6 +22078,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
         "endTime": Date, 
         "provisional": Boolean, 
       },  
+      "afterCallWork": { 
+        "startTime": Date, 
+        "endTime": Date, 
+        "state": String, 
+      },  
     },  
     "chats": { 
       "state": String, 
@@ -21573,6 +22133,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
         "endTime": Date, 
         "provisional": Boolean, 
       },  
+      "afterCallWork": { 
+        "startTime": Date, 
+        "endTime": Date, 
+        "state": String, 
+      },  
     },  
     "cobrowsesessions": { 
       "state": String, 
@@ -21610,6 +22175,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
         "durationSeconds": Number, 
         "endTime": Date, 
         "provisional": Boolean, 
+      },  
+      "afterCallWork": { 
+        "startTime": Date, 
+        "endTime": Date, 
+        "state": String, 
       },  
     },  
     "emails": { 
@@ -21730,6 +22300,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
         "durationSeconds": Number, 
         "endTime": Date, 
         "provisional": Boolean, 
+      },  
+      "afterCallWork": { 
+        "startTime": Date, 
+        "endTime": Date, 
+        "state": String, 
       },  
     },  
     "messages": { 
@@ -21873,6 +22448,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
         "endTime": Date, 
         "provisional": Boolean, 
       },  
+      "afterCallWork": { 
+        "startTime": Date, 
+        "endTime": Date, 
+        "state": String, 
+      },  
     },  
     "screenshares": { 
       "state": String, 
@@ -21901,6 +22481,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
         "durationSeconds": Number, 
         "endTime": Date, 
         "provisional": Boolean, 
+      },  
+      "afterCallWork": { 
+        "startTime": Date, 
+        "endTime": Date, 
+        "state": String, 
       },  
     },  
     "socialExpressions": { 
@@ -21936,6 +22521,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
         "endTime": Date, 
         "provisional": Boolean, 
       },  
+      "afterCallWork": { 
+        "startTime": Date, 
+        "endTime": Date, 
+        "state": String, 
+      },  
     },  
     "videos": { 
       "state": String, 
@@ -21967,6 +22557,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
         "durationSeconds": Number, 
         "endTime": Date, 
         "provisional": Boolean, 
+      },  
+      "afterCallWork": { 
+        "startTime": Date, 
+        "endTime": Date, 
+        "state": String, 
       },  
     },  
     "evaluations": { 
@@ -22107,6 +22702,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "endTime": Date, 
               "provisional": Boolean, 
             },  
+            "afterCallWork": { 
+              "startTime": Date, 
+              "endTime": Date, 
+              "state": String, 
+            },  
           },  
           "callbacks": { 
             "state": String, 
@@ -22158,6 +22758,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "endTime": Date, 
               "provisional": Boolean, 
             },  
+            "afterCallWork": { 
+              "startTime": Date, 
+              "endTime": Date, 
+              "state": String, 
+            },  
           },  
           "chats": { 
             "state": String, 
@@ -22205,6 +22810,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "endTime": Date, 
               "provisional": Boolean, 
             },  
+            "afterCallWork": { 
+              "startTime": Date, 
+              "endTime": Date, 
+              "state": String, 
+            },  
           },  
           "cobrowsesessions": { 
             "state": String, 
@@ -22242,6 +22852,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "durationSeconds": Number, 
               "endTime": Date, 
               "provisional": Boolean, 
+            },  
+            "afterCallWork": { 
+              "startTime": Date, 
+              "endTime": Date, 
+              "state": String, 
             },  
           },  
           "emails": { 
@@ -22314,6 +22929,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "durationSeconds": Number, 
               "endTime": Date, 
               "provisional": Boolean, 
+            },  
+            "afterCallWork": { 
+              "startTime": Date, 
+              "endTime": Date, 
+              "state": String, 
             },  
           },  
           "messages": { 
@@ -22409,6 +23029,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "endTime": Date, 
               "provisional": Boolean, 
             },  
+            "afterCallWork": { 
+              "startTime": Date, 
+              "endTime": Date, 
+              "state": String, 
+            },  
           },  
           "screenshares": { 
             "state": String, 
@@ -22437,6 +23062,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "durationSeconds": Number, 
               "endTime": Date, 
               "provisional": Boolean, 
+            },  
+            "afterCallWork": { 
+              "startTime": Date, 
+              "endTime": Date, 
+              "state": String, 
             },  
           },  
           "socialExpressions": { 
@@ -22472,6 +23102,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "endTime": Date, 
               "provisional": Boolean, 
             },  
+            "afterCallWork": { 
+              "startTime": Date, 
+              "endTime": Date, 
+              "state": String, 
+            },  
           },  
           "videos": { 
             "state": String, 
@@ -22503,6 +23138,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "durationSeconds": Number, 
               "endTime": Date, 
               "provisional": Boolean, 
+            },  
+            "afterCallWork": { 
+              "startTime": Date, 
+              "endTime": Date, 
+              "state": String, 
             },  
           },  
           "evaluations": { 
@@ -22596,8 +23236,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -22621,6 +23261,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "addresses": { 
                 "address": String, 
@@ -22628,6 +23269,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "state": String, 
               "title": String, 
@@ -22644,6 +23286,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "interests": [String], 
                 "hobbies": [String], 
                 "spouse": String, 
+                "education": [Education], 
               },  
               "employerInfo": { 
                 "officialName": String, 
@@ -23079,8 +23722,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -23091,8 +23734,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
           "firstUri": String, 
           "selfUri": String, 
           "nextUri": String, 
-          "lastUri": String, 
           "previousUri": String, 
+          "lastUri": String, 
           "pageCount": Number, 
         },  
         "selfUri": String, 
@@ -23116,6 +23759,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
           "mediaType": String, 
           "type": String, 
           "extension": String, 
+          "countryCode": String, 
         },  
         "addresses": { 
           "address": String, 
@@ -23123,6 +23767,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
           "mediaType": String, 
           "type": String, 
           "extension": String, 
+          "countryCode": String, 
         },  
         "state": String, 
         "title": String, 
@@ -23139,6 +23784,13 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
           "interests": [String], 
           "hobbies": [String], 
           "spouse": String, 
+          "education": { 
+            "school": String, 
+            "fieldOfStudy": String, 
+            "notes": String, 
+            "dateStart": String, 
+            "dateEnd": String, 
+          },  
         },  
         "employerInfo": { 
           "officialName": String, 
@@ -23626,6 +24278,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "endTime": Date, 
                 "provisional": Boolean, 
               },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
+              },  
             },  
             "callbacks": { 
               "state": String, 
@@ -23674,6 +24331,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "endTime": Date, 
                 "provisional": Boolean, 
               },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
+              },  
             },  
             "chats": { 
               "state": String, 
@@ -23712,6 +24374,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "endTime": Date, 
                 "provisional": Boolean, 
               },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
+              },  
             },  
             "cobrowsesessions": { 
               "state": String, 
@@ -23749,6 +24416,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "durationSeconds": Number, 
                 "endTime": Date, 
                 "provisional": Boolean, 
+              },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
               },  
             },  
             "emails": { 
@@ -23805,6 +24477,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "durationSeconds": Number, 
                 "endTime": Date, 
                 "provisional": Boolean, 
+              },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
               },  
             },  
             "messages": { 
@@ -23875,6 +24552,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "endTime": Date, 
                 "provisional": Boolean, 
               },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
+              },  
             },  
             "screenshares": { 
               "state": String, 
@@ -23903,6 +24585,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "durationSeconds": Number, 
                 "endTime": Date, 
                 "provisional": Boolean, 
+              },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
               },  
             },  
             "socialExpressions": { 
@@ -23938,6 +24625,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "endTime": Date, 
                 "provisional": Boolean, 
               },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
+              },  
             },  
             "videos": { 
               "state": String, 
@@ -23969,6 +24661,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "durationSeconds": Number, 
                 "endTime": Date, 
                 "provisional": Boolean, 
+              },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
               },  
             },  
             "evaluations": { 
@@ -24192,8 +24889,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -24204,8 +24901,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
             "firstUri": String, 
             "selfUri": String, 
             "nextUri": String, 
-            "lastUri": String, 
             "previousUri": String, 
+            "lastUri": String, 
             "pageCount": Number, 
           },  
           "selfUri": String, 
@@ -24296,6 +24993,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "self": Address, 
                 "other": Address, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "callbacks": { 
                 "state": String, 
@@ -24321,6 +25019,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "provider": String, 
                 "peerId": String, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "chats": { 
                 "state": String, 
@@ -24341,6 +25040,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "avatarImageUrl": String, 
                 "journeyContext": JourneyContext, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "cobrowsesessions": { 
                 "state": String, 
@@ -24359,6 +25059,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "peerId": String, 
                 "segments": [Segment], 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "emails": { 
                 "state": String, 
@@ -24383,6 +25084,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "draftAttachments": [Attachment], 
                 "spam": Boolean, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "messages": { 
                 "state": String, 
@@ -24407,6 +25109,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "fromAddress": Address, 
                 "messages": [MessageDetails], 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "screenshares": { 
                 "state": String, 
@@ -24422,6 +25125,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "peerId": String, 
                 "segments": [Segment], 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "socialExpressions": { 
                 "state": String, 
@@ -24442,6 +25146,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "scriptId": String, 
                 "peerId": String, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "videos": { 
                 "state": String, 
@@ -24460,6 +25165,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "msids": [String], 
                 "self": Address, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "evaluations": { 
                 "id": String, 
@@ -24559,8 +25265,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -24584,6 +25290,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "addresses": { 
               "address": String, 
@@ -24591,6 +25298,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "state": String, 
             "title": String, 
@@ -24607,6 +25315,13 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "interests": [String], 
               "hobbies": [String], 
               "spouse": String, 
+              "education": { 
+                "school": String, 
+                "fieldOfStudy": String, 
+                "notes": String, 
+                "dateStart": String, 
+                "dateEnd": String, 
+              },  
             },  
             "employerInfo": { 
               "officialName": String, 
@@ -24941,8 +25656,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -25457,6 +26172,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "self": Address, 
                 "other": Address, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "callbacks": { 
                 "state": String, 
@@ -25482,6 +26198,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "provider": String, 
                 "peerId": String, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "chats": { 
                 "state": String, 
@@ -25502,6 +26219,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "avatarImageUrl": String, 
                 "journeyContext": JourneyContext, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "cobrowsesessions": { 
                 "state": String, 
@@ -25520,6 +26238,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "peerId": String, 
                 "segments": [Segment], 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "emails": { 
                 "state": String, 
@@ -25544,6 +26263,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "draftAttachments": [Attachment], 
                 "spam": Boolean, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "messages": { 
                 "state": String, 
@@ -25568,6 +26288,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "fromAddress": Address, 
                 "messages": [MessageDetails], 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "screenshares": { 
                 "state": String, 
@@ -25583,6 +26304,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "peerId": String, 
                 "segments": [Segment], 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "socialExpressions": { 
                 "state": String, 
@@ -25603,6 +26325,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "scriptId": String, 
                 "peerId": String, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "videos": { 
                 "state": String, 
@@ -25621,6 +26344,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "msids": [String], 
                 "self": Address, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "evaluations": { 
                 "id": String, 
@@ -25720,8 +26444,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -25745,6 +26469,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "addresses": { 
               "address": String, 
@@ -25752,6 +26477,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "state": String, 
             "title": String, 
@@ -25768,6 +26494,13 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "interests": [String], 
               "hobbies": [String], 
               "spouse": String, 
+              "education": { 
+                "school": String, 
+                "fieldOfStudy": String, 
+                "notes": String, 
+                "dateStart": String, 
+                "dateEnd": String, 
+              },  
             },  
             "employerInfo": { 
               "officialName": String, 
@@ -26102,8 +26835,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -27268,6 +28001,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
         "endTime": Date, 
         "provisional": Boolean, 
       },  
+      "afterCallWork": { 
+        "startTime": Date, 
+        "endTime": Date, 
+        "state": String, 
+      },  
     },  
     "callbacks": { 
       "state": String, 
@@ -27319,6 +28057,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
         "endTime": Date, 
         "provisional": Boolean, 
       },  
+      "afterCallWork": { 
+        "startTime": Date, 
+        "endTime": Date, 
+        "state": String, 
+      },  
     },  
     "chats": { 
       "state": String, 
@@ -27369,6 +28112,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
         "endTime": Date, 
         "provisional": Boolean, 
       },  
+      "afterCallWork": { 
+        "startTime": Date, 
+        "endTime": Date, 
+        "state": String, 
+      },  
     },  
     "cobrowsesessions": { 
       "state": String, 
@@ -27406,6 +28154,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
         "durationSeconds": Number, 
         "endTime": Date, 
         "provisional": Boolean, 
+      },  
+      "afterCallWork": { 
+        "startTime": Date, 
+        "endTime": Date, 
+        "state": String, 
       },  
     },  
     "emails": { 
@@ -27526,6 +28279,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
         "durationSeconds": Number, 
         "endTime": Date, 
         "provisional": Boolean, 
+      },  
+      "afterCallWork": { 
+        "startTime": Date, 
+        "endTime": Date, 
+        "state": String, 
       },  
     },  
     "messages": { 
@@ -27669,6 +28427,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
         "endTime": Date, 
         "provisional": Boolean, 
       },  
+      "afterCallWork": { 
+        "startTime": Date, 
+        "endTime": Date, 
+        "state": String, 
+      },  
     },  
     "screenshares": { 
       "state": String, 
@@ -27697,6 +28460,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
         "durationSeconds": Number, 
         "endTime": Date, 
         "provisional": Boolean, 
+      },  
+      "afterCallWork": { 
+        "startTime": Date, 
+        "endTime": Date, 
+        "state": String, 
       },  
     },  
     "socialExpressions": { 
@@ -27732,6 +28500,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
         "endTime": Date, 
         "provisional": Boolean, 
       },  
+      "afterCallWork": { 
+        "startTime": Date, 
+        "endTime": Date, 
+        "state": String, 
+      },  
     },  
     "videos": { 
       "state": String, 
@@ -27763,6 +28536,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
         "durationSeconds": Number, 
         "endTime": Date, 
         "provisional": Boolean, 
+      },  
+      "afterCallWork": { 
+        "startTime": Date, 
+        "endTime": Date, 
+        "state": String, 
       },  
     },  
     "evaluations": { 
@@ -27903,6 +28681,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "endTime": Date, 
               "provisional": Boolean, 
             },  
+            "afterCallWork": { 
+              "startTime": Date, 
+              "endTime": Date, 
+              "state": String, 
+            },  
           },  
           "callbacks": { 
             "state": String, 
@@ -27954,6 +28737,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "endTime": Date, 
               "provisional": Boolean, 
             },  
+            "afterCallWork": { 
+              "startTime": Date, 
+              "endTime": Date, 
+              "state": String, 
+            },  
           },  
           "chats": { 
             "state": String, 
@@ -28001,6 +28789,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "endTime": Date, 
               "provisional": Boolean, 
             },  
+            "afterCallWork": { 
+              "startTime": Date, 
+              "endTime": Date, 
+              "state": String, 
+            },  
           },  
           "cobrowsesessions": { 
             "state": String, 
@@ -28038,6 +28831,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "durationSeconds": Number, 
               "endTime": Date, 
               "provisional": Boolean, 
+            },  
+            "afterCallWork": { 
+              "startTime": Date, 
+              "endTime": Date, 
+              "state": String, 
             },  
           },  
           "emails": { 
@@ -28110,6 +28908,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "durationSeconds": Number, 
               "endTime": Date, 
               "provisional": Boolean, 
+            },  
+            "afterCallWork": { 
+              "startTime": Date, 
+              "endTime": Date, 
+              "state": String, 
             },  
           },  
           "messages": { 
@@ -28205,6 +29008,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "endTime": Date, 
               "provisional": Boolean, 
             },  
+            "afterCallWork": { 
+              "startTime": Date, 
+              "endTime": Date, 
+              "state": String, 
+            },  
           },  
           "screenshares": { 
             "state": String, 
@@ -28233,6 +29041,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "durationSeconds": Number, 
               "endTime": Date, 
               "provisional": Boolean, 
+            },  
+            "afterCallWork": { 
+              "startTime": Date, 
+              "endTime": Date, 
+              "state": String, 
             },  
           },  
           "socialExpressions": { 
@@ -28268,6 +29081,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "endTime": Date, 
               "provisional": Boolean, 
             },  
+            "afterCallWork": { 
+              "startTime": Date, 
+              "endTime": Date, 
+              "state": String, 
+            },  
           },  
           "videos": { 
             "state": String, 
@@ -28299,6 +29117,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "durationSeconds": Number, 
               "endTime": Date, 
               "provisional": Boolean, 
+            },  
+            "afterCallWork": { 
+              "startTime": Date, 
+              "endTime": Date, 
+              "state": String, 
             },  
           },  
           "evaluations": { 
@@ -28392,8 +29215,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -28417,6 +29240,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "addresses": { 
                 "address": String, 
@@ -28424,6 +29248,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "state": String, 
               "title": String, 
@@ -28440,6 +29265,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "interests": [String], 
                 "hobbies": [String], 
                 "spouse": String, 
+                "education": [Education], 
               },  
               "employerInfo": { 
                 "officialName": String, 
@@ -28875,8 +29701,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -28887,8 +29713,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
           "firstUri": String, 
           "selfUri": String, 
           "nextUri": String, 
-          "lastUri": String, 
           "previousUri": String, 
+          "lastUri": String, 
           "pageCount": Number, 
         },  
         "selfUri": String, 
@@ -28912,6 +29738,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
           "mediaType": String, 
           "type": String, 
           "extension": String, 
+          "countryCode": String, 
         },  
         "addresses": { 
           "address": String, 
@@ -28919,6 +29746,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
           "mediaType": String, 
           "type": String, 
           "extension": String, 
+          "countryCode": String, 
         },  
         "state": String, 
         "title": String, 
@@ -28935,6 +29763,13 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
           "interests": [String], 
           "hobbies": [String], 
           "spouse": String, 
+          "education": { 
+            "school": String, 
+            "fieldOfStudy": String, 
+            "notes": String, 
+            "dateStart": String, 
+            "dateEnd": String, 
+          },  
         },  
         "employerInfo": { 
           "officialName": String, 
@@ -29422,6 +30257,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "endTime": Date, 
                 "provisional": Boolean, 
               },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
+              },  
             },  
             "callbacks": { 
               "state": String, 
@@ -29470,6 +30310,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "endTime": Date, 
                 "provisional": Boolean, 
               },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
+              },  
             },  
             "chats": { 
               "state": String, 
@@ -29508,6 +30353,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "endTime": Date, 
                 "provisional": Boolean, 
               },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
+              },  
             },  
             "cobrowsesessions": { 
               "state": String, 
@@ -29545,6 +30395,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "durationSeconds": Number, 
                 "endTime": Date, 
                 "provisional": Boolean, 
+              },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
               },  
             },  
             "emails": { 
@@ -29601,6 +30456,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "durationSeconds": Number, 
                 "endTime": Date, 
                 "provisional": Boolean, 
+              },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
               },  
             },  
             "messages": { 
@@ -29671,6 +30531,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "endTime": Date, 
                 "provisional": Boolean, 
               },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
+              },  
             },  
             "screenshares": { 
               "state": String, 
@@ -29699,6 +30564,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "durationSeconds": Number, 
                 "endTime": Date, 
                 "provisional": Boolean, 
+              },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
               },  
             },  
             "socialExpressions": { 
@@ -29734,6 +30604,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "endTime": Date, 
                 "provisional": Boolean, 
               },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
+              },  
             },  
             "videos": { 
               "state": String, 
@@ -29765,6 +30640,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "durationSeconds": Number, 
                 "endTime": Date, 
                 "provisional": Boolean, 
+              },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
               },  
             },  
             "evaluations": { 
@@ -29988,8 +30868,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -30000,8 +30880,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
             "firstUri": String, 
             "selfUri": String, 
             "nextUri": String, 
-            "lastUri": String, 
             "previousUri": String, 
+            "lastUri": String, 
             "pageCount": Number, 
           },  
           "selfUri": String, 
@@ -30092,6 +30972,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "self": Address, 
                 "other": Address, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "callbacks": { 
                 "state": String, 
@@ -30117,6 +30998,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "provider": String, 
                 "peerId": String, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "chats": { 
                 "state": String, 
@@ -30137,6 +31019,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "avatarImageUrl": String, 
                 "journeyContext": JourneyContext, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "cobrowsesessions": { 
                 "state": String, 
@@ -30155,6 +31038,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "peerId": String, 
                 "segments": [Segment], 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "emails": { 
                 "state": String, 
@@ -30179,6 +31063,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "draftAttachments": [Attachment], 
                 "spam": Boolean, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "messages": { 
                 "state": String, 
@@ -30203,6 +31088,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "fromAddress": Address, 
                 "messages": [MessageDetails], 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "screenshares": { 
                 "state": String, 
@@ -30218,6 +31104,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "peerId": String, 
                 "segments": [Segment], 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "socialExpressions": { 
                 "state": String, 
@@ -30238,6 +31125,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "scriptId": String, 
                 "peerId": String, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "videos": { 
                 "state": String, 
@@ -30256,6 +31144,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "msids": [String], 
                 "self": Address, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "evaluations": { 
                 "id": String, 
@@ -30355,8 +31244,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -30380,6 +31269,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "addresses": { 
               "address": String, 
@@ -30387,6 +31277,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "state": String, 
             "title": String, 
@@ -30403,6 +31294,13 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "interests": [String], 
               "hobbies": [String], 
               "spouse": String, 
+              "education": { 
+                "school": String, 
+                "fieldOfStudy": String, 
+                "notes": String, 
+                "dateStart": String, 
+                "dateEnd": String, 
+              },  
             },  
             "employerInfo": { 
               "officialName": String, 
@@ -30737,8 +31635,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -31253,6 +32151,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "self": Address, 
                 "other": Address, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "callbacks": { 
                 "state": String, 
@@ -31278,6 +32177,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "provider": String, 
                 "peerId": String, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "chats": { 
                 "state": String, 
@@ -31298,6 +32198,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "avatarImageUrl": String, 
                 "journeyContext": JourneyContext, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "cobrowsesessions": { 
                 "state": String, 
@@ -31316,6 +32217,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "peerId": String, 
                 "segments": [Segment], 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "emails": { 
                 "state": String, 
@@ -31340,6 +32242,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "draftAttachments": [Attachment], 
                 "spam": Boolean, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "messages": { 
                 "state": String, 
@@ -31364,6 +32267,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "fromAddress": Address, 
                 "messages": [MessageDetails], 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "screenshares": { 
                 "state": String, 
@@ -31379,6 +32283,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "peerId": String, 
                 "segments": [Segment], 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "socialExpressions": { 
                 "state": String, 
@@ -31399,6 +32304,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "scriptId": String, 
                 "peerId": String, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "videos": { 
                 "state": String, 
@@ -31417,6 +32323,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "msids": [String], 
                 "self": Address, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "evaluations": { 
                 "id": String, 
@@ -31516,8 +32423,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -31541,6 +32448,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "addresses": { 
               "address": String, 
@@ -31548,6 +32456,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "state": String, 
             "title": String, 
@@ -31564,6 +32473,13 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "interests": [String], 
               "hobbies": [String], 
               "spouse": String, 
+              "education": { 
+                "school": String, 
+                "fieldOfStudy": String, 
+                "notes": String, 
+                "dateStart": String, 
+                "dateEnd": String, 
+              },  
             },  
             "employerInfo": { 
               "officialName": String, 
@@ -31898,8 +32814,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -33060,6 +33976,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
         "endTime": Date, 
         "provisional": Boolean, 
       },  
+      "afterCallWork": { 
+        "startTime": Date, 
+        "endTime": Date, 
+        "state": String, 
+      },  
     },  
     "callbacks": { 
       "state": String, 
@@ -33111,6 +34032,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
         "endTime": Date, 
         "provisional": Boolean, 
       },  
+      "afterCallWork": { 
+        "startTime": Date, 
+        "endTime": Date, 
+        "state": String, 
+      },  
     },  
     "chats": { 
       "state": String, 
@@ -33161,6 +34087,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
         "endTime": Date, 
         "provisional": Boolean, 
       },  
+      "afterCallWork": { 
+        "startTime": Date, 
+        "endTime": Date, 
+        "state": String, 
+      },  
     },  
     "cobrowsesessions": { 
       "state": String, 
@@ -33198,6 +34129,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
         "durationSeconds": Number, 
         "endTime": Date, 
         "provisional": Boolean, 
+      },  
+      "afterCallWork": { 
+        "startTime": Date, 
+        "endTime": Date, 
+        "state": String, 
       },  
     },  
     "emails": { 
@@ -33318,6 +34254,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
         "durationSeconds": Number, 
         "endTime": Date, 
         "provisional": Boolean, 
+      },  
+      "afterCallWork": { 
+        "startTime": Date, 
+        "endTime": Date, 
+        "state": String, 
       },  
     },  
     "messages": { 
@@ -33461,6 +34402,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
         "endTime": Date, 
         "provisional": Boolean, 
       },  
+      "afterCallWork": { 
+        "startTime": Date, 
+        "endTime": Date, 
+        "state": String, 
+      },  
     },  
     "screenshares": { 
       "state": String, 
@@ -33489,6 +34435,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
         "durationSeconds": Number, 
         "endTime": Date, 
         "provisional": Boolean, 
+      },  
+      "afterCallWork": { 
+        "startTime": Date, 
+        "endTime": Date, 
+        "state": String, 
       },  
     },  
     "socialExpressions": { 
@@ -33524,6 +34475,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
         "endTime": Date, 
         "provisional": Boolean, 
       },  
+      "afterCallWork": { 
+        "startTime": Date, 
+        "endTime": Date, 
+        "state": String, 
+      },  
     },  
     "videos": { 
       "state": String, 
@@ -33555,6 +34511,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
         "durationSeconds": Number, 
         "endTime": Date, 
         "provisional": Boolean, 
+      },  
+      "afterCallWork": { 
+        "startTime": Date, 
+        "endTime": Date, 
+        "state": String, 
       },  
     },  
     "evaluations": { 
@@ -33695,6 +34656,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "endTime": Date, 
               "provisional": Boolean, 
             },  
+            "afterCallWork": { 
+              "startTime": Date, 
+              "endTime": Date, 
+              "state": String, 
+            },  
           },  
           "callbacks": { 
             "state": String, 
@@ -33746,6 +34712,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "endTime": Date, 
               "provisional": Boolean, 
             },  
+            "afterCallWork": { 
+              "startTime": Date, 
+              "endTime": Date, 
+              "state": String, 
+            },  
           },  
           "chats": { 
             "state": String, 
@@ -33793,6 +34764,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "endTime": Date, 
               "provisional": Boolean, 
             },  
+            "afterCallWork": { 
+              "startTime": Date, 
+              "endTime": Date, 
+              "state": String, 
+            },  
           },  
           "cobrowsesessions": { 
             "state": String, 
@@ -33830,6 +34806,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "durationSeconds": Number, 
               "endTime": Date, 
               "provisional": Boolean, 
+            },  
+            "afterCallWork": { 
+              "startTime": Date, 
+              "endTime": Date, 
+              "state": String, 
             },  
           },  
           "emails": { 
@@ -33902,6 +34883,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "durationSeconds": Number, 
               "endTime": Date, 
               "provisional": Boolean, 
+            },  
+            "afterCallWork": { 
+              "startTime": Date, 
+              "endTime": Date, 
+              "state": String, 
             },  
           },  
           "messages": { 
@@ -33997,6 +34983,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "endTime": Date, 
               "provisional": Boolean, 
             },  
+            "afterCallWork": { 
+              "startTime": Date, 
+              "endTime": Date, 
+              "state": String, 
+            },  
           },  
           "screenshares": { 
             "state": String, 
@@ -34025,6 +35016,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "durationSeconds": Number, 
               "endTime": Date, 
               "provisional": Boolean, 
+            },  
+            "afterCallWork": { 
+              "startTime": Date, 
+              "endTime": Date, 
+              "state": String, 
             },  
           },  
           "socialExpressions": { 
@@ -34060,6 +35056,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "endTime": Date, 
               "provisional": Boolean, 
             },  
+            "afterCallWork": { 
+              "startTime": Date, 
+              "endTime": Date, 
+              "state": String, 
+            },  
           },  
           "videos": { 
             "state": String, 
@@ -34091,6 +35092,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "durationSeconds": Number, 
               "endTime": Date, 
               "provisional": Boolean, 
+            },  
+            "afterCallWork": { 
+              "startTime": Date, 
+              "endTime": Date, 
+              "state": String, 
             },  
           },  
           "evaluations": { 
@@ -34184,8 +35190,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -34209,6 +35215,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "addresses": { 
                 "address": String, 
@@ -34216,6 +35223,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "state": String, 
               "title": String, 
@@ -34232,6 +35240,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "interests": [String], 
                 "hobbies": [String], 
                 "spouse": String, 
+                "education": [Education], 
               },  
               "employerInfo": { 
                 "officialName": String, 
@@ -34667,8 +35676,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -34679,8 +35688,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
           "firstUri": String, 
           "selfUri": String, 
           "nextUri": String, 
-          "lastUri": String, 
           "previousUri": String, 
+          "lastUri": String, 
           "pageCount": Number, 
         },  
         "selfUri": String, 
@@ -34704,6 +35713,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
           "mediaType": String, 
           "type": String, 
           "extension": String, 
+          "countryCode": String, 
         },  
         "addresses": { 
           "address": String, 
@@ -34711,6 +35721,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
           "mediaType": String, 
           "type": String, 
           "extension": String, 
+          "countryCode": String, 
         },  
         "state": String, 
         "title": String, 
@@ -34727,6 +35738,13 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
           "interests": [String], 
           "hobbies": [String], 
           "spouse": String, 
+          "education": { 
+            "school": String, 
+            "fieldOfStudy": String, 
+            "notes": String, 
+            "dateStart": String, 
+            "dateEnd": String, 
+          },  
         },  
         "employerInfo": { 
           "officialName": String, 
@@ -35214,6 +36232,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "endTime": Date, 
                 "provisional": Boolean, 
               },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
+              },  
             },  
             "callbacks": { 
               "state": String, 
@@ -35262,6 +36285,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "endTime": Date, 
                 "provisional": Boolean, 
               },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
+              },  
             },  
             "chats": { 
               "state": String, 
@@ -35300,6 +36328,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "endTime": Date, 
                 "provisional": Boolean, 
               },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
+              },  
             },  
             "cobrowsesessions": { 
               "state": String, 
@@ -35337,6 +36370,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "durationSeconds": Number, 
                 "endTime": Date, 
                 "provisional": Boolean, 
+              },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
               },  
             },  
             "emails": { 
@@ -35393,6 +36431,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "durationSeconds": Number, 
                 "endTime": Date, 
                 "provisional": Boolean, 
+              },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
               },  
             },  
             "messages": { 
@@ -35463,6 +36506,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "endTime": Date, 
                 "provisional": Boolean, 
               },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
+              },  
             },  
             "screenshares": { 
               "state": String, 
@@ -35491,6 +36539,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "durationSeconds": Number, 
                 "endTime": Date, 
                 "provisional": Boolean, 
+              },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
               },  
             },  
             "socialExpressions": { 
@@ -35526,6 +36579,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "endTime": Date, 
                 "provisional": Boolean, 
               },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
+              },  
             },  
             "videos": { 
               "state": String, 
@@ -35557,6 +36615,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "durationSeconds": Number, 
                 "endTime": Date, 
                 "provisional": Boolean, 
+              },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
               },  
             },  
             "evaluations": { 
@@ -35780,8 +36843,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -35792,8 +36855,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
             "firstUri": String, 
             "selfUri": String, 
             "nextUri": String, 
-            "lastUri": String, 
             "previousUri": String, 
+            "lastUri": String, 
             "pageCount": Number, 
           },  
           "selfUri": String, 
@@ -35884,6 +36947,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "self": Address, 
                 "other": Address, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "callbacks": { 
                 "state": String, 
@@ -35909,6 +36973,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "provider": String, 
                 "peerId": String, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "chats": { 
                 "state": String, 
@@ -35929,6 +36994,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "avatarImageUrl": String, 
                 "journeyContext": JourneyContext, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "cobrowsesessions": { 
                 "state": String, 
@@ -35947,6 +37013,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "peerId": String, 
                 "segments": [Segment], 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "emails": { 
                 "state": String, 
@@ -35971,6 +37038,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "draftAttachments": [Attachment], 
                 "spam": Boolean, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "messages": { 
                 "state": String, 
@@ -35995,6 +37063,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "fromAddress": Address, 
                 "messages": [MessageDetails], 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "screenshares": { 
                 "state": String, 
@@ -36010,6 +37079,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "peerId": String, 
                 "segments": [Segment], 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "socialExpressions": { 
                 "state": String, 
@@ -36030,6 +37100,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "scriptId": String, 
                 "peerId": String, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "videos": { 
                 "state": String, 
@@ -36048,6 +37119,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "msids": [String], 
                 "self": Address, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "evaluations": { 
                 "id": String, 
@@ -36147,8 +37219,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -36172,6 +37244,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "addresses": { 
               "address": String, 
@@ -36179,6 +37252,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "state": String, 
             "title": String, 
@@ -36195,6 +37269,13 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "interests": [String], 
               "hobbies": [String], 
               "spouse": String, 
+              "education": { 
+                "school": String, 
+                "fieldOfStudy": String, 
+                "notes": String, 
+                "dateStart": String, 
+                "dateEnd": String, 
+              },  
             },  
             "employerInfo": { 
               "officialName": String, 
@@ -36529,8 +37610,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -37045,6 +38126,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "self": Address, 
                 "other": Address, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "callbacks": { 
                 "state": String, 
@@ -37070,6 +38152,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "provider": String, 
                 "peerId": String, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "chats": { 
                 "state": String, 
@@ -37090,6 +38173,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "avatarImageUrl": String, 
                 "journeyContext": JourneyContext, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "cobrowsesessions": { 
                 "state": String, 
@@ -37108,6 +38192,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "peerId": String, 
                 "segments": [Segment], 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "emails": { 
                 "state": String, 
@@ -37132,6 +38217,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "draftAttachments": [Attachment], 
                 "spam": Boolean, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "messages": { 
                 "state": String, 
@@ -37156,6 +38242,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "fromAddress": Address, 
                 "messages": [MessageDetails], 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "screenshares": { 
                 "state": String, 
@@ -37171,6 +38258,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "peerId": String, 
                 "segments": [Segment], 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "socialExpressions": { 
                 "state": String, 
@@ -37191,6 +38279,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "scriptId": String, 
                 "peerId": String, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "videos": { 
                 "state": String, 
@@ -37209,6 +38298,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "msids": [String], 
                 "self": Address, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "evaluations": { 
                 "id": String, 
@@ -37308,8 +38398,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -37333,6 +38423,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "addresses": { 
               "address": String, 
@@ -37340,6 +38431,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "state": String, 
             "title": String, 
@@ -37356,6 +38448,13 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "interests": [String], 
               "hobbies": [String], 
               "spouse": String, 
+              "education": { 
+                "school": String, 
+                "fieldOfStudy": String, 
+                "notes": String, 
+                "dateStart": String, 
+                "dateEnd": String, 
+              },  
             },  
             "employerInfo": { 
               "officialName": String, 
@@ -37690,8 +38789,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -38685,6 +39784,89 @@ apiInstance.patchConversationsMessageParticipantCommunication(conversationId, pa
 ### Return type
 
 **Empty**
+
+<a name="patchConversationsMessagingIntegrationsFacebookIntegrationId"></a>
+
+# FacebookIntegration patchConversationsMessagingIntegrationsFacebookIntegrationId(integrationId, body)
+
+
+
+PATCH /api/v2/conversations/messaging/integrations/facebook/{integrationId}
+
+Update Facebook messaging integration
+
+
+
+Requires ALL permissions: 
+
+* messaging:integration:edit
+
+
+### Request Body Schema
+
+<script type="text/javascript">
+	function copyFacebookIntegrationUpdateRequestExample() {
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#FacebookIntegrationUpdateRequestExample').text()).select();
+		document.execCommand("copy");
+		temp.remove();
+		return false;
+	}
+</script>
+
+FacebookIntegrationUpdateRequest <a href="#" onclick="return copyFacebookIntegrationUpdateRequestExample()">Copy</a>
+
+<div id="FacebookIntegrationUpdateRequestExample">
+
+```{"language":"json", "maxHeight": "250px"}
+{ 
+  "pageAccessToken": String, 
+  "userAccessToken": String, 
+}
+```
+
+</div>
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let integrationId = "integrationId_example"; // String | Integration ID
+let body = {}; // Object | FacebookIntegrationUpdateRequest
+
+apiInstance.patchConversationsMessagingIntegrationsFacebookIntegrationId(integrationId, body)
+  .then((data) => {
+    console.log(`patchConversationsMessagingIntegrationsFacebookIntegrationId success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchConversationsMessagingIntegrationsFacebookIntegrationId');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **integrationId** | **String** | Integration ID |  |
+ **body** | **Object** | FacebookIntegrationUpdateRequest |  |
+{: class="table table-striped"}
+
+### Return type
+
+**FacebookIntegration**
 
 <a name="patchConversationsMessagingIntegrationsWhatsappIntegrationId"></a>
 
@@ -40389,6 +41571,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
         "endTime": Date, 
         "provisional": Boolean, 
       },  
+      "afterCallWork": { 
+        "startTime": Date, 
+        "endTime": Date, 
+        "state": String, 
+      },  
     },  
     "callbacks": { 
       "state": String, 
@@ -40440,6 +41627,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
         "endTime": Date, 
         "provisional": Boolean, 
       },  
+      "afterCallWork": { 
+        "startTime": Date, 
+        "endTime": Date, 
+        "state": String, 
+      },  
     },  
     "chats": { 
       "state": String, 
@@ -40490,6 +41682,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
         "endTime": Date, 
         "provisional": Boolean, 
       },  
+      "afterCallWork": { 
+        "startTime": Date, 
+        "endTime": Date, 
+        "state": String, 
+      },  
     },  
     "cobrowsesessions": { 
       "state": String, 
@@ -40527,6 +41724,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
         "durationSeconds": Number, 
         "endTime": Date, 
         "provisional": Boolean, 
+      },  
+      "afterCallWork": { 
+        "startTime": Date, 
+        "endTime": Date, 
+        "state": String, 
       },  
     },  
     "emails": { 
@@ -40647,6 +41849,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
         "durationSeconds": Number, 
         "endTime": Date, 
         "provisional": Boolean, 
+      },  
+      "afterCallWork": { 
+        "startTime": Date, 
+        "endTime": Date, 
+        "state": String, 
       },  
     },  
     "messages": { 
@@ -40790,6 +41997,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
         "endTime": Date, 
         "provisional": Boolean, 
       },  
+      "afterCallWork": { 
+        "startTime": Date, 
+        "endTime": Date, 
+        "state": String, 
+      },  
     },  
     "screenshares": { 
       "state": String, 
@@ -40818,6 +42030,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
         "durationSeconds": Number, 
         "endTime": Date, 
         "provisional": Boolean, 
+      },  
+      "afterCallWork": { 
+        "startTime": Date, 
+        "endTime": Date, 
+        "state": String, 
       },  
     },  
     "socialExpressions": { 
@@ -40853,6 +42070,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
         "endTime": Date, 
         "provisional": Boolean, 
       },  
+      "afterCallWork": { 
+        "startTime": Date, 
+        "endTime": Date, 
+        "state": String, 
+      },  
     },  
     "videos": { 
       "state": String, 
@@ -40884,6 +42106,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
         "durationSeconds": Number, 
         "endTime": Date, 
         "provisional": Boolean, 
+      },  
+      "afterCallWork": { 
+        "startTime": Date, 
+        "endTime": Date, 
+        "state": String, 
       },  
     },  
     "evaluations": { 
@@ -41024,6 +42251,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "endTime": Date, 
               "provisional": Boolean, 
             },  
+            "afterCallWork": { 
+              "startTime": Date, 
+              "endTime": Date, 
+              "state": String, 
+            },  
           },  
           "callbacks": { 
             "state": String, 
@@ -41075,6 +42307,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "endTime": Date, 
               "provisional": Boolean, 
             },  
+            "afterCallWork": { 
+              "startTime": Date, 
+              "endTime": Date, 
+              "state": String, 
+            },  
           },  
           "chats": { 
             "state": String, 
@@ -41122,6 +42359,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "endTime": Date, 
               "provisional": Boolean, 
             },  
+            "afterCallWork": { 
+              "startTime": Date, 
+              "endTime": Date, 
+              "state": String, 
+            },  
           },  
           "cobrowsesessions": { 
             "state": String, 
@@ -41159,6 +42401,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "durationSeconds": Number, 
               "endTime": Date, 
               "provisional": Boolean, 
+            },  
+            "afterCallWork": { 
+              "startTime": Date, 
+              "endTime": Date, 
+              "state": String, 
             },  
           },  
           "emails": { 
@@ -41231,6 +42478,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "durationSeconds": Number, 
               "endTime": Date, 
               "provisional": Boolean, 
+            },  
+            "afterCallWork": { 
+              "startTime": Date, 
+              "endTime": Date, 
+              "state": String, 
             },  
           },  
           "messages": { 
@@ -41326,6 +42578,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "endTime": Date, 
               "provisional": Boolean, 
             },  
+            "afterCallWork": { 
+              "startTime": Date, 
+              "endTime": Date, 
+              "state": String, 
+            },  
           },  
           "screenshares": { 
             "state": String, 
@@ -41354,6 +42611,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "durationSeconds": Number, 
               "endTime": Date, 
               "provisional": Boolean, 
+            },  
+            "afterCallWork": { 
+              "startTime": Date, 
+              "endTime": Date, 
+              "state": String, 
             },  
           },  
           "socialExpressions": { 
@@ -41389,6 +42651,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "endTime": Date, 
               "provisional": Boolean, 
             },  
+            "afterCallWork": { 
+              "startTime": Date, 
+              "endTime": Date, 
+              "state": String, 
+            },  
           },  
           "videos": { 
             "state": String, 
@@ -41420,6 +42687,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "durationSeconds": Number, 
               "endTime": Date, 
               "provisional": Boolean, 
+            },  
+            "afterCallWork": { 
+              "startTime": Date, 
+              "endTime": Date, 
+              "state": String, 
             },  
           },  
           "evaluations": { 
@@ -41513,8 +42785,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -41538,6 +42810,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "addresses": { 
                 "address": String, 
@@ -41545,6 +42818,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "state": String, 
               "title": String, 
@@ -41561,6 +42835,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "interests": [String], 
                 "hobbies": [String], 
                 "spouse": String, 
+                "education": [Education], 
               },  
               "employerInfo": { 
                 "officialName": String, 
@@ -41996,8 +43271,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -42008,8 +43283,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
           "firstUri": String, 
           "selfUri": String, 
           "nextUri": String, 
-          "lastUri": String, 
           "previousUri": String, 
+          "lastUri": String, 
           "pageCount": Number, 
         },  
         "selfUri": String, 
@@ -42033,6 +43308,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
           "mediaType": String, 
           "type": String, 
           "extension": String, 
+          "countryCode": String, 
         },  
         "addresses": { 
           "address": String, 
@@ -42040,6 +43316,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
           "mediaType": String, 
           "type": String, 
           "extension": String, 
+          "countryCode": String, 
         },  
         "state": String, 
         "title": String, 
@@ -42056,6 +43333,13 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
           "interests": [String], 
           "hobbies": [String], 
           "spouse": String, 
+          "education": { 
+            "school": String, 
+            "fieldOfStudy": String, 
+            "notes": String, 
+            "dateStart": String, 
+            "dateEnd": String, 
+          },  
         },  
         "employerInfo": { 
           "officialName": String, 
@@ -42543,6 +43827,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "endTime": Date, 
                 "provisional": Boolean, 
               },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
+              },  
             },  
             "callbacks": { 
               "state": String, 
@@ -42591,6 +43880,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "endTime": Date, 
                 "provisional": Boolean, 
               },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
+              },  
             },  
             "chats": { 
               "state": String, 
@@ -42629,6 +43923,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "endTime": Date, 
                 "provisional": Boolean, 
               },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
+              },  
             },  
             "cobrowsesessions": { 
               "state": String, 
@@ -42666,6 +43965,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "durationSeconds": Number, 
                 "endTime": Date, 
                 "provisional": Boolean, 
+              },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
               },  
             },  
             "emails": { 
@@ -42722,6 +44026,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "durationSeconds": Number, 
                 "endTime": Date, 
                 "provisional": Boolean, 
+              },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
               },  
             },  
             "messages": { 
@@ -42792,6 +44101,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "endTime": Date, 
                 "provisional": Boolean, 
               },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
+              },  
             },  
             "screenshares": { 
               "state": String, 
@@ -42820,6 +44134,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "durationSeconds": Number, 
                 "endTime": Date, 
                 "provisional": Boolean, 
+              },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
               },  
             },  
             "socialExpressions": { 
@@ -42855,6 +44174,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "endTime": Date, 
                 "provisional": Boolean, 
               },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
+              },  
             },  
             "videos": { 
               "state": String, 
@@ -42886,6 +44210,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "durationSeconds": Number, 
                 "endTime": Date, 
                 "provisional": Boolean, 
+              },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
               },  
             },  
             "evaluations": { 
@@ -43109,8 +44438,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -43121,8 +44450,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
             "firstUri": String, 
             "selfUri": String, 
             "nextUri": String, 
-            "lastUri": String, 
             "previousUri": String, 
+            "lastUri": String, 
             "pageCount": Number, 
           },  
           "selfUri": String, 
@@ -43213,6 +44542,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "self": Address, 
                 "other": Address, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "callbacks": { 
                 "state": String, 
@@ -43238,6 +44568,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "provider": String, 
                 "peerId": String, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "chats": { 
                 "state": String, 
@@ -43258,6 +44589,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "avatarImageUrl": String, 
                 "journeyContext": JourneyContext, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "cobrowsesessions": { 
                 "state": String, 
@@ -43276,6 +44608,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "peerId": String, 
                 "segments": [Segment], 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "emails": { 
                 "state": String, 
@@ -43300,6 +44633,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "draftAttachments": [Attachment], 
                 "spam": Boolean, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "messages": { 
                 "state": String, 
@@ -43324,6 +44658,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "fromAddress": Address, 
                 "messages": [MessageDetails], 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "screenshares": { 
                 "state": String, 
@@ -43339,6 +44674,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "peerId": String, 
                 "segments": [Segment], 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "socialExpressions": { 
                 "state": String, 
@@ -43359,6 +44695,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "scriptId": String, 
                 "peerId": String, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "videos": { 
                 "state": String, 
@@ -43377,6 +44714,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "msids": [String], 
                 "self": Address, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "evaluations": { 
                 "id": String, 
@@ -43476,8 +44814,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -43501,6 +44839,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "addresses": { 
               "address": String, 
@@ -43508,6 +44847,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "state": String, 
             "title": String, 
@@ -43524,6 +44864,13 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "interests": [String], 
               "hobbies": [String], 
               "spouse": String, 
+              "education": { 
+                "school": String, 
+                "fieldOfStudy": String, 
+                "notes": String, 
+                "dateStart": String, 
+                "dateEnd": String, 
+              },  
             },  
             "employerInfo": { 
               "officialName": String, 
@@ -43858,8 +45205,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -44374,6 +45721,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "self": Address, 
                 "other": Address, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "callbacks": { 
                 "state": String, 
@@ -44399,6 +45747,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "provider": String, 
                 "peerId": String, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "chats": { 
                 "state": String, 
@@ -44419,6 +45768,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "avatarImageUrl": String, 
                 "journeyContext": JourneyContext, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "cobrowsesessions": { 
                 "state": String, 
@@ -44437,6 +45787,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "peerId": String, 
                 "segments": [Segment], 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "emails": { 
                 "state": String, 
@@ -44461,6 +45812,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "draftAttachments": [Attachment], 
                 "spam": Boolean, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "messages": { 
                 "state": String, 
@@ -44485,6 +45837,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "fromAddress": Address, 
                 "messages": [MessageDetails], 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "screenshares": { 
                 "state": String, 
@@ -44500,6 +45853,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "peerId": String, 
                 "segments": [Segment], 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "socialExpressions": { 
                 "state": String, 
@@ -44520,6 +45874,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "scriptId": String, 
                 "peerId": String, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "videos": { 
                 "state": String, 
@@ -44538,6 +45893,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "msids": [String], 
                 "self": Address, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "evaluations": { 
                 "id": String, 
@@ -44637,8 +45993,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -44662,6 +46018,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "addresses": { 
               "address": String, 
@@ -44669,6 +46026,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "state": String, 
             "title": String, 
@@ -44685,6 +46043,13 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "interests": [String], 
               "hobbies": [String], 
               "spouse": String, 
+              "education": { 
+                "school": String, 
+                "fieldOfStudy": String, 
+                "notes": String, 
+                "dateStart": String, 
+                "dateEnd": String, 
+              },  
             },  
             "employerInfo": { 
               "officialName": String, 
@@ -45019,8 +46384,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 

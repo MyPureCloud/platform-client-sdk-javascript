@@ -5,7 +5,7 @@ class ObjectsApi {
 	/**
 	 * Objects service.
 	 * @module purecloud-platform-client-v2/api/ObjectsApi
-	 * @version 87.0.0
+	 * @version 88.0.0
 	 */
 
 	/**
@@ -85,11 +85,11 @@ class ObjectsApi {
 	 * @param {Number} opts.pageSize The total page size requested (default to 25)
 	 * @param {Number} opts.pageNumber The page number requested (default to 1)
 	 * @param {String} opts.sortBy variable name requested to sort by
-	 * @param {Array.<String>} opts.expand variable name requested by expand list
+	 * @param {Array.<Object>} opts.expand variable name requested by expand list
 	 * @param {String} opts.nextPage next page token
 	 * @param {String} opts.previousPage Previous page token
 	 * @param {Boolean} opts.objectCount Include the count of objects contained in the division (default to false)
-	 * @param {Array.<String>} opts.id Optionally request specific divisions by their IDs
+	 * @param {Array.<Object>} opts.id Optionally request specific divisions by their IDs
 	 * @param {String} opts.name Search term to filter by division name
 	 */
 	getAuthorizationDivisions(opts) { 

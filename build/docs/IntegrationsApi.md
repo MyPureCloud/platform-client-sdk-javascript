@@ -315,7 +315,7 @@ let opts = {
   'pageSize': 25, // Number | The total page size requested
   'pageNumber': 1, // Number | The page number requested
   'sortBy': "sortBy_example", // String | variable name requested to sort by
-  'expand': ["expand_example"], // [String] | variable name requested by expand list
+  'expand': null, // [Object] | variable name requested by expand list
   'nextPage': "nextPage_example", // String | next page token
   'previousPage': "previousPage_example" // String | Previous page token
 };
@@ -339,7 +339,7 @@ apiInstance.getIntegration(integrationId, opts)
  **pageSize** | **Number** | The total page size requested | [optional] [default to 25] |
  **pageNumber** | **Number** | The page number requested | [optional] [default to 1] |
  **sortBy** | **String** | variable name requested to sort by | [optional]  |
- **expand** | **[String]** | variable name requested by expand list | [optional]  |
+ **expand** | **[Object]** | variable name requested by expand list | [optional]  |
  **nextPage** | **String** | next page token | [optional]  |
  **previousPage** | **String** | Previous page token | [optional]  |
 {: class="table table-striped"}
@@ -436,7 +436,7 @@ let opts = {
   'pageSize': 25, // Number | The total page size requested
   'pageNumber': 1, // Number | The page number requested
   'sortBy': "sortBy_example", // String | variable name requested to sort by
-  'expand': ["expand_example"], // [String] | variable name requested by expand list
+  'expand': null, // [Object] | variable name requested by expand list
   'nextPage': "nextPage_example", // String | next page token
   'previousPage': "previousPage_example" // String | Previous page token
 };
@@ -459,7 +459,7 @@ apiInstance.getIntegrations(opts)
  **pageSize** | **Number** | The total page size requested | [optional] [default to 25] |
  **pageNumber** | **Number** | The page number requested | [optional] [default to 1] |
  **sortBy** | **String** | variable name requested to sort by | [optional]  |
- **expand** | **[String]** | variable name requested by expand list | [optional]  |
+ **expand** | **[Object]** | variable name requested by expand list | [optional]  |
  **nextPage** | **String** | next page token | [optional]  |
  **previousPage** | **String** | Previous page token | [optional]  |
 {: class="table table-striped"}
@@ -992,7 +992,7 @@ let opts = {
   'pageNumber': 1, // Number | The page number requested
   'nextPage': "nextPage_example", // String | next page token
   'previousPage': "previousPage_example", // String | Previous page token
-  'sortBy': "sortBy_example", // String | Root level field name to sort on.
+  'sortBy': "sortBy_example", // String | Root level field name to sort on.  Only 'name' is supported on this endpoint.
   'sortOrder': "asc", // String | Direction to sort 'sortBy' field.
   'secure': "secure_example" // String | Filter to only include secure actions. True will only include actions marked secured. False will include only unsecure actions. Do not use filter if you want all Actions.
 };
@@ -1016,7 +1016,7 @@ apiInstance.getIntegrationsActionsCategories(opts)
  **pageNumber** | **Number** | The page number requested | [optional] [default to 1] |
  **nextPage** | **String** | next page token | [optional]  |
  **previousPage** | **String** | Previous page token | [optional]  |
- **sortBy** | **String** | Root level field name to sort on. | [optional]  |
+ **sortBy** | **String** | Root level field name to sort on.  Only &#39;name&#39; is supported on this endpoint. | [optional]  |
  **sortOrder** | **String** | Direction to sort &#39;sortBy&#39; field. | [optional] [default to asc]<br />**Values**: ASC, DESC |
  **secure** | **String** | Filter to only include secure actions. True will only include actions marked secured. False will include only unsecure actions. Do not use filter if you want all Actions. | [optional] <br />**Values**: true, false |
 {: class="table table-striped"}
@@ -1135,7 +1135,7 @@ let opts = {
   'pageSize': 25, // Number | The total page size requested
   'pageNumber': 1, // Number | The page number requested
   'sortBy': "sortBy_example", // String | variable name requested to sort by
-  'expand': ["expand_example"], // [String] | variable name requested by expand list
+  'expand': null, // [Object] | variable name requested by expand list
   'nextPage': "nextPage_example", // String | next page token
   'previousPage': "previousPage_example" // String | Previous page token
 };
@@ -1158,7 +1158,7 @@ apiInstance.getIntegrationsClientapps(opts)
  **pageSize** | **Number** | The total page size requested | [optional] [default to 25] |
  **pageNumber** | **Number** | The page number requested | [optional] [default to 1] |
  **sortBy** | **String** | variable name requested to sort by | [optional]  |
- **expand** | **[String]** | variable name requested by expand list | [optional]  |
+ **expand** | **[Object]** | variable name requested by expand list | [optional]  |
  **nextPage** | **String** | next page token | [optional]  |
  **previousPage** | **String** | Previous page token | [optional]  |
 {: class="table table-striped"}
@@ -2183,7 +2183,7 @@ let opts = {
   'pageSize': 25, // Number | The total page size requested
   'pageNumber': 1, // Number | The page number requested
   'sortBy': "sortBy_example", // String | variable name requested to sort by
-  'expand': ["expand_example"], // [String] | variable name requested by expand list
+  'expand': null, // [Object] | variable name requested by expand list
   'nextPage': "nextPage_example", // String | next page token
   'previousPage': "previousPage_example" // String | Previous page token
 };
@@ -2206,7 +2206,7 @@ apiInstance.getIntegrationsTypes(opts)
  **pageSize** | **Number** | The total page size requested | [optional] [default to 25] |
  **pageNumber** | **Number** | The page number requested | [optional] [default to 1] |
  **sortBy** | **String** | variable name requested to sort by | [optional]  |
- **expand** | **[String]** | variable name requested by expand list | [optional]  |
+ **expand** | **[Object]** | variable name requested by expand list | [optional]  |
  **nextPage** | **String** | next page token | [optional]  |
  **previousPage** | **String** | Previous page token | [optional]  |
 {: class="table table-striped"}
@@ -2249,7 +2249,7 @@ let opts = {
   'pageSize': 25, // Number | The total page size requested
   'pageNumber': 1, // Number | The page number requested
   'sortBy': "sortBy_example", // String | variable name requested to sort by
-  'expand': ["expand_example"], // [String] | variable name requested by expand list
+  'expand': null, // [Object] | variable name requested by expand list
   'nextPage': "nextPage_example", // String | next page token
   'previousPage': "previousPage_example", // String | Previous page token
   'appHost': "appHost_example" // String | The type of UserApp to filter by
@@ -2273,7 +2273,7 @@ apiInstance.getIntegrationsUserapps(opts)
  **pageSize** | **Number** | The total page size requested | [optional] [default to 25] |
  **pageNumber** | **Number** | The page number requested | [optional] [default to 1] |
  **sortBy** | **String** | variable name requested to sort by | [optional]  |
- **expand** | **[String]** | variable name requested by expand list | [optional]  |
+ **expand** | **[Object]** | variable name requested by expand list | [optional]  |
  **nextPage** | **String** | next page token | [optional]  |
  **previousPage** | **String** | Previous page token | [optional]  |
  **appHost** | **String** | The type of UserApp to filter by | [optional]  |
@@ -2422,7 +2422,7 @@ let opts = {
   'pageSize': 25, // Number | The total page size requested
   'pageNumber': 1, // Number | The page number requested
   'sortBy': "sortBy_example", // String | variable name requested to sort by
-  'expand': ["expand_example"], // [String] | variable name requested by expand list
+  'expand': null, // [Object] | variable name requested by expand list
   'nextPage': "nextPage_example", // String | next page token
   'previousPage': "previousPage_example" // String | Previous page token
 };
@@ -2447,7 +2447,7 @@ apiInstance.patchIntegration(integrationId, opts)
  **pageSize** | **Number** | The total page size requested | [optional] [default to 25] |
  **pageNumber** | **Number** | The page number requested | [optional] [default to 1] |
  **sortBy** | **String** | variable name requested to sort by | [optional]  |
- **expand** | **[String]** | variable name requested by expand list | [optional]  |
+ **expand** | **[Object]** | variable name requested by expand list | [optional]  |
  **nextPage** | **String** | next page token | [optional]  |
  **previousPage** | **String** | Previous page token | [optional]  |
 {: class="table table-striped"}

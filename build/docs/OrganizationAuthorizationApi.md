@@ -1429,6 +1429,7 @@ Trustee <a href="#" onclick="return copyTrusteeExample()">Copy</a>
       "mediaType": String, 
       "type": String, 
       "extension": String, 
+      "countryCode": String, 
     },  
     "addresses": { 
       "address": String, 
@@ -1436,6 +1437,7 @@ Trustee <a href="#" onclick="return copyTrusteeExample()">Copy</a>
       "mediaType": String, 
       "type": String, 
       "extension": String, 
+      "countryCode": String, 
     },  
     "state": String, 
     "title": String, 
@@ -1459,6 +1461,7 @@ Trustee <a href="#" onclick="return copyTrusteeExample()">Copy</a>
         "mediaType": String, 
         "type": String, 
         "extension": String, 
+        "countryCode": String, 
       },  
       "addresses": { 
         "address": String, 
@@ -1466,6 +1469,7 @@ Trustee <a href="#" onclick="return copyTrusteeExample()">Copy</a>
         "mediaType": String, 
         "type": String, 
         "extension": String, 
+        "countryCode": String, 
       },  
       "state": String, 
       "title": String, 
@@ -1482,6 +1486,13 @@ Trustee <a href="#" onclick="return copyTrusteeExample()">Copy</a>
         "interests": [String], 
         "hobbies": [String], 
         "spouse": String, 
+        "education": { 
+          "school": String, 
+          "fieldOfStudy": String, 
+          "notes": String, 
+          "dateStart": String, 
+          "dateEnd": String, 
+        },  
       },  
       "employerInfo": { 
         "officialName": String, 
@@ -1851,6 +1862,13 @@ Trustee <a href="#" onclick="return copyTrusteeExample()">Copy</a>
       "interests": [String], 
       "hobbies": [String], 
       "spouse": String, 
+      "education": { 
+        "school": String, 
+        "fieldOfStudy": String, 
+        "notes": String, 
+        "dateStart": String, 
+        "dateEnd": String, 
+      },  
     },  
     "employerInfo": { 
       "officialName": String, 

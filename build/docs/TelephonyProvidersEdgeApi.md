@@ -2499,7 +2499,8 @@ let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 let opts = { 
   'pageSize': 25, // Number | Page size
   'pageNumber': 1, // Number | Page number
-  'sortBy': "number" // String | Sort by
+  'sortBy': "number", // String | Sort by
+  'id': ["id_example"] // [String] | Filter by a specific list of ID's
 };
 
 apiInstance.getTelephonyProvidersEdgesDidpools(opts)
@@ -2520,6 +2521,7 @@ apiInstance.getTelephonyProvidersEdgesDidpools(opts)
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **sortBy** | **String** | Sort by | [optional] [default to number] |
+ **id** | **[String]** | Filter by a specific list of ID&#39;s | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2564,7 +2566,8 @@ let opts = {
   'sortOrder': "ASC", // String | Sort order
   'phoneNumber': "phoneNumber_example", // String | Filter by phoneNumber
   'ownerId': "ownerId_example", // String | Filter by the owner of a phone number
-  'didPoolId': "didPoolId_example" // String | Filter by the DID Pool assignment
+  'didPoolId': "didPoolId_example", // String | Filter by the DID Pool assignment
+  'id': ["id_example"] // [String] | Filter by a specific list of ID's
 };
 
 apiInstance.getTelephonyProvidersEdgesDids(opts)
@@ -2589,6 +2592,7 @@ apiInstance.getTelephonyProvidersEdgesDids(opts)
  **phoneNumber** | **String** | Filter by phoneNumber | [optional]  |
  **ownerId** | **String** | Filter by the owner of a phone number | [optional]  |
  **didPoolId** | **String** | Filter by the DID Pool assignment | [optional]  |
+ **id** | **[String]** | Filter by a specific list of ID&#39;s | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -6790,6 +6794,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "edges": { 
               "id": String, 
@@ -7321,6 +7326,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "edges": { 
               "id": String, 
@@ -7522,6 +7528,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
           "mediaType": String, 
           "type": String, 
           "extension": String, 
+          "countryCode": String, 
         },  
         "edges": { 
           "id": String, 
@@ -7859,6 +7866,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "edges": { 
               "id": String, 
@@ -8606,6 +8614,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "edges": { 
               "id": String, 
@@ -9137,6 +9146,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "edges": { 
               "id": String, 
@@ -9338,6 +9348,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
           "mediaType": String, 
           "type": String, 
           "extension": String, 
+          "countryCode": String, 
         },  
         "edges": { 
           "id": String, 
@@ -9675,6 +9686,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "edges": { 
               "id": String, 
@@ -9966,6 +9978,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
       "mediaType": String, 
       "type": String, 
       "extension": String, 
+      "countryCode": String, 
     },  
     "edges": { 
       "id": String, 
@@ -10429,6 +10442,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "edges": { 
               "id": String, 
@@ -10960,6 +10974,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "edges": { 
               "id": String, 
@@ -11161,6 +11176,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
           "mediaType": String, 
           "type": String, 
           "extension": String, 
+          "countryCode": String, 
         },  
         "edges": { 
           "id": String, 
@@ -11498,6 +11514,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "edges": { 
               "id": String, 
@@ -12059,8 +12076,8 @@ DomainCertificateAuthority <a href="#" onclick="return copyDomainCertificateAuth
     "expirationDate": Date, 
     "issueDate": Date, 
     "expired": Boolean, 
-    "signatureValid": Boolean, 
     "valid": Boolean, 
+    "signatureValid": Boolean, 
   },  
   "selfUri": String, 
 }
@@ -12973,6 +12990,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "edges": { 
               "id": String, 
@@ -13504,6 +13522,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "edges": { 
               "id": String, 
@@ -13705,6 +13724,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
           "mediaType": String, 
           "type": String, 
           "extension": String, 
+          "countryCode": String, 
         },  
         "edges": { 
           "id": String, 
@@ -14042,6 +14062,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "edges": { 
               "id": String, 
@@ -14789,6 +14810,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "edges": { 
               "id": String, 
@@ -15320,6 +15342,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "edges": { 
               "id": String, 
@@ -15521,6 +15544,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
           "mediaType": String, 
           "type": String, 
           "extension": String, 
+          "countryCode": String, 
         },  
         "edges": { 
           "id": String, 
@@ -15858,6 +15882,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "edges": { 
               "id": String, 
@@ -16149,6 +16174,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
       "mediaType": String, 
       "type": String, 
       "extension": String, 
+      "countryCode": String, 
     },  
     "edges": { 
       "id": String, 
@@ -16612,6 +16638,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "edges": { 
               "id": String, 
@@ -17143,6 +17170,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "edges": { 
               "id": String, 
@@ -17344,6 +17372,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
           "mediaType": String, 
           "type": String, 
           "extension": String, 
+          "countryCode": String, 
         },  
         "edges": { 
           "id": String, 
@@ -17681,6 +17710,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "edges": { 
               "id": String, 
@@ -18205,6 +18235,7 @@ PhoneBase <a href="#" onclick="return copyPhoneBaseExample()">Copy</a>
     "noRebalance": Boolean, 
     "noCloudProvisioning": Boolean, 
     "mediaCodecs": [String], 
+    "cdm": Boolean, 
   },  
   "selfUri": String, 
 }
@@ -18812,6 +18843,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "edges": { 
               "id": String, 
@@ -19343,6 +19375,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "edges": { 
               "id": String, 
@@ -19544,6 +19577,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
           "mediaType": String, 
           "type": String, 
           "extension": String, 
+          "countryCode": String, 
         },  
         "edges": { 
           "id": String, 
@@ -19881,6 +19915,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "edges": { 
               "id": String, 
@@ -20628,6 +20663,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "edges": { 
               "id": String, 
@@ -21159,6 +21195,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "edges": { 
               "id": String, 
@@ -21360,6 +21397,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
           "mediaType": String, 
           "type": String, 
           "extension": String, 
+          "countryCode": String, 
         },  
         "edges": { 
           "id": String, 
@@ -21697,6 +21735,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "edges": { 
               "id": String, 
@@ -22061,6 +22100,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
     "noRebalance": Boolean, 
     "noCloudProvisioning": Boolean, 
     "mediaCodecs": [String], 
+    "cdm": Boolean, 
   },  
   "webRtcUser": { 
     "id": String, 
@@ -22512,6 +22552,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "edges": { 
                 "id": String, 
@@ -22813,6 +22854,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "edges": { 
                 "id": String, 
@@ -22927,6 +22969,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
             "mediaType": String, 
             "type": String, 
             "extension": String, 
+            "countryCode": String, 
           },  
           "edges": { 
             "id": String, 
@@ -23121,6 +23164,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "edges": { 
                 "id": String, 
@@ -23638,6 +23682,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "edges": { 
                 "id": String, 
@@ -23939,6 +23984,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "edges": { 
                 "id": String, 
@@ -24053,6 +24099,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
             "mediaType": String, 
             "type": String, 
             "extension": String, 
+            "countryCode": String, 
           },  
           "edges": { 
             "id": String, 
@@ -24247,6 +24294,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "edges": { 
                 "id": String, 
@@ -24451,6 +24499,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
         "mediaType": String, 
         "type": String, 
         "extension": String, 
+        "countryCode": String, 
       },  
       "edges": { 
         "id": String, 
@@ -24771,6 +24820,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "edges": { 
                 "id": String, 
@@ -25072,6 +25122,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "edges": { 
                 "id": String, 
@@ -25186,6 +25237,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
             "mediaType": String, 
             "type": String, 
             "extension": String, 
+            "countryCode": String, 
           },  
           "edges": { 
             "id": String, 
@@ -25380,6 +25432,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "edges": { 
                 "id": String, 
@@ -26113,6 +26166,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "edges": { 
                 "id": String, 
@@ -26414,6 +26468,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "edges": { 
                 "id": String, 
@@ -26528,6 +26583,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
             "mediaType": String, 
             "type": String, 
             "extension": String, 
+            "countryCode": String, 
           },  
           "edges": { 
             "id": String, 
@@ -26722,6 +26778,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "edges": { 
                 "id": String, 
@@ -27239,6 +27296,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "edges": { 
                 "id": String, 
@@ -27540,6 +27598,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "edges": { 
                 "id": String, 
@@ -27654,6 +27713,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
             "mediaType": String, 
             "type": String, 
             "extension": String, 
+            "countryCode": String, 
           },  
           "edges": { 
             "id": String, 
@@ -27848,6 +27908,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "edges": { 
                 "id": String, 
@@ -28052,6 +28113,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
         "mediaType": String, 
         "type": String, 
         "extension": String, 
+        "countryCode": String, 
       },  
       "edges": { 
         "id": String, 
@@ -28372,6 +28434,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "edges": { 
                 "id": String, 
@@ -28673,6 +28736,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "edges": { 
                 "id": String, 
@@ -28787,6 +28851,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
             "mediaType": String, 
             "type": String, 
             "extension": String, 
+            "countryCode": String, 
           },  
           "edges": { 
             "id": String, 
@@ -28981,6 +29046,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "edges": { 
                 "id": String, 
@@ -30052,6 +30118,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "edges": { 
                 "id": String, 
@@ -30353,6 +30420,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "edges": { 
                 "id": String, 
@@ -30467,6 +30535,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
             "mediaType": String, 
             "type": String, 
             "extension": String, 
+            "countryCode": String, 
           },  
           "edges": { 
             "id": String, 
@@ -30661,6 +30730,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "edges": { 
                 "id": String, 
@@ -31178,6 +31248,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "edges": { 
                 "id": String, 
@@ -31479,6 +31550,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "edges": { 
                 "id": String, 
@@ -31593,6 +31665,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
             "mediaType": String, 
             "type": String, 
             "extension": String, 
+            "countryCode": String, 
           },  
           "edges": { 
             "id": String, 
@@ -31787,6 +31860,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "edges": { 
                 "id": String, 
@@ -31991,6 +32065,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
         "mediaType": String, 
         "type": String, 
         "extension": String, 
+        "countryCode": String, 
       },  
       "edges": { 
         "id": String, 
@@ -32311,6 +32386,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "edges": { 
                 "id": String, 
@@ -32612,6 +32688,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "edges": { 
                 "id": String, 
@@ -32726,6 +32803,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
             "mediaType": String, 
             "type": String, 
             "extension": String, 
+            "countryCode": String, 
           },  
           "edges": { 
             "id": String, 
@@ -32920,6 +32998,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "edges": { 
                 "id": String, 
@@ -33653,6 +33732,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "edges": { 
                 "id": String, 
@@ -33954,6 +34034,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "edges": { 
                 "id": String, 
@@ -34068,6 +34149,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
             "mediaType": String, 
             "type": String, 
             "extension": String, 
+            "countryCode": String, 
           },  
           "edges": { 
             "id": String, 
@@ -34262,6 +34344,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "edges": { 
                 "id": String, 
@@ -34779,6 +34862,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "edges": { 
                 "id": String, 
@@ -35080,6 +35164,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "edges": { 
                 "id": String, 
@@ -35194,6 +35279,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
             "mediaType": String, 
             "type": String, 
             "extension": String, 
+            "countryCode": String, 
           },  
           "edges": { 
             "id": String, 
@@ -35388,6 +35474,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "edges": { 
                 "id": String, 
@@ -35592,6 +35679,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
         "mediaType": String, 
         "type": String, 
         "extension": String, 
+        "countryCode": String, 
       },  
       "edges": { 
         "id": String, 
@@ -35912,6 +36000,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "edges": { 
                 "id": String, 
@@ -36213,6 +36302,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "edges": { 
                 "id": String, 
@@ -36327,6 +36417,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
             "mediaType": String, 
             "type": String, 
             "extension": String, 
+            "countryCode": String, 
           },  
           "edges": { 
             "id": String, 
@@ -36521,6 +36612,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "edges": { 
                 "id": String, 
@@ -36815,6 +36907,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
     "mediaType": String, 
     "type": String, 
     "extension": String, 
+    "countryCode": String, 
   },  
   "edges": { 
     "id": String, 
@@ -37261,6 +37354,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "edges": { 
                 "id": String, 
@@ -37562,6 +37656,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "edges": { 
                 "id": String, 
@@ -37676,6 +37771,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
             "mediaType": String, 
             "type": String, 
             "extension": String, 
+            "countryCode": String, 
           },  
           "edges": { 
             "id": String, 
@@ -37870,6 +37966,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "edges": { 
                 "id": String, 
@@ -38387,6 +38484,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "edges": { 
                 "id": String, 
@@ -38688,6 +38786,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "edges": { 
                 "id": String, 
@@ -38802,6 +38901,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
             "mediaType": String, 
             "type": String, 
             "extension": String, 
+            "countryCode": String, 
           },  
           "edges": { 
             "id": String, 
@@ -38996,6 +39096,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "edges": { 
                 "id": String, 
@@ -39200,6 +39301,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
         "mediaType": String, 
         "type": String, 
         "extension": String, 
+        "countryCode": String, 
       },  
       "edges": { 
         "id": String, 
@@ -39520,6 +39622,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "edges": { 
                 "id": String, 
@@ -39821,6 +39924,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "edges": { 
                 "id": String, 
@@ -39935,6 +40039,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
             "mediaType": String, 
             "type": String, 
             "extension": String, 
+            "countryCode": String, 
           },  
           "edges": { 
             "id": String, 
@@ -40129,6 +40234,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "edges": { 
                 "id": String, 
@@ -41238,6 +41344,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "edges": { 
               "id": String, 
@@ -41769,6 +41876,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "edges": { 
               "id": String, 
@@ -41970,6 +42078,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
           "mediaType": String, 
           "type": String, 
           "extension": String, 
+          "countryCode": String, 
         },  
         "edges": { 
           "id": String, 
@@ -42307,6 +42416,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "edges": { 
               "id": String, 
@@ -43054,6 +43164,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "edges": { 
               "id": String, 
@@ -43585,6 +43696,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "edges": { 
               "id": String, 
@@ -43786,6 +43898,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
           "mediaType": String, 
           "type": String, 
           "extension": String, 
+          "countryCode": String, 
         },  
         "edges": { 
           "id": String, 
@@ -44123,6 +44236,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "edges": { 
               "id": String, 
@@ -44414,6 +44528,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
       "mediaType": String, 
       "type": String, 
       "extension": String, 
+      "countryCode": String, 
     },  
     "edges": { 
       "id": String, 
@@ -44877,6 +44992,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "edges": { 
               "id": String, 
@@ -45408,6 +45524,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "edges": { 
               "id": String, 
@@ -45609,6 +45726,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
           "mediaType": String, 
           "type": String, 
           "extension": String, 
+          "countryCode": String, 
         },  
         "edges": { 
           "id": String, 
@@ -45946,6 +46064,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "edges": { 
               "id": String, 
@@ -46863,6 +46982,7 @@ EdgeLine <a href="#" onclick="return copyEdgeLineExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "edges": { 
                 "id": String, 
@@ -47164,6 +47284,7 @@ EdgeLine <a href="#" onclick="return copyEdgeLineExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "edges": { 
                 "id": String, 
@@ -47278,6 +47399,7 @@ EdgeLine <a href="#" onclick="return copyEdgeLineExample()">Copy</a>
             "mediaType": String, 
             "type": String, 
             "extension": String, 
+            "countryCode": String, 
           },  
           "edges": { 
             "id": String, 
@@ -47472,6 +47594,7 @@ EdgeLine <a href="#" onclick="return copyEdgeLineExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "edges": { 
                 "id": String, 
@@ -47989,6 +48112,7 @@ EdgeLine <a href="#" onclick="return copyEdgeLineExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "edges": { 
                 "id": String, 
@@ -48290,6 +48414,7 @@ EdgeLine <a href="#" onclick="return copyEdgeLineExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "edges": { 
                 "id": String, 
@@ -48404,6 +48529,7 @@ EdgeLine <a href="#" onclick="return copyEdgeLineExample()">Copy</a>
             "mediaType": String, 
             "type": String, 
             "extension": String, 
+            "countryCode": String, 
           },  
           "edges": { 
             "id": String, 
@@ -48598,6 +48724,7 @@ EdgeLine <a href="#" onclick="return copyEdgeLineExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "edges": { 
                 "id": String, 
@@ -48802,6 +48929,7 @@ EdgeLine <a href="#" onclick="return copyEdgeLineExample()">Copy</a>
         "mediaType": String, 
         "type": String, 
         "extension": String, 
+        "countryCode": String, 
       },  
       "edges": { 
         "id": String, 
@@ -49122,6 +49250,7 @@ EdgeLine <a href="#" onclick="return copyEdgeLineExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "edges": { 
                 "id": String, 
@@ -49423,6 +49552,7 @@ EdgeLine <a href="#" onclick="return copyEdgeLineExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "edges": { 
                 "id": String, 
@@ -49537,6 +49667,7 @@ EdgeLine <a href="#" onclick="return copyEdgeLineExample()">Copy</a>
             "mediaType": String, 
             "type": String, 
             "extension": String, 
+            "countryCode": String, 
           },  
           "edges": { 
             "id": String, 
@@ -49731,6 +49862,7 @@ EdgeLine <a href="#" onclick="return copyEdgeLineExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "edges": { 
                 "id": String, 
@@ -50472,8 +50604,8 @@ DomainCertificateAuthority <a href="#" onclick="return copyDomainCertificateAuth
     "expirationDate": Date, 
     "issueDate": Date, 
     "expired": Boolean, 
-    "signatureValid": Boolean, 
     "valid": Boolean, 
+    "signatureValid": Boolean, 
   },  
   "selfUri": String, 
 }
@@ -51706,6 +51838,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "edges": { 
               "id": String, 
@@ -52237,6 +52370,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "edges": { 
               "id": String, 
@@ -52438,6 +52572,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
           "mediaType": String, 
           "type": String, 
           "extension": String, 
+          "countryCode": String, 
         },  
         "edges": { 
           "id": String, 
@@ -52775,6 +52910,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "edges": { 
               "id": String, 
@@ -53522,6 +53658,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "edges": { 
               "id": String, 
@@ -54053,6 +54190,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "edges": { 
               "id": String, 
@@ -54254,6 +54392,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
           "mediaType": String, 
           "type": String, 
           "extension": String, 
+          "countryCode": String, 
         },  
         "edges": { 
           "id": String, 
@@ -54591,6 +54730,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "edges": { 
               "id": String, 
@@ -54882,6 +55022,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
       "mediaType": String, 
       "type": String, 
       "extension": String, 
+      "countryCode": String, 
     },  
     "edges": { 
       "id": String, 
@@ -55345,6 +55486,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "edges": { 
               "id": String, 
@@ -55876,6 +56018,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "edges": { 
               "id": String, 
@@ -56077,6 +56220,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
           "mediaType": String, 
           "type": String, 
           "extension": String, 
+          "countryCode": String, 
         },  
         "edges": { 
           "id": String, 
@@ -56414,6 +56558,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "edges": { 
               "id": String, 
@@ -57365,6 +57510,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "edges": { 
               "id": String, 
@@ -57896,6 +58042,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "edges": { 
               "id": String, 
@@ -58097,6 +58244,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
           "mediaType": String, 
           "type": String, 
           "extension": String, 
+          "countryCode": String, 
         },  
         "edges": { 
           "id": String, 
@@ -58434,6 +58582,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "edges": { 
               "id": String, 
@@ -59181,6 +59330,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "edges": { 
               "id": String, 
@@ -59712,6 +59862,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "edges": { 
               "id": String, 
@@ -59913,6 +60064,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
           "mediaType": String, 
           "type": String, 
           "extension": String, 
+          "countryCode": String, 
         },  
         "edges": { 
           "id": String, 
@@ -60250,6 +60402,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "edges": { 
               "id": String, 
@@ -60614,6 +60767,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
     "noRebalance": Boolean, 
     "noCloudProvisioning": Boolean, 
     "mediaCodecs": [String], 
+    "cdm": Boolean, 
   },  
   "webRtcUser": { 
     "id": String, 
@@ -61065,6 +61219,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "edges": { 
                 "id": String, 
@@ -61366,6 +61521,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "edges": { 
                 "id": String, 
@@ -61480,6 +61636,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
             "mediaType": String, 
             "type": String, 
             "extension": String, 
+            "countryCode": String, 
           },  
           "edges": { 
             "id": String, 
@@ -61674,6 +61831,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "edges": { 
                 "id": String, 
@@ -62191,6 +62349,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "edges": { 
                 "id": String, 
@@ -62492,6 +62651,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "edges": { 
                 "id": String, 
@@ -62606,6 +62766,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
             "mediaType": String, 
             "type": String, 
             "extension": String, 
+            "countryCode": String, 
           },  
           "edges": { 
             "id": String, 
@@ -62800,6 +62961,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "edges": { 
                 "id": String, 
@@ -63004,6 +63166,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
         "mediaType": String, 
         "type": String, 
         "extension": String, 
+        "countryCode": String, 
       },  
       "edges": { 
         "id": String, 
@@ -63324,6 +63487,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "edges": { 
                 "id": String, 
@@ -63625,6 +63789,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "edges": { 
                 "id": String, 
@@ -63739,6 +63904,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
             "mediaType": String, 
             "type": String, 
             "extension": String, 
+            "countryCode": String, 
           },  
           "edges": { 
             "id": String, 
@@ -63933,6 +64099,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "edges": { 
                 "id": String, 
@@ -64666,6 +64833,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "edges": { 
                 "id": String, 
@@ -64967,6 +65135,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "edges": { 
                 "id": String, 
@@ -65081,6 +65250,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
             "mediaType": String, 
             "type": String, 
             "extension": String, 
+            "countryCode": String, 
           },  
           "edges": { 
             "id": String, 
@@ -65275,6 +65445,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "edges": { 
                 "id": String, 
@@ -65792,6 +65963,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "edges": { 
                 "id": String, 
@@ -66093,6 +66265,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "edges": { 
                 "id": String, 
@@ -66207,6 +66380,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
             "mediaType": String, 
             "type": String, 
             "extension": String, 
+            "countryCode": String, 
           },  
           "edges": { 
             "id": String, 
@@ -66401,6 +66575,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "edges": { 
                 "id": String, 
@@ -66605,6 +66780,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
         "mediaType": String, 
         "type": String, 
         "extension": String, 
+        "countryCode": String, 
       },  
       "edges": { 
         "id": String, 
@@ -66925,6 +67101,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "edges": { 
                 "id": String, 
@@ -67226,6 +67403,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "edges": { 
                 "id": String, 
@@ -67340,6 +67518,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
             "mediaType": String, 
             "type": String, 
             "extension": String, 
+            "countryCode": String, 
           },  
           "edges": { 
             "id": String, 
@@ -67534,6 +67713,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "edges": { 
                 "id": String, 
@@ -67950,6 +68130,7 @@ PhoneBase <a href="#" onclick="return copyPhoneBaseExample()">Copy</a>
     "noRebalance": Boolean, 
     "noCloudProvisioning": Boolean, 
     "mediaCodecs": [String], 
+    "cdm": Boolean, 
   },  
   "selfUri": String, 
 }
@@ -68499,6 +68680,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "edges": { 
                 "id": String, 
@@ -68800,6 +68982,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "edges": { 
                 "id": String, 
@@ -68914,6 +69097,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
             "mediaType": String, 
             "type": String, 
             "extension": String, 
+            "countryCode": String, 
           },  
           "edges": { 
             "id": String, 
@@ -69108,6 +69292,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "edges": { 
                 "id": String, 
@@ -69625,6 +69810,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "edges": { 
                 "id": String, 
@@ -69926,6 +70112,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "edges": { 
                 "id": String, 
@@ -70040,6 +70227,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
             "mediaType": String, 
             "type": String, 
             "extension": String, 
+            "countryCode": String, 
           },  
           "edges": { 
             "id": String, 
@@ -70234,6 +70422,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "edges": { 
                 "id": String, 
@@ -70438,6 +70627,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
         "mediaType": String, 
         "type": String, 
         "extension": String, 
+        "countryCode": String, 
       },  
       "edges": { 
         "id": String, 
@@ -70758,6 +70948,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "edges": { 
                 "id": String, 
@@ -71059,6 +71250,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "edges": { 
                 "id": String, 
@@ -71173,6 +71365,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
             "mediaType": String, 
             "type": String, 
             "extension": String, 
+            "countryCode": String, 
           },  
           "edges": { 
             "id": String, 
@@ -71367,6 +71560,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "edges": { 
                 "id": String, 
@@ -72100,6 +72294,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "edges": { 
                 "id": String, 
@@ -72401,6 +72596,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "edges": { 
                 "id": String, 
@@ -72515,6 +72711,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
             "mediaType": String, 
             "type": String, 
             "extension": String, 
+            "countryCode": String, 
           },  
           "edges": { 
             "id": String, 
@@ -72709,6 +72906,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "edges": { 
                 "id": String, 
@@ -73226,6 +73424,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "edges": { 
                 "id": String, 
@@ -73527,6 +73726,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "edges": { 
                 "id": String, 
@@ -73641,6 +73841,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
             "mediaType": String, 
             "type": String, 
             "extension": String, 
+            "countryCode": String, 
           },  
           "edges": { 
             "id": String, 
@@ -73835,6 +74036,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "edges": { 
                 "id": String, 
@@ -74039,6 +74241,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
         "mediaType": String, 
         "type": String, 
         "extension": String, 
+        "countryCode": String, 
       },  
       "edges": { 
         "id": String, 
@@ -74359,6 +74562,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "edges": { 
                 "id": String, 
@@ -74660,6 +74864,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "edges": { 
                 "id": String, 
@@ -74774,6 +74979,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
             "mediaType": String, 
             "type": String, 
             "extension": String, 
+            "countryCode": String, 
           },  
           "edges": { 
             "id": String, 
@@ -74968,6 +75174,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "edges": { 
                 "id": String, 
@@ -75262,6 +75469,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
     "mediaType": String, 
     "type": String, 
     "extension": String, 
+    "countryCode": String, 
   },  
   "edges": { 
     "id": String, 
@@ -75708,6 +75916,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "edges": { 
                 "id": String, 
@@ -76009,6 +76218,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "edges": { 
                 "id": String, 
@@ -76123,6 +76333,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
             "mediaType": String, 
             "type": String, 
             "extension": String, 
+            "countryCode": String, 
           },  
           "edges": { 
             "id": String, 
@@ -76317,6 +76528,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "edges": { 
                 "id": String, 
@@ -76834,6 +77046,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "edges": { 
                 "id": String, 
@@ -77135,6 +77348,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "edges": { 
                 "id": String, 
@@ -77249,6 +77463,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
             "mediaType": String, 
             "type": String, 
             "extension": String, 
+            "countryCode": String, 
           },  
           "edges": { 
             "id": String, 
@@ -77443,6 +77658,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "edges": { 
                 "id": String, 
@@ -77647,6 +77863,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
         "mediaType": String, 
         "type": String, 
         "extension": String, 
+        "countryCode": String, 
       },  
       "edges": { 
         "id": String, 
@@ -77967,6 +78184,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "edges": { 
                 "id": String, 
@@ -78268,6 +78486,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "edges": { 
                 "id": String, 
@@ -78382,6 +78601,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
             "mediaType": String, 
             "type": String, 
             "extension": String, 
+            "countryCode": String, 
           },  
           "edges": { 
             "id": String, 
@@ -78576,6 +78796,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "edges": { 
                 "id": String, 

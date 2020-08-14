@@ -4158,6 +4158,7 @@ Prompt <a href="#" onclick="return copyPromptExample()">Copy</a>
         "mediaType": String, 
         "type": String, 
         "extension": String, 
+        "countryCode": String, 
       },  
       "addresses": { 
         "address": String, 
@@ -4165,6 +4166,7 @@ Prompt <a href="#" onclick="return copyPromptExample()">Copy</a>
         "mediaType": String, 
         "type": String, 
         "extension": String, 
+        "countryCode": String, 
       },  
       "state": String, 
       "title": String, 
@@ -4181,6 +4183,13 @@ Prompt <a href="#" onclick="return copyPromptExample()">Copy</a>
         "interests": [String], 
         "hobbies": [String], 
         "spouse": String, 
+        "education": { 
+          "school": String, 
+          "fieldOfStudy": String, 
+          "notes": String, 
+          "dateStart": String, 
+          "dateEnd": String, 
+        },  
       },  
       "employerInfo": { 
         "officialName": String, 
@@ -5072,6 +5081,7 @@ Flow <a href="#" onclick="return copyFlowExample()">Copy</a>
       "mediaType": String, 
       "type": String, 
       "extension": String, 
+      "countryCode": String, 
     },  
     "addresses": { 
       "address": String, 
@@ -5079,6 +5089,7 @@ Flow <a href="#" onclick="return copyFlowExample()">Copy</a>
       "mediaType": String, 
       "type": String, 
       "extension": String, 
+      "countryCode": String, 
     },  
     "state": String, 
     "title": String, 
@@ -5095,6 +5106,13 @@ Flow <a href="#" onclick="return copyFlowExample()">Copy</a>
       "interests": [String], 
       "hobbies": [String], 
       "spouse": String, 
+      "education": { 
+        "school": String, 
+        "fieldOfStudy": String, 
+        "notes": String, 
+        "dateStart": String, 
+        "dateEnd": String, 
+      },  
     },  
     "employerInfo": { 
       "officialName": String, 
@@ -5651,6 +5669,7 @@ Flow <a href="#" onclick="return copyFlowExample()">Copy</a>
       "mediaType": String, 
       "type": String, 
       "extension": String, 
+      "countryCode": String, 
     },  
     "addresses": { 
       "address": String, 
@@ -5658,6 +5677,7 @@ Flow <a href="#" onclick="return copyFlowExample()">Copy</a>
       "mediaType": String, 
       "type": String, 
       "extension": String, 
+      "countryCode": String, 
     },  
     "state": String, 
     "title": String, 
@@ -5674,6 +5694,13 @@ Flow <a href="#" onclick="return copyFlowExample()">Copy</a>
       "interests": [String], 
       "hobbies": [String], 
       "spouse": String, 
+      "education": { 
+        "school": String, 
+        "fieldOfStudy": String, 
+        "notes": String, 
+        "dateStart": String, 
+        "dateEnd": String, 
+      },  
     },  
     "employerInfo": { 
       "officialName": String, 
@@ -6063,6 +6090,7 @@ Flow <a href="#" onclick="return copyFlowExample()">Copy</a>
         "mediaType": String, 
         "type": String, 
         "extension": String, 
+        "countryCode": String, 
       },  
       "addresses": { 
         "address": String, 
@@ -6070,6 +6098,7 @@ Flow <a href="#" onclick="return copyFlowExample()">Copy</a>
         "mediaType": String, 
         "type": String, 
         "extension": String, 
+        "countryCode": String, 
       },  
       "state": String, 
       "title": String, 
@@ -6086,6 +6115,13 @@ Flow <a href="#" onclick="return copyFlowExample()">Copy</a>
         "interests": [String], 
         "hobbies": [String], 
         "spouse": String, 
+        "education": { 
+          "school": String, 
+          "fieldOfStudy": String, 
+          "notes": String, 
+          "dateStart": String, 
+          "dateEnd": String, 
+        },  
       },  
       "employerInfo": { 
         "officialName": String, 
@@ -7394,6 +7430,7 @@ FlowOutcome <a href="#" onclick="return copyFlowOutcomeExample()">Copy</a>
         "mediaType": String, 
         "type": String, 
         "extension": String, 
+        "countryCode": String, 
       },  
       "addresses": { 
         "address": String, 
@@ -7401,6 +7438,7 @@ FlowOutcome <a href="#" onclick="return copyFlowOutcomeExample()">Copy</a>
         "mediaType": String, 
         "type": String, 
         "extension": String, 
+        "countryCode": String, 
       },  
       "state": String, 
       "title": String, 
@@ -7417,6 +7455,13 @@ FlowOutcome <a href="#" onclick="return copyFlowOutcomeExample()">Copy</a>
         "interests": [String], 
         "hobbies": [String], 
         "spouse": String, 
+        "education": { 
+          "school": String, 
+          "fieldOfStudy": String, 
+          "notes": String, 
+          "dateStart": String, 
+          "dateEnd": String, 
+        },  
       },  
       "employerInfo": { 
         "officialName": String, 
@@ -8134,6 +8179,7 @@ Prompt <a href="#" onclick="return copyPromptExample()">Copy</a>
         "mediaType": String, 
         "type": String, 
         "extension": String, 
+        "countryCode": String, 
       },  
       "addresses": { 
         "address": String, 
@@ -8141,6 +8187,7 @@ Prompt <a href="#" onclick="return copyPromptExample()">Copy</a>
         "mediaType": String, 
         "type": String, 
         "extension": String, 
+        "countryCode": String, 
       },  
       "state": String, 
       "title": String, 
@@ -8157,6 +8204,13 @@ Prompt <a href="#" onclick="return copyPromptExample()">Copy</a>
         "interests": [String], 
         "hobbies": [String], 
         "spouse": String, 
+        "education": { 
+          "school": String, 
+          "fieldOfStudy": String, 
+          "notes": String, 
+          "dateStart": String, 
+          "dateEnd": String, 
+        },  
       },  
       "employerInfo": { 
         "officialName": String, 
@@ -9040,6 +9094,7 @@ Flow <a href="#" onclick="return copyFlowExample()">Copy</a>
       "mediaType": String, 
       "type": String, 
       "extension": String, 
+      "countryCode": String, 
     },  
     "addresses": { 
       "address": String, 
@@ -9047,6 +9102,7 @@ Flow <a href="#" onclick="return copyFlowExample()">Copy</a>
       "mediaType": String, 
       "type": String, 
       "extension": String, 
+      "countryCode": String, 
     },  
     "state": String, 
     "title": String, 
@@ -9063,6 +9119,13 @@ Flow <a href="#" onclick="return copyFlowExample()">Copy</a>
       "interests": [String], 
       "hobbies": [String], 
       "spouse": String, 
+      "education": { 
+        "school": String, 
+        "fieldOfStudy": String, 
+        "notes": String, 
+        "dateStart": String, 
+        "dateEnd": String, 
+      },  
     },  
     "employerInfo": { 
       "officialName": String, 
@@ -9619,6 +9682,7 @@ Flow <a href="#" onclick="return copyFlowExample()">Copy</a>
       "mediaType": String, 
       "type": String, 
       "extension": String, 
+      "countryCode": String, 
     },  
     "addresses": { 
       "address": String, 
@@ -9626,6 +9690,7 @@ Flow <a href="#" onclick="return copyFlowExample()">Copy</a>
       "mediaType": String, 
       "type": String, 
       "extension": String, 
+      "countryCode": String, 
     },  
     "state": String, 
     "title": String, 
@@ -9642,6 +9707,13 @@ Flow <a href="#" onclick="return copyFlowExample()">Copy</a>
       "interests": [String], 
       "hobbies": [String], 
       "spouse": String, 
+      "education": { 
+        "school": String, 
+        "fieldOfStudy": String, 
+        "notes": String, 
+        "dateStart": String, 
+        "dateEnd": String, 
+      },  
     },  
     "employerInfo": { 
       "officialName": String, 
@@ -10031,6 +10103,7 @@ Flow <a href="#" onclick="return copyFlowExample()">Copy</a>
         "mediaType": String, 
         "type": String, 
         "extension": String, 
+        "countryCode": String, 
       },  
       "addresses": { 
         "address": String, 
@@ -10038,6 +10111,7 @@ Flow <a href="#" onclick="return copyFlowExample()">Copy</a>
         "mediaType": String, 
         "type": String, 
         "extension": String, 
+        "countryCode": String, 
       },  
       "state": String, 
       "title": String, 
@@ -10054,6 +10128,13 @@ Flow <a href="#" onclick="return copyFlowExample()">Copy</a>
         "interests": [String], 
         "hobbies": [String], 
         "spouse": String, 
+        "education": { 
+          "school": String, 
+          "fieldOfStudy": String, 
+          "notes": String, 
+          "dateStart": String, 
+          "dateEnd": String, 
+        },  
       },  
       "employerInfo": { 
         "officialName": String, 
@@ -10696,6 +10777,7 @@ FlowOutcome <a href="#" onclick="return copyFlowOutcomeExample()">Copy</a>
         "mediaType": String, 
         "type": String, 
         "extension": String, 
+        "countryCode": String, 
       },  
       "addresses": { 
         "address": String, 
@@ -10703,6 +10785,7 @@ FlowOutcome <a href="#" onclick="return copyFlowOutcomeExample()">Copy</a>
         "mediaType": String, 
         "type": String, 
         "extension": String, 
+        "countryCode": String, 
       },  
       "state": String, 
       "title": String, 
@@ -10719,6 +10802,13 @@ FlowOutcome <a href="#" onclick="return copyFlowOutcomeExample()">Copy</a>
         "interests": [String], 
         "hobbies": [String], 
         "spouse": String, 
+        "education": { 
+          "school": String, 
+          "fieldOfStudy": String, 
+          "notes": String, 
+          "dateStart": String, 
+          "dateEnd": String, 
+        },  
       },  
       "employerInfo": { 
         "officialName": String, 

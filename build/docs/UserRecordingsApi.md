@@ -479,6 +479,11 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
           "endTime": Date, 
           "provisional": Boolean, 
         },  
+        "afterCallWork": { 
+          "startTime": Date, 
+          "endTime": Date, 
+          "state": String, 
+        },  
       },  
       "callbacks": { 
         "state": String, 
@@ -530,6 +535,11 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
           "endTime": Date, 
           "provisional": Boolean, 
         },  
+        "afterCallWork": { 
+          "startTime": Date, 
+          "endTime": Date, 
+          "state": String, 
+        },  
       },  
       "chats": { 
         "state": String, 
@@ -580,6 +590,11 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
           "endTime": Date, 
           "provisional": Boolean, 
         },  
+        "afterCallWork": { 
+          "startTime": Date, 
+          "endTime": Date, 
+          "state": String, 
+        },  
       },  
       "cobrowsesessions": { 
         "state": String, 
@@ -617,6 +632,11 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
           "durationSeconds": Number, 
           "endTime": Date, 
           "provisional": Boolean, 
+        },  
+        "afterCallWork": { 
+          "startTime": Date, 
+          "endTime": Date, 
+          "state": String, 
         },  
       },  
       "emails": { 
@@ -721,6 +741,11 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
           "durationSeconds": Number, 
           "endTime": Date, 
           "provisional": Boolean, 
+        },  
+        "afterCallWork": { 
+          "startTime": Date, 
+          "endTime": Date, 
+          "state": String, 
         },  
       },  
       "messages": { 
@@ -848,6 +873,11 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
           "endTime": Date, 
           "provisional": Boolean, 
         },  
+        "afterCallWork": { 
+          "startTime": Date, 
+          "endTime": Date, 
+          "state": String, 
+        },  
       },  
       "screenshares": { 
         "state": String, 
@@ -876,6 +906,11 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
           "durationSeconds": Number, 
           "endTime": Date, 
           "provisional": Boolean, 
+        },  
+        "afterCallWork": { 
+          "startTime": Date, 
+          "endTime": Date, 
+          "state": String, 
         },  
       },  
       "socialExpressions": { 
@@ -911,6 +946,11 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
           "endTime": Date, 
           "provisional": Boolean, 
         },  
+        "afterCallWork": { 
+          "startTime": Date, 
+          "endTime": Date, 
+          "state": String, 
+        },  
       },  
       "videos": { 
         "state": String, 
@@ -942,6 +982,11 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
           "durationSeconds": Number, 
           "endTime": Date, 
           "provisional": Boolean, 
+        },  
+        "afterCallWork": { 
+          "startTime": Date, 
+          "endTime": Date, 
+          "state": String, 
         },  
       },  
       "evaluations": { 
@@ -1079,6 +1124,11 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
                 "endTime": Date, 
                 "provisional": Boolean, 
               },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
+              },  
             },  
             "callbacks": { 
               "state": String, 
@@ -1127,6 +1177,11 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
                 "endTime": Date, 
                 "provisional": Boolean, 
               },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
+              },  
             },  
             "chats": { 
               "state": String, 
@@ -1165,6 +1220,11 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
                 "endTime": Date, 
                 "provisional": Boolean, 
               },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
+              },  
             },  
             "cobrowsesessions": { 
               "state": String, 
@@ -1202,6 +1262,11 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
                 "durationSeconds": Number, 
                 "endTime": Date, 
                 "provisional": Boolean, 
+              },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
               },  
             },  
             "emails": { 
@@ -1258,6 +1323,11 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
                 "durationSeconds": Number, 
                 "endTime": Date, 
                 "provisional": Boolean, 
+              },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
               },  
             },  
             "messages": { 
@@ -1328,6 +1398,11 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
                 "endTime": Date, 
                 "provisional": Boolean, 
               },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
+              },  
             },  
             "screenshares": { 
               "state": String, 
@@ -1356,6 +1431,11 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
                 "durationSeconds": Number, 
                 "endTime": Date, 
                 "provisional": Boolean, 
+              },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
               },  
             },  
             "socialExpressions": { 
@@ -1391,6 +1471,11 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
                 "endTime": Date, 
                 "provisional": Boolean, 
               },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
+              },  
             },  
             "videos": { 
               "state": String, 
@@ -1422,6 +1507,11 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
                 "durationSeconds": Number, 
                 "endTime": Date, 
                 "provisional": Boolean, 
+              },  
+              "afterCallWork": { 
+                "startTime": Date, 
+                "endTime": Date, 
+                "state": String, 
               },  
             },  
             "evaluations": { 
@@ -1680,8 +1770,8 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -1692,8 +1782,8 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
             "firstUri": String, 
             "selfUri": String, 
             "nextUri": String, 
-            "lastUri": String, 
             "previousUri": String, 
+            "lastUri": String, 
             "pageCount": Number, 
           },  
           "selfUri": String, 
@@ -1717,6 +1807,7 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
             "mediaType": String, 
             "type": String, 
             "extension": String, 
+            "countryCode": String, 
           },  
           "addresses": { 
             "address": String, 
@@ -1724,6 +1815,7 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
             "mediaType": String, 
             "type": String, 
             "extension": String, 
+            "countryCode": String, 
           },  
           "state": String, 
           "title": String, 
@@ -1740,6 +1832,13 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
             "interests": [String], 
             "hobbies": [String], 
             "spouse": String, 
+            "education": { 
+              "school": String, 
+              "fieldOfStudy": String, 
+              "notes": String, 
+              "dateStart": String, 
+              "dateEnd": String, 
+            },  
           },  
           "employerInfo": { 
             "officialName": String, 
@@ -2099,6 +2198,7 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
             "mediaType": String, 
             "type": String, 
             "extension": String, 
+            "countryCode": String, 
           },  
           "addresses": { 
             "address": String, 
@@ -2106,6 +2206,7 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
             "mediaType": String, 
             "type": String, 
             "extension": String, 
+            "countryCode": String, 
           },  
           "state": String, 
           "title": String, 
@@ -2122,6 +2223,13 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
             "interests": [String], 
             "hobbies": [String], 
             "spouse": String, 
+            "education": { 
+              "school": String, 
+              "fieldOfStudy": String, 
+              "notes": String, 
+              "dateStart": String, 
+              "dateEnd": String, 
+            },  
           },  
           "employerInfo": { 
             "officialName": String, 
@@ -2484,6 +2592,7 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "addresses": { 
               "address": String, 
@@ -2491,6 +2600,7 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "state": String, 
             "title": String, 
@@ -2507,6 +2617,13 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
               "interests": [String], 
               "hobbies": [String], 
               "spouse": String, 
+              "education": { 
+                "school": String, 
+                "fieldOfStudy": String, 
+                "notes": String, 
+                "dateStart": String, 
+                "dateEnd": String, 
+              },  
             },  
             "employerInfo": { 
               "officialName": String, 
@@ -2826,6 +2943,7 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
                 "self": Address, 
                 "other": Address, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "callbacks": { 
                 "state": String, 
@@ -2851,6 +2969,7 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
                 "provider": String, 
                 "peerId": String, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "chats": { 
                 "state": String, 
@@ -2871,6 +2990,7 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
                 "avatarImageUrl": String, 
                 "journeyContext": JourneyContext, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "cobrowsesessions": { 
                 "state": String, 
@@ -2889,6 +3009,7 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
                 "peerId": String, 
                 "segments": [Segment], 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "emails": { 
                 "state": String, 
@@ -2913,6 +3034,7 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
                 "draftAttachments": [Attachment], 
                 "spam": Boolean, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "messages": { 
                 "state": String, 
@@ -2937,6 +3059,7 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
                 "fromAddress": Address, 
                 "messages": [MessageDetails], 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "screenshares": { 
                 "state": String, 
@@ -2952,6 +3075,7 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
                 "peerId": String, 
                 "segments": [Segment], 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "socialExpressions": { 
                 "state": String, 
@@ -2972,6 +3096,7 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
                 "scriptId": String, 
                 "peerId": String, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "videos": { 
                 "state": String, 
@@ -2990,6 +3115,7 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
                 "msids": [String], 
                 "self": Address, 
                 "wrapup": Wrapup, 
+                "afterCallWork": AfterCallWork, 
               },  
               "evaluations": { 
                 "id": String, 
@@ -3089,8 +3215,8 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -3191,8 +3317,8 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -3216,6 +3342,7 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "addresses": { 
                 "address": String, 
@@ -3223,6 +3350,7 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "state": String, 
               "title": String, 
@@ -3239,6 +3367,7 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
                 "interests": [String], 
                 "hobbies": [String], 
                 "spouse": String, 
+                "education": [Education], 
               },  
               "employerInfo": { 
                 "officialName": String, 
@@ -3380,6 +3509,7 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "addresses": { 
                 "address": String, 
@@ -3387,6 +3517,7 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "state": String, 
               "title": String, 
@@ -3403,6 +3534,7 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
                 "interests": [String], 
                 "hobbies": [String], 
                 "spouse": String, 
+                "education": [Education], 
               },  
               "employerInfo": { 
                 "officialName": String, 
@@ -3852,8 +3984,8 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -3877,6 +4009,7 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "addresses": { 
                 "address": String, 
@@ -3884,6 +4017,7 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "state": String, 
               "title": String, 
@@ -3900,6 +4034,7 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
                 "interests": [String], 
                 "hobbies": [String], 
                 "spouse": String, 
+                "education": [Education], 
               },  
               "employerInfo": { 
                 "officialName": String, 
@@ -4041,6 +4176,7 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "addresses": { 
                 "address": String, 
@@ -4048,6 +4184,7 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "state": String, 
               "title": String, 
@@ -4064,6 +4201,7 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
                 "interests": [String], 
                 "hobbies": [String], 
                 "spouse": String, 
+                "education": [Education], 
               },  
               "employerInfo": { 
                 "officialName": String, 

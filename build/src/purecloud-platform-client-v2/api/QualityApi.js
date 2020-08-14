@@ -5,7 +5,7 @@ class QualityApi {
 	/**
 	 * Quality service.
 	 * @module purecloud-platform-client-v2/api/QualityApi
-	 * @version 87.0.0
+	 * @version 88.0.0
 	 */
 
 	/**
@@ -216,12 +216,12 @@ class QualityApi {
 	 * @param {Number} opts.pageSize The total page size requested (default to 25)
 	 * @param {Number} opts.pageNumber The page number requested (default to 1)
 	 * @param {String} opts.sortBy variable name requested to sort by
-	 * @param {Array.<String>} opts.expand variable name requested by expand list
+	 * @param {Array.<Object>} opts.expand variable name requested by expand list
 	 * @param {String} opts.nextPage next page token
 	 * @param {String} opts.previousPage Previous page token
 	 * @param {Date} opts.startTime Start time of agent activity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
 	 * @param {Date} opts.endTime End time of agent activity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
-	 * @param {Array.<String>} opts.agentUserId user id of agent requested
+	 * @param {Array.<Object>} opts.agentUserId user id of agent requested
 	 * @param {String} opts.evaluatorUserId user id of the evaluator
 	 * @param {String} opts.name name
 	 * @param {String} opts.group group id
@@ -282,7 +282,7 @@ class QualityApi {
 	 * @param {Number} opts.pageSize The total page size requested (default to 25)
 	 * @param {Number} opts.pageNumber The page number requested (default to 1)
 	 * @param {String} opts.sortBy variable name requested to sort by
-	 * @param {Array.<String>} opts.expand variable name requested by expand list
+	 * @param {Array.<Object>} opts.expand variable name requested by expand list
 	 * @param {String} opts.nextPage next page token
 	 * @param {String} opts.previousPage Previous page token
 	 * @param {String} opts.conversationId conversation id
@@ -319,7 +319,7 @@ class QualityApi {
 	 * @param {Number} opts.pageSize The total page size requested (default to 25)
 	 * @param {Number} opts.pageNumber The page number requested (default to 1)
 	 * @param {String} opts.sortBy variable name requested to sort by
-	 * @param {Array.<String>} opts.expand variable name requested by expand list
+	 * @param {Array.<Object>} opts.expand variable name requested by expand list
 	 * @param {String} opts.nextPage next page token
 	 * @param {String} opts.previousPage Previous page token
 	 * @param {String} opts.recordingId id of the recording
@@ -413,7 +413,7 @@ class QualityApi {
 	 * @param {Number} opts.pageSize The total page size requested (default to 25)
 	 * @param {Number} opts.pageNumber The page number requested (default to 1)
 	 * @param {String} opts.sortBy variable name requested to sort by
-	 * @param {Array.<String>} opts.expand variable name requested by expand list
+	 * @param {Array.<Object>} opts.expand variable name requested by expand list
 	 * @param {String} opts.nextPage next page token
 	 * @param {String} opts.previousPage Previous page token
 	 * @param {String} opts.conversationId conversationId specified
@@ -422,7 +422,7 @@ class QualityApi {
 	 * @param {String} opts.queueId queue id
 	 * @param {String} opts.startTime start time of the evaluation query
 	 * @param {String} opts.endTime end time of the evaluation query
-	 * @param {Array.<String>} opts.evaluationState 
+	 * @param {Array.<Object>} opts.evaluationState 
 	 * @param {Boolean} opts.isReleased the evaluation has been released
 	 * @param {Boolean} opts.agentHasRead agent has the evaluation
 	 * @param {Boolean} opts.expandAnswerTotalScores get the total scores for evaluations
@@ -454,13 +454,13 @@ class QualityApi {
 	 * @param {Number} opts.pageSize The total page size requested (default to 25)
 	 * @param {Number} opts.pageNumber The page number requested (default to 1)
 	 * @param {String} opts.sortBy variable name requested to sort by
-	 * @param {Array.<String>} opts.expand variable name requested by expand list
+	 * @param {Array.<Object>} opts.expand variable name requested by expand list
 	 * @param {String} opts.nextPage next page token
 	 * @param {String} opts.previousPage Previous page token
 	 * @param {Date} opts.startTime The start time specified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
 	 * @param {Date} opts.endTime The end time specified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
 	 * @param {String} opts.name Evaluator name
-	 * @param {Array.<String>} opts.permission permission strings
+	 * @param {Array.<Object>} opts.permission permission strings
 	 * @param {String} opts.group group id
 	 */
 	getQualityEvaluatorsActivity(opts) { 
@@ -825,7 +825,7 @@ class QualityApi {
 	 * @param {Number} opts.pageSize The total page size requested (default to 25)
 	 * @param {Number} opts.pageNumber The page number requested (default to 1)
 	 * @param {String} opts.sortBy variable name requested to sort by
-	 * @param {Array.<String>} opts.expand variable name requested by expand list
+	 * @param {Array.<Object>} opts.expand variable name requested by expand list
 	 * @param {String} opts.nextPage next page token
 	 * @param {String} opts.previousPage Previous page token
 	 * @param {String} opts.name the keyword set name - used for filtering results in searches.

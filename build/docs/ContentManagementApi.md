@@ -2591,6 +2591,7 @@ WorkspaceMember <a href="#" onclick="return copyWorkspaceMemberExample()">Copy</
       "mediaType": String, 
       "type": String, 
       "extension": String, 
+      "countryCode": String, 
     },  
     "addresses": { 
       "address": String, 
@@ -2598,6 +2599,7 @@ WorkspaceMember <a href="#" onclick="return copyWorkspaceMemberExample()">Copy</
       "mediaType": String, 
       "type": String, 
       "extension": String, 
+      "countryCode": String, 
     },  
     "state": String, 
     "title": String, 
@@ -2614,6 +2616,13 @@ WorkspaceMember <a href="#" onclick="return copyWorkspaceMemberExample()">Copy</
       "interests": [String], 
       "hobbies": [String], 
       "spouse": String, 
+      "education": { 
+        "school": String, 
+        "fieldOfStudy": String, 
+        "notes": String, 
+        "dateStart": String, 
+        "dateEnd": String, 
+      },  
     },  
     "employerInfo": { 
       "officialName": String, 

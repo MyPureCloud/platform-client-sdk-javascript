@@ -361,6 +361,10 @@
       "class": "WfmBuShortTermForecastImportCompleteTopicBuShortTermForecastNotification"
     },
     {
+      "topic": "v2.workforcemanagement.historicaldata.deletejob",
+      "class": "WfmHistoricalDataUploadPurgeRequestStatusTopicHistoricalDataUploadPurgeRequestUpdate"
+    },
+    {
       "topic": "v2.workforcemanagement.historicaldata.status",
       "class": "WfmHistoricalDataUploadRequestStatusTopicHistoricalDataUploadRequestUpdate"
     },

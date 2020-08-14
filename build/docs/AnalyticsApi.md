@@ -34,6 +34,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postAnalyticsEvaluationsAggregatesQuery**](AnalyticsApi.html#postAnalyticsEvaluationsAggregatesQuery) | **POST** /api/v2/analytics/evaluations/aggregates/query | Query for evaluation aggregates
 [**postAnalyticsFlowsAggregatesQuery**](AnalyticsApi.html#postAnalyticsFlowsAggregatesQuery) | **POST** /api/v2/analytics/flows/aggregates/query | Query for flow aggregates
 [**postAnalyticsFlowsObservationsQuery**](AnalyticsApi.html#postAnalyticsFlowsObservationsQuery) | **POST** /api/v2/analytics/flows/observations/query | Query for flow observations
+[**postAnalyticsJourneysAggregatesQuery**](AnalyticsApi.html#postAnalyticsJourneysAggregatesQuery) | **POST** /api/v2/analytics/journeys/aggregates/query | Query for journey aggregates
 [**postAnalyticsQueuesObservationsQuery**](AnalyticsApi.html#postAnalyticsQueuesObservationsQuery) | **POST** /api/v2/analytics/queues/observations/query | Query for queue observations
 [**postAnalyticsReportingExports**](AnalyticsApi.html#postAnalyticsReportingExports) | **POST** /api/v2/analytics/reporting/exports | Generate a view export request
 [**postAnalyticsReportingScheduleRunreport**](AnalyticsApi.html#postAnalyticsReportingScheduleRunreport) | **POST** /api/v2/analytics/reporting/schedules/{scheduleId}/runreport | Place a scheduled report immediately into the reporting queue
@@ -2241,6 +2242,131 @@ apiInstance.postAnalyticsFlowsObservationsQuery(body)
 
 **FlowObservationQueryResponse**
 
+<a name="postAnalyticsJourneysAggregatesQuery"></a>
+
+# JourneyAggregateQueryResponse postAnalyticsJourneysAggregatesQuery(body)
+
+
+
+POST /api/v2/analytics/journeys/aggregates/query
+
+Query for journey aggregates
+
+
+
+Requires ANY permissions: 
+
+* analytics:journeyAggregate:view
+
+
+### Request Body Schema
+
+<script type="text/javascript">
+	function copyJourneyAggregationQueryExample() {
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#JourneyAggregationQueryExample').text()).select();
+		document.execCommand("copy");
+		temp.remove();
+		return false;
+	}
+</script>
+
+JourneyAggregationQuery <a href="#" onclick="return copyJourneyAggregationQueryExample()">Copy</a>
+
+<div id="JourneyAggregationQueryExample">
+
+```{"language":"json", "maxHeight": "250px"}
+{ 
+  "interval": String, 
+  "granularity": String, 
+  "timeZone": String, 
+  "groupBy": [String], 
+  "filter": { 
+    "type": String, 
+    "clauses": { 
+      "type": String, 
+      "predicates": { 
+        "type": String, 
+        "dimension": String, 
+        "operator": String, 
+        "value": String, 
+        "range": { 
+          "gt": Number, 
+          "gte": Number, 
+          "lt": Number, 
+          "lte": Number, 
+        },  
+      },  
+    },  
+    "predicates": { 
+      "type": String, 
+      "dimension": String, 
+      "operator": String, 
+      "value": String, 
+      "range": { 
+        "gt": Number, 
+        "gte": Number, 
+        "lt": Number, 
+        "lte": Number, 
+      },  
+    },  
+  },  
+  "metrics": [String], 
+  "flattenMultivaluedDimensions": Boolean, 
+  "views": { 
+    "target": String, 
+    "name": String, 
+    "function": String, 
+    "range": { 
+      "gte": Number, 
+      "lt": Number, 
+    },  
+  },  
+  "alternateTimeDimension": String, 
+}
+```
+
+</div>
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AnalyticsApi();
+
+let body = {}; // Object | query
+
+apiInstance.postAnalyticsJourneysAggregatesQuery(body)
+  .then((data) => {
+    console.log(`postAnalyticsJourneysAggregatesQuery success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postAnalyticsJourneysAggregatesQuery');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | query |  |
+{: class="table table-striped"}
+
+### Return type
+
+**JourneyAggregateQueryResponse**
+
 <a name="postAnalyticsQueuesObservationsQuery"></a>
 
 # QueueObservationQueryResponse postAnalyticsQueuesObservationsQuery(body)
@@ -2362,7 +2488,7 @@ POST /api/v2/analytics/reporting/exports
 
 Generate a view export request
 
-
+This API creates a reporting export but the desired way to export analytics data is to use the analytics query APIs instead
 
 Requires ALL permissions: 
 

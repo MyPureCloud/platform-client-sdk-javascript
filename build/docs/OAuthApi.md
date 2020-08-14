@@ -704,6 +704,7 @@ OAuthClientRequest <a href="#" onclick="return copyOAuthClientRequestExample()">
     "roleId": String, 
     "divisionId": String, 
   },  
+  "state": String, 
 }
 ```
 
@@ -794,6 +795,7 @@ OAuthClientRequest <a href="#" onclick="return copyOAuthClientRequestExample()">
     "roleId": String, 
     "divisionId": String, 
   },  
+  "state": String, 
 }
 ```
 

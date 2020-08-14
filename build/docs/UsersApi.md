@@ -1019,7 +1019,8 @@ let opts = {
   'id': ["id_example"], // [String] | id
   'jid': ["jid_example"], // [String] | jid
   'sortOrder': "ASC", // String | Ascending or descending sort order
-  'expand': ["expand_example"] // [String] | Which fields, if any, to expand
+  'expand': ["expand_example"], // [String] | Which fields, if any, to expand
+  'integrationPresenceSource': "integrationPresenceSource_example" // String | Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an \"expand\".
 };
 
 apiInstance.getProfilesUsers(opts)
@@ -1043,6 +1044,7 @@ apiInstance.getProfilesUsers(opts)
  **jid** | **[String]** | jid | [optional]  |
  **sortOrder** | **String** | Ascending or descending sort order | [optional] [default to ASC]<br />**Values**: ascending, descending |
  **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization |
+ **integrationPresenceSource** | **String** | Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an \&quot;expand\&quot;. | [optional] <br />**Values**: MicrosoftTeams, ZoomPhone |
 {: class="table table-striped"}
 
 ### Return type
@@ -1138,6 +1140,7 @@ let apiInstance = new platformClient.UsersApi();
 let userId = "userId_example"; // String | User ID
 let opts = { 
   'expand': ["expand_example"], // [String] | Which fields, if any, to expand
+  'integrationPresenceSource': "integrationPresenceSource_example", // String | Gets an integration presence for a user instead of their default.
   'state': "active" // String | Search for a user with this state
 };
 
@@ -1158,6 +1161,7 @@ apiInstance.getUser(userId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
  **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography |
+ **integrationPresenceSource** | **String** | Gets an integration presence for a user instead of their default. | [optional] <br />**Values**: MicrosoftTeams, ZoomPhone |
  **state** | **String** | Search for a user with this state | [optional] [default to active]<br />**Values**: active, deleted |
 {: class="table table-striped"}
 
@@ -1541,7 +1545,8 @@ let apiInstance = new platformClient.UsersApi();
 
 let userId = "userId_example"; // String | userId
 let opts = { 
-  'expand': ["expand_example"] // [String] | Which fields, if any, to expand
+  'expand': ["expand_example"], // [String] | Which fields, if any, to expand
+  'integrationPresenceSource': "integrationPresenceSource_example" // String | Gets an integration presence for a user instead of their default.
 };
 
 apiInstance.getUserProfile(userId, opts)
@@ -1561,6 +1566,7 @@ apiInstance.getUserProfile(userId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | userId |  |
  **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team |
+ **integrationPresenceSource** | **String** | Gets an integration presence for a user instead of their default. | [optional] <br />**Values**: MicrosoftTeams, ZoomPhone |
 {: class="table table-striped"}
 
 ### Return type
@@ -2131,6 +2137,7 @@ let opts = {
   'jabberId': ["jabberId_example"], // [String] | A list of jabberIds to fetch by bulk (cannot be used with the \"id\" parameter)
   'sortOrder': "ASC", // String | Ascending or descending sort order
   'expand': ["expand_example"], // [String] | Which fields, if any, to expand
+  'integrationPresenceSource': "integrationPresenceSource_example", // String | Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an \"expand\". When using this parameter the maximum number of users that can be returned is 10.
   'state': "active" // String | Only list users of this state
 };
 
@@ -2155,6 +2162,7 @@ apiInstance.getUsers(opts)
  **jabberId** | **[String]** | A list of jabberIds to fetch by bulk (cannot be used with the \&quot;id\&quot; parameter) | [optional]  |
  **sortOrder** | **String** | Ascending or descending sort order | [optional] [default to ASC]<br />**Values**: ascending, descending |
  **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography |
+ **integrationPresenceSource** | **String** | Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an \&quot;expand\&quot;. When using this parameter the maximum number of users that can be returned is 10. | [optional] <br />**Values**: MicrosoftTeams, ZoomPhone |
  **state** | **String** | Only list users of this state | [optional] [default to active]<br />**Values**: active, inactive, deleted, any |
 {: class="table table-striped"}
 
@@ -2193,7 +2201,8 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.UsersApi();
 
 let opts = { 
-  'expand': ["expand_example"] // [String] | Which fields, if any, to expand.
+  'expand': ["expand_example"], // [String] | Which fields, if any, to expand.
+  'integrationPresenceSource': "integrationPresenceSource_example" // String | Get your presence for a given integration. This parameter will only be used when presence is provided as an \"expand\".
 };
 
 apiInstance.getUsersMe(opts)
@@ -2212,6 +2221,7 @@ apiInstance.getUsersMe(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **expand** | **[String]** | Which fields, if any, to expand. | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography, date, geolocationsettings, organization, presencedefinitions, locationdefinitions, orgauthorization, orgproducts, favorites, superiors, directreports, adjacents, routingskills, routinglanguages, fieldconfigs, token, trustors |
+ **integrationPresenceSource** | **String** | Get your presence for a given integration. This parameter will only be used when presence is provided as an \&quot;expand\&quot;. | [optional] <br />**Values**: MicrosoftTeams, ZoomPhone |
 {: class="table table-striped"}
 
 ### Return type
@@ -2250,7 +2260,8 @@ let apiInstance = new platformClient.UsersApi();
 
 let q64 = "q64_example"; // String | q64
 let opts = { 
-  'expand': ["expand_example"] // [String] | expand
+  'expand': ["expand_example"], // [String] | expand
+  'integrationPresenceSource': "integrationPresenceSource_example" // String | integrationPresenceSource
 };
 
 apiInstance.getUsersSearch(q64, opts)
@@ -2270,6 +2281,7 @@ apiInstance.getUsersSearch(q64, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **q64** | **String** | q64 |  |
  **expand** | **[String]** | expand | [optional]  |
+ **integrationPresenceSource** | **String** | integrationPresenceSource | [optional] <br />**Values**: MicrosoftTeams, ZoomPhone |
 {: class="table table-striped"}
 
 ### Return type
@@ -2325,6 +2337,7 @@ UpdateUser <a href="#" onclick="return copyUpdateUserExample()">Copy</a>
     "mediaType": String, 
     "type": String, 
     "extension": String, 
+    "countryCode": String, 
   },  
   "addresses": { 
     "address": String, 
@@ -2332,6 +2345,7 @@ UpdateUser <a href="#" onclick="return copyUpdateUserExample()">Copy</a>
     "mediaType": String, 
     "type": String, 
     "extension": String, 
+    "countryCode": String, 
   },  
   "title": String, 
   "username": String, 
@@ -2433,6 +2447,7 @@ UpdateUser <a href="#" onclick="return copyUpdateUserExample()">Copy</a>
         "mediaType": String, 
         "type": String, 
         "extension": String, 
+        "countryCode": String, 
       },  
       "addresses": { 
         "address": String, 
@@ -2440,6 +2455,7 @@ UpdateUser <a href="#" onclick="return copyUpdateUserExample()">Copy</a>
         "mediaType": String, 
         "type": String, 
         "extension": String, 
+        "countryCode": String, 
       },  
       "state": String, 
       "title": String, 
@@ -2456,6 +2472,13 @@ UpdateUser <a href="#" onclick="return copyUpdateUserExample()">Copy</a>
         "interests": [String], 
         "hobbies": [String], 
         "spouse": String, 
+        "education": { 
+          "school": String, 
+          "fieldOfStudy": String, 
+          "notes": String, 
+          "dateStart": String, 
+          "dateEnd": String, 
+        },  
       },  
       "employerInfo": { 
         "officialName": String, 
@@ -2577,6 +2600,7 @@ UpdateUser <a href="#" onclick="return copyUpdateUserExample()">Copy</a>
             "mediaType": String, 
             "type": String, 
             "extension": String, 
+            "countryCode": String, 
           },  
           "addresses": { 
             "address": String, 
@@ -2584,6 +2608,7 @@ UpdateUser <a href="#" onclick="return copyUpdateUserExample()">Copy</a>
             "mediaType": String, 
             "type": String, 
             "extension": String, 
+            "countryCode": String, 
           },  
           "state": String, 
           "title": String, 
@@ -2600,6 +2625,13 @@ UpdateUser <a href="#" onclick="return copyUpdateUserExample()">Copy</a>
             "interests": [String], 
             "hobbies": [String], 
             "spouse": String, 
+            "education": { 
+              "school": String, 
+              "fieldOfStudy": String, 
+              "notes": String, 
+              "dateStart": String, 
+              "dateEnd": String, 
+            },  
           },  
           "employerInfo": { 
             "officialName": String, 
@@ -2721,6 +2753,7 @@ UpdateUser <a href="#" onclick="return copyUpdateUserExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "addresses": { 
                 "address": String, 
@@ -2728,6 +2761,7 @@ UpdateUser <a href="#" onclick="return copyUpdateUserExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "state": String, 
               "title": String, 
@@ -2744,6 +2778,7 @@ UpdateUser <a href="#" onclick="return copyUpdateUserExample()">Copy</a>
                 "interests": [String], 
                 "hobbies": [String], 
                 "spouse": String, 
+                "education": [Education], 
               },  
               "employerInfo": { 
                 "officialName": String, 
@@ -3088,6 +3123,7 @@ UpdateUser <a href="#" onclick="return copyUpdateUserExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "addresses": { 
                 "address": String, 
@@ -3095,6 +3131,7 @@ UpdateUser <a href="#" onclick="return copyUpdateUserExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "state": String, 
               "title": String, 
@@ -3111,6 +3148,7 @@ UpdateUser <a href="#" onclick="return copyUpdateUserExample()">Copy</a>
                 "interests": [String], 
                 "hobbies": [String], 
                 "spouse": String, 
+                "education": [Education], 
               },  
               "employerInfo": { 
                 "officialName": String, 
@@ -3506,6 +3544,7 @@ UpdateUser <a href="#" onclick="return copyUpdateUserExample()">Copy</a>
             "mediaType": String, 
             "type": String, 
             "extension": String, 
+            "countryCode": String, 
           },  
           "addresses": { 
             "address": String, 
@@ -3513,6 +3552,7 @@ UpdateUser <a href="#" onclick="return copyUpdateUserExample()">Copy</a>
             "mediaType": String, 
             "type": String, 
             "extension": String, 
+            "countryCode": String, 
           },  
           "state": String, 
           "title": String, 
@@ -3529,6 +3569,13 @@ UpdateUser <a href="#" onclick="return copyUpdateUserExample()">Copy</a>
             "interests": [String], 
             "hobbies": [String], 
             "spouse": String, 
+            "education": { 
+              "school": String, 
+              "fieldOfStudy": String, 
+              "notes": String, 
+              "dateStart": String, 
+              "dateEnd": String, 
+            },  
           },  
           "employerInfo": { 
             "officialName": String, 
@@ -3650,6 +3697,7 @@ UpdateUser <a href="#" onclick="return copyUpdateUserExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "addresses": { 
                 "address": String, 
@@ -3657,6 +3705,7 @@ UpdateUser <a href="#" onclick="return copyUpdateUserExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "state": String, 
               "title": String, 
@@ -3673,6 +3722,7 @@ UpdateUser <a href="#" onclick="return copyUpdateUserExample()">Copy</a>
                 "interests": [String], 
                 "hobbies": [String], 
                 "spouse": String, 
+                "education": [Education], 
               },  
               "employerInfo": { 
                 "officialName": String, 
@@ -4017,6 +4067,7 @@ UpdateUser <a href="#" onclick="return copyUpdateUserExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "addresses": { 
                 "address": String, 
@@ -4024,6 +4075,7 @@ UpdateUser <a href="#" onclick="return copyUpdateUserExample()">Copy</a>
                 "mediaType": String, 
                 "type": String, 
                 "extension": String, 
+                "countryCode": String, 
               },  
               "state": String, 
               "title": String, 
@@ -4040,6 +4092,7 @@ UpdateUser <a href="#" onclick="return copyUpdateUserExample()">Copy</a>
                 "interests": [String], 
                 "hobbies": [String], 
                 "spouse": String, 
+                "education": [Education], 
               },  
               "employerInfo": { 
                 "officialName": String, 
@@ -4238,6 +4291,13 @@ UpdateUser <a href="#" onclick="return copyUpdateUserExample()">Copy</a>
     "interests": [String], 
     "hobbies": [String], 
     "spouse": String, 
+    "education": { 
+      "school": String, 
+      "fieldOfStudy": String, 
+      "notes": String, 
+      "dateStart": String, 
+      "dateEnd": String, 
+    },  
   },  
   "employerInfo": { 
     "officialName": String, 
@@ -4347,6 +4407,7 @@ CallForwarding <a href="#" onclick="return copyCallForwardingExample()">Copy</a>
       "mediaType": String, 
       "type": String, 
       "extension": String, 
+      "countryCode": String, 
     },  
     "addresses": { 
       "address": String, 
@@ -4354,6 +4415,7 @@ CallForwarding <a href="#" onclick="return copyCallForwardingExample()">Copy</a>
       "mediaType": String, 
       "type": String, 
       "extension": String, 
+      "countryCode": String, 
     },  
     "state": String, 
     "title": String, 
@@ -4370,6 +4432,13 @@ CallForwarding <a href="#" onclick="return copyCallForwardingExample()">Copy</a>
       "interests": [String], 
       "hobbies": [String], 
       "spouse": String, 
+      "education": { 
+        "school": String, 
+        "fieldOfStudy": String, 
+        "notes": String, 
+        "dateStart": String, 
+        "dateEnd": String, 
+      },  
     },  
     "employerInfo": { 
       "officialName": String, 
@@ -4491,6 +4560,7 @@ CallForwarding <a href="#" onclick="return copyCallForwardingExample()">Copy</a>
           "mediaType": String, 
           "type": String, 
           "extension": String, 
+          "countryCode": String, 
         },  
         "addresses": { 
           "address": String, 
@@ -4498,6 +4568,7 @@ CallForwarding <a href="#" onclick="return copyCallForwardingExample()">Copy</a>
           "mediaType": String, 
           "type": String, 
           "extension": String, 
+          "countryCode": String, 
         },  
         "state": String, 
         "title": String, 
@@ -4514,6 +4585,13 @@ CallForwarding <a href="#" onclick="return copyCallForwardingExample()">Copy</a>
           "interests": [String], 
           "hobbies": [String], 
           "spouse": String, 
+          "education": { 
+            "school": String, 
+            "fieldOfStudy": String, 
+            "notes": String, 
+            "dateStart": String, 
+            "dateEnd": String, 
+          },  
         },  
         "employerInfo": { 
           "officialName": String, 
@@ -4635,6 +4713,7 @@ CallForwarding <a href="#" onclick="return copyCallForwardingExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "addresses": { 
               "address": String, 
@@ -4642,6 +4721,7 @@ CallForwarding <a href="#" onclick="return copyCallForwardingExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "state": String, 
             "title": String, 
@@ -4658,6 +4738,13 @@ CallForwarding <a href="#" onclick="return copyCallForwardingExample()">Copy</a>
               "interests": [String], 
               "hobbies": [String], 
               "spouse": String, 
+              "education": { 
+                "school": String, 
+                "fieldOfStudy": String, 
+                "notes": String, 
+                "dateStart": String, 
+                "dateEnd": String, 
+              },  
             },  
             "employerInfo": { 
               "officialName": String, 
@@ -5199,6 +5286,7 @@ CallForwarding <a href="#" onclick="return copyCallForwardingExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "addresses": { 
               "address": String, 
@@ -5206,6 +5294,7 @@ CallForwarding <a href="#" onclick="return copyCallForwardingExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "state": String, 
             "title": String, 
@@ -5222,6 +5311,13 @@ CallForwarding <a href="#" onclick="return copyCallForwardingExample()">Copy</a>
               "interests": [String], 
               "hobbies": [String], 
               "spouse": String, 
+              "education": { 
+                "school": String, 
+                "fieldOfStudy": String, 
+                "notes": String, 
+                "dateStart": String, 
+                "dateEnd": String, 
+              },  
             },  
             "employerInfo": { 
               "officialName": String, 
@@ -5814,6 +5910,7 @@ CallForwarding <a href="#" onclick="return copyCallForwardingExample()">Copy</a>
           "mediaType": String, 
           "type": String, 
           "extension": String, 
+          "countryCode": String, 
         },  
         "addresses": { 
           "address": String, 
@@ -5821,6 +5918,7 @@ CallForwarding <a href="#" onclick="return copyCallForwardingExample()">Copy</a>
           "mediaType": String, 
           "type": String, 
           "extension": String, 
+          "countryCode": String, 
         },  
         "state": String, 
         "title": String, 
@@ -5837,6 +5935,13 @@ CallForwarding <a href="#" onclick="return copyCallForwardingExample()">Copy</a>
           "interests": [String], 
           "hobbies": [String], 
           "spouse": String, 
+          "education": { 
+            "school": String, 
+            "fieldOfStudy": String, 
+            "notes": String, 
+            "dateStart": String, 
+            "dateEnd": String, 
+          },  
         },  
         "employerInfo": { 
           "officialName": String, 
@@ -5958,6 +6063,7 @@ CallForwarding <a href="#" onclick="return copyCallForwardingExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "addresses": { 
               "address": String, 
@@ -5965,6 +6071,7 @@ CallForwarding <a href="#" onclick="return copyCallForwardingExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "state": String, 
             "title": String, 
@@ -5981,6 +6088,13 @@ CallForwarding <a href="#" onclick="return copyCallForwardingExample()">Copy</a>
               "interests": [String], 
               "hobbies": [String], 
               "spouse": String, 
+              "education": { 
+                "school": String, 
+                "fieldOfStudy": String, 
+                "notes": String, 
+                "dateStart": String, 
+                "dateEnd": String, 
+              },  
             },  
             "employerInfo": { 
               "officialName": String, 
@@ -6522,6 +6636,7 @@ CallForwarding <a href="#" onclick="return copyCallForwardingExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "addresses": { 
               "address": String, 
@@ -6529,6 +6644,7 @@ CallForwarding <a href="#" onclick="return copyCallForwardingExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "state": String, 
             "title": String, 
@@ -6545,6 +6661,13 @@ CallForwarding <a href="#" onclick="return copyCallForwardingExample()">Copy</a>
               "interests": [String], 
               "hobbies": [String], 
               "spouse": String, 
+              "education": { 
+                "school": String, 
+                "fieldOfStudy": String, 
+                "notes": String, 
+                "dateStart": String, 
+                "dateEnd": String, 
+              },  
             },  
             "employerInfo": { 
               "officialName": String, 
@@ -8047,6 +8170,13 @@ PatchUser <a href="#" onclick="return copyPatchUserExample()">Copy</a>
     "interests": [String], 
     "hobbies": [String], 
     "spouse": String, 
+    "education": { 
+      "school": String, 
+      "fieldOfStudy": String, 
+      "notes": String, 
+      "dateStart": String, 
+      "dateEnd": String, 
+    },  
   },  
   "employerInfo": { 
     "officialName": String, 
@@ -9294,6 +9424,7 @@ CreateUser <a href="#" onclick="return copyCreateUserExample()">Copy</a>
     "mediaType": String, 
     "type": String, 
     "extension": String, 
+    "countryCode": String, 
   },  
   "title": String, 
   "password": String, 
@@ -9530,6 +9661,7 @@ UserSearchRequest <a href="#" onclick="return copyUserSearchRequestExample()">Co
     },  
     "type": String, 
   },  
+  "integrationPresenceSource": String, 
 }
 ```
 
@@ -9715,6 +9847,7 @@ CallForwarding <a href="#" onclick="return copyCallForwardingExample()">Copy</a>
       "mediaType": String, 
       "type": String, 
       "extension": String, 
+      "countryCode": String, 
     },  
     "addresses": { 
       "address": String, 
@@ -9722,6 +9855,7 @@ CallForwarding <a href="#" onclick="return copyCallForwardingExample()">Copy</a>
       "mediaType": String, 
       "type": String, 
       "extension": String, 
+      "countryCode": String, 
     },  
     "state": String, 
     "title": String, 
@@ -9738,6 +9872,13 @@ CallForwarding <a href="#" onclick="return copyCallForwardingExample()">Copy</a>
       "interests": [String], 
       "hobbies": [String], 
       "spouse": String, 
+      "education": { 
+        "school": String, 
+        "fieldOfStudy": String, 
+        "notes": String, 
+        "dateStart": String, 
+        "dateEnd": String, 
+      },  
     },  
     "employerInfo": { 
       "officialName": String, 
@@ -9859,6 +10000,7 @@ CallForwarding <a href="#" onclick="return copyCallForwardingExample()">Copy</a>
           "mediaType": String, 
           "type": String, 
           "extension": String, 
+          "countryCode": String, 
         },  
         "addresses": { 
           "address": String, 
@@ -9866,6 +10008,7 @@ CallForwarding <a href="#" onclick="return copyCallForwardingExample()">Copy</a>
           "mediaType": String, 
           "type": String, 
           "extension": String, 
+          "countryCode": String, 
         },  
         "state": String, 
         "title": String, 
@@ -9882,6 +10025,13 @@ CallForwarding <a href="#" onclick="return copyCallForwardingExample()">Copy</a>
           "interests": [String], 
           "hobbies": [String], 
           "spouse": String, 
+          "education": { 
+            "school": String, 
+            "fieldOfStudy": String, 
+            "notes": String, 
+            "dateStart": String, 
+            "dateEnd": String, 
+          },  
         },  
         "employerInfo": { 
           "officialName": String, 
@@ -10003,6 +10153,7 @@ CallForwarding <a href="#" onclick="return copyCallForwardingExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "addresses": { 
               "address": String, 
@@ -10010,6 +10161,7 @@ CallForwarding <a href="#" onclick="return copyCallForwardingExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "state": String, 
             "title": String, 
@@ -10026,6 +10178,13 @@ CallForwarding <a href="#" onclick="return copyCallForwardingExample()">Copy</a>
               "interests": [String], 
               "hobbies": [String], 
               "spouse": String, 
+              "education": { 
+                "school": String, 
+                "fieldOfStudy": String, 
+                "notes": String, 
+                "dateStart": String, 
+                "dateEnd": String, 
+              },  
             },  
             "employerInfo": { 
               "officialName": String, 
@@ -10567,6 +10726,7 @@ CallForwarding <a href="#" onclick="return copyCallForwardingExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "addresses": { 
               "address": String, 
@@ -10574,6 +10734,7 @@ CallForwarding <a href="#" onclick="return copyCallForwardingExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "state": String, 
             "title": String, 
@@ -10590,6 +10751,13 @@ CallForwarding <a href="#" onclick="return copyCallForwardingExample()">Copy</a>
               "interests": [String], 
               "hobbies": [String], 
               "spouse": String, 
+              "education": { 
+                "school": String, 
+                "fieldOfStudy": String, 
+                "notes": String, 
+                "dateStart": String, 
+                "dateEnd": String, 
+              },  
             },  
             "employerInfo": { 
               "officialName": String, 
@@ -11182,6 +11350,7 @@ CallForwarding <a href="#" onclick="return copyCallForwardingExample()">Copy</a>
           "mediaType": String, 
           "type": String, 
           "extension": String, 
+          "countryCode": String, 
         },  
         "addresses": { 
           "address": String, 
@@ -11189,6 +11358,7 @@ CallForwarding <a href="#" onclick="return copyCallForwardingExample()">Copy</a>
           "mediaType": String, 
           "type": String, 
           "extension": String, 
+          "countryCode": String, 
         },  
         "state": String, 
         "title": String, 
@@ -11205,6 +11375,13 @@ CallForwarding <a href="#" onclick="return copyCallForwardingExample()">Copy</a>
           "interests": [String], 
           "hobbies": [String], 
           "spouse": String, 
+          "education": { 
+            "school": String, 
+            "fieldOfStudy": String, 
+            "notes": String, 
+            "dateStart": String, 
+            "dateEnd": String, 
+          },  
         },  
         "employerInfo": { 
           "officialName": String, 
@@ -11326,6 +11503,7 @@ CallForwarding <a href="#" onclick="return copyCallForwardingExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "addresses": { 
               "address": String, 
@@ -11333,6 +11511,7 @@ CallForwarding <a href="#" onclick="return copyCallForwardingExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "state": String, 
             "title": String, 
@@ -11349,6 +11528,13 @@ CallForwarding <a href="#" onclick="return copyCallForwardingExample()">Copy</a>
               "interests": [String], 
               "hobbies": [String], 
               "spouse": String, 
+              "education": { 
+                "school": String, 
+                "fieldOfStudy": String, 
+                "notes": String, 
+                "dateStart": String, 
+                "dateEnd": String, 
+              },  
             },  
             "employerInfo": { 
               "officialName": String, 
@@ -11890,6 +12076,7 @@ CallForwarding <a href="#" onclick="return copyCallForwardingExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "addresses": { 
               "address": String, 
@@ -11897,6 +12084,7 @@ CallForwarding <a href="#" onclick="return copyCallForwardingExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "state": String, 
             "title": String, 
@@ -11913,6 +12101,13 @@ CallForwarding <a href="#" onclick="return copyCallForwardingExample()">Copy</a>
               "interests": [String], 
               "hobbies": [String], 
               "spouse": String, 
+              "education": { 
+                "school": String, 
+                "fieldOfStudy": String, 
+                "notes": String, 
+                "dateStart": String, 
+                "dateEnd": String, 
+              },  
             },  
             "employerInfo": { 
               "officialName": String, 
@@ -12401,6 +12596,7 @@ OutOfOffice <a href="#" onclick="return copyOutOfOfficeExample()">Copy</a>
       "mediaType": String, 
       "type": String, 
       "extension": String, 
+      "countryCode": String, 
     },  
     "addresses": { 
       "address": String, 
@@ -12408,6 +12604,7 @@ OutOfOffice <a href="#" onclick="return copyOutOfOfficeExample()">Copy</a>
       "mediaType": String, 
       "type": String, 
       "extension": String, 
+      "countryCode": String, 
     },  
     "state": String, 
     "title": String, 
@@ -12424,6 +12621,13 @@ OutOfOffice <a href="#" onclick="return copyOutOfOfficeExample()">Copy</a>
       "interests": [String], 
       "hobbies": [String], 
       "spouse": String, 
+      "education": { 
+        "school": String, 
+        "fieldOfStudy": String, 
+        "notes": String, 
+        "dateStart": String, 
+        "dateEnd": String, 
+      },  
     },  
     "employerInfo": { 
       "officialName": String, 
@@ -12545,6 +12749,7 @@ OutOfOffice <a href="#" onclick="return copyOutOfOfficeExample()">Copy</a>
           "mediaType": String, 
           "type": String, 
           "extension": String, 
+          "countryCode": String, 
         },  
         "addresses": { 
           "address": String, 
@@ -12552,6 +12757,7 @@ OutOfOffice <a href="#" onclick="return copyOutOfOfficeExample()">Copy</a>
           "mediaType": String, 
           "type": String, 
           "extension": String, 
+          "countryCode": String, 
         },  
         "state": String, 
         "title": String, 
@@ -12568,6 +12774,13 @@ OutOfOffice <a href="#" onclick="return copyOutOfOfficeExample()">Copy</a>
           "interests": [String], 
           "hobbies": [String], 
           "spouse": String, 
+          "education": { 
+            "school": String, 
+            "fieldOfStudy": String, 
+            "notes": String, 
+            "dateStart": String, 
+            "dateEnd": String, 
+          },  
         },  
         "employerInfo": { 
           "officialName": String, 
@@ -12689,6 +12902,7 @@ OutOfOffice <a href="#" onclick="return copyOutOfOfficeExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "addresses": { 
               "address": String, 
@@ -12696,6 +12910,7 @@ OutOfOffice <a href="#" onclick="return copyOutOfOfficeExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "state": String, 
             "title": String, 
@@ -12712,6 +12927,13 @@ OutOfOffice <a href="#" onclick="return copyOutOfOfficeExample()">Copy</a>
               "interests": [String], 
               "hobbies": [String], 
               "spouse": String, 
+              "education": { 
+                "school": String, 
+                "fieldOfStudy": String, 
+                "notes": String, 
+                "dateStart": String, 
+                "dateEnd": String, 
+              },  
             },  
             "employerInfo": { 
               "officialName": String, 
@@ -13253,6 +13475,7 @@ OutOfOffice <a href="#" onclick="return copyOutOfOfficeExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "addresses": { 
               "address": String, 
@@ -13260,6 +13483,7 @@ OutOfOffice <a href="#" onclick="return copyOutOfOfficeExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "state": String, 
             "title": String, 
@@ -13276,6 +13500,13 @@ OutOfOffice <a href="#" onclick="return copyOutOfOfficeExample()">Copy</a>
               "interests": [String], 
               "hobbies": [String], 
               "spouse": String, 
+              "education": { 
+                "school": String, 
+                "fieldOfStudy": String, 
+                "notes": String, 
+                "dateStart": String, 
+                "dateEnd": String, 
+              },  
             },  
             "employerInfo": { 
               "officialName": String, 
@@ -13868,6 +14099,7 @@ OutOfOffice <a href="#" onclick="return copyOutOfOfficeExample()">Copy</a>
           "mediaType": String, 
           "type": String, 
           "extension": String, 
+          "countryCode": String, 
         },  
         "addresses": { 
           "address": String, 
@@ -13875,6 +14107,7 @@ OutOfOffice <a href="#" onclick="return copyOutOfOfficeExample()">Copy</a>
           "mediaType": String, 
           "type": String, 
           "extension": String, 
+          "countryCode": String, 
         },  
         "state": String, 
         "title": String, 
@@ -13891,6 +14124,13 @@ OutOfOffice <a href="#" onclick="return copyOutOfOfficeExample()">Copy</a>
           "interests": [String], 
           "hobbies": [String], 
           "spouse": String, 
+          "education": { 
+            "school": String, 
+            "fieldOfStudy": String, 
+            "notes": String, 
+            "dateStart": String, 
+            "dateEnd": String, 
+          },  
         },  
         "employerInfo": { 
           "officialName": String, 
@@ -14012,6 +14252,7 @@ OutOfOffice <a href="#" onclick="return copyOutOfOfficeExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "addresses": { 
               "address": String, 
@@ -14019,6 +14260,7 @@ OutOfOffice <a href="#" onclick="return copyOutOfOfficeExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "state": String, 
             "title": String, 
@@ -14035,6 +14277,13 @@ OutOfOffice <a href="#" onclick="return copyOutOfOfficeExample()">Copy</a>
               "interests": [String], 
               "hobbies": [String], 
               "spouse": String, 
+              "education": { 
+                "school": String, 
+                "fieldOfStudy": String, 
+                "notes": String, 
+                "dateStart": String, 
+                "dateEnd": String, 
+              },  
             },  
             "employerInfo": { 
               "officialName": String, 
@@ -14576,6 +14825,7 @@ OutOfOffice <a href="#" onclick="return copyOutOfOfficeExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "addresses": { 
               "address": String, 
@@ -14583,6 +14833,7 @@ OutOfOffice <a href="#" onclick="return copyOutOfOfficeExample()">Copy</a>
               "mediaType": String, 
               "type": String, 
               "extension": String, 
+              "countryCode": String, 
             },  
             "state": String, 
             "title": String, 
@@ -14599,6 +14850,13 @@ OutOfOffice <a href="#" onclick="return copyOutOfOfficeExample()">Copy</a>
               "interests": [String], 
               "hobbies": [String], 
               "spouse": String, 
+              "education": { 
+                "school": String, 
+                "fieldOfStudy": String, 
+                "notes": String, 
+                "dateStart": String, 
+                "dateEnd": String, 
+              },  
             },  
             "employerInfo": { 
               "officialName": String, 

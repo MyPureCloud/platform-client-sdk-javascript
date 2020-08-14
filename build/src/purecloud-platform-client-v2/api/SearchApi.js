@@ -5,7 +5,7 @@ class SearchApi {
 	/**
 	 * Search service.
 	 * @module purecloud-platform-client-v2/api/SearchApi
-	 * @version 87.0.0
+	 * @version 88.0.0
 	 */
 
 	/**
@@ -194,6 +194,7 @@ class SearchApi {
 	 * @param {String} q64 q64
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand expand
+	 * @param {Object} opts.integrationPresenceSource integrationPresenceSource
 	 */
 	getUsersSearch(q64, opts) { 
 		opts = opts || {};
@@ -207,7 +208,7 @@ class SearchApi {
 			'/api/v2/users/search', 
 			'GET', 
 			{  }, 
-			{ 'q64': q64,'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') }, 
+			{ 'q64': q64,'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'integrationPresenceSource': opts['integrationPresenceSource'] }, 
 			{  }, 
 			{  }, 
 			null, 

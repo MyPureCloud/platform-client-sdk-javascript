@@ -396,7 +396,8 @@ let apiInstance = new platformClient.SearchApi();
 
 let q64 = "q64_example"; // String | q64
 let opts = { 
-  'expand': ["expand_example"] // [String] | expand
+  'expand': ["expand_example"], // [String] | expand
+  'integrationPresenceSource': "integrationPresenceSource_example" // String | integrationPresenceSource
 };
 
 apiInstance.getUsersSearch(q64, opts)
@@ -416,6 +417,7 @@ apiInstance.getUsersSearch(q64, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **q64** | **String** | q64 |  |
  **expand** | **[String]** | expand | [optional]  |
+ **integrationPresenceSource** | **String** | integrationPresenceSource | [optional] <br />**Values**: MicrosoftTeams, ZoomPhone |
 {: class="table table-striped"}
 
 ### Return type
@@ -1578,6 +1580,7 @@ UserSearchRequest <a href="#" onclick="return copyUserSearchRequestExample()">Co
     },  
     "type": String, 
   },  
+  "integrationPresenceSource": String, 
 }
 ```
 

@@ -5,7 +5,7 @@ class ExternalContactsApi {
 	/**
 	 * ExternalContacts service.
 	 * @module purecloud-platform-client-v2/api/ExternalContactsApi
-	 * @version 87.0.0
+	 * @version 88.0.0
 	 */
 
 	/**
@@ -778,6 +778,106 @@ class ExternalContactsApi {
 	}
 
 	/**
+	 * Scan for external contacts using paging
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.limit The number of contacts per page; must be between 10 and 200, default is 100)
+	 * @param {String} opts.cursor Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL
+	 */
+	getExternalcontactsScanContacts(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/externalcontacts/scan/contacts', 
+			'GET', 
+			{  }, 
+			{ 'limit': opts['limit'],'cursor': opts['cursor'] }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Scan for notes using paging
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.limit The number of notes per page; must be between 10 and 200, default is 100)
+	 * @param {String} opts.cursor Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL
+	 */
+	getExternalcontactsScanNotes(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/externalcontacts/scan/notes', 
+			'GET', 
+			{  }, 
+			{ 'limit': opts['limit'],'cursor': opts['cursor'] }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Scan for external organizations using paging
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.limit The number of organizations per page; must be between 10 and 200, default is 100)
+	 * @param {String} opts.cursor Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL
+	 */
+	getExternalcontactsScanOrganizations(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/externalcontacts/scan/organizations', 
+			'GET', 
+			{  }, 
+			{ 'limit': opts['limit'],'cursor': opts['cursor'] }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Scan for relationships
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.limit The number of relationships per page; must be between 10 and 200, default is 100)
+	 * @param {String} opts.cursor Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL
+	 */
+	getExternalcontactsScanRelationships(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/externalcontacts/scan/relationships', 
+			'GET', 
+			{  }, 
+			{ 'limit': opts['limit'],'cursor': opts['cursor'] }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
 	 * Create a note for an external contact
 	 * 
 	 * @param {String} contactId ExternalContact Id
@@ -1060,17 +1160,17 @@ class ExternalContactsApi {
 	/**
 	 * Associate/disassociate an external contact with a conversation
 	 * To associate, supply a value for the externalContactId.  To disassociate, do not include the property at all.
-	 * @param {String} conversationId Conversation ID
 	 * @param {Object} body ConversationAssociation
+	 * @param {String} conversationId Conversation ID
 	 */
-	putExternalcontactsConversation(conversationId, body) { 
-		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling putExternalcontactsConversation';
-		}
+	putExternalcontactsConversation(body, conversationId) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling putExternalcontactsConversation';
+		}
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null) {
+			throw 'Missing the required parameter "conversationId" when calling putExternalcontactsConversation';
 		}
 
 		return this.apiClient.callApi(

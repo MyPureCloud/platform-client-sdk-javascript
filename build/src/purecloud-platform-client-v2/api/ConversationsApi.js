@@ -5,7 +5,7 @@ class ConversationsApi {
 	/**
 	 * Conversations service.
 	 * @module purecloud-platform-client-v2/api/ConversationsApi
-	 * @version 87.0.0
+	 * @version 88.0.0
 	 */
 
 	/**
@@ -2666,6 +2666,36 @@ class ConversationsApi {
 			'/api/v2/conversations/messages/{conversationId}/participants/{participantId}/communications/{communicationId}', 
 			'PATCH', 
 			{ 'conversationId': conversationId,'participantId': participantId,'communicationId': communicationId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update Facebook messaging integration
+	 * 
+	 * @param {String} integrationId Integration ID
+	 * @param {Object} body FacebookIntegrationUpdateRequest
+	 */
+	patchConversationsMessagingIntegrationsFacebookIntegrationId(integrationId, body) { 
+		// verify the required parameter 'integrationId' is set
+		if (integrationId === undefined || integrationId === null) {
+			throw 'Missing the required parameter "integrationId" when calling patchConversationsMessagingIntegrationsFacebookIntegrationId';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchConversationsMessagingIntegrationsFacebookIntegrationId';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/messaging/integrations/facebook/{integrationId}', 
+			'PATCH', 
+			{ 'integrationId': integrationId }, 
 			{  }, 
 			{  }, 
 			{  }, 

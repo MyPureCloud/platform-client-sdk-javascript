@@ -34,6 +34,10 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getExternalcontactsOrganizationsSchemas**](ExternalContactsApi.html#getExternalcontactsOrganizationsSchemas) | **GET** /api/v2/externalcontacts/organizations/schemas | Get a list of schemas.
 [**getExternalcontactsRelationship**](ExternalContactsApi.html#getExternalcontactsRelationship) | **GET** /api/v2/externalcontacts/relationships/{relationshipId} | Fetch a relationship
 [**getExternalcontactsReversewhitepageslookup**](ExternalContactsApi.html#getExternalcontactsReversewhitepageslookup) | **GET** /api/v2/externalcontacts/reversewhitepageslookup | Look up contacts and externalOrganizations based on an attribute. Maximum of 25 values returned.
+[**getExternalcontactsScanContacts**](ExternalContactsApi.html#getExternalcontactsScanContacts) | **GET** /api/v2/externalcontacts/scan/contacts | Scan for external contacts using paging
+[**getExternalcontactsScanNotes**](ExternalContactsApi.html#getExternalcontactsScanNotes) | **GET** /api/v2/externalcontacts/scan/notes | Scan for notes using paging
+[**getExternalcontactsScanOrganizations**](ExternalContactsApi.html#getExternalcontactsScanOrganizations) | **GET** /api/v2/externalcontacts/scan/organizations | Scan for external organizations using paging
+[**getExternalcontactsScanRelationships**](ExternalContactsApi.html#getExternalcontactsScanRelationships) | **GET** /api/v2/externalcontacts/scan/relationships | Scan for relationships
 [**postExternalcontactsContactNotes**](ExternalContactsApi.html#postExternalcontactsContactNotes) | **POST** /api/v2/externalcontacts/contacts/{contactId}/notes | Create a note for an external contact
 [**postExternalcontactsContacts**](ExternalContactsApi.html#postExternalcontactsContacts) | **POST** /api/v2/externalcontacts/contacts | Create an external contact
 [**postExternalcontactsContactsSchemas**](ExternalContactsApi.html#postExternalcontactsContactsSchemas) | **POST** /api/v2/externalcontacts/contacts/schemas | Create a schema
@@ -1636,6 +1640,242 @@ apiInstance.getExternalcontactsReversewhitepageslookup(lookupVal, opts)
 
 **ReverseWhitepagesLookupResult**
 
+<a name="getExternalcontactsScanContacts"></a>
+
+# CursorContactListing getExternalcontactsScanContacts(opts)
+
+
+
+GET /api/v2/externalcontacts/scan/contacts
+
+Scan for external contacts using paging
+
+
+
+Requires ANY permissions: 
+
+* externalContacts:contact:view
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ExternalContactsApi();
+
+let opts = { 
+  'limit': 56, // Number | The number of contacts per page; must be between 10 and 200, default is 100)
+  'cursor': "cursor_example" // String | Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL
+};
+
+apiInstance.getExternalcontactsScanContacts(opts)
+  .then((data) => {
+    console.log(`getExternalcontactsScanContacts success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getExternalcontactsScanContacts');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **limit** | **Number** | The number of contacts per page; must be between 10 and 200, default is 100) | [optional]  |
+ **cursor** | **String** | Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**CursorContactListing**
+
+<a name="getExternalcontactsScanNotes"></a>
+
+# CursorNoteListing getExternalcontactsScanNotes(opts)
+
+
+
+GET /api/v2/externalcontacts/scan/notes
+
+Scan for notes using paging
+
+
+
+Requires ANY permissions: 
+
+* externalContacts:contact:view
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ExternalContactsApi();
+
+let opts = { 
+  'limit': 56, // Number | The number of notes per page; must be between 10 and 200, default is 100)
+  'cursor': "cursor_example" // String | Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL
+};
+
+apiInstance.getExternalcontactsScanNotes(opts)
+  .then((data) => {
+    console.log(`getExternalcontactsScanNotes success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getExternalcontactsScanNotes');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **limit** | **Number** | The number of notes per page; must be between 10 and 200, default is 100) | [optional]  |
+ **cursor** | **String** | Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**CursorNoteListing**
+
+<a name="getExternalcontactsScanOrganizations"></a>
+
+# CursorOrganizationListing getExternalcontactsScanOrganizations(opts)
+
+
+
+GET /api/v2/externalcontacts/scan/organizations
+
+Scan for external organizations using paging
+
+
+
+Requires ANY permissions: 
+
+* externalContacts:externalOrganization:view
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ExternalContactsApi();
+
+let opts = { 
+  'limit': 56, // Number | The number of organizations per page; must be between 10 and 200, default is 100)
+  'cursor': "cursor_example" // String | Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL
+};
+
+apiInstance.getExternalcontactsScanOrganizations(opts)
+  .then((data) => {
+    console.log(`getExternalcontactsScanOrganizations success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getExternalcontactsScanOrganizations');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **limit** | **Number** | The number of organizations per page; must be between 10 and 200, default is 100) | [optional]  |
+ **cursor** | **String** | Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**CursorOrganizationListing**
+
+<a name="getExternalcontactsScanRelationships"></a>
+
+# CursorRelationshipListing getExternalcontactsScanRelationships(opts)
+
+
+
+GET /api/v2/externalcontacts/scan/relationships
+
+Scan for relationships
+
+
+
+Requires ANY permissions: 
+
+* externalContacts:contact:view
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ExternalContactsApi();
+
+let opts = { 
+  'limit': 56, // Number | The number of relationships per page; must be between 10 and 200, default is 100)
+  'cursor': "cursor_example" // String | Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL
+};
+
+apiInstance.getExternalcontactsScanRelationships(opts)
+  .then((data) => {
+    console.log(`getExternalcontactsScanRelationships success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getExternalcontactsScanRelationships');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **limit** | **Number** | The number of relationships per page; must be between 10 and 200, default is 100) | [optional]  |
+ **cursor** | **String** | Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**CursorRelationshipListing**
+
 <a name="postExternalcontactsContactNotes"></a>
 
 # Note postExternalcontactsContactNotes(contactId, body)
@@ -1696,6 +1936,7 @@ Note <a href="#" onclick="return copyNoteExample()">Copy</a>
       "mediaType": String, 
       "type": String, 
       "extension": String, 
+      "countryCode": String, 
     },  
     "addresses": { 
       "address": String, 
@@ -1703,6 +1944,7 @@ Note <a href="#" onclick="return copyNoteExample()">Copy</a>
       "mediaType": String, 
       "type": String, 
       "extension": String, 
+      "countryCode": String, 
     },  
     "state": String, 
     "title": String, 
@@ -1719,6 +1961,13 @@ Note <a href="#" onclick="return copyNoteExample()">Copy</a>
       "interests": [String], 
       "hobbies": [String], 
       "spouse": String, 
+      "education": { 
+        "school": String, 
+        "fieldOfStudy": String, 
+        "notes": String, 
+        "dateStart": String, 
+        "dateEnd": String, 
+      },  
     },  
     "employerInfo": { 
       "officialName": String, 
@@ -2324,6 +2573,7 @@ ExternalContact <a href="#" onclick="return copyExternalContactExample()">Copy</
           "mediaType": String, 
           "type": String, 
           "extension": String, 
+          "countryCode": String, 
         },  
         "addresses": { 
           "address": String, 
@@ -2331,6 +2581,7 @@ ExternalContact <a href="#" onclick="return copyExternalContactExample()">Copy</
           "mediaType": String, 
           "type": String, 
           "extension": String, 
+          "countryCode": String, 
         },  
         "state": String, 
         "title": String, 
@@ -2354,6 +2605,7 @@ ExternalContact <a href="#" onclick="return copyExternalContactExample()">Copy</
             "mediaType": String, 
             "type": String, 
             "extension": String, 
+            "countryCode": String, 
           },  
           "addresses": { 
             "address": String, 
@@ -2361,6 +2613,7 @@ ExternalContact <a href="#" onclick="return copyExternalContactExample()">Copy</
             "mediaType": String, 
             "type": String, 
             "extension": String, 
+            "countryCode": String, 
           },  
           "state": String, 
           "title": String, 
@@ -2377,6 +2630,13 @@ ExternalContact <a href="#" onclick="return copyExternalContactExample()">Copy</
             "interests": [String], 
             "hobbies": [String], 
             "spouse": String, 
+            "education": { 
+              "school": String, 
+              "fieldOfStudy": String, 
+              "notes": String, 
+              "dateStart": String, 
+              "dateEnd": String, 
+            },  
           },  
           "employerInfo": { 
             "officialName": String, 
@@ -2728,6 +2988,13 @@ ExternalContact <a href="#" onclick="return copyExternalContactExample()">Copy</
           "interests": [String], 
           "hobbies": [String], 
           "spouse": String, 
+          "education": { 
+            "school": String, 
+            "fieldOfStudy": String, 
+            "notes": String, 
+            "dateStart": String, 
+            "dateEnd": String, 
+          },  
         },  
         "employerInfo": { 
           "officialName": String, 
@@ -3383,6 +3650,7 @@ Note <a href="#" onclick="return copyNoteExample()">Copy</a>
       "mediaType": String, 
       "type": String, 
       "extension": String, 
+      "countryCode": String, 
     },  
     "addresses": { 
       "address": String, 
@@ -3390,6 +3658,7 @@ Note <a href="#" onclick="return copyNoteExample()">Copy</a>
       "mediaType": String, 
       "type": String, 
       "extension": String, 
+      "countryCode": String, 
     },  
     "state": String, 
     "title": String, 
@@ -3406,6 +3675,13 @@ Note <a href="#" onclick="return copyNoteExample()">Copy</a>
       "interests": [String], 
       "hobbies": [String], 
       "spouse": String, 
+      "education": { 
+        "school": String, 
+        "fieldOfStudy": String, 
+        "notes": String, 
+        "dateStart": String, 
+        "dateEnd": String, 
+      },  
     },  
     "employerInfo": { 
       "officialName": String, 
@@ -3930,6 +4206,7 @@ ExternalOrganization <a href="#" onclick="return copyExternalOrganizationExample
         "mediaType": String, 
         "type": String, 
         "extension": String, 
+        "countryCode": String, 
       },  
       "addresses": { 
         "address": String, 
@@ -3937,6 +4214,7 @@ ExternalOrganization <a href="#" onclick="return copyExternalOrganizationExample
         "mediaType": String, 
         "type": String, 
         "extension": String, 
+        "countryCode": String, 
       },  
       "state": String, 
       "title": String, 
@@ -3960,6 +4238,7 @@ ExternalOrganization <a href="#" onclick="return copyExternalOrganizationExample
           "mediaType": String, 
           "type": String, 
           "extension": String, 
+          "countryCode": String, 
         },  
         "addresses": { 
           "address": String, 
@@ -3967,6 +4246,7 @@ ExternalOrganization <a href="#" onclick="return copyExternalOrganizationExample
           "mediaType": String, 
           "type": String, 
           "extension": String, 
+          "countryCode": String, 
         },  
         "state": String, 
         "title": String, 
@@ -3983,6 +4263,13 @@ ExternalOrganization <a href="#" onclick="return copyExternalOrganizationExample
           "interests": [String], 
           "hobbies": [String], 
           "spouse": String, 
+          "education": { 
+            "school": String, 
+            "fieldOfStudy": String, 
+            "notes": String, 
+            "dateStart": String, 
+            "dateEnd": String, 
+          },  
         },  
         "employerInfo": { 
           "officialName": String, 
@@ -4343,6 +4630,13 @@ ExternalOrganization <a href="#" onclick="return copyExternalOrganizationExample
         "interests": [String], 
         "hobbies": [String], 
         "spouse": String, 
+        "education": { 
+          "school": String, 
+          "fieldOfStudy": String, 
+          "notes": String, 
+          "dateStart": String, 
+          "dateEnd": String, 
+        },  
       },  
       "employerInfo": { 
         "officialName": String, 
@@ -4970,6 +5264,7 @@ Relationship <a href="#" onclick="return copyRelationshipExample()">Copy</a>
       "mediaType": String, 
       "type": String, 
       "extension": String, 
+      "countryCode": String, 
     },  
     "addresses": { 
       "address": String, 
@@ -4977,6 +5272,7 @@ Relationship <a href="#" onclick="return copyRelationshipExample()">Copy</a>
       "mediaType": String, 
       "type": String, 
       "extension": String, 
+      "countryCode": String, 
     },  
     "state": String, 
     "title": String, 
@@ -4993,6 +5289,13 @@ Relationship <a href="#" onclick="return copyRelationshipExample()">Copy</a>
       "interests": [String], 
       "hobbies": [String], 
       "spouse": String, 
+      "education": { 
+        "school": String, 
+        "fieldOfStudy": String, 
+        "notes": String, 
+        "dateStart": String, 
+        "dateEnd": String, 
+      },  
     },  
     "employerInfo": { 
       "officialName": String, 
@@ -5431,6 +5734,7 @@ Relationship <a href="#" onclick="return copyRelationshipExample()">Copy</a>
           "mediaType": String, 
           "type": String, 
           "extension": String, 
+          "countryCode": String, 
         },  
         "addresses": { 
           "address": String, 
@@ -5438,6 +5742,7 @@ Relationship <a href="#" onclick="return copyRelationshipExample()">Copy</a>
           "mediaType": String, 
           "type": String, 
           "extension": String, 
+          "countryCode": String, 
         },  
         "state": String, 
         "title": String, 
@@ -5461,6 +5766,7 @@ Relationship <a href="#" onclick="return copyRelationshipExample()">Copy</a>
             "mediaType": String, 
             "type": String, 
             "extension": String, 
+            "countryCode": String, 
           },  
           "addresses": { 
             "address": String, 
@@ -5468,6 +5774,7 @@ Relationship <a href="#" onclick="return copyRelationshipExample()">Copy</a>
             "mediaType": String, 
             "type": String, 
             "extension": String, 
+            "countryCode": String, 
           },  
           "state": String, 
           "title": String, 
@@ -5484,6 +5791,13 @@ Relationship <a href="#" onclick="return copyRelationshipExample()">Copy</a>
             "interests": [String], 
             "hobbies": [String], 
             "spouse": String, 
+            "education": { 
+              "school": String, 
+              "fieldOfStudy": String, 
+              "notes": String, 
+              "dateStart": String, 
+              "dateEnd": String, 
+            },  
           },  
           "employerInfo": { 
             "officialName": String, 
@@ -5835,6 +6149,13 @@ Relationship <a href="#" onclick="return copyRelationshipExample()">Copy</a>
           "interests": [String], 
           "hobbies": [String], 
           "spouse": String, 
+          "education": { 
+            "school": String, 
+            "fieldOfStudy": String, 
+            "notes": String, 
+            "dateStart": String, 
+            "dateEnd": String, 
+          },  
         },  
         "employerInfo": { 
           "officialName": String, 
@@ -6490,6 +6811,7 @@ ExternalContact <a href="#" onclick="return copyExternalContactExample()">Copy</
           "mediaType": String, 
           "type": String, 
           "extension": String, 
+          "countryCode": String, 
         },  
         "addresses": { 
           "address": String, 
@@ -6497,6 +6819,7 @@ ExternalContact <a href="#" onclick="return copyExternalContactExample()">Copy</
           "mediaType": String, 
           "type": String, 
           "extension": String, 
+          "countryCode": String, 
         },  
         "state": String, 
         "title": String, 
@@ -6520,6 +6843,7 @@ ExternalContact <a href="#" onclick="return copyExternalContactExample()">Copy</
             "mediaType": String, 
             "type": String, 
             "extension": String, 
+            "countryCode": String, 
           },  
           "addresses": { 
             "address": String, 
@@ -6527,6 +6851,7 @@ ExternalContact <a href="#" onclick="return copyExternalContactExample()">Copy</
             "mediaType": String, 
             "type": String, 
             "extension": String, 
+            "countryCode": String, 
           },  
           "state": String, 
           "title": String, 
@@ -6543,6 +6868,13 @@ ExternalContact <a href="#" onclick="return copyExternalContactExample()">Copy</
             "interests": [String], 
             "hobbies": [String], 
             "spouse": String, 
+            "education": { 
+              "school": String, 
+              "fieldOfStudy": String, 
+              "notes": String, 
+              "dateStart": String, 
+              "dateEnd": String, 
+            },  
           },  
           "employerInfo": { 
             "officialName": String, 
@@ -6894,6 +7226,13 @@ ExternalContact <a href="#" onclick="return copyExternalContactExample()">Copy</
           "interests": [String], 
           "hobbies": [String], 
           "spouse": String, 
+          "education": { 
+            "school": String, 
+            "fieldOfStudy": String, 
+            "notes": String, 
+            "dateStart": String, 
+            "dateEnd": String, 
+          },  
         },  
         "employerInfo": { 
           "officialName": String, 
@@ -7449,6 +7788,7 @@ Note <a href="#" onclick="return copyNoteExample()">Copy</a>
       "mediaType": String, 
       "type": String, 
       "extension": String, 
+      "countryCode": String, 
     },  
     "addresses": { 
       "address": String, 
@@ -7456,6 +7796,7 @@ Note <a href="#" onclick="return copyNoteExample()">Copy</a>
       "mediaType": String, 
       "type": String, 
       "extension": String, 
+      "countryCode": String, 
     },  
     "state": String, 
     "title": String, 
@@ -7472,6 +7813,13 @@ Note <a href="#" onclick="return copyNoteExample()">Copy</a>
       "interests": [String], 
       "hobbies": [String], 
       "spouse": String, 
+      "education": { 
+        "school": String, 
+        "fieldOfStudy": String, 
+        "notes": String, 
+        "dateStart": String, 
+        "dateEnd": String, 
+      },  
     },  
     "employerInfo": { 
       "officialName": String, 
@@ -7996,7 +8344,7 @@ apiInstance.putExternalcontactsContactsSchema(schemaId, body)
 
 <a name="putExternalcontactsConversation"></a>
 
-# void putExternalcontactsConversation(conversationId, body)
+# void putExternalcontactsConversation(body, conversationId)
 
 
 
@@ -8053,10 +8401,10 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ExternalContactsApi();
 
-let conversationId = "conversationId_example"; // String | Conversation ID
 let body = {}; // Object | ConversationAssociation
+let conversationId = "conversationId_example"; // String | Conversation ID
 
-apiInstance.putExternalcontactsConversation(conversationId, body)
+apiInstance.putExternalcontactsConversation(body, conversationId)
   .then(() => {
     console.log('putExternalcontactsConversation returned successfully.');
   })
@@ -8071,8 +8419,8 @@ apiInstance.putExternalcontactsConversation(conversationId, body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **conversationId** | **String** | Conversation ID |  |
  **body** | **Object** | ConversationAssociation |  |
+ **conversationId** | **String** | Conversation ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -8186,6 +8534,7 @@ ExternalOrganization <a href="#" onclick="return copyExternalOrganizationExample
         "mediaType": String, 
         "type": String, 
         "extension": String, 
+        "countryCode": String, 
       },  
       "addresses": { 
         "address": String, 
@@ -8193,6 +8542,7 @@ ExternalOrganization <a href="#" onclick="return copyExternalOrganizationExample
         "mediaType": String, 
         "type": String, 
         "extension": String, 
+        "countryCode": String, 
       },  
       "state": String, 
       "title": String, 
@@ -8216,6 +8566,7 @@ ExternalOrganization <a href="#" onclick="return copyExternalOrganizationExample
           "mediaType": String, 
           "type": String, 
           "extension": String, 
+          "countryCode": String, 
         },  
         "addresses": { 
           "address": String, 
@@ -8223,6 +8574,7 @@ ExternalOrganization <a href="#" onclick="return copyExternalOrganizationExample
           "mediaType": String, 
           "type": String, 
           "extension": String, 
+          "countryCode": String, 
         },  
         "state": String, 
         "title": String, 
@@ -8239,6 +8591,13 @@ ExternalOrganization <a href="#" onclick="return copyExternalOrganizationExample
           "interests": [String], 
           "hobbies": [String], 
           "spouse": String, 
+          "education": { 
+            "school": String, 
+            "fieldOfStudy": String, 
+            "notes": String, 
+            "dateStart": String, 
+            "dateEnd": String, 
+          },  
         },  
         "employerInfo": { 
           "officialName": String, 
@@ -8599,6 +8958,13 @@ ExternalOrganization <a href="#" onclick="return copyExternalOrganizationExample
         "interests": [String], 
         "hobbies": [String], 
         "spouse": String, 
+        "education": { 
+          "school": String, 
+          "fieldOfStudy": String, 
+          "notes": String, 
+          "dateStart": String, 
+          "dateEnd": String, 
+        },  
       },  
       "employerInfo": { 
         "officialName": String, 
@@ -9130,6 +9496,7 @@ Note <a href="#" onclick="return copyNoteExample()">Copy</a>
       "mediaType": String, 
       "type": String, 
       "extension": String, 
+      "countryCode": String, 
     },  
     "addresses": { 
       "address": String, 
@@ -9137,6 +9504,7 @@ Note <a href="#" onclick="return copyNoteExample()">Copy</a>
       "mediaType": String, 
       "type": String, 
       "extension": String, 
+      "countryCode": String, 
     },  
     "state": String, 
     "title": String, 
@@ -9153,6 +9521,13 @@ Note <a href="#" onclick="return copyNoteExample()">Copy</a>
       "interests": [String], 
       "hobbies": [String], 
       "spouse": String, 
+      "education": { 
+        "school": String, 
+        "fieldOfStudy": String, 
+        "notes": String, 
+        "dateStart": String, 
+        "dateEnd": String, 
+      },  
     },  
     "employerInfo": { 
       "officialName": String, 
@@ -9789,6 +10164,7 @@ Relationship <a href="#" onclick="return copyRelationshipExample()">Copy</a>
       "mediaType": String, 
       "type": String, 
       "extension": String, 
+      "countryCode": String, 
     },  
     "addresses": { 
       "address": String, 
@@ -9796,6 +10172,7 @@ Relationship <a href="#" onclick="return copyRelationshipExample()">Copy</a>
       "mediaType": String, 
       "type": String, 
       "extension": String, 
+      "countryCode": String, 
     },  
     "state": String, 
     "title": String, 
@@ -9812,6 +10189,13 @@ Relationship <a href="#" onclick="return copyRelationshipExample()">Copy</a>
       "interests": [String], 
       "hobbies": [String], 
       "spouse": String, 
+      "education": { 
+        "school": String, 
+        "fieldOfStudy": String, 
+        "notes": String, 
+        "dateStart": String, 
+        "dateEnd": String, 
+      },  
     },  
     "employerInfo": { 
       "officialName": String, 
@@ -10250,6 +10634,7 @@ Relationship <a href="#" onclick="return copyRelationshipExample()">Copy</a>
           "mediaType": String, 
           "type": String, 
           "extension": String, 
+          "countryCode": String, 
         },  
         "addresses": { 
           "address": String, 
@@ -10257,6 +10642,7 @@ Relationship <a href="#" onclick="return copyRelationshipExample()">Copy</a>
           "mediaType": String, 
           "type": String, 
           "extension": String, 
+          "countryCode": String, 
         },  
         "state": String, 
         "title": String, 
@@ -10280,6 +10666,7 @@ Relationship <a href="#" onclick="return copyRelationshipExample()">Copy</a>
             "mediaType": String, 
             "type": String, 
             "extension": String, 
+            "countryCode": String, 
           },  
           "addresses": { 
             "address": String, 
@@ -10287,6 +10674,7 @@ Relationship <a href="#" onclick="return copyRelationshipExample()">Copy</a>
             "mediaType": String, 
             "type": String, 
             "extension": String, 
+            "countryCode": String, 
           },  
           "state": String, 
           "title": String, 
@@ -10303,6 +10691,13 @@ Relationship <a href="#" onclick="return copyRelationshipExample()">Copy</a>
             "interests": [String], 
             "hobbies": [String], 
             "spouse": String, 
+            "education": { 
+              "school": String, 
+              "fieldOfStudy": String, 
+              "notes": String, 
+              "dateStart": String, 
+              "dateEnd": String, 
+            },  
           },  
           "employerInfo": { 
             "officialName": String, 
@@ -10654,6 +11049,13 @@ Relationship <a href="#" onclick="return copyRelationshipExample()">Copy</a>
           "interests": [String], 
           "hobbies": [String], 
           "spouse": String, 
+          "education": { 
+            "school": String, 
+            "fieldOfStudy": String, 
+            "notes": String, 
+            "dateStart": String, 
+            "dateEnd": String, 
+          },  
         },  
         "employerInfo": { 
           "officialName": String, 

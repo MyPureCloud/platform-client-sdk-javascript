@@ -5,7 +5,7 @@ class SCIMApi {
 	/**
 	 * SCIM service.
 	 * @module purecloud-platform-client-v2/api/SCIMApi
-	 * @version 87.0.0
+	 * @version 88.0.0
 	 */
 
 	/**
@@ -44,8 +44,8 @@ class SCIMApi {
 			{  }, 
 			null, 
 			['PureCloud OAuth'], 
-			['application/json', 'application/scim+json'], 
-			['application/json', 'application/scim+json']
+			['application/scim+json', 'application/json'], 
+			['application/scim+json', 'application/json']
 		);
 	}
 
@@ -73,8 +73,8 @@ class SCIMApi {
 			{  }, 
 			null, 
 			['PureCloud OAuth'], 
-			['application/json', 'application/scim+json'], 
-			['application/json', 'application/scim+json']
+			['application/scim+json', 'application/json'], 
+			['application/scim+json', 'application/json']
 		);
 	}
 
@@ -102,8 +102,8 @@ class SCIMApi {
 			{  }, 
 			null, 
 			['PureCloud OAuth'], 
-			['application/json', 'application/scim+json'], 
-			['application/json', 'application/scim+json']
+			['application/scim+json', 'application/json'], 
+			['application/scim+json', 'application/json']
 		);
 	}
 
@@ -131,8 +131,8 @@ class SCIMApi {
 			{  }, 
 			null, 
 			['PureCloud OAuth'], 
-			['application/json', 'application/scim+json'], 
-			['application/json', 'application/scim+json']
+			['application/scim+json', 'application/json'], 
+			['application/scim+json', 'application/json']
 		);
 	}
 
@@ -141,8 +141,8 @@ class SCIMApi {
 	 * 
 	 * @param {String} groupId The ID of a group. Returned with GET /api/v2/scim/groups.
 	 * @param {Object} opts Optional parameters
-	 * @param {Array.<String>} opts.attributes Indicates which attributes to include. Returns these attributes and the \&quot;id\&quot;, \&quot;active\&quot;, and \&quot;meta\&quot; attributes. Use \&quot;attributes\&quot; to avoid expensive additional calls for the default attributes.
-	 * @param {Array.<String>} opts.excludedAttributes Indicates which attributes to exclude. Always returns the \&quot;id\&quot;, \&quot;active\&quot;, and \&quot;meta\&quot; attributes. Returns the default attributes minus \&quot;excludedAttributes\&quot;. Use \&quot;excludedAttributes\&quot; to avoid expensive additional calls for the default attributes.
+	 * @param {Array.<String>} opts.attributes Indicates which attributes to include. Returns these attributes and the &#39;id&#39;, &#39;active&#39;, and &#39;meta attributes . Use \&quot;attributes\&quot; to avoid expensive secondary calls for the default attributes.
+	 * @param {Array.<String>} opts.excludedAttributes Indicates which attributes to exclude. Returns the default attributes minus \&quot;excludedAttributes\&quot;. Use \&quot;excludedAttributes\&quot; to avoid expensive secondary calls for the default attributes. The&#39;id&#39;, &#39;active&#39;, and &#39;meta&#39; attributes will always be present in the output.
 	 * @param {String} opts.ifNoneMatch The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/groups/{groupId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns the current configuration of the resource. If the ETag is current, returns 304 Not Modified.
 	 */
 	getScimGroup(groupId, opts) { 
@@ -162,8 +162,8 @@ class SCIMApi {
 			{  }, 
 			null, 
 			['PureCloud OAuth'], 
-			['application/json', 'application/scim+json'], 
-			['application/json', 'application/scim+json']
+			['application/scim+json', 'application/json'], 
+			['application/scim+json', 'application/json']
 		);
 	}
 
@@ -173,8 +173,8 @@ class SCIMApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.startIndex The 1-based index of the first query result. (default to 1)
 	 * @param {Number} opts.count The requested number of items per page. A value of 0 returns \&quot;totalResults\&quot;. Note that a page size over 25 will likely cause a 429 error by exceeding internal resource limits. Page sizes over 25 will require using excludedAttributes and includeAttributes query parameters to exclude secondary lookup values -- (i.e. externalId, roles, urn:ietf:params:scim:schemas:extension:genesys:purecloud:2.0:User:routingLanguages, urn:ietf:params:scim:schemas:extension:genesys:purecloud:2.0:User:routingSkills) (default to 25)
-	 * @param {Array.<String>} opts.attributes Indicates which attributes to include. Returns these attributes and the \&quot;id\&quot;, \&quot;active\&quot;, and \&quot;meta\&quot; attributes. Use \&quot;attributes\&quot; to avoid expensive additional calls for the default attributes.
-	 * @param {Array.<String>} opts.excludedAttributes Indicates which attributes to exclude. Always returns the \&quot;id\&quot;, \&quot;active\&quot;, and \&quot;meta\&quot; attributes. Returns the default attributes minus \&quot;excludedAttributes\&quot;. Use \&quot;excludedAttributes\&quot; to avoid expensive additional calls for the default attributes.
+	 * @param {Array.<String>} opts.attributes Indicates which attributes to include. Returns these attributes and the &#39;id&#39;, &#39;active&#39;, and &#39;meta attributes . Use \&quot;attributes\&quot; to avoid expensive secondary calls for the default attributes.
+	 * @param {Array.<String>} opts.excludedAttributes Indicates which attributes to exclude. Returns the default attributes minus \&quot;excludedAttributes\&quot;. Use \&quot;excludedAttributes\&quot; to avoid expensive secondary calls for the default attributes. The&#39;id&#39;, &#39;active&#39;, and &#39;meta&#39; attributes will always be present in the output.
 	 * @param {String} opts.filter Filters results. If nothing is specified, returns all groups. Examples of valid values: \&quot;id eq 5f4bc742-a019-4e38-8e2a-d39d5bc0b0f3\&quot;, \&quot;displayname eq Sales\&quot;.
 	 */
 	getScimGroups(opts) { 
@@ -190,8 +190,8 @@ class SCIMApi {
 			{  }, 
 			null, 
 			['PureCloud OAuth'], 
-			['application/json', 'application/scim+json'], 
-			['application/json', 'application/scim+json']
+			['application/scim+json', 'application/json'], 
+			['application/scim+json', 'application/json']
 		);
 	}
 
@@ -215,8 +215,8 @@ class SCIMApi {
 			{  }, 
 			null, 
 			['PureCloud OAuth'], 
-			['application/json', 'application/scim+json'], 
-			['application/json', 'application/scim+json']
+			['application/scim+json', 'application/json'], 
+			['application/scim+json', 'application/json']
 		);
 	}
 
@@ -235,8 +235,8 @@ class SCIMApi {
 			{  }, 
 			null, 
 			['PureCloud OAuth'], 
-			['application/json', 'application/scim+json'], 
-			['application/json', 'application/scim+json']
+			['application/scim+json', 'application/json'], 
+			['application/scim+json', 'application/json']
 		);
 	}
 
@@ -260,8 +260,8 @@ class SCIMApi {
 			{  }, 
 			null, 
 			['PureCloud OAuth'], 
-			['application/json', 'application/scim+json'], 
-			['application/json', 'application/scim+json']
+			['application/scim+json', 'application/json'], 
+			['application/scim+json', 'application/json']
 		);
 	}
 
@@ -284,8 +284,8 @@ class SCIMApi {
 			{  }, 
 			null, 
 			['PureCloud OAuth'], 
-			['application/json', 'application/scim+json'], 
-			['application/json', 'application/scim+json']
+			['application/scim+json', 'application/json'], 
+			['application/scim+json', 'application/json']
 		);
 	}
 
@@ -308,8 +308,8 @@ class SCIMApi {
 			{  }, 
 			null, 
 			['PureCloud OAuth'], 
-			['application/json', 'application/scim+json'], 
-			['application/json', 'application/scim+json']
+			['application/scim+json', 'application/json'], 
+			['application/scim+json', 'application/json']
 		);
 	}
 
@@ -318,8 +318,8 @@ class SCIMApi {
 	 * 
 	 * @param {String} userId The ID of a user. Returned with GET /api/v2/scim/users.
 	 * @param {Object} opts Optional parameters
-	 * @param {Array.<String>} opts.attributes Indicates which attributes to include. Returns these attributes and the \&quot;id\&quot;, \&quot;userName\&quot;, \&quot;active\&quot;, and \&quot;meta\&quot; attributes. Use \&quot;attributes\&quot; to avoid expensive additional calls for the default attributes.
-	 * @param {Array.<String>} opts.excludedAttributes Indicates which attributes to exclude. Returns the default attributes minus \&quot;excludedAttributes\&quot;. Always returns the \&quot;id\&quot;, \&quot;userName\&quot;, \&quot;active\&quot;, and \&quot;meta\&quot; attributes. Use \&quot;excludedAttributes\&quot; to avoid expensive additional calls for the default attributes.
+	 * @param {Array.<String>} opts.attributes Indicates which attributes to include. Returns these attributes and the &#39;id&#39;, &#39;userName&#39;, &#39;active&#39;, and &#39;meta&#39; attributes. Use \&quot;attributes\&quot; to avoid expensive secondary calls for the default attributes.
+	 * @param {Array.<String>} opts.excludedAttributes Indicates which attributes to exclude. Returns the default attributes minus \&quot;excludedAttributes\&quot;. Use \&quot;excludedAttributes\&quot; to avoid expensive secondary calls for the default attributes. The &#39;id&#39;, &#39;userName&#39;, &#39;active&#39;, &#39;meta&#39; attributes  will always be present in output.
 	 * @param {String} opts.ifNoneMatch TThe ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/users/{userId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns the current configuration of the resource. If the ETag is current, returns 304 Not Modified.
 	 */
 	getScimUser(userId, opts) { 
@@ -339,8 +339,8 @@ class SCIMApi {
 			{  }, 
 			null, 
 			['PureCloud OAuth'], 
-			['application/json', 'application/scim+json'], 
-			['application/json', 'application/scim+json']
+			['application/scim+json', 'application/json'], 
+			['application/scim+json', 'application/json']
 		);
 	}
 
@@ -350,9 +350,9 @@ class SCIMApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.startIndex The 1-based index of the first query result. (default to 1)
 	 * @param {Number} opts.count The requested number of items per page. A value of 0 returns \&quot;totalResults\&quot;. Note that a page size over 25 will likely cause a 429 error by exceeding internal resource limits. Page sizes over 25 will require using excludedAttributes and includeAttributes query parameters to exclude secondary lookup values -- (i.e. externalId, roles, urn:ietf:params:scim:schemas:extension:genesys:purecloud:2.0:User:routingLanguages, urn:ietf:params:scim:schemas:extension:genesys:purecloud:2.0:User:routingSkills) (default to 25)
-	 * @param {Array.<String>} opts.attributes Indicates which attributes to include. Returns these attributes and the \&quot;id\&quot;, \&quot;userName\&quot;, \&quot;active\&quot;, and \&quot;meta\&quot; attributes. Use \&quot;attributes\&quot; to avoid expensive additional calls for the default attributes.
-	 * @param {Array.<String>} opts.excludedAttributes Indicates which attributes to exclude. Returns the default attributes minus \&quot;excludedAttributes\&quot;. Always returns the \&quot;id\&quot;, \&quot;userName\&quot;, \&quot;active\&quot;, and \&quot;meta\&quot; attributes. Use \&quot;excludedAttributes\&quot; to avoid expensive additional calls for the default attributes.
-	 * @param {String} opts.filter Filters results. If nothing is specified, returns all active users. Examples of valid values: \&quot;id eq 857449b0-d9e7-4cd0-acbf-a6adfb9ef1e9\&quot;, \&quot;userName eq search@sample.org\&quot;, \&quot;manager eq 16e10e2f-1136-43fe-bb84-eac073168a49\&quot;, \&quot;email eq search@sample.org\&quot;, \&quot;division eq divisionName\&quot;, \&quot;externalId eq 167844\&quot;, \&quot;active eq false\&quot;.
+	 * @param {Array.<String>} opts.attributes Indicates which attributes to include. Returns these attributes and the &#39;id&#39;, &#39;userName&#39;, &#39;active&#39;, and &#39;meta&#39; attributes. Use \&quot;attributes\&quot; to avoid expensive secondary calls for the default attributes.
+	 * @param {Array.<String>} opts.excludedAttributes Indicates which attributes to exclude. Returns the default attributes minus \&quot;excludedAttributes\&quot;. Use \&quot;excludedAttributes\&quot; to avoid expensive secondary calls for the default attributes. The &#39;id&#39;, &#39;userName&#39;, &#39;active&#39;, &#39;meta&#39; attributes  will always be present in output.
+	 * @param {String} opts.filter Filters results. If nothing is specified, returns all active users. Examples of valid values: \&quot;id eq 857449b0-d9e7-4cd0-acbf-a6adfb9ef1e9\&quot;, \&quot;userName eq search@sample.org\&quot;, \&quot;manager eq 16e10e2f-1136-43fe-bb84-eac073168a49\&quot;, \&quot;email eq search@sample.org\&quot;, \&quot;division eq divisionName\&quot;, \&quot;externalId eq 167844\&quot;, \&quot;active eq false\&quot;, \&quot;employeeNumber eq 9876543210\&quot;.
 	 */
 	getScimUsers(opts) { 
 		opts = opts || {};
@@ -367,8 +367,8 @@ class SCIMApi {
 			{  }, 
 			null, 
 			['PureCloud OAuth'], 
-			['application/json', 'application/scim+json'], 
-			['application/json', 'application/scim+json']
+			['application/scim+json', 'application/json'], 
+			['application/scim+json', 'application/json']
 		);
 	}
 
@@ -377,8 +377,8 @@ class SCIMApi {
 	 * 
 	 * @param {String} groupId The ID of a group. Returned with GET /api/v2/scim/v2/groups.
 	 * @param {Object} opts Optional parameters
-	 * @param {Array.<String>} opts.attributes Indicates which attributes to include. Returns these attributes and the \&quot;id\&quot;, \&quot;active\&quot;, and \&quot;meta\&quot; attributes. Use \&quot;attributes\&quot; to avoid expensive additional calls for the default attributes.
-	 * @param {Array.<String>} opts.excludedAttributes Indicates which attributes to exclude. Always returns the \&quot;id\&quot;, \&quot;active\&quot;, and \&quot;meta\&quot; attributes. Returns the default attributes minus \&quot;excludedAttributes\&quot;. Use \&quot;excludedAttributes\&quot; to avoid expensive additional calls for the default attributes.
+	 * @param {Array.<String>} opts.attributes Indicates which attributes to include. Returns these attributes and the &#39;id&#39;, &#39;active&#39;, and &#39;meta attributes . Use \&quot;attributes\&quot; to avoid expensive secondary calls for the default attributes.
+	 * @param {Array.<String>} opts.excludedAttributes Indicates which attributes to exclude. Returns the default attributes minus \&quot;excludedAttributes\&quot;. Use \&quot;excludedAttributes\&quot; to avoid expensive secondary calls for the default attributes. The&#39;id&#39;, &#39;active&#39;, and &#39;meta&#39; attributes will always be present in the output.
 	 * @param {String} opts.ifNoneMatch TThe ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/groups/{groupId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns the current configuration of the resource. If the ETag is current, returns 304 Not Modified.
 	 */
 	getScimV2Group(groupId, opts) { 
@@ -398,8 +398,8 @@ class SCIMApi {
 			{  }, 
 			null, 
 			['PureCloud OAuth'], 
-			['application/json', 'application/scim+json'], 
-			['application/json', 'application/scim+json']
+			['application/scim+json', 'application/json'], 
+			['application/scim+json', 'application/json']
 		);
 	}
 
@@ -410,8 +410,8 @@ class SCIMApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.startIndex The 1-based index of the first query result. (default to 1)
 	 * @param {Number} opts.count The requested number of items per page. A value of 0 returns \&quot;totalResults\&quot;. Note that a page size over 25 will likely cause a 429 error by exceeding internal resource limits. Page sizes over 25 will require using excludedAttributes and includeAttributes query parameters to exclude secondary lookup values -- (i.e. externalId, roles, urn:ietf:params:scim:schemas:extension:genesys:purecloud:2.0:User:routingLanguages, urn:ietf:params:scim:schemas:extension:genesys:purecloud:2.0:User:routingSkills) (default to 25)
-	 * @param {Array.<String>} opts.attributes Indicates which attributes to include. Returns these attributes and the \&quot;id\&quot;, \&quot;active\&quot;, and \&quot;meta\&quot; attributes. Use \&quot;attributes\&quot; to avoid expensive additional calls for the default attributes.
-	 * @param {Array.<String>} opts.excludedAttributes Indicates which attributes to exclude. Always returns the \&quot;id\&quot;, \&quot;active\&quot;, and \&quot;meta\&quot; attributes. Returns the default attributes minus \&quot;excludedAttributes\&quot;. Use \&quot;excludedAttributes\&quot; to avoid expensive additional calls for the default attributes.
+	 * @param {Array.<String>} opts.attributes Indicates which attributes to include. Returns these attributes and the &#39;id&#39;, &#39;active&#39;, and &#39;meta attributes . Use \&quot;attributes\&quot; to avoid expensive secondary calls for the default attributes.
+	 * @param {Array.<String>} opts.excludedAttributes Indicates which attributes to exclude. Returns the default attributes minus \&quot;excludedAttributes\&quot;. Use \&quot;excludedAttributes\&quot; to avoid expensive secondary calls for the default attributes. The&#39;id&#39;, &#39;active&#39;, and &#39;meta&#39; attributes will always be present in the output.
 	 */
 	getScimV2Groups(filter, opts) { 
 		opts = opts || {};
@@ -430,8 +430,8 @@ class SCIMApi {
 			{  }, 
 			null, 
 			['PureCloud OAuth'], 
-			['application/json', 'application/scim+json'], 
-			['application/json', 'application/scim+json']
+			['application/scim+json', 'application/json'], 
+			['application/scim+json', 'application/json']
 		);
 	}
 
@@ -455,8 +455,8 @@ class SCIMApi {
 			{  }, 
 			null, 
 			['PureCloud OAuth'], 
-			['application/json', 'application/scim+json'], 
-			['application/json', 'application/scim+json']
+			['application/scim+json', 'application/json'], 
+			['application/scim+json', 'application/json']
 		);
 	}
 
@@ -475,8 +475,8 @@ class SCIMApi {
 			{  }, 
 			null, 
 			['PureCloud OAuth'], 
-			['application/json', 'application/scim+json'], 
-			['application/json', 'application/scim+json']
+			['application/scim+json', 'application/json'], 
+			['application/scim+json', 'application/json']
 		);
 	}
 
@@ -500,8 +500,8 @@ class SCIMApi {
 			{  }, 
 			null, 
 			['PureCloud OAuth'], 
-			['application/json', 'application/scim+json'], 
-			['application/json', 'application/scim+json']
+			['application/scim+json', 'application/json'], 
+			['application/scim+json', 'application/json']
 		);
 	}
 
@@ -524,8 +524,8 @@ class SCIMApi {
 			{  }, 
 			null, 
 			['PureCloud OAuth'], 
-			['application/json', 'application/scim+json'], 
-			['application/json', 'application/scim+json']
+			['application/scim+json', 'application/json'], 
+			['application/scim+json', 'application/json']
 		);
 	}
 
@@ -548,8 +548,8 @@ class SCIMApi {
 			{  }, 
 			null, 
 			['PureCloud OAuth'], 
-			['application/json', 'application/scim+json'], 
-			['application/json', 'application/scim+json']
+			['application/scim+json', 'application/json'], 
+			['application/scim+json', 'application/json']
 		);
 	}
 
@@ -558,8 +558,8 @@ class SCIMApi {
 	 * 
 	 * @param {String} userId The ID of a user. Returned with GET /api/v2/scim/v2/users.
 	 * @param {Object} opts Optional parameters
-	 * @param {Array.<String>} opts.attributes Indicates which attributes to include. Returns these attributes and the \&quot;id\&quot;, \&quot;userName\&quot;, \&quot;active\&quot;, and \&quot;meta\&quot; attributes. Use \&quot;attributes\&quot; to avoid expensive additional calls for the default attributes.
-	 * @param {Array.<String>} opts.excludedAttributes Indicates which attributes to exclude. Returns the default attributes minus \&quot;excludedAttributes\&quot;. Always returns the \&quot;id\&quot;, \&quot;userName\&quot;, \&quot;active\&quot;, and \&quot;meta\&quot; attributes. Use \&quot;excludedAttributes\&quot; to avoid expensive additional calls for the default attributes.
+	 * @param {Array.<String>} opts.attributes Indicates which attributes to include. Returns these attributes and the &#39;id&#39;, &#39;userName&#39;, &#39;active&#39;, and &#39;meta&#39; attributes. Use \&quot;attributes\&quot; to avoid expensive secondary calls for the default attributes.
+	 * @param {Array.<String>} opts.excludedAttributes Indicates which attributes to exclude. Returns the default attributes minus \&quot;excludedAttributes\&quot;. Use \&quot;excludedAttributes\&quot; to avoid expensive secondary calls for the default attributes. The &#39;id&#39;, &#39;userName&#39;, &#39;active&#39;, &#39;meta&#39; attributes  will always be present in output.
 	 * @param {String} opts.ifNoneMatch The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/users/{userId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns the current configuration of the resource. If the ETag is current, returns 304 Not Modified.
 	 */
 	getScimV2User(userId, opts) { 
@@ -579,8 +579,8 @@ class SCIMApi {
 			{  }, 
 			null, 
 			['PureCloud OAuth'], 
-			['application/json', 'application/scim+json'], 
-			['application/json', 'application/scim+json']
+			['application/scim+json', 'application/json'], 
+			['application/scim+json', 'application/json']
 		);
 	}
 
@@ -590,9 +590,9 @@ class SCIMApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.startIndex The 1-based index of the first query result. (default to 1)
 	 * @param {Number} opts.count The requested number of items per page. A value of 0 returns \&quot;totalResults\&quot;. Note that a page size over 25 will likely cause a 429 error by exceeding internal resource limits. Page sizes over 25 will require using excludedAttributes and includeAttributes query parameters to exclude secondary lookup values -- (i.e. externalId, roles, urn:ietf:params:scim:schemas:extension:genesys:purecloud:2.0:User:routingLanguages, urn:ietf:params:scim:schemas:extension:genesys:purecloud:2.0:User:routingSkills) (default to 25)
-	 * @param {Array.<String>} opts.attributes Indicates which attributes to include. Returns these attributes and the \&quot;id\&quot;, \&quot;userName\&quot;, \&quot;active\&quot;, and \&quot;meta\&quot; attributes. Use \&quot;attributes\&quot; to avoid expensive additional calls for the default attributes.
-	 * @param {Array.<String>} opts.excludedAttributes Indicates which attributes to exclude. Returns the default attributes minus \&quot;excludedAttributes\&quot;. Always returns the \&quot;id\&quot;, \&quot;userName\&quot;, \&quot;active\&quot;, and \&quot;meta\&quot; attributes. Use \&quot;excludedAttributes\&quot; to avoid expensive additional calls for the default attributes.
-	 * @param {String} opts.filter Filters results. If nothing is specified, returns all active users. Examples of valid values: \&quot;id eq 857449b0-d9e7-4cd0-acbf-a6adfb9ef1e9\&quot;, \&quot;userName eq search@sample.org\&quot;, \&quot;manager eq 16e10e2f-1136-43fe-bb84-eac073168a49\&quot;, \&quot;email eq search@sample.org\&quot;, \&quot;division eq divisionName\&quot;, \&quot;externalId eq 167844\&quot;, \&quot;active eq false\&quot;.
+	 * @param {Array.<String>} opts.attributes Indicates which attributes to include. Returns these attributes and the &#39;id&#39;, &#39;userName&#39;, &#39;active&#39;, and &#39;meta&#39; attributes. Use \&quot;attributes\&quot; to avoid expensive secondary calls for the default attributes.
+	 * @param {Array.<String>} opts.excludedAttributes Indicates which attributes to exclude. Returns the default attributes minus \&quot;excludedAttributes\&quot;. Use \&quot;excludedAttributes\&quot; to avoid expensive secondary calls for the default attributes. The &#39;id&#39;, &#39;userName&#39;, &#39;active&#39;, &#39;meta&#39; attributes  will always be present in output.
+	 * @param {String} opts.filter Filters results. If nothing is specified, returns all active users. Examples of valid values: \&quot;id eq 857449b0-d9e7-4cd0-acbf-a6adfb9ef1e9\&quot;, \&quot;userName eq search@sample.org\&quot;, \&quot;manager eq 16e10e2f-1136-43fe-bb84-eac073168a49\&quot;, \&quot;email eq search@sample.org\&quot;, \&quot;division eq divisionName\&quot;, \&quot;externalId eq 167844\&quot;, \&quot;active eq false\&quot;, \&quot;employeeNumber eq 9876543210\&quot;.
 	 */
 	getScimV2Users(opts) { 
 		opts = opts || {};
@@ -607,8 +607,8 @@ class SCIMApi {
 			{  }, 
 			null, 
 			['PureCloud OAuth'], 
-			['application/json', 'application/scim+json'], 
-			['application/json', 'application/scim+json']
+			['application/scim+json', 'application/json'], 
+			['application/scim+json', 'application/json']
 		);
 	}
 
@@ -641,8 +641,8 @@ class SCIMApi {
 			{  }, 
 			body, 
 			['PureCloud OAuth'], 
-			['application/json', 'application/scim+json'], 
-			['application/json', 'application/scim+json']
+			['application/scim+json', 'application/json'], 
+			['application/scim+json', 'application/json']
 		);
 	}
 
@@ -675,8 +675,8 @@ class SCIMApi {
 			{  }, 
 			body, 
 			['PureCloud OAuth'], 
-			['application/json', 'application/scim+json'], 
-			['application/json', 'application/scim+json']
+			['application/scim+json', 'application/json'], 
+			['application/scim+json', 'application/json']
 		);
 	}
 
@@ -709,8 +709,8 @@ class SCIMApi {
 			{  }, 
 			body, 
 			['PureCloud OAuth'], 
-			['application/json', 'application/scim+json'], 
-			['application/json', 'application/scim+json']
+			['application/scim+json', 'application/json'], 
+			['application/scim+json', 'application/json']
 		);
 	}
 
@@ -743,8 +743,8 @@ class SCIMApi {
 			{  }, 
 			body, 
 			['PureCloud OAuth'], 
-			['application/json', 'application/scim+json'], 
-			['application/json', 'application/scim+json']
+			['application/scim+json', 'application/json'], 
+			['application/scim+json', 'application/json']
 		);
 	}
 
@@ -768,8 +768,8 @@ class SCIMApi {
 			{  }, 
 			body, 
 			['PureCloud OAuth'], 
-			['application/json', 'application/scim+json'], 
-			['application/json', 'application/scim+json']
+			['application/scim+json', 'application/json'], 
+			['application/scim+json', 'application/json']
 		);
 	}
 
@@ -793,8 +793,8 @@ class SCIMApi {
 			{  }, 
 			body, 
 			['PureCloud OAuth'], 
-			['application/json', 'application/scim+json'], 
-			['application/json', 'application/scim+json']
+			['application/scim+json', 'application/json'], 
+			['application/scim+json', 'application/json']
 		);
 	}
 
@@ -818,8 +818,8 @@ class SCIMApi {
 			{  }, 
 			body, 
 			['PureCloud OAuth'], 
-			['application/json', 'application/scim+json'], 
-			['application/json', 'application/scim+json']
+			['application/scim+json', 'application/json'], 
+			['application/scim+json', 'application/json']
 		);
 	}
 
@@ -843,8 +843,8 @@ class SCIMApi {
 			{  }, 
 			body, 
 			['PureCloud OAuth'], 
-			['application/json', 'application/scim+json'], 
-			['application/json', 'application/scim+json']
+			['application/scim+json', 'application/json'], 
+			['application/scim+json', 'application/json']
 		);
 	}
 
@@ -877,8 +877,8 @@ class SCIMApi {
 			{  }, 
 			body, 
 			['PureCloud OAuth'], 
-			['application/json', 'application/scim+json'], 
-			['application/json', 'application/scim+json']
+			['application/scim+json', 'application/json'], 
+			['application/scim+json', 'application/json']
 		);
 	}
 
@@ -911,8 +911,8 @@ class SCIMApi {
 			{  }, 
 			body, 
 			['PureCloud OAuth'], 
-			['application/json', 'application/scim+json'], 
-			['application/json', 'application/scim+json']
+			['application/scim+json', 'application/json'], 
+			['application/scim+json', 'application/json']
 		);
 	}
 
@@ -945,8 +945,8 @@ class SCIMApi {
 			{  }, 
 			body, 
 			['PureCloud OAuth'], 
-			['application/json', 'application/scim+json'], 
-			['application/json', 'application/scim+json']
+			['application/scim+json', 'application/json'], 
+			['application/scim+json', 'application/json']
 		);
 	}
 
@@ -979,8 +979,8 @@ class SCIMApi {
 			{  }, 
 			body, 
 			['PureCloud OAuth'], 
-			['application/json', 'application/scim+json'], 
-			['application/json', 'application/scim+json']
+			['application/scim+json', 'application/json'], 
+			['application/scim+json', 'application/json']
 		);
 	}
 

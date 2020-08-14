@@ -3029,6 +3029,7 @@ QueueMember <a href="#" onclick="return copyQueueMemberExample()">Copy</a>
       "mediaType": String, 
       "type": String, 
       "extension": String, 
+      "countryCode": String, 
     },  
     "addresses": { 
       "address": String, 
@@ -3036,6 +3037,7 @@ QueueMember <a href="#" onclick="return copyQueueMemberExample()">Copy</a>
       "mediaType": String, 
       "type": String, 
       "extension": String, 
+      "countryCode": String, 
     },  
     "state": String, 
     "title": String, 
@@ -3052,6 +3054,13 @@ QueueMember <a href="#" onclick="return copyQueueMemberExample()">Copy</a>
       "interests": [String], 
       "hobbies": [String], 
       "spouse": String, 
+      "education": { 
+        "school": String, 
+        "fieldOfStudy": String, 
+        "notes": String, 
+        "dateStart": String, 
+        "dateEnd": String, 
+      },  
     },  
     "employerInfo": { 
       "officialName": String, 
@@ -3532,6 +3541,7 @@ QueueMember <a href="#" onclick="return copyQueueMemberExample()">Copy</a>
       "mediaType": String, 
       "type": String, 
       "extension": String, 
+      "countryCode": String, 
     },  
     "addresses": { 
       "address": String, 
@@ -3539,6 +3549,7 @@ QueueMember <a href="#" onclick="return copyQueueMemberExample()">Copy</a>
       "mediaType": String, 
       "type": String, 
       "extension": String, 
+      "countryCode": String, 
     },  
     "state": String, 
     "title": String, 
@@ -3555,6 +3566,13 @@ QueueMember <a href="#" onclick="return copyQueueMemberExample()">Copy</a>
       "interests": [String], 
       "hobbies": [String], 
       "spouse": String, 
+      "education": { 
+        "school": String, 
+        "fieldOfStudy": String, 
+        "notes": String, 
+        "dateStart": String, 
+        "dateEnd": String, 
+      },  
     },  
     "employerInfo": { 
       "officialName": String, 
@@ -6910,6 +6928,7 @@ Recipient <a href="#" onclick="return copyRecipientExample()">Copy</a>
         "mediaType": String, 
         "type": String, 
         "extension": String, 
+        "countryCode": String, 
       },  
       "addresses": { 
         "address": String, 
@@ -6917,6 +6936,7 @@ Recipient <a href="#" onclick="return copyRecipientExample()">Copy</a>
         "mediaType": String, 
         "type": String, 
         "extension": String, 
+        "countryCode": String, 
       },  
       "state": String, 
       "title": String, 
@@ -6933,6 +6953,13 @@ Recipient <a href="#" onclick="return copyRecipientExample()">Copy</a>
         "interests": [String], 
         "hobbies": [String], 
         "spouse": String, 
+        "education": { 
+          "school": String, 
+          "fieldOfStudy": String, 
+          "notes": String, 
+          "dateStart": String, 
+          "dateEnd": String, 
+        },  
       },  
       "employerInfo": { 
         "officialName": String, 
@@ -7480,6 +7507,7 @@ Recipient <a href="#" onclick="return copyRecipientExample()">Copy</a>
         "mediaType": String, 
         "type": String, 
         "extension": String, 
+        "countryCode": String, 
       },  
       "addresses": { 
         "address": String, 
@@ -7487,6 +7515,7 @@ Recipient <a href="#" onclick="return copyRecipientExample()">Copy</a>
         "mediaType": String, 
         "type": String, 
         "extension": String, 
+        "countryCode": String, 
       },  
       "state": String, 
       "title": String, 
@@ -7503,6 +7532,13 @@ Recipient <a href="#" onclick="return copyRecipientExample()">Copy</a>
         "interests": [String], 
         "hobbies": [String], 
         "spouse": String, 
+        "education": { 
+          "school": String, 
+          "fieldOfStudy": String, 
+          "notes": String, 
+          "dateStart": String, 
+          "dateEnd": String, 
+        },  
       },  
       "employerInfo": { 
         "officialName": String, 
@@ -7883,6 +7919,7 @@ Recipient <a href="#" onclick="return copyRecipientExample()">Copy</a>
           "mediaType": String, 
           "type": String, 
           "extension": String, 
+          "countryCode": String, 
         },  
         "addresses": { 
           "address": String, 
@@ -7890,6 +7927,7 @@ Recipient <a href="#" onclick="return copyRecipientExample()">Copy</a>
           "mediaType": String, 
           "type": String, 
           "extension": String, 
+          "countryCode": String, 
         },  
         "state": String, 
         "title": String, 
@@ -7906,6 +7944,13 @@ Recipient <a href="#" onclick="return copyRecipientExample()">Copy</a>
           "interests": [String], 
           "hobbies": [String], 
           "spouse": String, 
+          "education": { 
+            "school": String, 
+            "fieldOfStudy": String, 
+            "notes": String, 
+            "dateStart": String, 
+            "dateEnd": String, 
+          },  
         },  
         "employerInfo": { 
           "officialName": String, 
@@ -8295,6 +8340,7 @@ Recipient <a href="#" onclick="return copyRecipientExample()">Copy</a>
       "mediaType": String, 
       "type": String, 
       "extension": String, 
+      "countryCode": String, 
     },  
     "addresses": { 
       "address": String, 
@@ -8302,6 +8348,7 @@ Recipient <a href="#" onclick="return copyRecipientExample()">Copy</a>
       "mediaType": String, 
       "type": String, 
       "extension": String, 
+      "countryCode": String, 
     },  
     "state": String, 
     "title": String, 
@@ -8318,6 +8365,13 @@ Recipient <a href="#" onclick="return copyRecipientExample()">Copy</a>
       "interests": [String], 
       "hobbies": [String], 
       "spouse": String, 
+      "education": { 
+        "school": String, 
+        "fieldOfStudy": String, 
+        "notes": String, 
+        "dateStart": String, 
+        "dateEnd": String, 
+      },  
     },  
     "employerInfo": { 
       "officialName": String, 
@@ -9272,6 +9326,7 @@ SmsPhoneNumber <a href="#" onclick="return copySmsPhoneNumberExample()">Copy</a>
       "mediaType": String, 
       "type": String, 
       "extension": String, 
+      "countryCode": String, 
     },  
     "addresses": { 
       "address": String, 
@@ -9279,6 +9334,7 @@ SmsPhoneNumber <a href="#" onclick="return copySmsPhoneNumberExample()">Copy</a>
       "mediaType": String, 
       "type": String, 
       "extension": String, 
+      "countryCode": String, 
     },  
     "state": String, 
     "title": String, 
@@ -9295,6 +9351,13 @@ SmsPhoneNumber <a href="#" onclick="return copySmsPhoneNumberExample()">Copy</a>
       "interests": [String], 
       "hobbies": [String], 
       "spouse": String, 
+      "education": { 
+        "school": String, 
+        "fieldOfStudy": String, 
+        "notes": String, 
+        "dateStart": String, 
+        "dateEnd": String, 
+      },  
     },  
     "employerInfo": { 
       "officialName": String, 

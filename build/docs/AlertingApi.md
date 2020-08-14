@@ -526,6 +526,7 @@ InteractionStatsRule <a href="#" onclick="return copyInteractionStatsRuleExample
       "mediaType": String, 
       "type": String, 
       "extension": String, 
+      "countryCode": String, 
     },  
     "addresses": { 
       "address": String, 
@@ -533,6 +534,7 @@ InteractionStatsRule <a href="#" onclick="return copyInteractionStatsRuleExample
       "mediaType": String, 
       "type": String, 
       "extension": String, 
+      "countryCode": String, 
     },  
     "state": String, 
     "title": String, 
@@ -549,6 +551,13 @@ InteractionStatsRule <a href="#" onclick="return copyInteractionStatsRuleExample
       "interests": [String], 
       "hobbies": [String], 
       "spouse": String, 
+      "education": { 
+        "school": String, 
+        "fieldOfStudy": String, 
+        "notes": String, 
+        "dateStart": String, 
+        "dateEnd": String, 
+      },  
     },  
     "employerInfo": { 
       "officialName": String, 
@@ -1117,6 +1126,7 @@ InteractionStatsRule <a href="#" onclick="return copyInteractionStatsRuleExample
       "mediaType": String, 
       "type": String, 
       "extension": String, 
+      "countryCode": String, 
     },  
     "addresses": { 
       "address": String, 
@@ -1124,6 +1134,7 @@ InteractionStatsRule <a href="#" onclick="return copyInteractionStatsRuleExample
       "mediaType": String, 
       "type": String, 
       "extension": String, 
+      "countryCode": String, 
     },  
     "state": String, 
     "title": String, 
@@ -1140,6 +1151,13 @@ InteractionStatsRule <a href="#" onclick="return copyInteractionStatsRuleExample
       "interests": [String], 
       "hobbies": [String], 
       "spouse": String, 
+      "education": { 
+        "school": String, 
+        "fieldOfStudy": String, 
+        "notes": String, 
+        "dateStart": String, 
+        "dateEnd": String, 
+      },  
     },  
     "employerInfo": { 
       "officialName": String, 

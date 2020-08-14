@@ -1,373 +1,368 @@
-Platform API version: 4112
+Platform API version: 4142
 
 
-# Major Changes (10 changes)
+# Major Changes (17 changes)
 
-**GET /api/v2/architect/schedulegroups** (1 change)
+**PUT /api/v2/externalcontacts/conversations/{conversationId}** (1 change)
 
-* Parameter scheduleIds was added
+* Response 422 was removed
 
-**GET /api/v2/outbound/attemptlimits** (1 change)
+**GET /api/v2/users/{userId}/profile** (1 change)
 
-* Parameter allowEmptyResult was added
+* Parameter integrationPresenceSource was added
 
-**GET /api/v2/outbound/callabletimesets** (1 change)
+**GET /api/v2/profiles/users** (1 change)
 
-* Parameter allowEmptyResult was added
+* Parameter integrationPresenceSource was added
 
-**GET /api/v2/outbound/sequences** (1 change)
+**GET /api/v2/scim/schemas** (1 change)
 
-* Parameter allowEmptyResult was added
+* Response 200 type was changed from ScimConfigResourceTypesListResponse to ScimV2SchemaListResponse
 
-**GET /api/v2/outbound/contactlistfilters** (1 change)
+**GET /api/v2/scim/schemas/{schemaId}** (1 change)
 
-* Parameter allowEmptyResult was added
+* Response 200 type was changed from ScimConfigResourceType to ScimV2SchemaDefinition
 
-**GET /api/v2/outbound/callanalysisresponsesets** (1 change)
+**GET /api/v2/telephony/providers/edges/didpools** (1 change)
 
-* Parameter allowEmptyResult was added
+* Parameter id was added
 
-**GET /api/v2/outbound/campaignrules** (1 change)
+**GET /api/v2/telephony/providers/edges/dids** (1 change)
 
-* Parameter allowEmptyResult was added
+* Parameter id was added
 
-**GET /api/v2/outbound/dnclists** (1 change)
+**GET /api/v2/users/me** (1 change)
 
-* Parameter allowEmptyResult was added
+* Parameter integrationPresenceSource was added
 
-**GET /api/v2/outbound/contactlists** (1 change)
+**GET /api/v2/users/{userId}** (1 change)
 
-* Parameter allowEmptyResult was added
+* Parameter integrationPresenceSource was added
 
-**GET /api/v2/outbound/rulesets** (1 change)
+**GET /api/v2/users** (1 change)
 
-* Parameter allowEmptyResult was added
+* Parameter integrationPresenceSource was added
+
+**GET /api/v2/users/search** (1 change)
+
+* Parameter integrationPresenceSource was added
+
+**ScimMetadata** (1 change)
+
+* Model ScimMetadata was removed
+
+**ScimConfigResourceType** (1 change)
+
+* Property meta was removed
+
+**ScimV2SchemaDefinition** (1 change)
+
+* Property meta was removed
+
+**ScimV2Group** (1 change)
+
+* Property meta was removed
+
+**ScimServiceProviderConfig** (1 change)
+
+* Property meta was removed
+
+**ScimV2User** (1 change)
+
+* Property meta was removed
 
 
-# Minor Changes (76 changes)
+# Minor Changes (65 changes)
 
-**/api/v2/outbound/messagingcampaigns/divisionviews** (2 changes)
+**/api/v2/analytics/journeys/aggregates/query** (2 changes)
 
 * Path was added
-* Operation GET was added
-
-**/api/v2/outbound/campaigns/all** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/outbound/messagingcampaigns** (3 changes)
-
-* Path was added
-* Operation GET was added
 * Operation POST was added
 
-**DELETE /api/v2/coaching/appointments/{appointmentId}** (1 change)
-
-* Response 202 was added
-
-**PATCH /api/v2/coaching/appointments/{appointmentId}** (1 change)
-
-* Response 202 was added
-
-**/api/v2/outbound/messagingcampaigns/progress** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/outbound/messagingcampaigns/{messagingCampaignId}/progress** (2 changes)
+**/api/v2/externalcontacts/scan/contacts** (2 changes)
 
 * Path was added
 * Operation GET was added
 
-**/api/v2/outbound/messagingcampaigns/{messagingCampaignId}** (4 changes)
-
-* Path was added
-* Operation GET was added
-* Operation PUT was added
-* Operation DELETE was added
-
-**/api/v2/outbound/campaigns/all/divisionviews** (2 changes)
+**/api/v2/externalcontacts/scan/organizations** (2 changes)
 
 * Path was added
 * Operation GET was added
 
-**/api/v2/outbound/messagingcampaigns/divisionviews/{messagingCampaignId}** (2 changes)
+**/api/v2/externalcontacts/scan/notes** (2 changes)
 
 * Path was added
 * Operation GET was added
 
-**POST /api/v2/coaching/appointments** (1 change)
+**/api/v2/externalcontacts/scan/relationships** (2 changes)
 
-* Response 202 was added
+* Path was added
+* Operation GET was added
 
-**MessagingCampaignDivisionView** (1 change)
+**/api/v2/conversations/messaging/integrations/facebook/{integrationId}** (1 change)
 
-* Model was added
+* Operation patch was added. Summary: Update Facebook messaging integration
 
-**MessagingCampaignDivisionViewEntityListing** (1 change)
+**/api/v2/users/{userId}/presences/purecloud** (3 changes)
 
-* Model was added
+* Path was added
+* Operation GET was added
+* Operation PATCH was added
 
-**SegmentDetailQueryPredicate** (4 changes)
+**/api/v2/users/{userId}/presences/microsoftteams** (2 changes)
 
-* Enum value requestedRouting was added to property dimension
-* Enum value selectedAgentId was added to property dimension
-* Enum value selectedAgentRank was added to property dimension
-* Enum value usedRouting was added to property dimension
+* Path was added
+* Operation GET was added
 
-**VoicemailUserPolicy** (1 change)
+**Biography** (1 change)
 
-* Optional property sendEmailNotifications was added
+* Optional property education was added
 
-**WfmBusinessUnitReference** (1 change)
+**Contact** (1 change)
 
-* Model was added
+* Optional property countryCode was added
 
-**WfmScheduleReference** (1 change)
-
-* Model was added
-
-**CommonCampaign** (1 change)
+**Education** (1 change)
 
 * Model was added
 
-**CommonCampaignEntityListing** (1 change)
+**AnalyticsParticipantWithoutAttributes** (1 change)
+
+* Optional property agentAssistantIds was added
+
+**SegmentDetailQueryPredicate** (2 changes)
+
+* Enum value agentAssistantId was added to property dimension
+* Enum value journeySegmentScope was added to property dimension
+
+**ConversationAggregateQueryPredicate** (1 change)
+
+* Enum value agentAssistantId was added to property dimension
+
+**ConversationAggregationQuery** (1 change)
+
+* Enum value agentAssistantId was added to property groupBy
+
+**AnalyticsParticipant** (1 change)
+
+* Optional property agentAssistantIds was added
+
+**FlowAggregateQueryPredicate** (1 change)
+
+* Enum value agentAssistantId was added to property dimension
+
+**FlowAggregationQuery** (1 change)
+
+* Enum value agentAssistantId was added to property groupBy
+
+**JourneyAggregateDataContainer** (1 change)
 
 * Model was added
 
-**FlowAggregateQueryPredicate** (4 changes)
-
-* Enum value requestedRouting was added to property dimension
-* Enum value selectedAgentId was added to property dimension
-* Enum value selectedAgentRank was added to property dimension
-* Enum value usedRouting was added to property dimension
-
-**FlowAggregationQuery** (4 changes)
-
-* Enum value requestedRouting was added to property groupBy
-* Enum value selectedAgentId was added to property groupBy
-* Enum value selectedAgentRank was added to property groupBy
-* Enum value usedRouting was added to property groupBy
-
-**ObservationValue** (2 changes)
-
-* Optional property requestedRoutings was added
-* Optional property usedRouting was added
-
-**EventMessage** (2 changes)
-
-* Enum value APPROACHING_DNC_LIST_PHONE_NUMBER_LIMIT was added to property code
-* Enum value APPROACHING_DNC_ORGANIZATION_PHONE_NUMBER_LIMIT was added to property code
-
-**AnalyticsSession** (4 changes)
-
-* Optional property requestedRoutings was added
-* Optional property usedRouting was added
-* Optional property selectedAgentId was added
-* Optional property selectedAgentRank was added
-
-**ConversationAggregateQueryPredicate** (4 changes)
-
-* Enum value requestedRouting was added to property dimension
-* Enum value selectedAgentId was added to property dimension
-* Enum value selectedAgentRank was added to property dimension
-* Enum value usedRouting was added to property dimension
-
-**ConversationAggregationQuery** (4 changes)
-
-* Enum value requestedRouting was added to property groupBy
-* Enum value selectedAgentId was added to property groupBy
-* Enum value selectedAgentRank was added to property groupBy
-* Enum value usedRouting was added to property groupBy
-
-**Dependency** (1 change)
-
-* Enum value NLUDOMAIN was added to property type
-
-**DependencyObject** (1 change)
-
-* Enum value NLUDOMAIN was added to property type
-
-**MessagingCampaign** (1 change)
+**JourneyAggregateQueryResponse** (1 change)
 
 * Model was added
 
-**SmsConfig** (1 change)
+**JourneyAggregateQueryClause** (1 change)
 
 * Model was added
 
-**SmsPhoneNumberRef** (1 change)
+**JourneyAggregateQueryFilter** (1 change)
 
 * Model was added
 
-**MessagingCampaignEntityListing** (1 change)
+**JourneyAggregateQueryPredicate** (1 change)
 
 * Model was added
 
-**HistoricalAdherenceActuals** (1 change)
+**JourneyAggregationQuery** (1 change)
 
 * Model was added
 
-**HistoricalAdherenceDayMetrics** (1 change)
+**JourneyAggregationView** (1 change)
 
 * Model was added
 
-**HistoricalAdherenceExceptionInfo** (1 change)
+**CursorContactListing** (1 change)
 
 * Model was added
 
-**HistoricalAdherenceQueryResult** (1 change)
+**CursorOrganizationListing** (1 change)
 
 * Model was added
 
-**WfmHistoricalAdherenceResponse** (1 change)
-
-* Optional property downloadResult was added
-
-**WfmHistoricalAdherenceResultWrapper** (1 change)
+**CursorNoteListing** (1 change)
 
 * Model was added
 
-**CommonCampaignDivisionView** (1 change)
+**CursorRelationshipListing** (1 change)
 
 * Model was added
 
-**CommonCampaignDivisionViewEntityListing** (1 change)
+**AfterCallWork** (1 change)
 
 * Model was added
 
-**ReportingExportJobResponse** (3 changes)
+**Call** (1 change)
 
-* Optional property excludeEmptyRows was added
-* Optional property hasSplitByMedia was added
-* Optional property enabled was added
+* Optional property afterCallWork was added
 
-**ReportingExportJobRequest** (2 changes)
+**Callback** (1 change)
 
-* Optional property excludeEmptyRows was added
-* Optional property hasSplitByMedia was added
+* Optional property afterCallWork was added
+
+**Cobrowsesession** (1 change)
+
+* Optional property afterCallWork was added
+
+**ConversationChat** (1 change)
+
+* Optional property afterCallWork was added
+
+**Email** (1 change)
+
+* Optional property afterCallWork was added
+
+**Message** (1 change)
+
+* Optional property afterCallWork was added
+
+**Screenshare** (1 change)
+
+* Optional property afterCallWork was added
+
+**SocialExpression** (1 change)
+
+* Optional property afterCallWork was added
+
+**Video** (1 change)
+
+* Optional property afterCallWork was added
+
+**FacebookIntegrationUpdateRequest** (1 change)
+
+* Model was added
+
+**CallBasic** (1 change)
+
+* Optional property afterCallWork was added
+
+**CallbackBasic** (1 change)
+
+* Optional property afterCallWork was added
+
+**OAuthClient** (1 change)
+
+* Optional property state was added
+
+**OAuthClientRequest** (1 change)
+
+* Optional property state was added
+
+**OAuthClientListing** (1 change)
+
+* Optional property state was added
+
+**PresenceExpand** (1 change)
+
+* Model was added
+
+**Library** (1 change)
+
+* Enum value CampaignSmsTemplate was added to property responseType
+
+**Response** (1 change)
+
+* Enum value CampaignSmsTemplate was added to property responseType
+
+**ScimGenesysUserExternalId** (1 change)
+
+* Model was added
+
+**ScimPhoneNumber** (2 changes)
+
+* Enum value microsoftteams was added to property type
+* Enum value zoomphone was added to property type
+
+**ScimUserExtensions** (1 change)
+
+* Optional property externalIds was added
+
+**PhoneCapabilities** (1 change)
+
+* Optional property cdm was added
+
+**OrgOAuthClient** (1 change)
+
+* Optional property state was added
+
+**UserSearchRequest** (1 change)
+
+* Optional property integrationPresenceSource was added
+
+**UpdateCoachingAppointmentRequest** (1 change)
+
+* Optional property status was added
 
 
-# Point Changes (53 changes)
+# Point Changes (24 changes)
 
-**GET /api/v2/coaching/appointments/me** (1 change)
-
-* Description was changed for parameter interval
-
-**GET /api/v2/scim/v2/schemas** (2 changes)
-
-* Summary was changed
-* Description was changed for parameter filter
-
-**GET /api/v2/scim/v2/schemas/{schemaId}** (2 changes)
-
-* Summary was changed
-* Description was changed for parameter schemaId
-
-**PATCH /api/v2/conversations/messaging/integrations/whatsapp/{integrationId}** (1 change)
-
-* Response 202 was changed from Processing Request - If request was to Activate, do a GET checking for activationStatus set to CODE_SENT. 
-If request was to Confirm, do a GET checking for the integration status set to Active to Processing Request - If request was to Activate, do a GET checking for activationStatus set to CodeSent. 
-If request was to Confirm, do a GET checking for the integration status set to Active
-
-**GET /api/v2/scim/v2/users/{userId}** (2 changes)
-
-* Description was changed for parameter attributes
-* Description was changed for parameter excludedAttributes
-
-**GET /api/v2/scim/v2/users** (4 changes)
+**POST /api/v2/analytics/reporting/exports** (1 change)
 
 * Description was changed
-* Description was changed for parameter count
-* Description was changed for parameter attributes
-* Description was changed for parameter excludedAttributes
 
-**POST /api/v2/conversations/{conversationId}/disconnect** (1 change)
+**GET /api/v2/integrations/actions/categories** (1 change)
 
-* Summary was changed
+* Description was changed for parameter sortBy
+
+**GET /api/v2/users/{userId}/presences/{sourceId}** (2 changes)
+
+* Description was changed
+* Description was changed for parameter sourceId
+
+**PATCH /api/v2/users/{userId}/presences/{sourceId}** (2 changes)
+
+* Description was changed
+* Description was changed for parameter sourceId
 
 **GET /api/v2/scim/groups/{groupId}** (2 changes)
 
 * Description was changed for parameter attributes
 * Description was changed for parameter excludedAttributes
 
-**DELETE /api/v2/scim/groups/{groupId}** (4 changes)
+**GET /api/v2/scim/groups** (2 changes)
 
-* Summary was changed
-* Description was changed for parameter groupId
-* Description was changed for parameter If-Match
-* Response 204 was changed from Group Deleted with no content returned. to Group deleted with no content returned.
+* Description was changed for parameter attributes
+* Description was changed for parameter excludedAttributes
 
-**GET /api/v2/scim/groups** (4 changes)
+**GET /api/v2/scim/users** (3 changes)
 
-* Description was changed for parameter count
 * Description was changed for parameter attributes
 * Description was changed for parameter excludedAttributes
 * Description was changed for parameter filter
-
-**POST /api/v2/scim/groups** (2 changes)
-
-* Description was changed
-* Summary was changed
-
-**GET /api/v2/scim/schemas** (2 changes)
-
-* Summary was changed
-* Description was changed for parameter filter
-
-**GET /api/v2/scim/schemas/{schemaId}** (2 changes)
-
-* Summary was changed
-* Description was changed for parameter schemaId
 
 **GET /api/v2/scim/users/{userId}** (2 changes)
 
 * Description was changed for parameter attributes
 * Description was changed for parameter excludedAttributes
 
-**GET /api/v2/scim/users** (4 changes)
-
-* Description was changed
-* Description was changed for parameter count
-* Description was changed for parameter attributes
-* Description was changed for parameter excludedAttributes
-
-**GET /api/v2/coaching/appointments** (1 change)
-
-* Description was changed for parameter interval
-
-**GET /api/v2/scim/v2/groups/{groupId}** (3 changes)
+**GET /api/v2/scim/v2/groups/{groupId}** (2 changes)
 
 * Description was changed for parameter attributes
 * Description was changed for parameter excludedAttributes
-* Description was changed for parameter If-None-Match
 
-**DELETE /api/v2/scim/v2/groups/{groupId}** (4 changes)
+**GET /api/v2/scim/v2/groups** (2 changes)
 
-* Summary was changed
-* Description was changed for parameter groupId
-* Description was changed for parameter If-Match
-* Response 204 was changed from Group Deleted with no content returned. to Group deleted with no content returned.
+* Description was changed for parameter attributes
+* Description was changed for parameter excludedAttributes
 
-**GET /api/v2/scim/v2/groups** (4 changes)
+**GET /api/v2/scim/v2/users** (3 changes)
 
-* Description was changed for parameter count
 * Description was changed for parameter attributes
 * Description was changed for parameter excludedAttributes
 * Description was changed for parameter filter
 
-**POST /api/v2/scim/v2/groups** (3 changes)
+**GET /api/v2/scim/v2/users/{userId}** (2 changes)
 
-* Description was changed
-* Summary was changed
-* Description was changed for parameter body
-
-**POST /api/v2/conversations/messaging/integrations/whatsapp** (1 change)
-
-* Description was changed
-
-**PUT /api/v2/externalcontacts/conversations/{conversationId}** (2 changes)
-
-* Description was changed
-* Summary was changed
+* Description was changed for parameter attributes
+* Description was changed for parameter excludedAttributes
