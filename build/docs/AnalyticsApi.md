@@ -2693,6 +2693,8 @@ ReportingExportJobRequest <a href="#" onclick="return copyReportingExportJobRequ
     "providerList": [String], 
     "callbackNumberList": [String], 
     "callbackInterval": String, 
+    "usedRoutingTypes": [String], 
+    "requestedRoutingTypes": [String], 
   },  
   "read": Boolean, 
   "locale": String, 

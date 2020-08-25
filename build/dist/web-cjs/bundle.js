@@ -1983,7 +1983,7 @@ function isSlowBuffer (obj) {
 
 /**
  * @module purecloud-platform-client-v2/ApiClient
- * @version 88.0.0
+ * @version 89.0.0
  */
 class ApiClient {
 	/**
@@ -2739,7 +2739,7 @@ class ApiClient {
 
 		// set header parameters
 		request.set(this.defaultHeaders).set(this.normalizeParams(headerParams));
-		//request.set({ 'purecloud-sdk': '88.0.0' });
+		//request.set({ 'purecloud-sdk': '89.0.0' });
 
 		// set request timeout
 		request.timeout(this.timeout);
@@ -2864,7 +2864,7 @@ class AlertingApi {
 	/**
 	 * Alerting service.
 	 * @module purecloud-platform-client-v2/api/AlertingApi
-	 * @version 88.0.0
+	 * @version 89.0.0
 	 */
 
 	/**
@@ -3178,7 +3178,7 @@ class AnalyticsApi {
 	/**
 	 * Analytics service.
 	 * @module purecloud-platform-client-v2/api/AnalyticsApi
-	 * @version 88.0.0
+	 * @version 89.0.0
 	 */
 
 	/**
@@ -4168,7 +4168,7 @@ class ArchitectApi {
 	/**
 	 * Architect service.
 	 * @module purecloud-platform-client-v2/api/ArchitectApi
-	 * @version 88.0.0
+	 * @version 89.0.0
 	 */
 
 	/**
@@ -6872,7 +6872,7 @@ class AuditApi {
 	/**
 	 * Audit service.
 	 * @module purecloud-platform-client-v2/api/AuditApi
-	 * @version 88.0.0
+	 * @version 89.0.0
 	 */
 
 	/**
@@ -7023,7 +7023,7 @@ class AuthorizationApi {
 	/**
 	 * Authorization service.
 	 * @module purecloud-platform-client-v2/api/AuthorizationApi
-	 * @version 88.0.0
+	 * @version 89.0.0
 	 */
 
 	/**
@@ -7163,11 +7163,11 @@ class AuthorizationApi {
 	 * @param {Number} opts.pageSize The total page size requested (default to 25)
 	 * @param {Number} opts.pageNumber The page number requested (default to 1)
 	 * @param {String} opts.sortBy variable name requested to sort by
-	 * @param {Array.<Object>} opts.expand variable name requested by expand list
+	 * @param {Array.<String>} opts.expand variable name requested by expand list
 	 * @param {String} opts.nextPage next page token
 	 * @param {String} opts.previousPage Previous page token
 	 * @param {Boolean} opts.objectCount Include the count of objects contained in the division (default to false)
-	 * @param {Array.<Object>} opts.id Optionally request specific divisions by their IDs
+	 * @param {Array.<String>} opts.id Optionally request specific divisions by their IDs
 	 * @param {String} opts.name Search term to filter by division name
 	 */
 	getAuthorizationDivisions(opts) { 
@@ -7434,7 +7434,7 @@ class AuthorizationApi {
 	 * @param {Number} opts.pageSize The total page size requested (default to 25)
 	 * @param {Number} opts.pageNumber The page number requested (default to 1)
 	 * @param {String} opts.sortBy variable name requested to sort by
-	 * @param {Array.<Object>} opts.expand variable name requested by expand list
+	 * @param {Array.<String>} opts.expand variable name requested by expand list
 	 * @param {String} opts.nextPage next page token
 	 * @param {String} opts.previousPage Previous page token
 	 */
@@ -7497,12 +7497,12 @@ class AuthorizationApi {
 	 * @param {Number} opts.pageSize The total page size requested (default to 25)
 	 * @param {Number} opts.pageNumber The page number requested (default to 1)
 	 * @param {String} opts.sortBy variable name requested to sort by
-	 * @param {Array.<Object>} opts.expand variable name requested by expand list
+	 * @param {Array.<String>} opts.expand variable name requested by expand list
 	 * @param {String} opts.nextPage next page token
 	 * @param {String} opts.previousPage Previous page token
 	 * @param {String} opts.name 
-	 * @param {Array.<Object>} opts.permission 
-	 * @param {Array.<Object>} opts.defaultRoleId 
+	 * @param {Array.<String>} opts.permission 
+	 * @param {Array.<String>} opts.defaultRoleId 
 	 * @param {Boolean} opts.userCount  (default to true)
 	 * @param {Array.<String>} opts.id id
 	 */
@@ -8110,7 +8110,7 @@ class BillingApi {
 	/**
 	 * Billing service.
 	 * @module purecloud-platform-client-v2/api/BillingApi
-	 * @version 88.0.0
+	 * @version 89.0.0
 	 */
 
 	/**
@@ -8190,7 +8190,7 @@ class CoachingApi {
 	/**
 	 * Coaching service.
 	 * @module purecloud-platform-client-v2/api/CoachingApi
-	 * @version 88.0.0
+	 * @version 89.0.0
 	 */
 
 	/**
@@ -8442,8 +8442,12 @@ class CoachingApi {
 	 * Get an existing notification
 	 * Permission not required if you are the owner of the notification.
 	 * @param {String} notificationId The ID of the notification.
+	 * @param {Object} opts Optional parameters
+	 * @param {Array.<String>} opts.expand Indicates a field in the response which should be expanded.
 	 */
-	getCoachingNotification(notificationId) { 
+	getCoachingNotification(notificationId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'notificationId' is set
 		if (notificationId === undefined || notificationId === null) {
 			throw 'Missing the required parameter "notificationId" when calling getCoachingNotification';
@@ -8453,7 +8457,7 @@ class CoachingApi {
 			'/api/v2/coaching/notifications/{notificationId}', 
 			'GET', 
 			{ 'notificationId': notificationId }, 
-			{  }, 
+			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -8469,6 +8473,7 @@ class CoachingApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {Array.<String>} opts.expand Indicates a field in the response which should be expanded.
 	 */
 	getCoachingNotifications(opts) { 
 		opts = opts || {};
@@ -8478,7 +8483,7 @@ class CoachingApi {
 			'/api/v2/coaching/notifications', 
 			'GET', 
 			{  }, 
-			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'] }, 
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -8674,7 +8679,7 @@ class ContentManagementApi {
 	/**
 	 * ContentManagement service.
 	 * @module purecloud-platform-client-v2/api/ContentManagementApi
-	 * @version 88.0.0
+	 * @version 89.0.0
 	 */
 
 	/**
@@ -9814,7 +9819,7 @@ class ConversationsApi {
 	/**
 	 * Conversations service.
 	 * @module purecloud-platform-client-v2/api/ConversationsApi
-	 * @version 88.0.0
+	 * @version 89.0.0
 	 */
 
 	/**
@@ -13806,7 +13811,7 @@ class DataExtensionsApi {
 	/**
 	 * DataExtensions service.
 	 * @module purecloud-platform-client-v2/api/DataExtensionsApi
-	 * @version 88.0.0
+	 * @version 89.0.0
 	 */
 
 	/**
@@ -13892,7 +13897,7 @@ class ExternalContactsApi {
 	/**
 	 * ExternalContacts service.
 	 * @module purecloud-platform-client-v2/api/ExternalContactsApi
-	 * @version 88.0.0
+	 * @version 89.0.0
 	 */
 
 	/**
@@ -15235,7 +15240,7 @@ class FaxApi {
 	/**
 	 * Fax service.
 	 * @module purecloud-platform-client-v2/api/FaxApi
-	 * @version 88.0.0
+	 * @version 89.0.0
 	 */
 
 	/**
@@ -15406,7 +15411,7 @@ class FlowsApi {
 	/**
 	 * Flows service.
 	 * @module purecloud-platform-client-v2/api/FlowsApi
-	 * @version 88.0.0
+	 * @version 89.0.0
 	 */
 
 	/**
@@ -15477,7 +15482,7 @@ class GeneralDataProtectionRegulationApi {
 	/**
 	 * GeneralDataProtectionRegulation service.
 	 * @module purecloud-platform-client-v2/api/GeneralDataProtectionRegulationApi
-	 * @version 88.0.0
+	 * @version 89.0.0
 	 */
 
 	/**
@@ -15607,7 +15612,7 @@ class GeolocationApi {
 	/**
 	 * Geolocation service.
 	 * @module purecloud-platform-client-v2/api/GeolocationApi
-	 * @version 88.0.0
+	 * @version 89.0.0
 	 */
 
 	/**
@@ -15738,7 +15743,7 @@ class GreetingsApi {
 	/**
 	 * Greetings service.
 	 * @module purecloud-platform-client-v2/api/GreetingsApi
-	 * @version 88.0.0
+	 * @version 89.0.0
 	 */
 
 	/**
@@ -16193,7 +16198,7 @@ class GroupsApi {
 	/**
 	 * Groups service.
 	 * @module purecloud-platform-client-v2/api/GroupsApi
-	 * @version 88.0.0
+	 * @version 89.0.0
 	 */
 
 	/**
@@ -16598,7 +16603,7 @@ class IdentityProviderApi {
 	/**
 	 * IdentityProvider service.
 	 * @module purecloud-platform-client-v2/api/IdentityProviderApi
-	 * @version 88.0.0
+	 * @version 89.0.0
 	 */
 
 	/**
@@ -17354,7 +17359,7 @@ class IntegrationsApi {
 	/**
 	 * Integrations service.
 	 * @module purecloud-platform-client-v2/api/IntegrationsApi
-	 * @version 88.0.0
+	 * @version 89.0.0
 	 */
 
 	/**
@@ -17477,7 +17482,7 @@ class IntegrationsApi {
 	 * @param {Number} opts.pageSize The total page size requested (default to 25)
 	 * @param {Number} opts.pageNumber The page number requested (default to 1)
 	 * @param {String} opts.sortBy variable name requested to sort by
-	 * @param {Array.<Object>} opts.expand variable name requested by expand list
+	 * @param {Array.<String>} opts.expand variable name requested by expand list
 	 * @param {String} opts.nextPage next page token
 	 * @param {String} opts.previousPage Previous page token
 	 */
@@ -17535,7 +17540,7 @@ class IntegrationsApi {
 	 * @param {Number} opts.pageSize The total page size requested (default to 25)
 	 * @param {Number} opts.pageNumber The page number requested (default to 1)
 	 * @param {String} opts.sortBy variable name requested to sort by
-	 * @param {Array.<Object>} opts.expand variable name requested by expand list
+	 * @param {Array.<String>} opts.expand variable name requested by expand list
 	 * @param {String} opts.nextPage next page token
 	 * @param {String} opts.previousPage Previous page token
 	 */
@@ -17803,7 +17808,7 @@ class IntegrationsApi {
 	 * @param {Number} opts.pageNumber The page number requested (default to 1)
 	 * @param {String} opts.nextPage next page token
 	 * @param {String} opts.previousPage Previous page token
-	 * @param {String} opts.sortBy Root level field name to sort on.  Only &#39;name&#39; is supported on this endpoint.
+	 * @param {String} opts.sortBy Root level field name to sort on.
 	 * @param {Object} opts.sortOrder Direction to sort &#39;sortBy&#39; field. (default to asc)
 	 * @param {Object} opts.secure Filter to only include secure actions. True will only include actions marked secured. False will include only unsecure actions. Do not use filter if you want all Actions.
 	 */
@@ -17865,7 +17870,7 @@ class IntegrationsApi {
 	 * @param {Number} opts.pageSize The total page size requested (default to 25)
 	 * @param {Number} opts.pageNumber The page number requested (default to 1)
 	 * @param {String} opts.sortBy variable name requested to sort by
-	 * @param {Array.<Object>} opts.expand variable name requested by expand list
+	 * @param {Array.<String>} opts.expand variable name requested by expand list
 	 * @param {String} opts.nextPage next page token
 	 * @param {String} opts.previousPage Previous page token
 	 */
@@ -18343,7 +18348,7 @@ class IntegrationsApi {
 	 * @param {Number} opts.pageSize The total page size requested (default to 25)
 	 * @param {Number} opts.pageNumber The page number requested (default to 1)
 	 * @param {String} opts.sortBy variable name requested to sort by
-	 * @param {Array.<Object>} opts.expand variable name requested by expand list
+	 * @param {Array.<String>} opts.expand variable name requested by expand list
 	 * @param {String} opts.nextPage next page token
 	 * @param {String} opts.previousPage Previous page token
 	 */
@@ -18372,7 +18377,7 @@ class IntegrationsApi {
 	 * @param {Number} opts.pageSize The total page size requested (default to 25)
 	 * @param {Number} opts.pageNumber The page number requested (default to 1)
 	 * @param {String} opts.sortBy variable name requested to sort by
-	 * @param {Array.<Object>} opts.expand variable name requested by expand list
+	 * @param {Array.<String>} opts.expand variable name requested by expand list
 	 * @param {String} opts.nextPage next page token
 	 * @param {String} opts.previousPage Previous page token
 	 * @param {String} opts.appHost The type of UserApp to filter by
@@ -18404,7 +18409,7 @@ class IntegrationsApi {
 	 * @param {Number} opts.pageSize The total page size requested (default to 25)
 	 * @param {Number} opts.pageNumber The page number requested (default to 1)
 	 * @param {String} opts.sortBy variable name requested to sort by
-	 * @param {Array.<Object>} opts.expand variable name requested by expand list
+	 * @param {Array.<String>} opts.expand variable name requested by expand list
 	 * @param {String} opts.nextPage next page token
 	 * @param {String} opts.previousPage Previous page token
 	 */
@@ -18846,7 +18851,7 @@ class JourneyApi {
 	/**
 	 * Journey service.
 	 * @module purecloud-platform-client-v2/api/JourneyApi
-	 * @version 88.0.0
+	 * @version 89.0.0
 	 */
 
 	/**
@@ -18892,7 +18897,7 @@ class KnowledgeApi {
 	/**
 	 * Knowledge service.
 	 * @module purecloud-platform-client-v2/api/KnowledgeApi
-	 * @version 88.0.0
+	 * @version 89.0.0
 	 */
 
 	/**
@@ -19611,7 +19616,7 @@ class LanguageUnderstandingApi {
 	/**
 	 * LanguageUnderstanding service.
 	 * @module purecloud-platform-client-v2/api/LanguageUnderstandingApi
-	 * @version 88.0.0
+	 * @version 89.0.0
 	 */
 
 	/**
@@ -20177,7 +20182,7 @@ class LanguagesApi {
 	/**
 	 * Languages service.
 	 * @module purecloud-platform-client-v2/api/LanguagesApi
-	 * @version 88.0.0
+	 * @version 89.0.0
 	 */
 
 	/**
@@ -20445,7 +20450,7 @@ class LicenseApi {
 	/**
 	 * License service.
 	 * @module purecloud-platform-client-v2/api/LicenseApi
-	 * @version 88.0.0
+	 * @version 89.0.0
 	 */
 
 	/**
@@ -20683,7 +20688,7 @@ class LocationsApi {
 	/**
 	 * Locations service.
 	 * @module purecloud-platform-client-v2/api/LocationsApi
-	 * @version 88.0.0
+	 * @version 89.0.0
 	 */
 
 	/**
@@ -20919,7 +20924,7 @@ class MobileDevicesApi {
 	/**
 	 * MobileDevices service.
 	 * @module purecloud-platform-client-v2/api/MobileDevicesApi
-	 * @version 88.0.0
+	 * @version 89.0.0
 	 */
 
 	/**
@@ -21070,7 +21075,7 @@ class NotificationsApi {
 	/**
 	 * Notifications service.
 	 * @module purecloud-platform-client-v2/api/NotificationsApi
-	 * @version 88.0.0
+	 * @version 89.0.0
 	 */
 
 	/**
@@ -21269,7 +21274,7 @@ class OAuthApi {
 	/**
 	 * OAuth service.
 	 * @module purecloud-platform-client-v2/api/OAuthApi
-	 * @version 88.0.0
+	 * @version 89.0.0
 	 */
 
 	/**
@@ -21627,7 +21632,7 @@ class ObjectsApi {
 	/**
 	 * Objects service.
 	 * @module purecloud-platform-client-v2/api/ObjectsApi
-	 * @version 88.0.0
+	 * @version 89.0.0
 	 */
 
 	/**
@@ -21707,11 +21712,11 @@ class ObjectsApi {
 	 * @param {Number} opts.pageSize The total page size requested (default to 25)
 	 * @param {Number} opts.pageNumber The page number requested (default to 1)
 	 * @param {String} opts.sortBy variable name requested to sort by
-	 * @param {Array.<Object>} opts.expand variable name requested by expand list
+	 * @param {Array.<String>} opts.expand variable name requested by expand list
 	 * @param {String} opts.nextPage next page token
 	 * @param {String} opts.previousPage Previous page token
 	 * @param {Boolean} opts.objectCount Include the count of objects contained in the division (default to false)
-	 * @param {Array.<Object>} opts.id Optionally request specific divisions by their IDs
+	 * @param {Array.<String>} opts.id Optionally request specific divisions by their IDs
 	 * @param {String} opts.name Search term to filter by division name
 	 */
 	getAuthorizationDivisions(opts) { 
@@ -21868,7 +21873,7 @@ class OrganizationApi {
 	/**
 	 * Organization service.
 	 * @module purecloud-platform-client-v2/api/OrganizationApi
-	 * @version 88.0.0
+	 * @version 89.0.0
 	 */
 
 	/**
@@ -22123,7 +22128,7 @@ class OrganizationAuthorizationApi {
 	/**
 	 * OrganizationAuthorization service.
 	 * @module purecloud-platform-client-v2/api/OrganizationAuthorizationApi
-	 * @version 88.0.0
+	 * @version 89.0.0
 	 */
 
 	/**
@@ -22833,7 +22838,7 @@ class OutboundApi {
 	/**
 	 * Outbound service.
 	 * @module purecloud-platform-client-v2/api/OutboundApi
-	 * @version 88.0.0
+	 * @version 89.0.0
 	 */
 
 	/**
@@ -25807,7 +25812,7 @@ class PresenceApi {
 	/**
 	 * Presence service.
 	 * @module purecloud-platform-client-v2/api/PresenceApi
-	 * @version 88.0.0
+	 * @version 89.0.0
 	 */
 
 	/**
@@ -25955,7 +25960,7 @@ class PresenceApi {
 
 	/**
 	 * Get a user&#39;s Microsoft Teams presence.
-	 * Gets the presence for a Microsoft Teams user.  This will return the Microsoft Teams presence mapped to GenesysCloud presence with additional activity details in the message field. This presence source is read-only.
+	 * Gets the presence for a Microsoft Teams user.  This will return the Microsoft Teams presence mapped to Genesys Cloud presence with additional activity details in the message field. This presence source is read-only.
 	 * @param {String} userId user Id
 	 */
 	getUserPresencesMicrosoftteams(userId) { 
@@ -25979,8 +25984,8 @@ class PresenceApi {
 	}
 
 	/**
-	 * Get a user&#39;s GenesysCloud presence.
-	 * Get the default GenesysCloud user presence source PURECLOUD
+	 * Get a user&#39;s Genesys Cloud presence.
+	 * Get the default Genesys Cloud user presence source PURECLOUD
 	 * @param {String} userId user Id
 	 */
 	getUserPresencesPurecloud(userId) { 
@@ -26039,7 +26044,7 @@ class PresenceApi {
 	}
 
 	/**
-	 * Patch a GenesysCloud user&#39;s presence
+	 * Patch a Genesys Cloud user&#39;s presence
 	 * The presence object can be patched one of three ways. Option 1: Set the &#39;primary&#39; property to true. This will set the PURECLOUD source as the user&#39;s primary presence source. Option 2: Provide the presenceDefinition value. The &#39;id&#39; is the only value required within the presenceDefinition. Option 3: Provide the message value. Option 1 can be combined with Option 2 and/or Option 3.
 	 * @param {String} userId user Id
 	 * @param {Object} body User presence
@@ -26154,7 +26159,7 @@ class QualityApi {
 	/**
 	 * Quality service.
 	 * @module purecloud-platform-client-v2/api/QualityApi
-	 * @version 88.0.0
+	 * @version 89.0.0
 	 */
 
 	/**
@@ -26365,12 +26370,12 @@ class QualityApi {
 	 * @param {Number} opts.pageSize The total page size requested (default to 25)
 	 * @param {Number} opts.pageNumber The page number requested (default to 1)
 	 * @param {String} opts.sortBy variable name requested to sort by
-	 * @param {Array.<Object>} opts.expand variable name requested by expand list
+	 * @param {Array.<String>} opts.expand variable name requested by expand list
 	 * @param {String} opts.nextPage next page token
 	 * @param {String} opts.previousPage Previous page token
 	 * @param {Date} opts.startTime Start time of agent activity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
 	 * @param {Date} opts.endTime End time of agent activity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
-	 * @param {Array.<Object>} opts.agentUserId user id of agent requested
+	 * @param {Array.<String>} opts.agentUserId user id of agent requested
 	 * @param {String} opts.evaluatorUserId user id of the evaluator
 	 * @param {String} opts.name name
 	 * @param {String} opts.group group id
@@ -26431,7 +26436,7 @@ class QualityApi {
 	 * @param {Number} opts.pageSize The total page size requested (default to 25)
 	 * @param {Number} opts.pageNumber The page number requested (default to 1)
 	 * @param {String} opts.sortBy variable name requested to sort by
-	 * @param {Array.<Object>} opts.expand variable name requested by expand list
+	 * @param {Array.<String>} opts.expand variable name requested by expand list
 	 * @param {String} opts.nextPage next page token
 	 * @param {String} opts.previousPage Previous page token
 	 * @param {String} opts.conversationId conversation id
@@ -26468,7 +26473,7 @@ class QualityApi {
 	 * @param {Number} opts.pageSize The total page size requested (default to 25)
 	 * @param {Number} opts.pageNumber The page number requested (default to 1)
 	 * @param {String} opts.sortBy variable name requested to sort by
-	 * @param {Array.<Object>} opts.expand variable name requested by expand list
+	 * @param {Array.<String>} opts.expand variable name requested by expand list
 	 * @param {String} opts.nextPage next page token
 	 * @param {String} opts.previousPage Previous page token
 	 * @param {String} opts.recordingId id of the recording
@@ -26562,7 +26567,7 @@ class QualityApi {
 	 * @param {Number} opts.pageSize The total page size requested (default to 25)
 	 * @param {Number} opts.pageNumber The page number requested (default to 1)
 	 * @param {String} opts.sortBy variable name requested to sort by
-	 * @param {Array.<Object>} opts.expand variable name requested by expand list
+	 * @param {Array.<String>} opts.expand variable name requested by expand list
 	 * @param {String} opts.nextPage next page token
 	 * @param {String} opts.previousPage Previous page token
 	 * @param {String} opts.conversationId conversationId specified
@@ -26571,7 +26576,7 @@ class QualityApi {
 	 * @param {String} opts.queueId queue id
 	 * @param {String} opts.startTime start time of the evaluation query
 	 * @param {String} opts.endTime end time of the evaluation query
-	 * @param {Array.<Object>} opts.evaluationState 
+	 * @param {Array.<String>} opts.evaluationState 
 	 * @param {Boolean} opts.isReleased the evaluation has been released
 	 * @param {Boolean} opts.agentHasRead agent has the evaluation
 	 * @param {Boolean} opts.expandAnswerTotalScores get the total scores for evaluations
@@ -26603,13 +26608,13 @@ class QualityApi {
 	 * @param {Number} opts.pageSize The total page size requested (default to 25)
 	 * @param {Number} opts.pageNumber The page number requested (default to 1)
 	 * @param {String} opts.sortBy variable name requested to sort by
-	 * @param {Array.<Object>} opts.expand variable name requested by expand list
+	 * @param {Array.<String>} opts.expand variable name requested by expand list
 	 * @param {String} opts.nextPage next page token
 	 * @param {String} opts.previousPage Previous page token
 	 * @param {Date} opts.startTime The start time specified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
 	 * @param {Date} opts.endTime The end time specified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
 	 * @param {String} opts.name Evaluator name
-	 * @param {Array.<Object>} opts.permission permission strings
+	 * @param {Array.<String>} opts.permission permission strings
 	 * @param {String} opts.group group id
 	 */
 	getQualityEvaluatorsActivity(opts) { 
@@ -26974,7 +26979,7 @@ class QualityApi {
 	 * @param {Number} opts.pageSize The total page size requested (default to 25)
 	 * @param {Number} opts.pageNumber The page number requested (default to 1)
 	 * @param {String} opts.sortBy variable name requested to sort by
-	 * @param {Array.<Object>} opts.expand variable name requested by expand list
+	 * @param {Array.<String>} opts.expand variable name requested by expand list
 	 * @param {String} opts.nextPage next page token
 	 * @param {String} opts.previousPage Previous page token
 	 * @param {String} opts.name the keyword set name - used for filtering results in searches.
@@ -27826,7 +27831,7 @@ class RecordingApi {
 	/**
 	 * Recording service.
 	 * @module purecloud-platform-client-v2/api/RecordingApi
-	 * @version 88.0.0
+	 * @version 89.0.0
 	 */
 
 	/**
@@ -28233,7 +28238,7 @@ class RecordingApi {
 	 * @param {Number} opts.pageSize The total page size requested (default to 25)
 	 * @param {Number} opts.pageNumber The page number requested (default to 1)
 	 * @param {String} opts.sortBy variable name requested to sort by
-	 * @param {Array.<Object>} opts.expand variable name requested by expand list
+	 * @param {Array.<String>} opts.expand variable name requested by expand list
 	 * @param {String} opts.nextPage next page token
 	 * @param {String} opts.previousPage Previous page token
 	 * @param {Boolean} opts.hasConversation Filter resulting orphans by whether the conversation is known. False returns all orphans for the organization. (default to false)
@@ -28388,7 +28393,7 @@ class RecordingApi {
 	 * @param {Number} opts.pageSize The total page size requested (default to 25)
 	 * @param {Number} opts.pageNumber The page number requested (default to 1)
 	 * @param {String} opts.sortBy variable name requested to sort by
-	 * @param {Array.<Object>} opts.expand variable name requested by expand list
+	 * @param {Array.<String>} opts.expand variable name requested by expand list
 	 * @param {String} opts.nextPage next page token
 	 * @param {String} opts.previousPage Previous page token
 	 * @param {String} opts.name the policy name - used for filtering results in searches.
@@ -29072,7 +29077,7 @@ class ResponseManagementApi {
 	/**
 	 * ResponseManagement service.
 	 * @module purecloud-platform-client-v2/api/ResponseManagementApi
-	 * @version 88.0.0
+	 * @version 89.0.0
 	 */
 
 	/**
@@ -29397,7 +29402,7 @@ class RoutingApi {
 	/**
 	 * Routing service.
 	 * @module purecloud-platform-client-v2/api/RoutingApi
-	 * @version 88.0.0
+	 * @version 89.0.0
 	 */
 
 	/**
@@ -31695,7 +31700,7 @@ class SCIMApi {
 	/**
 	 * SCIM service.
 	 * @module purecloud-platform-client-v2/api/SCIMApi
-	 * @version 88.0.0
+	 * @version 89.0.0
 	 */
 
 	/**
@@ -31734,8 +31739,8 @@ class SCIMApi {
 			{  }, 
 			null, 
 			['PureCloud OAuth'], 
-			['application/scim+json', 'application/json'], 
-			['application/scim+json', 'application/json']
+			['application/json', 'application/scim+json'], 
+			['application/json', 'application/scim+json']
 		);
 	}
 
@@ -31763,8 +31768,8 @@ class SCIMApi {
 			{  }, 
 			null, 
 			['PureCloud OAuth'], 
-			['application/scim+json', 'application/json'], 
-			['application/scim+json', 'application/json']
+			['application/json', 'application/scim+json'], 
+			['application/json', 'application/scim+json']
 		);
 	}
 
@@ -31792,8 +31797,8 @@ class SCIMApi {
 			{  }, 
 			null, 
 			['PureCloud OAuth'], 
-			['application/scim+json', 'application/json'], 
-			['application/scim+json', 'application/json']
+			['application/json', 'application/scim+json'], 
+			['application/json', 'application/scim+json']
 		);
 	}
 
@@ -31821,8 +31826,8 @@ class SCIMApi {
 			{  }, 
 			null, 
 			['PureCloud OAuth'], 
-			['application/scim+json', 'application/json'], 
-			['application/scim+json', 'application/json']
+			['application/json', 'application/scim+json'], 
+			['application/json', 'application/scim+json']
 		);
 	}
 
@@ -31852,8 +31857,8 @@ class SCIMApi {
 			{  }, 
 			null, 
 			['PureCloud OAuth'], 
-			['application/scim+json', 'application/json'], 
-			['application/scim+json', 'application/json']
+			['application/json', 'application/scim+json'], 
+			['application/json', 'application/scim+json']
 		);
 	}
 
@@ -31880,8 +31885,8 @@ class SCIMApi {
 			{  }, 
 			null, 
 			['PureCloud OAuth'], 
-			['application/scim+json', 'application/json'], 
-			['application/scim+json', 'application/json']
+			['application/json', 'application/scim+json'], 
+			['application/json', 'application/scim+json']
 		);
 	}
 
@@ -31905,8 +31910,8 @@ class SCIMApi {
 			{  }, 
 			null, 
 			['PureCloud OAuth'], 
-			['application/scim+json', 'application/json'], 
-			['application/scim+json', 'application/json']
+			['application/json', 'application/scim+json'], 
+			['application/json', 'application/scim+json']
 		);
 	}
 
@@ -31925,8 +31930,8 @@ class SCIMApi {
 			{  }, 
 			null, 
 			['PureCloud OAuth'], 
-			['application/scim+json', 'application/json'], 
-			['application/scim+json', 'application/json']
+			['application/json', 'application/scim+json'], 
+			['application/json', 'application/scim+json']
 		);
 	}
 
@@ -31950,8 +31955,8 @@ class SCIMApi {
 			{  }, 
 			null, 
 			['PureCloud OAuth'], 
-			['application/scim+json', 'application/json'], 
-			['application/scim+json', 'application/json']
+			['application/json', 'application/scim+json'], 
+			['application/json', 'application/scim+json']
 		);
 	}
 
@@ -31974,8 +31979,8 @@ class SCIMApi {
 			{  }, 
 			null, 
 			['PureCloud OAuth'], 
-			['application/scim+json', 'application/json'], 
-			['application/scim+json', 'application/json']
+			['application/json', 'application/scim+json'], 
+			['application/json', 'application/scim+json']
 		);
 	}
 
@@ -31998,8 +32003,8 @@ class SCIMApi {
 			{  }, 
 			null, 
 			['PureCloud OAuth'], 
-			['application/scim+json', 'application/json'], 
-			['application/scim+json', 'application/json']
+			['application/json', 'application/scim+json'], 
+			['application/json', 'application/scim+json']
 		);
 	}
 
@@ -32029,8 +32034,8 @@ class SCIMApi {
 			{  }, 
 			null, 
 			['PureCloud OAuth'], 
-			['application/scim+json', 'application/json'], 
-			['application/scim+json', 'application/json']
+			['application/json', 'application/scim+json'], 
+			['application/json', 'application/scim+json']
 		);
 	}
 
@@ -32057,8 +32062,8 @@ class SCIMApi {
 			{  }, 
 			null, 
 			['PureCloud OAuth'], 
-			['application/scim+json', 'application/json'], 
-			['application/scim+json', 'application/json']
+			['application/json', 'application/scim+json'], 
+			['application/json', 'application/scim+json']
 		);
 	}
 
@@ -32088,8 +32093,8 @@ class SCIMApi {
 			{  }, 
 			null, 
 			['PureCloud OAuth'], 
-			['application/scim+json', 'application/json'], 
-			['application/scim+json', 'application/json']
+			['application/json', 'application/scim+json'], 
+			['application/json', 'application/scim+json']
 		);
 	}
 
@@ -32120,8 +32125,8 @@ class SCIMApi {
 			{  }, 
 			null, 
 			['PureCloud OAuth'], 
-			['application/scim+json', 'application/json'], 
-			['application/scim+json', 'application/json']
+			['application/json', 'application/scim+json'], 
+			['application/json', 'application/scim+json']
 		);
 	}
 
@@ -32145,8 +32150,8 @@ class SCIMApi {
 			{  }, 
 			null, 
 			['PureCloud OAuth'], 
-			['application/scim+json', 'application/json'], 
-			['application/scim+json', 'application/json']
+			['application/json', 'application/scim+json'], 
+			['application/json', 'application/scim+json']
 		);
 	}
 
@@ -32165,8 +32170,8 @@ class SCIMApi {
 			{  }, 
 			null, 
 			['PureCloud OAuth'], 
-			['application/scim+json', 'application/json'], 
-			['application/scim+json', 'application/json']
+			['application/json', 'application/scim+json'], 
+			['application/json', 'application/scim+json']
 		);
 	}
 
@@ -32190,8 +32195,8 @@ class SCIMApi {
 			{  }, 
 			null, 
 			['PureCloud OAuth'], 
-			['application/scim+json', 'application/json'], 
-			['application/scim+json', 'application/json']
+			['application/json', 'application/scim+json'], 
+			['application/json', 'application/scim+json']
 		);
 	}
 
@@ -32214,8 +32219,8 @@ class SCIMApi {
 			{  }, 
 			null, 
 			['PureCloud OAuth'], 
-			['application/scim+json', 'application/json'], 
-			['application/scim+json', 'application/json']
+			['application/json', 'application/scim+json'], 
+			['application/json', 'application/scim+json']
 		);
 	}
 
@@ -32238,8 +32243,8 @@ class SCIMApi {
 			{  }, 
 			null, 
 			['PureCloud OAuth'], 
-			['application/scim+json', 'application/json'], 
-			['application/scim+json', 'application/json']
+			['application/json', 'application/scim+json'], 
+			['application/json', 'application/scim+json']
 		);
 	}
 
@@ -32269,8 +32274,8 @@ class SCIMApi {
 			{  }, 
 			null, 
 			['PureCloud OAuth'], 
-			['application/scim+json', 'application/json'], 
-			['application/scim+json', 'application/json']
+			['application/json', 'application/scim+json'], 
+			['application/json', 'application/scim+json']
 		);
 	}
 
@@ -32297,8 +32302,8 @@ class SCIMApi {
 			{  }, 
 			null, 
 			['PureCloud OAuth'], 
-			['application/scim+json', 'application/json'], 
-			['application/scim+json', 'application/json']
+			['application/json', 'application/scim+json'], 
+			['application/json', 'application/scim+json']
 		);
 	}
 
@@ -32331,8 +32336,8 @@ class SCIMApi {
 			{  }, 
 			body, 
 			['PureCloud OAuth'], 
-			['application/scim+json', 'application/json'], 
-			['application/scim+json', 'application/json']
+			['application/json', 'application/scim+json'], 
+			['application/json', 'application/scim+json']
 		);
 	}
 
@@ -32365,8 +32370,8 @@ class SCIMApi {
 			{  }, 
 			body, 
 			['PureCloud OAuth'], 
-			['application/scim+json', 'application/json'], 
-			['application/scim+json', 'application/json']
+			['application/json', 'application/scim+json'], 
+			['application/json', 'application/scim+json']
 		);
 	}
 
@@ -32399,8 +32404,8 @@ class SCIMApi {
 			{  }, 
 			body, 
 			['PureCloud OAuth'], 
-			['application/scim+json', 'application/json'], 
-			['application/scim+json', 'application/json']
+			['application/json', 'application/scim+json'], 
+			['application/json', 'application/scim+json']
 		);
 	}
 
@@ -32433,8 +32438,8 @@ class SCIMApi {
 			{  }, 
 			body, 
 			['PureCloud OAuth'], 
-			['application/scim+json', 'application/json'], 
-			['application/scim+json', 'application/json']
+			['application/json', 'application/scim+json'], 
+			['application/json', 'application/scim+json']
 		);
 	}
 
@@ -32458,8 +32463,8 @@ class SCIMApi {
 			{  }, 
 			body, 
 			['PureCloud OAuth'], 
-			['application/scim+json', 'application/json'], 
-			['application/scim+json', 'application/json']
+			['application/json', 'application/scim+json'], 
+			['application/json', 'application/scim+json']
 		);
 	}
 
@@ -32483,8 +32488,8 @@ class SCIMApi {
 			{  }, 
 			body, 
 			['PureCloud OAuth'], 
-			['application/scim+json', 'application/json'], 
-			['application/scim+json', 'application/json']
+			['application/json', 'application/scim+json'], 
+			['application/json', 'application/scim+json']
 		);
 	}
 
@@ -32508,8 +32513,8 @@ class SCIMApi {
 			{  }, 
 			body, 
 			['PureCloud OAuth'], 
-			['application/scim+json', 'application/json'], 
-			['application/scim+json', 'application/json']
+			['application/json', 'application/scim+json'], 
+			['application/json', 'application/scim+json']
 		);
 	}
 
@@ -32533,8 +32538,8 @@ class SCIMApi {
 			{  }, 
 			body, 
 			['PureCloud OAuth'], 
-			['application/scim+json', 'application/json'], 
-			['application/scim+json', 'application/json']
+			['application/json', 'application/scim+json'], 
+			['application/json', 'application/scim+json']
 		);
 	}
 
@@ -32567,8 +32572,8 @@ class SCIMApi {
 			{  }, 
 			body, 
 			['PureCloud OAuth'], 
-			['application/scim+json', 'application/json'], 
-			['application/scim+json', 'application/json']
+			['application/json', 'application/scim+json'], 
+			['application/json', 'application/scim+json']
 		);
 	}
 
@@ -32601,8 +32606,8 @@ class SCIMApi {
 			{  }, 
 			body, 
 			['PureCloud OAuth'], 
-			['application/scim+json', 'application/json'], 
-			['application/scim+json', 'application/json']
+			['application/json', 'application/scim+json'], 
+			['application/json', 'application/scim+json']
 		);
 	}
 
@@ -32635,8 +32640,8 @@ class SCIMApi {
 			{  }, 
 			body, 
 			['PureCloud OAuth'], 
-			['application/scim+json', 'application/json'], 
-			['application/scim+json', 'application/json']
+			['application/json', 'application/scim+json'], 
+			['application/json', 'application/scim+json']
 		);
 	}
 
@@ -32669,8 +32674,8 @@ class SCIMApi {
 			{  }, 
 			body, 
 			['PureCloud OAuth'], 
-			['application/scim+json', 'application/json'], 
-			['application/scim+json', 'application/json']
+			['application/json', 'application/scim+json'], 
+			['application/json', 'application/scim+json']
 		);
 	}
 
@@ -32680,7 +32685,7 @@ class ScriptsApi {
 	/**
 	 * Scripts service.
 	 * @module purecloud-platform-client-v2/api/ScriptsApi
-	 * @version 88.0.0
+	 * @version 89.0.0
 	 */
 
 	/**
@@ -33033,7 +33038,7 @@ class SearchApi {
 	/**
 	 * Search service.
 	 * @module purecloud-platform-client-v2/api/SearchApi
-	 * @version 88.0.0
+	 * @version 89.0.0
 	 */
 
 	/**
@@ -33514,11 +33519,62 @@ class SearchApi {
 
 }
 
+class SpeechTextAnalyticsApi {
+	/**
+	 * SpeechTextAnalytics service.
+	 * @module purecloud-platform-client-v2/api/SpeechTextAnalyticsApi
+	 * @version 89.0.0
+	 */
+
+	/**
+	 * Constructs a new SpeechTextAnalyticsApi. 
+	 * @alias module:purecloud-platform-client-v2/api/SpeechTextAnalyticsApi
+	 * @class
+	 * @param {module:purecloud-platform-client-v2/ApiClient} apiClient Optional API client implementation to use,
+	 * default to {@link module:purecloud-platform-client-v2/ApiClient#instance} if unspecified.
+	 */
+	constructor(apiClient) {
+		this.apiClient = apiClient || ApiClient.instance;
+	}
+
+
+	/**
+	 * Get the pre-signed S3 URL for the transcript of a specific communication of a conversation
+	 * 
+	 * @param {String} conversationId Conversation ID
+	 * @param {String} communicationId Communication ID
+	 */
+	getSpeechandtextanalyticsConversationCommunicationTranscripturl(conversationId, communicationId) { 
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null) {
+			throw 'Missing the required parameter "conversationId" when calling getSpeechandtextanalyticsConversationCommunicationTranscripturl';
+		}
+		// verify the required parameter 'communicationId' is set
+		if (communicationId === undefined || communicationId === null) {
+			throw 'Missing the required parameter "communicationId" when calling getSpeechandtextanalyticsConversationCommunicationTranscripturl';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/speechandtextanalytics/conversations/{conversationId}/communications/{communicationId}/transcripturl', 
+			'GET', 
+			{ 'conversationId': conversationId,'communicationId': communicationId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+}
+
 class StationsApi {
 	/**
 	 * Stations service.
 	 * @module purecloud-platform-client-v2/api/StationsApi
-	 * @version 88.0.0
+	 * @version 89.0.0
 	 */
 
 	/**
@@ -33665,7 +33721,7 @@ class SuggestApi {
 	/**
 	 * Suggest service.
 	 * @module purecloud-platform-client-v2/api/SuggestApi
-	 * @version 88.0.0
+	 * @version 89.0.0
 	 */
 
 	/**
@@ -33804,7 +33860,7 @@ class TelephonyApi {
 	/**
 	 * Telephony service.
 	 * @module purecloud-platform-client-v2/api/TelephonyApi
-	 * @version 88.0.0
+	 * @version 89.0.0
 	 */
 
 	/**
@@ -33912,7 +33968,7 @@ class TelephonyProvidersEdgeApi {
 	/**
 	 * TelephonyProvidersEdge service.
 	 * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-	 * @version 88.0.0
+	 * @version 89.0.0
 	 */
 
 	/**
@@ -37489,7 +37545,7 @@ class TextbotsApi {
 	/**
 	 * Textbots service.
 	 * @module purecloud-platform-client-v2/api/TextbotsApi
-	 * @version 88.0.0
+	 * @version 89.0.0
 	 */
 
 	/**
@@ -37535,7 +37591,7 @@ class TokensApi {
 	/**
 	 * Tokens service.
 	 * @module purecloud-platform-client-v2/api/TokensApi
-	 * @version 88.0.0
+	 * @version 89.0.0
 	 */
 
 	/**
@@ -37621,7 +37677,7 @@ class UploadsApi {
 	/**
 	 * Uploads service.
 	 * @module purecloud-platform-client-v2/api/UploadsApi
-	 * @version 88.0.0
+	 * @version 89.0.0
 	 */
 
 	/**
@@ -37667,7 +37723,7 @@ class UsageApi {
 	/**
 	 * Usage service.
 	 * @module purecloud-platform-client-v2/api/UsageApi
-	 * @version 88.0.0
+	 * @version 89.0.0
 	 */
 
 	/**
@@ -37738,7 +37794,7 @@ class UserRecordingsApi {
 	/**
 	 * UserRecordings service.
 	 * @module purecloud-platform-client-v2/api/UserRecordingsApi
-	 * @version 88.0.0
+	 * @version 89.0.0
 	 */
 
 	/**
@@ -37922,7 +37978,7 @@ class UsersApi {
 	/**
 	 * Users service.
 	 * @module purecloud-platform-client-v2/api/UsersApi
-	 * @version 88.0.0
+	 * @version 89.0.0
 	 */
 
 	/**
@@ -39993,7 +40049,7 @@ class UtilitiesApi {
 	/**
 	 * Utilities service.
 	 * @module purecloud-platform-client-v2/api/UtilitiesApi
-	 * @version 88.0.0
+	 * @version 89.0.0
 	 */
 
 	/**
@@ -40104,7 +40160,7 @@ class VoicemailApi {
 	/**
 	 * Voicemail service.
 	 * @module purecloud-platform-client-v2/api/VoicemailApi
-	 * @version 88.0.0
+	 * @version 89.0.0
 	 */
 
 	/**
@@ -40741,7 +40797,7 @@ class WebChatApi {
 	/**
 	 * WebChat service.
 	 * @module purecloud-platform-client-v2/api/WebChatApi
-	 * @version 88.0.0
+	 * @version 89.0.0
 	 */
 
 	/**
@@ -41285,7 +41341,7 @@ class WidgetsApi {
 	/**
 	 * Widgets service.
 	 * @module purecloud-platform-client-v2/api/WidgetsApi
-	 * @version 88.0.0
+	 * @version 89.0.0
 	 */
 
 	/**
@@ -41431,7 +41487,7 @@ class WorkforceManagementApi {
 	/**
 	 * WorkforceManagement service.
 	 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-	 * @version 88.0.0
+	 * @version 89.0.0
 	 */
 
 	/**
@@ -45485,7 +45541,7 @@ class WorkforceManagementApi {
  * </pre>
  * </p>
  * @module purecloud-platform-client-v2/index
- * @version 88.0.0
+ * @version 89.0.0
  */
 class platformClient {
 	constructor() {
@@ -45699,6 +45755,11 @@ class platformClient {
 		 * @property {module:purecloud-platform-client-v2/api/SearchApi}
 		 */
 		this.SearchApi = SearchApi;
+		/**
+		 * The SpeechTextAnalyticsApi service constructor.
+		 * @property {module:purecloud-platform-client-v2/api/SpeechTextAnalyticsApi}
+		 */
+		this.SpeechTextAnalyticsApi = SpeechTextAnalyticsApi;
 		/**
 		 * The StationsApi service constructor.
 		 * @property {module:purecloud-platform-client-v2/api/StationsApi}

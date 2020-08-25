@@ -215,7 +215,7 @@ Delete a queue
 
 
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * routing:queue:delete
 
@@ -274,7 +274,7 @@ Delete queue member
 
 
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * routing:queue:edit
 
@@ -331,7 +331,7 @@ Delete a wrap-up code from a queue
 
 
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * routing:queue:edit
 
@@ -1333,7 +1333,7 @@ Get details about this queue.
 
 
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * routing:queue:view
 
@@ -1388,7 +1388,7 @@ Get Estimated Wait Time
 
 
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * routing:queue:view
 
@@ -1447,7 +1447,7 @@ Get Estimated Wait Time
 
 
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * routing:queue:view
 
@@ -1504,7 +1504,7 @@ Get the members of this queue
 
 
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * routing:queue:view
 
@@ -1583,7 +1583,7 @@ Get the wrap-up codes for a queue
 
 
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * routing:queue:view
 
@@ -2984,7 +2984,7 @@ Update the ring number OR joined status for a User in a Queue
 
 
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * routing:queue:edit
 
@@ -3496,7 +3496,7 @@ Join or unjoin a set of users for a queue
 
 
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * routing:queue:edit
 
@@ -4086,7 +4086,7 @@ Join or unjoin a queue for a user
 
 
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * routing:queue:join
 
@@ -5621,7 +5621,7 @@ Bulk add or delete up to 100 queue members
 
 
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * routing:queue:edit
 
@@ -5707,7 +5707,7 @@ Add up to 100 wrap-up codes to a queue
 
 
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * routing:queue:edit
 

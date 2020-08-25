@@ -1407,8 +1407,8 @@ GenericSAML <a href="#" onclick="return copyGenericSAMLExample()">Copy</a>
 { 
   "id": String, 
   "name": String, 
-  "logoImageData": String, 
   "relyingPartyIdentifier": String, 
+  "logoImageData": String, 
   "endpointCompression": Boolean, 
   "certificate": String, 
   "issuerURI": String, 

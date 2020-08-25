@@ -1832,6 +1832,12 @@ ScimV2Group <a href="#" onclick="return copyScimV2GroupExample()">Copy</a>
     "value": String, 
     "$ref": String, 
   },  
+  "meta": { 
+    "resourceType": String, 
+    "lastModified": Date, 
+    "location": String, 
+    "version": String, 
+  },  
 }
 ```
 
@@ -2050,6 +2056,12 @@ ScimV2Group <a href="#" onclick="return copyScimV2GroupExample()">Copy</a>
     "type": String, 
     "value": String, 
     "$ref": String, 
+  },  
+  "meta": { 
+    "resourceType": String, 
+    "lastModified": Date, 
+    "location": String, 
+    "version": String, 
   },  
 }
 ```
@@ -2270,6 +2282,12 @@ ScimV2Group <a href="#" onclick="return copyScimV2GroupExample()">Copy</a>
     "value": String, 
     "$ref": String, 
   },  
+  "meta": { 
+    "resourceType": String, 
+    "lastModified": Date, 
+    "location": String, 
+    "version": String, 
+  },  
 }
 ```
 
@@ -2409,6 +2427,12 @@ ScimV2User <a href="#" onclick="return copyScimV2UserExample()">Copy</a>
       "value": String, 
     },  
   },  
+  "meta": { 
+    "resourceType": String, 
+    "lastModified": Date, 
+    "location": String, 
+    "version": String, 
+  },  
 }
 ```
 
@@ -2502,6 +2526,12 @@ ScimV2Group <a href="#" onclick="return copyScimV2GroupExample()">Copy</a>
     "type": String, 
     "value": String, 
     "$ref": String, 
+  },  
+  "meta": { 
+    "resourceType": String, 
+    "lastModified": Date, 
+    "location": String, 
+    "version": String, 
   },  
 }
 ```
@@ -2641,6 +2671,12 @@ ScimV2User <a href="#" onclick="return copyScimV2UserExample()">Copy</a>
       "authority": String, 
       "value": String, 
     },  
+  },  
+  "meta": { 
+    "resourceType": String, 
+    "lastModified": Date, 
+    "location": String, 
+    "version": String, 
   },  
 }
 ```

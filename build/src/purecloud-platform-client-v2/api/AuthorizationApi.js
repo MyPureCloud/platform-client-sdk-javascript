@@ -5,7 +5,7 @@ class AuthorizationApi {
 	/**
 	 * Authorization service.
 	 * @module purecloud-platform-client-v2/api/AuthorizationApi
-	 * @version 88.0.0
+	 * @version 89.0.0
 	 */
 
 	/**
@@ -145,11 +145,11 @@ class AuthorizationApi {
 	 * @param {Number} opts.pageSize The total page size requested (default to 25)
 	 * @param {Number} opts.pageNumber The page number requested (default to 1)
 	 * @param {String} opts.sortBy variable name requested to sort by
-	 * @param {Array.<Object>} opts.expand variable name requested by expand list
+	 * @param {Array.<String>} opts.expand variable name requested by expand list
 	 * @param {String} opts.nextPage next page token
 	 * @param {String} opts.previousPage Previous page token
 	 * @param {Boolean} opts.objectCount Include the count of objects contained in the division (default to false)
-	 * @param {Array.<Object>} opts.id Optionally request specific divisions by their IDs
+	 * @param {Array.<String>} opts.id Optionally request specific divisions by their IDs
 	 * @param {String} opts.name Search term to filter by division name
 	 */
 	getAuthorizationDivisions(opts) { 
@@ -416,7 +416,7 @@ class AuthorizationApi {
 	 * @param {Number} opts.pageSize The total page size requested (default to 25)
 	 * @param {Number} opts.pageNumber The page number requested (default to 1)
 	 * @param {String} opts.sortBy variable name requested to sort by
-	 * @param {Array.<Object>} opts.expand variable name requested by expand list
+	 * @param {Array.<String>} opts.expand variable name requested by expand list
 	 * @param {String} opts.nextPage next page token
 	 * @param {String} opts.previousPage Previous page token
 	 */
@@ -479,12 +479,12 @@ class AuthorizationApi {
 	 * @param {Number} opts.pageSize The total page size requested (default to 25)
 	 * @param {Number} opts.pageNumber The page number requested (default to 1)
 	 * @param {String} opts.sortBy variable name requested to sort by
-	 * @param {Array.<Object>} opts.expand variable name requested by expand list
+	 * @param {Array.<String>} opts.expand variable name requested by expand list
 	 * @param {String} opts.nextPage next page token
 	 * @param {String} opts.previousPage Previous page token
 	 * @param {String} opts.name 
-	 * @param {Array.<Object>} opts.permission 
-	 * @param {Array.<Object>} opts.defaultRoleId 
+	 * @param {Array.<String>} opts.permission 
+	 * @param {Array.<String>} opts.defaultRoleId 
 	 * @param {Boolean} opts.userCount  (default to true)
 	 * @param {Array.<String>} opts.id id
 	 */

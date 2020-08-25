@@ -511,7 +511,7 @@ apiInstance.getCoachingAppointmentsMe(opts)
 
 <a name="getCoachingNotification"></a>
 
-# CoachingNotification getCoachingNotification(notificationId)
+# CoachingNotification getCoachingNotification(notificationId, opts)
 
 
 
@@ -541,8 +541,11 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.CoachingApi();
 
 let notificationId = "notificationId_example"; // String | The ID of the notification.
+let opts = { 
+  'expand': ["expand_example"] // [String] | Indicates a field in the response which should be expanded.
+};
 
-apiInstance.getCoachingNotification(notificationId)
+apiInstance.getCoachingNotification(notificationId, opts)
   .then((data) => {
     console.log(`getCoachingNotification success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -558,6 +561,7 @@ apiInstance.getCoachingNotification(notificationId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **notificationId** | **String** | The ID of the notification. |  |
+ **expand** | **[String]** | Indicates a field in the response which should be expanded. | [optional] <br />**Values**: appointment |
 {: class="table table-striped"}
 
 ### Return type
@@ -596,7 +600,8 @@ let apiInstance = new platformClient.CoachingApi();
 
 let opts = { 
   'pageNumber': 1, // Number | Page number
-  'pageSize': 25 // Number | Page size
+  'pageSize': 25, // Number | Page size
+  'expand': ["expand_example"] // [String] | Indicates a field in the response which should be expanded.
 };
 
 apiInstance.getCoachingNotifications(opts)
@@ -616,6 +621,7 @@ apiInstance.getCoachingNotifications(opts)
 | ------------- | ------------- | ------------- | ------------- |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **expand** | **[String]** | Indicates a field in the response which should be expanded. | [optional] <br />**Values**: appointment |
 {: class="table table-striped"}
 
 ### Return type
@@ -949,6 +955,37 @@ CoachingNotification <a href="#" onclick="return copyCoachingNotificationExample
   },  
   "appointment": { 
     "id": String, 
+    "name": String, 
+    "description": String, 
+    "dateStart": Date, 
+    "lengthInMinutes": Number, 
+    "status": String, 
+    "facilitator": { 
+      "id": String, 
+      "selfUri": String, 
+    },  
+    "attendees": { 
+      "id": String, 
+      "selfUri": String, 
+    },  
+    "createdBy": { 
+      "id": String, 
+      "selfUri": String, 
+    },  
+    "dateCreated": Date, 
+    "modifiedBy": { 
+      "id": String, 
+      "selfUri": String, 
+    },  
+    "dateModified": Date, 
+    "conversations": { 
+      "id": String, 
+      "selfUri": String, 
+    },  
+    "documents": { 
+      "id": String, 
+      "selfUri": String, 
+    },  
     "selfUri": String, 
   },  
   "selfUri": String, 

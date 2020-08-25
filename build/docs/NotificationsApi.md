@@ -119,7 +119,7 @@ apiInstance.getNotificationsAvailabletopics(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: description, requiresPermissions, schema |
+ **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: description, requiresPermissions, schema, transports |
 {: class="table table-striped"}
 
 ### Return type

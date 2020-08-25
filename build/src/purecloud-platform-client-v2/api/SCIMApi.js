@@ -5,7 +5,7 @@ class SCIMApi {
 	/**
 	 * SCIM service.
 	 * @module purecloud-platform-client-v2/api/SCIMApi
-	 * @version 88.0.0
+	 * @version 89.0.0
 	 */
 
 	/**
@@ -44,8 +44,8 @@ class SCIMApi {
 			{  }, 
 			null, 
 			['PureCloud OAuth'], 
-			['application/scim+json', 'application/json'], 
-			['application/scim+json', 'application/json']
+			['application/json', 'application/scim+json'], 
+			['application/json', 'application/scim+json']
 		);
 	}
 
@@ -73,8 +73,8 @@ class SCIMApi {
 			{  }, 
 			null, 
 			['PureCloud OAuth'], 
-			['application/scim+json', 'application/json'], 
-			['application/scim+json', 'application/json']
+			['application/json', 'application/scim+json'], 
+			['application/json', 'application/scim+json']
 		);
 	}
 
@@ -102,8 +102,8 @@ class SCIMApi {
 			{  }, 
 			null, 
 			['PureCloud OAuth'], 
-			['application/scim+json', 'application/json'], 
-			['application/scim+json', 'application/json']
+			['application/json', 'application/scim+json'], 
+			['application/json', 'application/scim+json']
 		);
 	}
 
@@ -131,8 +131,8 @@ class SCIMApi {
 			{  }, 
 			null, 
 			['PureCloud OAuth'], 
-			['application/scim+json', 'application/json'], 
-			['application/scim+json', 'application/json']
+			['application/json', 'application/scim+json'], 
+			['application/json', 'application/scim+json']
 		);
 	}
 
@@ -162,8 +162,8 @@ class SCIMApi {
 			{  }, 
 			null, 
 			['PureCloud OAuth'], 
-			['application/scim+json', 'application/json'], 
-			['application/scim+json', 'application/json']
+			['application/json', 'application/scim+json'], 
+			['application/json', 'application/scim+json']
 		);
 	}
 
@@ -190,8 +190,8 @@ class SCIMApi {
 			{  }, 
 			null, 
 			['PureCloud OAuth'], 
-			['application/scim+json', 'application/json'], 
-			['application/scim+json', 'application/json']
+			['application/json', 'application/scim+json'], 
+			['application/json', 'application/scim+json']
 		);
 	}
 
@@ -215,8 +215,8 @@ class SCIMApi {
 			{  }, 
 			null, 
 			['PureCloud OAuth'], 
-			['application/scim+json', 'application/json'], 
-			['application/scim+json', 'application/json']
+			['application/json', 'application/scim+json'], 
+			['application/json', 'application/scim+json']
 		);
 	}
 
@@ -235,8 +235,8 @@ class SCIMApi {
 			{  }, 
 			null, 
 			['PureCloud OAuth'], 
-			['application/scim+json', 'application/json'], 
-			['application/scim+json', 'application/json']
+			['application/json', 'application/scim+json'], 
+			['application/json', 'application/scim+json']
 		);
 	}
 
@@ -260,8 +260,8 @@ class SCIMApi {
 			{  }, 
 			null, 
 			['PureCloud OAuth'], 
-			['application/scim+json', 'application/json'], 
-			['application/scim+json', 'application/json']
+			['application/json', 'application/scim+json'], 
+			['application/json', 'application/scim+json']
 		);
 	}
 
@@ -284,8 +284,8 @@ class SCIMApi {
 			{  }, 
 			null, 
 			['PureCloud OAuth'], 
-			['application/scim+json', 'application/json'], 
-			['application/scim+json', 'application/json']
+			['application/json', 'application/scim+json'], 
+			['application/json', 'application/scim+json']
 		);
 	}
 
@@ -308,8 +308,8 @@ class SCIMApi {
 			{  }, 
 			null, 
 			['PureCloud OAuth'], 
-			['application/scim+json', 'application/json'], 
-			['application/scim+json', 'application/json']
+			['application/json', 'application/scim+json'], 
+			['application/json', 'application/scim+json']
 		);
 	}
 
@@ -339,8 +339,8 @@ class SCIMApi {
 			{  }, 
 			null, 
 			['PureCloud OAuth'], 
-			['application/scim+json', 'application/json'], 
-			['application/scim+json', 'application/json']
+			['application/json', 'application/scim+json'], 
+			['application/json', 'application/scim+json']
 		);
 	}
 
@@ -367,8 +367,8 @@ class SCIMApi {
 			{  }, 
 			null, 
 			['PureCloud OAuth'], 
-			['application/scim+json', 'application/json'], 
-			['application/scim+json', 'application/json']
+			['application/json', 'application/scim+json'], 
+			['application/json', 'application/scim+json']
 		);
 	}
 
@@ -398,8 +398,8 @@ class SCIMApi {
 			{  }, 
 			null, 
 			['PureCloud OAuth'], 
-			['application/scim+json', 'application/json'], 
-			['application/scim+json', 'application/json']
+			['application/json', 'application/scim+json'], 
+			['application/json', 'application/scim+json']
 		);
 	}
 
@@ -430,8 +430,8 @@ class SCIMApi {
 			{  }, 
 			null, 
 			['PureCloud OAuth'], 
-			['application/scim+json', 'application/json'], 
-			['application/scim+json', 'application/json']
+			['application/json', 'application/scim+json'], 
+			['application/json', 'application/scim+json']
 		);
 	}
 
@@ -455,8 +455,8 @@ class SCIMApi {
 			{  }, 
 			null, 
 			['PureCloud OAuth'], 
-			['application/scim+json', 'application/json'], 
-			['application/scim+json', 'application/json']
+			['application/json', 'application/scim+json'], 
+			['application/json', 'application/scim+json']
 		);
 	}
 
@@ -475,8 +475,8 @@ class SCIMApi {
 			{  }, 
 			null, 
 			['PureCloud OAuth'], 
-			['application/scim+json', 'application/json'], 
-			['application/scim+json', 'application/json']
+			['application/json', 'application/scim+json'], 
+			['application/json', 'application/scim+json']
 		);
 	}
 
@@ -500,8 +500,8 @@ class SCIMApi {
 			{  }, 
 			null, 
 			['PureCloud OAuth'], 
-			['application/scim+json', 'application/json'], 
-			['application/scim+json', 'application/json']
+			['application/json', 'application/scim+json'], 
+			['application/json', 'application/scim+json']
 		);
 	}
 
@@ -524,8 +524,8 @@ class SCIMApi {
 			{  }, 
 			null, 
 			['PureCloud OAuth'], 
-			['application/scim+json', 'application/json'], 
-			['application/scim+json', 'application/json']
+			['application/json', 'application/scim+json'], 
+			['application/json', 'application/scim+json']
 		);
 	}
 
@@ -548,8 +548,8 @@ class SCIMApi {
 			{  }, 
 			null, 
 			['PureCloud OAuth'], 
-			['application/scim+json', 'application/json'], 
-			['application/scim+json', 'application/json']
+			['application/json', 'application/scim+json'], 
+			['application/json', 'application/scim+json']
 		);
 	}
 
@@ -579,8 +579,8 @@ class SCIMApi {
 			{  }, 
 			null, 
 			['PureCloud OAuth'], 
-			['application/scim+json', 'application/json'], 
-			['application/scim+json', 'application/json']
+			['application/json', 'application/scim+json'], 
+			['application/json', 'application/scim+json']
 		);
 	}
 
@@ -607,8 +607,8 @@ class SCIMApi {
 			{  }, 
 			null, 
 			['PureCloud OAuth'], 
-			['application/scim+json', 'application/json'], 
-			['application/scim+json', 'application/json']
+			['application/json', 'application/scim+json'], 
+			['application/json', 'application/scim+json']
 		);
 	}
 
@@ -641,8 +641,8 @@ class SCIMApi {
 			{  }, 
 			body, 
 			['PureCloud OAuth'], 
-			['application/scim+json', 'application/json'], 
-			['application/scim+json', 'application/json']
+			['application/json', 'application/scim+json'], 
+			['application/json', 'application/scim+json']
 		);
 	}
 
@@ -675,8 +675,8 @@ class SCIMApi {
 			{  }, 
 			body, 
 			['PureCloud OAuth'], 
-			['application/scim+json', 'application/json'], 
-			['application/scim+json', 'application/json']
+			['application/json', 'application/scim+json'], 
+			['application/json', 'application/scim+json']
 		);
 	}
 
@@ -709,8 +709,8 @@ class SCIMApi {
 			{  }, 
 			body, 
 			['PureCloud OAuth'], 
-			['application/scim+json', 'application/json'], 
-			['application/scim+json', 'application/json']
+			['application/json', 'application/scim+json'], 
+			['application/json', 'application/scim+json']
 		);
 	}
 
@@ -743,8 +743,8 @@ class SCIMApi {
 			{  }, 
 			body, 
 			['PureCloud OAuth'], 
-			['application/scim+json', 'application/json'], 
-			['application/scim+json', 'application/json']
+			['application/json', 'application/scim+json'], 
+			['application/json', 'application/scim+json']
 		);
 	}
 
@@ -768,8 +768,8 @@ class SCIMApi {
 			{  }, 
 			body, 
 			['PureCloud OAuth'], 
-			['application/scim+json', 'application/json'], 
-			['application/scim+json', 'application/json']
+			['application/json', 'application/scim+json'], 
+			['application/json', 'application/scim+json']
 		);
 	}
 
@@ -793,8 +793,8 @@ class SCIMApi {
 			{  }, 
 			body, 
 			['PureCloud OAuth'], 
-			['application/scim+json', 'application/json'], 
-			['application/scim+json', 'application/json']
+			['application/json', 'application/scim+json'], 
+			['application/json', 'application/scim+json']
 		);
 	}
 
@@ -818,8 +818,8 @@ class SCIMApi {
 			{  }, 
 			body, 
 			['PureCloud OAuth'], 
-			['application/scim+json', 'application/json'], 
-			['application/scim+json', 'application/json']
+			['application/json', 'application/scim+json'], 
+			['application/json', 'application/scim+json']
 		);
 	}
 
@@ -843,8 +843,8 @@ class SCIMApi {
 			{  }, 
 			body, 
 			['PureCloud OAuth'], 
-			['application/scim+json', 'application/json'], 
-			['application/scim+json', 'application/json']
+			['application/json', 'application/scim+json'], 
+			['application/json', 'application/scim+json']
 		);
 	}
 
@@ -877,8 +877,8 @@ class SCIMApi {
 			{  }, 
 			body, 
 			['PureCloud OAuth'], 
-			['application/scim+json', 'application/json'], 
-			['application/scim+json', 'application/json']
+			['application/json', 'application/scim+json'], 
+			['application/json', 'application/scim+json']
 		);
 	}
 
@@ -911,8 +911,8 @@ class SCIMApi {
 			{  }, 
 			body, 
 			['PureCloud OAuth'], 
-			['application/scim+json', 'application/json'], 
-			['application/scim+json', 'application/json']
+			['application/json', 'application/scim+json'], 
+			['application/json', 'application/scim+json']
 		);
 	}
 
@@ -945,8 +945,8 @@ class SCIMApi {
 			{  }, 
 			body, 
 			['PureCloud OAuth'], 
-			['application/scim+json', 'application/json'], 
-			['application/scim+json', 'application/json']
+			['application/json', 'application/scim+json'], 
+			['application/json', 'application/scim+json']
 		);
 	}
 
@@ -979,8 +979,8 @@ class SCIMApi {
 			{  }, 
 			body, 
 			['PureCloud OAuth'], 
-			['application/scim+json', 'application/json'], 
-			['application/scim+json', 'application/json']
+			['application/json', 'application/scim+json'], 
+			['application/json', 'application/scim+json']
 		);
 	}
 

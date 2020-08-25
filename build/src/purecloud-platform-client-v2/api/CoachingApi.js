@@ -5,7 +5,7 @@ class CoachingApi {
 	/**
 	 * Coaching service.
 	 * @module purecloud-platform-client-v2/api/CoachingApi
-	 * @version 88.0.0
+	 * @version 89.0.0
 	 */
 
 	/**
@@ -257,8 +257,12 @@ class CoachingApi {
 	 * Get an existing notification
 	 * Permission not required if you are the owner of the notification.
 	 * @param {String} notificationId The ID of the notification.
+	 * @param {Object} opts Optional parameters
+	 * @param {Array.<String>} opts.expand Indicates a field in the response which should be expanded.
 	 */
-	getCoachingNotification(notificationId) { 
+	getCoachingNotification(notificationId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'notificationId' is set
 		if (notificationId === undefined || notificationId === null) {
 			throw 'Missing the required parameter "notificationId" when calling getCoachingNotification';
@@ -268,7 +272,7 @@ class CoachingApi {
 			'/api/v2/coaching/notifications/{notificationId}', 
 			'GET', 
 			{ 'notificationId': notificationId }, 
-			{  }, 
+			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -284,6 +288,7 @@ class CoachingApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {Array.<String>} opts.expand Indicates a field in the response which should be expanded.
 	 */
 	getCoachingNotifications(opts) { 
 		opts = opts || {};
@@ -293,7 +298,7 @@ class CoachingApi {
 			'/api/v2/coaching/notifications', 
 			'GET', 
 			{  }, 
-			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'] }, 
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') }, 
 			{  }, 
 			{  }, 
 			null, 
