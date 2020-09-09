@@ -1484,8 +1484,9 @@ Search users
 
 
 
-Requires NO permissions: 
+Requires ANY permissions: 
 
+* directory:user:view
 
 
 ### Request Body Schema
@@ -1581,6 +1582,7 @@ UserSearchRequest <a href="#" onclick="return copyUserSearchRequestExample()">Co
     "type": String, 
   },  
   "integrationPresenceSource": String, 
+  "enforcePermissions": Boolean, 
 }
 ```
 

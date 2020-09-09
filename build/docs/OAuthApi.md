@@ -705,6 +705,7 @@ OAuthClientRequest <a href="#" onclick="return copyOAuthClientRequestExample()">
     "divisionId": String, 
   },  
   "state": String, 
+  "dateToDelete": Date, 
 }
 ```
 
@@ -796,6 +797,7 @@ OAuthClientRequest <a href="#" onclick="return copyOAuthClientRequestExample()">
     "divisionId": String, 
   },  
   "state": String, 
+  "dateToDelete": Date, 
 }
 ```
 

@@ -486,6 +486,7 @@ declare namespace ArchitectApi {
 }
 
 declare class AuditApi {  
+  	getAuditsQueryRealtimeServicemapping(): Promise<Models.AuditQueryServiceMapping>; 
   	getAuditsQueryServicemapping(): Promise<Models.AuditQueryServiceMapping>; 
   	getAuditsQueryTransactionId(transactionId: string): Promise<Models.AuditQueryExecutionStatusResponse>; 
   	getAuditsQueryTransactionIdResults(transactionId: string, opts?: AuditApi.getAuditsQueryTransactionIdResultsOptions): Promise<Models.AuditQueryExecutionResultsResponse>; 
@@ -649,7 +650,8 @@ declare class CoachingApi {
   	patchCoachingAppointmentStatus(appointmentId: string, body: Models.CoachingAppointmentStatusDto): Promise<Models.CoachingAppointmentStatusDto>; 
   	patchCoachingNotification(notificationId: string, body: Models.CoachingNotification): Promise<Models.CoachingNotification>; 
   	postCoachingAppointmentAnnotations(appointmentId: string, body: Models.CoachingAnnotationCreateRequest): Promise<Models.CoachingAnnotation>; 
-  	postCoachingAppointments(body: Models.CreateCoachingAppointmentRequest): Promise<Models.CoachingAppointmentResponse>;
+  	postCoachingAppointments(body: Models.CreateCoachingAppointmentRequest): Promise<Models.CoachingAppointmentResponse>; 
+  	postCoachingAppointmentsAggregatesQuery(body: Models.CoachingAppointmentAggregateRequest): Promise<Models.CoachingAppointmentAggregateResponse>;
 }
 
 declare namespace CoachingApi { 
@@ -668,6 +670,9 @@ declare namespace CoachingApi {
 		"statuses"?: Array<string>;
 		"facilitatorIds"?: Array<string>;
 		"sortOrder"?: string;
+		"relationships"?: Array<string>;
+		"completionInterval"?: string;
+		"overdue"?: string;
 	}
 	export interface getCoachingAppointmentsMeOptions { 
 		"interval"?: string;
@@ -676,6 +681,9 @@ declare namespace CoachingApi {
 		"statuses"?: Array<string>;
 		"facilitatorIds"?: Array<string>;
 		"sortOrder"?: string;
+		"relationships"?: Array<string>;
+		"completionInterval"?: string;
+		"overdue"?: string;
 	}
 	export interface getCoachingNotificationOptions { 
 		"expand"?: Array<string>;
@@ -3170,6 +3178,7 @@ declare namespace SearchApi {
 }
 
 declare class SpeechTextAnalyticsApi {  
+  	getSpeechandtextanalyticsConversation(conversationId: string): Promise<Models.ConversationMetrics>; 
   	getSpeechandtextanalyticsConversationCommunicationTranscripturl(conversationId: string, communicationId: string): Promise<Models.TranscriptUrl>;
 }
 
@@ -4705,6 +4714,11 @@ declare namespace Models {
 		"value": string;
 	}
 	
+	export interface AnalyticsProposedAgent { 
+		"proposedAgentId"?: string;
+		"agentRank"?: number;
+	}
+	
 	export interface AnalyticsQueryAggregation { 
 		"type"?: string;
 		"dimension"?: string;
@@ -4782,6 +4796,8 @@ declare namespace Models {
 		"usedRouting"?: string;
 		"selectedAgentId"?: string;
 		"selectedAgentRank"?: number;
+		"agentAssistantId"?: string;
+		"proposedAgents"?: Array<Models.AnalyticsProposedAgent>;
 	}
 	
 	export interface AnalyticsSessionMetric { 
@@ -5092,11 +5108,8 @@ declare namespace Models {
 		"number"?: boolean;
 		"boolean"?: boolean;
 		"object"?: boolean;
-		"valueNode"?: boolean;
-		"containerNode"?: boolean;
-		"missingNode"?: boolean;
-		"pojo"?: boolean;
 		"floatingPointNumber"?: boolean;
+		"pojo"?: boolean;
 		"integralNumber"?: boolean;
 		"short"?: boolean;
 		"int"?: boolean;
@@ -5106,6 +5119,9 @@ declare namespace Models {
 		"bigInteger"?: boolean;
 		"textual"?: boolean;
 		"binary"?: boolean;
+		"valueNode"?: boolean;
+		"containerNode"?: boolean;
+		"missingNode"?: boolean;
 		"array"?: boolean;
 		"null"?: boolean;
 	}
@@ -5585,6 +5601,7 @@ declare namespace Models {
 	
 	export interface BuAgentSchedulesQueryResponse { 
 		"agentSchedules"?: Array<Models.BuAgentScheduleQueryResponse>;
+		"businessUnitTimeZone"?: string;
 	}
 	
 	export interface BuAgentSchedulesSearchResponse { 
@@ -6959,6 +6976,17 @@ declare namespace Models {
 		"pageCount"?: number;
 	}
 	
+	export interface CoachingAppointmentAggregateRequest { 
+		"interval": string;
+		"metrics"?: Array<string>;
+		"groupBy"?: Array<string>;
+		"filter": Models.QueryRequestFilter;
+	}
+	
+	export interface CoachingAppointmentAggregateResponse { 
+		"results"?: Array<Models.QueryResponseGroupedData>;
+	}
+	
 	export interface CoachingAppointmentReference { 
 		"id"?: string;
 		"selfUri"?: string;
@@ -6979,6 +7007,7 @@ declare namespace Models {
 		"dateModified"?: string;
 		"conversations"?: Array<Models.ConversationReference>;
 		"documents"?: Array<Models.DocumentReference>;
+		"isOverdue"?: boolean;
 		"selfUri"?: string;
 	}
 	
@@ -8930,6 +8959,12 @@ declare namespace Models {
 		"durationSeconds"?: number;
 		"endTime"?: string;
 		"additionalProperties"?: object;
+	}
+	
+	export interface ConversationMetrics { 
+		"conversation"?: Models.AddressableEntityRef;
+		"sentimentScore"?: number;
+		"sentimentTrend"?: number;
 	}
 	
 	export interface ConversationProperties { 
@@ -12363,11 +12398,10 @@ declare namespace Models {
 	}
 	
 	export interface ExternalOrganizationTrustorLink { 
-		"id"?: string;
 		"externalOrganizationId"?: string;
 		"trustorOrgId"?: string;
 		"dateCreated"?: string;
-		"selfUri"?: string;
+		"externalOrganizationUri"?: string;
 	}
 	
 	export interface FacebookAppCredentials { 
@@ -13022,8 +13056,8 @@ declare namespace Models {
 	export interface GenericSAML { 
 		"id"?: string;
 		"name"?: string;
-		"relyingPartyIdentifier"?: string;
 		"logoImageData"?: string;
+		"relyingPartyIdentifier"?: string;
 		"endpointCompression"?: boolean;
 		"certificate"?: string;
 		"issuerURI"?: string;
@@ -13868,11 +13902,8 @@ declare namespace Models {
 		"number"?: boolean;
 		"boolean"?: boolean;
 		"object"?: boolean;
-		"valueNode"?: boolean;
-		"containerNode"?: boolean;
-		"missingNode"?: boolean;
-		"pojo"?: boolean;
 		"floatingPointNumber"?: boolean;
+		"pojo"?: boolean;
 		"integralNumber"?: boolean;
 		"short"?: boolean;
 		"int"?: boolean;
@@ -13882,6 +13913,9 @@ declare namespace Models {
 		"bigInteger"?: boolean;
 		"textual"?: boolean;
 		"binary"?: boolean;
+		"valueNode"?: boolean;
+		"containerNode"?: boolean;
+		"missingNode"?: boolean;
 		"array"?: boolean;
 		"null"?: boolean;
 	}
@@ -15444,6 +15478,7 @@ declare namespace Models {
 		"scope"?: Array<string>;
 		"roleDivisions"?: Array<Models.RoleDivision>;
 		"state"?: string;
+		"dateToDelete"?: string;
 		"selfUri"?: string;
 	}
 	
@@ -15475,6 +15510,7 @@ declare namespace Models {
 		"scope"?: Array<string>;
 		"roleDivisions"?: Array<Models.RoleDivision>;
 		"state"?: string;
+		"dateToDelete"?: string;
 		"selfUri"?: string;
 	}
 	
@@ -15488,6 +15524,7 @@ declare namespace Models {
 		"scope"?: Array<string>;
 		"roleDivisions"?: Array<Models.RoleDivision>;
 		"state"?: string;
+		"dateToDelete"?: string;
 	}
 	
 	export interface OAuthLastTokenIssued { 
@@ -15599,6 +15636,7 @@ declare namespace Models {
 		"scope"?: Array<string>;
 		"roleDivisions"?: Array<Models.RoleDivision>;
 		"state"?: string;
+		"dateToDelete"?: string;
 		"organization"?: Models.NamedEntity;
 	}
 	
@@ -16049,8 +16087,6 @@ declare namespace Models {
 	}
 	
 	export interface Permissions { 
-		"id"?: string;
-		"name"?: string;
 		"ids": Array<string>;
 	}
 	
@@ -16587,6 +16623,40 @@ declare namespace Models {
 		"filters"?: Array<Models.ContentFilterItem>;
 		"attributeFilters"?: Array<Models.AttributeFilterItem>;
 		"includeShares"?: boolean;
+	}
+	
+	export interface QueryRequestClause { 
+		"type": string;
+		"predicates": Array<Models.QueryRequestPredicate>;
+	}
+	
+	export interface QueryRequestFilter { 
+		"type": string;
+		"clauses": Array<Models.QueryRequestClause>;
+	}
+	
+	export interface QueryRequestPredicate { 
+		"dimension": string;
+		"value": string;
+	}
+	
+	export interface QueryResponseData { 
+		"interval"?: string;
+		"metrics"?: Array<Models.QueryResponseMetric>;
+	}
+	
+	export interface QueryResponseGroupedData { 
+		"group"?: { [key: string]: string; };
+		"data"?: Array<Models.QueryResponseData>;
+	}
+	
+	export interface QueryResponseMetric { 
+		"metric"?: string;
+		"stats"?: Models.QueryResponseStats;
+	}
+	
+	export interface QueryResponseStats { 
+		"count"?: number;
 	}
 	
 	export interface QueryResult { 
@@ -19166,6 +19236,7 @@ declare namespace Models {
 	
 	export interface ReportingDataExportTopicDataExportNotification { 
 		"id"?: string;
+		"runId"?: string;
 		"name"?: string;
 		"status"?: string;
 		"exportFormat"?: string;
@@ -19214,6 +19285,7 @@ declare namespace Models {
 	export interface ReportingExportJobResponse { 
 		"id"?: string;
 		"name"?: string;
+		"runId": string;
 		"status": string;
 		"timeZone": string;
 		"exportFormat": string;
@@ -20712,6 +20784,38 @@ declare namespace Models {
 		"data"?: Array<Models.StatEventCampaignTopicDatum>;
 	}
 	
+	export interface StatEventFlowOutcomeTopicDatum { 
+		"interval"?: string;
+		"metrics"?: Array<Models.StatEventFlowOutcomeTopicMetric>;
+	}
+	
+	export interface StatEventFlowOutcomeTopicMetric { 
+		"metric"?: string;
+		"qualifier"?: string;
+		"stats"?: { [key: string]: number; };
+	}
+	
+	export interface StatEventFlowOutcomeTopicStatsNotification { 
+		"group"?: { [key: string]: string; };
+		"data"?: Array<Models.StatEventFlowOutcomeTopicDatum>;
+	}
+	
+	export interface StatEventFlowTopicDatum { 
+		"interval"?: string;
+		"metrics"?: Array<Models.StatEventFlowTopicMetric>;
+	}
+	
+	export interface StatEventFlowTopicMetric { 
+		"metric"?: string;
+		"qualifier"?: string;
+		"stats"?: { [key: string]: number; };
+	}
+	
+	export interface StatEventFlowTopicStatsNotification { 
+		"group"?: { [key: string]: string; };
+		"data"?: Array<Models.StatEventFlowTopicDatum>;
+	}
+	
 	export interface StatEventQueueTopicDatum { 
 		"interval"?: string;
 		"metrics"?: Array<Models.StatEventQueueTopicMetric>;
@@ -20742,6 +20846,22 @@ declare namespace Models {
 	export interface StatEventUserTopicStatsNotification { 
 		"group"?: { [key: string]: string; };
 		"data"?: Array<Models.StatEventUserTopicDatum>;
+	}
+	
+	export interface StatEventWrapUpCodeTopicDatum { 
+		"interval"?: string;
+		"metrics"?: Array<Models.StatEventWrapUpCodeTopicMetric>;
+	}
+	
+	export interface StatEventWrapUpCodeTopicMetric { 
+		"metric"?: string;
+		"qualifier"?: string;
+		"stats"?: { [key: string]: number; };
+	}
+	
+	export interface StatEventWrapUpCodeTopicStatsNotification { 
+		"group"?: { [key: string]: string; };
+		"data"?: Array<Models.StatEventWrapUpCodeTopicDatum>;
 	}
 	
 	export interface Station { 
@@ -22517,6 +22637,7 @@ declare namespace Models {
 		"name"?: string;
 		"user"?: Models.UserReference;
 		"managementUnit"?: Models.ManagementUnit;
+		"team"?: Models.Team;
 		"scheduledActivityCategory"?: string;
 		"systemPresence"?: string;
 		"organizationSecondaryPresenceId"?: string;
@@ -22583,6 +22704,7 @@ declare namespace Models {
 		"expand"?: Array<string>;
 		"query"?: Array<Models.UserSearchCriteria>;
 		"integrationPresenceSource"?: string;
+		"enforcePermissions"?: boolean;
 	}
 	
 	export interface UserSkillEntityListing { 
@@ -23166,6 +23288,7 @@ declare namespace Models {
 		"conversations"?: Array<Models.WemCoachingAppointmentTopicCoachingAppointmentConversation>;
 		"documents"?: Array<Models.WemCoachingAppointmentTopicCoachingAppointmentDocument>;
 		"changeType"?: string;
+		"dateCompleted"?: string;
 	}
 	
 	export interface WemCoachingAppointmentTopicUserReference { 
@@ -23529,7 +23652,7 @@ declare namespace Models {
 	}
 	
 	export interface WfmBusinessUnitReference { 
-		"id"?: string;
+		"id": string;
 		"selfUri"?: string;
 	}
 	
@@ -23693,9 +23816,9 @@ declare namespace Models {
 	}
 	
 	export interface WfmScheduleReference { 
-		"id"?: string;
-		"businessUnit"?: Models.WfmBusinessUnitReference;
-		"weekDate"?: string;
+		"id": string;
+		"businessUnit": Models.WfmBusinessUnitReference;
+		"weekDate": string;
 		"selfUri"?: string;
 	}
 	
@@ -23794,6 +23917,11 @@ declare namespace Models {
 		"id"?: string;
 	}
 	
+	export interface WfmUserScheduleAdherenceUpdatedMuTopicUriReference { 
+		"id"?: string;
+		"name"?: string;
+	}
+	
 	export interface WfmUserScheduleAdherenceUpdatedMuTopicUserReference { 
 		"id"?: string;
 	}
@@ -23801,6 +23929,7 @@ declare namespace Models {
 	export interface WfmUserScheduleAdherenceUpdatedMuTopicUserScheduleAdherenceUpdate { 
 		"user"?: Models.WfmUserScheduleAdherenceUpdatedMuTopicUserReference;
 		"managementUnitId"?: string;
+		"team"?: Models.WfmUserScheduleAdherenceUpdatedMuTopicUriReference;
 		"scheduledActivityCategory"?: string;
 		"systemPresence"?: string;
 		"organizationSecondaryPresenceId"?: string;
@@ -23816,8 +23945,45 @@ declare namespace Models {
 		"removedFromManagementUnit"?: boolean;
 	}
 	
+	export interface WfmUserScheduleAdherenceUpdatedTeamTopicQueueReference { 
+		"id"?: string;
+	}
+	
+	export interface WfmUserScheduleAdherenceUpdatedTeamTopicUriReference { 
+		"id"?: string;
+		"name"?: string;
+	}
+	
+	export interface WfmUserScheduleAdherenceUpdatedTeamTopicUserReference { 
+		"id"?: string;
+	}
+	
+	export interface WfmUserScheduleAdherenceUpdatedTeamTopicUserScheduleAdherenceUpdate { 
+		"user"?: Models.WfmUserScheduleAdherenceUpdatedTeamTopicUserReference;
+		"managementUnitId"?: string;
+		"team"?: Models.WfmUserScheduleAdherenceUpdatedTeamTopicUriReference;
+		"scheduledActivityCategory"?: string;
+		"systemPresence"?: string;
+		"organizationSecondaryPresenceId"?: string;
+		"routingStatus"?: string;
+		"actualActivityCategory"?: string;
+		"isOutOfOffice"?: boolean;
+		"adherenceState"?: string;
+		"impact"?: string;
+		"adherenceChangeTime"?: string;
+		"presenceUpdateTime"?: string;
+		"activeQueues"?: Array<Models.WfmUserScheduleAdherenceUpdatedTeamTopicQueueReference>;
+		"activeQueuesModifiedTime"?: string;
+		"removedFromManagementUnit"?: boolean;
+	}
+	
 	export interface WfmUserScheduleAdherenceUpdatedTopicQueueReference { 
 		"id"?: string;
+	}
+	
+	export interface WfmUserScheduleAdherenceUpdatedTopicUriReference { 
+		"id"?: string;
+		"name"?: string;
 	}
 	
 	export interface WfmUserScheduleAdherenceUpdatedTopicUserReference { 
@@ -23827,6 +23993,7 @@ declare namespace Models {
 	export interface WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate { 
 		"user"?: Models.WfmUserScheduleAdherenceUpdatedTopicUserReference;
 		"managementUnitId"?: string;
+		"team"?: Models.WfmUserScheduleAdherenceUpdatedTopicUriReference;
 		"scheduledActivityCategory"?: string;
 		"systemPresence"?: string;
 		"organizationSecondaryPresenceId"?: string;

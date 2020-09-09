@@ -5,7 +5,7 @@ class CoachingApi {
 	/**
 	 * Coaching service.
 	 * @module purecloud-platform-client-v2/api/CoachingApi
-	 * @version 89.0.0
+	 * @version 90.0.0
 	 */
 
 	/**
@@ -201,6 +201,9 @@ class CoachingApi {
 	 * @param {Array.<String>} opts.statuses Appointment Statuses to filter by
 	 * @param {Array.<String>} opts.facilitatorIds The facilitator IDs for which to retrieve appointments
 	 * @param {Object} opts.sortOrder Sort (by due date) either Asc or Desc
+	 * @param {Array.<String>} opts.relationships Relationships to filter by
+	 * @param {String} opts.completionInterval Appointment completion start and end to filter by. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
+	 * @param {Object} opts.overdue Overdue status to filter by
 	 */
 	getCoachingAppointments(userIds, opts) { 
 		opts = opts || {};
@@ -214,7 +217,7 @@ class CoachingApi {
 			'/api/v2/coaching/appointments', 
 			'GET', 
 			{  }, 
-			{ 'userIds': this.apiClient.buildCollectionParam(userIds, 'multi'),'interval': opts['interval'],'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'statuses': this.apiClient.buildCollectionParam(opts['statuses'], 'multi'),'facilitatorIds': this.apiClient.buildCollectionParam(opts['facilitatorIds'], 'multi'),'sortOrder': opts['sortOrder'] }, 
+			{ 'userIds': this.apiClient.buildCollectionParam(userIds, 'multi'),'interval': opts['interval'],'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'statuses': this.apiClient.buildCollectionParam(opts['statuses'], 'multi'),'facilitatorIds': this.apiClient.buildCollectionParam(opts['facilitatorIds'], 'multi'),'sortOrder': opts['sortOrder'],'relationships': this.apiClient.buildCollectionParam(opts['relationships'], 'multi'),'completionInterval': opts['completionInterval'],'overdue': opts['overdue'] }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -234,6 +237,9 @@ class CoachingApi {
 	 * @param {Array.<String>} opts.statuses Appointment Statuses to filter by
 	 * @param {Array.<String>} opts.facilitatorIds The facilitator IDs for which to retrieve appointments
 	 * @param {Object} opts.sortOrder Sort (by due date) either Asc or Desc
+	 * @param {Array.<String>} opts.relationships Relationships to filter by
+	 * @param {String} opts.completionInterval Appointment completion start and end to filter by. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
+	 * @param {Object} opts.overdue Overdue status to filter by
 	 */
 	getCoachingAppointmentsMe(opts) { 
 		opts = opts || {};
@@ -243,7 +249,7 @@ class CoachingApi {
 			'/api/v2/coaching/appointments/me', 
 			'GET', 
 			{  }, 
-			{ 'interval': opts['interval'],'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'statuses': this.apiClient.buildCollectionParam(opts['statuses'], 'multi'),'facilitatorIds': this.apiClient.buildCollectionParam(opts['facilitatorIds'], 'multi'),'sortOrder': opts['sortOrder'] }, 
+			{ 'interval': opts['interval'],'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'statuses': this.apiClient.buildCollectionParam(opts['statuses'], 'multi'),'facilitatorIds': this.apiClient.buildCollectionParam(opts['facilitatorIds'], 'multi'),'sortOrder': opts['sortOrder'],'relationships': this.apiClient.buildCollectionParam(opts['relationships'], 'multi'),'completionInterval': opts['completionInterval'],'overdue': opts['overdue'] }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -476,6 +482,31 @@ class CoachingApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/coaching/appointments', 
+			'POST', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Retrieve aggregated appointment data
+	 * 
+	 * @param {Object} body Aggregate Request
+	 */
+	postCoachingAppointmentsAggregatesQuery(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postCoachingAppointmentsAggregatesQuery';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/coaching/appointments/aggregates/query', 
 			'POST', 
 			{  }, 
 			{  }, 

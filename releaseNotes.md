@@ -1,101 +1,261 @@
-Platform API version: 4158
+Platform API version: 4182
 
 
-# Major Changes (5 changes)
+# Major Changes (11 changes)
 
-**GET /api/v2/coaching/notifications/{notificationId}** (1 change)
+**GET /api/v2/coaching/appointments** (3 changes)
 
-* Parameter expand was added
+* Parameter relationships was added
+* Parameter completionInterval was added
+* Parameter overdue was added
 
-**GET /api/v2/coaching/notifications** (1 change)
+**GET /api/v2/coaching/appointments/me** (3 changes)
 
-* Parameter expand was added
+* Parameter relationships was added
+* Parameter completionInterval was added
+* Parameter overdue was added
 
-**AnalyticsParticipantWithoutAttributes** (1 change)
+**ReportingExportJobResponse** (1 change)
 
-* Property agentAssistantIds was removed
+* Required property runId was added
 
-**AnalyticsParticipant** (1 change)
+**Permissions** (2 changes)
 
-* Property agentAssistantIds was removed
+* Property id was removed
+* Property name was removed
 
-**CoachingNotification** (1 change)
+**ExternalOrganizationTrustorLink** (2 changes)
 
-* Property appointment was changed from CoachingAppointmentReference to CoachingAppointmentResponse
+* Property id was removed
+* Property selfUri was removed
 
 
-# Minor Changes (15 changes)
+# Minor Changes (69 changes)
 
-**/api/v2/speechandtextanalytics/conversations/{conversationId}/communications/{communicationId}/transcripturl** (2 changes)
+**/api/v2/audits/query/realtime/servicemapping** (2 changes)
 
 * Path was added
 * Operation GET was added
 
-**IntentFeedback** (1 change)
+**/api/v2/speechandtextanalytics/conversations/{conversationId}** (2 changes)
 
-* Enum value Disabled was added to property assessment
+* Path was added
+* Operation GET was added
 
-**ScimConfigResourceType** (1 change)
+**/api/v2/coaching/appointments/aggregates/query** (2 changes)
 
-* Optional property meta was added
+* Path was added
+* Operation POST was added
 
-**ScimMetadata** (1 change)
+**AcwSettings** (1 change)
+
+* Enum value AGENT_REQUESTED was added to property wrapupPrompt
+
+**UserScheduleAdherence** (1 change)
+
+* Optional property team was added
+
+**ViewFilter** (1 change)
+
+* Enum value webmessaging was added to property messageTypes
+
+**Recipient** (1 change)
+
+* Enum value webmessaging was added to property messengerType
+
+**Message** (2 changes)
+
+* Enum value unknown was added to property type
+* Enum value webmessaging was added to property type
+
+**Participant** (1 change)
+
+* Enum value agentRequested was added to property wrapupPrompt
+
+**FlowAggregateQueryPredicate** (2 changes)
+
+* Enum value agentRank was added to property dimension
+* Enum value proposedAgentId was added to property dimension
+
+**FlowAggregationQuery** (2 changes)
+
+* Enum value agentRank was added to property groupBy
+* Enum value proposedAgentId was added to property groupBy
+
+**MessagingIntegration** (1 change)
+
+* Enum value webmessaging was added to property messengerType
+
+**IpAddressRange** (1 change)
+
+* Enum value smtp was added to property service
+
+**OAuthClientListing** (1 change)
+
+* Optional property dateToDelete was added
+
+**OAuthClient** (1 change)
+
+* Optional property dateToDelete was added
+
+**OAuthClientRequest** (1 change)
+
+* Optional property dateToDelete was added
+
+**AuditQueryEntity** (3 changes)
+
+* Enum value Trigger was added to property name
+* Enum value Enable was added to property actions
+* Enum value Disable was added to property actions
+
+**AuditQueryService** (1 change)
+
+* Enum value Triggers was added to property name
+
+**AuditQueryExecutionStatusResponse** (1 change)
+
+* Enum value Triggers was added to property serviceName
+
+**AuditQueryRequest** (1 change)
+
+* Enum value Triggers was added to property serviceName
+
+**AuditLogMessage** (4 changes)
+
+* Enum value Triggers was added to property serviceName
+* Enum value Enable was added to property action
+* Enum value Disable was added to property action
+* Enum value Trigger was added to property entityType
+
+**AuditRealtimeQueryRequest** (1 change)
+
+* Enum value Triggers was added to property serviceName
+
+**MessagingSticker** (1 change)
+
+* Enum value webmessaging was added to property messengerType
+
+**MessageMediaParticipant** (2 changes)
+
+* Enum value unknown was added to property type
+* Enum value webmessaging was added to property type
+
+**CreateOutboundMessagingConversationRequest** (1 change)
+
+* Enum value webmessaging was added to property toAddressMessengerType
+
+**SendAgentlessOutboundMessageResponse** (1 change)
+
+* Enum value webmessaging was added to property messengerType
+
+**SendAgentlessOutboundMessageRequest** (1 change)
+
+* Enum value webmessaging was added to property toAddressMessengerType
+
+**MessageData** (1 change)
+
+* Enum value webmessaging was added to property messengerType
+
+**WfmBusinessUnitReference** (1 change)
+
+* id is no longer readonly
+
+**WfmScheduleReference** (1 change)
+
+* id is no longer readonly
+
+**AnalyticsProposedAgent** (1 change)
 
 * Model was added
 
-**Recording** (1 change)
+**AnalyticsSession** (2 changes)
 
-* Optional property recordingFileRole was added
+* Optional property agentAssistantId was added
+* Optional property proposedAgents was added
 
-**TranscriptUrl** (1 change)
+**ConversationAggregateQueryPredicate** (2 changes)
+
+* Enum value agentRank was added to property dimension
+* Enum value proposedAgentId was added to property dimension
+
+**ConversationAggregationQuery** (2 changes)
+
+* Enum value agentRank was added to property groupBy
+* Enum value proposedAgentId was added to property groupBy
+
+**SegmentDetailQueryPredicate** (2 changes)
+
+* Enum value agentRank was added to property dimension
+* Enum value proposedAgentId was added to property dimension
+
+**CoachingAppointmentResponse** (1 change)
+
+* Optional property isOverdue was added
+
+**OrgOAuthClient** (1 change)
+
+* Optional property dateToDelete was added
+
+**ParticipantBasic** (1 change)
+
+* Enum value agentRequested was added to property wrapupPrompt
+
+**ConversationMetrics** (1 change)
 
 * Model was added
 
-**ScimV2SchemaDefinition** (1 change)
+**EventMessage** (2 changes)
 
-* Optional property meta was added
+* Enum value CAMPAIGN_CONTENT_TEMPLATE_SUBSTITUTION_MISMATCH was added to property code
+* Enum value CAMPAIGN_MESSAGE_CHARACTER_LIMIT_EXCEEDED was added to property code
 
-**AvailableTopic** (1 change)
+**BuAgentSchedulesQueryResponse** (1 change)
 
-* Optional property transports was added
+* Optional property businessUnitTimeZone was added
 
-**ScimServiceProviderConfig** (1 change)
+**UserSearchRequest** (1 change)
 
-* Optional property meta was added
+* Optional property enforcePermissions was added
 
-**ViewFilter** (2 changes)
+**ExternalOrganizationTrustorLink** (1 change)
 
-* Optional property usedRoutingTypes was added
-* Optional property requestedRoutingTypes was added
+* Optional property externalOrganizationUri was added
 
-**ScimV2User** (1 change)
+**CoachingAppointmentAggregateResponse** (1 change)
 
-* Optional property meta was added
+* Model was added
 
-**ScimV2Group** (1 change)
+**QueryResponseData** (1 change)
 
-* Optional property meta was added
+* Model was added
 
-**ScheduleGenerationMessage** (1 change)
+**QueryResponseGroupedData** (1 change)
 
-* Enum value UnableToProduceAgentSchedule was added to property type
+* Model was added
+
+**QueryResponseMetric** (1 change)
+
+* Model was added
+
+**QueryResponseStats** (1 change)
+
+* Model was added
+
+**CoachingAppointmentAggregateRequest** (1 change)
+
+* Model was added
+
+**QueryRequestClause** (1 change)
+
+* Model was added
+
+**QueryRequestFilter** (1 change)
+
+* Model was added
+
+**QueryRequestPredicate** (1 change)
+
+* Model was added
 
 
-# Point Changes (5 changes)
-
-**GET /api/v2/integrations/actions/categories** (1 change)
-
-* Description was changed for parameter sortBy
-
-**GET /api/v2/users/{userId}/presences/purecloud** (2 changes)
-
-* Description was changed
-* Summary was changed
-
-**PATCH /api/v2/users/{userId}/presences/purecloud** (1 change)
-
-* Summary was changed
-
-**GET /api/v2/users/{userId}/presences/microsoftteams** (1 change)
-
-* Description was changed
+# Point Changes (0 changes)

@@ -5,7 +5,7 @@ class AuditApi {
 	/**
 	 * Audit service.
 	 * @module purecloud-platform-client-v2/api/AuditApi
-	 * @version 89.0.0
+	 * @version 90.0.0
 	 */
 
 	/**
@@ -19,6 +19,26 @@ class AuditApi {
 		this.apiClient = apiClient || ApiClient.instance;
 	}
 
+
+	/**
+	 * Get service mapping information used in audits.
+	 * 
+	 */
+	getAuditsQueryRealtimeServicemapping() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/audits/query/realtime/servicemapping', 
+			'GET', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
 
 	/**
 	 * Get service mapping information used in audits.

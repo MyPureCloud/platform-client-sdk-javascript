@@ -1,12 +1,24 @@
 {
   "notifications": [
     {
+      "topic": "v2.analytics.flow.{id}.aggregates",
+      "class": "StatEventFlowTopicStatsNotification"
+    },
+    {
+      "topic": "v2.analytics.flowoutcome.{id}.aggregates",
+      "class": "StatEventFlowOutcomeTopicStatsNotification"
+    },
+    {
       "topic": "v2.analytics.queues.{id}.observations",
       "class": "StatEventQueueTopicStatsNotification"
     },
     {
       "topic": "v2.analytics.users.{id}.aggregates",
       "class": "StatEventUserTopicStatsNotification"
+    },
+    {
+      "topic": "v2.analytics.wrapup.{id}.aggregates",
+      "class": "StatEventWrapUpCodeTopicStatsNotification"
     },
     {
       "topic": "v2.architect.dependencytracking.build",
@@ -387,6 +399,10 @@
     {
       "topic": "v2.workforcemanagement.managementunits.{id}.shifttrades.state.bulk",
       "class": "WfmBulkShiftTradeStateUpdateNotificationTopicBulkShiftTradeStateUpdateNotification"
+    },
+    {
+      "topic": "v2.workforcemanagement.teams.{id}.adherence",
+      "class": "WfmUserScheduleAdherenceUpdatedTeamTopicUserScheduleAdherenceUpdate"
     },
     {
       "topic": "v2.workforcemanagement.users.{id}.schedules.query",

@@ -23,6 +23,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**patchCoachingNotification**](CoachingApi.html#patchCoachingNotification) | **PATCH** /api/v2/coaching/notifications/{notificationId} | Update an existing notification.
 [**postCoachingAppointmentAnnotations**](CoachingApi.html#postCoachingAppointmentAnnotations) | **POST** /api/v2/coaching/appointments/{appointmentId}/annotations | Create a new annotation.
 [**postCoachingAppointments**](CoachingApi.html#postCoachingAppointments) | **POST** /api/v2/coaching/appointments | Create a new appointment
+[**postCoachingAppointmentsAggregatesQuery**](CoachingApi.html#postCoachingAppointmentsAggregatesQuery) | **POST** /api/v2/coaching/appointments/aggregates/query | Retrieve aggregated appointment data
 {: class="table table-striped"}
 
 <a name="deleteCoachingAppointment"></a>
@@ -412,7 +413,10 @@ let opts = {
   'pageSize': 25, // Number | Page size
   'statuses': ["statuses_example"], // [String] | Appointment Statuses to filter by
   'facilitatorIds': ["facilitatorIds_example"], // [String] | The facilitator IDs for which to retrieve appointments
-  'sortOrder': "sortOrder_example" // String | Sort (by due date) either Asc or Desc
+  'sortOrder': "sortOrder_example", // String | Sort (by due date) either Asc or Desc
+  'relationships': ["relationships_example"], // [String] | Relationships to filter by
+  'completionInterval': "completionInterval_example", // String | Appointment completion start and end to filter by. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
+  'overdue': "overdue_example" // String | Overdue status to filter by
 };
 
 apiInstance.getCoachingAppointments(userIds, opts)
@@ -437,6 +441,9 @@ apiInstance.getCoachingAppointments(userIds, opts)
  **statuses** | **[String]** | Appointment Statuses to filter by | [optional] <br />**Values**: Scheduled, InProgress, Completed, InvalidSchedule |
  **facilitatorIds** | **[String]** | The facilitator IDs for which to retrieve appointments | [optional]  |
  **sortOrder** | **String** | Sort (by due date) either Asc or Desc | [optional] <br />**Values**: Desc, Asc |
+ **relationships** | **[String]** | Relationships to filter by | [optional] <br />**Values**: Creator, Facilitator, Attendee |
+ **completionInterval** | **String** | Appointment completion start and end to filter by. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss | [optional]  |
+ **overdue** | **String** | Overdue status to filter by | [optional] <br />**Values**: Any, True, False |
 {: class="table table-striped"}
 
 ### Return type
@@ -479,7 +486,10 @@ let opts = {
   'pageSize': 25, // Number | Page size
   'statuses': ["statuses_example"], // [String] | Appointment Statuses to filter by
   'facilitatorIds': ["facilitatorIds_example"], // [String] | The facilitator IDs for which to retrieve appointments
-  'sortOrder': "sortOrder_example" // String | Sort (by due date) either Asc or Desc
+  'sortOrder': "sortOrder_example", // String | Sort (by due date) either Asc or Desc
+  'relationships': ["relationships_example"], // [String] | Relationships to filter by
+  'completionInterval': "completionInterval_example", // String | Appointment completion start and end to filter by. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
+  'overdue': "overdue_example" // String | Overdue status to filter by
 };
 
 apiInstance.getCoachingAppointmentsMe(opts)
@@ -503,6 +513,9 @@ apiInstance.getCoachingAppointmentsMe(opts)
  **statuses** | **[String]** | Appointment Statuses to filter by | [optional] <br />**Values**: Scheduled, InProgress, Completed |
  **facilitatorIds** | **[String]** | The facilitator IDs for which to retrieve appointments | [optional]  |
  **sortOrder** | **String** | Sort (by due date) either Asc or Desc | [optional] <br />**Values**: Desc, Asc |
+ **relationships** | **[String]** | Relationships to filter by | [optional] <br />**Values**: Creator, Facilitator, Attendee |
+ **completionInterval** | **String** | Appointment completion start and end to filter by. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss | [optional]  |
+ **overdue** | **String** | Overdue status to filter by | [optional] <br />**Values**: Any, True, False |
 {: class="table table-striped"}
 
 ### Return type
@@ -986,6 +999,7 @@ CoachingNotification <a href="#" onclick="return copyCoachingNotificationExample
       "id": String, 
       "selfUri": String, 
     },  
+    "isOverdue": Boolean, 
     "selfUri": String, 
   },  
   "selfUri": String, 
@@ -1204,4 +1218,96 @@ apiInstance.postCoachingAppointments(body)
 ### Return type
 
 **CoachingAppointmentResponse**
+
+<a name="postCoachingAppointmentsAggregatesQuery"></a>
+
+# CoachingAppointmentAggregateResponse postCoachingAppointmentsAggregatesQuery(body)
+
+
+
+POST /api/v2/coaching/appointments/aggregates/query
+
+Retrieve aggregated appointment data
+
+
+
+Requires ANY permissions: 
+
+* coaching:appointment:view
+
+
+### Request Body Schema
+
+<script type="text/javascript">
+	function copyCoachingAppointmentAggregateRequestExample() {
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#CoachingAppointmentAggregateRequestExample').text()).select();
+		document.execCommand("copy");
+		temp.remove();
+		return false;
+	}
+</script>
+
+CoachingAppointmentAggregateRequest <a href="#" onclick="return copyCoachingAppointmentAggregateRequestExample()">Copy</a>
+
+<div id="CoachingAppointmentAggregateRequestExample">
+
+```{"language":"json", "maxHeight": "250px"}
+{ 
+  "interval": String, 
+  "metrics": [String], 
+  "groupBy": [String], 
+  "filter": { 
+    "type": String, 
+    "clauses": { 
+      "type": String, 
+      "predicates": { 
+        "dimension": String, 
+        "value": String, 
+      },  
+    },  
+  },  
+}
+```
+
+</div>
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.CoachingApi();
+
+let body = {}; // Object | Aggregate Request
+
+apiInstance.postCoachingAppointmentsAggregatesQuery(body)
+  .then((data) => {
+    console.log(`postCoachingAppointmentsAggregatesQuery success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postCoachingAppointmentsAggregatesQuery');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | Aggregate Request |  |
+{: class="table table-striped"}
+
+### Return type
+
+**CoachingAppointmentAggregateResponse**
 

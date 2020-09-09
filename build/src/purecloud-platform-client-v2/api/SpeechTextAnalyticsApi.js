@@ -5,7 +5,7 @@ class SpeechTextAnalyticsApi {
 	/**
 	 * SpeechTextAnalytics service.
 	 * @module purecloud-platform-client-v2/api/SpeechTextAnalyticsApi
-	 * @version 89.0.0
+	 * @version 90.0.0
 	 */
 
 	/**
@@ -19,6 +19,31 @@ class SpeechTextAnalyticsApi {
 		this.apiClient = apiClient || ApiClient.instance;
 	}
 
+
+	/**
+	 * Get Speech and Text Analytics for a specific conversation
+	 * 
+	 * @param {String} conversationId Conversation Id
+	 */
+	getSpeechandtextanalyticsConversation(conversationId) { 
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null) {
+			throw 'Missing the required parameter "conversationId" when calling getSpeechandtextanalyticsConversation';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/speechandtextanalytics/conversations/{conversationId}', 
+			'GET', 
+			{ 'conversationId': conversationId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
 
 	/**
 	 * Get the pre-signed S3 URL for the transcript of a specific communication of a conversation
