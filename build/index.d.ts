@@ -942,6 +942,7 @@ declare class ConversationsApi {
   	postAnalyticsConversationsAggregatesQuery(body: Models.ConversationAggregationQuery): Promise<Models.ConversationAggregateQueryResponse>; 
   	postAnalyticsConversationsDetailsJobs(body: Models.AsyncConversationQuery): Promise<Models.AsyncQueryResponse>; 
   	postAnalyticsConversationsDetailsQuery(body: Models.ConversationQuery): Promise<Models.AnalyticsConversationQueryResponse>; 
+  	postConversationAssign(conversationId: string, body: Models.ConversationUser): Promise<string>; 
   	postConversationDisconnect(conversationId: string): Promise<string>; 
   	postConversationParticipantCallbacks(conversationId: string, participantId: string, opts?: ConversationsApi.postConversationParticipantCallbacksOptions): Promise<void>; 
   	postConversationParticipantDigits(conversationId: string, participantId: string, opts?: ConversationsApi.postConversationParticipantDigitsOptions): Promise<void>; 
@@ -3971,7 +3972,7 @@ declare class WorkforceManagementApi {
   	getWorkforcemanagementManagementunitActivitycode(muId: string, acId: string): Promise<Models.ActivityCode>; 
   	getWorkforcemanagementManagementunitActivitycodes(muId: string): Promise<Models.ActivityCodeContainer>; 
   	getWorkforcemanagementManagementunitAdherence(managementUnitId: string, opts?: WorkforceManagementApi.getWorkforcemanagementManagementunitAdherenceOptions): Promise<Models.UserScheduleAdherenceListing>; 
-  	getWorkforcemanagementManagementunitAgent(managementUnitId: string, agentId: string): Promise<Models.WfmAgent>; 
+  	getWorkforcemanagementManagementunitAgent(managementUnitId: string, agentId: string, opts?: WorkforceManagementApi.getWorkforcemanagementManagementunitAgentOptions): Promise<Models.WfmAgent>; 
   	getWorkforcemanagementManagementunitAgentShifttrades(managementUnitId: string, agentId: string): Promise<Models.ShiftTradeListResponse>; 
   	getWorkforcemanagementManagementunitIntradayQueues(muId: string): Promise<void>; 
   	getWorkforcemanagementManagementunitSchedulingRun(managementUnitId: string, runId: string): Promise<void>; 
@@ -4095,6 +4096,9 @@ declare namespace WorkforceManagementApi {
 	}
 	export interface getWorkforcemanagementManagementunitAdherenceOptions { 
 		"forceDownloadService"?: boolean;
+	}
+	export interface getWorkforcemanagementManagementunitAgentOptions { 
+		"excludeCapabilities"?: boolean;
 	}
 	export interface getWorkforcemanagementManagementunitUserTimeoffrequestsOptions { 
 		"recentlyReviewed"?: boolean;
@@ -5108,8 +5112,11 @@ declare namespace Models {
 		"number"?: boolean;
 		"boolean"?: boolean;
 		"object"?: boolean;
-		"floatingPointNumber"?: boolean;
+		"valueNode"?: boolean;
 		"pojo"?: boolean;
+		"containerNode"?: boolean;
+		"missingNode"?: boolean;
+		"floatingPointNumber"?: boolean;
 		"integralNumber"?: boolean;
 		"short"?: boolean;
 		"int"?: boolean;
@@ -5119,9 +5126,6 @@ declare namespace Models {
 		"bigInteger"?: boolean;
 		"textual"?: boolean;
 		"binary"?: boolean;
-		"valueNode"?: boolean;
-		"containerNode"?: boolean;
-		"missingNode"?: boolean;
 		"array"?: boolean;
 		"null"?: boolean;
 	}
@@ -5135,7 +5139,6 @@ declare namespace Models {
 	}
 	
 	export interface AsyncConversationQuery { 
-		"interval": string;
 		"conversationFilters"?: Array<Models.ConversationDetailQueryFilter>;
 		"segmentFilters"?: Array<Models.SegmentDetailQueryFilter>;
 		"evaluationFilters"?: Array<Models.EvaluationDetailQueryFilter>;
@@ -5143,6 +5146,7 @@ declare namespace Models {
 		"surveyFilters"?: Array<Models.SurveyDetailQueryFilter>;
 		"order"?: string;
 		"orderBy"?: string;
+		"interval": string;
 		"limit"?: number;
 		"startOfDayIntervalMatching"?: boolean;
 	}
@@ -5569,6 +5573,7 @@ declare namespace Models {
 		"shifts"?: Array<Models.BuAgentScheduleShift>;
 		"fullDayTimeOffMarkers"?: Array<Models.BuFullDayTimeOffMarker>;
 		"workPlan"?: Models.WorkPlanReference;
+		"workPlansPerWeek"?: Array<Models.WorkPlanReference>;
 		"metadata"?: Models.WfmVersionedEntityMetadata;
 	}
 	
@@ -5577,6 +5582,7 @@ declare namespace Models {
 		"shifts"?: Array<Models.BuAgentScheduleShift>;
 		"fullDayTimeOffMarkers"?: Array<Models.BuFullDayTimeOffMarker>;
 		"workPlan"?: Models.WorkPlanReference;
+		"workPlansPerWeek"?: Array<Models.WorkPlanReference>;
 	}
 	
 	export interface BuAgentScheduleSearchResponse { 
@@ -6106,6 +6112,8 @@ declare namespace Models {
 		"other"?: Models.Address;
 		"wrapup"?: Models.Wrapup;
 		"afterCallWork"?: Models.AfterCallWork;
+		"afterCallWorkRequired"?: boolean;
+		"agentAssistantId"?: string;
 	}
 	
 	export interface CallBasic { 
@@ -6136,6 +6144,8 @@ declare namespace Models {
 		"other"?: Models.Address;
 		"wrapup"?: Models.Wrapup;
 		"afterCallWork"?: Models.AfterCallWork;
+		"afterCallWorkRequired"?: boolean;
+		"agentAssistantId"?: string;
 	}
 	
 	export interface CallCommand { 
@@ -6393,6 +6403,7 @@ declare namespace Models {
 		"peerId"?: string;
 		"wrapup"?: Models.Wrapup;
 		"afterCallWork"?: Models.AfterCallWork;
+		"afterCallWorkRequired"?: boolean;
 	}
 	
 	export interface CallbackBasic { 
@@ -6420,6 +6431,7 @@ declare namespace Models {
 		"peerId"?: string;
 		"wrapup"?: Models.Wrapup;
 		"afterCallWork"?: Models.AfterCallWork;
+		"afterCallWorkRequired"?: boolean;
 	}
 	
 	export interface CallbackConversation { 
@@ -7146,6 +7158,7 @@ declare namespace Models {
 		"segments"?: Array<Models.Segment>;
 		"wrapup"?: Models.Wrapup;
 		"afterCallWork"?: Models.AfterCallWork;
+		"afterCallWorkRequired"?: boolean;
 	}
 	
 	export interface CommandStatus { 
@@ -8007,6 +8020,7 @@ declare namespace Models {
 		"journeyContext"?: Models.JourneyContext;
 		"wrapup"?: Models.Wrapup;
 		"afterCallWork"?: Models.AfterCallWork;
+		"afterCallWorkRequired"?: boolean;
 	}
 	
 	export interface ConversationChatEventTopicChatConversation { 
@@ -8473,6 +8487,8 @@ declare namespace Models {
 		"uuiData"?: string;
 		"wrapup"?: Models.ConversationEventTopicWrapup;
 		"afterCallWork"?: Models.ConversationEventTopicAfterCallWork;
+		"afterCallWorkRequired"?: boolean;
+		"agentAssistantId"?: string;
 		"additionalProperties"?: object;
 	}
 	
@@ -8499,6 +8515,7 @@ declare namespace Models {
 		"automatedCallbackConfigId"?: string;
 		"wrapup"?: Models.ConversationEventTopicWrapup;
 		"afterCallWork"?: Models.ConversationEventTopicAfterCallWork;
+		"afterCallWorkRequired"?: boolean;
 		"additionalProperties"?: object;
 	}
 	
@@ -8518,6 +8535,7 @@ declare namespace Models {
 		"journeyContext"?: Models.ConversationEventTopicJourneyContext;
 		"wrapup"?: Models.ConversationEventTopicWrapup;
 		"afterCallWork"?: Models.ConversationEventTopicAfterCallWork;
+		"afterCallWorkRequired"?: boolean;
 		"additionalProperties"?: object;
 	}
 	
@@ -8539,6 +8557,7 @@ declare namespace Models {
 		"disconnectedTime"?: string;
 		"wrapup"?: Models.ConversationEventTopicWrapup;
 		"afterCallWork"?: Models.ConversationEventTopicAfterCallWork;
+		"afterCallWorkRequired"?: boolean;
 		"additionalProperties"?: object;
 	}
 	
@@ -8594,6 +8613,7 @@ declare namespace Models {
 		"spam"?: boolean;
 		"wrapup"?: Models.ConversationEventTopicWrapup;
 		"afterCallWork"?: Models.ConversationEventTopicAfterCallWork;
+		"afterCallWorkRequired"?: boolean;
 		"additionalProperties"?: object;
 	}
 	
@@ -8666,6 +8686,7 @@ declare namespace Models {
 		"recipientType"?: string;
 		"wrapup"?: Models.ConversationEventTopicWrapup;
 		"afterCallWork"?: Models.ConversationEventTopicAfterCallWork;
+		"afterCallWorkRequired"?: boolean;
 		"additionalProperties"?: object;
 	}
 	
@@ -8755,6 +8776,7 @@ declare namespace Models {
 		"disconnectedTime"?: string;
 		"wrapup"?: Models.ConversationEventTopicWrapup;
 		"afterCallWork"?: Models.ConversationEventTopicAfterCallWork;
+		"afterCallWorkRequired"?: boolean;
 		"additionalProperties"?: object;
 	}
 	
@@ -8776,6 +8798,7 @@ declare namespace Models {
 		"disconnectedTime"?: string;
 		"wrapup"?: Models.ConversationEventTopicWrapup;
 		"afterCallWork"?: Models.ConversationEventTopicAfterCallWork;
+		"afterCallWorkRequired"?: boolean;
 		"additionalProperties"?: object;
 	}
 	
@@ -8801,6 +8824,7 @@ declare namespace Models {
 		"msids"?: Array<string>;
 		"wrapup"?: Models.ConversationEventTopicWrapup;
 		"afterCallWork"?: Models.ConversationEventTopicAfterCallWork;
+		"afterCallWorkRequired"?: boolean;
 		"additionalProperties"?: object;
 	}
 	
@@ -8982,7 +9006,6 @@ declare namespace Models {
 	}
 	
 	export interface ConversationQuery { 
-		"interval": string;
 		"conversationFilters"?: Array<Models.ConversationDetailQueryFilter>;
 		"segmentFilters"?: Array<Models.SegmentDetailQueryFilter>;
 		"evaluationFilters"?: Array<Models.EvaluationDetailQueryFilter>;
@@ -8990,6 +9013,7 @@ declare namespace Models {
 		"surveyFilters"?: Array<Models.SurveyDetailQueryFilter>;
 		"order"?: string;
 		"orderBy"?: string;
+		"interval": string;
 		"aggregations"?: Array<Models.AnalyticsQueryAggregation>;
 		"paging"?: Models.PagingSpec;
 	}
@@ -9246,6 +9270,10 @@ declare namespace Models {
 		"durationSeconds"?: number;
 		"endTime"?: string;
 		"additionalProperties"?: object;
+	}
+	
+	export interface ConversationUser { 
+		"id": string;
 	}
 	
 	export interface ConversationVideoEventTopicConversationRoutingData { 
@@ -9591,6 +9619,8 @@ declare namespace Models {
 		"queueFlow"?: Models.DomainEntityRef;
 		"whisperPrompt"?: Models.DomainEntityRef;
 		"autoAnswerOnly"?: boolean;
+		"enableTranscription"?: boolean;
+		"enableManualAssignment"?: boolean;
 		"callingPartyName"?: string;
 		"callingPartyNumber"?: string;
 		"defaultScripts"?: { [key: string]: Models.Script; };
@@ -11721,6 +11751,7 @@ declare namespace Models {
 		"spam"?: boolean;
 		"wrapup"?: Models.Wrapup;
 		"afterCallWork"?: Models.AfterCallWork;
+		"afterCallWorkRequired"?: boolean;
 	}
 	
 	export interface EmailAddress { 
@@ -13391,8 +13422,8 @@ declare namespace Models {
 		"completed"?: string;
 		"entities"?: Array<Models.HistoryEntry>;
 		"total"?: number;
-		"pageSize"?: number;
 		"pageNumber"?: number;
+		"pageSize"?: number;
 		"pageCount"?: number;
 	}
 	
@@ -13902,8 +13933,11 @@ declare namespace Models {
 		"number"?: boolean;
 		"boolean"?: boolean;
 		"object"?: boolean;
-		"floatingPointNumber"?: boolean;
+		"valueNode"?: boolean;
 		"pojo"?: boolean;
+		"containerNode"?: boolean;
+		"missingNode"?: boolean;
+		"floatingPointNumber"?: boolean;
 		"integralNumber"?: boolean;
 		"short"?: boolean;
 		"int"?: boolean;
@@ -13913,9 +13947,6 @@ declare namespace Models {
 		"bigInteger"?: boolean;
 		"textual"?: boolean;
 		"binary"?: boolean;
-		"valueNode"?: boolean;
-		"containerNode"?: boolean;
-		"missingNode"?: boolean;
 		"array"?: boolean;
 		"null"?: boolean;
 	}
@@ -14831,6 +14862,7 @@ declare namespace Models {
 		"messages"?: Array<Models.MessageDetails>;
 		"wrapup"?: Models.Wrapup;
 		"afterCallWork"?: Models.AfterCallWork;
+		"afterCallWorkRequired"?: boolean;
 	}
 	
 	export interface MessageContent { 
@@ -16689,6 +16721,8 @@ declare namespace Models {
 		"queueFlow"?: Models.DomainEntityRef;
 		"whisperPrompt"?: Models.DomainEntityRef;
 		"autoAnswerOnly"?: boolean;
+		"enableTranscription"?: boolean;
+		"enableManualAssignment"?: boolean;
 		"callingPartyName"?: string;
 		"callingPartyNumber"?: string;
 		"defaultScripts"?: { [key: string]: Models.Script; };
@@ -17406,6 +17440,8 @@ declare namespace Models {
 		"uuiData"?: string;
 		"wrapup"?: Models.QueueConversationEventTopicWrapup;
 		"afterCallWork"?: Models.QueueConversationEventTopicAfterCallWork;
+		"afterCallWorkRequired"?: boolean;
+		"agentAssistantId"?: string;
 		"additionalProperties"?: object;
 	}
 	
@@ -17432,6 +17468,7 @@ declare namespace Models {
 		"automatedCallbackConfigId"?: string;
 		"wrapup"?: Models.QueueConversationEventTopicWrapup;
 		"afterCallWork"?: Models.QueueConversationEventTopicAfterCallWork;
+		"afterCallWorkRequired"?: boolean;
 		"additionalProperties"?: object;
 	}
 	
@@ -17451,6 +17488,7 @@ declare namespace Models {
 		"journeyContext"?: Models.QueueConversationEventTopicJourneyContext;
 		"wrapup"?: Models.QueueConversationEventTopicWrapup;
 		"afterCallWork"?: Models.QueueConversationEventTopicAfterCallWork;
+		"afterCallWorkRequired"?: boolean;
 		"additionalProperties"?: object;
 	}
 	
@@ -17472,6 +17510,7 @@ declare namespace Models {
 		"disconnectedTime"?: string;
 		"wrapup"?: Models.QueueConversationEventTopicWrapup;
 		"afterCallWork"?: Models.QueueConversationEventTopicAfterCallWork;
+		"afterCallWorkRequired"?: boolean;
 		"additionalProperties"?: object;
 	}
 	
@@ -17527,6 +17566,7 @@ declare namespace Models {
 		"spam"?: boolean;
 		"wrapup"?: Models.QueueConversationEventTopicWrapup;
 		"afterCallWork"?: Models.QueueConversationEventTopicAfterCallWork;
+		"afterCallWorkRequired"?: boolean;
 		"additionalProperties"?: object;
 	}
 	
@@ -17599,6 +17639,7 @@ declare namespace Models {
 		"recipientType"?: string;
 		"wrapup"?: Models.QueueConversationEventTopicWrapup;
 		"afterCallWork"?: Models.QueueConversationEventTopicAfterCallWork;
+		"afterCallWorkRequired"?: boolean;
 		"additionalProperties"?: object;
 	}
 	
@@ -17688,6 +17729,7 @@ declare namespace Models {
 		"disconnectedTime"?: string;
 		"wrapup"?: Models.QueueConversationEventTopicWrapup;
 		"afterCallWork"?: Models.QueueConversationEventTopicAfterCallWork;
+		"afterCallWorkRequired"?: boolean;
 		"additionalProperties"?: object;
 	}
 	
@@ -17709,6 +17751,7 @@ declare namespace Models {
 		"disconnectedTime"?: string;
 		"wrapup"?: Models.QueueConversationEventTopicWrapup;
 		"afterCallWork"?: Models.QueueConversationEventTopicAfterCallWork;
+		"afterCallWorkRequired"?: boolean;
 		"additionalProperties"?: object;
 	}
 	
@@ -17734,6 +17777,7 @@ declare namespace Models {
 		"msids"?: Array<string>;
 		"wrapup"?: Models.QueueConversationEventTopicWrapup;
 		"afterCallWork"?: Models.QueueConversationEventTopicAfterCallWork;
+		"afterCallWorkRequired"?: boolean;
 		"additionalProperties"?: object;
 	}
 	
@@ -18063,6 +18107,8 @@ declare namespace Models {
 		"uuiData"?: string;
 		"wrapup"?: Models.QueueConversationSocialExpressionEventTopicWrapup;
 		"afterCallWork"?: Models.QueueConversationSocialExpressionEventTopicAfterCallWork;
+		"afterCallWorkRequired"?: boolean;
+		"agentAssistantId"?: string;
 		"additionalProperties"?: object;
 	}
 	
@@ -18089,6 +18135,7 @@ declare namespace Models {
 		"automatedCallbackConfigId"?: string;
 		"wrapup"?: Models.QueueConversationSocialExpressionEventTopicWrapup;
 		"afterCallWork"?: Models.QueueConversationSocialExpressionEventTopicAfterCallWork;
+		"afterCallWorkRequired"?: boolean;
 		"additionalProperties"?: object;
 	}
 	
@@ -18108,6 +18155,7 @@ declare namespace Models {
 		"journeyContext"?: Models.QueueConversationSocialExpressionEventTopicJourneyContext;
 		"wrapup"?: Models.QueueConversationSocialExpressionEventTopicWrapup;
 		"afterCallWork"?: Models.QueueConversationSocialExpressionEventTopicAfterCallWork;
+		"afterCallWorkRequired"?: boolean;
 		"additionalProperties"?: object;
 	}
 	
@@ -18129,6 +18177,7 @@ declare namespace Models {
 		"disconnectedTime"?: string;
 		"wrapup"?: Models.QueueConversationSocialExpressionEventTopicWrapup;
 		"afterCallWork"?: Models.QueueConversationSocialExpressionEventTopicAfterCallWork;
+		"afterCallWorkRequired"?: boolean;
 		"additionalProperties"?: object;
 	}
 	
@@ -18184,6 +18233,7 @@ declare namespace Models {
 		"spam"?: boolean;
 		"wrapup"?: Models.QueueConversationSocialExpressionEventTopicWrapup;
 		"afterCallWork"?: Models.QueueConversationSocialExpressionEventTopicAfterCallWork;
+		"afterCallWorkRequired"?: boolean;
 		"additionalProperties"?: object;
 	}
 	
@@ -18256,6 +18306,7 @@ declare namespace Models {
 		"recipientType"?: string;
 		"wrapup"?: Models.QueueConversationSocialExpressionEventTopicWrapup;
 		"afterCallWork"?: Models.QueueConversationSocialExpressionEventTopicAfterCallWork;
+		"afterCallWorkRequired"?: boolean;
 		"additionalProperties"?: object;
 	}
 	
@@ -18345,6 +18396,7 @@ declare namespace Models {
 		"disconnectedTime"?: string;
 		"wrapup"?: Models.QueueConversationSocialExpressionEventTopicWrapup;
 		"afterCallWork"?: Models.QueueConversationSocialExpressionEventTopicAfterCallWork;
+		"afterCallWorkRequired"?: boolean;
 		"additionalProperties"?: object;
 	}
 	
@@ -18366,6 +18418,7 @@ declare namespace Models {
 		"disconnectedTime"?: string;
 		"wrapup"?: Models.QueueConversationSocialExpressionEventTopicWrapup;
 		"afterCallWork"?: Models.QueueConversationSocialExpressionEventTopicAfterCallWork;
+		"afterCallWorkRequired"?: boolean;
 		"additionalProperties"?: object;
 	}
 	
@@ -18391,6 +18444,7 @@ declare namespace Models {
 		"msids"?: Array<string>;
 		"wrapup"?: Models.QueueConversationSocialExpressionEventTopicWrapup;
 		"afterCallWork"?: Models.QueueConversationSocialExpressionEventTopicAfterCallWork;
+		"afterCallWorkRequired"?: boolean;
 		"additionalProperties"?: object;
 	}
 	
@@ -18457,6 +18511,8 @@ declare namespace Models {
 		"uuiData"?: string;
 		"wrapup"?: Models.QueueConversationVideoEventTopicWrapup;
 		"afterCallWork"?: Models.QueueConversationVideoEventTopicAfterCallWork;
+		"afterCallWorkRequired"?: boolean;
+		"agentAssistantId"?: string;
 		"additionalProperties"?: object;
 	}
 	
@@ -18483,6 +18539,7 @@ declare namespace Models {
 		"automatedCallbackConfigId"?: string;
 		"wrapup"?: Models.QueueConversationVideoEventTopicWrapup;
 		"afterCallWork"?: Models.QueueConversationVideoEventTopicAfterCallWork;
+		"afterCallWorkRequired"?: boolean;
 		"additionalProperties"?: object;
 	}
 	
@@ -18502,6 +18559,7 @@ declare namespace Models {
 		"journeyContext"?: Models.QueueConversationVideoEventTopicJourneyContext;
 		"wrapup"?: Models.QueueConversationVideoEventTopicWrapup;
 		"afterCallWork"?: Models.QueueConversationVideoEventTopicAfterCallWork;
+		"afterCallWorkRequired"?: boolean;
 		"additionalProperties"?: object;
 	}
 	
@@ -18523,6 +18581,7 @@ declare namespace Models {
 		"disconnectedTime"?: string;
 		"wrapup"?: Models.QueueConversationVideoEventTopicWrapup;
 		"afterCallWork"?: Models.QueueConversationVideoEventTopicAfterCallWork;
+		"afterCallWorkRequired"?: boolean;
 		"additionalProperties"?: object;
 	}
 	
@@ -18578,6 +18637,7 @@ declare namespace Models {
 		"spam"?: boolean;
 		"wrapup"?: Models.QueueConversationVideoEventTopicWrapup;
 		"afterCallWork"?: Models.QueueConversationVideoEventTopicAfterCallWork;
+		"afterCallWorkRequired"?: boolean;
 		"additionalProperties"?: object;
 	}
 	
@@ -18650,6 +18710,7 @@ declare namespace Models {
 		"recipientType"?: string;
 		"wrapup"?: Models.QueueConversationVideoEventTopicWrapup;
 		"afterCallWork"?: Models.QueueConversationVideoEventTopicAfterCallWork;
+		"afterCallWorkRequired"?: boolean;
 		"additionalProperties"?: object;
 	}
 	
@@ -18739,6 +18800,7 @@ declare namespace Models {
 		"disconnectedTime"?: string;
 		"wrapup"?: Models.QueueConversationVideoEventTopicWrapup;
 		"afterCallWork"?: Models.QueueConversationVideoEventTopicAfterCallWork;
+		"afterCallWorkRequired"?: boolean;
 		"additionalProperties"?: object;
 	}
 	
@@ -18760,6 +18822,7 @@ declare namespace Models {
 		"disconnectedTime"?: string;
 		"wrapup"?: Models.QueueConversationVideoEventTopicWrapup;
 		"afterCallWork"?: Models.QueueConversationVideoEventTopicAfterCallWork;
+		"afterCallWorkRequired"?: boolean;
 		"additionalProperties"?: object;
 	}
 	
@@ -18785,6 +18848,7 @@ declare namespace Models {
 		"msids"?: Array<string>;
 		"wrapup"?: Models.QueueConversationVideoEventTopicWrapup;
 		"afterCallWork"?: Models.QueueConversationVideoEventTopicAfterCallWork;
+		"afterCallWorkRequired"?: boolean;
 		"additionalProperties"?: object;
 	}
 	
@@ -18906,6 +18970,8 @@ declare namespace Models {
 		"queueFlow"?: Models.DomainEntityRef;
 		"whisperPrompt"?: Models.DomainEntityRef;
 		"autoAnswerOnly"?: boolean;
+		"enableTranscription"?: boolean;
+		"enableManualAssignment"?: boolean;
 		"callingPartyName"?: string;
 		"callingPartyNumber"?: string;
 		"defaultScripts"?: { [key: string]: Models.Script; };
@@ -20149,6 +20215,7 @@ declare namespace Models {
 		"segments"?: Array<Models.Segment>;
 		"wrapup"?: Models.Wrapup;
 		"afterCallWork"?: Models.AfterCallWork;
+		"afterCallWorkRequired"?: boolean;
 	}
 	
 	export interface Script { 
@@ -20751,6 +20818,7 @@ declare namespace Models {
 		"peerId"?: string;
 		"wrapup"?: Models.Wrapup;
 		"afterCallWork"?: Models.AfterCallWork;
+		"afterCallWorkRequired"?: boolean;
 	}
 	
 	export interface SocialHandle { 
@@ -22501,6 +22569,8 @@ declare namespace Models {
 		"skillEvaluationMethod"?: string;
 		"queueFlow"?: Models.DomainEntityRef;
 		"whisperPrompt"?: Models.DomainEntityRef;
+		"enableTranscription"?: boolean;
+		"enableManualAssignment"?: boolean;
 		"callingPartyName"?: string;
 		"callingPartyNumber"?: string;
 		"defaultScripts"?: { [key: string]: Models.Script; };
@@ -22836,6 +22906,7 @@ declare namespace Models {
 		"self"?: Models.Address;
 		"wrapup"?: Models.Wrapup;
 		"afterCallWork"?: Models.AfterCallWork;
+		"afterCallWorkRequired"?: boolean;
 	}
 	
 	export interface ViewFilter { 
@@ -22921,6 +22992,7 @@ declare namespace Models {
 		"callbackInterval"?: string;
 		"usedRoutingTypes"?: Array<string>;
 		"requestedRoutingTypes"?: Array<string>;
+		"hasAgentAssistId"?: boolean;
 	}
 	
 	export interface VisibilityCondition { 
@@ -23335,13 +23407,13 @@ declare namespace Models {
 		"id"?: string;
 		"user"?: Models.UserReference;
 		"workPlan"?: Models.WorkPlanReference;
-		"timeZone"?: Models.WfmTimeZone;
+		"workPlanRotation"?: Models.WorkPlanRotationReference;
 		"acceptDirectShiftTrades"?: boolean;
-		"metadata"?: Models.WfmVersionedEntityMetadata;
 		"queues"?: Array<Models.QueueReference>;
 		"languages"?: Array<Models.LanguageReference>;
 		"skills"?: Array<Models.RoutingSkillReference>;
 		"schedulable"?: boolean;
+		"metadata"?: Models.WfmVersionedEntityMetadata;
 		"selfUri"?: string;
 	}
 	
@@ -23853,10 +23925,6 @@ declare namespace Models {
 		"id"?: string;
 	}
 	
-	export interface WfmTimeZone { 
-		"id"?: string;
-	}
-	
 	export interface WfmUpdateAgentDetailsTopicWfmUpdateAgentDetailsComplete { 
 		"status"?: string;
 	}
@@ -24184,6 +24252,11 @@ declare namespace Models {
 	export interface WorkPlanReference { 
 		"id"?: string;
 		"managementUnit"?: Models.ManagementUnitReference;
+		"selfUri"?: string;
+	}
+	
+	export interface WorkPlanRotationReference { 
+		"id"?: string;
 		"selfUri"?: string;
 	}
 	

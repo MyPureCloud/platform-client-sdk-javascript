@@ -1,261 +1,151 @@
-Platform API version: 4182
+Platform API version: 4206
 
 
-# Major Changes (11 changes)
+# Major Changes (3 changes)
 
-**GET /api/v2/coaching/appointments** (3 changes)
+**GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/agents/{agentId}** (1 change)
 
-* Parameter relationships was added
-* Parameter completionInterval was added
-* Parameter overdue was added
+* Parameter excludeCapabilities was added
 
-**GET /api/v2/coaching/appointments/me** (3 changes)
+**WfmTimeZone** (1 change)
 
-* Parameter relationships was added
-* Parameter completionInterval was added
-* Parameter overdue was added
+* Model WfmTimeZone was removed
 
-**ReportingExportJobResponse** (1 change)
+**WfmAgent** (1 change)
 
-* Required property runId was added
-
-**Permissions** (2 changes)
-
-* Property id was removed
-* Property name was removed
-
-**ExternalOrganizationTrustorLink** (2 changes)
-
-* Property id was removed
-* Property selfUri was removed
+* Property timeZone was removed
 
 
-# Minor Changes (69 changes)
+# Minor Changes (42 changes)
 
-**/api/v2/audits/query/realtime/servicemapping** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/speechandtextanalytics/conversations/{conversationId}** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/coaching/appointments/aggregates/query** (2 changes)
+**/api/v2/conversations/{conversationId}/assign** (2 changes)
 
 * Path was added
 * Operation POST was added
 
-**AcwSettings** (1 change)
+**Queue** (2 changes)
 
-* Enum value AGENT_REQUESTED was added to property wrapupPrompt
+* Optional property enableTranscription was added
+* Optional property enableManualAssignment was added
 
-**UserScheduleAdherence** (1 change)
+**Call** (2 changes)
 
-* Optional property team was added
+* Optional property afterCallWorkRequired was added
+* Optional property agentAssistantId was added
+
+**Callback** (1 change)
+
+* Optional property afterCallWorkRequired was added
+
+**Cobrowsesession** (1 change)
+
+* Optional property afterCallWorkRequired was added
+
+**ConversationChat** (1 change)
+
+* Optional property afterCallWorkRequired was added
+
+**Email** (1 change)
+
+* Optional property afterCallWorkRequired was added
+
+**Message** (1 change)
+
+* Optional property afterCallWorkRequired was added
+
+**Screenshare** (1 change)
+
+* Optional property afterCallWorkRequired was added
+
+**SocialExpression** (1 change)
+
+* Optional property afterCallWorkRequired was added
+
+**Video** (1 change)
+
+* Optional property afterCallWorkRequired was added
 
 **ViewFilter** (1 change)
 
-* Enum value webmessaging was added to property messageTypes
+* Optional property hasAgentAssistId was added
 
-**Recipient** (1 change)
+**UserQueue** (2 changes)
 
-* Enum value webmessaging was added to property messengerType
+* Optional property enableTranscription was added
+* Optional property enableManualAssignment was added
 
-**Message** (2 changes)
+**CallBasic** (2 changes)
 
-* Enum value unknown was added to property type
-* Enum value webmessaging was added to property type
+* Optional property afterCallWorkRequired was added
+* Optional property agentAssistantId was added
 
-**Participant** (1 change)
+**CallbackBasic** (1 change)
 
-* Enum value agentRequested was added to property wrapupPrompt
+* Optional property afterCallWorkRequired was added
 
-**FlowAggregateQueryPredicate** (2 changes)
+**QueueObservationQuery** (2 changes)
 
-* Enum value agentRank was added to property dimension
-* Enum value proposedAgentId was added to property dimension
+* Enum value oAlerting was added to property metrics
+* Enum value oAlerting was added to property detailMetrics
 
-**FlowAggregationQuery** (2 changes)
+**WfmAgent** (1 change)
 
-* Enum value agentRank was added to property groupBy
-* Enum value proposedAgentId was added to property groupBy
+* Optional property workPlanRotation was added
 
-**MessagingIntegration** (1 change)
+**WorkPlanRotationReference** (1 change)
 
-* Enum value webmessaging was added to property messengerType
+* Model was added
 
-**IpAddressRange** (1 change)
+**QueueRequest** (2 changes)
 
-* Enum value smtp was added to property service
+* Optional property enableTranscription was added
+* Optional property enableManualAssignment was added
 
-**OAuthClientListing** (1 change)
+**BuAgentScheduleRescheduleResponse** (1 change)
 
-* Optional property dateToDelete was added
+* Optional property workPlansPerWeek was added
 
-**OAuthClient** (1 change)
+**ConversationUser** (1 change)
 
-* Optional property dateToDelete was added
+* Model was added
 
-**OAuthClientRequest** (1 change)
+**CreateQueueRequest** (2 changes)
 
-* Optional property dateToDelete was added
+* Optional property enableTranscription was added
+* Optional property enableManualAssignment was added
 
-**AuditQueryEntity** (3 changes)
+**BuAgentScheduleQueryResponse** (1 change)
 
-* Enum value Trigger was added to property name
-* Enum value Enable was added to property actions
-* Enum value Disable was added to property actions
-
-**AuditQueryService** (1 change)
-
-* Enum value Triggers was added to property name
+* Optional property workPlansPerWeek was added
 
 **AuditQueryExecutionStatusResponse** (1 change)
 
-* Enum value Triggers was added to property serviceName
+* Enum value ResponseManagement was added to property serviceName
 
 **AuditQueryRequest** (1 change)
 
-* Enum value Triggers was added to property serviceName
+* Enum value ResponseManagement was added to property serviceName
 
 **AuditLogMessage** (4 changes)
 
-* Enum value Triggers was added to property serviceName
-* Enum value Enable was added to property action
-* Enum value Disable was added to property action
-* Enum value Trigger was added to property entityType
+* Enum value ResponseManagement was added to property serviceName
+* Enum value SessionType was added to property entityType
+* Enum value EventType was added to property entityType
+* Enum value Response was added to property entityType
 
 **AuditRealtimeQueryRequest** (1 change)
 
-* Enum value Triggers was added to property serviceName
+* Enum value ResponseManagement was added to property serviceName
 
-**MessagingSticker** (1 change)
+**AuditQueryEntity** (3 changes)
 
-* Enum value webmessaging was added to property messengerType
+* Enum value SessionType was added to property name
+* Enum value EventType was added to property name
+* Enum value Response was added to property name
 
-**MessageMediaParticipant** (2 changes)
+**AuditQueryService** (1 change)
 
-* Enum value unknown was added to property type
-* Enum value webmessaging was added to property type
-
-**CreateOutboundMessagingConversationRequest** (1 change)
-
-* Enum value webmessaging was added to property toAddressMessengerType
-
-**SendAgentlessOutboundMessageResponse** (1 change)
-
-* Enum value webmessaging was added to property messengerType
-
-**SendAgentlessOutboundMessageRequest** (1 change)
-
-* Enum value webmessaging was added to property toAddressMessengerType
-
-**MessageData** (1 change)
-
-* Enum value webmessaging was added to property messengerType
-
-**WfmBusinessUnitReference** (1 change)
-
-* id is no longer readonly
-
-**WfmScheduleReference** (1 change)
-
-* id is no longer readonly
-
-**AnalyticsProposedAgent** (1 change)
-
-* Model was added
-
-**AnalyticsSession** (2 changes)
-
-* Optional property agentAssistantId was added
-* Optional property proposedAgents was added
-
-**ConversationAggregateQueryPredicate** (2 changes)
-
-* Enum value agentRank was added to property dimension
-* Enum value proposedAgentId was added to property dimension
-
-**ConversationAggregationQuery** (2 changes)
-
-* Enum value agentRank was added to property groupBy
-* Enum value proposedAgentId was added to property groupBy
-
-**SegmentDetailQueryPredicate** (2 changes)
-
-* Enum value agentRank was added to property dimension
-* Enum value proposedAgentId was added to property dimension
-
-**CoachingAppointmentResponse** (1 change)
-
-* Optional property isOverdue was added
-
-**OrgOAuthClient** (1 change)
-
-* Optional property dateToDelete was added
-
-**ParticipantBasic** (1 change)
-
-* Enum value agentRequested was added to property wrapupPrompt
-
-**ConversationMetrics** (1 change)
-
-* Model was added
-
-**EventMessage** (2 changes)
-
-* Enum value CAMPAIGN_CONTENT_TEMPLATE_SUBSTITUTION_MISMATCH was added to property code
-* Enum value CAMPAIGN_MESSAGE_CHARACTER_LIMIT_EXCEEDED was added to property code
-
-**BuAgentSchedulesQueryResponse** (1 change)
-
-* Optional property businessUnitTimeZone was added
-
-**UserSearchRequest** (1 change)
-
-* Optional property enforcePermissions was added
-
-**ExternalOrganizationTrustorLink** (1 change)
-
-* Optional property externalOrganizationUri was added
-
-**CoachingAppointmentAggregateResponse** (1 change)
-
-* Model was added
-
-**QueryResponseData** (1 change)
-
-* Model was added
-
-**QueryResponseGroupedData** (1 change)
-
-* Model was added
-
-**QueryResponseMetric** (1 change)
-
-* Model was added
-
-**QueryResponseStats** (1 change)
-
-* Model was added
-
-**CoachingAppointmentAggregateRequest** (1 change)
-
-* Model was added
-
-**QueryRequestClause** (1 change)
-
-* Model was added
-
-**QueryRequestFilter** (1 change)
-
-* Model was added
-
-**QueryRequestPredicate** (1 change)
-
-* Model was added
+* Enum value ResponseManagement was added to property name
 
 
 # Point Changes (0 changes)

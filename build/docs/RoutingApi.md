@@ -4165,6 +4165,8 @@ UserQueue <a href="#" onclick="return copyUserQueueExample()">Copy</a>
     "name": String, 
     "selfUri": String, 
   },  
+  "enableTranscription": Boolean, 
+  "enableManualAssignment": Boolean, 
   "callingPartyName": String, 
   "callingPartyNumber": String, 
   "defaultScripts": { 
@@ -4478,6 +4480,8 @@ UserQueue <a href="#" onclick="return copyUserQueueExample()">Copy</a>
     "name": String, 
     "selfUri": String, 
   },  
+  "enableTranscription": Boolean, 
+  "enableManualAssignment": Boolean, 
   "callingPartyName": String, 
   "callingPartyNumber": String, 
   "defaultScripts": { 
@@ -5869,6 +5873,8 @@ CreateQueueRequest <a href="#" onclick="return copyCreateQueueRequestExample()">
     "selfUri": String, 
   },  
   "autoAnswerOnly": Boolean, 
+  "enableTranscription": Boolean, 
+  "enableManualAssignment": Boolean, 
   "callingPartyName": String, 
   "callingPartyNumber": String, 
   "defaultScripts": { 
@@ -8879,6 +8885,8 @@ QueueRequest <a href="#" onclick="return copyQueueRequestExample()">Copy</a>
     "selfUri": String, 
   },  
   "autoAnswerOnly": Boolean, 
+  "enableTranscription": Boolean, 
+  "enableManualAssignment": Boolean, 
   "callingPartyName": String, 
   "callingPartyNumber": String, 
   "defaultScripts": { 

@@ -1413,7 +1413,6 @@ AsyncConversationQuery <a href="#" onclick="return copyAsyncConversationQueryExa
 
 ```{"language":"json", "maxHeight": "250px"}
 { 
-  "interval": String, 
   "conversationFilters": { 
     "type": String, 
     "clauses": { 
@@ -1578,6 +1577,7 @@ AsyncConversationQuery <a href="#" onclick="return copyAsyncConversationQueryExa
   },  
   "order": String, 
   "orderBy": String, 
+  "interval": String, 
   "limit": Number, 
   "startOfDayIntervalMatching": Boolean, 
 }
@@ -1659,7 +1659,6 @@ ConversationQuery <a href="#" onclick="return copyConversationQueryExample()">Co
 
 ```{"language":"json", "maxHeight": "250px"}
 { 
-  "interval": String, 
   "conversationFilters": { 
     "type": String, 
     "clauses": { 
@@ -1824,6 +1823,7 @@ ConversationQuery <a href="#" onclick="return copyConversationQueryExample()">Co
   },  
   "order": String, 
   "orderBy": String, 
+  "interval": String, 
   "aggregations": { 
     "type": String, 
     "dimension": String, 
@@ -2695,6 +2695,7 @@ ReportingExportJobRequest <a href="#" onclick="return copyReportingExportJobRequ
     "callbackInterval": String, 
     "usedRoutingTypes": [String], 
     "requestedRoutingTypes": [String], 
+    "hasAgentAssistId": Boolean, 
   },  
   "read": Boolean, 
   "locale": String, 

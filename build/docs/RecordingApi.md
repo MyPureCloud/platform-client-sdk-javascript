@@ -3483,6 +3483,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
             "selfUri": String, 
           },  
           "autoAnswerOnly": Boolean, 
+          "enableTranscription": Boolean, 
+          "enableManualAssignment": Boolean, 
           "callingPartyName": String, 
           "callingPartyNumber": String, 
           "defaultScripts": { 
@@ -5514,6 +5516,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
             "selfUri": String, 
           },  
           "autoAnswerOnly": Boolean, 
+          "enableTranscription": Boolean, 
+          "enableManualAssignment": Boolean, 
           "callingPartyName": String, 
           "callingPartyNumber": String, 
           "defaultScripts": { 
@@ -7544,6 +7548,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
             "selfUri": String, 
           },  
           "autoAnswerOnly": Boolean, 
+          "enableTranscription": Boolean, 
+          "enableManualAssignment": Boolean, 
           "callingPartyName": String, 
           "callingPartyNumber": String, 
           "defaultScripts": { 
@@ -9569,6 +9575,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
             "selfUri": String, 
           },  
           "autoAnswerOnly": Boolean, 
+          "enableTranscription": Boolean, 
+          "enableManualAssignment": Boolean, 
           "callingPartyName": String, 
           "callingPartyNumber": String, 
           "defaultScripts": { 
@@ -10153,6 +10161,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
         "selfUri": String, 
       },  
       "autoAnswerOnly": Boolean, 
+      "enableTranscription": Boolean, 
+      "enableManualAssignment": Boolean, 
       "callingPartyName": String, 
       "callingPartyNumber": String, 
       "defaultScripts": { 
@@ -13207,7 +13217,6 @@ RecordingJobsQuery <a href="#" onclick="return copyRecordingJobsQueryExample()">
   "integrationId": String, 
   "includeScreenRecordings": Boolean, 
   "conversationQuery": { 
-    "interval": String, 
     "conversationFilters": { 
       "type": String, 
       "clauses": { 
@@ -13372,6 +13381,7 @@ RecordingJobsQuery <a href="#" onclick="return copyRecordingJobsQueryExample()">
     },  
     "order": String, 
     "orderBy": String, 
+    "interval": String, 
     "limit": Number, 
     "startOfDayIntervalMatching": Boolean, 
   },  
@@ -15541,6 +15551,8 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
             "selfUri": String, 
           },  
           "autoAnswerOnly": Boolean, 
+          "enableTranscription": Boolean, 
+          "enableManualAssignment": Boolean, 
           "callingPartyName": String, 
           "callingPartyNumber": String, 
           "defaultScripts": { 
@@ -17572,6 +17584,8 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
             "selfUri": String, 
           },  
           "autoAnswerOnly": Boolean, 
+          "enableTranscription": Boolean, 
+          "enableManualAssignment": Boolean, 
           "callingPartyName": String, 
           "callingPartyNumber": String, 
           "defaultScripts": { 
@@ -19602,6 +19616,8 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
             "selfUri": String, 
           },  
           "autoAnswerOnly": Boolean, 
+          "enableTranscription": Boolean, 
+          "enableManualAssignment": Boolean, 
           "callingPartyName": String, 
           "callingPartyNumber": String, 
           "defaultScripts": { 
@@ -21627,6 +21643,8 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
             "selfUri": String, 
           },  
           "autoAnswerOnly": Boolean, 
+          "enableTranscription": Boolean, 
+          "enableManualAssignment": Boolean, 
           "callingPartyName": String, 
           "callingPartyNumber": String, 
           "defaultScripts": { 
@@ -22211,6 +22229,8 @@ PolicyCreate <a href="#" onclick="return copyPolicyCreateExample()">Copy</a>
         "selfUri": String, 
       },  
       "autoAnswerOnly": Boolean, 
+      "enableTranscription": Boolean, 
+      "enableManualAssignment": Boolean, 
       "callingPartyName": String, 
       "callingPartyNumber": String, 
       "defaultScripts": { 
@@ -29533,6 +29553,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
             "selfUri": String, 
           },  
           "autoAnswerOnly": Boolean, 
+          "enableTranscription": Boolean, 
+          "enableManualAssignment": Boolean, 
           "callingPartyName": String, 
           "callingPartyNumber": String, 
           "defaultScripts": { 
@@ -31564,6 +31586,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
             "selfUri": String, 
           },  
           "autoAnswerOnly": Boolean, 
+          "enableTranscription": Boolean, 
+          "enableManualAssignment": Boolean, 
           "callingPartyName": String, 
           "callingPartyNumber": String, 
           "defaultScripts": { 
@@ -33594,6 +33618,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
             "selfUri": String, 
           },  
           "autoAnswerOnly": Boolean, 
+          "enableTranscription": Boolean, 
+          "enableManualAssignment": Boolean, 
           "callingPartyName": String, 
           "callingPartyNumber": String, 
           "defaultScripts": { 
@@ -35619,6 +35645,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
             "selfUri": String, 
           },  
           "autoAnswerOnly": Boolean, 
+          "enableTranscription": Boolean, 
+          "enableManualAssignment": Boolean, 
           "callingPartyName": String, 
           "callingPartyNumber": String, 
           "defaultScripts": { 
@@ -36203,6 +36231,8 @@ Policy <a href="#" onclick="return copyPolicyExample()">Copy</a>
         "selfUri": String, 
       },  
       "autoAnswerOnly": Boolean, 
+      "enableTranscription": Boolean, 
+      "enableManualAssignment": Boolean, 
       "callingPartyName": String, 
       "callingPartyNumber": String, 
       "defaultScripts": { 

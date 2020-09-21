@@ -7327,6 +7327,8 @@ UserQueue <a href="#" onclick="return copyUserQueueExample()">Copy</a>
     "name": String, 
     "selfUri": String, 
   },  
+  "enableTranscription": Boolean, 
+  "enableManualAssignment": Boolean, 
   "callingPartyName": String, 
   "callingPartyNumber": String, 
   "defaultScripts": { 
@@ -7640,6 +7642,8 @@ UserQueue <a href="#" onclick="return copyUserQueueExample()">Copy</a>
     "name": String, 
     "selfUri": String, 
   },  
+  "enableTranscription": Boolean, 
+  "enableManualAssignment": Boolean, 
   "callingPartyName": String, 
   "callingPartyNumber": String, 
   "defaultScripts": { 

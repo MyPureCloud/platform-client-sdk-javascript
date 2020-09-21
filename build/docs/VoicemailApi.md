@@ -3133,6 +3133,8 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
           "endTime": Date, 
           "state": String, 
         },  
+        "afterCallWorkRequired": Boolean, 
+        "agentAssistantId": String, 
       },  
       "callbacks": { 
         "state": String, 
@@ -3189,6 +3191,7 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
           "endTime": Date, 
           "state": String, 
         },  
+        "afterCallWorkRequired": Boolean, 
       },  
       "chats": { 
         "state": String, 
@@ -3244,6 +3247,7 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
           "endTime": Date, 
           "state": String, 
         },  
+        "afterCallWorkRequired": Boolean, 
       },  
       "cobrowsesessions": { 
         "state": String, 
@@ -3287,6 +3291,7 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
           "endTime": Date, 
           "state": String, 
         },  
+        "afterCallWorkRequired": Boolean, 
       },  
       "emails": { 
         "state": String, 
@@ -3396,6 +3401,7 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
           "endTime": Date, 
           "state": String, 
         },  
+        "afterCallWorkRequired": Boolean, 
       },  
       "messages": { 
         "state": String, 
@@ -3527,6 +3533,7 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
           "endTime": Date, 
           "state": String, 
         },  
+        "afterCallWorkRequired": Boolean, 
       },  
       "screenshares": { 
         "state": String, 
@@ -3561,6 +3568,7 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
           "endTime": Date, 
           "state": String, 
         },  
+        "afterCallWorkRequired": Boolean, 
       },  
       "socialExpressions": { 
         "state": String, 
@@ -3600,6 +3608,7 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
           "endTime": Date, 
           "state": String, 
         },  
+        "afterCallWorkRequired": Boolean, 
       },  
       "videos": { 
         "state": String, 
@@ -3637,6 +3646,7 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
           "endTime": Date, 
           "state": String, 
         },  
+        "afterCallWorkRequired": Boolean, 
       },  
       "evaluations": { 
         "id": String, 
@@ -3778,6 +3788,8 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
+              "agentAssistantId": String, 
             },  
             "callbacks": { 
               "state": String, 
@@ -3831,6 +3843,7 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "chats": { 
               "state": String, 
@@ -3874,6 +3887,7 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "cobrowsesessions": { 
               "state": String, 
@@ -3917,6 +3931,7 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "emails": { 
               "state": String, 
@@ -3978,6 +3993,7 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "messages": { 
               "state": String, 
@@ -4052,6 +4068,7 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "screenshares": { 
               "state": String, 
@@ -4086,6 +4103,7 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "socialExpressions": { 
               "state": String, 
@@ -4125,6 +4143,7 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "videos": { 
               "state": String, 
@@ -4162,6 +4181,7 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "evaluations": { 
               "id": String, 
@@ -4312,6 +4332,8 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
                 "queueFlow": DomainEntityRef, 
                 "whisperPrompt": DomainEntityRef, 
                 "autoAnswerOnly": Boolean, 
+                "enableTranscription": Boolean, 
+                "enableManualAssignment": Boolean, 
                 "callingPartyName": String, 
                 "callingPartyNumber": String, 
                 "defaultScripts": {String: Script}, 
@@ -6327,6 +6349,8 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
                 "other": Address, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
+                "agentAssistantId": String, 
               },  
               "callbacks": { 
                 "state": String, 
@@ -6353,6 +6377,7 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
                 "peerId": String, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "chats": { 
                 "state": String, 
@@ -6374,6 +6399,7 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
                 "journeyContext": JourneyContext, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "cobrowsesessions": { 
                 "state": String, 
@@ -6393,6 +6419,7 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
                 "segments": [Segment], 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "emails": { 
                 "state": String, 
@@ -6418,6 +6445,7 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
                 "spam": Boolean, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "messages": { 
                 "state": String, 
@@ -6443,6 +6471,7 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
                 "messages": [MessageDetails], 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "screenshares": { 
                 "state": String, 
@@ -6459,6 +6488,7 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
                 "segments": [Segment], 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "socialExpressions": { 
                 "state": String, 
@@ -6480,6 +6510,7 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
                 "peerId": String, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "videos": { 
                 "state": String, 
@@ -6499,6 +6530,7 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
                 "self": Address, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "evaluations": { 
                 "id": String, 
@@ -7237,6 +7269,8 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
                 "selfUri": String, 
               },  
               "autoAnswerOnly": Boolean, 
+              "enableTranscription": Boolean, 
+              "enableManualAssignment": Boolean, 
               "callingPartyName": String, 
               "callingPartyNumber": String, 
               "defaultScripts": { 
@@ -7904,6 +7938,8 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
                 "selfUri": String, 
               },  
               "autoAnswerOnly": Boolean, 
+              "enableTranscription": Boolean, 
+              "enableManualAssignment": Boolean, 
               "callingPartyName": String, 
               "callingPartyNumber": String, 
               "defaultScripts": { 
@@ -8035,6 +8071,8 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
             "selfUri": String, 
           },  
           "autoAnswerOnly": Boolean, 
+          "enableTranscription": Boolean, 
+          "enableManualAssignment": Boolean, 
           "callingPartyName": String, 
           "callingPartyNumber": String, 
           "defaultScripts": { 
@@ -15410,6 +15448,8 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
       "selfUri": String, 
     },  
     "autoAnswerOnly": Boolean, 
+    "enableTranscription": Boolean, 
+    "enableManualAssignment": Boolean, 
     "callingPartyName": String, 
     "callingPartyNumber": String, 
     "defaultScripts": { 
@@ -18400,6 +18440,8 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
           "endTime": Date, 
           "state": String, 
         },  
+        "afterCallWorkRequired": Boolean, 
+        "agentAssistantId": String, 
       },  
       "callbacks": { 
         "state": String, 
@@ -18456,6 +18498,7 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
           "endTime": Date, 
           "state": String, 
         },  
+        "afterCallWorkRequired": Boolean, 
       },  
       "chats": { 
         "state": String, 
@@ -18511,6 +18554,7 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
           "endTime": Date, 
           "state": String, 
         },  
+        "afterCallWorkRequired": Boolean, 
       },  
       "cobrowsesessions": { 
         "state": String, 
@@ -18554,6 +18598,7 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
           "endTime": Date, 
           "state": String, 
         },  
+        "afterCallWorkRequired": Boolean, 
       },  
       "emails": { 
         "state": String, 
@@ -18663,6 +18708,7 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
           "endTime": Date, 
           "state": String, 
         },  
+        "afterCallWorkRequired": Boolean, 
       },  
       "messages": { 
         "state": String, 
@@ -18794,6 +18840,7 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
           "endTime": Date, 
           "state": String, 
         },  
+        "afterCallWorkRequired": Boolean, 
       },  
       "screenshares": { 
         "state": String, 
@@ -18828,6 +18875,7 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
           "endTime": Date, 
           "state": String, 
         },  
+        "afterCallWorkRequired": Boolean, 
       },  
       "socialExpressions": { 
         "state": String, 
@@ -18867,6 +18915,7 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
           "endTime": Date, 
           "state": String, 
         },  
+        "afterCallWorkRequired": Boolean, 
       },  
       "videos": { 
         "state": String, 
@@ -18904,6 +18953,7 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
           "endTime": Date, 
           "state": String, 
         },  
+        "afterCallWorkRequired": Boolean, 
       },  
       "evaluations": { 
         "id": String, 
@@ -19045,6 +19095,8 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
+              "agentAssistantId": String, 
             },  
             "callbacks": { 
               "state": String, 
@@ -19098,6 +19150,7 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "chats": { 
               "state": String, 
@@ -19141,6 +19194,7 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "cobrowsesessions": { 
               "state": String, 
@@ -19184,6 +19238,7 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "emails": { 
               "state": String, 
@@ -19245,6 +19300,7 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "messages": { 
               "state": String, 
@@ -19319,6 +19375,7 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "screenshares": { 
               "state": String, 
@@ -19353,6 +19410,7 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "socialExpressions": { 
               "state": String, 
@@ -19392,6 +19450,7 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "videos": { 
               "state": String, 
@@ -19429,6 +19488,7 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "evaluations": { 
               "id": String, 
@@ -19579,6 +19639,8 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
                 "queueFlow": DomainEntityRef, 
                 "whisperPrompt": DomainEntityRef, 
                 "autoAnswerOnly": Boolean, 
+                "enableTranscription": Boolean, 
+                "enableManualAssignment": Boolean, 
                 "callingPartyName": String, 
                 "callingPartyNumber": String, 
                 "defaultScripts": {String: Script}, 
@@ -21594,6 +21656,8 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
                 "other": Address, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
+                "agentAssistantId": String, 
               },  
               "callbacks": { 
                 "state": String, 
@@ -21620,6 +21684,7 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
                 "peerId": String, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "chats": { 
                 "state": String, 
@@ -21641,6 +21706,7 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
                 "journeyContext": JourneyContext, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "cobrowsesessions": { 
                 "state": String, 
@@ -21660,6 +21726,7 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
                 "segments": [Segment], 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "emails": { 
                 "state": String, 
@@ -21685,6 +21752,7 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
                 "spam": Boolean, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "messages": { 
                 "state": String, 
@@ -21710,6 +21778,7 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
                 "messages": [MessageDetails], 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "screenshares": { 
                 "state": String, 
@@ -21726,6 +21795,7 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
                 "segments": [Segment], 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "socialExpressions": { 
                 "state": String, 
@@ -21747,6 +21817,7 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
                 "peerId": String, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "videos": { 
                 "state": String, 
@@ -21766,6 +21837,7 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
                 "self": Address, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "evaluations": { 
                 "id": String, 
@@ -22504,6 +22576,8 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
                 "selfUri": String, 
               },  
               "autoAnswerOnly": Boolean, 
+              "enableTranscription": Boolean, 
+              "enableManualAssignment": Boolean, 
               "callingPartyName": String, 
               "callingPartyNumber": String, 
               "defaultScripts": { 
@@ -23171,6 +23245,8 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
                 "selfUri": String, 
               },  
               "autoAnswerOnly": Boolean, 
+              "enableTranscription": Boolean, 
+              "enableManualAssignment": Boolean, 
               "callingPartyName": String, 
               "callingPartyNumber": String, 
               "defaultScripts": { 
@@ -23302,6 +23378,8 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
             "selfUri": String, 
           },  
           "autoAnswerOnly": Boolean, 
+          "enableTranscription": Boolean, 
+          "enableManualAssignment": Boolean, 
           "callingPartyName": String, 
           "callingPartyNumber": String, 
           "defaultScripts": { 
@@ -30677,6 +30755,8 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
       "selfUri": String, 
     },  
     "autoAnswerOnly": Boolean, 
+    "enableTranscription": Boolean, 
+    "enableManualAssignment": Boolean, 
     "callingPartyName": String, 
     "callingPartyNumber": String, 
     "defaultScripts": { 

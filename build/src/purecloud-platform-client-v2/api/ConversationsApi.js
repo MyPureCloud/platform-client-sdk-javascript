@@ -5,7 +5,7 @@ class ConversationsApi {
 	/**
 	 * Conversations service.
 	 * @module purecloud-platform-client-v2/api/ConversationsApi
-	 * @version 90.0.0
+	 * @version 91.0.0
 	 */
 
 	/**
@@ -2831,6 +2831,36 @@ class ConversationsApi {
 			'/api/v2/analytics/conversations/details/query', 
 			'POST', 
 			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Attempts to manually assign a specified conversation to a specified agent.  Ignores bullseye ring, PAR score, skills, and languages.
+	 * 
+	 * @param {String} conversationId conversation ID
+	 * @param {Object} body Targeted user
+	 */
+	postConversationAssign(conversationId, body) { 
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null) {
+			throw 'Missing the required parameter "conversationId" when calling postConversationAssign';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postConversationAssign';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/{conversationId}/assign', 
+			'POST', 
+			{ 'conversationId': conversationId }, 
 			{  }, 
 			{  }, 
 			{  }, 

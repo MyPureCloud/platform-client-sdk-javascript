@@ -484,6 +484,8 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
           "endTime": Date, 
           "state": String, 
         },  
+        "afterCallWorkRequired": Boolean, 
+        "agentAssistantId": String, 
       },  
       "callbacks": { 
         "state": String, 
@@ -540,6 +542,7 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
           "endTime": Date, 
           "state": String, 
         },  
+        "afterCallWorkRequired": Boolean, 
       },  
       "chats": { 
         "state": String, 
@@ -595,6 +598,7 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
           "endTime": Date, 
           "state": String, 
         },  
+        "afterCallWorkRequired": Boolean, 
       },  
       "cobrowsesessions": { 
         "state": String, 
@@ -638,6 +642,7 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
           "endTime": Date, 
           "state": String, 
         },  
+        "afterCallWorkRequired": Boolean, 
       },  
       "emails": { 
         "state": String, 
@@ -747,6 +752,7 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
           "endTime": Date, 
           "state": String, 
         },  
+        "afterCallWorkRequired": Boolean, 
       },  
       "messages": { 
         "state": String, 
@@ -878,6 +884,7 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
           "endTime": Date, 
           "state": String, 
         },  
+        "afterCallWorkRequired": Boolean, 
       },  
       "screenshares": { 
         "state": String, 
@@ -912,6 +919,7 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
           "endTime": Date, 
           "state": String, 
         },  
+        "afterCallWorkRequired": Boolean, 
       },  
       "socialExpressions": { 
         "state": String, 
@@ -951,6 +959,7 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
           "endTime": Date, 
           "state": String, 
         },  
+        "afterCallWorkRequired": Boolean, 
       },  
       "videos": { 
         "state": String, 
@@ -988,6 +997,7 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
           "endTime": Date, 
           "state": String, 
         },  
+        "afterCallWorkRequired": Boolean, 
       },  
       "evaluations": { 
         "id": String, 
@@ -1129,6 +1139,8 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
+              "agentAssistantId": String, 
             },  
             "callbacks": { 
               "state": String, 
@@ -1182,6 +1194,7 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "chats": { 
               "state": String, 
@@ -1225,6 +1238,7 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "cobrowsesessions": { 
               "state": String, 
@@ -1268,6 +1282,7 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "emails": { 
               "state": String, 
@@ -1329,6 +1344,7 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "messages": { 
               "state": String, 
@@ -1403,6 +1419,7 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "screenshares": { 
               "state": String, 
@@ -1437,6 +1454,7 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "socialExpressions": { 
               "state": String, 
@@ -1476,6 +1494,7 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "videos": { 
               "state": String, 
@@ -1513,6 +1532,7 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "evaluations": { 
               "id": String, 
@@ -1663,6 +1683,8 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
                 "queueFlow": DomainEntityRef, 
                 "whisperPrompt": DomainEntityRef, 
                 "autoAnswerOnly": Boolean, 
+                "enableTranscription": Boolean, 
+                "enableManualAssignment": Boolean, 
                 "callingPartyName": String, 
                 "callingPartyNumber": String, 
                 "defaultScripts": {String: Script}, 
@@ -2944,6 +2966,8 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
                 "other": Address, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
+                "agentAssistantId": String, 
               },  
               "callbacks": { 
                 "state": String, 
@@ -2970,6 +2994,7 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
                 "peerId": String, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "chats": { 
                 "state": String, 
@@ -2991,6 +3016,7 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
                 "journeyContext": JourneyContext, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "cobrowsesessions": { 
                 "state": String, 
@@ -3010,6 +3036,7 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
                 "segments": [Segment], 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "emails": { 
                 "state": String, 
@@ -3035,6 +3062,7 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
                 "spam": Boolean, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "messages": { 
                 "state": String, 
@@ -3060,6 +3088,7 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
                 "messages": [MessageDetails], 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "screenshares": { 
                 "state": String, 
@@ -3076,6 +3105,7 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
                 "segments": [Segment], 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "socialExpressions": { 
                 "state": String, 
@@ -3097,6 +3127,7 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
                 "peerId": String, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "videos": { 
                 "state": String, 
@@ -3116,6 +3147,7 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
                 "self": Address, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "evaluations": { 
                 "id": String, 
@@ -3854,6 +3886,8 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
                 "selfUri": String, 
               },  
               "autoAnswerOnly": Boolean, 
+              "enableTranscription": Boolean, 
+              "enableManualAssignment": Boolean, 
               "callingPartyName": String, 
               "callingPartyNumber": String, 
               "defaultScripts": { 
@@ -4521,6 +4555,8 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
                 "selfUri": String, 
               },  
               "autoAnswerOnly": Boolean, 
+              "enableTranscription": Boolean, 
+              "enableManualAssignment": Boolean, 
               "callingPartyName": String, 
               "callingPartyNumber": String, 
               "defaultScripts": { 
@@ -4652,6 +4688,8 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
             "selfUri": String, 
           },  
           "autoAnswerOnly": Boolean, 
+          "enableTranscription": Boolean, 
+          "enableManualAssignment": Boolean, 
           "callingPartyName": String, 
           "callingPartyNumber": String, 
           "defaultScripts": { 

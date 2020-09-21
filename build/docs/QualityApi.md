@@ -3413,6 +3413,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
           "endTime": Date, 
           "state": String, 
         },  
+        "afterCallWorkRequired": Boolean, 
+        "agentAssistantId": String, 
       },  
       "callbacks": { 
         "state": String, 
@@ -3469,6 +3471,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
           "endTime": Date, 
           "state": String, 
         },  
+        "afterCallWorkRequired": Boolean, 
       },  
       "chats": { 
         "state": String, 
@@ -3524,6 +3527,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
           "endTime": Date, 
           "state": String, 
         },  
+        "afterCallWorkRequired": Boolean, 
       },  
       "cobrowsesessions": { 
         "state": String, 
@@ -3567,6 +3571,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
           "endTime": Date, 
           "state": String, 
         },  
+        "afterCallWorkRequired": Boolean, 
       },  
       "emails": { 
         "state": String, 
@@ -3676,6 +3681,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
           "endTime": Date, 
           "state": String, 
         },  
+        "afterCallWorkRequired": Boolean, 
       },  
       "messages": { 
         "state": String, 
@@ -3807,6 +3813,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
           "endTime": Date, 
           "state": String, 
         },  
+        "afterCallWorkRequired": Boolean, 
       },  
       "screenshares": { 
         "state": String, 
@@ -3841,6 +3848,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
           "endTime": Date, 
           "state": String, 
         },  
+        "afterCallWorkRequired": Boolean, 
       },  
       "socialExpressions": { 
         "state": String, 
@@ -3880,6 +3888,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
           "endTime": Date, 
           "state": String, 
         },  
+        "afterCallWorkRequired": Boolean, 
       },  
       "videos": { 
         "state": String, 
@@ -3917,6 +3926,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
           "endTime": Date, 
           "state": String, 
         },  
+        "afterCallWorkRequired": Boolean, 
       },  
       "evaluations": { 
         "id": String, 
@@ -4058,6 +4068,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
+              "agentAssistantId": String, 
             },  
             "callbacks": { 
               "state": String, 
@@ -4111,6 +4123,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "chats": { 
               "state": String, 
@@ -4154,6 +4167,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "cobrowsesessions": { 
               "state": String, 
@@ -4197,6 +4211,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "emails": { 
               "state": String, 
@@ -4258,6 +4273,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "messages": { 
               "state": String, 
@@ -4332,6 +4348,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "screenshares": { 
               "state": String, 
@@ -4366,6 +4383,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "socialExpressions": { 
               "state": String, 
@@ -4405,6 +4423,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "videos": { 
               "state": String, 
@@ -4442,6 +4461,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "evaluations": { 
               "id": String, 
@@ -4592,6 +4612,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "queueFlow": DomainEntityRef, 
                 "whisperPrompt": DomainEntityRef, 
                 "autoAnswerOnly": Boolean, 
+                "enableTranscription": Boolean, 
+                "enableManualAssignment": Boolean, 
                 "callingPartyName": String, 
                 "callingPartyNumber": String, 
                 "defaultScripts": {String: Script}, 
@@ -5873,6 +5895,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "other": Address, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
+                "agentAssistantId": String, 
               },  
               "callbacks": { 
                 "state": String, 
@@ -5899,6 +5923,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "peerId": String, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "chats": { 
                 "state": String, 
@@ -5920,6 +5945,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "journeyContext": JourneyContext, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "cobrowsesessions": { 
                 "state": String, 
@@ -5939,6 +5965,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "segments": [Segment], 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "emails": { 
                 "state": String, 
@@ -5964,6 +5991,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "spam": Boolean, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "messages": { 
                 "state": String, 
@@ -5989,6 +6017,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "messages": [MessageDetails], 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "screenshares": { 
                 "state": String, 
@@ -6005,6 +6034,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "segments": [Segment], 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "socialExpressions": { 
                 "state": String, 
@@ -6026,6 +6056,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "peerId": String, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "videos": { 
                 "state": String, 
@@ -6045,6 +6076,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "self": Address, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "evaluations": { 
                 "id": String, 
@@ -6783,6 +6815,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "selfUri": String, 
               },  
               "autoAnswerOnly": Boolean, 
+              "enableTranscription": Boolean, 
+              "enableManualAssignment": Boolean, 
               "callingPartyName": String, 
               "callingPartyNumber": String, 
               "defaultScripts": { 
@@ -7450,6 +7484,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "selfUri": String, 
               },  
               "autoAnswerOnly": Boolean, 
+              "enableTranscription": Boolean, 
+              "enableManualAssignment": Boolean, 
               "callingPartyName": String, 
               "callingPartyNumber": String, 
               "defaultScripts": { 
@@ -7581,6 +7617,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
             "selfUri": String, 
           },  
           "autoAnswerOnly": Boolean, 
+          "enableTranscription": Boolean, 
+          "enableManualAssignment": Boolean, 
           "callingPartyName": String, 
           "callingPartyNumber": String, 
           "defaultScripts": { 
@@ -8007,6 +8045,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
             "endTime": Date, 
             "state": String, 
           },  
+          "afterCallWorkRequired": Boolean, 
+          "agentAssistantId": String, 
         },  
         "callbacks": { 
           "state": String, 
@@ -8063,6 +8103,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
             "endTime": Date, 
             "state": String, 
           },  
+          "afterCallWorkRequired": Boolean, 
         },  
         "chats": { 
           "state": String, 
@@ -8118,6 +8159,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
             "endTime": Date, 
             "state": String, 
           },  
+          "afterCallWorkRequired": Boolean, 
         },  
         "cobrowsesessions": { 
           "state": String, 
@@ -8161,6 +8203,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
             "endTime": Date, 
             "state": String, 
           },  
+          "afterCallWorkRequired": Boolean, 
         },  
         "emails": { 
           "state": String, 
@@ -8254,6 +8297,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
             "endTime": Date, 
             "state": String, 
           },  
+          "afterCallWorkRequired": Boolean, 
         },  
         "messages": { 
           "state": String, 
@@ -8369,6 +8413,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
             "endTime": Date, 
             "state": String, 
           },  
+          "afterCallWorkRequired": Boolean, 
         },  
         "screenshares": { 
           "state": String, 
@@ -8403,6 +8448,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
             "endTime": Date, 
             "state": String, 
           },  
+          "afterCallWorkRequired": Boolean, 
         },  
         "socialExpressions": { 
           "state": String, 
@@ -8442,6 +8488,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
             "endTime": Date, 
             "state": String, 
           },  
+          "afterCallWorkRequired": Boolean, 
         },  
         "videos": { 
           "state": String, 
@@ -8479,6 +8526,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
             "endTime": Date, 
             "state": String, 
           },  
+          "afterCallWorkRequired": Boolean, 
         },  
         "evaluations": { 
           "id": String, 
@@ -8562,6 +8610,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "other": Address, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
+                "agentAssistantId": String, 
               },  
               "callbacks": { 
                 "state": String, 
@@ -8588,6 +8638,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "peerId": String, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "chats": { 
                 "state": String, 
@@ -8609,6 +8660,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "journeyContext": JourneyContext, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "cobrowsesessions": { 
                 "state": String, 
@@ -8628,6 +8680,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "segments": [Segment], 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "emails": { 
                 "state": String, 
@@ -8653,6 +8706,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "spam": Boolean, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "messages": { 
                 "state": String, 
@@ -8678,6 +8732,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "messages": [MessageDetails], 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "screenshares": { 
                 "state": String, 
@@ -8694,6 +8749,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "segments": [Segment], 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "socialExpressions": { 
                 "state": String, 
@@ -8715,6 +8771,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "peerId": String, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "videos": { 
                 "state": String, 
@@ -8734,6 +8791,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "self": Address, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "evaluations": { 
                 "id": String, 
@@ -9840,6 +9898,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "queueFlow": DomainEntityRef, 
                 "whisperPrompt": DomainEntityRef, 
                 "autoAnswerOnly": Boolean, 
+                "enableTranscription": Boolean, 
+                "enableManualAssignment": Boolean, 
                 "callingPartyName": String, 
                 "callingPartyNumber": String, 
                 "defaultScripts": {String: Script}, 
@@ -10008,6 +10068,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "queueFlow": DomainEntityRef, 
                 "whisperPrompt": DomainEntityRef, 
                 "autoAnswerOnly": Boolean, 
+                "enableTranscription": Boolean, 
+                "enableManualAssignment": Boolean, 
                 "callingPartyName": String, 
                 "callingPartyNumber": String, 
                 "defaultScripts": {String: Script}, 
@@ -10114,6 +10176,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
               "selfUri": String, 
             },  
             "autoAnswerOnly": Boolean, 
+            "enableTranscription": Boolean, 
+            "enableManualAssignment": Boolean, 
             "callingPartyName": String, 
             "callingPartyNumber": String, 
             "defaultScripts": { 
@@ -11705,6 +11769,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
               "endTime": Date, 
               "state": String, 
             },  
+            "afterCallWorkRequired": Boolean, 
+            "agentAssistantId": String, 
           },  
           "callbacks": { 
             "state": String, 
@@ -11761,6 +11827,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
               "endTime": Date, 
               "state": String, 
             },  
+            "afterCallWorkRequired": Boolean, 
           },  
           "chats": { 
             "state": String, 
@@ -11813,6 +11880,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
               "endTime": Date, 
               "state": String, 
             },  
+            "afterCallWorkRequired": Boolean, 
           },  
           "cobrowsesessions": { 
             "state": String, 
@@ -11856,6 +11924,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
               "endTime": Date, 
               "state": String, 
             },  
+            "afterCallWorkRequired": Boolean, 
           },  
           "emails": { 
             "state": String, 
@@ -11933,6 +12002,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
               "endTime": Date, 
               "state": String, 
             },  
+            "afterCallWorkRequired": Boolean, 
           },  
           "messages": { 
             "state": String, 
@@ -12032,6 +12102,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
               "endTime": Date, 
               "state": String, 
             },  
+            "afterCallWorkRequired": Boolean, 
           },  
           "screenshares": { 
             "state": String, 
@@ -12066,6 +12137,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
               "endTime": Date, 
               "state": String, 
             },  
+            "afterCallWorkRequired": Boolean, 
           },  
           "socialExpressions": { 
             "state": String, 
@@ -12105,6 +12177,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
               "endTime": Date, 
               "state": String, 
             },  
+            "afterCallWorkRequired": Boolean, 
           },  
           "videos": { 
             "state": String, 
@@ -12142,6 +12215,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
               "endTime": Date, 
               "state": String, 
             },  
+            "afterCallWorkRequired": Boolean, 
           },  
           "evaluations": { 
             "id": String, 
@@ -12771,6 +12845,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "selfUri": String, 
               },  
               "autoAnswerOnly": Boolean, 
+              "enableTranscription": Boolean, 
+              "enableManualAssignment": Boolean, 
               "callingPartyName": String, 
               "callingPartyNumber": String, 
               "defaultScripts": { 
@@ -13084,6 +13160,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
+              "agentAssistantId": String, 
             },  
             "callbacks": { 
               "state": String, 
@@ -13137,6 +13215,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "chats": { 
               "state": String, 
@@ -13180,6 +13259,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "cobrowsesessions": { 
               "state": String, 
@@ -13223,6 +13303,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "emails": { 
               "state": String, 
@@ -13284,6 +13365,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "messages": { 
               "state": String, 
@@ -13358,6 +13440,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "screenshares": { 
               "state": String, 
@@ -13392,6 +13475,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "socialExpressions": { 
               "state": String, 
@@ -13431,6 +13515,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "videos": { 
               "state": String, 
@@ -13468,6 +13553,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "evaluations": { 
               "id": String, 
@@ -13618,6 +13704,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "queueFlow": DomainEntityRef, 
                 "whisperPrompt": DomainEntityRef, 
                 "autoAnswerOnly": Boolean, 
+                "enableTranscription": Boolean, 
+                "enableManualAssignment": Boolean, 
                 "callingPartyName": String, 
                 "callingPartyNumber": String, 
                 "defaultScripts": {String: Script}, 
@@ -14899,6 +14987,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "other": Address, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
+                "agentAssistantId": String, 
               },  
               "callbacks": { 
                 "state": String, 
@@ -14925,6 +15015,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "peerId": String, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "chats": { 
                 "state": String, 
@@ -14946,6 +15037,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "journeyContext": JourneyContext, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "cobrowsesessions": { 
                 "state": String, 
@@ -14965,6 +15057,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "segments": [Segment], 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "emails": { 
                 "state": String, 
@@ -14990,6 +15083,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "spam": Boolean, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "messages": { 
                 "state": String, 
@@ -15015,6 +15109,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "messages": [MessageDetails], 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "screenshares": { 
                 "state": String, 
@@ -15031,6 +15126,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "segments": [Segment], 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "socialExpressions": { 
                 "state": String, 
@@ -15052,6 +15148,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "peerId": String, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "videos": { 
                 "state": String, 
@@ -15071,6 +15168,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "self": Address, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "evaluations": { 
                 "id": String, 
@@ -15809,6 +15907,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "selfUri": String, 
               },  
               "autoAnswerOnly": Boolean, 
+              "enableTranscription": Boolean, 
+              "enableManualAssignment": Boolean, 
               "callingPartyName": String, 
               "callingPartyNumber": String, 
               "defaultScripts": { 
@@ -16476,6 +16576,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "selfUri": String, 
               },  
               "autoAnswerOnly": Boolean, 
+              "enableTranscription": Boolean, 
+              "enableManualAssignment": Boolean, 
               "callingPartyName": String, 
               "callingPartyNumber": String, 
               "defaultScripts": { 
@@ -16607,6 +16709,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
             "selfUri": String, 
           },  
           "autoAnswerOnly": Boolean, 
+          "enableTranscription": Boolean, 
+          "enableManualAssignment": Boolean, 
           "callingPartyName": String, 
           "callingPartyNumber": String, 
           "defaultScripts": { 
@@ -16844,6 +16948,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
+              "agentAssistantId": String, 
             },  
             "callbacks": { 
               "state": String, 
@@ -16897,6 +17003,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "chats": { 
               "state": String, 
@@ -16940,6 +17047,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "cobrowsesessions": { 
               "state": String, 
@@ -16983,6 +17091,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "emails": { 
               "state": String, 
@@ -17044,6 +17153,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "messages": { 
               "state": String, 
@@ -17118,6 +17228,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "screenshares": { 
               "state": String, 
@@ -17152,6 +17263,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "socialExpressions": { 
               "state": String, 
@@ -17191,6 +17303,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "videos": { 
               "state": String, 
@@ -17228,6 +17341,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "evaluations": { 
               "id": String, 
@@ -17378,6 +17492,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "queueFlow": DomainEntityRef, 
                 "whisperPrompt": DomainEntityRef, 
                 "autoAnswerOnly": Boolean, 
+                "enableTranscription": Boolean, 
+                "enableManualAssignment": Boolean, 
                 "callingPartyName": String, 
                 "callingPartyNumber": String, 
                 "defaultScripts": {String: Script}, 
@@ -18659,6 +18775,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "other": Address, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
+                "agentAssistantId": String, 
               },  
               "callbacks": { 
                 "state": String, 
@@ -18685,6 +18803,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "peerId": String, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "chats": { 
                 "state": String, 
@@ -18706,6 +18825,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "journeyContext": JourneyContext, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "cobrowsesessions": { 
                 "state": String, 
@@ -18725,6 +18845,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "segments": [Segment], 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "emails": { 
                 "state": String, 
@@ -18750,6 +18871,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "spam": Boolean, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "messages": { 
                 "state": String, 
@@ -18775,6 +18897,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "messages": [MessageDetails], 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "screenshares": { 
                 "state": String, 
@@ -18791,6 +18914,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "segments": [Segment], 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "socialExpressions": { 
                 "state": String, 
@@ -18812,6 +18936,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "peerId": String, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "videos": { 
                 "state": String, 
@@ -18831,6 +18956,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "self": Address, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "evaluations": { 
                 "id": String, 
@@ -19569,6 +19695,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "selfUri": String, 
               },  
               "autoAnswerOnly": Boolean, 
+              "enableTranscription": Boolean, 
+              "enableManualAssignment": Boolean, 
               "callingPartyName": String, 
               "callingPartyNumber": String, 
               "defaultScripts": { 
@@ -20236,6 +20364,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "selfUri": String, 
               },  
               "autoAnswerOnly": Boolean, 
+              "enableTranscription": Boolean, 
+              "enableManualAssignment": Boolean, 
               "callingPartyName": String, 
               "callingPartyNumber": String, 
               "defaultScripts": { 
@@ -20367,6 +20497,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
             "selfUri": String, 
           },  
           "autoAnswerOnly": Boolean, 
+          "enableTranscription": Boolean, 
+          "enableManualAssignment": Boolean, 
           "callingPartyName": String, 
           "callingPartyNumber": String, 
           "defaultScripts": { 
@@ -20560,6 +20692,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
         "selfUri": String, 
       },  
       "autoAnswerOnly": Boolean, 
+      "enableTranscription": Boolean, 
+      "enableManualAssignment": Boolean, 
       "callingPartyName": String, 
       "callingPartyNumber": String, 
       "defaultScripts": { 
@@ -20845,6 +20979,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
             "endTime": Date, 
             "state": String, 
           },  
+          "afterCallWorkRequired": Boolean, 
+          "agentAssistantId": String, 
         },  
         "callbacks": { 
           "state": String, 
@@ -20901,6 +21037,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
             "endTime": Date, 
             "state": String, 
           },  
+          "afterCallWorkRequired": Boolean, 
         },  
         "chats": { 
           "state": String, 
@@ -20956,6 +21093,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
             "endTime": Date, 
             "state": String, 
           },  
+          "afterCallWorkRequired": Boolean, 
         },  
         "cobrowsesessions": { 
           "state": String, 
@@ -20999,6 +21137,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
             "endTime": Date, 
             "state": String, 
           },  
+          "afterCallWorkRequired": Boolean, 
         },  
         "emails": { 
           "state": String, 
@@ -21092,6 +21231,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
             "endTime": Date, 
             "state": String, 
           },  
+          "afterCallWorkRequired": Boolean, 
         },  
         "messages": { 
           "state": String, 
@@ -21207,6 +21347,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
             "endTime": Date, 
             "state": String, 
           },  
+          "afterCallWorkRequired": Boolean, 
         },  
         "screenshares": { 
           "state": String, 
@@ -21241,6 +21382,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
             "endTime": Date, 
             "state": String, 
           },  
+          "afterCallWorkRequired": Boolean, 
         },  
         "socialExpressions": { 
           "state": String, 
@@ -21280,6 +21422,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
             "endTime": Date, 
             "state": String, 
           },  
+          "afterCallWorkRequired": Boolean, 
         },  
         "videos": { 
           "state": String, 
@@ -21317,6 +21460,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
             "endTime": Date, 
             "state": String, 
           },  
+          "afterCallWorkRequired": Boolean, 
         },  
         "evaluations": { 
           "id": String, 
@@ -21400,6 +21544,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "other": Address, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
+                "agentAssistantId": String, 
               },  
               "callbacks": { 
                 "state": String, 
@@ -21426,6 +21572,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "peerId": String, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "chats": { 
                 "state": String, 
@@ -21447,6 +21594,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "journeyContext": JourneyContext, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "cobrowsesessions": { 
                 "state": String, 
@@ -21466,6 +21614,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "segments": [Segment], 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "emails": { 
                 "state": String, 
@@ -21491,6 +21640,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "spam": Boolean, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "messages": { 
                 "state": String, 
@@ -21516,6 +21666,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "messages": [MessageDetails], 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "screenshares": { 
                 "state": String, 
@@ -21532,6 +21683,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "segments": [Segment], 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "socialExpressions": { 
                 "state": String, 
@@ -21553,6 +21705,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "peerId": String, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "videos": { 
                 "state": String, 
@@ -21572,6 +21725,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "self": Address, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "evaluations": { 
                 "id": String, 
@@ -22678,6 +22832,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "queueFlow": DomainEntityRef, 
                 "whisperPrompt": DomainEntityRef, 
                 "autoAnswerOnly": Boolean, 
+                "enableTranscription": Boolean, 
+                "enableManualAssignment": Boolean, 
                 "callingPartyName": String, 
                 "callingPartyNumber": String, 
                 "defaultScripts": {String: Script}, 
@@ -22846,6 +23002,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "queueFlow": DomainEntityRef, 
                 "whisperPrompt": DomainEntityRef, 
                 "autoAnswerOnly": Boolean, 
+                "enableTranscription": Boolean, 
+                "enableManualAssignment": Boolean, 
                 "callingPartyName": String, 
                 "callingPartyNumber": String, 
                 "defaultScripts": {String: Script}, 
@@ -22952,6 +23110,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
               "selfUri": String, 
             },  
             "autoAnswerOnly": Boolean, 
+            "enableTranscription": Boolean, 
+            "enableManualAssignment": Boolean, 
             "callingPartyName": String, 
             "callingPartyNumber": String, 
             "defaultScripts": { 
@@ -24543,6 +24703,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
               "endTime": Date, 
               "state": String, 
             },  
+            "afterCallWorkRequired": Boolean, 
+            "agentAssistantId": String, 
           },  
           "callbacks": { 
             "state": String, 
@@ -24599,6 +24761,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
               "endTime": Date, 
               "state": String, 
             },  
+            "afterCallWorkRequired": Boolean, 
           },  
           "chats": { 
             "state": String, 
@@ -24651,6 +24814,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
               "endTime": Date, 
               "state": String, 
             },  
+            "afterCallWorkRequired": Boolean, 
           },  
           "cobrowsesessions": { 
             "state": String, 
@@ -24694,6 +24858,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
               "endTime": Date, 
               "state": String, 
             },  
+            "afterCallWorkRequired": Boolean, 
           },  
           "emails": { 
             "state": String, 
@@ -24771,6 +24936,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
               "endTime": Date, 
               "state": String, 
             },  
+            "afterCallWorkRequired": Boolean, 
           },  
           "messages": { 
             "state": String, 
@@ -24870,6 +25036,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
               "endTime": Date, 
               "state": String, 
             },  
+            "afterCallWorkRequired": Boolean, 
           },  
           "screenshares": { 
             "state": String, 
@@ -24904,6 +25071,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
               "endTime": Date, 
               "state": String, 
             },  
+            "afterCallWorkRequired": Boolean, 
           },  
           "socialExpressions": { 
             "state": String, 
@@ -24943,6 +25111,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
               "endTime": Date, 
               "state": String, 
             },  
+            "afterCallWorkRequired": Boolean, 
           },  
           "videos": { 
             "state": String, 
@@ -24980,6 +25149,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
               "endTime": Date, 
               "state": String, 
             },  
+            "afterCallWorkRequired": Boolean, 
           },  
           "evaluations": { 
             "id": String, 
@@ -25609,6 +25779,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "selfUri": String, 
               },  
               "autoAnswerOnly": Boolean, 
+              "enableTranscription": Boolean, 
+              "enableManualAssignment": Boolean, 
               "callingPartyName": String, 
               "callingPartyNumber": String, 
               "defaultScripts": { 
@@ -25922,6 +26094,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
+              "agentAssistantId": String, 
             },  
             "callbacks": { 
               "state": String, 
@@ -25975,6 +26149,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "chats": { 
               "state": String, 
@@ -26018,6 +26193,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "cobrowsesessions": { 
               "state": String, 
@@ -26061,6 +26237,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "emails": { 
               "state": String, 
@@ -26122,6 +26299,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "messages": { 
               "state": String, 
@@ -26196,6 +26374,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "screenshares": { 
               "state": String, 
@@ -26230,6 +26409,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "socialExpressions": { 
               "state": String, 
@@ -26269,6 +26449,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "videos": { 
               "state": String, 
@@ -26306,6 +26487,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "evaluations": { 
               "id": String, 
@@ -26456,6 +26638,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "queueFlow": DomainEntityRef, 
                 "whisperPrompt": DomainEntityRef, 
                 "autoAnswerOnly": Boolean, 
+                "enableTranscription": Boolean, 
+                "enableManualAssignment": Boolean, 
                 "callingPartyName": String, 
                 "callingPartyNumber": String, 
                 "defaultScripts": {String: Script}, 
@@ -27737,6 +27921,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "other": Address, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
+                "agentAssistantId": String, 
               },  
               "callbacks": { 
                 "state": String, 
@@ -27763,6 +27949,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "peerId": String, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "chats": { 
                 "state": String, 
@@ -27784,6 +27971,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "journeyContext": JourneyContext, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "cobrowsesessions": { 
                 "state": String, 
@@ -27803,6 +27991,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "segments": [Segment], 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "emails": { 
                 "state": String, 
@@ -27828,6 +28017,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "spam": Boolean, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "messages": { 
                 "state": String, 
@@ -27853,6 +28043,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "messages": [MessageDetails], 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "screenshares": { 
                 "state": String, 
@@ -27869,6 +28060,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "segments": [Segment], 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "socialExpressions": { 
                 "state": String, 
@@ -27890,6 +28082,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "peerId": String, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "videos": { 
                 "state": String, 
@@ -27909,6 +28102,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "self": Address, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "evaluations": { 
                 "id": String, 
@@ -28647,6 +28841,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "selfUri": String, 
               },  
               "autoAnswerOnly": Boolean, 
+              "enableTranscription": Boolean, 
+              "enableManualAssignment": Boolean, 
               "callingPartyName": String, 
               "callingPartyNumber": String, 
               "defaultScripts": { 
@@ -29314,6 +29510,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "selfUri": String, 
               },  
               "autoAnswerOnly": Boolean, 
+              "enableTranscription": Boolean, 
+              "enableManualAssignment": Boolean, 
               "callingPartyName": String, 
               "callingPartyNumber": String, 
               "defaultScripts": { 
@@ -29445,6 +29643,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
             "selfUri": String, 
           },  
           "autoAnswerOnly": Boolean, 
+          "enableTranscription": Boolean, 
+          "enableManualAssignment": Boolean, 
           "callingPartyName": String, 
           "callingPartyNumber": String, 
           "defaultScripts": { 
@@ -29682,6 +29882,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
+              "agentAssistantId": String, 
             },  
             "callbacks": { 
               "state": String, 
@@ -29735,6 +29937,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "chats": { 
               "state": String, 
@@ -29778,6 +29981,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "cobrowsesessions": { 
               "state": String, 
@@ -29821,6 +30025,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "emails": { 
               "state": String, 
@@ -29882,6 +30087,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "messages": { 
               "state": String, 
@@ -29956,6 +30162,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "screenshares": { 
               "state": String, 
@@ -29990,6 +30197,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "socialExpressions": { 
               "state": String, 
@@ -30029,6 +30237,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "videos": { 
               "state": String, 
@@ -30066,6 +30275,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "evaluations": { 
               "id": String, 
@@ -30216,6 +30426,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "queueFlow": DomainEntityRef, 
                 "whisperPrompt": DomainEntityRef, 
                 "autoAnswerOnly": Boolean, 
+                "enableTranscription": Boolean, 
+                "enableManualAssignment": Boolean, 
                 "callingPartyName": String, 
                 "callingPartyNumber": String, 
                 "defaultScripts": {String: Script}, 
@@ -31497,6 +31709,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "other": Address, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
+                "agentAssistantId": String, 
               },  
               "callbacks": { 
                 "state": String, 
@@ -31523,6 +31737,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "peerId": String, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "chats": { 
                 "state": String, 
@@ -31544,6 +31759,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "journeyContext": JourneyContext, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "cobrowsesessions": { 
                 "state": String, 
@@ -31563,6 +31779,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "segments": [Segment], 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "emails": { 
                 "state": String, 
@@ -31588,6 +31805,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "spam": Boolean, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "messages": { 
                 "state": String, 
@@ -31613,6 +31831,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "messages": [MessageDetails], 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "screenshares": { 
                 "state": String, 
@@ -31629,6 +31848,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "segments": [Segment], 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "socialExpressions": { 
                 "state": String, 
@@ -31650,6 +31870,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "peerId": String, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "videos": { 
                 "state": String, 
@@ -31669,6 +31890,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "self": Address, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "evaluations": { 
                 "id": String, 
@@ -32407,6 +32629,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "selfUri": String, 
               },  
               "autoAnswerOnly": Boolean, 
+              "enableTranscription": Boolean, 
+              "enableManualAssignment": Boolean, 
               "callingPartyName": String, 
               "callingPartyNumber": String, 
               "defaultScripts": { 
@@ -33074,6 +33298,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "selfUri": String, 
               },  
               "autoAnswerOnly": Boolean, 
+              "enableTranscription": Boolean, 
+              "enableManualAssignment": Boolean, 
               "callingPartyName": String, 
               "callingPartyNumber": String, 
               "defaultScripts": { 
@@ -33205,6 +33431,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
             "selfUri": String, 
           },  
           "autoAnswerOnly": Boolean, 
+          "enableTranscription": Boolean, 
+          "enableManualAssignment": Boolean, 
           "callingPartyName": String, 
           "callingPartyNumber": String, 
           "defaultScripts": { 
@@ -33398,6 +33626,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
         "selfUri": String, 
       },  
       "autoAnswerOnly": Boolean, 
+      "enableTranscription": Boolean, 
+      "enableManualAssignment": Boolean, 
       "callingPartyName": String, 
       "callingPartyNumber": String, 
       "defaultScripts": { 
@@ -33766,6 +33996,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
           "endTime": Date, 
           "state": String, 
         },  
+        "afterCallWorkRequired": Boolean, 
+        "agentAssistantId": String, 
       },  
       "callbacks": { 
         "state": String, 
@@ -33822,6 +34054,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
           "endTime": Date, 
           "state": String, 
         },  
+        "afterCallWorkRequired": Boolean, 
       },  
       "chats": { 
         "state": String, 
@@ -33877,6 +34110,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
           "endTime": Date, 
           "state": String, 
         },  
+        "afterCallWorkRequired": Boolean, 
       },  
       "cobrowsesessions": { 
         "state": String, 
@@ -33920,6 +34154,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
           "endTime": Date, 
           "state": String, 
         },  
+        "afterCallWorkRequired": Boolean, 
       },  
       "emails": { 
         "state": String, 
@@ -34029,6 +34264,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
           "endTime": Date, 
           "state": String, 
         },  
+        "afterCallWorkRequired": Boolean, 
       },  
       "messages": { 
         "state": String, 
@@ -34160,6 +34396,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
           "endTime": Date, 
           "state": String, 
         },  
+        "afterCallWorkRequired": Boolean, 
       },  
       "screenshares": { 
         "state": String, 
@@ -34194,6 +34431,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
           "endTime": Date, 
           "state": String, 
         },  
+        "afterCallWorkRequired": Boolean, 
       },  
       "socialExpressions": { 
         "state": String, 
@@ -34233,6 +34471,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
           "endTime": Date, 
           "state": String, 
         },  
+        "afterCallWorkRequired": Boolean, 
       },  
       "videos": { 
         "state": String, 
@@ -34270,6 +34509,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
           "endTime": Date, 
           "state": String, 
         },  
+        "afterCallWorkRequired": Boolean, 
       },  
       "evaluations": { 
         "id": String, 
@@ -34411,6 +34651,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
+              "agentAssistantId": String, 
             },  
             "callbacks": { 
               "state": String, 
@@ -34464,6 +34706,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "chats": { 
               "state": String, 
@@ -34507,6 +34750,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "cobrowsesessions": { 
               "state": String, 
@@ -34550,6 +34794,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "emails": { 
               "state": String, 
@@ -34611,6 +34856,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "messages": { 
               "state": String, 
@@ -34685,6 +34931,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "screenshares": { 
               "state": String, 
@@ -34719,6 +34966,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "socialExpressions": { 
               "state": String, 
@@ -34758,6 +35006,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "videos": { 
               "state": String, 
@@ -34795,6 +35044,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "evaluations": { 
               "id": String, 
@@ -34945,6 +35195,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "queueFlow": DomainEntityRef, 
                 "whisperPrompt": DomainEntityRef, 
                 "autoAnswerOnly": Boolean, 
+                "enableTranscription": Boolean, 
+                "enableManualAssignment": Boolean, 
                 "callingPartyName": String, 
                 "callingPartyNumber": String, 
                 "defaultScripts": {String: Script}, 
@@ -36226,6 +36478,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "other": Address, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
+                "agentAssistantId": String, 
               },  
               "callbacks": { 
                 "state": String, 
@@ -36252,6 +36506,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "peerId": String, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "chats": { 
                 "state": String, 
@@ -36273,6 +36528,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "journeyContext": JourneyContext, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "cobrowsesessions": { 
                 "state": String, 
@@ -36292,6 +36548,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "segments": [Segment], 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "emails": { 
                 "state": String, 
@@ -36317,6 +36574,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "spam": Boolean, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "messages": { 
                 "state": String, 
@@ -36342,6 +36600,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "messages": [MessageDetails], 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "screenshares": { 
                 "state": String, 
@@ -36358,6 +36617,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "segments": [Segment], 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "socialExpressions": { 
                 "state": String, 
@@ -36379,6 +36639,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "peerId": String, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "videos": { 
                 "state": String, 
@@ -36398,6 +36659,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "self": Address, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "evaluations": { 
                 "id": String, 
@@ -37136,6 +37398,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "selfUri": String, 
               },  
               "autoAnswerOnly": Boolean, 
+              "enableTranscription": Boolean, 
+              "enableManualAssignment": Boolean, 
               "callingPartyName": String, 
               "callingPartyNumber": String, 
               "defaultScripts": { 
@@ -37803,6 +38067,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "selfUri": String, 
               },  
               "autoAnswerOnly": Boolean, 
+              "enableTranscription": Boolean, 
+              "enableManualAssignment": Boolean, 
               "callingPartyName": String, 
               "callingPartyNumber": String, 
               "defaultScripts": { 
@@ -37934,6 +38200,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
             "selfUri": String, 
           },  
           "autoAnswerOnly": Boolean, 
+          "enableTranscription": Boolean, 
+          "enableManualAssignment": Boolean, 
           "callingPartyName": String, 
           "callingPartyNumber": String, 
           "defaultScripts": { 
@@ -39601,6 +39869,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
             "endTime": Date, 
             "state": String, 
           },  
+          "afterCallWorkRequired": Boolean, 
+          "agentAssistantId": String, 
         },  
         "callbacks": { 
           "state": String, 
@@ -39657,6 +39927,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
             "endTime": Date, 
             "state": String, 
           },  
+          "afterCallWorkRequired": Boolean, 
         },  
         "chats": { 
           "state": String, 
@@ -39712,6 +39983,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
             "endTime": Date, 
             "state": String, 
           },  
+          "afterCallWorkRequired": Boolean, 
         },  
         "cobrowsesessions": { 
           "state": String, 
@@ -39755,6 +40027,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
             "endTime": Date, 
             "state": String, 
           },  
+          "afterCallWorkRequired": Boolean, 
         },  
         "emails": { 
           "state": String, 
@@ -39848,6 +40121,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
             "endTime": Date, 
             "state": String, 
           },  
+          "afterCallWorkRequired": Boolean, 
         },  
         "messages": { 
           "state": String, 
@@ -39963,6 +40237,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
             "endTime": Date, 
             "state": String, 
           },  
+          "afterCallWorkRequired": Boolean, 
         },  
         "screenshares": { 
           "state": String, 
@@ -39997,6 +40272,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
             "endTime": Date, 
             "state": String, 
           },  
+          "afterCallWorkRequired": Boolean, 
         },  
         "socialExpressions": { 
           "state": String, 
@@ -40036,6 +40312,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
             "endTime": Date, 
             "state": String, 
           },  
+          "afterCallWorkRequired": Boolean, 
         },  
         "videos": { 
           "state": String, 
@@ -40073,6 +40350,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
             "endTime": Date, 
             "state": String, 
           },  
+          "afterCallWorkRequired": Boolean, 
         },  
         "evaluations": { 
           "id": String, 
@@ -40156,6 +40434,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "other": Address, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
+                "agentAssistantId": String, 
               },  
               "callbacks": { 
                 "state": String, 
@@ -40182,6 +40462,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "peerId": String, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "chats": { 
                 "state": String, 
@@ -40203,6 +40484,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "journeyContext": JourneyContext, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "cobrowsesessions": { 
                 "state": String, 
@@ -40222,6 +40504,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "segments": [Segment], 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "emails": { 
                 "state": String, 
@@ -40247,6 +40530,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "spam": Boolean, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "messages": { 
                 "state": String, 
@@ -40272,6 +40556,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "messages": [MessageDetails], 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "screenshares": { 
                 "state": String, 
@@ -40288,6 +40573,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "segments": [Segment], 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "socialExpressions": { 
                 "state": String, 
@@ -40309,6 +40595,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "peerId": String, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "videos": { 
                 "state": String, 
@@ -40328,6 +40615,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "self": Address, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "evaluations": { 
                 "id": String, 
@@ -41434,6 +41722,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "queueFlow": DomainEntityRef, 
                 "whisperPrompt": DomainEntityRef, 
                 "autoAnswerOnly": Boolean, 
+                "enableTranscription": Boolean, 
+                "enableManualAssignment": Boolean, 
                 "callingPartyName": String, 
                 "callingPartyNumber": String, 
                 "defaultScripts": {String: Script}, 
@@ -41602,6 +41892,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "queueFlow": DomainEntityRef, 
                 "whisperPrompt": DomainEntityRef, 
                 "autoAnswerOnly": Boolean, 
+                "enableTranscription": Boolean, 
+                "enableManualAssignment": Boolean, 
                 "callingPartyName": String, 
                 "callingPartyNumber": String, 
                 "defaultScripts": {String: Script}, 
@@ -41708,6 +42000,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "selfUri": String, 
             },  
             "autoAnswerOnly": Boolean, 
+            "enableTranscription": Boolean, 
+            "enableManualAssignment": Boolean, 
             "callingPartyName": String, 
             "callingPartyNumber": String, 
             "defaultScripts": { 
@@ -42085,6 +42379,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "endTime": Date, 
               "state": String, 
             },  
+            "afterCallWorkRequired": Boolean, 
+            "agentAssistantId": String, 
           },  
           "callbacks": { 
             "state": String, 
@@ -42141,6 +42437,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "endTime": Date, 
               "state": String, 
             },  
+            "afterCallWorkRequired": Boolean, 
           },  
           "chats": { 
             "state": String, 
@@ -42193,6 +42490,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "endTime": Date, 
               "state": String, 
             },  
+            "afterCallWorkRequired": Boolean, 
           },  
           "cobrowsesessions": { 
             "state": String, 
@@ -42236,6 +42534,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "endTime": Date, 
               "state": String, 
             },  
+            "afterCallWorkRequired": Boolean, 
           },  
           "emails": { 
             "state": String, 
@@ -42313,6 +42612,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "endTime": Date, 
               "state": String, 
             },  
+            "afterCallWorkRequired": Boolean, 
           },  
           "messages": { 
             "state": String, 
@@ -42412,6 +42712,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "endTime": Date, 
               "state": String, 
             },  
+            "afterCallWorkRequired": Boolean, 
           },  
           "screenshares": { 
             "state": String, 
@@ -42446,6 +42747,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "endTime": Date, 
               "state": String, 
             },  
+            "afterCallWorkRequired": Boolean, 
           },  
           "socialExpressions": { 
             "state": String, 
@@ -42485,6 +42787,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "endTime": Date, 
               "state": String, 
             },  
+            "afterCallWorkRequired": Boolean, 
           },  
           "videos": { 
             "state": String, 
@@ -42522,6 +42825,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "endTime": Date, 
               "state": String, 
             },  
+            "afterCallWorkRequired": Boolean, 
           },  
           "evaluations": { 
             "id": String, 
@@ -43151,6 +43455,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "selfUri": String, 
               },  
               "autoAnswerOnly": Boolean, 
+              "enableTranscription": Boolean, 
+              "enableManualAssignment": Boolean, 
               "callingPartyName": String, 
               "callingPartyNumber": String, 
               "defaultScripts": { 
@@ -44651,6 +44957,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
+              "agentAssistantId": String, 
             },  
             "callbacks": { 
               "state": String, 
@@ -44704,6 +45012,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "chats": { 
               "state": String, 
@@ -44747,6 +45056,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "cobrowsesessions": { 
               "state": String, 
@@ -44790,6 +45100,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "emails": { 
               "state": String, 
@@ -44851,6 +45162,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "messages": { 
               "state": String, 
@@ -44925,6 +45237,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "screenshares": { 
               "state": String, 
@@ -44959,6 +45272,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "socialExpressions": { 
               "state": String, 
@@ -44998,6 +45312,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "videos": { 
               "state": String, 
@@ -45035,6 +45350,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "evaluations": { 
               "id": String, 
@@ -45185,6 +45501,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "queueFlow": DomainEntityRef, 
                 "whisperPrompt": DomainEntityRef, 
                 "autoAnswerOnly": Boolean, 
+                "enableTranscription": Boolean, 
+                "enableManualAssignment": Boolean, 
                 "callingPartyName": String, 
                 "callingPartyNumber": String, 
                 "defaultScripts": {String: Script}, 
@@ -45397,6 +45715,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "other": Address, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
+                "agentAssistantId": String, 
               },  
               "callbacks": { 
                 "state": String, 
@@ -45423,6 +45743,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "peerId": String, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "chats": { 
                 "state": String, 
@@ -45444,6 +45765,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "journeyContext": JourneyContext, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "cobrowsesessions": { 
                 "state": String, 
@@ -45463,6 +45785,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "segments": [Segment], 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "emails": { 
                 "state": String, 
@@ -45488,6 +45811,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "spam": Boolean, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "messages": { 
                 "state": String, 
@@ -45513,6 +45837,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "messages": [MessageDetails], 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "screenshares": { 
                 "state": String, 
@@ -45529,6 +45854,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "segments": [Segment], 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "socialExpressions": { 
                 "state": String, 
@@ -45550,6 +45876,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "peerId": String, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "videos": { 
                 "state": String, 
@@ -45569,6 +45896,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "self": Address, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "evaluations": { 
                 "id": String, 
@@ -46675,6 +47003,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "queueFlow": DomainEntityRef, 
                 "whisperPrompt": DomainEntityRef, 
                 "autoAnswerOnly": Boolean, 
+                "enableTranscription": Boolean, 
+                "enableManualAssignment": Boolean, 
                 "callingPartyName": String, 
                 "callingPartyNumber": String, 
                 "defaultScripts": {String: Script}, 
@@ -46843,6 +47173,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "queueFlow": DomainEntityRef, 
                 "whisperPrompt": DomainEntityRef, 
                 "autoAnswerOnly": Boolean, 
+                "enableTranscription": Boolean, 
+                "enableManualAssignment": Boolean, 
                 "callingPartyName": String, 
                 "callingPartyNumber": String, 
                 "defaultScripts": {String: Script}, 
@@ -46949,6 +47281,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "selfUri": String, 
             },  
             "autoAnswerOnly": Boolean, 
+            "enableTranscription": Boolean, 
+            "enableManualAssignment": Boolean, 
             "callingPartyName": String, 
             "callingPartyNumber": String, 
             "defaultScripts": { 
@@ -47102,6 +47436,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "other": Address, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
+                "agentAssistantId": String, 
               },  
               "callbacks": { 
                 "state": String, 
@@ -47128,6 +47464,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "peerId": String, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "chats": { 
                 "state": String, 
@@ -47149,6 +47486,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "journeyContext": JourneyContext, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "cobrowsesessions": { 
                 "state": String, 
@@ -47168,6 +47506,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "segments": [Segment], 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "emails": { 
                 "state": String, 
@@ -47193,6 +47532,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "spam": Boolean, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "messages": { 
                 "state": String, 
@@ -47218,6 +47558,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "messages": [MessageDetails], 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "screenshares": { 
                 "state": String, 
@@ -47234,6 +47575,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "segments": [Segment], 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "socialExpressions": { 
                 "state": String, 
@@ -47255,6 +47597,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "peerId": String, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "videos": { 
                 "state": String, 
@@ -47274,6 +47617,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "self": Address, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "evaluations": { 
                 "id": String, 
@@ -48380,6 +48724,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "queueFlow": DomainEntityRef, 
                 "whisperPrompt": DomainEntityRef, 
                 "autoAnswerOnly": Boolean, 
+                "enableTranscription": Boolean, 
+                "enableManualAssignment": Boolean, 
                 "callingPartyName": String, 
                 "callingPartyNumber": String, 
                 "defaultScripts": {String: Script}, 
@@ -48548,6 +48894,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "queueFlow": DomainEntityRef, 
                 "whisperPrompt": DomainEntityRef, 
                 "autoAnswerOnly": Boolean, 
+                "enableTranscription": Boolean, 
+                "enableManualAssignment": Boolean, 
                 "callingPartyName": String, 
                 "callingPartyNumber": String, 
                 "defaultScripts": {String: Script}, 
@@ -48654,6 +49002,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "selfUri": String, 
             },  
             "autoAnswerOnly": Boolean, 
+            "enableTranscription": Boolean, 
+            "enableManualAssignment": Boolean, 
             "callingPartyName": String, 
             "callingPartyNumber": String, 
             "defaultScripts": { 
@@ -48821,6 +49171,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
           "selfUri": String, 
         },  
         "autoAnswerOnly": Boolean, 
+        "enableTranscription": Boolean, 
+        "enableManualAssignment": Boolean, 
         "callingPartyName": String, 
         "callingPartyNumber": String, 
         "defaultScripts": { 
@@ -49080,6 +49432,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "endTime": Date, 
               "state": String, 
             },  
+            "afterCallWorkRequired": Boolean, 
+            "agentAssistantId": String, 
           },  
           "callbacks": { 
             "state": String, 
@@ -49136,6 +49490,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "endTime": Date, 
               "state": String, 
             },  
+            "afterCallWorkRequired": Boolean, 
           },  
           "chats": { 
             "state": String, 
@@ -49188,6 +49543,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "endTime": Date, 
               "state": String, 
             },  
+            "afterCallWorkRequired": Boolean, 
           },  
           "cobrowsesessions": { 
             "state": String, 
@@ -49231,6 +49587,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "endTime": Date, 
               "state": String, 
             },  
+            "afterCallWorkRequired": Boolean, 
           },  
           "emails": { 
             "state": String, 
@@ -49308,6 +49665,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "endTime": Date, 
               "state": String, 
             },  
+            "afterCallWorkRequired": Boolean, 
           },  
           "messages": { 
             "state": String, 
@@ -49407,6 +49765,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "endTime": Date, 
               "state": String, 
             },  
+            "afterCallWorkRequired": Boolean, 
           },  
           "screenshares": { 
             "state": String, 
@@ -49441,6 +49800,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "endTime": Date, 
               "state": String, 
             },  
+            "afterCallWorkRequired": Boolean, 
           },  
           "socialExpressions": { 
             "state": String, 
@@ -49480,6 +49840,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "endTime": Date, 
               "state": String, 
             },  
+            "afterCallWorkRequired": Boolean, 
           },  
           "videos": { 
             "state": String, 
@@ -49517,6 +49878,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "endTime": Date, 
               "state": String, 
             },  
+            "afterCallWorkRequired": Boolean, 
           },  
           "evaluations": { 
             "id": String, 
@@ -50146,6 +50508,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "selfUri": String, 
               },  
               "autoAnswerOnly": Boolean, 
+              "enableTranscription": Boolean, 
+              "enableManualAssignment": Boolean, 
               "callingPartyName": String, 
               "callingPartyNumber": String, 
               "defaultScripts": { 
@@ -51646,6 +52010,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
+              "agentAssistantId": String, 
             },  
             "callbacks": { 
               "state": String, 
@@ -51699,6 +52065,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "chats": { 
               "state": String, 
@@ -51742,6 +52109,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "cobrowsesessions": { 
               "state": String, 
@@ -51785,6 +52153,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "emails": { 
               "state": String, 
@@ -51846,6 +52215,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "messages": { 
               "state": String, 
@@ -51920,6 +52290,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "screenshares": { 
               "state": String, 
@@ -51954,6 +52325,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "socialExpressions": { 
               "state": String, 
@@ -51993,6 +52365,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "videos": { 
               "state": String, 
@@ -52030,6 +52403,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "evaluations": { 
               "id": String, 
@@ -52180,6 +52554,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "queueFlow": DomainEntityRef, 
                 "whisperPrompt": DomainEntityRef, 
                 "autoAnswerOnly": Boolean, 
+                "enableTranscription": Boolean, 
+                "enableManualAssignment": Boolean, 
                 "callingPartyName": String, 
                 "callingPartyNumber": String, 
                 "defaultScripts": {String: Script}, 
@@ -52392,6 +52768,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "other": Address, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
+                "agentAssistantId": String, 
               },  
               "callbacks": { 
                 "state": String, 
@@ -52418,6 +52796,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "peerId": String, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "chats": { 
                 "state": String, 
@@ -52439,6 +52818,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "journeyContext": JourneyContext, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "cobrowsesessions": { 
                 "state": String, 
@@ -52458,6 +52838,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "segments": [Segment], 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "emails": { 
                 "state": String, 
@@ -52483,6 +52864,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "spam": Boolean, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "messages": { 
                 "state": String, 
@@ -52508,6 +52890,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "messages": [MessageDetails], 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "screenshares": { 
                 "state": String, 
@@ -52524,6 +52907,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "segments": [Segment], 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "socialExpressions": { 
                 "state": String, 
@@ -52545,6 +52929,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "peerId": String, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "videos": { 
                 "state": String, 
@@ -52564,6 +52949,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "self": Address, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "evaluations": { 
                 "id": String, 
@@ -53670,6 +54056,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "queueFlow": DomainEntityRef, 
                 "whisperPrompt": DomainEntityRef, 
                 "autoAnswerOnly": Boolean, 
+                "enableTranscription": Boolean, 
+                "enableManualAssignment": Boolean, 
                 "callingPartyName": String, 
                 "callingPartyNumber": String, 
                 "defaultScripts": {String: Script}, 
@@ -53838,6 +54226,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "queueFlow": DomainEntityRef, 
                 "whisperPrompt": DomainEntityRef, 
                 "autoAnswerOnly": Boolean, 
+                "enableTranscription": Boolean, 
+                "enableManualAssignment": Boolean, 
                 "callingPartyName": String, 
                 "callingPartyNumber": String, 
                 "defaultScripts": {String: Script}, 
@@ -53944,6 +54334,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "selfUri": String, 
             },  
             "autoAnswerOnly": Boolean, 
+            "enableTranscription": Boolean, 
+            "enableManualAssignment": Boolean, 
             "callingPartyName": String, 
             "callingPartyNumber": String, 
             "defaultScripts": { 
@@ -54097,6 +54489,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "other": Address, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
+                "agentAssistantId": String, 
               },  
               "callbacks": { 
                 "state": String, 
@@ -54123,6 +54517,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "peerId": String, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "chats": { 
                 "state": String, 
@@ -54144,6 +54539,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "journeyContext": JourneyContext, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "cobrowsesessions": { 
                 "state": String, 
@@ -54163,6 +54559,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "segments": [Segment], 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "emails": { 
                 "state": String, 
@@ -54188,6 +54585,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "spam": Boolean, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "messages": { 
                 "state": String, 
@@ -54213,6 +54611,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "messages": [MessageDetails], 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "screenshares": { 
                 "state": String, 
@@ -54229,6 +54628,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "segments": [Segment], 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "socialExpressions": { 
                 "state": String, 
@@ -54250,6 +54650,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "peerId": String, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "videos": { 
                 "state": String, 
@@ -54269,6 +54670,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "self": Address, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "evaluations": { 
                 "id": String, 
@@ -55375,6 +55777,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "queueFlow": DomainEntityRef, 
                 "whisperPrompt": DomainEntityRef, 
                 "autoAnswerOnly": Boolean, 
+                "enableTranscription": Boolean, 
+                "enableManualAssignment": Boolean, 
                 "callingPartyName": String, 
                 "callingPartyNumber": String, 
                 "defaultScripts": {String: Script}, 
@@ -55543,6 +55947,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "queueFlow": DomainEntityRef, 
                 "whisperPrompt": DomainEntityRef, 
                 "autoAnswerOnly": Boolean, 
+                "enableTranscription": Boolean, 
+                "enableManualAssignment": Boolean, 
                 "callingPartyName": String, 
                 "callingPartyNumber": String, 
                 "defaultScripts": {String: Script}, 
@@ -55649,6 +56055,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "selfUri": String, 
             },  
             "autoAnswerOnly": Boolean, 
+            "enableTranscription": Boolean, 
+            "enableManualAssignment": Boolean, 
             "callingPartyName": String, 
             "callingPartyNumber": String, 
             "defaultScripts": { 
@@ -55816,6 +56224,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
           "selfUri": String, 
         },  
         "autoAnswerOnly": Boolean, 
+        "enableTranscription": Boolean, 
+        "enableManualAssignment": Boolean, 
         "callingPartyName": String, 
         "callingPartyNumber": String, 
         "defaultScripts": { 
@@ -56028,6 +56438,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
       "selfUri": String, 
     },  
     "autoAnswerOnly": Boolean, 
+    "enableTranscription": Boolean, 
+    "enableManualAssignment": Boolean, 
     "callingPartyName": String, 
     "callingPartyNumber": String, 
     "defaultScripts": { 
@@ -57393,6 +57805,8 @@ KeywordSet <a href="#" onclick="return copyKeywordSetExample()">Copy</a>
       "selfUri": String, 
     },  
     "autoAnswerOnly": Boolean, 
+    "enableTranscription": Boolean, 
+    "enableManualAssignment": Boolean, 
     "callingPartyName": String, 
     "callingPartyNumber": String, 
     "defaultScripts": { 
@@ -58363,6 +58777,8 @@ KeywordSet <a href="#" onclick="return copyKeywordSetExample()">Copy</a>
       "selfUri": String, 
     },  
     "autoAnswerOnly": Boolean, 
+    "enableTranscription": Boolean, 
+    "enableManualAssignment": Boolean, 
     "callingPartyName": String, 
     "callingPartyNumber": String, 
     "defaultScripts": { 
@@ -59847,6 +60263,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
           "endTime": Date, 
           "state": String, 
         },  
+        "afterCallWorkRequired": Boolean, 
+        "agentAssistantId": String, 
       },  
       "callbacks": { 
         "state": String, 
@@ -59903,6 +60321,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
           "endTime": Date, 
           "state": String, 
         },  
+        "afterCallWorkRequired": Boolean, 
       },  
       "chats": { 
         "state": String, 
@@ -59958,6 +60377,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
           "endTime": Date, 
           "state": String, 
         },  
+        "afterCallWorkRequired": Boolean, 
       },  
       "cobrowsesessions": { 
         "state": String, 
@@ -60001,6 +60421,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
           "endTime": Date, 
           "state": String, 
         },  
+        "afterCallWorkRequired": Boolean, 
       },  
       "emails": { 
         "state": String, 
@@ -60110,6 +60531,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
           "endTime": Date, 
           "state": String, 
         },  
+        "afterCallWorkRequired": Boolean, 
       },  
       "messages": { 
         "state": String, 
@@ -60241,6 +60663,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
           "endTime": Date, 
           "state": String, 
         },  
+        "afterCallWorkRequired": Boolean, 
       },  
       "screenshares": { 
         "state": String, 
@@ -60275,6 +60698,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
           "endTime": Date, 
           "state": String, 
         },  
+        "afterCallWorkRequired": Boolean, 
       },  
       "socialExpressions": { 
         "state": String, 
@@ -60314,6 +60738,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
           "endTime": Date, 
           "state": String, 
         },  
+        "afterCallWorkRequired": Boolean, 
       },  
       "videos": { 
         "state": String, 
@@ -60351,6 +60776,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
           "endTime": Date, 
           "state": String, 
         },  
+        "afterCallWorkRequired": Boolean, 
       },  
       "evaluations": { 
         "id": String, 
@@ -60492,6 +60918,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
+              "agentAssistantId": String, 
             },  
             "callbacks": { 
               "state": String, 
@@ -60545,6 +60973,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "chats": { 
               "state": String, 
@@ -60588,6 +61017,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "cobrowsesessions": { 
               "state": String, 
@@ -60631,6 +61061,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "emails": { 
               "state": String, 
@@ -60692,6 +61123,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "messages": { 
               "state": String, 
@@ -60766,6 +61198,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "screenshares": { 
               "state": String, 
@@ -60800,6 +61233,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "socialExpressions": { 
               "state": String, 
@@ -60839,6 +61273,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "videos": { 
               "state": String, 
@@ -60876,6 +61311,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "evaluations": { 
               "id": String, 
@@ -61026,6 +61462,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "queueFlow": DomainEntityRef, 
                 "whisperPrompt": DomainEntityRef, 
                 "autoAnswerOnly": Boolean, 
+                "enableTranscription": Boolean, 
+                "enableManualAssignment": Boolean, 
                 "callingPartyName": String, 
                 "callingPartyNumber": String, 
                 "defaultScripts": {String: Script}, 
@@ -62307,6 +62745,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "other": Address, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
+                "agentAssistantId": String, 
               },  
               "callbacks": { 
                 "state": String, 
@@ -62333,6 +62773,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "peerId": String, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "chats": { 
                 "state": String, 
@@ -62354,6 +62795,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "journeyContext": JourneyContext, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "cobrowsesessions": { 
                 "state": String, 
@@ -62373,6 +62815,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "segments": [Segment], 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "emails": { 
                 "state": String, 
@@ -62398,6 +62841,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "spam": Boolean, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "messages": { 
                 "state": String, 
@@ -62423,6 +62867,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "messages": [MessageDetails], 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "screenshares": { 
                 "state": String, 
@@ -62439,6 +62884,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "segments": [Segment], 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "socialExpressions": { 
                 "state": String, 
@@ -62460,6 +62906,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "peerId": String, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "videos": { 
                 "state": String, 
@@ -62479,6 +62926,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "self": Address, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "evaluations": { 
                 "id": String, 
@@ -63217,6 +63665,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "selfUri": String, 
               },  
               "autoAnswerOnly": Boolean, 
+              "enableTranscription": Boolean, 
+              "enableManualAssignment": Boolean, 
               "callingPartyName": String, 
               "callingPartyNumber": String, 
               "defaultScripts": { 
@@ -63884,6 +64334,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "selfUri": String, 
               },  
               "autoAnswerOnly": Boolean, 
+              "enableTranscription": Boolean, 
+              "enableManualAssignment": Boolean, 
               "callingPartyName": String, 
               "callingPartyNumber": String, 
               "defaultScripts": { 
@@ -64015,6 +64467,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
             "selfUri": String, 
           },  
           "autoAnswerOnly": Boolean, 
+          "enableTranscription": Boolean, 
+          "enableManualAssignment": Boolean, 
           "callingPartyName": String, 
           "callingPartyNumber": String, 
           "defaultScripts": { 
@@ -64441,6 +64895,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
             "endTime": Date, 
             "state": String, 
           },  
+          "afterCallWorkRequired": Boolean, 
+          "agentAssistantId": String, 
         },  
         "callbacks": { 
           "state": String, 
@@ -64497,6 +64953,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
             "endTime": Date, 
             "state": String, 
           },  
+          "afterCallWorkRequired": Boolean, 
         },  
         "chats": { 
           "state": String, 
@@ -64552,6 +65009,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
             "endTime": Date, 
             "state": String, 
           },  
+          "afterCallWorkRequired": Boolean, 
         },  
         "cobrowsesessions": { 
           "state": String, 
@@ -64595,6 +65053,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
             "endTime": Date, 
             "state": String, 
           },  
+          "afterCallWorkRequired": Boolean, 
         },  
         "emails": { 
           "state": String, 
@@ -64688,6 +65147,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
             "endTime": Date, 
             "state": String, 
           },  
+          "afterCallWorkRequired": Boolean, 
         },  
         "messages": { 
           "state": String, 
@@ -64803,6 +65263,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
             "endTime": Date, 
             "state": String, 
           },  
+          "afterCallWorkRequired": Boolean, 
         },  
         "screenshares": { 
           "state": String, 
@@ -64837,6 +65298,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
             "endTime": Date, 
             "state": String, 
           },  
+          "afterCallWorkRequired": Boolean, 
         },  
         "socialExpressions": { 
           "state": String, 
@@ -64876,6 +65338,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
             "endTime": Date, 
             "state": String, 
           },  
+          "afterCallWorkRequired": Boolean, 
         },  
         "videos": { 
           "state": String, 
@@ -64913,6 +65376,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
             "endTime": Date, 
             "state": String, 
           },  
+          "afterCallWorkRequired": Boolean, 
         },  
         "evaluations": { 
           "id": String, 
@@ -64996,6 +65460,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "other": Address, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
+                "agentAssistantId": String, 
               },  
               "callbacks": { 
                 "state": String, 
@@ -65022,6 +65488,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "peerId": String, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "chats": { 
                 "state": String, 
@@ -65043,6 +65510,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "journeyContext": JourneyContext, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "cobrowsesessions": { 
                 "state": String, 
@@ -65062,6 +65530,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "segments": [Segment], 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "emails": { 
                 "state": String, 
@@ -65087,6 +65556,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "spam": Boolean, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "messages": { 
                 "state": String, 
@@ -65112,6 +65582,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "messages": [MessageDetails], 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "screenshares": { 
                 "state": String, 
@@ -65128,6 +65599,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "segments": [Segment], 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "socialExpressions": { 
                 "state": String, 
@@ -65149,6 +65621,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "peerId": String, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "videos": { 
                 "state": String, 
@@ -65168,6 +65641,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "self": Address, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "evaluations": { 
                 "id": String, 
@@ -66274,6 +66748,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "queueFlow": DomainEntityRef, 
                 "whisperPrompt": DomainEntityRef, 
                 "autoAnswerOnly": Boolean, 
+                "enableTranscription": Boolean, 
+                "enableManualAssignment": Boolean, 
                 "callingPartyName": String, 
                 "callingPartyNumber": String, 
                 "defaultScripts": {String: Script}, 
@@ -66442,6 +66918,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "queueFlow": DomainEntityRef, 
                 "whisperPrompt": DomainEntityRef, 
                 "autoAnswerOnly": Boolean, 
+                "enableTranscription": Boolean, 
+                "enableManualAssignment": Boolean, 
                 "callingPartyName": String, 
                 "callingPartyNumber": String, 
                 "defaultScripts": {String: Script}, 
@@ -66548,6 +67026,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
               "selfUri": String, 
             },  
             "autoAnswerOnly": Boolean, 
+            "enableTranscription": Boolean, 
+            "enableManualAssignment": Boolean, 
             "callingPartyName": String, 
             "callingPartyNumber": String, 
             "defaultScripts": { 
@@ -68139,6 +68619,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
               "endTime": Date, 
               "state": String, 
             },  
+            "afterCallWorkRequired": Boolean, 
+            "agentAssistantId": String, 
           },  
           "callbacks": { 
             "state": String, 
@@ -68195,6 +68677,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
               "endTime": Date, 
               "state": String, 
             },  
+            "afterCallWorkRequired": Boolean, 
           },  
           "chats": { 
             "state": String, 
@@ -68247,6 +68730,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
               "endTime": Date, 
               "state": String, 
             },  
+            "afterCallWorkRequired": Boolean, 
           },  
           "cobrowsesessions": { 
             "state": String, 
@@ -68290,6 +68774,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
               "endTime": Date, 
               "state": String, 
             },  
+            "afterCallWorkRequired": Boolean, 
           },  
           "emails": { 
             "state": String, 
@@ -68367,6 +68852,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
               "endTime": Date, 
               "state": String, 
             },  
+            "afterCallWorkRequired": Boolean, 
           },  
           "messages": { 
             "state": String, 
@@ -68466,6 +68952,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
               "endTime": Date, 
               "state": String, 
             },  
+            "afterCallWorkRequired": Boolean, 
           },  
           "screenshares": { 
             "state": String, 
@@ -68500,6 +68987,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
               "endTime": Date, 
               "state": String, 
             },  
+            "afterCallWorkRequired": Boolean, 
           },  
           "socialExpressions": { 
             "state": String, 
@@ -68539,6 +69027,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
               "endTime": Date, 
               "state": String, 
             },  
+            "afterCallWorkRequired": Boolean, 
           },  
           "videos": { 
             "state": String, 
@@ -68576,6 +69065,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
               "endTime": Date, 
               "state": String, 
             },  
+            "afterCallWorkRequired": Boolean, 
           },  
           "evaluations": { 
             "id": String, 
@@ -69205,6 +69695,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "selfUri": String, 
               },  
               "autoAnswerOnly": Boolean, 
+              "enableTranscription": Boolean, 
+              "enableManualAssignment": Boolean, 
               "callingPartyName": String, 
               "callingPartyNumber": String, 
               "defaultScripts": { 
@@ -69518,6 +70010,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
+              "agentAssistantId": String, 
             },  
             "callbacks": { 
               "state": String, 
@@ -69571,6 +70065,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "chats": { 
               "state": String, 
@@ -69614,6 +70109,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "cobrowsesessions": { 
               "state": String, 
@@ -69657,6 +70153,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "emails": { 
               "state": String, 
@@ -69718,6 +70215,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "messages": { 
               "state": String, 
@@ -69792,6 +70290,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "screenshares": { 
               "state": String, 
@@ -69826,6 +70325,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "socialExpressions": { 
               "state": String, 
@@ -69865,6 +70365,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "videos": { 
               "state": String, 
@@ -69902,6 +70403,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "evaluations": { 
               "id": String, 
@@ -70052,6 +70554,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "queueFlow": DomainEntityRef, 
                 "whisperPrompt": DomainEntityRef, 
                 "autoAnswerOnly": Boolean, 
+                "enableTranscription": Boolean, 
+                "enableManualAssignment": Boolean, 
                 "callingPartyName": String, 
                 "callingPartyNumber": String, 
                 "defaultScripts": {String: Script}, 
@@ -71333,6 +71837,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "other": Address, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
+                "agentAssistantId": String, 
               },  
               "callbacks": { 
                 "state": String, 
@@ -71359,6 +71865,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "peerId": String, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "chats": { 
                 "state": String, 
@@ -71380,6 +71887,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "journeyContext": JourneyContext, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "cobrowsesessions": { 
                 "state": String, 
@@ -71399,6 +71907,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "segments": [Segment], 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "emails": { 
                 "state": String, 
@@ -71424,6 +71933,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "spam": Boolean, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "messages": { 
                 "state": String, 
@@ -71449,6 +71959,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "messages": [MessageDetails], 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "screenshares": { 
                 "state": String, 
@@ -71465,6 +71976,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "segments": [Segment], 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "socialExpressions": { 
                 "state": String, 
@@ -71486,6 +71998,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "peerId": String, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "videos": { 
                 "state": String, 
@@ -71505,6 +72018,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "self": Address, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "evaluations": { 
                 "id": String, 
@@ -72243,6 +72757,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "selfUri": String, 
               },  
               "autoAnswerOnly": Boolean, 
+              "enableTranscription": Boolean, 
+              "enableManualAssignment": Boolean, 
               "callingPartyName": String, 
               "callingPartyNumber": String, 
               "defaultScripts": { 
@@ -72910,6 +73426,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "selfUri": String, 
               },  
               "autoAnswerOnly": Boolean, 
+              "enableTranscription": Boolean, 
+              "enableManualAssignment": Boolean, 
               "callingPartyName": String, 
               "callingPartyNumber": String, 
               "defaultScripts": { 
@@ -73041,6 +73559,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
             "selfUri": String, 
           },  
           "autoAnswerOnly": Boolean, 
+          "enableTranscription": Boolean, 
+          "enableManualAssignment": Boolean, 
           "callingPartyName": String, 
           "callingPartyNumber": String, 
           "defaultScripts": { 
@@ -73278,6 +73798,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
+              "agentAssistantId": String, 
             },  
             "callbacks": { 
               "state": String, 
@@ -73331,6 +73853,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "chats": { 
               "state": String, 
@@ -73374,6 +73897,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "cobrowsesessions": { 
               "state": String, 
@@ -73417,6 +73941,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "emails": { 
               "state": String, 
@@ -73478,6 +74003,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "messages": { 
               "state": String, 
@@ -73552,6 +74078,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "screenshares": { 
               "state": String, 
@@ -73586,6 +74113,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "socialExpressions": { 
               "state": String, 
@@ -73625,6 +74153,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "videos": { 
               "state": String, 
@@ -73662,6 +74191,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "evaluations": { 
               "id": String, 
@@ -73812,6 +74342,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "queueFlow": DomainEntityRef, 
                 "whisperPrompt": DomainEntityRef, 
                 "autoAnswerOnly": Boolean, 
+                "enableTranscription": Boolean, 
+                "enableManualAssignment": Boolean, 
                 "callingPartyName": String, 
                 "callingPartyNumber": String, 
                 "defaultScripts": {String: Script}, 
@@ -75093,6 +75625,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "other": Address, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
+                "agentAssistantId": String, 
               },  
               "callbacks": { 
                 "state": String, 
@@ -75119,6 +75653,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "peerId": String, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "chats": { 
                 "state": String, 
@@ -75140,6 +75675,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "journeyContext": JourneyContext, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "cobrowsesessions": { 
                 "state": String, 
@@ -75159,6 +75695,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "segments": [Segment], 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "emails": { 
                 "state": String, 
@@ -75184,6 +75721,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "spam": Boolean, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "messages": { 
                 "state": String, 
@@ -75209,6 +75747,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "messages": [MessageDetails], 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "screenshares": { 
                 "state": String, 
@@ -75225,6 +75764,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "segments": [Segment], 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "socialExpressions": { 
                 "state": String, 
@@ -75246,6 +75786,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "peerId": String, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "videos": { 
                 "state": String, 
@@ -75265,6 +75806,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "self": Address, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "evaluations": { 
                 "id": String, 
@@ -76003,6 +76545,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "selfUri": String, 
               },  
               "autoAnswerOnly": Boolean, 
+              "enableTranscription": Boolean, 
+              "enableManualAssignment": Boolean, 
               "callingPartyName": String, 
               "callingPartyNumber": String, 
               "defaultScripts": { 
@@ -76670,6 +77214,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "selfUri": String, 
               },  
               "autoAnswerOnly": Boolean, 
+              "enableTranscription": Boolean, 
+              "enableManualAssignment": Boolean, 
               "callingPartyName": String, 
               "callingPartyNumber": String, 
               "defaultScripts": { 
@@ -76801,6 +77347,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
             "selfUri": String, 
           },  
           "autoAnswerOnly": Boolean, 
+          "enableTranscription": Boolean, 
+          "enableManualAssignment": Boolean, 
           "callingPartyName": String, 
           "callingPartyNumber": String, 
           "defaultScripts": { 
@@ -76994,6 +77542,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
         "selfUri": String, 
       },  
       "autoAnswerOnly": Boolean, 
+      "enableTranscription": Boolean, 
+      "enableManualAssignment": Boolean, 
       "callingPartyName": String, 
       "callingPartyNumber": String, 
       "defaultScripts": { 
@@ -77279,6 +77829,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
             "endTime": Date, 
             "state": String, 
           },  
+          "afterCallWorkRequired": Boolean, 
+          "agentAssistantId": String, 
         },  
         "callbacks": { 
           "state": String, 
@@ -77335,6 +77887,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
             "endTime": Date, 
             "state": String, 
           },  
+          "afterCallWorkRequired": Boolean, 
         },  
         "chats": { 
           "state": String, 
@@ -77390,6 +77943,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
             "endTime": Date, 
             "state": String, 
           },  
+          "afterCallWorkRequired": Boolean, 
         },  
         "cobrowsesessions": { 
           "state": String, 
@@ -77433,6 +77987,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
             "endTime": Date, 
             "state": String, 
           },  
+          "afterCallWorkRequired": Boolean, 
         },  
         "emails": { 
           "state": String, 
@@ -77526,6 +78081,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
             "endTime": Date, 
             "state": String, 
           },  
+          "afterCallWorkRequired": Boolean, 
         },  
         "messages": { 
           "state": String, 
@@ -77641,6 +78197,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
             "endTime": Date, 
             "state": String, 
           },  
+          "afterCallWorkRequired": Boolean, 
         },  
         "screenshares": { 
           "state": String, 
@@ -77675,6 +78232,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
             "endTime": Date, 
             "state": String, 
           },  
+          "afterCallWorkRequired": Boolean, 
         },  
         "socialExpressions": { 
           "state": String, 
@@ -77714,6 +78272,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
             "endTime": Date, 
             "state": String, 
           },  
+          "afterCallWorkRequired": Boolean, 
         },  
         "videos": { 
           "state": String, 
@@ -77751,6 +78310,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
             "endTime": Date, 
             "state": String, 
           },  
+          "afterCallWorkRequired": Boolean, 
         },  
         "evaluations": { 
           "id": String, 
@@ -77834,6 +78394,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "other": Address, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
+                "agentAssistantId": String, 
               },  
               "callbacks": { 
                 "state": String, 
@@ -77860,6 +78422,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "peerId": String, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "chats": { 
                 "state": String, 
@@ -77881,6 +78444,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "journeyContext": JourneyContext, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "cobrowsesessions": { 
                 "state": String, 
@@ -77900,6 +78464,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "segments": [Segment], 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "emails": { 
                 "state": String, 
@@ -77925,6 +78490,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "spam": Boolean, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "messages": { 
                 "state": String, 
@@ -77950,6 +78516,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "messages": [MessageDetails], 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "screenshares": { 
                 "state": String, 
@@ -77966,6 +78533,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "segments": [Segment], 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "socialExpressions": { 
                 "state": String, 
@@ -77987,6 +78555,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "peerId": String, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "videos": { 
                 "state": String, 
@@ -78006,6 +78575,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "self": Address, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "evaluations": { 
                 "id": String, 
@@ -79112,6 +79682,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "queueFlow": DomainEntityRef, 
                 "whisperPrompt": DomainEntityRef, 
                 "autoAnswerOnly": Boolean, 
+                "enableTranscription": Boolean, 
+                "enableManualAssignment": Boolean, 
                 "callingPartyName": String, 
                 "callingPartyNumber": String, 
                 "defaultScripts": {String: Script}, 
@@ -79280,6 +79852,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "queueFlow": DomainEntityRef, 
                 "whisperPrompt": DomainEntityRef, 
                 "autoAnswerOnly": Boolean, 
+                "enableTranscription": Boolean, 
+                "enableManualAssignment": Boolean, 
                 "callingPartyName": String, 
                 "callingPartyNumber": String, 
                 "defaultScripts": {String: Script}, 
@@ -79386,6 +79960,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
               "selfUri": String, 
             },  
             "autoAnswerOnly": Boolean, 
+            "enableTranscription": Boolean, 
+            "enableManualAssignment": Boolean, 
             "callingPartyName": String, 
             "callingPartyNumber": String, 
             "defaultScripts": { 
@@ -80977,6 +81553,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
               "endTime": Date, 
               "state": String, 
             },  
+            "afterCallWorkRequired": Boolean, 
+            "agentAssistantId": String, 
           },  
           "callbacks": { 
             "state": String, 
@@ -81033,6 +81611,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
               "endTime": Date, 
               "state": String, 
             },  
+            "afterCallWorkRequired": Boolean, 
           },  
           "chats": { 
             "state": String, 
@@ -81085,6 +81664,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
               "endTime": Date, 
               "state": String, 
             },  
+            "afterCallWorkRequired": Boolean, 
           },  
           "cobrowsesessions": { 
             "state": String, 
@@ -81128,6 +81708,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
               "endTime": Date, 
               "state": String, 
             },  
+            "afterCallWorkRequired": Boolean, 
           },  
           "emails": { 
             "state": String, 
@@ -81205,6 +81786,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
               "endTime": Date, 
               "state": String, 
             },  
+            "afterCallWorkRequired": Boolean, 
           },  
           "messages": { 
             "state": String, 
@@ -81304,6 +81886,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
               "endTime": Date, 
               "state": String, 
             },  
+            "afterCallWorkRequired": Boolean, 
           },  
           "screenshares": { 
             "state": String, 
@@ -81338,6 +81921,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
               "endTime": Date, 
               "state": String, 
             },  
+            "afterCallWorkRequired": Boolean, 
           },  
           "socialExpressions": { 
             "state": String, 
@@ -81377,6 +81961,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
               "endTime": Date, 
               "state": String, 
             },  
+            "afterCallWorkRequired": Boolean, 
           },  
           "videos": { 
             "state": String, 
@@ -81414,6 +81999,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
               "endTime": Date, 
               "state": String, 
             },  
+            "afterCallWorkRequired": Boolean, 
           },  
           "evaluations": { 
             "id": String, 
@@ -82043,6 +82629,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "selfUri": String, 
               },  
               "autoAnswerOnly": Boolean, 
+              "enableTranscription": Boolean, 
+              "enableManualAssignment": Boolean, 
               "callingPartyName": String, 
               "callingPartyNumber": String, 
               "defaultScripts": { 
@@ -82356,6 +82944,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
+              "agentAssistantId": String, 
             },  
             "callbacks": { 
               "state": String, 
@@ -82409,6 +82999,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "chats": { 
               "state": String, 
@@ -82452,6 +83043,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "cobrowsesessions": { 
               "state": String, 
@@ -82495,6 +83087,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "emails": { 
               "state": String, 
@@ -82556,6 +83149,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "messages": { 
               "state": String, 
@@ -82630,6 +83224,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "screenshares": { 
               "state": String, 
@@ -82664,6 +83259,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "socialExpressions": { 
               "state": String, 
@@ -82703,6 +83299,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "videos": { 
               "state": String, 
@@ -82740,6 +83337,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "evaluations": { 
               "id": String, 
@@ -82890,6 +83488,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "queueFlow": DomainEntityRef, 
                 "whisperPrompt": DomainEntityRef, 
                 "autoAnswerOnly": Boolean, 
+                "enableTranscription": Boolean, 
+                "enableManualAssignment": Boolean, 
                 "callingPartyName": String, 
                 "callingPartyNumber": String, 
                 "defaultScripts": {String: Script}, 
@@ -84171,6 +84771,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "other": Address, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
+                "agentAssistantId": String, 
               },  
               "callbacks": { 
                 "state": String, 
@@ -84197,6 +84799,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "peerId": String, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "chats": { 
                 "state": String, 
@@ -84218,6 +84821,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "journeyContext": JourneyContext, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "cobrowsesessions": { 
                 "state": String, 
@@ -84237,6 +84841,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "segments": [Segment], 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "emails": { 
                 "state": String, 
@@ -84262,6 +84867,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "spam": Boolean, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "messages": { 
                 "state": String, 
@@ -84287,6 +84893,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "messages": [MessageDetails], 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "screenshares": { 
                 "state": String, 
@@ -84303,6 +84910,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "segments": [Segment], 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "socialExpressions": { 
                 "state": String, 
@@ -84324,6 +84932,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "peerId": String, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "videos": { 
                 "state": String, 
@@ -84343,6 +84952,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "self": Address, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "evaluations": { 
                 "id": String, 
@@ -85081,6 +85691,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "selfUri": String, 
               },  
               "autoAnswerOnly": Boolean, 
+              "enableTranscription": Boolean, 
+              "enableManualAssignment": Boolean, 
               "callingPartyName": String, 
               "callingPartyNumber": String, 
               "defaultScripts": { 
@@ -85748,6 +86360,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "selfUri": String, 
               },  
               "autoAnswerOnly": Boolean, 
+              "enableTranscription": Boolean, 
+              "enableManualAssignment": Boolean, 
               "callingPartyName": String, 
               "callingPartyNumber": String, 
               "defaultScripts": { 
@@ -85879,6 +86493,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
             "selfUri": String, 
           },  
           "autoAnswerOnly": Boolean, 
+          "enableTranscription": Boolean, 
+          "enableManualAssignment": Boolean, 
           "callingPartyName": String, 
           "callingPartyNumber": String, 
           "defaultScripts": { 
@@ -86116,6 +86732,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
+              "agentAssistantId": String, 
             },  
             "callbacks": { 
               "state": String, 
@@ -86169,6 +86787,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "chats": { 
               "state": String, 
@@ -86212,6 +86831,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "cobrowsesessions": { 
               "state": String, 
@@ -86255,6 +86875,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "emails": { 
               "state": String, 
@@ -86316,6 +86937,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "messages": { 
               "state": String, 
@@ -86390,6 +87012,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "screenshares": { 
               "state": String, 
@@ -86424,6 +87047,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "socialExpressions": { 
               "state": String, 
@@ -86463,6 +87087,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "videos": { 
               "state": String, 
@@ -86500,6 +87125,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "evaluations": { 
               "id": String, 
@@ -86650,6 +87276,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "queueFlow": DomainEntityRef, 
                 "whisperPrompt": DomainEntityRef, 
                 "autoAnswerOnly": Boolean, 
+                "enableTranscription": Boolean, 
+                "enableManualAssignment": Boolean, 
                 "callingPartyName": String, 
                 "callingPartyNumber": String, 
                 "defaultScripts": {String: Script}, 
@@ -87931,6 +88559,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "other": Address, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
+                "agentAssistantId": String, 
               },  
               "callbacks": { 
                 "state": String, 
@@ -87957,6 +88587,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "peerId": String, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "chats": { 
                 "state": String, 
@@ -87978,6 +88609,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "journeyContext": JourneyContext, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "cobrowsesessions": { 
                 "state": String, 
@@ -87997,6 +88629,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "segments": [Segment], 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "emails": { 
                 "state": String, 
@@ -88022,6 +88655,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "spam": Boolean, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "messages": { 
                 "state": String, 
@@ -88047,6 +88681,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "messages": [MessageDetails], 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "screenshares": { 
                 "state": String, 
@@ -88063,6 +88698,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "segments": [Segment], 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "socialExpressions": { 
                 "state": String, 
@@ -88084,6 +88720,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "peerId": String, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "videos": { 
                 "state": String, 
@@ -88103,6 +88740,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "self": Address, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "evaluations": { 
                 "id": String, 
@@ -88841,6 +89479,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "selfUri": String, 
               },  
               "autoAnswerOnly": Boolean, 
+              "enableTranscription": Boolean, 
+              "enableManualAssignment": Boolean, 
               "callingPartyName": String, 
               "callingPartyNumber": String, 
               "defaultScripts": { 
@@ -89508,6 +90148,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "selfUri": String, 
               },  
               "autoAnswerOnly": Boolean, 
+              "enableTranscription": Boolean, 
+              "enableManualAssignment": Boolean, 
               "callingPartyName": String, 
               "callingPartyNumber": String, 
               "defaultScripts": { 
@@ -89639,6 +90281,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
             "selfUri": String, 
           },  
           "autoAnswerOnly": Boolean, 
+          "enableTranscription": Boolean, 
+          "enableManualAssignment": Boolean, 
           "callingPartyName": String, 
           "callingPartyNumber": String, 
           "defaultScripts": { 
@@ -89832,6 +90476,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
         "selfUri": String, 
       },  
       "autoAnswerOnly": Boolean, 
+      "enableTranscription": Boolean, 
+      "enableManualAssignment": Boolean, 
       "callingPartyName": String, 
       "callingPartyNumber": String, 
       "defaultScripts": { 
@@ -90200,6 +90846,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
           "endTime": Date, 
           "state": String, 
         },  
+        "afterCallWorkRequired": Boolean, 
+        "agentAssistantId": String, 
       },  
       "callbacks": { 
         "state": String, 
@@ -90256,6 +90904,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
           "endTime": Date, 
           "state": String, 
         },  
+        "afterCallWorkRequired": Boolean, 
       },  
       "chats": { 
         "state": String, 
@@ -90311,6 +90960,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
           "endTime": Date, 
           "state": String, 
         },  
+        "afterCallWorkRequired": Boolean, 
       },  
       "cobrowsesessions": { 
         "state": String, 
@@ -90354,6 +91004,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
           "endTime": Date, 
           "state": String, 
         },  
+        "afterCallWorkRequired": Boolean, 
       },  
       "emails": { 
         "state": String, 
@@ -90463,6 +91114,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
           "endTime": Date, 
           "state": String, 
         },  
+        "afterCallWorkRequired": Boolean, 
       },  
       "messages": { 
         "state": String, 
@@ -90594,6 +91246,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
           "endTime": Date, 
           "state": String, 
         },  
+        "afterCallWorkRequired": Boolean, 
       },  
       "screenshares": { 
         "state": String, 
@@ -90628,6 +91281,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
           "endTime": Date, 
           "state": String, 
         },  
+        "afterCallWorkRequired": Boolean, 
       },  
       "socialExpressions": { 
         "state": String, 
@@ -90667,6 +91321,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
           "endTime": Date, 
           "state": String, 
         },  
+        "afterCallWorkRequired": Boolean, 
       },  
       "videos": { 
         "state": String, 
@@ -90704,6 +91359,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
           "endTime": Date, 
           "state": String, 
         },  
+        "afterCallWorkRequired": Boolean, 
       },  
       "evaluations": { 
         "id": String, 
@@ -90845,6 +91501,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
+              "agentAssistantId": String, 
             },  
             "callbacks": { 
               "state": String, 
@@ -90898,6 +91556,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "chats": { 
               "state": String, 
@@ -90941,6 +91600,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "cobrowsesessions": { 
               "state": String, 
@@ -90984,6 +91644,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "emails": { 
               "state": String, 
@@ -91045,6 +91706,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "messages": { 
               "state": String, 
@@ -91119,6 +91781,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "screenshares": { 
               "state": String, 
@@ -91153,6 +91816,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "socialExpressions": { 
               "state": String, 
@@ -91192,6 +91856,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "videos": { 
               "state": String, 
@@ -91229,6 +91894,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "evaluations": { 
               "id": String, 
@@ -91379,6 +92045,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "queueFlow": DomainEntityRef, 
                 "whisperPrompt": DomainEntityRef, 
                 "autoAnswerOnly": Boolean, 
+                "enableTranscription": Boolean, 
+                "enableManualAssignment": Boolean, 
                 "callingPartyName": String, 
                 "callingPartyNumber": String, 
                 "defaultScripts": {String: Script}, 
@@ -92660,6 +93328,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "other": Address, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
+                "agentAssistantId": String, 
               },  
               "callbacks": { 
                 "state": String, 
@@ -92686,6 +93356,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "peerId": String, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "chats": { 
                 "state": String, 
@@ -92707,6 +93378,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "journeyContext": JourneyContext, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "cobrowsesessions": { 
                 "state": String, 
@@ -92726,6 +93398,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "segments": [Segment], 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "emails": { 
                 "state": String, 
@@ -92751,6 +93424,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "spam": Boolean, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "messages": { 
                 "state": String, 
@@ -92776,6 +93450,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "messages": [MessageDetails], 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "screenshares": { 
                 "state": String, 
@@ -92792,6 +93467,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "segments": [Segment], 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "socialExpressions": { 
                 "state": String, 
@@ -92813,6 +93489,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "peerId": String, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "videos": { 
                 "state": String, 
@@ -92832,6 +93509,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "self": Address, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "evaluations": { 
                 "id": String, 
@@ -93570,6 +94248,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "selfUri": String, 
               },  
               "autoAnswerOnly": Boolean, 
+              "enableTranscription": Boolean, 
+              "enableManualAssignment": Boolean, 
               "callingPartyName": String, 
               "callingPartyNumber": String, 
               "defaultScripts": { 
@@ -94237,6 +94917,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "selfUri": String, 
               },  
               "autoAnswerOnly": Boolean, 
+              "enableTranscription": Boolean, 
+              "enableManualAssignment": Boolean, 
               "callingPartyName": String, 
               "callingPartyNumber": String, 
               "defaultScripts": { 
@@ -94368,6 +95050,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
             "selfUri": String, 
           },  
           "autoAnswerOnly": Boolean, 
+          "enableTranscription": Boolean, 
+          "enableManualAssignment": Boolean, 
           "callingPartyName": String, 
           "callingPartyNumber": String, 
           "defaultScripts": { 
@@ -96035,6 +96719,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
             "endTime": Date, 
             "state": String, 
           },  
+          "afterCallWorkRequired": Boolean, 
+          "agentAssistantId": String, 
         },  
         "callbacks": { 
           "state": String, 
@@ -96091,6 +96777,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
             "endTime": Date, 
             "state": String, 
           },  
+          "afterCallWorkRequired": Boolean, 
         },  
         "chats": { 
           "state": String, 
@@ -96146,6 +96833,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
             "endTime": Date, 
             "state": String, 
           },  
+          "afterCallWorkRequired": Boolean, 
         },  
         "cobrowsesessions": { 
           "state": String, 
@@ -96189,6 +96877,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
             "endTime": Date, 
             "state": String, 
           },  
+          "afterCallWorkRequired": Boolean, 
         },  
         "emails": { 
           "state": String, 
@@ -96282,6 +96971,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
             "endTime": Date, 
             "state": String, 
           },  
+          "afterCallWorkRequired": Boolean, 
         },  
         "messages": { 
           "state": String, 
@@ -96397,6 +97087,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
             "endTime": Date, 
             "state": String, 
           },  
+          "afterCallWorkRequired": Boolean, 
         },  
         "screenshares": { 
           "state": String, 
@@ -96431,6 +97122,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
             "endTime": Date, 
             "state": String, 
           },  
+          "afterCallWorkRequired": Boolean, 
         },  
         "socialExpressions": { 
           "state": String, 
@@ -96470,6 +97162,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
             "endTime": Date, 
             "state": String, 
           },  
+          "afterCallWorkRequired": Boolean, 
         },  
         "videos": { 
           "state": String, 
@@ -96507,6 +97200,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
             "endTime": Date, 
             "state": String, 
           },  
+          "afterCallWorkRequired": Boolean, 
         },  
         "evaluations": { 
           "id": String, 
@@ -96590,6 +97284,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "other": Address, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
+                "agentAssistantId": String, 
               },  
               "callbacks": { 
                 "state": String, 
@@ -96616,6 +97312,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "peerId": String, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "chats": { 
                 "state": String, 
@@ -96637,6 +97334,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "journeyContext": JourneyContext, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "cobrowsesessions": { 
                 "state": String, 
@@ -96656,6 +97354,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "segments": [Segment], 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "emails": { 
                 "state": String, 
@@ -96681,6 +97380,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "spam": Boolean, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "messages": { 
                 "state": String, 
@@ -96706,6 +97406,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "messages": [MessageDetails], 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "screenshares": { 
                 "state": String, 
@@ -96722,6 +97423,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "segments": [Segment], 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "socialExpressions": { 
                 "state": String, 
@@ -96743,6 +97445,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "peerId": String, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "videos": { 
                 "state": String, 
@@ -96762,6 +97465,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "self": Address, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "evaluations": { 
                 "id": String, 
@@ -97868,6 +98572,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "queueFlow": DomainEntityRef, 
                 "whisperPrompt": DomainEntityRef, 
                 "autoAnswerOnly": Boolean, 
+                "enableTranscription": Boolean, 
+                "enableManualAssignment": Boolean, 
                 "callingPartyName": String, 
                 "callingPartyNumber": String, 
                 "defaultScripts": {String: Script}, 
@@ -98036,6 +98742,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "queueFlow": DomainEntityRef, 
                 "whisperPrompt": DomainEntityRef, 
                 "autoAnswerOnly": Boolean, 
+                "enableTranscription": Boolean, 
+                "enableManualAssignment": Boolean, 
                 "callingPartyName": String, 
                 "callingPartyNumber": String, 
                 "defaultScripts": {String: Script}, 
@@ -98142,6 +98850,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "selfUri": String, 
             },  
             "autoAnswerOnly": Boolean, 
+            "enableTranscription": Boolean, 
+            "enableManualAssignment": Boolean, 
             "callingPartyName": String, 
             "callingPartyNumber": String, 
             "defaultScripts": { 
@@ -98519,6 +99229,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "endTime": Date, 
               "state": String, 
             },  
+            "afterCallWorkRequired": Boolean, 
+            "agentAssistantId": String, 
           },  
           "callbacks": { 
             "state": String, 
@@ -98575,6 +99287,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "endTime": Date, 
               "state": String, 
             },  
+            "afterCallWorkRequired": Boolean, 
           },  
           "chats": { 
             "state": String, 
@@ -98627,6 +99340,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "endTime": Date, 
               "state": String, 
             },  
+            "afterCallWorkRequired": Boolean, 
           },  
           "cobrowsesessions": { 
             "state": String, 
@@ -98670,6 +99384,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "endTime": Date, 
               "state": String, 
             },  
+            "afterCallWorkRequired": Boolean, 
           },  
           "emails": { 
             "state": String, 
@@ -98747,6 +99462,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "endTime": Date, 
               "state": String, 
             },  
+            "afterCallWorkRequired": Boolean, 
           },  
           "messages": { 
             "state": String, 
@@ -98846,6 +99562,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "endTime": Date, 
               "state": String, 
             },  
+            "afterCallWorkRequired": Boolean, 
           },  
           "screenshares": { 
             "state": String, 
@@ -98880,6 +99597,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "endTime": Date, 
               "state": String, 
             },  
+            "afterCallWorkRequired": Boolean, 
           },  
           "socialExpressions": { 
             "state": String, 
@@ -98919,6 +99637,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "endTime": Date, 
               "state": String, 
             },  
+            "afterCallWorkRequired": Boolean, 
           },  
           "videos": { 
             "state": String, 
@@ -98956,6 +99675,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "endTime": Date, 
               "state": String, 
             },  
+            "afterCallWorkRequired": Boolean, 
           },  
           "evaluations": { 
             "id": String, 
@@ -99585,6 +100305,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "selfUri": String, 
               },  
               "autoAnswerOnly": Boolean, 
+              "enableTranscription": Boolean, 
+              "enableManualAssignment": Boolean, 
               "callingPartyName": String, 
               "callingPartyNumber": String, 
               "defaultScripts": { 
@@ -101085,6 +101807,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
+              "agentAssistantId": String, 
             },  
             "callbacks": { 
               "state": String, 
@@ -101138,6 +101862,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "chats": { 
               "state": String, 
@@ -101181,6 +101906,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "cobrowsesessions": { 
               "state": String, 
@@ -101224,6 +101950,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "emails": { 
               "state": String, 
@@ -101285,6 +102012,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "messages": { 
               "state": String, 
@@ -101359,6 +102087,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "screenshares": { 
               "state": String, 
@@ -101393,6 +102122,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "socialExpressions": { 
               "state": String, 
@@ -101432,6 +102162,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "videos": { 
               "state": String, 
@@ -101469,6 +102200,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "evaluations": { 
               "id": String, 
@@ -101619,6 +102351,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "queueFlow": DomainEntityRef, 
                 "whisperPrompt": DomainEntityRef, 
                 "autoAnswerOnly": Boolean, 
+                "enableTranscription": Boolean, 
+                "enableManualAssignment": Boolean, 
                 "callingPartyName": String, 
                 "callingPartyNumber": String, 
                 "defaultScripts": {String: Script}, 
@@ -101831,6 +102565,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "other": Address, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
+                "agentAssistantId": String, 
               },  
               "callbacks": { 
                 "state": String, 
@@ -101857,6 +102593,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "peerId": String, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "chats": { 
                 "state": String, 
@@ -101878,6 +102615,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "journeyContext": JourneyContext, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "cobrowsesessions": { 
                 "state": String, 
@@ -101897,6 +102635,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "segments": [Segment], 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "emails": { 
                 "state": String, 
@@ -101922,6 +102661,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "spam": Boolean, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "messages": { 
                 "state": String, 
@@ -101947,6 +102687,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "messages": [MessageDetails], 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "screenshares": { 
                 "state": String, 
@@ -101963,6 +102704,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "segments": [Segment], 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "socialExpressions": { 
                 "state": String, 
@@ -101984,6 +102726,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "peerId": String, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "videos": { 
                 "state": String, 
@@ -102003,6 +102746,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "self": Address, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "evaluations": { 
                 "id": String, 
@@ -103109,6 +103853,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "queueFlow": DomainEntityRef, 
                 "whisperPrompt": DomainEntityRef, 
                 "autoAnswerOnly": Boolean, 
+                "enableTranscription": Boolean, 
+                "enableManualAssignment": Boolean, 
                 "callingPartyName": String, 
                 "callingPartyNumber": String, 
                 "defaultScripts": {String: Script}, 
@@ -103277,6 +104023,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "queueFlow": DomainEntityRef, 
                 "whisperPrompt": DomainEntityRef, 
                 "autoAnswerOnly": Boolean, 
+                "enableTranscription": Boolean, 
+                "enableManualAssignment": Boolean, 
                 "callingPartyName": String, 
                 "callingPartyNumber": String, 
                 "defaultScripts": {String: Script}, 
@@ -103383,6 +104131,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "selfUri": String, 
             },  
             "autoAnswerOnly": Boolean, 
+            "enableTranscription": Boolean, 
+            "enableManualAssignment": Boolean, 
             "callingPartyName": String, 
             "callingPartyNumber": String, 
             "defaultScripts": { 
@@ -103536,6 +104286,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "other": Address, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
+                "agentAssistantId": String, 
               },  
               "callbacks": { 
                 "state": String, 
@@ -103562,6 +104314,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "peerId": String, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "chats": { 
                 "state": String, 
@@ -103583,6 +104336,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "journeyContext": JourneyContext, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "cobrowsesessions": { 
                 "state": String, 
@@ -103602,6 +104356,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "segments": [Segment], 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "emails": { 
                 "state": String, 
@@ -103627,6 +104382,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "spam": Boolean, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "messages": { 
                 "state": String, 
@@ -103652,6 +104408,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "messages": [MessageDetails], 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "screenshares": { 
                 "state": String, 
@@ -103668,6 +104425,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "segments": [Segment], 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "socialExpressions": { 
                 "state": String, 
@@ -103689,6 +104447,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "peerId": String, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "videos": { 
                 "state": String, 
@@ -103708,6 +104467,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "self": Address, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "evaluations": { 
                 "id": String, 
@@ -104814,6 +105574,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "queueFlow": DomainEntityRef, 
                 "whisperPrompt": DomainEntityRef, 
                 "autoAnswerOnly": Boolean, 
+                "enableTranscription": Boolean, 
+                "enableManualAssignment": Boolean, 
                 "callingPartyName": String, 
                 "callingPartyNumber": String, 
                 "defaultScripts": {String: Script}, 
@@ -104982,6 +105744,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "queueFlow": DomainEntityRef, 
                 "whisperPrompt": DomainEntityRef, 
                 "autoAnswerOnly": Boolean, 
+                "enableTranscription": Boolean, 
+                "enableManualAssignment": Boolean, 
                 "callingPartyName": String, 
                 "callingPartyNumber": String, 
                 "defaultScripts": {String: Script}, 
@@ -105088,6 +105852,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "selfUri": String, 
             },  
             "autoAnswerOnly": Boolean, 
+            "enableTranscription": Boolean, 
+            "enableManualAssignment": Boolean, 
             "callingPartyName": String, 
             "callingPartyNumber": String, 
             "defaultScripts": { 
@@ -105255,6 +106021,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
           "selfUri": String, 
         },  
         "autoAnswerOnly": Boolean, 
+        "enableTranscription": Boolean, 
+        "enableManualAssignment": Boolean, 
         "callingPartyName": String, 
         "callingPartyNumber": String, 
         "defaultScripts": { 
@@ -105514,6 +106282,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "endTime": Date, 
               "state": String, 
             },  
+            "afterCallWorkRequired": Boolean, 
+            "agentAssistantId": String, 
           },  
           "callbacks": { 
             "state": String, 
@@ -105570,6 +106340,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "endTime": Date, 
               "state": String, 
             },  
+            "afterCallWorkRequired": Boolean, 
           },  
           "chats": { 
             "state": String, 
@@ -105622,6 +106393,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "endTime": Date, 
               "state": String, 
             },  
+            "afterCallWorkRequired": Boolean, 
           },  
           "cobrowsesessions": { 
             "state": String, 
@@ -105665,6 +106437,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "endTime": Date, 
               "state": String, 
             },  
+            "afterCallWorkRequired": Boolean, 
           },  
           "emails": { 
             "state": String, 
@@ -105742,6 +106515,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "endTime": Date, 
               "state": String, 
             },  
+            "afterCallWorkRequired": Boolean, 
           },  
           "messages": { 
             "state": String, 
@@ -105841,6 +106615,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "endTime": Date, 
               "state": String, 
             },  
+            "afterCallWorkRequired": Boolean, 
           },  
           "screenshares": { 
             "state": String, 
@@ -105875,6 +106650,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "endTime": Date, 
               "state": String, 
             },  
+            "afterCallWorkRequired": Boolean, 
           },  
           "socialExpressions": { 
             "state": String, 
@@ -105914,6 +106690,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "endTime": Date, 
               "state": String, 
             },  
+            "afterCallWorkRequired": Boolean, 
           },  
           "videos": { 
             "state": String, 
@@ -105951,6 +106728,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "endTime": Date, 
               "state": String, 
             },  
+            "afterCallWorkRequired": Boolean, 
           },  
           "evaluations": { 
             "id": String, 
@@ -106580,6 +107358,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "selfUri": String, 
               },  
               "autoAnswerOnly": Boolean, 
+              "enableTranscription": Boolean, 
+              "enableManualAssignment": Boolean, 
               "callingPartyName": String, 
               "callingPartyNumber": String, 
               "defaultScripts": { 
@@ -108080,6 +108860,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
+              "agentAssistantId": String, 
             },  
             "callbacks": { 
               "state": String, 
@@ -108133,6 +108915,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "chats": { 
               "state": String, 
@@ -108176,6 +108959,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "cobrowsesessions": { 
               "state": String, 
@@ -108219,6 +109003,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "emails": { 
               "state": String, 
@@ -108280,6 +109065,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "messages": { 
               "state": String, 
@@ -108354,6 +109140,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "screenshares": { 
               "state": String, 
@@ -108388,6 +109175,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "socialExpressions": { 
               "state": String, 
@@ -108427,6 +109215,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "videos": { 
               "state": String, 
@@ -108464,6 +109253,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "endTime": Date, 
                 "state": String, 
               },  
+              "afterCallWorkRequired": Boolean, 
             },  
             "evaluations": { 
               "id": String, 
@@ -108614,6 +109404,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "queueFlow": DomainEntityRef, 
                 "whisperPrompt": DomainEntityRef, 
                 "autoAnswerOnly": Boolean, 
+                "enableTranscription": Boolean, 
+                "enableManualAssignment": Boolean, 
                 "callingPartyName": String, 
                 "callingPartyNumber": String, 
                 "defaultScripts": {String: Script}, 
@@ -108826,6 +109618,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "other": Address, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
+                "agentAssistantId": String, 
               },  
               "callbacks": { 
                 "state": String, 
@@ -108852,6 +109646,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "peerId": String, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "chats": { 
                 "state": String, 
@@ -108873,6 +109668,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "journeyContext": JourneyContext, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "cobrowsesessions": { 
                 "state": String, 
@@ -108892,6 +109688,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "segments": [Segment], 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "emails": { 
                 "state": String, 
@@ -108917,6 +109714,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "spam": Boolean, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "messages": { 
                 "state": String, 
@@ -108942,6 +109740,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "messages": [MessageDetails], 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "screenshares": { 
                 "state": String, 
@@ -108958,6 +109757,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "segments": [Segment], 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "socialExpressions": { 
                 "state": String, 
@@ -108979,6 +109779,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "peerId": String, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "videos": { 
                 "state": String, 
@@ -108998,6 +109799,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "self": Address, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "evaluations": { 
                 "id": String, 
@@ -110104,6 +110906,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "queueFlow": DomainEntityRef, 
                 "whisperPrompt": DomainEntityRef, 
                 "autoAnswerOnly": Boolean, 
+                "enableTranscription": Boolean, 
+                "enableManualAssignment": Boolean, 
                 "callingPartyName": String, 
                 "callingPartyNumber": String, 
                 "defaultScripts": {String: Script}, 
@@ -110272,6 +111076,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "queueFlow": DomainEntityRef, 
                 "whisperPrompt": DomainEntityRef, 
                 "autoAnswerOnly": Boolean, 
+                "enableTranscription": Boolean, 
+                "enableManualAssignment": Boolean, 
                 "callingPartyName": String, 
                 "callingPartyNumber": String, 
                 "defaultScripts": {String: Script}, 
@@ -110378,6 +111184,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "selfUri": String, 
             },  
             "autoAnswerOnly": Boolean, 
+            "enableTranscription": Boolean, 
+            "enableManualAssignment": Boolean, 
             "callingPartyName": String, 
             "callingPartyNumber": String, 
             "defaultScripts": { 
@@ -110531,6 +111339,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "other": Address, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
+                "agentAssistantId": String, 
               },  
               "callbacks": { 
                 "state": String, 
@@ -110557,6 +111367,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "peerId": String, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "chats": { 
                 "state": String, 
@@ -110578,6 +111389,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "journeyContext": JourneyContext, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "cobrowsesessions": { 
                 "state": String, 
@@ -110597,6 +111409,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "segments": [Segment], 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "emails": { 
                 "state": String, 
@@ -110622,6 +111435,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "spam": Boolean, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "messages": { 
                 "state": String, 
@@ -110647,6 +111461,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "messages": [MessageDetails], 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "screenshares": { 
                 "state": String, 
@@ -110663,6 +111478,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "segments": [Segment], 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "socialExpressions": { 
                 "state": String, 
@@ -110684,6 +111500,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "peerId": String, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "videos": { 
                 "state": String, 
@@ -110703,6 +111520,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "self": Address, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
+                "afterCallWorkRequired": Boolean, 
               },  
               "evaluations": { 
                 "id": String, 
@@ -111809,6 +112627,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "queueFlow": DomainEntityRef, 
                 "whisperPrompt": DomainEntityRef, 
                 "autoAnswerOnly": Boolean, 
+                "enableTranscription": Boolean, 
+                "enableManualAssignment": Boolean, 
                 "callingPartyName": String, 
                 "callingPartyNumber": String, 
                 "defaultScripts": {String: Script}, 
@@ -111977,6 +112797,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "queueFlow": DomainEntityRef, 
                 "whisperPrompt": DomainEntityRef, 
                 "autoAnswerOnly": Boolean, 
+                "enableTranscription": Boolean, 
+                "enableManualAssignment": Boolean, 
                 "callingPartyName": String, 
                 "callingPartyNumber": String, 
                 "defaultScripts": {String: Script}, 
@@ -112083,6 +112905,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "selfUri": String, 
             },  
             "autoAnswerOnly": Boolean, 
+            "enableTranscription": Boolean, 
+            "enableManualAssignment": Boolean, 
             "callingPartyName": String, 
             "callingPartyNumber": String, 
             "defaultScripts": { 
@@ -112250,6 +113074,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
           "selfUri": String, 
         },  
         "autoAnswerOnly": Boolean, 
+        "enableTranscription": Boolean, 
+        "enableManualAssignment": Boolean, 
         "callingPartyName": String, 
         "callingPartyNumber": String, 
         "defaultScripts": { 
@@ -112462,6 +113288,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
       "selfUri": String, 
     },  
     "autoAnswerOnly": Boolean, 
+    "enableTranscription": Boolean, 
+    "enableManualAssignment": Boolean, 
     "callingPartyName": String, 
     "callingPartyNumber": String, 
     "defaultScripts": { 
@@ -113566,6 +114394,8 @@ KeywordSet <a href="#" onclick="return copyKeywordSetExample()">Copy</a>
       "selfUri": String, 
     },  
     "autoAnswerOnly": Boolean, 
+    "enableTranscription": Boolean, 
+    "enableManualAssignment": Boolean, 
     "callingPartyName": String, 
     "callingPartyNumber": String, 
     "defaultScripts": { 

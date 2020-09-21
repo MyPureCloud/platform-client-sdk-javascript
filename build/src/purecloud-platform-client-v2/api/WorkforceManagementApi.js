@@ -5,7 +5,7 @@ class WorkforceManagementApi {
 	/**
 	 * WorkforceManagement service.
 	 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-	 * @version 90.0.0
+	 * @version 91.0.0
 	 */
 
 	/**
@@ -1339,8 +1339,12 @@ class WorkforceManagementApi {
 	 * 
 	 * @param {String} managementUnitId The id of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
 	 * @param {String} agentId The agent id
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.excludeCapabilities Excludes all capabilities of the agent such as queues, languages, and skills
 	 */
-	getWorkforcemanagementManagementunitAgent(managementUnitId, agentId) { 
+	getWorkforcemanagementManagementunitAgent(managementUnitId, agentId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'managementUnitId' is set
 		if (managementUnitId === undefined || managementUnitId === null) {
 			throw 'Missing the required parameter "managementUnitId" when calling getWorkforcemanagementManagementunitAgent';
@@ -1354,7 +1358,7 @@ class WorkforceManagementApi {
 			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/agents/{agentId}', 
 			'GET', 
 			{ 'managementUnitId': managementUnitId,'agentId': agentId }, 
-			{  }, 
+			{ 'excludeCapabilities': opts['excludeCapabilities'] }, 
 			{  }, 
 			{  }, 
 			null, 

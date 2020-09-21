@@ -1108,6 +1108,12 @@ Requires ANY permissions:
 * wfm:workPlan:delete
 * wfm:workPlan:edit
 * wfm:workPlan:view
+* wfm:workPlanRotation:add
+* wfm:workPlanRotation:delete
+* wfm:workPlanRotation:edit
+* wfm:workPlanRotation:view
+* coaching:appointment:add
+* coaching:appointment:edit
 
 
 
@@ -1418,7 +1424,7 @@ apiInstance.getWorkforcemanagementBusinessunitManagementunits(businessUnitId, op
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **businessUnitId** | **String** | The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user. |  |
- **feature** | **String** |  | [optional] <br />**Values**: AgentSchedule, AgentTimeOffRequest, ActivityCodes, Agents, BuActivityCodes, BusinessUnits, HistoricalAdherence, IntradayMonitoring, BuIntradayMonitoring, ManagementUnits, RealTimeAdherence, Schedules, BuSchedules, ServiceGoalGroups, ServiceGoalTemplates, PlanningGroups, ShiftTrading, ShortTermForecasts, BuShortTermForecasts, TimeOffRequests, WorkPlans |
+ **feature** | **String** |  | [optional] <br />**Values**: AgentSchedule, AgentTimeOffRequest, Coaching, ActivityCodes, Agents, BuActivityCodes, BusinessUnits, HistoricalAdherence, IntradayMonitoring, BuIntradayMonitoring, ManagementUnits, RealTimeAdherence, Schedules, BuSchedules, ServiceGoalGroups, ServiceGoalTemplates, PlanningGroups, ShiftTrading, ShortTermForecasts, BuShortTermForecasts, TimeOffRequests, WorkPlanRotations, WorkPlans |
  **divisionId** | **String** |  | [optional]  |
 {: class="table table-striped"}
 
@@ -2437,7 +2443,7 @@ apiInstance.getWorkforcemanagementBusinessunits(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **feature** | **String** |  | [optional] <br />**Values**: AgentSchedule, AgentTimeOffRequest, ActivityCodes, Agents, BuActivityCodes, BusinessUnits, HistoricalAdherence, IntradayMonitoring, BuIntradayMonitoring, ManagementUnits, RealTimeAdherence, Schedules, BuSchedules, ServiceGoalGroups, ServiceGoalTemplates, PlanningGroups, ShiftTrading, ShortTermForecasts, BuShortTermForecasts, TimeOffRequests, WorkPlans |
+ **feature** | **String** |  | [optional] <br />**Values**: AgentSchedule, AgentTimeOffRequest, Coaching, ActivityCodes, Agents, BuActivityCodes, BusinessUnits, HistoricalAdherence, IntradayMonitoring, BuIntradayMonitoring, ManagementUnits, RealTimeAdherence, Schedules, BuSchedules, ServiceGoalGroups, ServiceGoalTemplates, PlanningGroups, ShiftTrading, ShortTermForecasts, BuShortTermForecasts, TimeOffRequests, WorkPlanRotations, WorkPlans |
  **divisionId** | **String** |  | [optional]  |
 {: class="table table-striped"}
 
@@ -2567,6 +2573,10 @@ Requires ANY permissions:
 * wfm:workPlan:delete
 * wfm:workPlan:edit
 * wfm:workPlan:view
+* wfm:workPlanRotation:add
+* wfm:workPlanRotation:delete
+* wfm:workPlanRotation:edit
+* wfm:workPlanRotation:view
 
 
 
@@ -2823,7 +2833,7 @@ apiInstance.getWorkforcemanagementManagementunitAdherence(managementUnitId, opts
 
 <a name="getWorkforcemanagementManagementunitAgent"></a>
 
-# WfmAgent getWorkforcemanagementManagementunitAgent(managementUnitId, agentId)
+# WfmAgent getWorkforcemanagementManagementunitAgent(managementUnitId, agentId, opts)
 
 
 
@@ -2854,8 +2864,11 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 
 let managementUnitId = "managementUnitId_example"; // String | The id of the management unit, or 'mine' for the management unit of the logged-in user.
 let agentId = "agentId_example"; // String | The agent id
+let opts = { 
+  'excludeCapabilities': true // Boolean | Excludes all capabilities of the agent such as queues, languages, and skills
+};
 
-apiInstance.getWorkforcemanagementManagementunitAgent(managementUnitId, agentId)
+apiInstance.getWorkforcemanagementManagementunitAgent(managementUnitId, agentId, opts)
   .then((data) => {
     console.log(`getWorkforcemanagementManagementunitAgent success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2872,6 +2885,7 @@ apiInstance.getWorkforcemanagementManagementunitAgent(managementUnitId, agentId)
 | ------------- | ------------- | ------------- | ------------- |
  **managementUnitId** | **String** | The id of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
  **agentId** | **String** | The agent id |  |
+ **excludeCapabilities** | **Boolean** | Excludes all capabilities of the agent such as queues, languages, and skills | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -3571,6 +3585,7 @@ Requires ANY permissions:
 * wfm:realtimeAdherence:view
 * wfm:schedule:view
 * wfm:timeOffRequest:view
+* wfm:workPlanRotation:view
 * wfm:workPlan:view
 
 
@@ -3992,6 +4007,7 @@ Get a work plan
 
 Requires ANY permissions: 
 
+* wfm:workPlanRotation:view
 * wfm:workPlan:view
 * wfm:schedule:edit
 
@@ -4053,6 +4069,7 @@ Requires ANY permissions:
 * wfm:agent:view
 * wfm:publishedSchedule:view
 * wfm:schedule:view
+* wfm:workPlanRotation:view
 * wfm:workPlan:view
 
 
@@ -4154,7 +4171,7 @@ apiInstance.getWorkforcemanagementManagementunits(opts)
  **pageSize** | **Number** |  | [optional]  |
  **pageNumber** | **Number** |  | [optional]  |
  **expand** | **String** |  | [optional] <br />**Values**: details |
- **feature** | **String** |  | [optional] <br />**Values**: AgentSchedule, AgentTimeOffRequest, ActivityCodes, Agents, BuActivityCodes, BusinessUnits, HistoricalAdherence, IntradayMonitoring, BuIntradayMonitoring, ManagementUnits, RealTimeAdherence, Schedules, BuSchedules, ServiceGoalGroups, ServiceGoalTemplates, PlanningGroups, ShiftTrading, ShortTermForecasts, BuShortTermForecasts, TimeOffRequests, WorkPlans |
+ **feature** | **String** |  | [optional] <br />**Values**: AgentSchedule, AgentTimeOffRequest, Coaching, ActivityCodes, Agents, BuActivityCodes, BusinessUnits, HistoricalAdherence, IntradayMonitoring, BuIntradayMonitoring, ManagementUnits, RealTimeAdherence, Schedules, BuSchedules, ServiceGoalGroups, ServiceGoalTemplates, PlanningGroups, ShiftTrading, ShortTermForecasts, BuShortTermForecasts, TimeOffRequests, WorkPlanRotations, WorkPlans |
  **divisionId** | **String** |  | [optional]  |
 {: class="table table-striped"}
 
