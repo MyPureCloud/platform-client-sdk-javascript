@@ -165,6 +165,7 @@ declare class ArchitectApi {
   	deleteFlows(id: Array<string>): Promise<Models.Operation>; 
   	deleteFlowsDatatable(datatableId: string, opts?: ArchitectApi.deleteFlowsDatatableOptions): Promise<void>; 
   	deleteFlowsDatatableRow(datatableId: string, rowId: string): Promise<void>; 
+  	deleteFlowsMilestone(milestoneId: string): Promise<Models.Empty>; 
   	getArchitectDependencytracking(name: string, opts?: ArchitectApi.getArchitectDependencytrackingOptions): Promise<Models.DependencyObjectEntityListing>; 
   	getArchitectDependencytrackingBuild(): Promise<Models.DependencyStatus>; 
   	getArchitectDependencytrackingConsumedresources(id: string, version: string, objectType: string, opts?: ArchitectApi.getArchitectDependencytrackingConsumedresourcesOptions): Promise<Models.ConsumedResourcesEntityListing>; 
@@ -208,6 +209,8 @@ declare class ArchitectApi {
   	getFlowsDatatables(opts?: ArchitectApi.getFlowsDatatablesOptions): Promise<Models.DataTablesDomainEntityListing>; 
   	getFlowsDivisionviews(opts?: ArchitectApi.getFlowsDivisionviewsOptions): Promise<Models.FlowDivisionViewEntityListing>; 
   	getFlowsExecution(flowExecutionId: string): Promise<Models.FlowRuntimeExecution>; 
+  	getFlowsMilestone(milestoneId: string): Promise<Models.FlowMilestone>; 
+  	getFlowsMilestones(opts?: ArchitectApi.getFlowsMilestonesOptions): Promise<Models.FlowMilestoneListing>; 
   	getFlowsOutcome(flowOutcomeId: string): Promise<Models.FlowOutcome>; 
   	getFlowsOutcomes(opts?: ArchitectApi.getFlowsOutcomesOptions): Promise<Models.FlowOutcomeListing>; 
   	postArchitectDependencytrackingBuild(): Promise<void>; 
@@ -233,6 +236,7 @@ declare class ArchitectApi {
   	postFlowsDatatableRows(datatableId: string, dataTableRow: object): Promise<{ [key: string]: object; }>; 
   	postFlowsDatatables(body: Models.DataTable): Promise<Models.DataTable>; 
   	postFlowsExecutions(flowLaunchRequest: Models.FlowExecutionLaunchRequest): Promise<Models.FlowExecutionLaunchResponse>; 
+  	postFlowsMilestones(opts?: ArchitectApi.postFlowsMilestonesOptions): Promise<Models.FlowMilestone>; 
   	postFlowsOutcomes(opts?: ArchitectApi.postFlowsOutcomesOptions): Promise<Models.FlowOutcome>; 
   	putArchitectEmergencygroup(emergencyGroupId: string, body: Models.EmergencyGroup): Promise<Models.EmergencyGroup>; 
   	putArchitectIvr(ivrId: string, body: Models.IVR): Promise<Models.IVR>; 
@@ -244,6 +248,7 @@ declare class ArchitectApi {
   	putFlow(flowId: string, body: Models.Flow): Promise<Models.Flow>; 
   	putFlowsDatatable(datatableId: string, opts?: ArchitectApi.putFlowsDatatableOptions): Promise<Models.DataTable>; 
   	putFlowsDatatableRow(datatableId: string, rowId: string, opts?: ArchitectApi.putFlowsDatatableRowOptions): Promise<{ [key: string]: object; }>; 
+  	putFlowsMilestone(milestoneId: string, opts?: ArchitectApi.putFlowsMilestoneOptions): Promise<Models.FlowMilestone>; 
   	putFlowsOutcome(flowOutcomeId: string, opts?: ArchitectApi.putFlowsOutcomeOptions): Promise<Models.Operation>;
 }
 
@@ -457,6 +462,16 @@ declare namespace ArchitectApi {
 		"divisionId"?: Array<string>;
 		"includeSchemas"?: boolean;
 	}
+	export interface getFlowsMilestonesOptions { 
+		"pageNumber"?: number;
+		"pageSize"?: number;
+		"sortBy"?: string;
+		"sortOrder"?: string;
+		"id"?: Array<string>;
+		"name"?: string;
+		"description"?: string;
+		"nameOrDescription"?: string;
+	}
 	export interface getFlowsOutcomesOptions { 
 		"pageNumber"?: number;
 		"pageSize"?: number;
@@ -470,6 +485,9 @@ declare namespace ArchitectApi {
 	export interface postFlowsActionsPublishOptions { 
 		"version"?: string;
 	}
+	export interface postFlowsMilestonesOptions { 
+		"body"?: Models.FlowMilestone;
+	}
 	export interface postFlowsOutcomesOptions { 
 		"body"?: Models.FlowOutcome;
 	}
@@ -479,6 +497,9 @@ declare namespace ArchitectApi {
 	}
 	export interface putFlowsDatatableRowOptions { 
 		"body"?: object;
+	}
+	export interface putFlowsMilestoneOptions { 
+		"body"?: Models.FlowMilestone;
 	}
 	export interface putFlowsOutcomeOptions { 
 		"body"?: Models.FlowOutcome;
@@ -3608,6 +3629,41 @@ declare class UsageApi {
 declare namespace UsageApi { 
 }
 
+declare class UserDevelopmentApi {  
+  	getUsersDevelopmentActivities(opts?: UserDevelopmentApi.getUsersDevelopmentActivitiesOptions): Promise<Models.DevelopmentActivityListing>; 
+  	getUsersDevelopmentActivitiesMe(opts?: UserDevelopmentApi.getUsersDevelopmentActivitiesMeOptions): Promise<Models.DevelopmentActivityListing>; 
+  	getUsersDevelopmentActivity(activityId: string, type: string): Promise<Models.DevelopmentActivity>; 
+  	postUsersDevelopmentActivitiesAggregatesQuery(body: Models.DevelopmentActivityAggregateParam): Promise<Models.DevelopmentActivityAggregateResponse>;
+}
+
+declare namespace UserDevelopmentApi { 
+	export interface getUsersDevelopmentActivitiesOptions { 
+		"userId"?: Array<string>;
+		"moduleId"?: string;
+		"interval"?: string;
+		"completionInterval"?: string;
+		"overdue"?: string;
+		"pageSize"?: number;
+		"pageNumber"?: number;
+		"sortOrder"?: string;
+		"types"?: Array<string>;
+		"statuses"?: Array<string>;
+		"relationship"?: Array<string>;
+	}
+	export interface getUsersDevelopmentActivitiesMeOptions { 
+		"moduleId"?: string;
+		"interval"?: string;
+		"completionInterval"?: string;
+		"overdue"?: string;
+		"pageSize"?: number;
+		"pageNumber"?: number;
+		"sortOrder"?: string;
+		"types"?: Array<string>;
+		"statuses"?: Array<string>;
+		"relationship"?: Array<string>;
+	}
+}
+
 declare class UserRecordingsApi {  
   	deleteUserrecording(recordingId: string): Promise<void>; 
   	getUserrecording(recordingId: string, opts?: UserRecordingsApi.getUserrecordingOptions): Promise<Models.UserRecording>; 
@@ -5112,20 +5168,20 @@ declare namespace Models {
 		"number"?: boolean;
 		"boolean"?: boolean;
 		"object"?: boolean;
-		"valueNode"?: boolean;
-		"pojo"?: boolean;
+		"floatingPointNumber"?: boolean;
 		"containerNode"?: boolean;
 		"missingNode"?: boolean;
-		"floatingPointNumber"?: boolean;
+		"binary"?: boolean;
+		"pojo"?: boolean;
 		"integralNumber"?: boolean;
-		"short"?: boolean;
 		"int"?: boolean;
 		"long"?: boolean;
 		"double"?: boolean;
 		"bigDecimal"?: boolean;
 		"bigInteger"?: boolean;
 		"textual"?: boolean;
-		"binary"?: boolean;
+		"short"?: boolean;
+		"valueNode"?: boolean;
 		"array"?: boolean;
 		"null"?: boolean;
 	}
@@ -5470,6 +5526,7 @@ declare namespace Models {
 		"requiresCurrentUser"?: boolean;
 		"requiresCurrentUserOrPermission"?: boolean;
 		"transports"?: Array<string>;
+		"publicApiTemplateUriPaths"?: Array<string>;
 	}
 	
 	export interface AvailableTopicEntityListing { 
@@ -10157,6 +10214,79 @@ declare namespace Models {
 		"resolved"?: string;
 	}
 	
+	export interface DevelopmentActivity { 
+		"id"?: string;
+		"dateCompleted"?: string;
+		"createdBy"?: Models.UserReference;
+		"dateCreated"?: string;
+		"selfUri"?: string;
+		"name"?: string;
+		"type"?: string;
+		"status"?: string;
+		"dateDue"?: string;
+		"facilitator"?: Models.UserReference;
+		"attendees"?: Array<Models.UserReference>;
+		"isOverdue"?: boolean;
+	}
+	
+	export interface DevelopmentActivityAggregateParam { 
+		"interval": string;
+		"metrics"?: Array<string>;
+		"groupBy"?: Array<string>;
+		"filter": Models.DevelopmentActivityAggregateQueryRequestFilter;
+	}
+	
+	export interface DevelopmentActivityAggregateQueryRequestClause { 
+		"type": string;
+		"predicates": Array<Models.DevelopmentActivityAggregateQueryRequestPredicate>;
+	}
+	
+	export interface DevelopmentActivityAggregateQueryRequestFilter { 
+		"type": string;
+		"clauses": Array<Models.DevelopmentActivityAggregateQueryRequestClause>;
+	}
+	
+	export interface DevelopmentActivityAggregateQueryRequestPredicate { 
+		"dimension": string;
+		"value": string;
+	}
+	
+	export interface DevelopmentActivityAggregateQueryResponseData { 
+		"interval"?: string;
+		"metrics"?: Array<Models.DevelopmentActivityAggregateQueryResponseMetric>;
+	}
+	
+	export interface DevelopmentActivityAggregateQueryResponseGroupedData { 
+		"group"?: { [key: string]: string; };
+		"data"?: Array<Models.DevelopmentActivityAggregateQueryResponseData>;
+	}
+	
+	export interface DevelopmentActivityAggregateQueryResponseMetric { 
+		"metric"?: string;
+		"stats"?: Models.DevelopmentActivityAggregateQueryResponseStatistics;
+	}
+	
+	export interface DevelopmentActivityAggregateQueryResponseStatistics { 
+		"count"?: number;
+	}
+	
+	export interface DevelopmentActivityAggregateResponse { 
+		"results"?: Array<Models.DevelopmentActivityAggregateQueryResponseGroupedData>;
+	}
+	
+	export interface DevelopmentActivityListing { 
+		"entities"?: Array<Models.DevelopmentActivity>;
+		"pageSize"?: number;
+		"pageNumber"?: number;
+		"total"?: number;
+		"firstUri"?: string;
+		"selfUri"?: string;
+		"nextUri"?: string;
+		"lastUri"?: string;
+		"previousUri"?: string;
+		"pageCount"?: number;
+	}
+	
 	export interface DialerAction { 
 		"type": string;
 		"actionTypeName": string;
@@ -11972,7 +12102,11 @@ declare namespace Models {
 	}
 	
 	export interface EntityListing { 
-		"entities"?: Array<object>;
+		"entities"?: Array<Models.DataTableImportJob>;
+		"pageSize"?: number;
+		"pageNumber"?: number;
+		"total"?: number;
+		"pageCount"?: number;
 	}
 	
 	export interface Entry { 
@@ -12823,6 +12957,26 @@ declare namespace Models {
 		"selfUri"?: string;
 	}
 	
+	export interface FlowMilestone { 
+		"id"?: string;
+		"name": string;
+		"description"?: string;
+		"selfUri"?: string;
+	}
+	
+	export interface FlowMilestoneListing { 
+		"entities"?: Array<Models.FlowMilestone>;
+		"pageSize"?: number;
+		"pageNumber"?: number;
+		"total"?: number;
+		"firstUri"?: string;
+		"selfUri"?: string;
+		"nextUri"?: string;
+		"lastUri"?: string;
+		"previousUri"?: string;
+		"pageCount"?: number;
+	}
+	
 	export interface FlowObservationDataContainer { 
 		"group"?: { [key: string]: string; };
 		"data"?: Array<Models.ObservationMetricData>;
@@ -13088,8 +13242,8 @@ declare namespace Models {
 		"id"?: string;
 		"name"?: string;
 		"logoImageData"?: string;
-		"relyingPartyIdentifier"?: string;
 		"endpointCompression"?: boolean;
+		"relyingPartyIdentifier"?: string;
 		"certificate"?: string;
 		"issuerURI"?: string;
 		"ssoTargetURI"?: string;
@@ -13422,8 +13576,8 @@ declare namespace Models {
 		"completed"?: string;
 		"entities"?: Array<Models.HistoryEntry>;
 		"total"?: number;
-		"pageNumber"?: number;
 		"pageSize"?: number;
+		"pageNumber"?: number;
 		"pageCount"?: number;
 	}
 	
@@ -13933,20 +14087,20 @@ declare namespace Models {
 		"number"?: boolean;
 		"boolean"?: boolean;
 		"object"?: boolean;
-		"valueNode"?: boolean;
-		"pojo"?: boolean;
+		"floatingPointNumber"?: boolean;
 		"containerNode"?: boolean;
 		"missingNode"?: boolean;
-		"floatingPointNumber"?: boolean;
+		"binary"?: boolean;
+		"pojo"?: boolean;
 		"integralNumber"?: boolean;
-		"short"?: boolean;
 		"int"?: boolean;
 		"long"?: boolean;
 		"double"?: boolean;
 		"bigDecimal"?: boolean;
 		"bigInteger"?: boolean;
 		"textual"?: boolean;
-		"binary"?: boolean;
+		"short"?: boolean;
+		"valueNode"?: boolean;
 		"array"?: boolean;
 		"null"?: boolean;
 	}
@@ -19314,6 +19468,8 @@ declare namespace Models {
 		"modifiedDateTime"?: string;
 		"percentageComplete"?: number;
 		"emailStatuses"?: { [key: string]: string; };
+		"emailErrorDescription"?: string;
+		"scheduleExpression"?: string;
 	}
 	
 	export interface ReportingExportJobListing { 
@@ -19374,6 +19530,7 @@ declare namespace Models {
 		"hasCustomParticipantAttributes"?: boolean;
 		"recipientEmails"?: Array<string>;
 		"emailStatuses"?: { [key: string]: string; };
+		"emailErrorDescription"?: string;
 		"enabled"?: boolean;
 		"selfUri"?: string;
 	}
@@ -23745,14 +23902,16 @@ declare namespace Models {
 		"endDate"?: string;
 		"timeZone"?: string;
 		"userIds"?: Array<string>;
+		"teamIds"?: Array<string>;
 		"includeExceptions"?: boolean;
 	}
 	
 	export interface WfmHistoricalAdherenceQueryForUsers { 
 		"startDate": string;
 		"endDate"?: string;
-		"timeZone": string;
+		"timeZone"?: string;
 		"userIds": Array<string>;
+		"teamIds": Array<string>;
 		"includeExceptions"?: boolean;
 	}
 	

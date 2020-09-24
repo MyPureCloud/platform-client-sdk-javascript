@@ -6000,6 +6000,7 @@ WfmHistoricalAdherenceQueryForUsers <a href="#" onclick="return copyWfmHistorica
   "endDate": Date, 
   "timeZone": String, 
   "userIds": [String], 
+  "teamIds": [String], 
   "includeExceptions": Boolean, 
 }
 ```
@@ -7509,6 +7510,7 @@ WfmHistoricalAdherenceQuery <a href="#" onclick="return copyWfmHistoricalAdheren
   "endDate": Date, 
   "timeZone": String, 
   "userIds": [String], 
+  "teamIds": [String], 
   "includeExceptions": Boolean, 
 }
 ```

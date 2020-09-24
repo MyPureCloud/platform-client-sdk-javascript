@@ -5,7 +5,7 @@ class ArchitectApi {
 	/**
 	 * Architect service.
 	 * @module purecloud-platform-client-v2/api/ArchitectApi
-	 * @version 91.0.0
+	 * @version 92.0.0
 	 */
 
 	/**
@@ -363,6 +363,31 @@ class ArchitectApi {
 			'/api/v2/flows/datatables/{datatableId}/rows/{rowId}', 
 			'DELETE', 
 			{ 'datatableId': datatableId,'rowId': rowId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete a flow milestone.
+	 * 
+	 * @param {String} milestoneId flow milestone ID
+	 */
+	deleteFlowsMilestone(milestoneId) { 
+		// verify the required parameter 'milestoneId' is set
+		if (milestoneId === undefined || milestoneId === null) {
+			throw 'Missing the required parameter "milestoneId" when calling deleteFlowsMilestone';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/flows/milestones/{milestoneId}', 
+			'DELETE', 
+			{ 'milestoneId': milestoneId }, 
 			{  }, 
 			{  }, 
 			{  }, 
@@ -1682,6 +1707,62 @@ class ArchitectApi {
 	}
 
 	/**
+	 * Get a flow milestone
+	 * Returns a specified flow milestone
+	 * @param {String} milestoneId flow milestone ID
+	 */
+	getFlowsMilestone(milestoneId) { 
+		// verify the required parameter 'milestoneId' is set
+		if (milestoneId === undefined || milestoneId === null) {
+			throw 'Missing the required parameter "milestoneId" when calling getFlowsMilestone';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/flows/milestones/{milestoneId}', 
+			'GET', 
+			{ 'milestoneId': milestoneId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a pageable list of flow milestones, filtered by query parameters
+	 * Multiple IDs can be specified, in which case all matching flow milestones will be returned, and no other parameters will be evaluated.
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {String} opts.sortBy Sort by (default to id)
+	 * @param {String} opts.sortOrder Sort order (default to asc)
+	 * @param {Array.<String>} opts.id ID
+	 * @param {String} opts.name Name
+	 * @param {String} opts.description Description
+	 * @param {String} opts.nameOrDescription Name or description
+	 */
+	getFlowsMilestones(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/flows/milestones', 
+			'GET', 
+			{  }, 
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'name': opts['name'],'description': opts['description'],'nameOrDescription': opts['nameOrDescription'] }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get a flow outcome
 	 * Returns a specified flow outcome
 	 * @param {String} flowOutcomeId flow outcome ID
@@ -2337,6 +2418,30 @@ class ArchitectApi {
 	}
 
 	/**
+	 * Create a flow milestone
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body 
+	 */
+	postFlowsMilestones(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/flows/milestones', 
+			'POST', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
 	 * Create a flow outcome
 	 * Asynchronous.  Notification topic: v2.flows.outcomes.{flowOutcomeId}
 	 * @param {Object} opts Optional parameters
@@ -2664,6 +2769,35 @@ class ArchitectApi {
 			'/api/v2/flows/datatables/{datatableId}/rows/{rowId}', 
 			'PUT', 
 			{ 'datatableId': datatableId,'rowId': rowId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Updates a flow milestone
+	 * 
+	 * @param {String} milestoneId flow milestone ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body 
+	 */
+	putFlowsMilestone(milestoneId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'milestoneId' is set
+		if (milestoneId === undefined || milestoneId === null) {
+			throw 'Missing the required parameter "milestoneId" when calling putFlowsMilestone';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/flows/milestones/{milestoneId}', 
+			'PUT', 
+			{ 'milestoneId': milestoneId }, 
 			{  }, 
 			{  }, 
 			{  }, 
