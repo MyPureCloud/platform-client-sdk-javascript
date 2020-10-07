@@ -5,7 +5,7 @@ class WorkforceManagementApi {
 	/**
 	 * WorkforceManagement service.
 	 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-	 * @version 92.0.0
+	 * @version 93.0.0
 	 */
 
 	/**
@@ -855,8 +855,12 @@ class WorkforceManagementApi {
 	 * @param {String} businessUnitId The ID of the business unit
 	 * @param {String} weekId First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 * @param {String} scheduleId The ID of the schedule
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.expand expand
 	 */
-	getWorkforcemanagementBusinessunitWeekSchedule(businessUnitId, weekId, scheduleId) { 
+	getWorkforcemanagementBusinessunitWeekSchedule(businessUnitId, weekId, scheduleId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null) {
 			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitWeekSchedule';
@@ -874,7 +878,7 @@ class WorkforceManagementApi {
 			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}', 
 			'GET', 
 			{ 'businessUnitId': businessUnitId,'weekId': weekId,'scheduleId': scheduleId }, 
-			{  }, 
+			{ 'expand': opts['expand'] }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -3898,6 +3902,41 @@ class WorkforceManagementApi {
 			'POST', 
 			{ 'managementUnitId': managementUnitId,'workPlanId': workPlanId }, 
 			{  }, 
+			{  }, 
+			{  }, 
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Validate Work Plan
+	 * 
+	 * @param {String} managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+	 * @param {String} workPlanId The ID of the work plan to validate. For new work plan, use the word &#39;new&#39; for the ID.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body body
+	 * @param {Array.<String>} opts.expand 
+	 */
+	postWorkforcemanagementManagementunitWorkplanValidate(managementUnitId, workPlanId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'managementUnitId' is set
+		if (managementUnitId === undefined || managementUnitId === null) {
+			throw 'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitWorkplanValidate';
+		}
+		// verify the required parameter 'workPlanId' is set
+		if (workPlanId === undefined || workPlanId === null) {
+			throw 'Missing the required parameter "workPlanId" when calling postWorkforcemanagementManagementunitWorkplanValidate';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans/{workPlanId}/validate', 
+			'POST', 
+			{ 'managementUnitId': managementUnitId,'workPlanId': workPlanId }, 
+			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') }, 
 			{  }, 
 			{  }, 
 			opts['body'], 

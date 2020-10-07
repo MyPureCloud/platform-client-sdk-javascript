@@ -6658,6 +6658,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "coreSite": Boolean, 
                 "selfUri": String, 
               },  
               "softwareStatus": { 
@@ -6762,6 +6763,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "coreSite": Boolean, 
                 "selfUri": String, 
               },  
               "softwareStatus": { 
@@ -6874,6 +6876,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "coreSite": Boolean, 
                 "selfUri": String, 
               },  
               "softwareStatus": { 
@@ -6955,6 +6958,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
             "ntpSettings": { 
               "servers": [String], 
             },  
+            "coreSite": Boolean, 
             "selfUri": String, 
           },  
           "softwareStatus": { 
@@ -7190,6 +7194,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "coreSite": Boolean, 
                 "selfUri": String, 
               },  
               "softwareStatus": { 
@@ -7294,6 +7299,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "coreSite": Boolean, 
                 "selfUri": String, 
               },  
               "softwareStatus": { 
@@ -7406,6 +7412,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "coreSite": Boolean, 
                 "selfUri": String, 
               },  
               "softwareStatus": { 
@@ -7487,6 +7494,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
             "ntpSettings": { 
               "servers": [String], 
             },  
+            "coreSite": Boolean, 
             "selfUri": String, 
           },  
           "softwareStatus": { 
@@ -7730,6 +7738,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "coreSite": Boolean, 
                 "selfUri": String, 
               },  
               "softwareStatus": { 
@@ -7834,6 +7843,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "coreSite": Boolean, 
                 "selfUri": String, 
               },  
               "softwareStatus": { 
@@ -7946,6 +7956,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "coreSite": Boolean, 
                 "selfUri": String, 
               },  
               "softwareStatus": { 
@@ -8027,6 +8038,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
             "ntpSettings": { 
               "servers": [String], 
             },  
+            "coreSite": Boolean, 
             "selfUri": String, 
           },  
           "softwareStatus": { 
@@ -8117,6 +8129,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
         "ntpSettings": { 
           "servers": [String], 
         },  
+        "coreSite": Boolean, 
         "selfUri": String, 
       },  
       "softwareStatus": { 
@@ -8478,6 +8491,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "coreSite": Boolean, 
                 "selfUri": String, 
               },  
               "softwareStatus": { 
@@ -8582,6 +8596,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "coreSite": Boolean, 
                 "selfUri": String, 
               },  
               "softwareStatus": { 
@@ -8694,6 +8709,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "coreSite": Boolean, 
                 "selfUri": String, 
               },  
               "softwareStatus": { 
@@ -8775,6 +8791,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
             "ntpSettings": { 
               "servers": [String], 
             },  
+            "coreSite": Boolean, 
             "selfUri": String, 
           },  
           "softwareStatus": { 
@@ -9010,6 +9027,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "coreSite": Boolean, 
                 "selfUri": String, 
               },  
               "softwareStatus": { 
@@ -9114,6 +9132,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "coreSite": Boolean, 
                 "selfUri": String, 
               },  
               "softwareStatus": { 
@@ -9226,6 +9245,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "coreSite": Boolean, 
                 "selfUri": String, 
               },  
               "softwareStatus": { 
@@ -9307,6 +9327,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
             "ntpSettings": { 
               "servers": [String], 
             },  
+            "coreSite": Boolean, 
             "selfUri": String, 
           },  
           "softwareStatus": { 
@@ -9550,6 +9571,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "coreSite": Boolean, 
                 "selfUri": String, 
               },  
               "softwareStatus": { 
@@ -9654,6 +9676,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "coreSite": Boolean, 
                 "selfUri": String, 
               },  
               "softwareStatus": { 
@@ -9766,6 +9789,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "coreSite": Boolean, 
                 "selfUri": String, 
               },  
               "softwareStatus": { 
@@ -9847,6 +9871,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
             "ntpSettings": { 
               "servers": [String], 
             },  
+            "coreSite": Boolean, 
             "selfUri": String, 
           },  
           "softwareStatus": { 
@@ -9937,6 +9962,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
         "ntpSettings": { 
           "servers": [String], 
         },  
+        "coreSite": Boolean, 
         "selfUri": String, 
       },  
       "softwareStatus": { 
@@ -10306,6 +10332,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "coreSite": Boolean, 
                 "selfUri": String, 
               },  
               "softwareStatus": { 
@@ -10410,6 +10437,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "coreSite": Boolean, 
                 "selfUri": String, 
               },  
               "softwareStatus": { 
@@ -10522,6 +10550,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "coreSite": Boolean, 
                 "selfUri": String, 
               },  
               "softwareStatus": { 
@@ -10603,6 +10632,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
             "ntpSettings": { 
               "servers": [String], 
             },  
+            "coreSite": Boolean, 
             "selfUri": String, 
           },  
           "softwareStatus": { 
@@ -10838,6 +10868,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "coreSite": Boolean, 
                 "selfUri": String, 
               },  
               "softwareStatus": { 
@@ -10942,6 +10973,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "coreSite": Boolean, 
                 "selfUri": String, 
               },  
               "softwareStatus": { 
@@ -11054,6 +11086,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "coreSite": Boolean, 
                 "selfUri": String, 
               },  
               "softwareStatus": { 
@@ -11135,6 +11168,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
             "ntpSettings": { 
               "servers": [String], 
             },  
+            "coreSite": Boolean, 
             "selfUri": String, 
           },  
           "softwareStatus": { 
@@ -11378,6 +11412,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "coreSite": Boolean, 
                 "selfUri": String, 
               },  
               "softwareStatus": { 
@@ -11482,6 +11517,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "coreSite": Boolean, 
                 "selfUri": String, 
               },  
               "softwareStatus": { 
@@ -11594,6 +11630,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "coreSite": Boolean, 
                 "selfUri": String, 
               },  
               "softwareStatus": { 
@@ -11675,6 +11712,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
             "ntpSettings": { 
               "servers": [String], 
             },  
+            "coreSite": Boolean, 
             "selfUri": String, 
           },  
           "softwareStatus": { 
@@ -11765,6 +11803,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
         "ntpSettings": { 
           "servers": [String], 
         },  
+        "coreSite": Boolean, 
         "selfUri": String, 
       },  
       "softwareStatus": { 
@@ -11855,6 +11894,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
     "ntpSettings": { 
       "servers": [String], 
     },  
+    "coreSite": Boolean, 
     "selfUri": String, 
   },  
   "softwareStatus": { 
@@ -12854,6 +12894,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "coreSite": Boolean, 
                 "selfUri": String, 
               },  
               "softwareStatus": { 
@@ -12958,6 +12999,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "coreSite": Boolean, 
                 "selfUri": String, 
               },  
               "softwareStatus": { 
@@ -13070,6 +13112,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "coreSite": Boolean, 
                 "selfUri": String, 
               },  
               "softwareStatus": { 
@@ -13151,6 +13194,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
             "ntpSettings": { 
               "servers": [String], 
             },  
+            "coreSite": Boolean, 
             "selfUri": String, 
           },  
           "softwareStatus": { 
@@ -13386,6 +13430,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "coreSite": Boolean, 
                 "selfUri": String, 
               },  
               "softwareStatus": { 
@@ -13490,6 +13535,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "coreSite": Boolean, 
                 "selfUri": String, 
               },  
               "softwareStatus": { 
@@ -13602,6 +13648,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "coreSite": Boolean, 
                 "selfUri": String, 
               },  
               "softwareStatus": { 
@@ -13683,6 +13730,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
             "ntpSettings": { 
               "servers": [String], 
             },  
+            "coreSite": Boolean, 
             "selfUri": String, 
           },  
           "softwareStatus": { 
@@ -13926,6 +13974,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "coreSite": Boolean, 
                 "selfUri": String, 
               },  
               "softwareStatus": { 
@@ -14030,6 +14079,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "coreSite": Boolean, 
                 "selfUri": String, 
               },  
               "softwareStatus": { 
@@ -14142,6 +14192,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "coreSite": Boolean, 
                 "selfUri": String, 
               },  
               "softwareStatus": { 
@@ -14223,6 +14274,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
             "ntpSettings": { 
               "servers": [String], 
             },  
+            "coreSite": Boolean, 
             "selfUri": String, 
           },  
           "softwareStatus": { 
@@ -14313,6 +14365,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
         "ntpSettings": { 
           "servers": [String], 
         },  
+        "coreSite": Boolean, 
         "selfUri": String, 
       },  
       "softwareStatus": { 
@@ -14674,6 +14727,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "coreSite": Boolean, 
                 "selfUri": String, 
               },  
               "softwareStatus": { 
@@ -14778,6 +14832,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "coreSite": Boolean, 
                 "selfUri": String, 
               },  
               "softwareStatus": { 
@@ -14890,6 +14945,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "coreSite": Boolean, 
                 "selfUri": String, 
               },  
               "softwareStatus": { 
@@ -14971,6 +15027,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
             "ntpSettings": { 
               "servers": [String], 
             },  
+            "coreSite": Boolean, 
             "selfUri": String, 
           },  
           "softwareStatus": { 
@@ -15206,6 +15263,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "coreSite": Boolean, 
                 "selfUri": String, 
               },  
               "softwareStatus": { 
@@ -15310,6 +15368,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "coreSite": Boolean, 
                 "selfUri": String, 
               },  
               "softwareStatus": { 
@@ -15422,6 +15481,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "coreSite": Boolean, 
                 "selfUri": String, 
               },  
               "softwareStatus": { 
@@ -15503,6 +15563,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
             "ntpSettings": { 
               "servers": [String], 
             },  
+            "coreSite": Boolean, 
             "selfUri": String, 
           },  
           "softwareStatus": { 
@@ -15746,6 +15807,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "coreSite": Boolean, 
                 "selfUri": String, 
               },  
               "softwareStatus": { 
@@ -15850,6 +15912,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "coreSite": Boolean, 
                 "selfUri": String, 
               },  
               "softwareStatus": { 
@@ -15962,6 +16025,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "coreSite": Boolean, 
                 "selfUri": String, 
               },  
               "softwareStatus": { 
@@ -16043,6 +16107,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
             "ntpSettings": { 
               "servers": [String], 
             },  
+            "coreSite": Boolean, 
             "selfUri": String, 
           },  
           "softwareStatus": { 
@@ -16133,6 +16198,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
         "ntpSettings": { 
           "servers": [String], 
         },  
+        "coreSite": Boolean, 
         "selfUri": String, 
       },  
       "softwareStatus": { 
@@ -16502,6 +16568,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "coreSite": Boolean, 
                 "selfUri": String, 
               },  
               "softwareStatus": { 
@@ -16606,6 +16673,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "coreSite": Boolean, 
                 "selfUri": String, 
               },  
               "softwareStatus": { 
@@ -16718,6 +16786,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "coreSite": Boolean, 
                 "selfUri": String, 
               },  
               "softwareStatus": { 
@@ -16799,6 +16868,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
             "ntpSettings": { 
               "servers": [String], 
             },  
+            "coreSite": Boolean, 
             "selfUri": String, 
           },  
           "softwareStatus": { 
@@ -17034,6 +17104,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "coreSite": Boolean, 
                 "selfUri": String, 
               },  
               "softwareStatus": { 
@@ -17138,6 +17209,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "coreSite": Boolean, 
                 "selfUri": String, 
               },  
               "softwareStatus": { 
@@ -17250,6 +17322,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "coreSite": Boolean, 
                 "selfUri": String, 
               },  
               "softwareStatus": { 
@@ -17331,6 +17404,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
             "ntpSettings": { 
               "servers": [String], 
             },  
+            "coreSite": Boolean, 
             "selfUri": String, 
           },  
           "softwareStatus": { 
@@ -17574,6 +17648,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "coreSite": Boolean, 
                 "selfUri": String, 
               },  
               "softwareStatus": { 
@@ -17678,6 +17753,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "coreSite": Boolean, 
                 "selfUri": String, 
               },  
               "softwareStatus": { 
@@ -17790,6 +17866,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "coreSite": Boolean, 
                 "selfUri": String, 
               },  
               "softwareStatus": { 
@@ -17871,6 +17948,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
             "ntpSettings": { 
               "servers": [String], 
             },  
+            "coreSite": Boolean, 
             "selfUri": String, 
           },  
           "softwareStatus": { 
@@ -17961,6 +18039,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
         "ntpSettings": { 
           "servers": [String], 
         },  
+        "coreSite": Boolean, 
         "selfUri": String, 
       },  
       "softwareStatus": { 
@@ -18051,6 +18130,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
     "ntpSettings": { 
       "servers": [String], 
     },  
+    "coreSite": Boolean, 
     "selfUri": String, 
   },  
   "managed": Boolean, 
@@ -18707,6 +18787,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "coreSite": Boolean, 
                 "selfUri": String, 
               },  
               "softwareStatus": { 
@@ -18811,6 +18892,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "coreSite": Boolean, 
                 "selfUri": String, 
               },  
               "softwareStatus": { 
@@ -18923,6 +19005,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "coreSite": Boolean, 
                 "selfUri": String, 
               },  
               "softwareStatus": { 
@@ -19004,6 +19087,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
             "ntpSettings": { 
               "servers": [String], 
             },  
+            "coreSite": Boolean, 
             "selfUri": String, 
           },  
           "softwareStatus": { 
@@ -19239,6 +19323,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "coreSite": Boolean, 
                 "selfUri": String, 
               },  
               "softwareStatus": { 
@@ -19343,6 +19428,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "coreSite": Boolean, 
                 "selfUri": String, 
               },  
               "softwareStatus": { 
@@ -19455,6 +19541,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "coreSite": Boolean, 
                 "selfUri": String, 
               },  
               "softwareStatus": { 
@@ -19536,6 +19623,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
             "ntpSettings": { 
               "servers": [String], 
             },  
+            "coreSite": Boolean, 
             "selfUri": String, 
           },  
           "softwareStatus": { 
@@ -19779,6 +19867,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "coreSite": Boolean, 
                 "selfUri": String, 
               },  
               "softwareStatus": { 
@@ -19883,6 +19972,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "coreSite": Boolean, 
                 "selfUri": String, 
               },  
               "softwareStatus": { 
@@ -19995,6 +20085,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "coreSite": Boolean, 
                 "selfUri": String, 
               },  
               "softwareStatus": { 
@@ -20076,6 +20167,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
             "ntpSettings": { 
               "servers": [String], 
             },  
+            "coreSite": Boolean, 
             "selfUri": String, 
           },  
           "softwareStatus": { 
@@ -20166,6 +20258,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
         "ntpSettings": { 
           "servers": [String], 
         },  
+        "coreSite": Boolean, 
         "selfUri": String, 
       },  
       "softwareStatus": { 
@@ -20527,6 +20620,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "coreSite": Boolean, 
                 "selfUri": String, 
               },  
               "softwareStatus": { 
@@ -20631,6 +20725,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "coreSite": Boolean, 
                 "selfUri": String, 
               },  
               "softwareStatus": { 
@@ -20743,6 +20838,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "coreSite": Boolean, 
                 "selfUri": String, 
               },  
               "softwareStatus": { 
@@ -20824,6 +20920,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
             "ntpSettings": { 
               "servers": [String], 
             },  
+            "coreSite": Boolean, 
             "selfUri": String, 
           },  
           "softwareStatus": { 
@@ -21059,6 +21156,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "coreSite": Boolean, 
                 "selfUri": String, 
               },  
               "softwareStatus": { 
@@ -21163,6 +21261,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "coreSite": Boolean, 
                 "selfUri": String, 
               },  
               "softwareStatus": { 
@@ -21275,6 +21374,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "coreSite": Boolean, 
                 "selfUri": String, 
               },  
               "softwareStatus": { 
@@ -21356,6 +21456,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
             "ntpSettings": { 
               "servers": [String], 
             },  
+            "coreSite": Boolean, 
             "selfUri": String, 
           },  
           "softwareStatus": { 
@@ -21599,6 +21700,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "coreSite": Boolean, 
                 "selfUri": String, 
               },  
               "softwareStatus": { 
@@ -21703,6 +21805,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "coreSite": Boolean, 
                 "selfUri": String, 
               },  
               "softwareStatus": { 
@@ -21815,6 +21918,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "coreSite": Boolean, 
                 "selfUri": String, 
               },  
               "softwareStatus": { 
@@ -21896,6 +22000,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
             "ntpSettings": { 
               "servers": [String], 
             },  
+            "coreSite": Boolean, 
             "selfUri": String, 
           },  
           "softwareStatus": { 
@@ -21986,6 +22091,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
         "ntpSettings": { 
           "servers": [String], 
         },  
+        "coreSite": Boolean, 
         "selfUri": String, 
       },  
       "softwareStatus": { 
@@ -22626,6 +22732,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "coreSite": Boolean, 
               "selfUri": String, 
             },  
             "softwareStatus": { 
@@ -22928,6 +23035,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "coreSite": Boolean, 
               "selfUri": String, 
             },  
             "softwareStatus": { 
@@ -23238,6 +23346,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "coreSite": Boolean, 
               "selfUri": String, 
             },  
             "softwareStatus": { 
@@ -23328,6 +23437,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
           "ntpSettings": { 
             "servers": [String], 
           },  
+          "coreSite": Boolean, 
           "selfUri": String, 
         },  
         "softwareStatus": { 
@@ -23756,6 +23866,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "coreSite": Boolean, 
               "selfUri": String, 
             },  
             "softwareStatus": { 
@@ -24058,6 +24169,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "coreSite": Boolean, 
               "selfUri": String, 
             },  
             "softwareStatus": { 
@@ -24368,6 +24480,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "coreSite": Boolean, 
               "selfUri": String, 
             },  
             "softwareStatus": { 
@@ -24458,6 +24571,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
           "ntpSettings": { 
             "servers": [String], 
           },  
+          "coreSite": Boolean, 
           "selfUri": String, 
         },  
         "softwareStatus": { 
@@ -24894,6 +25008,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "coreSite": Boolean, 
               "selfUri": String, 
             },  
             "softwareStatus": { 
@@ -25196,6 +25311,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "coreSite": Boolean, 
               "selfUri": String, 
             },  
             "softwareStatus": { 
@@ -25506,6 +25622,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "coreSite": Boolean, 
               "selfUri": String, 
             },  
             "softwareStatus": { 
@@ -25596,6 +25713,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
           "ntpSettings": { 
             "servers": [String], 
           },  
+          "coreSite": Boolean, 
           "selfUri": String, 
         },  
         "softwareStatus": { 
@@ -25686,6 +25804,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
       "ntpSettings": { 
         "servers": [String], 
       },  
+      "coreSite": Boolean, 
       "selfUri": String, 
     },  
     "softwareStatus": { 
@@ -26240,6 +26359,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "coreSite": Boolean, 
               "selfUri": String, 
             },  
             "softwareStatus": { 
@@ -26542,6 +26662,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "coreSite": Boolean, 
               "selfUri": String, 
             },  
             "softwareStatus": { 
@@ -26852,6 +26973,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "coreSite": Boolean, 
               "selfUri": String, 
             },  
             "softwareStatus": { 
@@ -26942,6 +27064,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
           "ntpSettings": { 
             "servers": [String], 
           },  
+          "coreSite": Boolean, 
           "selfUri": String, 
         },  
         "softwareStatus": { 
@@ -27370,6 +27493,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "coreSite": Boolean, 
               "selfUri": String, 
             },  
             "softwareStatus": { 
@@ -27672,6 +27796,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "coreSite": Boolean, 
               "selfUri": String, 
             },  
             "softwareStatus": { 
@@ -27982,6 +28107,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "coreSite": Boolean, 
               "selfUri": String, 
             },  
             "softwareStatus": { 
@@ -28072,6 +28198,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
           "ntpSettings": { 
             "servers": [String], 
           },  
+          "coreSite": Boolean, 
           "selfUri": String, 
         },  
         "softwareStatus": { 
@@ -28508,6 +28635,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "coreSite": Boolean, 
               "selfUri": String, 
             },  
             "softwareStatus": { 
@@ -28810,6 +28938,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "coreSite": Boolean, 
               "selfUri": String, 
             },  
             "softwareStatus": { 
@@ -29120,6 +29249,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "coreSite": Boolean, 
               "selfUri": String, 
             },  
             "softwareStatus": { 
@@ -29210,6 +29340,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
           "ntpSettings": { 
             "servers": [String], 
           },  
+          "coreSite": Boolean, 
           "selfUri": String, 
         },  
         "softwareStatus": { 
@@ -29300,6 +29431,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
       "ntpSettings": { 
         "servers": [String], 
       },  
+      "coreSite": Boolean, 
       "selfUri": String, 
     },  
     "softwareStatus": { 
@@ -30192,6 +30324,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "coreSite": Boolean, 
               "selfUri": String, 
             },  
             "softwareStatus": { 
@@ -30494,6 +30627,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "coreSite": Boolean, 
               "selfUri": String, 
             },  
             "softwareStatus": { 
@@ -30804,6 +30938,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "coreSite": Boolean, 
               "selfUri": String, 
             },  
             "softwareStatus": { 
@@ -30894,6 +31029,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
           "ntpSettings": { 
             "servers": [String], 
           },  
+          "coreSite": Boolean, 
           "selfUri": String, 
         },  
         "softwareStatus": { 
@@ -31322,6 +31458,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "coreSite": Boolean, 
               "selfUri": String, 
             },  
             "softwareStatus": { 
@@ -31624,6 +31761,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "coreSite": Boolean, 
               "selfUri": String, 
             },  
             "softwareStatus": { 
@@ -31934,6 +32072,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "coreSite": Boolean, 
               "selfUri": String, 
             },  
             "softwareStatus": { 
@@ -32024,6 +32163,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
           "ntpSettings": { 
             "servers": [String], 
           },  
+          "coreSite": Boolean, 
           "selfUri": String, 
         },  
         "softwareStatus": { 
@@ -32460,6 +32600,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "coreSite": Boolean, 
               "selfUri": String, 
             },  
             "softwareStatus": { 
@@ -32762,6 +32903,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "coreSite": Boolean, 
               "selfUri": String, 
             },  
             "softwareStatus": { 
@@ -33072,6 +33214,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "coreSite": Boolean, 
               "selfUri": String, 
             },  
             "softwareStatus": { 
@@ -33162,6 +33305,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
           "ntpSettings": { 
             "servers": [String], 
           },  
+          "coreSite": Boolean, 
           "selfUri": String, 
         },  
         "softwareStatus": { 
@@ -33252,6 +33396,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
       "ntpSettings": { 
         "servers": [String], 
       },  
+      "coreSite": Boolean, 
       "selfUri": String, 
     },  
     "softwareStatus": { 
@@ -33806,6 +33951,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "coreSite": Boolean, 
               "selfUri": String, 
             },  
             "softwareStatus": { 
@@ -34108,6 +34254,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "coreSite": Boolean, 
               "selfUri": String, 
             },  
             "softwareStatus": { 
@@ -34418,6 +34565,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "coreSite": Boolean, 
               "selfUri": String, 
             },  
             "softwareStatus": { 
@@ -34508,6 +34656,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
           "ntpSettings": { 
             "servers": [String], 
           },  
+          "coreSite": Boolean, 
           "selfUri": String, 
         },  
         "softwareStatus": { 
@@ -34936,6 +35085,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "coreSite": Boolean, 
               "selfUri": String, 
             },  
             "softwareStatus": { 
@@ -35238,6 +35388,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "coreSite": Boolean, 
               "selfUri": String, 
             },  
             "softwareStatus": { 
@@ -35548,6 +35699,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "coreSite": Boolean, 
               "selfUri": String, 
             },  
             "softwareStatus": { 
@@ -35638,6 +35790,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
           "ntpSettings": { 
             "servers": [String], 
           },  
+          "coreSite": Boolean, 
           "selfUri": String, 
         },  
         "softwareStatus": { 
@@ -36074,6 +36227,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "coreSite": Boolean, 
               "selfUri": String, 
             },  
             "softwareStatus": { 
@@ -36376,6 +36530,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "coreSite": Boolean, 
               "selfUri": String, 
             },  
             "softwareStatus": { 
@@ -36686,6 +36841,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "coreSite": Boolean, 
               "selfUri": String, 
             },  
             "softwareStatus": { 
@@ -36776,6 +36932,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
           "ntpSettings": { 
             "servers": [String], 
           },  
+          "coreSite": Boolean, 
           "selfUri": String, 
         },  
         "softwareStatus": { 
@@ -36866,6 +37023,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
       "ntpSettings": { 
         "servers": [String], 
       },  
+      "coreSite": Boolean, 
       "selfUri": String, 
     },  
     "softwareStatus": { 
@@ -37428,6 +37586,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "coreSite": Boolean, 
               "selfUri": String, 
             },  
             "softwareStatus": { 
@@ -37730,6 +37889,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "coreSite": Boolean, 
               "selfUri": String, 
             },  
             "softwareStatus": { 
@@ -38040,6 +38200,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "coreSite": Boolean, 
               "selfUri": String, 
             },  
             "softwareStatus": { 
@@ -38130,6 +38291,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
           "ntpSettings": { 
             "servers": [String], 
           },  
+          "coreSite": Boolean, 
           "selfUri": String, 
         },  
         "softwareStatus": { 
@@ -38558,6 +38720,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "coreSite": Boolean, 
               "selfUri": String, 
             },  
             "softwareStatus": { 
@@ -38860,6 +39023,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "coreSite": Boolean, 
               "selfUri": String, 
             },  
             "softwareStatus": { 
@@ -39170,6 +39334,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "coreSite": Boolean, 
               "selfUri": String, 
             },  
             "softwareStatus": { 
@@ -39260,6 +39425,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
           "ntpSettings": { 
             "servers": [String], 
           },  
+          "coreSite": Boolean, 
           "selfUri": String, 
         },  
         "softwareStatus": { 
@@ -39696,6 +39862,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "coreSite": Boolean, 
               "selfUri": String, 
             },  
             "softwareStatus": { 
@@ -39998,6 +40165,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "coreSite": Boolean, 
               "selfUri": String, 
             },  
             "softwareStatus": { 
@@ -40308,6 +40476,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "coreSite": Boolean, 
               "selfUri": String, 
             },  
             "softwareStatus": { 
@@ -40398,6 +40567,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
           "ntpSettings": { 
             "servers": [String], 
           },  
+          "coreSite": Boolean, 
           "selfUri": String, 
         },  
         "softwareStatus": { 
@@ -40488,6 +40658,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
       "ntpSettings": { 
         "servers": [String], 
       },  
+      "coreSite": Boolean, 
       "selfUri": String, 
     },  
     "softwareStatus": { 
@@ -40578,6 +40749,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
   "ntpSettings": { 
     "servers": [String], 
   },  
+  "coreSite": Boolean, 
   "selfUri": String, 
 }
 ```
@@ -41208,6 +41380,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "coreSite": Boolean, 
                 "selfUri": String, 
               },  
               "softwareStatus": { 
@@ -41312,6 +41485,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "coreSite": Boolean, 
                 "selfUri": String, 
               },  
               "softwareStatus": { 
@@ -41424,6 +41598,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "coreSite": Boolean, 
                 "selfUri": String, 
               },  
               "softwareStatus": { 
@@ -41505,6 +41680,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
             "ntpSettings": { 
               "servers": [String], 
             },  
+            "coreSite": Boolean, 
             "selfUri": String, 
           },  
           "softwareStatus": { 
@@ -41740,6 +41916,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "coreSite": Boolean, 
                 "selfUri": String, 
               },  
               "softwareStatus": { 
@@ -41844,6 +42021,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "coreSite": Boolean, 
                 "selfUri": String, 
               },  
               "softwareStatus": { 
@@ -41956,6 +42134,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "coreSite": Boolean, 
                 "selfUri": String, 
               },  
               "softwareStatus": { 
@@ -42037,6 +42216,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
             "ntpSettings": { 
               "servers": [String], 
             },  
+            "coreSite": Boolean, 
             "selfUri": String, 
           },  
           "softwareStatus": { 
@@ -42280,6 +42460,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "coreSite": Boolean, 
                 "selfUri": String, 
               },  
               "softwareStatus": { 
@@ -42384,6 +42565,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "coreSite": Boolean, 
                 "selfUri": String, 
               },  
               "softwareStatus": { 
@@ -42496,6 +42678,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "coreSite": Boolean, 
                 "selfUri": String, 
               },  
               "softwareStatus": { 
@@ -42577,6 +42760,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
             "ntpSettings": { 
               "servers": [String], 
             },  
+            "coreSite": Boolean, 
             "selfUri": String, 
           },  
           "softwareStatus": { 
@@ -42667,6 +42851,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
         "ntpSettings": { 
           "servers": [String], 
         },  
+        "coreSite": Boolean, 
         "selfUri": String, 
       },  
       "softwareStatus": { 
@@ -43028,6 +43213,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "coreSite": Boolean, 
                 "selfUri": String, 
               },  
               "softwareStatus": { 
@@ -43132,6 +43318,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "coreSite": Boolean, 
                 "selfUri": String, 
               },  
               "softwareStatus": { 
@@ -43244,6 +43431,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "coreSite": Boolean, 
                 "selfUri": String, 
               },  
               "softwareStatus": { 
@@ -43325,6 +43513,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
             "ntpSettings": { 
               "servers": [String], 
             },  
+            "coreSite": Boolean, 
             "selfUri": String, 
           },  
           "softwareStatus": { 
@@ -43560,6 +43749,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "coreSite": Boolean, 
                 "selfUri": String, 
               },  
               "softwareStatus": { 
@@ -43664,6 +43854,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "coreSite": Boolean, 
                 "selfUri": String, 
               },  
               "softwareStatus": { 
@@ -43776,6 +43967,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "coreSite": Boolean, 
                 "selfUri": String, 
               },  
               "softwareStatus": { 
@@ -43857,6 +44049,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
             "ntpSettings": { 
               "servers": [String], 
             },  
+            "coreSite": Boolean, 
             "selfUri": String, 
           },  
           "softwareStatus": { 
@@ -44100,6 +44293,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "coreSite": Boolean, 
                 "selfUri": String, 
               },  
               "softwareStatus": { 
@@ -44204,6 +44398,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "coreSite": Boolean, 
                 "selfUri": String, 
               },  
               "softwareStatus": { 
@@ -44316,6 +44511,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "coreSite": Boolean, 
                 "selfUri": String, 
               },  
               "softwareStatus": { 
@@ -44397,6 +44593,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
             "ntpSettings": { 
               "servers": [String], 
             },  
+            "coreSite": Boolean, 
             "selfUri": String, 
           },  
           "softwareStatus": { 
@@ -44487,6 +44684,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
         "ntpSettings": { 
           "servers": [String], 
         },  
+        "coreSite": Boolean, 
         "selfUri": String, 
       },  
       "softwareStatus": { 
@@ -44856,6 +45054,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "coreSite": Boolean, 
                 "selfUri": String, 
               },  
               "softwareStatus": { 
@@ -44960,6 +45159,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "coreSite": Boolean, 
                 "selfUri": String, 
               },  
               "softwareStatus": { 
@@ -45072,6 +45272,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "coreSite": Boolean, 
                 "selfUri": String, 
               },  
               "softwareStatus": { 
@@ -45153,6 +45354,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
             "ntpSettings": { 
               "servers": [String], 
             },  
+            "coreSite": Boolean, 
             "selfUri": String, 
           },  
           "softwareStatus": { 
@@ -45388,6 +45590,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "coreSite": Boolean, 
                 "selfUri": String, 
               },  
               "softwareStatus": { 
@@ -45492,6 +45695,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "coreSite": Boolean, 
                 "selfUri": String, 
               },  
               "softwareStatus": { 
@@ -45604,6 +45808,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "coreSite": Boolean, 
                 "selfUri": String, 
               },  
               "softwareStatus": { 
@@ -45685,6 +45890,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
             "ntpSettings": { 
               "servers": [String], 
             },  
+            "coreSite": Boolean, 
             "selfUri": String, 
           },  
           "softwareStatus": { 
@@ -45928,6 +46134,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "coreSite": Boolean, 
                 "selfUri": String, 
               },  
               "softwareStatus": { 
@@ -46032,6 +46239,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "coreSite": Boolean, 
                 "selfUri": String, 
               },  
               "softwareStatus": { 
@@ -46144,6 +46352,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "coreSite": Boolean, 
                 "selfUri": String, 
               },  
               "softwareStatus": { 
@@ -46225,6 +46434,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
             "ntpSettings": { 
               "servers": [String], 
             },  
+            "coreSite": Boolean, 
             "selfUri": String, 
           },  
           "softwareStatus": { 
@@ -46315,6 +46525,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
         "ntpSettings": { 
           "servers": [String], 
         },  
+        "coreSite": Boolean, 
         "selfUri": String, 
       },  
       "softwareStatus": { 
@@ -46405,6 +46616,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
     "ntpSettings": { 
       "servers": [String], 
     },  
+    "coreSite": Boolean, 
     "selfUri": String, 
   },  
   "softwareStatus": { 
@@ -47056,6 +47268,7 @@ EdgeLine <a href="#" onclick="return copyEdgeLineExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "coreSite": Boolean, 
               "selfUri": String, 
             },  
             "softwareStatus": { 
@@ -47358,6 +47571,7 @@ EdgeLine <a href="#" onclick="return copyEdgeLineExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "coreSite": Boolean, 
               "selfUri": String, 
             },  
             "softwareStatus": { 
@@ -47668,6 +47882,7 @@ EdgeLine <a href="#" onclick="return copyEdgeLineExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "coreSite": Boolean, 
               "selfUri": String, 
             },  
             "softwareStatus": { 
@@ -47758,6 +47973,7 @@ EdgeLine <a href="#" onclick="return copyEdgeLineExample()">Copy</a>
           "ntpSettings": { 
             "servers": [String], 
           },  
+          "coreSite": Boolean, 
           "selfUri": String, 
         },  
         "softwareStatus": { 
@@ -48186,6 +48402,7 @@ EdgeLine <a href="#" onclick="return copyEdgeLineExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "coreSite": Boolean, 
               "selfUri": String, 
             },  
             "softwareStatus": { 
@@ -48488,6 +48705,7 @@ EdgeLine <a href="#" onclick="return copyEdgeLineExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "coreSite": Boolean, 
               "selfUri": String, 
             },  
             "softwareStatus": { 
@@ -48798,6 +49016,7 @@ EdgeLine <a href="#" onclick="return copyEdgeLineExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "coreSite": Boolean, 
               "selfUri": String, 
             },  
             "softwareStatus": { 
@@ -48888,6 +49107,7 @@ EdgeLine <a href="#" onclick="return copyEdgeLineExample()">Copy</a>
           "ntpSettings": { 
             "servers": [String], 
           },  
+          "coreSite": Boolean, 
           "selfUri": String, 
         },  
         "softwareStatus": { 
@@ -49324,6 +49544,7 @@ EdgeLine <a href="#" onclick="return copyEdgeLineExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "coreSite": Boolean, 
               "selfUri": String, 
             },  
             "softwareStatus": { 
@@ -49626,6 +49847,7 @@ EdgeLine <a href="#" onclick="return copyEdgeLineExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "coreSite": Boolean, 
               "selfUri": String, 
             },  
             "softwareStatus": { 
@@ -49936,6 +50158,7 @@ EdgeLine <a href="#" onclick="return copyEdgeLineExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "coreSite": Boolean, 
               "selfUri": String, 
             },  
             "softwareStatus": { 
@@ -50026,6 +50249,7 @@ EdgeLine <a href="#" onclick="return copyEdgeLineExample()">Copy</a>
           "ntpSettings": { 
             "servers": [String], 
           },  
+          "coreSite": Boolean, 
           "selfUri": String, 
         },  
         "softwareStatus": { 
@@ -50116,6 +50340,7 @@ EdgeLine <a href="#" onclick="return copyEdgeLineExample()">Copy</a>
       "ntpSettings": { 
         "servers": [String], 
       },  
+      "coreSite": Boolean, 
       "selfUri": String, 
     },  
     "softwareStatus": { 
@@ -51702,6 +51927,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "coreSite": Boolean, 
                 "selfUri": String, 
               },  
               "softwareStatus": { 
@@ -51806,6 +52032,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "coreSite": Boolean, 
                 "selfUri": String, 
               },  
               "softwareStatus": { 
@@ -51918,6 +52145,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "coreSite": Boolean, 
                 "selfUri": String, 
               },  
               "softwareStatus": { 
@@ -51999,6 +52227,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
             "ntpSettings": { 
               "servers": [String], 
             },  
+            "coreSite": Boolean, 
             "selfUri": String, 
           },  
           "softwareStatus": { 
@@ -52234,6 +52463,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "coreSite": Boolean, 
                 "selfUri": String, 
               },  
               "softwareStatus": { 
@@ -52338,6 +52568,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "coreSite": Boolean, 
                 "selfUri": String, 
               },  
               "softwareStatus": { 
@@ -52450,6 +52681,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "coreSite": Boolean, 
                 "selfUri": String, 
               },  
               "softwareStatus": { 
@@ -52531,6 +52763,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
             "ntpSettings": { 
               "servers": [String], 
             },  
+            "coreSite": Boolean, 
             "selfUri": String, 
           },  
           "softwareStatus": { 
@@ -52774,6 +53007,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "coreSite": Boolean, 
                 "selfUri": String, 
               },  
               "softwareStatus": { 
@@ -52878,6 +53112,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "coreSite": Boolean, 
                 "selfUri": String, 
               },  
               "softwareStatus": { 
@@ -52990,6 +53225,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "coreSite": Boolean, 
                 "selfUri": String, 
               },  
               "softwareStatus": { 
@@ -53071,6 +53307,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
             "ntpSettings": { 
               "servers": [String], 
             },  
+            "coreSite": Boolean, 
             "selfUri": String, 
           },  
           "softwareStatus": { 
@@ -53161,6 +53398,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
         "ntpSettings": { 
           "servers": [String], 
         },  
+        "coreSite": Boolean, 
         "selfUri": String, 
       },  
       "softwareStatus": { 
@@ -53522,6 +53760,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "coreSite": Boolean, 
                 "selfUri": String, 
               },  
               "softwareStatus": { 
@@ -53626,6 +53865,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "coreSite": Boolean, 
                 "selfUri": String, 
               },  
               "softwareStatus": { 
@@ -53738,6 +53978,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "coreSite": Boolean, 
                 "selfUri": String, 
               },  
               "softwareStatus": { 
@@ -53819,6 +54060,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
             "ntpSettings": { 
               "servers": [String], 
             },  
+            "coreSite": Boolean, 
             "selfUri": String, 
           },  
           "softwareStatus": { 
@@ -54054,6 +54296,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "coreSite": Boolean, 
                 "selfUri": String, 
               },  
               "softwareStatus": { 
@@ -54158,6 +54401,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "coreSite": Boolean, 
                 "selfUri": String, 
               },  
               "softwareStatus": { 
@@ -54270,6 +54514,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "coreSite": Boolean, 
                 "selfUri": String, 
               },  
               "softwareStatus": { 
@@ -54351,6 +54596,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
             "ntpSettings": { 
               "servers": [String], 
             },  
+            "coreSite": Boolean, 
             "selfUri": String, 
           },  
           "softwareStatus": { 
@@ -54594,6 +54840,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "coreSite": Boolean, 
                 "selfUri": String, 
               },  
               "softwareStatus": { 
@@ -54698,6 +54945,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "coreSite": Boolean, 
                 "selfUri": String, 
               },  
               "softwareStatus": { 
@@ -54810,6 +55058,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "coreSite": Boolean, 
                 "selfUri": String, 
               },  
               "softwareStatus": { 
@@ -54891,6 +55140,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
             "ntpSettings": { 
               "servers": [String], 
             },  
+            "coreSite": Boolean, 
             "selfUri": String, 
           },  
           "softwareStatus": { 
@@ -54981,6 +55231,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
         "ntpSettings": { 
           "servers": [String], 
         },  
+        "coreSite": Boolean, 
         "selfUri": String, 
       },  
       "softwareStatus": { 
@@ -55350,6 +55601,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "coreSite": Boolean, 
                 "selfUri": String, 
               },  
               "softwareStatus": { 
@@ -55454,6 +55706,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "coreSite": Boolean, 
                 "selfUri": String, 
               },  
               "softwareStatus": { 
@@ -55566,6 +55819,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "coreSite": Boolean, 
                 "selfUri": String, 
               },  
               "softwareStatus": { 
@@ -55647,6 +55901,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
             "ntpSettings": { 
               "servers": [String], 
             },  
+            "coreSite": Boolean, 
             "selfUri": String, 
           },  
           "softwareStatus": { 
@@ -55882,6 +56137,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "coreSite": Boolean, 
                 "selfUri": String, 
               },  
               "softwareStatus": { 
@@ -55986,6 +56242,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "coreSite": Boolean, 
                 "selfUri": String, 
               },  
               "softwareStatus": { 
@@ -56098,6 +56355,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "coreSite": Boolean, 
                 "selfUri": String, 
               },  
               "softwareStatus": { 
@@ -56179,6 +56437,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
             "ntpSettings": { 
               "servers": [String], 
             },  
+            "coreSite": Boolean, 
             "selfUri": String, 
           },  
           "softwareStatus": { 
@@ -56422,6 +56681,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "coreSite": Boolean, 
                 "selfUri": String, 
               },  
               "softwareStatus": { 
@@ -56526,6 +56786,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "coreSite": Boolean, 
                 "selfUri": String, 
               },  
               "softwareStatus": { 
@@ -56638,6 +56899,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "coreSite": Boolean, 
                 "selfUri": String, 
               },  
               "softwareStatus": { 
@@ -56719,6 +56981,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
             "ntpSettings": { 
               "servers": [String], 
             },  
+            "coreSite": Boolean, 
             "selfUri": String, 
           },  
           "softwareStatus": { 
@@ -56809,6 +57072,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
         "ntpSettings": { 
           "servers": [String], 
         },  
+        "coreSite": Boolean, 
         "selfUri": String, 
       },  
       "softwareStatus": { 
@@ -56899,6 +57163,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
     "ntpSettings": { 
       "servers": [String], 
     },  
+    "coreSite": Boolean, 
     "selfUri": String, 
   },  
   "managed": Boolean, 
@@ -57374,6 +57639,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "coreSite": Boolean, 
                 "selfUri": String, 
               },  
               "softwareStatus": { 
@@ -57478,6 +57744,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "coreSite": Boolean, 
                 "selfUri": String, 
               },  
               "softwareStatus": { 
@@ -57590,6 +57857,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "coreSite": Boolean, 
                 "selfUri": String, 
               },  
               "softwareStatus": { 
@@ -57671,6 +57939,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
             "ntpSettings": { 
               "servers": [String], 
             },  
+            "coreSite": Boolean, 
             "selfUri": String, 
           },  
           "softwareStatus": { 
@@ -57906,6 +58175,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "coreSite": Boolean, 
                 "selfUri": String, 
               },  
               "softwareStatus": { 
@@ -58010,6 +58280,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "coreSite": Boolean, 
                 "selfUri": String, 
               },  
               "softwareStatus": { 
@@ -58122,6 +58393,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "coreSite": Boolean, 
                 "selfUri": String, 
               },  
               "softwareStatus": { 
@@ -58203,6 +58475,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
             "ntpSettings": { 
               "servers": [String], 
             },  
+            "coreSite": Boolean, 
             "selfUri": String, 
           },  
           "softwareStatus": { 
@@ -58446,6 +58719,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "coreSite": Boolean, 
                 "selfUri": String, 
               },  
               "softwareStatus": { 
@@ -58550,6 +58824,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "coreSite": Boolean, 
                 "selfUri": String, 
               },  
               "softwareStatus": { 
@@ -58662,6 +58937,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "coreSite": Boolean, 
                 "selfUri": String, 
               },  
               "softwareStatus": { 
@@ -58743,6 +59019,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
             "ntpSettings": { 
               "servers": [String], 
             },  
+            "coreSite": Boolean, 
             "selfUri": String, 
           },  
           "softwareStatus": { 
@@ -58833,6 +59110,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
         "ntpSettings": { 
           "servers": [String], 
         },  
+        "coreSite": Boolean, 
         "selfUri": String, 
       },  
       "softwareStatus": { 
@@ -59194,6 +59472,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "coreSite": Boolean, 
                 "selfUri": String, 
               },  
               "softwareStatus": { 
@@ -59298,6 +59577,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "coreSite": Boolean, 
                 "selfUri": String, 
               },  
               "softwareStatus": { 
@@ -59410,6 +59690,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "coreSite": Boolean, 
                 "selfUri": String, 
               },  
               "softwareStatus": { 
@@ -59491,6 +59772,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
             "ntpSettings": { 
               "servers": [String], 
             },  
+            "coreSite": Boolean, 
             "selfUri": String, 
           },  
           "softwareStatus": { 
@@ -59726,6 +60008,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "coreSite": Boolean, 
                 "selfUri": String, 
               },  
               "softwareStatus": { 
@@ -59830,6 +60113,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "coreSite": Boolean, 
                 "selfUri": String, 
               },  
               "softwareStatus": { 
@@ -59942,6 +60226,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "coreSite": Boolean, 
                 "selfUri": String, 
               },  
               "softwareStatus": { 
@@ -60023,6 +60308,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
             "ntpSettings": { 
               "servers": [String], 
             },  
+            "coreSite": Boolean, 
             "selfUri": String, 
           },  
           "softwareStatus": { 
@@ -60266,6 +60552,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "coreSite": Boolean, 
                 "selfUri": String, 
               },  
               "softwareStatus": { 
@@ -60370,6 +60657,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "coreSite": Boolean, 
                 "selfUri": String, 
               },  
               "softwareStatus": { 
@@ -60482,6 +60770,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "coreSite": Boolean, 
                 "selfUri": String, 
               },  
               "softwareStatus": { 
@@ -60563,6 +60852,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
             "ntpSettings": { 
               "servers": [String], 
             },  
+            "coreSite": Boolean, 
             "selfUri": String, 
           },  
           "softwareStatus": { 
@@ -60653,6 +60943,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
         "ntpSettings": { 
           "servers": [String], 
         },  
+        "coreSite": Boolean, 
         "selfUri": String, 
       },  
       "softwareStatus": { 
@@ -61293,6 +61584,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "coreSite": Boolean, 
               "selfUri": String, 
             },  
             "softwareStatus": { 
@@ -61595,6 +61887,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "coreSite": Boolean, 
               "selfUri": String, 
             },  
             "softwareStatus": { 
@@ -61905,6 +62198,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "coreSite": Boolean, 
               "selfUri": String, 
             },  
             "softwareStatus": { 
@@ -61995,6 +62289,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
           "ntpSettings": { 
             "servers": [String], 
           },  
+          "coreSite": Boolean, 
           "selfUri": String, 
         },  
         "softwareStatus": { 
@@ -62423,6 +62718,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "coreSite": Boolean, 
               "selfUri": String, 
             },  
             "softwareStatus": { 
@@ -62725,6 +63021,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "coreSite": Boolean, 
               "selfUri": String, 
             },  
             "softwareStatus": { 
@@ -63035,6 +63332,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "coreSite": Boolean, 
               "selfUri": String, 
             },  
             "softwareStatus": { 
@@ -63125,6 +63423,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
           "ntpSettings": { 
             "servers": [String], 
           },  
+          "coreSite": Boolean, 
           "selfUri": String, 
         },  
         "softwareStatus": { 
@@ -63561,6 +63860,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "coreSite": Boolean, 
               "selfUri": String, 
             },  
             "softwareStatus": { 
@@ -63863,6 +64163,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "coreSite": Boolean, 
               "selfUri": String, 
             },  
             "softwareStatus": { 
@@ -64173,6 +64474,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "coreSite": Boolean, 
               "selfUri": String, 
             },  
             "softwareStatus": { 
@@ -64263,6 +64565,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
           "ntpSettings": { 
             "servers": [String], 
           },  
+          "coreSite": Boolean, 
           "selfUri": String, 
         },  
         "softwareStatus": { 
@@ -64353,6 +64656,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
       "ntpSettings": { 
         "servers": [String], 
       },  
+      "coreSite": Boolean, 
       "selfUri": String, 
     },  
     "softwareStatus": { 
@@ -64907,6 +65211,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "coreSite": Boolean, 
               "selfUri": String, 
             },  
             "softwareStatus": { 
@@ -65209,6 +65514,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "coreSite": Boolean, 
               "selfUri": String, 
             },  
             "softwareStatus": { 
@@ -65519,6 +65825,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "coreSite": Boolean, 
               "selfUri": String, 
             },  
             "softwareStatus": { 
@@ -65609,6 +65916,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
           "ntpSettings": { 
             "servers": [String], 
           },  
+          "coreSite": Boolean, 
           "selfUri": String, 
         },  
         "softwareStatus": { 
@@ -66037,6 +66345,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "coreSite": Boolean, 
               "selfUri": String, 
             },  
             "softwareStatus": { 
@@ -66339,6 +66648,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "coreSite": Boolean, 
               "selfUri": String, 
             },  
             "softwareStatus": { 
@@ -66649,6 +66959,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "coreSite": Boolean, 
               "selfUri": String, 
             },  
             "softwareStatus": { 
@@ -66739,6 +67050,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
           "ntpSettings": { 
             "servers": [String], 
           },  
+          "coreSite": Boolean, 
           "selfUri": String, 
         },  
         "softwareStatus": { 
@@ -67175,6 +67487,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "coreSite": Boolean, 
               "selfUri": String, 
             },  
             "softwareStatus": { 
@@ -67477,6 +67790,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "coreSite": Boolean, 
               "selfUri": String, 
             },  
             "softwareStatus": { 
@@ -67787,6 +68101,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "coreSite": Boolean, 
               "selfUri": String, 
             },  
             "softwareStatus": { 
@@ -67877,6 +68192,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
           "ntpSettings": { 
             "servers": [String], 
           },  
+          "coreSite": Boolean, 
           "selfUri": String, 
         },  
         "softwareStatus": { 
@@ -67967,6 +68283,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
       "ntpSettings": { 
         "servers": [String], 
       },  
+      "coreSite": Boolean, 
       "selfUri": String, 
     },  
     "softwareStatus": { 
@@ -68754,6 +69071,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "coreSite": Boolean, 
               "selfUri": String, 
             },  
             "softwareStatus": { 
@@ -69056,6 +69374,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "coreSite": Boolean, 
               "selfUri": String, 
             },  
             "softwareStatus": { 
@@ -69366,6 +69685,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "coreSite": Boolean, 
               "selfUri": String, 
             },  
             "softwareStatus": { 
@@ -69456,6 +69776,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
           "ntpSettings": { 
             "servers": [String], 
           },  
+          "coreSite": Boolean, 
           "selfUri": String, 
         },  
         "softwareStatus": { 
@@ -69884,6 +70205,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "coreSite": Boolean, 
               "selfUri": String, 
             },  
             "softwareStatus": { 
@@ -70186,6 +70508,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "coreSite": Boolean, 
               "selfUri": String, 
             },  
             "softwareStatus": { 
@@ -70496,6 +70819,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "coreSite": Boolean, 
               "selfUri": String, 
             },  
             "softwareStatus": { 
@@ -70586,6 +70910,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
           "ntpSettings": { 
             "servers": [String], 
           },  
+          "coreSite": Boolean, 
           "selfUri": String, 
         },  
         "softwareStatus": { 
@@ -71022,6 +71347,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "coreSite": Boolean, 
               "selfUri": String, 
             },  
             "softwareStatus": { 
@@ -71324,6 +71650,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "coreSite": Boolean, 
               "selfUri": String, 
             },  
             "softwareStatus": { 
@@ -71634,6 +71961,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "coreSite": Boolean, 
               "selfUri": String, 
             },  
             "softwareStatus": { 
@@ -71724,6 +72052,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
           "ntpSettings": { 
             "servers": [String], 
           },  
+          "coreSite": Boolean, 
           "selfUri": String, 
         },  
         "softwareStatus": { 
@@ -71814,6 +72143,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
       "ntpSettings": { 
         "servers": [String], 
       },  
+      "coreSite": Boolean, 
       "selfUri": String, 
     },  
     "softwareStatus": { 
@@ -72368,6 +72698,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "coreSite": Boolean, 
               "selfUri": String, 
             },  
             "softwareStatus": { 
@@ -72670,6 +73001,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "coreSite": Boolean, 
               "selfUri": String, 
             },  
             "softwareStatus": { 
@@ -72980,6 +73312,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "coreSite": Boolean, 
               "selfUri": String, 
             },  
             "softwareStatus": { 
@@ -73070,6 +73403,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
           "ntpSettings": { 
             "servers": [String], 
           },  
+          "coreSite": Boolean, 
           "selfUri": String, 
         },  
         "softwareStatus": { 
@@ -73498,6 +73832,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "coreSite": Boolean, 
               "selfUri": String, 
             },  
             "softwareStatus": { 
@@ -73800,6 +74135,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "coreSite": Boolean, 
               "selfUri": String, 
             },  
             "softwareStatus": { 
@@ -74110,6 +74446,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "coreSite": Boolean, 
               "selfUri": String, 
             },  
             "softwareStatus": { 
@@ -74200,6 +74537,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
           "ntpSettings": { 
             "servers": [String], 
           },  
+          "coreSite": Boolean, 
           "selfUri": String, 
         },  
         "softwareStatus": { 
@@ -74636,6 +74974,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "coreSite": Boolean, 
               "selfUri": String, 
             },  
             "softwareStatus": { 
@@ -74938,6 +75277,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "coreSite": Boolean, 
               "selfUri": String, 
             },  
             "softwareStatus": { 
@@ -75248,6 +75588,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "coreSite": Boolean, 
               "selfUri": String, 
             },  
             "softwareStatus": { 
@@ -75338,6 +75679,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
           "ntpSettings": { 
             "servers": [String], 
           },  
+          "coreSite": Boolean, 
           "selfUri": String, 
         },  
         "softwareStatus": { 
@@ -75428,6 +75770,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
       "ntpSettings": { 
         "servers": [String], 
       },  
+      "coreSite": Boolean, 
       "selfUri": String, 
     },  
     "softwareStatus": { 
@@ -75990,6 +76333,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "coreSite": Boolean, 
               "selfUri": String, 
             },  
             "softwareStatus": { 
@@ -76292,6 +76636,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "coreSite": Boolean, 
               "selfUri": String, 
             },  
             "softwareStatus": { 
@@ -76602,6 +76947,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "coreSite": Boolean, 
               "selfUri": String, 
             },  
             "softwareStatus": { 
@@ -76692,6 +77038,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
           "ntpSettings": { 
             "servers": [String], 
           },  
+          "coreSite": Boolean, 
           "selfUri": String, 
         },  
         "softwareStatus": { 
@@ -77120,6 +77467,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "coreSite": Boolean, 
               "selfUri": String, 
             },  
             "softwareStatus": { 
@@ -77422,6 +77770,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "coreSite": Boolean, 
               "selfUri": String, 
             },  
             "softwareStatus": { 
@@ -77732,6 +78081,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "coreSite": Boolean, 
               "selfUri": String, 
             },  
             "softwareStatus": { 
@@ -77822,6 +78172,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
           "ntpSettings": { 
             "servers": [String], 
           },  
+          "coreSite": Boolean, 
           "selfUri": String, 
         },  
         "softwareStatus": { 
@@ -78258,6 +78609,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "coreSite": Boolean, 
               "selfUri": String, 
             },  
             "softwareStatus": { 
@@ -78560,6 +78912,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "coreSite": Boolean, 
               "selfUri": String, 
             },  
             "softwareStatus": { 
@@ -78870,6 +79223,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "coreSite": Boolean, 
               "selfUri": String, 
             },  
             "softwareStatus": { 
@@ -78960,6 +79314,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
           "ntpSettings": { 
             "servers": [String], 
           },  
+          "coreSite": Boolean, 
           "selfUri": String, 
         },  
         "softwareStatus": { 
@@ -79050,6 +79405,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
       "ntpSettings": { 
         "servers": [String], 
       },  
+      "coreSite": Boolean, 
       "selfUri": String, 
     },  
     "softwareStatus": { 
@@ -79140,6 +79496,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
   "ntpSettings": { 
     "servers": [String], 
   },  
+  "coreSite": Boolean, 
   "selfUri": String, 
 }
 ```

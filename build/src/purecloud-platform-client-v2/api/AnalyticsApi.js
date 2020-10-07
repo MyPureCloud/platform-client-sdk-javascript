@@ -5,7 +5,7 @@ class AnalyticsApi {
 	/**
 	 * Analytics service.
 	 * @module purecloud-platform-client-v2/api/AnalyticsApi
-	 * @version 92.0.0
+	 * @version 93.0.0
 	 */
 
 	/**
@@ -190,6 +190,26 @@ class AnalyticsApi {
 			'GET', 
 			{ 'jobId': jobId }, 
 			{ 'cursor': opts['cursor'],'pageSize': opts['pageSize'] }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Lookup the datalake availability date and time
+	 * 
+	 */
+	getAnalyticsConversationsDetailsJobsAvailability() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/conversations/details/jobs/availability', 
+			'GET', 
+			{  }, 
+			{  }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -530,6 +550,26 @@ class AnalyticsApi {
 	}
 
 	/**
+	 * Lookup the datalake availability date and time
+	 * 
+	 */
+	getAnalyticsUsersDetailsJobsAvailability() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/users/details/jobs/availability', 
+			'GET', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
 	 * Index conversation properties
 	 * 
 	 * @param {String} conversationId conversationId
@@ -847,6 +887,31 @@ class AnalyticsApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/analytics/surveys/aggregates/query', 
+			'POST', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Query for transcript aggregates
+	 * 
+	 * @param {Object} body query
+	 */
+	postAnalyticsTranscriptsAggregatesQuery(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postAnalyticsTranscriptsAggregatesQuery';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/transcripts/aggregates/query', 
 			'POST', 
 			{  }, 
 			{  }, 

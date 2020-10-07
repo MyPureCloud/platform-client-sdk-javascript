@@ -5,7 +5,7 @@ class AuthorizationApi {
 	/**
 	 * Authorization service.
 	 * @module purecloud-platform-client-v2/api/AuthorizationApi
-	 * @version 92.0.0
+	 * @version 93.0.0
 	 */
 
 	/**
@@ -129,6 +129,36 @@ class AuthorizationApi {
 			'GET', 
 			{ 'divisionId': divisionId }, 
 			{ 'objectCount': opts['objectCount'] }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Gets all grants for a given division.
+	 * 
+	 * @param {String} divisionId Division ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 */
+	getAuthorizationDivisionGrants(divisionId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'divisionId' is set
+		if (divisionId === undefined || divisionId === null) {
+			throw 'Missing the required parameter "divisionId" when calling getAuthorizationDivisionGrants';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/authorization/divisions/{divisionId}/grants', 
+			'GET', 
+			{ 'divisionId': divisionId }, 
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'] }, 
 			{  }, 
 			{  }, 
 			null, 

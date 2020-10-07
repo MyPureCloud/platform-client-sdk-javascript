@@ -46,6 +46,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**patchQualityFormsSurvey**](QualityApi.html#patchQualityFormsSurvey) | **PATCH** /api/v2/quality/forms/surveys/{formId} | Disable a particular version of a survey form and invalidates any invitations that have already been sent to customers using this version of the form.
 [**postAnalyticsEvaluationsAggregatesQuery**](QualityApi.html#postAnalyticsEvaluationsAggregatesQuery) | **POST** /api/v2/analytics/evaluations/aggregates/query | Query for evaluation aggregates
 [**postAnalyticsSurveysAggregatesQuery**](QualityApi.html#postAnalyticsSurveysAggregatesQuery) | **POST** /api/v2/analytics/surveys/aggregates/query | Query for survey aggregates
+[**postAnalyticsTranscriptsAggregatesQuery**](QualityApi.html#postAnalyticsTranscriptsAggregatesQuery) | **POST** /api/v2/analytics/transcripts/aggregates/query | Query for transcript aggregates
 [**postQualityCalibrations**](QualityApi.html#postQualityCalibrations) | **POST** /api/v2/quality/calibrations | Create a calibration
 [**postQualityConversationEvaluations**](QualityApi.html#postQualityConversationEvaluations) | **POST** /api/v2/quality/conversations/{conversationId}/evaluations | Create an evaluation
 [**postQualityEvaluationsScoring**](QualityApi.html#postQualityEvaluationsScoring) | **POST** /api/v2/quality/evaluations/scoring | Score evaluation
@@ -2816,6 +2817,131 @@ apiInstance.postAnalyticsSurveysAggregatesQuery(body)
 
 **SurveyAggregateQueryResponse**
 
+<a name="postAnalyticsTranscriptsAggregatesQuery"></a>
+
+# TranscriptAggregateQueryResponse postAnalyticsTranscriptsAggregatesQuery(body)
+
+
+
+POST /api/v2/analytics/transcripts/aggregates/query
+
+Query for transcript aggregates
+
+
+
+Requires ANY permissions: 
+
+* analytics:speechAndTextAnalyticsAggregates:view
+
+
+### Request Body Schema
+
+<script type="text/javascript">
+	function copyTranscriptAggregationQueryExample() {
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#TranscriptAggregationQueryExample').text()).select();
+		document.execCommand("copy");
+		temp.remove();
+		return false;
+	}
+</script>
+
+TranscriptAggregationQuery <a href="#" onclick="return copyTranscriptAggregationQueryExample()">Copy</a>
+
+<div id="TranscriptAggregationQueryExample">
+
+```{"language":"json", "maxHeight": "250px"}
+{ 
+  "interval": String, 
+  "granularity": String, 
+  "timeZone": String, 
+  "groupBy": [String], 
+  "filter": { 
+    "type": String, 
+    "clauses": { 
+      "type": String, 
+      "predicates": { 
+        "type": String, 
+        "dimension": String, 
+        "operator": String, 
+        "value": String, 
+        "range": { 
+          "gt": Number, 
+          "gte": Number, 
+          "lt": Number, 
+          "lte": Number, 
+        },  
+      },  
+    },  
+    "predicates": { 
+      "type": String, 
+      "dimension": String, 
+      "operator": String, 
+      "value": String, 
+      "range": { 
+        "gt": Number, 
+        "gte": Number, 
+        "lt": Number, 
+        "lte": Number, 
+      },  
+    },  
+  },  
+  "metrics": [String], 
+  "flattenMultivaluedDimensions": Boolean, 
+  "views": { 
+    "target": String, 
+    "name": String, 
+    "function": String, 
+    "range": { 
+      "gte": Number, 
+      "lt": Number, 
+    },  
+  },  
+  "alternateTimeDimension": String, 
+}
+```
+
+</div>
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.QualityApi();
+
+let body = {}; // Object | query
+
+apiInstance.postAnalyticsTranscriptsAggregatesQuery(body)
+  .then((data) => {
+    console.log(`postAnalyticsTranscriptsAggregatesQuery success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postAnalyticsTranscriptsAggregatesQuery');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | query |  |
+{: class="table table-striped"}
+
+### Return type
+
+**TranscriptAggregateQueryResponse**
+
 <a name="postQualityCalibrations"></a>
 
 # Calibration postQualityCalibrations(body, opts)
@@ -3338,6 +3464,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
       },  
       "alertingTimeoutMs": Number, 
       "monitoredParticipantId": String, 
+      "coachedParticipantId": String, 
       "attributes": {String: String}, 
       "calls": { 
         "state": String, 
@@ -3993,6 +4120,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
             },  
             "alertingTimeoutMs": Number, 
             "monitoredParticipantId": String, 
+            "coachedParticipantId": String, 
             "attributes": {String: String}, 
             "calls": { 
               "state": String, 
@@ -5866,6 +5994,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
               },  
               "alertingTimeoutMs": Number, 
               "monitoredParticipantId": String, 
+              "coachedParticipantId": String, 
               "attributes": {String: String}, 
               "calls": { 
                 "state": String, 
@@ -6226,6 +6355,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "conversationRoutingData": ConversationRoutingData, 
                 "alertingTimeoutMs": Number, 
                 "monitoredParticipantId": String, 
+                "coachedParticipantId": String, 
                 "attributes": {String: String}, 
                 "calls": [Call], 
                 "callbacks": [Callback], 
@@ -6895,6 +7025,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "conversationRoutingData": ConversationRoutingData, 
                 "alertingTimeoutMs": Number, 
                 "monitoredParticipantId": String, 
+                "coachedParticipantId": String, 
                 "attributes": {String: String}, 
                 "calls": [Call], 
                 "callbacks": [Callback], 
@@ -7970,6 +8101,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
         },  
         "alertingTimeoutMs": Number, 
         "monitoredParticipantId": String, 
+        "coachedParticipantId": String, 
         "attributes": {String: String}, 
         "calls": { 
           "state": String, 
@@ -8581,6 +8713,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
               },  
               "alertingTimeoutMs": Number, 
               "monitoredParticipantId": String, 
+              "coachedParticipantId": String, 
               "attributes": {String: String}, 
               "calls": { 
                 "state": String, 
@@ -9686,6 +9819,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "conversationRoutingData": ConversationRoutingData, 
                 "alertingTimeoutMs": Number, 
                 "monitoredParticipantId": String, 
+                "coachedParticipantId": String, 
                 "attributes": {String: String}, 
                 "calls": [Call], 
                 "callbacks": [Callback], 
@@ -11694,6 +11828,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
           },  
           "alertingTimeoutMs": Number, 
           "monitoredParticipantId": String, 
+          "coachedParticipantId": String, 
           "attributes": {String: String}, 
           "calls": { 
             "state": String, 
@@ -12256,6 +12391,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "conversationRoutingData": ConversationRoutingData, 
                 "alertingTimeoutMs": Number, 
                 "monitoredParticipantId": String, 
+                "coachedParticipantId": String, 
                 "attributes": {String: String}, 
                 "calls": [Call], 
                 "callbacks": [Callback], 
@@ -13085,6 +13221,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
             },  
             "alertingTimeoutMs": Number, 
             "monitoredParticipantId": String, 
+            "coachedParticipantId": String, 
             "attributes": {String: String}, 
             "calls": { 
               "state": String, 
@@ -14958,6 +15095,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
               },  
               "alertingTimeoutMs": Number, 
               "monitoredParticipantId": String, 
+              "coachedParticipantId": String, 
               "attributes": {String: String}, 
               "calls": { 
                 "state": String, 
@@ -15318,6 +15456,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "conversationRoutingData": ConversationRoutingData, 
                 "alertingTimeoutMs": Number, 
                 "monitoredParticipantId": String, 
+                "coachedParticipantId": String, 
                 "attributes": {String: String}, 
                 "calls": [Call], 
                 "callbacks": [Callback], 
@@ -15987,6 +16126,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "conversationRoutingData": ConversationRoutingData, 
                 "alertingTimeoutMs": Number, 
                 "monitoredParticipantId": String, 
+                "coachedParticipantId": String, 
                 "attributes": {String: String}, 
                 "calls": [Call], 
                 "callbacks": [Callback], 
@@ -16873,6 +17013,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
             },  
             "alertingTimeoutMs": Number, 
             "monitoredParticipantId": String, 
+            "coachedParticipantId": String, 
             "attributes": {String: String}, 
             "calls": { 
               "state": String, 
@@ -18746,6 +18887,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
               },  
               "alertingTimeoutMs": Number, 
               "monitoredParticipantId": String, 
+              "coachedParticipantId": String, 
               "attributes": {String: String}, 
               "calls": { 
                 "state": String, 
@@ -19106,6 +19248,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "conversationRoutingData": ConversationRoutingData, 
                 "alertingTimeoutMs": Number, 
                 "monitoredParticipantId": String, 
+                "coachedParticipantId": String, 
                 "attributes": {String: String}, 
                 "calls": [Call], 
                 "callbacks": [Callback], 
@@ -19775,6 +19918,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "conversationRoutingData": ConversationRoutingData, 
                 "alertingTimeoutMs": Number, 
                 "monitoredParticipantId": String, 
+                "coachedParticipantId": String, 
                 "attributes": {String: String}, 
                 "calls": [Call], 
                 "callbacks": [Callback], 
@@ -20904,6 +21048,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
         },  
         "alertingTimeoutMs": Number, 
         "monitoredParticipantId": String, 
+        "coachedParticipantId": String, 
         "attributes": {String: String}, 
         "calls": { 
           "state": String, 
@@ -21515,6 +21660,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
               },  
               "alertingTimeoutMs": Number, 
               "monitoredParticipantId": String, 
+              "coachedParticipantId": String, 
               "attributes": {String: String}, 
               "calls": { 
                 "state": String, 
@@ -22620,6 +22766,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "conversationRoutingData": ConversationRoutingData, 
                 "alertingTimeoutMs": Number, 
                 "monitoredParticipantId": String, 
+                "coachedParticipantId": String, 
                 "attributes": {String: String}, 
                 "calls": [Call], 
                 "callbacks": [Callback], 
@@ -24628,6 +24775,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
           },  
           "alertingTimeoutMs": Number, 
           "monitoredParticipantId": String, 
+          "coachedParticipantId": String, 
           "attributes": {String: String}, 
           "calls": { 
             "state": String, 
@@ -25190,6 +25338,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "conversationRoutingData": ConversationRoutingData, 
                 "alertingTimeoutMs": Number, 
                 "monitoredParticipantId": String, 
+                "coachedParticipantId": String, 
                 "attributes": {String: String}, 
                 "calls": [Call], 
                 "callbacks": [Callback], 
@@ -26019,6 +26168,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
             },  
             "alertingTimeoutMs": Number, 
             "monitoredParticipantId": String, 
+            "coachedParticipantId": String, 
             "attributes": {String: String}, 
             "calls": { 
               "state": String, 
@@ -27892,6 +28042,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
               },  
               "alertingTimeoutMs": Number, 
               "monitoredParticipantId": String, 
+              "coachedParticipantId": String, 
               "attributes": {String: String}, 
               "calls": { 
                 "state": String, 
@@ -28252,6 +28403,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "conversationRoutingData": ConversationRoutingData, 
                 "alertingTimeoutMs": Number, 
                 "monitoredParticipantId": String, 
+                "coachedParticipantId": String, 
                 "attributes": {String: String}, 
                 "calls": [Call], 
                 "callbacks": [Callback], 
@@ -28921,6 +29073,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "conversationRoutingData": ConversationRoutingData, 
                 "alertingTimeoutMs": Number, 
                 "monitoredParticipantId": String, 
+                "coachedParticipantId": String, 
                 "attributes": {String: String}, 
                 "calls": [Call], 
                 "callbacks": [Callback], 
@@ -29807,6 +29960,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
             },  
             "alertingTimeoutMs": Number, 
             "monitoredParticipantId": String, 
+            "coachedParticipantId": String, 
             "attributes": {String: String}, 
             "calls": { 
               "state": String, 
@@ -31680,6 +31834,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
               },  
               "alertingTimeoutMs": Number, 
               "monitoredParticipantId": String, 
+              "coachedParticipantId": String, 
               "attributes": {String: String}, 
               "calls": { 
                 "state": String, 
@@ -32040,6 +32195,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "conversationRoutingData": ConversationRoutingData, 
                 "alertingTimeoutMs": Number, 
                 "monitoredParticipantId": String, 
+                "coachedParticipantId": String, 
                 "attributes": {String: String}, 
                 "calls": [Call], 
                 "callbacks": [Callback], 
@@ -32709,6 +32865,7 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "conversationRoutingData": ConversationRoutingData, 
                 "alertingTimeoutMs": Number, 
                 "monitoredParticipantId": String, 
+                "coachedParticipantId": String, 
                 "attributes": {String: String}, 
                 "calls": [Call], 
                 "callbacks": [Callback], 
@@ -33921,6 +34078,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
       },  
       "alertingTimeoutMs": Number, 
       "monitoredParticipantId": String, 
+      "coachedParticipantId": String, 
       "attributes": {String: String}, 
       "calls": { 
         "state": String, 
@@ -34576,6 +34734,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
             },  
             "alertingTimeoutMs": Number, 
             "monitoredParticipantId": String, 
+            "coachedParticipantId": String, 
             "attributes": {String: String}, 
             "calls": { 
               "state": String, 
@@ -36449,6 +36608,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               },  
               "alertingTimeoutMs": Number, 
               "monitoredParticipantId": String, 
+              "coachedParticipantId": String, 
               "attributes": {String: String}, 
               "calls": { 
                 "state": String, 
@@ -36809,6 +36969,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "conversationRoutingData": ConversationRoutingData, 
                 "alertingTimeoutMs": Number, 
                 "monitoredParticipantId": String, 
+                "coachedParticipantId": String, 
                 "attributes": {String: String}, 
                 "calls": [Call], 
                 "callbacks": [Callback], 
@@ -37478,6 +37639,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "conversationRoutingData": ConversationRoutingData, 
                 "alertingTimeoutMs": Number, 
                 "monitoredParticipantId": String, 
+                "coachedParticipantId": String, 
                 "attributes": {String: String}, 
                 "calls": [Call], 
                 "callbacks": [Callback], 
@@ -39794,6 +39956,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
         },  
         "alertingTimeoutMs": Number, 
         "monitoredParticipantId": String, 
+        "coachedParticipantId": String, 
         "attributes": {String: String}, 
         "calls": { 
           "state": String, 
@@ -40405,6 +40568,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               },  
               "alertingTimeoutMs": Number, 
               "monitoredParticipantId": String, 
+              "coachedParticipantId": String, 
               "attributes": {String: String}, 
               "calls": { 
                 "state": String, 
@@ -41510,6 +41674,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "conversationRoutingData": ConversationRoutingData, 
                 "alertingTimeoutMs": Number, 
                 "monitoredParticipantId": String, 
+                "coachedParticipantId": String, 
                 "attributes": {String: String}, 
                 "calls": [Call], 
                 "callbacks": [Callback], 
@@ -42304,6 +42469,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
           },  
           "alertingTimeoutMs": Number, 
           "monitoredParticipantId": String, 
+          "coachedParticipantId": String, 
           "attributes": {String: String}, 
           "calls": { 
             "state": String, 
@@ -42866,6 +43032,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "conversationRoutingData": ConversationRoutingData, 
                 "alertingTimeoutMs": Number, 
                 "monitoredParticipantId": String, 
+                "coachedParticipantId": String, 
                 "attributes": {String: String}, 
                 "calls": [Call], 
                 "callbacks": [Callback], 
@@ -44882,6 +45049,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
             },  
             "alertingTimeoutMs": Number, 
             "monitoredParticipantId": String, 
+            "coachedParticipantId": String, 
             "attributes": {String: String}, 
             "calls": { 
               "state": String, 
@@ -45686,6 +45854,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               },  
               "alertingTimeoutMs": Number, 
               "monitoredParticipantId": String, 
+              "coachedParticipantId": String, 
               "attributes": {String: String}, 
               "calls": { 
                 "state": String, 
@@ -46791,6 +46960,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "conversationRoutingData": ConversationRoutingData, 
                 "alertingTimeoutMs": Number, 
                 "monitoredParticipantId": String, 
+                "coachedParticipantId": String, 
                 "attributes": {String: String}, 
                 "calls": [Call], 
                 "callbacks": [Callback], 
@@ -47407,6 +47577,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               },  
               "alertingTimeoutMs": Number, 
               "monitoredParticipantId": String, 
+              "coachedParticipantId": String, 
               "attributes": {String: String}, 
               "calls": { 
                 "state": String, 
@@ -48512,6 +48683,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "conversationRoutingData": ConversationRoutingData, 
                 "alertingTimeoutMs": Number, 
                 "monitoredParticipantId": String, 
+                "coachedParticipantId": String, 
                 "attributes": {String: String}, 
                 "calls": [Call], 
                 "callbacks": [Callback], 
@@ -49357,6 +49529,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
           },  
           "alertingTimeoutMs": Number, 
           "monitoredParticipantId": String, 
+          "coachedParticipantId": String, 
           "attributes": {String: String}, 
           "calls": { 
             "state": String, 
@@ -49919,6 +50092,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "conversationRoutingData": ConversationRoutingData, 
                 "alertingTimeoutMs": Number, 
                 "monitoredParticipantId": String, 
+                "coachedParticipantId": String, 
                 "attributes": {String: String}, 
                 "calls": [Call], 
                 "callbacks": [Callback], 
@@ -51935,6 +52109,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
             },  
             "alertingTimeoutMs": Number, 
             "monitoredParticipantId": String, 
+            "coachedParticipantId": String, 
             "attributes": {String: String}, 
             "calls": { 
               "state": String, 
@@ -52739,6 +52914,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               },  
               "alertingTimeoutMs": Number, 
               "monitoredParticipantId": String, 
+              "coachedParticipantId": String, 
               "attributes": {String: String}, 
               "calls": { 
                 "state": String, 
@@ -53844,6 +54020,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "conversationRoutingData": ConversationRoutingData, 
                 "alertingTimeoutMs": Number, 
                 "monitoredParticipantId": String, 
+                "coachedParticipantId": String, 
                 "attributes": {String: String}, 
                 "calls": [Call], 
                 "callbacks": [Callback], 
@@ -54460,6 +54637,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               },  
               "alertingTimeoutMs": Number, 
               "monitoredParticipantId": String, 
+              "coachedParticipantId": String, 
               "attributes": {String: String}, 
               "calls": { 
                 "state": String, 
@@ -55565,6 +55743,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "conversationRoutingData": ConversationRoutingData, 
                 "alertingTimeoutMs": Number, 
                 "monitoredParticipantId": String, 
+                "coachedParticipantId": String, 
                 "attributes": {String: String}, 
                 "calls": [Call], 
                 "callbacks": [Callback], 
@@ -60188,6 +60367,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
       },  
       "alertingTimeoutMs": Number, 
       "monitoredParticipantId": String, 
+      "coachedParticipantId": String, 
       "attributes": {String: String}, 
       "calls": { 
         "state": String, 
@@ -60843,6 +61023,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
             },  
             "alertingTimeoutMs": Number, 
             "monitoredParticipantId": String, 
+            "coachedParticipantId": String, 
             "attributes": {String: String}, 
             "calls": { 
               "state": String, 
@@ -62716,6 +62897,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
               },  
               "alertingTimeoutMs": Number, 
               "monitoredParticipantId": String, 
+              "coachedParticipantId": String, 
               "attributes": {String: String}, 
               "calls": { 
                 "state": String, 
@@ -63076,6 +63258,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "conversationRoutingData": ConversationRoutingData, 
                 "alertingTimeoutMs": Number, 
                 "monitoredParticipantId": String, 
+                "coachedParticipantId": String, 
                 "attributes": {String: String}, 
                 "calls": [Call], 
                 "callbacks": [Callback], 
@@ -63745,6 +63928,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "conversationRoutingData": ConversationRoutingData, 
                 "alertingTimeoutMs": Number, 
                 "monitoredParticipantId": String, 
+                "coachedParticipantId": String, 
                 "attributes": {String: String}, 
                 "calls": [Call], 
                 "callbacks": [Callback], 
@@ -64820,6 +65004,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
         },  
         "alertingTimeoutMs": Number, 
         "monitoredParticipantId": String, 
+        "coachedParticipantId": String, 
         "attributes": {String: String}, 
         "calls": { 
           "state": String, 
@@ -65431,6 +65616,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
               },  
               "alertingTimeoutMs": Number, 
               "monitoredParticipantId": String, 
+              "coachedParticipantId": String, 
               "attributes": {String: String}, 
               "calls": { 
                 "state": String, 
@@ -66536,6 +66722,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "conversationRoutingData": ConversationRoutingData, 
                 "alertingTimeoutMs": Number, 
                 "monitoredParticipantId": String, 
+                "coachedParticipantId": String, 
                 "attributes": {String: String}, 
                 "calls": [Call], 
                 "callbacks": [Callback], 
@@ -68544,6 +68731,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
           },  
           "alertingTimeoutMs": Number, 
           "monitoredParticipantId": String, 
+          "coachedParticipantId": String, 
           "attributes": {String: String}, 
           "calls": { 
             "state": String, 
@@ -69106,6 +69294,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "conversationRoutingData": ConversationRoutingData, 
                 "alertingTimeoutMs": Number, 
                 "monitoredParticipantId": String, 
+                "coachedParticipantId": String, 
                 "attributes": {String: String}, 
                 "calls": [Call], 
                 "callbacks": [Callback], 
@@ -69935,6 +70124,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
             },  
             "alertingTimeoutMs": Number, 
             "monitoredParticipantId": String, 
+            "coachedParticipantId": String, 
             "attributes": {String: String}, 
             "calls": { 
               "state": String, 
@@ -71808,6 +71998,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
               },  
               "alertingTimeoutMs": Number, 
               "monitoredParticipantId": String, 
+              "coachedParticipantId": String, 
               "attributes": {String: String}, 
               "calls": { 
                 "state": String, 
@@ -72168,6 +72359,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "conversationRoutingData": ConversationRoutingData, 
                 "alertingTimeoutMs": Number, 
                 "monitoredParticipantId": String, 
+                "coachedParticipantId": String, 
                 "attributes": {String: String}, 
                 "calls": [Call], 
                 "callbacks": [Callback], 
@@ -72837,6 +73029,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "conversationRoutingData": ConversationRoutingData, 
                 "alertingTimeoutMs": Number, 
                 "monitoredParticipantId": String, 
+                "coachedParticipantId": String, 
                 "attributes": {String: String}, 
                 "calls": [Call], 
                 "callbacks": [Callback], 
@@ -73723,6 +73916,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
             },  
             "alertingTimeoutMs": Number, 
             "monitoredParticipantId": String, 
+            "coachedParticipantId": String, 
             "attributes": {String: String}, 
             "calls": { 
               "state": String, 
@@ -75596,6 +75790,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
               },  
               "alertingTimeoutMs": Number, 
               "monitoredParticipantId": String, 
+              "coachedParticipantId": String, 
               "attributes": {String: String}, 
               "calls": { 
                 "state": String, 
@@ -75956,6 +76151,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "conversationRoutingData": ConversationRoutingData, 
                 "alertingTimeoutMs": Number, 
                 "monitoredParticipantId": String, 
+                "coachedParticipantId": String, 
                 "attributes": {String: String}, 
                 "calls": [Call], 
                 "callbacks": [Callback], 
@@ -76625,6 +76821,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "conversationRoutingData": ConversationRoutingData, 
                 "alertingTimeoutMs": Number, 
                 "monitoredParticipantId": String, 
+                "coachedParticipantId": String, 
                 "attributes": {String: String}, 
                 "calls": [Call], 
                 "callbacks": [Callback], 
@@ -77754,6 +77951,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
         },  
         "alertingTimeoutMs": Number, 
         "monitoredParticipantId": String, 
+        "coachedParticipantId": String, 
         "attributes": {String: String}, 
         "calls": { 
           "state": String, 
@@ -78365,6 +78563,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
               },  
               "alertingTimeoutMs": Number, 
               "monitoredParticipantId": String, 
+              "coachedParticipantId": String, 
               "attributes": {String: String}, 
               "calls": { 
                 "state": String, 
@@ -79470,6 +79669,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "conversationRoutingData": ConversationRoutingData, 
                 "alertingTimeoutMs": Number, 
                 "monitoredParticipantId": String, 
+                "coachedParticipantId": String, 
                 "attributes": {String: String}, 
                 "calls": [Call], 
                 "callbacks": [Callback], 
@@ -81478,6 +81678,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
           },  
           "alertingTimeoutMs": Number, 
           "monitoredParticipantId": String, 
+          "coachedParticipantId": String, 
           "attributes": {String: String}, 
           "calls": { 
             "state": String, 
@@ -82040,6 +82241,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "conversationRoutingData": ConversationRoutingData, 
                 "alertingTimeoutMs": Number, 
                 "monitoredParticipantId": String, 
+                "coachedParticipantId": String, 
                 "attributes": {String: String}, 
                 "calls": [Call], 
                 "callbacks": [Callback], 
@@ -82869,6 +83071,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
             },  
             "alertingTimeoutMs": Number, 
             "monitoredParticipantId": String, 
+            "coachedParticipantId": String, 
             "attributes": {String: String}, 
             "calls": { 
               "state": String, 
@@ -84742,6 +84945,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
               },  
               "alertingTimeoutMs": Number, 
               "monitoredParticipantId": String, 
+              "coachedParticipantId": String, 
               "attributes": {String: String}, 
               "calls": { 
                 "state": String, 
@@ -85102,6 +85306,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "conversationRoutingData": ConversationRoutingData, 
                 "alertingTimeoutMs": Number, 
                 "monitoredParticipantId": String, 
+                "coachedParticipantId": String, 
                 "attributes": {String: String}, 
                 "calls": [Call], 
                 "callbacks": [Callback], 
@@ -85771,6 +85976,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "conversationRoutingData": ConversationRoutingData, 
                 "alertingTimeoutMs": Number, 
                 "monitoredParticipantId": String, 
+                "coachedParticipantId": String, 
                 "attributes": {String: String}, 
                 "calls": [Call], 
                 "callbacks": [Callback], 
@@ -86657,6 +86863,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
             },  
             "alertingTimeoutMs": Number, 
             "monitoredParticipantId": String, 
+            "coachedParticipantId": String, 
             "attributes": {String: String}, 
             "calls": { 
               "state": String, 
@@ -88530,6 +88737,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
               },  
               "alertingTimeoutMs": Number, 
               "monitoredParticipantId": String, 
+              "coachedParticipantId": String, 
               "attributes": {String: String}, 
               "calls": { 
                 "state": String, 
@@ -88890,6 +89098,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "conversationRoutingData": ConversationRoutingData, 
                 "alertingTimeoutMs": Number, 
                 "monitoredParticipantId": String, 
+                "coachedParticipantId": String, 
                 "attributes": {String: String}, 
                 "calls": [Call], 
                 "callbacks": [Callback], 
@@ -89559,6 +89768,7 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "conversationRoutingData": ConversationRoutingData, 
                 "alertingTimeoutMs": Number, 
                 "monitoredParticipantId": String, 
+                "coachedParticipantId": String, 
                 "attributes": {String: String}, 
                 "calls": [Call], 
                 "callbacks": [Callback], 
@@ -90771,6 +90981,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
       },  
       "alertingTimeoutMs": Number, 
       "monitoredParticipantId": String, 
+      "coachedParticipantId": String, 
       "attributes": {String: String}, 
       "calls": { 
         "state": String, 
@@ -91426,6 +91637,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
             },  
             "alertingTimeoutMs": Number, 
             "monitoredParticipantId": String, 
+            "coachedParticipantId": String, 
             "attributes": {String: String}, 
             "calls": { 
               "state": String, 
@@ -93299,6 +93511,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               },  
               "alertingTimeoutMs": Number, 
               "monitoredParticipantId": String, 
+              "coachedParticipantId": String, 
               "attributes": {String: String}, 
               "calls": { 
                 "state": String, 
@@ -93659,6 +93872,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "conversationRoutingData": ConversationRoutingData, 
                 "alertingTimeoutMs": Number, 
                 "monitoredParticipantId": String, 
+                "coachedParticipantId": String, 
                 "attributes": {String: String}, 
                 "calls": [Call], 
                 "callbacks": [Callback], 
@@ -94328,6 +94542,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "conversationRoutingData": ConversationRoutingData, 
                 "alertingTimeoutMs": Number, 
                 "monitoredParticipantId": String, 
+                "coachedParticipantId": String, 
                 "attributes": {String: String}, 
                 "calls": [Call], 
                 "callbacks": [Callback], 
@@ -96644,6 +96859,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
         },  
         "alertingTimeoutMs": Number, 
         "monitoredParticipantId": String, 
+        "coachedParticipantId": String, 
         "attributes": {String: String}, 
         "calls": { 
           "state": String, 
@@ -97255,6 +97471,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               },  
               "alertingTimeoutMs": Number, 
               "monitoredParticipantId": String, 
+              "coachedParticipantId": String, 
               "attributes": {String: String}, 
               "calls": { 
                 "state": String, 
@@ -98360,6 +98577,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "conversationRoutingData": ConversationRoutingData, 
                 "alertingTimeoutMs": Number, 
                 "monitoredParticipantId": String, 
+                "coachedParticipantId": String, 
                 "attributes": {String: String}, 
                 "calls": [Call], 
                 "callbacks": [Callback], 
@@ -99154,6 +99372,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
           },  
           "alertingTimeoutMs": Number, 
           "monitoredParticipantId": String, 
+          "coachedParticipantId": String, 
           "attributes": {String: String}, 
           "calls": { 
             "state": String, 
@@ -99716,6 +99935,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "conversationRoutingData": ConversationRoutingData, 
                 "alertingTimeoutMs": Number, 
                 "monitoredParticipantId": String, 
+                "coachedParticipantId": String, 
                 "attributes": {String: String}, 
                 "calls": [Call], 
                 "callbacks": [Callback], 
@@ -101732,6 +101952,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
             },  
             "alertingTimeoutMs": Number, 
             "monitoredParticipantId": String, 
+            "coachedParticipantId": String, 
             "attributes": {String: String}, 
             "calls": { 
               "state": String, 
@@ -102536,6 +102757,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               },  
               "alertingTimeoutMs": Number, 
               "monitoredParticipantId": String, 
+              "coachedParticipantId": String, 
               "attributes": {String: String}, 
               "calls": { 
                 "state": String, 
@@ -103641,6 +103863,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "conversationRoutingData": ConversationRoutingData, 
                 "alertingTimeoutMs": Number, 
                 "monitoredParticipantId": String, 
+                "coachedParticipantId": String, 
                 "attributes": {String: String}, 
                 "calls": [Call], 
                 "callbacks": [Callback], 
@@ -104257,6 +104480,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               },  
               "alertingTimeoutMs": Number, 
               "monitoredParticipantId": String, 
+              "coachedParticipantId": String, 
               "attributes": {String: String}, 
               "calls": { 
                 "state": String, 
@@ -105362,6 +105586,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "conversationRoutingData": ConversationRoutingData, 
                 "alertingTimeoutMs": Number, 
                 "monitoredParticipantId": String, 
+                "coachedParticipantId": String, 
                 "attributes": {String: String}, 
                 "calls": [Call], 
                 "callbacks": [Callback], 
@@ -106207,6 +106432,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
           },  
           "alertingTimeoutMs": Number, 
           "monitoredParticipantId": String, 
+          "coachedParticipantId": String, 
           "attributes": {String: String}, 
           "calls": { 
             "state": String, 
@@ -106769,6 +106995,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "conversationRoutingData": ConversationRoutingData, 
                 "alertingTimeoutMs": Number, 
                 "monitoredParticipantId": String, 
+                "coachedParticipantId": String, 
                 "attributes": {String: String}, 
                 "calls": [Call], 
                 "callbacks": [Callback], 
@@ -108785,6 +109012,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
             },  
             "alertingTimeoutMs": Number, 
             "monitoredParticipantId": String, 
+            "coachedParticipantId": String, 
             "attributes": {String: String}, 
             "calls": { 
               "state": String, 
@@ -109589,6 +109817,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               },  
               "alertingTimeoutMs": Number, 
               "monitoredParticipantId": String, 
+              "coachedParticipantId": String, 
               "attributes": {String: String}, 
               "calls": { 
                 "state": String, 
@@ -110694,6 +110923,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "conversationRoutingData": ConversationRoutingData, 
                 "alertingTimeoutMs": Number, 
                 "monitoredParticipantId": String, 
+                "coachedParticipantId": String, 
                 "attributes": {String: String}, 
                 "calls": [Call], 
                 "callbacks": [Callback], 
@@ -111310,6 +111540,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               },  
               "alertingTimeoutMs": Number, 
               "monitoredParticipantId": String, 
+              "coachedParticipantId": String, 
               "attributes": {String: String}, 
               "calls": { 
                 "state": String, 
@@ -112415,6 +112646,7 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "conversationRoutingData": ConversationRoutingData, 
                 "alertingTimeoutMs": Number, 
                 "monitoredParticipantId": String, 
+                "coachedParticipantId": String, 
                 "attributes": {String: String}, 
                 "calls": [Call], 
                 "callbacks": [Callback], 

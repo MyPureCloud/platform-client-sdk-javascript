@@ -5,7 +5,7 @@ class QualityApi {
 	/**
 	 * Quality service.
 	 * @module purecloud-platform-client-v2/api/QualityApi
-	 * @version 92.0.0
+	 * @version 93.0.0
 	 */
 
 	/**
@@ -1125,6 +1125,31 @@ class QualityApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/analytics/surveys/aggregates/query', 
+			'POST', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Query for transcript aggregates
+	 * 
+	 * @param {Object} body query
+	 */
+	postAnalyticsTranscriptsAggregatesQuery(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postAnalyticsTranscriptsAggregatesQuery';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/transcripts/aggregates/query', 
 			'POST', 
 			{  }, 
 			{  }, 

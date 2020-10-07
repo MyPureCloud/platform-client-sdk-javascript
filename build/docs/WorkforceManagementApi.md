@@ -133,6 +133,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postWorkforcemanagementManagementunitWeekShorttermforecastsGenerate**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitWeekShorttermforecastsGenerate) | **POST** /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shorttermforecasts/generate | Gone. Use equivalent business unit resource instead
 [**postWorkforcemanagementManagementunitWeekShorttermforecastsPartialupload**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitWeekShorttermforecastsPartialupload) | **POST** /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shorttermforecasts/partialupload | Gone. Use equivalent business unit resource instead
 [**postWorkforcemanagementManagementunitWorkplanCopy**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitWorkplanCopy) | **POST** /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans/{workPlanId}/copy | Create a copy of work plan
+[**postWorkforcemanagementManagementunitWorkplanValidate**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitWorkplanValidate) | **POST** /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans/{workPlanId}/validate | Validate Work Plan
 [**postWorkforcemanagementManagementunitWorkplans**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitWorkplans) | **POST** /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans | Create a new work plan
 [**postWorkforcemanagementManagementunits**](WorkforceManagementApi.html#postWorkforcemanagementManagementunits) | **POST** /api/v2/workforcemanagement/managementunits | Add a management unit
 [**postWorkforcemanagementNotificationsUpdate**](WorkforceManagementApi.html#postWorkforcemanagementNotificationsUpdate) | **POST** /api/v2/workforcemanagement/notifications/update | Mark a list of notifications as read or unread
@@ -1841,7 +1842,7 @@ apiInstance.getWorkforcemanagementBusinessunitServicegoaltemplates(businessUnitI
 
 <a name="getWorkforcemanagementBusinessunitWeekSchedule"></a>
 
-# BuScheduleMetadata getWorkforcemanagementBusinessunitWeekSchedule(businessUnitId, weekId, scheduleId)
+# BuScheduleMetadata getWorkforcemanagementBusinessunitWeekSchedule(businessUnitId, weekId, scheduleId, opts)
 
 
 
@@ -1874,8 +1875,11 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
 let weekId = "2013-10-20"; // String | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 let scheduleId = "scheduleId_example"; // String | The ID of the schedule
+let opts = { 
+  'expand': "expand_example" // String | expand
+};
 
-apiInstance.getWorkforcemanagementBusinessunitWeekSchedule(businessUnitId, weekId, scheduleId)
+apiInstance.getWorkforcemanagementBusinessunitWeekSchedule(businessUnitId, weekId, scheduleId, opts)
   .then((data) => {
     console.log(`getWorkforcemanagementBusinessunitWeekSchedule success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1893,6 +1897,7 @@ apiInstance.getWorkforcemanagementBusinessunitWeekSchedule(businessUnitId, weekI
  **businessUnitId** | **String** | The ID of the business unit |  |
  **weekId** | **String** | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **scheduleId** | **String** | The ID of the schedule |  |
+ **expand** | **String** | expand | [optional] <br />**Values**: managementUnits.agents |
 {: class="table table-striped"}
 
 ### Return type
@@ -6637,6 +6642,7 @@ BuQueryAgentSchedulesRequest <a href="#" onclick="return copyBuQueryAgentSchedul
 { 
   "managementUnitId": String, 
   "userIds": [String], 
+  "teamIds": [String], 
 }
 ```
 
@@ -9101,6 +9107,161 @@ apiInstance.postWorkforcemanagementManagementunitWorkplanCopy(managementUnitId, 
 ### Return type
 
 **WorkPlan**
+
+<a name="postWorkforcemanagementManagementunitWorkplanValidate"></a>
+
+# ValidateWorkPlanResponse postWorkforcemanagementManagementunitWorkplanValidate(managementUnitId, workPlanId, opts)
+
+
+
+POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans/{workPlanId}/validate
+
+Validate Work Plan
+
+
+
+Requires ANY permissions: 
+
+* wfm:workPlan:add
+* wfm:workPlan:edit
+
+
+### Request Body Schema
+
+<script type="text/javascript">
+	function copyWorkPlanValidationRequestExample() {
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#WorkPlanValidationRequestExample').text()).select();
+		document.execCommand("copy");
+		temp.remove();
+		return false;
+	}
+</script>
+
+WorkPlanValidationRequest <a href="#" onclick="return copyWorkPlanValidationRequestExample()">Copy</a>
+
+<div id="WorkPlanValidationRequestExample">
+
+```{"language":"json", "maxHeight": "250px"}
+{ 
+  "id": String, 
+  "name": String, 
+  "enabled": Boolean, 
+  "constrainWeeklyPaidTime": Boolean, 
+  "flexibleWeeklyPaidTime": Boolean, 
+  "weeklyExactPaidMinutes": Number, 
+  "weeklyMinimumPaidMinutes": Number, 
+  "weeklyMaximumPaidMinutes": Number, 
+  "constrainPaidTimeGranularity": Boolean, 
+  "paidTimeGranularityMinutes": Number, 
+  "constrainMinimumTimeBetweenShifts": Boolean, 
+  "minimumTimeBetweenShiftsMinutes": Number, 
+  "maximumDays": Number, 
+  "minimumWorkingDaysPerWeek": Number, 
+  "optionalDays": { 
+    "values": [String], 
+  },  
+  "shiftStartVariances": { 
+    "values": { 
+      "applicableDays": [String], 
+      "maxShiftStartVarianceMinutes": Number, 
+    },  
+  },  
+  "shifts": { 
+    "name": String, 
+    "days": { 
+      "values": [String], 
+    },  
+    "flexibleStartTime": Boolean, 
+    "exactStartTimeMinutesFromMidnight": Number, 
+    "earliestStartTimeMinutesFromMidnight": Number, 
+    "latestStartTimeMinutesFromMidnight": Number, 
+    "constrainStopTime": Boolean, 
+    "constrainLatestStopTime": Boolean, 
+    "latestStopTimeMinutesFromMidnight": Number, 
+    "startIncrementMinutes": Number, 
+    "flexiblePaidTime": Boolean, 
+    "exactPaidTimeMinutes": Number, 
+    "minimumPaidTimeMinutes": Number, 
+    "maximumPaidTimeMinutes": Number, 
+    "constrainContiguousWorkTime": Boolean, 
+    "minimumContiguousWorkTimeMinutes": Number, 
+    "maximumContiguousWorkTimeMinutes": Number, 
+    "activities": { 
+      "activityCodeId": String, 
+      "description": String, 
+      "lengthMinutes": Number, 
+      "startTimeIsRelativeToShiftStart": Boolean, 
+      "flexibleStartTime": Boolean, 
+      "earliestStartTimeMinutes": Number, 
+      "latestStartTimeMinutes": Number, 
+      "exactStartTimeMinutes": Number, 
+      "startTimeIncrementMinutes": Number, 
+      "countsAsPaidTime": Boolean, 
+      "countsAsContiguousWorkTime": Boolean, 
+      "id": String, 
+      "delete": Boolean, 
+    },  
+    "id": String, 
+    "delete": Boolean, 
+  },  
+  "agents": { 
+    "id": String, 
+    "delete": Boolean, 
+    "selfUri": String, 
+  },  
+  "selfUri": String, 
+}
+```
+
+</div>
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+let workPlanId = "workPlanId_example"; // String | The ID of the work plan to validate. For new work plan, use the word 'new' for the ID.
+let opts = { 
+  'body': {}, // Object | body
+  'expand': ["expand_example"] // [String] | 
+};
+
+apiInstance.postWorkforcemanagementManagementunitWorkplanValidate(managementUnitId, workPlanId, opts)
+  .then((data) => {
+    console.log(`postWorkforcemanagementManagementunitWorkplanValidate success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postWorkforcemanagementManagementunitWorkplanValidate');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **managementUnitId** | **String** | The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+ **workPlanId** | **String** | The ID of the work plan to validate. For new work plan, use the word &#39;new&#39; for the ID. |  |
+ **body** | **Object** | body | [optional]  |
+ **expand** | **[String]** |  | [optional] <br />**Values**: messages |
+{: class="table table-striped"}
+
+### Return type
+
+**ValidateWorkPlanResponse**
 
 <a name="postWorkforcemanagementManagementunitWorkplans"></a>
 

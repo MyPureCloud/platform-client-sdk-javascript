@@ -1,171 +1,225 @@
-Platform API version: 4219
+Platform API version: 4240
 
 
-# Major Changes (2 changes)
+# Major Changes (9 changes)
 
-**EntityListing** (1 change)
+**GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}** (1 change)
 
-* Property entities was changed from object[] to DataTableImportJob[]
+* Parameter expand was added
 
-**WfmHistoricalAdherenceQueryForUsers** (1 change)
+**GET /api/v2/knowledge/knowledgebases** (1 change)
 
-* Required property teamIds was added
+* Parameter name was added
+
+**EntityListing** (5 changes)
+
+* Property pageSize was removed
+* Property pageNumber was removed
+* Property total was removed
+* Property pageCount was removed
+* Property entities was changed from DataTableImportJob[] to object[]
+
+**DevelopmentActivity** (2 changes)
+
+* Enum value AssessedContent was removed from property type
+* Enum value Questionnaire was removed from property type
 
 
-# Minor Changes (51 changes)
+# Minor Changes (55 changes)
 
-**/api/v2/users/development/activities/aggregates/query** (2 changes)
+**/api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans/{workPlanId}/validate** (2 changes)
 
 * Path was added
 * Operation POST was added
 
-**/api/v2/users/development/activities/me** (2 changes)
+**/api/v2/analytics/conversations/details/jobs/availability** (2 changes)
 
 * Path was added
 * Operation GET was added
 
-**/api/v2/users/development/activities** (2 changes)
+**/api/v2/authorization/divisions/{divisionId}/grants** (2 changes)
 
 * Path was added
 * Operation GET was added
 
-**/api/v2/users/development/activities/{activityId}** (2 changes)
+**/api/v2/journey/actiontargets/{actionTargetId}** (3 changes)
 
 * Path was added
 * Operation GET was added
+* Operation PATCH was added
 
-**/api/v2/flows/milestones** (3 changes)
+**/api/v2/analytics/transcripts/aggregates/query** (2 changes)
 
 * Path was added
-* Operation GET was added
 * Operation POST was added
 
-**/api/v2/flows/milestones/{milestoneId}** (4 changes)
+**/api/v2/analytics/users/details/jobs/availability** (2 changes)
 
 * Path was added
 * Operation GET was added
-* Operation PUT was added
-* Operation DELETE was added
+
+**/api/v2/journey/actiontargets** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**Organization** (1 change)
+
+* Enum value GenesysCloud was added to property productPlatform
+
+**Site** (1 change)
+
+* Optional property coreSite was added
 
 **KnowledgeBase** (1 change)
 
-* Enum value de-DE was added to property coreLanguage
+* Optional property faqCount was added
 
-**AvailableTopic** (1 change)
-
-* Optional property publicApiTemplateUriPaths was added
-
-**WfmHistoricalAdherenceQuery** (1 change)
-
-* Optional property teamIds was added
-
-**FlowAggregateQueryPredicate** (1 change)
-
-* Enum value flowMilestoneId was added to property dimension
-
-**FlowAggregationQuery** (3 changes)
-
-* Enum value flowMilestoneId was added to property groupBy
-* Enum value nFlowMilestone was added to property metrics
-* Enum value oFlowMilestone was added to property metrics
-
-**FlowAggregationView** (2 changes)
-
-* Enum value nFlowMilestone was added to property target
-* Enum value oFlowMilestone was added to property target
-
-**ConversationDetailQueryPredicate** (2 changes)
-
-* Enum value nFlowMilestone was added to property metric
-* Enum value oFlowMilestone was added to property metric
-
-**Dependency** (1 change)
-
-* Enum value FLOWMILESTONE was added to property type
-
-**DependencyObject** (1 change)
-
-* Enum value FLOWMILESTONE was added to property type
-
-**KnowledgeCategory** (1 change)
-
-* Enum value de-DE was added to property languageCode
-
-**KnowledgeDocument** (1 change)
-
-* Enum value de-DE was added to property languageCode
-
-**KnowledgeSearchDocument** (1 change)
-
-* Enum value de-DE was added to property languageCode
-
-**EntityListing** (4 changes)
-
-* Optional property pageSize was added
-* Optional property pageNumber was added
-* Optional property total was added
-* Optional property pageCount was added
-
-**DevelopmentActivityAggregateQueryResponseData** (1 change)
-
-* Model was added
-
-**DevelopmentActivityAggregateQueryResponseGroupedData** (1 change)
-
-* Model was added
-
-**DevelopmentActivityAggregateQueryResponseMetric** (1 change)
-
-* Model was added
-
-**DevelopmentActivityAggregateQueryResponseStatistics** (1 change)
-
-* Model was added
-
-**DevelopmentActivityAggregateResponse** (1 change)
-
-* Model was added
-
-**DevelopmentActivityAggregateParam** (1 change)
-
-* Model was added
-
-**DevelopmentActivityAggregateQueryRequestClause** (1 change)
-
-* Model was added
-
-**DevelopmentActivityAggregateQueryRequestFilter** (1 change)
-
-* Model was added
-
-**DevelopmentActivityAggregateQueryRequestPredicate** (1 change)
+**AssignmentGroup** (1 change)
 
 * Model was added
 
 **ReportingExportJobResponse** (2 changes)
 
-* Enum value FAILED_AS_EXPORT_FILE_SIZE_IS_GREATER_THAN_10MB was added to property exportErrorMessagesType
-* Optional property emailErrorDescription was added
+* Optional property hasSummaryRow was added
+* Optional property csvDelimiter was added
 
-**DevelopmentActivity** (1 change)
+**ReportingExportJobRequest** (2 changes)
 
-* Model was added
+* Optional property hasSummaryRow was added
+* Optional property csvDelimiter was added
 
-**DevelopmentActivityListing** (1 change)
-
-* Model was added
-
-**FlowMilestone** (1 change)
+**ConstraintConflictMessage** (1 change)
 
 * Model was added
 
-**FlowMilestoneListing** (1 change)
+**ValidateWorkPlanMessages** (1 change)
 
 * Model was added
 
-**KnowledgeExtendedCategory** (1 change)
+**ValidateWorkPlanResponse** (1 change)
 
-* Enum value de-DE was added to property languageCode
+* Model was added
+
+**WorkPlanConfigurationViolationMessage** (1 change)
+
+* Model was added
+
+**WorkPlanConstraintConflictMessage** (1 change)
+
+* Model was added
+
+**WorkPlanConstraintMessage** (1 change)
+
+* Model was added
+
+**WorkPlanValidationMessageArgument** (1 change)
+
+* Model was added
+
+**WorkPlanValidationRequest** (1 change)
+
+* Model was added
+
+**Participant** (1 change)
+
+* Optional property coachedParticipantId was added
+
+**DataAvailabilityResponse** (1 change)
+
+* Model was added
+
+**BuQueryAgentSchedulesRequest** (1 change)
+
+* Optional property teamIds was added
+
+**GoogleDialogflowCustomSettings** (3 changes)
+
+* Optional property eventName was added
+* Optional property webhookQueryParameters was added
+* Optional property eventInputParameters was added
+
+**PostTextRequest** (1 change)
+
+* Optional property messagingPlatformType was added
+
+**AuthzDivisionGrantEntityListing** (1 change)
+
+* Model was added
+
+**KeyValue** (1 change)
+
+* Model was added
+
+**OrphanRecording** (1 change)
+
+* Optional property sourceOrphaningId was added
+
+**ActionTarget** (1 change)
+
+* Model was added
+
+**PatchActionTarget** (1 change)
+
+* Model was added
+
+**ParticipantBasic** (1 change)
+
+* Optional property coachedParticipantId was added
+
+**Entity** (1 change)
+
+* Model was added
+
+**TokenInfo** (1 change)
+
+* Optional property clonedUser was added
+
+**TokenInfoClonedUser** (1 change)
+
+* Model was added
+
+**TranscriptAggregateDataContainer** (1 change)
+
+* Model was added
+
+**TranscriptAggregateQueryResponse** (1 change)
+
+* Model was added
+
+**TranscriptAggregateQueryClause** (1 change)
+
+* Model was added
+
+**TranscriptAggregateQueryFilter** (1 change)
+
+* Model was added
+
+**TranscriptAggregateQueryPredicate** (1 change)
+
+* Model was added
+
+**TranscriptAggregationQuery** (1 change)
+
+* Model was added
+
+**TranscriptAggregationView** (1 change)
+
+* Model was added
+
+**ActionTargetListing** (1 change)
+
+* Model was added
 
 
-# Point Changes (0 changes)
+# Point Changes (4 changes)
+
+**GET /api/v2/users/development/activities** (2 changes)
+
+* Description was changed for parameter interval
+* Description was changed for parameter completionInterval
+
+**GET /api/v2/users/development/activities/me** (2 changes)
+
+* Description was changed for parameter interval
+* Description was changed for parameter completionInterval

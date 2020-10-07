@@ -11,6 +11,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**deleteAuthorizationRole**](AuthorizationApi.html#deleteAuthorizationRole) | **DELETE** /api/v2/authorization/roles/{roleId} | Delete an organization role.
 [**deleteAuthorizationSubjectDivisionRole**](AuthorizationApi.html#deleteAuthorizationSubjectDivisionRole) | **DELETE** /api/v2/authorization/subjects/{subjectId}/divisions/{divisionId}/roles/{roleId} | Delete a grant of a role in a division
 [**getAuthorizationDivision**](AuthorizationApi.html#getAuthorizationDivision) | **GET** /api/v2/authorization/divisions/{divisionId} | Returns an authorization division.
+[**getAuthorizationDivisionGrants**](AuthorizationApi.html#getAuthorizationDivisionGrants) | **GET** /api/v2/authorization/divisions/{divisionId}/grants | Gets all grants for a given division.
 [**getAuthorizationDivisions**](AuthorizationApi.html#getAuthorizationDivisions) | **GET** /api/v2/authorization/divisions | Retrieve a list of all divisions defined for the organization
 [**getAuthorizationDivisionsHome**](AuthorizationApi.html#getAuthorizationDivisionsHome) | **GET** /api/v2/authorization/divisions/home | Retrieve the home division for the organization.
 [**getAuthorizationDivisionsLimit**](AuthorizationApi.html#getAuthorizationDivisionsLimit) | **GET** /api/v2/authorization/divisions/limit | Returns the maximum allowed number of divisions.
@@ -276,6 +277,67 @@ apiInstance.getAuthorizationDivision(divisionId, opts)
 ### Return type
 
 **AuthzDivision**
+
+<a name="getAuthorizationDivisionGrants"></a>
+
+# AuthzDivisionGrantEntityListing getAuthorizationDivisionGrants(divisionId, opts)
+
+
+
+GET /api/v2/authorization/divisions/{divisionId}/grants
+
+Gets all grants for a given division.
+
+
+
+Requires ANY permissions: 
+
+* authorization:grant:view
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AuthorizationApi();
+
+let divisionId = "divisionId_example"; // String | Division ID
+let opts = { 
+  'pageNumber': 1, // Number | Page number
+  'pageSize': 25 // Number | Page size
+};
+
+apiInstance.getAuthorizationDivisionGrants(divisionId, opts)
+  .then((data) => {
+    console.log(`getAuthorizationDivisionGrants success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getAuthorizationDivisionGrants');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **divisionId** | **String** | Division ID |  |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+{: class="table table-striped"}
+
+### Return type
+
+**AuthzDivisionGrantEntityListing**
 
 <a name="getAuthorizationDivisions"></a>
 

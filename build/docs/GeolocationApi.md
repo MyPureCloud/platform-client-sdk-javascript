@@ -132,7 +132,7 @@ Patch a organization&#39;s GeolocationSettings
 
 Requires ANY permissions: 
 
-* telephony:plugin:all
+* geolocation:settings:edit
 
 
 ### Request Body Schema

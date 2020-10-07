@@ -17,6 +17,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**deleteUserStationDefaultstation**](UsersApi.html#deleteUserStationDefaultstation) | **DELETE** /api/v2/users/{userId}/station/defaultstation | Clear default station
 [**getAnalyticsUsersDetailsJob**](UsersApi.html#getAnalyticsUsersDetailsJob) | **GET** /api/v2/analytics/users/details/jobs/{jobId} | Get status for async query for user details
 [**getAnalyticsUsersDetailsJobResults**](UsersApi.html#getAnalyticsUsersDetailsJobResults) | **GET** /api/v2/analytics/users/details/jobs/{jobId}/results | Fetch a page of results for an async query
+[**getAnalyticsUsersDetailsJobsAvailability**](UsersApi.html#getAnalyticsUsersDetailsJobsAvailability) | **GET** /api/v2/analytics/users/details/jobs/availability | Lookup the datalake availability date and time
 [**getAuthorizationDivisionspermittedMe**](UsersApi.html#getAuthorizationDivisionspermittedMe) | **GET** /api/v2/authorization/divisionspermitted/me | Returns which divisions the current user has the given permission in.
 [**getAuthorizationDivisionspermittedPagedMe**](UsersApi.html#getAuthorizationDivisionspermittedPagedMe) | **GET** /api/v2/authorization/divisionspermitted/paged/me | Returns which divisions the current user has the given permission in.
 [**getAuthorizationDivisionspermittedPagedSubjectId**](UsersApi.html#getAuthorizationDivisionspermittedPagedSubjectId) | **GET** /api/v2/authorization/divisionspermitted/paged/{subjectId} | Returns which divisions the specified user has the given permission in.
@@ -644,6 +645,56 @@ apiInstance.getAnalyticsUsersDetailsJobResults(jobId, opts)
 ### Return type
 
 **AnalyticsUserDetailsAsyncQueryResponse**
+
+<a name="getAnalyticsUsersDetailsJobsAvailability"></a>
+
+# DataAvailabilityResponse getAnalyticsUsersDetailsJobsAvailability()
+
+
+
+GET /api/v2/analytics/users/details/jobs/availability
+
+Lookup the datalake availability date and time
+
+
+
+Requires ANY permissions: 
+
+* analytics:userDetail:view
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.UsersApi();
+
+apiInstance.getAnalyticsUsersDetailsJobsAvailability()
+  .then((data) => {
+    console.log(`getAnalyticsUsersDetailsJobsAvailability success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getAnalyticsUsersDetailsJobsAvailability');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+{: class="table table-striped"}
+
+### Return type
+
+**DataAvailabilityResponse**
 
 <a name="getAuthorizationDivisionspermittedMe"></a>
 

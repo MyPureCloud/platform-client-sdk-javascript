@@ -169,12 +169,16 @@ PostTextRequest <a href="#" onclick="return copyPostTextRequestExample()">Copy</
   "botSessionTimeoutMinutes": Number, 
   "botChannels": [String], 
   "botCorrelationId": String, 
+  "messagingPlatformType": String, 
   "amazonLexRequest": { 
     "requestAttributes": {String: String}, 
     "sessionAttributes": {String: String}, 
   },  
   "googleDialogflow": { 
     "environment": String, 
+    "eventName": String, 
+    "webhookQueryParameters": {String: String}, 
+    "eventInputParameters": {String: String}, 
   },  
 }
 ```

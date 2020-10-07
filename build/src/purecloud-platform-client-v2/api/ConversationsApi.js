@@ -5,7 +5,7 @@ class ConversationsApi {
 	/**
 	 * Conversations service.
 	 * @module purecloud-platform-client-v2/api/ConversationsApi
-	 * @version 92.0.0
+	 * @version 93.0.0
 	 */
 
 	/**
@@ -365,6 +365,26 @@ class ConversationsApi {
 			'GET', 
 			{ 'jobId': jobId }, 
 			{ 'cursor': opts['cursor'],'pageSize': opts['pageSize'] }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Lookup the datalake availability date and time
+	 * 
+	 */
+	getAnalyticsConversationsDetailsJobsAvailability() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/conversations/details/jobs/availability', 
+			'GET', 
+			{  }, 
+			{  }, 
 			{  }, 
 			{  }, 
 			null, 

@@ -5,7 +5,7 @@ class KnowledgeApi {
 	/**
 	 * Knowledge service.
 	 * @module purecloud-platform-client-v2/api/KnowledgeApi
-	 * @version 92.0.0
+	 * @version 93.0.0
 	 */
 
 	/**
@@ -365,6 +365,7 @@ class KnowledgeApi {
 	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
 	 * @param {String} opts.limit Number of entities to return. Maximum of 200.
 	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
+	 * @param {String} opts.name Name of the KnowledgeBase to filter.
 	 */
 	getKnowledgeKnowledgebases(opts) { 
 		opts = opts || {};
@@ -374,7 +375,7 @@ class KnowledgeApi {
 			'/api/v2/knowledge/knowledgebases', 
 			'GET', 
 			{  }, 
-			{ 'before': opts['before'],'after': opts['after'],'limit': opts['limit'],'pageSize': opts['pageSize'] }, 
+			{ 'before': opts['before'],'after': opts['after'],'limit': opts['limit'],'pageSize': opts['pageSize'],'name': opts['name'] }, 
 			{  }, 
 			{  }, 
 			null, 

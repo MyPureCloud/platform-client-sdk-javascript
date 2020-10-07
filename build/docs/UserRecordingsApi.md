@@ -409,6 +409,7 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
       },  
       "alertingTimeoutMs": Number, 
       "monitoredParticipantId": String, 
+      "coachedParticipantId": String, 
       "attributes": {String: String}, 
       "calls": { 
         "state": String, 
@@ -1064,6 +1065,7 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
             },  
             "alertingTimeoutMs": Number, 
             "monitoredParticipantId": String, 
+            "coachedParticipantId": String, 
             "attributes": {String: String}, 
             "calls": { 
               "state": String, 
@@ -2937,6 +2939,7 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
               },  
               "alertingTimeoutMs": Number, 
               "monitoredParticipantId": String, 
+              "coachedParticipantId": String, 
               "attributes": {String: String}, 
               "calls": { 
                 "state": String, 
@@ -3297,6 +3300,7 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
                 "conversationRoutingData": ConversationRoutingData, 
                 "alertingTimeoutMs": Number, 
                 "monitoredParticipantId": String, 
+                "coachedParticipantId": String, 
                 "attributes": {String: String}, 
                 "calls": [Call], 
                 "callbacks": [Callback], 
@@ -3966,6 +3970,7 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
                 "conversationRoutingData": ConversationRoutingData, 
                 "alertingTimeoutMs": Number, 
                 "monitoredParticipantId": String, 
+                "coachedParticipantId": String, 
                 "attributes": {String: String}, 
                 "calls": [Call], 
                 "callbacks": [Callback], 

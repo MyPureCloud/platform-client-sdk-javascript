@@ -673,7 +673,8 @@ let opts = {
   'before': "before_example", // String | The cursor that points to the start of the set of entities that has been returned.
   'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
   'limit': "limit_example", // String | Number of entities to return. Maximum of 200.
-  'pageSize': "pageSize_example" // String | Number of entities to return. Maximum of 200.
+  'pageSize': "pageSize_example", // String | Number of entities to return. Maximum of 200.
+  'name': "name_example" // String | Name of the KnowledgeBase to filter.
 };
 
 apiInstance.getKnowledgeKnowledgebases(opts)
@@ -695,6 +696,7 @@ apiInstance.getKnowledgeKnowledgebases(opts)
  **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
  **limit** | **String** | Number of entities to return. Maximum of 200. | [optional]  |
  **pageSize** | **String** | Number of entities to return. Maximum of 200. | [optional]  |
+ **name** | **String** | Name of the KnowledgeBase to filter. | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -743,6 +745,7 @@ KnowledgeBase <a href="#" onclick="return copyKnowledgeBaseExample()">Copy</a>
   "coreLanguage": String, 
   "dateCreated": Date, 
   "dateModified": Date, 
+  "faqCount": Number, 
   "selfUri": String, 
 }
 ```
@@ -1500,6 +1503,7 @@ KnowledgeBase <a href="#" onclick="return copyKnowledgeBaseExample()">Copy</a>
   "coreLanguage": String, 
   "dateCreated": Date, 
   "dateModified": Date, 
+  "faqCount": Number, 
   "selfUri": String, 
 }
 ```

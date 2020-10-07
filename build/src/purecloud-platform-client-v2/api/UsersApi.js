@@ -5,7 +5,7 @@ class UsersApi {
 	/**
 	 * Users service.
 	 * @module purecloud-platform-client-v2/api/UsersApi
-	 * @version 92.0.0
+	 * @version 93.0.0
 	 */
 
 	/**
@@ -286,6 +286,26 @@ class UsersApi {
 			'GET', 
 			{ 'jobId': jobId }, 
 			{ 'cursor': opts['cursor'],'pageSize': opts['pageSize'] }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Lookup the datalake availability date and time
+	 * 
+	 */
+	getAnalyticsUsersDetailsJobsAvailability() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/users/details/jobs/availability', 
+			'GET', 
+			{  }, 
+			{  }, 
 			{  }, 
 			{  }, 
 			null, 

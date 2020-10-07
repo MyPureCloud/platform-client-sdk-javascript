@@ -20,6 +20,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getAnalyticsConversationsDetails**](ConversationsApi.html#getAnalyticsConversationsDetails) | **GET** /api/v2/analytics/conversations/details | Gets multiple conversations by id
 [**getAnalyticsConversationsDetailsJob**](ConversationsApi.html#getAnalyticsConversationsDetailsJob) | **GET** /api/v2/analytics/conversations/details/jobs/{jobId} | Get status for async query for conversation details
 [**getAnalyticsConversationsDetailsJobResults**](ConversationsApi.html#getAnalyticsConversationsDetailsJobResults) | **GET** /api/v2/analytics/conversations/details/jobs/{jobId}/results | Fetch a page of results for an async query
+[**getAnalyticsConversationsDetailsJobsAvailability**](ConversationsApi.html#getAnalyticsConversationsDetailsJobsAvailability) | **GET** /api/v2/analytics/conversations/details/jobs/availability | Lookup the datalake availability date and time
 [**getConversation**](ConversationsApi.html#getConversation) | **GET** /api/v2/conversations/{conversationId} | Get conversation
 [**getConversationParticipantSecureivrsession**](ConversationsApi.html#getConversationParticipantSecureivrsession) | **GET** /api/v2/conversations/{conversationId}/participants/{participantId}/secureivrsessions/{secureSessionId} | Fetch info on a secure session
 [**getConversationParticipantSecureivrsessions**](ConversationsApi.html#getConversationParticipantSecureivrsessions) | **GET** /api/v2/conversations/{conversationId}/participants/{participantId}/secureivrsessions | Get a list of secure sessions for this participant.
@@ -872,6 +873,56 @@ apiInstance.getAnalyticsConversationsDetailsJobResults(jobId, opts)
 ### Return type
 
 **AnalyticsConversationAsyncQueryResponse**
+
+<a name="getAnalyticsConversationsDetailsJobsAvailability"></a>
+
+# DataAvailabilityResponse getAnalyticsConversationsDetailsJobsAvailability()
+
+
+
+GET /api/v2/analytics/conversations/details/jobs/availability
+
+Lookup the datalake availability date and time
+
+
+
+Requires ANY permissions: 
+
+* analytics:conversationDetail:view
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+apiInstance.getAnalyticsConversationsDetailsJobsAvailability()
+  .then((data) => {
+    console.log(`getAnalyticsConversationsDetailsJobsAvailability success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getAnalyticsConversationsDetailsJobsAvailability');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+{: class="table table-striped"}
+
+### Return type
+
+**DataAvailabilityResponse**
 
 <a name="getConversation"></a>
 
@@ -3945,6 +3996,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
     },  
     "alertingTimeoutMs": Number, 
     "monitoredParticipantId": String, 
+    "coachedParticipantId": String, 
     "attributes": {String: String}, 
     "calls": { 
       "state": String, 
@@ -4635,6 +4687,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
           },  
           "alertingTimeoutMs": Number, 
           "monitoredParticipantId": String, 
+          "coachedParticipantId": String, 
           "attributes": {String: String}, 
           "calls": { 
             "state": String, 
@@ -5197,6 +5250,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "conversationRoutingData": ConversationRoutingData, 
                 "alertingTimeoutMs": Number, 
                 "monitoredParticipantId": String, 
+                "coachedParticipantId": String, 
                 "attributes": {String: String}, 
                 "calls": [Call], 
                 "callbacks": [Callback], 
@@ -6223,6 +6277,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
             },  
             "alertingTimeoutMs": Number, 
             "monitoredParticipantId": String, 
+            "coachedParticipantId": String, 
             "attributes": {String: String}, 
             "calls": { 
               "state": String, 
@@ -6992,6 +7047,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               },  
               "alertingTimeoutMs": Number, 
               "monitoredParticipantId": String, 
+              "coachedParticipantId": String, 
               "attributes": {String: String}, 
               "calls": { 
                 "state": String, 
@@ -7641,6 +7697,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "conversationRoutingData": ConversationRoutingData, 
                 "alertingTimeoutMs": Number, 
                 "monitoredParticipantId": String, 
+                "coachedParticipantId": String, 
                 "attributes": {String: String}, 
                 "calls": [Call], 
                 "callbacks": [Callback], 
@@ -8187,6 +8244,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               },  
               "alertingTimeoutMs": Number, 
               "monitoredParticipantId": String, 
+              "coachedParticipantId": String, 
               "attributes": {String: String}, 
               "calls": { 
                 "state": String, 
@@ -8836,6 +8894,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "conversationRoutingData": ConversationRoutingData, 
                 "alertingTimeoutMs": Number, 
                 "monitoredParticipantId": String, 
+                "coachedParticipantId": String, 
                 "attributes": {String: String}, 
                 "calls": [Call], 
                 "callbacks": [Callback], 
@@ -10071,6 +10130,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
     },  
     "alertingTimeoutMs": Number, 
     "monitoredParticipantId": String, 
+    "coachedParticipantId": String, 
     "attributes": {String: String}, 
     "calls": { 
       "state": String, 
@@ -10761,6 +10821,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
           },  
           "alertingTimeoutMs": Number, 
           "monitoredParticipantId": String, 
+          "coachedParticipantId": String, 
           "attributes": {String: String}, 
           "calls": { 
             "state": String, 
@@ -11323,6 +11384,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "conversationRoutingData": ConversationRoutingData, 
                 "alertingTimeoutMs": Number, 
                 "monitoredParticipantId": String, 
+                "coachedParticipantId": String, 
                 "attributes": {String: String}, 
                 "calls": [Call], 
                 "callbacks": [Callback], 
@@ -12349,6 +12411,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
             },  
             "alertingTimeoutMs": Number, 
             "monitoredParticipantId": String, 
+            "coachedParticipantId": String, 
             "attributes": {String: String}, 
             "calls": { 
               "state": String, 
@@ -13118,6 +13181,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               },  
               "alertingTimeoutMs": Number, 
               "monitoredParticipantId": String, 
+              "coachedParticipantId": String, 
               "attributes": {String: String}, 
               "calls": { 
                 "state": String, 
@@ -13767,6 +13831,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "conversationRoutingData": ConversationRoutingData, 
                 "alertingTimeoutMs": Number, 
                 "monitoredParticipantId": String, 
+                "coachedParticipantId": String, 
                 "attributes": {String: String}, 
                 "calls": [Call], 
                 "callbacks": [Callback], 
@@ -14313,6 +14378,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               },  
               "alertingTimeoutMs": Number, 
               "monitoredParticipantId": String, 
+              "coachedParticipantId": String, 
               "attributes": {String: String}, 
               "calls": { 
                 "state": String, 
@@ -14962,6 +15028,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "conversationRoutingData": ConversationRoutingData, 
                 "alertingTimeoutMs": Number, 
                 "monitoredParticipantId": String, 
+                "coachedParticipantId": String, 
                 "attributes": {String: String}, 
                 "calls": [Call], 
                 "callbacks": [Callback], 
@@ -16114,6 +16181,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
     },  
     "alertingTimeoutMs": Number, 
     "monitoredParticipantId": String, 
+    "coachedParticipantId": String, 
     "attributes": {String: String}, 
     "calls": { 
       "state": String, 
@@ -16804,6 +16872,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
           },  
           "alertingTimeoutMs": Number, 
           "monitoredParticipantId": String, 
+          "coachedParticipantId": String, 
           "attributes": {String: String}, 
           "calls": { 
             "state": String, 
@@ -17366,6 +17435,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "conversationRoutingData": ConversationRoutingData, 
                 "alertingTimeoutMs": Number, 
                 "monitoredParticipantId": String, 
+                "coachedParticipantId": String, 
                 "attributes": {String: String}, 
                 "calls": [Call], 
                 "callbacks": [Callback], 
@@ -18392,6 +18462,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
             },  
             "alertingTimeoutMs": Number, 
             "monitoredParticipantId": String, 
+            "coachedParticipantId": String, 
             "attributes": {String: String}, 
             "calls": { 
               "state": String, 
@@ -19161,6 +19232,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               },  
               "alertingTimeoutMs": Number, 
               "monitoredParticipantId": String, 
+              "coachedParticipantId": String, 
               "attributes": {String: String}, 
               "calls": { 
                 "state": String, 
@@ -19810,6 +19882,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "conversationRoutingData": ConversationRoutingData, 
                 "alertingTimeoutMs": Number, 
                 "monitoredParticipantId": String, 
+                "coachedParticipantId": String, 
                 "attributes": {String: String}, 
                 "calls": [Call], 
                 "callbacks": [Callback], 
@@ -20356,6 +20429,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               },  
               "alertingTimeoutMs": Number, 
               "monitoredParticipantId": String, 
+              "coachedParticipantId": String, 
               "attributes": {String: String}, 
               "calls": { 
                 "state": String, 
@@ -21005,6 +21079,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "conversationRoutingData": ConversationRoutingData, 
                 "alertingTimeoutMs": Number, 
                 "monitoredParticipantId": String, 
+                "coachedParticipantId": String, 
                 "attributes": {String: String}, 
                 "calls": [Call], 
                 "callbacks": [Callback], 
@@ -22157,6 +22232,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
     },  
     "alertingTimeoutMs": Number, 
     "monitoredParticipantId": String, 
+    "coachedParticipantId": String, 
     "attributes": {String: String}, 
     "calls": { 
       "state": String, 
@@ -22847,6 +22923,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
           },  
           "alertingTimeoutMs": Number, 
           "monitoredParticipantId": String, 
+          "coachedParticipantId": String, 
           "attributes": {String: String}, 
           "calls": { 
             "state": String, 
@@ -23409,6 +23486,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "conversationRoutingData": ConversationRoutingData, 
                 "alertingTimeoutMs": Number, 
                 "monitoredParticipantId": String, 
+                "coachedParticipantId": String, 
                 "attributes": {String: String}, 
                 "calls": [Call], 
                 "callbacks": [Callback], 
@@ -24435,6 +24513,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
             },  
             "alertingTimeoutMs": Number, 
             "monitoredParticipantId": String, 
+            "coachedParticipantId": String, 
             "attributes": {String: String}, 
             "calls": { 
               "state": String, 
@@ -25204,6 +25283,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               },  
               "alertingTimeoutMs": Number, 
               "monitoredParticipantId": String, 
+              "coachedParticipantId": String, 
               "attributes": {String: String}, 
               "calls": { 
                 "state": String, 
@@ -25853,6 +25933,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "conversationRoutingData": ConversationRoutingData, 
                 "alertingTimeoutMs": Number, 
                 "monitoredParticipantId": String, 
+                "coachedParticipantId": String, 
                 "attributes": {String: String}, 
                 "calls": [Call], 
                 "callbacks": [Callback], 
@@ -26399,6 +26480,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               },  
               "alertingTimeoutMs": Number, 
               "monitoredParticipantId": String, 
+              "coachedParticipantId": String, 
               "attributes": {String: String}, 
               "calls": { 
                 "state": String, 
@@ -27048,6 +27130,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "conversationRoutingData": ConversationRoutingData, 
                 "alertingTimeoutMs": Number, 
                 "monitoredParticipantId": String, 
+                "coachedParticipantId": String, 
                 "attributes": {String: String}, 
                 "calls": [Call], 
                 "callbacks": [Callback], 
@@ -28204,6 +28287,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
     },  
     "alertingTimeoutMs": Number, 
     "monitoredParticipantId": String, 
+    "coachedParticipantId": String, 
     "attributes": {String: String}, 
     "calls": { 
       "state": String, 
@@ -28894,6 +28978,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
           },  
           "alertingTimeoutMs": Number, 
           "monitoredParticipantId": String, 
+          "coachedParticipantId": String, 
           "attributes": {String: String}, 
           "calls": { 
             "state": String, 
@@ -29456,6 +29541,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "conversationRoutingData": ConversationRoutingData, 
                 "alertingTimeoutMs": Number, 
                 "monitoredParticipantId": String, 
+                "coachedParticipantId": String, 
                 "attributes": {String: String}, 
                 "calls": [Call], 
                 "callbacks": [Callback], 
@@ -30482,6 +30568,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
             },  
             "alertingTimeoutMs": Number, 
             "monitoredParticipantId": String, 
+            "coachedParticipantId": String, 
             "attributes": {String: String}, 
             "calls": { 
               "state": String, 
@@ -31251,6 +31338,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               },  
               "alertingTimeoutMs": Number, 
               "monitoredParticipantId": String, 
+              "coachedParticipantId": String, 
               "attributes": {String: String}, 
               "calls": { 
                 "state": String, 
@@ -31900,6 +31988,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "conversationRoutingData": ConversationRoutingData, 
                 "alertingTimeoutMs": Number, 
                 "monitoredParticipantId": String, 
+                "coachedParticipantId": String, 
                 "attributes": {String: String}, 
                 "calls": [Call], 
                 "callbacks": [Callback], 
@@ -32446,6 +32535,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               },  
               "alertingTimeoutMs": Number, 
               "monitoredParticipantId": String, 
+              "coachedParticipantId": String, 
               "attributes": {String: String}, 
               "calls": { 
                 "state": String, 
@@ -33095,6 +33185,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "conversationRoutingData": ConversationRoutingData, 
                 "alertingTimeoutMs": Number, 
                 "monitoredParticipantId": String, 
+                "coachedParticipantId": String, 
                 "attributes": {String: String}, 
                 "calls": [Call], 
                 "callbacks": [Callback], 
@@ -34247,6 +34338,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
     },  
     "alertingTimeoutMs": Number, 
     "monitoredParticipantId": String, 
+    "coachedParticipantId": String, 
     "attributes": {String: String}, 
     "calls": { 
       "state": String, 
@@ -34937,6 +35029,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
           },  
           "alertingTimeoutMs": Number, 
           "monitoredParticipantId": String, 
+          "coachedParticipantId": String, 
           "attributes": {String: String}, 
           "calls": { 
             "state": String, 
@@ -35499,6 +35592,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "conversationRoutingData": ConversationRoutingData, 
                 "alertingTimeoutMs": Number, 
                 "monitoredParticipantId": String, 
+                "coachedParticipantId": String, 
                 "attributes": {String: String}, 
                 "calls": [Call], 
                 "callbacks": [Callback], 
@@ -36525,6 +36619,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
             },  
             "alertingTimeoutMs": Number, 
             "monitoredParticipantId": String, 
+            "coachedParticipantId": String, 
             "attributes": {String: String}, 
             "calls": { 
               "state": String, 
@@ -37294,6 +37389,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               },  
               "alertingTimeoutMs": Number, 
               "monitoredParticipantId": String, 
+              "coachedParticipantId": String, 
               "attributes": {String: String}, 
               "calls": { 
                 "state": String, 
@@ -37943,6 +38039,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "conversationRoutingData": ConversationRoutingData, 
                 "alertingTimeoutMs": Number, 
                 "monitoredParticipantId": String, 
+                "coachedParticipantId": String, 
                 "attributes": {String: String}, 
                 "calls": [Call], 
                 "callbacks": [Callback], 
@@ -38489,6 +38586,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               },  
               "alertingTimeoutMs": Number, 
               "monitoredParticipantId": String, 
+              "coachedParticipantId": String, 
               "attributes": {String: String}, 
               "calls": { 
                 "state": String, 
@@ -39138,6 +39236,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "conversationRoutingData": ConversationRoutingData, 
                 "alertingTimeoutMs": Number, 
                 "monitoredParticipantId": String, 
+                "coachedParticipantId": String, 
                 "attributes": {String: String}, 
                 "calls": [Call], 
                 "callbacks": [Callback], 
@@ -42001,6 +42100,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
     },  
     "alertingTimeoutMs": Number, 
     "monitoredParticipantId": String, 
+    "coachedParticipantId": String, 
     "attributes": {String: String}, 
     "calls": { 
       "state": String, 
@@ -42691,6 +42791,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
           },  
           "alertingTimeoutMs": Number, 
           "monitoredParticipantId": String, 
+          "coachedParticipantId": String, 
           "attributes": {String: String}, 
           "calls": { 
             "state": String, 
@@ -43253,6 +43354,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "conversationRoutingData": ConversationRoutingData, 
                 "alertingTimeoutMs": Number, 
                 "monitoredParticipantId": String, 
+                "coachedParticipantId": String, 
                 "attributes": {String: String}, 
                 "calls": [Call], 
                 "callbacks": [Callback], 
@@ -44279,6 +44381,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
             },  
             "alertingTimeoutMs": Number, 
             "monitoredParticipantId": String, 
+            "coachedParticipantId": String, 
             "attributes": {String: String}, 
             "calls": { 
               "state": String, 
@@ -45048,6 +45151,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               },  
               "alertingTimeoutMs": Number, 
               "monitoredParticipantId": String, 
+              "coachedParticipantId": String, 
               "attributes": {String: String}, 
               "calls": { 
                 "state": String, 
@@ -45697,6 +45801,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "conversationRoutingData": ConversationRoutingData, 
                 "alertingTimeoutMs": Number, 
                 "monitoredParticipantId": String, 
+                "coachedParticipantId": String, 
                 "attributes": {String: String}, 
                 "calls": [Call], 
                 "callbacks": [Callback], 
@@ -46243,6 +46348,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               },  
               "alertingTimeoutMs": Number, 
               "monitoredParticipantId": String, 
+              "coachedParticipantId": String, 
               "attributes": {String: String}, 
               "calls": { 
                 "state": String, 
@@ -46892,6 +46998,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "conversationRoutingData": ConversationRoutingData, 
                 "alertingTimeoutMs": Number, 
                 "monitoredParticipantId": String, 
+                "coachedParticipantId": String, 
                 "attributes": {String: String}, 
                 "calls": [Call], 
                 "callbacks": [Callback], 

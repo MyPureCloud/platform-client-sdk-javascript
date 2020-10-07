@@ -14,6 +14,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getAnalyticsConversationsDetails**](AnalyticsApi.html#getAnalyticsConversationsDetails) | **GET** /api/v2/analytics/conversations/details | Gets multiple conversations by id
 [**getAnalyticsConversationsDetailsJob**](AnalyticsApi.html#getAnalyticsConversationsDetailsJob) | **GET** /api/v2/analytics/conversations/details/jobs/{jobId} | Get status for async query for conversation details
 [**getAnalyticsConversationsDetailsJobResults**](AnalyticsApi.html#getAnalyticsConversationsDetailsJobResults) | **GET** /api/v2/analytics/conversations/details/jobs/{jobId}/results | Fetch a page of results for an async query
+[**getAnalyticsConversationsDetailsJobsAvailability**](AnalyticsApi.html#getAnalyticsConversationsDetailsJobsAvailability) | **GET** /api/v2/analytics/conversations/details/jobs/availability | Lookup the datalake availability date and time
 [**getAnalyticsReportingExports**](AnalyticsApi.html#getAnalyticsReportingExports) | **GET** /api/v2/analytics/reporting/exports | Get all view export requests for a user
 [**getAnalyticsReportingExportsMetadata**](AnalyticsApi.html#getAnalyticsReportingExportsMetadata) | **GET** /api/v2/analytics/reporting/exports/metadata | Get all export metadata
 [**getAnalyticsReportingMetadata**](AnalyticsApi.html#getAnalyticsReportingMetadata) | **GET** /api/v2/analytics/reporting/metadata | Get list of reporting metadata.
@@ -27,6 +28,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getAnalyticsReportingTimeperiods**](AnalyticsApi.html#getAnalyticsReportingTimeperiods) | **GET** /api/v2/analytics/reporting/timeperiods | Get a list of report time periods.
 [**getAnalyticsUsersDetailsJob**](AnalyticsApi.html#getAnalyticsUsersDetailsJob) | **GET** /api/v2/analytics/users/details/jobs/{jobId} | Get status for async query for user details
 [**getAnalyticsUsersDetailsJobResults**](AnalyticsApi.html#getAnalyticsUsersDetailsJobResults) | **GET** /api/v2/analytics/users/details/jobs/{jobId}/results | Fetch a page of results for an async query
+[**getAnalyticsUsersDetailsJobsAvailability**](AnalyticsApi.html#getAnalyticsUsersDetailsJobsAvailability) | **GET** /api/v2/analytics/users/details/jobs/availability | Lookup the datalake availability date and time
 [**postAnalyticsConversationDetailsProperties**](AnalyticsApi.html#postAnalyticsConversationDetailsProperties) | **POST** /api/v2/analytics/conversations/{conversationId}/details/properties | Index conversation properties
 [**postAnalyticsConversationsAggregatesQuery**](AnalyticsApi.html#postAnalyticsConversationsAggregatesQuery) | **POST** /api/v2/analytics/conversations/aggregates/query | Query for conversation aggregates
 [**postAnalyticsConversationsDetailsJobs**](AnalyticsApi.html#postAnalyticsConversationsDetailsJobs) | **POST** /api/v2/analytics/conversations/details/jobs | Query for conversation details asynchronously
@@ -40,6 +42,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postAnalyticsReportingScheduleRunreport**](AnalyticsApi.html#postAnalyticsReportingScheduleRunreport) | **POST** /api/v2/analytics/reporting/schedules/{scheduleId}/runreport | Place a scheduled report immediately into the reporting queue
 [**postAnalyticsReportingSchedules**](AnalyticsApi.html#postAnalyticsReportingSchedules) | **POST** /api/v2/analytics/reporting/schedules | Create a scheduled report job
 [**postAnalyticsSurveysAggregatesQuery**](AnalyticsApi.html#postAnalyticsSurveysAggregatesQuery) | **POST** /api/v2/analytics/surveys/aggregates/query | Query for survey aggregates
+[**postAnalyticsTranscriptsAggregatesQuery**](AnalyticsApi.html#postAnalyticsTranscriptsAggregatesQuery) | **POST** /api/v2/analytics/transcripts/aggregates/query | Query for transcript aggregates
 [**postAnalyticsUsersAggregatesQuery**](AnalyticsApi.html#postAnalyticsUsersAggregatesQuery) | **POST** /api/v2/analytics/users/aggregates/query | Query for user aggregates
 [**postAnalyticsUsersDetailsJobs**](AnalyticsApi.html#postAnalyticsUsersDetailsJobs) | **POST** /api/v2/analytics/users/details/jobs | Query for user details asynchronously
 [**postAnalyticsUsersDetailsQuery**](AnalyticsApi.html#postAnalyticsUsersDetailsQuery) | **POST** /api/v2/analytics/users/details/query | Query for user details
@@ -438,6 +441,56 @@ apiInstance.getAnalyticsConversationsDetailsJobResults(jobId, opts)
 ### Return type
 
 **AnalyticsConversationAsyncQueryResponse**
+
+<a name="getAnalyticsConversationsDetailsJobsAvailability"></a>
+
+# DataAvailabilityResponse getAnalyticsConversationsDetailsJobsAvailability()
+
+
+
+GET /api/v2/analytics/conversations/details/jobs/availability
+
+Lookup the datalake availability date and time
+
+
+
+Requires ANY permissions: 
+
+* analytics:conversationDetail:view
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AnalyticsApi();
+
+apiInstance.getAnalyticsConversationsDetailsJobsAvailability()
+  .then((data) => {
+    console.log(`getAnalyticsConversationsDetailsJobsAvailability success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getAnalyticsConversationsDetailsJobsAvailability');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+{: class="table table-striped"}
+
+### Return type
+
+**DataAvailabilityResponse**
 
 <a name="getAnalyticsReportingExports"></a>
 
@@ -1163,6 +1216,56 @@ apiInstance.getAnalyticsUsersDetailsJobResults(jobId, opts)
 ### Return type
 
 **AnalyticsUserDetailsAsyncQueryResponse**
+
+<a name="getAnalyticsUsersDetailsJobsAvailability"></a>
+
+# DataAvailabilityResponse getAnalyticsUsersDetailsJobsAvailability()
+
+
+
+GET /api/v2/analytics/users/details/jobs/availability
+
+Lookup the datalake availability date and time
+
+
+
+Requires ANY permissions: 
+
+* analytics:userDetail:view
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AnalyticsApi();
+
+apiInstance.getAnalyticsUsersDetailsJobsAvailability()
+  .then((data) => {
+    console.log(`getAnalyticsUsersDetailsJobsAvailability success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getAnalyticsUsersDetailsJobsAvailability');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+{: class="table table-striped"}
+
+### Return type
+
+**DataAvailabilityResponse**
 
 <a name="postAnalyticsConversationDetailsProperties"></a>
 
@@ -2703,6 +2806,8 @@ ReportingExportJobRequest <a href="#" onclick="return copyReportingExportJobRequ
   "hasSplitFilters": Boolean, 
   "excludeEmptyRows": Boolean, 
   "hasSplitByMedia": Boolean, 
+  "hasSummaryRow": Boolean, 
+  "csvDelimiter": String, 
   "selectedColumns": { 
     "columnOrder": Number, 
     "columnName": String, 
@@ -3038,6 +3143,131 @@ apiInstance.postAnalyticsSurveysAggregatesQuery(body)
 ### Return type
 
 **SurveyAggregateQueryResponse**
+
+<a name="postAnalyticsTranscriptsAggregatesQuery"></a>
+
+# TranscriptAggregateQueryResponse postAnalyticsTranscriptsAggregatesQuery(body)
+
+
+
+POST /api/v2/analytics/transcripts/aggregates/query
+
+Query for transcript aggregates
+
+
+
+Requires ANY permissions: 
+
+* analytics:speechAndTextAnalyticsAggregates:view
+
+
+### Request Body Schema
+
+<script type="text/javascript">
+	function copyTranscriptAggregationQueryExample() {
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#TranscriptAggregationQueryExample').text()).select();
+		document.execCommand("copy");
+		temp.remove();
+		return false;
+	}
+</script>
+
+TranscriptAggregationQuery <a href="#" onclick="return copyTranscriptAggregationQueryExample()">Copy</a>
+
+<div id="TranscriptAggregationQueryExample">
+
+```{"language":"json", "maxHeight": "250px"}
+{ 
+  "interval": String, 
+  "granularity": String, 
+  "timeZone": String, 
+  "groupBy": [String], 
+  "filter": { 
+    "type": String, 
+    "clauses": { 
+      "type": String, 
+      "predicates": { 
+        "type": String, 
+        "dimension": String, 
+        "operator": String, 
+        "value": String, 
+        "range": { 
+          "gt": Number, 
+          "gte": Number, 
+          "lt": Number, 
+          "lte": Number, 
+        },  
+      },  
+    },  
+    "predicates": { 
+      "type": String, 
+      "dimension": String, 
+      "operator": String, 
+      "value": String, 
+      "range": { 
+        "gt": Number, 
+        "gte": Number, 
+        "lt": Number, 
+        "lte": Number, 
+      },  
+    },  
+  },  
+  "metrics": [String], 
+  "flattenMultivaluedDimensions": Boolean, 
+  "views": { 
+    "target": String, 
+    "name": String, 
+    "function": String, 
+    "range": { 
+      "gte": Number, 
+      "lt": Number, 
+    },  
+  },  
+  "alternateTimeDimension": String, 
+}
+```
+
+</div>
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AnalyticsApi();
+
+let body = {}; // Object | query
+
+apiInstance.postAnalyticsTranscriptsAggregatesQuery(body)
+  .then((data) => {
+    console.log(`postAnalyticsTranscriptsAggregatesQuery success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postAnalyticsTranscriptsAggregatesQuery');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | query |  |
+{: class="table table-striped"}
+
+### Return type
+
+**TranscriptAggregateQueryResponse**
 
 <a name="postAnalyticsUsersAggregatesQuery"></a>
 

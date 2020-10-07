@@ -3058,6 +3058,7 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
       },  
       "alertingTimeoutMs": Number, 
       "monitoredParticipantId": String, 
+      "coachedParticipantId": String, 
       "attributes": {String: String}, 
       "calls": { 
         "state": String, 
@@ -3713,6 +3714,7 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
             },  
             "alertingTimeoutMs": Number, 
             "monitoredParticipantId": String, 
+            "coachedParticipantId": String, 
             "attributes": {String: String}, 
             "calls": { 
               "state": String, 
@@ -6320,6 +6322,7 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
               },  
               "alertingTimeoutMs": Number, 
               "monitoredParticipantId": String, 
+              "coachedParticipantId": String, 
               "attributes": {String: String}, 
               "calls": { 
                 "state": String, 
@@ -6680,6 +6683,7 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
                 "conversationRoutingData": ConversationRoutingData, 
                 "alertingTimeoutMs": Number, 
                 "monitoredParticipantId": String, 
+                "coachedParticipantId": String, 
                 "attributes": {String: String}, 
                 "calls": [Call], 
                 "callbacks": [Callback], 
@@ -7349,6 +7353,7 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
                 "conversationRoutingData": ConversationRoutingData, 
                 "alertingTimeoutMs": Number, 
                 "monitoredParticipantId": String, 
+                "coachedParticipantId": String, 
                 "attributes": {String: String}, 
                 "calls": [Call], 
                 "callbacks": [Callback], 
@@ -18365,6 +18370,7 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
       },  
       "alertingTimeoutMs": Number, 
       "monitoredParticipantId": String, 
+      "coachedParticipantId": String, 
       "attributes": {String: String}, 
       "calls": { 
         "state": String, 
@@ -19020,6 +19026,7 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
             },  
             "alertingTimeoutMs": Number, 
             "monitoredParticipantId": String, 
+            "coachedParticipantId": String, 
             "attributes": {String: String}, 
             "calls": { 
               "state": String, 
@@ -21627,6 +21634,7 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
               },  
               "alertingTimeoutMs": Number, 
               "monitoredParticipantId": String, 
+              "coachedParticipantId": String, 
               "attributes": {String: String}, 
               "calls": { 
                 "state": String, 
@@ -21987,6 +21995,7 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
                 "conversationRoutingData": ConversationRoutingData, 
                 "alertingTimeoutMs": Number, 
                 "monitoredParticipantId": String, 
+                "coachedParticipantId": String, 
                 "attributes": {String: String}, 
                 "calls": [Call], 
                 "callbacks": [Callback], 
@@ -22656,6 +22665,7 @@ VoicemailMessage <a href="#" onclick="return copyVoicemailMessageExample()">Copy
                 "conversationRoutingData": ConversationRoutingData, 
                 "alertingTimeoutMs": Number, 
                 "monitoredParticipantId": String, 
+                "coachedParticipantId": String, 
                 "attributes": {String: String}, 
                 "calls": [Call], 
                 "callbacks": [Callback], 
