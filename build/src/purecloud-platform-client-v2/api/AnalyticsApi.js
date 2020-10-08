@@ -5,7 +5,7 @@ class AnalyticsApi {
 	/**
 	 * Analytics service.
 	 * @module purecloud-platform-client-v2/api/AnalyticsApi
-	 * @version 93.0.0
+	 * @version 94.0.0
 	 */
 
 	/**
@@ -662,6 +662,31 @@ class AnalyticsApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/analytics/conversations/details/query', 
+			'POST', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Search resources.
+	 * 
+	 * @param {Object} body Search request options
+	 */
+	postAnalyticsConversationsTranscriptsQuery(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postAnalyticsConversationsTranscriptsQuery';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/conversations/transcripts/query', 
 			'POST', 
 			{  }, 
 			{  }, 

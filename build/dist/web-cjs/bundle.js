@@ -1983,7 +1983,7 @@ function isSlowBuffer (obj) {
 
 /**
  * @module purecloud-platform-client-v2/ApiClient
- * @version 93.0.0
+ * @version 94.0.0
  */
 class ApiClient {
 	/**
@@ -2739,7 +2739,7 @@ class ApiClient {
 
 		// set header parameters
 		request.set(this.defaultHeaders).set(this.normalizeParams(headerParams));
-		//request.set({ 'purecloud-sdk': '93.0.0' });
+		//request.set({ 'purecloud-sdk': '94.0.0' });
 
 		// set request timeout
 		request.timeout(this.timeout);
@@ -2864,7 +2864,7 @@ class AlertingApi {
 	/**
 	 * Alerting service.
 	 * @module purecloud-platform-client-v2/api/AlertingApi
-	 * @version 93.0.0
+	 * @version 94.0.0
 	 */
 
 	/**
@@ -3178,7 +3178,7 @@ class AnalyticsApi {
 	/**
 	 * Analytics service.
 	 * @module purecloud-platform-client-v2/api/AnalyticsApi
-	 * @version 93.0.0
+	 * @version 94.0.0
 	 */
 
 	/**
@@ -3848,6 +3848,31 @@ class AnalyticsApi {
 	}
 
 	/**
+	 * Search resources.
+	 * 
+	 * @param {Object} body Search request options
+	 */
+	postAnalyticsConversationsTranscriptsQuery(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postAnalyticsConversationsTranscriptsQuery';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/conversations/transcripts/query', 
+			'POST', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
 	 * Query for evaluation aggregates
 	 * 
 	 * @param {Object} body query
@@ -4233,7 +4258,7 @@ class ArchitectApi {
 	/**
 	 * Architect service.
 	 * @module purecloud-platform-client-v2/api/ArchitectApi
-	 * @version 93.0.0
+	 * @version 94.0.0
 	 */
 
 	/**
@@ -7071,7 +7096,7 @@ class AuditApi {
 	/**
 	 * Audit service.
 	 * @module purecloud-platform-client-v2/api/AuditApi
-	 * @version 93.0.0
+	 * @version 94.0.0
 	 */
 
 	/**
@@ -7242,7 +7267,7 @@ class AuthorizationApi {
 	/**
 	 * Authorization service.
 	 * @module purecloud-platform-client-v2/api/AuthorizationApi
-	 * @version 93.0.0
+	 * @version 94.0.0
 	 */
 
 	/**
@@ -8359,7 +8384,7 @@ class BillingApi {
 	/**
 	 * Billing service.
 	 * @module purecloud-platform-client-v2/api/BillingApi
-	 * @version 93.0.0
+	 * @version 94.0.0
 	 */
 
 	/**
@@ -8439,7 +8464,7 @@ class CoachingApi {
 	/**
 	 * Coaching service.
 	 * @module purecloud-platform-client-v2/api/CoachingApi
-	 * @version 93.0.0
+	 * @version 94.0.0
 	 */
 
 	/**
@@ -8629,14 +8654,14 @@ class CoachingApi {
 	 * 
 	 * @param {Array.<String>} userIds The user IDs for which to retrieve appointments
 	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.interval Interval to filter data by. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
+	 * @param {String} opts.interval Interval to filter data by. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Array.<String>} opts.statuses Appointment Statuses to filter by
 	 * @param {Array.<String>} opts.facilitatorIds The facilitator IDs for which to retrieve appointments
 	 * @param {Object} opts.sortOrder Sort (by due date) either Asc or Desc
 	 * @param {Array.<String>} opts.relationships Relationships to filter by
-	 * @param {String} opts.completionInterval Appointment completion start and end to filter by. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
+	 * @param {String} opts.completionInterval Appointment completion start and end to filter by. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
 	 * @param {Object} opts.overdue Overdue status to filter by
 	 */
 	getCoachingAppointments(userIds, opts) { 
@@ -8665,14 +8690,14 @@ class CoachingApi {
 	 * Get my appointments for a given date range
 	 * 
 	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.interval Interval to filter data by. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
+	 * @param {String} opts.interval Interval to filter data by. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Array.<String>} opts.statuses Appointment Statuses to filter by
 	 * @param {Array.<String>} opts.facilitatorIds The facilitator IDs for which to retrieve appointments
 	 * @param {Object} opts.sortOrder Sort (by due date) either Asc or Desc
 	 * @param {Array.<String>} opts.relationships Relationships to filter by
-	 * @param {String} opts.completionInterval Appointment completion start and end to filter by. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
+	 * @param {String} opts.completionInterval Appointment completion start and end to filter by. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
 	 * @param {Object} opts.overdue Overdue status to filter by
 	 */
 	getCoachingAppointmentsMe(opts) { 
@@ -8959,7 +8984,7 @@ class ContentManagementApi {
 	/**
 	 * ContentManagement service.
 	 * @module purecloud-platform-client-v2/api/ContentManagementApi
-	 * @version 93.0.0
+	 * @version 94.0.0
 	 */
 
 	/**
@@ -10099,7 +10124,7 @@ class ConversationsApi {
 	/**
 	 * Conversations service.
 	 * @module purecloud-platform-client-v2/api/ConversationsApi
-	 * @version 93.0.0
+	 * @version 94.0.0
 	 */
 
 	/**
@@ -14141,7 +14166,7 @@ class DataExtensionsApi {
 	/**
 	 * DataExtensions service.
 	 * @module purecloud-platform-client-v2/api/DataExtensionsApi
-	 * @version 93.0.0
+	 * @version 94.0.0
 	 */
 
 	/**
@@ -14227,7 +14252,7 @@ class ExternalContactsApi {
 	/**
 	 * ExternalContacts service.
 	 * @module purecloud-platform-client-v2/api/ExternalContactsApi
-	 * @version 93.0.0
+	 * @version 94.0.0
 	 */
 
 	/**
@@ -15570,7 +15595,7 @@ class FaxApi {
 	/**
 	 * Fax service.
 	 * @module purecloud-platform-client-v2/api/FaxApi
-	 * @version 93.0.0
+	 * @version 94.0.0
 	 */
 
 	/**
@@ -15741,7 +15766,7 @@ class FlowsApi {
 	/**
 	 * Flows service.
 	 * @module purecloud-platform-client-v2/api/FlowsApi
-	 * @version 93.0.0
+	 * @version 94.0.0
 	 */
 
 	/**
@@ -15812,7 +15837,7 @@ class GeneralDataProtectionRegulationApi {
 	/**
 	 * GeneralDataProtectionRegulation service.
 	 * @module purecloud-platform-client-v2/api/GeneralDataProtectionRegulationApi
-	 * @version 93.0.0
+	 * @version 94.0.0
 	 */
 
 	/**
@@ -15942,7 +15967,7 @@ class GeolocationApi {
 	/**
 	 * Geolocation service.
 	 * @module purecloud-platform-client-v2/api/GeolocationApi
-	 * @version 93.0.0
+	 * @version 94.0.0
 	 */
 
 	/**
@@ -16073,7 +16098,7 @@ class GreetingsApi {
 	/**
 	 * Greetings service.
 	 * @module purecloud-platform-client-v2/api/GreetingsApi
-	 * @version 93.0.0
+	 * @version 94.0.0
 	 */
 
 	/**
@@ -16528,7 +16553,7 @@ class GroupsApi {
 	/**
 	 * Groups service.
 	 * @module purecloud-platform-client-v2/api/GroupsApi
-	 * @version 93.0.0
+	 * @version 94.0.0
 	 */
 
 	/**
@@ -16933,7 +16958,7 @@ class IdentityProviderApi {
 	/**
 	 * IdentityProvider service.
 	 * @module purecloud-platform-client-v2/api/IdentityProviderApi
-	 * @version 93.0.0
+	 * @version 94.0.0
 	 */
 
 	/**
@@ -17689,7 +17714,7 @@ class IntegrationsApi {
 	/**
 	 * Integrations service.
 	 * @module purecloud-platform-client-v2/api/IntegrationsApi
-	 * @version 93.0.0
+	 * @version 94.0.0
 	 */
 
 	/**
@@ -19181,7 +19206,7 @@ class JourneyApi {
 	/**
 	 * Journey service.
 	 * @module purecloud-platform-client-v2/api/JourneyApi
-	 * @version 93.0.0
+	 * @version 94.0.0
 	 */
 
 	/**
@@ -19306,7 +19331,7 @@ class KnowledgeApi {
 	/**
 	 * Knowledge service.
 	 * @module purecloud-platform-client-v2/api/KnowledgeApi
-	 * @version 93.0.0
+	 * @version 94.0.0
 	 */
 
 	/**
@@ -20026,7 +20051,7 @@ class LanguageUnderstandingApi {
 	/**
 	 * LanguageUnderstanding service.
 	 * @module purecloud-platform-client-v2/api/LanguageUnderstandingApi
-	 * @version 93.0.0
+	 * @version 94.0.0
 	 */
 
 	/**
@@ -20592,7 +20617,7 @@ class LanguagesApi {
 	/**
 	 * Languages service.
 	 * @module purecloud-platform-client-v2/api/LanguagesApi
-	 * @version 93.0.0
+	 * @version 94.0.0
 	 */
 
 	/**
@@ -20860,7 +20885,7 @@ class LicenseApi {
 	/**
 	 * License service.
 	 * @module purecloud-platform-client-v2/api/LicenseApi
-	 * @version 93.0.0
+	 * @version 94.0.0
 	 */
 
 	/**
@@ -21098,7 +21123,7 @@ class LocationsApi {
 	/**
 	 * Locations service.
 	 * @module purecloud-platform-client-v2/api/LocationsApi
-	 * @version 93.0.0
+	 * @version 94.0.0
 	 */
 
 	/**
@@ -21334,7 +21359,7 @@ class MobileDevicesApi {
 	/**
 	 * MobileDevices service.
 	 * @module purecloud-platform-client-v2/api/MobileDevicesApi
-	 * @version 93.0.0
+	 * @version 94.0.0
 	 */
 
 	/**
@@ -21485,7 +21510,7 @@ class NotificationsApi {
 	/**
 	 * Notifications service.
 	 * @module purecloud-platform-client-v2/api/NotificationsApi
-	 * @version 93.0.0
+	 * @version 94.0.0
 	 */
 
 	/**
@@ -21684,7 +21709,7 @@ class OAuthApi {
 	/**
 	 * OAuth service.
 	 * @module purecloud-platform-client-v2/api/OAuthApi
-	 * @version 93.0.0
+	 * @version 94.0.0
 	 */
 
 	/**
@@ -22042,7 +22067,7 @@ class ObjectsApi {
 	/**
 	 * Objects service.
 	 * @module purecloud-platform-client-v2/api/ObjectsApi
-	 * @version 93.0.0
+	 * @version 94.0.0
 	 */
 
 	/**
@@ -22283,7 +22308,7 @@ class OrganizationApi {
 	/**
 	 * Organization service.
 	 * @module purecloud-platform-client-v2/api/OrganizationApi
-	 * @version 93.0.0
+	 * @version 94.0.0
 	 */
 
 	/**
@@ -22538,7 +22563,7 @@ class OrganizationAuthorizationApi {
 	/**
 	 * OrganizationAuthorization service.
 	 * @module purecloud-platform-client-v2/api/OrganizationAuthorizationApi
-	 * @version 93.0.0
+	 * @version 94.0.0
 	 */
 
 	/**
@@ -23248,7 +23273,7 @@ class OutboundApi {
 	/**
 	 * Outbound service.
 	 * @module purecloud-platform-client-v2/api/OutboundApi
-	 * @version 93.0.0
+	 * @version 94.0.0
 	 */
 
 	/**
@@ -26222,7 +26247,7 @@ class PresenceApi {
 	/**
 	 * Presence service.
 	 * @module purecloud-platform-client-v2/api/PresenceApi
-	 * @version 93.0.0
+	 * @version 94.0.0
 	 */
 
 	/**
@@ -26569,7 +26594,7 @@ class QualityApi {
 	/**
 	 * Quality service.
 	 * @module purecloud-platform-client-v2/api/QualityApi
-	 * @version 93.0.0
+	 * @version 94.0.0
 	 */
 
 	/**
@@ -28266,7 +28291,7 @@ class RecordingApi {
 	/**
 	 * Recording service.
 	 * @module purecloud-platform-client-v2/api/RecordingApi
-	 * @version 93.0.0
+	 * @version 94.0.0
 	 */
 
 	/**
@@ -29512,7 +29537,7 @@ class ResponseManagementApi {
 	/**
 	 * ResponseManagement service.
 	 * @module purecloud-platform-client-v2/api/ResponseManagementApi
-	 * @version 93.0.0
+	 * @version 94.0.0
 	 */
 
 	/**
@@ -29837,7 +29862,7 @@ class RoutingApi {
 	/**
 	 * Routing service.
 	 * @module purecloud-platform-client-v2/api/RoutingApi
-	 * @version 93.0.0
+	 * @version 94.0.0
 	 */
 
 	/**
@@ -32135,7 +32160,7 @@ class SCIMApi {
 	/**
 	 * SCIM service.
 	 * @module purecloud-platform-client-v2/api/SCIMApi
-	 * @version 93.0.0
+	 * @version 94.0.0
 	 */
 
 	/**
@@ -33120,7 +33145,7 @@ class ScriptsApi {
 	/**
 	 * Scripts service.
 	 * @module purecloud-platform-client-v2/api/ScriptsApi
-	 * @version 93.0.0
+	 * @version 94.0.0
 	 */
 
 	/**
@@ -33473,7 +33498,7 @@ class SearchApi {
 	/**
 	 * Search service.
 	 * @module purecloud-platform-client-v2/api/SearchApi
-	 * @version 93.0.0
+	 * @version 94.0.0
 	 */
 
 	/**
@@ -33709,6 +33734,31 @@ class SearchApi {
 			{  }, 
 			{  }, 
 			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Search resources.
+	 * 
+	 * @param {Object} body Search request options
+	 */
+	postAnalyticsConversationsTranscriptsQuery(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postAnalyticsConversationsTranscriptsQuery';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/conversations/transcripts/query', 
+			'POST', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
 			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
@@ -33958,7 +34008,7 @@ class SpeechTextAnalyticsApi {
 	/**
 	 * SpeechTextAnalytics service.
 	 * @module purecloud-platform-client-v2/api/SpeechTextAnalyticsApi
-	 * @version 93.0.0
+	 * @version 94.0.0
 	 */
 
 	/**
@@ -34034,7 +34084,7 @@ class StationsApi {
 	/**
 	 * Stations service.
 	 * @module purecloud-platform-client-v2/api/StationsApi
-	 * @version 93.0.0
+	 * @version 94.0.0
 	 */
 
 	/**
@@ -34181,7 +34231,7 @@ class SuggestApi {
 	/**
 	 * Suggest service.
 	 * @module purecloud-platform-client-v2/api/SuggestApi
-	 * @version 93.0.0
+	 * @version 94.0.0
 	 */
 
 	/**
@@ -34320,7 +34370,7 @@ class TelephonyApi {
 	/**
 	 * Telephony service.
 	 * @module purecloud-platform-client-v2/api/TelephonyApi
-	 * @version 93.0.0
+	 * @version 94.0.0
 	 */
 
 	/**
@@ -34428,7 +34478,7 @@ class TelephonyProvidersEdgeApi {
 	/**
 	 * TelephonyProvidersEdge service.
 	 * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-	 * @version 93.0.0
+	 * @version 94.0.0
 	 */
 
 	/**
@@ -38005,7 +38055,7 @@ class TextbotsApi {
 	/**
 	 * Textbots service.
 	 * @module purecloud-platform-client-v2/api/TextbotsApi
-	 * @version 93.0.0
+	 * @version 94.0.0
 	 */
 
 	/**
@@ -38051,7 +38101,7 @@ class TokensApi {
 	/**
 	 * Tokens service.
 	 * @module purecloud-platform-client-v2/api/TokensApi
-	 * @version 93.0.0
+	 * @version 94.0.0
 	 */
 
 	/**
@@ -38137,7 +38187,7 @@ class UploadsApi {
 	/**
 	 * Uploads service.
 	 * @module purecloud-platform-client-v2/api/UploadsApi
-	 * @version 93.0.0
+	 * @version 94.0.0
 	 */
 
 	/**
@@ -38183,7 +38233,7 @@ class UsageApi {
 	/**
 	 * Usage service.
 	 * @module purecloud-platform-client-v2/api/UsageApi
-	 * @version 93.0.0
+	 * @version 94.0.0
 	 */
 
 	/**
@@ -38254,7 +38304,7 @@ class UserDevelopmentApi {
 	/**
 	 * UserDevelopment service.
 	 * @module purecloud-platform-client-v2/api/UserDevelopmentApi
-	 * @version 93.0.0
+	 * @version 94.0.0
 	 */
 
 	/**
@@ -38275,8 +38325,8 @@ class UserDevelopmentApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.userId Specifies the list of user IDs to be queried, up to 100 user IDs. It searches for any relationship for the userId.
 	 * @param {String} opts.moduleId Specifies the ID of the learning module.
-	 * @param {String} opts.interval Specifies the dateDue range to be queried. Milliseconds will be truncated. A maximum of 1 year can be specified in the range. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
-	 * @param {String} opts.completionInterval Specifies the range of completion dates to be used for filtering. A maximum of 1 year can be specified in the range. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
+	 * @param {String} opts.interval Specifies the dateDue range to be queried. Milliseconds will be truncated. A maximum of 1 year can be specified in the range. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
+	 * @param {String} opts.completionInterval Specifies the range of completion dates to be used for filtering. A maximum of 1 year can be specified in the range. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
 	 * @param {Object} opts.overdue Specifies if non-overdue, overdue, or all activities are returned. If not specified, all activities are returned (default to Any)
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
@@ -38308,8 +38358,8 @@ class UserDevelopmentApi {
 	 * Results are filtered based on the applicable permissions.
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.moduleId Specifies the ID of the learning module.
-	 * @param {String} opts.interval Specifies the dateDue range to be queried. Milliseconds will be truncated. A maximum of 1 year can be specified in the range. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
-	 * @param {String} opts.completionInterval Specifies the range of completion dates to be used for filtering. A maximum of 1 year can be specified in the range. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
+	 * @param {String} opts.interval Specifies the dateDue range to be queried. Milliseconds will be truncated. A maximum of 1 year can be specified in the range. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
+	 * @param {String} opts.completionInterval Specifies the range of completion dates to be used for filtering. A maximum of 1 year can be specified in the range. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
 	 * @param {Object} opts.overdue Specifies if non-overdue, overdue, or all activities are returned. If not specified, all activities are returned (default to Any)
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
@@ -38397,7 +38447,7 @@ class UserRecordingsApi {
 	/**
 	 * UserRecordings service.
 	 * @module purecloud-platform-client-v2/api/UserRecordingsApi
-	 * @version 93.0.0
+	 * @version 94.0.0
 	 */
 
 	/**
@@ -38581,7 +38631,7 @@ class UsersApi {
 	/**
 	 * Users service.
 	 * @module purecloud-platform-client-v2/api/UsersApi
-	 * @version 93.0.0
+	 * @version 94.0.0
 	 */
 
 	/**
@@ -40672,7 +40722,7 @@ class UtilitiesApi {
 	/**
 	 * Utilities service.
 	 * @module purecloud-platform-client-v2/api/UtilitiesApi
-	 * @version 93.0.0
+	 * @version 94.0.0
 	 */
 
 	/**
@@ -40783,7 +40833,7 @@ class VoicemailApi {
 	/**
 	 * Voicemail service.
 	 * @module purecloud-platform-client-v2/api/VoicemailApi
-	 * @version 93.0.0
+	 * @version 94.0.0
 	 */
 
 	/**
@@ -41420,7 +41470,7 @@ class WebChatApi {
 	/**
 	 * WebChat service.
 	 * @module purecloud-platform-client-v2/api/WebChatApi
-	 * @version 93.0.0
+	 * @version 94.0.0
 	 */
 
 	/**
@@ -41964,7 +42014,7 @@ class WidgetsApi {
 	/**
 	 * Widgets service.
 	 * @module purecloud-platform-client-v2/api/WidgetsApi
-	 * @version 93.0.0
+	 * @version 94.0.0
 	 */
 
 	/**
@@ -42110,7 +42160,7 @@ class WorkforceManagementApi {
 	/**
 	 * WorkforceManagement service.
 	 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-	 * @version 93.0.0
+	 * @version 94.0.0
 	 */
 
 	/**
@@ -46207,7 +46257,7 @@ class WorkforceManagementApi {
  * </pre>
  * </p>
  * @module purecloud-platform-client-v2/index
- * @version 93.0.0
+ * @version 94.0.0
  */
 class platformClient {
 	constructor() {

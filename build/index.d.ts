@@ -103,6 +103,7 @@ declare class AnalyticsApi {
   	postAnalyticsConversationsAggregatesQuery(body: Models.ConversationAggregationQuery): Promise<Models.ConversationAggregateQueryResponse>; 
   	postAnalyticsConversationsDetailsJobs(body: Models.AsyncConversationQuery): Promise<Models.AsyncQueryResponse>; 
   	postAnalyticsConversationsDetailsQuery(body: Models.ConversationQuery): Promise<Models.AnalyticsConversationQueryResponse>; 
+  	postAnalyticsConversationsTranscriptsQuery(body: Models.TranscriptConversationDetailSearchRequest): Promise<Models.AnalyticsConversationWithoutAttributesMultiGetResponse>; 
   	postAnalyticsEvaluationsAggregatesQuery(body: Models.EvaluationAggregationQuery): Promise<Models.EvaluationAggregateQueryResponse>; 
   	postAnalyticsFlowsAggregatesQuery(body: Models.FlowAggregationQuery): Promise<Models.FlowAggregateQueryResponse>; 
   	postAnalyticsFlowsObservationsQuery(body: Models.FlowObservationQuery): Promise<Models.FlowObservationQueryResponse>; 
@@ -3176,6 +3177,7 @@ declare class SearchApi {
   	getSearchSuggest(q64: string, opts?: SearchApi.getSearchSuggestOptions): Promise<Models.JsonNodeSearchResponse>; 
   	getUsersSearch(q64: string, opts?: SearchApi.getUsersSearchOptions): Promise<Models.UsersSearchResponse>; 
   	getVoicemailSearch(q64: string, opts?: SearchApi.getVoicemailSearchOptions): Promise<Models.VoicemailsSearchResponse>; 
+  	postAnalyticsConversationsTranscriptsQuery(body: Models.TranscriptConversationDetailSearchRequest): Promise<Models.AnalyticsConversationWithoutAttributesMultiGetResponse>; 
   	postDocumentationGknSearch(body: Models.GKNDocumentationSearchRequest): Promise<Models.GKNDocumentationSearchResponse>; 
   	postDocumentationSearch(body: Models.DocumentationSearchRequest): Promise<Models.DocumentationSearchResponse>; 
   	postGroupsSearch(body: Models.GroupSearchRequest): Promise<Models.GroupsSearchResponse>; 
@@ -5412,7 +5414,7 @@ declare namespace Models {
 		"eventDate"?: string;
 		"message"?: Models.MessageInfo;
 		"action"?: string;
-		"entity"?: Models.AddressableEntityRef;
+		"entity"?: Models.DomainEntityRef;
 		"entityType"?: string;
 		"propertyChanges"?: Array<Models.PropertyChange>;
 		"context"?: { [key: string]: string; };
@@ -13322,9 +13324,9 @@ declare namespace Models {
 	export interface GenericSAML { 
 		"id"?: string;
 		"name"?: string;
-		"logoImageData"?: string;
 		"relyingPartyIdentifier"?: string;
 		"endpointCompression"?: boolean;
+		"logoImageData"?: string;
 		"certificate"?: string;
 		"issuerURI"?: string;
 		"ssoTargetURI"?: string;
@@ -21832,6 +21834,27 @@ declare namespace Models {
 		"name": string;
 		"function": string;
 		"range"?: Models.AggregationRange;
+	}
+	
+	export interface TranscriptConversationDetailSearchCriteria { 
+		"endValue"?: string;
+		"values"?: Array<string>;
+		"startValue"?: string;
+		"fields"?: Array<string>;
+		"value"?: string;
+		"operator"?: string;
+		"group"?: Array<Models.TranscriptConversationDetailSearchCriteria>;
+		"type"?: string;
+	}
+	
+	export interface TranscriptConversationDetailSearchRequest { 
+		"sortOrder"?: string;
+		"sortBy"?: string;
+		"pageSize"?: number;
+		"pageNumber"?: number;
+		"sort"?: Array<Models.SearchSort>;
+		"types": Array<string>;
+		"query"?: Array<Models.TranscriptConversationDetailSearchCriteria>;
 	}
 	
 	export interface TranscriptUrl { 

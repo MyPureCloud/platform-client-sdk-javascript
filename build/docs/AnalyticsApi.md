@@ -33,6 +33,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postAnalyticsConversationsAggregatesQuery**](AnalyticsApi.html#postAnalyticsConversationsAggregatesQuery) | **POST** /api/v2/analytics/conversations/aggregates/query | Query for conversation aggregates
 [**postAnalyticsConversationsDetailsJobs**](AnalyticsApi.html#postAnalyticsConversationsDetailsJobs) | **POST** /api/v2/analytics/conversations/details/jobs | Query for conversation details asynchronously
 [**postAnalyticsConversationsDetailsQuery**](AnalyticsApi.html#postAnalyticsConversationsDetailsQuery) | **POST** /api/v2/analytics/conversations/details/query | Query for conversation details
+[**postAnalyticsConversationsTranscriptsQuery**](AnalyticsApi.html#postAnalyticsConversationsTranscriptsQuery) | **POST** /api/v2/analytics/conversations/transcripts/query | Search resources.
 [**postAnalyticsEvaluationsAggregatesQuery**](AnalyticsApi.html#postAnalyticsEvaluationsAggregatesQuery) | **POST** /api/v2/analytics/evaluations/aggregates/query | Query for evaluation aggregates
 [**postAnalyticsFlowsAggregatesQuery**](AnalyticsApi.html#postAnalyticsFlowsAggregatesQuery) | **POST** /api/v2/analytics/flows/aggregates/query | Query for flow aggregates
 [**postAnalyticsFlowsObservationsQuery**](AnalyticsApi.html#postAnalyticsFlowsObservationsQuery) | **POST** /api/v2/analytics/flows/observations/query | Query for flow observations
@@ -1983,6 +1984,158 @@ apiInstance.postAnalyticsConversationsDetailsQuery(body)
 ### Return type
 
 **AnalyticsConversationQueryResponse**
+
+<a name="postAnalyticsConversationsTranscriptsQuery"></a>
+
+# AnalyticsConversationWithoutAttributesMultiGetResponse postAnalyticsConversationsTranscriptsQuery(body)
+
+
+
+POST /api/v2/analytics/conversations/transcripts/query
+
+Search resources.
+
+
+
+Requires ANY permissions: 
+
+* analytics:conversationDetail:view
+
+
+### Request Body Schema
+
+<script type="text/javascript">
+	function copyTranscriptConversationDetailSearchRequestExample() {
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#TranscriptConversationDetailSearchRequestExample').text()).select();
+		document.execCommand("copy");
+		temp.remove();
+		return false;
+	}
+</script>
+
+TranscriptConversationDetailSearchRequest <a href="#" onclick="return copyTranscriptConversationDetailSearchRequestExample()">Copy</a>
+
+<div id="TranscriptConversationDetailSearchRequestExample">
+
+```{"language":"json", "maxHeight": "250px"}
+{ 
+  "sortOrder": String, 
+  "sortBy": String, 
+  "pageSize": Number, 
+  "pageNumber": Number, 
+  "sort": { 
+    "sortOrder": String, 
+    "sortBy": String, 
+  },  
+  "types": [String], 
+  "query": { 
+    "endValue": String, 
+    "values": [String], 
+    "startValue": String, 
+    "fields": [String], 
+    "value": String, 
+    "operator": String, 
+    "group": { 
+      "endValue": String, 
+      "values": [String], 
+      "startValue": String, 
+      "fields": [String], 
+      "value": String, 
+      "operator": String, 
+      "group": { 
+        "endValue": String, 
+        "values": [String], 
+        "startValue": String, 
+        "fields": [String], 
+        "value": String, 
+        "operator": String, 
+        "group": { 
+          "endValue": String, 
+          "values": [String], 
+          "startValue": String, 
+          "fields": [String], 
+          "value": String, 
+          "operator": String, 
+          "group": { 
+            "endValue": String, 
+            "values": [String], 
+            "startValue": String, 
+            "fields": [String], 
+            "value": String, 
+            "operator": String, 
+            "group": { 
+              "endValue": String, 
+              "values": [String], 
+              "startValue": String, 
+              "fields": [String], 
+              "value": String, 
+              "operator": String, 
+              "group": { 
+                "endValue": String, 
+                "values": [String], 
+                "startValue": String, 
+                "fields": [String], 
+                "value": String, 
+                "operator": String, 
+                "group": [TranscriptConversationDetailSearchCriteria], 
+                "type": String, 
+              },  
+              "type": String, 
+            },  
+            "type": String, 
+          },  
+          "type": String, 
+        },  
+        "type": String, 
+      },  
+      "type": String, 
+    },  
+    "type": String, 
+  },  
+}
+```
+
+</div>
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AnalyticsApi();
+
+let body = {}; // Object | Search request options
+
+apiInstance.postAnalyticsConversationsTranscriptsQuery(body)
+  .then((data) => {
+    console.log(`postAnalyticsConversationsTranscriptsQuery success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postAnalyticsConversationsTranscriptsQuery');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | Search request options |  |
+{: class="table table-striped"}
+
+### Return type
+
+**AnalyticsConversationWithoutAttributesMultiGetResponse**
 
 <a name="postAnalyticsEvaluationsAggregatesQuery"></a>
 
