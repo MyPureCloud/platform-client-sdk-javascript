@@ -274,9 +274,10 @@ Delete queue member
 
 
 
-Requires ALL permissions: 
+Requires ANY permissions: 
 
 * routing:queue:edit
+* routing:queueMember:manage
 
 
 
@@ -1504,9 +1505,10 @@ Get the members of this queue
 
 
 
-Requires ALL permissions: 
+Requires ANY permissions: 
 
 * routing:queue:view
+* routing:queueMember:manage
 
 
 
@@ -2703,6 +2705,7 @@ Requires ANY permissions:
 
 * routing:queue:view
 * routing:queue:join
+* routing:queueMember:manage
 
 
 
@@ -2984,9 +2987,10 @@ Update the ring number OR joined status for a User in a Queue
 
 
 
-Requires ALL permissions: 
+Requires ANY permissions: 
 
 * routing:queue:edit
+* routing:queueMember:manage
 
 
 ### Request Body Schema
@@ -3496,9 +3500,10 @@ Join or unjoin a set of users for a queue
 
 
 
-Requires ALL permissions: 
+Requires ANY permissions: 
 
 * routing:queue:edit
+* routing:queueMember:manage
 
 
 ### Request Body Schema
@@ -4086,9 +4091,10 @@ Join or unjoin a queue for a user
 
 
 
-Requires ALL permissions: 
+Requires ANY permissions: 
 
 * routing:queue:join
+* routing:queueMember:manage
 
 
 ### Request Body Schema
@@ -4404,6 +4410,7 @@ Join or unjoin a set of queues for a user
 Requires ANY permissions: 
 
 * routing:queue:join
+* routing:queueMember:manage
 
 
 ### Request Body Schema
@@ -5625,9 +5632,10 @@ Bulk add or delete up to 100 queue members
 
 
 
-Requires ALL permissions: 
+Requires ANY permissions: 
 
 * routing:queue:edit
+* routing:queueMember:manage
 
 
 ### Request Body Schema
@@ -7370,6 +7378,11 @@ Recipient <a href="#" onclick="return copyRecipientExample()">Copy</a>
         "properties": {String: Object}, 
         "additionalProperties": Object, 
       },  
+      "nluInfo": { 
+        "intents": { 
+          "name": String, 
+        },  
+      },  
       "selfUri": String, 
     },  
     "savedVersion": { 
@@ -7409,6 +7422,11 @@ Recipient <a href="#" onclick="return copyRecipientExample()">Copy</a>
         "required": [String], 
         "properties": {String: Object}, 
         "additionalProperties": Object, 
+      },  
+      "nluInfo": { 
+        "intents": { 
+          "name": String, 
+        },  
       },  
       "selfUri": String, 
     },  
@@ -7452,6 +7470,11 @@ Recipient <a href="#" onclick="return copyRecipientExample()">Copy</a>
         "properties": {String: Object}, 
         "additionalProperties": Object, 
       },  
+      "nluInfo": { 
+        "intents": { 
+          "name": String, 
+        },  
+      },  
       "selfUri": String, 
     },  
     "debugVersion": { 
@@ -7491,6 +7514,11 @@ Recipient <a href="#" onclick="return copyRecipientExample()">Copy</a>
         "required": [String], 
         "properties": {String: Object}, 
         "additionalProperties": Object, 
+      },  
+      "nluInfo": { 
+        "intents": { 
+          "name": String, 
+        },  
       },  
       "selfUri": String, 
     },  
@@ -8322,6 +8350,11 @@ Recipient <a href="#" onclick="return copyRecipientExample()">Copy</a>
       "errorMessageParams": {String: String}, 
       "actionName": String, 
       "actionStatus": String, 
+    },  
+    "nluInfo": { 
+      "intents": { 
+        "name": String, 
+      },  
     },  
     "selfUri": String, 
   },  

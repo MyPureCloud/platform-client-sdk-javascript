@@ -1,6 +1,10 @@
 {
   "notifications": [
     {
+      "topic": "v2.analytics.conversations.details.jobs.availability",
+      "class": "ConversationDetailsDatalakeAvailabilityTopicDataAvailabilityChangeNotification"
+    },
+    {
       "topic": "v2.analytics.flow.{id}.aggregates",
       "class": "StatEventFlowTopicStatsNotification"
     },
@@ -11,6 +15,10 @@
     {
       "topic": "v2.analytics.queues.{id}.observations",
       "class": "StatEventQueueTopicStatsNotification"
+    },
+    {
+      "topic": "v2.analytics.users.details.jobs.availability",
+      "class": "UserDetailsDatalakeAvailabilityTopicDataAvailabilityChangeNotification"
     },
     {
       "topic": "v2.analytics.users.{id}.aggregates",
@@ -273,6 +281,14 @@
       "class": "ConversationVideoEventTopicVideoConversation"
     },
     {
+      "topic": "v2.users.{id}.conversations.{id}.recordings",
+      "class": "RecordingEventRecording"
+    },
+    {
+      "topic": "v2.users.{id}.conversations.{id}.recordings.{id}",
+      "class": "RecordingTranscodeCompleteTopicRecording"
+    },
+    {
       "topic": "v2.users.{id}.conversationsummary",
       "class": "UserConversationsEventUserConversationSummary"
     },
@@ -303,6 +319,10 @@
     {
       "topic": "v2.users.{id}.presence",
       "class": "PresenceEventUserPresence"
+    },
+    {
+      "topic": "v2.users.{id}.recordings",
+      "class": "RecordingArchiveRestoreTopicRecording"
     },
     {
       "topic": "v2.users.{id}.routingStatus",

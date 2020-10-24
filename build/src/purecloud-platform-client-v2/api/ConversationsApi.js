@@ -5,7 +5,7 @@ class ConversationsApi {
 	/**
 	 * Conversations service.
 	 * @module purecloud-platform-client-v2/api/ConversationsApi
-	 * @version 95.0.0
+	 * @version 96.0.0
 	 */
 
 	/**
@@ -3634,7 +3634,7 @@ class ConversationsApi {
 
 	/**
 	 * Send message
-	 * 
+	 * Send message on existing conversation/communication. Only one message body field can be accepted, per request. Example: 1 textBody, 1 mediaId, 1 stickerId, or 1 messageTemplate.
 	 * @param {String} conversationId conversationId
 	 * @param {String} communicationId communicationId
 	 * @param {Object} body Message
@@ -3815,8 +3815,12 @@ class ConversationsApi {
 	 * Create a Facebook Integration
 	 * 
 	 * @param {Object} body FacebookIntegrationRequest
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.async Create a Facebook integration in an asynchronous manner. If the parameter value is true, this initiates the generation of a new Facebook integration. An integration ID is returned, it can be used to query the integration. Check the integration&#39;s createStatus for Completed or Error to detect the create is finished. (default to false)
 	 */
-	postConversationsMessagingIntegrationsFacebook(body) { 
+	postConversationsMessagingIntegrationsFacebook(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postConversationsMessagingIntegrationsFacebook';
@@ -3826,7 +3830,7 @@ class ConversationsApi {
 			'/api/v2/conversations/messaging/integrations/facebook', 
 			'POST', 
 			{  }, 
-			{  }, 
+			{ 'async': opts['async'] }, 
 			{  }, 
 			{  }, 
 			body, 
@@ -3840,8 +3844,12 @@ class ConversationsApi {
 	 * Create a LINE messenger Integration
 	 * 
 	 * @param {Object} body LineIntegrationRequest
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.async Create a LINE integration in an asynchronous manner. If the parameter value is true, this initiates the generation of a new LINE integration. An integration ID is returned, it can be used to query the integration. Check the integration&#39;s createStatus for Completed or Error to detect the create is finished. (default to false)
 	 */
-	postConversationsMessagingIntegrationsLine(body) { 
+	postConversationsMessagingIntegrationsLine(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postConversationsMessagingIntegrationsLine';
@@ -3851,7 +3859,7 @@ class ConversationsApi {
 			'/api/v2/conversations/messaging/integrations/line', 
 			'POST', 
 			{  }, 
-			{  }, 
+			{ 'async': opts['async'] }, 
 			{  }, 
 			{  }, 
 			body, 
@@ -3865,8 +3873,12 @@ class ConversationsApi {
 	 * Create a Twitter Integration
 	 * 
 	 * @param {Object} body TwitterIntegrationRequest
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.async Create a Twitter integration in an asynchronous manner. If the parameter value is true, this initiates the generation of a new Twitter integration. An integration ID is returned, it can be used to query the integration. Check the integration&#39;s createStatus for Completed or Error to detect the create is finished. (default to false)
 	 */
-	postConversationsMessagingIntegrationsTwitter(body) { 
+	postConversationsMessagingIntegrationsTwitter(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postConversationsMessagingIntegrationsTwitter';
@@ -3876,7 +3888,7 @@ class ConversationsApi {
 			'/api/v2/conversations/messaging/integrations/twitter', 
 			'POST', 
 			{  }, 
-			{  }, 
+			{ 'async': opts['async'] }, 
 			{  }, 
 			{  }, 
 			body, 
@@ -3890,8 +3902,12 @@ class ConversationsApi {
 	 * Create a WhatsApp Integration
 	 * You must be approved by WhatsApp to use this feature. Your approved e164-formatted phone number and valid WhatsApp certificate for your number are required. Your WhatsApp certificate must have valid base64 encoding. Please paste carefully and do not add any leading or trailing spaces. Do not alter any characters. An integration must be activated within 7 days of certificate generation. If you cannot complete the addition and activation of the number within 7 days, please obtain a new certificate before creating the integration. Integrations created with an invalid number or certificate may immediately incur additional integration fees. Please carefully enter your number and certificate as described.
 	 * @param {Object} body WhatsAppIntegrationRequest
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.async Create a WhatsApp integration in an asynchronous manner. If the parameter value is true, this initiates the generation of a new WhatsApp integration. An integration ID is returned, it can be used to query the integration. Check the integration&#39;s createStatus for Completed or Error to detect the create is finished. (default to false)
 	 */
-	postConversationsMessagingIntegrationsWhatsapp(body) { 
+	postConversationsMessagingIntegrationsWhatsapp(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postConversationsMessagingIntegrationsWhatsapp';
@@ -3901,7 +3917,7 @@ class ConversationsApi {
 			'/api/v2/conversations/messaging/integrations/whatsapp', 
 			'POST', 
 			{  }, 
-			{  }, 
+			{ 'async': opts['async'] }, 
 			{  }, 
 			{  }, 
 			body, 

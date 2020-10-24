@@ -6658,6 +6658,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "mediaModel": String, 
                 "coreSite": Boolean, 
                 "selfUri": String, 
               },  
@@ -6763,6 +6764,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "mediaModel": String, 
                 "coreSite": Boolean, 
                 "selfUri": String, 
               },  
@@ -6876,6 +6878,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "mediaModel": String, 
                 "coreSite": Boolean, 
                 "selfUri": String, 
               },  
@@ -6958,6 +6961,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
             "ntpSettings": { 
               "servers": [String], 
             },  
+            "mediaModel": String, 
             "coreSite": Boolean, 
             "selfUri": String, 
           },  
@@ -7194,6 +7198,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "mediaModel": String, 
                 "coreSite": Boolean, 
                 "selfUri": String, 
               },  
@@ -7299,6 +7304,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "mediaModel": String, 
                 "coreSite": Boolean, 
                 "selfUri": String, 
               },  
@@ -7412,6 +7418,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "mediaModel": String, 
                 "coreSite": Boolean, 
                 "selfUri": String, 
               },  
@@ -7494,6 +7501,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
             "ntpSettings": { 
               "servers": [String], 
             },  
+            "mediaModel": String, 
             "coreSite": Boolean, 
             "selfUri": String, 
           },  
@@ -7738,6 +7746,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "mediaModel": String, 
                 "coreSite": Boolean, 
                 "selfUri": String, 
               },  
@@ -7843,6 +7852,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "mediaModel": String, 
                 "coreSite": Boolean, 
                 "selfUri": String, 
               },  
@@ -7956,6 +7966,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "mediaModel": String, 
                 "coreSite": Boolean, 
                 "selfUri": String, 
               },  
@@ -8038,6 +8049,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
             "ntpSettings": { 
               "servers": [String], 
             },  
+            "mediaModel": String, 
             "coreSite": Boolean, 
             "selfUri": String, 
           },  
@@ -8129,6 +8141,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
         "ntpSettings": { 
           "servers": [String], 
         },  
+        "mediaModel": String, 
         "coreSite": Boolean, 
         "selfUri": String, 
       },  
@@ -8491,6 +8504,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "mediaModel": String, 
                 "coreSite": Boolean, 
                 "selfUri": String, 
               },  
@@ -8596,6 +8610,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "mediaModel": String, 
                 "coreSite": Boolean, 
                 "selfUri": String, 
               },  
@@ -8709,6 +8724,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "mediaModel": String, 
                 "coreSite": Boolean, 
                 "selfUri": String, 
               },  
@@ -8791,6 +8807,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
             "ntpSettings": { 
               "servers": [String], 
             },  
+            "mediaModel": String, 
             "coreSite": Boolean, 
             "selfUri": String, 
           },  
@@ -9027,6 +9044,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "mediaModel": String, 
                 "coreSite": Boolean, 
                 "selfUri": String, 
               },  
@@ -9132,6 +9150,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "mediaModel": String, 
                 "coreSite": Boolean, 
                 "selfUri": String, 
               },  
@@ -9245,6 +9264,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "mediaModel": String, 
                 "coreSite": Boolean, 
                 "selfUri": String, 
               },  
@@ -9327,6 +9347,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
             "ntpSettings": { 
               "servers": [String], 
             },  
+            "mediaModel": String, 
             "coreSite": Boolean, 
             "selfUri": String, 
           },  
@@ -9571,6 +9592,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "mediaModel": String, 
                 "coreSite": Boolean, 
                 "selfUri": String, 
               },  
@@ -9676,6 +9698,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "mediaModel": String, 
                 "coreSite": Boolean, 
                 "selfUri": String, 
               },  
@@ -9789,6 +9812,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "mediaModel": String, 
                 "coreSite": Boolean, 
                 "selfUri": String, 
               },  
@@ -9871,6 +9895,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
             "ntpSettings": { 
               "servers": [String], 
             },  
+            "mediaModel": String, 
             "coreSite": Boolean, 
             "selfUri": String, 
           },  
@@ -9962,6 +9987,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
         "ntpSettings": { 
           "servers": [String], 
         },  
+        "mediaModel": String, 
         "coreSite": Boolean, 
         "selfUri": String, 
       },  
@@ -10332,6 +10358,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "mediaModel": String, 
                 "coreSite": Boolean, 
                 "selfUri": String, 
               },  
@@ -10437,6 +10464,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "mediaModel": String, 
                 "coreSite": Boolean, 
                 "selfUri": String, 
               },  
@@ -10550,6 +10578,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "mediaModel": String, 
                 "coreSite": Boolean, 
                 "selfUri": String, 
               },  
@@ -10632,6 +10661,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
             "ntpSettings": { 
               "servers": [String], 
             },  
+            "mediaModel": String, 
             "coreSite": Boolean, 
             "selfUri": String, 
           },  
@@ -10868,6 +10898,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "mediaModel": String, 
                 "coreSite": Boolean, 
                 "selfUri": String, 
               },  
@@ -10973,6 +11004,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "mediaModel": String, 
                 "coreSite": Boolean, 
                 "selfUri": String, 
               },  
@@ -11086,6 +11118,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "mediaModel": String, 
                 "coreSite": Boolean, 
                 "selfUri": String, 
               },  
@@ -11168,6 +11201,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
             "ntpSettings": { 
               "servers": [String], 
             },  
+            "mediaModel": String, 
             "coreSite": Boolean, 
             "selfUri": String, 
           },  
@@ -11412,6 +11446,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "mediaModel": String, 
                 "coreSite": Boolean, 
                 "selfUri": String, 
               },  
@@ -11517,6 +11552,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "mediaModel": String, 
                 "coreSite": Boolean, 
                 "selfUri": String, 
               },  
@@ -11630,6 +11666,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "mediaModel": String, 
                 "coreSite": Boolean, 
                 "selfUri": String, 
               },  
@@ -11712,6 +11749,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
             "ntpSettings": { 
               "servers": [String], 
             },  
+            "mediaModel": String, 
             "coreSite": Boolean, 
             "selfUri": String, 
           },  
@@ -11803,6 +11841,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
         "ntpSettings": { 
           "servers": [String], 
         },  
+        "mediaModel": String, 
         "coreSite": Boolean, 
         "selfUri": String, 
       },  
@@ -11894,6 +11933,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
     "ntpSettings": { 
       "servers": [String], 
     },  
+    "mediaModel": String, 
     "coreSite": Boolean, 
     "selfUri": String, 
   },  
@@ -12894,6 +12934,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "mediaModel": String, 
                 "coreSite": Boolean, 
                 "selfUri": String, 
               },  
@@ -12999,6 +13040,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "mediaModel": String, 
                 "coreSite": Boolean, 
                 "selfUri": String, 
               },  
@@ -13112,6 +13154,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "mediaModel": String, 
                 "coreSite": Boolean, 
                 "selfUri": String, 
               },  
@@ -13194,6 +13237,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
             "ntpSettings": { 
               "servers": [String], 
             },  
+            "mediaModel": String, 
             "coreSite": Boolean, 
             "selfUri": String, 
           },  
@@ -13430,6 +13474,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "mediaModel": String, 
                 "coreSite": Boolean, 
                 "selfUri": String, 
               },  
@@ -13535,6 +13580,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "mediaModel": String, 
                 "coreSite": Boolean, 
                 "selfUri": String, 
               },  
@@ -13648,6 +13694,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "mediaModel": String, 
                 "coreSite": Boolean, 
                 "selfUri": String, 
               },  
@@ -13730,6 +13777,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
             "ntpSettings": { 
               "servers": [String], 
             },  
+            "mediaModel": String, 
             "coreSite": Boolean, 
             "selfUri": String, 
           },  
@@ -13974,6 +14022,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "mediaModel": String, 
                 "coreSite": Boolean, 
                 "selfUri": String, 
               },  
@@ -14079,6 +14128,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "mediaModel": String, 
                 "coreSite": Boolean, 
                 "selfUri": String, 
               },  
@@ -14192,6 +14242,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "mediaModel": String, 
                 "coreSite": Boolean, 
                 "selfUri": String, 
               },  
@@ -14274,6 +14325,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
             "ntpSettings": { 
               "servers": [String], 
             },  
+            "mediaModel": String, 
             "coreSite": Boolean, 
             "selfUri": String, 
           },  
@@ -14365,6 +14417,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
         "ntpSettings": { 
           "servers": [String], 
         },  
+        "mediaModel": String, 
         "coreSite": Boolean, 
         "selfUri": String, 
       },  
@@ -14727,6 +14780,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "mediaModel": String, 
                 "coreSite": Boolean, 
                 "selfUri": String, 
               },  
@@ -14832,6 +14886,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "mediaModel": String, 
                 "coreSite": Boolean, 
                 "selfUri": String, 
               },  
@@ -14945,6 +15000,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "mediaModel": String, 
                 "coreSite": Boolean, 
                 "selfUri": String, 
               },  
@@ -15027,6 +15083,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
             "ntpSettings": { 
               "servers": [String], 
             },  
+            "mediaModel": String, 
             "coreSite": Boolean, 
             "selfUri": String, 
           },  
@@ -15263,6 +15320,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "mediaModel": String, 
                 "coreSite": Boolean, 
                 "selfUri": String, 
               },  
@@ -15368,6 +15426,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "mediaModel": String, 
                 "coreSite": Boolean, 
                 "selfUri": String, 
               },  
@@ -15481,6 +15540,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "mediaModel": String, 
                 "coreSite": Boolean, 
                 "selfUri": String, 
               },  
@@ -15563,6 +15623,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
             "ntpSettings": { 
               "servers": [String], 
             },  
+            "mediaModel": String, 
             "coreSite": Boolean, 
             "selfUri": String, 
           },  
@@ -15807,6 +15868,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "mediaModel": String, 
                 "coreSite": Boolean, 
                 "selfUri": String, 
               },  
@@ -15912,6 +15974,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "mediaModel": String, 
                 "coreSite": Boolean, 
                 "selfUri": String, 
               },  
@@ -16025,6 +16088,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "mediaModel": String, 
                 "coreSite": Boolean, 
                 "selfUri": String, 
               },  
@@ -16107,6 +16171,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
             "ntpSettings": { 
               "servers": [String], 
             },  
+            "mediaModel": String, 
             "coreSite": Boolean, 
             "selfUri": String, 
           },  
@@ -16198,6 +16263,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
         "ntpSettings": { 
           "servers": [String], 
         },  
+        "mediaModel": String, 
         "coreSite": Boolean, 
         "selfUri": String, 
       },  
@@ -16568,6 +16634,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "mediaModel": String, 
                 "coreSite": Boolean, 
                 "selfUri": String, 
               },  
@@ -16673,6 +16740,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "mediaModel": String, 
                 "coreSite": Boolean, 
                 "selfUri": String, 
               },  
@@ -16786,6 +16854,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "mediaModel": String, 
                 "coreSite": Boolean, 
                 "selfUri": String, 
               },  
@@ -16868,6 +16937,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
             "ntpSettings": { 
               "servers": [String], 
             },  
+            "mediaModel": String, 
             "coreSite": Boolean, 
             "selfUri": String, 
           },  
@@ -17104,6 +17174,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "mediaModel": String, 
                 "coreSite": Boolean, 
                 "selfUri": String, 
               },  
@@ -17209,6 +17280,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "mediaModel": String, 
                 "coreSite": Boolean, 
                 "selfUri": String, 
               },  
@@ -17322,6 +17394,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "mediaModel": String, 
                 "coreSite": Boolean, 
                 "selfUri": String, 
               },  
@@ -17404,6 +17477,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
             "ntpSettings": { 
               "servers": [String], 
             },  
+            "mediaModel": String, 
             "coreSite": Boolean, 
             "selfUri": String, 
           },  
@@ -17648,6 +17722,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "mediaModel": String, 
                 "coreSite": Boolean, 
                 "selfUri": String, 
               },  
@@ -17753,6 +17828,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "mediaModel": String, 
                 "coreSite": Boolean, 
                 "selfUri": String, 
               },  
@@ -17866,6 +17942,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "mediaModel": String, 
                 "coreSite": Boolean, 
                 "selfUri": String, 
               },  
@@ -17948,6 +18025,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
             "ntpSettings": { 
               "servers": [String], 
             },  
+            "mediaModel": String, 
             "coreSite": Boolean, 
             "selfUri": String, 
           },  
@@ -18039,6 +18117,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
         "ntpSettings": { 
           "servers": [String], 
         },  
+        "mediaModel": String, 
         "coreSite": Boolean, 
         "selfUri": String, 
       },  
@@ -18130,6 +18209,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
     "ntpSettings": { 
       "servers": [String], 
     },  
+    "mediaModel": String, 
     "coreSite": Boolean, 
     "selfUri": String, 
   },  
@@ -18787,6 +18867,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "mediaModel": String, 
                 "coreSite": Boolean, 
                 "selfUri": String, 
               },  
@@ -18892,6 +18973,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "mediaModel": String, 
                 "coreSite": Boolean, 
                 "selfUri": String, 
               },  
@@ -19005,6 +19087,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "mediaModel": String, 
                 "coreSite": Boolean, 
                 "selfUri": String, 
               },  
@@ -19087,6 +19170,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
             "ntpSettings": { 
               "servers": [String], 
             },  
+            "mediaModel": String, 
             "coreSite": Boolean, 
             "selfUri": String, 
           },  
@@ -19323,6 +19407,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "mediaModel": String, 
                 "coreSite": Boolean, 
                 "selfUri": String, 
               },  
@@ -19428,6 +19513,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "mediaModel": String, 
                 "coreSite": Boolean, 
                 "selfUri": String, 
               },  
@@ -19541,6 +19627,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "mediaModel": String, 
                 "coreSite": Boolean, 
                 "selfUri": String, 
               },  
@@ -19623,6 +19710,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
             "ntpSettings": { 
               "servers": [String], 
             },  
+            "mediaModel": String, 
             "coreSite": Boolean, 
             "selfUri": String, 
           },  
@@ -19867,6 +19955,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "mediaModel": String, 
                 "coreSite": Boolean, 
                 "selfUri": String, 
               },  
@@ -19972,6 +20061,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "mediaModel": String, 
                 "coreSite": Boolean, 
                 "selfUri": String, 
               },  
@@ -20085,6 +20175,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "mediaModel": String, 
                 "coreSite": Boolean, 
                 "selfUri": String, 
               },  
@@ -20167,6 +20258,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
             "ntpSettings": { 
               "servers": [String], 
             },  
+            "mediaModel": String, 
             "coreSite": Boolean, 
             "selfUri": String, 
           },  
@@ -20258,6 +20350,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
         "ntpSettings": { 
           "servers": [String], 
         },  
+        "mediaModel": String, 
         "coreSite": Boolean, 
         "selfUri": String, 
       },  
@@ -20620,6 +20713,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "mediaModel": String, 
                 "coreSite": Boolean, 
                 "selfUri": String, 
               },  
@@ -20725,6 +20819,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "mediaModel": String, 
                 "coreSite": Boolean, 
                 "selfUri": String, 
               },  
@@ -20838,6 +20933,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "mediaModel": String, 
                 "coreSite": Boolean, 
                 "selfUri": String, 
               },  
@@ -20920,6 +21016,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
             "ntpSettings": { 
               "servers": [String], 
             },  
+            "mediaModel": String, 
             "coreSite": Boolean, 
             "selfUri": String, 
           },  
@@ -21156,6 +21253,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "mediaModel": String, 
                 "coreSite": Boolean, 
                 "selfUri": String, 
               },  
@@ -21261,6 +21359,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "mediaModel": String, 
                 "coreSite": Boolean, 
                 "selfUri": String, 
               },  
@@ -21374,6 +21473,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "mediaModel": String, 
                 "coreSite": Boolean, 
                 "selfUri": String, 
               },  
@@ -21456,6 +21556,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
             "ntpSettings": { 
               "servers": [String], 
             },  
+            "mediaModel": String, 
             "coreSite": Boolean, 
             "selfUri": String, 
           },  
@@ -21700,6 +21801,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "mediaModel": String, 
                 "coreSite": Boolean, 
                 "selfUri": String, 
               },  
@@ -21805,6 +21907,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "mediaModel": String, 
                 "coreSite": Boolean, 
                 "selfUri": String, 
               },  
@@ -21918,6 +22021,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "mediaModel": String, 
                 "coreSite": Boolean, 
                 "selfUri": String, 
               },  
@@ -22000,6 +22104,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
             "ntpSettings": { 
               "servers": [String], 
             },  
+            "mediaModel": String, 
             "coreSite": Boolean, 
             "selfUri": String, 
           },  
@@ -22091,6 +22196,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
         "ntpSettings": { 
           "servers": [String], 
         },  
+        "mediaModel": String, 
         "coreSite": Boolean, 
         "selfUri": String, 
       },  
@@ -22732,6 +22838,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "mediaModel": String, 
               "coreSite": Boolean, 
               "selfUri": String, 
             },  
@@ -23035,6 +23142,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "mediaModel": String, 
               "coreSite": Boolean, 
               "selfUri": String, 
             },  
@@ -23346,6 +23454,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "mediaModel": String, 
               "coreSite": Boolean, 
               "selfUri": String, 
             },  
@@ -23437,6 +23546,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
           "ntpSettings": { 
             "servers": [String], 
           },  
+          "mediaModel": String, 
           "coreSite": Boolean, 
           "selfUri": String, 
         },  
@@ -23866,6 +23976,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "mediaModel": String, 
               "coreSite": Boolean, 
               "selfUri": String, 
             },  
@@ -24169,6 +24280,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "mediaModel": String, 
               "coreSite": Boolean, 
               "selfUri": String, 
             },  
@@ -24480,6 +24592,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "mediaModel": String, 
               "coreSite": Boolean, 
               "selfUri": String, 
             },  
@@ -24571,6 +24684,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
           "ntpSettings": { 
             "servers": [String], 
           },  
+          "mediaModel": String, 
           "coreSite": Boolean, 
           "selfUri": String, 
         },  
@@ -25008,6 +25122,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "mediaModel": String, 
               "coreSite": Boolean, 
               "selfUri": String, 
             },  
@@ -25311,6 +25426,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "mediaModel": String, 
               "coreSite": Boolean, 
               "selfUri": String, 
             },  
@@ -25622,6 +25738,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "mediaModel": String, 
               "coreSite": Boolean, 
               "selfUri": String, 
             },  
@@ -25713,6 +25830,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
           "ntpSettings": { 
             "servers": [String], 
           },  
+          "mediaModel": String, 
           "coreSite": Boolean, 
           "selfUri": String, 
         },  
@@ -25804,6 +25922,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
       "ntpSettings": { 
         "servers": [String], 
       },  
+      "mediaModel": String, 
       "coreSite": Boolean, 
       "selfUri": String, 
     },  
@@ -26359,6 +26478,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "mediaModel": String, 
               "coreSite": Boolean, 
               "selfUri": String, 
             },  
@@ -26662,6 +26782,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "mediaModel": String, 
               "coreSite": Boolean, 
               "selfUri": String, 
             },  
@@ -26973,6 +27094,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "mediaModel": String, 
               "coreSite": Boolean, 
               "selfUri": String, 
             },  
@@ -27064,6 +27186,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
           "ntpSettings": { 
             "servers": [String], 
           },  
+          "mediaModel": String, 
           "coreSite": Boolean, 
           "selfUri": String, 
         },  
@@ -27493,6 +27616,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "mediaModel": String, 
               "coreSite": Boolean, 
               "selfUri": String, 
             },  
@@ -27796,6 +27920,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "mediaModel": String, 
               "coreSite": Boolean, 
               "selfUri": String, 
             },  
@@ -28107,6 +28232,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "mediaModel": String, 
               "coreSite": Boolean, 
               "selfUri": String, 
             },  
@@ -28198,6 +28324,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
           "ntpSettings": { 
             "servers": [String], 
           },  
+          "mediaModel": String, 
           "coreSite": Boolean, 
           "selfUri": String, 
         },  
@@ -28635,6 +28762,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "mediaModel": String, 
               "coreSite": Boolean, 
               "selfUri": String, 
             },  
@@ -28938,6 +29066,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "mediaModel": String, 
               "coreSite": Boolean, 
               "selfUri": String, 
             },  
@@ -29249,6 +29378,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "mediaModel": String, 
               "coreSite": Boolean, 
               "selfUri": String, 
             },  
@@ -29340,6 +29470,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
           "ntpSettings": { 
             "servers": [String], 
           },  
+          "mediaModel": String, 
           "coreSite": Boolean, 
           "selfUri": String, 
         },  
@@ -29431,6 +29562,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
       "ntpSettings": { 
         "servers": [String], 
       },  
+      "mediaModel": String, 
       "coreSite": Boolean, 
       "selfUri": String, 
     },  
@@ -30324,6 +30456,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "mediaModel": String, 
               "coreSite": Boolean, 
               "selfUri": String, 
             },  
@@ -30627,6 +30760,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "mediaModel": String, 
               "coreSite": Boolean, 
               "selfUri": String, 
             },  
@@ -30938,6 +31072,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "mediaModel": String, 
               "coreSite": Boolean, 
               "selfUri": String, 
             },  
@@ -31029,6 +31164,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
           "ntpSettings": { 
             "servers": [String], 
           },  
+          "mediaModel": String, 
           "coreSite": Boolean, 
           "selfUri": String, 
         },  
@@ -31458,6 +31594,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "mediaModel": String, 
               "coreSite": Boolean, 
               "selfUri": String, 
             },  
@@ -31761,6 +31898,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "mediaModel": String, 
               "coreSite": Boolean, 
               "selfUri": String, 
             },  
@@ -32072,6 +32210,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "mediaModel": String, 
               "coreSite": Boolean, 
               "selfUri": String, 
             },  
@@ -32163,6 +32302,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
           "ntpSettings": { 
             "servers": [String], 
           },  
+          "mediaModel": String, 
           "coreSite": Boolean, 
           "selfUri": String, 
         },  
@@ -32600,6 +32740,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "mediaModel": String, 
               "coreSite": Boolean, 
               "selfUri": String, 
             },  
@@ -32903,6 +33044,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "mediaModel": String, 
               "coreSite": Boolean, 
               "selfUri": String, 
             },  
@@ -33214,6 +33356,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "mediaModel": String, 
               "coreSite": Boolean, 
               "selfUri": String, 
             },  
@@ -33305,6 +33448,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
           "ntpSettings": { 
             "servers": [String], 
           },  
+          "mediaModel": String, 
           "coreSite": Boolean, 
           "selfUri": String, 
         },  
@@ -33396,6 +33540,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
       "ntpSettings": { 
         "servers": [String], 
       },  
+      "mediaModel": String, 
       "coreSite": Boolean, 
       "selfUri": String, 
     },  
@@ -33951,6 +34096,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "mediaModel": String, 
               "coreSite": Boolean, 
               "selfUri": String, 
             },  
@@ -34254,6 +34400,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "mediaModel": String, 
               "coreSite": Boolean, 
               "selfUri": String, 
             },  
@@ -34565,6 +34712,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "mediaModel": String, 
               "coreSite": Boolean, 
               "selfUri": String, 
             },  
@@ -34656,6 +34804,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
           "ntpSettings": { 
             "servers": [String], 
           },  
+          "mediaModel": String, 
           "coreSite": Boolean, 
           "selfUri": String, 
         },  
@@ -35085,6 +35234,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "mediaModel": String, 
               "coreSite": Boolean, 
               "selfUri": String, 
             },  
@@ -35388,6 +35538,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "mediaModel": String, 
               "coreSite": Boolean, 
               "selfUri": String, 
             },  
@@ -35699,6 +35850,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "mediaModel": String, 
               "coreSite": Boolean, 
               "selfUri": String, 
             },  
@@ -35790,6 +35942,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
           "ntpSettings": { 
             "servers": [String], 
           },  
+          "mediaModel": String, 
           "coreSite": Boolean, 
           "selfUri": String, 
         },  
@@ -36227,6 +36380,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "mediaModel": String, 
               "coreSite": Boolean, 
               "selfUri": String, 
             },  
@@ -36530,6 +36684,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "mediaModel": String, 
               "coreSite": Boolean, 
               "selfUri": String, 
             },  
@@ -36841,6 +36996,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "mediaModel": String, 
               "coreSite": Boolean, 
               "selfUri": String, 
             },  
@@ -36932,6 +37088,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
           "ntpSettings": { 
             "servers": [String], 
           },  
+          "mediaModel": String, 
           "coreSite": Boolean, 
           "selfUri": String, 
         },  
@@ -37023,6 +37180,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
       "ntpSettings": { 
         "servers": [String], 
       },  
+      "mediaModel": String, 
       "coreSite": Boolean, 
       "selfUri": String, 
     },  
@@ -37586,6 +37744,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "mediaModel": String, 
               "coreSite": Boolean, 
               "selfUri": String, 
             },  
@@ -37889,6 +38048,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "mediaModel": String, 
               "coreSite": Boolean, 
               "selfUri": String, 
             },  
@@ -38200,6 +38360,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "mediaModel": String, 
               "coreSite": Boolean, 
               "selfUri": String, 
             },  
@@ -38291,6 +38452,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
           "ntpSettings": { 
             "servers": [String], 
           },  
+          "mediaModel": String, 
           "coreSite": Boolean, 
           "selfUri": String, 
         },  
@@ -38720,6 +38882,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "mediaModel": String, 
               "coreSite": Boolean, 
               "selfUri": String, 
             },  
@@ -39023,6 +39186,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "mediaModel": String, 
               "coreSite": Boolean, 
               "selfUri": String, 
             },  
@@ -39334,6 +39498,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "mediaModel": String, 
               "coreSite": Boolean, 
               "selfUri": String, 
             },  
@@ -39425,6 +39590,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
           "ntpSettings": { 
             "servers": [String], 
           },  
+          "mediaModel": String, 
           "coreSite": Boolean, 
           "selfUri": String, 
         },  
@@ -39862,6 +40028,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "mediaModel": String, 
               "coreSite": Boolean, 
               "selfUri": String, 
             },  
@@ -40165,6 +40332,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "mediaModel": String, 
               "coreSite": Boolean, 
               "selfUri": String, 
             },  
@@ -40476,6 +40644,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "mediaModel": String, 
               "coreSite": Boolean, 
               "selfUri": String, 
             },  
@@ -40567,6 +40736,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
           "ntpSettings": { 
             "servers": [String], 
           },  
+          "mediaModel": String, 
           "coreSite": Boolean, 
           "selfUri": String, 
         },  
@@ -40658,6 +40828,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
       "ntpSettings": { 
         "servers": [String], 
       },  
+      "mediaModel": String, 
       "coreSite": Boolean, 
       "selfUri": String, 
     },  
@@ -40749,6 +40920,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
   "ntpSettings": { 
     "servers": [String], 
   },  
+  "mediaModel": String, 
   "coreSite": Boolean, 
   "selfUri": String, 
 }
@@ -41380,6 +41552,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "mediaModel": String, 
                 "coreSite": Boolean, 
                 "selfUri": String, 
               },  
@@ -41485,6 +41658,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "mediaModel": String, 
                 "coreSite": Boolean, 
                 "selfUri": String, 
               },  
@@ -41598,6 +41772,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "mediaModel": String, 
                 "coreSite": Boolean, 
                 "selfUri": String, 
               },  
@@ -41680,6 +41855,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
             "ntpSettings": { 
               "servers": [String], 
             },  
+            "mediaModel": String, 
             "coreSite": Boolean, 
             "selfUri": String, 
           },  
@@ -41916,6 +42092,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "mediaModel": String, 
                 "coreSite": Boolean, 
                 "selfUri": String, 
               },  
@@ -42021,6 +42198,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "mediaModel": String, 
                 "coreSite": Boolean, 
                 "selfUri": String, 
               },  
@@ -42134,6 +42312,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "mediaModel": String, 
                 "coreSite": Boolean, 
                 "selfUri": String, 
               },  
@@ -42216,6 +42395,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
             "ntpSettings": { 
               "servers": [String], 
             },  
+            "mediaModel": String, 
             "coreSite": Boolean, 
             "selfUri": String, 
           },  
@@ -42460,6 +42640,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "mediaModel": String, 
                 "coreSite": Boolean, 
                 "selfUri": String, 
               },  
@@ -42565,6 +42746,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "mediaModel": String, 
                 "coreSite": Boolean, 
                 "selfUri": String, 
               },  
@@ -42678,6 +42860,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "mediaModel": String, 
                 "coreSite": Boolean, 
                 "selfUri": String, 
               },  
@@ -42760,6 +42943,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
             "ntpSettings": { 
               "servers": [String], 
             },  
+            "mediaModel": String, 
             "coreSite": Boolean, 
             "selfUri": String, 
           },  
@@ -42851,6 +43035,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
         "ntpSettings": { 
           "servers": [String], 
         },  
+        "mediaModel": String, 
         "coreSite": Boolean, 
         "selfUri": String, 
       },  
@@ -43213,6 +43398,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "mediaModel": String, 
                 "coreSite": Boolean, 
                 "selfUri": String, 
               },  
@@ -43318,6 +43504,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "mediaModel": String, 
                 "coreSite": Boolean, 
                 "selfUri": String, 
               },  
@@ -43431,6 +43618,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "mediaModel": String, 
                 "coreSite": Boolean, 
                 "selfUri": String, 
               },  
@@ -43513,6 +43701,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
             "ntpSettings": { 
               "servers": [String], 
             },  
+            "mediaModel": String, 
             "coreSite": Boolean, 
             "selfUri": String, 
           },  
@@ -43749,6 +43938,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "mediaModel": String, 
                 "coreSite": Boolean, 
                 "selfUri": String, 
               },  
@@ -43854,6 +44044,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "mediaModel": String, 
                 "coreSite": Boolean, 
                 "selfUri": String, 
               },  
@@ -43967,6 +44158,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "mediaModel": String, 
                 "coreSite": Boolean, 
                 "selfUri": String, 
               },  
@@ -44049,6 +44241,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
             "ntpSettings": { 
               "servers": [String], 
             },  
+            "mediaModel": String, 
             "coreSite": Boolean, 
             "selfUri": String, 
           },  
@@ -44293,6 +44486,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "mediaModel": String, 
                 "coreSite": Boolean, 
                 "selfUri": String, 
               },  
@@ -44398,6 +44592,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "mediaModel": String, 
                 "coreSite": Boolean, 
                 "selfUri": String, 
               },  
@@ -44511,6 +44706,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "mediaModel": String, 
                 "coreSite": Boolean, 
                 "selfUri": String, 
               },  
@@ -44593,6 +44789,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
             "ntpSettings": { 
               "servers": [String], 
             },  
+            "mediaModel": String, 
             "coreSite": Boolean, 
             "selfUri": String, 
           },  
@@ -44684,6 +44881,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
         "ntpSettings": { 
           "servers": [String], 
         },  
+        "mediaModel": String, 
         "coreSite": Boolean, 
         "selfUri": String, 
       },  
@@ -45054,6 +45252,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "mediaModel": String, 
                 "coreSite": Boolean, 
                 "selfUri": String, 
               },  
@@ -45159,6 +45358,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "mediaModel": String, 
                 "coreSite": Boolean, 
                 "selfUri": String, 
               },  
@@ -45272,6 +45472,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "mediaModel": String, 
                 "coreSite": Boolean, 
                 "selfUri": String, 
               },  
@@ -45354,6 +45555,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
             "ntpSettings": { 
               "servers": [String], 
             },  
+            "mediaModel": String, 
             "coreSite": Boolean, 
             "selfUri": String, 
           },  
@@ -45590,6 +45792,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "mediaModel": String, 
                 "coreSite": Boolean, 
                 "selfUri": String, 
               },  
@@ -45695,6 +45898,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "mediaModel": String, 
                 "coreSite": Boolean, 
                 "selfUri": String, 
               },  
@@ -45808,6 +46012,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "mediaModel": String, 
                 "coreSite": Boolean, 
                 "selfUri": String, 
               },  
@@ -45890,6 +46095,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
             "ntpSettings": { 
               "servers": [String], 
             },  
+            "mediaModel": String, 
             "coreSite": Boolean, 
             "selfUri": String, 
           },  
@@ -46134,6 +46340,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "mediaModel": String, 
                 "coreSite": Boolean, 
                 "selfUri": String, 
               },  
@@ -46239,6 +46446,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "mediaModel": String, 
                 "coreSite": Boolean, 
                 "selfUri": String, 
               },  
@@ -46352,6 +46560,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "mediaModel": String, 
                 "coreSite": Boolean, 
                 "selfUri": String, 
               },  
@@ -46434,6 +46643,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
             "ntpSettings": { 
               "servers": [String], 
             },  
+            "mediaModel": String, 
             "coreSite": Boolean, 
             "selfUri": String, 
           },  
@@ -46525,6 +46735,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
         "ntpSettings": { 
           "servers": [String], 
         },  
+        "mediaModel": String, 
         "coreSite": Boolean, 
         "selfUri": String, 
       },  
@@ -46616,6 +46827,7 @@ Edge <a href="#" onclick="return copyEdgeExample()">Copy</a>
     "ntpSettings": { 
       "servers": [String], 
     },  
+    "mediaModel": String, 
     "coreSite": Boolean, 
     "selfUri": String, 
   },  
@@ -47268,6 +47480,7 @@ EdgeLine <a href="#" onclick="return copyEdgeLineExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "mediaModel": String, 
               "coreSite": Boolean, 
               "selfUri": String, 
             },  
@@ -47571,6 +47784,7 @@ EdgeLine <a href="#" onclick="return copyEdgeLineExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "mediaModel": String, 
               "coreSite": Boolean, 
               "selfUri": String, 
             },  
@@ -47882,6 +48096,7 @@ EdgeLine <a href="#" onclick="return copyEdgeLineExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "mediaModel": String, 
               "coreSite": Boolean, 
               "selfUri": String, 
             },  
@@ -47973,6 +48188,7 @@ EdgeLine <a href="#" onclick="return copyEdgeLineExample()">Copy</a>
           "ntpSettings": { 
             "servers": [String], 
           },  
+          "mediaModel": String, 
           "coreSite": Boolean, 
           "selfUri": String, 
         },  
@@ -48402,6 +48618,7 @@ EdgeLine <a href="#" onclick="return copyEdgeLineExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "mediaModel": String, 
               "coreSite": Boolean, 
               "selfUri": String, 
             },  
@@ -48705,6 +48922,7 @@ EdgeLine <a href="#" onclick="return copyEdgeLineExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "mediaModel": String, 
               "coreSite": Boolean, 
               "selfUri": String, 
             },  
@@ -49016,6 +49234,7 @@ EdgeLine <a href="#" onclick="return copyEdgeLineExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "mediaModel": String, 
               "coreSite": Boolean, 
               "selfUri": String, 
             },  
@@ -49107,6 +49326,7 @@ EdgeLine <a href="#" onclick="return copyEdgeLineExample()">Copy</a>
           "ntpSettings": { 
             "servers": [String], 
           },  
+          "mediaModel": String, 
           "coreSite": Boolean, 
           "selfUri": String, 
         },  
@@ -49544,6 +49764,7 @@ EdgeLine <a href="#" onclick="return copyEdgeLineExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "mediaModel": String, 
               "coreSite": Boolean, 
               "selfUri": String, 
             },  
@@ -49847,6 +50068,7 @@ EdgeLine <a href="#" onclick="return copyEdgeLineExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "mediaModel": String, 
               "coreSite": Boolean, 
               "selfUri": String, 
             },  
@@ -50158,6 +50380,7 @@ EdgeLine <a href="#" onclick="return copyEdgeLineExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "mediaModel": String, 
               "coreSite": Boolean, 
               "selfUri": String, 
             },  
@@ -50249,6 +50472,7 @@ EdgeLine <a href="#" onclick="return copyEdgeLineExample()">Copy</a>
           "ntpSettings": { 
             "servers": [String], 
           },  
+          "mediaModel": String, 
           "coreSite": Boolean, 
           "selfUri": String, 
         },  
@@ -50340,6 +50564,7 @@ EdgeLine <a href="#" onclick="return copyEdgeLineExample()">Copy</a>
       "ntpSettings": { 
         "servers": [String], 
       },  
+      "mediaModel": String, 
       "coreSite": Boolean, 
       "selfUri": String, 
     },  
@@ -51927,6 +52152,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "mediaModel": String, 
                 "coreSite": Boolean, 
                 "selfUri": String, 
               },  
@@ -52032,6 +52258,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "mediaModel": String, 
                 "coreSite": Boolean, 
                 "selfUri": String, 
               },  
@@ -52145,6 +52372,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "mediaModel": String, 
                 "coreSite": Boolean, 
                 "selfUri": String, 
               },  
@@ -52227,6 +52455,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
             "ntpSettings": { 
               "servers": [String], 
             },  
+            "mediaModel": String, 
             "coreSite": Boolean, 
             "selfUri": String, 
           },  
@@ -52463,6 +52692,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "mediaModel": String, 
                 "coreSite": Boolean, 
                 "selfUri": String, 
               },  
@@ -52568,6 +52798,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "mediaModel": String, 
                 "coreSite": Boolean, 
                 "selfUri": String, 
               },  
@@ -52681,6 +52912,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "mediaModel": String, 
                 "coreSite": Boolean, 
                 "selfUri": String, 
               },  
@@ -52763,6 +52995,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
             "ntpSettings": { 
               "servers": [String], 
             },  
+            "mediaModel": String, 
             "coreSite": Boolean, 
             "selfUri": String, 
           },  
@@ -53007,6 +53240,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "mediaModel": String, 
                 "coreSite": Boolean, 
                 "selfUri": String, 
               },  
@@ -53112,6 +53346,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "mediaModel": String, 
                 "coreSite": Boolean, 
                 "selfUri": String, 
               },  
@@ -53225,6 +53460,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "mediaModel": String, 
                 "coreSite": Boolean, 
                 "selfUri": String, 
               },  
@@ -53307,6 +53543,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
             "ntpSettings": { 
               "servers": [String], 
             },  
+            "mediaModel": String, 
             "coreSite": Boolean, 
             "selfUri": String, 
           },  
@@ -53398,6 +53635,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
         "ntpSettings": { 
           "servers": [String], 
         },  
+        "mediaModel": String, 
         "coreSite": Boolean, 
         "selfUri": String, 
       },  
@@ -53760,6 +53998,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "mediaModel": String, 
                 "coreSite": Boolean, 
                 "selfUri": String, 
               },  
@@ -53865,6 +54104,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "mediaModel": String, 
                 "coreSite": Boolean, 
                 "selfUri": String, 
               },  
@@ -53978,6 +54218,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "mediaModel": String, 
                 "coreSite": Boolean, 
                 "selfUri": String, 
               },  
@@ -54060,6 +54301,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
             "ntpSettings": { 
               "servers": [String], 
             },  
+            "mediaModel": String, 
             "coreSite": Boolean, 
             "selfUri": String, 
           },  
@@ -54296,6 +54538,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "mediaModel": String, 
                 "coreSite": Boolean, 
                 "selfUri": String, 
               },  
@@ -54401,6 +54644,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "mediaModel": String, 
                 "coreSite": Boolean, 
                 "selfUri": String, 
               },  
@@ -54514,6 +54758,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "mediaModel": String, 
                 "coreSite": Boolean, 
                 "selfUri": String, 
               },  
@@ -54596,6 +54841,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
             "ntpSettings": { 
               "servers": [String], 
             },  
+            "mediaModel": String, 
             "coreSite": Boolean, 
             "selfUri": String, 
           },  
@@ -54840,6 +55086,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "mediaModel": String, 
                 "coreSite": Boolean, 
                 "selfUri": String, 
               },  
@@ -54945,6 +55192,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "mediaModel": String, 
                 "coreSite": Boolean, 
                 "selfUri": String, 
               },  
@@ -55058,6 +55306,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "mediaModel": String, 
                 "coreSite": Boolean, 
                 "selfUri": String, 
               },  
@@ -55140,6 +55389,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
             "ntpSettings": { 
               "servers": [String], 
             },  
+            "mediaModel": String, 
             "coreSite": Boolean, 
             "selfUri": String, 
           },  
@@ -55231,6 +55481,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
         "ntpSettings": { 
           "servers": [String], 
         },  
+        "mediaModel": String, 
         "coreSite": Boolean, 
         "selfUri": String, 
       },  
@@ -55601,6 +55852,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "mediaModel": String, 
                 "coreSite": Boolean, 
                 "selfUri": String, 
               },  
@@ -55706,6 +55958,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "mediaModel": String, 
                 "coreSite": Boolean, 
                 "selfUri": String, 
               },  
@@ -55819,6 +56072,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "mediaModel": String, 
                 "coreSite": Boolean, 
                 "selfUri": String, 
               },  
@@ -55901,6 +56155,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
             "ntpSettings": { 
               "servers": [String], 
             },  
+            "mediaModel": String, 
             "coreSite": Boolean, 
             "selfUri": String, 
           },  
@@ -56137,6 +56392,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "mediaModel": String, 
                 "coreSite": Boolean, 
                 "selfUri": String, 
               },  
@@ -56242,6 +56498,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "mediaModel": String, 
                 "coreSite": Boolean, 
                 "selfUri": String, 
               },  
@@ -56355,6 +56612,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "mediaModel": String, 
                 "coreSite": Boolean, 
                 "selfUri": String, 
               },  
@@ -56437,6 +56695,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
             "ntpSettings": { 
               "servers": [String], 
             },  
+            "mediaModel": String, 
             "coreSite": Boolean, 
             "selfUri": String, 
           },  
@@ -56681,6 +56940,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "mediaModel": String, 
                 "coreSite": Boolean, 
                 "selfUri": String, 
               },  
@@ -56786,6 +57046,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "mediaModel": String, 
                 "coreSite": Boolean, 
                 "selfUri": String, 
               },  
@@ -56899,6 +57160,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "mediaModel": String, 
                 "coreSite": Boolean, 
                 "selfUri": String, 
               },  
@@ -56981,6 +57243,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
             "ntpSettings": { 
               "servers": [String], 
             },  
+            "mediaModel": String, 
             "coreSite": Boolean, 
             "selfUri": String, 
           },  
@@ -57072,6 +57335,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
         "ntpSettings": { 
           "servers": [String], 
         },  
+        "mediaModel": String, 
         "coreSite": Boolean, 
         "selfUri": String, 
       },  
@@ -57163,6 +57427,7 @@ OutboundRoute <a href="#" onclick="return copyOutboundRouteExample()">Copy</a>
     "ntpSettings": { 
       "servers": [String], 
     },  
+    "mediaModel": String, 
     "coreSite": Boolean, 
     "selfUri": String, 
   },  
@@ -57639,6 +57904,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "mediaModel": String, 
                 "coreSite": Boolean, 
                 "selfUri": String, 
               },  
@@ -57744,6 +58010,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "mediaModel": String, 
                 "coreSite": Boolean, 
                 "selfUri": String, 
               },  
@@ -57857,6 +58124,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "mediaModel": String, 
                 "coreSite": Boolean, 
                 "selfUri": String, 
               },  
@@ -57939,6 +58207,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
             "ntpSettings": { 
               "servers": [String], 
             },  
+            "mediaModel": String, 
             "coreSite": Boolean, 
             "selfUri": String, 
           },  
@@ -58175,6 +58444,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "mediaModel": String, 
                 "coreSite": Boolean, 
                 "selfUri": String, 
               },  
@@ -58280,6 +58550,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "mediaModel": String, 
                 "coreSite": Boolean, 
                 "selfUri": String, 
               },  
@@ -58393,6 +58664,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "mediaModel": String, 
                 "coreSite": Boolean, 
                 "selfUri": String, 
               },  
@@ -58475,6 +58747,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
             "ntpSettings": { 
               "servers": [String], 
             },  
+            "mediaModel": String, 
             "coreSite": Boolean, 
             "selfUri": String, 
           },  
@@ -58719,6 +58992,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "mediaModel": String, 
                 "coreSite": Boolean, 
                 "selfUri": String, 
               },  
@@ -58824,6 +59098,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "mediaModel": String, 
                 "coreSite": Boolean, 
                 "selfUri": String, 
               },  
@@ -58937,6 +59212,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "mediaModel": String, 
                 "coreSite": Boolean, 
                 "selfUri": String, 
               },  
@@ -59019,6 +59295,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
             "ntpSettings": { 
               "servers": [String], 
             },  
+            "mediaModel": String, 
             "coreSite": Boolean, 
             "selfUri": String, 
           },  
@@ -59110,6 +59387,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
         "ntpSettings": { 
           "servers": [String], 
         },  
+        "mediaModel": String, 
         "coreSite": Boolean, 
         "selfUri": String, 
       },  
@@ -59472,6 +59750,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "mediaModel": String, 
                 "coreSite": Boolean, 
                 "selfUri": String, 
               },  
@@ -59577,6 +59856,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "mediaModel": String, 
                 "coreSite": Boolean, 
                 "selfUri": String, 
               },  
@@ -59690,6 +59970,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "mediaModel": String, 
                 "coreSite": Boolean, 
                 "selfUri": String, 
               },  
@@ -59772,6 +60053,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
             "ntpSettings": { 
               "servers": [String], 
             },  
+            "mediaModel": String, 
             "coreSite": Boolean, 
             "selfUri": String, 
           },  
@@ -60008,6 +60290,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "mediaModel": String, 
                 "coreSite": Boolean, 
                 "selfUri": String, 
               },  
@@ -60113,6 +60396,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "mediaModel": String, 
                 "coreSite": Boolean, 
                 "selfUri": String, 
               },  
@@ -60226,6 +60510,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "mediaModel": String, 
                 "coreSite": Boolean, 
                 "selfUri": String, 
               },  
@@ -60308,6 +60593,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
             "ntpSettings": { 
               "servers": [String], 
             },  
+            "mediaModel": String, 
             "coreSite": Boolean, 
             "selfUri": String, 
           },  
@@ -60552,6 +60838,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "mediaModel": String, 
                 "coreSite": Boolean, 
                 "selfUri": String, 
               },  
@@ -60657,6 +60944,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "mediaModel": String, 
                 "coreSite": Boolean, 
                 "selfUri": String, 
               },  
@@ -60770,6 +61058,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
                 "location": LocationDefinition, 
                 "managed": Boolean, 
                 "ntpSettings": NTPSettings, 
+                "mediaModel": String, 
                 "coreSite": Boolean, 
                 "selfUri": String, 
               },  
@@ -60852,6 +61141,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
             "ntpSettings": { 
               "servers": [String], 
             },  
+            "mediaModel": String, 
             "coreSite": Boolean, 
             "selfUri": String, 
           },  
@@ -60943,6 +61233,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
         "ntpSettings": { 
           "servers": [String], 
         },  
+        "mediaModel": String, 
         "coreSite": Boolean, 
         "selfUri": String, 
       },  
@@ -61584,6 +61875,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "mediaModel": String, 
               "coreSite": Boolean, 
               "selfUri": String, 
             },  
@@ -61887,6 +62179,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "mediaModel": String, 
               "coreSite": Boolean, 
               "selfUri": String, 
             },  
@@ -62198,6 +62491,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "mediaModel": String, 
               "coreSite": Boolean, 
               "selfUri": String, 
             },  
@@ -62289,6 +62583,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
           "ntpSettings": { 
             "servers": [String], 
           },  
+          "mediaModel": String, 
           "coreSite": Boolean, 
           "selfUri": String, 
         },  
@@ -62718,6 +63013,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "mediaModel": String, 
               "coreSite": Boolean, 
               "selfUri": String, 
             },  
@@ -63021,6 +63317,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "mediaModel": String, 
               "coreSite": Boolean, 
               "selfUri": String, 
             },  
@@ -63332,6 +63629,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "mediaModel": String, 
               "coreSite": Boolean, 
               "selfUri": String, 
             },  
@@ -63423,6 +63721,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
           "ntpSettings": { 
             "servers": [String], 
           },  
+          "mediaModel": String, 
           "coreSite": Boolean, 
           "selfUri": String, 
         },  
@@ -63860,6 +64159,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "mediaModel": String, 
               "coreSite": Boolean, 
               "selfUri": String, 
             },  
@@ -64163,6 +64463,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "mediaModel": String, 
               "coreSite": Boolean, 
               "selfUri": String, 
             },  
@@ -64474,6 +64775,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "mediaModel": String, 
               "coreSite": Boolean, 
               "selfUri": String, 
             },  
@@ -64565,6 +64867,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
           "ntpSettings": { 
             "servers": [String], 
           },  
+          "mediaModel": String, 
           "coreSite": Boolean, 
           "selfUri": String, 
         },  
@@ -64656,6 +64959,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
       "ntpSettings": { 
         "servers": [String], 
       },  
+      "mediaModel": String, 
       "coreSite": Boolean, 
       "selfUri": String, 
     },  
@@ -65211,6 +65515,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "mediaModel": String, 
               "coreSite": Boolean, 
               "selfUri": String, 
             },  
@@ -65514,6 +65819,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "mediaModel": String, 
               "coreSite": Boolean, 
               "selfUri": String, 
             },  
@@ -65825,6 +66131,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "mediaModel": String, 
               "coreSite": Boolean, 
               "selfUri": String, 
             },  
@@ -65916,6 +66223,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
           "ntpSettings": { 
             "servers": [String], 
           },  
+          "mediaModel": String, 
           "coreSite": Boolean, 
           "selfUri": String, 
         },  
@@ -66345,6 +66653,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "mediaModel": String, 
               "coreSite": Boolean, 
               "selfUri": String, 
             },  
@@ -66648,6 +66957,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "mediaModel": String, 
               "coreSite": Boolean, 
               "selfUri": String, 
             },  
@@ -66959,6 +67269,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "mediaModel": String, 
               "coreSite": Boolean, 
               "selfUri": String, 
             },  
@@ -67050,6 +67361,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
           "ntpSettings": { 
             "servers": [String], 
           },  
+          "mediaModel": String, 
           "coreSite": Boolean, 
           "selfUri": String, 
         },  
@@ -67487,6 +67799,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "mediaModel": String, 
               "coreSite": Boolean, 
               "selfUri": String, 
             },  
@@ -67790,6 +68103,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "mediaModel": String, 
               "coreSite": Boolean, 
               "selfUri": String, 
             },  
@@ -68101,6 +68415,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "mediaModel": String, 
               "coreSite": Boolean, 
               "selfUri": String, 
             },  
@@ -68192,6 +68507,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
           "ntpSettings": { 
             "servers": [String], 
           },  
+          "mediaModel": String, 
           "coreSite": Boolean, 
           "selfUri": String, 
         },  
@@ -68283,6 +68599,7 @@ Phone <a href="#" onclick="return copyPhoneExample()">Copy</a>
       "ntpSettings": { 
         "servers": [String], 
       },  
+      "mediaModel": String, 
       "coreSite": Boolean, 
       "selfUri": String, 
     },  
@@ -69071,6 +69388,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "mediaModel": String, 
               "coreSite": Boolean, 
               "selfUri": String, 
             },  
@@ -69374,6 +69692,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "mediaModel": String, 
               "coreSite": Boolean, 
               "selfUri": String, 
             },  
@@ -69685,6 +70004,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "mediaModel": String, 
               "coreSite": Boolean, 
               "selfUri": String, 
             },  
@@ -69776,6 +70096,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
           "ntpSettings": { 
             "servers": [String], 
           },  
+          "mediaModel": String, 
           "coreSite": Boolean, 
           "selfUri": String, 
         },  
@@ -70205,6 +70526,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "mediaModel": String, 
               "coreSite": Boolean, 
               "selfUri": String, 
             },  
@@ -70508,6 +70830,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "mediaModel": String, 
               "coreSite": Boolean, 
               "selfUri": String, 
             },  
@@ -70819,6 +71142,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "mediaModel": String, 
               "coreSite": Boolean, 
               "selfUri": String, 
             },  
@@ -70910,6 +71234,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
           "ntpSettings": { 
             "servers": [String], 
           },  
+          "mediaModel": String, 
           "coreSite": Boolean, 
           "selfUri": String, 
         },  
@@ -71347,6 +71672,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "mediaModel": String, 
               "coreSite": Boolean, 
               "selfUri": String, 
             },  
@@ -71650,6 +71976,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "mediaModel": String, 
               "coreSite": Boolean, 
               "selfUri": String, 
             },  
@@ -71961,6 +72288,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "mediaModel": String, 
               "coreSite": Boolean, 
               "selfUri": String, 
             },  
@@ -72052,6 +72380,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
           "ntpSettings": { 
             "servers": [String], 
           },  
+          "mediaModel": String, 
           "coreSite": Boolean, 
           "selfUri": String, 
         },  
@@ -72143,6 +72472,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
       "ntpSettings": { 
         "servers": [String], 
       },  
+      "mediaModel": String, 
       "coreSite": Boolean, 
       "selfUri": String, 
     },  
@@ -72698,6 +73028,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "mediaModel": String, 
               "coreSite": Boolean, 
               "selfUri": String, 
             },  
@@ -73001,6 +73332,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "mediaModel": String, 
               "coreSite": Boolean, 
               "selfUri": String, 
             },  
@@ -73312,6 +73644,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "mediaModel": String, 
               "coreSite": Boolean, 
               "selfUri": String, 
             },  
@@ -73403,6 +73736,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
           "ntpSettings": { 
             "servers": [String], 
           },  
+          "mediaModel": String, 
           "coreSite": Boolean, 
           "selfUri": String, 
         },  
@@ -73832,6 +74166,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "mediaModel": String, 
               "coreSite": Boolean, 
               "selfUri": String, 
             },  
@@ -74135,6 +74470,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "mediaModel": String, 
               "coreSite": Boolean, 
               "selfUri": String, 
             },  
@@ -74446,6 +74782,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "mediaModel": String, 
               "coreSite": Boolean, 
               "selfUri": String, 
             },  
@@ -74537,6 +74874,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
           "ntpSettings": { 
             "servers": [String], 
           },  
+          "mediaModel": String, 
           "coreSite": Boolean, 
           "selfUri": String, 
         },  
@@ -74974,6 +75312,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "mediaModel": String, 
               "coreSite": Boolean, 
               "selfUri": String, 
             },  
@@ -75277,6 +75616,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "mediaModel": String, 
               "coreSite": Boolean, 
               "selfUri": String, 
             },  
@@ -75588,6 +75928,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "mediaModel": String, 
               "coreSite": Boolean, 
               "selfUri": String, 
             },  
@@ -75679,6 +76020,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
           "ntpSettings": { 
             "servers": [String], 
           },  
+          "mediaModel": String, 
           "coreSite": Boolean, 
           "selfUri": String, 
         },  
@@ -75770,6 +76112,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
       "ntpSettings": { 
         "servers": [String], 
       },  
+      "mediaModel": String, 
       "coreSite": Boolean, 
       "selfUri": String, 
     },  
@@ -76333,6 +76676,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "mediaModel": String, 
               "coreSite": Boolean, 
               "selfUri": String, 
             },  
@@ -76636,6 +76980,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "mediaModel": String, 
               "coreSite": Boolean, 
               "selfUri": String, 
             },  
@@ -76947,6 +77292,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "mediaModel": String, 
               "coreSite": Boolean, 
               "selfUri": String, 
             },  
@@ -77038,6 +77384,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
           "ntpSettings": { 
             "servers": [String], 
           },  
+          "mediaModel": String, 
           "coreSite": Boolean, 
           "selfUri": String, 
         },  
@@ -77467,6 +77814,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "mediaModel": String, 
               "coreSite": Boolean, 
               "selfUri": String, 
             },  
@@ -77770,6 +78118,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "mediaModel": String, 
               "coreSite": Boolean, 
               "selfUri": String, 
             },  
@@ -78081,6 +78430,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "mediaModel": String, 
               "coreSite": Boolean, 
               "selfUri": String, 
             },  
@@ -78172,6 +78522,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
           "ntpSettings": { 
             "servers": [String], 
           },  
+          "mediaModel": String, 
           "coreSite": Boolean, 
           "selfUri": String, 
         },  
@@ -78609,6 +78960,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "mediaModel": String, 
               "coreSite": Boolean, 
               "selfUri": String, 
             },  
@@ -78912,6 +79264,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "mediaModel": String, 
               "coreSite": Boolean, 
               "selfUri": String, 
             },  
@@ -79223,6 +79576,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
               "ntpSettings": { 
                 "servers": [String], 
               },  
+              "mediaModel": String, 
               "coreSite": Boolean, 
               "selfUri": String, 
             },  
@@ -79314,6 +79668,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
           "ntpSettings": { 
             "servers": [String], 
           },  
+          "mediaModel": String, 
           "coreSite": Boolean, 
           "selfUri": String, 
         },  
@@ -79405,6 +79760,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
       "ntpSettings": { 
         "servers": [String], 
       },  
+      "mediaModel": String, 
       "coreSite": Boolean, 
       "selfUri": String, 
     },  
@@ -79496,6 +79852,7 @@ Site <a href="#" onclick="return copySiteExample()">Copy</a>
   "ntpSettings": { 
     "servers": [String], 
   },  
+  "mediaModel": String, 
   "coreSite": Boolean, 
   "selfUri": String, 
 }

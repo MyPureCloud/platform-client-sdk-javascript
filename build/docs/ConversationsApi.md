@@ -4490,6 +4490,23 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
           "id": String, 
         },  
       },  
+      "journeyContext": { 
+        "customer": { 
+          "id": String, 
+          "idType": String, 
+        },  
+        "customerSession": { 
+          "id": String, 
+          "type": String, 
+        },  
+        "triggeringAction": { 
+          "id": String, 
+          "actionMap": { 
+            "id": String, 
+            "version": Number, 
+          },  
+        },  
+      },  
       "wrapup": { 
         "code": String, 
         "name": String, 
@@ -5082,6 +5099,20 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "id": String, 
               },  
             },  
+            "journeyContext": { 
+              "customer": { 
+                "id": String, 
+                "idType": String, 
+              },  
+              "customerSession": { 
+                "id": String, 
+                "type": String, 
+              },  
+              "triggeringAction": { 
+                "id": String, 
+                "actionMap": JourneyActionMap, 
+              },  
+            },  
             "wrapup": { 
               "code": String, 
               "name": String, 
@@ -5303,8 +5334,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "previousUri": String, 
                 "lastUri": String, 
+                "previousUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -5791,8 +5822,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "previousUri": String, 
               "lastUri": String, 
+              "previousUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -5803,8 +5834,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
           "firstUri": String, 
           "selfUri": String, 
           "nextUri": String, 
-          "previousUri": String, 
           "lastUri": String, 
+          "previousUri": String, 
           "pageCount": Number, 
         },  
         "selfUri": String, 
@@ -6619,6 +6650,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "media": [MessageMedia], 
                 "stickers": [MessageSticker], 
               },  
+              "journeyContext": { 
+                "customer": JourneyCustomer, 
+                "customerSession": JourneyCustomerSession, 
+                "triggeringAction": JourneyAction, 
+              },  
               "wrapup": { 
                 "code": String, 
                 "name": String, 
@@ -6971,8 +7007,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "previousUri": String, 
                 "lastUri": String, 
+                "previousUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -6983,8 +7019,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
             "firstUri": String, 
             "selfUri": String, 
             "nextUri": String, 
-            "previousUri": String, 
             "lastUri": String, 
+            "previousUri": String, 
             "pageCount": Number, 
           },  
           "selfUri": String, 
@@ -7197,6 +7233,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "toAddress": Address, 
                 "fromAddress": Address, 
                 "messages": [MessageDetails], 
+                "journeyContext": JourneyContext, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
                 "afterCallWorkRequired": Boolean, 
@@ -7358,8 +7395,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "previousUri": String, 
               "lastUri": String, 
+              "previousUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -7750,8 +7787,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "previousUri": String, 
                 "lastUri": String, 
+                "previousUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -8394,6 +8431,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "toAddress": Address, 
                 "fromAddress": Address, 
                 "messages": [MessageDetails], 
+                "journeyContext": JourneyContext, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
                 "afterCallWorkRequired": Boolean, 
@@ -8555,8 +8593,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "previousUri": String, 
               "lastUri": String, 
+              "previousUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -8947,8 +8985,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "previousUri": String, 
                 "lastUri": String, 
+                "previousUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -10624,6 +10662,23 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
           "id": String, 
         },  
       },  
+      "journeyContext": { 
+        "customer": { 
+          "id": String, 
+          "idType": String, 
+        },  
+        "customerSession": { 
+          "id": String, 
+          "type": String, 
+        },  
+        "triggeringAction": { 
+          "id": String, 
+          "actionMap": { 
+            "id": String, 
+            "version": Number, 
+          },  
+        },  
+      },  
       "wrapup": { 
         "code": String, 
         "name": String, 
@@ -11216,6 +11271,20 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "id": String, 
               },  
             },  
+            "journeyContext": { 
+              "customer": { 
+                "id": String, 
+                "idType": String, 
+              },  
+              "customerSession": { 
+                "id": String, 
+                "type": String, 
+              },  
+              "triggeringAction": { 
+                "id": String, 
+                "actionMap": JourneyActionMap, 
+              },  
+            },  
             "wrapup": { 
               "code": String, 
               "name": String, 
@@ -11437,8 +11506,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "previousUri": String, 
                 "lastUri": String, 
+                "previousUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -11925,8 +11994,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "previousUri": String, 
               "lastUri": String, 
+              "previousUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -11937,8 +12006,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
           "firstUri": String, 
           "selfUri": String, 
           "nextUri": String, 
-          "previousUri": String, 
           "lastUri": String, 
+          "previousUri": String, 
           "pageCount": Number, 
         },  
         "selfUri": String, 
@@ -12753,6 +12822,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "media": [MessageMedia], 
                 "stickers": [MessageSticker], 
               },  
+              "journeyContext": { 
+                "customer": JourneyCustomer, 
+                "customerSession": JourneyCustomerSession, 
+                "triggeringAction": JourneyAction, 
+              },  
               "wrapup": { 
                 "code": String, 
                 "name": String, 
@@ -13105,8 +13179,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "previousUri": String, 
                 "lastUri": String, 
+                "previousUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -13117,8 +13191,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
             "firstUri": String, 
             "selfUri": String, 
             "nextUri": String, 
-            "previousUri": String, 
             "lastUri": String, 
+            "previousUri": String, 
             "pageCount": Number, 
           },  
           "selfUri": String, 
@@ -13331,6 +13405,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "toAddress": Address, 
                 "fromAddress": Address, 
                 "messages": [MessageDetails], 
+                "journeyContext": JourneyContext, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
                 "afterCallWorkRequired": Boolean, 
@@ -13492,8 +13567,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "previousUri": String, 
               "lastUri": String, 
+              "previousUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -13884,8 +13959,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "previousUri": String, 
                 "lastUri": String, 
+                "previousUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -14528,6 +14603,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "toAddress": Address, 
                 "fromAddress": Address, 
                 "messages": [MessageDetails], 
+                "journeyContext": JourneyContext, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
                 "afterCallWorkRequired": Boolean, 
@@ -14689,8 +14765,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "previousUri": String, 
               "lastUri": String, 
+              "previousUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -15081,8 +15157,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "previousUri": String, 
                 "lastUri": String, 
+                "previousUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -16675,6 +16751,23 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
           "id": String, 
         },  
       },  
+      "journeyContext": { 
+        "customer": { 
+          "id": String, 
+          "idType": String, 
+        },  
+        "customerSession": { 
+          "id": String, 
+          "type": String, 
+        },  
+        "triggeringAction": { 
+          "id": String, 
+          "actionMap": { 
+            "id": String, 
+            "version": Number, 
+          },  
+        },  
+      },  
       "wrapup": { 
         "code": String, 
         "name": String, 
@@ -17267,6 +17360,20 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "id": String, 
               },  
             },  
+            "journeyContext": { 
+              "customer": { 
+                "id": String, 
+                "idType": String, 
+              },  
+              "customerSession": { 
+                "id": String, 
+                "type": String, 
+              },  
+              "triggeringAction": { 
+                "id": String, 
+                "actionMap": JourneyActionMap, 
+              },  
+            },  
             "wrapup": { 
               "code": String, 
               "name": String, 
@@ -17488,8 +17595,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "previousUri": String, 
                 "lastUri": String, 
+                "previousUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -17976,8 +18083,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "previousUri": String, 
               "lastUri": String, 
+              "previousUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -17988,8 +18095,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
           "firstUri": String, 
           "selfUri": String, 
           "nextUri": String, 
-          "previousUri": String, 
           "lastUri": String, 
+          "previousUri": String, 
           "pageCount": Number, 
         },  
         "selfUri": String, 
@@ -18804,6 +18911,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "media": [MessageMedia], 
                 "stickers": [MessageSticker], 
               },  
+              "journeyContext": { 
+                "customer": JourneyCustomer, 
+                "customerSession": JourneyCustomerSession, 
+                "triggeringAction": JourneyAction, 
+              },  
               "wrapup": { 
                 "code": String, 
                 "name": String, 
@@ -19156,8 +19268,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "previousUri": String, 
                 "lastUri": String, 
+                "previousUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -19168,8 +19280,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
             "firstUri": String, 
             "selfUri": String, 
             "nextUri": String, 
-            "previousUri": String, 
             "lastUri": String, 
+            "previousUri": String, 
             "pageCount": Number, 
           },  
           "selfUri": String, 
@@ -19382,6 +19494,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "toAddress": Address, 
                 "fromAddress": Address, 
                 "messages": [MessageDetails], 
+                "journeyContext": JourneyContext, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
                 "afterCallWorkRequired": Boolean, 
@@ -19543,8 +19656,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "previousUri": String, 
               "lastUri": String, 
+              "previousUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -19935,8 +20048,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "previousUri": String, 
                 "lastUri": String, 
+                "previousUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -20579,6 +20692,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "toAddress": Address, 
                 "fromAddress": Address, 
                 "messages": [MessageDetails], 
+                "journeyContext": JourneyContext, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
                 "afterCallWorkRequired": Boolean, 
@@ -20740,8 +20854,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "previousUri": String, 
               "lastUri": String, 
+              "previousUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -21132,8 +21246,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "previousUri": String, 
                 "lastUri": String, 
+                "previousUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -22726,6 +22840,23 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
           "id": String, 
         },  
       },  
+      "journeyContext": { 
+        "customer": { 
+          "id": String, 
+          "idType": String, 
+        },  
+        "customerSession": { 
+          "id": String, 
+          "type": String, 
+        },  
+        "triggeringAction": { 
+          "id": String, 
+          "actionMap": { 
+            "id": String, 
+            "version": Number, 
+          },  
+        },  
+      },  
       "wrapup": { 
         "code": String, 
         "name": String, 
@@ -23318,6 +23449,20 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "id": String, 
               },  
             },  
+            "journeyContext": { 
+              "customer": { 
+                "id": String, 
+                "idType": String, 
+              },  
+              "customerSession": { 
+                "id": String, 
+                "type": String, 
+              },  
+              "triggeringAction": { 
+                "id": String, 
+                "actionMap": JourneyActionMap, 
+              },  
+            },  
             "wrapup": { 
               "code": String, 
               "name": String, 
@@ -23539,8 +23684,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "previousUri": String, 
                 "lastUri": String, 
+                "previousUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -24027,8 +24172,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "previousUri": String, 
               "lastUri": String, 
+              "previousUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -24039,8 +24184,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
           "firstUri": String, 
           "selfUri": String, 
           "nextUri": String, 
-          "previousUri": String, 
           "lastUri": String, 
+          "previousUri": String, 
           "pageCount": Number, 
         },  
         "selfUri": String, 
@@ -24855,6 +25000,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "media": [MessageMedia], 
                 "stickers": [MessageSticker], 
               },  
+              "journeyContext": { 
+                "customer": JourneyCustomer, 
+                "customerSession": JourneyCustomerSession, 
+                "triggeringAction": JourneyAction, 
+              },  
               "wrapup": { 
                 "code": String, 
                 "name": String, 
@@ -25207,8 +25357,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "previousUri": String, 
                 "lastUri": String, 
+                "previousUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -25219,8 +25369,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
             "firstUri": String, 
             "selfUri": String, 
             "nextUri": String, 
-            "previousUri": String, 
             "lastUri": String, 
+            "previousUri": String, 
             "pageCount": Number, 
           },  
           "selfUri": String, 
@@ -25433,6 +25583,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "toAddress": Address, 
                 "fromAddress": Address, 
                 "messages": [MessageDetails], 
+                "journeyContext": JourneyContext, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
                 "afterCallWorkRequired": Boolean, 
@@ -25594,8 +25745,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "previousUri": String, 
               "lastUri": String, 
+              "previousUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -25986,8 +26137,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "previousUri": String, 
                 "lastUri": String, 
+                "previousUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -26630,6 +26781,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "toAddress": Address, 
                 "fromAddress": Address, 
                 "messages": [MessageDetails], 
+                "journeyContext": JourneyContext, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
                 "afterCallWorkRequired": Boolean, 
@@ -26791,8 +26943,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "previousUri": String, 
               "lastUri": String, 
+              "previousUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -27183,8 +27335,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "previousUri": String, 
                 "lastUri": String, 
+                "previousUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -28781,6 +28933,23 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
           "id": String, 
         },  
       },  
+      "journeyContext": { 
+        "customer": { 
+          "id": String, 
+          "idType": String, 
+        },  
+        "customerSession": { 
+          "id": String, 
+          "type": String, 
+        },  
+        "triggeringAction": { 
+          "id": String, 
+          "actionMap": { 
+            "id": String, 
+            "version": Number, 
+          },  
+        },  
+      },  
       "wrapup": { 
         "code": String, 
         "name": String, 
@@ -29373,6 +29542,20 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "id": String, 
               },  
             },  
+            "journeyContext": { 
+              "customer": { 
+                "id": String, 
+                "idType": String, 
+              },  
+              "customerSession": { 
+                "id": String, 
+                "type": String, 
+              },  
+              "triggeringAction": { 
+                "id": String, 
+                "actionMap": JourneyActionMap, 
+              },  
+            },  
             "wrapup": { 
               "code": String, 
               "name": String, 
@@ -29594,8 +29777,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "previousUri": String, 
                 "lastUri": String, 
+                "previousUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -30082,8 +30265,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "previousUri": String, 
               "lastUri": String, 
+              "previousUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -30094,8 +30277,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
           "firstUri": String, 
           "selfUri": String, 
           "nextUri": String, 
-          "previousUri": String, 
           "lastUri": String, 
+          "previousUri": String, 
           "pageCount": Number, 
         },  
         "selfUri": String, 
@@ -30910,6 +31093,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "media": [MessageMedia], 
                 "stickers": [MessageSticker], 
               },  
+              "journeyContext": { 
+                "customer": JourneyCustomer, 
+                "customerSession": JourneyCustomerSession, 
+                "triggeringAction": JourneyAction, 
+              },  
               "wrapup": { 
                 "code": String, 
                 "name": String, 
@@ -31262,8 +31450,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "previousUri": String, 
                 "lastUri": String, 
+                "previousUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -31274,8 +31462,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
             "firstUri": String, 
             "selfUri": String, 
             "nextUri": String, 
-            "previousUri": String, 
             "lastUri": String, 
+            "previousUri": String, 
             "pageCount": Number, 
           },  
           "selfUri": String, 
@@ -31488,6 +31676,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "toAddress": Address, 
                 "fromAddress": Address, 
                 "messages": [MessageDetails], 
+                "journeyContext": JourneyContext, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
                 "afterCallWorkRequired": Boolean, 
@@ -31649,8 +31838,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "previousUri": String, 
               "lastUri": String, 
+              "previousUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -32041,8 +32230,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "previousUri": String, 
                 "lastUri": String, 
+                "previousUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -32685,6 +32874,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "toAddress": Address, 
                 "fromAddress": Address, 
                 "messages": [MessageDetails], 
+                "journeyContext": JourneyContext, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
                 "afterCallWorkRequired": Boolean, 
@@ -32846,8 +33036,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "previousUri": String, 
               "lastUri": String, 
+              "previousUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -33238,8 +33428,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "previousUri": String, 
                 "lastUri": String, 
+                "previousUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -34832,6 +35022,23 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
           "id": String, 
         },  
       },  
+      "journeyContext": { 
+        "customer": { 
+          "id": String, 
+          "idType": String, 
+        },  
+        "customerSession": { 
+          "id": String, 
+          "type": String, 
+        },  
+        "triggeringAction": { 
+          "id": String, 
+          "actionMap": { 
+            "id": String, 
+            "version": Number, 
+          },  
+        },  
+      },  
       "wrapup": { 
         "code": String, 
         "name": String, 
@@ -35424,6 +35631,20 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "id": String, 
               },  
             },  
+            "journeyContext": { 
+              "customer": { 
+                "id": String, 
+                "idType": String, 
+              },  
+              "customerSession": { 
+                "id": String, 
+                "type": String, 
+              },  
+              "triggeringAction": { 
+                "id": String, 
+                "actionMap": JourneyActionMap, 
+              },  
+            },  
             "wrapup": { 
               "code": String, 
               "name": String, 
@@ -35645,8 +35866,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "previousUri": String, 
                 "lastUri": String, 
+                "previousUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -36133,8 +36354,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "previousUri": String, 
               "lastUri": String, 
+              "previousUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -36145,8 +36366,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
           "firstUri": String, 
           "selfUri": String, 
           "nextUri": String, 
-          "previousUri": String, 
           "lastUri": String, 
+          "previousUri": String, 
           "pageCount": Number, 
         },  
         "selfUri": String, 
@@ -36961,6 +37182,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "media": [MessageMedia], 
                 "stickers": [MessageSticker], 
               },  
+              "journeyContext": { 
+                "customer": JourneyCustomer, 
+                "customerSession": JourneyCustomerSession, 
+                "triggeringAction": JourneyAction, 
+              },  
               "wrapup": { 
                 "code": String, 
                 "name": String, 
@@ -37313,8 +37539,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "previousUri": String, 
                 "lastUri": String, 
+                "previousUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -37325,8 +37551,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
             "firstUri": String, 
             "selfUri": String, 
             "nextUri": String, 
-            "previousUri": String, 
             "lastUri": String, 
+            "previousUri": String, 
             "pageCount": Number, 
           },  
           "selfUri": String, 
@@ -37539,6 +37765,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "toAddress": Address, 
                 "fromAddress": Address, 
                 "messages": [MessageDetails], 
+                "journeyContext": JourneyContext, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
                 "afterCallWorkRequired": Boolean, 
@@ -37700,8 +37927,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "previousUri": String, 
               "lastUri": String, 
+              "previousUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -38092,8 +38319,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "previousUri": String, 
                 "lastUri": String, 
+                "previousUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -38736,6 +38963,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "toAddress": Address, 
                 "fromAddress": Address, 
                 "messages": [MessageDetails], 
+                "journeyContext": JourneyContext, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
                 "afterCallWorkRequired": Boolean, 
@@ -38897,8 +39125,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "previousUri": String, 
               "lastUri": String, 
+              "previousUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -39289,8 +39517,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "previousUri": String, 
                 "lastUri": String, 
+                "previousUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -42594,6 +42822,23 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
           "id": String, 
         },  
       },  
+      "journeyContext": { 
+        "customer": { 
+          "id": String, 
+          "idType": String, 
+        },  
+        "customerSession": { 
+          "id": String, 
+          "type": String, 
+        },  
+        "triggeringAction": { 
+          "id": String, 
+          "actionMap": { 
+            "id": String, 
+            "version": Number, 
+          },  
+        },  
+      },  
       "wrapup": { 
         "code": String, 
         "name": String, 
@@ -43186,6 +43431,20 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "id": String, 
               },  
             },  
+            "journeyContext": { 
+              "customer": { 
+                "id": String, 
+                "idType": String, 
+              },  
+              "customerSession": { 
+                "id": String, 
+                "type": String, 
+              },  
+              "triggeringAction": { 
+                "id": String, 
+                "actionMap": JourneyActionMap, 
+              },  
+            },  
             "wrapup": { 
               "code": String, 
               "name": String, 
@@ -43407,8 +43666,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "previousUri": String, 
                 "lastUri": String, 
+                "previousUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -43895,8 +44154,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "previousUri": String, 
               "lastUri": String, 
+              "previousUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -43907,8 +44166,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
           "firstUri": String, 
           "selfUri": String, 
           "nextUri": String, 
-          "previousUri": String, 
           "lastUri": String, 
+          "previousUri": String, 
           "pageCount": Number, 
         },  
         "selfUri": String, 
@@ -44723,6 +44982,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "media": [MessageMedia], 
                 "stickers": [MessageSticker], 
               },  
+              "journeyContext": { 
+                "customer": JourneyCustomer, 
+                "customerSession": JourneyCustomerSession, 
+                "triggeringAction": JourneyAction, 
+              },  
               "wrapup": { 
                 "code": String, 
                 "name": String, 
@@ -45075,8 +45339,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "previousUri": String, 
                 "lastUri": String, 
+                "previousUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -45087,8 +45351,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
             "firstUri": String, 
             "selfUri": String, 
             "nextUri": String, 
-            "previousUri": String, 
             "lastUri": String, 
+            "previousUri": String, 
             "pageCount": Number, 
           },  
           "selfUri": String, 
@@ -45301,6 +45565,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "toAddress": Address, 
                 "fromAddress": Address, 
                 "messages": [MessageDetails], 
+                "journeyContext": JourneyContext, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
                 "afterCallWorkRequired": Boolean, 
@@ -45462,8 +45727,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "previousUri": String, 
               "lastUri": String, 
+              "previousUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -45854,8 +46119,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "previousUri": String, 
                 "lastUri": String, 
+                "previousUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -46498,6 +46763,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "toAddress": Address, 
                 "fromAddress": Address, 
                 "messages": [MessageDetails], 
+                "journeyContext": JourneyContext, 
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
                 "afterCallWorkRequired": Boolean, 
@@ -46659,8 +46925,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "previousUri": String, 
               "lastUri": String, 
+              "previousUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -47051,8 +47317,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "previousUri": String, 
                 "lastUri": String, 
+                "previousUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -49049,7 +49315,7 @@ POST /api/v2/conversations/messages/{conversationId}/communications/{communicati
 
 Send message
 
-
+Send message on existing conversation/communication. Only one message body field can be accepted, per request. Example: 1 textBody, 1 mediaId, 1 stickerId, or 1 messageTemplate.
 
 Requires ALL permissions: 
 
@@ -49505,7 +49771,7 @@ apiInstance.postConversationsMessagesAgentless(body)
 
 <a name="postConversationsMessagingIntegrationsFacebook"></a>
 
-# FacebookIntegration postConversationsMessagingIntegrationsFacebook(body)
+# FacebookIntegration postConversationsMessagingIntegrationsFacebook(body, opts)
 
 
 
@@ -49567,8 +49833,11 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ConversationsApi();
 
 let body = {}; // Object | FacebookIntegrationRequest
+let opts = { 
+  'async': false // Boolean | Create a Facebook integration in an asynchronous manner. If the parameter value is true, this initiates the generation of a new Facebook integration. An integration ID is returned, it can be used to query the integration. Check the integration's createStatus for Completed or Error to detect the create is finished.
+};
 
-apiInstance.postConversationsMessagingIntegrationsFacebook(body)
+apiInstance.postConversationsMessagingIntegrationsFacebook(body, opts)
   .then((data) => {
     console.log(`postConversationsMessagingIntegrationsFacebook success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -49584,6 +49853,7 @@ apiInstance.postConversationsMessagingIntegrationsFacebook(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | FacebookIntegrationRequest |  |
+ **async** | **Boolean** | Create a Facebook integration in an asynchronous manner. If the parameter value is true, this initiates the generation of a new Facebook integration. An integration ID is returned, it can be used to query the integration. Check the integration&#39;s createStatus for Completed or Error to detect the create is finished. | [optional] [default to false] |
 {: class="table table-striped"}
 
 ### Return type
@@ -49592,7 +49862,7 @@ apiInstance.postConversationsMessagingIntegrationsFacebook(body)
 
 <a name="postConversationsMessagingIntegrationsLine"></a>
 
-# LineIntegration postConversationsMessagingIntegrationsLine(body)
+# LineIntegration postConversationsMessagingIntegrationsLine(body, opts)
 
 
 
@@ -49653,8 +49923,11 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ConversationsApi();
 
 let body = {}; // Object | LineIntegrationRequest
+let opts = { 
+  'async': false // Boolean | Create a LINE integration in an asynchronous manner. If the parameter value is true, this initiates the generation of a new LINE integration. An integration ID is returned, it can be used to query the integration. Check the integration's createStatus for Completed or Error to detect the create is finished.
+};
 
-apiInstance.postConversationsMessagingIntegrationsLine(body)
+apiInstance.postConversationsMessagingIntegrationsLine(body, opts)
   .then((data) => {
     console.log(`postConversationsMessagingIntegrationsLine success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -49670,6 +49943,7 @@ apiInstance.postConversationsMessagingIntegrationsLine(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | LineIntegrationRequest |  |
+ **async** | **Boolean** | Create a LINE integration in an asynchronous manner. If the parameter value is true, this initiates the generation of a new LINE integration. An integration ID is returned, it can be used to query the integration. Check the integration&#39;s createStatus for Completed or Error to detect the create is finished. | [optional] [default to false] |
 {: class="table table-striped"}
 
 ### Return type
@@ -49678,7 +49952,7 @@ apiInstance.postConversationsMessagingIntegrationsLine(body)
 
 <a name="postConversationsMessagingIntegrationsTwitter"></a>
 
-# TwitterIntegration postConversationsMessagingIntegrationsTwitter(body)
+# TwitterIntegration postConversationsMessagingIntegrationsTwitter(body, opts)
 
 
 
@@ -49741,8 +50015,11 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ConversationsApi();
 
 let body = {}; // Object | TwitterIntegrationRequest
+let opts = { 
+  'async': false // Boolean | Create a Twitter integration in an asynchronous manner. If the parameter value is true, this initiates the generation of a new Twitter integration. An integration ID is returned, it can be used to query the integration. Check the integration's createStatus for Completed or Error to detect the create is finished.
+};
 
-apiInstance.postConversationsMessagingIntegrationsTwitter(body)
+apiInstance.postConversationsMessagingIntegrationsTwitter(body, opts)
   .then((data) => {
     console.log(`postConversationsMessagingIntegrationsTwitter success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -49758,6 +50035,7 @@ apiInstance.postConversationsMessagingIntegrationsTwitter(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | TwitterIntegrationRequest |  |
+ **async** | **Boolean** | Create a Twitter integration in an asynchronous manner. If the parameter value is true, this initiates the generation of a new Twitter integration. An integration ID is returned, it can be used to query the integration. Check the integration&#39;s createStatus for Completed or Error to detect the create is finished. | [optional] [default to false] |
 {: class="table table-striped"}
 
 ### Return type
@@ -49766,7 +50044,7 @@ apiInstance.postConversationsMessagingIntegrationsTwitter(body)
 
 <a name="postConversationsMessagingIntegrationsWhatsapp"></a>
 
-# WhatsAppIntegration postConversationsMessagingIntegrationsWhatsapp(body)
+# WhatsAppIntegration postConversationsMessagingIntegrationsWhatsapp(body, opts)
 
 
 
@@ -49825,8 +50103,11 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ConversationsApi();
 
 let body = {}; // Object | WhatsAppIntegrationRequest
+let opts = { 
+  'async': false // Boolean | Create a WhatsApp integration in an asynchronous manner. If the parameter value is true, this initiates the generation of a new WhatsApp integration. An integration ID is returned, it can be used to query the integration. Check the integration's createStatus for Completed or Error to detect the create is finished.
+};
 
-apiInstance.postConversationsMessagingIntegrationsWhatsapp(body)
+apiInstance.postConversationsMessagingIntegrationsWhatsapp(body, opts)
   .then((data) => {
     console.log(`postConversationsMessagingIntegrationsWhatsapp success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -49842,6 +50123,7 @@ apiInstance.postConversationsMessagingIntegrationsWhatsapp(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | WhatsAppIntegrationRequest |  |
+ **async** | **Boolean** | Create a WhatsApp integration in an asynchronous manner. If the parameter value is true, this initiates the generation of a new WhatsApp integration. An integration ID is returned, it can be used to query the integration. Check the integration&#39;s createStatus for Completed or Error to detect the create is finished. | [optional] [default to false] |
 {: class="table table-striped"}
 
 ### Return type

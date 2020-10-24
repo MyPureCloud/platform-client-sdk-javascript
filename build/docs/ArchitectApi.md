@@ -5728,6 +5728,11 @@ Flow <a href="#" onclick="return copyFlowExample()">Copy</a>
       "properties": {String: Object}, 
       "additionalProperties": Object, 
     },  
+    "nluInfo": { 
+      "intents": { 
+        "name": String, 
+      },  
+    },  
     "selfUri": String, 
   },  
   "savedVersion": { 
@@ -5767,6 +5772,11 @@ Flow <a href="#" onclick="return copyFlowExample()">Copy</a>
       "required": [String], 
       "properties": {String: Object}, 
       "additionalProperties": Object, 
+    },  
+    "nluInfo": { 
+      "intents": { 
+        "name": String, 
+      },  
     },  
     "selfUri": String, 
   },  
@@ -5810,6 +5820,11 @@ Flow <a href="#" onclick="return copyFlowExample()">Copy</a>
       "properties": {String: Object}, 
       "additionalProperties": Object, 
     },  
+    "nluInfo": { 
+      "intents": { 
+        "name": String, 
+      },  
+    },  
     "selfUri": String, 
   },  
   "debugVersion": { 
@@ -5849,6 +5864,11 @@ Flow <a href="#" onclick="return copyFlowExample()">Copy</a>
       "required": [String], 
       "properties": {String: Object}, 
       "additionalProperties": Object, 
+    },  
+    "nluInfo": { 
+      "intents": { 
+        "name": String, 
+      },  
     },  
     "selfUri": String, 
   },  
@@ -6698,6 +6718,11 @@ Flow <a href="#" onclick="return copyFlowExample()">Copy</a>
     "errorMessageParams": {String: String}, 
     "actionName": String, 
     "actionStatus": String, 
+  },  
+  "nluInfo": { 
+    "intents": { 
+      "name": String, 
+    },  
   },  
   "selfUri": String, 
 }
@@ -9830,6 +9855,11 @@ Flow <a href="#" onclick="return copyFlowExample()">Copy</a>
       "properties": {String: Object}, 
       "additionalProperties": Object, 
     },  
+    "nluInfo": { 
+      "intents": { 
+        "name": String, 
+      },  
+    },  
     "selfUri": String, 
   },  
   "savedVersion": { 
@@ -9869,6 +9899,11 @@ Flow <a href="#" onclick="return copyFlowExample()">Copy</a>
       "required": [String], 
       "properties": {String: Object}, 
       "additionalProperties": Object, 
+    },  
+    "nluInfo": { 
+      "intents": { 
+        "name": String, 
+      },  
     },  
     "selfUri": String, 
   },  
@@ -9912,6 +9947,11 @@ Flow <a href="#" onclick="return copyFlowExample()">Copy</a>
       "properties": {String: Object}, 
       "additionalProperties": Object, 
     },  
+    "nluInfo": { 
+      "intents": { 
+        "name": String, 
+      },  
+    },  
     "selfUri": String, 
   },  
   "debugVersion": { 
@@ -9951,6 +9991,11 @@ Flow <a href="#" onclick="return copyFlowExample()">Copy</a>
       "required": [String], 
       "properties": {String: Object}, 
       "additionalProperties": Object, 
+    },  
+    "nluInfo": { 
+      "intents": { 
+        "name": String, 
+      },  
     },  
     "selfUri": String, 
   },  
@@ -10800,6 +10845,11 @@ Flow <a href="#" onclick="return copyFlowExample()">Copy</a>
     "errorMessageParams": {String: String}, 
     "actionName": String, 
     "actionStatus": String, 
+  },  
+  "nluInfo": { 
+    "intents": { 
+      "name": String, 
+    },  
   },  
   "selfUri": String, 
 }

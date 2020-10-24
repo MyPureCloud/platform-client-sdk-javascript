@@ -50,7 +50,6 @@ import TextbotsApi from './api/TextbotsApi.js';
 import TokensApi from './api/TokensApi.js';
 import UploadsApi from './api/UploadsApi.js';
 import UsageApi from './api/UsageApi.js';
-import UserDevelopmentApi from './api/UserDevelopmentApi.js';
 import UserRecordingsApi from './api/UserRecordingsApi.js';
 import UsersApi from './api/UsersApi.js';
 import UtilitiesApi from './api/UtilitiesApi.js';
@@ -89,7 +88,7 @@ import WorkforceManagementApi from './api/WorkforceManagementApi.js';
  * </pre>
  * </p>
  * @module purecloud-platform-client-v2/index
- * @version 95.0.0
+ * @version 96.0.0
  */
 class platformClient {
 	constructor() {
@@ -348,11 +347,6 @@ class platformClient {
 		 * @property {module:purecloud-platform-client-v2/api/UsageApi}
 		 */
 		this.UsageApi = UsageApi;
-		/**
-		 * The UserDevelopmentApi service constructor.
-		 * @property {module:purecloud-platform-client-v2/api/UserDevelopmentApi}
-		 */
-		this.UserDevelopmentApi = UserDevelopmentApi;
 		/**
 		 * The UserRecordingsApi service constructor.
 		 * @property {module:purecloud-platform-client-v2/api/UserRecordingsApi}
