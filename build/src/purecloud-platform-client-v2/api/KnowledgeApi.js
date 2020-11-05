@@ -5,7 +5,7 @@ class KnowledgeApi {
 	/**
 	 * Knowledge service.
 	 * @module purecloud-platform-client-v2/api/KnowledgeApi
-	 * @version 96.0.0
+	 * @version 97.0.0
 	 */
 
 	/**
@@ -321,7 +321,7 @@ class KnowledgeApi {
 	}
 
 	/**
-	 * Get All trainings information for a knowledgebase
+	 * Get all trainings information for a knowledgebase
 	 * 
 	 * @param {String} knowledgeBaseId Knowledge base ID
 	 * @param {Object} languageCode Language code, format: iso2-LOCALE
@@ -330,6 +330,7 @@ class KnowledgeApi {
 	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
 	 * @param {String} opts.limit Number of entities to return. Maximum of 200.
 	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
+	 * @param {Object} opts.knowledgeDocumentsState Return the training with the specified state of the trained documents.
 	 */
 	getKnowledgeKnowledgebaseLanguageTrainings(knowledgeBaseId, languageCode, opts) { 
 		opts = opts || {};
@@ -347,7 +348,7 @@ class KnowledgeApi {
 			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/trainings', 
 			'GET', 
 			{ 'knowledgeBaseId': knowledgeBaseId,'languageCode': languageCode }, 
-			{ 'before': opts['before'],'after': opts['after'],'limit': opts['limit'],'pageSize': opts['pageSize'] }, 
+			{ 'before': opts['before'],'after': opts['after'],'limit': opts['limit'],'pageSize': opts['pageSize'],'knowledgeDocumentsState': opts['knowledgeDocumentsState'] }, 
 			{  }, 
 			{  }, 
 			null, 

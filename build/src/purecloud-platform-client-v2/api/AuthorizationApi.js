@@ -5,7 +5,7 @@ class AuthorizationApi {
 	/**
 	 * Authorization service.
 	 * @module purecloud-platform-client-v2/api/AuthorizationApi
-	 * @version 96.0.0
+	 * @version 97.0.0
 	 */
 
 	/**
@@ -340,6 +340,8 @@ class AuthorizationApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Object} opts.queryType Query filter type
+	 * @param {String} opts.query Comma-separated list of permissions or domains to query
 	 */
 	getAuthorizationPermissions(opts) { 
 		opts = opts || {};
@@ -349,7 +351,7 @@ class AuthorizationApi {
 			'/api/v2/authorization/permissions', 
 			'GET', 
 			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] }, 
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'queryType': opts['queryType'],'query': opts['query'] }, 
 			{  }, 
 			{  }, 
 			null, 

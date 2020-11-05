@@ -674,21 +674,25 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
 { 
   "id": String, 
   "name": String, 
+  "language": String, 
   "draftVersion": { 
     "id": String, 
     "domain": { 
       "id": String, 
       "name": String, 
+      "language": String, 
       "draftVersion": { 
         "id": String, 
         "domain": { 
           "id": String, 
           "name": String, 
+          "language": String, 
           "draftVersion": { 
             "id": String, 
             "domain": { 
               "id": String, 
               "name": String, 
+              "language": String, 
               "draftVersion": { 
                 "id": String, 
                 "domain": NluDomain, 
@@ -760,6 +764,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
             "domain": { 
               "id": String, 
               "name": String, 
+              "language": String, 
               "draftVersion": { 
                 "id": String, 
                 "domain": NluDomain, 
@@ -873,11 +878,13 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
         "domain": { 
           "id": String, 
           "name": String, 
+          "language": String, 
           "draftVersion": { 
             "id": String, 
             "domain": { 
               "id": String, 
               "name": String, 
+              "language": String, 
               "draftVersion": { 
                 "id": String, 
                 "domain": NluDomain, 
@@ -949,6 +956,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
             "domain": { 
               "id": String, 
               "name": String, 
+              "language": String, 
               "draftVersion": { 
                 "id": String, 
                 "domain": NluDomain, 
@@ -1104,16 +1112,19 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
     "domain": { 
       "id": String, 
       "name": String, 
+      "language": String, 
       "draftVersion": { 
         "id": String, 
         "domain": { 
           "id": String, 
           "name": String, 
+          "language": String, 
           "draftVersion": { 
             "id": String, 
             "domain": { 
               "id": String, 
               "name": String, 
+              "language": String, 
               "draftVersion": { 
                 "id": String, 
                 "domain": NluDomain, 
@@ -1185,6 +1196,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
             "domain": { 
               "id": String, 
               "name": String, 
+              "language": String, 
               "draftVersion": { 
                 "id": String, 
                 "domain": NluDomain, 
@@ -1298,11 +1310,13 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
         "domain": { 
           "id": String, 
           "name": String, 
+          "language": String, 
           "draftVersion": { 
             "id": String, 
             "domain": { 
               "id": String, 
               "name": String, 
+              "language": String, 
               "draftVersion": { 
                 "id": String, 
                 "domain": NluDomain, 
@@ -1374,6 +1388,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
             "domain": { 
               "id": String, 
               "name": String, 
+              "language": String, 
               "draftVersion": { 
                 "id": String, 
                 "domain": NluDomain, 
@@ -1922,21 +1937,25 @@ NluDomainVersion <a href="#" onclick="return copyNluDomainVersionExample()">Copy
   "domain": { 
     "id": String, 
     "name": String, 
+    "language": String, 
     "draftVersion": { 
       "id": String, 
       "domain": { 
         "id": String, 
         "name": String, 
+        "language": String, 
         "draftVersion": { 
           "id": String, 
           "domain": { 
             "id": String, 
             "name": String, 
+            "language": String, 
             "draftVersion": { 
               "id": String, 
               "domain": { 
                 "id": String, 
                 "name": String, 
+                "language": String, 
                 "draftVersion": NluDomainVersion, 
                 "lastPublishedVersion": NluDomainVersion, 
                 "dateCreated": Date, 
@@ -1969,6 +1988,7 @@ NluDomainVersion <a href="#" onclick="return copyNluDomainVersionExample()">Copy
               "domain": { 
                 "id": String, 
                 "name": String, 
+                "language": String, 
                 "draftVersion": NluDomainVersion, 
                 "lastPublishedVersion": NluDomainVersion, 
                 "dateCreated": Date, 
@@ -2041,11 +2061,13 @@ NluDomainVersion <a href="#" onclick="return copyNluDomainVersionExample()">Copy
           "domain": { 
             "id": String, 
             "name": String, 
+            "language": String, 
             "draftVersion": { 
               "id": String, 
               "domain": { 
                 "id": String, 
                 "name": String, 
+                "language": String, 
                 "draftVersion": NluDomainVersion, 
                 "lastPublishedVersion": NluDomainVersion, 
                 "dateCreated": Date, 
@@ -2078,6 +2100,7 @@ NluDomainVersion <a href="#" onclick="return copyNluDomainVersionExample()">Copy
               "domain": { 
                 "id": String, 
                 "name": String, 
+                "language": String, 
                 "draftVersion": NluDomainVersion, 
                 "lastPublishedVersion": NluDomainVersion, 
                 "dateCreated": Date, 
@@ -2192,16 +2215,19 @@ NluDomainVersion <a href="#" onclick="return copyNluDomainVersionExample()">Copy
       "domain": { 
         "id": String, 
         "name": String, 
+        "language": String, 
         "draftVersion": { 
           "id": String, 
           "domain": { 
             "id": String, 
             "name": String, 
+            "language": String, 
             "draftVersion": { 
               "id": String, 
               "domain": { 
                 "id": String, 
                 "name": String, 
+                "language": String, 
                 "draftVersion": NluDomainVersion, 
                 "lastPublishedVersion": NluDomainVersion, 
                 "dateCreated": Date, 
@@ -2234,6 +2260,7 @@ NluDomainVersion <a href="#" onclick="return copyNluDomainVersionExample()">Copy
               "domain": { 
                 "id": String, 
                 "name": String, 
+                "language": String, 
                 "draftVersion": NluDomainVersion, 
                 "lastPublishedVersion": NluDomainVersion, 
                 "dateCreated": Date, 
@@ -2306,11 +2333,13 @@ NluDomainVersion <a href="#" onclick="return copyNluDomainVersionExample()">Copy
           "domain": { 
             "id": String, 
             "name": String, 
+            "language": String, 
             "draftVersion": { 
               "id": String, 
               "domain": { 
                 "id": String, 
                 "name": String, 
+                "language": String, 
                 "draftVersion": NluDomainVersion, 
                 "lastPublishedVersion": NluDomainVersion, 
                 "dateCreated": Date, 
@@ -2343,6 +2372,7 @@ NluDomainVersion <a href="#" onclick="return copyNluDomainVersionExample()">Copy
               "domain": { 
                 "id": String, 
                 "name": String, 
+                "language": String, 
                 "draftVersion": NluDomainVersion, 
                 "lastPublishedVersion": NluDomainVersion, 
                 "dateCreated": Date, 
@@ -2577,21 +2607,25 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
 { 
   "id": String, 
   "name": String, 
+  "language": String, 
   "draftVersion": { 
     "id": String, 
     "domain": { 
       "id": String, 
       "name": String, 
+      "language": String, 
       "draftVersion": { 
         "id": String, 
         "domain": { 
           "id": String, 
           "name": String, 
+          "language": String, 
           "draftVersion": { 
             "id": String, 
             "domain": { 
               "id": String, 
               "name": String, 
+              "language": String, 
               "draftVersion": { 
                 "id": String, 
                 "domain": NluDomain, 
@@ -2663,6 +2697,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
             "domain": { 
               "id": String, 
               "name": String, 
+              "language": String, 
               "draftVersion": { 
                 "id": String, 
                 "domain": NluDomain, 
@@ -2776,11 +2811,13 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
         "domain": { 
           "id": String, 
           "name": String, 
+          "language": String, 
           "draftVersion": { 
             "id": String, 
             "domain": { 
               "id": String, 
               "name": String, 
+              "language": String, 
               "draftVersion": { 
                 "id": String, 
                 "domain": NluDomain, 
@@ -2852,6 +2889,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
             "domain": { 
               "id": String, 
               "name": String, 
+              "language": String, 
               "draftVersion": { 
                 "id": String, 
                 "domain": NluDomain, 
@@ -3007,16 +3045,19 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
     "domain": { 
       "id": String, 
       "name": String, 
+      "language": String, 
       "draftVersion": { 
         "id": String, 
         "domain": { 
           "id": String, 
           "name": String, 
+          "language": String, 
           "draftVersion": { 
             "id": String, 
             "domain": { 
               "id": String, 
               "name": String, 
+              "language": String, 
               "draftVersion": { 
                 "id": String, 
                 "domain": NluDomain, 
@@ -3088,6 +3129,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
             "domain": { 
               "id": String, 
               "name": String, 
+              "language": String, 
               "draftVersion": { 
                 "id": String, 
                 "domain": NluDomain, 
@@ -3201,11 +3243,13 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
         "domain": { 
           "id": String, 
           "name": String, 
+          "language": String, 
           "draftVersion": { 
             "id": String, 
             "domain": { 
               "id": String, 
               "name": String, 
+              "language": String, 
               "draftVersion": { 
                 "id": String, 
                 "domain": NluDomain, 
@@ -3277,6 +3321,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
             "domain": { 
               "id": String, 
               "name": String, 
+              "language": String, 
               "draftVersion": { 
                 "id": String, 
                 "domain": NluDomain, 
@@ -3514,21 +3559,25 @@ NluDomainVersion <a href="#" onclick="return copyNluDomainVersionExample()">Copy
   "domain": { 
     "id": String, 
     "name": String, 
+    "language": String, 
     "draftVersion": { 
       "id": String, 
       "domain": { 
         "id": String, 
         "name": String, 
+        "language": String, 
         "draftVersion": { 
           "id": String, 
           "domain": { 
             "id": String, 
             "name": String, 
+            "language": String, 
             "draftVersion": { 
               "id": String, 
               "domain": { 
                 "id": String, 
                 "name": String, 
+                "language": String, 
                 "draftVersion": NluDomainVersion, 
                 "lastPublishedVersion": NluDomainVersion, 
                 "dateCreated": Date, 
@@ -3561,6 +3610,7 @@ NluDomainVersion <a href="#" onclick="return copyNluDomainVersionExample()">Copy
               "domain": { 
                 "id": String, 
                 "name": String, 
+                "language": String, 
                 "draftVersion": NluDomainVersion, 
                 "lastPublishedVersion": NluDomainVersion, 
                 "dateCreated": Date, 
@@ -3633,11 +3683,13 @@ NluDomainVersion <a href="#" onclick="return copyNluDomainVersionExample()">Copy
           "domain": { 
             "id": String, 
             "name": String, 
+            "language": String, 
             "draftVersion": { 
               "id": String, 
               "domain": { 
                 "id": String, 
                 "name": String, 
+                "language": String, 
                 "draftVersion": NluDomainVersion, 
                 "lastPublishedVersion": NluDomainVersion, 
                 "dateCreated": Date, 
@@ -3670,6 +3722,7 @@ NluDomainVersion <a href="#" onclick="return copyNluDomainVersionExample()">Copy
               "domain": { 
                 "id": String, 
                 "name": String, 
+                "language": String, 
                 "draftVersion": NluDomainVersion, 
                 "lastPublishedVersion": NluDomainVersion, 
                 "dateCreated": Date, 
@@ -3784,16 +3837,19 @@ NluDomainVersion <a href="#" onclick="return copyNluDomainVersionExample()">Copy
       "domain": { 
         "id": String, 
         "name": String, 
+        "language": String, 
         "draftVersion": { 
           "id": String, 
           "domain": { 
             "id": String, 
             "name": String, 
+            "language": String, 
             "draftVersion": { 
               "id": String, 
               "domain": { 
                 "id": String, 
                 "name": String, 
+                "language": String, 
                 "draftVersion": NluDomainVersion, 
                 "lastPublishedVersion": NluDomainVersion, 
                 "dateCreated": Date, 
@@ -3826,6 +3882,7 @@ NluDomainVersion <a href="#" onclick="return copyNluDomainVersionExample()">Copy
               "domain": { 
                 "id": String, 
                 "name": String, 
+                "language": String, 
                 "draftVersion": NluDomainVersion, 
                 "lastPublishedVersion": NluDomainVersion, 
                 "dateCreated": Date, 
@@ -3898,11 +3955,13 @@ NluDomainVersion <a href="#" onclick="return copyNluDomainVersionExample()">Copy
           "domain": { 
             "id": String, 
             "name": String, 
+            "language": String, 
             "draftVersion": { 
               "id": String, 
               "domain": { 
                 "id": String, 
                 "name": String, 
+                "language": String, 
                 "draftVersion": NluDomainVersion, 
                 "lastPublishedVersion": NluDomainVersion, 
                 "dateCreated": Date, 
@@ -3935,6 +3994,7 @@ NluDomainVersion <a href="#" onclick="return copyNluDomainVersionExample()">Copy
               "domain": { 
                 "id": String, 
                 "name": String, 
+                "language": String, 
                 "draftVersion": NluDomainVersion, 
                 "lastPublishedVersion": NluDomainVersion, 
                 "dateCreated": Date, 

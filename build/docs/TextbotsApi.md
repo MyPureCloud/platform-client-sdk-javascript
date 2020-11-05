@@ -76,6 +76,7 @@ PostTextRequest <a href="#" onclick="return copyPostTextRequestExample()">Copy</
         "text": String, 
         "image": String, 
         "action": String, 
+        "payload": String, 
       },  
       "generic": { 
         "id": String, 

@@ -1,351 +1,278 @@
-Platform API version: 4290
+Platform API version: 4309
 
 
-# Major Changes (43 changes)
+# Major Changes (5 changes)
 
-**/api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shorttermforecasts** (1 change)
+**GET /api/v2/authorization/permissions** (2 changes)
 
-* Path /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shorttermforecasts was removed
+* Parameter queryType was added
+* Parameter query was added
 
-**/api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shorttermforecasts/partialupload** (1 change)
+**GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/trainings** (1 change)
 
-* Path /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shorttermforecasts/partialupload was removed
+* Parameter knowledgeDocumentsState was added
 
-**/api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shorttermforecasts/generate** (1 change)
+**KnowledgeBase** (1 change)
 
-* Path /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shorttermforecasts/generate was removed
+* faqCount has been made readonly
 
-**/api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}/final** (1 change)
+**KnowledgeTraining** (1 change)
 
-* Path /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}/final was removed
+* Property name was removed
 
-**/api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}/copy** (1 change)
 
-* Path /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}/copy was removed
+# Minor Changes (100 changes)
 
-**/api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}** (1 change)
+**/api/v2/journey/externalcontacts/{externalContactId}/segments** (3 changes)
 
-* Path /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId} was removed
+* Path was added
+* Operation GET was added
+* Operation POST was added
 
-**/api/v2/workforcemanagement/managementunits/{muId}/timeoffrequests/fetchdetails** (1 change)
+**/api/v2/journey/customers/{customerIdType}/{customerId}/segments** (2 changes)
 
-* Path /api/v2/workforcemanagement/managementunits/{muId}/timeoffrequests/fetchdetails was removed
+* Path was added
+* Operation GET was added
 
-**/api/v2/workforcemanagement/managementunits/{managementUnitId}/servicegoalgroups** (1 change)
+**/api/v2/workforcemanagement/managementunits/{managementUnitId}/workplanrotations/{workPlanRotationId}** (4 changes)
 
-* Path /api/v2/workforcemanagement/managementunits/{managementUnitId}/servicegoalgroups was removed
+* Path was added
+* Operation GET was added
+* Operation DELETE was added
+* Operation PATCH was added
 
-**/api/v2/workforcemanagement/managementunits/{managementUnitId}/servicegoalgroups/{serviceGoalGroupId}** (1 change)
+**/api/v2/workforcemanagement/managementunits/{managementUnitId}/workplanrotations** (3 changes)
 
-* Path /api/v2/workforcemanagement/managementunits/{managementUnitId}/servicegoalgroups/{serviceGoalGroupId} was removed
+* Path was added
+* Operation GET was added
+* Operation POST was added
 
-**/api/v2/workforcemanagement/managementunits/{muId}/intraday** (1 change)
+**/api/v2/workforcemanagement/managementunits/{managementUnitId}/workplanrotations/{workPlanRotationId}/copy** (2 changes)
 
-* Path /api/v2/workforcemanagement/managementunits/{muId}/intraday was removed
+* Path was added
+* Operation POST was added
 
-**/api/v2/workforcemanagement/managementunits/{muId}/intraday/queues** (1 change)
+**/api/v2/journey/sessions/{sessionId}/segments** (2 changes)
 
-* Path /api/v2/workforcemanagement/managementunits/{muId}/intraday/queues was removed
+* Path was added
+* Operation GET was added
 
-**/api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekId}/schedules/{scheduleId}/reschedule** (1 change)
+**KnowledgeBase** (1 change)
 
-* Path /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekId}/schedules/{scheduleId}/reschedule was removed
+* Optional property dateDocumentLastModified was added
 
-**/api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekId}/schedules/{scheduleId}/copy** (1 change)
+**FlowAggregateQueryPredicate** (2 changes)
 
-* Path /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekId}/schedules/{scheduleId}/copy was removed
+* Enum value assignerId was added to property dimension
+* Enum value firstQueue was added to property dimension
 
-**/api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekId}/schedules/{scheduleId}/generationresults** (1 change)
+**FlowAggregationQuery** (2 changes)
 
-* Path /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekId}/schedules/{scheduleId}/generationresults was removed
+* Enum value assignerId was added to property groupBy
+* Enum value firstQueue was added to property groupBy
 
-**/api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekId}/schedules/partialupload** (1 change)
-
-* Path /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekId}/schedules/partialupload was removed
-
-**/api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekId}/schedules/generate** (1 change)
-
-* Path /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekId}/schedules/generate was removed
-
-**/api/v2/workforcemanagement/managementunits/{managementUnitId}/scheduling/runs/{runId}** (1 change)
-
-* Path /api/v2/workforcemanagement/managementunits/{managementUnitId}/scheduling/runs/{runId} was removed
-
-**/api/v2/workforcemanagement/managementunits/{managementUnitId}/scheduling/runs** (1 change)
-
-* Path /api/v2/workforcemanagement/managementunits/{managementUnitId}/scheduling/runs was removed
-
-**/api/v2/workforcemanagement/managementunits/{managementUnitId}/scheduling/runs/{runId}/result** (1 change)
-
-* Path /api/v2/workforcemanagement/managementunits/{managementUnitId}/scheduling/runs/{runId}/result was removed
-
-**/api/v2/workforcemanagement/managementunits/{muId}/activitycodes/{acId}** (1 change)
-
-* Path /api/v2/workforcemanagement/managementunits/{muId}/activitycodes/{acId} was removed
-
-**/api/v2/workforcemanagement/managementunits/{muId}/settings** (1 change)
-
-* Path /api/v2/workforcemanagement/managementunits/{muId}/settings was removed
-
-**POST /api/v2/conversations/messaging/integrations/facebook** (1 change)
-
-* Parameter async was added
-
-**POST /api/v2/conversations/messaging/integrations/whatsapp** (1 change)
-
-* Parameter async was added
-
-**POST /api/v2/conversations/messaging/integrations/line** (1 change)
-
-* Parameter async was added
-
-**GET /api/v2/users/development/activities/{activityId}** (2 changes)
-
-* Tag User Development was removed
-* Tag Users was added
-
-**GET /api/v2/users/development/activities** (2 changes)
-
-* Tag User Development was removed
-* Tag Users was added
-
-**GET /api/v2/users/development/activities/me** (2 changes)
-
-* Tag User Development was removed
-* Tag Users was added
-
-**/api/v2/workforcemanagement/managementunits/{muId}/activitycodes** (1 change)
-
-* Operation POST was removed
-
-**POST /api/v2/users/development/activities/aggregates/query** (2 changes)
-
-* Tag User Development was removed
-* Tag Users was added
-
-**POST /api/v2/conversations/messaging/integrations/twitter** (1 change)
-
-* Parameter async was added
-
-**/api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekId}/schedules/{scheduleId}** (2 changes)
-
-* Operation DELETE was removed
-* Operation PATCH was removed
-
-**/api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekId}/schedules** (1 change)
-
-* Operation POST was removed
-
-**UpdateSchedulingRunRequest** (1 change)
-
-* Model UpdateSchedulingRunRequest was removed
-
-**EntityListing** (5 changes)
-
-* Property pageSize was removed
-* Property pageNumber was removed
-* Property total was removed
-* Property pageCount was removed
-* Property entities was changed from DataTableImportJob[] to object[]
-
-
-# Minor Changes (34 changes)
-
-**POST /api/v2/conversations/messaging/integrations/facebook** (1 change)
-
-* Response 202 was added
-
-**POST /api/v2/conversations/messaging/integrations/line** (1 change)
-
-* Response 202 was added
-
-**POST /api/v2/conversations/messaging/integrations/twitter** (1 change)
-
-* Response 202 was added
-
-**Flow** (1 change)
-
-* Optional property nluInfo was added
-
-**FlowVersion** (1 change)
-
-* Optional property nluInfo was added
-
-**Intent** (1 change)
+**SegmentAssignmentsUpdate** (1 change)
 
 * Model was added
 
-**NluInfo** (1 change)
+**SegmentAssignment** (1 change)
 
 * Model was added
 
-**FacebookIntegration** (2 changes)
+**SegmentAssignmentListing** (1 change)
 
-* Optional property createStatus was added
-* Optional property createError was added
+* Model was added
 
-**Message** (1 change)
+**SegmentAssignmentSegment** (1 change)
 
-* Optional property journeyContext was added
+* Model was added
 
-**WhatsAppIntegration** (2 changes)
+**SegmentAssignmentSession** (1 change)
 
-* Optional property createStatus was added
-* Optional property createError was added
+* Model was added
 
-**LineIntegration** (2 changes)
+**AuditQueryExecutionStatusResponse** (2 changes)
 
-* Optional property createStatus was added
-* Optional property createError was added
+* Enum value Architect was added to property serviceName
+* Enum value Groups was added to property serviceName
 
-**AnalyticsSession** (1 change)
+**AuditQueryRequest** (2 changes)
 
-* Optional property flowInType was added
+* Enum value Architect was added to property serviceName
+* Enum value Groups was added to property serviceName
 
-**TranscriptConversationDetailSearchCriteria** (1 change)
+**AuditLogMessage** (18 changes)
 
-* Enum value DATE_RANGE was added to property type
+* Enum value Architect was added to property serviceName
+* Enum value Groups was added to property serviceName
+* Enum value Upload was added to property action
+* Enum value Activate was added to property action
+* Enum value Checkin was added to property action
+* Enum value Checkout was added to property action
+* Enum value Deactivate was added to property action
+* Enum value Debug was added to property action
+* Enum value Save was added to property action
+* Enum value Revert was added to property action
+* Enum value Transcode was added to property action
+* Enum value DependencyTrackingBuild was added to property entityType
+* Enum value Flow was added to property entityType
+* Enum value Prompt was added to property entityType
+* Enum value PromptResource was added to property entityType
+* Enum value FlowOutcome was added to property entityType
+* Enum value FlowMilestone was added to property entityType
+* Enum value Team was added to property entityType
 
-**Site** (1 change)
+**AuditRealtimeQueryRequest** (2 changes)
 
-* Optional property mediaModel was added
+* Enum value Architect was added to property serviceName
+* Enum value Groups was added to property serviceName
 
-**ConversationDetailQueryPredicate** (1 change)
+**AuditQueryEntity** (16 changes)
 
-* Enum value nCobrowseSessions was added to property metric
+* Enum value DependencyTrackingBuild was added to property name
+* Enum value Flow was added to property name
+* Enum value Prompt was added to property name
+* Enum value PromptResource was added to property name
+* Enum value FlowOutcome was added to property name
+* Enum value FlowMilestone was added to property name
+* Enum value Team was added to property name
+* Enum value Upload was added to property actions
+* Enum value Activate was added to property actions
+* Enum value Checkin was added to property actions
+* Enum value Checkout was added to property actions
+* Enum value Deactivate was added to property actions
+* Enum value Debug was added to property actions
+* Enum value Save was added to property actions
+* Enum value Revert was added to property actions
+* Enum value Transcode was added to property actions
 
-**FlowAggregateQueryPredicate** (1 change)
+**AuditQueryService** (2 changes)
 
-* Enum value flowInType was added to property dimension
+* Enum value Architect was added to property name
+* Enum value Groups was added to property name
 
-**FlowAggregationQuery** (1 change)
+**SurveyAggregateQueryPredicate** (1 change)
 
-* Enum value flowInType was added to property groupBy
+* Enum value teamId was added to property dimension
 
-**ConversationAggregateQueryPredicate** (1 change)
+**SurveyAggregationQuery** (1 change)
 
-* Enum value flowInType was added to property dimension
+* Enum value teamId was added to property groupBy
+
+**LocationSearchCriteria** (1 change)
+
+* Optional property dateFormat was added
+
+**GroupSearchCriteria** (1 change)
+
+* Optional property dateFormat was added
+
+**VoicemailSearchCriteria** (1 change)
+
+* Optional property dateFormat was added
+
+**DocumentationSearchCriteria** (1 change)
+
+* Optional property dateFormat was added
+
+**NluDomain** (1 change)
+
+* Optional property language was added
+
+**SuggestSearchCriteria** (1 change)
+
+* Optional property dateFormat was added
+
+**SearchCriteria** (1 change)
+
+* Optional property dateFormat was added
+
+**DateRangeWithOptionalEnd** (1 change)
+
+* Model was added
+
+**WorkPlanPatternResponse** (1 change)
+
+* Model was added
+
+**WorkPlanRotationAgentResponse** (1 change)
+
+* Model was added
+
+**WorkPlanRotationResponse** (1 change)
+
+* Model was added
+
+**UpdateWorkPlanRotationAgentRequest** (1 change)
+
+* Model was added
+
+**UpdateWorkPlanRotationRequest** (1 change)
+
+* Model was added
+
+**WorkPlanPatternRequest** (1 change)
+
+* Model was added
+
+**WorkPlanRotationListResponse** (1 change)
+
+* Model was added
+
+**AddWorkPlanRotationAgentRequest** (1 change)
+
+* Model was added
+
+**AddWorkPlanRotationRequest** (1 change)
+
+* Model was added
+
+**CopyWorkPlanRotationRequest** (1 change)
+
+* Model was added
+
+**AnalyticsSession** (2 changes)
+
+* Optional property assignerId was added
+* Optional property acwSkipped was added
+
+**ConversationAggregateQueryPredicate** (2 changes)
+
+* Enum value assignerId was added to property dimension
+* Enum value firstQueue was added to property dimension
 
 **ConversationAggregationQuery** (2 changes)
 
-* Enum value flowInType was added to property groupBy
-* Enum value nCobrowseSessions was added to property metrics
+* Enum value assignerId was added to property groupBy
+* Enum value firstQueue was added to property groupBy
 
-**ConversationAggregationView** (1 change)
+**UserSearchCriteria** (1 change)
 
-* Enum value nCobrowseSessions was added to property target
+* Optional property dateFormat was added
 
-**JourneyAggregateQueryPredicate** (2 changes)
+**ContentQuickReply** (1 change)
 
-* Enum value journeySessionSegmentId was added to property dimension
-* Enum value touchpointActionMapId was added to property dimension
+* Optional property payload was added
 
-**JourneyAggregationQuery** (3 changes)
+**EvaluationAggregateQueryPredicate** (1 change)
 
-* Enum value journeySessionSegmentId was added to property groupBy
-* Enum value touchpointActionMapId was added to property groupBy
-* Enum value nJourneyOutcomesAttributed was added to property metrics
+* Enum value teamId was added to property dimension
 
-**JourneyAggregationView** (1 change)
+**EvaluationAggregationQuery** (1 change)
 
-* Enum value nJourneyOutcomesAttributed was added to property target
+* Enum value teamId was added to property groupBy
 
-**TwitterIntegration** (2 changes)
+**GKNDocumentationSearchCriteria** (1 change)
 
-* Optional property createStatus was added
-* Optional property createError was added
+* Optional property dateFormat was added
 
-**GenericSAML** (1 change)
+**TranscriptConversationDetailSearchCriteria** (1 change)
 
-* Optional property nameIdentifierFormat was added
-
-**MessageMediaData** (1 change)
-
-* Values are no longer constrained by enum members
+* Optional property dateFormat was added
 
 
-# Point Changes (36 changes)
+# Point Changes (1 change)
 
-**GET /api/v2/scim/groups** (3 changes)
+**GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/trainings** (1 change)
 
-* Description was changed for parameter count
-* Description was changed for parameter attributes
-* Description was changed for parameter excludedAttributes
-
-**POST /api/v2/scim/groups** (2 changes)
-
-* Description was changed
 * Summary was changed
-
-**GET /api/v2/scim/groups/{groupId}** (2 changes)
-
-* Description was changed for parameter attributes
-* Description was changed for parameter excludedAttributes
-
-**GET /api/v2/billing/reports/billableusage** (2 changes)
-
-* Description was changed for parameter startDate
-* Description was changed for parameter endDate
-
-**GET /api/v2/scim/users/{userId}** (3 changes)
-
-* Description was changed for parameter attributes
-* Description was changed for parameter excludedAttributes
-* Description was changed for parameter If-None-Match
-
-**GET /api/v2/scim/users** (3 changes)
-
-* Description was changed for parameter count
-* Description was changed for parameter attributes
-* Description was changed for parameter excludedAttributes
-
-**GET /api/v2/telephony/siptraces** (2 changes)
-
-* Description was changed for parameter dateStart
-* Description was changed for parameter dateEnd
-
-**GET /api/v2/scim/v2/groups** (3 changes)
-
-* Description was changed for parameter count
-* Description was changed for parameter attributes
-* Description was changed for parameter excludedAttributes
-
-**POST /api/v2/scim/v2/groups** (1 change)
-
-* Description was changed for parameter body
-
-**GET /api/v2/scim/v2/groups/{groupId}** (3 changes)
-
-* Description was changed for parameter attributes
-* Description was changed for parameter excludedAttributes
-* Description was changed for parameter If-None-Match
-
-**GET /api/v2/quality/evaluators/activity** (2 changes)
-
-* Description was changed for parameter startTime
-* Description was changed for parameter endTime
-
-**GET /api/v2/quality/agents/activity** (2 changes)
-
-* Description was changed for parameter startTime
-* Description was changed for parameter endTime
-
-**GET /api/v2/scim/v2/users/{userId}** (2 changes)
-
-* Description was changed for parameter attributes
-* Description was changed for parameter excludedAttributes
-
-**GET /api/v2/scim/v2/users** (3 changes)
-
-* Description was changed for parameter count
-* Description was changed for parameter attributes
-* Description was changed for parameter excludedAttributes
-
-**POST /api/v2/conversations/messages/{conversationId}/communications/{communicationId}/messages** (1 change)
-
-* Description was changed
-
-**GET /api/v2/quality/calibrations** (2 changes)
-
-* Description was changed for parameter startTime
-* Description was changed for parameter endTime

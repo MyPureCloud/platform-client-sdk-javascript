@@ -16,7 +16,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getKnowledgeKnowledgebaseLanguageDocument**](KnowledgeApi.html#getKnowledgeKnowledgebaseLanguageDocument) | **GET** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/{documentId} | Get document
 [**getKnowledgeKnowledgebaseLanguageDocuments**](KnowledgeApi.html#getKnowledgeKnowledgebaseLanguageDocuments) | **GET** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents | Get documents
 [**getKnowledgeKnowledgebaseLanguageTraining**](KnowledgeApi.html#getKnowledgeKnowledgebaseLanguageTraining) | **GET** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/trainings/{trainingId} | Get training detail
-[**getKnowledgeKnowledgebaseLanguageTrainings**](KnowledgeApi.html#getKnowledgeKnowledgebaseLanguageTrainings) | **GET** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/trainings | Get All trainings information for a knowledgebase
+[**getKnowledgeKnowledgebaseLanguageTrainings**](KnowledgeApi.html#getKnowledgeKnowledgebaseLanguageTrainings) | **GET** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/trainings | Get all trainings information for a knowledgebase
 [**getKnowledgeKnowledgebases**](KnowledgeApi.html#getKnowledgeKnowledgebases) | **GET** /api/v2/knowledge/knowledgebases | Get knowledge bases
 [**patchKnowledgeKnowledgebase**](KnowledgeApi.html#patchKnowledgeKnowledgebase) | **PATCH** /api/v2/knowledge/knowledgebases/{knowledgeBaseId} | Update knowledge base
 [**patchKnowledgeKnowledgebaseLanguageCategory**](KnowledgeApi.html#patchKnowledgeKnowledgebaseLanguageCategory) | **PATCH** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/categories/{categoryId} | Update category
@@ -579,7 +579,7 @@ apiInstance.getKnowledgeKnowledgebaseLanguageTraining(knowledgeBaseId, languageC
 
 GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/trainings
 
-Get All trainings information for a knowledgebase
+Get all trainings information for a knowledgebase
 
 
 
@@ -608,7 +608,8 @@ let opts = {
   'before': "before_example", // String | The cursor that points to the start of the set of entities that has been returned.
   'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
   'limit': "limit_example", // String | Number of entities to return. Maximum of 200.
-  'pageSize': "pageSize_example" // String | Number of entities to return. Maximum of 200.
+  'pageSize': "pageSize_example", // String | Number of entities to return. Maximum of 200.
+  'knowledgeDocumentsState': "knowledgeDocumentsState_example" // String | Return the training with the specified state of the trained documents.
 };
 
 apiInstance.getKnowledgeKnowledgebaseLanguageTrainings(knowledgeBaseId, languageCode, opts)
@@ -632,6 +633,7 @@ apiInstance.getKnowledgeKnowledgebaseLanguageTrainings(knowledgeBaseId, language
  **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
  **limit** | **String** | Number of entities to return. Maximum of 200. | [optional]  |
  **pageSize** | **String** | Number of entities to return. Maximum of 200. | [optional]  |
+ **knowledgeDocumentsState** | **String** | Return the training with the specified state of the trained documents. | [optional] <br />**Values**: Draft, Active, Discarded, Archived |
 {: class="table table-striped"}
 
 ### Return type
@@ -746,6 +748,7 @@ KnowledgeBase <a href="#" onclick="return copyKnowledgeBaseExample()">Copy</a>
   "dateCreated": Date, 
   "dateModified": Date, 
   "faqCount": Number, 
+  "dateDocumentLastModified": Date, 
   "selfUri": String, 
 }
 ```
@@ -1504,6 +1507,7 @@ KnowledgeBase <a href="#" onclick="return copyKnowledgeBaseExample()">Copy</a>
   "dateCreated": Date, 
   "dateModified": Date, 
   "faqCount": Number, 
+  "dateDocumentLastModified": Date, 
   "selfUri": String, 
 }
 ```

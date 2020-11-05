@@ -5,7 +5,7 @@ class WorkforceManagementApi {
 	/**
 	 * WorkforceManagement service.
 	 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-	 * @version 96.0.0
+	 * @version 97.0.0
 	 */
 
 	/**
@@ -280,6 +280,36 @@ class WorkforceManagementApi {
 			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans/{workPlanId}', 
 			'DELETE', 
 			{ 'managementUnitId': managementUnitId,'workPlanId': workPlanId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete a work plan rotation
+	 * 
+	 * @param {String} managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+	 * @param {String} workPlanRotationId The ID of the work plan rotation to be deleted
+	 */
+	deleteWorkforcemanagementManagementunitWorkplanrotation(managementUnitId, workPlanRotationId) { 
+		// verify the required parameter 'managementUnitId' is set
+		if (managementUnitId === undefined || managementUnitId === null) {
+			throw 'Missing the required parameter "managementUnitId" when calling deleteWorkforcemanagementManagementunitWorkplanrotation';
+		}
+		// verify the required parameter 'workPlanRotationId' is set
+		if (workPlanRotationId === undefined || workPlanRotationId === null) {
+			throw 'Missing the required parameter "workPlanRotationId" when calling deleteWorkforcemanagementManagementunitWorkplanrotation';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/workplanrotations/{workPlanRotationId}', 
+			'DELETE', 
+			{ 'managementUnitId': managementUnitId,'workPlanRotationId': workPlanRotationId }, 
 			{  }, 
 			{  }, 
 			{  }, 
@@ -1497,6 +1527,65 @@ class WorkforceManagementApi {
 	}
 
 	/**
+	 * Get a work plan rotation
+	 * 
+	 * @param {String} managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+	 * @param {String} workPlanRotationId The ID of the work plan rotation to fetch
+	 */
+	getWorkforcemanagementManagementunitWorkplanrotation(managementUnitId, workPlanRotationId) { 
+		// verify the required parameter 'managementUnitId' is set
+		if (managementUnitId === undefined || managementUnitId === null) {
+			throw 'Missing the required parameter "managementUnitId" when calling getWorkforcemanagementManagementunitWorkplanrotation';
+		}
+		// verify the required parameter 'workPlanRotationId' is set
+		if (workPlanRotationId === undefined || workPlanRotationId === null) {
+			throw 'Missing the required parameter "workPlanRotationId" when calling getWorkforcemanagementManagementunitWorkplanrotation';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/workplanrotations/{workPlanRotationId}', 
+			'GET', 
+			{ 'managementUnitId': managementUnitId,'workPlanRotationId': workPlanRotationId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get work plan rotations
+	 * 
+	 * @param {String} managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+	 * @param {Object} opts Optional parameters
+	 * @param {Array.<String>} opts.expand 
+	 */
+	getWorkforcemanagementManagementunitWorkplanrotations(managementUnitId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'managementUnitId' is set
+		if (managementUnitId === undefined || managementUnitId === null) {
+			throw 'Missing the required parameter "managementUnitId" when calling getWorkforcemanagementManagementunitWorkplanrotations';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/workplanrotations', 
+			'GET', 
+			{ 'managementUnitId': managementUnitId }, 
+			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get work plans
 	 * 
 	 * @param {String} managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
@@ -1988,6 +2077,40 @@ class WorkforceManagementApi {
 			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans/{workPlanId}', 
 			'PATCH', 
 			{ 'managementUnitId': managementUnitId,'workPlanId': workPlanId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update a work plan rotation
+	 * 
+	 * @param {String} managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+	 * @param {String} workPlanRotationId The ID of the work plan rotation to update
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body body
+	 */
+	patchWorkforcemanagementManagementunitWorkplanrotation(managementUnitId, workPlanRotationId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'managementUnitId' is set
+		if (managementUnitId === undefined || managementUnitId === null) {
+			throw 'Missing the required parameter "managementUnitId" when calling patchWorkforcemanagementManagementunitWorkplanrotation';
+		}
+		// verify the required parameter 'workPlanRotationId' is set
+		if (workPlanRotationId === undefined || workPlanRotationId === null) {
+			throw 'Missing the required parameter "workPlanRotationId" when calling patchWorkforcemanagementManagementunitWorkplanrotation';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/workplanrotations/{workPlanRotationId}', 
+			'PATCH', 
+			{ 'managementUnitId': managementUnitId,'workPlanRotationId': workPlanRotationId }, 
 			{  }, 
 			{  }, 
 			{  }, 
@@ -2910,6 +3033,69 @@ class WorkforceManagementApi {
 			'POST', 
 			{ 'managementUnitId': managementUnitId,'workPlanId': workPlanId }, 
 			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') }, 
+			{  }, 
+			{  }, 
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Create a copy of work plan rotation
+	 * 
+	 * @param {String} managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+	 * @param {String} workPlanRotationId The ID of the work plan rotation to create a copy
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body body
+	 */
+	postWorkforcemanagementManagementunitWorkplanrotationCopy(managementUnitId, workPlanRotationId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'managementUnitId' is set
+		if (managementUnitId === undefined || managementUnitId === null) {
+			throw 'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitWorkplanrotationCopy';
+		}
+		// verify the required parameter 'workPlanRotationId' is set
+		if (workPlanRotationId === undefined || workPlanRotationId === null) {
+			throw 'Missing the required parameter "workPlanRotationId" when calling postWorkforcemanagementManagementunitWorkplanrotationCopy';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/workplanrotations/{workPlanRotationId}/copy', 
+			'POST', 
+			{ 'managementUnitId': managementUnitId,'workPlanRotationId': workPlanRotationId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Create a new work plan rotation
+	 * 
+	 * @param {String} managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body body
+	 */
+	postWorkforcemanagementManagementunitWorkplanrotations(managementUnitId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'managementUnitId' is set
+		if (managementUnitId === undefined || managementUnitId === null) {
+			throw 'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitWorkplanrotations';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/workplanrotations', 
+			'POST', 
+			{ 'managementUnitId': managementUnitId }, 
+			{  }, 
 			{  }, 
 			{  }, 
 			opts['body'], 
