@@ -74,9 +74,9 @@ PostTextRequest <a href="#" onclick="return copyPostTextRequestExample()">Copy</
       "quickReply": { 
         "id": String, 
         "text": String, 
+        "payload": String, 
         "image": String, 
         "action": String, 
-        "payload": String, 
       },  
       "generic": { 
         "id": String, 
@@ -163,6 +163,23 @@ PostTextRequest <a href="#" onclick="return copyPostTextRequestExample()">Copy</
         "footer": { 
           "text": String, 
         },  
+      },  
+      "reactions": { 
+        "reactionType": String, 
+        "count": Number, 
+      },  
+      "mention": { 
+        "nickname": String, 
+        "id": String, 
+        "image": String, 
+        "firstName": String, 
+        "lastName": String, 
+        "email": String, 
+      },  
+      "postback": { 
+        "id": String, 
+        "text": String, 
+        "payload": String, 
       },  
     },  
   },  

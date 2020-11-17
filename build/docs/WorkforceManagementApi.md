@@ -4750,7 +4750,8 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 let workPlanId = "workPlanId_example"; // String | The ID of the work plan to update
 let opts = { 
-  'body': {} // Object | body
+  'body': {}, // Object | body
+  'validationMode': "validationMode_example" // String | Allows to update work plan even if validation result is invalid
 };
 
 apiInstance.patchWorkforcemanagementManagementunitWorkplan(managementUnitId, workPlanId, opts)
@@ -4771,6 +4772,7 @@ apiInstance.patchWorkforcemanagementManagementunitWorkplan(managementUnitId, wor
  **managementUnitId** | **String** | The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
  **workPlanId** | **String** | The ID of the work plan to update |  |
  **body** | **Object** | body | [optional]  |
+ **validationMode** | **String** | Allows to update work plan even if validation result is invalid | [optional] <br />**Values**: Ignore |
 {: class="table table-striped"}
 
 ### Return type
@@ -5014,7 +5016,6 @@ WfmHistoricalAdherenceQueryForUsers <a href="#" onclick="return copyWfmHistorica
   "endDate": Date, 
   "timeZone": String, 
   "userIds": [String], 
-  "teamIds": [String], 
   "includeExceptions": Boolean, 
 }
 ```
@@ -6471,8 +6472,8 @@ WfmHistoricalAdherenceQuery <a href="#" onclick="return copyWfmHistoricalAdheren
   "endDate": Date, 
   "timeZone": String, 
   "userIds": [String], 
-  "teamIds": [String], 
   "includeExceptions": Boolean, 
+  "teamIds": [String], 
 }
 ```
 
@@ -7785,7 +7786,8 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 
 let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 let opts = { 
-  'body': {} // Object | body
+  'body': {}, // Object | body
+  'validationMode': "validationMode_example" // String | Allows to create work plan even if the validation result is invalid
 };
 
 apiInstance.postWorkforcemanagementManagementunitWorkplans(managementUnitId, opts)
@@ -7805,6 +7807,7 @@ apiInstance.postWorkforcemanagementManagementunitWorkplans(managementUnitId, opt
 | ------------- | ------------- | ------------- | ------------- |
  **managementUnitId** | **String** | The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
  **body** | **Object** | body | [optional]  |
+ **validationMode** | **String** | Allows to create work plan even if the validation result is invalid | [optional] <br />**Values**: Ignore |
 {: class="table table-striped"}
 
 ### Return type

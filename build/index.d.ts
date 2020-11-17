@@ -1648,12 +1648,8 @@ declare namespace IntegrationsApi {
 declare class JourneyApi {  
   	getJourneyActiontarget(actionTargetId: string): Promise<Models.ActionTarget>; 
   	getJourneyActiontargets(opts?: JourneyApi.getJourneyActiontargetsOptions): Promise<Models.ActionTargetListing>; 
-  	getJourneyCustomerCustomerIdSegments(customerIdType: string, customerId: string, opts?: JourneyApi.getJourneyCustomerCustomerIdSegmentsOptions): Promise<Models.SegmentAssignmentListing>; 
-  	getJourneyExternalcontactSegments(externalContactId: string, opts?: JourneyApi.getJourneyExternalcontactSegmentsOptions): Promise<Models.SegmentAssignmentListing>; 
-  	getJourneySessionSegments(sessionId: string, opts?: JourneyApi.getJourneySessionSegmentsOptions): Promise<Models.SegmentAssignmentListing>; 
   	patchJourneyActiontarget(actionTargetId: string, opts?: JourneyApi.patchJourneyActiontargetOptions): Promise<Models.ActionTarget>; 
-  	postAnalyticsJourneysAggregatesQuery(body: Models.JourneyAggregationQuery): Promise<Models.JourneyAggregateQueryResponse>; 
-  	postJourneyExternalcontactSegments(externalContactId: string, opts?: JourneyApi.postJourneyExternalcontactSegmentsOptions): Promise<void>;
+  	postAnalyticsJourneysAggregatesQuery(body: Models.JourneyAggregationQuery): Promise<Models.JourneyAggregateQueryResponse>;
 }
 
 declare namespace JourneyApi { 
@@ -1661,29 +1657,8 @@ declare namespace JourneyApi {
 		"pageNumber"?: number;
 		"pageSize"?: number;
 	}
-	export interface getJourneyCustomerCustomerIdSegmentsOptions { 
-		"pageSize"?: string;
-		"after"?: string;
-		"segmentScope"?: string;
-		"assignmentState"?: string;
-	}
-	export interface getJourneyExternalcontactSegmentsOptions { 
-		"pageSize"?: string;
-		"after"?: string;
-		"segmentScope"?: string;
-		"assignmentState"?: string;
-	}
-	export interface getJourneySessionSegmentsOptions { 
-		"pageSize"?: string;
-		"after"?: string;
-		"segmentScope"?: string;
-		"assignmentState"?: string;
-	}
 	export interface patchJourneyActiontargetOptions { 
 		"body"?: Models.PatchActionTarget;
-	}
-	export interface postJourneyExternalcontactSegmentsOptions { 
-		"body"?: Array<Models.SegmentAssignmentsUpdate>;
 	}
 }
 
@@ -1724,6 +1699,7 @@ declare namespace KnowledgeApi {
 		"limit"?: string;
 		"pageSize"?: string;
 		"categories"?: string;
+		"title"?: string;
 	}
 	export interface getKnowledgeKnowledgebaseLanguageTrainingsOptions { 
 		"before"?: string;
@@ -2559,6 +2535,7 @@ declare namespace QualityApi {
 	export interface getQualityFormsEvaluationVersionsOptions { 
 		"pageSize"?: number;
 		"pageNumber"?: number;
+		"sortOrder"?: string;
 	}
 	export interface getQualityFormsEvaluationsOptions { 
 		"pageSize"?: number;
@@ -4247,6 +4224,7 @@ declare namespace WorkforceManagementApi {
 	}
 	export interface patchWorkforcemanagementManagementunitWorkplanOptions { 
 		"body"?: Models.WorkPlan;
+		"validationMode"?: string;
 	}
 	export interface patchWorkforcemanagementManagementunitWorkplanrotationOptions { 
 		"body"?: Models.UpdateWorkPlanRotationRequest;
@@ -4329,6 +4307,7 @@ declare namespace WorkforceManagementApi {
 	}
 	export interface postWorkforcemanagementManagementunitWorkplansOptions { 
 		"body"?: Models.CreateWorkPlan;
+		"validationMode"?: string;
 	}
 	export interface postWorkforcemanagementManagementunitsOptions { 
 		"body"?: Models.CreateManagementUnitApiRequest;
@@ -4349,8 +4328,8 @@ declare namespace Models {
 		"id"?: string;
 		"name"?: string;
 		"relyingPartyIdentifier"?: string;
-		"certificate"?: string;
 		"issuerURI"?: string;
+		"certificate"?: string;
 		"ssoTargetURI"?: string;
 		"disabled"?: boolean;
 		"selfUri"?: string;
@@ -4781,8 +4760,8 @@ declare namespace Models {
 		"calibrationId"?: string;
 		"rescored"?: boolean;
 		"deleted"?: boolean;
-		"oTotalScore"?: number;
 		"oTotalCriticalScore"?: number;
+		"oTotalScore"?: number;
 	}
 	
 	export interface AnalyticsFlow { 
@@ -5251,20 +5230,20 @@ declare namespace Models {
 		"number"?: boolean;
 		"boolean"?: boolean;
 		"object"?: boolean;
-		"missingNode"?: boolean;
-		"valueNode"?: boolean;
-		"binary"?: boolean;
-		"pojo"?: boolean;
-		"containerNode"?: boolean;
 		"int"?: boolean;
 		"long"?: boolean;
-		"integralNumber"?: boolean;
-		"floatingPointNumber"?: boolean;
 		"double"?: boolean;
 		"bigDecimal"?: boolean;
 		"bigInteger"?: boolean;
 		"textual"?: boolean;
+		"floatingPointNumber"?: boolean;
+		"integralNumber"?: boolean;
 		"short"?: boolean;
+		"binary"?: boolean;
+		"pojo"?: boolean;
+		"containerNode"?: boolean;
+		"missingNode"?: boolean;
+		"valueNode"?: boolean;
 		"array"?: boolean;
 		"null"?: boolean;
 	}
@@ -7764,6 +7743,12 @@ declare namespace Models {
 		"footer"?: Models.NotificationTemplateFooter;
 	}
 	
+	export interface ContentPostback { 
+		"id"?: string;
+		"text"?: string;
+		"payload": string;
+	}
+	
 	export interface ContentQueryRequest { 
 		"queryPhrase"?: string;
 		"pageNumber"?: number;
@@ -7778,9 +7763,14 @@ declare namespace Models {
 	export interface ContentQuickReply { 
 		"id"?: string;
 		"text": string;
+		"payload"?: string;
 		"image"?: string;
 		"action"?: string;
-		"payload"?: string;
+	}
+	
+	export interface ContentReaction { 
+		"reactionType"?: string;
+		"count"?: number;
 	}
 	
 	export interface ContentSortItem { 
@@ -8457,8 +8447,8 @@ declare namespace Models {
 	export interface ConversationDetailsDatalakeAvailabilityTopicDateTime { 
 		"iMillis"?: number;
 		"beforeNow"?: boolean;
-		"afterNow"?: boolean;
 		"equalNow"?: boolean;
+		"afterNow"?: boolean;
 	}
 	
 	export interface ConversationDivisionMembership { 
@@ -10046,8 +10036,8 @@ declare namespace Models {
 	export interface CustomerInteractionCenter { 
 		"id"?: string;
 		"name"?: string;
-		"certificate"?: string;
 		"issuerURI"?: string;
+		"certificate"?: string;
 		"ssoTargetURI"?: string;
 		"disabled"?: boolean;
 		"selfUri"?: string;
@@ -12986,6 +12976,7 @@ declare namespace Models {
 		"publishedBy"?: Models.User;
 		"currentOperation"?: Models.Operation;
 		"nluInfo"?: Models.NluInfo;
+		"supportedLanguages"?: Array<Models.SupportedLanguage>;
 		"selfUri"?: string;
 	}
 	
@@ -13198,6 +13189,7 @@ declare namespace Models {
 		"inputSchema"?: Models.JsonSchemaDocument;
 		"outputSchema"?: Models.JsonSchemaDocument;
 		"nluInfo"?: Models.NluInfo;
+		"supportedLanguages"?: Array<Models.SupportedLanguage>;
 		"selfUri"?: string;
 	}
 	
@@ -13363,8 +13355,8 @@ declare namespace Models {
 		"id"?: string;
 		"name"?: string;
 		"relyingPartyIdentifier"?: string;
-		"certificate"?: string;
 		"issuerURI"?: string;
+		"certificate"?: string;
 		"ssoTargetURI"?: string;
 		"disabled"?: boolean;
 		"selfUri"?: string;
@@ -13378,12 +13370,12 @@ declare namespace Models {
 	export interface GenericSAML { 
 		"id"?: string;
 		"name"?: string;
-		"logoImageData"?: string;
 		"relyingPartyIdentifier"?: string;
+		"logoImageData"?: string;
 		"endpointCompression"?: boolean;
 		"nameIdentifierFormat"?: string;
-		"certificate"?: string;
 		"issuerURI"?: string;
+		"certificate"?: string;
 		"ssoTargetURI"?: string;
 		"disabled"?: boolean;
 		"selfUri"?: string;
@@ -13718,8 +13710,8 @@ declare namespace Models {
 		"completed"?: string;
 		"entities"?: Array<Models.HistoryEntry>;
 		"total"?: number;
-		"pageSize"?: number;
 		"pageNumber"?: number;
+		"pageSize"?: number;
 		"pageCount"?: number;
 	}
 	
@@ -13814,8 +13806,8 @@ declare namespace Models {
 		"id"?: string;
 		"name"?: string;
 		"relyingPartyIdentifier"?: string;
-		"certificate"?: string;
 		"issuerURI"?: string;
+		"certificate"?: string;
 		"ssoTargetURI"?: string;
 		"disabled"?: boolean;
 		"selfUri"?: string;
@@ -14233,20 +14225,20 @@ declare namespace Models {
 		"number"?: boolean;
 		"boolean"?: boolean;
 		"object"?: boolean;
-		"missingNode"?: boolean;
-		"valueNode"?: boolean;
-		"binary"?: boolean;
-		"pojo"?: boolean;
-		"containerNode"?: boolean;
 		"int"?: boolean;
 		"long"?: boolean;
-		"integralNumber"?: boolean;
-		"floatingPointNumber"?: boolean;
 		"double"?: boolean;
 		"bigDecimal"?: boolean;
 		"bigInteger"?: boolean;
 		"textual"?: boolean;
+		"floatingPointNumber"?: boolean;
+		"integralNumber"?: boolean;
 		"short"?: boolean;
+		"binary"?: boolean;
+		"pojo"?: boolean;
+		"containerNode"?: boolean;
+		"missingNode"?: boolean;
+		"valueNode"?: boolean;
 		"array"?: boolean;
 		"null"?: boolean;
 	}
@@ -15183,6 +15175,9 @@ declare namespace Models {
 		"generic"?: Models.ContentGeneric;
 		"list"?: Models.ContentList;
 		"template"?: Models.ContentNotificationTemplate;
+		"reactions"?: Array<Models.ContentReaction>;
+		"mention"?: Models.MessagingRecipient;
+		"postback"?: Models.ContentPostback;
 	}
 	
 	export interface MessageConversation { 
@@ -15417,6 +15412,15 @@ declare namespace Models {
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"pageCount"?: number;
+	}
+	
+	export interface MessagingRecipient { 
+		"nickname"?: string;
+		"id": string;
+		"image"?: string;
+		"firstName"?: string;
+		"lastName"?: string;
+		"email"?: string;
 	}
 	
 	export interface MessagingSticker { 
@@ -15942,8 +15946,8 @@ declare namespace Models {
 	export interface Okta { 
 		"id"?: string;
 		"name"?: string;
-		"certificate"?: string;
 		"issuerURI"?: string;
+		"certificate"?: string;
 		"ssoTargetURI"?: string;
 		"disabled"?: boolean;
 		"selfUri"?: string;
@@ -15952,8 +15956,8 @@ declare namespace Models {
 	export interface OneLogin { 
 		"id"?: string;
 		"name"?: string;
-		"certificate"?: string;
 		"issuerURI"?: string;
+		"certificate"?: string;
 		"ssoTargetURI"?: string;
 		"disabled"?: boolean;
 		"selfUri"?: string;
@@ -16603,8 +16607,8 @@ declare namespace Models {
 		"id"?: string;
 		"name"?: string;
 		"relyingPartyIdentifier"?: string;
-		"certificate"?: string;
 		"issuerURI"?: string;
+		"certificate"?: string;
 		"ssoTargetURI"?: string;
 		"disabled"?: boolean;
 		"selfUri"?: string;
@@ -16929,8 +16933,8 @@ declare namespace Models {
 		"id"?: string;
 		"name"?: string;
 		"autoProvisionUsers"?: boolean;
-		"certificate"?: string;
 		"issuerURI"?: string;
+		"certificate"?: string;
 		"ssoTargetURI"?: string;
 		"disabled"?: boolean;
 		"selfUri"?: string;
@@ -20105,8 +20109,8 @@ declare namespace Models {
 	export interface Salesforce { 
 		"id"?: string;
 		"name"?: string;
-		"certificate"?: string;
 		"issuerURI"?: string;
+		"certificate"?: string;
 		"ssoTargetURI"?: string;
 		"disabled"?: boolean;
 		"selfUri"?: string;
@@ -20736,44 +20740,6 @@ declare namespace Models {
 		"type"?: string;
 		"howEnded"?: string;
 		"disconnectType"?: string;
-	}
-	
-	export interface SegmentAssignment { 
-		"id"?: string;
-		"state"?: string;
-		"dateAssigned"?: string;
-		"dateUnassigned"?: string;
-		"dateModified"?: string;
-		"segment"?: Models.SegmentAssignmentSegment;
-		"customerId"?: string;
-		"customerIdType"?: string;
-		"session"?: Models.SegmentAssignmentSession;
-		"externalContact"?: Models.AddressableEntityRef;
-	}
-	
-	export interface SegmentAssignmentListing { 
-		"entities"?: Array<Models.SegmentAssignment>;
-		"nextUri"?: string;
-		"selfUri"?: string;
-		"previousUri"?: string;
-	}
-	
-	export interface SegmentAssignmentSegment { 
-		"id"?: string;
-		"scope"?: string;
-		"version"?: number;
-		"selfUri"?: string;
-	}
-	
-	export interface SegmentAssignmentSession { 
-		"id"?: string;
-		"type"?: string;
-		"selfUri"?: string;
-	}
-	
-	export interface SegmentAssignmentsUpdate { 
-		"segmentId": string;
-		"state": string;
 	}
 	
 	export interface SegmentDetailQueryClause { 
@@ -21484,6 +21450,11 @@ declare namespace Models {
 		"expand"?: Array<string>;
 		"types": Array<string>;
 		"query": Array<Models.SuggestSearchCriteria>;
+	}
+	
+	export interface SupportedLanguage { 
+		"language"?: string;
+		"isDefault"?: boolean;
 	}
 	
 	export interface Survey { 
@@ -22847,8 +22818,8 @@ declare namespace Models {
 	export interface UserDetailsDatalakeAvailabilityTopicDateTime { 
 		"iMillis"?: number;
 		"beforeNow"?: boolean;
-		"afterNow"?: boolean;
 		"equalNow"?: boolean;
+		"afterNow"?: boolean;
 	}
 	
 	export interface UserDetailsQuery { 
@@ -24287,8 +24258,8 @@ declare namespace Models {
 		"endDate"?: string;
 		"timeZone"?: string;
 		"userIds"?: Array<string>;
-		"teamIds"?: Array<string>;
 		"includeExceptions"?: boolean;
+		"teamIds"?: Array<string>;
 	}
 	
 	export interface WfmHistoricalAdherenceQueryForUsers { 
@@ -24296,7 +24267,6 @@ declare namespace Models {
 		"endDate"?: string;
 		"timeZone"?: string;
 		"userIds": Array<string>;
-		"teamIds": Array<string>;
 		"includeExceptions"?: boolean;
 	}
 	
@@ -24321,8 +24291,8 @@ declare namespace Models {
 	export interface WfmHistoricalDataUploadRequestStatusTopicDateTime { 
 		"iMillis"?: number;
 		"beforeNow"?: boolean;
-		"afterNow"?: boolean;
 		"equalNow"?: boolean;
+		"afterNow"?: boolean;
 	}
 	
 	export interface WfmHistoricalDataUploadRequestStatusTopicHistoricalDataUploadRequestUpdate { 
@@ -24770,6 +24740,7 @@ declare namespace Models {
 	export interface WorkPlanConfigurationViolationMessage { 
 		"type"?: string;
 		"arguments"?: Array<Models.WorkPlanValidationMessageArgument>;
+		"severity"?: string;
 	}
 	
 	export interface WorkPlanConstraintConflictMessage { 

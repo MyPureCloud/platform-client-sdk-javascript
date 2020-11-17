@@ -5,7 +5,7 @@ class QualityApi {
 	/**
 	 * Quality service.
 	 * @module purecloud-platform-client-v2/api/QualityApi
-	 * @version 97.0.0
+	 * @version 98.0.0
 	 */
 
 	/**
@@ -599,6 +599,7 @@ class QualityApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {String} opts.sortOrder Sort order (default to asc)
 	 */
 	getQualityFormsEvaluationVersions(formId, opts) { 
 		opts = opts || {};
@@ -612,7 +613,7 @@ class QualityApi {
 			'/api/v2/quality/forms/evaluations/{formId}/versions', 
 			'GET', 
 			{ 'formId': formId }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] }, 
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortOrder': opts['sortOrder'] }, 
 			{  }, 
 			{  }, 
 			null, 

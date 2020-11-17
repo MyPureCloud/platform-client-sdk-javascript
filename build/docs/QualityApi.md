@@ -1314,7 +1314,8 @@ let apiInstance = new platformClient.QualityApi();
 let formId = "formId_example"; // String | Form ID
 let opts = { 
   'pageSize': 25, // Number | Page size
-  'pageNumber': 1 // Number | Page number
+  'pageNumber': 1, // Number | Page number
+  'sortOrder': "asc" // String | Sort order
 };
 
 apiInstance.getQualityFormsEvaluationVersions(formId, opts)
@@ -1335,6 +1336,7 @@ apiInstance.getQualityFormsEvaluationVersions(formId, opts)
  **formId** | **String** | Form ID |  |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **sortOrder** | **String** | Sort order | [optional] [default to asc] |
 {: class="table table-striped"}
 
 ### Return type

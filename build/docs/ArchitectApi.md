@@ -119,10 +119,8 @@ Deletes a emergency group by ID
 
 
 
-Requires ANY permissions: 
+Requires NO permissions: 
 
-* telephony:plugin:all
-* routing:emergencyGroup:delete
 
 
 
@@ -175,10 +173,8 @@ Delete an IVR Config.
 
 
 
-Requires ANY permissions: 
+Requires NO permissions: 
 
-* telephony:plugin:all
-* routing:callRoute:delete
 
 
 
@@ -459,10 +455,8 @@ Delete a schedule by id
 
 
 
-Requires ANY permissions: 
+Requires NO permissions: 
 
-* telephony:plugin:all
-* routing:schedule:delete
 
 
 
@@ -515,10 +509,8 @@ Deletes a schedule group by ID
 
 
 
-Requires ANY permissions: 
+Requires NO permissions: 
 
-* telephony:plugin:all
-* routing:scheduleGroup:delete
 
 
 
@@ -1487,10 +1479,8 @@ Gets a emergency group by ID
 
 
 
-Requires ANY permissions: 
+Requires NO permissions: 
 
-* telephony:plugin:all
-* routing:emergencyGroup:view
 
 
 
@@ -1543,10 +1533,8 @@ Get a list of emergency groups.
 
 
 
-Requires ANY permissions: 
+Requires NO permissions: 
 
-* telephony:plugin:all
-* routing:emergencyGroup:view
 
 
 
@@ -1609,10 +1597,8 @@ Get an IVR config.
 
 
 
-Requires ANY permissions: 
+Requires NO permissions: 
 
-* telephony:plugin:all
-* routing:callRoute:view
 
 
 
@@ -1665,10 +1651,8 @@ Get IVR configs.
 
 
 
-Requires ANY permissions: 
+Requires NO permissions: 
 
-* telephony:plugin:all
-* routing:callRoute:view
 
 
 
@@ -2042,10 +2026,8 @@ Get a schedule by ID
 
 
 
-Requires ANY permissions: 
+Requires NO permissions: 
 
-* telephony:plugin:all
-* routing:schedule:view
 
 
 
@@ -2098,10 +2080,8 @@ Gets a schedule group by ID
 
 
 
-Requires ANY permissions: 
+Requires NO permissions: 
 
-* telephony:plugin:all
-* routing:scheduleGroup:view
 
 
 
@@ -2154,10 +2134,8 @@ Get a list of schedule groups.
 
 
 
-Requires ANY permissions: 
+Requires NO permissions: 
 
-* telephony:plugin:all
-* routing:scheduleGroup:view
 
 
 
@@ -2222,10 +2200,8 @@ Get a list of schedules.
 
 
 
-Requires ANY permissions: 
+Requires NO permissions: 
 
-* telephony:plugin:all
-* routing:schedule:view
 
 
 
@@ -3927,10 +3903,8 @@ Creates a new emergency group
 
 
 
-Requires ANY permissions: 
+Requires NO permissions: 
 
-* telephony:plugin:all
-* routing:emergencyGroup:add
 
 
 ### Request Body Schema
@@ -4032,10 +4006,8 @@ Create IVR config.
 
 
 
-Requires ANY permissions: 
+Requires NO permissions: 
 
-* telephony:plugin:all
-* routing:callRoute:add
 
 
 ### Request Body Schema
@@ -4821,10 +4793,8 @@ Creates a new schedule group
 
 
 
-Requires ANY permissions: 
+Requires NO permissions: 
 
-* telephony:plugin:all
-* routing:scheduleGroup:add
 
 
 ### Request Body Schema
@@ -4929,10 +4899,8 @@ Create a new schedule.
 
 
 
-Requires ANY permissions: 
+Requires NO permissions: 
 
-* telephony:plugin:all
-* routing:schedule:add
 
 
 ### Request Body Schema
@@ -5733,6 +5701,10 @@ Flow <a href="#" onclick="return copyFlowExample()">Copy</a>
         "name": String, 
       },  
     },  
+    "supportedLanguages": { 
+      "language": String, 
+      "isDefault": Boolean, 
+    },  
     "selfUri": String, 
   },  
   "savedVersion": { 
@@ -5777,6 +5749,10 @@ Flow <a href="#" onclick="return copyFlowExample()">Copy</a>
       "intents": { 
         "name": String, 
       },  
+    },  
+    "supportedLanguages": { 
+      "language": String, 
+      "isDefault": Boolean, 
     },  
     "selfUri": String, 
   },  
@@ -5825,6 +5801,10 @@ Flow <a href="#" onclick="return copyFlowExample()">Copy</a>
         "name": String, 
       },  
     },  
+    "supportedLanguages": { 
+      "language": String, 
+      "isDefault": Boolean, 
+    },  
     "selfUri": String, 
   },  
   "debugVersion": { 
@@ -5869,6 +5849,10 @@ Flow <a href="#" onclick="return copyFlowExample()">Copy</a>
       "intents": { 
         "name": String, 
       },  
+    },  
+    "supportedLanguages": { 
+      "language": String, 
+      "isDefault": Boolean, 
     },  
     "selfUri": String, 
   },  
@@ -6723,6 +6707,10 @@ Flow <a href="#" onclick="return copyFlowExample()">Copy</a>
     "intents": { 
       "name": String, 
     },  
+  },  
+  "supportedLanguages": { 
+    "language": String, 
+    "isDefault": Boolean, 
   },  
   "selfUri": String, 
 }
@@ -8207,10 +8195,8 @@ Updates a emergency group by ID
 
 
 
-Requires ANY permissions: 
+Requires NO permissions: 
 
-* telephony:plugin:all
-* routing:emergencyGroup:edit
 
 
 ### Request Body Schema
@@ -8314,10 +8300,8 @@ Update an IVR Config.
 
 
 
-Requires ANY permissions: 
+Requires NO permissions: 
 
-* telephony:plugin:all
-* routing:callRoute:edit
 
 
 ### Request Body Schema
@@ -9054,10 +9038,8 @@ Update schedule by ID
 
 
 
-Requires ANY permissions: 
+Requires NO permissions: 
 
-* telephony:plugin:all
-* routing:schedule:edit
 
 
 ### Request Body Schema
@@ -9151,10 +9133,8 @@ Updates a schedule group by ID
 
 
 
-Requires ANY permissions: 
+Requires NO permissions: 
 
-* telephony:plugin:all
-* routing:scheduleGroup:edit
 
 
 ### Request Body Schema
@@ -9860,6 +9840,10 @@ Flow <a href="#" onclick="return copyFlowExample()">Copy</a>
         "name": String, 
       },  
     },  
+    "supportedLanguages": { 
+      "language": String, 
+      "isDefault": Boolean, 
+    },  
     "selfUri": String, 
   },  
   "savedVersion": { 
@@ -9904,6 +9888,10 @@ Flow <a href="#" onclick="return copyFlowExample()">Copy</a>
       "intents": { 
         "name": String, 
       },  
+    },  
+    "supportedLanguages": { 
+      "language": String, 
+      "isDefault": Boolean, 
     },  
     "selfUri": String, 
   },  
@@ -9952,6 +9940,10 @@ Flow <a href="#" onclick="return copyFlowExample()">Copy</a>
         "name": String, 
       },  
     },  
+    "supportedLanguages": { 
+      "language": String, 
+      "isDefault": Boolean, 
+    },  
     "selfUri": String, 
   },  
   "debugVersion": { 
@@ -9996,6 +9988,10 @@ Flow <a href="#" onclick="return copyFlowExample()">Copy</a>
       "intents": { 
         "name": String, 
       },  
+    },  
+    "supportedLanguages": { 
+      "language": String, 
+      "isDefault": Boolean, 
     },  
     "selfUri": String, 
   },  
@@ -10850,6 +10846,10 @@ Flow <a href="#" onclick="return copyFlowExample()">Copy</a>
     "intents": { 
       "name": String, 
     },  
+  },  
+  "supportedLanguages": { 
+    "language": String, 
+    "isDefault": Boolean, 
   },  
   "selfUri": String, 
 }

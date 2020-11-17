@@ -5,7 +5,7 @@ class WorkforceManagementApi {
 	/**
 	 * WorkforceManagement service.
 	 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-	 * @version 97.0.0
+	 * @version 98.0.0
 	 */
 
 	/**
@@ -2060,6 +2060,7 @@ class WorkforceManagementApi {
 	 * @param {String} workPlanId The ID of the work plan to update
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body body
+	 * @param {Object} opts.validationMode Allows to update work plan even if validation result is invalid
 	 */
 	patchWorkforcemanagementManagementunitWorkplan(managementUnitId, workPlanId, opts) { 
 		opts = opts || {};
@@ -2077,7 +2078,7 @@ class WorkforceManagementApi {
 			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans/{workPlanId}', 
 			'PATCH', 
 			{ 'managementUnitId': managementUnitId,'workPlanId': workPlanId }, 
-			{  }, 
+			{ 'validationMode': opts['validationMode'] }, 
 			{  }, 
 			{  }, 
 			opts['body'], 
@@ -3111,6 +3112,7 @@ class WorkforceManagementApi {
 	 * @param {String} managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body body
+	 * @param {Object} opts.validationMode Allows to create work plan even if the validation result is invalid
 	 */
 	postWorkforcemanagementManagementunitWorkplans(managementUnitId, opts) { 
 		opts = opts || {};
@@ -3124,7 +3126,7 @@ class WorkforceManagementApi {
 			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans', 
 			'POST', 
 			{ 'managementUnitId': managementUnitId }, 
-			{  }, 
+			{ 'validationMode': opts['validationMode'] }, 
 			{  }, 
 			{  }, 
 			opts['body'], 

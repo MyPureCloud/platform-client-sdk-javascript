@@ -5,7 +5,7 @@ class JourneyApi {
 	/**
 	 * Journey service.
 	 * @module purecloud-platform-client-v2/api/JourneyApi
-	 * @version 97.0.0
+	 * @version 98.0.0
 	 */
 
 	/**
@@ -71,107 +71,6 @@ class JourneyApi {
 	}
 
 	/**
-	 * Retrieve segment assignments by customer ID.
-	 * 
-	 * @param {String} customerIdType Type of ID used to identify customer (e.g. email, cookie, and phone).
-	 * @param {String} customerId Primary identifier of the customer to query for segment assignments.
-	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
-	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
-	 * @param {Object} opts.segmentScope Scope to filter on. If not specified, both session-scoped and customer-scoped assignments are returned.
-	 * @param {Object} opts.assignmentState Assignment state to filter on. If not specified, both assigned and unassigned assignments are returned.
-	 */
-	getJourneyCustomerCustomerIdSegments(customerIdType, customerId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'customerIdType' is set
-		if (customerIdType === undefined || customerIdType === null) {
-			throw 'Missing the required parameter "customerIdType" when calling getJourneyCustomerCustomerIdSegments';
-		}
-		// verify the required parameter 'customerId' is set
-		if (customerId === undefined || customerId === null) {
-			throw 'Missing the required parameter "customerId" when calling getJourneyCustomerCustomerIdSegments';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/journey/customers/{customerIdType}/{customerId}/segments', 
-			'GET', 
-			{ 'customerIdType': customerIdType,'customerId': customerId }, 
-			{ 'pageSize': opts['pageSize'],'after': opts['after'],'segmentScope': opts['segmentScope'],'assignmentState': opts['assignmentState'] }, 
-			{  }, 
-			{  }, 
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'], 
-			['application/json']
-		);
-	}
-
-	/**
-	 * Retrieve segment assignments by external contact ID.
-	 * 
-	 * @param {String} externalContactId ID of the external contact to query for segment assignments.
-	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
-	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
-	 * @param {Object} opts.segmentScope Scope to filter on. If not specified, both session-scoped and customer-scoped assignments are returned.
-	 * @param {Object} opts.assignmentState Assignment state to filter on. If not specified, both assigned and unassigned assignments are returned.
-	 */
-	getJourneyExternalcontactSegments(externalContactId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'externalContactId' is set
-		if (externalContactId === undefined || externalContactId === null) {
-			throw 'Missing the required parameter "externalContactId" when calling getJourneyExternalcontactSegments';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/journey/externalcontacts/{externalContactId}/segments', 
-			'GET', 
-			{ 'externalContactId': externalContactId }, 
-			{ 'pageSize': opts['pageSize'],'after': opts['after'],'segmentScope': opts['segmentScope'],'assignmentState': opts['assignmentState'] }, 
-			{  }, 
-			{  }, 
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'], 
-			['application/json']
-		);
-	}
-
-	/**
-	 * Retrieve segment assignments by session ID.
-	 * 
-	 * @param {String} sessionId ID of the session to query for segment assignments.
-	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
-	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
-	 * @param {Object} opts.segmentScope Scope to filter on. If not specified, both session-scoped and customer-scoped assignments are returned.
-	 * @param {Object} opts.assignmentState Assignment state to filter on. If not specified, both assigned and unassigned assignments are returned.
-	 */
-	getJourneySessionSegments(sessionId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'sessionId' is set
-		if (sessionId === undefined || sessionId === null) {
-			throw 'Missing the required parameter "sessionId" when calling getJourneySessionSegments';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/journey/sessions/{sessionId}/segments', 
-			'GET', 
-			{ 'sessionId': sessionId }, 
-			{ 'pageSize': opts['pageSize'],'after': opts['after'],'segmentScope': opts['segmentScope'],'assignmentState': opts['assignmentState'] }, 
-			{  }, 
-			{  }, 
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'], 
-			['application/json']
-		);
-	}
-
-	/**
 	 * Update a single action target.
 	 * 
 	 * @param {String} actionTargetId ID of the action target.
@@ -219,35 +118,6 @@ class JourneyApi {
 			{  }, 
 			{  }, 
 			body, 
-			['PureCloud OAuth'], 
-			['application/json'], 
-			['application/json']
-		);
-	}
-
-	/**
-	 * Assign/Unassign a segment to/from an external contact or, if a segment is already assigned, update the expiry date of the segment assignment.
-	 * 
-	 * @param {String} externalContactId ID of the external contact to query for segment assignments.
-	 * @param {Object} opts Optional parameters
-	 * @param {Array.<Object>} opts.body 
-	 */
-	postJourneyExternalcontactSegments(externalContactId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'externalContactId' is set
-		if (externalContactId === undefined || externalContactId === null) {
-			throw 'Missing the required parameter "externalContactId" when calling postJourneyExternalcontactSegments';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/journey/externalcontacts/{externalContactId}/segments', 
-			'POST', 
-			{ 'externalContactId': externalContactId }, 
-			{  }, 
-			{  }, 
-			{  }, 
-			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']

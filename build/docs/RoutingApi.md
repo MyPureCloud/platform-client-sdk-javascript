@@ -7383,6 +7383,10 @@ Recipient <a href="#" onclick="return copyRecipientExample()">Copy</a>
           "name": String, 
         },  
       },  
+      "supportedLanguages": { 
+        "language": String, 
+        "isDefault": Boolean, 
+      },  
       "selfUri": String, 
     },  
     "savedVersion": { 
@@ -7427,6 +7431,10 @@ Recipient <a href="#" onclick="return copyRecipientExample()">Copy</a>
         "intents": { 
           "name": String, 
         },  
+      },  
+      "supportedLanguages": { 
+        "language": String, 
+        "isDefault": Boolean, 
       },  
       "selfUri": String, 
     },  
@@ -7475,6 +7483,10 @@ Recipient <a href="#" onclick="return copyRecipientExample()">Copy</a>
           "name": String, 
         },  
       },  
+      "supportedLanguages": { 
+        "language": String, 
+        "isDefault": Boolean, 
+      },  
       "selfUri": String, 
     },  
     "debugVersion": { 
@@ -7519,6 +7531,10 @@ Recipient <a href="#" onclick="return copyRecipientExample()">Copy</a>
         "intents": { 
           "name": String, 
         },  
+      },  
+      "supportedLanguages": { 
+        "language": String, 
+        "isDefault": Boolean, 
       },  
       "selfUri": String, 
     },  
@@ -8355,6 +8371,10 @@ Recipient <a href="#" onclick="return copyRecipientExample()">Copy</a>
       "intents": { 
         "name": String, 
       },  
+    },  
+    "supportedLanguages": { 
+      "language": String, 
+      "isDefault": Boolean, 
     },  
     "selfUri": String, 
   },  
