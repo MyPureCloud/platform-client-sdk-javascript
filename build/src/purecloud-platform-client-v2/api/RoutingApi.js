@@ -5,7 +5,7 @@ class RoutingApi {
 	/**
 	 * Routing service.
 	 * @module purecloud-platform-client-v2/api/RoutingApi
-	 * @version 98.0.0
+	 * @version 99.0.0
 	 */
 
 	/**
@@ -1191,6 +1191,7 @@ class RoutingApi {
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Object} opts.sortBy Sort by (default to name)
+	 * @param {Object} opts.sortOrder Sort order (default to ascending)
 	 * @param {String} opts.name Name
 	 */
 	getRoutingWrapupcodes(opts) { 
@@ -1201,7 +1202,7 @@ class RoutingApi {
 			'/api/v2/routing/wrapupcodes', 
 			'GET', 
 			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'name': opts['name'] }, 
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'name': opts['name'] }, 
 			{  }, 
 			{  }, 
 			null, 

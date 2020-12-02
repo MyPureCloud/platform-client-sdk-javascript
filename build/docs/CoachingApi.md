@@ -316,7 +316,7 @@ apiInstance.getCoachingAppointmentAnnotations(appointmentId, opts)
 
 <a name="getCoachingAppointmentStatuses"></a>
 
-# CoachingAppointmentStatusDtoList getCoachingAppointmentStatuses(appointmentId, opts)
+# CoachingAppointmentStatusResponseList getCoachingAppointmentStatuses(appointmentId, opts)
 
 
 
@@ -373,7 +373,7 @@ apiInstance.getCoachingAppointmentStatuses(appointmentId, opts)
 
 ### Return type
 
-**CoachingAppointmentStatusDtoList**
+**CoachingAppointmentStatusResponseList**
 
 <a name="getCoachingAppointments"></a>
 
@@ -830,7 +830,7 @@ apiInstance.patchCoachingAppointmentAnnotation(appointmentId, annotationId, body
 
 <a name="patchCoachingAppointmentStatus"></a>
 
-# CoachingAppointmentStatusDto patchCoachingAppointmentStatus(appointmentId, body)
+# CoachingAppointmentStatusResponse patchCoachingAppointmentStatus(appointmentId, body)
 
 
 
@@ -848,31 +848,22 @@ Requires ANY permissions:
 ### Request Body Schema
 
 <script type="text/javascript">
-	function copyCoachingAppointmentStatusDtoExample() {
+	function copyCoachingAppointmentStatusRequestExample() {
 		let temp = $("<textarea>");
 		$("body").append(temp);
-		temp.val($('#CoachingAppointmentStatusDtoExample').text()).select();
+		temp.val($('#CoachingAppointmentStatusRequestExample').text()).select();
 		document.execCommand("copy");
 		temp.remove();
 		return false;
 	}
 </script>
 
-CoachingAppointmentStatusDto <a href="#" onclick="return copyCoachingAppointmentStatusDtoExample()">Copy</a>
+CoachingAppointmentStatusRequest <a href="#" onclick="return copyCoachingAppointmentStatusRequestExample()">Copy</a>
 
-<div id="CoachingAppointmentStatusDtoExample">
+<div id="CoachingAppointmentStatusRequestExample">
 
 ```{"language":"json", "maxHeight": "250px"}
 { 
-  "appointment": { 
-    "id": String, 
-    "selfUri": String, 
-  },  
-  "createdBy": { 
-    "id": String, 
-    "selfUri": String, 
-  },  
-  "dateCreated": Date, 
   "status": String, 
 }
 ```
@@ -917,7 +908,7 @@ apiInstance.patchCoachingAppointmentStatus(appointmentId, body)
 
 ### Return type
 
-**CoachingAppointmentStatusDto**
+**CoachingAppointmentStatusResponse**
 
 <a name="patchCoachingNotification"></a>
 

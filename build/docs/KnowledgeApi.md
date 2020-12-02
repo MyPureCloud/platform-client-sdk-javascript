@@ -295,7 +295,8 @@ let opts = {
   'before': "before_example", // String | The cursor that points to the start of the set of entities that has been returned.
   'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
   'limit': "limit_example", // String | Number of entities to return. Maximum of 200.
-  'pageSize': "pageSize_example" // String | Number of entities to return. Maximum of 200.
+  'pageSize': "pageSize_example", // String | Number of entities to return. Maximum of 200.
+  'name': "name_example" // String | Filter to return the categories that starts with the given category name.
 };
 
 apiInstance.getKnowledgeKnowledgebaseLanguageCategories(knowledgeBaseId, languageCode, opts)
@@ -319,6 +320,7 @@ apiInstance.getKnowledgeKnowledgebaseLanguageCategories(knowledgeBaseId, languag
  **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
  **limit** | **String** | Number of entities to return. Maximum of 200. | [optional]  |
  **pageSize** | **String** | Number of entities to return. Maximum of 200. | [optional]  |
+ **name** | **String** | Filter to return the categories that starts with the given category name. | [optional]  |
 {: class="table table-striped"}
 
 ### Return type

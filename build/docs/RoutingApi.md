@@ -2661,6 +2661,7 @@ let opts = {
   'pageSize': 25, // Number | Page size
   'pageNumber': 1, // Number | Page number
   'sortBy': "name", // String | Sort by
+  'sortOrder': "ascending", // String | Sort order
   'name': "name_example" // String | Name
 };
 
@@ -2682,6 +2683,7 @@ apiInstance.getRoutingWrapupcodes(opts)
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **sortBy** | **String** | Sort by | [optional] [default to name]<br />**Values**: name, id |
+ **sortOrder** | **String** | Sort order | [optional] [default to ascending]<br />**Values**: ascending, descending |
  **name** | **String** | Name | [optional]  |
 {: class="table table-striped"}
 

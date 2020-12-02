@@ -5,7 +5,7 @@ class UsersApi {
 	/**
 	 * Users service.
 	 * @module purecloud-platform-client-v2/api/UsersApi
-	 * @version 98.0.0
+	 * @version 99.0.0
 	 */
 
 	/**
@@ -1118,7 +1118,7 @@ class UsersApi {
 
 	/**
 	 * Get a Development Activity
-	 * 
+	 * Permission not required if you are the attendee, creator or facilitator of the coaching appointment or you are the assigned user of the learning assignment.
 	 * @param {String} activityId Specifies the activity ID, maps to either assignment or appointment ID
 	 * @param {Object} type Specifies the activity type.
 	 */

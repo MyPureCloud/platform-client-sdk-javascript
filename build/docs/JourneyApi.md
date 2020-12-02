@@ -169,6 +169,7 @@ PatchActionTarget <a href="#" onclick="return copyPatchActionTargetExample()">Co
     "percentage": Number, 
     "durationMs": Number, 
   },  
+  "shortAbandonThreshold": Number, 
   "selfUri": String, 
 }
 ```
