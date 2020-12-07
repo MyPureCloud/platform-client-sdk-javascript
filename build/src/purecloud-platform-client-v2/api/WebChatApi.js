@@ -5,7 +5,7 @@ class WebChatApi {
 	/**
 	 * WebChat service.
 	 * @module purecloud-platform-client-v2/api/WebChatApi
-	 * @version 99.0.1
+	 * @version 99.0.2
 	 */
 
 	/**

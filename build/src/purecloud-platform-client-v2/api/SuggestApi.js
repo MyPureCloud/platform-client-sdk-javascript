@@ -5,7 +5,7 @@ class SuggestApi {
 	/**
 	 * Suggest service.
 	 * @module purecloud-platform-client-v2/api/SuggestApi
-	 * @version 99.0.1
+	 * @version 99.0.2
 	 */
 
 	/**

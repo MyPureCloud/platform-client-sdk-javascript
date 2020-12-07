@@ -5,7 +5,7 @@ class AuthorizationApi {
 	/**
 	 * Authorization service.
 	 * @module purecloud-platform-client-v2/api/AuthorizationApi
-	 * @version 99.0.1
+	 * @version 99.0.2
 	 */
 
 	/**

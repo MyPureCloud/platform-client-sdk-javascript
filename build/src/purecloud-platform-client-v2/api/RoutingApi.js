@@ -5,7 +5,7 @@ class RoutingApi {
 	/**
 	 * Routing service.
 	 * @module purecloud-platform-client-v2/api/RoutingApi
-	 * @version 99.0.1
+	 * @version 99.0.2
 	 */
 
 	/**

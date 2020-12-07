@@ -5,7 +5,7 @@ class UtilitiesApi {
 	/**
 	 * Utilities service.
 	 * @module purecloud-platform-client-v2/api/UtilitiesApi
-	 * @version 99.0.1
+	 * @version 99.0.2
 	 */
 
 	/**
