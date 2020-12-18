@@ -5,7 +5,7 @@ class AuthorizationApi {
 	/**
 	 * Authorization service.
 	 * @module purecloud-platform-client-v2/api/AuthorizationApi
-	 * @version 99.0.2
+	 * @version 100.0.0
 	 */
 
 	/**
@@ -140,7 +140,7 @@ class AuthorizationApi {
 
 	/**
 	 * Gets all grants for a given division.
-	 * 
+	 * Returns all grants assigned to a given division. Maximum page size is 500.
 	 * @param {String} divisionId Division ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageNumber Page number (default to 1)

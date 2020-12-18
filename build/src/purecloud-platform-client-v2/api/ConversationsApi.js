@@ -5,7 +5,7 @@ class ConversationsApi {
 	/**
 	 * Conversations service.
 	 * @module purecloud-platform-client-v2/api/ConversationsApi
-	 * @version 99.0.2
+	 * @version 100.0.0
 	 */
 
 	/**
@@ -2727,7 +2727,37 @@ class ConversationsApi {
 	}
 
 	/**
-	 * Activate a WhatsApp messaging integration.
+	 * Update Twitter messaging integration
+	 * 
+	 * @param {String} integrationId Integration ID
+	 * @param {Object} body TwitterIntegrationRequest
+	 */
+	patchConversationsMessagingIntegrationsTwitterIntegrationId(integrationId, body) { 
+		// verify the required parameter 'integrationId' is set
+		if (integrationId === undefined || integrationId === null) {
+			throw 'Missing the required parameter "integrationId" when calling patchConversationsMessagingIntegrationsTwitterIntegrationId';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchConversationsMessagingIntegrationsTwitterIntegrationId';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/messaging/integrations/twitter/{integrationId}', 
+			'PATCH', 
+			{ 'integrationId': integrationId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update or activate a WhatsApp messaging integration.
 	 * The following steps are required in order to fully activate a Whatsapp Integration: Initially, you will need to get an activation code by sending: an action set to Activate, and an authenticationMethod choosing from Sms or Voice. Finally, once you have been informed of an activation code on selected authenticationMethod, you will need to confirm the code by sending: an action set to Confirm, and the confirmationCode you have received from Whatsapp.
 	 * @param {String} integrationId Integration ID
 	 * @param {Object} body WhatsAppIntegrationUpdateRequest

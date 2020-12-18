@@ -288,7 +288,7 @@ GET /api/v2/authorization/divisions/{divisionId}/grants
 
 Gets all grants for a given division.
 
-
+Returns all grants assigned to a given division. Maximum page size is 500.
 
 Requires ANY permissions: 
 
@@ -2677,8 +2677,8 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
   },  
   "userCount": Number, 
   "roleNeedsUpdate": Boolean, 
-  "base": Boolean, 
   "default": Boolean, 
+  "base": Boolean, 
   "selfUri": String, 
 }
 ```
@@ -4295,8 +4295,8 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
   },  
   "userCount": Number, 
   "roleNeedsUpdate": Boolean, 
-  "base": Boolean, 
   "default": Boolean, 
+  "base": Boolean, 
   "selfUri": String, 
 }
 ```
@@ -5684,8 +5684,8 @@ DomainOrganizationRoleCreate <a href="#" onclick="return copyDomainOrganizationR
   },  
   "userCount": Number, 
   "roleNeedsUpdate": Boolean, 
-  "base": Boolean, 
   "default": Boolean, 
+  "base": Boolean, 
   "selfUri": String, 
 }
 ```
@@ -7450,8 +7450,8 @@ DomainOrganizationRoleUpdate <a href="#" onclick="return copyDomainOrganizationR
   },  
   "userCount": Number, 
   "roleNeedsUpdate": Boolean, 
-  "base": Boolean, 
   "default": Boolean, 
+  "base": Boolean, 
   "selfUri": String, 
 }
 ```
@@ -8951,8 +8951,8 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
   },  
   "userCount": Number, 
   "roleNeedsUpdate": Boolean, 
-  "base": Boolean, 
   "default": Boolean, 
+  "base": Boolean, 
   "selfUri": String, 
 }
 ```

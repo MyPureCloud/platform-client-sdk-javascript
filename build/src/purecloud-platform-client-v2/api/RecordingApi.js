@@ -5,7 +5,7 @@ class RecordingApi {
 	/**
 	 * Recording service.
 	 * @module purecloud-platform-client-v2/api/RecordingApi
-	 * @version 99.0.2
+	 * @version 100.0.0
 	 */
 
 	/**
@@ -70,6 +70,56 @@ class RecordingApi {
 			'/api/v2/orphanrecordings/{orphanId}', 
 			'DELETE', 
 			{ 'orphanId': orphanId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete media retention policies
+	 * Bulk delete of media retention policies, this will only delete the polices that match the ids specified in the query param.
+	 * @param {String} ids 
+	 */
+	deleteRecordingCrossplatformMediaretentionpolicies(ids) { 
+		// verify the required parameter 'ids' is set
+		if (ids === undefined || ids === null) {
+			throw 'Missing the required parameter "ids" when calling deleteRecordingCrossplatformMediaretentionpolicies';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/recording/crossplatform/mediaretentionpolicies', 
+			'DELETE', 
+			{  }, 
+			{ 'ids': ids }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete a media retention policy
+	 * 
+	 * @param {String} policyId Policy ID
+	 */
+	deleteRecordingCrossplatformMediaretentionpolicy(policyId) { 
+		// verify the required parameter 'policyId' is set
+		if (policyId === undefined || policyId === null) {
+			throw 'Missing the required parameter "policyId" when calling deleteRecordingCrossplatformMediaretentionpolicy';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/recording/crossplatform/mediaretentionpolicies/{policyId}', 
+			'DELETE', 
+			{ 'policyId': policyId }, 
 			{  }, 
 			{  }, 
 			{  }, 
@@ -462,6 +512,64 @@ class RecordingApi {
 	}
 
 	/**
+	 * Gets media retention policy list with query options to filter on name and enabled.
+	 * for a less verbose response, add summary=true to this endpoint
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageSize The total page size requested (default to 25)
+	 * @param {Number} opts.pageNumber The page number requested (default to 1)
+	 * @param {String} opts.sortBy variable name requested to sort by
+	 * @param {Array.<String>} opts.expand variable name requested by expand list
+	 * @param {String} opts.nextPage next page token
+	 * @param {String} opts.previousPage Previous page token
+	 * @param {String} opts.name the policy name - used for filtering results in searches.
+	 * @param {Boolean} opts.enabled checks to see if policy is enabled - use enabled = true or enabled = false
+	 * @param {Boolean} opts.summary provides a less verbose response of policy lists. (default to false)
+	 * @param {Boolean} opts.hasErrors provides a way to fetch all policies with errors or policies that do not have errors
+	 */
+	getRecordingCrossplatformMediaretentionpolicies(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/recording/crossplatform/mediaretentionpolicies', 
+			'GET', 
+			{  }, 
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'nextPage': opts['nextPage'],'previousPage': opts['previousPage'],'name': opts['name'],'enabled': opts['enabled'],'summary': opts['summary'],'hasErrors': opts['hasErrors'] }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a media retention policy
+	 * 
+	 * @param {String} policyId Policy ID
+	 */
+	getRecordingCrossplatformMediaretentionpolicy(policyId) { 
+		// verify the required parameter 'policyId' is set
+		if (policyId === undefined || policyId === null) {
+			throw 'Missing the required parameter "policyId" when calling getRecordingCrossplatformMediaretentionpolicy';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/recording/crossplatform/mediaretentionpolicies/{policyId}', 
+			'GET', 
+			{ 'policyId': policyId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get the status of the job associated with the job id.
 	 * 
 	 * @param {String} jobId jobId
@@ -718,6 +826,36 @@ class RecordingApi {
 	 * @param {String} policyId Policy ID
 	 * @param {Object} body Policy
 	 */
+	patchRecordingCrossplatformMediaretentionpolicy(policyId, body) { 
+		// verify the required parameter 'policyId' is set
+		if (policyId === undefined || policyId === null) {
+			throw 'Missing the required parameter "policyId" when calling patchRecordingCrossplatformMediaretentionpolicy';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchRecordingCrossplatformMediaretentionpolicy';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/recording/crossplatform/mediaretentionpolicies/{policyId}', 
+			'PATCH', 
+			{ 'policyId': policyId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Patch a media retention policy
+	 * 
+	 * @param {String} policyId Policy ID
+	 * @param {Object} body Policy
+	 */
 	patchRecordingMediaretentionpolicy(policyId, body) { 
 		// verify the required parameter 'policyId' is set
 		if (policyId === undefined || policyId === null) {
@@ -819,6 +957,31 @@ class RecordingApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/recording/batchrequests', 
+			'POST', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Create media retention policy
+	 * 
+	 * @param {Object} body Policy
+	 */
+	postRecordingCrossplatformMediaretentionpolicies(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postRecordingCrossplatformMediaretentionpolicies';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/recording/crossplatform/mediaretentionpolicies', 
 			'POST', 
 			{  }, 
 			{  }, 
@@ -1074,6 +1237,36 @@ class RecordingApi {
 			{  }, 
 			{  }, 
 			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update a media retention policy
+	 * 
+	 * @param {String} policyId Policy ID
+	 * @param {Object} body Policy
+	 */
+	putRecordingCrossplatformMediaretentionpolicy(policyId, body) { 
+		// verify the required parameter 'policyId' is set
+		if (policyId === undefined || policyId === null) {
+			throw 'Missing the required parameter "policyId" when calling putRecordingCrossplatformMediaretentionpolicy';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putRecordingCrossplatformMediaretentionpolicy';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/recording/crossplatform/mediaretentionpolicies/{policyId}', 
+			'PUT', 
+			{ 'policyId': policyId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
 			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']

@@ -5,7 +5,7 @@ class RoutingApi {
 	/**
 	 * Routing service.
 	 * @module purecloud-platform-client-v2/api/RoutingApi
-	 * @version 99.0.2
+	 * @version 100.0.0
 	 */
 
 	/**
@@ -1192,7 +1192,7 @@ class RoutingApi {
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Object} opts.sortBy Sort by (default to name)
 	 * @param {Object} opts.sortOrder Sort order (default to ascending)
-	 * @param {String} opts.name Name
+	 * @param {String} opts.name Wrapup code&#39;s name (&#39;Sort by&#39; param is ignored unless this field is provided)
 	 */
 	getRoutingWrapupcodes(opts) { 
 		opts = opts || {};

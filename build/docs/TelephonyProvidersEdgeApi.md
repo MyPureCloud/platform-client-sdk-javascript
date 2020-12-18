@@ -1442,7 +1442,7 @@ apiInstance.getTelephonyProvidersEdgeDiagnosticTracepath(edgeId)
 
 # EdgeLine getTelephonyProvidersEdgeLine(edgeId, lineId)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 GET /api/v2/telephony/providers/edges/{edgeId}/lines/{lineId}
 
@@ -1499,7 +1499,7 @@ apiInstance.getTelephonyProvidersEdgeLine(edgeId, lineId)
 
 # EdgeLineEntityListing getTelephonyProvidersEdgeLines(edgeId, opts)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 GET /api/v2/telephony/providers/edges/{edgeId}/lines
 
@@ -46912,7 +46912,7 @@ apiInstance.putTelephonyProvidersEdge(edgeId, body)
 
 # EdgeLine putTelephonyProvidersEdgeLine(edgeId, lineId, body)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 PUT /api/v2/telephony/providers/edges/{edgeId}/lines/{lineId}
 
@@ -51107,7 +51107,7 @@ apiInstance.putTelephonyProvidersEdgesCertificateauthority(certificateId, body)
 
 # DID putTelephonyProvidersEdgesDid(didId, body)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 PUT /api/v2/telephony/providers/edges/dids/{didId}
 
@@ -51553,7 +51553,7 @@ apiInstance.putTelephonyProvidersEdgesEdgegroupEdgetrunkbase(edgegroupId, edgetr
 
 # Extension putTelephonyProvidersEdgesExtension(extensionId, body)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 PUT /api/v2/telephony/providers/edges/extensions/{extensionId}
 

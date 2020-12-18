@@ -6052,7 +6052,7 @@ function isSlowBuffer (obj) {
 
 /**
  * @module purecloud-platform-client-v2/ApiClient
- * @version 99.0.2
+ * @version 100.0.0
  */
 class ApiClient {
 	/**
@@ -6808,7 +6808,7 @@ class ApiClient {
 
 		// set header parameters
 		request.set(this.defaultHeaders).set(this.normalizeParams(headerParams));
-		//request.set({ 'purecloud-sdk': '99.0.2' });
+		//request.set({ 'purecloud-sdk': '100.0.0' });
 
 		// set request timeout
 		request.timeout(this.timeout);
@@ -6933,7 +6933,7 @@ class AlertingApi {
 	/**
 	 * Alerting service.
 	 * @module purecloud-platform-client-v2/api/AlertingApi
-	 * @version 99.0.2
+	 * @version 100.0.0
 	 */
 
 	/**
@@ -7247,7 +7247,7 @@ class AnalyticsApi {
 	/**
 	 * Analytics service.
 	 * @module purecloud-platform-client-v2/api/AnalyticsApi
-	 * @version 99.0.2
+	 * @version 100.0.0
 	 */
 
 	/**
@@ -8327,7 +8327,7 @@ class ArchitectApi {
 	/**
 	 * Architect service.
 	 * @module purecloud-platform-client-v2/api/ArchitectApi
-	 * @version 99.0.2
+	 * @version 100.0.0
 	 */
 
 	/**
@@ -11165,7 +11165,7 @@ class AuditApi {
 	/**
 	 * Audit service.
 	 * @module purecloud-platform-client-v2/api/AuditApi
-	 * @version 99.0.2
+	 * @version 100.0.0
 	 */
 
 	/**
@@ -11336,7 +11336,7 @@ class AuthorizationApi {
 	/**
 	 * Authorization service.
 	 * @module purecloud-platform-client-v2/api/AuthorizationApi
-	 * @version 99.0.2
+	 * @version 100.0.0
 	 */
 
 	/**
@@ -11471,7 +11471,7 @@ class AuthorizationApi {
 
 	/**
 	 * Gets all grants for a given division.
-	 * 
+	 * Returns all grants assigned to a given division. Maximum page size is 500.
 	 * @param {String} divisionId Division ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageNumber Page number (default to 1)
@@ -12455,7 +12455,7 @@ class BillingApi {
 	/**
 	 * Billing service.
 	 * @module purecloud-platform-client-v2/api/BillingApi
-	 * @version 99.0.2
+	 * @version 100.0.0
 	 */
 
 	/**
@@ -12535,7 +12535,7 @@ class CoachingApi {
 	/**
 	 * Coaching service.
 	 * @module purecloud-platform-client-v2/api/CoachingApi
-	 * @version 99.0.2
+	 * @version 100.0.0
 	 */
 
 	/**
@@ -13055,7 +13055,7 @@ class ContentManagementApi {
 	/**
 	 * ContentManagement service.
 	 * @module purecloud-platform-client-v2/api/ContentManagementApi
-	 * @version 99.0.2
+	 * @version 100.0.0
 	 */
 
 	/**
@@ -14195,7 +14195,7 @@ class ConversationsApi {
 	/**
 	 * Conversations service.
 	 * @module purecloud-platform-client-v2/api/ConversationsApi
-	 * @version 99.0.2
+	 * @version 100.0.0
 	 */
 
 	/**
@@ -16917,7 +16917,37 @@ class ConversationsApi {
 	}
 
 	/**
-	 * Activate a WhatsApp messaging integration.
+	 * Update Twitter messaging integration
+	 * 
+	 * @param {String} integrationId Integration ID
+	 * @param {Object} body TwitterIntegrationRequest
+	 */
+	patchConversationsMessagingIntegrationsTwitterIntegrationId(integrationId, body) { 
+		// verify the required parameter 'integrationId' is set
+		if (integrationId === undefined || integrationId === null) {
+			throw 'Missing the required parameter "integrationId" when calling patchConversationsMessagingIntegrationsTwitterIntegrationId';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchConversationsMessagingIntegrationsTwitterIntegrationId';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/messaging/integrations/twitter/{integrationId}', 
+			'PATCH', 
+			{ 'integrationId': integrationId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update or activate a WhatsApp messaging integration.
 	 * The following steps are required in order to fully activate a Whatsapp Integration: Initially, you will need to get an activation code by sending: an action set to Activate, and an authenticationMethod choosing from Sms or Voice. Finally, once you have been informed of an activation code on selected authenticationMethod, you will need to confirm the code by sending: an action set to Confirm, and the confirmationCode you have received from Whatsapp.
 	 * @param {String} integrationId Integration ID
 	 * @param {Object} body WhatsAppIntegrationUpdateRequest
@@ -18253,7 +18283,7 @@ class DataExtensionsApi {
 	/**
 	 * DataExtensions service.
 	 * @module purecloud-platform-client-v2/api/DataExtensionsApi
-	 * @version 99.0.2
+	 * @version 100.0.0
 	 */
 
 	/**
@@ -18339,7 +18369,7 @@ class ExternalContactsApi {
 	/**
 	 * ExternalContacts service.
 	 * @module purecloud-platform-client-v2/api/ExternalContactsApi
-	 * @version 99.0.2
+	 * @version 100.0.0
 	 */
 
 	/**
@@ -19682,7 +19712,7 @@ class FaxApi {
 	/**
 	 * Fax service.
 	 * @module purecloud-platform-client-v2/api/FaxApi
-	 * @version 99.0.2
+	 * @version 100.0.0
 	 */
 
 	/**
@@ -19853,7 +19883,7 @@ class FlowsApi {
 	/**
 	 * Flows service.
 	 * @module purecloud-platform-client-v2/api/FlowsApi
-	 * @version 99.0.2
+	 * @version 100.0.0
 	 */
 
 	/**
@@ -19924,7 +19954,7 @@ class GeneralDataProtectionRegulationApi {
 	/**
 	 * GeneralDataProtectionRegulation service.
 	 * @module purecloud-platform-client-v2/api/GeneralDataProtectionRegulationApi
-	 * @version 99.0.2
+	 * @version 100.0.0
 	 */
 
 	/**
@@ -20054,7 +20084,7 @@ class GeolocationApi {
 	/**
 	 * Geolocation service.
 	 * @module purecloud-platform-client-v2/api/GeolocationApi
-	 * @version 99.0.2
+	 * @version 100.0.0
 	 */
 
 	/**
@@ -20185,7 +20215,7 @@ class GreetingsApi {
 	/**
 	 * Greetings service.
 	 * @module purecloud-platform-client-v2/api/GreetingsApi
-	 * @version 99.0.2
+	 * @version 100.0.0
 	 */
 
 	/**
@@ -20640,7 +20670,7 @@ class GroupsApi {
 	/**
 	 * Groups service.
 	 * @module purecloud-platform-client-v2/api/GroupsApi
-	 * @version 99.0.2
+	 * @version 100.0.0
 	 */
 
 	/**
@@ -21045,7 +21075,7 @@ class IdentityProviderApi {
 	/**
 	 * IdentityProvider service.
 	 * @module purecloud-platform-client-v2/api/IdentityProviderApi
-	 * @version 99.0.2
+	 * @version 100.0.0
 	 */
 
 	/**
@@ -21801,7 +21831,7 @@ class IntegrationsApi {
 	/**
 	 * Integrations service.
 	 * @module purecloud-platform-client-v2/api/IntegrationsApi
-	 * @version 99.0.2
+	 * @version 100.0.0
 	 */
 
 	/**
@@ -23293,7 +23323,7 @@ class JourneyApi {
 	/**
 	 * Journey service.
 	 * @module purecloud-platform-client-v2/api/JourneyApi
-	 * @version 99.0.2
+	 * @version 100.0.0
 	 */
 
 	/**
@@ -23418,7 +23448,7 @@ class KnowledgeApi {
 	/**
 	 * Knowledge service.
 	 * @module purecloud-platform-client-v2/api/KnowledgeApi
-	 * @version 99.0.2
+	 * @version 100.0.0
 	 */
 
 	/**
@@ -24141,7 +24171,7 @@ class LanguageUnderstandingApi {
 	/**
 	 * LanguageUnderstanding service.
 	 * @module purecloud-platform-client-v2/api/LanguageUnderstandingApi
-	 * @version 99.0.2
+	 * @version 100.0.0
 	 */
 
 	/**
@@ -24707,7 +24737,7 @@ class LanguagesApi {
 	/**
 	 * Languages service.
 	 * @module purecloud-platform-client-v2/api/LanguagesApi
-	 * @version 99.0.2
+	 * @version 100.0.0
 	 */
 
 	/**
@@ -24975,7 +25005,7 @@ class LicenseApi {
 	/**
 	 * License service.
 	 * @module purecloud-platform-client-v2/api/LicenseApi
-	 * @version 99.0.2
+	 * @version 100.0.0
 	 */
 
 	/**
@@ -25213,7 +25243,7 @@ class LocationsApi {
 	/**
 	 * Locations service.
 	 * @module purecloud-platform-client-v2/api/LocationsApi
-	 * @version 99.0.2
+	 * @version 100.0.0
 	 */
 
 	/**
@@ -25449,7 +25479,7 @@ class MobileDevicesApi {
 	/**
 	 * MobileDevices service.
 	 * @module purecloud-platform-client-v2/api/MobileDevicesApi
-	 * @version 99.0.2
+	 * @version 100.0.0
 	 */
 
 	/**
@@ -25600,7 +25630,7 @@ class NotificationsApi {
 	/**
 	 * Notifications service.
 	 * @module purecloud-platform-client-v2/api/NotificationsApi
-	 * @version 99.0.2
+	 * @version 100.0.0
 	 */
 
 	/**
@@ -25799,7 +25829,7 @@ class OAuthApi {
 	/**
 	 * OAuth service.
 	 * @module purecloud-platform-client-v2/api/OAuthApi
-	 * @version 99.0.2
+	 * @version 100.0.0
 	 */
 
 	/**
@@ -26157,7 +26187,7 @@ class ObjectsApi {
 	/**
 	 * Objects service.
 	 * @module purecloud-platform-client-v2/api/ObjectsApi
-	 * @version 99.0.2
+	 * @version 100.0.0
 	 */
 
 	/**
@@ -26398,7 +26428,7 @@ class OrganizationApi {
 	/**
 	 * Organization service.
 	 * @module purecloud-platform-client-v2/api/OrganizationApi
-	 * @version 99.0.2
+	 * @version 100.0.0
 	 */
 
 	/**
@@ -26653,7 +26683,7 @@ class OrganizationAuthorizationApi {
 	/**
 	 * OrganizationAuthorization service.
 	 * @module purecloud-platform-client-v2/api/OrganizationAuthorizationApi
-	 * @version 99.0.2
+	 * @version 100.0.0
 	 */
 
 	/**
@@ -27363,7 +27393,7 @@ class OutboundApi {
 	/**
 	 * Outbound service.
 	 * @module purecloud-platform-client-v2/api/OutboundApi
-	 * @version 99.0.2
+	 * @version 100.0.0
 	 */
 
 	/**
@@ -30337,7 +30367,7 @@ class PresenceApi {
 	/**
 	 * Presence service.
 	 * @module purecloud-platform-client-v2/api/PresenceApi
-	 * @version 99.0.2
+	 * @version 100.0.0
 	 */
 
 	/**
@@ -30684,7 +30714,7 @@ class QualityApi {
 	/**
 	 * Quality service.
 	 * @module purecloud-platform-client-v2/api/QualityApi
-	 * @version 99.0.2
+	 * @version 100.0.0
 	 */
 
 	/**
@@ -32382,7 +32412,7 @@ class RecordingApi {
 	/**
 	 * Recording service.
 	 * @module purecloud-platform-client-v2/api/RecordingApi
-	 * @version 99.0.2
+	 * @version 100.0.0
 	 */
 
 	/**
@@ -32447,6 +32477,56 @@ class RecordingApi {
 			'/api/v2/orphanrecordings/{orphanId}', 
 			'DELETE', 
 			{ 'orphanId': orphanId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete media retention policies
+	 * Bulk delete of media retention policies, this will only delete the polices that match the ids specified in the query param.
+	 * @param {String} ids 
+	 */
+	deleteRecordingCrossplatformMediaretentionpolicies(ids) { 
+		// verify the required parameter 'ids' is set
+		if (ids === undefined || ids === null) {
+			throw 'Missing the required parameter "ids" when calling deleteRecordingCrossplatformMediaretentionpolicies';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/recording/crossplatform/mediaretentionpolicies', 
+			'DELETE', 
+			{  }, 
+			{ 'ids': ids }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete a media retention policy
+	 * 
+	 * @param {String} policyId Policy ID
+	 */
+	deleteRecordingCrossplatformMediaretentionpolicy(policyId) { 
+		// verify the required parameter 'policyId' is set
+		if (policyId === undefined || policyId === null) {
+			throw 'Missing the required parameter "policyId" when calling deleteRecordingCrossplatformMediaretentionpolicy';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/recording/crossplatform/mediaretentionpolicies/{policyId}', 
+			'DELETE', 
+			{ 'policyId': policyId }, 
 			{  }, 
 			{  }, 
 			{  }, 
@@ -32839,6 +32919,64 @@ class RecordingApi {
 	}
 
 	/**
+	 * Gets media retention policy list with query options to filter on name and enabled.
+	 * for a less verbose response, add summary=true to this endpoint
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageSize The total page size requested (default to 25)
+	 * @param {Number} opts.pageNumber The page number requested (default to 1)
+	 * @param {String} opts.sortBy variable name requested to sort by
+	 * @param {Array.<String>} opts.expand variable name requested by expand list
+	 * @param {String} opts.nextPage next page token
+	 * @param {String} opts.previousPage Previous page token
+	 * @param {String} opts.name the policy name - used for filtering results in searches.
+	 * @param {Boolean} opts.enabled checks to see if policy is enabled - use enabled = true or enabled = false
+	 * @param {Boolean} opts.summary provides a less verbose response of policy lists. (default to false)
+	 * @param {Boolean} opts.hasErrors provides a way to fetch all policies with errors or policies that do not have errors
+	 */
+	getRecordingCrossplatformMediaretentionpolicies(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/recording/crossplatform/mediaretentionpolicies', 
+			'GET', 
+			{  }, 
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'nextPage': opts['nextPage'],'previousPage': opts['previousPage'],'name': opts['name'],'enabled': opts['enabled'],'summary': opts['summary'],'hasErrors': opts['hasErrors'] }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a media retention policy
+	 * 
+	 * @param {String} policyId Policy ID
+	 */
+	getRecordingCrossplatformMediaretentionpolicy(policyId) { 
+		// verify the required parameter 'policyId' is set
+		if (policyId === undefined || policyId === null) {
+			throw 'Missing the required parameter "policyId" when calling getRecordingCrossplatformMediaretentionpolicy';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/recording/crossplatform/mediaretentionpolicies/{policyId}', 
+			'GET', 
+			{ 'policyId': policyId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get the status of the job associated with the job id.
 	 * 
 	 * @param {String} jobId jobId
@@ -33095,6 +33233,36 @@ class RecordingApi {
 	 * @param {String} policyId Policy ID
 	 * @param {Object} body Policy
 	 */
+	patchRecordingCrossplatformMediaretentionpolicy(policyId, body) { 
+		// verify the required parameter 'policyId' is set
+		if (policyId === undefined || policyId === null) {
+			throw 'Missing the required parameter "policyId" when calling patchRecordingCrossplatformMediaretentionpolicy';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchRecordingCrossplatformMediaretentionpolicy';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/recording/crossplatform/mediaretentionpolicies/{policyId}', 
+			'PATCH', 
+			{ 'policyId': policyId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Patch a media retention policy
+	 * 
+	 * @param {String} policyId Policy ID
+	 * @param {Object} body Policy
+	 */
 	patchRecordingMediaretentionpolicy(policyId, body) { 
 		// verify the required parameter 'policyId' is set
 		if (policyId === undefined || policyId === null) {
@@ -33196,6 +33364,31 @@ class RecordingApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/recording/batchrequests', 
+			'POST', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Create media retention policy
+	 * 
+	 * @param {Object} body Policy
+	 */
+	postRecordingCrossplatformMediaretentionpolicies(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postRecordingCrossplatformMediaretentionpolicies';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/recording/crossplatform/mediaretentionpolicies', 
 			'POST', 
 			{  }, 
 			{  }, 
@@ -33458,6 +33651,36 @@ class RecordingApi {
 	}
 
 	/**
+	 * Update a media retention policy
+	 * 
+	 * @param {String} policyId Policy ID
+	 * @param {Object} body Policy
+	 */
+	putRecordingCrossplatformMediaretentionpolicy(policyId, body) { 
+		// verify the required parameter 'policyId' is set
+		if (policyId === undefined || policyId === null) {
+			throw 'Missing the required parameter "policyId" when calling putRecordingCrossplatformMediaretentionpolicy';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putRecordingCrossplatformMediaretentionpolicy';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/recording/crossplatform/mediaretentionpolicies/{policyId}', 
+			'PUT', 
+			{ 'policyId': policyId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
 	 * Execute the recording bulk job.
 	 * A job must be executed by the same user whom originally created the job.  In addition, the user must have permission to update the recording&#39;s retention.
 	 * @param {String} jobId jobId
@@ -33628,7 +33851,7 @@ class ResponseManagementApi {
 	/**
 	 * ResponseManagement service.
 	 * @module purecloud-platform-client-v2/api/ResponseManagementApi
-	 * @version 99.0.2
+	 * @version 100.0.0
 	 */
 
 	/**
@@ -33953,7 +34176,7 @@ class RoutingApi {
 	/**
 	 * Routing service.
 	 * @module purecloud-platform-client-v2/api/RoutingApi
-	 * @version 99.0.2
+	 * @version 100.0.0
 	 */
 
 	/**
@@ -35140,7 +35363,7 @@ class RoutingApi {
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Object} opts.sortBy Sort by (default to name)
 	 * @param {Object} opts.sortOrder Sort order (default to ascending)
-	 * @param {String} opts.name Name
+	 * @param {String} opts.name Wrapup code&#39;s name (&#39;Sort by&#39; param is ignored unless this field is provided)
 	 */
 	getRoutingWrapupcodes(opts) { 
 		opts = opts || {};
@@ -36252,7 +36475,7 @@ class SCIMApi {
 	/**
 	 * SCIM service.
 	 * @module purecloud-platform-client-v2/api/SCIMApi
-	 * @version 99.0.2
+	 * @version 100.0.0
 	 */
 
 	/**
@@ -37237,7 +37460,7 @@ class ScriptsApi {
 	/**
 	 * Scripts service.
 	 * @module purecloud-platform-client-v2/api/ScriptsApi
-	 * @version 99.0.2
+	 * @version 100.0.0
 	 */
 
 	/**
@@ -37590,7 +37813,7 @@ class SearchApi {
 	/**
 	 * Search service.
 	 * @module purecloud-platform-client-v2/api/SearchApi
-	 * @version 99.0.2
+	 * @version 100.0.0
 	 */
 
 	/**
@@ -38100,7 +38323,7 @@ class SpeechTextAnalyticsApi {
 	/**
 	 * SpeechTextAnalytics service.
 	 * @module purecloud-platform-client-v2/api/SpeechTextAnalyticsApi
-	 * @version 99.0.2
+	 * @version 100.0.0
 	 */
 
 	/**
@@ -38176,7 +38399,7 @@ class StationsApi {
 	/**
 	 * Stations service.
 	 * @module purecloud-platform-client-v2/api/StationsApi
-	 * @version 99.0.2
+	 * @version 100.0.0
 	 */
 
 	/**
@@ -38323,7 +38546,7 @@ class SuggestApi {
 	/**
 	 * Suggest service.
 	 * @module purecloud-platform-client-v2/api/SuggestApi
-	 * @version 99.0.2
+	 * @version 100.0.0
 	 */
 
 	/**
@@ -38462,7 +38685,7 @@ class TelephonyApi {
 	/**
 	 * Telephony service.
 	 * @module purecloud-platform-client-v2/api/TelephonyApi
-	 * @version 99.0.2
+	 * @version 100.0.0
 	 */
 
 	/**
@@ -38570,7 +38793,7 @@ class TelephonyProvidersEdgeApi {
 	/**
 	 * TelephonyProvidersEdge service.
 	 * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-	 * @version 99.0.2
+	 * @version 100.0.0
 	 */
 
 	/**
@@ -42147,7 +42370,7 @@ class TextbotsApi {
 	/**
 	 * Textbots service.
 	 * @module purecloud-platform-client-v2/api/TextbotsApi
-	 * @version 99.0.2
+	 * @version 100.0.0
 	 */
 
 	/**
@@ -42193,7 +42416,7 @@ class TokensApi {
 	/**
 	 * Tokens service.
 	 * @module purecloud-platform-client-v2/api/TokensApi
-	 * @version 99.0.2
+	 * @version 100.0.0
 	 */
 
 	/**
@@ -42279,7 +42502,7 @@ class UploadsApi {
 	/**
 	 * Uploads service.
 	 * @module purecloud-platform-client-v2/api/UploadsApi
-	 * @version 99.0.2
+	 * @version 100.0.0
 	 */
 
 	/**
@@ -42325,7 +42548,7 @@ class UsageApi {
 	/**
 	 * Usage service.
 	 * @module purecloud-platform-client-v2/api/UsageApi
-	 * @version 99.0.2
+	 * @version 100.0.0
 	 */
 
 	/**
@@ -42396,7 +42619,7 @@ class UserRecordingsApi {
 	/**
 	 * UserRecordings service.
 	 * @module purecloud-platform-client-v2/api/UserRecordingsApi
-	 * @version 99.0.2
+	 * @version 100.0.0
 	 */
 
 	/**
@@ -42580,7 +42803,7 @@ class UsersApi {
 	/**
 	 * Users service.
 	 * @module purecloud-platform-client-v2/api/UsersApi
-	 * @version 99.0.2
+	 * @version 100.0.0
 	 */
 
 	/**
@@ -44793,7 +45016,7 @@ class UtilitiesApi {
 	/**
 	 * Utilities service.
 	 * @module purecloud-platform-client-v2/api/UtilitiesApi
-	 * @version 99.0.2
+	 * @version 100.0.0
 	 */
 
 	/**
@@ -44904,7 +45127,7 @@ class VoicemailApi {
 	/**
 	 * Voicemail service.
 	 * @module purecloud-platform-client-v2/api/VoicemailApi
-	 * @version 99.0.2
+	 * @version 100.0.0
 	 */
 
 	/**
@@ -45541,7 +45764,7 @@ class WebChatApi {
 	/**
 	 * WebChat service.
 	 * @module purecloud-platform-client-v2/api/WebChatApi
-	 * @version 99.0.2
+	 * @version 100.0.0
 	 */
 
 	/**
@@ -46085,7 +46308,7 @@ class WidgetsApi {
 	/**
 	 * Widgets service.
 	 * @module purecloud-platform-client-v2/api/WidgetsApi
-	 * @version 99.0.2
+	 * @version 100.0.0
 	 */
 
 	/**
@@ -46231,7 +46454,7 @@ class WorkforceManagementApi {
 	/**
 	 * WorkforceManagement service.
 	 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-	 * @version 99.0.2
+	 * @version 100.0.0
 	 */
 
 	/**
@@ -49489,7 +49712,7 @@ class WorkforceManagementApi {
  * </pre>
  * </p>
  * @module purecloud-platform-client-v2/index
- * @version 99.0.2
+ * @version 100.0.0
  */
 class platformClient {
 	constructor() {
