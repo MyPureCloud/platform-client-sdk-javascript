@@ -22,6 +22,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**patchCoachingAppointmentStatus**](CoachingApi.html#patchCoachingAppointmentStatus) | **PATCH** /api/v2/coaching/appointments/{appointmentId}/status | Update the status of a coaching appointment
 [**patchCoachingNotification**](CoachingApi.html#patchCoachingNotification) | **PATCH** /api/v2/coaching/notifications/{notificationId} | Update an existing notification.
 [**postCoachingAppointmentAnnotations**](CoachingApi.html#postCoachingAppointmentAnnotations) | **POST** /api/v2/coaching/appointments/{appointmentId}/annotations | Create a new annotation.
+[**postCoachingAppointmentConversations**](CoachingApi.html#postCoachingAppointmentConversations) | **POST** /api/v2/coaching/appointments/{appointmentId}/conversations | Add a conversation to an appointment
 [**postCoachingAppointments**](CoachingApi.html#postCoachingAppointments) | **POST** /api/v2/coaching/appointments | Create a new appointment
 [**postCoachingAppointmentsAggregatesQuery**](CoachingApi.html#postCoachingAppointmentsAggregatesQuery) | **POST** /api/v2/coaching/appointments/aggregates/query | Retrieve aggregated appointment data
 {: class="table table-striped"}
@@ -1122,6 +1123,89 @@ apiInstance.postCoachingAppointmentAnnotations(appointmentId, body)
 ### Return type
 
 **CoachingAnnotation**
+
+<a name="postCoachingAppointmentConversations"></a>
+
+# AddConversationResponse postCoachingAppointmentConversations(appointmentId, body)
+
+
+
+POST /api/v2/coaching/appointments/{appointmentId}/conversations
+
+Add a conversation to an appointment
+
+Permission not required if you are the creator or facilitator of the appointment
+
+Requires ANY permissions: 
+
+* coaching:appointment:edit
+* coaching:appointmentConversation:add
+
+
+### Request Body Schema
+
+<script type="text/javascript">
+	function copyAddConversationRequestExample() {
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#AddConversationRequestExample').text()).select();
+		document.execCommand("copy");
+		temp.remove();
+		return false;
+	}
+</script>
+
+AddConversationRequest <a href="#" onclick="return copyAddConversationRequestExample()">Copy</a>
+
+<div id="AddConversationRequestExample">
+
+```{"language":"json", "maxHeight": "250px"}
+{ 
+  "conversationId": String, 
+}
+```
+
+</div>
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.CoachingApi();
+
+let appointmentId = "appointmentId_example"; // String | The ID of the coaching appointment.
+let body = {}; // Object | body
+
+apiInstance.postCoachingAppointmentConversations(appointmentId, body)
+  .then((data) => {
+    console.log(`postCoachingAppointmentConversations success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postCoachingAppointmentConversations');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **appointmentId** | **String** | The ID of the coaching appointment. |  |
+ **body** | **Object** | body |  |
+{: class="table table-striped"}
+
+### Return type
+
+**AddConversationResponse**
 
 <a name="postCoachingAppointments"></a>
 

@@ -5,7 +5,7 @@ class CoachingApi {
 	/**
 	 * Coaching service.
 	 * @module purecloud-platform-client-v2/api/CoachingApi
-	 * @version 100.0.0
+	 * @version 101.0.0
 	 */
 
 	/**
@@ -457,6 +457,36 @@ class CoachingApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/coaching/appointments/{appointmentId}/annotations', 
+			'POST', 
+			{ 'appointmentId': appointmentId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Add a conversation to an appointment
+	 * Permission not required if you are the creator or facilitator of the appointment
+	 * @param {String} appointmentId The ID of the coaching appointment.
+	 * @param {Object} body body
+	 */
+	postCoachingAppointmentConversations(appointmentId, body) { 
+		// verify the required parameter 'appointmentId' is set
+		if (appointmentId === undefined || appointmentId === null) {
+			throw 'Missing the required parameter "appointmentId" when calling postCoachingAppointmentConversations';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postCoachingAppointmentConversations';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/coaching/appointments/{appointmentId}/conversations', 
 			'POST', 
 			{ 'appointmentId': appointmentId }, 
 			{  }, 

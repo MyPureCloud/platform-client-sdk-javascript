@@ -347,8 +347,8 @@ FaxDocument <a href="#" onclick="return copyFaxDocumentExample()">Copy</a>
     "height": Number, 
     "width": Number, 
   },  
-  "sharingUri": String, 
   "downloadSharingUri": String, 
+  "sharingUri": String, 
   "selfUri": String, 
 }
 ```

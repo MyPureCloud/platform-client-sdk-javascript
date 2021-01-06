@@ -313,7 +313,7 @@ Get a user&#39;s Microsoft Teams presence.
 
 Gets the presence for a Microsoft Teams user.  This will return the Microsoft Teams presence mapped to Genesys Cloud presence with additional activity details in the message field. This presence source is read-only.
 
-Requires ALL permissions: 
+Requires ANY permissions: 
 
 * integration:microsoftTeams:view
 * integrations:integration:view

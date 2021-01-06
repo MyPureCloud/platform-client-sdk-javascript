@@ -119,8 +119,9 @@ Deletes a emergency group by ID
 
 
 
-Requires NO permissions: 
+Requires ANY permissions: 
 
+* routing:emergencyGroup:delete
 
 
 
@@ -173,8 +174,9 @@ Delete an IVR Config.
 
 
 
-Requires NO permissions: 
+Requires ANY permissions: 
 
+* routing:callRoute:delete
 
 
 
@@ -455,8 +457,9 @@ Delete a schedule by id
 
 
 
-Requires NO permissions: 
+Requires ANY permissions: 
 
+* routing:schedule:delete
 
 
 
@@ -509,8 +512,9 @@ Deletes a schedule group by ID
 
 
 
-Requires NO permissions: 
+Requires ANY permissions: 
 
+* routing:scheduleGroup:delete
 
 
 
@@ -1479,8 +1483,9 @@ Gets a emergency group by ID
 
 
 
-Requires NO permissions: 
+Requires ANY permissions: 
 
+* routing:emergencyGroup:view
 
 
 
@@ -1533,8 +1538,9 @@ Get a list of emergency groups.
 
 
 
-Requires NO permissions: 
+Requires ANY permissions: 
 
+* routing:emergencyGroup:view
 
 
 
@@ -1597,8 +1603,9 @@ Get an IVR config.
 
 
 
-Requires NO permissions: 
+Requires ANY permissions: 
 
+* routing:callRoute:view
 
 
 
@@ -1651,8 +1658,9 @@ Get IVR configs.
 
 
 
-Requires NO permissions: 
+Requires ANY permissions: 
 
+* routing:callRoute:view
 
 
 
@@ -2026,8 +2034,9 @@ Get a schedule by ID
 
 
 
-Requires NO permissions: 
+Requires ANY permissions: 
 
+* routing:schedule:view
 
 
 
@@ -2080,8 +2089,9 @@ Gets a schedule group by ID
 
 
 
-Requires NO permissions: 
+Requires ANY permissions: 
 
+* routing:scheduleGroup:view
 
 
 
@@ -2134,8 +2144,9 @@ Get a list of schedule groups.
 
 
 
-Requires NO permissions: 
+Requires ANY permissions: 
 
+* routing:scheduleGroup:view
 
 
 
@@ -2200,8 +2211,9 @@ Get a list of schedules.
 
 
 
-Requires NO permissions: 
+Requires ANY permissions: 
 
+* routing:schedule:view
 
 
 
@@ -3903,8 +3915,9 @@ Creates a new emergency group
 
 
 
-Requires NO permissions: 
+Requires ANY permissions: 
 
+* routing:emergencyGroup:add
 
 
 ### Request Body Schema
@@ -4006,8 +4019,9 @@ Create IVR config.
 
 
 
-Requires NO permissions: 
+Requires ANY permissions: 
 
+* routing:callRoute:add
 
 
 ### Request Body Schema
@@ -4793,8 +4807,9 @@ Creates a new schedule group
 
 
 
-Requires NO permissions: 
+Requires ANY permissions: 
 
+* routing:scheduleGroup:add
 
 
 ### Request Body Schema
@@ -4899,8 +4914,9 @@ Create a new schedule.
 
 
 
-Requires NO permissions: 
+Requires ANY permissions: 
 
+* routing:schedule:add
 
 
 ### Request Body Schema
@@ -8195,8 +8211,9 @@ Updates a emergency group by ID
 
 
 
-Requires NO permissions: 
+Requires ANY permissions: 
 
+* routing:emergencyGroup:edit
 
 
 ### Request Body Schema
@@ -8300,8 +8317,9 @@ Update an IVR Config.
 
 
 
-Requires NO permissions: 
+Requires ANY permissions: 
 
+* routing:callRoute:edit
 
 
 ### Request Body Schema
@@ -9038,8 +9056,9 @@ Update schedule by ID
 
 
 
-Requires NO permissions: 
+Requires ANY permissions: 
 
+* routing:schedule:edit
 
 
 ### Request Body Schema
@@ -9133,8 +9152,9 @@ Updates a schedule group by ID
 
 
 
-Requires NO permissions: 
+Requires ANY permissions: 
 
+* routing:scheduleGroup:edit
 
 
 ### Request Body Schema

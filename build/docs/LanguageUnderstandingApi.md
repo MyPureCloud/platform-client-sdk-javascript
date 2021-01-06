@@ -296,6 +296,8 @@ let opts = {
   'includeDeleted': true, // Boolean | Whether to include soft-deleted items in the result.
   'pageNumber': 1, // Number | Page number
   'pageSize': 25, // Number | Page size
+  'enableCursorPagination': false, // Boolean | Enable Cursor Pagination
+  'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned. This is considered only when enableCursorPagination=true
   'fields': ["fields_example"] // [String] | Fields and properties to get, comma-separated
 };
 
@@ -322,6 +324,8 @@ apiInstance.getLanguageunderstandingDomainFeedback(domainId, opts)
  **includeDeleted** | **Boolean** | Whether to include soft-deleted items in the result. | [optional]  |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **enableCursorPagination** | **Boolean** | Enable Cursor Pagination | [optional] [default to false] |
+ **after** | **String** | The cursor that points to the end of the set of entities that has been returned. This is considered only when enableCursorPagination=true | [optional]  |
  **fields** | **[String]** | Fields and properties to get, comma-separated | [optional] <br />**Values**: version, dateCreated, text, intents |
 {: class="table table-striped"}
 

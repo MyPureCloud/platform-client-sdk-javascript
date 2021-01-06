@@ -5,7 +5,7 @@ class LanguageUnderstandingApi {
 	/**
 	 * LanguageUnderstanding service.
 	 * @module purecloud-platform-client-v2/api/LanguageUnderstandingApi
-	 * @version 100.0.0
+	 * @version 101.0.0
 	 */
 
 	/**
@@ -142,6 +142,8 @@ class LanguageUnderstandingApi {
 	 * @param {Boolean} opts.includeDeleted Whether to include soft-deleted items in the result.
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {Boolean} opts.enableCursorPagination Enable Cursor Pagination (default to false)
+	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned. This is considered only when enableCursorPagination=true
 	 * @param {Array.<String>} opts.fields Fields and properties to get, comma-separated
 	 */
 	getLanguageunderstandingDomainFeedback(domainId, opts) { 
@@ -156,7 +158,7 @@ class LanguageUnderstandingApi {
 			'/api/v2/languageunderstanding/domains/{domainId}/feedback', 
 			'GET', 
 			{ 'domainId': domainId }, 
-			{ 'intentName': opts['intentName'],'assessment': opts['assessment'],'dateStart': opts['dateStart'],'dateEnd': opts['dateEnd'],'includeDeleted': opts['includeDeleted'],'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'fields': this.apiClient.buildCollectionParam(opts['fields'], 'multi') }, 
+			{ 'intentName': opts['intentName'],'assessment': opts['assessment'],'dateStart': opts['dateStart'],'dateEnd': opts['dateEnd'],'includeDeleted': opts['includeDeleted'],'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'enableCursorPagination': opts['enableCursorPagination'],'after': opts['after'],'fields': this.apiClient.buildCollectionParam(opts['fields'], 'multi') }, 
 			{  }, 
 			{  }, 
 			null, 
