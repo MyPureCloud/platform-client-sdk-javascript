@@ -373,6 +373,14 @@
       "class": "WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate"
     },
     {
+      "topic": "v2.webdeployments.configurations.{id}",
+      "class": "WebDeploymentsConfigTopicWebMessagingConfigChangeEventBody"
+    },
+    {
+      "topic": "v2.webdeployments.deployments.{id}",
+      "class": "WebDeploymentsDeploymentTopicWebMessagingDeploymentChangeEventBody"
+    },
+    {
       "topic": "v2.wem.learning.assignments.modules.{id}",
       "class": "WemLearningAssignmentRuleRunTopicLearningAssignmentRuleRunNotification"
     },

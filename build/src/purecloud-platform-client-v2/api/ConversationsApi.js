@@ -5,7 +5,7 @@ class ConversationsApi {
 	/**
 	 * Conversations service.
 	 * @module purecloud-platform-client-v2/api/ConversationsApi
-	 * @version 101.0.0
+	 * @version 102.0.0
 	 */
 
 	/**
@@ -3107,6 +3107,36 @@ class ConversationsApi {
 			{  }, 
 			{  }, 
 			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Listen in on the conversation from the point of view of a given participant while speaking to just the given participant.
+	 * 
+	 * @param {String} conversationId conversationId
+	 * @param {String} participantId participantId
+	 */
+	postConversationsCallParticipantCoach(conversationId, participantId) { 
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null) {
+			throw 'Missing the required parameter "conversationId" when calling postConversationsCallParticipantCoach';
+		}
+		// verify the required parameter 'participantId' is set
+		if (participantId === undefined || participantId === null) {
+			throw 'Missing the required parameter "participantId" when calling postConversationsCallParticipantCoach';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/calls/{conversationId}/participants/{participantId}/coach', 
+			'POST', 
+			{ 'conversationId': conversationId,'participantId': participantId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
 			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']

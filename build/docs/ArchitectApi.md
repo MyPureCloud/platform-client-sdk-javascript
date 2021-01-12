@@ -2612,7 +2612,7 @@ let apiInstance = new platformClient.ArchitectApi();
 
 let flowId = "flowId_example"; // String | Flow ID
 let opts = { 
-  'deleted': false // Boolean | Include deleted flows
+  'deleted': false // Boolean | Deleted flows
 };
 
 apiInstance.getFlow(flowId, opts)
@@ -2631,7 +2631,7 @@ apiInstance.getFlow(flowId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **flowId** | **String** | Flow ID |  |
- **deleted** | **Boolean** | Include deleted flows | [optional] [default to false] |
+ **deleted** | **Boolean** | Deleted flows | [optional] [default to false] |
 {: class="table table-striped"}
 
 ### Return type
@@ -2740,7 +2740,7 @@ let apiInstance = new platformClient.ArchitectApi();
 
 let flowId = "flowId_example"; // String | Flow ID
 let opts = { 
-  'deleted': false // Boolean | Include deleted flows
+  'deleted': false // Boolean | Deleted flows
 };
 
 apiInstance.getFlowLatestconfiguration(flowId, opts)
@@ -2759,7 +2759,7 @@ apiInstance.getFlowLatestconfiguration(flowId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **flowId** | **String** | Flow ID |  |
- **deleted** | **Boolean** | Include deleted flows | [optional] [default to false] |
+ **deleted** | **Boolean** | Deleted flows | [optional] [default to false] |
 {: class="table table-striped"}
 
 ### Return type
@@ -2800,7 +2800,7 @@ let apiInstance = new platformClient.ArchitectApi();
 let flowId = "flowId_example"; // String | Flow ID
 let versionId = "versionId_example"; // String | Version ID
 let opts = { 
-  'deleted': "deleted_example" // String | Include deleted flows
+  'deleted': "deleted_example" // String | Deleted flows
 };
 
 apiInstance.getFlowVersion(flowId, versionId, opts)
@@ -2820,7 +2820,7 @@ apiInstance.getFlowVersion(flowId, versionId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **flowId** | **String** | Flow ID |  |
  **versionId** | **String** | Version ID |  |
- **deleted** | **String** | Include deleted flows | [optional]  |
+ **deleted** | **String** | Deleted flows | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2861,7 +2861,7 @@ let apiInstance = new platformClient.ArchitectApi();
 let flowId = "flowId_example"; // String | Flow ID
 let versionId = "versionId_example"; // String | Version ID
 let opts = { 
-  'deleted': "deleted_example" // String | Include deleted flows
+  'deleted': "deleted_example" // String | Deleted flows
 };
 
 apiInstance.getFlowVersionConfiguration(flowId, versionId, opts)
@@ -2881,7 +2881,7 @@ apiInstance.getFlowVersionConfiguration(flowId, versionId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **flowId** | **String** | Flow ID |  |
  **versionId** | **String** | Version ID |  |
- **deleted** | **String** | Include deleted flows | [optional]  |
+ **deleted** | **String** | Deleted flows | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2923,7 +2923,7 @@ let flowId = "flowId_example"; // String | Flow ID
 let opts = { 
   'pageNumber': 1, // Number | Page number
   'pageSize': 25, // Number | Page size
-  'deleted': true // Boolean | Include deleted flows
+  'deleted': true // Boolean | Include Deleted flows
 };
 
 apiInstance.getFlowVersions(flowId, opts)
@@ -2944,7 +2944,7 @@ apiInstance.getFlowVersions(flowId, opts)
  **flowId** | **String** | Flow ID |  |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
- **deleted** | **Boolean** | Include deleted flows | [optional]  |
+ **deleted** | **Boolean** | Include Deleted flows | [optional]  |
 {: class="table table-striped"}
 
 ### Return type

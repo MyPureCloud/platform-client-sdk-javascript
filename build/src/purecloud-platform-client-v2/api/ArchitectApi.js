@@ -5,7 +5,7 @@ class ArchitectApi {
 	/**
 	 * Architect service.
 	 * @module purecloud-platform-client-v2/api/ArchitectApi
-	 * @version 101.0.0
+	 * @version 102.0.0
 	 */
 
 	/**
@@ -1202,7 +1202,7 @@ class ArchitectApi {
 	 * 
 	 * @param {String} flowId Flow ID
 	 * @param {Object} opts Optional parameters
-	 * @param {Boolean} opts.deleted Include deleted flows (default to false)
+	 * @param {Boolean} opts.deleted Deleted flows (default to false)
 	 */
 	getFlow(flowId, opts) { 
 		opts = opts || {};
@@ -1269,7 +1269,7 @@ class ArchitectApi {
 	 * 
 	 * @param {String} flowId Flow ID
 	 * @param {Object} opts Optional parameters
-	 * @param {Boolean} opts.deleted Include deleted flows (default to false)
+	 * @param {Boolean} opts.deleted Deleted flows (default to false)
 	 */
 	getFlowLatestconfiguration(flowId, opts) { 
 		opts = opts || {};
@@ -1299,7 +1299,7 @@ class ArchitectApi {
 	 * @param {String} flowId Flow ID
 	 * @param {String} versionId Version ID
 	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.deleted Include deleted flows
+	 * @param {String} opts.deleted Deleted flows
 	 */
 	getFlowVersion(flowId, versionId, opts) { 
 		opts = opts || {};
@@ -1333,7 +1333,7 @@ class ArchitectApi {
 	 * @param {String} flowId Flow ID
 	 * @param {String} versionId Version ID
 	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.deleted Include deleted flows
+	 * @param {String} opts.deleted Deleted flows
 	 */
 	getFlowVersionConfiguration(flowId, versionId, opts) { 
 		opts = opts || {};
@@ -1368,7 +1368,7 @@ class ArchitectApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Number} opts.pageSize Page size (default to 25)
-	 * @param {Boolean} opts.deleted Include deleted flows
+	 * @param {Boolean} opts.deleted Include Deleted flows
 	 */
 	getFlowVersions(flowId, opts) { 
 		opts = opts || {};
