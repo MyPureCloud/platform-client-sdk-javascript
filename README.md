@@ -27,7 +27,7 @@ For direct use in a browser script:
 
 ```{"language":"html"}
 <!-- Include the CJS SDK -->
-<script src="https://sdk-cdn.mypurecloud.com/javascript/102.0.0/purecloud-platform-client-v2.min.js"></script>
+<script src="https://sdk-cdn.mypurecloud.com/javascript/103.0.0/purecloud-platform-client-v2.min.js"></script>
 
 <script type="text/javascript">
   // Obtain a reference to the platformClient object
@@ -44,7 +44,7 @@ For direct use in a browser script:
 
 <script type="text/javascript">
   // Obtain a reference to the platformClient object
-  requirejs(['https://sdk-cdn.mypurecloud.com/javascript/amd/102.0.0/purecloud-platform-client-v2.min.js'], (platformClient) => {
+  requirejs(['https://sdk-cdn.mypurecloud.com/javascript/amd/103.0.0/purecloud-platform-client-v2.min.js'], (platformClient) => {
     console.log(platformClient);
   });
 </script>
@@ -64,12 +64,6 @@ The node package's [package.json](https://github.com/MyPureCloud/platform-client
 	* Entry point: dist/web-cjs/purecloud-platform-client-v2.min.js
 	* The [Browserify](http://browserify.org/)ed CJS module for standalone use in a browser
 
-## Using the "latest" SDK
-
-Want your app to always use the most recent version of the SDK? To do this, simply use `latest` instead of the version number: 
-
-* CJS: `https://sdk-cdn.mypurecloud.com/javascript/latest/purecloud-platform-client-v2.min.js`
-* AMD: `https://sdk-cdn.mypurecloud.com/javascript/amd/latest/purecloud-platform-client-v2.min.js`
 
 # Usage
 
@@ -103,52 +97,6 @@ const client = platformClient.ApiClient.instance;
 client.loginSaml2BearerGrant(clientId,clientSecret,orgName,encodedAssertionString)
   .then(() => {
     // Do authenticated things
-  })
-  .catch((err) => {
-    // Handle failure response
-    console.log(err);
-  });
-```
-
-**Node.js** [Authorization Code Grant](https://developer.mypurecloud.com/api/rest/authorization/use-authorization-code.html)
-
-The Authorization Code grant only works when used in node.js. This is restricted intentionally because it is impossible for client credentials to be handled securely in a browser application.
-
-```{"language":"javascript"}
-const client = platformClient.ApiClient.instance;
-client.loginCodeAuthorizationGrant(clientId,clientSecret,authCode,redirectUri)
-  .then(() => {
-    // Do authenticated things
-  })
-  .catch((err) => {
-    // Handle failure response
-    console.log(err);
-  });
-```
-
-By default the SDK will transparently request a new access token when it expires. By default the SDK will transparently request a new access token when it expires. If multiple threads are running 1 thread will request a new token, other threads will wait a maximum of 10 seconds for the token refresh to complete, this time can be overriden with the _refreshTokenWaitTime_ field of the _ApiClient_ object.  
-If you wish to apply the refresh logic yourself, set _shouldRefreshAccessToken_ to false and store the refresh token. The _tokenExpiryTime_ can be used to preemptively request a new token. Use _refreshCodeAuthorizationGrant_ to request a new token when necessary.
-
-```{"language":"javascript"}
-const client = platformClient.ApiClient.instance;
-client.shouldRefreshAccessToken = false;
-client.loginCodeAuthorizationGrant(clientId,clientSecret,authCode,redirectUri)
-  .then((authData) => {
-    refreshToken = authData.refreshToken;
-    tokenExpiryTime = authData.tokenExpiryTime;
-    // Do authenticated things
-  })
-  .catch((err) => {
-    // Handle failure response
-    console.log(err);
-  });
-
-// When token expires
-client.refreshCodeAuthorizationGrant(clientId,clientSecret,refreshToken)
-  .then((authData) => {
-    refreshToken = authData.refreshToken;
-    tokenExpiryTime = authData.tokenExpiryTime;
-    // Do authenticated things again
   })
   .catch((err) => {
     // Handle failure response

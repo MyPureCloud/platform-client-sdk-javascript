@@ -5,7 +5,7 @@ class WorkforceManagementApi {
 	/**
 	 * WorkforceManagement service.
 	 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-	 * @version 102.0.0
+	 * @version 103.0.0
 	 */
 
 	/**
@@ -823,6 +823,46 @@ class WorkforceManagementApi {
 			'GET', 
 			{ 'businessUnitId': businessUnitId,'weekId': weekId,'scheduleId': scheduleId }, 
 			{ 'forceDownload': opts['forceDownload'] }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Loads agent&#39;s schedule history.
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} weekId First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 * @param {String} scheduleId The ID of the schedule
+	 * @param {String} agentId THe ID of the agent
+	 */
+	getWorkforcemanagementBusinessunitWeekScheduleHistoryAgent(businessUnitId, weekId, scheduleId, agentId) { 
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null) {
+			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitWeekScheduleHistoryAgent';
+		}
+		// verify the required parameter 'weekId' is set
+		if (weekId === undefined || weekId === null) {
+			throw 'Missing the required parameter "weekId" when calling getWorkforcemanagementBusinessunitWeekScheduleHistoryAgent';
+		}
+		// verify the required parameter 'scheduleId' is set
+		if (scheduleId === undefined || scheduleId === null) {
+			throw 'Missing the required parameter "scheduleId" when calling getWorkforcemanagementBusinessunitWeekScheduleHistoryAgent';
+		}
+		// verify the required parameter 'agentId' is set
+		if (agentId === undefined || agentId === null) {
+			throw 'Missing the required parameter "agentId" when calling getWorkforcemanagementBusinessunitWeekScheduleHistoryAgent';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/history/agents/{agentId}', 
+			'GET', 
+			{ 'businessUnitId': businessUnitId,'weekId': weekId,'scheduleId': scheduleId,'agentId': agentId }, 
+			{  }, 
 			{  }, 
 			{  }, 
 			null, 
