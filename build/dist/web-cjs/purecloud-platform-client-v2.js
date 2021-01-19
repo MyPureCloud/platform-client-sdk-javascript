@@ -6052,7 +6052,7 @@ function isSlowBuffer (obj) {
 
 /**
  * @module purecloud-platform-client-v2/ApiClient
- * @version 103.0.0
+ * @version 103.0.1
  */
 class ApiClient {
 	/**
@@ -6164,6 +6164,11 @@ class ApiClient {
 
 		// Expose superagent module for use with superagent-proxy
 		this.superagent = superagent;
+
+		// Transparently request a new access token when it expires (Code Authorization only)
+		this.shouldRefreshAccessToken = true;
+		this.refreshInProgress = false;
+		this.refreshTokenWaitTime = 10;
 
 		if (typeof(window) !== 'undefined') window.ApiClient = this;
 	}
@@ -6405,15 +6410,10 @@ class ApiClient {
 				return;
 			}
 			var encodedData = new Buffer(clientId + ':' + clientSecret).toString('base64');
-			var request = superagent('POST', `https://login.${this.environment}/oauth/token`);
-			// Set the headers
-			request.set('Authorization', 'Basic ' + encodedData);
-			request.set('Content-Type', 'application/x-www-form-urlencoded');
-			// Add form data
-			request.type('form');
-			request.send({ grant_type: 'urn:ietf:params:oauth:grant-type:saml2-bearer' });
-			request.send({ orgName: orgName });
-			request.send({ assertion: assertion });
+			var request = this._formAuthRequest(encodedData,
+												{ grant_type: 'urn:ietf:params:oauth:grant-type:saml2-bearer' },
+										        { orgName: orgName },
+										        { assertion: assertion });
 			// Handle response
 			request.end((error, response) => {
 				if (error) {
@@ -6432,6 +6432,139 @@ class ApiClient {
 				}
 			});
 		});
+	}
+
+	/**
+	 * @description Initiates the Code Authorization. Only available in node apps.
+	 * @param {string} clientId - The client ID of an OAuth Code Authorization Grant client
+	 * @param {string} clientSecret - The client secret of an OAuth Code Authorization Grant client
+	 * @param {string} authCode - Authorization code
+	 * @param {string} redirectUri - Authorized redirect URI for your Code Authorization client
+	 */
+    loginCodeAuthorizationGrant(clientId, clientSecret, authCode, redirectUri) {
+		this.clientId = clientId;
+		this.clientSecret = clientSecret;
+		return new Promise((resolve, reject) => {
+			if (typeof window !== 'undefined') {
+				reject(new Error('The Code Authorization grant is not supported in a browser.'));
+				return;
+			}
+			var encodedData = new Buffer(clientId + ':' + clientSecret).toString('base64');
+			var request = this._formAuthRequest(encodedData,
+												{ grant_type: 'authorization_code' },
+									            { code: authCode },
+										        { redirect_uri: redirectUri });
+			// Handle response
+			this._handleCodeAuthorizationResponse(request, resolve, reject);
+		});
+	}
+
+	/**
+	 * @description Requests a new access token for Code Authorization. Only available in node apps.
+	 * @param {string} clientId - The client ID of an OAuth Code Authorization Grant client
+	 * @param {string} clientSecret - The client secret of an OAuth Code Authorization Grant client
+	 * @param {string} authCode - Authorization code
+	 * @param {string} redirectUri - Authorized redirect URI for your Code Authorization client
+	 */
+    refreshCodeAuthorizationGrant(clientId, clientSecret, refreshToken) {
+		return new Promise((resolve, reject) => {
+			if (typeof window !== 'undefined') {
+				reject(new Error('The Code Authorization grant is not supported in a browser.'));
+				return;
+			}
+			var encodedData = new Buffer(clientId + ':' + clientSecret).toString('base64');
+			var request = this._formAuthRequest(encodedData, { grant_type: 'refresh_token' }, { refresh_token: refreshToken });
+			// Handle response
+			this._handleCodeAuthorizationResponse(request, resolve, reject);
+		});
+	}
+
+	/**
+	 * @description Handles the response for code auth requests
+	 * @param {object} request - Authoriation request object
+	 * @param {function} resolve - Promise resolve callback
+	 * @param {function} reject - Promise reject callback
+	 */
+	_handleCodeAuthorizationResponse(request, resolve, reject) {
+		request.end((error, response) => {
+				if (error) {
+					reject(error);
+				} else {
+					// Get access token from response
+					var access_token = response.body.access_token;
+					var refresh_token = response.body.refresh_token;
+
+					this.setAccessToken(access_token);
+					this.authData.refreshToken = refresh_token;
+					this.authData.tokenExpiryTime = new Date().getTime() + response.body['expires_in'] * 1000;
+					this.authData.tokenExpiryTimeString = new Date(this.authData.tokenExpiryTime).toUTCString();
+					this._debugTrace(`Access token expires in ${response.body['expires_in']} seconds`);
+
+					// Return auth data
+					resolve(this.authData);
+				}
+			});
+	}
+
+	/**
+	 * @description Utility function to create the request for auth requests
+	 * @param {string} encodedData - Base64 encoded client and clientSecret pair
+	 */
+	_formAuthRequest(encodedData) {
+		var request = superagent('POST', `https://login.${this.environment}/oauth/token`);
+		// Set the headers
+		request.set('Authorization', 'Basic ' + encodedData);
+		request.set('Content-Type', 'application/x-www-form-urlencoded');
+		// Add form data
+		request.type('form');
+		for (var i = 0; i < arguments.length; i++) {
+    		request.send(arguments[i]);
+  		}
+
+		return request;
+	}
+
+	/**
+	 * @description Handles an expired access token. Only available in node apps.
+	 * @param {string} statusCode - The status code of a request
+	 */
+	_handleExpiredAccessToken() {
+		return new Promise((resolve, reject) => {
+			if (typeof window !== 'undefined') {
+				reject(new Error('This method is not supported in a browser.'));
+				return;
+			}
+			if (!this.refreshInProgress) {
+				this.refreshInProgress = true;
+				this.refreshCodeAuthorizationGrant(this.clientId, this.clientSecret, this.authData.refreshToken)
+					.then(() => {
+						this.refreshInProgress = false;
+						resolve();
+					})
+					.catch((err) => {
+						// Handle failure response
+						this.refreshInProgress = false;
+						reject(err);
+					});
+			} else {
+				// Wait maximum of refreshTokenWaitTime seconds for other thread to complete refresh
+				this._sleep(this.refreshTokenWaitTime)
+					.then(() => {
+						if (this.refreshInProgress)
+							reject(new Error(`Token refresh took longer than ${this.refreshTokenWaitTime} seconds`));
+						else
+							resolve();
+					});
+			}
+		});
+	}
+
+	/**
+	 * @description Sleeps for a defined length
+	 * @param {int} millis - Length to sleep in milliseconds
+	 */
+	_sleep(millis) {
+		return new Promise(resolve => setTimeout(resolve, millis));
 	}
 
 	/**
@@ -6776,122 +6909,134 @@ class ApiClient {
 	 * @returns {Promise} A Promise object.
 	 */
 	callApi(path, httpMethod, pathParams, queryParams, headerParams, formParams, bodyParam, authNames, contentTypes, accepts) {
-		var url = this.buildUrl(path, pathParams);
-		var request = superagent(httpMethod, url);
-
-		if (this.proxy && request.proxy) {
-			request.proxy(this.proxy);
-		}
-
-		if(this.debugLog){
-			var trace = `[REQUEST] ${httpMethod} ${url}`;
-			if(pathParams && Object.keys(pathParams).count > 0 && pathParams[Object.keys(pathParams)[0]]){
-				trace += `\nPath Params: ${JSON.stringify(pathParams)}`;
-			}
-
-			if(queryParams && Object.keys(queryParams).count > 0 && queryParams[Object.keys(queryParams)[0]]){
-				trace += `\nQuery Params: ${JSON.stringify(queryParams)}`;
-			}
-
-			if(bodyParam){
-				trace += `\nnBody: ${JSON.stringify(bodyParam)}`;
-			}
-
-			this._debugTrace(trace);
-		}
-
-		// apply authentications
-		this.applyAuthToRequest(request, authNames);
-
-		// set query parameters
-		request.query(this.normalizeParams(queryParams));
-
-		// set header parameters
-		request.set(this.defaultHeaders).set(this.normalizeParams(headerParams));
-		//request.set({ 'purecloud-sdk': '103.0.0' });
-
-		// set request timeout
-		request.timeout(this.timeout);
-
-		var contentType = this.jsonPreferredMime(contentTypes);
-		if (contentType) {
-			request.type(contentType);
-		} else if (!request.header['Content-Type']) {
-			request.type('application/json');
-		}
-
-		if (contentType === 'application/x-www-form-urlencoded') {
-			request.send(this.normalizeParams(formParams));
-		} else if (contentType == 'multipart/form-data') {
-			var _formParams = this.normalizeParams(formParams);
-			for (var key in _formParams) {
-				if (_formParams.hasOwnProperty(key)) {
-					if (this.isFileParam(_formParams[key])) {
-						// file field
-						request.attach(key, _formParams[key]);
-					} else {
-						request.field(key, _formParams[key]);
-					}
-				}
-			}
-		} else if (bodyParam) {
-			request.send(bodyParam);
-		}
-
-		var accept = this.jsonPreferredMime(accepts);
-		if (accept) {
-			request.accept(accept);
-		}
-
 		return new Promise((resolve, reject) => {
-			request.end((error, response) => {
-				if (error) {
-					if (!response) {
-						reject({
-							status: 0,
-							statusText: 'error',
-							headers: [],
-							body: {},
-							text: 'error',
-							error: error
-						});
-						return;
+			sendRequest(this);
+			function sendRequest(that) {
+				var url = that.buildUrl(path, pathParams);
+				var request = superagent(httpMethod, url);
+
+				if (that.proxy && request.proxy) {
+					request.proxy(that.proxy);
+				}
+
+				if(that.debugLog){
+					var trace = `[REQUEST] ${httpMethod} ${url}`;
+					if(pathParams && Object.keys(pathParams).count > 0 && pathParams[Object.keys(pathParams)[0]]){
+						trace += `\nPath Params: ${JSON.stringify(pathParams)}`;
 					}
+
+					if(queryParams && Object.keys(queryParams).count > 0 && queryParams[Object.keys(queryParams)[0]]){
+						trace += `\nQuery Params: ${JSON.stringify(queryParams)}`;
+					}
+
+					if(bodyParam){
+						trace += `\nnBody: ${JSON.stringify(bodyParam)}`;
+					}
+
+					that._debugTrace(trace);
 				}
 
-				// Build response object
-				var data = (this.returnExtended === true || error) ? {
-					status: response.status,
-					statusText: response.statusText,
-					headers: response.headers,
-					body: response.body,
-					text: response.text,
-					error: error
-				} : response.body ? response.body : response.text;
+				// apply authentications
+				that.applyAuthToRequest(request, authNames);
 
-				// Debug logging
-				if (this.debugLog) {
-					var trace = `[RESPONSE] ${response.status}: ${httpMethod} ${url}`;
-					if (response.headers)
-						trace += `\ninin-correlation-id: ${response.headers['inin-correlation-id']}`;
-					if (response.body)
-						trace += `\nBody: ${JSON.stringify(response.body,null,2)}`;
+				// set query parameters
+				request.query(that.normalizeParams(queryParams));
 
-					// Log trace message
-					this._debugTrace(trace);
+				// set header parameters
+				request.set(that.defaultHeaders).set(that.normalizeParams(headerParams));
+				//request.set({ 'purecloud-sdk': '103.0.1' });
 
-					// Log stack trace
-					if (error)
-						this._debugTrace(error);
+				// set request timeout
+				request.timeout(that.timeout);
+
+				var contentType = that.jsonPreferredMime(contentTypes);
+				if (contentType) {
+					request.type(contentType);
+				} else if (!request.header['Content-Type']) {
+					request.type('application/json');
 				}
 
-				// Resolve promise
-				if (error) {
-					reject(data);
-				} else {
-					resolve(data);
+				if (contentType === 'application/x-www-form-urlencoded') {
+					request.send(that.normalizeParams(formParams));
+				} else if (contentType == 'multipart/form-data') {
+					var _formParams = that.normalizeParams(formParams);
+					for (var key in _formParams) {
+						if (_formParams.hasOwnProperty(key)) {
+							if (that.isFileParam(_formParams[key])) {
+								// file field
+								request.attach(key, _formParams[key]);
+							} else {
+								request.field(key, _formParams[key]);
+							}
+						}
+					}
+				} else if (bodyParam) {
+					request.send(bodyParam);
 				}
-			});
+
+				var accept = that.jsonPreferredMime(accepts);
+				if (accept) {
+					request.accept(accept);
+				}
+				request.end((error, response) => {
+					if (error) {
+						if (!response) {
+							reject({
+								status: 0,
+								statusText: 'error',
+								headers: [],
+								body: {},
+								text: 'error',
+								error: error
+							});
+							return;
+						}
+					}
+
+					// Build response object
+					var data = (that.returnExtended === true || error) ? {
+						status: response.status,
+						statusText: response.statusText,
+						headers: response.headers,
+						body: response.body,
+						text: response.text,
+						error: error
+					} : response.body ? response.body : response.text;
+
+					// Debug logging
+					if (that.debugLog) {
+						var trace = `[RESPONSE] ${response.status}: ${httpMethod} ${url}`;
+						if (response.headers)
+							trace += `\ninin-correlation-id: ${response.headers['inin-correlation-id']}`;
+						if (response.body)
+							trace += `\nBody: ${JSON.stringify(response.body,null,2)}`;
+
+						// Log trace message
+						that._debugTrace(trace);
+
+						// Log stack trace
+						if (error)
+							that._debugTrace(error);
+					}
+
+					// Resolve promise
+					if (error) {
+						if (data.status == 401 && that.shouldRefreshAccessToken && that.authData.refreshToken !== "") {
+							that._handleExpiredAccessToken()
+								.then(() => {
+									sendRequest(that);
+								})
+								.catch((err) => {
+									reject(err);
+								});
+						} else {
+							reject(data);
+						}
+					} else {
+						resolve(data);
+					}
+				});
+			}
 		});
 	}
 
@@ -6933,7 +7078,7 @@ class AlertingApi {
 	/**
 	 * Alerting service.
 	 * @module purecloud-platform-client-v2/api/AlertingApi
-	 * @version 103.0.0
+	 * @version 103.0.1
 	 */
 
 	/**
@@ -7247,7 +7392,7 @@ class AnalyticsApi {
 	/**
 	 * Analytics service.
 	 * @module purecloud-platform-client-v2/api/AnalyticsApi
-	 * @version 103.0.0
+	 * @version 103.0.1
 	 */
 
 	/**
@@ -8327,7 +8472,7 @@ class ArchitectApi {
 	/**
 	 * Architect service.
 	 * @module purecloud-platform-client-v2/api/ArchitectApi
-	 * @version 103.0.0
+	 * @version 103.0.1
 	 */
 
 	/**
@@ -11165,7 +11310,7 @@ class AuditApi {
 	/**
 	 * Audit service.
 	 * @module purecloud-platform-client-v2/api/AuditApi
-	 * @version 103.0.0
+	 * @version 103.0.1
 	 */
 
 	/**
@@ -11336,7 +11481,7 @@ class AuthorizationApi {
 	/**
 	 * Authorization service.
 	 * @module purecloud-platform-client-v2/api/AuthorizationApi
-	 * @version 103.0.0
+	 * @version 103.0.1
 	 */
 
 	/**
@@ -12455,7 +12600,7 @@ class BillingApi {
 	/**
 	 * Billing service.
 	 * @module purecloud-platform-client-v2/api/BillingApi
-	 * @version 103.0.0
+	 * @version 103.0.1
 	 */
 
 	/**
@@ -12535,7 +12680,7 @@ class CoachingApi {
 	/**
 	 * Coaching service.
 	 * @module purecloud-platform-client-v2/api/CoachingApi
-	 * @version 103.0.0
+	 * @version 103.0.1
 	 */
 
 	/**
@@ -13085,7 +13230,7 @@ class ContentManagementApi {
 	/**
 	 * ContentManagement service.
 	 * @module purecloud-platform-client-v2/api/ContentManagementApi
-	 * @version 103.0.0
+	 * @version 103.0.1
 	 */
 
 	/**
@@ -14225,7 +14370,7 @@ class ConversationsApi {
 	/**
 	 * Conversations service.
 	 * @module purecloud-platform-client-v2/api/ConversationsApi
-	 * @version 103.0.0
+	 * @version 103.0.1
 	 */
 
 	/**
@@ -18343,7 +18488,7 @@ class DataExtensionsApi {
 	/**
 	 * DataExtensions service.
 	 * @module purecloud-platform-client-v2/api/DataExtensionsApi
-	 * @version 103.0.0
+	 * @version 103.0.1
 	 */
 
 	/**
@@ -18429,7 +18574,7 @@ class ExternalContactsApi {
 	/**
 	 * ExternalContacts service.
 	 * @module purecloud-platform-client-v2/api/ExternalContactsApi
-	 * @version 103.0.0
+	 * @version 103.0.1
 	 */
 
 	/**
@@ -19772,7 +19917,7 @@ class FaxApi {
 	/**
 	 * Fax service.
 	 * @module purecloud-platform-client-v2/api/FaxApi
-	 * @version 103.0.0
+	 * @version 103.0.1
 	 */
 
 	/**
@@ -19943,7 +20088,7 @@ class FlowsApi {
 	/**
 	 * Flows service.
 	 * @module purecloud-platform-client-v2/api/FlowsApi
-	 * @version 103.0.0
+	 * @version 103.0.1
 	 */
 
 	/**
@@ -20014,7 +20159,7 @@ class GeneralDataProtectionRegulationApi {
 	/**
 	 * GeneralDataProtectionRegulation service.
 	 * @module purecloud-platform-client-v2/api/GeneralDataProtectionRegulationApi
-	 * @version 103.0.0
+	 * @version 103.0.1
 	 */
 
 	/**
@@ -20144,7 +20289,7 @@ class GeolocationApi {
 	/**
 	 * Geolocation service.
 	 * @module purecloud-platform-client-v2/api/GeolocationApi
-	 * @version 103.0.0
+	 * @version 103.0.1
 	 */
 
 	/**
@@ -20275,7 +20420,7 @@ class GreetingsApi {
 	/**
 	 * Greetings service.
 	 * @module purecloud-platform-client-v2/api/GreetingsApi
-	 * @version 103.0.0
+	 * @version 103.0.1
 	 */
 
 	/**
@@ -20730,7 +20875,7 @@ class GroupsApi {
 	/**
 	 * Groups service.
 	 * @module purecloud-platform-client-v2/api/GroupsApi
-	 * @version 103.0.0
+	 * @version 103.0.1
 	 */
 
 	/**
@@ -21135,7 +21280,7 @@ class IdentityProviderApi {
 	/**
 	 * IdentityProvider service.
 	 * @module purecloud-platform-client-v2/api/IdentityProviderApi
-	 * @version 103.0.0
+	 * @version 103.0.1
 	 */
 
 	/**
@@ -21891,7 +22036,7 @@ class IntegrationsApi {
 	/**
 	 * Integrations service.
 	 * @module purecloud-platform-client-v2/api/IntegrationsApi
-	 * @version 103.0.0
+	 * @version 103.0.1
 	 */
 
 	/**
@@ -23383,7 +23528,7 @@ class JourneyApi {
 	/**
 	 * Journey service.
 	 * @module purecloud-platform-client-v2/api/JourneyApi
-	 * @version 103.0.0
+	 * @version 103.0.1
 	 */
 
 	/**
@@ -23638,7 +23783,7 @@ class KnowledgeApi {
 	/**
 	 * Knowledge service.
 	 * @module purecloud-platform-client-v2/api/KnowledgeApi
-	 * @version 103.0.0
+	 * @version 103.0.1
 	 */
 
 	/**
@@ -24361,7 +24506,7 @@ class LanguageUnderstandingApi {
 	/**
 	 * LanguageUnderstanding service.
 	 * @module purecloud-platform-client-v2/api/LanguageUnderstandingApi
-	 * @version 103.0.0
+	 * @version 103.0.1
 	 */
 
 	/**
@@ -24929,7 +25074,7 @@ class LanguagesApi {
 	/**
 	 * Languages service.
 	 * @module purecloud-platform-client-v2/api/LanguagesApi
-	 * @version 103.0.0
+	 * @version 103.0.1
 	 */
 
 	/**
@@ -25197,7 +25342,7 @@ class LicenseApi {
 	/**
 	 * License service.
 	 * @module purecloud-platform-client-v2/api/LicenseApi
-	 * @version 103.0.0
+	 * @version 103.0.1
 	 */
 
 	/**
@@ -25435,7 +25580,7 @@ class LocationsApi {
 	/**
 	 * Locations service.
 	 * @module purecloud-platform-client-v2/api/LocationsApi
-	 * @version 103.0.0
+	 * @version 103.0.1
 	 */
 
 	/**
@@ -25671,7 +25816,7 @@ class MobileDevicesApi {
 	/**
 	 * MobileDevices service.
 	 * @module purecloud-platform-client-v2/api/MobileDevicesApi
-	 * @version 103.0.0
+	 * @version 103.0.1
 	 */
 
 	/**
@@ -25822,7 +25967,7 @@ class NotificationsApi {
 	/**
 	 * Notifications service.
 	 * @module purecloud-platform-client-v2/api/NotificationsApi
-	 * @version 103.0.0
+	 * @version 103.0.1
 	 */
 
 	/**
@@ -26021,7 +26166,7 @@ class OAuthApi {
 	/**
 	 * OAuth service.
 	 * @module purecloud-platform-client-v2/api/OAuthApi
-	 * @version 103.0.0
+	 * @version 103.0.1
 	 */
 
 	/**
@@ -26379,7 +26524,7 @@ class ObjectsApi {
 	/**
 	 * Objects service.
 	 * @module purecloud-platform-client-v2/api/ObjectsApi
-	 * @version 103.0.0
+	 * @version 103.0.1
 	 */
 
 	/**
@@ -26620,7 +26765,7 @@ class OrganizationApi {
 	/**
 	 * Organization service.
 	 * @module purecloud-platform-client-v2/api/OrganizationApi
-	 * @version 103.0.0
+	 * @version 103.0.1
 	 */
 
 	/**
@@ -26875,7 +27020,7 @@ class OrganizationAuthorizationApi {
 	/**
 	 * OrganizationAuthorization service.
 	 * @module purecloud-platform-client-v2/api/OrganizationAuthorizationApi
-	 * @version 103.0.0
+	 * @version 103.0.1
 	 */
 
 	/**
@@ -27585,7 +27730,7 @@ class OutboundApi {
 	/**
 	 * Outbound service.
 	 * @module purecloud-platform-client-v2/api/OutboundApi
-	 * @version 103.0.0
+	 * @version 103.0.1
 	 */
 
 	/**
@@ -30559,7 +30704,7 @@ class PresenceApi {
 	/**
 	 * Presence service.
 	 * @module purecloud-platform-client-v2/api/PresenceApi
-	 * @version 103.0.0
+	 * @version 103.0.1
 	 */
 
 	/**
@@ -30906,7 +31051,7 @@ class QualityApi {
 	/**
 	 * Quality service.
 	 * @module purecloud-platform-client-v2/api/QualityApi
-	 * @version 103.0.0
+	 * @version 103.0.1
 	 */
 
 	/**
@@ -32579,7 +32724,7 @@ class RecordingApi {
 	/**
 	 * Recording service.
 	 * @module purecloud-platform-client-v2/api/RecordingApi
-	 * @version 103.0.0
+	 * @version 103.0.1
 	 */
 
 	/**
@@ -34018,7 +34163,7 @@ class ResponseManagementApi {
 	/**
 	 * ResponseManagement service.
 	 * @module purecloud-platform-client-v2/api/ResponseManagementApi
-	 * @version 103.0.0
+	 * @version 103.0.1
 	 */
 
 	/**
@@ -34343,7 +34488,7 @@ class RoutingApi {
 	/**
 	 * Routing service.
 	 * @module purecloud-platform-client-v2/api/RoutingApi
-	 * @version 103.0.0
+	 * @version 103.0.1
 	 */
 
 	/**
@@ -36642,7 +36787,7 @@ class SCIMApi {
 	/**
 	 * SCIM service.
 	 * @module purecloud-platform-client-v2/api/SCIMApi
-	 * @version 103.0.0
+	 * @version 103.0.1
 	 */
 
 	/**
@@ -37627,7 +37772,7 @@ class ScriptsApi {
 	/**
 	 * Scripts service.
 	 * @module purecloud-platform-client-v2/api/ScriptsApi
-	 * @version 103.0.0
+	 * @version 103.0.1
 	 */
 
 	/**
@@ -37980,7 +38125,7 @@ class SearchApi {
 	/**
 	 * Search service.
 	 * @module purecloud-platform-client-v2/api/SearchApi
-	 * @version 103.0.0
+	 * @version 103.0.1
 	 */
 
 	/**
@@ -38490,7 +38635,7 @@ class SpeechTextAnalyticsApi {
 	/**
 	 * SpeechTextAnalytics service.
 	 * @module purecloud-platform-client-v2/api/SpeechTextAnalyticsApi
-	 * @version 103.0.0
+	 * @version 103.0.1
 	 */
 
 	/**
@@ -38566,7 +38711,7 @@ class StationsApi {
 	/**
 	 * Stations service.
 	 * @module purecloud-platform-client-v2/api/StationsApi
-	 * @version 103.0.0
+	 * @version 103.0.1
 	 */
 
 	/**
@@ -38713,7 +38858,7 @@ class SuggestApi {
 	/**
 	 * Suggest service.
 	 * @module purecloud-platform-client-v2/api/SuggestApi
-	 * @version 103.0.0
+	 * @version 103.0.1
 	 */
 
 	/**
@@ -38852,7 +38997,7 @@ class TelephonyApi {
 	/**
 	 * Telephony service.
 	 * @module purecloud-platform-client-v2/api/TelephonyApi
-	 * @version 103.0.0
+	 * @version 103.0.1
 	 */
 
 	/**
@@ -38960,7 +39105,7 @@ class TelephonyProvidersEdgeApi {
 	/**
 	 * TelephonyProvidersEdge service.
 	 * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-	 * @version 103.0.0
+	 * @version 103.0.1
 	 */
 
 	/**
@@ -42537,7 +42682,7 @@ class TextbotsApi {
 	/**
 	 * Textbots service.
 	 * @module purecloud-platform-client-v2/api/TextbotsApi
-	 * @version 103.0.0
+	 * @version 103.0.1
 	 */
 
 	/**
@@ -42583,7 +42728,7 @@ class TokensApi {
 	/**
 	 * Tokens service.
 	 * @module purecloud-platform-client-v2/api/TokensApi
-	 * @version 103.0.0
+	 * @version 103.0.1
 	 */
 
 	/**
@@ -42669,7 +42814,7 @@ class UploadsApi {
 	/**
 	 * Uploads service.
 	 * @module purecloud-platform-client-v2/api/UploadsApi
-	 * @version 103.0.0
+	 * @version 103.0.1
 	 */
 
 	/**
@@ -42715,7 +42860,7 @@ class UsageApi {
 	/**
 	 * Usage service.
 	 * @module purecloud-platform-client-v2/api/UsageApi
-	 * @version 103.0.0
+	 * @version 103.0.1
 	 */
 
 	/**
@@ -42786,7 +42931,7 @@ class UserRecordingsApi {
 	/**
 	 * UserRecordings service.
 	 * @module purecloud-platform-client-v2/api/UserRecordingsApi
-	 * @version 103.0.0
+	 * @version 103.0.1
 	 */
 
 	/**
@@ -42970,7 +43115,7 @@ class UsersApi {
 	/**
 	 * Users service.
 	 * @module purecloud-platform-client-v2/api/UsersApi
-	 * @version 103.0.0
+	 * @version 103.0.1
 	 */
 
 	/**
@@ -45183,7 +45328,7 @@ class UtilitiesApi {
 	/**
 	 * Utilities service.
 	 * @module purecloud-platform-client-v2/api/UtilitiesApi
-	 * @version 103.0.0
+	 * @version 103.0.1
 	 */
 
 	/**
@@ -45294,7 +45439,7 @@ class VoicemailApi {
 	/**
 	 * Voicemail service.
 	 * @module purecloud-platform-client-v2/api/VoicemailApi
-	 * @version 103.0.0
+	 * @version 103.0.1
 	 */
 
 	/**
@@ -45931,7 +46076,7 @@ class WebChatApi {
 	/**
 	 * WebChat service.
 	 * @module purecloud-platform-client-v2/api/WebChatApi
-	 * @version 103.0.0
+	 * @version 103.0.1
 	 */
 
 	/**
@@ -46475,7 +46620,7 @@ class WidgetsApi {
 	/**
 	 * Widgets service.
 	 * @module purecloud-platform-client-v2/api/WidgetsApi
-	 * @version 103.0.0
+	 * @version 103.0.1
 	 */
 
 	/**
@@ -46621,7 +46766,7 @@ class WorkforceManagementApi {
 	/**
 	 * WorkforceManagement service.
 	 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-	 * @version 103.0.0
+	 * @version 103.0.1
 	 */
 
 	/**
@@ -49919,7 +50064,7 @@ class WorkforceManagementApi {
  * </pre>
  * </p>
  * @module purecloud-platform-client-v2/index
- * @version 103.0.0
+ * @version 103.0.1
  */
 class platformClient {
 	constructor() {
