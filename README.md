@@ -27,7 +27,7 @@ For direct use in a browser script:
 
 ```{"language":"html"}
 <!-- Include the CJS SDK -->
-<script src="https://sdk-cdn.mypurecloud.com/javascript/103.0.1/purecloud-platform-client-v2.min.js"></script>
+<script src="https://sdk-cdn.mypurecloud.com/javascript/104.0.0/purecloud-platform-client-v2.min.js"></script>
 
 <script type="text/javascript">
   // Obtain a reference to the platformClient object
@@ -44,7 +44,7 @@ For direct use in a browser script:
 
 <script type="text/javascript">
   // Obtain a reference to the platformClient object
-  requirejs(['https://sdk-cdn.mypurecloud.com/javascript/amd/103.0.1/purecloud-platform-client-v2.min.js'], (platformClient) => {
+  requirejs(['https://sdk-cdn.mypurecloud.com/javascript/amd/104.0.0/purecloud-platform-client-v2.min.js'], (platformClient) => {
     console.log(platformClient);
   });
 </script>
@@ -54,7 +54,7 @@ For direct use in a browser script:
 
 The node package's [package.json](https://github.com/MyPureCloud/platform-client-sdk-javascript/blob/master/build/package.json) file contains the following entry points for use with various packaging systems:
 
-* **jsnext:main**
+* **jsnext:main** and **module**
 	* Entry point: src/purecloud-platform-client-v2/index.js
 	* The main ES6 class in the source code
 * **main**

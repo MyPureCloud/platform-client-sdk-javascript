@@ -117,6 +117,10 @@
       "class": "DnclistImportStatusImportStatus"
     },
     {
+      "topic": "v2.outbound.messagingcampaigns.{id}",
+      "class": "OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign"
+    },
+    {
       "topic": "v2.outbound.messagingcampaigns.{id}.progress",
       "class": "OutboundMessagingMessagingCampaignProgressEventCampaignProgress"
     },
@@ -147,6 +151,10 @@
     {
       "topic": "v2.outbound.wrapupcodemappings.{id}",
       "class": "DialerWrapupcodemappingConfigChangeWrapUpCodeMapping"
+    },
+    {
+      "topic": "v2.quality.evaluations",
+      "class": "EvaluationQualityV2TopicEvaluationV2"
     },
     {
       "topic": "v2.routing.queues.{id}.conversations",
@@ -193,6 +201,14 @@
       "class": "QueueUserEventTopicQueueMember"
     },
     {
+      "topic": "v2.speechandtextanalytics.programs.publishjobs.{id}",
+      "class": "PublishProgramPublishJob"
+    },
+    {
+      "topic": "v2.speechandtextanalytics.topics.publishjobs.{id}",
+      "class": "PublishTopicPublishJob"
+    },
+    {
       "topic": "v2.system.no_longer_subscribed.{id}",
       "class": "SystemMessageSystemMessage"
     },
@@ -207,6 +223,34 @@
     {
       "topic": "v2.system.{id}.{id}",
       "class": "SystemMessageSystemMessage"
+    },
+    {
+      "topic": "v2.telephony.providers.edges.phones.{id}",
+      "class": "PhoneChangeTopicPhone"
+    },
+    {
+      "topic": "v2.telephony.providers.edges.trunks.{id}",
+      "class": "TrunkInstanceTopicTrunk"
+    },
+    {
+      "topic": "v2.telephony.providers.edges.trunks.{id}.metrics",
+      "class": "TrunkMetricsTopicTrunkMetrics"
+    },
+    {
+      "topic": "v2.telephony.providers.edges.{id}",
+      "class": "EdgeChangeTopicEdge"
+    },
+    {
+      "topic": "v2.telephony.providers.edges.{id}.logicalinterfaces",
+      "class": "EdgeLogicalInterfacesChangeTopicDomainLogicalInterfaceChange"
+    },
+    {
+      "topic": "v2.telephony.providers.edges.{id}.metrics",
+      "class": "EdgeMetricsTopicEdgeMetrics"
+    },
+    {
+      "topic": "v2.telephony.providers.edges.{id}.softwareupdate",
+      "class": "EdgeSoftwareUpdateTopicDomainEdgeSoftwareUpdate"
     },
     {
       "topic": "v2.users.{id}.activity",
@@ -395,6 +439,18 @@
     {
       "topic": "v2.workforcemanagement.businessunits.{id}.scheduling.runs",
       "class": "WfmBuScheduleRunTopicBuSchedulingRunProgressNotification"
+    },
+    {
+      "topic": "v2.workforcemanagement.businessunits.{id}.shorttermforecasts",
+      "class": "WfmBuShortTermForecastUpdateCompleteTopicBuShortTermForecastNotification"
+    },
+    {
+      "topic": "v2.workforcemanagement.businessunits.{id}.shorttermforecasts.copy",
+      "class": "WfmBuShortTermForecastCopyCompleteTopicBuShortTermForecastNotification"
+    },
+    {
+      "topic": "v2.workforcemanagement.businessunits.{id}.shorttermforecasts.generate",
+      "class": "WfmBuShortTermForecastGenerateProgressTopicGenerateBuShortTermForecastProgressNotification"
     },
     {
       "topic": "v2.workforcemanagement.businessunits.{id}.shorttermforecasts.import",

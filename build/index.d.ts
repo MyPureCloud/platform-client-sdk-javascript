@@ -11889,6 +11889,11 @@ declare namespace Models {
 		"end"?: string;
 	}
 	
+	export interface EdgeChangeTopicEdge { 
+		"id"?: string;
+		"onlineStatus"?: string;
+	}
+	
 	export interface EdgeEntityListing { 
 		"entities"?: Array<Models.Edge>;
 		"pageSize"?: number;
@@ -11979,6 +11984,18 @@ declare namespace Models {
 		"nextUri"?: string;
 		"previousUri"?: string;
 		"pageCount"?: number;
+	}
+	
+	export interface EdgeLogicalInterfacesChangeTopicDomainLogicalInterfaceChange { 
+		"id"?: string;
+		"errorInfo"?: Models.EdgeLogicalInterfacesChangeTopicErrorInfo;
+	}
+	
+	export interface EdgeLogicalInterfacesChangeTopicErrorInfo { 
+		"message"?: string;
+		"messageWithParams"?: string;
+		"messageParams"?: { [key: string]: string; };
+		"code"?: string;
 	}
 	
 	export interface EdgeLogsJob { 
@@ -12088,6 +12105,89 @@ declare namespace Models {
 		"mediaSubsystem"?: Models.EdgeMetricsSubsystem;
 	}
 	
+	export interface EdgeMetricsTopicEdgeMetricDisk { 
+		"partitionName"?: string;
+		"availableBytes"?: number;
+		"totalBytes"?: number;
+	}
+	
+	export interface EdgeMetricsTopicEdgeMetricMemory { 
+		"type"?: string;
+		"availableBytes"?: number;
+		"totalBytes"?: number;
+	}
+	
+	export interface EdgeMetricsTopicEdgeMetricNetworks { 
+		"ifname"?: string;
+		"sentBytesPerSec"?: number;
+		"receivedBytesPerSec"?: number;
+		"bandwidthBitsPerSec"?: number;
+		"utilizationPct"?: number;
+	}
+	
+	export interface EdgeMetricsTopicEdgeMetricProcessor { 
+		"cpuId"?: string;
+		"idleTimePct"?: number;
+		"activeTimePct"?: number;
+		"privilegedTimePct"?: number;
+		"userTimePct"?: number;
+	}
+	
+	export interface EdgeMetricsTopicEdgeMetricSubsystem { 
+		"processName"?: string;
+		"delayMs"?: number;
+		"mediaSubsystem"?: Models.EdgeMetricsTopicEdgeMetricSubsystemMedia;
+	}
+	
+	export interface EdgeMetricsTopicEdgeMetricSubsystemMedia { 
+		"processName"?: string;
+		"delayMs"?: number;
+	}
+	
+	export interface EdgeMetricsTopicEdgeMetrics { 
+		"edge"?: Models.EdgeMetricsTopicUriReference;
+		"eventTime"?: Models.EdgeMetricsTopicOffsetDateTime;
+		"upTimeMsec"?: number;
+		"processors"?: Array<Models.EdgeMetricsTopicEdgeMetricProcessor>;
+		"memory"?: Array<Models.EdgeMetricsTopicEdgeMetricMemory>;
+		"disks"?: Array<Models.EdgeMetricsTopicEdgeMetricDisk>;
+		"subsystems"?: Array<Models.EdgeMetricsTopicEdgeMetricSubsystem>;
+		"networks"?: Array<Models.EdgeMetricsTopicEdgeMetricNetworks>;
+	}
+	
+	export interface EdgeMetricsTopicLocalDate { 
+		"year"?: number;
+		"month"?: number;
+		"day"?: number;
+		"leapYear"?: boolean;
+	}
+	
+	export interface EdgeMetricsTopicLocalDateTime { 
+		"date"?: Models.EdgeMetricsTopicLocalDate;
+		"time"?: Models.EdgeMetricsTopicLocalTime;
+	}
+	
+	export interface EdgeMetricsTopicLocalTime { 
+		"hour"?: number;
+		"minute"?: number;
+		"second"?: number;
+		"nano"?: number;
+	}
+	
+	export interface EdgeMetricsTopicOffsetDateTime { 
+		"dateTime"?: Models.EdgeMetricsTopicLocalDateTime;
+		"offset"?: Models.EdgeMetricsTopicZoneOffset;
+	}
+	
+	export interface EdgeMetricsTopicUriReference { 
+		"id"?: string;
+		"name"?: string;
+	}
+	
+	export interface EdgeMetricsTopicZoneOffset { 
+		"totalSeconds"?: number;
+	}
+	
 	export interface EdgeNetworkDiagnostic { 
 		"id"?: string;
 		"selfUri"?: string;
@@ -12109,6 +12209,14 @@ declare namespace Models {
 	export interface EdgeServiceStateRequest { 
 		"inService": boolean;
 		"callDrainingWaitTimeSeconds"?: number;
+	}
+	
+	export interface EdgeSoftwareUpdateTopicDomainEdgeSoftwareUpdate { 
+		"id"?: string;
+		"status"?: string;
+		"downloadStartTime"?: string;
+		"executeStartTime"?: string;
+		"executeStopTime"?: string;
 	}
 	
 	export interface EdgeTrunkBase { 
@@ -12591,6 +12699,40 @@ declare namespace Models {
 		"nextUri"?: string;
 		"previousUri"?: string;
 		"pageCount"?: number;
+	}
+	
+	export interface EvaluationQualityV2TopicEvaluationScoringSet { 
+		"totalScore"?: number;
+		"totalCriticalScore"?: number;
+	}
+	
+	export interface EvaluationQualityV2TopicEvaluationV2 { 
+		"id"?: string;
+		"conversationId"?: string;
+		"agent"?: Models.EvaluationQualityV2TopicUser;
+		"evaluator"?: Models.EvaluationQualityV2TopicUser;
+		"eventTime"?: string;
+		"evaluationFormId"?: string;
+		"formName"?: string;
+		"scoringSet"?: Models.EvaluationQualityV2TopicEvaluationScoringSet;
+		"contextId"?: string;
+		"status"?: string;
+		"agentHasRead"?: boolean;
+		"releaseDate"?: string;
+		"assignedDate"?: string;
+		"changedDate"?: string;
+		"eventType"?: string;
+		"resourceId"?: string;
+		"resourceType"?: string;
+		"divisionIds"?: Array<string>;
+		"rescore"?: boolean;
+		"conversationDate"?: string;
+		"mediaType"?: Array<string>;
+	}
+	
+	export interface EvaluationQualityV2TopicUser { 
+		"id"?: string;
+		"displayName"?: string;
 	}
 	
 	export interface EvaluationQuestion { 
@@ -16402,6 +16544,57 @@ declare namespace Models {
 		"id"?: string;
 	}
 	
+	export interface OutboundMessagingMessagingCampaignConfigChangeContactSort { 
+		"fieldName"?: string;
+		"direction"?: string;
+		"numeric"?: boolean;
+		"additionalProperties"?: object;
+	}
+	
+	export interface OutboundMessagingMessagingCampaignConfigChangeErrorDetail { 
+		"error"?: string;
+		"details"?: string;
+	}
+	
+	export interface OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign { 
+		"id"?: string;
+		"division"?: Models.OutboundMessagingMessagingCampaignConfigChangeUriReference;
+		"name"?: string;
+		"dateCreated"?: string;
+		"dateModified"?: string;
+		"version"?: number;
+		"campaignStatus"?: string;
+		"callableTimeSet"?: Models.OutboundMessagingMessagingCampaignConfigChangeUriReference;
+		"contactList"?: Models.OutboundMessagingMessagingCampaignConfigChangeUriReference;
+		"dncLists"?: Array<Models.OutboundMessagingMessagingCampaignConfigChangeUriReference>;
+		"contactListFilters"?: Array<Models.OutboundMessagingMessagingCampaignConfigChangeUriReference>;
+		"alwaysRunning"?: boolean;
+		"contactSorts"?: Array<Models.OutboundMessagingMessagingCampaignConfigChangeContactSort>;
+		"messagesPerMinute"?: number;
+		"smsConfig"?: Models.OutboundMessagingMessagingCampaignConfigChangeSmsConfig;
+		"errors"?: Array<Models.OutboundMessagingMessagingCampaignConfigChangeErrorDetail>;
+	}
+	
+	export interface OutboundMessagingMessagingCampaignConfigChangeResponseRef { 
+		"id"?: string;
+	}
+	
+	export interface OutboundMessagingMessagingCampaignConfigChangeSmsConfig { 
+		"messageColumn"?: string;
+		"phoneColumn"?: string;
+		"senderSmsPhoneNumber"?: Models.OutboundMessagingMessagingCampaignConfigChangeSmsPhoneNumberRef;
+		"contentTemplate"?: Models.OutboundMessagingMessagingCampaignConfigChangeResponseRef;
+	}
+	
+	export interface OutboundMessagingMessagingCampaignConfigChangeSmsPhoneNumberRef { 
+		"phoneNumber"?: string;
+	}
+	
+	export interface OutboundMessagingMessagingCampaignConfigChangeUriReference { 
+		"id"?: string;
+		"name"?: string;
+	}
+	
 	export interface OutboundMessagingMessagingCampaignProgressEventCampaignProgress { 
 		"campaign"?: Models.OutboundMessagingMessagingCampaignProgressEventUriReference;
 		"numberOfContactsCalled"?: number;
@@ -16769,6 +16962,76 @@ declare namespace Models {
 		"noCloudProvisioning"?: boolean;
 		"mediaCodecs"?: Array<string>;
 		"cdm"?: boolean;
+	}
+	
+	export interface PhoneChangeTopicEdgeReference { 
+		"id"?: string;
+		"name"?: string;
+		"selfUri"?: string;
+	}
+	
+	export interface PhoneChangeTopicLineStatus { 
+		"id"?: string;
+		"reachable"?: boolean;
+		"addressOfRecord"?: string;
+		"contactAddresses"?: Array<string>;
+		"reachableStateTime"?: string;
+	}
+	
+	export interface PhoneChangeTopicLocalDate { 
+		"year"?: number;
+		"month"?: number;
+		"day"?: number;
+		"leapYear"?: boolean;
+	}
+	
+	export interface PhoneChangeTopicLocalDateTime { 
+		"date"?: Models.PhoneChangeTopicLocalDate;
+		"time"?: Models.PhoneChangeTopicLocalTime;
+	}
+	
+	export interface PhoneChangeTopicLocalTime { 
+		"hour"?: number;
+		"minute"?: number;
+		"second"?: number;
+		"nano"?: number;
+	}
+	
+	export interface PhoneChangeTopicOffsetDateTime { 
+		"dateTime"?: Models.PhoneChangeTopicLocalDateTime;
+		"offset"?: Models.PhoneChangeTopicZoneOffset;
+	}
+	
+	export interface PhoneChangeTopicPhone { 
+		"userAgentInfo"?: Models.PhoneChangeTopicUserAgentInfo;
+		"id"?: string;
+		"status"?: Models.PhoneChangeTopicPhoneStatus;
+		"secondaryStatus"?: Models.PhoneChangeTopicPhoneStatus;
+	}
+	
+	export interface PhoneChangeTopicPhoneStatus { 
+		"id"?: string;
+		"operationalStatus"?: string;
+		"edge"?: Models.PhoneChangeTopicEdgeReference;
+		"provision"?: Models.PhoneChangeTopicProvisionInfo;
+		"lineStatuses"?: Array<Models.PhoneChangeTopicLineStatus>;
+		"eventCreationTime"?: Models.PhoneChangeTopicOffsetDateTime;
+	}
+	
+	export interface PhoneChangeTopicProvisionInfo { 
+		"time"?: string;
+		"source"?: string;
+		"errorInfo"?: string;
+	}
+	
+	export interface PhoneChangeTopicUserAgentInfo { 
+		"firmwareVersion"?: string;
+		"manufacturer"?: string;
+		"model"?: string;
+	}
+	
+	export interface PhoneChangeTopicZoneOffset { 
+		"totalSeconds"?: number;
 	}
 	
 	export interface PhoneColumn { 
@@ -17161,6 +17424,16 @@ declare namespace Models {
 	export interface PublishForm { 
 		"published": boolean;
 		"id": string;
+	}
+	
+	export interface PublishProgramPublishJob { 
+		"id"?: string;
+		"state"?: string;
+	}
+	
+	export interface PublishTopicPublishJob { 
+		"id"?: string;
+		"state"?: string;
 	}
 	
 	export interface PublishedSurveyFormReference { 
@@ -22382,6 +22655,50 @@ declare namespace Models {
 		"hostname"?: string;
 	}
 	
+	export interface TrunkInstanceTopicTrunk { 
+		"id"?: string;
+		"connectedStatus"?: Models.TrunkInstanceTopicTrunkConnectedStatus;
+		"optionsStatus"?: Array<Models.TrunkInstanceTopicTrunkMetricsOptions>;
+		"registersStatus"?: Array<Models.TrunkInstanceTopicTrunkMetricsRegisters>;
+		"ipStatus"?: Models.TrunkInstanceTopicTrunkMetricsNetworkTypeIp;
+	}
+	
+	export interface TrunkInstanceTopicTrunkConnectedStatus { 
+		"connected"?: boolean;
+		"connectedStateTime"?: string;
+	}
+	
+	export interface TrunkInstanceTopicTrunkErrorInfo { 
+		"text"?: string;
+		"code"?: string;
+		"details"?: Models.TrunkInstanceTopicTrunkErrorInfoDetails;
+	}
+	
+	export interface TrunkInstanceTopicTrunkErrorInfoDetails { 
+		"code"?: string;
+		"message"?: string;
+		"hostname"?: string;
+	}
+	
+	export interface TrunkInstanceTopicTrunkMetricsNetworkTypeIp { 
+		"address"?: string;
+		"errorInfo"?: Models.TrunkInstanceTopicTrunkErrorInfo;
+	}
+	
+	export interface TrunkInstanceTopicTrunkMetricsOptions { 
+		"proxyAddress"?: string;
+		"optionState"?: boolean;
+		"optionStateTime"?: string;
+		"errorInfo"?: Models.TrunkInstanceTopicTrunkErrorInfo;
+	}
+	
+	export interface TrunkInstanceTopicTrunkMetricsRegisters { 
+		"proxyAddress"?: string;
+		"registerState"?: boolean;
+		"registerStateTime"?: string;
+		"errorInfo"?: Models.TrunkInstanceTopicTrunkErrorInfo;
+	}
+	
 	export interface TrunkMetabaseEntityListing { 
 		"entities"?: Array<Models.Metabase>;
 		"pageSize"?: number;
@@ -22429,6 +22746,55 @@ declare namespace Models {
 		"registerState"?: boolean;
 		"registerStateTime"?: string;
 		"errorInfo"?: Models.TrunkErrorInfo;
+	}
+	
+	export interface TrunkMetricsTopicLocalDate { 
+		"year"?: number;
+		"month"?: number;
+		"day"?: number;
+		"leapYear"?: boolean;
+	}
+	
+	export interface TrunkMetricsTopicLocalDateTime { 
+		"date"?: Models.TrunkMetricsTopicLocalDate;
+		"time"?: Models.TrunkMetricsTopicLocalTime;
+	}
+	
+	export interface TrunkMetricsTopicLocalTime { 
+		"hour"?: number;
+		"minute"?: number;
+		"second"?: number;
+		"nano"?: number;
+	}
+	
+	export interface TrunkMetricsTopicOffsetDateTime { 
+		"dateTime"?: Models.TrunkMetricsTopicLocalDateTime;
+		"offset"?: Models.TrunkMetricsTopicZoneOffset;
+	}
+	
+	export interface TrunkMetricsTopicTrunkMetrics { 
+		"calls"?: Models.TrunkMetricsTopicTrunkMetricsCalls;
+		"eventTime"?: Models.TrunkMetricsTopicOffsetDateTime;
+		"qos"?: Models.TrunkMetricsTopicTrunkMetricsQoS;
+		"trunk"?: Models.TrunkMetricsTopicUriReference;
+	}
+	
+	export interface TrunkMetricsTopicTrunkMetricsCalls { 
+		"inboundCallCount"?: number;
+		"outboundCallCount"?: number;
+	}
+	
+	export interface TrunkMetricsTopicTrunkMetricsQoS { 
+		"mismatchCount"?: number;
+	}
+	
+	export interface TrunkMetricsTopicUriReference { 
+		"id"?: string;
+		"name"?: string;
+	}
+	
+	export interface TrunkMetricsTopicZoneOffset { 
+		"totalSeconds"?: number;
 	}
 	
 	export interface TrunkRecordingEnabledCount { 
@@ -24160,6 +24526,11 @@ declare namespace Models {
 		"action"?: string;
 	}
 	
+	export interface WemCoachingAppointmentTopicCoachingAppointmentExternalLink { 
+		"externalLink"?: string;
+		"action"?: string;
+	}
+	
 	export interface WemCoachingAppointmentTopicCoachingAppointmentNotification { 
 		"id"?: string;
 		"name"?: string;
@@ -24176,6 +24547,7 @@ declare namespace Models {
 		"documents"?: Array<Models.WemCoachingAppointmentTopicCoachingAppointmentDocument>;
 		"changeType"?: string;
 		"dateCompleted"?: string;
+		"externalLinks"?: Array<Models.WemCoachingAppointmentTopicCoachingAppointmentExternalLink>;
 	}
 	
 	export interface WemCoachingAppointmentTopicUserReference { 
@@ -24443,6 +24815,123 @@ declare namespace Models {
 		"dateModified"?: string;
 	}
 	
+	export interface WfmBuShortTermForecastCopyCompleteTopicBuForecastModification { 
+		"type"?: string;
+		"startIntervalIndex"?: number;
+		"endIntervalIndex"?: number;
+		"metric"?: string;
+		"legacyMetric"?: string;
+		"value"?: number;
+		"values"?: Array<Models.WfmBuShortTermForecastCopyCompleteTopicModificationIntervalOffsetValue>;
+		"enabled"?: boolean;
+		"granularity"?: string;
+		"displayGranularity"?: string;
+		"planningGroupIds"?: Array<string>;
+	}
+	
+	export interface WfmBuShortTermForecastCopyCompleteTopicBuShortTermForecast { 
+		"id"?: string;
+		"weekDate"?: string;
+		"creationMethod"?: string;
+		"description"?: string;
+		"legacy"?: boolean;
+		"referenceStartDate"?: string;
+		"sourceDays"?: Array<Models.WfmBuShortTermForecastCopyCompleteTopicForecastSourceDayPointer>;
+		"modifications"?: Array<Models.WfmBuShortTermForecastCopyCompleteTopicBuForecastModification>;
+		"timeZone"?: string;
+		"planningGroupsVersion"?: number;
+		"weekCount"?: number;
+		"metadata"?: Models.WfmBuShortTermForecastCopyCompleteTopicWfmVersionedEntityMetadata;
+	}
+	
+	export interface WfmBuShortTermForecastCopyCompleteTopicBuShortTermForecastNotification { 
+		"status"?: string;
+		"result"?: Models.WfmBuShortTermForecastCopyCompleteTopicBuShortTermForecast;
+		"operationId"?: string;
+	}
+	
+	export interface WfmBuShortTermForecastCopyCompleteTopicForecastSourceDayPointer { 
+		"dayOfWeek"?: string;
+		"weight"?: number;
+		"date"?: string;
+		"fileName"?: string;
+		"dataKey"?: string;
+	}
+	
+	export interface WfmBuShortTermForecastCopyCompleteTopicModificationIntervalOffsetValue { 
+		"intervalIndex"?: number;
+		"value"?: number;
+	}
+	
+	export interface WfmBuShortTermForecastCopyCompleteTopicUserReference { 
+		"id"?: string;
+	}
+	
+	export interface WfmBuShortTermForecastCopyCompleteTopicWfmVersionedEntityMetadata { 
+		"version"?: number;
+		"modifiedBy"?: Models.WfmBuShortTermForecastCopyCompleteTopicUserReference;
+		"dateModified"?: string;
+	}
+	
+	export interface WfmBuShortTermForecastGenerateProgressTopicBuForecastModification { 
+		"type"?: string;
+		"startIntervalIndex"?: number;
+		"endIntervalIndex"?: number;
+		"metric"?: string;
+		"legacyMetric"?: string;
+		"value"?: number;
+		"values"?: Array<Models.WfmBuShortTermForecastGenerateProgressTopicModificationIntervalOffsetValue>;
+		"enabled"?: boolean;
+		"granularity"?: string;
+		"displayGranularity"?: string;
+		"planningGroupIds"?: Array<string>;
+	}
+	
+	export interface WfmBuShortTermForecastGenerateProgressTopicBuShortTermForecast { 
+		"id"?: string;
+		"weekDate"?: string;
+		"creationMethod"?: string;
+		"description"?: string;
+		"legacy"?: boolean;
+		"referenceStartDate"?: string;
+		"sourceDays"?: Array<Models.WfmBuShortTermForecastGenerateProgressTopicForecastSourceDayPointer>;
+		"modifications"?: Array<Models.WfmBuShortTermForecastGenerateProgressTopicBuForecastModification>;
+		"timeZone"?: string;
+		"planningGroupsVersion"?: number;
+		"weekCount"?: number;
+		"metadata"?: Models.WfmBuShortTermForecastGenerateProgressTopicWfmVersionedEntityMetadata;
+	}
+	
+	export interface WfmBuShortTermForecastGenerateProgressTopicForecastSourceDayPointer { 
+		"dayOfWeek"?: string;
+		"weight"?: number;
+		"date"?: string;
+		"fileName"?: string;
+		"dataKey"?: string;
+	}
+	
+	export interface WfmBuShortTermForecastGenerateProgressTopicGenerateBuShortTermForecastProgressNotification { 
+		"status"?: string;
+		"result"?: Models.WfmBuShortTermForecastGenerateProgressTopicBuShortTermForecast;
+		"operationId"?: string;
+		"progress"?: number;
+	}
+	
+	export interface WfmBuShortTermForecastGenerateProgressTopicModificationIntervalOffsetValue { 
+		"intervalIndex"?: number;
+		"value"?: number;
+	}
+	
+	export interface WfmBuShortTermForecastGenerateProgressTopicUserReference { 
+		"id"?: string;
+	}
+	
+	export interface WfmBuShortTermForecastGenerateProgressTopicWfmVersionedEntityMetadata { 
+		"version"?: number;
+		"modifiedBy"?: Models.WfmBuShortTermForecastGenerateProgressTopicUserReference;
+		"dateModified"?: string;
+	}
+	
 	export interface WfmBuShortTermForecastImportCompleteTopicBuForecastModification { 
 		"type"?: string;
 		"startIntervalIndex"?: number;
@@ -24498,6 +24987,64 @@ declare namespace Models {
 	export interface WfmBuShortTermForecastImportCompleteTopicWfmVersionedEntityMetadata { 
 		"version"?: number;
 		"modifiedBy"?: Models.WfmBuShortTermForecastImportCompleteTopicUserReference;
+		"dateModified"?: string;
+	}
+	
+	export interface WfmBuShortTermForecastUpdateCompleteTopicBuForecastModification { 
+		"type"?: string;
+		"startIntervalIndex"?: number;
+		"endIntervalIndex"?: number;
+		"metric"?: string;
+		"legacyMetric"?: string;
+		"value"?: number;
+		"values"?: Array<Models.WfmBuShortTermForecastUpdateCompleteTopicModificationIntervalOffsetValue>;
+		"enabled"?: boolean;
+		"granularity"?: string;
+		"displayGranularity"?: string;
+		"planningGroupIds"?: Array<string>;
+	}
+	
+	export interface WfmBuShortTermForecastUpdateCompleteTopicBuShortTermForecast { 
+		"id"?: string;
+		"weekDate"?: string;
+		"creationMethod"?: string;
+		"description"?: string;
+		"legacy"?: boolean;
+		"referenceStartDate"?: string;
+		"sourceDays"?: Array<Models.WfmBuShortTermForecastUpdateCompleteTopicForecastSourceDayPointer>;
+		"modifications"?: Array<Models.WfmBuShortTermForecastUpdateCompleteTopicBuForecastModification>;
+		"timeZone"?: string;
+		"planningGroupsVersion"?: number;
+		"weekCount"?: number;
+		"metadata"?: Models.WfmBuShortTermForecastUpdateCompleteTopicWfmVersionedEntityMetadata;
+	}
+	
+	export interface WfmBuShortTermForecastUpdateCompleteTopicBuShortTermForecastNotification { 
+		"status"?: string;
+		"result"?: Models.WfmBuShortTermForecastUpdateCompleteTopicBuShortTermForecast;
+		"operationId"?: string;
+	}
+	
+	export interface WfmBuShortTermForecastUpdateCompleteTopicForecastSourceDayPointer { 
+		"dayOfWeek"?: string;
+		"weight"?: number;
+		"date"?: string;
+		"fileName"?: string;
+		"dataKey"?: string;
+	}
+	
+	export interface WfmBuShortTermForecastUpdateCompleteTopicModificationIntervalOffsetValue { 
+		"intervalIndex"?: number;
+		"value"?: number;
+	}
+	
+	export interface WfmBuShortTermForecastUpdateCompleteTopicUserReference { 
+		"id"?: string;
+	}
+	
+	export interface WfmBuShortTermForecastUpdateCompleteTopicWfmVersionedEntityMetadata { 
+		"version"?: number;
+		"modifiedBy"?: Models.WfmBuShortTermForecastUpdateCompleteTopicUserReference;
 		"dateModified"?: string;
 	}
 	
