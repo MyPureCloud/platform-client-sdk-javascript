@@ -5,7 +5,7 @@ class WorkforceManagementApi {
 	/**
 	 * WorkforceManagement service.
 	 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-	 * @version 104.0.0
+	 * @version 105.0.0
 	 */
 
 	/**
@@ -48,23 +48,23 @@ class WorkforceManagementApi {
 	/**
 	 * Deletes an activity code
 	 * 
-	 * @param {String} buId The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user.
-	 * @param {String} acId The ID of the activity code to delete
+	 * @param {String} businessUnitId The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user.
+	 * @param {String} activityCodeId The ID of the activity code to delete
 	 */
-	deleteWorkforcemanagementBusinessunitActivitycode(buId, acId) { 
-		// verify the required parameter 'buId' is set
-		if (buId === undefined || buId === null) {
-			throw 'Missing the required parameter "buId" when calling deleteWorkforcemanagementBusinessunitActivitycode';
+	deleteWorkforcemanagementBusinessunitActivitycode(businessUnitId, activityCodeId) { 
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null) {
+			throw 'Missing the required parameter "businessUnitId" when calling deleteWorkforcemanagementBusinessunitActivitycode';
 		}
-		// verify the required parameter 'acId' is set
-		if (acId === undefined || acId === null) {
-			throw 'Missing the required parameter "acId" when calling deleteWorkforcemanagementBusinessunitActivitycode';
+		// verify the required parameter 'activityCodeId' is set
+		if (activityCodeId === undefined || activityCodeId === null) {
+			throw 'Missing the required parameter "activityCodeId" when calling deleteWorkforcemanagementBusinessunitActivitycode';
 		}
 
 		return this.apiClient.callApi(
-			'/api/v2/workforcemanagement/businessunits/{buId}/activitycodes/{acId}', 
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes/{activityCodeId}', 
 			'DELETE', 
-			{ 'buId': buId,'acId': acId }, 
+			{ 'businessUnitId': businessUnitId,'activityCodeId': activityCodeId }, 
 			{  }, 
 			{  }, 
 			{  }, 
@@ -238,18 +238,18 @@ class WorkforceManagementApi {
 	/**
 	 * Delete management unit
 	 * 
-	 * @param {String} muId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+	 * @param {String} managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
 	 */
-	deleteWorkforcemanagementManagementunit(muId) { 
-		// verify the required parameter 'muId' is set
-		if (muId === undefined || muId === null) {
-			throw 'Missing the required parameter "muId" when calling deleteWorkforcemanagementManagementunit';
+	deleteWorkforcemanagementManagementunit(managementUnitId) { 
+		// verify the required parameter 'managementUnitId' is set
+		if (managementUnitId === undefined || managementUnitId === null) {
+			throw 'Missing the required parameter "managementUnitId" when calling deleteWorkforcemanagementManagementunit';
 		}
 
 		return this.apiClient.callApi(
-			'/api/v2/workforcemanagement/managementunits/{muId}', 
+			'/api/v2/workforcemanagement/managementunits/{managementUnitId}', 
 			'DELETE', 
-			{ 'muId': muId }, 
+			{ 'managementUnitId': managementUnitId }, 
 			{  }, 
 			{  }, 
 			{  }, 
@@ -402,23 +402,23 @@ class WorkforceManagementApi {
 	/**
 	 * Get an activity code
 	 * 
-	 * @param {String} buId The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user.
-	 * @param {String} acId The ID of the activity code to fetch
+	 * @param {String} businessUnitId The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user.
+	 * @param {String} activityCodeId The ID of the activity code to fetch
 	 */
-	getWorkforcemanagementBusinessunitActivitycode(buId, acId) { 
-		// verify the required parameter 'buId' is set
-		if (buId === undefined || buId === null) {
-			throw 'Missing the required parameter "buId" when calling getWorkforcemanagementBusinessunitActivitycode';
+	getWorkforcemanagementBusinessunitActivitycode(businessUnitId, activityCodeId) { 
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null) {
+			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitActivitycode';
 		}
-		// verify the required parameter 'acId' is set
-		if (acId === undefined || acId === null) {
-			throw 'Missing the required parameter "acId" when calling getWorkforcemanagementBusinessunitActivitycode';
+		// verify the required parameter 'activityCodeId' is set
+		if (activityCodeId === undefined || activityCodeId === null) {
+			throw 'Missing the required parameter "activityCodeId" when calling getWorkforcemanagementBusinessunitActivitycode';
 		}
 
 		return this.apiClient.callApi(
-			'/api/v2/workforcemanagement/businessunits/{buId}/activitycodes/{acId}', 
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes/{activityCodeId}', 
 			'GET', 
-			{ 'buId': buId,'acId': acId }, 
+			{ 'businessUnitId': businessUnitId,'activityCodeId': activityCodeId }, 
 			{  }, 
 			{  }, 
 			{  }, 
@@ -432,18 +432,18 @@ class WorkforceManagementApi {
 	/**
 	 * Get activity codes
 	 * 
-	 * @param {String} buId The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user.
+	 * @param {String} businessUnitId The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user.
 	 */
-	getWorkforcemanagementBusinessunitActivitycodes(buId) { 
-		// verify the required parameter 'buId' is set
-		if (buId === undefined || buId === null) {
-			throw 'Missing the required parameter "buId" when calling getWorkforcemanagementBusinessunitActivitycodes';
+	getWorkforcemanagementBusinessunitActivitycodes(businessUnitId) { 
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null) {
+			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitActivitycodes';
 		}
 
 		return this.apiClient.callApi(
-			'/api/v2/workforcemanagement/businessunits/{buId}/activitycodes', 
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes', 
 			'GET', 
-			{ 'buId': buId }, 
+			{ 'businessUnitId': businessUnitId }, 
 			{  }, 
 			{  }, 
 			{  }, 
@@ -1138,22 +1138,22 @@ class WorkforceManagementApi {
 	/**
 	 * Get management unit
 	 * 
-	 * @param {String} muId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+	 * @param {String} managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand 
 	 */
-	getWorkforcemanagementManagementunit(muId, opts) { 
+	getWorkforcemanagementManagementunit(managementUnitId, opts) { 
 		opts = opts || {};
 		
-		// verify the required parameter 'muId' is set
-		if (muId === undefined || muId === null) {
-			throw 'Missing the required parameter "muId" when calling getWorkforcemanagementManagementunit';
+		// verify the required parameter 'managementUnitId' is set
+		if (managementUnitId === undefined || managementUnitId === null) {
+			throw 'Missing the required parameter "managementUnitId" when calling getWorkforcemanagementManagementunit';
 		}
 
 		return this.apiClient.callApi(
-			'/api/v2/workforcemanagement/managementunits/{muId}', 
+			'/api/v2/workforcemanagement/managementunits/{managementUnitId}', 
 			'GET', 
-			{ 'muId': muId }, 
+			{ 'managementUnitId': managementUnitId }, 
 			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') }, 
 			{  }, 
 			{  }, 
@@ -1167,18 +1167,18 @@ class WorkforceManagementApi {
 	/**
 	 * Get activity codes
 	 * 
-	 * @param {String} muId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+	 * @param {String} managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
 	 */
-	getWorkforcemanagementManagementunitActivitycodes(muId) { 
-		// verify the required parameter 'muId' is set
-		if (muId === undefined || muId === null) {
-			throw 'Missing the required parameter "muId" when calling getWorkforcemanagementManagementunitActivitycodes';
+	getWorkforcemanagementManagementunitActivitycodes(managementUnitId) { 
+		// verify the required parameter 'managementUnitId' is set
+		if (managementUnitId === undefined || managementUnitId === null) {
+			throw 'Missing the required parameter "managementUnitId" when calling getWorkforcemanagementManagementunitActivitycodes';
 		}
 
 		return this.apiClient.callApi(
-			'/api/v2/workforcemanagement/managementunits/{muId}/activitycodes', 
+			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/activitycodes', 
 			'GET', 
-			{ 'muId': muId }, 
+			{ 'managementUnitId': managementUnitId }, 
 			{  }, 
 			{  }, 
 			{  }, 
@@ -1285,18 +1285,18 @@ class WorkforceManagementApi {
 	/**
 	 * Gets a summary of all shift trades in the matched state
 	 * 
-	 * @param {String} muId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+	 * @param {String} managementUnitId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
 	 */
-	getWorkforcemanagementManagementunitShifttradesMatched(muId) { 
-		// verify the required parameter 'muId' is set
-		if (muId === undefined || muId === null) {
-			throw 'Missing the required parameter "muId" when calling getWorkforcemanagementManagementunitShifttradesMatched';
+	getWorkforcemanagementManagementunitShifttradesMatched(managementUnitId) { 
+		// verify the required parameter 'managementUnitId' is set
+		if (managementUnitId === undefined || managementUnitId === null) {
+			throw 'Missing the required parameter "managementUnitId" when calling getWorkforcemanagementManagementunitShifttradesMatched';
 		}
 
 		return this.apiClient.callApi(
-			'/api/v2/workforcemanagement/managementunits/{muId}/shifttrades/matched', 
+			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/shifttrades/matched', 
 			'GET', 
-			{ 'muId': muId }, 
+			{ 'managementUnitId': managementUnitId }, 
 			{  }, 
 			{  }, 
 			{  }, 
@@ -1310,18 +1310,18 @@ class WorkforceManagementApi {
 	/**
 	 * Gets list of users available for whom you can send direct shift trade requests
 	 * 
-	 * @param {String} muId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+	 * @param {String} managementUnitId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
 	 */
-	getWorkforcemanagementManagementunitShifttradesUsers(muId) { 
-		// verify the required parameter 'muId' is set
-		if (muId === undefined || muId === null) {
-			throw 'Missing the required parameter "muId" when calling getWorkforcemanagementManagementunitShifttradesUsers';
+	getWorkforcemanagementManagementunitShifttradesUsers(managementUnitId) { 
+		// verify the required parameter 'managementUnitId' is set
+		if (managementUnitId === undefined || managementUnitId === null) {
+			throw 'Missing the required parameter "managementUnitId" when calling getWorkforcemanagementManagementunitShifttradesUsers';
 		}
 
 		return this.apiClient.callApi(
-			'/api/v2/workforcemanagement/managementunits/{muId}/shifttrades/users', 
+			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/shifttrades/users', 
 			'GET', 
-			{ 'muId': muId }, 
+			{ 'managementUnitId': managementUnitId }, 
 			{  }, 
 			{  }, 
 			{  }, 
@@ -1335,14 +1335,14 @@ class WorkforceManagementApi {
 	/**
 	 * Get a time off request
 	 * 
-	 * @param {String} muId The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+	 * @param {String} managementUnitId The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
 	 * @param {String} userId The userId to whom the Time Off Request applies.
 	 * @param {String} timeOffRequestId Time Off Request Id
 	 */
-	getWorkforcemanagementManagementunitUserTimeoffrequest(muId, userId, timeOffRequestId) { 
-		// verify the required parameter 'muId' is set
-		if (muId === undefined || muId === null) {
-			throw 'Missing the required parameter "muId" when calling getWorkforcemanagementManagementunitUserTimeoffrequest';
+	getWorkforcemanagementManagementunitUserTimeoffrequest(managementUnitId, userId, timeOffRequestId) { 
+		// verify the required parameter 'managementUnitId' is set
+		if (managementUnitId === undefined || managementUnitId === null) {
+			throw 'Missing the required parameter "managementUnitId" when calling getWorkforcemanagementManagementunitUserTimeoffrequest';
 		}
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null) {
@@ -1354,9 +1354,9 @@ class WorkforceManagementApi {
 		}
 
 		return this.apiClient.callApi(
-			'/api/v2/workforcemanagement/managementunits/{muId}/users/{userId}/timeoffrequests/{timeOffRequestId}', 
+			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/users/{userId}/timeoffrequests/{timeOffRequestId}', 
 			'GET', 
-			{ 'muId': muId,'userId': userId,'timeOffRequestId': timeOffRequestId }, 
+			{ 'managementUnitId': managementUnitId,'userId': userId,'timeOffRequestId': timeOffRequestId }, 
 			{  }, 
 			{  }, 
 			{  }, 
@@ -1370,17 +1370,17 @@ class WorkforceManagementApi {
 	/**
 	 * Get a list of time off requests for a given user
 	 * 
-	 * @param {String} muId The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+	 * @param {String} managementUnitId The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
 	 * @param {String} userId The userId to whom the Time Off Request applies.
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.recentlyReviewed Limit results to requests that have been reviewed within the preceding 30 days (default to false)
 	 */
-	getWorkforcemanagementManagementunitUserTimeoffrequests(muId, userId, opts) { 
+	getWorkforcemanagementManagementunitUserTimeoffrequests(managementUnitId, userId, opts) { 
 		opts = opts || {};
 		
-		// verify the required parameter 'muId' is set
-		if (muId === undefined || muId === null) {
-			throw 'Missing the required parameter "muId" when calling getWorkforcemanagementManagementunitUserTimeoffrequests';
+		// verify the required parameter 'managementUnitId' is set
+		if (managementUnitId === undefined || managementUnitId === null) {
+			throw 'Missing the required parameter "managementUnitId" when calling getWorkforcemanagementManagementunitUserTimeoffrequests';
 		}
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null) {
@@ -1388,9 +1388,9 @@ class WorkforceManagementApi {
 		}
 
 		return this.apiClient.callApi(
-			'/api/v2/workforcemanagement/managementunits/{muId}/users/{userId}/timeoffrequests', 
+			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/users/{userId}/timeoffrequests', 
 			'GET', 
-			{ 'muId': muId,'userId': userId }, 
+			{ 'managementUnitId': managementUnitId,'userId': userId }, 
 			{ 'recentlyReviewed': opts['recentlyReviewed'] }, 
 			{  }, 
 			{  }, 
@@ -1404,18 +1404,18 @@ class WorkforceManagementApi {
 	/**
 	 * Get users in the management unit
 	 * 
-	 * @param {String} muId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+	 * @param {String} managementUnitId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
 	 */
-	getWorkforcemanagementManagementunitUsers(muId) { 
-		// verify the required parameter 'muId' is set
-		if (muId === undefined || muId === null) {
-			throw 'Missing the required parameter "muId" when calling getWorkforcemanagementManagementunitUsers';
+	getWorkforcemanagementManagementunitUsers(managementUnitId) { 
+		// verify the required parameter 'managementUnitId' is set
+		if (managementUnitId === undefined || managementUnitId === null) {
+			throw 'Missing the required parameter "managementUnitId" when calling getWorkforcemanagementManagementunitUsers';
 		}
 
 		return this.apiClient.callApi(
-			'/api/v2/workforcemanagement/managementunits/{muId}/users', 
+			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/users', 
 			'GET', 
-			{ 'muId': muId }, 
+			{ 'managementUnitId': managementUnitId }, 
 			{  }, 
 			{  }, 
 			{  }, 
@@ -1852,27 +1852,27 @@ class WorkforceManagementApi {
 	/**
 	 * Update an activity code
 	 * 
-	 * @param {String} buId The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user.
-	 * @param {String} acId The ID of the activity code to update
+	 * @param {String} businessUnitId The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user.
+	 * @param {String} activityCodeId The ID of the activity code to update
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body body
 	 */
-	patchWorkforcemanagementBusinessunitActivitycode(buId, acId, opts) { 
+	patchWorkforcemanagementBusinessunitActivitycode(businessUnitId, activityCodeId, opts) { 
 		opts = opts || {};
 		
-		// verify the required parameter 'buId' is set
-		if (buId === undefined || buId === null) {
-			throw 'Missing the required parameter "buId" when calling patchWorkforcemanagementBusinessunitActivitycode';
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null) {
+			throw 'Missing the required parameter "businessUnitId" when calling patchWorkforcemanagementBusinessunitActivitycode';
 		}
-		// verify the required parameter 'acId' is set
-		if (acId === undefined || acId === null) {
-			throw 'Missing the required parameter "acId" when calling patchWorkforcemanagementBusinessunitActivitycode';
+		// verify the required parameter 'activityCodeId' is set
+		if (activityCodeId === undefined || activityCodeId === null) {
+			throw 'Missing the required parameter "activityCodeId" when calling patchWorkforcemanagementBusinessunitActivitycode';
 		}
 
 		return this.apiClient.callApi(
-			'/api/v2/workforcemanagement/businessunits/{buId}/activitycodes/{acId}', 
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes/{activityCodeId}', 
 			'PATCH', 
-			{ 'buId': buId,'acId': acId }, 
+			{ 'businessUnitId': businessUnitId,'activityCodeId': activityCodeId }, 
 			{  }, 
 			{  }, 
 			{  }, 
@@ -1988,22 +1988,22 @@ class WorkforceManagementApi {
 	/**
 	 * Update the requested management unit
 	 * 
-	 * @param {String} muId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+	 * @param {String} managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body body
 	 */
-	patchWorkforcemanagementManagementunit(muId, opts) { 
+	patchWorkforcemanagementManagementunit(managementUnitId, opts) { 
 		opts = opts || {};
 		
-		// verify the required parameter 'muId' is set
-		if (muId === undefined || muId === null) {
-			throw 'Missing the required parameter "muId" when calling patchWorkforcemanagementManagementunit';
+		// verify the required parameter 'managementUnitId' is set
+		if (managementUnitId === undefined || managementUnitId === null) {
+			throw 'Missing the required parameter "managementUnitId" when calling patchWorkforcemanagementManagementunit';
 		}
 
 		return this.apiClient.callApi(
-			'/api/v2/workforcemanagement/managementunits/{muId}', 
+			'/api/v2/workforcemanagement/managementunits/{managementUnitId}', 
 			'PATCH', 
-			{ 'muId': muId }, 
+			{ 'managementUnitId': managementUnitId }, 
 			{  }, 
 			{  }, 
 			{  }, 
@@ -2017,18 +2017,18 @@ class WorkforceManagementApi {
 	/**
 	 * Update a time off request
 	 * 
-	 * @param {String} muId The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+	 * @param {String} managementUnitId The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
 	 * @param {String} userId The id of the user the requested time off request belongs to
 	 * @param {String} timeOffRequestId The id of the time off request to update
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body body
 	 */
-	patchWorkforcemanagementManagementunitUserTimeoffrequest(muId, userId, timeOffRequestId, opts) { 
+	patchWorkforcemanagementManagementunitUserTimeoffrequest(managementUnitId, userId, timeOffRequestId, opts) { 
 		opts = opts || {};
 		
-		// verify the required parameter 'muId' is set
-		if (muId === undefined || muId === null) {
-			throw 'Missing the required parameter "muId" when calling patchWorkforcemanagementManagementunitUserTimeoffrequest';
+		// verify the required parameter 'managementUnitId' is set
+		if (managementUnitId === undefined || managementUnitId === null) {
+			throw 'Missing the required parameter "managementUnitId" when calling patchWorkforcemanagementManagementunitUserTimeoffrequest';
 		}
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null) {
@@ -2040,9 +2040,9 @@ class WorkforceManagementApi {
 		}
 
 		return this.apiClient.callApi(
-			'/api/v2/workforcemanagement/managementunits/{muId}/users/{userId}/timeoffrequests/{timeOffRequestId}', 
+			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/users/{userId}/timeoffrequests/{timeOffRequestId}', 
 			'PATCH', 
-			{ 'muId': muId,'userId': userId,'timeOffRequestId': timeOffRequestId }, 
+			{ 'managementUnitId': managementUnitId,'userId': userId,'timeOffRequestId': timeOffRequestId }, 
 			{  }, 
 			{  }, 
 			{  }, 
@@ -2242,22 +2242,22 @@ class WorkforceManagementApi {
 	/**
 	 * Create a new activity code
 	 * 
-	 * @param {String} buId The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user.
+	 * @param {String} businessUnitId The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user.
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body body
 	 */
-	postWorkforcemanagementBusinessunitActivitycodes(buId, opts) { 
+	postWorkforcemanagementBusinessunitActivitycodes(businessUnitId, opts) { 
 		opts = opts || {};
 		
-		// verify the required parameter 'buId' is set
-		if (buId === undefined || buId === null) {
-			throw 'Missing the required parameter "buId" when calling postWorkforcemanagementBusinessunitActivitycodes';
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null) {
+			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitActivitycodes';
 		}
 
 		return this.apiClient.callApi(
-			'/api/v2/workforcemanagement/businessunits/{buId}/activitycodes', 
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes', 
 			'POST', 
-			{ 'buId': buId }, 
+			{ 'businessUnitId': businessUnitId }, 
 			{  }, 
 			{  }, 
 			{  }, 
@@ -2692,24 +2692,24 @@ class WorkforceManagementApi {
 	/**
 	 * Query published schedules for given given time range for set of users
 	 * 
-	 * @param {String} muId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+	 * @param {String} managementUnitId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body body
 	 * @param {Boolean} opts.forceAsync Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes
 	 * @param {Boolean} opts.forceDownloadService Force the result of this operation to be sent via download service.  For testing/app development purposes
 	 */
-	postWorkforcemanagementManagementunitAgentschedulesSearch(muId, opts) { 
+	postWorkforcemanagementManagementunitAgentschedulesSearch(managementUnitId, opts) { 
 		opts = opts || {};
 		
-		// verify the required parameter 'muId' is set
-		if (muId === undefined || muId === null) {
-			throw 'Missing the required parameter "muId" when calling postWorkforcemanagementManagementunitAgentschedulesSearch';
+		// verify the required parameter 'managementUnitId' is set
+		if (managementUnitId === undefined || managementUnitId === null) {
+			throw 'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitAgentschedulesSearch';
 		}
 
 		return this.apiClient.callApi(
-			'/api/v2/workforcemanagement/managementunits/{muId}/agentschedules/search', 
+			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/agentschedules/search', 
 			'POST', 
-			{ 'muId': muId }, 
+			{ 'managementUnitId': managementUnitId }, 
 			{ 'forceAsync': opts['forceAsync'],'forceDownloadService': opts['forceDownloadService'] }, 
 			{  }, 
 			{  }, 
@@ -2723,22 +2723,22 @@ class WorkforceManagementApi {
 	/**
 	 * Request a historical adherence report
 	 * The maximum supported range for historical adherence queries is 31 days, or 7 days with includeExceptions = true
-	 * @param {String} muId The management unit ID of the management unit
+	 * @param {String} managementUnitId The management unit ID of the management unit
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body body
 	 */
-	postWorkforcemanagementManagementunitHistoricaladherencequery(muId, opts) { 
+	postWorkforcemanagementManagementunitHistoricaladherencequery(managementUnitId, opts) { 
 		opts = opts || {};
 		
-		// verify the required parameter 'muId' is set
-		if (muId === undefined || muId === null) {
-			throw 'Missing the required parameter "muId" when calling postWorkforcemanagementManagementunitHistoricaladherencequery';
+		// verify the required parameter 'managementUnitId' is set
+		if (managementUnitId === undefined || managementUnitId === null) {
+			throw 'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitHistoricaladherencequery';
 		}
 
 		return this.apiClient.callApi(
-			'/api/v2/workforcemanagement/managementunits/{muId}/historicaladherencequery', 
+			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/historicaladherencequery', 
 			'POST', 
-			{ 'muId': muId }, 
+			{ 'managementUnitId': managementUnitId }, 
 			{  }, 
 			{  }, 
 			{  }, 
@@ -2752,22 +2752,22 @@ class WorkforceManagementApi {
 	/**
 	 * Move the requested management unit to a new business unit
 	 * Returns status 200 if the management unit is already in the requested business unit
-	 * @param {String} muId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+	 * @param {String} managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body body
 	 */
-	postWorkforcemanagementManagementunitMove(muId, opts) { 
+	postWorkforcemanagementManagementunitMove(managementUnitId, opts) { 
 		opts = opts || {};
 		
-		// verify the required parameter 'muId' is set
-		if (muId === undefined || muId === null) {
-			throw 'Missing the required parameter "muId" when calling postWorkforcemanagementManagementunitMove';
+		// verify the required parameter 'managementUnitId' is set
+		if (managementUnitId === undefined || managementUnitId === null) {
+			throw 'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitMove';
 		}
 
 		return this.apiClient.callApi(
-			'/api/v2/workforcemanagement/managementunits/{muId}/move', 
+			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/move', 
 			'POST', 
-			{ 'muId': muId }, 
+			{ 'managementUnitId': managementUnitId }, 
 			{  }, 
 			{  }, 
 			{  }, 
@@ -2781,22 +2781,22 @@ class WorkforceManagementApi {
 	/**
 	 * Query published schedules for given given time range for set of users
 	 * 
-	 * @param {String} muId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+	 * @param {String} managementUnitId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body body
 	 */
-	postWorkforcemanagementManagementunitSchedulesSearch(muId, opts) { 
+	postWorkforcemanagementManagementunitSchedulesSearch(managementUnitId, opts) { 
 		opts = opts || {};
 		
-		// verify the required parameter 'muId' is set
-		if (muId === undefined || muId === null) {
-			throw 'Missing the required parameter "muId" when calling postWorkforcemanagementManagementunitSchedulesSearch';
+		// verify the required parameter 'managementUnitId' is set
+		if (managementUnitId === undefined || managementUnitId === null) {
+			throw 'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitSchedulesSearch';
 		}
 
 		return this.apiClient.callApi(
-			'/api/v2/workforcemanagement/managementunits/{muId}/schedules/search', 
+			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/schedules/search', 
 			'POST', 
-			{ 'muId': muId }, 
+			{ 'managementUnitId': managementUnitId }, 
 			{  }, 
 			{  }, 
 			{  }, 
@@ -2810,22 +2810,22 @@ class WorkforceManagementApi {
 	/**
 	 * Create a new time off request
 	 * 
-	 * @param {String} muId The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+	 * @param {String} managementUnitId The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body body
 	 */
-	postWorkforcemanagementManagementunitTimeoffrequests(muId, opts) { 
+	postWorkforcemanagementManagementunitTimeoffrequests(managementUnitId, opts) { 
 		opts = opts || {};
 		
-		// verify the required parameter 'muId' is set
-		if (muId === undefined || muId === null) {
-			throw 'Missing the required parameter "muId" when calling postWorkforcemanagementManagementunitTimeoffrequests';
+		// verify the required parameter 'managementUnitId' is set
+		if (managementUnitId === undefined || managementUnitId === null) {
+			throw 'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitTimeoffrequests';
 		}
 
 		return this.apiClient.callApi(
-			'/api/v2/workforcemanagement/managementunits/{muId}/timeoffrequests', 
+			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffrequests', 
 			'POST', 
-			{ 'muId': muId }, 
+			{ 'managementUnitId': managementUnitId }, 
 			{  }, 
 			{  }, 
 			{  }, 
@@ -2839,22 +2839,22 @@ class WorkforceManagementApi {
 	/**
 	 * Gets the lookup ids to fetch the specified set of requests
 	 * 
-	 * @param {String} muId The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+	 * @param {String} managementUnitId The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body body
 	 */
-	postWorkforcemanagementManagementunitTimeoffrequestsQuery(muId, opts) { 
+	postWorkforcemanagementManagementunitTimeoffrequestsQuery(managementUnitId, opts) { 
 		opts = opts || {};
 		
-		// verify the required parameter 'muId' is set
-		if (muId === undefined || muId === null) {
-			throw 'Missing the required parameter "muId" when calling postWorkforcemanagementManagementunitTimeoffrequestsQuery';
+		// verify the required parameter 'managementUnitId' is set
+		if (managementUnitId === undefined || managementUnitId === null) {
+			throw 'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitTimeoffrequestsQuery';
 		}
 
 		return this.apiClient.callApi(
-			'/api/v2/workforcemanagement/managementunits/{muId}/timeoffrequests/query', 
+			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffrequests/query', 
 			'POST', 
-			{ 'muId': muId }, 
+			{ 'managementUnitId': managementUnitId }, 
 			{  }, 
 			{  }, 
 			{  }, 

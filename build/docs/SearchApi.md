@@ -23,6 +23,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postLocationsSearch**](SearchApi.html#postLocationsSearch) | **POST** /api/v2/locations/search | Search locations
 [**postSearch**](SearchApi.html#postSearch) | **POST** /api/v2/search | Search resources.
 [**postSearchSuggest**](SearchApi.html#postSearchSuggest) | **POST** /api/v2/search/suggest | Suggest resources.
+[**postSpeechandtextanalyticsTranscriptsSearch**](SearchApi.html#postSpeechandtextanalyticsTranscriptsSearch) | **POST** /api/v2/speechandtextanalytics/transcripts/search | Search resources.
 [**postUsersSearch**](SearchApi.html#postUsersSearch) | **POST** /api/v2/users/search | Search users
 [**postVoicemailSearch**](SearchApi.html#postVoicemailSearch) | **POST** /api/v2/voicemail/search | Search voicemails
 {: class="table table-striped"}
@@ -1673,6 +1674,167 @@ apiInstance.postSearchSuggest(body, opts)
 ### Return type
 
 **JsonNodeSearchResponse**
+
+<a name="postSpeechandtextanalyticsTranscriptsSearch"></a>
+
+# JsonSearchResponse postSpeechandtextanalyticsTranscriptsSearch(body)
+
+
+
+POST /api/v2/speechandtextanalytics/transcripts/search
+
+Search resources.
+
+
+
+Requires ANY permissions: 
+
+* analytics:conversationDetail:view
+* recording:recording:view
+
+
+### Request Body Schema
+
+<script type="text/javascript">
+	function copyTranscriptSearchRequestExample() {
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#TranscriptSearchRequestExample').text()).select();
+		document.execCommand("copy");
+		temp.remove();
+		return false;
+	}
+</script>
+
+TranscriptSearchRequest <a href="#" onclick="return copyTranscriptSearchRequestExample()">Copy</a>
+
+<div id="TranscriptSearchRequestExample">
+
+```{"language":"json", "maxHeight": "250px"}
+{ 
+  "sortOrder": String, 
+  "sortBy": String, 
+  "pageSize": Number, 
+  "pageNumber": Number, 
+  "sort": { 
+    "sortOrder": String, 
+    "sortBy": String, 
+  },  
+  "returnFields": [String], 
+  "types": [String], 
+  "query": { 
+    "endValue": String, 
+    "values": [String], 
+    "startValue": String, 
+    "fields": [String], 
+    "value": String, 
+    "operator": String, 
+    "group": { 
+      "endValue": String, 
+      "values": [String], 
+      "startValue": String, 
+      "fields": [String], 
+      "value": String, 
+      "operator": String, 
+      "group": { 
+        "endValue": String, 
+        "values": [String], 
+        "startValue": String, 
+        "fields": [String], 
+        "value": String, 
+        "operator": String, 
+        "group": { 
+          "endValue": String, 
+          "values": [String], 
+          "startValue": String, 
+          "fields": [String], 
+          "value": String, 
+          "operator": String, 
+          "group": { 
+            "endValue": String, 
+            "values": [String], 
+            "startValue": String, 
+            "fields": [String], 
+            "value": String, 
+            "operator": String, 
+            "group": { 
+              "endValue": String, 
+              "values": [String], 
+              "startValue": String, 
+              "fields": [String], 
+              "value": String, 
+              "operator": String, 
+              "group": { 
+                "endValue": String, 
+                "values": [String], 
+                "startValue": String, 
+                "fields": [String], 
+                "value": String, 
+                "operator": String, 
+                "group": [TranscriptSearchCriteria], 
+                "dateFormat": String, 
+                "type": String, 
+              },  
+              "dateFormat": String, 
+              "type": String, 
+            },  
+            "dateFormat": String, 
+            "type": String, 
+          },  
+          "dateFormat": String, 
+          "type": String, 
+        },  
+        "dateFormat": String, 
+        "type": String, 
+      },  
+      "dateFormat": String, 
+      "type": String, 
+    },  
+    "dateFormat": String, 
+    "type": String, 
+  },  
+}
+```
+
+</div>
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.SearchApi();
+
+let body = {}; // Object | Search request options
+
+apiInstance.postSpeechandtextanalyticsTranscriptsSearch(body)
+  .then((data) => {
+    console.log(`postSpeechandtextanalyticsTranscriptsSearch success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postSpeechandtextanalyticsTranscriptsSearch');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | Search request options |  |
+{: class="table table-striped"}
+
+### Return type
+
+**JsonSearchResponse**
 
 <a name="postUsersSearch"></a>
 

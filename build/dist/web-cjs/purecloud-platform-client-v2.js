@@ -6052,7 +6052,7 @@ function isSlowBuffer (obj) {
 
 /**
  * @module purecloud-platform-client-v2/ApiClient
- * @version 104.0.0
+ * @version 105.0.0
  */
 class ApiClient {
 	/**
@@ -6944,7 +6944,7 @@ class ApiClient {
 
 				// set header parameters
 				request.set(that.defaultHeaders).set(that.normalizeParams(headerParams));
-				//request.set({ 'purecloud-sdk': '104.0.0' });
+				//request.set({ 'purecloud-sdk': '105.0.0' });
 
 				// set request timeout
 				request.timeout(that.timeout);
@@ -7078,7 +7078,7 @@ class AlertingApi {
 	/**
 	 * Alerting service.
 	 * @module purecloud-platform-client-v2/api/AlertingApi
-	 * @version 104.0.0
+	 * @version 105.0.0
 	 */
 
 	/**
@@ -7392,7 +7392,7 @@ class AnalyticsApi {
 	/**
 	 * Analytics service.
 	 * @module purecloud-platform-client-v2/api/AnalyticsApi
-	 * @version 104.0.0
+	 * @version 105.0.0
 	 */
 
 	/**
@@ -8472,7 +8472,7 @@ class ArchitectApi {
 	/**
 	 * Architect service.
 	 * @module purecloud-platform-client-v2/api/ArchitectApi
-	 * @version 104.0.0
+	 * @version 105.0.0
 	 */
 
 	/**
@@ -11310,7 +11310,7 @@ class AuditApi {
 	/**
 	 * Audit service.
 	 * @module purecloud-platform-client-v2/api/AuditApi
-	 * @version 104.0.0
+	 * @version 105.0.0
 	 */
 
 	/**
@@ -11326,7 +11326,7 @@ class AuditApi {
 
 
 	/**
-	 * Get service mapping information used in audits.
+	 * Get service mapping information used in realtime audits.
 	 * 
 	 */
 	getAuditsQueryRealtimeServicemapping() { 
@@ -11481,7 +11481,7 @@ class AuthorizationApi {
 	/**
 	 * Authorization service.
 	 * @module purecloud-platform-client-v2/api/AuthorizationApi
-	 * @version 104.0.0
+	 * @version 105.0.0
 	 */
 
 	/**
@@ -12600,7 +12600,7 @@ class BillingApi {
 	/**
 	 * Billing service.
 	 * @module purecloud-platform-client-v2/api/BillingApi
-	 * @version 104.0.0
+	 * @version 105.0.0
 	 */
 
 	/**
@@ -12676,11 +12676,102 @@ class BillingApi {
 
 }
 
+class ChatApi {
+	/**
+	 * Chat service.
+	 * @module purecloud-platform-client-v2/api/ChatApi
+	 * @version 105.0.0
+	 */
+
+	/**
+	 * Constructs a new ChatApi. 
+	 * @alias module:purecloud-platform-client-v2/api/ChatApi
+	 * @class
+	 * @param {module:purecloud-platform-client-v2/ApiClient} apiClient Optional API client implementation to use,
+	 * default to {@link module:purecloud-platform-client-v2/ApiClient#instance} if unspecified.
+	 */
+	constructor(apiClient) {
+		this.apiClient = apiClient || ApiClient.instance;
+	}
+
+
+	/**
+	 * Get Chat Settings.
+	 * 
+	 */
+	getChatSettings() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/chat/settings', 
+			'GET', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Patch Chat Settings.
+	 * 
+	 * @param {Object} body Chat
+	 */
+	patchChatSettings(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchChatSettings';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/chat/settings', 
+			'PATCH', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update Chat Settings.
+	 * 
+	 * @param {Object} body Chat
+	 */
+	putChatSettings(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putChatSettings';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/chat/settings', 
+			'PUT', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+}
+
 class CoachingApi {
 	/**
 	 * Coaching service.
 	 * @module purecloud-platform-client-v2/api/CoachingApi
-	 * @version 104.0.0
+	 * @version 105.0.0
 	 */
 
 	/**
@@ -13230,7 +13321,7 @@ class ContentManagementApi {
 	/**
 	 * ContentManagement service.
 	 * @module purecloud-platform-client-v2/api/ContentManagementApi
-	 * @version 104.0.0
+	 * @version 105.0.0
 	 */
 
 	/**
@@ -14370,7 +14461,7 @@ class ConversationsApi {
 	/**
 	 * Conversations service.
 	 * @module purecloud-platform-client-v2/api/ConversationsApi
-	 * @version 104.0.0
+	 * @version 105.0.0
 	 */
 
 	/**
@@ -18488,7 +18579,7 @@ class DataExtensionsApi {
 	/**
 	 * DataExtensions service.
 	 * @module purecloud-platform-client-v2/api/DataExtensionsApi
-	 * @version 104.0.0
+	 * @version 105.0.0
 	 */
 
 	/**
@@ -18574,7 +18665,7 @@ class ExternalContactsApi {
 	/**
 	 * ExternalContacts service.
 	 * @module purecloud-platform-client-v2/api/ExternalContactsApi
-	 * @version 104.0.0
+	 * @version 105.0.0
 	 */
 
 	/**
@@ -19917,7 +20008,7 @@ class FaxApi {
 	/**
 	 * Fax service.
 	 * @module purecloud-platform-client-v2/api/FaxApi
-	 * @version 104.0.0
+	 * @version 105.0.0
 	 */
 
 	/**
@@ -20088,7 +20179,7 @@ class FlowsApi {
 	/**
 	 * Flows service.
 	 * @module purecloud-platform-client-v2/api/FlowsApi
-	 * @version 104.0.0
+	 * @version 105.0.0
 	 */
 
 	/**
@@ -20159,7 +20250,7 @@ class GeneralDataProtectionRegulationApi {
 	/**
 	 * GeneralDataProtectionRegulation service.
 	 * @module purecloud-platform-client-v2/api/GeneralDataProtectionRegulationApi
-	 * @version 104.0.0
+	 * @version 105.0.0
 	 */
 
 	/**
@@ -20289,7 +20380,7 @@ class GeolocationApi {
 	/**
 	 * Geolocation service.
 	 * @module purecloud-platform-client-v2/api/GeolocationApi
-	 * @version 104.0.0
+	 * @version 105.0.0
 	 */
 
 	/**
@@ -20420,7 +20511,7 @@ class GreetingsApi {
 	/**
 	 * Greetings service.
 	 * @module purecloud-platform-client-v2/api/GreetingsApi
-	 * @version 104.0.0
+	 * @version 105.0.0
 	 */
 
 	/**
@@ -20875,7 +20966,7 @@ class GroupsApi {
 	/**
 	 * Groups service.
 	 * @module purecloud-platform-client-v2/api/GroupsApi
-	 * @version 104.0.0
+	 * @version 105.0.0
 	 */
 
 	/**
@@ -21280,7 +21371,7 @@ class IdentityProviderApi {
 	/**
 	 * IdentityProvider service.
 	 * @module purecloud-platform-client-v2/api/IdentityProviderApi
-	 * @version 104.0.0
+	 * @version 105.0.0
 	 */
 
 	/**
@@ -22036,7 +22127,7 @@ class IntegrationsApi {
 	/**
 	 * Integrations service.
 	 * @module purecloud-platform-client-v2/api/IntegrationsApi
-	 * @version 104.0.0
+	 * @version 105.0.0
 	 */
 
 	/**
@@ -23528,7 +23619,7 @@ class JourneyApi {
 	/**
 	 * Journey service.
 	 * @module purecloud-platform-client-v2/api/JourneyApi
-	 * @version 104.0.0
+	 * @version 105.0.0
 	 */
 
 	/**
@@ -23651,6 +23742,7 @@ class JourneyApi {
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Boolean} opts.isActive Determines whether or not to show only active segments.
+	 * @param {Array.<String>} opts.segmentIds IDs of segments to return. Use of this parameter is not compatible with pagination or sorting. A maximum of 100 segments are allowed per request.
 	 */
 	getJourneySegments(opts) { 
 		opts = opts || {};
@@ -23660,7 +23752,7 @@ class JourneyApi {
 			'/api/v2/journey/segments', 
 			'GET', 
 			{  }, 
-			{ 'sortBy': opts['sortBy'],'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'isActive': opts['isActive'] }, 
+			{ 'sortBy': opts['sortBy'],'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'isActive': opts['isActive'],'segmentIds': this.apiClient.buildCollectionParam(opts['segmentIds'], 'multi') }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -23783,7 +23875,7 @@ class KnowledgeApi {
 	/**
 	 * Knowledge service.
 	 * @module purecloud-platform-client-v2/api/KnowledgeApi
-	 * @version 104.0.0
+	 * @version 105.0.0
 	 */
 
 	/**
@@ -23926,7 +24018,7 @@ class KnowledgeApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.before The cursor that points to the start of the set of entities that has been returned.
 	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
-	 * @param {String} opts.limit Number of entities to return. Maximum of 200.
+	 * @param {String} opts.limit Number of entities to return. Maximum of 200. Deprecated in favour of pageSize.
 	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
 	 * @param {String} opts.name Filter to return the categories that starts with the given category name.
 	 */
@@ -24034,7 +24126,7 @@ class KnowledgeApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.before The cursor that points to the start of the set of entities that has been returned.
 	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
-	 * @param {String} opts.limit Number of entities to return. Maximum of 200.
+	 * @param {String} opts.limit Number of entities to return. Maximum of 200. Deprecated in favour of pageSize.
 	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
 	 * @param {String} opts.categories Filter by categories ids, comma separated values expected.
 	 * @param {String} opts.title Filter by document title.
@@ -24108,7 +24200,7 @@ class KnowledgeApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.before The cursor that points to the start of the set of entities that has been returned.
 	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
-	 * @param {String} opts.limit Number of entities to return. Maximum of 200.
+	 * @param {String} opts.limit Number of entities to return. Maximum of 200. Deprecated in favour of pageSize.
 	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
 	 * @param {Object} opts.knowledgeDocumentsState Return the training with the specified state of the trained documents.
 	 */
@@ -24144,7 +24236,7 @@ class KnowledgeApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.before The cursor that points to the start of the set of entities that has been returned.
 	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
-	 * @param {String} opts.limit Number of entities to return. Maximum of 200.
+	 * @param {String} opts.limit Number of entities to return. Maximum of 200. Deprecated in favour of pageSize.
 	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
 	 * @param {String} opts.name Name of the KnowledgeBase to filter.
 	 */
@@ -24506,7 +24598,7 @@ class LanguageUnderstandingApi {
 	/**
 	 * LanguageUnderstanding service.
 	 * @module purecloud-platform-client-v2/api/LanguageUnderstandingApi
-	 * @version 104.0.0
+	 * @version 105.0.0
 	 */
 
 	/**
@@ -25074,7 +25166,7 @@ class LanguagesApi {
 	/**
 	 * Languages service.
 	 * @module purecloud-platform-client-v2/api/LanguagesApi
-	 * @version 104.0.0
+	 * @version 105.0.0
 	 */
 
 	/**
@@ -25342,7 +25434,7 @@ class LicenseApi {
 	/**
 	 * License service.
 	 * @module purecloud-platform-client-v2/api/LicenseApi
-	 * @version 104.0.0
+	 * @version 105.0.0
 	 */
 
 	/**
@@ -25580,7 +25672,7 @@ class LocationsApi {
 	/**
 	 * Locations service.
 	 * @module purecloud-platform-client-v2/api/LocationsApi
-	 * @version 104.0.0
+	 * @version 105.0.0
 	 */
 
 	/**
@@ -25816,7 +25908,7 @@ class MobileDevicesApi {
 	/**
 	 * MobileDevices service.
 	 * @module purecloud-platform-client-v2/api/MobileDevicesApi
-	 * @version 104.0.0
+	 * @version 105.0.0
 	 */
 
 	/**
@@ -25967,7 +26059,7 @@ class NotificationsApi {
 	/**
 	 * Notifications service.
 	 * @module purecloud-platform-client-v2/api/NotificationsApi
-	 * @version 104.0.0
+	 * @version 105.0.0
 	 */
 
 	/**
@@ -26166,7 +26258,7 @@ class OAuthApi {
 	/**
 	 * OAuth service.
 	 * @module purecloud-platform-client-v2/api/OAuthApi
-	 * @version 104.0.0
+	 * @version 105.0.0
 	 */
 
 	/**
@@ -26524,7 +26616,7 @@ class ObjectsApi {
 	/**
 	 * Objects service.
 	 * @module purecloud-platform-client-v2/api/ObjectsApi
-	 * @version 104.0.0
+	 * @version 105.0.0
 	 */
 
 	/**
@@ -26765,7 +26857,7 @@ class OrganizationApi {
 	/**
 	 * Organization service.
 	 * @module purecloud-platform-client-v2/api/OrganizationApi
-	 * @version 104.0.0
+	 * @version 105.0.0
 	 */
 
 	/**
@@ -27020,7 +27112,7 @@ class OrganizationAuthorizationApi {
 	/**
 	 * OrganizationAuthorization service.
 	 * @module purecloud-platform-client-v2/api/OrganizationAuthorizationApi
-	 * @version 104.0.0
+	 * @version 105.0.0
 	 */
 
 	/**
@@ -27730,7 +27822,7 @@ class OutboundApi {
 	/**
 	 * Outbound service.
 	 * @module purecloud-platform-client-v2/api/OutboundApi
-	 * @version 104.0.0
+	 * @version 105.0.0
 	 */
 
 	/**
@@ -30704,7 +30796,7 @@ class PresenceApi {
 	/**
 	 * Presence service.
 	 * @module purecloud-platform-client-v2/api/PresenceApi
-	 * @version 104.0.0
+	 * @version 105.0.0
 	 */
 
 	/**
@@ -31051,7 +31143,7 @@ class QualityApi {
 	/**
 	 * Quality service.
 	 * @module purecloud-platform-client-v2/api/QualityApi
-	 * @version 104.0.0
+	 * @version 105.0.0
 	 */
 
 	/**
@@ -32724,7 +32816,7 @@ class RecordingApi {
 	/**
 	 * Recording service.
 	 * @module purecloud-platform-client-v2/api/RecordingApi
-	 * @version 104.0.0
+	 * @version 105.0.0
 	 */
 
 	/**
@@ -34163,7 +34255,7 @@ class ResponseManagementApi {
 	/**
 	 * ResponseManagement service.
 	 * @module purecloud-platform-client-v2/api/ResponseManagementApi
-	 * @version 104.0.0
+	 * @version 105.0.0
 	 */
 
 	/**
@@ -34488,7 +34580,7 @@ class RoutingApi {
 	/**
 	 * Routing service.
 	 * @module purecloud-platform-client-v2/api/RoutingApi
-	 * @version 104.0.0
+	 * @version 105.0.0
 	 */
 
 	/**
@@ -34588,7 +34680,7 @@ class RoutingApi {
 	}
 
 	/**
-	 * Delete queue member
+	 * DEPRECATED: use DELETE /routing/queues/{queueId}/members/{memberId}.  Delete queue member.
 	 * 
 	 * @param {String} queueId Queue ID
 	 * @param {String} memberId Member ID
@@ -35162,11 +35254,11 @@ class RoutingApi {
 	}
 
 	/**
-	 * Get the members of this queue
+	 * DEPRECATED: use GET /routing/queues/{queueId}/members.  Get the members of this queue.
 	 * 
 	 * @param {String} queueId Queue ID
 	 * @param {Object} opts Optional parameters
-	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {Number} opts.pageSize Page size [max 100] (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {String} opts.sortBy Sort by (default to name)
 	 * @param {Array.<String>} opts.expand Which fields, if any, to expand.
@@ -35820,7 +35912,7 @@ class RoutingApi {
 	}
 
 	/**
-	 * Update the ring number OR joined status for a User in a Queue
+	 * DEPRECATED: use PATCH /routing/queues/{queueId}/members/{memberId}.  Update the ring number OR joined status for a User in a Queue.
 	 * 
 	 * @param {String} queueId Queue ID
 	 * @param {String} memberId Member ID
@@ -35855,7 +35947,7 @@ class RoutingApi {
 	}
 
 	/**
-	 * Join or unjoin a set of users for a queue
+	 * DEPRECATED: use PATCH /routing/queues/{queueId}/members.  Join or unjoin a set of users for a queue.
 	 * 
 	 * @param {String} queueId Queue ID
 	 * @param {Array.<Object>} body Queue Members
@@ -36208,7 +36300,7 @@ class RoutingApi {
 	}
 
 	/**
-	 * Bulk add or delete up to 100 queue members
+	 * DEPRECATED: use POST /routing/queues/{queueId}/members.  Bulk add or delete up to 100 queue members.
 	 * 
 	 * @param {String} queueId Queue ID
 	 * @param {Array.<Object>} body Queue Members
@@ -36787,7 +36879,7 @@ class SCIMApi {
 	/**
 	 * SCIM service.
 	 * @module purecloud-platform-client-v2/api/SCIMApi
-	 * @version 104.0.0
+	 * @version 105.0.0
 	 */
 
 	/**
@@ -36801,35 +36893,6 @@ class SCIMApi {
 		this.apiClient = apiClient || ApiClient.instance;
 	}
 
-
-	/**
-	 * Delete a group
-	 * 
-	 * @param {String} groupId The ID of a group. Returned with GET /api/v2/scim/groups or GET /api/v2/scim/v2/groups.
-	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.ifMatch The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/groups/{groupId} or GET /api/v2/scim/v2/groups/{groupId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns 400 with a \&quot;scimType\&quot; of \&quot;invalidVers\&quot;.
-	 */
-	deleteScimGroup(groupId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'groupId' is set
-		if (groupId === undefined || groupId === null) {
-			throw 'Missing the required parameter "groupId" when calling deleteScimGroup';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/scim/groups/{groupId}', 
-			'DELETE', 
-			{ 'groupId': groupId }, 
-			{  }, 
-			{ 'If-Match': opts['ifMatch'] }, 
-			{  }, 
-			null, 
-			['PureCloud OAuth'], 
-			['application/json', 'application/scim+json'], 
-			['application/json', 'application/scim+json']
-		);
-	}
 
 	/**
 	 * Delete a user
@@ -36850,35 +36913,6 @@ class SCIMApi {
 			'/api/v2/scim/users/{userId}', 
 			'DELETE', 
 			{ 'userId': userId }, 
-			{  }, 
-			{ 'If-Match': opts['ifMatch'] }, 
-			{  }, 
-			null, 
-			['PureCloud OAuth'], 
-			['application/json', 'application/scim+json'], 
-			['application/json', 'application/scim+json']
-		);
-	}
-
-	/**
-	 * Delete a group
-	 * 
-	 * @param {String} groupId The ID of a group. Returned with GET /api/v2/scim/groups or GET /api/v2/scim/v2/groups.
-	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.ifMatch The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/groups/{groupId} or GET /api/v2/scim/v2/groups/{groupId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns 400 with a \&quot;scimType\&quot; of \&quot;invalidVers\&quot;.
-	 */
-	deleteScimV2Group(groupId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'groupId' is set
-		if (groupId === undefined || groupId === null) {
-			throw 'Missing the required parameter "groupId" when calling deleteScimV2Group';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/scim/v2/groups/{groupId}', 
-			'DELETE', 
-			{ 'groupId': groupId }, 
 			{  }, 
 			{ 'If-Match': opts['ifMatch'] }, 
 			{  }, 
@@ -37531,31 +37565,6 @@ class SCIMApi {
 	}
 
 	/**
-	 * Create a group
-	 * Creates a Genesys Cloud group with group visibility set to \&quot;public\&quot; and rules visibility set to \&quot;true\&quot;. Auto-creates an \&quot;externalId\&quot;. \&quot;externalId\&quot; is used to determine if DELETE /api/v2/scim/groups/{groupId} or DELETE /api/v2/scim/v2/groups/{groupId} is allowed.
-	 * @param {Object} body The information used to create a group.
-	 */
-	postScimGroups(body) { 
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postScimGroups';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/scim/groups', 
-			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
-			body, 
-			['PureCloud OAuth'], 
-			['application/json', 'application/scim+json'], 
-			['application/json', 'application/scim+json']
-		);
-	}
-
-	/**
 	 * Create a user
 	 * 
 	 * @param {Object} body The information used to create a user.
@@ -37568,31 +37577,6 @@ class SCIMApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/scim/users', 
-			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
-			body, 
-			['PureCloud OAuth'], 
-			['application/json', 'application/scim+json'], 
-			['application/json', 'application/scim+json']
-		);
-	}
-
-	/**
-	 * Create a group
-	 * Creates an \&quot;official\&quot; Genesys Cloud group with group visibility set to \&quot;public\&quot; and rules visibility set to \&quot;true\&quot;. Auto-creates an \&quot;externalId\&quot;. \&quot;externalId\&quot; is used to determine if DELETE /api/v2/scim/groups/{groupId} or DELETE /api/v2/scim/v2/groups/{groupId} should be allowed.
-	 * @param {Object} body The information used to create a group.
-	 */
-	postScimV2Groups(body) { 
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postScimV2Groups';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/scim/v2/groups', 
 			'POST', 
 			{  }, 
 			{  }, 
@@ -37772,7 +37756,7 @@ class ScriptsApi {
 	/**
 	 * Scripts service.
 	 * @module purecloud-platform-client-v2/api/ScriptsApi
-	 * @version 104.0.0
+	 * @version 105.0.0
 	 */
 
 	/**
@@ -38125,7 +38109,7 @@ class SearchApi {
 	/**
 	 * Search service.
 	 * @module purecloud-platform-client-v2/api/SearchApi
-	 * @version 104.0.0
+	 * @version 105.0.0
 	 */
 
 	/**
@@ -38580,6 +38564,31 @@ class SearchApi {
 	}
 
 	/**
+	 * Search resources.
+	 * 
+	 * @param {Object} body Search request options
+	 */
+	postSpeechandtextanalyticsTranscriptsSearch(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postSpeechandtextanalyticsTranscriptsSearch';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/speechandtextanalytics/transcripts/search', 
+			'POST', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
 	 * Search users
 	 * 
 	 * @param {Object} body Search request options
@@ -38635,7 +38644,7 @@ class SpeechTextAnalyticsApi {
 	/**
 	 * SpeechTextAnalytics service.
 	 * @module purecloud-platform-client-v2/api/SpeechTextAnalyticsApi
-	 * @version 104.0.0
+	 * @version 105.0.0
 	 */
 
 	/**
@@ -38705,13 +38714,83 @@ class SpeechTextAnalyticsApi {
 		);
 	}
 
+	/**
+	 * Get Speech And Text Analytics Settings
+	 * 
+	 */
+	getSpeechandtextanalyticsSettings() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/speechandtextanalytics/settings', 
+			'GET', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Patch Speech And Text Analytics Settings
+	 * 
+	 * @param {Object} body Speech And Text Analytics Settings
+	 */
+	patchSpeechandtextanalyticsSettings(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchSpeechandtextanalyticsSettings';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/speechandtextanalytics/settings', 
+			'PATCH', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Search resources.
+	 * 
+	 * @param {Object} body Search request options
+	 */
+	postSpeechandtextanalyticsTranscriptsSearch(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postSpeechandtextanalyticsTranscriptsSearch';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/speechandtextanalytics/transcripts/search', 
+			'POST', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
 }
 
 class StationsApi {
 	/**
 	 * Stations service.
 	 * @module purecloud-platform-client-v2/api/StationsApi
-	 * @version 104.0.0
+	 * @version 105.0.0
 	 */
 
 	/**
@@ -38858,7 +38937,7 @@ class SuggestApi {
 	/**
 	 * Suggest service.
 	 * @module purecloud-platform-client-v2/api/SuggestApi
-	 * @version 104.0.0
+	 * @version 105.0.0
 	 */
 
 	/**
@@ -38997,7 +39076,7 @@ class TelephonyApi {
 	/**
 	 * Telephony service.
 	 * @module purecloud-platform-client-v2/api/TelephonyApi
-	 * @version 104.0.0
+	 * @version 105.0.0
 	 */
 
 	/**
@@ -39105,7 +39184,7 @@ class TelephonyProvidersEdgeApi {
 	/**
 	 * TelephonyProvidersEdge service.
 	 * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-	 * @version 104.0.0
+	 * @version 105.0.0
 	 */
 
 	/**
@@ -42682,7 +42761,7 @@ class TextbotsApi {
 	/**
 	 * Textbots service.
 	 * @module purecloud-platform-client-v2/api/TextbotsApi
-	 * @version 104.0.0
+	 * @version 105.0.0
 	 */
 
 	/**
@@ -42728,7 +42807,7 @@ class TokensApi {
 	/**
 	 * Tokens service.
 	 * @module purecloud-platform-client-v2/api/TokensApi
-	 * @version 104.0.0
+	 * @version 105.0.0
 	 */
 
 	/**
@@ -42814,7 +42893,7 @@ class UploadsApi {
 	/**
 	 * Uploads service.
 	 * @module purecloud-platform-client-v2/api/UploadsApi
-	 * @version 104.0.0
+	 * @version 105.0.0
 	 */
 
 	/**
@@ -42860,7 +42939,7 @@ class UsageApi {
 	/**
 	 * Usage service.
 	 * @module purecloud-platform-client-v2/api/UsageApi
-	 * @version 104.0.0
+	 * @version 105.0.0
 	 */
 
 	/**
@@ -42931,7 +43010,7 @@ class UserRecordingsApi {
 	/**
 	 * UserRecordings service.
 	 * @module purecloud-platform-client-v2/api/UserRecordingsApi
-	 * @version 104.0.0
+	 * @version 105.0.0
 	 */
 
 	/**
@@ -43115,7 +43194,7 @@ class UsersApi {
 	/**
 	 * Users service.
 	 * @module purecloud-platform-client-v2/api/UsersApi
-	 * @version 104.0.0
+	 * @version 105.0.0
 	 */
 
 	/**
@@ -45328,7 +45407,7 @@ class UtilitiesApi {
 	/**
 	 * Utilities service.
 	 * @module purecloud-platform-client-v2/api/UtilitiesApi
-	 * @version 104.0.0
+	 * @version 105.0.0
 	 */
 
 	/**
@@ -45439,7 +45518,7 @@ class VoicemailApi {
 	/**
 	 * Voicemail service.
 	 * @module purecloud-platform-client-v2/api/VoicemailApi
-	 * @version 104.0.0
+	 * @version 105.0.0
 	 */
 
 	/**
@@ -46076,7 +46155,7 @@ class WebChatApi {
 	/**
 	 * WebChat service.
 	 * @module purecloud-platform-client-v2/api/WebChatApi
-	 * @version 104.0.0
+	 * @version 105.0.0
 	 */
 
 	/**
@@ -46620,7 +46699,7 @@ class WidgetsApi {
 	/**
 	 * Widgets service.
 	 * @module purecloud-platform-client-v2/api/WidgetsApi
-	 * @version 104.0.0
+	 * @version 105.0.0
 	 */
 
 	/**
@@ -46766,7 +46845,7 @@ class WorkforceManagementApi {
 	/**
 	 * WorkforceManagement service.
 	 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-	 * @version 104.0.0
+	 * @version 105.0.0
 	 */
 
 	/**
@@ -46809,23 +46888,23 @@ class WorkforceManagementApi {
 	/**
 	 * Deletes an activity code
 	 * 
-	 * @param {String} buId The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user.
-	 * @param {String} acId The ID of the activity code to delete
+	 * @param {String} businessUnitId The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user.
+	 * @param {String} activityCodeId The ID of the activity code to delete
 	 */
-	deleteWorkforcemanagementBusinessunitActivitycode(buId, acId) { 
-		// verify the required parameter 'buId' is set
-		if (buId === undefined || buId === null) {
-			throw 'Missing the required parameter "buId" when calling deleteWorkforcemanagementBusinessunitActivitycode';
+	deleteWorkforcemanagementBusinessunitActivitycode(businessUnitId, activityCodeId) { 
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null) {
+			throw 'Missing the required parameter "businessUnitId" when calling deleteWorkforcemanagementBusinessunitActivitycode';
 		}
-		// verify the required parameter 'acId' is set
-		if (acId === undefined || acId === null) {
-			throw 'Missing the required parameter "acId" when calling deleteWorkforcemanagementBusinessunitActivitycode';
+		// verify the required parameter 'activityCodeId' is set
+		if (activityCodeId === undefined || activityCodeId === null) {
+			throw 'Missing the required parameter "activityCodeId" when calling deleteWorkforcemanagementBusinessunitActivitycode';
 		}
 
 		return this.apiClient.callApi(
-			'/api/v2/workforcemanagement/businessunits/{buId}/activitycodes/{acId}', 
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes/{activityCodeId}', 
 			'DELETE', 
-			{ 'buId': buId,'acId': acId }, 
+			{ 'businessUnitId': businessUnitId,'activityCodeId': activityCodeId }, 
 			{  }, 
 			{  }, 
 			{  }, 
@@ -46999,18 +47078,18 @@ class WorkforceManagementApi {
 	/**
 	 * Delete management unit
 	 * 
-	 * @param {String} muId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+	 * @param {String} managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
 	 */
-	deleteWorkforcemanagementManagementunit(muId) { 
-		// verify the required parameter 'muId' is set
-		if (muId === undefined || muId === null) {
-			throw 'Missing the required parameter "muId" when calling deleteWorkforcemanagementManagementunit';
+	deleteWorkforcemanagementManagementunit(managementUnitId) { 
+		// verify the required parameter 'managementUnitId' is set
+		if (managementUnitId === undefined || managementUnitId === null) {
+			throw 'Missing the required parameter "managementUnitId" when calling deleteWorkforcemanagementManagementunit';
 		}
 
 		return this.apiClient.callApi(
-			'/api/v2/workforcemanagement/managementunits/{muId}', 
+			'/api/v2/workforcemanagement/managementunits/{managementUnitId}', 
 			'DELETE', 
-			{ 'muId': muId }, 
+			{ 'managementUnitId': managementUnitId }, 
 			{  }, 
 			{  }, 
 			{  }, 
@@ -47163,23 +47242,23 @@ class WorkforceManagementApi {
 	/**
 	 * Get an activity code
 	 * 
-	 * @param {String} buId The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user.
-	 * @param {String} acId The ID of the activity code to fetch
+	 * @param {String} businessUnitId The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user.
+	 * @param {String} activityCodeId The ID of the activity code to fetch
 	 */
-	getWorkforcemanagementBusinessunitActivitycode(buId, acId) { 
-		// verify the required parameter 'buId' is set
-		if (buId === undefined || buId === null) {
-			throw 'Missing the required parameter "buId" when calling getWorkforcemanagementBusinessunitActivitycode';
+	getWorkforcemanagementBusinessunitActivitycode(businessUnitId, activityCodeId) { 
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null) {
+			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitActivitycode';
 		}
-		// verify the required parameter 'acId' is set
-		if (acId === undefined || acId === null) {
-			throw 'Missing the required parameter "acId" when calling getWorkforcemanagementBusinessunitActivitycode';
+		// verify the required parameter 'activityCodeId' is set
+		if (activityCodeId === undefined || activityCodeId === null) {
+			throw 'Missing the required parameter "activityCodeId" when calling getWorkforcemanagementBusinessunitActivitycode';
 		}
 
 		return this.apiClient.callApi(
-			'/api/v2/workforcemanagement/businessunits/{buId}/activitycodes/{acId}', 
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes/{activityCodeId}', 
 			'GET', 
-			{ 'buId': buId,'acId': acId }, 
+			{ 'businessUnitId': businessUnitId,'activityCodeId': activityCodeId }, 
 			{  }, 
 			{  }, 
 			{  }, 
@@ -47193,18 +47272,18 @@ class WorkforceManagementApi {
 	/**
 	 * Get activity codes
 	 * 
-	 * @param {String} buId The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user.
+	 * @param {String} businessUnitId The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user.
 	 */
-	getWorkforcemanagementBusinessunitActivitycodes(buId) { 
-		// verify the required parameter 'buId' is set
-		if (buId === undefined || buId === null) {
-			throw 'Missing the required parameter "buId" when calling getWorkforcemanagementBusinessunitActivitycodes';
+	getWorkforcemanagementBusinessunitActivitycodes(businessUnitId) { 
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null) {
+			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitActivitycodes';
 		}
 
 		return this.apiClient.callApi(
-			'/api/v2/workforcemanagement/businessunits/{buId}/activitycodes', 
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes', 
 			'GET', 
-			{ 'buId': buId }, 
+			{ 'businessUnitId': businessUnitId }, 
 			{  }, 
 			{  }, 
 			{  }, 
@@ -47899,22 +47978,22 @@ class WorkforceManagementApi {
 	/**
 	 * Get management unit
 	 * 
-	 * @param {String} muId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+	 * @param {String} managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand 
 	 */
-	getWorkforcemanagementManagementunit(muId, opts) { 
+	getWorkforcemanagementManagementunit(managementUnitId, opts) { 
 		opts = opts || {};
 		
-		// verify the required parameter 'muId' is set
-		if (muId === undefined || muId === null) {
-			throw 'Missing the required parameter "muId" when calling getWorkforcemanagementManagementunit';
+		// verify the required parameter 'managementUnitId' is set
+		if (managementUnitId === undefined || managementUnitId === null) {
+			throw 'Missing the required parameter "managementUnitId" when calling getWorkforcemanagementManagementunit';
 		}
 
 		return this.apiClient.callApi(
-			'/api/v2/workforcemanagement/managementunits/{muId}', 
+			'/api/v2/workforcemanagement/managementunits/{managementUnitId}', 
 			'GET', 
-			{ 'muId': muId }, 
+			{ 'managementUnitId': managementUnitId }, 
 			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') }, 
 			{  }, 
 			{  }, 
@@ -47928,18 +48007,18 @@ class WorkforceManagementApi {
 	/**
 	 * Get activity codes
 	 * 
-	 * @param {String} muId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+	 * @param {String} managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
 	 */
-	getWorkforcemanagementManagementunitActivitycodes(muId) { 
-		// verify the required parameter 'muId' is set
-		if (muId === undefined || muId === null) {
-			throw 'Missing the required parameter "muId" when calling getWorkforcemanagementManagementunitActivitycodes';
+	getWorkforcemanagementManagementunitActivitycodes(managementUnitId) { 
+		// verify the required parameter 'managementUnitId' is set
+		if (managementUnitId === undefined || managementUnitId === null) {
+			throw 'Missing the required parameter "managementUnitId" when calling getWorkforcemanagementManagementunitActivitycodes';
 		}
 
 		return this.apiClient.callApi(
-			'/api/v2/workforcemanagement/managementunits/{muId}/activitycodes', 
+			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/activitycodes', 
 			'GET', 
-			{ 'muId': muId }, 
+			{ 'managementUnitId': managementUnitId }, 
 			{  }, 
 			{  }, 
 			{  }, 
@@ -48046,18 +48125,18 @@ class WorkforceManagementApi {
 	/**
 	 * Gets a summary of all shift trades in the matched state
 	 * 
-	 * @param {String} muId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+	 * @param {String} managementUnitId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
 	 */
-	getWorkforcemanagementManagementunitShifttradesMatched(muId) { 
-		// verify the required parameter 'muId' is set
-		if (muId === undefined || muId === null) {
-			throw 'Missing the required parameter "muId" when calling getWorkforcemanagementManagementunitShifttradesMatched';
+	getWorkforcemanagementManagementunitShifttradesMatched(managementUnitId) { 
+		// verify the required parameter 'managementUnitId' is set
+		if (managementUnitId === undefined || managementUnitId === null) {
+			throw 'Missing the required parameter "managementUnitId" when calling getWorkforcemanagementManagementunitShifttradesMatched';
 		}
 
 		return this.apiClient.callApi(
-			'/api/v2/workforcemanagement/managementunits/{muId}/shifttrades/matched', 
+			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/shifttrades/matched', 
 			'GET', 
-			{ 'muId': muId }, 
+			{ 'managementUnitId': managementUnitId }, 
 			{  }, 
 			{  }, 
 			{  }, 
@@ -48071,18 +48150,18 @@ class WorkforceManagementApi {
 	/**
 	 * Gets list of users available for whom you can send direct shift trade requests
 	 * 
-	 * @param {String} muId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+	 * @param {String} managementUnitId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
 	 */
-	getWorkforcemanagementManagementunitShifttradesUsers(muId) { 
-		// verify the required parameter 'muId' is set
-		if (muId === undefined || muId === null) {
-			throw 'Missing the required parameter "muId" when calling getWorkforcemanagementManagementunitShifttradesUsers';
+	getWorkforcemanagementManagementunitShifttradesUsers(managementUnitId) { 
+		// verify the required parameter 'managementUnitId' is set
+		if (managementUnitId === undefined || managementUnitId === null) {
+			throw 'Missing the required parameter "managementUnitId" when calling getWorkforcemanagementManagementunitShifttradesUsers';
 		}
 
 		return this.apiClient.callApi(
-			'/api/v2/workforcemanagement/managementunits/{muId}/shifttrades/users', 
+			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/shifttrades/users', 
 			'GET', 
-			{ 'muId': muId }, 
+			{ 'managementUnitId': managementUnitId }, 
 			{  }, 
 			{  }, 
 			{  }, 
@@ -48096,14 +48175,14 @@ class WorkforceManagementApi {
 	/**
 	 * Get a time off request
 	 * 
-	 * @param {String} muId The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+	 * @param {String} managementUnitId The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
 	 * @param {String} userId The userId to whom the Time Off Request applies.
 	 * @param {String} timeOffRequestId Time Off Request Id
 	 */
-	getWorkforcemanagementManagementunitUserTimeoffrequest(muId, userId, timeOffRequestId) { 
-		// verify the required parameter 'muId' is set
-		if (muId === undefined || muId === null) {
-			throw 'Missing the required parameter "muId" when calling getWorkforcemanagementManagementunitUserTimeoffrequest';
+	getWorkforcemanagementManagementunitUserTimeoffrequest(managementUnitId, userId, timeOffRequestId) { 
+		// verify the required parameter 'managementUnitId' is set
+		if (managementUnitId === undefined || managementUnitId === null) {
+			throw 'Missing the required parameter "managementUnitId" when calling getWorkforcemanagementManagementunitUserTimeoffrequest';
 		}
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null) {
@@ -48115,9 +48194,9 @@ class WorkforceManagementApi {
 		}
 
 		return this.apiClient.callApi(
-			'/api/v2/workforcemanagement/managementunits/{muId}/users/{userId}/timeoffrequests/{timeOffRequestId}', 
+			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/users/{userId}/timeoffrequests/{timeOffRequestId}', 
 			'GET', 
-			{ 'muId': muId,'userId': userId,'timeOffRequestId': timeOffRequestId }, 
+			{ 'managementUnitId': managementUnitId,'userId': userId,'timeOffRequestId': timeOffRequestId }, 
 			{  }, 
 			{  }, 
 			{  }, 
@@ -48131,17 +48210,17 @@ class WorkforceManagementApi {
 	/**
 	 * Get a list of time off requests for a given user
 	 * 
-	 * @param {String} muId The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+	 * @param {String} managementUnitId The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
 	 * @param {String} userId The userId to whom the Time Off Request applies.
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.recentlyReviewed Limit results to requests that have been reviewed within the preceding 30 days (default to false)
 	 */
-	getWorkforcemanagementManagementunitUserTimeoffrequests(muId, userId, opts) { 
+	getWorkforcemanagementManagementunitUserTimeoffrequests(managementUnitId, userId, opts) { 
 		opts = opts || {};
 		
-		// verify the required parameter 'muId' is set
-		if (muId === undefined || muId === null) {
-			throw 'Missing the required parameter "muId" when calling getWorkforcemanagementManagementunitUserTimeoffrequests';
+		// verify the required parameter 'managementUnitId' is set
+		if (managementUnitId === undefined || managementUnitId === null) {
+			throw 'Missing the required parameter "managementUnitId" when calling getWorkforcemanagementManagementunitUserTimeoffrequests';
 		}
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null) {
@@ -48149,9 +48228,9 @@ class WorkforceManagementApi {
 		}
 
 		return this.apiClient.callApi(
-			'/api/v2/workforcemanagement/managementunits/{muId}/users/{userId}/timeoffrequests', 
+			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/users/{userId}/timeoffrequests', 
 			'GET', 
-			{ 'muId': muId,'userId': userId }, 
+			{ 'managementUnitId': managementUnitId,'userId': userId }, 
 			{ 'recentlyReviewed': opts['recentlyReviewed'] }, 
 			{  }, 
 			{  }, 
@@ -48165,18 +48244,18 @@ class WorkforceManagementApi {
 	/**
 	 * Get users in the management unit
 	 * 
-	 * @param {String} muId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+	 * @param {String} managementUnitId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
 	 */
-	getWorkforcemanagementManagementunitUsers(muId) { 
-		// verify the required parameter 'muId' is set
-		if (muId === undefined || muId === null) {
-			throw 'Missing the required parameter "muId" when calling getWorkforcemanagementManagementunitUsers';
+	getWorkforcemanagementManagementunitUsers(managementUnitId) { 
+		// verify the required parameter 'managementUnitId' is set
+		if (managementUnitId === undefined || managementUnitId === null) {
+			throw 'Missing the required parameter "managementUnitId" when calling getWorkforcemanagementManagementunitUsers';
 		}
 
 		return this.apiClient.callApi(
-			'/api/v2/workforcemanagement/managementunits/{muId}/users', 
+			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/users', 
 			'GET', 
-			{ 'muId': muId }, 
+			{ 'managementUnitId': managementUnitId }, 
 			{  }, 
 			{  }, 
 			{  }, 
@@ -48613,27 +48692,27 @@ class WorkforceManagementApi {
 	/**
 	 * Update an activity code
 	 * 
-	 * @param {String} buId The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user.
-	 * @param {String} acId The ID of the activity code to update
+	 * @param {String} businessUnitId The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user.
+	 * @param {String} activityCodeId The ID of the activity code to update
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body body
 	 */
-	patchWorkforcemanagementBusinessunitActivitycode(buId, acId, opts) { 
+	patchWorkforcemanagementBusinessunitActivitycode(businessUnitId, activityCodeId, opts) { 
 		opts = opts || {};
 		
-		// verify the required parameter 'buId' is set
-		if (buId === undefined || buId === null) {
-			throw 'Missing the required parameter "buId" when calling patchWorkforcemanagementBusinessunitActivitycode';
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null) {
+			throw 'Missing the required parameter "businessUnitId" when calling patchWorkforcemanagementBusinessunitActivitycode';
 		}
-		// verify the required parameter 'acId' is set
-		if (acId === undefined || acId === null) {
-			throw 'Missing the required parameter "acId" when calling patchWorkforcemanagementBusinessunitActivitycode';
+		// verify the required parameter 'activityCodeId' is set
+		if (activityCodeId === undefined || activityCodeId === null) {
+			throw 'Missing the required parameter "activityCodeId" when calling patchWorkforcemanagementBusinessunitActivitycode';
 		}
 
 		return this.apiClient.callApi(
-			'/api/v2/workforcemanagement/businessunits/{buId}/activitycodes/{acId}', 
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes/{activityCodeId}', 
 			'PATCH', 
-			{ 'buId': buId,'acId': acId }, 
+			{ 'businessUnitId': businessUnitId,'activityCodeId': activityCodeId }, 
 			{  }, 
 			{  }, 
 			{  }, 
@@ -48749,22 +48828,22 @@ class WorkforceManagementApi {
 	/**
 	 * Update the requested management unit
 	 * 
-	 * @param {String} muId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+	 * @param {String} managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body body
 	 */
-	patchWorkforcemanagementManagementunit(muId, opts) { 
+	patchWorkforcemanagementManagementunit(managementUnitId, opts) { 
 		opts = opts || {};
 		
-		// verify the required parameter 'muId' is set
-		if (muId === undefined || muId === null) {
-			throw 'Missing the required parameter "muId" when calling patchWorkforcemanagementManagementunit';
+		// verify the required parameter 'managementUnitId' is set
+		if (managementUnitId === undefined || managementUnitId === null) {
+			throw 'Missing the required parameter "managementUnitId" when calling patchWorkforcemanagementManagementunit';
 		}
 
 		return this.apiClient.callApi(
-			'/api/v2/workforcemanagement/managementunits/{muId}', 
+			'/api/v2/workforcemanagement/managementunits/{managementUnitId}', 
 			'PATCH', 
-			{ 'muId': muId }, 
+			{ 'managementUnitId': managementUnitId }, 
 			{  }, 
 			{  }, 
 			{  }, 
@@ -48778,18 +48857,18 @@ class WorkforceManagementApi {
 	/**
 	 * Update a time off request
 	 * 
-	 * @param {String} muId The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+	 * @param {String} managementUnitId The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
 	 * @param {String} userId The id of the user the requested time off request belongs to
 	 * @param {String} timeOffRequestId The id of the time off request to update
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body body
 	 */
-	patchWorkforcemanagementManagementunitUserTimeoffrequest(muId, userId, timeOffRequestId, opts) { 
+	patchWorkforcemanagementManagementunitUserTimeoffrequest(managementUnitId, userId, timeOffRequestId, opts) { 
 		opts = opts || {};
 		
-		// verify the required parameter 'muId' is set
-		if (muId === undefined || muId === null) {
-			throw 'Missing the required parameter "muId" when calling patchWorkforcemanagementManagementunitUserTimeoffrequest';
+		// verify the required parameter 'managementUnitId' is set
+		if (managementUnitId === undefined || managementUnitId === null) {
+			throw 'Missing the required parameter "managementUnitId" when calling patchWorkforcemanagementManagementunitUserTimeoffrequest';
 		}
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null) {
@@ -48801,9 +48880,9 @@ class WorkforceManagementApi {
 		}
 
 		return this.apiClient.callApi(
-			'/api/v2/workforcemanagement/managementunits/{muId}/users/{userId}/timeoffrequests/{timeOffRequestId}', 
+			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/users/{userId}/timeoffrequests/{timeOffRequestId}', 
 			'PATCH', 
-			{ 'muId': muId,'userId': userId,'timeOffRequestId': timeOffRequestId }, 
+			{ 'managementUnitId': managementUnitId,'userId': userId,'timeOffRequestId': timeOffRequestId }, 
 			{  }, 
 			{  }, 
 			{  }, 
@@ -49003,22 +49082,22 @@ class WorkforceManagementApi {
 	/**
 	 * Create a new activity code
 	 * 
-	 * @param {String} buId The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user.
+	 * @param {String} businessUnitId The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user.
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body body
 	 */
-	postWorkforcemanagementBusinessunitActivitycodes(buId, opts) { 
+	postWorkforcemanagementBusinessunitActivitycodes(businessUnitId, opts) { 
 		opts = opts || {};
 		
-		// verify the required parameter 'buId' is set
-		if (buId === undefined || buId === null) {
-			throw 'Missing the required parameter "buId" when calling postWorkforcemanagementBusinessunitActivitycodes';
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null) {
+			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitActivitycodes';
 		}
 
 		return this.apiClient.callApi(
-			'/api/v2/workforcemanagement/businessunits/{buId}/activitycodes', 
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes', 
 			'POST', 
-			{ 'buId': buId }, 
+			{ 'businessUnitId': businessUnitId }, 
 			{  }, 
 			{  }, 
 			{  }, 
@@ -49453,24 +49532,24 @@ class WorkforceManagementApi {
 	/**
 	 * Query published schedules for given given time range for set of users
 	 * 
-	 * @param {String} muId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+	 * @param {String} managementUnitId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body body
 	 * @param {Boolean} opts.forceAsync Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes
 	 * @param {Boolean} opts.forceDownloadService Force the result of this operation to be sent via download service.  For testing/app development purposes
 	 */
-	postWorkforcemanagementManagementunitAgentschedulesSearch(muId, opts) { 
+	postWorkforcemanagementManagementunitAgentschedulesSearch(managementUnitId, opts) { 
 		opts = opts || {};
 		
-		// verify the required parameter 'muId' is set
-		if (muId === undefined || muId === null) {
-			throw 'Missing the required parameter "muId" when calling postWorkforcemanagementManagementunitAgentschedulesSearch';
+		// verify the required parameter 'managementUnitId' is set
+		if (managementUnitId === undefined || managementUnitId === null) {
+			throw 'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitAgentschedulesSearch';
 		}
 
 		return this.apiClient.callApi(
-			'/api/v2/workforcemanagement/managementunits/{muId}/agentschedules/search', 
+			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/agentschedules/search', 
 			'POST', 
-			{ 'muId': muId }, 
+			{ 'managementUnitId': managementUnitId }, 
 			{ 'forceAsync': opts['forceAsync'],'forceDownloadService': opts['forceDownloadService'] }, 
 			{  }, 
 			{  }, 
@@ -49484,22 +49563,22 @@ class WorkforceManagementApi {
 	/**
 	 * Request a historical adherence report
 	 * The maximum supported range for historical adherence queries is 31 days, or 7 days with includeExceptions = true
-	 * @param {String} muId The management unit ID of the management unit
+	 * @param {String} managementUnitId The management unit ID of the management unit
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body body
 	 */
-	postWorkforcemanagementManagementunitHistoricaladherencequery(muId, opts) { 
+	postWorkforcemanagementManagementunitHistoricaladherencequery(managementUnitId, opts) { 
 		opts = opts || {};
 		
-		// verify the required parameter 'muId' is set
-		if (muId === undefined || muId === null) {
-			throw 'Missing the required parameter "muId" when calling postWorkforcemanagementManagementunitHistoricaladherencequery';
+		// verify the required parameter 'managementUnitId' is set
+		if (managementUnitId === undefined || managementUnitId === null) {
+			throw 'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitHistoricaladherencequery';
 		}
 
 		return this.apiClient.callApi(
-			'/api/v2/workforcemanagement/managementunits/{muId}/historicaladherencequery', 
+			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/historicaladherencequery', 
 			'POST', 
-			{ 'muId': muId }, 
+			{ 'managementUnitId': managementUnitId }, 
 			{  }, 
 			{  }, 
 			{  }, 
@@ -49513,22 +49592,22 @@ class WorkforceManagementApi {
 	/**
 	 * Move the requested management unit to a new business unit
 	 * Returns status 200 if the management unit is already in the requested business unit
-	 * @param {String} muId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+	 * @param {String} managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body body
 	 */
-	postWorkforcemanagementManagementunitMove(muId, opts) { 
+	postWorkforcemanagementManagementunitMove(managementUnitId, opts) { 
 		opts = opts || {};
 		
-		// verify the required parameter 'muId' is set
-		if (muId === undefined || muId === null) {
-			throw 'Missing the required parameter "muId" when calling postWorkforcemanagementManagementunitMove';
+		// verify the required parameter 'managementUnitId' is set
+		if (managementUnitId === undefined || managementUnitId === null) {
+			throw 'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitMove';
 		}
 
 		return this.apiClient.callApi(
-			'/api/v2/workforcemanagement/managementunits/{muId}/move', 
+			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/move', 
 			'POST', 
-			{ 'muId': muId }, 
+			{ 'managementUnitId': managementUnitId }, 
 			{  }, 
 			{  }, 
 			{  }, 
@@ -49542,22 +49621,22 @@ class WorkforceManagementApi {
 	/**
 	 * Query published schedules for given given time range for set of users
 	 * 
-	 * @param {String} muId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+	 * @param {String} managementUnitId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body body
 	 */
-	postWorkforcemanagementManagementunitSchedulesSearch(muId, opts) { 
+	postWorkforcemanagementManagementunitSchedulesSearch(managementUnitId, opts) { 
 		opts = opts || {};
 		
-		// verify the required parameter 'muId' is set
-		if (muId === undefined || muId === null) {
-			throw 'Missing the required parameter "muId" when calling postWorkforcemanagementManagementunitSchedulesSearch';
+		// verify the required parameter 'managementUnitId' is set
+		if (managementUnitId === undefined || managementUnitId === null) {
+			throw 'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitSchedulesSearch';
 		}
 
 		return this.apiClient.callApi(
-			'/api/v2/workforcemanagement/managementunits/{muId}/schedules/search', 
+			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/schedules/search', 
 			'POST', 
-			{ 'muId': muId }, 
+			{ 'managementUnitId': managementUnitId }, 
 			{  }, 
 			{  }, 
 			{  }, 
@@ -49571,22 +49650,22 @@ class WorkforceManagementApi {
 	/**
 	 * Create a new time off request
 	 * 
-	 * @param {String} muId The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+	 * @param {String} managementUnitId The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body body
 	 */
-	postWorkforcemanagementManagementunitTimeoffrequests(muId, opts) { 
+	postWorkforcemanagementManagementunitTimeoffrequests(managementUnitId, opts) { 
 		opts = opts || {};
 		
-		// verify the required parameter 'muId' is set
-		if (muId === undefined || muId === null) {
-			throw 'Missing the required parameter "muId" when calling postWorkforcemanagementManagementunitTimeoffrequests';
+		// verify the required parameter 'managementUnitId' is set
+		if (managementUnitId === undefined || managementUnitId === null) {
+			throw 'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitTimeoffrequests';
 		}
 
 		return this.apiClient.callApi(
-			'/api/v2/workforcemanagement/managementunits/{muId}/timeoffrequests', 
+			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffrequests', 
 			'POST', 
-			{ 'muId': muId }, 
+			{ 'managementUnitId': managementUnitId }, 
 			{  }, 
 			{  }, 
 			{  }, 
@@ -49600,22 +49679,22 @@ class WorkforceManagementApi {
 	/**
 	 * Gets the lookup ids to fetch the specified set of requests
 	 * 
-	 * @param {String} muId The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+	 * @param {String} managementUnitId The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body body
 	 */
-	postWorkforcemanagementManagementunitTimeoffrequestsQuery(muId, opts) { 
+	postWorkforcemanagementManagementunitTimeoffrequestsQuery(managementUnitId, opts) { 
 		opts = opts || {};
 		
-		// verify the required parameter 'muId' is set
-		if (muId === undefined || muId === null) {
-			throw 'Missing the required parameter "muId" when calling postWorkforcemanagementManagementunitTimeoffrequestsQuery';
+		// verify the required parameter 'managementUnitId' is set
+		if (managementUnitId === undefined || managementUnitId === null) {
+			throw 'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitTimeoffrequestsQuery';
 		}
 
 		return this.apiClient.callApi(
-			'/api/v2/workforcemanagement/managementunits/{muId}/timeoffrequests/query', 
+			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffrequests/query', 
 			'POST', 
-			{ 'muId': muId }, 
+			{ 'managementUnitId': managementUnitId }, 
 			{  }, 
 			{  }, 
 			{  }, 
@@ -50064,7 +50143,7 @@ class WorkforceManagementApi {
  * </pre>
  * </p>
  * @module purecloud-platform-client-v2/index
- * @version 104.0.0
+ * @version 105.0.0
  */
 class platformClient {
 	constructor() {
@@ -50108,6 +50187,11 @@ class platformClient {
 		 * @property {module:purecloud-platform-client-v2/api/BillingApi}
 		 */
 		this.BillingApi = BillingApi;
+		/**
+		 * The ChatApi service constructor.
+		 * @property {module:purecloud-platform-client-v2/api/ChatApi}
+		 */
+		this.ChatApi = ChatApi;
 		/**
 		 * The CoachingApi service constructor.
 		 * @property {module:purecloud-platform-client-v2/api/CoachingApi}

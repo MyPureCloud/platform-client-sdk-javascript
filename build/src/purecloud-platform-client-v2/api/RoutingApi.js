@@ -5,7 +5,7 @@ class RoutingApi {
 	/**
 	 * Routing service.
 	 * @module purecloud-platform-client-v2/api/RoutingApi
-	 * @version 104.0.0
+	 * @version 105.0.0
 	 */
 
 	/**
@@ -105,7 +105,7 @@ class RoutingApi {
 	}
 
 	/**
-	 * Delete queue member
+	 * DEPRECATED: use DELETE /routing/queues/{queueId}/members/{memberId}.  Delete queue member.
 	 * 
 	 * @param {String} queueId Queue ID
 	 * @param {String} memberId Member ID
@@ -679,11 +679,11 @@ class RoutingApi {
 	}
 
 	/**
-	 * Get the members of this queue
+	 * DEPRECATED: use GET /routing/queues/{queueId}/members.  Get the members of this queue.
 	 * 
 	 * @param {String} queueId Queue ID
 	 * @param {Object} opts Optional parameters
-	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {Number} opts.pageSize Page size [max 100] (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {String} opts.sortBy Sort by (default to name)
 	 * @param {Array.<String>} opts.expand Which fields, if any, to expand.
@@ -1337,7 +1337,7 @@ class RoutingApi {
 	}
 
 	/**
-	 * Update the ring number OR joined status for a User in a Queue
+	 * DEPRECATED: use PATCH /routing/queues/{queueId}/members/{memberId}.  Update the ring number OR joined status for a User in a Queue.
 	 * 
 	 * @param {String} queueId Queue ID
 	 * @param {String} memberId Member ID
@@ -1372,7 +1372,7 @@ class RoutingApi {
 	}
 
 	/**
-	 * Join or unjoin a set of users for a queue
+	 * DEPRECATED: use PATCH /routing/queues/{queueId}/members.  Join or unjoin a set of users for a queue.
 	 * 
 	 * @param {String} queueId Queue ID
 	 * @param {Array.<Object>} body Queue Members
@@ -1725,7 +1725,7 @@ class RoutingApi {
 	}
 
 	/**
-	 * Bulk add or delete up to 100 queue members
+	 * DEPRECATED: use POST /routing/queues/{queueId}/members.  Bulk add or delete up to 100 queue members.
 	 * 
 	 * @param {String} queueId Queue ID
 	 * @param {Array.<Object>} body Queue Members

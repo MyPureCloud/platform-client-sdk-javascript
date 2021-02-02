@@ -5581,6 +5581,7 @@ DomainLogicalInterface <a href="#" onclick="return copyDomainLogicalInterfaceExa
   "useForInternalEdgeCommunication": Boolean, 
   "useForIndirectEdgeCommunication": Boolean, 
   "useForCloudProxyEdgeCommunication": Boolean, 
+  "useForWanInterface": Boolean, 
   "externalTrunkBaseAssignments": { 
     "family": Number, 
     "trunkBase": { 
@@ -50897,6 +50898,7 @@ DomainLogicalInterface <a href="#" onclick="return copyDomainLogicalInterfaceExa
   "useForInternalEdgeCommunication": Boolean, 
   "useForIndirectEdgeCommunication": Boolean, 
   "useForCloudProxyEdgeCommunication": Boolean, 
+  "useForWanInterface": Boolean, 
   "externalTrunkBaseAssignments": { 
     "family": Number, 
     "trunkBase": { 

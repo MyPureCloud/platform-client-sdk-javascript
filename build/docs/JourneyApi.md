@@ -277,7 +277,8 @@ let opts = {
   'sortBy': "sortBy_example", // String | Field(s) to sort by. The response can be sorted by any first level property on the Outcome response. Prefix with '-' for descending (e.g. sortBy=displayName,-createdDate).
   'pageSize': 25, // Number | Page size
   'pageNumber': 1, // Number | Page number
-  'isActive': true // Boolean | Determines whether or not to show only active segments.
+  'isActive': true, // Boolean | Determines whether or not to show only active segments.
+  'segmentIds': ["segmentIds_example"] // [String] | IDs of segments to return. Use of this parameter is not compatible with pagination or sorting. A maximum of 100 segments are allowed per request.
 };
 
 apiInstance.getJourneySegments(opts)
@@ -299,6 +300,7 @@ apiInstance.getJourneySegments(opts)
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **isActive** | **Boolean** | Determines whether or not to show only active segments. | [optional]  |
+ **segmentIds** | **[String]** | IDs of segments to return. Use of this parameter is not compatible with pagination or sorting. A maximum of 100 segments are allowed per request. | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -464,6 +466,7 @@ PatchSegment <a href="#" onclick="return copyPatchSegmentExample()">Copy</a>
       "eventName": String, 
     },  
   },  
+  "assignmentExpirationDays": Number, 
   "selfUri": String, 
   "createdDate": Date, 
   "modifiedDate": Date, 
@@ -708,6 +711,7 @@ JourneySegment <a href="#" onclick="return copyJourneySegmentExample()">Copy</a>
       "eventName": String, 
     },  
   },  
+  "assignmentExpirationDays": Number, 
   "selfUri": String, 
   "createdDate": Date, 
   "modifiedDate": Date, 

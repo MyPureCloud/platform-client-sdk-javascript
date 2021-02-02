@@ -5,7 +5,7 @@ class JourneyApi {
 	/**
 	 * Journey service.
 	 * @module purecloud-platform-client-v2/api/JourneyApi
-	 * @version 104.0.0
+	 * @version 105.0.0
 	 */
 
 	/**
@@ -128,6 +128,7 @@ class JourneyApi {
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Boolean} opts.isActive Determines whether or not to show only active segments.
+	 * @param {Array.<String>} opts.segmentIds IDs of segments to return. Use of this parameter is not compatible with pagination or sorting. A maximum of 100 segments are allowed per request.
 	 */
 	getJourneySegments(opts) { 
 		opts = opts || {};
@@ -137,7 +138,7 @@ class JourneyApi {
 			'/api/v2/journey/segments', 
 			'GET', 
 			{  }, 
-			{ 'sortBy': opts['sortBy'],'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'isActive': opts['isActive'] }, 
+			{ 'sortBy': opts['sortBy'],'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'isActive': opts['isActive'],'segmentIds': this.apiClient.buildCollectionParam(opts['segmentIds'], 'multi') }, 
 			{  }, 
 			{  }, 
 			null, 

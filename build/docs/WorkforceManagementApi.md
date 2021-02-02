@@ -8,20 +8,20 @@ All URIs are relative to *https://api.mypurecloud.com*
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
 [**deleteWorkforcemanagementBusinessunit**](WorkforceManagementApi.html#deleteWorkforcemanagementBusinessunit) | **DELETE** /api/v2/workforcemanagement/businessunits/{businessUnitId} | Delete business unit
-[**deleteWorkforcemanagementBusinessunitActivitycode**](WorkforceManagementApi.html#deleteWorkforcemanagementBusinessunitActivitycode) | **DELETE** /api/v2/workforcemanagement/businessunits/{buId}/activitycodes/{acId} | Deletes an activity code
+[**deleteWorkforcemanagementBusinessunitActivitycode**](WorkforceManagementApi.html#deleteWorkforcemanagementBusinessunitActivitycode) | **DELETE** /api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes/{activityCodeId} | Deletes an activity code
 [**deleteWorkforcemanagementBusinessunitPlanninggroup**](WorkforceManagementApi.html#deleteWorkforcemanagementBusinessunitPlanninggroup) | **DELETE** /api/v2/workforcemanagement/businessunits/{businessUnitId}/planninggroups/{planningGroupId} | Deletes the planning group
 [**deleteWorkforcemanagementBusinessunitSchedulingRun**](WorkforceManagementApi.html#deleteWorkforcemanagementBusinessunitSchedulingRun) | **DELETE** /api/v2/workforcemanagement/businessunits/{businessUnitId}/scheduling/runs/{runId} | Cancel a scheduling run
 [**deleteWorkforcemanagementBusinessunitServicegoaltemplate**](WorkforceManagementApi.html#deleteWorkforcemanagementBusinessunitServicegoaltemplate) | **DELETE** /api/v2/workforcemanagement/businessunits/{businessUnitId}/servicegoaltemplates/{serviceGoalTemplateId} | Delete a service goal template
 [**deleteWorkforcemanagementBusinessunitWeekSchedule**](WorkforceManagementApi.html#deleteWorkforcemanagementBusinessunitWeekSchedule) | **DELETE** /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId} | Delete a schedule
 [**deleteWorkforcemanagementBusinessunitWeekShorttermforecast**](WorkforceManagementApi.html#deleteWorkforcemanagementBusinessunitWeekShorttermforecast) | **DELETE** /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId} | Delete a short term forecast
-[**deleteWorkforcemanagementManagementunit**](WorkforceManagementApi.html#deleteWorkforcemanagementManagementunit) | **DELETE** /api/v2/workforcemanagement/managementunits/{muId} | Delete management unit
+[**deleteWorkforcemanagementManagementunit**](WorkforceManagementApi.html#deleteWorkforcemanagementManagementunit) | **DELETE** /api/v2/workforcemanagement/managementunits/{managementUnitId} | Delete management unit
 [**deleteWorkforcemanagementManagementunitWorkplan**](WorkforceManagementApi.html#deleteWorkforcemanagementManagementunitWorkplan) | **DELETE** /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans/{workPlanId} | Delete a work plan
 [**deleteWorkforcemanagementManagementunitWorkplanrotation**](WorkforceManagementApi.html#deleteWorkforcemanagementManagementunitWorkplanrotation) | **DELETE** /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplanrotations/{workPlanRotationId} | Delete a work plan rotation
 [**getWorkforcemanagementAdherence**](WorkforceManagementApi.html#getWorkforcemanagementAdherence) | **GET** /api/v2/workforcemanagement/adherence | Get a list of UserScheduleAdherence records for the requested users
 [**getWorkforcemanagementAdhocmodelingjob**](WorkforceManagementApi.html#getWorkforcemanagementAdhocmodelingjob) | **GET** /api/v2/workforcemanagement/adhocmodelingjobs/{jobId} | Get status of the modeling job
 [**getWorkforcemanagementBusinessunit**](WorkforceManagementApi.html#getWorkforcemanagementBusinessunit) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId} | Get business unit
-[**getWorkforcemanagementBusinessunitActivitycode**](WorkforceManagementApi.html#getWorkforcemanagementBusinessunitActivitycode) | **GET** /api/v2/workforcemanagement/businessunits/{buId}/activitycodes/{acId} | Get an activity code
-[**getWorkforcemanagementBusinessunitActivitycodes**](WorkforceManagementApi.html#getWorkforcemanagementBusinessunitActivitycodes) | **GET** /api/v2/workforcemanagement/businessunits/{buId}/activitycodes | Get activity codes
+[**getWorkforcemanagementBusinessunitActivitycode**](WorkforceManagementApi.html#getWorkforcemanagementBusinessunitActivitycode) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes/{activityCodeId} | Get an activity code
+[**getWorkforcemanagementBusinessunitActivitycodes**](WorkforceManagementApi.html#getWorkforcemanagementBusinessunitActivitycodes) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes | Get activity codes
 [**getWorkforcemanagementBusinessunitIntradayPlanninggroups**](WorkforceManagementApi.html#getWorkforcemanagementBusinessunitIntradayPlanninggroups) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/intraday/planninggroups | Get intraday planning groups for the given date
 [**getWorkforcemanagementBusinessunitManagementunits**](WorkforceManagementApi.html#getWorkforcemanagementBusinessunitManagementunits) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/managementunits | Get all authorized management units in the business unit
 [**getWorkforcemanagementBusinessunitPlanninggroup**](WorkforceManagementApi.html#getWorkforcemanagementBusinessunitPlanninggroup) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/planninggroups/{planningGroupId} | Get a planning group
@@ -43,16 +43,16 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getWorkforcemanagementBusinessunitWeekShorttermforecasts**](WorkforceManagementApi.html#getWorkforcemanagementBusinessunitWeekShorttermforecasts) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts | Get short term forecasts
 [**getWorkforcemanagementBusinessunits**](WorkforceManagementApi.html#getWorkforcemanagementBusinessunits) | **GET** /api/v2/workforcemanagement/businessunits | Get business units
 [**getWorkforcemanagementBusinessunitsDivisionviews**](WorkforceManagementApi.html#getWorkforcemanagementBusinessunitsDivisionviews) | **GET** /api/v2/workforcemanagement/businessunits/divisionviews | Get business units across divisions
-[**getWorkforcemanagementManagementunit**](WorkforceManagementApi.html#getWorkforcemanagementManagementunit) | **GET** /api/v2/workforcemanagement/managementunits/{muId} | Get management unit
-[**getWorkforcemanagementManagementunitActivitycodes**](WorkforceManagementApi.html#getWorkforcemanagementManagementunitActivitycodes) | **GET** /api/v2/workforcemanagement/managementunits/{muId}/activitycodes | Get activity codes
+[**getWorkforcemanagementManagementunit**](WorkforceManagementApi.html#getWorkforcemanagementManagementunit) | **GET** /api/v2/workforcemanagement/managementunits/{managementUnitId} | Get management unit
+[**getWorkforcemanagementManagementunitActivitycodes**](WorkforceManagementApi.html#getWorkforcemanagementManagementunitActivitycodes) | **GET** /api/v2/workforcemanagement/managementunits/{managementUnitId}/activitycodes | Get activity codes
 [**getWorkforcemanagementManagementunitAdherence**](WorkforceManagementApi.html#getWorkforcemanagementManagementunitAdherence) | **GET** /api/v2/workforcemanagement/managementunits/{managementUnitId}/adherence | Get a list of user schedule adherence records for the requested management unit
 [**getWorkforcemanagementManagementunitAgent**](WorkforceManagementApi.html#getWorkforcemanagementManagementunitAgent) | **GET** /api/v2/workforcemanagement/managementunits/{managementUnitId}/agents/{agentId} | Get data for agent in the management unit
 [**getWorkforcemanagementManagementunitAgentShifttrades**](WorkforceManagementApi.html#getWorkforcemanagementManagementunitAgentShifttrades) | **GET** /api/v2/workforcemanagement/managementunits/{managementUnitId}/agents/{agentId}/shifttrades | Gets all the shift trades for a given agent
-[**getWorkforcemanagementManagementunitShifttradesMatched**](WorkforceManagementApi.html#getWorkforcemanagementManagementunitShifttradesMatched) | **GET** /api/v2/workforcemanagement/managementunits/{muId}/shifttrades/matched | Gets a summary of all shift trades in the matched state
-[**getWorkforcemanagementManagementunitShifttradesUsers**](WorkforceManagementApi.html#getWorkforcemanagementManagementunitShifttradesUsers) | **GET** /api/v2/workforcemanagement/managementunits/{muId}/shifttrades/users | Gets list of users available for whom you can send direct shift trade requests
-[**getWorkforcemanagementManagementunitUserTimeoffrequest**](WorkforceManagementApi.html#getWorkforcemanagementManagementunitUserTimeoffrequest) | **GET** /api/v2/workforcemanagement/managementunits/{muId}/users/{userId}/timeoffrequests/{timeOffRequestId} | Get a time off request
-[**getWorkforcemanagementManagementunitUserTimeoffrequests**](WorkforceManagementApi.html#getWorkforcemanagementManagementunitUserTimeoffrequests) | **GET** /api/v2/workforcemanagement/managementunits/{muId}/users/{userId}/timeoffrequests | Get a list of time off requests for a given user
-[**getWorkforcemanagementManagementunitUsers**](WorkforceManagementApi.html#getWorkforcemanagementManagementunitUsers) | **GET** /api/v2/workforcemanagement/managementunits/{muId}/users | Get users in the management unit
+[**getWorkforcemanagementManagementunitShifttradesMatched**](WorkforceManagementApi.html#getWorkforcemanagementManagementunitShifttradesMatched) | **GET** /api/v2/workforcemanagement/managementunits/{managementUnitId}/shifttrades/matched | Gets a summary of all shift trades in the matched state
+[**getWorkforcemanagementManagementunitShifttradesUsers**](WorkforceManagementApi.html#getWorkforcemanagementManagementunitShifttradesUsers) | **GET** /api/v2/workforcemanagement/managementunits/{managementUnitId}/shifttrades/users | Gets list of users available for whom you can send direct shift trade requests
+[**getWorkforcemanagementManagementunitUserTimeoffrequest**](WorkforceManagementApi.html#getWorkforcemanagementManagementunitUserTimeoffrequest) | **GET** /api/v2/workforcemanagement/managementunits/{managementUnitId}/users/{userId}/timeoffrequests/{timeOffRequestId} | Get a time off request
+[**getWorkforcemanagementManagementunitUserTimeoffrequests**](WorkforceManagementApi.html#getWorkforcemanagementManagementunitUserTimeoffrequests) | **GET** /api/v2/workforcemanagement/managementunits/{managementUnitId}/users/{userId}/timeoffrequests | Get a list of time off requests for a given user
+[**getWorkforcemanagementManagementunitUsers**](WorkforceManagementApi.html#getWorkforcemanagementManagementunitUsers) | **GET** /api/v2/workforcemanagement/managementunits/{managementUnitId}/users | Get users in the management unit
 [**getWorkforcemanagementManagementunitWeekSchedule**](WorkforceManagementApi.html#getWorkforcemanagementManagementunitWeekSchedule) | **GET** /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekId}/schedules/{scheduleId} | Deprecated.  Use the equivalent business unit resource instead. Get a week schedule
 [**getWorkforcemanagementManagementunitWeekSchedules**](WorkforceManagementApi.html#getWorkforcemanagementManagementunitWeekSchedules) | **GET** /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekId}/schedules | Deprecated.  Use the equivalent business unit resource instead. Get the list of schedules in a week in management unit
 [**getWorkforcemanagementManagementunitWeekShifttrades**](WorkforceManagementApi.html#getWorkforcemanagementManagementunitWeekShifttrades) | **GET** /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades | Gets all the shift trades for a given week
@@ -68,19 +68,19 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getWorkforcemanagementTimeoffrequest**](WorkforceManagementApi.html#getWorkforcemanagementTimeoffrequest) | **GET** /api/v2/workforcemanagement/timeoffrequests/{timeOffRequestId} | Get a time off request for the current user
 [**getWorkforcemanagementTimeoffrequests**](WorkforceManagementApi.html#getWorkforcemanagementTimeoffrequests) | **GET** /api/v2/workforcemanagement/timeoffrequests | Get a list of time off requests for the current user
 [**patchWorkforcemanagementBusinessunit**](WorkforceManagementApi.html#patchWorkforcemanagementBusinessunit) | **PATCH** /api/v2/workforcemanagement/businessunits/{businessUnitId} | Update business unit
-[**patchWorkforcemanagementBusinessunitActivitycode**](WorkforceManagementApi.html#patchWorkforcemanagementBusinessunitActivitycode) | **PATCH** /api/v2/workforcemanagement/businessunits/{buId}/activitycodes/{acId} | Update an activity code
+[**patchWorkforcemanagementBusinessunitActivitycode**](WorkforceManagementApi.html#patchWorkforcemanagementBusinessunitActivitycode) | **PATCH** /api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes/{activityCodeId} | Update an activity code
 [**patchWorkforcemanagementBusinessunitPlanninggroup**](WorkforceManagementApi.html#patchWorkforcemanagementBusinessunitPlanninggroup) | **PATCH** /api/v2/workforcemanagement/businessunits/{businessUnitId}/planninggroups/{planningGroupId} | Updates the planning group
 [**patchWorkforcemanagementBusinessunitSchedulingRun**](WorkforceManagementApi.html#patchWorkforcemanagementBusinessunitSchedulingRun) | **PATCH** /api/v2/workforcemanagement/businessunits/{businessUnitId}/scheduling/runs/{runId} | Mark a schedule run as applied
 [**patchWorkforcemanagementBusinessunitServicegoaltemplate**](WorkforceManagementApi.html#patchWorkforcemanagementBusinessunitServicegoaltemplate) | **PATCH** /api/v2/workforcemanagement/businessunits/{businessUnitId}/servicegoaltemplates/{serviceGoalTemplateId} | Updates a service goal template
-[**patchWorkforcemanagementManagementunit**](WorkforceManagementApi.html#patchWorkforcemanagementManagementunit) | **PATCH** /api/v2/workforcemanagement/managementunits/{muId} | Update the requested management unit
-[**patchWorkforcemanagementManagementunitUserTimeoffrequest**](WorkforceManagementApi.html#patchWorkforcemanagementManagementunitUserTimeoffrequest) | **PATCH** /api/v2/workforcemanagement/managementunits/{muId}/users/{userId}/timeoffrequests/{timeOffRequestId} | Update a time off request
+[**patchWorkforcemanagementManagementunit**](WorkforceManagementApi.html#patchWorkforcemanagementManagementunit) | **PATCH** /api/v2/workforcemanagement/managementunits/{managementUnitId} | Update the requested management unit
+[**patchWorkforcemanagementManagementunitUserTimeoffrequest**](WorkforceManagementApi.html#patchWorkforcemanagementManagementunitUserTimeoffrequest) | **PATCH** /api/v2/workforcemanagement/managementunits/{managementUnitId}/users/{userId}/timeoffrequests/{timeOffRequestId} | Update a time off request
 [**patchWorkforcemanagementManagementunitWeekShifttrade**](WorkforceManagementApi.html#patchWorkforcemanagementManagementunitWeekShifttrade) | **PATCH** /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades/{tradeId} | Updates a shift trade. This route can only be called by the initiating agent
 [**patchWorkforcemanagementManagementunitWorkplan**](WorkforceManagementApi.html#patchWorkforcemanagementManagementunitWorkplan) | **PATCH** /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans/{workPlanId} | Update a work plan
 [**patchWorkforcemanagementManagementunitWorkplanrotation**](WorkforceManagementApi.html#patchWorkforcemanagementManagementunitWorkplanrotation) | **PATCH** /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplanrotations/{workPlanRotationId} | Update a work plan rotation
 [**patchWorkforcemanagementTimeoffrequest**](WorkforceManagementApi.html#patchWorkforcemanagementTimeoffrequest) | **PATCH** /api/v2/workforcemanagement/timeoffrequests/{timeOffRequestId} | Update a time off request for the current user
 [**postWorkforcemanagementAdherenceHistorical**](WorkforceManagementApi.html#postWorkforcemanagementAdherenceHistorical) | **POST** /api/v2/workforcemanagement/adherence/historical | Request a historical adherence report for users across management units
 [**postWorkforcemanagementAgentschedulesMine**](WorkforceManagementApi.html#postWorkforcemanagementAgentschedulesMine) | **POST** /api/v2/workforcemanagement/agentschedules/mine | Get published schedule for the current user
-[**postWorkforcemanagementBusinessunitActivitycodes**](WorkforceManagementApi.html#postWorkforcemanagementBusinessunitActivitycodes) | **POST** /api/v2/workforcemanagement/businessunits/{buId}/activitycodes | Create a new activity code
+[**postWorkforcemanagementBusinessunitActivitycodes**](WorkforceManagementApi.html#postWorkforcemanagementBusinessunitActivitycodes) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes | Create a new activity code
 [**postWorkforcemanagementBusinessunitAgentschedulesSearch**](WorkforceManagementApi.html#postWorkforcemanagementBusinessunitAgentschedulesSearch) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/agentschedules/search | Search published schedules
 [**postWorkforcemanagementBusinessunitIntraday**](WorkforceManagementApi.html#postWorkforcemanagementBusinessunitIntraday) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/intraday | Get intraday data for the given date for the requested planningGroupIds
 [**postWorkforcemanagementBusinessunitPlanninggroups**](WorkforceManagementApi.html#postWorkforcemanagementBusinessunitPlanninggroups) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/planninggroups | Adds a new planning group
@@ -93,12 +93,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postWorkforcemanagementBusinessunitWeekShorttermforecastCopy**](WorkforceManagementApi.html#postWorkforcemanagementBusinessunitWeekShorttermforecastCopy) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}/copy | Copy a short term forecast
 [**postWorkforcemanagementBusinessunitWeekShorttermforecastsGenerate**](WorkforceManagementApi.html#postWorkforcemanagementBusinessunitWeekShorttermforecastsGenerate) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/generate | Generate a short term forecast
 [**postWorkforcemanagementBusinessunits**](WorkforceManagementApi.html#postWorkforcemanagementBusinessunits) | **POST** /api/v2/workforcemanagement/businessunits | Add a new business unit
-[**postWorkforcemanagementManagementunitAgentschedulesSearch**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitAgentschedulesSearch) | **POST** /api/v2/workforcemanagement/managementunits/{muId}/agentschedules/search | Query published schedules for given given time range for set of users
-[**postWorkforcemanagementManagementunitHistoricaladherencequery**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitHistoricaladherencequery) | **POST** /api/v2/workforcemanagement/managementunits/{muId}/historicaladherencequery | Request a historical adherence report
-[**postWorkforcemanagementManagementunitMove**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitMove) | **POST** /api/v2/workforcemanagement/managementunits/{muId}/move | Move the requested management unit to a new business unit
-[**postWorkforcemanagementManagementunitSchedulesSearch**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitSchedulesSearch) | **POST** /api/v2/workforcemanagement/managementunits/{muId}/schedules/search | Query published schedules for given given time range for set of users
-[**postWorkforcemanagementManagementunitTimeoffrequests**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitTimeoffrequests) | **POST** /api/v2/workforcemanagement/managementunits/{muId}/timeoffrequests | Create a new time off request
-[**postWorkforcemanagementManagementunitTimeoffrequestsQuery**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitTimeoffrequestsQuery) | **POST** /api/v2/workforcemanagement/managementunits/{muId}/timeoffrequests/query | Gets the lookup ids to fetch the specified set of requests
+[**postWorkforcemanagementManagementunitAgentschedulesSearch**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitAgentschedulesSearch) | **POST** /api/v2/workforcemanagement/managementunits/{managementUnitId}/agentschedules/search | Query published schedules for given given time range for set of users
+[**postWorkforcemanagementManagementunitHistoricaladherencequery**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitHistoricaladherencequery) | **POST** /api/v2/workforcemanagement/managementunits/{managementUnitId}/historicaladherencequery | Request a historical adherence report
+[**postWorkforcemanagementManagementunitMove**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitMove) | **POST** /api/v2/workforcemanagement/managementunits/{managementUnitId}/move | Move the requested management unit to a new business unit
+[**postWorkforcemanagementManagementunitSchedulesSearch**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitSchedulesSearch) | **POST** /api/v2/workforcemanagement/managementunits/{managementUnitId}/schedules/search | Query published schedules for given given time range for set of users
+[**postWorkforcemanagementManagementunitTimeoffrequests**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitTimeoffrequests) | **POST** /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffrequests | Create a new time off request
+[**postWorkforcemanagementManagementunitTimeoffrequestsQuery**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitTimeoffrequestsQuery) | **POST** /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffrequests/query | Gets the lookup ids to fetch the specified set of requests
 [**postWorkforcemanagementManagementunitWeekShifttradeMatch**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitWeekShifttradeMatch) | **POST** /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades/{tradeId}/match | Matches a shift trade. This route can only be called by the receiving agent
 [**postWorkforcemanagementManagementunitWeekShifttrades**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitWeekShifttrades) | **POST** /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades | Adds a shift trade
 [**postWorkforcemanagementManagementunitWeekShifttradesSearch**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitWeekShifttradesSearch) | **POST** /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades/search | Searches for potential shift trade matches for the current agent
@@ -171,11 +171,11 @@ void (no response body)
 
 <a name="deleteWorkforcemanagementBusinessunitActivitycode"></a>
 
-# void deleteWorkforcemanagementBusinessunitActivitycode(buId, acId)
+# void deleteWorkforcemanagementBusinessunitActivitycode(businessUnitId, activityCodeId)
 
 
 
-DELETE /api/v2/workforcemanagement/businessunits/{buId}/activitycodes/{acId}
+DELETE /api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes/{activityCodeId}
 
 Deletes an activity code
 
@@ -200,10 +200,10 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
-let buId = "buId_example"; // String | The ID of the business unit, or 'mine' for the business unit of the logged-in user.
-let acId = "acId_example"; // String | The ID of the activity code to delete
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit, or 'mine' for the business unit of the logged-in user.
+let activityCodeId = "activityCodeId_example"; // String | The ID of the activity code to delete
 
-apiInstance.deleteWorkforcemanagementBusinessunitActivitycode(buId, acId)
+apiInstance.deleteWorkforcemanagementBusinessunitActivitycode(businessUnitId, activityCodeId)
   .then(() => {
     console.log('deleteWorkforcemanagementBusinessunitActivitycode returned successfully.');
   })
@@ -218,8 +218,8 @@ apiInstance.deleteWorkforcemanagementBusinessunitActivitycode(buId, acId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **buId** | **String** | The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user. |  |
- **acId** | **String** | The ID of the activity code to delete |  |
+ **businessUnitId** | **String** | The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user. |  |
+ **activityCodeId** | **String** | The ID of the activity code to delete |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -517,11 +517,11 @@ void (no response body)
 
 <a name="deleteWorkforcemanagementManagementunit"></a>
 
-# void deleteWorkforcemanagementManagementunit(muId)
+# void deleteWorkforcemanagementManagementunit(managementUnitId)
 
 
 
-DELETE /api/v2/workforcemanagement/managementunits/{muId}
+DELETE /api/v2/workforcemanagement/managementunits/{managementUnitId}
 
 Delete management unit
 
@@ -546,9 +546,9 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
-let muId = "muId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 
-apiInstance.deleteWorkforcemanagementManagementunit(muId)
+apiInstance.deleteWorkforcemanagementManagementunit(managementUnitId)
   .then(() => {
     console.log('deleteWorkforcemanagementManagementunit returned successfully.');
   })
@@ -563,7 +563,7 @@ apiInstance.deleteWorkforcemanagementManagementunit(muId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **muId** | **String** | The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+ **managementUnitId** | **String** | The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -907,11 +907,11 @@ apiInstance.getWorkforcemanagementBusinessunit(businessUnitId, opts)
 
 <a name="getWorkforcemanagementBusinessunitActivitycode"></a>
 
-# BusinessUnitActivityCode getWorkforcemanagementBusinessunitActivitycode(buId, acId)
+# BusinessUnitActivityCode getWorkforcemanagementBusinessunitActivitycode(businessUnitId, activityCodeId)
 
 
 
-GET /api/v2/workforcemanagement/businessunits/{buId}/activitycodes/{acId}
+GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes/{activityCodeId}
 
 Get an activity code
 
@@ -936,10 +936,10 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
-let buId = "buId_example"; // String | The ID of the business unit, or 'mine' for the business unit of the logged-in user.
-let acId = "acId_example"; // String | The ID of the activity code to fetch
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit, or 'mine' for the business unit of the logged-in user.
+let activityCodeId = "activityCodeId_example"; // String | The ID of the activity code to fetch
 
-apiInstance.getWorkforcemanagementBusinessunitActivitycode(buId, acId)
+apiInstance.getWorkforcemanagementBusinessunitActivitycode(businessUnitId, activityCodeId)
   .then((data) => {
     console.log(`getWorkforcemanagementBusinessunitActivitycode success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -954,8 +954,8 @@ apiInstance.getWorkforcemanagementBusinessunitActivitycode(buId, acId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **buId** | **String** | The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user. |  |
- **acId** | **String** | The ID of the activity code to fetch |  |
+ **businessUnitId** | **String** | The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user. |  |
+ **activityCodeId** | **String** | The ID of the activity code to fetch |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -964,11 +964,11 @@ apiInstance.getWorkforcemanagementBusinessunitActivitycode(buId, acId)
 
 <a name="getWorkforcemanagementBusinessunitActivitycodes"></a>
 
-# BusinessUnitActivityCodeListing getWorkforcemanagementBusinessunitActivitycodes(buId)
+# BusinessUnitActivityCodeListing getWorkforcemanagementBusinessunitActivitycodes(businessUnitId)
 
 
 
-GET /api/v2/workforcemanagement/businessunits/{buId}/activitycodes
+GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes
 
 Get activity codes
 
@@ -1038,9 +1038,9 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
-let buId = "buId_example"; // String | The ID of the business unit, or 'mine' for the business unit of the logged-in user.
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit, or 'mine' for the business unit of the logged-in user.
 
-apiInstance.getWorkforcemanagementBusinessunitActivitycodes(buId)
+apiInstance.getWorkforcemanagementBusinessunitActivitycodes(businessUnitId)
   .then((data) => {
     console.log(`getWorkforcemanagementBusinessunitActivitycodes success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1055,7 +1055,7 @@ apiInstance.getWorkforcemanagementBusinessunitActivitycodes(buId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **buId** | **String** | The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user. |  |
+ **businessUnitId** | **String** | The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user. |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2322,11 +2322,11 @@ apiInstance.getWorkforcemanagementBusinessunitsDivisionviews(opts)
 
 <a name="getWorkforcemanagementManagementunit"></a>
 
-# ManagementUnit getWorkforcemanagementManagementunit(muId, opts)
+# ManagementUnit getWorkforcemanagementManagementunit(managementUnitId, opts)
 
 
 
-GET /api/v2/workforcemanagement/managementunits/{muId}
+GET /api/v2/workforcemanagement/managementunits/{managementUnitId}
 
 Get management unit
 
@@ -2405,12 +2405,12 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
-let muId = "muId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 let opts = { 
   'expand': ["expand_example"] // [String] | 
 };
 
-apiInstance.getWorkforcemanagementManagementunit(muId, opts)
+apiInstance.getWorkforcemanagementManagementunit(managementUnitId, opts)
   .then((data) => {
     console.log(`getWorkforcemanagementManagementunit success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2425,7 +2425,7 @@ apiInstance.getWorkforcemanagementManagementunit(muId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **muId** | **String** | The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+ **managementUnitId** | **String** | The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
  **expand** | **[String]** |  | [optional] <br />**Values**: settings, settings.adherence, settings.timeOff, settings.scheduling, settings.shortTermForecasting, settings.shiftTrading |
 {: class="table table-striped"}
 
@@ -2435,11 +2435,11 @@ apiInstance.getWorkforcemanagementManagementunit(muId, opts)
 
 <a name="getWorkforcemanagementManagementunitActivitycodes"></a>
 
-# ActivityCodeContainer getWorkforcemanagementManagementunitActivitycodes(muId)
+# ActivityCodeContainer getWorkforcemanagementManagementunitActivitycodes(managementUnitId)
 
 <span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
-GET /api/v2/workforcemanagement/managementunits/{muId}/activitycodes
+GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/activitycodes
 
 Get activity codes
 
@@ -2503,9 +2503,9 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
-let muId = "muId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 
-apiInstance.getWorkforcemanagementManagementunitActivitycodes(muId)
+apiInstance.getWorkforcemanagementManagementunitActivitycodes(managementUnitId)
   .then((data) => {
     console.log(`getWorkforcemanagementManagementunitActivitycodes success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2520,7 +2520,7 @@ apiInstance.getWorkforcemanagementManagementunitActivitycodes(muId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **muId** | **String** | The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+ **managementUnitId** | **String** | The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2707,11 +2707,11 @@ apiInstance.getWorkforcemanagementManagementunitAgentShifttrades(managementUnitI
 
 <a name="getWorkforcemanagementManagementunitShifttradesMatched"></a>
 
-# ShiftTradeMatchesSummaryResponse getWorkforcemanagementManagementunitShifttradesMatched(muId)
+# ShiftTradeMatchesSummaryResponse getWorkforcemanagementManagementunitShifttradesMatched(managementUnitId)
 
 
 
-GET /api/v2/workforcemanagement/managementunits/{muId}/shifttrades/matched
+GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/shifttrades/matched
 
 Gets a summary of all shift trades in the matched state
 
@@ -2737,9 +2737,9 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
-let muId = "muId_example"; // String | The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user.
+let managementUnitId = "managementUnitId_example"; // String | The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user.
 
-apiInstance.getWorkforcemanagementManagementunitShifttradesMatched(muId)
+apiInstance.getWorkforcemanagementManagementunitShifttradesMatched(managementUnitId)
   .then((data) => {
     console.log(`getWorkforcemanagementManagementunitShifttradesMatched success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2754,7 +2754,7 @@ apiInstance.getWorkforcemanagementManagementunitShifttradesMatched(muId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **muId** | **String** | The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+ **managementUnitId** | **String** | The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2763,11 +2763,11 @@ apiInstance.getWorkforcemanagementManagementunitShifttradesMatched(muId)
 
 <a name="getWorkforcemanagementManagementunitShifttradesUsers"></a>
 
-# WfmUserEntityListing getWorkforcemanagementManagementunitShifttradesUsers(muId)
+# WfmUserEntityListing getWorkforcemanagementManagementunitShifttradesUsers(managementUnitId)
 
 
 
-GET /api/v2/workforcemanagement/managementunits/{muId}/shifttrades/users
+GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/shifttrades/users
 
 Gets list of users available for whom you can send direct shift trade requests
 
@@ -2792,9 +2792,9 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
-let muId = "muId_example"; // String | The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user.
+let managementUnitId = "managementUnitId_example"; // String | The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user.
 
-apiInstance.getWorkforcemanagementManagementunitShifttradesUsers(muId)
+apiInstance.getWorkforcemanagementManagementunitShifttradesUsers(managementUnitId)
   .then((data) => {
     console.log(`getWorkforcemanagementManagementunitShifttradesUsers success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2809,7 +2809,7 @@ apiInstance.getWorkforcemanagementManagementunitShifttradesUsers(muId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **muId** | **String** | The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+ **managementUnitId** | **String** | The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2818,11 +2818,11 @@ apiInstance.getWorkforcemanagementManagementunitShifttradesUsers(muId)
 
 <a name="getWorkforcemanagementManagementunitUserTimeoffrequest"></a>
 
-# TimeOffRequestResponse getWorkforcemanagementManagementunitUserTimeoffrequest(muId, userId, timeOffRequestId)
+# TimeOffRequestResponse getWorkforcemanagementManagementunitUserTimeoffrequest(managementUnitId, userId, timeOffRequestId)
 
 
 
-GET /api/v2/workforcemanagement/managementunits/{muId}/users/{userId}/timeoffrequests/{timeOffRequestId}
+GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/users/{userId}/timeoffrequests/{timeOffRequestId}
 
 Get a time off request
 
@@ -2847,11 +2847,11 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
-let muId = "muId_example"; // String | The muId of the management unit, or 'mine' for the management unit of the logged-in user.
+let managementUnitId = "managementUnitId_example"; // String | The muId of the management unit, or 'mine' for the management unit of the logged-in user.
 let userId = "userId_example"; // String | The userId to whom the Time Off Request applies.
 let timeOffRequestId = "timeOffRequestId_example"; // String | Time Off Request Id
 
-apiInstance.getWorkforcemanagementManagementunitUserTimeoffrequest(muId, userId, timeOffRequestId)
+apiInstance.getWorkforcemanagementManagementunitUserTimeoffrequest(managementUnitId, userId, timeOffRequestId)
   .then((data) => {
     console.log(`getWorkforcemanagementManagementunitUserTimeoffrequest success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2866,7 +2866,7 @@ apiInstance.getWorkforcemanagementManagementunitUserTimeoffrequest(muId, userId,
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **muId** | **String** | The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+ **managementUnitId** | **String** | The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
  **userId** | **String** | The userId to whom the Time Off Request applies. |  |
  **timeOffRequestId** | **String** | Time Off Request Id |  |
 {: class="table table-striped"}
@@ -2877,11 +2877,11 @@ apiInstance.getWorkforcemanagementManagementunitUserTimeoffrequest(muId, userId,
 
 <a name="getWorkforcemanagementManagementunitUserTimeoffrequests"></a>
 
-# TimeOffRequestList getWorkforcemanagementManagementunitUserTimeoffrequests(muId, userId, opts)
+# TimeOffRequestList getWorkforcemanagementManagementunitUserTimeoffrequests(managementUnitId, userId, opts)
 
 
 
-GET /api/v2/workforcemanagement/managementunits/{muId}/users/{userId}/timeoffrequests
+GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/users/{userId}/timeoffrequests
 
 Get a list of time off requests for a given user
 
@@ -2906,13 +2906,13 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
-let muId = "muId_example"; // String | The muId of the management unit, or 'mine' for the management unit of the logged-in user.
+let managementUnitId = "managementUnitId_example"; // String | The muId of the management unit, or 'mine' for the management unit of the logged-in user.
 let userId = "userId_example"; // String | The userId to whom the Time Off Request applies.
 let opts = { 
   'recentlyReviewed': false // Boolean | Limit results to requests that have been reviewed within the preceding 30 days
 };
 
-apiInstance.getWorkforcemanagementManagementunitUserTimeoffrequests(muId, userId, opts)
+apiInstance.getWorkforcemanagementManagementunitUserTimeoffrequests(managementUnitId, userId, opts)
   .then((data) => {
     console.log(`getWorkforcemanagementManagementunitUserTimeoffrequests success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2927,7 +2927,7 @@ apiInstance.getWorkforcemanagementManagementunitUserTimeoffrequests(muId, userId
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **muId** | **String** | The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+ **managementUnitId** | **String** | The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
  **userId** | **String** | The userId to whom the Time Off Request applies. |  |
  **recentlyReviewed** | **Boolean** | Limit results to requests that have been reviewed within the preceding 30 days | [optional] [default to false] |
 {: class="table table-striped"}
@@ -2938,11 +2938,11 @@ apiInstance.getWorkforcemanagementManagementunitUserTimeoffrequests(muId, userId
 
 <a name="getWorkforcemanagementManagementunitUsers"></a>
 
-# WfmUserEntityListing getWorkforcemanagementManagementunitUsers(muId)
+# WfmUserEntityListing getWorkforcemanagementManagementunitUsers(managementUnitId)
 
 
 
-GET /api/v2/workforcemanagement/managementunits/{muId}/users
+GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/users
 
 Get users in the management unit
 
@@ -2974,9 +2974,9 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
-let muId = "muId_example"; // String | The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user.
+let managementUnitId = "managementUnitId_example"; // String | The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user.
 
-apiInstance.getWorkforcemanagementManagementunitUsers(muId)
+apiInstance.getWorkforcemanagementManagementunitUsers(managementUnitId)
   .then((data) => {
     console.log(`getWorkforcemanagementManagementunitUsers success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2991,7 +2991,7 @@ apiInstance.getWorkforcemanagementManagementunitUsers(muId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **muId** | **String** | The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+ **managementUnitId** | **String** | The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -3924,11 +3924,11 @@ apiInstance.patchWorkforcemanagementBusinessunit(businessUnitId, opts)
 
 <a name="patchWorkforcemanagementBusinessunitActivitycode"></a>
 
-# BusinessUnitActivityCode patchWorkforcemanagementBusinessunitActivitycode(buId, acId, opts)
+# BusinessUnitActivityCode patchWorkforcemanagementBusinessunitActivitycode(businessUnitId, activityCodeId, opts)
 
 
 
-PATCH /api/v2/workforcemanagement/businessunits/{buId}/activitycodes/{acId}
+PATCH /api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes/{activityCodeId}
 
 Update an activity code
 
@@ -3991,13 +3991,13 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
-let buId = "buId_example"; // String | The ID of the business unit, or 'mine' for the business unit of the logged-in user.
-let acId = "acId_example"; // String | The ID of the activity code to update
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit, or 'mine' for the business unit of the logged-in user.
+let activityCodeId = "activityCodeId_example"; // String | The ID of the activity code to update
 let opts = { 
   'body': {} // Object | body
 };
 
-apiInstance.patchWorkforcemanagementBusinessunitActivitycode(buId, acId, opts)
+apiInstance.patchWorkforcemanagementBusinessunitActivitycode(businessUnitId, activityCodeId, opts)
   .then((data) => {
     console.log(`patchWorkforcemanagementBusinessunitActivitycode success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -4012,8 +4012,8 @@ apiInstance.patchWorkforcemanagementBusinessunitActivitycode(buId, acId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **buId** | **String** | The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user. |  |
- **acId** | **String** | The ID of the activity code to update |  |
+ **businessUnitId** | **String** | The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user. |  |
+ **activityCodeId** | **String** | The ID of the activity code to update |  |
  **body** | **Object** | body | [optional]  |
 {: class="table table-striped"}
 
@@ -4335,11 +4335,11 @@ apiInstance.patchWorkforcemanagementBusinessunitServicegoaltemplate(businessUnit
 
 <a name="patchWorkforcemanagementManagementunit"></a>
 
-# ManagementUnit patchWorkforcemanagementManagementunit(muId, opts)
+# ManagementUnit patchWorkforcemanagementManagementunit(managementUnitId, opts)
 
 
 
-PATCH /api/v2/workforcemanagement/managementunits/{muId}
+PATCH /api/v2/workforcemanagement/managementunits/{managementUnitId}
 
 Update the requested management unit
 
@@ -4448,12 +4448,12 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
-let muId = "muId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 let opts = { 
   'body': {} // Object | body
 };
 
-apiInstance.patchWorkforcemanagementManagementunit(muId, opts)
+apiInstance.patchWorkforcemanagementManagementunit(managementUnitId, opts)
   .then((data) => {
     console.log(`patchWorkforcemanagementManagementunit success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -4468,7 +4468,7 @@ apiInstance.patchWorkforcemanagementManagementunit(muId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **muId** | **String** | The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+ **managementUnitId** | **String** | The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
  **body** | **Object** | body | [optional]  |
 {: class="table table-striped"}
 
@@ -4478,11 +4478,11 @@ apiInstance.patchWorkforcemanagementManagementunit(muId, opts)
 
 <a name="patchWorkforcemanagementManagementunitUserTimeoffrequest"></a>
 
-# TimeOffRequestResponse patchWorkforcemanagementManagementunitUserTimeoffrequest(muId, userId, timeOffRequestId, opts)
+# TimeOffRequestResponse patchWorkforcemanagementManagementunitUserTimeoffrequest(managementUnitId, userId, timeOffRequestId, opts)
 
 
 
-PATCH /api/v2/workforcemanagement/managementunits/{muId}/users/{userId}/timeoffrequests/{timeOffRequestId}
+PATCH /api/v2/workforcemanagement/managementunits/{managementUnitId}/users/{userId}/timeoffrequests/{timeOffRequestId}
 
 Update a time off request
 
@@ -4545,14 +4545,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
-let muId = "muId_example"; // String | The muId of the management unit, or 'mine' for the management unit of the logged-in user.
+let managementUnitId = "managementUnitId_example"; // String | The muId of the management unit, or 'mine' for the management unit of the logged-in user.
 let userId = "userId_example"; // String | The id of the user the requested time off request belongs to
 let timeOffRequestId = "timeOffRequestId_example"; // String | The id of the time off request to update
 let opts = { 
   'body': {} // Object | body
 };
 
-apiInstance.patchWorkforcemanagementManagementunitUserTimeoffrequest(muId, userId, timeOffRequestId, opts)
+apiInstance.patchWorkforcemanagementManagementunitUserTimeoffrequest(managementUnitId, userId, timeOffRequestId, opts)
   .then((data) => {
     console.log(`patchWorkforcemanagementManagementunitUserTimeoffrequest success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -4567,7 +4567,7 @@ apiInstance.patchWorkforcemanagementManagementunitUserTimeoffrequest(muId, userI
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **muId** | **String** | The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+ **managementUnitId** | **String** | The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
  **userId** | **String** | The id of the user the requested time off request belongs to |  |
  **timeOffRequestId** | **String** | The id of the time off request to update |  |
  **body** | **Object** | body | [optional]  |
@@ -5209,11 +5209,11 @@ apiInstance.postWorkforcemanagementAgentschedulesMine(opts)
 
 <a name="postWorkforcemanagementBusinessunitActivitycodes"></a>
 
-# BusinessUnitActivityCode postWorkforcemanagementBusinessunitActivitycodes(buId, opts)
+# BusinessUnitActivityCode postWorkforcemanagementBusinessunitActivitycodes(businessUnitId, opts)
 
 
 
-POST /api/v2/workforcemanagement/businessunits/{buId}/activitycodes
+POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes
 
 Create a new activity code
 
@@ -5268,12 +5268,12 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
-let buId = "buId_example"; // String | The ID of the business unit, or 'mine' for the business unit of the logged-in user.
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit, or 'mine' for the business unit of the logged-in user.
 let opts = { 
   'body': {} // Object | body
 };
 
-apiInstance.postWorkforcemanagementBusinessunitActivitycodes(buId, opts)
+apiInstance.postWorkforcemanagementBusinessunitActivitycodes(businessUnitId, opts)
   .then((data) => {
     console.log(`postWorkforcemanagementBusinessunitActivitycodes success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -5288,7 +5288,7 @@ apiInstance.postWorkforcemanagementBusinessunitActivitycodes(buId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **buId** | **String** | The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user. |  |
+ **businessUnitId** | **String** | The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user. |  |
  **body** | **Object** | body | [optional]  |
 {: class="table table-striped"}
 
@@ -6405,11 +6405,11 @@ apiInstance.postWorkforcemanagementBusinessunits(opts)
 
 <a name="postWorkforcemanagementManagementunitAgentschedulesSearch"></a>
 
-# BuAsyncAgentSchedulesSearchResponse postWorkforcemanagementManagementunitAgentschedulesSearch(muId, opts)
+# BuAsyncAgentSchedulesSearchResponse postWorkforcemanagementManagementunitAgentschedulesSearch(managementUnitId, opts)
 
 
 
-POST /api/v2/workforcemanagement/managementunits/{muId}/agentschedules/search
+POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/agentschedules/search
 
 Query published schedules for given given time range for set of users
 
@@ -6462,14 +6462,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
-let muId = "muId_example"; // String | The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user.
+let managementUnitId = "managementUnitId_example"; // String | The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user.
 let opts = { 
   'body': {}, // Object | body
   'forceAsync': true, // Boolean | Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes
   'forceDownloadService': true // Boolean | Force the result of this operation to be sent via download service.  For testing/app development purposes
 };
 
-apiInstance.postWorkforcemanagementManagementunitAgentschedulesSearch(muId, opts)
+apiInstance.postWorkforcemanagementManagementunitAgentschedulesSearch(managementUnitId, opts)
   .then((data) => {
     console.log(`postWorkforcemanagementManagementunitAgentschedulesSearch success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -6484,7 +6484,7 @@ apiInstance.postWorkforcemanagementManagementunitAgentschedulesSearch(muId, opts
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **muId** | **String** | The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+ **managementUnitId** | **String** | The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
  **body** | **Object** | body | [optional]  |
  **forceAsync** | **Boolean** | Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes | [optional]  |
  **forceDownloadService** | **Boolean** | Force the result of this operation to be sent via download service.  For testing/app development purposes | [optional]  |
@@ -6496,11 +6496,11 @@ apiInstance.postWorkforcemanagementManagementunitAgentschedulesSearch(muId, opts
 
 <a name="postWorkforcemanagementManagementunitHistoricaladherencequery"></a>
 
-# WfmHistoricalAdherenceResponse postWorkforcemanagementManagementunitHistoricaladherencequery(muId, opts)
+# WfmHistoricalAdherenceResponse postWorkforcemanagementManagementunitHistoricaladherencequery(managementUnitId, opts)
 
 
 
-POST /api/v2/workforcemanagement/managementunits/{muId}/historicaladherencequery
+POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/historicaladherencequery
 
 Request a historical adherence report
 
@@ -6555,12 +6555,12 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
-let muId = "muId_example"; // String | The management unit ID of the management unit
+let managementUnitId = "managementUnitId_example"; // String | The management unit ID of the management unit
 let opts = { 
   'body': {} // Object | body
 };
 
-apiInstance.postWorkforcemanagementManagementunitHistoricaladherencequery(muId, opts)
+apiInstance.postWorkforcemanagementManagementunitHistoricaladherencequery(managementUnitId, opts)
   .then((data) => {
     console.log(`postWorkforcemanagementManagementunitHistoricaladherencequery success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -6575,7 +6575,7 @@ apiInstance.postWorkforcemanagementManagementunitHistoricaladherencequery(muId, 
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **muId** | **String** | The management unit ID of the management unit |  |
+ **managementUnitId** | **String** | The management unit ID of the management unit |  |
  **body** | **Object** | body | [optional]  |
 {: class="table table-striped"}
 
@@ -6585,11 +6585,11 @@ apiInstance.postWorkforcemanagementManagementunitHistoricaladherencequery(muId, 
 
 <a name="postWorkforcemanagementManagementunitMove"></a>
 
-# MoveManagementUnitResponse postWorkforcemanagementManagementunitMove(muId, opts)
+# MoveManagementUnitResponse postWorkforcemanagementManagementunitMove(managementUnitId, opts)
 
 
 
-POST /api/v2/workforcemanagement/managementunits/{muId}/move
+POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/move
 
 Move the requested management unit to a new business unit
 
@@ -6639,12 +6639,12 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
-let muId = "muId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 let opts = { 
   'body': {} // Object | body
 };
 
-apiInstance.postWorkforcemanagementManagementunitMove(muId, opts)
+apiInstance.postWorkforcemanagementManagementunitMove(managementUnitId, opts)
   .then((data) => {
     console.log(`postWorkforcemanagementManagementunitMove success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -6659,7 +6659,7 @@ apiInstance.postWorkforcemanagementManagementunitMove(muId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **muId** | **String** | The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+ **managementUnitId** | **String** | The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
  **body** | **Object** | body | [optional]  |
 {: class="table table-striped"}
 
@@ -6669,11 +6669,11 @@ apiInstance.postWorkforcemanagementManagementunitMove(muId, opts)
 
 <a name="postWorkforcemanagementManagementunitSchedulesSearch"></a>
 
-# UserScheduleContainer postWorkforcemanagementManagementunitSchedulesSearch(muId, opts)
+# UserScheduleContainer postWorkforcemanagementManagementunitSchedulesSearch(managementUnitId, opts)
 
 <span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
-POST /api/v2/workforcemanagement/managementunits/{muId}/schedules/search
+POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/schedules/search
 
 Query published schedules for given given time range for set of users
 
@@ -6727,12 +6727,12 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
-let muId = "muId_example"; // String | The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user.
+let managementUnitId = "managementUnitId_example"; // String | The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user.
 let opts = { 
   'body': {} // Object | body
 };
 
-apiInstance.postWorkforcemanagementManagementunitSchedulesSearch(muId, opts)
+apiInstance.postWorkforcemanagementManagementunitSchedulesSearch(managementUnitId, opts)
   .then((data) => {
     console.log(`postWorkforcemanagementManagementunitSchedulesSearch success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -6747,7 +6747,7 @@ apiInstance.postWorkforcemanagementManagementunitSchedulesSearch(muId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **muId** | **String** | The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+ **managementUnitId** | **String** | The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
  **body** | **Object** | body | [optional]  |
 {: class="table table-striped"}
 
@@ -6757,11 +6757,11 @@ apiInstance.postWorkforcemanagementManagementunitSchedulesSearch(muId, opts)
 
 <a name="postWorkforcemanagementManagementunitTimeoffrequests"></a>
 
-# TimeOffRequestList postWorkforcemanagementManagementunitTimeoffrequests(muId, opts)
+# TimeOffRequestList postWorkforcemanagementManagementunitTimeoffrequests(managementUnitId, opts)
 
 
 
-POST /api/v2/workforcemanagement/managementunits/{muId}/timeoffrequests
+POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffrequests
 
 Create a new time off request
 
@@ -6820,12 +6820,12 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
-let muId = "muId_example"; // String | The muId of the management unit, or 'mine' for the management unit of the logged-in user.
+let managementUnitId = "managementUnitId_example"; // String | The muId of the management unit, or 'mine' for the management unit of the logged-in user.
 let opts = { 
   'body': {} // Object | body
 };
 
-apiInstance.postWorkforcemanagementManagementunitTimeoffrequests(muId, opts)
+apiInstance.postWorkforcemanagementManagementunitTimeoffrequests(managementUnitId, opts)
   .then((data) => {
     console.log(`postWorkforcemanagementManagementunitTimeoffrequests success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -6840,7 +6840,7 @@ apiInstance.postWorkforcemanagementManagementunitTimeoffrequests(muId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **muId** | **String** | The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+ **managementUnitId** | **String** | The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
  **body** | **Object** | body | [optional]  |
 {: class="table table-striped"}
 
@@ -6850,11 +6850,11 @@ apiInstance.postWorkforcemanagementManagementunitTimeoffrequests(muId, opts)
 
 <a name="postWorkforcemanagementManagementunitTimeoffrequestsQuery"></a>
 
-# TimeOffRequestListing postWorkforcemanagementManagementunitTimeoffrequestsQuery(muId, opts)
+# TimeOffRequestListing postWorkforcemanagementManagementunitTimeoffrequestsQuery(managementUnitId, opts)
 
 
 
-POST /api/v2/workforcemanagement/managementunits/{muId}/timeoffrequests/query
+POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffrequests/query
 
 Gets the lookup ids to fetch the specified set of requests
 
@@ -6909,12 +6909,12 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
-let muId = "muId_example"; // String | The muId of the management unit, or 'mine' for the management unit of the logged-in user.
+let managementUnitId = "managementUnitId_example"; // String | The muId of the management unit, or 'mine' for the management unit of the logged-in user.
 let opts = { 
   'body': {} // Object | body
 };
 
-apiInstance.postWorkforcemanagementManagementunitTimeoffrequestsQuery(muId, opts)
+apiInstance.postWorkforcemanagementManagementunitTimeoffrequestsQuery(managementUnitId, opts)
   .then((data) => {
     console.log(`postWorkforcemanagementManagementunitTimeoffrequestsQuery success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -6929,7 +6929,7 @@ apiInstance.postWorkforcemanagementManagementunitTimeoffrequestsQuery(muId, opts
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **muId** | **String** | The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+ **managementUnitId** | **String** | The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
  **body** | **Object** | body | [optional]  |
 {: class="table table-striped"}
 

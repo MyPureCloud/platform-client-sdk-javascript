@@ -1232,11 +1232,12 @@ ADFS <a href="#" onclick="return copyADFSExample()">Copy</a>
 { 
   "id": String, 
   "name": String, 
-  "relyingPartyIdentifier": String, 
-  "certificate": String, 
+  "disabled": Boolean, 
   "issuerURI": String, 
   "ssoTargetURI": String, 
-  "disabled": Boolean, 
+  "certificate": String, 
+  "certificates": [String], 
+  "relyingPartyIdentifier": String, 
   "selfUri": String, 
 }
 ```
@@ -1320,10 +1321,11 @@ CustomerInteractionCenter <a href="#" onclick="return copyCustomerInteractionCen
 { 
   "id": String, 
   "name": String, 
-  "certificate": String, 
+  "disabled": Boolean, 
   "issuerURI": String, 
   "ssoTargetURI": String, 
-  "disabled": Boolean, 
+  "certificate": String, 
+  "certificates": [String], 
   "selfUri": String, 
 }
 ```
@@ -1407,14 +1409,15 @@ GenericSAML <a href="#" onclick="return copyGenericSAMLExample()">Copy</a>
 { 
   "id": String, 
   "name": String, 
-  "logoImageData": String, 
-  "relyingPartyIdentifier": String, 
-  "endpointCompression": Boolean, 
-  "nameIdentifierFormat": String, 
-  "certificate": String, 
+  "disabled": Boolean, 
   "issuerURI": String, 
   "ssoTargetURI": String, 
-  "disabled": Boolean, 
+  "certificate": String, 
+  "certificates": [String], 
+  "relyingPartyIdentifier": String, 
+  "logoImageData": String, 
+  "endpointCompression": Boolean, 
+  "nameIdentifierFormat": String, 
   "selfUri": String, 
 }
 ```
@@ -1498,11 +1501,12 @@ GSuite <a href="#" onclick="return copyGSuiteExample()">Copy</a>
 { 
   "id": String, 
   "name": String, 
-  "relyingPartyIdentifier": String, 
-  "certificate": String, 
+  "disabled": Boolean, 
   "issuerURI": String, 
   "ssoTargetURI": String, 
-  "disabled": Boolean, 
+  "certificate": String, 
+  "certificates": [String], 
+  "relyingPartyIdentifier": String, 
   "selfUri": String, 
 }
 ```
@@ -1586,11 +1590,12 @@ IdentityNow <a href="#" onclick="return copyIdentityNowExample()">Copy</a>
 { 
   "id": String, 
   "name": String, 
-  "relyingPartyIdentifier": String, 
-  "certificate": String, 
+  "disabled": Boolean, 
   "issuerURI": String, 
   "ssoTargetURI": String, 
-  "disabled": Boolean, 
+  "certificate": String, 
+  "certificates": [String], 
+  "relyingPartyIdentifier": String, 
   "selfUri": String, 
 }
 ```
@@ -1674,10 +1679,11 @@ Okta <a href="#" onclick="return copyOktaExample()">Copy</a>
 { 
   "id": String, 
   "name": String, 
-  "certificate": String, 
+  "disabled": Boolean, 
   "issuerURI": String, 
   "ssoTargetURI": String, 
-  "disabled": Boolean, 
+  "certificate": String, 
+  "certificates": [String], 
   "selfUri": String, 
 }
 ```
@@ -1761,10 +1767,11 @@ OneLogin <a href="#" onclick="return copyOneLoginExample()">Copy</a>
 { 
   "id": String, 
   "name": String, 
-  "certificate": String, 
+  "disabled": Boolean, 
   "issuerURI": String, 
   "ssoTargetURI": String, 
-  "disabled": Boolean, 
+  "certificate": String, 
+  "certificates": [String], 
   "selfUri": String, 
 }
 ```
@@ -1848,11 +1855,12 @@ PingIdentity <a href="#" onclick="return copyPingIdentityExample()">Copy</a>
 { 
   "id": String, 
   "name": String, 
-  "relyingPartyIdentifier": String, 
-  "certificate": String, 
+  "disabled": Boolean, 
   "issuerURI": String, 
   "ssoTargetURI": String, 
-  "disabled": Boolean, 
+  "certificate": String, 
+  "certificates": [String], 
+  "relyingPartyIdentifier": String, 
   "selfUri": String, 
 }
 ```
@@ -2020,11 +2028,12 @@ PureEngage <a href="#" onclick="return copyPureEngageExample()">Copy</a>
 { 
   "id": String, 
   "name": String, 
-  "autoProvisionUsers": Boolean, 
-  "certificate": String, 
+  "disabled": Boolean, 
   "issuerURI": String, 
   "ssoTargetURI": String, 
-  "disabled": Boolean, 
+  "certificate": String, 
+  "certificates": [String], 
+  "autoProvisionUsers": Boolean, 
   "selfUri": String, 
 }
 ```
@@ -2108,10 +2117,11 @@ Salesforce <a href="#" onclick="return copySalesforceExample()">Copy</a>
 { 
   "id": String, 
   "name": String, 
-  "certificate": String, 
+  "disabled": Boolean, 
   "issuerURI": String, 
   "ssoTargetURI": String, 
-  "disabled": Boolean, 
+  "certificate": String, 
+  "certificates": [String], 
   "selfUri": String, 
 }
 ```

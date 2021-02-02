@@ -5,7 +5,7 @@ class SpeechTextAnalyticsApi {
 	/**
 	 * SpeechTextAnalytics service.
 	 * @module purecloud-platform-client-v2/api/SpeechTextAnalyticsApi
-	 * @version 104.0.0
+	 * @version 105.0.0
 	 */
 
 	/**
@@ -69,6 +69,76 @@ class SpeechTextAnalyticsApi {
 			{  }, 
 			{  }, 
 			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get Speech And Text Analytics Settings
+	 * 
+	 */
+	getSpeechandtextanalyticsSettings() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/speechandtextanalytics/settings', 
+			'GET', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Patch Speech And Text Analytics Settings
+	 * 
+	 * @param {Object} body Speech And Text Analytics Settings
+	 */
+	patchSpeechandtextanalyticsSettings(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchSpeechandtextanalyticsSettings';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/speechandtextanalytics/settings', 
+			'PATCH', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Search resources.
+	 * 
+	 * @param {Object} body Search request options
+	 */
+	postSpeechandtextanalyticsTranscriptsSearch(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postSpeechandtextanalyticsTranscriptsSearch';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/speechandtextanalytics/transcripts/search', 
+			'POST', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
 			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
