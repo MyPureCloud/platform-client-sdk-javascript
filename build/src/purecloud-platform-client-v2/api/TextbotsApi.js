@@ -5,7 +5,7 @@ class TextbotsApi {
 	/**
 	 * Textbots service.
 	 * @module purecloud-platform-client-v2/api/TextbotsApi
-	 * @version 105.0.0
+	 * @version 105.0.1
 	 */
 
 	/**
