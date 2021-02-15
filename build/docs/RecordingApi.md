@@ -80792,6 +80792,7 @@ RecordingSettings <a href="#" onclick="return copyRecordingSettingsExample()">Co
 ```{"language":"json", "maxHeight": "250px"}
 { 
   "maxSimultaneousStreams": Number, 
+  "maxConfigurableScreenRecordingStreams": Number, 
 }
 ```
 

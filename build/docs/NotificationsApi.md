@@ -101,7 +101,8 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.NotificationsApi();
 
 let opts = { 
-  'expand': ["expand_example"] // [String] | Which fields, if any, to expand
+  'expand': ["expand_example"], // [String] | Which fields, if any, to expand
+  'includePreview': true // Boolean | Whether or not to include Preview topics
 };
 
 apiInstance.getNotificationsAvailabletopics(opts)
@@ -119,7 +120,8 @@ apiInstance.getNotificationsAvailabletopics(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: description, requiresPermissions, schema, transports, publicApiTemplateUriPaths |
+ **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: description, requiresPermissions, enforced, schema, visibility, transports, publicApiTemplateUriPaths |
+ **includePreview** | **Boolean** | Whether or not to include Preview topics | [optional] [default to true] |
 {: class="table table-striped"}
 
 ### Return type

@@ -2677,8 +2677,8 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
   },  
   "userCount": Number, 
   "roleNeedsUpdate": Boolean, 
-  "default": Boolean, 
   "base": Boolean, 
+  "default": Boolean, 
   "selfUri": String, 
 }
 ```
@@ -4295,8 +4295,8 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
   },  
   "userCount": Number, 
   "roleNeedsUpdate": Boolean, 
-  "default": Boolean, 
   "base": Boolean, 
+  "default": Boolean, 
   "selfUri": String, 
 }
 ```
@@ -5684,8 +5684,8 @@ DomainOrganizationRoleCreate <a href="#" onclick="return copyDomainOrganizationR
   },  
   "userCount": Number, 
   "roleNeedsUpdate": Boolean, 
-  "default": Boolean, 
   "base": Boolean, 
+  "default": Boolean, 
   "selfUri": String, 
 }
 ```
@@ -7450,8 +7450,8 @@ DomainOrganizationRoleUpdate <a href="#" onclick="return copyDomainOrganizationR
   },  
   "userCount": Number, 
   "roleNeedsUpdate": Boolean, 
-  "default": Boolean, 
   "base": Boolean, 
+  "default": Boolean, 
   "selfUri": String, 
 }
 ```
@@ -8951,8 +8951,8 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
   },  
   "userCount": Number, 
   "roleNeedsUpdate": Boolean, 
-  "default": Boolean, 
   "base": Boolean, 
+  "default": Boolean, 
   "selfUri": String, 
 }
 ```

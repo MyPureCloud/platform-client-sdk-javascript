@@ -10,6 +10,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**deleteRoutingEmailDomain**](RoutingApi.html#deleteRoutingEmailDomain) | **DELETE** /api/v2/routing/email/domains/{domainId} | Delete a domain
 [**deleteRoutingEmailDomainRoute**](RoutingApi.html#deleteRoutingEmailDomainRoute) | **DELETE** /api/v2/routing/email/domains/{domainName}/routes/{routeId} | Delete a route
 [**deleteRoutingQueue**](RoutingApi.html#deleteRoutingQueue) | **DELETE** /api/v2/routing/queues/{queueId} | Delete a queue
+[**deleteRoutingQueueMember**](RoutingApi.html#deleteRoutingQueueMember) | **DELETE** /api/v2/routing/queues/{queueId}/members/{memberId} | Delete a queue member.
 [**deleteRoutingQueueUser**](RoutingApi.html#deleteRoutingQueueUser) | **DELETE** /api/v2/routing/queues/{queueId}/users/{memberId} | DEPRECATED: use DELETE /routing/queues/{queueId}/members/{memberId}.  Delete queue member.
 [**deleteRoutingQueueWrapupcode**](RoutingApi.html#deleteRoutingQueueWrapupcode) | **DELETE** /api/v2/routing/queues/{queueId}/wrapupcodes/{codeId} | Delete a wrap-up code from a queue
 [**deleteRoutingSettings**](RoutingApi.html#deleteRoutingSettings) | **DELETE** /api/v2/routing/settings | Delete an organization&#39;s routing settings
@@ -32,6 +33,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getRoutingQueue**](RoutingApi.html#getRoutingQueue) | **GET** /api/v2/routing/queues/{queueId} | Get details about this queue.
 [**getRoutingQueueEstimatedwaittime**](RoutingApi.html#getRoutingQueueEstimatedwaittime) | **GET** /api/v2/routing/queues/{queueId}/estimatedwaittime | Get Estimated Wait Time
 [**getRoutingQueueMediatypeEstimatedwaittime**](RoutingApi.html#getRoutingQueueMediatypeEstimatedwaittime) | **GET** /api/v2/routing/queues/{queueId}/mediatypes/{mediaType}/estimatedwaittime | Get Estimated Wait Time
+[**getRoutingQueueMembers**](RoutingApi.html#getRoutingQueueMembers) | **GET** /api/v2/routing/queues/{queueId}/members | Get the members of this queue.
 [**getRoutingQueueUsers**](RoutingApi.html#getRoutingQueueUsers) | **GET** /api/v2/routing/queues/{queueId}/users | DEPRECATED: use GET /routing/queues/{queueId}/members.  Get the members of this queue.
 [**getRoutingQueueWrapupcodes**](RoutingApi.html#getRoutingQueueWrapupcodes) | **GET** /api/v2/routing/queues/{queueId}/wrapupcodes | Get the wrap-up codes for a queue
 [**getRoutingQueues**](RoutingApi.html#getRoutingQueues) | **GET** /api/v2/routing/queues | Get list of queues.
@@ -56,6 +58,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getUserRoutinglanguages**](RoutingApi.html#getUserRoutinglanguages) | **GET** /api/v2/users/{userId}/routinglanguages | List routing language for user
 [**getUserRoutingskills**](RoutingApi.html#getUserRoutingskills) | **GET** /api/v2/users/{userId}/routingskills | List routing skills for user
 [**patchRoutingEmailDomain**](RoutingApi.html#patchRoutingEmailDomain) | **PATCH** /api/v2/routing/email/domains/{domainId} | Update domain settings
+[**patchRoutingEmailDomainValidate**](RoutingApi.html#patchRoutingEmailDomainValidate) | **PATCH** /api/v2/routing/email/domains/{domainId}/validate | Validate domain settings
+[**patchRoutingQueueMember**](RoutingApi.html#patchRoutingQueueMember) | **PATCH** /api/v2/routing/queues/{queueId}/members/{memberId} | Update the ring number OR joined status for a queue member.
+[**patchRoutingQueueMembers**](RoutingApi.html#patchRoutingQueueMembers) | **PATCH** /api/v2/routing/queues/{queueId}/members | Join or unjoin a set of users for a queue
 [**patchRoutingQueueUser**](RoutingApi.html#patchRoutingQueueUser) | **PATCH** /api/v2/routing/queues/{queueId}/users/{memberId} | DEPRECATED: use PATCH /routing/queues/{queueId}/members/{memberId}.  Update the ring number OR joined status for a User in a Queue.
 [**patchRoutingQueueUsers**](RoutingApi.html#patchRoutingQueueUsers) | **PATCH** /api/v2/routing/queues/{queueId}/users | DEPRECATED: use PATCH /routing/queues/{queueId}/members.  Join or unjoin a set of users for a queue.
 [**patchRoutingSettingsContactcenter**](RoutingApi.html#patchRoutingSettingsContactcenter) | **PATCH** /api/v2/routing/settings/contactcenter | Update Contact Center Settings
@@ -69,6 +74,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postRoutingEmailDomainTestconnection**](RoutingApi.html#postRoutingEmailDomainTestconnection) | **POST** /api/v2/routing/email/domains/{domainId}/testconnection | Tests the custom SMTP server integration connection set on this domain
 [**postRoutingEmailDomains**](RoutingApi.html#postRoutingEmailDomains) | **POST** /api/v2/routing/email/domains | Create a domain
 [**postRoutingLanguages**](RoutingApi.html#postRoutingLanguages) | **POST** /api/v2/routing/languages | Create Language
+[**postRoutingQueueMembers**](RoutingApi.html#postRoutingQueueMembers) | **POST** /api/v2/routing/queues/{queueId}/members | Bulk add or delete up to 100 queue members
 [**postRoutingQueueUsers**](RoutingApi.html#postRoutingQueueUsers) | **POST** /api/v2/routing/queues/{queueId}/users | DEPRECATED: use POST /routing/queues/{queueId}/members.  Bulk add or delete up to 100 queue members.
 [**postRoutingQueueWrapupcodes**](RoutingApi.html#postRoutingQueueWrapupcodes) | **POST** /api/v2/routing/queues/{queueId}/wrapupcodes | Add up to 100 wrap-up codes to a queue
 [**postRoutingQueues**](RoutingApi.html#postRoutingQueues) | **POST** /api/v2/routing/queues | Create a queue
@@ -262,11 +268,69 @@ apiInstance.deleteRoutingQueue(queueId, opts)
 
 void (no response body)
 
+<a name="deleteRoutingQueueMember"></a>
+
+# void deleteRoutingQueueMember(queueId, memberId)
+
+
+
+DELETE /api/v2/routing/queues/{queueId}/members/{memberId}
+
+Delete a queue member.
+
+
+
+Requires ANY permissions: 
+
+* routing:queue:edit
+* routing:queueMember:manage
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.RoutingApi();
+
+let queueId = "queueId_example"; // String | Queue ID
+let memberId = "memberId_example"; // String | Member ID
+
+apiInstance.deleteRoutingQueueMember(queueId, memberId)
+  .then(() => {
+    console.log('deleteRoutingQueueMember returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteRoutingQueueMember');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **queueId** | **String** | Queue ID |  |
+ **memberId** | **String** | Member ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
+
 <a name="deleteRoutingQueueUser"></a>
 
 # void deleteRoutingQueueUser(queueId, memberId)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 DELETE /api/v2/routing/queues/{queueId}/users/{memberId}
 
@@ -1313,7 +1377,7 @@ apiInstance.getRoutingMessageRecipients(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **messengerType** | **String** | Messenger Type | [optional] <br />**Values**: sms, facebook, twitter, line, whatsapp, webmessaging |
+ **messengerType** | **String** | Messenger Type | [optional] <br />**Values**: sms, facebook, twitter, line, whatsapp |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
 {: class="table table-striped"}
@@ -1493,11 +1557,91 @@ apiInstance.getRoutingQueueMediatypeEstimatedwaittime(queueId, mediaType)
 
 **EstimatedWaitTimePredictions**
 
+<a name="getRoutingQueueMembers"></a>
+
+# QueueMemberEntityListing getRoutingQueueMembers(queueId, opts)
+
+
+
+GET /api/v2/routing/queues/{queueId}/members
+
+Get the members of this queue.
+
+
+
+Requires ANY permissions: 
+
+* routing:queue:view
+* routing:queueMember:manage
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.RoutingApi();
+
+let queueId = "queueId_example"; // String | Queue ID
+let opts = { 
+  'pageSize': 25, // Number | Page size [max 100]
+  'pageNumber': 1, // Number | Page number
+  'sortBy': "name", // String | Sort by
+  'expand': ["expand_example"], // [String] | Which fields, if any, to expand.
+  'joined': true, // Boolean | Filter by joined status
+  'name': "name_example", // String | Filter by queue member name
+  'profileSkills': ["profileSkills_example"], // [String] | Filter by profile skill
+  'skills': ["skills_example"], // [String] | Filter by skill
+  'languages': ["languages_example"], // [String] | Filter by language
+  'routingStatus': ["routingStatus_example"], // [String] | Filter by routing status
+  'presence': ["presence_example"] // [String] | Filter by presence
+};
+
+apiInstance.getRoutingQueueMembers(queueId, opts)
+  .then((data) => {
+    console.log(`getRoutingQueueMembers success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getRoutingQueueMembers');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **queueId** | **String** | Queue ID |  |
+ **pageSize** | **Number** | Page size [max 100] | [optional] [default to 25] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **sortBy** | **String** | Sort by | [optional] [default to name] |
+ **expand** | **[String]** | Which fields, if any, to expand. | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography |
+ **joined** | **Boolean** | Filter by joined status | [optional]  |
+ **name** | **String** | Filter by queue member name | [optional]  |
+ **profileSkills** | **[String]** | Filter by profile skill | [optional]  |
+ **skills** | **[String]** | Filter by skill | [optional]  |
+ **languages** | **[String]** | Filter by language | [optional]  |
+ **routingStatus** | **[String]** | Filter by routing status | [optional]  |
+ **presence** | **[String]** | Filter by presence | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**QueueMemberEntityListing**
+
 <a name="getRoutingQueueUsers"></a>
 
 # QueueMemberEntityListing getRoutingQueueUsers(queueId, opts)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 GET /api/v2/routing/queues/{queueId}/users
 
@@ -2977,11 +3121,1130 @@ apiInstance.patchRoutingEmailDomain(domainId, body)
 
 **InboundDomain**
 
+<a name="patchRoutingEmailDomainValidate"></a>
+
+# InboundDomain patchRoutingEmailDomainValidate(domainId, body)
+
+
+
+PATCH /api/v2/routing/email/domains/{domainId}/validate
+
+Validate domain settings
+
+
+
+Requires ALL permissions: 
+
+* routing:email:manage
+
+
+### Request Body Schema
+
+<script type="text/javascript">
+	function copyInboundDomainPatchRequestExample() {
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#InboundDomainPatchRequestExample').text()).select();
+		document.execCommand("copy");
+		temp.remove();
+		return false;
+	}
+</script>
+
+InboundDomainPatchRequest <a href="#" onclick="return copyInboundDomainPatchRequestExample()">Copy</a>
+
+<div id="InboundDomainPatchRequestExample">
+
+```{"language":"json", "maxHeight": "250px"}
+{ 
+  "mailFromSettings": { 
+    "status": String, 
+    "records": { 
+      "name": String, 
+      "type": String, 
+      "value": String, 
+    },  
+    "mailFromDomain": String, 
+  },  
+  "customSMTPServer": { 
+    "id": String, 
+    "name": String, 
+    "selfUri": String, 
+  },  
+}
+```
+
+</div>
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.RoutingApi();
+
+let domainId = "domainId_example"; // String | domain ID
+let body = {}; // Object | Domain settings
+
+apiInstance.patchRoutingEmailDomainValidate(domainId, body)
+  .then((data) => {
+    console.log(`patchRoutingEmailDomainValidate success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchRoutingEmailDomainValidate');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **domainId** | **String** | domain ID |  |
+ **body** | **Object** | Domain settings |  |
+{: class="table table-striped"}
+
+### Return type
+
+**InboundDomain**
+
+<a name="patchRoutingQueueMember"></a>
+
+# QueueMember patchRoutingQueueMember(queueId, memberId, body)
+
+
+
+PATCH /api/v2/routing/queues/{queueId}/members/{memberId}
+
+Update the ring number OR joined status for a queue member.
+
+
+
+Requires ANY permissions: 
+
+* routing:queue:edit
+* routing:queueMember:manage
+
+
+### Request Body Schema
+
+<script type="text/javascript">
+	function copyQueueMemberExample() {
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#QueueMemberExample').text()).select();
+		document.execCommand("copy");
+		temp.remove();
+		return false;
+	}
+</script>
+
+QueueMember <a href="#" onclick="return copyQueueMemberExample()">Copy</a>
+
+<div id="QueueMemberExample">
+
+```{"language":"json", "maxHeight": "250px"}
+{ 
+  "id": String, 
+  "name": String, 
+  "user": { 
+    "id": String, 
+    "name": String, 
+    "division": { 
+      "id": String, 
+      "name": String, 
+      "selfUri": String, 
+    },  
+    "chat": { 
+      "jabberId": String, 
+    },  
+    "department": String, 
+    "email": String, 
+    "primaryContactInfo": { 
+      "address": String, 
+      "display": String, 
+      "mediaType": String, 
+      "type": String, 
+      "extension": String, 
+      "countryCode": String, 
+    },  
+    "addresses": { 
+      "address": String, 
+      "display": String, 
+      "mediaType": String, 
+      "type": String, 
+      "extension": String, 
+      "countryCode": String, 
+    },  
+    "state": String, 
+    "title": String, 
+    "username": String, 
+    "manager": User, 
+    "images": { 
+      "resolution": String, 
+      "imageUri": String, 
+    },  
+    "version": Number, 
+    "certifications": [String], 
+    "biography": { 
+      "biography": String, 
+      "interests": [String], 
+      "hobbies": [String], 
+      "spouse": String, 
+      "education": { 
+        "school": String, 
+        "fieldOfStudy": String, 
+        "notes": String, 
+        "dateStart": String, 
+        "dateEnd": String, 
+      },  
+    },  
+    "employerInfo": { 
+      "officialName": String, 
+      "employeeId": String, 
+      "employeeType": String, 
+      "dateHire": String, 
+    },  
+    "routingStatus": { 
+      "userId": String, 
+      "status": String, 
+      "startTime": Date, 
+    },  
+    "presence": { 
+      "id": String, 
+      "name": String, 
+      "source": String, 
+      "primary": Boolean, 
+      "presenceDefinition": { 
+        "id": String, 
+        "systemPresence": String, 
+        "selfUri": String, 
+      },  
+      "message": String, 
+      "modifiedDate": Date, 
+      "selfUri": String, 
+    },  
+    "conversationSummary": { 
+      "userId": String, 
+      "call": { 
+        "contactCenter": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+        "enterprise": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+      },  
+      "callback": { 
+        "contactCenter": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+        "enterprise": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+      },  
+      "email": { 
+        "contactCenter": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+        "enterprise": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+      },  
+      "message": { 
+        "contactCenter": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+        "enterprise": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+      },  
+      "chat": { 
+        "contactCenter": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+        "enterprise": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+      },  
+      "socialExpression": { 
+        "contactCenter": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+        "enterprise": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+      },  
+      "video": { 
+        "contactCenter": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+        "enterprise": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+      },  
+    },  
+    "outOfOffice": { 
+      "id": String, 
+      "name": String, 
+      "user": User, 
+      "startDate": Date, 
+      "endDate": Date, 
+      "active": Boolean, 
+      "indefinite": Boolean, 
+      "selfUri": String, 
+    },  
+    "geolocation": { 
+      "id": String, 
+      "name": String, 
+      "type": String, 
+      "primary": Boolean, 
+      "latitude": Number, 
+      "longitude": Number, 
+      "country": String, 
+      "region": String, 
+      "city": String, 
+      "locations": { 
+        "id": String, 
+        "name": String, 
+        "contactUser": { 
+          "id": String, 
+          "selfUri": String, 
+        },  
+        "emergencyNumber": { 
+          "e164": String, 
+          "number": String, 
+          "type": String, 
+        },  
+        "address": { 
+          "city": String, 
+          "country": String, 
+          "countryName": String, 
+          "state": String, 
+          "street1": String, 
+          "street2": String, 
+          "zipcode": String, 
+        },  
+        "state": String, 
+        "notes": String, 
+        "version": Number, 
+        "path": [String], 
+        "profileImage": { 
+          "resolution": String, 
+          "imageUri": String, 
+        },  
+        "floorplanImage": { 
+          "resolution": String, 
+          "imageUri": String, 
+        },  
+        "addressVerificationDetails": { 
+          "status": String, 
+          "dateFinished": Date, 
+          "dateStarted": Date, 
+          "service": String, 
+        },  
+        "addressVerified": Boolean, 
+        "addressStored": Boolean, 
+        "images": String, 
+        "selfUri": String, 
+      },  
+      "selfUri": String, 
+    },  
+    "station": { 
+      "associatedStation": { 
+        "id": String, 
+        "name": String, 
+        "type": String, 
+        "associatedUser": User, 
+        "associatedDate": Date, 
+        "defaultUser": User, 
+        "providerInfo": {String: String}, 
+      },  
+      "effectiveStation": { 
+        "id": String, 
+        "name": String, 
+        "type": String, 
+        "associatedUser": User, 
+        "associatedDate": Date, 
+        "defaultUser": User, 
+        "providerInfo": {String: String}, 
+      },  
+      "defaultStation": { 
+        "id": String, 
+        "name": String, 
+        "type": String, 
+        "associatedUser": User, 
+        "associatedDate": Date, 
+        "defaultUser": User, 
+        "providerInfo": {String: String}, 
+      },  
+      "lastAssociatedStation": { 
+        "id": String, 
+        "name": String, 
+        "type": String, 
+        "associatedUser": User, 
+        "associatedDate": Date, 
+        "defaultUser": User, 
+        "providerInfo": {String: String}, 
+      },  
+    },  
+    "authorization": { 
+      "roles": { 
+        "id": String, 
+        "name": String, 
+      },  
+      "unusedRoles": { 
+        "id": String, 
+        "name": String, 
+      },  
+      "permissions": [String], 
+      "permissionPolicies": { 
+        "id": String, 
+        "domain": String, 
+        "entityName": String, 
+        "policyName": String, 
+        "policyDescription": String, 
+        "actionSetKey": String, 
+        "allowConditions": Boolean, 
+        "resourceConditionNode": { 
+          "variableName": String, 
+          "conjunction": String, 
+          "operator": String, 
+          "operands": { 
+            "type": String, 
+            "value": String, 
+          },  
+          "terms": { 
+            "variableName": String, 
+            "conjunction": String, 
+            "operator": String, 
+            "operands": { 
+              "type": String, 
+              "value": String, 
+            },  
+            "terms": { 
+              "variableName": String, 
+              "conjunction": String, 
+              "operator": String, 
+              "operands": { 
+                "type": String, 
+                "value": String, 
+              },  
+              "terms": { 
+                "variableName": String, 
+                "conjunction": String, 
+                "operator": String, 
+                "operands": [ResourceConditionValue], 
+                "terms": [ResourceConditionNode], 
+              },  
+            },  
+          },  
+        },  
+        "namedResources": [String], 
+        "resourceCondition": String, 
+        "actionSet": [String], 
+      },  
+    },  
+    "profileSkills": [String], 
+    "locations": { 
+      "id": String, 
+      "floorplanId": String, 
+      "coordinates": {String: Number}, 
+      "notes": String, 
+      "locationDefinition": { 
+        "id": String, 
+        "name": String, 
+        "contactUser": { 
+          "id": String, 
+          "selfUri": String, 
+        },  
+        "emergencyNumber": { 
+          "e164": String, 
+          "number": String, 
+          "type": String, 
+        },  
+        "address": { 
+          "city": String, 
+          "country": String, 
+          "countryName": String, 
+          "state": String, 
+          "street1": String, 
+          "street2": String, 
+          "zipcode": String, 
+        },  
+        "state": String, 
+        "notes": String, 
+        "version": Number, 
+        "path": [String], 
+        "profileImage": { 
+          "resolution": String, 
+          "imageUri": String, 
+        },  
+        "floorplanImage": { 
+          "resolution": String, 
+          "imageUri": String, 
+        },  
+        "addressVerificationDetails": { 
+          "status": String, 
+          "dateFinished": Date, 
+          "dateStarted": Date, 
+          "service": String, 
+        },  
+        "addressVerified": Boolean, 
+        "addressStored": Boolean, 
+        "images": String, 
+        "selfUri": String, 
+      },  
+    },  
+    "groups": { 
+      "id": String, 
+      "name": String, 
+      "description": String, 
+      "dateModified": Date, 
+      "memberCount": Number, 
+      "state": String, 
+      "version": Number, 
+      "type": String, 
+      "images": { 
+        "resolution": String, 
+        "imageUri": String, 
+      },  
+      "addresses": { 
+        "address": String, 
+        "extension": String, 
+        "display": String, 
+        "type": String, 
+        "mediaType": String, 
+      },  
+      "rulesVisible": Boolean, 
+      "visibility": String, 
+      "owners": User, 
+      "selfUri": String, 
+    },  
+    "team": { 
+      "id": String, 
+      "name": String, 
+      "description": String, 
+      "dateModified": Date, 
+      "memberCount": Number, 
+      "selfUri": String, 
+    },  
+    "skills": { 
+      "id": String, 
+      "name": String, 
+      "proficiency": Number, 
+      "state": String, 
+      "skillUri": String, 
+      "selfUri": String, 
+    },  
+    "languages": { 
+      "id": String, 
+      "name": String, 
+      "proficiency": Number, 
+      "state": String, 
+      "languageUri": String, 
+      "selfUri": String, 
+    },  
+    "acdAutoAnswer": Boolean, 
+    "languagePreference": String, 
+    "lastTokenIssued": { 
+      "dateIssued": Date, 
+    },  
+    "selfUri": String, 
+  },  
+  "ringNumber": Number, 
+  "joined": Boolean, 
+  "memberBy": String, 
+  "routingStatus": { 
+    "userId": String, 
+    "status": String, 
+    "startTime": Date, 
+  },  
+  "selfUri": String, 
+}
+```
+
+</div>
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.RoutingApi();
+
+let queueId = "queueId_example"; // String | Queue ID
+let memberId = "memberId_example"; // String | Member ID
+let body = {}; // Object | Queue Member
+
+apiInstance.patchRoutingQueueMember(queueId, memberId, body)
+  .then((data) => {
+    console.log(`patchRoutingQueueMember success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchRoutingQueueMember');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **queueId** | **String** | Queue ID |  |
+ **memberId** | **String** | Member ID |  |
+ **body** | **Object** | Queue Member |  |
+{: class="table table-striped"}
+
+### Return type
+
+**QueueMember**
+
+<a name="patchRoutingQueueMembers"></a>
+
+# QueueMemberEntityListing patchRoutingQueueMembers(queueId, body)
+
+
+
+PATCH /api/v2/routing/queues/{queueId}/members
+
+Join or unjoin a set of users for a queue
+
+
+
+Requires ANY permissions: 
+
+* routing:queue:edit
+* routing:queueMember:manage
+
+
+### Request Body Schema
+
+<script type="text/javascript">
+	function copyQueueMemberExample() {
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#QueueMemberExample').text()).select();
+		document.execCommand("copy");
+		temp.remove();
+		return false;
+	}
+</script>
+
+QueueMember <a href="#" onclick="return copyQueueMemberExample()">Copy</a>
+
+<div id="QueueMemberExample">
+
+```{"language":"json", "maxHeight": "250px"}
+{ 
+  "id": String, 
+  "name": String, 
+  "user": { 
+    "id": String, 
+    "name": String, 
+    "division": { 
+      "id": String, 
+      "name": String, 
+      "selfUri": String, 
+    },  
+    "chat": { 
+      "jabberId": String, 
+    },  
+    "department": String, 
+    "email": String, 
+    "primaryContactInfo": { 
+      "address": String, 
+      "display": String, 
+      "mediaType": String, 
+      "type": String, 
+      "extension": String, 
+      "countryCode": String, 
+    },  
+    "addresses": { 
+      "address": String, 
+      "display": String, 
+      "mediaType": String, 
+      "type": String, 
+      "extension": String, 
+      "countryCode": String, 
+    },  
+    "state": String, 
+    "title": String, 
+    "username": String, 
+    "manager": User, 
+    "images": { 
+      "resolution": String, 
+      "imageUri": String, 
+    },  
+    "version": Number, 
+    "certifications": [String], 
+    "biography": { 
+      "biography": String, 
+      "interests": [String], 
+      "hobbies": [String], 
+      "spouse": String, 
+      "education": { 
+        "school": String, 
+        "fieldOfStudy": String, 
+        "notes": String, 
+        "dateStart": String, 
+        "dateEnd": String, 
+      },  
+    },  
+    "employerInfo": { 
+      "officialName": String, 
+      "employeeId": String, 
+      "employeeType": String, 
+      "dateHire": String, 
+    },  
+    "routingStatus": { 
+      "userId": String, 
+      "status": String, 
+      "startTime": Date, 
+    },  
+    "presence": { 
+      "id": String, 
+      "name": String, 
+      "source": String, 
+      "primary": Boolean, 
+      "presenceDefinition": { 
+        "id": String, 
+        "systemPresence": String, 
+        "selfUri": String, 
+      },  
+      "message": String, 
+      "modifiedDate": Date, 
+      "selfUri": String, 
+    },  
+    "conversationSummary": { 
+      "userId": String, 
+      "call": { 
+        "contactCenter": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+        "enterprise": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+      },  
+      "callback": { 
+        "contactCenter": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+        "enterprise": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+      },  
+      "email": { 
+        "contactCenter": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+        "enterprise": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+      },  
+      "message": { 
+        "contactCenter": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+        "enterprise": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+      },  
+      "chat": { 
+        "contactCenter": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+        "enterprise": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+      },  
+      "socialExpression": { 
+        "contactCenter": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+        "enterprise": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+      },  
+      "video": { 
+        "contactCenter": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+        "enterprise": { 
+          "active": Number, 
+          "acw": Number, 
+        },  
+      },  
+    },  
+    "outOfOffice": { 
+      "id": String, 
+      "name": String, 
+      "user": User, 
+      "startDate": Date, 
+      "endDate": Date, 
+      "active": Boolean, 
+      "indefinite": Boolean, 
+      "selfUri": String, 
+    },  
+    "geolocation": { 
+      "id": String, 
+      "name": String, 
+      "type": String, 
+      "primary": Boolean, 
+      "latitude": Number, 
+      "longitude": Number, 
+      "country": String, 
+      "region": String, 
+      "city": String, 
+      "locations": { 
+        "id": String, 
+        "name": String, 
+        "contactUser": { 
+          "id": String, 
+          "selfUri": String, 
+        },  
+        "emergencyNumber": { 
+          "e164": String, 
+          "number": String, 
+          "type": String, 
+        },  
+        "address": { 
+          "city": String, 
+          "country": String, 
+          "countryName": String, 
+          "state": String, 
+          "street1": String, 
+          "street2": String, 
+          "zipcode": String, 
+        },  
+        "state": String, 
+        "notes": String, 
+        "version": Number, 
+        "path": [String], 
+        "profileImage": { 
+          "resolution": String, 
+          "imageUri": String, 
+        },  
+        "floorplanImage": { 
+          "resolution": String, 
+          "imageUri": String, 
+        },  
+        "addressVerificationDetails": { 
+          "status": String, 
+          "dateFinished": Date, 
+          "dateStarted": Date, 
+          "service": String, 
+        },  
+        "addressVerified": Boolean, 
+        "addressStored": Boolean, 
+        "images": String, 
+        "selfUri": String, 
+      },  
+      "selfUri": String, 
+    },  
+    "station": { 
+      "associatedStation": { 
+        "id": String, 
+        "name": String, 
+        "type": String, 
+        "associatedUser": User, 
+        "associatedDate": Date, 
+        "defaultUser": User, 
+        "providerInfo": {String: String}, 
+      },  
+      "effectiveStation": { 
+        "id": String, 
+        "name": String, 
+        "type": String, 
+        "associatedUser": User, 
+        "associatedDate": Date, 
+        "defaultUser": User, 
+        "providerInfo": {String: String}, 
+      },  
+      "defaultStation": { 
+        "id": String, 
+        "name": String, 
+        "type": String, 
+        "associatedUser": User, 
+        "associatedDate": Date, 
+        "defaultUser": User, 
+        "providerInfo": {String: String}, 
+      },  
+      "lastAssociatedStation": { 
+        "id": String, 
+        "name": String, 
+        "type": String, 
+        "associatedUser": User, 
+        "associatedDate": Date, 
+        "defaultUser": User, 
+        "providerInfo": {String: String}, 
+      },  
+    },  
+    "authorization": { 
+      "roles": { 
+        "id": String, 
+        "name": String, 
+      },  
+      "unusedRoles": { 
+        "id": String, 
+        "name": String, 
+      },  
+      "permissions": [String], 
+      "permissionPolicies": { 
+        "id": String, 
+        "domain": String, 
+        "entityName": String, 
+        "policyName": String, 
+        "policyDescription": String, 
+        "actionSetKey": String, 
+        "allowConditions": Boolean, 
+        "resourceConditionNode": { 
+          "variableName": String, 
+          "conjunction": String, 
+          "operator": String, 
+          "operands": { 
+            "type": String, 
+            "value": String, 
+          },  
+          "terms": { 
+            "variableName": String, 
+            "conjunction": String, 
+            "operator": String, 
+            "operands": { 
+              "type": String, 
+              "value": String, 
+            },  
+            "terms": { 
+              "variableName": String, 
+              "conjunction": String, 
+              "operator": String, 
+              "operands": { 
+                "type": String, 
+                "value": String, 
+              },  
+              "terms": { 
+                "variableName": String, 
+                "conjunction": String, 
+                "operator": String, 
+                "operands": [ResourceConditionValue], 
+                "terms": [ResourceConditionNode], 
+              },  
+            },  
+          },  
+        },  
+        "namedResources": [String], 
+        "resourceCondition": String, 
+        "actionSet": [String], 
+      },  
+    },  
+    "profileSkills": [String], 
+    "locations": { 
+      "id": String, 
+      "floorplanId": String, 
+      "coordinates": {String: Number}, 
+      "notes": String, 
+      "locationDefinition": { 
+        "id": String, 
+        "name": String, 
+        "contactUser": { 
+          "id": String, 
+          "selfUri": String, 
+        },  
+        "emergencyNumber": { 
+          "e164": String, 
+          "number": String, 
+          "type": String, 
+        },  
+        "address": { 
+          "city": String, 
+          "country": String, 
+          "countryName": String, 
+          "state": String, 
+          "street1": String, 
+          "street2": String, 
+          "zipcode": String, 
+        },  
+        "state": String, 
+        "notes": String, 
+        "version": Number, 
+        "path": [String], 
+        "profileImage": { 
+          "resolution": String, 
+          "imageUri": String, 
+        },  
+        "floorplanImage": { 
+          "resolution": String, 
+          "imageUri": String, 
+        },  
+        "addressVerificationDetails": { 
+          "status": String, 
+          "dateFinished": Date, 
+          "dateStarted": Date, 
+          "service": String, 
+        },  
+        "addressVerified": Boolean, 
+        "addressStored": Boolean, 
+        "images": String, 
+        "selfUri": String, 
+      },  
+    },  
+    "groups": { 
+      "id": String, 
+      "name": String, 
+      "description": String, 
+      "dateModified": Date, 
+      "memberCount": Number, 
+      "state": String, 
+      "version": Number, 
+      "type": String, 
+      "images": { 
+        "resolution": String, 
+        "imageUri": String, 
+      },  
+      "addresses": { 
+        "address": String, 
+        "extension": String, 
+        "display": String, 
+        "type": String, 
+        "mediaType": String, 
+      },  
+      "rulesVisible": Boolean, 
+      "visibility": String, 
+      "owners": User, 
+      "selfUri": String, 
+    },  
+    "team": { 
+      "id": String, 
+      "name": String, 
+      "description": String, 
+      "dateModified": Date, 
+      "memberCount": Number, 
+      "selfUri": String, 
+    },  
+    "skills": { 
+      "id": String, 
+      "name": String, 
+      "proficiency": Number, 
+      "state": String, 
+      "skillUri": String, 
+      "selfUri": String, 
+    },  
+    "languages": { 
+      "id": String, 
+      "name": String, 
+      "proficiency": Number, 
+      "state": String, 
+      "languageUri": String, 
+      "selfUri": String, 
+    },  
+    "acdAutoAnswer": Boolean, 
+    "languagePreference": String, 
+    "lastTokenIssued": { 
+      "dateIssued": Date, 
+    },  
+    "selfUri": String, 
+  },  
+  "ringNumber": Number, 
+  "joined": Boolean, 
+  "memberBy": String, 
+  "routingStatus": { 
+    "userId": String, 
+    "status": String, 
+    "startTime": Date, 
+  },  
+  "selfUri": String, 
+}
+```
+
+</div>
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.RoutingApi();
+
+let queueId = "queueId_example"; // String | Queue ID
+let body = [{}]; // Object | Queue Members
+
+apiInstance.patchRoutingQueueMembers(queueId, body)
+  .then((data) => {
+    console.log(`patchRoutingQueueMembers success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchRoutingQueueMembers');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **queueId** | **String** | Queue ID |  |
+ **body** | **Object** | Queue Members |  |
+{: class="table table-striped"}
+
+### Return type
+
+**QueueMemberEntityListing**
+
 <a name="patchRoutingQueueUser"></a>
 
 # QueueMember patchRoutingQueueUser(queueId, memberId, body)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 PATCH /api/v2/routing/queues/{queueId}/users/{memberId}
 
@@ -3494,7 +4757,7 @@ apiInstance.patchRoutingQueueUser(queueId, memberId, body)
 
 # QueueMemberEntityListing patchRoutingQueueUsers(queueId, body)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 PATCH /api/v2/routing/queues/{queueId}/users
 
@@ -5622,11 +6885,98 @@ apiInstance.postRoutingLanguages(body)
 
 **Language**
 
+<a name="postRoutingQueueMembers"></a>
+
+# **&#39;String&#39;** postRoutingQueueMembers(queueId, body, opts)
+
+
+
+POST /api/v2/routing/queues/{queueId}/members
+
+Bulk add or delete up to 100 queue members
+
+
+
+Requires ANY permissions: 
+
+* routing:queue:edit
+* routing:queueMember:manage
+
+
+### Request Body Schema
+
+<script type="text/javascript">
+	function copyWritableEntityExample() {
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#WritableEntityExample').text()).select();
+		document.execCommand("copy");
+		temp.remove();
+		return false;
+	}
+</script>
+
+WritableEntity <a href="#" onclick="return copyWritableEntityExample()">Copy</a>
+
+<div id="WritableEntityExample">
+
+```{"language":"json", "maxHeight": "250px"}
+{ 
+  "id": String, 
+}
+```
+
+</div>
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.RoutingApi();
+
+let queueId = "queueId_example"; // String | Queue ID
+let body = [{}]; // Object | Queue Members
+let opts = { 
+  '_delete': false // Boolean | True to delete queue members
+};
+
+apiInstance.postRoutingQueueMembers(queueId, body, opts)
+  .then((data) => {
+    console.log(`postRoutingQueueMembers success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postRoutingQueueMembers');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **queueId** | **String** | Queue ID |  |
+ **body** | **Object** | Queue Members |  |
+ **_delete** | **Boolean** | True to delete queue members | [optional] [default to false] |
+{: class="table table-striped"}
+
+### Return type
+
+**&#39;String&#39;**
+
 <a name="postRoutingQueueUsers"></a>
 
 # **&#39;String&#39;** postRoutingQueueUsers(queueId, body, opts)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 POST /api/v2/routing/queues/{queueId}/users
 

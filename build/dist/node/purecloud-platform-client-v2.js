@@ -18,7 +18,7 @@ var PureCloudRegionHosts = {
 
 /**
  * @module purecloud-platform-client-v2/ApiClient
- * @version 105.0.1
+ * @version 106.0.0
  */
 class ApiClient {
 	/**
@@ -910,7 +910,7 @@ class ApiClient {
 
 				// set header parameters
 				request.set(that.defaultHeaders).set(that.normalizeParams(headerParams));
-				//request.set({ 'purecloud-sdk': '105.0.1' });
+				//request.set({ 'purecloud-sdk': '106.0.0' });
 
 				// set request timeout
 				request.timeout(that.timeout);
@@ -1044,7 +1044,7 @@ class AlertingApi {
 	/**
 	 * Alerting service.
 	 * @module purecloud-platform-client-v2/api/AlertingApi
-	 * @version 105.0.1
+	 * @version 106.0.0
 	 */
 
 	/**
@@ -1358,7 +1358,7 @@ class AnalyticsApi {
 	/**
 	 * Analytics service.
 	 * @module purecloud-platform-client-v2/api/AnalyticsApi
-	 * @version 105.0.1
+	 * @version 106.0.0
 	 */
 
 	/**
@@ -2438,7 +2438,7 @@ class ArchitectApi {
 	/**
 	 * Architect service.
 	 * @module purecloud-platform-client-v2/api/ArchitectApi
-	 * @version 105.0.1
+	 * @version 106.0.0
 	 */
 
 	/**
@@ -5276,7 +5276,7 @@ class AuditApi {
 	/**
 	 * Audit service.
 	 * @module purecloud-platform-client-v2/api/AuditApi
-	 * @version 105.0.1
+	 * @version 106.0.0
 	 */
 
 	/**
@@ -5447,7 +5447,7 @@ class AuthorizationApi {
 	/**
 	 * Authorization service.
 	 * @module purecloud-platform-client-v2/api/AuthorizationApi
-	 * @version 105.0.1
+	 * @version 106.0.0
 	 */
 
 	/**
@@ -6566,7 +6566,7 @@ class BillingApi {
 	/**
 	 * Billing service.
 	 * @module purecloud-platform-client-v2/api/BillingApi
-	 * @version 105.0.1
+	 * @version 106.0.0
 	 */
 
 	/**
@@ -6646,7 +6646,7 @@ class ChatApi {
 	/**
 	 * Chat service.
 	 * @module purecloud-platform-client-v2/api/ChatApi
-	 * @version 105.0.1
+	 * @version 106.0.0
 	 */
 
 	/**
@@ -6737,7 +6737,7 @@ class CoachingApi {
 	/**
 	 * Coaching service.
 	 * @module purecloud-platform-client-v2/api/CoachingApi
-	 * @version 105.0.1
+	 * @version 106.0.0
 	 */
 
 	/**
@@ -7287,7 +7287,7 @@ class ContentManagementApi {
 	/**
 	 * ContentManagement service.
 	 * @module purecloud-platform-client-v2/api/ContentManagementApi
-	 * @version 105.0.1
+	 * @version 106.0.0
 	 */
 
 	/**
@@ -8427,7 +8427,7 @@ class ConversationsApi {
 	/**
 	 * Conversations service.
 	 * @module purecloud-platform-client-v2/api/ConversationsApi
-	 * @version 105.0.1
+	 * @version 106.0.0
 	 */
 
 	/**
@@ -12545,7 +12545,7 @@ class DataExtensionsApi {
 	/**
 	 * DataExtensions service.
 	 * @module purecloud-platform-client-v2/api/DataExtensionsApi
-	 * @version 105.0.1
+	 * @version 106.0.0
 	 */
 
 	/**
@@ -12631,7 +12631,7 @@ class ExternalContactsApi {
 	/**
 	 * ExternalContacts service.
 	 * @module purecloud-platform-client-v2/api/ExternalContactsApi
-	 * @version 105.0.1
+	 * @version 106.0.0
 	 */
 
 	/**
@@ -13974,7 +13974,7 @@ class FaxApi {
 	/**
 	 * Fax service.
 	 * @module purecloud-platform-client-v2/api/FaxApi
-	 * @version 105.0.1
+	 * @version 106.0.0
 	 */
 
 	/**
@@ -14145,7 +14145,7 @@ class FlowsApi {
 	/**
 	 * Flows service.
 	 * @module purecloud-platform-client-v2/api/FlowsApi
-	 * @version 105.0.1
+	 * @version 106.0.0
 	 */
 
 	/**
@@ -14216,7 +14216,7 @@ class GeneralDataProtectionRegulationApi {
 	/**
 	 * GeneralDataProtectionRegulation service.
 	 * @module purecloud-platform-client-v2/api/GeneralDataProtectionRegulationApi
-	 * @version 105.0.1
+	 * @version 106.0.0
 	 */
 
 	/**
@@ -14346,7 +14346,7 @@ class GeolocationApi {
 	/**
 	 * Geolocation service.
 	 * @module purecloud-platform-client-v2/api/GeolocationApi
-	 * @version 105.0.1
+	 * @version 106.0.0
 	 */
 
 	/**
@@ -14477,7 +14477,7 @@ class GreetingsApi {
 	/**
 	 * Greetings service.
 	 * @module purecloud-platform-client-v2/api/GreetingsApi
-	 * @version 105.0.1
+	 * @version 106.0.0
 	 */
 
 	/**
@@ -14932,7 +14932,7 @@ class GroupsApi {
 	/**
 	 * Groups service.
 	 * @module purecloud-platform-client-v2/api/GroupsApi
-	 * @version 105.0.1
+	 * @version 106.0.0
 	 */
 
 	/**
@@ -15337,7 +15337,7 @@ class IdentityProviderApi {
 	/**
 	 * IdentityProvider service.
 	 * @module purecloud-platform-client-v2/api/IdentityProviderApi
-	 * @version 105.0.1
+	 * @version 106.0.0
 	 */
 
 	/**
@@ -16093,7 +16093,7 @@ class IntegrationsApi {
 	/**
 	 * Integrations service.
 	 * @module purecloud-platform-client-v2/api/IntegrationsApi
-	 * @version 105.0.1
+	 * @version 106.0.0
 	 */
 
 	/**
@@ -17585,7 +17585,7 @@ class JourneyApi {
 	/**
 	 * Journey service.
 	 * @module purecloud-platform-client-v2/api/JourneyApi
-	 * @version 105.0.1
+	 * @version 106.0.0
 	 */
 
 	/**
@@ -17599,6 +17599,85 @@ class JourneyApi {
 		this.apiClient = apiClient || ApiClient.instance;
 	}
 
+
+	/**
+	 * Delete single action map.
+	 * 
+	 * @param {String} actionMapId ID of the action map.
+	 */
+	deleteJourneyActionmap(actionMapId) { 
+		// verify the required parameter 'actionMapId' is set
+		if (actionMapId === undefined || actionMapId === null) {
+			throw 'Missing the required parameter "actionMapId" when calling deleteJourneyActionmap';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/actionmaps/{actionMapId}', 
+			'DELETE', 
+			{ 'actionMapId': actionMapId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete a single action template.
+	 * 
+	 * @param {String} actionTemplateId ID of the action template.
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.hardDelete Determines whether Action Template should be soft-deleted (have it&#39;s state set to deleted) or hard-deleted (permanently removed). Set to false (soft-delete) by default.
+	 */
+	deleteJourneyActiontemplate(actionTemplateId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'actionTemplateId' is set
+		if (actionTemplateId === undefined || actionTemplateId === null) {
+			throw 'Missing the required parameter "actionTemplateId" when calling deleteJourneyActiontemplate';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/actiontemplates/{actionTemplateId}', 
+			'DELETE', 
+			{ 'actionTemplateId': actionTemplateId }, 
+			{ 'hardDelete': opts['hardDelete'] }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete an outcome.
+	 * 
+	 * @param {String} outcomeId ID of the outcome.
+	 */
+	deleteJourneyOutcome(outcomeId) { 
+		// verify the required parameter 'outcomeId' is set
+		if (outcomeId === undefined || outcomeId === null) {
+			throw 'Missing the required parameter "outcomeId" when calling deleteJourneyOutcome';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/outcomes/{outcomeId}', 
+			'DELETE', 
+			{ 'outcomeId': outcomeId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
 
 	/**
 	 * Delete a segment.
@@ -17616,6 +17695,60 @@ class JourneyApi {
 			'DELETE', 
 			{ 'segmentId': segmentId }, 
 			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Retrieve a single action map.
+	 * 
+	 * @param {String} actionMapId ID of the action map.
+	 */
+	getJourneyActionmap(actionMapId) { 
+		// verify the required parameter 'actionMapId' is set
+		if (actionMapId === undefined || actionMapId === null) {
+			throw 'Missing the required parameter "actionMapId" when calling getJourneyActionmap';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/actionmaps/{actionMapId}', 
+			'GET', 
+			{ 'actionMapId': actionMapId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Retrieve all action maps.
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {String} opts.sortBy Field(s) to sort by. Prefix with &#39;-&#39; for descending (e.g. sortBy=displayName,-createdDate).
+	 * @param {String} opts.filterField Field to filter by (e.g. filterField=weight or filterField=action.actionTemplate.id). Requires &#39;filterField&#39; to also be set.
+	 * @param {String} opts.filterValue Value to filter by. Requires &#39;filterValue&#39; to also be set.
+	 * @param {Array.<String>} opts.actionMapIds IDs of action maps to return. Use of this parameter is not compatible with pagination, filtering or sorting. A maximum of 100 action maps are allowed per request.
+	 */
+	getJourneyActionmaps(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/actionmaps', 
+			'GET', 
+			{  }, 
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'filterField': opts['filterField'],'filterValue': opts['filterValue'],'actionMapIds': this.apiClient.buildCollectionParam(opts['actionMapIds'], 'multi') }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -17666,6 +17799,111 @@ class JourneyApi {
 			'GET', 
 			{  }, 
 			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'] }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Retrieve a single action template.
+	 * 
+	 * @param {String} actionTemplateId ID of the action template.
+	 */
+	getJourneyActiontemplate(actionTemplateId) { 
+		// verify the required parameter 'actionTemplateId' is set
+		if (actionTemplateId === undefined || actionTemplateId === null) {
+			throw 'Missing the required parameter "actionTemplateId" when calling getJourneyActiontemplate';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/actiontemplates/{actionTemplateId}', 
+			'GET', 
+			{ 'actionTemplateId': actionTemplateId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Retrieve all action templates.
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {String} opts.sortBy Field(s) to sort by. Prefix with &#39;-&#39; for descending (e.g. sortBy=name,-createdDate).
+	 * @param {Object} opts.mediaType Media type
+	 * @param {Object} opts.state Action template state
+	 */
+	getJourneyActiontemplates(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/actiontemplates', 
+			'GET', 
+			{  }, 
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'mediaType': opts['mediaType'],'state': opts['state'] }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Retrieve a single outcome.
+	 * 
+	 * @param {String} outcomeId ID of the outcome.
+	 */
+	getJourneyOutcome(outcomeId) { 
+		// verify the required parameter 'outcomeId' is set
+		if (outcomeId === undefined || outcomeId === null) {
+			throw 'Missing the required parameter "outcomeId" when calling getJourneyOutcome';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/outcomes/{outcomeId}', 
+			'GET', 
+			{ 'outcomeId': outcomeId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Retrieve all outcomes.
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {String} opts.sortBy Field(s) to sort by. The response can be sorted by any first level property on the Outcome response. Prefix with &#39;-&#39; for descending (e.g. sortBy=displayName,-createdDate).
+	 * @param {Array.<String>} opts.outcomeIds IDs of outcomes to return. Use of this parameter is not compatible with pagination or sorting. A maximum of 20 outcomes are allowed per request.
+	 */
+	getJourneyOutcomes(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/outcomes', 
+			'GET', 
+			{  }, 
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'outcomeIds': this.apiClient.buildCollectionParam(opts['outcomeIds'], 'multi') }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -17729,6 +17967,35 @@ class JourneyApi {
 	}
 
 	/**
+	 * Update single action map.
+	 * 
+	 * @param {String} actionMapId ID of the action map.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body 
+	 */
+	patchJourneyActionmap(actionMapId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'actionMapId' is set
+		if (actionMapId === undefined || actionMapId === null) {
+			throw 'Missing the required parameter "actionMapId" when calling patchJourneyActionmap';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/actionmaps/{actionMapId}', 
+			'PATCH', 
+			{ 'actionMapId': actionMapId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
 	 * Update a single action target.
 	 * 
 	 * @param {String} actionTargetId ID of the action target.
@@ -17747,6 +18014,64 @@ class JourneyApi {
 			'/api/v2/journey/actiontargets/{actionTargetId}', 
 			'PATCH', 
 			{ 'actionTargetId': actionTargetId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update a single action template.
+	 * 
+	 * @param {String} actionTemplateId ID of the action template.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body 
+	 */
+	patchJourneyActiontemplate(actionTemplateId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'actionTemplateId' is set
+		if (actionTemplateId === undefined || actionTemplateId === null) {
+			throw 'Missing the required parameter "actionTemplateId" when calling patchJourneyActiontemplate';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/actiontemplates/{actionTemplateId}', 
+			'PATCH', 
+			{ 'actionTemplateId': actionTemplateId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update an outcome.
+	 * 
+	 * @param {String} outcomeId ID of the outcome.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body 
+	 */
+	patchJourneyOutcome(outcomeId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'outcomeId' is set
+		if (outcomeId === undefined || outcomeId === null) {
+			throw 'Missing the required parameter "outcomeId" when calling patchJourneyOutcome';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/outcomes/{outcomeId}', 
+			'PATCH', 
+			{ 'outcomeId': outcomeId }, 
 			{  }, 
 			{  }, 
 			{  }, 
@@ -17812,6 +18137,78 @@ class JourneyApi {
 	}
 
 	/**
+	 * Create an action map.
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body 
+	 */
+	postJourneyActionmaps(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/actionmaps', 
+			'POST', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Create a single action template.
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body 
+	 */
+	postJourneyActiontemplates(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/actiontemplates', 
+			'POST', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Create an outcome.
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body 
+	 */
+	postJourneyOutcomes(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/outcomes', 
+			'POST', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
 	 * Create a segment.
 	 * 
 	 * @param {Object} opts Optional parameters
@@ -17841,7 +18238,7 @@ class KnowledgeApi {
 	/**
 	 * Knowledge service.
 	 * @module purecloud-platform-client-v2/api/KnowledgeApi
-	 * @version 105.0.1
+	 * @version 106.0.0
 	 */
 
 	/**
@@ -18564,7 +18961,7 @@ class LanguageUnderstandingApi {
 	/**
 	 * LanguageUnderstanding service.
 	 * @module purecloud-platform-client-v2/api/LanguageUnderstandingApi
-	 * @version 105.0.1
+	 * @version 106.0.0
 	 */
 
 	/**
@@ -19132,7 +19529,7 @@ class LanguagesApi {
 	/**
 	 * Languages service.
 	 * @module purecloud-platform-client-v2/api/LanguagesApi
-	 * @version 105.0.1
+	 * @version 106.0.0
 	 */
 
 	/**
@@ -19400,7 +19797,7 @@ class LicenseApi {
 	/**
 	 * License service.
 	 * @module purecloud-platform-client-v2/api/LicenseApi
-	 * @version 105.0.1
+	 * @version 106.0.0
 	 */
 
 	/**
@@ -19638,7 +20035,7 @@ class LocationsApi {
 	/**
 	 * Locations service.
 	 * @module purecloud-platform-client-v2/api/LocationsApi
-	 * @version 105.0.1
+	 * @version 106.0.0
 	 */
 
 	/**
@@ -19874,7 +20271,7 @@ class MobileDevicesApi {
 	/**
 	 * MobileDevices service.
 	 * @module purecloud-platform-client-v2/api/MobileDevicesApi
-	 * @version 105.0.1
+	 * @version 106.0.0
 	 */
 
 	/**
@@ -20025,7 +20422,7 @@ class NotificationsApi {
 	/**
 	 * Notifications service.
 	 * @module purecloud-platform-client-v2/api/NotificationsApi
-	 * @version 105.0.1
+	 * @version 106.0.0
 	 */
 
 	/**
@@ -20070,6 +20467,7 @@ class NotificationsApi {
 	 * 
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand Which fields, if any, to expand
+	 * @param {Boolean} opts.includePreview Whether or not to include Preview topics (default to true)
 	 */
 	getNotificationsAvailabletopics(opts) { 
 		opts = opts || {};
@@ -20079,7 +20477,7 @@ class NotificationsApi {
 			'/api/v2/notifications/availabletopics', 
 			'GET', 
 			{  }, 
-			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') }, 
+			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'includePreview': opts['includePreview'] }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -20224,7 +20622,7 @@ class OAuthApi {
 	/**
 	 * OAuth service.
 	 * @module purecloud-platform-client-v2/api/OAuthApi
-	 * @version 105.0.1
+	 * @version 106.0.0
 	 */
 
 	/**
@@ -20523,7 +20921,7 @@ class OAuthApi {
 
 	/**
 	 * Create OAuth client
-	 * The OAuth Grant/Client is required in order to create an authentication token and gain access to PureCloud.  The preferred authorizedGrantTypes is &#39;CODE&#39; which requires applications to send a client ID and client secret. This is typically a web server.  If the client is unable to secure the client secret then the &#39;TOKEN&#39; grant type aka IMPLICIT should be used. This is would be for browser or mobile apps.  If a client is to be used outside of the context of a user then the &#39;CLIENT-CREDENTIALS&#39; grant may be used. In this case the client must be granted roles  via the &#39;roleIds&#39; field.
+	 * The OAuth Grant/Client is required in order to create an authentication token and gain access to PureCloud.  The preferred authorizedGrantTypes is &#39;CODE&#39; which requires applications to send a client ID and client secret. This is typically a web server.  If OAuth PKCE attributes will be used for a code grant, the grant type CODE_PKCE should be used. This will require PKCE challenge and verifier for authentication.  If the client is unable to secure the client secret then the &#39;TOKEN&#39; grant type aka IMPLICIT should be used. This is would be for browser or mobile apps.  If a client is to be used outside of the context of a user then the &#39;CLIENT-CREDENTIALS&#39; grant may be used. In this case the client must be granted roles  via the &#39;roleIds&#39; field.
 	 * @param {Object} body Client
 	 */
 	postOauthClients(body) { 
@@ -20582,7 +20980,7 @@ class ObjectsApi {
 	/**
 	 * Objects service.
 	 * @module purecloud-platform-client-v2/api/ObjectsApi
-	 * @version 105.0.1
+	 * @version 106.0.0
 	 */
 
 	/**
@@ -20823,7 +21221,7 @@ class OrganizationApi {
 	/**
 	 * Organization service.
 	 * @module purecloud-platform-client-v2/api/OrganizationApi
-	 * @version 105.0.1
+	 * @version 106.0.0
 	 */
 
 	/**
@@ -21078,7 +21476,7 @@ class OrganizationAuthorizationApi {
 	/**
 	 * OrganizationAuthorization service.
 	 * @module purecloud-platform-client-v2/api/OrganizationAuthorizationApi
-	 * @version 105.0.1
+	 * @version 106.0.0
 	 */
 
 	/**
@@ -21788,7 +22186,7 @@ class OutboundApi {
 	/**
 	 * Outbound service.
 	 * @module purecloud-platform-client-v2/api/OutboundApi
-	 * @version 105.0.1
+	 * @version 106.0.0
 	 */
 
 	/**
@@ -24762,7 +25160,7 @@ class PresenceApi {
 	/**
 	 * Presence service.
 	 * @module purecloud-platform-client-v2/api/PresenceApi
-	 * @version 105.0.1
+	 * @version 106.0.0
 	 */
 
 	/**
@@ -25109,7 +25507,7 @@ class QualityApi {
 	/**
 	 * Quality service.
 	 * @module purecloud-platform-client-v2/api/QualityApi
-	 * @version 105.0.1
+	 * @version 106.0.0
 	 */
 
 	/**
@@ -26782,7 +27180,7 @@ class RecordingApi {
 	/**
 	 * Recording service.
 	 * @module purecloud-platform-client-v2/api/RecordingApi
-	 * @version 105.0.1
+	 * @version 106.0.0
 	 */
 
 	/**
@@ -28221,7 +28619,7 @@ class ResponseManagementApi {
 	/**
 	 * ResponseManagement service.
 	 * @module purecloud-platform-client-v2/api/ResponseManagementApi
-	 * @version 105.0.1
+	 * @version 106.0.0
 	 */
 
 	/**
@@ -28546,7 +28944,7 @@ class RoutingApi {
 	/**
 	 * Routing service.
 	 * @module purecloud-platform-client-v2/api/RoutingApi
-	 * @version 105.0.1
+	 * @version 106.0.0
 	 */
 
 	/**
@@ -28636,6 +29034,36 @@ class RoutingApi {
 			'DELETE', 
 			{ 'queueId': queueId }, 
 			{ 'forceDelete': opts['forceDelete'] }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete a queue member.
+	 * 
+	 * @param {String} queueId Queue ID
+	 * @param {String} memberId Member ID
+	 */
+	deleteRoutingQueueMember(queueId, memberId) { 
+		// verify the required parameter 'queueId' is set
+		if (queueId === undefined || queueId === null) {
+			throw 'Missing the required parameter "queueId" when calling deleteRoutingQueueMember';
+		}
+		// verify the required parameter 'memberId' is set
+		if (memberId === undefined || memberId === null) {
+			throw 'Missing the required parameter "memberId" when calling deleteRoutingQueueMember';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/queues/{queueId}/members/{memberId}', 
+			'DELETE', 
+			{ 'queueId': queueId,'memberId': memberId }, 
+			{  }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -29210,6 +29638,45 @@ class RoutingApi {
 			'GET', 
 			{ 'queueId': queueId,'mediaType': mediaType }, 
 			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get the members of this queue.
+	 * 
+	 * @param {String} queueId Queue ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageSize Page size [max 100] (default to 25)
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {String} opts.sortBy Sort by (default to name)
+	 * @param {Array.<String>} opts.expand Which fields, if any, to expand.
+	 * @param {Boolean} opts.joined Filter by joined status
+	 * @param {String} opts.name Filter by queue member name
+	 * @param {Array.<String>} opts.profileSkills Filter by profile skill
+	 * @param {Array.<String>} opts.skills Filter by skill
+	 * @param {Array.<String>} opts.languages Filter by language
+	 * @param {Array.<String>} opts.routingStatus Filter by routing status
+	 * @param {Array.<String>} opts.presence Filter by presence
+	 */
+	getRoutingQueueMembers(queueId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'queueId' is set
+		if (queueId === undefined || queueId === null) {
+			throw 'Missing the required parameter "queueId" when calling getRoutingQueueMembers';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/queues/{queueId}/members', 
+			'GET', 
+			{ 'queueId': queueId }, 
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'joined': opts['joined'],'name': opts['name'],'profileSkills': this.apiClient.buildCollectionParam(opts['profileSkills'], 'multi'),'skills': this.apiClient.buildCollectionParam(opts['skills'], 'multi'),'languages': this.apiClient.buildCollectionParam(opts['languages'], 'multi'),'routingStatus': this.apiClient.buildCollectionParam(opts['routingStatus'], 'multi'),'presence': this.apiClient.buildCollectionParam(opts['presence'], 'multi') }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -29878,6 +30345,101 @@ class RoutingApi {
 	}
 
 	/**
+	 * Validate domain settings
+	 * 
+	 * @param {String} domainId domain ID
+	 * @param {Object} body Domain settings
+	 */
+	patchRoutingEmailDomainValidate(domainId, body) { 
+		// verify the required parameter 'domainId' is set
+		if (domainId === undefined || domainId === null) {
+			throw 'Missing the required parameter "domainId" when calling patchRoutingEmailDomainValidate';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchRoutingEmailDomainValidate';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/email/domains/{domainId}/validate', 
+			'PATCH', 
+			{ 'domainId': domainId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update the ring number OR joined status for a queue member.
+	 * 
+	 * @param {String} queueId Queue ID
+	 * @param {String} memberId Member ID
+	 * @param {Object} body Queue Member
+	 */
+	patchRoutingQueueMember(queueId, memberId, body) { 
+		// verify the required parameter 'queueId' is set
+		if (queueId === undefined || queueId === null) {
+			throw 'Missing the required parameter "queueId" when calling patchRoutingQueueMember';
+		}
+		// verify the required parameter 'memberId' is set
+		if (memberId === undefined || memberId === null) {
+			throw 'Missing the required parameter "memberId" when calling patchRoutingQueueMember';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchRoutingQueueMember';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/queues/{queueId}/members/{memberId}', 
+			'PATCH', 
+			{ 'queueId': queueId,'memberId': memberId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Join or unjoin a set of users for a queue
+	 * 
+	 * @param {String} queueId Queue ID
+	 * @param {Array.<Object>} body Queue Members
+	 */
+	patchRoutingQueueMembers(queueId, body) { 
+		// verify the required parameter 'queueId' is set
+		if (queueId === undefined || queueId === null) {
+			throw 'Missing the required parameter "queueId" when calling patchRoutingQueueMembers';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchRoutingQueueMembers';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/queues/{queueId}/members', 
+			'PATCH', 
+			{ 'queueId': queueId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
 	 * DEPRECATED: use PATCH /routing/queues/{queueId}/members/{memberId}.  Update the ring number OR joined status for a User in a Queue.
 	 * 
 	 * @param {String} queueId Queue ID
@@ -30256,6 +30818,40 @@ class RoutingApi {
 			'POST', 
 			{  }, 
 			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Bulk add or delete up to 100 queue members
+	 * 
+	 * @param {String} queueId Queue ID
+	 * @param {Array.<Object>} body Queue Members
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts._delete True to delete queue members (default to false)
+	 */
+	postRoutingQueueMembers(queueId, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'queueId' is set
+		if (queueId === undefined || queueId === null) {
+			throw 'Missing the required parameter "queueId" when calling postRoutingQueueMembers';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postRoutingQueueMembers';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/queues/{queueId}/members', 
+			'POST', 
+			{ 'queueId': queueId }, 
+			{ 'delete': opts['_delete'] }, 
 			{  }, 
 			{  }, 
 			body, 
@@ -30845,7 +31441,7 @@ class SCIMApi {
 	/**
 	 * SCIM service.
 	 * @module purecloud-platform-client-v2/api/SCIMApi
-	 * @version 105.0.1
+	 * @version 106.0.0
 	 */
 
 	/**
@@ -31722,7 +32318,7 @@ class ScriptsApi {
 	/**
 	 * Scripts service.
 	 * @module purecloud-platform-client-v2/api/ScriptsApi
-	 * @version 105.0.1
+	 * @version 106.0.0
 	 */
 
 	/**
@@ -32075,7 +32671,7 @@ class SearchApi {
 	/**
 	 * Search service.
 	 * @module purecloud-platform-client-v2/api/SearchApi
-	 * @version 105.0.1
+	 * @version 106.0.0
 	 */
 
 	/**
@@ -32610,7 +33206,7 @@ class SpeechTextAnalyticsApi {
 	/**
 	 * SpeechTextAnalytics service.
 	 * @module purecloud-platform-client-v2/api/SpeechTextAnalyticsApi
-	 * @version 105.0.1
+	 * @version 106.0.0
 	 */
 
 	/**
@@ -32756,7 +33352,7 @@ class StationsApi {
 	/**
 	 * Stations service.
 	 * @module purecloud-platform-client-v2/api/StationsApi
-	 * @version 105.0.1
+	 * @version 106.0.0
 	 */
 
 	/**
@@ -32903,7 +33499,7 @@ class SuggestApi {
 	/**
 	 * Suggest service.
 	 * @module purecloud-platform-client-v2/api/SuggestApi
-	 * @version 105.0.1
+	 * @version 106.0.0
 	 */
 
 	/**
@@ -33042,7 +33638,7 @@ class TelephonyApi {
 	/**
 	 * Telephony service.
 	 * @module purecloud-platform-client-v2/api/TelephonyApi
-	 * @version 105.0.1
+	 * @version 106.0.0
 	 */
 
 	/**
@@ -33150,7 +33746,7 @@ class TelephonyProvidersEdgeApi {
 	/**
 	 * TelephonyProvidersEdge service.
 	 * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-	 * @version 105.0.1
+	 * @version 106.0.0
 	 */
 
 	/**
@@ -34308,6 +34904,39 @@ class TelephonyProvidersEdgeApi {
 			'GET', 
 			{  }, 
 			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi') }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a listing of unassigned and/or assigned numbers in a set of DID Pools.
+	 * 
+	 * @param {Object} type The type of numbers to return.
+	 * @param {Object} opts Optional parameters
+	 * @param {Array.<String>} opts.id Filter by a specific list of DID Pools.  If this is not provided, numbers from all DID Pools will be returned.
+	 * @param {String} opts.numberMatch A number to filter the results by.
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {String} opts.sortOrder Sort order (default to ascending)
+	 */
+	getTelephonyProvidersEdgesDidpoolsDids(type, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'type' is set
+		if (type === undefined || type === null) {
+			throw 'Missing the required parameter "type" when calling getTelephonyProvidersEdgesDidpoolsDids';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/telephony/providers/edges/didpools/dids', 
+			'GET', 
+			{  }, 
+			{ 'type': type,'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'numberMatch': opts['numberMatch'],'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortOrder': opts['sortOrder'] }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -36727,7 +37356,7 @@ class TextbotsApi {
 	/**
 	 * Textbots service.
 	 * @module purecloud-platform-client-v2/api/TextbotsApi
-	 * @version 105.0.1
+	 * @version 106.0.0
 	 */
 
 	/**
@@ -36773,7 +37402,7 @@ class TokensApi {
 	/**
 	 * Tokens service.
 	 * @module purecloud-platform-client-v2/api/TokensApi
-	 * @version 105.0.1
+	 * @version 106.0.0
 	 */
 
 	/**
@@ -36859,7 +37488,7 @@ class UploadsApi {
 	/**
 	 * Uploads service.
 	 * @module purecloud-platform-client-v2/api/UploadsApi
-	 * @version 105.0.1
+	 * @version 106.0.0
 	 */
 
 	/**
@@ -36899,13 +37528,88 @@ class UploadsApi {
 		);
 	}
 
+	/**
+	 * Creates presigned url for uploading a recording file
+	 * 
+	 * @param {Object} body query
+	 */
+	postUploadsRecordings(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postUploadsRecordings';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/uploads/recordings', 
+			'POST', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Creates presigned url for uploading WFM historical data file. Requires data in csv format.
+	 * 
+	 * @param {Object} body query
+	 */
+	postUploadsWorkforcemanagementHistoricaldataCsv(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postUploadsWorkforcemanagementHistoricaldataCsv';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/uploads/workforcemanagement/historicaldata/csv', 
+			'POST', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Creates presigned url for uploading WFM historical data file. Requires data in json format.
+	 * 
+	 * @param {Object} body query
+	 */
+	postUploadsWorkforcemanagementHistoricaldataJson(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postUploadsWorkforcemanagementHistoricaldataJson';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/uploads/workforcemanagement/historicaldata/json', 
+			'POST', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
 }
 
 class UsageApi {
 	/**
 	 * Usage service.
 	 * @module purecloud-platform-client-v2/api/UsageApi
-	 * @version 105.0.1
+	 * @version 106.0.0
 	 */
 
 	/**
@@ -36976,7 +37680,7 @@ class UserRecordingsApi {
 	/**
 	 * UserRecordings service.
 	 * @module purecloud-platform-client-v2/api/UserRecordingsApi
-	 * @version 105.0.1
+	 * @version 106.0.0
 	 */
 
 	/**
@@ -37160,7 +37864,7 @@ class UsersApi {
 	/**
 	 * Users service.
 	 * @module purecloud-platform-client-v2/api/UsersApi
-	 * @version 105.0.1
+	 * @version 106.0.0
 	 */
 
 	/**
@@ -39373,7 +40077,7 @@ class UtilitiesApi {
 	/**
 	 * Utilities service.
 	 * @module purecloud-platform-client-v2/api/UtilitiesApi
-	 * @version 105.0.1
+	 * @version 106.0.0
 	 */
 
 	/**
@@ -39484,7 +40188,7 @@ class VoicemailApi {
 	/**
 	 * Voicemail service.
 	 * @module purecloud-platform-client-v2/api/VoicemailApi
-	 * @version 105.0.1
+	 * @version 106.0.0
 	 */
 
 	/**
@@ -40121,7 +40825,7 @@ class WebChatApi {
 	/**
 	 * WebChat service.
 	 * @module purecloud-platform-client-v2/api/WebChatApi
-	 * @version 105.0.1
+	 * @version 106.0.0
 	 */
 
 	/**
@@ -40665,7 +41369,7 @@ class WidgetsApi {
 	/**
 	 * Widgets service.
 	 * @module purecloud-platform-client-v2/api/WidgetsApi
-	 * @version 105.0.1
+	 * @version 106.0.0
 	 */
 
 	/**
@@ -40811,7 +41515,7 @@ class WorkforceManagementApi {
 	/**
 	 * WorkforceManagement service.
 	 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-	 * @version 105.0.1
+	 * @version 106.0.0
 	 */
 
 	/**
@@ -44109,7 +44813,7 @@ class WorkforceManagementApi {
  * </pre>
  * </p>
  * @module purecloud-platform-client-v2/index
- * @version 105.0.1
+ * @version 106.0.0
  */
 class platformClient {
 	constructor() {

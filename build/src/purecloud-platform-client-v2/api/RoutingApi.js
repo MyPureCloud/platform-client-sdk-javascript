@@ -5,7 +5,7 @@ class RoutingApi {
 	/**
 	 * Routing service.
 	 * @module purecloud-platform-client-v2/api/RoutingApi
-	 * @version 105.0.1
+	 * @version 106.0.0
 	 */
 
 	/**
@@ -95,6 +95,36 @@ class RoutingApi {
 			'DELETE', 
 			{ 'queueId': queueId }, 
 			{ 'forceDelete': opts['forceDelete'] }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete a queue member.
+	 * 
+	 * @param {String} queueId Queue ID
+	 * @param {String} memberId Member ID
+	 */
+	deleteRoutingQueueMember(queueId, memberId) { 
+		// verify the required parameter 'queueId' is set
+		if (queueId === undefined || queueId === null) {
+			throw 'Missing the required parameter "queueId" when calling deleteRoutingQueueMember';
+		}
+		// verify the required parameter 'memberId' is set
+		if (memberId === undefined || memberId === null) {
+			throw 'Missing the required parameter "memberId" when calling deleteRoutingQueueMember';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/queues/{queueId}/members/{memberId}', 
+			'DELETE', 
+			{ 'queueId': queueId,'memberId': memberId }, 
+			{  }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -669,6 +699,45 @@ class RoutingApi {
 			'GET', 
 			{ 'queueId': queueId,'mediaType': mediaType }, 
 			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get the members of this queue.
+	 * 
+	 * @param {String} queueId Queue ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageSize Page size [max 100] (default to 25)
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {String} opts.sortBy Sort by (default to name)
+	 * @param {Array.<String>} opts.expand Which fields, if any, to expand.
+	 * @param {Boolean} opts.joined Filter by joined status
+	 * @param {String} opts.name Filter by queue member name
+	 * @param {Array.<String>} opts.profileSkills Filter by profile skill
+	 * @param {Array.<String>} opts.skills Filter by skill
+	 * @param {Array.<String>} opts.languages Filter by language
+	 * @param {Array.<String>} opts.routingStatus Filter by routing status
+	 * @param {Array.<String>} opts.presence Filter by presence
+	 */
+	getRoutingQueueMembers(queueId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'queueId' is set
+		if (queueId === undefined || queueId === null) {
+			throw 'Missing the required parameter "queueId" when calling getRoutingQueueMembers';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/queues/{queueId}/members', 
+			'GET', 
+			{ 'queueId': queueId }, 
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'joined': opts['joined'],'name': opts['name'],'profileSkills': this.apiClient.buildCollectionParam(opts['profileSkills'], 'multi'),'skills': this.apiClient.buildCollectionParam(opts['skills'], 'multi'),'languages': this.apiClient.buildCollectionParam(opts['languages'], 'multi'),'routingStatus': this.apiClient.buildCollectionParam(opts['routingStatus'], 'multi'),'presence': this.apiClient.buildCollectionParam(opts['presence'], 'multi') }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -1337,6 +1406,101 @@ class RoutingApi {
 	}
 
 	/**
+	 * Validate domain settings
+	 * 
+	 * @param {String} domainId domain ID
+	 * @param {Object} body Domain settings
+	 */
+	patchRoutingEmailDomainValidate(domainId, body) { 
+		// verify the required parameter 'domainId' is set
+		if (domainId === undefined || domainId === null) {
+			throw 'Missing the required parameter "domainId" when calling patchRoutingEmailDomainValidate';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchRoutingEmailDomainValidate';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/email/domains/{domainId}/validate', 
+			'PATCH', 
+			{ 'domainId': domainId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update the ring number OR joined status for a queue member.
+	 * 
+	 * @param {String} queueId Queue ID
+	 * @param {String} memberId Member ID
+	 * @param {Object} body Queue Member
+	 */
+	patchRoutingQueueMember(queueId, memberId, body) { 
+		// verify the required parameter 'queueId' is set
+		if (queueId === undefined || queueId === null) {
+			throw 'Missing the required parameter "queueId" when calling patchRoutingQueueMember';
+		}
+		// verify the required parameter 'memberId' is set
+		if (memberId === undefined || memberId === null) {
+			throw 'Missing the required parameter "memberId" when calling patchRoutingQueueMember';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchRoutingQueueMember';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/queues/{queueId}/members/{memberId}', 
+			'PATCH', 
+			{ 'queueId': queueId,'memberId': memberId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Join or unjoin a set of users for a queue
+	 * 
+	 * @param {String} queueId Queue ID
+	 * @param {Array.<Object>} body Queue Members
+	 */
+	patchRoutingQueueMembers(queueId, body) { 
+		// verify the required parameter 'queueId' is set
+		if (queueId === undefined || queueId === null) {
+			throw 'Missing the required parameter "queueId" when calling patchRoutingQueueMembers';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchRoutingQueueMembers';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/queues/{queueId}/members', 
+			'PATCH', 
+			{ 'queueId': queueId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
 	 * DEPRECATED: use PATCH /routing/queues/{queueId}/members/{memberId}.  Update the ring number OR joined status for a User in a Queue.
 	 * 
 	 * @param {String} queueId Queue ID
@@ -1715,6 +1879,40 @@ class RoutingApi {
 			'POST', 
 			{  }, 
 			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Bulk add or delete up to 100 queue members
+	 * 
+	 * @param {String} queueId Queue ID
+	 * @param {Array.<Object>} body Queue Members
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts._delete True to delete queue members (default to false)
+	 */
+	postRoutingQueueMembers(queueId, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'queueId' is set
+		if (queueId === undefined || queueId === null) {
+			throw 'Missing the required parameter "queueId" when calling postRoutingQueueMembers';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postRoutingQueueMembers';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/queues/{queueId}/members', 
+			'POST', 
+			{ 'queueId': queueId }, 
+			{ 'delete': opts['_delete'] }, 
 			{  }, 
 			{  }, 
 			body, 

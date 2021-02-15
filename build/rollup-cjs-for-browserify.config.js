@@ -44,6 +44,20 @@ export default {
 					test: 'if (global.GENTLY) require = GENTLY.hijack(require);', 
 					// string or function to replaced with
 					replace: '',
+				},
+				/*
+				  Replace some browser feature detection logic with a literal value
+				  This causes this code to be compiled out of the build via dead code-elimination:
+				  ```
+				  if (typeof window === 'undefined' &&
+				      typeof require === 'function' &&
+				      require('fs')) {}
+				  ```
+				  This eliminates some pontential down-stream bundling complications with `require('fs')`
+				*/
+				{
+					test: "typeof window === 'undefined'",
+					replace: "false",
 				}
 			]
 		}),

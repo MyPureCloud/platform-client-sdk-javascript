@@ -5,7 +5,7 @@ class JourneyApi {
 	/**
 	 * Journey service.
 	 * @module purecloud-platform-client-v2/api/JourneyApi
-	 * @version 105.0.1
+	 * @version 106.0.0
 	 */
 
 	/**
@@ -19,6 +19,85 @@ class JourneyApi {
 		this.apiClient = apiClient || ApiClient.instance;
 	}
 
+
+	/**
+	 * Delete single action map.
+	 * 
+	 * @param {String} actionMapId ID of the action map.
+	 */
+	deleteJourneyActionmap(actionMapId) { 
+		// verify the required parameter 'actionMapId' is set
+		if (actionMapId === undefined || actionMapId === null) {
+			throw 'Missing the required parameter "actionMapId" when calling deleteJourneyActionmap';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/actionmaps/{actionMapId}', 
+			'DELETE', 
+			{ 'actionMapId': actionMapId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete a single action template.
+	 * 
+	 * @param {String} actionTemplateId ID of the action template.
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.hardDelete Determines whether Action Template should be soft-deleted (have it&#39;s state set to deleted) or hard-deleted (permanently removed). Set to false (soft-delete) by default.
+	 */
+	deleteJourneyActiontemplate(actionTemplateId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'actionTemplateId' is set
+		if (actionTemplateId === undefined || actionTemplateId === null) {
+			throw 'Missing the required parameter "actionTemplateId" when calling deleteJourneyActiontemplate';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/actiontemplates/{actionTemplateId}', 
+			'DELETE', 
+			{ 'actionTemplateId': actionTemplateId }, 
+			{ 'hardDelete': opts['hardDelete'] }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete an outcome.
+	 * 
+	 * @param {String} outcomeId ID of the outcome.
+	 */
+	deleteJourneyOutcome(outcomeId) { 
+		// verify the required parameter 'outcomeId' is set
+		if (outcomeId === undefined || outcomeId === null) {
+			throw 'Missing the required parameter "outcomeId" when calling deleteJourneyOutcome';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/outcomes/{outcomeId}', 
+			'DELETE', 
+			{ 'outcomeId': outcomeId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
 
 	/**
 	 * Delete a segment.
@@ -36,6 +115,60 @@ class JourneyApi {
 			'DELETE', 
 			{ 'segmentId': segmentId }, 
 			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Retrieve a single action map.
+	 * 
+	 * @param {String} actionMapId ID of the action map.
+	 */
+	getJourneyActionmap(actionMapId) { 
+		// verify the required parameter 'actionMapId' is set
+		if (actionMapId === undefined || actionMapId === null) {
+			throw 'Missing the required parameter "actionMapId" when calling getJourneyActionmap';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/actionmaps/{actionMapId}', 
+			'GET', 
+			{ 'actionMapId': actionMapId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Retrieve all action maps.
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {String} opts.sortBy Field(s) to sort by. Prefix with &#39;-&#39; for descending (e.g. sortBy=displayName,-createdDate).
+	 * @param {String} opts.filterField Field to filter by (e.g. filterField=weight or filterField=action.actionTemplate.id). Requires &#39;filterField&#39; to also be set.
+	 * @param {String} opts.filterValue Value to filter by. Requires &#39;filterValue&#39; to also be set.
+	 * @param {Array.<String>} opts.actionMapIds IDs of action maps to return. Use of this parameter is not compatible with pagination, filtering or sorting. A maximum of 100 action maps are allowed per request.
+	 */
+	getJourneyActionmaps(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/actionmaps', 
+			'GET', 
+			{  }, 
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'filterField': opts['filterField'],'filterValue': opts['filterValue'],'actionMapIds': this.apiClient.buildCollectionParam(opts['actionMapIds'], 'multi') }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -86,6 +219,111 @@ class JourneyApi {
 			'GET', 
 			{  }, 
 			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'] }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Retrieve a single action template.
+	 * 
+	 * @param {String} actionTemplateId ID of the action template.
+	 */
+	getJourneyActiontemplate(actionTemplateId) { 
+		// verify the required parameter 'actionTemplateId' is set
+		if (actionTemplateId === undefined || actionTemplateId === null) {
+			throw 'Missing the required parameter "actionTemplateId" when calling getJourneyActiontemplate';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/actiontemplates/{actionTemplateId}', 
+			'GET', 
+			{ 'actionTemplateId': actionTemplateId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Retrieve all action templates.
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {String} opts.sortBy Field(s) to sort by. Prefix with &#39;-&#39; for descending (e.g. sortBy=name,-createdDate).
+	 * @param {Object} opts.mediaType Media type
+	 * @param {Object} opts.state Action template state
+	 */
+	getJourneyActiontemplates(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/actiontemplates', 
+			'GET', 
+			{  }, 
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'mediaType': opts['mediaType'],'state': opts['state'] }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Retrieve a single outcome.
+	 * 
+	 * @param {String} outcomeId ID of the outcome.
+	 */
+	getJourneyOutcome(outcomeId) { 
+		// verify the required parameter 'outcomeId' is set
+		if (outcomeId === undefined || outcomeId === null) {
+			throw 'Missing the required parameter "outcomeId" when calling getJourneyOutcome';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/outcomes/{outcomeId}', 
+			'GET', 
+			{ 'outcomeId': outcomeId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Retrieve all outcomes.
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {String} opts.sortBy Field(s) to sort by. The response can be sorted by any first level property on the Outcome response. Prefix with &#39;-&#39; for descending (e.g. sortBy=displayName,-createdDate).
+	 * @param {Array.<String>} opts.outcomeIds IDs of outcomes to return. Use of this parameter is not compatible with pagination or sorting. A maximum of 20 outcomes are allowed per request.
+	 */
+	getJourneyOutcomes(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/outcomes', 
+			'GET', 
+			{  }, 
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'outcomeIds': this.apiClient.buildCollectionParam(opts['outcomeIds'], 'multi') }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -149,6 +387,35 @@ class JourneyApi {
 	}
 
 	/**
+	 * Update single action map.
+	 * 
+	 * @param {String} actionMapId ID of the action map.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body 
+	 */
+	patchJourneyActionmap(actionMapId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'actionMapId' is set
+		if (actionMapId === undefined || actionMapId === null) {
+			throw 'Missing the required parameter "actionMapId" when calling patchJourneyActionmap';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/actionmaps/{actionMapId}', 
+			'PATCH', 
+			{ 'actionMapId': actionMapId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
 	 * Update a single action target.
 	 * 
 	 * @param {String} actionTargetId ID of the action target.
@@ -167,6 +434,64 @@ class JourneyApi {
 			'/api/v2/journey/actiontargets/{actionTargetId}', 
 			'PATCH', 
 			{ 'actionTargetId': actionTargetId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update a single action template.
+	 * 
+	 * @param {String} actionTemplateId ID of the action template.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body 
+	 */
+	patchJourneyActiontemplate(actionTemplateId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'actionTemplateId' is set
+		if (actionTemplateId === undefined || actionTemplateId === null) {
+			throw 'Missing the required parameter "actionTemplateId" when calling patchJourneyActiontemplate';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/actiontemplates/{actionTemplateId}', 
+			'PATCH', 
+			{ 'actionTemplateId': actionTemplateId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update an outcome.
+	 * 
+	 * @param {String} outcomeId ID of the outcome.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body 
+	 */
+	patchJourneyOutcome(outcomeId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'outcomeId' is set
+		if (outcomeId === undefined || outcomeId === null) {
+			throw 'Missing the required parameter "outcomeId" when calling patchJourneyOutcome';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/outcomes/{outcomeId}', 
+			'PATCH', 
+			{ 'outcomeId': outcomeId }, 
 			{  }, 
 			{  }, 
 			{  }, 
@@ -225,6 +550,78 @@ class JourneyApi {
 			{  }, 
 			{  }, 
 			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Create an action map.
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body 
+	 */
+	postJourneyActionmaps(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/actionmaps', 
+			'POST', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Create a single action template.
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body 
+	 */
+	postJourneyActiontemplates(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/actiontemplates', 
+			'POST', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Create an outcome.
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body 
+	 */
+	postJourneyOutcomes(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/outcomes', 
+			'POST', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']

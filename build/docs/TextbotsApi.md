@@ -198,6 +198,9 @@ PostTextRequest <a href="#" onclick="return copyPostTextRequestExample()">Copy</
     "webhookQueryParameters": {String: String}, 
     "eventInputParameters": {String: String}, 
   },  
+  "genesysBotConnector": { 
+    "queryParameters": {String: String}, 
+  },  
 }
 ```
 

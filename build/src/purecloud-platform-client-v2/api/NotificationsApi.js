@@ -5,7 +5,7 @@ class NotificationsApi {
 	/**
 	 * Notifications service.
 	 * @module purecloud-platform-client-v2/api/NotificationsApi
-	 * @version 105.0.1
+	 * @version 106.0.0
 	 */
 
 	/**
@@ -50,6 +50,7 @@ class NotificationsApi {
 	 * 
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand Which fields, if any, to expand
+	 * @param {Boolean} opts.includePreview Whether or not to include Preview topics (default to true)
 	 */
 	getNotificationsAvailabletopics(opts) { 
 		opts = opts || {};
@@ -59,7 +60,7 @@ class NotificationsApi {
 			'/api/v2/notifications/availabletopics', 
 			'GET', 
 			{  }, 
-			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') }, 
+			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'includePreview': opts['includePreview'] }, 
 			{  }, 
 			{  }, 
 			null, 

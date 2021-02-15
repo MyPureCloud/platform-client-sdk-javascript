@@ -5,7 +5,7 @@ class TelephonyProvidersEdgeApi {
 	/**
 	 * TelephonyProvidersEdge service.
 	 * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-	 * @version 105.0.1
+	 * @version 106.0.0
 	 */
 
 	/**
@@ -1163,6 +1163,39 @@ class TelephonyProvidersEdgeApi {
 			'GET', 
 			{  }, 
 			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi') }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a listing of unassigned and/or assigned numbers in a set of DID Pools.
+	 * 
+	 * @param {Object} type The type of numbers to return.
+	 * @param {Object} opts Optional parameters
+	 * @param {Array.<String>} opts.id Filter by a specific list of DID Pools.  If this is not provided, numbers from all DID Pools will be returned.
+	 * @param {String} opts.numberMatch A number to filter the results by.
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {String} opts.sortOrder Sort order (default to ascending)
+	 */
+	getTelephonyProvidersEdgesDidpoolsDids(type, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'type' is set
+		if (type === undefined || type === null) {
+			throw 'Missing the required parameter "type" when calling getTelephonyProvidersEdgesDidpoolsDids';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/telephony/providers/edges/didpools/dids', 
+			'GET', 
+			{  }, 
+			{ 'type': type,'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'numberMatch': opts['numberMatch'],'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortOrder': opts['sortOrder'] }, 
 			{  }, 
 			{  }, 
 			null, 
