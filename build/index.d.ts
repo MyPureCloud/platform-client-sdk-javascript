@@ -451,6 +451,7 @@ declare namespace ArchitectApi {
 		"pageSize"?: number;
 		"sortBy"?: string;
 		"sortOrder"?: string;
+		"divisionId"?: Array<string>;
 	}
 	export interface getFlowsDivisionviewsOptions { 
 		"type"?: Array<string>;
@@ -1018,10 +1019,10 @@ declare class ConversationsApi {
   	postConversationsMessageParticipantReplace(conversationId: string, participantId: string, body: Models.TransferRequest): Promise<void>; 
   	postConversationsMessages(body: Models.CreateOutboundMessagingConversationRequest): Promise<Models.MessageConversation>; 
   	postConversationsMessagesAgentless(body: Models.SendAgentlessOutboundMessageRequest): Promise<Models.SendAgentlessOutboundMessageResponse>; 
-  	postConversationsMessagingIntegrationsFacebook(body: Models.FacebookIntegrationRequest, opts?: ConversationsApi.postConversationsMessagingIntegrationsFacebookOptions): Promise<Models.FacebookIntegration>; 
-  	postConversationsMessagingIntegrationsLine(body: Models.LineIntegrationRequest, opts?: ConversationsApi.postConversationsMessagingIntegrationsLineOptions): Promise<Models.LineIntegration>; 
-  	postConversationsMessagingIntegrationsTwitter(body: Models.TwitterIntegrationRequest, opts?: ConversationsApi.postConversationsMessagingIntegrationsTwitterOptions): Promise<Models.TwitterIntegration>; 
-  	postConversationsMessagingIntegrationsWhatsapp(body: Models.WhatsAppIntegrationRequest, opts?: ConversationsApi.postConversationsMessagingIntegrationsWhatsappOptions): Promise<Models.WhatsAppIntegration>; 
+  	postConversationsMessagingIntegrationsFacebook(body: Models.FacebookIntegrationRequest): Promise<Models.FacebookIntegration>; 
+  	postConversationsMessagingIntegrationsLine(body: Models.LineIntegrationRequest): Promise<Models.LineIntegration>; 
+  	postConversationsMessagingIntegrationsTwitter(body: Models.TwitterIntegrationRequest): Promise<Models.TwitterIntegration>; 
+  	postConversationsMessagingIntegrationsWhatsapp(body: Models.WhatsAppIntegrationRequest): Promise<Models.WhatsAppIntegration>; 
   	putConversationParticipantFlaggedreason(conversationId: string, participantId: string): Promise<void>; 
   	putConversationsCallParticipantCommunicationUuidata(conversationId: string, participantId: string, communicationId: string, body: Models.SetUuiDataRequest): Promise<Models.Empty>; 
   	putConversationsEmailMessagesDraft(conversationId: string, body: Models.EmailMessage): Promise<Models.EmailMessage>; 
@@ -1122,18 +1123,6 @@ declare namespace ConversationsApi {
 	}
 	export interface postConversationsMessageMessagesBulkOptions { 
 		"body"?: Array<string>;
-	}
-	export interface postConversationsMessagingIntegrationsFacebookOptions { 
-		"async"?: boolean;
-	}
-	export interface postConversationsMessagingIntegrationsLineOptions { 
-		"async"?: boolean;
-	}
-	export interface postConversationsMessagingIntegrationsTwitterOptions { 
-		"async"?: boolean;
-	}
-	export interface postConversationsMessagingIntegrationsWhatsappOptions { 
-		"async"?: boolean;
 	}
 }
 
@@ -2950,8 +2939,8 @@ declare class RoutingApi {
   	postRoutingEmailDomainTestconnection(domainId: string, opts?: RoutingApi.postRoutingEmailDomainTestconnectionOptions): Promise<Models.TestMessage>; 
   	postRoutingEmailDomains(body: Models.InboundDomain): Promise<Models.InboundDomain>; 
   	postRoutingLanguages(body: Models.Language): Promise<Models.Language>; 
-  	postRoutingQueueMembers(queueId: string, body: Array<Models.WritableEntity>, opts?: RoutingApi.postRoutingQueueMembersOptions): Promise<string>; 
-  	postRoutingQueueUsers(queueId: string, body: Array<Models.WritableEntity>, opts?: RoutingApi.postRoutingQueueUsersOptions): Promise<string>; 
+  	postRoutingQueueMembers(queueId: string, body: Array<Models.WritableEntity>, opts?: RoutingApi.postRoutingQueueMembersOptions): Promise<void>; 
+  	postRoutingQueueUsers(queueId: string, body: Array<Models.WritableEntity>, opts?: RoutingApi.postRoutingQueueUsersOptions): Promise<void>; 
   	postRoutingQueueWrapupcodes(queueId: string, body: Array<Models.WrapUpCodeReference>): Promise<Array<Models.WrapupCode>>; 
   	postRoutingQueues(body: Models.CreateQueueRequest): Promise<Models.Queue>; 
   	postRoutingSkills(body: Models.RoutingSkill): Promise<Models.RoutingSkill>; 
@@ -3363,14 +3352,51 @@ declare namespace SearchApi {
 }
 
 declare class SpeechTextAnalyticsApi {  
+  	deleteSpeechandtextanalyticsProgram(programId: string, opts?: SpeechTextAnalyticsApi.deleteSpeechandtextanalyticsProgramOptions): Promise<void>; 
+  	deleteSpeechandtextanalyticsTopic(topicId: string): Promise<void>; 
   	getSpeechandtextanalyticsConversation(conversationId: string): Promise<Models.ConversationMetrics>; 
   	getSpeechandtextanalyticsConversationCommunicationTranscripturl(conversationId: string, communicationId: string): Promise<Models.TranscriptUrl>; 
+  	getSpeechandtextanalyticsDialects(): Promise<Array<object>>; 
+  	getSpeechandtextanalyticsProgram(programId: string): Promise<Models.Program>; 
+  	getSpeechandtextanalyticsPrograms(opts?: SpeechTextAnalyticsApi.getSpeechandtextanalyticsProgramsOptions): Promise<Models.ProgramsEntityListing>; 
+  	getSpeechandtextanalyticsProgramsGeneralJob(jobId: string): Promise<Models.GeneralProgramJob>; 
+  	getSpeechandtextanalyticsProgramsPublishjob(jobId: string): Promise<Models.ProgramJob>; 
+  	getSpeechandtextanalyticsProgramsUnpublished(opts?: SpeechTextAnalyticsApi.getSpeechandtextanalyticsProgramsUnpublishedOptions): Promise<Models.UnpublishedProgramsEntityListing>; 
   	getSpeechandtextanalyticsSettings(): Promise<Models.SpeechTextAnalyticsSettingsResponse>; 
+  	getSpeechandtextanalyticsTopic(topicId: string): Promise<Models.Topic>; 
+  	getSpeechandtextanalyticsTopics(opts?: SpeechTextAnalyticsApi.getSpeechandtextanalyticsTopicsOptions): Promise<Models.TopicsEntityListing>; 
+  	getSpeechandtextanalyticsTopicsGeneral(opts?: SpeechTextAnalyticsApi.getSpeechandtextanalyticsTopicsGeneralOptions): Promise<Models.GeneralTopicsEntityListing>; 
+  	getSpeechandtextanalyticsTopicsPublishjob(jobId: string): Promise<Models.TopicJob>; 
   	patchSpeechandtextanalyticsSettings(body: Models.SpeechTextAnalyticsSettingsRequest): Promise<Models.SpeechTextAnalyticsSettingsResponse>; 
-  	postSpeechandtextanalyticsTranscriptsSearch(body: Models.TranscriptSearchRequest): Promise<Models.JsonSearchResponse>;
+  	postSpeechandtextanalyticsPrograms(body: Models.ProgramRequest): Promise<Models.Program>; 
+  	postSpeechandtextanalyticsProgramsGeneralJobs(body: Models.GeneralProgramJobRequest): Promise<Models.GeneralProgramJob>; 
+  	postSpeechandtextanalyticsProgramsPublishjobs(body: Models.ProgramJobRequest): Promise<Models.ProgramJob>; 
+  	postSpeechandtextanalyticsTopics(body: Models.TopicRequest): Promise<Models.Topic>; 
+  	postSpeechandtextanalyticsTopicsPublishjobs(body: Models.TopicJobRequest): Promise<Models.TopicJob>; 
+  	postSpeechandtextanalyticsTranscriptsSearch(body: Models.TranscriptSearchRequest): Promise<Models.JsonSearchResponse>; 
+  	putSpeechandtextanalyticsProgram(programId: string, body: Models.ProgramRequest): Promise<Models.Program>; 
+  	putSpeechandtextanalyticsTopic(topicId: string, body: Models.TopicRequest): Promise<Models.Topic>;
 }
 
 declare namespace SpeechTextAnalyticsApi { 
+	export interface deleteSpeechandtextanalyticsProgramOptions { 
+		"forceDelete"?: boolean;
+	}
+	export interface getSpeechandtextanalyticsProgramsOptions { 
+		"nextPage"?: string;
+		"pageSize"?: number;
+	}
+	export interface getSpeechandtextanalyticsProgramsUnpublishedOptions { 
+		"nextPage"?: string;
+		"pageSize"?: number;
+	}
+	export interface getSpeechandtextanalyticsTopicsOptions { 
+		"nextPage"?: string;
+		"pageSize"?: number;
+	}
+	export interface getSpeechandtextanalyticsTopicsGeneralOptions { 
+		"dialect"?: string;
+	}
 }
 
 declare class StationsApi {  
@@ -5009,8 +5035,8 @@ declare namespace Models {
 		"calibrationId"?: string;
 		"rescored"?: boolean;
 		"deleted"?: boolean;
-		"oTotalScore"?: number;
 		"oTotalCriticalScore"?: number;
+		"oTotalScore"?: number;
 	}
 	
 	export interface AnalyticsFlow { 
@@ -5490,11 +5516,11 @@ declare namespace Models {
 		"number"?: boolean;
 		"boolean"?: boolean;
 		"object"?: boolean;
-		"valueNode"?: boolean;
-		"containerNode"?: boolean;
 		"floatingPointNumber"?: boolean;
-		"pojo"?: boolean;
 		"integralNumber"?: boolean;
+		"valueNode"?: boolean;
+		"missingNode"?: boolean;
+		"containerNode"?: boolean;
 		"short"?: boolean;
 		"int"?: boolean;
 		"long"?: boolean;
@@ -5503,7 +5529,7 @@ declare namespace Models {
 		"bigInteger"?: boolean;
 		"textual"?: boolean;
 		"binary"?: boolean;
-		"missingNode"?: boolean;
+		"pojo"?: boolean;
 		"array"?: boolean;
 		"null"?: boolean;
 	}
@@ -5860,6 +5886,7 @@ declare namespace Models {
 	export interface AvailableTopic { 
 		"description"?: string;
 		"id"?: string;
+		"permissionDetails"?: Array<Models.PermissionDetails>;
 		"requiresPermissions"?: Array<string>;
 		"requiresDivisionPermissions"?: boolean;
 		"enforced"?: boolean;
@@ -5878,6 +5905,18 @@ declare namespace Models {
 	export interface AvailableTranslations { 
 		"orgSpecific"?: Array<string>;
 		"builtin"?: Array<string>;
+	}
+	
+	export interface BaseProgramEntity { 
+		"id"?: string;
+		"name"?: string;
+		"selfUri"?: string;
+	}
+	
+	export interface BaseTopicEntitiy { 
+		"id"?: string;
+		"name"?: string;
+		"selfUri"?: string;
 	}
 	
 	export interface BatchDownloadJobResult { 
@@ -10254,8 +10293,19 @@ declare namespace Models {
 		"constrainMinimumTimeBetweenShifts"?: boolean;
 		"minimumTimeBetweenShiftsMinutes"?: number;
 		"maximumDays"?: number;
+		"minimumConsecutiveNonWorkingMinutesPerWeek"?: number;
+		"constrainMaximumConsecutiveWorkingWeekends"?: boolean;
+		"maximumConsecutiveWorkingWeekends"?: number;
 		"minimumWorkingDaysPerWeek"?: number;
+		"constrainMaximumConsecutiveWorkingDays"?: boolean;
+		"maximumConsecutiveWorkingDays"?: number;
+		"minimumShiftStartDistanceMinutes"?: number;
+		"minimumDaysOffPerPlanningPeriod"?: number;
+		"maximumDaysOffPerPlanningPeriod"?: number;
+		"minimumPaidMinutesPerPlanningPeriod"?: number;
+		"maximumPaidMinutesPerPlanningPeriod"?: number;
 		"optionalDays"?: Models.SetWrapperDayOfWeek;
+		"shiftStartVarianceType"?: string;
 		"shiftStartVariances"?: Models.ListWrapperShiftStartVariance;
 		"shifts"?: Array<Models.CreateWorkPlanShift>;
 		"agents"?: Array<Models.UserReference>;
@@ -10273,6 +10323,8 @@ declare namespace Models {
 		"startTimeIncrementMinutes"?: number;
 		"countsAsPaidTime"?: boolean;
 		"countsAsContiguousWorkTime"?: boolean;
+		"minimumLengthFromShiftStartMinutes"?: number;
+		"minimumLengthFromShiftEndMinutes"?: number;
 	}
 	
 	export interface CreateWorkPlanShift { 
@@ -10285,6 +10337,8 @@ declare namespace Models {
 		"constrainStopTime"?: boolean;
 		"constrainLatestStopTime"?: boolean;
 		"latestStopTimeMinutesFromMidnight"?: number;
+		"constrainEarliestStopTime"?: boolean;
+		"earliestStopTimeMinutesFromMidnight"?: number;
 		"startIncrementMinutes"?: number;
 		"flexiblePaidTime"?: boolean;
 		"exactPaidTimeMinutes"?: number;
@@ -10604,6 +10658,7 @@ declare namespace Models {
 	export interface DataTable { 
 		"id"?: string;
 		"name"?: string;
+		"division"?: Models.Division;
 		"description"?: string;
 		"schema"?: Models.JsonSchemaDocument;
 		"selfUri"?: string;
@@ -11993,8 +12048,8 @@ declare namespace Models {
 		"permissionPolicies"?: Array<Models.DomainPermissionPolicy>;
 		"userCount"?: number;
 		"roleNeedsUpdate"?: boolean;
-		"base"?: boolean;
 		"default"?: boolean;
+		"base"?: boolean;
 		"selfUri"?: string;
 	}
 	
@@ -12008,8 +12063,8 @@ declare namespace Models {
 		"permissionPolicies"?: Array<Models.DomainPermissionPolicy>;
 		"userCount"?: number;
 		"roleNeedsUpdate"?: boolean;
-		"base"?: boolean;
 		"default"?: boolean;
+		"base"?: boolean;
 		"selfUri"?: string;
 	}
 	
@@ -12023,8 +12078,8 @@ declare namespace Models {
 		"permissionPolicies"?: Array<Models.DomainPermissionPolicy>;
 		"userCount"?: number;
 		"roleNeedsUpdate"?: boolean;
-		"base"?: boolean;
 		"default"?: boolean;
+		"base"?: boolean;
 		"selfUri"?: string;
 	}
 	
@@ -13325,6 +13380,12 @@ declare namespace Models {
 		"externalOrganizationUri"?: string;
 	}
 	
+	export interface ExternalSegment { 
+		"id": string;
+		"name": string;
+		"source": string;
+	}
+	
 	export interface FacebookAppCredentials { 
 		"id": string;
 	}
@@ -14000,6 +14061,28 @@ declare namespace Models {
 		"selfUri"?: string;
 	}
 	
+	export interface GeneralProgramJob { 
+		"id"?: string;
+		"state"?: string;
+		"createdBy"?: Models.AddressableEntityRef;
+		"dateCreated"?: string;
+		"dateModified"?: string;
+		"selfUri"?: string;
+	}
+	
+	export interface GeneralProgramJobRequest { 
+		"dialect": string;
+		"mode"?: string;
+	}
+	
+	export interface GeneralTopic { 
+		"name"?: string;
+	}
+	
+	export interface GeneralTopicsEntityListing { 
+		"entities"?: Array<Models.GeneralTopic>;
+	}
+	
 	export interface GenerateBuForecastRequest { 
 		"description": string;
 		"weekCount"?: number;
@@ -14353,8 +14436,8 @@ declare namespace Models {
 		"completed"?: string;
 		"entities"?: Array<Models.HistoryEntry>;
 		"total"?: number;
-		"pageSize"?: number;
 		"pageNumber"?: number;
+		"pageSize"?: number;
 		"pageCount"?: number;
 	}
 	
@@ -14896,6 +14979,7 @@ declare namespace Models {
 		"shouldDisplayToAgent"?: boolean;
 		"context"?: Models.Context;
 		"journey"?: Models.Journey;
+		"externalSegment"?: Models.ExternalSegment;
 		"assignmentExpirationDays"?: number;
 		"selfUri"?: string;
 		"createdDate"?: string;
@@ -14916,11 +15000,11 @@ declare namespace Models {
 		"number"?: boolean;
 		"boolean"?: boolean;
 		"object"?: boolean;
-		"valueNode"?: boolean;
-		"containerNode"?: boolean;
 		"floatingPointNumber"?: boolean;
-		"pojo"?: boolean;
 		"integralNumber"?: boolean;
+		"valueNode"?: boolean;
+		"missingNode"?: boolean;
+		"containerNode"?: boolean;
 		"short"?: boolean;
 		"int"?: boolean;
 		"long"?: boolean;
@@ -14929,7 +15013,7 @@ declare namespace Models {
 		"bigInteger"?: boolean;
 		"textual"?: boolean;
 		"binary"?: boolean;
-		"missingNode"?: boolean;
+		"pojo"?: boolean;
 		"array"?: boolean;
 		"null"?: boolean;
 	}
@@ -15521,6 +15605,34 @@ declare namespace Models {
 		"values"?: Array<Models.ShiftStartVariance>;
 	}
 	
+	export interface ListedProgram { 
+		"id"?: string;
+		"name"?: string;
+		"description"?: string;
+		"published"?: boolean;
+		"topicsCount"?: number;
+		"tags"?: Array<string>;
+		"modifiedBy"?: Models.AddressableEntityRef;
+		"dateModified"?: string;
+		"selfUri"?: string;
+	}
+	
+	export interface ListedTopic { 
+		"id"?: string;
+		"name"?: string;
+		"description"?: string;
+		"published"?: boolean;
+		"strictness"?: string;
+		"programsCount"?: number;
+		"tags"?: Array<string>;
+		"dialect"?: string;
+		"participants"?: string;
+		"phrasesCount"?: number;
+		"modifiedBy"?: Models.AddressableEntityRef;
+		"dateModified"?: string;
+		"selfUri"?: string;
+	}
+	
 	export interface LocalEncryptionConfiguration { 
 		"id"?: string;
 		"name"?: string;
@@ -15702,6 +15814,7 @@ declare namespace Models {
 		"id"?: string;
 		"name"?: string;
 		"division"?: Models.Division;
+		"businessUnit"?: Models.BusinessUnitReference;
 		"startDayOfWeek"?: string;
 		"timeZone"?: string;
 		"settings"?: Models.ManagementUnitSettingsResponse;
@@ -17336,6 +17449,10 @@ declare namespace Models {
 		"backgroundColor"?: string;
 	}
 	
+	export interface PatchExternalSegment { 
+		"name": string;
+	}
+	
 	export interface PatchIntegrationAction { 
 		"id"?: string;
 	}
@@ -17369,6 +17486,7 @@ declare namespace Models {
 		"shouldDisplayToAgent"?: boolean;
 		"context"?: Models.Context;
 		"journey"?: Models.Journey;
+		"externalSegment"?: Models.PatchExternalSegment;
 		"assignmentExpirationDays"?: number;
 		"selfUri"?: string;
 		"createdDate"?: string;
@@ -17416,6 +17534,13 @@ declare namespace Models {
 		"lastUri"?: string;
 		"previousUri"?: string;
 		"pageCount"?: number;
+	}
+	
+	export interface PermissionDetails { 
+		"type"?: string;
+		"permissions"?: Array<string>;
+		"allowsCurrentUser"?: boolean;
+		"enforced"?: boolean;
 	}
 	
 	export interface Permissions { 
@@ -17629,6 +17754,12 @@ declare namespace Models {
 	export interface PhonesReboot { 
 		"phoneIds"?: Array<string>;
 		"siteId"?: string;
+	}
+	
+	export interface Phrase { 
+		"text": string;
+		"strictness"?: string;
+		"sentiment"?: string;
 	}
 	
 	export interface PhysicalInterfaceEntityListing { 
@@ -17862,6 +17993,49 @@ declare namespace Models {
 		"presences"?: Array<Models.UserPresence>;
 		"outOfOffices"?: Array<Models.OutOfOffice>;
 		"selfUri"?: string;
+	}
+	
+	export interface Program { 
+		"id"?: string;
+		"name"?: string;
+		"description"?: string;
+		"published"?: boolean;
+		"topics"?: Array<Models.BaseTopicEntitiy>;
+		"tags"?: Array<string>;
+		"modifiedBy"?: Models.AddressableEntityRef;
+		"dateModified"?: string;
+		"publishedBy"?: Models.AddressableEntityRef;
+		"datePublished"?: string;
+		"selfUri"?: string;
+	}
+	
+	export interface ProgramJob { 
+		"id"?: string;
+		"state"?: string;
+		"programs"?: Array<Models.BaseProgramEntity>;
+		"createdBy"?: Models.AddressableEntityRef;
+		"dateCreated"?: string;
+		"dateModified"?: string;
+		"selfUri"?: string;
+	}
+	
+	export interface ProgramJobRequest { 
+		"programIds": Array<string>;
+	}
+	
+	export interface ProgramRequest { 
+		"name": string;
+		"description"?: string;
+		"topicIds"?: Array<string>;
+		"tags"?: Array<string>;
+	}
+	
+	export interface ProgramsEntityListing { 
+		"entities"?: Array<Models.ListedProgram>;
+		"pageSize"?: number;
+		"selfUri"?: string;
+		"nextUri"?: string;
+		"pageCount"?: number;
 	}
 	
 	export interface Prompt { 
@@ -21083,6 +21257,7 @@ declare namespace Models {
 		"priority"?: number;
 		"skillIds"?: Array<string>;
 		"preferredAgentIds"?: Array<string>;
+		"scoredAgents"?: Array<Models.ScoredAgent>;
 	}
 	
 	export interface RoutingRule { 
@@ -21309,12 +21484,16 @@ declare namespace Models {
 		"maxOccupancyPercentForDeferredWork"?: number;
 		"defaultShrinkagePercent"?: number;
 		"shrinkageOverrides"?: Models.ShrinkageOverrides;
+		"planningPeriod"?: Models.ValueWrapperPlanningPeriodSettings;
+		"startDayOfWeekend"?: string;
 	}
 	
 	export interface SchedulingSettingsResponse { 
 		"maxOccupancyPercentForDeferredWork"?: number;
 		"defaultShrinkagePercent"?: number;
 		"shrinkageOverrides"?: Models.ShrinkageOverrides;
+		"planningPeriod"?: Models.PlanningPeriodSettings;
+		"startDayOfWeekend"?: string;
 	}
 	
 	export interface SchedulingStatusResponse { 
@@ -22559,7 +22738,10 @@ declare namespace Models {
 		"query": Array<Models.SuggestSearchCriteria>;
 	}
 	
-	export interface SupportedContent { 
+	export interface SupportedContentReference { 
+		"id": string;
+		"name"?: string;
+		"selfUri"?: string;
 		"mediaTypes"?: Models.MediaTypes;
 	}
 	
@@ -23033,6 +23215,57 @@ declare namespace Models {
 	export interface TokenInfoClonedUser { 
 		"id"?: string;
 		"organization"?: Models.Entity;
+	}
+	
+	export interface Topic { 
+		"id"?: string;
+		"name"?: string;
+		"description"?: string;
+		"published"?: boolean;
+		"strictness"?: string;
+		"programs"?: Array<Models.BaseProgramEntity>;
+		"tags"?: Array<string>;
+		"dialect"?: string;
+		"participants"?: string;
+		"phrases"?: Array<Models.Phrase>;
+		"modifiedBy"?: Models.AddressableEntityRef;
+		"dateModified"?: string;
+		"publishedBy"?: Models.AddressableEntityRef;
+		"datePublished"?: string;
+		"selfUri"?: string;
+	}
+	
+	export interface TopicJob { 
+		"id"?: string;
+		"state"?: string;
+		"topics"?: Array<Models.BaseTopicEntitiy>;
+		"createdBy"?: Models.AddressableEntityRef;
+		"dateCreated"?: string;
+		"dateModified"?: string;
+		"selfUri"?: string;
+	}
+	
+	export interface TopicJobRequest { 
+		"topicIds": Array<string>;
+	}
+	
+	export interface TopicRequest { 
+		"name": string;
+		"description"?: string;
+		"strictness"?: string;
+		"programIds"?: Array<string>;
+		"tags"?: Array<string>;
+		"dialect": string;
+		"participants"?: string;
+		"phrases"?: Array<Models.Phrase>;
+	}
+	
+	export interface TopicsEntityListing { 
+		"entities"?: Array<Models.ListedTopic>;
+		"pageSize"?: number;
+		"selfUri"?: string;
+		"nextUri"?: string;
+		"pageCount"?: number;
 	}
 	
 	export interface TrainingListing { 
@@ -23697,6 +23930,14 @@ declare namespace Models {
 		"tier": string;
 		"envName"?: string;
 		"selfUri"?: string;
+	}
+	
+	export interface UnpublishedProgramsEntityListing { 
+		"entities"?: Array<Models.Program>;
+		"pageSize"?: number;
+		"selfUri"?: string;
+		"nextUri"?: string;
+		"pageCount"?: number;
 	}
 	
 	export interface UnreadMetric { 
@@ -25191,6 +25432,7 @@ declare namespace Models {
 		"dateCreated"?: string;
 		"modifiedBy"?: Models.WemLearningAssignmentTopicUserReference;
 		"dateModified"?: string;
+		"isOverdue"?: boolean;
 	}
 	
 	export interface WemLearningAssignmentTopicLearningModuleReference { 
@@ -26177,8 +26419,19 @@ declare namespace Models {
 		"constrainMinimumTimeBetweenShifts"?: boolean;
 		"minimumTimeBetweenShiftsMinutes"?: number;
 		"maximumDays"?: number;
+		"minimumConsecutiveNonWorkingMinutesPerWeek"?: number;
+		"constrainMaximumConsecutiveWorkingWeekends"?: boolean;
+		"maximumConsecutiveWorkingWeekends"?: number;
 		"minimumWorkingDaysPerWeek"?: number;
+		"constrainMaximumConsecutiveWorkingDays"?: boolean;
+		"maximumConsecutiveWorkingDays"?: number;
+		"minimumShiftStartDistanceMinutes"?: number;
+		"minimumDaysOffPerPlanningPeriod"?: number;
+		"maximumDaysOffPerPlanningPeriod"?: number;
+		"minimumPaidMinutesPerPlanningPeriod"?: number;
+		"maximumPaidMinutesPerPlanningPeriod"?: number;
 		"optionalDays"?: Models.SetWrapperDayOfWeek;
+		"shiftStartVarianceType"?: string;
 		"shiftStartVariances"?: Models.ListWrapperShiftStartVariance;
 		"shifts"?: Array<Models.WorkPlanShift>;
 		"agents"?: Array<Models.DeletableUserReference>;
@@ -26198,6 +26451,8 @@ declare namespace Models {
 		"startTimeIncrementMinutes"?: number;
 		"countsAsPaidTime"?: boolean;
 		"countsAsContiguousWorkTime"?: boolean;
+		"minimumLengthFromShiftStartMinutes"?: number;
+		"minimumLengthFromShiftEndMinutes"?: number;
 		"id"?: string;
 		"delete"?: boolean;
 	}
@@ -26232,8 +26487,19 @@ declare namespace Models {
 		"constrainMinimumTimeBetweenShifts"?: boolean;
 		"minimumTimeBetweenShiftsMinutes"?: number;
 		"maximumDays"?: number;
+		"minimumConsecutiveNonWorkingMinutesPerWeek"?: number;
+		"constrainMaximumConsecutiveWorkingWeekends"?: boolean;
+		"maximumConsecutiveWorkingWeekends"?: number;
 		"minimumWorkingDaysPerWeek"?: number;
+		"constrainMaximumConsecutiveWorkingDays"?: boolean;
+		"maximumConsecutiveWorkingDays"?: number;
+		"minimumShiftStartDistanceMinutes"?: number;
+		"minimumDaysOffPerPlanningPeriod"?: number;
+		"maximumDaysOffPerPlanningPeriod"?: number;
+		"minimumPaidMinutesPerPlanningPeriod"?: number;
+		"maximumPaidMinutesPerPlanningPeriod"?: number;
 		"optionalDays"?: Models.SetWrapperDayOfWeek;
+		"shiftStartVarianceType"?: string;
 		"shiftStartVariances"?: Models.ListWrapperShiftStartVariance;
 		"shifts"?: Array<Models.WorkPlanShift>;
 		"agents"?: Array<Models.DeletableUserReference>;
@@ -26297,6 +26563,8 @@ declare namespace Models {
 		"constrainStopTime"?: boolean;
 		"constrainLatestStopTime"?: boolean;
 		"latestStopTimeMinutesFromMidnight"?: number;
+		"constrainEarliestStopTime"?: boolean;
+		"earliestStopTimeMinutesFromMidnight"?: number;
 		"startIncrementMinutes"?: number;
 		"flexiblePaidTime"?: boolean;
 		"exactPaidTimeMinutes"?: number;
@@ -26329,8 +26597,19 @@ declare namespace Models {
 		"constrainMinimumTimeBetweenShifts"?: boolean;
 		"minimumTimeBetweenShiftsMinutes"?: number;
 		"maximumDays"?: number;
+		"minimumConsecutiveNonWorkingMinutesPerWeek"?: number;
+		"constrainMaximumConsecutiveWorkingWeekends"?: boolean;
+		"maximumConsecutiveWorkingWeekends"?: number;
 		"minimumWorkingDaysPerWeek"?: number;
+		"constrainMaximumConsecutiveWorkingDays"?: boolean;
+		"maximumConsecutiveWorkingDays"?: number;
+		"minimumShiftStartDistanceMinutes"?: number;
+		"minimumDaysOffPerPlanningPeriod"?: number;
+		"maximumDaysOffPerPlanningPeriod"?: number;
+		"minimumPaidMinutesPerPlanningPeriod"?: number;
+		"maximumPaidMinutesPerPlanningPeriod"?: number;
 		"optionalDays"?: Models.SetWrapperDayOfWeek;
+		"shiftStartVarianceType"?: string;
 		"shiftStartVariances"?: Models.ListWrapperShiftStartVariance;
 		"shifts"?: Array<Models.WorkPlanShift>;
 		"agents"?: Array<Models.DeletableUserReference>;

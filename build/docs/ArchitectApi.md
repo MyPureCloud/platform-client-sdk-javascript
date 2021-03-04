@@ -3438,7 +3438,8 @@ let opts = {
   'pageNumber': 1, // Number | Page number
   'pageSize': 25, // Number | Page size
   'sortBy': "id", // String | Sort by
-  'sortOrder': "ascending" // String | Sort order
+  'sortOrder': "ascending", // String | Sort order
+  'divisionId': ["divisionId_example"] // [String] | division ID(s)
 };
 
 apiInstance.getFlowsDatatables(opts)
@@ -3461,6 +3462,7 @@ apiInstance.getFlowsDatatables(opts)
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **sortBy** | **String** | Sort by | [optional] [default to id]<br />**Values**: id, name |
  **sortOrder** | **String** | Sort order | [optional] [default to ascending] |
+ **divisionId** | **[String]** | division ID(s) | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -7462,6 +7464,11 @@ DataTable <a href="#" onclick="return copyDataTableExample()">Copy</a>
 { 
   "id": String, 
   "name": String, 
+  "division": { 
+    "id": String, 
+    "name": String, 
+    "selfUri": String, 
+  },  
   "description": String, 
   "schema": { 
     "id": String, 
@@ -10955,6 +10962,11 @@ DataTable <a href="#" onclick="return copyDataTableExample()">Copy</a>
 { 
   "id": String, 
   "name": String, 
+  "division": { 
+    "id": String, 
+    "name": String, 
+    "selfUri": String, 
+  },  
   "description": String, 
   "schema": { 
     "id": String, 

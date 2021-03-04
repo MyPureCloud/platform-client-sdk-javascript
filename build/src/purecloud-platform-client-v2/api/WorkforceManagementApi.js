@@ -5,7 +5,7 @@ class WorkforceManagementApi {
 	/**
 	 * WorkforceManagement service.
 	 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-	 * @version 106.0.0
+	 * @version 107.0.0
 	 */
 
 	/**
@@ -1137,7 +1137,7 @@ class WorkforceManagementApi {
 
 	/**
 	 * Get management unit
-	 * 
+	 * settings.shortTermForecasting is deprecated and now lives on the business unit
 	 * @param {String} managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand 
@@ -1658,9 +1658,9 @@ class WorkforceManagementApi {
 	 * Get management units
 	 * 
 	 * @param {Object} opts Optional parameters
-	 * @param {Number} opts.pageSize 
-	 * @param {Number} opts.pageNumber 
-	 * @param {Object} opts.expand 
+	 * @param {Number} opts.pageSize Deprecated, paging is not supported
+	 * @param {Number} opts.pageNumber Deprecated, paging is not supported
+	 * @param {Object} opts.expand Deprecated, expand settings on the single MU route
 	 * @param {Object} opts.feature 
 	 * @param {String} opts.divisionId 
 	 */

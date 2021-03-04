@@ -6887,7 +6887,7 @@ apiInstance.postRoutingLanguages(body)
 
 <a name="postRoutingQueueMembers"></a>
 
-# **&#39;String&#39;** postRoutingQueueMembers(queueId, body, opts)
+# void postRoutingQueueMembers(queueId, body, opts)
 
 
 
@@ -6949,8 +6949,8 @@ let opts = {
 };
 
 apiInstance.postRoutingQueueMembers(queueId, body, opts)
-  .then((data) => {
-    console.log(`postRoutingQueueMembers success! data: ${JSON.stringify(data, null, 2)}`);
+  .then(() => {
+    console.log('postRoutingQueueMembers returned successfully.');
   })
   .catch((err) => {
     console.log('There was a failure calling postRoutingQueueMembers');
@@ -6970,11 +6970,11 @@ apiInstance.postRoutingQueueMembers(queueId, body, opts)
 
 ### Return type
 
-**&#39;String&#39;**
+void (no response body)
 
 <a name="postRoutingQueueUsers"></a>
 
-# **&#39;String&#39;** postRoutingQueueUsers(queueId, body, opts)
+# void postRoutingQueueUsers(queueId, body, opts)
 
 <span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
@@ -7036,8 +7036,8 @@ let opts = {
 };
 
 apiInstance.postRoutingQueueUsers(queueId, body, opts)
-  .then((data) => {
-    console.log(`postRoutingQueueUsers success! data: ${JSON.stringify(data, null, 2)}`);
+  .then(() => {
+    console.log('postRoutingQueueUsers returned successfully.');
   })
   .catch((err) => {
     console.log('There was a failure calling postRoutingQueueUsers');
@@ -7057,7 +7057,7 @@ apiInstance.postRoutingQueueUsers(queueId, body, opts)
 
 ### Return type
 
-**&#39;String&#39;**
+void (no response body)
 
 <a name="postRoutingQueueWrapupcodes"></a>
 

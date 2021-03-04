@@ -5,7 +5,7 @@ class UsersApi {
 	/**
 	 * Users service.
 	 * @module purecloud-platform-client-v2/api/UsersApi
-	 * @version 106.0.0
+	 * @version 107.0.0
 	 */
 
 	/**
@@ -1063,7 +1063,7 @@ class UsersApi {
 	 * @param {Object} opts.sortOrder Specifies result set sort order sorted by the date due; if not specified, default sort order is descending (Desc) (default to Desc)
 	 * @param {Array.<String>} opts.types Specifies the activity types.
 	 * @param {Array.<String>} opts.statuses Specifies the activity statuses to filter by
-	 * @param {Array.<String>} opts.relationship Specifies how the current user relation should be interpreted, and filters the activities returned to only those that have the specified relationship. If not specified, all relationships are returned.
+	 * @param {Array.<String>} opts.relationship Specifies how the current user relation should be interpreted, and filters the activities returned to only the activities that have the specified relationship. If a value besides Attendee is specified, it will only return Coaching Appointments. If not specified, no filtering is applied.
 	 */
 	getUsersDevelopmentActivities(opts) { 
 		opts = opts || {};
@@ -1096,7 +1096,7 @@ class UsersApi {
 	 * @param {Object} opts.sortOrder Specifies result set sort order sorted by the date due; if not specified, default sort order is descending (Desc) (default to Desc)
 	 * @param {Array.<String>} opts.types Specifies the activity types.
 	 * @param {Array.<String>} opts.statuses Specifies the activity statuses to filter by
-	 * @param {Array.<String>} opts.relationship Specifies how the current user relation should be interpreted, and filters the activities returned to only those that have the specified relationship. If not specified, all relationships are returned.
+	 * @param {Array.<String>} opts.relationship Specifies how the current user relation should be interpreted, and filters the activities returned to only the activities that have the specified relationship. If a value besides Attendee is specified, it will only return Coaching Appointments. If not specified, no filtering is applied.
 	 */
 	getUsersDevelopmentActivitiesMe(opts) { 
 		opts = opts || {};

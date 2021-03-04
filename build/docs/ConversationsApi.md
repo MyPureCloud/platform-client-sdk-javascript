@@ -41753,6 +41753,13 @@ CreateCallbackOnConversationCommand <a href="#" onclick="return copyCreateCallba
     "priority": Number, 
     "skillIds": [String], 
     "preferredAgentIds": [String], 
+    "scoredAgents": { 
+      "agent": { 
+        "id": String, 
+        "selfUri": String, 
+      },  
+      "score": Number, 
+    },  
   },  
   "callbackUserName": String, 
   "callbackNumbers": [String], 
@@ -48381,6 +48388,13 @@ CreateCallbackCommand <a href="#" onclick="return copyCreateCallbackCommandExamp
     "priority": Number, 
     "skillIds": [String], 
     "preferredAgentIds": [String], 
+    "scoredAgents": { 
+      "agent": { 
+        "id": String, 
+        "selfUri": String, 
+      },  
+      "score": Number, 
+    },  
   },  
   "callbackUserName": String, 
   "callbackNumbers": [String], 
@@ -49983,7 +49997,7 @@ apiInstance.postConversationsMessagesAgentless(body)
 
 <a name="postConversationsMessagingIntegrationsFacebook"></a>
 
-# FacebookIntegration postConversationsMessagingIntegrationsFacebook(body, opts)
+# FacebookIntegration postConversationsMessagingIntegrationsFacebook(body)
 
 
 
@@ -50045,11 +50059,8 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ConversationsApi();
 
 let body = {}; // Object | FacebookIntegrationRequest
-let opts = { 
-  'async': false // Boolean | Create a Facebook integration in an asynchronous manner. If the parameter value is true, this initiates the generation of a new Facebook integration. An integration ID is returned, it can be used to query the integration. Check the integration's createStatus for Completed or Error to detect the create is finished.
-};
 
-apiInstance.postConversationsMessagingIntegrationsFacebook(body, opts)
+apiInstance.postConversationsMessagingIntegrationsFacebook(body)
   .then((data) => {
     console.log(`postConversationsMessagingIntegrationsFacebook success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -50065,7 +50076,6 @@ apiInstance.postConversationsMessagingIntegrationsFacebook(body, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | FacebookIntegrationRequest |  |
- **async** | **Boolean** | Create a Facebook integration in an asynchronous manner. If the parameter value is true, this initiates the generation of a new Facebook integration. An integration ID is returned, it can be used to query the integration. Check the integration&#39;s createStatus for Completed or Error to detect the create is finished. | [optional] [default to false] |
 {: class="table table-striped"}
 
 ### Return type
@@ -50074,7 +50084,7 @@ apiInstance.postConversationsMessagingIntegrationsFacebook(body, opts)
 
 <a name="postConversationsMessagingIntegrationsLine"></a>
 
-# LineIntegration postConversationsMessagingIntegrationsLine(body, opts)
+# LineIntegration postConversationsMessagingIntegrationsLine(body)
 
 
 
@@ -50135,11 +50145,8 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ConversationsApi();
 
 let body = {}; // Object | LineIntegrationRequest
-let opts = { 
-  'async': false // Boolean | Create a LINE integration in an asynchronous manner. If the parameter value is true, this initiates the generation of a new LINE integration. An integration ID is returned, it can be used to query the integration. Check the integration's createStatus for Completed or Error to detect the create is finished.
-};
 
-apiInstance.postConversationsMessagingIntegrationsLine(body, opts)
+apiInstance.postConversationsMessagingIntegrationsLine(body)
   .then((data) => {
     console.log(`postConversationsMessagingIntegrationsLine success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -50155,7 +50162,6 @@ apiInstance.postConversationsMessagingIntegrationsLine(body, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | LineIntegrationRequest |  |
- **async** | **Boolean** | Create a LINE integration in an asynchronous manner. If the parameter value is true, this initiates the generation of a new LINE integration. An integration ID is returned, it can be used to query the integration. Check the integration&#39;s createStatus for Completed or Error to detect the create is finished. | [optional] [default to false] |
 {: class="table table-striped"}
 
 ### Return type
@@ -50164,7 +50170,7 @@ apiInstance.postConversationsMessagingIntegrationsLine(body, opts)
 
 <a name="postConversationsMessagingIntegrationsTwitter"></a>
 
-# TwitterIntegration postConversationsMessagingIntegrationsTwitter(body, opts)
+# TwitterIntegration postConversationsMessagingIntegrationsTwitter(body)
 
 
 
@@ -50227,11 +50233,8 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ConversationsApi();
 
 let body = {}; // Object | TwitterIntegrationRequest
-let opts = { 
-  'async': false // Boolean | Create a Twitter integration in an asynchronous manner. If the parameter value is true, this initiates the generation of a new Twitter integration. An integration ID is returned, it can be used to query the integration. Check the integration's createStatus for Completed or Error to detect the create is finished.
-};
 
-apiInstance.postConversationsMessagingIntegrationsTwitter(body, opts)
+apiInstance.postConversationsMessagingIntegrationsTwitter(body)
   .then((data) => {
     console.log(`postConversationsMessagingIntegrationsTwitter success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -50247,7 +50250,6 @@ apiInstance.postConversationsMessagingIntegrationsTwitter(body, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | TwitterIntegrationRequest |  |
- **async** | **Boolean** | Create a Twitter integration in an asynchronous manner. If the parameter value is true, this initiates the generation of a new Twitter integration. An integration ID is returned, it can be used to query the integration. Check the integration&#39;s createStatus for Completed or Error to detect the create is finished. | [optional] [default to false] |
 {: class="table table-striped"}
 
 ### Return type
@@ -50256,7 +50258,7 @@ apiInstance.postConversationsMessagingIntegrationsTwitter(body, opts)
 
 <a name="postConversationsMessagingIntegrationsWhatsapp"></a>
 
-# WhatsAppIntegration postConversationsMessagingIntegrationsWhatsapp(body, opts)
+# WhatsAppIntegration postConversationsMessagingIntegrationsWhatsapp(body)
 
 
 
@@ -50315,11 +50317,8 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ConversationsApi();
 
 let body = {}; // Object | WhatsAppIntegrationRequest
-let opts = { 
-  'async': false // Boolean | Create a WhatsApp integration in an asynchronous manner. If the parameter value is true, this initiates the generation of a new WhatsApp integration. An integration ID is returned, it can be used to query the integration. Check the integration's createStatus for Completed or Error to detect the create is finished.
-};
 
-apiInstance.postConversationsMessagingIntegrationsWhatsapp(body, opts)
+apiInstance.postConversationsMessagingIntegrationsWhatsapp(body)
   .then((data) => {
     console.log(`postConversationsMessagingIntegrationsWhatsapp success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -50335,7 +50334,6 @@ apiInstance.postConversationsMessagingIntegrationsWhatsapp(body, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | WhatsAppIntegrationRequest |  |
- **async** | **Boolean** | Create a WhatsApp integration in an asynchronous manner. If the parameter value is true, this initiates the generation of a new WhatsApp integration. An integration ID is returned, it can be used to query the integration. Check the integration&#39;s createStatus for Completed or Error to detect the create is finished. | [optional] [default to false] |
 {: class="table table-striped"}
 
 ### Return type

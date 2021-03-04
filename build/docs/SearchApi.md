@@ -1848,9 +1848,8 @@ Search users
 
 
 
-Requires ANY permissions: 
+Requires NO permissions: 
 
-* directory:user:view
 
 
 ### Request Body Schema

@@ -2269,7 +2269,7 @@ let opts = {
   'sortOrder': "Desc", // String | Specifies result set sort order sorted by the date due; if not specified, default sort order is descending (Desc)
   'types': ["types_example"], // [String] | Specifies the activity types.
   'statuses': ["statuses_example"], // [String] | Specifies the activity statuses to filter by
-  'relationship': ["relationship_example"] // [String] | Specifies how the current user relation should be interpreted, and filters the activities returned to only those that have the specified relationship. If not specified, all relationships are returned.
+  'relationship': ["relationship_example"] // [String] | Specifies how the current user relation should be interpreted, and filters the activities returned to only the activities that have the specified relationship. If a value besides Attendee is specified, it will only return Coaching Appointments. If not specified, no filtering is applied.
 };
 
 apiInstance.getUsersDevelopmentActivities(opts)
@@ -2297,7 +2297,7 @@ apiInstance.getUsersDevelopmentActivities(opts)
  **sortOrder** | **String** | Specifies result set sort order sorted by the date due; if not specified, default sort order is descending (Desc) | [optional] [default to Desc]<br />**Values**: Asc, Desc |
  **types** | **[String]** | Specifies the activity types. | [optional] <br />**Values**: Informational, Coaching |
  **statuses** | **[String]** | Specifies the activity statuses to filter by | [optional] <br />**Values**: Planned, InProgress, Completed, InvalidSchedule |
- **relationship** | **[String]** | Specifies how the current user relation should be interpreted, and filters the activities returned to only those that have the specified relationship. If not specified, all relationships are returned. | [optional] <br />**Values**: Creator, Facilitator, Attendee |
+ **relationship** | **[String]** | Specifies how the current user relation should be interpreted, and filters the activities returned to only the activities that have the specified relationship. If a value besides Attendee is specified, it will only return Coaching Appointments. If not specified, no filtering is applied. | [optional] <br />**Values**: Creator, Facilitator, Attendee |
 {: class="table table-striped"}
 
 ### Return type
@@ -2344,7 +2344,7 @@ let opts = {
   'sortOrder': "Desc", // String | Specifies result set sort order sorted by the date due; if not specified, default sort order is descending (Desc)
   'types': ["types_example"], // [String] | Specifies the activity types.
   'statuses': ["statuses_example"], // [String] | Specifies the activity statuses to filter by
-  'relationship': ["relationship_example"] // [String] | Specifies how the current user relation should be interpreted, and filters the activities returned to only those that have the specified relationship. If not specified, all relationships are returned.
+  'relationship': ["relationship_example"] // [String] | Specifies how the current user relation should be interpreted, and filters the activities returned to only the activities that have the specified relationship. If a value besides Attendee is specified, it will only return Coaching Appointments. If not specified, no filtering is applied.
 };
 
 apiInstance.getUsersDevelopmentActivitiesMe(opts)
@@ -2371,7 +2371,7 @@ apiInstance.getUsersDevelopmentActivitiesMe(opts)
  **sortOrder** | **String** | Specifies result set sort order sorted by the date due; if not specified, default sort order is descending (Desc) | [optional] [default to Desc]<br />**Values**: Asc, Desc |
  **types** | **[String]** | Specifies the activity types. | [optional] <br />**Values**: Informational, Coaching |
  **statuses** | **[String]** | Specifies the activity statuses to filter by | [optional] <br />**Values**: Planned, InProgress, Completed, InvalidSchedule |
- **relationship** | **[String]** | Specifies how the current user relation should be interpreted, and filters the activities returned to only those that have the specified relationship. If not specified, all relationships are returned. | [optional] <br />**Values**: Creator, Facilitator, Attendee |
+ **relationship** | **[String]** | Specifies how the current user relation should be interpreted, and filters the activities returned to only the activities that have the specified relationship. If a value besides Attendee is specified, it will only return Coaching Appointments. If not specified, no filtering is applied. | [optional] <br />**Values**: Creator, Facilitator, Attendee |
 {: class="table table-striped"}
 
 ### Return type
@@ -9930,9 +9930,8 @@ Search users
 
 
 
-Requires ANY permissions: 
+Requires NO permissions: 
 
-* directory:user:view
 
 
 ### Request Body Schema

@@ -1412,6 +1412,9 @@ PatchSegment <a href="#" onclick="return copyPatchSegmentExample()">Copy</a>
       "eventName": String, 
     },  
   },  
+  "externalSegment": { 
+    "name": String, 
+  },  
   "assignmentExpirationDays": Number, 
   "selfUri": String, 
   "createdDate": Date, 
@@ -2056,6 +2059,11 @@ JourneySegment <a href="#" onclick="return copyJourneySegmentExample()">Copy</a>
       "sessionType": String, 
       "eventName": String, 
     },  
+  },  
+  "externalSegment": { 
+    "id": String, 
+    "name": String, 
+    "source": String, 
   },  
   "assignmentExpirationDays": Number, 
   "selfUri": String, 

@@ -16,7 +16,7 @@ define(['superagent'], function (superagent) { 'use strict';
 
    /**
     * @module purecloud-platform-client-v2/ApiClient
-    * @version 106.0.0
+    * @version 107.0.0
     */
    class ApiClient {
    	/**
@@ -908,7 +908,7 @@ define(['superagent'], function (superagent) { 'use strict';
 
    				// set header parameters
    				request.set(that.defaultHeaders).set(that.normalizeParams(headerParams));
-   				//request.set({ 'purecloud-sdk': '106.0.0' });
+   				//request.set({ 'purecloud-sdk': '107.0.0' });
 
    				// set request timeout
    				request.timeout(that.timeout);
@@ -1042,7 +1042,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Alerting service.
    	 * @module purecloud-platform-client-v2/api/AlertingApi
-   	 * @version 106.0.0
+   	 * @version 107.0.0
    	 */
 
    	/**
@@ -1356,7 +1356,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Analytics service.
    	 * @module purecloud-platform-client-v2/api/AnalyticsApi
-   	 * @version 106.0.0
+   	 * @version 107.0.0
    	 */
 
    	/**
@@ -2436,7 +2436,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Architect service.
    	 * @module purecloud-platform-client-v2/api/ArchitectApi
-   	 * @version 106.0.0
+   	 * @version 107.0.0
    	 */
 
    	/**
@@ -4058,6 +4058,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	 * @param {Number} opts.pageSize Page size (default to 25)
    	 * @param {Object} opts.sortBy Sort by (default to id)
    	 * @param {String} opts.sortOrder Sort order (default to ascending)
+   	 * @param {Array.<String>} opts.divisionId division ID(s)
    	 */
    	getFlowsDatatables(opts) { 
    		opts = opts || {};
@@ -4067,7 +4068,7 @@ define(['superagent'], function (superagent) { 'use strict';
    			'/api/v2/flows/datatables', 
    			'GET', 
    			{  }, 
-   			{ 'expand': opts['expand'],'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] }, 
+   			{ 'expand': opts['expand'],'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi') }, 
    			{  }, 
    			{  }, 
    			null, 
@@ -5274,7 +5275,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Audit service.
    	 * @module purecloud-platform-client-v2/api/AuditApi
-   	 * @version 106.0.0
+   	 * @version 107.0.0
    	 */
 
    	/**
@@ -5445,7 +5446,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Authorization service.
    	 * @module purecloud-platform-client-v2/api/AuthorizationApi
-   	 * @version 106.0.0
+   	 * @version 107.0.0
    	 */
 
    	/**
@@ -6104,7 +6105,7 @@ define(['superagent'], function (superagent) { 'use strict';
 
    	/**
    	 * Assign a list of objects to a division
-   	 * Set the division of a specified list of objects. The objects must all be of the same type, one of:  CAMPAIGN, MANAGEMENTUNIT, FLOW, QUEUE, or USER.  The body of the request is a list of object IDs, which are expected to be  GUIDs, e.g. [\&quot;206ce31f-61ec-40ed-a8b1-be6f06303998\&quot;,\&quot;250a754e-f5e4-4f51-800f-a92f09d3bf8c\&quot;]
+   	 * Set the division of a specified list of objects. The objects must all be of the same type, one of:  CAMPAIGN, MANAGEMENTUNIT, FLOW, QUEUE, DATATABLES or USER.  The body of the request is a list of object IDs, which are expected to be  GUIDs, e.g. [\&quot;206ce31f-61ec-40ed-a8b1-be6f06303998\&quot;,\&quot;250a754e-f5e4-4f51-800f-a92f09d3bf8c\&quot;]
    	 * @param {String} divisionId Division ID
    	 * @param {Object} objectType The type of the objects. Must be one of the valid object types
    	 * @param {Array.<Object>} body Object Id List
@@ -6564,7 +6565,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Billing service.
    	 * @module purecloud-platform-client-v2/api/BillingApi
-   	 * @version 106.0.0
+   	 * @version 107.0.0
    	 */
 
    	/**
@@ -6644,7 +6645,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Chat service.
    	 * @module purecloud-platform-client-v2/api/ChatApi
-   	 * @version 106.0.0
+   	 * @version 107.0.0
    	 */
 
    	/**
@@ -6735,7 +6736,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Coaching service.
    	 * @module purecloud-platform-client-v2/api/CoachingApi
-   	 * @version 106.0.0
+   	 * @version 107.0.0
    	 */
 
    	/**
@@ -7285,7 +7286,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * ContentManagement service.
    	 * @module purecloud-platform-client-v2/api/ContentManagementApi
-   	 * @version 106.0.0
+   	 * @version 107.0.0
    	 */
 
    	/**
@@ -8425,7 +8426,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Conversations service.
    	 * @module purecloud-platform-client-v2/api/ConversationsApi
-   	 * @version 106.0.0
+   	 * @version 107.0.0
    	 */
 
    	/**
@@ -12295,12 +12296,8 @@ define(['superagent'], function (superagent) { 'use strict';
    	 * Create a Facebook Integration
    	 * 
    	 * @param {Object} body FacebookIntegrationRequest
-   	 * @param {Object} opts Optional parameters
-   	 * @param {Boolean} opts.async Create a Facebook integration in an asynchronous manner. If the parameter value is true, this initiates the generation of a new Facebook integration. An integration ID is returned, it can be used to query the integration. Check the integration&#39;s createStatus for Completed or Error to detect the create is finished. (default to false)
    	 */
-   	postConversationsMessagingIntegrationsFacebook(body, opts) { 
-   		opts = opts || {};
-   		
+   	postConversationsMessagingIntegrationsFacebook(body) { 
    		// verify the required parameter 'body' is set
    		if (body === undefined || body === null) {
    			throw 'Missing the required parameter "body" when calling postConversationsMessagingIntegrationsFacebook';
@@ -12310,7 +12307,7 @@ define(['superagent'], function (superagent) { 'use strict';
    			'/api/v2/conversations/messaging/integrations/facebook', 
    			'POST', 
    			{  }, 
-   			{ 'async': opts['async'] }, 
+   			{  }, 
    			{  }, 
    			{  }, 
    			body, 
@@ -12324,12 +12321,8 @@ define(['superagent'], function (superagent) { 'use strict';
    	 * Create a LINE messenger Integration
    	 * 
    	 * @param {Object} body LineIntegrationRequest
-   	 * @param {Object} opts Optional parameters
-   	 * @param {Boolean} opts.async Create a LINE integration in an asynchronous manner. If the parameter value is true, this initiates the generation of a new LINE integration. An integration ID is returned, it can be used to query the integration. Check the integration&#39;s createStatus for Completed or Error to detect the create is finished. (default to false)
    	 */
-   	postConversationsMessagingIntegrationsLine(body, opts) { 
-   		opts = opts || {};
-   		
+   	postConversationsMessagingIntegrationsLine(body) { 
    		// verify the required parameter 'body' is set
    		if (body === undefined || body === null) {
    			throw 'Missing the required parameter "body" when calling postConversationsMessagingIntegrationsLine';
@@ -12339,7 +12332,7 @@ define(['superagent'], function (superagent) { 'use strict';
    			'/api/v2/conversations/messaging/integrations/line', 
    			'POST', 
    			{  }, 
-   			{ 'async': opts['async'] }, 
+   			{  }, 
    			{  }, 
    			{  }, 
    			body, 
@@ -12353,12 +12346,8 @@ define(['superagent'], function (superagent) { 'use strict';
    	 * Create a Twitter Integration
    	 * 
    	 * @param {Object} body TwitterIntegrationRequest
-   	 * @param {Object} opts Optional parameters
-   	 * @param {Boolean} opts.async Create a Twitter integration in an asynchronous manner. If the parameter value is true, this initiates the generation of a new Twitter integration. An integration ID is returned, it can be used to query the integration. Check the integration&#39;s createStatus for Completed or Error to detect the create is finished. (default to false)
    	 */
-   	postConversationsMessagingIntegrationsTwitter(body, opts) { 
-   		opts = opts || {};
-   		
+   	postConversationsMessagingIntegrationsTwitter(body) { 
    		// verify the required parameter 'body' is set
    		if (body === undefined || body === null) {
    			throw 'Missing the required parameter "body" when calling postConversationsMessagingIntegrationsTwitter';
@@ -12368,7 +12357,7 @@ define(['superagent'], function (superagent) { 'use strict';
    			'/api/v2/conversations/messaging/integrations/twitter', 
    			'POST', 
    			{  }, 
-   			{ 'async': opts['async'] }, 
+   			{  }, 
    			{  }, 
    			{  }, 
    			body, 
@@ -12382,12 +12371,8 @@ define(['superagent'], function (superagent) { 'use strict';
    	 * Create a WhatsApp Integration
    	 * You must be approved by WhatsApp to use this feature. Your approved e164-formatted phone number and valid WhatsApp certificate for your number are required. Your WhatsApp certificate must have valid base64 encoding. Please paste carefully and do not add any leading or trailing spaces. Do not alter any characters. An integration must be activated within 7 days of certificate generation. If you cannot complete the addition and activation of the number within 7 days, please obtain a new certificate before creating the integration. Integrations created with an invalid number or certificate may immediately incur additional integration fees. Please carefully enter your number and certificate as described.
    	 * @param {Object} body WhatsAppIntegrationRequest
-   	 * @param {Object} opts Optional parameters
-   	 * @param {Boolean} opts.async Create a WhatsApp integration in an asynchronous manner. If the parameter value is true, this initiates the generation of a new WhatsApp integration. An integration ID is returned, it can be used to query the integration. Check the integration&#39;s createStatus for Completed or Error to detect the create is finished. (default to false)
    	 */
-   	postConversationsMessagingIntegrationsWhatsapp(body, opts) { 
-   		opts = opts || {};
-   		
+   	postConversationsMessagingIntegrationsWhatsapp(body) { 
    		// verify the required parameter 'body' is set
    		if (body === undefined || body === null) {
    			throw 'Missing the required parameter "body" when calling postConversationsMessagingIntegrationsWhatsapp';
@@ -12397,7 +12382,7 @@ define(['superagent'], function (superagent) { 'use strict';
    			'/api/v2/conversations/messaging/integrations/whatsapp', 
    			'POST', 
    			{  }, 
-   			{ 'async': opts['async'] }, 
+   			{  }, 
    			{  }, 
    			{  }, 
    			body, 
@@ -12543,7 +12528,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * DataExtensions service.
    	 * @module purecloud-platform-client-v2/api/DataExtensionsApi
-   	 * @version 106.0.0
+   	 * @version 107.0.0
    	 */
 
    	/**
@@ -12629,7 +12614,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * ExternalContacts service.
    	 * @module purecloud-platform-client-v2/api/ExternalContactsApi
-   	 * @version 106.0.0
+   	 * @version 107.0.0
    	 */
 
    	/**
@@ -13972,7 +13957,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Fax service.
    	 * @module purecloud-platform-client-v2/api/FaxApi
-   	 * @version 106.0.0
+   	 * @version 107.0.0
    	 */
 
    	/**
@@ -14143,7 +14128,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Flows service.
    	 * @module purecloud-platform-client-v2/api/FlowsApi
-   	 * @version 106.0.0
+   	 * @version 107.0.0
    	 */
 
    	/**
@@ -14214,7 +14199,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * GeneralDataProtectionRegulation service.
    	 * @module purecloud-platform-client-v2/api/GeneralDataProtectionRegulationApi
-   	 * @version 106.0.0
+   	 * @version 107.0.0
    	 */
 
    	/**
@@ -14344,7 +14329,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Geolocation service.
    	 * @module purecloud-platform-client-v2/api/GeolocationApi
-   	 * @version 106.0.0
+   	 * @version 107.0.0
    	 */
 
    	/**
@@ -14475,7 +14460,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Greetings service.
    	 * @module purecloud-platform-client-v2/api/GreetingsApi
-   	 * @version 106.0.0
+   	 * @version 107.0.0
    	 */
 
    	/**
@@ -14930,7 +14915,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Groups service.
    	 * @module purecloud-platform-client-v2/api/GroupsApi
-   	 * @version 106.0.0
+   	 * @version 107.0.0
    	 */
 
    	/**
@@ -15335,7 +15320,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * IdentityProvider service.
    	 * @module purecloud-platform-client-v2/api/IdentityProviderApi
-   	 * @version 106.0.0
+   	 * @version 107.0.0
    	 */
 
    	/**
@@ -16091,7 +16076,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Integrations service.
    	 * @module purecloud-platform-client-v2/api/IntegrationsApi
-   	 * @version 106.0.0
+   	 * @version 107.0.0
    	 */
 
    	/**
@@ -17583,7 +17568,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Journey service.
    	 * @module purecloud-platform-client-v2/api/JourneyApi
-   	 * @version 106.0.0
+   	 * @version 107.0.0
    	 */
 
    	/**
@@ -18236,7 +18221,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Knowledge service.
    	 * @module purecloud-platform-client-v2/api/KnowledgeApi
-   	 * @version 106.0.0
+   	 * @version 107.0.0
    	 */
 
    	/**
@@ -18959,7 +18944,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * LanguageUnderstanding service.
    	 * @module purecloud-platform-client-v2/api/LanguageUnderstandingApi
-   	 * @version 106.0.0
+   	 * @version 107.0.0
    	 */
 
    	/**
@@ -19527,7 +19512,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Languages service.
    	 * @module purecloud-platform-client-v2/api/LanguagesApi
-   	 * @version 106.0.0
+   	 * @version 107.0.0
    	 */
 
    	/**
@@ -19795,7 +19780,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * License service.
    	 * @module purecloud-platform-client-v2/api/LicenseApi
-   	 * @version 106.0.0
+   	 * @version 107.0.0
    	 */
 
    	/**
@@ -20033,7 +20018,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Locations service.
    	 * @module purecloud-platform-client-v2/api/LocationsApi
-   	 * @version 106.0.0
+   	 * @version 107.0.0
    	 */
 
    	/**
@@ -20269,7 +20254,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * MobileDevices service.
    	 * @module purecloud-platform-client-v2/api/MobileDevicesApi
-   	 * @version 106.0.0
+   	 * @version 107.0.0
    	 */
 
    	/**
@@ -20420,7 +20405,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Notifications service.
    	 * @module purecloud-platform-client-v2/api/NotificationsApi
-   	 * @version 106.0.0
+   	 * @version 107.0.0
    	 */
 
    	/**
@@ -20620,7 +20605,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * OAuth service.
    	 * @module purecloud-platform-client-v2/api/OAuthApi
-   	 * @version 106.0.0
+   	 * @version 107.0.0
    	 */
 
    	/**
@@ -20978,7 +20963,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Objects service.
    	 * @module purecloud-platform-client-v2/api/ObjectsApi
-   	 * @version 106.0.0
+   	 * @version 107.0.0
    	 */
 
    	/**
@@ -21125,7 +21110,7 @@ define(['superagent'], function (superagent) { 'use strict';
 
    	/**
    	 * Assign a list of objects to a division
-   	 * Set the division of a specified list of objects. The objects must all be of the same type, one of:  CAMPAIGN, MANAGEMENTUNIT, FLOW, QUEUE, or USER.  The body of the request is a list of object IDs, which are expected to be  GUIDs, e.g. [\&quot;206ce31f-61ec-40ed-a8b1-be6f06303998\&quot;,\&quot;250a754e-f5e4-4f51-800f-a92f09d3bf8c\&quot;]
+   	 * Set the division of a specified list of objects. The objects must all be of the same type, one of:  CAMPAIGN, MANAGEMENTUNIT, FLOW, QUEUE, DATATABLES or USER.  The body of the request is a list of object IDs, which are expected to be  GUIDs, e.g. [\&quot;206ce31f-61ec-40ed-a8b1-be6f06303998\&quot;,\&quot;250a754e-f5e4-4f51-800f-a92f09d3bf8c\&quot;]
    	 * @param {String} divisionId Division ID
    	 * @param {Object} objectType The type of the objects. Must be one of the valid object types
    	 * @param {Array.<Object>} body Object Id List
@@ -21219,7 +21204,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Organization service.
    	 * @module purecloud-platform-client-v2/api/OrganizationApi
-   	 * @version 106.0.0
+   	 * @version 107.0.0
    	 */
 
    	/**
@@ -21474,7 +21459,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * OrganizationAuthorization service.
    	 * @module purecloud-platform-client-v2/api/OrganizationAuthorizationApi
-   	 * @version 106.0.0
+   	 * @version 107.0.0
    	 */
 
    	/**
@@ -22184,7 +22169,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Outbound service.
    	 * @module purecloud-platform-client-v2/api/OutboundApi
-   	 * @version 106.0.0
+   	 * @version 107.0.0
    	 */
 
    	/**
@@ -25158,7 +25143,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Presence service.
    	 * @module purecloud-platform-client-v2/api/PresenceApi
-   	 * @version 106.0.0
+   	 * @version 107.0.0
    	 */
 
    	/**
@@ -25505,7 +25490,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Quality service.
    	 * @module purecloud-platform-client-v2/api/QualityApi
-   	 * @version 106.0.0
+   	 * @version 107.0.0
    	 */
 
    	/**
@@ -27178,7 +27163,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Recording service.
    	 * @module purecloud-platform-client-v2/api/RecordingApi
-   	 * @version 106.0.0
+   	 * @version 107.0.0
    	 */
 
    	/**
@@ -28617,7 +28602,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * ResponseManagement service.
    	 * @module purecloud-platform-client-v2/api/ResponseManagementApi
-   	 * @version 106.0.0
+   	 * @version 107.0.0
    	 */
 
    	/**
@@ -28942,7 +28927,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Routing service.
    	 * @module purecloud-platform-client-v2/api/RoutingApi
-   	 * @version 106.0.0
+   	 * @version 107.0.0
    	 */
 
    	/**
@@ -31439,7 +31424,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * SCIM service.
    	 * @module purecloud-platform-client-v2/api/SCIMApi
-   	 * @version 106.0.0
+   	 * @version 107.0.0
    	 */
 
    	/**
@@ -32316,7 +32301,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Scripts service.
    	 * @module purecloud-platform-client-v2/api/ScriptsApi
-   	 * @version 106.0.0
+   	 * @version 107.0.0
    	 */
 
    	/**
@@ -32669,7 +32654,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Search service.
    	 * @module purecloud-platform-client-v2/api/SearchApi
-   	 * @version 106.0.0
+   	 * @version 107.0.0
    	 */
 
    	/**
@@ -33204,7 +33189,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * SpeechTextAnalytics service.
    	 * @module purecloud-platform-client-v2/api/SpeechTextAnalyticsApi
-   	 * @version 106.0.0
+   	 * @version 107.0.0
    	 */
 
    	/**
@@ -33218,6 +33203,60 @@ define(['superagent'], function (superagent) { 'use strict';
    		this.apiClient = apiClient || ApiClient.instance;
    	}
 
+
+   	/**
+   	 * Delete a Speech &amp; Text Analytics program by id
+   	 * 
+   	 * @param {String} programId The id of the program
+   	 * @param {Object} opts Optional parameters
+   	 * @param {Boolean} opts.forceDelete Indicates whether the program is forced to be deleted or not. Required when the program to delete is the default program. (default to false)
+   	 */
+   	deleteSpeechandtextanalyticsProgram(programId, opts) { 
+   		opts = opts || {};
+   		
+   		// verify the required parameter 'programId' is set
+   		if (programId === undefined || programId === null) {
+   			throw 'Missing the required parameter "programId" when calling deleteSpeechandtextanalyticsProgram';
+   		}
+
+   		return this.apiClient.callApi(
+   			'/api/v2/speechandtextanalytics/programs/{programId}', 
+   			'DELETE', 
+   			{ 'programId': programId }, 
+   			{ 'forceDelete': opts['forceDelete'] }, 
+   			{  }, 
+   			{  }, 
+   			null, 
+   			['PureCloud OAuth'], 
+   			['application/json'], 
+   			['application/json']
+   		);
+   	}
+
+   	/**
+   	 * Delete a Speech &amp; Text Analytics topic by id
+   	 * 
+   	 * @param {String} topicId The id of the topic
+   	 */
+   	deleteSpeechandtextanalyticsTopic(topicId) { 
+   		// verify the required parameter 'topicId' is set
+   		if (topicId === undefined || topicId === null) {
+   			throw 'Missing the required parameter "topicId" when calling deleteSpeechandtextanalyticsTopic';
+   		}
+
+   		return this.apiClient.callApi(
+   			'/api/v2/speechandtextanalytics/topics/{topicId}', 
+   			'DELETE', 
+   			{ 'topicId': topicId }, 
+   			{  }, 
+   			{  }, 
+   			{  }, 
+   			null, 
+   			['PureCloud OAuth'], 
+   			['application/json'], 
+   			['application/json']
+   		);
+   	}
 
    	/**
    	 * Get Speech and Text Analytics for a specific conversation
@@ -33275,6 +33314,151 @@ define(['superagent'], function (superagent) { 'use strict';
    	}
 
    	/**
+   	 * Get list of supported Speech &amp; Text Analytics dialects
+   	 * 
+   	 */
+   	getSpeechandtextanalyticsDialects() { 
+
+   		return this.apiClient.callApi(
+   			'/api/v2/speechandtextanalytics/dialects', 
+   			'GET', 
+   			{  }, 
+   			{  }, 
+   			{  }, 
+   			{  }, 
+   			null, 
+   			['PureCloud OAuth'], 
+   			['application/json'], 
+   			['application/json']
+   		);
+   	}
+
+   	/**
+   	 * Get a Speech &amp; Text Analytics program by id
+   	 * 
+   	 * @param {String} programId The id of the program
+   	 */
+   	getSpeechandtextanalyticsProgram(programId) { 
+   		// verify the required parameter 'programId' is set
+   		if (programId === undefined || programId === null) {
+   			throw 'Missing the required parameter "programId" when calling getSpeechandtextanalyticsProgram';
+   		}
+
+   		return this.apiClient.callApi(
+   			'/api/v2/speechandtextanalytics/programs/{programId}', 
+   			'GET', 
+   			{ 'programId': programId }, 
+   			{  }, 
+   			{  }, 
+   			{  }, 
+   			null, 
+   			['PureCloud OAuth'], 
+   			['application/json'], 
+   			['application/json']
+   		);
+   	}
+
+   	/**
+   	 * Get the list of Speech &amp; Text Analytics programs
+   	 * 
+   	 * @param {Object} opts Optional parameters
+   	 * @param {String} opts.nextPage The key for listing the next page
+   	 * @param {Number} opts.pageSize The page size for the listing (default to 20)
+   	 */
+   	getSpeechandtextanalyticsPrograms(opts) { 
+   		opts = opts || {};
+   		
+
+   		return this.apiClient.callApi(
+   			'/api/v2/speechandtextanalytics/programs', 
+   			'GET', 
+   			{  }, 
+   			{ 'nextPage': opts['nextPage'],'pageSize': opts['pageSize'] }, 
+   			{  }, 
+   			{  }, 
+   			null, 
+   			['PureCloud OAuth'], 
+   			['application/json'], 
+   			['application/json']
+   		);
+   	}
+
+   	/**
+   	 * Get a Speech &amp; Text Analytics general program job by id
+   	 * 
+   	 * @param {String} jobId The id of the publish programs job
+   	 */
+   	getSpeechandtextanalyticsProgramsGeneralJob(jobId) { 
+   		// verify the required parameter 'jobId' is set
+   		if (jobId === undefined || jobId === null) {
+   			throw 'Missing the required parameter "jobId" when calling getSpeechandtextanalyticsProgramsGeneralJob';
+   		}
+
+   		return this.apiClient.callApi(
+   			'/api/v2/speechandtextanalytics/programs/general/jobs/{jobId}', 
+   			'GET', 
+   			{ 'jobId': jobId }, 
+   			{  }, 
+   			{  }, 
+   			{  }, 
+   			null, 
+   			['PureCloud OAuth'], 
+   			['application/json'], 
+   			['application/json']
+   		);
+   	}
+
+   	/**
+   	 * Get a Speech &amp; Text Analytics publish programs job by id
+   	 * 
+   	 * @param {String} jobId The id of the publish programs job
+   	 */
+   	getSpeechandtextanalyticsProgramsPublishjob(jobId) { 
+   		// verify the required parameter 'jobId' is set
+   		if (jobId === undefined || jobId === null) {
+   			throw 'Missing the required parameter "jobId" when calling getSpeechandtextanalyticsProgramsPublishjob';
+   		}
+
+   		return this.apiClient.callApi(
+   			'/api/v2/speechandtextanalytics/programs/publishjobs/{jobId}', 
+   			'GET', 
+   			{ 'jobId': jobId }, 
+   			{  }, 
+   			{  }, 
+   			{  }, 
+   			null, 
+   			['PureCloud OAuth'], 
+   			['application/json'], 
+   			['application/json']
+   		);
+   	}
+
+   	/**
+   	 * Get the list of Speech &amp; Text Analytics unpublished programs
+   	 * 
+   	 * @param {Object} opts Optional parameters
+   	 * @param {String} opts.nextPage The key for listing the next page
+   	 * @param {Number} opts.pageSize The page size for the listing (default to 20)
+   	 */
+   	getSpeechandtextanalyticsProgramsUnpublished(opts) { 
+   		opts = opts || {};
+   		
+
+   		return this.apiClient.callApi(
+   			'/api/v2/speechandtextanalytics/programs/unpublished', 
+   			'GET', 
+   			{  }, 
+   			{ 'nextPage': opts['nextPage'],'pageSize': opts['pageSize'] }, 
+   			{  }, 
+   			{  }, 
+   			null, 
+   			['PureCloud OAuth'], 
+   			['application/json'], 
+   			['application/json']
+   		);
+   	}
+
+   	/**
    	 * Get Speech And Text Analytics Settings
    	 * 
    	 */
@@ -33284,6 +33468,105 @@ define(['superagent'], function (superagent) { 'use strict';
    			'/api/v2/speechandtextanalytics/settings', 
    			'GET', 
    			{  }, 
+   			{  }, 
+   			{  }, 
+   			{  }, 
+   			null, 
+   			['PureCloud OAuth'], 
+   			['application/json'], 
+   			['application/json']
+   		);
+   	}
+
+   	/**
+   	 * Get a Speech &amp; Text Analytics topic by id
+   	 * 
+   	 * @param {String} topicId The id of the topic
+   	 */
+   	getSpeechandtextanalyticsTopic(topicId) { 
+   		// verify the required parameter 'topicId' is set
+   		if (topicId === undefined || topicId === null) {
+   			throw 'Missing the required parameter "topicId" when calling getSpeechandtextanalyticsTopic';
+   		}
+
+   		return this.apiClient.callApi(
+   			'/api/v2/speechandtextanalytics/topics/{topicId}', 
+   			'GET', 
+   			{ 'topicId': topicId }, 
+   			{  }, 
+   			{  }, 
+   			{  }, 
+   			null, 
+   			['PureCloud OAuth'], 
+   			['application/json'], 
+   			['application/json']
+   		);
+   	}
+
+   	/**
+   	 * Get the list of Speech &amp; Text Analytics topics
+   	 * 
+   	 * @param {Object} opts Optional parameters
+   	 * @param {String} opts.nextPage The key for listing the next page
+   	 * @param {Number} opts.pageSize The page size for the listing (default to 20)
+   	 */
+   	getSpeechandtextanalyticsTopics(opts) { 
+   		opts = opts || {};
+   		
+
+   		return this.apiClient.callApi(
+   			'/api/v2/speechandtextanalytics/topics', 
+   			'GET', 
+   			{  }, 
+   			{ 'nextPage': opts['nextPage'],'pageSize': opts['pageSize'] }, 
+   			{  }, 
+   			{  }, 
+   			null, 
+   			['PureCloud OAuth'], 
+   			['application/json'], 
+   			['application/json']
+   		);
+   	}
+
+   	/**
+   	 * Get the Speech &amp; Text Analytics general topics for a given dialect
+   	 * 
+   	 * @param {Object} opts Optional parameters
+   	 * @param {Object} opts.dialect The dialect of the general topics, dialect format is {language}-{country} where language follows ISO 639-1 standard and country follows ISO 3166-1 alpha 2 standard
+   	 */
+   	getSpeechandtextanalyticsTopicsGeneral(opts) { 
+   		opts = opts || {};
+   		
+
+   		return this.apiClient.callApi(
+   			'/api/v2/speechandtextanalytics/topics/general', 
+   			'GET', 
+   			{  }, 
+   			{ 'dialect': opts['dialect'] }, 
+   			{  }, 
+   			{  }, 
+   			null, 
+   			['PureCloud OAuth'], 
+   			['application/json'], 
+   			['application/json']
+   		);
+   	}
+
+   	/**
+   	 * Get a Speech &amp; Text Analytics publish topics job by id
+   	 * 
+   	 * @param {String} jobId The id of the publish topics job
+   	 */
+   	getSpeechandtextanalyticsTopicsPublishjob(jobId) { 
+   		// verify the required parameter 'jobId' is set
+   		if (jobId === undefined || jobId === null) {
+   			throw 'Missing the required parameter "jobId" when calling getSpeechandtextanalyticsTopicsPublishjob';
+   		}
+
+   		return this.apiClient.callApi(
+   			'/api/v2/speechandtextanalytics/topics/publishjobs/{jobId}', 
+   			'GET', 
+   			{ 'jobId': jobId }, 
    			{  }, 
    			{  }, 
    			{  }, 
@@ -33320,6 +33603,131 @@ define(['superagent'], function (superagent) { 'use strict';
    	}
 
    	/**
+   	 * Create new Speech &amp; Text Analytics program
+   	 * 
+   	 * @param {Object} body The program to create
+   	 */
+   	postSpeechandtextanalyticsPrograms(body) { 
+   		// verify the required parameter 'body' is set
+   		if (body === undefined || body === null) {
+   			throw 'Missing the required parameter "body" when calling postSpeechandtextanalyticsPrograms';
+   		}
+
+   		return this.apiClient.callApi(
+   			'/api/v2/speechandtextanalytics/programs', 
+   			'POST', 
+   			{  }, 
+   			{  }, 
+   			{  }, 
+   			{  }, 
+   			body, 
+   			['PureCloud OAuth'], 
+   			['application/json'], 
+   			['application/json']
+   		);
+   	}
+
+   	/**
+   	 * Create new Speech &amp; Text Analytics general program job
+   	 * 
+   	 * @param {Object} body The general programs job to create
+   	 */
+   	postSpeechandtextanalyticsProgramsGeneralJobs(body) { 
+   		// verify the required parameter 'body' is set
+   		if (body === undefined || body === null) {
+   			throw 'Missing the required parameter "body" when calling postSpeechandtextanalyticsProgramsGeneralJobs';
+   		}
+
+   		return this.apiClient.callApi(
+   			'/api/v2/speechandtextanalytics/programs/general/jobs', 
+   			'POST', 
+   			{  }, 
+   			{  }, 
+   			{  }, 
+   			{  }, 
+   			body, 
+   			['PureCloud OAuth'], 
+   			['application/json'], 
+   			['application/json']
+   		);
+   	}
+
+   	/**
+   	 * Create new Speech &amp; Text Analytics publish programs job
+   	 * 
+   	 * @param {Object} body The publish programs job to create
+   	 */
+   	postSpeechandtextanalyticsProgramsPublishjobs(body) { 
+   		// verify the required parameter 'body' is set
+   		if (body === undefined || body === null) {
+   			throw 'Missing the required parameter "body" when calling postSpeechandtextanalyticsProgramsPublishjobs';
+   		}
+
+   		return this.apiClient.callApi(
+   			'/api/v2/speechandtextanalytics/programs/publishjobs', 
+   			'POST', 
+   			{  }, 
+   			{  }, 
+   			{  }, 
+   			{  }, 
+   			body, 
+   			['PureCloud OAuth'], 
+   			['application/json'], 
+   			['application/json']
+   		);
+   	}
+
+   	/**
+   	 * Create new Speech &amp; Text Analytics topic
+   	 * 
+   	 * @param {Object} body The topic to create
+   	 */
+   	postSpeechandtextanalyticsTopics(body) { 
+   		// verify the required parameter 'body' is set
+   		if (body === undefined || body === null) {
+   			throw 'Missing the required parameter "body" when calling postSpeechandtextanalyticsTopics';
+   		}
+
+   		return this.apiClient.callApi(
+   			'/api/v2/speechandtextanalytics/topics', 
+   			'POST', 
+   			{  }, 
+   			{  }, 
+   			{  }, 
+   			{  }, 
+   			body, 
+   			['PureCloud OAuth'], 
+   			['application/json'], 
+   			['application/json']
+   		);
+   	}
+
+   	/**
+   	 * Create new Speech &amp; Text Analytics publish topics job
+   	 * 
+   	 * @param {Object} body The publish topics job to create
+   	 */
+   	postSpeechandtextanalyticsTopicsPublishjobs(body) { 
+   		// verify the required parameter 'body' is set
+   		if (body === undefined || body === null) {
+   			throw 'Missing the required parameter "body" when calling postSpeechandtextanalyticsTopicsPublishjobs';
+   		}
+
+   		return this.apiClient.callApi(
+   			'/api/v2/speechandtextanalytics/topics/publishjobs', 
+   			'POST', 
+   			{  }, 
+   			{  }, 
+   			{  }, 
+   			{  }, 
+   			body, 
+   			['PureCloud OAuth'], 
+   			['application/json'], 
+   			['application/json']
+   		);
+   	}
+
+   	/**
    	 * Search resources.
    	 * 
    	 * @param {Object} body Search request options
@@ -33344,13 +33752,73 @@ define(['superagent'], function (superagent) { 'use strict';
    		);
    	}
 
+   	/**
+   	 * Update existing Speech &amp; Text Analytics program
+   	 * 
+   	 * @param {String} programId The id of the program
+   	 * @param {Object} body The program to update
+   	 */
+   	putSpeechandtextanalyticsProgram(programId, body) { 
+   		// verify the required parameter 'programId' is set
+   		if (programId === undefined || programId === null) {
+   			throw 'Missing the required parameter "programId" when calling putSpeechandtextanalyticsProgram';
+   		}
+   		// verify the required parameter 'body' is set
+   		if (body === undefined || body === null) {
+   			throw 'Missing the required parameter "body" when calling putSpeechandtextanalyticsProgram';
+   		}
+
+   		return this.apiClient.callApi(
+   			'/api/v2/speechandtextanalytics/programs/{programId}', 
+   			'PUT', 
+   			{ 'programId': programId }, 
+   			{  }, 
+   			{  }, 
+   			{  }, 
+   			body, 
+   			['PureCloud OAuth'], 
+   			['application/json'], 
+   			['application/json']
+   		);
+   	}
+
+   	/**
+   	 * Update existing Speech &amp; Text Analytics topic
+   	 * 
+   	 * @param {String} topicId The id of the topic
+   	 * @param {Object} body The topic to update
+   	 */
+   	putSpeechandtextanalyticsTopic(topicId, body) { 
+   		// verify the required parameter 'topicId' is set
+   		if (topicId === undefined || topicId === null) {
+   			throw 'Missing the required parameter "topicId" when calling putSpeechandtextanalyticsTopic';
+   		}
+   		// verify the required parameter 'body' is set
+   		if (body === undefined || body === null) {
+   			throw 'Missing the required parameter "body" when calling putSpeechandtextanalyticsTopic';
+   		}
+
+   		return this.apiClient.callApi(
+   			'/api/v2/speechandtextanalytics/topics/{topicId}', 
+   			'PUT', 
+   			{ 'topicId': topicId }, 
+   			{  }, 
+   			{  }, 
+   			{  }, 
+   			body, 
+   			['PureCloud OAuth'], 
+   			['application/json'], 
+   			['application/json']
+   		);
+   	}
+
    }
 
    class StationsApi {
    	/**
    	 * Stations service.
    	 * @module purecloud-platform-client-v2/api/StationsApi
-   	 * @version 106.0.0
+   	 * @version 107.0.0
    	 */
 
    	/**
@@ -33497,7 +33965,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Suggest service.
    	 * @module purecloud-platform-client-v2/api/SuggestApi
-   	 * @version 106.0.0
+   	 * @version 107.0.0
    	 */
 
    	/**
@@ -33636,7 +34104,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Telephony service.
    	 * @module purecloud-platform-client-v2/api/TelephonyApi
-   	 * @version 106.0.0
+   	 * @version 107.0.0
    	 */
 
    	/**
@@ -33744,7 +34212,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * TelephonyProvidersEdge service.
    	 * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-   	 * @version 106.0.0
+   	 * @version 107.0.0
    	 */
 
    	/**
@@ -37354,7 +37822,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Textbots service.
    	 * @module purecloud-platform-client-v2/api/TextbotsApi
-   	 * @version 106.0.0
+   	 * @version 107.0.0
    	 */
 
    	/**
@@ -37400,7 +37868,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Tokens service.
    	 * @module purecloud-platform-client-v2/api/TokensApi
-   	 * @version 106.0.0
+   	 * @version 107.0.0
    	 */
 
    	/**
@@ -37486,7 +37954,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Uploads service.
    	 * @module purecloud-platform-client-v2/api/UploadsApi
-   	 * @version 106.0.0
+   	 * @version 107.0.0
    	 */
 
    	/**
@@ -37607,7 +38075,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Usage service.
    	 * @module purecloud-platform-client-v2/api/UsageApi
-   	 * @version 106.0.0
+   	 * @version 107.0.0
    	 */
 
    	/**
@@ -37678,7 +38146,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * UserRecordings service.
    	 * @module purecloud-platform-client-v2/api/UserRecordingsApi
-   	 * @version 106.0.0
+   	 * @version 107.0.0
    	 */
 
    	/**
@@ -37862,7 +38330,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Users service.
    	 * @module purecloud-platform-client-v2/api/UsersApi
-   	 * @version 106.0.0
+   	 * @version 107.0.0
    	 */
 
    	/**
@@ -38920,7 +39388,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	 * @param {Object} opts.sortOrder Specifies result set sort order sorted by the date due; if not specified, default sort order is descending (Desc) (default to Desc)
    	 * @param {Array.<String>} opts.types Specifies the activity types.
    	 * @param {Array.<String>} opts.statuses Specifies the activity statuses to filter by
-   	 * @param {Array.<String>} opts.relationship Specifies how the current user relation should be interpreted, and filters the activities returned to only those that have the specified relationship. If not specified, all relationships are returned.
+   	 * @param {Array.<String>} opts.relationship Specifies how the current user relation should be interpreted, and filters the activities returned to only the activities that have the specified relationship. If a value besides Attendee is specified, it will only return Coaching Appointments. If not specified, no filtering is applied.
    	 */
    	getUsersDevelopmentActivities(opts) { 
    		opts = opts || {};
@@ -38953,7 +39421,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	 * @param {Object} opts.sortOrder Specifies result set sort order sorted by the date due; if not specified, default sort order is descending (Desc) (default to Desc)
    	 * @param {Array.<String>} opts.types Specifies the activity types.
    	 * @param {Array.<String>} opts.statuses Specifies the activity statuses to filter by
-   	 * @param {Array.<String>} opts.relationship Specifies how the current user relation should be interpreted, and filters the activities returned to only those that have the specified relationship. If not specified, all relationships are returned.
+   	 * @param {Array.<String>} opts.relationship Specifies how the current user relation should be interpreted, and filters the activities returned to only the activities that have the specified relationship. If a value besides Attendee is specified, it will only return Coaching Appointments. If not specified, no filtering is applied.
    	 */
    	getUsersDevelopmentActivitiesMe(opts) { 
    		opts = opts || {};
@@ -40075,7 +40543,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Utilities service.
    	 * @module purecloud-platform-client-v2/api/UtilitiesApi
-   	 * @version 106.0.0
+   	 * @version 107.0.0
    	 */
 
    	/**
@@ -40186,7 +40654,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Voicemail service.
    	 * @module purecloud-platform-client-v2/api/VoicemailApi
-   	 * @version 106.0.0
+   	 * @version 107.0.0
    	 */
 
    	/**
@@ -40823,7 +41291,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * WebChat service.
    	 * @module purecloud-platform-client-v2/api/WebChatApi
-   	 * @version 106.0.0
+   	 * @version 107.0.0
    	 */
 
    	/**
@@ -41367,7 +41835,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * Widgets service.
    	 * @module purecloud-platform-client-v2/api/WidgetsApi
-   	 * @version 106.0.0
+   	 * @version 107.0.0
    	 */
 
    	/**
@@ -41513,7 +41981,7 @@ define(['superagent'], function (superagent) { 'use strict';
    	/**
    	 * WorkforceManagement service.
    	 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-   	 * @version 106.0.0
+   	 * @version 107.0.0
    	 */
 
    	/**
@@ -42645,7 +43113,7 @@ define(['superagent'], function (superagent) { 'use strict';
 
    	/**
    	 * Get management unit
-   	 * 
+   	 * settings.shortTermForecasting is deprecated and now lives on the business unit
    	 * @param {String} managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
    	 * @param {Object} opts Optional parameters
    	 * @param {Array.<String>} opts.expand 
@@ -43166,9 +43634,9 @@ define(['superagent'], function (superagent) { 'use strict';
    	 * Get management units
    	 * 
    	 * @param {Object} opts Optional parameters
-   	 * @param {Number} opts.pageSize 
-   	 * @param {Number} opts.pageNumber 
-   	 * @param {Object} opts.expand 
+   	 * @param {Number} opts.pageSize Deprecated, paging is not supported
+   	 * @param {Number} opts.pageNumber Deprecated, paging is not supported
+   	 * @param {Object} opts.expand Deprecated, expand settings on the single MU route
    	 * @param {Object} opts.feature 
    	 * @param {String} opts.divisionId 
    	 */
@@ -44811,7 +45279,7 @@ define(['superagent'], function (superagent) { 'use strict';
     * </pre>
     * </p>
     * @module purecloud-platform-client-v2/index
-    * @version 106.0.0
+    * @version 107.0.0
     */
    class platformClient {
    	constructor() {

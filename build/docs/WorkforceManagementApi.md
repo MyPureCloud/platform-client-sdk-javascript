@@ -1171,7 +1171,7 @@ apiInstance.getWorkforcemanagementBusinessunitManagementunits(businessUnitId, op
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **businessUnitId** | **String** | The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user. |  |
- **feature** | **String** |  | [optional] <br />**Values**: AgentSchedule, AgentTimeOffRequest, Coaching, ActivityCodes, Agents, BuActivityCodes, BusinessUnits, HistoricalAdherence, IntradayMonitoring, BuIntradayMonitoring, ManagementUnits, RealTimeAdherence, Schedules, BuSchedules, ServiceGoalGroups, ServiceGoalTemplates, PlanningGroups, ShiftTrading, ShortTermForecasts, BuShortTermForecasts, TimeOffRequests, WorkPlanRotations, WorkPlans |
+ **feature** | **String** |  | [optional] <br />**Values**: AgentSchedule, AgentTimeOffRequest, Coaching, ActivityCodes, Agents, BuActivityCodes, BusinessUnits, HistoricalAdherence, IntradayMonitoring, BuIntradayMonitoring, ManagementUnits, RealTimeAdherence, Schedules, BuSchedules, ServiceGoalTemplates, PlanningGroups, ShiftTrading, ShortTermForecasts, BuShortTermForecasts, TimeOffRequests, WorkPlanRotations, WorkPlans |
  **divisionId** | **String** |  | [optional]  |
 {: class="table table-striped"}
 
@@ -2255,7 +2255,7 @@ apiInstance.getWorkforcemanagementBusinessunits(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **feature** | **String** |  | [optional] <br />**Values**: AgentSchedule, AgentTimeOffRequest, Coaching, ActivityCodes, Agents, BuActivityCodes, BusinessUnits, HistoricalAdherence, IntradayMonitoring, BuIntradayMonitoring, ManagementUnits, RealTimeAdherence, Schedules, BuSchedules, ServiceGoalGroups, ServiceGoalTemplates, PlanningGroups, ShiftTrading, ShortTermForecasts, BuShortTermForecasts, TimeOffRequests, WorkPlanRotations, WorkPlans |
+ **feature** | **String** |  | [optional] <br />**Values**: AgentSchedule, AgentTimeOffRequest, Coaching, ActivityCodes, Agents, BuActivityCodes, BusinessUnits, HistoricalAdherence, IntradayMonitoring, BuIntradayMonitoring, ManagementUnits, RealTimeAdherence, Schedules, BuSchedules, ServiceGoalTemplates, PlanningGroups, ShiftTrading, ShortTermForecasts, BuShortTermForecasts, TimeOffRequests, WorkPlanRotations, WorkPlans |
  **divisionId** | **String** |  | [optional]  |
 {: class="table table-striped"}
 
@@ -2330,7 +2330,7 @@ GET /api/v2/workforcemanagement/managementunits/{managementUnitId}
 
 Get management unit
 
-
+settings.shortTermForecasting is deprecated and now lives on the business unit
 
 Requires ANY permissions: 
 
@@ -2359,10 +2359,6 @@ Requires ANY permissions:
 * wfm:schedule:edit
 * wfm:schedule:generate
 * wfm:schedule:view
-* wfm:serviceGoalGroup:add
-* wfm:serviceGoalGroup:delete
-* wfm:serviceGoalGroup:edit
-* wfm:serviceGoalGroup:view
 * wfm:serviceGoalTemplate:add
 * wfm:serviceGoalTemplate:delete
 * wfm:serviceGoalTemplate:edit
@@ -2472,10 +2468,6 @@ Requires ANY permissions:
 * wfm:schedule:edit
 * wfm:schedule:generate
 * wfm:schedule:view
-* wfm:serviceGoalGroup:add
-* wfm:serviceGoalGroup:delete
-* wfm:serviceGoalGroup:edit
-* wfm:serviceGoalGroup:view
 * wfm:shortTermForecast:add
 * wfm:shortTermForecast:delete
 * wfm:shortTermForecast:edit
@@ -3462,9 +3454,9 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let opts = { 
-  'pageSize': 56, // Number | 
-  'pageNumber': 56, // Number | 
-  'expand': "expand_example", // String | 
+  'pageSize': 56, // Number | Deprecated, paging is not supported
+  'pageNumber': 56, // Number | Deprecated, paging is not supported
+  'expand': "expand_example", // String | Deprecated, expand settings on the single MU route
   'feature': "feature_example", // String | 
   'divisionId': "divisionId_example" // String | 
 };
@@ -3484,10 +3476,10 @@ apiInstance.getWorkforcemanagementManagementunits(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **pageSize** | **Number** |  | [optional]  |
- **pageNumber** | **Number** |  | [optional]  |
- **expand** | **String** |  | [optional] <br />**Values**: details |
- **feature** | **String** |  | [optional] <br />**Values**: AgentSchedule, AgentTimeOffRequest, Coaching, ActivityCodes, Agents, BuActivityCodes, BusinessUnits, HistoricalAdherence, IntradayMonitoring, BuIntradayMonitoring, ManagementUnits, RealTimeAdherence, Schedules, BuSchedules, ServiceGoalGroups, ServiceGoalTemplates, PlanningGroups, ShiftTrading, ShortTermForecasts, BuShortTermForecasts, TimeOffRequests, WorkPlanRotations, WorkPlans |
+ **pageSize** | **Number** | Deprecated, paging is not supported | [optional]  |
+ **pageNumber** | **Number** | Deprecated, paging is not supported | [optional]  |
+ **expand** | **String** | Deprecated, expand settings on the single MU route | [optional] <br />**Values**: details |
+ **feature** | **String** |  | [optional] <br />**Values**: AgentSchedule, AgentTimeOffRequest, Coaching, ActivityCodes, Agents, BuActivityCodes, BusinessUnits, HistoricalAdherence, IntradayMonitoring, BuIntradayMonitoring, ManagementUnits, RealTimeAdherence, Schedules, BuSchedules, ServiceGoalTemplates, PlanningGroups, ShiftTrading, ShortTermForecasts, BuShortTermForecasts, TimeOffRequests, WorkPlanRotations, WorkPlans |
  **divisionId** | **String** |  | [optional]  |
 {: class="table table-striped"}
 
@@ -4400,6 +4392,13 @@ UpdateManagementUnitRequest <a href="#" onclick="return copyUpdateManagementUnit
           "shrinkagePercent": Number, 
         },  
       },  
+      "planningPeriod": { 
+        "value": { 
+          "weekCount": Number, 
+          "startDate": String, 
+        },  
+      },  
+      "startDayOfWeekend": String, 
     },  
     "shiftTrading": { 
       "enabled": Boolean, 
@@ -4728,10 +4727,21 @@ WorkPlan <a href="#" onclick="return copyWorkPlanExample()">Copy</a>
   "constrainMinimumTimeBetweenShifts": Boolean, 
   "minimumTimeBetweenShiftsMinutes": Number, 
   "maximumDays": Number, 
+  "minimumConsecutiveNonWorkingMinutesPerWeek": Number, 
+  "constrainMaximumConsecutiveWorkingWeekends": Boolean, 
+  "maximumConsecutiveWorkingWeekends": Number, 
   "minimumWorkingDaysPerWeek": Number, 
+  "constrainMaximumConsecutiveWorkingDays": Boolean, 
+  "maximumConsecutiveWorkingDays": Number, 
+  "minimumShiftStartDistanceMinutes": Number, 
+  "minimumDaysOffPerPlanningPeriod": Number, 
+  "maximumDaysOffPerPlanningPeriod": Number, 
+  "minimumPaidMinutesPerPlanningPeriod": Number, 
+  "maximumPaidMinutesPerPlanningPeriod": Number, 
   "optionalDays": { 
     "values": [String], 
   },  
+  "shiftStartVarianceType": String, 
   "shiftStartVariances": { 
     "values": { 
       "applicableDays": [String], 
@@ -4750,6 +4760,8 @@ WorkPlan <a href="#" onclick="return copyWorkPlanExample()">Copy</a>
     "constrainStopTime": Boolean, 
     "constrainLatestStopTime": Boolean, 
     "latestStopTimeMinutesFromMidnight": Number, 
+    "constrainEarliestStopTime": Boolean, 
+    "earliestStopTimeMinutesFromMidnight": Number, 
     "startIncrementMinutes": Number, 
     "flexiblePaidTime": Boolean, 
     "exactPaidTimeMinutes": Number, 
@@ -4770,6 +4782,8 @@ WorkPlan <a href="#" onclick="return copyWorkPlanExample()">Copy</a>
       "startTimeIncrementMinutes": Number, 
       "countsAsPaidTime": Boolean, 
       "countsAsContiguousWorkTime": Boolean, 
+      "minimumLengthFromShiftStartMinutes": Number, 
+      "minimumLengthFromShiftEndMinutes": Number, 
       "id": String, 
       "delete": Boolean, 
     },  
@@ -7441,10 +7455,21 @@ WorkPlanValidationRequest <a href="#" onclick="return copyWorkPlanValidationRequ
   "constrainMinimumTimeBetweenShifts": Boolean, 
   "minimumTimeBetweenShiftsMinutes": Number, 
   "maximumDays": Number, 
+  "minimumConsecutiveNonWorkingMinutesPerWeek": Number, 
+  "constrainMaximumConsecutiveWorkingWeekends": Boolean, 
+  "maximumConsecutiveWorkingWeekends": Number, 
   "minimumWorkingDaysPerWeek": Number, 
+  "constrainMaximumConsecutiveWorkingDays": Boolean, 
+  "maximumConsecutiveWorkingDays": Number, 
+  "minimumShiftStartDistanceMinutes": Number, 
+  "minimumDaysOffPerPlanningPeriod": Number, 
+  "maximumDaysOffPerPlanningPeriod": Number, 
+  "minimumPaidMinutesPerPlanningPeriod": Number, 
+  "maximumPaidMinutesPerPlanningPeriod": Number, 
   "optionalDays": { 
     "values": [String], 
   },  
+  "shiftStartVarianceType": String, 
   "shiftStartVariances": { 
     "values": { 
       "applicableDays": [String], 
@@ -7463,6 +7488,8 @@ WorkPlanValidationRequest <a href="#" onclick="return copyWorkPlanValidationRequ
     "constrainStopTime": Boolean, 
     "constrainLatestStopTime": Boolean, 
     "latestStopTimeMinutesFromMidnight": Number, 
+    "constrainEarliestStopTime": Boolean, 
+    "earliestStopTimeMinutesFromMidnight": Number, 
     "startIncrementMinutes": Number, 
     "flexiblePaidTime": Boolean, 
     "exactPaidTimeMinutes": Number, 
@@ -7483,6 +7510,8 @@ WorkPlanValidationRequest <a href="#" onclick="return copyWorkPlanValidationRequ
       "startTimeIncrementMinutes": Number, 
       "countsAsPaidTime": Boolean, 
       "countsAsContiguousWorkTime": Boolean, 
+      "minimumLengthFromShiftStartMinutes": Number, 
+      "minimumLengthFromShiftEndMinutes": Number, 
       "id": String, 
       "delete": Boolean, 
     },  
@@ -7779,10 +7808,21 @@ CreateWorkPlan <a href="#" onclick="return copyCreateWorkPlanExample()">Copy</a>
   "constrainMinimumTimeBetweenShifts": Boolean, 
   "minimumTimeBetweenShiftsMinutes": Number, 
   "maximumDays": Number, 
+  "minimumConsecutiveNonWorkingMinutesPerWeek": Number, 
+  "constrainMaximumConsecutiveWorkingWeekends": Boolean, 
+  "maximumConsecutiveWorkingWeekends": Number, 
   "minimumWorkingDaysPerWeek": Number, 
+  "constrainMaximumConsecutiveWorkingDays": Boolean, 
+  "maximumConsecutiveWorkingDays": Number, 
+  "minimumShiftStartDistanceMinutes": Number, 
+  "minimumDaysOffPerPlanningPeriod": Number, 
+  "maximumDaysOffPerPlanningPeriod": Number, 
+  "minimumPaidMinutesPerPlanningPeriod": Number, 
+  "maximumPaidMinutesPerPlanningPeriod": Number, 
   "optionalDays": { 
     "values": [String], 
   },  
+  "shiftStartVarianceType": String, 
   "shiftStartVariances": { 
     "values": { 
       "applicableDays": [String], 
@@ -7801,6 +7841,8 @@ CreateWorkPlan <a href="#" onclick="return copyCreateWorkPlanExample()">Copy</a>
     "constrainStopTime": Boolean, 
     "constrainLatestStopTime": Boolean, 
     "latestStopTimeMinutesFromMidnight": Number, 
+    "constrainEarliestStopTime": Boolean, 
+    "earliestStopTimeMinutesFromMidnight": Number, 
     "startIncrementMinutes": Number, 
     "flexiblePaidTime": Boolean, 
     "exactPaidTimeMinutes": Number, 
@@ -7821,6 +7863,8 @@ CreateWorkPlan <a href="#" onclick="return copyCreateWorkPlanExample()">Copy</a>
       "startTimeIncrementMinutes": Number, 
       "countsAsPaidTime": Boolean, 
       "countsAsContiguousWorkTime": Boolean, 
+      "minimumLengthFromShiftStartMinutes": Number, 
+      "minimumLengthFromShiftEndMinutes": Number, 
     },  
   },  
   "agents": { 
@@ -7944,6 +7988,13 @@ CreateManagementUnitApiRequest <a href="#" onclick="return copyCreateManagementU
           "shrinkagePercent": Number, 
         },  
       },  
+      "planningPeriod": { 
+        "value": { 
+          "weekCount": Number, 
+          "startDate": String, 
+        },  
+      },  
+      "startDayOfWeekend": String, 
     },  
     "shiftTrading": { 
       "enabled": Boolean, 

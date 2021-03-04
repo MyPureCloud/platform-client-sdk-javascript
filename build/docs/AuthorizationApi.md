@@ -2677,8 +2677,8 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
   },  
   "userCount": Number, 
   "roleNeedsUpdate": Boolean, 
-  "base": Boolean, 
   "default": Boolean, 
+  "base": Boolean, 
   "selfUri": String, 
 }
 ```
@@ -2735,7 +2735,7 @@ POST /api/v2/authorization/divisions/{divisionId}/objects/{objectType}
 
 Assign a list of objects to a division
 
-Set the division of a specified list of objects. The objects must all be of the same type, one of:  CAMPAIGN, MANAGEMENTUNIT, FLOW, QUEUE, or USER.  The body of the request is a list of object IDs, which are expected to be  GUIDs, e.g. [\&quot;206ce31f-61ec-40ed-a8b1-be6f06303998\&quot;,\&quot;250a754e-f5e4-4f51-800f-a92f09d3bf8c\&quot;]
+Set the division of a specified list of objects. The objects must all be of the same type, one of:  CAMPAIGN, MANAGEMENTUNIT, FLOW, QUEUE, DATATABLES or USER.  The body of the request is a list of object IDs, which are expected to be  GUIDs, e.g. [\&quot;206ce31f-61ec-40ed-a8b1-be6f06303998\&quot;,\&quot;250a754e-f5e4-4f51-800f-a92f09d3bf8c\&quot;]
 
 Requires NO permissions: 
 
@@ -2775,7 +2775,7 @@ apiInstance.postAuthorizationDivisionObject(divisionId, objectType, body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **divisionId** | **String** | Division ID |  |
- **objectType** | **String** | The type of the objects. Must be one of the valid object types | <br />**Values**: QUEUE, CAMPAIGN, CONTACTLIST, DNCLIST, MESSAGINGCAMPAIGN, MANAGEMENTUNIT, BUSINESSUNIT, FLOW, USER |
+ **objectType** | **String** | The type of the objects. Must be one of the valid object types | <br />**Values**: QUEUE, CAMPAIGN, CONTACTLIST, DNCLIST, MESSAGINGCAMPAIGN, MANAGEMENTUNIT, BUSINESSUNIT, FLOW, USER, DATATABLES |
  **body** | **Object** | Object Id List |  |
 {: class="table table-striped"}
 
@@ -4295,8 +4295,8 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
   },  
   "userCount": Number, 
   "roleNeedsUpdate": Boolean, 
-  "base": Boolean, 
   "default": Boolean, 
+  "base": Boolean, 
   "selfUri": String, 
 }
 ```
@@ -5684,8 +5684,8 @@ DomainOrganizationRoleCreate <a href="#" onclick="return copyDomainOrganizationR
   },  
   "userCount": Number, 
   "roleNeedsUpdate": Boolean, 
-  "base": Boolean, 
   "default": Boolean, 
+  "base": Boolean, 
   "selfUri": String, 
 }
 ```
@@ -7450,8 +7450,8 @@ DomainOrganizationRoleUpdate <a href="#" onclick="return copyDomainOrganizationR
   },  
   "userCount": Number, 
   "roleNeedsUpdate": Boolean, 
-  "base": Boolean, 
   "default": Boolean, 
+  "base": Boolean, 
   "selfUri": String, 
 }
 ```
@@ -8951,8 +8951,8 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
   },  
   "userCount": Number, 
   "roleNeedsUpdate": Boolean, 
-  "base": Boolean, 
   "default": Boolean, 
+  "base": Boolean, 
   "selfUri": String, 
 }
 ```
