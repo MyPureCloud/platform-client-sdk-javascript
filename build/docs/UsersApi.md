@@ -4629,8 +4629,9 @@ Patch a user&#39;s CallForwarding
 
 
 
-Requires NO permissions: 
+Requires ANY permissions: 
 
+* conversation:callForwarding:edit
 
 
 ### Request Body Schema
@@ -10176,8 +10177,9 @@ Update a user&#39;s CallForwarding
 
 
 
-Requires NO permissions: 
+Requires ANY permissions: 
 
+* conversation:callForwarding:edit
 
 
 ### Request Body Schema

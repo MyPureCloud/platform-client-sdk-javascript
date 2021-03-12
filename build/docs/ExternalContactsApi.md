@@ -38,6 +38,14 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getExternalcontactsScanNotes**](ExternalContactsApi.html#getExternalcontactsScanNotes) | **GET** /api/v2/externalcontacts/scan/notes | Scan for notes using paging
 [**getExternalcontactsScanOrganizations**](ExternalContactsApi.html#getExternalcontactsScanOrganizations) | **GET** /api/v2/externalcontacts/scan/organizations | Scan for external organizations using paging
 [**getExternalcontactsScanRelationships**](ExternalContactsApi.html#getExternalcontactsScanRelationships) | **GET** /api/v2/externalcontacts/scan/relationships | Scan for relationships
+[**postExternalcontactsBulkContacts**](ExternalContactsApi.html#postExternalcontactsBulkContacts) | **POST** /api/v2/externalcontacts/bulk/contacts | Bulk fetch contacts
+[**postExternalcontactsBulkContactsAdd**](ExternalContactsApi.html#postExternalcontactsBulkContactsAdd) | **POST** /api/v2/externalcontacts/bulk/contacts/add | Bulk add contacts
+[**postExternalcontactsBulkContactsRemove**](ExternalContactsApi.html#postExternalcontactsBulkContactsRemove) | **POST** /api/v2/externalcontacts/bulk/contacts/remove | Bulk remove contacts
+[**postExternalcontactsBulkContactsUpdate**](ExternalContactsApi.html#postExternalcontactsBulkContactsUpdate) | **POST** /api/v2/externalcontacts/bulk/contacts/update | Bulk update contacts
+[**postExternalcontactsBulkOrganizations**](ExternalContactsApi.html#postExternalcontactsBulkOrganizations) | **POST** /api/v2/externalcontacts/bulk/organizations | Bulk fetch organizations
+[**postExternalcontactsBulkOrganizationsAdd**](ExternalContactsApi.html#postExternalcontactsBulkOrganizationsAdd) | **POST** /api/v2/externalcontacts/bulk/organizations/add | Bulk add organizations
+[**postExternalcontactsBulkOrganizationsRemove**](ExternalContactsApi.html#postExternalcontactsBulkOrganizationsRemove) | **POST** /api/v2/externalcontacts/bulk/organizations/remove | Bulk remove organizations
+[**postExternalcontactsBulkOrganizationsUpdate**](ExternalContactsApi.html#postExternalcontactsBulkOrganizationsUpdate) | **POST** /api/v2/externalcontacts/bulk/organizations/update | Bulk update organizations
 [**postExternalcontactsContactNotes**](ExternalContactsApi.html#postExternalcontactsContactNotes) | **POST** /api/v2/externalcontacts/contacts/{contactId}/notes | Create a note for an external contact
 [**postExternalcontactsContacts**](ExternalContactsApi.html#postExternalcontactsContacts) | **POST** /api/v2/externalcontacts/contacts | Create an external contact
 [**postExternalcontactsContactsSchemas**](ExternalContactsApi.html#postExternalcontactsContactsSchemas) | **POST** /api/v2/externalcontacts/contacts/schemas | Create a schema
@@ -1875,6 +1883,4306 @@ apiInstance.getExternalcontactsScanRelationships(opts)
 ### Return type
 
 **CursorRelationshipListing**
+
+<a name="postExternalcontactsBulkContacts"></a>
+
+# BulkFetchContactsResponse postExternalcontactsBulkContacts(body)
+
+
+
+POST /api/v2/externalcontacts/bulk/contacts
+
+Bulk fetch contacts
+
+
+
+Requires ANY permissions: 
+
+* externalContacts:contact:view
+
+
+### Request Body Schema
+
+<script type="text/javascript">
+	function copyBulkIdsRequestExample() {
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#BulkIdsRequestExample').text()).select();
+		document.execCommand("copy");
+		temp.remove();
+		return false;
+	}
+</script>
+
+BulkIdsRequest <a href="#" onclick="return copyBulkIdsRequestExample()">Copy</a>
+
+<div id="BulkIdsRequestExample">
+
+```{"language":"json", "maxHeight": "250px"}
+{ 
+  "entities": { 
+    "id": String, 
+  },  
+}
+```
+
+</div>
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ExternalContactsApi();
+
+let body = {}; // Object | Contact ids
+
+apiInstance.postExternalcontactsBulkContacts(body)
+  .then((data) => {
+    console.log(`postExternalcontactsBulkContacts success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postExternalcontactsBulkContacts');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | Contact ids |  |
+{: class="table table-striped"}
+
+### Return type
+
+**BulkFetchContactsResponse**
+
+<a name="postExternalcontactsBulkContactsAdd"></a>
+
+# BulkContactsResponse postExternalcontactsBulkContactsAdd(body)
+
+
+
+POST /api/v2/externalcontacts/bulk/contacts/add
+
+Bulk add contacts
+
+
+
+Requires ANY permissions: 
+
+* externalContacts:contact:add
+
+
+### Request Body Schema
+
+<script type="text/javascript">
+	function copyBulkContactsRequestExample() {
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#BulkContactsRequestExample').text()).select();
+		document.execCommand("copy");
+		temp.remove();
+		return false;
+	}
+</script>
+
+BulkContactsRequest <a href="#" onclick="return copyBulkContactsRequestExample()">Copy</a>
+
+<div id="BulkContactsRequestExample">
+
+```{"language":"json", "maxHeight": "250px"}
+{ 
+  "entities": { 
+    "id": String, 
+    "firstName": String, 
+    "middleName": String, 
+    "lastName": String, 
+    "salutation": String, 
+    "title": String, 
+    "workPhone": { 
+      "display": String, 
+      "extension": Number, 
+      "acceptsSMS": Boolean, 
+      "userInput": String, 
+      "e164": String, 
+      "countryCode": String, 
+    },  
+    "cellPhone": { 
+      "display": String, 
+      "extension": Number, 
+      "acceptsSMS": Boolean, 
+      "userInput": String, 
+      "e164": String, 
+      "countryCode": String, 
+    },  
+    "homePhone": { 
+      "display": String, 
+      "extension": Number, 
+      "acceptsSMS": Boolean, 
+      "userInput": String, 
+      "e164": String, 
+      "countryCode": String, 
+    },  
+    "otherPhone": { 
+      "display": String, 
+      "extension": Number, 
+      "acceptsSMS": Boolean, 
+      "userInput": String, 
+      "e164": String, 
+      "countryCode": String, 
+    },  
+    "workEmail": String, 
+    "personalEmail": String, 
+    "otherEmail": String, 
+    "address": { 
+      "address1": String, 
+      "address2": String, 
+      "city": String, 
+      "state": String, 
+      "postalCode": String, 
+      "countryCode": String, 
+    },  
+    "twitterId": { 
+      "id": String, 
+      "name": String, 
+      "screenName": String, 
+      "verified": Boolean, 
+      "profileUrl": String, 
+    },  
+    "lineId": { 
+      "ids": { 
+        "userId": String, 
+      },  
+      "displayName": String, 
+    },  
+    "whatsAppId": { 
+      "phoneNumber": { 
+        "display": String, 
+        "extension": Number, 
+        "acceptsSMS": Boolean, 
+        "userInput": String, 
+        "e164": String, 
+        "countryCode": String, 
+      },  
+      "displayName": String, 
+    },  
+    "facebookId": { 
+      "ids": { 
+        "scopedId": String, 
+      },  
+      "displayName": String, 
+    },  
+    "modifyDate": Date, 
+    "createDate": Date, 
+    "externalOrganization": { 
+      "id": String, 
+      "name": String, 
+      "companyType": String, 
+      "industry": String, 
+      "primaryContactId": String, 
+      "address": { 
+        "address1": String, 
+        "address2": String, 
+        "city": String, 
+        "state": String, 
+        "postalCode": String, 
+        "countryCode": String, 
+      },  
+      "phoneNumber": { 
+        "display": String, 
+        "extension": Number, 
+        "acceptsSMS": Boolean, 
+        "userInput": String, 
+        "e164": String, 
+        "countryCode": String, 
+      },  
+      "faxNumber": { 
+        "display": String, 
+        "extension": Number, 
+        "acceptsSMS": Boolean, 
+        "userInput": String, 
+        "e164": String, 
+        "countryCode": String, 
+      },  
+      "employeeCount": Number, 
+      "revenue": Number, 
+      "tags": [String], 
+      "websites": [String], 
+      "tickers": { 
+        "symbol": String, 
+        "exchange": String, 
+      },  
+      "twitterId": { 
+        "id": String, 
+        "name": String, 
+        "screenName": String, 
+        "verified": Boolean, 
+        "profileUrl": String, 
+      },  
+      "externalSystemUrl": String, 
+      "modifyDate": Date, 
+      "createDate": Date, 
+      "trustor": { 
+        "id": String, 
+        "enabled": Boolean, 
+        "dateCreated": Date, 
+        "createdBy": { 
+          "id": String, 
+          "name": String, 
+          "division": { 
+            "id": String, 
+            "name": String, 
+            "selfUri": String, 
+          },  
+          "chat": { 
+            "jabberId": String, 
+          },  
+          "department": String, 
+          "email": String, 
+          "primaryContactInfo": { 
+            "address": String, 
+            "display": String, 
+            "mediaType": String, 
+            "type": String, 
+            "extension": String, 
+            "countryCode": String, 
+          },  
+          "addresses": { 
+            "address": String, 
+            "display": String, 
+            "mediaType": String, 
+            "type": String, 
+            "extension": String, 
+            "countryCode": String, 
+          },  
+          "state": String, 
+          "title": String, 
+          "username": String, 
+          "manager": { 
+            "id": String, 
+            "name": String, 
+            "division": { 
+              "id": String, 
+              "name": String, 
+              "selfUri": String, 
+            },  
+            "chat": { 
+              "jabberId": String, 
+            },  
+            "department": String, 
+            "email": String, 
+            "primaryContactInfo": { 
+              "address": String, 
+              "display": String, 
+              "mediaType": String, 
+              "type": String, 
+              "extension": String, 
+              "countryCode": String, 
+            },  
+            "addresses": { 
+              "address": String, 
+              "display": String, 
+              "mediaType": String, 
+              "type": String, 
+              "extension": String, 
+              "countryCode": String, 
+            },  
+            "state": String, 
+            "title": String, 
+            "username": String, 
+            "manager": User, 
+            "images": { 
+              "resolution": String, 
+              "imageUri": String, 
+            },  
+            "version": Number, 
+            "certifications": [String], 
+            "biography": { 
+              "biography": String, 
+              "interests": [String], 
+              "hobbies": [String], 
+              "spouse": String, 
+              "education": { 
+                "school": String, 
+                "fieldOfStudy": String, 
+                "notes": String, 
+                "dateStart": String, 
+                "dateEnd": String, 
+              },  
+            },  
+            "employerInfo": { 
+              "officialName": String, 
+              "employeeId": String, 
+              "employeeType": String, 
+              "dateHire": String, 
+            },  
+            "routingStatus": { 
+              "userId": String, 
+              "status": String, 
+              "startTime": Date, 
+            },  
+            "presence": { 
+              "id": String, 
+              "name": String, 
+              "source": String, 
+              "primary": Boolean, 
+              "presenceDefinition": { 
+                "id": String, 
+                "systemPresence": String, 
+                "selfUri": String, 
+              },  
+              "message": String, 
+              "modifiedDate": Date, 
+              "selfUri": String, 
+            },  
+            "conversationSummary": { 
+              "userId": String, 
+              "call": { 
+                "contactCenter": MediaSummaryDetail, 
+                "enterprise": MediaSummaryDetail, 
+              },  
+              "callback": { 
+                "contactCenter": MediaSummaryDetail, 
+                "enterprise": MediaSummaryDetail, 
+              },  
+              "email": { 
+                "contactCenter": MediaSummaryDetail, 
+                "enterprise": MediaSummaryDetail, 
+              },  
+              "message": { 
+                "contactCenter": MediaSummaryDetail, 
+                "enterprise": MediaSummaryDetail, 
+              },  
+              "chat": { 
+                "contactCenter": MediaSummaryDetail, 
+                "enterprise": MediaSummaryDetail, 
+              },  
+              "socialExpression": { 
+                "contactCenter": MediaSummaryDetail, 
+                "enterprise": MediaSummaryDetail, 
+              },  
+              "video": { 
+                "contactCenter": MediaSummaryDetail, 
+                "enterprise": MediaSummaryDetail, 
+              },  
+            },  
+            "outOfOffice": { 
+              "id": String, 
+              "name": String, 
+              "user": User, 
+              "startDate": Date, 
+              "endDate": Date, 
+              "active": Boolean, 
+              "indefinite": Boolean, 
+              "selfUri": String, 
+            },  
+            "geolocation": { 
+              "id": String, 
+              "name": String, 
+              "type": String, 
+              "primary": Boolean, 
+              "latitude": Number, 
+              "longitude": Number, 
+              "country": String, 
+              "region": String, 
+              "city": String, 
+              "locations": { 
+                "id": String, 
+                "name": String, 
+                "contactUser": AddressableEntityRef, 
+                "emergencyNumber": LocationEmergencyNumber, 
+                "address": LocationAddress, 
+                "state": String, 
+                "notes": String, 
+                "version": Number, 
+                "path": [String], 
+                "profileImage": [LocationImage], 
+                "floorplanImage": [LocationImage], 
+                "addressVerificationDetails": LocationAddressVerificationDetails, 
+                "addressVerified": Boolean, 
+                "addressStored": Boolean, 
+                "images": String, 
+                "selfUri": String, 
+              },  
+              "selfUri": String, 
+            },  
+            "station": { 
+              "associatedStation": { 
+                "id": String, 
+                "name": String, 
+                "type": String, 
+                "associatedUser": User, 
+                "associatedDate": Date, 
+                "defaultUser": User, 
+                "providerInfo": {String: String}, 
+              },  
+              "effectiveStation": { 
+                "id": String, 
+                "name": String, 
+                "type": String, 
+                "associatedUser": User, 
+                "associatedDate": Date, 
+                "defaultUser": User, 
+                "providerInfo": {String: String}, 
+              },  
+              "defaultStation": { 
+                "id": String, 
+                "name": String, 
+                "type": String, 
+                "associatedUser": User, 
+                "associatedDate": Date, 
+                "defaultUser": User, 
+                "providerInfo": {String: String}, 
+              },  
+              "lastAssociatedStation": { 
+                "id": String, 
+                "name": String, 
+                "type": String, 
+                "associatedUser": User, 
+                "associatedDate": Date, 
+                "defaultUser": User, 
+                "providerInfo": {String: String}, 
+              },  
+            },  
+            "authorization": { 
+              "roles": { 
+                "id": String, 
+                "name": String, 
+              },  
+              "unusedRoles": { 
+                "id": String, 
+                "name": String, 
+              },  
+              "permissions": [String], 
+              "permissionPolicies": { 
+                "id": String, 
+                "domain": String, 
+                "entityName": String, 
+                "policyName": String, 
+                "policyDescription": String, 
+                "actionSetKey": String, 
+                "allowConditions": Boolean, 
+                "resourceConditionNode": ResourceConditionNode, 
+                "namedResources": [String], 
+                "resourceCondition": String, 
+                "actionSet": [String], 
+              },  
+            },  
+            "profileSkills": [String], 
+            "locations": { 
+              "id": String, 
+              "floorplanId": String, 
+              "coordinates": {String: Number}, 
+              "notes": String, 
+              "locationDefinition": { 
+                "id": String, 
+                "name": String, 
+                "contactUser": AddressableEntityRef, 
+                "emergencyNumber": LocationEmergencyNumber, 
+                "address": LocationAddress, 
+                "state": String, 
+                "notes": String, 
+                "version": Number, 
+                "path": [String], 
+                "profileImage": [LocationImage], 
+                "floorplanImage": [LocationImage], 
+                "addressVerificationDetails": LocationAddressVerificationDetails, 
+                "addressVerified": Boolean, 
+                "addressStored": Boolean, 
+                "images": String, 
+                "selfUri": String, 
+              },  
+            },  
+            "groups": { 
+              "id": String, 
+              "name": String, 
+              "description": String, 
+              "dateModified": Date, 
+              "memberCount": Number, 
+              "state": String, 
+              "version": Number, 
+              "type": String, 
+              "images": { 
+                "resolution": String, 
+                "imageUri": String, 
+              },  
+              "addresses": { 
+                "address": String, 
+                "extension": String, 
+                "display": String, 
+                "type": String, 
+                "mediaType": String, 
+              },  
+              "rulesVisible": Boolean, 
+              "visibility": String, 
+              "owners": User, 
+              "selfUri": String, 
+            },  
+            "team": { 
+              "id": String, 
+              "name": String, 
+              "description": String, 
+              "dateModified": Date, 
+              "memberCount": Number, 
+              "selfUri": String, 
+            },  
+            "skills": { 
+              "id": String, 
+              "name": String, 
+              "proficiency": Number, 
+              "state": String, 
+              "skillUri": String, 
+              "selfUri": String, 
+            },  
+            "languages": { 
+              "id": String, 
+              "name": String, 
+              "proficiency": Number, 
+              "state": String, 
+              "languageUri": String, 
+              "selfUri": String, 
+            },  
+            "acdAutoAnswer": Boolean, 
+            "languagePreference": String, 
+            "lastTokenIssued": { 
+              "dateIssued": Date, 
+            },  
+            "selfUri": String, 
+          },  
+          "images": { 
+            "resolution": String, 
+            "imageUri": String, 
+          },  
+          "version": Number, 
+          "certifications": [String], 
+          "biography": { 
+            "biography": String, 
+            "interests": [String], 
+            "hobbies": [String], 
+            "spouse": String, 
+            "education": { 
+              "school": String, 
+              "fieldOfStudy": String, 
+              "notes": String, 
+              "dateStart": String, 
+              "dateEnd": String, 
+            },  
+          },  
+          "employerInfo": { 
+            "officialName": String, 
+            "employeeId": String, 
+            "employeeType": String, 
+            "dateHire": String, 
+          },  
+          "routingStatus": { 
+            "userId": String, 
+            "status": String, 
+            "startTime": Date, 
+          },  
+          "presence": { 
+            "id": String, 
+            "name": String, 
+            "source": String, 
+            "primary": Boolean, 
+            "presenceDefinition": { 
+              "id": String, 
+              "systemPresence": String, 
+              "selfUri": String, 
+            },  
+            "message": String, 
+            "modifiedDate": Date, 
+            "selfUri": String, 
+          },  
+          "conversationSummary": { 
+            "userId": String, 
+            "call": { 
+              "contactCenter": { 
+                "active": Number, 
+                "acw": Number, 
+              },  
+              "enterprise": { 
+                "active": Number, 
+                "acw": Number, 
+              },  
+            },  
+            "callback": { 
+              "contactCenter": { 
+                "active": Number, 
+                "acw": Number, 
+              },  
+              "enterprise": { 
+                "active": Number, 
+                "acw": Number, 
+              },  
+            },  
+            "email": { 
+              "contactCenter": { 
+                "active": Number, 
+                "acw": Number, 
+              },  
+              "enterprise": { 
+                "active": Number, 
+                "acw": Number, 
+              },  
+            },  
+            "message": { 
+              "contactCenter": { 
+                "active": Number, 
+                "acw": Number, 
+              },  
+              "enterprise": { 
+                "active": Number, 
+                "acw": Number, 
+              },  
+            },  
+            "chat": { 
+              "contactCenter": { 
+                "active": Number, 
+                "acw": Number, 
+              },  
+              "enterprise": { 
+                "active": Number, 
+                "acw": Number, 
+              },  
+            },  
+            "socialExpression": { 
+              "contactCenter": { 
+                "active": Number, 
+                "acw": Number, 
+              },  
+              "enterprise": { 
+                "active": Number, 
+                "acw": Number, 
+              },  
+            },  
+            "video": { 
+              "contactCenter": { 
+                "active": Number, 
+                "acw": Number, 
+              },  
+              "enterprise": { 
+                "active": Number, 
+                "acw": Number, 
+              },  
+            },  
+          },  
+          "outOfOffice": { 
+            "id": String, 
+            "name": String, 
+            "user": User, 
+            "startDate": Date, 
+            "endDate": Date, 
+            "active": Boolean, 
+            "indefinite": Boolean, 
+            "selfUri": String, 
+          },  
+          "geolocation": { 
+            "id": String, 
+            "name": String, 
+            "type": String, 
+            "primary": Boolean, 
+            "latitude": Number, 
+            "longitude": Number, 
+            "country": String, 
+            "region": String, 
+            "city": String, 
+            "locations": { 
+              "id": String, 
+              "name": String, 
+              "contactUser": { 
+                "id": String, 
+                "selfUri": String, 
+              },  
+              "emergencyNumber": { 
+                "e164": String, 
+                "number": String, 
+                "type": String, 
+              },  
+              "address": { 
+                "city": String, 
+                "country": String, 
+                "countryName": String, 
+                "state": String, 
+                "street1": String, 
+                "street2": String, 
+                "zipcode": String, 
+              },  
+              "state": String, 
+              "notes": String, 
+              "version": Number, 
+              "path": [String], 
+              "profileImage": { 
+                "resolution": String, 
+                "imageUri": String, 
+              },  
+              "floorplanImage": { 
+                "resolution": String, 
+                "imageUri": String, 
+              },  
+              "addressVerificationDetails": { 
+                "status": String, 
+                "dateFinished": Date, 
+                "dateStarted": Date, 
+                "service": String, 
+              },  
+              "addressVerified": Boolean, 
+              "addressStored": Boolean, 
+              "images": String, 
+              "selfUri": String, 
+            },  
+            "selfUri": String, 
+          },  
+          "station": { 
+            "associatedStation": { 
+              "id": String, 
+              "name": String, 
+              "type": String, 
+              "associatedUser": User, 
+              "associatedDate": Date, 
+              "defaultUser": User, 
+              "providerInfo": {String: String}, 
+            },  
+            "effectiveStation": { 
+              "id": String, 
+              "name": String, 
+              "type": String, 
+              "associatedUser": User, 
+              "associatedDate": Date, 
+              "defaultUser": User, 
+              "providerInfo": {String: String}, 
+            },  
+            "defaultStation": { 
+              "id": String, 
+              "name": String, 
+              "type": String, 
+              "associatedUser": User, 
+              "associatedDate": Date, 
+              "defaultUser": User, 
+              "providerInfo": {String: String}, 
+            },  
+            "lastAssociatedStation": { 
+              "id": String, 
+              "name": String, 
+              "type": String, 
+              "associatedUser": User, 
+              "associatedDate": Date, 
+              "defaultUser": User, 
+              "providerInfo": {String: String}, 
+            },  
+          },  
+          "authorization": { 
+            "roles": { 
+              "id": String, 
+              "name": String, 
+            },  
+            "unusedRoles": { 
+              "id": String, 
+              "name": String, 
+            },  
+            "permissions": [String], 
+            "permissionPolicies": { 
+              "id": String, 
+              "domain": String, 
+              "entityName": String, 
+              "policyName": String, 
+              "policyDescription": String, 
+              "actionSetKey": String, 
+              "allowConditions": Boolean, 
+              "resourceConditionNode": { 
+                "variableName": String, 
+                "conjunction": String, 
+                "operator": String, 
+                "operands": [ResourceConditionValue], 
+                "terms": [ResourceConditionNode], 
+              },  
+              "namedResources": [String], 
+              "resourceCondition": String, 
+              "actionSet": [String], 
+            },  
+          },  
+          "profileSkills": [String], 
+          "locations": { 
+            "id": String, 
+            "floorplanId": String, 
+            "coordinates": {String: Number}, 
+            "notes": String, 
+            "locationDefinition": { 
+              "id": String, 
+              "name": String, 
+              "contactUser": { 
+                "id": String, 
+                "selfUri": String, 
+              },  
+              "emergencyNumber": { 
+                "e164": String, 
+                "number": String, 
+                "type": String, 
+              },  
+              "address": { 
+                "city": String, 
+                "country": String, 
+                "countryName": String, 
+                "state": String, 
+                "street1": String, 
+                "street2": String, 
+                "zipcode": String, 
+              },  
+              "state": String, 
+              "notes": String, 
+              "version": Number, 
+              "path": [String], 
+              "profileImage": { 
+                "resolution": String, 
+                "imageUri": String, 
+              },  
+              "floorplanImage": { 
+                "resolution": String, 
+                "imageUri": String, 
+              },  
+              "addressVerificationDetails": { 
+                "status": String, 
+                "dateFinished": Date, 
+                "dateStarted": Date, 
+                "service": String, 
+              },  
+              "addressVerified": Boolean, 
+              "addressStored": Boolean, 
+              "images": String, 
+              "selfUri": String, 
+            },  
+          },  
+          "groups": { 
+            "id": String, 
+            "name": String, 
+            "description": String, 
+            "dateModified": Date, 
+            "memberCount": Number, 
+            "state": String, 
+            "version": Number, 
+            "type": String, 
+            "images": { 
+              "resolution": String, 
+              "imageUri": String, 
+            },  
+            "addresses": { 
+              "address": String, 
+              "extension": String, 
+              "display": String, 
+              "type": String, 
+              "mediaType": String, 
+            },  
+            "rulesVisible": Boolean, 
+            "visibility": String, 
+            "owners": User, 
+            "selfUri": String, 
+          },  
+          "team": { 
+            "id": String, 
+            "name": String, 
+            "description": String, 
+            "dateModified": Date, 
+            "memberCount": Number, 
+            "selfUri": String, 
+          },  
+          "skills": { 
+            "id": String, 
+            "name": String, 
+            "proficiency": Number, 
+            "state": String, 
+            "skillUri": String, 
+            "selfUri": String, 
+          },  
+          "languages": { 
+            "id": String, 
+            "name": String, 
+            "proficiency": Number, 
+            "state": String, 
+            "languageUri": String, 
+            "selfUri": String, 
+          },  
+          "acdAutoAnswer": Boolean, 
+          "languagePreference": String, 
+          "lastTokenIssued": { 
+            "dateIssued": Date, 
+          },  
+          "organization": { 
+            "id": String, 
+            "name": String, 
+            "defaultLanguage": String, 
+            "defaultCountryCode": String, 
+            "thirdPartyOrgName": String, 
+            "thirdPartyURI": String, 
+            "domain": String, 
+            "version": Number, 
+            "state": String, 
+            "defaultSiteId": String, 
+            "supportURI": String, 
+            "voicemailEnabled": Boolean, 
+            "productPlatform": String, 
+            "selfUri": String, 
+            "features": {String: Boolean}, 
+          },  
+        },  
+        "organization": { 
+          "id": String, 
+          "name": String, 
+          "defaultLanguage": String, 
+          "defaultCountryCode": String, 
+          "thirdPartyOrgName": String, 
+          "thirdPartyURI": String, 
+          "domain": String, 
+          "version": Number, 
+          "state": String, 
+          "defaultSiteId": String, 
+          "supportURI": String, 
+          "voicemailEnabled": Boolean, 
+          "productPlatform": String, 
+          "selfUri": String, 
+          "features": {String: Boolean}, 
+        },  
+        "authorization": { 
+          "permissions": [String], 
+        },  
+        "selfUri": String, 
+      },  
+      "schema": { 
+        "id": String, 
+        "name": String, 
+        "version": Number, 
+        "appliesTo": [String], 
+        "enabled": Boolean, 
+        "createdBy": { 
+          "id": String, 
+          "name": String, 
+          "selfUri": String, 
+        },  
+        "dateCreated": Date, 
+        "jsonSchema": { 
+          "id": String, 
+          "$schema": String, 
+          "title": String, 
+          "description": String, 
+          "type": String, 
+          "required": [String], 
+          "properties": {String: Object}, 
+          "additionalProperties": Object, 
+        },  
+        "selfUri": String, 
+      },  
+      "customFields": {String: Object}, 
+      "externalDataSources": { 
+        "platform": String, 
+        "url": String, 
+      },  
+      "selfUri": String, 
+    },  
+    "surveyOptOut": Boolean, 
+    "externalSystemUrl": String, 
+    "schema": { 
+      "id": String, 
+      "name": String, 
+      "version": Number, 
+      "appliesTo": [String], 
+      "enabled": Boolean, 
+      "createdBy": { 
+        "id": String, 
+        "name": String, 
+        "selfUri": String, 
+      },  
+      "dateCreated": Date, 
+      "jsonSchema": { 
+        "id": String, 
+        "$schema": String, 
+        "title": String, 
+        "description": String, 
+        "type": String, 
+        "required": [String], 
+        "properties": {String: Object}, 
+        "additionalProperties": Object, 
+      },  
+      "selfUri": String, 
+    },  
+    "customFields": {String: Object}, 
+    "externalDataSources": { 
+      "platform": String, 
+      "url": String, 
+    },  
+    "selfUri": String, 
+  },  
+}
+```
+
+</div>
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ExternalContactsApi();
+
+let body = {}; // Object | Contacts
+
+apiInstance.postExternalcontactsBulkContactsAdd(body)
+  .then((data) => {
+    console.log(`postExternalcontactsBulkContactsAdd success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postExternalcontactsBulkContactsAdd');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | Contacts |  |
+{: class="table table-striped"}
+
+### Return type
+
+**BulkContactsResponse**
+
+<a name="postExternalcontactsBulkContactsRemove"></a>
+
+# BulkDeleteResponse postExternalcontactsBulkContactsRemove(body)
+
+
+
+POST /api/v2/externalcontacts/bulk/contacts/remove
+
+Bulk remove contacts
+
+
+
+Requires ANY permissions: 
+
+* externalContacts:contact:delete
+
+
+### Request Body Schema
+
+<script type="text/javascript">
+	function copyBulkIdsRequestExample() {
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#BulkIdsRequestExample').text()).select();
+		document.execCommand("copy");
+		temp.remove();
+		return false;
+	}
+</script>
+
+BulkIdsRequest <a href="#" onclick="return copyBulkIdsRequestExample()">Copy</a>
+
+<div id="BulkIdsRequestExample">
+
+```{"language":"json", "maxHeight": "250px"}
+{ 
+  "entities": { 
+    "id": String, 
+  },  
+}
+```
+
+</div>
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ExternalContactsApi();
+
+let body = {}; // Object | Contact ids
+
+apiInstance.postExternalcontactsBulkContactsRemove(body)
+  .then((data) => {
+    console.log(`postExternalcontactsBulkContactsRemove success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postExternalcontactsBulkContactsRemove');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | Contact ids |  |
+{: class="table table-striped"}
+
+### Return type
+
+**BulkDeleteResponse**
+
+<a name="postExternalcontactsBulkContactsUpdate"></a>
+
+# BulkContactsResponse postExternalcontactsBulkContactsUpdate(body)
+
+
+
+POST /api/v2/externalcontacts/bulk/contacts/update
+
+Bulk update contacts
+
+
+
+Requires ANY permissions: 
+
+* externalContacts:contact:edit
+
+
+### Request Body Schema
+
+<script type="text/javascript">
+	function copyBulkContactsRequestExample() {
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#BulkContactsRequestExample').text()).select();
+		document.execCommand("copy");
+		temp.remove();
+		return false;
+	}
+</script>
+
+BulkContactsRequest <a href="#" onclick="return copyBulkContactsRequestExample()">Copy</a>
+
+<div id="BulkContactsRequestExample">
+
+```{"language":"json", "maxHeight": "250px"}
+{ 
+  "entities": { 
+    "id": String, 
+    "firstName": String, 
+    "middleName": String, 
+    "lastName": String, 
+    "salutation": String, 
+    "title": String, 
+    "workPhone": { 
+      "display": String, 
+      "extension": Number, 
+      "acceptsSMS": Boolean, 
+      "userInput": String, 
+      "e164": String, 
+      "countryCode": String, 
+    },  
+    "cellPhone": { 
+      "display": String, 
+      "extension": Number, 
+      "acceptsSMS": Boolean, 
+      "userInput": String, 
+      "e164": String, 
+      "countryCode": String, 
+    },  
+    "homePhone": { 
+      "display": String, 
+      "extension": Number, 
+      "acceptsSMS": Boolean, 
+      "userInput": String, 
+      "e164": String, 
+      "countryCode": String, 
+    },  
+    "otherPhone": { 
+      "display": String, 
+      "extension": Number, 
+      "acceptsSMS": Boolean, 
+      "userInput": String, 
+      "e164": String, 
+      "countryCode": String, 
+    },  
+    "workEmail": String, 
+    "personalEmail": String, 
+    "otherEmail": String, 
+    "address": { 
+      "address1": String, 
+      "address2": String, 
+      "city": String, 
+      "state": String, 
+      "postalCode": String, 
+      "countryCode": String, 
+    },  
+    "twitterId": { 
+      "id": String, 
+      "name": String, 
+      "screenName": String, 
+      "verified": Boolean, 
+      "profileUrl": String, 
+    },  
+    "lineId": { 
+      "ids": { 
+        "userId": String, 
+      },  
+      "displayName": String, 
+    },  
+    "whatsAppId": { 
+      "phoneNumber": { 
+        "display": String, 
+        "extension": Number, 
+        "acceptsSMS": Boolean, 
+        "userInput": String, 
+        "e164": String, 
+        "countryCode": String, 
+      },  
+      "displayName": String, 
+    },  
+    "facebookId": { 
+      "ids": { 
+        "scopedId": String, 
+      },  
+      "displayName": String, 
+    },  
+    "modifyDate": Date, 
+    "createDate": Date, 
+    "externalOrganization": { 
+      "id": String, 
+      "name": String, 
+      "companyType": String, 
+      "industry": String, 
+      "primaryContactId": String, 
+      "address": { 
+        "address1": String, 
+        "address2": String, 
+        "city": String, 
+        "state": String, 
+        "postalCode": String, 
+        "countryCode": String, 
+      },  
+      "phoneNumber": { 
+        "display": String, 
+        "extension": Number, 
+        "acceptsSMS": Boolean, 
+        "userInput": String, 
+        "e164": String, 
+        "countryCode": String, 
+      },  
+      "faxNumber": { 
+        "display": String, 
+        "extension": Number, 
+        "acceptsSMS": Boolean, 
+        "userInput": String, 
+        "e164": String, 
+        "countryCode": String, 
+      },  
+      "employeeCount": Number, 
+      "revenue": Number, 
+      "tags": [String], 
+      "websites": [String], 
+      "tickers": { 
+        "symbol": String, 
+        "exchange": String, 
+      },  
+      "twitterId": { 
+        "id": String, 
+        "name": String, 
+        "screenName": String, 
+        "verified": Boolean, 
+        "profileUrl": String, 
+      },  
+      "externalSystemUrl": String, 
+      "modifyDate": Date, 
+      "createDate": Date, 
+      "trustor": { 
+        "id": String, 
+        "enabled": Boolean, 
+        "dateCreated": Date, 
+        "createdBy": { 
+          "id": String, 
+          "name": String, 
+          "division": { 
+            "id": String, 
+            "name": String, 
+            "selfUri": String, 
+          },  
+          "chat": { 
+            "jabberId": String, 
+          },  
+          "department": String, 
+          "email": String, 
+          "primaryContactInfo": { 
+            "address": String, 
+            "display": String, 
+            "mediaType": String, 
+            "type": String, 
+            "extension": String, 
+            "countryCode": String, 
+          },  
+          "addresses": { 
+            "address": String, 
+            "display": String, 
+            "mediaType": String, 
+            "type": String, 
+            "extension": String, 
+            "countryCode": String, 
+          },  
+          "state": String, 
+          "title": String, 
+          "username": String, 
+          "manager": { 
+            "id": String, 
+            "name": String, 
+            "division": { 
+              "id": String, 
+              "name": String, 
+              "selfUri": String, 
+            },  
+            "chat": { 
+              "jabberId": String, 
+            },  
+            "department": String, 
+            "email": String, 
+            "primaryContactInfo": { 
+              "address": String, 
+              "display": String, 
+              "mediaType": String, 
+              "type": String, 
+              "extension": String, 
+              "countryCode": String, 
+            },  
+            "addresses": { 
+              "address": String, 
+              "display": String, 
+              "mediaType": String, 
+              "type": String, 
+              "extension": String, 
+              "countryCode": String, 
+            },  
+            "state": String, 
+            "title": String, 
+            "username": String, 
+            "manager": User, 
+            "images": { 
+              "resolution": String, 
+              "imageUri": String, 
+            },  
+            "version": Number, 
+            "certifications": [String], 
+            "biography": { 
+              "biography": String, 
+              "interests": [String], 
+              "hobbies": [String], 
+              "spouse": String, 
+              "education": { 
+                "school": String, 
+                "fieldOfStudy": String, 
+                "notes": String, 
+                "dateStart": String, 
+                "dateEnd": String, 
+              },  
+            },  
+            "employerInfo": { 
+              "officialName": String, 
+              "employeeId": String, 
+              "employeeType": String, 
+              "dateHire": String, 
+            },  
+            "routingStatus": { 
+              "userId": String, 
+              "status": String, 
+              "startTime": Date, 
+            },  
+            "presence": { 
+              "id": String, 
+              "name": String, 
+              "source": String, 
+              "primary": Boolean, 
+              "presenceDefinition": { 
+                "id": String, 
+                "systemPresence": String, 
+                "selfUri": String, 
+              },  
+              "message": String, 
+              "modifiedDate": Date, 
+              "selfUri": String, 
+            },  
+            "conversationSummary": { 
+              "userId": String, 
+              "call": { 
+                "contactCenter": MediaSummaryDetail, 
+                "enterprise": MediaSummaryDetail, 
+              },  
+              "callback": { 
+                "contactCenter": MediaSummaryDetail, 
+                "enterprise": MediaSummaryDetail, 
+              },  
+              "email": { 
+                "contactCenter": MediaSummaryDetail, 
+                "enterprise": MediaSummaryDetail, 
+              },  
+              "message": { 
+                "contactCenter": MediaSummaryDetail, 
+                "enterprise": MediaSummaryDetail, 
+              },  
+              "chat": { 
+                "contactCenter": MediaSummaryDetail, 
+                "enterprise": MediaSummaryDetail, 
+              },  
+              "socialExpression": { 
+                "contactCenter": MediaSummaryDetail, 
+                "enterprise": MediaSummaryDetail, 
+              },  
+              "video": { 
+                "contactCenter": MediaSummaryDetail, 
+                "enterprise": MediaSummaryDetail, 
+              },  
+            },  
+            "outOfOffice": { 
+              "id": String, 
+              "name": String, 
+              "user": User, 
+              "startDate": Date, 
+              "endDate": Date, 
+              "active": Boolean, 
+              "indefinite": Boolean, 
+              "selfUri": String, 
+            },  
+            "geolocation": { 
+              "id": String, 
+              "name": String, 
+              "type": String, 
+              "primary": Boolean, 
+              "latitude": Number, 
+              "longitude": Number, 
+              "country": String, 
+              "region": String, 
+              "city": String, 
+              "locations": { 
+                "id": String, 
+                "name": String, 
+                "contactUser": AddressableEntityRef, 
+                "emergencyNumber": LocationEmergencyNumber, 
+                "address": LocationAddress, 
+                "state": String, 
+                "notes": String, 
+                "version": Number, 
+                "path": [String], 
+                "profileImage": [LocationImage], 
+                "floorplanImage": [LocationImage], 
+                "addressVerificationDetails": LocationAddressVerificationDetails, 
+                "addressVerified": Boolean, 
+                "addressStored": Boolean, 
+                "images": String, 
+                "selfUri": String, 
+              },  
+              "selfUri": String, 
+            },  
+            "station": { 
+              "associatedStation": { 
+                "id": String, 
+                "name": String, 
+                "type": String, 
+                "associatedUser": User, 
+                "associatedDate": Date, 
+                "defaultUser": User, 
+                "providerInfo": {String: String}, 
+              },  
+              "effectiveStation": { 
+                "id": String, 
+                "name": String, 
+                "type": String, 
+                "associatedUser": User, 
+                "associatedDate": Date, 
+                "defaultUser": User, 
+                "providerInfo": {String: String}, 
+              },  
+              "defaultStation": { 
+                "id": String, 
+                "name": String, 
+                "type": String, 
+                "associatedUser": User, 
+                "associatedDate": Date, 
+                "defaultUser": User, 
+                "providerInfo": {String: String}, 
+              },  
+              "lastAssociatedStation": { 
+                "id": String, 
+                "name": String, 
+                "type": String, 
+                "associatedUser": User, 
+                "associatedDate": Date, 
+                "defaultUser": User, 
+                "providerInfo": {String: String}, 
+              },  
+            },  
+            "authorization": { 
+              "roles": { 
+                "id": String, 
+                "name": String, 
+              },  
+              "unusedRoles": { 
+                "id": String, 
+                "name": String, 
+              },  
+              "permissions": [String], 
+              "permissionPolicies": { 
+                "id": String, 
+                "domain": String, 
+                "entityName": String, 
+                "policyName": String, 
+                "policyDescription": String, 
+                "actionSetKey": String, 
+                "allowConditions": Boolean, 
+                "resourceConditionNode": ResourceConditionNode, 
+                "namedResources": [String], 
+                "resourceCondition": String, 
+                "actionSet": [String], 
+              },  
+            },  
+            "profileSkills": [String], 
+            "locations": { 
+              "id": String, 
+              "floorplanId": String, 
+              "coordinates": {String: Number}, 
+              "notes": String, 
+              "locationDefinition": { 
+                "id": String, 
+                "name": String, 
+                "contactUser": AddressableEntityRef, 
+                "emergencyNumber": LocationEmergencyNumber, 
+                "address": LocationAddress, 
+                "state": String, 
+                "notes": String, 
+                "version": Number, 
+                "path": [String], 
+                "profileImage": [LocationImage], 
+                "floorplanImage": [LocationImage], 
+                "addressVerificationDetails": LocationAddressVerificationDetails, 
+                "addressVerified": Boolean, 
+                "addressStored": Boolean, 
+                "images": String, 
+                "selfUri": String, 
+              },  
+            },  
+            "groups": { 
+              "id": String, 
+              "name": String, 
+              "description": String, 
+              "dateModified": Date, 
+              "memberCount": Number, 
+              "state": String, 
+              "version": Number, 
+              "type": String, 
+              "images": { 
+                "resolution": String, 
+                "imageUri": String, 
+              },  
+              "addresses": { 
+                "address": String, 
+                "extension": String, 
+                "display": String, 
+                "type": String, 
+                "mediaType": String, 
+              },  
+              "rulesVisible": Boolean, 
+              "visibility": String, 
+              "owners": User, 
+              "selfUri": String, 
+            },  
+            "team": { 
+              "id": String, 
+              "name": String, 
+              "description": String, 
+              "dateModified": Date, 
+              "memberCount": Number, 
+              "selfUri": String, 
+            },  
+            "skills": { 
+              "id": String, 
+              "name": String, 
+              "proficiency": Number, 
+              "state": String, 
+              "skillUri": String, 
+              "selfUri": String, 
+            },  
+            "languages": { 
+              "id": String, 
+              "name": String, 
+              "proficiency": Number, 
+              "state": String, 
+              "languageUri": String, 
+              "selfUri": String, 
+            },  
+            "acdAutoAnswer": Boolean, 
+            "languagePreference": String, 
+            "lastTokenIssued": { 
+              "dateIssued": Date, 
+            },  
+            "selfUri": String, 
+          },  
+          "images": { 
+            "resolution": String, 
+            "imageUri": String, 
+          },  
+          "version": Number, 
+          "certifications": [String], 
+          "biography": { 
+            "biography": String, 
+            "interests": [String], 
+            "hobbies": [String], 
+            "spouse": String, 
+            "education": { 
+              "school": String, 
+              "fieldOfStudy": String, 
+              "notes": String, 
+              "dateStart": String, 
+              "dateEnd": String, 
+            },  
+          },  
+          "employerInfo": { 
+            "officialName": String, 
+            "employeeId": String, 
+            "employeeType": String, 
+            "dateHire": String, 
+          },  
+          "routingStatus": { 
+            "userId": String, 
+            "status": String, 
+            "startTime": Date, 
+          },  
+          "presence": { 
+            "id": String, 
+            "name": String, 
+            "source": String, 
+            "primary": Boolean, 
+            "presenceDefinition": { 
+              "id": String, 
+              "systemPresence": String, 
+              "selfUri": String, 
+            },  
+            "message": String, 
+            "modifiedDate": Date, 
+            "selfUri": String, 
+          },  
+          "conversationSummary": { 
+            "userId": String, 
+            "call": { 
+              "contactCenter": { 
+                "active": Number, 
+                "acw": Number, 
+              },  
+              "enterprise": { 
+                "active": Number, 
+                "acw": Number, 
+              },  
+            },  
+            "callback": { 
+              "contactCenter": { 
+                "active": Number, 
+                "acw": Number, 
+              },  
+              "enterprise": { 
+                "active": Number, 
+                "acw": Number, 
+              },  
+            },  
+            "email": { 
+              "contactCenter": { 
+                "active": Number, 
+                "acw": Number, 
+              },  
+              "enterprise": { 
+                "active": Number, 
+                "acw": Number, 
+              },  
+            },  
+            "message": { 
+              "contactCenter": { 
+                "active": Number, 
+                "acw": Number, 
+              },  
+              "enterprise": { 
+                "active": Number, 
+                "acw": Number, 
+              },  
+            },  
+            "chat": { 
+              "contactCenter": { 
+                "active": Number, 
+                "acw": Number, 
+              },  
+              "enterprise": { 
+                "active": Number, 
+                "acw": Number, 
+              },  
+            },  
+            "socialExpression": { 
+              "contactCenter": { 
+                "active": Number, 
+                "acw": Number, 
+              },  
+              "enterprise": { 
+                "active": Number, 
+                "acw": Number, 
+              },  
+            },  
+            "video": { 
+              "contactCenter": { 
+                "active": Number, 
+                "acw": Number, 
+              },  
+              "enterprise": { 
+                "active": Number, 
+                "acw": Number, 
+              },  
+            },  
+          },  
+          "outOfOffice": { 
+            "id": String, 
+            "name": String, 
+            "user": User, 
+            "startDate": Date, 
+            "endDate": Date, 
+            "active": Boolean, 
+            "indefinite": Boolean, 
+            "selfUri": String, 
+          },  
+          "geolocation": { 
+            "id": String, 
+            "name": String, 
+            "type": String, 
+            "primary": Boolean, 
+            "latitude": Number, 
+            "longitude": Number, 
+            "country": String, 
+            "region": String, 
+            "city": String, 
+            "locations": { 
+              "id": String, 
+              "name": String, 
+              "contactUser": { 
+                "id": String, 
+                "selfUri": String, 
+              },  
+              "emergencyNumber": { 
+                "e164": String, 
+                "number": String, 
+                "type": String, 
+              },  
+              "address": { 
+                "city": String, 
+                "country": String, 
+                "countryName": String, 
+                "state": String, 
+                "street1": String, 
+                "street2": String, 
+                "zipcode": String, 
+              },  
+              "state": String, 
+              "notes": String, 
+              "version": Number, 
+              "path": [String], 
+              "profileImage": { 
+                "resolution": String, 
+                "imageUri": String, 
+              },  
+              "floorplanImage": { 
+                "resolution": String, 
+                "imageUri": String, 
+              },  
+              "addressVerificationDetails": { 
+                "status": String, 
+                "dateFinished": Date, 
+                "dateStarted": Date, 
+                "service": String, 
+              },  
+              "addressVerified": Boolean, 
+              "addressStored": Boolean, 
+              "images": String, 
+              "selfUri": String, 
+            },  
+            "selfUri": String, 
+          },  
+          "station": { 
+            "associatedStation": { 
+              "id": String, 
+              "name": String, 
+              "type": String, 
+              "associatedUser": User, 
+              "associatedDate": Date, 
+              "defaultUser": User, 
+              "providerInfo": {String: String}, 
+            },  
+            "effectiveStation": { 
+              "id": String, 
+              "name": String, 
+              "type": String, 
+              "associatedUser": User, 
+              "associatedDate": Date, 
+              "defaultUser": User, 
+              "providerInfo": {String: String}, 
+            },  
+            "defaultStation": { 
+              "id": String, 
+              "name": String, 
+              "type": String, 
+              "associatedUser": User, 
+              "associatedDate": Date, 
+              "defaultUser": User, 
+              "providerInfo": {String: String}, 
+            },  
+            "lastAssociatedStation": { 
+              "id": String, 
+              "name": String, 
+              "type": String, 
+              "associatedUser": User, 
+              "associatedDate": Date, 
+              "defaultUser": User, 
+              "providerInfo": {String: String}, 
+            },  
+          },  
+          "authorization": { 
+            "roles": { 
+              "id": String, 
+              "name": String, 
+            },  
+            "unusedRoles": { 
+              "id": String, 
+              "name": String, 
+            },  
+            "permissions": [String], 
+            "permissionPolicies": { 
+              "id": String, 
+              "domain": String, 
+              "entityName": String, 
+              "policyName": String, 
+              "policyDescription": String, 
+              "actionSetKey": String, 
+              "allowConditions": Boolean, 
+              "resourceConditionNode": { 
+                "variableName": String, 
+                "conjunction": String, 
+                "operator": String, 
+                "operands": [ResourceConditionValue], 
+                "terms": [ResourceConditionNode], 
+              },  
+              "namedResources": [String], 
+              "resourceCondition": String, 
+              "actionSet": [String], 
+            },  
+          },  
+          "profileSkills": [String], 
+          "locations": { 
+            "id": String, 
+            "floorplanId": String, 
+            "coordinates": {String: Number}, 
+            "notes": String, 
+            "locationDefinition": { 
+              "id": String, 
+              "name": String, 
+              "contactUser": { 
+                "id": String, 
+                "selfUri": String, 
+              },  
+              "emergencyNumber": { 
+                "e164": String, 
+                "number": String, 
+                "type": String, 
+              },  
+              "address": { 
+                "city": String, 
+                "country": String, 
+                "countryName": String, 
+                "state": String, 
+                "street1": String, 
+                "street2": String, 
+                "zipcode": String, 
+              },  
+              "state": String, 
+              "notes": String, 
+              "version": Number, 
+              "path": [String], 
+              "profileImage": { 
+                "resolution": String, 
+                "imageUri": String, 
+              },  
+              "floorplanImage": { 
+                "resolution": String, 
+                "imageUri": String, 
+              },  
+              "addressVerificationDetails": { 
+                "status": String, 
+                "dateFinished": Date, 
+                "dateStarted": Date, 
+                "service": String, 
+              },  
+              "addressVerified": Boolean, 
+              "addressStored": Boolean, 
+              "images": String, 
+              "selfUri": String, 
+            },  
+          },  
+          "groups": { 
+            "id": String, 
+            "name": String, 
+            "description": String, 
+            "dateModified": Date, 
+            "memberCount": Number, 
+            "state": String, 
+            "version": Number, 
+            "type": String, 
+            "images": { 
+              "resolution": String, 
+              "imageUri": String, 
+            },  
+            "addresses": { 
+              "address": String, 
+              "extension": String, 
+              "display": String, 
+              "type": String, 
+              "mediaType": String, 
+            },  
+            "rulesVisible": Boolean, 
+            "visibility": String, 
+            "owners": User, 
+            "selfUri": String, 
+          },  
+          "team": { 
+            "id": String, 
+            "name": String, 
+            "description": String, 
+            "dateModified": Date, 
+            "memberCount": Number, 
+            "selfUri": String, 
+          },  
+          "skills": { 
+            "id": String, 
+            "name": String, 
+            "proficiency": Number, 
+            "state": String, 
+            "skillUri": String, 
+            "selfUri": String, 
+          },  
+          "languages": { 
+            "id": String, 
+            "name": String, 
+            "proficiency": Number, 
+            "state": String, 
+            "languageUri": String, 
+            "selfUri": String, 
+          },  
+          "acdAutoAnswer": Boolean, 
+          "languagePreference": String, 
+          "lastTokenIssued": { 
+            "dateIssued": Date, 
+          },  
+          "organization": { 
+            "id": String, 
+            "name": String, 
+            "defaultLanguage": String, 
+            "defaultCountryCode": String, 
+            "thirdPartyOrgName": String, 
+            "thirdPartyURI": String, 
+            "domain": String, 
+            "version": Number, 
+            "state": String, 
+            "defaultSiteId": String, 
+            "supportURI": String, 
+            "voicemailEnabled": Boolean, 
+            "productPlatform": String, 
+            "selfUri": String, 
+            "features": {String: Boolean}, 
+          },  
+        },  
+        "organization": { 
+          "id": String, 
+          "name": String, 
+          "defaultLanguage": String, 
+          "defaultCountryCode": String, 
+          "thirdPartyOrgName": String, 
+          "thirdPartyURI": String, 
+          "domain": String, 
+          "version": Number, 
+          "state": String, 
+          "defaultSiteId": String, 
+          "supportURI": String, 
+          "voicemailEnabled": Boolean, 
+          "productPlatform": String, 
+          "selfUri": String, 
+          "features": {String: Boolean}, 
+        },  
+        "authorization": { 
+          "permissions": [String], 
+        },  
+        "selfUri": String, 
+      },  
+      "schema": { 
+        "id": String, 
+        "name": String, 
+        "version": Number, 
+        "appliesTo": [String], 
+        "enabled": Boolean, 
+        "createdBy": { 
+          "id": String, 
+          "name": String, 
+          "selfUri": String, 
+        },  
+        "dateCreated": Date, 
+        "jsonSchema": { 
+          "id": String, 
+          "$schema": String, 
+          "title": String, 
+          "description": String, 
+          "type": String, 
+          "required": [String], 
+          "properties": {String: Object}, 
+          "additionalProperties": Object, 
+        },  
+        "selfUri": String, 
+      },  
+      "customFields": {String: Object}, 
+      "externalDataSources": { 
+        "platform": String, 
+        "url": String, 
+      },  
+      "selfUri": String, 
+    },  
+    "surveyOptOut": Boolean, 
+    "externalSystemUrl": String, 
+    "schema": { 
+      "id": String, 
+      "name": String, 
+      "version": Number, 
+      "appliesTo": [String], 
+      "enabled": Boolean, 
+      "createdBy": { 
+        "id": String, 
+        "name": String, 
+        "selfUri": String, 
+      },  
+      "dateCreated": Date, 
+      "jsonSchema": { 
+        "id": String, 
+        "$schema": String, 
+        "title": String, 
+        "description": String, 
+        "type": String, 
+        "required": [String], 
+        "properties": {String: Object}, 
+        "additionalProperties": Object, 
+      },  
+      "selfUri": String, 
+    },  
+    "customFields": {String: Object}, 
+    "externalDataSources": { 
+      "platform": String, 
+      "url": String, 
+    },  
+    "selfUri": String, 
+  },  
+}
+```
+
+</div>
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ExternalContactsApi();
+
+let body = {}; // Object | Contacts
+
+apiInstance.postExternalcontactsBulkContactsUpdate(body)
+  .then((data) => {
+    console.log(`postExternalcontactsBulkContactsUpdate success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postExternalcontactsBulkContactsUpdate');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | Contacts |  |
+{: class="table table-striped"}
+
+### Return type
+
+**BulkContactsResponse**
+
+<a name="postExternalcontactsBulkOrganizations"></a>
+
+# BulkFetchOrganizationsResponse postExternalcontactsBulkOrganizations(body)
+
+
+
+POST /api/v2/externalcontacts/bulk/organizations
+
+Bulk fetch organizations
+
+
+
+Requires ANY permissions: 
+
+* externalContacts:externalOrganization:view
+
+
+### Request Body Schema
+
+<script type="text/javascript">
+	function copyBulkIdsRequestExample() {
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#BulkIdsRequestExample').text()).select();
+		document.execCommand("copy");
+		temp.remove();
+		return false;
+	}
+</script>
+
+BulkIdsRequest <a href="#" onclick="return copyBulkIdsRequestExample()">Copy</a>
+
+<div id="BulkIdsRequestExample">
+
+```{"language":"json", "maxHeight": "250px"}
+{ 
+  "entities": { 
+    "id": String, 
+  },  
+}
+```
+
+</div>
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ExternalContactsApi();
+
+let body = {}; // Object | Organizations ids
+
+apiInstance.postExternalcontactsBulkOrganizations(body)
+  .then((data) => {
+    console.log(`postExternalcontactsBulkOrganizations success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postExternalcontactsBulkOrganizations');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | Organizations ids |  |
+{: class="table table-striped"}
+
+### Return type
+
+**BulkFetchOrganizationsResponse**
+
+<a name="postExternalcontactsBulkOrganizationsAdd"></a>
+
+# BulkOrganizationsResponse postExternalcontactsBulkOrganizationsAdd(body)
+
+
+
+POST /api/v2/externalcontacts/bulk/organizations/add
+
+Bulk add organizations
+
+
+
+Requires ANY permissions: 
+
+* externalContacts:externalOrganization:add
+
+
+### Request Body Schema
+
+<script type="text/javascript">
+	function copyBulkOrganizationsRequestExample() {
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#BulkOrganizationsRequestExample').text()).select();
+		document.execCommand("copy");
+		temp.remove();
+		return false;
+	}
+</script>
+
+BulkOrganizationsRequest <a href="#" onclick="return copyBulkOrganizationsRequestExample()">Copy</a>
+
+<div id="BulkOrganizationsRequestExample">
+
+```{"language":"json", "maxHeight": "250px"}
+{ 
+  "entities": { 
+    "id": String, 
+    "name": String, 
+    "companyType": String, 
+    "industry": String, 
+    "primaryContactId": String, 
+    "address": { 
+      "address1": String, 
+      "address2": String, 
+      "city": String, 
+      "state": String, 
+      "postalCode": String, 
+      "countryCode": String, 
+    },  
+    "phoneNumber": { 
+      "display": String, 
+      "extension": Number, 
+      "acceptsSMS": Boolean, 
+      "userInput": String, 
+      "e164": String, 
+      "countryCode": String, 
+    },  
+    "faxNumber": { 
+      "display": String, 
+      "extension": Number, 
+      "acceptsSMS": Boolean, 
+      "userInput": String, 
+      "e164": String, 
+      "countryCode": String, 
+    },  
+    "employeeCount": Number, 
+    "revenue": Number, 
+    "tags": [String], 
+    "websites": [String], 
+    "tickers": { 
+      "symbol": String, 
+      "exchange": String, 
+    },  
+    "twitterId": { 
+      "id": String, 
+      "name": String, 
+      "screenName": String, 
+      "verified": Boolean, 
+      "profileUrl": String, 
+    },  
+    "externalSystemUrl": String, 
+    "modifyDate": Date, 
+    "createDate": Date, 
+    "trustor": { 
+      "id": String, 
+      "enabled": Boolean, 
+      "dateCreated": Date, 
+      "createdBy": { 
+        "id": String, 
+        "name": String, 
+        "division": { 
+          "id": String, 
+          "name": String, 
+          "selfUri": String, 
+        },  
+        "chat": { 
+          "jabberId": String, 
+        },  
+        "department": String, 
+        "email": String, 
+        "primaryContactInfo": { 
+          "address": String, 
+          "display": String, 
+          "mediaType": String, 
+          "type": String, 
+          "extension": String, 
+          "countryCode": String, 
+        },  
+        "addresses": { 
+          "address": String, 
+          "display": String, 
+          "mediaType": String, 
+          "type": String, 
+          "extension": String, 
+          "countryCode": String, 
+        },  
+        "state": String, 
+        "title": String, 
+        "username": String, 
+        "manager": { 
+          "id": String, 
+          "name": String, 
+          "division": { 
+            "id": String, 
+            "name": String, 
+            "selfUri": String, 
+          },  
+          "chat": { 
+            "jabberId": String, 
+          },  
+          "department": String, 
+          "email": String, 
+          "primaryContactInfo": { 
+            "address": String, 
+            "display": String, 
+            "mediaType": String, 
+            "type": String, 
+            "extension": String, 
+            "countryCode": String, 
+          },  
+          "addresses": { 
+            "address": String, 
+            "display": String, 
+            "mediaType": String, 
+            "type": String, 
+            "extension": String, 
+            "countryCode": String, 
+          },  
+          "state": String, 
+          "title": String, 
+          "username": String, 
+          "manager": User, 
+          "images": { 
+            "resolution": String, 
+            "imageUri": String, 
+          },  
+          "version": Number, 
+          "certifications": [String], 
+          "biography": { 
+            "biography": String, 
+            "interests": [String], 
+            "hobbies": [String], 
+            "spouse": String, 
+            "education": { 
+              "school": String, 
+              "fieldOfStudy": String, 
+              "notes": String, 
+              "dateStart": String, 
+              "dateEnd": String, 
+            },  
+          },  
+          "employerInfo": { 
+            "officialName": String, 
+            "employeeId": String, 
+            "employeeType": String, 
+            "dateHire": String, 
+          },  
+          "routingStatus": { 
+            "userId": String, 
+            "status": String, 
+            "startTime": Date, 
+          },  
+          "presence": { 
+            "id": String, 
+            "name": String, 
+            "source": String, 
+            "primary": Boolean, 
+            "presenceDefinition": { 
+              "id": String, 
+              "systemPresence": String, 
+              "selfUri": String, 
+            },  
+            "message": String, 
+            "modifiedDate": Date, 
+            "selfUri": String, 
+          },  
+          "conversationSummary": { 
+            "userId": String, 
+            "call": { 
+              "contactCenter": { 
+                "active": Number, 
+                "acw": Number, 
+              },  
+              "enterprise": { 
+                "active": Number, 
+                "acw": Number, 
+              },  
+            },  
+            "callback": { 
+              "contactCenter": { 
+                "active": Number, 
+                "acw": Number, 
+              },  
+              "enterprise": { 
+                "active": Number, 
+                "acw": Number, 
+              },  
+            },  
+            "email": { 
+              "contactCenter": { 
+                "active": Number, 
+                "acw": Number, 
+              },  
+              "enterprise": { 
+                "active": Number, 
+                "acw": Number, 
+              },  
+            },  
+            "message": { 
+              "contactCenter": { 
+                "active": Number, 
+                "acw": Number, 
+              },  
+              "enterprise": { 
+                "active": Number, 
+                "acw": Number, 
+              },  
+            },  
+            "chat": { 
+              "contactCenter": { 
+                "active": Number, 
+                "acw": Number, 
+              },  
+              "enterprise": { 
+                "active": Number, 
+                "acw": Number, 
+              },  
+            },  
+            "socialExpression": { 
+              "contactCenter": { 
+                "active": Number, 
+                "acw": Number, 
+              },  
+              "enterprise": { 
+                "active": Number, 
+                "acw": Number, 
+              },  
+            },  
+            "video": { 
+              "contactCenter": { 
+                "active": Number, 
+                "acw": Number, 
+              },  
+              "enterprise": { 
+                "active": Number, 
+                "acw": Number, 
+              },  
+            },  
+          },  
+          "outOfOffice": { 
+            "id": String, 
+            "name": String, 
+            "user": User, 
+            "startDate": Date, 
+            "endDate": Date, 
+            "active": Boolean, 
+            "indefinite": Boolean, 
+            "selfUri": String, 
+          },  
+          "geolocation": { 
+            "id": String, 
+            "name": String, 
+            "type": String, 
+            "primary": Boolean, 
+            "latitude": Number, 
+            "longitude": Number, 
+            "country": String, 
+            "region": String, 
+            "city": String, 
+            "locations": { 
+              "id": String, 
+              "name": String, 
+              "contactUser": { 
+                "id": String, 
+                "selfUri": String, 
+              },  
+              "emergencyNumber": { 
+                "e164": String, 
+                "number": String, 
+                "type": String, 
+              },  
+              "address": { 
+                "city": String, 
+                "country": String, 
+                "countryName": String, 
+                "state": String, 
+                "street1": String, 
+                "street2": String, 
+                "zipcode": String, 
+              },  
+              "state": String, 
+              "notes": String, 
+              "version": Number, 
+              "path": [String], 
+              "profileImage": { 
+                "resolution": String, 
+                "imageUri": String, 
+              },  
+              "floorplanImage": { 
+                "resolution": String, 
+                "imageUri": String, 
+              },  
+              "addressVerificationDetails": { 
+                "status": String, 
+                "dateFinished": Date, 
+                "dateStarted": Date, 
+                "service": String, 
+              },  
+              "addressVerified": Boolean, 
+              "addressStored": Boolean, 
+              "images": String, 
+              "selfUri": String, 
+            },  
+            "selfUri": String, 
+          },  
+          "station": { 
+            "associatedStation": { 
+              "id": String, 
+              "name": String, 
+              "type": String, 
+              "associatedUser": User, 
+              "associatedDate": Date, 
+              "defaultUser": User, 
+              "providerInfo": {String: String}, 
+            },  
+            "effectiveStation": { 
+              "id": String, 
+              "name": String, 
+              "type": String, 
+              "associatedUser": User, 
+              "associatedDate": Date, 
+              "defaultUser": User, 
+              "providerInfo": {String: String}, 
+            },  
+            "defaultStation": { 
+              "id": String, 
+              "name": String, 
+              "type": String, 
+              "associatedUser": User, 
+              "associatedDate": Date, 
+              "defaultUser": User, 
+              "providerInfo": {String: String}, 
+            },  
+            "lastAssociatedStation": { 
+              "id": String, 
+              "name": String, 
+              "type": String, 
+              "associatedUser": User, 
+              "associatedDate": Date, 
+              "defaultUser": User, 
+              "providerInfo": {String: String}, 
+            },  
+          },  
+          "authorization": { 
+            "roles": { 
+              "id": String, 
+              "name": String, 
+            },  
+            "unusedRoles": { 
+              "id": String, 
+              "name": String, 
+            },  
+            "permissions": [String], 
+            "permissionPolicies": { 
+              "id": String, 
+              "domain": String, 
+              "entityName": String, 
+              "policyName": String, 
+              "policyDescription": String, 
+              "actionSetKey": String, 
+              "allowConditions": Boolean, 
+              "resourceConditionNode": { 
+                "variableName": String, 
+                "conjunction": String, 
+                "operator": String, 
+                "operands": [ResourceConditionValue], 
+                "terms": [ResourceConditionNode], 
+              },  
+              "namedResources": [String], 
+              "resourceCondition": String, 
+              "actionSet": [String], 
+            },  
+          },  
+          "profileSkills": [String], 
+          "locations": { 
+            "id": String, 
+            "floorplanId": String, 
+            "coordinates": {String: Number}, 
+            "notes": String, 
+            "locationDefinition": { 
+              "id": String, 
+              "name": String, 
+              "contactUser": { 
+                "id": String, 
+                "selfUri": String, 
+              },  
+              "emergencyNumber": { 
+                "e164": String, 
+                "number": String, 
+                "type": String, 
+              },  
+              "address": { 
+                "city": String, 
+                "country": String, 
+                "countryName": String, 
+                "state": String, 
+                "street1": String, 
+                "street2": String, 
+                "zipcode": String, 
+              },  
+              "state": String, 
+              "notes": String, 
+              "version": Number, 
+              "path": [String], 
+              "profileImage": { 
+                "resolution": String, 
+                "imageUri": String, 
+              },  
+              "floorplanImage": { 
+                "resolution": String, 
+                "imageUri": String, 
+              },  
+              "addressVerificationDetails": { 
+                "status": String, 
+                "dateFinished": Date, 
+                "dateStarted": Date, 
+                "service": String, 
+              },  
+              "addressVerified": Boolean, 
+              "addressStored": Boolean, 
+              "images": String, 
+              "selfUri": String, 
+            },  
+          },  
+          "groups": { 
+            "id": String, 
+            "name": String, 
+            "description": String, 
+            "dateModified": Date, 
+            "memberCount": Number, 
+            "state": String, 
+            "version": Number, 
+            "type": String, 
+            "images": { 
+              "resolution": String, 
+              "imageUri": String, 
+            },  
+            "addresses": { 
+              "address": String, 
+              "extension": String, 
+              "display": String, 
+              "type": String, 
+              "mediaType": String, 
+            },  
+            "rulesVisible": Boolean, 
+            "visibility": String, 
+            "owners": User, 
+            "selfUri": String, 
+          },  
+          "team": { 
+            "id": String, 
+            "name": String, 
+            "description": String, 
+            "dateModified": Date, 
+            "memberCount": Number, 
+            "selfUri": String, 
+          },  
+          "skills": { 
+            "id": String, 
+            "name": String, 
+            "proficiency": Number, 
+            "state": String, 
+            "skillUri": String, 
+            "selfUri": String, 
+          },  
+          "languages": { 
+            "id": String, 
+            "name": String, 
+            "proficiency": Number, 
+            "state": String, 
+            "languageUri": String, 
+            "selfUri": String, 
+          },  
+          "acdAutoAnswer": Boolean, 
+          "languagePreference": String, 
+          "lastTokenIssued": { 
+            "dateIssued": Date, 
+          },  
+          "selfUri": String, 
+        },  
+        "images": { 
+          "resolution": String, 
+          "imageUri": String, 
+        },  
+        "version": Number, 
+        "certifications": [String], 
+        "biography": { 
+          "biography": String, 
+          "interests": [String], 
+          "hobbies": [String], 
+          "spouse": String, 
+          "education": { 
+            "school": String, 
+            "fieldOfStudy": String, 
+            "notes": String, 
+            "dateStart": String, 
+            "dateEnd": String, 
+          },  
+        },  
+        "employerInfo": { 
+          "officialName": String, 
+          "employeeId": String, 
+          "employeeType": String, 
+          "dateHire": String, 
+        },  
+        "routingStatus": { 
+          "userId": String, 
+          "status": String, 
+          "startTime": Date, 
+        },  
+        "presence": { 
+          "id": String, 
+          "name": String, 
+          "source": String, 
+          "primary": Boolean, 
+          "presenceDefinition": { 
+            "id": String, 
+            "systemPresence": String, 
+            "selfUri": String, 
+          },  
+          "message": String, 
+          "modifiedDate": Date, 
+          "selfUri": String, 
+        },  
+        "conversationSummary": { 
+          "userId": String, 
+          "call": { 
+            "contactCenter": { 
+              "active": Number, 
+              "acw": Number, 
+            },  
+            "enterprise": { 
+              "active": Number, 
+              "acw": Number, 
+            },  
+          },  
+          "callback": { 
+            "contactCenter": { 
+              "active": Number, 
+              "acw": Number, 
+            },  
+            "enterprise": { 
+              "active": Number, 
+              "acw": Number, 
+            },  
+          },  
+          "email": { 
+            "contactCenter": { 
+              "active": Number, 
+              "acw": Number, 
+            },  
+            "enterprise": { 
+              "active": Number, 
+              "acw": Number, 
+            },  
+          },  
+          "message": { 
+            "contactCenter": { 
+              "active": Number, 
+              "acw": Number, 
+            },  
+            "enterprise": { 
+              "active": Number, 
+              "acw": Number, 
+            },  
+          },  
+          "chat": { 
+            "contactCenter": { 
+              "active": Number, 
+              "acw": Number, 
+            },  
+            "enterprise": { 
+              "active": Number, 
+              "acw": Number, 
+            },  
+          },  
+          "socialExpression": { 
+            "contactCenter": { 
+              "active": Number, 
+              "acw": Number, 
+            },  
+            "enterprise": { 
+              "active": Number, 
+              "acw": Number, 
+            },  
+          },  
+          "video": { 
+            "contactCenter": { 
+              "active": Number, 
+              "acw": Number, 
+            },  
+            "enterprise": { 
+              "active": Number, 
+              "acw": Number, 
+            },  
+          },  
+        },  
+        "outOfOffice": { 
+          "id": String, 
+          "name": String, 
+          "user": User, 
+          "startDate": Date, 
+          "endDate": Date, 
+          "active": Boolean, 
+          "indefinite": Boolean, 
+          "selfUri": String, 
+        },  
+        "geolocation": { 
+          "id": String, 
+          "name": String, 
+          "type": String, 
+          "primary": Boolean, 
+          "latitude": Number, 
+          "longitude": Number, 
+          "country": String, 
+          "region": String, 
+          "city": String, 
+          "locations": { 
+            "id": String, 
+            "name": String, 
+            "contactUser": { 
+              "id": String, 
+              "selfUri": String, 
+            },  
+            "emergencyNumber": { 
+              "e164": String, 
+              "number": String, 
+              "type": String, 
+            },  
+            "address": { 
+              "city": String, 
+              "country": String, 
+              "countryName": String, 
+              "state": String, 
+              "street1": String, 
+              "street2": String, 
+              "zipcode": String, 
+            },  
+            "state": String, 
+            "notes": String, 
+            "version": Number, 
+            "path": [String], 
+            "profileImage": { 
+              "resolution": String, 
+              "imageUri": String, 
+            },  
+            "floorplanImage": { 
+              "resolution": String, 
+              "imageUri": String, 
+            },  
+            "addressVerificationDetails": { 
+              "status": String, 
+              "dateFinished": Date, 
+              "dateStarted": Date, 
+              "service": String, 
+            },  
+            "addressVerified": Boolean, 
+            "addressStored": Boolean, 
+            "images": String, 
+            "selfUri": String, 
+          },  
+          "selfUri": String, 
+        },  
+        "station": { 
+          "associatedStation": { 
+            "id": String, 
+            "name": String, 
+            "type": String, 
+            "associatedUser": User, 
+            "associatedDate": Date, 
+            "defaultUser": User, 
+            "providerInfo": {String: String}, 
+          },  
+          "effectiveStation": { 
+            "id": String, 
+            "name": String, 
+            "type": String, 
+            "associatedUser": User, 
+            "associatedDate": Date, 
+            "defaultUser": User, 
+            "providerInfo": {String: String}, 
+          },  
+          "defaultStation": { 
+            "id": String, 
+            "name": String, 
+            "type": String, 
+            "associatedUser": User, 
+            "associatedDate": Date, 
+            "defaultUser": User, 
+            "providerInfo": {String: String}, 
+          },  
+          "lastAssociatedStation": { 
+            "id": String, 
+            "name": String, 
+            "type": String, 
+            "associatedUser": User, 
+            "associatedDate": Date, 
+            "defaultUser": User, 
+            "providerInfo": {String: String}, 
+          },  
+        },  
+        "authorization": { 
+          "roles": { 
+            "id": String, 
+            "name": String, 
+          },  
+          "unusedRoles": { 
+            "id": String, 
+            "name": String, 
+          },  
+          "permissions": [String], 
+          "permissionPolicies": { 
+            "id": String, 
+            "domain": String, 
+            "entityName": String, 
+            "policyName": String, 
+            "policyDescription": String, 
+            "actionSetKey": String, 
+            "allowConditions": Boolean, 
+            "resourceConditionNode": { 
+              "variableName": String, 
+              "conjunction": String, 
+              "operator": String, 
+              "operands": { 
+                "type": String, 
+                "value": String, 
+              },  
+              "terms": { 
+                "variableName": String, 
+                "conjunction": String, 
+                "operator": String, 
+                "operands": [ResourceConditionValue], 
+                "terms": [ResourceConditionNode], 
+              },  
+            },  
+            "namedResources": [String], 
+            "resourceCondition": String, 
+            "actionSet": [String], 
+          },  
+        },  
+        "profileSkills": [String], 
+        "locations": { 
+          "id": String, 
+          "floorplanId": String, 
+          "coordinates": {String: Number}, 
+          "notes": String, 
+          "locationDefinition": { 
+            "id": String, 
+            "name": String, 
+            "contactUser": { 
+              "id": String, 
+              "selfUri": String, 
+            },  
+            "emergencyNumber": { 
+              "e164": String, 
+              "number": String, 
+              "type": String, 
+            },  
+            "address": { 
+              "city": String, 
+              "country": String, 
+              "countryName": String, 
+              "state": String, 
+              "street1": String, 
+              "street2": String, 
+              "zipcode": String, 
+            },  
+            "state": String, 
+            "notes": String, 
+            "version": Number, 
+            "path": [String], 
+            "profileImage": { 
+              "resolution": String, 
+              "imageUri": String, 
+            },  
+            "floorplanImage": { 
+              "resolution": String, 
+              "imageUri": String, 
+            },  
+            "addressVerificationDetails": { 
+              "status": String, 
+              "dateFinished": Date, 
+              "dateStarted": Date, 
+              "service": String, 
+            },  
+            "addressVerified": Boolean, 
+            "addressStored": Boolean, 
+            "images": String, 
+            "selfUri": String, 
+          },  
+        },  
+        "groups": { 
+          "id": String, 
+          "name": String, 
+          "description": String, 
+          "dateModified": Date, 
+          "memberCount": Number, 
+          "state": String, 
+          "version": Number, 
+          "type": String, 
+          "images": { 
+            "resolution": String, 
+            "imageUri": String, 
+          },  
+          "addresses": { 
+            "address": String, 
+            "extension": String, 
+            "display": String, 
+            "type": String, 
+            "mediaType": String, 
+          },  
+          "rulesVisible": Boolean, 
+          "visibility": String, 
+          "owners": User, 
+          "selfUri": String, 
+        },  
+        "team": { 
+          "id": String, 
+          "name": String, 
+          "description": String, 
+          "dateModified": Date, 
+          "memberCount": Number, 
+          "selfUri": String, 
+        },  
+        "skills": { 
+          "id": String, 
+          "name": String, 
+          "proficiency": Number, 
+          "state": String, 
+          "skillUri": String, 
+          "selfUri": String, 
+        },  
+        "languages": { 
+          "id": String, 
+          "name": String, 
+          "proficiency": Number, 
+          "state": String, 
+          "languageUri": String, 
+          "selfUri": String, 
+        },  
+        "acdAutoAnswer": Boolean, 
+        "languagePreference": String, 
+        "lastTokenIssued": { 
+          "dateIssued": Date, 
+        },  
+        "organization": { 
+          "id": String, 
+          "name": String, 
+          "defaultLanguage": String, 
+          "defaultCountryCode": String, 
+          "thirdPartyOrgName": String, 
+          "thirdPartyURI": String, 
+          "domain": String, 
+          "version": Number, 
+          "state": String, 
+          "defaultSiteId": String, 
+          "supportURI": String, 
+          "voicemailEnabled": Boolean, 
+          "productPlatform": String, 
+          "selfUri": String, 
+          "features": {String: Boolean}, 
+        },  
+      },  
+      "organization": { 
+        "id": String, 
+        "name": String, 
+        "defaultLanguage": String, 
+        "defaultCountryCode": String, 
+        "thirdPartyOrgName": String, 
+        "thirdPartyURI": String, 
+        "domain": String, 
+        "version": Number, 
+        "state": String, 
+        "defaultSiteId": String, 
+        "supportURI": String, 
+        "voicemailEnabled": Boolean, 
+        "productPlatform": String, 
+        "selfUri": String, 
+        "features": {String: Boolean}, 
+      },  
+      "authorization": { 
+        "permissions": [String], 
+      },  
+      "selfUri": String, 
+    },  
+    "schema": { 
+      "id": String, 
+      "name": String, 
+      "version": Number, 
+      "appliesTo": [String], 
+      "enabled": Boolean, 
+      "createdBy": { 
+        "id": String, 
+        "name": String, 
+        "selfUri": String, 
+      },  
+      "dateCreated": Date, 
+      "jsonSchema": { 
+        "id": String, 
+        "$schema": String, 
+        "title": String, 
+        "description": String, 
+        "type": String, 
+        "required": [String], 
+        "properties": {String: Object}, 
+        "additionalProperties": Object, 
+      },  
+      "selfUri": String, 
+    },  
+    "customFields": {String: Object}, 
+    "externalDataSources": { 
+      "platform": String, 
+      "url": String, 
+    },  
+    "selfUri": String, 
+  },  
+}
+```
+
+</div>
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ExternalContactsApi();
+
+let body = {}; // Object | Organizations
+
+apiInstance.postExternalcontactsBulkOrganizationsAdd(body)
+  .then((data) => {
+    console.log(`postExternalcontactsBulkOrganizationsAdd success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postExternalcontactsBulkOrganizationsAdd');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | Organizations |  |
+{: class="table table-striped"}
+
+### Return type
+
+**BulkOrganizationsResponse**
+
+<a name="postExternalcontactsBulkOrganizationsRemove"></a>
+
+# BulkDeleteResponse postExternalcontactsBulkOrganizationsRemove(body)
+
+
+
+POST /api/v2/externalcontacts/bulk/organizations/remove
+
+Bulk remove organizations
+
+
+
+Requires ANY permissions: 
+
+* externalContacts:externalOrganization:delete
+
+
+### Request Body Schema
+
+<script type="text/javascript">
+	function copyBulkIdsRequestExample() {
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#BulkIdsRequestExample').text()).select();
+		document.execCommand("copy");
+		temp.remove();
+		return false;
+	}
+</script>
+
+BulkIdsRequest <a href="#" onclick="return copyBulkIdsRequestExample()">Copy</a>
+
+<div id="BulkIdsRequestExample">
+
+```{"language":"json", "maxHeight": "250px"}
+{ 
+  "entities": { 
+    "id": String, 
+  },  
+}
+```
+
+</div>
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ExternalContactsApi();
+
+let body = {}; // Object | Organization ids
+
+apiInstance.postExternalcontactsBulkOrganizationsRemove(body)
+  .then((data) => {
+    console.log(`postExternalcontactsBulkOrganizationsRemove success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postExternalcontactsBulkOrganizationsRemove');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | Organization ids |  |
+{: class="table table-striped"}
+
+### Return type
+
+**BulkDeleteResponse**
+
+<a name="postExternalcontactsBulkOrganizationsUpdate"></a>
+
+# BulkOrganizationsResponse postExternalcontactsBulkOrganizationsUpdate(body)
+
+
+
+POST /api/v2/externalcontacts/bulk/organizations/update
+
+Bulk update organizations
+
+
+
+Requires ANY permissions: 
+
+* externalContacts:externalOrganization:edit
+
+
+### Request Body Schema
+
+<script type="text/javascript">
+	function copyBulkOrganizationsRequestExample() {
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#BulkOrganizationsRequestExample').text()).select();
+		document.execCommand("copy");
+		temp.remove();
+		return false;
+	}
+</script>
+
+BulkOrganizationsRequest <a href="#" onclick="return copyBulkOrganizationsRequestExample()">Copy</a>
+
+<div id="BulkOrganizationsRequestExample">
+
+```{"language":"json", "maxHeight": "250px"}
+{ 
+  "entities": { 
+    "id": String, 
+    "name": String, 
+    "companyType": String, 
+    "industry": String, 
+    "primaryContactId": String, 
+    "address": { 
+      "address1": String, 
+      "address2": String, 
+      "city": String, 
+      "state": String, 
+      "postalCode": String, 
+      "countryCode": String, 
+    },  
+    "phoneNumber": { 
+      "display": String, 
+      "extension": Number, 
+      "acceptsSMS": Boolean, 
+      "userInput": String, 
+      "e164": String, 
+      "countryCode": String, 
+    },  
+    "faxNumber": { 
+      "display": String, 
+      "extension": Number, 
+      "acceptsSMS": Boolean, 
+      "userInput": String, 
+      "e164": String, 
+      "countryCode": String, 
+    },  
+    "employeeCount": Number, 
+    "revenue": Number, 
+    "tags": [String], 
+    "websites": [String], 
+    "tickers": { 
+      "symbol": String, 
+      "exchange": String, 
+    },  
+    "twitterId": { 
+      "id": String, 
+      "name": String, 
+      "screenName": String, 
+      "verified": Boolean, 
+      "profileUrl": String, 
+    },  
+    "externalSystemUrl": String, 
+    "modifyDate": Date, 
+    "createDate": Date, 
+    "trustor": { 
+      "id": String, 
+      "enabled": Boolean, 
+      "dateCreated": Date, 
+      "createdBy": { 
+        "id": String, 
+        "name": String, 
+        "division": { 
+          "id": String, 
+          "name": String, 
+          "selfUri": String, 
+        },  
+        "chat": { 
+          "jabberId": String, 
+        },  
+        "department": String, 
+        "email": String, 
+        "primaryContactInfo": { 
+          "address": String, 
+          "display": String, 
+          "mediaType": String, 
+          "type": String, 
+          "extension": String, 
+          "countryCode": String, 
+        },  
+        "addresses": { 
+          "address": String, 
+          "display": String, 
+          "mediaType": String, 
+          "type": String, 
+          "extension": String, 
+          "countryCode": String, 
+        },  
+        "state": String, 
+        "title": String, 
+        "username": String, 
+        "manager": { 
+          "id": String, 
+          "name": String, 
+          "division": { 
+            "id": String, 
+            "name": String, 
+            "selfUri": String, 
+          },  
+          "chat": { 
+            "jabberId": String, 
+          },  
+          "department": String, 
+          "email": String, 
+          "primaryContactInfo": { 
+            "address": String, 
+            "display": String, 
+            "mediaType": String, 
+            "type": String, 
+            "extension": String, 
+            "countryCode": String, 
+          },  
+          "addresses": { 
+            "address": String, 
+            "display": String, 
+            "mediaType": String, 
+            "type": String, 
+            "extension": String, 
+            "countryCode": String, 
+          },  
+          "state": String, 
+          "title": String, 
+          "username": String, 
+          "manager": User, 
+          "images": { 
+            "resolution": String, 
+            "imageUri": String, 
+          },  
+          "version": Number, 
+          "certifications": [String], 
+          "biography": { 
+            "biography": String, 
+            "interests": [String], 
+            "hobbies": [String], 
+            "spouse": String, 
+            "education": { 
+              "school": String, 
+              "fieldOfStudy": String, 
+              "notes": String, 
+              "dateStart": String, 
+              "dateEnd": String, 
+            },  
+          },  
+          "employerInfo": { 
+            "officialName": String, 
+            "employeeId": String, 
+            "employeeType": String, 
+            "dateHire": String, 
+          },  
+          "routingStatus": { 
+            "userId": String, 
+            "status": String, 
+            "startTime": Date, 
+          },  
+          "presence": { 
+            "id": String, 
+            "name": String, 
+            "source": String, 
+            "primary": Boolean, 
+            "presenceDefinition": { 
+              "id": String, 
+              "systemPresence": String, 
+              "selfUri": String, 
+            },  
+            "message": String, 
+            "modifiedDate": Date, 
+            "selfUri": String, 
+          },  
+          "conversationSummary": { 
+            "userId": String, 
+            "call": { 
+              "contactCenter": { 
+                "active": Number, 
+                "acw": Number, 
+              },  
+              "enterprise": { 
+                "active": Number, 
+                "acw": Number, 
+              },  
+            },  
+            "callback": { 
+              "contactCenter": { 
+                "active": Number, 
+                "acw": Number, 
+              },  
+              "enterprise": { 
+                "active": Number, 
+                "acw": Number, 
+              },  
+            },  
+            "email": { 
+              "contactCenter": { 
+                "active": Number, 
+                "acw": Number, 
+              },  
+              "enterprise": { 
+                "active": Number, 
+                "acw": Number, 
+              },  
+            },  
+            "message": { 
+              "contactCenter": { 
+                "active": Number, 
+                "acw": Number, 
+              },  
+              "enterprise": { 
+                "active": Number, 
+                "acw": Number, 
+              },  
+            },  
+            "chat": { 
+              "contactCenter": { 
+                "active": Number, 
+                "acw": Number, 
+              },  
+              "enterprise": { 
+                "active": Number, 
+                "acw": Number, 
+              },  
+            },  
+            "socialExpression": { 
+              "contactCenter": { 
+                "active": Number, 
+                "acw": Number, 
+              },  
+              "enterprise": { 
+                "active": Number, 
+                "acw": Number, 
+              },  
+            },  
+            "video": { 
+              "contactCenter": { 
+                "active": Number, 
+                "acw": Number, 
+              },  
+              "enterprise": { 
+                "active": Number, 
+                "acw": Number, 
+              },  
+            },  
+          },  
+          "outOfOffice": { 
+            "id": String, 
+            "name": String, 
+            "user": User, 
+            "startDate": Date, 
+            "endDate": Date, 
+            "active": Boolean, 
+            "indefinite": Boolean, 
+            "selfUri": String, 
+          },  
+          "geolocation": { 
+            "id": String, 
+            "name": String, 
+            "type": String, 
+            "primary": Boolean, 
+            "latitude": Number, 
+            "longitude": Number, 
+            "country": String, 
+            "region": String, 
+            "city": String, 
+            "locations": { 
+              "id": String, 
+              "name": String, 
+              "contactUser": { 
+                "id": String, 
+                "selfUri": String, 
+              },  
+              "emergencyNumber": { 
+                "e164": String, 
+                "number": String, 
+                "type": String, 
+              },  
+              "address": { 
+                "city": String, 
+                "country": String, 
+                "countryName": String, 
+                "state": String, 
+                "street1": String, 
+                "street2": String, 
+                "zipcode": String, 
+              },  
+              "state": String, 
+              "notes": String, 
+              "version": Number, 
+              "path": [String], 
+              "profileImage": { 
+                "resolution": String, 
+                "imageUri": String, 
+              },  
+              "floorplanImage": { 
+                "resolution": String, 
+                "imageUri": String, 
+              },  
+              "addressVerificationDetails": { 
+                "status": String, 
+                "dateFinished": Date, 
+                "dateStarted": Date, 
+                "service": String, 
+              },  
+              "addressVerified": Boolean, 
+              "addressStored": Boolean, 
+              "images": String, 
+              "selfUri": String, 
+            },  
+            "selfUri": String, 
+          },  
+          "station": { 
+            "associatedStation": { 
+              "id": String, 
+              "name": String, 
+              "type": String, 
+              "associatedUser": User, 
+              "associatedDate": Date, 
+              "defaultUser": User, 
+              "providerInfo": {String: String}, 
+            },  
+            "effectiveStation": { 
+              "id": String, 
+              "name": String, 
+              "type": String, 
+              "associatedUser": User, 
+              "associatedDate": Date, 
+              "defaultUser": User, 
+              "providerInfo": {String: String}, 
+            },  
+            "defaultStation": { 
+              "id": String, 
+              "name": String, 
+              "type": String, 
+              "associatedUser": User, 
+              "associatedDate": Date, 
+              "defaultUser": User, 
+              "providerInfo": {String: String}, 
+            },  
+            "lastAssociatedStation": { 
+              "id": String, 
+              "name": String, 
+              "type": String, 
+              "associatedUser": User, 
+              "associatedDate": Date, 
+              "defaultUser": User, 
+              "providerInfo": {String: String}, 
+            },  
+          },  
+          "authorization": { 
+            "roles": { 
+              "id": String, 
+              "name": String, 
+            },  
+            "unusedRoles": { 
+              "id": String, 
+              "name": String, 
+            },  
+            "permissions": [String], 
+            "permissionPolicies": { 
+              "id": String, 
+              "domain": String, 
+              "entityName": String, 
+              "policyName": String, 
+              "policyDescription": String, 
+              "actionSetKey": String, 
+              "allowConditions": Boolean, 
+              "resourceConditionNode": { 
+                "variableName": String, 
+                "conjunction": String, 
+                "operator": String, 
+                "operands": [ResourceConditionValue], 
+                "terms": [ResourceConditionNode], 
+              },  
+              "namedResources": [String], 
+              "resourceCondition": String, 
+              "actionSet": [String], 
+            },  
+          },  
+          "profileSkills": [String], 
+          "locations": { 
+            "id": String, 
+            "floorplanId": String, 
+            "coordinates": {String: Number}, 
+            "notes": String, 
+            "locationDefinition": { 
+              "id": String, 
+              "name": String, 
+              "contactUser": { 
+                "id": String, 
+                "selfUri": String, 
+              },  
+              "emergencyNumber": { 
+                "e164": String, 
+                "number": String, 
+                "type": String, 
+              },  
+              "address": { 
+                "city": String, 
+                "country": String, 
+                "countryName": String, 
+                "state": String, 
+                "street1": String, 
+                "street2": String, 
+                "zipcode": String, 
+              },  
+              "state": String, 
+              "notes": String, 
+              "version": Number, 
+              "path": [String], 
+              "profileImage": { 
+                "resolution": String, 
+                "imageUri": String, 
+              },  
+              "floorplanImage": { 
+                "resolution": String, 
+                "imageUri": String, 
+              },  
+              "addressVerificationDetails": { 
+                "status": String, 
+                "dateFinished": Date, 
+                "dateStarted": Date, 
+                "service": String, 
+              },  
+              "addressVerified": Boolean, 
+              "addressStored": Boolean, 
+              "images": String, 
+              "selfUri": String, 
+            },  
+          },  
+          "groups": { 
+            "id": String, 
+            "name": String, 
+            "description": String, 
+            "dateModified": Date, 
+            "memberCount": Number, 
+            "state": String, 
+            "version": Number, 
+            "type": String, 
+            "images": { 
+              "resolution": String, 
+              "imageUri": String, 
+            },  
+            "addresses": { 
+              "address": String, 
+              "extension": String, 
+              "display": String, 
+              "type": String, 
+              "mediaType": String, 
+            },  
+            "rulesVisible": Boolean, 
+            "visibility": String, 
+            "owners": User, 
+            "selfUri": String, 
+          },  
+          "team": { 
+            "id": String, 
+            "name": String, 
+            "description": String, 
+            "dateModified": Date, 
+            "memberCount": Number, 
+            "selfUri": String, 
+          },  
+          "skills": { 
+            "id": String, 
+            "name": String, 
+            "proficiency": Number, 
+            "state": String, 
+            "skillUri": String, 
+            "selfUri": String, 
+          },  
+          "languages": { 
+            "id": String, 
+            "name": String, 
+            "proficiency": Number, 
+            "state": String, 
+            "languageUri": String, 
+            "selfUri": String, 
+          },  
+          "acdAutoAnswer": Boolean, 
+          "languagePreference": String, 
+          "lastTokenIssued": { 
+            "dateIssued": Date, 
+          },  
+          "selfUri": String, 
+        },  
+        "images": { 
+          "resolution": String, 
+          "imageUri": String, 
+        },  
+        "version": Number, 
+        "certifications": [String], 
+        "biography": { 
+          "biography": String, 
+          "interests": [String], 
+          "hobbies": [String], 
+          "spouse": String, 
+          "education": { 
+            "school": String, 
+            "fieldOfStudy": String, 
+            "notes": String, 
+            "dateStart": String, 
+            "dateEnd": String, 
+          },  
+        },  
+        "employerInfo": { 
+          "officialName": String, 
+          "employeeId": String, 
+          "employeeType": String, 
+          "dateHire": String, 
+        },  
+        "routingStatus": { 
+          "userId": String, 
+          "status": String, 
+          "startTime": Date, 
+        },  
+        "presence": { 
+          "id": String, 
+          "name": String, 
+          "source": String, 
+          "primary": Boolean, 
+          "presenceDefinition": { 
+            "id": String, 
+            "systemPresence": String, 
+            "selfUri": String, 
+          },  
+          "message": String, 
+          "modifiedDate": Date, 
+          "selfUri": String, 
+        },  
+        "conversationSummary": { 
+          "userId": String, 
+          "call": { 
+            "contactCenter": { 
+              "active": Number, 
+              "acw": Number, 
+            },  
+            "enterprise": { 
+              "active": Number, 
+              "acw": Number, 
+            },  
+          },  
+          "callback": { 
+            "contactCenter": { 
+              "active": Number, 
+              "acw": Number, 
+            },  
+            "enterprise": { 
+              "active": Number, 
+              "acw": Number, 
+            },  
+          },  
+          "email": { 
+            "contactCenter": { 
+              "active": Number, 
+              "acw": Number, 
+            },  
+            "enterprise": { 
+              "active": Number, 
+              "acw": Number, 
+            },  
+          },  
+          "message": { 
+            "contactCenter": { 
+              "active": Number, 
+              "acw": Number, 
+            },  
+            "enterprise": { 
+              "active": Number, 
+              "acw": Number, 
+            },  
+          },  
+          "chat": { 
+            "contactCenter": { 
+              "active": Number, 
+              "acw": Number, 
+            },  
+            "enterprise": { 
+              "active": Number, 
+              "acw": Number, 
+            },  
+          },  
+          "socialExpression": { 
+            "contactCenter": { 
+              "active": Number, 
+              "acw": Number, 
+            },  
+            "enterprise": { 
+              "active": Number, 
+              "acw": Number, 
+            },  
+          },  
+          "video": { 
+            "contactCenter": { 
+              "active": Number, 
+              "acw": Number, 
+            },  
+            "enterprise": { 
+              "active": Number, 
+              "acw": Number, 
+            },  
+          },  
+        },  
+        "outOfOffice": { 
+          "id": String, 
+          "name": String, 
+          "user": User, 
+          "startDate": Date, 
+          "endDate": Date, 
+          "active": Boolean, 
+          "indefinite": Boolean, 
+          "selfUri": String, 
+        },  
+        "geolocation": { 
+          "id": String, 
+          "name": String, 
+          "type": String, 
+          "primary": Boolean, 
+          "latitude": Number, 
+          "longitude": Number, 
+          "country": String, 
+          "region": String, 
+          "city": String, 
+          "locations": { 
+            "id": String, 
+            "name": String, 
+            "contactUser": { 
+              "id": String, 
+              "selfUri": String, 
+            },  
+            "emergencyNumber": { 
+              "e164": String, 
+              "number": String, 
+              "type": String, 
+            },  
+            "address": { 
+              "city": String, 
+              "country": String, 
+              "countryName": String, 
+              "state": String, 
+              "street1": String, 
+              "street2": String, 
+              "zipcode": String, 
+            },  
+            "state": String, 
+            "notes": String, 
+            "version": Number, 
+            "path": [String], 
+            "profileImage": { 
+              "resolution": String, 
+              "imageUri": String, 
+            },  
+            "floorplanImage": { 
+              "resolution": String, 
+              "imageUri": String, 
+            },  
+            "addressVerificationDetails": { 
+              "status": String, 
+              "dateFinished": Date, 
+              "dateStarted": Date, 
+              "service": String, 
+            },  
+            "addressVerified": Boolean, 
+            "addressStored": Boolean, 
+            "images": String, 
+            "selfUri": String, 
+          },  
+          "selfUri": String, 
+        },  
+        "station": { 
+          "associatedStation": { 
+            "id": String, 
+            "name": String, 
+            "type": String, 
+            "associatedUser": User, 
+            "associatedDate": Date, 
+            "defaultUser": User, 
+            "providerInfo": {String: String}, 
+          },  
+          "effectiveStation": { 
+            "id": String, 
+            "name": String, 
+            "type": String, 
+            "associatedUser": User, 
+            "associatedDate": Date, 
+            "defaultUser": User, 
+            "providerInfo": {String: String}, 
+          },  
+          "defaultStation": { 
+            "id": String, 
+            "name": String, 
+            "type": String, 
+            "associatedUser": User, 
+            "associatedDate": Date, 
+            "defaultUser": User, 
+            "providerInfo": {String: String}, 
+          },  
+          "lastAssociatedStation": { 
+            "id": String, 
+            "name": String, 
+            "type": String, 
+            "associatedUser": User, 
+            "associatedDate": Date, 
+            "defaultUser": User, 
+            "providerInfo": {String: String}, 
+          },  
+        },  
+        "authorization": { 
+          "roles": { 
+            "id": String, 
+            "name": String, 
+          },  
+          "unusedRoles": { 
+            "id": String, 
+            "name": String, 
+          },  
+          "permissions": [String], 
+          "permissionPolicies": { 
+            "id": String, 
+            "domain": String, 
+            "entityName": String, 
+            "policyName": String, 
+            "policyDescription": String, 
+            "actionSetKey": String, 
+            "allowConditions": Boolean, 
+            "resourceConditionNode": { 
+              "variableName": String, 
+              "conjunction": String, 
+              "operator": String, 
+              "operands": { 
+                "type": String, 
+                "value": String, 
+              },  
+              "terms": { 
+                "variableName": String, 
+                "conjunction": String, 
+                "operator": String, 
+                "operands": [ResourceConditionValue], 
+                "terms": [ResourceConditionNode], 
+              },  
+            },  
+            "namedResources": [String], 
+            "resourceCondition": String, 
+            "actionSet": [String], 
+          },  
+        },  
+        "profileSkills": [String], 
+        "locations": { 
+          "id": String, 
+          "floorplanId": String, 
+          "coordinates": {String: Number}, 
+          "notes": String, 
+          "locationDefinition": { 
+            "id": String, 
+            "name": String, 
+            "contactUser": { 
+              "id": String, 
+              "selfUri": String, 
+            },  
+            "emergencyNumber": { 
+              "e164": String, 
+              "number": String, 
+              "type": String, 
+            },  
+            "address": { 
+              "city": String, 
+              "country": String, 
+              "countryName": String, 
+              "state": String, 
+              "street1": String, 
+              "street2": String, 
+              "zipcode": String, 
+            },  
+            "state": String, 
+            "notes": String, 
+            "version": Number, 
+            "path": [String], 
+            "profileImage": { 
+              "resolution": String, 
+              "imageUri": String, 
+            },  
+            "floorplanImage": { 
+              "resolution": String, 
+              "imageUri": String, 
+            },  
+            "addressVerificationDetails": { 
+              "status": String, 
+              "dateFinished": Date, 
+              "dateStarted": Date, 
+              "service": String, 
+            },  
+            "addressVerified": Boolean, 
+            "addressStored": Boolean, 
+            "images": String, 
+            "selfUri": String, 
+          },  
+        },  
+        "groups": { 
+          "id": String, 
+          "name": String, 
+          "description": String, 
+          "dateModified": Date, 
+          "memberCount": Number, 
+          "state": String, 
+          "version": Number, 
+          "type": String, 
+          "images": { 
+            "resolution": String, 
+            "imageUri": String, 
+          },  
+          "addresses": { 
+            "address": String, 
+            "extension": String, 
+            "display": String, 
+            "type": String, 
+            "mediaType": String, 
+          },  
+          "rulesVisible": Boolean, 
+          "visibility": String, 
+          "owners": User, 
+          "selfUri": String, 
+        },  
+        "team": { 
+          "id": String, 
+          "name": String, 
+          "description": String, 
+          "dateModified": Date, 
+          "memberCount": Number, 
+          "selfUri": String, 
+        },  
+        "skills": { 
+          "id": String, 
+          "name": String, 
+          "proficiency": Number, 
+          "state": String, 
+          "skillUri": String, 
+          "selfUri": String, 
+        },  
+        "languages": { 
+          "id": String, 
+          "name": String, 
+          "proficiency": Number, 
+          "state": String, 
+          "languageUri": String, 
+          "selfUri": String, 
+        },  
+        "acdAutoAnswer": Boolean, 
+        "languagePreference": String, 
+        "lastTokenIssued": { 
+          "dateIssued": Date, 
+        },  
+        "organization": { 
+          "id": String, 
+          "name": String, 
+          "defaultLanguage": String, 
+          "defaultCountryCode": String, 
+          "thirdPartyOrgName": String, 
+          "thirdPartyURI": String, 
+          "domain": String, 
+          "version": Number, 
+          "state": String, 
+          "defaultSiteId": String, 
+          "supportURI": String, 
+          "voicemailEnabled": Boolean, 
+          "productPlatform": String, 
+          "selfUri": String, 
+          "features": {String: Boolean}, 
+        },  
+      },  
+      "organization": { 
+        "id": String, 
+        "name": String, 
+        "defaultLanguage": String, 
+        "defaultCountryCode": String, 
+        "thirdPartyOrgName": String, 
+        "thirdPartyURI": String, 
+        "domain": String, 
+        "version": Number, 
+        "state": String, 
+        "defaultSiteId": String, 
+        "supportURI": String, 
+        "voicemailEnabled": Boolean, 
+        "productPlatform": String, 
+        "selfUri": String, 
+        "features": {String: Boolean}, 
+      },  
+      "authorization": { 
+        "permissions": [String], 
+      },  
+      "selfUri": String, 
+    },  
+    "schema": { 
+      "id": String, 
+      "name": String, 
+      "version": Number, 
+      "appliesTo": [String], 
+      "enabled": Boolean, 
+      "createdBy": { 
+        "id": String, 
+        "name": String, 
+        "selfUri": String, 
+      },  
+      "dateCreated": Date, 
+      "jsonSchema": { 
+        "id": String, 
+        "$schema": String, 
+        "title": String, 
+        "description": String, 
+        "type": String, 
+        "required": [String], 
+        "properties": {String: Object}, 
+        "additionalProperties": Object, 
+      },  
+      "selfUri": String, 
+    },  
+    "customFields": {String: Object}, 
+    "externalDataSources": { 
+      "platform": String, 
+      "url": String, 
+    },  
+    "selfUri": String, 
+  },  
+}
+```
+
+</div>
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ExternalContactsApi();
+
+let body = {}; // Object | Organizations
+
+apiInstance.postExternalcontactsBulkOrganizationsUpdate(body)
+  .then((data) => {
+    console.log(`postExternalcontactsBulkOrganizationsUpdate success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postExternalcontactsBulkOrganizationsUpdate');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | Organizations |  |
+{: class="table table-striped"}
+
+### Return type
+
+**BulkOrganizationsResponse**
 
 <a name="postExternalcontactsContactNotes"></a>
 

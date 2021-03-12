@@ -5,7 +5,7 @@ class RoutingApi {
 	/**
 	 * Routing service.
 	 * @module purecloud-platform-client-v2/api/RoutingApi
-	 * @version 107.0.0
+	 * @version 108.0.0
 	 */
 
 	/**
@@ -1369,6 +1369,36 @@ class RoutingApi {
 			{  }, 
 			{  }, 
 			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update attributes of an in-queue conversation
+	 * Returns an object indicating the updated values of all settable attributes.  Supported attributes: priority (each point of priority is equivalent to one minute of time in queue).
+	 * @param {String} conversationId Conversation ID
+	 * @param {Object} body Conversation Attributes
+	 */
+	patchRoutingConversation(conversationId, body) { 
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null) {
+			throw 'Missing the required parameter "conversationId" when calling patchRoutingConversation';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchRoutingConversation';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/conversations/{conversationId}', 
+			'PATCH', 
+			{ 'conversationId': conversationId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
 			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']

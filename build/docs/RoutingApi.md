@@ -57,6 +57,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getUserQueues**](RoutingApi.html#getUserQueues) | **GET** /api/v2/users/{userId}/queues | Get queues for user
 [**getUserRoutinglanguages**](RoutingApi.html#getUserRoutinglanguages) | **GET** /api/v2/users/{userId}/routinglanguages | List routing language for user
 [**getUserRoutingskills**](RoutingApi.html#getUserRoutingskills) | **GET** /api/v2/users/{userId}/routingskills | List routing skills for user
+[**patchRoutingConversation**](RoutingApi.html#patchRoutingConversation) | **PATCH** /api/v2/routing/conversations/{conversationId} | Update attributes of an in-queue conversation
 [**patchRoutingEmailDomain**](RoutingApi.html#patchRoutingEmailDomain) | **PATCH** /api/v2/routing/email/domains/{domainId} | Update domain settings
 [**patchRoutingEmailDomainValidate**](RoutingApi.html#patchRoutingEmailDomainValidate) | **PATCH** /api/v2/routing/email/domains/{domainId}/validate | Validate domain settings
 [**patchRoutingQueueMember**](RoutingApi.html#patchRoutingQueueMember) | **PATCH** /api/v2/routing/queues/{queueId}/members/{memberId} | Update the ring number OR joined status for a queue member.
@@ -1377,7 +1378,7 @@ apiInstance.getRoutingMessageRecipients(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **messengerType** | **String** | Messenger Type | [optional] <br />**Values**: sms, facebook, twitter, line, whatsapp |
+ **messengerType** | **String** | Messenger Type | [optional] <br />**Values**: sms, facebook, twitter, line, whatsapp, open |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
 {: class="table table-striped"}
@@ -3025,6 +3026,88 @@ apiInstance.getUserRoutingskills(userId, opts)
 ### Return type
 
 **UserSkillEntityListing**
+
+<a name="patchRoutingConversation"></a>
+
+# RoutingConversationAttributes patchRoutingConversation(conversationId, body)
+
+
+
+PATCH /api/v2/routing/conversations/{conversationId}
+
+Update attributes of an in-queue conversation
+
+Returns an object indicating the updated values of all settable attributes.  Supported attributes: priority (each point of priority is equivalent to one minute of time in queue).
+
+Requires ANY permissions: 
+
+* routing:conversation:edit
+
+
+### Request Body Schema
+
+<script type="text/javascript">
+	function copyRoutingConversationAttributesExample() {
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#RoutingConversationAttributesExample').text()).select();
+		document.execCommand("copy");
+		temp.remove();
+		return false;
+	}
+</script>
+
+RoutingConversationAttributes <a href="#" onclick="return copyRoutingConversationAttributesExample()">Copy</a>
+
+<div id="RoutingConversationAttributesExample">
+
+```{"language":"json", "maxHeight": "250px"}
+{ 
+  "priority": Number, 
+}
+```
+
+</div>
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.RoutingApi();
+
+let conversationId = "conversationId_example"; // String | Conversation ID
+let body = {}; // Object | Conversation Attributes
+
+apiInstance.patchRoutingConversation(conversationId, body)
+  .then((data) => {
+    console.log(`patchRoutingConversation success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchRoutingConversation');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | Conversation ID |  |
+ **body** | **Object** | Conversation Attributes |  |
+{: class="table table-striped"}
+
+### Return type
+
+**RoutingConversationAttributes**
 
 <a name="patchRoutingEmailDomain"></a>
 

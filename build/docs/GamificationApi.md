@@ -1,0 +1,2133 @@
+---
+title: GamificationApi
+---
+# platformClient.GamificationApi
+
+All URIs are relative to *https://api.mypurecloud.com*
+
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+[**getGamificationLeaderboard**](GamificationApi.html#getGamificationLeaderboard) | **GET** /api/v2/gamification/leaderboard | Leaderboard of the requesting user&#39;s division
+[**getGamificationLeaderboardAll**](GamificationApi.html#getGamificationLeaderboardAll) | **GET** /api/v2/gamification/leaderboard/all | Leaderboard by division
+[**getGamificationLeaderboardAllBestpoints**](GamificationApi.html#getGamificationLeaderboardAllBestpoints) | **GET** /api/v2/gamification/leaderboard/all/bestpoints | Best Points by division
+[**getGamificationLeaderboardBestpoints**](GamificationApi.html#getGamificationLeaderboardBestpoints) | **GET** /api/v2/gamification/leaderboard/bestpoints | Best Points of the requesting user&#39;s division
+[**getGamificationMetric**](GamificationApi.html#getGamificationMetric) | **GET** /api/v2/gamification/metrics/{metricId} | Gamified metric by id
+[**getGamificationMetricdefinition**](GamificationApi.html#getGamificationMetricdefinition) | **GET** /api/v2/gamification/metricdefinitions/{metricDefinitionId} | Metric definition by id
+[**getGamificationMetricdefinitions**](GamificationApi.html#getGamificationMetricdefinitions) | **GET** /api/v2/gamification/metricdefinitions | All metric definitions
+[**getGamificationMetrics**](GamificationApi.html#getGamificationMetrics) | **GET** /api/v2/gamification/metrics | All gamified metrics for a given profile
+[**getGamificationProfile**](GamificationApi.html#getGamificationProfile) | **GET** /api/v2/gamification/profiles/{performanceProfileId} | Performance profile by id
+[**getGamificationProfiles**](GamificationApi.html#getGamificationProfiles) | **GET** /api/v2/gamification/profiles | All performance profiles
+[**getGamificationScorecards**](GamificationApi.html#getGamificationScorecards) | **GET** /api/v2/gamification/scorecards | Workday performance metrics of the requesting user
+[**getGamificationScorecardsAttendance**](GamificationApi.html#getGamificationScorecardsAttendance) | **GET** /api/v2/gamification/scorecards/attendance | Attendance status metrics of the requesting user
+[**getGamificationScorecardsBestpoints**](GamificationApi.html#getGamificationScorecardsBestpoints) | **GET** /api/v2/gamification/scorecards/bestpoints | Best points of the requesting user
+[**getGamificationScorecardsPointsAlltime**](GamificationApi.html#getGamificationScorecardsPointsAlltime) | **GET** /api/v2/gamification/scorecards/points/alltime | All-time points of the requesting user
+[**getGamificationScorecardsPointsAverage**](GamificationApi.html#getGamificationScorecardsPointsAverage) | **GET** /api/v2/gamification/scorecards/points/average | Average points of the requesting user&#39;s division
+[**getGamificationScorecardsPointsTrends**](GamificationApi.html#getGamificationScorecardsPointsTrends) | **GET** /api/v2/gamification/scorecards/points/trends | Points trends of the requesting user
+[**getGamificationScorecardsUser**](GamificationApi.html#getGamificationScorecardsUser) | **GET** /api/v2/gamification/scorecards/users/{userId} | Workday performance metrics for a user
+[**getGamificationScorecardsUserAttendance**](GamificationApi.html#getGamificationScorecardsUserAttendance) | **GET** /api/v2/gamification/scorecards/users/{userId}/attendance | Attendance status metrics for a user
+[**getGamificationScorecardsUserBestpoints**](GamificationApi.html#getGamificationScorecardsUserBestpoints) | **GET** /api/v2/gamification/scorecards/users/{userId}/bestpoints | Best points of a user
+[**getGamificationScorecardsUserPointsAlltime**](GamificationApi.html#getGamificationScorecardsUserPointsAlltime) | **GET** /api/v2/gamification/scorecards/users/{userId}/points/alltime | All-time points for a user
+[**getGamificationScorecardsUserPointsTrends**](GamificationApi.html#getGamificationScorecardsUserPointsTrends) | **GET** /api/v2/gamification/scorecards/users/{userId}/points/trends | Points trend for a user
+[**getGamificationScorecardsUserValuesTrends**](GamificationApi.html#getGamificationScorecardsUserValuesTrends) | **GET** /api/v2/gamification/scorecards/users/{userId}/values/trends | Values Trends of a user
+[**getGamificationScorecardsUsersPointsAverage**](GamificationApi.html#getGamificationScorecardsUsersPointsAverage) | **GET** /api/v2/gamification/scorecards/users/points/average | Workday average points by target group
+[**getGamificationScorecardsUsersValuesAverage**](GamificationApi.html#getGamificationScorecardsUsersValuesAverage) | **GET** /api/v2/gamification/scorecards/users/values/average | Workday average values by target group
+[**getGamificationScorecardsUsersValuesTrends**](GamificationApi.html#getGamificationScorecardsUsersValuesTrends) | **GET** /api/v2/gamification/scorecards/users/values/trends | Values trend by target group
+[**getGamificationScorecardsValuesAverage**](GamificationApi.html#getGamificationScorecardsValuesAverage) | **GET** /api/v2/gamification/scorecards/values/average | Average values of the requesting user&#39;s division
+[**getGamificationScorecardsValuesTrends**](GamificationApi.html#getGamificationScorecardsValuesTrends) | **GET** /api/v2/gamification/scorecards/values/trends | Values trends of the requesting user or group
+[**getGamificationStatus**](GamificationApi.html#getGamificationStatus) | **GET** /api/v2/gamification/status | Gamification activation status
+[**getGamificationTemplate**](GamificationApi.html#getGamificationTemplate) | **GET** /api/v2/gamification/templates/{templateId} | Objective template by id
+[**getGamificationTemplates**](GamificationApi.html#getGamificationTemplates) | **GET** /api/v2/gamification/templates | All objective templates
+[**postGamificationMetrics**](GamificationApi.html#postGamificationMetrics) | **POST** /api/v2/gamification/metrics | Creates a gamified metric with a given metric definition and metric objective
+[**putGamificationMetric**](GamificationApi.html#putGamificationMetric) | **PUT** /api/v2/gamification/metrics/{metricId} | Updates a metric
+[**putGamificationProfile**](GamificationApi.html#putGamificationProfile) | **PUT** /api/v2/gamification/profiles/{performanceProfileId} | Updates a performance profile
+[**putGamificationStatus**](GamificationApi.html#putGamificationStatus) | **PUT** /api/v2/gamification/status | Update gamification activation status
+{: class="table table-striped"}
+
+<a name="getGamificationLeaderboard"></a>
+
+# Leaderboard getGamificationLeaderboard(startWorkday, endWorkday, opts)
+
+
+
+GET /api/v2/gamification/leaderboard
+
+Leaderboard of the requesting user&#39;s division
+
+
+
+Requires ANY permissions: 
+
+* gamification:leaderboard:view
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.GamificationApi();
+
+let startWorkday = "2013-10-20"; // String | Start workday to retrieve for the leaderboard. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+let endWorkday = "2013-10-20"; // String | End workday to retrieve for the leaderboard. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+let opts = { 
+  'metricId': "metricId_example" // String | Metric Id for which the leaderboard is to be generated. The total points is used if nothing is given.
+};
+
+apiInstance.getGamificationLeaderboard(startWorkday, endWorkday, opts)
+  .then((data) => {
+    console.log(`getGamificationLeaderboard success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getGamificationLeaderboard');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **startWorkday** | **String** | Start workday to retrieve for the leaderboard. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+ **endWorkday** | **String** | End workday to retrieve for the leaderboard. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+ **metricId** | **String** | Metric Id for which the leaderboard is to be generated. The total points is used if nothing is given. | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**Leaderboard**
+
+<a name="getGamificationLeaderboardAll"></a>
+
+# Leaderboard getGamificationLeaderboardAll(filterType, filterId, startWorkday, endWorkday, opts)
+
+
+
+GET /api/v2/gamification/leaderboard/all
+
+Leaderboard by division
+
+
+
+Requires ANY permissions: 
+
+* gamification:leaderboard:viewAll
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.GamificationApi();
+
+let filterType = "filterType_example"; // String | Filter type for the query request.
+let filterId = "filterId_example"; // String | ID for the filter type. For example, division Id
+let startWorkday = "2013-10-20"; // String | Start workday to retrieve for the leaderboard. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+let endWorkday = "2013-10-20"; // String | End workday to retrieve for the leaderboard. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+let opts = { 
+  'metricId': "metricId_example" // String | Metric Id for which the leaderboard is to be generated. The total points is used if nothing is given.
+};
+
+apiInstance.getGamificationLeaderboardAll(filterType, filterId, startWorkday, endWorkday, opts)
+  .then((data) => {
+    console.log(`getGamificationLeaderboardAll success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getGamificationLeaderboardAll');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **filterType** | **String** | Filter type for the query request. | <br />**Values**: Division |
+ **filterId** | **String** | ID for the filter type. For example, division Id |  |
+ **startWorkday** | **String** | Start workday to retrieve for the leaderboard. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+ **endWorkday** | **String** | End workday to retrieve for the leaderboard. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+ **metricId** | **String** | Metric Id for which the leaderboard is to be generated. The total points is used if nothing is given. | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**Leaderboard**
+
+<a name="getGamificationLeaderboardAllBestpoints"></a>
+
+# OverallBestPoints getGamificationLeaderboardAllBestpoints(filterType, filterId)
+
+
+
+GET /api/v2/gamification/leaderboard/all/bestpoints
+
+Best Points by division
+
+
+
+Requires ANY permissions: 
+
+* gamification:leaderboard:viewAll
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.GamificationApi();
+
+let filterType = "filterType_example"; // String | Filter type for the query request.
+let filterId = "filterId_example"; // String | ID for the filter type. For example, division Id
+
+apiInstance.getGamificationLeaderboardAllBestpoints(filterType, filterId)
+  .then((data) => {
+    console.log(`getGamificationLeaderboardAllBestpoints success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getGamificationLeaderboardAllBestpoints');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **filterType** | **String** | Filter type for the query request. | <br />**Values**: Division |
+ **filterId** | **String** | ID for the filter type. For example, division Id |  |
+{: class="table table-striped"}
+
+### Return type
+
+**OverallBestPoints**
+
+<a name="getGamificationLeaderboardBestpoints"></a>
+
+# OverallBestPoints getGamificationLeaderboardBestpoints()
+
+
+
+GET /api/v2/gamification/leaderboard/bestpoints
+
+Best Points of the requesting user&#39;s division
+
+
+
+Requires ANY permissions: 
+
+* gamification:leaderboard:view
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.GamificationApi();
+
+apiInstance.getGamificationLeaderboardBestpoints()
+  .then((data) => {
+    console.log(`getGamificationLeaderboardBestpoints success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getGamificationLeaderboardBestpoints');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+{: class="table table-striped"}
+
+### Return type
+
+**OverallBestPoints**
+
+<a name="getGamificationMetric"></a>
+
+# Metric getGamificationMetric(metricId)
+
+
+
+GET /api/v2/gamification/metrics/{metricId}
+
+Gamified metric by id
+
+
+
+Requires ANY permissions: 
+
+* gamification:profile:view
+* gamification:leaderboard:view
+* gamification:scorecard:view
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.GamificationApi();
+
+let metricId = "metricId_example"; // String | metric Id
+
+apiInstance.getGamificationMetric(metricId)
+  .then((data) => {
+    console.log(`getGamificationMetric success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getGamificationMetric');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **metricId** | **String** | metric Id |  |
+{: class="table table-striped"}
+
+### Return type
+
+**Metric**
+
+<a name="getGamificationMetricdefinition"></a>
+
+# MetricDefinition getGamificationMetricdefinition(metricDefinitionId)
+
+
+
+GET /api/v2/gamification/metricdefinitions/{metricDefinitionId}
+
+Metric definition by id
+
+
+
+Requires ANY permissions: 
+
+* gamification:profile:view
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.GamificationApi();
+
+let metricDefinitionId = "metricDefinitionId_example"; // String | metric definition id
+
+apiInstance.getGamificationMetricdefinition(metricDefinitionId)
+  .then((data) => {
+    console.log(`getGamificationMetricdefinition success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getGamificationMetricdefinition');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **metricDefinitionId** | **String** | metric definition id |  |
+{: class="table table-striped"}
+
+### Return type
+
+**MetricDefinition**
+
+<a name="getGamificationMetricdefinitions"></a>
+
+# GetMetricDefinitionsResponse getGamificationMetricdefinitions()
+
+
+
+GET /api/v2/gamification/metricdefinitions
+
+All metric definitions
+
+Retrieves the metric definitions and their corresponding default objectives used to create a gamified metric
+
+Requires ANY permissions: 
+
+* gamification:profile:view
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.GamificationApi();
+
+apiInstance.getGamificationMetricdefinitions()
+  .then((data) => {
+    console.log(`getGamificationMetricdefinitions success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getGamificationMetricdefinitions');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+{: class="table table-striped"}
+
+### Return type
+
+**GetMetricDefinitionsResponse**
+
+<a name="getGamificationMetrics"></a>
+
+# GetMetricsResponse getGamificationMetrics(opts)
+
+
+
+GET /api/v2/gamification/metrics
+
+All gamified metrics for a given profile
+
+
+
+Requires ANY permissions: 
+
+* gamification:profile:view
+* gamification:leaderboard:view
+* gamification:scorecard:view
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.GamificationApi();
+
+let opts = { 
+  'performanceProfileId': "performanceProfileId_example" // String | The profile id of the metrics you are trying to retrieve. The DEFAULT profile is used if nothing is given.
+};
+
+apiInstance.getGamificationMetrics(opts)
+  .then((data) => {
+    console.log(`getGamificationMetrics success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getGamificationMetrics');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **performanceProfileId** | **String** | The profile id of the metrics you are trying to retrieve. The DEFAULT profile is used if nothing is given. | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**GetMetricsResponse**
+
+<a name="getGamificationProfile"></a>
+
+# PerformanceProfile getGamificationProfile(performanceProfileId)
+
+
+
+GET /api/v2/gamification/profiles/{performanceProfileId}
+
+Performance profile by id
+
+
+
+Requires ANY permissions: 
+
+* gamification:profile:view
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.GamificationApi();
+
+let performanceProfileId = "performanceProfileId_example"; // String | Performance Profile Id
+
+apiInstance.getGamificationProfile(performanceProfileId)
+  .then((data) => {
+    console.log(`getGamificationProfile success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getGamificationProfile');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **performanceProfileId** | **String** | Performance Profile Id |  |
+{: class="table table-striped"}
+
+### Return type
+
+**PerformanceProfile**
+
+<a name="getGamificationProfiles"></a>
+
+# GetProfilesResponse getGamificationProfiles()
+
+
+
+GET /api/v2/gamification/profiles
+
+All performance profiles
+
+
+
+Requires ANY permissions: 
+
+* gamification:profile:view
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.GamificationApi();
+
+apiInstance.getGamificationProfiles()
+  .then((data) => {
+    console.log(`getGamificationProfiles success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getGamificationProfiles');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+{: class="table table-striped"}
+
+### Return type
+
+**GetProfilesResponse**
+
+<a name="getGamificationScorecards"></a>
+
+# WorkdayMetricListing getGamificationScorecards(workday, opts)
+
+
+
+GET /api/v2/gamification/scorecards
+
+Workday performance metrics of the requesting user
+
+
+
+Requires ANY permissions: 
+
+* gamification:scorecard:view
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.GamificationApi();
+
+let workday = "2013-10-20"; // String | Target querying workday. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd
+let opts = { 
+  'expand': ["expand_example"] // [String] | Which fields, if any, to expand.
+};
+
+apiInstance.getGamificationScorecards(workday, opts)
+  .then((data) => {
+    console.log(`getGamificationScorecards success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getGamificationScorecards');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **workday** | **String** | Target querying workday. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+ **expand** | **[String]** | Which fields, if any, to expand. | [optional] <br />**Values**: objective |
+{: class="table table-striped"}
+
+### Return type
+
+**WorkdayMetricListing**
+
+<a name="getGamificationScorecardsAttendance"></a>
+
+# AttendanceStatusListing getGamificationScorecardsAttendance(startWorkday, endWorkday)
+
+
+
+GET /api/v2/gamification/scorecards/attendance
+
+Attendance status metrics of the requesting user
+
+
+
+Requires ANY permissions: 
+
+* gamification:scorecard:view
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.GamificationApi();
+
+let startWorkday = "2013-10-20"; // String | Start workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd
+let endWorkday = "2013-10-20"; // String | End workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd
+
+apiInstance.getGamificationScorecardsAttendance(startWorkday, endWorkday)
+  .then((data) => {
+    console.log(`getGamificationScorecardsAttendance success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getGamificationScorecardsAttendance');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **startWorkday** | **String** | Start workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+ **endWorkday** | **String** | End workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+{: class="table table-striped"}
+
+### Return type
+
+**AttendanceStatusListing**
+
+<a name="getGamificationScorecardsBestpoints"></a>
+
+# UserBestPoints getGamificationScorecardsBestpoints()
+
+
+
+GET /api/v2/gamification/scorecards/bestpoints
+
+Best points of the requesting user
+
+
+
+Requires ANY permissions: 
+
+* gamification:scorecard:view
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.GamificationApi();
+
+apiInstance.getGamificationScorecardsBestpoints()
+  .then((data) => {
+    console.log(`getGamificationScorecardsBestpoints success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getGamificationScorecardsBestpoints');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+{: class="table table-striped"}
+
+### Return type
+
+**UserBestPoints**
+
+<a name="getGamificationScorecardsPointsAlltime"></a>
+
+# AllTimePoints getGamificationScorecardsPointsAlltime(endWorkday)
+
+
+
+GET /api/v2/gamification/scorecards/points/alltime
+
+All-time points of the requesting user
+
+
+
+Requires ANY permissions: 
+
+* gamification:scorecard:view
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.GamificationApi();
+
+let endWorkday = "2013-10-20"; // String | End workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd
+
+apiInstance.getGamificationScorecardsPointsAlltime(endWorkday)
+  .then((data) => {
+    console.log(`getGamificationScorecardsPointsAlltime success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getGamificationScorecardsPointsAlltime');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **endWorkday** | **String** | End workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+{: class="table table-striped"}
+
+### Return type
+
+**AllTimePoints**
+
+<a name="getGamificationScorecardsPointsAverage"></a>
+
+# SingleWorkdayAveragePoints getGamificationScorecardsPointsAverage(workday)
+
+
+
+GET /api/v2/gamification/scorecards/points/average
+
+Average points of the requesting user&#39;s division
+
+
+
+Requires ANY permissions: 
+
+* gamification:scorecard:view
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.GamificationApi();
+
+let workday = "2013-10-20"; // String | The target workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+
+apiInstance.getGamificationScorecardsPointsAverage(workday)
+  .then((data) => {
+    console.log(`getGamificationScorecardsPointsAverage success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getGamificationScorecardsPointsAverage');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **workday** | **String** | The target workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+{: class="table table-striped"}
+
+### Return type
+
+**SingleWorkdayAveragePoints**
+
+<a name="getGamificationScorecardsPointsTrends"></a>
+
+# WorkdayPointsTrend getGamificationScorecardsPointsTrends(startWorkday, endWorkday, opts)
+
+
+
+GET /api/v2/gamification/scorecards/points/trends
+
+Points trends of the requesting user
+
+
+
+Requires ANY permissions: 
+
+* gamification:scorecard:view
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.GamificationApi();
+
+let startWorkday = "2013-10-20"; // String | Start workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd
+let endWorkday = "2013-10-20"; // String | End workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd
+let opts = { 
+  'dayOfWeek': "dayOfWeek_example" // String | Optional filter to specify which day of weeks to be included in the response
+};
+
+apiInstance.getGamificationScorecardsPointsTrends(startWorkday, endWorkday, opts)
+  .then((data) => {
+    console.log(`getGamificationScorecardsPointsTrends success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getGamificationScorecardsPointsTrends');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **startWorkday** | **String** | Start workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+ **endWorkday** | **String** | End workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+ **dayOfWeek** | **String** | Optional filter to specify which day of weeks to be included in the response | [optional] <br />**Values**: Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday |
+{: class="table table-striped"}
+
+### Return type
+
+**WorkdayPointsTrend**
+
+<a name="getGamificationScorecardsUser"></a>
+
+# WorkdayMetricListing getGamificationScorecardsUser(userId, workday, opts)
+
+
+
+GET /api/v2/gamification/scorecards/users/{userId}
+
+Workday performance metrics for a user
+
+
+
+Requires ANY permissions: 
+
+* gamification:scorecard:viewAll
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.GamificationApi();
+
+let userId = "userId_example"; // String | 
+let workday = "2013-10-20"; // String | Target querying workday. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd
+let opts = { 
+  'expand': ["expand_example"] // [String] | Which fields, if any, to expand.
+};
+
+apiInstance.getGamificationScorecardsUser(userId, workday, opts)
+  .then((data) => {
+    console.log(`getGamificationScorecardsUser success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getGamificationScorecardsUser');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **userId** | **String** |  |  |
+ **workday** | **String** | Target querying workday. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+ **expand** | **[String]** | Which fields, if any, to expand. | [optional] <br />**Values**: objective |
+{: class="table table-striped"}
+
+### Return type
+
+**WorkdayMetricListing**
+
+<a name="getGamificationScorecardsUserAttendance"></a>
+
+# AttendanceStatusListing getGamificationScorecardsUserAttendance(userId, startWorkday, endWorkday)
+
+
+
+GET /api/v2/gamification/scorecards/users/{userId}/attendance
+
+Attendance status metrics for a user
+
+
+
+Requires ANY permissions: 
+
+* gamification:scorecard:viewAll
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.GamificationApi();
+
+let userId = "userId_example"; // String | 
+let startWorkday = "2013-10-20"; // String | Start workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd
+let endWorkday = "2013-10-20"; // String | End workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd
+
+apiInstance.getGamificationScorecardsUserAttendance(userId, startWorkday, endWorkday)
+  .then((data) => {
+    console.log(`getGamificationScorecardsUserAttendance success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getGamificationScorecardsUserAttendance');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **userId** | **String** |  |  |
+ **startWorkday** | **String** | Start workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+ **endWorkday** | **String** | End workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+{: class="table table-striped"}
+
+### Return type
+
+**AttendanceStatusListing**
+
+<a name="getGamificationScorecardsUserBestpoints"></a>
+
+# UserBestPoints getGamificationScorecardsUserBestpoints(userId)
+
+
+
+GET /api/v2/gamification/scorecards/users/{userId}/bestpoints
+
+Best points of a user
+
+
+
+Requires ANY permissions: 
+
+* gamification:scorecard:viewAll
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.GamificationApi();
+
+let userId = "userId_example"; // String | 
+
+apiInstance.getGamificationScorecardsUserBestpoints(userId)
+  .then((data) => {
+    console.log(`getGamificationScorecardsUserBestpoints success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getGamificationScorecardsUserBestpoints');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **userId** | **String** |  |  |
+{: class="table table-striped"}
+
+### Return type
+
+**UserBestPoints**
+
+<a name="getGamificationScorecardsUserPointsAlltime"></a>
+
+# AllTimePoints getGamificationScorecardsUserPointsAlltime(userId, endWorkday)
+
+
+
+GET /api/v2/gamification/scorecards/users/{userId}/points/alltime
+
+All-time points for a user
+
+
+
+Requires ANY permissions: 
+
+* gamification:scorecard:viewAll
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.GamificationApi();
+
+let userId = "userId_example"; // String | 
+let endWorkday = "2013-10-20"; // String | End workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd
+
+apiInstance.getGamificationScorecardsUserPointsAlltime(userId, endWorkday)
+  .then((data) => {
+    console.log(`getGamificationScorecardsUserPointsAlltime success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getGamificationScorecardsUserPointsAlltime');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **userId** | **String** |  |  |
+ **endWorkday** | **String** | End workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+{: class="table table-striped"}
+
+### Return type
+
+**AllTimePoints**
+
+<a name="getGamificationScorecardsUserPointsTrends"></a>
+
+# WorkdayPointsTrend getGamificationScorecardsUserPointsTrends(userId, startWorkday, endWorkday, opts)
+
+
+
+GET /api/v2/gamification/scorecards/users/{userId}/points/trends
+
+Points trend for a user
+
+
+
+Requires ANY permissions: 
+
+* gamification:scorecard:viewAll
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.GamificationApi();
+
+let userId = "userId_example"; // String | 
+let startWorkday = "2013-10-20"; // String | Start workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd
+let endWorkday = "2013-10-20"; // String | End workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd
+let opts = { 
+  'dayOfWeek': "dayOfWeek_example" // String | Optional filter to specify which day of weeks to be included in the response
+};
+
+apiInstance.getGamificationScorecardsUserPointsTrends(userId, startWorkday, endWorkday, opts)
+  .then((data) => {
+    console.log(`getGamificationScorecardsUserPointsTrends success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getGamificationScorecardsUserPointsTrends');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **userId** | **String** |  |  |
+ **startWorkday** | **String** | Start workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+ **endWorkday** | **String** | End workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+ **dayOfWeek** | **String** | Optional filter to specify which day of weeks to be included in the response | [optional] <br />**Values**: Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday |
+{: class="table table-striped"}
+
+### Return type
+
+**WorkdayPointsTrend**
+
+<a name="getGamificationScorecardsUserValuesTrends"></a>
+
+# WorkdayValuesTrend getGamificationScorecardsUserValuesTrends(userId, startWorkday, endWorkday, opts)
+
+
+
+GET /api/v2/gamification/scorecards/users/{userId}/values/trends
+
+Values Trends of a user
+
+
+
+Requires ANY permissions: 
+
+* gamification:scorecard:viewAll
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.GamificationApi();
+
+let userId = "userId_example"; // String | 
+let startWorkday = "2013-10-20"; // String | Start workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd
+let endWorkday = "2013-10-20"; // String | End workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd
+let opts = { 
+  'timeZone': "UTC" // String | Timezone for the workday. Defaults to UTC
+};
+
+apiInstance.getGamificationScorecardsUserValuesTrends(userId, startWorkday, endWorkday, opts)
+  .then((data) => {
+    console.log(`getGamificationScorecardsUserValuesTrends success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getGamificationScorecardsUserValuesTrends');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **userId** | **String** |  |  |
+ **startWorkday** | **String** | Start workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+ **endWorkday** | **String** | End workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+ **timeZone** | **String** | Timezone for the workday. Defaults to UTC | [optional] [default to UTC] |
+{: class="table table-striped"}
+
+### Return type
+
+**WorkdayValuesTrend**
+
+<a name="getGamificationScorecardsUsersPointsAverage"></a>
+
+# SingleWorkdayAveragePoints getGamificationScorecardsUsersPointsAverage(filterType, filterId, workday)
+
+
+
+GET /api/v2/gamification/scorecards/users/points/average
+
+Workday average points by target group
+
+
+
+Requires ANY permissions: 
+
+* gamification:scorecard:viewAll
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.GamificationApi();
+
+let filterType = "filterType_example"; // String | Filter type for the query request.
+let filterId = "filterId_example"; // String | ID for the filter type.
+let workday = "2013-10-20"; // String | The target workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+
+apiInstance.getGamificationScorecardsUsersPointsAverage(filterType, filterId, workday)
+  .then((data) => {
+    console.log(`getGamificationScorecardsUsersPointsAverage success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getGamificationScorecardsUsersPointsAverage');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **filterType** | **String** | Filter type for the query request. | <br />**Values**: Division |
+ **filterId** | **String** | ID for the filter type. |  |
+ **workday** | **String** | The target workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+{: class="table table-striped"}
+
+### Return type
+
+**SingleWorkdayAveragePoints**
+
+<a name="getGamificationScorecardsUsersValuesAverage"></a>
+
+# SingleWorkdayAverageValues getGamificationScorecardsUsersValuesAverage(filterType, filterId, workday, opts)
+
+
+
+GET /api/v2/gamification/scorecards/users/values/average
+
+Workday average values by target group
+
+
+
+Requires ANY permissions: 
+
+* gamification:scorecard:viewAll
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.GamificationApi();
+
+let filterType = "filterType_example"; // String | Filter type for the query request.
+let filterId = "filterId_example"; // String | ID for the filter type. For example, division Id
+let workday = "2013-10-20"; // String | The target workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+let opts = { 
+  'timeZone': "UTC" // String | Timezone for the workday. Defaults to UTC
+};
+
+apiInstance.getGamificationScorecardsUsersValuesAverage(filterType, filterId, workday, opts)
+  .then((data) => {
+    console.log(`getGamificationScorecardsUsersValuesAverage success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getGamificationScorecardsUsersValuesAverage');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **filterType** | **String** | Filter type for the query request. | <br />**Values**: Division |
+ **filterId** | **String** | ID for the filter type. For example, division Id |  |
+ **workday** | **String** | The target workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+ **timeZone** | **String** | Timezone for the workday. Defaults to UTC | [optional] [default to UTC] |
+{: class="table table-striped"}
+
+### Return type
+
+**SingleWorkdayAverageValues**
+
+<a name="getGamificationScorecardsUsersValuesTrends"></a>
+
+# WorkdayValuesTrend getGamificationScorecardsUsersValuesTrends(filterType, filterId, startWorkday, endWorkday, opts)
+
+
+
+GET /api/v2/gamification/scorecards/users/values/trends
+
+Values trend by target group
+
+
+
+Requires ANY permissions: 
+
+* gamification:scorecard:viewAll
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.GamificationApi();
+
+let filterType = "filterType_example"; // String | Filter type for the query request.
+let filterId = "filterId_example"; // String | ID for the filter type.
+let startWorkday = "2013-10-20"; // String | Start workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd
+let endWorkday = "2013-10-20"; // String | End workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd
+let opts = { 
+  'timeZone': "UTC" // String | Timezone for the workday. Defaults to UTC
+};
+
+apiInstance.getGamificationScorecardsUsersValuesTrends(filterType, filterId, startWorkday, endWorkday, opts)
+  .then((data) => {
+    console.log(`getGamificationScorecardsUsersValuesTrends success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getGamificationScorecardsUsersValuesTrends');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **filterType** | **String** | Filter type for the query request. | <br />**Values**: Division |
+ **filterId** | **String** | ID for the filter type. |  |
+ **startWorkday** | **String** | Start workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+ **endWorkday** | **String** | End workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+ **timeZone** | **String** | Timezone for the workday. Defaults to UTC | [optional] [default to UTC] |
+{: class="table table-striped"}
+
+### Return type
+
+**WorkdayValuesTrend**
+
+<a name="getGamificationScorecardsValuesAverage"></a>
+
+# SingleWorkdayAverageValues getGamificationScorecardsValuesAverage(workday, opts)
+
+
+
+GET /api/v2/gamification/scorecards/values/average
+
+Average values of the requesting user&#39;s division
+
+
+
+Requires ANY permissions: 
+
+* gamification:scorecard:view
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.GamificationApi();
+
+let workday = "2013-10-20"; // String | The target workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+let opts = { 
+  'timeZone': "UTC" // String | Timezone for the workday. Defaults to UTC
+};
+
+apiInstance.getGamificationScorecardsValuesAverage(workday, opts)
+  .then((data) => {
+    console.log(`getGamificationScorecardsValuesAverage success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getGamificationScorecardsValuesAverage');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **workday** | **String** | The target workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+ **timeZone** | **String** | Timezone for the workday. Defaults to UTC | [optional] [default to UTC] |
+{: class="table table-striped"}
+
+### Return type
+
+**SingleWorkdayAverageValues**
+
+<a name="getGamificationScorecardsValuesTrends"></a>
+
+# WorkdayValuesTrend getGamificationScorecardsValuesTrends(startWorkday, endWorkday, opts)
+
+
+
+GET /api/v2/gamification/scorecards/values/trends
+
+Values trends of the requesting user or group
+
+
+
+Requires ANY permissions: 
+
+* gamification:scorecard:view
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.GamificationApi();
+
+let startWorkday = "2013-10-20"; // String | Start workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd
+let endWorkday = "2013-10-20"; // String | End workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd
+let opts = { 
+  'filterType': "filterType_example", // String | Filter type for the query request. If not set, then the request is for the requesting user.
+  'timeZone': "UTC" // String | Timezone for the workday. Defaults to UTC
+};
+
+apiInstance.getGamificationScorecardsValuesTrends(startWorkday, endWorkday, opts)
+  .then((data) => {
+    console.log(`getGamificationScorecardsValuesTrends success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getGamificationScorecardsValuesTrends');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **startWorkday** | **String** | Start workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+ **endWorkday** | **String** | End workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+ **filterType** | **String** | Filter type for the query request. If not set, then the request is for the requesting user. | [optional] <br />**Values**: Division |
+ **timeZone** | **String** | Timezone for the workday. Defaults to UTC | [optional] [default to UTC] |
+{: class="table table-striped"}
+
+### Return type
+
+**WorkdayValuesTrend**
+
+<a name="getGamificationStatus"></a>
+
+# GamificationStatus getGamificationStatus()
+
+
+
+GET /api/v2/gamification/status
+
+Gamification activation status
+
+
+
+Requires ANY permissions: 
+
+* gamification:profile:view
+* gamification:profile:update
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.GamificationApi();
+
+apiInstance.getGamificationStatus()
+  .then((data) => {
+    console.log(`getGamificationStatus success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getGamificationStatus');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+{: class="table table-striped"}
+
+### Return type
+
+**GamificationStatus**
+
+<a name="getGamificationTemplate"></a>
+
+# ObjectiveTemplate getGamificationTemplate(templateId)
+
+
+
+GET /api/v2/gamification/templates/{templateId}
+
+Objective template by id
+
+
+
+Requires ANY permissions: 
+
+* gamification:profile:view
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.GamificationApi();
+
+let templateId = "templateId_example"; // String | template id
+
+apiInstance.getGamificationTemplate(templateId)
+  .then((data) => {
+    console.log(`getGamificationTemplate success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getGamificationTemplate');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **templateId** | **String** | template id |  |
+{: class="table table-striped"}
+
+### Return type
+
+**ObjectiveTemplate**
+
+<a name="getGamificationTemplates"></a>
+
+# GetTemplatesResponse getGamificationTemplates()
+
+
+
+GET /api/v2/gamification/templates
+
+All objective templates
+
+
+
+Requires ANY permissions: 
+
+* gamification:profile:view
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.GamificationApi();
+
+apiInstance.getGamificationTemplates()
+  .then((data) => {
+    console.log(`getGamificationTemplates success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getGamificationTemplates');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+{: class="table table-striped"}
+
+### Return type
+
+**GetTemplatesResponse**
+
+<a name="postGamificationMetrics"></a>
+
+# Metric postGamificationMetrics(body)
+
+
+
+POST /api/v2/gamification/metrics
+
+Creates a gamified metric with a given metric definition and metric objective
+
+
+
+Requires ALL permissions: 
+
+* gamification:profile:update
+
+
+### Request Body Schema
+
+<script type="text/javascript">
+	function copyMetricExample() {
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#MetricExample').text()).select();
+		document.execCommand("copy");
+		temp.remove();
+		return false;
+	}
+</script>
+
+Metric <a href="#" onclick="return copyMetricExample()">Copy</a>
+
+<div id="MetricExample">
+
+```{"language":"json", "maxHeight": "250px"}
+{ 
+  "id": String, 
+  "name": String, 
+  "metricDefinitionId": String, 
+  "objective": { 
+    "id": String, 
+    "templateId": String, 
+    "zones": { 
+      "label": String, 
+      "directionType": String, 
+      "zoneType": String, 
+      "upperLimitPoints": Number, 
+      "lowerLimitPoints": Number, 
+      "upperLimitValue": Number, 
+      "lowerLimitValue": Number, 
+    },  
+    "enabled": Boolean, 
+    "dateStart": String, 
+  },  
+  "performanceProfileId": String, 
+  "selfUri": String, 
+}
+```
+
+</div>
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.GamificationApi();
+
+let body = {}; // Object | Metric
+
+apiInstance.postGamificationMetrics(body)
+  .then((data) => {
+    console.log(`postGamificationMetrics success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postGamificationMetrics');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | Metric |  |
+{: class="table table-striped"}
+
+### Return type
+
+**Metric**
+
+<a name="putGamificationMetric"></a>
+
+# Metric putGamificationMetric(metricId, body)
+
+
+
+PUT /api/v2/gamification/metrics/{metricId}
+
+Updates a metric
+
+
+
+Requires ALL permissions: 
+
+* gamification:profile:update
+
+
+### Request Body Schema
+
+<script type="text/javascript">
+	function copyMetricExample() {
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#MetricExample').text()).select();
+		document.execCommand("copy");
+		temp.remove();
+		return false;
+	}
+</script>
+
+Metric <a href="#" onclick="return copyMetricExample()">Copy</a>
+
+<div id="MetricExample">
+
+```{"language":"json", "maxHeight": "250px"}
+{ 
+  "id": String, 
+  "name": String, 
+  "metricDefinitionId": String, 
+  "objective": { 
+    "id": String, 
+    "templateId": String, 
+    "zones": { 
+      "label": String, 
+      "directionType": String, 
+      "zoneType": String, 
+      "upperLimitPoints": Number, 
+      "lowerLimitPoints": Number, 
+      "upperLimitValue": Number, 
+      "lowerLimitValue": Number, 
+    },  
+    "enabled": Boolean, 
+    "dateStart": String, 
+  },  
+  "performanceProfileId": String, 
+  "selfUri": String, 
+}
+```
+
+</div>
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.GamificationApi();
+
+let metricId = "metricId_example"; // String | metric Id
+let body = {}; // Object | Metric
+
+apiInstance.putGamificationMetric(metricId, body)
+  .then((data) => {
+    console.log(`putGamificationMetric success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putGamificationMetric');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **metricId** | **String** | metric Id |  |
+ **body** | **Object** | Metric |  |
+{: class="table table-striped"}
+
+### Return type
+
+**Metric**
+
+<a name="putGamificationProfile"></a>
+
+# PerformanceProfile putGamificationProfile(performanceProfileId, opts)
+
+
+
+PUT /api/v2/gamification/profiles/{performanceProfileId}
+
+Updates a performance profile
+
+
+
+Requires ANY permissions: 
+
+* gamification:profile:update
+
+
+### Request Body Schema
+
+<script type="text/javascript">
+	function copyPerformanceProfileExample() {
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#PerformanceProfileExample').text()).select();
+		document.execCommand("copy");
+		temp.remove();
+		return false;
+	}
+</script>
+
+PerformanceProfile <a href="#" onclick="return copyPerformanceProfileExample()">Copy</a>
+
+<div id="PerformanceProfileExample">
+
+```{"language":"json", "maxHeight": "250px"}
+{ 
+  "id": String, 
+  "name": String, 
+  "description": String, 
+  "metricOrders": [String], 
+  "selfUri": String, 
+}
+```
+
+</div>
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.GamificationApi();
+
+let performanceProfileId = "performanceProfileId_example"; // String | Performance Profile Id
+let opts = { 
+  'body': {} // Object | performanceProfile
+};
+
+apiInstance.putGamificationProfile(performanceProfileId, opts)
+  .then((data) => {
+    console.log(`putGamificationProfile success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putGamificationProfile');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **performanceProfileId** | **String** | Performance Profile Id |  |
+ **body** | **Object** | performanceProfile | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**PerformanceProfile**
+
+<a name="putGamificationStatus"></a>
+
+# GamificationStatus putGamificationStatus(status)
+
+
+
+PUT /api/v2/gamification/status
+
+Update gamification activation status
+
+
+
+Requires ANY permissions: 
+
+* gamification:profile:update
+
+
+### Request Body Schema
+
+<script type="text/javascript">
+	function copyGamificationStatusExample() {
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#GamificationStatusExample').text()).select();
+		document.execCommand("copy");
+		temp.remove();
+		return false;
+	}
+</script>
+
+GamificationStatus <a href="#" onclick="return copyGamificationStatusExample()">Copy</a>
+
+<div id="GamificationStatusExample">
+
+```{"language":"json", "maxHeight": "250px"}
+{ 
+  "isActive": Boolean, 
+  "dateStart": String, 
+}
+```
+
+</div>
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.GamificationApi();
+
+let status = {}; // Object | Gamification status
+
+apiInstance.putGamificationStatus(status)
+  .then((data) => {
+    console.log(`putGamificationStatus success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putGamificationStatus');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **status** | **Object** | Gamification status |  |
+{: class="table table-striped"}
+
+### Return type
+
+**GamificationStatus**
+

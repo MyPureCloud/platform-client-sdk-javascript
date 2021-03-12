@@ -5,7 +5,7 @@ class RecordingApi {
 	/**
 	 * Recording service.
 	 * @module purecloud-platform-client-v2/api/RecordingApi
-	 * @version 107.0.0
+	 * @version 108.0.0
 	 */
 
 	/**
@@ -371,7 +371,7 @@ class RecordingApi {
 	 * @param {String} conversationId Conversation ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.maxWaitMs The maximum number of milliseconds to wait for the recording to be ready. Must be a positive value. (default to 5000)
-	 * @param {Object} opts.formatId The desired media format. Possible values: NONE, MP3, WAV, or WEBM (default to WEBM)
+	 * @param {Object} opts.formatId The desired media format (default to WEBM)
 	 */
 	getConversationRecordings(conversationId, opts) { 
 		opts = opts || {};

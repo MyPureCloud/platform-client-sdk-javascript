@@ -5,7 +5,7 @@ class WorkforceManagementApi {
 	/**
 	 * WorkforceManagement service.
 	 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-	 * @version 107.0.0
+	 * @version 108.0.0
 	 */
 
 	/**
@@ -2837,8 +2837,8 @@ class WorkforceManagementApi {
 	}
 
 	/**
-	 * Gets the lookup ids to fetch the specified set of requests
-	 * 
+	 * Fetches time off requests matching the conditions specified in the request body
+	 * Request body requires one of the following: User ID is specified, statuses == [Pending] or date range to be specified and less than or equal to 33 days.  All other fields are filters
 	 * @param {String} managementUnitId The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body body

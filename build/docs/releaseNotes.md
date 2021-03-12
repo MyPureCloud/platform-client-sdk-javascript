@@ -1,398 +1,575 @@
-Platform API version: 4513
+Platform API version: 4532
 
 
-# Major Changes (8 changes)
+# Major Changes (11 changes)
 
-**GET /api/v2/flows/datatables** (1 change)
+**EntityListing** (5 changes)
 
-* Parameter divisionId was added
+* Property pageSize was removed
+* Property pageNumber was removed
+* Property total was removed
+* Property pageCount was removed
+* Property entities was changed from DataTableImportJob[] to object[]
 
-**POST /api/v2/routing/queues/{queueId}/users** (1 change)
+**AuditLogMessage** (1 change)
 
-* Response 200 was removed
+* Enum value OrganizationProperties was removed from property entityType
 
-**POST /api/v2/conversations/messaging/integrations/facebook** (1 change)
+**AuditQueryEntity** (1 change)
 
-* Parameter async was removed
+* Enum value OrganizationProperties was removed from property name
 
-**POST /api/v2/conversations/messaging/integrations/twitter** (1 change)
+**Dependency** (1 change)
 
-* Parameter async was removed
+* Enum value BOTCONNECTORBOTVERSION was removed from property type
 
-**POST /api/v2/conversations/messaging/integrations/whatsapp** (1 change)
+**DependencyObject** (1 change)
 
-* Parameter async was removed
+* Enum value BOTCONNECTORBOTVERSION was removed from property type
 
-**POST /api/v2/routing/queues/{queueId}/members** (1 change)
+**TranscriptAggregationQuery** (1 change)
 
-* Response 200 was removed
+* Enum value nTopicSegments was removed from property metrics
 
-**POST /api/v2/conversations/messaging/integrations/line** (1 change)
+**TranscriptAggregationView** (1 change)
 
-* Parameter async was removed
-
-**SupportedContent** (1 change)
-
-* Model SupportedContent was removed
+* Enum value nTopicSegments was removed from property target
 
 
-# Minor Changes (142 changes)
+# Minor Changes (167 changes)
 
-**/api/v2/speechandtextanalytics/topics/general** (2 changes)
+**GET /api/v2/externalcontacts/scan/notes** (1 change)
+
+* Response 422 was added
+
+**/api/v2/routing/conversations/{conversationId}** (2 changes)
+
+* Path was added
+* Operation PATCH was added
+
+**/api/v2/gamification/leaderboard/bestpoints** (2 changes)
 
 * Path was added
 * Operation GET was added
 
-**/api/v2/speechandtextanalytics/topics/publishjobs/{jobId}** (2 changes)
+**/api/v2/gamification/leaderboard/all** (2 changes)
 
 * Path was added
 * Operation GET was added
 
-**/api/v2/speechandtextanalytics/programs/publishjobs/{jobId}** (2 changes)
+**/api/v2/gamification/leaderboard/all/bestpoints** (2 changes)
 
 * Path was added
 * Operation GET was added
 
-**/api/v2/speechandtextanalytics/topics** (3 changes)
-
-* Path was added
-* Operation GET was added
-* Operation POST was added
-
-**/api/v2/speechandtextanalytics/programs/general/jobs** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**POST /api/v2/routing/queues/{queueId}/users** (1 change)
-
-* Response default was added
-
-**/api/v2/speechandtextanalytics/programs/general/jobs/{jobId}** (2 changes)
+**/api/v2/gamification/leaderboard** (2 changes)
 
 * Path was added
 * Operation GET was added
 
-**POST /api/v2/routing/queues/{queueId}/members** (1 change)
-
-* Response default was added
-
-**/api/v2/speechandtextanalytics/programs** (3 changes)
-
-* Path was added
-* Operation GET was added
-* Operation POST was added
-
-**/api/v2/speechandtextanalytics/dialects** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/speechandtextanalytics/programs/{programId}** (4 changes)
+**/api/v2/gamification/profiles/{performanceProfileId}** (3 changes)
 
 * Path was added
 * Operation GET was added
 * Operation PUT was added
-* Operation DELETE was added
 
-**/api/v2/speechandtextanalytics/topics/publishjobs** (2 changes)
+**/api/v2/externalcontacts/bulk/contacts/remove** (2 changes)
 
 * Path was added
 * Operation POST was added
 
-**/api/v2/speechandtextanalytics/topics/{topicId}** (4 changes)
+**/api/v2/externalcontacts/bulk/contacts** (2 changes)
+
+* Path was added
+* Operation POST was added
+
+**/api/v2/externalcontacts/bulk/contacts/update** (2 changes)
+
+* Path was added
+* Operation POST was added
+
+**/api/v2/externalcontacts/bulk/contacts/add** (2 changes)
+
+* Path was added
+* Operation POST was added
+
+**GET /api/v2/externalcontacts/scan/organizations** (1 change)
+
+* Response 422 was added
+
+**/api/v2/analytics/bots/aggregates/query** (2 changes)
+
+* Path was added
+* Operation POST was added
+
+**/api/v2/gamification/metrics** (3 changes)
+
+* Path was added
+* Operation GET was added
+* Operation POST was added
+
+**/api/v2/gamification/status** (3 changes)
 
 * Path was added
 * Operation GET was added
 * Operation PUT was added
-* Operation DELETE was added
 
-**/api/v2/speechandtextanalytics/programs/publishjobs** (2 changes)
+**/api/v2/externalcontacts/bulk/organizations/add** (2 changes)
 
 * Path was added
 * Operation POST was added
 
-**/api/v2/speechandtextanalytics/programs/unpublished** (2 changes)
+**/api/v2/externalcontacts/bulk/organizations/remove** (2 changes)
+
+* Path was added
+* Operation POST was added
+
+**/api/v2/externalcontacts/bulk/organizations** (2 changes)
+
+* Path was added
+* Operation POST was added
+
+**/api/v2/externalcontacts/bulk/organizations/update** (2 changes)
+
+* Path was added
+* Operation POST was added
+
+**/api/v2/gamification/metricdefinitions** (2 changes)
 
 * Path was added
 * Operation GET was added
 
-**SupportedContentReference** (1 change)
+**/api/v2/gamification/templates** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**GET /api/v2/externalcontacts/scan/contacts** (1 change)
+
+* Response 422 was added
+
+**/api/v2/gamification/metrics/{metricId}** (3 changes)
+
+* Path was added
+* Operation GET was added
+* Operation PUT was added
+
+**/api/v2/gamification/profiles** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/gamification/scorecards/values/trends** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/gamification/scorecards/points/trends** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/gamification/scorecards** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/gamification/scorecards/bestpoints** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/gamification/scorecards/attendance** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/gamification/scorecards/points/alltime** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/gamification/scorecards/points/average** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/gamification/scorecards/values/average** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/gamification/metricdefinitions/{metricDefinitionId}** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**GET /api/v2/externalcontacts/scan/relationships** (1 change)
+
+* Response 422 was added
+
+**/api/v2/gamification/scorecards/users/values/average** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/gamification/scorecards/users/{userId}/points/alltime** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/gamification/scorecards/users/{userId}/values/trends** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/gamification/scorecards/users/points/average** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/gamification/scorecards/users/{userId}/bestpoints** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/gamification/scorecards/users/values/trends** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/gamification/scorecards/users/{userId}** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/gamification/scorecards/users/{userId}/attendance** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/gamification/scorecards/users/{userId}/points/trends** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/gamification/templates/{templateId}** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**MessagingSticker** (1 change)
+
+* Enum value open was added to property messengerType
+
+**Response** (1 change)
+
+* Enum value CampaignEmailTemplate was added to property responseType
+
+**RoutingConversationAttributes** (1 change)
 
 * Model was added
 
-**GeneralTopic** (1 change)
+**MessagingIntegration** (1 change)
+
+* Enum value open was added to property messengerType
+
+**Library** (1 change)
+
+* Enum value CampaignEmailTemplate was added to property responseType
+
+**OverallBestPoints** (1 change)
 
 * Model was added
 
-**GeneralTopicsEntityListing** (1 change)
+**OverallBestPointsItem** (1 change)
 
 * Model was added
 
-**DataTable** (1 change)
-
-* Optional property division was added
-
-**WorkPlanActivity** (2 changes)
-
-* Optional property minimumLengthFromShiftStartMinutes was added
-* Optional property minimumLengthFromShiftEndMinutes was added
-
-**WorkPlanShift** (2 changes)
-
-* Optional property constrainEarliestStopTime was added
-* Optional property earliestStopTimeMinutesFromMidnight was added
-
-**WorkPlanValidationRequest** (11 changes)
-
-* Optional property minimumConsecutiveNonWorkingMinutesPerWeek was added
-* Optional property constrainMaximumConsecutiveWorkingWeekends was added
-* Optional property maximumConsecutiveWorkingWeekends was added
-* Optional property constrainMaximumConsecutiveWorkingDays was added
-* Optional property maximumConsecutiveWorkingDays was added
-* Optional property minimumShiftStartDistanceMinutes was added
-* Optional property minimumDaysOffPerPlanningPeriod was added
-* Optional property maximumDaysOffPerPlanningPeriod was added
-* Optional property minimumPaidMinutesPerPlanningPeriod was added
-* Optional property maximumPaidMinutesPerPlanningPeriod was added
-* Optional property shiftStartVarianceType was added
-
-**WorkPlan** (11 changes)
-
-* Optional property minimumConsecutiveNonWorkingMinutesPerWeek was added
-* Optional property constrainMaximumConsecutiveWorkingWeekends was added
-* Optional property maximumConsecutiveWorkingWeekends was added
-* Optional property constrainMaximumConsecutiveWorkingDays was added
-* Optional property maximumConsecutiveWorkingDays was added
-* Optional property minimumShiftStartDistanceMinutes was added
-* Optional property minimumDaysOffPerPlanningPeriod was added
-* Optional property maximumDaysOffPerPlanningPeriod was added
-* Optional property minimumPaidMinutesPerPlanningPeriod was added
-* Optional property maximumPaidMinutesPerPlanningPeriod was added
-* Optional property shiftStartVarianceType was added
-
-**CreateWorkPlan** (11 changes)
-
-* Optional property minimumConsecutiveNonWorkingMinutesPerWeek was added
-* Optional property constrainMaximumConsecutiveWorkingWeekends was added
-* Optional property maximumConsecutiveWorkingWeekends was added
-* Optional property constrainMaximumConsecutiveWorkingDays was added
-* Optional property maximumConsecutiveWorkingDays was added
-* Optional property minimumShiftStartDistanceMinutes was added
-* Optional property minimumDaysOffPerPlanningPeriod was added
-* Optional property maximumDaysOffPerPlanningPeriod was added
-* Optional property minimumPaidMinutesPerPlanningPeriod was added
-* Optional property maximumPaidMinutesPerPlanningPeriod was added
-* Optional property shiftStartVarianceType was added
-
-**CreateWorkPlanActivity** (2 changes)
-
-* Optional property minimumLengthFromShiftStartMinutes was added
-* Optional property minimumLengthFromShiftEndMinutes was added
-
-**CreateWorkPlanShift** (2 changes)
-
-* Optional property constrainEarliestStopTime was added
-* Optional property earliestStopTimeMinutesFromMidnight was added
-
-**WorkPlanListItemResponse** (11 changes)
-
-* Optional property minimumConsecutiveNonWorkingMinutesPerWeek was added
-* Optional property constrainMaximumConsecutiveWorkingWeekends was added
-* Optional property maximumConsecutiveWorkingWeekends was added
-* Optional property constrainMaximumConsecutiveWorkingDays was added
-* Optional property maximumConsecutiveWorkingDays was added
-* Optional property minimumShiftStartDistanceMinutes was added
-* Optional property minimumDaysOffPerPlanningPeriod was added
-* Optional property maximumDaysOffPerPlanningPeriod was added
-* Optional property minimumPaidMinutesPerPlanningPeriod was added
-* Optional property maximumPaidMinutesPerPlanningPeriod was added
-* Optional property shiftStartVarianceType was added
-
-**ManagementUnit** (1 change)
-
-* Optional property businessUnit was added
-
-**SchedulingSettingsResponse** (2 changes)
-
-* Optional property planningPeriod was added
-* Optional property startDayOfWeekend was added
-
-**BaseTopicEntitiy** (1 change)
+**Leaderboard** (1 change)
 
 * Model was added
 
-**TopicJob** (1 change)
+**LeaderboardItem** (1 change)
 
 * Model was added
 
-**ExternalContact** (1 change)
-
-* id is no longer readonly
-
-**RoutingData** (1 change)
-
-* Optional property scoredAgents was added
-
-**SchedulingSettingsRequest** (2 changes)
-
-* Optional property planningPeriod was added
-* Optional property startDayOfWeekend was added
-
-**AuditQueryExecutionStatusResponse** (1 change)
-
-* Enum value Routing was added to property serviceName
-
-**AuditQueryRequest** (1 change)
-
-* Enum value Routing was added to property serviceName
-
-**AuditLogMessage** (7 changes)
-
-* Enum value Routing was added to property serviceName
-* Enum value CampaignSchedule was added to property entityType
-* Enum value SequenceSchedule was added to property entityType
-* Enum value OrganizationProperties was added to property entityType
-* Enum value WrapUpCodeMapping was added to property entityType
-* Enum value MessagingCampaign was added to property entityType
-* Enum value Predictor was added to property entityType
-
-**AuditRealtimeQueryRequest** (1 change)
-
-* Enum value Routing was added to property serviceName
-
-**AuditQueryEntity** (6 changes)
-
-* Enum value CampaignSchedule was added to property name
-* Enum value SequenceSchedule was added to property name
-* Enum value OrganizationProperties was added to property name
-* Enum value WrapUpCodeMapping was added to property name
-* Enum value MessagingCampaign was added to property name
-* Enum value Predictor was added to property name
-
-**AuditQueryService** (1 change)
-
-* Enum value Routing was added to property name
-
-**BaseProgramEntity** (1 change)
+**Metric** (1 change)
 
 * Model was added
 
-**ProgramJob** (1 change)
+**Objective** (1 change)
 
 * Model was added
 
-**ListedTopic** (1 change)
+**ObjectiveZone** (1 change)
 
 * Model was added
 
-**TopicsEntityListing** (1 change)
+**Recipient** (1 change)
+
+* Enum value open was added to property messengerType
+
+**PerformanceProfile** (1 change)
 
 * Model was added
 
-**Phrase** (1 change)
+**AuditLogMessage** (3 changes)
+
+* Enum value VoicemailPolicy was added to property entityType
+* Enum value OrganizationSettings was added to property entityType
+* Enum value RoutingTranscriptionSettings was added to property entityType
+
+**AuditQueryEntity** (3 changes)
+
+* Enum value VoicemailPolicy was added to property name
+* Enum value OrganizationSettings was added to property name
+* Enum value RoutingTranscriptionSettings was added to property name
+
+**BulkDeleteResponse** (1 change)
 
 * Model was added
 
-**Topic** (1 change)
+**BulkErrorDetail** (1 change)
 
 * Model was added
 
-**TopicRequest** (1 change)
+**BulkErrorEntity** (1 change)
 
 * Model was added
 
-**ExternalSegment** (1 change)
+**BulkResponseResultVoidEntity** (1 change)
 
 * Model was added
 
-**JourneySegment** (1 change)
-
-* Optional property externalSegment was added
-
-**PatchExternalSegment** (1 change)
+**Void** (1 change)
 
 * Model was added
 
-**PatchSegment** (1 change)
-
-* Optional property externalSegment was added
-
-**AvailableTopic** (1 change)
-
-* Optional property permissionDetails was added
-
-**PermissionDetails** (1 change)
+**BulkIdsRequest** (1 change)
 
 * Model was added
 
-**GeneralProgramJob** (1 change)
+**BulkFetchContactsResponse** (1 change)
 
 * Model was added
 
-**GeneralProgramJobRequest** (1 change)
+**BulkResponseResultExternalContactEntity** (1 change)
 
 * Model was added
 
-**ListedProgram** (1 change)
+**BulkContactsResponse** (1 change)
 
 * Model was added
 
-**ProgramsEntityListing** (1 change)
+**BulkErrorExternalContact** (1 change)
 
 * Model was added
 
-**Program** (1 change)
+**BulkResponseResultExternalContactExternalContact** (1 change)
 
 * Model was added
 
-**ProgramRequest** (1 change)
+**BulkContactsRequest** (1 change)
 
 * Model was added
 
-**TranscriptAggregateQueryPredicate** (2 changes)
+**MessageData** (1 change)
 
-* Enum value flowVersion was added to property dimension
-* Enum value topicId was added to property dimension
+* Enum value open was added to property messengerType
 
-**TranscriptAggregationQuery** (2 changes)
+**CreateOutboundMessagingConversationRequest** (1 change)
 
-* Enum value flowVersion was added to property groupBy
-* Enum value topicId was added to property groupBy
+* Enum value open was added to property toAddressMessengerType
 
-**TopicJobRequest** (1 change)
+**SendAgentlessOutboundMessageResponse** (1 change)
 
-* Model was added
+* Enum value open was added to property messengerType
 
-**ProgramJobRequest** (1 change)
+**SendAgentlessOutboundMessageRequest** (1 change)
 
-* Model was added
+* Enum value open was added to property toAddressMessengerType
 
-**UnpublishedProgramsEntityListing** (1 change)
+**BotAggregateDataContainer** (1 change)
 
 * Model was added
 
+**BotAggregateQueryResponse** (1 change)
 
-# Point Changes (7 changes)
+* Model was added
 
-**GET /api/v2/workforcemanagement/managementunits** (3 changes)
+**BotAggregateQueryClause** (1 change)
 
-* Description was changed for parameter pageSize
-* Description was changed for parameter pageNumber
-* Description was changed for parameter expand
+* Model was added
 
-**GET /api/v2/workforcemanagement/managementunits/{managementUnitId}** (1 change)
+**BotAggregateQueryFilter** (1 change)
+
+* Model was added
+
+**BotAggregateQueryPredicate** (1 change)
+
+* Model was added
+
+**BotAggregationQuery** (1 change)
+
+* Model was added
+
+**BotAggregationView** (1 change)
+
+* Model was added
+
+**GetMetricsResponse** (1 change)
+
+* Model was added
+
+**Metrics** (1 change)
+
+* Model was added
+
+**EventMessage** (1 change)
+
+* Enum value EXCEEDED_DNC_PHONE_NUMBER_LENGTH was added to property code
+
+**GamificationStatus** (1 change)
+
+* Model was added
+
+**Dependency** (1 change)
+
+* Enum value BOTCONNECTORINTEGRATION was added to property type
+
+**BulkErrorExternalOrganization** (1 change)
+
+* Model was added
+
+**BulkOrganizationsResponse** (1 change)
+
+* Model was added
+
+**BulkResponseResultExternalOrganizationExternalOrganization** (1 change)
+
+* Model was added
+
+**BulkOrganizationsRequest** (1 change)
+
+* Model was added
+
+**BulkFetchOrganizationsResponse** (1 change)
+
+* Model was added
+
+**BulkResponseResultExternalOrganizationEntity** (1 change)
+
+* Model was added
+
+**DefaultObjective** (1 change)
+
+* Model was added
+
+**GetMetricDefinitionsResponse** (1 change)
+
+* Model was added
+
+**MetricDefinition** (1 change)
+
+* Model was added
+
+**GetTemplatesResponse** (1 change)
+
+* Model was added
+
+**ObjectiveTemplate** (1 change)
+
+* Model was added
+
+**DependencyObject** (1 change)
+
+* Enum value BOTCONNECTORINTEGRATION was added to property type
+
+**MessagingRecipient** (1 change)
+
+* Optional property idType was added
+
+**GetProfilesResponse** (1 change)
+
+* Model was added
+
+**WorkdayValuesMetricItem** (1 change)
+
+* Model was added
+
+**WorkdayValuesTrend** (1 change)
+
+* Model was added
+
+**WorkdayValuesTrendItem** (1 change)
+
+* Model was added
+
+**WorkdayPointsTrend** (1 change)
+
+* Model was added
+
+**WorkdayPointsTrendItem** (1 change)
+
+* Model was added
+
+**PunctualityEvent** (1 change)
+
+* Model was added
+
+**WorkdayMetric** (1 change)
+
+* Model was added
+
+**WorkdayMetricListing** (1 change)
+
+* Model was added
+
+**UserBestPoints** (1 change)
+
+* Model was added
+
+**UserBestPointsItem** (1 change)
+
+* Model was added
+
+**AttendanceStatus** (1 change)
+
+* Model was added
+
+**AttendanceStatusListing** (1 change)
+
+* Model was added
+
+**AllTimePoints** (1 change)
+
+* Model was added
+
+**SingleWorkdayAveragePoints** (1 change)
+
+* Model was added
+
+**SingleWorkdayAverageValues** (1 change)
+
+* Model was added
+
+**TranscriptAggregateQueryPredicate** (1 change)
+
+* Enum value resultsBy was added to property dimension
+
+**TranscriptAggregationQuery** (1 change)
+
+* Enum value resultsBy was added to property groupBy
+
+
+# Point Changes (3 changes)
+
+**GET /api/v2/conversations/{conversationId}/recordings** (1 change)
+
+* Description was changed for parameter formatId
+
+**POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffrequests/query** (2 changes)
 
 * Description was changed
-
-**POST /api/v2/authorization/divisions/{divisionId}/objects/{objectType}** (1 change)
-
-* Description was changed
-
-**GET /api/v2/users/development/activities** (1 change)
-
-* Description was changed for parameter relationship
-
-**GET /api/v2/users/development/activities/me** (1 change)
-
-* Description was changed for parameter relationship
+* Summary was changed

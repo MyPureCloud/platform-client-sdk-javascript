@@ -171,6 +171,7 @@ PostTextRequest <a href="#" onclick="return copyPostTextRequestExample()">Copy</
       "mention": { 
         "nickname": String, 
         "id": String, 
+        "idType": String, 
         "image": String, 
         "firstName": String, 
         "lastName": String, 

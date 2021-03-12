@@ -15,6 +15,7 @@ import DataExtensionsApi from './api/DataExtensionsApi.js';
 import ExternalContactsApi from './api/ExternalContactsApi.js';
 import FaxApi from './api/FaxApi.js';
 import FlowsApi from './api/FlowsApi.js';
+import GamificationApi from './api/GamificationApi.js';
 import GeneralDataProtectionRegulationApi from './api/GeneralDataProtectionRegulationApi.js';
 import GeolocationApi from './api/GeolocationApi.js';
 import GreetingsApi from './api/GreetingsApi.js';
@@ -89,7 +90,7 @@ import WorkforceManagementApi from './api/WorkforceManagementApi.js';
  * </pre>
  * </p>
  * @module purecloud-platform-client-v2/index
- * @version 107.0.0
+ * @version 108.0.0
  */
 class platformClient {
 	constructor() {
@@ -173,6 +174,11 @@ class platformClient {
 		 * @property {module:purecloud-platform-client-v2/api/FlowsApi}
 		 */
 		this.FlowsApi = FlowsApi;
+		/**
+		 * The GamificationApi service constructor.
+		 * @property {module:purecloud-platform-client-v2/api/GamificationApi}
+		 */
+		this.GamificationApi = GamificationApi;
 		/**
 		 * The GeneralDataProtectionRegulationApi service constructor.
 		 * @property {module:purecloud-platform-client-v2/api/GeneralDataProtectionRegulationApi}
