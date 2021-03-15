@@ -5,7 +5,7 @@ class GeolocationApi {
 	/**
 	 * Geolocation service.
 	 * @module purecloud-platform-client-v2/api/GeolocationApi
-	 * @version 108.0.0
+	 * @version 108.0.1
 	 */
 
 	/**
