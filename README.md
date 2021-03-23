@@ -6,7 +6,7 @@ title: Platform API Client SDK - JavaScript
 
 A JavaScript library to interface with the Genesys Cloud Platform API. View the documentation on the [Genesys Cloud Developer Center](https://developer.mypurecloud.com/api/rest/client-libraries/javascript/). Browse the source code on [Github](https://github.com/MyPureCloud/platform-client-sdk-javascript).
 
-[![GitHub release](https://img.shields.io/github/release/mypurecloud/platform-client-sdk-javascript.svg)]()
+[![GitHub release](https://img.shields.io/github/release/mypurecloud/platform-client-sdk-javascript.svg)](https://github.com/MyPureCloud/platform-client-sdk-javascript)
 [![npm](https://img.shields.io/npm/v/purecloud-platform-client-v2.svg)](https://www.npmjs.com/package/purecloud-platform-client-v2)
 [![Release Notes Badge](https://developer.mypurecloud.com/images/sdk-release-notes.png)](https://github.com/MyPureCloud/platform-client-sdk-javascript/blob/master/releaseNotes.md)
 
@@ -27,7 +27,7 @@ For direct use in a browser script:
 
 ```{"language":"html"}
 <!-- Include the CJS SDK -->
-<script src="https://sdk-cdn.mypurecloud.com/javascript/108.0.2/purecloud-platform-client-v2.min.js"></script>
+<script src="https://sdk-cdn.mypurecloud.com/javascript/109.0.0/purecloud-platform-client-v2.min.js"></script>
 
 <script type="text/javascript">
   // Obtain a reference to the platformClient object
@@ -44,7 +44,7 @@ For direct use in a browser script:
 
 <script type="text/javascript">
   // Obtain a reference to the platformClient object
-  requirejs(['https://sdk-cdn.mypurecloud.com/javascript/amd/108.0.2/purecloud-platform-client-v2.min.js'], (platformClient) => {
+  requirejs(['https://sdk-cdn.mypurecloud.com/javascript/amd/109.0.0/purecloud-platform-client-v2.min.js'], (platformClient) => {
     console.log(platformClient);
   });
 </script>

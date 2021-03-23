@@ -8822,6 +8822,7 @@ Recipient <a href="#" onclick="return copyRecipientExample()">Copy</a>
         "language": String, 
         "isDefault": Boolean, 
       },  
+      "compatibleFlowTypes": [String], 
       "selfUri": String, 
     },  
     "savedVersion": { 
@@ -8871,6 +8872,7 @@ Recipient <a href="#" onclick="return copyRecipientExample()">Copy</a>
         "language": String, 
         "isDefault": Boolean, 
       },  
+      "compatibleFlowTypes": [String], 
       "selfUri": String, 
     },  
     "inputSchema": Object, 
@@ -8922,6 +8924,7 @@ Recipient <a href="#" onclick="return copyRecipientExample()">Copy</a>
         "language": String, 
         "isDefault": Boolean, 
       },  
+      "compatibleFlowTypes": [String], 
       "selfUri": String, 
     },  
     "debugVersion": { 
@@ -8971,6 +8974,7 @@ Recipient <a href="#" onclick="return copyRecipientExample()">Copy</a>
         "language": String, 
         "isDefault": Boolean, 
       },  
+      "compatibleFlowTypes": [String], 
       "selfUri": String, 
     },  
     "publishedBy": { 
@@ -9811,6 +9815,7 @@ Recipient <a href="#" onclick="return copyRecipientExample()">Copy</a>
       "language": String, 
       "isDefault": Boolean, 
     },  
+    "compatibleFlowTypes": [String], 
     "selfUri": String, 
   },  
   "dateCreated": Date, 

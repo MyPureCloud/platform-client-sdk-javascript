@@ -7177,6 +7177,9 @@ DialerContact <a href="#" onclick="return copyDialerContactExample()">Copy</a>
     "timeZone": String, 
     "columnType": String, 
   },  
+  "configurationOverrides": { 
+    "priority": Boolean, 
+  },  
   "selfUri": String, 
 }
 ```

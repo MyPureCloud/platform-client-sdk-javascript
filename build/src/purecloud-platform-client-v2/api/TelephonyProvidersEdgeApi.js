@@ -5,7 +5,7 @@ class TelephonyProvidersEdgeApi {
 	/**
 	 * TelephonyProvidersEdge service.
 	 * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-	 * @version 108.0.2
+	 * @version 109.0.0
 	 */
 
 	/**
@@ -1821,7 +1821,7 @@ class TelephonyProvidersEdgeApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Number} opts.pageSize Page size (default to 25)
-	 * @param {String} opts.sortBy Value by which to sort (default to name)
+	 * @param {Object} opts.sortBy The field to sort by (default to name)
 	 * @param {String} opts.sortOrder Sort order (default to ASC)
 	 * @param {String} opts.siteId Filter by site.id
 	 * @param {String} opts.webRtcUserId Filter by webRtcUser.id
@@ -1832,6 +1832,8 @@ class TelephonyProvidersEdgeApi {
 	 * @param {String} opts.linesId Filter by lines.id
 	 * @param {String} opts.linesName Filter by lines.name
 	 * @param {String} opts.name Name of the Phone to filter by
+	 * @param {String} opts.statusOperationalStatus The primary status to filter by
+	 * @param {String} opts.secondaryStatusOperationalStatus The secondary status to filter by
 	 * @param {Array.<String>} opts.expand Fields to expand in the response, comma-separated
 	 * @param {Array.<String>} opts.fields Fields and properties to get, comma-separated
 	 */
@@ -1843,7 +1845,7 @@ class TelephonyProvidersEdgeApi {
 			'/api/v2/telephony/providers/edges/phones', 
 			'GET', 
 			{  }, 
-			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'site.id': opts['siteId'],'webRtcUser.id': opts['webRtcUserId'],'phoneBaseSettings.id': opts['phoneBaseSettingsId'],'lines.loggedInUser.id': opts['linesLoggedInUserId'],'lines.defaultForUser.id': opts['linesDefaultForUserId'],'phone_hardwareId': opts['phoneHardwareId'],'lines.id': opts['linesId'],'lines.name': opts['linesName'],'name': opts['name'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'fields': this.apiClient.buildCollectionParam(opts['fields'], 'multi') }, 
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'site.id': opts['siteId'],'webRtcUser.id': opts['webRtcUserId'],'phoneBaseSettings.id': opts['phoneBaseSettingsId'],'lines.loggedInUser.id': opts['linesLoggedInUserId'],'lines.defaultForUser.id': opts['linesDefaultForUserId'],'phone_hardwareId': opts['phoneHardwareId'],'lines.id': opts['linesId'],'lines.name': opts['linesName'],'name': opts['name'],'status.operationalStatus': opts['statusOperationalStatus'],'secondaryStatus.operationalStatus': opts['secondaryStatusOperationalStatus'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'fields': this.apiClient.buildCollectionParam(opts['fields'], 'multi') }, 
 			{  }, 
 			{  }, 
 			null, 

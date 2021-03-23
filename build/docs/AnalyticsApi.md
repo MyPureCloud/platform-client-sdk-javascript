@@ -1743,36 +1743,6 @@ AsyncConversationQuery <a href="#" onclick="return copyAsyncConversationQueryExa
       },  
     },  
   },  
-  "mediaEndpointStatFilters": { 
-    "type": String, 
-    "clauses": { 
-      "type": String, 
-      "predicates": { 
-        "type": String, 
-        "dimension": String, 
-        "operator": String, 
-        "value": String, 
-        "range": { 
-          "gt": Number, 
-          "gte": Number, 
-          "lt": Number, 
-          "lte": Number, 
-        },  
-      },  
-    },  
-    "predicates": { 
-      "type": String, 
-      "dimension": String, 
-      "operator": String, 
-      "value": String, 
-      "range": { 
-        "gt": Number, 
-        "gte": Number, 
-        "lt": Number, 
-        "lte": Number, 
-      },  
-    },  
-  },  
   "surveyFilters": { 
     "type": String, 
     "clauses": { 
@@ -2009,36 +1979,6 @@ ConversationQuery <a href="#" onclick="return copyConversationQueryExample()">Co
       "type": String, 
       "dimension": String, 
       "metric": String, 
-      "operator": String, 
-      "value": String, 
-      "range": { 
-        "gt": Number, 
-        "gte": Number, 
-        "lt": Number, 
-        "lte": Number, 
-      },  
-    },  
-  },  
-  "mediaEndpointStatFilters": { 
-    "type": String, 
-    "clauses": { 
-      "type": String, 
-      "predicates": { 
-        "type": String, 
-        "dimension": String, 
-        "operator": String, 
-        "value": String, 
-        "range": { 
-          "gt": Number, 
-          "gte": Number, 
-          "lt": Number, 
-          "lte": Number, 
-        },  
-      },  
-    },  
-    "predicates": { 
-      "type": String, 
-      "dimension": String, 
       "operator": String, 
       "value": String, 
       "range": { 

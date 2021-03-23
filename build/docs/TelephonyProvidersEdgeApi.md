@@ -3989,7 +3989,7 @@ let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 let opts = { 
   'pageNumber': 1, // Number | Page number
   'pageSize': 25, // Number | Page size
-  'sortBy': "name", // String | Value by which to sort
+  'sortBy': "name", // String | The field to sort by
   'sortOrder': "ASC", // String | Sort order
   'siteId': "siteId_example", // String | Filter by site.id
   'webRtcUserId': "webRtcUserId_example", // String | Filter by webRtcUser.id
@@ -4000,6 +4000,8 @@ let opts = {
   'linesId': "linesId_example", // String | Filter by lines.id
   'linesName': "linesName_example", // String | Filter by lines.name
   'name': "name_example", // String | Name of the Phone to filter by
+  'statusOperationalStatus': "statusOperationalStatus_example", // String | The primary status to filter by
+  'secondaryStatusOperationalStatus': "secondaryStatusOperationalStatus_example", // String | The secondary status to filter by
   'expand': ["expand_example"], // [String] | Fields to expand in the response, comma-separated
   'fields': ["fields_example"] // [String] | Fields and properties to get, comma-separated
 };
@@ -4021,7 +4023,7 @@ apiInstance.getTelephonyProvidersEdgesPhones(opts)
 | ------------- | ------------- | ------------- | ------------- |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
- **sortBy** | **String** | Value by which to sort | [optional] [default to name] |
+ **sortBy** | **String** | The field to sort by | [optional] [default to name]<br />**Values**: name, status.operationalStatus, secondaryStatus.operationalStatus |
  **sortOrder** | **String** | Sort order | [optional] [default to ASC] |
  **siteId** | **String** | Filter by site.id | [optional]  |
  **webRtcUserId** | **String** | Filter by webRtcUser.id | [optional]  |
@@ -4032,6 +4034,8 @@ apiInstance.getTelephonyProvidersEdgesPhones(opts)
  **linesId** | **String** | Filter by lines.id | [optional]  |
  **linesName** | **String** | Filter by lines.name | [optional]  |
  **name** | **String** | Name of the Phone to filter by | [optional]  |
+ **statusOperationalStatus** | **String** | The primary status to filter by | [optional]  |
+ **secondaryStatusOperationalStatus** | **String** | The secondary status to filter by | [optional]  |
  **expand** | **[String]** | Fields to expand in the response, comma-separated | [optional] <br />**Values**: properties, site, status, status.primaryEdgesStatus, status.secondaryEdgesStatus, phoneBaseSettings, lines |
  **fields** | **[String]** | Fields and properties to get, comma-separated | [optional] <br />**Values**: webRtcUser, properties.*, lines.loggedInUser, lines.defaultForUser |
 {: class="table table-striped"}

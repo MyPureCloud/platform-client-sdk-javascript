@@ -5723,6 +5723,7 @@ Flow <a href="#" onclick="return copyFlowExample()">Copy</a>
       "language": String, 
       "isDefault": Boolean, 
     },  
+    "compatibleFlowTypes": [String], 
     "selfUri": String, 
   },  
   "savedVersion": { 
@@ -5772,6 +5773,7 @@ Flow <a href="#" onclick="return copyFlowExample()">Copy</a>
       "language": String, 
       "isDefault": Boolean, 
     },  
+    "compatibleFlowTypes": [String], 
     "selfUri": String, 
   },  
   "inputSchema": Object, 
@@ -5823,6 +5825,7 @@ Flow <a href="#" onclick="return copyFlowExample()">Copy</a>
       "language": String, 
       "isDefault": Boolean, 
     },  
+    "compatibleFlowTypes": [String], 
     "selfUri": String, 
   },  
   "debugVersion": { 
@@ -5872,6 +5875,7 @@ Flow <a href="#" onclick="return copyFlowExample()">Copy</a>
       "language": String, 
       "isDefault": Boolean, 
     },  
+    "compatibleFlowTypes": [String], 
     "selfUri": String, 
   },  
   "publishedBy": { 
@@ -6730,6 +6734,7 @@ Flow <a href="#" onclick="return copyFlowExample()">Copy</a>
     "language": String, 
     "isDefault": Boolean, 
   },  
+  "compatibleFlowTypes": [String], 
   "selfUri": String, 
 }
 ```
@@ -9871,6 +9876,7 @@ Flow <a href="#" onclick="return copyFlowExample()">Copy</a>
       "language": String, 
       "isDefault": Boolean, 
     },  
+    "compatibleFlowTypes": [String], 
     "selfUri": String, 
   },  
   "savedVersion": { 
@@ -9920,6 +9926,7 @@ Flow <a href="#" onclick="return copyFlowExample()">Copy</a>
       "language": String, 
       "isDefault": Boolean, 
     },  
+    "compatibleFlowTypes": [String], 
     "selfUri": String, 
   },  
   "inputSchema": Object, 
@@ -9971,6 +9978,7 @@ Flow <a href="#" onclick="return copyFlowExample()">Copy</a>
       "language": String, 
       "isDefault": Boolean, 
     },  
+    "compatibleFlowTypes": [String], 
     "selfUri": String, 
   },  
   "debugVersion": { 
@@ -10020,6 +10028,7 @@ Flow <a href="#" onclick="return copyFlowExample()">Copy</a>
       "language": String, 
       "isDefault": Boolean, 
     },  
+    "compatibleFlowTypes": [String], 
     "selfUri": String, 
   },  
   "publishedBy": { 
@@ -10878,6 +10887,7 @@ Flow <a href="#" onclick="return copyFlowExample()">Copy</a>
     "language": String, 
     "isDefault": Boolean, 
   },  
+  "compatibleFlowTypes": [String], 
   "selfUri": String, 
 }
 ```
