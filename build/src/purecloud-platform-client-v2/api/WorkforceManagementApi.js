@@ -5,7 +5,7 @@ class WorkforceManagementApi {
 	/**
 	 * WorkforceManagement service.
 	 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-	 * @version 109.0.0
+	 * @version 110.0.0
 	 */
 
 	/**
@@ -225,31 +225,6 @@ class WorkforceManagementApi {
 			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}', 
 			'DELETE', 
 			{ 'businessUnitId': businessUnitId,'weekDateId': weekDateId,'forecastId': forecastId }, 
-			{  }, 
-			{  }, 
-			{  }, 
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'], 
-			['application/json']
-		);
-	}
-
-	/**
-	 * Delete management unit
-	 * 
-	 * @param {String} managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
-	 */
-	deleteWorkforcemanagementManagementunit(managementUnitId) { 
-		// verify the required parameter 'managementUnitId' is set
-		if (managementUnitId === undefined || managementUnitId === null) {
-			throw 'Missing the required parameter "managementUnitId" when calling deleteWorkforcemanagementManagementunit';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/workforcemanagement/managementunits/{managementUnitId}', 
-			'DELETE', 
-			{ 'managementUnitId': managementUnitId }, 
 			{  }, 
 			{  }, 
 			{  }, 
@@ -1136,25 +1111,36 @@ class WorkforceManagementApi {
 	}
 
 	/**
-	 * Get management unit
-	 * settings.shortTermForecasting is deprecated and now lives on the business unit
-	 * @param {String} managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
-	 * @param {Object} opts Optional parameters
-	 * @param {Array.<String>} opts.expand 
+	 * Retrieves delete job status for historical data imports of the organization
+	 * 
 	 */
-	getWorkforcemanagementManagementunit(managementUnitId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'managementUnitId' is set
-		if (managementUnitId === undefined || managementUnitId === null) {
-			throw 'Missing the required parameter "managementUnitId" when calling getWorkforcemanagementManagementunit';
-		}
+	getWorkforcemanagementHistoricaldataDeletejob() { 
 
 		return this.apiClient.callApi(
-			'/api/v2/workforcemanagement/managementunits/{managementUnitId}', 
+			'/api/v2/workforcemanagement/historicaldata/deletejob', 
 			'GET', 
-			{ 'managementUnitId': managementUnitId }, 
-			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Retrieves status of the historical data imports of the organization
+	 * 
+	 */
+	getWorkforcemanagementHistoricaldataImportstatus() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/historicaldata/importstatus', 
+			'GET', 
+			{  }, 
+			{  }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -1986,35 +1972,6 @@ class WorkforceManagementApi {
 	}
 
 	/**
-	 * Update the requested management unit
-	 * 
-	 * @param {String} managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body body
-	 */
-	patchWorkforcemanagementManagementunit(managementUnitId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'managementUnitId' is set
-		if (managementUnitId === undefined || managementUnitId === null) {
-			throw 'Missing the required parameter "managementUnitId" when calling patchWorkforcemanagementManagementunit';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/workforcemanagement/managementunits/{managementUnitId}', 
-			'PATCH', 
-			{ 'managementUnitId': managementUnitId }, 
-			{  }, 
-			{  }, 
-			{  }, 
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'], 
-			['application/json']
-		);
-	}
-
-	/**
 	 * Update a time off request
 	 * 
 	 * @param {String} managementUnitId The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
@@ -2677,6 +2634,50 @@ class WorkforceManagementApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/businessunits', 
+			'POST', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete the entries of the historical data imports in the organization
+	 * 
+	 */
+	postWorkforcemanagementHistoricaldataDeletejob() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/historicaldata/deletejob', 
+			'POST', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Trigger validation process for historical import
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body body
+	 */
+	postWorkforcemanagementHistoricaldataValidate(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/historicaldata/validate', 
 			'POST', 
 			{  }, 
 			{  }, 

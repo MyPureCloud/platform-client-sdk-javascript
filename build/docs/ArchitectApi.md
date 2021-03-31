@@ -66,8 +66,10 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getFlowsExecution**](ArchitectApi.html#getFlowsExecution) | **GET** /api/v2/flows/executions/{flowExecutionId} | Get a flow execution&#39;s details. Flow execution details are available for several days after the flow is started.
 [**getFlowsMilestone**](ArchitectApi.html#getFlowsMilestone) | **GET** /api/v2/flows/milestones/{milestoneId} | Get a flow milestone
 [**getFlowsMilestones**](ArchitectApi.html#getFlowsMilestones) | **GET** /api/v2/flows/milestones | Get a pageable list of flow milestones, filtered by query parameters
+[**getFlowsMilestonesDivisionviews**](ArchitectApi.html#getFlowsMilestonesDivisionviews) | **GET** /api/v2/flows/milestones/divisionviews | Get a pageable list of basic flow milestone information objects filterable by query parameters.
 [**getFlowsOutcome**](ArchitectApi.html#getFlowsOutcome) | **GET** /api/v2/flows/outcomes/{flowOutcomeId} | Get a flow outcome
 [**getFlowsOutcomes**](ArchitectApi.html#getFlowsOutcomes) | **GET** /api/v2/flows/outcomes | Get a pageable list of flow outcomes, filtered by query parameters
+[**getFlowsOutcomesDivisionviews**](ArchitectApi.html#getFlowsOutcomesDivisionviews) | **GET** /api/v2/flows/outcomes/divisionviews | Get a pageable list of basic flow outcome information objects filterable by query parameters.
 [**postArchitectDependencytrackingBuild**](ArchitectApi.html#postArchitectDependencytrackingBuild) | **POST** /api/v2/architect/dependencytracking/build | Rebuild Dependency Tracking data for an organization
 [**postArchitectEmergencygroups**](ArchitectApi.html#postArchitectEmergencygroups) | **POST** /api/v2/architect/emergencygroups | Creates a new emergency group
 [**postArchitectIvrs**](ArchitectApi.html#postArchitectIvrs) | **POST** /api/v2/architect/ivrs | Create IVR config.
@@ -3697,7 +3699,8 @@ let opts = {
   'id': ["id_example"], // [String] | ID
   'name': "name_example", // String | Name
   'description': "description_example", // String | Description
-  'nameOrDescription': "nameOrDescription_example" // String | Name or description
+  'nameOrDescription': "nameOrDescription_example", // String | Name or description
+  'divisionId': ["divisionId_example"] // [String] | division ID(s)
 };
 
 apiInstance.getFlowsMilestones(opts)
@@ -3723,11 +3726,81 @@ apiInstance.getFlowsMilestones(opts)
  **name** | **String** | Name | [optional]  |
  **description** | **String** | Description | [optional]  |
  **nameOrDescription** | **String** | Name or description | [optional]  |
+ **divisionId** | **[String]** | division ID(s) | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
 
 **FlowMilestoneListing**
+
+<a name="getFlowsMilestonesDivisionviews"></a>
+
+# FlowMilestoneDivisionViewEntityListing getFlowsMilestonesDivisionviews(opts)
+
+
+
+GET /api/v2/flows/milestones/divisionviews
+
+Get a pageable list of basic flow milestone information objects filterable by query parameters.
+
+This returns flow milestones consisting of name and division. If one or more IDs are specified, the search will fetch flow milestones that match the given ID(s) and not use any additional supplied query parameters in the search.
+
+Requires ALL permissions: 
+
+* architect:flowMilestone:search
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ArchitectApi();
+
+let opts = { 
+  'pageNumber': 1, // Number | Page number
+  'pageSize': 25, // Number | Page size
+  'sortBy': "id", // String | Sort by
+  'sortOrder': "asc", // String | Sort order
+  'id': ["id_example"], // [String] | ID
+  'name': "name_example", // String | Name
+  'divisionId': ["divisionId_example"] // [String] | division ID(s)
+};
+
+apiInstance.getFlowsMilestonesDivisionviews(opts)
+  .then((data) => {
+    console.log(`getFlowsMilestonesDivisionviews success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getFlowsMilestonesDivisionviews');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **sortBy** | **String** | Sort by | [optional] [default to id] |
+ **sortOrder** | **String** | Sort order | [optional] [default to asc] |
+ **id** | **[String]** | ID | [optional]  |
+ **name** | **String** | Name | [optional]  |
+ **divisionId** | **[String]** | division ID(s) | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**FlowMilestoneDivisionViewEntityListing**
 
 <a name="getFlowsOutcome"></a>
 
@@ -3823,7 +3896,8 @@ let opts = {
   'id': ["id_example"], // [String] | ID
   'name': "name_example", // String | Name
   'description': "description_example", // String | Description
-  'nameOrDescription': "nameOrDescription_example" // String | Name or description
+  'nameOrDescription': "nameOrDescription_example", // String | Name or description
+  'divisionId': ["divisionId_example"] // [String] | division ID(s)
 };
 
 apiInstance.getFlowsOutcomes(opts)
@@ -3849,11 +3923,81 @@ apiInstance.getFlowsOutcomes(opts)
  **name** | **String** | Name | [optional]  |
  **description** | **String** | Description | [optional]  |
  **nameOrDescription** | **String** | Name or description | [optional]  |
+ **divisionId** | **[String]** | division ID(s) | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
 
 **FlowOutcomeListing**
+
+<a name="getFlowsOutcomesDivisionviews"></a>
+
+# FlowOutcomeDivisionViewEntityListing getFlowsOutcomesDivisionviews(opts)
+
+
+
+GET /api/v2/flows/outcomes/divisionviews
+
+Get a pageable list of basic flow outcome information objects filterable by query parameters.
+
+This returns flow outcomes consisting of name and division. If one or more IDs are specified, the search will fetch flow outcomes that match the given ID(s) and not use any additional supplied query parameters in the search.
+
+Requires ALL permissions: 
+
+* architect:flowOutcome:search
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ArchitectApi();
+
+let opts = { 
+  'pageNumber': 1, // Number | Page number
+  'pageSize': 25, // Number | Page size
+  'sortBy': "id", // String | Sort by
+  'sortOrder': "asc", // String | Sort order
+  'id': ["id_example"], // [String] | ID
+  'name': "name_example", // String | Name
+  'divisionId': ["divisionId_example"] // [String] | division ID(s)
+};
+
+apiInstance.getFlowsOutcomesDivisionviews(opts)
+  .then((data) => {
+    console.log(`getFlowsOutcomesDivisionviews success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getFlowsOutcomesDivisionviews');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **sortBy** | **String** | Sort by | [optional] [default to id] |
+ **sortOrder** | **String** | Sort order | [optional] [default to asc] |
+ **id** | **[String]** | ID | [optional]  |
+ **name** | **String** | Name | [optional]  |
+ **divisionId** | **[String]** | division ID(s) | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**FlowOutcomeDivisionViewEntityListing**
 
 <a name="postArchitectDependencytrackingBuild"></a>
 
@@ -7650,6 +7794,11 @@ FlowMilestone <a href="#" onclick="return copyFlowMilestoneExample()">Copy</a>
 { 
   "id": String, 
   "name": String, 
+  "division": { 
+    "id": String, 
+    "name": String, 
+    "selfUri": String, 
+  },  
   "description": String, 
   "selfUri": String, 
 }
@@ -7735,6 +7884,11 @@ FlowOutcome <a href="#" onclick="return copyFlowOutcomeExample()">Copy</a>
 { 
   "id": String, 
   "name": String, 
+  "division": { 
+    "id": String, 
+    "name": String, 
+    "selfUri": String, 
+  },  
   "description": String, 
   "currentOperation": { 
     "id": String, 
@@ -11137,6 +11291,11 @@ FlowMilestone <a href="#" onclick="return copyFlowMilestoneExample()">Copy</a>
 { 
   "id": String, 
   "name": String, 
+  "division": { 
+    "id": String, 
+    "name": String, 
+    "selfUri": String, 
+  },  
   "description": String, 
   "selfUri": String, 
 }
@@ -11224,6 +11383,11 @@ FlowOutcome <a href="#" onclick="return copyFlowOutcomeExample()">Copy</a>
 { 
   "id": String, 
   "name": String, 
+  "division": { 
+    "id": String, 
+    "name": String, 
+    "selfUri": String, 
+  },  
   "description": String, 
   "currentOperation": { 
     "id": String, 

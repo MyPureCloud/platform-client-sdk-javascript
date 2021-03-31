@@ -45,6 +45,10 @@
       "class": "ArchitectSystemPromptResourceNotificationSystemPromptResourceNotification"
     },
     {
+      "topic": "v2.audits.entitytype.{id}.entityid.{id}",
+      "class": "AuditTopicAuditLogMessage"
+    },
+    {
       "topic": "v2.businessunits.{id}.workforcemanagement.intraday",
       "class": "WfmBuIntradayDataUpdateTopicBuIntradayNotification"
     },

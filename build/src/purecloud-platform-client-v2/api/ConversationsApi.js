@@ -5,7 +5,7 @@ class ConversationsApi {
 	/**
 	 * Conversations service.
 	 * @module purecloud-platform-client-v2/api/ConversationsApi
-	 * @version 109.0.0
+	 * @version 110.0.0
 	 */
 
 	/**
@@ -1506,6 +1506,8 @@ class ConversationsApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Object} opts.expand Expand instructions for the return value.
+	 * @param {String} opts.supportedContentId Filter integrations returned based on the supported content ID
 	 */
 	getConversationsMessagingIntegrations(opts) { 
 		opts = opts || {};
@@ -1515,7 +1517,7 @@ class ConversationsApi {
 			'/api/v2/conversations/messaging/integrations', 
 			'GET', 
 			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] }, 
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'expand': opts['expand'],'supportedContent.id': opts['supportedContentId'] }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -1531,6 +1533,8 @@ class ConversationsApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Object} opts.expand Expand instructions for the return value.
+	 * @param {String} opts.supportedContentId Filter integrations returned based on the supported content ID
 	 */
 	getConversationsMessagingIntegrationsFacebook(opts) { 
 		opts = opts || {};
@@ -1540,7 +1544,7 @@ class ConversationsApi {
 			'/api/v2/conversations/messaging/integrations/facebook', 
 			'GET', 
 			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] }, 
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'expand': opts['expand'],'supportedContent.id': opts['supportedContentId'] }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -1554,8 +1558,12 @@ class ConversationsApi {
 	 * Get a Facebook messaging integration
 	 * 
 	 * @param {String} integrationId Integration ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.expand Expand instructions for the return value.
 	 */
-	getConversationsMessagingIntegrationsFacebookIntegrationId(integrationId) { 
+	getConversationsMessagingIntegrationsFacebookIntegrationId(integrationId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'integrationId' is set
 		if (integrationId === undefined || integrationId === null) {
 			throw 'Missing the required parameter "integrationId" when calling getConversationsMessagingIntegrationsFacebookIntegrationId';
@@ -1565,7 +1573,7 @@ class ConversationsApi {
 			'/api/v2/conversations/messaging/integrations/facebook/{integrationId}', 
 			'GET', 
 			{ 'integrationId': integrationId }, 
-			{  }, 
+			{ 'expand': opts['expand'] }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -1581,6 +1589,8 @@ class ConversationsApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Object} opts.expand Expand instructions for the return value.
+	 * @param {String} opts.supportedContentId Filter integrations returned based on the supported content ID
 	 */
 	getConversationsMessagingIntegrationsLine(opts) { 
 		opts = opts || {};
@@ -1590,7 +1600,7 @@ class ConversationsApi {
 			'/api/v2/conversations/messaging/integrations/line', 
 			'GET', 
 			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] }, 
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'expand': opts['expand'],'supportedContent.id': opts['supportedContentId'] }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -1604,8 +1614,12 @@ class ConversationsApi {
 	 * Get a LINE messenger integration
 	 * 
 	 * @param {String} integrationId Integration ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.expand Expand instructions for the return value.
 	 */
-	getConversationsMessagingIntegrationsLineIntegrationId(integrationId) { 
+	getConversationsMessagingIntegrationsLineIntegrationId(integrationId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'integrationId' is set
 		if (integrationId === undefined || integrationId === null) {
 			throw 'Missing the required parameter "integrationId" when calling getConversationsMessagingIntegrationsLineIntegrationId';
@@ -1615,7 +1629,7 @@ class ConversationsApi {
 			'/api/v2/conversations/messaging/integrations/line/{integrationId}', 
 			'GET', 
 			{ 'integrationId': integrationId }, 
-			{  }, 
+			{ 'expand': opts['expand'] }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -1631,6 +1645,8 @@ class ConversationsApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Object} opts.expand Expand instructions for the return value.
+	 * @param {String} opts.supportedContentId Filter integrations returned based on the supported content ID
 	 */
 	getConversationsMessagingIntegrationsTwitter(opts) { 
 		opts = opts || {};
@@ -1640,7 +1656,7 @@ class ConversationsApi {
 			'/api/v2/conversations/messaging/integrations/twitter', 
 			'GET', 
 			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] }, 
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'expand': opts['expand'],'supportedContent.id': opts['supportedContentId'] }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -1654,8 +1670,12 @@ class ConversationsApi {
 	 * Get a Twitter messaging integration
 	 * 
 	 * @param {String} integrationId Integration ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.expand Expand instructions for the return value.
 	 */
-	getConversationsMessagingIntegrationsTwitterIntegrationId(integrationId) { 
+	getConversationsMessagingIntegrationsTwitterIntegrationId(integrationId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'integrationId' is set
 		if (integrationId === undefined || integrationId === null) {
 			throw 'Missing the required parameter "integrationId" when calling getConversationsMessagingIntegrationsTwitterIntegrationId';
@@ -1665,7 +1685,7 @@ class ConversationsApi {
 			'/api/v2/conversations/messaging/integrations/twitter/{integrationId}', 
 			'GET', 
 			{ 'integrationId': integrationId }, 
-			{  }, 
+			{ 'expand': opts['expand'] }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -1681,6 +1701,8 @@ class ConversationsApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Object} opts.expand Expand instructions for the return value.
+	 * @param {String} opts.supportedContentId Filter integrations returned based on the supported content ID
 	 */
 	getConversationsMessagingIntegrationsWhatsapp(opts) { 
 		opts = opts || {};
@@ -1690,7 +1712,7 @@ class ConversationsApi {
 			'/api/v2/conversations/messaging/integrations/whatsapp', 
 			'GET', 
 			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] }, 
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'expand': opts['expand'],'supportedContent.id': opts['supportedContentId'] }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -1704,8 +1726,12 @@ class ConversationsApi {
 	 * Get a WhatsApp messaging integration
 	 * 
 	 * @param {String} integrationId Integration ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.expand Expand instructions for the return value.
 	 */
-	getConversationsMessagingIntegrationsWhatsappIntegrationId(integrationId) { 
+	getConversationsMessagingIntegrationsWhatsappIntegrationId(integrationId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'integrationId' is set
 		if (integrationId === undefined || integrationId === null) {
 			throw 'Missing the required parameter "integrationId" when calling getConversationsMessagingIntegrationsWhatsappIntegrationId';
@@ -1715,7 +1741,7 @@ class ConversationsApi {
 			'/api/v2/conversations/messaging/integrations/whatsapp/{integrationId}', 
 			'GET', 
 			{ 'integrationId': integrationId }, 
-			{  }, 
+			{ 'expand': opts['expand'] }, 
 			{  }, 
 			{  }, 
 			null, 

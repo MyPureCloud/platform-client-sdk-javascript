@@ -2611,7 +2611,7 @@ apiInstance.getRoutingSmsPhonenumbers(opts)
 
 <a name="getRoutingUserUtilization"></a>
 
-# Utilization getRoutingUserUtilization(userId)
+# AgentMaxUtilization getRoutingUserUtilization(userId)
 
 
 
@@ -2663,7 +2663,7 @@ apiInstance.getRoutingUserUtilization(userId)
 
 ### Return type
 
-**Utilization**
+**AgentMaxUtilization**
 
 <a name="getRoutingUtilization"></a>
 
@@ -11291,7 +11291,7 @@ apiInstance.putRoutingSmsPhonenumber(addressId, body)
 
 <a name="putRoutingUserUtilization"></a>
 
-# Utilization putRoutingUserUtilization(userId, body)
+# AgentMaxUtilization putRoutingUserUtilization(userId, body)
 
 
 
@@ -11373,7 +11373,7 @@ apiInstance.putRoutingUserUtilization(userId, body)
 
 ### Return type
 
-**Utilization**
+**AgentMaxUtilization**
 
 <a name="putRoutingUtilization"></a>
 
