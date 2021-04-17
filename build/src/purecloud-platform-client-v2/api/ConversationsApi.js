@@ -5,7 +5,7 @@ class ConversationsApi {
 	/**
 	 * Conversations service.
 	 * @module purecloud-platform-client-v2/api/ConversationsApi
-	 * @version 110.0.0
+	 * @version 111.0.0
 	 */
 
 	/**
@@ -1333,7 +1333,7 @@ class ConversationsApi {
 
 	/**
 	 * Get media
-	 * 
+	 * See https://developer.genesys.cloud/api/rest/v2/conversations/messaging-media-upload for example usage.
 	 * @param {String} conversationId conversationId
 	 * @param {String} communicationId communicationId
 	 * @param {String} mediaId mediaId
@@ -3755,7 +3755,7 @@ class ConversationsApi {
 
 	/**
 	 * Create media
-	 * 
+	 * See https://developer.genesys.cloud/api/rest/v2/conversations/messaging-media-upload for example usage.
 	 * @param {String} conversationId conversationId
 	 * @param {String} communicationId communicationId
 	 */

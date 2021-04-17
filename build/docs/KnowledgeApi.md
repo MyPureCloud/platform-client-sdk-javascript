@@ -484,7 +484,8 @@ let opts = {
   'limit': "limit_example", // String | Number of entities to return. Maximum of 200. Deprecated in favour of pageSize.
   'pageSize': "pageSize_example", // String | Number of entities to return. Maximum of 200.
   'categories': "categories_example", // String | Filter by categories ids, comma separated values expected.
-  'title': "title_example" // String | Filter by document title.
+  'title': "title_example", // String | Filter by document title.
+  'documentIds': ["documentIds_example"] // [String] | Comma-separated list of document identifiers to fetch by.
 };
 
 apiInstance.getKnowledgeKnowledgebaseLanguageDocuments(knowledgeBaseId, languageCode, opts)
@@ -510,6 +511,7 @@ apiInstance.getKnowledgeKnowledgebaseLanguageDocuments(knowledgeBaseId, language
  **pageSize** | **String** | Number of entities to return. Maximum of 200. | [optional]  |
  **categories** | **String** | Filter by categories ids, comma separated values expected. | [optional]  |
  **title** | **String** | Filter by document title. | [optional]  |
+ **documentIds** | **[String]** | Comma-separated list of document identifiers to fetch by. | [optional]  |
 {: class="table table-striped"}
 
 ### Return type

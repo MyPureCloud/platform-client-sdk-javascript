@@ -251,6 +251,7 @@ GDPRRequest <a href="#" onclick="return copyGDPRRequestExample()">Copy</a>
       "type": String, 
       "value": String, 
     },  
+    "externalId": String, 
     "addresses": [String], 
     "phoneNumbers": [String], 
     "emailAddresses": [String], 

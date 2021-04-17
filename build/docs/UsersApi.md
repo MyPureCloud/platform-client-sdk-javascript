@@ -64,6 +64,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postAnalyticsUsersObservationsQuery**](UsersApi.html#postAnalyticsUsersObservationsQuery) | **POST** /api/v2/analytics/users/observations/query | Query for user observations
 [**postAuthorizationSubjectBulkadd**](UsersApi.html#postAuthorizationSubjectBulkadd) | **POST** /api/v2/authorization/subjects/{subjectId}/bulkadd | Bulk-grant roles and divisions to a subject.
 [**postAuthorizationSubjectBulkremove**](UsersApi.html#postAuthorizationSubjectBulkremove) | **POST** /api/v2/authorization/subjects/{subjectId}/bulkremove | Bulk-remove grants from a subject.
+[**postAuthorizationSubjectBulkreplace**](UsersApi.html#postAuthorizationSubjectBulkreplace) | **POST** /api/v2/authorization/subjects/{subjectId}/bulkreplace | Replace subject&#39;s roles and divisions with the exact list supplied in the request.
 [**postAuthorizationSubjectDivisionRole**](UsersApi.html#postAuthorizationSubjectDivisionRole) | **POST** /api/v2/authorization/subjects/{subjectId}/divisions/{divisionId}/roles/{roleId} | Make a grant of a role in a division
 [**postUserInvite**](UsersApi.html#postUserInvite) | **POST** /api/v2/users/{userId}/invite | Send an activation email to the user
 [**postUserPassword**](UsersApi.html#postUserPassword) | **POST** /api/v2/users/{userId}/password | Change a users password
@@ -2295,7 +2296,7 @@ apiInstance.getUsersDevelopmentActivities(opts)
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **sortOrder** | **String** | Specifies result set sort order sorted by the date due; if not specified, default sort order is descending (Desc) | [optional] [default to Desc]<br />**Values**: Asc, Desc |
- **types** | **[String]** | Specifies the activity types. | [optional] <br />**Values**: Informational, Coaching |
+ **types** | **[String]** | Specifies the activity types. | [optional] <br />**Values**: Informational, Coaching, AssessedContent, Questionnaire |
  **statuses** | **[String]** | Specifies the activity statuses to filter by | [optional] <br />**Values**: Planned, InProgress, Completed, InvalidSchedule |
  **relationship** | **[String]** | Specifies how the current user relation should be interpreted, and filters the activities returned to only the activities that have the specified relationship. If a value besides Attendee is specified, it will only return Coaching Appointments. If not specified, no filtering is applied. | [optional] <br />**Values**: Creator, Facilitator, Attendee |
 {: class="table table-striped"}
@@ -2369,7 +2370,7 @@ apiInstance.getUsersDevelopmentActivitiesMe(opts)
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **sortOrder** | **String** | Specifies result set sort order sorted by the date due; if not specified, default sort order is descending (Desc) | [optional] [default to Desc]<br />**Values**: Asc, Desc |
- **types** | **[String]** | Specifies the activity types. | [optional] <br />**Values**: Informational, Coaching |
+ **types** | **[String]** | Specifies the activity types. | [optional] <br />**Values**: Informational, Coaching, AssessedContent, Questionnaire |
  **statuses** | **[String]** | Specifies the activity statuses to filter by | [optional] <br />**Values**: Planned, InProgress, Completed, InvalidSchedule |
  **relationship** | **[String]** | Specifies how the current user relation should be interpreted, and filters the activities returned to only the activities that have the specified relationship. If a value besides Attendee is specified, it will only return Coaching Appointments. If not specified, no filtering is applied. | [optional] <br />**Values**: Creator, Facilitator, Attendee |
 {: class="table table-striped"}
@@ -2429,7 +2430,7 @@ apiInstance.getUsersDevelopmentActivity(activityId, type)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **activityId** | **String** | Specifies the activity ID, maps to either assignment or appointment ID |  |
- **type** | **String** | Specifies the activity type. | <br />**Values**: Informational, Coaching |
+ **type** | **String** | Specifies the activity type. | <br />**Values**: Informational, Coaching, AssessedContent, Questionnaire |
 {: class="table table-striped"}
 
 ### Return type
@@ -9271,6 +9272,96 @@ apiInstance.postAuthorizationSubjectBulkremove(subjectId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **subjectId** | **String** | Subject ID (user or group) |  |
  **body** | **Object** | Pairs of role and division IDs |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
+
+<a name="postAuthorizationSubjectBulkreplace"></a>
+
+# void postAuthorizationSubjectBulkreplace(subjectId, body, opts)
+
+
+
+POST /api/v2/authorization/subjects/{subjectId}/bulkreplace
+
+Replace subject&#39;s roles and divisions with the exact list supplied in the request.
+
+This operation will not remove grants that are inherited from group membership. It will only set the grants directly applied to the subject.
+
+Requires ALL permissions: 
+
+* authorization:grant:add
+* authorization:grant:delete
+
+
+### Request Body Schema
+
+<script type="text/javascript">
+	function copyRoleDivisionGrantsExample() {
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#RoleDivisionGrantsExample').text()).select();
+		document.execCommand("copy");
+		temp.remove();
+		return false;
+	}
+</script>
+
+RoleDivisionGrants <a href="#" onclick="return copyRoleDivisionGrantsExample()">Copy</a>
+
+<div id="RoleDivisionGrantsExample">
+
+```{"language":"json", "maxHeight": "250px"}
+{ 
+  "grants": { 
+    "roleId": String, 
+    "divisionId": String, 
+  },  
+}
+```
+
+</div>
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.UsersApi();
+
+let subjectId = "subjectId_example"; // String | Subject ID (user or group)
+let body = {}; // Object | Pairs of role and division IDs
+let opts = { 
+  'subjectType': "PC_USER" // String | what the type of the subject is (PC_GROUP, PC_USER or PC_OAUTH_CLIENT)
+};
+
+apiInstance.postAuthorizationSubjectBulkreplace(subjectId, body, opts)
+  .then(() => {
+    console.log('postAuthorizationSubjectBulkreplace returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postAuthorizationSubjectBulkreplace');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **subjectId** | **String** | Subject ID (user or group) |  |
+ **body** | **Object** | Pairs of role and division IDs |  |
+ **subjectType** | **String** | what the type of the subject is (PC_GROUP, PC_USER or PC_OAUTH_CLIENT) | [optional] [default to PC_USER] |
 {: class="table table-striped"}
 
 ### Return type

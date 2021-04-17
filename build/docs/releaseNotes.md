@@ -1,312 +1,247 @@
-Platform API version: 4585
+Platform API version: 4631
 
 
-# Major Changes (27 changes)
+# Major Changes (22 changes)
 
-**/api/v2/workforcemanagement/managementunits/{managementUnitId}** (1 change)
-
-* Path /api/v2/workforcemanagement/managementunits/{managementUnitId} was removed
-
-**GET /api/v2/conversations/messaging/integrations/twitter** (2 changes)
-
-* Parameter expand was added
-* Parameter supportedContent.id was added
-
-**GET /api/v2/flows/milestones** (1 change)
-
-* Parameter divisionId was added
-
-**GET /api/v2/conversations/messaging/integrations** (2 changes)
-
-* Parameter expand was added
-* Parameter supportedContent.id was added
-
-**GET /api/v2/flows/outcomes** (1 change)
-
-* Parameter divisionId was added
-
-**GET /api/v2/conversations/messaging/integrations/whatsapp** (2 changes)
-
-* Parameter expand was added
-* Parameter supportedContent.id was added
-
-**GET /api/v2/conversations/messaging/integrations/facebook** (2 changes)
-
-* Parameter expand was added
-* Parameter supportedContent.id was added
-
-**GET /api/v2/conversations/messaging/integrations/twitter/{integrationId}** (1 change)
-
-* Parameter expand was added
-
-**POST /api/v2/conversations/messages/{conversationId}/communications/{communicationId}/messages/media** (2 changes)
+**PATCH /api/v2/routing/queues/{queueId}/members/{memberId}** (1 change)
 
 * Response 200 was removed
-* Response 202 type was changed from _undefined_ to MessageMediaData
 
-**GET /api/v2/conversations/messaging/integrations/line/{integrationId}** (1 change)
+**PATCH /api/v2/routing/queues/{queueId}/users/{memberId}** (1 change)
 
-* Parameter expand was added
+* Response 200 was removed
 
-**GET /api/v2/routing/users/{userId}/utilization** (1 change)
+**GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents** (1 change)
 
-* Response 200 type was changed from Utilization to AgentMaxUtilization
+* Parameter documentIds was added
 
-**PUT /api/v2/routing/users/{userId}/utilization** (1 change)
+**Relationship** (1 change)
 
-* Response 200 type was changed from Utilization to AgentMaxUtilization
+* Property name was removed
 
-**GET /api/v2/conversations/messaging/integrations/line** (2 changes)
+**ViewFilter** (1 change)
 
-* Parameter expand was added
-* Parameter supportedContent.id was added
+* Property developmentKeyType was removed
 
-**GET /api/v2/conversations/messaging/integrations/facebook/{integrationId}** (1 change)
+**BusinessUnitListItem** (1 change)
 
-* Parameter expand was added
+* Property division was changed from Division to DivisionReference
 
-**GET /api/v2/conversations/messaging/integrations/whatsapp/{integrationId}** (1 change)
+**ManagementUnit** (1 change)
 
-* Parameter expand was added
+* Property division was changed from Division to DivisionReference
 
-**ManagementUnitSettingsRequest** (1 change)
+**WfmHistoricalAdherenceQuery** (1 change)
 
-* Model ManagementUnitSettingsRequest was removed
+* Property teamIds was removed
 
-**UpdateManagementUnitRequest** (1 change)
+**AnalyticsResolution** (1 change)
 
-* Model UpdateManagementUnitRequest was removed
+* Property getnNextContactAvoided was removed
 
-**OAuthClient** (1 change)
+**AnalyticsSession** (3 changes)
 
-* Enum value CODE_PKCE was removed from property authorizedGrantType
+* Property bullseyeRing was removed
+* Property routingRule was removed
+* Property journeyActionMapVersion was changed from string to integer
 
-**AnalyticsSession** (1 change)
+**BusinessUnit** (1 change)
 
-* Property monitoredSessionId was removed
+* Property division was changed from Division to DivisionReference
 
-**OAuthClientRequest** (1 change)
+**BuQueryAgentSchedulesRequest** (1 change)
 
-* Enum value CODE_PKCE was removed from property authorizedGrantType
+* Property teamIds was removed
 
-**OrgOAuthClient** (1 change)
+**FlowAggregateQueryPredicate** (2 changes)
 
-* Enum value CODE_PKCE was removed from property authorizedGrantType
+* Enum value bullseyeRing was removed from property dimension
+* Enum value routingRule was removed from property dimension
+
+**FlowAggregationQuery** (2 changes)
+
+* Enum value bullseyeRing was removed from property groupBy
+* Enum value routingRule was removed from property groupBy
+
+**ConversationAggregateQueryPredicate** (2 changes)
+
+* Enum value bullseyeRing was removed from property dimension
+* Enum value routingRule was removed from property dimension
+
+**ConversationAggregationQuery** (2 changes)
+
+* Enum value bullseyeRing was removed from property groupBy
+* Enum value routingRule was removed from property groupBy
 
 
-# Minor Changes (100 changes)
+# Minor Changes (58 changes)
 
-**/api/v2/flows/milestones/divisionviews** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/flows/outcomes/divisionviews** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/workforcemanagement/historicaldata/importstatus** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/workforcemanagement/historicaldata/validate** (2 changes)
+**/api/v2/authorization/subjects/{subjectId}/bulkreplace** (2 changes)
 
 * Path was added
 * Operation POST was added
 
-**/api/v2/workforcemanagement/historicaldata/deletejob** (3 changes)
+**AuditQueryExecutionStatusResponse** (1 change)
 
-* Path was added
-* Operation GET was added
-* Operation POST was added
-
-**ReportingExportJobResponse** (1 change)
-
-* Enum value AGENT_SCHEDULE_ME_VIEW was added to property viewType
-
-**ReportingExportJobRequest** (1 change)
-
-* Enum value AGENT_SCHEDULE_ME_VIEW was added to property viewType
-
-**AnalyticsUserDetailsQueryResponse** (1 change)
-
-* Optional property totalHits was added
-
-**ReportingExportMetadataJobResponse** (1 change)
-
-* Enum value AGENT_SCHEDULE_ME_VIEW was added to property viewType
-
-**Edge** (1 change)
-
-* Enum value BYOH was added to property edgeDeploymentType
-
-**FlowMilestone** (1 change)
-
-* Optional property division was added
-
-**JourneyAggregateQueryPredicate** (17 changes)
-
-* Enum value containsAllCondition was added to property dimension
-* Enum value containsAnyCondition was added to property dimension
-* Enum value endsWithCondition was added to property dimension
-* Enum value equalCondition was added to property dimension
-* Enum value greaterThanCondition was added to property dimension
-* Enum value greaterThanOrEqualCondition was added to property dimension
-* Enum value journeyActionTargetId was added to property dimension
-* Enum value journeyBlockingActionMapId was added to property dimension
-* Enum value journeyBlockingReason was added to property dimension
-* Enum value journeyBlockingScheduleGroupId was added to property dimension
-* Enum value journeyFrequencyCapReason was added to property dimension
-* Enum value lessThanCondition was added to property dimension
-* Enum value lessThanOrEqualCondition was added to property dimension
-* Enum value notContainsAllCondition was added to property dimension
-* Enum value notContainsAnyCondition was added to property dimension
-* Enum value notEqualCondition was added to property dimension
-* Enum value startsWithCondition was added to property dimension
-
-**JourneyAggregationQuery** (19 changes)
-
-* Enum value containsAllCondition was added to property groupBy
-* Enum value containsAnyCondition was added to property groupBy
-* Enum value endsWithCondition was added to property groupBy
-* Enum value equalCondition was added to property groupBy
-* Enum value greaterThanCondition was added to property groupBy
-* Enum value greaterThanOrEqualCondition was added to property groupBy
-* Enum value journeyActionTargetId was added to property groupBy
-* Enum value journeyBlockingActionMapId was added to property groupBy
-* Enum value journeyBlockingReason was added to property groupBy
-* Enum value journeyBlockingScheduleGroupId was added to property groupBy
-* Enum value journeyFrequencyCapReason was added to property groupBy
-* Enum value lessThanCondition was added to property groupBy
-* Enum value lessThanOrEqualCondition was added to property groupBy
-* Enum value notContainsAllCondition was added to property groupBy
-* Enum value notContainsAnyCondition was added to property groupBy
-* Enum value notEqualCondition was added to property groupBy
-* Enum value startsWithCondition was added to property groupBy
-* Enum value nDistinctJourneyActions was added to property metrics
-* Enum value nJourneyActionsBlocked was added to property metrics
-
-**JourneyAggregationView** (2 changes)
-
-* Enum value nDistinctJourneyActions was added to property target
-* Enum value nJourneyActionsBlocked was added to property target
+* Enum value Integrations was added to property serviceName
 
 **AuditLogMessage** (2 changes)
 
-* Enum value DeleteAll was added to property action
-* Enum value SentimentFeedback was added to property entityType
+* Enum value Integrations was added to property serviceName
+* Enum value Integration was added to property entityType
 
-**AuditQueryEntity** (2 changes)
+**AuditQueryRequest** (1 change)
 
-* Enum value SentimentFeedback was added to property name
-* Enum value DeleteAll was added to property actions
+* Enum value Integrations was added to property serviceName
 
-**FlowMilestoneDivisionView** (1 change)
+**AuditRealtimeQueryRequest** (1 change)
 
-* Model was added
+* Enum value Integrations was added to property serviceName
 
-**FlowMilestoneDivisionViewEntityListing** (1 change)
+**AuditQueryEntity** (1 change)
 
-* Model was added
+* Enum value Integration was added to property name
 
-**FlowOutcome** (1 change)
+**AuditQueryService** (1 change)
 
-* Optional property division was added
+* Enum value Integrations was added to property name
 
-**ContentButtonResponse** (1 change)
+**ReportingExportJobResponse** (3 changes)
 
-* Model was added
+* Enum value BOT_PERFORMANCE_SUMMARY_VIEW was added to property viewType
+* Enum value BOT_PERFORMANCE_DETAIL_VIEW was added to property viewType
+* Enum value SCHEDULED_EXPORTS_VIEW was added to property viewType
 
-**MessageContent** (2 changes)
+**ViewFilter** (4 changes)
 
-* Enum value ButtonResponse was added to property contentType
-* Optional property buttonResponse was added
+* Optional property customerSentimentScore was added
+* Optional property customerSentimentTrend was added
+* Optional property flowTransferTargets was added
+* Optional property developmentName was added
 
-**AnalyticsSession** (5 changes)
-
-* Optional property bullseyeRing was added
-* Optional property agentBullseyeRing was added
-* Optional property routingRule was added
-* Optional property removedSkillIds was added
-* Optional property activeSkillIds was added
-
-**FlowOutcomeDivisionView** (1 change)
+**DivisionReference** (1 change)
 
 * Model was added
 
-**FlowOutcomeDivisionViewEntityListing** (1 change)
+**EventMessage** (1 change)
 
-* Model was added
+* Enum value INVALID_AGENT was added to property code
 
-**FlowAggregateQueryPredicate** (5 changes)
+**Trustee** (1 change)
 
-* Enum value activeSkillId was added to property dimension
-* Enum value agentBullseyeRing was added to property dimension
-* Enum value bullseyeRing was added to property dimension
-* Enum value removedSkillId was added to property dimension
-* Enum value routingRule was added to property dimension
+* Optional property usesDefaultRole was added
 
-**FlowAggregationQuery** (5 changes)
+**AnalyticsConversationWithoutAttributes** (1 change)
 
-* Enum value activeSkillId was added to property groupBy
-* Enum value agentBullseyeRing was added to property groupBy
-* Enum value bullseyeRing was added to property groupBy
-* Enum value removedSkillId was added to property groupBy
-* Enum value routingRule was added to property groupBy
+* Optional property externalTag was added
 
-**HistoricalImportStatus** (1 change)
+**AnalyticsFlow** (1 change)
 
-* Model was added
+* Optional property recognitionFailureReason was added
 
-**HistoricalImportStatusListing** (1 change)
+**AnalyticsMediaEndpointStat** (1 change)
 
-* Model was added
+* Optional property eventTime was added
 
-**SendAgentlessOutboundMessageResponse** (1 change)
+**AnalyticsResolution** (2 changes)
 
-* Optional property messagingTemplate was added
+* Optional property eventTime was added
+* Optional property nNextContactAvoided was added
 
-**SendAgentlessOutboundMessageRequest** (1 change)
+**AnalyticsSession** (3 changes)
 
-* Optional property messagingTemplate was added
+* Optional property authenticated was added
+* Values are no longer constrained by enum members
+* Optional property routingRing was added
 
-**ValidationServiceRequest** (1 change)
+**PostTextResponse** (1 change)
 
-* Model was added
+* Optional property genesysBotConnector was added
 
-**ConversationAggregateQueryPredicate** (5 changes)
+**ConversationDetailQueryPredicate** (1 change)
 
-* Enum value activeSkillId was added to property dimension
-* Enum value agentBullseyeRing was added to property dimension
-* Enum value bullseyeRing was added to property dimension
-* Enum value removedSkillId was added to property dimension
-* Enum value routingRule was added to property dimension
+* Enum value externalTag was added to property dimension
 
-**ConversationAggregationQuery** (5 changes)
+**SegmentDetailQueryPredicate** (1 change)
 
-* Enum value activeSkillId was added to property groupBy
-* Enum value agentBullseyeRing was added to property groupBy
-* Enum value bullseyeRing was added to property groupBy
-* Enum value removedSkillId was added to property groupBy
-* Enum value routingRule was added to property groupBy
+* Enum value authenticated was added to property dimension
 
-**AnalyticsConversationQueryResponse** (1 change)
+**Dependency** (2 changes)
 
-* Optional property totalHits was added
+* Enum value LEXV2BOT was added to property type
+* Enum value LEXV2BOTALIAS was added to property type
 
-**AgentMaxUtilization** (1 change)
+**DependencyObject** (2 changes)
 
-* Model was added
+* Enum value LEXV2BOT was added to property type
+* Enum value LEXV2BOTALIAS was added to property type
 
-**HistoricalImportDeleteJobResponse** (1 change)
+**GDPRSubject** (1 change)
 
-* Model was added
+* Optional property externalId was added
+
+**ReportingExportJobRequest** (3 changes)
+
+* Enum value BOT_PERFORMANCE_SUMMARY_VIEW was added to property viewType
+* Enum value BOT_PERFORMANCE_DETAIL_VIEW was added to property viewType
+* Enum value SCHEDULED_EXPORTS_VIEW was added to property viewType
+
+**DevelopmentActivity** (2 changes)
+
+* Enum value AssessedContent was added to property type
+* Enum value Questionnaire was added to property type
+
+**ReportingExportMetadataJobResponse** (3 changes)
+
+* Enum value BOT_PERFORMANCE_SUMMARY_VIEW was added to property viewType
+* Enum value BOT_PERFORMANCE_DETAIL_VIEW was added to property viewType
+* Enum value SCHEDULED_EXPORTS_VIEW was added to property viewType
+
+**FlowAggregateQueryPredicate** (4 changes)
+
+* Enum value authenticated was added to property dimension
+* Enum value externalTag was added to property dimension
+* Enum value recognitionFailureReason was added to property dimension
+* Enum value routingRing was added to property dimension
+
+**FlowAggregationQuery** (4 changes)
+
+* Enum value authenticated was added to property groupBy
+* Enum value externalTag was added to property groupBy
+* Enum value recognitionFailureReason was added to property groupBy
+* Enum value routingRing was added to property groupBy
+
+**ConversationAggregateQueryPredicate** (3 changes)
+
+* Enum value authenticated was added to property dimension
+* Enum value externalTag was added to property dimension
+* Enum value routingRing was added to property dimension
+
+**ConversationAggregationQuery** (3 changes)
+
+* Enum value authenticated was added to property groupBy
+* Enum value externalTag was added to property groupBy
+* Enum value routingRing was added to property groupBy
+
+**AnalyticsConversation** (1 change)
+
+* Optional property externalTag was added
 
 
-# Point Changes (1 change)
+# Point Changes (4 changes)
 
-**POST /api/v2/oauth/clients** (1 change)
+**DELETE /api/v2/tokens/me** (1 change)
+
+* Summary was changed
+
+**POST /api/v2/outbound/dnclists/{dncListId}/phonenumbers** (1 change)
+
+* Summary was changed
+
+**GET /api/v2/conversations/messages/{conversationId}/communications/{communicationId}/messages/media/{mediaId}** (1 change)
+
+* Description was changed
+
+**POST /api/v2/conversations/messages/{conversationId}/communications/{communicationId}/messages/media** (1 change)
 
 * Description was changed

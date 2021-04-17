@@ -1409,6 +1409,7 @@ Trustee <a href="#" onclick="return copyTrusteeExample()">Copy</a>
 { 
   "id": String, 
   "enabled": Boolean, 
+  "usesDefaultRole": Boolean, 
   "dateCreated": Date, 
   "createdBy": { 
     "id": String, 

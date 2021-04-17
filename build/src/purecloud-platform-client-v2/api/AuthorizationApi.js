@@ -5,7 +5,7 @@ class AuthorizationApi {
 	/**
 	 * Authorization service.
 	 * @module purecloud-platform-client-v2/api/AuthorizationApi
-	 * @version 110.0.0
+	 * @version 111.0.0
 	 */
 
 	/**
@@ -895,6 +895,40 @@ class AuthorizationApi {
 			'POST', 
 			{ 'subjectId': subjectId }, 
 			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Replace subject&#39;s roles and divisions with the exact list supplied in the request.
+	 * This operation will not remove grants that are inherited from group membership. It will only set the grants directly applied to the subject.
+	 * @param {String} subjectId Subject ID (user or group)
+	 * @param {Object} body Pairs of role and division IDs
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.subjectType what the type of the subject is (PC_GROUP, PC_USER or PC_OAUTH_CLIENT) (default to PC_USER)
+	 */
+	postAuthorizationSubjectBulkreplace(subjectId, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'subjectId' is set
+		if (subjectId === undefined || subjectId === null) {
+			throw 'Missing the required parameter "subjectId" when calling postAuthorizationSubjectBulkreplace';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postAuthorizationSubjectBulkreplace';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/authorization/subjects/{subjectId}/bulkreplace', 
+			'POST', 
+			{ 'subjectId': subjectId }, 
+			{ 'subjectType': opts['subjectType'] }, 
 			{  }, 
 			{  }, 
 			body, 

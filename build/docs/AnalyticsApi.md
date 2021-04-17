@@ -1433,8 +1433,8 @@ PropertyIndexRequest <a href="#" onclick="return copyPropertyIndexRequestExample
   "sessionId": String, 
   "targetDate": Date, 
   "properties": { 
-    "propertyType": String, 
     "property": String, 
+    "propertyType": String, 
     "value": String, 
   },  
 }
@@ -3103,8 +3103,21 @@ ReportingExportJobRequest <a href="#" onclick="return copyReportingExportJobRequ
     "developmentTypeList": [String], 
     "developmentStatusList": [String], 
     "developmentModuleIds": [String], 
-    "developmentKeyType": String, 
     "developmentActivityOverdue": Boolean, 
+    "customerSentimentScore": { 
+      "gt": Number, 
+      "gte": Number, 
+      "lt": Number, 
+      "lte": Number, 
+    },  
+    "customerSentimentTrend": { 
+      "gt": Number, 
+      "gte": Number, 
+      "lt": Number, 
+      "lte": Number, 
+    },  
+    "flowTransferTargets": [String], 
+    "developmentName": String, 
   },  
   "read": Boolean, 
   "locale": String, 

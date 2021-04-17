@@ -5535,7 +5535,6 @@ BuQueryAgentSchedulesRequest <a href="#" onclick="return copyBuQueryAgentSchedul
 { 
   "managementUnitId": String, 
   "userIds": [String], 
-  "teamIds": [String], 
 }
 ```
 
@@ -6489,7 +6488,6 @@ WfmHistoricalAdherenceQuery <a href="#" onclick="return copyWfmHistoricalAdheren
   "timeZone": String, 
   "userIds": [String], 
   "includeExceptions": Boolean, 
-  "teamIds": [String], 
 }
 ```
 

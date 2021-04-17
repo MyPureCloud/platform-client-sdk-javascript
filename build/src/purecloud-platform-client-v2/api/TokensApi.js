@@ -5,7 +5,7 @@ class TokensApi {
 	/**
 	 * Tokens service.
 	 * @module purecloud-platform-client-v2/api/TokensApi
-	 * @version 110.0.0
+	 * @version 111.0.0
 	 */
 
 	/**
@@ -46,7 +46,7 @@ class TokensApi {
 	}
 
 	/**
-	 * Delete  auth token used to make the request.
+	 * Delete auth token used to make the request.
 	 * 
 	 */
 	deleteTokensMe() { 

@@ -9552,7 +9552,6 @@ Relationship <a href="#" onclick="return copyRelationshipExample()">Copy</a>
 ```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
-  "name": String, 
   "user": { 
     "id": String, 
     "name": String, 
@@ -14452,7 +14451,6 @@ Relationship <a href="#" onclick="return copyRelationshipExample()">Copy</a>
 ```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
-  "name": String, 
   "user": { 
     "id": String, 
     "name": String, 

@@ -3301,7 +3301,7 @@ apiInstance.patchRoutingEmailDomainValidate(domainId, body)
 
 <a name="patchRoutingQueueMember"></a>
 
-# QueueMember patchRoutingQueueMember(queueId, memberId, body)
+# void patchRoutingQueueMember(queueId, memberId, body)
 
 
 
@@ -3789,8 +3789,8 @@ let memberId = "memberId_example"; // String | Member ID
 let body = {}; // Object | Queue Member
 
 apiInstance.patchRoutingQueueMember(queueId, memberId, body)
-  .then((data) => {
-    console.log(`patchRoutingQueueMember success! data: ${JSON.stringify(data, null, 2)}`);
+  .then(() => {
+    console.log('patchRoutingQueueMember returned successfully.');
   })
   .catch((err) => {
     console.log('There was a failure calling patchRoutingQueueMember');
@@ -3810,7 +3810,7 @@ apiInstance.patchRoutingQueueMember(queueId, memberId, body)
 
 ### Return type
 
-**QueueMember**
+void (no response body)
 
 <a name="patchRoutingQueueMembers"></a>
 
@@ -4325,7 +4325,7 @@ apiInstance.patchRoutingQueueMembers(queueId, body)
 
 <a name="patchRoutingQueueUser"></a>
 
-# QueueMember patchRoutingQueueUser(queueId, memberId, body)
+# void patchRoutingQueueUser(queueId, memberId, body)
 
 <span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
@@ -4813,8 +4813,8 @@ let memberId = "memberId_example"; // String | Member ID
 let body = {}; // Object | Queue Member
 
 apiInstance.patchRoutingQueueUser(queueId, memberId, body)
-  .then((data) => {
-    console.log(`patchRoutingQueueUser success! data: ${JSON.stringify(data, null, 2)}`);
+  .then(() => {
+    console.log('patchRoutingQueueUser returned successfully.');
   })
   .catch((err) => {
     console.log('There was a failure calling patchRoutingQueueUser');
@@ -4834,7 +4834,7 @@ apiInstance.patchRoutingQueueUser(queueId, memberId, body)
 
 ### Return type
 
-**QueueMember**
+void (no response body)
 
 <a name="patchRoutingQueueUsers"></a>
 

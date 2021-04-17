@@ -8,7 +8,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
 [**deleteToken**](TokensApi.html#deleteToken) | **DELETE** /api/v2/tokens/{userId} | Delete all auth tokens for the specified user.
-[**deleteTokensMe**](TokensApi.html#deleteTokensMe) | **DELETE** /api/v2/tokens/me | Delete  auth token used to make the request.
+[**deleteTokensMe**](TokensApi.html#deleteTokensMe) | **DELETE** /api/v2/tokens/me | Delete auth token used to make the request.
 [**getTokensMe**](TokensApi.html#getTokensMe) | **GET** /api/v2/tokens/me | Fetch information about the current token
 {: class="table table-striped"}
 
@@ -75,7 +75,7 @@ void (no response body)
 
 DELETE /api/v2/tokens/me
 
-Delete  auth token used to make the request.
+Delete auth token used to make the request.
 
 
 

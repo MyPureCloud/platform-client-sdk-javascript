@@ -5,7 +5,7 @@ class OutboundApi {
 	/**
 	 * Outbound service.
 	 * @module purecloud-platform-client-v2/api/OutboundApi
-	 * @version 110.0.0
+	 * @version 111.0.0
 	 */
 
 	/**
@@ -2334,7 +2334,7 @@ class OutboundApi {
 	}
 
 	/**
-	 * Add phone numbers to a Dialer DNC list.
+	 * Add phone numbers to a DNC list.
 	 * Only Internal DNC lists may be appended to
 	 * @param {String} dncListId DncList ID
 	 * @param {Array.<Object>} body DNC Phone Numbers
