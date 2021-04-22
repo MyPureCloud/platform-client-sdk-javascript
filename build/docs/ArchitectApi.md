@@ -5859,6 +5859,10 @@ Flow <a href="#" onclick="return copyFlowExample()">Copy</a>
       "additionalProperties": Object, 
     },  
     "nluInfo": { 
+      "domain": { 
+        "id": String, 
+        "selfUri": String, 
+      },  
       "intents": { 
         "name": String, 
       },  
@@ -5909,6 +5913,10 @@ Flow <a href="#" onclick="return copyFlowExample()">Copy</a>
       "additionalProperties": Object, 
     },  
     "nluInfo": { 
+      "domain": { 
+        "id": String, 
+        "selfUri": String, 
+      },  
       "intents": { 
         "name": String, 
       },  
@@ -5961,6 +5969,10 @@ Flow <a href="#" onclick="return copyFlowExample()">Copy</a>
       "additionalProperties": Object, 
     },  
     "nluInfo": { 
+      "domain": { 
+        "id": String, 
+        "selfUri": String, 
+      },  
       "intents": { 
         "name": String, 
       },  
@@ -6011,6 +6023,10 @@ Flow <a href="#" onclick="return copyFlowExample()">Copy</a>
       "additionalProperties": Object, 
     },  
     "nluInfo": { 
+      "domain": { 
+        "id": String, 
+        "selfUri": String, 
+      },  
       "intents": { 
         "name": String, 
       },  
@@ -6870,6 +6886,10 @@ Flow <a href="#" onclick="return copyFlowExample()">Copy</a>
     "actionStatus": String, 
   },  
   "nluInfo": { 
+    "domain": { 
+      "id": String, 
+      "selfUri": String, 
+    },  
     "intents": { 
       "name": String, 
     },  
@@ -10022,6 +10042,10 @@ Flow <a href="#" onclick="return copyFlowExample()">Copy</a>
       "additionalProperties": Object, 
     },  
     "nluInfo": { 
+      "domain": { 
+        "id": String, 
+        "selfUri": String, 
+      },  
       "intents": { 
         "name": String, 
       },  
@@ -10072,6 +10096,10 @@ Flow <a href="#" onclick="return copyFlowExample()">Copy</a>
       "additionalProperties": Object, 
     },  
     "nluInfo": { 
+      "domain": { 
+        "id": String, 
+        "selfUri": String, 
+      },  
       "intents": { 
         "name": String, 
       },  
@@ -10124,6 +10152,10 @@ Flow <a href="#" onclick="return copyFlowExample()">Copy</a>
       "additionalProperties": Object, 
     },  
     "nluInfo": { 
+      "domain": { 
+        "id": String, 
+        "selfUri": String, 
+      },  
       "intents": { 
         "name": String, 
       },  
@@ -10174,6 +10206,10 @@ Flow <a href="#" onclick="return copyFlowExample()">Copy</a>
       "additionalProperties": Object, 
     },  
     "nluInfo": { 
+      "domain": { 
+        "id": String, 
+        "selfUri": String, 
+      },  
       "intents": { 
         "name": String, 
       },  
@@ -11033,6 +11069,10 @@ Flow <a href="#" onclick="return copyFlowExample()">Copy</a>
     "actionStatus": String, 
   },  
   "nluInfo": { 
+    "domain": { 
+      "id": String, 
+      "selfUri": String, 
+    },  
     "intents": { 
       "name": String, 
     },  

@@ -5,7 +5,7 @@ class OrganizationApi {
 	/**
 	 * Organization service.
 	 * @module purecloud-platform-client-v2/api/OrganizationApi
-	 * @version 111.0.0
+	 * @version 112.0.0
 	 */
 
 	/**
@@ -76,6 +76,129 @@ class OrganizationApi {
 			'GET', 
 			{  }, 
 			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a limit change request
+	 * 
+	 * @param {String} requestId Unique id for the limit change request
+	 */
+	getOrganizationsLimitsChangerequest(requestId) { 
+		// verify the required parameter 'requestId' is set
+		if (requestId === undefined || requestId === null) {
+			throw 'Missing the required parameter "requestId" when calling getOrganizationsLimitsChangerequest';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/organizations/limits/changerequests/{requestId}', 
+			'GET', 
+			{ 'requestId': requestId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get the available limit change requests
+	 * Timestamp interval defaults to the last 365 days if both query parameters are omitted. If only one parameter is omitted, the interval will default to a 180 day range in the specified direction.
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.after Timestamp indicating the date to begin after when searching for requests.
+	 * @param {Number} opts.before Timestamp indicating the date to end before when searching for requests.
+	 * @param {Object} opts.status Status of the request to be filtered by
+	 * @param {Number} opts.pageSize Page Size (default to 25)
+	 * @param {Array.<String>} opts.expand Which fields, if any, to expand.
+	 */
+	getOrganizationsLimitsChangerequests(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/organizations/limits/changerequests', 
+			'GET', 
+			{  }, 
+			{ 'after': opts['after'],'before': opts['before'],'status': opts['status'],'pageSize': opts['pageSize'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a link to the limit documentation
+	 * 
+	 */
+	getOrganizationsLimitsDocs() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/organizations/limits/docs', 
+			'GET', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get the effective limits in a namespace for an organization
+	 * 
+	 * @param {String} namespaceName The namespace to fetch limits for
+	 */
+	getOrganizationsLimitsNamespace(namespaceName) { 
+		// verify the required parameter 'namespaceName' is set
+		if (namespaceName === undefined || namespaceName === null) {
+			throw 'Missing the required parameter "namespaceName" when calling getOrganizationsLimitsNamespace';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/organizations/limits/namespaces/{namespaceName}', 
+			'GET', 
+			{ 'namespaceName': namespaceName }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get the available limit namespaces
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageSize Page size (default to 100)
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 */
+	getOrganizationsLimitsNamespaces(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/organizations/limits/namespaces', 
+			'GET', 
+			{  }, 
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] }, 
 			{  }, 
 			{  }, 
 			null, 

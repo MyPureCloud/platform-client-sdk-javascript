@@ -347,6 +347,7 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
   "conversation": { 
     "id": String, 
     "name": String, 
+    "externalTag": String, 
     "startTime": Date, 
     "endTime": Date, 
     "address": String, 
@@ -1023,6 +1024,7 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
         "conversation": { 
           "id": String, 
           "name": String, 
+          "externalTag": String, 
           "startTime": Date, 
           "endTime": Date, 
           "address": String, 
@@ -1564,6 +1566,7 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
               "conversation": { 
                 "id": String, 
                 "name": String, 
+                "externalTag": String, 
                 "startTime": Date, 
                 "endTime": Date, 
                 "address": String, 
@@ -1699,6 +1702,7 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
                 "modifiedBy": String, 
                 "createdBy": String, 
                 "memberCount": Number, 
+                "joinedMemberCount": Number, 
                 "mediaSettings": {String: MediaSetting}, 
                 "routingRules": [RoutingRule], 
                 "bullseye": Bullseye, 
@@ -1816,8 +1820,8 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -1828,8 +1832,8 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
             "firstUri": String, 
             "selfUri": String, 
             "nextUri": String, 
-            "lastUri": String, 
             "previousUri": String, 
+            "lastUri": String, 
             "pageCount": Number, 
           },  
           "selfUri": String, 
@@ -2914,6 +2918,7 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
           "conversation": { 
             "id": String, 
             "name": String, 
+            "externalTag": String, 
             "startTime": Date, 
             "endTime": Date, 
             "address": String, 
@@ -3273,8 +3278,8 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
               "firstUri": String, 
               "selfUri": String, 
               "nextUri": String, 
-              "lastUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -3290,6 +3295,7 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
             "conversation": { 
               "id": String, 
               "name": String, 
+              "externalTag": String, 
               "startTime": Date, 
               "endTime": Date, 
               "address": String, 
@@ -3376,8 +3382,8 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -3759,6 +3765,7 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
               "conversation": { 
                 "id": String, 
                 "name": String, 
+                "externalTag": String, 
                 "startTime": Date, 
                 "endTime": Date, 
                 "address": String, 
@@ -3885,6 +3892,7 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
               "modifiedBy": String, 
               "createdBy": String, 
               "memberCount": Number, 
+              "joinedMemberCount": Number, 
               "mediaSettings": { 
                 "alertingTimeoutSeconds": Number, 
                 "serviceLevel": ServiceLevel, 
@@ -3960,6 +3968,7 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
             "conversation": { 
               "id": String, 
               "name": String, 
+              "externalTag": String, 
               "startTime": Date, 
               "endTime": Date, 
               "address": String, 
@@ -4046,8 +4055,8 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
                 "firstUri": String, 
                 "selfUri": String, 
                 "nextUri": String, 
-                "lastUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -4429,6 +4438,7 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
               "conversation": { 
                 "id": String, 
                 "name": String, 
+                "externalTag": String, 
                 "startTime": Date, 
                 "endTime": Date, 
                 "address": String, 
@@ -4555,6 +4565,7 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
               "modifiedBy": String, 
               "createdBy": String, 
               "memberCount": Number, 
+              "joinedMemberCount": Number, 
               "mediaSettings": { 
                 "alertingTimeoutSeconds": Number, 
                 "serviceLevel": ServiceLevel, 
@@ -4677,6 +4688,7 @@ UserRecording <a href="#" onclick="return copyUserRecordingExample()">Copy</a>
           "modifiedBy": String, 
           "createdBy": String, 
           "memberCount": Number, 
+          "joinedMemberCount": Number, 
           "mediaSettings": { 
             "alertingTimeoutSeconds": Number, 
             "serviceLevel": { 

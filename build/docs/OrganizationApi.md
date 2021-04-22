@@ -10,6 +10,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getFieldconfig**](OrganizationApi.html#getFieldconfig) | **GET** /api/v2/fieldconfig | Fetch field config for an entity type
 [**getOrganizationsEmbeddedintegration**](OrganizationApi.html#getOrganizationsEmbeddedintegration) | **GET** /api/v2/organizations/embeddedintegration | Get the list of domains that will be allowed to embed PureCloud applications
 [**getOrganizationsIpaddressauthentication**](OrganizationApi.html#getOrganizationsIpaddressauthentication) | **GET** /api/v2/organizations/ipaddressauthentication | Get organization IP address whitelist settings
+[**getOrganizationsLimitsChangerequest**](OrganizationApi.html#getOrganizationsLimitsChangerequest) | **GET** /api/v2/organizations/limits/changerequests/{requestId} | Get a limit change request
+[**getOrganizationsLimitsChangerequests**](OrganizationApi.html#getOrganizationsLimitsChangerequests) | **GET** /api/v2/organizations/limits/changerequests | Get the available limit change requests
+[**getOrganizationsLimitsDocs**](OrganizationApi.html#getOrganizationsLimitsDocs) | **GET** /api/v2/organizations/limits/docs | Get a link to the limit documentation
+[**getOrganizationsLimitsNamespace**](OrganizationApi.html#getOrganizationsLimitsNamespace) | **GET** /api/v2/organizations/limits/namespaces/{namespaceName} | Get the effective limits in a namespace for an organization
+[**getOrganizationsLimitsNamespaces**](OrganizationApi.html#getOrganizationsLimitsNamespaces) | **GET** /api/v2/organizations/limits/namespaces | Get the available limit namespaces
 [**getOrganizationsMe**](OrganizationApi.html#getOrganizationsMe) | **GET** /api/v2/organizations/me | Get organization.
 [**getOrganizationsWhitelist**](OrganizationApi.html#getOrganizationsWhitelist) | **GET** /api/v2/organizations/whitelist | Use PUT /api/v2/organizations/embeddedintegration instead
 [**patchOrganizationsFeature**](OrganizationApi.html#patchOrganizationsFeature) | **PATCH** /api/v2/organizations/features/{featureName} | Update organization
@@ -171,6 +176,289 @@ This endpoint does not need any parameter.
 ### Return type
 
 **IpAddressAuthentication**
+
+<a name="getOrganizationsLimitsChangerequest"></a>
+
+# LimitChangeRequestDetails getOrganizationsLimitsChangerequest(requestId)
+
+
+
+GET /api/v2/organizations/limits/changerequests/{requestId}
+
+Get a limit change request
+
+
+
+Requires ANY permissions: 
+
+* limits:organization:view
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OrganizationApi();
+
+let requestId = "requestId_example"; // String | Unique id for the limit change request
+
+apiInstance.getOrganizationsLimitsChangerequest(requestId)
+  .then((data) => {
+    console.log(`getOrganizationsLimitsChangerequest success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getOrganizationsLimitsChangerequest');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **requestId** | **String** | Unique id for the limit change request |  |
+{: class="table table-striped"}
+
+### Return type
+
+**LimitChangeRequestDetails**
+
+<a name="getOrganizationsLimitsChangerequests"></a>
+
+# LimitChangeRequestsEntityListing getOrganizationsLimitsChangerequests(opts)
+
+
+
+GET /api/v2/organizations/limits/changerequests
+
+Get the available limit change requests
+
+Timestamp interval defaults to the last 365 days if both query parameters are omitted. If only one parameter is omitted, the interval will default to a 180 day range in the specified direction.
+
+Requires ANY permissions: 
+
+* limits:organization:view
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OrganizationApi();
+
+let opts = { 
+  'after': 789, // Number | Timestamp indicating the date to begin after when searching for requests.
+  'before': 789, // Number | Timestamp indicating the date to end before when searching for requests.
+  'status': "status_example", // String | Status of the request to be filtered by
+  'pageSize': 25, // Number | Page Size
+  'expand': ["expand_example"] // [String] | Which fields, if any, to expand.
+};
+
+apiInstance.getOrganizationsLimitsChangerequests(opts)
+  .then((data) => {
+    console.log(`getOrganizationsLimitsChangerequests success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getOrganizationsLimitsChangerequests');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **after** | **Number** | Timestamp indicating the date to begin after when searching for requests. | [optional]  |
+ **before** | **Number** | Timestamp indicating the date to end before when searching for requests. | [optional]  |
+ **status** | **String** | Status of the request to be filtered by | [optional] <br />**Values**: Open, Approved, ImplementingChange, ChangeImplemented, Rejected, Rollback, ImplementingRollback, RollbackImplemented |
+ **pageSize** | **Number** | Page Size | [optional] [default to 25] |
+ **expand** | **[String]** | Which fields, if any, to expand. | [optional] <br />**Values**: statusHistory |
+{: class="table table-striped"}
+
+### Return type
+
+**LimitChangeRequestsEntityListing**
+
+<a name="getOrganizationsLimitsDocs"></a>
+
+# UrlResponse getOrganizationsLimitsDocs()
+
+
+
+GET /api/v2/organizations/limits/docs
+
+Get a link to the limit documentation
+
+
+
+Requires NO permissions: 
+
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OrganizationApi();
+
+apiInstance.getOrganizationsLimitsDocs()
+  .then((data) => {
+    console.log(`getOrganizationsLimitsDocs success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getOrganizationsLimitsDocs');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+{: class="table table-striped"}
+
+### Return type
+
+**UrlResponse**
+
+<a name="getOrganizationsLimitsNamespace"></a>
+
+# LimitsEntityListing getOrganizationsLimitsNamespace(namespaceName)
+
+
+
+GET /api/v2/organizations/limits/namespaces/{namespaceName}
+
+Get the effective limits in a namespace for an organization
+
+
+
+Requires ANY permissions: 
+
+* limits:organization:view
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OrganizationApi();
+
+let namespaceName = "namespaceName_example"; // String | The namespace to fetch limits for
+
+apiInstance.getOrganizationsLimitsNamespace(namespaceName)
+  .then((data) => {
+    console.log(`getOrganizationsLimitsNamespace success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getOrganizationsLimitsNamespace');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **namespaceName** | **String** | The namespace to fetch limits for |  |
+{: class="table table-striped"}
+
+### Return type
+
+**LimitsEntityListing**
+
+<a name="getOrganizationsLimitsNamespaces"></a>
+
+# LimitsEntityListing getOrganizationsLimitsNamespaces(opts)
+
+
+
+GET /api/v2/organizations/limits/namespaces
+
+Get the available limit namespaces
+
+
+
+Requires ANY permissions: 
+
+* limits:organization:view
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OrganizationApi();
+
+let opts = { 
+  'pageSize': 100, // Number | Page size
+  'pageNumber': 1 // Number | Page number
+};
+
+apiInstance.getOrganizationsLimitsNamespaces(opts)
+  .then((data) => {
+    console.log(`getOrganizationsLimitsNamespaces success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getOrganizationsLimitsNamespaces');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **pageSize** | **Number** | Page size | [optional] [default to 100] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+{: class="table table-striped"}
+
+### Return type
+
+**LimitsEntityListing**
 
 <a name="getOrganizationsMe"></a>
 

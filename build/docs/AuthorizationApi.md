@@ -1798,6 +1798,7 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
           "modifiedBy": String, 
           "createdBy": String, 
           "memberCount": Number, 
+          "joinedMemberCount": Number, 
           "mediaSettings": { 
             "alertingTimeoutSeconds": Number, 
             "serviceLevel": { 
@@ -2237,6 +2238,7 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
             "modifiedBy": String, 
             "createdBy": String, 
             "memberCount": Number, 
+            "joinedMemberCount": Number, 
             "mediaSettings": { 
               "alertingTimeoutSeconds": Number, 
               "serviceLevel": { 
@@ -2521,6 +2523,7 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
               "modifiedBy": String, 
               "createdBy": String, 
               "memberCount": Number, 
+              "joinedMemberCount": Number, 
               "mediaSettings": { 
                 "alertingTimeoutSeconds": Number, 
                 "serviceLevel": ServiceLevel, 
@@ -2632,6 +2635,7 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
                 "modifiedBy": String, 
                 "createdBy": String, 
                 "memberCount": Number, 
+                "joinedMemberCount": Number, 
                 "mediaSettings": {String: MediaSetting}, 
                 "routingRules": [RoutingRule], 
                 "bullseye": Bullseye, 
@@ -3416,6 +3420,7 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
           "modifiedBy": String, 
           "createdBy": String, 
           "memberCount": Number, 
+          "joinedMemberCount": Number, 
           "mediaSettings": { 
             "alertingTimeoutSeconds": Number, 
             "serviceLevel": { 
@@ -3855,6 +3860,7 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
             "modifiedBy": String, 
             "createdBy": String, 
             "memberCount": Number, 
+            "joinedMemberCount": Number, 
             "mediaSettings": { 
               "alertingTimeoutSeconds": Number, 
               "serviceLevel": { 
@@ -4139,6 +4145,7 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
               "modifiedBy": String, 
               "createdBy": String, 
               "memberCount": Number, 
+              "joinedMemberCount": Number, 
               "mediaSettings": { 
                 "alertingTimeoutSeconds": Number, 
                 "serviceLevel": ServiceLevel, 
@@ -4250,6 +4257,7 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
                 "modifiedBy": String, 
                 "createdBy": String, 
                 "memberCount": Number, 
+                "joinedMemberCount": Number, 
                 "mediaSettings": {String: MediaSetting}, 
                 "routingRules": [RoutingRule], 
                 "bullseye": Bullseye, 
@@ -4805,6 +4813,7 @@ DomainOrganizationRoleCreate <a href="#" onclick="return copyDomainOrganizationR
           "modifiedBy": String, 
           "createdBy": String, 
           "memberCount": Number, 
+          "joinedMemberCount": Number, 
           "mediaSettings": { 
             "alertingTimeoutSeconds": Number, 
             "serviceLevel": { 
@@ -5244,6 +5253,7 @@ DomainOrganizationRoleCreate <a href="#" onclick="return copyDomainOrganizationR
             "modifiedBy": String, 
             "createdBy": String, 
             "memberCount": Number, 
+            "joinedMemberCount": Number, 
             "mediaSettings": { 
               "alertingTimeoutSeconds": Number, 
               "serviceLevel": { 
@@ -5528,6 +5538,7 @@ DomainOrganizationRoleCreate <a href="#" onclick="return copyDomainOrganizationR
               "modifiedBy": String, 
               "createdBy": String, 
               "memberCount": Number, 
+              "joinedMemberCount": Number, 
               "mediaSettings": { 
                 "alertingTimeoutSeconds": Number, 
                 "serviceLevel": ServiceLevel, 
@@ -5639,6 +5650,7 @@ DomainOrganizationRoleCreate <a href="#" onclick="return copyDomainOrganizationR
                 "modifiedBy": String, 
                 "createdBy": String, 
                 "memberCount": Number, 
+                "joinedMemberCount": Number, 
                 "mediaSettings": {String: MediaSetting}, 
                 "routingRules": [RoutingRule], 
                 "bullseye": Bullseye, 
@@ -6661,6 +6673,7 @@ DomainOrganizationRoleUpdate <a href="#" onclick="return copyDomainOrganizationR
           "modifiedBy": String, 
           "createdBy": String, 
           "memberCount": Number, 
+          "joinedMemberCount": Number, 
           "mediaSettings": { 
             "alertingTimeoutSeconds": Number, 
             "serviceLevel": { 
@@ -7100,6 +7113,7 @@ DomainOrganizationRoleUpdate <a href="#" onclick="return copyDomainOrganizationR
             "modifiedBy": String, 
             "createdBy": String, 
             "memberCount": Number, 
+            "joinedMemberCount": Number, 
             "mediaSettings": { 
               "alertingTimeoutSeconds": Number, 
               "serviceLevel": { 
@@ -7384,6 +7398,7 @@ DomainOrganizationRoleUpdate <a href="#" onclick="return copyDomainOrganizationR
               "modifiedBy": String, 
               "createdBy": String, 
               "memberCount": Number, 
+              "joinedMemberCount": Number, 
               "mediaSettings": { 
                 "alertingTimeoutSeconds": Number, 
                 "serviceLevel": ServiceLevel, 
@@ -7495,6 +7510,7 @@ DomainOrganizationRoleUpdate <a href="#" onclick="return copyDomainOrganizationR
                 "modifiedBy": String, 
                 "createdBy": String, 
                 "memberCount": Number, 
+                "joinedMemberCount": Number, 
                 "mediaSettings": {String: MediaSetting}, 
                 "routingRules": [RoutingRule], 
                 "bullseye": Bullseye, 
@@ -8162,6 +8178,7 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
           "modifiedBy": String, 
           "createdBy": String, 
           "memberCount": Number, 
+          "joinedMemberCount": Number, 
           "mediaSettings": { 
             "alertingTimeoutSeconds": Number, 
             "serviceLevel": { 
@@ -8601,6 +8618,7 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
             "modifiedBy": String, 
             "createdBy": String, 
             "memberCount": Number, 
+            "joinedMemberCount": Number, 
             "mediaSettings": { 
               "alertingTimeoutSeconds": Number, 
               "serviceLevel": { 
@@ -8885,6 +8903,7 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
               "modifiedBy": String, 
               "createdBy": String, 
               "memberCount": Number, 
+              "joinedMemberCount": Number, 
               "mediaSettings": { 
                 "alertingTimeoutSeconds": Number, 
                 "serviceLevel": ServiceLevel, 
@@ -8996,6 +9015,7 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
                 "modifiedBy": String, 
                 "createdBy": String, 
                 "memberCount": Number, 
+                "joinedMemberCount": Number, 
                 "mediaSettings": {String: MediaSetting}, 
                 "routingRules": [RoutingRule], 
                 "bullseye": Bullseye, 

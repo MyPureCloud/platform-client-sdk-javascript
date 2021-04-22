@@ -7554,6 +7554,7 @@ UserQueue <a href="#" onclick="return copyUserQueueExample()">Copy</a>
   "modifiedBy": String, 
   "createdBy": String, 
   "memberCount": Number, 
+  "joinedMemberCount": Number, 
   "mediaSettings": { 
     "alertingTimeoutSeconds": Number, 
     "serviceLevel": { 
@@ -7870,6 +7871,7 @@ UserQueue <a href="#" onclick="return copyUserQueueExample()">Copy</a>
   "modifiedBy": String, 
   "createdBy": String, 
   "memberCount": Number, 
+  "joinedMemberCount": Number, 
   "mediaSettings": { 
     "alertingTimeoutSeconds": Number, 
     "serviceLevel": { 

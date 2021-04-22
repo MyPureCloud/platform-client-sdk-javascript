@@ -5477,6 +5477,7 @@ UserQueue <a href="#" onclick="return copyUserQueueExample()">Copy</a>
   "modifiedBy": String, 
   "createdBy": String, 
   "memberCount": Number, 
+  "joinedMemberCount": Number, 
   "mediaSettings": { 
     "alertingTimeoutSeconds": Number, 
     "serviceLevel": { 
@@ -5793,6 +5794,7 @@ UserQueue <a href="#" onclick="return copyUserQueueExample()">Copy</a>
   "modifiedBy": String, 
   "createdBy": String, 
   "memberCount": Number, 
+  "joinedMemberCount": Number, 
   "mediaSettings": { 
     "alertingTimeoutSeconds": Number, 
     "serviceLevel": { 
@@ -7273,6 +7275,7 @@ CreateQueueRequest <a href="#" onclick="return copyCreateQueueRequestExample()">
   "modifiedBy": String, 
   "createdBy": String, 
   "memberCount": Number, 
+  "joinedMemberCount": Number, 
   "mediaSettings": { 
     "alertingTimeoutSeconds": Number, 
     "serviceLevel": { 
@@ -8814,6 +8817,10 @@ Recipient <a href="#" onclick="return copyRecipientExample()">Copy</a>
         "additionalProperties": Object, 
       },  
       "nluInfo": { 
+        "domain": { 
+          "id": String, 
+          "selfUri": String, 
+        },  
         "intents": { 
           "name": String, 
         },  
@@ -8864,6 +8871,10 @@ Recipient <a href="#" onclick="return copyRecipientExample()">Copy</a>
         "additionalProperties": Object, 
       },  
       "nluInfo": { 
+        "domain": { 
+          "id": String, 
+          "selfUri": String, 
+        },  
         "intents": { 
           "name": String, 
         },  
@@ -8916,6 +8927,10 @@ Recipient <a href="#" onclick="return copyRecipientExample()">Copy</a>
         "additionalProperties": Object, 
       },  
       "nluInfo": { 
+        "domain": { 
+          "id": String, 
+          "selfUri": String, 
+        },  
         "intents": { 
           "name": String, 
         },  
@@ -8966,6 +8981,10 @@ Recipient <a href="#" onclick="return copyRecipientExample()">Copy</a>
         "additionalProperties": Object, 
       },  
       "nluInfo": { 
+        "domain": { 
+          "id": String, 
+          "selfUri": String, 
+        },  
         "intents": { 
           "name": String, 
         },  
@@ -9807,6 +9826,10 @@ Recipient <a href="#" onclick="return copyRecipientExample()">Copy</a>
       "actionStatus": String, 
     },  
     "nluInfo": { 
+      "domain": { 
+        "id": String, 
+        "selfUri": String, 
+      },  
       "intents": { 
         "name": String, 
       },  
@@ -10335,6 +10358,7 @@ QueueRequest <a href="#" onclick="return copyQueueRequestExample()">Copy</a>
   "modifiedBy": String, 
   "createdBy": String, 
   "memberCount": Number, 
+  "joinedMemberCount": Number, 
   "mediaSettings": { 
     "alertingTimeoutSeconds": Number, 
     "serviceLevel": { 

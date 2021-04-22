@@ -6221,7 +6221,8 @@ Note <a href="#" onclick="return copyNoteExample()">Copy</a>
 ```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
-  "name": String, 
+  "entityId": String, 
+  "entityType": String, 
   "noteText": String, 
   "modifyDate": Date, 
   "createDate": Date, 
@@ -7935,7 +7936,8 @@ Note <a href="#" onclick="return copyNoteExample()">Copy</a>
 ```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
-  "name": String, 
+  "entityId": String, 
+  "entityType": String, 
   "noteText": String, 
   "modifyDate": Date, 
   "createDate": Date, 
@@ -12072,7 +12074,8 @@ Note <a href="#" onclick="return copyNoteExample()">Copy</a>
 ```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
-  "name": String, 
+  "entityId": String, 
+  "entityType": String, 
   "noteText": String, 
   "modifyDate": Date, 
   "createDate": Date, 
@@ -13780,7 +13783,8 @@ Note <a href="#" onclick="return copyNoteExample()">Copy</a>
 ```{"language":"json", "maxHeight": "250px"}
 { 
   "id": String, 
-  "name": String, 
+  "entityId": String, 
+  "entityType": String, 
   "noteText": String, 
   "modifyDate": Date, 
   "createDate": Date, 
