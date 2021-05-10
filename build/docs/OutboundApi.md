@@ -31,6 +31,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getOutboundCallanalysisresponseset**](OutboundApi.html#getOutboundCallanalysisresponseset) | **GET** /api/v2/outbound/callanalysisresponsesets/{callAnalysisSetId} | Get a dialer call analysis response set.
 [**getOutboundCallanalysisresponsesets**](OutboundApi.html#getOutboundCallanalysisresponsesets) | **GET** /api/v2/outbound/callanalysisresponsesets | Query a list of dialer call analysis response sets.
 [**getOutboundCampaign**](OutboundApi.html#getOutboundCampaign) | **GET** /api/v2/outbound/campaigns/{campaignId} | Get dialer campaign.
+[**getOutboundCampaignAgentownedmappingpreviewResults**](OutboundApi.html#getOutboundCampaignAgentownedmappingpreviewResults) | **GET** /api/v2/outbound/campaigns/{campaignId}/agentownedmappingpreview/results | Get a preview of how agents will be mapped to this campaign&#39;s contact list.
 [**getOutboundCampaignDiagnostics**](OutboundApi.html#getOutboundCampaignDiagnostics) | **GET** /api/v2/outbound/campaigns/{campaignId}/diagnostics | Get campaign diagnostics
 [**getOutboundCampaignInteractions**](OutboundApi.html#getOutboundCampaignInteractions) | **GET** /api/v2/outbound/campaigns/{campaignId}/interactions | Get dialer campaign interactions.
 [**getOutboundCampaignProgress**](OutboundApi.html#getOutboundCampaignProgress) | **GET** /api/v2/outbound/campaigns/{campaignId}/progress | Get campaign progress
@@ -80,6 +81,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postOutboundAudits**](OutboundApi.html#postOutboundAudits) | **POST** /api/v2/outbound/audits | Retrieves audits for dialer.
 [**postOutboundCallabletimesets**](OutboundApi.html#postOutboundCallabletimesets) | **POST** /api/v2/outbound/callabletimesets | Create callable time set
 [**postOutboundCallanalysisresponsesets**](OutboundApi.html#postOutboundCallanalysisresponsesets) | **POST** /api/v2/outbound/callanalysisresponsesets | Create a dialer call analysis response set.
+[**postOutboundCampaignAgentownedmappingpreview**](OutboundApi.html#postOutboundCampaignAgentownedmappingpreview) | **POST** /api/v2/outbound/campaigns/{campaignId}/agentownedmappingpreview | Initiate request for a preview of how agents will be mapped to this campaign&#39;s contact list.
 [**postOutboundCampaignCallbackSchedule**](OutboundApi.html#postOutboundCampaignCallbackSchedule) | **POST** /api/v2/outbound/campaigns/{campaignId}/callback/schedule | Schedule a Callback for a Dialer Campaign (Deprecated)
 [**postOutboundCampaignrules**](OutboundApi.html#postOutboundCampaignrules) | **POST** /api/v2/outbound/campaignrules | Create Campaign Rule
 [**postOutboundCampaigns**](OutboundApi.html#postOutboundCampaigns) | **POST** /api/v2/outbound/campaigns | Create a campaign.
@@ -1482,6 +1484,63 @@ apiInstance.getOutboundCampaign(campaignId)
 ### Return type
 
 **Campaign**
+
+<a name="getOutboundCampaignAgentownedmappingpreviewResults"></a>
+
+# AgentOwnedMappingPreviewListing getOutboundCampaignAgentownedmappingpreviewResults(campaignId)
+
+
+
+GET /api/v2/outbound/campaigns/{campaignId}/agentownedmappingpreview/results
+
+Get a preview of how agents will be mapped to this campaign&#39;s contact list.
+
+
+
+Requires ALL permissions: 
+
+* outbound:campaign:view
+* outbound:contact:view
+* routing:queue:view
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OutboundApi();
+
+let campaignId = "campaignId_example"; // String | Campaign ID
+
+apiInstance.getOutboundCampaignAgentownedmappingpreviewResults(campaignId)
+  .then((data) => {
+    console.log(`getOutboundCampaignAgentownedmappingpreviewResults success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getOutboundCampaignAgentownedmappingpreviewResults');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **campaignId** | **String** | Campaign ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+**AgentOwnedMappingPreviewListing**
 
 <a name="getOutboundCampaignDiagnostics"></a>
 
@@ -4641,6 +4700,63 @@ apiInstance.postOutboundCallanalysisresponsesets(body)
 ### Return type
 
 **ResponseSet**
+
+<a name="postOutboundCampaignAgentownedmappingpreview"></a>
+
+# Empty postOutboundCampaignAgentownedmappingpreview(campaignId)
+
+
+
+POST /api/v2/outbound/campaigns/{campaignId}/agentownedmappingpreview
+
+Initiate request for a preview of how agents will be mapped to this campaign&#39;s contact list.
+
+
+
+Requires ALL permissions: 
+
+* outbound:campaign:view
+* outbound:contact:view
+* directory:user:view
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OutboundApi();
+
+let campaignId = "campaignId_example"; // String | Campaign ID
+
+apiInstance.postOutboundCampaignAgentownedmappingpreview(campaignId)
+  .then((data) => {
+    console.log(`postOutboundCampaignAgentownedmappingpreview success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postOutboundCampaignAgentownedmappingpreview');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **campaignId** | **String** | Campaign ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+**Empty**
 
 <a name="postOutboundCampaignCallbackSchedule"></a>
 

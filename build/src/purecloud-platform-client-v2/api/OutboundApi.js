@@ -5,7 +5,7 @@ class OutboundApi {
 	/**
 	 * Outbound service.
 	 * @module purecloud-platform-client-v2/api/OutboundApi
-	 * @version 112.0.0
+	 * @version 113.0.0
 	 */
 
 	/**
@@ -633,6 +633,31 @@ class OutboundApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/outbound/campaigns/{campaignId}', 
+			'GET', 
+			{ 'campaignId': campaignId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a preview of how agents will be mapped to this campaign&#39;s contact list.
+	 * 
+	 * @param {String} campaignId Campaign ID
+	 */
+	getOutboundCampaignAgentownedmappingpreviewResults(campaignId) { 
+		// verify the required parameter 'campaignId' is set
+		if (campaignId === undefined || campaignId === null) {
+			throw 'Missing the required parameter "campaignId" when calling getOutboundCampaignAgentownedmappingpreviewResults';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/outbound/campaigns/{campaignId}/agentownedmappingpreview/results', 
 			'GET', 
 			{ 'campaignId': campaignId }, 
 			{  }, 
@@ -1981,6 +2006,31 @@ class OutboundApi {
 			{  }, 
 			{  }, 
 			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Initiate request for a preview of how agents will be mapped to this campaign&#39;s contact list.
+	 * 
+	 * @param {String} campaignId Campaign ID
+	 */
+	postOutboundCampaignAgentownedmappingpreview(campaignId) { 
+		// verify the required parameter 'campaignId' is set
+		if (campaignId === undefined || campaignId === null) {
+			throw 'Missing the required parameter "campaignId" when calling postOutboundCampaignAgentownedmappingpreview';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/outbound/campaigns/{campaignId}/agentownedmappingpreview', 
+			'POST', 
+			{ 'campaignId': campaignId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
 			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']

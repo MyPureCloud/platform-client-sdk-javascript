@@ -25,6 +25,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postCoachingAppointmentConversations**](CoachingApi.html#postCoachingAppointmentConversations) | **POST** /api/v2/coaching/appointments/{appointmentId}/conversations | Add a conversation to an appointment
 [**postCoachingAppointments**](CoachingApi.html#postCoachingAppointments) | **POST** /api/v2/coaching/appointments | Create a new appointment
 [**postCoachingAppointmentsAggregatesQuery**](CoachingApi.html#postCoachingAppointmentsAggregatesQuery) | **POST** /api/v2/coaching/appointments/aggregates/query | Retrieve aggregated appointment data
+[**postCoachingScheduleslotsQuery**](CoachingApi.html#postCoachingScheduleslotsQuery) | **POST** /api/v2/coaching/scheduleslots/query | Get list of possible slots where a coaching appointment can be scheduled.
 {: class="table table-striped"}
 
 <a name="deleteCoachingAppointment"></a>
@@ -1385,4 +1386,87 @@ apiInstance.postCoachingAppointmentsAggregatesQuery(body)
 ### Return type
 
 **CoachingAppointmentAggregateResponse**
+
+<a name="postCoachingScheduleslotsQuery"></a>
+
+# CoachingSlotsResponse postCoachingScheduleslotsQuery(body)
+
+
+
+POST /api/v2/coaching/scheduleslots/query
+
+Get list of possible slots where a coaching appointment can be scheduled.
+
+
+
+Requires ANY permissions: 
+
+* coaching:scheduleSlot:view
+
+
+### Request Body Schema
+
+<script type="text/javascript">
+	function copyCoachingSlotsRequestExample() {
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#CoachingSlotsRequestExample').text()).select();
+		document.execCommand("copy");
+		temp.remove();
+		return false;
+	}
+</script>
+
+CoachingSlotsRequest <a href="#" onclick="return copyCoachingSlotsRequestExample()">Copy</a>
+
+<div id="CoachingSlotsRequestExample">
+
+```{"language":"json", "maxHeight": "250px"}
+{ 
+  "interval": String, 
+  "lengthInMinutes": Number, 
+  "attendeeIds": [String], 
+  "facilitatorIds": [String], 
+}
+```
+
+</div>
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.CoachingApi();
+
+let body = {}; // Object | The slot search request
+
+apiInstance.postCoachingScheduleslotsQuery(body)
+  .then((data) => {
+    console.log(`postCoachingScheduleslotsQuery success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postCoachingScheduleslotsQuery');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | The slot search request |  |
+{: class="table table-striped"}
+
+### Return type
+
+**CoachingSlotsResponse**
 

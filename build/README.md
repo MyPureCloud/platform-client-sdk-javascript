@@ -27,7 +27,7 @@ For direct use in a browser script:
 
 ```{"language":"html"}
 <!-- Include the CJS SDK -->
-<script src="https://sdk-cdn.mypurecloud.com/javascript/112.0.0/purecloud-platform-client-v2.min.js"></script>
+<script src="https://sdk-cdn.mypurecloud.com/javascript/113.0.0/purecloud-platform-client-v2.min.js"></script>
 
 <script type="text/javascript">
   // Obtain a reference to the platformClient object
@@ -44,7 +44,7 @@ For direct use in a browser script:
 
 <script type="text/javascript">
   // Obtain a reference to the platformClient object
-  requirejs(['https://sdk-cdn.mypurecloud.com/javascript/amd/112.0.0/purecloud-platform-client-v2.min.js'], (platformClient) => {
+  requirejs(['https://sdk-cdn.mypurecloud.com/javascript/amd/113.0.0/purecloud-platform-client-v2.min.js'], (platformClient) => {
     console.log(platformClient);
   });
 </script>
@@ -126,12 +126,12 @@ client.loginCodeAuthorizationGrant(clientId,clientSecret,authCode,redirectUri)
   });
 ```
 
-By default the SDK will transparently request a new access token when it expires. By default the SDK will transparently request a new access token when it expires. If multiple threads are running 1 thread will request a new token, other threads will wait a maximum of 10 seconds for the token refresh to complete, this time can be overriden with the _refreshTokenWaitTime_ field of the _ApiClient_ object.  
-If you wish to apply the refresh logic yourself, set _shouldRefreshAccessToken_ to false and store the refresh token. The _tokenExpiryTime_ can be used to preemptively request a new token. Use _refreshCodeAuthorizationGrant_ to request a new token when necessary.
+By default the SDK will transparently request a new access token when it expires. If multiple threads are running 1 thread will request a new token, other threads will wait a maximum of 10 seconds for the token refresh to complete, this time can be overriden with the _client.config.refresh_token_wait_max_ field of the _Configuration_ object within ApiClient.  
+If you wish to apply the refresh logic yourself, set _client.config.refresh_access_token_ to false and store the refresh token. The _tokenExpiryTime_ can be used to preemptively request a new token. Use _refreshCodeAuthorizationGrant_ to request a new token when necessary.
 
 ```{"language":"javascript"}
 const client = platformClient.ApiClient.instance;
-client.shouldRefreshAccessToken = false;
+client.config.refresh_access_token = false;
 client.loginCodeAuthorizationGrant(clientId,clientSecret,authCode,redirectUri)
   .then((authData) => {
     refreshToken = authData.refreshToken;
@@ -189,6 +189,83 @@ client.setAccessToken(yourAccessToken);
 
 When authenticating in a browser using `loginClientCredentialsGrant(...)`, if the user completes the authentication process but their session is unable to be authorized, they will still be redirected back to the redirect URI. When `loginClientCredentialsGrant(...)` is invoked after the failure redirect, the promise returned will be rejected with an error message built from the `error` and `error_description`. The error information, as well as the state, can be accessed via `platformClient.ApiClient.instance.authData`. The application is expected to identify these login failures and interact with the user in a manner appropriate for the application.
 
+## SDK Logging
+
+Logging of API requests and responses can be controlled by a number of parameters on the `Configuration`'s `Logger` instance.
+
+`log_level` values:
+1. LTrace (HTTP Method, URL, Request Body, HTTP Status Code, Request Headers, Response Headers)
+2. LDebug (HTTP Method, URL, Request Body, HTTP Status Code, Request Headers)
+3. LError (HTTP Method, URL, Request Body, Response Body, HTTP Status Code, Request Headers, Response Headers)
+4. LNone - default
+
+`log_format` values:
+1. JSON
+2. TEXT - default
+
+By default, the request and response bodies are not logged because these can contain PII. Be mindful of this data if choosing to log it.  
+To log to a file, provide a `log_file_path` value. SDK users are responsible for the rotation of the log file.
+
+Example logging configuration:
+```{"language":"javascript"}
+client.config.logger.log_level = client.config.logger.logLevelEnum.level.LTrace;
+client.config.logger.log_format = client.config.logger.logFormatEnum.formats.JSON;
+client.config.logger.log_request_body = true;
+client.config.logger.log_response_body = true;
+client.config.logger.log_to_console = true;
+client.config.logger.log_file_path = "/var/log/javascriptsdk.log";
+
+client.config.logger.setLogger(); // To apply above changes
+```
+
+#### Configuration file
+
+A number of configuration parameters can be applied using a configuration file. There are two sources for this file:
+
+1. The SDK will look for `%USERPROFILE%\.genesyscloudjavascript\config` on Windows if the environment variable USERPROFILE is defined, otherwise uses the path to the profile directory of the current user as home, or `$HOME/.genesyscloudjavascript/config` on Unix.
+2. Provide a valid file path to `client.config.setConfigPath()`
+
+The SDK will constantly check to see if the config file has been updated, regardless of whether a config file was present at start-up. To disable this behaviour, set `client.config.live_reload_config` to false.  
+INI and JSON formats are supported. See below for examples of configuration values in both formats:
+
+INI:
+```{"language":"ini"}
+[logging]
+log_level = trace
+log_format = text
+log_to_console = false
+log_file_path = /var/log/javascriptsdk.log
+log_response_body = false
+log_request_body = false
+[reauthentication]
+refresh_access_token = true
+refresh_token_wait_max = 10
+[general]
+live_reload_config = true
+host = https://api.mypurecloud.com
+```
+
+JSON:
+```{"language":"json"}
+{
+    "logging": {
+        "log_level": "trace",
+        "log_format": "text",
+        "log_to_console": false,
+        "log_file_path": "/var/log/javascriptsdk.log",
+        "log_response_body": false,
+        "log_request_body": false
+    },
+    "reauthentication": {
+        "refresh_access_token": true,
+        "refresh_token_wait_max": 10
+    },
+    "general": {
+        "live_reload_config": true,
+        "host": "https://api.mypurecloud.com"
+    }
+}
+```
 
 ## Environments
 
@@ -348,16 +425,6 @@ Example error response object:
     "original": null
   }
 }
-```
-
-
-## Debug Logging
-
-There are hooks to trace requests and responses.  To enable debug tracing, provide a log object. Optionally, specify a maximum number of lines. If specified, the response body trace will be truncated. If not specified, the entire response body will be traced out.
-
-```{"language":"javascript"}
-const client = platformClient.ApiClient.instance;
-client.setDebugLog(console.log, 25);
 ```
 
 

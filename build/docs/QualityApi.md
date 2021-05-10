@@ -12,8 +12,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**deleteQualityForm**](QualityApi.html#deleteQualityForm) | **DELETE** /api/v2/quality/forms/{formId} | Delete an evaluation form.
 [**deleteQualityFormsEvaluation**](QualityApi.html#deleteQualityFormsEvaluation) | **DELETE** /api/v2/quality/forms/evaluations/{formId} | Delete an evaluation form.
 [**deleteQualityFormsSurvey**](QualityApi.html#deleteQualityFormsSurvey) | **DELETE** /api/v2/quality/forms/surveys/{formId} | Delete a survey form.
-[**deleteQualityKeywordset**](QualityApi.html#deleteQualityKeywordset) | **DELETE** /api/v2/quality/keywordsets/{keywordSetId} | Delete a keywordSet by id.
-[**deleteQualityKeywordsets**](QualityApi.html#deleteQualityKeywordsets) | **DELETE** /api/v2/quality/keywordsets | Delete keyword sets
 [**getQualityAgentsActivity**](QualityApi.html#getQualityAgentsActivity) | **GET** /api/v2/quality/agents/activity | Gets a list of Agent Activities
 [**getQualityCalibration**](QualityApi.html#getQualityCalibration) | **GET** /api/v2/quality/calibrations/{calibrationId} | Get a calibration by id.  Requires either calibrator id or conversation id
 [**getQualityCalibrations**](QualityApi.html#getQualityCalibrations) | **GET** /api/v2/quality/calibrations | Get the list of calibrations
@@ -33,8 +31,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getQualityFormsSurveys**](QualityApi.html#getQualityFormsSurveys) | **GET** /api/v2/quality/forms/surveys | Get the list of survey forms
 [**getQualityFormsSurveysBulk**](QualityApi.html#getQualityFormsSurveysBulk) | **GET** /api/v2/quality/forms/surveys/bulk | Retrieve a list of survey forms by their ids
 [**getQualityFormsSurveysBulkContexts**](QualityApi.html#getQualityFormsSurveysBulkContexts) | **GET** /api/v2/quality/forms/surveys/bulk/contexts | Retrieve a list of the latest form versions by context ids
-[**getQualityKeywordset**](QualityApi.html#getQualityKeywordset) | **GET** /api/v2/quality/keywordsets/{keywordSetId} | Get a keywordSet by id.
-[**getQualityKeywordsets**](QualityApi.html#getQualityKeywordsets) | **GET** /api/v2/quality/keywordsets | Get the list of keyword sets
 [**getQualityPublishedform**](QualityApi.html#getQualityPublishedform) | **GET** /api/v2/quality/publishedforms/{formId} | Get the published evaluation forms.
 [**getQualityPublishedforms**](QualityApi.html#getQualityPublishedforms) | **GET** /api/v2/quality/publishedforms | Get the published evaluation forms.
 [**getQualityPublishedformsEvaluation**](QualityApi.html#getQualityPublishedformsEvaluation) | **GET** /api/v2/quality/publishedforms/evaluations/{formId} | Get the most recent published version of an evaluation form.
@@ -52,18 +48,15 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postQualityForms**](QualityApi.html#postQualityForms) | **POST** /api/v2/quality/forms | Create an evaluation form.
 [**postQualityFormsEvaluations**](QualityApi.html#postQualityFormsEvaluations) | **POST** /api/v2/quality/forms/evaluations | Create an evaluation form.
 [**postQualityFormsSurveys**](QualityApi.html#postQualityFormsSurveys) | **POST** /api/v2/quality/forms/surveys | Create a survey form.
-[**postQualityKeywordsets**](QualityApi.html#postQualityKeywordsets) | **POST** /api/v2/quality/keywordsets | Create a Keyword Set
 [**postQualityPublishedforms**](QualityApi.html#postQualityPublishedforms) | **POST** /api/v2/quality/publishedforms | Publish an evaluation form.
 [**postQualityPublishedformsEvaluations**](QualityApi.html#postQualityPublishedformsEvaluations) | **POST** /api/v2/quality/publishedforms/evaluations | Publish an evaluation form.
 [**postQualityPublishedformsSurveys**](QualityApi.html#postQualityPublishedformsSurveys) | **POST** /api/v2/quality/publishedforms/surveys | Publish a survey form.
-[**postQualitySpotability**](QualityApi.html#postQualitySpotability) | **POST** /api/v2/quality/spotability | Retrieve the spotability statistic
 [**postQualitySurveysScoring**](QualityApi.html#postQualitySurveysScoring) | **POST** /api/v2/quality/surveys/scoring | Score survey
 [**putQualityCalibration**](QualityApi.html#putQualityCalibration) | **PUT** /api/v2/quality/calibrations/{calibrationId} | Update a calibration to the specified calibration via PUT.  Editable fields include: evaluators, expertEvaluator, and scoringIndex
 [**putQualityConversationEvaluation**](QualityApi.html#putQualityConversationEvaluation) | **PUT** /api/v2/quality/conversations/{conversationId}/evaluations/{evaluationId} | Update an evaluation
 [**putQualityForm**](QualityApi.html#putQualityForm) | **PUT** /api/v2/quality/forms/{formId} | Update an evaluation form.
 [**putQualityFormsEvaluation**](QualityApi.html#putQualityFormsEvaluation) | **PUT** /api/v2/quality/forms/evaluations/{formId} | Update an evaluation form.
 [**putQualityFormsSurvey**](QualityApi.html#putQualityFormsSurvey) | **PUT** /api/v2/quality/forms/surveys/{formId} | Update a survey form.
-[**putQualityKeywordset**](QualityApi.html#putQualityKeywordset) | **PUT** /api/v2/quality/keywordsets/{keywordSetId} | Update a keywordSet to the specified keywordSet via PUT.
 [**putQualitySurveysScorable**](QualityApi.html#putQualitySurveysScorable) | **PUT** /api/v2/quality/surveys/scorable | Update a survey as an end-customer, for the purposes of scoring it.
 {: class="table table-striped"}
 
@@ -344,116 +337,6 @@ apiInstance.deleteQualityFormsSurvey(formId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **formId** | **String** | Form ID |  |
-{: class="table table-striped"}
-
-### Return type
-
-void (no response body)
-
-<a name="deleteQualityKeywordset"></a>
-
-# void deleteQualityKeywordset(keywordSetId)
-
-
-
-DELETE /api/v2/quality/keywordsets/{keywordSetId}
-
-Delete a keywordSet by id.
-
-
-
-Requires ANY permissions: 
-
-* quality:keywordset:delete
-
-
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.QualityApi();
-
-let keywordSetId = "keywordSetId_example"; // String | KeywordSet ID
-
-apiInstance.deleteQualityKeywordset(keywordSetId)
-  .then(() => {
-    console.log('deleteQualityKeywordset returned successfully.');
-  })
-  .catch((err) => {
-    console.log('There was a failure calling deleteQualityKeywordset');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **keywordSetId** | **String** | KeywordSet ID |  |
-{: class="table table-striped"}
-
-### Return type
-
-void (no response body)
-
-<a name="deleteQualityKeywordsets"></a>
-
-# void deleteQualityKeywordsets(ids)
-
-
-
-DELETE /api/v2/quality/keywordsets
-
-Delete keyword sets
-
-Bulk delete of keyword sets; this will only delete the keyword sets that match the ids specified in the query param.
-
-Requires ANY permissions: 
-
-* quality:keywordset:delete
-
-
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.QualityApi();
-
-let ids = "ids_example"; // String | A comma-delimited list of valid KeywordSet ids
-
-apiInstance.deleteQualityKeywordsets(ids)
-  .then(() => {
-    console.log('deleteQualityKeywordsets returned successfully.');
-  })
-  .catch((err) => {
-    console.log('There was a failure calling deleteQualityKeywordsets');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **ids** | **String** | A comma-delimited list of valid KeywordSet ids |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1714,136 +1597,6 @@ apiInstance.getQualityFormsSurveysBulkContexts(contextId, opts)
 
 **SurveyFormEntityListing**
 
-<a name="getQualityKeywordset"></a>
-
-# KeywordSet getQualityKeywordset(keywordSetId)
-
-
-
-GET /api/v2/quality/keywordsets/{keywordSetId}
-
-Get a keywordSet by id.
-
-
-
-Requires ANY permissions: 
-
-* quality:keywordset:view
-
-
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.QualityApi();
-
-let keywordSetId = "keywordSetId_example"; // String | KeywordSet ID
-
-apiInstance.getQualityKeywordset(keywordSetId)
-  .then((data) => {
-    console.log(`getQualityKeywordset success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch((err) => {
-    console.log('There was a failure calling getQualityKeywordset');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **keywordSetId** | **String** | KeywordSet ID |  |
-{: class="table table-striped"}
-
-### Return type
-
-**KeywordSet**
-
-<a name="getQualityKeywordsets"></a>
-
-# KeywordSetEntityListing getQualityKeywordsets(opts)
-
-
-
-GET /api/v2/quality/keywordsets
-
-Get the list of keyword sets
-
-
-
-Requires ANY permissions: 
-
-* quality:keywordset:view
-
-
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.QualityApi();
-
-let opts = { 
-  'pageSize': 25, // Number | The total page size requested
-  'pageNumber': 1, // Number | The page number requested
-  'sortBy': "sortBy_example", // String | variable name requested to sort by
-  'expand': ["expand_example"], // [String] | variable name requested by expand list
-  'nextPage': "nextPage_example", // String | next page token
-  'previousPage': "previousPage_example", // String | Previous page token
-  'name': "name_example", // String | the keyword set name - used for filtering results in searches.
-  'queueId': "queueId_example", // String | the queue id - used for filtering results in searches.
-  'agentId': "agentId_example", // String | the agent id - used for filtering results in searches.
-  'operator': "operator_example" // String | If agentID and queueId are both present, this determines whether the query is an AND or OR between those parameters.
-};
-
-apiInstance.getQualityKeywordsets(opts)
-  .then((data) => {
-    console.log(`getQualityKeywordsets success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch((err) => {
-    console.log('There was a failure calling getQualityKeywordsets');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **pageSize** | **Number** | The total page size requested | [optional] [default to 25] |
- **pageNumber** | **Number** | The page number requested | [optional] [default to 1] |
- **sortBy** | **String** | variable name requested to sort by | [optional]  |
- **expand** | **[String]** | variable name requested by expand list | [optional]  |
- **nextPage** | **String** | next page token | [optional]  |
- **previousPage** | **String** | Previous page token | [optional]  |
- **name** | **String** | the keyword set name - used for filtering results in searches. | [optional]  |
- **queueId** | **String** | the queue id - used for filtering results in searches. | [optional]  |
- **agentId** | **String** | the agent id - used for filtering results in searches. | [optional]  |
- **operator** | **String** | If agentID and queueId are both present, this determines whether the query is an AND or OR between those parameters. | [optional] <br />**Values**: AND, OR |
-{: class="table table-striped"}
-
-### Return type
-
-**KeywordSetEntityListing**
-
 <a name="getQualityPublishedform"></a>
 
 # EvaluationForm getQualityPublishedform(formId)
@@ -2481,9 +2234,9 @@ SurveyForm <a href="#" onclick="return copySurveyFormExample()">Copy</a>
                 "total": Number, 
                 "firstUri": String, 
                 "selfUri": String, 
+                "lastUri": String, 
                 "nextUri": String, 
                 "previousUri": String, 
-                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -2493,9 +2246,9 @@ SurveyForm <a href="#" onclick="return copySurveyFormExample()">Copy</a>
             "total": Number, 
             "firstUri": String, 
             "selfUri": String, 
+            "lastUri": String, 
             "nextUri": String, 
             "previousUri": String, 
-            "lastUri": String, 
             "pageCount": Number, 
           },  
           "selfUri": String, 
@@ -2505,9 +2258,9 @@ SurveyForm <a href="#" onclick="return copySurveyFormExample()">Copy</a>
         "total": Number, 
         "firstUri": String, 
         "selfUri": String, 
+        "lastUri": String, 
         "nextUri": String, 
         "previousUri": String, 
-        "lastUri": String, 
         "pageCount": Number, 
       },  
       "selfUri": String, 
@@ -2517,9 +2270,9 @@ SurveyForm <a href="#" onclick="return copySurveyFormExample()">Copy</a>
     "total": Number, 
     "firstUri": String, 
     "selfUri": String, 
+    "lastUri": String, 
     "nextUri": String, 
     "previousUri": String, 
-    "lastUri": String, 
     "pageCount": Number, 
   },  
   "selfUri": String, 
@@ -4716,8 +4469,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "text": String, 
                 "value": Number, 
               },  
-              "isKill": Boolean, 
               "isCritical": Boolean, 
+              "isKill": Boolean, 
             },  
             "visibilityCondition": { 
               "combiningOperation": String, 
@@ -4750,9 +4503,9 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "total": Number, 
                 "firstUri": String, 
                 "selfUri": String, 
+                "lastUri": String, 
                 "nextUri": String, 
                 "previousUri": String, 
-                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -4762,9 +4515,9 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
             "total": Number, 
             "firstUri": String, 
             "selfUri": String, 
+            "lastUri": String, 
             "nextUri": String, 
             "previousUri": String, 
-            "lastUri": String, 
             "pageCount": Number, 
           },  
           "selfUri": String, 
@@ -6184,8 +5937,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "commentsRequired": Boolean, 
                 "visibilityCondition": VisibilityCondition, 
                 "answerOptions": [AnswerOption], 
-                "isKill": Boolean, 
                 "isCritical": Boolean, 
+                "isKill": Boolean, 
               },  
               "visibilityCondition": { 
                 "combiningOperation": String, 
@@ -6208,9 +5961,9 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
+              "lastUri": String, 
               "nextUri": String, 
               "previousUri": String, 
-              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -6312,9 +6065,9 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "total": Number, 
                 "firstUri": String, 
                 "selfUri": String, 
+                "lastUri": String, 
                 "nextUri": String, 
                 "previousUri": String, 
-                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -6985,9 +6738,9 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "total": Number, 
                 "firstUri": String, 
                 "selfUri": String, 
+                "lastUri": String, 
                 "nextUri": String, 
                 "previousUri": String, 
-                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -7811,8 +7564,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
           "text": String, 
           "value": Number, 
         },  
-        "isKill": Boolean, 
         "isCritical": Boolean, 
+        "isKill": Boolean, 
       },  
       "visibilityCondition": { 
         "combiningOperation": String, 
@@ -7851,8 +7604,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
               "text": String, 
               "value": Number, 
             },  
-            "isKill": Boolean, 
             "isCritical": Boolean, 
+            "isKill": Boolean, 
           },  
           "visibilityCondition": { 
             "combiningOperation": String, 
@@ -7884,8 +7637,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "commentsRequired": Boolean, 
                 "visibilityCondition": VisibilityCondition, 
                 "answerOptions": [AnswerOption], 
-                "isKill": Boolean, 
                 "isCritical": Boolean, 
+                "isKill": Boolean, 
               },  
               "visibilityCondition": { 
                 "combiningOperation": String, 
@@ -7908,9 +7661,9 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
+              "lastUri": String, 
               "nextUri": String, 
               "previousUri": String, 
-              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -7920,9 +7673,9 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
           "total": Number, 
           "firstUri": String, 
           "selfUri": String, 
+          "lastUri": String, 
           "nextUri": String, 
           "previousUri": String, 
-          "lastUri": String, 
           "pageCount": Number, 
         },  
         "selfUri": String, 
@@ -7932,9 +7685,9 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
       "total": Number, 
       "firstUri": String, 
       "selfUri": String, 
+      "lastUri": String, 
       "nextUri": String, 
       "previousUri": String, 
-      "lastUri": String, 
       "pageCount": Number, 
     },  
     "selfUri": String, 
@@ -8930,8 +8683,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "commentsRequired": Boolean, 
                 "visibilityCondition": VisibilityCondition, 
                 "answerOptions": [AnswerOption], 
-                "isKill": Boolean, 
                 "isCritical": Boolean, 
+                "isKill": Boolean, 
               },  
               "visibilityCondition": { 
                 "combiningOperation": String, 
@@ -8954,9 +8707,9 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
+              "lastUri": String, 
               "nextUri": String, 
               "previousUri": String, 
-              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -9803,9 +9556,9 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "total": Number, 
                 "firstUri": String, 
                 "selfUri": String, 
+                "lastUri": String, 
                 "nextUri": String, 
                 "previousUri": String, 
-                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -10373,8 +10126,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
             "text": String, 
             "value": Number, 
           },  
-          "isKill": Boolean, 
           "isCritical": Boolean, 
+          "isKill": Boolean, 
         },  
         "visibilityCondition": { 
           "combiningOperation": String, 
@@ -10413,8 +10166,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "text": String, 
                 "value": Number, 
               },  
-              "isKill": Boolean, 
               "isCritical": Boolean, 
+              "isKill": Boolean, 
             },  
             "visibilityCondition": { 
               "combiningOperation": String, 
@@ -10447,9 +10200,9 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "total": Number, 
                 "firstUri": String, 
                 "selfUri": String, 
+                "lastUri": String, 
                 "nextUri": String, 
                 "previousUri": String, 
-                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -10459,9 +10212,9 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
             "total": Number, 
             "firstUri": String, 
             "selfUri": String, 
+            "lastUri": String, 
             "nextUri": String, 
             "previousUri": String, 
-            "lastUri": String, 
             "pageCount": Number, 
           },  
           "selfUri": String, 
@@ -10471,9 +10224,9 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
         "total": Number, 
         "firstUri": String, 
         "selfUri": String, 
+        "lastUri": String, 
         "nextUri": String, 
         "previousUri": String, 
-        "lastUri": String, 
         "pageCount": Number, 
       },  
       "selfUri": String, 
@@ -12396,9 +12149,9 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "total": Number, 
                 "firstUri": String, 
                 "selfUri": String, 
+                "lastUri": String, 
                 "nextUri": String, 
                 "previousUri": String, 
-                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -13030,8 +12783,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
               "text": String, 
               "value": Number, 
             },  
-            "isKill": Boolean, 
             "isCritical": Boolean, 
+            "isKill": Boolean, 
           },  
           "visibilityCondition": { 
             "combiningOperation": String, 
@@ -13063,8 +12816,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "commentsRequired": Boolean, 
                 "visibilityCondition": VisibilityCondition, 
                 "answerOptions": [AnswerOption], 
-                "isKill": Boolean, 
                 "isCritical": Boolean, 
+                "isKill": Boolean, 
               },  
               "visibilityCondition": { 
                 "combiningOperation": String, 
@@ -13087,9 +12840,9 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
+              "lastUri": String, 
               "nextUri": String, 
               "previousUri": String, 
-              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -13099,9 +12852,9 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
           "total": Number, 
           "firstUri": String, 
           "selfUri": String, 
+          "lastUri": String, 
           "nextUri": String, 
           "previousUri": String, 
-          "lastUri": String, 
           "pageCount": Number, 
         },  
         "selfUri": String, 
@@ -13878,8 +13631,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "text": String, 
                 "value": Number, 
               },  
-              "isKill": Boolean, 
               "isCritical": Boolean, 
+              "isKill": Boolean, 
             },  
             "visibilityCondition": { 
               "combiningOperation": String, 
@@ -13912,9 +13665,9 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "total": Number, 
                 "firstUri": String, 
                 "selfUri": String, 
+                "lastUri": String, 
                 "nextUri": String, 
                 "previousUri": String, 
-                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -13924,9 +13677,9 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
             "total": Number, 
             "firstUri": String, 
             "selfUri": String, 
+            "lastUri": String, 
             "nextUri": String, 
             "previousUri": String, 
-            "lastUri": String, 
             "pageCount": Number, 
           },  
           "selfUri": String, 
@@ -15346,8 +15099,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "commentsRequired": Boolean, 
                 "visibilityCondition": VisibilityCondition, 
                 "answerOptions": [AnswerOption], 
-                "isKill": Boolean, 
                 "isCritical": Boolean, 
+                "isKill": Boolean, 
               },  
               "visibilityCondition": { 
                 "combiningOperation": String, 
@@ -15370,9 +15123,9 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
+              "lastUri": String, 
               "nextUri": String, 
               "previousUri": String, 
-              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -15474,9 +15227,9 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "total": Number, 
                 "firstUri": String, 
                 "selfUri": String, 
+                "lastUri": String, 
                 "nextUri": String, 
                 "previousUri": String, 
-                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -16147,9 +15900,9 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "total": Number, 
                 "firstUri": String, 
                 "selfUri": String, 
+                "lastUri": String, 
                 "nextUri": String, 
                 "previousUri": String, 
-                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -17687,8 +17440,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "text": String, 
                 "value": Number, 
               },  
-              "isKill": Boolean, 
               "isCritical": Boolean, 
+              "isKill": Boolean, 
             },  
             "visibilityCondition": { 
               "combiningOperation": String, 
@@ -17721,9 +17474,9 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "total": Number, 
                 "firstUri": String, 
                 "selfUri": String, 
+                "lastUri": String, 
                 "nextUri": String, 
                 "previousUri": String, 
-                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -17733,9 +17486,9 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
             "total": Number, 
             "firstUri": String, 
             "selfUri": String, 
+            "lastUri": String, 
             "nextUri": String, 
             "previousUri": String, 
-            "lastUri": String, 
             "pageCount": Number, 
           },  
           "selfUri": String, 
@@ -19155,8 +18908,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "commentsRequired": Boolean, 
                 "visibilityCondition": VisibilityCondition, 
                 "answerOptions": [AnswerOption], 
-                "isKill": Boolean, 
                 "isCritical": Boolean, 
+                "isKill": Boolean, 
               },  
               "visibilityCondition": { 
                 "combiningOperation": String, 
@@ -19179,9 +18932,9 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
+              "lastUri": String, 
               "nextUri": String, 
               "previousUri": String, 
-              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -19283,9 +19036,9 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "total": Number, 
                 "firstUri": String, 
                 "selfUri": String, 
+                "lastUri": String, 
                 "nextUri": String, 
                 "previousUri": String, 
-                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -19956,9 +19709,9 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "total": Number, 
                 "firstUri": String, 
                 "selfUri": String, 
+                "lastUri": String, 
                 "nextUri": String, 
                 "previousUri": String, 
-                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -21956,8 +21709,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "commentsRequired": Boolean, 
                 "visibilityCondition": VisibilityCondition, 
                 "answerOptions": [AnswerOption], 
-                "isKill": Boolean, 
                 "isCritical": Boolean, 
+                "isKill": Boolean, 
               },  
               "visibilityCondition": { 
                 "combiningOperation": String, 
@@ -21980,9 +21733,9 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
+              "lastUri": String, 
               "nextUri": String, 
               "previousUri": String, 
-              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -22829,9 +22582,9 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "total": Number, 
                 "firstUri": String, 
                 "selfUri": String, 
+                "lastUri": String, 
                 "nextUri": String, 
                 "previousUri": String, 
-                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -23399,8 +23152,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
             "text": String, 
             "value": Number, 
           },  
-          "isKill": Boolean, 
           "isCritical": Boolean, 
+          "isKill": Boolean, 
         },  
         "visibilityCondition": { 
           "combiningOperation": String, 
@@ -23439,8 +23192,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "text": String, 
                 "value": Number, 
               },  
-              "isKill": Boolean, 
               "isCritical": Boolean, 
+              "isKill": Boolean, 
             },  
             "visibilityCondition": { 
               "combiningOperation": String, 
@@ -23473,9 +23226,9 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "total": Number, 
                 "firstUri": String, 
                 "selfUri": String, 
+                "lastUri": String, 
                 "nextUri": String, 
                 "previousUri": String, 
-                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -23485,9 +23238,9 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
             "total": Number, 
             "firstUri": String, 
             "selfUri": String, 
+            "lastUri": String, 
             "nextUri": String, 
             "previousUri": String, 
-            "lastUri": String, 
             "pageCount": Number, 
           },  
           "selfUri": String, 
@@ -23497,9 +23250,9 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
         "total": Number, 
         "firstUri": String, 
         "selfUri": String, 
+        "lastUri": String, 
         "nextUri": String, 
         "previousUri": String, 
-        "lastUri": String, 
         "pageCount": Number, 
       },  
       "selfUri": String, 
@@ -25422,9 +25175,9 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "total": Number, 
                 "firstUri": String, 
                 "selfUri": String, 
+                "lastUri": String, 
                 "nextUri": String, 
                 "previousUri": String, 
-                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -26056,8 +25809,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
               "text": String, 
               "value": Number, 
             },  
-            "isKill": Boolean, 
             "isCritical": Boolean, 
+            "isKill": Boolean, 
           },  
           "visibilityCondition": { 
             "combiningOperation": String, 
@@ -26089,8 +25842,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "commentsRequired": Boolean, 
                 "visibilityCondition": VisibilityCondition, 
                 "answerOptions": [AnswerOption], 
-                "isKill": Boolean, 
                 "isCritical": Boolean, 
+                "isKill": Boolean, 
               },  
               "visibilityCondition": { 
                 "combiningOperation": String, 
@@ -26113,9 +25866,9 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
+              "lastUri": String, 
               "nextUri": String, 
               "previousUri": String, 
-              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -26125,9 +25878,9 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
           "total": Number, 
           "firstUri": String, 
           "selfUri": String, 
+          "lastUri": String, 
           "nextUri": String, 
           "previousUri": String, 
-          "lastUri": String, 
           "pageCount": Number, 
         },  
         "selfUri": String, 
@@ -26904,8 +26657,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "text": String, 
                 "value": Number, 
               },  
-              "isKill": Boolean, 
               "isCritical": Boolean, 
+              "isKill": Boolean, 
             },  
             "visibilityCondition": { 
               "combiningOperation": String, 
@@ -26938,9 +26691,9 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "total": Number, 
                 "firstUri": String, 
                 "selfUri": String, 
+                "lastUri": String, 
                 "nextUri": String, 
                 "previousUri": String, 
-                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -26950,9 +26703,9 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
             "total": Number, 
             "firstUri": String, 
             "selfUri": String, 
+            "lastUri": String, 
             "nextUri": String, 
             "previousUri": String, 
-            "lastUri": String, 
             "pageCount": Number, 
           },  
           "selfUri": String, 
@@ -28372,8 +28125,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "commentsRequired": Boolean, 
                 "visibilityCondition": VisibilityCondition, 
                 "answerOptions": [AnswerOption], 
-                "isKill": Boolean, 
                 "isCritical": Boolean, 
+                "isKill": Boolean, 
               },  
               "visibilityCondition": { 
                 "combiningOperation": String, 
@@ -28396,9 +28149,9 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
+              "lastUri": String, 
               "nextUri": String, 
               "previousUri": String, 
-              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -28500,9 +28253,9 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "total": Number, 
                 "firstUri": String, 
                 "selfUri": String, 
+                "lastUri": String, 
                 "nextUri": String, 
                 "previousUri": String, 
-                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -29173,9 +28926,9 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "total": Number, 
                 "firstUri": String, 
                 "selfUri": String, 
+                "lastUri": String, 
                 "nextUri": String, 
                 "previousUri": String, 
-                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -30713,8 +30466,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "text": String, 
                 "value": Number, 
               },  
-              "isKill": Boolean, 
               "isCritical": Boolean, 
+              "isKill": Boolean, 
             },  
             "visibilityCondition": { 
               "combiningOperation": String, 
@@ -30747,9 +30500,9 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "total": Number, 
                 "firstUri": String, 
                 "selfUri": String, 
+                "lastUri": String, 
                 "nextUri": String, 
                 "previousUri": String, 
-                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -30759,9 +30512,9 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
             "total": Number, 
             "firstUri": String, 
             "selfUri": String, 
+            "lastUri": String, 
             "nextUri": String, 
             "previousUri": String, 
-            "lastUri": String, 
             "pageCount": Number, 
           },  
           "selfUri": String, 
@@ -32181,8 +31934,8 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "commentsRequired": Boolean, 
                 "visibilityCondition": VisibilityCondition, 
                 "answerOptions": [AnswerOption], 
-                "isKill": Boolean, 
                 "isCritical": Boolean, 
+                "isKill": Boolean, 
               },  
               "visibilityCondition": { 
                 "combiningOperation": String, 
@@ -32205,9 +31958,9 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
+              "lastUri": String, 
               "nextUri": String, 
               "previousUri": String, 
-              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -32309,9 +32062,9 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "total": Number, 
                 "firstUri": String, 
                 "selfUri": String, 
+                "lastUri": String, 
                 "nextUri": String, 
                 "previousUri": String, 
-                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -32982,9 +32735,9 @@ CalibrationCreate <a href="#" onclick="return copyCalibrationCreateExample()">Co
                 "total": Number, 
                 "firstUri": String, 
                 "selfUri": String, 
+                "lastUri": String, 
                 "nextUri": String, 
                 "previousUri": String, 
-                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -35523,8 +35276,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "text": String, 
                 "value": Number, 
               },  
-              "isKill": Boolean, 
               "isCritical": Boolean, 
+              "isKill": Boolean, 
             },  
             "visibilityCondition": { 
               "combiningOperation": String, 
@@ -35557,9 +35310,9 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "total": Number, 
                 "firstUri": String, 
                 "selfUri": String, 
+                "lastUri": String, 
                 "nextUri": String, 
                 "previousUri": String, 
-                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -35569,9 +35322,9 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
             "total": Number, 
             "firstUri": String, 
             "selfUri": String, 
+            "lastUri": String, 
             "nextUri": String, 
             "previousUri": String, 
-            "lastUri": String, 
             "pageCount": Number, 
           },  
           "selfUri": String, 
@@ -36991,8 +36744,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "commentsRequired": Boolean, 
                 "visibilityCondition": VisibilityCondition, 
                 "answerOptions": [AnswerOption], 
-                "isKill": Boolean, 
                 "isCritical": Boolean, 
+                "isKill": Boolean, 
               },  
               "visibilityCondition": { 
                 "combiningOperation": String, 
@@ -37015,9 +36768,9 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
+              "lastUri": String, 
               "nextUri": String, 
               "previousUri": String, 
-              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -37119,9 +36872,9 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "total": Number, 
                 "firstUri": String, 
                 "selfUri": String, 
+                "lastUri": String, 
                 "nextUri": String, 
                 "previousUri": String, 
-                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -37792,9 +37545,9 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "total": Number, 
                 "firstUri": String, 
                 "selfUri": String, 
+                "lastUri": String, 
                 "nextUri": String, 
                 "previousUri": String, 
-                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -38618,8 +38371,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
           "text": String, 
           "value": Number, 
         },  
-        "isKill": Boolean, 
         "isCritical": Boolean, 
+        "isKill": Boolean, 
       },  
       "visibilityCondition": { 
         "combiningOperation": String, 
@@ -38658,8 +38411,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "text": String, 
               "value": Number, 
             },  
-            "isKill": Boolean, 
             "isCritical": Boolean, 
+            "isKill": Boolean, 
           },  
           "visibilityCondition": { 
             "combiningOperation": String, 
@@ -38691,8 +38444,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "commentsRequired": Boolean, 
                 "visibilityCondition": VisibilityCondition, 
                 "answerOptions": [AnswerOption], 
-                "isKill": Boolean, 
                 "isCritical": Boolean, 
+                "isKill": Boolean, 
               },  
               "visibilityCondition": { 
                 "combiningOperation": String, 
@@ -38715,9 +38468,9 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
+              "lastUri": String, 
               "nextUri": String, 
               "previousUri": String, 
-              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -38727,9 +38480,9 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
           "total": Number, 
           "firstUri": String, 
           "selfUri": String, 
+          "lastUri": String, 
           "nextUri": String, 
           "previousUri": String, 
-          "lastUri": String, 
           "pageCount": Number, 
         },  
         "selfUri": String, 
@@ -38739,9 +38492,9 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
       "total": Number, 
       "firstUri": String, 
       "selfUri": String, 
+      "lastUri": String, 
       "nextUri": String, 
       "previousUri": String, 
-      "lastUri": String, 
       "pageCount": Number, 
     },  
     "selfUri": String, 
@@ -40978,8 +40731,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "commentsRequired": Boolean, 
                 "visibilityCondition": VisibilityCondition, 
                 "answerOptions": [AnswerOption], 
-                "isKill": Boolean, 
                 "isCritical": Boolean, 
+                "isKill": Boolean, 
               },  
               "visibilityCondition": { 
                 "combiningOperation": String, 
@@ -41002,9 +40755,9 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
+              "lastUri": String, 
               "nextUri": String, 
               "previousUri": String, 
-              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -41851,9 +41604,9 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "total": Number, 
                 "firstUri": String, 
                 "selfUri": String, 
+                "lastUri": String, 
                 "nextUri": String, 
                 "previousUri": String, 
-                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -42421,8 +42174,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
             "text": String, 
             "value": Number, 
           },  
-          "isKill": Boolean, 
           "isCritical": Boolean, 
+          "isKill": Boolean, 
         },  
         "visibilityCondition": { 
           "combiningOperation": String, 
@@ -42461,8 +42214,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "text": String, 
                 "value": Number, 
               },  
-              "isKill": Boolean, 
               "isCritical": Boolean, 
+              "isKill": Boolean, 
             },  
             "visibilityCondition": { 
               "combiningOperation": String, 
@@ -42495,9 +42248,9 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "total": Number, 
                 "firstUri": String, 
                 "selfUri": String, 
+                "lastUri": String, 
                 "nextUri": String, 
                 "previousUri": String, 
-                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -42507,9 +42260,9 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
             "total": Number, 
             "firstUri": String, 
             "selfUri": String, 
+            "lastUri": String, 
             "nextUri": String, 
             "previousUri": String, 
-            "lastUri": String, 
             "pageCount": Number, 
           },  
           "selfUri": String, 
@@ -42519,9 +42272,9 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
         "total": Number, 
         "firstUri": String, 
         "selfUri": String, 
+        "lastUri": String, 
         "nextUri": String, 
         "previousUri": String, 
-        "lastUri": String, 
         "pageCount": Number, 
       },  
       "selfUri": String, 
@@ -43230,9 +42983,9 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "total": Number, 
                 "firstUri": String, 
                 "selfUri": String, 
+                "lastUri": String, 
                 "nextUri": String, 
                 "previousUri": String, 
-                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -43864,8 +43617,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "text": String, 
               "value": Number, 
             },  
-            "isKill": Boolean, 
             "isCritical": Boolean, 
+            "isKill": Boolean, 
           },  
           "visibilityCondition": { 
             "combiningOperation": String, 
@@ -43897,8 +43650,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "commentsRequired": Boolean, 
                 "visibilityCondition": VisibilityCondition, 
                 "answerOptions": [AnswerOption], 
-                "isKill": Boolean, 
                 "isCritical": Boolean, 
+                "isKill": Boolean, 
               },  
               "visibilityCondition": { 
                 "combiningOperation": String, 
@@ -43921,9 +43674,9 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
+              "lastUri": String, 
               "nextUri": String, 
               "previousUri": String, 
-              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -43933,9 +43686,9 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
           "total": Number, 
           "firstUri": String, 
           "selfUri": String, 
+          "lastUri": String, 
           "nextUri": String, 
           "previousUri": String, 
-          "lastUri": String, 
           "pageCount": Number, 
         },  
         "selfUri": String, 
@@ -45899,8 +45652,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "text": String, 
                 "value": Number, 
               },  
-              "isKill": Boolean, 
               "isCritical": Boolean, 
+              "isKill": Boolean, 
             },  
             "visibilityCondition": { 
               "combiningOperation": String, 
@@ -45933,9 +45686,9 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "total": Number, 
                 "firstUri": String, 
                 "selfUri": String, 
+                "lastUri": String, 
                 "nextUri": String, 
                 "previousUri": String, 
-                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -45945,9 +45698,9 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
             "total": Number, 
             "firstUri": String, 
             "selfUri": String, 
+            "lastUri": String, 
             "nextUri": String, 
             "previousUri": String, 
-            "lastUri": String, 
             "pageCount": Number, 
           },  
           "selfUri": String, 
@@ -46298,8 +46051,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "commentsRequired": Boolean, 
                 "visibilityCondition": VisibilityCondition, 
                 "answerOptions": [AnswerOption], 
-                "isKill": Boolean, 
                 "isCritical": Boolean, 
+                "isKill": Boolean, 
               },  
               "visibilityCondition": { 
                 "combiningOperation": String, 
@@ -46322,9 +46075,9 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
+              "lastUri": String, 
               "nextUri": String, 
               "previousUri": String, 
-              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -47171,9 +46924,9 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "total": Number, 
                 "firstUri": String, 
                 "selfUri": String, 
+                "lastUri": String, 
                 "nextUri": String, 
                 "previousUri": String, 
-                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -48029,8 +47782,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "commentsRequired": Boolean, 
                 "visibilityCondition": VisibilityCondition, 
                 "answerOptions": [AnswerOption], 
-                "isKill": Boolean, 
                 "isCritical": Boolean, 
+                "isKill": Boolean, 
               },  
               "visibilityCondition": { 
                 "combiningOperation": String, 
@@ -48053,9 +47806,9 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
+              "lastUri": String, 
               "nextUri": String, 
               "previousUri": String, 
-              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -48902,9 +48655,9 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "total": Number, 
                 "firstUri": String, 
                 "selfUri": String, 
+                "lastUri": String, 
                 "nextUri": String, 
                 "previousUri": String, 
-                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -50333,9 +50086,9 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "total": Number, 
                 "firstUri": String, 
                 "selfUri": String, 
+                "lastUri": String, 
                 "nextUri": String, 
                 "previousUri": String, 
-                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -50967,8 +50720,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "text": String, 
               "value": Number, 
             },  
-            "isKill": Boolean, 
             "isCritical": Boolean, 
+            "isKill": Boolean, 
           },  
           "visibilityCondition": { 
             "combiningOperation": String, 
@@ -51000,8 +50753,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "commentsRequired": Boolean, 
                 "visibilityCondition": VisibilityCondition, 
                 "answerOptions": [AnswerOption], 
-                "isKill": Boolean, 
                 "isCritical": Boolean, 
+                "isKill": Boolean, 
               },  
               "visibilityCondition": { 
                 "combiningOperation": String, 
@@ -51024,9 +50777,9 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
+              "lastUri": String, 
               "nextUri": String, 
               "previousUri": String, 
-              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -51036,9 +50789,9 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
           "total": Number, 
           "firstUri": String, 
           "selfUri": String, 
+          "lastUri": String, 
           "nextUri": String, 
           "previousUri": String, 
-          "lastUri": String, 
           "pageCount": Number, 
         },  
         "selfUri": String, 
@@ -53002,8 +52755,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "text": String, 
                 "value": Number, 
               },  
-              "isKill": Boolean, 
               "isCritical": Boolean, 
+              "isKill": Boolean, 
             },  
             "visibilityCondition": { 
               "combiningOperation": String, 
@@ -53036,9 +52789,9 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "total": Number, 
                 "firstUri": String, 
                 "selfUri": String, 
+                "lastUri": String, 
                 "nextUri": String, 
                 "previousUri": String, 
-                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -53048,9 +52801,9 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
             "total": Number, 
             "firstUri": String, 
             "selfUri": String, 
+            "lastUri": String, 
             "nextUri": String, 
             "previousUri": String, 
-            "lastUri": String, 
             "pageCount": Number, 
           },  
           "selfUri": String, 
@@ -53401,8 +53154,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "commentsRequired": Boolean, 
                 "visibilityCondition": VisibilityCondition, 
                 "answerOptions": [AnswerOption], 
-                "isKill": Boolean, 
                 "isCritical": Boolean, 
+                "isKill": Boolean, 
               },  
               "visibilityCondition": { 
                 "combiningOperation": String, 
@@ -53425,9 +53178,9 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
+              "lastUri": String, 
               "nextUri": String, 
               "previousUri": String, 
-              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -54274,9 +54027,9 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "total": Number, 
                 "firstUri": String, 
                 "selfUri": String, 
+                "lastUri": String, 
                 "nextUri": String, 
                 "previousUri": String, 
-                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -55132,8 +54885,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "commentsRequired": Boolean, 
                 "visibilityCondition": VisibilityCondition, 
                 "answerOptions": [AnswerOption], 
-                "isKill": Boolean, 
                 "isCritical": Boolean, 
+                "isKill": Boolean, 
               },  
               "visibilityCondition": { 
                 "combiningOperation": String, 
@@ -55156,9 +54909,9 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
+              "lastUri": String, 
               "nextUri": String, 
               "previousUri": String, 
-              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -56005,9 +55758,9 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "total": Number, 
                 "firstUri": String, 
                 "selfUri": String, 
+                "lastUri": String, 
                 "nextUri": String, 
                 "previousUri": String, 
-                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -57110,8 +56863,8 @@ EvaluationFormAndScoringSet <a href="#" onclick="return copyEvaluationFormAndSco
           "text": String, 
           "value": Number, 
         },  
-        "isKill": Boolean, 
         "isCritical": Boolean, 
+        "isKill": Boolean, 
       },  
       "visibilityCondition": { 
         "combiningOperation": String, 
@@ -57150,8 +56903,8 @@ EvaluationFormAndScoringSet <a href="#" onclick="return copyEvaluationFormAndSco
               "text": String, 
               "value": Number, 
             },  
-            "isKill": Boolean, 
             "isCritical": Boolean, 
+            "isKill": Boolean, 
           },  
           "visibilityCondition": { 
             "combiningOperation": String, 
@@ -57183,8 +56936,8 @@ EvaluationFormAndScoringSet <a href="#" onclick="return copyEvaluationFormAndSco
                 "commentsRequired": Boolean, 
                 "visibilityCondition": VisibilityCondition, 
                 "answerOptions": [AnswerOption], 
-                "isKill": Boolean, 
                 "isCritical": Boolean, 
+                "isKill": Boolean, 
               },  
               "visibilityCondition": { 
                 "combiningOperation": String, 
@@ -57207,9 +56960,9 @@ EvaluationFormAndScoringSet <a href="#" onclick="return copyEvaluationFormAndSco
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
+              "lastUri": String, 
               "nextUri": String, 
               "previousUri": String, 
-              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -57219,9 +56972,9 @@ EvaluationFormAndScoringSet <a href="#" onclick="return copyEvaluationFormAndSco
           "total": Number, 
           "firstUri": String, 
           "selfUri": String, 
+          "lastUri": String, 
           "nextUri": String, 
           "previousUri": String, 
-          "lastUri": String, 
           "pageCount": Number, 
         },  
         "selfUri": String, 
@@ -57231,9 +56984,9 @@ EvaluationFormAndScoringSet <a href="#" onclick="return copyEvaluationFormAndSco
       "total": Number, 
       "firstUri": String, 
       "selfUri": String, 
+      "lastUri": String, 
       "nextUri": String, 
       "previousUri": String, 
-      "lastUri": String, 
       "pageCount": Number, 
     },  
     "selfUri": String, 
@@ -57379,8 +57132,8 @@ EvaluationForm <a href="#" onclick="return copyEvaluationFormExample()">Copy</a>
         "text": String, 
         "value": Number, 
       },  
-      "isKill": Boolean, 
       "isCritical": Boolean, 
+      "isKill": Boolean, 
     },  
     "visibilityCondition": { 
       "combiningOperation": String, 
@@ -57419,8 +57172,8 @@ EvaluationForm <a href="#" onclick="return copyEvaluationFormExample()">Copy</a>
             "text": String, 
             "value": Number, 
           },  
-          "isKill": Boolean, 
           "isCritical": Boolean, 
+          "isKill": Boolean, 
         },  
         "visibilityCondition": { 
           "combiningOperation": String, 
@@ -57459,8 +57212,8 @@ EvaluationForm <a href="#" onclick="return copyEvaluationFormExample()">Copy</a>
                 "text": String, 
                 "value": Number, 
               },  
-              "isKill": Boolean, 
               "isCritical": Boolean, 
+              "isKill": Boolean, 
             },  
             "visibilityCondition": { 
               "combiningOperation": String, 
@@ -57493,9 +57246,9 @@ EvaluationForm <a href="#" onclick="return copyEvaluationFormExample()">Copy</a>
                 "total": Number, 
                 "firstUri": String, 
                 "selfUri": String, 
+                "lastUri": String, 
                 "nextUri": String, 
                 "previousUri": String, 
-                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -57505,9 +57258,9 @@ EvaluationForm <a href="#" onclick="return copyEvaluationFormExample()">Copy</a>
             "total": Number, 
             "firstUri": String, 
             "selfUri": String, 
+            "lastUri": String, 
             "nextUri": String, 
             "previousUri": String, 
-            "lastUri": String, 
             "pageCount": Number, 
           },  
           "selfUri": String, 
@@ -57517,9 +57270,9 @@ EvaluationForm <a href="#" onclick="return copyEvaluationFormExample()">Copy</a>
         "total": Number, 
         "firstUri": String, 
         "selfUri": String, 
+        "lastUri": String, 
         "nextUri": String, 
         "previousUri": String, 
-        "lastUri": String, 
         "pageCount": Number, 
       },  
       "selfUri": String, 
@@ -57529,9 +57282,9 @@ EvaluationForm <a href="#" onclick="return copyEvaluationFormExample()">Copy</a>
     "total": Number, 
     "firstUri": String, 
     "selfUri": String, 
+    "lastUri": String, 
     "nextUri": String, 
     "previousUri": String, 
-    "lastUri": String, 
     "pageCount": Number, 
   },  
   "selfUri": String, 
@@ -57644,8 +57397,8 @@ EvaluationForm <a href="#" onclick="return copyEvaluationFormExample()">Copy</a>
         "text": String, 
         "value": Number, 
       },  
-      "isKill": Boolean, 
       "isCritical": Boolean, 
+      "isKill": Boolean, 
     },  
     "visibilityCondition": { 
       "combiningOperation": String, 
@@ -57684,8 +57437,8 @@ EvaluationForm <a href="#" onclick="return copyEvaluationFormExample()">Copy</a>
             "text": String, 
             "value": Number, 
           },  
-          "isKill": Boolean, 
           "isCritical": Boolean, 
+          "isKill": Boolean, 
         },  
         "visibilityCondition": { 
           "combiningOperation": String, 
@@ -57724,8 +57477,8 @@ EvaluationForm <a href="#" onclick="return copyEvaluationFormExample()">Copy</a>
                 "text": String, 
                 "value": Number, 
               },  
-              "isKill": Boolean, 
               "isCritical": Boolean, 
+              "isKill": Boolean, 
             },  
             "visibilityCondition": { 
               "combiningOperation": String, 
@@ -57758,9 +57511,9 @@ EvaluationForm <a href="#" onclick="return copyEvaluationFormExample()">Copy</a>
                 "total": Number, 
                 "firstUri": String, 
                 "selfUri": String, 
+                "lastUri": String, 
                 "nextUri": String, 
                 "previousUri": String, 
-                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -57770,9 +57523,9 @@ EvaluationForm <a href="#" onclick="return copyEvaluationFormExample()">Copy</a>
             "total": Number, 
             "firstUri": String, 
             "selfUri": String, 
+            "lastUri": String, 
             "nextUri": String, 
             "previousUri": String, 
-            "lastUri": String, 
             "pageCount": Number, 
           },  
           "selfUri": String, 
@@ -57782,9 +57535,9 @@ EvaluationForm <a href="#" onclick="return copyEvaluationFormExample()">Copy</a>
         "total": Number, 
         "firstUri": String, 
         "selfUri": String, 
+        "lastUri": String, 
         "nextUri": String, 
         "previousUri": String, 
-        "lastUri": String, 
         "pageCount": Number, 
       },  
       "selfUri": String, 
@@ -57794,9 +57547,9 @@ EvaluationForm <a href="#" onclick="return copyEvaluationFormExample()">Copy</a>
     "total": Number, 
     "firstUri": String, 
     "selfUri": String, 
+    "lastUri": String, 
     "nextUri": String, 
     "previousUri": String, 
-    "lastUri": String, 
     "pageCount": Number, 
   },  
   "selfUri": String, 
@@ -58020,9 +57773,9 @@ SurveyForm <a href="#" onclick="return copySurveyFormExample()">Copy</a>
                 "total": Number, 
                 "firstUri": String, 
                 "selfUri": String, 
+                "lastUri": String, 
                 "nextUri": String, 
                 "previousUri": String, 
-                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -58032,9 +57785,9 @@ SurveyForm <a href="#" onclick="return copySurveyFormExample()">Copy</a>
             "total": Number, 
             "firstUri": String, 
             "selfUri": String, 
+            "lastUri": String, 
             "nextUri": String, 
             "previousUri": String, 
-            "lastUri": String, 
             "pageCount": Number, 
           },  
           "selfUri": String, 
@@ -58044,9 +57797,9 @@ SurveyForm <a href="#" onclick="return copySurveyFormExample()">Copy</a>
         "total": Number, 
         "firstUri": String, 
         "selfUri": String, 
+        "lastUri": String, 
         "nextUri": String, 
         "previousUri": String, 
-        "lastUri": String, 
         "pageCount": Number, 
       },  
       "selfUri": String, 
@@ -58056,9 +57809,9 @@ SurveyForm <a href="#" onclick="return copySurveyFormExample()">Copy</a>
     "total": Number, 
     "firstUri": String, 
     "selfUri": String, 
+    "lastUri": String, 
     "nextUri": String, 
     "previousUri": String, 
-    "lastUri": String, 
     "pageCount": Number, 
   },  
   "selfUri": String, 
@@ -58104,737 +57857,6 @@ apiInstance.postQualityFormsSurveys(body)
 ### Return type
 
 **SurveyForm**
-
-<a name="postQualityKeywordsets"></a>
-
-# KeywordSet postQualityKeywordsets(body, opts)
-
-
-
-POST /api/v2/quality/keywordsets
-
-Create a Keyword Set
-
-
-
-Requires ANY permissions: 
-
-* quality:keywordset:add
-
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyKeywordSetExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#KeywordSetExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-KeywordSet <a href="#" onclick="return copyKeywordSetExample()">Copy</a>
-
-<div id="KeywordSetExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "id": String, 
-  "name": String, 
-  "description": String, 
-  "queues": { 
-    "id": String, 
-    "name": String, 
-    "division": { 
-      "id": String, 
-      "name": String, 
-      "selfUri": String, 
-    },  
-    "description": String, 
-    "dateCreated": Date, 
-    "dateModified": Date, 
-    "modifiedBy": String, 
-    "createdBy": String, 
-    "memberCount": Number, 
-    "joinedMemberCount": Number, 
-    "mediaSettings": { 
-      "alertingTimeoutSeconds": Number, 
-      "serviceLevel": { 
-        "percentage": Number, 
-        "durationMs": Number, 
-      },  
-    },  
-    "routingRules": { 
-      "operator": String, 
-      "threshold": Number, 
-      "waitSeconds": Number, 
-    },  
-    "bullseye": { 
-      "rings": { 
-        "expansionCriteria": { 
-          "type": String, 
-          "threshold": Number, 
-        },  
-        "actions": { 
-          "skillsToRemove": { 
-            "name": String, 
-            "id": String, 
-            "selfUri": String, 
-          },  
-        },  
-      },  
-    },  
-    "acwSettings": { 
-      "wrapupPrompt": String, 
-      "timeoutMs": Number, 
-    },  
-    "skillEvaluationMethod": String, 
-    "queueFlow": { 
-      "id": String, 
-      "name": String, 
-      "selfUri": String, 
-    },  
-    "whisperPrompt": { 
-      "id": String, 
-      "name": String, 
-      "selfUri": String, 
-    },  
-    "autoAnswerOnly": Boolean, 
-    "enableTranscription": Boolean, 
-    "enableManualAssignment": Boolean, 
-    "callingPartyName": String, 
-    "callingPartyNumber": String, 
-    "defaultScripts": { 
-      "id": String, 
-      "name": String, 
-      "versionId": String, 
-      "createdDate": Date, 
-      "modifiedDate": Date, 
-      "publishedDate": Date, 
-      "versionDate": Date, 
-      "startPageId": String, 
-      "startPageName": String, 
-      "features": Object, 
-      "variables": Object, 
-      "customActions": Object, 
-      "pages": { 
-        "id": String, 
-        "name": String, 
-        "versionId": String, 
-        "createdDate": Date, 
-        "modifiedDate": Date, 
-        "rootContainer": {String: Object}, 
-        "properties": {String: Object}, 
-        "selfUri": String, 
-      },  
-      "selfUri": String, 
-    },  
-    "outboundMessagingAddresses": { 
-      "smsAddress": { 
-        "id": String, 
-        "name": String, 
-        "selfUri": String, 
-      },  
-    },  
-    "outboundEmailAddress": { 
-      "domain": { 
-        "id": String, 
-        "name": String, 
-        "selfUri": String, 
-      },  
-      "route": { 
-        "id": String, 
-        "name": String, 
-        "pattern": String, 
-        "queue": { 
-          "id": String, 
-          "name": String, 
-          "selfUri": String, 
-        },  
-        "priority": Number, 
-        "skills": { 
-          "id": String, 
-          "name": String, 
-          "selfUri": String, 
-        },  
-        "language": { 
-          "id": String, 
-          "name": String, 
-          "selfUri": String, 
-        },  
-        "fromName": String, 
-        "fromEmail": String, 
-        "flow": { 
-          "id": String, 
-          "name": String, 
-          "selfUri": String, 
-        },  
-        "replyEmailAddress": { 
-          "domain": { 
-            "id": String, 
-            "name": String, 
-            "selfUri": String, 
-          },  
-          "route": { 
-            "id": String, 
-            "name": String, 
-            "pattern": String, 
-            "queue": { 
-              "id": String, 
-              "name": String, 
-              "selfUri": String, 
-            },  
-            "priority": Number, 
-            "skills": { 
-              "id": String, 
-              "name": String, 
-              "selfUri": String, 
-            },  
-            "language": { 
-              "id": String, 
-              "name": String, 
-              "selfUri": String, 
-            },  
-            "fromName": String, 
-            "fromEmail": String, 
-            "flow": { 
-              "id": String, 
-              "name": String, 
-              "selfUri": String, 
-            },  
-            "replyEmailAddress": { 
-              "domain": { 
-                "id": String, 
-                "name": String, 
-                "selfUri": String, 
-              },  
-              "route": { 
-                "id": String, 
-                "name": String, 
-                "pattern": String, 
-                "queue": DomainEntityRef, 
-                "priority": Number, 
-                "skills": [DomainEntityRef], 
-                "language": DomainEntityRef, 
-                "fromName": String, 
-                "fromEmail": String, 
-                "flow": DomainEntityRef, 
-                "replyEmailAddress": QueueEmailAddress, 
-                "autoBcc": [EmailAddress], 
-                "spamFlow": DomainEntityRef, 
-                "selfUri": String, 
-              },  
-            },  
-            "autoBcc": { 
-              "email": String, 
-              "name": String, 
-            },  
-            "spamFlow": { 
-              "id": String, 
-              "name": String, 
-              "selfUri": String, 
-            },  
-            "selfUri": String, 
-          },  
-        },  
-        "autoBcc": { 
-          "email": String, 
-          "name": String, 
-        },  
-        "spamFlow": { 
-          "id": String, 
-          "name": String, 
-          "selfUri": String, 
-        },  
-        "selfUri": String, 
-      },  
-    },  
-    "selfUri": String, 
-  },  
-  "language": String, 
-  "agents": { 
-    "id": String, 
-    "name": String, 
-    "division": { 
-      "id": String, 
-      "name": String, 
-      "selfUri": String, 
-    },  
-    "chat": { 
-      "jabberId": String, 
-    },  
-    "department": String, 
-    "email": String, 
-    "primaryContactInfo": { 
-      "address": String, 
-      "display": String, 
-      "mediaType": String, 
-      "type": String, 
-      "extension": String, 
-      "countryCode": String, 
-    },  
-    "addresses": { 
-      "address": String, 
-      "display": String, 
-      "mediaType": String, 
-      "type": String, 
-      "extension": String, 
-      "countryCode": String, 
-    },  
-    "state": String, 
-    "title": String, 
-    "username": String, 
-    "manager": User, 
-    "images": { 
-      "resolution": String, 
-      "imageUri": String, 
-    },  
-    "version": Number, 
-    "certifications": [String], 
-    "biography": { 
-      "biography": String, 
-      "interests": [String], 
-      "hobbies": [String], 
-      "spouse": String, 
-      "education": { 
-        "school": String, 
-        "fieldOfStudy": String, 
-        "notes": String, 
-        "dateStart": String, 
-        "dateEnd": String, 
-      },  
-    },  
-    "employerInfo": { 
-      "officialName": String, 
-      "employeeId": String, 
-      "employeeType": String, 
-      "dateHire": String, 
-    },  
-    "routingStatus": { 
-      "userId": String, 
-      "status": String, 
-      "startTime": Date, 
-    },  
-    "presence": { 
-      "id": String, 
-      "name": String, 
-      "source": String, 
-      "primary": Boolean, 
-      "presenceDefinition": { 
-        "id": String, 
-        "systemPresence": String, 
-        "selfUri": String, 
-      },  
-      "message": String, 
-      "modifiedDate": Date, 
-      "selfUri": String, 
-    },  
-    "conversationSummary": { 
-      "userId": String, 
-      "call": { 
-        "contactCenter": { 
-          "active": Number, 
-          "acw": Number, 
-        },  
-        "enterprise": { 
-          "active": Number, 
-          "acw": Number, 
-        },  
-      },  
-      "callback": { 
-        "contactCenter": { 
-          "active": Number, 
-          "acw": Number, 
-        },  
-        "enterprise": { 
-          "active": Number, 
-          "acw": Number, 
-        },  
-      },  
-      "email": { 
-        "contactCenter": { 
-          "active": Number, 
-          "acw": Number, 
-        },  
-        "enterprise": { 
-          "active": Number, 
-          "acw": Number, 
-        },  
-      },  
-      "message": { 
-        "contactCenter": { 
-          "active": Number, 
-          "acw": Number, 
-        },  
-        "enterprise": { 
-          "active": Number, 
-          "acw": Number, 
-        },  
-      },  
-      "chat": { 
-        "contactCenter": { 
-          "active": Number, 
-          "acw": Number, 
-        },  
-        "enterprise": { 
-          "active": Number, 
-          "acw": Number, 
-        },  
-      },  
-      "socialExpression": { 
-        "contactCenter": { 
-          "active": Number, 
-          "acw": Number, 
-        },  
-        "enterprise": { 
-          "active": Number, 
-          "acw": Number, 
-        },  
-      },  
-      "video": { 
-        "contactCenter": { 
-          "active": Number, 
-          "acw": Number, 
-        },  
-        "enterprise": { 
-          "active": Number, 
-          "acw": Number, 
-        },  
-      },  
-    },  
-    "outOfOffice": { 
-      "id": String, 
-      "name": String, 
-      "user": User, 
-      "startDate": Date, 
-      "endDate": Date, 
-      "active": Boolean, 
-      "indefinite": Boolean, 
-      "selfUri": String, 
-    },  
-    "geolocation": { 
-      "id": String, 
-      "name": String, 
-      "type": String, 
-      "primary": Boolean, 
-      "latitude": Number, 
-      "longitude": Number, 
-      "country": String, 
-      "region": String, 
-      "city": String, 
-      "locations": { 
-        "id": String, 
-        "name": String, 
-        "contactUser": { 
-          "id": String, 
-          "selfUri": String, 
-        },  
-        "emergencyNumber": { 
-          "e164": String, 
-          "number": String, 
-          "type": String, 
-        },  
-        "address": { 
-          "city": String, 
-          "country": String, 
-          "countryName": String, 
-          "state": String, 
-          "street1": String, 
-          "street2": String, 
-          "zipcode": String, 
-        },  
-        "state": String, 
-        "notes": String, 
-        "version": Number, 
-        "path": [String], 
-        "profileImage": { 
-          "resolution": String, 
-          "imageUri": String, 
-        },  
-        "floorplanImage": { 
-          "resolution": String, 
-          "imageUri": String, 
-        },  
-        "addressVerificationDetails": { 
-          "status": String, 
-          "dateFinished": Date, 
-          "dateStarted": Date, 
-          "service": String, 
-        },  
-        "addressVerified": Boolean, 
-        "addressStored": Boolean, 
-        "images": String, 
-        "selfUri": String, 
-      },  
-      "selfUri": String, 
-    },  
-    "station": { 
-      "associatedStation": { 
-        "id": String, 
-        "name": String, 
-        "type": String, 
-        "associatedUser": User, 
-        "associatedDate": Date, 
-        "defaultUser": User, 
-        "providerInfo": {String: String}, 
-      },  
-      "effectiveStation": { 
-        "id": String, 
-        "name": String, 
-        "type": String, 
-        "associatedUser": User, 
-        "associatedDate": Date, 
-        "defaultUser": User, 
-        "providerInfo": {String: String}, 
-      },  
-      "defaultStation": { 
-        "id": String, 
-        "name": String, 
-        "type": String, 
-        "associatedUser": User, 
-        "associatedDate": Date, 
-        "defaultUser": User, 
-        "providerInfo": {String: String}, 
-      },  
-      "lastAssociatedStation": { 
-        "id": String, 
-        "name": String, 
-        "type": String, 
-        "associatedUser": User, 
-        "associatedDate": Date, 
-        "defaultUser": User, 
-        "providerInfo": {String: String}, 
-      },  
-    },  
-    "authorization": { 
-      "roles": { 
-        "id": String, 
-        "name": String, 
-      },  
-      "unusedRoles": { 
-        "id": String, 
-        "name": String, 
-      },  
-      "permissions": [String], 
-      "permissionPolicies": { 
-        "id": String, 
-        "domain": String, 
-        "entityName": String, 
-        "policyName": String, 
-        "policyDescription": String, 
-        "actionSetKey": String, 
-        "allowConditions": Boolean, 
-        "resourceConditionNode": { 
-          "variableName": String, 
-          "conjunction": String, 
-          "operator": String, 
-          "operands": { 
-            "type": String, 
-            "value": String, 
-          },  
-          "terms": { 
-            "variableName": String, 
-            "conjunction": String, 
-            "operator": String, 
-            "operands": { 
-              "type": String, 
-              "value": String, 
-            },  
-            "terms": { 
-              "variableName": String, 
-              "conjunction": String, 
-              "operator": String, 
-              "operands": { 
-                "type": String, 
-                "value": String, 
-              },  
-              "terms": { 
-                "variableName": String, 
-                "conjunction": String, 
-                "operator": String, 
-                "operands": [ResourceConditionValue], 
-                "terms": [ResourceConditionNode], 
-              },  
-            },  
-          },  
-        },  
-        "namedResources": [String], 
-        "resourceCondition": String, 
-        "actionSet": [String], 
-      },  
-    },  
-    "profileSkills": [String], 
-    "locations": { 
-      "id": String, 
-      "floorplanId": String, 
-      "coordinates": {String: Number}, 
-      "notes": String, 
-      "locationDefinition": { 
-        "id": String, 
-        "name": String, 
-        "contactUser": { 
-          "id": String, 
-          "selfUri": String, 
-        },  
-        "emergencyNumber": { 
-          "e164": String, 
-          "number": String, 
-          "type": String, 
-        },  
-        "address": { 
-          "city": String, 
-          "country": String, 
-          "countryName": String, 
-          "state": String, 
-          "street1": String, 
-          "street2": String, 
-          "zipcode": String, 
-        },  
-        "state": String, 
-        "notes": String, 
-        "version": Number, 
-        "path": [String], 
-        "profileImage": { 
-          "resolution": String, 
-          "imageUri": String, 
-        },  
-        "floorplanImage": { 
-          "resolution": String, 
-          "imageUri": String, 
-        },  
-        "addressVerificationDetails": { 
-          "status": String, 
-          "dateFinished": Date, 
-          "dateStarted": Date, 
-          "service": String, 
-        },  
-        "addressVerified": Boolean, 
-        "addressStored": Boolean, 
-        "images": String, 
-        "selfUri": String, 
-      },  
-    },  
-    "groups": { 
-      "id": String, 
-      "name": String, 
-      "description": String, 
-      "dateModified": Date, 
-      "memberCount": Number, 
-      "state": String, 
-      "version": Number, 
-      "type": String, 
-      "images": { 
-        "resolution": String, 
-        "imageUri": String, 
-      },  
-      "addresses": { 
-        "address": String, 
-        "extension": String, 
-        "display": String, 
-        "type": String, 
-        "mediaType": String, 
-      },  
-      "rulesVisible": Boolean, 
-      "visibility": String, 
-      "owners": User, 
-      "selfUri": String, 
-    },  
-    "team": { 
-      "id": String, 
-      "name": String, 
-      "description": String, 
-      "dateModified": Date, 
-      "memberCount": Number, 
-      "selfUri": String, 
-    },  
-    "skills": { 
-      "id": String, 
-      "name": String, 
-      "proficiency": Number, 
-      "state": String, 
-      "skillUri": String, 
-      "selfUri": String, 
-    },  
-    "languages": { 
-      "id": String, 
-      "name": String, 
-      "proficiency": Number, 
-      "state": String, 
-      "languageUri": String, 
-      "selfUri": String, 
-    },  
-    "acdAutoAnswer": Boolean, 
-    "languagePreference": String, 
-    "lastTokenIssued": { 
-      "dateIssued": Date, 
-    },  
-    "selfUri": String, 
-  },  
-  "keywords": { 
-    "id": String, 
-    "name": String, 
-    "phrase": String, 
-    "confidence": Number, 
-    "agentScoreModifier": Number, 
-    "customerScoreModifier": Number, 
-    "alternateSpellings": [String], 
-    "pronunciations": [String], 
-    "antiWords": [String], 
-    "antiPronunciations": [String], 
-    "spotabilityIndex": Number, 
-    "marginOfError": Number, 
-    "pronunciation": String, 
-  },  
-  "participantPurposes": [String], 
-  "selfUri": String, 
-}
-```
-
-</div>
-
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.QualityApi();
-
-let body = {}; // Object | keywordSet
-let opts = { 
-  'expand': "expand_example" // String | queueId
-};
-
-apiInstance.postQualityKeywordsets(body, opts)
-  .then((data) => {
-    console.log(`postQualityKeywordsets success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch((err) => {
-    console.log('There was a failure calling postQualityKeywordsets');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **body** | **Object** | keywordSet |  |
- **expand** | **String** | queueId | [optional]  |
-{: class="table table-striped"}
-
-### Return type
-
-**KeywordSet**
 
 <a name="postQualityPublishedforms"></a>
 
@@ -59079,734 +58101,6 @@ apiInstance.postQualityPublishedformsSurveys(body)
 
 **SurveyForm**
 
-<a name="postQualitySpotability"></a>
-
-# KeywordSet postQualitySpotability(opts)
-
-
-
-POST /api/v2/quality/spotability
-
-Retrieve the spotability statistic
-
-
-
-Requires NO permissions: 
-
-
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyKeywordSetExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#KeywordSetExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-KeywordSet <a href="#" onclick="return copyKeywordSetExample()">Copy</a>
-
-<div id="KeywordSetExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "id": String, 
-  "name": String, 
-  "description": String, 
-  "queues": { 
-    "id": String, 
-    "name": String, 
-    "division": { 
-      "id": String, 
-      "name": String, 
-      "selfUri": String, 
-    },  
-    "description": String, 
-    "dateCreated": Date, 
-    "dateModified": Date, 
-    "modifiedBy": String, 
-    "createdBy": String, 
-    "memberCount": Number, 
-    "joinedMemberCount": Number, 
-    "mediaSettings": { 
-      "alertingTimeoutSeconds": Number, 
-      "serviceLevel": { 
-        "percentage": Number, 
-        "durationMs": Number, 
-      },  
-    },  
-    "routingRules": { 
-      "operator": String, 
-      "threshold": Number, 
-      "waitSeconds": Number, 
-    },  
-    "bullseye": { 
-      "rings": { 
-        "expansionCriteria": { 
-          "type": String, 
-          "threshold": Number, 
-        },  
-        "actions": { 
-          "skillsToRemove": { 
-            "name": String, 
-            "id": String, 
-            "selfUri": String, 
-          },  
-        },  
-      },  
-    },  
-    "acwSettings": { 
-      "wrapupPrompt": String, 
-      "timeoutMs": Number, 
-    },  
-    "skillEvaluationMethod": String, 
-    "queueFlow": { 
-      "id": String, 
-      "name": String, 
-      "selfUri": String, 
-    },  
-    "whisperPrompt": { 
-      "id": String, 
-      "name": String, 
-      "selfUri": String, 
-    },  
-    "autoAnswerOnly": Boolean, 
-    "enableTranscription": Boolean, 
-    "enableManualAssignment": Boolean, 
-    "callingPartyName": String, 
-    "callingPartyNumber": String, 
-    "defaultScripts": { 
-      "id": String, 
-      "name": String, 
-      "versionId": String, 
-      "createdDate": Date, 
-      "modifiedDate": Date, 
-      "publishedDate": Date, 
-      "versionDate": Date, 
-      "startPageId": String, 
-      "startPageName": String, 
-      "features": Object, 
-      "variables": Object, 
-      "customActions": Object, 
-      "pages": { 
-        "id": String, 
-        "name": String, 
-        "versionId": String, 
-        "createdDate": Date, 
-        "modifiedDate": Date, 
-        "rootContainer": {String: Object}, 
-        "properties": {String: Object}, 
-        "selfUri": String, 
-      },  
-      "selfUri": String, 
-    },  
-    "outboundMessagingAddresses": { 
-      "smsAddress": { 
-        "id": String, 
-        "name": String, 
-        "selfUri": String, 
-      },  
-    },  
-    "outboundEmailAddress": { 
-      "domain": { 
-        "id": String, 
-        "name": String, 
-        "selfUri": String, 
-      },  
-      "route": { 
-        "id": String, 
-        "name": String, 
-        "pattern": String, 
-        "queue": { 
-          "id": String, 
-          "name": String, 
-          "selfUri": String, 
-        },  
-        "priority": Number, 
-        "skills": { 
-          "id": String, 
-          "name": String, 
-          "selfUri": String, 
-        },  
-        "language": { 
-          "id": String, 
-          "name": String, 
-          "selfUri": String, 
-        },  
-        "fromName": String, 
-        "fromEmail": String, 
-        "flow": { 
-          "id": String, 
-          "name": String, 
-          "selfUri": String, 
-        },  
-        "replyEmailAddress": { 
-          "domain": { 
-            "id": String, 
-            "name": String, 
-            "selfUri": String, 
-          },  
-          "route": { 
-            "id": String, 
-            "name": String, 
-            "pattern": String, 
-            "queue": { 
-              "id": String, 
-              "name": String, 
-              "selfUri": String, 
-            },  
-            "priority": Number, 
-            "skills": { 
-              "id": String, 
-              "name": String, 
-              "selfUri": String, 
-            },  
-            "language": { 
-              "id": String, 
-              "name": String, 
-              "selfUri": String, 
-            },  
-            "fromName": String, 
-            "fromEmail": String, 
-            "flow": { 
-              "id": String, 
-              "name": String, 
-              "selfUri": String, 
-            },  
-            "replyEmailAddress": { 
-              "domain": { 
-                "id": String, 
-                "name": String, 
-                "selfUri": String, 
-              },  
-              "route": { 
-                "id": String, 
-                "name": String, 
-                "pattern": String, 
-                "queue": DomainEntityRef, 
-                "priority": Number, 
-                "skills": [DomainEntityRef], 
-                "language": DomainEntityRef, 
-                "fromName": String, 
-                "fromEmail": String, 
-                "flow": DomainEntityRef, 
-                "replyEmailAddress": QueueEmailAddress, 
-                "autoBcc": [EmailAddress], 
-                "spamFlow": DomainEntityRef, 
-                "selfUri": String, 
-              },  
-            },  
-            "autoBcc": { 
-              "email": String, 
-              "name": String, 
-            },  
-            "spamFlow": { 
-              "id": String, 
-              "name": String, 
-              "selfUri": String, 
-            },  
-            "selfUri": String, 
-          },  
-        },  
-        "autoBcc": { 
-          "email": String, 
-          "name": String, 
-        },  
-        "spamFlow": { 
-          "id": String, 
-          "name": String, 
-          "selfUri": String, 
-        },  
-        "selfUri": String, 
-      },  
-    },  
-    "selfUri": String, 
-  },  
-  "language": String, 
-  "agents": { 
-    "id": String, 
-    "name": String, 
-    "division": { 
-      "id": String, 
-      "name": String, 
-      "selfUri": String, 
-    },  
-    "chat": { 
-      "jabberId": String, 
-    },  
-    "department": String, 
-    "email": String, 
-    "primaryContactInfo": { 
-      "address": String, 
-      "display": String, 
-      "mediaType": String, 
-      "type": String, 
-      "extension": String, 
-      "countryCode": String, 
-    },  
-    "addresses": { 
-      "address": String, 
-      "display": String, 
-      "mediaType": String, 
-      "type": String, 
-      "extension": String, 
-      "countryCode": String, 
-    },  
-    "state": String, 
-    "title": String, 
-    "username": String, 
-    "manager": User, 
-    "images": { 
-      "resolution": String, 
-      "imageUri": String, 
-    },  
-    "version": Number, 
-    "certifications": [String], 
-    "biography": { 
-      "biography": String, 
-      "interests": [String], 
-      "hobbies": [String], 
-      "spouse": String, 
-      "education": { 
-        "school": String, 
-        "fieldOfStudy": String, 
-        "notes": String, 
-        "dateStart": String, 
-        "dateEnd": String, 
-      },  
-    },  
-    "employerInfo": { 
-      "officialName": String, 
-      "employeeId": String, 
-      "employeeType": String, 
-      "dateHire": String, 
-    },  
-    "routingStatus": { 
-      "userId": String, 
-      "status": String, 
-      "startTime": Date, 
-    },  
-    "presence": { 
-      "id": String, 
-      "name": String, 
-      "source": String, 
-      "primary": Boolean, 
-      "presenceDefinition": { 
-        "id": String, 
-        "systemPresence": String, 
-        "selfUri": String, 
-      },  
-      "message": String, 
-      "modifiedDate": Date, 
-      "selfUri": String, 
-    },  
-    "conversationSummary": { 
-      "userId": String, 
-      "call": { 
-        "contactCenter": { 
-          "active": Number, 
-          "acw": Number, 
-        },  
-        "enterprise": { 
-          "active": Number, 
-          "acw": Number, 
-        },  
-      },  
-      "callback": { 
-        "contactCenter": { 
-          "active": Number, 
-          "acw": Number, 
-        },  
-        "enterprise": { 
-          "active": Number, 
-          "acw": Number, 
-        },  
-      },  
-      "email": { 
-        "contactCenter": { 
-          "active": Number, 
-          "acw": Number, 
-        },  
-        "enterprise": { 
-          "active": Number, 
-          "acw": Number, 
-        },  
-      },  
-      "message": { 
-        "contactCenter": { 
-          "active": Number, 
-          "acw": Number, 
-        },  
-        "enterprise": { 
-          "active": Number, 
-          "acw": Number, 
-        },  
-      },  
-      "chat": { 
-        "contactCenter": { 
-          "active": Number, 
-          "acw": Number, 
-        },  
-        "enterprise": { 
-          "active": Number, 
-          "acw": Number, 
-        },  
-      },  
-      "socialExpression": { 
-        "contactCenter": { 
-          "active": Number, 
-          "acw": Number, 
-        },  
-        "enterprise": { 
-          "active": Number, 
-          "acw": Number, 
-        },  
-      },  
-      "video": { 
-        "contactCenter": { 
-          "active": Number, 
-          "acw": Number, 
-        },  
-        "enterprise": { 
-          "active": Number, 
-          "acw": Number, 
-        },  
-      },  
-    },  
-    "outOfOffice": { 
-      "id": String, 
-      "name": String, 
-      "user": User, 
-      "startDate": Date, 
-      "endDate": Date, 
-      "active": Boolean, 
-      "indefinite": Boolean, 
-      "selfUri": String, 
-    },  
-    "geolocation": { 
-      "id": String, 
-      "name": String, 
-      "type": String, 
-      "primary": Boolean, 
-      "latitude": Number, 
-      "longitude": Number, 
-      "country": String, 
-      "region": String, 
-      "city": String, 
-      "locations": { 
-        "id": String, 
-        "name": String, 
-        "contactUser": { 
-          "id": String, 
-          "selfUri": String, 
-        },  
-        "emergencyNumber": { 
-          "e164": String, 
-          "number": String, 
-          "type": String, 
-        },  
-        "address": { 
-          "city": String, 
-          "country": String, 
-          "countryName": String, 
-          "state": String, 
-          "street1": String, 
-          "street2": String, 
-          "zipcode": String, 
-        },  
-        "state": String, 
-        "notes": String, 
-        "version": Number, 
-        "path": [String], 
-        "profileImage": { 
-          "resolution": String, 
-          "imageUri": String, 
-        },  
-        "floorplanImage": { 
-          "resolution": String, 
-          "imageUri": String, 
-        },  
-        "addressVerificationDetails": { 
-          "status": String, 
-          "dateFinished": Date, 
-          "dateStarted": Date, 
-          "service": String, 
-        },  
-        "addressVerified": Boolean, 
-        "addressStored": Boolean, 
-        "images": String, 
-        "selfUri": String, 
-      },  
-      "selfUri": String, 
-    },  
-    "station": { 
-      "associatedStation": { 
-        "id": String, 
-        "name": String, 
-        "type": String, 
-        "associatedUser": User, 
-        "associatedDate": Date, 
-        "defaultUser": User, 
-        "providerInfo": {String: String}, 
-      },  
-      "effectiveStation": { 
-        "id": String, 
-        "name": String, 
-        "type": String, 
-        "associatedUser": User, 
-        "associatedDate": Date, 
-        "defaultUser": User, 
-        "providerInfo": {String: String}, 
-      },  
-      "defaultStation": { 
-        "id": String, 
-        "name": String, 
-        "type": String, 
-        "associatedUser": User, 
-        "associatedDate": Date, 
-        "defaultUser": User, 
-        "providerInfo": {String: String}, 
-      },  
-      "lastAssociatedStation": { 
-        "id": String, 
-        "name": String, 
-        "type": String, 
-        "associatedUser": User, 
-        "associatedDate": Date, 
-        "defaultUser": User, 
-        "providerInfo": {String: String}, 
-      },  
-    },  
-    "authorization": { 
-      "roles": { 
-        "id": String, 
-        "name": String, 
-      },  
-      "unusedRoles": { 
-        "id": String, 
-        "name": String, 
-      },  
-      "permissions": [String], 
-      "permissionPolicies": { 
-        "id": String, 
-        "domain": String, 
-        "entityName": String, 
-        "policyName": String, 
-        "policyDescription": String, 
-        "actionSetKey": String, 
-        "allowConditions": Boolean, 
-        "resourceConditionNode": { 
-          "variableName": String, 
-          "conjunction": String, 
-          "operator": String, 
-          "operands": { 
-            "type": String, 
-            "value": String, 
-          },  
-          "terms": { 
-            "variableName": String, 
-            "conjunction": String, 
-            "operator": String, 
-            "operands": { 
-              "type": String, 
-              "value": String, 
-            },  
-            "terms": { 
-              "variableName": String, 
-              "conjunction": String, 
-              "operator": String, 
-              "operands": { 
-                "type": String, 
-                "value": String, 
-              },  
-              "terms": { 
-                "variableName": String, 
-                "conjunction": String, 
-                "operator": String, 
-                "operands": [ResourceConditionValue], 
-                "terms": [ResourceConditionNode], 
-              },  
-            },  
-          },  
-        },  
-        "namedResources": [String], 
-        "resourceCondition": String, 
-        "actionSet": [String], 
-      },  
-    },  
-    "profileSkills": [String], 
-    "locations": { 
-      "id": String, 
-      "floorplanId": String, 
-      "coordinates": {String: Number}, 
-      "notes": String, 
-      "locationDefinition": { 
-        "id": String, 
-        "name": String, 
-        "contactUser": { 
-          "id": String, 
-          "selfUri": String, 
-        },  
-        "emergencyNumber": { 
-          "e164": String, 
-          "number": String, 
-          "type": String, 
-        },  
-        "address": { 
-          "city": String, 
-          "country": String, 
-          "countryName": String, 
-          "state": String, 
-          "street1": String, 
-          "street2": String, 
-          "zipcode": String, 
-        },  
-        "state": String, 
-        "notes": String, 
-        "version": Number, 
-        "path": [String], 
-        "profileImage": { 
-          "resolution": String, 
-          "imageUri": String, 
-        },  
-        "floorplanImage": { 
-          "resolution": String, 
-          "imageUri": String, 
-        },  
-        "addressVerificationDetails": { 
-          "status": String, 
-          "dateFinished": Date, 
-          "dateStarted": Date, 
-          "service": String, 
-        },  
-        "addressVerified": Boolean, 
-        "addressStored": Boolean, 
-        "images": String, 
-        "selfUri": String, 
-      },  
-    },  
-    "groups": { 
-      "id": String, 
-      "name": String, 
-      "description": String, 
-      "dateModified": Date, 
-      "memberCount": Number, 
-      "state": String, 
-      "version": Number, 
-      "type": String, 
-      "images": { 
-        "resolution": String, 
-        "imageUri": String, 
-      },  
-      "addresses": { 
-        "address": String, 
-        "extension": String, 
-        "display": String, 
-        "type": String, 
-        "mediaType": String, 
-      },  
-      "rulesVisible": Boolean, 
-      "visibility": String, 
-      "owners": User, 
-      "selfUri": String, 
-    },  
-    "team": { 
-      "id": String, 
-      "name": String, 
-      "description": String, 
-      "dateModified": Date, 
-      "memberCount": Number, 
-      "selfUri": String, 
-    },  
-    "skills": { 
-      "id": String, 
-      "name": String, 
-      "proficiency": Number, 
-      "state": String, 
-      "skillUri": String, 
-      "selfUri": String, 
-    },  
-    "languages": { 
-      "id": String, 
-      "name": String, 
-      "proficiency": Number, 
-      "state": String, 
-      "languageUri": String, 
-      "selfUri": String, 
-    },  
-    "acdAutoAnswer": Boolean, 
-    "languagePreference": String, 
-    "lastTokenIssued": { 
-      "dateIssued": Date, 
-    },  
-    "selfUri": String, 
-  },  
-  "keywords": { 
-    "id": String, 
-    "name": String, 
-    "phrase": String, 
-    "confidence": Number, 
-    "agentScoreModifier": Number, 
-    "customerScoreModifier": Number, 
-    "alternateSpellings": [String], 
-    "pronunciations": [String], 
-    "antiWords": [String], 
-    "antiPronunciations": [String], 
-    "spotabilityIndex": Number, 
-    "marginOfError": Number, 
-    "pronunciation": String, 
-  },  
-  "participantPurposes": [String], 
-  "selfUri": String, 
-}
-```
-
-</div>
-
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.QualityApi();
-
-let opts = { 
-  'body': {} // Object | Keyword Set
-};
-
-apiInstance.postQualitySpotability(opts)
-  .then((data) => {
-    console.log(`postQualitySpotability success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch((err) => {
-    console.log('There was a failure calling postQualitySpotability');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **body** | **Object** | Keyword Set | [optional]  |
-{: class="table table-striped"}
-
-### Return type
-
-**KeywordSet**
-
 <a name="postQualitySurveysScoring"></a>
 
 # SurveyScoringSet postQualitySurveysScoring(body)
@@ -59971,9 +58265,9 @@ SurveyFormAndScoringSet <a href="#" onclick="return copySurveyFormAndScoringSetE
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
+              "lastUri": String, 
               "nextUri": String, 
               "previousUri": String, 
-              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -59983,9 +58277,9 @@ SurveyFormAndScoringSet <a href="#" onclick="return copySurveyFormAndScoringSetE
           "total": Number, 
           "firstUri": String, 
           "selfUri": String, 
+          "lastUri": String, 
           "nextUri": String, 
           "previousUri": String, 
-          "lastUri": String, 
           "pageCount": Number, 
         },  
         "selfUri": String, 
@@ -59995,9 +58289,9 @@ SurveyFormAndScoringSet <a href="#" onclick="return copySurveyFormAndScoringSetE
       "total": Number, 
       "firstUri": String, 
       "selfUri": String, 
+      "lastUri": String, 
       "nextUri": String, 
       "previousUri": String, 
-      "lastUri": String, 
       "pageCount": Number, 
     },  
     "selfUri": String, 
@@ -61962,8 +60256,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "text": String, 
                 "value": Number, 
               },  
-              "isKill": Boolean, 
               "isCritical": Boolean, 
+              "isKill": Boolean, 
             },  
             "visibilityCondition": { 
               "combiningOperation": String, 
@@ -61996,9 +60290,9 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "total": Number, 
                 "firstUri": String, 
                 "selfUri": String, 
+                "lastUri": String, 
                 "nextUri": String, 
                 "previousUri": String, 
-                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -62008,9 +60302,9 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
             "total": Number, 
             "firstUri": String, 
             "selfUri": String, 
+            "lastUri": String, 
             "nextUri": String, 
             "previousUri": String, 
-            "lastUri": String, 
             "pageCount": Number, 
           },  
           "selfUri": String, 
@@ -63430,8 +61724,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "commentsRequired": Boolean, 
                 "visibilityCondition": VisibilityCondition, 
                 "answerOptions": [AnswerOption], 
-                "isKill": Boolean, 
                 "isCritical": Boolean, 
+                "isKill": Boolean, 
               },  
               "visibilityCondition": { 
                 "combiningOperation": String, 
@@ -63454,9 +61748,9 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
+              "lastUri": String, 
               "nextUri": String, 
               "previousUri": String, 
-              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -63558,9 +61852,9 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "total": Number, 
                 "firstUri": String, 
                 "selfUri": String, 
+                "lastUri": String, 
                 "nextUri": String, 
                 "previousUri": String, 
-                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -64231,9 +62525,9 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "total": Number, 
                 "firstUri": String, 
                 "selfUri": String, 
+                "lastUri": String, 
                 "nextUri": String, 
                 "previousUri": String, 
-                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -65057,8 +63351,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
           "text": String, 
           "value": Number, 
         },  
-        "isKill": Boolean, 
         "isCritical": Boolean, 
+        "isKill": Boolean, 
       },  
       "visibilityCondition": { 
         "combiningOperation": String, 
@@ -65097,8 +63391,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
               "text": String, 
               "value": Number, 
             },  
-            "isKill": Boolean, 
             "isCritical": Boolean, 
+            "isKill": Boolean, 
           },  
           "visibilityCondition": { 
             "combiningOperation": String, 
@@ -65130,8 +63424,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "commentsRequired": Boolean, 
                 "visibilityCondition": VisibilityCondition, 
                 "answerOptions": [AnswerOption], 
-                "isKill": Boolean, 
                 "isCritical": Boolean, 
+                "isKill": Boolean, 
               },  
               "visibilityCondition": { 
                 "combiningOperation": String, 
@@ -65154,9 +63448,9 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
+              "lastUri": String, 
               "nextUri": String, 
               "previousUri": String, 
-              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -65166,9 +63460,9 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
           "total": Number, 
           "firstUri": String, 
           "selfUri": String, 
+          "lastUri": String, 
           "nextUri": String, 
           "previousUri": String, 
-          "lastUri": String, 
           "pageCount": Number, 
         },  
         "selfUri": String, 
@@ -65178,9 +63472,9 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
       "total": Number, 
       "firstUri": String, 
       "selfUri": String, 
+      "lastUri": String, 
       "nextUri": String, 
       "previousUri": String, 
-      "lastUri": String, 
       "pageCount": Number, 
     },  
     "selfUri": String, 
@@ -66176,8 +64470,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "commentsRequired": Boolean, 
                 "visibilityCondition": VisibilityCondition, 
                 "answerOptions": [AnswerOption], 
-                "isKill": Boolean, 
                 "isCritical": Boolean, 
+                "isKill": Boolean, 
               },  
               "visibilityCondition": { 
                 "combiningOperation": String, 
@@ -66200,9 +64494,9 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
+              "lastUri": String, 
               "nextUri": String, 
               "previousUri": String, 
-              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -67049,9 +65343,9 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "total": Number, 
                 "firstUri": String, 
                 "selfUri": String, 
+                "lastUri": String, 
                 "nextUri": String, 
                 "previousUri": String, 
-                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -67619,8 +65913,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
             "text": String, 
             "value": Number, 
           },  
-          "isKill": Boolean, 
           "isCritical": Boolean, 
+          "isKill": Boolean, 
         },  
         "visibilityCondition": { 
           "combiningOperation": String, 
@@ -67659,8 +65953,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "text": String, 
                 "value": Number, 
               },  
-              "isKill": Boolean, 
               "isCritical": Boolean, 
+              "isKill": Boolean, 
             },  
             "visibilityCondition": { 
               "combiningOperation": String, 
@@ -67693,9 +65987,9 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "total": Number, 
                 "firstUri": String, 
                 "selfUri": String, 
+                "lastUri": String, 
                 "nextUri": String, 
                 "previousUri": String, 
-                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -67705,9 +65999,9 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
             "total": Number, 
             "firstUri": String, 
             "selfUri": String, 
+            "lastUri": String, 
             "nextUri": String, 
             "previousUri": String, 
-            "lastUri": String, 
             "pageCount": Number, 
           },  
           "selfUri": String, 
@@ -67717,9 +66011,9 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
         "total": Number, 
         "firstUri": String, 
         "selfUri": String, 
+        "lastUri": String, 
         "nextUri": String, 
         "previousUri": String, 
-        "lastUri": String, 
         "pageCount": Number, 
       },  
       "selfUri": String, 
@@ -69642,9 +67936,9 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "total": Number, 
                 "firstUri": String, 
                 "selfUri": String, 
+                "lastUri": String, 
                 "nextUri": String, 
                 "previousUri": String, 
-                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -70276,8 +68570,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
               "text": String, 
               "value": Number, 
             },  
-            "isKill": Boolean, 
             "isCritical": Boolean, 
+            "isKill": Boolean, 
           },  
           "visibilityCondition": { 
             "combiningOperation": String, 
@@ -70309,8 +68603,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "commentsRequired": Boolean, 
                 "visibilityCondition": VisibilityCondition, 
                 "answerOptions": [AnswerOption], 
-                "isKill": Boolean, 
                 "isCritical": Boolean, 
+                "isKill": Boolean, 
               },  
               "visibilityCondition": { 
                 "combiningOperation": String, 
@@ -70333,9 +68627,9 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
+              "lastUri": String, 
               "nextUri": String, 
               "previousUri": String, 
-              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -70345,9 +68639,9 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
           "total": Number, 
           "firstUri": String, 
           "selfUri": String, 
+          "lastUri": String, 
           "nextUri": String, 
           "previousUri": String, 
-          "lastUri": String, 
           "pageCount": Number, 
         },  
         "selfUri": String, 
@@ -71124,8 +69418,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "text": String, 
                 "value": Number, 
               },  
-              "isKill": Boolean, 
               "isCritical": Boolean, 
+              "isKill": Boolean, 
             },  
             "visibilityCondition": { 
               "combiningOperation": String, 
@@ -71158,9 +69452,9 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "total": Number, 
                 "firstUri": String, 
                 "selfUri": String, 
+                "lastUri": String, 
                 "nextUri": String, 
                 "previousUri": String, 
-                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -71170,9 +69464,9 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
             "total": Number, 
             "firstUri": String, 
             "selfUri": String, 
+            "lastUri": String, 
             "nextUri": String, 
             "previousUri": String, 
-            "lastUri": String, 
             "pageCount": Number, 
           },  
           "selfUri": String, 
@@ -72592,8 +70886,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "commentsRequired": Boolean, 
                 "visibilityCondition": VisibilityCondition, 
                 "answerOptions": [AnswerOption], 
-                "isKill": Boolean, 
                 "isCritical": Boolean, 
+                "isKill": Boolean, 
               },  
               "visibilityCondition": { 
                 "combiningOperation": String, 
@@ -72616,9 +70910,9 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
+              "lastUri": String, 
               "nextUri": String, 
               "previousUri": String, 
-              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -72720,9 +71014,9 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "total": Number, 
                 "firstUri": String, 
                 "selfUri": String, 
+                "lastUri": String, 
                 "nextUri": String, 
                 "previousUri": String, 
-                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -73393,9 +71687,9 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "total": Number, 
                 "firstUri": String, 
                 "selfUri": String, 
+                "lastUri": String, 
                 "nextUri": String, 
                 "previousUri": String, 
-                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -74933,8 +73227,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "text": String, 
                 "value": Number, 
               },  
-              "isKill": Boolean, 
               "isCritical": Boolean, 
+              "isKill": Boolean, 
             },  
             "visibilityCondition": { 
               "combiningOperation": String, 
@@ -74967,9 +73261,9 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "total": Number, 
                 "firstUri": String, 
                 "selfUri": String, 
+                "lastUri": String, 
                 "nextUri": String, 
                 "previousUri": String, 
-                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -74979,9 +73273,9 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
             "total": Number, 
             "firstUri": String, 
             "selfUri": String, 
+            "lastUri": String, 
             "nextUri": String, 
             "previousUri": String, 
-            "lastUri": String, 
             "pageCount": Number, 
           },  
           "selfUri": String, 
@@ -76401,8 +74695,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "commentsRequired": Boolean, 
                 "visibilityCondition": VisibilityCondition, 
                 "answerOptions": [AnswerOption], 
-                "isKill": Boolean, 
                 "isCritical": Boolean, 
+                "isKill": Boolean, 
               },  
               "visibilityCondition": { 
                 "combiningOperation": String, 
@@ -76425,9 +74719,9 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
+              "lastUri": String, 
               "nextUri": String, 
               "previousUri": String, 
-              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -76529,9 +74823,9 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "total": Number, 
                 "firstUri": String, 
                 "selfUri": String, 
+                "lastUri": String, 
                 "nextUri": String, 
                 "previousUri": String, 
-                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -77202,9 +75496,9 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "total": Number, 
                 "firstUri": String, 
                 "selfUri": String, 
+                "lastUri": String, 
                 "nextUri": String, 
                 "previousUri": String, 
-                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -79202,8 +77496,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "commentsRequired": Boolean, 
                 "visibilityCondition": VisibilityCondition, 
                 "answerOptions": [AnswerOption], 
-                "isKill": Boolean, 
                 "isCritical": Boolean, 
+                "isKill": Boolean, 
               },  
               "visibilityCondition": { 
                 "combiningOperation": String, 
@@ -79226,9 +77520,9 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
+              "lastUri": String, 
               "nextUri": String, 
               "previousUri": String, 
-              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -80075,9 +78369,9 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "total": Number, 
                 "firstUri": String, 
                 "selfUri": String, 
+                "lastUri": String, 
                 "nextUri": String, 
                 "previousUri": String, 
-                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -80645,8 +78939,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
             "text": String, 
             "value": Number, 
           },  
-          "isKill": Boolean, 
           "isCritical": Boolean, 
+          "isKill": Boolean, 
         },  
         "visibilityCondition": { 
           "combiningOperation": String, 
@@ -80685,8 +78979,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "text": String, 
                 "value": Number, 
               },  
-              "isKill": Boolean, 
               "isCritical": Boolean, 
+              "isKill": Boolean, 
             },  
             "visibilityCondition": { 
               "combiningOperation": String, 
@@ -80719,9 +79013,9 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "total": Number, 
                 "firstUri": String, 
                 "selfUri": String, 
+                "lastUri": String, 
                 "nextUri": String, 
                 "previousUri": String, 
-                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -80731,9 +79025,9 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
             "total": Number, 
             "firstUri": String, 
             "selfUri": String, 
+            "lastUri": String, 
             "nextUri": String, 
             "previousUri": String, 
-            "lastUri": String, 
             "pageCount": Number, 
           },  
           "selfUri": String, 
@@ -80743,9 +79037,9 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
         "total": Number, 
         "firstUri": String, 
         "selfUri": String, 
+        "lastUri": String, 
         "nextUri": String, 
         "previousUri": String, 
-        "lastUri": String, 
         "pageCount": Number, 
       },  
       "selfUri": String, 
@@ -82668,9 +80962,9 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "total": Number, 
                 "firstUri": String, 
                 "selfUri": String, 
+                "lastUri": String, 
                 "nextUri": String, 
                 "previousUri": String, 
-                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -83302,8 +81596,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
               "text": String, 
               "value": Number, 
             },  
-            "isKill": Boolean, 
             "isCritical": Boolean, 
+            "isKill": Boolean, 
           },  
           "visibilityCondition": { 
             "combiningOperation": String, 
@@ -83335,8 +81629,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "commentsRequired": Boolean, 
                 "visibilityCondition": VisibilityCondition, 
                 "answerOptions": [AnswerOption], 
-                "isKill": Boolean, 
                 "isCritical": Boolean, 
+                "isKill": Boolean, 
               },  
               "visibilityCondition": { 
                 "combiningOperation": String, 
@@ -83359,9 +81653,9 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
+              "lastUri": String, 
               "nextUri": String, 
               "previousUri": String, 
-              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -83371,9 +81665,9 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
           "total": Number, 
           "firstUri": String, 
           "selfUri": String, 
+          "lastUri": String, 
           "nextUri": String, 
           "previousUri": String, 
-          "lastUri": String, 
           "pageCount": Number, 
         },  
         "selfUri": String, 
@@ -84150,8 +82444,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "text": String, 
                 "value": Number, 
               },  
-              "isKill": Boolean, 
               "isCritical": Boolean, 
+              "isKill": Boolean, 
             },  
             "visibilityCondition": { 
               "combiningOperation": String, 
@@ -84184,9 +82478,9 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "total": Number, 
                 "firstUri": String, 
                 "selfUri": String, 
+                "lastUri": String, 
                 "nextUri": String, 
                 "previousUri": String, 
-                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -84196,9 +82490,9 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
             "total": Number, 
             "firstUri": String, 
             "selfUri": String, 
+            "lastUri": String, 
             "nextUri": String, 
             "previousUri": String, 
-            "lastUri": String, 
             "pageCount": Number, 
           },  
           "selfUri": String, 
@@ -85618,8 +83912,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "commentsRequired": Boolean, 
                 "visibilityCondition": VisibilityCondition, 
                 "answerOptions": [AnswerOption], 
-                "isKill": Boolean, 
                 "isCritical": Boolean, 
+                "isKill": Boolean, 
               },  
               "visibilityCondition": { 
                 "combiningOperation": String, 
@@ -85642,9 +83936,9 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
+              "lastUri": String, 
               "nextUri": String, 
               "previousUri": String, 
-              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -85746,9 +84040,9 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "total": Number, 
                 "firstUri": String, 
                 "selfUri": String, 
+                "lastUri": String, 
                 "nextUri": String, 
                 "previousUri": String, 
-                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -86419,9 +84713,9 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "total": Number, 
                 "firstUri": String, 
                 "selfUri": String, 
+                "lastUri": String, 
                 "nextUri": String, 
                 "previousUri": String, 
-                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -87959,8 +86253,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "text": String, 
                 "value": Number, 
               },  
-              "isKill": Boolean, 
               "isCritical": Boolean, 
+              "isKill": Boolean, 
             },  
             "visibilityCondition": { 
               "combiningOperation": String, 
@@ -87993,9 +86287,9 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "total": Number, 
                 "firstUri": String, 
                 "selfUri": String, 
+                "lastUri": String, 
                 "nextUri": String, 
                 "previousUri": String, 
-                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -88005,9 +86299,9 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
             "total": Number, 
             "firstUri": String, 
             "selfUri": String, 
+            "lastUri": String, 
             "nextUri": String, 
             "previousUri": String, 
-            "lastUri": String, 
             "pageCount": Number, 
           },  
           "selfUri": String, 
@@ -89427,8 +87721,8 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "commentsRequired": Boolean, 
                 "visibilityCondition": VisibilityCondition, 
                 "answerOptions": [AnswerOption], 
-                "isKill": Boolean, 
                 "isCritical": Boolean, 
+                "isKill": Boolean, 
               },  
               "visibilityCondition": { 
                 "combiningOperation": String, 
@@ -89451,9 +87745,9 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
+              "lastUri": String, 
               "nextUri": String, 
               "previousUri": String, 
-              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -89555,9 +87849,9 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "total": Number, 
                 "firstUri": String, 
                 "selfUri": String, 
+                "lastUri": String, 
                 "nextUri": String, 
                 "previousUri": String, 
-                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -90228,9 +88522,9 @@ Calibration <a href="#" onclick="return copyCalibrationExample()">Copy</a>
                 "total": Number, 
                 "firstUri": String, 
                 "selfUri": String, 
+                "lastUri": String, 
                 "nextUri": String, 
                 "previousUri": String, 
-                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -92769,8 +91063,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "text": String, 
                 "value": Number, 
               },  
-              "isKill": Boolean, 
               "isCritical": Boolean, 
+              "isKill": Boolean, 
             },  
             "visibilityCondition": { 
               "combiningOperation": String, 
@@ -92803,9 +91097,9 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "total": Number, 
                 "firstUri": String, 
                 "selfUri": String, 
+                "lastUri": String, 
                 "nextUri": String, 
                 "previousUri": String, 
-                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -92815,9 +91109,9 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
             "total": Number, 
             "firstUri": String, 
             "selfUri": String, 
+            "lastUri": String, 
             "nextUri": String, 
             "previousUri": String, 
-            "lastUri": String, 
             "pageCount": Number, 
           },  
           "selfUri": String, 
@@ -94237,8 +92531,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "commentsRequired": Boolean, 
                 "visibilityCondition": VisibilityCondition, 
                 "answerOptions": [AnswerOption], 
-                "isKill": Boolean, 
                 "isCritical": Boolean, 
+                "isKill": Boolean, 
               },  
               "visibilityCondition": { 
                 "combiningOperation": String, 
@@ -94261,9 +92555,9 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
+              "lastUri": String, 
               "nextUri": String, 
               "previousUri": String, 
-              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -94365,9 +92659,9 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "total": Number, 
                 "firstUri": String, 
                 "selfUri": String, 
+                "lastUri": String, 
                 "nextUri": String, 
                 "previousUri": String, 
-                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -95038,9 +93332,9 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "total": Number, 
                 "firstUri": String, 
                 "selfUri": String, 
+                "lastUri": String, 
                 "nextUri": String, 
                 "previousUri": String, 
-                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -95864,8 +94158,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
           "text": String, 
           "value": Number, 
         },  
-        "isKill": Boolean, 
         "isCritical": Boolean, 
+        "isKill": Boolean, 
       },  
       "visibilityCondition": { 
         "combiningOperation": String, 
@@ -95904,8 +94198,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "text": String, 
               "value": Number, 
             },  
-            "isKill": Boolean, 
             "isCritical": Boolean, 
+            "isKill": Boolean, 
           },  
           "visibilityCondition": { 
             "combiningOperation": String, 
@@ -95937,8 +94231,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "commentsRequired": Boolean, 
                 "visibilityCondition": VisibilityCondition, 
                 "answerOptions": [AnswerOption], 
-                "isKill": Boolean, 
                 "isCritical": Boolean, 
+                "isKill": Boolean, 
               },  
               "visibilityCondition": { 
                 "combiningOperation": String, 
@@ -95961,9 +94255,9 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
+              "lastUri": String, 
               "nextUri": String, 
               "previousUri": String, 
-              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -95973,9 +94267,9 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
           "total": Number, 
           "firstUri": String, 
           "selfUri": String, 
+          "lastUri": String, 
           "nextUri": String, 
           "previousUri": String, 
-          "lastUri": String, 
           "pageCount": Number, 
         },  
         "selfUri": String, 
@@ -95985,9 +94279,9 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
       "total": Number, 
       "firstUri": String, 
       "selfUri": String, 
+      "lastUri": String, 
       "nextUri": String, 
       "previousUri": String, 
-      "lastUri": String, 
       "pageCount": Number, 
     },  
     "selfUri": String, 
@@ -98224,8 +96518,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "commentsRequired": Boolean, 
                 "visibilityCondition": VisibilityCondition, 
                 "answerOptions": [AnswerOption], 
-                "isKill": Boolean, 
                 "isCritical": Boolean, 
+                "isKill": Boolean, 
               },  
               "visibilityCondition": { 
                 "combiningOperation": String, 
@@ -98248,9 +96542,9 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
+              "lastUri": String, 
               "nextUri": String, 
               "previousUri": String, 
-              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -99097,9 +97391,9 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "total": Number, 
                 "firstUri": String, 
                 "selfUri": String, 
+                "lastUri": String, 
                 "nextUri": String, 
                 "previousUri": String, 
-                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -99667,8 +97961,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
             "text": String, 
             "value": Number, 
           },  
-          "isKill": Boolean, 
           "isCritical": Boolean, 
+          "isKill": Boolean, 
         },  
         "visibilityCondition": { 
           "combiningOperation": String, 
@@ -99707,8 +98001,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "text": String, 
                 "value": Number, 
               },  
-              "isKill": Boolean, 
               "isCritical": Boolean, 
+              "isKill": Boolean, 
             },  
             "visibilityCondition": { 
               "combiningOperation": String, 
@@ -99741,9 +98035,9 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "total": Number, 
                 "firstUri": String, 
                 "selfUri": String, 
+                "lastUri": String, 
                 "nextUri": String, 
                 "previousUri": String, 
-                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -99753,9 +98047,9 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
             "total": Number, 
             "firstUri": String, 
             "selfUri": String, 
+            "lastUri": String, 
             "nextUri": String, 
             "previousUri": String, 
-            "lastUri": String, 
             "pageCount": Number, 
           },  
           "selfUri": String, 
@@ -99765,9 +98059,9 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
         "total": Number, 
         "firstUri": String, 
         "selfUri": String, 
+        "lastUri": String, 
         "nextUri": String, 
         "previousUri": String, 
-        "lastUri": String, 
         "pageCount": Number, 
       },  
       "selfUri": String, 
@@ -100476,9 +98770,9 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "total": Number, 
                 "firstUri": String, 
                 "selfUri": String, 
+                "lastUri": String, 
                 "nextUri": String, 
                 "previousUri": String, 
-                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -101110,8 +99404,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "text": String, 
               "value": Number, 
             },  
-            "isKill": Boolean, 
             "isCritical": Boolean, 
+            "isKill": Boolean, 
           },  
           "visibilityCondition": { 
             "combiningOperation": String, 
@@ -101143,8 +99437,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "commentsRequired": Boolean, 
                 "visibilityCondition": VisibilityCondition, 
                 "answerOptions": [AnswerOption], 
-                "isKill": Boolean, 
                 "isCritical": Boolean, 
+                "isKill": Boolean, 
               },  
               "visibilityCondition": { 
                 "combiningOperation": String, 
@@ -101167,9 +99461,9 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
+              "lastUri": String, 
               "nextUri": String, 
               "previousUri": String, 
-              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -101179,9 +99473,9 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
           "total": Number, 
           "firstUri": String, 
           "selfUri": String, 
+          "lastUri": String, 
           "nextUri": String, 
           "previousUri": String, 
-          "lastUri": String, 
           "pageCount": Number, 
         },  
         "selfUri": String, 
@@ -103145,8 +101439,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "text": String, 
                 "value": Number, 
               },  
-              "isKill": Boolean, 
               "isCritical": Boolean, 
+              "isKill": Boolean, 
             },  
             "visibilityCondition": { 
               "combiningOperation": String, 
@@ -103179,9 +101473,9 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "total": Number, 
                 "firstUri": String, 
                 "selfUri": String, 
+                "lastUri": String, 
                 "nextUri": String, 
                 "previousUri": String, 
-                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -103191,9 +101485,9 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
             "total": Number, 
             "firstUri": String, 
             "selfUri": String, 
+            "lastUri": String, 
             "nextUri": String, 
             "previousUri": String, 
-            "lastUri": String, 
             "pageCount": Number, 
           },  
           "selfUri": String, 
@@ -103544,8 +101838,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "commentsRequired": Boolean, 
                 "visibilityCondition": VisibilityCondition, 
                 "answerOptions": [AnswerOption], 
-                "isKill": Boolean, 
                 "isCritical": Boolean, 
+                "isKill": Boolean, 
               },  
               "visibilityCondition": { 
                 "combiningOperation": String, 
@@ -103568,9 +101862,9 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
+              "lastUri": String, 
               "nextUri": String, 
               "previousUri": String, 
-              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -104417,9 +102711,9 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "total": Number, 
                 "firstUri": String, 
                 "selfUri": String, 
+                "lastUri": String, 
                 "nextUri": String, 
                 "previousUri": String, 
-                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -105275,8 +103569,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "commentsRequired": Boolean, 
                 "visibilityCondition": VisibilityCondition, 
                 "answerOptions": [AnswerOption], 
-                "isKill": Boolean, 
                 "isCritical": Boolean, 
+                "isKill": Boolean, 
               },  
               "visibilityCondition": { 
                 "combiningOperation": String, 
@@ -105299,9 +103593,9 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
+              "lastUri": String, 
               "nextUri": String, 
               "previousUri": String, 
-              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -106148,9 +104442,9 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "total": Number, 
                 "firstUri": String, 
                 "selfUri": String, 
+                "lastUri": String, 
                 "nextUri": String, 
                 "previousUri": String, 
-                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -107579,9 +105873,9 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "total": Number, 
                 "firstUri": String, 
                 "selfUri": String, 
+                "lastUri": String, 
                 "nextUri": String, 
                 "previousUri": String, 
-                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -108213,8 +106507,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "text": String, 
               "value": Number, 
             },  
-            "isKill": Boolean, 
             "isCritical": Boolean, 
+            "isKill": Boolean, 
           },  
           "visibilityCondition": { 
             "combiningOperation": String, 
@@ -108246,8 +106540,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "commentsRequired": Boolean, 
                 "visibilityCondition": VisibilityCondition, 
                 "answerOptions": [AnswerOption], 
-                "isKill": Boolean, 
                 "isCritical": Boolean, 
+                "isKill": Boolean, 
               },  
               "visibilityCondition": { 
                 "combiningOperation": String, 
@@ -108270,9 +106564,9 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
+              "lastUri": String, 
               "nextUri": String, 
               "previousUri": String, 
-              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -108282,9 +106576,9 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
           "total": Number, 
           "firstUri": String, 
           "selfUri": String, 
+          "lastUri": String, 
           "nextUri": String, 
           "previousUri": String, 
-          "lastUri": String, 
           "pageCount": Number, 
         },  
         "selfUri": String, 
@@ -110248,8 +108542,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "text": String, 
                 "value": Number, 
               },  
-              "isKill": Boolean, 
               "isCritical": Boolean, 
+              "isKill": Boolean, 
             },  
             "visibilityCondition": { 
               "combiningOperation": String, 
@@ -110282,9 +108576,9 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "total": Number, 
                 "firstUri": String, 
                 "selfUri": String, 
+                "lastUri": String, 
                 "nextUri": String, 
                 "previousUri": String, 
-                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -110294,9 +108588,9 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
             "total": Number, 
             "firstUri": String, 
             "selfUri": String, 
+            "lastUri": String, 
             "nextUri": String, 
             "previousUri": String, 
-            "lastUri": String, 
             "pageCount": Number, 
           },  
           "selfUri": String, 
@@ -110647,8 +108941,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "commentsRequired": Boolean, 
                 "visibilityCondition": VisibilityCondition, 
                 "answerOptions": [AnswerOption], 
-                "isKill": Boolean, 
                 "isCritical": Boolean, 
+                "isKill": Boolean, 
               },  
               "visibilityCondition": { 
                 "combiningOperation": String, 
@@ -110671,9 +108965,9 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
+              "lastUri": String, 
               "nextUri": String, 
               "previousUri": String, 
-              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -111520,9 +109814,9 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "total": Number, 
                 "firstUri": String, 
                 "selfUri": String, 
+                "lastUri": String, 
                 "nextUri": String, 
                 "previousUri": String, 
-                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -112378,8 +110672,8 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "commentsRequired": Boolean, 
                 "visibilityCondition": VisibilityCondition, 
                 "answerOptions": [AnswerOption], 
-                "isKill": Boolean, 
                 "isCritical": Boolean, 
+                "isKill": Boolean, 
               },  
               "visibilityCondition": { 
                 "combiningOperation": String, 
@@ -112402,9 +110696,9 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
+              "lastUri": String, 
               "nextUri": String, 
               "previousUri": String, 
-              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -113251,9 +111545,9 @@ Evaluation <a href="#" onclick="return copyEvaluationExample()">Copy</a>
                 "total": Number, 
                 "firstUri": String, 
                 "selfUri": String, 
+                "lastUri": String, 
                 "nextUri": String, 
                 "previousUri": String, 
-                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -114358,8 +112652,8 @@ EvaluationForm <a href="#" onclick="return copyEvaluationFormExample()">Copy</a>
         "text": String, 
         "value": Number, 
       },  
-      "isKill": Boolean, 
       "isCritical": Boolean, 
+      "isKill": Boolean, 
     },  
     "visibilityCondition": { 
       "combiningOperation": String, 
@@ -114398,8 +112692,8 @@ EvaluationForm <a href="#" onclick="return copyEvaluationFormExample()">Copy</a>
             "text": String, 
             "value": Number, 
           },  
-          "isKill": Boolean, 
           "isCritical": Boolean, 
+          "isKill": Boolean, 
         },  
         "visibilityCondition": { 
           "combiningOperation": String, 
@@ -114438,8 +112732,8 @@ EvaluationForm <a href="#" onclick="return copyEvaluationFormExample()">Copy</a>
                 "text": String, 
                 "value": Number, 
               },  
-              "isKill": Boolean, 
               "isCritical": Boolean, 
+              "isKill": Boolean, 
             },  
             "visibilityCondition": { 
               "combiningOperation": String, 
@@ -114472,9 +112766,9 @@ EvaluationForm <a href="#" onclick="return copyEvaluationFormExample()">Copy</a>
                 "total": Number, 
                 "firstUri": String, 
                 "selfUri": String, 
+                "lastUri": String, 
                 "nextUri": String, 
                 "previousUri": String, 
-                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -114484,9 +112778,9 @@ EvaluationForm <a href="#" onclick="return copyEvaluationFormExample()">Copy</a>
             "total": Number, 
             "firstUri": String, 
             "selfUri": String, 
+            "lastUri": String, 
             "nextUri": String, 
             "previousUri": String, 
-            "lastUri": String, 
             "pageCount": Number, 
           },  
           "selfUri": String, 
@@ -114496,9 +112790,9 @@ EvaluationForm <a href="#" onclick="return copyEvaluationFormExample()">Copy</a>
         "total": Number, 
         "firstUri": String, 
         "selfUri": String, 
+        "lastUri": String, 
         "nextUri": String, 
         "previousUri": String, 
-        "lastUri": String, 
         "pageCount": Number, 
       },  
       "selfUri": String, 
@@ -114508,9 +112802,9 @@ EvaluationForm <a href="#" onclick="return copyEvaluationFormExample()">Copy</a>
     "total": Number, 
     "firstUri": String, 
     "selfUri": String, 
+    "lastUri": String, 
     "nextUri": String, 
     "previousUri": String, 
-    "lastUri": String, 
     "pageCount": Number, 
   },  
   "selfUri": String, 
@@ -114625,8 +112919,8 @@ EvaluationForm <a href="#" onclick="return copyEvaluationFormExample()">Copy</a>
         "text": String, 
         "value": Number, 
       },  
-      "isKill": Boolean, 
       "isCritical": Boolean, 
+      "isKill": Boolean, 
     },  
     "visibilityCondition": { 
       "combiningOperation": String, 
@@ -114665,8 +112959,8 @@ EvaluationForm <a href="#" onclick="return copyEvaluationFormExample()">Copy</a>
             "text": String, 
             "value": Number, 
           },  
-          "isKill": Boolean, 
           "isCritical": Boolean, 
+          "isKill": Boolean, 
         },  
         "visibilityCondition": { 
           "combiningOperation": String, 
@@ -114705,8 +112999,8 @@ EvaluationForm <a href="#" onclick="return copyEvaluationFormExample()">Copy</a>
                 "text": String, 
                 "value": Number, 
               },  
-              "isKill": Boolean, 
               "isCritical": Boolean, 
+              "isKill": Boolean, 
             },  
             "visibilityCondition": { 
               "combiningOperation": String, 
@@ -114739,9 +113033,9 @@ EvaluationForm <a href="#" onclick="return copyEvaluationFormExample()">Copy</a>
                 "total": Number, 
                 "firstUri": String, 
                 "selfUri": String, 
+                "lastUri": String, 
                 "nextUri": String, 
                 "previousUri": String, 
-                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -114751,9 +113045,9 @@ EvaluationForm <a href="#" onclick="return copyEvaluationFormExample()">Copy</a>
             "total": Number, 
             "firstUri": String, 
             "selfUri": String, 
+            "lastUri": String, 
             "nextUri": String, 
             "previousUri": String, 
-            "lastUri": String, 
             "pageCount": Number, 
           },  
           "selfUri": String, 
@@ -114763,9 +113057,9 @@ EvaluationForm <a href="#" onclick="return copyEvaluationFormExample()">Copy</a>
         "total": Number, 
         "firstUri": String, 
         "selfUri": String, 
+        "lastUri": String, 
         "nextUri": String, 
         "previousUri": String, 
-        "lastUri": String, 
         "pageCount": Number, 
       },  
       "selfUri": String, 
@@ -114775,9 +113069,9 @@ EvaluationForm <a href="#" onclick="return copyEvaluationFormExample()">Copy</a>
     "total": Number, 
     "firstUri": String, 
     "selfUri": String, 
+    "lastUri": String, 
     "nextUri": String, 
     "previousUri": String, 
-    "lastUri": String, 
     "pageCount": Number, 
   },  
   "selfUri": String, 
@@ -115003,9 +113297,9 @@ SurveyForm <a href="#" onclick="return copySurveyFormExample()">Copy</a>
                 "total": Number, 
                 "firstUri": String, 
                 "selfUri": String, 
+                "lastUri": String, 
                 "nextUri": String, 
                 "previousUri": String, 
-                "lastUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -115015,9 +113309,9 @@ SurveyForm <a href="#" onclick="return copySurveyFormExample()">Copy</a>
             "total": Number, 
             "firstUri": String, 
             "selfUri": String, 
+            "lastUri": String, 
             "nextUri": String, 
             "previousUri": String, 
-            "lastUri": String, 
             "pageCount": Number, 
           },  
           "selfUri": String, 
@@ -115027,9 +113321,9 @@ SurveyForm <a href="#" onclick="return copySurveyFormExample()">Copy</a>
         "total": Number, 
         "firstUri": String, 
         "selfUri": String, 
+        "lastUri": String, 
         "nextUri": String, 
         "previousUri": String, 
-        "lastUri": String, 
         "pageCount": Number, 
       },  
       "selfUri": String, 
@@ -115039,9 +113333,9 @@ SurveyForm <a href="#" onclick="return copySurveyFormExample()">Copy</a>
     "total": Number, 
     "firstUri": String, 
     "selfUri": String, 
+    "lastUri": String, 
     "nextUri": String, 
     "previousUri": String, 
-    "lastUri": String, 
     "pageCount": Number, 
   },  
   "selfUri": String, 
@@ -115089,735 +113383,6 @@ apiInstance.putQualityFormsSurvey(formId, body)
 ### Return type
 
 **SurveyForm**
-
-<a name="putQualityKeywordset"></a>
-
-# KeywordSet putQualityKeywordset(keywordSetId, body)
-
-
-
-PUT /api/v2/quality/keywordsets/{keywordSetId}
-
-Update a keywordSet to the specified keywordSet via PUT.
-
-
-
-Requires ANY permissions: 
-
-* quality:keywordset:edit
-
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyKeywordSetExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#KeywordSetExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-KeywordSet <a href="#" onclick="return copyKeywordSetExample()">Copy</a>
-
-<div id="KeywordSetExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "id": String, 
-  "name": String, 
-  "description": String, 
-  "queues": { 
-    "id": String, 
-    "name": String, 
-    "division": { 
-      "id": String, 
-      "name": String, 
-      "selfUri": String, 
-    },  
-    "description": String, 
-    "dateCreated": Date, 
-    "dateModified": Date, 
-    "modifiedBy": String, 
-    "createdBy": String, 
-    "memberCount": Number, 
-    "joinedMemberCount": Number, 
-    "mediaSettings": { 
-      "alertingTimeoutSeconds": Number, 
-      "serviceLevel": { 
-        "percentage": Number, 
-        "durationMs": Number, 
-      },  
-    },  
-    "routingRules": { 
-      "operator": String, 
-      "threshold": Number, 
-      "waitSeconds": Number, 
-    },  
-    "bullseye": { 
-      "rings": { 
-        "expansionCriteria": { 
-          "type": String, 
-          "threshold": Number, 
-        },  
-        "actions": { 
-          "skillsToRemove": { 
-            "name": String, 
-            "id": String, 
-            "selfUri": String, 
-          },  
-        },  
-      },  
-    },  
-    "acwSettings": { 
-      "wrapupPrompt": String, 
-      "timeoutMs": Number, 
-    },  
-    "skillEvaluationMethod": String, 
-    "queueFlow": { 
-      "id": String, 
-      "name": String, 
-      "selfUri": String, 
-    },  
-    "whisperPrompt": { 
-      "id": String, 
-      "name": String, 
-      "selfUri": String, 
-    },  
-    "autoAnswerOnly": Boolean, 
-    "enableTranscription": Boolean, 
-    "enableManualAssignment": Boolean, 
-    "callingPartyName": String, 
-    "callingPartyNumber": String, 
-    "defaultScripts": { 
-      "id": String, 
-      "name": String, 
-      "versionId": String, 
-      "createdDate": Date, 
-      "modifiedDate": Date, 
-      "publishedDate": Date, 
-      "versionDate": Date, 
-      "startPageId": String, 
-      "startPageName": String, 
-      "features": Object, 
-      "variables": Object, 
-      "customActions": Object, 
-      "pages": { 
-        "id": String, 
-        "name": String, 
-        "versionId": String, 
-        "createdDate": Date, 
-        "modifiedDate": Date, 
-        "rootContainer": {String: Object}, 
-        "properties": {String: Object}, 
-        "selfUri": String, 
-      },  
-      "selfUri": String, 
-    },  
-    "outboundMessagingAddresses": { 
-      "smsAddress": { 
-        "id": String, 
-        "name": String, 
-        "selfUri": String, 
-      },  
-    },  
-    "outboundEmailAddress": { 
-      "domain": { 
-        "id": String, 
-        "name": String, 
-        "selfUri": String, 
-      },  
-      "route": { 
-        "id": String, 
-        "name": String, 
-        "pattern": String, 
-        "queue": { 
-          "id": String, 
-          "name": String, 
-          "selfUri": String, 
-        },  
-        "priority": Number, 
-        "skills": { 
-          "id": String, 
-          "name": String, 
-          "selfUri": String, 
-        },  
-        "language": { 
-          "id": String, 
-          "name": String, 
-          "selfUri": String, 
-        },  
-        "fromName": String, 
-        "fromEmail": String, 
-        "flow": { 
-          "id": String, 
-          "name": String, 
-          "selfUri": String, 
-        },  
-        "replyEmailAddress": { 
-          "domain": { 
-            "id": String, 
-            "name": String, 
-            "selfUri": String, 
-          },  
-          "route": { 
-            "id": String, 
-            "name": String, 
-            "pattern": String, 
-            "queue": { 
-              "id": String, 
-              "name": String, 
-              "selfUri": String, 
-            },  
-            "priority": Number, 
-            "skills": { 
-              "id": String, 
-              "name": String, 
-              "selfUri": String, 
-            },  
-            "language": { 
-              "id": String, 
-              "name": String, 
-              "selfUri": String, 
-            },  
-            "fromName": String, 
-            "fromEmail": String, 
-            "flow": { 
-              "id": String, 
-              "name": String, 
-              "selfUri": String, 
-            },  
-            "replyEmailAddress": { 
-              "domain": { 
-                "id": String, 
-                "name": String, 
-                "selfUri": String, 
-              },  
-              "route": { 
-                "id": String, 
-                "name": String, 
-                "pattern": String, 
-                "queue": DomainEntityRef, 
-                "priority": Number, 
-                "skills": [DomainEntityRef], 
-                "language": DomainEntityRef, 
-                "fromName": String, 
-                "fromEmail": String, 
-                "flow": DomainEntityRef, 
-                "replyEmailAddress": QueueEmailAddress, 
-                "autoBcc": [EmailAddress], 
-                "spamFlow": DomainEntityRef, 
-                "selfUri": String, 
-              },  
-            },  
-            "autoBcc": { 
-              "email": String, 
-              "name": String, 
-            },  
-            "spamFlow": { 
-              "id": String, 
-              "name": String, 
-              "selfUri": String, 
-            },  
-            "selfUri": String, 
-          },  
-        },  
-        "autoBcc": { 
-          "email": String, 
-          "name": String, 
-        },  
-        "spamFlow": { 
-          "id": String, 
-          "name": String, 
-          "selfUri": String, 
-        },  
-        "selfUri": String, 
-      },  
-    },  
-    "selfUri": String, 
-  },  
-  "language": String, 
-  "agents": { 
-    "id": String, 
-    "name": String, 
-    "division": { 
-      "id": String, 
-      "name": String, 
-      "selfUri": String, 
-    },  
-    "chat": { 
-      "jabberId": String, 
-    },  
-    "department": String, 
-    "email": String, 
-    "primaryContactInfo": { 
-      "address": String, 
-      "display": String, 
-      "mediaType": String, 
-      "type": String, 
-      "extension": String, 
-      "countryCode": String, 
-    },  
-    "addresses": { 
-      "address": String, 
-      "display": String, 
-      "mediaType": String, 
-      "type": String, 
-      "extension": String, 
-      "countryCode": String, 
-    },  
-    "state": String, 
-    "title": String, 
-    "username": String, 
-    "manager": User, 
-    "images": { 
-      "resolution": String, 
-      "imageUri": String, 
-    },  
-    "version": Number, 
-    "certifications": [String], 
-    "biography": { 
-      "biography": String, 
-      "interests": [String], 
-      "hobbies": [String], 
-      "spouse": String, 
-      "education": { 
-        "school": String, 
-        "fieldOfStudy": String, 
-        "notes": String, 
-        "dateStart": String, 
-        "dateEnd": String, 
-      },  
-    },  
-    "employerInfo": { 
-      "officialName": String, 
-      "employeeId": String, 
-      "employeeType": String, 
-      "dateHire": String, 
-    },  
-    "routingStatus": { 
-      "userId": String, 
-      "status": String, 
-      "startTime": Date, 
-    },  
-    "presence": { 
-      "id": String, 
-      "name": String, 
-      "source": String, 
-      "primary": Boolean, 
-      "presenceDefinition": { 
-        "id": String, 
-        "systemPresence": String, 
-        "selfUri": String, 
-      },  
-      "message": String, 
-      "modifiedDate": Date, 
-      "selfUri": String, 
-    },  
-    "conversationSummary": { 
-      "userId": String, 
-      "call": { 
-        "contactCenter": { 
-          "active": Number, 
-          "acw": Number, 
-        },  
-        "enterprise": { 
-          "active": Number, 
-          "acw": Number, 
-        },  
-      },  
-      "callback": { 
-        "contactCenter": { 
-          "active": Number, 
-          "acw": Number, 
-        },  
-        "enterprise": { 
-          "active": Number, 
-          "acw": Number, 
-        },  
-      },  
-      "email": { 
-        "contactCenter": { 
-          "active": Number, 
-          "acw": Number, 
-        },  
-        "enterprise": { 
-          "active": Number, 
-          "acw": Number, 
-        },  
-      },  
-      "message": { 
-        "contactCenter": { 
-          "active": Number, 
-          "acw": Number, 
-        },  
-        "enterprise": { 
-          "active": Number, 
-          "acw": Number, 
-        },  
-      },  
-      "chat": { 
-        "contactCenter": { 
-          "active": Number, 
-          "acw": Number, 
-        },  
-        "enterprise": { 
-          "active": Number, 
-          "acw": Number, 
-        },  
-      },  
-      "socialExpression": { 
-        "contactCenter": { 
-          "active": Number, 
-          "acw": Number, 
-        },  
-        "enterprise": { 
-          "active": Number, 
-          "acw": Number, 
-        },  
-      },  
-      "video": { 
-        "contactCenter": { 
-          "active": Number, 
-          "acw": Number, 
-        },  
-        "enterprise": { 
-          "active": Number, 
-          "acw": Number, 
-        },  
-      },  
-    },  
-    "outOfOffice": { 
-      "id": String, 
-      "name": String, 
-      "user": User, 
-      "startDate": Date, 
-      "endDate": Date, 
-      "active": Boolean, 
-      "indefinite": Boolean, 
-      "selfUri": String, 
-    },  
-    "geolocation": { 
-      "id": String, 
-      "name": String, 
-      "type": String, 
-      "primary": Boolean, 
-      "latitude": Number, 
-      "longitude": Number, 
-      "country": String, 
-      "region": String, 
-      "city": String, 
-      "locations": { 
-        "id": String, 
-        "name": String, 
-        "contactUser": { 
-          "id": String, 
-          "selfUri": String, 
-        },  
-        "emergencyNumber": { 
-          "e164": String, 
-          "number": String, 
-          "type": String, 
-        },  
-        "address": { 
-          "city": String, 
-          "country": String, 
-          "countryName": String, 
-          "state": String, 
-          "street1": String, 
-          "street2": String, 
-          "zipcode": String, 
-        },  
-        "state": String, 
-        "notes": String, 
-        "version": Number, 
-        "path": [String], 
-        "profileImage": { 
-          "resolution": String, 
-          "imageUri": String, 
-        },  
-        "floorplanImage": { 
-          "resolution": String, 
-          "imageUri": String, 
-        },  
-        "addressVerificationDetails": { 
-          "status": String, 
-          "dateFinished": Date, 
-          "dateStarted": Date, 
-          "service": String, 
-        },  
-        "addressVerified": Boolean, 
-        "addressStored": Boolean, 
-        "images": String, 
-        "selfUri": String, 
-      },  
-      "selfUri": String, 
-    },  
-    "station": { 
-      "associatedStation": { 
-        "id": String, 
-        "name": String, 
-        "type": String, 
-        "associatedUser": User, 
-        "associatedDate": Date, 
-        "defaultUser": User, 
-        "providerInfo": {String: String}, 
-      },  
-      "effectiveStation": { 
-        "id": String, 
-        "name": String, 
-        "type": String, 
-        "associatedUser": User, 
-        "associatedDate": Date, 
-        "defaultUser": User, 
-        "providerInfo": {String: String}, 
-      },  
-      "defaultStation": { 
-        "id": String, 
-        "name": String, 
-        "type": String, 
-        "associatedUser": User, 
-        "associatedDate": Date, 
-        "defaultUser": User, 
-        "providerInfo": {String: String}, 
-      },  
-      "lastAssociatedStation": { 
-        "id": String, 
-        "name": String, 
-        "type": String, 
-        "associatedUser": User, 
-        "associatedDate": Date, 
-        "defaultUser": User, 
-        "providerInfo": {String: String}, 
-      },  
-    },  
-    "authorization": { 
-      "roles": { 
-        "id": String, 
-        "name": String, 
-      },  
-      "unusedRoles": { 
-        "id": String, 
-        "name": String, 
-      },  
-      "permissions": [String], 
-      "permissionPolicies": { 
-        "id": String, 
-        "domain": String, 
-        "entityName": String, 
-        "policyName": String, 
-        "policyDescription": String, 
-        "actionSetKey": String, 
-        "allowConditions": Boolean, 
-        "resourceConditionNode": { 
-          "variableName": String, 
-          "conjunction": String, 
-          "operator": String, 
-          "operands": { 
-            "type": String, 
-            "value": String, 
-          },  
-          "terms": { 
-            "variableName": String, 
-            "conjunction": String, 
-            "operator": String, 
-            "operands": { 
-              "type": String, 
-              "value": String, 
-            },  
-            "terms": { 
-              "variableName": String, 
-              "conjunction": String, 
-              "operator": String, 
-              "operands": { 
-                "type": String, 
-                "value": String, 
-              },  
-              "terms": { 
-                "variableName": String, 
-                "conjunction": String, 
-                "operator": String, 
-                "operands": [ResourceConditionValue], 
-                "terms": [ResourceConditionNode], 
-              },  
-            },  
-          },  
-        },  
-        "namedResources": [String], 
-        "resourceCondition": String, 
-        "actionSet": [String], 
-      },  
-    },  
-    "profileSkills": [String], 
-    "locations": { 
-      "id": String, 
-      "floorplanId": String, 
-      "coordinates": {String: Number}, 
-      "notes": String, 
-      "locationDefinition": { 
-        "id": String, 
-        "name": String, 
-        "contactUser": { 
-          "id": String, 
-          "selfUri": String, 
-        },  
-        "emergencyNumber": { 
-          "e164": String, 
-          "number": String, 
-          "type": String, 
-        },  
-        "address": { 
-          "city": String, 
-          "country": String, 
-          "countryName": String, 
-          "state": String, 
-          "street1": String, 
-          "street2": String, 
-          "zipcode": String, 
-        },  
-        "state": String, 
-        "notes": String, 
-        "version": Number, 
-        "path": [String], 
-        "profileImage": { 
-          "resolution": String, 
-          "imageUri": String, 
-        },  
-        "floorplanImage": { 
-          "resolution": String, 
-          "imageUri": String, 
-        },  
-        "addressVerificationDetails": { 
-          "status": String, 
-          "dateFinished": Date, 
-          "dateStarted": Date, 
-          "service": String, 
-        },  
-        "addressVerified": Boolean, 
-        "addressStored": Boolean, 
-        "images": String, 
-        "selfUri": String, 
-      },  
-    },  
-    "groups": { 
-      "id": String, 
-      "name": String, 
-      "description": String, 
-      "dateModified": Date, 
-      "memberCount": Number, 
-      "state": String, 
-      "version": Number, 
-      "type": String, 
-      "images": { 
-        "resolution": String, 
-        "imageUri": String, 
-      },  
-      "addresses": { 
-        "address": String, 
-        "extension": String, 
-        "display": String, 
-        "type": String, 
-        "mediaType": String, 
-      },  
-      "rulesVisible": Boolean, 
-      "visibility": String, 
-      "owners": User, 
-      "selfUri": String, 
-    },  
-    "team": { 
-      "id": String, 
-      "name": String, 
-      "description": String, 
-      "dateModified": Date, 
-      "memberCount": Number, 
-      "selfUri": String, 
-    },  
-    "skills": { 
-      "id": String, 
-      "name": String, 
-      "proficiency": Number, 
-      "state": String, 
-      "skillUri": String, 
-      "selfUri": String, 
-    },  
-    "languages": { 
-      "id": String, 
-      "name": String, 
-      "proficiency": Number, 
-      "state": String, 
-      "languageUri": String, 
-      "selfUri": String, 
-    },  
-    "acdAutoAnswer": Boolean, 
-    "languagePreference": String, 
-    "lastTokenIssued": { 
-      "dateIssued": Date, 
-    },  
-    "selfUri": String, 
-  },  
-  "keywords": { 
-    "id": String, 
-    "name": String, 
-    "phrase": String, 
-    "confidence": Number, 
-    "agentScoreModifier": Number, 
-    "customerScoreModifier": Number, 
-    "alternateSpellings": [String], 
-    "pronunciations": [String], 
-    "antiWords": [String], 
-    "antiPronunciations": [String], 
-    "spotabilityIndex": Number, 
-    "marginOfError": Number, 
-    "pronunciation": String, 
-  },  
-  "participantPurposes": [String], 
-  "selfUri": String, 
-}
-```
-
-</div>
-
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.QualityApi();
-
-let keywordSetId = "keywordSetId_example"; // String | KeywordSet ID
-let body = {}; // Object | keywordSet
-
-apiInstance.putQualityKeywordset(keywordSetId, body)
-  .then((data) => {
-    console.log(`putQualityKeywordset success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch((err) => {
-    console.log('There was a failure calling putQualityKeywordset');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **keywordSetId** | **String** | KeywordSet ID |  |
- **body** | **Object** | keywordSet |  |
-{: class="table table-striped"}
-
-### Return type
-
-**KeywordSet**
 
 <a name="putQualitySurveysScorable"></a>
 
@@ -115985,9 +113550,9 @@ ScorableSurvey <a href="#" onclick="return copyScorableSurveyExample()">Copy</a>
               "total": Number, 
               "firstUri": String, 
               "selfUri": String, 
+              "lastUri": String, 
               "nextUri": String, 
               "previousUri": String, 
-              "lastUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -115997,9 +113562,9 @@ ScorableSurvey <a href="#" onclick="return copyScorableSurveyExample()">Copy</a>
           "total": Number, 
           "firstUri": String, 
           "selfUri": String, 
+          "lastUri": String, 
           "nextUri": String, 
           "previousUri": String, 
-          "lastUri": String, 
           "pageCount": Number, 
         },  
         "selfUri": String, 
@@ -116009,9 +113574,9 @@ ScorableSurvey <a href="#" onclick="return copyScorableSurveyExample()">Copy</a>
       "total": Number, 
       "firstUri": String, 
       "selfUri": String, 
+      "lastUri": String, 
       "nextUri": String, 
       "previousUri": String, 
-      "lastUri": String, 
       "pageCount": Number, 
     },  
     "selfUri": String, 

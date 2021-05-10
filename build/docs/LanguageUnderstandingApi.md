@@ -711,6 +711,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
                 "evaluationStatus": String, 
                 "intents": [IntentDefinition], 
                 "entityTypes": [NamedEntityTypeDefinition], 
+                "entities": [NamedEntityDefinition], 
                 "selfUri": String, 
               },  
               "lastPublishedVersion": { 
@@ -727,6 +728,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
                 "evaluationStatus": String, 
                 "intents": [IntentDefinition], 
                 "entityTypes": [NamedEntityTypeDefinition], 
+                "entities": [NamedEntityDefinition], 
                 "selfUri": String, 
               },  
               "dateCreated": Date, 
@@ -748,6 +750,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
                 "entityType": String, 
                 "entityName": String, 
               },  
+              "entityNameReferences": [String], 
               "utterances": { 
                 "segments": [NluUtteranceSegment], 
               },  
@@ -760,6 +763,10 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
                 "restricted": Boolean, 
                 "type": String, 
               },  
+            },  
+            "entities": { 
+              "name": String, 
+              "type": String, 
             },  
             "selfUri": String, 
           },  
@@ -783,6 +790,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
                 "evaluationStatus": String, 
                 "intents": [IntentDefinition], 
                 "entityTypes": [NamedEntityTypeDefinition], 
+                "entities": [NamedEntityDefinition], 
                 "selfUri": String, 
               },  
               "lastPublishedVersion": { 
@@ -799,6 +807,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
                 "evaluationStatus": String, 
                 "intents": [IntentDefinition], 
                 "entityTypes": [NamedEntityTypeDefinition], 
+                "entities": [NamedEntityDefinition], 
                 "selfUri": String, 
               },  
               "dateCreated": Date, 
@@ -820,6 +829,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
                 "entityType": String, 
                 "entityName": String, 
               },  
+              "entityNameReferences": [String], 
               "utterances": { 
                 "segments": [NluUtteranceSegment], 
               },  
@@ -832,6 +842,10 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
                 "restricted": Boolean, 
                 "type": String, 
               },  
+            },  
+            "entities": { 
+              "name": String, 
+              "type": String, 
             },  
             "selfUri": String, 
           },  
@@ -854,6 +868,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
             "entityType": String, 
             "entityName": String, 
           },  
+          "entityNameReferences": [String], 
           "utterances": { 
             "segments": { 
               "text": String, 
@@ -874,6 +889,10 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
             "restricted": Boolean, 
             "type": String, 
           },  
+        },  
+        "entities": { 
+          "name": String, 
+          "type": String, 
         },  
         "selfUri": String, 
       },  
@@ -903,6 +922,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
                 "evaluationStatus": String, 
                 "intents": [IntentDefinition], 
                 "entityTypes": [NamedEntityTypeDefinition], 
+                "entities": [NamedEntityDefinition], 
                 "selfUri": String, 
               },  
               "lastPublishedVersion": { 
@@ -919,6 +939,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
                 "evaluationStatus": String, 
                 "intents": [IntentDefinition], 
                 "entityTypes": [NamedEntityTypeDefinition], 
+                "entities": [NamedEntityDefinition], 
                 "selfUri": String, 
               },  
               "dateCreated": Date, 
@@ -940,6 +961,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
                 "entityType": String, 
                 "entityName": String, 
               },  
+              "entityNameReferences": [String], 
               "utterances": { 
                 "segments": [NluUtteranceSegment], 
               },  
@@ -952,6 +974,10 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
                 "restricted": Boolean, 
                 "type": String, 
               },  
+            },  
+            "entities": { 
+              "name": String, 
+              "type": String, 
             },  
             "selfUri": String, 
           },  
@@ -975,6 +1001,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
                 "evaluationStatus": String, 
                 "intents": [IntentDefinition], 
                 "entityTypes": [NamedEntityTypeDefinition], 
+                "entities": [NamedEntityDefinition], 
                 "selfUri": String, 
               },  
               "lastPublishedVersion": { 
@@ -991,6 +1018,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
                 "evaluationStatus": String, 
                 "intents": [IntentDefinition], 
                 "entityTypes": [NamedEntityTypeDefinition], 
+                "entities": [NamedEntityDefinition], 
                 "selfUri": String, 
               },  
               "dateCreated": Date, 
@@ -1012,6 +1040,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
                 "entityType": String, 
                 "entityName": String, 
               },  
+              "entityNameReferences": [String], 
               "utterances": { 
                 "segments": [NluUtteranceSegment], 
               },  
@@ -1024,6 +1053,10 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
                 "restricted": Boolean, 
                 "type": String, 
               },  
+            },  
+            "entities": { 
+              "name": String, 
+              "type": String, 
             },  
             "selfUri": String, 
           },  
@@ -1046,6 +1079,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
             "entityType": String, 
             "entityName": String, 
           },  
+          "entityNameReferences": [String], 
           "utterances": { 
             "segments": { 
               "text": String, 
@@ -1066,6 +1100,10 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
             "restricted": Boolean, 
             "type": String, 
           },  
+        },  
+        "entities": { 
+          "name": String, 
+          "type": String, 
         },  
         "selfUri": String, 
       },  
@@ -1088,6 +1126,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
         "entityType": String, 
         "entityName": String, 
       },  
+      "entityNameReferences": [String], 
       "utterances": { 
         "segments": { 
           "text": String, 
@@ -1108,6 +1147,10 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
         "restricted": Boolean, 
         "type": String, 
       },  
+    },  
+    "entities": { 
+      "name": String, 
+      "type": String, 
     },  
     "selfUri": String, 
   },  
@@ -1143,6 +1186,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
                 "evaluationStatus": String, 
                 "intents": [IntentDefinition], 
                 "entityTypes": [NamedEntityTypeDefinition], 
+                "entities": [NamedEntityDefinition], 
                 "selfUri": String, 
               },  
               "lastPublishedVersion": { 
@@ -1159,6 +1203,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
                 "evaluationStatus": String, 
                 "intents": [IntentDefinition], 
                 "entityTypes": [NamedEntityTypeDefinition], 
+                "entities": [NamedEntityDefinition], 
                 "selfUri": String, 
               },  
               "dateCreated": Date, 
@@ -1180,6 +1225,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
                 "entityType": String, 
                 "entityName": String, 
               },  
+              "entityNameReferences": [String], 
               "utterances": { 
                 "segments": [NluUtteranceSegment], 
               },  
@@ -1192,6 +1238,10 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
                 "restricted": Boolean, 
                 "type": String, 
               },  
+            },  
+            "entities": { 
+              "name": String, 
+              "type": String, 
             },  
             "selfUri": String, 
           },  
@@ -1215,6 +1265,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
                 "evaluationStatus": String, 
                 "intents": [IntentDefinition], 
                 "entityTypes": [NamedEntityTypeDefinition], 
+                "entities": [NamedEntityDefinition], 
                 "selfUri": String, 
               },  
               "lastPublishedVersion": { 
@@ -1231,6 +1282,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
                 "evaluationStatus": String, 
                 "intents": [IntentDefinition], 
                 "entityTypes": [NamedEntityTypeDefinition], 
+                "entities": [NamedEntityDefinition], 
                 "selfUri": String, 
               },  
               "dateCreated": Date, 
@@ -1252,6 +1304,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
                 "entityType": String, 
                 "entityName": String, 
               },  
+              "entityNameReferences": [String], 
               "utterances": { 
                 "segments": [NluUtteranceSegment], 
               },  
@@ -1264,6 +1317,10 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
                 "restricted": Boolean, 
                 "type": String, 
               },  
+            },  
+            "entities": { 
+              "name": String, 
+              "type": String, 
             },  
             "selfUri": String, 
           },  
@@ -1286,6 +1343,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
             "entityType": String, 
             "entityName": String, 
           },  
+          "entityNameReferences": [String], 
           "utterances": { 
             "segments": { 
               "text": String, 
@@ -1306,6 +1364,10 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
             "restricted": Boolean, 
             "type": String, 
           },  
+        },  
+        "entities": { 
+          "name": String, 
+          "type": String, 
         },  
         "selfUri": String, 
       },  
@@ -1335,6 +1397,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
                 "evaluationStatus": String, 
                 "intents": [IntentDefinition], 
                 "entityTypes": [NamedEntityTypeDefinition], 
+                "entities": [NamedEntityDefinition], 
                 "selfUri": String, 
               },  
               "lastPublishedVersion": { 
@@ -1351,6 +1414,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
                 "evaluationStatus": String, 
                 "intents": [IntentDefinition], 
                 "entityTypes": [NamedEntityTypeDefinition], 
+                "entities": [NamedEntityDefinition], 
                 "selfUri": String, 
               },  
               "dateCreated": Date, 
@@ -1372,6 +1436,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
                 "entityType": String, 
                 "entityName": String, 
               },  
+              "entityNameReferences": [String], 
               "utterances": { 
                 "segments": [NluUtteranceSegment], 
               },  
@@ -1384,6 +1449,10 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
                 "restricted": Boolean, 
                 "type": String, 
               },  
+            },  
+            "entities": { 
+              "name": String, 
+              "type": String, 
             },  
             "selfUri": String, 
           },  
@@ -1407,6 +1476,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
                 "evaluationStatus": String, 
                 "intents": [IntentDefinition], 
                 "entityTypes": [NamedEntityTypeDefinition], 
+                "entities": [NamedEntityDefinition], 
                 "selfUri": String, 
               },  
               "lastPublishedVersion": { 
@@ -1423,6 +1493,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
                 "evaluationStatus": String, 
                 "intents": [IntentDefinition], 
                 "entityTypes": [NamedEntityTypeDefinition], 
+                "entities": [NamedEntityDefinition], 
                 "selfUri": String, 
               },  
               "dateCreated": Date, 
@@ -1444,6 +1515,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
                 "entityType": String, 
                 "entityName": String, 
               },  
+              "entityNameReferences": [String], 
               "utterances": { 
                 "segments": [NluUtteranceSegment], 
               },  
@@ -1456,6 +1528,10 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
                 "restricted": Boolean, 
                 "type": String, 
               },  
+            },  
+            "entities": { 
+              "name": String, 
+              "type": String, 
             },  
             "selfUri": String, 
           },  
@@ -1478,6 +1554,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
             "entityType": String, 
             "entityName": String, 
           },  
+          "entityNameReferences": [String], 
           "utterances": { 
             "segments": { 
               "text": String, 
@@ -1498,6 +1575,10 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
             "restricted": Boolean, 
             "type": String, 
           },  
+        },  
+        "entities": { 
+          "name": String, 
+          "type": String, 
         },  
         "selfUri": String, 
       },  
@@ -1520,6 +1601,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
         "entityType": String, 
         "entityName": String, 
       },  
+      "entityNameReferences": [String], 
       "utterances": { 
         "segments": { 
           "text": String, 
@@ -1540,6 +1622,10 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
         "restricted": Boolean, 
         "type": String, 
       },  
+    },  
+    "entities": { 
+      "name": String, 
+      "type": String, 
     },  
     "selfUri": String, 
   },  
@@ -1978,12 +2064,17 @@ NluDomainVersion <a href="#" onclick="return copyNluDomainVersionExample()">Copy
               "intents": { 
                 "name": String, 
                 "entityTypeBindings": [NamedEntityTypeBinding], 
+                "entityNameReferences": [String], 
                 "utterances": [NluUtterance], 
               },  
               "entityTypes": { 
                 "name": String, 
                 "description": String, 
                 "mechanism": NamedEntityTypeMechanism, 
+              },  
+              "entities": { 
+                "name": String, 
+                "type": String, 
               },  
               "selfUri": String, 
             },  
@@ -2011,12 +2102,17 @@ NluDomainVersion <a href="#" onclick="return copyNluDomainVersionExample()">Copy
               "intents": { 
                 "name": String, 
                 "entityTypeBindings": [NamedEntityTypeBinding], 
+                "entityNameReferences": [String], 
                 "utterances": [NluUtterance], 
               },  
               "entityTypes": { 
                 "name": String, 
                 "description": String, 
                 "mechanism": NamedEntityTypeMechanism, 
+              },  
+              "entities": { 
+                "name": String, 
+                "type": String, 
               },  
               "selfUri": String, 
             },  
@@ -2039,6 +2135,7 @@ NluDomainVersion <a href="#" onclick="return copyNluDomainVersionExample()">Copy
               "entityType": String, 
               "entityName": String, 
             },  
+            "entityNameReferences": [String], 
             "utterances": { 
               "segments": { 
                 "text": String, 
@@ -2057,6 +2154,10 @@ NluDomainVersion <a href="#" onclick="return copyNluDomainVersionExample()">Copy
               "restricted": Boolean, 
               "type": String, 
             },  
+          },  
+          "entities": { 
+            "name": String, 
+            "type": String, 
           },  
           "selfUri": String, 
         },  
@@ -2090,12 +2191,17 @@ NluDomainVersion <a href="#" onclick="return copyNluDomainVersionExample()">Copy
               "intents": { 
                 "name": String, 
                 "entityTypeBindings": [NamedEntityTypeBinding], 
+                "entityNameReferences": [String], 
                 "utterances": [NluUtterance], 
               },  
               "entityTypes": { 
                 "name": String, 
                 "description": String, 
                 "mechanism": NamedEntityTypeMechanism, 
+              },  
+              "entities": { 
+                "name": String, 
+                "type": String, 
               },  
               "selfUri": String, 
             },  
@@ -2123,12 +2229,17 @@ NluDomainVersion <a href="#" onclick="return copyNluDomainVersionExample()">Copy
               "intents": { 
                 "name": String, 
                 "entityTypeBindings": [NamedEntityTypeBinding], 
+                "entityNameReferences": [String], 
                 "utterances": [NluUtterance], 
               },  
               "entityTypes": { 
                 "name": String, 
                 "description": String, 
                 "mechanism": NamedEntityTypeMechanism, 
+              },  
+              "entities": { 
+                "name": String, 
+                "type": String, 
               },  
               "selfUri": String, 
             },  
@@ -2151,6 +2262,7 @@ NluDomainVersion <a href="#" onclick="return copyNluDomainVersionExample()">Copy
               "entityType": String, 
               "entityName": String, 
             },  
+            "entityNameReferences": [String], 
             "utterances": { 
               "segments": { 
                 "text": String, 
@@ -2169,6 +2281,10 @@ NluDomainVersion <a href="#" onclick="return copyNluDomainVersionExample()">Copy
               "restricted": Boolean, 
               "type": String, 
             },  
+          },  
+          "entities": { 
+            "name": String, 
+            "type": String, 
           },  
           "selfUri": String, 
         },  
@@ -2191,6 +2307,7 @@ NluDomainVersion <a href="#" onclick="return copyNluDomainVersionExample()">Copy
           "entityType": String, 
           "entityName": String, 
         },  
+        "entityNameReferences": [String], 
         "utterances": { 
           "segments": { 
             "text": String, 
@@ -2211,6 +2328,10 @@ NluDomainVersion <a href="#" onclick="return copyNluDomainVersionExample()">Copy
           "restricted": Boolean, 
           "type": String, 
         },  
+      },  
+      "entities": { 
+        "name": String, 
+        "type": String, 
       },  
       "selfUri": String, 
     },  
@@ -2250,12 +2371,17 @@ NluDomainVersion <a href="#" onclick="return copyNluDomainVersionExample()">Copy
               "intents": { 
                 "name": String, 
                 "entityTypeBindings": [NamedEntityTypeBinding], 
+                "entityNameReferences": [String], 
                 "utterances": [NluUtterance], 
               },  
               "entityTypes": { 
                 "name": String, 
                 "description": String, 
                 "mechanism": NamedEntityTypeMechanism, 
+              },  
+              "entities": { 
+                "name": String, 
+                "type": String, 
               },  
               "selfUri": String, 
             },  
@@ -2283,12 +2409,17 @@ NluDomainVersion <a href="#" onclick="return copyNluDomainVersionExample()">Copy
               "intents": { 
                 "name": String, 
                 "entityTypeBindings": [NamedEntityTypeBinding], 
+                "entityNameReferences": [String], 
                 "utterances": [NluUtterance], 
               },  
               "entityTypes": { 
                 "name": String, 
                 "description": String, 
                 "mechanism": NamedEntityTypeMechanism, 
+              },  
+              "entities": { 
+                "name": String, 
+                "type": String, 
               },  
               "selfUri": String, 
             },  
@@ -2311,6 +2442,7 @@ NluDomainVersion <a href="#" onclick="return copyNluDomainVersionExample()">Copy
               "entityType": String, 
               "entityName": String, 
             },  
+            "entityNameReferences": [String], 
             "utterances": { 
               "segments": { 
                 "text": String, 
@@ -2329,6 +2461,10 @@ NluDomainVersion <a href="#" onclick="return copyNluDomainVersionExample()">Copy
               "restricted": Boolean, 
               "type": String, 
             },  
+          },  
+          "entities": { 
+            "name": String, 
+            "type": String, 
           },  
           "selfUri": String, 
         },  
@@ -2362,12 +2498,17 @@ NluDomainVersion <a href="#" onclick="return copyNluDomainVersionExample()">Copy
               "intents": { 
                 "name": String, 
                 "entityTypeBindings": [NamedEntityTypeBinding], 
+                "entityNameReferences": [String], 
                 "utterances": [NluUtterance], 
               },  
               "entityTypes": { 
                 "name": String, 
                 "description": String, 
                 "mechanism": NamedEntityTypeMechanism, 
+              },  
+              "entities": { 
+                "name": String, 
+                "type": String, 
               },  
               "selfUri": String, 
             },  
@@ -2395,12 +2536,17 @@ NluDomainVersion <a href="#" onclick="return copyNluDomainVersionExample()">Copy
               "intents": { 
                 "name": String, 
                 "entityTypeBindings": [NamedEntityTypeBinding], 
+                "entityNameReferences": [String], 
                 "utterances": [NluUtterance], 
               },  
               "entityTypes": { 
                 "name": String, 
                 "description": String, 
                 "mechanism": NamedEntityTypeMechanism, 
+              },  
+              "entities": { 
+                "name": String, 
+                "type": String, 
               },  
               "selfUri": String, 
             },  
@@ -2423,6 +2569,7 @@ NluDomainVersion <a href="#" onclick="return copyNluDomainVersionExample()">Copy
               "entityType": String, 
               "entityName": String, 
             },  
+            "entityNameReferences": [String], 
             "utterances": { 
               "segments": { 
                 "text": String, 
@@ -2441,6 +2588,10 @@ NluDomainVersion <a href="#" onclick="return copyNluDomainVersionExample()">Copy
               "restricted": Boolean, 
               "type": String, 
             },  
+          },  
+          "entities": { 
+            "name": String, 
+            "type": String, 
           },  
           "selfUri": String, 
         },  
@@ -2463,6 +2614,7 @@ NluDomainVersion <a href="#" onclick="return copyNluDomainVersionExample()">Copy
           "entityType": String, 
           "entityName": String, 
         },  
+        "entityNameReferences": [String], 
         "utterances": { 
           "segments": { 
             "text": String, 
@@ -2483,6 +2635,10 @@ NluDomainVersion <a href="#" onclick="return copyNluDomainVersionExample()">Copy
           "restricted": Boolean, 
           "type": String, 
         },  
+      },  
+      "entities": { 
+        "name": String, 
+        "type": String, 
       },  
       "selfUri": String, 
     },  
@@ -2505,6 +2661,7 @@ NluDomainVersion <a href="#" onclick="return copyNluDomainVersionExample()">Copy
       "entityType": String, 
       "entityName": String, 
     },  
+    "entityNameReferences": [String], 
     "utterances": { 
       "segments": { 
         "text": String, 
@@ -2525,6 +2682,10 @@ NluDomainVersion <a href="#" onclick="return copyNluDomainVersionExample()">Copy
       "restricted": Boolean, 
       "type": String, 
     },  
+  },  
+  "entities": { 
+    "name": String, 
+    "type": String, 
   },  
   "selfUri": String, 
 }
@@ -2644,6 +2805,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
                 "evaluationStatus": String, 
                 "intents": [IntentDefinition], 
                 "entityTypes": [NamedEntityTypeDefinition], 
+                "entities": [NamedEntityDefinition], 
                 "selfUri": String, 
               },  
               "lastPublishedVersion": { 
@@ -2660,6 +2822,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
                 "evaluationStatus": String, 
                 "intents": [IntentDefinition], 
                 "entityTypes": [NamedEntityTypeDefinition], 
+                "entities": [NamedEntityDefinition], 
                 "selfUri": String, 
               },  
               "dateCreated": Date, 
@@ -2681,6 +2844,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
                 "entityType": String, 
                 "entityName": String, 
               },  
+              "entityNameReferences": [String], 
               "utterances": { 
                 "segments": [NluUtteranceSegment], 
               },  
@@ -2693,6 +2857,10 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
                 "restricted": Boolean, 
                 "type": String, 
               },  
+            },  
+            "entities": { 
+              "name": String, 
+              "type": String, 
             },  
             "selfUri": String, 
           },  
@@ -2716,6 +2884,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
                 "evaluationStatus": String, 
                 "intents": [IntentDefinition], 
                 "entityTypes": [NamedEntityTypeDefinition], 
+                "entities": [NamedEntityDefinition], 
                 "selfUri": String, 
               },  
               "lastPublishedVersion": { 
@@ -2732,6 +2901,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
                 "evaluationStatus": String, 
                 "intents": [IntentDefinition], 
                 "entityTypes": [NamedEntityTypeDefinition], 
+                "entities": [NamedEntityDefinition], 
                 "selfUri": String, 
               },  
               "dateCreated": Date, 
@@ -2753,6 +2923,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
                 "entityType": String, 
                 "entityName": String, 
               },  
+              "entityNameReferences": [String], 
               "utterances": { 
                 "segments": [NluUtteranceSegment], 
               },  
@@ -2765,6 +2936,10 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
                 "restricted": Boolean, 
                 "type": String, 
               },  
+            },  
+            "entities": { 
+              "name": String, 
+              "type": String, 
             },  
             "selfUri": String, 
           },  
@@ -2787,6 +2962,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
             "entityType": String, 
             "entityName": String, 
           },  
+          "entityNameReferences": [String], 
           "utterances": { 
             "segments": { 
               "text": String, 
@@ -2807,6 +2983,10 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
             "restricted": Boolean, 
             "type": String, 
           },  
+        },  
+        "entities": { 
+          "name": String, 
+          "type": String, 
         },  
         "selfUri": String, 
       },  
@@ -2836,6 +3016,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
                 "evaluationStatus": String, 
                 "intents": [IntentDefinition], 
                 "entityTypes": [NamedEntityTypeDefinition], 
+                "entities": [NamedEntityDefinition], 
                 "selfUri": String, 
               },  
               "lastPublishedVersion": { 
@@ -2852,6 +3033,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
                 "evaluationStatus": String, 
                 "intents": [IntentDefinition], 
                 "entityTypes": [NamedEntityTypeDefinition], 
+                "entities": [NamedEntityDefinition], 
                 "selfUri": String, 
               },  
               "dateCreated": Date, 
@@ -2873,6 +3055,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
                 "entityType": String, 
                 "entityName": String, 
               },  
+              "entityNameReferences": [String], 
               "utterances": { 
                 "segments": [NluUtteranceSegment], 
               },  
@@ -2885,6 +3068,10 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
                 "restricted": Boolean, 
                 "type": String, 
               },  
+            },  
+            "entities": { 
+              "name": String, 
+              "type": String, 
             },  
             "selfUri": String, 
           },  
@@ -2908,6 +3095,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
                 "evaluationStatus": String, 
                 "intents": [IntentDefinition], 
                 "entityTypes": [NamedEntityTypeDefinition], 
+                "entities": [NamedEntityDefinition], 
                 "selfUri": String, 
               },  
               "lastPublishedVersion": { 
@@ -2924,6 +3112,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
                 "evaluationStatus": String, 
                 "intents": [IntentDefinition], 
                 "entityTypes": [NamedEntityTypeDefinition], 
+                "entities": [NamedEntityDefinition], 
                 "selfUri": String, 
               },  
               "dateCreated": Date, 
@@ -2945,6 +3134,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
                 "entityType": String, 
                 "entityName": String, 
               },  
+              "entityNameReferences": [String], 
               "utterances": { 
                 "segments": [NluUtteranceSegment], 
               },  
@@ -2957,6 +3147,10 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
                 "restricted": Boolean, 
                 "type": String, 
               },  
+            },  
+            "entities": { 
+              "name": String, 
+              "type": String, 
             },  
             "selfUri": String, 
           },  
@@ -2979,6 +3173,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
             "entityType": String, 
             "entityName": String, 
           },  
+          "entityNameReferences": [String], 
           "utterances": { 
             "segments": { 
               "text": String, 
@@ -2999,6 +3194,10 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
             "restricted": Boolean, 
             "type": String, 
           },  
+        },  
+        "entities": { 
+          "name": String, 
+          "type": String, 
         },  
         "selfUri": String, 
       },  
@@ -3021,6 +3220,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
         "entityType": String, 
         "entityName": String, 
       },  
+      "entityNameReferences": [String], 
       "utterances": { 
         "segments": { 
           "text": String, 
@@ -3041,6 +3241,10 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
         "restricted": Boolean, 
         "type": String, 
       },  
+    },  
+    "entities": { 
+      "name": String, 
+      "type": String, 
     },  
     "selfUri": String, 
   },  
@@ -3076,6 +3280,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
                 "evaluationStatus": String, 
                 "intents": [IntentDefinition], 
                 "entityTypes": [NamedEntityTypeDefinition], 
+                "entities": [NamedEntityDefinition], 
                 "selfUri": String, 
               },  
               "lastPublishedVersion": { 
@@ -3092,6 +3297,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
                 "evaluationStatus": String, 
                 "intents": [IntentDefinition], 
                 "entityTypes": [NamedEntityTypeDefinition], 
+                "entities": [NamedEntityDefinition], 
                 "selfUri": String, 
               },  
               "dateCreated": Date, 
@@ -3113,6 +3319,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
                 "entityType": String, 
                 "entityName": String, 
               },  
+              "entityNameReferences": [String], 
               "utterances": { 
                 "segments": [NluUtteranceSegment], 
               },  
@@ -3125,6 +3332,10 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
                 "restricted": Boolean, 
                 "type": String, 
               },  
+            },  
+            "entities": { 
+              "name": String, 
+              "type": String, 
             },  
             "selfUri": String, 
           },  
@@ -3148,6 +3359,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
                 "evaluationStatus": String, 
                 "intents": [IntentDefinition], 
                 "entityTypes": [NamedEntityTypeDefinition], 
+                "entities": [NamedEntityDefinition], 
                 "selfUri": String, 
               },  
               "lastPublishedVersion": { 
@@ -3164,6 +3376,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
                 "evaluationStatus": String, 
                 "intents": [IntentDefinition], 
                 "entityTypes": [NamedEntityTypeDefinition], 
+                "entities": [NamedEntityDefinition], 
                 "selfUri": String, 
               },  
               "dateCreated": Date, 
@@ -3185,6 +3398,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
                 "entityType": String, 
                 "entityName": String, 
               },  
+              "entityNameReferences": [String], 
               "utterances": { 
                 "segments": [NluUtteranceSegment], 
               },  
@@ -3197,6 +3411,10 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
                 "restricted": Boolean, 
                 "type": String, 
               },  
+            },  
+            "entities": { 
+              "name": String, 
+              "type": String, 
             },  
             "selfUri": String, 
           },  
@@ -3219,6 +3437,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
             "entityType": String, 
             "entityName": String, 
           },  
+          "entityNameReferences": [String], 
           "utterances": { 
             "segments": { 
               "text": String, 
@@ -3239,6 +3458,10 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
             "restricted": Boolean, 
             "type": String, 
           },  
+        },  
+        "entities": { 
+          "name": String, 
+          "type": String, 
         },  
         "selfUri": String, 
       },  
@@ -3268,6 +3491,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
                 "evaluationStatus": String, 
                 "intents": [IntentDefinition], 
                 "entityTypes": [NamedEntityTypeDefinition], 
+                "entities": [NamedEntityDefinition], 
                 "selfUri": String, 
               },  
               "lastPublishedVersion": { 
@@ -3284,6 +3508,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
                 "evaluationStatus": String, 
                 "intents": [IntentDefinition], 
                 "entityTypes": [NamedEntityTypeDefinition], 
+                "entities": [NamedEntityDefinition], 
                 "selfUri": String, 
               },  
               "dateCreated": Date, 
@@ -3305,6 +3530,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
                 "entityType": String, 
                 "entityName": String, 
               },  
+              "entityNameReferences": [String], 
               "utterances": { 
                 "segments": [NluUtteranceSegment], 
               },  
@@ -3317,6 +3543,10 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
                 "restricted": Boolean, 
                 "type": String, 
               },  
+            },  
+            "entities": { 
+              "name": String, 
+              "type": String, 
             },  
             "selfUri": String, 
           },  
@@ -3340,6 +3570,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
                 "evaluationStatus": String, 
                 "intents": [IntentDefinition], 
                 "entityTypes": [NamedEntityTypeDefinition], 
+                "entities": [NamedEntityDefinition], 
                 "selfUri": String, 
               },  
               "lastPublishedVersion": { 
@@ -3356,6 +3587,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
                 "evaluationStatus": String, 
                 "intents": [IntentDefinition], 
                 "entityTypes": [NamedEntityTypeDefinition], 
+                "entities": [NamedEntityDefinition], 
                 "selfUri": String, 
               },  
               "dateCreated": Date, 
@@ -3377,6 +3609,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
                 "entityType": String, 
                 "entityName": String, 
               },  
+              "entityNameReferences": [String], 
               "utterances": { 
                 "segments": [NluUtteranceSegment], 
               },  
@@ -3389,6 +3622,10 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
                 "restricted": Boolean, 
                 "type": String, 
               },  
+            },  
+            "entities": { 
+              "name": String, 
+              "type": String, 
             },  
             "selfUri": String, 
           },  
@@ -3411,6 +3648,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
             "entityType": String, 
             "entityName": String, 
           },  
+          "entityNameReferences": [String], 
           "utterances": { 
             "segments": { 
               "text": String, 
@@ -3431,6 +3669,10 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
             "restricted": Boolean, 
             "type": String, 
           },  
+        },  
+        "entities": { 
+          "name": String, 
+          "type": String, 
         },  
         "selfUri": String, 
       },  
@@ -3453,6 +3695,7 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
         "entityType": String, 
         "entityName": String, 
       },  
+      "entityNameReferences": [String], 
       "utterances": { 
         "segments": { 
           "text": String, 
@@ -3473,6 +3716,10 @@ NluDomain <a href="#" onclick="return copyNluDomainExample()">Copy</a>
         "restricted": Boolean, 
         "type": String, 
       },  
+    },  
+    "entities": { 
+      "name": String, 
+      "type": String, 
     },  
     "selfUri": String, 
   },  
@@ -3600,12 +3847,17 @@ NluDomainVersion <a href="#" onclick="return copyNluDomainVersionExample()">Copy
               "intents": { 
                 "name": String, 
                 "entityTypeBindings": [NamedEntityTypeBinding], 
+                "entityNameReferences": [String], 
                 "utterances": [NluUtterance], 
               },  
               "entityTypes": { 
                 "name": String, 
                 "description": String, 
                 "mechanism": NamedEntityTypeMechanism, 
+              },  
+              "entities": { 
+                "name": String, 
+                "type": String, 
               },  
               "selfUri": String, 
             },  
@@ -3633,12 +3885,17 @@ NluDomainVersion <a href="#" onclick="return copyNluDomainVersionExample()">Copy
               "intents": { 
                 "name": String, 
                 "entityTypeBindings": [NamedEntityTypeBinding], 
+                "entityNameReferences": [String], 
                 "utterances": [NluUtterance], 
               },  
               "entityTypes": { 
                 "name": String, 
                 "description": String, 
                 "mechanism": NamedEntityTypeMechanism, 
+              },  
+              "entities": { 
+                "name": String, 
+                "type": String, 
               },  
               "selfUri": String, 
             },  
@@ -3661,6 +3918,7 @@ NluDomainVersion <a href="#" onclick="return copyNluDomainVersionExample()">Copy
               "entityType": String, 
               "entityName": String, 
             },  
+            "entityNameReferences": [String], 
             "utterances": { 
               "segments": { 
                 "text": String, 
@@ -3679,6 +3937,10 @@ NluDomainVersion <a href="#" onclick="return copyNluDomainVersionExample()">Copy
               "restricted": Boolean, 
               "type": String, 
             },  
+          },  
+          "entities": { 
+            "name": String, 
+            "type": String, 
           },  
           "selfUri": String, 
         },  
@@ -3712,12 +3974,17 @@ NluDomainVersion <a href="#" onclick="return copyNluDomainVersionExample()">Copy
               "intents": { 
                 "name": String, 
                 "entityTypeBindings": [NamedEntityTypeBinding], 
+                "entityNameReferences": [String], 
                 "utterances": [NluUtterance], 
               },  
               "entityTypes": { 
                 "name": String, 
                 "description": String, 
                 "mechanism": NamedEntityTypeMechanism, 
+              },  
+              "entities": { 
+                "name": String, 
+                "type": String, 
               },  
               "selfUri": String, 
             },  
@@ -3745,12 +4012,17 @@ NluDomainVersion <a href="#" onclick="return copyNluDomainVersionExample()">Copy
               "intents": { 
                 "name": String, 
                 "entityTypeBindings": [NamedEntityTypeBinding], 
+                "entityNameReferences": [String], 
                 "utterances": [NluUtterance], 
               },  
               "entityTypes": { 
                 "name": String, 
                 "description": String, 
                 "mechanism": NamedEntityTypeMechanism, 
+              },  
+              "entities": { 
+                "name": String, 
+                "type": String, 
               },  
               "selfUri": String, 
             },  
@@ -3773,6 +4045,7 @@ NluDomainVersion <a href="#" onclick="return copyNluDomainVersionExample()">Copy
               "entityType": String, 
               "entityName": String, 
             },  
+            "entityNameReferences": [String], 
             "utterances": { 
               "segments": { 
                 "text": String, 
@@ -3791,6 +4064,10 @@ NluDomainVersion <a href="#" onclick="return copyNluDomainVersionExample()">Copy
               "restricted": Boolean, 
               "type": String, 
             },  
+          },  
+          "entities": { 
+            "name": String, 
+            "type": String, 
           },  
           "selfUri": String, 
         },  
@@ -3813,6 +4090,7 @@ NluDomainVersion <a href="#" onclick="return copyNluDomainVersionExample()">Copy
           "entityType": String, 
           "entityName": String, 
         },  
+        "entityNameReferences": [String], 
         "utterances": { 
           "segments": { 
             "text": String, 
@@ -3833,6 +4111,10 @@ NluDomainVersion <a href="#" onclick="return copyNluDomainVersionExample()">Copy
           "restricted": Boolean, 
           "type": String, 
         },  
+      },  
+      "entities": { 
+        "name": String, 
+        "type": String, 
       },  
       "selfUri": String, 
     },  
@@ -3872,12 +4154,17 @@ NluDomainVersion <a href="#" onclick="return copyNluDomainVersionExample()">Copy
               "intents": { 
                 "name": String, 
                 "entityTypeBindings": [NamedEntityTypeBinding], 
+                "entityNameReferences": [String], 
                 "utterances": [NluUtterance], 
               },  
               "entityTypes": { 
                 "name": String, 
                 "description": String, 
                 "mechanism": NamedEntityTypeMechanism, 
+              },  
+              "entities": { 
+                "name": String, 
+                "type": String, 
               },  
               "selfUri": String, 
             },  
@@ -3905,12 +4192,17 @@ NluDomainVersion <a href="#" onclick="return copyNluDomainVersionExample()">Copy
               "intents": { 
                 "name": String, 
                 "entityTypeBindings": [NamedEntityTypeBinding], 
+                "entityNameReferences": [String], 
                 "utterances": [NluUtterance], 
               },  
               "entityTypes": { 
                 "name": String, 
                 "description": String, 
                 "mechanism": NamedEntityTypeMechanism, 
+              },  
+              "entities": { 
+                "name": String, 
+                "type": String, 
               },  
               "selfUri": String, 
             },  
@@ -3933,6 +4225,7 @@ NluDomainVersion <a href="#" onclick="return copyNluDomainVersionExample()">Copy
               "entityType": String, 
               "entityName": String, 
             },  
+            "entityNameReferences": [String], 
             "utterances": { 
               "segments": { 
                 "text": String, 
@@ -3951,6 +4244,10 @@ NluDomainVersion <a href="#" onclick="return copyNluDomainVersionExample()">Copy
               "restricted": Boolean, 
               "type": String, 
             },  
+          },  
+          "entities": { 
+            "name": String, 
+            "type": String, 
           },  
           "selfUri": String, 
         },  
@@ -3984,12 +4281,17 @@ NluDomainVersion <a href="#" onclick="return copyNluDomainVersionExample()">Copy
               "intents": { 
                 "name": String, 
                 "entityTypeBindings": [NamedEntityTypeBinding], 
+                "entityNameReferences": [String], 
                 "utterances": [NluUtterance], 
               },  
               "entityTypes": { 
                 "name": String, 
                 "description": String, 
                 "mechanism": NamedEntityTypeMechanism, 
+              },  
+              "entities": { 
+                "name": String, 
+                "type": String, 
               },  
               "selfUri": String, 
             },  
@@ -4017,12 +4319,17 @@ NluDomainVersion <a href="#" onclick="return copyNluDomainVersionExample()">Copy
               "intents": { 
                 "name": String, 
                 "entityTypeBindings": [NamedEntityTypeBinding], 
+                "entityNameReferences": [String], 
                 "utterances": [NluUtterance], 
               },  
               "entityTypes": { 
                 "name": String, 
                 "description": String, 
                 "mechanism": NamedEntityTypeMechanism, 
+              },  
+              "entities": { 
+                "name": String, 
+                "type": String, 
               },  
               "selfUri": String, 
             },  
@@ -4045,6 +4352,7 @@ NluDomainVersion <a href="#" onclick="return copyNluDomainVersionExample()">Copy
               "entityType": String, 
               "entityName": String, 
             },  
+            "entityNameReferences": [String], 
             "utterances": { 
               "segments": { 
                 "text": String, 
@@ -4063,6 +4371,10 @@ NluDomainVersion <a href="#" onclick="return copyNluDomainVersionExample()">Copy
               "restricted": Boolean, 
               "type": String, 
             },  
+          },  
+          "entities": { 
+            "name": String, 
+            "type": String, 
           },  
           "selfUri": String, 
         },  
@@ -4085,6 +4397,7 @@ NluDomainVersion <a href="#" onclick="return copyNluDomainVersionExample()">Copy
           "entityType": String, 
           "entityName": String, 
         },  
+        "entityNameReferences": [String], 
         "utterances": { 
           "segments": { 
             "text": String, 
@@ -4105,6 +4418,10 @@ NluDomainVersion <a href="#" onclick="return copyNluDomainVersionExample()">Copy
           "restricted": Boolean, 
           "type": String, 
         },  
+      },  
+      "entities": { 
+        "name": String, 
+        "type": String, 
       },  
       "selfUri": String, 
     },  
@@ -4127,6 +4444,7 @@ NluDomainVersion <a href="#" onclick="return copyNluDomainVersionExample()">Copy
       "entityType": String, 
       "entityName": String, 
     },  
+    "entityNameReferences": [String], 
     "utterances": { 
       "segments": { 
         "text": String, 
@@ -4147,6 +4465,10 @@ NluDomainVersion <a href="#" onclick="return copyNluDomainVersionExample()">Copy
       "restricted": Boolean, 
       "type": String, 
     },  
+  },  
+  "entities": { 
+    "name": String, 
+    "type": String, 
   },  
   "selfUri": String, 
 }

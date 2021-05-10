@@ -5,7 +5,7 @@ class CoachingApi {
 	/**
 	 * Coaching service.
 	 * @module purecloud-platform-client-v2/api/CoachingApi
-	 * @version 112.0.0
+	 * @version 113.0.0
 	 */
 
 	/**
@@ -537,6 +537,31 @@ class CoachingApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/coaching/appointments/aggregates/query', 
+			'POST', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get list of possible slots where a coaching appointment can be scheduled.
+	 * 
+	 * @param {Object} body The slot search request
+	 */
+	postCoachingScheduleslotsQuery(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postCoachingScheduleslotsQuery';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/coaching/scheduleslots/query', 
 			'POST', 
 			{  }, 
 			{  }, 

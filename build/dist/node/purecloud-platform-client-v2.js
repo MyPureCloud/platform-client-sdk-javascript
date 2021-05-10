@@ -16,9 +16,344 @@ var PureCloudRegionHosts = {
     eu_west_2: "euw2.pure.cloud"
    }
 
+const winston = require('winston');
+
+const logLevels = {
+	levels: {
+		none: 0,
+		error: 1,
+		debug: 2,
+		trace: 3,
+	},
+};
+
+const logLevelEnum = {
+	level: {
+		LNone: 'none',
+		LError: 'error',
+		LDebug: 'debug',
+		LTrace: 'trace',
+	},
+};
+
+const logFormatEnum = {
+	formats: {
+		JSON: 'json',
+		TEXT: 'text',
+	},
+};
+
+class Logger {
+	get logLevelEnum() {
+		return logLevelEnum;
+	}
+
+	get logFormatEnum() {
+		return logFormatEnum;
+	}
+
+	constructor() {
+		this.log_level = logLevelEnum.level.LNone;
+		this.log_format = logFormatEnum.formats.TEXT;
+		this.log_to_console = true;
+		this.log_file_path;
+		this.log_response_body = false;
+		this.log_request_body = false;
+
+		this.setLogger();
+	}
+
+	createNewLogger() {
+		this.logger = winston.createLogger({
+			levels: logLevels.levels,
+			level: this.log_level,
+		});
+	}
+
+	setLogger() {
+		this.createNewLogger();
+		if (this.log_file_path && this.log_file_path !== '') {
+			if (this.log_format === logFormatEnum.formats.JSON) {
+				this.logger.add(new winston.transports.File({ format: winston.format.json(), filename: this.log_file_path }));
+			} else {
+				this.logger.add(
+					new winston.transports.File({
+						format: winston.format.combine(
+							winston.format((info) => {
+								info.level = info.level.toUpperCase();
+								return info;
+							})(),
+							winston.format.simple()
+						),
+						filename: this.log_file_path,
+					})
+				);
+			}
+		}
+		if (this.log_to_console) {
+			if (this.log_format === logFormatEnum.formats.JSON) {
+				this.logger.add(new winston.transports.Console({ format: winston.format.json() }));
+			} else {
+				this.logger.add(
+					new winston.transports.Console({
+						format: winston.format.combine(
+							winston.format((info) => {
+								info.level = info.level.toUpperCase();
+								return info;
+							})(),
+							winston.format.simple()
+						),
+					})
+				);
+			}
+		}
+	}
+
+	log(level, statusCode, method, url, requestHeaders, responseHeaders, requestBody, responseBody) {
+		var content = this.formatLog(level, statusCode, method, url, requestHeaders, responseHeaders, requestBody, responseBody);
+		if (this.logger.transports.length > 0) this.logger.log(level, content);
+	}
+
+	formatLog(level, statusCode, method, url, requestHeaders, responseHeaders, requestBody, responseBody) {
+		var result;
+		if (requestHeaders) requestHeaders['Authorization'] = '[REDACTED]';
+		if (!this.log_request_body) requestBody = undefined;
+		if (!this.log_response_body) responseBody = undefined;
+		if (this.log_format && this.log_format === logFormatEnum.formats.JSON) {
+			result = {
+				level: level,
+				date: new Date().toISOString(),
+				method: method,
+				url: decodeURIComponent(url),
+				correlationId: responseHeaders ? (responseHeaders['inin-correlation-id'] ? responseHeaders['inin-correlation-id'] : '') : '',
+				statusCode: statusCode,
+			};
+			if (requestHeaders) result.requestHeaders = requestHeaders;
+			if (responseHeaders) result.responseHeaders = responseHeaders;
+			if (requestBody) result.requestBody = requestBody;
+			if (responseBody) result.responseBody = responseBody;
+		} else {
+			result = `${new Date().toISOString()}
+=== REQUEST === 
+${this.formatValue('URL', decodeURIComponent(url))}${this.formatValue('Method', method)}${this.formatValue(
+				'Headers',
+				this.formatHeaderString(requestHeaders)
+			)}${this.formatValue('Body', requestBody ? JSON.stringify(requestBody, null, 2) : '')}
+=== RESPONSE ===
+${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.formatHeaderString(responseHeaders))}${this.formatValue(
+				'CorrelationId',
+				responseHeaders ? (responseHeaders['inin-correlation-id'] ? responseHeaders['inin-correlation-id'] : '') : ''
+			)}${this.formatValue('Body', responseBody ? JSON.stringify(responseBody, null, 2) : '')}`;
+		}
+
+		return result;
+	}
+
+	formatHeaderString(headers) {
+		var headerString = '';
+		if (!headers) return headerString;
+		for (const [key, value] of Object.entries(headers)) {
+			headerString += `\n\t${key}: ${value}`;
+		}
+		return headerString;
+	}
+
+	formatValue(key, value) {
+		if (!value || value === '' || value === '{}') return '';
+		return `${key}: ${value}\n`;
+	}
+
+	getLogLevel(level) {
+		switch (level) {
+			case 'error':
+				return logLevelEnum.level.LError;
+			case 'debug':
+				return logLevelEnum.level.LDebug;
+			case 'trace':
+				return logLevelEnum.level.LTrace;
+			default:
+				return logLevelEnum.level.LNone;
+		}
+	}
+
+	getLogFormat(format) {
+		switch (format) {
+			case 'json':
+				return logFormatEnum.formats.JSON;
+			default:
+				return logFormatEnum.formats.TEXT;
+		}
+	}
+}
+
+const ConfigParser = require('configparser');
+const os = require('os');
+const path = require('path');
+const fs = require('fs');
+
+class Configuration {
+	/**
+	 * Singleton getter
+	 */
+	get instance() {
+		return Configuration.instance;
+	}
+
+	/**
+	 * Singleton setter
+	 */
+	set instance(value) {
+		Configuration.instance = value;
+	}
+
+	constructor() {
+		if (!Configuration.instance) {
+			Configuration.instance = this;
+		}
+
+		this.configPath = typeof window !== 'undefined' ? '' : path.join(os.homedir(), '.genesyscloudjavascript', 'config');
+		this.refresh_access_token = true;
+		this.refresh_token_wait_max = 10;
+		this.live_reload_config = true;
+		this.host;
+		this.environment;
+		this.basePath;
+		this.authUrl;
+		this.config;
+		this.logger = new Logger();
+		this.setEnvironment();
+		this.liveLoadConfig();
+	}
+
+	liveLoadConfig() {
+		// If in browser, don't read config file, use default values
+		if (typeof window !== 'undefined') {
+			this.configPath = '';
+			return;
+		}
+
+		this.updateConfigFromFile();
+
+		if (this.live_reload_config && this.live_reload_config === true) {
+			try {
+				fs.watchFile(this.configPath, { persistent: false }, (eventType, filename) => {
+					this.updateConfigFromFile();
+					if (!this.live_reload_config) {
+						fs.unwatchFile(this.configPath);
+					}
+				});
+			} catch (err) {
+				// do nothing
+			}
+		}
+	}
+
+	setConfigPath(path) {
+		if (path && path !== this.configPath) {
+			this.configPath = path;
+			this.liveLoadConfig();
+		}
+	}
+
+	updateConfigFromFile() {
+		var configparser = new ConfigParser();
+
+		try {
+			configparser.read(this.configPath); // If no error catched, indicates it's INI format
+			this.config = configparser;
+		} catch (error) {
+			if (error.name && error.name === 'MissingSectionHeaderError') {
+				// Not INI format, see if it's JSON format
+				var configData = fs.readFileSync(this.configPath, 'utf8');
+				this.config = {
+					_sections: JSON.parse(configData), // To match INI data format
+				};
+			}
+		}
+
+		if (this.config) this.updateConfigValues();
+	}
+
+	updateConfigValues() {
+		this.logger.log_level = this.logger.getLogLevel(this.getConfigString('logging', 'log_level'));
+		this.logger.log_format = this.logger.getLogFormat(this.getConfigString('logging', 'log_format'));
+		this.logger.log_to_console =
+			this.getConfigBoolean('logging', 'log_to_console') !== undefined
+				? this.getConfigBoolean('logging', 'log_to_console')
+				: this.logger.log_to_console;
+		this.logger.log_file_path =
+			this.getConfigString('logging', 'log_file_path') !== undefined
+				? this.getConfigString('logging', 'log_file_path')
+				: this.logger.log_file_path;
+		this.logger.log_response_body =
+			this.getConfigBoolean('logging', 'log_response_body') !== undefined
+				? this.getConfigBoolean('logging', 'log_response_body')
+				: this.logger.log_response_body;
+		this.logger.log_request_body =
+			this.getConfigBoolean('logging', 'log_request_body') !== undefined
+				? this.getConfigBoolean('logging', 'log_request_body')
+				: this.logger.log_request_body;
+		this.refresh_access_token =
+			this.getConfigBoolean('reauthentication', 'refresh_access_token') !== undefined
+				? this.getConfigBoolean('reauthentication', 'refresh_access_token')
+				: this.refresh_access_token;
+		this.refresh_token_wait_max =
+			this.getConfigInt('reauthentication', 'refresh_token_wait_max') !== undefined
+				? this.getConfigInt('reauthentication', 'refresh_token_wait_max')
+				: this.refresh_token_wait_max;
+		this.live_reload_config =
+			this.getConfigBoolean('general', 'live_reload_config') !== undefined
+				? this.getConfigBoolean('general', 'live_reload_config')
+				: this.live_reload_config;
+		this.host = this.getConfigString('general', 'host') !== undefined ? this.getConfigString('general', 'host') : this.host;
+
+		this.setEnvironment();
+
+		// Update logging configs
+		this.logger.setLogger();
+	}
+
+	setEnvironment(env) {
+		// Default value
+		if (env) this.environment = env;
+		else this.environment = this.host ? this.host : 'mypurecloud.com';
+
+		// Strip trailing slash
+		this.environment = this.environment.replace(/\/+$/, '');
+
+		// Strip protocol and subdomain
+		if (this.environment.startsWith('https://')) this.environment = this.environment.substring(8);
+		if (this.environment.startsWith('http://')) this.environment = this.environment.substring(7);
+		if (this.environment.startsWith('api.')) this.environment = this.environment.substring(4);
+
+		this.basePath = `https://api.${this.environment}`;
+		this.authUrl = `https://login.${this.environment}`;
+	}
+
+	getConfigString(section, key) {
+		if (this.config._sections[section]) return this.config._sections[section][key];
+	}
+
+	getConfigBoolean(section, key) {
+		if (this.config._sections[section] && this.config._sections[section][key] !== undefined) {
+			if (typeof this.config._sections[section][key] === 'string') {
+				return this.config._sections[section][key] === 'true';
+			} else return this.config._sections[section][key];
+		}
+	}
+
+	getConfigInt(section, key) {
+		if (this.config._sections[section] && this.config._sections[section][key]) {
+			if (typeof this.config._sections[section][key] === 'string') {
+				return parseInt(this.config._sections[section][key]);
+			} else return this.config._sections[section][key];
+		}
+	}
+}
+
 /**
  * @module purecloud-platform-client-v2/ApiClient
- * @version 112.0.0
+ * @version 113.0.0
  */
 class ApiClient {
 	/**
@@ -96,13 +431,6 @@ class ApiClient {
 		}
 
 		/**
-		 * The base URL against which to resolve every API call's (relative) path.
-		 * @type {String}
-		 * @default https://api.mypurecloud.com
-		 */
-		this.setEnvironment('https://api.mypurecloud.com');
-
-		/**
 		 * The authentication methods to be included for all API calls.
 		 * @type {Array.<String>}
 		 */
@@ -132,21 +460,11 @@ class ApiClient {
 		this.superagent = superagent;
 
 		// Transparently request a new access token when it expires (Code Authorization only)
-		this.shouldRefreshAccessToken = true;
 		this.refreshInProgress = false;
-		this.refreshTokenWaitTime = 10;
 
 		if (typeof(window) !== 'undefined') window.ApiClient = this;
-	}
 
-	/**
-	 * @description Sets the debug log to enable debug logging
-	 * @param {log} debugLog - In most cases use `console.log`
-	 * @param {integer} maxLines - (optional) The max number of lines to write to the log. Must be > 0.
-	 */
-	setDebugLog(debugLog, maxLines) {
-		this.debugLog = debugLog;
-		this.debugLogMaxLines = (maxLines && maxLines > 0) ? maxLines : undefined;
+		this.config = new Configuration();
 	}
 
 	/**
@@ -165,7 +483,6 @@ class ApiClient {
 	setPersistSettings(doPersist, prefix) {
 		this.persistSettings = doPersist;
 		this.settingsPrefix = prefix ? prefix.replace(/\W+/g, '_') : 'purecloud';
-		this._debugTrace(`this.settingsPrefix=${this.settingsPrefix}`);
 	}
 
 	/**
@@ -193,7 +510,6 @@ class ApiClient {
 
 			// Ensure we can access local storage
 			if (!this.hasLocalStorage) {
-				this._debugTrace('Warning: Cannot access local storage. Settings will not be saved.');
 				return;
 			}
 
@@ -203,7 +519,6 @@ class ApiClient {
 
 			// Save updated auth data
 			localStorage.setItem(`${this.settingsPrefix}_auth_data`, JSON.stringify(tempData));
-			this._debugTrace('Auth data saved to local storage');
 		} catch (e) {
 			console.error(e);
 		}
@@ -218,7 +533,6 @@ class ApiClient {
 
 		// Ensure we can access local storage
 		if (!this.hasLocalStorage) {
-			this._debugTrace('Warning: Cannot access local storage. Settings will not be loaded.');
 			return;
 		}
 
@@ -238,24 +552,7 @@ class ApiClient {
 	 * @param {string} environment - (Optional, default "mypurecloud.com") Environment the session use, e.g. mypurecloud.ie, mypurecloud.com.au, etc.
 	 */
 	setEnvironment(environment) {
-		if (!environment)
-			environment = 'mypurecloud.com';
-
-		// Strip trailing slash
-		environment = environment.replace(/\/+$/, '');
-
-		// Strip protocol and subdomain
-		if (environment.startsWith('https://'))
-			environment = environment.substring(8);
-		if (environment.startsWith('http://'))
-			environment = environment.substring(7);
-		if (environment.startsWith('api.'))
-			environment = environment.substring(4);
-
-		// Set vars
-		this.environment = environment;
-		this.basePath = `https://api.${environment}`;
-		this.authUrl = `https://login.${environment}`;
+		this.config.setEnvironment(environment);
 	}
 
 	/**
@@ -299,8 +596,6 @@ class ApiClient {
 					resolve(this.authData);
 				})
 				.catch((error) => {
-					this._debugTrace('Error encountered during login. This is normal if the application has not yet been authorized.');
-					this._debugTrace(error);
 					var query = {
 						client_id: encodeURIComponent(this.clientId),
 						redirect_uri: encodeURIComponent(this.redirectUri),
@@ -311,7 +606,6 @@ class ApiClient {
 					if (opts.provider) query.provider = encodeURIComponent(opts.provider);
 
 					var url = this._buildAuthUrl('oauth/authorize', query);
-					this._debugTrace(`Implicit grant: redirecting to ${url} for authorization...`);
 					window.location.replace(url);
 				});
 		});
@@ -324,7 +618,7 @@ class ApiClient {
 	 */
 	loginClientCredentialsGrant(clientId, clientSecret) {
 		this.clientId = clientId;
-		var authHeader = new Buffer(`${clientId}:${clientSecret}`).toString('base64');
+		var authHeader = Buffer.from(`${clientId}:${clientSecret}`).toString('base64');
 
 		return new Promise((resolve, reject) => {
 			// Block browsers from using client credentials
@@ -334,7 +628,7 @@ class ApiClient {
 			}
 
 			// Build token request
-			var request = superagent('POST', `https://login.${this.environment}/oauth/token`);
+			var request = superagent('POST', `https://login.${this.config.environment}/oauth/token`);
 			if (this.proxy && request.proxy) {
 				request.proxy(this.proxy);
 			}
@@ -344,15 +638,47 @@ class ApiClient {
 			// Execute request
 			request.end((error, response) => {
 				if (error) {
+					// Log error
+					this.config.logger.log(
+						'error',
+						response.statusCode,
+						'POST',
+						`https://login.${this.config.environment}/oauth/token`,
+						request.header,
+						response.headers,
+						{ grant_type: 'client_credentials' },
+						response.body
+					);
 					reject(error);
 				} else {
+					// Logging
+					this.config.logger.log(
+						'trace',
+						response.statusCode,
+						'POST',
+						`https://login.${this.config.environment}/oauth/token`,
+						request.header,
+						response.headers,
+						{ grant_type: 'client_credentials' },
+						undefined
+					);
+					this.config.logger.log(
+						'debug',
+						response.statusCode,
+						'POST',
+						`https://login.${this.config.environment}/oauth/token`,
+						request.header,
+						undefined,
+						{ grant_type: 'client_credentials' },
+						undefined
+					);
+
 					// Save access token
 					this.setAccessToken(response.body['access_token']);
 
 					// Set expiry time
 					this.authData.tokenExpiryTime = (new Date()).getTime() + (response.body['expires_in'] * 1000);
 					this.authData.tokenExpiryTimeString = (new Date(this.authData.tokenExpiryTime)).toUTCString();
-					this._debugTrace(`Access token expires in ${response.body['expires_in']} seconds`);
 
 					// Return auth data
 					resolve(this.authData);
@@ -375,23 +701,61 @@ class ApiClient {
 				reject(new Error('The saml2bearer grant is not supported in a browser.'));
 				return;
 			}
-			var encodedData = new Buffer(clientId + ':' + clientSecret).toString('base64');
+			var encodedData = Buffer.from(clientId + ':' + clientSecret).toString('base64');
 			var request = this._formAuthRequest(encodedData,
 												{ grant_type: 'urn:ietf:params:oauth:grant-type:saml2-bearer' },
 										        { orgName: orgName },
 										        { assertion: assertion });
+			var bodyParam = {
+				grant_type: 'urn:ietf:params:oauth:grant-type:saml2-bearer',
+				orgName: orgName,
+				assertion: assertion,
+			};
+
 			// Handle response
 			request.end((error, response) => {
 				if (error) {
+					// Log error
+					this.config.logger.log(
+						'error',
+						response.statusCode,
+						'POST',
+						`https://login.${this.config.environment}/oauth/token`,
+						request.header,
+						response.headers,
+						bodyParam,
+						response.body
+					);
 					reject(error);
 				} else {
+					// Logging
+					this.config.logger.log(
+						'trace',
+						response.statusCode,
+						'POST',
+						`https://login.${this.config.environment}/oauth/token`,
+						request.header,
+						response.headers,
+						bodyParam,
+						undefined
+					);
+					this.config.logger.log(
+						'debug',
+						response.statusCode,
+						'POST',
+						`https://login.${this.config.environment}/oauth/token`,
+						request.header,
+						undefined,
+						bodyParam,
+						undefined
+					);
+
 					// Get access token from response
 					var access_token = response.body.access_token;
 
 					this.setAccessToken(access_token);
 					this.authData.tokenExpiryTime = new Date().getTime() + response.body['expires_in'] * 1000;
 					this.authData.tokenExpiryTimeString = new Date(this.authData.tokenExpiryTime).toUTCString();
-					this._debugTrace(`Access token expires in ${response.body['expires_in']} seconds`);
 
 					// Return auth data
 					resolve(this.authData);
@@ -415,13 +779,18 @@ class ApiClient {
 				reject(new Error('The Code Authorization grant is not supported in a browser.'));
 				return;
 			}
-			var encodedData = new Buffer(clientId + ':' + clientSecret).toString('base64');
+			var encodedData = Buffer.from(clientId + ':' + clientSecret).toString('base64');
 			var request = this._formAuthRequest(encodedData,
 												{ grant_type: 'authorization_code' },
 									            { code: authCode },
 										        { redirect_uri: redirectUri });
+			var bodyParam = {
+				grant_type: 'authorization_code',
+				code: authCode,
+				redirect_uri: redirectUri,
+			};
 			// Handle response
-			this._handleCodeAuthorizationResponse(request, resolve, reject);
+			this._handleCodeAuthorizationResponse(request, bodyParam, resolve, reject);
 		});
 	}
 
@@ -438,38 +807,76 @@ class ApiClient {
 				reject(new Error('The Code Authorization grant is not supported in a browser.'));
 				return;
 			}
-			var encodedData = new Buffer(clientId + ':' + clientSecret).toString('base64');
+			var encodedData = Buffer.from(clientId + ':' + clientSecret).toString('base64');
 			var request = this._formAuthRequest(encodedData, { grant_type: 'refresh_token' }, { refresh_token: refreshToken });
+			var bodyParam = {
+				grant_type: 'refresh_token',
+				refresh_token: refreshToken,
+			};
 			// Handle response
-			this._handleCodeAuthorizationResponse(request, resolve, reject);
+			this._handleCodeAuthorizationResponse(request, bodyParam, resolve, reject);
 		});
 	}
 
 	/**
 	 * @description Handles the response for code auth requests
-	 * @param {object} request - Authoriation request object
+	 * @param {object} request - Authorization request object
+	 * @param {object} bodyParam - Input body data for authorization request
 	 * @param {function} resolve - Promise resolve callback
 	 * @param {function} reject - Promise reject callback
 	 */
-	_handleCodeAuthorizationResponse(request, resolve, reject) {
+	_handleCodeAuthorizationResponse(request, bodyParam, resolve, reject) {
 		request.end((error, response) => {
-				if (error) {
-					reject(error);
-				} else {
-					// Get access token from response
-					var access_token = response.body.access_token;
-					var refresh_token = response.body.refresh_token;
+			if (error) {
+				// Log error
+				this.config.logger.log(
+					'error',
+					response.statusCode,
+					'POST',
+					`https://login.${this.config.environment}/oauth/token`,
+					request.header,
+					response.headers,
+					bodyParam,
+					response.body
+				);
 
-					this.setAccessToken(access_token);
-					this.authData.refreshToken = refresh_token;
-					this.authData.tokenExpiryTime = new Date().getTime() + response.body['expires_in'] * 1000;
-					this.authData.tokenExpiryTimeString = new Date(this.authData.tokenExpiryTime).toUTCString();
-					this._debugTrace(`Access token expires in ${response.body['expires_in']} seconds`);
+				reject(error);
+			} else {
+				// Logging
+				this.config.logger.log(
+					'trace',
+					response.statusCode,
+					'POST',
+					`https://login.${this.config.environment}/oauth/token`,
+					request.header,
+					response.headers,
+					bodyParam,
+					undefined
+				);
+				this.config.logger.log(
+					'debug',
+					response.statusCode,
+					'POST',
+					`https://login.${this.config.environment}/oauth/token`,
+					request.header,
+					undefined,
+					bodyParam,
+					undefined
+				);
 
-					// Return auth data
-					resolve(this.authData);
-				}
-			});
+				// Get access token from response
+				var access_token = response.body.access_token;
+				var refresh_token = response.body.refresh_token;
+
+				this.setAccessToken(access_token);
+				this.authData.refreshToken = refresh_token;
+				this.authData.tokenExpiryTime = new Date().getTime() + response.body['expires_in'] * 1000;
+				this.authData.tokenExpiryTimeString = new Date(this.authData.tokenExpiryTime).toUTCString();
+
+				// Return auth data
+				resolve(this.authData);
+			}
+		});
 	}
 
 	/**
@@ -477,7 +884,7 @@ class ApiClient {
 	 * @param {string} encodedData - Base64 encoded client and clientSecret pair
 	 */
 	_formAuthRequest(encodedData) {
-		var request = superagent('POST', `https://login.${this.environment}/oauth/token`);
+		var request = superagent('POST', `https://login.${this.config.environment}/oauth/token`);
 		// Set the headers
 		request.set('Authorization', 'Basic ' + encodedData);
 		request.set('Content-Type', 'application/x-www-form-urlencoded');
@@ -513,11 +920,11 @@ class ApiClient {
 						reject(err);
 					});
 			} else {
-				// Wait maximum of refreshTokenWaitTime seconds for other thread to complete refresh
-				this._sleep(this.refreshTokenWaitTime)
+				// Wait refresh_token_wait_max seconds for other thread to complete refresh
+				this._sleep(this.config.refresh_token_wait_max)
 					.then(() => {
 						if (this.refreshInProgress)
-							reject(new Error(`Token refresh took longer than ${this.refreshTokenWaitTime} seconds`));
+							reject(new Error(`Token refresh took longer than ${this.config.refresh_token_wait_max} seconds`));
 						else
 							resolve();
 					});
@@ -668,7 +1075,7 @@ class ApiClient {
 	 */
 	_buildAuthUrl(path, query) {
 		if (!query) query = {};
-		return Object.keys(query).reduce((url, key) => !query[key] ? url : `${url}&${key}=${query[key]}`, `${this.authUrl}/${path}?`);
+		return Object.keys(query).reduce((url, key) => !query[key] ? url : `${url}&${key}=${query[key]}`, `${this.config.authUrl}/${path}?`);
 	}
 
 	/**
@@ -697,7 +1104,7 @@ class ApiClient {
 		if (!path.match(/^\//)) {
 			path = `/${path}`;
 		}
-		var url = this.basePath + path;
+		var url = this.config.basePath + path;
 		url = url.replace(/\{([\w-]+)\}/g, (fullMatch, key) => {
 			var value;
 			if (pathParams.hasOwnProperty(key)) {
@@ -885,23 +1292,6 @@ class ApiClient {
 					request.proxy(that.proxy);
 				}
 
-				if(that.debugLog){
-					var trace = `[REQUEST] ${httpMethod} ${url}`;
-					if(pathParams && Object.keys(pathParams).count > 0 && pathParams[Object.keys(pathParams)[0]]){
-						trace += `\nPath Params: ${JSON.stringify(pathParams)}`;
-					}
-
-					if(queryParams && Object.keys(queryParams).count > 0 && queryParams[Object.keys(queryParams)[0]]){
-						trace += `\nQuery Params: ${JSON.stringify(queryParams)}`;
-					}
-
-					if(bodyParam){
-						trace += `\nnBody: ${JSON.stringify(bodyParam)}`;
-					}
-
-					that._debugTrace(trace);
-				}
-
 				// apply authentications
 				that.applyAuthToRequest(request, authNames);
 
@@ -910,7 +1300,7 @@ class ApiClient {
 
 				// set header parameters
 				request.set(that.defaultHeaders).set(that.normalizeParams(headerParams));
-				//request.set({ 'purecloud-sdk': '112.0.0' });
+				//request.set({ 'purecloud-sdk': '113.0.0' });
 
 				// set request timeout
 				request.timeout(that.timeout);
@@ -970,24 +1360,12 @@ class ApiClient {
 					} : response.body ? response.body : response.text;
 
 					// Debug logging
-					if (that.debugLog) {
-						var trace = `[RESPONSE] ${response.status}: ${httpMethod} ${url}`;
-						if (response.headers)
-							trace += `\ninin-correlation-id: ${response.headers['inin-correlation-id']}`;
-						if (response.body)
-							trace += `\nBody: ${JSON.stringify(response.body,null,2)}`;
-
-						// Log trace message
-						that._debugTrace(trace);
-
-						// Log stack trace
-						if (error)
-							that._debugTrace(error);
-					}
+					that.config.logger.log('trace', response.statusCode, httpMethod, url, request.header, response.headers, bodyParam, undefined);
+					that.config.logger.log('debug', response.statusCode, httpMethod, url, request.header, undefined, bodyParam, undefined);
 
 					// Resolve promise
 					if (error) {
-						if (data.status == 401 && that.shouldRefreshAccessToken && that.authData.refreshToken !== "") {
+						if (data.status == 401 && that.config.refresh_access_token && that.authData.refreshToken !== "") {
 							that._handleExpiredAccessToken()
 								.then(() => {
 									sendRequest(that);
@@ -996,6 +1374,17 @@ class ApiClient {
 									reject(err);
 								});
 						} else {
+							// Log error
+							that.config.logger.log(
+								'error',
+								response.statusCode,
+								httpMethod,
+								url,
+								request.header,
+								response.headers,
+								bodyParam,
+								response.body
+							);
 							reject(data);
 						}
 					} else {
@@ -1005,46 +1394,13 @@ class ApiClient {
 			}
 		});
 	}
-
-	/**
-	 * @description Parses an ISO-8601 string representation of a date value.
-	 * @param {String} str The date value as a string.
-	 * @returns {Date} The parsed date object.
-	 */
-	parseDate(str) {
-		return new Date(str.replace(/T/i, ' '));
-	}
-
-	/**
-	 * @description Logs to the debug log
-	 * @param {String} str The date value as a string.
-	 * @returns {Date} The parsed date object.
-	 */
-	_debugTrace(trace) {
-		if (!this.debugLog) return;
-
-		if (typeof(trace) === 'string') {
-			// Truncate
-			var truncTrace = '';
-			var lines = trace.split('\n');
-			if (this.debugLogMaxLines && lines.length > this.debugLogMaxLines) {
-				for  (var i = 0; i < this.debugLogMaxLines; i++) {
-					truncTrace += `${lines[i]}\n`;
-				}
-				truncTrace += '...response truncated...';
-				trace = truncTrace;
-			}
-		}
-
-		this.debugLog(trace);
-	}
 }
 
 class AlertingApi {
 	/**
 	 * Alerting service.
 	 * @module purecloud-platform-client-v2/api/AlertingApi
-	 * @version 112.0.0
+	 * @version 113.0.0
 	 */
 
 	/**
@@ -1358,7 +1714,7 @@ class AnalyticsApi {
 	/**
 	 * Analytics service.
 	 * @module purecloud-platform-client-v2/api/AnalyticsApi
-	 * @version 112.0.0
+	 * @version 113.0.0
 	 */
 
 	/**
@@ -2463,7 +2819,7 @@ class ArchitectApi {
 	/**
 	 * Architect service.
 	 * @module purecloud-platform-client-v2/api/ArchitectApi
-	 * @version 112.0.0
+	 * @version 113.0.0
 	 */
 
 	/**
@@ -5364,7 +5720,7 @@ class AuditApi {
 	/**
 	 * Audit service.
 	 * @module purecloud-platform-client-v2/api/AuditApi
-	 * @version 112.0.0
+	 * @version 113.0.0
 	 */
 
 	/**
@@ -5535,7 +5891,7 @@ class AuthorizationApi {
 	/**
 	 * Authorization service.
 	 * @module purecloud-platform-client-v2/api/AuthorizationApi
-	 * @version 112.0.0
+	 * @version 113.0.0
 	 */
 
 	/**
@@ -6688,7 +7044,7 @@ class BillingApi {
 	/**
 	 * Billing service.
 	 * @module purecloud-platform-client-v2/api/BillingApi
-	 * @version 112.0.0
+	 * @version 113.0.0
 	 */
 
 	/**
@@ -6768,7 +7124,7 @@ class ChatApi {
 	/**
 	 * Chat service.
 	 * @module purecloud-platform-client-v2/api/ChatApi
-	 * @version 112.0.0
+	 * @version 113.0.0
 	 */
 
 	/**
@@ -6859,7 +7215,7 @@ class CoachingApi {
 	/**
 	 * Coaching service.
 	 * @module purecloud-platform-client-v2/api/CoachingApi
-	 * @version 112.0.0
+	 * @version 113.0.0
 	 */
 
 	/**
@@ -7403,13 +7759,38 @@ class CoachingApi {
 		);
 	}
 
+	/**
+	 * Get list of possible slots where a coaching appointment can be scheduled.
+	 * 
+	 * @param {Object} body The slot search request
+	 */
+	postCoachingScheduleslotsQuery(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postCoachingScheduleslotsQuery';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/coaching/scheduleslots/query', 
+			'POST', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
 }
 
 class ContentManagementApi {
 	/**
 	 * ContentManagement service.
 	 * @module purecloud-platform-client-v2/api/ContentManagementApi
-	 * @version 112.0.0
+	 * @version 113.0.0
 	 */
 
 	/**
@@ -8549,7 +8930,7 @@ class ConversationsApi {
 	/**
 	 * Conversations service.
 	 * @module purecloud-platform-client-v2/api/ConversationsApi
-	 * @version 112.0.0
+	 * @version 113.0.0
 	 */
 
 	/**
@@ -12677,7 +13058,7 @@ class DataExtensionsApi {
 	/**
 	 * DataExtensions service.
 	 * @module purecloud-platform-client-v2/api/DataExtensionsApi
-	 * @version 112.0.0
+	 * @version 113.0.0
 	 */
 
 	/**
@@ -12763,7 +13144,7 @@ class ExternalContactsApi {
 	/**
 	 * ExternalContacts service.
 	 * @module purecloud-platform-client-v2/api/ExternalContactsApi
-	 * @version 112.0.0
+	 * @version 113.0.0
 	 */
 
 	/**
@@ -14306,7 +14687,7 @@ class FaxApi {
 	/**
 	 * Fax service.
 	 * @module purecloud-platform-client-v2/api/FaxApi
-	 * @version 112.0.0
+	 * @version 113.0.0
 	 */
 
 	/**
@@ -14477,7 +14858,7 @@ class FlowsApi {
 	/**
 	 * Flows service.
 	 * @module purecloud-platform-client-v2/api/FlowsApi
-	 * @version 112.0.0
+	 * @version 113.0.0
 	 */
 
 	/**
@@ -14548,7 +14929,7 @@ class GamificationApi {
 	/**
 	 * Gamification service.
 	 * @module purecloud-platform-client-v2/api/GamificationApi
-	 * @version 112.0.0
+	 * @version 113.0.0
 	 */
 
 	/**
@@ -15557,7 +15938,7 @@ class GeneralDataProtectionRegulationApi {
 	/**
 	 * GeneralDataProtectionRegulation service.
 	 * @module purecloud-platform-client-v2/api/GeneralDataProtectionRegulationApi
-	 * @version 112.0.0
+	 * @version 113.0.0
 	 */
 
 	/**
@@ -15687,7 +16068,7 @@ class GeolocationApi {
 	/**
 	 * Geolocation service.
 	 * @module purecloud-platform-client-v2/api/GeolocationApi
-	 * @version 112.0.0
+	 * @version 113.0.0
 	 */
 
 	/**
@@ -15818,7 +16199,7 @@ class GreetingsApi {
 	/**
 	 * Greetings service.
 	 * @module purecloud-platform-client-v2/api/GreetingsApi
-	 * @version 112.0.0
+	 * @version 113.0.0
 	 */
 
 	/**
@@ -16273,7 +16654,7 @@ class GroupsApi {
 	/**
 	 * Groups service.
 	 * @module purecloud-platform-client-v2/api/GroupsApi
-	 * @version 112.0.0
+	 * @version 113.0.0
 	 */
 
 	/**
@@ -16678,7 +17059,7 @@ class IdentityProviderApi {
 	/**
 	 * IdentityProvider service.
 	 * @module purecloud-platform-client-v2/api/IdentityProviderApi
-	 * @version 112.0.0
+	 * @version 113.0.0
 	 */
 
 	/**
@@ -17434,7 +17815,7 @@ class IntegrationsApi {
 	/**
 	 * Integrations service.
 	 * @module purecloud-platform-client-v2/api/IntegrationsApi
-	 * @version 112.0.0
+	 * @version 113.0.0
 	 */
 
 	/**
@@ -18926,7 +19307,7 @@ class JourneyApi {
 	/**
 	 * Journey service.
 	 * @module purecloud-platform-client-v2/api/JourneyApi
-	 * @version 112.0.0
+	 * @version 113.0.0
 	 */
 
 	/**
@@ -19579,7 +19960,7 @@ class KnowledgeApi {
 	/**
 	 * Knowledge service.
 	 * @module purecloud-platform-client-v2/api/KnowledgeApi
-	 * @version 112.0.0
+	 * @version 113.0.0
 	 */
 
 	/**
@@ -20303,7 +20684,7 @@ class LanguageUnderstandingApi {
 	/**
 	 * LanguageUnderstanding service.
 	 * @module purecloud-platform-client-v2/api/LanguageUnderstandingApi
-	 * @version 112.0.0
+	 * @version 113.0.0
 	 */
 
 	/**
@@ -20871,7 +21252,7 @@ class LanguagesApi {
 	/**
 	 * Languages service.
 	 * @module purecloud-platform-client-v2/api/LanguagesApi
-	 * @version 112.0.0
+	 * @version 113.0.0
 	 */
 
 	/**
@@ -21135,11 +21516,545 @@ class LanguagesApi {
 
 }
 
+class LearningApi {
+	/**
+	 * Learning service.
+	 * @module purecloud-platform-client-v2/api/LearningApi
+	 * @version 113.0.0
+	 */
+
+	/**
+	 * Constructs a new LearningApi. 
+	 * @alias module:purecloud-platform-client-v2/api/LearningApi
+	 * @class
+	 * @param {module:purecloud-platform-client-v2/ApiClient} apiClient Optional API client implementation to use,
+	 * default to {@link module:purecloud-platform-client-v2/ApiClient#instance} if unspecified.
+	 */
+	constructor(apiClient) {
+		this.apiClient = apiClient || ApiClient.instance;
+	}
+
+
+	/**
+	 * Delete a learning assignment
+	 * 
+	 * @param {String} assignmentId The Learning Assignment ID
+	 */
+	deleteLearningAssignment(assignmentId) { 
+		// verify the required parameter 'assignmentId' is set
+		if (assignmentId === undefined || assignmentId === null) {
+			throw 'Missing the required parameter "assignmentId" when calling deleteLearningAssignment';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/learning/assignments/{assignmentId}', 
+			'DELETE', 
+			{ 'assignmentId': assignmentId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete a learning module
+	 * This will delete a learning module if it is unpublished or it will delete a published and archived learning module
+	 * @param {String} moduleId The ID of the learning module
+	 */
+	deleteLearningModule(moduleId) { 
+		// verify the required parameter 'moduleId' is set
+		if (moduleId === undefined || moduleId === null) {
+			throw 'Missing the required parameter "moduleId" when calling deleteLearningModule';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/learning/modules/{moduleId}', 
+			'DELETE', 
+			{ 'moduleId': moduleId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get Learning Assignment
+	 * Permission not required if you are the assigned user of the learning assignment
+	 * @param {String} assignmentId The ID of Learning Assignment
+	 * @param {Object} opts Optional parameters
+	 * @param {Array.<String>} opts.expand Fields to expand in response
+	 */
+	getLearningAssignment(assignmentId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'assignmentId' is set
+		if (assignmentId === undefined || assignmentId === null) {
+			throw 'Missing the required parameter "assignmentId" when calling getLearningAssignment';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/learning/assignments/{assignmentId}', 
+			'GET', 
+			{ 'assignmentId': assignmentId }, 
+			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * List of Learning module Assignments
+	 * Either moduleId or user value is required
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.moduleId Specifies the ID of the learning module. Fetch assignments for learning module ID
+	 * @param {String} opts.interval Specifies the range of dueDates to be queried. Milliseconds will be truncated. A maximum of 1 year can be specified in the range. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
+	 * @param {String} opts.completionInterval Specifies the range of completion dates to be used for filtering. A maximum of 1 year can be specified in the range. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
+	 * @param {Object} opts.overdue Specifies if only the non-overdue (overdue is \&quot;False\&quot;) or overdue (overdue is \&quot;True\&quot;) assignments are returned. If overdue is \&quot;Any\&quot; or if the overdue parameter is not supplied, all assignments are returned (default to Any)
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Object} opts.sortOrder Specifies result set sort order; if not specified, default sort order is descending (Desc) (default to Desc)
+	 * @param {Object} opts.sortBy Specifies which field to sort the results by, default sort is by recommendedCompletionDate
+	 * @param {Array.<String>} opts.userId Specifies the list of user IDs to be queried, up to 100 user IDs.
+	 * @param {Array.<String>} opts.types Specifies the assignment types, currently not supported and will be ignored. For now, all learning assignments regardless of types will be returned
+	 * @param {Array.<String>} opts.states Specifies the assignment states to filter by
+	 * @param {Array.<String>} opts.expand Specifies the expand option for returning additional information
+	 */
+	getLearningAssignments(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/learning/assignments', 
+			'GET', 
+			{  }, 
+			{ 'moduleId': opts['moduleId'],'interval': opts['interval'],'completionInterval': opts['completionInterval'],'overdue': opts['overdue'],'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortOrder': opts['sortOrder'],'sortBy': opts['sortBy'],'userId': this.apiClient.buildCollectionParam(opts['userId'], 'multi'),'types': this.apiClient.buildCollectionParam(opts['types'], 'multi'),'states': this.apiClient.buildCollectionParam(opts['states'], 'multi'),'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * List of Learning Assignments assigned to current user
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.moduleId Specifies the ID of the learning module. Fetch assignments for learning module ID
+	 * @param {String} opts.interval Specifies the range of dueDates to be queried. Milliseconds will be truncated. A maximum of 1 year can be specified in the range. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
+	 * @param {String} opts.completionInterval Specifies the range of completion dates to be used for filtering. A maximum of 1 year can be specified in the range. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
+	 * @param {Object} opts.overdue Specifies if only the non-overdue (overdue is \&quot;False\&quot;) or overdue (overdue is \&quot;True\&quot;) assignments are returned. If overdue is \&quot;Any\&quot; or if the overdue parameter is not supplied, all assignments are returned (default to Any)
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Object} opts.sortOrder Specifies result set sort order; if not specified, default sort order is descending (Desc) (default to Desc)
+	 * @param {Object} opts.sortBy Specifies which field to sort the results by, default sort is by recommendedCompletionDate
+	 * @param {Array.<String>} opts.types Specifies the assignment types, currently not supported and will be ignored. For now, all learning assignments regardless of types will be returned
+	 * @param {Array.<String>} opts.states Specifies the assignment states to filter by
+	 * @param {Array.<String>} opts.expand Specifies the expand option for returning additional information
+	 */
+	getLearningAssignmentsMe(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/learning/assignments/me', 
+			'GET', 
+			{  }, 
+			{ 'moduleId': opts['moduleId'],'interval': opts['interval'],'completionInterval': opts['completionInterval'],'overdue': opts['overdue'],'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortOrder': opts['sortOrder'],'sortBy': opts['sortBy'],'types': this.apiClient.buildCollectionParam(opts['types'], 'multi'),'states': this.apiClient.buildCollectionParam(opts['states'], 'multi'),'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a learning module
+	 * 
+	 * @param {String} moduleId The ID of the learning module
+	 * @param {Object} opts Optional parameters
+	 * @param {Array.<String>} opts.expand Fields to expand in response(case insensitive)
+	 */
+	getLearningModule(moduleId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'moduleId' is set
+		if (moduleId === undefined || moduleId === null) {
+			throw 'Missing the required parameter "moduleId" when calling getLearningModule';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/learning/modules/{moduleId}', 
+			'GET', 
+			{ 'moduleId': moduleId }, 
+			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a learning module rule
+	 * 
+	 * @param {String} moduleId The ID of the learning module
+	 */
+	getLearningModuleRule(moduleId) { 
+		// verify the required parameter 'moduleId' is set
+		if (moduleId === undefined || moduleId === null) {
+			throw 'Missing the required parameter "moduleId" when calling getLearningModuleRule';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/learning/modules/{moduleId}/rule', 
+			'GET', 
+			{ 'moduleId': moduleId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get specific version of a published module
+	 * 
+	 * @param {String} moduleId The ID of the learning module
+	 * @param {String} versionId The version of learning module
+	 * @param {Object} opts Optional parameters
+	 * @param {Array.<String>} opts.expand Fields to expand in response(case insensitive)
+	 */
+	getLearningModuleVersion(moduleId, versionId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'moduleId' is set
+		if (moduleId === undefined || moduleId === null) {
+			throw 'Missing the required parameter "moduleId" when calling getLearningModuleVersion';
+		}
+		// verify the required parameter 'versionId' is set
+		if (versionId === undefined || versionId === null) {
+			throw 'Missing the required parameter "versionId" when calling getLearningModuleVersion';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/learning/modules/{moduleId}/versions/{versionId}', 
+			'GET', 
+			{ 'moduleId': moduleId,'versionId': versionId }, 
+			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get all learning modules of an organization
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.isArchived Archive status (default to false)
+	 * @param {Array.<String>} opts.types Specifies the module types.
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Object} opts.sortOrder Sort order (default to ascending)
+	 * @param {Object} opts.sortBy Sort by (default to name)
+	 * @param {String} opts.searchTerm Search Term (searchable by name)
+	 * @param {Array.<String>} opts.expand Fields to expand in response(case insensitive)
+	 */
+	getLearningModules(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/learning/modules', 
+			'GET', 
+			{  }, 
+			{ 'isArchived': opts['isArchived'],'types': this.apiClient.buildCollectionParam(opts['types'], 'multi'),'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortOrder': opts['sortOrder'],'sortBy': opts['sortBy'],'searchTerm': opts['searchTerm'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update Learning Assignment
+	 * 
+	 * @param {String} assignmentId The ID of Learning Assignment
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body The Learning Assignment to be updated
+	 */
+	patchLearningAssignment(assignmentId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'assignmentId' is set
+		if (assignmentId === undefined || assignmentId === null) {
+			throw 'Missing the required parameter "assignmentId" when calling patchLearningAssignment';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/learning/assignments/{assignmentId}', 
+			'PATCH', 
+			{ 'assignmentId': assignmentId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Create Learning Assignment
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body The Learning Assignment to be created
+	 */
+	postLearningAssignments(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/learning/assignments', 
+			'POST', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Add multiple learning assignments
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Array.<Object>} opts.body The learning assignments to be created
+	 */
+	postLearningAssignmentsBulkadd(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/learning/assignments/bulkadd', 
+			'POST', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Remove multiple Learning Assignments
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Array.<Object>} opts.body The IDs of the learning assignments to be removed
+	 */
+	postLearningAssignmentsBulkremove(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/learning/assignments/bulkremove', 
+			'POST', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Publish a Learning module
+	 * 
+	 * @param {String} moduleId The ID of the learning module
+	 */
+	postLearningModulePublish(moduleId) { 
+		// verify the required parameter 'moduleId' is set
+		if (moduleId === undefined || moduleId === null) {
+			throw 'Missing the required parameter "moduleId" when calling postLearningModulePublish';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/learning/modules/{moduleId}/publish', 
+			'POST', 
+			{ 'moduleId': moduleId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Create a new learning module
+	 * This will create a new unpublished learning module with the specified fields.
+	 * @param {Object} body The learning module to be created
+	 */
+	postLearningModules(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postLearningModules';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/learning/modules', 
+			'POST', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get users for learning module rule
+	 * This will get the users who matches the given rule.
+	 * @param {Number} pageSize Page size
+	 * @param {Number} pageNumber Page number
+	 * @param {Object} body The learning module rule to fetch users
+	 */
+	postLearningRulesQuery(pageSize, pageNumber, body) { 
+		// verify the required parameter 'pageSize' is set
+		if (pageSize === undefined || pageSize === null) {
+			throw 'Missing the required parameter "pageSize" when calling postLearningRulesQuery';
+		}
+		// verify the required parameter 'pageNumber' is set
+		if (pageNumber === undefined || pageNumber === null) {
+			throw 'Missing the required parameter "pageNumber" when calling postLearningRulesQuery';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postLearningRulesQuery';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/learning/rules/query', 
+			'POST', 
+			{  }, 
+			{ 'pageSize': pageSize,'pageNumber': pageNumber }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update a learning module
+	 * This will update the name, description, completion time in days and inform steps for a learning module
+	 * @param {String} moduleId The ID of the learning module
+	 * @param {Object} body The learning module to be updated
+	 */
+	putLearningModule(moduleId, body) { 
+		// verify the required parameter 'moduleId' is set
+		if (moduleId === undefined || moduleId === null) {
+			throw 'Missing the required parameter "moduleId" when calling putLearningModule';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putLearningModule';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/learning/modules/{moduleId}', 
+			'PUT', 
+			{ 'moduleId': moduleId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update a learning module rule
+	 * This will update a learning module rule with the specified fields.
+	 * @param {String} moduleId The ID of the learning module
+	 * @param {Object} body The learning module rule to be updated
+	 */
+	putLearningModuleRule(moduleId, body) { 
+		// verify the required parameter 'moduleId' is set
+		if (moduleId === undefined || moduleId === null) {
+			throw 'Missing the required parameter "moduleId" when calling putLearningModuleRule';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putLearningModuleRule';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/learning/modules/{moduleId}/rule', 
+			'PUT', 
+			{ 'moduleId': moduleId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+}
+
 class LicenseApi {
 	/**
 	 * License service.
 	 * @module purecloud-platform-client-v2/api/LicenseApi
-	 * @version 112.0.0
+	 * @version 113.0.0
 	 */
 
 	/**
@@ -21377,7 +22292,7 @@ class LocationsApi {
 	/**
 	 * Locations service.
 	 * @module purecloud-platform-client-v2/api/LocationsApi
-	 * @version 112.0.0
+	 * @version 113.0.0
 	 */
 
 	/**
@@ -21613,7 +22528,7 @@ class MobileDevicesApi {
 	/**
 	 * MobileDevices service.
 	 * @module purecloud-platform-client-v2/api/MobileDevicesApi
-	 * @version 112.0.0
+	 * @version 113.0.0
 	 */
 
 	/**
@@ -21764,7 +22679,7 @@ class NotificationsApi {
 	/**
 	 * Notifications service.
 	 * @module purecloud-platform-client-v2/api/NotificationsApi
-	 * @version 112.0.0
+	 * @version 113.0.0
 	 */
 
 	/**
@@ -21964,7 +22879,7 @@ class OAuthApi {
 	/**
 	 * OAuth service.
 	 * @module purecloud-platform-client-v2/api/OAuthApi
-	 * @version 112.0.0
+	 * @version 113.0.0
 	 */
 
 	/**
@@ -22322,7 +23237,7 @@ class ObjectsApi {
 	/**
 	 * Objects service.
 	 * @module purecloud-platform-client-v2/api/ObjectsApi
-	 * @version 112.0.0
+	 * @version 113.0.0
 	 */
 
 	/**
@@ -22563,7 +23478,7 @@ class OrganizationApi {
 	/**
 	 * Organization service.
 	 * @module purecloud-platform-client-v2/api/OrganizationApi
-	 * @version 112.0.0
+	 * @version 113.0.0
 	 */
 
 	/**
@@ -22941,7 +23856,7 @@ class OrganizationAuthorizationApi {
 	/**
 	 * OrganizationAuthorization service.
 	 * @module purecloud-platform-client-v2/api/OrganizationAuthorizationApi
-	 * @version 112.0.0
+	 * @version 113.0.0
 	 */
 
 	/**
@@ -23651,7 +24566,7 @@ class OutboundApi {
 	/**
 	 * Outbound service.
 	 * @module purecloud-platform-client-v2/api/OutboundApi
-	 * @version 112.0.0
+	 * @version 113.0.0
 	 */
 
 	/**
@@ -24279,6 +25194,31 @@ class OutboundApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/outbound/campaigns/{campaignId}', 
+			'GET', 
+			{ 'campaignId': campaignId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a preview of how agents will be mapped to this campaign&#39;s contact list.
+	 * 
+	 * @param {String} campaignId Campaign ID
+	 */
+	getOutboundCampaignAgentownedmappingpreviewResults(campaignId) { 
+		// verify the required parameter 'campaignId' is set
+		if (campaignId === undefined || campaignId === null) {
+			throw 'Missing the required parameter "campaignId" when calling getOutboundCampaignAgentownedmappingpreviewResults';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/outbound/campaigns/{campaignId}/agentownedmappingpreview/results', 
 			'GET', 
 			{ 'campaignId': campaignId }, 
 			{  }, 
@@ -25634,6 +26574,31 @@ class OutboundApi {
 	}
 
 	/**
+	 * Initiate request for a preview of how agents will be mapped to this campaign&#39;s contact list.
+	 * 
+	 * @param {String} campaignId Campaign ID
+	 */
+	postOutboundCampaignAgentownedmappingpreview(campaignId) { 
+		// verify the required parameter 'campaignId' is set
+		if (campaignId === undefined || campaignId === null) {
+			throw 'Missing the required parameter "campaignId" when calling postOutboundCampaignAgentownedmappingpreview';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/outbound/campaigns/{campaignId}/agentownedmappingpreview', 
+			'POST', 
+			{ 'campaignId': campaignId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
 	 * Schedule a Callback for a Dialer Campaign (Deprecated)
 	 * This endpoint is deprecated and may have unexpected results. Please use \&quot;/conversations/{conversationId}/participants/{participantId}/callbacks instead.\&quot;
 	 * @param {String} campaignId Campaign ID
@@ -26625,7 +27590,7 @@ class PresenceApi {
 	/**
 	 * Presence service.
 	 * @module purecloud-platform-client-v2/api/PresenceApi
-	 * @version 112.0.0
+	 * @version 113.0.0
 	 */
 
 	/**
@@ -26822,6 +27787,31 @@ class PresenceApi {
 	}
 
 	/**
+	 * Get a user&#39;s Zoom Phone presence.
+	 * Gets the presence for a Zoom user.  This will return the Zoom Phone presence mapped to Genesys Cloud presence with additional activity details in the message field. This presence source is read-only.
+	 * @param {String} userId user Id
+	 */
+	getUserPresencesZoomphone(userId) { 
+		// verify the required parameter 'userId' is set
+		if (userId === undefined || userId === null) {
+			throw 'Missing the required parameter "userId" when calling getUserPresencesZoomphone';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/users/{userId}/presences/zoomphone', 
+			'GET', 
+			{ 'userId': userId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
 	 * Patch a user&#39;s Presence
 	 * Patch a user&#39;s presence for the specified source that is not specifically listed. The presence object can be patched one of three ways. Option 1: Set the &#39;primary&#39; property to true. This will set the &#39;source&#39; defined in the path as the user&#39;s primary presence source. Option 2: Provide the presenceDefinition value. The &#39;id&#39; is the only value required within the presenceDefinition. Option 3: Provide the message value. Option 1 can be combined with Option 2 and/or Option 3.
 	 * @param {String} userId user Id
@@ -26972,7 +27962,7 @@ class QualityApi {
 	/**
 	 * Quality service.
 	 * @module purecloud-platform-client-v2/api/QualityApi
-	 * @version 112.0.0
+	 * @version 113.0.0
 	 */
 
 	/**
@@ -27117,56 +28107,6 @@ class QualityApi {
 			'DELETE', 
 			{ 'formId': formId }, 
 			{  }, 
-			{  }, 
-			{  }, 
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'], 
-			['application/json']
-		);
-	}
-
-	/**
-	 * Delete a keywordSet by id.
-	 * 
-	 * @param {String} keywordSetId KeywordSet ID
-	 */
-	deleteQualityKeywordset(keywordSetId) { 
-		// verify the required parameter 'keywordSetId' is set
-		if (keywordSetId === undefined || keywordSetId === null) {
-			throw 'Missing the required parameter "keywordSetId" when calling deleteQualityKeywordset';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/quality/keywordsets/{keywordSetId}', 
-			'DELETE', 
-			{ 'keywordSetId': keywordSetId }, 
-			{  }, 
-			{  }, 
-			{  }, 
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'], 
-			['application/json']
-		);
-	}
-
-	/**
-	 * Delete keyword sets
-	 * Bulk delete of keyword sets; this will only delete the keyword sets that match the ids specified in the query param.
-	 * @param {String} ids A comma-delimited list of valid KeywordSet ids
-	 */
-	deleteQualityKeywordsets(ids) { 
-		// verify the required parameter 'ids' is set
-		if (ids === undefined || ids === null) {
-			throw 'Missing the required parameter "ids" when calling deleteQualityKeywordsets';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/quality/keywordsets', 
-			'DELETE', 
-			{  }, 
-			{ 'ids': ids }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -27762,64 +28702,6 @@ class QualityApi {
 	}
 
 	/**
-	 * Get a keywordSet by id.
-	 * 
-	 * @param {String} keywordSetId KeywordSet ID
-	 */
-	getQualityKeywordset(keywordSetId) { 
-		// verify the required parameter 'keywordSetId' is set
-		if (keywordSetId === undefined || keywordSetId === null) {
-			throw 'Missing the required parameter "keywordSetId" when calling getQualityKeywordset';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/quality/keywordsets/{keywordSetId}', 
-			'GET', 
-			{ 'keywordSetId': keywordSetId }, 
-			{  }, 
-			{  }, 
-			{  }, 
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'], 
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get the list of keyword sets
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Number} opts.pageSize The total page size requested (default to 25)
-	 * @param {Number} opts.pageNumber The page number requested (default to 1)
-	 * @param {String} opts.sortBy variable name requested to sort by
-	 * @param {Array.<String>} opts.expand variable name requested by expand list
-	 * @param {String} opts.nextPage next page token
-	 * @param {String} opts.previousPage Previous page token
-	 * @param {String} opts.name the keyword set name - used for filtering results in searches.
-	 * @param {String} opts.queueId the queue id - used for filtering results in searches.
-	 * @param {String} opts.agentId the agent id - used for filtering results in searches.
-	 * @param {Object} opts.operator If agentID and queueId are both present, this determines whether the query is an AND or OR between those parameters.
-	 */
-	getQualityKeywordsets(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/quality/keywordsets', 
-			'GET', 
-			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'nextPage': opts['nextPage'],'previousPage': opts['previousPage'],'name': opts['name'],'queueId': opts['queueId'],'agentId': opts['agentId'],'operator': opts['operator'] }, 
-			{  }, 
-			{  }, 
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'], 
-			['application/json']
-		);
-	}
-
-	/**
 	 * Get the published evaluation forms.
 	 * 
 	 * @param {String} formId Form ID
@@ -28269,35 +29151,6 @@ class QualityApi {
 	}
 
 	/**
-	 * Create a Keyword Set
-	 * 
-	 * @param {Object} body keywordSet
-	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.expand queueId
-	 */
-	postQualityKeywordsets(body, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postQualityKeywordsets';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/quality/keywordsets', 
-			'POST', 
-			{  }, 
-			{ 'expand': opts['expand'] }, 
-			{  }, 
-			{  }, 
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'], 
-			['application/json']
-		);
-	}
-
-	/**
 	 * Publish an evaluation form.
 	 * 
 	 * @param {Object} body Publish request containing id of form to publish
@@ -28366,30 +29219,6 @@ class QualityApi {
 			{  }, 
 			{  }, 
 			body, 
-			['PureCloud OAuth'], 
-			['application/json'], 
-			['application/json']
-		);
-	}
-
-	/**
-	 * Retrieve the spotability statistic
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body Keyword Set
-	 */
-	postQualitySpotability(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/quality/spotability', 
-			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
-			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
@@ -28581,36 +29410,6 @@ class QualityApi {
 	}
 
 	/**
-	 * Update a keywordSet to the specified keywordSet via PUT.
-	 * 
-	 * @param {String} keywordSetId KeywordSet ID
-	 * @param {Object} body keywordSet
-	 */
-	putQualityKeywordset(keywordSetId, body) { 
-		// verify the required parameter 'keywordSetId' is set
-		if (keywordSetId === undefined || keywordSetId === null) {
-			throw 'Missing the required parameter "keywordSetId" when calling putQualityKeywordset';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putQualityKeywordset';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/quality/keywordsets/{keywordSetId}', 
-			'PUT', 
-			{ 'keywordSetId': keywordSetId }, 
-			{  }, 
-			{  }, 
-			{  }, 
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'], 
-			['application/json']
-		);
-	}
-
-	/**
 	 * Update a survey as an end-customer, for the purposes of scoring it.
 	 * 
 	 * @param {Object} body survey
@@ -28645,7 +29444,7 @@ class RecordingApi {
 	/**
 	 * Recording service.
 	 * @module purecloud-platform-client-v2/api/RecordingApi
-	 * @version 112.0.0
+	 * @version 113.0.0
 	 */
 
 	/**
@@ -30084,7 +30883,7 @@ class ResponseManagementApi {
 	/**
 	 * ResponseManagement service.
 	 * @module purecloud-platform-client-v2/api/ResponseManagementApi
-	 * @version 112.0.0
+	 * @version 113.0.0
 	 */
 
 	/**
@@ -30409,7 +31208,7 @@ class RoutingApi {
 	/**
 	 * Routing service.
 	 * @module purecloud-platform-client-v2/api/RoutingApi
-	 * @version 112.0.0
+	 * @version 113.0.0
 	 */
 
 	/**
@@ -32936,7 +33735,7 @@ class SCIMApi {
 	/**
 	 * SCIM service.
 	 * @module purecloud-platform-client-v2/api/SCIMApi
-	 * @version 112.0.0
+	 * @version 113.0.0
 	 */
 
 	/**
@@ -33813,7 +34612,7 @@ class ScriptsApi {
 	/**
 	 * Scripts service.
 	 * @module purecloud-platform-client-v2/api/ScriptsApi
-	 * @version 112.0.0
+	 * @version 113.0.0
 	 */
 
 	/**
@@ -34166,7 +34965,7 @@ class SearchApi {
 	/**
 	 * Search service.
 	 * @module purecloud-platform-client-v2/api/SearchApi
-	 * @version 112.0.0
+	 * @version 113.0.0
 	 */
 
 	/**
@@ -34701,7 +35500,7 @@ class SpeechTextAnalyticsApi {
 	/**
 	 * SpeechTextAnalytics service.
 	 * @module purecloud-platform-client-v2/api/SpeechTextAnalyticsApi
-	 * @version 112.0.0
+	 * @version 113.0.0
 	 */
 
 	/**
@@ -35330,7 +36129,7 @@ class StationsApi {
 	/**
 	 * Stations service.
 	 * @module purecloud-platform-client-v2/api/StationsApi
-	 * @version 112.0.0
+	 * @version 113.0.0
 	 */
 
 	/**
@@ -35477,7 +36276,7 @@ class SuggestApi {
 	/**
 	 * Suggest service.
 	 * @module purecloud-platform-client-v2/api/SuggestApi
-	 * @version 112.0.0
+	 * @version 113.0.0
 	 */
 
 	/**
@@ -35616,7 +36415,7 @@ class TelephonyApi {
 	/**
 	 * Telephony service.
 	 * @module purecloud-platform-client-v2/api/TelephonyApi
-	 * @version 112.0.0
+	 * @version 113.0.0
 	 */
 
 	/**
@@ -35724,7 +36523,7 @@ class TelephonyProvidersEdgeApi {
 	/**
 	 * TelephonyProvidersEdge service.
 	 * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-	 * @version 112.0.0
+	 * @version 113.0.0
 	 */
 
 	/**
@@ -39336,7 +40135,7 @@ class TextbotsApi {
 	/**
 	 * Textbots service.
 	 * @module purecloud-platform-client-v2/api/TextbotsApi
-	 * @version 112.0.0
+	 * @version 113.0.0
 	 */
 
 	/**
@@ -39382,7 +40181,7 @@ class TokensApi {
 	/**
 	 * Tokens service.
 	 * @module purecloud-platform-client-v2/api/TokensApi
-	 * @version 112.0.0
+	 * @version 113.0.0
 	 */
 
 	/**
@@ -39468,7 +40267,7 @@ class UploadsApi {
 	/**
 	 * Uploads service.
 	 * @module purecloud-platform-client-v2/api/UploadsApi
-	 * @version 112.0.0
+	 * @version 113.0.0
 	 */
 
 	/**
@@ -39589,7 +40388,7 @@ class UsageApi {
 	/**
 	 * Usage service.
 	 * @module purecloud-platform-client-v2/api/UsageApi
-	 * @version 112.0.0
+	 * @version 113.0.0
 	 */
 
 	/**
@@ -39660,7 +40459,7 @@ class UserRecordingsApi {
 	/**
 	 * UserRecordings service.
 	 * @module purecloud-platform-client-v2/api/UserRecordingsApi
-	 * @version 112.0.0
+	 * @version 113.0.0
 	 */
 
 	/**
@@ -39844,7 +40643,7 @@ class UsersApi {
 	/**
 	 * Users service.
 	 * @module purecloud-platform-client-v2/api/UsersApi
-	 * @version 112.0.0
+	 * @version 113.0.0
 	 */
 
 	/**
@@ -42091,7 +42890,7 @@ class UtilitiesApi {
 	/**
 	 * Utilities service.
 	 * @module purecloud-platform-client-v2/api/UtilitiesApi
-	 * @version 112.0.0
+	 * @version 113.0.0
 	 */
 
 	/**
@@ -42202,7 +43001,7 @@ class VoicemailApi {
 	/**
 	 * Voicemail service.
 	 * @module purecloud-platform-client-v2/api/VoicemailApi
-	 * @version 112.0.0
+	 * @version 113.0.0
 	 */
 
 	/**
@@ -42839,7 +43638,7 @@ class WebChatApi {
 	/**
 	 * WebChat service.
 	 * @module purecloud-platform-client-v2/api/WebChatApi
-	 * @version 112.0.0
+	 * @version 113.0.0
 	 */
 
 	/**
@@ -43383,7 +44182,7 @@ class WidgetsApi {
 	/**
 	 * Widgets service.
 	 * @module purecloud-platform-client-v2/api/WidgetsApi
-	 * @version 112.0.0
+	 * @version 113.0.0
 	 */
 
 	/**
@@ -43529,7 +44328,7 @@ class WorkforceManagementApi {
 	/**
 	 * WorkforceManagement service.
 	 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-	 * @version 112.0.0
+	 * @version 113.0.0
 	 */
 
 	/**
@@ -46828,7 +47627,7 @@ class WorkforceManagementApi {
  * </pre>
  * </p>
  * @module purecloud-platform-client-v2/index
- * @version 112.0.0
+ * @version 113.0.0
  */
 class platformClient {
 	constructor() {
@@ -46967,6 +47766,11 @@ class platformClient {
 		 * @property {module:purecloud-platform-client-v2/api/LanguagesApi}
 		 */
 		this.LanguagesApi = LanguagesApi;
+		/**
+		 * The LearningApi service constructor.
+		 * @property {module:purecloud-platform-client-v2/api/LearningApi}
+		 */
+		this.LearningApi = LearningApi;
 		/**
 		 * The LicenseApi service constructor.
 		 * @property {module:purecloud-platform-client-v2/api/LicenseApi}

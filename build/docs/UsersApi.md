@@ -8440,26 +8440,6 @@ PatchUser <a href="#" onclick="return copyPatchUserExample()">Copy</a>
 { 
   "id": String, 
   "acdAutoAnswer": Boolean, 
-  "certifications": [String], 
-  "biography": { 
-    "biography": String, 
-    "interests": [String], 
-    "hobbies": [String], 
-    "spouse": String, 
-    "education": { 
-      "school": String, 
-      "fieldOfStudy": String, 
-      "notes": String, 
-      "dateStart": String, 
-      "dateEnd": String, 
-    },  
-  },  
-  "employerInfo": { 
-    "officialName": String, 
-    "employeeId": String, 
-    "employeeType": String, 
-    "dateHire": String, 
-  },  
 }
 ```
 

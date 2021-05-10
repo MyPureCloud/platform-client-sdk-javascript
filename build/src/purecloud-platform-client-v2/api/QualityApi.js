@@ -5,7 +5,7 @@ class QualityApi {
 	/**
 	 * Quality service.
 	 * @module purecloud-platform-client-v2/api/QualityApi
-	 * @version 112.0.0
+	 * @version 113.0.0
 	 */
 
 	/**
@@ -150,56 +150,6 @@ class QualityApi {
 			'DELETE', 
 			{ 'formId': formId }, 
 			{  }, 
-			{  }, 
-			{  }, 
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'], 
-			['application/json']
-		);
-	}
-
-	/**
-	 * Delete a keywordSet by id.
-	 * 
-	 * @param {String} keywordSetId KeywordSet ID
-	 */
-	deleteQualityKeywordset(keywordSetId) { 
-		// verify the required parameter 'keywordSetId' is set
-		if (keywordSetId === undefined || keywordSetId === null) {
-			throw 'Missing the required parameter "keywordSetId" when calling deleteQualityKeywordset';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/quality/keywordsets/{keywordSetId}', 
-			'DELETE', 
-			{ 'keywordSetId': keywordSetId }, 
-			{  }, 
-			{  }, 
-			{  }, 
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'], 
-			['application/json']
-		);
-	}
-
-	/**
-	 * Delete keyword sets
-	 * Bulk delete of keyword sets; this will only delete the keyword sets that match the ids specified in the query param.
-	 * @param {String} ids A comma-delimited list of valid KeywordSet ids
-	 */
-	deleteQualityKeywordsets(ids) { 
-		// verify the required parameter 'ids' is set
-		if (ids === undefined || ids === null) {
-			throw 'Missing the required parameter "ids" when calling deleteQualityKeywordsets';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/quality/keywordsets', 
-			'DELETE', 
-			{  }, 
-			{ 'ids': ids }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -795,64 +745,6 @@ class QualityApi {
 	}
 
 	/**
-	 * Get a keywordSet by id.
-	 * 
-	 * @param {String} keywordSetId KeywordSet ID
-	 */
-	getQualityKeywordset(keywordSetId) { 
-		// verify the required parameter 'keywordSetId' is set
-		if (keywordSetId === undefined || keywordSetId === null) {
-			throw 'Missing the required parameter "keywordSetId" when calling getQualityKeywordset';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/quality/keywordsets/{keywordSetId}', 
-			'GET', 
-			{ 'keywordSetId': keywordSetId }, 
-			{  }, 
-			{  }, 
-			{  }, 
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'], 
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get the list of keyword sets
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Number} opts.pageSize The total page size requested (default to 25)
-	 * @param {Number} opts.pageNumber The page number requested (default to 1)
-	 * @param {String} opts.sortBy variable name requested to sort by
-	 * @param {Array.<String>} opts.expand variable name requested by expand list
-	 * @param {String} opts.nextPage next page token
-	 * @param {String} opts.previousPage Previous page token
-	 * @param {String} opts.name the keyword set name - used for filtering results in searches.
-	 * @param {String} opts.queueId the queue id - used for filtering results in searches.
-	 * @param {String} opts.agentId the agent id - used for filtering results in searches.
-	 * @param {Object} opts.operator If agentID and queueId are both present, this determines whether the query is an AND or OR between those parameters.
-	 */
-	getQualityKeywordsets(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/quality/keywordsets', 
-			'GET', 
-			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'nextPage': opts['nextPage'],'previousPage': opts['previousPage'],'name': opts['name'],'queueId': opts['queueId'],'agentId': opts['agentId'],'operator': opts['operator'] }, 
-			{  }, 
-			{  }, 
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'], 
-			['application/json']
-		);
-	}
-
-	/**
 	 * Get the published evaluation forms.
 	 * 
 	 * @param {String} formId Form ID
@@ -1302,35 +1194,6 @@ class QualityApi {
 	}
 
 	/**
-	 * Create a Keyword Set
-	 * 
-	 * @param {Object} body keywordSet
-	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.expand queueId
-	 */
-	postQualityKeywordsets(body, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postQualityKeywordsets';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/quality/keywordsets', 
-			'POST', 
-			{  }, 
-			{ 'expand': opts['expand'] }, 
-			{  }, 
-			{  }, 
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'], 
-			['application/json']
-		);
-	}
-
-	/**
 	 * Publish an evaluation form.
 	 * 
 	 * @param {Object} body Publish request containing id of form to publish
@@ -1399,30 +1262,6 @@ class QualityApi {
 			{  }, 
 			{  }, 
 			body, 
-			['PureCloud OAuth'], 
-			['application/json'], 
-			['application/json']
-		);
-	}
-
-	/**
-	 * Retrieve the spotability statistic
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body Keyword Set
-	 */
-	postQualitySpotability(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/quality/spotability', 
-			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
-			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
@@ -1603,36 +1442,6 @@ class QualityApi {
 			'/api/v2/quality/forms/surveys/{formId}', 
 			'PUT', 
 			{ 'formId': formId }, 
-			{  }, 
-			{  }, 
-			{  }, 
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'], 
-			['application/json']
-		);
-	}
-
-	/**
-	 * Update a keywordSet to the specified keywordSet via PUT.
-	 * 
-	 * @param {String} keywordSetId KeywordSet ID
-	 * @param {Object} body keywordSet
-	 */
-	putQualityKeywordset(keywordSetId, body) { 
-		// verify the required parameter 'keywordSetId' is set
-		if (keywordSetId === undefined || keywordSetId === null) {
-			throw 'Missing the required parameter "keywordSetId" when calling putQualityKeywordset';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putQualityKeywordset';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/quality/keywordsets/{keywordSetId}', 
-			'PUT', 
-			{ 'keywordSetId': keywordSetId }, 
 			{  }, 
 			{  }, 
 			{  }, 

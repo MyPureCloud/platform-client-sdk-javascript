@@ -26,6 +26,7 @@ import JourneyApi from './api/JourneyApi.js';
 import KnowledgeApi from './api/KnowledgeApi.js';
 import LanguageUnderstandingApi from './api/LanguageUnderstandingApi.js';
 import LanguagesApi from './api/LanguagesApi.js';
+import LearningApi from './api/LearningApi.js';
 import LicenseApi from './api/LicenseApi.js';
 import LocationsApi from './api/LocationsApi.js';
 import MobileDevicesApi from './api/MobileDevicesApi.js';
@@ -90,7 +91,7 @@ import WorkforceManagementApi from './api/WorkforceManagementApi.js';
  * </pre>
  * </p>
  * @module purecloud-platform-client-v2/index
- * @version 112.0.0
+ * @version 113.0.0
  */
 class platformClient {
 	constructor() {
@@ -229,6 +230,11 @@ class platformClient {
 		 * @property {module:purecloud-platform-client-v2/api/LanguagesApi}
 		 */
 		this.LanguagesApi = LanguagesApi;
+		/**
+		 * The LearningApi service constructor.
+		 * @property {module:purecloud-platform-client-v2/api/LearningApi}
+		 */
+		this.LearningApi = LearningApi;
 		/**
 		 * The LicenseApi service constructor.
 		 * @property {module:purecloud-platform-client-v2/api/LicenseApi}

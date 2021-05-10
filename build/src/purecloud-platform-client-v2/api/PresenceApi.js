@@ -5,7 +5,7 @@ class PresenceApi {
 	/**
 	 * Presence service.
 	 * @module purecloud-platform-client-v2/api/PresenceApi
-	 * @version 112.0.0
+	 * @version 113.0.0
 	 */
 
 	/**
@@ -189,6 +189,31 @@ class PresenceApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/users/{userId}/presences/purecloud', 
+			'GET', 
+			{ 'userId': userId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a user&#39;s Zoom Phone presence.
+	 * Gets the presence for a Zoom user.  This will return the Zoom Phone presence mapped to Genesys Cloud presence with additional activity details in the message field. This presence source is read-only.
+	 * @param {String} userId user Id
+	 */
+	getUserPresencesZoomphone(userId) { 
+		// verify the required parameter 'userId' is set
+		if (userId === undefined || userId === null) {
+			throw 'Missing the required parameter "userId" when calling getUserPresencesZoomphone';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/users/{userId}/presences/zoomphone', 
 			'GET', 
 			{ 'userId': userId }, 
 			{  }, 
