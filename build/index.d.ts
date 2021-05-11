@@ -1,5 +1,4 @@
 import platformClient = require('purecloud-platform-client-v2');
-import Configuration from './src/purecloud-platform-client-v2/configuration';
 
 declare module 'purecloud-platform-client-v2' {
 	export const ApiClient: ApiClientClass;
@@ -9,13 +8,13 @@ declare class ApiClientClass {
 	instance: ApiClientClass;
 	proxy: ProxyConfig;
 	superagent: any;
-	config: Configuration;
 
 	callApi(path: string, httpMethod: string, pathParams: { [key: string]: string; }, queryParams: { [key: string]: object; }, headerParams: { [key: string]: object; }, formParams: { [key: string]: object; }, bodyParam: any, authNames: Array<string>, contentTypes: Array<string>, accepts: Array<string>): Promise<any>;
 	loginClientCredentialsGrant(clientId: string, clientSecret: string): Promise<AuthData>;
 	loginImplicitGrant(clientId: string, redirectUri: string, opts?: LoginImplicitGrantOptions): Promise<AuthData>;
 	logout(logoutRedirectUri: string): void;
 	setAccessToken(token: string): void;
+	setDebugLog(debugLog: any, maxLines: number): void;
 	setEnvironment(environment: string): void;
 	setPersistSettings(doPersist: boolean, prefix?: string): void;
 	setReturnExtendedResponses(returnExtended: boolean): void;
@@ -24305,6 +24304,46 @@ declare namespace Models {
 		"transcription": string;
 		"transcriptionConfidenceThreshold": number;
 		"contentSearchEnabled"?: boolean;
+	}
+	
+	export interface TranscriptionsTopicTranscriptAlternative { 
+		"confidence"?: number;
+		"transcript"?: string;
+		"words"?: Array<Models.TranscriptionsTopicTranscriptWord>;
+	}
+	
+	export interface TranscriptionsTopicTranscriptResult { 
+		"utteranceId"?: string;
+		"isFinal"?: boolean;
+		"channel"?: string;
+		"alternatives"?: Array<Models.TranscriptionsTopicTranscriptAlternative>;
+		"agentAssistantId"?: string;
+		"engineId"?: string;
+		"dialect"?: string;
+		"speechTextAnalyticsProgramId"?: string;
+		"startTimeMs"?: number;
+		"offsetMs"?: number;
+		"durationMs"?: number;
+		"agentAssistEnabled"?: boolean;
+		"voiceTranscriptionEnabled"?: boolean;
+	}
+	
+	export interface TranscriptionsTopicTranscriptWord { 
+		"confidence"?: number;
+		"startTimeMs"?: number;
+		"offsetMs"?: number;
+		"durationMs"?: number;
+		"word"?: string;
+	}
+	
+	export interface TranscriptionsTopicTranscriptionMessage { 
+		"eventTime"?: string;
+		"batchIntervalMs"?: number;
+		"organizationId"?: string;
+		"conversationId"?: string;
+		"communicationId"?: string;
+		"sessionId"?: string;
+		"transcripts"?: Array<Models.TranscriptionsTopicTranscriptResult>;
 	}
 	
 	export interface Transcripts { 

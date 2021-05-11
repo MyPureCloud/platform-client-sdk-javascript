@@ -14,344 +14,9 @@ define(['superagent'], function (superagent) { 'use strict';
        eu_west_2: "euw2.pure.cloud"
       }
 
-   const winston = require('winston');
-
-   const logLevels = {
-   	levels: {
-   		none: 0,
-   		error: 1,
-   		debug: 2,
-   		trace: 3,
-   	},
-   };
-
-   const logLevelEnum = {
-   	level: {
-   		LNone: 'none',
-   		LError: 'error',
-   		LDebug: 'debug',
-   		LTrace: 'trace',
-   	},
-   };
-
-   const logFormatEnum = {
-   	formats: {
-   		JSON: 'json',
-   		TEXT: 'text',
-   	},
-   };
-
-   class Logger {
-   	get logLevelEnum() {
-   		return logLevelEnum;
-   	}
-
-   	get logFormatEnum() {
-   		return logFormatEnum;
-   	}
-
-   	constructor() {
-   		this.log_level = logLevelEnum.level.LNone;
-   		this.log_format = logFormatEnum.formats.TEXT;
-   		this.log_to_console = true;
-   		this.log_file_path;
-   		this.log_response_body = false;
-   		this.log_request_body = false;
-
-   		this.setLogger();
-   	}
-
-   	createNewLogger() {
-   		this.logger = winston.createLogger({
-   			levels: logLevels.levels,
-   			level: this.log_level,
-   		});
-   	}
-
-   	setLogger() {
-   		this.createNewLogger();
-   		if (this.log_file_path && this.log_file_path !== '') {
-   			if (this.log_format === logFormatEnum.formats.JSON) {
-   				this.logger.add(new winston.transports.File({ format: winston.format.json(), filename: this.log_file_path }));
-   			} else {
-   				this.logger.add(
-   					new winston.transports.File({
-   						format: winston.format.combine(
-   							winston.format((info) => {
-   								info.level = info.level.toUpperCase();
-   								return info;
-   							})(),
-   							winston.format.simple()
-   						),
-   						filename: this.log_file_path,
-   					})
-   				);
-   			}
-   		}
-   		if (this.log_to_console) {
-   			if (this.log_format === logFormatEnum.formats.JSON) {
-   				this.logger.add(new winston.transports.Console({ format: winston.format.json() }));
-   			} else {
-   				this.logger.add(
-   					new winston.transports.Console({
-   						format: winston.format.combine(
-   							winston.format((info) => {
-   								info.level = info.level.toUpperCase();
-   								return info;
-   							})(),
-   							winston.format.simple()
-   						),
-   					})
-   				);
-   			}
-   		}
-   	}
-
-   	log(level, statusCode, method, url, requestHeaders, responseHeaders, requestBody, responseBody) {
-   		var content = this.formatLog(level, statusCode, method, url, requestHeaders, responseHeaders, requestBody, responseBody);
-   		if (this.logger.transports.length > 0) this.logger.log(level, content);
-   	}
-
-   	formatLog(level, statusCode, method, url, requestHeaders, responseHeaders, requestBody, responseBody) {
-   		var result;
-   		if (requestHeaders) requestHeaders['Authorization'] = '[REDACTED]';
-   		if (!this.log_request_body) requestBody = undefined;
-   		if (!this.log_response_body) responseBody = undefined;
-   		if (this.log_format && this.log_format === logFormatEnum.formats.JSON) {
-   			result = {
-   				level: level,
-   				date: new Date().toISOString(),
-   				method: method,
-   				url: decodeURIComponent(url),
-   				correlationId: responseHeaders ? (responseHeaders['inin-correlation-id'] ? responseHeaders['inin-correlation-id'] : '') : '',
-   				statusCode: statusCode,
-   			};
-   			if (requestHeaders) result.requestHeaders = requestHeaders;
-   			if (responseHeaders) result.responseHeaders = responseHeaders;
-   			if (requestBody) result.requestBody = requestBody;
-   			if (responseBody) result.responseBody = responseBody;
-   		} else {
-   			result = `${new Date().toISOString()}
-=== REQUEST === 
-${this.formatValue('URL', decodeURIComponent(url))}${this.formatValue('Method', method)}${this.formatValue(
-				'Headers',
-				this.formatHeaderString(requestHeaders)
-			)}${this.formatValue('Body', requestBody ? JSON.stringify(requestBody, null, 2) : '')}
-=== RESPONSE ===
-${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.formatHeaderString(responseHeaders))}${this.formatValue(
-				'CorrelationId',
-				responseHeaders ? (responseHeaders['inin-correlation-id'] ? responseHeaders['inin-correlation-id'] : '') : ''
-			)}${this.formatValue('Body', responseBody ? JSON.stringify(responseBody, null, 2) : '')}`;
-   		}
-
-   		return result;
-   	}
-
-   	formatHeaderString(headers) {
-   		var headerString = '';
-   		if (!headers) return headerString;
-   		for (const [key, value] of Object.entries(headers)) {
-   			headerString += `\n\t${key}: ${value}`;
-   		}
-   		return headerString;
-   	}
-
-   	formatValue(key, value) {
-   		if (!value || value === '' || value === '{}') return '';
-   		return `${key}: ${value}\n`;
-   	}
-
-   	getLogLevel(level) {
-   		switch (level) {
-   			case 'error':
-   				return logLevelEnum.level.LError;
-   			case 'debug':
-   				return logLevelEnum.level.LDebug;
-   			case 'trace':
-   				return logLevelEnum.level.LTrace;
-   			default:
-   				return logLevelEnum.level.LNone;
-   		}
-   	}
-
-   	getLogFormat(format) {
-   		switch (format) {
-   			case 'json':
-   				return logFormatEnum.formats.JSON;
-   			default:
-   				return logFormatEnum.formats.TEXT;
-   		}
-   	}
-   }
-
-   const ConfigParser = require('configparser');
-   const os = require('os');
-   const path = require('path');
-   const fs = require('fs');
-
-   class Configuration {
-   	/**
-   	 * Singleton getter
-   	 */
-   	get instance() {
-   		return Configuration.instance;
-   	}
-
-   	/**
-   	 * Singleton setter
-   	 */
-   	set instance(value) {
-   		Configuration.instance = value;
-   	}
-
-   	constructor() {
-   		if (!Configuration.instance) {
-   			Configuration.instance = this;
-   		}
-
-   		this.configPath = typeof window !== 'undefined' ? '' : path.join(os.homedir(), '.genesyscloudjavascript', 'config');
-   		this.refresh_access_token = true;
-   		this.refresh_token_wait_max = 10;
-   		this.live_reload_config = true;
-   		this.host;
-   		this.environment;
-   		this.basePath;
-   		this.authUrl;
-   		this.config;
-   		this.logger = new Logger();
-   		this.setEnvironment();
-   		this.liveLoadConfig();
-   	}
-
-   	liveLoadConfig() {
-   		// If in browser, don't read config file, use default values
-   		if (typeof window !== 'undefined') {
-   			this.configPath = '';
-   			return;
-   		}
-
-   		this.updateConfigFromFile();
-
-   		if (this.live_reload_config && this.live_reload_config === true) {
-   			try {
-   				fs.watchFile(this.configPath, { persistent: false }, (eventType, filename) => {
-   					this.updateConfigFromFile();
-   					if (!this.live_reload_config) {
-   						fs.unwatchFile(this.configPath);
-   					}
-   				});
-   			} catch (err) {
-   				// do nothing
-   			}
-   		}
-   	}
-
-   	setConfigPath(path) {
-   		if (path && path !== this.configPath) {
-   			this.configPath = path;
-   			this.liveLoadConfig();
-   		}
-   	}
-
-   	updateConfigFromFile() {
-   		var configparser = new ConfigParser();
-
-   		try {
-   			configparser.read(this.configPath); // If no error catched, indicates it's INI format
-   			this.config = configparser;
-   		} catch (error) {
-   			if (error.name && error.name === 'MissingSectionHeaderError') {
-   				// Not INI format, see if it's JSON format
-   				var configData = fs.readFileSync(this.configPath, 'utf8');
-   				this.config = {
-   					_sections: JSON.parse(configData), // To match INI data format
-   				};
-   			}
-   		}
-
-   		if (this.config) this.updateConfigValues();
-   	}
-
-   	updateConfigValues() {
-   		this.logger.log_level = this.logger.getLogLevel(this.getConfigString('logging', 'log_level'));
-   		this.logger.log_format = this.logger.getLogFormat(this.getConfigString('logging', 'log_format'));
-   		this.logger.log_to_console =
-   			this.getConfigBoolean('logging', 'log_to_console') !== undefined
-   				? this.getConfigBoolean('logging', 'log_to_console')
-   				: this.logger.log_to_console;
-   		this.logger.log_file_path =
-   			this.getConfigString('logging', 'log_file_path') !== undefined
-   				? this.getConfigString('logging', 'log_file_path')
-   				: this.logger.log_file_path;
-   		this.logger.log_response_body =
-   			this.getConfigBoolean('logging', 'log_response_body') !== undefined
-   				? this.getConfigBoolean('logging', 'log_response_body')
-   				: this.logger.log_response_body;
-   		this.logger.log_request_body =
-   			this.getConfigBoolean('logging', 'log_request_body') !== undefined
-   				? this.getConfigBoolean('logging', 'log_request_body')
-   				: this.logger.log_request_body;
-   		this.refresh_access_token =
-   			this.getConfigBoolean('reauthentication', 'refresh_access_token') !== undefined
-   				? this.getConfigBoolean('reauthentication', 'refresh_access_token')
-   				: this.refresh_access_token;
-   		this.refresh_token_wait_max =
-   			this.getConfigInt('reauthentication', 'refresh_token_wait_max') !== undefined
-   				? this.getConfigInt('reauthentication', 'refresh_token_wait_max')
-   				: this.refresh_token_wait_max;
-   		this.live_reload_config =
-   			this.getConfigBoolean('general', 'live_reload_config') !== undefined
-   				? this.getConfigBoolean('general', 'live_reload_config')
-   				: this.live_reload_config;
-   		this.host = this.getConfigString('general', 'host') !== undefined ? this.getConfigString('general', 'host') : this.host;
-
-   		this.setEnvironment();
-
-   		// Update logging configs
-   		this.logger.setLogger();
-   	}
-
-   	setEnvironment(env) {
-   		// Default value
-   		if (env) this.environment = env;
-   		else this.environment = this.host ? this.host : 'mypurecloud.com';
-
-   		// Strip trailing slash
-   		this.environment = this.environment.replace(/\/+$/, '');
-
-   		// Strip protocol and subdomain
-   		if (this.environment.startsWith('https://')) this.environment = this.environment.substring(8);
-   		if (this.environment.startsWith('http://')) this.environment = this.environment.substring(7);
-   		if (this.environment.startsWith('api.')) this.environment = this.environment.substring(4);
-
-   		this.basePath = `https://api.${this.environment}`;
-   		this.authUrl = `https://login.${this.environment}`;
-   	}
-
-   	getConfigString(section, key) {
-   		if (this.config._sections[section]) return this.config._sections[section][key];
-   	}
-
-   	getConfigBoolean(section, key) {
-   		if (this.config._sections[section] && this.config._sections[section][key] !== undefined) {
-   			if (typeof this.config._sections[section][key] === 'string') {
-   				return this.config._sections[section][key] === 'true';
-   			} else return this.config._sections[section][key];
-   		}
-   	}
-
-   	getConfigInt(section, key) {
-   		if (this.config._sections[section] && this.config._sections[section][key]) {
-   			if (typeof this.config._sections[section][key] === 'string') {
-   				return parseInt(this.config._sections[section][key]);
-   			} else return this.config._sections[section][key];
-   		}
-   	}
-   }
-
    /**
     * @module purecloud-platform-client-v2/ApiClient
-    * @version 113.0.0
+    * @version 113.1.0
     */
    class ApiClient {
    	/**
@@ -429,6 +94,13 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
    		}
 
    		/**
+   		 * The base URL against which to resolve every API call's (relative) path.
+   		 * @type {String}
+   		 * @default https://api.mypurecloud.com
+   		 */
+   		this.setEnvironment('https://api.mypurecloud.com');
+
+   		/**
    		 * The authentication methods to be included for all API calls.
    		 * @type {Array.<String>}
    		 */
@@ -458,11 +130,21 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
    		this.superagent = superagent;
 
    		// Transparently request a new access token when it expires (Code Authorization only)
+   		this.shouldRefreshAccessToken = true;
    		this.refreshInProgress = false;
+   		this.refreshTokenWaitTime = 10;
 
    		if (typeof(window) !== 'undefined') window.ApiClient = this;
+   	}
 
-   		this.config = new Configuration();
+   	/**
+   	 * @description Sets the debug log to enable debug logging
+   	 * @param {log} debugLog - In most cases use `console.log`
+   	 * @param {integer} maxLines - (optional) The max number of lines to write to the log. Must be > 0.
+   	 */
+   	setDebugLog(debugLog, maxLines) {
+   		this.debugLog = debugLog;
+   		this.debugLogMaxLines = (maxLines && maxLines > 0) ? maxLines : undefined;
    	}
 
    	/**
@@ -481,6 +163,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
    	setPersistSettings(doPersist, prefix) {
    		this.persistSettings = doPersist;
    		this.settingsPrefix = prefix ? prefix.replace(/\W+/g, '_') : 'purecloud';
+   		this._debugTrace(`this.settingsPrefix=${this.settingsPrefix}`);
    	}
 
    	/**
@@ -508,6 +191,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 
    			// Ensure we can access local storage
    			if (!this.hasLocalStorage) {
+   				this._debugTrace('Warning: Cannot access local storage. Settings will not be saved.');
    				return;
    			}
 
@@ -517,6 +201,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 
    			// Save updated auth data
    			localStorage.setItem(`${this.settingsPrefix}_auth_data`, JSON.stringify(tempData));
+   			this._debugTrace('Auth data saved to local storage');
    		} catch (e) {
    			console.error(e);
    		}
@@ -531,6 +216,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 
    		// Ensure we can access local storage
    		if (!this.hasLocalStorage) {
+   			this._debugTrace('Warning: Cannot access local storage. Settings will not be loaded.');
    			return;
    		}
 
@@ -550,7 +236,24 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
    	 * @param {string} environment - (Optional, default "mypurecloud.com") Environment the session use, e.g. mypurecloud.ie, mypurecloud.com.au, etc.
    	 */
    	setEnvironment(environment) {
-   		this.config.setEnvironment(environment);
+   		if (!environment)
+   			environment = 'mypurecloud.com';
+
+   		// Strip trailing slash
+   		environment = environment.replace(/\/+$/, '');
+
+   		// Strip protocol and subdomain
+   		if (environment.startsWith('https://'))
+   			environment = environment.substring(8);
+   		if (environment.startsWith('http://'))
+   			environment = environment.substring(7);
+   		if (environment.startsWith('api.'))
+   			environment = environment.substring(4);
+
+   		// Set vars
+   		this.environment = environment;
+   		this.basePath = `https://api.${environment}`;
+   		this.authUrl = `https://login.${environment}`;
    	}
 
    	/**
@@ -594,6 +297,8 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
    					resolve(this.authData);
    				})
    				.catch((error) => {
+   					this._debugTrace('Error encountered during login. This is normal if the application has not yet been authorized.');
+   					this._debugTrace(error);
    					var query = {
    						client_id: encodeURIComponent(this.clientId),
    						redirect_uri: encodeURIComponent(this.redirectUri),
@@ -604,6 +309,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
    					if (opts.provider) query.provider = encodeURIComponent(opts.provider);
 
    					var url = this._buildAuthUrl('oauth/authorize', query);
+   					this._debugTrace(`Implicit grant: redirecting to ${url} for authorization...`);
    					window.location.replace(url);
    				});
    		});
@@ -616,7 +322,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
    	 */
    	loginClientCredentialsGrant(clientId, clientSecret) {
    		this.clientId = clientId;
-   		var authHeader = Buffer.from(`${clientId}:${clientSecret}`).toString('base64');
+   		var authHeader = new Buffer(`${clientId}:${clientSecret}`).toString('base64');
 
    		return new Promise((resolve, reject) => {
    			// Block browsers from using client credentials
@@ -626,7 +332,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
    			}
 
    			// Build token request
-   			var request = superagent('POST', `https://login.${this.config.environment}/oauth/token`);
+   			var request = superagent('POST', `https://login.${this.environment}/oauth/token`);
    			if (this.proxy && request.proxy) {
    				request.proxy(this.proxy);
    			}
@@ -636,47 +342,15 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
    			// Execute request
    			request.end((error, response) => {
    				if (error) {
-   					// Log error
-   					this.config.logger.log(
-   						'error',
-   						response.statusCode,
-   						'POST',
-   						`https://login.${this.config.environment}/oauth/token`,
-   						request.header,
-   						response.headers,
-   						{ grant_type: 'client_credentials' },
-   						response.body
-   					);
    					reject(error);
    				} else {
-   					// Logging
-   					this.config.logger.log(
-   						'trace',
-   						response.statusCode,
-   						'POST',
-   						`https://login.${this.config.environment}/oauth/token`,
-   						request.header,
-   						response.headers,
-   						{ grant_type: 'client_credentials' },
-   						undefined
-   					);
-   					this.config.logger.log(
-   						'debug',
-   						response.statusCode,
-   						'POST',
-   						`https://login.${this.config.environment}/oauth/token`,
-   						request.header,
-   						undefined,
-   						{ grant_type: 'client_credentials' },
-   						undefined
-   					);
-
    					// Save access token
    					this.setAccessToken(response.body['access_token']);
 
    					// Set expiry time
    					this.authData.tokenExpiryTime = (new Date()).getTime() + (response.body['expires_in'] * 1000);
    					this.authData.tokenExpiryTimeString = (new Date(this.authData.tokenExpiryTime)).toUTCString();
+   					this._debugTrace(`Access token expires in ${response.body['expires_in']} seconds`);
 
    					// Return auth data
    					resolve(this.authData);
@@ -699,61 +373,23 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
    				reject(new Error('The saml2bearer grant is not supported in a browser.'));
    				return;
    			}
-   			var encodedData = Buffer.from(clientId + ':' + clientSecret).toString('base64');
+   			var encodedData = new Buffer(clientId + ':' + clientSecret).toString('base64');
    			var request = this._formAuthRequest(encodedData,
    												{ grant_type: 'urn:ietf:params:oauth:grant-type:saml2-bearer' },
    										        { orgName: orgName },
    										        { assertion: assertion });
-   			var bodyParam = {
-   				grant_type: 'urn:ietf:params:oauth:grant-type:saml2-bearer',
-   				orgName: orgName,
-   				assertion: assertion,
-   			};
-
    			// Handle response
    			request.end((error, response) => {
    				if (error) {
-   					// Log error
-   					this.config.logger.log(
-   						'error',
-   						response.statusCode,
-   						'POST',
-   						`https://login.${this.config.environment}/oauth/token`,
-   						request.header,
-   						response.headers,
-   						bodyParam,
-   						response.body
-   					);
    					reject(error);
    				} else {
-   					// Logging
-   					this.config.logger.log(
-   						'trace',
-   						response.statusCode,
-   						'POST',
-   						`https://login.${this.config.environment}/oauth/token`,
-   						request.header,
-   						response.headers,
-   						bodyParam,
-   						undefined
-   					);
-   					this.config.logger.log(
-   						'debug',
-   						response.statusCode,
-   						'POST',
-   						`https://login.${this.config.environment}/oauth/token`,
-   						request.header,
-   						undefined,
-   						bodyParam,
-   						undefined
-   					);
-
    					// Get access token from response
    					var access_token = response.body.access_token;
 
    					this.setAccessToken(access_token);
    					this.authData.tokenExpiryTime = new Date().getTime() + response.body['expires_in'] * 1000;
    					this.authData.tokenExpiryTimeString = new Date(this.authData.tokenExpiryTime).toUTCString();
+   					this._debugTrace(`Access token expires in ${response.body['expires_in']} seconds`);
 
    					// Return auth data
    					resolve(this.authData);
@@ -777,18 +413,13 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
    				reject(new Error('The Code Authorization grant is not supported in a browser.'));
    				return;
    			}
-   			var encodedData = Buffer.from(clientId + ':' + clientSecret).toString('base64');
+   			var encodedData = new Buffer(clientId + ':' + clientSecret).toString('base64');
    			var request = this._formAuthRequest(encodedData,
    												{ grant_type: 'authorization_code' },
    									            { code: authCode },
    										        { redirect_uri: redirectUri });
-   			var bodyParam = {
-   				grant_type: 'authorization_code',
-   				code: authCode,
-   				redirect_uri: redirectUri,
-   			};
    			// Handle response
-   			this._handleCodeAuthorizationResponse(request, bodyParam, resolve, reject);
+   			this._handleCodeAuthorizationResponse(request, resolve, reject);
    		});
    	}
 
@@ -805,76 +436,38 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
    				reject(new Error('The Code Authorization grant is not supported in a browser.'));
    				return;
    			}
-   			var encodedData = Buffer.from(clientId + ':' + clientSecret).toString('base64');
+   			var encodedData = new Buffer(clientId + ':' + clientSecret).toString('base64');
    			var request = this._formAuthRequest(encodedData, { grant_type: 'refresh_token' }, { refresh_token: refreshToken });
-   			var bodyParam = {
-   				grant_type: 'refresh_token',
-   				refresh_token: refreshToken,
-   			};
    			// Handle response
-   			this._handleCodeAuthorizationResponse(request, bodyParam, resolve, reject);
+   			this._handleCodeAuthorizationResponse(request, resolve, reject);
    		});
    	}
 
    	/**
    	 * @description Handles the response for code auth requests
-   	 * @param {object} request - Authorization request object
-   	 * @param {object} bodyParam - Input body data for authorization request
+   	 * @param {object} request - Authoriation request object
    	 * @param {function} resolve - Promise resolve callback
    	 * @param {function} reject - Promise reject callback
    	 */
-   	_handleCodeAuthorizationResponse(request, bodyParam, resolve, reject) {
+   	_handleCodeAuthorizationResponse(request, resolve, reject) {
    		request.end((error, response) => {
-   			if (error) {
-   				// Log error
-   				this.config.logger.log(
-   					'error',
-   					response.statusCode,
-   					'POST',
-   					`https://login.${this.config.environment}/oauth/token`,
-   					request.header,
-   					response.headers,
-   					bodyParam,
-   					response.body
-   				);
+   				if (error) {
+   					reject(error);
+   				} else {
+   					// Get access token from response
+   					var access_token = response.body.access_token;
+   					var refresh_token = response.body.refresh_token;
 
-   				reject(error);
-   			} else {
-   				// Logging
-   				this.config.logger.log(
-   					'trace',
-   					response.statusCode,
-   					'POST',
-   					`https://login.${this.config.environment}/oauth/token`,
-   					request.header,
-   					response.headers,
-   					bodyParam,
-   					undefined
-   				);
-   				this.config.logger.log(
-   					'debug',
-   					response.statusCode,
-   					'POST',
-   					`https://login.${this.config.environment}/oauth/token`,
-   					request.header,
-   					undefined,
-   					bodyParam,
-   					undefined
-   				);
+   					this.setAccessToken(access_token);
+   					this.authData.refreshToken = refresh_token;
+   					this.authData.tokenExpiryTime = new Date().getTime() + response.body['expires_in'] * 1000;
+   					this.authData.tokenExpiryTimeString = new Date(this.authData.tokenExpiryTime).toUTCString();
+   					this._debugTrace(`Access token expires in ${response.body['expires_in']} seconds`);
 
-   				// Get access token from response
-   				var access_token = response.body.access_token;
-   				var refresh_token = response.body.refresh_token;
-
-   				this.setAccessToken(access_token);
-   				this.authData.refreshToken = refresh_token;
-   				this.authData.tokenExpiryTime = new Date().getTime() + response.body['expires_in'] * 1000;
-   				this.authData.tokenExpiryTimeString = new Date(this.authData.tokenExpiryTime).toUTCString();
-
-   				// Return auth data
-   				resolve(this.authData);
-   			}
-   		});
+   					// Return auth data
+   					resolve(this.authData);
+   				}
+   			});
    	}
 
    	/**
@@ -882,7 +475,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
    	 * @param {string} encodedData - Base64 encoded client and clientSecret pair
    	 */
    	_formAuthRequest(encodedData) {
-   		var request = superagent('POST', `https://login.${this.config.environment}/oauth/token`);
+   		var request = superagent('POST', `https://login.${this.environment}/oauth/token`);
    		// Set the headers
    		request.set('Authorization', 'Basic ' + encodedData);
    		request.set('Content-Type', 'application/x-www-form-urlencoded');
@@ -918,11 +511,11 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
    						reject(err);
    					});
    			} else {
-   				// Wait refresh_token_wait_max seconds for other thread to complete refresh
-   				this._sleep(this.config.refresh_token_wait_max)
+   				// Wait maximum of refreshTokenWaitTime seconds for other thread to complete refresh
+   				this._sleep(this.refreshTokenWaitTime)
    					.then(() => {
    						if (this.refreshInProgress)
-   							reject(new Error(`Token refresh took longer than ${this.config.refresh_token_wait_max} seconds`));
+   							reject(new Error(`Token refresh took longer than ${this.refreshTokenWaitTime} seconds`));
    						else
    							resolve();
    					});
@@ -1073,7 +666,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
    	 */
    	_buildAuthUrl(path, query) {
    		if (!query) query = {};
-   		return Object.keys(query).reduce((url, key) => !query[key] ? url : `${url}&${key}=${query[key]}`, `${this.config.authUrl}/${path}?`);
+   		return Object.keys(query).reduce((url, key) => !query[key] ? url : `${url}&${key}=${query[key]}`, `${this.authUrl}/${path}?`);
    	}
 
    	/**
@@ -1102,7 +695,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
    		if (!path.match(/^\//)) {
    			path = `/${path}`;
    		}
-   		var url = this.config.basePath + path;
+   		var url = this.basePath + path;
    		url = url.replace(/\{([\w-]+)\}/g, (fullMatch, key) => {
    			var value;
    			if (pathParams.hasOwnProperty(key)) {
@@ -1290,6 +883,23 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
    					request.proxy(that.proxy);
    				}
 
+   				if(that.debugLog){
+   					var trace = `[REQUEST] ${httpMethod} ${url}`;
+   					if(pathParams && Object.keys(pathParams).count > 0 && pathParams[Object.keys(pathParams)[0]]){
+   						trace += `\nPath Params: ${JSON.stringify(pathParams)}`;
+   					}
+
+   					if(queryParams && Object.keys(queryParams).count > 0 && queryParams[Object.keys(queryParams)[0]]){
+   						trace += `\nQuery Params: ${JSON.stringify(queryParams)}`;
+   					}
+
+   					if(bodyParam){
+   						trace += `\nnBody: ${JSON.stringify(bodyParam)}`;
+   					}
+
+   					that._debugTrace(trace);
+   				}
+
    				// apply authentications
    				that.applyAuthToRequest(request, authNames);
 
@@ -1298,7 +908,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 
    				// set header parameters
    				request.set(that.defaultHeaders).set(that.normalizeParams(headerParams));
-   				//request.set({ 'purecloud-sdk': '113.0.0' });
+   				//request.set({ 'purecloud-sdk': '113.1.0' });
 
    				// set request timeout
    				request.timeout(that.timeout);
@@ -1358,12 +968,24 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
    					} : response.body ? response.body : response.text;
 
    					// Debug logging
-   					that.config.logger.log('trace', response.statusCode, httpMethod, url, request.header, response.headers, bodyParam, undefined);
-   					that.config.logger.log('debug', response.statusCode, httpMethod, url, request.header, undefined, bodyParam, undefined);
+   					if (that.debugLog) {
+   						var trace = `[RESPONSE] ${response.status}: ${httpMethod} ${url}`;
+   						if (response.headers)
+   							trace += `\ninin-correlation-id: ${response.headers['inin-correlation-id']}`;
+   						if (response.body)
+   							trace += `\nBody: ${JSON.stringify(response.body,null,2)}`;
+
+   						// Log trace message
+   						that._debugTrace(trace);
+
+   						// Log stack trace
+   						if (error)
+   							that._debugTrace(error);
+   					}
 
    					// Resolve promise
    					if (error) {
-   						if (data.status == 401 && that.config.refresh_access_token && that.authData.refreshToken !== "") {
+   						if (data.status == 401 && that.shouldRefreshAccessToken && that.authData.refreshToken !== "") {
    							that._handleExpiredAccessToken()
    								.then(() => {
    									sendRequest(that);
@@ -1372,17 +994,6 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
    									reject(err);
    								});
    						} else {
-   							// Log error
-   							that.config.logger.log(
-   								'error',
-   								response.statusCode,
-   								httpMethod,
-   								url,
-   								request.header,
-   								response.headers,
-   								bodyParam,
-   								response.body
-   							);
    							reject(data);
    						}
    					} else {
@@ -1392,13 +1003,46 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
    			}
    		});
    	}
+
+   	/**
+   	 * @description Parses an ISO-8601 string representation of a date value.
+   	 * @param {String} str The date value as a string.
+   	 * @returns {Date} The parsed date object.
+   	 */
+   	parseDate(str) {
+   		return new Date(str.replace(/T/i, ' '));
+   	}
+
+   	/**
+   	 * @description Logs to the debug log
+   	 * @param {String} str The date value as a string.
+   	 * @returns {Date} The parsed date object.
+   	 */
+   	_debugTrace(trace) {
+   		if (!this.debugLog) return;
+
+   		if (typeof(trace) === 'string') {
+   			// Truncate
+   			var truncTrace = '';
+   			var lines = trace.split('\n');
+   			if (this.debugLogMaxLines && lines.length > this.debugLogMaxLines) {
+   				for  (var i = 0; i < this.debugLogMaxLines; i++) {
+   					truncTrace += `${lines[i]}\n`;
+   				}
+   				truncTrace += '...response truncated...';
+   				trace = truncTrace;
+   			}
+   		}
+
+   		this.debugLog(trace);
+   	}
    }
 
    class AlertingApi {
    	/**
    	 * Alerting service.
    	 * @module purecloud-platform-client-v2/api/AlertingApi
-   	 * @version 113.0.0
+   	 * @version 113.1.0
    	 */
 
    	/**
@@ -1712,7 +1356,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
    	/**
    	 * Analytics service.
    	 * @module purecloud-platform-client-v2/api/AnalyticsApi
-   	 * @version 113.0.0
+   	 * @version 113.1.0
    	 */
 
    	/**
@@ -2817,7 +2461,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
    	/**
    	 * Architect service.
    	 * @module purecloud-platform-client-v2/api/ArchitectApi
-   	 * @version 113.0.0
+   	 * @version 113.1.0
    	 */
 
    	/**
@@ -5718,7 +5362,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
    	/**
    	 * Audit service.
    	 * @module purecloud-platform-client-v2/api/AuditApi
-   	 * @version 113.0.0
+   	 * @version 113.1.0
    	 */
 
    	/**
@@ -5889,7 +5533,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
    	/**
    	 * Authorization service.
    	 * @module purecloud-platform-client-v2/api/AuthorizationApi
-   	 * @version 113.0.0
+   	 * @version 113.1.0
    	 */
 
    	/**
@@ -7042,7 +6686,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
    	/**
    	 * Billing service.
    	 * @module purecloud-platform-client-v2/api/BillingApi
-   	 * @version 113.0.0
+   	 * @version 113.1.0
    	 */
 
    	/**
@@ -7122,7 +6766,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
    	/**
    	 * Chat service.
    	 * @module purecloud-platform-client-v2/api/ChatApi
-   	 * @version 113.0.0
+   	 * @version 113.1.0
    	 */
 
    	/**
@@ -7213,7 +6857,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
    	/**
    	 * Coaching service.
    	 * @module purecloud-platform-client-v2/api/CoachingApi
-   	 * @version 113.0.0
+   	 * @version 113.1.0
    	 */
 
    	/**
@@ -7788,7 +7432,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
    	/**
    	 * ContentManagement service.
    	 * @module purecloud-platform-client-v2/api/ContentManagementApi
-   	 * @version 113.0.0
+   	 * @version 113.1.0
    	 */
 
    	/**
@@ -8928,7 +8572,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
    	/**
    	 * Conversations service.
    	 * @module purecloud-platform-client-v2/api/ConversationsApi
-   	 * @version 113.0.0
+   	 * @version 113.1.0
    	 */
 
    	/**
@@ -13056,7 +12700,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
    	/**
    	 * DataExtensions service.
    	 * @module purecloud-platform-client-v2/api/DataExtensionsApi
-   	 * @version 113.0.0
+   	 * @version 113.1.0
    	 */
 
    	/**
@@ -13142,7 +12786,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
    	/**
    	 * ExternalContacts service.
    	 * @module purecloud-platform-client-v2/api/ExternalContactsApi
-   	 * @version 113.0.0
+   	 * @version 113.1.0
    	 */
 
    	/**
@@ -14685,7 +14329,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
    	/**
    	 * Fax service.
    	 * @module purecloud-platform-client-v2/api/FaxApi
-   	 * @version 113.0.0
+   	 * @version 113.1.0
    	 */
 
    	/**
@@ -14856,7 +14500,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
    	/**
    	 * Flows service.
    	 * @module purecloud-platform-client-v2/api/FlowsApi
-   	 * @version 113.0.0
+   	 * @version 113.1.0
    	 */
 
    	/**
@@ -14927,7 +14571,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
    	/**
    	 * Gamification service.
    	 * @module purecloud-platform-client-v2/api/GamificationApi
-   	 * @version 113.0.0
+   	 * @version 113.1.0
    	 */
 
    	/**
@@ -15936,7 +15580,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
    	/**
    	 * GeneralDataProtectionRegulation service.
    	 * @module purecloud-platform-client-v2/api/GeneralDataProtectionRegulationApi
-   	 * @version 113.0.0
+   	 * @version 113.1.0
    	 */
 
    	/**
@@ -16066,7 +15710,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
    	/**
    	 * Geolocation service.
    	 * @module purecloud-platform-client-v2/api/GeolocationApi
-   	 * @version 113.0.0
+   	 * @version 113.1.0
    	 */
 
    	/**
@@ -16197,7 +15841,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
    	/**
    	 * Greetings service.
    	 * @module purecloud-platform-client-v2/api/GreetingsApi
-   	 * @version 113.0.0
+   	 * @version 113.1.0
    	 */
 
    	/**
@@ -16652,7 +16296,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
    	/**
    	 * Groups service.
    	 * @module purecloud-platform-client-v2/api/GroupsApi
-   	 * @version 113.0.0
+   	 * @version 113.1.0
    	 */
 
    	/**
@@ -17057,7 +16701,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
    	/**
    	 * IdentityProvider service.
    	 * @module purecloud-platform-client-v2/api/IdentityProviderApi
-   	 * @version 113.0.0
+   	 * @version 113.1.0
    	 */
 
    	/**
@@ -17813,7 +17457,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
    	/**
    	 * Integrations service.
    	 * @module purecloud-platform-client-v2/api/IntegrationsApi
-   	 * @version 113.0.0
+   	 * @version 113.1.0
    	 */
 
    	/**
@@ -19305,7 +18949,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
    	/**
    	 * Journey service.
    	 * @module purecloud-platform-client-v2/api/JourneyApi
-   	 * @version 113.0.0
+   	 * @version 113.1.0
    	 */
 
    	/**
@@ -19958,7 +19602,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
    	/**
    	 * Knowledge service.
    	 * @module purecloud-platform-client-v2/api/KnowledgeApi
-   	 * @version 113.0.0
+   	 * @version 113.1.0
    	 */
 
    	/**
@@ -20682,7 +20326,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
    	/**
    	 * LanguageUnderstanding service.
    	 * @module purecloud-platform-client-v2/api/LanguageUnderstandingApi
-   	 * @version 113.0.0
+   	 * @version 113.1.0
    	 */
 
    	/**
@@ -21250,7 +20894,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
    	/**
    	 * Languages service.
    	 * @module purecloud-platform-client-v2/api/LanguagesApi
-   	 * @version 113.0.0
+   	 * @version 113.1.0
    	 */
 
    	/**
@@ -21518,7 +21162,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
    	/**
    	 * Learning service.
    	 * @module purecloud-platform-client-v2/api/LearningApi
-   	 * @version 113.0.0
+   	 * @version 113.1.0
    	 */
 
    	/**
@@ -22052,7 +21696,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
    	/**
    	 * License service.
    	 * @module purecloud-platform-client-v2/api/LicenseApi
-   	 * @version 113.0.0
+   	 * @version 113.1.0
    	 */
 
    	/**
@@ -22290,7 +21934,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
    	/**
    	 * Locations service.
    	 * @module purecloud-platform-client-v2/api/LocationsApi
-   	 * @version 113.0.0
+   	 * @version 113.1.0
    	 */
 
    	/**
@@ -22526,7 +22170,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
    	/**
    	 * MobileDevices service.
    	 * @module purecloud-platform-client-v2/api/MobileDevicesApi
-   	 * @version 113.0.0
+   	 * @version 113.1.0
    	 */
 
    	/**
@@ -22677,7 +22321,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
    	/**
    	 * Notifications service.
    	 * @module purecloud-platform-client-v2/api/NotificationsApi
-   	 * @version 113.0.0
+   	 * @version 113.1.0
    	 */
 
    	/**
@@ -22877,7 +22521,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
    	/**
    	 * OAuth service.
    	 * @module purecloud-platform-client-v2/api/OAuthApi
-   	 * @version 113.0.0
+   	 * @version 113.1.0
    	 */
 
    	/**
@@ -23235,7 +22879,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
    	/**
    	 * Objects service.
    	 * @module purecloud-platform-client-v2/api/ObjectsApi
-   	 * @version 113.0.0
+   	 * @version 113.1.0
    	 */
 
    	/**
@@ -23476,7 +23120,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
    	/**
    	 * Organization service.
    	 * @module purecloud-platform-client-v2/api/OrganizationApi
-   	 * @version 113.0.0
+   	 * @version 113.1.0
    	 */
 
    	/**
@@ -23854,7 +23498,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
    	/**
    	 * OrganizationAuthorization service.
    	 * @module purecloud-platform-client-v2/api/OrganizationAuthorizationApi
-   	 * @version 113.0.0
+   	 * @version 113.1.0
    	 */
 
    	/**
@@ -24564,7 +24208,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
    	/**
    	 * Outbound service.
    	 * @module purecloud-platform-client-v2/api/OutboundApi
-   	 * @version 113.0.0
+   	 * @version 113.1.0
    	 */
 
    	/**
@@ -27588,7 +27232,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
    	/**
    	 * Presence service.
    	 * @module purecloud-platform-client-v2/api/PresenceApi
-   	 * @version 113.0.0
+   	 * @version 113.1.0
    	 */
 
    	/**
@@ -27960,7 +27604,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
    	/**
    	 * Quality service.
    	 * @module purecloud-platform-client-v2/api/QualityApi
-   	 * @version 113.0.0
+   	 * @version 113.1.0
    	 */
 
    	/**
@@ -29442,7 +29086,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
    	/**
    	 * Recording service.
    	 * @module purecloud-platform-client-v2/api/RecordingApi
-   	 * @version 113.0.0
+   	 * @version 113.1.0
    	 */
 
    	/**
@@ -30881,7 +30525,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
    	/**
    	 * ResponseManagement service.
    	 * @module purecloud-platform-client-v2/api/ResponseManagementApi
-   	 * @version 113.0.0
+   	 * @version 113.1.0
    	 */
 
    	/**
@@ -31206,7 +30850,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
    	/**
    	 * Routing service.
    	 * @module purecloud-platform-client-v2/api/RoutingApi
-   	 * @version 113.0.0
+   	 * @version 113.1.0
    	 */
 
    	/**
@@ -33733,7 +33377,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
    	/**
    	 * SCIM service.
    	 * @module purecloud-platform-client-v2/api/SCIMApi
-   	 * @version 113.0.0
+   	 * @version 113.1.0
    	 */
 
    	/**
@@ -34610,7 +34254,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
    	/**
    	 * Scripts service.
    	 * @module purecloud-platform-client-v2/api/ScriptsApi
-   	 * @version 113.0.0
+   	 * @version 113.1.0
    	 */
 
    	/**
@@ -34963,7 +34607,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
    	/**
    	 * Search service.
    	 * @module purecloud-platform-client-v2/api/SearchApi
-   	 * @version 113.0.0
+   	 * @version 113.1.0
    	 */
 
    	/**
@@ -35498,7 +35142,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
    	/**
    	 * SpeechTextAnalytics service.
    	 * @module purecloud-platform-client-v2/api/SpeechTextAnalyticsApi
-   	 * @version 113.0.0
+   	 * @version 113.1.0
    	 */
 
    	/**
@@ -36127,7 +35771,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
    	/**
    	 * Stations service.
    	 * @module purecloud-platform-client-v2/api/StationsApi
-   	 * @version 113.0.0
+   	 * @version 113.1.0
    	 */
 
    	/**
@@ -36274,7 +35918,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
    	/**
    	 * Suggest service.
    	 * @module purecloud-platform-client-v2/api/SuggestApi
-   	 * @version 113.0.0
+   	 * @version 113.1.0
    	 */
 
    	/**
@@ -36413,7 +36057,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
    	/**
    	 * Telephony service.
    	 * @module purecloud-platform-client-v2/api/TelephonyApi
-   	 * @version 113.0.0
+   	 * @version 113.1.0
    	 */
 
    	/**
@@ -36521,7 +36165,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
    	/**
    	 * TelephonyProvidersEdge service.
    	 * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-   	 * @version 113.0.0
+   	 * @version 113.1.0
    	 */
 
    	/**
@@ -40133,7 +39777,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
    	/**
    	 * Textbots service.
    	 * @module purecloud-platform-client-v2/api/TextbotsApi
-   	 * @version 113.0.0
+   	 * @version 113.1.0
    	 */
 
    	/**
@@ -40179,7 +39823,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
    	/**
    	 * Tokens service.
    	 * @module purecloud-platform-client-v2/api/TokensApi
-   	 * @version 113.0.0
+   	 * @version 113.1.0
    	 */
 
    	/**
@@ -40265,7 +39909,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
    	/**
    	 * Uploads service.
    	 * @module purecloud-platform-client-v2/api/UploadsApi
-   	 * @version 113.0.0
+   	 * @version 113.1.0
    	 */
 
    	/**
@@ -40386,7 +40030,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
    	/**
    	 * Usage service.
    	 * @module purecloud-platform-client-v2/api/UsageApi
-   	 * @version 113.0.0
+   	 * @version 113.1.0
    	 */
 
    	/**
@@ -40457,7 +40101,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
    	/**
    	 * UserRecordings service.
    	 * @module purecloud-platform-client-v2/api/UserRecordingsApi
-   	 * @version 113.0.0
+   	 * @version 113.1.0
    	 */
 
    	/**
@@ -40641,7 +40285,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
    	/**
    	 * Users service.
    	 * @module purecloud-platform-client-v2/api/UsersApi
-   	 * @version 113.0.0
+   	 * @version 113.1.0
    	 */
 
    	/**
@@ -42888,7 +42532,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
    	/**
    	 * Utilities service.
    	 * @module purecloud-platform-client-v2/api/UtilitiesApi
-   	 * @version 113.0.0
+   	 * @version 113.1.0
    	 */
 
    	/**
@@ -42999,7 +42643,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
    	/**
    	 * Voicemail service.
    	 * @module purecloud-platform-client-v2/api/VoicemailApi
-   	 * @version 113.0.0
+   	 * @version 113.1.0
    	 */
 
    	/**
@@ -43636,7 +43280,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
    	/**
    	 * WebChat service.
    	 * @module purecloud-platform-client-v2/api/WebChatApi
-   	 * @version 113.0.0
+   	 * @version 113.1.0
    	 */
 
    	/**
@@ -44180,7 +43824,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
    	/**
    	 * Widgets service.
    	 * @module purecloud-platform-client-v2/api/WidgetsApi
-   	 * @version 113.0.0
+   	 * @version 113.1.0
    	 */
 
    	/**
@@ -44326,7 +43970,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
    	/**
    	 * WorkforceManagement service.
    	 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-   	 * @version 113.0.0
+   	 * @version 113.1.0
    	 */
 
    	/**
@@ -47625,7 +47269,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
     * </pre>
     * </p>
     * @module purecloud-platform-client-v2/index
-    * @version 113.0.0
+    * @version 113.1.0
     */
    class platformClient {
    	constructor() {
