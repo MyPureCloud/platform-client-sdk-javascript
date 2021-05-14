@@ -1,8 +1,9 @@
 import superagent from 'superagent';
+import Configuration from './configuration.js';
 
 /**
  * @module purecloud-platform-client-v2/ApiClient
- * @version 113.1.0
+ * @version 113.2.0
  */
 class ApiClient {
 	/**
@@ -80,13 +81,6 @@ class ApiClient {
 		}
 
 		/**
-		 * The base URL against which to resolve every API call's (relative) path.
-		 * @type {String}
-		 * @default https://api.mypurecloud.com
-		 */
-		this.setEnvironment('https://api.mypurecloud.com');
-
-		/**
 		 * The authentication methods to be included for all API calls.
 		 * @type {Array.<String>}
 		 */
@@ -116,21 +110,11 @@ class ApiClient {
 		this.superagent = superagent;
 
 		// Transparently request a new access token when it expires (Code Authorization only)
-		this.shouldRefreshAccessToken = true;
 		this.refreshInProgress = false;
-		this.refreshTokenWaitTime = 10;
+
+		this.config = new Configuration();
 
 		if (typeof(window) !== 'undefined') window.ApiClient = this;
-	}
-
-	/**
-	 * @description Sets the debug log to enable debug logging
-	 * @param {log} debugLog - In most cases use `console.log`
-	 * @param {integer} maxLines - (optional) The max number of lines to write to the log. Must be > 0.
-	 */
-	setDebugLog(debugLog, maxLines) {
-		this.debugLog = debugLog;
-		this.debugLogMaxLines = (maxLines && maxLines > 0) ? maxLines : undefined;
 	}
 
 	/**
@@ -149,7 +133,6 @@ class ApiClient {
 	setPersistSettings(doPersist, prefix) {
 		this.persistSettings = doPersist;
 		this.settingsPrefix = prefix ? prefix.replace(/\W+/g, '_') : 'purecloud';
-		this._debugTrace(`this.settingsPrefix=${this.settingsPrefix}`);
 	}
 
 	/**
@@ -177,7 +160,6 @@ class ApiClient {
 
 			// Ensure we can access local storage
 			if (!this.hasLocalStorage) {
-				this._debugTrace('Warning: Cannot access local storage. Settings will not be saved.');
 				return;
 			}
 
@@ -187,7 +169,6 @@ class ApiClient {
 
 			// Save updated auth data
 			localStorage.setItem(`${this.settingsPrefix}_auth_data`, JSON.stringify(tempData));
-			this._debugTrace('Auth data saved to local storage');
 		} catch (e) {
 			console.error(e);
 		}
@@ -202,7 +183,6 @@ class ApiClient {
 
 		// Ensure we can access local storage
 		if (!this.hasLocalStorage) {
-			this._debugTrace('Warning: Cannot access local storage. Settings will not be loaded.');
 			return;
 		}
 
@@ -222,24 +202,7 @@ class ApiClient {
 	 * @param {string} environment - (Optional, default "mypurecloud.com") Environment the session use, e.g. mypurecloud.ie, mypurecloud.com.au, etc.
 	 */
 	setEnvironment(environment) {
-		if (!environment)
-			environment = 'mypurecloud.com';
-
-		// Strip trailing slash
-		environment = environment.replace(/\/+$/, '');
-
-		// Strip protocol and subdomain
-		if (environment.startsWith('https://'))
-			environment = environment.substring(8);
-		if (environment.startsWith('http://'))
-			environment = environment.substring(7);
-		if (environment.startsWith('api.'))
-			environment = environment.substring(4);
-
-		// Set vars
-		this.environment = environment;
-		this.basePath = `https://api.${environment}`;
-		this.authUrl = `https://login.${environment}`;
+		this.config.setEnvironment(environment);
 	}
 
 	/**
@@ -283,8 +246,6 @@ class ApiClient {
 					resolve(this.authData);
 				})
 				.catch((error) => {
-					this._debugTrace('Error encountered during login. This is normal if the application has not yet been authorized.');
-					this._debugTrace(error);
 					var query = {
 						client_id: encodeURIComponent(this.clientId),
 						redirect_uri: encodeURIComponent(this.redirectUri),
@@ -295,7 +256,6 @@ class ApiClient {
 					if (opts.provider) query.provider = encodeURIComponent(opts.provider);
 
 					var url = this._buildAuthUrl('oauth/authorize', query);
-					this._debugTrace(`Implicit grant: redirecting to ${url} for authorization...`);
 					window.location.replace(url);
 				});
 		});
@@ -308,7 +268,7 @@ class ApiClient {
 	 */
 	loginClientCredentialsGrant(clientId, clientSecret) {
 		this.clientId = clientId;
-		var authHeader = new Buffer(`${clientId}:${clientSecret}`).toString('base64');
+		var authHeader = Buffer.from(`${clientId}:${clientSecret}`).toString('base64');
 
 		return new Promise((resolve, reject) => {
 			// Block browsers from using client credentials
@@ -318,7 +278,7 @@ class ApiClient {
 			}
 
 			// Build token request
-			var request = superagent('POST', `https://login.${this.environment}/oauth/token`);
+			var request = superagent('POST', `https://login.${this.config.environment}/oauth/token`);
 			if (this.proxy && request.proxy) {
 				request.proxy(this.proxy);
 			}
@@ -328,15 +288,47 @@ class ApiClient {
 			// Execute request
 			request.end((error, response) => {
 				if (error) {
+					// Log error
+					this.config.logger.log(
+						'error',
+						response.statusCode,
+						'POST',
+						`https://login.${this.config.environment}/oauth/token`,
+						request.header,
+						response.headers,
+						{ grant_type: 'client_credentials' },
+						response.body
+					);
 					reject(error);
 				} else {
+					// Logging
+					this.config.logger.log(
+						'trace',
+						response.statusCode,
+						'POST',
+						`https://login.${this.config.environment}/oauth/token`,
+						request.header,
+						response.headers,
+						{ grant_type: 'client_credentials' },
+						undefined
+					);
+					this.config.logger.log(
+						'debug',
+						response.statusCode,
+						'POST',
+						`https://login.${this.config.environment}/oauth/token`,
+						request.header,
+						undefined,
+						{ grant_type: 'client_credentials' },
+						undefined
+					);
+
 					// Save access token
 					this.setAccessToken(response.body['access_token']);
 
 					// Set expiry time
 					this.authData.tokenExpiryTime = (new Date()).getTime() + (response.body['expires_in'] * 1000);
 					this.authData.tokenExpiryTimeString = (new Date(this.authData.tokenExpiryTime)).toUTCString();
-					this._debugTrace(`Access token expires in ${response.body['expires_in']} seconds`);
 
 					// Return auth data
 					resolve(this.authData);
@@ -359,23 +351,61 @@ class ApiClient {
 				reject(new Error('The saml2bearer grant is not supported in a browser.'));
 				return;
 			}
-			var encodedData = new Buffer(clientId + ':' + clientSecret).toString('base64');
+			var encodedData = Buffer.from(clientId + ':' + clientSecret).toString('base64');
 			var request = this._formAuthRequest(encodedData,
 												{ grant_type: 'urn:ietf:params:oauth:grant-type:saml2-bearer' },
 										        { orgName: orgName },
 										        { assertion: assertion });
+			var bodyParam = {
+				grant_type: 'urn:ietf:params:oauth:grant-type:saml2-bearer',
+				orgName: orgName,
+				assertion: assertion,
+			};
+
 			// Handle response
 			request.end((error, response) => {
 				if (error) {
+					// Log error
+					this.config.logger.log(
+						'error',
+						response.statusCode,
+						'POST',
+						`https://login.${this.config.environment}/oauth/token`,
+						request.header,
+						response.headers,
+						bodyParam,
+						response.body
+					);
 					reject(error);
 				} else {
+					// Logging
+					this.config.logger.log(
+						'trace',
+						response.statusCode,
+						'POST',
+						`https://login.${this.config.environment}/oauth/token`,
+						request.header,
+						response.headers,
+						bodyParam,
+						undefined
+					);
+					this.config.logger.log(
+						'debug',
+						response.statusCode,
+						'POST',
+						`https://login.${this.config.environment}/oauth/token`,
+						request.header,
+						undefined,
+						bodyParam,
+						undefined
+					);
+
 					// Get access token from response
 					var access_token = response.body.access_token;
 
 					this.setAccessToken(access_token);
 					this.authData.tokenExpiryTime = new Date().getTime() + response.body['expires_in'] * 1000;
 					this.authData.tokenExpiryTimeString = new Date(this.authData.tokenExpiryTime).toUTCString();
-					this._debugTrace(`Access token expires in ${response.body['expires_in']} seconds`);
 
 					// Return auth data
 					resolve(this.authData);
@@ -399,13 +429,18 @@ class ApiClient {
 				reject(new Error('The Code Authorization grant is not supported in a browser.'));
 				return;
 			}
-			var encodedData = new Buffer(clientId + ':' + clientSecret).toString('base64');
+			var encodedData = Buffer.from(clientId + ':' + clientSecret).toString('base64');
 			var request = this._formAuthRequest(encodedData,
 												{ grant_type: 'authorization_code' },
 									            { code: authCode },
 										        { redirect_uri: redirectUri });
+			var bodyParam = {
+				grant_type: 'authorization_code',
+				code: authCode,
+				redirect_uri: redirectUri,
+			};
 			// Handle response
-			this._handleCodeAuthorizationResponse(request, resolve, reject);
+			this._handleCodeAuthorizationResponse(request, bodyParam, resolve, reject);
 		});
 	}
 
@@ -422,38 +457,76 @@ class ApiClient {
 				reject(new Error('The Code Authorization grant is not supported in a browser.'));
 				return;
 			}
-			var encodedData = new Buffer(clientId + ':' + clientSecret).toString('base64');
+			var encodedData = Buffer.from(clientId + ':' + clientSecret).toString('base64');
 			var request = this._formAuthRequest(encodedData, { grant_type: 'refresh_token' }, { refresh_token: refreshToken });
+			var bodyParam = {
+				grant_type: 'refresh_token',
+				refresh_token: refreshToken,
+			};
 			// Handle response
-			this._handleCodeAuthorizationResponse(request, resolve, reject);
+			this._handleCodeAuthorizationResponse(request, bodyParam, resolve, reject);
 		});
 	}
 
 	/**
 	 * @description Handles the response for code auth requests
-	 * @param {object} request - Authoriation request object
+	 * @param {object} request - Authorization request object
+	 * @param {object} bodyParam - Input body data for authorization request
 	 * @param {function} resolve - Promise resolve callback
 	 * @param {function} reject - Promise reject callback
 	 */
-	_handleCodeAuthorizationResponse(request, resolve, reject) {
+	_handleCodeAuthorizationResponse(request, bodyParam, resolve, reject) {
 		request.end((error, response) => {
-				if (error) {
-					reject(error);
-				} else {
-					// Get access token from response
-					var access_token = response.body.access_token;
-					var refresh_token = response.body.refresh_token;
+			if (error) {
+				// Log error
+				this.config.logger.log(
+					'error',
+					response.statusCode,
+					'POST',
+					`https://login.${this.config.environment}/oauth/token`,
+					request.header,
+					response.headers,
+					bodyParam,
+					response.body
+				);
 
-					this.setAccessToken(access_token);
-					this.authData.refreshToken = refresh_token;
-					this.authData.tokenExpiryTime = new Date().getTime() + response.body['expires_in'] * 1000;
-					this.authData.tokenExpiryTimeString = new Date(this.authData.tokenExpiryTime).toUTCString();
-					this._debugTrace(`Access token expires in ${response.body['expires_in']} seconds`);
+				reject(error);
+			} else {
+				// Logging
+				this.config.logger.log(
+					'trace',
+					response.statusCode,
+					'POST',
+					`https://login.${this.config.environment}/oauth/token`,
+					request.header,
+					response.headers,
+					bodyParam,
+					undefined
+				);
+				this.config.logger.log(
+					'debug',
+					response.statusCode,
+					'POST',
+					`https://login.${this.config.environment}/oauth/token`,
+					request.header,
+					undefined,
+					bodyParam,
+					undefined
+				);
 
-					// Return auth data
-					resolve(this.authData);
-				}
-			});
+				// Get access token from response
+				var access_token = response.body.access_token;
+				var refresh_token = response.body.refresh_token;
+
+				this.setAccessToken(access_token);
+				this.authData.refreshToken = refresh_token;
+				this.authData.tokenExpiryTime = new Date().getTime() + response.body['expires_in'] * 1000;
+				this.authData.tokenExpiryTimeString = new Date(this.authData.tokenExpiryTime).toUTCString();
+
+				// Return auth data
+				resolve(this.authData);
+			}
+		});
 	}
 
 	/**
@@ -461,7 +534,7 @@ class ApiClient {
 	 * @param {string} encodedData - Base64 encoded client and clientSecret pair
 	 */
 	_formAuthRequest(encodedData) {
-		var request = superagent('POST', `https://login.${this.environment}/oauth/token`);
+		var request = superagent('POST', `https://login.${this.config.environment}/oauth/token`);
 		// Set the headers
 		request.set('Authorization', 'Basic ' + encodedData);
 		request.set('Content-Type', 'application/x-www-form-urlencoded');
@@ -497,11 +570,11 @@ class ApiClient {
 						reject(err);
 					});
 			} else {
-				// Wait maximum of refreshTokenWaitTime seconds for other thread to complete refresh
-				this._sleep(this.refreshTokenWaitTime)
+				// Wait refresh_token_wait_max seconds for other thread to complete refresh
+				this._sleep(this.config.refresh_token_wait_max)
 					.then(() => {
 						if (this.refreshInProgress)
-							reject(new Error(`Token refresh took longer than ${this.refreshTokenWaitTime} seconds`));
+							reject(new Error(`Token refresh took longer than ${this.config.refresh_token_wait_max} seconds`));
 						else
 							resolve();
 					});
@@ -652,7 +725,7 @@ class ApiClient {
 	 */
 	_buildAuthUrl(path, query) {
 		if (!query) query = {};
-		return Object.keys(query).reduce((url, key) => !query[key] ? url : `${url}&${key}=${query[key]}`, `${this.authUrl}/${path}?`);
+		return Object.keys(query).reduce((url, key) => !query[key] ? url : `${url}&${key}=${query[key]}`, `${this.config.authUrl}/${path}?`);
 	}
 
 	/**
@@ -681,7 +754,7 @@ class ApiClient {
 		if (!path.match(/^\//)) {
 			path = `/${path}`;
 		}
-		var url = this.basePath + path;
+		var url = this.config.basePath + path;
 		url = url.replace(/\{([\w-]+)\}/g, (fullMatch, key) => {
 			var value;
 			if (pathParams.hasOwnProperty(key)) {
@@ -869,23 +942,6 @@ class ApiClient {
 					request.proxy(that.proxy);
 				}
 
-				if(that.debugLog){
-					var trace = `[REQUEST] ${httpMethod} ${url}`;
-					if(pathParams && Object.keys(pathParams).count > 0 && pathParams[Object.keys(pathParams)[0]]){
-						trace += `\nPath Params: ${JSON.stringify(pathParams)}`;
-					}
-
-					if(queryParams && Object.keys(queryParams).count > 0 && queryParams[Object.keys(queryParams)[0]]){
-						trace += `\nQuery Params: ${JSON.stringify(queryParams)}`;
-					}
-
-					if(bodyParam){
-						trace += `\nnBody: ${JSON.stringify(bodyParam)}`;
-					}
-
-					that._debugTrace(trace);
-				}
-
 				// apply authentications
 				that.applyAuthToRequest(request, authNames);
 
@@ -894,7 +950,7 @@ class ApiClient {
 
 				// set header parameters
 				request.set(that.defaultHeaders).set(that.normalizeParams(headerParams));
-				//request.set({ 'purecloud-sdk': '113.1.0' });
+				//request.set({ 'purecloud-sdk': '113.2.0' });
 
 				// set request timeout
 				request.timeout(that.timeout);
@@ -954,24 +1010,12 @@ class ApiClient {
 					} : response.body ? response.body : response.text;
 
 					// Debug logging
-					if (that.debugLog) {
-						var trace = `[RESPONSE] ${response.status}: ${httpMethod} ${url}`;
-						if (response.headers)
-							trace += `\ninin-correlation-id: ${response.headers['inin-correlation-id']}`;
-						if (response.body)
-							trace += `\nBody: ${JSON.stringify(response.body,null,2)}`;
-
-						// Log trace message
-						that._debugTrace(trace);
-
-						// Log stack trace
-						if (error)
-							that._debugTrace(error);
-					}
+					that.config.logger.log('trace', response.statusCode, httpMethod, url, request.header, response.headers, bodyParam, undefined);
+					that.config.logger.log('debug', response.statusCode, httpMethod, url, request.header, undefined, bodyParam, undefined);
 
 					// Resolve promise
 					if (error) {
-						if (data.status == 401 && that.shouldRefreshAccessToken && that.authData.refreshToken !== "") {
+						if (data.status == 401 && that.config.refresh_access_token && that.authData.refreshToken !== "") {
 							that._handleExpiredAccessToken()
 								.then(() => {
 									sendRequest(that);
@@ -980,6 +1024,17 @@ class ApiClient {
 									reject(err);
 								});
 						} else {
+							// Log error
+							that.config.logger.log(
+								'error',
+								response.statusCode,
+								httpMethod,
+								url,
+								request.header,
+								response.headers,
+								bodyParam,
+								response.body
+							);
 							reject(data);
 						}
 					} else {
@@ -988,39 +1043,6 @@ class ApiClient {
 				});
 			}
 		});
-	}
-
-	/**
-	 * @description Parses an ISO-8601 string representation of a date value.
-	 * @param {String} str The date value as a string.
-	 * @returns {Date} The parsed date object.
-	 */
-	parseDate(str) {
-		return new Date(str.replace(/T/i, ' '));
-	}
-
-	/**
-	 * @description Logs to the debug log
-	 * @param {String} str The date value as a string.
-	 * @returns {Date} The parsed date object.
-	 */
-	_debugTrace(trace) {
-		if (!this.debugLog) return;
-
-		if (typeof(trace) === 'string') {
-			// Truncate
-			var truncTrace = '';
-			var lines = trace.split('\n');
-			if (this.debugLogMaxLines && lines.length > this.debugLogMaxLines) {
-				for  (var i = 0; i < this.debugLogMaxLines; i++) {
-					truncTrace += `${lines[i]}\n`;
-				}
-				truncTrace += '...response truncated...';
-				trace = truncTrace;
-			}
-		}
-
-		this.debugLog(trace);
 	}
 }
 

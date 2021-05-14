@@ -1,4 +1,6 @@
 require=(function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
+
+},{}],2:[function(require,module,exports){
 'use strict'
 
 exports.byteLength = byteLength
@@ -150,7 +152,7 @@ function fromByteArray (uint8) {
   return parts.join('')
 }
 
-},{}],2:[function(require,module,exports){
+},{}],3:[function(require,module,exports){
 (function (Buffer){(function (){
 /*!
  * The buffer module from node.js, for the browser.
@@ -1931,7 +1933,7 @@ function numberIsNaN (obj) {
 }
 
 }).call(this)}).call(this,require("buffer").Buffer)
-},{"base64-js":1,"buffer":2,"ieee754":3}],3:[function(require,module,exports){
+},{"base64-js":2,"buffer":3,"ieee754":4}],4:[function(require,module,exports){
 /*! ieee754. BSD-3-Clause License. Feross Aboukhadijeh <https://feross.org/opensource> */
 exports.read = function (buffer, offset, isLE, mLen, nBytes) {
   var e, m
@@ -2018,7 +2020,1172 @@ exports.write = function (buffer, value, offset, isLE, mLen, nBytes) {
   buffer[offset + i - d] |= s * 128
 }
 
-},{}],4:[function(require,module,exports){
+},{}],5:[function(require,module,exports){
+exports.endianness = function () { return 'LE' };
+
+exports.hostname = function () {
+    if (typeof location !== 'undefined') {
+        return location.hostname
+    }
+    else return '';
+};
+
+exports.loadavg = function () { return [] };
+
+exports.uptime = function () { return 0 };
+
+exports.freemem = function () {
+    return Number.MAX_VALUE;
+};
+
+exports.totalmem = function () {
+    return Number.MAX_VALUE;
+};
+
+exports.cpus = function () { return [] };
+
+exports.type = function () { return 'Browser' };
+
+exports.release = function () {
+    if (typeof navigator !== 'undefined') {
+        return navigator.appVersion;
+    }
+    return '';
+};
+
+exports.networkInterfaces
+= exports.getNetworkInterfaces
+= function () { return {} };
+
+exports.arch = function () { return 'javascript' };
+
+exports.platform = function () { return 'browser' };
+
+exports.tmpdir = exports.tmpDir = function () {
+    return '/tmp';
+};
+
+exports.EOL = '\n';
+
+exports.homedir = function () {
+	return '/'
+};
+
+},{}],6:[function(require,module,exports){
+(function (process){(function (){
+// .dirname, .basename, and .extname methods are extracted from Node.js v8.11.1,
+// backported and transplited with Babel, with backwards-compat fixes
+
+// Copyright Joyent, Inc. and other Node contributors.
+//
+// Permission is hereby granted, free of charge, to any person obtaining a
+// copy of this software and associated documentation files (the
+// "Software"), to deal in the Software without restriction, including
+// without limitation the rights to use, copy, modify, merge, publish,
+// distribute, sublicense, and/or sell copies of the Software, and to permit
+// persons to whom the Software is furnished to do so, subject to the
+// following conditions:
+//
+// The above copyright notice and this permission notice shall be included
+// in all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+// OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN
+// NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+// DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
+// OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
+// USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+// resolves . and .. elements in a path array with directory names there
+// must be no slashes, empty elements, or device names (c:\) in the array
+// (so also no leading and trailing slashes - it does not distinguish
+// relative and absolute paths)
+function normalizeArray(parts, allowAboveRoot) {
+  // if the path tries to go above the root, `up` ends up > 0
+  var up = 0;
+  for (var i = parts.length - 1; i >= 0; i--) {
+    var last = parts[i];
+    if (last === '.') {
+      parts.splice(i, 1);
+    } else if (last === '..') {
+      parts.splice(i, 1);
+      up++;
+    } else if (up) {
+      parts.splice(i, 1);
+      up--;
+    }
+  }
+
+  // if the path is allowed to go above the root, restore leading ..s
+  if (allowAboveRoot) {
+    for (; up--; up) {
+      parts.unshift('..');
+    }
+  }
+
+  return parts;
+}
+
+// path.resolve([from ...], to)
+// posix version
+exports.resolve = function() {
+  var resolvedPath = '',
+      resolvedAbsolute = false;
+
+  for (var i = arguments.length - 1; i >= -1 && !resolvedAbsolute; i--) {
+    var path = (i >= 0) ? arguments[i] : process.cwd();
+
+    // Skip empty and invalid entries
+    if (typeof path !== 'string') {
+      throw new TypeError('Arguments to path.resolve must be strings');
+    } else if (!path) {
+      continue;
+    }
+
+    resolvedPath = path + '/' + resolvedPath;
+    resolvedAbsolute = path.charAt(0) === '/';
+  }
+
+  // At this point the path should be resolved to a full absolute path, but
+  // handle relative paths to be safe (might happen when process.cwd() fails)
+
+  // Normalize the path
+  resolvedPath = normalizeArray(filter(resolvedPath.split('/'), function(p) {
+    return !!p;
+  }), !resolvedAbsolute).join('/');
+
+  return ((resolvedAbsolute ? '/' : '') + resolvedPath) || '.';
+};
+
+// path.normalize(path)
+// posix version
+exports.normalize = function(path) {
+  var isAbsolute = exports.isAbsolute(path),
+      trailingSlash = substr(path, -1) === '/';
+
+  // Normalize the path
+  path = normalizeArray(filter(path.split('/'), function(p) {
+    return !!p;
+  }), !isAbsolute).join('/');
+
+  if (!path && !isAbsolute) {
+    path = '.';
+  }
+  if (path && trailingSlash) {
+    path += '/';
+  }
+
+  return (isAbsolute ? '/' : '') + path;
+};
+
+// posix version
+exports.isAbsolute = function(path) {
+  return path.charAt(0) === '/';
+};
+
+// posix version
+exports.join = function() {
+  var paths = Array.prototype.slice.call(arguments, 0);
+  return exports.normalize(filter(paths, function(p, index) {
+    if (typeof p !== 'string') {
+      throw new TypeError('Arguments to path.join must be strings');
+    }
+    return p;
+  }).join('/'));
+};
+
+
+// path.relative(from, to)
+// posix version
+exports.relative = function(from, to) {
+  from = exports.resolve(from).substr(1);
+  to = exports.resolve(to).substr(1);
+
+  function trim(arr) {
+    var start = 0;
+    for (; start < arr.length; start++) {
+      if (arr[start] !== '') break;
+    }
+
+    var end = arr.length - 1;
+    for (; end >= 0; end--) {
+      if (arr[end] !== '') break;
+    }
+
+    if (start > end) return [];
+    return arr.slice(start, end - start + 1);
+  }
+
+  var fromParts = trim(from.split('/'));
+  var toParts = trim(to.split('/'));
+
+  var length = Math.min(fromParts.length, toParts.length);
+  var samePartsLength = length;
+  for (var i = 0; i < length; i++) {
+    if (fromParts[i] !== toParts[i]) {
+      samePartsLength = i;
+      break;
+    }
+  }
+
+  var outputParts = [];
+  for (var i = samePartsLength; i < fromParts.length; i++) {
+    outputParts.push('..');
+  }
+
+  outputParts = outputParts.concat(toParts.slice(samePartsLength));
+
+  return outputParts.join('/');
+};
+
+exports.sep = '/';
+exports.delimiter = ':';
+
+exports.dirname = function (path) {
+  if (typeof path !== 'string') path = path + '';
+  if (path.length === 0) return '.';
+  var code = path.charCodeAt(0);
+  var hasRoot = code === 47 /*/*/;
+  var end = -1;
+  var matchedSlash = true;
+  for (var i = path.length - 1; i >= 1; --i) {
+    code = path.charCodeAt(i);
+    if (code === 47 /*/*/) {
+        if (!matchedSlash) {
+          end = i;
+          break;
+        }
+      } else {
+      // We saw the first non-path separator
+      matchedSlash = false;
+    }
+  }
+
+  if (end === -1) return hasRoot ? '/' : '.';
+  if (hasRoot && end === 1) {
+    // return '//';
+    // Backwards-compat fix:
+    return '/';
+  }
+  return path.slice(0, end);
+};
+
+function basename(path) {
+  if (typeof path !== 'string') path = path + '';
+
+  var start = 0;
+  var end = -1;
+  var matchedSlash = true;
+  var i;
+
+  for (i = path.length - 1; i >= 0; --i) {
+    if (path.charCodeAt(i) === 47 /*/*/) {
+        // If we reached a path separator that was not part of a set of path
+        // separators at the end of the string, stop now
+        if (!matchedSlash) {
+          start = i + 1;
+          break;
+        }
+      } else if (end === -1) {
+      // We saw the first non-path separator, mark this as the end of our
+      // path component
+      matchedSlash = false;
+      end = i + 1;
+    }
+  }
+
+  if (end === -1) return '';
+  return path.slice(start, end);
+}
+
+// Uses a mixed approach for backwards-compatibility, as ext behavior changed
+// in new Node.js versions, so only basename() above is backported here
+exports.basename = function (path, ext) {
+  var f = basename(path);
+  if (ext && f.substr(-1 * ext.length) === ext) {
+    f = f.substr(0, f.length - ext.length);
+  }
+  return f;
+};
+
+exports.extname = function (path) {
+  if (typeof path !== 'string') path = path + '';
+  var startDot = -1;
+  var startPart = 0;
+  var end = -1;
+  var matchedSlash = true;
+  // Track the state of characters (if any) we see before our first dot and
+  // after any path separator we find
+  var preDotState = 0;
+  for (var i = path.length - 1; i >= 0; --i) {
+    var code = path.charCodeAt(i);
+    if (code === 47 /*/*/) {
+        // If we reached a path separator that was not part of a set of path
+        // separators at the end of the string, stop now
+        if (!matchedSlash) {
+          startPart = i + 1;
+          break;
+        }
+        continue;
+      }
+    if (end === -1) {
+      // We saw the first non-path separator, mark this as the end of our
+      // extension
+      matchedSlash = false;
+      end = i + 1;
+    }
+    if (code === 46 /*.*/) {
+        // If this is our first dot, mark it as the start of our extension
+        if (startDot === -1)
+          startDot = i;
+        else if (preDotState !== 1)
+          preDotState = 1;
+    } else if (startDot !== -1) {
+      // We saw a non-dot and non-path separator before our dot, so we should
+      // have a good chance at having a non-empty extension
+      preDotState = -1;
+    }
+  }
+
+  if (startDot === -1 || end === -1 ||
+      // We saw a non-dot character immediately before the dot
+      preDotState === 0 ||
+      // The (right-most) trimmed path component is exactly '..'
+      preDotState === 1 && startDot === end - 1 && startDot === startPart + 1) {
+    return '';
+  }
+  return path.slice(startDot, end);
+};
+
+function filter (xs, f) {
+    if (xs.filter) return xs.filter(f);
+    var res = [];
+    for (var i = 0; i < xs.length; i++) {
+        if (f(xs[i], i, xs)) res.push(xs[i]);
+    }
+    return res;
+}
+
+// String.prototype.substr - negative index don't work in IE8
+var substr = 'ab'.substr(-1) === 'b'
+    ? function (str, start, len) { return str.substr(start, len) }
+    : function (str, start, len) {
+        if (start < 0) start = str.length + start;
+        return str.substr(start, len);
+    }
+;
+
+}).call(this)}).call(this,require('_process'))
+},{"_process":7}],7:[function(require,module,exports){
+// shim for using process in browser
+var process = module.exports = {};
+
+// cached from whatever global is present so that test runners that stub it
+// don't break things.  But we need to wrap it in a try catch in case it is
+// wrapped in strict mode code which doesn't define any globals.  It's inside a
+// function because try/catches deoptimize in certain engines.
+
+var cachedSetTimeout;
+var cachedClearTimeout;
+
+function defaultSetTimout() {
+    throw new Error('setTimeout has not been defined');
+}
+function defaultClearTimeout () {
+    throw new Error('clearTimeout has not been defined');
+}
+(function () {
+    try {
+        if (typeof setTimeout === 'function') {
+            cachedSetTimeout = setTimeout;
+        } else {
+            cachedSetTimeout = defaultSetTimout;
+        }
+    } catch (e) {
+        cachedSetTimeout = defaultSetTimout;
+    }
+    try {
+        if (typeof clearTimeout === 'function') {
+            cachedClearTimeout = clearTimeout;
+        } else {
+            cachedClearTimeout = defaultClearTimeout;
+        }
+    } catch (e) {
+        cachedClearTimeout = defaultClearTimeout;
+    }
+} ())
+function runTimeout(fun) {
+    if (cachedSetTimeout === setTimeout) {
+        //normal enviroments in sane situations
+        return setTimeout(fun, 0);
+    }
+    // if setTimeout wasn't available but was latter defined
+    if ((cachedSetTimeout === defaultSetTimout || !cachedSetTimeout) && setTimeout) {
+        cachedSetTimeout = setTimeout;
+        return setTimeout(fun, 0);
+    }
+    try {
+        // when when somebody has screwed with setTimeout but no I.E. maddness
+        return cachedSetTimeout(fun, 0);
+    } catch(e){
+        try {
+            // When we are in I.E. but the script has been evaled so I.E. doesn't trust the global object when called normally
+            return cachedSetTimeout.call(null, fun, 0);
+        } catch(e){
+            // same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error
+            return cachedSetTimeout.call(this, fun, 0);
+        }
+    }
+
+
+}
+function runClearTimeout(marker) {
+    if (cachedClearTimeout === clearTimeout) {
+        //normal enviroments in sane situations
+        return clearTimeout(marker);
+    }
+    // if clearTimeout wasn't available but was latter defined
+    if ((cachedClearTimeout === defaultClearTimeout || !cachedClearTimeout) && clearTimeout) {
+        cachedClearTimeout = clearTimeout;
+        return clearTimeout(marker);
+    }
+    try {
+        // when when somebody has screwed with setTimeout but no I.E. maddness
+        return cachedClearTimeout(marker);
+    } catch (e){
+        try {
+            // When we are in I.E. but the script has been evaled so I.E. doesn't  trust the global object when called normally
+            return cachedClearTimeout.call(null, marker);
+        } catch (e){
+            // same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error.
+            // Some versions of I.E. have different rules for clearTimeout vs setTimeout
+            return cachedClearTimeout.call(this, marker);
+        }
+    }
+
+
+
+}
+var queue = [];
+var draining = false;
+var currentQueue;
+var queueIndex = -1;
+
+function cleanUpNextTick() {
+    if (!draining || !currentQueue) {
+        return;
+    }
+    draining = false;
+    if (currentQueue.length) {
+        queue = currentQueue.concat(queue);
+    } else {
+        queueIndex = -1;
+    }
+    if (queue.length) {
+        drainQueue();
+    }
+}
+
+function drainQueue() {
+    if (draining) {
+        return;
+    }
+    var timeout = runTimeout(cleanUpNextTick);
+    draining = true;
+
+    var len = queue.length;
+    while(len) {
+        currentQueue = queue;
+        queue = [];
+        while (++queueIndex < len) {
+            if (currentQueue) {
+                currentQueue[queueIndex].run();
+            }
+        }
+        queueIndex = -1;
+        len = queue.length;
+    }
+    currentQueue = null;
+    draining = false;
+    runClearTimeout(timeout);
+}
+
+process.nextTick = function (fun) {
+    var args = new Array(arguments.length - 1);
+    if (arguments.length > 1) {
+        for (var i = 1; i < arguments.length; i++) {
+            args[i - 1] = arguments[i];
+        }
+    }
+    queue.push(new Item(fun, args));
+    if (queue.length === 1 && !draining) {
+        runTimeout(drainQueue);
+    }
+};
+
+// v8 likes predictible objects
+function Item(fun, array) {
+    this.fun = fun;
+    this.array = array;
+}
+Item.prototype.run = function () {
+    this.fun.apply(null, this.array);
+};
+process.title = 'browser';
+process.browser = true;
+process.env = {};
+process.argv = [];
+process.version = ''; // empty string to avoid regexp issues
+process.versions = {};
+
+function noop() {}
+
+process.on = noop;
+process.addListener = noop;
+process.once = noop;
+process.off = noop;
+process.removeListener = noop;
+process.removeAllListeners = noop;
+process.emit = noop;
+process.prependListener = noop;
+process.prependOnceListener = noop;
+
+process.listeners = function (name) { return [] }
+
+process.binding = function (name) {
+    throw new Error('process.binding is not supported');
+};
+
+process.cwd = function () { return '/' };
+process.chdir = function (dir) {
+    throw new Error('process.chdir is not supported');
+};
+process.umask = function() { return 0; };
+
+},{}],8:[function(require,module,exports){
+if (typeof Object.create === 'function') {
+  // implementation from standard node.js 'util' module
+  module.exports = function inherits(ctor, superCtor) {
+    ctor.super_ = superCtor
+    ctor.prototype = Object.create(superCtor.prototype, {
+      constructor: {
+        value: ctor,
+        enumerable: false,
+        writable: true,
+        configurable: true
+      }
+    });
+  };
+} else {
+  // old school shim for old browsers
+  module.exports = function inherits(ctor, superCtor) {
+    ctor.super_ = superCtor
+    var TempCtor = function () {}
+    TempCtor.prototype = superCtor.prototype
+    ctor.prototype = new TempCtor()
+    ctor.prototype.constructor = ctor
+  }
+}
+
+},{}],9:[function(require,module,exports){
+module.exports = function isBuffer(arg) {
+  return arg && typeof arg === 'object'
+    && typeof arg.copy === 'function'
+    && typeof arg.fill === 'function'
+    && typeof arg.readUInt8 === 'function';
+}
+},{}],10:[function(require,module,exports){
+(function (process,global){(function (){
+// Copyright Joyent, Inc. and other Node contributors.
+//
+// Permission is hereby granted, free of charge, to any person obtaining a
+// copy of this software and associated documentation files (the
+// "Software"), to deal in the Software without restriction, including
+// without limitation the rights to use, copy, modify, merge, publish,
+// distribute, sublicense, and/or sell copies of the Software, and to permit
+// persons to whom the Software is furnished to do so, subject to the
+// following conditions:
+//
+// The above copyright notice and this permission notice shall be included
+// in all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+// OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN
+// NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+// DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
+// OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
+// USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+var formatRegExp = /%[sdj%]/g;
+exports.format = function(f) {
+  if (!isString(f)) {
+    var objects = [];
+    for (var i = 0; i < arguments.length; i++) {
+      objects.push(inspect(arguments[i]));
+    }
+    return objects.join(' ');
+  }
+
+  var i = 1;
+  var args = arguments;
+  var len = args.length;
+  var str = String(f).replace(formatRegExp, function(x) {
+    if (x === '%%') return '%';
+    if (i >= len) return x;
+    switch (x) {
+      case '%s': return String(args[i++]);
+      case '%d': return Number(args[i++]);
+      case '%j':
+        try {
+          return JSON.stringify(args[i++]);
+        } catch (_) {
+          return '[Circular]';
+        }
+      default:
+        return x;
+    }
+  });
+  for (var x = args[i]; i < len; x = args[++i]) {
+    if (isNull(x) || !isObject(x)) {
+      str += ' ' + x;
+    } else {
+      str += ' ' + inspect(x);
+    }
+  }
+  return str;
+};
+
+
+// Mark that a method should not be used.
+// Returns a modified function which warns once by default.
+// If --no-deprecation is set, then it is a no-op.
+exports.deprecate = function(fn, msg) {
+  // Allow for deprecating things in the process of starting up.
+  if (isUndefined(global.process)) {
+    return function() {
+      return exports.deprecate(fn, msg).apply(this, arguments);
+    };
+  }
+
+  if (process.noDeprecation === true) {
+    return fn;
+  }
+
+  var warned = false;
+  function deprecated() {
+    if (!warned) {
+      if (process.throwDeprecation) {
+        throw new Error(msg);
+      } else if (process.traceDeprecation) {
+        console.trace(msg);
+      } else {
+        console.error(msg);
+      }
+      warned = true;
+    }
+    return fn.apply(this, arguments);
+  }
+
+  return deprecated;
+};
+
+
+var debugs = {};
+var debugEnviron;
+exports.debuglog = function(set) {
+  if (isUndefined(debugEnviron))
+    debugEnviron = process.env.NODE_DEBUG || '';
+  set = set.toUpperCase();
+  if (!debugs[set]) {
+    if (new RegExp('\\b' + set + '\\b', 'i').test(debugEnviron)) {
+      var pid = process.pid;
+      debugs[set] = function() {
+        var msg = exports.format.apply(exports, arguments);
+        console.error('%s %d: %s', set, pid, msg);
+      };
+    } else {
+      debugs[set] = function() {};
+    }
+  }
+  return debugs[set];
+};
+
+
+/**
+ * Echos the value of a value. Trys to print the value out
+ * in the best way possible given the different types.
+ *
+ * @param {Object} obj The object to print out.
+ * @param {Object} opts Optional options object that alters the output.
+ */
+/* legacy: obj, showHidden, depth, colors*/
+function inspect(obj, opts) {
+  // default options
+  var ctx = {
+    seen: [],
+    stylize: stylizeNoColor
+  };
+  // legacy...
+  if (arguments.length >= 3) ctx.depth = arguments[2];
+  if (arguments.length >= 4) ctx.colors = arguments[3];
+  if (isBoolean(opts)) {
+    // legacy...
+    ctx.showHidden = opts;
+  } else if (opts) {
+    // got an "options" object
+    exports._extend(ctx, opts);
+  }
+  // set default options
+  if (isUndefined(ctx.showHidden)) ctx.showHidden = false;
+  if (isUndefined(ctx.depth)) ctx.depth = 2;
+  if (isUndefined(ctx.colors)) ctx.colors = false;
+  if (isUndefined(ctx.customInspect)) ctx.customInspect = true;
+  if (ctx.colors) ctx.stylize = stylizeWithColor;
+  return formatValue(ctx, obj, ctx.depth);
+}
+exports.inspect = inspect;
+
+
+// http://en.wikipedia.org/wiki/ANSI_escape_code#graphics
+inspect.colors = {
+  'bold' : [1, 22],
+  'italic' : [3, 23],
+  'underline' : [4, 24],
+  'inverse' : [7, 27],
+  'white' : [37, 39],
+  'grey' : [90, 39],
+  'black' : [30, 39],
+  'blue' : [34, 39],
+  'cyan' : [36, 39],
+  'green' : [32, 39],
+  'magenta' : [35, 39],
+  'red' : [31, 39],
+  'yellow' : [33, 39]
+};
+
+// Don't use 'blue' not visible on cmd.exe
+inspect.styles = {
+  'special': 'cyan',
+  'number': 'yellow',
+  'boolean': 'yellow',
+  'undefined': 'grey',
+  'null': 'bold',
+  'string': 'green',
+  'date': 'magenta',
+  // "name": intentionally not styling
+  'regexp': 'red'
+};
+
+
+function stylizeWithColor(str, styleType) {
+  var style = inspect.styles[styleType];
+
+  if (style) {
+    return '\u001b[' + inspect.colors[style][0] + 'm' + str +
+           '\u001b[' + inspect.colors[style][1] + 'm';
+  } else {
+    return str;
+  }
+}
+
+
+function stylizeNoColor(str, styleType) {
+  return str;
+}
+
+
+function arrayToHash(array) {
+  var hash = {};
+
+  array.forEach(function(val, idx) {
+    hash[val] = true;
+  });
+
+  return hash;
+}
+
+
+function formatValue(ctx, value, recurseTimes) {
+  // Provide a hook for user-specified inspect functions.
+  // Check that value is an object with an inspect function on it
+  if (ctx.customInspect &&
+      value &&
+      isFunction(value.inspect) &&
+      // Filter out the util module, it's inspect function is special
+      value.inspect !== exports.inspect &&
+      // Also filter out any prototype objects using the circular check.
+      !(value.constructor && value.constructor.prototype === value)) {
+    var ret = value.inspect(recurseTimes, ctx);
+    if (!isString(ret)) {
+      ret = formatValue(ctx, ret, recurseTimes);
+    }
+    return ret;
+  }
+
+  // Primitive types cannot have properties
+  var primitive = formatPrimitive(ctx, value);
+  if (primitive) {
+    return primitive;
+  }
+
+  // Look up the keys of the object.
+  var keys = Object.keys(value);
+  var visibleKeys = arrayToHash(keys);
+
+  if (ctx.showHidden) {
+    keys = Object.getOwnPropertyNames(value);
+  }
+
+  // IE doesn't make error fields non-enumerable
+  // http://msdn.microsoft.com/en-us/library/ie/dww52sbt(v=vs.94).aspx
+  if (isError(value)
+      && (keys.indexOf('message') >= 0 || keys.indexOf('description') >= 0)) {
+    return formatError(value);
+  }
+
+  // Some type of object without properties can be shortcutted.
+  if (keys.length === 0) {
+    if (isFunction(value)) {
+      var name = value.name ? ': ' + value.name : '';
+      return ctx.stylize('[Function' + name + ']', 'special');
+    }
+    if (isRegExp(value)) {
+      return ctx.stylize(RegExp.prototype.toString.call(value), 'regexp');
+    }
+    if (isDate(value)) {
+      return ctx.stylize(Date.prototype.toString.call(value), 'date');
+    }
+    if (isError(value)) {
+      return formatError(value);
+    }
+  }
+
+  var base = '', array = false, braces = ['{', '}'];
+
+  // Make Array say that they are Array
+  if (isArray(value)) {
+    array = true;
+    braces = ['[', ']'];
+  }
+
+  // Make functions say that they are functions
+  if (isFunction(value)) {
+    var n = value.name ? ': ' + value.name : '';
+    base = ' [Function' + n + ']';
+  }
+
+  // Make RegExps say that they are RegExps
+  if (isRegExp(value)) {
+    base = ' ' + RegExp.prototype.toString.call(value);
+  }
+
+  // Make dates with properties first say the date
+  if (isDate(value)) {
+    base = ' ' + Date.prototype.toUTCString.call(value);
+  }
+
+  // Make error with message first say the error
+  if (isError(value)) {
+    base = ' ' + formatError(value);
+  }
+
+  if (keys.length === 0 && (!array || value.length == 0)) {
+    return braces[0] + base + braces[1];
+  }
+
+  if (recurseTimes < 0) {
+    if (isRegExp(value)) {
+      return ctx.stylize(RegExp.prototype.toString.call(value), 'regexp');
+    } else {
+      return ctx.stylize('[Object]', 'special');
+    }
+  }
+
+  ctx.seen.push(value);
+
+  var output;
+  if (array) {
+    output = formatArray(ctx, value, recurseTimes, visibleKeys, keys);
+  } else {
+    output = keys.map(function(key) {
+      return formatProperty(ctx, value, recurseTimes, visibleKeys, key, array);
+    });
+  }
+
+  ctx.seen.pop();
+
+  return reduceToSingleString(output, base, braces);
+}
+
+
+function formatPrimitive(ctx, value) {
+  if (isUndefined(value))
+    return ctx.stylize('undefined', 'undefined');
+  if (isString(value)) {
+    var simple = '\'' + JSON.stringify(value).replace(/^"|"$/g, '')
+                                             .replace(/'/g, "\\'")
+                                             .replace(/\\"/g, '"') + '\'';
+    return ctx.stylize(simple, 'string');
+  }
+  if (isNumber(value))
+    return ctx.stylize('' + value, 'number');
+  if (isBoolean(value))
+    return ctx.stylize('' + value, 'boolean');
+  // For some reason typeof null is "object", so special case here.
+  if (isNull(value))
+    return ctx.stylize('null', 'null');
+}
+
+
+function formatError(value) {
+  return '[' + Error.prototype.toString.call(value) + ']';
+}
+
+
+function formatArray(ctx, value, recurseTimes, visibleKeys, keys) {
+  var output = [];
+  for (var i = 0, l = value.length; i < l; ++i) {
+    if (hasOwnProperty(value, String(i))) {
+      output.push(formatProperty(ctx, value, recurseTimes, visibleKeys,
+          String(i), true));
+    } else {
+      output.push('');
+    }
+  }
+  keys.forEach(function(key) {
+    if (!key.match(/^\d+$/)) {
+      output.push(formatProperty(ctx, value, recurseTimes, visibleKeys,
+          key, true));
+    }
+  });
+  return output;
+}
+
+
+function formatProperty(ctx, value, recurseTimes, visibleKeys, key, array) {
+  var name, str, desc;
+  desc = Object.getOwnPropertyDescriptor(value, key) || { value: value[key] };
+  if (desc.get) {
+    if (desc.set) {
+      str = ctx.stylize('[Getter/Setter]', 'special');
+    } else {
+      str = ctx.stylize('[Getter]', 'special');
+    }
+  } else {
+    if (desc.set) {
+      str = ctx.stylize('[Setter]', 'special');
+    }
+  }
+  if (!hasOwnProperty(visibleKeys, key)) {
+    name = '[' + key + ']';
+  }
+  if (!str) {
+    if (ctx.seen.indexOf(desc.value) < 0) {
+      if (isNull(recurseTimes)) {
+        str = formatValue(ctx, desc.value, null);
+      } else {
+        str = formatValue(ctx, desc.value, recurseTimes - 1);
+      }
+      if (str.indexOf('\n') > -1) {
+        if (array) {
+          str = str.split('\n').map(function(line) {
+            return '  ' + line;
+          }).join('\n').substr(2);
+        } else {
+          str = '\n' + str.split('\n').map(function(line) {
+            return '   ' + line;
+          }).join('\n');
+        }
+      }
+    } else {
+      str = ctx.stylize('[Circular]', 'special');
+    }
+  }
+  if (isUndefined(name)) {
+    if (array && key.match(/^\d+$/)) {
+      return str;
+    }
+    name = JSON.stringify('' + key);
+    if (name.match(/^"([a-zA-Z_][a-zA-Z_0-9]*)"$/)) {
+      name = name.substr(1, name.length - 2);
+      name = ctx.stylize(name, 'name');
+    } else {
+      name = name.replace(/'/g, "\\'")
+                 .replace(/\\"/g, '"')
+                 .replace(/(^"|"$)/g, "'");
+      name = ctx.stylize(name, 'string');
+    }
+  }
+
+  return name + ': ' + str;
+}
+
+
+function reduceToSingleString(output, base, braces) {
+  var numLinesEst = 0;
+  var length = output.reduce(function(prev, cur) {
+    numLinesEst++;
+    if (cur.indexOf('\n') >= 0) numLinesEst++;
+    return prev + cur.replace(/\u001b\[\d\d?m/g, '').length + 1;
+  }, 0);
+
+  if (length > 60) {
+    return braces[0] +
+           (base === '' ? '' : base + '\n ') +
+           ' ' +
+           output.join(',\n  ') +
+           ' ' +
+           braces[1];
+  }
+
+  return braces[0] + base + ' ' + output.join(', ') + ' ' + braces[1];
+}
+
+
+// NOTE: These type checking functions intentionally don't use `instanceof`
+// because it is fragile and can be easily faked with `Object.create()`.
+function isArray(ar) {
+  return Array.isArray(ar);
+}
+exports.isArray = isArray;
+
+function isBoolean(arg) {
+  return typeof arg === 'boolean';
+}
+exports.isBoolean = isBoolean;
+
+function isNull(arg) {
+  return arg === null;
+}
+exports.isNull = isNull;
+
+function isNullOrUndefined(arg) {
+  return arg == null;
+}
+exports.isNullOrUndefined = isNullOrUndefined;
+
+function isNumber(arg) {
+  return typeof arg === 'number';
+}
+exports.isNumber = isNumber;
+
+function isString(arg) {
+  return typeof arg === 'string';
+}
+exports.isString = isString;
+
+function isSymbol(arg) {
+  return typeof arg === 'symbol';
+}
+exports.isSymbol = isSymbol;
+
+function isUndefined(arg) {
+  return arg === void 0;
+}
+exports.isUndefined = isUndefined;
+
+function isRegExp(re) {
+  return isObject(re) && objectToString(re) === '[object RegExp]';
+}
+exports.isRegExp = isRegExp;
+
+function isObject(arg) {
+  return typeof arg === 'object' && arg !== null;
+}
+exports.isObject = isObject;
+
+function isDate(d) {
+  return isObject(d) && objectToString(d) === '[object Date]';
+}
+exports.isDate = isDate;
+
+function isError(e) {
+  return isObject(e) &&
+      (objectToString(e) === '[object Error]' || e instanceof Error);
+}
+exports.isError = isError;
+
+function isFunction(arg) {
+  return typeof arg === 'function';
+}
+exports.isFunction = isFunction;
+
+function isPrimitive(arg) {
+  return arg === null ||
+         typeof arg === 'boolean' ||
+         typeof arg === 'number' ||
+         typeof arg === 'string' ||
+         typeof arg === 'symbol' ||  // ES6 symbol
+         typeof arg === 'undefined';
+}
+exports.isPrimitive = isPrimitive;
+
+exports.isBuffer = require('./support/isBuffer');
+
+function objectToString(o) {
+  return Object.prototype.toString.call(o);
+}
+
+
+function pad(n) {
+  return n < 10 ? '0' + n.toString(10) : n.toString(10);
+}
+
+
+var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep',
+              'Oct', 'Nov', 'Dec'];
+
+// 26 Feb 16:19:34
+function timestamp() {
+  var d = new Date();
+  var time = [pad(d.getHours()),
+              pad(d.getMinutes()),
+              pad(d.getSeconds())].join(':');
+  return [d.getDate(), months[d.getMonth()], time].join(' ');
+}
+
+
+// log is just a thin wrapper to console.log that prepends a timestamp
+exports.log = function() {
+  console.log('%s - %s', timestamp(), exports.format.apply(exports, arguments));
+};
+
+
+/**
+ * Inherit the prototype methods from one constructor into another.
+ *
+ * The Function.prototype.inherits from lang.js rewritten as a standalone
+ * function (not on Function.prototype). NOTE: If this file is to be loaded
+ * during bootstrapping this function needs to be rewritten using some native
+ * functions as prototype setup using normal JavaScript does not work as
+ * expected during bootstrapping (see mirror.js in r114903).
+ *
+ * @param {function} ctor Constructor function which needs to inherit the
+ *     prototype.
+ * @param {function} superCtor Constructor function to inherit prototype from.
+ */
+exports.inherits = require('inherits');
+
+exports._extend = function(origin, add) {
+  // Don't do anything if add isn't an object
+  if (!add || !isObject(add)) return origin;
+
+  var keys = Object.keys(add);
+  var i = keys.length;
+  while (i--) {
+    origin[keys[i]] = add[keys[i]];
+  }
+  return origin;
+};
+
+function hasOwnProperty(obj, prop) {
+  return Object.prototype.hasOwnProperty.call(obj, prop);
+}
+
+}).call(this)}).call(this,require('_process'),typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
+},{"./support/isBuffer":9,"_process":7,"inherits":8}],11:[function(require,module,exports){
 
 /**
  * Expose `Emitter`.
@@ -2195,7 +3362,533 @@ Emitter.prototype.hasListeners = function(event){
   return !! this.listeners(event).length;
 };
 
-},{}],5:[function(require,module,exports){
+},{}],12:[function(require,module,exports){
+const util = require('util');
+const fs = require('fs');
+const path = require('path');
+const mkdirp = require('mkdirp');
+const errors = require('./errors');
+const interpolation = require('./interpolation');
+
+/**
+ * Regular Expression to match section headers.
+ * @type {RegExp}
+ * @private
+ */
+const SECTION = new RegExp(/\s*\[([^\]]+)]/);
+
+/**
+ * Regular expression to match key, value pairs.
+ * @type {RegExp}
+ * @private
+ */
+const KEY = new RegExp(/\s*(.*?)\s*[=:]\s*(.*)/);
+
+/**
+ * Regular expression to match comments. Either starting with a
+ * semi-colon or a hash.
+ * @type {RegExp}
+ * @private
+ */
+const COMMENT = new RegExp(/^\s*[;#]/);
+
+// RL1.6 Line Boundaries (for unicode)
+// ... it shall recognize not only CRLF, LF, CR,
+// but also NEL, PS and LS.
+const LINE_BOUNDARY = new RegExp(/\r\n|[\n\r\u0085\u2028\u2029]/g);
+
+const readFileAsync = util.promisify(fs.readFile);
+const writeFileAsync = util.promisify(fs.writeFile);
+const statAsync = util.promisify(fs.stat);
+const mkdirAsync = util.promisify(mkdirp);
+
+/**
+ * @constructor
+ */
+function ConfigParser() {
+    this._sections = {};
+}
+
+/**
+ * Returns an array of the sections.
+ * @returns {Array}
+ */
+ConfigParser.prototype.sections = function() {
+    return Object.keys(this._sections);
+};
+
+/**
+ * Adds a section named section to the instance. If the section already
+ * exists, a DuplicateSectionError is thrown.
+ * @param {string} section - Section Name
+ */
+ConfigParser.prototype.addSection = function(section) {
+    if(this._sections.hasOwnProperty(section)){
+        throw new errors.DuplicateSectionError(section)
+    }
+    this._sections[section] = {};
+};
+
+/**
+ * Indicates whether the section is present in the configuration
+ * file.
+ * @param {string} section - Section Name
+ * @returns {boolean}
+ */
+ConfigParser.prototype.hasSection = function(section) {
+    return this._sections.hasOwnProperty(section);
+};
+
+/**
+ * Returns an array of all keys in the specified section.
+ * @param {string} section - Section Name
+ * @returns {Array}
+ */
+ConfigParser.prototype.keys = function(section) {
+    try {
+        return Object.keys(this._sections[section]);
+    } catch(err){
+        throw new errors.NoSectionError(section);
+    }
+};
+
+/**
+ * Indicates whether the specified key is in the section.
+ * @param {string} section - Section Name
+ * @param {string} key - Key Name
+ * @returns {boolean}
+ */
+ConfigParser.prototype.hasKey = function (section, key) {
+    return this._sections.hasOwnProperty(section) &&
+        this._sections[section].hasOwnProperty(key);
+};
+
+/**
+ * Reads a file and parses the configuration data.
+ * @param {string|Buffer|int} file - Filename or File Descriptor
+ */
+ConfigParser.prototype.read = function(file) {
+    const lines = fs.readFileSync(file)
+        .toString('utf8')
+        .split(LINE_BOUNDARY);
+    parseLines.call(this, file, lines);
+};
+
+/**
+ * Reads a file asynchronously and parses the configuration data.
+ * @param {string|Buffer|int} file - Filename or File Descriptor
+ */
+ConfigParser.prototype.readAsync = async function(file) {
+    const lines = (await readFileAsync(file))
+        .toString('utf8')
+        .split(LINE_BOUNDARY);
+    parseLines.call(this, file, lines);
+}
+
+/**
+ * Gets the value for the key in the named section.
+ * @param {string} section - Section Name
+ * @param {string} key - Key Name
+ * @param {boolean} [raw=false] - Whether or not to replace placeholders
+ * @returns {string|undefined}
+ */
+ConfigParser.prototype.get = function(section, key, raw) {
+    if(this._sections.hasOwnProperty(section)){
+        if(raw){
+            return this._sections[section][key];
+        } else {
+            return interpolation.interpolate(this, section, key);
+        }
+    }
+    return undefined;
+};
+
+/**
+ * Coerces value to an integer of the specified radix.
+ * @param {string} section - Section Name
+ * @param {string} key - Key Name
+ * @param {int} [radix=10] - An integer between 2 and 36 that represents the base of the string.
+ * @returns {number|undefined|NaN}
+ */
+ConfigParser.prototype.getInt = function(section, key, radix) {
+    if(this._sections.hasOwnProperty(section)){
+        if(!radix) radix = 10;
+        return parseInt(this._sections[section][key], radix);
+    }
+    return undefined;
+};
+
+/**
+ * Coerces value to a float.
+ * @param {string} section - Section Name
+ * @param {string} key - Key Name
+ * @returns {number|undefined|NaN}
+ */
+ConfigParser.prototype.getFloat = function(section, key) {
+    if(this._sections.hasOwnProperty(section)){
+        return parseFloat(this._sections[section][key]);
+    }
+    return undefined;
+};
+
+/**
+ * Returns an object with every key, value pair for the named section.
+ * @param {string} section - Section Name
+ * @returns {Object}
+ */
+ConfigParser.prototype.items = function(section) {
+    return this._sections[section];
+};
+
+/**
+ * Sets the given key to the specified value.
+ * @param {string} section - Section Name
+ * @param {string} key - Key Name
+ * @param {*} value - New Key Value
+ */
+ConfigParser.prototype.set = function(section, key, value) {
+    if(this._sections.hasOwnProperty(section)){
+        this._sections[section][key] = value;
+    }
+};
+
+/**
+ * Removes the property specified by key in the named section.
+ * @param {string} section - Section Name
+ * @param {string} key - Key Name
+ * @returns {boolean}
+ */
+ConfigParser.prototype.removeKey = function(section, key) {
+    // delete operator returns true if the property doesn't not exist
+    if(this._sections.hasOwnProperty(section) &&
+        this._sections[section].hasOwnProperty(key)){
+        return delete this._sections[section][key];
+    }
+    return false;
+};
+
+/**
+ * Removes the named section (and associated key, value pairs).
+ * @param {string} section - Section Name
+ * @returns {boolean}
+ */
+ConfigParser.prototype.removeSection = function(section) {
+    if(this._sections.hasOwnProperty(section)){
+        return delete this._sections[section];
+    }
+    return false;
+};
+
+/**
+ * Writes the representation of the config file to the
+ * specified file. Comments are not preserved.
+ * @param {string|Buffer|int} file - Filename or File Descriptor
+ * @param {bool} [createMissingDirs=false] - Whether to create the directories in the path if they don't exist
+ */
+ConfigParser.prototype.write = function(file, createMissingDirs = false) {
+    if (createMissingDirs) {
+        const dir = path.dirname(file);
+        mkdirp.sync(dir);
+    }
+
+    fs.writeFileSync(file, getSectionsAsString.call(this));
+};
+
+/**
+ * Writes the representation of the config file to the
+ * specified file asynchronously. Comments are not preserved.
+ * @param {string|Buffer|int} file - Filename or File Descriptor
+ * @param {bool} [createMissingDirs=false] - Whether to create the directories in the path if they don't exist
+ * @returns {Promise}
+ */
+ConfigParser.prototype.writeAsync = async function(file, createMissingDirs = false) {
+    if (createMissingDirs) {
+        const dir = path.dirname(file);
+        await mkdirAsync(dir);
+    }
+
+    await writeFileAsync(file, getSectionsAsString.call(this));
+}
+
+function parseLines(file, lines) {
+    let curSec = null;
+    lines.forEach((line, lineNumber) => {
+        if(!line || line.match(COMMENT)) return;
+        let res = SECTION.exec(line);
+        if(res){
+            const header = res[1];
+            curSec = {};
+            this._sections[header] = curSec;
+        } else if(!curSec) {
+            throw new errors.MissingSectionHeaderError(file, lineNumber, line);
+        } else {
+            res = KEY.exec(line);
+            if(res){
+                const key = res[1];
+                curSec[key] = res[2];
+            } else {
+                throw new errors.ParseError(file, lineNumber, line);
+            }
+        }
+    });
+}
+
+function getSectionsAsString() {
+    let out = '';
+    let section;
+    for(section in this._sections){
+        if(!this._sections.hasOwnProperty(section)) continue;
+        out += ('[' + section + ']\n');
+        const keys = this._sections[section];
+        let key;
+        for(key in keys){
+            if(!keys.hasOwnProperty(key)) continue;
+            let value = keys[key];
+            out += (key + '=' + value + '\n');
+        }
+        out += '\n';
+    }
+    return out;
+}
+
+module.exports = ConfigParser;
+
+},{"./errors":13,"./interpolation":14,"fs":1,"mkdirp":15,"path":6,"util":10}],13:[function(require,module,exports){
+/**
+ * Error thrown when addSection is called with a section
+ * that already exists.
+ * @param {string} section - Section Name
+ * @constructor
+ */
+function DuplicateSectionError(section) {
+    this.name = 'DuplicateSectionError';
+    this.message = section + ' already exists';
+    Error.captureStackTrace(this, this.constructor);
+}
+
+/**
+ * Error thrown when the section being accessed, does
+ * not exist.
+ * @param {string} section - Section Name
+ * @constructor
+ */
+function NoSectionError(section) {
+    this.name = this.constructor.name;
+    this.message =  'Section ' + section + ' does not exist.';
+    Error.captureStackTrace(this, this.constructor);
+}
+
+/**
+ * Error thrown when a file is being parsed.
+ * @param {string} filename - File name
+ * @param {int} lineNumber - Line Number
+ * @param {string} line - Contents of the line
+ * @constructor
+ */
+function ParseError(filename, lineNumber, line) {
+    this.name = this.constructor.name;
+    this.message = 'Source contains parsing errors.\nfile: ' + filename +
+        ' line: ' + lineNumber + '\n' + line;
+    Error.captureStackTrace(this, this.constructor);
+}
+
+/**
+ * Error thrown when there are no section headers present
+ * in a file.
+ * @param {string} filename - File name
+ * @param {int} lineNumber - Line Number
+ * @param {string} line - Contents of the line
+ * @constructor
+ */
+function MissingSectionHeaderError(filename, lineNumber, line) {
+    this.name = this.constructor.name;
+    this.message = 'File contains no section headers.\nfile: ' + filename +
+        ' line: ' + lineNumber + '\n' + line;
+    Error.captureStackTrace(this, this.constructor);
+}
+
+/**
+ * Error thrown when the interpolate function exceeds the maximum recursion
+ * depth.
+ * @param {string} section - Section Name
+ * @param {string} key - Key Name
+ * @param {string} value - Key Value
+ * @param {int} maxDepth - Maximum recursion depth
+ * @constructor
+ */
+function MaximumInterpolationDepthError(section, key, value, maxDepth) {
+    this.name = this.constructor.name;
+    this.message = 'Exceeded Maximum Recursion Depth (' + maxDepth +
+        ') for key ' + key + ' in section ' + section + '\nvalue: ' + value;
+    Error.captureStackTrace(this, this.constructor);
+}
+
+module.exports = {
+    DuplicateSectionError,
+    NoSectionError,
+    ParseError,
+    MissingSectionHeaderError,
+    MaximumInterpolationDepthError
+};
+},{}],14:[function(require,module,exports){
+const errors = require('./errors');
+
+/**
+ * Regular Expression to match placeholders.
+ * @type {RegExp}
+ * @private
+ */
+const PLACEHOLDER = new RegExp(/%\(([\w-]+)\)s/);
+
+/**
+ * Maximum recursion depth for parseValue
+ * @type {number}
+ */
+const MAXIMUM_INTERPOLATION_DEPTH = 50;
+
+/**
+ * Recursively parses a string and replaces the placeholder ( %(key)s )
+ * with the value the key points to.
+ * @param {ParserConfig} parser - Parser Config Object
+ * @param {string} section - Section Name
+ * @param {string} key - Key Name
+ */
+function interpolate(parser, section, key) {
+    return interpolateRecurse(parser, section, key, 1);
+}
+
+/**
+ * Interpolate Recurse
+ * @param parser
+ * @param section
+ * @param key
+ * @param depth
+ * @private
+ */
+function interpolateRecurse(parser, section, key, depth) {
+    let value = parser.get(section, key, true);
+    if(depth > MAXIMUM_INTERPOLATION_DEPTH){
+        throw new errors.MaximumInterpolationDepthError(section, key, value, MAXIMUM_INTERPOLATION_DEPTH);
+    }
+    let res = PLACEHOLDER.exec(value);
+    while(res !== null){
+        const placeholder = res[1];
+        const rep = interpolateRecurse(parser, section, placeholder, depth + 1);
+        // replace %(key)s with the returned value next
+        value = value.substr(0, res.index) + rep +
+            value.substr(res.index + res[0].length);
+        // get next placeholder
+        res = PLACEHOLDER.exec(value);
+    }
+    return value;
+}
+
+module.exports = {
+    interpolate,
+    MAXIMUM_INTERPOLATION_DEPTH
+};
+},{"./errors":13}],15:[function(require,module,exports){
+var path = require('path');
+var fs = require('fs');
+var _0777 = parseInt('0777', 8);
+
+module.exports = mkdirP.mkdirp = mkdirP.mkdirP = mkdirP;
+
+function mkdirP (p, opts, f, made) {
+    if (typeof opts === 'function') {
+        f = opts;
+        opts = {};
+    }
+    else if (!opts || typeof opts !== 'object') {
+        opts = { mode: opts };
+    }
+    
+    var mode = opts.mode;
+    var xfs = opts.fs || fs;
+    
+    if (mode === undefined) {
+        mode = _0777
+    }
+    if (!made) made = null;
+    
+    var cb = f || function () {};
+    p = path.resolve(p);
+    
+    xfs.mkdir(p, mode, function (er) {
+        if (!er) {
+            made = made || p;
+            return cb(null, made);
+        }
+        switch (er.code) {
+            case 'ENOENT':
+                if (path.dirname(p) === p) return cb(er);
+                mkdirP(path.dirname(p), opts, function (er, made) {
+                    if (er) cb(er, made);
+                    else mkdirP(p, opts, cb, made);
+                });
+                break;
+
+            // In the case of any other error, just see if there's a dir
+            // there already.  If so, then hooray!  If not, then something
+            // is borked.
+            default:
+                xfs.stat(p, function (er2, stat) {
+                    // if the stat fails, then that's super weird.
+                    // let the original error be the failure reason.
+                    if (er2 || !stat.isDirectory()) cb(er, made)
+                    else cb(null, made);
+                });
+                break;
+        }
+    });
+}
+
+mkdirP.sync = function sync (p, opts, made) {
+    if (!opts || typeof opts !== 'object') {
+        opts = { mode: opts };
+    }
+    
+    var mode = opts.mode;
+    var xfs = opts.fs || fs;
+    
+    if (mode === undefined) {
+        mode = _0777
+    }
+    if (!made) made = null;
+
+    p = path.resolve(p);
+
+    try {
+        xfs.mkdirSync(p, mode);
+        made = made || p;
+    }
+    catch (err0) {
+        switch (err0.code) {
+            case 'ENOENT' :
+                made = sync(path.dirname(p), opts, made);
+                sync(p, opts, made);
+                break;
+
+            // In the case of any other error, just see if there's a dir
+            // there already.  If so, then hooray!  If not, then something
+            // is borked.
+            default:
+                var stat;
+                try {
+                    stat = xfs.statSync(p);
+                }
+                catch (err1) {
+                    throw err0;
+                }
+                if (!stat.isDirectory()) throw err0;
+                break;
+        }
+    }
+
+    return made;
+};
+
+},{"fs":1,"path":6}],16:[function(require,module,exports){
 function Agent() {
   this._defaults = [];
 }
@@ -2217,7 +3910,7 @@ Agent.prototype._setDefaults = function(req) {
 
 module.exports = Agent;
 
-},{}],6:[function(require,module,exports){
+},{}],17:[function(require,module,exports){
 /**
  * Root reference for iframes.
  */
@@ -3139,7 +4832,7 @@ request.put = function(url, data, fn) {
   return req;
 };
 
-},{"./agent-base":5,"./is-object":7,"./request-base":8,"./response-base":9,"component-emitter":4}],7:[function(require,module,exports){
+},{"./agent-base":16,"./is-object":18,"./request-base":19,"./response-base":20,"component-emitter":11}],18:[function(require,module,exports){
 'use strict';
 
 /**
@@ -3156,7 +4849,7 @@ function isObject(obj) {
 
 module.exports = isObject;
 
-},{}],8:[function(require,module,exports){
+},{}],19:[function(require,module,exports){
 'use strict';
 
 /**
@@ -3852,7 +5545,7 @@ RequestBase.prototype._setTimeouts = function() {
   }
 };
 
-},{"./is-object":7}],9:[function(require,module,exports){
+},{"./is-object":18}],20:[function(require,module,exports){
 'use strict';
 
 /**
@@ -3990,7 +5683,7 @@ ResponseBase.prototype._setStatusProperties = function(status){
     this.unprocessableEntity = 422 == status;
 };
 
-},{"./utils":10}],10:[function(require,module,exports){
+},{"./utils":21}],21:[function(require,module,exports){
 'use strict';
 
 /**
@@ -6048,9 +7741,324 @@ function isSlowBuffer (obj) {
   return typeof obj.readFloatLE === 'function' && typeof obj.slice === 'function' && isFastBuffer(obj.slice(0, 0))
 }
 
+const logLevelEnum = {
+	level: {
+		LNone: 'none',
+		LError: 'error',
+		LDebug: 'debug',
+		LTrace: 'trace',
+	},
+};
+
+const logFormatEnum = {
+	formats: {
+		JSON: 'json',
+		TEXT: 'text',
+	},
+};
+
+class Logger {
+	get logLevelEnum() {
+		return logLevelEnum;
+	}
+
+	get logFormatEnum() {
+		return logFormatEnum;
+	}
+
+	constructor() {
+		this.log_level = logLevelEnum.level.LNone;
+		this.log_format = logFormatEnum.formats.TEXT;
+		this.log_to_console = true;
+		this.log_file_path;
+		this.log_response_body = false;
+		this.log_request_body = false;
+
+		this.setLogger();
+	}
+
+	setLogger() {
+	}
+
+	log(level, statusCode, method, url, requestHeaders, responseHeaders, requestBody, responseBody) {
+		var content = this.formatLog(level, statusCode, method, url, requestHeaders, responseHeaders, requestBody, responseBody);
+		if (typeof window !== 'undefined') {
+			var shouldLog = this.calculateLogLevel(level);
+			if (shouldLog > 0 && this.log_to_console === true) {
+				if(this.log_format === this.logFormatEnum.formats.JSON) {
+					console.log(content);
+				} else {
+			 		console.log(`${level.toUpperCase()}: ${content}`);
+				}
+			}
+		} else {
+			if (this.logger.transports.length > 0) this.logger.log(level, content);
+		}
+	}
+
+	calculateLogLevel(level) {
+		switch (this.log_level) {
+			case this.logLevelEnum.level.LError:
+				if (level !== this.logLevelEnum.level.LError) {
+					return -1;
+				}
+				return 1;
+			case this.logLevelEnum.level.LDebug:
+				if (level === this.logLevelEnum.level.LTrace) {
+					return -1;
+				}
+				return 1;
+			case this.logLevelEnum.level.LTrace:
+				return 1;
+			default:
+				return -1;
+		}
+	}
+
+	formatLog(level, statusCode, method, url, requestHeaders, responseHeaders, requestBody, responseBody) {
+		var result;
+		if (requestHeaders) requestHeaders['Authorization'] = '[REDACTED]';
+		if (!this.log_request_body) requestBody = undefined;
+		if (!this.log_response_body) responseBody = undefined;
+		if (this.log_format && this.log_format === logFormatEnum.formats.JSON) {
+			result = {
+				level: level,
+				date: new Date().toISOString(),
+				method: method,
+				url: decodeURIComponent(url),
+				correlationId: responseHeaders ? (responseHeaders['inin-correlation-id'] ? responseHeaders['inin-correlation-id'] : '') : '',
+				statusCode: statusCode,
+			};
+			if (requestHeaders) result.requestHeaders = requestHeaders;
+			if (responseHeaders) result.responseHeaders = responseHeaders;
+			if (requestBody) result.requestBody = requestBody;
+			if (responseBody) result.responseBody = responseBody;
+		} else {
+			result = `${new Date().toISOString()}
+=== REQUEST === 
+${this.formatValue('URL', decodeURIComponent(url))}${this.formatValue('Method', method)}${this.formatValue(
+				'Headers',
+				this.formatHeaderString(requestHeaders)
+			)}${this.formatValue('Body', requestBody ? JSON.stringify(requestBody, null, 2) : '')}
+=== RESPONSE ===
+${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.formatHeaderString(responseHeaders))}${this.formatValue(
+				'CorrelationId',
+				responseHeaders ? (responseHeaders['inin-correlation-id'] ? responseHeaders['inin-correlation-id'] : '') : ''
+			)}${this.formatValue('Body', responseBody ? JSON.stringify(responseBody, null, 2) : '')}`;
+		}
+
+		return result;
+	}
+
+	formatHeaderString(headers) {
+		var headerString = '';
+		if (!headers) return headerString;
+		for (const [key, value] of Object.entries(headers)) {
+			headerString += `\n\t${key}: ${value}`;
+		}
+		return headerString;
+	}
+
+	formatValue(key, value) {
+		if (!value || value === '' || value === '{}') return '';
+		return `${key}: ${value}\n`;
+	}
+
+	getLogLevel(level) {
+		switch (level) {
+			case 'error':
+				return logLevelEnum.level.LError;
+			case 'debug':
+				return logLevelEnum.level.LDebug;
+			case 'trace':
+				return logLevelEnum.level.LTrace;
+			default:
+				return logLevelEnum.level.LNone;
+		}
+	}
+
+	getLogFormat(format) {
+		switch (format) {
+			case 'json':
+				return logFormatEnum.formats.JSON;
+			default:
+				return logFormatEnum.formats.TEXT;
+		}
+	}
+}
+
+class Configuration {
+	/**
+	 * Singleton getter
+	 */
+	get instance() {
+		return Configuration.instance;
+	}
+
+	/**
+	 * Singleton setter
+	 */
+	set instance(value) {
+		Configuration.instance = value;
+	}
+
+	constructor() {
+		if (!Configuration.instance) {
+			Configuration.instance = this;
+		}
+
+		if (typeof window !== 'undefined') {
+			this.configPath = '';
+		} else {
+			const os = require('os');
+			const path = require('path');
+			this.configPath = path.join(os.homedir(), '.genesyscloudjavascript', 'config');
+		}
+		this.refresh_access_token = true;
+		this.refresh_token_wait_max = 10;
+		this.live_reload_config = true;
+		this.host;
+		this.environment;
+		this.basePath;
+		this.authUrl;
+		this.config;
+		this.logger = new Logger();
+		this.setEnvironment();
+		this.liveLoadConfig();
+	}
+
+	liveLoadConfig() {
+		// If in browser, don't read config file, use default values
+		if (typeof window !== 'undefined') {
+			this.configPath = '';
+			return;
+		}
+
+		this.updateConfigFromFile();
+
+		if (this.live_reload_config && this.live_reload_config === true) {
+			try {
+				const fs = require('fs');
+				fs.watchFile(this.configPath, { persistent: false }, (eventType, filename) => {
+					this.updateConfigFromFile();
+					if (!this.live_reload_config) {
+						fs.unwatchFile(this.configPath);
+					}
+				});
+			} catch (err) {
+				// do nothing
+			}
+		}
+	}
+
+	setConfigPath(path) {
+		if (path && path !== this.configPath) {
+			this.configPath = path;
+			this.liveLoadConfig();
+		}
+	}
+
+	updateConfigFromFile() {
+		const ConfigParser = require('configparser');
+		var configparser = new ConfigParser();
+
+		try {
+			configparser.read(this.configPath); // If no error catched, indicates it's INI format
+			this.config = configparser;
+		} catch (error) {
+			if (error.name && error.name === 'MissingSectionHeaderError') {
+				// Not INI format, see if it's JSON format
+				const fs = require('fs');
+				var configData = fs.readFileSync(this.configPath, 'utf8');
+				this.config = {
+					_sections: JSON.parse(configData), // To match INI data format
+				};
+			}
+		}
+
+		if (this.config) this.updateConfigValues();
+	}
+
+	updateConfigValues() {
+		this.logger.log_level = this.logger.getLogLevel(this.getConfigString('logging', 'log_level'));
+		this.logger.log_format = this.logger.getLogFormat(this.getConfigString('logging', 'log_format'));
+		this.logger.log_to_console =
+			this.getConfigBoolean('logging', 'log_to_console') !== undefined
+				? this.getConfigBoolean('logging', 'log_to_console')
+				: this.logger.log_to_console;
+		this.logger.log_file_path =
+			this.getConfigString('logging', 'log_file_path') !== undefined
+				? this.getConfigString('logging', 'log_file_path')
+				: this.logger.log_file_path;
+		this.logger.log_response_body =
+			this.getConfigBoolean('logging', 'log_response_body') !== undefined
+				? this.getConfigBoolean('logging', 'log_response_body')
+				: this.logger.log_response_body;
+		this.logger.log_request_body =
+			this.getConfigBoolean('logging', 'log_request_body') !== undefined
+				? this.getConfigBoolean('logging', 'log_request_body')
+				: this.logger.log_request_body;
+		this.refresh_access_token =
+			this.getConfigBoolean('reauthentication', 'refresh_access_token') !== undefined
+				? this.getConfigBoolean('reauthentication', 'refresh_access_token')
+				: this.refresh_access_token;
+		this.refresh_token_wait_max =
+			this.getConfigInt('reauthentication', 'refresh_token_wait_max') !== undefined
+				? this.getConfigInt('reauthentication', 'refresh_token_wait_max')
+				: this.refresh_token_wait_max;
+		this.live_reload_config =
+			this.getConfigBoolean('general', 'live_reload_config') !== undefined
+				? this.getConfigBoolean('general', 'live_reload_config')
+				: this.live_reload_config;
+		this.host = this.getConfigString('general', 'host') !== undefined ? this.getConfigString('general', 'host') : this.host;
+
+		this.setEnvironment();
+
+		// Update logging configs
+		this.logger.setLogger();
+	}
+
+	setEnvironment(env) {
+		// Default value
+		if (env) this.environment = env;
+		else this.environment = this.host ? this.host : 'mypurecloud.com';
+
+		// Strip trailing slash
+		this.environment = this.environment.replace(/\/+$/, '');
+
+		// Strip protocol and subdomain
+		if (this.environment.startsWith('https://')) this.environment = this.environment.substring(8);
+		if (this.environment.startsWith('http://')) this.environment = this.environment.substring(7);
+		if (this.environment.startsWith('api.')) this.environment = this.environment.substring(4);
+
+		this.basePath = `https://api.${this.environment}`;
+		this.authUrl = `https://login.${this.environment}`;
+	}
+
+	getConfigString(section, key) {
+		if (this.config._sections[section]) return this.config._sections[section][key];
+	}
+
+	getConfigBoolean(section, key) {
+		if (this.config._sections[section] && this.config._sections[section][key] !== undefined) {
+			if (typeof this.config._sections[section][key] === 'string') {
+				return this.config._sections[section][key] === 'true';
+			} else return this.config._sections[section][key];
+		}
+	}
+
+	getConfigInt(section, key) {
+		if (this.config._sections[section] && this.config._sections[section][key]) {
+			if (typeof this.config._sections[section][key] === 'string') {
+				return parseInt(this.config._sections[section][key]);
+			} else return this.config._sections[section][key];
+		}
+	}
+}
+
 /**
  * @module purecloud-platform-client-v2/ApiClient
- * @version 113.1.0
+ * @version 113.2.0
  */
 class ApiClient {
 	/**
@@ -6128,13 +8136,6 @@ class ApiClient {
 		}
 
 		/**
-		 * The base URL against which to resolve every API call's (relative) path.
-		 * @type {String}
-		 * @default https://api.mypurecloud.com
-		 */
-		this.setEnvironment('https://api.mypurecloud.com');
-
-		/**
 		 * The authentication methods to be included for all API calls.
 		 * @type {Array.<String>}
 		 */
@@ -6164,21 +8165,11 @@ class ApiClient {
 		this.superagent = superagent;
 
 		// Transparently request a new access token when it expires (Code Authorization only)
-		this.shouldRefreshAccessToken = true;
 		this.refreshInProgress = false;
-		this.refreshTokenWaitTime = 10;
+
+		this.config = new Configuration();
 
 		if (typeof(window) !== 'undefined') window.ApiClient = this;
-	}
-
-	/**
-	 * @description Sets the debug log to enable debug logging
-	 * @param {log} debugLog - In most cases use `console.log`
-	 * @param {integer} maxLines - (optional) The max number of lines to write to the log. Must be > 0.
-	 */
-	setDebugLog(debugLog, maxLines) {
-		this.debugLog = debugLog;
-		this.debugLogMaxLines = (maxLines && maxLines > 0) ? maxLines : undefined;
 	}
 
 	/**
@@ -6197,7 +8188,6 @@ class ApiClient {
 	setPersistSettings(doPersist, prefix) {
 		this.persistSettings = doPersist;
 		this.settingsPrefix = prefix ? prefix.replace(/\W+/g, '_') : 'purecloud';
-		this._debugTrace(`this.settingsPrefix=${this.settingsPrefix}`);
 	}
 
 	/**
@@ -6225,7 +8215,6 @@ class ApiClient {
 
 			// Ensure we can access local storage
 			if (!this.hasLocalStorage) {
-				this._debugTrace('Warning: Cannot access local storage. Settings will not be saved.');
 				return;
 			}
 
@@ -6235,7 +8224,6 @@ class ApiClient {
 
 			// Save updated auth data
 			localStorage.setItem(`${this.settingsPrefix}_auth_data`, JSON.stringify(tempData));
-			this._debugTrace('Auth data saved to local storage');
 		} catch (e) {
 			console.error(e);
 		}
@@ -6250,7 +8238,6 @@ class ApiClient {
 
 		// Ensure we can access local storage
 		if (!this.hasLocalStorage) {
-			this._debugTrace('Warning: Cannot access local storage. Settings will not be loaded.');
 			return;
 		}
 
@@ -6270,24 +8257,7 @@ class ApiClient {
 	 * @param {string} environment - (Optional, default "mypurecloud.com") Environment the session use, e.g. mypurecloud.ie, mypurecloud.com.au, etc.
 	 */
 	setEnvironment(environment) {
-		if (!environment)
-			environment = 'mypurecloud.com';
-
-		// Strip trailing slash
-		environment = environment.replace(/\/+$/, '');
-
-		// Strip protocol and subdomain
-		if (environment.startsWith('https://'))
-			environment = environment.substring(8);
-		if (environment.startsWith('http://'))
-			environment = environment.substring(7);
-		if (environment.startsWith('api.'))
-			environment = environment.substring(4);
-
-		// Set vars
-		this.environment = environment;
-		this.basePath = `https://api.${environment}`;
-		this.authUrl = `https://login.${environment}`;
+		this.config.setEnvironment(environment);
 	}
 
 	/**
@@ -6331,8 +8301,6 @@ class ApiClient {
 					resolve(this.authData);
 				})
 				.catch((error) => {
-					this._debugTrace('Error encountered during login. This is normal if the application has not yet been authorized.');
-					this._debugTrace(error);
 					var query = {
 						client_id: encodeURIComponent(this.clientId),
 						redirect_uri: encodeURIComponent(this.redirectUri),
@@ -6343,7 +8311,6 @@ class ApiClient {
 					if (opts.provider) query.provider = encodeURIComponent(opts.provider);
 
 					var url = this._buildAuthUrl('oauth/authorize', query);
-					this._debugTrace(`Implicit grant: redirecting to ${url} for authorization...`);
 					window.location.replace(url);
 				});
 		});
@@ -6356,7 +8323,7 @@ class ApiClient {
 	 */
 	loginClientCredentialsGrant(clientId, clientSecret) {
 		this.clientId = clientId;
-		var authHeader = new Buffer(`${clientId}:${clientSecret}`).toString('base64');
+		var authHeader = Buffer.from(`${clientId}:${clientSecret}`).toString('base64');
 
 		return new Promise((resolve, reject) => {
 			// Block browsers from using client credentials
@@ -6366,7 +8333,7 @@ class ApiClient {
 			}
 
 			// Build token request
-			var request = superagent('POST', `https://login.${this.environment}/oauth/token`);
+			var request = superagent('POST', `https://login.${this.config.environment}/oauth/token`);
 			if (this.proxy && request.proxy) {
 				request.proxy(this.proxy);
 			}
@@ -6376,15 +8343,47 @@ class ApiClient {
 			// Execute request
 			request.end((error, response) => {
 				if (error) {
+					// Log error
+					this.config.logger.log(
+						'error',
+						response.statusCode,
+						'POST',
+						`https://login.${this.config.environment}/oauth/token`,
+						request.header,
+						response.headers,
+						{ grant_type: 'client_credentials' },
+						response.body
+					);
 					reject(error);
 				} else {
+					// Logging
+					this.config.logger.log(
+						'trace',
+						response.statusCode,
+						'POST',
+						`https://login.${this.config.environment}/oauth/token`,
+						request.header,
+						response.headers,
+						{ grant_type: 'client_credentials' },
+						undefined
+					);
+					this.config.logger.log(
+						'debug',
+						response.statusCode,
+						'POST',
+						`https://login.${this.config.environment}/oauth/token`,
+						request.header,
+						undefined,
+						{ grant_type: 'client_credentials' },
+						undefined
+					);
+
 					// Save access token
 					this.setAccessToken(response.body['access_token']);
 
 					// Set expiry time
 					this.authData.tokenExpiryTime = (new Date()).getTime() + (response.body['expires_in'] * 1000);
 					this.authData.tokenExpiryTimeString = (new Date(this.authData.tokenExpiryTime)).toUTCString();
-					this._debugTrace(`Access token expires in ${response.body['expires_in']} seconds`);
 
 					// Return auth data
 					resolve(this.authData);
@@ -6407,23 +8406,61 @@ class ApiClient {
 				reject(new Error('The saml2bearer grant is not supported in a browser.'));
 				return;
 			}
-			var encodedData = new Buffer(clientId + ':' + clientSecret).toString('base64');
+			var encodedData = Buffer.from(clientId + ':' + clientSecret).toString('base64');
 			var request = this._formAuthRequest(encodedData,
 												{ grant_type: 'urn:ietf:params:oauth:grant-type:saml2-bearer' },
 										        { orgName: orgName },
 										        { assertion: assertion });
+			var bodyParam = {
+				grant_type: 'urn:ietf:params:oauth:grant-type:saml2-bearer',
+				orgName: orgName,
+				assertion: assertion,
+			};
+
 			// Handle response
 			request.end((error, response) => {
 				if (error) {
+					// Log error
+					this.config.logger.log(
+						'error',
+						response.statusCode,
+						'POST',
+						`https://login.${this.config.environment}/oauth/token`,
+						request.header,
+						response.headers,
+						bodyParam,
+						response.body
+					);
 					reject(error);
 				} else {
+					// Logging
+					this.config.logger.log(
+						'trace',
+						response.statusCode,
+						'POST',
+						`https://login.${this.config.environment}/oauth/token`,
+						request.header,
+						response.headers,
+						bodyParam,
+						undefined
+					);
+					this.config.logger.log(
+						'debug',
+						response.statusCode,
+						'POST',
+						`https://login.${this.config.environment}/oauth/token`,
+						request.header,
+						undefined,
+						bodyParam,
+						undefined
+					);
+
 					// Get access token from response
 					var access_token = response.body.access_token;
 
 					this.setAccessToken(access_token);
 					this.authData.tokenExpiryTime = new Date().getTime() + response.body['expires_in'] * 1000;
 					this.authData.tokenExpiryTimeString = new Date(this.authData.tokenExpiryTime).toUTCString();
-					this._debugTrace(`Access token expires in ${response.body['expires_in']} seconds`);
 
 					// Return auth data
 					resolve(this.authData);
@@ -6447,13 +8484,18 @@ class ApiClient {
 				reject(new Error('The Code Authorization grant is not supported in a browser.'));
 				return;
 			}
-			var encodedData = new Buffer(clientId + ':' + clientSecret).toString('base64');
+			var encodedData = Buffer.from(clientId + ':' + clientSecret).toString('base64');
 			var request = this._formAuthRequest(encodedData,
 												{ grant_type: 'authorization_code' },
 									            { code: authCode },
 										        { redirect_uri: redirectUri });
+			var bodyParam = {
+				grant_type: 'authorization_code',
+				code: authCode,
+				redirect_uri: redirectUri,
+			};
 			// Handle response
-			this._handleCodeAuthorizationResponse(request, resolve, reject);
+			this._handleCodeAuthorizationResponse(request, bodyParam, resolve, reject);
 		});
 	}
 
@@ -6470,38 +8512,76 @@ class ApiClient {
 				reject(new Error('The Code Authorization grant is not supported in a browser.'));
 				return;
 			}
-			var encodedData = new Buffer(clientId + ':' + clientSecret).toString('base64');
+			var encodedData = Buffer.from(clientId + ':' + clientSecret).toString('base64');
 			var request = this._formAuthRequest(encodedData, { grant_type: 'refresh_token' }, { refresh_token: refreshToken });
+			var bodyParam = {
+				grant_type: 'refresh_token',
+				refresh_token: refreshToken,
+			};
 			// Handle response
-			this._handleCodeAuthorizationResponse(request, resolve, reject);
+			this._handleCodeAuthorizationResponse(request, bodyParam, resolve, reject);
 		});
 	}
 
 	/**
 	 * @description Handles the response for code auth requests
-	 * @param {object} request - Authoriation request object
+	 * @param {object} request - Authorization request object
+	 * @param {object} bodyParam - Input body data for authorization request
 	 * @param {function} resolve - Promise resolve callback
 	 * @param {function} reject - Promise reject callback
 	 */
-	_handleCodeAuthorizationResponse(request, resolve, reject) {
+	_handleCodeAuthorizationResponse(request, bodyParam, resolve, reject) {
 		request.end((error, response) => {
-				if (error) {
-					reject(error);
-				} else {
-					// Get access token from response
-					var access_token = response.body.access_token;
-					var refresh_token = response.body.refresh_token;
+			if (error) {
+				// Log error
+				this.config.logger.log(
+					'error',
+					response.statusCode,
+					'POST',
+					`https://login.${this.config.environment}/oauth/token`,
+					request.header,
+					response.headers,
+					bodyParam,
+					response.body
+				);
 
-					this.setAccessToken(access_token);
-					this.authData.refreshToken = refresh_token;
-					this.authData.tokenExpiryTime = new Date().getTime() + response.body['expires_in'] * 1000;
-					this.authData.tokenExpiryTimeString = new Date(this.authData.tokenExpiryTime).toUTCString();
-					this._debugTrace(`Access token expires in ${response.body['expires_in']} seconds`);
+				reject(error);
+			} else {
+				// Logging
+				this.config.logger.log(
+					'trace',
+					response.statusCode,
+					'POST',
+					`https://login.${this.config.environment}/oauth/token`,
+					request.header,
+					response.headers,
+					bodyParam,
+					undefined
+				);
+				this.config.logger.log(
+					'debug',
+					response.statusCode,
+					'POST',
+					`https://login.${this.config.environment}/oauth/token`,
+					request.header,
+					undefined,
+					bodyParam,
+					undefined
+				);
 
-					// Return auth data
-					resolve(this.authData);
-				}
-			});
+				// Get access token from response
+				var access_token = response.body.access_token;
+				var refresh_token = response.body.refresh_token;
+
+				this.setAccessToken(access_token);
+				this.authData.refreshToken = refresh_token;
+				this.authData.tokenExpiryTime = new Date().getTime() + response.body['expires_in'] * 1000;
+				this.authData.tokenExpiryTimeString = new Date(this.authData.tokenExpiryTime).toUTCString();
+
+				// Return auth data
+				resolve(this.authData);
+			}
+		});
 	}
 
 	/**
@@ -6509,7 +8589,7 @@ class ApiClient {
 	 * @param {string} encodedData - Base64 encoded client and clientSecret pair
 	 */
 	_formAuthRequest(encodedData) {
-		var request = superagent('POST', `https://login.${this.environment}/oauth/token`);
+		var request = superagent('POST', `https://login.${this.config.environment}/oauth/token`);
 		// Set the headers
 		request.set('Authorization', 'Basic ' + encodedData);
 		request.set('Content-Type', 'application/x-www-form-urlencoded');
@@ -6545,11 +8625,11 @@ class ApiClient {
 						reject(err);
 					});
 			} else {
-				// Wait maximum of refreshTokenWaitTime seconds for other thread to complete refresh
-				this._sleep(this.refreshTokenWaitTime)
+				// Wait refresh_token_wait_max seconds for other thread to complete refresh
+				this._sleep(this.config.refresh_token_wait_max)
 					.then(() => {
 						if (this.refreshInProgress)
-							reject(new Error(`Token refresh took longer than ${this.refreshTokenWaitTime} seconds`));
+							reject(new Error(`Token refresh took longer than ${this.config.refresh_token_wait_max} seconds`));
 						else
 							resolve();
 					});
@@ -6700,7 +8780,7 @@ class ApiClient {
 	 */
 	_buildAuthUrl(path, query) {
 		if (!query) query = {};
-		return Object.keys(query).reduce((url, key) => !query[key] ? url : `${url}&${key}=${query[key]}`, `${this.authUrl}/${path}?`);
+		return Object.keys(query).reduce((url, key) => !query[key] ? url : `${url}&${key}=${query[key]}`, `${this.config.authUrl}/${path}?`);
 	}
 
 	/**
@@ -6729,7 +8809,7 @@ class ApiClient {
 		if (!path.match(/^\//)) {
 			path = `/${path}`;
 		}
-		var url = this.basePath + path;
+		var url = this.config.basePath + path;
 		url = url.replace(/\{([\w-]+)\}/g, (fullMatch, key) => {
 			var value;
 			if (pathParams.hasOwnProperty(key)) {
@@ -6910,23 +8990,6 @@ class ApiClient {
 					request.proxy(that.proxy);
 				}
 
-				if(that.debugLog){
-					var trace = `[REQUEST] ${httpMethod} ${url}`;
-					if(pathParams && Object.keys(pathParams).count > 0 && pathParams[Object.keys(pathParams)[0]]){
-						trace += `\nPath Params: ${JSON.stringify(pathParams)}`;
-					}
-
-					if(queryParams && Object.keys(queryParams).count > 0 && queryParams[Object.keys(queryParams)[0]]){
-						trace += `\nQuery Params: ${JSON.stringify(queryParams)}`;
-					}
-
-					if(bodyParam){
-						trace += `\nnBody: ${JSON.stringify(bodyParam)}`;
-					}
-
-					that._debugTrace(trace);
-				}
-
 				// apply authentications
 				that.applyAuthToRequest(request, authNames);
 
@@ -6935,7 +8998,7 @@ class ApiClient {
 
 				// set header parameters
 				request.set(that.defaultHeaders).set(that.normalizeParams(headerParams));
-				//request.set({ 'purecloud-sdk': '113.1.0' });
+				//request.set({ 'purecloud-sdk': '113.2.0' });
 
 				// set request timeout
 				request.timeout(that.timeout);
@@ -6995,24 +9058,12 @@ class ApiClient {
 					} : response.body ? response.body : response.text;
 
 					// Debug logging
-					if (that.debugLog) {
-						var trace = `[RESPONSE] ${response.status}: ${httpMethod} ${url}`;
-						if (response.headers)
-							trace += `\ninin-correlation-id: ${response.headers['inin-correlation-id']}`;
-						if (response.body)
-							trace += `\nBody: ${JSON.stringify(response.body,null,2)}`;
-
-						// Log trace message
-						that._debugTrace(trace);
-
-						// Log stack trace
-						if (error)
-							that._debugTrace(error);
-					}
+					that.config.logger.log('trace', response.statusCode, httpMethod, url, request.header, response.headers, bodyParam, undefined);
+					that.config.logger.log('debug', response.statusCode, httpMethod, url, request.header, undefined, bodyParam, undefined);
 
 					// Resolve promise
 					if (error) {
-						if (data.status == 401 && that.shouldRefreshAccessToken && that.authData.refreshToken !== "") {
+						if (data.status == 401 && that.config.refresh_access_token && that.authData.refreshToken !== "") {
 							that._handleExpiredAccessToken()
 								.then(() => {
 									sendRequest(that);
@@ -7021,6 +9072,17 @@ class ApiClient {
 									reject(err);
 								});
 						} else {
+							// Log error
+							that.config.logger.log(
+								'error',
+								response.statusCode,
+								httpMethod,
+								url,
+								request.header,
+								response.headers,
+								bodyParam,
+								response.body
+							);
 							reject(data);
 						}
 					} else {
@@ -7030,46 +9092,13 @@ class ApiClient {
 			}
 		});
 	}
-
-	/**
-	 * @description Parses an ISO-8601 string representation of a date value.
-	 * @param {String} str The date value as a string.
-	 * @returns {Date} The parsed date object.
-	 */
-	parseDate(str) {
-		return new Date(str.replace(/T/i, ' '));
-	}
-
-	/**
-	 * @description Logs to the debug log
-	 * @param {String} str The date value as a string.
-	 * @returns {Date} The parsed date object.
-	 */
-	_debugTrace(trace) {
-		if (!this.debugLog) return;
-
-		if (typeof(trace) === 'string') {
-			// Truncate
-			var truncTrace = '';
-			var lines = trace.split('\n');
-			if (this.debugLogMaxLines && lines.length > this.debugLogMaxLines) {
-				for  (var i = 0; i < this.debugLogMaxLines; i++) {
-					truncTrace += `${lines[i]}\n`;
-				}
-				truncTrace += '...response truncated...';
-				trace = truncTrace;
-			}
-		}
-
-		this.debugLog(trace);
-	}
 }
 
 class AlertingApi {
 	/**
 	 * Alerting service.
 	 * @module purecloud-platform-client-v2/api/AlertingApi
-	 * @version 113.1.0
+	 * @version 113.2.0
 	 */
 
 	/**
@@ -7383,7 +9412,7 @@ class AnalyticsApi {
 	/**
 	 * Analytics service.
 	 * @module purecloud-platform-client-v2/api/AnalyticsApi
-	 * @version 113.1.0
+	 * @version 113.2.0
 	 */
 
 	/**
@@ -8488,7 +10517,7 @@ class ArchitectApi {
 	/**
 	 * Architect service.
 	 * @module purecloud-platform-client-v2/api/ArchitectApi
-	 * @version 113.1.0
+	 * @version 113.2.0
 	 */
 
 	/**
@@ -11389,7 +13418,7 @@ class AuditApi {
 	/**
 	 * Audit service.
 	 * @module purecloud-platform-client-v2/api/AuditApi
-	 * @version 113.1.0
+	 * @version 113.2.0
 	 */
 
 	/**
@@ -11560,7 +13589,7 @@ class AuthorizationApi {
 	/**
 	 * Authorization service.
 	 * @module purecloud-platform-client-v2/api/AuthorizationApi
-	 * @version 113.1.0
+	 * @version 113.2.0
 	 */
 
 	/**
@@ -12713,7 +14742,7 @@ class BillingApi {
 	/**
 	 * Billing service.
 	 * @module purecloud-platform-client-v2/api/BillingApi
-	 * @version 113.1.0
+	 * @version 113.2.0
 	 */
 
 	/**
@@ -12793,7 +14822,7 @@ class ChatApi {
 	/**
 	 * Chat service.
 	 * @module purecloud-platform-client-v2/api/ChatApi
-	 * @version 113.1.0
+	 * @version 113.2.0
 	 */
 
 	/**
@@ -12884,7 +14913,7 @@ class CoachingApi {
 	/**
 	 * Coaching service.
 	 * @module purecloud-platform-client-v2/api/CoachingApi
-	 * @version 113.1.0
+	 * @version 113.2.0
 	 */
 
 	/**
@@ -13459,7 +15488,7 @@ class ContentManagementApi {
 	/**
 	 * ContentManagement service.
 	 * @module purecloud-platform-client-v2/api/ContentManagementApi
-	 * @version 113.1.0
+	 * @version 113.2.0
 	 */
 
 	/**
@@ -14599,7 +16628,7 @@ class ConversationsApi {
 	/**
 	 * Conversations service.
 	 * @module purecloud-platform-client-v2/api/ConversationsApi
-	 * @version 113.1.0
+	 * @version 113.2.0
 	 */
 
 	/**
@@ -18727,7 +20756,7 @@ class DataExtensionsApi {
 	/**
 	 * DataExtensions service.
 	 * @module purecloud-platform-client-v2/api/DataExtensionsApi
-	 * @version 113.1.0
+	 * @version 113.2.0
 	 */
 
 	/**
@@ -18813,7 +20842,7 @@ class ExternalContactsApi {
 	/**
 	 * ExternalContacts service.
 	 * @module purecloud-platform-client-v2/api/ExternalContactsApi
-	 * @version 113.1.0
+	 * @version 113.2.0
 	 */
 
 	/**
@@ -20356,7 +22385,7 @@ class FaxApi {
 	/**
 	 * Fax service.
 	 * @module purecloud-platform-client-v2/api/FaxApi
-	 * @version 113.1.0
+	 * @version 113.2.0
 	 */
 
 	/**
@@ -20527,7 +22556,7 @@ class FlowsApi {
 	/**
 	 * Flows service.
 	 * @module purecloud-platform-client-v2/api/FlowsApi
-	 * @version 113.1.0
+	 * @version 113.2.0
 	 */
 
 	/**
@@ -20598,7 +22627,7 @@ class GamificationApi {
 	/**
 	 * Gamification service.
 	 * @module purecloud-platform-client-v2/api/GamificationApi
-	 * @version 113.1.0
+	 * @version 113.2.0
 	 */
 
 	/**
@@ -21607,7 +23636,7 @@ class GeneralDataProtectionRegulationApi {
 	/**
 	 * GeneralDataProtectionRegulation service.
 	 * @module purecloud-platform-client-v2/api/GeneralDataProtectionRegulationApi
-	 * @version 113.1.0
+	 * @version 113.2.0
 	 */
 
 	/**
@@ -21737,7 +23766,7 @@ class GeolocationApi {
 	/**
 	 * Geolocation service.
 	 * @module purecloud-platform-client-v2/api/GeolocationApi
-	 * @version 113.1.0
+	 * @version 113.2.0
 	 */
 
 	/**
@@ -21868,7 +23897,7 @@ class GreetingsApi {
 	/**
 	 * Greetings service.
 	 * @module purecloud-platform-client-v2/api/GreetingsApi
-	 * @version 113.1.0
+	 * @version 113.2.0
 	 */
 
 	/**
@@ -22323,7 +24352,7 @@ class GroupsApi {
 	/**
 	 * Groups service.
 	 * @module purecloud-platform-client-v2/api/GroupsApi
-	 * @version 113.1.0
+	 * @version 113.2.0
 	 */
 
 	/**
@@ -22728,7 +24757,7 @@ class IdentityProviderApi {
 	/**
 	 * IdentityProvider service.
 	 * @module purecloud-platform-client-v2/api/IdentityProviderApi
-	 * @version 113.1.0
+	 * @version 113.2.0
 	 */
 
 	/**
@@ -23484,7 +25513,7 @@ class IntegrationsApi {
 	/**
 	 * Integrations service.
 	 * @module purecloud-platform-client-v2/api/IntegrationsApi
-	 * @version 113.1.0
+	 * @version 113.2.0
 	 */
 
 	/**
@@ -24976,7 +27005,7 @@ class JourneyApi {
 	/**
 	 * Journey service.
 	 * @module purecloud-platform-client-v2/api/JourneyApi
-	 * @version 113.1.0
+	 * @version 113.2.0
 	 */
 
 	/**
@@ -25629,7 +27658,7 @@ class KnowledgeApi {
 	/**
 	 * Knowledge service.
 	 * @module purecloud-platform-client-v2/api/KnowledgeApi
-	 * @version 113.1.0
+	 * @version 113.2.0
 	 */
 
 	/**
@@ -26353,7 +28382,7 @@ class LanguageUnderstandingApi {
 	/**
 	 * LanguageUnderstanding service.
 	 * @module purecloud-platform-client-v2/api/LanguageUnderstandingApi
-	 * @version 113.1.0
+	 * @version 113.2.0
 	 */
 
 	/**
@@ -26921,7 +28950,7 @@ class LanguagesApi {
 	/**
 	 * Languages service.
 	 * @module purecloud-platform-client-v2/api/LanguagesApi
-	 * @version 113.1.0
+	 * @version 113.2.0
 	 */
 
 	/**
@@ -27189,7 +29218,7 @@ class LearningApi {
 	/**
 	 * Learning service.
 	 * @module purecloud-platform-client-v2/api/LearningApi
-	 * @version 113.1.0
+	 * @version 113.2.0
 	 */
 
 	/**
@@ -27723,7 +29752,7 @@ class LicenseApi {
 	/**
 	 * License service.
 	 * @module purecloud-platform-client-v2/api/LicenseApi
-	 * @version 113.1.0
+	 * @version 113.2.0
 	 */
 
 	/**
@@ -27961,7 +29990,7 @@ class LocationsApi {
 	/**
 	 * Locations service.
 	 * @module purecloud-platform-client-v2/api/LocationsApi
-	 * @version 113.1.0
+	 * @version 113.2.0
 	 */
 
 	/**
@@ -28197,7 +30226,7 @@ class MobileDevicesApi {
 	/**
 	 * MobileDevices service.
 	 * @module purecloud-platform-client-v2/api/MobileDevicesApi
-	 * @version 113.1.0
+	 * @version 113.2.0
 	 */
 
 	/**
@@ -28348,7 +30377,7 @@ class NotificationsApi {
 	/**
 	 * Notifications service.
 	 * @module purecloud-platform-client-v2/api/NotificationsApi
-	 * @version 113.1.0
+	 * @version 113.2.0
 	 */
 
 	/**
@@ -28548,7 +30577,7 @@ class OAuthApi {
 	/**
 	 * OAuth service.
 	 * @module purecloud-platform-client-v2/api/OAuthApi
-	 * @version 113.1.0
+	 * @version 113.2.0
 	 */
 
 	/**
@@ -28906,7 +30935,7 @@ class ObjectsApi {
 	/**
 	 * Objects service.
 	 * @module purecloud-platform-client-v2/api/ObjectsApi
-	 * @version 113.1.0
+	 * @version 113.2.0
 	 */
 
 	/**
@@ -29147,7 +31176,7 @@ class OrganizationApi {
 	/**
 	 * Organization service.
 	 * @module purecloud-platform-client-v2/api/OrganizationApi
-	 * @version 113.1.0
+	 * @version 113.2.0
 	 */
 
 	/**
@@ -29525,7 +31554,7 @@ class OrganizationAuthorizationApi {
 	/**
 	 * OrganizationAuthorization service.
 	 * @module purecloud-platform-client-v2/api/OrganizationAuthorizationApi
-	 * @version 113.1.0
+	 * @version 113.2.0
 	 */
 
 	/**
@@ -30235,7 +32264,7 @@ class OutboundApi {
 	/**
 	 * Outbound service.
 	 * @module purecloud-platform-client-v2/api/OutboundApi
-	 * @version 113.1.0
+	 * @version 113.2.0
 	 */
 
 	/**
@@ -33259,7 +35288,7 @@ class PresenceApi {
 	/**
 	 * Presence service.
 	 * @module purecloud-platform-client-v2/api/PresenceApi
-	 * @version 113.1.0
+	 * @version 113.2.0
 	 */
 
 	/**
@@ -33631,7 +35660,7 @@ class QualityApi {
 	/**
 	 * Quality service.
 	 * @module purecloud-platform-client-v2/api/QualityApi
-	 * @version 113.1.0
+	 * @version 113.2.0
 	 */
 
 	/**
@@ -35113,7 +37142,7 @@ class RecordingApi {
 	/**
 	 * Recording service.
 	 * @module purecloud-platform-client-v2/api/RecordingApi
-	 * @version 113.1.0
+	 * @version 113.2.0
 	 */
 
 	/**
@@ -36552,7 +38581,7 @@ class ResponseManagementApi {
 	/**
 	 * ResponseManagement service.
 	 * @module purecloud-platform-client-v2/api/ResponseManagementApi
-	 * @version 113.1.0
+	 * @version 113.2.0
 	 */
 
 	/**
@@ -36877,7 +38906,7 @@ class RoutingApi {
 	/**
 	 * Routing service.
 	 * @module purecloud-platform-client-v2/api/RoutingApi
-	 * @version 113.1.0
+	 * @version 113.2.0
 	 */
 
 	/**
@@ -39404,7 +41433,7 @@ class SCIMApi {
 	/**
 	 * SCIM service.
 	 * @module purecloud-platform-client-v2/api/SCIMApi
-	 * @version 113.1.0
+	 * @version 113.2.0
 	 */
 
 	/**
@@ -40281,7 +42310,7 @@ class ScriptsApi {
 	/**
 	 * Scripts service.
 	 * @module purecloud-platform-client-v2/api/ScriptsApi
-	 * @version 113.1.0
+	 * @version 113.2.0
 	 */
 
 	/**
@@ -40634,7 +42663,7 @@ class SearchApi {
 	/**
 	 * Search service.
 	 * @module purecloud-platform-client-v2/api/SearchApi
-	 * @version 113.1.0
+	 * @version 113.2.0
 	 */
 
 	/**
@@ -41169,7 +43198,7 @@ class SpeechTextAnalyticsApi {
 	/**
 	 * SpeechTextAnalytics service.
 	 * @module purecloud-platform-client-v2/api/SpeechTextAnalyticsApi
-	 * @version 113.1.0
+	 * @version 113.2.0
 	 */
 
 	/**
@@ -41798,7 +43827,7 @@ class StationsApi {
 	/**
 	 * Stations service.
 	 * @module purecloud-platform-client-v2/api/StationsApi
-	 * @version 113.1.0
+	 * @version 113.2.0
 	 */
 
 	/**
@@ -41945,7 +43974,7 @@ class SuggestApi {
 	/**
 	 * Suggest service.
 	 * @module purecloud-platform-client-v2/api/SuggestApi
-	 * @version 113.1.0
+	 * @version 113.2.0
 	 */
 
 	/**
@@ -42084,7 +44113,7 @@ class TelephonyApi {
 	/**
 	 * Telephony service.
 	 * @module purecloud-platform-client-v2/api/TelephonyApi
-	 * @version 113.1.0
+	 * @version 113.2.0
 	 */
 
 	/**
@@ -42192,7 +44221,7 @@ class TelephonyProvidersEdgeApi {
 	/**
 	 * TelephonyProvidersEdge service.
 	 * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-	 * @version 113.1.0
+	 * @version 113.2.0
 	 */
 
 	/**
@@ -45804,7 +47833,7 @@ class TextbotsApi {
 	/**
 	 * Textbots service.
 	 * @module purecloud-platform-client-v2/api/TextbotsApi
-	 * @version 113.1.0
+	 * @version 113.2.0
 	 */
 
 	/**
@@ -45850,7 +47879,7 @@ class TokensApi {
 	/**
 	 * Tokens service.
 	 * @module purecloud-platform-client-v2/api/TokensApi
-	 * @version 113.1.0
+	 * @version 113.2.0
 	 */
 
 	/**
@@ -45936,7 +47965,7 @@ class UploadsApi {
 	/**
 	 * Uploads service.
 	 * @module purecloud-platform-client-v2/api/UploadsApi
-	 * @version 113.1.0
+	 * @version 113.2.0
 	 */
 
 	/**
@@ -46057,7 +48086,7 @@ class UsageApi {
 	/**
 	 * Usage service.
 	 * @module purecloud-platform-client-v2/api/UsageApi
-	 * @version 113.1.0
+	 * @version 113.2.0
 	 */
 
 	/**
@@ -46128,7 +48157,7 @@ class UserRecordingsApi {
 	/**
 	 * UserRecordings service.
 	 * @module purecloud-platform-client-v2/api/UserRecordingsApi
-	 * @version 113.1.0
+	 * @version 113.2.0
 	 */
 
 	/**
@@ -46312,7 +48341,7 @@ class UsersApi {
 	/**
 	 * Users service.
 	 * @module purecloud-platform-client-v2/api/UsersApi
-	 * @version 113.1.0
+	 * @version 113.2.0
 	 */
 
 	/**
@@ -48559,7 +50588,7 @@ class UtilitiesApi {
 	/**
 	 * Utilities service.
 	 * @module purecloud-platform-client-v2/api/UtilitiesApi
-	 * @version 113.1.0
+	 * @version 113.2.0
 	 */
 
 	/**
@@ -48670,7 +50699,7 @@ class VoicemailApi {
 	/**
 	 * Voicemail service.
 	 * @module purecloud-platform-client-v2/api/VoicemailApi
-	 * @version 113.1.0
+	 * @version 113.2.0
 	 */
 
 	/**
@@ -49307,7 +51336,7 @@ class WebChatApi {
 	/**
 	 * WebChat service.
 	 * @module purecloud-platform-client-v2/api/WebChatApi
-	 * @version 113.1.0
+	 * @version 113.2.0
 	 */
 
 	/**
@@ -49851,7 +51880,7 @@ class WidgetsApi {
 	/**
 	 * Widgets service.
 	 * @module purecloud-platform-client-v2/api/WidgetsApi
-	 * @version 113.1.0
+	 * @version 113.2.0
 	 */
 
 	/**
@@ -49997,7 +52026,7 @@ class WorkforceManagementApi {
 	/**
 	 * WorkforceManagement service.
 	 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-	 * @version 113.1.0
+	 * @version 113.2.0
 	 */
 
 	/**
@@ -53296,7 +55325,7 @@ class WorkforceManagementApi {
  * </pre>
  * </p>
  * @module purecloud-platform-client-v2/index
- * @version 113.1.0
+ * @version 113.2.0
  */
 class platformClient {
 	constructor() {
@@ -53621,4 +55650,4 @@ var index = new platformClient();
 module.exports = index;
 
 }).call(this)}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {},require("buffer").Buffer)
-},{"buffer":2,"superagent":6}]},{},[]);
+},{"buffer":3,"configparser":12,"fs":1,"os":5,"path":6,"superagent":17}]},{},[]);
