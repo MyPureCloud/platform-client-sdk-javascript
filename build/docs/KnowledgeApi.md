@@ -682,7 +682,8 @@ let opts = {
   'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
   'limit': "limit_example", // String | Number of entities to return. Maximum of 200. Deprecated in favour of pageSize.
   'pageSize': "pageSize_example", // String | Number of entities to return. Maximum of 200.
-  'name': "name_example" // String | Name of the KnowledgeBase to filter.
+  'name': "name_example", // String | Name of the KnowledgeBase to filter.
+  'coreLanguage': "coreLanguage_example" // String | To filter knowledgebases by corelanguage.
 };
 
 apiInstance.getKnowledgeKnowledgebases(opts)
@@ -705,6 +706,7 @@ apiInstance.getKnowledgeKnowledgebases(opts)
  **limit** | **String** | Number of entities to return. Maximum of 200. Deprecated in favour of pageSize. | [optional]  |
  **pageSize** | **String** | Number of entities to return. Maximum of 200. | [optional]  |
  **name** | **String** | Name of the KnowledgeBase to filter. | [optional]  |
+ **coreLanguage** | **String** | To filter knowledgebases by corelanguage. | [optional] <br />**Values**: en-US, de-DE |
 {: class="table table-striped"}
 
 ### Return type
@@ -755,6 +757,7 @@ KnowledgeBase <a href="#" onclick="return copyKnowledgeBaseExample()">Copy</a>
   "dateModified": Date, 
   "faqCount": Number, 
   "dateDocumentLastModified": Date, 
+  "articleCount": Number, 
   "selfUri": String, 
 }
 ```
@@ -939,6 +942,15 @@ KnowledgeDocumentRequest <a href="#" onclick="return copyKnowledgeDocumentReques
   "categories": { 
     "id": String, 
   },  
+  "article": { 
+    "title": String, 
+    "content": { 
+      "body": { 
+        "locationUrl": String, 
+      },  
+    },  
+    "alternatives": [String], 
+  },  
 }
 ```
 
@@ -1033,6 +1045,15 @@ KnowledgeDocumentBulkRequest <a href="#" onclick="return copyKnowledgeDocumentBu
   },  
   "categories": { 
     "id": String, 
+  },  
+  "article": { 
+    "title": String, 
+    "content": { 
+      "body": { 
+        "locationUrl": String, 
+      },  
+    },  
+    "alternatives": [String], 
   },  
   "id": String, 
 }
@@ -1217,6 +1238,15 @@ KnowledgeDocumentRequest <a href="#" onclick="return copyKnowledgeDocumentReques
   },  
   "categories": { 
     "id": String, 
+  },  
+  "article": { 
+    "title": String, 
+    "content": { 
+      "body": { 
+        "locationUrl": String, 
+      },  
+    },  
+    "alternatives": [String], 
   },  
 }
 ```
@@ -1514,6 +1544,7 @@ KnowledgeBase <a href="#" onclick="return copyKnowledgeBaseExample()">Copy</a>
   "dateModified": Date, 
   "faqCount": Number, 
   "dateDocumentLastModified": Date, 
+  "articleCount": Number, 
   "selfUri": String, 
 }
 ```

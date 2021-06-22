@@ -5,7 +5,7 @@ class RecordingApi {
 	/**
 	 * Recording service.
 	 * @module purecloud-platform-client-v2/api/RecordingApi
-	 * @version 113.2.0
+	 * @version 114.0.0
 	 */
 
 	/**
@@ -1127,6 +1127,56 @@ class RecordingApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/recordings/deletionprotection', 
+			'POST', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Acknowledge a screen recording.
+	 * 
+	 * @param {Object} body AcknowledgeScreenRecordingRequest
+	 */
+	postRecordingsScreensessionsAcknowledge(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postRecordingsScreensessionsAcknowledge';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/recordings/screensessions/acknowledge', 
+			'POST', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Provide meta-data a screen recording.
+	 * 
+	 * @param {Object} body ScreenRecordingMetaDataRequest
+	 */
+	postRecordingsScreensessionsMetadata(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postRecordingsScreensessionsMetadata';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/recordings/screensessions/metadata', 
 			'POST', 
 			{  }, 
 			{  }, 

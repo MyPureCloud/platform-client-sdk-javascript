@@ -14,6 +14,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**deleteConversationsEmailMessagesDraftAttachment**](ConversationsApi.html#deleteConversationsEmailMessagesDraftAttachment) | **DELETE** /api/v2/conversations/emails/{conversationId}/messages/draft/attachments/{attachmentId} | Delete attachment from draft
 [**deleteConversationsMessagingIntegrationsFacebookIntegrationId**](ConversationsApi.html#deleteConversationsMessagingIntegrationsFacebookIntegrationId) | **DELETE** /api/v2/conversations/messaging/integrations/facebook/{integrationId} | Delete a Facebook messaging integration
 [**deleteConversationsMessagingIntegrationsLineIntegrationId**](ConversationsApi.html#deleteConversationsMessagingIntegrationsLineIntegrationId) | **DELETE** /api/v2/conversations/messaging/integrations/line/{integrationId} | Delete a LINE messenger integration
+[**deleteConversationsMessagingIntegrationsOpenIntegrationId**](ConversationsApi.html#deleteConversationsMessagingIntegrationsOpenIntegrationId) | **DELETE** /api/v2/conversations/messaging/integrations/open/{integrationId} | Delete an Open messaging integration
 [**deleteConversationsMessagingIntegrationsTwitterIntegrationId**](ConversationsApi.html#deleteConversationsMessagingIntegrationsTwitterIntegrationId) | **DELETE** /api/v2/conversations/messaging/integrations/twitter/{integrationId} | Delete a Twitter messaging integration
 [**deleteConversationsMessagingIntegrationsWhatsappIntegrationId**](ConversationsApi.html#deleteConversationsMessagingIntegrationsWhatsappIntegrationId) | **DELETE** /api/v2/conversations/messaging/integrations/whatsapp/{integrationId} | Delete a WhatsApp messaging integration
 [**getAnalyticsConversationDetails**](ConversationsApi.html#getAnalyticsConversationDetails) | **GET** /api/v2/analytics/conversations/{conversationId}/details | Get a conversation by id
@@ -66,11 +67,14 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getConversationsMessagingIntegrationsFacebookIntegrationId**](ConversationsApi.html#getConversationsMessagingIntegrationsFacebookIntegrationId) | **GET** /api/v2/conversations/messaging/integrations/facebook/{integrationId} | Get a Facebook messaging integration
 [**getConversationsMessagingIntegrationsLine**](ConversationsApi.html#getConversationsMessagingIntegrationsLine) | **GET** /api/v2/conversations/messaging/integrations/line | Get a list of LINE messenger Integrations
 [**getConversationsMessagingIntegrationsLineIntegrationId**](ConversationsApi.html#getConversationsMessagingIntegrationsLineIntegrationId) | **GET** /api/v2/conversations/messaging/integrations/line/{integrationId} | Get a LINE messenger integration
+[**getConversationsMessagingIntegrationsOpen**](ConversationsApi.html#getConversationsMessagingIntegrationsOpen) | **GET** /api/v2/conversations/messaging/integrations/open | Get a list of Open messaging integrations
+[**getConversationsMessagingIntegrationsOpenIntegrationId**](ConversationsApi.html#getConversationsMessagingIntegrationsOpenIntegrationId) | **GET** /api/v2/conversations/messaging/integrations/open/{integrationId} | Get an Open messaging integration
 [**getConversationsMessagingIntegrationsTwitter**](ConversationsApi.html#getConversationsMessagingIntegrationsTwitter) | **GET** /api/v2/conversations/messaging/integrations/twitter | Get a list of Twitter Integrations
 [**getConversationsMessagingIntegrationsTwitterIntegrationId**](ConversationsApi.html#getConversationsMessagingIntegrationsTwitterIntegrationId) | **GET** /api/v2/conversations/messaging/integrations/twitter/{integrationId} | Get a Twitter messaging integration
 [**getConversationsMessagingIntegrationsWhatsapp**](ConversationsApi.html#getConversationsMessagingIntegrationsWhatsapp) | **GET** /api/v2/conversations/messaging/integrations/whatsapp | Get a list of WhatsApp Integrations
 [**getConversationsMessagingIntegrationsWhatsappIntegrationId**](ConversationsApi.html#getConversationsMessagingIntegrationsWhatsappIntegrationId) | **GET** /api/v2/conversations/messaging/integrations/whatsapp/{integrationId} | Get a WhatsApp messaging integration
 [**getConversationsMessagingSticker**](ConversationsApi.html#getConversationsMessagingSticker) | **GET** /api/v2/conversations/messaging/stickers/{messengerType} | Get a list of Messaging Stickers
+[**getConversationsMessagingThreadingtimeline**](ConversationsApi.html#getConversationsMessagingThreadingtimeline) | **GET** /api/v2/conversations/messaging/threadingtimeline | Get conversation threading window timeline for each messaging type
 [**patchConversationParticipant**](ConversationsApi.html#patchConversationParticipant) | **PATCH** /api/v2/conversations/{conversationId}/participants/{participantId} | Update a participant.
 [**patchConversationParticipantAttributes**](ConversationsApi.html#patchConversationParticipantAttributes) | **PATCH** /api/v2/conversations/{conversationId}/participants/{participantId}/attributes | Update the attributes on a conversation participant.
 [**patchConversationsCall**](ConversationsApi.html#patchConversationsCall) | **PATCH** /api/v2/conversations/calls/{conversationId} | Update a conversation by setting it&#39;s recording state, merging in other conversations to create a conference, or disconnecting all of the participants
@@ -99,6 +103,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**patchConversationsMessageParticipantAttributes**](ConversationsApi.html#patchConversationsMessageParticipantAttributes) | **PATCH** /api/v2/conversations/messages/{conversationId}/participants/{participantId}/attributes | Update the attributes on a conversation participant.
 [**patchConversationsMessageParticipantCommunication**](ConversationsApi.html#patchConversationsMessageParticipantCommunication) | **PATCH** /api/v2/conversations/messages/{conversationId}/participants/{participantId}/communications/{communicationId} | Update conversation participant&#39;s communication by disconnecting it.
 [**patchConversationsMessagingIntegrationsFacebookIntegrationId**](ConversationsApi.html#patchConversationsMessagingIntegrationsFacebookIntegrationId) | **PATCH** /api/v2/conversations/messaging/integrations/facebook/{integrationId} | Update Facebook messaging integration
+[**patchConversationsMessagingIntegrationsOpenIntegrationId**](ConversationsApi.html#patchConversationsMessagingIntegrationsOpenIntegrationId) | **PATCH** /api/v2/conversations/messaging/integrations/open/{integrationId} | Update an Open messaging integration
 [**patchConversationsMessagingIntegrationsTwitterIntegrationId**](ConversationsApi.html#patchConversationsMessagingIntegrationsTwitterIntegrationId) | **PATCH** /api/v2/conversations/messaging/integrations/twitter/{integrationId} | Update Twitter messaging integration
 [**patchConversationsMessagingIntegrationsWhatsappIntegrationId**](ConversationsApi.html#patchConversationsMessagingIntegrationsWhatsappIntegrationId) | **PATCH** /api/v2/conversations/messaging/integrations/whatsapp/{integrationId} | Update or activate a WhatsApp messaging integration.
 [**postAnalyticsConversationDetailsProperties**](ConversationsApi.html#postAnalyticsConversationDetailsProperties) | **POST** /api/v2/analytics/conversations/{conversationId}/details/properties | Index conversation properties
@@ -137,14 +142,17 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postConversationsMessageParticipantReplace**](ConversationsApi.html#postConversationsMessageParticipantReplace) | **POST** /api/v2/conversations/messages/{conversationId}/participants/{participantId}/replace | Replace this participant with the specified user and/or address
 [**postConversationsMessages**](ConversationsApi.html#postConversationsMessages) | **POST** /api/v2/conversations/messages | Create an outbound messaging conversation.
 [**postConversationsMessagesAgentless**](ConversationsApi.html#postConversationsMessagesAgentless) | **POST** /api/v2/conversations/messages/agentless | Send an agentless outbound message
+[**postConversationsMessagesInboundOpen**](ConversationsApi.html#postConversationsMessagesInboundOpen) | **POST** /api/v2/conversations/messages/inbound/open | Send an inbound Open Message
 [**postConversationsMessagingIntegrationsFacebook**](ConversationsApi.html#postConversationsMessagingIntegrationsFacebook) | **POST** /api/v2/conversations/messaging/integrations/facebook | Create a Facebook Integration
 [**postConversationsMessagingIntegrationsLine**](ConversationsApi.html#postConversationsMessagingIntegrationsLine) | **POST** /api/v2/conversations/messaging/integrations/line | Create a LINE messenger Integration
+[**postConversationsMessagingIntegrationsOpen**](ConversationsApi.html#postConversationsMessagingIntegrationsOpen) | **POST** /api/v2/conversations/messaging/integrations/open | Create an Open messaging integration
 [**postConversationsMessagingIntegrationsTwitter**](ConversationsApi.html#postConversationsMessagingIntegrationsTwitter) | **POST** /api/v2/conversations/messaging/integrations/twitter | Create a Twitter Integration
 [**postConversationsMessagingIntegrationsWhatsapp**](ConversationsApi.html#postConversationsMessagingIntegrationsWhatsapp) | **POST** /api/v2/conversations/messaging/integrations/whatsapp | Create a WhatsApp Integration
 [**putConversationParticipantFlaggedreason**](ConversationsApi.html#putConversationParticipantFlaggedreason) | **PUT** /api/v2/conversations/{conversationId}/participants/{participantId}/flaggedreason | Set flagged reason on conversation participant to indicate bad conversation quality.
 [**putConversationsCallParticipantCommunicationUuidata**](ConversationsApi.html#putConversationsCallParticipantCommunicationUuidata) | **PUT** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/communications/{communicationId}/uuidata | Set uuiData to be sent on future commands.
 [**putConversationsEmailMessagesDraft**](ConversationsApi.html#putConversationsEmailMessagesDraft) | **PUT** /api/v2/conversations/emails/{conversationId}/messages/draft | Update conversation draft reply
 [**putConversationsMessagingIntegrationsLineIntegrationId**](ConversationsApi.html#putConversationsMessagingIntegrationsLineIntegrationId) | **PUT** /api/v2/conversations/messaging/integrations/line/{integrationId} | Update a LINE messenger integration
+[**putConversationsMessagingThreadingtimeline**](ConversationsApi.html#putConversationsMessagingThreadingtimeline) | **PUT** /api/v2/conversations/messaging/threadingtimeline | Update conversation threading window timeline for each messaging type
 {: class="table table-striped"}
 
 <a name="deleteAnalyticsConversationsDetailsJob"></a>
@@ -522,6 +530,61 @@ apiInstance.deleteConversationsMessagingIntegrationsLineIntegrationId(integratio
   })
   .catch((err) => {
     console.log('There was a failure calling deleteConversationsMessagingIntegrationsLineIntegrationId');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **integrationId** | **String** | Integration ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
+
+<a name="deleteConversationsMessagingIntegrationsOpenIntegrationId"></a>
+
+# void deleteConversationsMessagingIntegrationsOpenIntegrationId(integrationId)
+
+
+
+DELETE /api/v2/conversations/messaging/integrations/open/{integrationId}
+
+Delete an Open messaging integration
+
+See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+
+Requires ALL permissions: 
+
+* messaging:integration:delete
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let integrationId = "integrationId_example"; // String | Integration ID
+
+apiInstance.deleteConversationsMessagingIntegrationsOpenIntegrationId(integrationId)
+  .then(() => {
+    console.log('deleteConversationsMessagingIntegrationsOpenIntegrationId returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteConversationsMessagingIntegrationsOpenIntegrationId');
     console.error(err);
   });
 ```
@@ -2826,6 +2889,7 @@ See https://developer.genesys.cloud/api/rest/v2/conversations/messaging-media-up
 Requires ANY permissions: 
 
 * conversation:message:view
+* conversation:webmessaging:view
 
 
 
@@ -2885,6 +2949,7 @@ Get message
 Requires ANY permissions: 
 
 * conversation:message:view
+* conversation:webmessaging:view
 
 
 
@@ -3449,6 +3514,128 @@ apiInstance.getConversationsMessagingIntegrationsLineIntegrationId(integrationId
 
 **LineIntegration**
 
+<a name="getConversationsMessagingIntegrationsOpen"></a>
+
+# OpenIntegrationEntityListing getConversationsMessagingIntegrationsOpen(opts)
+
+
+
+GET /api/v2/conversations/messaging/integrations/open
+
+Get a list of Open messaging integrations
+
+See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+
+Requires ALL permissions: 
+
+* messaging:integration:view
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let opts = { 
+  'pageSize': 25, // Number | Page size
+  'pageNumber': 1, // Number | Page number
+  'expand': "expand_example", // String | Expand instructions for the return value.
+  'supportedContentId': "supportedContentId_example" // String | Filter integrations returned based on the supported content ID
+};
+
+apiInstance.getConversationsMessagingIntegrationsOpen(opts)
+  .then((data) => {
+    console.log(`getConversationsMessagingIntegrationsOpen success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getConversationsMessagingIntegrationsOpen');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **expand** | **String** | Expand instructions for the return value. | [optional] <br />**Values**: supportedContent |
+ **supportedContentId** | **String** | Filter integrations returned based on the supported content ID | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**OpenIntegrationEntityListing**
+
+<a name="getConversationsMessagingIntegrationsOpenIntegrationId"></a>
+
+# OpenIntegration getConversationsMessagingIntegrationsOpenIntegrationId(integrationId, opts)
+
+
+
+GET /api/v2/conversations/messaging/integrations/open/{integrationId}
+
+Get an Open messaging integration
+
+See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+
+Requires ALL permissions: 
+
+* messaging:integration:view
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let integrationId = "integrationId_example"; // String | Integration ID
+let opts = { 
+  'expand': "expand_example" // String | Expand instructions for the return value.
+};
+
+apiInstance.getConversationsMessagingIntegrationsOpenIntegrationId(integrationId, opts)
+  .then((data) => {
+    console.log(`getConversationsMessagingIntegrationsOpenIntegrationId success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getConversationsMessagingIntegrationsOpenIntegrationId');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **integrationId** | **String** | Integration ID |  |
+ **expand** | **String** | Expand instructions for the return value. | [optional] <br />**Values**: supportedContent |
+{: class="table table-striped"}
+
+### Return type
+
+**OpenIntegration**
+
 <a name="getConversationsMessagingIntegrationsTwitter"></a>
 
 # TwitterIntegrationEntityListing getConversationsMessagingIntegrationsTwitter(opts)
@@ -3753,6 +3940,56 @@ apiInstance.getConversationsMessagingSticker(messengerType, opts)
 ### Return type
 
 **MessagingStickerEntityListing**
+
+<a name="getConversationsMessagingThreadingtimeline"></a>
+
+# ConversationThreadingWindow getConversationsMessagingThreadingtimeline()
+
+
+
+GET /api/v2/conversations/messaging/threadingtimeline
+
+Get conversation threading window timeline for each messaging type
+
+Conversation messaging threading timeline is a setting defined for each messenger type in your organization. This setting will dictate whether a new message is added to the most recent existing conversation, or creates a new Conversation. If the existing Conversation is still in a connected state the threading timeline setting will never play a role. After the conversation is disconnected, if an inbound message is received or an outbound message is sent after the setting for threading timeline expires, a new conversation is created.
+
+Requires ALL permissions: 
+
+* conversation:threadingTimeline:view
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+apiInstance.getConversationsMessagingThreadingtimeline()
+  .then((data) => {
+    console.log(`getConversationsMessagingThreadingtimeline success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getConversationsMessagingThreadingtimeline');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+{: class="table table-striped"}
+
+### Return type
+
+**ConversationThreadingWindow**
 
 <a name="patchConversationParticipant"></a>
 
@@ -4170,6 +4407,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
         "state": String, 
       },  
       "afterCallWorkRequired": Boolean, 
+      "callerId": String, 
+      "callerIdName": String, 
     },  
     "chats": { 
       "state": String, 
@@ -4879,6 +5118,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "state": String, 
             },  
             "afterCallWorkRequired": Boolean, 
+            "callerId": String, 
+            "callerIdName": String, 
           },  
           "chats": { 
             "state": String, 
@@ -5373,10 +5614,10 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "pageNumber": Number, 
                 "total": Number, 
                 "firstUri": String, 
-                "selfUri": String, 
-                "lastUri": String, 
-                "nextUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
+                "selfUri": String, 
+                "nextUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -5520,6 +5761,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "team": { 
                 "id": String, 
                 "name": String, 
+                "division": Division, 
                 "description": String, 
                 "dateModified": Date, 
                 "memberCount": Number, 
@@ -5807,8 +6049,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "text": String, 
               "value": Number, 
             },  
-            "isCritical": Boolean, 
             "isKill": Boolean, 
+            "isCritical": Boolean, 
           },  
           "visibilityCondition": { 
             "combiningOperation": String, 
@@ -5840,8 +6082,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "commentsRequired": Boolean, 
                 "visibilityCondition": VisibilityCondition, 
                 "answerOptions": [AnswerOption], 
-                "isCritical": Boolean, 
                 "isKill": Boolean, 
+                "isCritical": Boolean, 
               },  
               "visibilityCondition": { 
                 "combiningOperation": String, 
@@ -5863,10 +6105,10 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "pageNumber": Number, 
               "total": Number, 
               "firstUri": String, 
-              "selfUri": String, 
-              "lastUri": String, 
-              "nextUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
+              "selfUri": String, 
+              "nextUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -5875,10 +6117,10 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
           "pageNumber": Number, 
           "total": Number, 
           "firstUri": String, 
-          "selfUri": String, 
-          "lastUri": String, 
-          "nextUri": String, 
           "previousUri": String, 
+          "lastUri": String, 
+          "selfUri": String, 
+          "nextUri": String, 
           "pageCount": Number, 
         },  
         "selfUri": String, 
@@ -6255,6 +6497,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
         "team": { 
           "id": String, 
           "name": String, 
+          "division": { 
+            "id": String, 
+            "name": String, 
+            "selfUri": String, 
+          },  
           "description": String, 
           "dateModified": Date, 
           "memberCount": Number, 
@@ -6484,6 +6731,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "state": String, 
               },  
               "afterCallWorkRequired": Boolean, 
+              "callerId": String, 
+              "callerIdName": String, 
             },  
             "chats": { 
               "state": String, 
@@ -7018,8 +7267,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "text": String, 
                 "value": Number, 
               },  
-              "isCritical": Boolean, 
               "isKill": Boolean, 
+              "isCritical": Boolean, 
             },  
             "visibilityCondition": { 
               "combiningOperation": String, 
@@ -7051,10 +7300,10 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "pageNumber": Number, 
                 "total": Number, 
                 "firstUri": String, 
-                "selfUri": String, 
-                "lastUri": String, 
-                "nextUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
+                "selfUri": String, 
+                "nextUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -7063,10 +7312,10 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
             "pageNumber": Number, 
             "total": Number, 
             "firstUri": String, 
-            "selfUri": String, 
-            "lastUri": String, 
-            "nextUri": String, 
             "previousUri": String, 
+            "lastUri": String, 
+            "selfUri": String, 
+            "nextUri": String, 
             "pageCount": Number, 
           },  
           "selfUri": String, 
@@ -7189,6 +7438,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
                 "afterCallWorkRequired": Boolean, 
+                "callerId": String, 
+                "callerIdName": String, 
               },  
               "chats": { 
                 "state": String, 
@@ -7417,8 +7668,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "commentsRequired": Boolean, 
                 "visibilityCondition": VisibilityCondition, 
                 "answerOptions": [AnswerOption], 
-                "isCritical": Boolean, 
                 "isKill": Boolean, 
+                "isCritical": Boolean, 
               },  
               "visibilityCondition": { 
                 "combiningOperation": String, 
@@ -7440,10 +7691,10 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "pageNumber": Number, 
               "total": Number, 
               "firstUri": String, 
-              "selfUri": String, 
-              "lastUri": String, 
-              "nextUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
+              "selfUri": String, 
+              "nextUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -7711,6 +7962,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
             "team": { 
               "id": String, 
               "name": String, 
+              "division": { 
+                "id": String, 
+                "name": String, 
+                "selfUri": String, 
+              },  
               "description": String, 
               "dateModified": Date, 
               "memberCount": Number, 
@@ -7833,10 +8089,10 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "pageNumber": Number, 
                 "total": Number, 
                 "firstUri": String, 
-                "selfUri": String, 
-                "lastUri": String, 
-                "nextUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
+                "selfUri": String, 
+                "nextUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -8394,6 +8650,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
                 "afterCallWorkRequired": Boolean, 
+                "callerId": String, 
+                "callerIdName": String, 
               },  
               "chats": { 
                 "state": String, 
@@ -8622,8 +8880,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "commentsRequired": Boolean, 
                 "visibilityCondition": VisibilityCondition, 
                 "answerOptions": [AnswerOption], 
-                "isCritical": Boolean, 
                 "isKill": Boolean, 
+                "isCritical": Boolean, 
               },  
               "visibilityCondition": { 
                 "combiningOperation": String, 
@@ -8645,10 +8903,10 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "pageNumber": Number, 
               "total": Number, 
               "firstUri": String, 
-              "selfUri": String, 
-              "lastUri": String, 
-              "nextUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
+              "selfUri": String, 
+              "nextUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -8916,6 +9174,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
             "team": { 
               "id": String, 
               "name": String, 
+              "division": { 
+                "id": String, 
+                "name": String, 
+                "selfUri": String, 
+              },  
               "description": String, 
               "dateModified": Date, 
               "memberCount": Number, 
@@ -9038,10 +9301,10 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "pageNumber": Number, 
                 "total": Number, 
                 "firstUri": String, 
-                "selfUri": String, 
-                "lastUri": String, 
-                "nextUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
+                "selfUri": String, 
+                "nextUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -10365,6 +10628,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
         "state": String, 
       },  
       "afterCallWorkRequired": Boolean, 
+      "callerId": String, 
+      "callerIdName": String, 
     },  
     "chats": { 
       "state": String, 
@@ -11074,6 +11339,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "state": String, 
             },  
             "afterCallWorkRequired": Boolean, 
+            "callerId": String, 
+            "callerIdName": String, 
           },  
           "chats": { 
             "state": String, 
@@ -11568,10 +11835,10 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "pageNumber": Number, 
                 "total": Number, 
                 "firstUri": String, 
-                "selfUri": String, 
-                "lastUri": String, 
-                "nextUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
+                "selfUri": String, 
+                "nextUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -11715,6 +11982,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "team": { 
                 "id": String, 
                 "name": String, 
+                "division": Division, 
                 "description": String, 
                 "dateModified": Date, 
                 "memberCount": Number, 
@@ -12002,8 +12270,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "text": String, 
               "value": Number, 
             },  
-            "isCritical": Boolean, 
             "isKill": Boolean, 
+            "isCritical": Boolean, 
           },  
           "visibilityCondition": { 
             "combiningOperation": String, 
@@ -12035,8 +12303,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "commentsRequired": Boolean, 
                 "visibilityCondition": VisibilityCondition, 
                 "answerOptions": [AnswerOption], 
-                "isCritical": Boolean, 
                 "isKill": Boolean, 
+                "isCritical": Boolean, 
               },  
               "visibilityCondition": { 
                 "combiningOperation": String, 
@@ -12058,10 +12326,10 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "pageNumber": Number, 
               "total": Number, 
               "firstUri": String, 
-              "selfUri": String, 
-              "lastUri": String, 
-              "nextUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
+              "selfUri": String, 
+              "nextUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -12070,10 +12338,10 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
           "pageNumber": Number, 
           "total": Number, 
           "firstUri": String, 
-          "selfUri": String, 
-          "lastUri": String, 
-          "nextUri": String, 
           "previousUri": String, 
+          "lastUri": String, 
+          "selfUri": String, 
+          "nextUri": String, 
           "pageCount": Number, 
         },  
         "selfUri": String, 
@@ -12450,6 +12718,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
         "team": { 
           "id": String, 
           "name": String, 
+          "division": { 
+            "id": String, 
+            "name": String, 
+            "selfUri": String, 
+          },  
           "description": String, 
           "dateModified": Date, 
           "memberCount": Number, 
@@ -12679,6 +12952,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "state": String, 
               },  
               "afterCallWorkRequired": Boolean, 
+              "callerId": String, 
+              "callerIdName": String, 
             },  
             "chats": { 
               "state": String, 
@@ -13213,8 +13488,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "text": String, 
                 "value": Number, 
               },  
-              "isCritical": Boolean, 
               "isKill": Boolean, 
+              "isCritical": Boolean, 
             },  
             "visibilityCondition": { 
               "combiningOperation": String, 
@@ -13246,10 +13521,10 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "pageNumber": Number, 
                 "total": Number, 
                 "firstUri": String, 
-                "selfUri": String, 
-                "lastUri": String, 
-                "nextUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
+                "selfUri": String, 
+                "nextUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -13258,10 +13533,10 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
             "pageNumber": Number, 
             "total": Number, 
             "firstUri": String, 
-            "selfUri": String, 
-            "lastUri": String, 
-            "nextUri": String, 
             "previousUri": String, 
+            "lastUri": String, 
+            "selfUri": String, 
+            "nextUri": String, 
             "pageCount": Number, 
           },  
           "selfUri": String, 
@@ -13384,6 +13659,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
                 "afterCallWorkRequired": Boolean, 
+                "callerId": String, 
+                "callerIdName": String, 
               },  
               "chats": { 
                 "state": String, 
@@ -13612,8 +13889,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "commentsRequired": Boolean, 
                 "visibilityCondition": VisibilityCondition, 
                 "answerOptions": [AnswerOption], 
-                "isCritical": Boolean, 
                 "isKill": Boolean, 
+                "isCritical": Boolean, 
               },  
               "visibilityCondition": { 
                 "combiningOperation": String, 
@@ -13635,10 +13912,10 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "pageNumber": Number, 
               "total": Number, 
               "firstUri": String, 
-              "selfUri": String, 
-              "lastUri": String, 
-              "nextUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
+              "selfUri": String, 
+              "nextUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -13906,6 +14183,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
             "team": { 
               "id": String, 
               "name": String, 
+              "division": { 
+                "id": String, 
+                "name": String, 
+                "selfUri": String, 
+              },  
               "description": String, 
               "dateModified": Date, 
               "memberCount": Number, 
@@ -14028,10 +14310,10 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "pageNumber": Number, 
                 "total": Number, 
                 "firstUri": String, 
-                "selfUri": String, 
-                "lastUri": String, 
-                "nextUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
+                "selfUri": String, 
+                "nextUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -14589,6 +14871,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
                 "afterCallWorkRequired": Boolean, 
+                "callerId": String, 
+                "callerIdName": String, 
               },  
               "chats": { 
                 "state": String, 
@@ -14817,8 +15101,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "commentsRequired": Boolean, 
                 "visibilityCondition": VisibilityCondition, 
                 "answerOptions": [AnswerOption], 
-                "isCritical": Boolean, 
                 "isKill": Boolean, 
+                "isCritical": Boolean, 
               },  
               "visibilityCondition": { 
                 "combiningOperation": String, 
@@ -14840,10 +15124,10 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "pageNumber": Number, 
               "total": Number, 
               "firstUri": String, 
-              "selfUri": String, 
-              "lastUri": String, 
-              "nextUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
+              "selfUri": String, 
+              "nextUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -15111,6 +15395,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
             "team": { 
               "id": String, 
               "name": String, 
+              "division": { 
+                "id": String, 
+                "name": String, 
+                "selfUri": String, 
+              },  
               "description": String, 
               "dateModified": Date, 
               "memberCount": Number, 
@@ -15233,10 +15522,10 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "pageNumber": Number, 
                 "total": Number, 
                 "firstUri": String, 
-                "selfUri": String, 
-                "lastUri": String, 
-                "nextUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
+                "selfUri": String, 
+                "nextUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -16477,6 +16766,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
         "state": String, 
       },  
       "afterCallWorkRequired": Boolean, 
+      "callerId": String, 
+      "callerIdName": String, 
     },  
     "chats": { 
       "state": String, 
@@ -17186,6 +17477,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "state": String, 
             },  
             "afterCallWorkRequired": Boolean, 
+            "callerId": String, 
+            "callerIdName": String, 
           },  
           "chats": { 
             "state": String, 
@@ -17680,10 +17973,10 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "pageNumber": Number, 
                 "total": Number, 
                 "firstUri": String, 
-                "selfUri": String, 
-                "lastUri": String, 
-                "nextUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
+                "selfUri": String, 
+                "nextUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -17827,6 +18120,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "team": { 
                 "id": String, 
                 "name": String, 
+                "division": Division, 
                 "description": String, 
                 "dateModified": Date, 
                 "memberCount": Number, 
@@ -18114,8 +18408,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "text": String, 
               "value": Number, 
             },  
-            "isCritical": Boolean, 
             "isKill": Boolean, 
+            "isCritical": Boolean, 
           },  
           "visibilityCondition": { 
             "combiningOperation": String, 
@@ -18147,8 +18441,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "commentsRequired": Boolean, 
                 "visibilityCondition": VisibilityCondition, 
                 "answerOptions": [AnswerOption], 
-                "isCritical": Boolean, 
                 "isKill": Boolean, 
+                "isCritical": Boolean, 
               },  
               "visibilityCondition": { 
                 "combiningOperation": String, 
@@ -18170,10 +18464,10 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "pageNumber": Number, 
               "total": Number, 
               "firstUri": String, 
-              "selfUri": String, 
-              "lastUri": String, 
-              "nextUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
+              "selfUri": String, 
+              "nextUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -18182,10 +18476,10 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
           "pageNumber": Number, 
           "total": Number, 
           "firstUri": String, 
-          "selfUri": String, 
-          "lastUri": String, 
-          "nextUri": String, 
           "previousUri": String, 
+          "lastUri": String, 
+          "selfUri": String, 
+          "nextUri": String, 
           "pageCount": Number, 
         },  
         "selfUri": String, 
@@ -18562,6 +18856,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
         "team": { 
           "id": String, 
           "name": String, 
+          "division": { 
+            "id": String, 
+            "name": String, 
+            "selfUri": String, 
+          },  
           "description": String, 
           "dateModified": Date, 
           "memberCount": Number, 
@@ -18791,6 +19090,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "state": String, 
               },  
               "afterCallWorkRequired": Boolean, 
+              "callerId": String, 
+              "callerIdName": String, 
             },  
             "chats": { 
               "state": String, 
@@ -19325,8 +19626,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "text": String, 
                 "value": Number, 
               },  
-              "isCritical": Boolean, 
               "isKill": Boolean, 
+              "isCritical": Boolean, 
             },  
             "visibilityCondition": { 
               "combiningOperation": String, 
@@ -19358,10 +19659,10 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "pageNumber": Number, 
                 "total": Number, 
                 "firstUri": String, 
-                "selfUri": String, 
-                "lastUri": String, 
-                "nextUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
+                "selfUri": String, 
+                "nextUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -19370,10 +19671,10 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
             "pageNumber": Number, 
             "total": Number, 
             "firstUri": String, 
-            "selfUri": String, 
-            "lastUri": String, 
-            "nextUri": String, 
             "previousUri": String, 
+            "lastUri": String, 
+            "selfUri": String, 
+            "nextUri": String, 
             "pageCount": Number, 
           },  
           "selfUri": String, 
@@ -19496,6 +19797,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
                 "afterCallWorkRequired": Boolean, 
+                "callerId": String, 
+                "callerIdName": String, 
               },  
               "chats": { 
                 "state": String, 
@@ -19724,8 +20027,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "commentsRequired": Boolean, 
                 "visibilityCondition": VisibilityCondition, 
                 "answerOptions": [AnswerOption], 
-                "isCritical": Boolean, 
                 "isKill": Boolean, 
+                "isCritical": Boolean, 
               },  
               "visibilityCondition": { 
                 "combiningOperation": String, 
@@ -19747,10 +20050,10 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "pageNumber": Number, 
               "total": Number, 
               "firstUri": String, 
-              "selfUri": String, 
-              "lastUri": String, 
-              "nextUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
+              "selfUri": String, 
+              "nextUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -20018,6 +20321,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
             "team": { 
               "id": String, 
               "name": String, 
+              "division": { 
+                "id": String, 
+                "name": String, 
+                "selfUri": String, 
+              },  
               "description": String, 
               "dateModified": Date, 
               "memberCount": Number, 
@@ -20140,10 +20448,10 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "pageNumber": Number, 
                 "total": Number, 
                 "firstUri": String, 
-                "selfUri": String, 
-                "lastUri": String, 
-                "nextUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
+                "selfUri": String, 
+                "nextUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -20701,6 +21009,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
                 "afterCallWorkRequired": Boolean, 
+                "callerId": String, 
+                "callerIdName": String, 
               },  
               "chats": { 
                 "state": String, 
@@ -20929,8 +21239,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "commentsRequired": Boolean, 
                 "visibilityCondition": VisibilityCondition, 
                 "answerOptions": [AnswerOption], 
-                "isCritical": Boolean, 
                 "isKill": Boolean, 
+                "isCritical": Boolean, 
               },  
               "visibilityCondition": { 
                 "combiningOperation": String, 
@@ -20952,10 +21262,10 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "pageNumber": Number, 
               "total": Number, 
               "firstUri": String, 
-              "selfUri": String, 
-              "lastUri": String, 
-              "nextUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
+              "selfUri": String, 
+              "nextUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -21223,6 +21533,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
             "team": { 
               "id": String, 
               "name": String, 
+              "division": { 
+                "id": String, 
+                "name": String, 
+                "selfUri": String, 
+              },  
               "description": String, 
               "dateModified": Date, 
               "memberCount": Number, 
@@ -21345,10 +21660,10 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "pageNumber": Number, 
                 "total": Number, 
                 "firstUri": String, 
-                "selfUri": String, 
-                "lastUri": String, 
-                "nextUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
+                "selfUri": String, 
+                "nextUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -22589,6 +22904,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
         "state": String, 
       },  
       "afterCallWorkRequired": Boolean, 
+      "callerId": String, 
+      "callerIdName": String, 
     },  
     "chats": { 
       "state": String, 
@@ -23298,6 +23615,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "state": String, 
             },  
             "afterCallWorkRequired": Boolean, 
+            "callerId": String, 
+            "callerIdName": String, 
           },  
           "chats": { 
             "state": String, 
@@ -23792,10 +24111,10 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "pageNumber": Number, 
                 "total": Number, 
                 "firstUri": String, 
-                "selfUri": String, 
-                "lastUri": String, 
-                "nextUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
+                "selfUri": String, 
+                "nextUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -23939,6 +24258,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "team": { 
                 "id": String, 
                 "name": String, 
+                "division": Division, 
                 "description": String, 
                 "dateModified": Date, 
                 "memberCount": Number, 
@@ -24226,8 +24546,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "text": String, 
               "value": Number, 
             },  
-            "isCritical": Boolean, 
             "isKill": Boolean, 
+            "isCritical": Boolean, 
           },  
           "visibilityCondition": { 
             "combiningOperation": String, 
@@ -24259,8 +24579,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "commentsRequired": Boolean, 
                 "visibilityCondition": VisibilityCondition, 
                 "answerOptions": [AnswerOption], 
-                "isCritical": Boolean, 
                 "isKill": Boolean, 
+                "isCritical": Boolean, 
               },  
               "visibilityCondition": { 
                 "combiningOperation": String, 
@@ -24282,10 +24602,10 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "pageNumber": Number, 
               "total": Number, 
               "firstUri": String, 
-              "selfUri": String, 
-              "lastUri": String, 
-              "nextUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
+              "selfUri": String, 
+              "nextUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -24294,10 +24614,10 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
           "pageNumber": Number, 
           "total": Number, 
           "firstUri": String, 
-          "selfUri": String, 
-          "lastUri": String, 
-          "nextUri": String, 
           "previousUri": String, 
+          "lastUri": String, 
+          "selfUri": String, 
+          "nextUri": String, 
           "pageCount": Number, 
         },  
         "selfUri": String, 
@@ -24674,6 +24994,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
         "team": { 
           "id": String, 
           "name": String, 
+          "division": { 
+            "id": String, 
+            "name": String, 
+            "selfUri": String, 
+          },  
           "description": String, 
           "dateModified": Date, 
           "memberCount": Number, 
@@ -24903,6 +25228,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "state": String, 
               },  
               "afterCallWorkRequired": Boolean, 
+              "callerId": String, 
+              "callerIdName": String, 
             },  
             "chats": { 
               "state": String, 
@@ -25437,8 +25764,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "text": String, 
                 "value": Number, 
               },  
-              "isCritical": Boolean, 
               "isKill": Boolean, 
+              "isCritical": Boolean, 
             },  
             "visibilityCondition": { 
               "combiningOperation": String, 
@@ -25470,10 +25797,10 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "pageNumber": Number, 
                 "total": Number, 
                 "firstUri": String, 
-                "selfUri": String, 
-                "lastUri": String, 
-                "nextUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
+                "selfUri": String, 
+                "nextUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -25482,10 +25809,10 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
             "pageNumber": Number, 
             "total": Number, 
             "firstUri": String, 
-            "selfUri": String, 
-            "lastUri": String, 
-            "nextUri": String, 
             "previousUri": String, 
+            "lastUri": String, 
+            "selfUri": String, 
+            "nextUri": String, 
             "pageCount": Number, 
           },  
           "selfUri": String, 
@@ -25608,6 +25935,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
                 "afterCallWorkRequired": Boolean, 
+                "callerId": String, 
+                "callerIdName": String, 
               },  
               "chats": { 
                 "state": String, 
@@ -25836,8 +26165,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "commentsRequired": Boolean, 
                 "visibilityCondition": VisibilityCondition, 
                 "answerOptions": [AnswerOption], 
-                "isCritical": Boolean, 
                 "isKill": Boolean, 
+                "isCritical": Boolean, 
               },  
               "visibilityCondition": { 
                 "combiningOperation": String, 
@@ -25859,10 +26188,10 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "pageNumber": Number, 
               "total": Number, 
               "firstUri": String, 
-              "selfUri": String, 
-              "lastUri": String, 
-              "nextUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
+              "selfUri": String, 
+              "nextUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -26130,6 +26459,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
             "team": { 
               "id": String, 
               "name": String, 
+              "division": { 
+                "id": String, 
+                "name": String, 
+                "selfUri": String, 
+              },  
               "description": String, 
               "dateModified": Date, 
               "memberCount": Number, 
@@ -26252,10 +26586,10 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "pageNumber": Number, 
                 "total": Number, 
                 "firstUri": String, 
-                "selfUri": String, 
-                "lastUri": String, 
-                "nextUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
+                "selfUri": String, 
+                "nextUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -26813,6 +27147,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
                 "afterCallWorkRequired": Boolean, 
+                "callerId": String, 
+                "callerIdName": String, 
               },  
               "chats": { 
                 "state": String, 
@@ -27041,8 +27377,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "commentsRequired": Boolean, 
                 "visibilityCondition": VisibilityCondition, 
                 "answerOptions": [AnswerOption], 
-                "isCritical": Boolean, 
                 "isKill": Boolean, 
+                "isCritical": Boolean, 
               },  
               "visibilityCondition": { 
                 "combiningOperation": String, 
@@ -27064,10 +27400,10 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "pageNumber": Number, 
               "total": Number, 
               "firstUri": String, 
-              "selfUri": String, 
-              "lastUri": String, 
-              "nextUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
+              "selfUri": String, 
+              "nextUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -27335,6 +27671,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
             "team": { 
               "id": String, 
               "name": String, 
+              "division": { 
+                "id": String, 
+                "name": String, 
+                "selfUri": String, 
+              },  
               "description": String, 
               "dateModified": Date, 
               "memberCount": Number, 
@@ -27457,10 +27798,10 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "pageNumber": Number, 
                 "total": Number, 
                 "firstUri": String, 
-                "selfUri": String, 
-                "lastUri": String, 
-                "nextUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
+                "selfUri": String, 
+                "nextUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -28705,6 +29046,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
         "state": String, 
       },  
       "afterCallWorkRequired": Boolean, 
+      "callerId": String, 
+      "callerIdName": String, 
     },  
     "chats": { 
       "state": String, 
@@ -29414,6 +29757,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "state": String, 
             },  
             "afterCallWorkRequired": Boolean, 
+            "callerId": String, 
+            "callerIdName": String, 
           },  
           "chats": { 
             "state": String, 
@@ -29908,10 +30253,10 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "pageNumber": Number, 
                 "total": Number, 
                 "firstUri": String, 
-                "selfUri": String, 
-                "lastUri": String, 
-                "nextUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
+                "selfUri": String, 
+                "nextUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -30055,6 +30400,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "team": { 
                 "id": String, 
                 "name": String, 
+                "division": Division, 
                 "description": String, 
                 "dateModified": Date, 
                 "memberCount": Number, 
@@ -30342,8 +30688,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "text": String, 
               "value": Number, 
             },  
-            "isCritical": Boolean, 
             "isKill": Boolean, 
+            "isCritical": Boolean, 
           },  
           "visibilityCondition": { 
             "combiningOperation": String, 
@@ -30375,8 +30721,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "commentsRequired": Boolean, 
                 "visibilityCondition": VisibilityCondition, 
                 "answerOptions": [AnswerOption], 
-                "isCritical": Boolean, 
                 "isKill": Boolean, 
+                "isCritical": Boolean, 
               },  
               "visibilityCondition": { 
                 "combiningOperation": String, 
@@ -30398,10 +30744,10 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "pageNumber": Number, 
               "total": Number, 
               "firstUri": String, 
-              "selfUri": String, 
-              "lastUri": String, 
-              "nextUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
+              "selfUri": String, 
+              "nextUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -30410,10 +30756,10 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
           "pageNumber": Number, 
           "total": Number, 
           "firstUri": String, 
-          "selfUri": String, 
-          "lastUri": String, 
-          "nextUri": String, 
           "previousUri": String, 
+          "lastUri": String, 
+          "selfUri": String, 
+          "nextUri": String, 
           "pageCount": Number, 
         },  
         "selfUri": String, 
@@ -30790,6 +31136,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
         "team": { 
           "id": String, 
           "name": String, 
+          "division": { 
+            "id": String, 
+            "name": String, 
+            "selfUri": String, 
+          },  
           "description": String, 
           "dateModified": Date, 
           "memberCount": Number, 
@@ -31019,6 +31370,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "state": String, 
               },  
               "afterCallWorkRequired": Boolean, 
+              "callerId": String, 
+              "callerIdName": String, 
             },  
             "chats": { 
               "state": String, 
@@ -31553,8 +31906,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "text": String, 
                 "value": Number, 
               },  
-              "isCritical": Boolean, 
               "isKill": Boolean, 
+              "isCritical": Boolean, 
             },  
             "visibilityCondition": { 
               "combiningOperation": String, 
@@ -31586,10 +31939,10 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "pageNumber": Number, 
                 "total": Number, 
                 "firstUri": String, 
-                "selfUri": String, 
-                "lastUri": String, 
-                "nextUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
+                "selfUri": String, 
+                "nextUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -31598,10 +31951,10 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
             "pageNumber": Number, 
             "total": Number, 
             "firstUri": String, 
-            "selfUri": String, 
-            "lastUri": String, 
-            "nextUri": String, 
             "previousUri": String, 
+            "lastUri": String, 
+            "selfUri": String, 
+            "nextUri": String, 
             "pageCount": Number, 
           },  
           "selfUri": String, 
@@ -31724,6 +32077,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
                 "afterCallWorkRequired": Boolean, 
+                "callerId": String, 
+                "callerIdName": String, 
               },  
               "chats": { 
                 "state": String, 
@@ -31952,8 +32307,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "commentsRequired": Boolean, 
                 "visibilityCondition": VisibilityCondition, 
                 "answerOptions": [AnswerOption], 
-                "isCritical": Boolean, 
                 "isKill": Boolean, 
+                "isCritical": Boolean, 
               },  
               "visibilityCondition": { 
                 "combiningOperation": String, 
@@ -31975,10 +32330,10 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "pageNumber": Number, 
               "total": Number, 
               "firstUri": String, 
-              "selfUri": String, 
-              "lastUri": String, 
-              "nextUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
+              "selfUri": String, 
+              "nextUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -32246,6 +32601,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
             "team": { 
               "id": String, 
               "name": String, 
+              "division": { 
+                "id": String, 
+                "name": String, 
+                "selfUri": String, 
+              },  
               "description": String, 
               "dateModified": Date, 
               "memberCount": Number, 
@@ -32368,10 +32728,10 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "pageNumber": Number, 
                 "total": Number, 
                 "firstUri": String, 
-                "selfUri": String, 
-                "lastUri": String, 
-                "nextUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
+                "selfUri": String, 
+                "nextUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -32929,6 +33289,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
                 "afterCallWorkRequired": Boolean, 
+                "callerId": String, 
+                "callerIdName": String, 
               },  
               "chats": { 
                 "state": String, 
@@ -33157,8 +33519,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "commentsRequired": Boolean, 
                 "visibilityCondition": VisibilityCondition, 
                 "answerOptions": [AnswerOption], 
-                "isCritical": Boolean, 
                 "isKill": Boolean, 
+                "isCritical": Boolean, 
               },  
               "visibilityCondition": { 
                 "combiningOperation": String, 
@@ -33180,10 +33542,10 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "pageNumber": Number, 
               "total": Number, 
               "firstUri": String, 
-              "selfUri": String, 
-              "lastUri": String, 
-              "nextUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
+              "selfUri": String, 
+              "nextUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -33451,6 +33813,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
             "team": { 
               "id": String, 
               "name": String, 
+              "division": { 
+                "id": String, 
+                "name": String, 
+                "selfUri": String, 
+              },  
               "description": String, 
               "dateModified": Date, 
               "memberCount": Number, 
@@ -33573,10 +33940,10 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "pageNumber": Number, 
                 "total": Number, 
                 "firstUri": String, 
-                "selfUri": String, 
-                "lastUri": String, 
-                "nextUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
+                "selfUri": String, 
+                "nextUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -34817,6 +35184,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
         "state": String, 
       },  
       "afterCallWorkRequired": Boolean, 
+      "callerId": String, 
+      "callerIdName": String, 
     },  
     "chats": { 
       "state": String, 
@@ -35526,6 +35895,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "state": String, 
             },  
             "afterCallWorkRequired": Boolean, 
+            "callerId": String, 
+            "callerIdName": String, 
           },  
           "chats": { 
             "state": String, 
@@ -36020,10 +36391,10 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "pageNumber": Number, 
                 "total": Number, 
                 "firstUri": String, 
-                "selfUri": String, 
-                "lastUri": String, 
-                "nextUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
+                "selfUri": String, 
+                "nextUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -36167,6 +36538,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "team": { 
                 "id": String, 
                 "name": String, 
+                "division": Division, 
                 "description": String, 
                 "dateModified": Date, 
                 "memberCount": Number, 
@@ -36454,8 +36826,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "text": String, 
               "value": Number, 
             },  
-            "isCritical": Boolean, 
             "isKill": Boolean, 
+            "isCritical": Boolean, 
           },  
           "visibilityCondition": { 
             "combiningOperation": String, 
@@ -36487,8 +36859,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "commentsRequired": Boolean, 
                 "visibilityCondition": VisibilityCondition, 
                 "answerOptions": [AnswerOption], 
-                "isCritical": Boolean, 
                 "isKill": Boolean, 
+                "isCritical": Boolean, 
               },  
               "visibilityCondition": { 
                 "combiningOperation": String, 
@@ -36510,10 +36882,10 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "pageNumber": Number, 
               "total": Number, 
               "firstUri": String, 
-              "selfUri": String, 
-              "lastUri": String, 
-              "nextUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
+              "selfUri": String, 
+              "nextUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -36522,10 +36894,10 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
           "pageNumber": Number, 
           "total": Number, 
           "firstUri": String, 
-          "selfUri": String, 
-          "lastUri": String, 
-          "nextUri": String, 
           "previousUri": String, 
+          "lastUri": String, 
+          "selfUri": String, 
+          "nextUri": String, 
           "pageCount": Number, 
         },  
         "selfUri": String, 
@@ -36902,6 +37274,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
         "team": { 
           "id": String, 
           "name": String, 
+          "division": { 
+            "id": String, 
+            "name": String, 
+            "selfUri": String, 
+          },  
           "description": String, 
           "dateModified": Date, 
           "memberCount": Number, 
@@ -37131,6 +37508,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "state": String, 
               },  
               "afterCallWorkRequired": Boolean, 
+              "callerId": String, 
+              "callerIdName": String, 
             },  
             "chats": { 
               "state": String, 
@@ -37665,8 +38044,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "text": String, 
                 "value": Number, 
               },  
-              "isCritical": Boolean, 
               "isKill": Boolean, 
+              "isCritical": Boolean, 
             },  
             "visibilityCondition": { 
               "combiningOperation": String, 
@@ -37698,10 +38077,10 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "pageNumber": Number, 
                 "total": Number, 
                 "firstUri": String, 
-                "selfUri": String, 
-                "lastUri": String, 
-                "nextUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
+                "selfUri": String, 
+                "nextUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -37710,10 +38089,10 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
             "pageNumber": Number, 
             "total": Number, 
             "firstUri": String, 
-            "selfUri": String, 
-            "lastUri": String, 
-            "nextUri": String, 
             "previousUri": String, 
+            "lastUri": String, 
+            "selfUri": String, 
+            "nextUri": String, 
             "pageCount": Number, 
           },  
           "selfUri": String, 
@@ -37836,6 +38215,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
                 "afterCallWorkRequired": Boolean, 
+                "callerId": String, 
+                "callerIdName": String, 
               },  
               "chats": { 
                 "state": String, 
@@ -38064,8 +38445,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "commentsRequired": Boolean, 
                 "visibilityCondition": VisibilityCondition, 
                 "answerOptions": [AnswerOption], 
-                "isCritical": Boolean, 
                 "isKill": Boolean, 
+                "isCritical": Boolean, 
               },  
               "visibilityCondition": { 
                 "combiningOperation": String, 
@@ -38087,10 +38468,10 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "pageNumber": Number, 
               "total": Number, 
               "firstUri": String, 
-              "selfUri": String, 
-              "lastUri": String, 
-              "nextUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
+              "selfUri": String, 
+              "nextUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -38358,6 +38739,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
             "team": { 
               "id": String, 
               "name": String, 
+              "division": { 
+                "id": String, 
+                "name": String, 
+                "selfUri": String, 
+              },  
               "description": String, 
               "dateModified": Date, 
               "memberCount": Number, 
@@ -38480,10 +38866,10 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "pageNumber": Number, 
                 "total": Number, 
                 "firstUri": String, 
-                "selfUri": String, 
-                "lastUri": String, 
-                "nextUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
+                "selfUri": String, 
+                "nextUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -39041,6 +39427,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
                 "afterCallWorkRequired": Boolean, 
+                "callerId": String, 
+                "callerIdName": String, 
               },  
               "chats": { 
                 "state": String, 
@@ -39269,8 +39657,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "commentsRequired": Boolean, 
                 "visibilityCondition": VisibilityCondition, 
                 "answerOptions": [AnswerOption], 
-                "isCritical": Boolean, 
                 "isKill": Boolean, 
+                "isCritical": Boolean, 
               },  
               "visibilityCondition": { 
                 "combiningOperation": String, 
@@ -39292,10 +39680,10 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "pageNumber": Number, 
               "total": Number, 
               "firstUri": String, 
-              "selfUri": String, 
-              "lastUri": String, 
-              "nextUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
+              "selfUri": String, 
+              "nextUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -39563,6 +39951,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
             "team": { 
               "id": String, 
               "name": String, 
+              "division": { 
+                "id": String, 
+                "name": String, 
+                "selfUri": String, 
+              },  
               "description": String, 
               "dateModified": Date, 
               "memberCount": Number, 
@@ -39685,10 +40078,10 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "pageNumber": Number, 
                 "total": Number, 
                 "firstUri": String, 
-                "selfUri": String, 
-                "lastUri": String, 
-                "nextUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
+                "selfUri": String, 
+                "nextUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -40782,6 +41175,93 @@ apiInstance.patchConversationsMessagingIntegrationsFacebookIntegrationId(integra
 ### Return type
 
 **FacebookIntegration**
+
+<a name="patchConversationsMessagingIntegrationsOpenIntegrationId"></a>
+
+# OpenIntegration patchConversationsMessagingIntegrationsOpenIntegrationId(integrationId, body)
+
+
+
+PATCH /api/v2/conversations/messaging/integrations/open/{integrationId}
+
+Update an Open messaging integration
+
+See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+
+Requires ALL permissions: 
+
+* messaging:integration:edit
+
+
+### Request Body Schema
+
+<script type="text/javascript">
+	function copyOpenIntegrationUpdateRequestExample() {
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#OpenIntegrationUpdateRequestExample').text()).select();
+		document.execCommand("copy");
+		temp.remove();
+		return false;
+	}
+</script>
+
+OpenIntegrationUpdateRequest <a href="#" onclick="return copyOpenIntegrationUpdateRequestExample()">Copy</a>
+
+<div id="OpenIntegrationUpdateRequestExample">
+
+```{"language":"json", "maxHeight": "250px"}
+{ 
+  "id": String, 
+  "name": String, 
+  "outboundNotificationWebhookUrl": String, 
+  "outboundNotificationWebhookSignatureSecretToken": String, 
+  "webhookHeaders": {String: String}, 
+  "selfUri": String, 
+}
+```
+
+</div>
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let integrationId = "integrationId_example"; // String | Integration ID
+let body = {}; // Object | OpenIntegrationUpdateRequest
+
+apiInstance.patchConversationsMessagingIntegrationsOpenIntegrationId(integrationId, body)
+  .then((data) => {
+    console.log(`patchConversationsMessagingIntegrationsOpenIntegrationId success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchConversationsMessagingIntegrationsOpenIntegrationId');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **integrationId** | **String** | Integration ID |  |
+ **body** | **Object** | OpenIntegrationUpdateRequest |  |
+{: class="table table-striped"}
+
+### Return type
+
+**OpenIntegration**
 
 <a name="patchConversationsMessagingIntegrationsTwitterIntegrationId"></a>
 
@@ -41881,6 +42361,8 @@ CreateCallbackOnConversationCommand <a href="#" onclick="return copyCreateCallba
   "countryCode": String, 
   "validateCallbackNumbers": Boolean, 
   "data": {String: String}, 
+  "callerId": String, 
+  "callerIdName": String, 
 }
 ```
 
@@ -42797,6 +43279,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
         "state": String, 
       },  
       "afterCallWorkRequired": Boolean, 
+      "callerId": String, 
+      "callerIdName": String, 
     },  
     "chats": { 
       "state": String, 
@@ -43506,6 +43990,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "state": String, 
             },  
             "afterCallWorkRequired": Boolean, 
+            "callerId": String, 
+            "callerIdName": String, 
           },  
           "chats": { 
             "state": String, 
@@ -44000,10 +44486,10 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "pageNumber": Number, 
                 "total": Number, 
                 "firstUri": String, 
-                "selfUri": String, 
-                "lastUri": String, 
-                "nextUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
+                "selfUri": String, 
+                "nextUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -44147,6 +44633,7 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "team": { 
                 "id": String, 
                 "name": String, 
+                "division": Division, 
                 "description": String, 
                 "dateModified": Date, 
                 "memberCount": Number, 
@@ -44434,8 +44921,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "text": String, 
               "value": Number, 
             },  
-            "isCritical": Boolean, 
             "isKill": Boolean, 
+            "isCritical": Boolean, 
           },  
           "visibilityCondition": { 
             "combiningOperation": String, 
@@ -44467,8 +44954,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "commentsRequired": Boolean, 
                 "visibilityCondition": VisibilityCondition, 
                 "answerOptions": [AnswerOption], 
-                "isCritical": Boolean, 
                 "isKill": Boolean, 
+                "isCritical": Boolean, 
               },  
               "visibilityCondition": { 
                 "combiningOperation": String, 
@@ -44490,10 +44977,10 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "pageNumber": Number, 
               "total": Number, 
               "firstUri": String, 
-              "selfUri": String, 
-              "lastUri": String, 
-              "nextUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
+              "selfUri": String, 
+              "nextUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -44502,10 +44989,10 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
           "pageNumber": Number, 
           "total": Number, 
           "firstUri": String, 
-          "selfUri": String, 
-          "lastUri": String, 
-          "nextUri": String, 
           "previousUri": String, 
+          "lastUri": String, 
+          "selfUri": String, 
+          "nextUri": String, 
           "pageCount": Number, 
         },  
         "selfUri": String, 
@@ -44882,6 +45369,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
         "team": { 
           "id": String, 
           "name": String, 
+          "division": { 
+            "id": String, 
+            "name": String, 
+            "selfUri": String, 
+          },  
           "description": String, 
           "dateModified": Date, 
           "memberCount": Number, 
@@ -45111,6 +45603,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "state": String, 
               },  
               "afterCallWorkRequired": Boolean, 
+              "callerId": String, 
+              "callerIdName": String, 
             },  
             "chats": { 
               "state": String, 
@@ -45645,8 +46139,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "text": String, 
                 "value": Number, 
               },  
-              "isCritical": Boolean, 
               "isKill": Boolean, 
+              "isCritical": Boolean, 
             },  
             "visibilityCondition": { 
               "combiningOperation": String, 
@@ -45678,10 +46172,10 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "pageNumber": Number, 
                 "total": Number, 
                 "firstUri": String, 
-                "selfUri": String, 
-                "lastUri": String, 
-                "nextUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
+                "selfUri": String, 
+                "nextUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -45690,10 +46184,10 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
             "pageNumber": Number, 
             "total": Number, 
             "firstUri": String, 
-            "selfUri": String, 
-            "lastUri": String, 
-            "nextUri": String, 
             "previousUri": String, 
+            "lastUri": String, 
+            "selfUri": String, 
+            "nextUri": String, 
             "pageCount": Number, 
           },  
           "selfUri": String, 
@@ -45816,6 +46310,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
                 "afterCallWorkRequired": Boolean, 
+                "callerId": String, 
+                "callerIdName": String, 
               },  
               "chats": { 
                 "state": String, 
@@ -46044,8 +46540,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "commentsRequired": Boolean, 
                 "visibilityCondition": VisibilityCondition, 
                 "answerOptions": [AnswerOption], 
-                "isCritical": Boolean, 
                 "isKill": Boolean, 
+                "isCritical": Boolean, 
               },  
               "visibilityCondition": { 
                 "combiningOperation": String, 
@@ -46067,10 +46563,10 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "pageNumber": Number, 
               "total": Number, 
               "firstUri": String, 
-              "selfUri": String, 
-              "lastUri": String, 
-              "nextUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
+              "selfUri": String, 
+              "nextUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -46338,6 +46834,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
             "team": { 
               "id": String, 
               "name": String, 
+              "division": { 
+                "id": String, 
+                "name": String, 
+                "selfUri": String, 
+              },  
               "description": String, 
               "dateModified": Date, 
               "memberCount": Number, 
@@ -46460,10 +46961,10 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "pageNumber": Number, 
                 "total": Number, 
                 "firstUri": String, 
-                "selfUri": String, 
-                "lastUri": String, 
-                "nextUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
+                "selfUri": String, 
+                "nextUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -47021,6 +47522,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "wrapup": Wrapup, 
                 "afterCallWork": AfterCallWork, 
                 "afterCallWorkRequired": Boolean, 
+                "callerId": String, 
+                "callerIdName": String, 
               },  
               "chats": { 
                 "state": String, 
@@ -47249,8 +47752,8 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "commentsRequired": Boolean, 
                 "visibilityCondition": VisibilityCondition, 
                 "answerOptions": [AnswerOption], 
-                "isCritical": Boolean, 
                 "isKill": Boolean, 
+                "isCritical": Boolean, 
               },  
               "visibilityCondition": { 
                 "combiningOperation": String, 
@@ -47272,10 +47775,10 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
               "pageNumber": Number, 
               "total": Number, 
               "firstUri": String, 
-              "selfUri": String, 
-              "lastUri": String, 
-              "nextUri": String, 
               "previousUri": String, 
+              "lastUri": String, 
+              "selfUri": String, 
+              "nextUri": String, 
               "pageCount": Number, 
             },  
             "selfUri": String, 
@@ -47543,6 +48046,11 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
             "team": { 
               "id": String, 
               "name": String, 
+              "division": { 
+                "id": String, 
+                "name": String, 
+                "selfUri": String, 
+              },  
               "description": String, 
               "dateModified": Date, 
               "memberCount": Number, 
@@ -47665,10 +48173,10 @@ Conversation <a href="#" onclick="return copyConversationExample()">Copy</a>
                 "pageNumber": Number, 
                 "total": Number, 
                 "firstUri": String, 
-                "selfUri": String, 
-                "lastUri": String, 
-                "nextUri": String, 
                 "previousUri": String, 
+                "lastUri": String, 
+                "selfUri": String, 
+                "nextUri": String, 
                 "pageCount": Number, 
               },  
               "selfUri": String, 
@@ -48539,6 +49047,8 @@ CreateCallbackCommand <a href="#" onclick="return copyCreateCallbackCommandExamp
   "countryCode": String, 
   "validateCallbackNumbers": Boolean, 
   "data": {String: String}, 
+  "callerId": String, 
+  "callerIdName": String, 
 }
 ```
 
@@ -49680,9 +50190,10 @@ Send message
 
 Send message on existing conversation/communication. Only one message body field can be accepted, per request. Example: 1 textBody, 1 mediaId, 1 stickerId, or 1 messageTemplate.
 
-Requires ALL permissions: 
+Requires ANY permissions: 
 
 * conversation:message:create
+* conversation:webmessaging:create
 
 
 ### Request Body Schema
@@ -49773,9 +50284,10 @@ Create media
 
 See https://developer.genesys.cloud/api/rest/v2/conversations/messaging-media-upload for example usage.
 
-Requires ALL permissions: 
+Requires ANY permissions: 
 
 * conversation:message:create
+* conversation:webmessaging:create
 
 
 
@@ -49833,6 +50345,7 @@ The path parameter [conversationId] should contain the conversationId of the con
 Requires ANY permissions: 
 
 * conversation:message:view
+* conversation:webmessaging:view
 
 
 
@@ -50139,6 +50652,122 @@ apiInstance.postConversationsMessagesAgentless(body)
 
 **SendAgentlessOutboundMessageResponse**
 
+<a name="postConversationsMessagesInboundOpen"></a>
+
+# OpenNormalizedMessage postConversationsMessagesInboundOpen(body)
+
+
+
+POST /api/v2/conversations/messages/inbound/open
+
+Send an inbound Open Message
+
+Send an inbound message to an Open Messaging integration. In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least messaging scope. This will either generate a new Conversation, or be a part of an existing conversation. See https://developer.genesys.cloud/api/digital/openmessaging/ for example usage.
+
+Requires ALL permissions: 
+
+* conversation:message:receive
+
+
+### Request Body Schema
+
+<script type="text/javascript">
+	function copyOpenNormalizedMessageExample() {
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#OpenNormalizedMessageExample').text()).select();
+		document.execCommand("copy");
+		temp.remove();
+		return false;
+	}
+</script>
+
+OpenNormalizedMessage <a href="#" onclick="return copyOpenNormalizedMessageExample()">Copy</a>
+
+<div id="OpenNormalizedMessageExample">
+
+```{"language":"json", "maxHeight": "250px"}
+{ 
+  "id": String, 
+  "channel": { 
+    "id": String, 
+    "platform": String, 
+    "type": String, 
+    "messageId": String, 
+    "to": { 
+      "nickname": String, 
+      "id": String, 
+      "idType": String, 
+      "firstName": String, 
+      "lastName": String, 
+    },  
+    "from": { 
+      "nickname": String, 
+      "id": String, 
+      "idType": String, 
+      "firstName": String, 
+      "lastName": String, 
+    },  
+    "time": Date, 
+  },  
+  "type": String, 
+  "text": String, 
+  "content": { 
+    "contentType": String, 
+    "attachment": { 
+      "id": String, 
+      "mediaType": String, 
+      "url": String, 
+      "mime": String, 
+      "text": String, 
+      "sha256": String, 
+      "filename": String, 
+    },  
+  },  
+  "direction": String, 
+}
+```
+
+</div>
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let body = {}; // Object | NormalizedMessage
+
+apiInstance.postConversationsMessagesInboundOpen(body)
+  .then((data) => {
+    console.log(`postConversationsMessagesInboundOpen success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postConversationsMessagesInboundOpen');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | NormalizedMessage |  |
+{: class="table table-striped"}
+
+### Return type
+
+**OpenNormalizedMessage**
+
 <a name="postConversationsMessagingIntegrationsFacebook"></a>
 
 # FacebookIntegration postConversationsMessagingIntegrationsFacebook(body)
@@ -50311,6 +50940,91 @@ apiInstance.postConversationsMessagingIntegrationsLine(body)
 ### Return type
 
 **LineIntegration**
+
+<a name="postConversationsMessagingIntegrationsOpen"></a>
+
+# OpenIntegration postConversationsMessagingIntegrationsOpen(body)
+
+
+
+POST /api/v2/conversations/messaging/integrations/open
+
+Create an Open messaging integration
+
+See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+
+Requires ALL permissions: 
+
+* messaging:integration:add
+
+
+### Request Body Schema
+
+<script type="text/javascript">
+	function copyOpenIntegrationRequestExample() {
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#OpenIntegrationRequestExample').text()).select();
+		document.execCommand("copy");
+		temp.remove();
+		return false;
+	}
+</script>
+
+OpenIntegrationRequest <a href="#" onclick="return copyOpenIntegrationRequestExample()">Copy</a>
+
+<div id="OpenIntegrationRequestExample">
+
+```{"language":"json", "maxHeight": "250px"}
+{ 
+  "id": String, 
+  "name": String, 
+  "outboundNotificationWebhookUrl": String, 
+  "outboundNotificationWebhookSignatureSecretToken": String, 
+  "webhookHeaders": {String: String}, 
+  "selfUri": String, 
+}
+```
+
+</div>
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let body = {}; // Object | OpenIntegrationRequest
+
+apiInstance.postConversationsMessagingIntegrationsOpen(body)
+  .then((data) => {
+    console.log(`postConversationsMessagingIntegrationsOpen success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postConversationsMessagingIntegrationsOpen');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | OpenIntegrationRequest |  |
+{: class="table table-striped"}
+
+### Return type
+
+**OpenIntegration**
 
 <a name="postConversationsMessagingIntegrationsTwitter"></a>
 
@@ -50824,4 +51538,88 @@ apiInstance.putConversationsMessagingIntegrationsLineIntegrationId(integrationId
 ### Return type
 
 **LineIntegration**
+
+<a name="putConversationsMessagingThreadingtimeline"></a>
+
+# ConversationThreadingWindow putConversationsMessagingThreadingtimeline(body)
+
+
+
+PUT /api/v2/conversations/messaging/threadingtimeline
+
+Update conversation threading window timeline for each messaging type
+
+PUT Conversation messaging threading timeline is intended to set the conversation threading settings for ALL messengerTypes. If you omit a messengerType in the request body then the setting for that messengerType will use the platform default value. The PUT replaces the existing setting(s) that were previously set for each messengerType.
+
+Requires ALL permissions: 
+
+* conversation:threadingTimeline:edit
+
+
+### Request Body Schema
+
+<script type="text/javascript">
+	function copyConversationThreadingWindowExample() {
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#ConversationThreadingWindowExample').text()).select();
+		document.execCommand("copy");
+		temp.remove();
+		return false;
+	}
+</script>
+
+ConversationThreadingWindow <a href="#" onclick="return copyConversationThreadingWindowExample()">Copy</a>
+
+<div id="ConversationThreadingWindowExample">
+
+```{"language":"json", "maxHeight": "250px"}
+{ 
+  "id": String, 
+  "settings": { 
+    "messengerType": String, 
+    "timeoutInMinutes": Number, 
+  },  
+}
+```
+
+</div>
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let body = {}; // Object | ConversationThreadingWindowRequest
+
+apiInstance.putConversationsMessagingThreadingtimeline(body)
+  .then((data) => {
+    console.log(`putConversationsMessagingThreadingtimeline success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putConversationsMessagingThreadingtimeline');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | ConversationThreadingWindowRequest |  |
+{: class="table table-striped"}
+
+### Return type
+
+**ConversationThreadingWindow**
 

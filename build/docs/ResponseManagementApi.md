@@ -790,6 +790,11 @@ Library <a href="#" onclick="return copyLibraryExample()">Copy</a>
     "team": { 
       "id": String, 
       "name": String, 
+      "division": { 
+        "id": String, 
+        "name": String, 
+        "selfUri": String, 
+      },  
       "description": String, 
       "dateModified": Date, 
       "memberCount": Number, 
@@ -1301,6 +1306,11 @@ Response <a href="#" onclick="return copyResponseExample()">Copy</a>
     "team": { 
       "id": String, 
       "name": String, 
+      "division": { 
+        "id": String, 
+        "name": String, 
+        "selfUri": String, 
+      },  
       "description": String, 
       "dateModified": Date, 
       "memberCount": Number, 
@@ -1915,6 +1925,11 @@ Library <a href="#" onclick="return copyLibraryExample()">Copy</a>
     "team": { 
       "id": String, 
       "name": String, 
+      "division": { 
+        "id": String, 
+        "name": String, 
+        "selfUri": String, 
+      },  
       "description": String, 
       "dateModified": Date, 
       "memberCount": Number, 
@@ -2428,6 +2443,11 @@ Response <a href="#" onclick="return copyResponseExample()">Copy</a>
     "team": { 
       "id": String, 
       "name": String, 
+      "division": { 
+        "id": String, 
+        "name": String, 
+        "selfUri": String, 
+      },  
       "description": String, 
       "dateModified": Date, 
       "memberCount": Number, 

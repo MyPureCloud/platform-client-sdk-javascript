@@ -5,7 +5,7 @@ class JourneyApi {
 	/**
 	 * Journey service.
 	 * @module purecloud-platform-client-v2/api/JourneyApi
-	 * @version 113.2.0
+	 * @version 114.0.0
 	 */
 
 	/**
@@ -158,7 +158,9 @@ class JourneyApi {
 	 * @param {String} opts.sortBy Field(s) to sort by. Prefix with &#39;-&#39; for descending (e.g. sortBy=displayName,-createdDate).
 	 * @param {String} opts.filterField Field to filter by (e.g. filterField=weight or filterField=action.actionTemplate.id). Requires &#39;filterField&#39; to also be set.
 	 * @param {String} opts.filterValue Value to filter by. Requires &#39;filterValue&#39; to also be set.
-	 * @param {Array.<String>} opts.actionMapIds IDs of action maps to return. Use of this parameter is not compatible with pagination, filtering or sorting. A maximum of 100 action maps are allowed per request.
+	 * @param {Array.<String>} opts.actionMapIds IDs of action maps to return. Use of this parameter is not compatible with pagination, filtering, sorting or querying. A maximum of 100 action maps are allowed per request.
+	 * @param {Array.<String>} opts.queryFields Action Map field(s) to query on. Requires &#39;queryValue&#39; to also be set.
+	 * @param {String} opts.queryValue Value to query on. Requires &#39;queryFields&#39; to also be set.
 	 */
 	getJourneyActionmaps(opts) { 
 		opts = opts || {};
@@ -168,7 +170,7 @@ class JourneyApi {
 			'/api/v2/journey/actionmaps', 
 			'GET', 
 			{  }, 
-			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'filterField': opts['filterField'],'filterValue': opts['filterValue'],'actionMapIds': this.apiClient.buildCollectionParam(opts['actionMapIds'], 'multi') }, 
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'filterField': opts['filterField'],'filterValue': opts['filterValue'],'actionMapIds': this.apiClient.buildCollectionParam(opts['actionMapIds'], 'multi'),'queryFields': this.apiClient.buildCollectionParam(opts['queryFields'], 'multi'),'queryValue': opts['queryValue'] }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -261,7 +263,9 @@ class JourneyApi {
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {String} opts.sortBy Field(s) to sort by. Prefix with &#39;-&#39; for descending (e.g. sortBy=name,-createdDate).
 	 * @param {Object} opts.mediaType Media type
-	 * @param {Object} opts.state Action template state
+	 * @param {Object} opts.state Action template state.
+	 * @param {Array.<String>} opts.queryFields ActionTemplate field(s) to query on. Requires &#39;queryValue&#39; to also be set.
+	 * @param {String} opts.queryValue Value to query on. Requires &#39;queryFields&#39; to also be set.
 	 */
 	getJourneyActiontemplates(opts) { 
 		opts = opts || {};
@@ -271,7 +275,7 @@ class JourneyApi {
 			'/api/v2/journey/actiontemplates', 
 			'GET', 
 			{  }, 
-			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'mediaType': opts['mediaType'],'state': opts['state'] }, 
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'mediaType': opts['mediaType'],'state': opts['state'],'queryFields': this.apiClient.buildCollectionParam(opts['queryFields'], 'multi'),'queryValue': opts['queryValue'] }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -313,7 +317,9 @@ class JourneyApi {
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {String} opts.sortBy Field(s) to sort by. The response can be sorted by any first level property on the Outcome response. Prefix with &#39;-&#39; for descending (e.g. sortBy=displayName,-createdDate).
-	 * @param {Array.<String>} opts.outcomeIds IDs of outcomes to return. Use of this parameter is not compatible with pagination or sorting. A maximum of 20 outcomes are allowed per request.
+	 * @param {Array.<String>} opts.outcomeIds IDs of outcomes to return. Use of this parameter is not compatible with pagination, sorting or querying. A maximum of 20 outcomes are allowed per request.
+	 * @param {Array.<String>} opts.queryFields Outcome field(s) to query on. Requires &#39;queryValue&#39; to also be set.
+	 * @param {String} opts.queryValue Value to query on. Requires &#39;queryFields&#39; to also be set.
 	 */
 	getJourneyOutcomes(opts) { 
 		opts = opts || {};
@@ -323,7 +329,7 @@ class JourneyApi {
 			'/api/v2/journey/outcomes', 
 			'GET', 
 			{  }, 
-			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'outcomeIds': this.apiClient.buildCollectionParam(opts['outcomeIds'], 'multi') }, 
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'outcomeIds': this.apiClient.buildCollectionParam(opts['outcomeIds'], 'multi'),'queryFields': this.apiClient.buildCollectionParam(opts['queryFields'], 'multi'),'queryValue': opts['queryValue'] }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -366,7 +372,9 @@ class JourneyApi {
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Boolean} opts.isActive Determines whether or not to show only active segments.
-	 * @param {Array.<String>} opts.segmentIds IDs of segments to return. Use of this parameter is not compatible with pagination or sorting. A maximum of 100 segments are allowed per request.
+	 * @param {Array.<String>} opts.segmentIds IDs of segments to return. Use of this parameter is not compatible with pagination, sorting or querying. A maximum of 100 segments are allowed per request.
+	 * @param {Array.<String>} opts.queryFields Segment field(s) to query on. Requires &#39;queryValue&#39; to also be set.
+	 * @param {String} opts.queryValue Value to query on. Requires &#39;queryFields&#39; to also be set.
 	 */
 	getJourneySegments(opts) { 
 		opts = opts || {};
@@ -376,7 +384,7 @@ class JourneyApi {
 			'/api/v2/journey/segments', 
 			'GET', 
 			{  }, 
-			{ 'sortBy': opts['sortBy'],'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'isActive': opts['isActive'],'segmentIds': this.apiClient.buildCollectionParam(opts['segmentIds'], 'multi') }, 
+			{ 'sortBy': opts['sortBy'],'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'isActive': opts['isActive'],'segmentIds': this.apiClient.buildCollectionParam(opts['segmentIds'], 'multi'),'queryFields': this.apiClient.buildCollectionParam(opts['queryFields'], 'multi'),'queryValue': opts['queryValue'] }, 
 			{  }, 
 			{  }, 
 			null, 

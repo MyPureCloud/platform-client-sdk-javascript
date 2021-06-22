@@ -3208,6 +3208,7 @@ let opts = {
   'pageNumber': 1, // Number | Page number
   'filterType': "Prefix", // String | Filter type
   'name': "name_example", // String | Name
+  'dncSourceType': "dncSourceType_example", // String | DncSourceType
   'id': ["id_example"], // [String] | id
   'sortBy': "sortBy_example", // String | Sort by
   'sortOrder': "a" // String | Sort order
@@ -3234,6 +3235,7 @@ apiInstance.getOutboundDnclistsDivisionviews(opts)
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **filterType** | **String** | Filter type | [optional] [default to Prefix]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith |
  **name** | **String** | Name | [optional]  |
+ **dncSourceType** | **String** | DncSourceType | [optional] <br />**Values**: rds, dnc.com, gryphon |
  **id** | **[String]** | id | [optional]  |
  **sortBy** | **String** | Sort by | [optional]  |
  **sortOrder** | **String** | Sort order | [optional] [default to a]<br />**Values**: ascending, descending |
@@ -3543,7 +3545,7 @@ apiInstance.getOutboundMessagingcampaigns(opts)
  **name** | **String** | Name | [optional]  |
  **contactListId** | **String** | Contact List ID | [optional]  |
  **divisionId** | **[String]** | Division ID(s) | [optional]  |
- **type** | **String** | Campaign Type | [optional] <br />**Values**: SMS |
+ **type** | **String** | Campaign Type | [optional] <br />**Values**: EMAIL, SMS |
  **senderSmsPhoneNumber** | **String** | Sender SMS Phone Number | [optional]  |
  **id** | **[String]** | A list of messaging campaign ids to bulk fetch | [optional]  |
 {: class="table table-striped"}

@@ -5,7 +5,7 @@ class LearningApi {
 	/**
 	 * Learning service.
 	 * @module purecloud-platform-client-v2/api/LearningApi
-	 * @version 113.2.0
+	 * @version 114.0.0
 	 */
 
 	/**
@@ -334,6 +334,31 @@ class LearningApi {
 			{  }, 
 			{  }, 
 			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Retrieve aggregated assignment data
+	 * 
+	 * @param {Object} body Aggregate Request
+	 */
+	postLearningAssignmentsAggregatesQuery(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postLearningAssignmentsAggregatesQuery';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/learning/assignments/aggregates/query', 
+			'POST', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
 			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']

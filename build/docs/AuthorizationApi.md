@@ -1756,6 +1756,11 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
           "team": { 
             "id": String, 
             "name": String, 
+            "division": { 
+              "id": String, 
+              "name": String, 
+              "selfUri": String, 
+            },  
             "description": String, 
             "dateModified": Date, 
             "memberCount": Number, 
@@ -2196,6 +2201,11 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
             "team": { 
               "id": String, 
               "name": String, 
+              "division": { 
+                "id": String, 
+                "name": String, 
+                "selfUri": String, 
+              },  
               "description": String, 
               "dateModified": Date, 
               "memberCount": Number, 
@@ -2481,6 +2491,7 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
               "team": { 
                 "id": String, 
                 "name": String, 
+                "division": Division, 
                 "description": String, 
                 "dateModified": Date, 
                 "memberCount": Number, 
@@ -2780,7 +2791,7 @@ apiInstance.postAuthorizationDivisionObject(divisionId, objectType, body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **divisionId** | **String** | Division ID |  |
- **objectType** | **String** | The type of the objects. Must be one of the valid object types | <br />**Values**: QUEUE, CAMPAIGN, CONTACTLIST, DNCLIST, MESSAGINGCAMPAIGN, MANAGEMENTUNIT, BUSINESSUNIT, FLOW, FLOWMILESTONE, FLOWOUTCOME, USER, DATATABLES |
+ **objectType** | **String** | The type of the objects. Must be one of the valid object types | <br />**Values**: QUEUE, CAMPAIGN, CONTACTLIST, DNCLIST, EMAILCAMPAIGN, MESSAGINGCAMPAIGN, MANAGEMENTUNIT, BUSINESSUNIT, FLOW, FLOWMILESTONE, FLOWOUTCOME, USER, CALLROUTE, EMERGENCYGROUPS, ROUTINGSCHEDULES, ROUTINGSCHEDULEGROUPS, DATATABLES |
  **body** | **Object** | Object Id List |  |
 {: class="table table-striped"}
 
@@ -3378,6 +3389,11 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
           "team": { 
             "id": String, 
             "name": String, 
+            "division": { 
+              "id": String, 
+              "name": String, 
+              "selfUri": String, 
+            },  
             "description": String, 
             "dateModified": Date, 
             "memberCount": Number, 
@@ -3818,6 +3834,11 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
             "team": { 
               "id": String, 
               "name": String, 
+              "division": { 
+                "id": String, 
+                "name": String, 
+                "selfUri": String, 
+              },  
               "description": String, 
               "dateModified": Date, 
               "memberCount": Number, 
@@ -4103,6 +4124,7 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
               "team": { 
                 "id": String, 
                 "name": String, 
+                "division": Division, 
                 "description": String, 
                 "dateModified": Date, 
                 "memberCount": Number, 
@@ -4771,6 +4793,11 @@ DomainOrganizationRoleCreate <a href="#" onclick="return copyDomainOrganizationR
           "team": { 
             "id": String, 
             "name": String, 
+            "division": { 
+              "id": String, 
+              "name": String, 
+              "selfUri": String, 
+            },  
             "description": String, 
             "dateModified": Date, 
             "memberCount": Number, 
@@ -5211,6 +5238,11 @@ DomainOrganizationRoleCreate <a href="#" onclick="return copyDomainOrganizationR
             "team": { 
               "id": String, 
               "name": String, 
+              "division": { 
+                "id": String, 
+                "name": String, 
+                "selfUri": String, 
+              },  
               "description": String, 
               "dateModified": Date, 
               "memberCount": Number, 
@@ -5496,6 +5528,7 @@ DomainOrganizationRoleCreate <a href="#" onclick="return copyDomainOrganizationR
               "team": { 
                 "id": String, 
                 "name": String, 
+                "division": Division, 
                 "description": String, 
                 "dateModified": Date, 
                 "memberCount": Number, 
@@ -6631,6 +6664,11 @@ DomainOrganizationRoleUpdate <a href="#" onclick="return copyDomainOrganizationR
           "team": { 
             "id": String, 
             "name": String, 
+            "division": { 
+              "id": String, 
+              "name": String, 
+              "selfUri": String, 
+            },  
             "description": String, 
             "dateModified": Date, 
             "memberCount": Number, 
@@ -7071,6 +7109,11 @@ DomainOrganizationRoleUpdate <a href="#" onclick="return copyDomainOrganizationR
             "team": { 
               "id": String, 
               "name": String, 
+              "division": { 
+                "id": String, 
+                "name": String, 
+                "selfUri": String, 
+              },  
               "description": String, 
               "dateModified": Date, 
               "memberCount": Number, 
@@ -7356,6 +7399,7 @@ DomainOrganizationRoleUpdate <a href="#" onclick="return copyDomainOrganizationR
               "team": { 
                 "id": String, 
                 "name": String, 
+                "division": Division, 
                 "description": String, 
                 "dateModified": Date, 
                 "memberCount": Number, 
@@ -8136,6 +8180,11 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
           "team": { 
             "id": String, 
             "name": String, 
+            "division": { 
+              "id": String, 
+              "name": String, 
+              "selfUri": String, 
+            },  
             "description": String, 
             "dateModified": Date, 
             "memberCount": Number, 
@@ -8576,6 +8625,11 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
             "team": { 
               "id": String, 
               "name": String, 
+              "division": { 
+                "id": String, 
+                "name": String, 
+                "selfUri": String, 
+              },  
               "description": String, 
               "dateModified": Date, 
               "memberCount": Number, 
@@ -8861,6 +8915,7 @@ DomainOrganizationRole <a href="#" onclick="return copyDomainOrganizationRoleExa
               "team": { 
                 "id": String, 
                 "name": String, 
+                "division": Division, 
                 "description": String, 
                 "dateModified": Date, 
                 "memberCount": Number, 

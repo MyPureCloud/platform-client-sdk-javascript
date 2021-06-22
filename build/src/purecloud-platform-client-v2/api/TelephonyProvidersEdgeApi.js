@@ -5,7 +5,7 @@ class TelephonyProvidersEdgeApi {
 	/**
 	 * TelephonyProvidersEdge service.
 	 * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-	 * @version 113.2.0
+	 * @version 114.0.0
 	 */
 
 	/**
@@ -1506,6 +1506,7 @@ class TelephonyProvidersEdgeApi {
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {String} opts.sortBy Value by which to sort (default to name)
 	 * @param {String} opts.sortOrder Sort order (default to ASC)
+	 * @param {Array.<String>} opts.expand Fields to expand in the response, comma-separated
 	 */
 	getTelephonyProvidersEdgesLinebasesettings(opts) { 
 		opts = opts || {};
@@ -1515,7 +1516,7 @@ class TelephonyProvidersEdgeApi {
 			'/api/v2/telephony/providers/edges/linebasesettings', 
 			'GET', 
 			{  }, 
-			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] }, 
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') }, 
 			{  }, 
 			{  }, 
 			null, 

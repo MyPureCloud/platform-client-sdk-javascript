@@ -5,7 +5,7 @@ class RoutingApi {
 	/**
 	 * Routing service.
 	 * @module purecloud-platform-client-v2/api/RoutingApi
-	 * @version 113.2.0
+	 * @version 114.0.0
 	 */
 
 	/**
@@ -19,6 +19,31 @@ class RoutingApi {
 		this.apiClient = apiClient || ApiClient.instance;
 	}
 
+
+	/**
+	 * Delete single benefit assessment.
+	 * 
+	 * @param {String} assessmentId Benefit Assessment ID
+	 */
+	deleteRoutingAssessment(assessmentId) { 
+		// verify the required parameter 'assessmentId' is set
+		if (assessmentId === undefined || assessmentId === null) {
+			throw 'Missing the required parameter "assessmentId" when calling deleteRoutingAssessment';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/assessments/{assessmentId}', 
+			'DELETE', 
+			{ 'assessmentId': assessmentId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
 
 	/**
 	 * Delete a domain
@@ -65,6 +90,31 @@ class RoutingApi {
 			'/api/v2/routing/email/domains/{domainName}/routes/{routeId}', 
 			'DELETE', 
 			{ 'domainName': domainName,'routeId': routeId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete single predictor.
+	 * 
+	 * @param {String} predictorId Predictor ID
+	 */
+	deleteRoutingPredictor(predictorId) { 
+		// verify the required parameter 'predictorId' is set
+		if (predictorId === undefined || predictorId === null) {
+			throw 'Missing the required parameter "predictorId" when calling deleteRoutingPredictor';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/predictors/{predictorId}', 
+			'DELETE', 
+			{ 'predictorId': predictorId }, 
 			{  }, 
 			{  }, 
 			{  }, 
@@ -420,6 +470,108 @@ class RoutingApi {
 	}
 
 	/**
+	 * Retrieve a single benefit assessment.
+	 * 
+	 * @param {String} assessmentId Benefit Assessment ID
+	 */
+	getRoutingAssessment(assessmentId) { 
+		// verify the required parameter 'assessmentId' is set
+		if (assessmentId === undefined || assessmentId === null) {
+			throw 'Missing the required parameter "assessmentId" when calling getRoutingAssessment';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/assessments/{assessmentId}', 
+			'GET', 
+			{ 'assessmentId': assessmentId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Retrieve all benefit assessments.
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.before The cursor that points to the start of the set of entities that has been returned.
+	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
+	 * @param {String} opts.limit Number of entities to return. Maximum of 200. Deprecated in favour of pageSize.
+	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
+	 * @param {Array.<String>} opts.queueId Queue ID(s) to filter assessments by.
+	 */
+	getRoutingAssessments(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/assessments', 
+			'GET', 
+			{  }, 
+			{ 'before': opts['before'],'after': opts['after'],'limit': opts['limit'],'pageSize': opts['pageSize'],'queueId': this.apiClient.buildCollectionParam(opts['queueId'], 'multi') }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Retrieve a single benefit assessments job.
+	 * 
+	 * @param {String} jobId Benefit Assessment Job ID
+	 */
+	getRoutingAssessmentsJob(jobId) { 
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null) {
+			throw 'Missing the required parameter "jobId" when calling getRoutingAssessmentsJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/assessments/jobs/{jobId}', 
+			'GET', 
+			{ 'jobId': jobId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Retrieve all benefit assessment jobs.
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Array.<String>} opts.divisionId Division ID(s) to filter assessment jobs by.
+	 */
+	getRoutingAssessmentsJobs(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/assessments/jobs', 
+			'GET', 
+			{  }, 
+			{ 'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi') }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get domain
 	 * 
 	 * @param {String} domainId domain ID
@@ -625,6 +777,79 @@ class RoutingApi {
 	}
 
 	/**
+	 * Retrieve a single predictor.
+	 * 
+	 * @param {String} predictorId Predictor ID
+	 */
+	getRoutingPredictor(predictorId) { 
+		// verify the required parameter 'predictorId' is set
+		if (predictorId === undefined || predictorId === null) {
+			throw 'Missing the required parameter "predictorId" when calling getRoutingPredictor';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/predictors/{predictorId}', 
+			'GET', 
+			{ 'predictorId': predictorId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Retrieve all predictors.
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.before The cursor that points to the start of the set of entities that has been returned.
+	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
+	 * @param {String} opts.limit Number of entities to return. Maximum of 200. Deprecated in favour of pageSize.
+	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
+	 * @param {Array.<String>} opts.queueId Comma-separated list of queue Ids to filter by.
+	 */
+	getRoutingPredictors(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/predictors', 
+			'GET', 
+			{  }, 
+			{ 'before': opts['before'],'after': opts['after'],'limit': opts['limit'],'pageSize': opts['pageSize'],'queueId': this.apiClient.buildCollectionParam(opts['queueId'], 'multi') }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a list of Key Performance Indicators available for the predictors.
+	 * 
+	 */
+	getRoutingPredictorsKeyperformanceindicators() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/predictors/keyperformanceindicators', 
+			'GET', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get details about this queue.
 	 * 
 	 * @param {String} queueId Queue ID
@@ -637,6 +862,61 @@ class RoutingApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/routing/queues/{queueId}', 
+			'GET', 
+			{ 'queueId': queueId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a Comparison Period.
+	 * 
+	 * @param {String} queueId Queue id
+	 * @param {String} comparisonPeriodId ComparisonPeriod id
+	 */
+	getRoutingQueueComparisonperiod(queueId, comparisonPeriodId) { 
+		// verify the required parameter 'queueId' is set
+		if (queueId === undefined || queueId === null) {
+			throw 'Missing the required parameter "queueId" when calling getRoutingQueueComparisonperiod';
+		}
+		// verify the required parameter 'comparisonPeriodId' is set
+		if (comparisonPeriodId === undefined || comparisonPeriodId === null) {
+			throw 'Missing the required parameter "comparisonPeriodId" when calling getRoutingQueueComparisonperiod';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/queues/{queueId}/comparisonperiods/{comparisonPeriodId}', 
+			'GET', 
+			{ 'queueId': queueId,'comparisonPeriodId': comparisonPeriodId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get list of comparison periods
+	 * 
+	 * @param {String} queueId Queue id
+	 */
+	getRoutingQueueComparisonperiods(queueId) { 
+		// verify the required parameter 'queueId' is set
+		if (queueId === undefined || queueId === null) {
+			throw 'Missing the required parameter "queueId" when calling getRoutingQueueComparisonperiods';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/queues/{queueId}/comparisonperiods', 
 			'GET', 
 			{ 'queueId': queueId }, 
 			{  }, 
@@ -1466,6 +1746,35 @@ class RoutingApi {
 	}
 
 	/**
+	 * Update single predictor.
+	 * 
+	 * @param {String} predictorId Predictor ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body 
+	 */
+	patchRoutingPredictor(predictorId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'predictorId' is set
+		if (predictorId === undefined || predictorId === null) {
+			throw 'Missing the required parameter "predictorId" when calling patchRoutingPredictor';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/predictors/{predictorId}', 
+			'PATCH', 
+			{ 'predictorId': predictorId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
 	 * Update the ring number OR joined status for a queue member.
 	 * 
 	 * @param {String} queueId Queue ID
@@ -1810,6 +2119,54 @@ class RoutingApi {
 	}
 
 	/**
+	 * Create a benefit assessment.
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body 
+	 */
+	postRoutingAssessments(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/assessments', 
+			'POST', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Create a benefit assessment job.
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body 
+	 */
+	postRoutingAssessmentsJobs(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/assessments/jobs', 
+			'POST', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
 	 * Create a route
 	 * 
 	 * @param {String} domainName email domain
@@ -1912,6 +2269,30 @@ class RoutingApi {
 			{  }, 
 			{  }, 
 			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Create a predictor.
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body 
+	 */
+	postRoutingPredictors(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/predictors', 
+			'POST', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']

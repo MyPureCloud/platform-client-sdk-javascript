@@ -5,7 +5,7 @@ class ConversationsApi {
 	/**
 	 * Conversations service.
 	 * @module purecloud-platform-client-v2/api/ConversationsApi
-	 * @version 113.2.0
+	 * @version 114.0.0
 	 */
 
 	/**
@@ -208,6 +208,31 @@ class ConversationsApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/conversations/messaging/integrations/line/{integrationId}', 
+			'DELETE', 
+			{ 'integrationId': integrationId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete an Open messaging integration
+	 * See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+	 * @param {String} integrationId Integration ID
+	 */
+	deleteConversationsMessagingIntegrationsOpenIntegrationId(integrationId) { 
+		// verify the required parameter 'integrationId' is set
+		if (integrationId === undefined || integrationId === null) {
+			throw 'Missing the required parameter "integrationId" when calling deleteConversationsMessagingIntegrationsOpenIntegrationId';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/messaging/integrations/open/{integrationId}', 
 			'DELETE', 
 			{ 'integrationId': integrationId }, 
 			{  }, 
@@ -1640,6 +1665,62 @@ class ConversationsApi {
 	}
 
 	/**
+	 * Get a list of Open messaging integrations
+	 * See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Object} opts.expand Expand instructions for the return value.
+	 * @param {String} opts.supportedContentId Filter integrations returned based on the supported content ID
+	 */
+	getConversationsMessagingIntegrationsOpen(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/messaging/integrations/open', 
+			'GET', 
+			{  }, 
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'expand': opts['expand'],'supportedContent.id': opts['supportedContentId'] }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get an Open messaging integration
+	 * See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+	 * @param {String} integrationId Integration ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.expand Expand instructions for the return value.
+	 */
+	getConversationsMessagingIntegrationsOpenIntegrationId(integrationId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'integrationId' is set
+		if (integrationId === undefined || integrationId === null) {
+			throw 'Missing the required parameter "integrationId" when calling getConversationsMessagingIntegrationsOpenIntegrationId';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/messaging/integrations/open/{integrationId}', 
+			'GET', 
+			{ 'integrationId': integrationId }, 
+			{ 'expand': opts['expand'] }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get a list of Twitter Integrations
 	 * 
 	 * @param {Object} opts Optional parameters
@@ -1772,6 +1853,26 @@ class ConversationsApi {
 			'GET', 
 			{ 'messengerType': messengerType }, 
 			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get conversation threading window timeline for each messaging type
+	 * Conversation messaging threading timeline is a setting defined for each messenger type in your organization. This setting will dictate whether a new message is added to the most recent existing conversation, or creates a new Conversation. If the existing Conversation is still in a connected state the threading timeline setting will never play a role. After the conversation is disconnected, if an inbound message is received or an outbound message is sent after the setting for threading timeline expires, a new conversation is created.
+	 */
+	getConversationsMessagingThreadingtimeline() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/messaging/threadingtimeline', 
+			'GET', 
+			{  }, 
+			{  }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -2740,6 +2841,36 @@ class ConversationsApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/conversations/messaging/integrations/facebook/{integrationId}', 
+			'PATCH', 
+			{ 'integrationId': integrationId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update an Open messaging integration
+	 * See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+	 * @param {String} integrationId Integration ID
+	 * @param {Object} body OpenIntegrationUpdateRequest
+	 */
+	patchConversationsMessagingIntegrationsOpenIntegrationId(integrationId, body) { 
+		// verify the required parameter 'integrationId' is set
+		if (integrationId === undefined || integrationId === null) {
+			throw 'Missing the required parameter "integrationId" when calling patchConversationsMessagingIntegrationsOpenIntegrationId';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchConversationsMessagingIntegrationsOpenIntegrationId';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/messaging/integrations/open/{integrationId}', 
 			'PATCH', 
 			{ 'integrationId': integrationId }, 
 			{  }, 
@@ -3898,6 +4029,31 @@ class ConversationsApi {
 	}
 
 	/**
+	 * Send an inbound Open Message
+	 * Send an inbound message to an Open Messaging integration. In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least messaging scope. This will either generate a new Conversation, or be a part of an existing conversation. See https://developer.genesys.cloud/api/digital/openmessaging/ for example usage.
+	 * @param {Object} body NormalizedMessage
+	 */
+	postConversationsMessagesInboundOpen(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postConversationsMessagesInboundOpen';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/messages/inbound/open', 
+			'POST', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
 	 * Create a Facebook Integration
 	 * 
 	 * @param {Object} body FacebookIntegrationRequest
@@ -3935,6 +4091,31 @@ class ConversationsApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/conversations/messaging/integrations/line', 
+			'POST', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Create an Open messaging integration
+	 * See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+	 * @param {Object} body OpenIntegrationRequest
+	 */
+	postConversationsMessagingIntegrationsOpen(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postConversationsMessagingIntegrationsOpen';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/messaging/integrations/open', 
 			'POST', 
 			{  }, 
 			{  }, 
@@ -4117,6 +4298,31 @@ class ConversationsApi {
 			'/api/v2/conversations/messaging/integrations/line/{integrationId}', 
 			'PUT', 
 			{ 'integrationId': integrationId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update conversation threading window timeline for each messaging type
+	 * PUT Conversation messaging threading timeline is intended to set the conversation threading settings for ALL messengerTypes. If you omit a messengerType in the request body then the setting for that messengerType will use the platform default value. The PUT replaces the existing setting(s) that were previously set for each messengerType.
+	 * @param {Object} body ConversationThreadingWindowRequest
+	 */
+	putConversationsMessagingThreadingtimeline(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putConversationsMessagingThreadingtimeline';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/messaging/threadingtimeline', 
+			'PUT', 
+			{  }, 
 			{  }, 
 			{  }, 
 			{  }, 

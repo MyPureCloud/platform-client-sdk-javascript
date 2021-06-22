@@ -5,7 +5,7 @@ class ExternalContactsApi {
 	/**
 	 * ExternalContacts service.
 	 * @module purecloud-platform-client-v2/api/ExternalContactsApi
-	 * @version 113.2.0
+	 * @version 114.0.0
 	 */
 
 	/**
@@ -978,6 +978,106 @@ class ExternalContactsApi {
 	}
 
 	/**
+	 * Bulk fetch notes
+	 * 
+	 * @param {Object} body Note ids
+	 */
+	postExternalcontactsBulkNotes(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postExternalcontactsBulkNotes';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/externalcontacts/bulk/notes', 
+			'POST', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Bulk add notes
+	 * 
+	 * @param {Object} body Notes
+	 */
+	postExternalcontactsBulkNotesAdd(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postExternalcontactsBulkNotesAdd';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/externalcontacts/bulk/notes/add', 
+			'POST', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Bulk remove notes
+	 * 
+	 * @param {Object} body Note ids
+	 */
+	postExternalcontactsBulkNotesRemove(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postExternalcontactsBulkNotesRemove';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/externalcontacts/bulk/notes/remove', 
+			'POST', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Bulk update notes
+	 * 
+	 * @param {Object} body Notes
+	 */
+	postExternalcontactsBulkNotesUpdate(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postExternalcontactsBulkNotesUpdate';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/externalcontacts/bulk/notes/update', 
+			'POST', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
 	 * Bulk fetch organizations
 	 * 
 	 * @param {Object} body Organizations ids
@@ -1065,6 +1165,106 @@ class ExternalContactsApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/externalcontacts/bulk/organizations/update', 
+			'POST', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Bulk fetch relationships
+	 * 
+	 * @param {Object} body Relationships ids
+	 */
+	postExternalcontactsBulkRelationships(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postExternalcontactsBulkRelationships';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/externalcontacts/bulk/relationships', 
+			'POST', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Bulk add relationships
+	 * 
+	 * @param {Object} body Relationships
+	 */
+	postExternalcontactsBulkRelationshipsAdd(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postExternalcontactsBulkRelationshipsAdd';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/externalcontacts/bulk/relationships/add', 
+			'POST', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Bulk remove relationships
+	 * 
+	 * @param {Object} body Relationships ids
+	 */
+	postExternalcontactsBulkRelationshipsRemove(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postExternalcontactsBulkRelationshipsRemove';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/externalcontacts/bulk/relationships/remove', 
+			'POST', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Bulk update relationships
+	 * 
+	 * @param {Object} body Relationships
+	 */
+	postExternalcontactsBulkRelationshipsUpdate(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postExternalcontactsBulkRelationshipsUpdate';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/externalcontacts/bulk/relationships/update', 
 			'POST', 
 			{  }, 
 			{  }, 

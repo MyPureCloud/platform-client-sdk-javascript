@@ -14,10 +14,13 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**deleteWorkforcemanagementBusinessunitServicegoaltemplate**](WorkforceManagementApi.html#deleteWorkforcemanagementBusinessunitServicegoaltemplate) | **DELETE** /api/v2/workforcemanagement/businessunits/{businessUnitId}/servicegoaltemplates/{serviceGoalTemplateId} | Delete a service goal template
 [**deleteWorkforcemanagementBusinessunitWeekSchedule**](WorkforceManagementApi.html#deleteWorkforcemanagementBusinessunitWeekSchedule) | **DELETE** /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId} | Delete a schedule
 [**deleteWorkforcemanagementBusinessunitWeekShorttermforecast**](WorkforceManagementApi.html#deleteWorkforcemanagementBusinessunitWeekShorttermforecast) | **DELETE** /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId} | Delete a short term forecast
+[**deleteWorkforcemanagementManagementunit**](WorkforceManagementApi.html#deleteWorkforcemanagementManagementunit) | **DELETE** /api/v2/workforcemanagement/managementunits/{managementUnitId} | Delete management unit
 [**deleteWorkforcemanagementManagementunitWorkplan**](WorkforceManagementApi.html#deleteWorkforcemanagementManagementunitWorkplan) | **DELETE** /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans/{workPlanId} | Delete a work plan
 [**deleteWorkforcemanagementManagementunitWorkplanrotation**](WorkforceManagementApi.html#deleteWorkforcemanagementManagementunitWorkplanrotation) | **DELETE** /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplanrotations/{workPlanRotationId} | Delete a work plan rotation
 [**getWorkforcemanagementAdherence**](WorkforceManagementApi.html#getWorkforcemanagementAdherence) | **GET** /api/v2/workforcemanagement/adherence | Get a list of UserScheduleAdherence records for the requested users
 [**getWorkforcemanagementAdhocmodelingjob**](WorkforceManagementApi.html#getWorkforcemanagementAdhocmodelingjob) | **GET** /api/v2/workforcemanagement/adhocmodelingjobs/{jobId} | Get status of the modeling job
+[**getWorkforcemanagementAgentManagementunit**](WorkforceManagementApi.html#getWorkforcemanagementAgentManagementunit) | **GET** /api/v2/workforcemanagement/agents/{agentId}/managementunit | Get the management unit to which the agent belongs
+[**getWorkforcemanagementAgentsMeManagementunit**](WorkforceManagementApi.html#getWorkforcemanagementAgentsMeManagementunit) | **GET** /api/v2/workforcemanagement/agents/me/managementunit | Get the management unit to which the currently logged in agent belongs
 [**getWorkforcemanagementBusinessunit**](WorkforceManagementApi.html#getWorkforcemanagementBusinessunit) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId} | Get business unit
 [**getWorkforcemanagementBusinessunitActivitycode**](WorkforceManagementApi.html#getWorkforcemanagementBusinessunitActivitycode) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes/{activityCodeId} | Get an activity code
 [**getWorkforcemanagementBusinessunitActivitycodes**](WorkforceManagementApi.html#getWorkforcemanagementBusinessunitActivitycodes) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes | Get activity codes
@@ -44,6 +47,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getWorkforcemanagementBusinessunitsDivisionviews**](WorkforceManagementApi.html#getWorkforcemanagementBusinessunitsDivisionviews) | **GET** /api/v2/workforcemanagement/businessunits/divisionviews | Get business units across divisions
 [**getWorkforcemanagementHistoricaldataDeletejob**](WorkforceManagementApi.html#getWorkforcemanagementHistoricaldataDeletejob) | **GET** /api/v2/workforcemanagement/historicaldata/deletejob | Retrieves delete job status for historical data imports of the organization
 [**getWorkforcemanagementHistoricaldataImportstatus**](WorkforceManagementApi.html#getWorkforcemanagementHistoricaldataImportstatus) | **GET** /api/v2/workforcemanagement/historicaldata/importstatus | Retrieves status of the historical data imports of the organization
+[**getWorkforcemanagementManagementunit**](WorkforceManagementApi.html#getWorkforcemanagementManagementunit) | **GET** /api/v2/workforcemanagement/managementunits/{managementUnitId} | Get management unit
 [**getWorkforcemanagementManagementunitActivitycodes**](WorkforceManagementApi.html#getWorkforcemanagementManagementunitActivitycodes) | **GET** /api/v2/workforcemanagement/managementunits/{managementUnitId}/activitycodes | Get activity codes
 [**getWorkforcemanagementManagementunitAdherence**](WorkforceManagementApi.html#getWorkforcemanagementManagementunitAdherence) | **GET** /api/v2/workforcemanagement/managementunits/{managementUnitId}/adherence | Get a list of user schedule adherence records for the requested management unit
 [**getWorkforcemanagementManagementunitAgent**](WorkforceManagementApi.html#getWorkforcemanagementManagementunitAgent) | **GET** /api/v2/workforcemanagement/managementunits/{managementUnitId}/agents/{agentId} | Get data for agent in the management unit
@@ -72,6 +76,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**patchWorkforcemanagementBusinessunitPlanninggroup**](WorkforceManagementApi.html#patchWorkforcemanagementBusinessunitPlanninggroup) | **PATCH** /api/v2/workforcemanagement/businessunits/{businessUnitId}/planninggroups/{planningGroupId} | Updates the planning group
 [**patchWorkforcemanagementBusinessunitSchedulingRun**](WorkforceManagementApi.html#patchWorkforcemanagementBusinessunitSchedulingRun) | **PATCH** /api/v2/workforcemanagement/businessunits/{businessUnitId}/scheduling/runs/{runId} | Mark a schedule run as applied
 [**patchWorkforcemanagementBusinessunitServicegoaltemplate**](WorkforceManagementApi.html#patchWorkforcemanagementBusinessunitServicegoaltemplate) | **PATCH** /api/v2/workforcemanagement/businessunits/{businessUnitId}/servicegoaltemplates/{serviceGoalTemplateId} | Updates a service goal template
+[**patchWorkforcemanagementManagementunit**](WorkforceManagementApi.html#patchWorkforcemanagementManagementunit) | **PATCH** /api/v2/workforcemanagement/managementunits/{managementUnitId} | Update the requested management unit
 [**patchWorkforcemanagementManagementunitUserTimeoffrequest**](WorkforceManagementApi.html#patchWorkforcemanagementManagementunitUserTimeoffrequest) | **PATCH** /api/v2/workforcemanagement/managementunits/{managementUnitId}/users/{userId}/timeoffrequests/{timeOffRequestId} | Update a time off request
 [**patchWorkforcemanagementManagementunitWeekShifttrade**](WorkforceManagementApi.html#patchWorkforcemanagementManagementunitWeekShifttrade) | **PATCH** /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades/{tradeId} | Updates a shift trade. This route can only be called by the initiating agent
 [**patchWorkforcemanagementManagementunitWorkplan**](WorkforceManagementApi.html#patchWorkforcemanagementManagementunitWorkplan) | **PATCH** /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans/{workPlanId} | Update a work plan
@@ -516,6 +521,61 @@ apiInstance.deleteWorkforcemanagementBusinessunitWeekShorttermforecast(businessU
 
 void (no response body)
 
+<a name="deleteWorkforcemanagementManagementunit"></a>
+
+# void deleteWorkforcemanagementManagementunit(managementUnitId)
+
+
+
+DELETE /api/v2/workforcemanagement/managementunits/{managementUnitId}
+
+Delete management unit
+
+
+
+Requires ANY permissions: 
+
+* wfm:managementUnit:delete
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+
+apiInstance.deleteWorkforcemanagementManagementunit(managementUnitId)
+  .then(() => {
+    console.log('deleteWorkforcemanagementManagementunit returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteWorkforcemanagementManagementunit');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **managementUnitId** | **String** | The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
+
 <a name="deleteWorkforcemanagementManagementunitWorkplan"></a>
 
 # void deleteWorkforcemanagementManagementunitWorkplan(managementUnitId, workPlanId)
@@ -739,6 +799,172 @@ apiInstance.getWorkforcemanagementAdhocmodelingjob(jobId)
 ### Return type
 
 **ModelingStatusResponse**
+
+<a name="getWorkforcemanagementAgentManagementunit"></a>
+
+# AgentManagementUnitReference getWorkforcemanagementAgentManagementunit(agentId)
+
+
+
+GET /api/v2/workforcemanagement/agents/{agentId}/managementunit
+
+Get the management unit to which the agent belongs
+
+
+
+Requires ANY permissions: 
+
+* wfm:agent:view
+* wfm:publishedSchedule:view
+* wfm:schedule:view
+* coaching:appointment:add
+* coaching:appointment:edit
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let agentId = "agentId_example"; // String | The ID of the agent to look up
+
+apiInstance.getWorkforcemanagementAgentManagementunit(agentId)
+  .then((data) => {
+    console.log(`getWorkforcemanagementAgentManagementunit success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getWorkforcemanagementAgentManagementunit');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **agentId** | **String** | The ID of the agent to look up |  |
+{: class="table table-striped"}
+
+### Return type
+
+**AgentManagementUnitReference**
+
+<a name="getWorkforcemanagementAgentsMeManagementunit"></a>
+
+# AgentManagementUnitReference getWorkforcemanagementAgentsMeManagementunit()
+
+
+
+GET /api/v2/workforcemanagement/agents/me/managementunit
+
+Get the management unit to which the currently logged in agent belongs
+
+
+
+Requires ANY permissions: 
+
+* wfm:agentSchedule:view
+* wfm:agentTimeOffRequest:submit
+* wfm:activityCode:add
+* wfm:activityCode:delete
+* wfm:activityCode:edit
+* wfm:activityCode:view
+* wfm:agent:edit
+* wfm:agent:view
+* wfm:businessUnit:add
+* wfm:businessUnit:delete
+* wfm:businessUnit:edit
+* wfm:businessUnit:view
+* wfm:historicalAdherence:view
+* wfm:intraday:view
+* wfm:managementUnit:add
+* wfm:managementUnit:delete
+* wfm:managementUnit:edit
+* wfm:managementUnit:view
+* wfm:realtimeAdherence:view
+* wfm:schedule:add
+* wfm:schedule:delete
+* wfm:schedule:edit
+* wfm:schedule:generate
+* wfm:schedule:view
+* wfm:publishedSchedule:view
+* wfm:serviceGoalTemplate:add
+* wfm:serviceGoalTemplate:delete
+* wfm:serviceGoalTemplate:edit
+* wfm:serviceGoalTemplate:view
+* wfm:planningGroup:add
+* wfm:planningGroup:delete
+* wfm:planningGroup:edit
+* wfm:planningGroup:view
+* wfm:shiftTradeRequest:edit
+* wfm:shiftTradeRequest:view
+* wfm:shortTermForecast:add
+* wfm:shortTermForecast:delete
+* wfm:shortTermForecast:edit
+* wfm:shortTermForecast:view
+* wfm:timeOffLimit:add
+* wfm:timeOffLimit:delete
+* wfm:timeOffLimit:edit
+* wfm:timeOffLimit:view
+* wfm:timeOffPlan:add
+* wfm:timeOffPlan:delete
+* wfm:timeOffPlan:edit
+* wfm:timeOffPlan:view
+* wfm:timeOffRequest:add
+* wfm:timeOffRequest:edit
+* wfm:timeOffRequest:view
+* wfm:workPlan:add
+* wfm:workPlan:delete
+* wfm:workPlan:edit
+* wfm:workPlan:view
+* wfm:workPlanRotation:add
+* wfm:workPlanRotation:delete
+* wfm:workPlanRotation:edit
+* wfm:workPlanRotation:view
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+apiInstance.getWorkforcemanagementAgentsMeManagementunit()
+  .then((data) => {
+    console.log(`getWorkforcemanagementAgentsMeManagementunit success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getWorkforcemanagementAgentsMeManagementunit');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+{: class="table table-striped"}
+
+### Return type
+
+**AgentManagementUnitReference**
 
 <a name="getWorkforcemanagementBusinessunit"></a>
 
@@ -987,6 +1213,10 @@ Requires ANY permissions:
 * wfm:workPlan:delete
 * wfm:workPlan:edit
 * wfm:workPlan:view
+* wfm:workPlanRotation:add
+* wfm:workPlanRotation:delete
+* wfm:workPlanRotation:edit
+* wfm:workPlanRotation:view
 
 
 
@@ -2386,6 +2616,123 @@ This endpoint does not need any parameter.
 
 **HistoricalImportStatusListing**
 
+<a name="getWorkforcemanagementManagementunit"></a>
+
+# ManagementUnit getWorkforcemanagementManagementunit(managementUnitId, opts)
+
+
+
+GET /api/v2/workforcemanagement/managementunits/{managementUnitId}
+
+Get management unit
+
+settings.shortTermForecasting is deprecated and now lives on the business unit
+
+Requires ANY permissions: 
+
+* wfm:activityCode:add
+* wfm:activityCode:delete
+* wfm:activityCode:edit
+* wfm:activityCode:view
+* wfm:agent:edit
+* wfm:agentSchedule:view
+* wfm:agentTimeOffRequest:submit
+* wfm:agent:view
+* wfm:businessUnit:add
+* wfm:businessUnit:delete
+* wfm:businessUnit:edit
+* wfm:businessUnit:view
+* wfm:historicalAdherence:view
+* wfm:intraday:view
+* wfm:managementUnit:add
+* wfm:managementUnit:delete
+* wfm:managementUnit:edit
+* wfm:managementUnit:view
+* wfm:publishedSchedule:view
+* wfm:realtimeAdherence:view
+* wfm:schedule:add
+* wfm:schedule:delete
+* wfm:schedule:edit
+* wfm:schedule:generate
+* wfm:schedule:view
+* wfm:serviceGoalTemplate:add
+* wfm:serviceGoalTemplate:delete
+* wfm:serviceGoalTemplate:edit
+* wfm:serviceGoalTemplate:view
+* wfm:planningGroup:add
+* wfm:planningGroup:delete
+* wfm:planningGroup:edit
+* wfm:planningGroup:view
+* wfm:shiftTradeRequest:edit
+* wfm:shiftTradeRequest:view
+* wfm:agentShiftTradeRequest:participate
+* wfm:shortTermForecast:add
+* wfm:shortTermForecast:delete
+* wfm:shortTermForecast:edit
+* wfm:shortTermForecast:view
+* wfm:timeOffLimit:add
+* wfm:timeOffLimit:delete
+* wfm:timeOffLimit:edit
+* wfm:timeOffLimit:view
+* wfm:timeOffPlan:add
+* wfm:timeOffPlan:delete
+* wfm:timeOffPlan:edit
+* wfm:timeOffPlan:view
+* wfm:timeOffRequest:add
+* wfm:timeOffRequest:edit
+* wfm:timeOffRequest:view
+* wfm:workPlan:add
+* wfm:workPlan:delete
+* wfm:workPlan:edit
+* wfm:workPlan:view
+* wfm:workPlanRotation:add
+* wfm:workPlanRotation:delete
+* wfm:workPlanRotation:edit
+* wfm:workPlanRotation:view
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+let opts = { 
+  'expand': ["expand_example"] // [String] | 
+};
+
+apiInstance.getWorkforcemanagementManagementunit(managementUnitId, opts)
+  .then((data) => {
+    console.log(`getWorkforcemanagementManagementunit success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getWorkforcemanagementManagementunit');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **managementUnitId** | **String** | The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+ **expand** | **[String]** |  | [optional] <br />**Values**: settings, settings.adherence, settings.timeOff, settings.scheduling, settings.shortTermForecasting, settings.shiftTrading |
+{: class="table table-striped"}
+
+### Return type
+
+**ManagementUnit**
+
 <a name="getWorkforcemanagementManagementunitActivitycodes"></a>
 
 # ActivityCodeContainer getWorkforcemanagementManagementunitActivitycodes(managementUnitId)
@@ -2436,6 +2783,10 @@ Requires ANY permissions:
 * wfm:workPlan:delete
 * wfm:workPlan:edit
 * wfm:workPlan:view
+* wfm:workPlanRotation:add
+* wfm:workPlanRotation:delete
+* wfm:workPlanRotation:edit
+* wfm:workPlanRotation:view
 
 
 
@@ -3327,7 +3678,7 @@ GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans
 
 Get work plans
 
-
+\&quot;expand=details\&quot; is deprecated
 
 Requires ANY permissions: 
 
@@ -3373,7 +3724,7 @@ apiInstance.getWorkforcemanagementManagementunitWorkplans(managementUnitId, opts
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **managementUnitId** | **String** | The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
- **expand** | **[String]** |  | [optional] <br />**Values**: agentCount, details |
+ **expand** | **[String]** |  | [optional] <br />**Values**: agentCount, agents, optionalDays, shifts, shiftStartVariances, details |
 {: class="table table-striped"}
 
 ### Return type
@@ -3783,7 +4134,7 @@ Update business unit
 
 
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * wfm:businessUnit:edit
 
@@ -4282,6 +4633,156 @@ apiInstance.patchWorkforcemanagementBusinessunitServicegoaltemplate(businessUnit
 
 **ServiceGoalTemplate**
 
+<a name="patchWorkforcemanagementManagementunit"></a>
+
+# ManagementUnit patchWorkforcemanagementManagementunit(managementUnitId, opts)
+
+
+
+PATCH /api/v2/workforcemanagement/managementunits/{managementUnitId}
+
+Update the requested management unit
+
+
+
+Requires ANY permissions: 
+
+* wfm:managementUnit:edit
+
+
+### Request Body Schema
+
+<script type="text/javascript">
+	function copyUpdateManagementUnitRequestExample() {
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#UpdateManagementUnitRequestExample').text()).select();
+		document.execCommand("copy");
+		temp.remove();
+		return false;
+	}
+</script>
+
+UpdateManagementUnitRequest <a href="#" onclick="return copyUpdateManagementUnitRequestExample()">Copy</a>
+
+<div id="UpdateManagementUnitRequestExample">
+
+```{"language":"json", "maxHeight": "250px"}
+{ 
+  "name": String, 
+  "divisionId": String, 
+  "settings": { 
+    "adherence": { 
+      "severeAlertThresholdMinutes": Number, 
+      "adherenceTargetPercent": Number, 
+      "adherenceExceptionThresholdSeconds": Number, 
+      "nonOnQueueActivitiesEquivalent": Boolean, 
+      "trackOnQueueActivity": Boolean, 
+      "ignoredActivityCategories": { 
+        "values": [String], 
+      },  
+    },  
+    "shortTermForecasting": { 
+      "defaultHistoryWeeks": Number, 
+    },  
+    "timeOff": { 
+      "submissionRangeEnforced": Boolean, 
+      "submissionEarliestDaysFromNow": Number, 
+      "submissionLatestDaysFromNow": Number, 
+    },  
+    "scheduling": { 
+      "maxOccupancyPercentForDeferredWork": Number, 
+      "defaultShrinkagePercent": Number, 
+      "shrinkageOverrides": { 
+        "clear": Boolean, 
+        "values": { 
+          "intervalIndex": Number, 
+          "shrinkagePercent": Number, 
+        },  
+      },  
+      "planningPeriod": { 
+        "value": { 
+          "weekCount": Number, 
+          "startDate": String, 
+        },  
+      },  
+      "startDayOfWeekend": String, 
+    },  
+    "shiftTrading": { 
+      "enabled": Boolean, 
+      "autoReview": Boolean, 
+      "allowDirectTrades": Boolean, 
+      "minHoursInFuture": Number, 
+      "unequalPaid": String, 
+      "oneSided": String, 
+      "weeklyMinPaidViolations": String, 
+      "weeklyMaxPaidViolations": String, 
+      "requiresMatchingQueues": Boolean, 
+      "requiresMatchingLanguages": Boolean, 
+      "requiresMatchingSkills": Boolean, 
+      "requiresMatchingPlanningGroups": Boolean, 
+      "activityCategoryRules": { 
+        "activityCategory": String, 
+        "action": String, 
+        "activityCodeIdReplacement": String, 
+      },  
+    },  
+    "metadata": { 
+      "version": Number, 
+      "modifiedBy": { 
+        "id": String, 
+        "selfUri": String, 
+      },  
+      "dateModified": Date, 
+    },  
+  },  
+}
+```
+
+</div>
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+let opts = { 
+  'body': {} // Object | body
+};
+
+apiInstance.patchWorkforcemanagementManagementunit(managementUnitId, opts)
+  .then((data) => {
+    console.log(`patchWorkforcemanagementManagementunit success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchWorkforcemanagementManagementunit');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **managementUnitId** | **String** | The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+ **body** | **Object** | body | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**ManagementUnit**
+
 <a name="patchWorkforcemanagementManagementunitUserTimeoffrequest"></a>
 
 # TimeOffRequestResponse patchWorkforcemanagementManagementunitUserTimeoffrequest(managementUnitId, userId, timeOffRequestId, opts)
@@ -4524,6 +5025,7 @@ WorkPlan <a href="#" onclick="return copyWorkPlanExample()">Copy</a>
   "id": String, 
   "name": String, 
   "enabled": Boolean, 
+  "valid": Boolean, 
   "constrainWeeklyPaidTime": Boolean, 
   "flexibleWeeklyPaidTime": Boolean, 
   "weeklyExactPaidMinutes": Number, 
@@ -4593,9 +5095,11 @@ WorkPlan <a href="#" onclick="return copyWorkPlanExample()">Copy</a>
       "minimumLengthFromShiftEndMinutes": Number, 
       "id": String, 
       "delete": Boolean, 
+      "validationId": String, 
     },  
     "id": String, 
     "delete": Boolean, 
+    "validationId": String, 
   },  
   "agents": { 
     "id": String, 
@@ -6547,7 +7051,7 @@ Move the requested management unit to a new business unit
 
 Returns status 200 if the management unit is already in the requested business unit
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * wfm:managementUnit:edit
 
@@ -7383,6 +7887,7 @@ WorkPlanValidationRequest <a href="#" onclick="return copyWorkPlanValidationRequ
   "id": String, 
   "name": String, 
   "enabled": Boolean, 
+  "valid": Boolean, 
   "constrainWeeklyPaidTime": Boolean, 
   "flexibleWeeklyPaidTime": Boolean, 
   "weeklyExactPaidMinutes": Number, 
@@ -7452,9 +7957,11 @@ WorkPlanValidationRequest <a href="#" onclick="return copyWorkPlanValidationRequ
       "minimumLengthFromShiftEndMinutes": Number, 
       "id": String, 
       "delete": Boolean, 
+      "validationId": String, 
     },  
     "id": String, 
     "delete": Boolean, 
+    "validationId": String, 
   },  
   "agents": { 
     "id": String, 
@@ -7870,7 +8377,7 @@ Add a management unit
 
 It may take a minute or two for a new management unit to be available for api operations
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * wfm:managementUnit:add
 

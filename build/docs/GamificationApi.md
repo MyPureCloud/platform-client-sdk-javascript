@@ -7,8 +7,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-[**getGamificationLeaderboard**](GamificationApi.html#getGamificationLeaderboard) | **GET** /api/v2/gamification/leaderboard | Leaderboard of the requesting user&#39;s division
-[**getGamificationLeaderboardAll**](GamificationApi.html#getGamificationLeaderboardAll) | **GET** /api/v2/gamification/leaderboard/all | Leaderboard by division
+[**getGamificationLeaderboard**](GamificationApi.html#getGamificationLeaderboard) | **GET** /api/v2/gamification/leaderboard | Leaderboard of the requesting user&#39;s division or performance profile
+[**getGamificationLeaderboardAll**](GamificationApi.html#getGamificationLeaderboardAll) | **GET** /api/v2/gamification/leaderboard/all | Leaderboard by filter type
 [**getGamificationLeaderboardAllBestpoints**](GamificationApi.html#getGamificationLeaderboardAllBestpoints) | **GET** /api/v2/gamification/leaderboard/all/bestpoints | Best Points by division
 [**getGamificationLeaderboardBestpoints**](GamificationApi.html#getGamificationLeaderboardBestpoints) | **GET** /api/v2/gamification/leaderboard/bestpoints | Best Points of the requesting user&#39;s division
 [**getGamificationMetric**](GamificationApi.html#getGamificationMetric) | **GET** /api/v2/gamification/metrics/{metricId} | Gamified metric by id
@@ -51,7 +51,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 GET /api/v2/gamification/leaderboard
 
-Leaderboard of the requesting user&#39;s division
+Leaderboard of the requesting user&#39;s division or performance profile
 
 
 
@@ -112,7 +112,7 @@ apiInstance.getGamificationLeaderboard(startWorkday, endWorkday, opts)
 
 GET /api/v2/gamification/leaderboard/all
 
-Leaderboard by division
+Leaderboard by filter type
 
 
 
@@ -158,7 +158,7 @@ apiInstance.getGamificationLeaderboardAll(filterType, filterId, startWorkday, en
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **filterType** | **String** | Filter type for the query request. | <br />**Values**: Division |
+ **filterType** | **String** | Filter type for the query request. | <br />**Values**: PerformanceProfile, Division |
  **filterId** | **String** | ID for the filter type. For example, division Id |  |
  **startWorkday** | **String** | Start workday to retrieve for the leaderboard. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **endWorkday** | **String** | End workday to retrieve for the leaderboard. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
@@ -218,7 +218,7 @@ apiInstance.getGamificationLeaderboardAllBestpoints(filterType, filterId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **filterType** | **String** | Filter type for the query request. | <br />**Values**: Division |
+ **filterType** | **String** | Filter type for the query request. | <br />**Values**: PerformanceProfile, Division |
  **filterId** | **String** | ID for the filter type. For example, division Id |  |
 {: class="table table-striped"}
 
@@ -278,7 +278,7 @@ This endpoint does not need any parameter.
 
 <a name="getGamificationMetric"></a>
 
-# Metric getGamificationMetric(metricId)
+# Metric getGamificationMetric(metricId, opts)
 
 
 
@@ -310,8 +310,11 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.GamificationApi();
 
 let metricId = "metricId_example"; // String | metric Id
+let opts = { 
+  'performanceProfileId': "performanceProfileId_example" // String | The profile id of the metrics you are trying to retrieve. The DEFAULT profile is used if nothing is given.
+};
 
-apiInstance.getGamificationMetric(metricId)
+apiInstance.getGamificationMetric(metricId, opts)
   .then((data) => {
     console.log(`getGamificationMetric success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -327,6 +330,7 @@ apiInstance.getGamificationMetric(metricId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **metricId** | **String** | metric Id |  |
+ **performanceProfileId** | **String** | The profile id of the metrics you are trying to retrieve. The DEFAULT profile is used if nothing is given. | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -633,7 +637,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.GamificationApi();
 
-let workday = "2013-10-20"; // String | Target querying workday. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd
+let workday = "2013-10-20"; // String | Target querying workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 let opts = { 
   'expand': ["expand_example"] // [String] | Which fields, if any, to expand.
 };
@@ -653,7 +657,7 @@ apiInstance.getGamificationScorecards(workday, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **workday** | **String** | Target querying workday. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+ **workday** | **String** | Target querying workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **expand** | **[String]** | Which fields, if any, to expand. | [optional] <br />**Values**: objective |
 {: class="table table-striped"}
 
@@ -692,8 +696,8 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.GamificationApi();
 
-let startWorkday = "2013-10-20"; // String | Start workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd
-let endWorkday = "2013-10-20"; // String | End workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd
+let startWorkday = "2013-10-20"; // String | Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+let endWorkday = "2013-10-20"; // String | End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 
 apiInstance.getGamificationScorecardsAttendance(startWorkday, endWorkday)
   .then((data) => {
@@ -710,8 +714,8 @@ apiInstance.getGamificationScorecardsAttendance(startWorkday, endWorkday)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **startWorkday** | **String** | Start workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
- **endWorkday** | **String** | End workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+ **startWorkday** | **String** | Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+ **endWorkday** | **String** | End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -799,7 +803,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.GamificationApi();
 
-let endWorkday = "2013-10-20"; // String | End workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd
+let endWorkday = "2013-10-20"; // String | End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 
 apiInstance.getGamificationScorecardsPointsAlltime(endWorkday)
   .then((data) => {
@@ -816,7 +820,7 @@ apiInstance.getGamificationScorecardsPointsAlltime(endWorkday)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **endWorkday** | **String** | End workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+ **endWorkday** | **String** | End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -909,8 +913,8 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.GamificationApi();
 
-let startWorkday = "2013-10-20"; // String | Start workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd
-let endWorkday = "2013-10-20"; // String | End workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd
+let startWorkday = "2013-10-20"; // String | Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+let endWorkday = "2013-10-20"; // String | End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 let opts = { 
   'dayOfWeek': "dayOfWeek_example" // String | Optional filter to specify which day of weeks to be included in the response
 };
@@ -930,8 +934,8 @@ apiInstance.getGamificationScorecardsPointsTrends(startWorkday, endWorkday, opts
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **startWorkday** | **String** | Start workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
- **endWorkday** | **String** | End workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+ **startWorkday** | **String** | Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+ **endWorkday** | **String** | End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **dayOfWeek** | **String** | Optional filter to specify which day of weeks to be included in the response | [optional] <br />**Values**: Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday |
 {: class="table table-striped"}
 
@@ -971,7 +975,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.GamificationApi();
 
 let userId = "userId_example"; // String | 
-let workday = "2013-10-20"; // String | Target querying workday. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd
+let workday = "2013-10-20"; // String | Target querying workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 let opts = { 
   'expand': ["expand_example"] // [String] | Which fields, if any, to expand.
 };
@@ -992,7 +996,7 @@ apiInstance.getGamificationScorecardsUser(userId, workday, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** |  |  |
- **workday** | **String** | Target querying workday. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+ **workday** | **String** | Target querying workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **expand** | **[String]** | Which fields, if any, to expand. | [optional] <br />**Values**: objective |
 {: class="table table-striped"}
 
@@ -1032,8 +1036,8 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.GamificationApi();
 
 let userId = "userId_example"; // String | 
-let startWorkday = "2013-10-20"; // String | Start workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd
-let endWorkday = "2013-10-20"; // String | End workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd
+let startWorkday = "2013-10-20"; // String | Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+let endWorkday = "2013-10-20"; // String | End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 
 apiInstance.getGamificationScorecardsUserAttendance(userId, startWorkday, endWorkday)
   .then((data) => {
@@ -1051,8 +1055,8 @@ apiInstance.getGamificationScorecardsUserAttendance(userId, startWorkday, endWor
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** |  |  |
- **startWorkday** | **String** | Start workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
- **endWorkday** | **String** | End workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+ **startWorkday** | **String** | Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+ **endWorkday** | **String** | End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1146,7 +1150,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.GamificationApi();
 
 let userId = "userId_example"; // String | 
-let endWorkday = "2013-10-20"; // String | End workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd
+let endWorkday = "2013-10-20"; // String | End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 
 apiInstance.getGamificationScorecardsUserPointsAlltime(userId, endWorkday)
   .then((data) => {
@@ -1164,7 +1168,7 @@ apiInstance.getGamificationScorecardsUserPointsAlltime(userId, endWorkday)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** |  |  |
- **endWorkday** | **String** | End workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+ **endWorkday** | **String** | End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1203,8 +1207,8 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.GamificationApi();
 
 let userId = "userId_example"; // String | 
-let startWorkday = "2013-10-20"; // String | Start workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd
-let endWorkday = "2013-10-20"; // String | End workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd
+let startWorkday = "2013-10-20"; // String | Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+let endWorkday = "2013-10-20"; // String | End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 let opts = { 
   'dayOfWeek': "dayOfWeek_example" // String | Optional filter to specify which day of weeks to be included in the response
 };
@@ -1225,8 +1229,8 @@ apiInstance.getGamificationScorecardsUserPointsTrends(userId, startWorkday, endW
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** |  |  |
- **startWorkday** | **String** | Start workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
- **endWorkday** | **String** | End workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+ **startWorkday** | **String** | Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+ **endWorkday** | **String** | End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **dayOfWeek** | **String** | Optional filter to specify which day of weeks to be included in the response | [optional] <br />**Values**: Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday |
 {: class="table table-striped"}
 
@@ -1266,8 +1270,8 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.GamificationApi();
 
 let userId = "userId_example"; // String | 
-let startWorkday = "2013-10-20"; // String | Start workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd
-let endWorkday = "2013-10-20"; // String | End workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd
+let startWorkday = "2013-10-20"; // String | Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+let endWorkday = "2013-10-20"; // String | End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 let opts = { 
   'timeZone': "UTC" // String | Timezone for the workday. Defaults to UTC
 };
@@ -1288,8 +1292,8 @@ apiInstance.getGamificationScorecardsUserValuesTrends(userId, startWorkday, endW
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** |  |  |
- **startWorkday** | **String** | Start workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
- **endWorkday** | **String** | End workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+ **startWorkday** | **String** | Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+ **endWorkday** | **String** | End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **timeZone** | **String** | Timezone for the workday. Defaults to UTC | [optional] [default to UTC] |
 {: class="table table-striped"}
 
@@ -1347,7 +1351,7 @@ apiInstance.getGamificationScorecardsUsersPointsAverage(filterType, filterId, wo
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **filterType** | **String** | Filter type for the query request. | <br />**Values**: Division |
+ **filterType** | **String** | Filter type for the query request. | <br />**Values**: PerformanceProfile, Division |
  **filterId** | **String** | ID for the filter type. |  |
  **workday** | **String** | The target workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
 {: class="table table-striped"}
@@ -1409,7 +1413,7 @@ apiInstance.getGamificationScorecardsUsersValuesAverage(filterType, filterId, wo
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **filterType** | **String** | Filter type for the query request. | <br />**Values**: Division |
+ **filterType** | **String** | Filter type for the query request. | <br />**Values**: PerformanceProfile, Division |
  **filterId** | **String** | ID for the filter type. For example, division Id |  |
  **workday** | **String** | The target workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **timeZone** | **String** | Timezone for the workday. Defaults to UTC | [optional] [default to UTC] |
@@ -1452,8 +1456,8 @@ let apiInstance = new platformClient.GamificationApi();
 
 let filterType = "filterType_example"; // String | Filter type for the query request.
 let filterId = "filterId_example"; // String | ID for the filter type.
-let startWorkday = "2013-10-20"; // String | Start workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd
-let endWorkday = "2013-10-20"; // String | End workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd
+let startWorkday = "2013-10-20"; // String | Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+let endWorkday = "2013-10-20"; // String | End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 let opts = { 
   'timeZone': "UTC" // String | Timezone for the workday. Defaults to UTC
 };
@@ -1473,10 +1477,10 @@ apiInstance.getGamificationScorecardsUsersValuesTrends(filterType, filterId, sta
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **filterType** | **String** | Filter type for the query request. | <br />**Values**: Division |
+ **filterType** | **String** | Filter type for the query request. | <br />**Values**: PerformanceProfile, Division |
  **filterId** | **String** | ID for the filter type. |  |
- **startWorkday** | **String** | Start workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
- **endWorkday** | **String** | End workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+ **startWorkday** | **String** | Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+ **endWorkday** | **String** | End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **timeZone** | **String** | Timezone for the workday. Defaults to UTC | [optional] [default to UTC] |
 {: class="table table-striped"}
 
@@ -1574,8 +1578,8 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.GamificationApi();
 
-let startWorkday = "2013-10-20"; // String | Start workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd
-let endWorkday = "2013-10-20"; // String | End workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd
+let startWorkday = "2013-10-20"; // String | Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+let endWorkday = "2013-10-20"; // String | End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 let opts = { 
   'filterType': "filterType_example", // String | Filter type for the query request. If not set, then the request is for the requesting user.
   'timeZone': "UTC" // String | Timezone for the workday. Defaults to UTC
@@ -1596,9 +1600,9 @@ apiInstance.getGamificationScorecardsValuesTrends(startWorkday, endWorkday, opts
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **startWorkday** | **String** | Start workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
- **endWorkday** | **String** | End workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
- **filterType** | **String** | Filter type for the query request. If not set, then the request is for the requesting user. | [optional] <br />**Values**: Division |
+ **startWorkday** | **String** | Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+ **endWorkday** | **String** | End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+ **filterType** | **String** | Filter type for the query request. If not set, then the request is for the requesting user. | [optional] <br />**Values**: PerformanceProfile, Division |
  **timeZone** | **String** | Timezone for the workday. Defaults to UTC | [optional] [default to UTC] |
 {: class="table table-striped"}
 
@@ -1864,7 +1868,7 @@ apiInstance.postGamificationMetrics(body)
 
 <a name="putGamificationMetric"></a>
 
-# Metric putGamificationMetric(metricId, body)
+# Metric putGamificationMetric(metricId, body, opts)
 
 
 
@@ -1939,8 +1943,11 @@ let apiInstance = new platformClient.GamificationApi();
 
 let metricId = "metricId_example"; // String | metric Id
 let body = {}; // Object | Metric
+let opts = { 
+  'performanceProfileId': "performanceProfileId_example" // String | The profile id of the metrics you are trying to retrieve. The DEFAULT profile is used if nothing is given.
+};
 
-apiInstance.putGamificationMetric(metricId, body)
+apiInstance.putGamificationMetric(metricId, body, opts)
   .then((data) => {
     console.log(`putGamificationMetric success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1957,6 +1964,7 @@ apiInstance.putGamificationMetric(metricId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **metricId** | **String** | metric Id |  |
  **body** | **Object** | Metric |  |
+ **performanceProfileId** | **String** | The profile id of the metrics you are trying to retrieve. The DEFAULT profile is used if nothing is given. | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2001,8 +2009,20 @@ PerformanceProfile <a href="#" onclick="return copyPerformanceProfileExample()">
 { 
   "id": String, 
   "name": String, 
+  "division": { 
+    "id": String, 
+    "name": String, 
+    "selfUri": String, 
+  },  
   "description": String, 
   "metricOrders": [String], 
+  "dateCreated": Date, 
+  "reportingIntervals": { 
+    "intervalType": String, 
+    "intervalValue": Number, 
+  },  
+  "active": Boolean, 
+  "maxLeaderboardRankSize": Number, 
   "selfUri": String, 
 }
 ```

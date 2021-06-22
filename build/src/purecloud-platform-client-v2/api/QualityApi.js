@@ -5,7 +5,7 @@ class QualityApi {
 	/**
 	 * Quality service.
 	 * @module purecloud-platform-client-v2/api/QualityApi
-	 * @version 113.2.0
+	 * @version 114.0.0
 	 */
 
 	/**
@@ -263,7 +263,7 @@ class QualityApi {
 
 	/**
 	 * Get audits for conversation or recording
-	 * Different permissions are required for viewing different resource audit entries.  The quality:evaluation:viewAudit permission is required to view evaluation audits, the recording:recording:viewAudit permission is required to view recording audits, and so on.
+	 * Different permissions are required for viewing different resource audit entries.  The quality:evaluation:viewAudit permission is required to view evaluation audits, the recording:recording:viewAudit permission is required to view recording audits, and so on.This endpoint is deprecated. Use following async endpoints, To query for audits POST /api/v2/quality/conversations/audits/queryTo get status of audit query GET /api/v2/quality/conversations/audits/query/{transactionId}To get results of audit query GET /api/v2/quality/conversations/audits/query/{transactionId}/results
 	 * @param {String} conversationId Conversation ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize The total page size requested (default to 25)
@@ -347,6 +347,62 @@ class QualityApi {
 			'GET', 
 			{ 'conversationId': conversationId }, 
 			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get status of audit query execution
+	 * 
+	 * @param {String} transactionId Transaction ID
+	 */
+	getQualityConversationsAuditsQueryTransactionId(transactionId) { 
+		// verify the required parameter 'transactionId' is set
+		if (transactionId === undefined || transactionId === null) {
+			throw 'Missing the required parameter "transactionId" when calling getQualityConversationsAuditsQueryTransactionId';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/quality/conversations/audits/query/{transactionId}', 
+			'GET', 
+			{ 'transactionId': transactionId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get results of audit query
+	 * 
+	 * @param {String} transactionId Transaction ID
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.cursor Indicates where to resume query results (not required for first page)
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {Array.<String>} opts.expand Which fields, if any, to expand
+	 */
+	getQualityConversationsAuditsQueryTransactionIdResults(transactionId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'transactionId' is set
+		if (transactionId === undefined || transactionId === null) {
+			throw 'Missing the required parameter "transactionId" when calling getQualityConversationsAuditsQueryTransactionIdResults';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/quality/conversations/audits/query/{transactionId}/results', 
+			'GET', 
+			{ 'transactionId': transactionId }, 
+			{ 'cursor': opts['cursor'],'pageSize': opts['pageSize'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -1094,6 +1150,31 @@ class QualityApi {
 	}
 
 	/**
+	 * Create audit query execution
+	 * 
+	 * @param {Object} body query
+	 */
+	postQualityConversationsAuditsQuery(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postQualityConversationsAuditsQuery';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/quality/conversations/audits/query', 
+			'POST', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
 	 * Score evaluation
 	 * 
 	 * @param {Object} body evaluationAndScoringSet
@@ -1456,22 +1537,23 @@ class QualityApi {
 	 * Update a survey as an end-customer, for the purposes of scoring it.
 	 * 
 	 * @param {Object} body survey
-	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.customerSurveyUrl customerSurveyUrl
+	 * @param {String} customerSurveyUrl customerSurveyUrl
 	 */
-	putQualitySurveysScorable(body, opts) { 
-		opts = opts || {};
-		
+	putQualitySurveysScorable(body, customerSurveyUrl) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling putQualitySurveysScorable';
+		}
+		// verify the required parameter 'customerSurveyUrl' is set
+		if (customerSurveyUrl === undefined || customerSurveyUrl === null) {
+			throw 'Missing the required parameter "customerSurveyUrl" when calling putQualitySurveysScorable';
 		}
 
 		return this.apiClient.callApi(
 			'/api/v2/quality/surveys/scorable', 
 			'PUT', 
 			{  }, 
-			{ 'customerSurveyUrl': opts['customerSurveyUrl'] }, 
+			{ 'customerSurveyUrl': customerSurveyUrl }, 
 			{  }, 
 			{  }, 
 			body, 

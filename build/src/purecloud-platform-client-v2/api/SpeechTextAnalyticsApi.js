@@ -5,7 +5,7 @@ class SpeechTextAnalyticsApi {
 	/**
 	 * SpeechTextAnalytics service.
 	 * @module purecloud-platform-client-v2/api/SpeechTextAnalyticsApi
-	 * @version 113.2.0
+	 * @version 114.0.0
 	 */
 
 	/**
@@ -175,6 +175,31 @@ class SpeechTextAnalyticsApi {
 	}
 
 	/**
+	 * Get Speech &amp; Text Analytics program mappings to queues and flows by id
+	 * 
+	 * @param {String} programId The id of the program
+	 */
+	getSpeechandtextanalyticsProgramMappings(programId) { 
+		// verify the required parameter 'programId' is set
+		if (programId === undefined || programId === null) {
+			throw 'Missing the required parameter "programId" when calling getSpeechandtextanalyticsProgramMappings';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/speechandtextanalytics/programs/{programId}/mappings', 
+			'GET', 
+			{ 'programId': programId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get the list of Speech &amp; Text Analytics programs
 	 * 
 	 * @param {Object} opts Optional parameters
@@ -215,6 +240,31 @@ class SpeechTextAnalyticsApi {
 			'GET', 
 			{ 'jobId': jobId }, 
 			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get the list of Speech &amp; Text Analytics programs mappings to queues and flows
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.nextPage The key for listing the next page
+	 * @param {Number} opts.pageSize The page size for the listing (default to 20)
+	 */
+	getSpeechandtextanalyticsProgramsMappings(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/speechandtextanalytics/programs/mappings', 
+			'GET', 
+			{  }, 
+			{ 'nextPage': opts['nextPage'],'pageSize': opts['pageSize'] }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -588,6 +638,61 @@ class SpeechTextAnalyticsApi {
 			'/api/v2/speechandtextanalytics/programs/{programId}', 
 			'PUT', 
 			{ 'programId': programId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Set Speech &amp; Text Analytics program mappings to queues and flows
+	 * 
+	 * @param {String} programId The id of the program
+	 * @param {Object} body The program to set mappings for
+	 */
+	putSpeechandtextanalyticsProgramMappings(programId, body) { 
+		// verify the required parameter 'programId' is set
+		if (programId === undefined || programId === null) {
+			throw 'Missing the required parameter "programId" when calling putSpeechandtextanalyticsProgramMappings';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putSpeechandtextanalyticsProgramMappings';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/speechandtextanalytics/programs/{programId}/mappings', 
+			'PUT', 
+			{ 'programId': programId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update Speech And Text Analytics Settings
+	 * 
+	 * @param {Object} body Speech And Text Analytics Settings
+	 */
+	putSpeechandtextanalyticsSettings(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putSpeechandtextanalyticsSettings';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/speechandtextanalytics/settings', 
+			'PUT', 
+			{  }, 
 			{  }, 
 			{  }, 
 			{  }, 

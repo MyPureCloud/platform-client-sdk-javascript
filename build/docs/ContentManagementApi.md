@@ -2962,6 +2962,11 @@ WorkspaceMember <a href="#" onclick="return copyWorkspaceMemberExample()">Copy</
     "team": { 
       "id": String, 
       "name": String, 
+      "division": { 
+        "id": String, 
+        "name": String, 
+        "selfUri": String, 
+      },  
       "description": String, 
       "dateModified": Date, 
       "memberCount": Number, 

@@ -5,7 +5,7 @@ class ArchitectApi {
 	/**
 	 * Architect service.
 	 * @module purecloud-platform-client-v2/api/ArchitectApi
-	 * @version 113.2.0
+	 * @version 114.0.0
 	 */
 
 	/**
@@ -995,6 +995,7 @@ class ArchitectApi {
 	 * @param {String} opts.sortOrder Sort order (default to ASC)
 	 * @param {String} opts.name Name of the Schedule Group to filter by.
 	 * @param {String} opts.scheduleIds A comma-delimited list of Schedule IDs to filter by.
+	 * @param {Array.<String>} opts.divisionId List of divisionIds on which to filter.
 	 */
 	getArchitectSchedulegroups(opts) { 
 		opts = opts || {};
@@ -1004,7 +1005,7 @@ class ArchitectApi {
 			'/api/v2/architect/schedulegroups', 
 			'GET', 
 			{  }, 
-			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'name': opts['name'],'scheduleIds': opts['scheduleIds'] }, 
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'name': opts['name'],'scheduleIds': opts['scheduleIds'],'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi') }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -1023,6 +1024,7 @@ class ArchitectApi {
 	 * @param {String} opts.sortBy Sort by (default to name)
 	 * @param {String} opts.sortOrder Sort order (default to ASC)
 	 * @param {String} opts.name Name of the Schedule to filter by.
+	 * @param {Array.<String>} opts.divisionId List of divisionIds on which to filter.
 	 */
 	getArchitectSchedules(opts) { 
 		opts = opts || {};
@@ -1032,7 +1034,7 @@ class ArchitectApi {
 			'/api/v2/architect/schedules', 
 			'GET', 
 			{  }, 
-			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'name': opts['name'] }, 
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'name': opts['name'],'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi') }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -2137,6 +2139,31 @@ class ArchitectApi {
 	}
 
 	/**
+	 * Generate flow history
+	 * Asynchronous.  Notification topic: v2.flows.{flowId}
+	 * @param {String} flowId Flow ID
+	 */
+	postFlowHistory(flowId) { 
+		// verify the required parameter 'flowId' is set
+		if (flowId === undefined || flowId === null) {
+			throw 'Missing the required parameter "flowId" when calling postFlowHistory';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/flows/{flowId}/history', 
+			'POST', 
+			{ 'flowId': flowId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
 	 * Create flow version
 	 * 
 	 * @param {String} flowId Flow ID
@@ -2170,8 +2197,12 @@ class ArchitectApi {
 	 * Create flow
 	 * 
 	 * @param {Object} body 
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.language Language
 	 */
-	postFlows(body) { 
+	postFlows(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postFlows';
@@ -2181,7 +2212,7 @@ class ArchitectApi {
 			'/api/v2/flows', 
 			'POST', 
 			{  }, 
-			{  }, 
+			{ 'language': opts['language'] }, 
 			{  }, 
 			{  }, 
 			body, 

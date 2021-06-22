@@ -30,7 +30,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getUserAdjacents**](UsersApi.html#getUserAdjacents) | **GET** /api/v2/users/{userId}/adjacents | Get adjacents
 [**getUserCallforwarding**](UsersApi.html#getUserCallforwarding) | **GET** /api/v2/users/{userId}/callforwarding | Get a user&#39;s CallForwarding
 [**getUserDirectreports**](UsersApi.html#getUserDirectreports) | **GET** /api/v2/users/{userId}/directreports | Get direct reports
-[**getUserFavorites**](UsersApi.html#getUserFavorites) | **GET** /api/v2/users/{userId}/favorites | Get favorites
+[**getUserFavorites**](UsersApi.html#getUserFavorites) | **GET** /api/v2/users/{userId}/favorites | Deprecated; will be revived with new contract
 [**getUserGeolocation**](UsersApi.html#getUserGeolocation) | **GET** /api/v2/users/{userId}/geolocations/{clientId} | Get a user&#39;s Geolocation
 [**getUserOutofoffice**](UsersApi.html#getUserOutofoffice) | **GET** /api/v2/users/{userId}/outofoffice | Get a OutOfOffice
 [**getUserProfile**](UsersApi.html#getUserProfile) | **GET** /api/v2/users/{userId}/profile | Get user profile
@@ -1399,11 +1399,11 @@ apiInstance.getUserDirectreports(userId, opts)
 
 # UserEntityListing getUserFavorites(userId, opts)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 GET /api/v2/users/{userId}/favorites
 
-Get favorites
+Deprecated; will be revived with new contract
 
 
 
@@ -2296,7 +2296,7 @@ apiInstance.getUsersDevelopmentActivities(opts)
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **sortOrder** | **String** | Specifies result set sort order sorted by the date due; if not specified, default sort order is descending (Desc) | [optional] [default to Desc]<br />**Values**: Asc, Desc |
- **types** | **[String]** | Specifies the activity types. | [optional] <br />**Values**: Informational, Coaching, AssessedContent, Questionnaire |
+ **types** | **[String]** | Specifies the activity types. | [optional] <br />**Values**: Informational, Coaching, AssessedContent, Questionnaire, Assessment |
  **statuses** | **[String]** | Specifies the activity statuses to filter by | [optional] <br />**Values**: Planned, InProgress, Completed, InvalidSchedule |
  **relationship** | **[String]** | Specifies how the current user relation should be interpreted, and filters the activities returned to only the activities that have the specified relationship. If a value besides Attendee is specified, it will only return Coaching Appointments. If not specified, no filtering is applied. | [optional] <br />**Values**: Creator, Facilitator, Attendee |
 {: class="table table-striped"}
@@ -2370,7 +2370,7 @@ apiInstance.getUsersDevelopmentActivitiesMe(opts)
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **sortOrder** | **String** | Specifies result set sort order sorted by the date due; if not specified, default sort order is descending (Desc) | [optional] [default to Desc]<br />**Values**: Asc, Desc |
- **types** | **[String]** | Specifies the activity types. | [optional] <br />**Values**: Informational, Coaching, AssessedContent, Questionnaire |
+ **types** | **[String]** | Specifies the activity types. | [optional] <br />**Values**: Informational, Coaching, AssessedContent, Questionnaire, Assessment |
  **statuses** | **[String]** | Specifies the activity statuses to filter by | [optional] <br />**Values**: Planned, InProgress, Completed, InvalidSchedule |
  **relationship** | **[String]** | Specifies how the current user relation should be interpreted, and filters the activities returned to only the activities that have the specified relationship. If a value besides Attendee is specified, it will only return Coaching Appointments. If not specified, no filtering is applied. | [optional] <br />**Values**: Creator, Facilitator, Attendee |
 {: class="table table-striped"}
@@ -2430,7 +2430,7 @@ apiInstance.getUsersDevelopmentActivity(activityId, type)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **activityId** | **String** | Specifies the activity ID, maps to either assignment or appointment ID |  |
- **type** | **String** | Specifies the activity type. | <br />**Values**: Informational, Coaching, AssessedContent, Questionnaire |
+ **type** | **String** | Specifies the activity type. | <br />**Values**: Informational, Coaching, AssessedContent, Assessment, Questionnaire |
 {: class="table table-striped"}
 
 ### Return type
@@ -2507,8 +2507,9 @@ Search users using the q64 value returned from a previous search
 
 
 
-Requires NO permissions: 
+Requires ANY permissions: 
 
+* directory:user:divisionview
 
 
 
@@ -3140,6 +3141,7 @@ UpdateUser <a href="#" onclick="return copyUpdateUserExample()">Copy</a>
               "team": { 
                 "id": String, 
                 "name": String, 
+                "division": Division, 
                 "description": String, 
                 "dateModified": Date, 
                 "memberCount": Number, 
@@ -3510,6 +3512,7 @@ UpdateUser <a href="#" onclick="return copyUpdateUserExample()">Copy</a>
               "team": { 
                 "id": String, 
                 "name": String, 
+                "division": Division, 
                 "description": String, 
                 "dateModified": Date, 
                 "memberCount": Number, 
@@ -3543,6 +3546,11 @@ UpdateUser <a href="#" onclick="return copyUpdateUserExample()">Copy</a>
           "team": { 
             "id": String, 
             "name": String, 
+            "division": { 
+              "id": String, 
+              "name": String, 
+              "selfUri": String, 
+            },  
             "description": String, 
             "dateModified": Date, 
             "memberCount": Number, 
@@ -4084,6 +4092,7 @@ UpdateUser <a href="#" onclick="return copyUpdateUserExample()">Copy</a>
               "team": { 
                 "id": String, 
                 "name": String, 
+                "division": Division, 
                 "description": String, 
                 "dateModified": Date, 
                 "memberCount": Number, 
@@ -4454,6 +4463,7 @@ UpdateUser <a href="#" onclick="return copyUpdateUserExample()">Copy</a>
               "team": { 
                 "id": String, 
                 "name": String, 
+                "division": Division, 
                 "description": String, 
                 "dateModified": Date, 
                 "memberCount": Number, 
@@ -4487,6 +4497,11 @@ UpdateUser <a href="#" onclick="return copyUpdateUserExample()">Copy</a>
           "team": { 
             "id": String, 
             "name": String, 
+            "division": { 
+              "id": String, 
+              "name": String, 
+              "selfUri": String, 
+            },  
             "description": String, 
             "dateModified": Date, 
             "memberCount": Number, 
@@ -4520,6 +4535,11 @@ UpdateUser <a href="#" onclick="return copyUpdateUserExample()">Copy</a>
       "team": { 
         "id": String, 
         "name": String, 
+        "division": { 
+          "id": String, 
+          "name": String, 
+          "selfUri": String, 
+        },  
         "description": String, 
         "dateModified": Date, 
         "memberCount": Number, 
@@ -5295,6 +5315,11 @@ CallForwarding <a href="#" onclick="return copyCallForwardingExample()">Copy</a>
             "team": { 
               "id": String, 
               "name": String, 
+              "division": { 
+                "id": String, 
+                "name": String, 
+                "selfUri": String, 
+              },  
               "description": String, 
               "dateModified": Date, 
               "memberCount": Number, 
@@ -5868,6 +5893,11 @@ CallForwarding <a href="#" onclick="return copyCallForwardingExample()">Copy</a>
             "team": { 
               "id": String, 
               "name": String, 
+              "division": { 
+                "id": String, 
+                "name": String, 
+                "selfUri": String, 
+              },  
               "description": String, 
               "dateModified": Date, 
               "memberCount": Number, 
@@ -5901,6 +5931,11 @@ CallForwarding <a href="#" onclick="return copyCallForwardingExample()">Copy</a>
         "team": { 
           "id": String, 
           "name": String, 
+          "division": { 
+            "id": String, 
+            "name": String, 
+            "selfUri": String, 
+          },  
           "description": String, 
           "dateModified": Date, 
           "memberCount": Number, 
@@ -6645,6 +6680,11 @@ CallForwarding <a href="#" onclick="return copyCallForwardingExample()">Copy</a>
             "team": { 
               "id": String, 
               "name": String, 
+              "division": { 
+                "id": String, 
+                "name": String, 
+                "selfUri": String, 
+              },  
               "description": String, 
               "dateModified": Date, 
               "memberCount": Number, 
@@ -7218,6 +7258,11 @@ CallForwarding <a href="#" onclick="return copyCallForwardingExample()">Copy</a>
             "team": { 
               "id": String, 
               "name": String, 
+              "division": { 
+                "id": String, 
+                "name": String, 
+                "selfUri": String, 
+              },  
               "description": String, 
               "dateModified": Date, 
               "memberCount": Number, 
@@ -7251,6 +7296,11 @@ CallForwarding <a href="#" onclick="return copyCallForwardingExample()">Copy</a>
         "team": { 
           "id": String, 
           "name": String, 
+          "division": { 
+            "id": String, 
+            "name": String, 
+            "selfUri": String, 
+          },  
           "description": String, 
           "dateModified": Date, 
           "memberCount": Number, 
@@ -7284,6 +7334,11 @@ CallForwarding <a href="#" onclick="return copyCallForwardingExample()">Copy</a>
     "team": { 
       "id": String, 
       "name": String, 
+      "division": { 
+        "id": String, 
+        "name": String, 
+        "selfUri": String, 
+      },  
       "description": String, 
       "dateModified": Date, 
       "memberCount": Number, 
@@ -10004,8 +10059,9 @@ Search users
 
 
 
-Requires NO permissions: 
+Requires ANY permissions: 
 
+* directory:user:divisionview
 
 
 ### Request Body Schema
@@ -10915,6 +10971,11 @@ CallForwarding <a href="#" onclick="return copyCallForwardingExample()">Copy</a>
             "team": { 
               "id": String, 
               "name": String, 
+              "division": { 
+                "id": String, 
+                "name": String, 
+                "selfUri": String, 
+              },  
               "description": String, 
               "dateModified": Date, 
               "memberCount": Number, 
@@ -11488,6 +11549,11 @@ CallForwarding <a href="#" onclick="return copyCallForwardingExample()">Copy</a>
             "team": { 
               "id": String, 
               "name": String, 
+              "division": { 
+                "id": String, 
+                "name": String, 
+                "selfUri": String, 
+              },  
               "description": String, 
               "dateModified": Date, 
               "memberCount": Number, 
@@ -11521,6 +11587,11 @@ CallForwarding <a href="#" onclick="return copyCallForwardingExample()">Copy</a>
         "team": { 
           "id": String, 
           "name": String, 
+          "division": { 
+            "id": String, 
+            "name": String, 
+            "selfUri": String, 
+          },  
           "description": String, 
           "dateModified": Date, 
           "memberCount": Number, 
@@ -12265,6 +12336,11 @@ CallForwarding <a href="#" onclick="return copyCallForwardingExample()">Copy</a>
             "team": { 
               "id": String, 
               "name": String, 
+              "division": { 
+                "id": String, 
+                "name": String, 
+                "selfUri": String, 
+              },  
               "description": String, 
               "dateModified": Date, 
               "memberCount": Number, 
@@ -12838,6 +12914,11 @@ CallForwarding <a href="#" onclick="return copyCallForwardingExample()">Copy</a>
             "team": { 
               "id": String, 
               "name": String, 
+              "division": { 
+                "id": String, 
+                "name": String, 
+                "selfUri": String, 
+              },  
               "description": String, 
               "dateModified": Date, 
               "memberCount": Number, 
@@ -12871,6 +12952,11 @@ CallForwarding <a href="#" onclick="return copyCallForwardingExample()">Copy</a>
         "team": { 
           "id": String, 
           "name": String, 
+          "division": { 
+            "id": String, 
+            "name": String, 
+            "selfUri": String, 
+          },  
           "description": String, 
           "dateModified": Date, 
           "memberCount": Number, 
@@ -12904,6 +12990,11 @@ CallForwarding <a href="#" onclick="return copyCallForwardingExample()">Copy</a>
     "team": { 
       "id": String, 
       "name": String, 
+      "division": { 
+        "id": String, 
+        "name": String, 
+        "selfUri": String, 
+      },  
       "description": String, 
       "dateModified": Date, 
       "memberCount": Number, 
@@ -13664,6 +13755,11 @@ OutOfOffice <a href="#" onclick="return copyOutOfOfficeExample()">Copy</a>
             "team": { 
               "id": String, 
               "name": String, 
+              "division": { 
+                "id": String, 
+                "name": String, 
+                "selfUri": String, 
+              },  
               "description": String, 
               "dateModified": Date, 
               "memberCount": Number, 
@@ -14237,6 +14333,11 @@ OutOfOffice <a href="#" onclick="return copyOutOfOfficeExample()">Copy</a>
             "team": { 
               "id": String, 
               "name": String, 
+              "division": { 
+                "id": String, 
+                "name": String, 
+                "selfUri": String, 
+              },  
               "description": String, 
               "dateModified": Date, 
               "memberCount": Number, 
@@ -14270,6 +14371,11 @@ OutOfOffice <a href="#" onclick="return copyOutOfOfficeExample()">Copy</a>
         "team": { 
           "id": String, 
           "name": String, 
+          "division": { 
+            "id": String, 
+            "name": String, 
+            "selfUri": String, 
+          },  
           "description": String, 
           "dateModified": Date, 
           "memberCount": Number, 
@@ -15014,6 +15120,11 @@ OutOfOffice <a href="#" onclick="return copyOutOfOfficeExample()">Copy</a>
             "team": { 
               "id": String, 
               "name": String, 
+              "division": { 
+                "id": String, 
+                "name": String, 
+                "selfUri": String, 
+              },  
               "description": String, 
               "dateModified": Date, 
               "memberCount": Number, 
@@ -15587,6 +15698,11 @@ OutOfOffice <a href="#" onclick="return copyOutOfOfficeExample()">Copy</a>
             "team": { 
               "id": String, 
               "name": String, 
+              "division": { 
+                "id": String, 
+                "name": String, 
+                "selfUri": String, 
+              },  
               "description": String, 
               "dateModified": Date, 
               "memberCount": Number, 
@@ -15620,6 +15736,11 @@ OutOfOffice <a href="#" onclick="return copyOutOfOfficeExample()">Copy</a>
         "team": { 
           "id": String, 
           "name": String, 
+          "division": { 
+            "id": String, 
+            "name": String, 
+            "selfUri": String, 
+          },  
           "description": String, 
           "dateModified": Date, 
           "memberCount": Number, 
@@ -15653,6 +15774,11 @@ OutOfOffice <a href="#" onclick="return copyOutOfOfficeExample()">Copy</a>
     "team": { 
       "id": String, 
       "name": String, 
+      "division": { 
+        "id": String, 
+        "name": String, 
+        "selfUri": String, 
+      },  
       "description": String, 
       "dateModified": Date, 
       "memberCount": Number, 

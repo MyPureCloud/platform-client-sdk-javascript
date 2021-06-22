@@ -5,7 +5,7 @@ class GamificationApi {
 	/**
 	 * Gamification service.
 	 * @module purecloud-platform-client-v2/api/GamificationApi
-	 * @version 113.2.0
+	 * @version 114.0.0
 	 */
 
 	/**
@@ -21,7 +21,7 @@ class GamificationApi {
 
 
 	/**
-	 * Leaderboard of the requesting user&#39;s division
+	 * Leaderboard of the requesting user&#39;s division or performance profile
 	 * 
 	 * @param {String} startWorkday Start workday to retrieve for the leaderboard. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 * @param {String} endWorkday End workday to retrieve for the leaderboard. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
@@ -55,7 +55,7 @@ class GamificationApi {
 	}
 
 	/**
-	 * Leaderboard by division
+	 * Leaderboard by filter type
 	 * 
 	 * @param {Object} filterType Filter type for the query request.
 	 * @param {String} filterId ID for the filter type. For example, division Id
@@ -152,8 +152,12 @@ class GamificationApi {
 	 * Gamified metric by id
 	 * 
 	 * @param {String} metricId metric Id
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.performanceProfileId The profile id of the metrics you are trying to retrieve. The DEFAULT profile is used if nothing is given.
 	 */
-	getGamificationMetric(metricId) { 
+	getGamificationMetric(metricId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'metricId' is set
 		if (metricId === undefined || metricId === null) {
 			throw 'Missing the required parameter "metricId" when calling getGamificationMetric';
@@ -163,7 +167,7 @@ class GamificationApi {
 			'/api/v2/gamification/metrics/{metricId}', 
 			'GET', 
 			{ 'metricId': metricId }, 
-			{  }, 
+			{ 'performance profile id': opts['performanceProfileId'] }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -290,7 +294,7 @@ class GamificationApi {
 	/**
 	 * Workday performance metrics of the requesting user
 	 * 
-	 * @param {String} workday Target querying workday. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 * @param {String} workday Target querying workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand Which fields, if any, to expand.
 	 */
@@ -319,8 +323,8 @@ class GamificationApi {
 	/**
 	 * Attendance status metrics of the requesting user
 	 * 
-	 * @param {String} startWorkday Start workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd
-	 * @param {String} endWorkday End workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 * @param {String} startWorkday Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 * @param {String} endWorkday End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 */
 	getGamificationScorecardsAttendance(startWorkday, endWorkday) { 
 		// verify the required parameter 'startWorkday' is set
@@ -369,7 +373,7 @@ class GamificationApi {
 	/**
 	 * All-time points of the requesting user
 	 * 
-	 * @param {String} endWorkday End workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 * @param {String} endWorkday End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 */
 	getGamificationScorecardsPointsAlltime(endWorkday) { 
 		// verify the required parameter 'endWorkday' is set
@@ -419,8 +423,8 @@ class GamificationApi {
 	/**
 	 * Points trends of the requesting user
 	 * 
-	 * @param {String} startWorkday Start workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd
-	 * @param {String} endWorkday End workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 * @param {String} startWorkday Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 * @param {String} endWorkday End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.dayOfWeek Optional filter to specify which day of weeks to be included in the response
 	 */
@@ -454,7 +458,7 @@ class GamificationApi {
 	 * Workday performance metrics for a user
 	 * 
 	 * @param {String} userId 
-	 * @param {String} workday Target querying workday. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 * @param {String} workday Target querying workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand Which fields, if any, to expand.
 	 */
@@ -488,8 +492,8 @@ class GamificationApi {
 	 * Attendance status metrics for a user
 	 * 
 	 * @param {String} userId 
-	 * @param {String} startWorkday Start workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd
-	 * @param {String} endWorkday End workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 * @param {String} startWorkday Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 * @param {String} endWorkday End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 */
 	getGamificationScorecardsUserAttendance(userId, startWorkday, endWorkday) { 
 		// verify the required parameter 'userId' is set
@@ -548,7 +552,7 @@ class GamificationApi {
 	 * All-time points for a user
 	 * 
 	 * @param {String} userId 
-	 * @param {String} endWorkday End workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 * @param {String} endWorkday End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 */
 	getGamificationScorecardsUserPointsAlltime(userId, endWorkday) { 
 		// verify the required parameter 'userId' is set
@@ -578,8 +582,8 @@ class GamificationApi {
 	 * Points trend for a user
 	 * 
 	 * @param {String} userId 
-	 * @param {String} startWorkday Start workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd
-	 * @param {String} endWorkday End workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 * @param {String} startWorkday Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 * @param {String} endWorkday End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.dayOfWeek Optional filter to specify which day of weeks to be included in the response
 	 */
@@ -617,8 +621,8 @@ class GamificationApi {
 	 * Values Trends of a user
 	 * 
 	 * @param {String} userId 
-	 * @param {String} startWorkday Start workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd
-	 * @param {String} endWorkday End workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 * @param {String} startWorkday Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 * @param {String} endWorkday End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.timeZone Timezone for the workday. Defaults to UTC (default to UTC)
 	 */
@@ -731,8 +735,8 @@ class GamificationApi {
 	 * 
 	 * @param {Object} filterType Filter type for the query request.
 	 * @param {String} filterId ID for the filter type.
-	 * @param {String} startWorkday Start workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd
-	 * @param {String} endWorkday End workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 * @param {String} startWorkday Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 * @param {String} endWorkday End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.timeZone Timezone for the workday. Defaults to UTC (default to UTC)
 	 */
@@ -802,8 +806,8 @@ class GamificationApi {
 	/**
 	 * Values trends of the requesting user or group
 	 * 
-	 * @param {String} startWorkday Start workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd
-	 * @param {String} endWorkday End workday of querying workdays range. Workday is represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 * @param {String} startWorkday Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 * @param {String} endWorkday End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.filterType Filter type for the query request. If not set, then the request is for the requesting user.
 	 * @param {String} opts.timeZone Timezone for the workday. Defaults to UTC (default to UTC)
@@ -929,8 +933,12 @@ class GamificationApi {
 	 * 
 	 * @param {String} metricId metric Id
 	 * @param {Object} body Metric
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.performanceProfileId The profile id of the metrics you are trying to retrieve. The DEFAULT profile is used if nothing is given.
 	 */
-	putGamificationMetric(metricId, body) { 
+	putGamificationMetric(metricId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'metricId' is set
 		if (metricId === undefined || metricId === null) {
 			throw 'Missing the required parameter "metricId" when calling putGamificationMetric';
@@ -944,7 +952,7 @@ class GamificationApi {
 			'/api/v2/gamification/metrics/{metricId}', 
 			'PUT', 
 			{ 'metricId': metricId }, 
-			{  }, 
+			{ 'performance profile id': opts['performanceProfileId'] }, 
 			{  }, 
 			{  }, 
 			body, 

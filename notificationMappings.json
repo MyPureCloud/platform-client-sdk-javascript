@@ -61,8 +61,8 @@
       "class": "ContentManagementWorkspaceDocumentsTopicDocumentDataV2"
     },
     {
-      "topic": "v2.conversations.{id}.transcriptions",
-      "class": "TranscriptionsTopicTranscriptionMessage"
+      "topic": "v2.conversations.{id}.transcription",
+      "class": "TranscriptionTopicTranscriptionMessage"
     },
     {
       "topic": "v2.flows.outcomes.{id}",

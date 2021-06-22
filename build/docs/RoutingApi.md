@@ -7,8 +7,10 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
+[**deleteRoutingAssessment**](RoutingApi.html#deleteRoutingAssessment) | **DELETE** /api/v2/routing/assessments/{assessmentId} | Delete single benefit assessment.
 [**deleteRoutingEmailDomain**](RoutingApi.html#deleteRoutingEmailDomain) | **DELETE** /api/v2/routing/email/domains/{domainId} | Delete a domain
 [**deleteRoutingEmailDomainRoute**](RoutingApi.html#deleteRoutingEmailDomainRoute) | **DELETE** /api/v2/routing/email/domains/{domainName}/routes/{routeId} | Delete a route
+[**deleteRoutingPredictor**](RoutingApi.html#deleteRoutingPredictor) | **DELETE** /api/v2/routing/predictors/{predictorId} | Delete single predictor.
 [**deleteRoutingQueue**](RoutingApi.html#deleteRoutingQueue) | **DELETE** /api/v2/routing/queues/{queueId} | Delete a queue
 [**deleteRoutingQueueMember**](RoutingApi.html#deleteRoutingQueueMember) | **DELETE** /api/v2/routing/queues/{queueId}/members/{memberId} | Delete a queue member.
 [**deleteRoutingQueueUser**](RoutingApi.html#deleteRoutingQueueUser) | **DELETE** /api/v2/routing/queues/{queueId}/users/{memberId} | DEPRECATED: use DELETE /routing/queues/{queueId}/members/{memberId}.  Delete queue member.
@@ -22,6 +24,10 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**deleteRoutingWrapupcode**](RoutingApi.html#deleteRoutingWrapupcode) | **DELETE** /api/v2/routing/wrapupcodes/{codeId} | Delete wrap-up code
 [**deleteUserRoutinglanguage**](RoutingApi.html#deleteUserRoutinglanguage) | **DELETE** /api/v2/users/{userId}/routinglanguages/{languageId} | Remove routing language from user
 [**deleteUserRoutingskill**](RoutingApi.html#deleteUserRoutingskill) | **DELETE** /api/v2/users/{userId}/routingskills/{skillId} | Remove routing skill from user
+[**getRoutingAssessment**](RoutingApi.html#getRoutingAssessment) | **GET** /api/v2/routing/assessments/{assessmentId} | Retrieve a single benefit assessment.
+[**getRoutingAssessments**](RoutingApi.html#getRoutingAssessments) | **GET** /api/v2/routing/assessments | Retrieve all benefit assessments.
+[**getRoutingAssessmentsJob**](RoutingApi.html#getRoutingAssessmentsJob) | **GET** /api/v2/routing/assessments/jobs/{jobId} | Retrieve a single benefit assessments job.
+[**getRoutingAssessmentsJobs**](RoutingApi.html#getRoutingAssessmentsJobs) | **GET** /api/v2/routing/assessments/jobs | Retrieve all benefit assessment jobs.
 [**getRoutingEmailDomain**](RoutingApi.html#getRoutingEmailDomain) | **GET** /api/v2/routing/email/domains/{domainId} | Get domain
 [**getRoutingEmailDomainRoute**](RoutingApi.html#getRoutingEmailDomainRoute) | **GET** /api/v2/routing/email/domains/{domainName}/routes/{routeId} | Get a route
 [**getRoutingEmailDomainRoutes**](RoutingApi.html#getRoutingEmailDomainRoutes) | **GET** /api/v2/routing/email/domains/{domainName}/routes | Get routes
@@ -30,7 +36,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getRoutingLanguages**](RoutingApi.html#getRoutingLanguages) | **GET** /api/v2/routing/languages | Get the list of supported languages.
 [**getRoutingMessageRecipient**](RoutingApi.html#getRoutingMessageRecipient) | **GET** /api/v2/routing/message/recipients/{recipientId} | Get a recipient
 [**getRoutingMessageRecipients**](RoutingApi.html#getRoutingMessageRecipients) | **GET** /api/v2/routing/message/recipients | Get recipients
+[**getRoutingPredictor**](RoutingApi.html#getRoutingPredictor) | **GET** /api/v2/routing/predictors/{predictorId} | Retrieve a single predictor.
+[**getRoutingPredictors**](RoutingApi.html#getRoutingPredictors) | **GET** /api/v2/routing/predictors | Retrieve all predictors.
+[**getRoutingPredictorsKeyperformanceindicators**](RoutingApi.html#getRoutingPredictorsKeyperformanceindicators) | **GET** /api/v2/routing/predictors/keyperformanceindicators | Get a list of Key Performance Indicators available for the predictors.
 [**getRoutingQueue**](RoutingApi.html#getRoutingQueue) | **GET** /api/v2/routing/queues/{queueId} | Get details about this queue.
+[**getRoutingQueueComparisonperiod**](RoutingApi.html#getRoutingQueueComparisonperiod) | **GET** /api/v2/routing/queues/{queueId}/comparisonperiods/{comparisonPeriodId} | Get a Comparison Period.
+[**getRoutingQueueComparisonperiods**](RoutingApi.html#getRoutingQueueComparisonperiods) | **GET** /api/v2/routing/queues/{queueId}/comparisonperiods | Get list of comparison periods
 [**getRoutingQueueEstimatedwaittime**](RoutingApi.html#getRoutingQueueEstimatedwaittime) | **GET** /api/v2/routing/queues/{queueId}/estimatedwaittime | Get Estimated Wait Time
 [**getRoutingQueueMediatypeEstimatedwaittime**](RoutingApi.html#getRoutingQueueMediatypeEstimatedwaittime) | **GET** /api/v2/routing/queues/{queueId}/mediatypes/{mediaType}/estimatedwaittime | Get Estimated Wait Time
 [**getRoutingQueueMembers**](RoutingApi.html#getRoutingQueueMembers) | **GET** /api/v2/routing/queues/{queueId}/members | Get the members of this queue.
@@ -60,6 +71,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**patchRoutingConversation**](RoutingApi.html#patchRoutingConversation) | **PATCH** /api/v2/routing/conversations/{conversationId} | Update attributes of an in-queue conversation
 [**patchRoutingEmailDomain**](RoutingApi.html#patchRoutingEmailDomain) | **PATCH** /api/v2/routing/email/domains/{domainId} | Update domain settings
 [**patchRoutingEmailDomainValidate**](RoutingApi.html#patchRoutingEmailDomainValidate) | **PATCH** /api/v2/routing/email/domains/{domainId}/validate | Validate domain settings
+[**patchRoutingPredictor**](RoutingApi.html#patchRoutingPredictor) | **PATCH** /api/v2/routing/predictors/{predictorId} | Update single predictor.
 [**patchRoutingQueueMember**](RoutingApi.html#patchRoutingQueueMember) | **PATCH** /api/v2/routing/queues/{queueId}/members/{memberId} | Update the ring number OR joined status for a queue member.
 [**patchRoutingQueueMembers**](RoutingApi.html#patchRoutingQueueMembers) | **PATCH** /api/v2/routing/queues/{queueId}/members | Join or unjoin a set of users for a queue
 [**patchRoutingQueueUser**](RoutingApi.html#patchRoutingQueueUser) | **PATCH** /api/v2/routing/queues/{queueId}/users/{memberId} | DEPRECATED: use PATCH /routing/queues/{queueId}/members/{memberId}.  Update the ring number OR joined status for a User in a Queue.
@@ -71,10 +83,13 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**patchUserRoutinglanguagesBulk**](RoutingApi.html#patchUserRoutinglanguagesBulk) | **PATCH** /api/v2/users/{userId}/routinglanguages/bulk | Add bulk routing language to user. Max limit 50 languages
 [**patchUserRoutingskillsBulk**](RoutingApi.html#patchUserRoutingskillsBulk) | **PATCH** /api/v2/users/{userId}/routingskills/bulk | Bulk add routing skills to user
 [**postAnalyticsQueuesObservationsQuery**](RoutingApi.html#postAnalyticsQueuesObservationsQuery) | **POST** /api/v2/analytics/queues/observations/query | Query for queue observations
+[**postRoutingAssessments**](RoutingApi.html#postRoutingAssessments) | **POST** /api/v2/routing/assessments | Create a benefit assessment.
+[**postRoutingAssessmentsJobs**](RoutingApi.html#postRoutingAssessmentsJobs) | **POST** /api/v2/routing/assessments/jobs | Create a benefit assessment job.
 [**postRoutingEmailDomainRoutes**](RoutingApi.html#postRoutingEmailDomainRoutes) | **POST** /api/v2/routing/email/domains/{domainName}/routes | Create a route
 [**postRoutingEmailDomainTestconnection**](RoutingApi.html#postRoutingEmailDomainTestconnection) | **POST** /api/v2/routing/email/domains/{domainId}/testconnection | Tests the custom SMTP server integration connection set on this domain
 [**postRoutingEmailDomains**](RoutingApi.html#postRoutingEmailDomains) | **POST** /api/v2/routing/email/domains | Create a domain
 [**postRoutingLanguages**](RoutingApi.html#postRoutingLanguages) | **POST** /api/v2/routing/languages | Create Language
+[**postRoutingPredictors**](RoutingApi.html#postRoutingPredictors) | **POST** /api/v2/routing/predictors | Create a predictor.
 [**postRoutingQueueMembers**](RoutingApi.html#postRoutingQueueMembers) | **POST** /api/v2/routing/queues/{queueId}/members | Bulk add or delete up to 100 queue members
 [**postRoutingQueueUsers**](RoutingApi.html#postRoutingQueueUsers) | **POST** /api/v2/routing/queues/{queueId}/users | DEPRECATED: use POST /routing/queues/{queueId}/members.  Bulk add or delete up to 100 queue members.
 [**postRoutingQueueWrapupcodes**](RoutingApi.html#postRoutingQueueWrapupcodes) | **POST** /api/v2/routing/queues/{queueId}/wrapupcodes | Add up to 100 wrap-up codes to a queue
@@ -97,6 +112,61 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**putUserRoutingskill**](RoutingApi.html#putUserRoutingskill) | **PUT** /api/v2/users/{userId}/routingskills/{skillId} | Update routing skill proficiency or state.
 [**putUserRoutingskillsBulk**](RoutingApi.html#putUserRoutingskillsBulk) | **PUT** /api/v2/users/{userId}/routingskills/bulk | Replace all routing skills assigned to a user
 {: class="table table-striped"}
+
+<a name="deleteRoutingAssessment"></a>
+
+# void deleteRoutingAssessment(assessmentId)
+
+
+
+DELETE /api/v2/routing/assessments/{assessmentId}
+
+Delete single benefit assessment.
+
+
+
+Requires ANY permissions: 
+
+* routing:assessment:delete
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.RoutingApi();
+
+let assessmentId = "assessmentId_example"; // String | Benefit Assessment ID
+
+apiInstance.deleteRoutingAssessment(assessmentId)
+  .then(() => {
+    console.log('deleteRoutingAssessment returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteRoutingAssessment');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **assessmentId** | **String** | Benefit Assessment ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
 
 <a name="deleteRoutingEmailDomain"></a>
 
@@ -204,6 +274,62 @@ apiInstance.deleteRoutingEmailDomainRoute(domainName, routeId)
 | ------------- | ------------- | ------------- | ------------- |
  **domainName** | **String** | email domain |  |
  **routeId** | **String** | route ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
+
+<a name="deleteRoutingPredictor"></a>
+
+# void deleteRoutingPredictor(predictorId)
+
+
+
+DELETE /api/v2/routing/predictors/{predictorId}
+
+Delete single predictor.
+
+
+
+Requires ALL permissions: 
+
+* routing:predictor:delete
+* routing:queue:edit
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.RoutingApi();
+
+let predictorId = "predictorId_example"; // String | Predictor ID
+
+apiInstance.deleteRoutingPredictor(predictorId)
+  .then(() => {
+    console.log('deleteRoutingPredictor returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteRoutingPredictor');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **predictorId** | **String** | Predictor ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -932,6 +1058,239 @@ apiInstance.deleteUserRoutingskill(userId, skillId)
 
 void (no response body)
 
+<a name="getRoutingAssessment"></a>
+
+# BenefitAssessment getRoutingAssessment(assessmentId)
+
+
+
+GET /api/v2/routing/assessments/{assessmentId}
+
+Retrieve a single benefit assessment.
+
+
+
+Requires ANY permissions: 
+
+* routing:assessment:view
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.RoutingApi();
+
+let assessmentId = "assessmentId_example"; // String | Benefit Assessment ID
+
+apiInstance.getRoutingAssessment(assessmentId)
+  .then((data) => {
+    console.log(`getRoutingAssessment success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getRoutingAssessment');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **assessmentId** | **String** | Benefit Assessment ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+**BenefitAssessment**
+
+<a name="getRoutingAssessments"></a>
+
+# AssessmentListing getRoutingAssessments(opts)
+
+
+
+GET /api/v2/routing/assessments
+
+Retrieve all benefit assessments.
+
+
+
+Requires ANY permissions: 
+
+* routing:queue:view
+* routing:assessment:view
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.RoutingApi();
+
+let opts = { 
+  'before': "before_example", // String | The cursor that points to the start of the set of entities that has been returned.
+  'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
+  'limit': "limit_example", // String | Number of entities to return. Maximum of 200. Deprecated in favour of pageSize.
+  'pageSize': "pageSize_example", // String | Number of entities to return. Maximum of 200.
+  'queueId': ["queueId_example"] // [String] | Queue ID(s) to filter assessments by.
+};
+
+apiInstance.getRoutingAssessments(opts)
+  .then((data) => {
+    console.log(`getRoutingAssessments success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getRoutingAssessments');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **before** | **String** | The cursor that points to the start of the set of entities that has been returned. | [optional]  |
+ **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
+ **limit** | **String** | Number of entities to return. Maximum of 200. Deprecated in favour of pageSize. | [optional]  |
+ **pageSize** | **String** | Number of entities to return. Maximum of 200. | [optional]  |
+ **queueId** | **[String]** | Queue ID(s) to filter assessments by. | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**AssessmentListing**
+
+<a name="getRoutingAssessmentsJob"></a>
+
+# BenefitAssessmentJob getRoutingAssessmentsJob(jobId)
+
+
+
+GET /api/v2/routing/assessments/jobs/{jobId}
+
+Retrieve a single benefit assessments job.
+
+
+
+Requires ANY permissions: 
+
+* routing:assessment:view
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.RoutingApi();
+
+let jobId = "jobId_example"; // String | Benefit Assessment Job ID
+
+apiInstance.getRoutingAssessmentsJob(jobId)
+  .then((data) => {
+    console.log(`getRoutingAssessmentsJob success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getRoutingAssessmentsJob');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **jobId** | **String** | Benefit Assessment Job ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+**BenefitAssessmentJob**
+
+<a name="getRoutingAssessmentsJobs"></a>
+
+# AssessmentJobListing getRoutingAssessmentsJobs(opts)
+
+
+
+GET /api/v2/routing/assessments/jobs
+
+Retrieve all benefit assessment jobs.
+
+
+
+Requires ANY permissions: 
+
+* routing:queue:view
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.RoutingApi();
+
+let opts = { 
+  'divisionId': ["divisionId_example"] // [String] | Division ID(s) to filter assessment jobs by.
+};
+
+apiInstance.getRoutingAssessmentsJobs(opts)
+  .then((data) => {
+    console.log(`getRoutingAssessmentsJobs success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getRoutingAssessmentsJobs');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **divisionId** | **[String]** | Division ID(s) to filter assessment jobs by. | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**AssessmentJobListing**
+
 <a name="getRoutingEmailDomain"></a>
 
 # InboundDomain getRoutingEmailDomain(domainId)
@@ -1387,6 +1746,177 @@ apiInstance.getRoutingMessageRecipients(opts)
 
 **RecipientListing**
 
+<a name="getRoutingPredictor"></a>
+
+# Predictor getRoutingPredictor(predictorId)
+
+
+
+GET /api/v2/routing/predictors/{predictorId}
+
+Retrieve a single predictor.
+
+
+
+Requires ANY permissions: 
+
+* routing:predictor:view
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.RoutingApi();
+
+let predictorId = "predictorId_example"; // String | Predictor ID
+
+apiInstance.getRoutingPredictor(predictorId)
+  .then((data) => {
+    console.log(`getRoutingPredictor success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getRoutingPredictor');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **predictorId** | **String** | Predictor ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+**Predictor**
+
+<a name="getRoutingPredictors"></a>
+
+# PredictorListing getRoutingPredictors(opts)
+
+
+
+GET /api/v2/routing/predictors
+
+Retrieve all predictors.
+
+
+
+Requires ANY permissions: 
+
+* routing:predictor:view
+* routing:queue:view
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.RoutingApi();
+
+let opts = { 
+  'before': "before_example", // String | The cursor that points to the start of the set of entities that has been returned.
+  'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
+  'limit': "limit_example", // String | Number of entities to return. Maximum of 200. Deprecated in favour of pageSize.
+  'pageSize': "pageSize_example", // String | Number of entities to return. Maximum of 200.
+  'queueId': ["queueId_example"] // [String] | Comma-separated list of queue Ids to filter by.
+};
+
+apiInstance.getRoutingPredictors(opts)
+  .then((data) => {
+    console.log(`getRoutingPredictors success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getRoutingPredictors');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **before** | **String** | The cursor that points to the start of the set of entities that has been returned. | [optional]  |
+ **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
+ **limit** | **String** | Number of entities to return. Maximum of 200. Deprecated in favour of pageSize. | [optional]  |
+ **pageSize** | **String** | Number of entities to return. Maximum of 200. | [optional]  |
+ **queueId** | **[String]** | Comma-separated list of queue Ids to filter by. | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**PredictorListing**
+
+<a name="getRoutingPredictorsKeyperformanceindicators"></a>
+
+# [KeyPerformanceIndicator] getRoutingPredictorsKeyperformanceindicators()
+
+
+
+GET /api/v2/routing/predictors/keyperformanceindicators
+
+Get a list of Key Performance Indicators available for the predictors.
+
+
+
+Requires ANY permissions: 
+
+* routing:keyPerformanceIndicator:view
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.RoutingApi();
+
+apiInstance.getRoutingPredictorsKeyperformanceindicators()
+  .then((data) => {
+    console.log(`getRoutingPredictorsKeyperformanceindicators success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getRoutingPredictorsKeyperformanceindicators');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+{: class="table table-striped"}
+
+### Return type
+
+**[KeyPerformanceIndicator]**
+
 <a name="getRoutingQueue"></a>
 
 # Queue getRoutingQueue(queueId)
@@ -1441,6 +1971,120 @@ apiInstance.getRoutingQueue(queueId)
 ### Return type
 
 **Queue**
+
+<a name="getRoutingQueueComparisonperiod"></a>
+
+# ComparisonPeriod getRoutingQueueComparisonperiod(queueId, comparisonPeriodId)
+
+
+
+GET /api/v2/routing/queues/{queueId}/comparisonperiods/{comparisonPeriodId}
+
+Get a Comparison Period.
+
+
+
+Requires ALL permissions: 
+
+* routing:comparisonPeriod:view
+* routing:queue:view
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.RoutingApi();
+
+let queueId = "queueId_example"; // String | Queue id
+let comparisonPeriodId = "comparisonPeriodId_example"; // String | ComparisonPeriod id
+
+apiInstance.getRoutingQueueComparisonperiod(queueId, comparisonPeriodId)
+  .then((data) => {
+    console.log(`getRoutingQueueComparisonperiod success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getRoutingQueueComparisonperiod');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **queueId** | **String** | Queue id |  |
+ **comparisonPeriodId** | **String** | ComparisonPeriod id |  |
+{: class="table table-striped"}
+
+### Return type
+
+**ComparisonPeriod**
+
+<a name="getRoutingQueueComparisonperiods"></a>
+
+# ComparisonPeriodListing getRoutingQueueComparisonperiods(queueId)
+
+
+
+GET /api/v2/routing/queues/{queueId}/comparisonperiods
+
+Get list of comparison periods
+
+
+
+Requires ALL permissions: 
+
+* routing:comparisonPeriod:view
+* routing:queue:view
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.RoutingApi();
+
+let queueId = "queueId_example"; // String | Queue id
+
+apiInstance.getRoutingQueueComparisonperiods(queueId)
+  .then((data) => {
+    console.log(`getRoutingQueueComparisonperiods success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getRoutingQueueComparisonperiods');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **queueId** | **String** | Queue id |  |
+{: class="table table-striped"}
+
+### Return type
+
+**ComparisonPeriodListing**
 
 <a name="getRoutingQueueEstimatedwaittime"></a>
 
@@ -3299,6 +3943,98 @@ apiInstance.patchRoutingEmailDomainValidate(domainId, body)
 
 **InboundDomain**
 
+<a name="patchRoutingPredictor"></a>
+
+# Predictor patchRoutingPredictor(predictorId, opts)
+
+
+
+PATCH /api/v2/routing/predictors/{predictorId}
+
+Update single predictor.
+
+
+
+Requires ALL permissions: 
+
+* routing:predictor:edit
+* routing:queue:edit
+
+
+### Request Body Schema
+
+<script type="text/javascript">
+	function copyPatchPredictorRequestExample() {
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#PatchPredictorRequestExample').text()).select();
+		document.execCommand("copy");
+		temp.remove();
+		return false;
+	}
+</script>
+
+PatchPredictorRequest <a href="#" onclick="return copyPatchPredictorRequestExample()">Copy</a>
+
+<div id="PatchPredictorRequestExample">
+
+```{"language":"json", "maxHeight": "250px"}
+{ 
+  "routingTimeoutSeconds": Number, 
+  "schedule": { 
+    "scheduleType": String, 
+    "dateStarted": Date, 
+  },  
+  "workloadBalancingConfig": { 
+    "enabled": Boolean, 
+  },  
+}
+```
+
+</div>
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.RoutingApi();
+
+let predictorId = "predictorId_example"; // String | Predictor ID
+let opts = { 
+  'body': {} // Object | 
+};
+
+apiInstance.patchRoutingPredictor(predictorId, opts)
+  .then((data) => {
+    console.log(`patchRoutingPredictor success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchRoutingPredictor');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **predictorId** | **String** | Predictor ID |  |
+ **body** | **Object** |  | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**Predictor**
+
 <a name="patchRoutingQueueMember"></a>
 
 # void patchRoutingQueueMember(queueId, memberId, body)
@@ -3728,6 +4464,11 @@ QueueMember <a href="#" onclick="return copyQueueMemberExample()">Copy</a>
     "team": { 
       "id": String, 
       "name": String, 
+      "division": { 
+        "id": String, 
+        "name": String, 
+        "selfUri": String, 
+      },  
       "description": String, 
       "dateModified": Date, 
       "memberCount": Number, 
@@ -4241,6 +4982,11 @@ QueueMember <a href="#" onclick="return copyQueueMemberExample()">Copy</a>
     "team": { 
       "id": String, 
       "name": String, 
+      "division": { 
+        "id": String, 
+        "name": String, 
+        "selfUri": String, 
+      },  
       "description": String, 
       "dateModified": Date, 
       "memberCount": Number, 
@@ -4752,6 +5498,11 @@ QueueMember <a href="#" onclick="return copyQueueMemberExample()">Copy</a>
     "team": { 
       "id": String, 
       "name": String, 
+      "division": { 
+        "id": String, 
+        "name": String, 
+        "selfUri": String, 
+      },  
       "description": String, 
       "dateModified": Date, 
       "memberCount": Number, 
@@ -5265,6 +6016,11 @@ QueueMember <a href="#" onclick="return copyQueueMemberExample()">Copy</a>
     "team": { 
       "id": String, 
       "name": String, 
+      "division": { 
+        "id": String, 
+        "name": String, 
+        "selfUri": String, 
+      },  
       "description": String, 
       "dateModified": Date, 
       "memberCount": Number, 
@@ -6435,6 +7191,171 @@ apiInstance.postAnalyticsQueuesObservationsQuery(body)
 
 **QueueObservationQueryResponse**
 
+<a name="postRoutingAssessments"></a>
+
+# BenefitAssessment postRoutingAssessments(opts)
+
+
+
+POST /api/v2/routing/assessments
+
+Create a benefit assessment.
+
+
+
+Requires ALL permissions: 
+
+* routing:assessment:add
+* routing:queue:view
+
+
+### Request Body Schema
+
+<script type="text/javascript">
+	function copyCreateBenefitAssessmentRequestExample() {
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#CreateBenefitAssessmentRequestExample').text()).select();
+		document.execCommand("copy");
+		temp.remove();
+		return false;
+	}
+</script>
+
+CreateBenefitAssessmentRequest <a href="#" onclick="return copyCreateBenefitAssessmentRequestExample()">Copy</a>
+
+<div id="CreateBenefitAssessmentRequestExample">
+
+```{"language":"json", "maxHeight": "250px"}
+{ 
+  "queueIds": [String], 
+}
+```
+
+</div>
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.RoutingApi();
+
+let opts = { 
+  'body': {} // Object | 
+};
+
+apiInstance.postRoutingAssessments(opts)
+  .then((data) => {
+    console.log(`postRoutingAssessments success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postRoutingAssessments');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** |  | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**BenefitAssessment**
+
+<a name="postRoutingAssessmentsJobs"></a>
+
+# BenefitAssessmentJob postRoutingAssessmentsJobs(opts)
+
+
+
+POST /api/v2/routing/assessments/jobs
+
+Create a benefit assessment job.
+
+
+
+Requires ANY permissions: 
+
+* routing:assessment:add
+
+
+### Request Body Schema
+
+<script type="text/javascript">
+	function copyCreateBenefitAssessmentJobRequestExample() {
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#CreateBenefitAssessmentJobRequestExample').text()).select();
+		document.execCommand("copy");
+		temp.remove();
+		return false;
+	}
+</script>
+
+CreateBenefitAssessmentJobRequest <a href="#" onclick="return copyCreateBenefitAssessmentJobRequestExample()">Copy</a>
+
+<div id="CreateBenefitAssessmentJobRequestExample">
+
+```{"language":"json", "maxHeight": "250px"}
+{ 
+  "divisionIds": [String], 
+}
+```
+
+</div>
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.RoutingApi();
+
+let opts = { 
+  'body': {} // Object | 
+};
+
+apiInstance.postRoutingAssessmentsJobs(opts)
+  .then((data) => {
+    console.log(`postRoutingAssessmentsJobs success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postRoutingAssessmentsJobs');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** |  | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**BenefitAssessmentJob**
+
 <a name="postRoutingEmailDomainRoutes"></a>
 
 # InboundRoute postRoutingEmailDomainRoutes(domainName, body)
@@ -6969,6 +7890,98 @@ apiInstance.postRoutingLanguages(body)
 ### Return type
 
 **Language**
+
+<a name="postRoutingPredictors"></a>
+
+# Predictor postRoutingPredictors(opts)
+
+
+
+POST /api/v2/routing/predictors
+
+Create a predictor.
+
+
+
+Requires ALL permissions: 
+
+* routing:predictor:add
+* routing:queue:edit
+
+
+### Request Body Schema
+
+<script type="text/javascript">
+	function copyCreatePredictorRequestExample() {
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#CreatePredictorRequestExample').text()).select();
+		document.execCommand("copy");
+		temp.remove();
+		return false;
+	}
+</script>
+
+CreatePredictorRequest <a href="#" onclick="return copyCreatePredictorRequestExample()">Copy</a>
+
+<div id="CreatePredictorRequestExample">
+
+```{"language":"json", "maxHeight": "250px"}
+{ 
+  "queueIds": [String], 
+  "kpi": String, 
+  "routingTimeoutSeconds": Number, 
+  "schedule": { 
+    "scheduleType": String, 
+    "dateStarted": Date, 
+  },  
+  "workloadBalancingConfig": { 
+    "enabled": Boolean, 
+  },  
+}
+```
+
+</div>
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.RoutingApi();
+
+let opts = { 
+  'body': {} // Object | 
+};
+
+apiInstance.postRoutingPredictors(opts)
+  .then((data) => {
+    console.log(`postRoutingPredictors success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postRoutingPredictors');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** |  | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**Predictor**
 
 <a name="postRoutingQueueMembers"></a>
 
@@ -8742,6 +9755,11 @@ Recipient <a href="#" onclick="return copyRecipientExample()">Copy</a>
       "team": { 
         "id": String, 
         "name": String, 
+        "division": { 
+          "id": String, 
+          "name": String, 
+          "selfUri": String, 
+        },  
         "description": String, 
         "dateModified": Date, 
         "memberCount": Number, 
@@ -8821,6 +9839,133 @@ Recipient <a href="#" onclick="return copyRecipientExample()">Copy</a>
           "id": String, 
           "selfUri": String, 
         },  
+        "version": { 
+          "id": String, 
+          "domain": { 
+            "id": String, 
+            "name": String, 
+            "language": String, 
+            "draftVersion": { 
+              "id": String, 
+              "domain": { 
+                "id": String, 
+                "name": String, 
+                "language": String, 
+                "draftVersion": NluDomainVersion, 
+                "lastPublishedVersion": NluDomainVersion, 
+                "dateCreated": Date, 
+                "dateModified": Date, 
+                "selfUri": String, 
+              },  
+              "description": String, 
+              "language": String, 
+              "published": Boolean, 
+              "dateCreated": Date, 
+              "dateModified": Date, 
+              "dateTrained": Date, 
+              "datePublished": Date, 
+              "trainingStatus": String, 
+              "evaluationStatus": String, 
+              "intents": { 
+                "name": String, 
+                "entityTypeBindings": [NamedEntityTypeBinding], 
+                "entityNameReferences": [String], 
+                "utterances": [NluUtterance], 
+              },  
+              "entityTypes": { 
+                "name": String, 
+                "description": String, 
+                "mechanism": NamedEntityTypeMechanism, 
+              },  
+              "entities": { 
+                "name": String, 
+                "type": String, 
+              },  
+              "selfUri": String, 
+            },  
+            "lastPublishedVersion": { 
+              "id": String, 
+              "domain": { 
+                "id": String, 
+                "name": String, 
+                "language": String, 
+                "draftVersion": NluDomainVersion, 
+                "lastPublishedVersion": NluDomainVersion, 
+                "dateCreated": Date, 
+                "dateModified": Date, 
+                "selfUri": String, 
+              },  
+              "description": String, 
+              "language": String, 
+              "published": Boolean, 
+              "dateCreated": Date, 
+              "dateModified": Date, 
+              "dateTrained": Date, 
+              "datePublished": Date, 
+              "trainingStatus": String, 
+              "evaluationStatus": String, 
+              "intents": { 
+                "name": String, 
+                "entityTypeBindings": [NamedEntityTypeBinding], 
+                "entityNameReferences": [String], 
+                "utterances": [NluUtterance], 
+              },  
+              "entityTypes": { 
+                "name": String, 
+                "description": String, 
+                "mechanism": NamedEntityTypeMechanism, 
+              },  
+              "entities": { 
+                "name": String, 
+                "type": String, 
+              },  
+              "selfUri": String, 
+            },  
+            "dateCreated": Date, 
+            "dateModified": Date, 
+            "selfUri": String, 
+          },  
+          "description": String, 
+          "language": String, 
+          "published": Boolean, 
+          "dateCreated": Date, 
+          "dateModified": Date, 
+          "dateTrained": Date, 
+          "datePublished": Date, 
+          "trainingStatus": String, 
+          "evaluationStatus": String, 
+          "intents": { 
+            "name": String, 
+            "entityTypeBindings": { 
+              "entityType": String, 
+              "entityName": String, 
+            },  
+            "entityNameReferences": [String], 
+            "utterances": { 
+              "segments": { 
+                "text": String, 
+                "entity": NamedEntityAnnotation, 
+              },  
+            },  
+          },  
+          "entityTypes": { 
+            "name": String, 
+            "description": String, 
+            "mechanism": { 
+              "items": { 
+                "value": String, 
+                "synonyms": [String], 
+              },  
+              "restricted": Boolean, 
+              "type": String, 
+            },  
+          },  
+          "entities": { 
+            "name": String, 
+            "type": String, 
+          },  
+          "selfUri": String, 
+        },  
         "intents": { 
           "name": String, 
         },  
@@ -8873,6 +10018,133 @@ Recipient <a href="#" onclick="return copyRecipientExample()">Copy</a>
       "nluInfo": { 
         "domain": { 
           "id": String, 
+          "selfUri": String, 
+        },  
+        "version": { 
+          "id": String, 
+          "domain": { 
+            "id": String, 
+            "name": String, 
+            "language": String, 
+            "draftVersion": { 
+              "id": String, 
+              "domain": { 
+                "id": String, 
+                "name": String, 
+                "language": String, 
+                "draftVersion": NluDomainVersion, 
+                "lastPublishedVersion": NluDomainVersion, 
+                "dateCreated": Date, 
+                "dateModified": Date, 
+                "selfUri": String, 
+              },  
+              "description": String, 
+              "language": String, 
+              "published": Boolean, 
+              "dateCreated": Date, 
+              "dateModified": Date, 
+              "dateTrained": Date, 
+              "datePublished": Date, 
+              "trainingStatus": String, 
+              "evaluationStatus": String, 
+              "intents": { 
+                "name": String, 
+                "entityTypeBindings": [NamedEntityTypeBinding], 
+                "entityNameReferences": [String], 
+                "utterances": [NluUtterance], 
+              },  
+              "entityTypes": { 
+                "name": String, 
+                "description": String, 
+                "mechanism": NamedEntityTypeMechanism, 
+              },  
+              "entities": { 
+                "name": String, 
+                "type": String, 
+              },  
+              "selfUri": String, 
+            },  
+            "lastPublishedVersion": { 
+              "id": String, 
+              "domain": { 
+                "id": String, 
+                "name": String, 
+                "language": String, 
+                "draftVersion": NluDomainVersion, 
+                "lastPublishedVersion": NluDomainVersion, 
+                "dateCreated": Date, 
+                "dateModified": Date, 
+                "selfUri": String, 
+              },  
+              "description": String, 
+              "language": String, 
+              "published": Boolean, 
+              "dateCreated": Date, 
+              "dateModified": Date, 
+              "dateTrained": Date, 
+              "datePublished": Date, 
+              "trainingStatus": String, 
+              "evaluationStatus": String, 
+              "intents": { 
+                "name": String, 
+                "entityTypeBindings": [NamedEntityTypeBinding], 
+                "entityNameReferences": [String], 
+                "utterances": [NluUtterance], 
+              },  
+              "entityTypes": { 
+                "name": String, 
+                "description": String, 
+                "mechanism": NamedEntityTypeMechanism, 
+              },  
+              "entities": { 
+                "name": String, 
+                "type": String, 
+              },  
+              "selfUri": String, 
+            },  
+            "dateCreated": Date, 
+            "dateModified": Date, 
+            "selfUri": String, 
+          },  
+          "description": String, 
+          "language": String, 
+          "published": Boolean, 
+          "dateCreated": Date, 
+          "dateModified": Date, 
+          "dateTrained": Date, 
+          "datePublished": Date, 
+          "trainingStatus": String, 
+          "evaluationStatus": String, 
+          "intents": { 
+            "name": String, 
+            "entityTypeBindings": { 
+              "entityType": String, 
+              "entityName": String, 
+            },  
+            "entityNameReferences": [String], 
+            "utterances": { 
+              "segments": { 
+                "text": String, 
+                "entity": NamedEntityAnnotation, 
+              },  
+            },  
+          },  
+          "entityTypes": { 
+            "name": String, 
+            "description": String, 
+            "mechanism": { 
+              "items": { 
+                "value": String, 
+                "synonyms": [String], 
+              },  
+              "restricted": Boolean, 
+              "type": String, 
+            },  
+          },  
+          "entities": { 
+            "name": String, 
+            "type": String, 
+          },  
           "selfUri": String, 
         },  
         "intents": { 
@@ -8931,6 +10203,133 @@ Recipient <a href="#" onclick="return copyRecipientExample()">Copy</a>
           "id": String, 
           "selfUri": String, 
         },  
+        "version": { 
+          "id": String, 
+          "domain": { 
+            "id": String, 
+            "name": String, 
+            "language": String, 
+            "draftVersion": { 
+              "id": String, 
+              "domain": { 
+                "id": String, 
+                "name": String, 
+                "language": String, 
+                "draftVersion": NluDomainVersion, 
+                "lastPublishedVersion": NluDomainVersion, 
+                "dateCreated": Date, 
+                "dateModified": Date, 
+                "selfUri": String, 
+              },  
+              "description": String, 
+              "language": String, 
+              "published": Boolean, 
+              "dateCreated": Date, 
+              "dateModified": Date, 
+              "dateTrained": Date, 
+              "datePublished": Date, 
+              "trainingStatus": String, 
+              "evaluationStatus": String, 
+              "intents": { 
+                "name": String, 
+                "entityTypeBindings": [NamedEntityTypeBinding], 
+                "entityNameReferences": [String], 
+                "utterances": [NluUtterance], 
+              },  
+              "entityTypes": { 
+                "name": String, 
+                "description": String, 
+                "mechanism": NamedEntityTypeMechanism, 
+              },  
+              "entities": { 
+                "name": String, 
+                "type": String, 
+              },  
+              "selfUri": String, 
+            },  
+            "lastPublishedVersion": { 
+              "id": String, 
+              "domain": { 
+                "id": String, 
+                "name": String, 
+                "language": String, 
+                "draftVersion": NluDomainVersion, 
+                "lastPublishedVersion": NluDomainVersion, 
+                "dateCreated": Date, 
+                "dateModified": Date, 
+                "selfUri": String, 
+              },  
+              "description": String, 
+              "language": String, 
+              "published": Boolean, 
+              "dateCreated": Date, 
+              "dateModified": Date, 
+              "dateTrained": Date, 
+              "datePublished": Date, 
+              "trainingStatus": String, 
+              "evaluationStatus": String, 
+              "intents": { 
+                "name": String, 
+                "entityTypeBindings": [NamedEntityTypeBinding], 
+                "entityNameReferences": [String], 
+                "utterances": [NluUtterance], 
+              },  
+              "entityTypes": { 
+                "name": String, 
+                "description": String, 
+                "mechanism": NamedEntityTypeMechanism, 
+              },  
+              "entities": { 
+                "name": String, 
+                "type": String, 
+              },  
+              "selfUri": String, 
+            },  
+            "dateCreated": Date, 
+            "dateModified": Date, 
+            "selfUri": String, 
+          },  
+          "description": String, 
+          "language": String, 
+          "published": Boolean, 
+          "dateCreated": Date, 
+          "dateModified": Date, 
+          "dateTrained": Date, 
+          "datePublished": Date, 
+          "trainingStatus": String, 
+          "evaluationStatus": String, 
+          "intents": { 
+            "name": String, 
+            "entityTypeBindings": { 
+              "entityType": String, 
+              "entityName": String, 
+            },  
+            "entityNameReferences": [String], 
+            "utterances": { 
+              "segments": { 
+                "text": String, 
+                "entity": NamedEntityAnnotation, 
+              },  
+            },  
+          },  
+          "entityTypes": { 
+            "name": String, 
+            "description": String, 
+            "mechanism": { 
+              "items": { 
+                "value": String, 
+                "synonyms": [String], 
+              },  
+              "restricted": Boolean, 
+              "type": String, 
+            },  
+          },  
+          "entities": { 
+            "name": String, 
+            "type": String, 
+          },  
+          "selfUri": String, 
+        },  
         "intents": { 
           "name": String, 
         },  
@@ -8983,6 +10382,133 @@ Recipient <a href="#" onclick="return copyRecipientExample()">Copy</a>
       "nluInfo": { 
         "domain": { 
           "id": String, 
+          "selfUri": String, 
+        },  
+        "version": { 
+          "id": String, 
+          "domain": { 
+            "id": String, 
+            "name": String, 
+            "language": String, 
+            "draftVersion": { 
+              "id": String, 
+              "domain": { 
+                "id": String, 
+                "name": String, 
+                "language": String, 
+                "draftVersion": NluDomainVersion, 
+                "lastPublishedVersion": NluDomainVersion, 
+                "dateCreated": Date, 
+                "dateModified": Date, 
+                "selfUri": String, 
+              },  
+              "description": String, 
+              "language": String, 
+              "published": Boolean, 
+              "dateCreated": Date, 
+              "dateModified": Date, 
+              "dateTrained": Date, 
+              "datePublished": Date, 
+              "trainingStatus": String, 
+              "evaluationStatus": String, 
+              "intents": { 
+                "name": String, 
+                "entityTypeBindings": [NamedEntityTypeBinding], 
+                "entityNameReferences": [String], 
+                "utterances": [NluUtterance], 
+              },  
+              "entityTypes": { 
+                "name": String, 
+                "description": String, 
+                "mechanism": NamedEntityTypeMechanism, 
+              },  
+              "entities": { 
+                "name": String, 
+                "type": String, 
+              },  
+              "selfUri": String, 
+            },  
+            "lastPublishedVersion": { 
+              "id": String, 
+              "domain": { 
+                "id": String, 
+                "name": String, 
+                "language": String, 
+                "draftVersion": NluDomainVersion, 
+                "lastPublishedVersion": NluDomainVersion, 
+                "dateCreated": Date, 
+                "dateModified": Date, 
+                "selfUri": String, 
+              },  
+              "description": String, 
+              "language": String, 
+              "published": Boolean, 
+              "dateCreated": Date, 
+              "dateModified": Date, 
+              "dateTrained": Date, 
+              "datePublished": Date, 
+              "trainingStatus": String, 
+              "evaluationStatus": String, 
+              "intents": { 
+                "name": String, 
+                "entityTypeBindings": [NamedEntityTypeBinding], 
+                "entityNameReferences": [String], 
+                "utterances": [NluUtterance], 
+              },  
+              "entityTypes": { 
+                "name": String, 
+                "description": String, 
+                "mechanism": NamedEntityTypeMechanism, 
+              },  
+              "entities": { 
+                "name": String, 
+                "type": String, 
+              },  
+              "selfUri": String, 
+            },  
+            "dateCreated": Date, 
+            "dateModified": Date, 
+            "selfUri": String, 
+          },  
+          "description": String, 
+          "language": String, 
+          "published": Boolean, 
+          "dateCreated": Date, 
+          "dateModified": Date, 
+          "dateTrained": Date, 
+          "datePublished": Date, 
+          "trainingStatus": String, 
+          "evaluationStatus": String, 
+          "intents": { 
+            "name": String, 
+            "entityTypeBindings": { 
+              "entityType": String, 
+              "entityName": String, 
+            },  
+            "entityNameReferences": [String], 
+            "utterances": { 
+              "segments": { 
+                "text": String, 
+                "entity": NamedEntityAnnotation, 
+              },  
+            },  
+          },  
+          "entityTypes": { 
+            "name": String, 
+            "description": String, 
+            "mechanism": { 
+              "items": { 
+                "value": String, 
+                "synonyms": [String], 
+              },  
+              "restricted": Boolean, 
+              "type": String, 
+            },  
+          },  
+          "entities": { 
+            "name": String, 
+            "type": String, 
+          },  
           "selfUri": String, 
         },  
         "intents": { 
@@ -9377,6 +10903,11 @@ Recipient <a href="#" onclick="return copyRecipientExample()">Copy</a>
       "team": { 
         "id": String, 
         "name": String, 
+        "division": { 
+          "id": String, 
+          "name": String, 
+          "selfUri": String, 
+        },  
         "description": String, 
         "dateModified": Date, 
         "memberCount": Number, 
@@ -9780,6 +11311,11 @@ Recipient <a href="#" onclick="return copyRecipientExample()">Copy</a>
         "team": { 
           "id": String, 
           "name": String, 
+          "division": { 
+            "id": String, 
+            "name": String, 
+            "selfUri": String, 
+          },  
           "description": String, 
           "dateModified": Date, 
           "memberCount": Number, 
@@ -9828,6 +11364,217 @@ Recipient <a href="#" onclick="return copyRecipientExample()">Copy</a>
     "nluInfo": { 
       "domain": { 
         "id": String, 
+        "selfUri": String, 
+      },  
+      "version": { 
+        "id": String, 
+        "domain": { 
+          "id": String, 
+          "name": String, 
+          "language": String, 
+          "draftVersion": { 
+            "id": String, 
+            "domain": { 
+              "id": String, 
+              "name": String, 
+              "language": String, 
+              "draftVersion": { 
+                "id": String, 
+                "domain": NluDomain, 
+                "description": String, 
+                "language": String, 
+                "published": Boolean, 
+                "dateCreated": Date, 
+                "dateModified": Date, 
+                "dateTrained": Date, 
+                "datePublished": Date, 
+                "trainingStatus": String, 
+                "evaluationStatus": String, 
+                "intents": [IntentDefinition], 
+                "entityTypes": [NamedEntityTypeDefinition], 
+                "entities": [NamedEntityDefinition], 
+                "selfUri": String, 
+              },  
+              "lastPublishedVersion": { 
+                "id": String, 
+                "domain": NluDomain, 
+                "description": String, 
+                "language": String, 
+                "published": Boolean, 
+                "dateCreated": Date, 
+                "dateModified": Date, 
+                "dateTrained": Date, 
+                "datePublished": Date, 
+                "trainingStatus": String, 
+                "evaluationStatus": String, 
+                "intents": [IntentDefinition], 
+                "entityTypes": [NamedEntityTypeDefinition], 
+                "entities": [NamedEntityDefinition], 
+                "selfUri": String, 
+              },  
+              "dateCreated": Date, 
+              "dateModified": Date, 
+              "selfUri": String, 
+            },  
+            "description": String, 
+            "language": String, 
+            "published": Boolean, 
+            "dateCreated": Date, 
+            "dateModified": Date, 
+            "dateTrained": Date, 
+            "datePublished": Date, 
+            "trainingStatus": String, 
+            "evaluationStatus": String, 
+            "intents": { 
+              "name": String, 
+              "entityTypeBindings": { 
+                "entityType": String, 
+                "entityName": String, 
+              },  
+              "entityNameReferences": [String], 
+              "utterances": { 
+                "segments": [NluUtteranceSegment], 
+              },  
+            },  
+            "entityTypes": { 
+              "name": String, 
+              "description": String, 
+              "mechanism": { 
+                "items": [NamedEntityTypeItem], 
+                "restricted": Boolean, 
+                "type": String, 
+              },  
+            },  
+            "entities": { 
+              "name": String, 
+              "type": String, 
+            },  
+            "selfUri": String, 
+          },  
+          "lastPublishedVersion": { 
+            "id": String, 
+            "domain": { 
+              "id": String, 
+              "name": String, 
+              "language": String, 
+              "draftVersion": { 
+                "id": String, 
+                "domain": NluDomain, 
+                "description": String, 
+                "language": String, 
+                "published": Boolean, 
+                "dateCreated": Date, 
+                "dateModified": Date, 
+                "dateTrained": Date, 
+                "datePublished": Date, 
+                "trainingStatus": String, 
+                "evaluationStatus": String, 
+                "intents": [IntentDefinition], 
+                "entityTypes": [NamedEntityTypeDefinition], 
+                "entities": [NamedEntityDefinition], 
+                "selfUri": String, 
+              },  
+              "lastPublishedVersion": { 
+                "id": String, 
+                "domain": NluDomain, 
+                "description": String, 
+                "language": String, 
+                "published": Boolean, 
+                "dateCreated": Date, 
+                "dateModified": Date, 
+                "dateTrained": Date, 
+                "datePublished": Date, 
+                "trainingStatus": String, 
+                "evaluationStatus": String, 
+                "intents": [IntentDefinition], 
+                "entityTypes": [NamedEntityTypeDefinition], 
+                "entities": [NamedEntityDefinition], 
+                "selfUri": String, 
+              },  
+              "dateCreated": Date, 
+              "dateModified": Date, 
+              "selfUri": String, 
+            },  
+            "description": String, 
+            "language": String, 
+            "published": Boolean, 
+            "dateCreated": Date, 
+            "dateModified": Date, 
+            "dateTrained": Date, 
+            "datePublished": Date, 
+            "trainingStatus": String, 
+            "evaluationStatus": String, 
+            "intents": { 
+              "name": String, 
+              "entityTypeBindings": { 
+                "entityType": String, 
+                "entityName": String, 
+              },  
+              "entityNameReferences": [String], 
+              "utterances": { 
+                "segments": [NluUtteranceSegment], 
+              },  
+            },  
+            "entityTypes": { 
+              "name": String, 
+              "description": String, 
+              "mechanism": { 
+                "items": [NamedEntityTypeItem], 
+                "restricted": Boolean, 
+                "type": String, 
+              },  
+            },  
+            "entities": { 
+              "name": String, 
+              "type": String, 
+            },  
+            "selfUri": String, 
+          },  
+          "dateCreated": Date, 
+          "dateModified": Date, 
+          "selfUri": String, 
+        },  
+        "description": String, 
+        "language": String, 
+        "published": Boolean, 
+        "dateCreated": Date, 
+        "dateModified": Date, 
+        "dateTrained": Date, 
+        "datePublished": Date, 
+        "trainingStatus": String, 
+        "evaluationStatus": String, 
+        "intents": { 
+          "name": String, 
+          "entityTypeBindings": { 
+            "entityType": String, 
+            "entityName": String, 
+          },  
+          "entityNameReferences": [String], 
+          "utterances": { 
+            "segments": { 
+              "text": String, 
+              "entity": { 
+                "name": String, 
+              },  
+            },  
+          },  
+        },  
+        "entityTypes": { 
+          "name": String, 
+          "description": String, 
+          "mechanism": { 
+            "items": { 
+              "value": String, 
+              "synonyms": [String], 
+            },  
+            "restricted": Boolean, 
+            "type": String, 
+          },  
+        },  
+        "entities": { 
+          "name": String, 
+          "type": String, 
+        },  
         "selfUri": String, 
       },  
       "intents": { 
@@ -10233,6 +11980,11 @@ Recipient <a href="#" onclick="return copyRecipientExample()">Copy</a>
     "team": { 
       "id": String, 
       "name": String, 
+      "division": { 
+        "id": String, 
+        "name": String, 
+        "selfUri": String, 
+      },  
       "description": String, 
       "dateModified": Date, 
       "memberCount": Number, 
@@ -11221,6 +12973,11 @@ SmsPhoneNumber <a href="#" onclick="return copySmsPhoneNumberExample()">Copy</a>
     "team": { 
       "id": String, 
       "name": String, 
+      "division": { 
+        "id": String, 
+        "name": String, 
+        "selfUri": String, 
+      },  
       "description": String, 
       "dateModified": Date, 
       "memberCount": Number, 

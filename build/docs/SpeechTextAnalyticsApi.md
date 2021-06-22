@@ -13,8 +13,10 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getSpeechandtextanalyticsConversationCommunicationTranscripturl**](SpeechTextAnalyticsApi.html#getSpeechandtextanalyticsConversationCommunicationTranscripturl) | **GET** /api/v2/speechandtextanalytics/conversations/{conversationId}/communications/{communicationId}/transcripturl | Get the pre-signed S3 URL for the transcript of a specific communication of a conversation
 [**getSpeechandtextanalyticsDialects**](SpeechTextAnalyticsApi.html#getSpeechandtextanalyticsDialects) | **GET** /api/v2/speechandtextanalytics/dialects | Get list of supported Speech &amp; Text Analytics dialects
 [**getSpeechandtextanalyticsProgram**](SpeechTextAnalyticsApi.html#getSpeechandtextanalyticsProgram) | **GET** /api/v2/speechandtextanalytics/programs/{programId} | Get a Speech &amp; Text Analytics program by id
+[**getSpeechandtextanalyticsProgramMappings**](SpeechTextAnalyticsApi.html#getSpeechandtextanalyticsProgramMappings) | **GET** /api/v2/speechandtextanalytics/programs/{programId}/mappings | Get Speech &amp; Text Analytics program mappings to queues and flows by id
 [**getSpeechandtextanalyticsPrograms**](SpeechTextAnalyticsApi.html#getSpeechandtextanalyticsPrograms) | **GET** /api/v2/speechandtextanalytics/programs | Get the list of Speech &amp; Text Analytics programs
 [**getSpeechandtextanalyticsProgramsGeneralJob**](SpeechTextAnalyticsApi.html#getSpeechandtextanalyticsProgramsGeneralJob) | **GET** /api/v2/speechandtextanalytics/programs/general/jobs/{jobId} | Get a Speech &amp; Text Analytics general program job by id
+[**getSpeechandtextanalyticsProgramsMappings**](SpeechTextAnalyticsApi.html#getSpeechandtextanalyticsProgramsMappings) | **GET** /api/v2/speechandtextanalytics/programs/mappings | Get the list of Speech &amp; Text Analytics programs mappings to queues and flows
 [**getSpeechandtextanalyticsProgramsPublishjob**](SpeechTextAnalyticsApi.html#getSpeechandtextanalyticsProgramsPublishjob) | **GET** /api/v2/speechandtextanalytics/programs/publishjobs/{jobId} | Get a Speech &amp; Text Analytics publish programs job by id
 [**getSpeechandtextanalyticsProgramsUnpublished**](SpeechTextAnalyticsApi.html#getSpeechandtextanalyticsProgramsUnpublished) | **GET** /api/v2/speechandtextanalytics/programs/unpublished | Get the list of Speech &amp; Text Analytics unpublished programs
 [**getSpeechandtextanalyticsSettings**](SpeechTextAnalyticsApi.html#getSpeechandtextanalyticsSettings) | **GET** /api/v2/speechandtextanalytics/settings | Get Speech And Text Analytics Settings
@@ -30,6 +32,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postSpeechandtextanalyticsTopicsPublishjobs**](SpeechTextAnalyticsApi.html#postSpeechandtextanalyticsTopicsPublishjobs) | **POST** /api/v2/speechandtextanalytics/topics/publishjobs | Create new Speech &amp; Text Analytics publish topics job
 [**postSpeechandtextanalyticsTranscriptsSearch**](SpeechTextAnalyticsApi.html#postSpeechandtextanalyticsTranscriptsSearch) | **POST** /api/v2/speechandtextanalytics/transcripts/search | Search resources.
 [**putSpeechandtextanalyticsProgram**](SpeechTextAnalyticsApi.html#putSpeechandtextanalyticsProgram) | **PUT** /api/v2/speechandtextanalytics/programs/{programId} | Update existing Speech &amp; Text Analytics program
+[**putSpeechandtextanalyticsProgramMappings**](SpeechTextAnalyticsApi.html#putSpeechandtextanalyticsProgramMappings) | **PUT** /api/v2/speechandtextanalytics/programs/{programId}/mappings | Set Speech &amp; Text Analytics program mappings to queues and flows
+[**putSpeechandtextanalyticsSettings**](SpeechTextAnalyticsApi.html#putSpeechandtextanalyticsSettings) | **PUT** /api/v2/speechandtextanalytics/settings | Update Speech And Text Analytics Settings
 [**putSpeechandtextanalyticsTopic**](SpeechTextAnalyticsApi.html#putSpeechandtextanalyticsTopic) | **PUT** /api/v2/speechandtextanalytics/topics/{topicId} | Update existing Speech &amp; Text Analytics topic
 {: class="table table-striped"}
 
@@ -363,6 +367,61 @@ apiInstance.getSpeechandtextanalyticsProgram(programId)
 
 **Program**
 
+<a name="getSpeechandtextanalyticsProgramMappings"></a>
+
+# ProgramMappings getSpeechandtextanalyticsProgramMappings(programId)
+
+
+
+GET /api/v2/speechandtextanalytics/programs/{programId}/mappings
+
+Get Speech &amp; Text Analytics program mappings to queues and flows by id
+
+
+
+Requires ALL permissions: 
+
+* speechAndTextAnalytics:program:view
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.SpeechTextAnalyticsApi();
+
+let programId = "programId_example"; // String | The id of the program
+
+apiInstance.getSpeechandtextanalyticsProgramMappings(programId)
+  .then((data) => {
+    console.log(`getSpeechandtextanalyticsProgramMappings success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getSpeechandtextanalyticsProgramMappings');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **programId** | **String** | The id of the program |  |
+{: class="table table-striped"}
+
+### Return type
+
+**ProgramMappings**
+
 <a name="getSpeechandtextanalyticsPrograms"></a>
 
 # ProgramsEntityListing getSpeechandtextanalyticsPrograms(opts)
@@ -479,6 +538,65 @@ apiInstance.getSpeechandtextanalyticsProgramsGeneralJob(jobId)
 ### Return type
 
 **GeneralProgramJob**
+
+<a name="getSpeechandtextanalyticsProgramsMappings"></a>
+
+# ProgramsMappingsEntityListing getSpeechandtextanalyticsProgramsMappings(opts)
+
+
+
+GET /api/v2/speechandtextanalytics/programs/mappings
+
+Get the list of Speech &amp; Text Analytics programs mappings to queues and flows
+
+
+
+Requires ALL permissions: 
+
+* speechAndTextAnalytics:program:view
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.SpeechTextAnalyticsApi();
+
+let opts = { 
+  'nextPage': "nextPage_example", // String | The key for listing the next page
+  'pageSize': 20 // Number | The page size for the listing
+};
+
+apiInstance.getSpeechandtextanalyticsProgramsMappings(opts)
+  .then((data) => {
+    console.log(`getSpeechandtextanalyticsProgramsMappings success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getSpeechandtextanalyticsProgramsMappings');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **nextPage** | **String** | The key for listing the next page | [optional]  |
+ **pageSize** | **Number** | The page size for the listing | [optional] [default to 20] |
+{: class="table table-striped"}
+
+### Return type
+
+**ProgramsMappingsEntityListing**
 
 <a name="getSpeechandtextanalyticsProgramsPublishjob"></a>
 
@@ -808,7 +926,7 @@ apiInstance.getSpeechandtextanalyticsTopicsGeneral(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **dialect** | **String** | The dialect of the general topics, dialect format is {language}-{country} where language follows ISO 639-1 standard and country follows ISO 3166-1 alpha 2 standard | [optional] <br />**Values**: en-US, es-US |
+ **dialect** | **String** | The dialect of the general topics, dialect format is {language}-{country} where language follows ISO 639-1 standard and country follows ISO 3166-1 alpha 2 standard | [optional] <br />**Values**: en-US, es-US, en-AU, en-GB, en-ZA, es-ES, en-IN |
 {: class="table table-striped"}
 
 ### Return type
@@ -1614,6 +1732,170 @@ apiInstance.putSpeechandtextanalyticsProgram(programId, body)
 ### Return type
 
 **Program**
+
+<a name="putSpeechandtextanalyticsProgramMappings"></a>
+
+# ProgramMappings putSpeechandtextanalyticsProgramMappings(programId, body)
+
+
+
+PUT /api/v2/speechandtextanalytics/programs/{programId}/mappings
+
+Set Speech &amp; Text Analytics program mappings to queues and flows
+
+
+
+Requires ALL permissions: 
+
+* speechAndTextAnalytics:program:edit
+
+
+### Request Body Schema
+
+<script type="text/javascript">
+	function copyProgramMappingsRequestExample() {
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#ProgramMappingsRequestExample').text()).select();
+		document.execCommand("copy");
+		temp.remove();
+		return false;
+	}
+</script>
+
+ProgramMappingsRequest <a href="#" onclick="return copyProgramMappingsRequestExample()">Copy</a>
+
+<div id="ProgramMappingsRequestExample">
+
+```{"language":"json", "maxHeight": "250px"}
+{ 
+  "queueIds": [String], 
+  "flowIds": [String], 
+}
+```
+
+</div>
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.SpeechTextAnalyticsApi();
+
+let programId = "programId_example"; // String | The id of the program
+let body = {}; // Object | The program to set mappings for
+
+apiInstance.putSpeechandtextanalyticsProgramMappings(programId, body)
+  .then((data) => {
+    console.log(`putSpeechandtextanalyticsProgramMappings success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putSpeechandtextanalyticsProgramMappings');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **programId** | **String** | The id of the program |  |
+ **body** | **Object** | The program to set mappings for |  |
+{: class="table table-striped"}
+
+### Return type
+
+**ProgramMappings**
+
+<a name="putSpeechandtextanalyticsSettings"></a>
+
+# SpeechTextAnalyticsSettingsResponse putSpeechandtextanalyticsSettings(body)
+
+
+
+PUT /api/v2/speechandtextanalytics/settings
+
+Update Speech And Text Analytics Settings
+
+
+
+Requires ALL permissions: 
+
+* speechAndTextAnalytics:settings:edit
+
+
+### Request Body Schema
+
+<script type="text/javascript">
+	function copySpeechTextAnalyticsSettingsRequestExample() {
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#SpeechTextAnalyticsSettingsRequestExample').text()).select();
+		document.execCommand("copy");
+		temp.remove();
+		return false;
+	}
+</script>
+
+SpeechTextAnalyticsSettingsRequest <a href="#" onclick="return copySpeechTextAnalyticsSettingsRequestExample()">Copy</a>
+
+<div id="SpeechTextAnalyticsSettingsRequestExample">
+
+```{"language":"json", "maxHeight": "250px"}
+{ 
+  "defaultProgramId": String, 
+  "expectedDialects": [String], 
+}
+```
+
+</div>
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.SpeechTextAnalyticsApi();
+
+let body = {}; // Object | Speech And Text Analytics Settings
+
+apiInstance.putSpeechandtextanalyticsSettings(body)
+  .then((data) => {
+    console.log(`putSpeechandtextanalyticsSettings success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putSpeechandtextanalyticsSettings');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | Speech And Text Analytics Settings |  |
+{: class="table table-striped"}
+
+### Return type
+
+**SpeechTextAnalyticsSettingsResponse**
 
 <a name="putSpeechandtextanalyticsTopic"></a>
 

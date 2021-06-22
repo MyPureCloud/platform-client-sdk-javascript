@@ -25,8 +25,9 @@ Search using the q64 value returned from a previous search.
 
 
 
-Requires NO permissions: 
+Requires ANY permissions: 
 
+* directory:user:divisionview
 
 
 
@@ -85,8 +86,9 @@ Suggest resources using the q64 value returned from a previous suggest query.
 
 
 
-Requires NO permissions: 
+Requires ANY permissions: 
 
+* directory:user:divisionview
 
 
 
@@ -145,8 +147,9 @@ Search resources.
 
 
 
-Requires NO permissions: 
+Requires ANY permissions: 
 
+* directory:user:divisionview
 
 
 ### Request Body Schema
@@ -317,8 +320,9 @@ Suggest resources.
 
 
 
-Requires NO permissions: 
+Requires ANY permissions: 
 
+* directory:user:divisionview
 
 
 ### Request Body Schema

@@ -18,6 +18,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getLearningModules**](LearningApi.html#getLearningModules) | **GET** /api/v2/learning/modules | Get all learning modules of an organization
 [**patchLearningAssignment**](LearningApi.html#patchLearningAssignment) | **PATCH** /api/v2/learning/assignments/{assignmentId} | Update Learning Assignment
 [**postLearningAssignments**](LearningApi.html#postLearningAssignments) | **POST** /api/v2/learning/assignments | Create Learning Assignment
+[**postLearningAssignmentsAggregatesQuery**](LearningApi.html#postLearningAssignmentsAggregatesQuery) | **POST** /api/v2/learning/assignments/aggregates/query | Retrieve aggregated assignment data
 [**postLearningAssignmentsBulkadd**](LearningApi.html#postLearningAssignmentsBulkadd) | **POST** /api/v2/learning/assignments/bulkadd | Add multiple learning assignments
 [**postLearningAssignmentsBulkremove**](LearningApi.html#postLearningAssignmentsBulkremove) | **POST** /api/v2/learning/assignments/bulkremove | Remove multiple Learning Assignments
 [**postLearningModulePublish**](LearningApi.html#postLearningModulePublish) | **POST** /api/v2/learning/modules/{moduleId}/publish | Publish a Learning module
@@ -266,7 +267,7 @@ apiInstance.getLearningAssignments(opts)
  **sortOrder** | **String** | Specifies result set sort order; if not specified, default sort order is descending (Desc) | [optional] [default to Desc]<br />**Values**: Asc, Desc |
  **sortBy** | **String** | Specifies which field to sort the results by, default sort is by recommendedCompletionDate | [optional] <br />**Values**: RecommendedCompletionDate, DateModified |
  **userId** | **[String]** | Specifies the list of user IDs to be queried, up to 100 user IDs. | [optional]  |
- **types** | **[String]** | Specifies the assignment types, currently not supported and will be ignored. For now, all learning assignments regardless of types will be returned | [optional] <br />**Values**: Informational, AssessedContent, Questionnaire |
+ **types** | **[String]** | Specifies the assignment types, currently not supported and will be ignored. For now, all learning assignments regardless of types will be returned | [optional] <br />**Values**: Informational, AssessedContent, Questionnaire, Assessment |
  **states** | **[String]** | Specifies the assignment states to filter by | [optional] <br />**Values**: Assigned, InProgress, Completed |
  **expand** | **[String]** | Specifies the expand option for returning additional information | [optional] <br />**Values**: ModuleSummary |
 {: class="table table-striped"}
@@ -342,7 +343,7 @@ apiInstance.getLearningAssignmentsMe(opts)
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **sortOrder** | **String** | Specifies result set sort order; if not specified, default sort order is descending (Desc) | [optional] [default to Desc]<br />**Values**: Asc, Desc |
  **sortBy** | **String** | Specifies which field to sort the results by, default sort is by recommendedCompletionDate | [optional] <br />**Values**: RecommendedCompletionDate, DateModified |
- **types** | **[String]** | Specifies the assignment types, currently not supported and will be ignored. For now, all learning assignments regardless of types will be returned | [optional] <br />**Values**: Informational, AssessedContent, Questionnaire |
+ **types** | **[String]** | Specifies the assignment types, currently not supported and will be ignored. For now, all learning assignments regardless of types will be returned | [optional] <br />**Values**: Informational, AssessedContent, Questionnaire, Assessment |
  **states** | **[String]** | Specifies the assignment states to filter by | [optional] <br />**Values**: Assigned, InProgress, Completed |
  **expand** | **[String]** | Specifies the expand option for returning additional information | [optional] <br />**Values**: ModuleSummary |
 {: class="table table-striped"}
@@ -584,7 +585,7 @@ apiInstance.getLearningModules(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **isArchived** | **Boolean** | Archive status | [optional] [default to false] |
- **types** | **[String]** | Specifies the module types. | [optional] <br />**Values**: Informational, AssessedContent, Questionnaire |
+ **types** | **[String]** | Specifies the module types. | [optional] <br />**Values**: Informational, AssessedContent, Questionnaire, Assessment |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **sortOrder** | **String** | Sort order | [optional] [default to ascending]<br />**Values**: ascending, descending |
@@ -807,6 +808,98 @@ apiInstance.postLearningAssignments(opts)
 
 **LearningAssignment**
 
+<a name="postLearningAssignmentsAggregatesQuery"></a>
+
+# LearningAssignmentAggregateResponse postLearningAssignmentsAggregatesQuery(body)
+
+
+
+POST /api/v2/learning/assignments/aggregates/query
+
+Retrieve aggregated assignment data
+
+
+
+Requires ANY permissions: 
+
+* learning:assignment:view
+
+
+### Request Body Schema
+
+<script type="text/javascript">
+	function copyLearningAssignmentAggregateParamExample() {
+		let temp = $("<textarea>");
+		$("body").append(temp);
+		temp.val($('#LearningAssignmentAggregateParamExample').text()).select();
+		document.execCommand("copy");
+		temp.remove();
+		return false;
+	}
+</script>
+
+LearningAssignmentAggregateParam <a href="#" onclick="return copyLearningAssignmentAggregateParamExample()">Copy</a>
+
+<div id="LearningAssignmentAggregateParamExample">
+
+```{"language":"json", "maxHeight": "250px"}
+{ 
+  "interval": String, 
+  "metrics": [String], 
+  "groupBy": [String], 
+  "filter": { 
+    "type": String, 
+    "clauses": { 
+      "type": String, 
+      "predicates": { 
+        "dimension": String, 
+        "value": String, 
+      },  
+    },  
+  },  
+}
+```
+
+</div>
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.LearningApi();
+
+let body = {}; // Object | Aggregate Request
+
+apiInstance.postLearningAssignmentsAggregatesQuery(body)
+  .then((data) => {
+    console.log(`postLearningAssignmentsAggregatesQuery success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postLearningAssignmentsAggregatesQuery');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | Aggregate Request |  |
+{: class="table table-striped"}
+
+### Return type
+
+**LearningAssignmentAggregateResponse**
+
 <a name="postLearningAssignmentsBulkadd"></a>
 
 # LearningAssignmentBulkAddResponse postLearningAssignmentsBulkadd(opts)
@@ -892,7 +985,7 @@ apiInstance.postLearningAssignmentsBulkadd(opts)
 
 <a name="postLearningAssignmentsBulkremove"></a>
 
-# void postLearningAssignmentsBulkremove(opts)
+# LearningAssignmentBulkRemoveResponse postLearningAssignmentsBulkremove(opts)
 
 
 
@@ -926,8 +1019,8 @@ let opts = {
 };
 
 apiInstance.postLearningAssignmentsBulkremove(opts)
-  .then(() => {
-    console.log('postLearningAssignmentsBulkremove returned successfully.');
+  .then((data) => {
+    console.log(`postLearningAssignmentsBulkremove success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch((err) => {
     console.log('There was a failure calling postLearningAssignmentsBulkremove');
@@ -945,7 +1038,7 @@ apiInstance.postLearningAssignmentsBulkremove(opts)
 
 ### Return type
 
-void (no response body)
+**LearningAssignmentBulkRemoveResponse**
 
 <a name="postLearningModulePublish"></a>
 

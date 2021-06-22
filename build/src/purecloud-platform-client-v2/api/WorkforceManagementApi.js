@@ -5,7 +5,7 @@ class WorkforceManagementApi {
 	/**
 	 * WorkforceManagement service.
 	 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-	 * @version 113.2.0
+	 * @version 114.0.0
 	 */
 
 	/**
@@ -236,6 +236,31 @@ class WorkforceManagementApi {
 	}
 
 	/**
+	 * Delete management unit
+	 * 
+	 * @param {String} managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+	 */
+	deleteWorkforcemanagementManagementunit(managementUnitId) { 
+		// verify the required parameter 'managementUnitId' is set
+		if (managementUnitId === undefined || managementUnitId === null) {
+			throw 'Missing the required parameter "managementUnitId" when calling deleteWorkforcemanagementManagementunit';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/managementunits/{managementUnitId}', 
+			'DELETE', 
+			{ 'managementUnitId': managementUnitId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
 	 * Delete a work plan
 	 * 
 	 * @param {String} managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
@@ -335,6 +360,51 @@ class WorkforceManagementApi {
 			'/api/v2/workforcemanagement/adhocmodelingjobs/{jobId}', 
 			'GET', 
 			{ 'jobId': jobId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get the management unit to which the agent belongs
+	 * 
+	 * @param {String} agentId The ID of the agent to look up
+	 */
+	getWorkforcemanagementAgentManagementunit(agentId) { 
+		// verify the required parameter 'agentId' is set
+		if (agentId === undefined || agentId === null) {
+			throw 'Missing the required parameter "agentId" when calling getWorkforcemanagementAgentManagementunit';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/agents/{agentId}/managementunit', 
+			'GET', 
+			{ 'agentId': agentId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get the management unit to which the currently logged in agent belongs
+	 * 
+	 */
+	getWorkforcemanagementAgentsMeManagementunit() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/agents/me/managementunit', 
+			'GET', 
+			{  }, 
 			{  }, 
 			{  }, 
 			{  }, 
@@ -1151,6 +1221,35 @@ class WorkforceManagementApi {
 	}
 
 	/**
+	 * Get management unit
+	 * settings.shortTermForecasting is deprecated and now lives on the business unit
+	 * @param {String} managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+	 * @param {Object} opts Optional parameters
+	 * @param {Array.<String>} opts.expand 
+	 */
+	getWorkforcemanagementManagementunit(managementUnitId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'managementUnitId' is set
+		if (managementUnitId === undefined || managementUnitId === null) {
+			throw 'Missing the required parameter "managementUnitId" when calling getWorkforcemanagementManagementunit';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/managementunits/{managementUnitId}', 
+			'GET', 
+			{ 'managementUnitId': managementUnitId }, 
+			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get activity codes
 	 * 
 	 * @param {String} managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
@@ -1613,7 +1712,7 @@ class WorkforceManagementApi {
 
 	/**
 	 * Get work plans
-	 * 
+	 * \&quot;expand=details\&quot; is deprecated
 	 * @param {String} managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand 
@@ -1961,6 +2060,35 @@ class WorkforceManagementApi {
 			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/servicegoaltemplates/{serviceGoalTemplateId}', 
 			'PATCH', 
 			{ 'businessUnitId': businessUnitId,'serviceGoalTemplateId': serviceGoalTemplateId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update the requested management unit
+	 * 
+	 * @param {String} managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body body
+	 */
+	patchWorkforcemanagementManagementunit(managementUnitId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'managementUnitId' is set
+		if (managementUnitId === undefined || managementUnitId === null) {
+			throw 'Missing the required parameter "managementUnitId" when calling patchWorkforcemanagementManagementunit';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/managementunits/{managementUnitId}', 
+			'PATCH', 
+			{ 'managementUnitId': managementUnitId }, 
 			{  }, 
 			{  }, 
 			{  }, 

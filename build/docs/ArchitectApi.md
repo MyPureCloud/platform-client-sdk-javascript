@@ -80,6 +80,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postArchitectSchedules**](ArchitectApi.html#postArchitectSchedules) | **POST** /api/v2/architect/schedules | Create a new schedule.
 [**postArchitectSystempromptHistory**](ArchitectApi.html#postArchitectSystempromptHistory) | **POST** /api/v2/architect/systemprompts/{promptId}/history | Generate system prompt history
 [**postArchitectSystempromptResources**](ArchitectApi.html#postArchitectSystempromptResources) | **POST** /api/v2/architect/systemprompts/{promptId}/resources | Create system prompt resource override.
+[**postFlowHistory**](ArchitectApi.html#postFlowHistory) | **POST** /api/v2/flows/{flowId}/history | Generate flow history
 [**postFlowVersions**](ArchitectApi.html#postFlowVersions) | **POST** /api/v2/flows/{flowId}/versions | Create flow version
 [**postFlows**](ArchitectApi.html#postFlows) | **POST** /api/v2/flows | Create flow
 [**postFlowsActionsCheckin**](ArchitectApi.html#postFlowsActionsCheckin) | **POST** /api/v2/flows/actions/checkin | Check-in flow
@@ -955,11 +956,11 @@ apiInstance.getArchitectDependencytracking(name, opts)
  **name** | **String** | Object name to search for |  |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
- **objectType** | **[String]** | Object type(s) to search for | [optional] <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BOTCONNECTORBOT, BOTCONNECTORINTEGRATION, BOTFLOW, BRIDGEACTION, COMMONMODULEFLOW, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, DATATABLE, DIALOGENGINEBOT, DIALOGENGINEBOTVERSION, DIALOGFLOWAGENT, EMAILROUTE, EMERGENCYGROUP, FLOWACTION, FLOWDATATYPE, FLOWMILESTONE, FLOWOUTCOME, GROUP, INBOUNDCALLFLOW, INBOUNDCHATFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, LEXBOT, LEXBOTALIAS, LEXV2BOT, LEXV2BOTALIAS, NLUDOMAIN, OUTBOUNDCALLFLOW, QUEUE, RECORDINGPOLICY, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SURVEYINVITEFLOW, SYSTEMPROMPT, TTSENGINE, TTSVOICE, USER, USERPROMPT, WIDGET, WORKFLOW |
+ **objectType** | **[String]** | Object type(s) to search for | [optional] <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BOTCONNECTORBOT, BOTCONNECTORINTEGRATION, BOTFLOW, BRIDGEACTION, COMMONMODULEFLOW, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, DATATABLE, DIALOGENGINEBOT, DIALOGENGINEBOTVERSION, DIALOGFLOWAGENT, EMAILROUTE, EMERGENCYGROUP, FLOWACTION, FLOWDATATYPE, FLOWMILESTONE, FLOWOUTCOME, GROUP, INBOUNDCALLFLOW, INBOUNDCHATFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, INQUEUEEMAILFLOW, INQUEUESHORTMESSAGEFLOW, IVRCONFIGURATION, KNOWLEDGEBASE, LANGUAGE, LEXBOT, LEXBOTALIAS, LEXV2BOT, LEXV2BOTALIAS, NLUDOMAIN, OUTBOUNDCALLFLOW, QUEUE, RECORDINGPOLICY, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SURVEYINVITEFLOW, SYSTEMPROMPT, TTSENGINE, TTSVOICE, USER, USERPROMPT, WIDGET, WORKFLOW, WORKITEMFLOW |
  **consumedResources** | **Boolean** | Include resources each result item consumes | [optional]  |
  **consumingResources** | **Boolean** | Include resources that consume each result item | [optional]  |
- **consumedResourceType** | **[String]** | Types of consumed resources to return, if consumed resources are requested | [optional] <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BOTCONNECTORBOT, BOTCONNECTORINTEGRATION, BOTFLOW, BRIDGEACTION, COMMONMODULEFLOW, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, DATATABLE, DIALOGENGINEBOT, DIALOGENGINEBOTVERSION, DIALOGFLOWAGENT, EMAILROUTE, EMERGENCYGROUP, FLOWACTION, FLOWDATATYPE, FLOWMILESTONE, FLOWOUTCOME, GROUP, INBOUNDCALLFLOW, INBOUNDCHATFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, LEXBOT, LEXBOTALIAS, LEXV2BOT, LEXV2BOTALIAS, NLUDOMAIN, OUTBOUNDCALLFLOW, QUEUE, RECORDINGPOLICY, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SURVEYINVITEFLOW, SYSTEMPROMPT, TTSENGINE, TTSVOICE, USER, USERPROMPT, WIDGET, WORKFLOW |
- **consumingResourceType** | **[String]** | Types of consuming resources to return, if consuming resources are requested | [optional] <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BOTCONNECTORBOT, BOTCONNECTORINTEGRATION, BOTFLOW, BRIDGEACTION, COMMONMODULEFLOW, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, DATATABLE, DIALOGENGINEBOT, DIALOGENGINEBOTVERSION, DIALOGFLOWAGENT, EMAILROUTE, EMERGENCYGROUP, FLOWACTION, FLOWDATATYPE, FLOWMILESTONE, FLOWOUTCOME, GROUP, INBOUNDCALLFLOW, INBOUNDCHATFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, LEXBOT, LEXBOTALIAS, LEXV2BOT, LEXV2BOTALIAS, NLUDOMAIN, OUTBOUNDCALLFLOW, QUEUE, RECORDINGPOLICY, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SURVEYINVITEFLOW, SYSTEMPROMPT, TTSENGINE, TTSVOICE, USER, USERPROMPT, WIDGET, WORKFLOW |
+ **consumedResourceType** | **[String]** | Types of consumed resources to return, if consumed resources are requested | [optional] <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BOTCONNECTORBOT, BOTCONNECTORINTEGRATION, BOTFLOW, BRIDGEACTION, COMMONMODULEFLOW, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, DATATABLE, DIALOGENGINEBOT, DIALOGENGINEBOTVERSION, DIALOGFLOWAGENT, EMAILROUTE, EMERGENCYGROUP, FLOWACTION, FLOWDATATYPE, FLOWMILESTONE, FLOWOUTCOME, GROUP, INBOUNDCALLFLOW, INBOUNDCHATFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, INQUEUEEMAILFLOW, INQUEUESHORTMESSAGEFLOW, IVRCONFIGURATION, KNOWLEDGEBASE, LANGUAGE, LEXBOT, LEXBOTALIAS, LEXV2BOT, LEXV2BOTALIAS, NLUDOMAIN, OUTBOUNDCALLFLOW, QUEUE, RECORDINGPOLICY, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SURVEYINVITEFLOW, SYSTEMPROMPT, TTSENGINE, TTSVOICE, USER, USERPROMPT, WIDGET, WORKFLOW, WORKITEMFLOW |
+ **consumingResourceType** | **[String]** | Types of consuming resources to return, if consuming resources are requested | [optional] <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BOTCONNECTORBOT, BOTCONNECTORINTEGRATION, BOTFLOW, BRIDGEACTION, COMMONMODULEFLOW, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, DATATABLE, DIALOGENGINEBOT, DIALOGENGINEBOTVERSION, DIALOGFLOWAGENT, EMAILROUTE, EMERGENCYGROUP, FLOWACTION, FLOWDATATYPE, FLOWMILESTONE, FLOWOUTCOME, GROUP, INBOUNDCALLFLOW, INBOUNDCHATFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, INQUEUEEMAILFLOW, INQUEUESHORTMESSAGEFLOW, IVRCONFIGURATION, KNOWLEDGEBASE, LANGUAGE, LEXBOT, LEXBOTALIAS, LEXV2BOT, LEXV2BOTALIAS, NLUDOMAIN, OUTBOUNDCALLFLOW, QUEUE, RECORDINGPOLICY, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SURVEYINVITEFLOW, SYSTEMPROMPT, TTSENGINE, TTSVOICE, USER, USERPROMPT, WIDGET, WORKFLOW, WORKITEMFLOW |
 {: class="table table-striped"}
 
 ### Return type
@@ -1073,8 +1074,8 @@ apiInstance.getArchitectDependencytrackingConsumedresources(id, version, objectT
 | ------------- | ------------- | ------------- | ------------- |
  **id** | **String** | Consuming object ID |  |
  **version** | **String** | Consuming object version |  |
- **objectType** | **String** | Consuming object type.  Only versioned types are allowed here. | <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BOTCONNECTORBOT, BOTCONNECTORINTEGRATION, BOTFLOW, BRIDGEACTION, COMMONMODULEFLOW, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, DATATABLE, DIALOGENGINEBOT, DIALOGENGINEBOTVERSION, DIALOGFLOWAGENT, EMAILROUTE, EMERGENCYGROUP, FLOWACTION, FLOWDATATYPE, FLOWMILESTONE, FLOWOUTCOME, GROUP, INBOUNDCALLFLOW, INBOUNDCHATFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, LEXBOT, LEXBOTALIAS, LEXV2BOT, LEXV2BOTALIAS, NLUDOMAIN, OUTBOUNDCALLFLOW, QUEUE, RECORDINGPOLICY, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SURVEYINVITEFLOW, SYSTEMPROMPT, TTSENGINE, TTSVOICE, USER, USERPROMPT, WIDGET, WORKFLOW |
- **resourceType** | **[String]** | Types of consumed resources to show | [optional] <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BOTCONNECTORBOT, BOTCONNECTORINTEGRATION, BOTFLOW, BRIDGEACTION, COMMONMODULEFLOW, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, DATATABLE, DIALOGENGINEBOT, DIALOGENGINEBOTVERSION, DIALOGFLOWAGENT, EMAILROUTE, EMERGENCYGROUP, FLOWACTION, FLOWDATATYPE, FLOWMILESTONE, FLOWOUTCOME, GROUP, INBOUNDCALLFLOW, INBOUNDCHATFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, LEXBOT, LEXBOTALIAS, LEXV2BOT, LEXV2BOTALIAS, NLUDOMAIN, OUTBOUNDCALLFLOW, QUEUE, RECORDINGPOLICY, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SURVEYINVITEFLOW, SYSTEMPROMPT, TTSENGINE, TTSVOICE, USER, USERPROMPT, WIDGET, WORKFLOW |
+ **objectType** | **String** | Consuming object type.  Only versioned types are allowed here. | <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BOTCONNECTORBOT, BOTCONNECTORINTEGRATION, BOTFLOW, BRIDGEACTION, COMMONMODULEFLOW, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, DATATABLE, DIALOGENGINEBOT, DIALOGENGINEBOTVERSION, DIALOGFLOWAGENT, EMAILROUTE, EMERGENCYGROUP, FLOWACTION, FLOWDATATYPE, FLOWMILESTONE, FLOWOUTCOME, GROUP, INBOUNDCALLFLOW, INBOUNDCHATFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, INQUEUEEMAILFLOW, INQUEUESHORTMESSAGEFLOW, IVRCONFIGURATION, KNOWLEDGEBASE, LANGUAGE, LEXBOT, LEXBOTALIAS, LEXV2BOT, LEXV2BOTALIAS, NLUDOMAIN, OUTBOUNDCALLFLOW, QUEUE, RECORDINGPOLICY, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SURVEYINVITEFLOW, SYSTEMPROMPT, TTSENGINE, TTSVOICE, USER, USERPROMPT, WIDGET, WORKFLOW, WORKITEMFLOW |
+ **resourceType** | **[String]** | Types of consumed resources to show | [optional] <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BOTCONNECTORBOT, BOTCONNECTORINTEGRATION, BOTFLOW, BRIDGEACTION, COMMONMODULEFLOW, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, DATATABLE, DIALOGENGINEBOT, DIALOGENGINEBOTVERSION, DIALOGFLOWAGENT, EMAILROUTE, EMERGENCYGROUP, FLOWACTION, FLOWDATATYPE, FLOWMILESTONE, FLOWOUTCOME, GROUP, INBOUNDCALLFLOW, INBOUNDCHATFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, INQUEUEEMAILFLOW, INQUEUESHORTMESSAGEFLOW, IVRCONFIGURATION, KNOWLEDGEBASE, LANGUAGE, LEXBOT, LEXBOTALIAS, LEXV2BOT, LEXV2BOTALIAS, NLUDOMAIN, OUTBOUNDCALLFLOW, QUEUE, RECORDINGPOLICY, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SURVEYINVITEFLOW, SYSTEMPROMPT, TTSENGINE, TTSVOICE, USER, USERPROMPT, WIDGET, WORKFLOW, WORKITEMFLOW |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
 {: class="table table-striped"}
@@ -1140,8 +1141,8 @@ apiInstance.getArchitectDependencytrackingConsumingresources(id, objectType, opt
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **id** | **String** | Consumed object ID |  |
- **objectType** | **String** | Consumed object type | <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BOTCONNECTORBOT, BOTCONNECTORINTEGRATION, BOTFLOW, BRIDGEACTION, COMMONMODULEFLOW, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, DATATABLE, DIALOGENGINEBOT, DIALOGENGINEBOTVERSION, DIALOGFLOWAGENT, EMAILROUTE, EMERGENCYGROUP, FLOWACTION, FLOWDATATYPE, FLOWMILESTONE, FLOWOUTCOME, GROUP, INBOUNDCALLFLOW, INBOUNDCHATFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, LEXBOT, LEXBOTALIAS, LEXV2BOT, LEXV2BOTALIAS, NLUDOMAIN, OUTBOUNDCALLFLOW, QUEUE, RECORDINGPOLICY, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SURVEYINVITEFLOW, SYSTEMPROMPT, TTSENGINE, TTSVOICE, USER, USERPROMPT, WIDGET, WORKFLOW |
- **resourceType** | **[String]** | Types of consuming resources to show.  Only versioned types are allowed here. | [optional] <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BOTCONNECTORBOT, BOTCONNECTORINTEGRATION, BOTFLOW, BRIDGEACTION, COMMONMODULEFLOW, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, DATATABLE, DIALOGENGINEBOT, DIALOGENGINEBOTVERSION, DIALOGFLOWAGENT, EMAILROUTE, EMERGENCYGROUP, FLOWACTION, FLOWDATATYPE, FLOWMILESTONE, FLOWOUTCOME, GROUP, INBOUNDCALLFLOW, INBOUNDCHATFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, LEXBOT, LEXBOTALIAS, LEXV2BOT, LEXV2BOTALIAS, NLUDOMAIN, OUTBOUNDCALLFLOW, QUEUE, RECORDINGPOLICY, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SURVEYINVITEFLOW, SYSTEMPROMPT, TTSENGINE, TTSVOICE, USER, USERPROMPT, WIDGET, WORKFLOW |
+ **objectType** | **String** | Consumed object type | <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BOTCONNECTORBOT, BOTCONNECTORINTEGRATION, BOTFLOW, BRIDGEACTION, COMMONMODULEFLOW, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, DATATABLE, DIALOGENGINEBOT, DIALOGENGINEBOTVERSION, DIALOGFLOWAGENT, EMAILROUTE, EMERGENCYGROUP, FLOWACTION, FLOWDATATYPE, FLOWMILESTONE, FLOWOUTCOME, GROUP, INBOUNDCALLFLOW, INBOUNDCHATFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, INQUEUEEMAILFLOW, INQUEUESHORTMESSAGEFLOW, IVRCONFIGURATION, KNOWLEDGEBASE, LANGUAGE, LEXBOT, LEXBOTALIAS, LEXV2BOT, LEXV2BOTALIAS, NLUDOMAIN, OUTBOUNDCALLFLOW, QUEUE, RECORDINGPOLICY, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SURVEYINVITEFLOW, SYSTEMPROMPT, TTSENGINE, TTSVOICE, USER, USERPROMPT, WIDGET, WORKFLOW, WORKITEMFLOW |
+ **resourceType** | **[String]** | Types of consuming resources to show.  Only versioned types are allowed here. | [optional] <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BOTCONNECTORBOT, BOTCONNECTORINTEGRATION, BOTFLOW, BRIDGEACTION, COMMONMODULEFLOW, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, DATATABLE, DIALOGENGINEBOT, DIALOGENGINEBOTVERSION, DIALOGFLOWAGENT, EMAILROUTE, EMERGENCYGROUP, FLOWACTION, FLOWDATATYPE, FLOWMILESTONE, FLOWOUTCOME, GROUP, INBOUNDCALLFLOW, INBOUNDCHATFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, INQUEUEEMAILFLOW, INQUEUESHORTMESSAGEFLOW, IVRCONFIGURATION, KNOWLEDGEBASE, LANGUAGE, LEXBOT, LEXBOTALIAS, LEXV2BOT, LEXV2BOTALIAS, NLUDOMAIN, OUTBOUNDCALLFLOW, QUEUE, RECORDINGPOLICY, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SURVEYINVITEFLOW, SYSTEMPROMPT, TTSENGINE, TTSVOICE, USER, USERPROMPT, WIDGET, WORKFLOW, WORKITEMFLOW |
  **version** | **String** | Object version | [optional]  |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
@@ -1209,10 +1210,10 @@ apiInstance.getArchitectDependencytrackingDeletedresourceconsumers(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **name** | **String** | Name to search for | [optional]  |
- **objectType** | **[String]** | Object type(s) to search for | [optional] <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BOTCONNECTORBOT, BOTCONNECTORINTEGRATION, BOTFLOW, BRIDGEACTION, COMMONMODULEFLOW, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, DATATABLE, DIALOGENGINEBOT, DIALOGENGINEBOTVERSION, DIALOGFLOWAGENT, EMAILROUTE, EMERGENCYGROUP, FLOWACTION, FLOWDATATYPE, FLOWMILESTONE, FLOWOUTCOME, GROUP, INBOUNDCALLFLOW, INBOUNDCHATFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, LEXBOT, LEXBOTALIAS, LEXV2BOT, LEXV2BOTALIAS, NLUDOMAIN, OUTBOUNDCALLFLOW, QUEUE, RECORDINGPOLICY, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SURVEYINVITEFLOW, SYSTEMPROMPT, TTSENGINE, TTSVOICE, USER, USERPROMPT, WIDGET, WORKFLOW |
+ **objectType** | **[String]** | Object type(s) to search for | [optional] <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BOTCONNECTORBOT, BOTCONNECTORINTEGRATION, BOTFLOW, BRIDGEACTION, COMMONMODULEFLOW, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, DATATABLE, DIALOGENGINEBOT, DIALOGENGINEBOTVERSION, DIALOGFLOWAGENT, EMAILROUTE, EMERGENCYGROUP, FLOWACTION, FLOWDATATYPE, FLOWMILESTONE, FLOWOUTCOME, GROUP, INBOUNDCALLFLOW, INBOUNDCHATFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, INQUEUEEMAILFLOW, INQUEUESHORTMESSAGEFLOW, IVRCONFIGURATION, KNOWLEDGEBASE, LANGUAGE, LEXBOT, LEXBOTALIAS, LEXV2BOT, LEXV2BOTALIAS, NLUDOMAIN, OUTBOUNDCALLFLOW, QUEUE, RECORDINGPOLICY, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SURVEYINVITEFLOW, SYSTEMPROMPT, TTSENGINE, TTSVOICE, USER, USERPROMPT, WIDGET, WORKFLOW, WORKITEMFLOW |
  **flowFilter** | **String** | Show only checkedIn or published flows | [optional] <br />**Values**: checkedIn, published |
  **consumedResources** | **Boolean** | Return consumed resources? | [optional] [default to false] |
- **consumedResourceType** | **[String]** | Resource type(s) to return | [optional] <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BOTCONNECTORBOT, BOTCONNECTORINTEGRATION, BOTFLOW, BRIDGEACTION, COMMONMODULEFLOW, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, DATATABLE, DIALOGENGINEBOT, DIALOGENGINEBOTVERSION, DIALOGFLOWAGENT, EMAILROUTE, EMERGENCYGROUP, FLOWACTION, FLOWDATATYPE, FLOWMILESTONE, FLOWOUTCOME, GROUP, INBOUNDCALLFLOW, INBOUNDCHATFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, LEXBOT, LEXBOTALIAS, LEXV2BOT, LEXV2BOTALIAS, NLUDOMAIN, OUTBOUNDCALLFLOW, QUEUE, RECORDINGPOLICY, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SURVEYINVITEFLOW, SYSTEMPROMPT, TTSENGINE, TTSVOICE, USER, USERPROMPT, WIDGET, WORKFLOW |
+ **consumedResourceType** | **[String]** | Resource type(s) to return | [optional] <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BOTCONNECTORBOT, BOTCONNECTORINTEGRATION, BOTFLOW, BRIDGEACTION, COMMONMODULEFLOW, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, DATATABLE, DIALOGENGINEBOT, DIALOGENGINEBOTVERSION, DIALOGFLOWAGENT, EMAILROUTE, EMERGENCYGROUP, FLOWACTION, FLOWDATATYPE, FLOWMILESTONE, FLOWOUTCOME, GROUP, INBOUNDCALLFLOW, INBOUNDCHATFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, INQUEUEEMAILFLOW, INQUEUESHORTMESSAGEFLOW, IVRCONFIGURATION, KNOWLEDGEBASE, LANGUAGE, LEXBOT, LEXBOTALIAS, LEXV2BOT, LEXV2BOTALIAS, NLUDOMAIN, OUTBOUNDCALLFLOW, QUEUE, RECORDINGPOLICY, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SURVEYINVITEFLOW, SYSTEMPROMPT, TTSENGINE, TTSVOICE, USER, USERPROMPT, WIDGET, WORKFLOW, WORKITEMFLOW |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
 {: class="table table-striped"}
@@ -1280,11 +1281,11 @@ apiInstance.getArchitectDependencytrackingObject(id, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **id** | **String** | Object ID |  |
  **version** | **String** | Object version | [optional]  |
- **objectType** | **String** | Object type | [optional] <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BOTCONNECTORBOT, BOTCONNECTORINTEGRATION, BOTFLOW, BRIDGEACTION, COMMONMODULEFLOW, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, DATATABLE, DIALOGENGINEBOT, DIALOGENGINEBOTVERSION, DIALOGFLOWAGENT, EMAILROUTE, EMERGENCYGROUP, FLOWACTION, FLOWDATATYPE, FLOWMILESTONE, FLOWOUTCOME, GROUP, INBOUNDCALLFLOW, INBOUNDCHATFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, LEXBOT, LEXBOTALIAS, LEXV2BOT, LEXV2BOTALIAS, NLUDOMAIN, OUTBOUNDCALLFLOW, QUEUE, RECORDINGPOLICY, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SURVEYINVITEFLOW, SYSTEMPROMPT, TTSENGINE, TTSVOICE, USER, USERPROMPT, WIDGET, WORKFLOW |
+ **objectType** | **String** | Object type | [optional] <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BOTCONNECTORBOT, BOTCONNECTORINTEGRATION, BOTFLOW, BRIDGEACTION, COMMONMODULEFLOW, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, DATATABLE, DIALOGENGINEBOT, DIALOGENGINEBOTVERSION, DIALOGFLOWAGENT, EMAILROUTE, EMERGENCYGROUP, FLOWACTION, FLOWDATATYPE, FLOWMILESTONE, FLOWOUTCOME, GROUP, INBOUNDCALLFLOW, INBOUNDCHATFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, INQUEUEEMAILFLOW, INQUEUESHORTMESSAGEFLOW, IVRCONFIGURATION, KNOWLEDGEBASE, LANGUAGE, LEXBOT, LEXBOTALIAS, LEXV2BOT, LEXV2BOTALIAS, NLUDOMAIN, OUTBOUNDCALLFLOW, QUEUE, RECORDINGPOLICY, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SURVEYINVITEFLOW, SYSTEMPROMPT, TTSENGINE, TTSVOICE, USER, USERPROMPT, WIDGET, WORKFLOW, WORKITEMFLOW |
  **consumedResources** | **Boolean** | Include resources this item consumes | [optional]  |
  **consumingResources** | **Boolean** | Include resources that consume this item | [optional]  |
- **consumedResourceType** | **[String]** | Types of consumed resources to return, if consumed resources are requested | [optional] <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BOTCONNECTORBOT, BOTCONNECTORINTEGRATION, BOTFLOW, BRIDGEACTION, COMMONMODULEFLOW, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, DATATABLE, DIALOGENGINEBOT, DIALOGENGINEBOTVERSION, DIALOGFLOWAGENT, EMAILROUTE, EMERGENCYGROUP, FLOWACTION, FLOWDATATYPE, FLOWMILESTONE, FLOWOUTCOME, GROUP, INBOUNDCALLFLOW, INBOUNDCHATFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, LEXBOT, LEXBOTALIAS, LEXV2BOT, LEXV2BOTALIAS, NLUDOMAIN, OUTBOUNDCALLFLOW, QUEUE, RECORDINGPOLICY, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SURVEYINVITEFLOW, SYSTEMPROMPT, TTSENGINE, TTSVOICE, USER, USERPROMPT, WIDGET, WORKFLOW |
- **consumingResourceType** | **[String]** | Types of consuming resources to return, if consuming resources are requested | [optional] <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BOTCONNECTORBOT, BOTCONNECTORINTEGRATION, BOTFLOW, BRIDGEACTION, COMMONMODULEFLOW, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, DATATABLE, DIALOGENGINEBOT, DIALOGENGINEBOTVERSION, DIALOGFLOWAGENT, EMAILROUTE, EMERGENCYGROUP, FLOWACTION, FLOWDATATYPE, FLOWMILESTONE, FLOWOUTCOME, GROUP, INBOUNDCALLFLOW, INBOUNDCHATFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, LEXBOT, LEXBOTALIAS, LEXV2BOT, LEXV2BOTALIAS, NLUDOMAIN, OUTBOUNDCALLFLOW, QUEUE, RECORDINGPOLICY, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SURVEYINVITEFLOW, SYSTEMPROMPT, TTSENGINE, TTSVOICE, USER, USERPROMPT, WIDGET, WORKFLOW |
+ **consumedResourceType** | **[String]** | Types of consumed resources to return, if consumed resources are requested | [optional] <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BOTCONNECTORBOT, BOTCONNECTORINTEGRATION, BOTFLOW, BRIDGEACTION, COMMONMODULEFLOW, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, DATATABLE, DIALOGENGINEBOT, DIALOGENGINEBOTVERSION, DIALOGFLOWAGENT, EMAILROUTE, EMERGENCYGROUP, FLOWACTION, FLOWDATATYPE, FLOWMILESTONE, FLOWOUTCOME, GROUP, INBOUNDCALLFLOW, INBOUNDCHATFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, INQUEUEEMAILFLOW, INQUEUESHORTMESSAGEFLOW, IVRCONFIGURATION, KNOWLEDGEBASE, LANGUAGE, LEXBOT, LEXBOTALIAS, LEXV2BOT, LEXV2BOTALIAS, NLUDOMAIN, OUTBOUNDCALLFLOW, QUEUE, RECORDINGPOLICY, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SURVEYINVITEFLOW, SYSTEMPROMPT, TTSENGINE, TTSVOICE, USER, USERPROMPT, WIDGET, WORKFLOW, WORKITEMFLOW |
+ **consumingResourceType** | **[String]** | Types of consuming resources to return, if consuming resources are requested | [optional] <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BOTCONNECTORBOT, BOTCONNECTORINTEGRATION, BOTFLOW, BRIDGEACTION, COMMONMODULEFLOW, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, DATATABLE, DIALOGENGINEBOT, DIALOGENGINEBOTVERSION, DIALOGFLOWAGENT, EMAILROUTE, EMERGENCYGROUP, FLOWACTION, FLOWDATATYPE, FLOWMILESTONE, FLOWOUTCOME, GROUP, INBOUNDCALLFLOW, INBOUNDCHATFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, INQUEUEEMAILFLOW, INQUEUESHORTMESSAGEFLOW, IVRCONFIGURATION, KNOWLEDGEBASE, LANGUAGE, LEXBOT, LEXBOTALIAS, LEXV2BOT, LEXV2BOTALIAS, NLUDOMAIN, OUTBOUNDCALLFLOW, QUEUE, RECORDINGPOLICY, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SURVEYINVITEFLOW, SYSTEMPROMPT, TTSENGINE, TTSVOICE, USER, USERPROMPT, WIDGET, WORKFLOW, WORKITEMFLOW |
  **consumedResourceRequest** | **Boolean** | Indicate that this is going to look up a consumed resource object | [optional]  |
 {: class="table table-striped"}
 
@@ -1462,9 +1463,9 @@ apiInstance.getArchitectDependencytrackingUpdatedresourceconsumers(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **name** | **String** | Name to search for | [optional]  |
- **objectType** | **[String]** | Object type(s) to search for | [optional] <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BOTCONNECTORBOT, BOTCONNECTORINTEGRATION, BOTFLOW, BRIDGEACTION, COMMONMODULEFLOW, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, DATATABLE, DIALOGENGINEBOT, DIALOGENGINEBOTVERSION, DIALOGFLOWAGENT, EMAILROUTE, EMERGENCYGROUP, FLOWACTION, FLOWDATATYPE, FLOWMILESTONE, FLOWOUTCOME, GROUP, INBOUNDCALLFLOW, INBOUNDCHATFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, LEXBOT, LEXBOTALIAS, LEXV2BOT, LEXV2BOTALIAS, NLUDOMAIN, OUTBOUNDCALLFLOW, QUEUE, RECORDINGPOLICY, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SURVEYINVITEFLOW, SYSTEMPROMPT, TTSENGINE, TTSVOICE, USER, USERPROMPT, WIDGET, WORKFLOW |
+ **objectType** | **[String]** | Object type(s) to search for | [optional] <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BOTCONNECTORBOT, BOTCONNECTORINTEGRATION, BOTFLOW, BRIDGEACTION, COMMONMODULEFLOW, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, DATATABLE, DIALOGENGINEBOT, DIALOGENGINEBOTVERSION, DIALOGFLOWAGENT, EMAILROUTE, EMERGENCYGROUP, FLOWACTION, FLOWDATATYPE, FLOWMILESTONE, FLOWOUTCOME, GROUP, INBOUNDCALLFLOW, INBOUNDCHATFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, INQUEUEEMAILFLOW, INQUEUESHORTMESSAGEFLOW, IVRCONFIGURATION, KNOWLEDGEBASE, LANGUAGE, LEXBOT, LEXBOTALIAS, LEXV2BOT, LEXV2BOTALIAS, NLUDOMAIN, OUTBOUNDCALLFLOW, QUEUE, RECORDINGPOLICY, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SURVEYINVITEFLOW, SYSTEMPROMPT, TTSENGINE, TTSVOICE, USER, USERPROMPT, WIDGET, WORKFLOW, WORKITEMFLOW |
  **consumedResources** | **Boolean** | Return consumed resources? | [optional] [default to false] |
- **consumedResourceType** | **[String]** | Resource type(s) to return | [optional] <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BOTCONNECTORBOT, BOTCONNECTORINTEGRATION, BOTFLOW, BRIDGEACTION, COMMONMODULEFLOW, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, DATATABLE, DIALOGENGINEBOT, DIALOGENGINEBOTVERSION, DIALOGFLOWAGENT, EMAILROUTE, EMERGENCYGROUP, FLOWACTION, FLOWDATATYPE, FLOWMILESTONE, FLOWOUTCOME, GROUP, INBOUNDCALLFLOW, INBOUNDCHATFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, IVRCONFIGURATION, LANGUAGE, LEXBOT, LEXBOTALIAS, LEXV2BOT, LEXV2BOTALIAS, NLUDOMAIN, OUTBOUNDCALLFLOW, QUEUE, RECORDINGPOLICY, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SURVEYINVITEFLOW, SYSTEMPROMPT, TTSENGINE, TTSVOICE, USER, USERPROMPT, WIDGET, WORKFLOW |
+ **consumedResourceType** | **[String]** | Resource type(s) to return | [optional] <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, BOTCONNECTORBOT, BOTCONNECTORINTEGRATION, BOTFLOW, BRIDGEACTION, COMMONMODULEFLOW, COMPOSERSCRIPT, CONTACTLIST, DATAACTION, DATATABLE, DIALOGENGINEBOT, DIALOGENGINEBOTVERSION, DIALOGFLOWAGENT, EMAILROUTE, EMERGENCYGROUP, FLOWACTION, FLOWDATATYPE, FLOWMILESTONE, FLOWOUTCOME, GROUP, INBOUNDCALLFLOW, INBOUNDCHATFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, INQUEUEEMAILFLOW, INQUEUESHORTMESSAGEFLOW, IVRCONFIGURATION, KNOWLEDGEBASE, LANGUAGE, LEXBOT, LEXBOTALIAS, LEXV2BOT, LEXV2BOTALIAS, NLUDOMAIN, OUTBOUNDCALLFLOW, QUEUE, RECORDINGPOLICY, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SURVEYINVITEFLOW, SYSTEMPROMPT, TTSENGINE, TTSVOICE, USER, USERPROMPT, WIDGET, WORKFLOW, WORKITEMFLOW |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
 {: class="table table-striped"}
@@ -2171,7 +2172,8 @@ let opts = {
   'sortBy': "name", // String | Sort by
   'sortOrder': "ASC", // String | Sort order
   'name': "name_example", // String | Name of the Schedule Group to filter by.
-  'scheduleIds': "scheduleIds_example" // String | A comma-delimited list of Schedule IDs to filter by.
+  'scheduleIds': "scheduleIds_example", // String | A comma-delimited list of Schedule IDs to filter by.
+  'divisionId': ["divisionId_example"] // [String] | List of divisionIds on which to filter.
 };
 
 apiInstance.getArchitectSchedulegroups(opts)
@@ -2195,6 +2197,7 @@ apiInstance.getArchitectSchedulegroups(opts)
  **sortOrder** | **String** | Sort order | [optional] [default to ASC] |
  **name** | **String** | Name of the Schedule Group to filter by. | [optional]  |
  **scheduleIds** | **String** | A comma-delimited list of Schedule IDs to filter by. | [optional]  |
+ **divisionId** | **[String]** | List of divisionIds on which to filter. | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2237,7 +2240,8 @@ let opts = {
   'pageSize': 25, // Number | Page size
   'sortBy': "name", // String | Sort by
   'sortOrder': "ASC", // String | Sort order
-  'name': "name_example" // String | Name of the Schedule to filter by.
+  'name': "name_example", // String | Name of the Schedule to filter by.
+  'divisionId': ["divisionId_example"] // [String] | List of divisionIds on which to filter.
 };
 
 apiInstance.getArchitectSchedules(opts)
@@ -2260,6 +2264,7 @@ apiInstance.getArchitectSchedules(opts)
  **sortBy** | **String** | Sort by | [optional] [default to name] |
  **sortOrder** | **String** | Sort order | [optional] [default to ASC] |
  **name** | **String** | Name of the Schedule to filter by. | [optional]  |
+ **divisionId** | **[String]** | List of divisionIds on which to filter. | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -3021,7 +3026,7 @@ apiInstance.getFlows(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **type** | **[String]** | Type | [optional] <br />**Values**: bot, commonmodule, inboundcall, inboundchat, inboundemail, inboundshortmessage, outboundcall, inqueuecall, speech, securecall, surveyinvite, workflow |
+ **type** | **[String]** | Type | [optional] <br />**Values**: bot, commonmodule, inboundcall, inboundchat, inboundemail, inboundshortmessage, outboundcall, inqueuecall, inqueueemail, inqueueshortmessage, speech, securecall, surveyinvite, workflow, workitem |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **sortBy** | **String** | Sort by | [optional] [default to id] |
@@ -3532,7 +3537,7 @@ apiInstance.getFlowsDivisionviews(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **type** | **[String]** | Type | [optional] <br />**Values**: bot, commonmodule, inboundcall, inboundchat, inboundemail, inboundshortmessage, outboundcall, inqueuecall, speech, securecall, surveyinvite, workflow |
+ **type** | **[String]** | Type | [optional] <br />**Values**: bot, commonmodule, inboundcall, inboundchat, inboundemail, inboundshortmessage, outboundcall, inqueuecall, inqueueemail, inqueueshortmessage, speech, securecall, surveyinvite, workflow, workitem |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **sortBy** | **String** | Sort by | [optional] [default to id] |
@@ -4852,6 +4857,11 @@ Prompt <a href="#" onclick="return copyPromptExample()">Copy</a>
       "team": { 
         "id": String, 
         "name": String, 
+        "division": { 
+          "id": String, 
+          "name": String, 
+          "selfUri": String, 
+        },  
         "description": String, 
         "dateModified": Date, 
         "memberCount": Number, 
@@ -5292,6 +5302,61 @@ apiInstance.postArchitectSystempromptResources(promptId, body)
 
 **SystemPromptAsset**
 
+<a name="postFlowHistory"></a>
+
+# Operation postFlowHistory(flowId)
+
+
+
+POST /api/v2/flows/{flowId}/history
+
+Generate flow history
+
+Asynchronous.  Notification topic: v2.flows.{flowId}
+
+Requires ANY permissions: 
+
+* architect:flow:view
+
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ArchitectApi();
+
+let flowId = "flowId_example"; // String | Flow ID
+
+apiInstance.postFlowHistory(flowId)
+  .then((data) => {
+    console.log(`postFlowHistory success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postFlowHistory');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **flowId** | **String** | Flow ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+**Operation**
+
 <a name="postFlowVersions"></a>
 
 # FlowVersion postFlowVersions(flowId, body)
@@ -5351,7 +5416,7 @@ apiInstance.postFlowVersions(flowId, body)
 
 <a name="postFlows"></a>
 
-# Flow postFlows(body)
+# Flow postFlows(body, opts)
 
 
 
@@ -5784,6 +5849,11 @@ Flow <a href="#" onclick="return copyFlowExample()">Copy</a>
     "team": { 
       "id": String, 
       "name": String, 
+      "division": { 
+        "id": String, 
+        "name": String, 
+        "selfUri": String, 
+      },  
       "description": String, 
       "dateModified": Date, 
       "memberCount": Number, 
@@ -5863,6 +5933,217 @@ Flow <a href="#" onclick="return copyFlowExample()">Copy</a>
         "id": String, 
         "selfUri": String, 
       },  
+      "version": { 
+        "id": String, 
+        "domain": { 
+          "id": String, 
+          "name": String, 
+          "language": String, 
+          "draftVersion": { 
+            "id": String, 
+            "domain": { 
+              "id": String, 
+              "name": String, 
+              "language": String, 
+              "draftVersion": { 
+                "id": String, 
+                "domain": NluDomain, 
+                "description": String, 
+                "language": String, 
+                "published": Boolean, 
+                "dateCreated": Date, 
+                "dateModified": Date, 
+                "dateTrained": Date, 
+                "datePublished": Date, 
+                "trainingStatus": String, 
+                "evaluationStatus": String, 
+                "intents": [IntentDefinition], 
+                "entityTypes": [NamedEntityTypeDefinition], 
+                "entities": [NamedEntityDefinition], 
+                "selfUri": String, 
+              },  
+              "lastPublishedVersion": { 
+                "id": String, 
+                "domain": NluDomain, 
+                "description": String, 
+                "language": String, 
+                "published": Boolean, 
+                "dateCreated": Date, 
+                "dateModified": Date, 
+                "dateTrained": Date, 
+                "datePublished": Date, 
+                "trainingStatus": String, 
+                "evaluationStatus": String, 
+                "intents": [IntentDefinition], 
+                "entityTypes": [NamedEntityTypeDefinition], 
+                "entities": [NamedEntityDefinition], 
+                "selfUri": String, 
+              },  
+              "dateCreated": Date, 
+              "dateModified": Date, 
+              "selfUri": String, 
+            },  
+            "description": String, 
+            "language": String, 
+            "published": Boolean, 
+            "dateCreated": Date, 
+            "dateModified": Date, 
+            "dateTrained": Date, 
+            "datePublished": Date, 
+            "trainingStatus": String, 
+            "evaluationStatus": String, 
+            "intents": { 
+              "name": String, 
+              "entityTypeBindings": { 
+                "entityType": String, 
+                "entityName": String, 
+              },  
+              "entityNameReferences": [String], 
+              "utterances": { 
+                "segments": [NluUtteranceSegment], 
+              },  
+            },  
+            "entityTypes": { 
+              "name": String, 
+              "description": String, 
+              "mechanism": { 
+                "items": [NamedEntityTypeItem], 
+                "restricted": Boolean, 
+                "type": String, 
+              },  
+            },  
+            "entities": { 
+              "name": String, 
+              "type": String, 
+            },  
+            "selfUri": String, 
+          },  
+          "lastPublishedVersion": { 
+            "id": String, 
+            "domain": { 
+              "id": String, 
+              "name": String, 
+              "language": String, 
+              "draftVersion": { 
+                "id": String, 
+                "domain": NluDomain, 
+                "description": String, 
+                "language": String, 
+                "published": Boolean, 
+                "dateCreated": Date, 
+                "dateModified": Date, 
+                "dateTrained": Date, 
+                "datePublished": Date, 
+                "trainingStatus": String, 
+                "evaluationStatus": String, 
+                "intents": [IntentDefinition], 
+                "entityTypes": [NamedEntityTypeDefinition], 
+                "entities": [NamedEntityDefinition], 
+                "selfUri": String, 
+              },  
+              "lastPublishedVersion": { 
+                "id": String, 
+                "domain": NluDomain, 
+                "description": String, 
+                "language": String, 
+                "published": Boolean, 
+                "dateCreated": Date, 
+                "dateModified": Date, 
+                "dateTrained": Date, 
+                "datePublished": Date, 
+                "trainingStatus": String, 
+                "evaluationStatus": String, 
+                "intents": [IntentDefinition], 
+                "entityTypes": [NamedEntityTypeDefinition], 
+                "entities": [NamedEntityDefinition], 
+                "selfUri": String, 
+              },  
+              "dateCreated": Date, 
+              "dateModified": Date, 
+              "selfUri": String, 
+            },  
+            "description": String, 
+            "language": String, 
+            "published": Boolean, 
+            "dateCreated": Date, 
+            "dateModified": Date, 
+            "dateTrained": Date, 
+            "datePublished": Date, 
+            "trainingStatus": String, 
+            "evaluationStatus": String, 
+            "intents": { 
+              "name": String, 
+              "entityTypeBindings": { 
+                "entityType": String, 
+                "entityName": String, 
+              },  
+              "entityNameReferences": [String], 
+              "utterances": { 
+                "segments": [NluUtteranceSegment], 
+              },  
+            },  
+            "entityTypes": { 
+              "name": String, 
+              "description": String, 
+              "mechanism": { 
+                "items": [NamedEntityTypeItem], 
+                "restricted": Boolean, 
+                "type": String, 
+              },  
+            },  
+            "entities": { 
+              "name": String, 
+              "type": String, 
+            },  
+            "selfUri": String, 
+          },  
+          "dateCreated": Date, 
+          "dateModified": Date, 
+          "selfUri": String, 
+        },  
+        "description": String, 
+        "language": String, 
+        "published": Boolean, 
+        "dateCreated": Date, 
+        "dateModified": Date, 
+        "dateTrained": Date, 
+        "datePublished": Date, 
+        "trainingStatus": String, 
+        "evaluationStatus": String, 
+        "intents": { 
+          "name": String, 
+          "entityTypeBindings": { 
+            "entityType": String, 
+            "entityName": String, 
+          },  
+          "entityNameReferences": [String], 
+          "utterances": { 
+            "segments": { 
+              "text": String, 
+              "entity": { 
+                "name": String, 
+              },  
+            },  
+          },  
+        },  
+        "entityTypes": { 
+          "name": String, 
+          "description": String, 
+          "mechanism": { 
+            "items": { 
+              "value": String, 
+              "synonyms": [String], 
+            },  
+            "restricted": Boolean, 
+            "type": String, 
+          },  
+        },  
+        "entities": { 
+          "name": String, 
+          "type": String, 
+        },  
+        "selfUri": String, 
+      },  
       "intents": { 
         "name": String, 
       },  
@@ -5915,6 +6196,217 @@ Flow <a href="#" onclick="return copyFlowExample()">Copy</a>
     "nluInfo": { 
       "domain": { 
         "id": String, 
+        "selfUri": String, 
+      },  
+      "version": { 
+        "id": String, 
+        "domain": { 
+          "id": String, 
+          "name": String, 
+          "language": String, 
+          "draftVersion": { 
+            "id": String, 
+            "domain": { 
+              "id": String, 
+              "name": String, 
+              "language": String, 
+              "draftVersion": { 
+                "id": String, 
+                "domain": NluDomain, 
+                "description": String, 
+                "language": String, 
+                "published": Boolean, 
+                "dateCreated": Date, 
+                "dateModified": Date, 
+                "dateTrained": Date, 
+                "datePublished": Date, 
+                "trainingStatus": String, 
+                "evaluationStatus": String, 
+                "intents": [IntentDefinition], 
+                "entityTypes": [NamedEntityTypeDefinition], 
+                "entities": [NamedEntityDefinition], 
+                "selfUri": String, 
+              },  
+              "lastPublishedVersion": { 
+                "id": String, 
+                "domain": NluDomain, 
+                "description": String, 
+                "language": String, 
+                "published": Boolean, 
+                "dateCreated": Date, 
+                "dateModified": Date, 
+                "dateTrained": Date, 
+                "datePublished": Date, 
+                "trainingStatus": String, 
+                "evaluationStatus": String, 
+                "intents": [IntentDefinition], 
+                "entityTypes": [NamedEntityTypeDefinition], 
+                "entities": [NamedEntityDefinition], 
+                "selfUri": String, 
+              },  
+              "dateCreated": Date, 
+              "dateModified": Date, 
+              "selfUri": String, 
+            },  
+            "description": String, 
+            "language": String, 
+            "published": Boolean, 
+            "dateCreated": Date, 
+            "dateModified": Date, 
+            "dateTrained": Date, 
+            "datePublished": Date, 
+            "trainingStatus": String, 
+            "evaluationStatus": String, 
+            "intents": { 
+              "name": String, 
+              "entityTypeBindings": { 
+                "entityType": String, 
+                "entityName": String, 
+              },  
+              "entityNameReferences": [String], 
+              "utterances": { 
+                "segments": [NluUtteranceSegment], 
+              },  
+            },  
+            "entityTypes": { 
+              "name": String, 
+              "description": String, 
+              "mechanism": { 
+                "items": [NamedEntityTypeItem], 
+                "restricted": Boolean, 
+                "type": String, 
+              },  
+            },  
+            "entities": { 
+              "name": String, 
+              "type": String, 
+            },  
+            "selfUri": String, 
+          },  
+          "lastPublishedVersion": { 
+            "id": String, 
+            "domain": { 
+              "id": String, 
+              "name": String, 
+              "language": String, 
+              "draftVersion": { 
+                "id": String, 
+                "domain": NluDomain, 
+                "description": String, 
+                "language": String, 
+                "published": Boolean, 
+                "dateCreated": Date, 
+                "dateModified": Date, 
+                "dateTrained": Date, 
+                "datePublished": Date, 
+                "trainingStatus": String, 
+                "evaluationStatus": String, 
+                "intents": [IntentDefinition], 
+                "entityTypes": [NamedEntityTypeDefinition], 
+                "entities": [NamedEntityDefinition], 
+                "selfUri": String, 
+              },  
+              "lastPublishedVersion": { 
+                "id": String, 
+                "domain": NluDomain, 
+                "description": String, 
+                "language": String, 
+                "published": Boolean, 
+                "dateCreated": Date, 
+                "dateModified": Date, 
+                "dateTrained": Date, 
+                "datePublished": Date, 
+                "trainingStatus": String, 
+                "evaluationStatus": String, 
+                "intents": [IntentDefinition], 
+                "entityTypes": [NamedEntityTypeDefinition], 
+                "entities": [NamedEntityDefinition], 
+                "selfUri": String, 
+              },  
+              "dateCreated": Date, 
+              "dateModified": Date, 
+              "selfUri": String, 
+            },  
+            "description": String, 
+            "language": String, 
+            "published": Boolean, 
+            "dateCreated": Date, 
+            "dateModified": Date, 
+            "dateTrained": Date, 
+            "datePublished": Date, 
+            "trainingStatus": String, 
+            "evaluationStatus": String, 
+            "intents": { 
+              "name": String, 
+              "entityTypeBindings": { 
+                "entityType": String, 
+                "entityName": String, 
+              },  
+              "entityNameReferences": [String], 
+              "utterances": { 
+                "segments": [NluUtteranceSegment], 
+              },  
+            },  
+            "entityTypes": { 
+              "name": String, 
+              "description": String, 
+              "mechanism": { 
+                "items": [NamedEntityTypeItem], 
+                "restricted": Boolean, 
+                "type": String, 
+              },  
+            },  
+            "entities": { 
+              "name": String, 
+              "type": String, 
+            },  
+            "selfUri": String, 
+          },  
+          "dateCreated": Date, 
+          "dateModified": Date, 
+          "selfUri": String, 
+        },  
+        "description": String, 
+        "language": String, 
+        "published": Boolean, 
+        "dateCreated": Date, 
+        "dateModified": Date, 
+        "dateTrained": Date, 
+        "datePublished": Date, 
+        "trainingStatus": String, 
+        "evaluationStatus": String, 
+        "intents": { 
+          "name": String, 
+          "entityTypeBindings": { 
+            "entityType": String, 
+            "entityName": String, 
+          },  
+          "entityNameReferences": [String], 
+          "utterances": { 
+            "segments": { 
+              "text": String, 
+              "entity": { 
+                "name": String, 
+              },  
+            },  
+          },  
+        },  
+        "entityTypes": { 
+          "name": String, 
+          "description": String, 
+          "mechanism": { 
+            "items": { 
+              "value": String, 
+              "synonyms": [String], 
+            },  
+            "restricted": Boolean, 
+            "type": String, 
+          },  
+        },  
+        "entities": { 
+          "name": String, 
+          "type": String, 
+        },  
         "selfUri": String, 
       },  
       "intents": { 
@@ -5973,6 +6465,217 @@ Flow <a href="#" onclick="return copyFlowExample()">Copy</a>
         "id": String, 
         "selfUri": String, 
       },  
+      "version": { 
+        "id": String, 
+        "domain": { 
+          "id": String, 
+          "name": String, 
+          "language": String, 
+          "draftVersion": { 
+            "id": String, 
+            "domain": { 
+              "id": String, 
+              "name": String, 
+              "language": String, 
+              "draftVersion": { 
+                "id": String, 
+                "domain": NluDomain, 
+                "description": String, 
+                "language": String, 
+                "published": Boolean, 
+                "dateCreated": Date, 
+                "dateModified": Date, 
+                "dateTrained": Date, 
+                "datePublished": Date, 
+                "trainingStatus": String, 
+                "evaluationStatus": String, 
+                "intents": [IntentDefinition], 
+                "entityTypes": [NamedEntityTypeDefinition], 
+                "entities": [NamedEntityDefinition], 
+                "selfUri": String, 
+              },  
+              "lastPublishedVersion": { 
+                "id": String, 
+                "domain": NluDomain, 
+                "description": String, 
+                "language": String, 
+                "published": Boolean, 
+                "dateCreated": Date, 
+                "dateModified": Date, 
+                "dateTrained": Date, 
+                "datePublished": Date, 
+                "trainingStatus": String, 
+                "evaluationStatus": String, 
+                "intents": [IntentDefinition], 
+                "entityTypes": [NamedEntityTypeDefinition], 
+                "entities": [NamedEntityDefinition], 
+                "selfUri": String, 
+              },  
+              "dateCreated": Date, 
+              "dateModified": Date, 
+              "selfUri": String, 
+            },  
+            "description": String, 
+            "language": String, 
+            "published": Boolean, 
+            "dateCreated": Date, 
+            "dateModified": Date, 
+            "dateTrained": Date, 
+            "datePublished": Date, 
+            "trainingStatus": String, 
+            "evaluationStatus": String, 
+            "intents": { 
+              "name": String, 
+              "entityTypeBindings": { 
+                "entityType": String, 
+                "entityName": String, 
+              },  
+              "entityNameReferences": [String], 
+              "utterances": { 
+                "segments": [NluUtteranceSegment], 
+              },  
+            },  
+            "entityTypes": { 
+              "name": String, 
+              "description": String, 
+              "mechanism": { 
+                "items": [NamedEntityTypeItem], 
+                "restricted": Boolean, 
+                "type": String, 
+              },  
+            },  
+            "entities": { 
+              "name": String, 
+              "type": String, 
+            },  
+            "selfUri": String, 
+          },  
+          "lastPublishedVersion": { 
+            "id": String, 
+            "domain": { 
+              "id": String, 
+              "name": String, 
+              "language": String, 
+              "draftVersion": { 
+                "id": String, 
+                "domain": NluDomain, 
+                "description": String, 
+                "language": String, 
+                "published": Boolean, 
+                "dateCreated": Date, 
+                "dateModified": Date, 
+                "dateTrained": Date, 
+                "datePublished": Date, 
+                "trainingStatus": String, 
+                "evaluationStatus": String, 
+                "intents": [IntentDefinition], 
+                "entityTypes": [NamedEntityTypeDefinition], 
+                "entities": [NamedEntityDefinition], 
+                "selfUri": String, 
+              },  
+              "lastPublishedVersion": { 
+                "id": String, 
+                "domain": NluDomain, 
+                "description": String, 
+                "language": String, 
+                "published": Boolean, 
+                "dateCreated": Date, 
+                "dateModified": Date, 
+                "dateTrained": Date, 
+                "datePublished": Date, 
+                "trainingStatus": String, 
+                "evaluationStatus": String, 
+                "intents": [IntentDefinition], 
+                "entityTypes": [NamedEntityTypeDefinition], 
+                "entities": [NamedEntityDefinition], 
+                "selfUri": String, 
+              },  
+              "dateCreated": Date, 
+              "dateModified": Date, 
+              "selfUri": String, 
+            },  
+            "description": String, 
+            "language": String, 
+            "published": Boolean, 
+            "dateCreated": Date, 
+            "dateModified": Date, 
+            "dateTrained": Date, 
+            "datePublished": Date, 
+            "trainingStatus": String, 
+            "evaluationStatus": String, 
+            "intents": { 
+              "name": String, 
+              "entityTypeBindings": { 
+                "entityType": String, 
+                "entityName": String, 
+              },  
+              "entityNameReferences": [String], 
+              "utterances": { 
+                "segments": [NluUtteranceSegment], 
+              },  
+            },  
+            "entityTypes": { 
+              "name": String, 
+              "description": String, 
+              "mechanism": { 
+                "items": [NamedEntityTypeItem], 
+                "restricted": Boolean, 
+                "type": String, 
+              },  
+            },  
+            "entities": { 
+              "name": String, 
+              "type": String, 
+            },  
+            "selfUri": String, 
+          },  
+          "dateCreated": Date, 
+          "dateModified": Date, 
+          "selfUri": String, 
+        },  
+        "description": String, 
+        "language": String, 
+        "published": Boolean, 
+        "dateCreated": Date, 
+        "dateModified": Date, 
+        "dateTrained": Date, 
+        "datePublished": Date, 
+        "trainingStatus": String, 
+        "evaluationStatus": String, 
+        "intents": { 
+          "name": String, 
+          "entityTypeBindings": { 
+            "entityType": String, 
+            "entityName": String, 
+          },  
+          "entityNameReferences": [String], 
+          "utterances": { 
+            "segments": { 
+              "text": String, 
+              "entity": { 
+                "name": String, 
+              },  
+            },  
+          },  
+        },  
+        "entityTypes": { 
+          "name": String, 
+          "description": String, 
+          "mechanism": { 
+            "items": { 
+              "value": String, 
+              "synonyms": [String], 
+            },  
+            "restricted": Boolean, 
+            "type": String, 
+          },  
+        },  
+        "entities": { 
+          "name": String, 
+          "type": String, 
+        },  
+        "selfUri": String, 
+      },  
       "intents": { 
         "name": String, 
       },  
@@ -6025,6 +6728,217 @@ Flow <a href="#" onclick="return copyFlowExample()">Copy</a>
     "nluInfo": { 
       "domain": { 
         "id": String, 
+        "selfUri": String, 
+      },  
+      "version": { 
+        "id": String, 
+        "domain": { 
+          "id": String, 
+          "name": String, 
+          "language": String, 
+          "draftVersion": { 
+            "id": String, 
+            "domain": { 
+              "id": String, 
+              "name": String, 
+              "language": String, 
+              "draftVersion": { 
+                "id": String, 
+                "domain": NluDomain, 
+                "description": String, 
+                "language": String, 
+                "published": Boolean, 
+                "dateCreated": Date, 
+                "dateModified": Date, 
+                "dateTrained": Date, 
+                "datePublished": Date, 
+                "trainingStatus": String, 
+                "evaluationStatus": String, 
+                "intents": [IntentDefinition], 
+                "entityTypes": [NamedEntityTypeDefinition], 
+                "entities": [NamedEntityDefinition], 
+                "selfUri": String, 
+              },  
+              "lastPublishedVersion": { 
+                "id": String, 
+                "domain": NluDomain, 
+                "description": String, 
+                "language": String, 
+                "published": Boolean, 
+                "dateCreated": Date, 
+                "dateModified": Date, 
+                "dateTrained": Date, 
+                "datePublished": Date, 
+                "trainingStatus": String, 
+                "evaluationStatus": String, 
+                "intents": [IntentDefinition], 
+                "entityTypes": [NamedEntityTypeDefinition], 
+                "entities": [NamedEntityDefinition], 
+                "selfUri": String, 
+              },  
+              "dateCreated": Date, 
+              "dateModified": Date, 
+              "selfUri": String, 
+            },  
+            "description": String, 
+            "language": String, 
+            "published": Boolean, 
+            "dateCreated": Date, 
+            "dateModified": Date, 
+            "dateTrained": Date, 
+            "datePublished": Date, 
+            "trainingStatus": String, 
+            "evaluationStatus": String, 
+            "intents": { 
+              "name": String, 
+              "entityTypeBindings": { 
+                "entityType": String, 
+                "entityName": String, 
+              },  
+              "entityNameReferences": [String], 
+              "utterances": { 
+                "segments": [NluUtteranceSegment], 
+              },  
+            },  
+            "entityTypes": { 
+              "name": String, 
+              "description": String, 
+              "mechanism": { 
+                "items": [NamedEntityTypeItem], 
+                "restricted": Boolean, 
+                "type": String, 
+              },  
+            },  
+            "entities": { 
+              "name": String, 
+              "type": String, 
+            },  
+            "selfUri": String, 
+          },  
+          "lastPublishedVersion": { 
+            "id": String, 
+            "domain": { 
+              "id": String, 
+              "name": String, 
+              "language": String, 
+              "draftVersion": { 
+                "id": String, 
+                "domain": NluDomain, 
+                "description": String, 
+                "language": String, 
+                "published": Boolean, 
+                "dateCreated": Date, 
+                "dateModified": Date, 
+                "dateTrained": Date, 
+                "datePublished": Date, 
+                "trainingStatus": String, 
+                "evaluationStatus": String, 
+                "intents": [IntentDefinition], 
+                "entityTypes": [NamedEntityTypeDefinition], 
+                "entities": [NamedEntityDefinition], 
+                "selfUri": String, 
+              },  
+              "lastPublishedVersion": { 
+                "id": String, 
+                "domain": NluDomain, 
+                "description": String, 
+                "language": String, 
+                "published": Boolean, 
+                "dateCreated": Date, 
+                "dateModified": Date, 
+                "dateTrained": Date, 
+                "datePublished": Date, 
+                "trainingStatus": String, 
+                "evaluationStatus": String, 
+                "intents": [IntentDefinition], 
+                "entityTypes": [NamedEntityTypeDefinition], 
+                "entities": [NamedEntityDefinition], 
+                "selfUri": String, 
+              },  
+              "dateCreated": Date, 
+              "dateModified": Date, 
+              "selfUri": String, 
+            },  
+            "description": String, 
+            "language": String, 
+            "published": Boolean, 
+            "dateCreated": Date, 
+            "dateModified": Date, 
+            "dateTrained": Date, 
+            "datePublished": Date, 
+            "trainingStatus": String, 
+            "evaluationStatus": String, 
+            "intents": { 
+              "name": String, 
+              "entityTypeBindings": { 
+                "entityType": String, 
+                "entityName": String, 
+              },  
+              "entityNameReferences": [String], 
+              "utterances": { 
+                "segments": [NluUtteranceSegment], 
+              },  
+            },  
+            "entityTypes": { 
+              "name": String, 
+              "description": String, 
+              "mechanism": { 
+                "items": [NamedEntityTypeItem], 
+                "restricted": Boolean, 
+                "type": String, 
+              },  
+            },  
+            "entities": { 
+              "name": String, 
+              "type": String, 
+            },  
+            "selfUri": String, 
+          },  
+          "dateCreated": Date, 
+          "dateModified": Date, 
+          "selfUri": String, 
+        },  
+        "description": String, 
+        "language": String, 
+        "published": Boolean, 
+        "dateCreated": Date, 
+        "dateModified": Date, 
+        "dateTrained": Date, 
+        "datePublished": Date, 
+        "trainingStatus": String, 
+        "evaluationStatus": String, 
+        "intents": { 
+          "name": String, 
+          "entityTypeBindings": { 
+            "entityType": String, 
+            "entityName": String, 
+          },  
+          "entityNameReferences": [String], 
+          "utterances": { 
+            "segments": { 
+              "text": String, 
+              "entity": { 
+                "name": String, 
+              },  
+            },  
+          },  
+        },  
+        "entityTypes": { 
+          "name": String, 
+          "description": String, 
+          "mechanism": { 
+            "items": { 
+              "value": String, 
+              "synonyms": [String], 
+            },  
+            "restricted": Boolean, 
+            "type": String, 
+          },  
+        },  
+        "entities": { 
+          "name": String, 
+          "type": String, 
+        },  
         "selfUri": String, 
       },  
       "intents": { 
@@ -6428,6 +7342,11 @@ Flow <a href="#" onclick="return copyFlowExample()">Copy</a>
     "team": { 
       "id": String, 
       "name": String, 
+      "division": { 
+        "id": String, 
+        "name": String, 
+        "selfUri": String, 
+      },  
       "description": String, 
       "dateModified": Date, 
       "memberCount": Number, 
@@ -6840,6 +7759,11 @@ Flow <a href="#" onclick="return copyFlowExample()">Copy</a>
       "team": { 
         "id": String, 
         "name": String, 
+        "division": { 
+          "id": String, 
+          "name": String, 
+          "selfUri": String, 
+        },  
         "description": String, 
         "dateModified": Date, 
         "memberCount": Number, 
@@ -6890,6 +7814,313 @@ Flow <a href="#" onclick="return copyFlowExample()">Copy</a>
       "id": String, 
       "selfUri": String, 
     },  
+    "version": { 
+      "id": String, 
+      "domain": { 
+        "id": String, 
+        "name": String, 
+        "language": String, 
+        "draftVersion": { 
+          "id": String, 
+          "domain": { 
+            "id": String, 
+            "name": String, 
+            "language": String, 
+            "draftVersion": { 
+              "id": String, 
+              "domain": { 
+                "id": String, 
+                "name": String, 
+                "language": String, 
+                "draftVersion": NluDomainVersion, 
+                "lastPublishedVersion": NluDomainVersion, 
+                "dateCreated": Date, 
+                "dateModified": Date, 
+                "selfUri": String, 
+              },  
+              "description": String, 
+              "language": String, 
+              "published": Boolean, 
+              "dateCreated": Date, 
+              "dateModified": Date, 
+              "dateTrained": Date, 
+              "datePublished": Date, 
+              "trainingStatus": String, 
+              "evaluationStatus": String, 
+              "intents": { 
+                "name": String, 
+                "entityTypeBindings": [NamedEntityTypeBinding], 
+                "entityNameReferences": [String], 
+                "utterances": [NluUtterance], 
+              },  
+              "entityTypes": { 
+                "name": String, 
+                "description": String, 
+                "mechanism": NamedEntityTypeMechanism, 
+              },  
+              "entities": { 
+                "name": String, 
+                "type": String, 
+              },  
+              "selfUri": String, 
+            },  
+            "lastPublishedVersion": { 
+              "id": String, 
+              "domain": { 
+                "id": String, 
+                "name": String, 
+                "language": String, 
+                "draftVersion": NluDomainVersion, 
+                "lastPublishedVersion": NluDomainVersion, 
+                "dateCreated": Date, 
+                "dateModified": Date, 
+                "selfUri": String, 
+              },  
+              "description": String, 
+              "language": String, 
+              "published": Boolean, 
+              "dateCreated": Date, 
+              "dateModified": Date, 
+              "dateTrained": Date, 
+              "datePublished": Date, 
+              "trainingStatus": String, 
+              "evaluationStatus": String, 
+              "intents": { 
+                "name": String, 
+                "entityTypeBindings": [NamedEntityTypeBinding], 
+                "entityNameReferences": [String], 
+                "utterances": [NluUtterance], 
+              },  
+              "entityTypes": { 
+                "name": String, 
+                "description": String, 
+                "mechanism": NamedEntityTypeMechanism, 
+              },  
+              "entities": { 
+                "name": String, 
+                "type": String, 
+              },  
+              "selfUri": String, 
+            },  
+            "dateCreated": Date, 
+            "dateModified": Date, 
+            "selfUri": String, 
+          },  
+          "description": String, 
+          "language": String, 
+          "published": Boolean, 
+          "dateCreated": Date, 
+          "dateModified": Date, 
+          "dateTrained": Date, 
+          "datePublished": Date, 
+          "trainingStatus": String, 
+          "evaluationStatus": String, 
+          "intents": { 
+            "name": String, 
+            "entityTypeBindings": { 
+              "entityType": String, 
+              "entityName": String, 
+            },  
+            "entityNameReferences": [String], 
+            "utterances": { 
+              "segments": { 
+                "text": String, 
+                "entity": NamedEntityAnnotation, 
+              },  
+            },  
+          },  
+          "entityTypes": { 
+            "name": String, 
+            "description": String, 
+            "mechanism": { 
+              "items": { 
+                "value": String, 
+                "synonyms": [String], 
+              },  
+              "restricted": Boolean, 
+              "type": String, 
+            },  
+          },  
+          "entities": { 
+            "name": String, 
+            "type": String, 
+          },  
+          "selfUri": String, 
+        },  
+        "lastPublishedVersion": { 
+          "id": String, 
+          "domain": { 
+            "id": String, 
+            "name": String, 
+            "language": String, 
+            "draftVersion": { 
+              "id": String, 
+              "domain": { 
+                "id": String, 
+                "name": String, 
+                "language": String, 
+                "draftVersion": NluDomainVersion, 
+                "lastPublishedVersion": NluDomainVersion, 
+                "dateCreated": Date, 
+                "dateModified": Date, 
+                "selfUri": String, 
+              },  
+              "description": String, 
+              "language": String, 
+              "published": Boolean, 
+              "dateCreated": Date, 
+              "dateModified": Date, 
+              "dateTrained": Date, 
+              "datePublished": Date, 
+              "trainingStatus": String, 
+              "evaluationStatus": String, 
+              "intents": { 
+                "name": String, 
+                "entityTypeBindings": [NamedEntityTypeBinding], 
+                "entityNameReferences": [String], 
+                "utterances": [NluUtterance], 
+              },  
+              "entityTypes": { 
+                "name": String, 
+                "description": String, 
+                "mechanism": NamedEntityTypeMechanism, 
+              },  
+              "entities": { 
+                "name": String, 
+                "type": String, 
+              },  
+              "selfUri": String, 
+            },  
+            "lastPublishedVersion": { 
+              "id": String, 
+              "domain": { 
+                "id": String, 
+                "name": String, 
+                "language": String, 
+                "draftVersion": NluDomainVersion, 
+                "lastPublishedVersion": NluDomainVersion, 
+                "dateCreated": Date, 
+                "dateModified": Date, 
+                "selfUri": String, 
+              },  
+              "description": String, 
+              "language": String, 
+              "published": Boolean, 
+              "dateCreated": Date, 
+              "dateModified": Date, 
+              "dateTrained": Date, 
+              "datePublished": Date, 
+              "trainingStatus": String, 
+              "evaluationStatus": String, 
+              "intents": { 
+                "name": String, 
+                "entityTypeBindings": [NamedEntityTypeBinding], 
+                "entityNameReferences": [String], 
+                "utterances": [NluUtterance], 
+              },  
+              "entityTypes": { 
+                "name": String, 
+                "description": String, 
+                "mechanism": NamedEntityTypeMechanism, 
+              },  
+              "entities": { 
+                "name": String, 
+                "type": String, 
+              },  
+              "selfUri": String, 
+            },  
+            "dateCreated": Date, 
+            "dateModified": Date, 
+            "selfUri": String, 
+          },  
+          "description": String, 
+          "language": String, 
+          "published": Boolean, 
+          "dateCreated": Date, 
+          "dateModified": Date, 
+          "dateTrained": Date, 
+          "datePublished": Date, 
+          "trainingStatus": String, 
+          "evaluationStatus": String, 
+          "intents": { 
+            "name": String, 
+            "entityTypeBindings": { 
+              "entityType": String, 
+              "entityName": String, 
+            },  
+            "entityNameReferences": [String], 
+            "utterances": { 
+              "segments": { 
+                "text": String, 
+                "entity": NamedEntityAnnotation, 
+              },  
+            },  
+          },  
+          "entityTypes": { 
+            "name": String, 
+            "description": String, 
+            "mechanism": { 
+              "items": { 
+                "value": String, 
+                "synonyms": [String], 
+              },  
+              "restricted": Boolean, 
+              "type": String, 
+            },  
+          },  
+          "entities": { 
+            "name": String, 
+            "type": String, 
+          },  
+          "selfUri": String, 
+        },  
+        "dateCreated": Date, 
+        "dateModified": Date, 
+        "selfUri": String, 
+      },  
+      "description": String, 
+      "language": String, 
+      "published": Boolean, 
+      "dateCreated": Date, 
+      "dateModified": Date, 
+      "dateTrained": Date, 
+      "datePublished": Date, 
+      "trainingStatus": String, 
+      "evaluationStatus": String, 
+      "intents": { 
+        "name": String, 
+        "entityTypeBindings": { 
+          "entityType": String, 
+          "entityName": String, 
+        },  
+        "entityNameReferences": [String], 
+        "utterances": { 
+          "segments": { 
+            "text": String, 
+            "entity": { 
+              "name": String, 
+            },  
+          },  
+        },  
+      },  
+      "entityTypes": { 
+        "name": String, 
+        "description": String, 
+        "mechanism": { 
+          "items": { 
+            "value": String, 
+            "synonyms": [String], 
+          },  
+          "restricted": Boolean, 
+          "type": String, 
+        },  
+      },  
+      "entities": { 
+        "name": String, 
+        "type": String, 
+      },  
+      "selfUri": String, 
+    },  
     "intents": { 
       "name": String, 
     },  
@@ -6920,8 +8151,11 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ArchitectApi();
 
 let body = {}; // Object | 
+let opts = { 
+  'language': "language_example" // String | Language
+};
 
-apiInstance.postFlows(body)
+apiInstance.postFlows(body, opts)
   .then((data) => {
     console.log(`postFlows success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -6937,6 +8171,7 @@ apiInstance.postFlows(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** |  |  |
+ **language** | **String** | Language | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -8294,6 +9529,11 @@ FlowOutcome <a href="#" onclick="return copyFlowOutcomeExample()">Copy</a>
       "team": { 
         "id": String, 
         "name": String, 
+        "division": { 
+          "id": String, 
+          "name": String, 
+          "selfUri": String, 
+        },  
         "description": String, 
         "dateModified": Date, 
         "memberCount": Number, 
@@ -9043,6 +10283,11 @@ Prompt <a href="#" onclick="return copyPromptExample()">Copy</a>
       "team": { 
         "id": String, 
         "name": String, 
+        "division": { 
+          "id": String, 
+          "name": String, 
+          "selfUri": String, 
+        },  
         "description": String, 
         "dateModified": Date, 
         "memberCount": Number, 
@@ -9967,6 +11212,11 @@ Flow <a href="#" onclick="return copyFlowExample()">Copy</a>
     "team": { 
       "id": String, 
       "name": String, 
+      "division": { 
+        "id": String, 
+        "name": String, 
+        "selfUri": String, 
+      },  
       "description": String, 
       "dateModified": Date, 
       "memberCount": Number, 
@@ -10046,6 +11296,217 @@ Flow <a href="#" onclick="return copyFlowExample()">Copy</a>
         "id": String, 
         "selfUri": String, 
       },  
+      "version": { 
+        "id": String, 
+        "domain": { 
+          "id": String, 
+          "name": String, 
+          "language": String, 
+          "draftVersion": { 
+            "id": String, 
+            "domain": { 
+              "id": String, 
+              "name": String, 
+              "language": String, 
+              "draftVersion": { 
+                "id": String, 
+                "domain": NluDomain, 
+                "description": String, 
+                "language": String, 
+                "published": Boolean, 
+                "dateCreated": Date, 
+                "dateModified": Date, 
+                "dateTrained": Date, 
+                "datePublished": Date, 
+                "trainingStatus": String, 
+                "evaluationStatus": String, 
+                "intents": [IntentDefinition], 
+                "entityTypes": [NamedEntityTypeDefinition], 
+                "entities": [NamedEntityDefinition], 
+                "selfUri": String, 
+              },  
+              "lastPublishedVersion": { 
+                "id": String, 
+                "domain": NluDomain, 
+                "description": String, 
+                "language": String, 
+                "published": Boolean, 
+                "dateCreated": Date, 
+                "dateModified": Date, 
+                "dateTrained": Date, 
+                "datePublished": Date, 
+                "trainingStatus": String, 
+                "evaluationStatus": String, 
+                "intents": [IntentDefinition], 
+                "entityTypes": [NamedEntityTypeDefinition], 
+                "entities": [NamedEntityDefinition], 
+                "selfUri": String, 
+              },  
+              "dateCreated": Date, 
+              "dateModified": Date, 
+              "selfUri": String, 
+            },  
+            "description": String, 
+            "language": String, 
+            "published": Boolean, 
+            "dateCreated": Date, 
+            "dateModified": Date, 
+            "dateTrained": Date, 
+            "datePublished": Date, 
+            "trainingStatus": String, 
+            "evaluationStatus": String, 
+            "intents": { 
+              "name": String, 
+              "entityTypeBindings": { 
+                "entityType": String, 
+                "entityName": String, 
+              },  
+              "entityNameReferences": [String], 
+              "utterances": { 
+                "segments": [NluUtteranceSegment], 
+              },  
+            },  
+            "entityTypes": { 
+              "name": String, 
+              "description": String, 
+              "mechanism": { 
+                "items": [NamedEntityTypeItem], 
+                "restricted": Boolean, 
+                "type": String, 
+              },  
+            },  
+            "entities": { 
+              "name": String, 
+              "type": String, 
+            },  
+            "selfUri": String, 
+          },  
+          "lastPublishedVersion": { 
+            "id": String, 
+            "domain": { 
+              "id": String, 
+              "name": String, 
+              "language": String, 
+              "draftVersion": { 
+                "id": String, 
+                "domain": NluDomain, 
+                "description": String, 
+                "language": String, 
+                "published": Boolean, 
+                "dateCreated": Date, 
+                "dateModified": Date, 
+                "dateTrained": Date, 
+                "datePublished": Date, 
+                "trainingStatus": String, 
+                "evaluationStatus": String, 
+                "intents": [IntentDefinition], 
+                "entityTypes": [NamedEntityTypeDefinition], 
+                "entities": [NamedEntityDefinition], 
+                "selfUri": String, 
+              },  
+              "lastPublishedVersion": { 
+                "id": String, 
+                "domain": NluDomain, 
+                "description": String, 
+                "language": String, 
+                "published": Boolean, 
+                "dateCreated": Date, 
+                "dateModified": Date, 
+                "dateTrained": Date, 
+                "datePublished": Date, 
+                "trainingStatus": String, 
+                "evaluationStatus": String, 
+                "intents": [IntentDefinition], 
+                "entityTypes": [NamedEntityTypeDefinition], 
+                "entities": [NamedEntityDefinition], 
+                "selfUri": String, 
+              },  
+              "dateCreated": Date, 
+              "dateModified": Date, 
+              "selfUri": String, 
+            },  
+            "description": String, 
+            "language": String, 
+            "published": Boolean, 
+            "dateCreated": Date, 
+            "dateModified": Date, 
+            "dateTrained": Date, 
+            "datePublished": Date, 
+            "trainingStatus": String, 
+            "evaluationStatus": String, 
+            "intents": { 
+              "name": String, 
+              "entityTypeBindings": { 
+                "entityType": String, 
+                "entityName": String, 
+              },  
+              "entityNameReferences": [String], 
+              "utterances": { 
+                "segments": [NluUtteranceSegment], 
+              },  
+            },  
+            "entityTypes": { 
+              "name": String, 
+              "description": String, 
+              "mechanism": { 
+                "items": [NamedEntityTypeItem], 
+                "restricted": Boolean, 
+                "type": String, 
+              },  
+            },  
+            "entities": { 
+              "name": String, 
+              "type": String, 
+            },  
+            "selfUri": String, 
+          },  
+          "dateCreated": Date, 
+          "dateModified": Date, 
+          "selfUri": String, 
+        },  
+        "description": String, 
+        "language": String, 
+        "published": Boolean, 
+        "dateCreated": Date, 
+        "dateModified": Date, 
+        "dateTrained": Date, 
+        "datePublished": Date, 
+        "trainingStatus": String, 
+        "evaluationStatus": String, 
+        "intents": { 
+          "name": String, 
+          "entityTypeBindings": { 
+            "entityType": String, 
+            "entityName": String, 
+          },  
+          "entityNameReferences": [String], 
+          "utterances": { 
+            "segments": { 
+              "text": String, 
+              "entity": { 
+                "name": String, 
+              },  
+            },  
+          },  
+        },  
+        "entityTypes": { 
+          "name": String, 
+          "description": String, 
+          "mechanism": { 
+            "items": { 
+              "value": String, 
+              "synonyms": [String], 
+            },  
+            "restricted": Boolean, 
+            "type": String, 
+          },  
+        },  
+        "entities": { 
+          "name": String, 
+          "type": String, 
+        },  
+        "selfUri": String, 
+      },  
       "intents": { 
         "name": String, 
       },  
@@ -10098,6 +11559,217 @@ Flow <a href="#" onclick="return copyFlowExample()">Copy</a>
     "nluInfo": { 
       "domain": { 
         "id": String, 
+        "selfUri": String, 
+      },  
+      "version": { 
+        "id": String, 
+        "domain": { 
+          "id": String, 
+          "name": String, 
+          "language": String, 
+          "draftVersion": { 
+            "id": String, 
+            "domain": { 
+              "id": String, 
+              "name": String, 
+              "language": String, 
+              "draftVersion": { 
+                "id": String, 
+                "domain": NluDomain, 
+                "description": String, 
+                "language": String, 
+                "published": Boolean, 
+                "dateCreated": Date, 
+                "dateModified": Date, 
+                "dateTrained": Date, 
+                "datePublished": Date, 
+                "trainingStatus": String, 
+                "evaluationStatus": String, 
+                "intents": [IntentDefinition], 
+                "entityTypes": [NamedEntityTypeDefinition], 
+                "entities": [NamedEntityDefinition], 
+                "selfUri": String, 
+              },  
+              "lastPublishedVersion": { 
+                "id": String, 
+                "domain": NluDomain, 
+                "description": String, 
+                "language": String, 
+                "published": Boolean, 
+                "dateCreated": Date, 
+                "dateModified": Date, 
+                "dateTrained": Date, 
+                "datePublished": Date, 
+                "trainingStatus": String, 
+                "evaluationStatus": String, 
+                "intents": [IntentDefinition], 
+                "entityTypes": [NamedEntityTypeDefinition], 
+                "entities": [NamedEntityDefinition], 
+                "selfUri": String, 
+              },  
+              "dateCreated": Date, 
+              "dateModified": Date, 
+              "selfUri": String, 
+            },  
+            "description": String, 
+            "language": String, 
+            "published": Boolean, 
+            "dateCreated": Date, 
+            "dateModified": Date, 
+            "dateTrained": Date, 
+            "datePublished": Date, 
+            "trainingStatus": String, 
+            "evaluationStatus": String, 
+            "intents": { 
+              "name": String, 
+              "entityTypeBindings": { 
+                "entityType": String, 
+                "entityName": String, 
+              },  
+              "entityNameReferences": [String], 
+              "utterances": { 
+                "segments": [NluUtteranceSegment], 
+              },  
+            },  
+            "entityTypes": { 
+              "name": String, 
+              "description": String, 
+              "mechanism": { 
+                "items": [NamedEntityTypeItem], 
+                "restricted": Boolean, 
+                "type": String, 
+              },  
+            },  
+            "entities": { 
+              "name": String, 
+              "type": String, 
+            },  
+            "selfUri": String, 
+          },  
+          "lastPublishedVersion": { 
+            "id": String, 
+            "domain": { 
+              "id": String, 
+              "name": String, 
+              "language": String, 
+              "draftVersion": { 
+                "id": String, 
+                "domain": NluDomain, 
+                "description": String, 
+                "language": String, 
+                "published": Boolean, 
+                "dateCreated": Date, 
+                "dateModified": Date, 
+                "dateTrained": Date, 
+                "datePublished": Date, 
+                "trainingStatus": String, 
+                "evaluationStatus": String, 
+                "intents": [IntentDefinition], 
+                "entityTypes": [NamedEntityTypeDefinition], 
+                "entities": [NamedEntityDefinition], 
+                "selfUri": String, 
+              },  
+              "lastPublishedVersion": { 
+                "id": String, 
+                "domain": NluDomain, 
+                "description": String, 
+                "language": String, 
+                "published": Boolean, 
+                "dateCreated": Date, 
+                "dateModified": Date, 
+                "dateTrained": Date, 
+                "datePublished": Date, 
+                "trainingStatus": String, 
+                "evaluationStatus": String, 
+                "intents": [IntentDefinition], 
+                "entityTypes": [NamedEntityTypeDefinition], 
+                "entities": [NamedEntityDefinition], 
+                "selfUri": String, 
+              },  
+              "dateCreated": Date, 
+              "dateModified": Date, 
+              "selfUri": String, 
+            },  
+            "description": String, 
+            "language": String, 
+            "published": Boolean, 
+            "dateCreated": Date, 
+            "dateModified": Date, 
+            "dateTrained": Date, 
+            "datePublished": Date, 
+            "trainingStatus": String, 
+            "evaluationStatus": String, 
+            "intents": { 
+              "name": String, 
+              "entityTypeBindings": { 
+                "entityType": String, 
+                "entityName": String, 
+              },  
+              "entityNameReferences": [String], 
+              "utterances": { 
+                "segments": [NluUtteranceSegment], 
+              },  
+            },  
+            "entityTypes": { 
+              "name": String, 
+              "description": String, 
+              "mechanism": { 
+                "items": [NamedEntityTypeItem], 
+                "restricted": Boolean, 
+                "type": String, 
+              },  
+            },  
+            "entities": { 
+              "name": String, 
+              "type": String, 
+            },  
+            "selfUri": String, 
+          },  
+          "dateCreated": Date, 
+          "dateModified": Date, 
+          "selfUri": String, 
+        },  
+        "description": String, 
+        "language": String, 
+        "published": Boolean, 
+        "dateCreated": Date, 
+        "dateModified": Date, 
+        "dateTrained": Date, 
+        "datePublished": Date, 
+        "trainingStatus": String, 
+        "evaluationStatus": String, 
+        "intents": { 
+          "name": String, 
+          "entityTypeBindings": { 
+            "entityType": String, 
+            "entityName": String, 
+          },  
+          "entityNameReferences": [String], 
+          "utterances": { 
+            "segments": { 
+              "text": String, 
+              "entity": { 
+                "name": String, 
+              },  
+            },  
+          },  
+        },  
+        "entityTypes": { 
+          "name": String, 
+          "description": String, 
+          "mechanism": { 
+            "items": { 
+              "value": String, 
+              "synonyms": [String], 
+            },  
+            "restricted": Boolean, 
+            "type": String, 
+          },  
+        },  
+        "entities": { 
+          "name": String, 
+          "type": String, 
+        },  
         "selfUri": String, 
       },  
       "intents": { 
@@ -10156,6 +11828,217 @@ Flow <a href="#" onclick="return copyFlowExample()">Copy</a>
         "id": String, 
         "selfUri": String, 
       },  
+      "version": { 
+        "id": String, 
+        "domain": { 
+          "id": String, 
+          "name": String, 
+          "language": String, 
+          "draftVersion": { 
+            "id": String, 
+            "domain": { 
+              "id": String, 
+              "name": String, 
+              "language": String, 
+              "draftVersion": { 
+                "id": String, 
+                "domain": NluDomain, 
+                "description": String, 
+                "language": String, 
+                "published": Boolean, 
+                "dateCreated": Date, 
+                "dateModified": Date, 
+                "dateTrained": Date, 
+                "datePublished": Date, 
+                "trainingStatus": String, 
+                "evaluationStatus": String, 
+                "intents": [IntentDefinition], 
+                "entityTypes": [NamedEntityTypeDefinition], 
+                "entities": [NamedEntityDefinition], 
+                "selfUri": String, 
+              },  
+              "lastPublishedVersion": { 
+                "id": String, 
+                "domain": NluDomain, 
+                "description": String, 
+                "language": String, 
+                "published": Boolean, 
+                "dateCreated": Date, 
+                "dateModified": Date, 
+                "dateTrained": Date, 
+                "datePublished": Date, 
+                "trainingStatus": String, 
+                "evaluationStatus": String, 
+                "intents": [IntentDefinition], 
+                "entityTypes": [NamedEntityTypeDefinition], 
+                "entities": [NamedEntityDefinition], 
+                "selfUri": String, 
+              },  
+              "dateCreated": Date, 
+              "dateModified": Date, 
+              "selfUri": String, 
+            },  
+            "description": String, 
+            "language": String, 
+            "published": Boolean, 
+            "dateCreated": Date, 
+            "dateModified": Date, 
+            "dateTrained": Date, 
+            "datePublished": Date, 
+            "trainingStatus": String, 
+            "evaluationStatus": String, 
+            "intents": { 
+              "name": String, 
+              "entityTypeBindings": { 
+                "entityType": String, 
+                "entityName": String, 
+              },  
+              "entityNameReferences": [String], 
+              "utterances": { 
+                "segments": [NluUtteranceSegment], 
+              },  
+            },  
+            "entityTypes": { 
+              "name": String, 
+              "description": String, 
+              "mechanism": { 
+                "items": [NamedEntityTypeItem], 
+                "restricted": Boolean, 
+                "type": String, 
+              },  
+            },  
+            "entities": { 
+              "name": String, 
+              "type": String, 
+            },  
+            "selfUri": String, 
+          },  
+          "lastPublishedVersion": { 
+            "id": String, 
+            "domain": { 
+              "id": String, 
+              "name": String, 
+              "language": String, 
+              "draftVersion": { 
+                "id": String, 
+                "domain": NluDomain, 
+                "description": String, 
+                "language": String, 
+                "published": Boolean, 
+                "dateCreated": Date, 
+                "dateModified": Date, 
+                "dateTrained": Date, 
+                "datePublished": Date, 
+                "trainingStatus": String, 
+                "evaluationStatus": String, 
+                "intents": [IntentDefinition], 
+                "entityTypes": [NamedEntityTypeDefinition], 
+                "entities": [NamedEntityDefinition], 
+                "selfUri": String, 
+              },  
+              "lastPublishedVersion": { 
+                "id": String, 
+                "domain": NluDomain, 
+                "description": String, 
+                "language": String, 
+                "published": Boolean, 
+                "dateCreated": Date, 
+                "dateModified": Date, 
+                "dateTrained": Date, 
+                "datePublished": Date, 
+                "trainingStatus": String, 
+                "evaluationStatus": String, 
+                "intents": [IntentDefinition], 
+                "entityTypes": [NamedEntityTypeDefinition], 
+                "entities": [NamedEntityDefinition], 
+                "selfUri": String, 
+              },  
+              "dateCreated": Date, 
+              "dateModified": Date, 
+              "selfUri": String, 
+            },  
+            "description": String, 
+            "language": String, 
+            "published": Boolean, 
+            "dateCreated": Date, 
+            "dateModified": Date, 
+            "dateTrained": Date, 
+            "datePublished": Date, 
+            "trainingStatus": String, 
+            "evaluationStatus": String, 
+            "intents": { 
+              "name": String, 
+              "entityTypeBindings": { 
+                "entityType": String, 
+                "entityName": String, 
+              },  
+              "entityNameReferences": [String], 
+              "utterances": { 
+                "segments": [NluUtteranceSegment], 
+              },  
+            },  
+            "entityTypes": { 
+              "name": String, 
+              "description": String, 
+              "mechanism": { 
+                "items": [NamedEntityTypeItem], 
+                "restricted": Boolean, 
+                "type": String, 
+              },  
+            },  
+            "entities": { 
+              "name": String, 
+              "type": String, 
+            },  
+            "selfUri": String, 
+          },  
+          "dateCreated": Date, 
+          "dateModified": Date, 
+          "selfUri": String, 
+        },  
+        "description": String, 
+        "language": String, 
+        "published": Boolean, 
+        "dateCreated": Date, 
+        "dateModified": Date, 
+        "dateTrained": Date, 
+        "datePublished": Date, 
+        "trainingStatus": String, 
+        "evaluationStatus": String, 
+        "intents": { 
+          "name": String, 
+          "entityTypeBindings": { 
+            "entityType": String, 
+            "entityName": String, 
+          },  
+          "entityNameReferences": [String], 
+          "utterances": { 
+            "segments": { 
+              "text": String, 
+              "entity": { 
+                "name": String, 
+              },  
+            },  
+          },  
+        },  
+        "entityTypes": { 
+          "name": String, 
+          "description": String, 
+          "mechanism": { 
+            "items": { 
+              "value": String, 
+              "synonyms": [String], 
+            },  
+            "restricted": Boolean, 
+            "type": String, 
+          },  
+        },  
+        "entities": { 
+          "name": String, 
+          "type": String, 
+        },  
+        "selfUri": String, 
+      },  
       "intents": { 
         "name": String, 
       },  
@@ -10208,6 +12091,217 @@ Flow <a href="#" onclick="return copyFlowExample()">Copy</a>
     "nluInfo": { 
       "domain": { 
         "id": String, 
+        "selfUri": String, 
+      },  
+      "version": { 
+        "id": String, 
+        "domain": { 
+          "id": String, 
+          "name": String, 
+          "language": String, 
+          "draftVersion": { 
+            "id": String, 
+            "domain": { 
+              "id": String, 
+              "name": String, 
+              "language": String, 
+              "draftVersion": { 
+                "id": String, 
+                "domain": NluDomain, 
+                "description": String, 
+                "language": String, 
+                "published": Boolean, 
+                "dateCreated": Date, 
+                "dateModified": Date, 
+                "dateTrained": Date, 
+                "datePublished": Date, 
+                "trainingStatus": String, 
+                "evaluationStatus": String, 
+                "intents": [IntentDefinition], 
+                "entityTypes": [NamedEntityTypeDefinition], 
+                "entities": [NamedEntityDefinition], 
+                "selfUri": String, 
+              },  
+              "lastPublishedVersion": { 
+                "id": String, 
+                "domain": NluDomain, 
+                "description": String, 
+                "language": String, 
+                "published": Boolean, 
+                "dateCreated": Date, 
+                "dateModified": Date, 
+                "dateTrained": Date, 
+                "datePublished": Date, 
+                "trainingStatus": String, 
+                "evaluationStatus": String, 
+                "intents": [IntentDefinition], 
+                "entityTypes": [NamedEntityTypeDefinition], 
+                "entities": [NamedEntityDefinition], 
+                "selfUri": String, 
+              },  
+              "dateCreated": Date, 
+              "dateModified": Date, 
+              "selfUri": String, 
+            },  
+            "description": String, 
+            "language": String, 
+            "published": Boolean, 
+            "dateCreated": Date, 
+            "dateModified": Date, 
+            "dateTrained": Date, 
+            "datePublished": Date, 
+            "trainingStatus": String, 
+            "evaluationStatus": String, 
+            "intents": { 
+              "name": String, 
+              "entityTypeBindings": { 
+                "entityType": String, 
+                "entityName": String, 
+              },  
+              "entityNameReferences": [String], 
+              "utterances": { 
+                "segments": [NluUtteranceSegment], 
+              },  
+            },  
+            "entityTypes": { 
+              "name": String, 
+              "description": String, 
+              "mechanism": { 
+                "items": [NamedEntityTypeItem], 
+                "restricted": Boolean, 
+                "type": String, 
+              },  
+            },  
+            "entities": { 
+              "name": String, 
+              "type": String, 
+            },  
+            "selfUri": String, 
+          },  
+          "lastPublishedVersion": { 
+            "id": String, 
+            "domain": { 
+              "id": String, 
+              "name": String, 
+              "language": String, 
+              "draftVersion": { 
+                "id": String, 
+                "domain": NluDomain, 
+                "description": String, 
+                "language": String, 
+                "published": Boolean, 
+                "dateCreated": Date, 
+                "dateModified": Date, 
+                "dateTrained": Date, 
+                "datePublished": Date, 
+                "trainingStatus": String, 
+                "evaluationStatus": String, 
+                "intents": [IntentDefinition], 
+                "entityTypes": [NamedEntityTypeDefinition], 
+                "entities": [NamedEntityDefinition], 
+                "selfUri": String, 
+              },  
+              "lastPublishedVersion": { 
+                "id": String, 
+                "domain": NluDomain, 
+                "description": String, 
+                "language": String, 
+                "published": Boolean, 
+                "dateCreated": Date, 
+                "dateModified": Date, 
+                "dateTrained": Date, 
+                "datePublished": Date, 
+                "trainingStatus": String, 
+                "evaluationStatus": String, 
+                "intents": [IntentDefinition], 
+                "entityTypes": [NamedEntityTypeDefinition], 
+                "entities": [NamedEntityDefinition], 
+                "selfUri": String, 
+              },  
+              "dateCreated": Date, 
+              "dateModified": Date, 
+              "selfUri": String, 
+            },  
+            "description": String, 
+            "language": String, 
+            "published": Boolean, 
+            "dateCreated": Date, 
+            "dateModified": Date, 
+            "dateTrained": Date, 
+            "datePublished": Date, 
+            "trainingStatus": String, 
+            "evaluationStatus": String, 
+            "intents": { 
+              "name": String, 
+              "entityTypeBindings": { 
+                "entityType": String, 
+                "entityName": String, 
+              },  
+              "entityNameReferences": [String], 
+              "utterances": { 
+                "segments": [NluUtteranceSegment], 
+              },  
+            },  
+            "entityTypes": { 
+              "name": String, 
+              "description": String, 
+              "mechanism": { 
+                "items": [NamedEntityTypeItem], 
+                "restricted": Boolean, 
+                "type": String, 
+              },  
+            },  
+            "entities": { 
+              "name": String, 
+              "type": String, 
+            },  
+            "selfUri": String, 
+          },  
+          "dateCreated": Date, 
+          "dateModified": Date, 
+          "selfUri": String, 
+        },  
+        "description": String, 
+        "language": String, 
+        "published": Boolean, 
+        "dateCreated": Date, 
+        "dateModified": Date, 
+        "dateTrained": Date, 
+        "datePublished": Date, 
+        "trainingStatus": String, 
+        "evaluationStatus": String, 
+        "intents": { 
+          "name": String, 
+          "entityTypeBindings": { 
+            "entityType": String, 
+            "entityName": String, 
+          },  
+          "entityNameReferences": [String], 
+          "utterances": { 
+            "segments": { 
+              "text": String, 
+              "entity": { 
+                "name": String, 
+              },  
+            },  
+          },  
+        },  
+        "entityTypes": { 
+          "name": String, 
+          "description": String, 
+          "mechanism": { 
+            "items": { 
+              "value": String, 
+              "synonyms": [String], 
+            },  
+            "restricted": Boolean, 
+            "type": String, 
+          },  
+        },  
+        "entities": { 
+          "name": String, 
+          "type": String, 
+        },  
         "selfUri": String, 
       },  
       "intents": { 
@@ -10611,6 +12705,11 @@ Flow <a href="#" onclick="return copyFlowExample()">Copy</a>
     "team": { 
       "id": String, 
       "name": String, 
+      "division": { 
+        "id": String, 
+        "name": String, 
+        "selfUri": String, 
+      },  
       "description": String, 
       "dateModified": Date, 
       "memberCount": Number, 
@@ -11023,6 +13122,11 @@ Flow <a href="#" onclick="return copyFlowExample()">Copy</a>
       "team": { 
         "id": String, 
         "name": String, 
+        "division": { 
+          "id": String, 
+          "name": String, 
+          "selfUri": String, 
+        },  
         "description": String, 
         "dateModified": Date, 
         "memberCount": Number, 
@@ -11071,6 +13175,313 @@ Flow <a href="#" onclick="return copyFlowExample()">Copy</a>
   "nluInfo": { 
     "domain": { 
       "id": String, 
+      "selfUri": String, 
+    },  
+    "version": { 
+      "id": String, 
+      "domain": { 
+        "id": String, 
+        "name": String, 
+        "language": String, 
+        "draftVersion": { 
+          "id": String, 
+          "domain": { 
+            "id": String, 
+            "name": String, 
+            "language": String, 
+            "draftVersion": { 
+              "id": String, 
+              "domain": { 
+                "id": String, 
+                "name": String, 
+                "language": String, 
+                "draftVersion": NluDomainVersion, 
+                "lastPublishedVersion": NluDomainVersion, 
+                "dateCreated": Date, 
+                "dateModified": Date, 
+                "selfUri": String, 
+              },  
+              "description": String, 
+              "language": String, 
+              "published": Boolean, 
+              "dateCreated": Date, 
+              "dateModified": Date, 
+              "dateTrained": Date, 
+              "datePublished": Date, 
+              "trainingStatus": String, 
+              "evaluationStatus": String, 
+              "intents": { 
+                "name": String, 
+                "entityTypeBindings": [NamedEntityTypeBinding], 
+                "entityNameReferences": [String], 
+                "utterances": [NluUtterance], 
+              },  
+              "entityTypes": { 
+                "name": String, 
+                "description": String, 
+                "mechanism": NamedEntityTypeMechanism, 
+              },  
+              "entities": { 
+                "name": String, 
+                "type": String, 
+              },  
+              "selfUri": String, 
+            },  
+            "lastPublishedVersion": { 
+              "id": String, 
+              "domain": { 
+                "id": String, 
+                "name": String, 
+                "language": String, 
+                "draftVersion": NluDomainVersion, 
+                "lastPublishedVersion": NluDomainVersion, 
+                "dateCreated": Date, 
+                "dateModified": Date, 
+                "selfUri": String, 
+              },  
+              "description": String, 
+              "language": String, 
+              "published": Boolean, 
+              "dateCreated": Date, 
+              "dateModified": Date, 
+              "dateTrained": Date, 
+              "datePublished": Date, 
+              "trainingStatus": String, 
+              "evaluationStatus": String, 
+              "intents": { 
+                "name": String, 
+                "entityTypeBindings": [NamedEntityTypeBinding], 
+                "entityNameReferences": [String], 
+                "utterances": [NluUtterance], 
+              },  
+              "entityTypes": { 
+                "name": String, 
+                "description": String, 
+                "mechanism": NamedEntityTypeMechanism, 
+              },  
+              "entities": { 
+                "name": String, 
+                "type": String, 
+              },  
+              "selfUri": String, 
+            },  
+            "dateCreated": Date, 
+            "dateModified": Date, 
+            "selfUri": String, 
+          },  
+          "description": String, 
+          "language": String, 
+          "published": Boolean, 
+          "dateCreated": Date, 
+          "dateModified": Date, 
+          "dateTrained": Date, 
+          "datePublished": Date, 
+          "trainingStatus": String, 
+          "evaluationStatus": String, 
+          "intents": { 
+            "name": String, 
+            "entityTypeBindings": { 
+              "entityType": String, 
+              "entityName": String, 
+            },  
+            "entityNameReferences": [String], 
+            "utterances": { 
+              "segments": { 
+                "text": String, 
+                "entity": NamedEntityAnnotation, 
+              },  
+            },  
+          },  
+          "entityTypes": { 
+            "name": String, 
+            "description": String, 
+            "mechanism": { 
+              "items": { 
+                "value": String, 
+                "synonyms": [String], 
+              },  
+              "restricted": Boolean, 
+              "type": String, 
+            },  
+          },  
+          "entities": { 
+            "name": String, 
+            "type": String, 
+          },  
+          "selfUri": String, 
+        },  
+        "lastPublishedVersion": { 
+          "id": String, 
+          "domain": { 
+            "id": String, 
+            "name": String, 
+            "language": String, 
+            "draftVersion": { 
+              "id": String, 
+              "domain": { 
+                "id": String, 
+                "name": String, 
+                "language": String, 
+                "draftVersion": NluDomainVersion, 
+                "lastPublishedVersion": NluDomainVersion, 
+                "dateCreated": Date, 
+                "dateModified": Date, 
+                "selfUri": String, 
+              },  
+              "description": String, 
+              "language": String, 
+              "published": Boolean, 
+              "dateCreated": Date, 
+              "dateModified": Date, 
+              "dateTrained": Date, 
+              "datePublished": Date, 
+              "trainingStatus": String, 
+              "evaluationStatus": String, 
+              "intents": { 
+                "name": String, 
+                "entityTypeBindings": [NamedEntityTypeBinding], 
+                "entityNameReferences": [String], 
+                "utterances": [NluUtterance], 
+              },  
+              "entityTypes": { 
+                "name": String, 
+                "description": String, 
+                "mechanism": NamedEntityTypeMechanism, 
+              },  
+              "entities": { 
+                "name": String, 
+                "type": String, 
+              },  
+              "selfUri": String, 
+            },  
+            "lastPublishedVersion": { 
+              "id": String, 
+              "domain": { 
+                "id": String, 
+                "name": String, 
+                "language": String, 
+                "draftVersion": NluDomainVersion, 
+                "lastPublishedVersion": NluDomainVersion, 
+                "dateCreated": Date, 
+                "dateModified": Date, 
+                "selfUri": String, 
+              },  
+              "description": String, 
+              "language": String, 
+              "published": Boolean, 
+              "dateCreated": Date, 
+              "dateModified": Date, 
+              "dateTrained": Date, 
+              "datePublished": Date, 
+              "trainingStatus": String, 
+              "evaluationStatus": String, 
+              "intents": { 
+                "name": String, 
+                "entityTypeBindings": [NamedEntityTypeBinding], 
+                "entityNameReferences": [String], 
+                "utterances": [NluUtterance], 
+              },  
+              "entityTypes": { 
+                "name": String, 
+                "description": String, 
+                "mechanism": NamedEntityTypeMechanism, 
+              },  
+              "entities": { 
+                "name": String, 
+                "type": String, 
+              },  
+              "selfUri": String, 
+            },  
+            "dateCreated": Date, 
+            "dateModified": Date, 
+            "selfUri": String, 
+          },  
+          "description": String, 
+          "language": String, 
+          "published": Boolean, 
+          "dateCreated": Date, 
+          "dateModified": Date, 
+          "dateTrained": Date, 
+          "datePublished": Date, 
+          "trainingStatus": String, 
+          "evaluationStatus": String, 
+          "intents": { 
+            "name": String, 
+            "entityTypeBindings": { 
+              "entityType": String, 
+              "entityName": String, 
+            },  
+            "entityNameReferences": [String], 
+            "utterances": { 
+              "segments": { 
+                "text": String, 
+                "entity": NamedEntityAnnotation, 
+              },  
+            },  
+          },  
+          "entityTypes": { 
+            "name": String, 
+            "description": String, 
+            "mechanism": { 
+              "items": { 
+                "value": String, 
+                "synonyms": [String], 
+              },  
+              "restricted": Boolean, 
+              "type": String, 
+            },  
+          },  
+          "entities": { 
+            "name": String, 
+            "type": String, 
+          },  
+          "selfUri": String, 
+        },  
+        "dateCreated": Date, 
+        "dateModified": Date, 
+        "selfUri": String, 
+      },  
+      "description": String, 
+      "language": String, 
+      "published": Boolean, 
+      "dateCreated": Date, 
+      "dateModified": Date, 
+      "dateTrained": Date, 
+      "datePublished": Date, 
+      "trainingStatus": String, 
+      "evaluationStatus": String, 
+      "intents": { 
+        "name": String, 
+        "entityTypeBindings": { 
+          "entityType": String, 
+          "entityName": String, 
+        },  
+        "entityNameReferences": [String], 
+        "utterances": { 
+          "segments": { 
+            "text": String, 
+            "entity": { 
+              "name": String, 
+            },  
+          },  
+        },  
+      },  
+      "entityTypes": { 
+        "name": String, 
+        "description": String, 
+        "mechanism": { 
+          "items": { 
+            "value": String, 
+            "synonyms": [String], 
+          },  
+          "restricted": Boolean, 
+          "type": String, 
+        },  
+      },  
+      "entities": { 
+        "name": String, 
+        "type": String, 
+      },  
       "selfUri": String, 
     },  
     "intents": { 
@@ -11813,6 +14224,11 @@ FlowOutcome <a href="#" onclick="return copyFlowOutcomeExample()">Copy</a>
       "team": { 
         "id": String, 
         "name": String, 
+        "division": { 
+          "id": String, 
+          "name": String, 
+          "selfUri": String, 
+        },  
         "description": String, 
         "dateModified": Date, 
         "memberCount": Number, 

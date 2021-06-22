@@ -897,6 +897,11 @@ InteractionStatsRule <a href="#" onclick="return copyInteractionStatsRuleExample
     "team": { 
       "id": String, 
       "name": String, 
+      "division": { 
+        "id": String, 
+        "name": String, 
+        "selfUri": String, 
+      },  
       "description": String, 
       "dateModified": Date, 
       "memberCount": Number, 
@@ -1497,6 +1502,11 @@ InteractionStatsRule <a href="#" onclick="return copyInteractionStatsRuleExample
     "team": { 
       "id": String, 
       "name": String, 
+      "division": { 
+        "id": String, 
+        "name": String, 
+        "selfUri": String, 
+      },  
       "description": String, 
       "dateModified": Date, 
       "memberCount": Number, 

@@ -349,7 +349,9 @@ let opts = {
   'sortBy': "sortBy_example", // String | Field(s) to sort by. Prefix with '-' for descending (e.g. sortBy=displayName,-createdDate).
   'filterField': "filterField_example", // String | Field to filter by (e.g. filterField=weight or filterField=action.actionTemplate.id). Requires 'filterField' to also be set.
   'filterValue': "filterValue_example", // String | Value to filter by. Requires 'filterValue' to also be set.
-  'actionMapIds': ["actionMapIds_example"] // [String] | IDs of action maps to return. Use of this parameter is not compatible with pagination, filtering or sorting. A maximum of 100 action maps are allowed per request.
+  'actionMapIds': ["actionMapIds_example"], // [String] | IDs of action maps to return. Use of this parameter is not compatible with pagination, filtering, sorting or querying. A maximum of 100 action maps are allowed per request.
+  'queryFields': ["queryFields_example"], // [String] | Action Map field(s) to query on. Requires 'queryValue' to also be set.
+  'queryValue': "queryValue_example" // String | Value to query on. Requires 'queryFields' to also be set.
 };
 
 apiInstance.getJourneyActionmaps(opts)
@@ -372,7 +374,9 @@ apiInstance.getJourneyActionmaps(opts)
  **sortBy** | **String** | Field(s) to sort by. Prefix with &#39;-&#39; for descending (e.g. sortBy=displayName,-createdDate). | [optional]  |
  **filterField** | **String** | Field to filter by (e.g. filterField=weight or filterField=action.actionTemplate.id). Requires &#39;filterField&#39; to also be set. | [optional]  |
  **filterValue** | **String** | Value to filter by. Requires &#39;filterValue&#39; to also be set. | [optional]  |
- **actionMapIds** | **[String]** | IDs of action maps to return. Use of this parameter is not compatible with pagination, filtering or sorting. A maximum of 100 action maps are allowed per request. | [optional]  |
+ **actionMapIds** | **[String]** | IDs of action maps to return. Use of this parameter is not compatible with pagination, filtering, sorting or querying. A maximum of 100 action maps are allowed per request. | [optional]  |
+ **queryFields** | **[String]** | Action Map field(s) to query on. Requires &#39;queryValue&#39; to also be set. | [optional]  |
+ **queryValue** | **String** | Value to query on. Requires &#39;queryFields&#39; to also be set. | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -584,7 +588,9 @@ let opts = {
   'pageSize': 25, // Number | Page size
   'sortBy': "sortBy_example", // String | Field(s) to sort by. Prefix with '-' for descending (e.g. sortBy=name,-createdDate).
   'mediaType': "mediaType_example", // String | Media type
-  'state': "state_example" // String | Action template state
+  'state': "state_example", // String | Action template state.
+  'queryFields': ["queryFields_example"], // [String] | ActionTemplate field(s) to query on. Requires 'queryValue' to also be set.
+  'queryValue': "queryValue_example" // String | Value to query on. Requires 'queryFields' to also be set.
 };
 
 apiInstance.getJourneyActiontemplates(opts)
@@ -606,7 +612,9 @@ apiInstance.getJourneyActiontemplates(opts)
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **sortBy** | **String** | Field(s) to sort by. Prefix with &#39;-&#39; for descending (e.g. sortBy=name,-createdDate). | [optional]  |
  **mediaType** | **String** | Media type | [optional] <br />**Values**: webchat, webMessagingOffer, contentOffer, integrationAction, architectFlow |
- **state** | **String** | Action template state | [optional] <br />**Values**: Active, Inactive, Deleted |
+ **state** | **String** | Action template state. | [optional] <br />**Values**: Active, Inactive, Deleted |
+ **queryFields** | **[String]** | ActionTemplate field(s) to query on. Requires &#39;queryValue&#39; to also be set. | [optional]  |
+ **queryValue** | **String** | Value to query on. Requires &#39;queryFields&#39; to also be set. | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -703,7 +711,9 @@ let opts = {
   'pageNumber': 1, // Number | Page number
   'pageSize': 25, // Number | Page size
   'sortBy': "sortBy_example", // String | Field(s) to sort by. The response can be sorted by any first level property on the Outcome response. Prefix with '-' for descending (e.g. sortBy=displayName,-createdDate).
-  'outcomeIds': ["outcomeIds_example"] // [String] | IDs of outcomes to return. Use of this parameter is not compatible with pagination or sorting. A maximum of 20 outcomes are allowed per request.
+  'outcomeIds': ["outcomeIds_example"], // [String] | IDs of outcomes to return. Use of this parameter is not compatible with pagination, sorting or querying. A maximum of 20 outcomes are allowed per request.
+  'queryFields': ["queryFields_example"], // [String] | Outcome field(s) to query on. Requires 'queryValue' to also be set.
+  'queryValue': "queryValue_example" // String | Value to query on. Requires 'queryFields' to also be set.
 };
 
 apiInstance.getJourneyOutcomes(opts)
@@ -724,7 +734,9 @@ apiInstance.getJourneyOutcomes(opts)
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **sortBy** | **String** | Field(s) to sort by. The response can be sorted by any first level property on the Outcome response. Prefix with &#39;-&#39; for descending (e.g. sortBy=displayName,-createdDate). | [optional]  |
- **outcomeIds** | **[String]** | IDs of outcomes to return. Use of this parameter is not compatible with pagination or sorting. A maximum of 20 outcomes are allowed per request. | [optional]  |
+ **outcomeIds** | **[String]** | IDs of outcomes to return. Use of this parameter is not compatible with pagination, sorting or querying. A maximum of 20 outcomes are allowed per request. | [optional]  |
+ **queryFields** | **[String]** | Outcome field(s) to query on. Requires &#39;queryValue&#39; to also be set. | [optional]  |
+ **queryValue** | **String** | Value to query on. Requires &#39;queryFields&#39; to also be set. | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -822,7 +834,9 @@ let opts = {
   'pageSize': 25, // Number | Page size
   'pageNumber': 1, // Number | Page number
   'isActive': true, // Boolean | Determines whether or not to show only active segments.
-  'segmentIds': ["segmentIds_example"] // [String] | IDs of segments to return. Use of this parameter is not compatible with pagination or sorting. A maximum of 100 segments are allowed per request.
+  'segmentIds': ["segmentIds_example"], // [String] | IDs of segments to return. Use of this parameter is not compatible with pagination, sorting or querying. A maximum of 100 segments are allowed per request.
+  'queryFields': ["queryFields_example"], // [String] | Segment field(s) to query on. Requires 'queryValue' to also be set.
+  'queryValue': "queryValue_example" // String | Value to query on. Requires 'queryFields' to also be set.
 };
 
 apiInstance.getJourneySegments(opts)
@@ -844,7 +858,9 @@ apiInstance.getJourneySegments(opts)
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **isActive** | **Boolean** | Determines whether or not to show only active segments. | [optional]  |
- **segmentIds** | **[String]** | IDs of segments to return. Use of this parameter is not compatible with pagination or sorting. A maximum of 100 segments are allowed per request. | [optional]  |
+ **segmentIds** | **[String]** | IDs of segments to return. Use of this parameter is not compatible with pagination, sorting or querying. A maximum of 100 segments are allowed per request. | [optional]  |
+ **queryFields** | **[String]** | Segment field(s) to query on. Requires &#39;queryValue&#39; to also be set. | [optional]  |
+ **queryValue** | **String** | Value to query on. Requires &#39;queryFields&#39; to also be set. | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -931,6 +947,9 @@ PatchActionMap <a href="#" onclick="return copyPatchActionMapExample()">Copy</a>
         "mappingType": String, 
         "value": String, 
       },  
+    },  
+    "webMessagingOfferFields": { 
+      "offerText": String, 
     },  
   },  
   "actionMapScheduleGroups": { 
@@ -1671,6 +1690,9 @@ ActionMap <a href="#" onclick="return copyActionMapExample()">Copy</a>
         "mappingType": String, 
         "value": String, 
       },  
+    },  
+    "webMessagingOfferFields": { 
+      "offerText": String, 
     },  
   },  
   "actionMapScheduleGroups": { 
