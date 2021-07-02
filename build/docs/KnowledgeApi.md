@@ -46,8 +46,6 @@ Requires ALL permissions:
 
 * knowledge:knowledgebase:delete
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -100,8 +98,6 @@ Delete category
 Requires ALL permissions: 
 
 * knowledge:category:delete
-
-
 
 ### Example Usage
 
@@ -160,8 +156,6 @@ Requires ALL permissions:
 
 * knowledge:document:delete
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -219,8 +213,6 @@ Requires ALL permissions:
 
 * knowledge:knowledgebase:view
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -273,8 +265,6 @@ Get categories
 Requires ALL permissions: 
 
 * knowledge:category:view
-
-
 
 ### Example Usage
 
@@ -343,8 +333,6 @@ Requires ALL permissions:
 
 * knowledge:category:view
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -402,8 +390,6 @@ Requires ALL permissions:
 
 * knowledge:document:view
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -460,8 +446,6 @@ Get documents
 Requires ALL permissions: 
 
 * knowledge:document:view
-
-
 
 ### Example Usage
 
@@ -534,8 +518,6 @@ Requires ALL permissions:
 
 * knowledge:training:view
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -592,8 +574,6 @@ Get all trainings information for a knowledgebase
 Requires ALL permissions: 
 
 * knowledge:training:view
-
-
 
 ### Example Usage
 
@@ -662,8 +642,6 @@ Requires ALL permissions:
 
 * knowledge:knowledgebase:view
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -682,8 +660,9 @@ let opts = {
   'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
   'limit': "limit_example", // String | Number of entities to return. Maximum of 200. Deprecated in favour of pageSize.
   'pageSize': "pageSize_example", // String | Number of entities to return. Maximum of 200.
-  'name': "name_example", // String | Name of the KnowledgeBase to filter.
-  'coreLanguage': "coreLanguage_example" // String | To filter knowledgebases by corelanguage.
+  'name': "name_example", // String | Filter by Name.
+  'coreLanguage': "coreLanguage_example", // String | Filter by core language.
+  'published': true // Boolean | Filter by published status.
 };
 
 apiInstance.getKnowledgeKnowledgebases(opts)
@@ -705,8 +684,9 @@ apiInstance.getKnowledgeKnowledgebases(opts)
  **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
  **limit** | **String** | Number of entities to return. Maximum of 200. Deprecated in favour of pageSize. | [optional]  |
  **pageSize** | **String** | Number of entities to return. Maximum of 200. | [optional]  |
- **name** | **String** | Name of the KnowledgeBase to filter. | [optional]  |
- **coreLanguage** | **String** | To filter knowledgebases by corelanguage. | [optional] <br />**Values**: en-US, de-DE |
+ **name** | **String** | Filter by Name. | [optional]  |
+ **coreLanguage** | **String** | Filter by core language. | [optional] <br />**Values**: en-US, de-DE |
+ **published** | **Boolean** | Filter by published status. | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -728,42 +708,6 @@ Update knowledge base
 Requires ALL permissions: 
 
 * knowledge:knowledgebase:edit
-
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyKnowledgeBaseExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#KnowledgeBaseExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-KnowledgeBase <a href="#" onclick="return copyKnowledgeBaseExample()">Copy</a>
-
-<div id="KnowledgeBaseExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "id": String, 
-  "name": String, 
-  "description": String, 
-  "coreLanguage": String, 
-  "dateCreated": Date, 
-  "dateModified": Date, 
-  "faqCount": Number, 
-  "dateDocumentLastModified": Date, 
-  "articleCount": Number, 
-  "selfUri": String, 
-}
-```
-
-</div>
-
 
 ### Example Usage
 
@@ -819,39 +763,6 @@ Update category
 Requires ALL permissions: 
 
 * knowledge:category:edit
-
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyKnowledgeCategoryRequestExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#KnowledgeCategoryRequestExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-KnowledgeCategoryRequest <a href="#" onclick="return copyKnowledgeCategoryRequestExample()">Copy</a>
-
-<div id="KnowledgeCategoryRequestExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "id": String, 
-  "name": String, 
-  "description": String, 
-  "parent": { 
-    "id": String, 
-  },  
-  "selfUri": String, 
-}
-```
-
-</div>
-
 
 ### Example Usage
 
@@ -912,51 +823,6 @@ Requires ALL permissions:
 
 * knowledge:document:edit
 
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyKnowledgeDocumentRequestExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#KnowledgeDocumentRequestExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-KnowledgeDocumentRequest <a href="#" onclick="return copyKnowledgeDocumentRequestExample()">Copy</a>
-
-<div id="KnowledgeDocumentRequestExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "type": String, 
-  "externalUrl": String, 
-  "faq": { 
-    "question": String, 
-    "answer": String, 
-    "alternatives": [String], 
-  },  
-  "categories": { 
-    "id": String, 
-  },  
-  "article": { 
-    "title": String, 
-    "content": { 
-      "body": { 
-        "locationUrl": String, 
-      },  
-    },  
-    "alternatives": [String], 
-  },  
-}
-```
-
-</div>
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -1016,52 +882,6 @@ Requires ALL permissions:
 
 * knowledge:document:edit
 
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyKnowledgeDocumentBulkRequestExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#KnowledgeDocumentBulkRequestExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-KnowledgeDocumentBulkRequest <a href="#" onclick="return copyKnowledgeDocumentBulkRequestExample()">Copy</a>
-
-<div id="KnowledgeDocumentBulkRequestExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "type": String, 
-  "externalUrl": String, 
-  "faq": { 
-    "question": String, 
-    "answer": String, 
-    "alternatives": [String], 
-  },  
-  "categories": { 
-    "id": String, 
-  },  
-  "article": { 
-    "title": String, 
-    "content": { 
-      "body": { 
-        "locationUrl": String, 
-      },  
-    },  
-    "alternatives": [String], 
-  },  
-  "id": String, 
-}
-```
-
-</div>
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -1118,39 +938,6 @@ Create new category
 Requires ALL permissions: 
 
 * knowledge:category:add
-
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyKnowledgeCategoryRequestExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#KnowledgeCategoryRequestExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-KnowledgeCategoryRequest <a href="#" onclick="return copyKnowledgeCategoryRequestExample()">Copy</a>
-
-<div id="KnowledgeCategoryRequestExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "id": String, 
-  "name": String, 
-  "description": String, 
-  "parent": { 
-    "id": String, 
-  },  
-  "selfUri": String, 
-}
-```
-
-</div>
-
 
 ### Example Usage
 
@@ -1209,51 +996,6 @@ Requires ALL permissions:
 
 * knowledge:document:add
 
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyKnowledgeDocumentRequestExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#KnowledgeDocumentRequestExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-KnowledgeDocumentRequest <a href="#" onclick="return copyKnowledgeDocumentRequestExample()">Copy</a>
-
-<div id="KnowledgeDocumentRequestExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "type": String, 
-  "externalUrl": String, 
-  "faq": { 
-    "question": String, 
-    "answer": String, 
-    "alternatives": [String], 
-  },  
-  "categories": { 
-    "id": String, 
-  },  
-  "article": { 
-    "title": String, 
-    "content": { 
-      "body": { 
-        "locationUrl": String, 
-      },  
-    },  
-    "alternatives": [String], 
-  },  
-}
-```
-
-</div>
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -1310,8 +1052,6 @@ Promote trained documents from draft state to active.
 Requires ALL permissions: 
 
 * knowledge:training:edit
-
-
 
 ### Example Usage
 
@@ -1370,8 +1110,6 @@ Requires ALL permissions:
 
 * knowledge:training:create
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -1426,38 +1164,6 @@ Search Documents
 Requires ALL permissions: 
 
 * knowledge:knowledgebase:search
-
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyKnowledgeSearchRequestExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#KnowledgeSearchRequestExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-KnowledgeSearchRequest <a href="#" onclick="return copyKnowledgeSearchRequestExample()">Copy</a>
-
-<div id="KnowledgeSearchRequestExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "query": String, 
-  "pageSize": Number, 
-  "pageNumber": Number, 
-  "documentType": String, 
-  "languageCode": String, 
-  "searchOnDraftDocuments": Boolean, 
-}
-```
-
-</div>
-
 
 ### Example Usage
 
@@ -1515,42 +1221,6 @@ Create new knowledge base
 Requires ALL permissions: 
 
 * knowledge:knowledgebase:add
-
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyKnowledgeBaseExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#KnowledgeBaseExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-KnowledgeBase <a href="#" onclick="return copyKnowledgeBaseExample()">Copy</a>
-
-<div id="KnowledgeBaseExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "id": String, 
-  "name": String, 
-  "description": String, 
-  "coreLanguage": String, 
-  "dateCreated": Date, 
-  "dateModified": Date, 
-  "faqCount": Number, 
-  "dateDocumentLastModified": Date, 
-  "articleCount": Number, 
-  "selfUri": String, 
-}
-```
-
-</div>
-
 
 ### Example Usage
 

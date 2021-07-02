@@ -44,8 +44,6 @@ Requires ANY permissions:
 
 * learning:assignment:delete
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -99,8 +97,6 @@ Requires ANY permissions:
 
 * learning:module:delete
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -153,8 +149,6 @@ Permission not required if you are the assigned user of the learning assignment
 Requires ANY permissions: 
 
 * learning:assignment:view
-
-
 
 ### Example Usage
 
@@ -212,8 +206,6 @@ Either moduleId or user value is required
 Requires ANY permissions: 
 
 * learning:assignment:view
-
-
 
 ### Example Usage
 
@@ -291,8 +283,6 @@ List of Learning Assignments assigned to current user
 Requires NO permissions: 
 
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -368,8 +358,6 @@ Requires ANY permissions:
 
 * learning:module:view
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -427,8 +415,6 @@ Requires ANY permissions:
 
 * learning:rule:view
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -481,8 +467,6 @@ Get specific version of a published module
 Requires ANY permissions: 
 
 * learning:module:view
-
-
 
 ### Example Usage
 
@@ -542,8 +526,6 @@ Get all learning modules of an organization
 Requires ANY permissions: 
 
 * learning:module:view
-
-
 
 ### Example Usage
 
@@ -613,76 +595,6 @@ Update Learning Assignment
 Requires NO permissions: 
 
 
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyLearningAssignmentUpdateExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#LearningAssignmentUpdateExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-LearningAssignmentUpdate <a href="#" onclick="return copyLearningAssignmentUpdateExample()">Copy</a>
-
-<div id="LearningAssignmentUpdateExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "state": String, 
-  "assessment": { 
-    "assessmentId": String, 
-    "contextId": String, 
-    "assessmentFormId": String, 
-    "status": String, 
-    "answers": { 
-      "totalScore": Number, 
-      "totalCriticalScore": Number, 
-      "totalNonCriticalScore": Number, 
-      "questionGroupScores": { 
-        "questionGroupId": String, 
-        "totalScore": Number, 
-        "maxTotalScore": Number, 
-        "markedNA": Boolean, 
-        "totalCriticalScore": Number, 
-        "maxTotalCriticalScore": Number, 
-        "totalNonCriticalScore": Number, 
-        "maxTotalNonCriticalScore": Number, 
-        "totalScoreUnweighted": Number, 
-        "maxTotalScoreUnweighted": Number, 
-        "totalCriticalScoreUnweighted": Number, 
-        "maxTotalCriticalScoreUnweighted": Number, 
-        "totalNonCriticalScoreUnweighted": Number, 
-        "maxTotalNonCriticalScoreUnweighted": Number, 
-        "questionScores": { 
-          "failedKillQuestion": Boolean, 
-          "comments": String, 
-          "questionId": String, 
-          "answerId": String, 
-          "score": Number, 
-          "markedNA": Boolean, 
-          "freeTextAnswer": String, 
-        },  
-      },  
-      "failureReasons": [String], 
-      "comments": String, 
-      "agentComments": String, 
-      "isPassed": Boolean, 
-    },  
-    "dateCreated": Date, 
-    "dateModified": Date, 
-    "dateSubmitted": Date, 
-  },  
-}
-```
-
-</div>
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -740,35 +652,6 @@ Requires ANY permissions:
 
 * learning:assignment:add
 
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyLearningAssignmentCreateExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#LearningAssignmentCreateExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-LearningAssignmentCreate <a href="#" onclick="return copyLearningAssignmentCreateExample()">Copy</a>
-
-<div id="LearningAssignmentCreateExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "moduleId": String, 
-  "userId": String, 
-  "recommendedCompletionDate": Date, 
-}
-```
-
-</div>
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -824,45 +707,6 @@ Requires ANY permissions:
 
 * learning:assignment:view
 
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyLearningAssignmentAggregateParamExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#LearningAssignmentAggregateParamExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-LearningAssignmentAggregateParam <a href="#" onclick="return copyLearningAssignmentAggregateParamExample()">Copy</a>
-
-<div id="LearningAssignmentAggregateParamExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "interval": String, 
-  "metrics": [String], 
-  "groupBy": [String], 
-  "filter": { 
-    "type": String, 
-    "clauses": { 
-      "type": String, 
-      "predicates": { 
-        "dimension": String, 
-        "value": String, 
-      },  
-    },  
-  },  
-}
-```
-
-</div>
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -915,34 +759,6 @@ Add multiple learning assignments
 Requires ANY permissions: 
 
 * learning:assignment:add
-
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyLearningAssignmentItemExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#LearningAssignmentItemExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-LearningAssignmentItem <a href="#" onclick="return copyLearningAssignmentItemExample()">Copy</a>
-
-<div id="LearningAssignmentItemExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "moduleId": String, 
-  "userId": String, 
-}
-```
-
-</div>
-
 
 ### Example Usage
 
@@ -999,8 +815,6 @@ Requires ANY permissions:
 
 * learning:assignment:delete
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -1056,8 +870,6 @@ Requires ANY permissions:
 
 * learning:module:publish
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -1111,43 +923,6 @@ Requires ANY permissions:
 
 * learning:module:add
 
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyLearningModuleRequestExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#LearningModuleRequestExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-LearningModuleRequest <a href="#" onclick="return copyLearningModuleRequestExample()">Copy</a>
-
-<div id="LearningModuleRequestExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "name": String, 
-  "description": String, 
-  "completionTimeInDays": Number, 
-  "informSteps": { 
-    "type": String, 
-    "name": String, 
-    "value": String, 
-    "sharingUri": String, 
-    "contentType": String, 
-    "order": Number, 
-  },  
-}
-```
-
-</div>
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -1200,44 +975,6 @@ This will get the users who matches the given rule.
 Requires ANY permissions: 
 
 * learning:rule:view
-
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyLearningAssignmentUserQueryExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#LearningAssignmentUserQueryExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-LearningAssignmentUserQuery <a href="#" onclick="return copyLearningAssignmentUserQueryExample()">Copy</a>
-
-<div id="LearningAssignmentUserQueryExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "rule": { 
-    "id": String, 
-    "isActive": Boolean, 
-    "parts": { 
-      "operation": String, 
-      "selector": String, 
-      "value": [String], 
-      "order": Number, 
-    },  
-    "selfUri": String, 
-  },  
-  "searchTerm": String, 
-}
-```
-
-</div>
-
 
 ### Example Usage
 
@@ -1296,43 +1033,6 @@ Requires ANY permissions:
 
 * learning:module:edit
 
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyLearningModuleRequestExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#LearningModuleRequestExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-LearningModuleRequest <a href="#" onclick="return copyLearningModuleRequestExample()">Copy</a>
-
-<div id="LearningModuleRequestExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "name": String, 
-  "description": String, 
-  "completionTimeInDays": Number, 
-  "informSteps": { 
-    "type": String, 
-    "name": String, 
-    "value": String, 
-    "sharingUri": String, 
-    "contentType": String, 
-    "order": Number, 
-  },  
-}
-```
-
-</div>
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -1387,41 +1087,6 @@ This will update a learning module rule with the specified fields.
 Requires ANY permissions: 
 
 * learning:rule:edit
-
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyLearningModuleRuleExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#LearningModuleRuleExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-LearningModuleRule <a href="#" onclick="return copyLearningModuleRuleExample()">Copy</a>
-
-<div id="LearningModuleRuleExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "id": String, 
-  "isActive": Boolean, 
-  "parts": { 
-    "operation": String, 
-    "selector": String, 
-    "value": [String], 
-    "order": Number, 
-  },  
-  "selfUri": String, 
-}
-```
-
-</div>
-
 
 ### Example Usage
 

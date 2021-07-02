@@ -28,8 +28,6 @@ Requires ANY permissions:
 
 * oauth:token:delete
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -82,8 +80,6 @@ Delete auth token used to make the request.
 Requires NO permissions: 
 
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -129,8 +125,6 @@ Fetch information about the current token
 
 
 Requires NO permissions: 
-
-
 
 
 ### Example Usage

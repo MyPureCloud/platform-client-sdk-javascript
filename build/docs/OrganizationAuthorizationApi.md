@@ -49,8 +49,6 @@ Requires ANY permissions:
 
 * authorization:orgTrustee:delete
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -103,8 +101,6 @@ Delete Trustee User
 Requires ANY permissions: 
 
 * authorization:orgTrusteeUser:delete
-
-
 
 ### Example Usage
 
@@ -161,8 +157,6 @@ Requires ANY permissions:
 
 * authorization:orgTrusteeUser:delete
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -218,8 +212,6 @@ Requires ANY permissions:
 
 * authorization:orgTrustor:delete
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -272,8 +264,6 @@ Delete Trustee User
 Requires ANY permissions: 
 
 * authorization:orgTrusteeUser:delete
-
-
 
 ### Example Usage
 
@@ -331,8 +321,6 @@ Requires ANY permissions:
 * authorization:orgTrustee:view
 * authorization:orgTrustor:view
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -386,8 +374,6 @@ Requires ANY permissions:
 
 * authorization:orgTrustee:view
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -440,8 +426,6 @@ Get Trustee User
 Requires ANY permissions: 
 
 * authorization:orgTrusteeUser:view
-
-
 
 ### Example Usage
 
@@ -498,8 +482,6 @@ Requires ANY permissions:
 
 * authorization:orgTrusteeUser:view
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -554,8 +536,6 @@ The list of trustee users for this organization (i.e. users granted access to th
 Requires ANY permissions: 
 
 * authorization:orgTrusteeUser:view
-
-
 
 ### Example Usage
 
@@ -616,8 +596,6 @@ Requires ANY permissions:
 
 * authorization:orgTrustee:view
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -675,8 +653,6 @@ Requires ANY permissions:
 
 * authorization:orgTrustor:view
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -729,8 +705,6 @@ Get Trustee User
 Requires ANY permissions: 
 
 * authorization:orgTrusteeUser:view
-
-
 
 ### Example Usage
 
@@ -786,8 +760,6 @@ The list of users in the trustor organization (i.e. users granted access).
 Requires ANY permissions: 
 
 * authorization:orgTrusteeUser:view
-
-
 
 ### Example Usage
 
@@ -848,8 +820,6 @@ Requires ANY permissions:
 
 * authorization:orgTrustor:view
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -907,34 +877,6 @@ Requires ANY permissions:
 
 * authorization:orgTrustee:add
 
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyTrustRequestCreateExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#TrustRequestCreateExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-TrustRequestCreate <a href="#" onclick="return copyTrustRequestCreateExample()">Copy</a>
-
-<div id="TrustRequestCreateExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "userIds": [String], 
-  "groupIds": [String], 
-}
-```
-
-</div>
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -987,40 +929,6 @@ Add a user to the trust.
 Requires ANY permissions: 
 
 * authorization:orgTrusteeUser:add
-
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyTrustMemberCreateExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#TrustMemberCreateExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-TrustMemberCreate <a href="#" onclick="return copyTrustMemberCreateExample()">Copy</a>
-
-<div id="TrustMemberCreateExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "id": String, 
-  "roleIds": [String], 
-  "roleDivisions": { 
-    "grants": { 
-      "roleId": String, 
-      "divisionId": String, 
-    },  
-  },  
-}
-```
-
-</div>
-
 
 ### Example Usage
 
@@ -1078,55 +986,6 @@ Requires ALL permissions:
 * authorization:orgTrustee:add
 * authorization:orgTrusteeUser:add
 
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyTrustCreateExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#TrustCreateExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-TrustCreate <a href="#" onclick="return copyTrustCreateExample()">Copy</a>
-
-<div id="TrustCreateExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "pairingId": String, 
-  "enabled": Boolean, 
-  "users": { 
-    "id": String, 
-    "roleIds": [String], 
-    "roleDivisions": { 
-      "grants": { 
-        "roleId": String, 
-        "divisionId": String, 
-      },  
-    },  
-  },  
-  "groups": { 
-    "id": String, 
-    "roleIds": [String], 
-    "roleDivisions": { 
-      "grants": { 
-        "roleId": String, 
-        "divisionId": String, 
-      },  
-    },  
-  },  
-  "dateExpired": Date, 
-}
-```
-
-</div>
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -1179,47 +1038,6 @@ Get Org Trustee Audits
 Requires ANY permissions: 
 
 * authorization:audit:view
-
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyTrusteeAuditQueryRequestExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#TrusteeAuditQueryRequestExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-TrusteeAuditQueryRequest <a href="#" onclick="return copyTrusteeAuditQueryRequestExample()">Copy</a>
-
-<div id="TrusteeAuditQueryRequestExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "trusteeOrganizationIds": [String], 
-  "trusteeUserIds": [String], 
-  "startDate": Date, 
-  "endDate": Date, 
-  "queryPhrase": String, 
-  "facets": { 
-    "name": String, 
-    "type": String, 
-  },  
-  "filters": { 
-    "name": String, 
-    "type": String, 
-    "operator": String, 
-    "values": [String], 
-  },  
-}
-```
-
-</div>
-
 
 ### Example Usage
 
@@ -1284,47 +1102,6 @@ Requires ANY permissions:
 
 * authorization:audit:view
 
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyTrustorAuditQueryRequestExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#TrustorAuditQueryRequestExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-TrustorAuditQueryRequest <a href="#" onclick="return copyTrustorAuditQueryRequestExample()">Copy</a>
-
-<div id="TrustorAuditQueryRequestExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "trustorOrganizationId": String, 
-  "trusteeUserIds": [String], 
-  "startDate": Date, 
-  "endDate": Date, 
-  "queryPhrase": String, 
-  "facets": { 
-    "name": String, 
-    "type": String, 
-  },  
-  "filters": { 
-    "name": String, 
-    "type": String, 
-    "operator": String, 
-    "values": [String], 
-  },  
-}
-```
-
-</div>
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -1388,34 +1165,6 @@ Requires ANY permissions:
 
 * authorization:orgTrustee:edit
 
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyTrustUpdateExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#TrustUpdateExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-TrustUpdate <a href="#" onclick="return copyTrustUpdateExample()">Copy</a>
-
-<div id="TrustUpdateExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "enabled": Boolean, 
-  "dateExpired": Date, 
-}
-```
-
-</div>
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -1470,36 +1219,6 @@ Update Trustee User Roles
 Requires ANY permissions: 
 
 * authorization:orgTrusteeUser:edit
-
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyRoleDivisionGrantsExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#RoleDivisionGrantsExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-RoleDivisionGrants <a href="#" onclick="return copyRoleDivisionGrantsExample()">Copy</a>
-
-<div id="RoleDivisionGrantsExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "grants": { 
-    "roleId": String, 
-    "divisionId": String, 
-  },  
-}
-```
-
-</div>
-
 
 ### Example Usage
 
@@ -1558,8 +1277,6 @@ Requires ANY permissions:
 
 * authorization:orgTrusteeUser:edit
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -1616,8 +1333,6 @@ Add a Trustee user to the trust.
 Requires ALL permissions: 
 
 * authorization:orgTrusteeUser:add
-
-
 
 ### Example Usage
 

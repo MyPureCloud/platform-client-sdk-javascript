@@ -36,8 +36,6 @@ Requires ANY permissions:
 
 * scripter:script:view
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -90,8 +88,6 @@ Get a page
 Requires ANY permissions: 
 
 * scripter:script:view
-
-
 
 ### Example Usage
 
@@ -152,8 +148,6 @@ Requires ANY permissions:
 
 * scripter:script:view
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -210,8 +204,6 @@ Get the list of scripts
 Requires ANY permissions: 
 
 * scripter:script:view
-
-
 
 ### Example Usage
 
@@ -284,8 +276,6 @@ Requires ANY permissions:
 
 * scripter:publishedScript:view
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -353,8 +343,6 @@ Requires ANY permissions:
 
 * scripter:publishedScript:view
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -411,8 +399,6 @@ Get the published page.
 Requires ANY permissions: 
 
 * scripter:publishedScript:view
-
-
 
 ### Example Usage
 
@@ -473,8 +459,6 @@ Requires ANY permissions:
 
 * scripter:publishedScript:view
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -531,8 +515,6 @@ Get the published variables
 Requires ANY permissions: 
 
 * scripter:publishedScript:view
-
-
 
 ### Example Usage
 
@@ -597,8 +579,6 @@ Requires ANY permissions:
 
 * scripter:script:view
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -655,34 +635,6 @@ Export a script via download service.
 Requires ANY permissions: 
 
 * scripter:script:view
-
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyExportScriptRequestExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#ExportScriptRequestExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-ExportScriptRequest <a href="#" onclick="return copyExportScriptRequestExample()">Copy</a>
-
-<div id="ExportScriptRequestExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "fileName": String, 
-  "versionId": String, 
-}
-```
-
-</div>
-
 
 ### Example Usage
 

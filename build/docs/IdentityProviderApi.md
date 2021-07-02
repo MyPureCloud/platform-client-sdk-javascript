@@ -59,8 +59,6 @@ Requires ANY permissions:
 
 * sso:provider:delete
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -108,8 +106,6 @@ Delete Customer Interaction Center (CIC) Identity Provider
 Requires ANY permissions: 
 
 * sso:provider:delete
-
-
 
 ### Example Usage
 
@@ -159,8 +155,6 @@ Requires ANY permissions:
 
 * sso:provider:delete
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -208,8 +202,6 @@ Delete G Suite Identity Provider
 Requires ANY permissions: 
 
 * sso:provider:delete
-
-
 
 ### Example Usage
 
@@ -259,8 +251,6 @@ Requires ANY permissions:
 
 * sso:provider:delete
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -308,8 +298,6 @@ Delete Okta Identity Provider
 Requires ANY permissions: 
 
 * sso:provider:delete
-
-
 
 ### Example Usage
 
@@ -359,8 +347,6 @@ Requires ANY permissions:
 
 * sso:provider:delete
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -408,8 +394,6 @@ Delete Ping Identity Provider
 Requires ANY permissions: 
 
 * sso:provider:delete
-
-
 
 ### Example Usage
 
@@ -459,8 +443,6 @@ Requires ANY permissions:
 
 * sso:provider:delete
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -508,8 +490,6 @@ Delete PureEngage Identity Provider
 Requires ANY permissions: 
 
 * sso:provider:delete
-
-
 
 ### Example Usage
 
@@ -559,8 +539,6 @@ Requires ANY permissions:
 
 * sso:provider:delete
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -608,8 +586,6 @@ The list of identity providers
 Requires ANY permissions: 
 
 * sso:provider:view
-
-
 
 ### Example Usage
 
@@ -659,8 +635,6 @@ Requires ANY permissions:
 
 * sso:provider:view
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -708,8 +682,6 @@ Get Customer Interaction Center (CIC) Identity Provider
 Requires ANY permissions: 
 
 * sso:provider:view
-
-
 
 ### Example Usage
 
@@ -759,8 +731,6 @@ Requires ANY permissions:
 
 * sso:provider:view
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -808,8 +778,6 @@ Get G Suite Identity Provider
 Requires ANY permissions: 
 
 * sso:provider:view
-
-
 
 ### Example Usage
 
@@ -859,8 +827,6 @@ Requires ANY permissions:
 
 * sso:provider:view
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -908,8 +874,6 @@ Get Okta Identity Provider
 Requires ANY permissions: 
 
 * sso:provider:view
-
-
 
 ### Example Usage
 
@@ -959,8 +923,6 @@ Requires ANY permissions:
 
 * sso:provider:view
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -1008,8 +970,6 @@ Get Ping Identity Provider
 Requires ANY permissions: 
 
 * sso:provider:view
-
-
 
 ### Example Usage
 
@@ -1059,8 +1019,6 @@ Requires ANY permissions:
 
 * sso:provider:view
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -1108,8 +1066,6 @@ Get PureEngage Identity Provider
 Requires ANY permissions: 
 
 * sso:provider:view
-
-
 
 ### Example Usage
 
@@ -1159,8 +1115,6 @@ Requires ANY permissions:
 
 * sso:provider:view
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -1209,41 +1163,6 @@ Requires ANY permissions:
 
 * sso:provider:add
 * sso:provider:edit
-
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyADFSExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#ADFSExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-ADFS <a href="#" onclick="return copyADFSExample()">Copy</a>
-
-<div id="ADFSExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "id": String, 
-  "name": String, 
-  "disabled": Boolean, 
-  "issuerURI": String, 
-  "ssoTargetURI": String, 
-  "certificate": String, 
-  "certificates": [String], 
-  "relyingPartyIdentifier": String, 
-  "selfUri": String, 
-}
-```
-
-</div>
-
 
 ### Example Usage
 
@@ -1299,40 +1218,6 @@ Requires ANY permissions:
 * sso:provider:add
 * sso:provider:edit
 
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyCustomerInteractionCenterExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#CustomerInteractionCenterExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-CustomerInteractionCenter <a href="#" onclick="return copyCustomerInteractionCenterExample()">Copy</a>
-
-<div id="CustomerInteractionCenterExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "id": String, 
-  "name": String, 
-  "disabled": Boolean, 
-  "issuerURI": String, 
-  "ssoTargetURI": String, 
-  "certificate": String, 
-  "certificates": [String], 
-  "selfUri": String, 
-}
-```
-
-</div>
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -1386,44 +1271,6 @@ Requires ANY permissions:
 
 * sso:provider:add
 * sso:provider:edit
-
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyGenericSAMLExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#GenericSAMLExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-GenericSAML <a href="#" onclick="return copyGenericSAMLExample()">Copy</a>
-
-<div id="GenericSAMLExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "id": String, 
-  "name": String, 
-  "disabled": Boolean, 
-  "issuerURI": String, 
-  "ssoTargetURI": String, 
-  "certificate": String, 
-  "certificates": [String], 
-  "relyingPartyIdentifier": String, 
-  "logoImageData": String, 
-  "endpointCompression": Boolean, 
-  "nameIdentifierFormat": String, 
-  "selfUri": String, 
-}
-```
-
-</div>
-
 
 ### Example Usage
 
@@ -1479,41 +1326,6 @@ Requires ANY permissions:
 * sso:provider:add
 * sso:provider:edit
 
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyGSuiteExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#GSuiteExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-GSuite <a href="#" onclick="return copyGSuiteExample()">Copy</a>
-
-<div id="GSuiteExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "id": String, 
-  "name": String, 
-  "disabled": Boolean, 
-  "issuerURI": String, 
-  "ssoTargetURI": String, 
-  "certificate": String, 
-  "certificates": [String], 
-  "relyingPartyIdentifier": String, 
-  "selfUri": String, 
-}
-```
-
-</div>
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -1567,41 +1379,6 @@ Requires ANY permissions:
 
 * sso:provider:add
 * sso:provider:edit
-
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyIdentityNowExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#IdentityNowExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-IdentityNow <a href="#" onclick="return copyIdentityNowExample()">Copy</a>
-
-<div id="IdentityNowExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "id": String, 
-  "name": String, 
-  "disabled": Boolean, 
-  "issuerURI": String, 
-  "ssoTargetURI": String, 
-  "certificate": String, 
-  "certificates": [String], 
-  "relyingPartyIdentifier": String, 
-  "selfUri": String, 
-}
-```
-
-</div>
-
 
 ### Example Usage
 
@@ -1657,40 +1434,6 @@ Requires ANY permissions:
 * sso:provider:add
 * sso:provider:edit
 
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyOktaExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#OktaExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-Okta <a href="#" onclick="return copyOktaExample()">Copy</a>
-
-<div id="OktaExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "id": String, 
-  "name": String, 
-  "disabled": Boolean, 
-  "issuerURI": String, 
-  "ssoTargetURI": String, 
-  "certificate": String, 
-  "certificates": [String], 
-  "selfUri": String, 
-}
-```
-
-</div>
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -1744,40 +1487,6 @@ Requires ANY permissions:
 
 * sso:provider:add
 * sso:provider:edit
-
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyOneLoginExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#OneLoginExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-OneLogin <a href="#" onclick="return copyOneLoginExample()">Copy</a>
-
-<div id="OneLoginExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "id": String, 
-  "name": String, 
-  "disabled": Boolean, 
-  "issuerURI": String, 
-  "ssoTargetURI": String, 
-  "certificate": String, 
-  "certificates": [String], 
-  "selfUri": String, 
-}
-```
-
-</div>
-
 
 ### Example Usage
 
@@ -1833,41 +1542,6 @@ Requires ANY permissions:
 * sso:provider:add
 * sso:provider:edit
 
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyPingIdentityExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#PingIdentityExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-PingIdentity <a href="#" onclick="return copyPingIdentityExample()">Copy</a>
-
-<div id="PingIdentityExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "id": String, 
-  "name": String, 
-  "disabled": Boolean, 
-  "issuerURI": String, 
-  "ssoTargetURI": String, 
-  "certificate": String, 
-  "certificates": [String], 
-  "relyingPartyIdentifier": String, 
-  "selfUri": String, 
-}
-```
-
-</div>
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -1921,36 +1595,6 @@ Requires ANY permissions:
 
 * sso:provider:add
 * sso:provider:edit
-
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyPureCloudExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#PureCloudExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-PureCloud <a href="#" onclick="return copyPureCloudExample()">Copy</a>
-
-<div id="PureCloudExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "id": String, 
-  "name": String, 
-  "disabled": Boolean, 
-  "selfUri": String, 
-}
-```
-
-</div>
-
 
 ### Example Usage
 
@@ -2006,41 +1650,6 @@ Requires ANY permissions:
 * sso:provider:add
 * sso:provider:edit
 
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyPureEngageExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#PureEngageExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-PureEngage <a href="#" onclick="return copyPureEngageExample()">Copy</a>
-
-<div id="PureEngageExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "id": String, 
-  "name": String, 
-  "disabled": Boolean, 
-  "issuerURI": String, 
-  "ssoTargetURI": String, 
-  "certificate": String, 
-  "certificates": [String], 
-  "autoProvisionUsers": Boolean, 
-  "selfUri": String, 
-}
-```
-
-</div>
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -2094,40 +1703,6 @@ Requires ANY permissions:
 
 * sso:provider:add
 * sso:provider:edit
-
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copySalesforceExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#SalesforceExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-Salesforce <a href="#" onclick="return copySalesforceExample()">Copy</a>
-
-<div id="SalesforceExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "id": String, 
-  "name": String, 
-  "disabled": Boolean, 
-  "issuerURI": String, 
-  "ssoTargetURI": String, 
-  "certificate": String, 
-  "certificates": [String], 
-  "selfUri": String, 
-}
-```
-
-</div>
-
 
 ### Example Usage
 

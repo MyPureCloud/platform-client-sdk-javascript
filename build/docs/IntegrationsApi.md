@@ -77,8 +77,6 @@ Delete integration.
 Requires NO permissions: 
 
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -131,8 +129,6 @@ Delete an Action
 Requires ANY permissions: 
 
 * integrations:action:delete
-
-
 
 ### Example Usage
 
@@ -187,8 +183,6 @@ Requires ANY permissions:
 
 * integrations:action:delete
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -241,8 +235,6 @@ Delete a set of credentials
 Requires NO permissions: 
 
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -293,8 +285,6 @@ Get integration.
 
 
 Requires NO permissions: 
-
-
 
 
 ### Example Usage
@@ -363,8 +353,6 @@ Get integration configuration.
 Requires NO permissions: 
 
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -415,8 +403,6 @@ List integrations
 
 
 Requires NO permissions: 
-
-
 
 
 ### Example Usage
@@ -485,8 +471,6 @@ Requires ANY permissions:
 * integrations:action:view
 * bridge:actions:view
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -546,8 +530,6 @@ Requires ANY permissions:
 
 * integrations:action:view
 * bridge:actions:view
-
-
 
 ### Example Usage
 
@@ -609,8 +591,6 @@ Requires ANY permissions:
 * integrations:action:view
 * bridge:actions:view
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -667,8 +647,6 @@ Requires ANY permissions:
 * integrations:action:view
 * bridge:actions:view
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -724,8 +702,6 @@ Requires ANY permissions:
 
 * integrations:action:edit
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -779,8 +755,6 @@ Requires ANY permissions:
 
 * integrations:action:view
 * bridge:actions:view
-
-
 
 ### Example Usage
 
@@ -838,8 +812,6 @@ Requires ANY permissions:
 * integrations:action:view
 * bridge:actions:view
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -895,8 +867,6 @@ Requires ANY permissions:
 
 * integrations:action:view
 * bridge:actions:view
-
-
 
 ### Example Usage
 
@@ -972,8 +942,6 @@ Requires ANY permissions:
 * integrations:action:view
 * bridge:actions:view
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -1041,8 +1009,6 @@ Requires ANY permissions:
 
 * integrations:action:view
 * bridge:actions:view
-
-
 
 ### Example Usage
 
@@ -1116,8 +1082,6 @@ List permitted client app integrations for the logged in user
 Requires NO permissions: 
 
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -1182,8 +1146,6 @@ Get a single credential with sensitive fields redacted
 Requires NO permissions: 
 
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -1234,8 +1196,6 @@ List multiple sets of credentials
 
 
 Requires NO permissions: 
-
-
 
 
 ### Example Usage
@@ -1294,8 +1254,6 @@ List all credential types
 Requires NO permissions: 
 
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -1344,8 +1302,6 @@ Requires ANY permissions:
 
 * integrations:integration:view
 * bridge:notification:view
-
-
 
 ### Example Usage
 
@@ -1411,8 +1367,6 @@ Requires ANY permissions:
 * integrations:integration:view
 * bridge:notification:view
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -1466,8 +1420,6 @@ Requires ANY permissions:
 
 * integrations:integration:view
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -1520,8 +1472,6 @@ Get a list of Dialogflow agents in the customers&#39; Google accounts
 Requires ANY permissions: 
 
 * integrations:integration:view
-
-
 
 ### Example Usage
 
@@ -1582,8 +1532,6 @@ Requires ANY permissions:
 
 * integrations:integration:view
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -1636,8 +1584,6 @@ Get a list of aliases for a bot in the customer&#39;s AWS accounts
 Requires ANY permissions: 
 
 * integrations:integration:view
-
-
 
 ### Example Usage
 
@@ -1702,8 +1648,6 @@ Requires ANY permissions:
 
 * integrations:integration:view
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -1763,8 +1707,6 @@ Requires ANY permissions:
 
 * integrations:integration:view
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -1822,8 +1764,6 @@ Requires ANY permissions:
 
 * integrations:integration:view
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -1878,8 +1818,6 @@ Get a list of voices for a TTS engine
 Requires ANY permissions: 
 
 * integrations:integration:view
-
-
 
 ### Example Usage
 
@@ -1939,8 +1877,6 @@ Get a list of TTS engines enabled for org
 Requires ANY permissions: 
 
 * integrations:integration:view
-
-
 
 ### Example Usage
 
@@ -2005,8 +1941,6 @@ Requires ANY permissions:
 
 * integrations:integration:view
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -2052,8 +1986,6 @@ Get integration type.
 
 
 Requires NO permissions: 
-
-
 
 
 ### Example Usage
@@ -2108,8 +2040,6 @@ Get properties config schema for an integration type.
 Requires NO permissions: 
 
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -2162,8 +2092,6 @@ List integration types
 
 
 Requires NO permissions: 
-
-
 
 
 ### Example Usage
@@ -2230,8 +2158,6 @@ List permitted user app integrations for the logged in user
 Requires NO permissions: 
 
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -2296,111 +2222,6 @@ Update an integration.
 
 
 Requires NO permissions: 
-
-
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyIntegrationExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#IntegrationExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-Integration <a href="#" onclick="return copyIntegrationExample()">Copy</a>
-
-<div id="IntegrationExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "id": String, 
-  "name": String, 
-  "integrationType": { 
-    "id": String, 
-    "name": String, 
-    "description": String, 
-    "provider": String, 
-    "category": String, 
-    "images": { 
-      "resolution": String, 
-      "imageUri": String, 
-    },  
-    "configPropertiesSchemaUri": String, 
-    "configAdvancedSchemaUri": String, 
-    "helpUri": String, 
-    "termsOfServiceUri": String, 
-    "vendorName": String, 
-    "vendorWebsiteUri": String, 
-    "marketplaceUri": String, 
-    "faqUri": String, 
-    "privacyPolicyUri": String, 
-    "supportContactUri": String, 
-    "salesContactUri": String, 
-    "helpLinks": { 
-      "uri": String, 
-      "title": String, 
-      "description": String, 
-    },  
-    "credentials": { 
-      "required": Boolean, 
-      "title": String, 
-      "credentialTypes": [String], 
-    },  
-    "nonInstallable": Boolean, 
-    "maxInstances": Number, 
-    "userPermissions": [String], 
-    "vendorOAuthClientIds": [String], 
-    "selfUri": String, 
-  },  
-  "notes": String, 
-  "intendedState": String, 
-  "config": { 
-    "current": { 
-      "id": String, 
-      "name": String, 
-      "version": Number, 
-      "properties": Object, 
-      "advanced": Object, 
-      "notes": String, 
-      "credentials": { 
-        "id": String, 
-        "name": String, 
-        "createdDate": Date, 
-        "modifiedDate": Date, 
-        "type": { 
-          "id": String, 
-          "name": String, 
-          "properties": Object, 
-          "displayOrder": [String], 
-          "required": [String], 
-        },  
-        "selfUri": String, 
-      },  
-      "selfUri": String, 
-    },  
-  },  
-  "reportedState": { 
-    "code": String, 
-    "effective": String, 
-    "detail": { 
-      "localizableMessageCode": String, 
-      "message": String, 
-      "messageWithParams": String, 
-      "messageParams": {String: String}, 
-    },  
-    "lastUpdated": Date, 
-  },  
-  "attributes": {String: String}, 
-  "selfUri": String, 
-}
-```
-
-</div>
 
 
 ### Example Usage
@@ -2472,50 +2293,6 @@ Requires ANY permissions:
 
 * integrations:action:edit
 
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyUpdateActionInputExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#UpdateActionInputExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-UpdateActionInput <a href="#" onclick="return copyUpdateActionInputExample()">Copy</a>
-
-<div id="UpdateActionInputExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "category": String, 
-  "name": String, 
-  "config": { 
-    "request": { 
-      "requestUrlTemplate": String, 
-      "requestTemplate": String, 
-      "requestTemplateUri": String, 
-      "requestType": String, 
-      "headers": {String: String}, 
-    },  
-    "response": { 
-      "translationMap": {String: String}, 
-      "translationMapDefaults": {String: String}, 
-      "successTemplate": String, 
-      "successTemplateUri": String, 
-    },  
-  },  
-  "version": Number, 
-}
-```
-
-</div>
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -2571,77 +2348,6 @@ Requires ANY permissions:
 
 * integrations:action:edit
 
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyUpdateDraftInputExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#UpdateDraftInputExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-UpdateDraftInput <a href="#" onclick="return copyUpdateDraftInputExample()">Copy</a>
-
-<div id="UpdateDraftInputExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "category": String, 
-  "name": String, 
-  "config": { 
-    "request": { 
-      "requestUrlTemplate": String, 
-      "requestTemplate": String, 
-      "requestTemplateUri": String, 
-      "requestType": String, 
-      "headers": {String: String}, 
-    },  
-    "response": { 
-      "translationMap": {String: String}, 
-      "translationMapDefaults": {String: String}, 
-      "successTemplate": String, 
-      "successTemplateUri": String, 
-    },  
-  },  
-  "contract": { 
-    "input": { 
-      "inputSchema": { 
-        "id": String, 
-        "$schema": String, 
-        "title": String, 
-        "description": String, 
-        "type": String, 
-        "required": [String], 
-        "properties": {String: Object}, 
-        "additionalProperties": Object, 
-      },  
-    },  
-    "output": { 
-      "successSchema": { 
-        "id": String, 
-        "$schema": String, 
-        "title": String, 
-        "description": String, 
-        "type": String, 
-        "required": [String], 
-        "properties": {String: Object}, 
-        "additionalProperties": Object, 
-      },  
-    },  
-  },  
-  "secure": Boolean, 
-  "version": Number, 
-}
-```
-
-</div>
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -2694,72 +2400,6 @@ Create an integration.
 
 
 Requires NO permissions: 
-
-
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyCreateIntegrationRequestExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#CreateIntegrationRequestExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-CreateIntegrationRequest <a href="#" onclick="return copyCreateIntegrationRequestExample()">Copy</a>
-
-<div id="CreateIntegrationRequestExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "id": String, 
-  "name": String, 
-  "integrationType": { 
-    "id": String, 
-    "name": String, 
-    "description": String, 
-    "provider": String, 
-    "category": String, 
-    "images": { 
-      "resolution": String, 
-      "imageUri": String, 
-    },  
-    "configPropertiesSchemaUri": String, 
-    "configAdvancedSchemaUri": String, 
-    "helpUri": String, 
-    "termsOfServiceUri": String, 
-    "vendorName": String, 
-    "vendorWebsiteUri": String, 
-    "marketplaceUri": String, 
-    "faqUri": String, 
-    "privacyPolicyUri": String, 
-    "supportContactUri": String, 
-    "salesContactUri": String, 
-    "helpLinks": { 
-      "uri": String, 
-      "title": String, 
-      "description": String, 
-    },  
-    "credentials": { 
-      "required": Boolean, 
-      "title": String, 
-      "credentialTypes": [String], 
-    },  
-    "nonInstallable": Boolean, 
-    "maxInstances": Number, 
-    "userPermissions": [String], 
-    "vendorOAuthClientIds": [String], 
-    "selfUri": String, 
-  },  
-  "selfUri": String, 
-}
-```
-
-</div>
 
 
 ### Example Usage
@@ -2817,8 +2457,6 @@ Requires ANY permissions:
 
 * integrations:action:edit
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -2871,33 +2509,6 @@ Publish a Draft and make it the active Action configuration
 Requires ANY permissions: 
 
 * integrations:action:edit
-
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyPublishDraftInputExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#PublishDraftInputExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-PublishDraftInput <a href="#" onclick="return copyPublishDraftInputExample()">Copy</a>
-
-<div id="PublishDraftInputExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "version": Number, 
-}
-```
-
-</div>
-
 
 ### Example Usage
 
@@ -2953,8 +2564,6 @@ Test the execution of a draft. Responses will show execution steps broken out wi
 Requires ANY permissions: 
 
 * integrations:action:execute
-
-
 
 ### Example Usage
 
@@ -3012,8 +2621,6 @@ Requires ANY permissions:
 * integrations:action:execute
 * bridge:actions:execute
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -3070,8 +2677,6 @@ Requires ANY permissions:
 * integrations:action:execute
 * bridge:actions:execute
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -3127,77 +2732,6 @@ Requires ANY permissions:
 
 * integrations:action:add
 
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyPostActionInputExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#PostActionInputExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-PostActionInput <a href="#" onclick="return copyPostActionInputExample()">Copy</a>
-
-<div id="PostActionInputExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "category": String, 
-  "name": String, 
-  "integrationId": String, 
-  "config": { 
-    "request": { 
-      "requestUrlTemplate": String, 
-      "requestTemplate": String, 
-      "requestTemplateUri": String, 
-      "requestType": String, 
-      "headers": {String: String}, 
-    },  
-    "response": { 
-      "translationMap": {String: String}, 
-      "translationMapDefaults": {String: String}, 
-      "successTemplate": String, 
-      "successTemplateUri": String, 
-    },  
-  },  
-  "contract": { 
-    "input": { 
-      "inputSchema": { 
-        "id": String, 
-        "$schema": String, 
-        "title": String, 
-        "description": String, 
-        "type": String, 
-        "required": [String], 
-        "properties": {String: Object}, 
-        "additionalProperties": Object, 
-      },  
-    },  
-    "output": { 
-      "successSchema": { 
-        "id": String, 
-        "$schema": String, 
-        "title": String, 
-        "description": String, 
-        "type": String, 
-        "required": [String], 
-        "properties": {String: Object}, 
-        "additionalProperties": Object, 
-      },  
-    },  
-  },  
-  "secure": Boolean, 
-}
-```
-
-</div>
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -3251,77 +2785,6 @@ Requires ANY permissions:
 
 * integrations:action:add
 
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyPostActionInputExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#PostActionInputExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-PostActionInput <a href="#" onclick="return copyPostActionInputExample()">Copy</a>
-
-<div id="PostActionInputExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "category": String, 
-  "name": String, 
-  "integrationId": String, 
-  "config": { 
-    "request": { 
-      "requestUrlTemplate": String, 
-      "requestTemplate": String, 
-      "requestTemplateUri": String, 
-      "requestType": String, 
-      "headers": {String: String}, 
-    },  
-    "response": { 
-      "translationMap": {String: String}, 
-      "translationMapDefaults": {String: String}, 
-      "successTemplate": String, 
-      "successTemplateUri": String, 
-    },  
-  },  
-  "contract": { 
-    "input": { 
-      "inputSchema": { 
-        "id": String, 
-        "$schema": String, 
-        "title": String, 
-        "description": String, 
-        "type": String, 
-        "required": [String], 
-        "properties": {String: Object}, 
-        "additionalProperties": Object, 
-      },  
-    },  
-    "output": { 
-      "successSchema": { 
-        "id": String, 
-        "$schema": String, 
-        "title": String, 
-        "description": String, 
-        "type": String, 
-        "required": [String], 
-        "properties": {String: Object}, 
-        "additionalProperties": Object, 
-      },  
-    },  
-  },  
-  "secure": Boolean, 
-}
-```
-
-</div>
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -3372,43 +2835,6 @@ Create a set of credentials
 
 
 Requires NO permissions: 
-
-
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyCredentialExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#CredentialExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-Credential <a href="#" onclick="return copyCredentialExample()">Copy</a>
-
-<div id="CredentialExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "id": String, 
-  "name": String, 
-  "type": { 
-    "id": String, 
-    "name": String, 
-    "properties": Object, 
-    "displayOrder": [String], 
-    "required": [String], 
-  },  
-  "credentialFields": {String: String}, 
-  "selfUri": String, 
-}
-```
-
-</div>
 
 
 ### Example Usage
@@ -3465,35 +2891,6 @@ Add a vendor connection
 Requires NO permissions: 
 
 
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyVendorConnectionRequestExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#VendorConnectionRequestExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-VendorConnectionRequest <a href="#" onclick="return copyVendorConnectionRequestExample()">Copy</a>
-
-<div id="VendorConnectionRequestExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "publisher": String, 
-  "type": String, 
-  "name": String, 
-}
-```
-
-</div>
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -3546,53 +2943,6 @@ Update integration configuration.
 
 
 Requires NO permissions: 
-
-
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyIntegrationConfigurationExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#IntegrationConfigurationExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-IntegrationConfiguration <a href="#" onclick="return copyIntegrationConfigurationExample()">Copy</a>
-
-<div id="IntegrationConfigurationExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "id": String, 
-  "name": String, 
-  "version": Number, 
-  "properties": Object, 
-  "advanced": Object, 
-  "notes": String, 
-  "credentials": { 
-    "id": String, 
-    "name": String, 
-    "createdDate": Date, 
-    "modifiedDate": Date, 
-    "type": { 
-      "id": String, 
-      "name": String, 
-      "properties": Object, 
-      "displayOrder": [String], 
-      "required": [String], 
-    },  
-    "selfUri": String, 
-  },  
-  "selfUri": String, 
-}
-```
-
-</div>
 
 
 ### Example Usage
@@ -3651,43 +3001,6 @@ Update a set of credentials
 Requires NO permissions: 
 
 
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyCredentialExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#CredentialExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-Credential <a href="#" onclick="return copyCredentialExample()">Copy</a>
-
-<div id="CredentialExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "id": String, 
-  "name": String, 
-  "type": { 
-    "id": String, 
-    "name": String, 
-    "properties": Object, 
-    "displayOrder": [String], 
-    "required": [String], 
-  },  
-  "credentialFields": {String: String}, 
-  "selfUri": String, 
-}
-```
-
-</div>
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -3744,38 +3057,6 @@ Update TTS settings for an org
 Requires ANY permissions: 
 
 * integrations:integration:edit
-
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyTtsSettingsExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#TtsSettingsExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-TtsSettings <a href="#" onclick="return copyTtsSettingsExample()">Copy</a>
-
-<div id="TtsSettingsExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "defaultEngine": String, 
-  "languageOverrides": { 
-    "language": String, 
-    "engine": String, 
-    "voice": String, 
-  },  
-}
-```
-
-</div>
-
 
 ### Example Usage
 

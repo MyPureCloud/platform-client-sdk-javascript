@@ -28,8 +28,6 @@ Get a organization&#39;s GeolocationSettings
 Requires NO permissions: 
 
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -75,8 +73,6 @@ Get a user&#39;s Geolocation
 
 
 Requires NO permissions: 
-
-
 
 
 ### Example Usage
@@ -134,37 +130,6 @@ Requires ANY permissions:
 
 * geolocation:settings:edit
 
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyGeolocationSettingsExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#GeolocationSettingsExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-GeolocationSettings <a href="#" onclick="return copyGeolocationSettingsExample()">Copy</a>
-
-<div id="GeolocationSettingsExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "id": String, 
-  "name": String, 
-  "enabled": Boolean, 
-  "mapboxKey": String, 
-  "selfUri": String, 
-}
-```
-
-</div>
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -215,86 +180,6 @@ Patch a user&#39;s Geolocation
 The geolocation object can be patched one of three ways. Option 1: Set the &#39;primary&#39; property to true. This will set the client as the user&#39;s primary geolocation source.  Option 2: Provide the &#39;latitude&#39; and &#39;longitude&#39; values.  This will enqueue an asynchronous update of the &#39;city&#39;, &#39;region&#39;, and &#39;country&#39;, generating a notification. A subsequent GET operation will include the new values for &#39;city&#39;, &#39;region&#39; and &#39;country&#39;.  Option 3:  Provide the &#39;city&#39;, &#39;region&#39;, &#39;country&#39; values.  Option 1 can be combined with Option 2 or Option 3.  For example, update the client as primary and provide latitude and longitude values.
 
 Requires NO permissions: 
-
-
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyGeolocationExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#GeolocationExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-Geolocation <a href="#" onclick="return copyGeolocationExample()">Copy</a>
-
-<div id="GeolocationExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "id": String, 
-  "name": String, 
-  "type": String, 
-  "primary": Boolean, 
-  "latitude": Number, 
-  "longitude": Number, 
-  "country": String, 
-  "region": String, 
-  "city": String, 
-  "locations": { 
-    "id": String, 
-    "name": String, 
-    "contactUser": { 
-      "id": String, 
-      "selfUri": String, 
-    },  
-    "emergencyNumber": { 
-      "e164": String, 
-      "number": String, 
-      "type": String, 
-    },  
-    "address": { 
-      "city": String, 
-      "country": String, 
-      "countryName": String, 
-      "state": String, 
-      "street1": String, 
-      "street2": String, 
-      "zipcode": String, 
-    },  
-    "state": String, 
-    "notes": String, 
-    "version": Number, 
-    "path": [String], 
-    "profileImage": { 
-      "resolution": String, 
-      "imageUri": String, 
-    },  
-    "floorplanImage": { 
-      "resolution": String, 
-      "imageUri": String, 
-    },  
-    "addressVerificationDetails": { 
-      "status": String, 
-      "dateFinished": Date, 
-      "dateStarted": Date, 
-      "service": String, 
-    },  
-    "addressVerified": Boolean, 
-    "addressStored": Boolean, 
-    "images": String, 
-    "selfUri": String, 
-  },  
-  "selfUri": String, 
-}
-```
-
-</div>
 
 
 ### Example Usage

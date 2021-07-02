@@ -59,8 +59,6 @@ Requires ANY permissions:
 
 * gamification:leaderboard:view
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -119,8 +117,6 @@ Leaderboard by filter type
 Requires ANY permissions: 
 
 * gamification:leaderboard:viewAll
-
-
 
 ### Example Usage
 
@@ -185,8 +181,6 @@ Requires ANY permissions:
 
 * gamification:leaderboard:viewAll
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -242,8 +236,6 @@ Requires ANY permissions:
 
 * gamification:leaderboard:view
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -293,8 +285,6 @@ Requires ANY permissions:
 * gamification:profile:view
 * gamification:leaderboard:view
 * gamification:scorecard:view
-
-
 
 ### Example Usage
 
@@ -353,8 +343,6 @@ Requires ANY permissions:
 
 * gamification:profile:view
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -408,8 +396,6 @@ Requires ANY permissions:
 
 * gamification:profile:view
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -459,8 +445,6 @@ Requires ANY permissions:
 * gamification:profile:view
 * gamification:leaderboard:view
 * gamification:scorecard:view
-
-
 
 ### Example Usage
 
@@ -517,8 +501,6 @@ Requires ANY permissions:
 
 * gamification:profile:view
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -572,8 +554,6 @@ Requires ANY permissions:
 
 * gamification:profile:view
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -621,8 +601,6 @@ Workday performance metrics of the requesting user
 Requires ANY permissions: 
 
 * gamification:scorecard:view
-
-
 
 ### Example Usage
 
@@ -681,8 +659,6 @@ Requires ANY permissions:
 
 * gamification:scorecard:view
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -738,8 +714,6 @@ Requires ANY permissions:
 
 * gamification:scorecard:view
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -787,8 +761,6 @@ All-time points of the requesting user
 Requires ANY permissions: 
 
 * gamification:scorecard:view
-
-
 
 ### Example Usage
 
@@ -843,8 +815,6 @@ Requires ANY permissions:
 
 * gamification:scorecard:view
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -897,8 +867,6 @@ Points trends of the requesting user
 Requires ANY permissions: 
 
 * gamification:scorecard:view
-
-
 
 ### Example Usage
 
@@ -959,8 +927,6 @@ Requires ANY permissions:
 
 * gamification:scorecard:viewAll
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -1020,8 +986,6 @@ Requires ANY permissions:
 
 * gamification:scorecard:viewAll
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -1079,8 +1043,6 @@ Requires ANY permissions:
 
 * gamification:scorecard:viewAll
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -1133,8 +1095,6 @@ All-time points for a user
 Requires ANY permissions: 
 
 * gamification:scorecard:viewAll
-
-
 
 ### Example Usage
 
@@ -1190,8 +1150,6 @@ Points trend for a user
 Requires ANY permissions: 
 
 * gamification:scorecard:viewAll
-
-
 
 ### Example Usage
 
@@ -1254,8 +1212,6 @@ Requires ANY permissions:
 
 * gamification:scorecard:viewAll
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -1317,8 +1273,6 @@ Requires ANY permissions:
 
 * gamification:scorecard:viewAll
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -1375,8 +1329,6 @@ Workday average values by target group
 Requires ANY permissions: 
 
 * gamification:scorecard:viewAll
-
-
 
 ### Example Usage
 
@@ -1438,8 +1390,6 @@ Values trend by target group
 Requires ANY permissions: 
 
 * gamification:scorecard:viewAll
-
-
 
 ### Example Usage
 
@@ -1504,8 +1454,6 @@ Requires ANY permissions:
 
 * gamification:scorecard:view
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -1562,8 +1510,6 @@ Values trends of the requesting user or group
 Requires ANY permissions: 
 
 * gamification:scorecard:view
-
-
 
 ### Example Usage
 
@@ -1628,8 +1574,6 @@ Requires ANY permissions:
 * gamification:profile:update
 * gamification:scorecard:view
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -1677,8 +1621,6 @@ Objective template by id
 Requires ANY permissions: 
 
 * gamification:profile:view
-
-
 
 ### Example Usage
 
@@ -1733,8 +1675,6 @@ Requires ANY permissions:
 
 * gamification:profile:view
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -1782,52 +1722,6 @@ Creates a gamified metric with a given metric definition and metric objective
 Requires ALL permissions: 
 
 * gamification:profile:update
-
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyMetricExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#MetricExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-Metric <a href="#" onclick="return copyMetricExample()">Copy</a>
-
-<div id="MetricExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "id": String, 
-  "name": String, 
-  "metricDefinitionId": String, 
-  "objective": { 
-    "id": String, 
-    "templateId": String, 
-    "zones": { 
-      "label": String, 
-      "directionType": String, 
-      "zoneType": String, 
-      "upperLimitPoints": Number, 
-      "lowerLimitPoints": Number, 
-      "upperLimitValue": Number, 
-      "lowerLimitValue": Number, 
-    },  
-    "enabled": Boolean, 
-    "dateStart": String, 
-  },  
-  "performanceProfileId": String, 
-  "selfUri": String, 
-}
-```
-
-</div>
-
 
 ### Example Usage
 
@@ -1881,52 +1775,6 @@ Updates a metric
 Requires ALL permissions: 
 
 * gamification:profile:update
-
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyMetricExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#MetricExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-Metric <a href="#" onclick="return copyMetricExample()">Copy</a>
-
-<div id="MetricExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "id": String, 
-  "name": String, 
-  "metricDefinitionId": String, 
-  "objective": { 
-    "id": String, 
-    "templateId": String, 
-    "zones": { 
-      "label": String, 
-      "directionType": String, 
-      "zoneType": String, 
-      "upperLimitPoints": Number, 
-      "lowerLimitPoints": Number, 
-      "upperLimitValue": Number, 
-      "lowerLimitValue": Number, 
-    },  
-    "enabled": Boolean, 
-    "dateStart": String, 
-  },  
-  "performanceProfileId": String, 
-  "selfUri": String, 
-}
-```
-
-</div>
-
 
 ### Example Usage
 
@@ -1987,49 +1835,6 @@ Requires ANY permissions:
 
 * gamification:profile:update
 
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyPerformanceProfileExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#PerformanceProfileExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-PerformanceProfile <a href="#" onclick="return copyPerformanceProfileExample()">Copy</a>
-
-<div id="PerformanceProfileExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "id": String, 
-  "name": String, 
-  "division": { 
-    "id": String, 
-    "name": String, 
-    "selfUri": String, 
-  },  
-  "description": String, 
-  "metricOrders": [String], 
-  "dateCreated": Date, 
-  "reportingIntervals": { 
-    "intervalType": String, 
-    "intervalValue": Number, 
-  },  
-  "active": Boolean, 
-  "maxLeaderboardRankSize": Number, 
-  "selfUri": String, 
-}
-```
-
-</div>
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -2086,34 +1891,6 @@ Update gamification activation status
 Requires ANY permissions: 
 
 * gamification:profile:update
-
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyGamificationStatusExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#GamificationStatusExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-GamificationStatus <a href="#" onclick="return copyGamificationStatusExample()">Copy</a>
-
-<div id="GamificationStatusExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "isActive": Boolean, 
-  "dateStart": String, 
-}
-```
-
-</div>
-
 
 ### Example Usage
 

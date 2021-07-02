@@ -35,8 +35,6 @@ Requires ANY permissions:
 
 * routing:skill:manage
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -89,8 +87,6 @@ Delete Language
 Requires ANY permissions: 
 
 * routing:skill:manage
-
-
 
 ### Example Usage
 
@@ -145,8 +141,6 @@ Requires ANY permissions:
 
 * routing:skill:manage
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -199,8 +193,6 @@ This endpoint is deprecated. It has been moved to /routing/languages
 Requires ANY permissions: 
 
 * routing:skill:manage
-
-
 
 ### Example Usage
 
@@ -262,8 +254,6 @@ Get all available languages for translation
 Requires NO permissions: 
 
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -309,8 +299,6 @@ Get the builtin translation for a language
 
 
 Requires NO permissions: 
-
-
 
 
 ### Example Usage
@@ -365,8 +353,6 @@ Get effective translation for an organization by language
 Requires NO permissions: 
 
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -417,8 +403,6 @@ Get effective language translation for a user
 
 
 Requires NO permissions: 
-
-
 
 
 ### Example Usage
@@ -473,8 +457,6 @@ Get language
 Requires NO permissions: 
 
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -527,38 +509,6 @@ This endpoint is deprecated. It has been moved to /routing/languages
 Requires ANY permissions: 
 
 * routing:skill:manage
-
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyLanguageExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#LanguageExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-Language <a href="#" onclick="return copyLanguageExample()">Copy</a>
-
-<div id="LanguageExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "id": String, 
-  "name": String, 
-  "dateModified": Date, 
-  "state": String, 
-  "version": String, 
-  "selfUri": String, 
-}
-```
-
-</div>
-
 
 ### Example Usage
 

@@ -5,7 +5,7 @@ class TelephonyProvidersEdgeApi {
 	/**
 	 * TelephonyProvidersEdge service.
 	 * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-	 * @version 114.0.0
+	 * @version 115.0.0
 	 */
 
 	/**
@@ -2368,6 +2368,36 @@ class TelephonyProvidersEdgeApi {
 			{  }, 
 			{  }, 
 			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Scales the ASG to match the desired capacity
+	 * 
+	 * @param {String} asgId Id of the asg that is to be scaled
+	 * @param {Object} body AsgScaleRequest
+	 */
+	patchTelephonyProvidersEdgesAutoscalinggroupCapacity(asgId, body) { 
+		// verify the required parameter 'asgId' is set
+		if (asgId === undefined || asgId === null) {
+			throw 'Missing the required parameter "asgId" when calling patchTelephonyProvidersEdgesAutoscalinggroupCapacity';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchTelephonyProvidersEdgesAutoscalinggroupCapacity';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/telephony/providers/edges/autoscalinggroups/{asgId}/capacity', 
+			'PATCH', 
+			{ 'asgId': asgId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
 			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']

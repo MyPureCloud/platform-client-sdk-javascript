@@ -31,8 +31,6 @@ Requires ANY permissions:
 * widgets:deployment:delete
 * webchat:deployment:delete
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -86,8 +84,6 @@ Requires ANY permissions:
 
 * widgets:deployment:view
 * webchat:deployment:read
-
-
 
 ### Example Usage
 
@@ -143,8 +139,6 @@ Requires ANY permissions:
 * widgets:deployment:view
 * webchat:deployment:read
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -193,59 +187,6 @@ Requires ANY permissions:
 
 * widgets:deployment:add
 * webchat:deployment:create
-
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyWidgetDeploymentExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#WidgetDeploymentExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-WidgetDeployment <a href="#" onclick="return copyWidgetDeploymentExample()">Copy</a>
-
-<div id="WidgetDeploymentExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "id": String, 
-  "name": String, 
-  "description": String, 
-  "authenticationRequired": Boolean, 
-  "disabled": Boolean, 
-  "flow": { 
-    "id": String, 
-    "name": String, 
-    "selfUri": String, 
-  },  
-  "allowedDomains": [String], 
-  "clientType": String, 
-  "clientConfig": { 
-    "v1": { 
-      "webChatSkin": String, 
-      "authenticationUrl": String, 
-    },  
-    "v2": { 
-    },  
-    "v1-http": { 
-      "webChatSkin": String, 
-      "authenticationUrl": String, 
-    },  
-    "third-party": { 
-    },  
-  },  
-  "selfUri": String, 
-}
-```
-
-</div>
-
 
 ### Example Usage
 
@@ -300,59 +241,6 @@ Requires ANY permissions:
 
 * widgets:deployment:edit
 * webchat:deployment:update
-
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyWidgetDeploymentExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#WidgetDeploymentExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-WidgetDeployment <a href="#" onclick="return copyWidgetDeploymentExample()">Copy</a>
-
-<div id="WidgetDeploymentExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "id": String, 
-  "name": String, 
-  "description": String, 
-  "authenticationRequired": Boolean, 
-  "disabled": Boolean, 
-  "flow": { 
-    "id": String, 
-    "name": String, 
-    "selfUri": String, 
-  },  
-  "allowedDomains": [String], 
-  "clientType": String, 
-  "clientConfig": { 
-    "v1": { 
-      "webChatSkin": String, 
-      "authenticationUrl": String, 
-    },  
-    "v2": { 
-    },  
-    "v1-http": { 
-      "webChatSkin": String, 
-      "authenticationUrl": String, 
-    },  
-    "third-party": { 
-    },  
-  },  
-  "selfUri": String, 
-}
-```
-
-</div>
-
 
 ### Example Usage
 

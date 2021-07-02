@@ -33,8 +33,6 @@ Requires ALL permissions:
 
 * directory:location:delete
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -85,8 +83,6 @@ Get Location by ID.
 
 
 Requires NO permissions: 
-
-
 
 
 ### Example Usage
@@ -145,8 +141,6 @@ Get sublocations for location ID.
 Requires NO permissions: 
 
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -197,8 +191,6 @@ Get a list of all locations.
 
 
 Requires NO permissions: 
-
-
 
 
 ### Example Usage
@@ -261,8 +253,6 @@ Search locations using the q64 value returned from a previous search
 Requires NO permissions: 
 
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -320,52 +310,6 @@ Requires ALL permissions:
 
 * directory:location:edit
 
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyLocationUpdateDefinitionExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#LocationUpdateDefinitionExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-LocationUpdateDefinition <a href="#" onclick="return copyLocationUpdateDefinitionExample()">Copy</a>
-
-<div id="LocationUpdateDefinitionExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "name": String, 
-  "version": Number, 
-  "state": String, 
-  "path": [String], 
-  "notes": String, 
-  "contactUser": String, 
-  "emergencyNumber": { 
-    "e164": String, 
-    "number": String, 
-    "type": String, 
-  },  
-  "address": { 
-    "city": String, 
-    "country": String, 
-    "countryName": String, 
-    "state": String, 
-    "street1": String, 
-    "street2": String, 
-    "zipcode": String, 
-  },  
-}
-```
-
-</div>
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -421,52 +365,6 @@ Requires ALL permissions:
 
 * directory:location:add
 
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyLocationCreateDefinitionExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#LocationCreateDefinitionExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-LocationCreateDefinition <a href="#" onclick="return copyLocationCreateDefinitionExample()">Copy</a>
-
-<div id="LocationCreateDefinitionExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "name": String, 
-  "version": Number, 
-  "state": String, 
-  "path": [String], 
-  "notes": String, 
-  "contactUser": String, 
-  "emergencyNumber": { 
-    "e164": String, 
-    "number": String, 
-    "type": String, 
-  },  
-  "address": { 
-    "city": String, 
-    "country": String, 
-    "countryName": String, 
-    "state": String, 
-    "street1": String, 
-    "street2": String, 
-    "zipcode": String, 
-  },  
-}
-```
-
-</div>
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -517,112 +415,6 @@ Search locations
 
 
 Requires NO permissions: 
-
-
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyLocationSearchRequestExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#LocationSearchRequestExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-LocationSearchRequest <a href="#" onclick="return copyLocationSearchRequestExample()">Copy</a>
-
-<div id="LocationSearchRequestExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "sortOrder": String, 
-  "sortBy": String, 
-  "pageSize": Number, 
-  "pageNumber": Number, 
-  "sort": { 
-    "sortOrder": String, 
-    "sortBy": String, 
-  },  
-  "expand": [String], 
-  "query": { 
-    "endValue": String, 
-    "values": [String], 
-    "startValue": String, 
-    "fields": [String], 
-    "value": String, 
-    "operator": String, 
-    "group": { 
-      "endValue": String, 
-      "values": [String], 
-      "startValue": String, 
-      "fields": [String], 
-      "value": String, 
-      "operator": String, 
-      "group": { 
-        "endValue": String, 
-        "values": [String], 
-        "startValue": String, 
-        "fields": [String], 
-        "value": String, 
-        "operator": String, 
-        "group": { 
-          "endValue": String, 
-          "values": [String], 
-          "startValue": String, 
-          "fields": [String], 
-          "value": String, 
-          "operator": String, 
-          "group": { 
-            "endValue": String, 
-            "values": [String], 
-            "startValue": String, 
-            "fields": [String], 
-            "value": String, 
-            "operator": String, 
-            "group": { 
-              "endValue": String, 
-              "values": [String], 
-              "startValue": String, 
-              "fields": [String], 
-              "value": String, 
-              "operator": String, 
-              "group": { 
-                "endValue": String, 
-                "values": [String], 
-                "startValue": String, 
-                "fields": [String], 
-                "value": String, 
-                "operator": String, 
-                "group": [LocationSearchCriteria], 
-                "dateFormat": String, 
-                "type": String, 
-              },  
-              "dateFormat": String, 
-              "type": String, 
-            },  
-            "dateFormat": String, 
-            "type": String, 
-          },  
-          "dateFormat": String, 
-          "type": String, 
-        },  
-        "dateFormat": String, 
-        "type": String, 
-      },  
-      "dateFormat": String, 
-      "type": String, 
-    },  
-    "dateFormat": String, 
-    "type": String, 
-  },  
-}
-```
-
-</div>
 
 
 ### Example Usage

@@ -43,8 +43,6 @@ Search gkn documentation using the q64 value returned from a previous search
 Requires NO permissions: 
 
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -94,8 +92,6 @@ Search documentation using the q64 value returned from a previous search
 Requires NO permissions: 
 
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -143,8 +139,6 @@ Search groups using the q64 value returned from a previous search
 
 
 Requires NO permissions: 
-
-
 
 
 ### Example Usage
@@ -203,8 +197,6 @@ Search locations using the q64 value returned from a previous search
 Requires NO permissions: 
 
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -261,8 +253,6 @@ Search using the q64 value returned from a previous search.
 Requires ANY permissions: 
 
 * directory:user:divisionview
-
-
 
 ### Example Usage
 
@@ -323,8 +313,6 @@ Requires ANY permissions:
 
 * directory:user:divisionview
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -384,8 +372,6 @@ Requires ANY permissions:
 
 * directory:user:divisionview
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -442,8 +428,6 @@ Search voicemails using the q64 value returned from a previous search
 
 
 Requires NO permissions: 
-
-
 
 
 ### Example Usage
@@ -503,112 +487,6 @@ Requires ANY permissions:
 
 * analytics:conversationDetail:view
 
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyTranscriptConversationDetailSearchRequestExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#TranscriptConversationDetailSearchRequestExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-TranscriptConversationDetailSearchRequest <a href="#" onclick="return copyTranscriptConversationDetailSearchRequestExample()">Copy</a>
-
-<div id="TranscriptConversationDetailSearchRequestExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "sortOrder": String, 
-  "sortBy": String, 
-  "pageSize": Number, 
-  "pageNumber": Number, 
-  "sort": { 
-    "sortOrder": String, 
-    "sortBy": String, 
-  },  
-  "types": [String], 
-  "query": { 
-    "endValue": String, 
-    "values": [String], 
-    "startValue": String, 
-    "fields": [String], 
-    "value": String, 
-    "operator": String, 
-    "group": { 
-      "endValue": String, 
-      "values": [String], 
-      "startValue": String, 
-      "fields": [String], 
-      "value": String, 
-      "operator": String, 
-      "group": { 
-        "endValue": String, 
-        "values": [String], 
-        "startValue": String, 
-        "fields": [String], 
-        "value": String, 
-        "operator": String, 
-        "group": { 
-          "endValue": String, 
-          "values": [String], 
-          "startValue": String, 
-          "fields": [String], 
-          "value": String, 
-          "operator": String, 
-          "group": { 
-            "endValue": String, 
-            "values": [String], 
-            "startValue": String, 
-            "fields": [String], 
-            "value": String, 
-            "operator": String, 
-            "group": { 
-              "endValue": String, 
-              "values": [String], 
-              "startValue": String, 
-              "fields": [String], 
-              "value": String, 
-              "operator": String, 
-              "group": { 
-                "endValue": String, 
-                "values": [String], 
-                "startValue": String, 
-                "fields": [String], 
-                "value": String, 
-                "operator": String, 
-                "group": [TranscriptConversationDetailSearchCriteria], 
-                "dateFormat": String, 
-                "type": String, 
-              },  
-              "dateFormat": String, 
-              "type": String, 
-            },  
-            "dateFormat": String, 
-            "type": String, 
-          },  
-          "dateFormat": String, 
-          "type": String, 
-        },  
-        "dateFormat": String, 
-        "type": String, 
-      },  
-      "dateFormat": String, 
-      "type": String, 
-    },  
-    "dateFormat": String, 
-    "type": String, 
-  },  
-}
-```
-
-</div>
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -661,111 +539,6 @@ Search gkn documentation
 Requires NO permissions: 
 
 
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyGKNDocumentationSearchRequestExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#GKNDocumentationSearchRequestExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-GKNDocumentationSearchRequest <a href="#" onclick="return copyGKNDocumentationSearchRequestExample()">Copy</a>
-
-<div id="GKNDocumentationSearchRequestExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "sortOrder": String, 
-  "sortBy": String, 
-  "pageSize": Number, 
-  "pageNumber": Number, 
-  "sort": { 
-    "sortOrder": String, 
-    "sortBy": String, 
-  },  
-  "query": { 
-    "endValue": String, 
-    "values": [String], 
-    "startValue": String, 
-    "fields": [String], 
-    "value": String, 
-    "operator": String, 
-    "group": { 
-      "endValue": String, 
-      "values": [String], 
-      "startValue": String, 
-      "fields": [String], 
-      "value": String, 
-      "operator": String, 
-      "group": { 
-        "endValue": String, 
-        "values": [String], 
-        "startValue": String, 
-        "fields": [String], 
-        "value": String, 
-        "operator": String, 
-        "group": { 
-          "endValue": String, 
-          "values": [String], 
-          "startValue": String, 
-          "fields": [String], 
-          "value": String, 
-          "operator": String, 
-          "group": { 
-            "endValue": String, 
-            "values": [String], 
-            "startValue": String, 
-            "fields": [String], 
-            "value": String, 
-            "operator": String, 
-            "group": { 
-              "endValue": String, 
-              "values": [String], 
-              "startValue": String, 
-              "fields": [String], 
-              "value": String, 
-              "operator": String, 
-              "group": { 
-                "endValue": String, 
-                "values": [String], 
-                "startValue": String, 
-                "fields": [String], 
-                "value": String, 
-                "operator": String, 
-                "group": [GKNDocumentationSearchCriteria], 
-                "dateFormat": String, 
-                "type": String, 
-              },  
-              "dateFormat": String, 
-              "type": String, 
-            },  
-            "dateFormat": String, 
-            "type": String, 
-          },  
-          "dateFormat": String, 
-          "type": String, 
-        },  
-        "dateFormat": String, 
-        "type": String, 
-      },  
-      "dateFormat": String, 
-      "type": String, 
-    },  
-    "dateFormat": String, 
-    "type": String, 
-  },  
-}
-```
-
-</div>
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -815,111 +588,6 @@ Search documentation
 Requires NO permissions: 
 
 
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyDocumentationSearchRequestExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#DocumentationSearchRequestExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-DocumentationSearchRequest <a href="#" onclick="return copyDocumentationSearchRequestExample()">Copy</a>
-
-<div id="DocumentationSearchRequestExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "sortOrder": String, 
-  "sortBy": String, 
-  "pageSize": Number, 
-  "pageNumber": Number, 
-  "sort": { 
-    "sortOrder": String, 
-    "sortBy": String, 
-  },  
-  "query": { 
-    "endValue": String, 
-    "values": [String], 
-    "startValue": String, 
-    "fields": [String], 
-    "value": String, 
-    "operator": String, 
-    "group": { 
-      "endValue": String, 
-      "values": [String], 
-      "startValue": String, 
-      "fields": [String], 
-      "value": String, 
-      "operator": String, 
-      "group": { 
-        "endValue": String, 
-        "values": [String], 
-        "startValue": String, 
-        "fields": [String], 
-        "value": String, 
-        "operator": String, 
-        "group": { 
-          "endValue": String, 
-          "values": [String], 
-          "startValue": String, 
-          "fields": [String], 
-          "value": String, 
-          "operator": String, 
-          "group": { 
-            "endValue": String, 
-            "values": [String], 
-            "startValue": String, 
-            "fields": [String], 
-            "value": String, 
-            "operator": String, 
-            "group": { 
-              "endValue": String, 
-              "values": [String], 
-              "startValue": String, 
-              "fields": [String], 
-              "value": String, 
-              "operator": String, 
-              "group": { 
-                "endValue": String, 
-                "values": [String], 
-                "startValue": String, 
-                "fields": [String], 
-                "value": String, 
-                "operator": String, 
-                "group": [DocumentationSearchCriteria], 
-                "dateFormat": String, 
-                "type": String, 
-              },  
-              "dateFormat": String, 
-              "type": String, 
-            },  
-            "dateFormat": String, 
-            "type": String, 
-          },  
-          "dateFormat": String, 
-          "type": String, 
-        },  
-        "dateFormat": String, 
-        "type": String, 
-      },  
-      "dateFormat": String, 
-      "type": String, 
-    },  
-    "dateFormat": String, 
-    "type": String, 
-  },  
-}
-```
-
-</div>
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -967,111 +635,6 @@ Search groups
 
 
 Requires NO permissions: 
-
-
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyGroupSearchRequestExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#GroupSearchRequestExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-GroupSearchRequest <a href="#" onclick="return copyGroupSearchRequestExample()">Copy</a>
-
-<div id="GroupSearchRequestExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "sortOrder": String, 
-  "sortBy": String, 
-  "pageSize": Number, 
-  "pageNumber": Number, 
-  "sort": { 
-    "sortOrder": String, 
-    "sortBy": String, 
-  },  
-  "query": { 
-    "endValue": String, 
-    "values": [String], 
-    "startValue": String, 
-    "fields": [String], 
-    "value": String, 
-    "operator": String, 
-    "group": { 
-      "endValue": String, 
-      "values": [String], 
-      "startValue": String, 
-      "fields": [String], 
-      "value": String, 
-      "operator": String, 
-      "group": { 
-        "endValue": String, 
-        "values": [String], 
-        "startValue": String, 
-        "fields": [String], 
-        "value": String, 
-        "operator": String, 
-        "group": { 
-          "endValue": String, 
-          "values": [String], 
-          "startValue": String, 
-          "fields": [String], 
-          "value": String, 
-          "operator": String, 
-          "group": { 
-            "endValue": String, 
-            "values": [String], 
-            "startValue": String, 
-            "fields": [String], 
-            "value": String, 
-            "operator": String, 
-            "group": { 
-              "endValue": String, 
-              "values": [String], 
-              "startValue": String, 
-              "fields": [String], 
-              "value": String, 
-              "operator": String, 
-              "group": { 
-                "endValue": String, 
-                "values": [String], 
-                "startValue": String, 
-                "fields": [String], 
-                "value": String, 
-                "operator": String, 
-                "group": [GroupSearchCriteria], 
-                "dateFormat": String, 
-                "type": String, 
-              },  
-              "dateFormat": String, 
-              "type": String, 
-            },  
-            "dateFormat": String, 
-            "type": String, 
-          },  
-          "dateFormat": String, 
-          "type": String, 
-        },  
-        "dateFormat": String, 
-        "type": String, 
-      },  
-      "dateFormat": String, 
-      "type": String, 
-    },  
-    "dateFormat": String, 
-    "type": String, 
-  },  
-}
-```
-
-</div>
 
 
 ### Example Usage
@@ -1126,38 +689,6 @@ Search Documents
 Requires ALL permissions: 
 
 * knowledge:knowledgebase:search
-
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyKnowledgeSearchRequestExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#KnowledgeSearchRequestExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-KnowledgeSearchRequest <a href="#" onclick="return copyKnowledgeSearchRequestExample()">Copy</a>
-
-<div id="KnowledgeSearchRequestExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "query": String, 
-  "pageSize": Number, 
-  "pageNumber": Number, 
-  "documentType": String, 
-  "languageCode": String, 
-  "searchOnDraftDocuments": Boolean, 
-}
-```
-
-</div>
-
 
 ### Example Usage
 
@@ -1215,112 +746,6 @@ Search locations
 Requires NO permissions: 
 
 
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyLocationSearchRequestExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#LocationSearchRequestExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-LocationSearchRequest <a href="#" onclick="return copyLocationSearchRequestExample()">Copy</a>
-
-<div id="LocationSearchRequestExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "sortOrder": String, 
-  "sortBy": String, 
-  "pageSize": Number, 
-  "pageNumber": Number, 
-  "sort": { 
-    "sortOrder": String, 
-    "sortBy": String, 
-  },  
-  "expand": [String], 
-  "query": { 
-    "endValue": String, 
-    "values": [String], 
-    "startValue": String, 
-    "fields": [String], 
-    "value": String, 
-    "operator": String, 
-    "group": { 
-      "endValue": String, 
-      "values": [String], 
-      "startValue": String, 
-      "fields": [String], 
-      "value": String, 
-      "operator": String, 
-      "group": { 
-        "endValue": String, 
-        "values": [String], 
-        "startValue": String, 
-        "fields": [String], 
-        "value": String, 
-        "operator": String, 
-        "group": { 
-          "endValue": String, 
-          "values": [String], 
-          "startValue": String, 
-          "fields": [String], 
-          "value": String, 
-          "operator": String, 
-          "group": { 
-            "endValue": String, 
-            "values": [String], 
-            "startValue": String, 
-            "fields": [String], 
-            "value": String, 
-            "operator": String, 
-            "group": { 
-              "endValue": String, 
-              "values": [String], 
-              "startValue": String, 
-              "fields": [String], 
-              "value": String, 
-              "operator": String, 
-              "group": { 
-                "endValue": String, 
-                "values": [String], 
-                "startValue": String, 
-                "fields": [String], 
-                "value": String, 
-                "operator": String, 
-                "group": [LocationSearchCriteria], 
-                "dateFormat": String, 
-                "type": String, 
-              },  
-              "dateFormat": String, 
-              "type": String, 
-            },  
-            "dateFormat": String, 
-            "type": String, 
-          },  
-          "dateFormat": String, 
-          "type": String, 
-        },  
-        "dateFormat": String, 
-        "type": String, 
-      },  
-      "dateFormat": String, 
-      "type": String, 
-    },  
-    "dateFormat": String, 
-    "type": String, 
-  },  
-}
-```
-
-</div>
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -1373,122 +798,6 @@ Search resources.
 Requires ANY permissions: 
 
 * directory:user:divisionview
-
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copySearchRequestExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#SearchRequestExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-SearchRequest <a href="#" onclick="return copySearchRequestExample()">Copy</a>
-
-<div id="SearchRequestExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "sortOrder": String, 
-  "sortBy": String, 
-  "pageSize": Number, 
-  "pageNumber": Number, 
-  "sort": { 
-    "sortOrder": String, 
-    "sortBy": String, 
-  },  
-  "returnFields": [String], 
-  "expand": [String], 
-  "types": [String], 
-  "query": { 
-    "endValue": String, 
-    "values": [String], 
-    "startValue": String, 
-    "fields": [String], 
-    "value": String, 
-    "operator": String, 
-    "group": { 
-      "endValue": String, 
-      "values": [String], 
-      "startValue": String, 
-      "fields": [String], 
-      "value": String, 
-      "operator": String, 
-      "group": { 
-        "endValue": String, 
-        "values": [String], 
-        "startValue": String, 
-        "fields": [String], 
-        "value": String, 
-        "operator": String, 
-        "group": { 
-          "endValue": String, 
-          "values": [String], 
-          "startValue": String, 
-          "fields": [String], 
-          "value": String, 
-          "operator": String, 
-          "group": { 
-            "endValue": String, 
-            "values": [String], 
-            "startValue": String, 
-            "fields": [String], 
-            "value": String, 
-            "operator": String, 
-            "group": { 
-              "endValue": String, 
-              "values": [String], 
-              "startValue": String, 
-              "fields": [String], 
-              "value": String, 
-              "operator": String, 
-              "group": { 
-                "endValue": String, 
-                "values": [String], 
-                "startValue": String, 
-                "fields": [String], 
-                "value": String, 
-                "operator": String, 
-                "group": [SearchCriteria], 
-                "dateFormat": String, 
-                "type": String, 
-              },  
-              "dateFormat": String, 
-              "type": String, 
-            },  
-            "dateFormat": String, 
-            "type": String, 
-          },  
-          "dateFormat": String, 
-          "type": String, 
-        },  
-        "dateFormat": String, 
-        "type": String, 
-      },  
-      "dateFormat": String, 
-      "type": String, 
-    },  
-    "dateFormat": String, 
-    "type": String, 
-  },  
-  "aggregations": { 
-    "field": String, 
-    "name": String, 
-    "type": String, 
-    "value": String, 
-    "size": Number, 
-    "order": [String], 
-  },  
-}
-```
-
-</div>
-
 
 ### Example Usage
 
@@ -1546,98 +855,6 @@ Suggest resources.
 Requires ANY permissions: 
 
 * directory:user:divisionview
-
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copySuggestSearchRequestExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#SuggestSearchRequestExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-SuggestSearchRequest <a href="#" onclick="return copySuggestSearchRequestExample()">Copy</a>
-
-<div id="SuggestSearchRequestExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "expand": [String], 
-  "types": [String], 
-  "query": { 
-    "endValue": String, 
-    "values": [String], 
-    "startValue": String, 
-    "fields": [String], 
-    "value": String, 
-    "operator": String, 
-    "group": { 
-      "endValue": String, 
-      "values": [String], 
-      "startValue": String, 
-      "fields": [String], 
-      "value": String, 
-      "operator": String, 
-      "group": { 
-        "endValue": String, 
-        "values": [String], 
-        "startValue": String, 
-        "fields": [String], 
-        "value": String, 
-        "operator": String, 
-        "group": { 
-          "endValue": String, 
-          "values": [String], 
-          "startValue": String, 
-          "fields": [String], 
-          "value": String, 
-          "operator": String, 
-          "group": { 
-            "endValue": String, 
-            "values": [String], 
-            "startValue": String, 
-            "fields": [String], 
-            "value": String, 
-            "operator": String, 
-            "group": { 
-              "endValue": String, 
-              "values": [String], 
-              "startValue": String, 
-              "fields": [String], 
-              "value": String, 
-              "operator": String, 
-              "group": { 
-                "endValue": String, 
-                "values": [String], 
-                "startValue": String, 
-                "fields": [String], 
-                "value": String, 
-                "operator": String, 
-                "group": [SuggestSearchCriteria], 
-                "dateFormat": String, 
-              },  
-              "dateFormat": String, 
-            },  
-            "dateFormat": String, 
-          },  
-          "dateFormat": String, 
-        },  
-        "dateFormat": String, 
-      },  
-      "dateFormat": String, 
-    },  
-    "dateFormat": String, 
-  },  
-}
-```
-
-</div>
-
 
 ### Example Usage
 
@@ -1697,113 +914,6 @@ Requires ANY permissions:
 * analytics:conversationDetail:view
 * recording:recording:view
 
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyTranscriptSearchRequestExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#TranscriptSearchRequestExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-TranscriptSearchRequest <a href="#" onclick="return copyTranscriptSearchRequestExample()">Copy</a>
-
-<div id="TranscriptSearchRequestExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "sortOrder": String, 
-  "sortBy": String, 
-  "pageSize": Number, 
-  "pageNumber": Number, 
-  "sort": { 
-    "sortOrder": String, 
-    "sortBy": String, 
-  },  
-  "returnFields": [String], 
-  "types": [String], 
-  "query": { 
-    "endValue": String, 
-    "values": [String], 
-    "startValue": String, 
-    "fields": [String], 
-    "value": String, 
-    "operator": String, 
-    "group": { 
-      "endValue": String, 
-      "values": [String], 
-      "startValue": String, 
-      "fields": [String], 
-      "value": String, 
-      "operator": String, 
-      "group": { 
-        "endValue": String, 
-        "values": [String], 
-        "startValue": String, 
-        "fields": [String], 
-        "value": String, 
-        "operator": String, 
-        "group": { 
-          "endValue": String, 
-          "values": [String], 
-          "startValue": String, 
-          "fields": [String], 
-          "value": String, 
-          "operator": String, 
-          "group": { 
-            "endValue": String, 
-            "values": [String], 
-            "startValue": String, 
-            "fields": [String], 
-            "value": String, 
-            "operator": String, 
-            "group": { 
-              "endValue": String, 
-              "values": [String], 
-              "startValue": String, 
-              "fields": [String], 
-              "value": String, 
-              "operator": String, 
-              "group": { 
-                "endValue": String, 
-                "values": [String], 
-                "startValue": String, 
-                "fields": [String], 
-                "value": String, 
-                "operator": String, 
-                "group": [TranscriptSearchCriteria], 
-                "dateFormat": String, 
-                "type": String, 
-              },  
-              "dateFormat": String, 
-              "type": String, 
-            },  
-            "dateFormat": String, 
-            "type": String, 
-          },  
-          "dateFormat": String, 
-          "type": String, 
-        },  
-        "dateFormat": String, 
-        "type": String, 
-      },  
-      "dateFormat": String, 
-      "type": String, 
-    },  
-    "dateFormat": String, 
-    "type": String, 
-  },  
-}
-```
-
-</div>
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -1857,114 +967,6 @@ Requires ANY permissions:
 
 * directory:user:divisionview
 
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyUserSearchRequestExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#UserSearchRequestExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-UserSearchRequest <a href="#" onclick="return copyUserSearchRequestExample()">Copy</a>
-
-<div id="UserSearchRequestExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "sortOrder": String, 
-  "sortBy": String, 
-  "pageSize": Number, 
-  "pageNumber": Number, 
-  "sort": { 
-    "sortOrder": String, 
-    "sortBy": String, 
-  },  
-  "expand": [String], 
-  "query": { 
-    "endValue": String, 
-    "values": [String], 
-    "startValue": String, 
-    "fields": [String], 
-    "value": String, 
-    "operator": String, 
-    "group": { 
-      "endValue": String, 
-      "values": [String], 
-      "startValue": String, 
-      "fields": [String], 
-      "value": String, 
-      "operator": String, 
-      "group": { 
-        "endValue": String, 
-        "values": [String], 
-        "startValue": String, 
-        "fields": [String], 
-        "value": String, 
-        "operator": String, 
-        "group": { 
-          "endValue": String, 
-          "values": [String], 
-          "startValue": String, 
-          "fields": [String], 
-          "value": String, 
-          "operator": String, 
-          "group": { 
-            "endValue": String, 
-            "values": [String], 
-            "startValue": String, 
-            "fields": [String], 
-            "value": String, 
-            "operator": String, 
-            "group": { 
-              "endValue": String, 
-              "values": [String], 
-              "startValue": String, 
-              "fields": [String], 
-              "value": String, 
-              "operator": String, 
-              "group": { 
-                "endValue": String, 
-                "values": [String], 
-                "startValue": String, 
-                "fields": [String], 
-                "value": String, 
-                "operator": String, 
-                "group": [UserSearchCriteria], 
-                "dateFormat": String, 
-                "type": String, 
-              },  
-              "dateFormat": String, 
-              "type": String, 
-            },  
-            "dateFormat": String, 
-            "type": String, 
-          },  
-          "dateFormat": String, 
-          "type": String, 
-        },  
-        "dateFormat": String, 
-        "type": String, 
-      },  
-      "dateFormat": String, 
-      "type": String, 
-    },  
-    "dateFormat": String, 
-    "type": String, 
-  },  
-  "integrationPresenceSource": String, 
-  "enforcePermissions": Boolean, 
-}
-```
-
-</div>
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -2015,112 +1017,6 @@ Search voicemails
 
 
 Requires NO permissions: 
-
-
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyVoicemailSearchRequestExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#VoicemailSearchRequestExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-VoicemailSearchRequest <a href="#" onclick="return copyVoicemailSearchRequestExample()">Copy</a>
-
-<div id="VoicemailSearchRequestExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "sortOrder": String, 
-  "sortBy": String, 
-  "pageSize": Number, 
-  "pageNumber": Number, 
-  "sort": { 
-    "sortOrder": String, 
-    "sortBy": String, 
-  },  
-  "expand": [String], 
-  "query": { 
-    "endValue": String, 
-    "values": [String], 
-    "startValue": String, 
-    "fields": [String], 
-    "value": String, 
-    "operator": String, 
-    "group": { 
-      "endValue": String, 
-      "values": [String], 
-      "startValue": String, 
-      "fields": [String], 
-      "value": String, 
-      "operator": String, 
-      "group": { 
-        "endValue": String, 
-        "values": [String], 
-        "startValue": String, 
-        "fields": [String], 
-        "value": String, 
-        "operator": String, 
-        "group": { 
-          "endValue": String, 
-          "values": [String], 
-          "startValue": String, 
-          "fields": [String], 
-          "value": String, 
-          "operator": String, 
-          "group": { 
-            "endValue": String, 
-            "values": [String], 
-            "startValue": String, 
-            "fields": [String], 
-            "value": String, 
-            "operator": String, 
-            "group": { 
-              "endValue": String, 
-              "values": [String], 
-              "startValue": String, 
-              "fields": [String], 
-              "value": String, 
-              "operator": String, 
-              "group": { 
-                "endValue": String, 
-                "values": [String], 
-                "startValue": String, 
-                "fields": [String], 
-                "value": String, 
-                "operator": String, 
-                "group": [VoicemailSearchCriteria], 
-                "dateFormat": String, 
-                "type": String, 
-              },  
-              "dateFormat": String, 
-              "type": String, 
-            },  
-            "dateFormat": String, 
-            "type": String, 
-          },  
-          "dateFormat": String, 
-          "type": String, 
-        },  
-        "dateFormat": String, 
-        "type": String, 
-      },  
-      "dateFormat": String, 
-      "type": String, 
-    },  
-    "dateFormat": String, 
-    "type": String, 
-  },  
-}
-```
-
-</div>
 
 
 ### Example Usage

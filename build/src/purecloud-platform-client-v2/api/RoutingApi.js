@@ -5,7 +5,7 @@ class RoutingApi {
 	/**
 	 * Routing service.
 	 * @module purecloud-platform-client-v2/api/RoutingApi
-	 * @version 114.0.0
+	 * @version 115.0.0
 	 */
 
 	/**
@@ -1733,6 +1733,36 @@ class RoutingApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/routing/email/domains/{domainId}/validate', 
+			'PATCH', 
+			{ 'domainId': domainId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Request an update of the emails from /replyTo of an outbound domain
+	 * 
+	 * @param {String} domainId domain ID
+	 * @param {Object} body domain with emails that need update set
+	 */
+	patchRoutingEmailOutboundDomain(domainId, body) { 
+		// verify the required parameter 'domainId' is set
+		if (domainId === undefined || domainId === null) {
+			throw 'Missing the required parameter "domainId" when calling patchRoutingEmailOutboundDomain';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchRoutingEmailOutboundDomain';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/email/outbound/domains/{domainId}', 
 			'PATCH', 
 			{ 'domainId': domainId }, 
 			{  }, 

@@ -31,8 +31,6 @@ Requires ALL permissions:
 
 * audits:audit:view
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -81,8 +79,6 @@ Requires ALL permissions:
 
 * audits:audit:view
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -130,8 +126,6 @@ Get status of audit query execution
 Requires ALL permissions: 
 
 * audits:audit:view
-
-
 
 ### Example Usage
 
@@ -185,8 +179,6 @@ Get results of audit query
 Requires ALL permissions: 
 
 * audits:audit:view
-
-
 
 ### Example Usage
 
@@ -249,42 +241,6 @@ Requires ALL permissions:
 
 * audits:audit:view
 
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyAuditQueryRequestExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#AuditQueryRequestExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-AuditQueryRequest <a href="#" onclick="return copyAuditQueryRequestExample()">Copy</a>
-
-<div id="AuditQueryRequestExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "interval": String, 
-  "serviceName": String, 
-  "filters": { 
-    "property": String, 
-    "value": String, 
-  },  
-  "sort": { 
-    "name": String, 
-    "sortOrder": String, 
-  },  
-}
-```
-
-</div>
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -337,44 +293,6 @@ This endpoint will only retrieve 7 days worth of audits for certain services. Pl
 Requires ALL permissions: 
 
 * audits:audit:view
-
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyAuditRealtimeQueryRequestExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#AuditRealtimeQueryRequestExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-AuditRealtimeQueryRequest <a href="#" onclick="return copyAuditRealtimeQueryRequestExample()">Copy</a>
-
-<div id="AuditRealtimeQueryRequestExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "interval": String, 
-  "serviceName": String, 
-  "filters": { 
-    "property": String, 
-    "value": String, 
-  },  
-  "sort": { 
-    "name": String, 
-    "sortOrder": String, 
-  },  
-  "pageNumber": Number, 
-  "pageSize": Number, 
-}
-```
-
-</div>
-
 
 ### Example Usage
 

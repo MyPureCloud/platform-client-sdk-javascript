@@ -31,8 +31,6 @@ Remove all subscriptions
 Requires NO permissions: 
 
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -83,8 +81,6 @@ Get available notification topics.
 
 
 Requires NO permissions: 
-
-
 
 
 ### Example Usage
@@ -143,8 +139,6 @@ The list of all subscriptions for this channel
 Requires NO permissions: 
 
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -195,8 +189,6 @@ The list of existing channels
 
 
 Requires NO permissions: 
-
-
 
 
 ### Example Usage
@@ -253,34 +245,6 @@ Add a list of subscriptions to the existing list of subscriptions
 Requires NO permissions: 
 
 
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyChannelTopicExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#ChannelTopicExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-ChannelTopic <a href="#" onclick="return copyChannelTopicExample()">Copy</a>
-
-<div id="ChannelTopicExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "id": String, 
-  "selfUri": String, 
-}
-```
-
-</div>
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -335,8 +299,6 @@ There is a limit of 20 channels per user/app combination. Creating a 21st channe
 Requires NO permissions: 
 
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -382,34 +344,6 @@ Replace the current list of subscriptions with a new list.
 
 
 Requires NO permissions: 
-
-
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyChannelTopicExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#ChannelTopicExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-ChannelTopic <a href="#" onclick="return copyChannelTopicExample()">Copy</a>
-
-<div id="ChannelTopicExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "id": String, 
-  "selfUri": String, 
-}
-```
-
-</div>
 
 
 ### Example Usage

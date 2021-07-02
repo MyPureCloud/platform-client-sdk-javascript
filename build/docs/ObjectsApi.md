@@ -13,6 +13,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getAuthorizationDivisionsHome**](ObjectsApi.html#getAuthorizationDivisionsHome) | **GET** /api/v2/authorization/divisions/home | Retrieve the home division for the organization.
 [**getAuthorizationDivisionsLimit**](ObjectsApi.html#getAuthorizationDivisionsLimit) | **GET** /api/v2/authorization/divisions/limit | Returns the maximum allowed number of divisions.
 [**postAuthorizationDivisionObject**](ObjectsApi.html#postAuthorizationDivisionObject) | **POST** /api/v2/authorization/divisions/{divisionId}/objects/{objectType} | Assign a list of objects to a division
+[**postAuthorizationDivisionRestore**](ObjectsApi.html#postAuthorizationDivisionRestore) | **POST** /api/v2/authorization/divisions/{divisionId}/restore | Recreate a previously deleted division.
 [**postAuthorizationDivisions**](ObjectsApi.html#postAuthorizationDivisions) | **POST** /api/v2/authorization/divisions | Create a division.
 [**putAuthorizationDivision**](ObjectsApi.html#putAuthorizationDivision) | **PUT** /api/v2/authorization/divisions/{divisionId} | Update a division.
 {: class="table table-striped"}
@@ -32,8 +33,6 @@ Delete a division.
 Requires ANY permissions: 
 
 * authorization:division:delete
-
-
 
 ### Example Usage
 
@@ -91,8 +90,6 @@ Returns an authorization division.
 Requires NO permissions: 
 
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -147,8 +144,6 @@ Retrieve a list of all divisions defined for the organization
 Request specific divisions by id using a query param \&quot;id\&quot;, e.g.  ?id=5f777167-63be-4c24-ad41-374155d9e28b&amp;id=72e9fb25-c484-488d-9312-7acba82435b3
 
 Requires NO permissions: 
-
-
 
 
 ### Example Usage
@@ -221,8 +216,6 @@ Will not include object counts.
 Requires NO permissions: 
 
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -268,8 +261,6 @@ Returns the maximum allowed number of divisions.
 
 
 Requires NO permissions: 
-
-
 
 
 ### Example Usage
@@ -319,8 +310,6 @@ Set the division of a specified list of objects. The objects must all be of the 
 Requires NO permissions: 
 
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -362,6 +351,61 @@ apiInstance.postAuthorizationDivisionObject(divisionId, objectType, body)
 
 void (no response body)
 
+<a name="postAuthorizationDivisionRestore"></a>
+
+# AuthzDivision postAuthorizationDivisionRestore(divisionId, body)
+
+
+
+POST /api/v2/authorization/divisions/{divisionId}/restore
+
+Recreate a previously deleted division.
+
+
+
+Requires ANY permissions: 
+
+* authorization:division:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ObjectsApi();
+
+let divisionId = "divisionId_example"; // String | Division ID
+let body = {}; // Object | Recreated division data
+
+apiInstance.postAuthorizationDivisionRestore(divisionId, body)
+  .then((data) => {
+    console.log(`postAuthorizationDivisionRestore success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postAuthorizationDivisionRestore');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **divisionId** | **String** | Division ID |  |
+ **body** | **Object** | Recreated division data |  |
+{: class="table table-striped"}
+
+### Return type
+
+**AuthzDivision**
+
 <a name="postAuthorizationDivisions"></a>
 
 # AuthzDivision postAuthorizationDivisions(body)
@@ -378,38 +422,6 @@ Requires ALL permissions:
 
 * authorization:division:add
 * authorization:grant:add
-
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyAuthzDivisionExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#AuthzDivisionExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-AuthzDivision <a href="#" onclick="return copyAuthzDivisionExample()">Copy</a>
-
-<div id="AuthzDivisionExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "id": String, 
-  "name": String, 
-  "description": String, 
-  "homeDivision": Boolean, 
-  "objectCounts": {String: Number}, 
-  "selfUri": String, 
-}
-```
-
-</div>
-
 
 ### Example Usage
 
@@ -463,38 +475,6 @@ Update a division.
 Requires ANY permissions: 
 
 * authorization:division:edit
-
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyAuthzDivisionExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#AuthzDivisionExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-AuthzDivision <a href="#" onclick="return copyAuthzDivisionExample()">Copy</a>
-
-<div id="AuthzDivisionExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "id": String, 
-  "name": String, 
-  "description": String, 
-  "homeDivision": Boolean, 
-  "objectCounts": {String: Number}, 
-  "selfUri": String, 
-}
-```
-
-</div>
-
 
 ### Example Usage
 

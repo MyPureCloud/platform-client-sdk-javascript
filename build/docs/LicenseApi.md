@@ -34,8 +34,6 @@ Requires ANY permissions:
 
 * authorization:grant:add
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -89,8 +87,6 @@ Requires ANY permissions:
 
 * authorization:grant:add
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -138,8 +134,6 @@ Get PureCloud license feature toggle value.
 Requires ANY permissions: 
 
 * authorization:grant:add
-
-
 
 ### Example Usage
 
@@ -194,8 +188,6 @@ Requires ANY permissions:
 
 * authorization:grant:add
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -246,8 +238,6 @@ Get a page of users and their licenses
 Retrieve a page of users in an organization along with the licenses they possess.
 
 Requires NO permissions: 
-
-
 
 
 ### Example Usage
@@ -306,8 +296,6 @@ Get a list of licenses inferred based on a list of roleIds
 Requires NO permissions: 
 
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -362,37 +350,6 @@ Update the organization&#39;s license assignments in a batch.
 Requires ANY permissions: 
 
 * authorization:grant:add
-
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyLicenseBatchAssignmentRequestExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#LicenseBatchAssignmentRequestExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-LicenseBatchAssignmentRequest <a href="#" onclick="return copyLicenseBatchAssignmentRequestExample()">Copy</a>
-
-<div id="LicenseBatchAssignmentRequestExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "assignments": { 
-    "licenseId": String, 
-    "userIdsAdd": [String], 
-    "userIdsRemove": [String], 
-  },  
-}
-```
-
-</div>
-
 
 ### Example Usage
 
@@ -449,8 +406,6 @@ Requires ANY permissions:
 
 * authorization:grant:add
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -501,8 +456,6 @@ Fetch user licenses in a batch.
 
 
 Requires NO permissions: 
-
-
 
 
 ### Example Usage

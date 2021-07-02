@@ -28,8 +28,6 @@ Requires ALL permissions:
 
 * telephony:pcap:view
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -95,8 +93,6 @@ Requires ALL permissions:
 
 * telephony:pcap:view
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -149,42 +145,6 @@ Request a download of a pcap file to S3
 Requires ALL permissions: 
 
 * telephony:pcap:add
-
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copySIPSearchPublicRequestExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#SIPSearchPublicRequestExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-SIPSearchPublicRequest <a href="#" onclick="return copySIPSearchPublicRequestExample()">Copy</a>
-
-<div id="SIPSearchPublicRequestExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "id": String, 
-  "name": String, 
-  "callId": String, 
-  "toUser": String, 
-  "fromUser": String, 
-  "conversationId": String, 
-  "participantId": String, 
-  "dateStart": Date, 
-  "dateEnd": Date, 
-  "selfUri": String, 
-}
-```
-
-</div>
-
 
 ### Example Usage
 

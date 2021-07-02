@@ -39,8 +39,6 @@ Requires ANY permissions:
 
 * directory:group:delete
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -93,8 +91,6 @@ Remove members
 Requires NO permissions: 
 
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -138,7 +134,7 @@ apiInstance.deleteGroupMembers(groupId, ids)
 
 # FieldConfig getFieldconfig(type)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 GET /api/v2/fieldconfig
 
@@ -147,8 +143,6 @@ Fetch field config for an entity type
 
 
 Requires NO permissions: 
-
-
 
 
 ### Example Usage
@@ -203,8 +197,6 @@ Get group
 Requires NO permissions: 
 
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -257,8 +249,6 @@ Get all individuals associated with the group
 Requires NO permissions: 
 
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -309,8 +299,6 @@ Get group members, includes individuals, owners, and dynamically included people
 
 
 Requires NO permissions: 
-
-
 
 
 ### Example Usage
@@ -375,8 +363,6 @@ This api is deprecated. Use /api/v2/groups instead
 Requires NO permissions: 
 
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -431,8 +417,6 @@ Get a group list
 
 
 Requires NO permissions: 
-
-
 
 
 ### Example Usage
@@ -497,8 +481,6 @@ Search groups using the q64 value returned from a previous search
 Requires NO permissions: 
 
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -553,8 +535,6 @@ Get group profile listing
 This api is deprecated. Use /api/v2/groups instead.
 
 Requires NO permissions: 
-
-
 
 
 ### Example Usage
@@ -617,34 +597,6 @@ Add members
 Requires NO permissions: 
 
 
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyGroupMembersUpdateExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#GroupMembersUpdateExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-GroupMembersUpdate <a href="#" onclick="return copyGroupMembersUpdateExample()">Copy</a>
-
-<div id="GroupMembersUpdateExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "memberIds": [String], 
-  "version": Number, 
-}
-```
-
-</div>
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -700,55 +652,6 @@ Requires ANY permissions:
 
 * directory:group:add
 
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyGroupCreateExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#GroupCreateExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-GroupCreate <a href="#" onclick="return copyGroupCreateExample()">Copy</a>
-
-<div id="GroupCreateExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "id": String, 
-  "name": String, 
-  "description": String, 
-  "dateModified": Date, 
-  "memberCount": Number, 
-  "state": String, 
-  "version": Number, 
-  "type": String, 
-  "images": { 
-    "resolution": String, 
-    "imageUri": String, 
-  },  
-  "addresses": { 
-    "address": String, 
-    "extension": String, 
-    "display": String, 
-    "type": String, 
-    "mediaType": String, 
-  },  
-  "rulesVisible": Boolean, 
-  "visibility": String, 
-  "ownerIds": [String], 
-  "selfUri": String, 
-}
-```
-
-</div>
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -799,111 +702,6 @@ Search groups
 
 
 Requires NO permissions: 
-
-
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyGroupSearchRequestExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#GroupSearchRequestExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-GroupSearchRequest <a href="#" onclick="return copyGroupSearchRequestExample()">Copy</a>
-
-<div id="GroupSearchRequestExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "sortOrder": String, 
-  "sortBy": String, 
-  "pageSize": Number, 
-  "pageNumber": Number, 
-  "sort": { 
-    "sortOrder": String, 
-    "sortBy": String, 
-  },  
-  "query": { 
-    "endValue": String, 
-    "values": [String], 
-    "startValue": String, 
-    "fields": [String], 
-    "value": String, 
-    "operator": String, 
-    "group": { 
-      "endValue": String, 
-      "values": [String], 
-      "startValue": String, 
-      "fields": [String], 
-      "value": String, 
-      "operator": String, 
-      "group": { 
-        "endValue": String, 
-        "values": [String], 
-        "startValue": String, 
-        "fields": [String], 
-        "value": String, 
-        "operator": String, 
-        "group": { 
-          "endValue": String, 
-          "values": [String], 
-          "startValue": String, 
-          "fields": [String], 
-          "value": String, 
-          "operator": String, 
-          "group": { 
-            "endValue": String, 
-            "values": [String], 
-            "startValue": String, 
-            "fields": [String], 
-            "value": String, 
-            "operator": String, 
-            "group": { 
-              "endValue": String, 
-              "values": [String], 
-              "startValue": String, 
-              "fields": [String], 
-              "value": String, 
-              "operator": String, 
-              "group": { 
-                "endValue": String, 
-                "values": [String], 
-                "startValue": String, 
-                "fields": [String], 
-                "value": String, 
-                "operator": String, 
-                "group": [GroupSearchCriteria], 
-                "dateFormat": String, 
-                "type": String, 
-              },  
-              "dateFormat": String, 
-              "type": String, 
-            },  
-            "dateFormat": String, 
-            "type": String, 
-          },  
-          "dateFormat": String, 
-          "type": String, 
-        },  
-        "dateFormat": String, 
-        "type": String, 
-      },  
-      "dateFormat": String, 
-      "type": String, 
-    },  
-    "dateFormat": String, 
-    "type": String, 
-  },  
-}
-```
-
-</div>
 
 
 ### Example Usage
@@ -958,52 +756,6 @@ Update group
 Requires ANY permissions: 
 
 * directory:group:edit
-
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyGroupUpdateExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#GroupUpdateExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-GroupUpdate <a href="#" onclick="return copyGroupUpdateExample()">Copy</a>
-
-<div id="GroupUpdateExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "id": String, 
-  "name": String, 
-  "description": String, 
-  "state": String, 
-  "version": Number, 
-  "images": { 
-    "resolution": String, 
-    "imageUri": String, 
-  },  
-  "addresses": { 
-    "address": String, 
-    "extension": String, 
-    "display": String, 
-    "type": String, 
-    "mediaType": String, 
-  },  
-  "rulesVisible": Boolean, 
-  "visibility": String, 
-  "ownerIds": [String], 
-  "selfUri": String, 
-}
-```
-
-</div>
-
 
 ### Example Usage
 

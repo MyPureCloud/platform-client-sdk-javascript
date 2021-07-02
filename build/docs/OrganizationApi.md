@@ -28,7 +28,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 # FieldConfig getFieldconfig(type)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 GET /api/v2/fieldconfig
 
@@ -37,8 +37,6 @@ Fetch field config for an entity type
 
 
 Requires NO permissions: 
-
-
 
 
 ### Example Usage
@@ -93,8 +91,6 @@ Get the list of domains that will be allowed to embed PureCloud applications
 Requires NO permissions: 
 
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -143,8 +139,6 @@ Requires ANY permissions:
 
 * directory:organization:admin
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -192,8 +186,6 @@ Get a limit change request
 Requires ANY permissions: 
 
 * limits:organization:view
-
-
 
 ### Example Usage
 
@@ -247,8 +239,6 @@ Timestamp interval defaults to the last 365 days if both query parameters are om
 Requires ANY permissions: 
 
 * limits:organization:view
-
-
 
 ### Example Usage
 
@@ -312,8 +302,6 @@ Get a link to the limit documentation
 Requires NO permissions: 
 
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -361,8 +349,6 @@ Get the effective limits in a namespace for an organization
 Requires ANY permissions: 
 
 * limits:organization:view
-
-
 
 ### Example Usage
 
@@ -416,8 +402,6 @@ Get the available limit namespaces
 Requires ANY permissions: 
 
 * limits:organization:view
-
-
 
 ### Example Usage
 
@@ -475,8 +459,6 @@ Get organization.
 Requires NO permissions: 
 
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -522,8 +504,6 @@ Use PUT /api/v2/organizations/embeddedintegration instead
 
 
 Requires NO permissions: 
-
-
 
 
 ### Example Usage
@@ -573,33 +553,6 @@ Update organization
 Requires ANY permissions: 
 
 * directory:organization:admin
-
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyFeatureStateExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#FeatureStateExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-FeatureState <a href="#" onclick="return copyFeatureStateExample()">Copy</a>
-
-<div id="FeatureStateExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "enabled": Boolean, 
-}
-```
-
-</div>
-
 
 ### Example Usage
 
@@ -656,34 +609,6 @@ Requires ANY permissions:
 
 * directory:organization:admin
 
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyEmbeddedIntegrationExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#EmbeddedIntegrationExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-EmbeddedIntegration <a href="#" onclick="return copyEmbeddedIntegrationExample()">Copy</a>
-
-<div id="EmbeddedIntegrationExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "enableWhitelist": Boolean, 
-  "domainWhitelist": [String], 
-}
-```
-
-</div>
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -737,33 +662,6 @@ Requires ANY permissions:
 
 * directory:organization:admin
 
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyIpAddressAuthenticationExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#IpAddressAuthenticationExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-IpAddressAuthentication <a href="#" onclick="return copyIpAddressAuthenticationExample()">Copy</a>
-
-<div id="IpAddressAuthenticationExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "networkWhitelist": [String], 
-}
-```
-
-</div>
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -816,47 +714,6 @@ Update organization.
 Requires ANY permissions: 
 
 * directory:organization:admin
-
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyOrganizationExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#OrganizationExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-Organization <a href="#" onclick="return copyOrganizationExample()">Copy</a>
-
-<div id="OrganizationExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "id": String, 
-  "name": String, 
-  "defaultLanguage": String, 
-  "defaultCountryCode": String, 
-  "thirdPartyOrgName": String, 
-  "thirdPartyURI": String, 
-  "domain": String, 
-  "version": Number, 
-  "state": String, 
-  "defaultSiteId": String, 
-  "supportURI": String, 
-  "voicemailEnabled": Boolean, 
-  "productPlatform": String, 
-  "selfUri": String, 
-  "features": {String: Boolean}, 
-}
-```
-
-</div>
-
 
 ### Example Usage
 
@@ -912,34 +769,6 @@ Use PUT /api/v2/organizations/embeddedintegration instead
 Requires ANY permissions: 
 
 * directory:organization:admin
-
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyOrgWhitelistSettingsExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#OrgWhitelistSettingsExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-OrgWhitelistSettings <a href="#" onclick="return copyOrgWhitelistSettingsExample()">Copy</a>
-
-<div id="OrgWhitelistSettingsExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "enableWhitelist": Boolean, 
-  "domainWhitelist": [String], 
-}
-```
-
-</div>
-
 
 ### Example Usage
 

@@ -29,36 +29,6 @@ Requires ALL permissions:
 
 * uploads:publicasset:upload
 
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyUploadUrlRequestExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#UploadUrlRequestExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-UploadUrlRequest <a href="#" onclick="return copyUploadUrlRequestExample()">Copy</a>
-
-<div id="UploadUrlRequestExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "fileName": String, 
-  "contentMd5": String, 
-  "signedUrlTimeoutSeconds": Number, 
-  "serverSideEncryption": String, 
-}
-```
-
-</div>
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -111,36 +81,6 @@ Creates presigned url for uploading a recording file
 Requires ALL permissions: 
 
 * recording:recording:upload
-
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyUploadUrlRequestExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#UploadUrlRequestExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-UploadUrlRequest <a href="#" onclick="return copyUploadUrlRequestExample()">Copy</a>
-
-<div id="UploadUrlRequestExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "fileName": String, 
-  "contentMd5": String, 
-  "signedUrlTimeoutSeconds": Number, 
-  "serverSideEncryption": String, 
-}
-```
-
-</div>
-
 
 ### Example Usage
 
@@ -195,36 +135,6 @@ Requires ALL permissions:
 
 * wfm:historicalData:upload
 
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyUploadUrlRequestExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#UploadUrlRequestExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-UploadUrlRequest <a href="#" onclick="return copyUploadUrlRequestExample()">Copy</a>
-
-<div id="UploadUrlRequestExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "fileName": String, 
-  "contentMd5": String, 
-  "signedUrlTimeoutSeconds": Number, 
-  "serverSideEncryption": String, 
-}
-```
-
-</div>
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -277,36 +187,6 @@ Creates presigned url for uploading WFM historical data file. Requires data in j
 Requires ALL permissions: 
 
 * wfm:historicalData:upload
-
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyUploadUrlRequestExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#UploadUrlRequestExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-UploadUrlRequest <a href="#" onclick="return copyUploadUrlRequestExample()">Copy</a>
-
-<div id="UploadUrlRequestExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "fileName": String, 
-  "contentMd5": String, 
-  "signedUrlTimeoutSeconds": Number, 
-  "serverSideEncryption": String, 
-}
-```
-
-</div>
-
 
 ### Example Usage
 

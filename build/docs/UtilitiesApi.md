@@ -28,8 +28,6 @@ Get the current system date/time
 Requires NO permissions: 
 
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -77,8 +75,6 @@ Get public ip address ranges for PureCloud
 Requires NO permissions: 
 
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -124,8 +120,6 @@ Get time zones list
 
 
 Requires NO permissions: 
-
-
 
 
 ### Example Usage
@@ -182,33 +176,6 @@ Returns the information about an X509 PEM encoded certificate or certificate cha
 
 
 Requires NO permissions: 
-
-
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyCertificateExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#CertificateExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-Certificate <a href="#" onclick="return copyCertificateExample()">Copy</a>
-
-<div id="CertificateExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "certificate": String, 
-}
-```
-
-</div>
 
 
 ### Example Usage

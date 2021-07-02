@@ -38,8 +38,6 @@ Requires ANY permissions:
 
 * oauth:client:delete
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -92,8 +90,6 @@ Get a client that is authorized by the resource owner
 Requires ANY permissions: 
 
 * oauth:client:authorize
-
-
 
 ### Example Usage
 
@@ -148,8 +144,6 @@ Requires ANY permissions:
 
 * oauth:client:authorize
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -197,8 +191,6 @@ Get OAuth Client
 Requires ANY permissions: 
 
 * oauth:client:view
-
-
 
 ### Example Usage
 
@@ -252,8 +244,6 @@ Get the results of a usage query
 Requires ANY permissions: 
 
 * oauth:client:view
-
-
 
 ### Example Usage
 
@@ -309,8 +299,6 @@ After calling this method, you will then need to poll for the query results base
 Requires ANY permissions: 
 
 * oauth:client:view
-
-
 
 ### Example Usage
 
@@ -369,8 +357,6 @@ Requires ANY permissions:
 
 * oauth:client:view
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -416,8 +402,6 @@ An OAuth scope
 
 
 Requires NO permissions: 
-
-
 
 
 ### Example Usage
@@ -476,8 +460,6 @@ The list of OAuth scopes
 Requires NO permissions: 
 
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -533,8 +515,6 @@ Requires ANY permissions:
 
 * oauth:client:edit
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -587,36 +567,6 @@ After calling this method, you will then need to poll for the query results base
 Requires ANY permissions: 
 
 * oauth:client:view
-
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyApiUsageQueryExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#ApiUsageQueryExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-ApiUsageQuery <a href="#" onclick="return copyApiUsageQueryExample()">Copy</a>
-
-<div id="ApiUsageQueryExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "interval": String, 
-  "granularity": String, 
-  "groupBy": [String], 
-  "metrics": [String], 
-}
-```
-
-</div>
-
 
 ### Example Usage
 
@@ -673,45 +623,6 @@ Requires ANY permissions:
 
 * oauth:client:add
 
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyOAuthClientRequestExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#OAuthClientRequestExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-OAuthClientRequest <a href="#" onclick="return copyOAuthClientRequestExample()">Copy</a>
-
-<div id="OAuthClientRequestExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "name": String, 
-  "accessTokenValiditySeconds": Number, 
-  "description": String, 
-  "registeredRedirectUri": [String], 
-  "roleIds": [String], 
-  "authorizedGrantType": String, 
-  "scope": [String], 
-  "roleDivisions": { 
-    "roleId": String, 
-    "divisionId": String, 
-  },  
-  "state": String, 
-  "dateToDelete": Date, 
-}
-```
-
-</div>
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -764,45 +675,6 @@ Update OAuth Client
 Requires ANY permissions: 
 
 * oauth:client:edit
-
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyOAuthClientRequestExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#OAuthClientRequestExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-OAuthClientRequest <a href="#" onclick="return copyOAuthClientRequestExample()">Copy</a>
-
-<div id="OAuthClientRequestExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "name": String, 
-  "accessTokenValiditySeconds": Number, 
-  "description": String, 
-  "registeredRedirectUri": [String], 
-  "roleIds": [String], 
-  "authorizedGrantType": String, 
-  "scope": [String], 
-  "roleDivisions": { 
-    "roleId": String, 
-    "divisionId": String, 
-  },  
-  "state": String, 
-  "dateToDelete": Date, 
-}
-```
-
-</div>
-
 
 ### Example Usage
 

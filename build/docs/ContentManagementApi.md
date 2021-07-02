@@ -62,8 +62,6 @@ Delete a document.
 Requires NO permissions: 
 
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -120,8 +118,6 @@ This revokes sharing rights specified in the share record
 Requires NO permissions: 
 
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -174,8 +170,6 @@ Cancel the command for this status
 Requires NO permissions: 
 
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -226,8 +220,6 @@ Delete a workspace
 
 
 Requires NO permissions: 
-
-
 
 
 ### Example Usage
@@ -286,8 +278,6 @@ Delete a member from a workspace
 Requires NO permissions: 
 
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -340,8 +330,6 @@ Delete workspace tag
 Delete a tag from a workspace. Will remove this tag from all documents.
 
 Requires NO permissions: 
-
-
 
 
 ### Example Usage
@@ -398,8 +386,6 @@ Get a document.
 Requires NO permissions: 
 
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -454,8 +440,6 @@ Get a list of audits for a document.
 
 
 Requires NO permissions: 
-
-
 
 
 ### Example Usage
@@ -524,8 +508,6 @@ Download a document.
 Requires NO permissions: 
 
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -582,8 +564,6 @@ Get a list of documents.
 
 
 Requires NO permissions: 
-
-
 
 
 ### Example Usage
@@ -652,8 +632,6 @@ Query content
 Requires NO permissions: 
 
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -718,8 +696,6 @@ Get a Security Profile
 Requires NO permissions: 
 
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -772,8 +748,6 @@ Get a List of Security Profiles
 Requires NO permissions: 
 
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -819,8 +793,6 @@ Retrieve details about an existing share.
 
 
 Requires NO permissions: 
-
-
 
 
 ### Example Usage
@@ -877,8 +849,6 @@ Get shared documents. Securely download a shared document.
 This method requires the download sharing URI obtained in the get document response (downloadSharingUri). Documents may be shared between users in the same workspace. Documents may also be shared between any user by creating a content management share.
 
 Requires NO permissions: 
-
-
 
 
 ### Example Usage
@@ -943,8 +913,6 @@ Failing to specify a filter will return 400.
 Requires NO permissions: 
 
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -1005,8 +973,6 @@ Get a list of statuses for pending operations
 Requires NO permissions: 
 
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -1063,8 +1029,6 @@ Get a status.
 Requires NO permissions: 
 
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -1117,8 +1081,6 @@ Get usage details.
 Requires NO permissions: 
 
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -1164,8 +1126,6 @@ Get a workspace.
 
 
 Requires NO permissions: 
-
-
 
 
 ### Example Usage
@@ -1222,8 +1182,6 @@ Get a list of documents.
 
 
 Requires NO permissions: 
-
-
 
 
 ### Example Usage
@@ -1290,8 +1248,6 @@ Get a workspace member
 Requires NO permissions: 
 
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -1348,8 +1304,6 @@ Get a list workspace members
 
 
 Requires NO permissions: 
-
-
 
 
 ### Example Usage
@@ -1412,8 +1366,6 @@ Get a workspace tag
 Requires NO permissions: 
 
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -1470,8 +1422,6 @@ Get a list of workspace tags
 
 
 Requires NO permissions: 
-
-
 
 
 ### Example Usage
@@ -1536,8 +1486,6 @@ Specifying &#39;content&#39; access will return all workspaces the user has docu
 Requires NO permissions: 
 
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -1598,52 +1546,6 @@ Query audits
 Requires NO permissions: 
 
 
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyContentQueryRequestExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#ContentQueryRequestExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-ContentQueryRequest <a href="#" onclick="return copyContentQueryRequestExample()">Copy</a>
-
-<div id="ContentQueryRequestExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "queryPhrase": String, 
-  "pageNumber": Number, 
-  "pageSize": Number, 
-  "facetNameRequests": [String], 
-  "sort": { 
-    "name": String, 
-    "ascending": Boolean, 
-  },  
-  "filters": { 
-    "name": String, 
-    "type": String, 
-    "operator": String, 
-    "values": [String], 
-  },  
-  "attributeFilters": { 
-    "id": String, 
-    "operator": String, 
-    "values": [String], 
-  },  
-  "includeShares": Boolean, 
-}
-```
-
-</div>
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -1694,62 +1596,6 @@ Update a document.
 
 
 Requires NO permissions: 
-
-
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyDocumentUpdateExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#DocumentUpdateExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-DocumentUpdate <a href="#" onclick="return copyDocumentUpdateExample()">Copy</a>
-
-<div id="DocumentUpdateExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "changeNumber": Number, 
-  "name": String, 
-  "read": Boolean, 
-  "addTags": [String], 
-  "removeTags": [String], 
-  "addTagIds": [String], 
-  "removeTagIds": [String], 
-  "updateAttributes": { 
-    "attribute": { 
-      "id": String, 
-      "name": String, 
-      "version": Number, 
-      "description": String, 
-      "createdBy": { 
-        "id": String, 
-        "name": String, 
-        "selfUri": String, 
-      },  
-      "dateCreated": Date, 
-      "modifiedBy": { 
-        "id": String, 
-        "name": String, 
-        "selfUri": String, 
-      },  
-      "dateModified": Date, 
-      "selfUri": String, 
-    },  
-    "values": [String], 
-  },  
-  "removeAttributes": [String], 
-}
-```
-
-</div>
 
 
 ### Example Usage
@@ -1812,35 +1658,6 @@ Replace the contents of a document.
 Requires NO permissions: 
 
 
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyReplaceRequestExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#ReplaceRequestExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-ReplaceRequest <a href="#" onclick="return copyReplaceRequestExample()">Copy</a>
-
-<div id="ReplaceRequestExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "changeNumber": Number, 
-  "name": String, 
-  "authToken": String, 
-}
-```
-
-</div>
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -1897,40 +1714,6 @@ Add a document.
 
 
 Requires NO permissions: 
-
-
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyDocumentUploadExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#DocumentUploadExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-DocumentUpload <a href="#" onclick="return copyDocumentUploadExample()">Copy</a>
-
-<div id="DocumentUploadExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "name": String, 
-  "workspace": { 
-    "id": String, 
-    "name": String, 
-    "selfUri": String, 
-  },  
-  "tags": [String], 
-  "tagIds": [String], 
-}
-```
-
-</div>
 
 
 ### Example Usage
@@ -1993,52 +1776,6 @@ Query content
 Requires NO permissions: 
 
 
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyQueryRequestExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#QueryRequestExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-QueryRequest <a href="#" onclick="return copyQueryRequestExample()">Copy</a>
-
-<div id="QueryRequestExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "queryPhrase": String, 
-  "pageNumber": Number, 
-  "pageSize": Number, 
-  "facetNameRequests": [String], 
-  "sort": { 
-    "name": String, 
-    "ascending": Boolean, 
-  },  
-  "filters": { 
-    "name": String, 
-    "type": String, 
-    "operator": String, 
-    "values": [String], 
-  },  
-  "attributeFilters": { 
-    "id": String, 
-    "operator": String, 
-    "values": [String], 
-  },  
-  "includeShares": Boolean, 
-}
-```
-
-</div>
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -2095,46 +1832,6 @@ Creates a new share or updates an existing share if the entity has already been 
 Requires NO permissions: 
 
 
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyCreateShareRequestExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#CreateShareRequestExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-CreateShareRequest <a href="#" onclick="return copyCreateShareRequestExample()">Copy</a>
-
-<div id="CreateShareRequestExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "sharedEntityType": String, 
-  "sharedEntity": { 
-    "id": String, 
-  },  
-  "memberType": String, 
-  "member": { 
-    "id": String, 
-  },  
-  "members": { 
-    "memberType": String, 
-    "member": { 
-      "id": String, 
-    },  
-  },  
-}
-```
-
-</div>
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -2185,37 +1882,6 @@ Create a workspace tag
 
 
 Requires NO permissions: 
-
-
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyTagValueExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#TagValueExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-TagValue <a href="#" onclick="return copyTagValueExample()">Copy</a>
-
-<div id="TagValueExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "id": String, 
-  "name": String, 
-  "inUse": Boolean, 
-  "acl": [String], 
-  "selfUri": String, 
-}
-```
-
-</div>
 
 
 ### Example Usage
@@ -2270,35 +1936,6 @@ Perform a prefix query on tags in the workspace
 
 
 Requires NO permissions: 
-
-
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyTagQueryRequestExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#TagQueryRequestExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-TagQueryRequest <a href="#" onclick="return copyTagQueryRequestExample()">Copy</a>
-
-<div id="TagQueryRequestExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "query": String, 
-  "pageNumber": Number, 
-  "pageSize": Number, 
-}
-```
-
-</div>
 
 
 ### Example Usage
@@ -2359,35 +1996,6 @@ Create a group workspace
 Requires NO permissions: 
 
 
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyWorkspaceCreateExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#WorkspaceCreateExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-WorkspaceCreate <a href="#" onclick="return copyWorkspaceCreateExample()">Copy</a>
-
-<div id="WorkspaceCreateExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "name": String, 
-  "bucket": String, 
-  "description": String, 
-}
-```
-
-</div>
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -2438,51 +2046,6 @@ Update a workspace
 
 
 Requires NO permissions: 
-
-
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyWorkspaceExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#WorkspaceExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-Workspace <a href="#" onclick="return copyWorkspaceExample()">Copy</a>
-
-<div id="WorkspaceExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "id": String, 
-  "name": String, 
-  "type": String, 
-  "isCurrentUserWorkspace": Boolean, 
-  "user": { 
-    "id": String, 
-    "name": String, 
-    "selfUri": String, 
-  },  
-  "bucket": String, 
-  "dateCreated": Date, 
-  "dateModified": Date, 
-  "summary": { 
-    "totalDocumentCount": Number, 
-    "totalDocumentByteCount": Number, 
-  },  
-  "acl": [String], 
-  "description": String, 
-  "selfUri": String, 
-}
-```
-
-</div>
 
 
 ### Example Usage
@@ -2539,500 +2102,6 @@ Add a member to a workspace
 Requires NO permissions: 
 
 
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyWorkspaceMemberExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#WorkspaceMemberExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-WorkspaceMember <a href="#" onclick="return copyWorkspaceMemberExample()">Copy</a>
-
-<div id="WorkspaceMemberExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "id": String, 
-  "name": String, 
-  "workspace": { 
-    "id": String, 
-    "name": String, 
-    "selfUri": String, 
-  },  
-  "memberType": String, 
-  "member": { 
-    "id": String, 
-    "name": String, 
-    "selfUri": String, 
-  },  
-  "user": { 
-    "id": String, 
-    "name": String, 
-    "division": { 
-      "id": String, 
-      "name": String, 
-      "selfUri": String, 
-    },  
-    "chat": { 
-      "jabberId": String, 
-    },  
-    "department": String, 
-    "email": String, 
-    "primaryContactInfo": { 
-      "address": String, 
-      "display": String, 
-      "mediaType": String, 
-      "type": String, 
-      "extension": String, 
-      "countryCode": String, 
-    },  
-    "addresses": { 
-      "address": String, 
-      "display": String, 
-      "mediaType": String, 
-      "type": String, 
-      "extension": String, 
-      "countryCode": String, 
-    },  
-    "state": String, 
-    "title": String, 
-    "username": String, 
-    "manager": User, 
-    "images": { 
-      "resolution": String, 
-      "imageUri": String, 
-    },  
-    "version": Number, 
-    "certifications": [String], 
-    "biography": { 
-      "biography": String, 
-      "interests": [String], 
-      "hobbies": [String], 
-      "spouse": String, 
-      "education": { 
-        "school": String, 
-        "fieldOfStudy": String, 
-        "notes": String, 
-        "dateStart": String, 
-        "dateEnd": String, 
-      },  
-    },  
-    "employerInfo": { 
-      "officialName": String, 
-      "employeeId": String, 
-      "employeeType": String, 
-      "dateHire": String, 
-    },  
-    "routingStatus": { 
-      "userId": String, 
-      "status": String, 
-      "startTime": Date, 
-    },  
-    "presence": { 
-      "id": String, 
-      "name": String, 
-      "source": String, 
-      "primary": Boolean, 
-      "presenceDefinition": { 
-        "id": String, 
-        "systemPresence": String, 
-        "selfUri": String, 
-      },  
-      "message": String, 
-      "modifiedDate": Date, 
-      "selfUri": String, 
-    },  
-    "conversationSummary": { 
-      "userId": String, 
-      "call": { 
-        "contactCenter": { 
-          "active": Number, 
-          "acw": Number, 
-        },  
-        "enterprise": { 
-          "active": Number, 
-          "acw": Number, 
-        },  
-      },  
-      "callback": { 
-        "contactCenter": { 
-          "active": Number, 
-          "acw": Number, 
-        },  
-        "enterprise": { 
-          "active": Number, 
-          "acw": Number, 
-        },  
-      },  
-      "email": { 
-        "contactCenter": { 
-          "active": Number, 
-          "acw": Number, 
-        },  
-        "enterprise": { 
-          "active": Number, 
-          "acw": Number, 
-        },  
-      },  
-      "message": { 
-        "contactCenter": { 
-          "active": Number, 
-          "acw": Number, 
-        },  
-        "enterprise": { 
-          "active": Number, 
-          "acw": Number, 
-        },  
-      },  
-      "chat": { 
-        "contactCenter": { 
-          "active": Number, 
-          "acw": Number, 
-        },  
-        "enterprise": { 
-          "active": Number, 
-          "acw": Number, 
-        },  
-      },  
-      "socialExpression": { 
-        "contactCenter": { 
-          "active": Number, 
-          "acw": Number, 
-        },  
-        "enterprise": { 
-          "active": Number, 
-          "acw": Number, 
-        },  
-      },  
-      "video": { 
-        "contactCenter": { 
-          "active": Number, 
-          "acw": Number, 
-        },  
-        "enterprise": { 
-          "active": Number, 
-          "acw": Number, 
-        },  
-      },  
-    },  
-    "outOfOffice": { 
-      "id": String, 
-      "name": String, 
-      "user": User, 
-      "startDate": Date, 
-      "endDate": Date, 
-      "active": Boolean, 
-      "indefinite": Boolean, 
-      "selfUri": String, 
-    },  
-    "geolocation": { 
-      "id": String, 
-      "name": String, 
-      "type": String, 
-      "primary": Boolean, 
-      "latitude": Number, 
-      "longitude": Number, 
-      "country": String, 
-      "region": String, 
-      "city": String, 
-      "locations": { 
-        "id": String, 
-        "name": String, 
-        "contactUser": { 
-          "id": String, 
-          "selfUri": String, 
-        },  
-        "emergencyNumber": { 
-          "e164": String, 
-          "number": String, 
-          "type": String, 
-        },  
-        "address": { 
-          "city": String, 
-          "country": String, 
-          "countryName": String, 
-          "state": String, 
-          "street1": String, 
-          "street2": String, 
-          "zipcode": String, 
-        },  
-        "state": String, 
-        "notes": String, 
-        "version": Number, 
-        "path": [String], 
-        "profileImage": { 
-          "resolution": String, 
-          "imageUri": String, 
-        },  
-        "floorplanImage": { 
-          "resolution": String, 
-          "imageUri": String, 
-        },  
-        "addressVerificationDetails": { 
-          "status": String, 
-          "dateFinished": Date, 
-          "dateStarted": Date, 
-          "service": String, 
-        },  
-        "addressVerified": Boolean, 
-        "addressStored": Boolean, 
-        "images": String, 
-        "selfUri": String, 
-      },  
-      "selfUri": String, 
-    },  
-    "station": { 
-      "associatedStation": { 
-        "id": String, 
-        "name": String, 
-        "type": String, 
-        "associatedUser": User, 
-        "associatedDate": Date, 
-        "defaultUser": User, 
-        "providerInfo": {String: String}, 
-      },  
-      "effectiveStation": { 
-        "id": String, 
-        "name": String, 
-        "type": String, 
-        "associatedUser": User, 
-        "associatedDate": Date, 
-        "defaultUser": User, 
-        "providerInfo": {String: String}, 
-      },  
-      "defaultStation": { 
-        "id": String, 
-        "name": String, 
-        "type": String, 
-        "associatedUser": User, 
-        "associatedDate": Date, 
-        "defaultUser": User, 
-        "providerInfo": {String: String}, 
-      },  
-      "lastAssociatedStation": { 
-        "id": String, 
-        "name": String, 
-        "type": String, 
-        "associatedUser": User, 
-        "associatedDate": Date, 
-        "defaultUser": User, 
-        "providerInfo": {String: String}, 
-      },  
-    },  
-    "authorization": { 
-      "roles": { 
-        "id": String, 
-        "name": String, 
-      },  
-      "unusedRoles": { 
-        "id": String, 
-        "name": String, 
-      },  
-      "permissions": [String], 
-      "permissionPolicies": { 
-        "id": String, 
-        "domain": String, 
-        "entityName": String, 
-        "policyName": String, 
-        "policyDescription": String, 
-        "actionSetKey": String, 
-        "allowConditions": Boolean, 
-        "resourceConditionNode": { 
-          "variableName": String, 
-          "conjunction": String, 
-          "operator": String, 
-          "operands": { 
-            "type": String, 
-            "value": String, 
-          },  
-          "terms": { 
-            "variableName": String, 
-            "conjunction": String, 
-            "operator": String, 
-            "operands": { 
-              "type": String, 
-              "value": String, 
-            },  
-            "terms": { 
-              "variableName": String, 
-              "conjunction": String, 
-              "operator": String, 
-              "operands": { 
-                "type": String, 
-                "value": String, 
-              },  
-              "terms": { 
-                "variableName": String, 
-                "conjunction": String, 
-                "operator": String, 
-                "operands": [ResourceConditionValue], 
-                "terms": [ResourceConditionNode], 
-              },  
-            },  
-          },  
-        },  
-        "namedResources": [String], 
-        "resourceCondition": String, 
-        "actionSet": [String], 
-      },  
-    },  
-    "profileSkills": [String], 
-    "locations": { 
-      "id": String, 
-      "floorplanId": String, 
-      "coordinates": {String: Number}, 
-      "notes": String, 
-      "locationDefinition": { 
-        "id": String, 
-        "name": String, 
-        "contactUser": { 
-          "id": String, 
-          "selfUri": String, 
-        },  
-        "emergencyNumber": { 
-          "e164": String, 
-          "number": String, 
-          "type": String, 
-        },  
-        "address": { 
-          "city": String, 
-          "country": String, 
-          "countryName": String, 
-          "state": String, 
-          "street1": String, 
-          "street2": String, 
-          "zipcode": String, 
-        },  
-        "state": String, 
-        "notes": String, 
-        "version": Number, 
-        "path": [String], 
-        "profileImage": { 
-          "resolution": String, 
-          "imageUri": String, 
-        },  
-        "floorplanImage": { 
-          "resolution": String, 
-          "imageUri": String, 
-        },  
-        "addressVerificationDetails": { 
-          "status": String, 
-          "dateFinished": Date, 
-          "dateStarted": Date, 
-          "service": String, 
-        },  
-        "addressVerified": Boolean, 
-        "addressStored": Boolean, 
-        "images": String, 
-        "selfUri": String, 
-      },  
-    },  
-    "groups": { 
-      "id": String, 
-      "name": String, 
-      "description": String, 
-      "dateModified": Date, 
-      "memberCount": Number, 
-      "state": String, 
-      "version": Number, 
-      "type": String, 
-      "images": { 
-        "resolution": String, 
-        "imageUri": String, 
-      },  
-      "addresses": { 
-        "address": String, 
-        "extension": String, 
-        "display": String, 
-        "type": String, 
-        "mediaType": String, 
-      },  
-      "rulesVisible": Boolean, 
-      "visibility": String, 
-      "owners": User, 
-      "selfUri": String, 
-    },  
-    "team": { 
-      "id": String, 
-      "name": String, 
-      "division": { 
-        "id": String, 
-        "name": String, 
-        "selfUri": String, 
-      },  
-      "description": String, 
-      "dateModified": Date, 
-      "memberCount": Number, 
-      "selfUri": String, 
-    },  
-    "skills": { 
-      "id": String, 
-      "name": String, 
-      "proficiency": Number, 
-      "state": String, 
-      "skillUri": String, 
-      "selfUri": String, 
-    },  
-    "languages": { 
-      "id": String, 
-      "name": String, 
-      "proficiency": Number, 
-      "state": String, 
-      "languageUri": String, 
-      "selfUri": String, 
-    },  
-    "acdAutoAnswer": Boolean, 
-    "languagePreference": String, 
-    "lastTokenIssued": { 
-      "dateIssued": Date, 
-    },  
-    "selfUri": String, 
-  },  
-  "group": { 
-    "id": String, 
-    "name": String, 
-    "description": String, 
-    "dateModified": Date, 
-    "memberCount": Number, 
-    "state": String, 
-    "version": Number, 
-    "type": String, 
-    "images": { 
-      "resolution": String, 
-      "imageUri": String, 
-    },  
-    "addresses": { 
-      "address": String, 
-      "extension": String, 
-      "display": String, 
-      "type": String, 
-      "mediaType": String, 
-    },  
-    "rulesVisible": Boolean, 
-    "visibility": String, 
-    "owners": User, 
-    "selfUri": String, 
-  },  
-  "securityProfile": { 
-    "id": String, 
-    "name": String, 
-    "permissions": [String], 
-    "selfUri": String, 
-  },  
-  "selfUri": String, 
-}
-```
-
-</div>
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -3087,37 +2156,6 @@ Update a workspace tag. Will update all documents with the new tag value.
 
 
 Requires NO permissions: 
-
-
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyTagValueExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#TagValueExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-TagValue <a href="#" onclick="return copyTagValueExample()">Copy</a>
-
-<div id="TagValueExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "id": String, 
-  "name": String, 
-  "inUse": Boolean, 
-  "acl": [String], 
-  "selfUri": String, 
-}
-```
-
-</div>
 
 
 ### Example Usage

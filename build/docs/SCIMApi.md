@@ -55,8 +55,6 @@ Requires ANY permissions:
 
 * directory:user:delete
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -114,8 +112,6 @@ Requires ANY permissions:
 
 * directory:user:delete
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -172,8 +168,6 @@ Get a group
 Requires ANY permissions: 
 
 * directory:group:edit
-
-
 
 ### Example Usage
 
@@ -235,8 +229,6 @@ Get a list of groups
 Requires ANY permissions: 
 
 * directory:group:edit
-
-
 
 ### Example Usage
 
@@ -300,8 +292,6 @@ Get a resource type
 Requires NO permissions: 
 
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -354,8 +344,6 @@ Get a list of resource types
 Requires NO permissions: 
 
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -401,8 +389,6 @@ Get a SCIM schema
 
 
 Requires NO permissions: 
-
-
 
 
 ### Example Usage
@@ -455,8 +441,6 @@ Get a list of SCIM schemas
 
 
 Requires NO permissions: 
-
-
 
 
 ### Example Usage
@@ -513,8 +497,6 @@ Get a service provider&#39;s configuration
 Requires NO permissions: 
 
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -567,8 +549,6 @@ Get a user
 
 
 Requires NO permissions: 
-
-
 
 
 ### Example Usage
@@ -629,8 +609,6 @@ Get a list of users
 To return all active users, do not use the filter parameter. To return inactive users, set the filter parameter to \&quot;active eq false\&quot;. By default, returns SCIM attributes \&quot;externalId\&quot;, \&quot;enterprise-user:manager\&quot;, and \&quot;roles\&quot;. To exclude these attributes, set the attributes parameter to \&quot;id,active\&quot; or the excludeAttributes parameter to \&quot;externalId,roles,urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:division\&quot;.
 
 Requires NO permissions: 
-
-
 
 
 ### Example Usage
@@ -696,8 +674,6 @@ Requires ANY permissions:
 
 * directory:group:edit
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -758,8 +734,6 @@ Get a list of groups
 Requires ANY permissions: 
 
 * directory:group:edit
-
-
 
 ### Example Usage
 
@@ -823,8 +797,6 @@ Get a resource type
 Requires NO permissions: 
 
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -877,8 +849,6 @@ Get a list of resource types
 Requires NO permissions: 
 
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -924,8 +894,6 @@ Get a SCIM schema
 
 
 Requires NO permissions: 
-
-
 
 
 ### Example Usage
@@ -978,8 +946,6 @@ Get a list of SCIM schemas
 
 
 Requires NO permissions: 
-
-
 
 
 ### Example Usage
@@ -1036,8 +1002,6 @@ Get a service provider&#39;s configuration
 Requires NO permissions: 
 
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -1090,8 +1054,6 @@ Get a user
 
 
 Requires NO permissions: 
-
-
 
 
 ### Example Usage
@@ -1152,8 +1114,6 @@ Get a list of users
 To return all active users, do not use the filter parameter. To return inactive users, set the filter parameter to \&quot;active eq false\&quot;. By default, returns SCIM attributes \&quot;externalId\&quot;, \&quot;enterprise-user:manager\&quot;, and \&quot;roles\&quot;. To exclude these attributes, set the attributes parameter to \&quot;id,active\&quot; or the excludeAttributes parameter to \&quot;externalId,roles,urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:division\&quot;.
 
 Requires NO permissions: 
-
-
 
 
 ### Example Usage
@@ -1219,60 +1179,6 @@ Requires ANY permissions:
 
 * directory:group:edit
 
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyScimV2PatchRequestExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#ScimV2PatchRequestExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-ScimV2PatchRequest <a href="#" onclick="return copyScimV2PatchRequestExample()">Copy</a>
-
-<div id="ScimV2PatchRequestExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "schemas": [String], 
-  "Operations": { 
-    "op": String, 
-    "path": String, 
-    "value": { 
-      "float": Boolean, 
-      "nodeType": String, 
-      "number": Boolean, 
-      "valueNode": Boolean, 
-      "floatingPointNumber": Boolean, 
-      "containerNode": Boolean, 
-      "missingNode": Boolean, 
-      "object": Boolean, 
-      "pojo": Boolean, 
-      "integralNumber": Boolean, 
-      "short": Boolean, 
-      "int": Boolean, 
-      "long": Boolean, 
-      "double": Boolean, 
-      "bigDecimal": Boolean, 
-      "bigInteger": Boolean, 
-      "textual": Boolean, 
-      "boolean": Boolean, 
-      "binary": Boolean, 
-      "array": Boolean, 
-      "null": Boolean, 
-    },  
-  },  
-}
-```
-
-</div>
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -1337,60 +1243,6 @@ Requires ANY permissions:
 * routing:skill:assign
 * routing:language:assign
 
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyScimV2PatchRequestExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#ScimV2PatchRequestExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-ScimV2PatchRequest <a href="#" onclick="return copyScimV2PatchRequestExample()">Copy</a>
-
-<div id="ScimV2PatchRequestExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "schemas": [String], 
-  "Operations": { 
-    "op": String, 
-    "path": String, 
-    "value": { 
-      "float": Boolean, 
-      "nodeType": String, 
-      "number": Boolean, 
-      "valueNode": Boolean, 
-      "floatingPointNumber": Boolean, 
-      "containerNode": Boolean, 
-      "missingNode": Boolean, 
-      "object": Boolean, 
-      "pojo": Boolean, 
-      "integralNumber": Boolean, 
-      "short": Boolean, 
-      "int": Boolean, 
-      "long": Boolean, 
-      "double": Boolean, 
-      "bigDecimal": Boolean, 
-      "bigInteger": Boolean, 
-      "textual": Boolean, 
-      "boolean": Boolean, 
-      "binary": Boolean, 
-      "array": Boolean, 
-      "null": Boolean, 
-    },  
-  },  
-}
-```
-
-</div>
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -1449,60 +1301,6 @@ Modify a group
 Requires ANY permissions: 
 
 * directory:group:edit
-
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyScimV2PatchRequestExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#ScimV2PatchRequestExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-ScimV2PatchRequest <a href="#" onclick="return copyScimV2PatchRequestExample()">Copy</a>
-
-<div id="ScimV2PatchRequestExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "schemas": [String], 
-  "Operations": { 
-    "op": String, 
-    "path": String, 
-    "value": { 
-      "float": Boolean, 
-      "nodeType": String, 
-      "number": Boolean, 
-      "valueNode": Boolean, 
-      "floatingPointNumber": Boolean, 
-      "containerNode": Boolean, 
-      "missingNode": Boolean, 
-      "object": Boolean, 
-      "pojo": Boolean, 
-      "integralNumber": Boolean, 
-      "short": Boolean, 
-      "int": Boolean, 
-      "long": Boolean, 
-      "double": Boolean, 
-      "bigDecimal": Boolean, 
-      "bigInteger": Boolean, 
-      "textual": Boolean, 
-      "boolean": Boolean, 
-      "binary": Boolean, 
-      "array": Boolean, 
-      "null": Boolean, 
-    },  
-  },  
-}
-```
-
-</div>
-
 
 ### Example Usage
 
@@ -1568,60 +1366,6 @@ Requires ANY permissions:
 * routing:skill:assign
 * routing:language:assign
 
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyScimV2PatchRequestExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#ScimV2PatchRequestExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-ScimV2PatchRequest <a href="#" onclick="return copyScimV2PatchRequestExample()">Copy</a>
-
-<div id="ScimV2PatchRequestExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "schemas": [String], 
-  "Operations": { 
-    "op": String, 
-    "path": String, 
-    "value": { 
-      "float": Boolean, 
-      "nodeType": String, 
-      "number": Boolean, 
-      "valueNode": Boolean, 
-      "floatingPointNumber": Boolean, 
-      "containerNode": Boolean, 
-      "missingNode": Boolean, 
-      "object": Boolean, 
-      "pojo": Boolean, 
-      "integralNumber": Boolean, 
-      "short": Boolean, 
-      "int": Boolean, 
-      "long": Boolean, 
-      "double": Boolean, 
-      "bigDecimal": Boolean, 
-      "bigInteger": Boolean, 
-      "textual": Boolean, 
-      "boolean": Boolean, 
-      "binary": Boolean, 
-      "array": Boolean, 
-      "null": Boolean, 
-    },  
-  },  
-}
-```
-
-</div>
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -1685,80 +1429,6 @@ Requires ANY permissions:
 * routing:skill:assign
 * routing:language:assign
 
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyScimV2CreateUserExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#ScimV2CreateUserExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-ScimV2CreateUser <a href="#" onclick="return copyScimV2CreateUserExample()">Copy</a>
-
-<div id="ScimV2CreateUserExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "schemas": [String], 
-  "active": Boolean, 
-  "userName": String, 
-  "displayName": String, 
-  "password": String, 
-  "title": String, 
-  "phoneNumbers": { 
-    "value": String, 
-    "type": String, 
-    "primary": Boolean, 
-  },  
-  "emails": { 
-    "value": String, 
-    "type": String, 
-    "primary": Boolean, 
-  },  
-  "externalId": String, 
-  "groups": { 
-    "type": String, 
-    "value": String, 
-    "$ref": String, 
-  },  
-  "roles": { 
-    "value": String, 
-  },  
-  "urn:ietf:params:scim:schemas:extension:enterprise:2.0:User": { 
-    "division": String, 
-    "department": String, 
-    "manager": { 
-      "value": String, 
-      "$ref": String, 
-    },  
-    "employeeNumber": String, 
-  },  
-  "urn:ietf:params:scim:schemas:extension:genesys:purecloud:2.0:User": { 
-    "routingSkills": { 
-      "name": String, 
-      "proficiency": Number, 
-    },  
-    "routingLanguages": { 
-      "name": String, 
-      "proficiency": Number, 
-    },  
-    "externalIds": { 
-      "authority": String, 
-      "value": String, 
-    },  
-  },  
-}
-```
-
-</div>
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -1816,80 +1486,6 @@ Requires ANY permissions:
 * routing:skill:assign
 * routing:language:assign
 
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyScimV2CreateUserExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#ScimV2CreateUserExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-ScimV2CreateUser <a href="#" onclick="return copyScimV2CreateUserExample()">Copy</a>
-
-<div id="ScimV2CreateUserExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "schemas": [String], 
-  "active": Boolean, 
-  "userName": String, 
-  "displayName": String, 
-  "password": String, 
-  "title": String, 
-  "phoneNumbers": { 
-    "value": String, 
-    "type": String, 
-    "primary": Boolean, 
-  },  
-  "emails": { 
-    "value": String, 
-    "type": String, 
-    "primary": Boolean, 
-  },  
-  "externalId": String, 
-  "groups": { 
-    "type": String, 
-    "value": String, 
-    "$ref": String, 
-  },  
-  "roles": { 
-    "value": String, 
-  },  
-  "urn:ietf:params:scim:schemas:extension:enterprise:2.0:User": { 
-    "division": String, 
-    "department": String, 
-    "manager": { 
-      "value": String, 
-      "$ref": String, 
-    },  
-    "employeeNumber": String, 
-  },  
-  "urn:ietf:params:scim:schemas:extension:genesys:purecloud:2.0:User": { 
-    "routingSkills": { 
-      "name": String, 
-      "proficiency": Number, 
-    },  
-    "routingLanguages": { 
-      "name": String, 
-      "proficiency": Number, 
-    },  
-    "externalIds": { 
-      "authority": String, 
-      "value": String, 
-    },  
-  },  
-}
-```
-
-</div>
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -1942,47 +1538,6 @@ Replace a group
 Requires ANY permissions: 
 
 * directory:group:edit
-
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyScimV2GroupExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#ScimV2GroupExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-ScimV2Group <a href="#" onclick="return copyScimV2GroupExample()">Copy</a>
-
-<div id="ScimV2GroupExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "id": String, 
-  "schemas": [String], 
-  "displayName": String, 
-  "externalId": String, 
-  "members": { 
-    "type": String, 
-    "value": String, 
-    "$ref": String, 
-  },  
-  "meta": { 
-    "resourceType": String, 
-    "lastModified": Date, 
-    "location": String, 
-    "version": String, 
-  },  
-}
-```
-
-</div>
-
 
 ### Example Usage
 
@@ -2048,87 +1603,6 @@ Requires ANY permissions:
 * routing:skill:assign
 * routing:language:assign
 
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyScimV2UserExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#ScimV2UserExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-ScimV2User <a href="#" onclick="return copyScimV2UserExample()">Copy</a>
-
-<div id="ScimV2UserExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "id": String, 
-  "schemas": [String], 
-  "active": Boolean, 
-  "userName": String, 
-  "displayName": String, 
-  "password": String, 
-  "title": String, 
-  "phoneNumbers": { 
-    "value": String, 
-    "type": String, 
-    "primary": Boolean, 
-  },  
-  "emails": { 
-    "value": String, 
-    "type": String, 
-    "primary": Boolean, 
-  },  
-  "externalId": String, 
-  "groups": { 
-    "type": String, 
-    "value": String, 
-    "$ref": String, 
-  },  
-  "roles": { 
-    "value": String, 
-  },  
-  "urn:ietf:params:scim:schemas:extension:enterprise:2.0:User": { 
-    "division": String, 
-    "department": String, 
-    "manager": { 
-      "value": String, 
-      "$ref": String, 
-    },  
-    "employeeNumber": String, 
-  },  
-  "urn:ietf:params:scim:schemas:extension:genesys:purecloud:2.0:User": { 
-    "routingSkills": { 
-      "name": String, 
-      "proficiency": Number, 
-    },  
-    "routingLanguages": { 
-      "name": String, 
-      "proficiency": Number, 
-    },  
-    "externalIds": { 
-      "authority": String, 
-      "value": String, 
-    },  
-  },  
-  "meta": { 
-    "resourceType": String, 
-    "lastModified": Date, 
-    "location": String, 
-    "version": String, 
-  },  
-}
-```
-
-</div>
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -2187,47 +1661,6 @@ Replace a group
 Requires ANY permissions: 
 
 * directory:group:edit
-
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyScimV2GroupExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#ScimV2GroupExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-ScimV2Group <a href="#" onclick="return copyScimV2GroupExample()">Copy</a>
-
-<div id="ScimV2GroupExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "id": String, 
-  "schemas": [String], 
-  "displayName": String, 
-  "externalId": String, 
-  "members": { 
-    "type": String, 
-    "value": String, 
-    "$ref": String, 
-  },  
-  "meta": { 
-    "resourceType": String, 
-    "lastModified": Date, 
-    "location": String, 
-    "version": String, 
-  },  
-}
-```
-
-</div>
-
 
 ### Example Usage
 
@@ -2292,87 +1725,6 @@ Requires ANY permissions:
 * authorization:grant:delete
 * routing:skill:assign
 * routing:language:assign
-
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyScimV2UserExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#ScimV2UserExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-ScimV2User <a href="#" onclick="return copyScimV2UserExample()">Copy</a>
-
-<div id="ScimV2UserExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "id": String, 
-  "schemas": [String], 
-  "active": Boolean, 
-  "userName": String, 
-  "displayName": String, 
-  "password": String, 
-  "title": String, 
-  "phoneNumbers": { 
-    "value": String, 
-    "type": String, 
-    "primary": Boolean, 
-  },  
-  "emails": { 
-    "value": String, 
-    "type": String, 
-    "primary": Boolean, 
-  },  
-  "externalId": String, 
-  "groups": { 
-    "type": String, 
-    "value": String, 
-    "$ref": String, 
-  },  
-  "roles": { 
-    "value": String, 
-  },  
-  "urn:ietf:params:scim:schemas:extension:enterprise:2.0:User": { 
-    "division": String, 
-    "department": String, 
-    "manager": { 
-      "value": String, 
-      "$ref": String, 
-    },  
-    "employeeNumber": String, 
-  },  
-  "urn:ietf:params:scim:schemas:extension:genesys:purecloud:2.0:User": { 
-    "routingSkills": { 
-      "name": String, 
-      "proficiency": Number, 
-    },  
-    "routingLanguages": { 
-      "name": String, 
-      "proficiency": Number, 
-    },  
-    "externalIds": { 
-      "authority": String, 
-      "value": String, 
-    },  
-  },  
-  "meta": { 
-    "resourceType": String, 
-    "lastModified": Date, 
-    "location": String, 
-    "version": String, 
-  },  
-}
-```
-
-</div>
-
 
 ### Example Usage
 

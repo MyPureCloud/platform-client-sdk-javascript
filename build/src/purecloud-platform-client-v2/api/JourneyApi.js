@@ -5,7 +5,7 @@ class JourneyApi {
 	/**
 	 * Journey service.
 	 * @module purecloud-platform-client-v2/api/JourneyApi
-	 * @version 114.0.0
+	 * @version 115.0.0
 	 */
 
 	/**
@@ -210,7 +210,7 @@ class JourneyApi {
 	 * 
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageNumber Page number (default to 1)
-	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {Number} opts.pageSize Page size. The max that will be returned is 100. (default to 25)
 	 */
 	getJourneyActiontargets(opts) { 
 		opts = opts || {};

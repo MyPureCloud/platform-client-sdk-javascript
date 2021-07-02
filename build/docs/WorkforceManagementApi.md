@@ -41,6 +41,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getWorkforcemanagementBusinessunitWeekShorttermforecast**](WorkforceManagementApi.html#getWorkforcemanagementBusinessunitWeekShorttermforecast) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId} | Get a short term forecast
 [**getWorkforcemanagementBusinessunitWeekShorttermforecastData**](WorkforceManagementApi.html#getWorkforcemanagementBusinessunitWeekShorttermforecastData) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}/data | Get the result of a short term forecast calculation
 [**getWorkforcemanagementBusinessunitWeekShorttermforecastGenerationresults**](WorkforceManagementApi.html#getWorkforcemanagementBusinessunitWeekShorttermforecastGenerationresults) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}/generationresults | Gets the forecast generation results
+[**getWorkforcemanagementBusinessunitWeekShorttermforecastLongtermforecastdata**](WorkforceManagementApi.html#getWorkforcemanagementBusinessunitWeekShorttermforecastLongtermforecastdata) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}/longtermforecastdata | Get the result of a long term forecast calculation
 [**getWorkforcemanagementBusinessunitWeekShorttermforecastPlanninggroups**](WorkforceManagementApi.html#getWorkforcemanagementBusinessunitWeekShorttermforecastPlanninggroups) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}/planninggroups | Gets the forecast planning group snapshot
 [**getWorkforcemanagementBusinessunitWeekShorttermforecasts**](WorkforceManagementApi.html#getWorkforcemanagementBusinessunitWeekShorttermforecasts) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts | Get short term forecasts
 [**getWorkforcemanagementBusinessunits**](WorkforceManagementApi.html#getWorkforcemanagementBusinessunits) | **GET** /api/v2/workforcemanagement/businessunits | Get business units
@@ -136,8 +137,6 @@ Requires ANY permissions:
 
 * wfm:businessUnit:delete
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -190,8 +189,6 @@ Deletes an activity code
 Requires ANY permissions: 
 
 * wfm:activityCode:delete
-
-
 
 ### Example Usage
 
@@ -248,8 +245,6 @@ Requires ANY permissions:
 
 * wfm:planningGroup:delete
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -304,8 +299,6 @@ Cancel a scheduling run
 Requires ANY permissions: 
 
 * wfm:schedule:generate
-
-
 
 ### Example Usage
 
@@ -362,8 +355,6 @@ Requires ANY permissions:
 
 * wfm:serviceGoalTemplate:delete
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -418,8 +409,6 @@ Delete a schedule
 Requires ANY permissions: 
 
 * wfm:schedule:delete
-
-
 
 ### Example Usage
 
@@ -478,8 +467,6 @@ Requires ANY permissions:
 
 * wfm:shortTermForecast:delete
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -537,8 +524,6 @@ Requires ANY permissions:
 
 * wfm:managementUnit:delete
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -591,8 +576,6 @@ Delete a work plan
 Requires ANY permissions: 
 
 * wfm:workPlan:delete
-
-
 
 ### Example Usage
 
@@ -649,8 +632,6 @@ Requires ANY permissions:
 
 * wfm:workPlanRotation:delete
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -706,8 +687,6 @@ Requires ANY permissions:
 
 * wfm:realtimeAdherence:view
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -760,8 +739,6 @@ Get status of the modeling job
 Requires ANY permissions: 
 
 * wfm:adhocModel:view
-
-
 
 ### Example Usage
 
@@ -819,8 +796,6 @@ Requires ANY permissions:
 * wfm:schedule:view
 * coaching:appointment:add
 * coaching:appointment:edit
-
-
 
 ### Example Usage
 
@@ -931,8 +906,6 @@ Requires ANY permissions:
 * wfm:workPlanRotation:delete
 * wfm:workPlanRotation:edit
 * wfm:workPlanRotation:view
-
-
 
 ### Example Usage
 
@@ -1045,8 +1018,6 @@ Requires ANY permissions:
 * coaching:appointment:add
 * coaching:appointment:edit
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -1103,8 +1074,6 @@ Get an activity code
 Requires ANY permissions: 
 
 * wfm:activityCode:view
-
-
 
 ### Example Usage
 
@@ -1218,8 +1187,6 @@ Requires ANY permissions:
 * wfm:workPlanRotation:edit
 * wfm:workPlanRotation:view
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -1273,8 +1240,6 @@ Requires ANY permissions:
 
 * wfm:intraday:view
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -1327,8 +1292,6 @@ Get all authorized management units in the business unit
 
 
 Requires NO permissions: 
-
-
 
 
 ### Example Usage
@@ -1390,8 +1353,6 @@ Requires ANY permissions:
 
 * wfm:planningGroup:view
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -1452,8 +1413,6 @@ Requires ANY permissions:
 * wfm:schedule:view
 * wfm:publishedSchedule:view
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -1507,8 +1466,6 @@ Requires ANY permissions:
 
 * wfm:schedule:generate
 * wfm:schedule:edit
-
-
 
 ### Example Usage
 
@@ -1565,8 +1522,6 @@ Requires ANY permissions:
 
 * wfm:schedule:edit
 * wfm:schedule:generate
-
-
 
 ### Example Usage
 
@@ -1628,8 +1583,6 @@ Requires ANY permissions:
 * wfm:schedule:generate
 * wfm:schedule:edit
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -1682,8 +1635,6 @@ Get a service goal template
 Requires ANY permissions: 
 
 * wfm:serviceGoalTemplate:view
-
-
 
 ### Example Usage
 
@@ -1742,8 +1693,6 @@ Requires ANY permissions:
 * wfm:planningGroup:view
 * wfm:shortTermForecast:view
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -1797,8 +1746,6 @@ Requires ANY permissions:
 
 * wfm:schedule:view
 * wfm:publishedSchedule:view
-
-
 
 ### Example Usage
 
@@ -1862,8 +1809,6 @@ Requires ANY permissions:
 * wfm:schedule:view
 * wfm:publishedSchedule:view
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -1921,8 +1866,6 @@ Requires ANY permissions:
 
 * wfm:schedule:view
 * wfm:publishedSchedule:view
-
-
 
 ### Example Usage
 
@@ -1986,8 +1929,6 @@ Requires ANY permissions:
 * wfm:schedule:view
 * wfm:publishedSchedule:view
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -2047,8 +1988,6 @@ Requires ANY permissions:
 
 * wfm:schedule:view
 * wfm:publishedSchedule:view
-
-
 
 ### Example Usage
 
@@ -2111,8 +2050,6 @@ Requires ANY permissions:
 
 * wfm:shortTermForecast:view
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -2173,8 +2110,6 @@ Includes modifications unless you pass the doNotApplyModifications query paramet
 Requires ANY permissions: 
 
 * wfm:shortTermForecast:view
-
-
 
 ### Example Usage
 
@@ -2239,8 +2174,6 @@ Requires ANY permissions:
 
 * wfm:shortTermForecast:view
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -2282,6 +2215,67 @@ apiInstance.getWorkforcemanagementBusinessunitWeekShorttermforecastGenerationres
 
 **BuForecastGenerationResult**
 
+<a name="getWorkforcemanagementBusinessunitWeekShorttermforecastLongtermforecastdata"></a>
+
+# LongTermForecastResultResponse getWorkforcemanagementBusinessunitWeekShorttermforecastLongtermforecastdata(businessUnitId, weekDateId, forecastId, opts)
+
+
+
+GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}/longtermforecastdata
+
+Get the result of a long term forecast calculation
+
+Includes modifications unless you pass the doNotApplyModifications query parameter
+
+Requires ANY permissions: 
+
+* wfm:shortTermForecast:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The business unit ID of the business unit to which the forecast belongs
+let weekDateId = "2013-10-20"; // String | The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+let forecastId = "forecastId_example"; // String | The ID of the forecast
+let opts = { 
+  'forceDownloadService': true // Boolean | Force the result of this operation to be sent via download service.  For testing/app development purposes
+};
+
+apiInstance.getWorkforcemanagementBusinessunitWeekShorttermforecastLongtermforecastdata(businessUnitId, weekDateId, forecastId, opts)
+  .then((data) => {
+    console.log(`getWorkforcemanagementBusinessunitWeekShorttermforecastLongtermforecastdata success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getWorkforcemanagementBusinessunitWeekShorttermforecastLongtermforecastdata');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** | The business unit ID of the business unit to which the forecast belongs |  |
+ **weekDateId** | **String** | The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+ **forecastId** | **String** | The ID of the forecast |  |
+ **forceDownloadService** | **Boolean** | Force the result of this operation to be sent via download service.  For testing/app development purposes | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**LongTermForecastResultResponse**
+
 <a name="getWorkforcemanagementBusinessunitWeekShorttermforecastPlanninggroups"></a>
 
 # ForecastPlanningGroupsResponse getWorkforcemanagementBusinessunitWeekShorttermforecastPlanninggroups(businessUnitId, weekDateId, forecastId)
@@ -2299,8 +2293,6 @@ Requires ANY permissions:
 * wfm:shortTermForecast:view
 * wfm:schedule:view
 * wfm:publishedSchedule:view
-
-
 
 ### Example Usage
 
@@ -2360,8 +2352,6 @@ Requires ANY permissions:
 * wfm:schedule:generate
 * wfm:shortTermForecast:view
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -2414,8 +2404,6 @@ Get business units
 
 
 Requires NO permissions: 
-
-
 
 
 ### Example Usage
@@ -2475,8 +2463,6 @@ Requires ANY permissions:
 
 * wfm:businessUnit:search
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -2532,8 +2518,6 @@ Requires ALL permissions:
 
 * wfm:historicalData:upload
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -2581,8 +2565,6 @@ Retrieves status of the historical data imports of the organization
 Requires ALL permissions: 
 
 * wfm:historicalData:upload
-
-
 
 ### Example Usage
 
@@ -2690,8 +2672,6 @@ Requires ANY permissions:
 * wfm:workPlanRotation:edit
 * wfm:workPlanRotation:view
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -2788,8 +2768,6 @@ Requires ANY permissions:
 * wfm:workPlanRotation:edit
 * wfm:workPlanRotation:view
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -2842,8 +2820,6 @@ Get a list of user schedule adherence records for the requested management unit
 Requires ANY permissions: 
 
 * wfm:realtimeAdherence:view
-
-
 
 ### Example Usage
 
@@ -2901,8 +2877,6 @@ Get data for agent in the management unit
 Requires ANY permissions: 
 
 * wfm:agent:view
-
-
 
 ### Example Usage
 
@@ -2964,8 +2938,6 @@ Requires ANY permissions:
 * wfm:shiftTradeRequest:edit
 * wfm:shiftTradeRequest:view
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -3022,8 +2994,6 @@ Requires ANY permissions:
 * wfm:shiftTradeRequest:view
 * wfm:shiftTradeRequest:edit
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -3077,8 +3047,6 @@ Requires ANY permissions:
 
 * wfm:agentShiftTradeRequest:participate
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -3131,8 +3099,6 @@ Get a time off request
 Requires ANY permissions: 
 
 * wfm:timeOffRequest:view
-
-
 
 ### Example Usage
 
@@ -3190,8 +3156,6 @@ Get a list of time off requests for a given user
 Requires ANY permissions: 
 
 * wfm:timeOffRequest:view
-
-
 
 ### Example Usage
 
@@ -3259,8 +3223,6 @@ Requires ANY permissions:
 * wfm:workPlanRotation:view
 * wfm:workPlan:view
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -3314,8 +3276,6 @@ Requires ANY permissions:
 
 * wfm:publishedSchedule:view
 * wfm:schedule:view
-
-
 
 ### Example Usage
 
@@ -3381,8 +3341,6 @@ Requires ANY permissions:
 * wfm:publishedSchedule:view
 * wfm:schedule:view
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -3447,8 +3405,6 @@ Requires ANY permissions:
 * wfm:shiftTradeRequest:view
 * wfm:shiftTradeRequest:edit
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -3510,8 +3466,6 @@ Requires ANY permissions:
 * wfm:workPlan:view
 * wfm:schedule:edit
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -3566,8 +3520,6 @@ Get a work plan rotation
 Requires ANY permissions: 
 
 * wfm:workPlanRotation:view
-
-
 
 ### Example Usage
 
@@ -3624,8 +3576,6 @@ Requires ANY permissions:
 
 * wfm:agent:view
 * wfm:workPlanRotation:view
-
-
 
 ### Example Usage
 
@@ -3688,8 +3638,6 @@ Requires ANY permissions:
 * wfm:workPlanRotation:view
 * wfm:workPlan:view
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -3744,8 +3692,6 @@ Get management units
 
 
 Requires NO permissions: 
-
-
 
 
 ### Example Usage
@@ -3811,8 +3757,6 @@ Requires ANY permissions:
 
 * wfm:managementUnit:search
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -3867,8 +3811,6 @@ Get a list of notifications for the current user
 Requires NO permissions: 
 
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -3916,8 +3858,6 @@ Get status of the scheduling job
 Requires ANY permissions: 
 
 * wfm:schedulingrequest:view
-
-
 
 ### Example Usage
 
@@ -3974,8 +3914,6 @@ Requires ANY permissions:
 * wfm:shiftTradeRequest:view
 * wfm:agentShiftTradeRequest:participate
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -4024,8 +3962,6 @@ Requires ANY permissions:
 
 * wfm:agentSchedule:view
 * wfm:agentTimeOffRequest:submit
-
-
 
 ### Example Usage
 
@@ -4081,8 +4017,6 @@ Requires ANY permissions:
 * wfm:agentSchedule:view
 * wfm:agentTimeOffRequest:submit
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -4137,49 +4071,6 @@ Update business unit
 Requires ALL permissions: 
 
 * wfm:businessUnit:edit
-
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyUpdateBusinessUnitRequestExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#UpdateBusinessUnitRequestExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-UpdateBusinessUnitRequest <a href="#" onclick="return copyUpdateBusinessUnitRequestExample()">Copy</a>
-
-<div id="UpdateBusinessUnitRequestExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "name": String, 
-  "divisionId": String, 
-  "settings": { 
-    "startDayOfWeek": String, 
-    "timeZone": String, 
-    "shortTermForecasting": { 
-      "defaultHistoryWeeks": Number, 
-    },  
-    "metadata": { 
-      "version": Number, 
-      "modifiedBy": { 
-        "id": String, 
-        "selfUri": String, 
-      },  
-      "dateModified": Date, 
-    },  
-  },  
-}
-```
-
-</div>
-
 
 ### Example Usage
 
@@ -4237,46 +4128,6 @@ Update an activity code
 Requires ANY permissions: 
 
 * wfm:activityCode:edit
-
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyUpdateActivityCodeRequestExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#UpdateActivityCodeRequestExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-UpdateActivityCodeRequest <a href="#" onclick="return copyUpdateActivityCodeRequestExample()">Copy</a>
-
-<div id="UpdateActivityCodeRequestExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "name": String, 
-  "category": String, 
-  "lengthInMinutes": Number, 
-  "countsAsPaidTime": Boolean, 
-  "countsAsWorkTime": Boolean, 
-  "agentTimeOffSelectable": Boolean, 
-  "metadata": { 
-    "version": Number, 
-    "modifiedBy": { 
-      "id": String, 
-      "selfUri": String, 
-    },  
-    "dateModified": Date, 
-  },  
-}
-```
-
-</div>
-
 
 ### Example Usage
 
@@ -4337,61 +4188,6 @@ Requires ANY permissions:
 
 * wfm:planningGroup:edit
 
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyUpdatePlanningGroupRequestExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#UpdatePlanningGroupRequestExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-UpdatePlanningGroupRequest <a href="#" onclick="return copyUpdatePlanningGroupRequestExample()">Copy</a>
-
-<div id="UpdatePlanningGroupRequestExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "name": String, 
-  "routePaths": { 
-    "values": { 
-      "queueId": String, 
-      "mediaType": String, 
-      "languageId": String, 
-      "skillIds": [String], 
-      "sourcePlanningGroup": { 
-        "id": String, 
-        "metadata": { 
-          "version": Number, 
-          "modifiedBy": { 
-            "id": String, 
-            "selfUri": String, 
-          },  
-          "dateModified": Date, 
-        },  
-      },  
-    },  
-  },  
-  "serviceGoalTemplateId": String, 
-  "metadata": { 
-    "version": Number, 
-    "modifiedBy": { 
-      "id": String, 
-      "selfUri": String, 
-    },  
-    "dateModified": Date, 
-  },  
-}
-```
-
-</div>
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -4450,38 +4246,6 @@ Mark a schedule run as applied
 Requires ANY permissions: 
 
 * wfm:schedule:edit
-
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyPatchBuScheduleRunRequestExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#PatchBuScheduleRunRequestExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-PatchBuScheduleRunRequest <a href="#" onclick="return copyPatchBuScheduleRunRequestExample()">Copy</a>
-
-<div id="PatchBuScheduleRunRequestExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "reschedulingOptions": { 
-    "managementUnits": { 
-      "managementUnitId": String, 
-      "applied": Boolean, 
-    },  
-  },  
-}
-```
-
-</div>
-
 
 ### Example Usage
 
@@ -4542,54 +4306,6 @@ Requires ANY permissions:
 
 * wfm:serviceGoalTemplate:edit
 
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyUpdateServiceGoalTemplateExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#UpdateServiceGoalTemplateExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-UpdateServiceGoalTemplate <a href="#" onclick="return copyUpdateServiceGoalTemplateExample()">Copy</a>
-
-<div id="UpdateServiceGoalTemplateExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "name": String, 
-  "serviceLevel": { 
-    "include": Boolean, 
-    "percent": Number, 
-    "seconds": Number, 
-  },  
-  "averageSpeedOfAnswer": { 
-    "include": Boolean, 
-    "seconds": Number, 
-  },  
-  "abandonRate": { 
-    "include": Boolean, 
-    "percent": Number, 
-  },  
-  "metadata": { 
-    "version": Number, 
-    "modifiedBy": { 
-      "id": String, 
-      "selfUri": String, 
-    },  
-    "dateModified": Date, 
-  },  
-}
-```
-
-</div>
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -4649,99 +4365,6 @@ Requires ANY permissions:
 
 * wfm:managementUnit:edit
 
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyUpdateManagementUnitRequestExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#UpdateManagementUnitRequestExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-UpdateManagementUnitRequest <a href="#" onclick="return copyUpdateManagementUnitRequestExample()">Copy</a>
-
-<div id="UpdateManagementUnitRequestExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "name": String, 
-  "divisionId": String, 
-  "settings": { 
-    "adherence": { 
-      "severeAlertThresholdMinutes": Number, 
-      "adherenceTargetPercent": Number, 
-      "adherenceExceptionThresholdSeconds": Number, 
-      "nonOnQueueActivitiesEquivalent": Boolean, 
-      "trackOnQueueActivity": Boolean, 
-      "ignoredActivityCategories": { 
-        "values": [String], 
-      },  
-    },  
-    "shortTermForecasting": { 
-      "defaultHistoryWeeks": Number, 
-    },  
-    "timeOff": { 
-      "submissionRangeEnforced": Boolean, 
-      "submissionEarliestDaysFromNow": Number, 
-      "submissionLatestDaysFromNow": Number, 
-    },  
-    "scheduling": { 
-      "maxOccupancyPercentForDeferredWork": Number, 
-      "defaultShrinkagePercent": Number, 
-      "shrinkageOverrides": { 
-        "clear": Boolean, 
-        "values": { 
-          "intervalIndex": Number, 
-          "shrinkagePercent": Number, 
-        },  
-      },  
-      "planningPeriod": { 
-        "value": { 
-          "weekCount": Number, 
-          "startDate": String, 
-        },  
-      },  
-      "startDayOfWeekend": String, 
-    },  
-    "shiftTrading": { 
-      "enabled": Boolean, 
-      "autoReview": Boolean, 
-      "allowDirectTrades": Boolean, 
-      "minHoursInFuture": Number, 
-      "unequalPaid": String, 
-      "oneSided": String, 
-      "weeklyMinPaidViolations": String, 
-      "weeklyMaxPaidViolations": String, 
-      "requiresMatchingQueues": Boolean, 
-      "requiresMatchingLanguages": Boolean, 
-      "requiresMatchingSkills": Boolean, 
-      "requiresMatchingPlanningGroups": Boolean, 
-      "activityCategoryRules": { 
-        "activityCategory": String, 
-        "action": String, 
-        "activityCodeIdReplacement": String, 
-      },  
-    },  
-    "metadata": { 
-      "version": Number, 
-      "modifiedBy": { 
-        "id": String, 
-        "selfUri": String, 
-      },  
-      "dateModified": Date, 
-    },  
-  },  
-}
-```
-
-</div>
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -4798,46 +4421,6 @@ Update a time off request
 Requires ANY permissions: 
 
 * wfm:timeOffRequest:edit
-
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyAdminTimeOffRequestPatchExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#AdminTimeOffRequestPatchExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-AdminTimeOffRequestPatch <a href="#" onclick="return copyAdminTimeOffRequestPatchExample()">Copy</a>
-
-<div id="AdminTimeOffRequestPatchExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "status": String, 
-  "activityCodeId": String, 
-  "notes": String, 
-  "fullDayManagementUnitDates": [String], 
-  "partialDayStartDateTimes": [Date], 
-  "dailyDurationMinutes": Number, 
-  "metadata": { 
-    "version": Number, 
-    "modifiedBy": { 
-      "id": String, 
-      "selfUri": String, 
-    },  
-    "dateModified": Date, 
-  },  
-}
-```
-
-</div>
-
 
 ### Example Usage
 
@@ -4900,49 +4483,6 @@ Requires ANY permissions:
 
 * wfm:agentShiftTradeRequest:participate
 
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyPatchShiftTradeRequestExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#PatchShiftTradeRequestExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-PatchShiftTradeRequest <a href="#" onclick="return copyPatchShiftTradeRequestExample()">Copy</a>
-
-<div id="PatchShiftTradeRequestExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "receivingUserId": { 
-    "value": String, 
-  },  
-  "expiration": { 
-    "value": Date, 
-  },  
-  "acceptableIntervals": { 
-    "values": [String], 
-  },  
-  "metadata": { 
-    "version": Number, 
-    "modifiedBy": { 
-      "id": String, 
-      "selfUri": String, 
-    },  
-    "dateModified": Date, 
-  },  
-}
-```
-
-</div>
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -5001,125 +4541,6 @@ Update a work plan
 Requires ANY permissions: 
 
 * wfm:workPlan:edit
-
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyWorkPlanExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#WorkPlanExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-WorkPlan <a href="#" onclick="return copyWorkPlanExample()">Copy</a>
-
-<div id="WorkPlanExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "id": String, 
-  "name": String, 
-  "enabled": Boolean, 
-  "valid": Boolean, 
-  "constrainWeeklyPaidTime": Boolean, 
-  "flexibleWeeklyPaidTime": Boolean, 
-  "weeklyExactPaidMinutes": Number, 
-  "weeklyMinimumPaidMinutes": Number, 
-  "weeklyMaximumPaidMinutes": Number, 
-  "constrainPaidTimeGranularity": Boolean, 
-  "paidTimeGranularityMinutes": Number, 
-  "constrainMinimumTimeBetweenShifts": Boolean, 
-  "minimumTimeBetweenShiftsMinutes": Number, 
-  "maximumDays": Number, 
-  "minimumConsecutiveNonWorkingMinutesPerWeek": Number, 
-  "constrainMaximumConsecutiveWorkingWeekends": Boolean, 
-  "maximumConsecutiveWorkingWeekends": Number, 
-  "minimumWorkingDaysPerWeek": Number, 
-  "constrainMaximumConsecutiveWorkingDays": Boolean, 
-  "maximumConsecutiveWorkingDays": Number, 
-  "minimumShiftStartDistanceMinutes": Number, 
-  "minimumDaysOffPerPlanningPeriod": Number, 
-  "maximumDaysOffPerPlanningPeriod": Number, 
-  "minimumPaidMinutesPerPlanningPeriod": Number, 
-  "maximumPaidMinutesPerPlanningPeriod": Number, 
-  "optionalDays": { 
-    "values": [String], 
-  },  
-  "shiftStartVarianceType": String, 
-  "shiftStartVariances": { 
-    "values": { 
-      "applicableDays": [String], 
-      "maxShiftStartVarianceMinutes": Number, 
-    },  
-  },  
-  "shifts": { 
-    "name": String, 
-    "days": { 
-      "values": [String], 
-    },  
-    "flexibleStartTime": Boolean, 
-    "exactStartTimeMinutesFromMidnight": Number, 
-    "earliestStartTimeMinutesFromMidnight": Number, 
-    "latestStartTimeMinutesFromMidnight": Number, 
-    "constrainStopTime": Boolean, 
-    "constrainLatestStopTime": Boolean, 
-    "latestStopTimeMinutesFromMidnight": Number, 
-    "constrainEarliestStopTime": Boolean, 
-    "earliestStopTimeMinutesFromMidnight": Number, 
-    "startIncrementMinutes": Number, 
-    "flexiblePaidTime": Boolean, 
-    "exactPaidTimeMinutes": Number, 
-    "minimumPaidTimeMinutes": Number, 
-    "maximumPaidTimeMinutes": Number, 
-    "constrainContiguousWorkTime": Boolean, 
-    "minimumContiguousWorkTimeMinutes": Number, 
-    "maximumContiguousWorkTimeMinutes": Number, 
-    "activities": { 
-      "activityCodeId": String, 
-      "description": String, 
-      "lengthMinutes": Number, 
-      "startTimeIsRelativeToShiftStart": Boolean, 
-      "flexibleStartTime": Boolean, 
-      "earliestStartTimeMinutes": Number, 
-      "latestStartTimeMinutes": Number, 
-      "exactStartTimeMinutes": Number, 
-      "startTimeIncrementMinutes": Number, 
-      "countsAsPaidTime": Boolean, 
-      "countsAsContiguousWorkTime": Boolean, 
-      "minimumLengthFromShiftStartMinutes": Number, 
-      "minimumLengthFromShiftEndMinutes": Number, 
-      "id": String, 
-      "delete": Boolean, 
-      "validationId": String, 
-    },  
-    "id": String, 
-    "delete": Boolean, 
-    "validationId": String, 
-  },  
-  "agents": { 
-    "id": String, 
-    "delete": Boolean, 
-    "selfUri": String, 
-  },  
-  "metadata": { 
-    "version": Number, 
-    "modifiedBy": { 
-      "id": String, 
-      "selfUri": String, 
-    },  
-    "dateModified": Date, 
-  },  
-  "selfUri": String, 
-}
-```
-
-</div>
-
 
 ### Example Usage
 
@@ -5182,58 +4603,6 @@ Requires ANY permissions:
 
 * wfm:workPlanRotation:edit
 
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyUpdateWorkPlanRotationRequestExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#UpdateWorkPlanRotationRequestExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-UpdateWorkPlanRotationRequest <a href="#" onclick="return copyUpdateWorkPlanRotationRequestExample()">Copy</a>
-
-<div id="UpdateWorkPlanRotationRequestExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "name": String, 
-  "enabled": Boolean, 
-  "dateRange": { 
-    "startBusinessUnitDate": String, 
-    "endBusinessUnitDate": String, 
-  },  
-  "agents": { 
-    "userId": String, 
-    "dateRange": { 
-      "startBusinessUnitDate": String, 
-      "endBusinessUnitDate": String, 
-    },  
-    "position": Number, 
-    "delete": Boolean, 
-  },  
-  "pattern": { 
-    "workPlanIds": [String], 
-  },  
-  "metadata": { 
-    "version": Number, 
-    "modifiedBy": { 
-      "id": String, 
-      "selfUri": String, 
-    },  
-    "dateModified": Date, 
-  },  
-}
-```
-
-</div>
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -5293,35 +4662,6 @@ Requires ANY permissions:
 
 * wfm:agentTimeOffRequest:submit
 
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyAgentTimeOffRequestPatchExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#AgentTimeOffRequestPatchExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-AgentTimeOffRequestPatch <a href="#" onclick="return copyAgentTimeOffRequestPatchExample()">Copy</a>
-
-<div id="AgentTimeOffRequestPatchExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "markedAsRead": Boolean, 
-  "status": String, 
-  "notes": String, 
-}
-```
-
-</div>
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -5379,37 +4719,6 @@ Requires ANY permissions:
 
 * wfm:historicalAdherence:view
 
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyWfmHistoricalAdherenceQueryForUsersExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#WfmHistoricalAdherenceQueryForUsersExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-WfmHistoricalAdherenceQueryForUsers <a href="#" onclick="return copyWfmHistoricalAdherenceQueryForUsersExample()">Copy</a>
-
-<div id="WfmHistoricalAdherenceQueryForUsersExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "startDate": Date, 
-  "endDate": Date, 
-  "timeZone": String, 
-  "userIds": [String], 
-  "includeExceptions": Boolean, 
-}
-```
-
-</div>
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -5465,34 +4774,6 @@ Requires ANY permissions:
 
 * wfm:agentSchedule:view
 
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyBuGetCurrentAgentScheduleRequestExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#BuGetCurrentAgentScheduleRequestExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-BuGetCurrentAgentScheduleRequest <a href="#" onclick="return copyBuGetCurrentAgentScheduleRequestExample()">Copy</a>
-
-<div id="BuGetCurrentAgentScheduleRequestExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "startDate": Date, 
-  "endDate": Date, 
-}
-```
-
-</div>
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -5547,38 +4828,6 @@ Create a new activity code
 Requires ANY permissions: 
 
 * wfm:activityCode:add
-
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyCreateActivityCodeRequestExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#CreateActivityCodeRequestExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-CreateActivityCodeRequest <a href="#" onclick="return copyCreateActivityCodeRequestExample()">Copy</a>
-
-<div id="CreateActivityCodeRequestExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "name": String, 
-  "category": String, 
-  "lengthInMinutes": Number, 
-  "countsAsPaidTime": Boolean, 
-  "countsAsWorkTime": Boolean, 
-  "agentTimeOffSelectable": Boolean, 
-}
-```
-
-</div>
-
 
 ### Example Usage
 
@@ -5637,35 +4886,6 @@ Requires ANY permissions:
 
 * wfm:schedule:view
 * wfm:publishedSchedule:view
-
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyBuSearchAgentSchedulesRequestExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#BuSearchAgentSchedulesRequestExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-BuSearchAgentSchedulesRequest <a href="#" onclick="return copyBuSearchAgentSchedulesRequestExample()">Copy</a>
-
-<div id="BuSearchAgentSchedulesRequestExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "startDate": Date, 
-  "endDate": Date, 
-  "userIds": [String], 
-}
-```
-
-</div>
-
 
 ### Example Usage
 
@@ -5728,36 +4948,6 @@ Requires ANY permissions:
 
 * wfm:intraday:view
 
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyIntradayPlanningGroupRequestExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#IntradayPlanningGroupRequestExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-IntradayPlanningGroupRequest <a href="#" onclick="return copyIntradayPlanningGroupRequestExample()">Copy</a>
-
-<div id="IntradayPlanningGroupRequestExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "businessUnitDate": String, 
-  "categories": [String], 
-  "planningGroupIds": [String], 
-  "intervalLengthMinutes": Number, 
-}
-```
-
-</div>
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -5817,51 +5007,6 @@ Requires ANY permissions:
 
 * wfm:planningGroup:add
 
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyCreatePlanningGroupRequestExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#CreatePlanningGroupRequestExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-CreatePlanningGroupRequest <a href="#" onclick="return copyCreatePlanningGroupRequestExample()">Copy</a>
-
-<div id="CreatePlanningGroupRequestExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "name": String, 
-  "routePaths": { 
-    "queueId": String, 
-    "mediaType": String, 
-    "languageId": String, 
-    "skillIds": [String], 
-    "sourcePlanningGroup": { 
-      "id": String, 
-      "metadata": { 
-        "version": Number, 
-        "modifiedBy": { 
-          "id": String, 
-          "selfUri": String, 
-        },  
-        "dateModified": Date, 
-      },  
-    },  
-  },  
-  "serviceGoalTemplateId": String, 
-}
-```
-
-</div>
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -5918,46 +5063,6 @@ Adds a new service goal template
 Requires ANY permissions: 
 
 * wfm:serviceGoalTemplate:add
-
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyCreateServiceGoalTemplateExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#CreateServiceGoalTemplateExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-CreateServiceGoalTemplate <a href="#" onclick="return copyCreateServiceGoalTemplateExample()">Copy</a>
-
-<div id="CreateServiceGoalTemplateExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "name": String, 
-  "serviceLevel": { 
-    "include": Boolean, 
-    "percent": Number, 
-    "seconds": Number, 
-  },  
-  "averageSpeedOfAnswer": { 
-    "include": Boolean, 
-    "seconds": Number, 
-  },  
-  "abandonRate": { 
-    "include": Boolean, 
-    "percent": Number, 
-  },  
-}
-```
-
-</div>
-
 
 ### Example Usage
 
@@ -6016,34 +5121,6 @@ Requires ANY permissions:
 
 * wfm:schedule:view
 * wfm:publishedSchedule:view
-
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyBuQueryAgentSchedulesRequestExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#BuQueryAgentSchedulesRequestExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-BuQueryAgentSchedulesRequest <a href="#" onclick="return copyBuQueryAgentSchedulesRequestExample()">Copy</a>
-
-<div id="BuQueryAgentSchedulesRequestExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "managementUnitId": String, 
-  "userIds": [String], 
-}
-```
-
-</div>
-
 
 ### Example Usage
 
@@ -6110,34 +5187,6 @@ Requires ANY permissions:
 
 * wfm:schedule:add
 
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyBuCopyScheduleRequestExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#BuCopyScheduleRequestExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-BuCopyScheduleRequest <a href="#" onclick="return copyBuCopyScheduleRequestExample()">Copy</a>
-
-<div id="BuCopyScheduleRequestExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "description": String, 
-  "weekDate": String, 
-}
-```
-
-</div>
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -6196,41 +5245,6 @@ Start a rescheduling run
 Requires ANY permissions: 
 
 * wfm:schedule:generate
-
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyBuRescheduleRequestExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#BuRescheduleRequestExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-BuRescheduleRequest <a href="#" onclick="return copyBuRescheduleRequestExample()">Copy</a>
-
-<div id="BuRescheduleRequestExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "startDate": Date, 
-  "endDate": Date, 
-  "agentIds": [String], 
-  "activityCodeIds": [String], 
-  "managementUnitIds": [String], 
-  "doNotChangeWeeklyPaidTime": Boolean, 
-  "doNotChangeDailyPaidTime": Boolean, 
-  "doNotChangeShiftStartTimes": Boolean, 
-  "doNotChangeManuallyEditedShifts": Boolean, 
-}
-```
-
-</div>
-
 
 ### Example Usage
 
@@ -6291,40 +5305,6 @@ Requires ANY permissions:
 
 * wfm:schedule:add
 
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyBuCreateBlankScheduleRequestExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#BuCreateBlankScheduleRequestExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-BuCreateBlankScheduleRequest <a href="#" onclick="return copyBuCreateBlankScheduleRequestExample()">Copy</a>
-
-<div id="BuCreateBlankScheduleRequestExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "description": String, 
-  "shortTermForecast": { 
-    "id": String, 
-    "weekDate": String, 
-    "description": String, 
-    "selfUri": String, 
-  },  
-  "weekCount": Number, 
-}
-```
-
-</div>
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -6382,40 +5362,6 @@ Requires ANY permissions:
 
 * wfm:schedule:generate
 
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyBuGenerateScheduleRequestExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#BuGenerateScheduleRequestExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-BuGenerateScheduleRequest <a href="#" onclick="return copyBuGenerateScheduleRequestExample()">Copy</a>
-
-<div id="BuGenerateScheduleRequestExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "description": String, 
-  "shortTermForecast": { 
-    "id": String, 
-    "weekDate": String, 
-    "description": String, 
-    "selfUri": String, 
-  },  
-  "weekCount": Number, 
-}
-```
-
-</div>
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -6472,34 +5418,6 @@ Copy a short term forecast
 Requires ANY permissions: 
 
 * wfm:shortTermForecast:add
-
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyCopyBuForecastRequestExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#CopyBuForecastRequestExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-CopyBuForecastRequest <a href="#" onclick="return copyCopyBuForecastRequestExample()">Copy</a>
-
-<div id="CopyBuForecastRequestExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "description": String, 
-  "weekDate": String, 
-}
-```
-
-</div>
-
 
 ### Example Usage
 
@@ -6564,34 +5482,6 @@ Requires ANY permissions:
 
 * wfm:shortTermForecast:add
 
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyGenerateBuForecastRequestExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#GenerateBuForecastRequestExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-GenerateBuForecastRequest <a href="#" onclick="return copyGenerateBuForecastRequestExample()">Copy</a>
-
-<div id="GenerateBuForecastRequestExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "description": String, 
-  "weekCount": Number, 
-}
-```
-
-</div>
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -6653,41 +5543,6 @@ Requires ANY permissions:
 
 * wfm:businessUnit:add
 
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyCreateBusinessUnitRequestExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#CreateBusinessUnitRequestExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-CreateBusinessUnitRequest <a href="#" onclick="return copyCreateBusinessUnitRequestExample()">Copy</a>
-
-<div id="CreateBusinessUnitRequestExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "name": String, 
-  "divisionId": String, 
-  "settings": { 
-    "startDayOfWeek": String, 
-    "timeZone": String, 
-    "shortTermForecasting": { 
-      "defaultHistoryWeeks": Number, 
-    },  
-  },  
-}
-```
-
-</div>
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -6743,8 +5598,6 @@ Requires ALL permissions:
 
 * wfm:historicalData:upload
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -6792,34 +5645,6 @@ Trigger validation process for historical import
 Requires ALL permissions: 
 
 * wfm:historicalData:upload
-
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyValidationServiceRequestExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#ValidationServiceRequestExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-ValidationServiceRequest <a href="#" onclick="return copyValidationServiceRequestExample()">Copy</a>
-
-<div id="ValidationServiceRequestExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "dateImportEnded": Date, 
-  "fileUrl": String, 
-}
-```
-
-</div>
-
 
 ### Example Usage
 
@@ -6876,35 +5701,6 @@ Requires ANY permissions:
 
 * wfm:publishedSchedule:view
 * wfm:schedule:view
-
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyBuSearchAgentSchedulesRequestExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#BuSearchAgentSchedulesRequestExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-BuSearchAgentSchedulesRequest <a href="#" onclick="return copyBuSearchAgentSchedulesRequestExample()">Copy</a>
-
-<div id="BuSearchAgentSchedulesRequestExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "startDate": Date, 
-  "endDate": Date, 
-  "userIds": [String], 
-}
-```
-
-</div>
-
 
 ### Example Usage
 
@@ -6967,37 +5763,6 @@ Requires ANY permissions:
 
 * wfm:historicalAdherence:view
 
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyWfmHistoricalAdherenceQueryExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#WfmHistoricalAdherenceQueryExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-WfmHistoricalAdherenceQuery <a href="#" onclick="return copyWfmHistoricalAdherenceQueryExample()">Copy</a>
-
-<div id="WfmHistoricalAdherenceQueryExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "startDate": Date, 
-  "endDate": Date, 
-  "timeZone": String, 
-  "userIds": [String], 
-  "includeExceptions": Boolean, 
-}
-```
-
-</div>
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -7054,33 +5819,6 @@ Returns status 200 if the management unit is already in the requested business u
 Requires ALL permissions: 
 
 * wfm:managementUnit:edit
-
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyMoveManagementUnitRequestExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#MoveManagementUnitRequestExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-MoveManagementUnitRequest <a href="#" onclick="return copyMoveManagementUnitRequestExample()">Copy</a>
-
-<div id="MoveManagementUnitRequestExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "businessUnitId": String, 
-}
-```
-
-</div>
-
 
 ### Example Usage
 
@@ -7140,36 +5878,6 @@ Requires ANY permissions:
 * wfm:publishedSchedule:view
 * wfm:schedule:view
 
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyUserListScheduleRequestBodyExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#UserListScheduleRequestBodyExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-UserListScheduleRequestBody <a href="#" onclick="return copyUserListScheduleRequestBodyExample()">Copy</a>
-
-<div id="UserListScheduleRequestBodyExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "userIds": [String], 
-  "startDate": Date, 
-  "endDate": Date, 
-  "loadFullWeeks": Boolean, 
-}
-```
-
-</div>
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -7226,42 +5934,6 @@ Create a new time off request
 Requires ANY permissions: 
 
 * wfm:timeOffRequest:add
-
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyCreateAdminTimeOffRequestExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#CreateAdminTimeOffRequestExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-CreateAdminTimeOffRequest <a href="#" onclick="return copyCreateAdminTimeOffRequestExample()">Copy</a>
-
-<div id="CreateAdminTimeOffRequestExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "status": String, 
-  "users": { 
-    "id": String, 
-    "selfUri": String, 
-  },  
-  "activityCodeId": String, 
-  "notes": String, 
-  "fullDayManagementUnitDates": [String], 
-  "partialDayStartDateTimes": [Date], 
-  "dailyDurationMinutes": Number, 
-}
-```
-
-</div>
-
 
 ### Example Usage
 
@@ -7320,38 +5992,6 @@ Requires ANY permissions:
 
 * wfm:timeOffRequest:view
 
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyTimeOffRequestQueryBodyExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#TimeOffRequestQueryBodyExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-TimeOffRequestQueryBody <a href="#" onclick="return copyTimeOffRequestQueryBodyExample()">Copy</a>
-
-<div id="TimeOffRequestQueryBodyExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "userIds": [String], 
-  "statuses": [String], 
-  "dateRange": { 
-    "startDate": String, 
-    "endDate": String, 
-  },  
-}
-```
-
-</div>
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -7408,42 +6048,6 @@ Matches a shift trade. This route can only be called by the receiving agent
 Requires ANY permissions: 
 
 * wfm:agentShiftTradeRequest:participate
-
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyMatchShiftTradeRequestExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#MatchShiftTradeRequestExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-MatchShiftTradeRequest <a href="#" onclick="return copyMatchShiftTradeRequestExample()">Copy</a>
-
-<div id="MatchShiftTradeRequestExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "receivingScheduleId": String, 
-  "receivingShiftId": String, 
-  "metadata": { 
-    "version": Number, 
-    "modifiedBy": { 
-      "id": String, 
-      "selfUri": String, 
-    },  
-    "dateModified": Date, 
-  },  
-}
-```
-
-</div>
-
 
 ### Example Usage
 
@@ -7504,37 +6108,6 @@ Requires ANY permissions:
 
 * wfm:agentShiftTradeRequest:participate
 
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyAddShiftTradeRequestExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#AddShiftTradeRequestExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-AddShiftTradeRequest <a href="#" onclick="return copyAddShiftTradeRequestExample()">Copy</a>
-
-<div id="AddShiftTradeRequestExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "scheduleId": String, 
-  "initiatingShiftId": String, 
-  "receivingUserId": String, 
-  "expiration": Date, 
-  "acceptableIntervals": [String], 
-}
-```
-
-</div>
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -7591,34 +6164,6 @@ Searches for potential shift trade matches for the current agent
 Requires ANY permissions: 
 
 * wfm:agentShiftTradeRequest:participate
-
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copySearchShiftTradesRequestExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#SearchShiftTradesRequestExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-SearchShiftTradesRequest <a href="#" onclick="return copySearchShiftTradesRequestExample()">Copy</a>
-
-<div id="SearchShiftTradesRequestExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "receivingScheduleId": String, 
-  "receivingShiftIds": [String], 
-}
-```
-
-</div>
-
 
 ### Example Usage
 
@@ -7677,44 +6222,6 @@ Requires ANY permissions:
 
 * wfm:agentShiftTradeRequest:participate
 * wfm:shiftTradeRequest:edit
-
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyBulkShiftTradeStateUpdateRequestExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#BulkShiftTradeStateUpdateRequestExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-BulkShiftTradeStateUpdateRequest <a href="#" onclick="return copyBulkShiftTradeStateUpdateRequestExample()">Copy</a>
-
-<div id="BulkShiftTradeStateUpdateRequestExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "entities": { 
-    "id": String, 
-    "state": String, 
-    "metadata": { 
-      "version": Number, 
-      "modifiedBy": { 
-        "id": String, 
-        "selfUri": String, 
-      },  
-      "dateModified": Date, 
-    },  
-  },  
-}
-```
-
-</div>
-
 
 ### Example Usage
 
@@ -7777,33 +6284,6 @@ Requires ANY permissions:
 
 * wfm:workPlan:add
 
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyCopyWorkPlanExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#CopyWorkPlanExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-CopyWorkPlan <a href="#" onclick="return copyCopyWorkPlanExample()">Copy</a>
-
-<div id="CopyWorkPlanExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "name": String, 
-}
-```
-
-</div>
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -7863,117 +6343,6 @@ Requires ANY permissions:
 
 * wfm:workPlan:add
 * wfm:workPlan:edit
-
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyWorkPlanValidationRequestExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#WorkPlanValidationRequestExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-WorkPlanValidationRequest <a href="#" onclick="return copyWorkPlanValidationRequestExample()">Copy</a>
-
-<div id="WorkPlanValidationRequestExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "id": String, 
-  "name": String, 
-  "enabled": Boolean, 
-  "valid": Boolean, 
-  "constrainWeeklyPaidTime": Boolean, 
-  "flexibleWeeklyPaidTime": Boolean, 
-  "weeklyExactPaidMinutes": Number, 
-  "weeklyMinimumPaidMinutes": Number, 
-  "weeklyMaximumPaidMinutes": Number, 
-  "constrainPaidTimeGranularity": Boolean, 
-  "paidTimeGranularityMinutes": Number, 
-  "constrainMinimumTimeBetweenShifts": Boolean, 
-  "minimumTimeBetweenShiftsMinutes": Number, 
-  "maximumDays": Number, 
-  "minimumConsecutiveNonWorkingMinutesPerWeek": Number, 
-  "constrainMaximumConsecutiveWorkingWeekends": Boolean, 
-  "maximumConsecutiveWorkingWeekends": Number, 
-  "minimumWorkingDaysPerWeek": Number, 
-  "constrainMaximumConsecutiveWorkingDays": Boolean, 
-  "maximumConsecutiveWorkingDays": Number, 
-  "minimumShiftStartDistanceMinutes": Number, 
-  "minimumDaysOffPerPlanningPeriod": Number, 
-  "maximumDaysOffPerPlanningPeriod": Number, 
-  "minimumPaidMinutesPerPlanningPeriod": Number, 
-  "maximumPaidMinutesPerPlanningPeriod": Number, 
-  "optionalDays": { 
-    "values": [String], 
-  },  
-  "shiftStartVarianceType": String, 
-  "shiftStartVariances": { 
-    "values": { 
-      "applicableDays": [String], 
-      "maxShiftStartVarianceMinutes": Number, 
-    },  
-  },  
-  "shifts": { 
-    "name": String, 
-    "days": { 
-      "values": [String], 
-    },  
-    "flexibleStartTime": Boolean, 
-    "exactStartTimeMinutesFromMidnight": Number, 
-    "earliestStartTimeMinutesFromMidnight": Number, 
-    "latestStartTimeMinutesFromMidnight": Number, 
-    "constrainStopTime": Boolean, 
-    "constrainLatestStopTime": Boolean, 
-    "latestStopTimeMinutesFromMidnight": Number, 
-    "constrainEarliestStopTime": Boolean, 
-    "earliestStopTimeMinutesFromMidnight": Number, 
-    "startIncrementMinutes": Number, 
-    "flexiblePaidTime": Boolean, 
-    "exactPaidTimeMinutes": Number, 
-    "minimumPaidTimeMinutes": Number, 
-    "maximumPaidTimeMinutes": Number, 
-    "constrainContiguousWorkTime": Boolean, 
-    "minimumContiguousWorkTimeMinutes": Number, 
-    "maximumContiguousWorkTimeMinutes": Number, 
-    "activities": { 
-      "activityCodeId": String, 
-      "description": String, 
-      "lengthMinutes": Number, 
-      "startTimeIsRelativeToShiftStart": Boolean, 
-      "flexibleStartTime": Boolean, 
-      "earliestStartTimeMinutes": Number, 
-      "latestStartTimeMinutes": Number, 
-      "exactStartTimeMinutes": Number, 
-      "startTimeIncrementMinutes": Number, 
-      "countsAsPaidTime": Boolean, 
-      "countsAsContiguousWorkTime": Boolean, 
-      "minimumLengthFromShiftStartMinutes": Number, 
-      "minimumLengthFromShiftEndMinutes": Number, 
-      "id": String, 
-      "delete": Boolean, 
-      "validationId": String, 
-    },  
-    "id": String, 
-    "delete": Boolean, 
-    "validationId": String, 
-  },  
-  "agents": { 
-    "id": String, 
-    "delete": Boolean, 
-    "selfUri": String, 
-  },  
-  "selfUri": String, 
-}
-```
-
-</div>
-
 
 ### Example Usage
 
@@ -8036,33 +6405,6 @@ Requires ANY permissions:
 
 * wfm:workPlanRotation:add
 
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyCopyWorkPlanRotationRequestExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#CopyWorkPlanRotationRequestExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-CopyWorkPlanRotationRequest <a href="#" onclick="return copyCopyWorkPlanRotationRequestExample()">Copy</a>
-
-<div id="CopyWorkPlanRotationRequestExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "name": String, 
-}
-```
-
-</div>
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -8122,48 +6464,6 @@ Requires ANY permissions:
 
 * wfm:workPlanRotation:add
 
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyAddWorkPlanRotationRequestExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#AddWorkPlanRotationRequestExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-AddWorkPlanRotationRequest <a href="#" onclick="return copyAddWorkPlanRotationRequestExample()">Copy</a>
-
-<div id="AddWorkPlanRotationRequestExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "name": String, 
-  "dateRange": { 
-    "startBusinessUnitDate": String, 
-    "endBusinessUnitDate": String, 
-  },  
-  "agents": { 
-    "userId": String, 
-    "dateRange": { 
-      "startBusinessUnitDate": String, 
-      "endBusinessUnitDate": String, 
-    },  
-    "position": Number, 
-  },  
-  "pattern": { 
-    "workPlanIds": [String], 
-  },  
-}
-```
-
-</div>
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -8220,107 +6520,6 @@ Create a new work plan
 Requires ANY permissions: 
 
 * wfm:workPlan:add
-
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyCreateWorkPlanExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#CreateWorkPlanExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-CreateWorkPlan <a href="#" onclick="return copyCreateWorkPlanExample()">Copy</a>
-
-<div id="CreateWorkPlanExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "name": String, 
-  "enabled": Boolean, 
-  "constrainWeeklyPaidTime": Boolean, 
-  "flexibleWeeklyPaidTime": Boolean, 
-  "weeklyExactPaidMinutes": Number, 
-  "weeklyMinimumPaidMinutes": Number, 
-  "weeklyMaximumPaidMinutes": Number, 
-  "constrainPaidTimeGranularity": Boolean, 
-  "paidTimeGranularityMinutes": Number, 
-  "constrainMinimumTimeBetweenShifts": Boolean, 
-  "minimumTimeBetweenShiftsMinutes": Number, 
-  "maximumDays": Number, 
-  "minimumConsecutiveNonWorkingMinutesPerWeek": Number, 
-  "constrainMaximumConsecutiveWorkingWeekends": Boolean, 
-  "maximumConsecutiveWorkingWeekends": Number, 
-  "minimumWorkingDaysPerWeek": Number, 
-  "constrainMaximumConsecutiveWorkingDays": Boolean, 
-  "maximumConsecutiveWorkingDays": Number, 
-  "minimumShiftStartDistanceMinutes": Number, 
-  "minimumDaysOffPerPlanningPeriod": Number, 
-  "maximumDaysOffPerPlanningPeriod": Number, 
-  "minimumPaidMinutesPerPlanningPeriod": Number, 
-  "maximumPaidMinutesPerPlanningPeriod": Number, 
-  "optionalDays": { 
-    "values": [String], 
-  },  
-  "shiftStartVarianceType": String, 
-  "shiftStartVariances": { 
-    "values": { 
-      "applicableDays": [String], 
-      "maxShiftStartVarianceMinutes": Number, 
-    },  
-  },  
-  "shifts": { 
-    "name": String, 
-    "days": { 
-      "values": [String], 
-    },  
-    "flexibleStartTime": Boolean, 
-    "exactStartTimeMinutesFromMidnight": Number, 
-    "earliestStartTimeMinutesFromMidnight": Number, 
-    "latestStartTimeMinutesFromMidnight": Number, 
-    "constrainStopTime": Boolean, 
-    "constrainLatestStopTime": Boolean, 
-    "latestStopTimeMinutesFromMidnight": Number, 
-    "constrainEarliestStopTime": Boolean, 
-    "earliestStopTimeMinutesFromMidnight": Number, 
-    "startIncrementMinutes": Number, 
-    "flexiblePaidTime": Boolean, 
-    "exactPaidTimeMinutes": Number, 
-    "minimumPaidTimeMinutes": Number, 
-    "maximumPaidTimeMinutes": Number, 
-    "constrainContiguousWorkTime": Boolean, 
-    "minimumContiguousWorkTimeMinutes": Number, 
-    "maximumContiguousWorkTimeMinutes": Number, 
-    "activities": { 
-      "activityCodeId": String, 
-      "description": String, 
-      "lengthMinutes": Number, 
-      "startTimeIsRelativeToShiftStart": Boolean, 
-      "flexibleStartTime": Boolean, 
-      "earliestStartTimeMinutes": Number, 
-      "latestStartTimeMinutes": Number, 
-      "exactStartTimeMinutes": Number, 
-      "startTimeIncrementMinutes": Number, 
-      "countsAsPaidTime": Boolean, 
-      "countsAsContiguousWorkTime": Boolean, 
-      "minimumLengthFromShiftStartMinutes": Number, 
-      "minimumLengthFromShiftEndMinutes": Number, 
-    },  
-  },  
-  "agents": { 
-    "id": String, 
-    "selfUri": String, 
-  },  
-}
-```
-
-</div>
-
 
 ### Example Usage
 
@@ -8381,94 +6580,6 @@ Requires ALL permissions:
 
 * wfm:managementUnit:add
 
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyCreateManagementUnitApiRequestExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#CreateManagementUnitApiRequestExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-CreateManagementUnitApiRequest <a href="#" onclick="return copyCreateManagementUnitApiRequestExample()">Copy</a>
-
-<div id="CreateManagementUnitApiRequestExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "name": String, 
-  "timeZone": String, 
-  "startDayOfWeek": String, 
-  "settings": { 
-    "adherence": { 
-      "severeAlertThresholdMinutes": Number, 
-      "adherenceTargetPercent": Number, 
-      "adherenceExceptionThresholdSeconds": Number, 
-      "nonOnQueueActivitiesEquivalent": Boolean, 
-      "trackOnQueueActivity": Boolean, 
-      "ignoredActivityCategories": { 
-        "values": [String], 
-      },  
-    },  
-    "shortTermForecasting": { 
-      "defaultHistoryWeeks": Number, 
-    },  
-    "timeOff": { 
-      "submissionRangeEnforced": Boolean, 
-      "submissionEarliestDaysFromNow": Number, 
-      "submissionLatestDaysFromNow": Number, 
-    },  
-    "scheduling": { 
-      "maxOccupancyPercentForDeferredWork": Number, 
-      "defaultShrinkagePercent": Number, 
-      "shrinkageOverrides": { 
-        "clear": Boolean, 
-        "values": { 
-          "intervalIndex": Number, 
-          "shrinkagePercent": Number, 
-        },  
-      },  
-      "planningPeriod": { 
-        "value": { 
-          "weekCount": Number, 
-          "startDate": String, 
-        },  
-      },  
-      "startDayOfWeekend": String, 
-    },  
-    "shiftTrading": { 
-      "enabled": Boolean, 
-      "autoReview": Boolean, 
-      "allowDirectTrades": Boolean, 
-      "minHoursInFuture": Number, 
-      "unequalPaid": String, 
-      "oneSided": String, 
-      "weeklyMinPaidViolations": String, 
-      "weeklyMaxPaidViolations": String, 
-      "requiresMatchingQueues": Boolean, 
-      "requiresMatchingLanguages": Boolean, 
-      "requiresMatchingSkills": Boolean, 
-      "requiresMatchingPlanningGroups": Boolean, 
-      "activityCategoryRules": { 
-        "activityCategory": String, 
-        "action": String, 
-        "activityCodeIdReplacement": String, 
-      },  
-    },  
-  },  
-  "divisionId": String, 
-  "businessUnitId": String, 
-}
-```
-
-</div>
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -8521,68 +6632,6 @@ Mark a list of notifications as read or unread
 
 
 Requires NO permissions: 
-
-
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyUpdateNotificationsRequestExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#UpdateNotificationsRequestExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-UpdateNotificationsRequest <a href="#" onclick="return copyUpdateNotificationsRequestExample()">Copy</a>
-
-<div id="UpdateNotificationsRequestExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "entities": { 
-    "id": String, 
-    "mutableGroupId": String, 
-    "timestamp": Date, 
-    "type": String, 
-    "shiftTrade": { 
-      "weekDate": String, 
-      "tradeId": String, 
-      "oneSided": Boolean, 
-      "newState": String, 
-      "initiatingUser": { 
-        "id": String, 
-        "selfUri": String, 
-      },  
-      "initiatingShiftDate": Date, 
-      "receivingUser": { 
-        "id": String, 
-        "selfUri": String, 
-      },  
-      "receivingShiftDate": Date, 
-    },  
-    "timeOffRequest": { 
-      "timeOffRequestId": String, 
-      "user": { 
-        "id": String, 
-        "selfUri": String, 
-      },  
-      "isFullDayRequest": Boolean, 
-      "status": String, 
-      "partialDayStartDateTimes": [Date], 
-      "fullDayManagementUnitDates": [String], 
-    },  
-    "markedAsRead": Boolean, 
-    "agentNotification": Boolean, 
-    "otherNotificationIdsInGroup": [String], 
-  },  
-}
-```
-
-</div>
 
 
 ### Example Usage
@@ -8640,35 +6689,6 @@ Requires ANY permissions:
 
 * wfm:agentSchedule:view
 
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyCurrentUserScheduleRequestBodyExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#CurrentUserScheduleRequestBodyExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-CurrentUserScheduleRequestBody <a href="#" onclick="return copyCurrentUserScheduleRequestBodyExample()">Copy</a>
-
-<div id="CurrentUserScheduleRequestBodyExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "startDate": Date, 
-  "endDate": Date, 
-  "loadFullWeeks": Boolean, 
-}
-```
-
-</div>
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -8723,37 +6743,6 @@ Create a time off request for the current user
 Requires ANY permissions: 
 
 * wfm:agentTimeOffRequest:submit
-
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyCreateAgentTimeOffRequestExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#CreateAgentTimeOffRequestExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-CreateAgentTimeOffRequest <a href="#" onclick="return copyCreateAgentTimeOffRequestExample()">Copy</a>
-
-<div id="CreateAgentTimeOffRequestExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "activityCodeId": String, 
-  "notes": String, 
-  "fullDayManagementUnitDates": [String], 
-  "partialDayStartDateTimes": [Date], 
-  "dailyDurationMinutes": Number, 
-}
-```
-
-</div>
-
 
 ### Example Usage
 

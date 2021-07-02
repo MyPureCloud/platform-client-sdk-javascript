@@ -44,8 +44,6 @@ Requires ANY permissions:
 
 * coaching:appointment:delete
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -99,8 +97,6 @@ Requires ANY permissions:
 
 * coaching:annotation:delete
 * coaching:privateAnnotation:delete
-
-
 
 ### Example Usage
 
@@ -157,8 +153,6 @@ Requires ANY permissions:
 
 * coaching:appointment:view
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -212,8 +206,6 @@ Requires ANY permissions:
 
 * coaching:annotation:view
 * coaching:privateAnnotation:view
-
-
 
 ### Example Usage
 
@@ -270,8 +262,6 @@ Requires ANY permissions:
 
 * coaching:annotation:view
 * coaching:privateAnnotation:view
-
-
 
 ### Example Usage
 
@@ -332,8 +322,6 @@ Requires ANY permissions:
 
 * coaching:appointmentStatus:view
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -392,8 +380,6 @@ Get appointments for users and optional date range
 Requires ANY permissions: 
 
 * coaching:appointment:view
-
-
 
 ### Example Usage
 
@@ -467,8 +453,6 @@ Get my appointments for a given date range
 Requires NO permissions: 
 
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -540,8 +524,6 @@ Requires ANY permissions:
 
 * coaching:notification:view
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -596,8 +578,6 @@ Retrieve the list of your notifications.
 
 
 Requires NO permissions: 
-
-
 
 
 ### Example Usage
@@ -659,39 +639,6 @@ Requires ANY permissions:
 
 * coaching:appointment:edit
 
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyUpdateCoachingAppointmentRequestExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#UpdateCoachingAppointmentRequestExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-UpdateCoachingAppointmentRequest <a href="#" onclick="return copyUpdateCoachingAppointmentRequestExample()">Copy</a>
-
-<div id="UpdateCoachingAppointmentRequestExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "name": String, 
-  "description": String, 
-  "dateStart": Date, 
-  "lengthInMinutes": Number, 
-  "conversationIds": [String], 
-  "documentIds": [String], 
-  "status": String, 
-}
-```
-
-</div>
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -747,47 +694,6 @@ Requires ANY permissions:
 
 * coaching:annotation:edit
 * coaching:privateAnnotation:edit
-
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyCoachingAnnotationExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#CoachingAnnotationExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-CoachingAnnotation <a href="#" onclick="return copyCoachingAnnotationExample()">Copy</a>
-
-<div id="CoachingAnnotationExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "id": String, 
-  "createdBy": { 
-    "id": String, 
-    "selfUri": String, 
-  },  
-  "dateCreated": Date, 
-  "modifiedBy": { 
-    "id": String, 
-    "selfUri": String, 
-  },  
-  "dateModified": Date, 
-  "text": String, 
-  "isDeleted": Boolean, 
-  "accessType": String, 
-  "selfUri": String, 
-}
-```
-
-</div>
-
 
 ### Example Usage
 
@@ -846,33 +752,6 @@ Requires ANY permissions:
 
 * coaching:appointmentStatus:edit
 
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyCoachingAppointmentStatusRequestExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#CoachingAppointmentStatusRequestExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-CoachingAppointmentStatusRequest <a href="#" onclick="return copyCoachingAppointmentStatusRequestExample()">Copy</a>
-
-<div id="CoachingAppointmentStatusRequestExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "status": String, 
-}
-```
-
-</div>
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -925,81 +804,6 @@ Update an existing notification.
 Can only update your own notifications.
 
 Requires NO permissions: 
-
-
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyCoachingNotificationExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#CoachingNotificationExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-CoachingNotification <a href="#" onclick="return copyCoachingNotificationExample()">Copy</a>
-
-<div id="CoachingNotificationExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "id": String, 
-  "name": String, 
-  "markedAsRead": Boolean, 
-  "actionType": String, 
-  "relationship": String, 
-  "dateStart": Date, 
-  "lengthInMinutes": Number, 
-  "status": String, 
-  "user": { 
-    "id": String, 
-    "selfUri": String, 
-  },  
-  "appointment": { 
-    "id": String, 
-    "name": String, 
-    "description": String, 
-    "dateStart": Date, 
-    "lengthInMinutes": Number, 
-    "status": String, 
-    "facilitator": { 
-      "id": String, 
-      "selfUri": String, 
-    },  
-    "attendees": { 
-      "id": String, 
-      "selfUri": String, 
-    },  
-    "createdBy": { 
-      "id": String, 
-      "selfUri": String, 
-    },  
-    "dateCreated": Date, 
-    "modifiedBy": { 
-      "id": String, 
-      "selfUri": String, 
-    },  
-    "dateModified": Date, 
-    "conversations": { 
-      "id": String, 
-      "selfUri": String, 
-    },  
-    "documents": { 
-      "id": String, 
-      "selfUri": String, 
-    },  
-    "isOverdue": Boolean, 
-    "selfUri": String, 
-  },  
-  "selfUri": String, 
-}
-```
-
-</div>
 
 
 ### Example Usage
@@ -1058,34 +862,6 @@ Requires ANY permissions:
 * coaching:annotation:add
 * coaching:privateAnnotation:add
 
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyCoachingAnnotationCreateRequestExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#CoachingAnnotationCreateRequestExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-CoachingAnnotationCreateRequest <a href="#" onclick="return copyCoachingAnnotationCreateRequestExample()">Copy</a>
-
-<div id="CoachingAnnotationCreateRequestExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "text": String, 
-  "accessType": String, 
-}
-```
-
-</div>
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -1142,33 +918,6 @@ Requires ANY permissions:
 * coaching:appointment:edit
 * coaching:appointmentConversation:add
 
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyAddConversationRequestExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#AddConversationRequestExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-AddConversationRequest <a href="#" onclick="return copyAddConversationRequestExample()">Copy</a>
-
-<div id="AddConversationRequestExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "conversationId": String, 
-}
-```
-
-</div>
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -1224,40 +973,6 @@ Requires ANY permissions:
 
 * coaching:appointment:add
 
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyCreateCoachingAppointmentRequestExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#CreateCoachingAppointmentRequestExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-CreateCoachingAppointmentRequest <a href="#" onclick="return copyCreateCoachingAppointmentRequestExample()">Copy</a>
-
-<div id="CreateCoachingAppointmentRequestExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "name": String, 
-  "description": String, 
-  "dateStart": Date, 
-  "lengthInMinutes": Number, 
-  "facilitatorId": String, 
-  "attendeeIds": [String], 
-  "conversationIds": [String], 
-  "documentIds": [String], 
-}
-```
-
-</div>
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -1311,45 +1026,6 @@ Requires ANY permissions:
 
 * coaching:appointment:view
 
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyCoachingAppointmentAggregateRequestExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#CoachingAppointmentAggregateRequestExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-CoachingAppointmentAggregateRequest <a href="#" onclick="return copyCoachingAppointmentAggregateRequestExample()">Copy</a>
-
-<div id="CoachingAppointmentAggregateRequestExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "interval": String, 
-  "metrics": [String], 
-  "groupBy": [String], 
-  "filter": { 
-    "type": String, 
-    "clauses": { 
-      "type": String, 
-      "predicates": { 
-        "dimension": String, 
-        "value": String, 
-      },  
-    },  
-  },  
-}
-```
-
-</div>
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -1402,36 +1078,6 @@ Get list of possible slots where a coaching appointment can be scheduled.
 Requires ANY permissions: 
 
 * coaching:scheduleSlot:view
-
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyCoachingSlotsRequestExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#CoachingSlotsRequestExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-CoachingSlotsRequest <a href="#" onclick="return copyCoachingSlotsRequestExample()">Copy</a>
-
-<div id="CoachingSlotsRequestExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "interval": String, 
-  "lengthInMinutes": Number, 
-  "attendeeIds": [String], 
-  "facilitatorIds": [String], 
-}
-```
-
-</div>
-
 
 ### Example Usage
 

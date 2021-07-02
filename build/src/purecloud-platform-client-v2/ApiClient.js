@@ -3,7 +3,7 @@ import Configuration from './configuration.js';
 
 /**
  * @module purecloud-platform-client-v2/ApiClient
- * @version 114.0.0
+ * @version 115.0.0
  */
 class ApiClient {
 	/**
@@ -950,7 +950,7 @@ class ApiClient {
 
 				// set header parameters
 				request.set(that.defaultHeaders).set(that.normalizeParams(headerParams));
-				//request.set({ 'purecloud-sdk': '114.0.0' });
+				//request.set({ 'purecloud-sdk': '115.0.0' });
 
 				// set request timeout
 				request.timeout(that.timeout);

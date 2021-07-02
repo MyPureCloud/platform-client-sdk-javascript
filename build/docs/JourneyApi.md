@@ -49,8 +49,6 @@ Requires ANY permissions:
 
 * journey:actionmap:delete
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -103,8 +101,6 @@ Delete a single action template.
 Requires ANY permissions: 
 
 * journey:actiontemplate:delete
-
-
 
 ### Example Usage
 
@@ -163,8 +159,6 @@ Requires ANY permissions:
 
 * journey:outcome:delete
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -217,8 +211,6 @@ Delete a segment.
 Requires ANY permissions: 
 
 * journey:segment:delete
-
-
 
 ### Example Usage
 
@@ -273,8 +265,6 @@ Requires ANY permissions:
 
 * journey:actionmap:view
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -327,8 +317,6 @@ Retrieve all action maps.
 Requires ANY permissions: 
 
 * journey:actionmap:view
-
-
 
 ### Example Usage
 
@@ -399,8 +387,6 @@ Requires ANY permissions:
 
 * journey:actiontarget:view
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -454,8 +440,6 @@ Requires ANY permissions:
 
 * journey:actiontarget:view
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -471,7 +455,7 @@ let apiInstance = new platformClient.JourneyApi();
 
 let opts = { 
   'pageNumber': 1, // Number | Page number
-  'pageSize': 25 // Number | Page size
+  'pageSize': 25 // Number | Page size. The max that will be returned is 100.
 };
 
 apiInstance.getJourneyActiontargets(opts)
@@ -490,7 +474,7 @@ apiInstance.getJourneyActiontargets(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
- **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **pageSize** | **Number** | Page size. The max that will be returned is 100. | [optional] [default to 25] |
 {: class="table table-striped"}
 
 ### Return type
@@ -512,8 +496,6 @@ Retrieve a single action template.
 Requires ANY permissions: 
 
 * journey:actiontemplate:view
-
-
 
 ### Example Usage
 
@@ -567,8 +549,6 @@ Retrieve all action templates.
 Requires ANY permissions: 
 
 * journey:actiontemplate:view
-
-
 
 ### Example Usage
 
@@ -637,8 +617,6 @@ Requires ANY permissions:
 
 * journey:outcome:view
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -691,8 +669,6 @@ Retrieve all outcomes.
 Requires ANY permissions: 
 
 * journey:outcome:view
-
-
 
 ### Example Usage
 
@@ -759,8 +735,6 @@ Requires ANY permissions:
 
 * journey:segment:view
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -813,8 +787,6 @@ Retrieve all segments.
 Requires ANY permissions: 
 
 * journey:segment:view
-
-
 
 ### Example Usage
 
@@ -883,95 +855,6 @@ Requires ANY permissions:
 
 * journey:actionmap:edit
 
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyPatchActionMapExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#PatchActionMapExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-PatchActionMap <a href="#" onclick="return copyPatchActionMapExample()">Copy</a>
-
-<div id="PatchActionMapExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "id": String, 
-  "version": Number, 
-  "isActive": Boolean, 
-  "displayName": String, 
-  "triggerWithSegments": [String], 
-  "triggerWithEventConditions": { 
-    "key": String, 
-    "values": [String], 
-    "operator": String, 
-    "streamType": String, 
-    "sessionType": String, 
-    "eventName": String, 
-  },  
-  "triggerWithOutcomeProbabilityConditions": { 
-    "outcomeId": String, 
-    "maximumProbability": Number, 
-    "probability": Number, 
-  },  
-  "pageUrlConditions": { 
-    "values": [String], 
-    "operator": String, 
-  },  
-  "activation": { 
-    "type": String, 
-    "delayInSeconds": Number, 
-  },  
-  "weight": Number, 
-  "action": { 
-    "mediaType": String, 
-    "actionTemplate": { 
-      "id": String, 
-      "selfUri": String, 
-    },  
-    "architectFlowFields": { 
-      "architectFlow": { 
-        "id": String, 
-        "selfUri": String, 
-      },  
-      "flowRequestMappings": { 
-        "name": String, 
-        "attributeType": String, 
-        "mappingType": String, 
-        "value": String, 
-      },  
-    },  
-    "webMessagingOfferFields": { 
-      "offerText": String, 
-    },  
-  },  
-  "actionMapScheduleGroups": { 
-    "actionMapScheduleGroup": { 
-      "id": String, 
-    },  
-    "emergencyActionMapScheduleGroup": { 
-      "id": String, 
-    },  
-  },  
-  "ignoreFrequencyCap": Boolean, 
-  "selfUri": String, 
-  "createdDate": Date, 
-  "modifiedDate": Date, 
-  "startDate": Date, 
-  "endDate": Date, 
-}
-```
-
-</div>
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -1028,40 +911,6 @@ Update a single action target.
 Requires ANY permissions: 
 
 * journey:actiontarget:edit
-
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyPatchActionTargetExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#PatchActionTargetExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-PatchActionTarget <a href="#" onclick="return copyPatchActionTargetExample()">Copy</a>
-
-<div id="PatchActionTargetExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "id": String, 
-  "name": String, 
-  "serviceLevel": { 
-    "percentage": Number, 
-    "durationMs": Number, 
-  },  
-  "shortAbandonThreshold": Number, 
-  "selfUri": String, 
-}
-```
-
-</div>
-
 
 ### Example Usage
 
@@ -1120,91 +969,6 @@ Requires ANY permissions:
 
 * journey:actiontemplate:edit
 
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyPatchActionTemplateExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#PatchActionTemplateExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-PatchActionTemplate <a href="#" onclick="return copyPatchActionTemplateExample()">Copy</a>
-
-<div id="PatchActionTemplateExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "name": String, 
-  "description": String, 
-  "mediaType": String, 
-  "state": String, 
-  "contentOffer": { 
-    "imageUrl": String, 
-    "displayMode": String, 
-    "layoutMode": String, 
-    "title": String, 
-    "headline": String, 
-    "body": String, 
-    "callToAction": { 
-      "text": String, 
-      "url": String, 
-      "target": String, 
-    },  
-    "style": { 
-      "position": { 
-        "top": String, 
-        "bottom": String, 
-        "left": String, 
-        "right": String, 
-      },  
-      "offer": { 
-        "padding": String, 
-        "color": String, 
-        "backgroundColor": String, 
-      },  
-      "closeButton": { 
-        "color": String, 
-        "opacity": Number, 
-      },  
-      "ctaButton": { 
-        "color": String, 
-        "font": String, 
-        "fontSize": String, 
-        "textAlign": String, 
-        "backgroundColor": String, 
-      },  
-      "title": { 
-        "color": String, 
-        "font": String, 
-        "fontSize": String, 
-        "textAlign": String, 
-      },  
-      "headline": { 
-        "color": String, 
-        "font": String, 
-        "fontSize": String, 
-        "textAlign": String, 
-      },  
-      "body": { 
-        "color": String, 
-        "font": String, 
-        "fontSize": String, 
-        "textAlign": String, 
-      },  
-    },  
-  },  
-}
-```
-
-</div>
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -1261,66 +1025,6 @@ Update an outcome.
 Requires ANY permissions: 
 
 * journey:outcome:edit
-
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyPatchOutcomeExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#PatchOutcomeExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-PatchOutcome <a href="#" onclick="return copyPatchOutcomeExample()">Copy</a>
-
-<div id="PatchOutcomeExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "id": String, 
-  "isActive": Boolean, 
-  "displayName": String, 
-  "version": Number, 
-  "description": String, 
-  "isPositive": Boolean, 
-  "context": { 
-    "patterns": { 
-      "criteria": { 
-        "key": String, 
-        "values": [String], 
-        "shouldIgnoreCase": Boolean, 
-        "operator": String, 
-        "entityType": String, 
-      },  
-    },  
-  },  
-  "journey": { 
-    "patterns": { 
-      "criteria": { 
-        "key": String, 
-        "values": [String], 
-        "shouldIgnoreCase": Boolean, 
-        "operator": String, 
-      },  
-      "count": Number, 
-      "streamType": String, 
-      "sessionType": String, 
-      "eventName": String, 
-    },  
-  },  
-  "selfUri": String, 
-  "createdDate": Date, 
-  "modifiedDate": Date, 
-}
-```
-
-</div>
-
 
 ### Example Usage
 
@@ -1379,71 +1083,6 @@ Requires ANY permissions:
 
 * journey:segment:edit
 
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyPatchSegmentExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#PatchSegmentExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-PatchSegment <a href="#" onclick="return copyPatchSegmentExample()">Copy</a>
-
-<div id="PatchSegmentExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "id": String, 
-  "isActive": Boolean, 
-  "displayName": String, 
-  "version": Number, 
-  "description": String, 
-  "color": String, 
-  "shouldDisplayToAgent": Boolean, 
-  "context": { 
-    "patterns": { 
-      "criteria": { 
-        "key": String, 
-        "values": [String], 
-        "shouldIgnoreCase": Boolean, 
-        "operator": String, 
-        "entityType": String, 
-      },  
-    },  
-  },  
-  "journey": { 
-    "patterns": { 
-      "criteria": { 
-        "key": String, 
-        "values": [String], 
-        "shouldIgnoreCase": Boolean, 
-        "operator": String, 
-      },  
-      "count": Number, 
-      "streamType": String, 
-      "sessionType": String, 
-      "eventName": String, 
-    },  
-  },  
-  "externalSegment": { 
-    "name": String, 
-  },  
-  "assignmentExpirationDays": Number, 
-  "selfUri": String, 
-  "createdDate": Date, 
-  "modifiedDate": Date, 
-}
-```
-
-</div>
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -1501,78 +1140,6 @@ Requires ANY permissions:
 
 * analytics:journeyAggregate:view
 
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyJourneyAggregationQueryExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#JourneyAggregationQueryExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-JourneyAggregationQuery <a href="#" onclick="return copyJourneyAggregationQueryExample()">Copy</a>
-
-<div id="JourneyAggregationQueryExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "interval": String, 
-  "granularity": String, 
-  "timeZone": String, 
-  "groupBy": [String], 
-  "filter": { 
-    "type": String, 
-    "clauses": { 
-      "type": String, 
-      "predicates": { 
-        "type": String, 
-        "dimension": String, 
-        "operator": String, 
-        "value": String, 
-        "range": { 
-          "gt": Number, 
-          "gte": Number, 
-          "lt": Number, 
-          "lte": Number, 
-        },  
-      },  
-    },  
-    "predicates": { 
-      "type": String, 
-      "dimension": String, 
-      "operator": String, 
-      "value": String, 
-      "range": { 
-        "gt": Number, 
-        "gte": Number, 
-        "lt": Number, 
-        "lte": Number, 
-      },  
-    },  
-  },  
-  "metrics": [String], 
-  "flattenMultivaluedDimensions": Boolean, 
-  "views": { 
-    "target": String, 
-    "name": String, 
-    "function": String, 
-    "range": { 
-      "gte": Number, 
-      "lt": Number, 
-    },  
-  },  
-  "alternateTimeDimension": String, 
-}
-```
-
-</div>
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -1625,95 +1192,6 @@ Create an action map.
 Requires ANY permissions: 
 
 * journey:actionmap:add
-
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyActionMapExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#ActionMapExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-ActionMap <a href="#" onclick="return copyActionMapExample()">Copy</a>
-
-<div id="ActionMapExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "id": String, 
-  "version": Number, 
-  "isActive": Boolean, 
-  "displayName": String, 
-  "triggerWithSegments": [String], 
-  "triggerWithEventConditions": { 
-    "key": String, 
-    "values": [String], 
-    "operator": String, 
-    "streamType": String, 
-    "sessionType": String, 
-    "eventName": String, 
-  },  
-  "triggerWithOutcomeProbabilityConditions": { 
-    "outcomeId": String, 
-    "maximumProbability": Number, 
-    "probability": Number, 
-  },  
-  "pageUrlConditions": { 
-    "values": [String], 
-    "operator": String, 
-  },  
-  "activation": { 
-    "type": String, 
-    "delayInSeconds": Number, 
-  },  
-  "weight": Number, 
-  "action": { 
-    "actionTemplate": { 
-      "id": String, 
-      "selfUri": String, 
-    },  
-    "mediaType": String, 
-    "architectFlowFields": { 
-      "architectFlow": { 
-        "id": String, 
-        "selfUri": String, 
-      },  
-      "flowRequestMappings": { 
-        "name": String, 
-        "attributeType": String, 
-        "mappingType": String, 
-        "value": String, 
-      },  
-    },  
-    "webMessagingOfferFields": { 
-      "offerText": String, 
-    },  
-  },  
-  "actionMapScheduleGroups": { 
-    "actionMapScheduleGroup": { 
-      "id": String, 
-    },  
-    "emergencyActionMapScheduleGroup": { 
-      "id": String, 
-    },  
-  },  
-  "ignoreFrequencyCap": Boolean, 
-  "selfUri": String, 
-  "createdDate": Date, 
-  "modifiedDate": Date, 
-  "startDate": Date, 
-  "endDate": Date, 
-}
-```
-
-</div>
-
 
 ### Example Usage
 
@@ -1770,95 +1248,6 @@ Requires ANY permissions:
 
 * journey:actiontemplate:add
 
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyActionTemplateExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#ActionTemplateExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-ActionTemplate <a href="#" onclick="return copyActionTemplateExample()">Copy</a>
-
-<div id="ActionTemplateExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "id": String, 
-  "name": String, 
-  "description": String, 
-  "mediaType": String, 
-  "state": String, 
-  "contentOffer": { 
-    "imageUrl": String, 
-    "displayMode": String, 
-    "layoutMode": String, 
-    "title": String, 
-    "headline": String, 
-    "body": String, 
-    "callToAction": { 
-      "text": String, 
-      "url": String, 
-      "target": String, 
-    },  
-    "style": { 
-      "position": { 
-        "top": String, 
-        "bottom": String, 
-        "left": String, 
-        "right": String, 
-      },  
-      "offer": { 
-        "padding": String, 
-        "color": String, 
-        "backgroundColor": String, 
-      },  
-      "closeButton": { 
-        "color": String, 
-        "opacity": Number, 
-      },  
-      "ctaButton": { 
-        "color": String, 
-        "font": String, 
-        "fontSize": String, 
-        "textAlign": String, 
-        "backgroundColor": String, 
-      },  
-      "title": { 
-        "color": String, 
-        "font": String, 
-        "fontSize": String, 
-        "textAlign": String, 
-      },  
-      "headline": { 
-        "color": String, 
-        "font": String, 
-        "fontSize": String, 
-        "textAlign": String, 
-      },  
-      "body": { 
-        "color": String, 
-        "font": String, 
-        "fontSize": String, 
-        "textAlign": String, 
-      },  
-    },  
-  },  
-  "selfUri": String, 
-  "createdDate": Date, 
-  "modifiedDate": Date, 
-}
-```
-
-</div>
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -1914,66 +1303,6 @@ Requires ANY permissions:
 
 * journey:outcome:add
 
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyOutcomeExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#OutcomeExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-Outcome <a href="#" onclick="return copyOutcomeExample()">Copy</a>
-
-<div id="OutcomeExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "id": String, 
-  "isActive": Boolean, 
-  "displayName": String, 
-  "version": Number, 
-  "description": String, 
-  "isPositive": Boolean, 
-  "context": { 
-    "patterns": { 
-      "criteria": { 
-        "key": String, 
-        "values": [String], 
-        "shouldIgnoreCase": Boolean, 
-        "operator": String, 
-        "entityType": String, 
-      },  
-    },  
-  },  
-  "journey": { 
-    "patterns": { 
-      "criteria": { 
-        "key": String, 
-        "values": [String], 
-        "shouldIgnoreCase": Boolean, 
-        "operator": String, 
-      },  
-      "count": Number, 
-      "streamType": String, 
-      "sessionType": String, 
-      "eventName": String, 
-    },  
-  },  
-  "selfUri": String, 
-  "createdDate": Date, 
-  "modifiedDate": Date, 
-}
-```
-
-</div>
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -2028,74 +1357,6 @@ Create a segment.
 Requires ANY permissions: 
 
 * journey:segment:add
-
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyJourneySegmentExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#JourneySegmentExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-JourneySegment <a href="#" onclick="return copyJourneySegmentExample()">Copy</a>
-
-<div id="JourneySegmentExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "id": String, 
-  "isActive": Boolean, 
-  "displayName": String, 
-  "version": Number, 
-  "description": String, 
-  "color": String, 
-  "scope": String, 
-  "shouldDisplayToAgent": Boolean, 
-  "context": { 
-    "patterns": { 
-      "criteria": { 
-        "key": String, 
-        "values": [String], 
-        "shouldIgnoreCase": Boolean, 
-        "operator": String, 
-        "entityType": String, 
-      },  
-    },  
-  },  
-  "journey": { 
-    "patterns": { 
-      "criteria": { 
-        "key": String, 
-        "values": [String], 
-        "shouldIgnoreCase": Boolean, 
-        "operator": String, 
-      },  
-      "count": Number, 
-      "streamType": String, 
-      "sessionType": String, 
-      "eventName": String, 
-    },  
-  },  
-  "externalSegment": { 
-    "id": String, 
-    "name": String, 
-    "source": String, 
-  },  
-  "assignmentExpirationDays": Number, 
-  "selfUri": String, 
-  "createdDate": Date, 
-  "modifiedDate": Date, 
-}
-```
-
-</div>
-
 
 ### Example Usage
 

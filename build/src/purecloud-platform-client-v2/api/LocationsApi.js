@@ -5,7 +5,7 @@ class LocationsApi {
 	/**
 	 * Locations service.
 	 * @module purecloud-platform-client-v2/api/LocationsApi
-	 * @version 114.0.0
+	 * @version 115.0.0
 	 */
 
 	/**

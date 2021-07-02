@@ -40,8 +40,6 @@ Deletes a Greeting with the given GreetingId
 Requires NO permissions: 
 
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -94,8 +92,6 @@ Get a Greeting with the given GreetingId
 Requires NO permissions: 
 
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -146,8 +142,6 @@ Get media playback URI for this greeting
 
 
 Requires NO permissions: 
-
-
 
 
 ### Example Usage
@@ -206,8 +200,6 @@ Gets an Organization&#39;s Greetings
 Requires NO permissions: 
 
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -264,8 +256,6 @@ Get an Organization&#39;s DefaultGreetingList
 Requires NO permissions: 
 
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -311,8 +301,6 @@ Get a list of the Group&#39;s Greetings
 
 
 Requires NO permissions: 
-
-
 
 
 ### Example Usage
@@ -373,8 +361,6 @@ Grabs the list of Default Greetings given a Group&#39;s ID
 Requires NO permissions: 
 
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -425,8 +411,6 @@ Get a list of the User&#39;s Greetings
 
 
 Requires NO permissions: 
-
-
 
 
 ### Example Usage
@@ -487,8 +471,6 @@ Grabs the list of Default Greetings given a User&#39;s ID
 Requires NO permissions: 
 
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -541,52 +523,6 @@ Create a Greeting for an Organization
 Requires NO permissions: 
 
 
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyGreetingExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#GreetingExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-Greeting <a href="#" onclick="return copyGreetingExample()">Copy</a>
-
-<div id="GreetingExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "id": String, 
-  "name": String, 
-  "type": String, 
-  "ownerType": String, 
-  "owner": { 
-    "id": String, 
-    "name": String, 
-    "selfUri": String, 
-  },  
-  "audioFile": { 
-    "durationMilliseconds": Number, 
-    "sizeBytes": Number, 
-    "selfUri": String, 
-  },  
-  "audioTTS": String, 
-  "createdDate": Date, 
-  "createdBy": String, 
-  "modifiedDate": Date, 
-  "modifiedBy": String, 
-  "selfUri": String, 
-}
-```
-
-</div>
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -637,52 +573,6 @@ Creates a Greeting for a Group
 
 
 Requires NO permissions: 
-
-
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyGreetingExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#GreetingExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-Greeting <a href="#" onclick="return copyGreetingExample()">Copy</a>
-
-<div id="GreetingExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "id": String, 
-  "name": String, 
-  "type": String, 
-  "ownerType": String, 
-  "owner": { 
-    "id": String, 
-    "name": String, 
-    "selfUri": String, 
-  },  
-  "audioFile": { 
-    "durationMilliseconds": Number, 
-    "sizeBytes": Number, 
-    "selfUri": String, 
-  },  
-  "audioTTS": String, 
-  "createdDate": Date, 
-  "createdBy": String, 
-  "modifiedDate": Date, 
-  "modifiedBy": String, 
-  "selfUri": String, 
-}
-```
-
-</div>
 
 
 ### Example Usage
@@ -739,52 +629,6 @@ Creates a Greeting for a User
 Requires NO permissions: 
 
 
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyGreetingExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#GreetingExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-Greeting <a href="#" onclick="return copyGreetingExample()">Copy</a>
-
-<div id="GreetingExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "id": String, 
-  "name": String, 
-  "type": String, 
-  "ownerType": String, 
-  "owner": { 
-    "id": String, 
-    "name": String, 
-    "selfUri": String, 
-  },  
-  "audioFile": { 
-    "durationMilliseconds": Number, 
-    "sizeBytes": Number, 
-    "selfUri": String, 
-  },  
-  "audioTTS": String, 
-  "createdDate": Date, 
-  "createdBy": String, 
-  "modifiedDate": Date, 
-  "modifiedBy": String, 
-  "selfUri": String, 
-}
-```
-
-</div>
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -837,52 +681,6 @@ Updates the Greeting with the given GreetingId
 
 
 Requires NO permissions: 
-
-
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyGreetingExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#GreetingExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-Greeting <a href="#" onclick="return copyGreetingExample()">Copy</a>
-
-<div id="GreetingExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "id": String, 
-  "name": String, 
-  "type": String, 
-  "ownerType": String, 
-  "owner": { 
-    "id": String, 
-    "name": String, 
-    "selfUri": String, 
-  },  
-  "audioFile": { 
-    "durationMilliseconds": Number, 
-    "sizeBytes": Number, 
-    "selfUri": String, 
-  },  
-  "audioTTS": String, 
-  "createdDate": Date, 
-  "createdBy": String, 
-  "modifiedDate": Date, 
-  "modifiedBy": String, 
-  "selfUri": String, 
-}
-```
-
-</div>
 
 
 ### Example Usage
@@ -939,67 +737,6 @@ Update an Organization&#39;s DefaultGreetingList
 Requires NO permissions: 
 
 
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyDefaultGreetingListExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#DefaultGreetingListExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-DefaultGreetingList <a href="#" onclick="return copyDefaultGreetingListExample()">Copy</a>
-
-<div id="DefaultGreetingListExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "id": String, 
-  "name": String, 
-  "owner": { 
-    "id": String, 
-    "name": String, 
-    "selfUri": String, 
-  },  
-  "ownerType": String, 
-  "greetings": { 
-    "id": String, 
-    "name": String, 
-    "type": String, 
-    "ownerType": String, 
-    "owner": { 
-      "id": String, 
-      "name": String, 
-      "selfUri": String, 
-    },  
-    "audioFile": { 
-      "durationMilliseconds": Number, 
-      "sizeBytes": Number, 
-      "selfUri": String, 
-    },  
-    "audioTTS": String, 
-    "createdDate": Date, 
-    "createdBy": String, 
-    "modifiedDate": Date, 
-    "modifiedBy": String, 
-    "selfUri": String, 
-  },  
-  "createdDate": Date, 
-  "createdBy": String, 
-  "modifiedDate": Date, 
-  "modifiedBy": String, 
-  "selfUri": String, 
-}
-```
-
-</div>
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -1050,67 +787,6 @@ Updates the DefaultGreetingList of the specified Group
 
 
 Requires NO permissions: 
-
-
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyDefaultGreetingListExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#DefaultGreetingListExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-DefaultGreetingList <a href="#" onclick="return copyDefaultGreetingListExample()">Copy</a>
-
-<div id="DefaultGreetingListExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "id": String, 
-  "name": String, 
-  "owner": { 
-    "id": String, 
-    "name": String, 
-    "selfUri": String, 
-  },  
-  "ownerType": String, 
-  "greetings": { 
-    "id": String, 
-    "name": String, 
-    "type": String, 
-    "ownerType": String, 
-    "owner": { 
-      "id": String, 
-      "name": String, 
-      "selfUri": String, 
-    },  
-    "audioFile": { 
-      "durationMilliseconds": Number, 
-      "sizeBytes": Number, 
-      "selfUri": String, 
-    },  
-    "audioTTS": String, 
-    "createdDate": Date, 
-    "createdBy": String, 
-    "modifiedDate": Date, 
-    "modifiedBy": String, 
-    "selfUri": String, 
-  },  
-  "createdDate": Date, 
-  "createdBy": String, 
-  "modifiedDate": Date, 
-  "modifiedBy": String, 
-  "selfUri": String, 
-}
-```
-
-</div>
 
 
 ### Example Usage
@@ -1165,67 +841,6 @@ Updates the DefaultGreetingList of the specified User
 
 
 Requires NO permissions: 
-
-
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyDefaultGreetingListExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#DefaultGreetingListExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-DefaultGreetingList <a href="#" onclick="return copyDefaultGreetingListExample()">Copy</a>
-
-<div id="DefaultGreetingListExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "id": String, 
-  "name": String, 
-  "owner": { 
-    "id": String, 
-    "name": String, 
-    "selfUri": String, 
-  },  
-  "ownerType": String, 
-  "greetings": { 
-    "id": String, 
-    "name": String, 
-    "type": String, 
-    "ownerType": String, 
-    "owner": { 
-      "id": String, 
-      "name": String, 
-      "selfUri": String, 
-    },  
-    "audioFile": { 
-      "durationMilliseconds": Number, 
-      "sizeBytes": Number, 
-      "selfUri": String, 
-    },  
-    "audioTTS": String, 
-    "createdDate": Date, 
-    "createdBy": String, 
-    "modifiedDate": Date, 
-    "modifiedBy": String, 
-    "selfUri": String, 
-  },  
-  "createdDate": Date, 
-  "createdBy": String, 
-  "modifiedDate": Date, 
-  "modifiedBy": String, 
-  "selfUri": String, 
-}
-```
-
-</div>
 
 
 ### Example Usage

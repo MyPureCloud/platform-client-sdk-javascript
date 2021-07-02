@@ -30,8 +30,6 @@ Delete a fax document.
 Requires NO permissions: 
 
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -82,8 +80,6 @@ Get a document.
 
 
 Requires NO permissions: 
-
-
 
 
 ### Example Usage
@@ -138,8 +134,6 @@ Download a fax document.
 Requires NO permissions: 
 
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -190,8 +184,6 @@ Get a list of fax documents.
 
 
 Requires NO permissions: 
-
-
 
 
 ### Example Usage
@@ -250,8 +242,6 @@ Get fax summary
 Requires NO permissions: 
 
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -297,63 +287,6 @@ Update a fax document.
 
 
 Requires NO permissions: 
-
-
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyFaxDocumentExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#FaxDocumentExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-FaxDocument <a href="#" onclick="return copyFaxDocumentExample()">Copy</a>
-
-<div id="FaxDocumentExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "id": String, 
-  "name": String, 
-  "dateCreated": Date, 
-  "dateModified": Date, 
-  "contentUri": String, 
-  "workspace": { 
-    "id": String, 
-    "name": String, 
-    "selfUri": String, 
-  },  
-  "createdBy": { 
-    "id": String, 
-    "name": String, 
-    "selfUri": String, 
-  },  
-  "contentType": String, 
-  "contentLength": Number, 
-  "filename": String, 
-  "read": Boolean, 
-  "pageCount": Number, 
-  "callerAddress": String, 
-  "receiverAddress": String, 
-  "thumbnails": { 
-    "resolution": String, 
-    "imageUri": String, 
-    "height": Number, 
-    "width": Number, 
-  },  
-  "downloadSharingUri": String, 
-  "sharingUri": String, 
-  "selfUri": String, 
-}
-```
-
-</div>
 
 
 ### Example Usage

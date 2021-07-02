@@ -28,8 +28,6 @@ Requires ANY permissions:
 
 * externalContacts:customFields:view
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -83,8 +81,6 @@ Requires ANY permissions:
 
 * externalContacts:customFields:view
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -132,8 +128,6 @@ Get quantitative limits on schemas
 Requires ANY permissions: 
 
 * externalContacts:customFields:view
-
-
 
 ### Example Usage
 

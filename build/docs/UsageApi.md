@@ -27,8 +27,6 @@ Requires ANY permissions:
 
 * oauth:client:view
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -81,36 +79,6 @@ After calling this method, you will then need to poll for the query results base
 Requires ANY permissions: 
 
 * oauth:client:view
-
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyApiUsageQueryExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#ApiUsageQueryExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-ApiUsageQuery <a href="#" onclick="return copyApiUsageQueryExample()">Copy</a>
-
-<div id="ApiUsageQueryExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "interval": String, 
-  "granularity": String, 
-  "groupBy": [String], 
-  "metrics": [String], 
-}
-```
-
-</div>
-
 
 ### Example Usage
 

@@ -29,8 +29,6 @@ Delete device
 Requires NO permissions: 
 
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -83,8 +81,6 @@ Get device
 Requires NO permissions: 
 
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -135,8 +131,6 @@ Get a list of all devices.
 
 
 Requires NO permissions: 
-
-
 
 
 ### Example Usage
@@ -197,42 +191,6 @@ Create User device
 Requires NO permissions: 
 
 
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyUserDeviceExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#UserDeviceExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-UserDevice <a href="#" onclick="return copyUserDeviceExample()">Copy</a>
-
-<div id="UserDeviceExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "id": String, 
-  "name": String, 
-  "deviceToken": String, 
-  "notificationId": String, 
-  "make": String, 
-  "model": String, 
-  "acceptNotifications": Boolean, 
-  "type": String, 
-  "sessionHash": String, 
-  "selfUri": String, 
-}
-```
-
-</div>
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -283,42 +241,6 @@ Update device
 
 
 Requires NO permissions: 
-
-
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyUserDeviceExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#UserDeviceExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-UserDevice <a href="#" onclick="return copyUserDeviceExample()">Copy</a>
-
-<div id="UserDeviceExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "id": String, 
-  "name": String, 
-  "deviceToken": String, 
-  "notificationId": String, 
-  "make": String, 
-  "model": String, 
-  "acceptNotifications": Boolean, 
-  "type": String, 
-  "sessionHash": String, 
-  "selfUri": String, 
-}
-```
-
-</div>
 
 
 ### Example Usage

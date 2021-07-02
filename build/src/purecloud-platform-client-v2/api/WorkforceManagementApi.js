@@ -5,7 +5,7 @@ class WorkforceManagementApi {
 	/**
 	 * WorkforceManagement service.
 	 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-	 * @version 114.0.0
+	 * @version 115.0.0
 	 */
 
 	/**
@@ -1057,6 +1057,45 @@ class WorkforceManagementApi {
 			'GET', 
 			{ 'businessUnitId': businessUnitId,'weekDateId': weekDateId,'forecastId': forecastId }, 
 			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get the result of a long term forecast calculation
+	 * Includes modifications unless you pass the doNotApplyModifications query parameter
+	 * @param {String} businessUnitId The business unit ID of the business unit to which the forecast belongs
+	 * @param {String} weekDateId The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 * @param {String} forecastId The ID of the forecast
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.forceDownloadService Force the result of this operation to be sent via download service.  For testing/app development purposes
+	 */
+	getWorkforcemanagementBusinessunitWeekShorttermforecastLongtermforecastdata(businessUnitId, weekDateId, forecastId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null) {
+			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitWeekShorttermforecastLongtermforecastdata';
+		}
+		// verify the required parameter 'weekDateId' is set
+		if (weekDateId === undefined || weekDateId === null) {
+			throw 'Missing the required parameter "weekDateId" when calling getWorkforcemanagementBusinessunitWeekShorttermforecastLongtermforecastdata';
+		}
+		// verify the required parameter 'forecastId' is set
+		if (forecastId === undefined || forecastId === null) {
+			throw 'Missing the required parameter "forecastId" when calling getWorkforcemanagementBusinessunitWeekShorttermforecastLongtermforecastdata';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}/longtermforecastdata', 
+			'GET', 
+			{ 'businessUnitId': businessUnitId,'weekDateId': weekDateId,'forecastId': forecastId }, 
+			{ 'forceDownloadService': opts['forceDownloadService'] }, 
 			{  }, 
 			{  }, 
 			null, 

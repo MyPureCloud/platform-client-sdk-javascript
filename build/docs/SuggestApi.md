@@ -29,8 +29,6 @@ Requires ANY permissions:
 
 * directory:user:divisionview
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -89,8 +87,6 @@ Suggest resources using the q64 value returned from a previous suggest query.
 Requires ANY permissions: 
 
 * directory:user:divisionview
-
-
 
 ### Example Usage
 
@@ -151,122 +147,6 @@ Requires ANY permissions:
 
 * directory:user:divisionview
 
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copySearchRequestExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#SearchRequestExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-SearchRequest <a href="#" onclick="return copySearchRequestExample()">Copy</a>
-
-<div id="SearchRequestExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "sortOrder": String, 
-  "sortBy": String, 
-  "pageSize": Number, 
-  "pageNumber": Number, 
-  "sort": { 
-    "sortOrder": String, 
-    "sortBy": String, 
-  },  
-  "returnFields": [String], 
-  "expand": [String], 
-  "types": [String], 
-  "query": { 
-    "endValue": String, 
-    "values": [String], 
-    "startValue": String, 
-    "fields": [String], 
-    "value": String, 
-    "operator": String, 
-    "group": { 
-      "endValue": String, 
-      "values": [String], 
-      "startValue": String, 
-      "fields": [String], 
-      "value": String, 
-      "operator": String, 
-      "group": { 
-        "endValue": String, 
-        "values": [String], 
-        "startValue": String, 
-        "fields": [String], 
-        "value": String, 
-        "operator": String, 
-        "group": { 
-          "endValue": String, 
-          "values": [String], 
-          "startValue": String, 
-          "fields": [String], 
-          "value": String, 
-          "operator": String, 
-          "group": { 
-            "endValue": String, 
-            "values": [String], 
-            "startValue": String, 
-            "fields": [String], 
-            "value": String, 
-            "operator": String, 
-            "group": { 
-              "endValue": String, 
-              "values": [String], 
-              "startValue": String, 
-              "fields": [String], 
-              "value": String, 
-              "operator": String, 
-              "group": { 
-                "endValue": String, 
-                "values": [String], 
-                "startValue": String, 
-                "fields": [String], 
-                "value": String, 
-                "operator": String, 
-                "group": [SearchCriteria], 
-                "dateFormat": String, 
-                "type": String, 
-              },  
-              "dateFormat": String, 
-              "type": String, 
-            },  
-            "dateFormat": String, 
-            "type": String, 
-          },  
-          "dateFormat": String, 
-          "type": String, 
-        },  
-        "dateFormat": String, 
-        "type": String, 
-      },  
-      "dateFormat": String, 
-      "type": String, 
-    },  
-    "dateFormat": String, 
-    "type": String, 
-  },  
-  "aggregations": { 
-    "field": String, 
-    "name": String, 
-    "type": String, 
-    "value": String, 
-    "size": Number, 
-    "order": [String], 
-  },  
-}
-```
-
-</div>
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -323,98 +203,6 @@ Suggest resources.
 Requires ANY permissions: 
 
 * directory:user:divisionview
-
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copySuggestSearchRequestExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#SuggestSearchRequestExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-SuggestSearchRequest <a href="#" onclick="return copySuggestSearchRequestExample()">Copy</a>
-
-<div id="SuggestSearchRequestExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "expand": [String], 
-  "types": [String], 
-  "query": { 
-    "endValue": String, 
-    "values": [String], 
-    "startValue": String, 
-    "fields": [String], 
-    "value": String, 
-    "operator": String, 
-    "group": { 
-      "endValue": String, 
-      "values": [String], 
-      "startValue": String, 
-      "fields": [String], 
-      "value": String, 
-      "operator": String, 
-      "group": { 
-        "endValue": String, 
-        "values": [String], 
-        "startValue": String, 
-        "fields": [String], 
-        "value": String, 
-        "operator": String, 
-        "group": { 
-          "endValue": String, 
-          "values": [String], 
-          "startValue": String, 
-          "fields": [String], 
-          "value": String, 
-          "operator": String, 
-          "group": { 
-            "endValue": String, 
-            "values": [String], 
-            "startValue": String, 
-            "fields": [String], 
-            "value": String, 
-            "operator": String, 
-            "group": { 
-              "endValue": String, 
-              "values": [String], 
-              "startValue": String, 
-              "fields": [String], 
-              "value": String, 
-              "operator": String, 
-              "group": { 
-                "endValue": String, 
-                "values": [String], 
-                "startValue": String, 
-                "fields": [String], 
-                "value": String, 
-                "operator": String, 
-                "group": [SuggestSearchCriteria], 
-                "dateFormat": String, 
-              },  
-              "dateFormat": String, 
-            },  
-            "dateFormat": String, 
-          },  
-          "dateFormat": String, 
-        },  
-        "dateFormat": String, 
-      },  
-      "dateFormat": String, 
-    },  
-    "dateFormat": String, 
-  },  
-}
-```
-
-</div>
-
 
 ### Example Usage
 

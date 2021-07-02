@@ -29,8 +29,6 @@ Requires ANY permissions:
 * chat:setting:view
 * chat:setting:edit
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -78,33 +76,6 @@ Patch Chat Settings.
 Requires ANY permissions: 
 
 * chat:setting:edit
-
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyChatSettingsExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#ChatSettingsExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-ChatSettings <a href="#" onclick="return copyChatSettingsExample()">Copy</a>
-
-<div id="ChatSettingsExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "messageRetentionPeriodDays": Number, 
-}
-```
-
-</div>
-
 
 ### Example Usage
 
@@ -158,33 +129,6 @@ Update Chat Settings.
 Requires ANY permissions: 
 
 * chat:setting:edit
-
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyChatSettingsExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#ChatSettingsExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-ChatSettings <a href="#" onclick="return copyChatSettingsExample()">Copy</a>
-
-<div id="ChatSettingsExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "messageRetentionPeriodDays": Number, 
-}
-```
-
-</div>
-
 
 ### Example Usage
 

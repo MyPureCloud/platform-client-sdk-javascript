@@ -29,8 +29,6 @@ Unassigns the user assigned to this station
 Requires NO permissions: 
 
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -83,8 +81,6 @@ Get station.
 Requires NO permissions: 
 
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -135,8 +131,6 @@ Get the list of available stations.
 
 
 Requires NO permissions: 
-
-
 
 
 ### Example Usage
@@ -207,8 +201,6 @@ Get an organization&#39;s StationSettings
 Requires NO permissions: 
 
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -256,36 +248,6 @@ Patch an organization&#39;s StationSettings
 Requires ANY permissions: 
 
 * telephony:plugin:all
-
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyStationSettingsExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#StationSettingsExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-StationSettings <a href="#" onclick="return copyStationSettingsExample()">Copy</a>
-
-<div id="StationSettingsExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "freeSeatingConfiguration": { 
-    "freeSeatingState": String, 
-    "ttlMinutes": Number, 
-  },  
-}
-```
-
-</div>
-
 
 ### Example Usage
 

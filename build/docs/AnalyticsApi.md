@@ -68,8 +68,6 @@ Requires ANY permissions:
 
 * analytics:conversationDetail:view
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -120,8 +118,6 @@ Delete a scheduled report job.
 
 
 Requires NO permissions: 
-
-
 
 
 ### Example Usage
@@ -177,8 +173,6 @@ Requires ANY permissions:
 
 * analytics:userDetail:view
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -232,8 +226,6 @@ Requires ANY permissions:
 
 * analytics:conversationDetail:view
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -286,8 +278,6 @@ Gets multiple conversations by id
 Requires ANY permissions: 
 
 * analytics:conversationDetail:view
-
-
 
 ### Example Usage
 
@@ -344,8 +334,6 @@ Requires ANY permissions:
 
 * analytics:conversationDetail:view
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -398,8 +386,6 @@ Fetch a page of results for an async query
 Requires ANY permissions: 
 
 * analytics:conversationDetail:view
-
-
 
 ### Example Usage
 
@@ -460,8 +446,6 @@ Requires ANY permissions:
 
 * analytics:conversationDetail:view
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -509,8 +493,6 @@ Get all view export requests for a user
 Requires ALL permissions: 
 
 * analytics:dataExport:view
-
-
 
 ### Example Usage
 
@@ -569,8 +551,6 @@ Requires ALL permissions:
 
 * analytics:dataExport:view
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -618,8 +598,6 @@ Get list of reporting metadata.
 Requires ANY permissions: 
 
 * reporting:acd:view, reporting:status:view, reporting:interactions:view, reporting:outbound:view, reporting:quality:view, employee
-
-
 
 ### Example Usage
 
@@ -680,8 +658,6 @@ Requires ANY permissions:
 
 * reporting:acd:view, reporting:status:view, reporting:interactions:view, reporting:outbound:view, reporting:quality:view, employee
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -738,8 +714,6 @@ Get a list of report formats.
 Requires NO permissions: 
 
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -785,8 +759,6 @@ Get a scheduled report job.
 
 
 Requires NO permissions: 
-
-
 
 
 ### Example Usage
@@ -839,8 +811,6 @@ Get list of completed scheduled report jobs.
 
 
 Requires NO permissions: 
-
-
 
 
 ### Example Usage
@@ -901,8 +871,6 @@ Get most recently completed scheduled report job.
 Requires NO permissions: 
 
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -953,8 +921,6 @@ A completed scheduled report job
 A completed scheduled report job.
 
 Requires NO permissions: 
-
-
 
 
 ### Example Usage
@@ -1009,8 +975,6 @@ Get a list of scheduled report jobs
 Get a list of scheduled report jobs.
 
 Requires NO permissions: 
-
-
 
 
 ### Example Usage
@@ -1069,8 +1033,6 @@ Get a list of report time periods.
 Requires NO permissions: 
 
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -1118,8 +1080,6 @@ Get status for async query for user details
 Requires ANY permissions: 
 
 * analytics:userDetail:view
-
-
 
 ### Example Usage
 
@@ -1173,8 +1133,6 @@ Fetch a page of results for an async query
 Requires ANY permissions: 
 
 * analytics:userDetail:view
-
-
 
 ### Example Usage
 
@@ -1235,8 +1193,6 @@ Requires ANY permissions:
 
 * analytics:userDetail:view
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -1284,78 +1240,6 @@ Query for bot aggregates
 Requires ANY permissions: 
 
 * analytics:botAggregate:view
-
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyBotAggregationQueryExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#BotAggregationQueryExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-BotAggregationQuery <a href="#" onclick="return copyBotAggregationQueryExample()">Copy</a>
-
-<div id="BotAggregationQueryExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "interval": String, 
-  "granularity": String, 
-  "timeZone": String, 
-  "groupBy": [String], 
-  "filter": { 
-    "type": String, 
-    "clauses": { 
-      "type": String, 
-      "predicates": { 
-        "type": String, 
-        "dimension": String, 
-        "operator": String, 
-        "value": String, 
-        "range": { 
-          "gt": Number, 
-          "gte": Number, 
-          "lt": Number, 
-          "lte": Number, 
-        },  
-      },  
-    },  
-    "predicates": { 
-      "type": String, 
-      "dimension": String, 
-      "operator": String, 
-      "value": String, 
-      "range": { 
-        "gt": Number, 
-        "gte": Number, 
-        "lt": Number, 
-        "lte": Number, 
-      },  
-    },  
-  },  
-  "metrics": [String], 
-  "flattenMultivaluedDimensions": Boolean, 
-  "views": { 
-    "target": String, 
-    "name": String, 
-    "function": String, 
-    "range": { 
-      "gte": Number, 
-      "lt": Number, 
-    },  
-  },  
-  "alternateTimeDimension": String, 
-}
-```
-
-</div>
-
 
 ### Example Usage
 
@@ -1409,39 +1293,6 @@ Index conversation properties
 Requires ANY permissions: 
 
 * analytics:conversationProperties:index
-
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyPropertyIndexRequestExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#PropertyIndexRequestExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-PropertyIndexRequest <a href="#" onclick="return copyPropertyIndexRequestExample()">Copy</a>
-
-<div id="PropertyIndexRequestExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "sessionId": String, 
-  "targetDate": Date, 
-  "properties": { 
-    "property": String, 
-    "propertyType": String, 
-    "value": String, 
-  },  
-}
-```
-
-</div>
-
 
 ### Example Usage
 
@@ -1498,78 +1349,6 @@ Requires ANY permissions:
 
 * analytics:conversationAggregate:view
 
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyConversationAggregationQueryExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#ConversationAggregationQueryExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-ConversationAggregationQuery <a href="#" onclick="return copyConversationAggregationQueryExample()">Copy</a>
-
-<div id="ConversationAggregationQueryExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "interval": String, 
-  "granularity": String, 
-  "timeZone": String, 
-  "groupBy": [String], 
-  "filter": { 
-    "type": String, 
-    "clauses": { 
-      "type": String, 
-      "predicates": { 
-        "type": String, 
-        "dimension": String, 
-        "operator": String, 
-        "value": String, 
-        "range": { 
-          "gt": Number, 
-          "gte": Number, 
-          "lt": Number, 
-          "lte": Number, 
-        },  
-      },  
-    },  
-    "predicates": { 
-      "type": String, 
-      "dimension": String, 
-      "operator": String, 
-      "value": String, 
-      "range": { 
-        "gt": Number, 
-        "gte": Number, 
-        "lt": Number, 
-        "lte": Number, 
-      },  
-    },  
-  },  
-  "metrics": [String], 
-  "flattenMultivaluedDimensions": Boolean, 
-  "views": { 
-    "target": String, 
-    "name": String, 
-    "function": String, 
-    "range": { 
-      "gte": Number, 
-      "lt": Number, 
-    },  
-  },  
-  "alternateTimeDimension": String, 
-}
-```
-
-</div>
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -1622,199 +1401,6 @@ Query for conversation details asynchronously
 Requires ANY permissions: 
 
 * analytics:conversationDetail:view
-
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyAsyncConversationQueryExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#AsyncConversationQueryExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-AsyncConversationQuery <a href="#" onclick="return copyAsyncConversationQueryExample()">Copy</a>
-
-<div id="AsyncConversationQueryExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "conversationFilters": { 
-    "type": String, 
-    "clauses": { 
-      "type": String, 
-      "predicates": { 
-        "type": String, 
-        "dimension": String, 
-        "metric": String, 
-        "operator": String, 
-        "value": String, 
-        "range": { 
-          "gt": Number, 
-          "gte": Number, 
-          "lt": Number, 
-          "lte": Number, 
-        },  
-      },  
-    },  
-    "predicates": { 
-      "type": String, 
-      "dimension": String, 
-      "metric": String, 
-      "operator": String, 
-      "value": String, 
-      "range": { 
-        "gt": Number, 
-        "gte": Number, 
-        "lt": Number, 
-        "lte": Number, 
-      },  
-    },  
-  },  
-  "segmentFilters": { 
-    "type": String, 
-    "clauses": { 
-      "type": String, 
-      "predicates": { 
-        "type": String, 
-        "dimension": String, 
-        "propertyType": String, 
-        "property": String, 
-        "metric": String, 
-        "operator": String, 
-        "value": String, 
-        "range": { 
-          "gt": Number, 
-          "gte": Number, 
-          "lt": Number, 
-          "lte": Number, 
-        },  
-      },  
-    },  
-    "predicates": { 
-      "type": String, 
-      "dimension": String, 
-      "propertyType": String, 
-      "property": String, 
-      "metric": String, 
-      "operator": String, 
-      "value": String, 
-      "range": { 
-        "gt": Number, 
-        "gte": Number, 
-        "lt": Number, 
-        "lte": Number, 
-      },  
-    },  
-  },  
-  "evaluationFilters": { 
-    "type": String, 
-    "clauses": { 
-      "type": String, 
-      "predicates": { 
-        "type": String, 
-        "dimension": String, 
-        "metric": String, 
-        "operator": String, 
-        "value": String, 
-        "range": { 
-          "gt": Number, 
-          "gte": Number, 
-          "lt": Number, 
-          "lte": Number, 
-        },  
-      },  
-    },  
-    "predicates": { 
-      "type": String, 
-      "dimension": String, 
-      "metric": String, 
-      "operator": String, 
-      "value": String, 
-      "range": { 
-        "gt": Number, 
-        "gte": Number, 
-        "lt": Number, 
-        "lte": Number, 
-      },  
-    },  
-  },  
-  "surveyFilters": { 
-    "type": String, 
-    "clauses": { 
-      "type": String, 
-      "predicates": { 
-        "type": String, 
-        "dimension": String, 
-        "metric": String, 
-        "operator": String, 
-        "value": String, 
-        "range": { 
-          "gt": Number, 
-          "gte": Number, 
-          "lt": Number, 
-          "lte": Number, 
-        },  
-      },  
-    },  
-    "predicates": { 
-      "type": String, 
-      "dimension": String, 
-      "metric": String, 
-      "operator": String, 
-      "value": String, 
-      "range": { 
-        "gt": Number, 
-        "gte": Number, 
-        "lt": Number, 
-        "lte": Number, 
-      },  
-    },  
-  },  
-  "resolutionFilters": { 
-    "type": String, 
-    "clauses": { 
-      "type": String, 
-      "predicates": { 
-        "type": String, 
-        "metric": String, 
-        "operator": String, 
-        "value": String, 
-        "range": { 
-          "gt": Number, 
-          "gte": Number, 
-          "lt": Number, 
-          "lte": Number, 
-        },  
-      },  
-    },  
-    "predicates": { 
-      "type": String, 
-      "metric": String, 
-      "operator": String, 
-      "value": String, 
-      "range": { 
-        "gt": Number, 
-        "gte": Number, 
-        "lt": Number, 
-        "lte": Number, 
-      },  
-    },  
-  },  
-  "order": String, 
-  "orderBy": String, 
-  "interval": String, 
-  "limit": Number, 
-  "startOfDayIntervalMatching": Boolean, 
-}
-```
-
-</div>
-
 
 ### Example Usage
 
@@ -1869,211 +1455,6 @@ Requires ANY permissions:
 
 * analytics:conversationDetail:view
 
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyConversationQueryExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#ConversationQueryExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-ConversationQuery <a href="#" onclick="return copyConversationQueryExample()">Copy</a>
-
-<div id="ConversationQueryExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "conversationFilters": { 
-    "type": String, 
-    "clauses": { 
-      "type": String, 
-      "predicates": { 
-        "type": String, 
-        "dimension": String, 
-        "metric": String, 
-        "operator": String, 
-        "value": String, 
-        "range": { 
-          "gt": Number, 
-          "gte": Number, 
-          "lt": Number, 
-          "lte": Number, 
-        },  
-      },  
-    },  
-    "predicates": { 
-      "type": String, 
-      "dimension": String, 
-      "metric": String, 
-      "operator": String, 
-      "value": String, 
-      "range": { 
-        "gt": Number, 
-        "gte": Number, 
-        "lt": Number, 
-        "lte": Number, 
-      },  
-    },  
-  },  
-  "segmentFilters": { 
-    "type": String, 
-    "clauses": { 
-      "type": String, 
-      "predicates": { 
-        "type": String, 
-        "dimension": String, 
-        "propertyType": String, 
-        "property": String, 
-        "metric": String, 
-        "operator": String, 
-        "value": String, 
-        "range": { 
-          "gt": Number, 
-          "gte": Number, 
-          "lt": Number, 
-          "lte": Number, 
-        },  
-      },  
-    },  
-    "predicates": { 
-      "type": String, 
-      "dimension": String, 
-      "propertyType": String, 
-      "property": String, 
-      "metric": String, 
-      "operator": String, 
-      "value": String, 
-      "range": { 
-        "gt": Number, 
-        "gte": Number, 
-        "lt": Number, 
-        "lte": Number, 
-      },  
-    },  
-  },  
-  "evaluationFilters": { 
-    "type": String, 
-    "clauses": { 
-      "type": String, 
-      "predicates": { 
-        "type": String, 
-        "dimension": String, 
-        "metric": String, 
-        "operator": String, 
-        "value": String, 
-        "range": { 
-          "gt": Number, 
-          "gte": Number, 
-          "lt": Number, 
-          "lte": Number, 
-        },  
-      },  
-    },  
-    "predicates": { 
-      "type": String, 
-      "dimension": String, 
-      "metric": String, 
-      "operator": String, 
-      "value": String, 
-      "range": { 
-        "gt": Number, 
-        "gte": Number, 
-        "lt": Number, 
-        "lte": Number, 
-      },  
-    },  
-  },  
-  "surveyFilters": { 
-    "type": String, 
-    "clauses": { 
-      "type": String, 
-      "predicates": { 
-        "type": String, 
-        "dimension": String, 
-        "metric": String, 
-        "operator": String, 
-        "value": String, 
-        "range": { 
-          "gt": Number, 
-          "gte": Number, 
-          "lt": Number, 
-          "lte": Number, 
-        },  
-      },  
-    },  
-    "predicates": { 
-      "type": String, 
-      "dimension": String, 
-      "metric": String, 
-      "operator": String, 
-      "value": String, 
-      "range": { 
-        "gt": Number, 
-        "gte": Number, 
-        "lt": Number, 
-        "lte": Number, 
-      },  
-    },  
-  },  
-  "resolutionFilters": { 
-    "type": String, 
-    "clauses": { 
-      "type": String, 
-      "predicates": { 
-        "type": String, 
-        "metric": String, 
-        "operator": String, 
-        "value": String, 
-        "range": { 
-          "gt": Number, 
-          "gte": Number, 
-          "lt": Number, 
-          "lte": Number, 
-        },  
-      },  
-    },  
-    "predicates": { 
-      "type": String, 
-      "metric": String, 
-      "operator": String, 
-      "value": String, 
-      "range": { 
-        "gt": Number, 
-        "gte": Number, 
-        "lt": Number, 
-        "lte": Number, 
-      },  
-    },  
-  },  
-  "order": String, 
-  "orderBy": String, 
-  "interval": String, 
-  "aggregations": { 
-    "type": String, 
-    "dimension": String, 
-    "metric": String, 
-    "size": Number, 
-    "ranges": { 
-      "gte": Number, 
-      "lt": Number, 
-    },  
-  },  
-  "paging": { 
-    "pageSize": Number, 
-    "pageNumber": Number, 
-  },  
-}
-```
-
-</div>
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -2126,112 +1507,6 @@ Search resources.
 Requires ANY permissions: 
 
 * analytics:conversationDetail:view
-
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyTranscriptConversationDetailSearchRequestExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#TranscriptConversationDetailSearchRequestExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-TranscriptConversationDetailSearchRequest <a href="#" onclick="return copyTranscriptConversationDetailSearchRequestExample()">Copy</a>
-
-<div id="TranscriptConversationDetailSearchRequestExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "sortOrder": String, 
-  "sortBy": String, 
-  "pageSize": Number, 
-  "pageNumber": Number, 
-  "sort": { 
-    "sortOrder": String, 
-    "sortBy": String, 
-  },  
-  "types": [String], 
-  "query": { 
-    "endValue": String, 
-    "values": [String], 
-    "startValue": String, 
-    "fields": [String], 
-    "value": String, 
-    "operator": String, 
-    "group": { 
-      "endValue": String, 
-      "values": [String], 
-      "startValue": String, 
-      "fields": [String], 
-      "value": String, 
-      "operator": String, 
-      "group": { 
-        "endValue": String, 
-        "values": [String], 
-        "startValue": String, 
-        "fields": [String], 
-        "value": String, 
-        "operator": String, 
-        "group": { 
-          "endValue": String, 
-          "values": [String], 
-          "startValue": String, 
-          "fields": [String], 
-          "value": String, 
-          "operator": String, 
-          "group": { 
-            "endValue": String, 
-            "values": [String], 
-            "startValue": String, 
-            "fields": [String], 
-            "value": String, 
-            "operator": String, 
-            "group": { 
-              "endValue": String, 
-              "values": [String], 
-              "startValue": String, 
-              "fields": [String], 
-              "value": String, 
-              "operator": String, 
-              "group": { 
-                "endValue": String, 
-                "values": [String], 
-                "startValue": String, 
-                "fields": [String], 
-                "value": String, 
-                "operator": String, 
-                "group": [TranscriptConversationDetailSearchCriteria], 
-                "dateFormat": String, 
-                "type": String, 
-              },  
-              "dateFormat": String, 
-              "type": String, 
-            },  
-            "dateFormat": String, 
-            "type": String, 
-          },  
-          "dateFormat": String, 
-          "type": String, 
-        },  
-        "dateFormat": String, 
-        "type": String, 
-      },  
-      "dateFormat": String, 
-      "type": String, 
-    },  
-    "dateFormat": String, 
-    "type": String, 
-  },  
-}
-```
-
-</div>
-
 
 ### Example Usage
 
@@ -2286,78 +1561,6 @@ Requires ANY permissions:
 
 * analytics:evaluationAggregate:view
 
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyEvaluationAggregationQueryExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#EvaluationAggregationQueryExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-EvaluationAggregationQuery <a href="#" onclick="return copyEvaluationAggregationQueryExample()">Copy</a>
-
-<div id="EvaluationAggregationQueryExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "interval": String, 
-  "granularity": String, 
-  "timeZone": String, 
-  "groupBy": [String], 
-  "filter": { 
-    "type": String, 
-    "clauses": { 
-      "type": String, 
-      "predicates": { 
-        "type": String, 
-        "dimension": String, 
-        "operator": String, 
-        "value": String, 
-        "range": { 
-          "gt": Number, 
-          "gte": Number, 
-          "lt": Number, 
-          "lte": Number, 
-        },  
-      },  
-    },  
-    "predicates": { 
-      "type": String, 
-      "dimension": String, 
-      "operator": String, 
-      "value": String, 
-      "range": { 
-        "gt": Number, 
-        "gte": Number, 
-        "lt": Number, 
-        "lte": Number, 
-      },  
-    },  
-  },  
-  "metrics": [String], 
-  "flattenMultivaluedDimensions": Boolean, 
-  "views": { 
-    "target": String, 
-    "name": String, 
-    "function": String, 
-    "range": { 
-      "gte": Number, 
-      "lt": Number, 
-    },  
-  },  
-  "alternateTimeDimension": String, 
-}
-```
-
-</div>
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -2410,78 +1613,6 @@ Query for flow aggregates
 Requires ANY permissions: 
 
 * analytics:flowAggregate:view
-
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyFlowAggregationQueryExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#FlowAggregationQueryExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-FlowAggregationQuery <a href="#" onclick="return copyFlowAggregationQueryExample()">Copy</a>
-
-<div id="FlowAggregationQueryExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "interval": String, 
-  "granularity": String, 
-  "timeZone": String, 
-  "groupBy": [String], 
-  "filter": { 
-    "type": String, 
-    "clauses": { 
-      "type": String, 
-      "predicates": { 
-        "type": String, 
-        "dimension": String, 
-        "operator": String, 
-        "value": String, 
-        "range": { 
-          "gt": Number, 
-          "gte": Number, 
-          "lt": Number, 
-          "lte": Number, 
-        },  
-      },  
-    },  
-    "predicates": { 
-      "type": String, 
-      "dimension": String, 
-      "operator": String, 
-      "value": String, 
-      "range": { 
-        "gt": Number, 
-        "gte": Number, 
-        "lt": Number, 
-        "lte": Number, 
-      },  
-    },  
-  },  
-  "metrics": [String], 
-  "flattenMultivaluedDimensions": Boolean, 
-  "views": { 
-    "target": String, 
-    "name": String, 
-    "function": String, 
-    "range": { 
-      "gte": Number, 
-      "lt": Number, 
-    },  
-  },  
-  "alternateTimeDimension": String, 
-}
-```
-
-</div>
-
 
 ### Example Usage
 
@@ -2536,64 +1667,6 @@ Requires ANY permissions:
 
 * analytics:flowObservation:view
 
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyFlowObservationQueryExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#FlowObservationQueryExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-FlowObservationQuery <a href="#" onclick="return copyFlowObservationQueryExample()">Copy</a>
-
-<div id="FlowObservationQueryExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "filter": { 
-    "type": String, 
-    "clauses": { 
-      "type": String, 
-      "predicates": { 
-        "type": String, 
-        "dimension": String, 
-        "operator": String, 
-        "value": String, 
-        "range": { 
-          "gt": Number, 
-          "gte": Number, 
-          "lt": Number, 
-          "lte": Number, 
-        },  
-      },  
-    },  
-    "predicates": { 
-      "type": String, 
-      "dimension": String, 
-      "operator": String, 
-      "value": String, 
-      "range": { 
-        "gt": Number, 
-        "gte": Number, 
-        "lt": Number, 
-        "lte": Number, 
-      },  
-    },  
-  },  
-  "metrics": [String], 
-  "detailMetrics": [String], 
-}
-```
-
-</div>
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -2646,78 +1719,6 @@ Query for journey aggregates
 Requires ANY permissions: 
 
 * analytics:journeyAggregate:view
-
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyJourneyAggregationQueryExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#JourneyAggregationQueryExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-JourneyAggregationQuery <a href="#" onclick="return copyJourneyAggregationQueryExample()">Copy</a>
-
-<div id="JourneyAggregationQueryExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "interval": String, 
-  "granularity": String, 
-  "timeZone": String, 
-  "groupBy": [String], 
-  "filter": { 
-    "type": String, 
-    "clauses": { 
-      "type": String, 
-      "predicates": { 
-        "type": String, 
-        "dimension": String, 
-        "operator": String, 
-        "value": String, 
-        "range": { 
-          "gt": Number, 
-          "gte": Number, 
-          "lt": Number, 
-          "lte": Number, 
-        },  
-      },  
-    },  
-    "predicates": { 
-      "type": String, 
-      "dimension": String, 
-      "operator": String, 
-      "value": String, 
-      "range": { 
-        "gt": Number, 
-        "gte": Number, 
-        "lt": Number, 
-        "lte": Number, 
-      },  
-    },  
-  },  
-  "metrics": [String], 
-  "flattenMultivaluedDimensions": Boolean, 
-  "views": { 
-    "target": String, 
-    "name": String, 
-    "function": String, 
-    "range": { 
-      "gte": Number, 
-      "lt": Number, 
-    },  
-  },  
-  "alternateTimeDimension": String, 
-}
-```
-
-</div>
-
 
 ### Example Usage
 
@@ -2772,64 +1773,6 @@ Requires ANY permissions:
 
 * analytics:queueObservation:view
 
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyQueueObservationQueryExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#QueueObservationQueryExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-QueueObservationQuery <a href="#" onclick="return copyQueueObservationQueryExample()">Copy</a>
-
-<div id="QueueObservationQueryExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "filter": { 
-    "type": String, 
-    "clauses": { 
-      "type": String, 
-      "predicates": { 
-        "type": String, 
-        "dimension": String, 
-        "operator": String, 
-        "value": String, 
-        "range": { 
-          "gt": Number, 
-          "gte": Number, 
-          "lt": Number, 
-          "lte": Number, 
-        },  
-      },  
-    },  
-    "predicates": { 
-      "type": String, 
-      "dimension": String, 
-      "operator": String, 
-      "value": String, 
-      "range": { 
-        "gt": Number, 
-        "gte": Number, 
-        "lt": Number, 
-        "lte": Number, 
-      },  
-    },  
-  },  
-  "metrics": [String], 
-  "detailMetrics": [String], 
-}
-```
-
-</div>
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -2883,266 +1826,6 @@ Requires ALL permissions:
 
 * analytics:dataExport:add
 
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyReportingExportJobRequestExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#ReportingExportJobRequestExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-ReportingExportJobRequest <a href="#" onclick="return copyReportingExportJobRequestExample()">Copy</a>
-
-<div id="ReportingExportJobRequestExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "name": String, 
-  "timeZone": String, 
-  "exportFormat": String, 
-  "interval": String, 
-  "period": String, 
-  "viewType": String, 
-  "filter": { 
-    "mediaTypes": [String], 
-    "queueIds": [String], 
-    "skillIds": [String], 
-    "skillGroups": [String], 
-    "languageIds": [String], 
-    "languageGroups": [String], 
-    "directions": [String], 
-    "originatingDirections": [String], 
-    "wrapUpCodes": [String], 
-    "dnisList": [String], 
-    "sessionDnisList": [String], 
-    "filterQueuesByUserIds": [String], 
-    "filterUsersByQueueIds": [String], 
-    "userIds": [String], 
-    "addressTos": [String], 
-    "addressFroms": [String], 
-    "outboundCampaignIds": [String], 
-    "outboundContactListIds": [String], 
-    "contactIds": [String], 
-    "externalContactIds": [String], 
-    "externalOrgIds": [String], 
-    "aniList": [String], 
-    "durationsMilliseconds": { 
-      "gt": Number, 
-      "gte": Number, 
-      "lt": Number, 
-      "lte": Number, 
-    },  
-    "acdDurationsMilliseconds": { 
-      "gt": Number, 
-      "gte": Number, 
-      "lt": Number, 
-      "lte": Number, 
-    },  
-    "talkDurationsMilliseconds": { 
-      "gt": Number, 
-      "gte": Number, 
-      "lt": Number, 
-      "lte": Number, 
-    },  
-    "acwDurationsMilliseconds": { 
-      "gt": Number, 
-      "gte": Number, 
-      "lt": Number, 
-      "lte": Number, 
-    },  
-    "handleDurationsMilliseconds": { 
-      "gt": Number, 
-      "gte": Number, 
-      "lt": Number, 
-      "lte": Number, 
-    },  
-    "holdDurationsMilliseconds": { 
-      "gt": Number, 
-      "gte": Number, 
-      "lt": Number, 
-      "lte": Number, 
-    },  
-    "abandonDurationsMilliseconds": { 
-      "gt": Number, 
-      "gte": Number, 
-      "lt": Number, 
-      "lte": Number, 
-    },  
-    "evaluationScore": { 
-      "gt": Number, 
-      "gte": Number, 
-      "lt": Number, 
-      "lte": Number, 
-    },  
-    "evaluationCriticalScore": { 
-      "gt": Number, 
-      "gte": Number, 
-      "lt": Number, 
-      "lte": Number, 
-    },  
-    "evaluationFormIds": [String], 
-    "evaluatedAgentIds": [String], 
-    "evaluatorIds": [String], 
-    "transferred": Boolean, 
-    "abandoned": Boolean, 
-    "answered": Boolean, 
-    "messageTypes": [String], 
-    "divisionIds": [String], 
-    "surveyFormIds": [String], 
-    "surveyTotalScore": { 
-      "gt": Number, 
-      "gte": Number, 
-      "lt": Number, 
-      "lte": Number, 
-    },  
-    "surveyNpsScore": { 
-      "gt": Number, 
-      "gte": Number, 
-      "lt": Number, 
-      "lte": Number, 
-    },  
-    "mos": { 
-      "gt": Number, 
-      "gte": Number, 
-      "lt": Number, 
-      "lte": Number, 
-    },  
-    "surveyQuestionGroupScore": { 
-      "gt": Number, 
-      "gte": Number, 
-      "lt": Number, 
-      "lte": Number, 
-    },  
-    "surveyPromoterScore": { 
-      "gt": Number, 
-      "gte": Number, 
-      "lt": Number, 
-      "lte": Number, 
-    },  
-    "surveyFormContextIds": [String], 
-    "conversationIds": [String], 
-    "sipCallIds": [String], 
-    "isEnded": Boolean, 
-    "isSurveyed": Boolean, 
-    "surveyScores": { 
-      "gt": Number, 
-      "gte": Number, 
-      "lt": Number, 
-      "lte": Number, 
-    },  
-    "promoterScores": { 
-      "gt": Number, 
-      "gte": Number, 
-      "lt": Number, 
-      "lte": Number, 
-    },  
-    "isCampaign": Boolean, 
-    "surveyStatuses": [String], 
-    "conversationProperties": { 
-      "isWaiting": Boolean, 
-      "isActive": Boolean, 
-      "isAcd": Boolean, 
-      "isPreferred": Boolean, 
-      "isScreenshare": Boolean, 
-      "isCobrowse": Boolean, 
-      "isVoicemail": Boolean, 
-      "isFlagged": Boolean, 
-      "isMonitored": Boolean, 
-      "filterWrapUpNotes": Boolean, 
-      "matchAll": Boolean, 
-    },  
-    "isBlindTransferred": Boolean, 
-    "isConsulted": Boolean, 
-    "isConsultTransferred": Boolean, 
-    "remoteParticipants": [String], 
-    "flowIds": [String], 
-    "flowOutcomeIds": [String], 
-    "flowOutcomeValues": [String], 
-    "flowDestinationTypes": [String], 
-    "flowDisconnectReasons": [String], 
-    "flowTypes": [String], 
-    "flowEntryTypes": [String], 
-    "flowEntryReasons": [String], 
-    "flowVersions": [String], 
-    "groupIds": [String], 
-    "hasJourneyCustomerId": Boolean, 
-    "hasJourneyActionMapId": Boolean, 
-    "hasJourneyVisitId": Boolean, 
-    "hasMedia": Boolean, 
-    "roleIds": [String], 
-    "reportsTos": [String], 
-    "locationIds": [String], 
-    "flowOutTypes": [String], 
-    "providerList": [String], 
-    "callbackNumberList": [String], 
-    "callbackInterval": String, 
-    "usedRoutingTypes": [String], 
-    "requestedRoutingTypes": [String], 
-    "hasAgentAssistId": Boolean, 
-    "transcripts": { 
-      "exactMatch": [String], 
-      "contains": [String], 
-      "doesNotContain": [String], 
-    },  
-    "transcriptLanguages": [String], 
-    "participantPurposes": [String], 
-    "showFirstQueue": Boolean, 
-    "teamIds": [String], 
-    "filterUsersByTeamIds": [String], 
-    "journeyActionMapIds": [String], 
-    "journeyOutcomeIds": [String], 
-    "journeySegmentIds": [String], 
-    "journeyActionMapTypes": [String], 
-    "developmentRoleList": [String], 
-    "developmentTypeList": [String], 
-    "developmentStatusList": [String], 
-    "developmentModuleIds": [String], 
-    "developmentActivityOverdue": Boolean, 
-    "customerSentimentScore": { 
-      "gt": Number, 
-      "gte": Number, 
-      "lt": Number, 
-      "lte": Number, 
-    },  
-    "customerSentimentTrend": { 
-      "gt": Number, 
-      "gte": Number, 
-      "lt": Number, 
-      "lte": Number, 
-    },  
-    "flowTransferTargets": [String], 
-    "developmentName": String, 
-    "topicIds": [String], 
-    "externalTags": [String], 
-    "isNotResponding": Boolean, 
-    "isAuthenticated": Boolean, 
-  },  
-  "read": Boolean, 
-  "locale": String, 
-  "hasFormatDurations": Boolean, 
-  "hasSplitFilters": Boolean, 
-  "excludeEmptyRows": Boolean, 
-  "hasSplitByMedia": Boolean, 
-  "hasSummaryRow": Boolean, 
-  "csvDelimiter": String, 
-  "selectedColumns": { 
-    "columnOrder": Number, 
-    "columnName": String, 
-  },  
-  "hasCustomParticipantAttributes": Boolean, 
-  "recipientEmails": [String], 
-}
-```
-
-</div>
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -3193,8 +1876,6 @@ Place a scheduled report immediately into the reporting queue
 
 
 Requires NO permissions: 
-
-
 
 
 ### Example Usage
@@ -3250,61 +1931,6 @@ Requires ANY permissions:
 
 * reporting:acd:view, reporting:status:view, reporting:interactions:view, reporting:outbound:view, reporting:quality:view, employee
 
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyReportScheduleExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#ReportScheduleExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-ReportSchedule <a href="#" onclick="return copyReportScheduleExample()">Copy</a>
-
-<div id="ReportScheduleExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "id": String, 
-  "name": String, 
-  "quartzCronExpression": String, 
-  "nextFireTime": Date, 
-  "dateCreated": Date, 
-  "dateModified": Date, 
-  "description": String, 
-  "timeZone": String, 
-  "timePeriod": String, 
-  "interval": String, 
-  "reportFormat": String, 
-  "locale": String, 
-  "enabled": Boolean, 
-  "reportId": String, 
-  "parameters": {String: Object}, 
-  "lastRun": { 
-    "id": String, 
-    "name": String, 
-    "reportId": String, 
-    "runTime": Date, 
-    "runStatus": String, 
-    "errorMessage": String, 
-    "runDurationMsec": Number, 
-    "reportUrl": String, 
-    "reportFormat": String, 
-    "scheduleUri": String, 
-    "selfUri": String, 
-  },  
-  "selfUri": String, 
-}
-```
-
-</div>
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -3357,78 +1983,6 @@ Query for survey aggregates
 Requires ANY permissions: 
 
 * analytics:surveyAggregate:view
-
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copySurveyAggregationQueryExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#SurveyAggregationQueryExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-SurveyAggregationQuery <a href="#" onclick="return copySurveyAggregationQueryExample()">Copy</a>
-
-<div id="SurveyAggregationQueryExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "interval": String, 
-  "granularity": String, 
-  "timeZone": String, 
-  "groupBy": [String], 
-  "filter": { 
-    "type": String, 
-    "clauses": { 
-      "type": String, 
-      "predicates": { 
-        "type": String, 
-        "dimension": String, 
-        "operator": String, 
-        "value": String, 
-        "range": { 
-          "gt": Number, 
-          "gte": Number, 
-          "lt": Number, 
-          "lte": Number, 
-        },  
-      },  
-    },  
-    "predicates": { 
-      "type": String, 
-      "dimension": String, 
-      "operator": String, 
-      "value": String, 
-      "range": { 
-        "gt": Number, 
-        "gte": Number, 
-        "lt": Number, 
-        "lte": Number, 
-      },  
-    },  
-  },  
-  "metrics": [String], 
-  "flattenMultivaluedDimensions": Boolean, 
-  "views": { 
-    "target": String, 
-    "name": String, 
-    "function": String, 
-    "range": { 
-      "gte": Number, 
-      "lt": Number, 
-    },  
-  },  
-  "alternateTimeDimension": String, 
-}
-```
-
-</div>
-
 
 ### Example Usage
 
@@ -3483,78 +2037,6 @@ Requires ANY permissions:
 
 * analytics:speechAndTextAnalyticsAggregates:view
 
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyTranscriptAggregationQueryExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#TranscriptAggregationQueryExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-TranscriptAggregationQuery <a href="#" onclick="return copyTranscriptAggregationQueryExample()">Copy</a>
-
-<div id="TranscriptAggregationQueryExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "interval": String, 
-  "granularity": String, 
-  "timeZone": String, 
-  "groupBy": [String], 
-  "filter": { 
-    "type": String, 
-    "clauses": { 
-      "type": String, 
-      "predicates": { 
-        "type": String, 
-        "dimension": String, 
-        "operator": String, 
-        "value": String, 
-        "range": { 
-          "gt": Number, 
-          "gte": Number, 
-          "lt": Number, 
-          "lte": Number, 
-        },  
-      },  
-    },  
-    "predicates": { 
-      "type": String, 
-      "dimension": String, 
-      "operator": String, 
-      "value": String, 
-      "range": { 
-        "gt": Number, 
-        "gte": Number, 
-        "lt": Number, 
-        "lte": Number, 
-      },  
-    },  
-  },  
-  "metrics": [String], 
-  "flattenMultivaluedDimensions": Boolean, 
-  "views": { 
-    "target": String, 
-    "name": String, 
-    "function": String, 
-    "range": { 
-      "gte": Number, 
-      "lt": Number, 
-    },  
-  },  
-  "alternateTimeDimension": String, 
-}
-```
-
-</div>
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -3607,78 +2089,6 @@ Query for user aggregates
 Requires ANY permissions: 
 
 * analytics:userAggregate:view
-
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyUserAggregationQueryExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#UserAggregationQueryExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-UserAggregationQuery <a href="#" onclick="return copyUserAggregationQueryExample()">Copy</a>
-
-<div id="UserAggregationQueryExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "interval": String, 
-  "granularity": String, 
-  "timeZone": String, 
-  "groupBy": [String], 
-  "filter": { 
-    "type": String, 
-    "clauses": { 
-      "type": String, 
-      "predicates": { 
-        "type": String, 
-        "dimension": String, 
-        "operator": String, 
-        "value": String, 
-        "range": { 
-          "gt": Number, 
-          "gte": Number, 
-          "lt": Number, 
-          "lte": Number, 
-        },  
-      },  
-    },  
-    "predicates": { 
-      "type": String, 
-      "dimension": String, 
-      "operator": String, 
-      "value": String, 
-      "range": { 
-        "gt": Number, 
-        "gte": Number, 
-        "lt": Number, 
-        "lte": Number, 
-      },  
-    },  
-  },  
-  "metrics": [String], 
-  "flattenMultivaluedDimensions": Boolean, 
-  "views": { 
-    "target": String, 
-    "name": String, 
-    "function": String, 
-    "range": { 
-      "gte": Number, 
-      "lt": Number, 
-    },  
-  },  
-  "alternateTimeDimension": String, 
-}
-```
-
-</div>
-
 
 ### Example Usage
 
@@ -3733,125 +2143,6 @@ Requires ANY permissions:
 
 * analytics:userDetail:view
 
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyAsyncUserDetailsQueryExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#AsyncUserDetailsQueryExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-AsyncUserDetailsQuery <a href="#" onclick="return copyAsyncUserDetailsQueryExample()">Copy</a>
-
-<div id="AsyncUserDetailsQueryExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "interval": String, 
-  "userFilters": { 
-    "type": String, 
-    "clauses": { 
-      "type": String, 
-      "predicates": { 
-        "type": String, 
-        "dimension": String, 
-        "operator": String, 
-        "value": String, 
-        "range": { 
-          "gt": Number, 
-          "gte": Number, 
-          "lt": Number, 
-          "lte": Number, 
-        },  
-      },  
-    },  
-    "predicates": { 
-      "type": String, 
-      "dimension": String, 
-      "operator": String, 
-      "value": String, 
-      "range": { 
-        "gt": Number, 
-        "gte": Number, 
-        "lt": Number, 
-        "lte": Number, 
-      },  
-    },  
-  },  
-  "presenceFilters": { 
-    "type": String, 
-    "clauses": { 
-      "type": String, 
-      "predicates": { 
-        "type": String, 
-        "dimension": String, 
-        "operator": String, 
-        "value": String, 
-        "range": { 
-          "gt": Number, 
-          "gte": Number, 
-          "lt": Number, 
-          "lte": Number, 
-        },  
-      },  
-    },  
-    "predicates": { 
-      "type": String, 
-      "dimension": String, 
-      "operator": String, 
-      "value": String, 
-      "range": { 
-        "gt": Number, 
-        "gte": Number, 
-        "lt": Number, 
-        "lte": Number, 
-      },  
-    },  
-  },  
-  "routingStatusFilters": { 
-    "type": String, 
-    "clauses": { 
-      "type": String, 
-      "predicates": { 
-        "type": String, 
-        "dimension": String, 
-        "operator": String, 
-        "value": String, 
-        "range": { 
-          "gt": Number, 
-          "gte": Number, 
-          "lt": Number, 
-          "lte": Number, 
-        },  
-      },  
-    },  
-    "predicates": { 
-      "type": String, 
-      "dimension": String, 
-      "operator": String, 
-      "value": String, 
-      "range": { 
-        "gt": Number, 
-        "gte": Number, 
-        "lt": Number, 
-        "lte": Number, 
-      },  
-    },  
-  },  
-  "order": String, 
-  "limit": Number, 
-}
-```
-
-</div>
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -3904,148 +2195,6 @@ Query for user details
 Requires ANY permissions: 
 
 * analytics:userObservation:view
-
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyUserDetailsQueryExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#UserDetailsQueryExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-UserDetailsQuery <a href="#" onclick="return copyUserDetailsQueryExample()">Copy</a>
-
-<div id="UserDetailsQueryExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "interval": String, 
-  "userFilters": { 
-    "type": String, 
-    "clauses": { 
-      "type": String, 
-      "predicates": { 
-        "type": String, 
-        "dimension": String, 
-        "operator": String, 
-        "value": String, 
-        "range": { 
-          "gt": Number, 
-          "gte": Number, 
-          "lt": Number, 
-          "lte": Number, 
-        },  
-      },  
-    },  
-    "predicates": { 
-      "type": String, 
-      "dimension": String, 
-      "operator": String, 
-      "value": String, 
-      "range": { 
-        "gt": Number, 
-        "gte": Number, 
-        "lt": Number, 
-        "lte": Number, 
-      },  
-    },  
-  },  
-  "presenceFilters": { 
-    "type": String, 
-    "clauses": { 
-      "type": String, 
-      "predicates": { 
-        "type": String, 
-        "dimension": String, 
-        "operator": String, 
-        "value": String, 
-        "range": { 
-          "gt": Number, 
-          "gte": Number, 
-          "lt": Number, 
-          "lte": Number, 
-        },  
-      },  
-    },  
-    "predicates": { 
-      "type": String, 
-      "dimension": String, 
-      "operator": String, 
-      "value": String, 
-      "range": { 
-        "gt": Number, 
-        "gte": Number, 
-        "lt": Number, 
-        "lte": Number, 
-      },  
-    },  
-  },  
-  "routingStatusFilters": { 
-    "type": String, 
-    "clauses": { 
-      "type": String, 
-      "predicates": { 
-        "type": String, 
-        "dimension": String, 
-        "operator": String, 
-        "value": String, 
-        "range": { 
-          "gt": Number, 
-          "gte": Number, 
-          "lt": Number, 
-          "lte": Number, 
-        },  
-      },  
-    },  
-    "predicates": { 
-      "type": String, 
-      "dimension": String, 
-      "operator": String, 
-      "value": String, 
-      "range": { 
-        "gt": Number, 
-        "gte": Number, 
-        "lt": Number, 
-        "lte": Number, 
-      },  
-    },  
-  },  
-  "order": String, 
-  "presenceAggregations": { 
-    "type": String, 
-    "dimension": String, 
-    "metric": String, 
-    "size": Number, 
-    "ranges": { 
-      "gte": Number, 
-      "lt": Number, 
-    },  
-  },  
-  "routingStatusAggregations": { 
-    "type": String, 
-    "dimension": String, 
-    "metric": String, 
-    "size": Number, 
-    "ranges": { 
-      "gte": Number, 
-      "lt": Number, 
-    },  
-  },  
-  "paging": { 
-    "pageSize": Number, 
-    "pageNumber": Number, 
-  },  
-}
-```
-
-</div>
-
 
 ### Example Usage
 
@@ -4100,64 +2249,6 @@ Requires ANY permissions:
 
 * analytics:userObservation:view
 
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyUserObservationQueryExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#UserObservationQueryExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-UserObservationQuery <a href="#" onclick="return copyUserObservationQueryExample()">Copy</a>
-
-<div id="UserObservationQueryExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "filter": { 
-    "type": String, 
-    "clauses": { 
-      "type": String, 
-      "predicates": { 
-        "type": String, 
-        "dimension": String, 
-        "operator": String, 
-        "value": String, 
-        "range": { 
-          "gt": Number, 
-          "gte": Number, 
-          "lt": Number, 
-          "lte": Number, 
-        },  
-      },  
-    },  
-    "predicates": { 
-      "type": String, 
-      "dimension": String, 
-      "operator": String, 
-      "value": String, 
-      "range": { 
-        "gt": Number, 
-        "gte": Number, 
-        "lt": Number, 
-        "lte": Number, 
-      },  
-    },  
-  },  
-  "metrics": [String], 
-  "detailMetrics": [String], 
-}
-```
-
-</div>
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -4210,61 +2301,6 @@ Update a scheduled report job.
 Requires ANY permissions: 
 
 * reporting:acd:view, reporting:status:view, reporting:interactions:view, reporting:outbound:view, reporting:quality:view, employee
-
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyReportScheduleExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#ReportScheduleExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-ReportSchedule <a href="#" onclick="return copyReportScheduleExample()">Copy</a>
-
-<div id="ReportScheduleExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "id": String, 
-  "name": String, 
-  "quartzCronExpression": String, 
-  "nextFireTime": Date, 
-  "dateCreated": Date, 
-  "dateModified": Date, 
-  "description": String, 
-  "timeZone": String, 
-  "timePeriod": String, 
-  "interval": String, 
-  "reportFormat": String, 
-  "locale": String, 
-  "enabled": Boolean, 
-  "reportId": String, 
-  "parameters": {String: Object}, 
-  "lastRun": { 
-    "id": String, 
-    "name": String, 
-    "reportId": String, 
-    "runTime": Date, 
-    "runStatus": String, 
-    "errorMessage": String, 
-    "runDurationMsec": Number, 
-    "reportUrl": String, 
-    "reportFormat": String, 
-    "scheduleUri": String, 
-    "selfUri": String, 
-  },  
-  "selfUri": String, 
-}
-```
-
-</div>
-
 
 ### Example Usage
 

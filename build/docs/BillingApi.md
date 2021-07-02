@@ -28,8 +28,6 @@ Requires ANY permissions:
 * billing:subscription:read
 * billing:subscription:view
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -84,8 +82,6 @@ Tax Disclaimer: Prices returned by this API do not include applicable taxes. It 
 Requires ANY permissions: 
 
 * affiliateOrganization:clientBilling:view
-
-
 
 ### Example Usage
 

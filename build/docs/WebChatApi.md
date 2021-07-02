@@ -44,8 +44,6 @@ Requires ANY permissions:
 
 * webchat:deployment:delete
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -96,8 +94,6 @@ Remove a member from a chat conversation
 
 
 Requires NO permissions: 
-
-
 
 
 ### Example Usage
@@ -158,8 +154,6 @@ Requires ANY permissions:
 
 * webchat:deployment:delete
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -207,8 +201,6 @@ Get a WebChat deployment
 Requires ANY permissions: 
 
 * webchat:deployment:read
-
-
 
 ### Example Usage
 
@@ -263,8 +255,6 @@ Requires ANY permissions:
 
 * webchat:deployment:read
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -310,8 +300,6 @@ Get a media request in the conversation
 
 
 Requires NO permissions: 
-
-
 
 
 ### Example Usage
@@ -371,8 +359,6 @@ Get all media requests to the guest in the conversation
 Requires NO permissions: 
 
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -426,8 +412,6 @@ Get a web chat conversation member
 
 
 Requires NO permissions: 
-
-
 
 
 ### Example Usage
@@ -485,8 +469,6 @@ Get the members of a chat conversation.
 
 
 Requires NO permissions: 
-
-
 
 
 ### Example Usage
@@ -552,8 +534,6 @@ Get a web chat conversation message
 Requires NO permissions: 
 
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -609,8 +589,6 @@ Get the messages of a chat conversation.
 
 
 Requires NO permissions: 
-
-
 
 
 ### Example Usage
@@ -679,8 +657,6 @@ Requires ANY permissions:
 
 * webchat:deployment:read
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -726,39 +702,6 @@ Update a media request in the conversation, setting the state to ACCEPTED/DECLIN
 
 
 Requires NO permissions: 
-
-
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyWebChatGuestMediaRequestExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#WebChatGuestMediaRequestExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-WebChatGuestMediaRequest <a href="#" onclick="return copyWebChatGuestMediaRequestExample()">Copy</a>
-
-<div id="WebChatGuestMediaRequestExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "id": String, 
-  "name": String, 
-  "types": [String], 
-  "state": String, 
-  "communicationId": String, 
-  "securityKey": String, 
-  "selfUri": String, 
-}
-```
-
-</div>
 
 
 ### Example Usage
@@ -821,48 +764,6 @@ Requires ANY permissions:
 
 * webchat:deployment:create
 
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyWebChatDeploymentExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#WebChatDeploymentExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-WebChatDeployment <a href="#" onclick="return copyWebChatDeploymentExample()">Copy</a>
-
-<div id="WebChatDeploymentExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "id": String, 
-  "name": String, 
-  "description": String, 
-  "authenticationRequired": Boolean, 
-  "authenticationUrl": String, 
-  "disabled": Boolean, 
-  "webChatConfig": { 
-    "webChatSkin": String, 
-  },  
-  "allowedDomains": [String], 
-  "flow": { 
-    "id": String, 
-    "name": String, 
-    "selfUri": String, 
-  },  
-  "selfUri": String, 
-}
-```
-
-</div>
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -913,34 +814,6 @@ Send a message in a chat conversation.
 
 
 Requires NO permissions: 
-
-
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyCreateWebChatMessageRequestExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#CreateWebChatMessageRequestExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-CreateWebChatMessageRequest <a href="#" onclick="return copyCreateWebChatMessageRequestExample()">Copy</a>
-
-<div id="CreateWebChatMessageRequestExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "body": String, 
-  "bodyType": String, 
-}
-```
-
-</div>
 
 
 ### Example Usage
@@ -1002,8 +875,6 @@ Send a typing-indicator in a chat conversation.
 Requires NO permissions: 
 
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -1061,68 +932,6 @@ This endpoint will create a new ACD Chat conversation under the specified Chat D
 Requires NO permissions: 
 
 
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyCreateWebChatConversationRequestExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#CreateWebChatConversationRequestExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-CreateWebChatConversationRequest <a href="#" onclick="return copyCreateWebChatConversationRequestExample()">Copy</a>
-
-<div id="CreateWebChatConversationRequestExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "organizationId": String, 
-  "deploymentId": String, 
-  "routingTarget": { 
-    "targetType": String, 
-    "targetAddress": String, 
-    "skills": [String], 
-    "language": String, 
-    "priority": Number, 
-  },  
-  "memberInfo": { 
-    "displayName": String, 
-    "firstName": String, 
-    "lastName": String, 
-    "email": String, 
-    "phoneNumber": String, 
-    "avatarImageUrl": String, 
-    "customFields": {String: String}, 
-  },  
-  "memberAuthToken": String, 
-  "journeyContext": { 
-    "customer": { 
-      "id": String, 
-      "idType": String, 
-    },  
-    "customerSession": { 
-      "id": String, 
-      "type": String, 
-    },  
-    "triggeringAction": { 
-      "id": String, 
-      "actionMap": { 
-        "id": String, 
-        "version": Number, 
-      },  
-    },  
-  },  
-}
-```
-
-</div>
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -1172,48 +981,6 @@ Update a WebChat deployment
 Requires ANY permissions: 
 
 * webchat:deployment:update
-
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyWebChatDeploymentExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#WebChatDeploymentExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-WebChatDeployment <a href="#" onclick="return copyWebChatDeploymentExample()">Copy</a>
-
-<div id="WebChatDeploymentExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "id": String, 
-  "name": String, 
-  "description": String, 
-  "authenticationRequired": Boolean, 
-  "authenticationUrl": String, 
-  "disabled": Boolean, 
-  "webChatConfig": { 
-    "webChatSkin": String, 
-  },  
-  "allowedDomains": [String], 
-  "flow": { 
-    "id": String, 
-    "name": String, 
-    "selfUri": String, 
-  },  
-  "selfUri": String, 
-}
-```
-
-</div>
-
 
 ### Example Usage
 
@@ -1269,33 +1036,6 @@ Update WebChat deployment settings
 Requires ANY permissions: 
 
 * webchat:deployment:update
-
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyWebChatSettingsExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#WebChatSettingsExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-WebChatSettings <a href="#" onclick="return copyWebChatSettingsExample()">Copy</a>
-
-<div id="WebChatSettingsExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "requireDeployment": Boolean, 
-}
-```
-
-</div>
-
 
 ### Example Usage
 

@@ -53,8 +53,6 @@ Requires ALL permissions:
 
 * speechAndTextAnalytics:program:delete
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -112,8 +110,6 @@ Requires ALL permissions:
 
 * speechAndTextAnalytics:topic:delete
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -167,8 +163,6 @@ Requires ANY permissions:
 
 * recording:recording:view
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -221,8 +215,6 @@ Get the pre-signed S3 URL for the transcript of a specific communication of a co
 Requires ANY permissions: 
 
 * recording:recording:view
-
-
 
 ### Example Usage
 
@@ -278,8 +270,6 @@ Get list of supported Speech &amp; Text Analytics dialects
 Requires NO permissions: 
 
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -327,8 +317,6 @@ Get a Speech &amp; Text Analytics program by id
 Requires ALL permissions: 
 
 * speechAndTextAnalytics:program:view
-
-
 
 ### Example Usage
 
@@ -383,8 +371,6 @@ Requires ALL permissions:
 
 * speechAndTextAnalytics:program:view
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -437,8 +423,6 @@ Get the list of Speech &amp; Text Analytics programs
 Requires ALL permissions: 
 
 * speechAndTextAnalytics:program:view
-
-
 
 ### Example Usage
 
@@ -500,8 +484,6 @@ Requires ALL permissions:
 * speechAndTextAnalytics:topic:add
 * speechAndTextAnalytics:topic:edit
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -554,8 +536,6 @@ Get the list of Speech &amp; Text Analytics programs mappings to queues and flow
 Requires ALL permissions: 
 
 * speechAndTextAnalytics:program:view
-
-
 
 ### Example Usage
 
@@ -614,8 +594,6 @@ Requires ALL permissions:
 
 * speechAndTextAnalytics:program:publish
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -668,8 +646,6 @@ Get the list of Speech &amp; Text Analytics unpublished programs
 Requires ALL permissions: 
 
 * speechAndTextAnalytics:program:view
-
-
 
 ### Example Usage
 
@@ -728,8 +704,6 @@ Requires ALL permissions:
 
 * speechAndTextAnalytics:settings:view
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -777,8 +751,6 @@ Get a Speech &amp; Text Analytics topic by id
 Requires ALL permissions: 
 
 * speechAndTextAnalytics:topic:view
-
-
 
 ### Example Usage
 
@@ -832,8 +804,6 @@ Get the list of Speech &amp; Text Analytics topics
 Requires ALL permissions: 
 
 * speechAndTextAnalytics:topic:view
-
-
 
 ### Example Usage
 
@@ -892,8 +862,6 @@ Requires ALL permissions:
 
 * speechAndTextAnalytics:topic:view
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -949,8 +917,6 @@ Requires ALL permissions:
 
 * speechAndTextAnalytics:topic:publish
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -1004,34 +970,6 @@ Requires ALL permissions:
 
 * speechAndTextAnalytics:settings:edit
 
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copySpeechTextAnalyticsSettingsRequestExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#SpeechTextAnalyticsSettingsRequestExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-SpeechTextAnalyticsSettingsRequest <a href="#" onclick="return copySpeechTextAnalyticsSettingsRequestExample()">Copy</a>
-
-<div id="SpeechTextAnalyticsSettingsRequestExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "defaultProgramId": String, 
-  "expectedDialects": [String], 
-}
-```
-
-</div>
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -1084,36 +1022,6 @@ Create new Speech &amp; Text Analytics program
 Requires ALL permissions: 
 
 * speechAndTextAnalytics:program:add
-
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyProgramRequestExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#ProgramRequestExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-ProgramRequest <a href="#" onclick="return copyProgramRequestExample()">Copy</a>
-
-<div id="ProgramRequestExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "name": String, 
-  "description": String, 
-  "topicIds": [String], 
-  "tags": [String], 
-}
-```
-
-</div>
-
 
 ### Example Usage
 
@@ -1171,34 +1079,6 @@ Requires ALL permissions:
 * speechAndTextAnalytics:topic:add
 * speechAndTextAnalytics:topic:edit
 
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyGeneralProgramJobRequestExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#GeneralProgramJobRequestExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-GeneralProgramJobRequest <a href="#" onclick="return copyGeneralProgramJobRequestExample()">Copy</a>
-
-<div id="GeneralProgramJobRequestExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "dialect": String, 
-  "mode": String, 
-}
-```
-
-</div>
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -1251,33 +1131,6 @@ Create new Speech &amp; Text Analytics publish programs job
 Requires ALL permissions: 
 
 * speechAndTextAnalytics:program:publish
-
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyProgramJobRequestExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#ProgramJobRequestExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-ProgramJobRequest <a href="#" onclick="return copyProgramJobRequestExample()">Copy</a>
-
-<div id="ProgramJobRequestExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "programIds": [String], 
-}
-```
-
-</div>
-
 
 ### Example Usage
 
@@ -1332,44 +1185,6 @@ Requires ALL permissions:
 
 * speechAndTextAnalytics:topic:add
 
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyTopicRequestExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#TopicRequestExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-TopicRequest <a href="#" onclick="return copyTopicRequestExample()">Copy</a>
-
-<div id="TopicRequestExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "name": String, 
-  "description": String, 
-  "strictness": String, 
-  "programIds": [String], 
-  "tags": [String], 
-  "dialect": String, 
-  "participants": String, 
-  "phrases": { 
-    "text": String, 
-    "strictness": String, 
-    "sentiment": String, 
-  },  
-}
-```
-
-</div>
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -1422,33 +1237,6 @@ Create new Speech &amp; Text Analytics publish topics job
 Requires ALL permissions: 
 
 * speechAndTextAnalytics:topic:publish
-
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyTopicJobRequestExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#TopicJobRequestExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-TopicJobRequest <a href="#" onclick="return copyTopicJobRequestExample()">Copy</a>
-
-<div id="TopicJobRequestExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "topicIds": [String], 
-}
-```
-
-</div>
-
 
 ### Example Usage
 
@@ -1504,113 +1292,6 @@ Requires ANY permissions:
 * analytics:conversationDetail:view
 * recording:recording:view
 
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyTranscriptSearchRequestExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#TranscriptSearchRequestExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-TranscriptSearchRequest <a href="#" onclick="return copyTranscriptSearchRequestExample()">Copy</a>
-
-<div id="TranscriptSearchRequestExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "sortOrder": String, 
-  "sortBy": String, 
-  "pageSize": Number, 
-  "pageNumber": Number, 
-  "sort": { 
-    "sortOrder": String, 
-    "sortBy": String, 
-  },  
-  "returnFields": [String], 
-  "types": [String], 
-  "query": { 
-    "endValue": String, 
-    "values": [String], 
-    "startValue": String, 
-    "fields": [String], 
-    "value": String, 
-    "operator": String, 
-    "group": { 
-      "endValue": String, 
-      "values": [String], 
-      "startValue": String, 
-      "fields": [String], 
-      "value": String, 
-      "operator": String, 
-      "group": { 
-        "endValue": String, 
-        "values": [String], 
-        "startValue": String, 
-        "fields": [String], 
-        "value": String, 
-        "operator": String, 
-        "group": { 
-          "endValue": String, 
-          "values": [String], 
-          "startValue": String, 
-          "fields": [String], 
-          "value": String, 
-          "operator": String, 
-          "group": { 
-            "endValue": String, 
-            "values": [String], 
-            "startValue": String, 
-            "fields": [String], 
-            "value": String, 
-            "operator": String, 
-            "group": { 
-              "endValue": String, 
-              "values": [String], 
-              "startValue": String, 
-              "fields": [String], 
-              "value": String, 
-              "operator": String, 
-              "group": { 
-                "endValue": String, 
-                "values": [String], 
-                "startValue": String, 
-                "fields": [String], 
-                "value": String, 
-                "operator": String, 
-                "group": [TranscriptSearchCriteria], 
-                "dateFormat": String, 
-                "type": String, 
-              },  
-              "dateFormat": String, 
-              "type": String, 
-            },  
-            "dateFormat": String, 
-            "type": String, 
-          },  
-          "dateFormat": String, 
-          "type": String, 
-        },  
-        "dateFormat": String, 
-        "type": String, 
-      },  
-      "dateFormat": String, 
-      "type": String, 
-    },  
-    "dateFormat": String, 
-    "type": String, 
-  },  
-}
-```
-
-</div>
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -1663,36 +1344,6 @@ Update existing Speech &amp; Text Analytics program
 Requires ALL permissions: 
 
 * speechAndTextAnalytics:program:edit
-
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyProgramRequestExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#ProgramRequestExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-ProgramRequest <a href="#" onclick="return copyProgramRequestExample()">Copy</a>
-
-<div id="ProgramRequestExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "name": String, 
-  "description": String, 
-  "topicIds": [String], 
-  "tags": [String], 
-}
-```
-
-</div>
-
 
 ### Example Usage
 
@@ -1749,34 +1400,6 @@ Requires ALL permissions:
 
 * speechAndTextAnalytics:program:edit
 
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyProgramMappingsRequestExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#ProgramMappingsRequestExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-ProgramMappingsRequest <a href="#" onclick="return copyProgramMappingsRequestExample()">Copy</a>
-
-<div id="ProgramMappingsRequestExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "queueIds": [String], 
-  "flowIds": [String], 
-}
-```
-
-</div>
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -1832,34 +1455,6 @@ Requires ALL permissions:
 
 * speechAndTextAnalytics:settings:edit
 
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copySpeechTextAnalyticsSettingsRequestExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#SpeechTextAnalyticsSettingsRequestExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-SpeechTextAnalyticsSettingsRequest <a href="#" onclick="return copySpeechTextAnalyticsSettingsRequestExample()">Copy</a>
-
-<div id="SpeechTextAnalyticsSettingsRequestExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "defaultProgramId": String, 
-  "expectedDialects": [String], 
-}
-```
-
-</div>
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -1912,44 +1507,6 @@ Update existing Speech &amp; Text Analytics topic
 Requires ALL permissions: 
 
 * speechAndTextAnalytics:topic:edit
-
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyTopicRequestExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#TopicRequestExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-TopicRequest <a href="#" onclick="return copyTopicRequestExample()">Copy</a>
-
-<div id="TopicRequestExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "name": String, 
-  "description": String, 
-  "strictness": String, 
-  "programIds": [String], 
-  "tags": [String], 
-  "dialect": String, 
-  "participants": String, 
-  "phrases": { 
-    "text": String, 
-    "strictness": String, 
-    "sentiment": String, 
-  },  
-}
-```
-
-</div>
-
 
 ### Example Usage
 

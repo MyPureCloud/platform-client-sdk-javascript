@@ -135,8 +135,6 @@ Requires ANY permissions:
 
 * outbound:attemptLimits:delete
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -189,8 +187,6 @@ Delete callable time set
 Requires ANY permissions: 
 
 * outbound:callableTimeSet:delete
-
-
 
 ### Example Usage
 
@@ -245,8 +241,6 @@ Requires ANY permissions:
 
 * outbound:responseSet:delete
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -299,8 +293,6 @@ Delete a campaign.
 Requires ANY permissions: 
 
 * outbound:campaign:delete
-
-
 
 ### Example Usage
 
@@ -355,8 +347,6 @@ Requires ANY permissions:
 
 * outbound:campaign:edit
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -409,8 +399,6 @@ Delete Campaign Rule
 Requires ANY permissions: 
 
 * outbound:campaignRule:delete
-
-
 
 ### Example Usage
 
@@ -465,8 +453,6 @@ Requires ANY permissions:
 
 * outbound:contactList:delete
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -519,8 +505,6 @@ Delete a contact.
 Requires ANY permissions: 
 
 * outbound:contact:delete
-
-
 
 ### Example Usage
 
@@ -577,8 +561,6 @@ Requires ANY permissions:
 
 * outbound:contact:delete
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -634,8 +616,6 @@ Requires ANY permissions:
 
 * outbound:contactListFilter:delete
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -688,8 +668,6 @@ Delete multiple contact lists.
 Requires ANY permissions: 
 
 * outbound:contactList:delete
-
-
 
 ### Example Usage
 
@@ -744,8 +722,6 @@ Requires ANY permissions:
 
 * outbound:dncList:delete
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -798,8 +774,6 @@ Delete an Outbound Messaging Campaign
 Requires ANY permissions: 
 
 * outbound:campaign:delete
-
-
 
 ### Example Usage
 
@@ -854,8 +828,6 @@ Requires ANY permissions:
 
 * outbound:ruleSet:delete
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -908,8 +880,6 @@ Delete a dialer campaign schedule.
 Requires ANY permissions: 
 
 * outbound:schedule:delete
-
-
 
 ### Example Usage
 
@@ -964,8 +934,6 @@ Requires ANY permissions:
 
 * outbound:schedule:delete
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -1018,8 +986,6 @@ Delete a dialer campaign sequence.
 Requires ANY permissions: 
 
 * outbound:campaignSequence:delete
-
-
 
 ### Example Usage
 
@@ -1074,8 +1040,6 @@ Requires ANY permissions:
 
 * outbound:attemptLimits:view
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -1128,8 +1092,6 @@ Query attempt limits list
 Requires ANY permissions: 
 
 * outbound:attemptLimits:view
-
-
 
 ### Example Usage
 
@@ -1198,8 +1160,6 @@ Requires ANY permissions:
 
 * outbound:callableTimeSet:view
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -1252,8 +1212,6 @@ Query callable time set list
 Requires ANY permissions: 
 
 * outbound:callableTimeSet:view
-
-
 
 ### Example Usage
 
@@ -1322,8 +1280,6 @@ Requires ANY permissions:
 
 * outbound:responseSet:view
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -1376,8 +1332,6 @@ Query a list of dialer call analysis response sets.
 Requires ANY permissions: 
 
 * outbound:responseSet:view
-
-
 
 ### Example Usage
 
@@ -1446,8 +1400,6 @@ Requires ANY permissions:
 
 * outbound:campaign:view
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -1503,8 +1455,6 @@ Requires ALL permissions:
 * outbound:contact:view
 * routing:queue:view
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -1557,8 +1507,6 @@ Get campaign diagnostics
 Requires ANY permissions: 
 
 * outbound:campaign:view
-
-
 
 ### Example Usage
 
@@ -1613,8 +1561,6 @@ Requires ANY permissions:
 
 * outbound:campaign:view
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -1667,8 +1613,6 @@ Get campaign progress
 Requires ANY permissions: 
 
 * outbound:campaign:view
-
-
 
 ### Example Usage
 
@@ -1723,8 +1667,6 @@ Requires ANY permissions:
 
 * outbound:campaign:view
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -1778,8 +1720,6 @@ Requires ANY permissions:
 
 * outbound:campaignRule:view
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -1832,8 +1772,6 @@ Query Campaign Rule list
 Requires ANY permissions: 
 
 * outbound:campaignRule:view
-
-
 
 ### Example Usage
 
@@ -1901,8 +1839,6 @@ Query a list of dialer campaigns.
 Requires ANY permissions: 
 
 * outbound:campaign:view
-
-
 
 ### Example Usage
 
@@ -1984,8 +1920,6 @@ Requires ANY permissions:
 * outbound:campaign:view
 * outbound:messagingCampaign:view
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -2054,8 +1988,6 @@ Requires ANY permissions:
 * outbound:campaign:search
 * outbound:messagingCampaign:search
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -2123,8 +2055,6 @@ Requires ALL permissions:
 
 * outbound:campaign:search
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -2177,8 +2107,6 @@ This returns a simplified version of a Campaign, consisting of name and division
 Requires ALL permissions: 
 
 * outbound:campaign:search
-
-
 
 ### Example Usage
 
@@ -2247,8 +2175,6 @@ Requires ANY permissions:
 
 * outbound:contactList:view
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -2308,8 +2234,6 @@ Requires ANY permissions:
 
 * outbound:contact:view
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -2365,8 +2289,6 @@ Requires ALL permissions:
 
 * outbound:contact:view
 * outbound:contactList:view
-
-
 
 ### Example Usage
 
@@ -2425,8 +2347,6 @@ Requires ANY permissions:
 
 * outbound:contactList:view
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -2479,8 +2399,6 @@ Preview the result of applying Automatic Time Zone Mapping to a contact list
 Requires ANY permissions: 
 
 * outbound:contactList:view
-
-
 
 ### Example Usage
 
@@ -2535,8 +2453,6 @@ Requires ANY permissions:
 
 * outbound:contactListFilter:view
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -2589,8 +2505,6 @@ Query Contact list filters
 Requires ANY permissions: 
 
 * outbound:contactListFilter:view
-
-
 
 ### Example Usage
 
@@ -2660,8 +2574,6 @@ Query a list of contact lists.
 Requires ANY permissions: 
 
 * outbound:contactList:view
-
-
 
 ### Example Usage
 
@@ -2738,8 +2650,6 @@ Requires ALL permissions:
 
 * outbound:contactList:search
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -2798,8 +2708,6 @@ This return a simplified version of contact lists, consisting of the name, divis
 Requires ALL permissions: 
 
 * outbound:contactList:search
-
-
 
 ### Example Usage
 
@@ -2872,8 +2780,6 @@ Requires ANY permissions:
 
 * outbound:dncList:view
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -2934,8 +2840,6 @@ Requires ALL permissions:
 * outbound:dnc:view
 * outbound:dncList:view
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -2993,8 +2897,6 @@ Requires ANY permissions:
 
 * outbound:dncList:view
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -3047,8 +2949,6 @@ Query dialer DNC lists
 Requires ANY permissions: 
 
 * outbound:dncList:view
-
-
 
 ### Example Usage
 
@@ -3125,8 +3025,6 @@ Requires ALL permissions:
 
 * outbound:dncList:search
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -3185,8 +3083,6 @@ This return a simplified version of dnc lists, consisting of the name, division,
 Requires ALL permissions: 
 
 * outbound:dncList:search
-
-
 
 ### Example Usage
 
@@ -3261,8 +3157,6 @@ Requires ANY permissions:
 
 * outbound:eventLog:view
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -3315,8 +3209,6 @@ Query Event Logs
 Requires ANY permissions: 
 
 * outbound:eventLog:view
-
-
 
 ### Example Usage
 
@@ -3385,8 +3277,6 @@ Requires ANY permissions:
 
 * outbound:messagingCampaign:view
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -3440,8 +3330,6 @@ Requires ANY permissions:
 
 * outbound:messagingCampaign:view
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -3494,8 +3382,6 @@ Query a list of Messaging Campaigns
 Requires ANY permissions: 
 
 * outbound:messagingCampaign:view
-
-
 
 ### Example Usage
 
@@ -3570,8 +3456,6 @@ Requires ALL permissions:
 
 * outbound:messagingCampaign:search
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -3624,8 +3508,6 @@ This returns a listing of simplified Messaging Campaigns, each consisting of id,
 Requires ALL permissions: 
 
 * outbound:messagingCampaign:search
-
-
 
 ### Example Usage
 
@@ -3692,8 +3574,6 @@ Requires ANY permissions:
 
 * outbound:ruleSet:view
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -3746,8 +3626,6 @@ Query a list of Rule Sets.
 Requires ANY permissions: 
 
 * outbound:ruleSet:view
-
-
 
 ### Example Usage
 
@@ -3816,8 +3694,6 @@ Requires ANY permissions:
 
 * outbound:schedule:view
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -3871,8 +3747,6 @@ Requires ANY permissions:
 
 * outbound:schedule:view
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -3920,8 +3794,6 @@ Get a dialer sequence schedule.
 Requires ANY permissions: 
 
 * outbound:schedule:view
-
-
 
 ### Example Usage
 
@@ -3976,8 +3848,6 @@ Requires ANY permissions:
 
 * outbound:schedule:view
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -4025,8 +3895,6 @@ Get a dialer campaign sequence.
 Requires ANY permissions: 
 
 * outbound:campaignSequence:view
-
-
 
 ### Example Usage
 
@@ -4080,8 +3948,6 @@ Query a list of dialer campaign sequences.
 Requires ANY permissions: 
 
 * outbound:campaignSequence:view
-
-
 
 ### Example Usage
 
@@ -4150,8 +4016,6 @@ Requires ANY permissions:
 
 * outbound:settings:view
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -4200,8 +4064,6 @@ Requires ANY permissions:
 
 * outbound:wrapUpCodeMapping:view
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -4249,43 +4111,6 @@ Update the outbound settings for this organization
 Requires ANY permissions: 
 
 * outbound:settings:edit
-
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyOutboundSettingsExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#OutboundSettingsExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-OutboundSettings <a href="#" onclick="return copyOutboundSettingsExample()">Copy</a>
-
-<div id="OutboundSettingsExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "id": String, 
-  "name": String, 
-  "dateCreated": Date, 
-  "dateModified": Date, 
-  "version": Number, 
-  "maxCallsPerAgent": Number, 
-  "maxConfigurableCallsPerAgent": Number, 
-  "maxLineUtilization": Number, 
-  "abandonSeconds": Number, 
-  "complianceAbandonRateDenominator": String, 
-  "selfUri": String, 
-}
-```
-
-</div>
-
 
 ### Example Usage
 
@@ -4340,46 +4165,6 @@ Requires ANY permissions:
 
 * outbound:attemptLimits:add
 
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyAttemptLimitsExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#AttemptLimitsExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-AttemptLimits <a href="#" onclick="return copyAttemptLimitsExample()">Copy</a>
-
-<div id="AttemptLimitsExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "id": String, 
-  "name": String, 
-  "dateCreated": Date, 
-  "dateModified": Date, 
-  "version": Number, 
-  "maxAttemptsPerContact": Number, 
-  "maxAttemptsPerNumber": Number, 
-  "timeZoneId": String, 
-  "resetPeriod": String, 
-  "recallEntries": { 
-    "nbrAttempts": Number, 
-    "minutesBetweenAttempts": Number, 
-  },  
-  "selfUri": String, 
-}
-```
-
-</div>
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -4432,44 +4217,6 @@ Retrieves audits for dialer.
 Requires ANY permissions: 
 
 * outbound:audit:view
-
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyDialerAuditRequestExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#DialerAuditRequestExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-DialerAuditRequest <a href="#" onclick="return copyDialerAuditRequestExample()">Copy</a>
-
-<div id="DialerAuditRequestExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "queryPhrase": String, 
-  "queryFields": [String], 
-  "facets": { 
-    "name": String, 
-    "type": String, 
-  },  
-  "filters": { 
-    "name": String, 
-    "type": String, 
-    "operator": String, 
-    "values": [String], 
-  },  
-}
-```
-
-</div>
-
 
 ### Example Usage
 
@@ -4536,46 +4283,6 @@ Requires ANY permissions:
 
 * outbound:callableTimeSet:add
 
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyCallableTimeSetExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#CallableTimeSetExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-CallableTimeSet <a href="#" onclick="return copyCallableTimeSetExample()">Copy</a>
-
-<div id="CallableTimeSetExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "id": String, 
-  "name": String, 
-  "dateCreated": Date, 
-  "dateModified": Date, 
-  "version": Number, 
-  "callableTimes": { 
-    "timeSlots": { 
-      "startTime": String, 
-      "stopTime": String, 
-      "day": Number, 
-    },  
-    "timeZoneId": String, 
-  },  
-  "selfUri": String, 
-}
-```
-
-</div>
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -4628,43 +4335,6 @@ Create a dialer call analysis response set.
 Requires ANY permissions: 
 
 * outbound:responseSet:add
-
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyResponseSetExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#ResponseSetExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-ResponseSet <a href="#" onclick="return copyResponseSetExample()">Copy</a>
-
-<div id="ResponseSetExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "id": String, 
-  "name": String, 
-  "dateCreated": Date, 
-  "dateModified": Date, 
-  "version": Number, 
-  "responses": { 
-    "data": String, 
-    "name": String, 
-    "reactionType": String, 
-  },  
-  "selfUri": String, 
-}
-```
-
-</div>
-
 
 ### Example Usage
 
@@ -4721,8 +4391,6 @@ Requires ALL permissions:
 * outbound:contact:view
 * directory:user:view
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -4773,37 +4441,6 @@ Schedule a Callback for a Dialer Campaign (Deprecated)
 This endpoint is deprecated and may have unexpected results. Please use \&quot;/conversations/{conversationId}/participants/{participantId}/callbacks instead.\&quot;
 
 Requires NO permissions: 
-
-
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyContactCallbackRequestExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#ContactCallbackRequestExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-ContactCallbackRequest <a href="#" onclick="return copyContactCallbackRequestExample()">Copy</a>
-
-<div id="ContactCallbackRequestExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "campaignId": String, 
-  "contactListId": String, 
-  "contactId": String, 
-  "phoneColumn": String, 
-  "schedule": String, 
-}
-```
-
-</div>
 
 
 ### Example Usage
@@ -4861,85 +4498,6 @@ Requires ANY permissions:
 
 * outbound:campaignRule:add
 
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyCampaignRuleExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#CampaignRuleExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-CampaignRule <a href="#" onclick="return copyCampaignRuleExample()">Copy</a>
-
-<div id="CampaignRuleExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "id": String, 
-  "name": String, 
-  "dateCreated": Date, 
-  "dateModified": Date, 
-  "version": Number, 
-  "campaignRuleEntities": { 
-    "campaigns": { 
-      "id": String, 
-      "name": String, 
-      "selfUri": String, 
-    },  
-    "sequences": { 
-      "id": String, 
-      "name": String, 
-      "selfUri": String, 
-    },  
-  },  
-  "campaignRuleConditions": { 
-    "id": String, 
-    "parameters": { 
-      "operator": String, 
-      "value": String, 
-      "priority": String, 
-      "dialingMode": String, 
-    },  
-    "conditionType": String, 
-  },  
-  "campaignRuleActions": { 
-    "id": String, 
-    "parameters": { 
-      "operator": String, 
-      "value": String, 
-      "priority": String, 
-      "dialingMode": String, 
-    },  
-    "actionType": String, 
-    "campaignRuleActionEntities": { 
-      "campaigns": { 
-        "id": String, 
-        "name": String, 
-        "selfUri": String, 
-      },  
-      "sequences": { 
-        "id": String, 
-        "name": String, 
-        "selfUri": String, 
-      },  
-      "useTriggeringEntity": Boolean, 
-    },  
-  },  
-  "matchAnyConditions": Boolean, 
-  "enabled": Boolean, 
-  "selfUri": String, 
-}
-```
-
-</div>
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -4992,123 +4550,6 @@ Create a campaign.
 Requires ANY permissions: 
 
 * outbound:campaign:add
-
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyCampaignExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#CampaignExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-Campaign <a href="#" onclick="return copyCampaignExample()">Copy</a>
-
-<div id="CampaignExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "id": String, 
-  "name": String, 
-  "dateCreated": Date, 
-  "dateModified": Date, 
-  "version": Number, 
-  "contactList": { 
-    "id": String, 
-    "name": String, 
-    "selfUri": String, 
-  },  
-  "queue": { 
-    "id": String, 
-    "name": String, 
-    "selfUri": String, 
-  },  
-  "dialingMode": String, 
-  "script": { 
-    "id": String, 
-    "name": String, 
-    "selfUri": String, 
-  },  
-  "edgeGroup": { 
-    "id": String, 
-    "name": String, 
-    "selfUri": String, 
-  },  
-  "site": { 
-    "id": String, 
-    "name": String, 
-    "selfUri": String, 
-  },  
-  "campaignStatus": String, 
-  "phoneColumns": { 
-    "columnName": String, 
-    "type": String, 
-  },  
-  "abandonRate": Number, 
-  "dncLists": { 
-    "id": String, 
-    "name": String, 
-    "selfUri": String, 
-  },  
-  "callableTimeSet": { 
-    "id": String, 
-    "name": String, 
-    "selfUri": String, 
-  },  
-  "callAnalysisResponseSet": { 
-    "id": String, 
-    "name": String, 
-    "selfUri": String, 
-  },  
-  "errors": { 
-    "error": String, 
-    "details": String, 
-  },  
-  "callerName": String, 
-  "callerAddress": String, 
-  "outboundLineCount": Number, 
-  "ruleSets": { 
-    "id": String, 
-    "name": String, 
-    "selfUri": String, 
-  },  
-  "skipPreviewDisabled": Boolean, 
-  "previewTimeOutSeconds": Number, 
-  "alwaysRunning": Boolean, 
-  "contactSort": { 
-    "fieldName": String, 
-    "direction": String, 
-    "numeric": Boolean, 
-  },  
-  "contactSorts": { 
-    "fieldName": String, 
-    "direction": String, 
-    "numeric": Boolean, 
-  },  
-  "noAnswerTimeout": Number, 
-  "callAnalysisLanguage": String, 
-  "priority": Number, 
-  "contactListFilters": { 
-    "id": String, 
-    "name": String, 
-    "selfUri": String, 
-  },  
-  "division": { 
-    "id": String, 
-    "name": String, 
-    "selfUri": String, 
-  },  
-  "selfUri": String, 
-}
-```
-
-</div>
-
 
 ### Example Usage
 
@@ -5163,8 +4604,6 @@ Requires ANY permissions:
 
 * outbound:campaign:view
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -5218,8 +4657,6 @@ Requires ANY permissions:
 
 * outbound:contact:delete
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -5272,39 +4709,6 @@ Add contacts to a contact list.
 Requires ANY permissions: 
 
 * outbound:contact:add
-
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyWritableDialerContactExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#WritableDialerContactExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-WritableDialerContact <a href="#" onclick="return copyWritableDialerContactExample()">Copy</a>
-
-<div id="WritableDialerContactExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "id": String, 
-  "contactListId": String, 
-  "data": {String: Object}, 
-  "callable": Boolean, 
-  "phoneNumberStatus": { 
-    "callable": Boolean, 
-  },  
-}
-```
-
-</div>
-
 
 ### Example Usage
 
@@ -5369,8 +4773,6 @@ Requires ANY permissions:
 
 * outbound:contact:view
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -5427,8 +4829,6 @@ Requires ALL permissions:
 * outbound:contact:view
 * outbound:contactList:view
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -5481,61 +4881,6 @@ Create Contact List Filter
 Requires ANY permissions: 
 
 * outbound:contactListFilter:add
-
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyContactListFilterExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#ContactListFilterExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-ContactListFilter <a href="#" onclick="return copyContactListFilterExample()">Copy</a>
-
-<div id="ContactListFilterExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "id": String, 
-  "name": String, 
-  "dateCreated": Date, 
-  "dateModified": Date, 
-  "version": Number, 
-  "contactList": { 
-    "id": String, 
-    "name": String, 
-    "selfUri": String, 
-  },  
-  "clauses": { 
-    "filterType": String, 
-    "predicates": { 
-      "column": String, 
-      "columnType": String, 
-      "operator": String, 
-      "value": String, 
-      "range": { 
-        "min": String, 
-        "max": String, 
-        "minInclusive": Boolean, 
-        "maxInclusive": Boolean, 
-        "inSet": [String], 
-      },  
-      "inverted": Boolean, 
-    },  
-  },  
-  "filterType": String, 
-  "selfUri": String, 
-}
-```
-
-</div>
-
 
 ### Example Usage
 
@@ -5590,61 +4935,6 @@ Requires ANY permissions:
 
 * outbound:contact:view
 
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyContactListFilterExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#ContactListFilterExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-ContactListFilter <a href="#" onclick="return copyContactListFilterExample()">Copy</a>
-
-<div id="ContactListFilterExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "id": String, 
-  "name": String, 
-  "dateCreated": Date, 
-  "dateModified": Date, 
-  "version": Number, 
-  "contactList": { 
-    "id": String, 
-    "name": String, 
-    "selfUri": String, 
-  },  
-  "clauses": { 
-    "filterType": String, 
-    "predicates": { 
-      "column": String, 
-      "columnType": String, 
-      "operator": String, 
-      "value": String, 
-      "range": { 
-        "min": String, 
-        "max": String, 
-        "minInclusive": Boolean, 
-        "maxInclusive": Boolean, 
-        "inSet": [String], 
-      },  
-      "inverted": Boolean, 
-    },  
-  },  
-  "filterType": String, 
-  "selfUri": String, 
-}
-```
-
-</div>
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -5698,66 +4988,6 @@ Requires ANY permissions:
 
 * outbound:contactList:add
 
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyContactListExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#ContactListExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-ContactList <a href="#" onclick="return copyContactListExample()">Copy</a>
-
-<div id="ContactListExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "id": String, 
-  "name": String, 
-  "dateCreated": Date, 
-  "dateModified": Date, 
-  "version": Number, 
-  "division": { 
-    "id": String, 
-    "name": String, 
-    "selfUri": String, 
-  },  
-  "columnNames": [String], 
-  "phoneColumns": { 
-    "columnName": String, 
-    "type": String, 
-    "callableTimeColumn": String, 
-  },  
-  "importStatus": { 
-    "state": String, 
-    "totalRecords": Number, 
-    "completedRecords": Number, 
-    "percentComplete": Number, 
-    "failureReason": String, 
-  },  
-  "previewModeColumnName": String, 
-  "previewModeAcceptedValues": [String], 
-  "size": Number, 
-  "attemptLimits": { 
-    "id": String, 
-    "name": String, 
-    "selfUri": String, 
-  },  
-  "automaticTimeZoneMapping": Boolean, 
-  "zipCodeColumnName": String, 
-  "selfUri": String, 
-}
-```
-
-</div>
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -5810,8 +5040,6 @@ Add phone numbers to a Dialer DNC list.
 Requires ANY permissions: 
 
 * outbound:dnc:add
-
-
 
 ### Example Usage
 
@@ -5867,8 +5095,6 @@ Requires ALL permissions:
 * outbound:dnc:view
 * outbound:dncList:view
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -5921,8 +5147,6 @@ Only Internal DNC lists may be appended to
 Requires ANY permissions: 
 
 * outbound:dnc:add
-
-
 
 ### Example Usage
 
@@ -5979,55 +5203,6 @@ Requires ANY permissions:
 
 * outbound:dncList:add
 
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyDncListCreateExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#DncListCreateExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-DncListCreate <a href="#" onclick="return copyDncListCreateExample()">Copy</a>
-
-<div id="DncListCreateExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "id": String, 
-  "name": String, 
-  "dateCreated": Date, 
-  "dateModified": Date, 
-  "version": Number, 
-  "importStatus": { 
-    "state": String, 
-    "totalRecords": Number, 
-    "completedRecords": Number, 
-    "percentComplete": Number, 
-    "failureReason": String, 
-  },  
-  "size": Number, 
-  "dncSourceType": String, 
-  "loginId": String, 
-  "dncCodes": [String], 
-  "licenseId": String, 
-  "division": { 
-    "id": String, 
-    "name": String, 
-    "selfUri": String, 
-  },  
-  "selfUri": String, 
-}
-```
-
-</div>
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -6080,78 +5255,6 @@ Create a Messaging Campaign
 Requires ANY permissions: 
 
 * outbound:messagingCampaign:add
-
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyMessagingCampaignExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#MessagingCampaignExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-MessagingCampaign <a href="#" onclick="return copyMessagingCampaignExample()">Copy</a>
-
-<div id="MessagingCampaignExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "id": String, 
-  "name": String, 
-  "dateCreated": Date, 
-  "dateModified": Date, 
-  "version": Number, 
-  "division": { 
-    "id": String, 
-    "name": String, 
-    "selfUri": String, 
-  },  
-  "campaignStatus": String, 
-  "callableTimeSet": { 
-    "id": String, 
-    "name": String, 
-    "selfUri": String, 
-  },  
-  "contactList": { 
-    "id": String, 
-    "name": String, 
-    "selfUri": String, 
-  },  
-  "dncLists": { 
-    "id": String, 
-    "name": String, 
-    "selfUri": String, 
-  },  
-  "alwaysRunning": Boolean, 
-  "contactSorts": { 
-    "fieldName": String, 
-    "direction": String, 
-    "numeric": Boolean, 
-  },  
-  "messagesPerMinute": Number, 
-  "errors": { 
-    "error": String, 
-    "details": String, 
-  },  
-  "smsConfig": { 
-    "messageColumn": String, 
-    "phoneColumn": String, 
-    "senderSmsPhoneNumber": { 
-      "phoneNumber": String, 
-      "selfUri": String, 
-    },  
-  },  
-  "selfUri": String, 
-}
-```
-
-</div>
-
 
 ### Example Usage
 
@@ -6206,8 +5309,6 @@ Requires ANY permissions:
 
 * outbound:messagingCampaign:view
 
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -6260,71 +5361,6 @@ Create a Dialer Call Analysis Response Set.
 Requires ANY permissions: 
 
 * outbound:ruleSet:add
-
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyRuleSetExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#RuleSetExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-RuleSet <a href="#" onclick="return copyRuleSetExample()">Copy</a>
-
-<div id="RuleSetExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "id": String, 
-  "name": String, 
-  "dateCreated": Date, 
-  "dateModified": Date, 
-  "version": Number, 
-  "contactList": { 
-    "id": String, 
-    "name": String, 
-    "selfUri": String, 
-  },  
-  "queue": { 
-    "id": String, 
-    "name": String, 
-    "selfUri": String, 
-  },  
-  "rules": { 
-    "id": String, 
-    "name": String, 
-    "order": Number, 
-    "category": String, 
-    "conditions": { 
-      "type": String, 
-      "inverted": Boolean, 
-      "attributeName": String, 
-      "value": String, 
-      "valueType": String, 
-      "operator": String, 
-      "codes": [String], 
-      "property": String, 
-      "propertyType": String, 
-    },  
-    "actions": { 
-      "type": String, 
-      "actionTypeName": String, 
-      "updateOption": String, 
-      "properties": {String: String}, 
-    },  
-  },  
-  "selfUri": String, 
-}
-```
-
-</div>
-
 
 ### Example Usage
 
@@ -6379,47 +5415,6 @@ Requires ANY permissions:
 
 * outbound:campaignSequence:add
 
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyCampaignSequenceExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#CampaignSequenceExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-CampaignSequence <a href="#" onclick="return copyCampaignSequenceExample()">Copy</a>
-
-<div id="CampaignSequenceExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "id": String, 
-  "name": String, 
-  "dateCreated": Date, 
-  "dateModified": Date, 
-  "version": Number, 
-  "campaigns": { 
-    "id": String, 
-    "name": String, 
-    "selfUri": String, 
-  },  
-  "currentCampaign": Number, 
-  "status": String, 
-  "stopMessage": String, 
-  "repeat": Boolean, 
-  "selfUri": String, 
-}
-```
-
-</div>
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -6472,46 +5467,6 @@ Update attempt limits
 Requires ANY permissions: 
 
 * outbound:attemptLimits:edit
-
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyAttemptLimitsExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#AttemptLimitsExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-AttemptLimits <a href="#" onclick="return copyAttemptLimitsExample()">Copy</a>
-
-<div id="AttemptLimitsExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "id": String, 
-  "name": String, 
-  "dateCreated": Date, 
-  "dateModified": Date, 
-  "version": Number, 
-  "maxAttemptsPerContact": Number, 
-  "maxAttemptsPerNumber": Number, 
-  "timeZoneId": String, 
-  "resetPeriod": String, 
-  "recallEntries": { 
-    "nbrAttempts": Number, 
-    "minutesBetweenAttempts": Number, 
-  },  
-  "selfUri": String, 
-}
-```
-
-</div>
-
 
 ### Example Usage
 
@@ -6568,46 +5523,6 @@ Requires ANY permissions:
 
 * outbound:callableTimeSet:edit
 
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyCallableTimeSetExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#CallableTimeSetExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-CallableTimeSet <a href="#" onclick="return copyCallableTimeSetExample()">Copy</a>
-
-<div id="CallableTimeSetExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "id": String, 
-  "name": String, 
-  "dateCreated": Date, 
-  "dateModified": Date, 
-  "version": Number, 
-  "callableTimes": { 
-    "timeSlots": { 
-      "startTime": String, 
-      "stopTime": String, 
-      "day": Number, 
-    },  
-    "timeZoneId": String, 
-  },  
-  "selfUri": String, 
-}
-```
-
-</div>
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -6662,43 +5577,6 @@ Update a dialer call analysis response set.
 Requires ANY permissions: 
 
 * outbound:responseSet:edit
-
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyResponseSetExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#ResponseSetExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-ResponseSet <a href="#" onclick="return copyResponseSetExample()">Copy</a>
-
-<div id="ResponseSetExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "id": String, 
-  "name": String, 
-  "dateCreated": Date, 
-  "dateModified": Date, 
-  "version": Number, 
-  "responses": { 
-    "data": String, 
-    "name": String, 
-    "reactionType": String, 
-  },  
-  "selfUri": String, 
-}
-```
-
-</div>
-
 
 ### Example Usage
 
@@ -6755,123 +5633,6 @@ Requires ANY permissions:
 
 * outbound:campaign:edit
 
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyCampaignExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#CampaignExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-Campaign <a href="#" onclick="return copyCampaignExample()">Copy</a>
-
-<div id="CampaignExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "id": String, 
-  "name": String, 
-  "dateCreated": Date, 
-  "dateModified": Date, 
-  "version": Number, 
-  "contactList": { 
-    "id": String, 
-    "name": String, 
-    "selfUri": String, 
-  },  
-  "queue": { 
-    "id": String, 
-    "name": String, 
-    "selfUri": String, 
-  },  
-  "dialingMode": String, 
-  "script": { 
-    "id": String, 
-    "name": String, 
-    "selfUri": String, 
-  },  
-  "edgeGroup": { 
-    "id": String, 
-    "name": String, 
-    "selfUri": String, 
-  },  
-  "site": { 
-    "id": String, 
-    "name": String, 
-    "selfUri": String, 
-  },  
-  "campaignStatus": String, 
-  "phoneColumns": { 
-    "columnName": String, 
-    "type": String, 
-  },  
-  "abandonRate": Number, 
-  "dncLists": { 
-    "id": String, 
-    "name": String, 
-    "selfUri": String, 
-  },  
-  "callableTimeSet": { 
-    "id": String, 
-    "name": String, 
-    "selfUri": String, 
-  },  
-  "callAnalysisResponseSet": { 
-    "id": String, 
-    "name": String, 
-    "selfUri": String, 
-  },  
-  "errors": { 
-    "error": String, 
-    "details": String, 
-  },  
-  "callerName": String, 
-  "callerAddress": String, 
-  "outboundLineCount": Number, 
-  "ruleSets": { 
-    "id": String, 
-    "name": String, 
-    "selfUri": String, 
-  },  
-  "skipPreviewDisabled": Boolean, 
-  "previewTimeOutSeconds": Number, 
-  "alwaysRunning": Boolean, 
-  "contactSort": { 
-    "fieldName": String, 
-    "direction": String, 
-    "numeric": Boolean, 
-  },  
-  "contactSorts": { 
-    "fieldName": String, 
-    "direction": String, 
-    "numeric": Boolean, 
-  },  
-  "noAnswerTimeout": Number, 
-  "callAnalysisLanguage": String, 
-  "priority": Number, 
-  "contactListFilters": { 
-    "id": String, 
-    "name": String, 
-    "selfUri": String, 
-  },  
-  "division": { 
-    "id": String, 
-    "name": String, 
-    "selfUri": String, 
-  },  
-  "selfUri": String, 
-}
-```
-
-</div>
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -6924,33 +5685,6 @@ Send notification that an agent&#39;s state changed
 New agent state.
 
 Requires NO permissions: 
-
-
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyAgentExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#AgentExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-Agent <a href="#" onclick="return copyAgentExample()">Copy</a>
-
-<div id="AgentExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "stage": String, 
-}
-```
-
-</div>
 
 
 ### Example Usage
@@ -7010,85 +5744,6 @@ Requires ANY permissions:
 
 * outbound:campaignRule:edit
 
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyCampaignRuleExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#CampaignRuleExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-CampaignRule <a href="#" onclick="return copyCampaignRuleExample()">Copy</a>
-
-<div id="CampaignRuleExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "id": String, 
-  "name": String, 
-  "dateCreated": Date, 
-  "dateModified": Date, 
-  "version": Number, 
-  "campaignRuleEntities": { 
-    "campaigns": { 
-      "id": String, 
-      "name": String, 
-      "selfUri": String, 
-    },  
-    "sequences": { 
-      "id": String, 
-      "name": String, 
-      "selfUri": String, 
-    },  
-  },  
-  "campaignRuleConditions": { 
-    "id": String, 
-    "parameters": { 
-      "operator": String, 
-      "value": String, 
-      "priority": String, 
-      "dialingMode": String, 
-    },  
-    "conditionType": String, 
-  },  
-  "campaignRuleActions": { 
-    "id": String, 
-    "parameters": { 
-      "operator": String, 
-      "value": String, 
-      "priority": String, 
-      "dialingMode": String, 
-    },  
-    "actionType": String, 
-    "campaignRuleActionEntities": { 
-      "campaigns": { 
-        "id": String, 
-        "name": String, 
-        "selfUri": String, 
-      },  
-      "sequences": { 
-        "id": String, 
-        "name": String, 
-        "selfUri": String, 
-      },  
-      "useTriggeringEntity": Boolean, 
-    },  
-  },  
-  "matchAnyConditions": Boolean, 
-  "enabled": Boolean, 
-  "selfUri": String, 
-}
-```
-
-</div>
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -7144,66 +5799,6 @@ Requires ANY permissions:
 
 * outbound:contactList:edit
 
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyContactListExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#ContactListExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-ContactList <a href="#" onclick="return copyContactListExample()">Copy</a>
-
-<div id="ContactListExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "id": String, 
-  "name": String, 
-  "dateCreated": Date, 
-  "dateModified": Date, 
-  "version": Number, 
-  "division": { 
-    "id": String, 
-    "name": String, 
-    "selfUri": String, 
-  },  
-  "columnNames": [String], 
-  "phoneColumns": { 
-    "columnName": String, 
-    "type": String, 
-    "callableTimeColumn": String, 
-  },  
-  "importStatus": { 
-    "state": String, 
-    "totalRecords": Number, 
-    "completedRecords": Number, 
-    "percentComplete": Number, 
-    "failureReason": String, 
-  },  
-  "previewModeColumnName": String, 
-  "previewModeAcceptedValues": [String], 
-  "size": Number, 
-  "attemptLimits": { 
-    "id": String, 
-    "name": String, 
-    "selfUri": String, 
-  },  
-  "automaticTimeZoneMapping": Boolean, 
-  "zipCodeColumnName": String, 
-  "selfUri": String, 
-}
-```
-
-</div>
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -7258,52 +5853,6 @@ Update a contact.
 Requires ANY permissions: 
 
 * outbound:contact:edit
-
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyDialerContactExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#DialerContactExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-DialerContact <a href="#" onclick="return copyDialerContactExample()">Copy</a>
-
-<div id="DialerContactExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "id": String, 
-  "name": String, 
-  "contactListId": String, 
-  "data": {String: Object}, 
-  "callRecords": { 
-    "lastAttempt": Date, 
-    "lastResult": String, 
-  },  
-  "callable": Boolean, 
-  "phoneNumberStatus": { 
-    "callable": Boolean, 
-  },  
-  "contactColumnTimeZones": { 
-    "timeZone": String, 
-    "columnType": String, 
-  },  
-  "configurationOverrides": { 
-    "priority": Boolean, 
-  },  
-  "selfUri": String, 
-}
-```
-
-</div>
-
 
 ### Example Usage
 
@@ -7362,61 +5911,6 @@ Requires ANY permissions:
 
 * outbound:contactListFilter:edit
 
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyContactListFilterExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#ContactListFilterExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-ContactListFilter <a href="#" onclick="return copyContactListFilterExample()">Copy</a>
-
-<div id="ContactListFilterExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "id": String, 
-  "name": String, 
-  "dateCreated": Date, 
-  "dateModified": Date, 
-  "version": Number, 
-  "contactList": { 
-    "id": String, 
-    "name": String, 
-    "selfUri": String, 
-  },  
-  "clauses": { 
-    "filterType": String, 
-    "predicates": { 
-      "column": String, 
-      "columnType": String, 
-      "operator": String, 
-      "value": String, 
-      "range": { 
-        "min": String, 
-        "max": String, 
-        "minInclusive": Boolean, 
-        "maxInclusive": Boolean, 
-        "inSet": [String], 
-      },  
-      "inverted": Boolean, 
-    },  
-  },  
-  "filterType": String, 
-  "selfUri": String, 
-}
-```
-
-</div>
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -7471,55 +5965,6 @@ Update dialer DNC list
 Requires ANY permissions: 
 
 * outbound:dncList:edit
-
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyDncListExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#DncListExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-DncList <a href="#" onclick="return copyDncListExample()">Copy</a>
-
-<div id="DncListExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "id": String, 
-  "name": String, 
-  "dateCreated": Date, 
-  "dateModified": Date, 
-  "version": Number, 
-  "importStatus": { 
-    "state": String, 
-    "totalRecords": Number, 
-    "completedRecords": Number, 
-    "percentComplete": Number, 
-    "failureReason": String, 
-  },  
-  "size": Number, 
-  "dncSourceType": String, 
-  "loginId": String, 
-  "dncCodes": [String], 
-  "licenseId": String, 
-  "division": { 
-    "id": String, 
-    "name": String, 
-    "selfUri": String, 
-  },  
-  "selfUri": String, 
-}
-```
-
-</div>
-
 
 ### Example Usage
 
@@ -7576,78 +6021,6 @@ Requires ANY permissions:
 
 * outbound:messagingCampaign:edit
 
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyMessagingCampaignExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#MessagingCampaignExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-MessagingCampaign <a href="#" onclick="return copyMessagingCampaignExample()">Copy</a>
-
-<div id="MessagingCampaignExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "id": String, 
-  "name": String, 
-  "dateCreated": Date, 
-  "dateModified": Date, 
-  "version": Number, 
-  "division": { 
-    "id": String, 
-    "name": String, 
-    "selfUri": String, 
-  },  
-  "campaignStatus": String, 
-  "callableTimeSet": { 
-    "id": String, 
-    "name": String, 
-    "selfUri": String, 
-  },  
-  "contactList": { 
-    "id": String, 
-    "name": String, 
-    "selfUri": String, 
-  },  
-  "dncLists": { 
-    "id": String, 
-    "name": String, 
-    "selfUri": String, 
-  },  
-  "alwaysRunning": Boolean, 
-  "contactSorts": { 
-    "fieldName": String, 
-    "direction": String, 
-    "numeric": Boolean, 
-  },  
-  "messagesPerMinute": Number, 
-  "errors": { 
-    "error": String, 
-    "details": String, 
-  },  
-  "smsConfig": { 
-    "messageColumn": String, 
-    "phoneColumn": String, 
-    "senderSmsPhoneNumber": { 
-      "phoneNumber": String, 
-      "selfUri": String, 
-    },  
-  },  
-  "selfUri": String, 
-}
-```
-
-</div>
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -7702,71 +6075,6 @@ Update a RuleSet.
 Requires ANY permissions: 
 
 * outbound:ruleSet:edit
-
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyRuleSetExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#RuleSetExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-RuleSet <a href="#" onclick="return copyRuleSetExample()">Copy</a>
-
-<div id="RuleSetExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "id": String, 
-  "name": String, 
-  "dateCreated": Date, 
-  "dateModified": Date, 
-  "version": Number, 
-  "contactList": { 
-    "id": String, 
-    "name": String, 
-    "selfUri": String, 
-  },  
-  "queue": { 
-    "id": String, 
-    "name": String, 
-    "selfUri": String, 
-  },  
-  "rules": { 
-    "id": String, 
-    "name": String, 
-    "order": Number, 
-    "category": String, 
-    "conditions": { 
-      "type": String, 
-      "inverted": Boolean, 
-      "attributeName": String, 
-      "value": String, 
-      "valueType": String, 
-      "operator": String, 
-      "codes": [String], 
-      "property": String, 
-      "propertyType": String, 
-    },  
-    "actions": { 
-      "type": String, 
-      "actionTypeName": String, 
-      "updateOption": String, 
-      "properties": {String: String}, 
-    },  
-  },  
-  "selfUri": String, 
-}
-```
-
-</div>
-
 
 ### Example Usage
 
@@ -7823,48 +6131,6 @@ Requires ANY permissions:
 
 * outbound:schedule:edit
 
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyCampaignScheduleExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#CampaignScheduleExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-CampaignSchedule <a href="#" onclick="return copyCampaignScheduleExample()">Copy</a>
-
-<div id="CampaignScheduleExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "id": String, 
-  "name": String, 
-  "dateCreated": Date, 
-  "dateModified": Date, 
-  "version": Number, 
-  "intervals": { 
-    "start": String, 
-    "end": String, 
-  },  
-  "timeZone": String, 
-  "campaign": { 
-    "id": String, 
-    "name": String, 
-    "selfUri": String, 
-  },  
-  "selfUri": String, 
-}
-```
-
-</div>
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -7919,48 +6185,6 @@ Update a new sequence schedule.
 Requires ANY permissions: 
 
 * outbound:schedule:edit
-
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copySequenceScheduleExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#SequenceScheduleExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-SequenceSchedule <a href="#" onclick="return copySequenceScheduleExample()">Copy</a>
-
-<div id="SequenceScheduleExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "id": String, 
-  "name": String, 
-  "dateCreated": Date, 
-  "dateModified": Date, 
-  "version": Number, 
-  "intervals": { 
-    "start": String, 
-    "end": String, 
-  },  
-  "timeZone": String, 
-  "sequence": { 
-    "id": String, 
-    "name": String, 
-    "selfUri": String, 
-  },  
-  "selfUri": String, 
-}
-```
-
-</div>
-
 
 ### Example Usage
 
@@ -8017,47 +6241,6 @@ Requires ANY permissions:
 
 * outbound:campaignSequence:edit
 
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyCampaignSequenceExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#CampaignSequenceExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-CampaignSequence <a href="#" onclick="return copyCampaignSequenceExample()">Copy</a>
-
-<div id="CampaignSequenceExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "id": String, 
-  "name": String, 
-  "dateCreated": Date, 
-  "dateModified": Date, 
-  "version": Number, 
-  "campaigns": { 
-    "id": String, 
-    "name": String, 
-    "selfUri": String, 
-  },  
-  "currentCampaign": Number, 
-  "status": String, 
-  "stopMessage": String, 
-  "repeat": Boolean, 
-  "selfUri": String, 
-}
-```
-
-</div>
-
-
 ### Example Usage
 
 ```{"language":"javascript"}
@@ -8112,40 +6295,6 @@ Update the Dialer wrap up code mapping.
 Requires ANY permissions: 
 
 * outbound:wrapUpCodeMapping:edit
-
-
-### Request Body Schema
-
-<script type="text/javascript">
-	function copyWrapUpCodeMappingExample() {
-		let temp = $("<textarea>");
-		$("body").append(temp);
-		temp.val($('#WrapUpCodeMappingExample').text()).select();
-		document.execCommand("copy");
-		temp.remove();
-		return false;
-	}
-</script>
-
-WrapUpCodeMapping <a href="#" onclick="return copyWrapUpCodeMappingExample()">Copy</a>
-
-<div id="WrapUpCodeMappingExample">
-
-```{"language":"json", "maxHeight": "250px"}
-{ 
-  "id": String, 
-  "name": String, 
-  "dateCreated": Date, 
-  "dateModified": Date, 
-  "version": Number, 
-  "defaultSet": [String], 
-  "mapping": {String: [String]}, 
-  "selfUri": String, 
-}
-```
-
-</div>
-
 
 ### Example Usage
 
