@@ -5,7 +5,7 @@ class WorkforceManagementApi {
 	/**
 	 * WorkforceManagement service.
 	 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-	 * @version 115.0.0
+	 * @version 116.0.0
 	 */
 
 	/**
@@ -225,6 +225,26 @@ class WorkforceManagementApi {
 			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}', 
 			'DELETE', 
 			{ 'businessUnitId': businessUnitId,'weekDateId': weekDateId,'forecastId': forecastId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Disable generated calendar link for the current user
+	 * 
+	 */
+	deleteWorkforcemanagementCalendarUrlIcs() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/calendar/url/ics', 
+			'DELETE', 
+			{  }, 
 			{  }, 
 			{  }, 
 			{  }, 
@@ -1220,6 +1240,51 @@ class WorkforceManagementApi {
 	}
 
 	/**
+	 * Get ics formatted calendar based on shareable link
+	 * 
+	 * @param {String} calendarId The id of the ics-formatted calendar
+	 */
+	getWorkforcemanagementCalendarDataIcs(calendarId) { 
+		// verify the required parameter 'calendarId' is set
+		if (calendarId === undefined || calendarId === null) {
+			throw 'Missing the required parameter "calendarId" when calling getWorkforcemanagementCalendarDataIcs';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/calendar/data/ics', 
+			'GET', 
+			{  }, 
+			{ 'calendarId': calendarId }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['text/calendar']
+		);
+	}
+
+	/**
+	 * Get existing calendar link for the current user
+	 * 
+	 */
+	getWorkforcemanagementCalendarUrlIcs() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/calendar/url/ics', 
+			'GET', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
 	 * Retrieves delete job status for historical data imports of the organization
 	 * 
 	 */
@@ -1665,8 +1730,12 @@ class WorkforceManagementApi {
 	 * 
 	 * @param {String} managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
 	 * @param {String} workPlanId The ID of the work plan to fetch
+	 * @param {Object} opts Optional parameters
+	 * @param {Array.<String>} opts.includeOnly limit response to the specified fields
 	 */
-	getWorkforcemanagementManagementunitWorkplan(managementUnitId, workPlanId) { 
+	getWorkforcemanagementManagementunitWorkplan(managementUnitId, workPlanId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'managementUnitId' is set
 		if (managementUnitId === undefined || managementUnitId === null) {
 			throw 'Missing the required parameter "managementUnitId" when calling getWorkforcemanagementManagementunitWorkplan';
@@ -1680,7 +1749,7 @@ class WorkforceManagementApi {
 			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans/{workPlanId}', 
 			'GET', 
 			{ 'managementUnitId': managementUnitId,'workPlanId': workPlanId }, 
-			{  }, 
+			{ 'includeOnly': this.apiClient.buildCollectionParam(opts['includeOnly'], 'multi') }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -2807,6 +2876,30 @@ class WorkforceManagementApi {
 			{  }, 
 			{  }, 
 			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Create a newly generated calendar link for the current user; if the current user has previously generated one, the generated link will be returned
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.language A language tag (which is sometimes referred to as a \&quot;locale identifier\&quot;) to use to localize default activity code names in the ics-formatted calendar (default to en-US)
+	 */
+	postWorkforcemanagementCalendarUrlIcs(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/calendar/url/ics', 
+			'POST', 
+			{  }, 
+			{ 'language': opts['language'] }, 
+			{  }, 
+			{  }, 
+			null, 
 			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']

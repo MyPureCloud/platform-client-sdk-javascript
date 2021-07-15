@@ -5,7 +5,7 @@ class OrganizationApi {
 	/**
 	 * Organization service.
 	 * @module purecloud-platform-client-v2/api/OrganizationApi
-	 * @version 115.0.0
+	 * @version 116.0.0
 	 */
 
 	/**
@@ -171,6 +171,31 @@ class OrganizationApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/organizations/limits/namespaces/{namespaceName}', 
+			'GET', 
+			{ 'namespaceName': namespaceName }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get the default limits in a namespace for an organization
+	 * 
+	 * @param {String} namespaceName The namespace to fetch defaults limits for
+	 */
+	getOrganizationsLimitsNamespaceDefaults(namespaceName) { 
+		// verify the required parameter 'namespaceName' is set
+		if (namespaceName === undefined || namespaceName === null) {
+			throw 'Missing the required parameter "namespaceName" when calling getOrganizationsLimitsNamespaceDefaults';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/organizations/limits/namespaces/{namespaceName}/defaults', 
 			'GET', 
 			{ 'namespaceName': namespaceName }, 
 			{  }, 

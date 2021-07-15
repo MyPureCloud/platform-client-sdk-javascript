@@ -8060,7 +8060,7 @@ class Configuration {
 
 /**
  * @module purecloud-platform-client-v2/ApiClient
- * @version 115.0.0
+ * @version 116.0.0
  */
 class ApiClient {
 	/**
@@ -9000,7 +9000,7 @@ class ApiClient {
 
 				// set header parameters
 				request.set(that.defaultHeaders).set(that.normalizeParams(headerParams));
-				//request.set({ 'purecloud-sdk': '115.0.0' });
+				//request.set({ 'purecloud-sdk': '116.0.0' });
 
 				// set request timeout
 				request.timeout(that.timeout);
@@ -9100,7 +9100,7 @@ class AlertingApi {
 	/**
 	 * Alerting service.
 	 * @module purecloud-platform-client-v2/api/AlertingApi
-	 * @version 115.0.0
+	 * @version 116.0.0
 	 */
 
 	/**
@@ -9414,7 +9414,7 @@ class AnalyticsApi {
 	/**
 	 * Analytics service.
 	 * @module purecloud-platform-client-v2/api/AnalyticsApi
-	 * @version 115.0.0
+	 * @version 116.0.0
 	 */
 
 	/**
@@ -10519,7 +10519,7 @@ class ArchitectApi {
 	/**
 	 * Architect service.
 	 * @module purecloud-platform-client-v2/api/ArchitectApi
-	 * @version 115.0.0
+	 * @version 116.0.0
 	 */
 
 	/**
@@ -13451,7 +13451,7 @@ class AuditApi {
 	/**
 	 * Audit service.
 	 * @module purecloud-platform-client-v2/api/AuditApi
-	 * @version 115.0.0
+	 * @version 116.0.0
 	 */
 
 	/**
@@ -13622,7 +13622,7 @@ class AuthorizationApi {
 	/**
 	 * Authorization service.
 	 * @module purecloud-platform-client-v2/api/AuthorizationApi
-	 * @version 115.0.0
+	 * @version 116.0.0
 	 */
 
 	/**
@@ -14805,7 +14805,7 @@ class BillingApi {
 	/**
 	 * Billing service.
 	 * @module purecloud-platform-client-v2/api/BillingApi
-	 * @version 115.0.0
+	 * @version 116.0.0
 	 */
 
 	/**
@@ -14885,7 +14885,7 @@ class ChatApi {
 	/**
 	 * Chat service.
 	 * @module purecloud-platform-client-v2/api/ChatApi
-	 * @version 115.0.0
+	 * @version 116.0.0
 	 */
 
 	/**
@@ -14976,7 +14976,7 @@ class CoachingApi {
 	/**
 	 * Coaching service.
 	 * @module purecloud-platform-client-v2/api/CoachingApi
-	 * @version 115.0.0
+	 * @version 116.0.0
 	 */
 
 	/**
@@ -15551,7 +15551,7 @@ class ContentManagementApi {
 	/**
 	 * ContentManagement service.
 	 * @module purecloud-platform-client-v2/api/ContentManagementApi
-	 * @version 115.0.0
+	 * @version 116.0.0
 	 */
 
 	/**
@@ -16691,7 +16691,7 @@ class ConversationsApi {
 	/**
 	 * Conversations service.
 	 * @module purecloud-platform-client-v2/api/ConversationsApi
-	 * @version 115.0.0
+	 * @version 116.0.0
 	 */
 
 	/**
@@ -21025,7 +21025,7 @@ class DataExtensionsApi {
 	/**
 	 * DataExtensions service.
 	 * @module purecloud-platform-client-v2/api/DataExtensionsApi
-	 * @version 115.0.0
+	 * @version 116.0.0
 	 */
 
 	/**
@@ -21111,7 +21111,7 @@ class ExternalContactsApi {
 	/**
 	 * ExternalContacts service.
 	 * @module purecloud-platform-client-v2/api/ExternalContactsApi
-	 * @version 115.0.0
+	 * @version 116.0.0
 	 */
 
 	/**
@@ -22854,7 +22854,7 @@ class FaxApi {
 	/**
 	 * Fax service.
 	 * @module purecloud-platform-client-v2/api/FaxApi
-	 * @version 115.0.0
+	 * @version 116.0.0
 	 */
 
 	/**
@@ -23025,7 +23025,7 @@ class FlowsApi {
 	/**
 	 * Flows service.
 	 * @module purecloud-platform-client-v2/api/FlowsApi
-	 * @version 115.0.0
+	 * @version 116.0.0
 	 */
 
 	/**
@@ -23096,7 +23096,7 @@ class GamificationApi {
 	/**
 	 * Gamification service.
 	 * @module purecloud-platform-client-v2/api/GamificationApi
-	 * @version 115.0.0
+	 * @version 116.0.0
 	 */
 
 	/**
@@ -23244,6 +23244,7 @@ class GamificationApi {
 	 * 
 	 * @param {String} metricId metric Id
 	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.workday The objective query workday. If not specified, then it retrieves the current objective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 * @param {String} opts.performanceProfileId The profile id of the metrics you are trying to retrieve. The DEFAULT profile is used if nothing is given.
 	 */
 	getGamificationMetric(metricId, opts) { 
@@ -23258,7 +23259,7 @@ class GamificationApi {
 			'/api/v2/gamification/metrics/{metricId}', 
 			'GET', 
 			{ 'metricId': metricId }, 
-			{ 'performance profile id': opts['performanceProfileId'] }, 
+			{ 'workday': opts['workday'],'performanceProfileId': opts['performanceProfileId'] }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -23318,6 +23319,7 @@ class GamificationApi {
 	 * 
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.performanceProfileId The profile id of the metrics you are trying to retrieve. The DEFAULT profile is used if nothing is given.
+	 * @param {String} opts.workday The objective query workday. If not specified, then it retrieves the current objective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 */
 	getGamificationMetrics(opts) { 
 		opts = opts || {};
@@ -23327,7 +23329,7 @@ class GamificationApi {
 			'/api/v2/gamification/metrics', 
 			'GET', 
 			{  }, 
-			{ 'performance profile id': opts['performanceProfileId'] }, 
+			{ 'performanceProfileId': opts['performanceProfileId'],'workday': opts['workday'] }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -24043,7 +24045,7 @@ class GamificationApi {
 			'/api/v2/gamification/metrics/{metricId}', 
 			'PUT', 
 			{ 'metricId': metricId }, 
-			{ 'performance profile id': opts['performanceProfileId'] }, 
+			{ 'performanceProfileId': opts['performanceProfileId'] }, 
 			{  }, 
 			{  }, 
 			body, 
@@ -24113,7 +24115,7 @@ class GeneralDataProtectionRegulationApi {
 	/**
 	 * GeneralDataProtectionRegulation service.
 	 * @module purecloud-platform-client-v2/api/GeneralDataProtectionRegulationApi
-	 * @version 115.0.0
+	 * @version 116.0.0
 	 */
 
 	/**
@@ -24243,7 +24245,7 @@ class GeolocationApi {
 	/**
 	 * Geolocation service.
 	 * @module purecloud-platform-client-v2/api/GeolocationApi
-	 * @version 115.0.0
+	 * @version 116.0.0
 	 */
 
 	/**
@@ -24374,7 +24376,7 @@ class GreetingsApi {
 	/**
 	 * Greetings service.
 	 * @module purecloud-platform-client-v2/api/GreetingsApi
-	 * @version 115.0.0
+	 * @version 116.0.0
 	 */
 
 	/**
@@ -24829,7 +24831,7 @@ class GroupsApi {
 	/**
 	 * Groups service.
 	 * @module purecloud-platform-client-v2/api/GroupsApi
-	 * @version 115.0.0
+	 * @version 116.0.0
 	 */
 
 	/**
@@ -25234,7 +25236,7 @@ class IdentityProviderApi {
 	/**
 	 * IdentityProvider service.
 	 * @module purecloud-platform-client-v2/api/IdentityProviderApi
-	 * @version 115.0.0
+	 * @version 116.0.0
 	 */
 
 	/**
@@ -25990,7 +25992,7 @@ class IntegrationsApi {
 	/**
 	 * Integrations service.
 	 * @module purecloud-platform-client-v2/api/IntegrationsApi
-	 * @version 115.0.0
+	 * @version 116.0.0
 	 */
 
 	/**
@@ -26439,7 +26441,7 @@ class IntegrationsApi {
 	 * @param {Number} opts.pageNumber The page number requested (default to 1)
 	 * @param {String} opts.nextPage next page token
 	 * @param {String} opts.previousPage Previous page token
-	 * @param {String} opts.sortBy Root level field name to sort on.
+	 * @param {String} opts.sortBy Root level field name to sort on.  Only &#39;name&#39; is supported on this endpoint.
 	 * @param {Object} opts.sortOrder Direction to sort &#39;sortBy&#39; field. (default to asc)
 	 * @param {Object} opts.secure Filter to only include secure actions. True will only include actions marked secured. False will include only unsecure actions. Do not use filter if you want all Actions.
 	 */
@@ -26485,6 +26487,130 @@ class IntegrationsApi {
 			'GET', 
 			{  }, 
 			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'nextPage': opts['nextPage'],'previousPage': opts['previousPage'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'category': opts['category'],'name': opts['name'],'secure': opts['secure'],'includeAuthActions': opts['includeAuthActions'] }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a specific botConnector bot, plus versions, for this integration
+	 * 
+	 * @param {String} integrationId The integration ID for this group of bots
+	 * @param {String} botId The botID for this bot
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.version Specific Version
+	 */
+	getIntegrationsBotconnectorIntegrationIdBot(integrationId, botId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'integrationId' is set
+		if (integrationId === undefined || integrationId === null) {
+			throw 'Missing the required parameter "integrationId" when calling getIntegrationsBotconnectorIntegrationIdBot';
+		}
+		// verify the required parameter 'botId' is set
+		if (botId === undefined || botId === null) {
+			throw 'Missing the required parameter "botId" when calling getIntegrationsBotconnectorIntegrationIdBot';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/integrations/botconnector/{integrationId}/bots/{botId}', 
+			'GET', 
+			{ 'integrationId': integrationId,'botId': botId }, 
+			{ 'version': opts['version'] }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a list of bot versions for a bot
+	 * 
+	 * @param {String} integrationId The integration ID for this bot group
+	 * @param {String} botId The botID for this bot
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 */
+	getIntegrationsBotconnectorIntegrationIdBotVersions(integrationId, botId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'integrationId' is set
+		if (integrationId === undefined || integrationId === null) {
+			throw 'Missing the required parameter "integrationId" when calling getIntegrationsBotconnectorIntegrationIdBotVersions';
+		}
+		// verify the required parameter 'botId' is set
+		if (botId === undefined || botId === null) {
+			throw 'Missing the required parameter "botId" when calling getIntegrationsBotconnectorIntegrationIdBotVersions';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/integrations/botconnector/{integrationId}/bots/{botId}/versions', 
+			'GET', 
+			{ 'integrationId': integrationId,'botId': botId }, 
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'] }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a list of botConnector bots for this integration
+	 * 
+	 * @param {String} integrationId The integration ID for this group of bots
+	 */
+	getIntegrationsBotconnectorIntegrationIdBots(integrationId) { 
+		// verify the required parameter 'integrationId' is set
+		if (integrationId === undefined || integrationId === null) {
+			throw 'Missing the required parameter "integrationId" when calling getIntegrationsBotconnectorIntegrationIdBots';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/integrations/botconnector/{integrationId}/bots', 
+			'GET', 
+			{ 'integrationId': integrationId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a summary list of botConnector bots for this integration
+	 * 
+	 * @param {String} integrationId The integration ID for this group of bots
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 */
+	getIntegrationsBotconnectorIntegrationIdBotsSummaries(integrationId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'integrationId' is set
+		if (integrationId === undefined || integrationId === null) {
+			throw 'Missing the required parameter "integrationId" when calling getIntegrationsBotconnectorIntegrationIdBotsSummaries';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/integrations/botconnector/{integrationId}/bots/summaries', 
+			'GET', 
+			{ 'integrationId': integrationId }, 
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'] }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -27423,6 +27549,36 @@ class IntegrationsApi {
 	}
 
 	/**
+	 * Set a list of botConnector bots plus versions for this integration
+	 * 
+	 * @param {String} integrationId The integration ID for this group of bots
+	 * @param {Object} botList 
+	 */
+	putIntegrationsBotconnectorIntegrationIdBots(integrationId, botList) { 
+		// verify the required parameter 'integrationId' is set
+		if (integrationId === undefined || integrationId === null) {
+			throw 'Missing the required parameter "integrationId" when calling putIntegrationsBotconnectorIntegrationIdBots';
+		}
+		// verify the required parameter 'botList' is set
+		if (botList === undefined || botList === null) {
+			throw 'Missing the required parameter "botList" when calling putIntegrationsBotconnectorIntegrationIdBots';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/integrations/botconnector/{integrationId}/bots', 
+			'PUT', 
+			{ 'integrationId': integrationId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			botList, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
 	 * Update a set of credentials
 	 * 
 	 * @param {String} credentialId Credential ID
@@ -27482,7 +27638,7 @@ class JourneyApi {
 	/**
 	 * Journey service.
 	 * @module purecloud-platform-client-v2/api/JourneyApi
-	 * @version 115.0.0
+	 * @version 116.0.0
 	 */
 
 	/**
@@ -27687,7 +27843,7 @@ class JourneyApi {
 	 * 
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageNumber Page number (default to 1)
-	 * @param {Number} opts.pageSize Page size. The max that will be returned is 100. (default to 25)
+	 * @param {Number} opts.pageSize Page size (default to 25)
 	 */
 	getJourneyActiontargets(opts) { 
 		opts = opts || {};
@@ -28143,7 +28299,7 @@ class KnowledgeApi {
 	/**
 	 * Knowledge service.
 	 * @module purecloud-platform-client-v2/api/KnowledgeApi
-	 * @version 115.0.0
+	 * @version 116.0.0
 	 */
 
 	/**
@@ -28286,7 +28442,7 @@ class KnowledgeApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.before The cursor that points to the start of the set of entities that has been returned.
 	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
-	 * @param {String} opts.limit Number of entities to return. Maximum of 200. Deprecated in favour of pageSize.
+	 * @param {String} opts.limit Number of entities to return. Maximum of 200. Deprecated in favour of pageSize, use CursorQueryParameters instead.
 	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
 	 * @param {String} opts.name Filter to return the categories that starts with the given category name.
 	 */
@@ -28394,7 +28550,7 @@ class KnowledgeApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.before The cursor that points to the start of the set of entities that has been returned.
 	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
-	 * @param {String} opts.limit Number of entities to return. Maximum of 200. Deprecated in favour of pageSize.
+	 * @param {String} opts.limit Number of entities to return. Maximum of 200. Deprecated in favour of pageSize, use CursorQueryParameters instead.
 	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
 	 * @param {String} opts.categories Filter by categories ids, comma separated values expected.
 	 * @param {String} opts.title Filter by document title.
@@ -28469,7 +28625,7 @@ class KnowledgeApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.before The cursor that points to the start of the set of entities that has been returned.
 	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
-	 * @param {String} opts.limit Number of entities to return. Maximum of 200. Deprecated in favour of pageSize.
+	 * @param {String} opts.limit Number of entities to return. Maximum of 200. Deprecated in favour of pageSize, use CursorQueryParameters instead.
 	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
 	 * @param {Object} opts.knowledgeDocumentsState Return the training with the specified state of the trained documents.
 	 */
@@ -28505,7 +28661,7 @@ class KnowledgeApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.before The cursor that points to the start of the set of entities that has been returned.
 	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
-	 * @param {String} opts.limit Number of entities to return. Maximum of 200. Deprecated in favour of pageSize.
+	 * @param {String} opts.limit Number of entities to return. Maximum of 200. Deprecated in favour of pageSize, use CursorQueryParameters instead.
 	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
 	 * @param {String} opts.name Filter by Name.
 	 * @param {Object} opts.coreLanguage Filter by core language.
@@ -28869,7 +29025,7 @@ class LanguageUnderstandingApi {
 	/**
 	 * LanguageUnderstanding service.
 	 * @module purecloud-platform-client-v2/api/LanguageUnderstandingApi
-	 * @version 115.0.0
+	 * @version 116.0.0
 	 */
 
 	/**
@@ -28959,6 +29115,61 @@ class LanguageUnderstandingApi {
 			'/api/v2/languageunderstanding/domains/{domainId}/versions/{domainVersionId}', 
 			'DELETE', 
 			{ 'domainId': domainId,'domainVersionId': domainVersionId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete a miner.
+	 * 
+	 * @param {String} minerId Miner ID
+	 */
+	deleteLanguageunderstandingMiner(minerId) { 
+		// verify the required parameter 'minerId' is set
+		if (minerId === undefined || minerId === null) {
+			throw 'Missing the required parameter "minerId" when calling deleteLanguageunderstandingMiner';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/languageunderstanding/miners/{minerId}', 
+			'DELETE', 
+			{ 'minerId': minerId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete a draft
+	 * 
+	 * @param {String} minerId Miner ID
+	 * @param {String} draftId Draft ID
+	 */
+	deleteLanguageunderstandingMinerDraft(minerId, draftId) { 
+		// verify the required parameter 'minerId' is set
+		if (minerId === undefined || minerId === null) {
+			throw 'Missing the required parameter "minerId" when calling deleteLanguageunderstandingMinerDraft';
+		}
+		// verify the required parameter 'draftId' is set
+		if (draftId === undefined || draftId === null) {
+			throw 'Missing the required parameter "draftId" when calling deleteLanguageunderstandingMinerDraft';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/languageunderstanding/miners/{minerId}/drafts/{draftId}', 
+			'DELETE', 
+			{ 'minerId': minerId,'draftId': draftId }, 
 			{  }, 
 			{  }, 
 			{  }, 
@@ -29187,6 +29398,169 @@ class LanguageUnderstandingApi {
 	}
 
 	/**
+	 * Get information about a miner.
+	 * 
+	 * @param {String} minerId Miner ID
+	 */
+	getLanguageunderstandingMiner(minerId) { 
+		// verify the required parameter 'minerId' is set
+		if (minerId === undefined || minerId === null) {
+			throw 'Missing the required parameter "minerId" when calling getLanguageunderstandingMiner';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/languageunderstanding/miners/{minerId}', 
+			'GET', 
+			{ 'minerId': minerId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get information about a draft.
+	 * 
+	 * @param {String} minerId Miner ID
+	 * @param {String} draftId Draft ID
+	 */
+	getLanguageunderstandingMinerDraft(minerId, draftId) { 
+		// verify the required parameter 'minerId' is set
+		if (minerId === undefined || minerId === null) {
+			throw 'Missing the required parameter "minerId" when calling getLanguageunderstandingMinerDraft';
+		}
+		// verify the required parameter 'draftId' is set
+		if (draftId === undefined || draftId === null) {
+			throw 'Missing the required parameter "draftId" when calling getLanguageunderstandingMinerDraft';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/languageunderstanding/miners/{minerId}/drafts/{draftId}', 
+			'GET', 
+			{ 'minerId': minerId,'draftId': draftId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Retrieve the list of drafts created.
+	 * 
+	 * @param {String} minerId Miner ID
+	 */
+	getLanguageunderstandingMinerDrafts(minerId) { 
+		// verify the required parameter 'minerId' is set
+		if (minerId === undefined || minerId === null) {
+			throw 'Missing the required parameter "minerId" when calling getLanguageunderstandingMinerDrafts';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/languageunderstanding/miners/{minerId}/drafts', 
+			'GET', 
+			{ 'minerId': minerId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get information about a mined intent
+	 * 
+	 * @param {String} minerId Miner ID
+	 * @param {String} intentId The ID of the intent to be retrieved.
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.expand Option to fetch utterances
+	 */
+	getLanguageunderstandingMinerIntent(minerId, intentId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'minerId' is set
+		if (minerId === undefined || minerId === null) {
+			throw 'Missing the required parameter "minerId" when calling getLanguageunderstandingMinerIntent';
+		}
+		// verify the required parameter 'intentId' is set
+		if (intentId === undefined || intentId === null) {
+			throw 'Missing the required parameter "intentId" when calling getLanguageunderstandingMinerIntent';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/languageunderstanding/miners/{minerId}/intents/{intentId}', 
+			'GET', 
+			{ 'minerId': minerId,'intentId': intentId }, 
+			{ 'expand': opts['expand'] }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Retrieve a list of mined intents.
+	 * 
+	 * @param {String} minerId Miner ID
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.expand Option to fetch utterances.
+	 */
+	getLanguageunderstandingMinerIntents(minerId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'minerId' is set
+		if (minerId === undefined || minerId === null) {
+			throw 'Missing the required parameter "minerId" when calling getLanguageunderstandingMinerIntents';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/languageunderstanding/miners/{minerId}/intents', 
+			'GET', 
+			{ 'minerId': minerId }, 
+			{ 'expand': opts['expand'] }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Retrieve the list of miners created.
+	 * 
+	 */
+	getLanguageunderstandingMiners() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/languageunderstanding/miners', 
+			'GET', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
 	 * Update an NLU Domain.
 	 * 
 	 * @param {String} domainId ID of the NLU domain.
@@ -29210,6 +29584,40 @@ class LanguageUnderstandingApi {
 			{  }, 
 			{  }, 
 			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Save information for the draft
+	 * 
+	 * @param {String} minerId Miner ID
+	 * @param {String} draftId Draft ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body 
+	 */
+	patchLanguageunderstandingMinerDraft(minerId, draftId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'minerId' is set
+		if (minerId === undefined || minerId === null) {
+			throw 'Missing the required parameter "minerId" when calling patchLanguageunderstandingMinerDraft';
+		}
+		// verify the required parameter 'draftId' is set
+		if (draftId === undefined || draftId === null) {
+			throw 'Missing the required parameter "draftId" when calling patchLanguageunderstandingMinerDraft';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/languageunderstanding/miners/{minerId}/drafts/{draftId}', 
+			'PATCH', 
+			{ 'minerId': minerId,'draftId': draftId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
@@ -29397,6 +29805,90 @@ class LanguageUnderstandingApi {
 	}
 
 	/**
+	 * Create a new draft resource.
+	 * 
+	 * @param {String} minerId Miner ID
+	 * @param {Object} body Details for creating draft resource
+	 */
+	postLanguageunderstandingMinerDrafts(minerId, body) { 
+		// verify the required parameter 'minerId' is set
+		if (minerId === undefined || minerId === null) {
+			throw 'Missing the required parameter "minerId" when calling postLanguageunderstandingMinerDrafts';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postLanguageunderstandingMinerDrafts';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/languageunderstanding/miners/{minerId}/drafts', 
+			'POST', 
+			{ 'minerId': minerId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Start the mining process. Specify date range pair with mediaType and queueIds for mining data from Genesys Cloud. Specify only uploadKey for mining through an external file.
+	 * 
+	 * @param {String} minerId Miner ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body 
+	 */
+	postLanguageunderstandingMinerExecute(minerId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'minerId' is set
+		if (minerId === undefined || minerId === null) {
+			throw 'Missing the required parameter "minerId" when calling postLanguageunderstandingMinerExecute';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/languageunderstanding/miners/{minerId}/execute', 
+			'POST', 
+			{ 'minerId': minerId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Create a unique miner.
+	 * 
+	 * @param {Object} body Details for creating a new miner resource.
+	 */
+	postLanguageunderstandingMiners(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postLanguageunderstandingMiners';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/languageunderstanding/miners', 
+			'POST', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
 	 * Update an NLU Domain Version.
 	 * 
 	 * @param {String} domainId ID of the NLU domain.
@@ -29437,7 +29929,7 @@ class LanguagesApi {
 	/**
 	 * Languages service.
 	 * @module purecloud-platform-client-v2/api/LanguagesApi
-	 * @version 115.0.0
+	 * @version 116.0.0
 	 */
 
 	/**
@@ -29705,7 +30197,7 @@ class LearningApi {
 	/**
 	 * Learning service.
 	 * @module purecloud-platform-client-v2/api/LearningApi
-	 * @version 115.0.0
+	 * @version 116.0.0
 	 */
 
 	/**
@@ -30264,7 +30756,7 @@ class LicenseApi {
 	/**
 	 * License service.
 	 * @module purecloud-platform-client-v2/api/LicenseApi
-	 * @version 115.0.0
+	 * @version 116.0.0
 	 */
 
 	/**
@@ -30502,7 +30994,7 @@ class LocationsApi {
 	/**
 	 * Locations service.
 	 * @module purecloud-platform-client-v2/api/LocationsApi
-	 * @version 115.0.0
+	 * @version 116.0.0
 	 */
 
 	/**
@@ -30738,7 +31230,7 @@ class MobileDevicesApi {
 	/**
 	 * MobileDevices service.
 	 * @module purecloud-platform-client-v2/api/MobileDevicesApi
-	 * @version 115.0.0
+	 * @version 116.0.0
 	 */
 
 	/**
@@ -30889,7 +31381,7 @@ class NotificationsApi {
 	/**
 	 * Notifications service.
 	 * @module purecloud-platform-client-v2/api/NotificationsApi
-	 * @version 115.0.0
+	 * @version 116.0.0
 	 */
 
 	/**
@@ -31004,6 +31496,31 @@ class NotificationsApi {
 	}
 
 	/**
+	 * Verify a channel still exists and is valid
+	 * 
+	 * @param {String} channelId Channel ID
+	 */
+	headNotificationsChannel(channelId) { 
+		// verify the required parameter 'channelId' is set
+		if (channelId === undefined || channelId === null) {
+			throw 'Missing the required parameter "channelId" when calling headNotificationsChannel';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/notifications/channels/{channelId}', 
+			'HEAD', 
+			{ 'channelId': channelId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
 	 * Add a list of subscriptions to the existing list of subscriptions
 	 * 
 	 * @param {String} channelId Channel ID
@@ -31089,7 +31606,7 @@ class OAuthApi {
 	/**
 	 * OAuth service.
 	 * @module purecloud-platform-client-v2/api/OAuthApi
-	 * @version 115.0.0
+	 * @version 116.0.0
 	 */
 
 	/**
@@ -31447,7 +31964,7 @@ class ObjectsApi {
 	/**
 	 * Objects service.
 	 * @module purecloud-platform-client-v2/api/ObjectsApi
-	 * @version 115.0.0
+	 * @version 116.0.0
 	 */
 
 	/**
@@ -31718,7 +32235,7 @@ class OrganizationApi {
 	/**
 	 * Organization service.
 	 * @module purecloud-platform-client-v2/api/OrganizationApi
-	 * @version 115.0.0
+	 * @version 116.0.0
 	 */
 
 	/**
@@ -31884,6 +32401,31 @@ class OrganizationApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/organizations/limits/namespaces/{namespaceName}', 
+			'GET', 
+			{ 'namespaceName': namespaceName }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get the default limits in a namespace for an organization
+	 * 
+	 * @param {String} namespaceName The namespace to fetch defaults limits for
+	 */
+	getOrganizationsLimitsNamespaceDefaults(namespaceName) { 
+		// verify the required parameter 'namespaceName' is set
+		if (namespaceName === undefined || namespaceName === null) {
+			throw 'Missing the required parameter "namespaceName" when calling getOrganizationsLimitsNamespaceDefaults';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/organizations/limits/namespaces/{namespaceName}/defaults', 
 			'GET', 
 			{ 'namespaceName': namespaceName }, 
 			{  }, 
@@ -32096,7 +32638,7 @@ class OrganizationAuthorizationApi {
 	/**
 	 * OrganizationAuthorization service.
 	 * @module purecloud-platform-client-v2/api/OrganizationAuthorizationApi
-	 * @version 115.0.0
+	 * @version 116.0.0
 	 */
 
 	/**
@@ -32806,7 +33348,7 @@ class OutboundApi {
 	/**
 	 * Outbound service.
 	 * @module purecloud-platform-client-v2/api/OutboundApi
-	 * @version 115.0.0
+	 * @version 116.0.0
 	 */
 
 	/**
@@ -35831,7 +36373,7 @@ class PresenceApi {
 	/**
 	 * Presence service.
 	 * @module purecloud-platform-client-v2/api/PresenceApi
-	 * @version 115.0.0
+	 * @version 116.0.0
 	 */
 
 	/**
@@ -36203,7 +36745,7 @@ class QualityApi {
 	/**
 	 * Quality service.
 	 * @module purecloud-platform-client-v2/api/QualityApi
-	 * @version 115.0.0
+	 * @version 116.0.0
 	 */
 
 	/**
@@ -37767,7 +38309,7 @@ class RecordingApi {
 	/**
 	 * Recording service.
 	 * @module purecloud-platform-client-v2/api/RecordingApi
-	 * @version 115.0.0
+	 * @version 116.0.0
 	 */
 
 	/**
@@ -38733,7 +39275,7 @@ class RecordingApi {
 
 	/**
 	 * Create media retention policy
-	 * 
+	 * Policy does not work retroactively
 	 * @param {Object} body Policy
 	 */
 	postRecordingCrossplatformMediaretentionpolicies(body) { 
@@ -38833,7 +39375,7 @@ class RecordingApi {
 
 	/**
 	 * Create media retention policy
-	 * 
+	 * Policy does not work retroactively
 	 * @param {Object} body Policy
 	 */
 	postRecordingMediaretentionpolicies(body) { 
@@ -39057,7 +39599,7 @@ class RecordingApi {
 
 	/**
 	 * Update a media retention policy
-	 * 
+	 * Policy does not work retroactively
 	 * @param {String} policyId Policy ID
 	 * @param {Object} body Policy
 	 */
@@ -39147,7 +39689,7 @@ class RecordingApi {
 
 	/**
 	 * Update a media retention policy
-	 * 
+	 * Policy does not work retroactively
 	 * @param {String} policyId Policy ID
 	 * @param {Object} body Policy
 	 */
@@ -39256,7 +39798,7 @@ class ResponseManagementApi {
 	/**
 	 * ResponseManagement service.
 	 * @module purecloud-platform-client-v2/api/ResponseManagementApi
-	 * @version 115.0.0
+	 * @version 116.0.0
 	 */
 
 	/**
@@ -39581,7 +40123,7 @@ class RoutingApi {
 	/**
 	 * Routing service.
 	 * @module purecloud-platform-client-v2/api/RoutingApi
-	 * @version 115.0.0
+	 * @version 116.0.0
 	 */
 
 	/**
@@ -40076,7 +40618,7 @@ class RoutingApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.before The cursor that points to the start of the set of entities that has been returned.
 	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
-	 * @param {String} opts.limit Number of entities to return. Maximum of 200. Deprecated in favour of pageSize.
+	 * @param {String} opts.limit Number of entities to return. Maximum of 200. Deprecated in favour of pageSize, use CursorQueryParameters instead.
 	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
 	 * @param {Array.<String>} opts.queueId Queue ID(s) to filter assessments by.
 	 */
@@ -40383,7 +40925,7 @@ class RoutingApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.before The cursor that points to the start of the set of entities that has been returned.
 	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
-	 * @param {String} opts.limit Number of entities to return. Maximum of 200. Deprecated in favour of pageSize.
+	 * @param {String} opts.limit Number of entities to return. Maximum of 200. Deprecated in favour of pageSize, use CursorQueryParameters instead.
 	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
 	 * @param {Array.<String>} opts.queueId Comma-separated list of queue Ids to filter by.
 	 */
@@ -42519,7 +43061,7 @@ class SCIMApi {
 	/**
 	 * SCIM service.
 	 * @module purecloud-platform-client-v2/api/SCIMApi
-	 * @version 115.0.0
+	 * @version 116.0.0
 	 */
 
 	/**
@@ -42558,8 +43100,8 @@ class SCIMApi {
 			{  }, 
 			null, 
 			['PureCloud OAuth'], 
-			['application/json', 'application/scim+json'], 
-			['application/json', 'application/scim+json']
+			['application/scim+json', 'application/json'], 
+			['application/scim+json', 'application/json']
 		);
 	}
 
@@ -42587,8 +43129,8 @@ class SCIMApi {
 			{  }, 
 			null, 
 			['PureCloud OAuth'], 
-			['application/json', 'application/scim+json'], 
-			['application/json', 'application/scim+json']
+			['application/scim+json', 'application/json'], 
+			['application/scim+json', 'application/json']
 		);
 	}
 
@@ -42618,8 +43160,8 @@ class SCIMApi {
 			{  }, 
 			null, 
 			['PureCloud OAuth'], 
-			['application/json', 'application/scim+json'], 
-			['application/json', 'application/scim+json']
+			['application/scim+json', 'application/json'], 
+			['application/scim+json', 'application/json']
 		);
 	}
 
@@ -42646,8 +43188,8 @@ class SCIMApi {
 			{  }, 
 			null, 
 			['PureCloud OAuth'], 
-			['application/json', 'application/scim+json'], 
-			['application/json', 'application/scim+json']
+			['application/scim+json', 'application/json'], 
+			['application/scim+json', 'application/json']
 		);
 	}
 
@@ -42671,8 +43213,8 @@ class SCIMApi {
 			{  }, 
 			null, 
 			['PureCloud OAuth'], 
-			['application/json', 'application/scim+json'], 
-			['application/json', 'application/scim+json']
+			['application/scim+json', 'application/json'], 
+			['application/scim+json', 'application/json']
 		);
 	}
 
@@ -42691,8 +43233,8 @@ class SCIMApi {
 			{  }, 
 			null, 
 			['PureCloud OAuth'], 
-			['application/json', 'application/scim+json'], 
-			['application/json', 'application/scim+json']
+			['application/scim+json', 'application/json'], 
+			['application/scim+json', 'application/json']
 		);
 	}
 
@@ -42716,8 +43258,8 @@ class SCIMApi {
 			{  }, 
 			null, 
 			['PureCloud OAuth'], 
-			['application/json', 'application/scim+json'], 
-			['application/json', 'application/scim+json']
+			['application/scim+json', 'application/json'], 
+			['application/scim+json', 'application/json']
 		);
 	}
 
@@ -42740,8 +43282,8 @@ class SCIMApi {
 			{  }, 
 			null, 
 			['PureCloud OAuth'], 
-			['application/json', 'application/scim+json'], 
-			['application/json', 'application/scim+json']
+			['application/scim+json', 'application/json'], 
+			['application/scim+json', 'application/json']
 		);
 	}
 
@@ -42764,8 +43306,8 @@ class SCIMApi {
 			{  }, 
 			null, 
 			['PureCloud OAuth'], 
-			['application/json', 'application/scim+json'], 
-			['application/json', 'application/scim+json']
+			['application/scim+json', 'application/json'], 
+			['application/scim+json', 'application/json']
 		);
 	}
 
@@ -42795,8 +43337,8 @@ class SCIMApi {
 			{  }, 
 			null, 
 			['PureCloud OAuth'], 
-			['application/json', 'application/scim+json'], 
-			['application/json', 'application/scim+json']
+			['application/scim+json', 'application/json'], 
+			['application/scim+json', 'application/json']
 		);
 	}
 
@@ -42823,8 +43365,8 @@ class SCIMApi {
 			{  }, 
 			null, 
 			['PureCloud OAuth'], 
-			['application/json', 'application/scim+json'], 
-			['application/json', 'application/scim+json']
+			['application/scim+json', 'application/json'], 
+			['application/scim+json', 'application/json']
 		);
 	}
 
@@ -42854,8 +43396,8 @@ class SCIMApi {
 			{  }, 
 			null, 
 			['PureCloud OAuth'], 
-			['application/json', 'application/scim+json'], 
-			['application/json', 'application/scim+json']
+			['application/scim+json', 'application/json'], 
+			['application/scim+json', 'application/json']
 		);
 	}
 
@@ -42886,8 +43428,8 @@ class SCIMApi {
 			{  }, 
 			null, 
 			['PureCloud OAuth'], 
-			['application/json', 'application/scim+json'], 
-			['application/json', 'application/scim+json']
+			['application/scim+json', 'application/json'], 
+			['application/scim+json', 'application/json']
 		);
 	}
 
@@ -42911,8 +43453,8 @@ class SCIMApi {
 			{  }, 
 			null, 
 			['PureCloud OAuth'], 
-			['application/json', 'application/scim+json'], 
-			['application/json', 'application/scim+json']
+			['application/scim+json', 'application/json'], 
+			['application/scim+json', 'application/json']
 		);
 	}
 
@@ -42931,8 +43473,8 @@ class SCIMApi {
 			{  }, 
 			null, 
 			['PureCloud OAuth'], 
-			['application/json', 'application/scim+json'], 
-			['application/json', 'application/scim+json']
+			['application/scim+json', 'application/json'], 
+			['application/scim+json', 'application/json']
 		);
 	}
 
@@ -42956,8 +43498,8 @@ class SCIMApi {
 			{  }, 
 			null, 
 			['PureCloud OAuth'], 
-			['application/json', 'application/scim+json'], 
-			['application/json', 'application/scim+json']
+			['application/scim+json', 'application/json'], 
+			['application/scim+json', 'application/json']
 		);
 	}
 
@@ -42980,8 +43522,8 @@ class SCIMApi {
 			{  }, 
 			null, 
 			['PureCloud OAuth'], 
-			['application/json', 'application/scim+json'], 
-			['application/json', 'application/scim+json']
+			['application/scim+json', 'application/json'], 
+			['application/scim+json', 'application/json']
 		);
 	}
 
@@ -43004,8 +43546,8 @@ class SCIMApi {
 			{  }, 
 			null, 
 			['PureCloud OAuth'], 
-			['application/json', 'application/scim+json'], 
-			['application/json', 'application/scim+json']
+			['application/scim+json', 'application/json'], 
+			['application/scim+json', 'application/json']
 		);
 	}
 
@@ -43035,8 +43577,8 @@ class SCIMApi {
 			{  }, 
 			null, 
 			['PureCloud OAuth'], 
-			['application/json', 'application/scim+json'], 
-			['application/json', 'application/scim+json']
+			['application/scim+json', 'application/json'], 
+			['application/scim+json', 'application/json']
 		);
 	}
 
@@ -43063,8 +43605,8 @@ class SCIMApi {
 			{  }, 
 			null, 
 			['PureCloud OAuth'], 
-			['application/json', 'application/scim+json'], 
-			['application/json', 'application/scim+json']
+			['application/scim+json', 'application/json'], 
+			['application/scim+json', 'application/json']
 		);
 	}
 
@@ -43097,8 +43639,8 @@ class SCIMApi {
 			{  }, 
 			body, 
 			['PureCloud OAuth'], 
-			['application/json', 'application/scim+json'], 
-			['application/json', 'application/scim+json']
+			['application/scim+json', 'application/json'], 
+			['application/scim+json', 'application/json']
 		);
 	}
 
@@ -43131,8 +43673,8 @@ class SCIMApi {
 			{  }, 
 			body, 
 			['PureCloud OAuth'], 
-			['application/json', 'application/scim+json'], 
-			['application/json', 'application/scim+json']
+			['application/scim+json', 'application/json'], 
+			['application/scim+json', 'application/json']
 		);
 	}
 
@@ -43165,8 +43707,8 @@ class SCIMApi {
 			{  }, 
 			body, 
 			['PureCloud OAuth'], 
-			['application/json', 'application/scim+json'], 
-			['application/json', 'application/scim+json']
+			['application/scim+json', 'application/json'], 
+			['application/scim+json', 'application/json']
 		);
 	}
 
@@ -43199,8 +43741,8 @@ class SCIMApi {
 			{  }, 
 			body, 
 			['PureCloud OAuth'], 
-			['application/json', 'application/scim+json'], 
-			['application/json', 'application/scim+json']
+			['application/scim+json', 'application/json'], 
+			['application/scim+json', 'application/json']
 		);
 	}
 
@@ -43224,8 +43766,8 @@ class SCIMApi {
 			{  }, 
 			body, 
 			['PureCloud OAuth'], 
-			['application/json', 'application/scim+json'], 
-			['application/json', 'application/scim+json']
+			['application/scim+json', 'application/json'], 
+			['application/scim+json', 'application/json']
 		);
 	}
 
@@ -43249,8 +43791,8 @@ class SCIMApi {
 			{  }, 
 			body, 
 			['PureCloud OAuth'], 
-			['application/json', 'application/scim+json'], 
-			['application/json', 'application/scim+json']
+			['application/scim+json', 'application/json'], 
+			['application/scim+json', 'application/json']
 		);
 	}
 
@@ -43283,8 +43825,8 @@ class SCIMApi {
 			{  }, 
 			body, 
 			['PureCloud OAuth'], 
-			['application/json', 'application/scim+json'], 
-			['application/json', 'application/scim+json']
+			['application/scim+json', 'application/json'], 
+			['application/scim+json', 'application/json']
 		);
 	}
 
@@ -43317,8 +43859,8 @@ class SCIMApi {
 			{  }, 
 			body, 
 			['PureCloud OAuth'], 
-			['application/json', 'application/scim+json'], 
-			['application/json', 'application/scim+json']
+			['application/scim+json', 'application/json'], 
+			['application/scim+json', 'application/json']
 		);
 	}
 
@@ -43351,8 +43893,8 @@ class SCIMApi {
 			{  }, 
 			body, 
 			['PureCloud OAuth'], 
-			['application/json', 'application/scim+json'], 
-			['application/json', 'application/scim+json']
+			['application/scim+json', 'application/json'], 
+			['application/scim+json', 'application/json']
 		);
 	}
 
@@ -43385,8 +43927,8 @@ class SCIMApi {
 			{  }, 
 			body, 
 			['PureCloud OAuth'], 
-			['application/json', 'application/scim+json'], 
-			['application/json', 'application/scim+json']
+			['application/scim+json', 'application/json'], 
+			['application/scim+json', 'application/json']
 		);
 	}
 
@@ -43396,7 +43938,7 @@ class ScriptsApi {
 	/**
 	 * Scripts service.
 	 * @module purecloud-platform-client-v2/api/ScriptsApi
-	 * @version 115.0.0
+	 * @version 116.0.0
 	 */
 
 	/**
@@ -43749,7 +44291,7 @@ class SearchApi {
 	/**
 	 * Search service.
 	 * @module purecloud-platform-client-v2/api/SearchApi
-	 * @version 115.0.0
+	 * @version 116.0.0
 	 */
 
 	/**
@@ -44284,7 +44826,7 @@ class SpeechTextAnalyticsApi {
 	/**
 	 * SpeechTextAnalytics service.
 	 * @module purecloud-platform-client-v2/api/SpeechTextAnalyticsApi
-	 * @version 115.0.0
+	 * @version 116.0.0
 	 */
 
 	/**
@@ -45018,7 +45560,7 @@ class StationsApi {
 	/**
 	 * Stations service.
 	 * @module purecloud-platform-client-v2/api/StationsApi
-	 * @version 115.0.0
+	 * @version 116.0.0
 	 */
 
 	/**
@@ -45165,7 +45707,7 @@ class SuggestApi {
 	/**
 	 * Suggest service.
 	 * @module purecloud-platform-client-v2/api/SuggestApi
-	 * @version 115.0.0
+	 * @version 116.0.0
 	 */
 
 	/**
@@ -45304,7 +45846,7 @@ class TelephonyApi {
 	/**
 	 * Telephony service.
 	 * @module purecloud-platform-client-v2/api/TelephonyApi
-	 * @version 115.0.0
+	 * @version 116.0.0
 	 */
 
 	/**
@@ -45412,7 +45954,7 @@ class TelephonyProvidersEdgeApi {
 	/**
 	 * TelephonyProvidersEdge service.
 	 * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-	 * @version 115.0.0
+	 * @version 116.0.0
 	 */
 
 	/**
@@ -49055,7 +49597,7 @@ class TextbotsApi {
 	/**
 	 * Textbots service.
 	 * @module purecloud-platform-client-v2/api/TextbotsApi
-	 * @version 115.0.0
+	 * @version 116.0.0
 	 */
 
 	/**
@@ -49101,7 +49643,7 @@ class TokensApi {
 	/**
 	 * Tokens service.
 	 * @module purecloud-platform-client-v2/api/TokensApi
-	 * @version 115.0.0
+	 * @version 116.0.0
 	 */
 
 	/**
@@ -49181,13 +49723,33 @@ class TokensApi {
 		);
 	}
 
+	/**
+	 * Verify user token
+	 * 
+	 */
+	headTokensMe() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/tokens/me', 
+			'HEAD', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
 }
 
 class UploadsApi {
 	/**
 	 * Uploads service.
 	 * @module purecloud-platform-client-v2/api/UploadsApi
-	 * @version 115.0.0
+	 * @version 116.0.0
 	 */
 
 	/**
@@ -49201,6 +49763,36 @@ class UploadsApi {
 		this.apiClient = apiClient || ApiClient.instance;
 	}
 
+
+	/**
+	 * Creates a presigned URL for uploading a chat corpus which will be used for mining by intent miner
+	 * 
+	 * @param {String} minerId Miner ID
+	 * @param {Object} body query
+	 */
+	postLanguageunderstandingMinerUploads(minerId, body) { 
+		// verify the required parameter 'minerId' is set
+		if (minerId === undefined || minerId === null) {
+			throw 'Missing the required parameter "minerId" when calling postLanguageunderstandingMinerUploads';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postLanguageunderstandingMinerUploads';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/languageunderstanding/miners/{minerId}/uploads', 
+			'POST', 
+			{ 'minerId': minerId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
 
 	/**
 	 * Creates presigned url for uploading a public asset image
@@ -49308,7 +49900,7 @@ class UsageApi {
 	/**
 	 * Usage service.
 	 * @module purecloud-platform-client-v2/api/UsageApi
-	 * @version 115.0.0
+	 * @version 116.0.0
 	 */
 
 	/**
@@ -49379,7 +49971,7 @@ class UserRecordingsApi {
 	/**
 	 * UserRecordings service.
 	 * @module purecloud-platform-client-v2/api/UserRecordingsApi
-	 * @version 115.0.0
+	 * @version 116.0.0
 	 */
 
 	/**
@@ -49563,7 +50155,7 @@ class UsersApi {
 	/**
 	 * Users service.
 	 * @module purecloud-platform-client-v2/api/UsersApi
-	 * @version 115.0.0
+	 * @version 116.0.0
 	 */
 
 	/**
@@ -51810,7 +52402,7 @@ class UtilitiesApi {
 	/**
 	 * Utilities service.
 	 * @module purecloud-platform-client-v2/api/UtilitiesApi
-	 * @version 115.0.0
+	 * @version 116.0.0
 	 */
 
 	/**
@@ -51921,7 +52513,7 @@ class VoicemailApi {
 	/**
 	 * Voicemail service.
 	 * @module purecloud-platform-client-v2/api/VoicemailApi
-	 * @version 115.0.0
+	 * @version 116.0.0
 	 */
 
 	/**
@@ -52558,7 +53150,7 @@ class WebChatApi {
 	/**
 	 * WebChat service.
 	 * @module purecloud-platform-client-v2/api/WebChatApi
-	 * @version 115.0.0
+	 * @version 116.0.0
 	 */
 
 	/**
@@ -53102,7 +53694,7 @@ class WidgetsApi {
 	/**
 	 * Widgets service.
 	 * @module purecloud-platform-client-v2/api/WidgetsApi
-	 * @version 115.0.0
+	 * @version 116.0.0
 	 */
 
 	/**
@@ -53248,7 +53840,7 @@ class WorkforceManagementApi {
 	/**
 	 * WorkforceManagement service.
 	 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-	 * @version 115.0.0
+	 * @version 116.0.0
 	 */
 
 	/**
@@ -53468,6 +54060,26 @@ class WorkforceManagementApi {
 			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}', 
 			'DELETE', 
 			{ 'businessUnitId': businessUnitId,'weekDateId': weekDateId,'forecastId': forecastId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Disable generated calendar link for the current user
+	 * 
+	 */
+	deleteWorkforcemanagementCalendarUrlIcs() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/calendar/url/ics', 
+			'DELETE', 
+			{  }, 
 			{  }, 
 			{  }, 
 			{  }, 
@@ -54463,6 +55075,51 @@ class WorkforceManagementApi {
 	}
 
 	/**
+	 * Get ics formatted calendar based on shareable link
+	 * 
+	 * @param {String} calendarId The id of the ics-formatted calendar
+	 */
+	getWorkforcemanagementCalendarDataIcs(calendarId) { 
+		// verify the required parameter 'calendarId' is set
+		if (calendarId === undefined || calendarId === null) {
+			throw 'Missing the required parameter "calendarId" when calling getWorkforcemanagementCalendarDataIcs';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/calendar/data/ics', 
+			'GET', 
+			{  }, 
+			{ 'calendarId': calendarId }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['text/calendar']
+		);
+	}
+
+	/**
+	 * Get existing calendar link for the current user
+	 * 
+	 */
+	getWorkforcemanagementCalendarUrlIcs() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/calendar/url/ics', 
+			'GET', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
 	 * Retrieves delete job status for historical data imports of the organization
 	 * 
 	 */
@@ -54908,8 +55565,12 @@ class WorkforceManagementApi {
 	 * 
 	 * @param {String} managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
 	 * @param {String} workPlanId The ID of the work plan to fetch
+	 * @param {Object} opts Optional parameters
+	 * @param {Array.<String>} opts.includeOnly limit response to the specified fields
 	 */
-	getWorkforcemanagementManagementunitWorkplan(managementUnitId, workPlanId) { 
+	getWorkforcemanagementManagementunitWorkplan(managementUnitId, workPlanId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'managementUnitId' is set
 		if (managementUnitId === undefined || managementUnitId === null) {
 			throw 'Missing the required parameter "managementUnitId" when calling getWorkforcemanagementManagementunitWorkplan';
@@ -54923,7 +55584,7 @@ class WorkforceManagementApi {
 			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans/{workPlanId}', 
 			'GET', 
 			{ 'managementUnitId': managementUnitId,'workPlanId': workPlanId }, 
-			{  }, 
+			{ 'includeOnly': this.apiClient.buildCollectionParam(opts['includeOnly'], 'multi') }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -56057,6 +56718,30 @@ class WorkforceManagementApi {
 	}
 
 	/**
+	 * Create a newly generated calendar link for the current user; if the current user has previously generated one, the generated link will be returned
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.language A language tag (which is sometimes referred to as a \&quot;locale identifier\&quot;) to use to localize default activity code names in the ics-formatted calendar (default to en-US)
+	 */
+	postWorkforcemanagementCalendarUrlIcs(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/calendar/url/ics', 
+			'POST', 
+			{  }, 
+			{ 'language': opts['language'] }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
 	 * Delete the entries of the historical data imports in the organization
 	 * 
 	 */
@@ -56714,7 +57399,7 @@ class WorkforceManagementApi {
  * </pre>
  * </p>
  * @module purecloud-platform-client-v2/index
- * @version 115.0.0
+ * @version 116.0.0
  */
 class platformClient {
 	constructor() {

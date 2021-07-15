@@ -5,7 +5,7 @@ class LanguageUnderstandingApi {
 	/**
 	 * LanguageUnderstanding service.
 	 * @module purecloud-platform-client-v2/api/LanguageUnderstandingApi
-	 * @version 115.0.0
+	 * @version 116.0.0
 	 */
 
 	/**
@@ -95,6 +95,61 @@ class LanguageUnderstandingApi {
 			'/api/v2/languageunderstanding/domains/{domainId}/versions/{domainVersionId}', 
 			'DELETE', 
 			{ 'domainId': domainId,'domainVersionId': domainVersionId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete a miner.
+	 * 
+	 * @param {String} minerId Miner ID
+	 */
+	deleteLanguageunderstandingMiner(minerId) { 
+		// verify the required parameter 'minerId' is set
+		if (minerId === undefined || minerId === null) {
+			throw 'Missing the required parameter "minerId" when calling deleteLanguageunderstandingMiner';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/languageunderstanding/miners/{minerId}', 
+			'DELETE', 
+			{ 'minerId': minerId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete a draft
+	 * 
+	 * @param {String} minerId Miner ID
+	 * @param {String} draftId Draft ID
+	 */
+	deleteLanguageunderstandingMinerDraft(minerId, draftId) { 
+		// verify the required parameter 'minerId' is set
+		if (minerId === undefined || minerId === null) {
+			throw 'Missing the required parameter "minerId" when calling deleteLanguageunderstandingMinerDraft';
+		}
+		// verify the required parameter 'draftId' is set
+		if (draftId === undefined || draftId === null) {
+			throw 'Missing the required parameter "draftId" when calling deleteLanguageunderstandingMinerDraft';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/languageunderstanding/miners/{minerId}/drafts/{draftId}', 
+			'DELETE', 
+			{ 'minerId': minerId,'draftId': draftId }, 
 			{  }, 
 			{  }, 
 			{  }, 
@@ -323,6 +378,169 @@ class LanguageUnderstandingApi {
 	}
 
 	/**
+	 * Get information about a miner.
+	 * 
+	 * @param {String} minerId Miner ID
+	 */
+	getLanguageunderstandingMiner(minerId) { 
+		// verify the required parameter 'minerId' is set
+		if (minerId === undefined || minerId === null) {
+			throw 'Missing the required parameter "minerId" when calling getLanguageunderstandingMiner';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/languageunderstanding/miners/{minerId}', 
+			'GET', 
+			{ 'minerId': minerId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get information about a draft.
+	 * 
+	 * @param {String} minerId Miner ID
+	 * @param {String} draftId Draft ID
+	 */
+	getLanguageunderstandingMinerDraft(minerId, draftId) { 
+		// verify the required parameter 'minerId' is set
+		if (minerId === undefined || minerId === null) {
+			throw 'Missing the required parameter "minerId" when calling getLanguageunderstandingMinerDraft';
+		}
+		// verify the required parameter 'draftId' is set
+		if (draftId === undefined || draftId === null) {
+			throw 'Missing the required parameter "draftId" when calling getLanguageunderstandingMinerDraft';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/languageunderstanding/miners/{minerId}/drafts/{draftId}', 
+			'GET', 
+			{ 'minerId': minerId,'draftId': draftId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Retrieve the list of drafts created.
+	 * 
+	 * @param {String} minerId Miner ID
+	 */
+	getLanguageunderstandingMinerDrafts(minerId) { 
+		// verify the required parameter 'minerId' is set
+		if (minerId === undefined || minerId === null) {
+			throw 'Missing the required parameter "minerId" when calling getLanguageunderstandingMinerDrafts';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/languageunderstanding/miners/{minerId}/drafts', 
+			'GET', 
+			{ 'minerId': minerId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get information about a mined intent
+	 * 
+	 * @param {String} minerId Miner ID
+	 * @param {String} intentId The ID of the intent to be retrieved.
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.expand Option to fetch utterances
+	 */
+	getLanguageunderstandingMinerIntent(minerId, intentId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'minerId' is set
+		if (minerId === undefined || minerId === null) {
+			throw 'Missing the required parameter "minerId" when calling getLanguageunderstandingMinerIntent';
+		}
+		// verify the required parameter 'intentId' is set
+		if (intentId === undefined || intentId === null) {
+			throw 'Missing the required parameter "intentId" when calling getLanguageunderstandingMinerIntent';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/languageunderstanding/miners/{minerId}/intents/{intentId}', 
+			'GET', 
+			{ 'minerId': minerId,'intentId': intentId }, 
+			{ 'expand': opts['expand'] }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Retrieve a list of mined intents.
+	 * 
+	 * @param {String} minerId Miner ID
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.expand Option to fetch utterances.
+	 */
+	getLanguageunderstandingMinerIntents(minerId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'minerId' is set
+		if (minerId === undefined || minerId === null) {
+			throw 'Missing the required parameter "minerId" when calling getLanguageunderstandingMinerIntents';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/languageunderstanding/miners/{minerId}/intents', 
+			'GET', 
+			{ 'minerId': minerId }, 
+			{ 'expand': opts['expand'] }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Retrieve the list of miners created.
+	 * 
+	 */
+	getLanguageunderstandingMiners() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/languageunderstanding/miners', 
+			'GET', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
 	 * Update an NLU Domain.
 	 * 
 	 * @param {String} domainId ID of the NLU domain.
@@ -346,6 +564,40 @@ class LanguageUnderstandingApi {
 			{  }, 
 			{  }, 
 			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Save information for the draft
+	 * 
+	 * @param {String} minerId Miner ID
+	 * @param {String} draftId Draft ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body 
+	 */
+	patchLanguageunderstandingMinerDraft(minerId, draftId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'minerId' is set
+		if (minerId === undefined || minerId === null) {
+			throw 'Missing the required parameter "minerId" when calling patchLanguageunderstandingMinerDraft';
+		}
+		// verify the required parameter 'draftId' is set
+		if (draftId === undefined || draftId === null) {
+			throw 'Missing the required parameter "draftId" when calling patchLanguageunderstandingMinerDraft';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/languageunderstanding/miners/{minerId}/drafts/{draftId}', 
+			'PATCH', 
+			{ 'minerId': minerId,'draftId': draftId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
@@ -520,6 +772,90 @@ class LanguageUnderstandingApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/languageunderstanding/domains', 
+			'POST', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Create a new draft resource.
+	 * 
+	 * @param {String} minerId Miner ID
+	 * @param {Object} body Details for creating draft resource
+	 */
+	postLanguageunderstandingMinerDrafts(minerId, body) { 
+		// verify the required parameter 'minerId' is set
+		if (minerId === undefined || minerId === null) {
+			throw 'Missing the required parameter "minerId" when calling postLanguageunderstandingMinerDrafts';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postLanguageunderstandingMinerDrafts';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/languageunderstanding/miners/{minerId}/drafts', 
+			'POST', 
+			{ 'minerId': minerId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Start the mining process. Specify date range pair with mediaType and queueIds for mining data from Genesys Cloud. Specify only uploadKey for mining through an external file.
+	 * 
+	 * @param {String} minerId Miner ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body 
+	 */
+	postLanguageunderstandingMinerExecute(minerId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'minerId' is set
+		if (minerId === undefined || minerId === null) {
+			throw 'Missing the required parameter "minerId" when calling postLanguageunderstandingMinerExecute';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/languageunderstanding/miners/{minerId}/execute', 
+			'POST', 
+			{ 'minerId': minerId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Create a unique miner.
+	 * 
+	 * @param {Object} body Details for creating a new miner resource.
+	 */
+	postLanguageunderstandingMiners(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postLanguageunderstandingMiners';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/languageunderstanding/miners', 
 			'POST', 
 			{  }, 
 			{  }, 

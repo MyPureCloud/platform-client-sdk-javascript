@@ -24,6 +24,10 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getIntegrationsActions**](IntegrationsApi.html#getIntegrationsActions) | **GET** /api/v2/integrations/actions | Retrieves all actions associated with filters passed in via query param.
 [**getIntegrationsActionsCategories**](IntegrationsApi.html#getIntegrationsActionsCategories) | **GET** /api/v2/integrations/actions/categories | Retrieves all categories of available Actions
 [**getIntegrationsActionsDrafts**](IntegrationsApi.html#getIntegrationsActionsDrafts) | **GET** /api/v2/integrations/actions/drafts | Retrieves all action drafts associated with the filters passed in via query param.
+[**getIntegrationsBotconnectorIntegrationIdBot**](IntegrationsApi.html#getIntegrationsBotconnectorIntegrationIdBot) | **GET** /api/v2/integrations/botconnector/{integrationId}/bots/{botId} | Get a specific botConnector bot, plus versions, for this integration
+[**getIntegrationsBotconnectorIntegrationIdBotVersions**](IntegrationsApi.html#getIntegrationsBotconnectorIntegrationIdBotVersions) | **GET** /api/v2/integrations/botconnector/{integrationId}/bots/{botId}/versions | Get a list of bot versions for a bot
+[**getIntegrationsBotconnectorIntegrationIdBots**](IntegrationsApi.html#getIntegrationsBotconnectorIntegrationIdBots) | **GET** /api/v2/integrations/botconnector/{integrationId}/bots | Get a list of botConnector bots for this integration
+[**getIntegrationsBotconnectorIntegrationIdBotsSummaries**](IntegrationsApi.html#getIntegrationsBotconnectorIntegrationIdBotsSummaries) | **GET** /api/v2/integrations/botconnector/{integrationId}/bots/summaries | Get a summary list of botConnector bots for this integration
 [**getIntegrationsClientapps**](IntegrationsApi.html#getIntegrationsClientapps) | **GET** /api/v2/integrations/clientapps | List permitted client app integrations for the logged in user
 [**getIntegrationsCredential**](IntegrationsApi.html#getIntegrationsCredential) | **GET** /api/v2/integrations/credentials/{credentialId} | Get a single credential with sensitive fields redacted
 [**getIntegrationsCredentials**](IntegrationsApi.html#getIntegrationsCredentials) | **GET** /api/v2/integrations/credentials | List multiple sets of credentials
@@ -58,6 +62,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postIntegrationsCredentials**](IntegrationsApi.html#postIntegrationsCredentials) | **POST** /api/v2/integrations/credentials | Create a set of credentials
 [**postIntegrationsWorkforcemanagementVendorconnection**](IntegrationsApi.html#postIntegrationsWorkforcemanagementVendorconnection) | **POST** /api/v2/integrations/workforcemanagement/vendorconnection | Add a vendor connection
 [**putIntegrationConfigCurrent**](IntegrationsApi.html#putIntegrationConfigCurrent) | **PUT** /api/v2/integrations/{integrationId}/config/current | Update integration configuration.
+[**putIntegrationsBotconnectorIntegrationIdBots**](IntegrationsApi.html#putIntegrationsBotconnectorIntegrationIdBots) | **PUT** /api/v2/integrations/botconnector/{integrationId}/bots | Set a list of botConnector bots plus versions for this integration
 [**putIntegrationsCredential**](IntegrationsApi.html#putIntegrationsCredential) | **PUT** /api/v2/integrations/credentials/{credentialId} | Update a set of credentials
 [**putIntegrationsSpeechTtsSettings**](IntegrationsApi.html#putIntegrationsSpeechTtsSettings) | **PUT** /api/v2/integrations/speech/tts/settings | Update TTS settings for an org
 {: class="table table-striped"}
@@ -960,7 +965,7 @@ let opts = {
   'pageNumber': 1, // Number | The page number requested
   'nextPage': "nextPage_example", // String | next page token
   'previousPage': "previousPage_example", // String | Previous page token
-  'sortBy': "sortBy_example", // String | Root level field name to sort on.
+  'sortBy': "sortBy_example", // String | Root level field name to sort on.  Only 'name' is supported on this endpoint.
   'sortOrder': "asc", // String | Direction to sort 'sortBy' field.
   'secure': "secure_example" // String | Filter to only include secure actions. True will only include actions marked secured. False will include only unsecure actions. Do not use filter if you want all Actions.
 };
@@ -984,7 +989,7 @@ apiInstance.getIntegrationsActionsCategories(opts)
  **pageNumber** | **Number** | The page number requested | [optional] [default to 1] |
  **nextPage** | **String** | next page token | [optional]  |
  **previousPage** | **String** | Previous page token | [optional]  |
- **sortBy** | **String** | Root level field name to sort on. | [optional]  |
+ **sortBy** | **String** | Root level field name to sort on.  Only &#39;name&#39; is supported on this endpoint. | [optional]  |
  **sortOrder** | **String** | Direction to sort &#39;sortBy&#39; field. | [optional] [default to asc]<br />**Values**: ASC, DESC |
  **secure** | **String** | Filter to only include secure actions. True will only include actions marked secured. False will include only unsecure actions. Do not use filter if you want all Actions. | [optional] <br />**Values**: true, false |
 {: class="table table-striped"}
@@ -1066,6 +1071,238 @@ apiInstance.getIntegrationsActionsDrafts(opts)
 ### Return type
 
 **ActionEntityListing**
+
+<a name="getIntegrationsBotconnectorIntegrationIdBot"></a>
+
+# BotConnectorBot getIntegrationsBotconnectorIntegrationIdBot(integrationId, botId, opts)
+
+
+
+GET /api/v2/integrations/botconnector/{integrationId}/bots/{botId}
+
+Get a specific botConnector bot, plus versions, for this integration
+
+
+
+Requires ANY permissions: 
+
+* integration:botconnector:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.IntegrationsApi();
+
+let integrationId = "integrationId_example"; // String | The integration ID for this group of bots
+let botId = "botId_example"; // String | The botID for this bot
+let opts = { 
+  'version': "version_example" // String | Specific Version
+};
+
+apiInstance.getIntegrationsBotconnectorIntegrationIdBot(integrationId, botId, opts)
+  .then((data) => {
+    console.log(`getIntegrationsBotconnectorIntegrationIdBot success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getIntegrationsBotconnectorIntegrationIdBot');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **integrationId** | **String** | The integration ID for this group of bots |  |
+ **botId** | **String** | The botID for this bot |  |
+ **version** | **String** | Specific Version | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**BotConnectorBot**
+
+<a name="getIntegrationsBotconnectorIntegrationIdBotVersions"></a>
+
+# BotConnectorBotVersionSummaryEntityListing getIntegrationsBotconnectorIntegrationIdBotVersions(integrationId, botId, opts)
+
+
+
+GET /api/v2/integrations/botconnector/{integrationId}/bots/{botId}/versions
+
+Get a list of bot versions for a bot
+
+
+
+Requires ANY permissions: 
+
+* integration:botconnector:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.IntegrationsApi();
+
+let integrationId = "integrationId_example"; // String | The integration ID for this bot group
+let botId = "botId_example"; // String | The botID for this bot
+let opts = { 
+  'pageNumber': 1, // Number | Page number
+  'pageSize': 25 // Number | Page size
+};
+
+apiInstance.getIntegrationsBotconnectorIntegrationIdBotVersions(integrationId, botId, opts)
+  .then((data) => {
+    console.log(`getIntegrationsBotconnectorIntegrationIdBotVersions success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getIntegrationsBotconnectorIntegrationIdBotVersions');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **integrationId** | **String** | The integration ID for this bot group |  |
+ **botId** | **String** | The botID for this bot |  |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+{: class="table table-striped"}
+
+### Return type
+
+**BotConnectorBotVersionSummaryEntityListing**
+
+<a name="getIntegrationsBotconnectorIntegrationIdBots"></a>
+
+# BotList getIntegrationsBotconnectorIntegrationIdBots(integrationId)
+
+
+
+GET /api/v2/integrations/botconnector/{integrationId}/bots
+
+Get a list of botConnector bots for this integration
+
+
+
+Requires ANY permissions: 
+
+* integration:botconnector:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.IntegrationsApi();
+
+let integrationId = "integrationId_example"; // String | The integration ID for this group of bots
+
+apiInstance.getIntegrationsBotconnectorIntegrationIdBots(integrationId)
+  .then((data) => {
+    console.log(`getIntegrationsBotconnectorIntegrationIdBots success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getIntegrationsBotconnectorIntegrationIdBots');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **integrationId** | **String** | The integration ID for this group of bots |  |
+{: class="table table-striped"}
+
+### Return type
+
+**BotList**
+
+<a name="getIntegrationsBotconnectorIntegrationIdBotsSummaries"></a>
+
+# BotConnectorBotSummaryEntityListing getIntegrationsBotconnectorIntegrationIdBotsSummaries(integrationId, opts)
+
+
+
+GET /api/v2/integrations/botconnector/{integrationId}/bots/summaries
+
+Get a summary list of botConnector bots for this integration
+
+
+
+Requires ANY permissions: 
+
+* integration:botconnector:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.IntegrationsApi();
+
+let integrationId = "integrationId_example"; // String | The integration ID for this group of bots
+let opts = { 
+  'pageNumber': 1, // Number | Page number
+  'pageSize': 25 // Number | Page size
+};
+
+apiInstance.getIntegrationsBotconnectorIntegrationIdBotsSummaries(integrationId, opts)
+  .then((data) => {
+    console.log(`getIntegrationsBotconnectorIntegrationIdBotsSummaries success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getIntegrationsBotconnectorIntegrationIdBotsSummaries');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **integrationId** | **String** | The integration ID for this group of bots |  |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+{: class="table table-striped"}
+
+### Return type
+
+**BotConnectorBotSummaryEntityListing**
 
 <a name="getIntegrationsClientapps"></a>
 
@@ -2985,6 +3222,61 @@ apiInstance.putIntegrationConfigCurrent(integrationId, opts)
 ### Return type
 
 **IntegrationConfiguration**
+
+<a name="putIntegrationsBotconnectorIntegrationIdBots"></a>
+
+# void putIntegrationsBotconnectorIntegrationIdBots(integrationId, botList)
+
+
+
+PUT /api/v2/integrations/botconnector/{integrationId}/bots
+
+Set a list of botConnector bots plus versions for this integration
+
+
+
+Requires ANY permissions: 
+
+* integration:botconnector:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.IntegrationsApi();
+
+let integrationId = "integrationId_example"; // String | The integration ID for this group of bots
+let botList = {}; // Object | 
+
+apiInstance.putIntegrationsBotconnectorIntegrationIdBots(integrationId, botList)
+  .then(() => {
+    console.log('putIntegrationsBotconnectorIntegrationIdBots returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putIntegrationsBotconnectorIntegrationIdBots');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **integrationId** | **String** | The integration ID for this group of bots |  |
+ **botList** | **Object** |  |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
 
 <a name="putIntegrationsCredential"></a>
 

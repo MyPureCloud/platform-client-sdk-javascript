@@ -5,7 +5,7 @@ class RoutingApi {
 	/**
 	 * Routing service.
 	 * @module purecloud-platform-client-v2/api/RoutingApi
-	 * @version 115.0.0
+	 * @version 116.0.0
 	 */
 
 	/**
@@ -500,7 +500,7 @@ class RoutingApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.before The cursor that points to the start of the set of entities that has been returned.
 	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
-	 * @param {String} opts.limit Number of entities to return. Maximum of 200. Deprecated in favour of pageSize.
+	 * @param {String} opts.limit Number of entities to return. Maximum of 200. Deprecated in favour of pageSize, use CursorQueryParameters instead.
 	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
 	 * @param {Array.<String>} opts.queueId Queue ID(s) to filter assessments by.
 	 */
@@ -807,7 +807,7 @@ class RoutingApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.before The cursor that points to the start of the set of entities that has been returned.
 	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
-	 * @param {String} opts.limit Number of entities to return. Maximum of 200. Deprecated in favour of pageSize.
+	 * @param {String} opts.limit Number of entities to return. Maximum of 200. Deprecated in favour of pageSize, use CursorQueryParameters instead.
 	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
 	 * @param {Array.<String>} opts.queueId Comma-separated list of queue Ids to filter by.
 	 */

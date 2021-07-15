@@ -5,7 +5,7 @@ class TokensApi {
 	/**
 	 * Tokens service.
 	 * @module purecloud-platform-client-v2/api/TokensApi
-	 * @version 115.0.0
+	 * @version 116.0.0
 	 */
 
 	/**
@@ -74,6 +74,26 @@ class TokensApi {
 		return this.apiClient.callApi(
 			'/api/v2/tokens/me', 
 			'GET', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Verify user token
+	 * 
+	 */
+	headTokensMe() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/tokens/me', 
+			'HEAD', 
 			{  }, 
 			{  }, 
 			{  }, 

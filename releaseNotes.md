@@ -1,266 +1,428 @@
-Platform API version: 4806
+Platform API version: 4837
 
 
-# Major Changes (11 changes)
+# Major Changes (31 changes)
 
-**GET /api/v2/knowledge/knowledgebases** (1 change)
+**GET /api/v2/flows/datatables/{datatableId}/import/jobs** (1 change)
 
-* Parameter published was added
+* Response 200 type was changed from EntityListing to DataTableImportEntityListing
 
-**GET /api/v2/fieldconfig** (1 change)
+**GET /api/v2/gamification/metrics/{metricId}** (3 changes)
 
-* Has been deprecated
+* Parameter performance profile id was removed
+* Parameter workday was added
+* Parameter performanceProfileId was added
 
-**AuditQueryExecutionStatusResponse** (1 change)
+**PUT /api/v2/gamification/metrics/{metricId}** (2 changes)
 
-* Enum value Performance was removed from property serviceName
+* Parameter performance profile id was removed
+* Parameter performanceProfileId was added
 
-**AuditLogMessage** (3 changes)
+**GET /api/v2/gamification/metrics** (3 changes)
 
-* Enum value Performance was removed from property serviceName
-* Enum value ExternalMetricData was removed from property entityType
-* Enum value ExternalMetricDefinition was removed from property entityType
+* Parameter performance profile id was removed
+* Parameter performanceProfileId was added
+* Parameter workday was added
 
-**AuditQueryRequest** (1 change)
+**GET /api/v2/organizations/limits/namespaces** (1 change)
 
-* Enum value Performance was removed from property serviceName
+* Response 200 type was changed from LimitsEntityListing to PagedNamespaceListing
 
-**AuditRealtimeQueryRequest** (1 change)
+**GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans/{workPlanId}** (1 change)
 
-* Enum value Performance was removed from property serviceName
+* Parameter includeOnly was added
 
-**AuditQueryEntity** (2 changes)
+**EntityListing** (1 change)
 
-* Enum value ExternalMetricData was removed from property name
-* Enum value ExternalMetricDefinition was removed from property name
+* Model EntityListing was removed
 
-**AuditQueryService** (1 change)
+**Leaderboard** (1 change)
 
-* Enum value Performance was removed from property name
+* Property metric was changed from Metric to AddressableEntityRef
+
+**ScimV2SchemaAttribute** (18 changes)
+
+* Enum value STRING was removed from property type
+* Enum value BOOLEAN was removed from property type
+* Enum value DECIMAL was removed from property type
+* Enum value INTEGER was removed from property type
+* Enum value DATE_TIME was removed from property type
+* Enum value REFERENCE was removed from property type
+* Enum value COMPLEX was removed from property type
+* Enum value ALWAYS was removed from property returned
+* Enum value NEVER was removed from property returned
+* Enum value DEFAULT was removed from property returned
+* Enum value REQUEST was removed from property returned
+* Enum value NONE was removed from property uniqueness
+* Enum value SERVER was removed from property uniqueness
+* Enum value GLOBAL was removed from property uniqueness
+* Enum value USER was removed from property referenceTypes
+* Enum value GROUP was removed from property referenceTypes
+* Enum value EXTERNAL was removed from property referenceTypes
+* Enum value URI was removed from property referenceTypes
 
 
-# Minor Changes (98 changes)
+# Minor Changes (119 changes)
 
-**/api/v2/telephony/providers/edges/autoscalinggroups/{asgId}/capacity** (2 changes)
+**/api/v2/integrations/botconnector/{integrationId}/bots** (3 changes)
 
 * Path was added
-* Operation PATCH was added
+* Operation GET was added
+* Operation PUT was added
 
-**/api/v2/authorization/divisions/{divisionId}/restore** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/routing/email/outbound/domains/{domainId}** (2 changes)
-
-* Path was added
-* Operation PATCH was added
-
-**/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}/longtermforecastdata** (2 changes)
+**/api/v2/integrations/botconnector/{integrationId}/bots/{botId}** (2 changes)
 
 * Path was added
 * Operation GET was added
 
-**Contact** (1 change)
+**/api/v2/integrations/botconnector/{integrationId}/bots/summaries** (2 changes)
 
-* Optional property integration was added
+* Path was added
+* Operation GET was added
 
-**SegmentDetailQueryPredicate** (1 change)
+**/api/v2/integrations/botconnector/{integrationId}/bots/{botId}/versions** (2 changes)
 
-* Enum value agentOwned was added to property dimension
+* Path was added
+* Operation GET was added
 
-**KnowledgeBase** (1 change)
+**/api/v2/languageunderstanding/miners/{minerId}/drafts/{draftId}** (4 changes)
 
-* Optional property published was added
+* Path was added
+* Operation GET was added
+* Operation DELETE was added
+* Operation PATCH was added
 
-**ContentAttachment** (1 change)
+**/api/v2/languageunderstanding/miners/{minerId}/drafts** (3 changes)
 
-* Enum value Link was added to property mediaType
+* Path was added
+* Operation GET was added
+* Operation POST was added
 
-**ScaleASGResponse** (1 change)
+**/api/v2/languageunderstanding/miners/{minerId}/intents** (2 changes)
 
-* Model was added
+* Path was added
+* Operation GET was added
 
-**AsgScaleRequest** (1 change)
+**/api/v2/languageunderstanding/miners/{minerId}/intents/{intentId}** (2 changes)
 
-* Model was added
+* Path was added
+* Operation GET was added
 
-**AnalyticsParticipantWithoutAttributes** (1 change)
+**/api/v2/languageunderstanding/miners/{minerId}/execute** (2 changes)
 
-* Enum value botflow was added to property purpose
+* Path was added
+* Operation POST was added
+
+**/api/v2/languageunderstanding/miners/{minerId}** (3 changes)
+
+* Path was added
+* Operation GET was added
+* Operation DELETE was added
+
+**/api/v2/languageunderstanding/miners** (3 changes)
+
+* Path was added
+* Operation GET was added
+* Operation POST was added
+
+**/api/v2/languageunderstanding/miners/{minerId}/uploads** (2 changes)
+
+* Path was added
+* Operation POST was added
+
+**/api/v2/organizations/limits/namespaces/{namespaceName}/defaults** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/workforcemanagement/calendar/data/ics** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/notifications/channels/{channelId}** (2 changes)
+
+* Path was added
+* Operation HEAD was added
+
+**/api/v2/tokens/me** (1 change)
+
+* Operation head was added. Summary: Verify user token
+
+**POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/planninggroups** (1 change)
+
+* Response 201 was added
+
+**POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/servicegoaltemplates** (1 change)
+
+* Response 201 was added
+
+**POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades/state/bulk** (1 change)
+
+* Response 202 was added
+
+**/api/v2/workforcemanagement/calendar/url/ics** (4 changes)
+
+* Path was added
+* Operation GET was added
+* Operation POST was added
+* Operation DELETE was added
+
+**POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules** (1 change)
+
+* Response 201 was added
+
+**POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/generate** (1 change)
+
+* Response 202 was added
+
+**POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/copy** (2 changes)
+
+* Response 201 was added
+* Response 202 was added
+
+**POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/reschedule** (1 change)
+
+* Response 202 was added
 
 **AnalyticsSession** (1 change)
 
-* Optional property agentOwned was added
+* Enum value unknown was added to property mediaType
 
-**Dependency** (3 changes)
+**ViewFilter** (11 changes)
 
-* Enum value DIALOGFLOWCXAGENT was added to property type
-* Enum value NUANCEMIXBOT was added to property type
-* Enum value NUANCEMIXINTEGRATION was added to property type
+* Enum value unknown was added to property mediaTypes
+* Optional property botIds was added
+* Optional property botVersions was added
+* Optional property botMessageTypes was added
+* Optional property botProviderList was added
+* Optional property botProductList was added
+* Optional property botRecognitionFailureReasonList was added
+* Optional property botIntentList was added
+* Optional property botFinalIntentList was added
+* Optional property botSlotList was added
+* Optional property botResultList was added
 
-**DependencyObject** (3 changes)
-
-* Enum value DIALOGFLOWCXAGENT was added to property type
-* Enum value NUANCEMIXBOT was added to property type
-* Enum value NUANCEMIXINTEGRATION was added to property type
-
-**AuditQueryExecutionStatusResponse** (2 changes)
-
-* Enum value EmployeePerformance was added to property serviceName
-* Enum value Supportability was added to property serviceName
-
-**AuditLogMessage** (26 changes)
-
-* Enum value EmployeePerformance was added to property serviceName
-* Enum value Supportability was added to property serviceName
-* Enum value Replace was added to property action
-* Enum value UpdateInService was added to property action
-* Enum value UpdateOutOfService was added to property action
-* Enum value Cycle was added to property action
-* Enum value Scale was added to property action
-* Enum value IpAllowlistClear was added to property action
-* Enum value AddPairingRole was added to property action
-* Enum value Add was added to property action
-* Enum value ActionMap was added to property entityType
-* Enum value ActionTemplate was added to property entityType
-* Enum value EdgeLog was added to property entityType
-* Enum value EdgeLogZip was added to property entityType
-* Enum value EdgePcaps was added to property entityType
-* Enum value EdgePreferences was added to property entityType
-* Enum value EdgeTraceLevel was added to property entityType
-* Enum value ExternalMetricsData was added to property entityType
-* Enum value ExternalMetricsDefinition was added to property entityType
-* Enum value MediaDiagnosticsTraceFile was added to property entityType
-* Enum value OrganizationFeature was added to property entityType
-* Enum value OrganizationIntegrationsAccess was added to property entityType
-* Enum value Pcaps was added to property entityType
-* Enum value Product was added to property entityType
-* Enum value SupportFile was added to property entityType
-* Enum value User was added to property entityType
-
-**AuditQueryRequest** (2 changes)
-
-* Enum value EmployeePerformance was added to property serviceName
-* Enum value Supportability was added to property serviceName
-
-**AuditRealtimeQueryRequest** (2 changes)
-
-* Enum value EmployeePerformance was added to property serviceName
-* Enum value Supportability was added to property serviceName
-
-**AuditQueryEntity** (24 changes)
-
-* Enum value ActionMap was added to property name
-* Enum value ActionTemplate was added to property name
-* Enum value EdgeLog was added to property name
-* Enum value EdgeLogZip was added to property name
-* Enum value EdgePcaps was added to property name
-* Enum value EdgePreferences was added to property name
-* Enum value EdgeTraceLevel was added to property name
-* Enum value ExternalMetricsData was added to property name
-* Enum value ExternalMetricsDefinition was added to property name
-* Enum value MediaDiagnosticsTraceFile was added to property name
-* Enum value OrganizationFeature was added to property name
-* Enum value OrganizationIntegrationsAccess was added to property name
-* Enum value Pcaps was added to property name
-* Enum value Product was added to property name
-* Enum value SupportFile was added to property name
-* Enum value User was added to property name
-* Enum value Replace was added to property actions
-* Enum value UpdateInService was added to property actions
-* Enum value UpdateOutOfService was added to property actions
-* Enum value Cycle was added to property actions
-* Enum value Scale was added to property actions
-* Enum value IpAllowlistClear was added to property actions
-* Enum value AddPairingRole was added to property actions
-* Enum value Add was added to property actions
-
-**AuditQueryService** (2 changes)
-
-* Enum value EmployeePerformance was added to property name
-* Enum value Supportability was added to property name
-
-**EventMessage** (1 change)
-
-* Enum value IMPORT_INVALID_PHONE_NUMBERS was added to property code
-
-**OutboundDomain** (1 change)
+**DataTableImportEntityListing** (1 change)
 
 * Model was added
 
-**VerificationResult** (1 change)
+**EventMessage** (2 changes)
+
+* Enum value CAMPAIGN_EMAIL_BODY_CHARACTER_LIMIT_EXCEEDED was added to property code
+* Enum value CAMPAIGN_EMAIL_SUBJECT_CHARACTER_LIMIT_EXCEEDED was added to property code
+
+**OutboundSettings** (1 change)
+
+* Optional property automaticTimeZoneMapping was added
+
+**EmailConfig** (1 change)
 
 * Model was added
 
-**ConversationContentAttachment** (1 change)
+**FromEmailAddress** (1 change)
 
-* Enum value Link was added to property mediaType
+* Model was added
 
-**ConversationAggregateQueryPredicate** (1 change)
+**ReplyToEmailAddress** (1 change)
 
-* Enum value agentOwned was added to property dimension
+* Model was added
 
-**ConversationAggregationQuery** (1 change)
+**Metric** (4 changes)
 
-* Enum value agentOwned was added to property groupBy
+* Optional property linkedMetric was added
+* Optional property dateCreated was added
+* Optional property dateUnlinked was added
+* Optional property sourcePerformanceProfile was added
 
-**AnalyticsParticipant** (1 change)
+**BotConnectorBot** (1 change)
 
-* Enum value botflow was added to property purpose
+* Model was added
 
-**FlowAggregateQueryPredicate** (1 change)
+**BotConnectorBotVersion** (1 change)
 
-* Enum value agentOwned was added to property dimension
+* Model was added
 
-**FlowAggregationQuery** (1 change)
+**BotIntent** (1 change)
 
-* Enum value agentOwned was added to property groupBy
+* Model was added
 
-**ConversationThreadingWindow** (1 change)
+**BotList** (1 change)
 
-* Optional property defaultTimeoutMinutes was added
+* Model was added
 
-**EmailMessage** (1 change)
+**BotSlot** (1 change)
 
-* Optional property replyTo was added
+* Model was added
 
-**BuShortTermForecastListItem** (1 change)
+**BotConnectorBotSummaryEntityListing** (1 change)
 
-* Optional property canUseForScheduling was added
+* Model was added
+
+**BotSummary** (1 change)
+
+* Model was added
+
+**BotConnectorBotVersionSummaryEntityListing** (1 change)
+
+* Model was added
+
+**BotVersionSummary** (1 change)
+
+* Model was added
+
+**Draft** (1 change)
+
+* Model was added
+
+**DraftIntents** (1 change)
+
+* Model was added
+
+**Miner** (1 change)
+
+* Model was added
+
+**DraftRequest** (1 change)
+
+* Model was added
+
+**DraftListing** (1 change)
+
+* Model was added
+
+**MinedIntentsListing** (1 change)
+
+* Model was added
+
+**MinerIntent** (1 change)
+
+* Model was added
+
+**Utterance** (1 change)
+
+* Model was added
+
+**MinerExecuteRequest** (1 change)
+
+* Model was added
+
+**MinerListing** (1 change)
+
+* Model was added
+
+**PagedNamespaceListing** (1 change)
+
+* Model was added
+
+**AvailableTopic** (1 change)
+
+* Optional property requiresAnyValidator was added
+
+**PermissionDetails** (1 change)
+
+* Enum value requiresUserBeConversationParticipant was added to property type
+
+**ScimV2SchemaAttribute** (18 changes)
+
+* Enum value string was added to property type
+* Enum value boolean was added to property type
+* Enum value decimal was added to property type
+* Enum value integer was added to property type
+* Enum value dateTime was added to property type
+* Enum value reference was added to property type
+* Enum value complex was added to property type
+* Enum value always was added to property returned
+* Enum value never was added to property returned
+* Enum value default was added to property returned
+* Enum value request was added to property returned
+* Enum value none was added to property uniqueness
+* Enum value server was added to property uniqueness
+* Enum value global was added to property uniqueness
+* Enum value User was added to property referenceTypes
+* Enum value Group was added to property referenceTypes
+* Enum value external was added to property referenceTypes
+* Enum value uri was added to property referenceTypes
+
+**PostTextResponse** (1 change)
+
+* Optional property nuanceMixDlg was added
+
+**NuanceMixDlgSettings** (1 change)
+
+* Model was added
+
+**PostTextRequest** (1 change)
+
+* Optional property nuanceMixDlg was added
 
 **BuForecastTimeSeriesResult** (1 change)
 
-* Optional property forecastType was added
+* Enum value Ensemble was added to property forecastingMethod
 
-**BuShortTermForecast** (1 change)
+**WorkPlan** (1 change)
 
-* Optional property canUseForScheduling was added
+* Optional property agentCount was added
 
-**GenerateBuForecastRequest** (1 change)
+**WorkPlanValidationRequest** (1 change)
 
-* Optional property canUseForScheduling was added
+* Optional property agentCount was added
 
-**LongTermForecastPlanningGroupData** (1 change)
-
-* Model was added
-
-**LongTermForecastResult** (1 change)
-
-* Model was added
-
-**LongTermForecastResultResponse** (1 change)
+**CalendarUrlResponse** (1 change)
 
 * Model was added
 
 
-# Point Changes (3 changes)
+# Point Changes (13 changes)
 
-**GET /api/v2/knowledge/knowledgebases** (2 changes)
+**POST /api/v2/recording/crossplatform/mediaretentionpolicies** (1 change)
 
-* Description was changed for parameter name
-* Description was changed for parameter coreLanguage
+* Description was changed
+
+**PUT /api/v2/recording/crossplatform/mediaretentionpolicies/{policyId}** (1 change)
+
+* Description was changed
+
+**POST /api/v2/recording/mediaretentionpolicies** (1 change)
+
+* Description was changed
+
+**PUT /api/v2/recording/mediaretentionpolicies/{policyId}** (1 change)
+
+* Description was changed
+
+**GET /api/v2/integrations/actions/categories** (1 change)
+
+* Description was changed for parameter sortBy
 
 **GET /api/v2/journey/actiontargets** (1 change)
 
 * Description was changed for parameter pageSize
+
+**GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/categories** (1 change)
+
+* Description was changed for parameter limit
+
+**GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents** (1 change)
+
+* Description was changed for parameter limit
+
+**GET /api/v2/knowledge/knowledgebases** (1 change)
+
+* Description was changed for parameter limit
+
+**GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/trainings** (1 change)
+
+* Description was changed for parameter limit
+
+**GET /api/v2/routing/assessments** (1 change)
+
+* Description was changed for parameter limit
+
+**GET /api/v2/routing/predictors** (1 change)
+
+* Description was changed for parameter limit
+
+**DELETE /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}** (1 change)
+
+* Response 202 was changed from The schedule is being deleted to The schedule is being deleted and updates will be sent by notification

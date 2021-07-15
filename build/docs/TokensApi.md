@@ -10,6 +10,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**deleteToken**](TokensApi.html#deleteToken) | **DELETE** /api/v2/tokens/{userId} | Delete all auth tokens for the specified user.
 [**deleteTokensMe**](TokensApi.html#deleteTokensMe) | **DELETE** /api/v2/tokens/me | Delete auth token used to make the request.
 [**getTokensMe**](TokensApi.html#getTokensMe) | **GET** /api/v2/tokens/me | Fetch information about the current token
+[**headTokensMe**](TokensApi.html#headTokensMe) | **HEAD** /api/v2/tokens/me | Verify user token
 {: class="table table-striped"}
 
 <a name="deleteToken"></a>
@@ -158,4 +159,51 @@ This endpoint does not need any parameter.
 ### Return type
 
 **TokenInfo**
+
+<a name="headTokensMe"></a>
+
+# void headTokensMe()
+
+
+
+HEAD /api/v2/tokens/me
+
+Verify user token
+
+
+
+Requires NO permissions: 
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.TokensApi();
+
+apiInstance.headTokensMe()
+  .then(() => {
+    console.log('headTokensMe returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling headTokensMe');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
 

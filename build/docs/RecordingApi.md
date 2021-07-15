@@ -2004,7 +2004,7 @@ POST /api/v2/recording/crossplatform/mediaretentionpolicies
 
 Create media retention policy
 
-
+Policy does not work retroactively
 
 Requires ANY permissions: 
 
@@ -2216,7 +2216,7 @@ POST /api/v2/recording/mediaretentionpolicies
 
 Create media retention policy
 
-
+Policy does not work retroactively
 
 Requires ANY permissions: 
 
@@ -2648,7 +2648,7 @@ PUT /api/v2/recording/crossplatform/mediaretentionpolicies/{policyId}
 
 Update a media retention policy
 
-
+Policy does not work retroactively
 
 Requires ANY permissions: 
 
@@ -2815,7 +2815,7 @@ PUT /api/v2/recording/mediaretentionpolicies/{policyId}
 
 Update a media retention policy
 
-
+Policy does not work retroactively
 
 Requires ANY permissions: 
 

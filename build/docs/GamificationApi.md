@@ -301,6 +301,7 @@ let apiInstance = new platformClient.GamificationApi();
 
 let metricId = "metricId_example"; // String | metric Id
 let opts = { 
+  'workday': "2013-10-20", // String | The objective query workday. If not specified, then it retrieves the current objective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
   'performanceProfileId': "performanceProfileId_example" // String | The profile id of the metrics you are trying to retrieve. The DEFAULT profile is used if nothing is given.
 };
 
@@ -320,6 +321,7 @@ apiInstance.getGamificationMetric(metricId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **metricId** | **String** | metric Id |  |
+ **workday** | **String** | The objective query workday. If not specified, then it retrieves the current objective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | [optional]  |
  **performanceProfileId** | **String** | The profile id of the metrics you are trying to retrieve. The DEFAULT profile is used if nothing is given. | [optional]  |
 {: class="table table-striped"}
 
@@ -460,7 +462,8 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.GamificationApi();
 
 let opts = { 
-  'performanceProfileId': "performanceProfileId_example" // String | The profile id of the metrics you are trying to retrieve. The DEFAULT profile is used if nothing is given.
+  'performanceProfileId': "performanceProfileId_example", // String | The profile id of the metrics you are trying to retrieve. The DEFAULT profile is used if nothing is given.
+  'workday': "2013-10-20" // String | The objective query workday. If not specified, then it retrieves the current objective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 };
 
 apiInstance.getGamificationMetrics(opts)
@@ -479,6 +482,7 @@ apiInstance.getGamificationMetrics(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **performanceProfileId** | **String** | The profile id of the metrics you are trying to retrieve. The DEFAULT profile is used if nothing is given. | [optional]  |
+ **workday** | **String** | The objective query workday. If not specified, then it retrieves the current objective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | [optional]  |
 {: class="table table-striped"}
 
 ### Return type

@@ -455,7 +455,7 @@ let apiInstance = new platformClient.JourneyApi();
 
 let opts = { 
   'pageNumber': 1, // Number | Page number
-  'pageSize': 25 // Number | Page size. The max that will be returned is 100.
+  'pageSize': 25 // Number | Page size
 };
 
 apiInstance.getJourneyActiontargets(opts)
@@ -474,7 +474,7 @@ apiInstance.getJourneyActiontargets(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
- **pageSize** | **Number** | Page size. The max that will be returned is 100. | [optional] [default to 25] |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
 {: class="table table-striped"}
 
 ### Return type

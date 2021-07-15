@@ -10,6 +10,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**deleteLanguageunderstandingDomain**](LanguageUnderstandingApi.html#deleteLanguageunderstandingDomain) | **DELETE** /api/v2/languageunderstanding/domains/{domainId} | Delete an NLU Domain.
 [**deleteLanguageunderstandingDomainFeedbackFeedbackId**](LanguageUnderstandingApi.html#deleteLanguageunderstandingDomainFeedbackFeedbackId) | **DELETE** /api/v2/languageunderstanding/domains/{domainId}/feedback/{feedbackId} | Delete the feedback on the NLU Domain Version.
 [**deleteLanguageunderstandingDomainVersion**](LanguageUnderstandingApi.html#deleteLanguageunderstandingDomainVersion) | **DELETE** /api/v2/languageunderstanding/domains/{domainId}/versions/{domainVersionId} | Delete an NLU Domain Version
+[**deleteLanguageunderstandingMiner**](LanguageUnderstandingApi.html#deleteLanguageunderstandingMiner) | **DELETE** /api/v2/languageunderstanding/miners/{minerId} | Delete a miner.
+[**deleteLanguageunderstandingMinerDraft**](LanguageUnderstandingApi.html#deleteLanguageunderstandingMinerDraft) | **DELETE** /api/v2/languageunderstanding/miners/{minerId}/drafts/{draftId} | Delete a draft
 [**getLanguageunderstandingDomain**](LanguageUnderstandingApi.html#getLanguageunderstandingDomain) | **GET** /api/v2/languageunderstanding/domains/{domainId} | Find an NLU Domain.
 [**getLanguageunderstandingDomainFeedback**](LanguageUnderstandingApi.html#getLanguageunderstandingDomainFeedback) | **GET** /api/v2/languageunderstanding/domains/{domainId}/feedback | Get all feedback in the given NLU Domain Version.
 [**getLanguageunderstandingDomainFeedbackFeedbackId**](LanguageUnderstandingApi.html#getLanguageunderstandingDomainFeedbackFeedbackId) | **GET** /api/v2/languageunderstanding/domains/{domainId}/feedback/{feedbackId} | Find a Feedback
@@ -17,13 +19,23 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getLanguageunderstandingDomainVersionReport**](LanguageUnderstandingApi.html#getLanguageunderstandingDomainVersionReport) | **GET** /api/v2/languageunderstanding/domains/{domainId}/versions/{domainVersionId}/report | Retrieved quality report for the specified NLU Domain Version
 [**getLanguageunderstandingDomainVersions**](LanguageUnderstandingApi.html#getLanguageunderstandingDomainVersions) | **GET** /api/v2/languageunderstanding/domains/{domainId}/versions | Get all NLU Domain Versions for a given Domain.
 [**getLanguageunderstandingDomains**](LanguageUnderstandingApi.html#getLanguageunderstandingDomains) | **GET** /api/v2/languageunderstanding/domains | Get all NLU Domains.
+[**getLanguageunderstandingMiner**](LanguageUnderstandingApi.html#getLanguageunderstandingMiner) | **GET** /api/v2/languageunderstanding/miners/{minerId} | Get information about a miner.
+[**getLanguageunderstandingMinerDraft**](LanguageUnderstandingApi.html#getLanguageunderstandingMinerDraft) | **GET** /api/v2/languageunderstanding/miners/{minerId}/drafts/{draftId} | Get information about a draft.
+[**getLanguageunderstandingMinerDrafts**](LanguageUnderstandingApi.html#getLanguageunderstandingMinerDrafts) | **GET** /api/v2/languageunderstanding/miners/{minerId}/drafts | Retrieve the list of drafts created.
+[**getLanguageunderstandingMinerIntent**](LanguageUnderstandingApi.html#getLanguageunderstandingMinerIntent) | **GET** /api/v2/languageunderstanding/miners/{minerId}/intents/{intentId} | Get information about a mined intent
+[**getLanguageunderstandingMinerIntents**](LanguageUnderstandingApi.html#getLanguageunderstandingMinerIntents) | **GET** /api/v2/languageunderstanding/miners/{minerId}/intents | Retrieve a list of mined intents.
+[**getLanguageunderstandingMiners**](LanguageUnderstandingApi.html#getLanguageunderstandingMiners) | **GET** /api/v2/languageunderstanding/miners | Retrieve the list of miners created.
 [**patchLanguageunderstandingDomain**](LanguageUnderstandingApi.html#patchLanguageunderstandingDomain) | **PATCH** /api/v2/languageunderstanding/domains/{domainId} | Update an NLU Domain.
+[**patchLanguageunderstandingMinerDraft**](LanguageUnderstandingApi.html#patchLanguageunderstandingMinerDraft) | **PATCH** /api/v2/languageunderstanding/miners/{minerId}/drafts/{draftId} | Save information for the draft
 [**postLanguageunderstandingDomainFeedback**](LanguageUnderstandingApi.html#postLanguageunderstandingDomainFeedback) | **POST** /api/v2/languageunderstanding/domains/{domainId}/feedback | Create feedback for the NLU Domain Version.
 [**postLanguageunderstandingDomainVersionDetect**](LanguageUnderstandingApi.html#postLanguageunderstandingDomainVersionDetect) | **POST** /api/v2/languageunderstanding/domains/{domainId}/versions/{domainVersionId}/detect | Detect intent, entities, etc. in the submitted text using the specified NLU domain version.
 [**postLanguageunderstandingDomainVersionPublish**](LanguageUnderstandingApi.html#postLanguageunderstandingDomainVersionPublish) | **POST** /api/v2/languageunderstanding/domains/{domainId}/versions/{domainVersionId}/publish | Publish the draft NLU Domain Version.
 [**postLanguageunderstandingDomainVersionTrain**](LanguageUnderstandingApi.html#postLanguageunderstandingDomainVersionTrain) | **POST** /api/v2/languageunderstanding/domains/{domainId}/versions/{domainVersionId}/train | Train the draft NLU Domain Version.
 [**postLanguageunderstandingDomainVersions**](LanguageUnderstandingApi.html#postLanguageunderstandingDomainVersions) | **POST** /api/v2/languageunderstanding/domains/{domainId}/versions | Create an NLU Domain Version.
 [**postLanguageunderstandingDomains**](LanguageUnderstandingApi.html#postLanguageunderstandingDomains) | **POST** /api/v2/languageunderstanding/domains | Create an NLU Domain.
+[**postLanguageunderstandingMinerDrafts**](LanguageUnderstandingApi.html#postLanguageunderstandingMinerDrafts) | **POST** /api/v2/languageunderstanding/miners/{minerId}/drafts | Create a new draft resource.
+[**postLanguageunderstandingMinerExecute**](LanguageUnderstandingApi.html#postLanguageunderstandingMinerExecute) | **POST** /api/v2/languageunderstanding/miners/{minerId}/execute | Start the mining process. Specify date range pair with mediaType and queueIds for mining data from Genesys Cloud. Specify only uploadKey for mining through an external file.
+[**postLanguageunderstandingMiners**](LanguageUnderstandingApi.html#postLanguageunderstandingMiners) | **POST** /api/v2/languageunderstanding/miners | Create a unique miner.
 [**putLanguageunderstandingDomainVersion**](LanguageUnderstandingApi.html#putLanguageunderstandingDomainVersion) | **PUT** /api/v2/languageunderstanding/domains/{domainId}/versions/{domainVersionId} | Update an NLU Domain Version.
 {: class="table table-striped"}
 
@@ -187,6 +199,114 @@ apiInstance.deleteLanguageunderstandingDomainVersion(domainId, domainVersionId)
 | ------------- | ------------- | ------------- | ------------- |
  **domainId** | **String** | ID of the NLU domain. |  |
  **domainVersionId** | **String** | ID of the NLU domain version. |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
+
+<a name="deleteLanguageunderstandingMiner"></a>
+
+# void deleteLanguageunderstandingMiner(minerId)
+
+
+
+DELETE /api/v2/languageunderstanding/miners/{minerId}
+
+Delete a miner.
+
+
+
+Requires ALL permissions: 
+
+* languageUnderstanding:miner:delete
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.LanguageUnderstandingApi();
+
+let minerId = "minerId_example"; // String | Miner ID
+
+apiInstance.deleteLanguageunderstandingMiner(minerId)
+  .then(() => {
+    console.log('deleteLanguageunderstandingMiner returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteLanguageunderstandingMiner');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **minerId** | **String** | Miner ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
+
+<a name="deleteLanguageunderstandingMinerDraft"></a>
+
+# void deleteLanguageunderstandingMinerDraft(minerId, draftId)
+
+
+
+DELETE /api/v2/languageunderstanding/miners/{minerId}/drafts/{draftId}
+
+Delete a draft
+
+
+
+Requires ALL permissions: 
+
+* languageUnderstanding:draft:delete
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.LanguageUnderstandingApi();
+
+let minerId = "minerId_example"; // String | Miner ID
+let draftId = "draftId_example"; // String | Draft ID
+
+apiInstance.deleteLanguageunderstandingMinerDraft(minerId, draftId)
+  .then(() => {
+    console.log('deleteLanguageunderstandingMinerDraft returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteLanguageunderstandingMinerDraft');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **minerId** | **String** | Miner ID |  |
+ **draftId** | **String** | Draft ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -619,6 +739,331 @@ apiInstance.getLanguageunderstandingDomains(opts)
 
 **NluDomainListing**
 
+<a name="getLanguageunderstandingMiner"></a>
+
+# Miner getLanguageunderstandingMiner(minerId)
+
+
+
+GET /api/v2/languageunderstanding/miners/{minerId}
+
+Get information about a miner.
+
+
+
+Requires ALL permissions: 
+
+* languageUnderstanding:miner:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.LanguageUnderstandingApi();
+
+let minerId = "minerId_example"; // String | Miner ID
+
+apiInstance.getLanguageunderstandingMiner(minerId)
+  .then((data) => {
+    console.log(`getLanguageunderstandingMiner success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getLanguageunderstandingMiner');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **minerId** | **String** | Miner ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+**Miner**
+
+<a name="getLanguageunderstandingMinerDraft"></a>
+
+# Draft getLanguageunderstandingMinerDraft(minerId, draftId)
+
+
+
+GET /api/v2/languageunderstanding/miners/{minerId}/drafts/{draftId}
+
+Get information about a draft.
+
+
+
+Requires ALL permissions: 
+
+* languageUnderstanding:draft:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.LanguageUnderstandingApi();
+
+let minerId = "minerId_example"; // String | Miner ID
+let draftId = "draftId_example"; // String | Draft ID
+
+apiInstance.getLanguageunderstandingMinerDraft(minerId, draftId)
+  .then((data) => {
+    console.log(`getLanguageunderstandingMinerDraft success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getLanguageunderstandingMinerDraft');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **minerId** | **String** | Miner ID |  |
+ **draftId** | **String** | Draft ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+**Draft**
+
+<a name="getLanguageunderstandingMinerDrafts"></a>
+
+# DraftListing getLanguageunderstandingMinerDrafts(minerId)
+
+
+
+GET /api/v2/languageunderstanding/miners/{minerId}/drafts
+
+Retrieve the list of drafts created.
+
+
+
+Requires ALL permissions: 
+
+* languageUnderstanding:draft:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.LanguageUnderstandingApi();
+
+let minerId = "minerId_example"; // String | Miner ID
+
+apiInstance.getLanguageunderstandingMinerDrafts(minerId)
+  .then((data) => {
+    console.log(`getLanguageunderstandingMinerDrafts success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getLanguageunderstandingMinerDrafts');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **minerId** | **String** | Miner ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+**DraftListing**
+
+<a name="getLanguageunderstandingMinerIntent"></a>
+
+# MinerIntent getLanguageunderstandingMinerIntent(minerId, intentId, opts)
+
+
+
+GET /api/v2/languageunderstanding/miners/{minerId}/intents/{intentId}
+
+Get information about a mined intent
+
+
+
+Requires ALL permissions: 
+
+* languageUnderstanding:minerIntent:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.LanguageUnderstandingApi();
+
+let minerId = "minerId_example"; // String | Miner ID
+let intentId = "intentId_example"; // String | The ID of the intent to be retrieved.
+let opts = { 
+  'expand': "expand_example" // String | Option to fetch utterances
+};
+
+apiInstance.getLanguageunderstandingMinerIntent(minerId, intentId, opts)
+  .then((data) => {
+    console.log(`getLanguageunderstandingMinerIntent success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getLanguageunderstandingMinerIntent');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **minerId** | **String** | Miner ID |  |
+ **intentId** | **String** | The ID of the intent to be retrieved. |  |
+ **expand** | **String** | Option to fetch utterances | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**MinerIntent**
+
+<a name="getLanguageunderstandingMinerIntents"></a>
+
+# MinedIntentsListing getLanguageunderstandingMinerIntents(minerId, opts)
+
+
+
+GET /api/v2/languageunderstanding/miners/{minerId}/intents
+
+Retrieve a list of mined intents.
+
+
+
+Requires ALL permissions: 
+
+* languageUnderstanding:minerIntent:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.LanguageUnderstandingApi();
+
+let minerId = "minerId_example"; // String | Miner ID
+let opts = { 
+  'expand': "expand_example" // String | Option to fetch utterances.
+};
+
+apiInstance.getLanguageunderstandingMinerIntents(minerId, opts)
+  .then((data) => {
+    console.log(`getLanguageunderstandingMinerIntents success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getLanguageunderstandingMinerIntents');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **minerId** | **String** | Miner ID |  |
+ **expand** | **String** | Option to fetch utterances. | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**MinedIntentsListing**
+
+<a name="getLanguageunderstandingMiners"></a>
+
+# MinerListing getLanguageunderstandingMiners()
+
+
+
+GET /api/v2/languageunderstanding/miners
+
+Retrieve the list of miners created.
+
+
+
+Requires ALL permissions: 
+
+* languageUnderstanding:miner:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.LanguageUnderstandingApi();
+
+apiInstance.getLanguageunderstandingMiners()
+  .then((data) => {
+    console.log(`getLanguageunderstandingMiners success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getLanguageunderstandingMiners');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+{: class="table table-striped"}
+
+### Return type
+
+**MinerListing**
+
 <a name="patchLanguageunderstandingDomain"></a>
 
 # NluDomain patchLanguageunderstandingDomain(domainId, body)
@@ -674,6 +1119,65 @@ apiInstance.patchLanguageunderstandingDomain(domainId, body)
 ### Return type
 
 **NluDomain**
+
+<a name="patchLanguageunderstandingMinerDraft"></a>
+
+# Draft patchLanguageunderstandingMinerDraft(minerId, draftId, opts)
+
+
+
+PATCH /api/v2/languageunderstanding/miners/{minerId}/drafts/{draftId}
+
+Save information for the draft
+
+
+
+Requires ALL permissions: 
+
+* languageUnderstanding:draft:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.LanguageUnderstandingApi();
+
+let minerId = "minerId_example"; // String | Miner ID
+let draftId = "draftId_example"; // String | Draft ID
+let opts = { 
+  'body': {} // Object | 
+};
+
+apiInstance.patchLanguageunderstandingMinerDraft(minerId, draftId, opts)
+  .then((data) => {
+    console.log(`patchLanguageunderstandingMinerDraft success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchLanguageunderstandingMinerDraft');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **minerId** | **String** | Miner ID |  |
+ **draftId** | **String** | Draft ID |  |
+ **body** | **Object** |  | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**Draft**
 
 <a name="postLanguageunderstandingDomainFeedback"></a>
 
@@ -1010,6 +1514,171 @@ apiInstance.postLanguageunderstandingDomains(body)
 ### Return type
 
 **NluDomain**
+
+<a name="postLanguageunderstandingMinerDrafts"></a>
+
+# Draft postLanguageunderstandingMinerDrafts(minerId, body)
+
+
+
+POST /api/v2/languageunderstanding/miners/{minerId}/drafts
+
+Create a new draft resource.
+
+
+
+Requires ALL permissions: 
+
+* languageUnderstanding:draft:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.LanguageUnderstandingApi();
+
+let minerId = "minerId_example"; // String | Miner ID
+let body = {}; // Object | Details for creating draft resource
+
+apiInstance.postLanguageunderstandingMinerDrafts(minerId, body)
+  .then((data) => {
+    console.log(`postLanguageunderstandingMinerDrafts success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postLanguageunderstandingMinerDrafts');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **minerId** | **String** | Miner ID |  |
+ **body** | **Object** | Details for creating draft resource |  |
+{: class="table table-striped"}
+
+### Return type
+
+**Draft**
+
+<a name="postLanguageunderstandingMinerExecute"></a>
+
+# Miner postLanguageunderstandingMinerExecute(minerId, opts)
+
+
+
+POST /api/v2/languageunderstanding/miners/{minerId}/execute
+
+Start the mining process. Specify date range pair with mediaType and queueIds for mining data from Genesys Cloud. Specify only uploadKey for mining through an external file.
+
+
+
+Requires ALL permissions: 
+
+* languageUnderstanding:miner:execute
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.LanguageUnderstandingApi();
+
+let minerId = "minerId_example"; // String | Miner ID
+let opts = { 
+  'body': {} // Object | 
+};
+
+apiInstance.postLanguageunderstandingMinerExecute(minerId, opts)
+  .then((data) => {
+    console.log(`postLanguageunderstandingMinerExecute success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postLanguageunderstandingMinerExecute');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **minerId** | **String** | Miner ID |  |
+ **body** | **Object** |  | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**Miner**
+
+<a name="postLanguageunderstandingMiners"></a>
+
+# Miner postLanguageunderstandingMiners(body)
+
+
+
+POST /api/v2/languageunderstanding/miners
+
+Create a unique miner.
+
+
+
+Requires ALL permissions: 
+
+* languageUnderstanding:miner:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.LanguageUnderstandingApi();
+
+let body = {}; // Object | Details for creating a new miner resource.
+
+apiInstance.postLanguageunderstandingMiners(body)
+  .then((data) => {
+    console.log(`postLanguageunderstandingMiners success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postLanguageunderstandingMiners');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | Details for creating a new miner resource. |  |
+{: class="table table-striped"}
+
+### Return type
+
+**Miner**
 
 <a name="putLanguageunderstandingDomainVersion"></a>
 

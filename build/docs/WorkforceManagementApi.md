@@ -14,6 +14,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**deleteWorkforcemanagementBusinessunitServicegoaltemplate**](WorkforceManagementApi.html#deleteWorkforcemanagementBusinessunitServicegoaltemplate) | **DELETE** /api/v2/workforcemanagement/businessunits/{businessUnitId}/servicegoaltemplates/{serviceGoalTemplateId} | Delete a service goal template
 [**deleteWorkforcemanagementBusinessunitWeekSchedule**](WorkforceManagementApi.html#deleteWorkforcemanagementBusinessunitWeekSchedule) | **DELETE** /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId} | Delete a schedule
 [**deleteWorkforcemanagementBusinessunitWeekShorttermforecast**](WorkforceManagementApi.html#deleteWorkforcemanagementBusinessunitWeekShorttermforecast) | **DELETE** /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId} | Delete a short term forecast
+[**deleteWorkforcemanagementCalendarUrlIcs**](WorkforceManagementApi.html#deleteWorkforcemanagementCalendarUrlIcs) | **DELETE** /api/v2/workforcemanagement/calendar/url/ics | Disable generated calendar link for the current user
 [**deleteWorkforcemanagementManagementunit**](WorkforceManagementApi.html#deleteWorkforcemanagementManagementunit) | **DELETE** /api/v2/workforcemanagement/managementunits/{managementUnitId} | Delete management unit
 [**deleteWorkforcemanagementManagementunitWorkplan**](WorkforceManagementApi.html#deleteWorkforcemanagementManagementunitWorkplan) | **DELETE** /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans/{workPlanId} | Delete a work plan
 [**deleteWorkforcemanagementManagementunitWorkplanrotation**](WorkforceManagementApi.html#deleteWorkforcemanagementManagementunitWorkplanrotation) | **DELETE** /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplanrotations/{workPlanRotationId} | Delete a work plan rotation
@@ -46,6 +47,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getWorkforcemanagementBusinessunitWeekShorttermforecasts**](WorkforceManagementApi.html#getWorkforcemanagementBusinessunitWeekShorttermforecasts) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts | Get short term forecasts
 [**getWorkforcemanagementBusinessunits**](WorkforceManagementApi.html#getWorkforcemanagementBusinessunits) | **GET** /api/v2/workforcemanagement/businessunits | Get business units
 [**getWorkforcemanagementBusinessunitsDivisionviews**](WorkforceManagementApi.html#getWorkforcemanagementBusinessunitsDivisionviews) | **GET** /api/v2/workforcemanagement/businessunits/divisionviews | Get business units across divisions
+[**getWorkforcemanagementCalendarDataIcs**](WorkforceManagementApi.html#getWorkforcemanagementCalendarDataIcs) | **GET** /api/v2/workforcemanagement/calendar/data/ics | Get ics formatted calendar based on shareable link
+[**getWorkforcemanagementCalendarUrlIcs**](WorkforceManagementApi.html#getWorkforcemanagementCalendarUrlIcs) | **GET** /api/v2/workforcemanagement/calendar/url/ics | Get existing calendar link for the current user
 [**getWorkforcemanagementHistoricaldataDeletejob**](WorkforceManagementApi.html#getWorkforcemanagementHistoricaldataDeletejob) | **GET** /api/v2/workforcemanagement/historicaldata/deletejob | Retrieves delete job status for historical data imports of the organization
 [**getWorkforcemanagementHistoricaldataImportstatus**](WorkforceManagementApi.html#getWorkforcemanagementHistoricaldataImportstatus) | **GET** /api/v2/workforcemanagement/historicaldata/importstatus | Retrieves status of the historical data imports of the organization
 [**getWorkforcemanagementManagementunit**](WorkforceManagementApi.html#getWorkforcemanagementManagementunit) | **GET** /api/v2/workforcemanagement/managementunits/{managementUnitId} | Get management unit
@@ -98,6 +101,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postWorkforcemanagementBusinessunitWeekShorttermforecastCopy**](WorkforceManagementApi.html#postWorkforcemanagementBusinessunitWeekShorttermforecastCopy) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}/copy | Copy a short term forecast
 [**postWorkforcemanagementBusinessunitWeekShorttermforecastsGenerate**](WorkforceManagementApi.html#postWorkforcemanagementBusinessunitWeekShorttermforecastsGenerate) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/generate | Generate a short term forecast
 [**postWorkforcemanagementBusinessunits**](WorkforceManagementApi.html#postWorkforcemanagementBusinessunits) | **POST** /api/v2/workforcemanagement/businessunits | Add a new business unit
+[**postWorkforcemanagementCalendarUrlIcs**](WorkforceManagementApi.html#postWorkforcemanagementCalendarUrlIcs) | **POST** /api/v2/workforcemanagement/calendar/url/ics | Create a newly generated calendar link for the current user; if the current user has previously generated one, the generated link will be returned
 [**postWorkforcemanagementHistoricaldataDeletejob**](WorkforceManagementApi.html#postWorkforcemanagementHistoricaldataDeletejob) | **POST** /api/v2/workforcemanagement/historicaldata/deletejob | Delete the entries of the historical data imports in the organization
 [**postWorkforcemanagementHistoricaldataValidate**](WorkforceManagementApi.html#postWorkforcemanagementHistoricaldataValidate) | **POST** /api/v2/workforcemanagement/historicaldata/validate | Trigger validation process for historical import
 [**postWorkforcemanagementManagementunitAgentschedulesSearch**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitAgentschedulesSearch) | **POST** /api/v2/workforcemanagement/managementunits/{managementUnitId}/agentschedules/search | Query published schedules for given given time range for set of users
@@ -502,6 +506,54 @@ apiInstance.deleteWorkforcemanagementBusinessunitWeekShorttermforecast(businessU
  **businessUnitId** | **String** | The business unit ID of the business unit to which the forecast belongs |  |
  **weekDateId** | **String** | The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **forecastId** | **String** | The ID of the forecast |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
+
+<a name="deleteWorkforcemanagementCalendarUrlIcs"></a>
+
+# void deleteWorkforcemanagementCalendarUrlIcs()
+
+
+
+DELETE /api/v2/workforcemanagement/calendar/url/ics
+
+Disable generated calendar link for the current user
+
+
+
+Requires ALL permissions: 
+
+* wfm:agentSchedule:sync
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+apiInstance.deleteWorkforcemanagementCalendarUrlIcs()
+  .then(() => {
+    console.log('deleteWorkforcemanagementCalendarUrlIcs returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteWorkforcemanagementCalendarUrlIcs');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
 {: class="table table-striped"}
 
 ### Return type
@@ -2502,6 +2554,104 @@ apiInstance.getWorkforcemanagementBusinessunitsDivisionviews(opts)
 
 **BusinessUnitListing**
 
+<a name="getWorkforcemanagementCalendarDataIcs"></a>
+
+# **&#39;String&#39;** getWorkforcemanagementCalendarDataIcs(calendarId)
+
+
+
+GET /api/v2/workforcemanagement/calendar/data/ics
+
+Get ics formatted calendar based on shareable link
+
+
+
+Requires NO permissions: 
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let calendarId = "calendarId_example"; // String | The id of the ics-formatted calendar
+
+apiInstance.getWorkforcemanagementCalendarDataIcs(calendarId)
+  .then((data) => {
+    console.log(`getWorkforcemanagementCalendarDataIcs success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getWorkforcemanagementCalendarDataIcs');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **calendarId** | **String** | The id of the ics-formatted calendar |  |
+{: class="table table-striped"}
+
+### Return type
+
+**&#39;String&#39;**
+
+<a name="getWorkforcemanagementCalendarUrlIcs"></a>
+
+# CalendarUrlResponse getWorkforcemanagementCalendarUrlIcs()
+
+
+
+GET /api/v2/workforcemanagement/calendar/url/ics
+
+Get existing calendar link for the current user
+
+
+
+Requires ALL permissions: 
+
+* wfm:agentSchedule:sync
+* wfm:agentSchedule:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+apiInstance.getWorkforcemanagementCalendarUrlIcs()
+  .then((data) => {
+    console.log(`getWorkforcemanagementCalendarUrlIcs success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getWorkforcemanagementCalendarUrlIcs');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+{: class="table table-striped"}
+
+### Return type
+
+**CalendarUrlResponse**
+
 <a name="getWorkforcemanagementHistoricaldataDeletejob"></a>
 
 # HistoricalImportDeleteJobResponse getWorkforcemanagementHistoricaldataDeletejob()
@@ -3450,7 +3600,7 @@ apiInstance.getWorkforcemanagementManagementunitWeekShifttrades(managementUnitId
 
 <a name="getWorkforcemanagementManagementunitWorkplan"></a>
 
-# WorkPlan getWorkforcemanagementManagementunitWorkplan(managementUnitId, workPlanId)
+# WorkPlan getWorkforcemanagementManagementunitWorkplan(managementUnitId, workPlanId, opts)
 
 
 
@@ -3481,8 +3631,11 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 
 let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 let workPlanId = "workPlanId_example"; // String | The ID of the work plan to fetch
+let opts = { 
+  'includeOnly': ["includeOnly_example"] // [String] | limit response to the specified fields
+};
 
-apiInstance.getWorkforcemanagementManagementunitWorkplan(managementUnitId, workPlanId)
+apiInstance.getWorkforcemanagementManagementunitWorkplan(managementUnitId, workPlanId, opts)
   .then((data) => {
     console.log(`getWorkforcemanagementManagementunitWorkplan success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3499,6 +3652,7 @@ apiInstance.getWorkforcemanagementManagementunitWorkplan(managementUnitId, workP
 | ------------- | ------------- | ------------- | ------------- |
  **managementUnitId** | **String** | The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
  **workPlanId** | **String** | The ID of the work plan to fetch |  |
+ **includeOnly** | **[String]** | limit response to the specified fields | [optional] <br />**Values**: agentCount, agents, optionalDays, shifts, shiftStartVariances |
 {: class="table table-striped"}
 
 ### Return type
@@ -5581,6 +5735,62 @@ apiInstance.postWorkforcemanagementBusinessunits(opts)
 ### Return type
 
 **BusinessUnit**
+
+<a name="postWorkforcemanagementCalendarUrlIcs"></a>
+
+# CalendarUrlResponse postWorkforcemanagementCalendarUrlIcs(opts)
+
+
+
+POST /api/v2/workforcemanagement/calendar/url/ics
+
+Create a newly generated calendar link for the current user; if the current user has previously generated one, the generated link will be returned
+
+
+
+Requires ALL permissions: 
+
+* wfm:agentSchedule:sync
+* wfm:agentSchedule:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let opts = { 
+  'language': "en-US" // String | A language tag (which is sometimes referred to as a \"locale identifier\") to use to localize default activity code names in the ics-formatted calendar
+};
+
+apiInstance.postWorkforcemanagementCalendarUrlIcs(opts)
+  .then((data) => {
+    console.log(`postWorkforcemanagementCalendarUrlIcs success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postWorkforcemanagementCalendarUrlIcs');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **language** | **String** | A language tag (which is sometimes referred to as a \&quot;locale identifier\&quot;) to use to localize default activity code names in the ics-formatted calendar | [optional] [default to en-US] |
+{: class="table table-striped"}
+
+### Return type
+
+**CalendarUrlResponse**
 
 <a name="postWorkforcemanagementHistoricaldataDeletejob"></a>
 

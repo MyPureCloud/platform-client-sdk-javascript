@@ -5,7 +5,7 @@ class GamificationApi {
 	/**
 	 * Gamification service.
 	 * @module purecloud-platform-client-v2/api/GamificationApi
-	 * @version 115.0.0
+	 * @version 116.0.0
 	 */
 
 	/**
@@ -153,6 +153,7 @@ class GamificationApi {
 	 * 
 	 * @param {String} metricId metric Id
 	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.workday The objective query workday. If not specified, then it retrieves the current objective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 * @param {String} opts.performanceProfileId The profile id of the metrics you are trying to retrieve. The DEFAULT profile is used if nothing is given.
 	 */
 	getGamificationMetric(metricId, opts) { 
@@ -167,7 +168,7 @@ class GamificationApi {
 			'/api/v2/gamification/metrics/{metricId}', 
 			'GET', 
 			{ 'metricId': metricId }, 
-			{ 'performance profile id': opts['performanceProfileId'] }, 
+			{ 'workday': opts['workday'],'performanceProfileId': opts['performanceProfileId'] }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -227,6 +228,7 @@ class GamificationApi {
 	 * 
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.performanceProfileId The profile id of the metrics you are trying to retrieve. The DEFAULT profile is used if nothing is given.
+	 * @param {String} opts.workday The objective query workday. If not specified, then it retrieves the current objective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 */
 	getGamificationMetrics(opts) { 
 		opts = opts || {};
@@ -236,7 +238,7 @@ class GamificationApi {
 			'/api/v2/gamification/metrics', 
 			'GET', 
 			{  }, 
-			{ 'performance profile id': opts['performanceProfileId'] }, 
+			{ 'performanceProfileId': opts['performanceProfileId'],'workday': opts['workday'] }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -952,7 +954,7 @@ class GamificationApi {
 			'/api/v2/gamification/metrics/{metricId}', 
 			'PUT', 
 			{ 'metricId': metricId }, 
-			{ 'performance profile id': opts['performanceProfileId'] }, 
+			{ 'performanceProfileId': opts['performanceProfileId'] }, 
 			{  }, 
 			{  }, 
 			body, 

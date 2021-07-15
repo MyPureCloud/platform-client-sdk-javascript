@@ -11,6 +11,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getNotificationsAvailabletopics**](NotificationsApi.html#getNotificationsAvailabletopics) | **GET** /api/v2/notifications/availabletopics | Get available notification topics.
 [**getNotificationsChannelSubscriptions**](NotificationsApi.html#getNotificationsChannelSubscriptions) | **GET** /api/v2/notifications/channels/{channelId}/subscriptions | The list of all subscriptions for this channel
 [**getNotificationsChannels**](NotificationsApi.html#getNotificationsChannels) | **GET** /api/v2/notifications/channels | The list of existing channels
+[**headNotificationsChannel**](NotificationsApi.html#headNotificationsChannel) | **HEAD** /api/v2/notifications/channels/{channelId} | Verify a channel still exists and is valid
 [**postNotificationsChannelSubscriptions**](NotificationsApi.html#postNotificationsChannelSubscriptions) | **POST** /api/v2/notifications/channels/{channelId}/subscriptions | Add a list of subscriptions to the existing list of subscriptions
 [**postNotificationsChannels**](NotificationsApi.html#postNotificationsChannels) | **POST** /api/v2/notifications/channels | Create a new channel
 [**putNotificationsChannelSubscriptions**](NotificationsApi.html#putNotificationsChannelSubscriptions) | **PUT** /api/v2/notifications/channels/{channelId}/subscriptions | Replace the current list of subscriptions with a new list.
@@ -229,6 +230,58 @@ apiInstance.getNotificationsChannels(opts)
 ### Return type
 
 **ChannelEntityListing**
+
+<a name="headNotificationsChannel"></a>
+
+# **&#39;Boolean&#39;** headNotificationsChannel(channelId)
+
+
+
+HEAD /api/v2/notifications/channels/{channelId}
+
+Verify a channel still exists and is valid
+
+
+
+Requires NO permissions: 
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.NotificationsApi();
+
+let channelId = "channelId_example"; // String | Channel ID
+
+apiInstance.headNotificationsChannel(channelId)
+  .then((data) => {
+    console.log(`headNotificationsChannel success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling headNotificationsChannel');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **channelId** | **String** | Channel ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+**&#39;Boolean&#39;**
 
 <a name="postNotificationsChannelSubscriptions"></a>
 

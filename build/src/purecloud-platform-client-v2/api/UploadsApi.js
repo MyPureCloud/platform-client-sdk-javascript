@@ -5,7 +5,7 @@ class UploadsApi {
 	/**
 	 * Uploads service.
 	 * @module purecloud-platform-client-v2/api/UploadsApi
-	 * @version 115.0.0
+	 * @version 116.0.0
 	 */
 
 	/**
@@ -19,6 +19,36 @@ class UploadsApi {
 		this.apiClient = apiClient || ApiClient.instance;
 	}
 
+
+	/**
+	 * Creates a presigned URL for uploading a chat corpus which will be used for mining by intent miner
+	 * 
+	 * @param {String} minerId Miner ID
+	 * @param {Object} body query
+	 */
+	postLanguageunderstandingMinerUploads(minerId, body) { 
+		// verify the required parameter 'minerId' is set
+		if (minerId === undefined || minerId === null) {
+			throw 'Missing the required parameter "minerId" when calling postLanguageunderstandingMinerUploads';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postLanguageunderstandingMinerUploads';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/languageunderstanding/miners/{minerId}/uploads', 
+			'POST', 
+			{ 'minerId': minerId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
 
 	/**
 	 * Creates presigned url for uploading a public asset image

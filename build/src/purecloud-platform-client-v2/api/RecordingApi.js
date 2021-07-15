@@ -5,7 +5,7 @@ class RecordingApi {
 	/**
 	 * Recording service.
 	 * @module purecloud-platform-client-v2/api/RecordingApi
-	 * @version 115.0.0
+	 * @version 116.0.0
 	 */
 
 	/**
@@ -971,7 +971,7 @@ class RecordingApi {
 
 	/**
 	 * Create media retention policy
-	 * 
+	 * Policy does not work retroactively
 	 * @param {Object} body Policy
 	 */
 	postRecordingCrossplatformMediaretentionpolicies(body) { 
@@ -1071,7 +1071,7 @@ class RecordingApi {
 
 	/**
 	 * Create media retention policy
-	 * 
+	 * Policy does not work retroactively
 	 * @param {Object} body Policy
 	 */
 	postRecordingMediaretentionpolicies(body) { 
@@ -1295,7 +1295,7 @@ class RecordingApi {
 
 	/**
 	 * Update a media retention policy
-	 * 
+	 * Policy does not work retroactively
 	 * @param {String} policyId Policy ID
 	 * @param {Object} body Policy
 	 */
@@ -1385,7 +1385,7 @@ class RecordingApi {
 
 	/**
 	 * Update a media retention policy
-	 * 
+	 * Policy does not work retroactively
 	 * @param {String} policyId Policy ID
 	 * @param {Object} body Policy
 	 */

@@ -773,7 +773,8 @@ Delete an Outbound Messaging Campaign
 
 Requires ANY permissions: 
 
-* outbound:campaign:delete
+* outbound:messagingCampaign:delete
+* outbound:emailCampaign:delete
 
 ### Example Usage
 
@@ -3276,6 +3277,7 @@ Get an Outbound Messaging Campaign
 Requires ANY permissions: 
 
 * outbound:messagingCampaign:view
+* outbound:emailCampaign:view
 
 ### Example Usage
 
@@ -3329,6 +3331,7 @@ Get messaging campaign&#39;s progress
 Requires ANY permissions: 
 
 * outbound:messagingCampaign:view
+* outbound:emailCampaign:view
 
 ### Example Usage
 
@@ -5255,6 +5258,7 @@ Create a Messaging Campaign
 Requires ANY permissions: 
 
 * outbound:messagingCampaign:add
+* outbound:emailCampaign:add
 
 ### Example Usage
 
@@ -6020,6 +6024,7 @@ Update an Outbound Messaging Campaign
 Requires ANY permissions: 
 
 * outbound:messagingCampaign:edit
+* outbound:emailCampaign:edit
 
 ### Example Usage
 

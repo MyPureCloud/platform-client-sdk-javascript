@@ -3124,7 +3124,7 @@ apiInstance.getFlowsDatatableImportJob(datatableId, importJobId)
 
 <a name="getFlowsDatatableImportJobs"></a>
 
-# EntityListing getFlowsDatatableImportJobs(datatableId, opts)
+# DataTableImportEntityListing getFlowsDatatableImportJobs(datatableId, opts)
 
 
 
@@ -3179,7 +3179,7 @@ apiInstance.getFlowsDatatableImportJobs(datatableId, opts)
 
 ### Return type
 
-**EntityListing**
+**DataTableImportEntityListing**
 
 <a name="getFlowsDatatableRow"></a>
 

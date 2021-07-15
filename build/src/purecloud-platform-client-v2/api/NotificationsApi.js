@@ -5,7 +5,7 @@ class NotificationsApi {
 	/**
 	 * Notifications service.
 	 * @module purecloud-platform-client-v2/api/NotificationsApi
-	 * @version 115.0.0
+	 * @version 116.0.0
 	 */
 
 	/**
@@ -110,6 +110,31 @@ class NotificationsApi {
 			'GET', 
 			{  }, 
 			{ 'includechannels': opts['includechannels'] }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Verify a channel still exists and is valid
+	 * 
+	 * @param {String} channelId Channel ID
+	 */
+	headNotificationsChannel(channelId) { 
+		// verify the required parameter 'channelId' is set
+		if (channelId === undefined || channelId === null) {
+			throw 'Missing the required parameter "channelId" when calling headNotificationsChannel';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/notifications/channels/{channelId}', 
+			'HEAD', 
+			{ 'channelId': channelId }, 
+			{  }, 
 			{  }, 
 			{  }, 
 			null, 

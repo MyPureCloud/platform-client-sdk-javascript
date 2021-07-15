@@ -14,6 +14,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getOrganizationsLimitsChangerequests**](OrganizationApi.html#getOrganizationsLimitsChangerequests) | **GET** /api/v2/organizations/limits/changerequests | Get the available limit change requests
 [**getOrganizationsLimitsDocs**](OrganizationApi.html#getOrganizationsLimitsDocs) | **GET** /api/v2/organizations/limits/docs | Get a link to the limit documentation
 [**getOrganizationsLimitsNamespace**](OrganizationApi.html#getOrganizationsLimitsNamespace) | **GET** /api/v2/organizations/limits/namespaces/{namespaceName} | Get the effective limits in a namespace for an organization
+[**getOrganizationsLimitsNamespaceDefaults**](OrganizationApi.html#getOrganizationsLimitsNamespaceDefaults) | **GET** /api/v2/organizations/limits/namespaces/{namespaceName}/defaults | Get the default limits in a namespace for an organization
 [**getOrganizationsLimitsNamespaces**](OrganizationApi.html#getOrganizationsLimitsNamespaces) | **GET** /api/v2/organizations/limits/namespaces | Get the available limit namespaces
 [**getOrganizationsMe**](OrganizationApi.html#getOrganizationsMe) | **GET** /api/v2/organizations/me | Get organization.
 [**getOrganizationsWhitelist**](OrganizationApi.html#getOrganizationsWhitelist) | **GET** /api/v2/organizations/whitelist | Use PUT /api/v2/organizations/embeddedintegration instead
@@ -387,9 +388,61 @@ apiInstance.getOrganizationsLimitsNamespace(namespaceName)
 
 **LimitsEntityListing**
 
+<a name="getOrganizationsLimitsNamespaceDefaults"></a>
+
+# LimitsEntityListing getOrganizationsLimitsNamespaceDefaults(namespaceName)
+
+
+
+GET /api/v2/organizations/limits/namespaces/{namespaceName}/defaults
+
+Get the default limits in a namespace for an organization
+
+
+
+Requires NO permissions: 
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OrganizationApi();
+
+let namespaceName = "namespaceName_example"; // String | The namespace to fetch defaults limits for
+
+apiInstance.getOrganizationsLimitsNamespaceDefaults(namespaceName)
+  .then((data) => {
+    console.log(`getOrganizationsLimitsNamespaceDefaults success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getOrganizationsLimitsNamespaceDefaults');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **namespaceName** | **String** | The namespace to fetch defaults limits for |  |
+{: class="table table-striped"}
+
+### Return type
+
+**LimitsEntityListing**
+
 <a name="getOrganizationsLimitsNamespaces"></a>
 
-# LimitsEntityListing getOrganizationsLimitsNamespaces(opts)
+# PagedNamespaceListing getOrganizationsLimitsNamespaces(opts)
 
 
 
@@ -442,7 +495,7 @@ apiInstance.getOrganizationsLimitsNamespaces(opts)
 
 ### Return type
 
-**LimitsEntityListing**
+**PagedNamespaceListing**
 
 <a name="getOrganizationsMe"></a>
 
