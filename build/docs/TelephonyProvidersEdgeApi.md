@@ -2172,7 +2172,7 @@ apiInstance.getTelephonyProvidersEdgesAvailablelanguages()
 ### Parameters
 
 This endpoint does not need any parameter.
-{: class="table table-striped"}
+
 
 ### Return type
 
@@ -2220,7 +2220,7 @@ apiInstance.getTelephonyProvidersEdgesCertificateauthorities()
 ### Parameters
 
 This endpoint does not need any parameter.
-{: class="table table-striped"}
+
 
 ### Return type
 
@@ -2796,7 +2796,7 @@ apiInstance.getTelephonyProvidersEdgesEdgeversionreport()
 ### Parameters
 
 This endpoint does not need any parameter.
-{: class="table table-striped"}
+
 
 ### Return type
 

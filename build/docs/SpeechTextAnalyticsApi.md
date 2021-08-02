@@ -296,7 +296,7 @@ apiInstance.getSpeechandtextanalyticsDialects()
 ### Parameters
 
 This endpoint does not need any parameter.
-{: class="table table-striped"}
+
 
 ### Return type
 
@@ -730,7 +730,7 @@ apiInstance.getSpeechandtextanalyticsSettings()
 ### Parameters
 
 This endpoint does not need any parameter.
-{: class="table table-striped"}
+
 
 ### Return type
 

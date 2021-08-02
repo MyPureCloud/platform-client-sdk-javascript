@@ -126,7 +126,7 @@ apiInstance.deleteVoicemailMessages()
 ### Parameters
 
 This endpoint does not need any parameter.
-{: class="table table-striped"}
+
 
 ### Return type
 
@@ -337,7 +337,7 @@ apiInstance.getVoicemailMailbox()
 ### Parameters
 
 This endpoint does not need any parameter.
-{: class="table table-striped"}
+
 
 ### Return type
 
@@ -384,7 +384,7 @@ apiInstance.getVoicemailMeMailbox()
 ### Parameters
 
 This endpoint does not need any parameter.
-{: class="table table-striped"}
+
 
 ### Return type
 
@@ -487,7 +487,7 @@ apiInstance.getVoicemailMePolicy()
 ### Parameters
 
 This endpoint does not need any parameter.
-{: class="table table-striped"}
+
 
 ### Return type
 
@@ -703,7 +703,7 @@ apiInstance.getVoicemailPolicy()
 ### Parameters
 
 This endpoint does not need any parameter.
-{: class="table table-striped"}
+
 
 ### Return type
 

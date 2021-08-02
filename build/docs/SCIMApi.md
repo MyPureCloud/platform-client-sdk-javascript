@@ -370,7 +370,7 @@ apiInstance.getScimResourcetypes()
 ### Parameters
 
 This endpoint does not need any parameter.
-{: class="table table-striped"}
+
 
 ### Return type
 
@@ -875,7 +875,7 @@ apiInstance.getScimV2Resourcetypes()
 ### Parameters
 
 This endpoint does not need any parameter.
-{: class="table table-striped"}
+
 
 ### Return type
 

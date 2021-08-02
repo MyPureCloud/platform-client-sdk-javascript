@@ -54,7 +54,7 @@ apiInstance.getDate()
 ### Parameters
 
 This endpoint does not need any parameter.
-{: class="table table-striped"}
+
 
 ### Return type
 
@@ -101,7 +101,7 @@ apiInstance.getIpranges()
 ### Parameters
 
 This endpoint does not need any parameter.
-{: class="table table-striped"}
+
 
 ### Return type
 

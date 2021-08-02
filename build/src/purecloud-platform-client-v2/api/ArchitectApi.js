@@ -5,7 +5,7 @@ class ArchitectApi {
 	/**
 	 * Architect service.
 	 * @module purecloud-platform-client-v2/api/ArchitectApi
-	 * @version 116.0.0
+	 * @version 117.0.0
 	 */
 
 	/**
@@ -1630,6 +1630,7 @@ class ArchitectApi {
 	 * @param {Object} opts.sortBy Sort by (default to id)
 	 * @param {String} opts.sortOrder Sort order (default to ascending)
 	 * @param {Array.<String>} opts.divisionId division ID(s)
+	 * @param {String} opts.name Name to filter by
 	 */
 	getFlowsDatatables(opts) { 
 		opts = opts || {};
@@ -1639,7 +1640,7 @@ class ArchitectApi {
 			'/api/v2/flows/datatables', 
 			'GET', 
 			{  }, 
-			{ 'expand': opts['expand'],'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi') }, 
+			{ 'expand': opts['expand'],'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi'),'name': opts['name'] }, 
 			{  }, 
 			{  }, 
 			null, 

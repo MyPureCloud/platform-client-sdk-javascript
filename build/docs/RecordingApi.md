@@ -1368,7 +1368,7 @@ apiInstance.getRecordingLocalkeysSettings()
 ### Parameters
 
 This endpoint does not need any parameter.
-{: class="table table-striped"}
+
 
 ### Return type
 
@@ -1599,7 +1599,7 @@ apiInstance.getRecordingRecordingkeysRotationschedule()
 ### Parameters
 
 This endpoint does not need any parameter.
-{: class="table table-striped"}
+
 
 ### Return type
 
@@ -2301,7 +2301,7 @@ apiInstance.postRecordingRecordingkeys()
 ### Parameters
 
 This endpoint does not need any parameter.
-{: class="table table-striped"}
+
 
 ### Return type
 

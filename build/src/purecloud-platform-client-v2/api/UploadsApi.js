@@ -5,7 +5,7 @@ class UploadsApi {
 	/**
 	 * Uploads service.
 	 * @module purecloud-platform-client-v2/api/UploadsApi
-	 * @version 116.0.0
+	 * @version 117.0.0
 	 */
 
 	/**
@@ -19,6 +19,31 @@ class UploadsApi {
 		this.apiClient = apiClient || ApiClient.instance;
 	}
 
+
+	/**
+	 * Creates a presigned URL for uploading a knowledge import file with a set of documents
+	 * 
+	 * @param {Object} body query
+	 */
+	postKnowledgeDocumentuploads(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postKnowledgeDocumentuploads';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/knowledge/documentuploads', 
+			'POST', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
 
 	/**
 	 * Creates a presigned URL for uploading a chat corpus which will be used for mining by intent miner

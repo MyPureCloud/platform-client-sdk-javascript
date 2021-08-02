@@ -180,7 +180,7 @@ apiInstance.deleteWebchatSettings()
 ### Parameters
 
 This endpoint does not need any parameter.
-{: class="table table-striped"}
+
 
 ### Return type
 
@@ -281,7 +281,7 @@ apiInstance.getWebchatDeployments()
 ### Parameters
 
 This endpoint does not need any parameter.
-{: class="table table-striped"}
+
 
 ### Return type
 
@@ -683,7 +683,7 @@ apiInstance.getWebchatSettings()
 ### Parameters
 
 This endpoint does not need any parameter.
-{: class="table table-striped"}
+
 
 ### Return type
 

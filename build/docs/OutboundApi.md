@@ -3776,7 +3776,7 @@ apiInstance.getOutboundSchedulesCampaigns()
 ### Parameters
 
 This endpoint does not need any parameter.
-{: class="table table-striped"}
+
 
 ### Return type
 
@@ -3877,7 +3877,7 @@ apiInstance.getOutboundSchedulesSequences()
 ### Parameters
 
 This endpoint does not need any parameter.
-{: class="table table-striped"}
+
 
 ### Return type
 
@@ -4045,7 +4045,7 @@ apiInstance.getOutboundSettings()
 ### Parameters
 
 This endpoint does not need any parameter.
-{: class="table table-striped"}
+
 
 ### Return type
 
@@ -4093,7 +4093,7 @@ apiInstance.getOutboundWrapupcodemappings()
 ### Parameters
 
 This endpoint does not need any parameter.
-{: class="table table-striped"}
+
 
 ### Return type
 

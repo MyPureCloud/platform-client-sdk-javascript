@@ -118,7 +118,7 @@ apiInstance.getOrganizationsEmbeddedintegration()
 ### Parameters
 
 This endpoint does not need any parameter.
-{: class="table table-striped"}
+
 
 ### Return type
 
@@ -166,7 +166,7 @@ apiInstance.getOrganizationsIpaddressauthentication()
 ### Parameters
 
 This endpoint does not need any parameter.
-{: class="table table-striped"}
+
 
 ### Return type
 
@@ -329,7 +329,7 @@ apiInstance.getOrganizationsLimitsDocs()
 ### Parameters
 
 This endpoint does not need any parameter.
-{: class="table table-striped"}
+
 
 ### Return type
 
@@ -538,7 +538,7 @@ apiInstance.getOrganizationsMe()
 ### Parameters
 
 This endpoint does not need any parameter.
-{: class="table table-striped"}
+
 
 ### Return type
 
@@ -585,7 +585,7 @@ apiInstance.getOrganizationsWhitelist()
 ### Parameters
 
 This endpoint does not need any parameter.
-{: class="table table-striped"}
+
 
 ### Return type
 

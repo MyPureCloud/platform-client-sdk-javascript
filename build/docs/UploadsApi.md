@@ -7,12 +7,66 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
+[**postKnowledgeDocumentuploads**](UploadsApi.html#postKnowledgeDocumentuploads) | **POST** /api/v2/knowledge/documentuploads | Creates a presigned URL for uploading a knowledge import file with a set of documents
 [**postLanguageunderstandingMinerUploads**](UploadsApi.html#postLanguageunderstandingMinerUploads) | **POST** /api/v2/languageunderstanding/miners/{minerId}/uploads | Creates a presigned URL for uploading a chat corpus which will be used for mining by intent miner
 [**postUploadsPublicassetsImages**](UploadsApi.html#postUploadsPublicassetsImages) | **POST** /api/v2/uploads/publicassets/images | Creates presigned url for uploading a public asset image
 [**postUploadsRecordings**](UploadsApi.html#postUploadsRecordings) | **POST** /api/v2/uploads/recordings | Creates presigned url for uploading a recording file
 [**postUploadsWorkforcemanagementHistoricaldataCsv**](UploadsApi.html#postUploadsWorkforcemanagementHistoricaldataCsv) | **POST** /api/v2/uploads/workforcemanagement/historicaldata/csv | Creates presigned url for uploading WFM historical data file. Requires data in csv format.
 [**postUploadsWorkforcemanagementHistoricaldataJson**](UploadsApi.html#postUploadsWorkforcemanagementHistoricaldataJson) | **POST** /api/v2/uploads/workforcemanagement/historicaldata/json | Creates presigned url for uploading WFM historical data file. Requires data in json format.
 {: class="table table-striped"}
+
+<a name="postKnowledgeDocumentuploads"></a>
+
+# UploadUrlResponse postKnowledgeDocumentuploads(body)
+
+
+
+POST /api/v2/knowledge/documentuploads
+
+Creates a presigned URL for uploading a knowledge import file with a set of documents
+
+
+
+Requires ALL permissions: 
+
+* knowledge:document:upload
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.UploadsApi();
+
+let body = {}; // Object | query
+
+apiInstance.postKnowledgeDocumentuploads(body)
+  .then((data) => {
+    console.log(`postKnowledgeDocumentuploads success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postKnowledgeDocumentuploads');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | query |  |
+{: class="table table-striped"}
+
+### Return type
+
+**UploadUrlResponse**
 
 <a name="postLanguageunderstandingMinerUploads"></a>
 

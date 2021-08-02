@@ -107,7 +107,7 @@ apiInstance.getDataextensionsCoretypes()
 ### Parameters
 
 This endpoint does not need any parameter.
-{: class="table table-striped"}
+
 
 ### Return type
 
@@ -155,7 +155,7 @@ apiInstance.getDataextensionsLimits()
 ### Parameters
 
 This endpoint does not need any parameter.
-{: class="table table-striped"}
+
 
 ### Return type
 

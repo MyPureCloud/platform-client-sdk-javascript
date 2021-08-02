@@ -953,7 +953,7 @@ apiInstance.getAnalyticsConversationsDetailsJobsAvailability()
 ### Parameters
 
 This endpoint does not need any parameter.
-{: class="table table-striped"}
+
 
 ### Return type
 
@@ -1657,7 +1657,7 @@ apiInstance.getConversationsCallbacks()
 ### Parameters
 
 This endpoint does not need any parameter.
-{: class="table table-striped"}
+
 
 ### Return type
 
@@ -1704,7 +1704,7 @@ apiInstance.getConversationsCalls()
 ### Parameters
 
 This endpoint does not need any parameter.
-{: class="table table-striped"}
+
 
 ### Return type
 
@@ -1811,7 +1811,7 @@ apiInstance.getConversationsCallsMaximumconferenceparties()
 ### Parameters
 
 This endpoint does not need any parameter.
-{: class="table table-striped"}
+
 
 ### Return type
 
@@ -2138,7 +2138,7 @@ apiInstance.getConversationsChats()
 ### Parameters
 
 This endpoint does not need any parameter.
-{: class="table table-striped"}
+
 
 ### Return type
 
@@ -2349,7 +2349,7 @@ apiInstance.getConversationsCobrowsesessions()
 ### Parameters
 
 This endpoint does not need any parameter.
-{: class="table table-striped"}
+
 
 ### Return type
 
@@ -2718,7 +2718,7 @@ apiInstance.getConversationsEmails()
 ### Parameters
 
 This endpoint does not need any parameter.
-{: class="table table-striped"}
+
 
 ### Return type
 
@@ -3043,7 +3043,7 @@ apiInstance.getConversationsMessages()
 ### Parameters
 
 This endpoint does not need any parameter.
-{: class="table table-striped"}
+
 
 ### Return type
 
@@ -3091,7 +3091,7 @@ apiInstance.getConversationsMessagingFacebookApp()
 ### Parameters
 
 This endpoint does not need any parameter.
-{: class="table table-striped"}
+
 
 ### Return type
 
@@ -3849,7 +3849,7 @@ apiInstance.getConversationsMessagingThreadingtimeline()
 ### Parameters
 
 This endpoint does not need any parameter.
-{: class="table table-striped"}
+
 
 ### Return type
 

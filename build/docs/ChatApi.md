@@ -55,7 +55,7 @@ apiInstance.getChatSettings()
 ### Parameters
 
 This endpoint does not need any parameter.
-{: class="table table-striped"}
+
 
 ### Return type
 

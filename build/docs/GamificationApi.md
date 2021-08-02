@@ -262,7 +262,7 @@ apiInstance.getGamificationLeaderboardBestpoints()
 ### Parameters
 
 This endpoint does not need any parameter.
-{: class="table table-striped"}
+
 
 ### Return type
 
@@ -424,7 +424,7 @@ apiInstance.getGamificationMetricdefinitions()
 ### Parameters
 
 This endpoint does not need any parameter.
-{: class="table table-striped"}
+
 
 ### Return type
 
@@ -584,7 +584,7 @@ apiInstance.getGamificationProfiles()
 ### Parameters
 
 This endpoint does not need any parameter.
-{: class="table table-striped"}
+
 
 ### Return type
 
@@ -744,7 +744,7 @@ apiInstance.getGamificationScorecardsBestpoints()
 ### Parameters
 
 This endpoint does not need any parameter.
-{: class="table table-striped"}
+
 
 ### Return type
 
@@ -1604,7 +1604,7 @@ apiInstance.getGamificationStatus()
 ### Parameters
 
 This endpoint does not need any parameter.
-{: class="table table-striped"}
+
 
 ### Return type
 
@@ -1705,7 +1705,7 @@ apiInstance.getGamificationTemplates()
 ### Parameters
 
 This endpoint does not need any parameter.
-{: class="table table-striped"}
+
 
 ### Return type
 

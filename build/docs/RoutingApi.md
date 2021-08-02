@@ -595,7 +595,7 @@ apiInstance.deleteRoutingSettings()
 ### Parameters
 
 This endpoint does not need any parameter.
-{: class="table table-striped"}
+
 
 ### Return type
 
@@ -855,7 +855,7 @@ apiInstance.deleteRoutingUtilization()
 ### Parameters
 
 This endpoint does not need any parameter.
-{: class="table table-striped"}
+
 
 ### Return type
 
@@ -1461,7 +1461,7 @@ apiInstance.getRoutingEmailDomains()
 ### Parameters
 
 This endpoint does not need any parameter.
-{: class="table table-striped"}
+
 
 ### Return type
 
@@ -1509,7 +1509,7 @@ apiInstance.getRoutingEmailSetup()
 ### Parameters
 
 This endpoint does not need any parameter.
-{: class="table table-striped"}
+
 
 ### Return type
 
@@ -1848,7 +1848,7 @@ apiInstance.getRoutingPredictorsKeyperformanceindicators()
 ### Parameters
 
 This endpoint does not need any parameter.
-{: class="table table-striped"}
+
 
 ### Return type
 
@@ -2640,7 +2640,7 @@ apiInstance.getRoutingSettings()
 ### Parameters
 
 This endpoint does not need any parameter.
-{: class="table table-striped"}
+
 
 ### Return type
 
@@ -2687,7 +2687,7 @@ apiInstance.getRoutingSettingsContactcenter()
 ### Parameters
 
 This endpoint does not need any parameter.
-{: class="table table-striped"}
+
 
 ### Return type
 
@@ -2735,7 +2735,7 @@ apiInstance.getRoutingSettingsTranscription()
 ### Parameters
 
 This endpoint does not need any parameter.
-{: class="table table-striped"}
+
 
 ### Return type
 
@@ -3243,7 +3243,7 @@ apiInstance.getRoutingUtilization()
 ### Parameters
 
 This endpoint does not need any parameter.
-{: class="table table-striped"}
+
 
 ### Return type
 

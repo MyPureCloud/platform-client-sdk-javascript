@@ -673,7 +673,7 @@ apiInstance.getAnalyticsUsersDetailsJobsAvailability()
 ### Parameters
 
 This endpoint does not need any parameter.
-{: class="table table-striped"}
+
 
 ### Return type
 
@@ -947,7 +947,7 @@ apiInstance.getAuthorizationSubjectsMe()
 ### Parameters
 
 This endpoint does not need any parameter.
-{: class="table table-striped"}
+
 
 ### Return type
 

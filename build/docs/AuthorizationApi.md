@@ -442,7 +442,7 @@ apiInstance.getAuthorizationDivisionsHome()
 ### Parameters
 
 This endpoint does not need any parameter.
-{: class="table table-striped"}
+
 
 ### Return type
 
@@ -489,7 +489,7 @@ apiInstance.getAuthorizationDivisionsLimit()
 ### Parameters
 
 This endpoint does not need any parameter.
-{: class="table table-striped"}
+
 
 ### Return type
 
@@ -770,7 +770,7 @@ apiInstance.getAuthorizationProducts()
 ### Parameters
 
 This endpoint does not need any parameter.
-{: class="table table-striped"}
+
 
 ### Return type
 
@@ -1182,7 +1182,7 @@ apiInstance.getAuthorizationSubjectsMe()
 ### Parameters
 
 This endpoint does not need any parameter.
-{: class="table table-striped"}
+
 
 ### Return type
 

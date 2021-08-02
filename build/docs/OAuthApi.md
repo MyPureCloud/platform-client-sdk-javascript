@@ -170,7 +170,7 @@ apiInstance.getOauthAuthorizations()
 ### Parameters
 
 This endpoint does not need any parameter.
-{: class="table table-striped"}
+
 
 ### Return type
 
@@ -383,7 +383,7 @@ apiInstance.getOauthClients()
 ### Parameters
 
 This endpoint does not need any parameter.
-{: class="table table-striped"}
+
 
 ### Return type
 

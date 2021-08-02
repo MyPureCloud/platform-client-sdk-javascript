@@ -5,7 +5,7 @@ class KnowledgeApi {
 	/**
 	 * Knowledge service.
 	 * @module purecloud-platform-client-v2/api/KnowledgeApi
-	 * @version 116.0.0
+	 * @version 117.0.0
 	 */
 
 	/**
@@ -105,6 +105,41 @@ class KnowledgeApi {
 			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/{documentId}', 
 			'DELETE', 
 			{ 'documentId': documentId,'knowledgeBaseId': knowledgeBaseId,'languageCode': languageCode }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete import operation
+	 * 
+	 * @param {String} knowledgeBaseId Knowledge base ID
+	 * @param {Object} languageCode Language code, format: iso2-LOCALE
+	 * @param {String} importId Import ID
+	 */
+	deleteKnowledgeKnowledgebaseLanguageDocumentsImport(knowledgeBaseId, languageCode, importId) { 
+		// verify the required parameter 'knowledgeBaseId' is set
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+			throw 'Missing the required parameter "knowledgeBaseId" when calling deleteKnowledgeKnowledgebaseLanguageDocumentsImport';
+		}
+		// verify the required parameter 'languageCode' is set
+		if (languageCode === undefined || languageCode === null) {
+			throw 'Missing the required parameter "languageCode" when calling deleteKnowledgeKnowledgebaseLanguageDocumentsImport';
+		}
+		// verify the required parameter 'importId' is set
+		if (importId === undefined || importId === null) {
+			throw 'Missing the required parameter "importId" when calling deleteKnowledgeKnowledgebaseLanguageDocumentsImport';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/imports/{importId}', 
+			'DELETE', 
+			{ 'knowledgeBaseId': knowledgeBaseId,'languageCode': languageCode,'importId': importId }, 
 			{  }, 
 			{  }, 
 			{  }, 
@@ -279,6 +314,41 @@ class KnowledgeApi {
 			'GET', 
 			{ 'knowledgeBaseId': knowledgeBaseId,'languageCode': languageCode }, 
 			{ 'before': opts['before'],'after': opts['after'],'limit': opts['limit'],'pageSize': opts['pageSize'],'categories': opts['categories'],'title': opts['title'],'documentIds': this.apiClient.buildCollectionParam(opts['documentIds'], 'multi') }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get import operation report
+	 * 
+	 * @param {String} knowledgeBaseId Knowledge base ID
+	 * @param {Object} languageCode Language code, format: iso2-LOCALE
+	 * @param {String} importId Import ID
+	 */
+	getKnowledgeKnowledgebaseLanguageDocumentsImport(knowledgeBaseId, languageCode, importId) { 
+		// verify the required parameter 'knowledgeBaseId' is set
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+			throw 'Missing the required parameter "knowledgeBaseId" when calling getKnowledgeKnowledgebaseLanguageDocumentsImport';
+		}
+		// verify the required parameter 'languageCode' is set
+		if (languageCode === undefined || languageCode === null) {
+			throw 'Missing the required parameter "languageCode" when calling getKnowledgeKnowledgebaseLanguageDocumentsImport';
+		}
+		// verify the required parameter 'importId' is set
+		if (importId === undefined || importId === null) {
+			throw 'Missing the required parameter "importId" when calling getKnowledgeKnowledgebaseLanguageDocumentsImport';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/imports/{importId}', 
+			'GET', 
+			{ 'knowledgeBaseId': knowledgeBaseId,'languageCode': languageCode,'importId': importId }, 
+			{  }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -537,6 +607,71 @@ class KnowledgeApi {
 	}
 
 	/**
+	 * Start import operation
+	 * 
+	 * @param {String} knowledgeBaseId Knowledge base ID
+	 * @param {Object} languageCode Language code, format: iso2-LOCALE
+	 * @param {String} importId Import ID
+	 * @param {Object} body 
+	 */
+	patchKnowledgeKnowledgebaseLanguageDocumentsImport(knowledgeBaseId, languageCode, importId, body) { 
+		// verify the required parameter 'knowledgeBaseId' is set
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+			throw 'Missing the required parameter "knowledgeBaseId" when calling patchKnowledgeKnowledgebaseLanguageDocumentsImport';
+		}
+		// verify the required parameter 'languageCode' is set
+		if (languageCode === undefined || languageCode === null) {
+			throw 'Missing the required parameter "languageCode" when calling patchKnowledgeKnowledgebaseLanguageDocumentsImport';
+		}
+		// verify the required parameter 'importId' is set
+		if (importId === undefined || importId === null) {
+			throw 'Missing the required parameter "importId" when calling patchKnowledgeKnowledgebaseLanguageDocumentsImport';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchKnowledgeKnowledgebaseLanguageDocumentsImport';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/imports/{importId}', 
+			'PATCH', 
+			{ 'knowledgeBaseId': knowledgeBaseId,'languageCode': languageCode,'importId': importId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Creates a presigned URL for uploading a knowledge import file with a set of documents
+	 * 
+	 * @param {Object} body query
+	 */
+	postKnowledgeDocumentuploads(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postKnowledgeDocumentuploads';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/knowledge/documentuploads', 
+			'POST', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
 	 * Create new category
 	 * 
 	 * @param {String} knowledgeBaseId Knowledge base ID
@@ -594,6 +729,41 @@ class KnowledgeApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents', 
+			'POST', 
+			{ 'knowledgeBaseId': knowledgeBaseId,'languageCode': languageCode }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Create import operation
+	 * 
+	 * @param {String} knowledgeBaseId Knowledge base ID
+	 * @param {Object} languageCode Language code, format: iso2-LOCALE
+	 * @param {Object} body 
+	 */
+	postKnowledgeKnowledgebaseLanguageDocumentsImports(knowledgeBaseId, languageCode, body) { 
+		// verify the required parameter 'knowledgeBaseId' is set
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+			throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseLanguageDocumentsImports';
+		}
+		// verify the required parameter 'languageCode' is set
+		if (languageCode === undefined || languageCode === null) {
+			throw 'Missing the required parameter "languageCode" when calling postKnowledgeKnowledgebaseLanguageDocumentsImports';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postKnowledgeKnowledgebaseLanguageDocumentsImports';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/imports', 
 			'POST', 
 			{ 'knowledgeBaseId': knowledgeBaseId,'languageCode': languageCode }, 
 			{  }, 

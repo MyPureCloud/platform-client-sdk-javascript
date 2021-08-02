@@ -1517,7 +1517,7 @@ apiInstance.getIntegrationsCredentialsTypes()
 ### Parameters
 
 This endpoint does not need any parameter.
-{: class="table table-striped"}
+
 
 ### Return type
 
@@ -2204,7 +2204,7 @@ apiInstance.getIntegrationsSpeechTtsSettings()
 ### Parameters
 
 This endpoint does not need any parameter.
-{: class="table table-striped"}
+
 
 ### Return type
 

@@ -85,7 +85,7 @@ apiInstance.deleteIdentityprovidersAdfs()
 ### Parameters
 
 This endpoint does not need any parameter.
-{: class="table table-striped"}
+
 
 ### Return type
 
@@ -133,7 +133,7 @@ apiInstance.deleteIdentityprovidersCic()
 ### Parameters
 
 This endpoint does not need any parameter.
-{: class="table table-striped"}
+
 
 ### Return type
 
@@ -181,7 +181,7 @@ apiInstance.deleteIdentityprovidersGeneric()
 ### Parameters
 
 This endpoint does not need any parameter.
-{: class="table table-striped"}
+
 
 ### Return type
 
@@ -229,7 +229,7 @@ apiInstance.deleteIdentityprovidersGsuite()
 ### Parameters
 
 This endpoint does not need any parameter.
-{: class="table table-striped"}
+
 
 ### Return type
 
@@ -277,7 +277,7 @@ apiInstance.deleteIdentityprovidersIdentitynow()
 ### Parameters
 
 This endpoint does not need any parameter.
-{: class="table table-striped"}
+
 
 ### Return type
 
@@ -325,7 +325,7 @@ apiInstance.deleteIdentityprovidersOkta()
 ### Parameters
 
 This endpoint does not need any parameter.
-{: class="table table-striped"}
+
 
 ### Return type
 
@@ -373,7 +373,7 @@ apiInstance.deleteIdentityprovidersOnelogin()
 ### Parameters
 
 This endpoint does not need any parameter.
-{: class="table table-striped"}
+
 
 ### Return type
 
@@ -421,7 +421,7 @@ apiInstance.deleteIdentityprovidersPing()
 ### Parameters
 
 This endpoint does not need any parameter.
-{: class="table table-striped"}
+
 
 ### Return type
 
@@ -469,7 +469,7 @@ apiInstance.deleteIdentityprovidersPurecloud()
 ### Parameters
 
 This endpoint does not need any parameter.
-{: class="table table-striped"}
+
 
 ### Return type
 
@@ -517,7 +517,7 @@ apiInstance.deleteIdentityprovidersPureengage()
 ### Parameters
 
 This endpoint does not need any parameter.
-{: class="table table-striped"}
+
 
 ### Return type
 
@@ -565,7 +565,7 @@ apiInstance.deleteIdentityprovidersSalesforce()
 ### Parameters
 
 This endpoint does not need any parameter.
-{: class="table table-striped"}
+
 
 ### Return type
 
@@ -613,7 +613,7 @@ apiInstance.getIdentityproviders()
 ### Parameters
 
 This endpoint does not need any parameter.
-{: class="table table-striped"}
+
 
 ### Return type
 
@@ -661,7 +661,7 @@ apiInstance.getIdentityprovidersAdfs()
 ### Parameters
 
 This endpoint does not need any parameter.
-{: class="table table-striped"}
+
 
 ### Return type
 
@@ -709,7 +709,7 @@ apiInstance.getIdentityprovidersCic()
 ### Parameters
 
 This endpoint does not need any parameter.
-{: class="table table-striped"}
+
 
 ### Return type
 
@@ -757,7 +757,7 @@ apiInstance.getIdentityprovidersGeneric()
 ### Parameters
 
 This endpoint does not need any parameter.
-{: class="table table-striped"}
+
 
 ### Return type
 
@@ -805,7 +805,7 @@ apiInstance.getIdentityprovidersGsuite()
 ### Parameters
 
 This endpoint does not need any parameter.
-{: class="table table-striped"}
+
 
 ### Return type
 
@@ -853,7 +853,7 @@ apiInstance.getIdentityprovidersIdentitynow()
 ### Parameters
 
 This endpoint does not need any parameter.
-{: class="table table-striped"}
+
 
 ### Return type
 
@@ -901,7 +901,7 @@ apiInstance.getIdentityprovidersOkta()
 ### Parameters
 
 This endpoint does not need any parameter.
-{: class="table table-striped"}
+
 
 ### Return type
 
@@ -949,7 +949,7 @@ apiInstance.getIdentityprovidersOnelogin()
 ### Parameters
 
 This endpoint does not need any parameter.
-{: class="table table-striped"}
+
 
 ### Return type
 
@@ -997,7 +997,7 @@ apiInstance.getIdentityprovidersPing()
 ### Parameters
 
 This endpoint does not need any parameter.
-{: class="table table-striped"}
+
 
 ### Return type
 
@@ -1045,7 +1045,7 @@ apiInstance.getIdentityprovidersPurecloud()
 ### Parameters
 
 This endpoint does not need any parameter.
-{: class="table table-striped"}
+
 
 ### Return type
 
@@ -1093,7 +1093,7 @@ apiInstance.getIdentityprovidersPureengage()
 ### Parameters
 
 This endpoint does not need any parameter.
-{: class="table table-striped"}
+
 
 ### Return type
 
@@ -1141,7 +1141,7 @@ apiInstance.getIdentityprovidersSalesforce()
 ### Parameters
 
 This endpoint does not need any parameter.
-{: class="table table-striped"}
+
 
 ### Return type
 

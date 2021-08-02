@@ -893,7 +893,7 @@ apiInstance.getExternalcontactsContactsSchemas()
 ### Parameters
 
 This endpoint does not need any parameter.
-{: class="table table-striped"}
+
 
 ### Return type
 
@@ -1482,7 +1482,7 @@ apiInstance.getExternalcontactsOrganizationsSchemas()
 ### Parameters
 
 This endpoint does not need any parameter.
-{: class="table table-striped"}
+
 
 ### Return type
 

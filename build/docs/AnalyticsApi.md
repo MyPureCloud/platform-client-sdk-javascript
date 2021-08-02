@@ -472,7 +472,7 @@ apiInstance.getAnalyticsConversationsDetailsJobsAvailability()
 ### Parameters
 
 This endpoint does not need any parameter.
-{: class="table table-striped"}
+
 
 ### Return type
 
@@ -577,7 +577,7 @@ apiInstance.getAnalyticsReportingExportsMetadata()
 ### Parameters
 
 This endpoint does not need any parameter.
-{: class="table table-striped"}
+
 
 ### Return type
 
@@ -740,7 +740,7 @@ apiInstance.getAnalyticsReportingReportformats()
 ### Parameters
 
 This endpoint does not need any parameter.
-{: class="table table-striped"}
+
 
 ### Return type
 
@@ -1059,7 +1059,7 @@ apiInstance.getAnalyticsReportingTimeperiods()
 ### Parameters
 
 This endpoint does not need any parameter.
-{: class="table table-striped"}
+
 
 ### Return type
 
@@ -1219,7 +1219,7 @@ apiInstance.getAnalyticsUsersDetailsJobsAvailability()
 ### Parameters
 
 This endpoint does not need any parameter.
-{: class="table table-striped"}
+
 
 ### Return type
 
