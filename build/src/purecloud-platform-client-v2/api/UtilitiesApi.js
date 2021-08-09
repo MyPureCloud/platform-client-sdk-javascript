@@ -5,7 +5,7 @@ class UtilitiesApi {
 	/**
 	 * Utilities service.
 	 * @module purecloud-platform-client-v2/api/UtilitiesApi
-	 * @version 117.0.0
+	 * @version 118.0.0
 	 */
 
 	/**
@@ -76,6 +76,46 @@ class UtilitiesApi {
 			'GET', 
 			{  }, 
 			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * 301 redirect.
+	 * 
+	 */
+	getUploadsV1Publicasset() { 
+
+		return this.apiClient.callApi(
+			'/uploads/v1/publicassets/{subResources}', 
+			'GET', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * 301 redirect.
+	 * 
+	 */
+	getWebdeploymentsV1SubResources() { 
+
+		return this.apiClient.callApi(
+			'/webdeployments/v1/{subResources}', 
+			'GET', 
+			{  }, 
+			{  }, 
 			{  }, 
 			{  }, 
 			null, 

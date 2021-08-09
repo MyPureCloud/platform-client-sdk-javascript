@@ -71,7 +71,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**patchRoutingConversation**](RoutingApi.html#patchRoutingConversation) | **PATCH** /api/v2/routing/conversations/{conversationId} | Update attributes of an in-queue conversation
 [**patchRoutingEmailDomain**](RoutingApi.html#patchRoutingEmailDomain) | **PATCH** /api/v2/routing/email/domains/{domainId} | Update domain settings
 [**patchRoutingEmailDomainValidate**](RoutingApi.html#patchRoutingEmailDomainValidate) | **PATCH** /api/v2/routing/email/domains/{domainId}/validate | Validate domain settings
-[**patchRoutingEmailOutboundDomain**](RoutingApi.html#patchRoutingEmailOutboundDomain) | **PATCH** /api/v2/routing/email/outbound/domains/{domainId} | Request an update of the emails from /replyTo of an outbound domain
 [**patchRoutingPredictor**](RoutingApi.html#patchRoutingPredictor) | **PATCH** /api/v2/routing/predictors/{predictorId} | Update single predictor.
 [**patchRoutingQueueMember**](RoutingApi.html#patchRoutingQueueMember) | **PATCH** /api/v2/routing/queues/{queueId}/members/{memberId} | Update the ring number OR joined status for a queue member.
 [**patchRoutingQueueMembers**](RoutingApi.html#patchRoutingQueueMembers) | **PATCH** /api/v2/routing/queues/{queueId}/members | Join or unjoin a set of users for a queue
@@ -2161,17 +2160,18 @@ let apiInstance = new platformClient.RoutingApi();
 
 let queueId = "queueId_example"; // String | Queue ID
 let opts = { 
-  'pageSize': 25, // Number | Page size [max 100]
-  'pageNumber': 1, // Number | Page number
-  'sortBy': "name", // String | Sort by
+  'pageNumber': 1, // Number | 
+  'pageSize': 25, // Number | Max value is 100
+  'sortOrder': "asc", // String | Note: results are sorted by name.
   'expand': ["expand_example"], // [String] | Which fields, if any, to expand.
-  'joined': true, // Boolean | Filter by joined status
   'name': "name_example", // String | Filter by queue member name
   'profileSkills': ["profileSkills_example"], // [String] | Filter by profile skill
   'skills': ["skills_example"], // [String] | Filter by skill
   'languages': ["languages_example"], // [String] | Filter by language
   'routingStatus': ["routingStatus_example"], // [String] | Filter by routing status
-  'presence': ["presence_example"] // [String] | Filter by presence
+  'presence': ["presence_example"], // [String] | Filter by presence
+  'memberBy': "memberBy_example", // String | Filter by member type
+  'joined': true // Boolean | Filter by joined status
 };
 
 apiInstance.getRoutingQueueMembers(queueId, opts)
@@ -2190,17 +2190,18 @@ apiInstance.getRoutingQueueMembers(queueId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **queueId** | **String** | Queue ID |  |
- **pageSize** | **Number** | Page size [max 100] | [optional] [default to 25] |
- **pageNumber** | **Number** | Page number | [optional] [default to 1] |
- **sortBy** | **String** | Sort by | [optional] [default to name] |
+ **pageNumber** | **Number** |  | [optional] [default to 1] |
+ **pageSize** | **Number** | Max value is 100 | [optional] [default to 25] |
+ **sortOrder** | **String** | Note: results are sorted by name. | [optional] [default to asc]<br />**Values**: asc, desc |
  **expand** | **[String]** | Which fields, if any, to expand. | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography |
- **joined** | **Boolean** | Filter by joined status | [optional]  |
  **name** | **String** | Filter by queue member name | [optional]  |
  **profileSkills** | **[String]** | Filter by profile skill | [optional]  |
  **skills** | **[String]** | Filter by skill | [optional]  |
  **languages** | **[String]** | Filter by language | [optional]  |
  **routingStatus** | **[String]** | Filter by routing status | [optional]  |
  **presence** | **[String]** | Filter by presence | [optional]  |
+ **memberBy** | **String** | Filter by member type | [optional] <br />**Values**: user, group |
+ **joined** | **Boolean** | Filter by joined status | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2239,9 +2240,9 @@ let apiInstance = new platformClient.RoutingApi();
 
 let queueId = "queueId_example"; // String | Queue ID
 let opts = { 
-  'pageSize': 25, // Number | Page size [max 100]
-  'pageNumber': 1, // Number | Page number
-  'sortBy': "name", // String | Sort by
+  'pageNumber': 1, // Number | 
+  'pageSize': 25, // Number | Max value is 100
+  'sortOrder': "asc", // String | Note: results are sorted by name.
   'expand': ["expand_example"], // [String] | Which fields, if any, to expand.
   'joined': true, // Boolean | Filter by joined status
   'name': "name_example", // String | Filter by queue member name
@@ -2268,9 +2269,9 @@ apiInstance.getRoutingQueueUsers(queueId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **queueId** | **String** | Queue ID |  |
- **pageSize** | **Number** | Page size [max 100] | [optional] [default to 25] |
- **pageNumber** | **Number** | Page number | [optional] [default to 1] |
- **sortBy** | **String** | Sort by | [optional] [default to name] |
+ **pageNumber** | **Number** |  | [optional] [default to 1] |
+ **pageSize** | **Number** | Max value is 100 | [optional] [default to 25] |
+ **sortOrder** | **String** | Note: results are sorted by name. | [optional] [default to asc]<br />**Values**: asc, desc |
  **expand** | **[String]** | Which fields, if any, to expand. | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography |
  **joined** | **Boolean** | Filter by joined status | [optional]  |
  **name** | **String** | Filter by queue member name | [optional]  |
@@ -2374,12 +2375,12 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.RoutingApi();
 
 let opts = { 
-  'pageSize': 25, // Number | Page size
   'pageNumber': 1, // Number | Page number
-  'sortBy': "name", // String | Sort by
-  'name': "name_example", // String | Name
-  'id': ["id_example"], // [String] | ID(s)
-  'divisionId': ["divisionId_example"] // [String] | Division ID(s)
+  'pageSize': 25, // Number | Page size
+  'sortOrder': "asc", // String | Note: results are sorted by name.
+  'name': "name_example", // String | Filter by queue name
+  'id': ["id_example"], // [String] | Filter by queue ID(s)
+  'divisionId': ["divisionId_example"] // [String] | Filter by queue division ID(s)
 };
 
 apiInstance.getRoutingQueues(opts)
@@ -2397,12 +2398,12 @@ apiInstance.getRoutingQueues(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
- **sortBy** | **String** | Sort by | [optional] [default to name] |
- **name** | **String** | Name | [optional]  |
- **id** | **[String]** | ID(s) | [optional]  |
- **divisionId** | **[String]** | Division ID(s) | [optional]  |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **sortOrder** | **String** | Note: results are sorted by name. | [optional] [default to asc]<br />**Values**: asc, desc |
+ **name** | **String** | Filter by queue name | [optional]  |
+ **id** | **[String]** | Filter by queue ID(s) | [optional]  |
+ **divisionId** | **[String]** | Filter by queue division ID(s) | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2566,11 +2567,10 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.RoutingApi();
 
 let opts = { 
-  'joined': true, // Boolean | Joined
-  'pageSize': 25, // Number | Page size
   'pageNumber': 1, // Number | Page number
-  'sortBy': "name", // String | Sort by
-  'sortOrder': "asc" // String | Sort order
+  'pageSize': 25, // Number | Page size
+  'joined': true, // Boolean | Filter by joined status.
+  'sortOrder': "asc" // String | Note: results are sorted by name.
 };
 
 apiInstance.getRoutingQueuesMe(opts)
@@ -2588,11 +2588,10 @@ apiInstance.getRoutingQueuesMe(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **joined** | **Boolean** | Joined | [optional]  |
- **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
- **sortBy** | **String** | Sort by | [optional] [default to name] |
- **sortOrder** | **String** | Sort order | [optional] [default to asc] |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **joined** | **Boolean** | Filter by joined status. | [optional]  |
+ **sortOrder** | **String** | Note: results are sorted by name. | [optional] [default to asc]<br />**Values**: asc, desc |
 {: class="table table-striped"}
 
 ### Return type
@@ -3552,7 +3551,7 @@ apiInstance.getUserRoutingskills(userId, opts)
 
 <a name="patchRoutingConversation"></a>
 
-# RoutingConversationAttributes patchRoutingConversation(conversationId, body)
+# RoutingConversationAttributesResponse patchRoutingConversation(conversationId, body)
 
 
 
@@ -3560,7 +3559,7 @@ PATCH /api/v2/routing/conversations/{conversationId}
 
 Update attributes of an in-queue conversation
 
-Returns an object indicating the updated values of all settable attributes.  Supported attributes: priority (each point of priority is equivalent to one minute of time in queue).
+Returns an object indicating the updated values of all settable attributes. Supported attributes: priority (each point of priority is equivalent to one minute of time in queue), skillIds and languageId.
 
 Requires ANY permissions: 
 
@@ -3603,7 +3602,7 @@ apiInstance.patchRoutingConversation(conversationId, body)
 
 ### Return type
 
-**RoutingConversationAttributes**
+**RoutingConversationAttributesResponse**
 
 <a name="patchRoutingEmailDomain"></a>
 
@@ -3714,61 +3713,6 @@ apiInstance.patchRoutingEmailDomainValidate(domainId, body)
 ### Return type
 
 **InboundDomain**
-
-<a name="patchRoutingEmailOutboundDomain"></a>
-
-# OutboundDomain patchRoutingEmailOutboundDomain(domainId, body)
-
-
-
-PATCH /api/v2/routing/email/outbound/domains/{domainId}
-
-Request an update of the emails from /replyTo of an outbound domain
-
-
-
-Requires ALL permissions: 
-
-* routing:email:manage
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.RoutingApi();
-
-let domainId = "domainId_example"; // String | domain ID
-let body = {}; // Object | domain with emails that need update set
-
-apiInstance.patchRoutingEmailOutboundDomain(domainId, body)
-  .then((data) => {
-    console.log(`patchRoutingEmailOutboundDomain success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch((err) => {
-    console.log('There was a failure calling patchRoutingEmailOutboundDomain');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **domainId** | **String** | domain ID |  |
- **body** | **Object** | domain with emails that need update set |  |
-{: class="table table-striped"}
-
-### Return type
-
-**OutboundDomain**
 
 <a name="patchRoutingPredictor"></a>
 

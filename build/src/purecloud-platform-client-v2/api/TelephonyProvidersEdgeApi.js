@@ -5,7 +5,7 @@ class TelephonyProvidersEdgeApi {
 	/**
 	 * TelephonyProvidersEdge service.
 	 * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-	 * @version 117.0.0
+	 * @version 118.0.0
 	 */
 
 	/**
@@ -202,7 +202,7 @@ class TelephonyProvidersEdgeApi {
 
 	/**
 	 * Delete Outbound Route
-	 * 
+	 * This route is deprecated, use /telephony/providers/edges/sites/{siteId}/outboundroutes/{outboundRouteId} instead.
 	 * @param {String} outboundRouteId Outbound route ID
 	 */
 	deleteTelephonyProvidersEdgesOutboundroute(outboundRouteId) { 
@@ -1635,7 +1635,7 @@ class TelephonyProvidersEdgeApi {
 
 	/**
 	 * Get outbound route
-	 * 
+	 * This route is deprecated, use /telephony/providers/edges/sites/{siteId}/outboundroutes/{outboundRouteId} instead.
 	 * @param {String} outboundRouteId Outbound route ID
 	 */
 	getTelephonyProvidersEdgesOutboundroute(outboundRouteId) { 
@@ -2375,36 +2375,6 @@ class TelephonyProvidersEdgeApi {
 	}
 
 	/**
-	 * Scales the ASG to match the desired capacity
-	 * 
-	 * @param {String} asgId Id of the asg that is to be scaled
-	 * @param {Object} body AsgScaleRequest
-	 */
-	patchTelephonyProvidersEdgesAutoscalinggroupCapacity(asgId, body) { 
-		// verify the required parameter 'asgId' is set
-		if (asgId === undefined || asgId === null) {
-			throw 'Missing the required parameter "asgId" when calling patchTelephonyProvidersEdgesAutoscalinggroupCapacity';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling patchTelephonyProvidersEdgesAutoscalinggroupCapacity';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/telephony/providers/edges/autoscalinggroups/{asgId}/capacity', 
-			'PATCH', 
-			{ 'asgId': asgId }, 
-			{  }, 
-			{  }, 
-			{  }, 
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'], 
-			['application/json']
-		);
-	}
-
-	/**
 	 * Nslookup request command to collect networking-related information from an Edge for a target IP or host.
 	 * 
 	 * @param {String} edgeId Edge Id
@@ -2884,7 +2854,7 @@ class TelephonyProvidersEdgeApi {
 
 	/**
 	 * Create outbound rule
-	 * 
+	 * This route is deprecated, use /telephony/providers/edges/sites/{siteId}/outboundroutes instead.
 	 * @param {Object} body OutboundRoute
 	 */
 	postTelephonyProvidersEdgesOutboundroutes(body) { 
@@ -3429,7 +3399,7 @@ class TelephonyProvidersEdgeApi {
 
 	/**
 	 * Update outbound route
-	 * 
+	 * This route is deprecated, use /telephony/providers/edges/sites/{siteId}/outboundroutes/{outboundRouteId} instead.
 	 * @param {String} outboundRouteId Outbound route ID
 	 * @param {Object} body OutboundRoute
 	 */

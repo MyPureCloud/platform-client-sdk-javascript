@@ -12,7 +12,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getAuditsQueryTransactionId**](AuditApi.html#getAuditsQueryTransactionId) | **GET** /api/v2/audits/query/{transactionId} | Get status of audit query execution
 [**getAuditsQueryTransactionIdResults**](AuditApi.html#getAuditsQueryTransactionIdResults) | **GET** /api/v2/audits/query/{transactionId}/results | Get results of audit query
 [**postAuditsQuery**](AuditApi.html#postAuditsQuery) | **POST** /api/v2/audits/query | Create audit query execution
-[**postAuditsQueryRealtime**](AuditApi.html#postAuditsQueryRealtime) | **POST** /api/v2/audits/query/realtime | This endpoint will only retrieve 7 days worth of audits for certain services. Please use /query to get a full list and older audits.
+[**postAuditsQueryRealtime**](AuditApi.html#postAuditsQueryRealtime) | **POST** /api/v2/audits/query/realtime | This endpoint will only retrieve 14 days worth of audits for certain services. Please use /query to get a full list and older audits.
 {: class="table table-striped"}
 
 <a name="getAuditsQueryRealtimeServicemapping"></a>
@@ -286,7 +286,7 @@ apiInstance.postAuditsQuery(body)
 
 POST /api/v2/audits/query/realtime
 
-This endpoint will only retrieve 7 days worth of audits for certain services. Please use /query to get a full list and older audits.
+This endpoint will only retrieve 14 days worth of audits for certain services. Please use /query to get a full list and older audits.
 
 
 

@@ -402,7 +402,7 @@
     },
     {
       "topic": "v2.users.{id}.wem.learning.assignment",
-      "class": "WemLearningAssignmentTopicLearningAssignmentNotification"
+      "class": "LearningAssignmentTopicLearningAssignmentNotification"
     },
     {
       "topic": "v2.users.{id}.workforcemanagement.adherence",
@@ -434,7 +434,7 @@
     },
     {
       "topic": "v2.wem.learning.assignments.modules.{id}",
-      "class": "WemLearningAssignmentRuleRunTopicLearningAssignmentRuleRunNotification"
+      "class": "LearningAssignmentRuleRunTopicLearningAssignmentRuleRunNotification"
     },
     {
       "topic": "v2.workforcemanagement.agents",

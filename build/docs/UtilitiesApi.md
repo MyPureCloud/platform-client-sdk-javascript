@@ -10,6 +10,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getDate**](UtilitiesApi.html#getDate) | **GET** /api/v2/date | Get the current system date/time
 [**getIpranges**](UtilitiesApi.html#getIpranges) | **GET** /api/v2/ipranges | Get public ip address ranges for PureCloud
 [**getTimezones**](UtilitiesApi.html#getTimezones) | **GET** /api/v2/timezones | Get time zones list
+[**getUploadsV1Publicasset**](UtilitiesApi.html#getUploadsV1Publicasset) | **GET** /uploads/v1/publicassets/{subResources} | 301 redirect.
+[**getWebdeploymentsV1SubResources**](UtilitiesApi.html#getWebdeploymentsV1SubResources) | **GET** /webdeployments/v1/{subResources} | 301 redirect.
 [**postCertificateDetails**](UtilitiesApi.html#postCertificateDetails) | **POST** /api/v2/certificate/details | Returns the information about an X509 PEM encoded certificate or certificate chain.
 {: class="table table-striped"}
 
@@ -162,6 +164,94 @@ apiInstance.getTimezones(opts)
 ### Return type
 
 **TimeZoneEntityListing**
+
+<a name="getUploadsV1Publicasset"></a>
+
+# void getUploadsV1Publicasset()
+
+
+
+GET /uploads/v1/publicassets/{subResources}
+
+301 redirect.
+
+
+
+Requires NO permissions: 
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+let apiInstance = new platformClient.UtilitiesApi();
+
+apiInstance.getUploadsV1Publicasset()
+  .then(() => {
+    console.log('getUploadsV1Publicasset returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getUploadsV1Publicasset');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+
+### Return type
+
+void (no response body)
+
+<a name="getWebdeploymentsV1SubResources"></a>
+
+# void getWebdeploymentsV1SubResources()
+
+
+
+GET /webdeployments/v1/{subResources}
+
+301 redirect.
+
+
+
+Requires NO permissions: 
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+let apiInstance = new platformClient.UtilitiesApi();
+
+apiInstance.getWebdeploymentsV1SubResources()
+  .then(() => {
+    console.log('getWebdeploymentsV1SubResources returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getWebdeploymentsV1SubResources');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+
+### Return type
+
+void (no response body)
 
 <a name="postCertificateDetails"></a>
 

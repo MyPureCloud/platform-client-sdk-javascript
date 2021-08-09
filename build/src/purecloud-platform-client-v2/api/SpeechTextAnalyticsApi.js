@@ -5,7 +5,7 @@ class SpeechTextAnalyticsApi {
 	/**
 	 * SpeechTextAnalytics service.
 	 * @module purecloud-platform-client-v2/api/SpeechTextAnalyticsApi
-	 * @version 117.0.0
+	 * @version 118.0.0
 	 */
 
 	/**
@@ -375,6 +375,9 @@ class SpeechTextAnalyticsApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.nextPage The key for listing the next page
 	 * @param {Number} opts.pageSize The page size for the listing (default to 20)
+	 * @param {Object} opts.state Topic state
+	 * @param {String} opts.name Case insensitive partial name to filter by
+	 * @param {Array.<String>} opts.ids Comma separated Topic IDs to filter by. Cannot be used with other filters. Maximum of 50 IDs allowed.
 	 */
 	getSpeechandtextanalyticsTopics(opts) { 
 		opts = opts || {};
@@ -384,7 +387,7 @@ class SpeechTextAnalyticsApi {
 			'/api/v2/speechandtextanalytics/topics', 
 			'GET', 
 			{  }, 
-			{ 'nextPage': opts['nextPage'],'pageSize': opts['pageSize'] }, 
+			{ 'nextPage': opts['nextPage'],'pageSize': opts['pageSize'],'state': opts['state'],'name': opts['name'],'ids': this.apiClient.buildCollectionParam(opts['ids'], 'multi') }, 
 			{  }, 
 			{  }, 
 			null, 

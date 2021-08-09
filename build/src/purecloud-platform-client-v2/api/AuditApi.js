@@ -5,7 +5,7 @@ class AuditApi {
 	/**
 	 * Audit service.
 	 * @module purecloud-platform-client-v2/api/AuditApi
-	 * @version 117.0.0
+	 * @version 118.0.0
 	 */
 
 	/**
@@ -142,7 +142,7 @@ class AuditApi {
 	}
 
 	/**
-	 * This endpoint will only retrieve 7 days worth of audits for certain services. Please use /query to get a full list and older audits.
+	 * This endpoint will only retrieve 14 days worth of audits for certain services. Please use /query to get a full list and older audits.
 	 * 
 	 * @param {Object} body query
 	 * @param {Object} opts Optional parameters

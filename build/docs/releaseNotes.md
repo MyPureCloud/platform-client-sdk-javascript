@@ -1,241 +1,306 @@
-Platform API version: 4857
+Platform API version: 4879
 
 
-# Major Changes (6 changes)
+# Major Changes (20 changes)
 
-**GET /api/v2/flows/datatables** (1 change)
+**/api/v2/routing/email/outbound/domains/{domainId}** (1 change)
 
+* Path /api/v2/routing/email/outbound/domains/{domainId} was removed
+
+**/api/v2/telephony/providers/edges/autoscalinggroups/{asgId}/capacity** (1 change)
+
+* Path /api/v2/telephony/providers/edges/autoscalinggroups/{asgId}/capacity was removed
+
+**GET /api/v2/routing/queues/me** (1 change)
+
+* Parameter sortBy was removed
+
+**GET /api/v2/routing/queues** (2 changes)
+
+* Parameter sortBy was removed
+* Parameter sortOrder was added
+
+**PATCH /api/v2/routing/conversations/{conversationId}** (1 change)
+
+* Response 200 type was changed from RoutingConversationAttributes to RoutingConversationAttributesResponse
+
+**GET /api/v2/routing/queues/{queueId}/members** (3 changes)
+
+* Parameter sortBy was removed
+* Parameter sortOrder was added
+* Parameter memberBy was added
+
+**GET /api/v2/routing/queues/{queueId}/users** (2 changes)
+
+* Parameter sortBy was removed
+* Parameter sortOrder was added
+
+**GET /api/v2/speechandtextanalytics/topics** (3 changes)
+
+* Parameter state was added
 * Parameter name was added
+* Parameter ids was added
 
-**ButtonComponent** (2 changes)
+**RoutingConversationAttributes** (1 change)
 
-* Property id was removed
-* Property text was removed
+* Model RoutingConversationAttributes was removed
 
-**ContentActions** (2 changes)
+**VerificationResult** (1 change)
 
-* Property commandName was removed
-* Property context was removed
+* Model VerificationResult was removed
 
-**ContentGeneric** (1 change)
+**OutboundDomain** (1 change)
 
-* Property id was removed
+* Model OutboundDomain was removed
+
+**ScaleASGResponse** (1 change)
+
+* Model ScaleASGResponse was removed
+
+**AsgScaleRequest** (1 change)
+
+* Model AsgScaleRequest was removed
+
+**WorkdayValuesMetricItem** (1 change)
+
+* Property metricDefinition was changed from MetricDefinition to DomainEntityRef
 
 
-# Minor Changes (84 changes)
+# Minor Changes (60 changes)
 
-**/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/imports/{importId}** (4 changes)
+**DELETE /api/v2/knowledge/knowledgebases/{knowledgeBaseId}** (2 changes)
+
+* Response 409 was added
+* Response 424 was added
+
+**/uploads/v1/publicassets/{subResources}** (2 changes)
 
 * Path was added
 * Operation GET was added
-* Operation DELETE was added
-* Operation PATCH was added
 
-**/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/imports** (2 changes)
+**/webdeployments/v1/{subResources}** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/textbots/botflows/sessions/{sessionId}/turns** (2 changes)
 
 * Path was added
 * Operation POST was added
 
-**/api/v2/knowledge/documentuploads** (2 changes)
+**/api/v2/textbots/botflows/sessions** (2 changes)
 
 * Path was added
 * Operation POST was added
 
-**AnalyticsFlow** (1 change)
+**TranscriptAggregationQuery** (1 change)
 
-* Enum value VOICEMAIL was added to property flowType
+* Enum value oSentimentScore was added to property metrics
 
-**AnalyticsSession** (4 changes)
+**TranscriptAggregationView** (1 change)
 
-* Optional property deliveryStatus was added
-* Optional property deliveryStatusChangeDate was added
-* Optional property eligibleAgentCounts was added
-* Optional property waitingInteractionCounts was added
+* Enum value oSentimentScore was added to property target
 
-**ConversationAggregateQueryPredicate** (3 changes)
+**AuditQueryExecutionStatusResponse** (1 change)
 
-* Enum value deliveryStatus was added to property dimension
-* Enum value eligibleAgentCount was added to property dimension
-* Enum value waitingInteractionCount was added to property dimension
+* Enum value Learning was added to property serviceName
 
-**ConversationAggregationQuery** (3 changes)
+**AuditQueryRequest** (1 change)
 
-* Enum value deliveryStatus was added to property groupBy
-* Enum value eligibleAgentCount was added to property groupBy
-* Enum value waitingInteractionCount was added to property groupBy
+* Enum value Learning was added to property serviceName
 
-**SegmentDetailQueryPredicate** (1 change)
+**AuditLogMessage** (7 changes)
 
-* Enum value deliveryStatus was added to property dimension
+* Enum value Learning was added to property serviceName
+* Enum value Promote was added to property action
+* Enum value Assignment was added to property entityType
+* Enum value KnowledgeSearchFeedback was added to property entityType
+* Enum value KnowledgeTraining was added to property entityType
+* Enum value Module was added to property entityType
+* Enum value Rule was added to property entityType
 
-**FlowAggregateQueryPredicate** (3 changes)
+**AuditRealtimeQueryRequest** (1 change)
 
-* Enum value deliveryStatus was added to property dimension
-* Enum value eligibleAgentCount was added to property dimension
-* Enum value waitingInteractionCount was added to property dimension
+* Enum value Learning was added to property serviceName
 
-**FlowAggregationQuery** (3 changes)
+**AuditQueryEntity** (6 changes)
 
-* Enum value deliveryStatus was added to property groupBy
-* Enum value eligibleAgentCount was added to property groupBy
-* Enum value waitingInteractionCount was added to property groupBy
+* Enum value Assignment was added to property name
+* Enum value KnowledgeSearchFeedback was added to property name
+* Enum value KnowledgeTraining was added to property name
+* Enum value Module was added to property name
+* Enum value Rule was added to property name
+* Enum value Promote was added to property actions
 
-**ViewFilter** (2 changes)
+**AuditQueryService** (1 change)
 
-* Enum value voicemail was added to property flowTypes
-* Optional property blockedReasons was added
+* Enum value Learning was added to property name
 
-**ReportingExportJobResponse** (2 changes)
-
-* Enum value ACTION_MAP_BLOCKED_CONSTRAINTS_DETAIL_VIEW was added to property viewType
-* Enum value ACTION_MAP_BLOCKED_CONSTRAINTS_INTERVAL_DETAIL_VIEW was added to property viewType
-
-**ReportingExportMetadataJobResponse** (2 changes)
-
-* Enum value ACTION_MAP_BLOCKED_CONSTRAINTS_DETAIL_VIEW was added to property viewType
-* Enum value ACTION_MAP_BLOCKED_CONSTRAINTS_INTERVAL_DETAIL_VIEW was added to property viewType
-
-**ReportingExportJobRequest** (2 changes)
-
-* Enum value ACTION_MAP_BLOCKED_CONSTRAINTS_DETAIL_VIEW was added to property viewType
-* Enum value ACTION_MAP_BLOCKED_CONSTRAINTS_INTERVAL_DETAIL_VIEW was added to property viewType
-
-**AuditQueryEntity** (3 changes)
-
-* Enum value KnowledgeBase was added to property name
-* Enum value KnowledgeCategory was added to property name
-* Enum value KnowledgeDocument was added to property name
-
-**AuditQueryService** (2 changes)
-
-* Enum value Knowledge was added to property name
-* Enum value ProcessAutomation was added to property name
-
-**AuditLogMessage** (5 changes)
-
-* Enum value Knowledge was added to property serviceName
-* Enum value ProcessAutomation was added to property serviceName
-* Enum value KnowledgeBase was added to property entityType
-* Enum value KnowledgeCategory was added to property entityType
-* Enum value KnowledgeDocument was added to property entityType
-
-**AuditRealtimeQueryRequest** (2 changes)
-
-* Enum value Knowledge was added to property serviceName
-* Enum value ProcessAutomation was added to property serviceName
-
-**AuditQueryExecutionStatusResponse** (2 changes)
-
-* Enum value Knowledge was added to property serviceName
-* Enum value ProcessAutomation was added to property serviceName
-
-**AuditQueryRequest** (2 changes)
-
-* Enum value Knowledge was added to property serviceName
-* Enum value ProcessAutomation was added to property serviceName
-
-**CallMediaParticipant** (1 change)
-
-* Optional property coachedParticipantId was added
-
-**ImportError** (1 change)
+**AgentOwnedRouting** (1 change)
 
 * Model was added
 
-**ImportReport** (1 change)
+**FacebookIntegration** (2 changes)
+
+* Optional property pageName was added
+* Optional property pageProfileImageUrl was added
+
+**CommonCampaignDivisionView** (1 change)
+
+* Enum value email was added to property mediaType
+
+**CommonCampaign** (1 change)
+
+* Enum value email was added to property mediaType
+
+**GamificationStatus** (1 change)
+
+* Optional property automaticUserAssignment was added
+
+**RoutingConversationAttributesResponse** (1 change)
 
 * Model was added
 
-**KnowledgeImport** (1 change)
+**RoutingConversationAttributesRequest** (1 change)
 
 * Model was added
 
-**ResultCounters** (1 change)
+**Format** (1 change)
 
 * Model was added
 
-**ImportStatusRequest** (1 change)
+**TextBotDisconnectAction** (1 change)
 
 * Model was added
 
-**NluDomain** (1 change)
+**TextBotExitAction** (1 change)
 
-* Optional property engineVersion was added
+* Model was added
 
-**ADFS** (2 changes)
+**TextBotFlowLocation** (1 change)
 
-* Optional property sloURI was added
-* Optional property sloBinding was added
+* Model was added
 
-**CustomerInteractionCenter** (2 changes)
+**TextBotFlowTurnResponse** (1 change)
 
-* Optional property sloURI was added
-* Optional property sloBinding was added
+* Model was added
 
-**GSuite** (2 changes)
+**TextBotInputOutputData** (1 change)
 
-* Optional property sloURI was added
-* Optional property sloBinding was added
+* Model was added
 
-**GenericSAML** (2 changes)
+**TextBotModeConstraints** (1 change)
 
-* Optional property sloURI was added
-* Optional property sloBinding was added
+* Model was added
 
-**IdentityNow** (2 changes)
+**TextBotModeOutputPrompts** (1 change)
 
-* Optional property sloURI was added
-* Optional property sloBinding was added
+* Model was added
 
-**Okta** (2 changes)
+**TextBotOutputPrompts** (1 change)
 
-* Optional property sloURI was added
-* Optional property sloBinding was added
+* Model was added
 
-**OneLogin** (2 changes)
+**TextBotPromptSegment** (1 change)
 
-* Optional property sloURI was added
-* Optional property sloBinding was added
+* Model was added
 
-**PingIdentity** (2 changes)
+**TextBotTextModeConstraints** (1 change)
 
-* Optional property sloURI was added
-* Optional property sloBinding was added
+* Model was added
 
-**PureEngage** (2 changes)
+**TextBotTurnReference** (1 change)
 
-* Optional property sloURI was added
-* Optional property sloBinding was added
+* Model was added
 
-**Salesforce** (2 changes)
+**TextBotWaitForInputAction** (1 change)
 
-* Optional property sloURI was added
-* Optional property sloBinding was added
+* Model was added
 
-**Response** (1 change)
+**TextBotErrorInputEvent** (1 change)
 
-* Optional property assets was added
+* Model was added
 
-**Flow** (2 changes)
+**TextBotFlowTurnRequest** (1 change)
 
-* Enum value VOICEMAIL was added to property type
-* Enum value VOICEMAIL was added to property compatibleFlowTypes
+* Model was added
 
-**FlowVersion** (1 change)
+**TextBotTranscript** (1 change)
 
-* Enum value VOICEMAIL was added to property compatibleFlowTypes
+* Model was added
 
-**Dependency** (1 change)
+**TextBotUserInputAlternative** (1 change)
 
-* Enum value VOICEMAILFLOW was added to property type
+* Model was added
 
-**DependencyObject** (1 change)
+**TextBotUserInputEvent** (1 change)
 
-* Enum value VOICEMAILFLOW was added to property type
+* Model was added
 
-**FlowDivisionView** (1 change)
+**TextBotFlowLaunchResponse** (1 change)
 
-* Enum value VOICEMAIL was added to property type
+* Model was added
+
+**TextBotChannel** (1 change)
+
+* Model was added
+
+**TextBotFlow** (1 change)
+
+* Model was added
+
+**TextBotFlowLaunchRequest** (1 change)
+
+* Model was added
+
+**TextBotUserAgent** (1 change)
+
+* Model was added
 
 
-# Point Changes (0 changes)
+# Point Changes (15 changes)
+
+**POST /api/v2/audits/query/realtime** (1 change)
+
+* Summary was changed
+
+**GET /api/v2/routing/queues/me** (2 changes)
+
+* Description was changed for parameter joined
+* Description was changed for parameter sortOrder
+
+**GET /api/v2/routing/queues** (3 changes)
+
+* Description was changed for parameter name
+* Description was changed for parameter id
+* Description was changed for parameter divisionId
+
+**PATCH /api/v2/routing/conversations/{conversationId}** (1 change)
+
+* Description was changed
+
+**GET /api/v2/routing/queues/{queueId}/members** (2 changes)
+
+* Description was changed for parameter pageNumber
+* Description was changed for parameter pageSize
+
+**GET /api/v2/routing/queues/{queueId}/users** (2 changes)
+
+* Description was changed for parameter pageNumber
+* Description was changed for parameter pageSize
+
+**GET /api/v2/telephony/providers/edges/outboundroutes/{outboundRouteId}** (1 change)
+
+* Description was changed
+
+**PUT /api/v2/telephony/providers/edges/outboundroutes/{outboundRouteId}** (1 change)
+
+* Description was changed
+
+**DELETE /api/v2/telephony/providers/edges/outboundroutes/{outboundRouteId}** (1 change)
+
+* Description was changed
+
+**POST /api/v2/telephony/providers/edges/outboundroutes** (1 change)
+
+* Description was changed

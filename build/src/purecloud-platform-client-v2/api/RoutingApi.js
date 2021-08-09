@@ -5,7 +5,7 @@ class RoutingApi {
 	/**
 	 * Routing service.
 	 * @module purecloud-platform-client-v2/api/RoutingApi
-	 * @version 117.0.0
+	 * @version 118.0.0
 	 */
 
 	/**
@@ -993,17 +993,18 @@ class RoutingApi {
 	 * 
 	 * @param {String} queueId Queue ID
 	 * @param {Object} opts Optional parameters
-	 * @param {Number} opts.pageSize Page size [max 100] (default to 25)
-	 * @param {Number} opts.pageNumber Page number (default to 1)
-	 * @param {String} opts.sortBy Sort by (default to name)
+	 * @param {Number} opts.pageNumber  (default to 1)
+	 * @param {Number} opts.pageSize Max value is 100 (default to 25)
+	 * @param {Object} opts.sortOrder Note: results are sorted by name. (default to asc)
 	 * @param {Array.<String>} opts.expand Which fields, if any, to expand.
-	 * @param {Boolean} opts.joined Filter by joined status
 	 * @param {String} opts.name Filter by queue member name
 	 * @param {Array.<String>} opts.profileSkills Filter by profile skill
 	 * @param {Array.<String>} opts.skills Filter by skill
 	 * @param {Array.<String>} opts.languages Filter by language
 	 * @param {Array.<String>} opts.routingStatus Filter by routing status
 	 * @param {Array.<String>} opts.presence Filter by presence
+	 * @param {Object} opts.memberBy Filter by member type
+	 * @param {Boolean} opts.joined Filter by joined status
 	 */
 	getRoutingQueueMembers(queueId, opts) { 
 		opts = opts || {};
@@ -1017,7 +1018,7 @@ class RoutingApi {
 			'/api/v2/routing/queues/{queueId}/members', 
 			'GET', 
 			{ 'queueId': queueId }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'joined': opts['joined'],'name': opts['name'],'profileSkills': this.apiClient.buildCollectionParam(opts['profileSkills'], 'multi'),'skills': this.apiClient.buildCollectionParam(opts['skills'], 'multi'),'languages': this.apiClient.buildCollectionParam(opts['languages'], 'multi'),'routingStatus': this.apiClient.buildCollectionParam(opts['routingStatus'], 'multi'),'presence': this.apiClient.buildCollectionParam(opts['presence'], 'multi') }, 
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortOrder': opts['sortOrder'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'name': opts['name'],'profileSkills': this.apiClient.buildCollectionParam(opts['profileSkills'], 'multi'),'skills': this.apiClient.buildCollectionParam(opts['skills'], 'multi'),'languages': this.apiClient.buildCollectionParam(opts['languages'], 'multi'),'routingStatus': this.apiClient.buildCollectionParam(opts['routingStatus'], 'multi'),'presence': this.apiClient.buildCollectionParam(opts['presence'], 'multi'),'memberBy': opts['memberBy'],'joined': opts['joined'] }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -1032,9 +1033,9 @@ class RoutingApi {
 	 * 
 	 * @param {String} queueId Queue ID
 	 * @param {Object} opts Optional parameters
-	 * @param {Number} opts.pageSize Page size [max 100] (default to 25)
-	 * @param {Number} opts.pageNumber Page number (default to 1)
-	 * @param {String} opts.sortBy Sort by (default to name)
+	 * @param {Number} opts.pageNumber  (default to 1)
+	 * @param {Number} opts.pageSize Max value is 100 (default to 25)
+	 * @param {Object} opts.sortOrder Note: results are sorted by name. (default to asc)
 	 * @param {Array.<String>} opts.expand Which fields, if any, to expand.
 	 * @param {Boolean} opts.joined Filter by joined status
 	 * @param {String} opts.name Filter by queue member name
@@ -1056,7 +1057,7 @@ class RoutingApi {
 			'/api/v2/routing/queues/{queueId}/users', 
 			'GET', 
 			{ 'queueId': queueId }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'joined': opts['joined'],'name': opts['name'],'profileSkills': this.apiClient.buildCollectionParam(opts['profileSkills'], 'multi'),'skills': this.apiClient.buildCollectionParam(opts['skills'], 'multi'),'languages': this.apiClient.buildCollectionParam(opts['languages'], 'multi'),'routingStatus': this.apiClient.buildCollectionParam(opts['routingStatus'], 'multi'),'presence': this.apiClient.buildCollectionParam(opts['presence'], 'multi') }, 
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortOrder': opts['sortOrder'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'joined': opts['joined'],'name': opts['name'],'profileSkills': this.apiClient.buildCollectionParam(opts['profileSkills'], 'multi'),'skills': this.apiClient.buildCollectionParam(opts['skills'], 'multi'),'languages': this.apiClient.buildCollectionParam(opts['languages'], 'multi'),'routingStatus': this.apiClient.buildCollectionParam(opts['routingStatus'], 'multi'),'presence': this.apiClient.buildCollectionParam(opts['presence'], 'multi') }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -1100,12 +1101,12 @@ class RoutingApi {
 	 * Get list of queues.
 	 * 
 	 * @param {Object} opts Optional parameters
-	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
-	 * @param {String} opts.sortBy Sort by (default to name)
-	 * @param {String} opts.name Name
-	 * @param {Array.<String>} opts.id ID(s)
-	 * @param {Array.<String>} opts.divisionId Division ID(s)
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {Object} opts.sortOrder Note: results are sorted by name. (default to asc)
+	 * @param {String} opts.name Filter by queue name
+	 * @param {Array.<String>} opts.id Filter by queue ID(s)
+	 * @param {Array.<String>} opts.divisionId Filter by queue division ID(s)
 	 */
 	getRoutingQueues(opts) { 
 		opts = opts || {};
@@ -1115,7 +1116,7 @@ class RoutingApi {
 			'/api/v2/routing/queues', 
 			'GET', 
 			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'name': opts['name'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi') }, 
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortOrder': opts['sortOrder'],'name': opts['name'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi') }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -1186,11 +1187,10 @@ class RoutingApi {
 	 * Get a paged listing of queues the user is a member of.
 	 * 
 	 * @param {Object} opts Optional parameters
-	 * @param {Boolean} opts.joined Joined
-	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
-	 * @param {String} opts.sortBy Sort by (default to name)
-	 * @param {String} opts.sortOrder Sort order (default to asc)
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {Boolean} opts.joined Filter by joined status.
+	 * @param {Object} opts.sortOrder Note: results are sorted by name. (default to asc)
 	 */
 	getRoutingQueuesMe(opts) { 
 		opts = opts || {};
@@ -1200,7 +1200,7 @@ class RoutingApi {
 			'/api/v2/routing/queues/me', 
 			'GET', 
 			{  }, 
-			{ 'joined': opts['joined'],'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] }, 
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'joined': opts['joined'],'sortOrder': opts['sortOrder'] }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -1657,7 +1657,7 @@ class RoutingApi {
 
 	/**
 	 * Update attributes of an in-queue conversation
-	 * Returns an object indicating the updated values of all settable attributes.  Supported attributes: priority (each point of priority is equivalent to one minute of time in queue).
+	 * Returns an object indicating the updated values of all settable attributes. Supported attributes: priority (each point of priority is equivalent to one minute of time in queue), skillIds and languageId.
 	 * @param {String} conversationId Conversation ID
 	 * @param {Object} body Conversation Attributes
 	 */
@@ -1733,36 +1733,6 @@ class RoutingApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/routing/email/domains/{domainId}/validate', 
-			'PATCH', 
-			{ 'domainId': domainId }, 
-			{  }, 
-			{  }, 
-			{  }, 
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'], 
-			['application/json']
-		);
-	}
-
-	/**
-	 * Request an update of the emails from /replyTo of an outbound domain
-	 * 
-	 * @param {String} domainId domain ID
-	 * @param {Object} body domain with emails that need update set
-	 */
-	patchRoutingEmailOutboundDomain(domainId, body) { 
-		// verify the required parameter 'domainId' is set
-		if (domainId === undefined || domainId === null) {
-			throw 'Missing the required parameter "domainId" when calling patchRoutingEmailOutboundDomain';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling patchRoutingEmailOutboundDomain';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/routing/email/outbound/domains/{domainId}', 
 			'PATCH', 
 			{ 'domainId': domainId }, 
 			{  }, 
