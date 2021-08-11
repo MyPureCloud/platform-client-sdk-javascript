@@ -38,6 +38,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getGamificationTemplate**](GamificationApi.html#getGamificationTemplate) | **GET** /api/v2/gamification/templates/{templateId} | Objective template by id
 [**getGamificationTemplates**](GamificationApi.html#getGamificationTemplates) | **GET** /api/v2/gamification/templates | All objective templates
 [**postGamificationMetrics**](GamificationApi.html#postGamificationMetrics) | **POST** /api/v2/gamification/metrics | Creates a gamified metric with a given metric definition and metric objective
+[**postGamificationProfileActivate**](GamificationApi.html#postGamificationProfileActivate) | **POST** /api/v2/gamification/profiles/{performanceProfileId}/activate | Activate a performance profile
+[**postGamificationProfileDeactivate**](GamificationApi.html#postGamificationProfileDeactivate) | **POST** /api/v2/gamification/profiles/{performanceProfileId}/deactivate | Deactivate a performance profile
 [**putGamificationMetric**](GamificationApi.html#putGamificationMetric) | **PUT** /api/v2/gamification/metrics/{metricId} | Updates a metric
 [**putGamificationProfile**](GamificationApi.html#putGamificationProfile) | **PUT** /api/v2/gamification/profiles/{performanceProfileId} | Updates a performance profile
 [**putGamificationStatus**](GamificationApi.html#putGamificationStatus) | **PUT** /api/v2/gamification/status | Update gamification activation status
@@ -1763,6 +1765,112 @@ apiInstance.postGamificationMetrics(body)
 ### Return type
 
 **Metric**
+
+<a name="postGamificationProfileActivate"></a>
+
+# PerformanceProfile postGamificationProfileActivate(performanceProfileId)
+
+
+
+POST /api/v2/gamification/profiles/{performanceProfileId}/activate
+
+Activate a performance profile
+
+
+
+Requires ANY permissions: 
+
+* gamification:profile:update
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.GamificationApi();
+
+let performanceProfileId = "performanceProfileId_example"; // String | Performance Profile Id
+
+apiInstance.postGamificationProfileActivate(performanceProfileId)
+  .then((data) => {
+    console.log(`postGamificationProfileActivate success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postGamificationProfileActivate');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **performanceProfileId** | **String** | Performance Profile Id |  |
+{: class="table table-striped"}
+
+### Return type
+
+**PerformanceProfile**
+
+<a name="postGamificationProfileDeactivate"></a>
+
+# PerformanceProfile postGamificationProfileDeactivate(performanceProfileId)
+
+
+
+POST /api/v2/gamification/profiles/{performanceProfileId}/deactivate
+
+Deactivate a performance profile
+
+
+
+Requires ANY permissions: 
+
+* gamification:profile:update
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.GamificationApi();
+
+let performanceProfileId = "performanceProfileId_example"; // String | Performance Profile Id
+
+apiInstance.postGamificationProfileDeactivate(performanceProfileId)
+  .then((data) => {
+    console.log(`postGamificationProfileDeactivate success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postGamificationProfileDeactivate');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **performanceProfileId** | **String** | Performance Profile Id |  |
+{: class="table table-striped"}
+
+### Return type
+
+**PerformanceProfile**
 
 <a name="putGamificationMetric"></a>
 

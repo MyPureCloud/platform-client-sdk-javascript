@@ -5,7 +5,7 @@ class RecordingApi {
 	/**
 	 * Recording service.
 	 * @module purecloud-platform-client-v2/api/RecordingApi
-	 * @version 118.0.0
+	 * @version 119.0.0
 	 */
 
 	/**
@@ -585,6 +585,36 @@ class RecordingApi {
 			'GET', 
 			{ 'jobId': jobId }, 
 			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get IDs of recordings that the bulk job failed for
+	 * 
+	 * @param {String} jobId jobId
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageSize Page size. Maximum is 100. (default to 25)
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 */
+	getRecordingJobFailedrecordings(jobId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null) {
+			throw 'Missing the required parameter "jobId" when calling getRecordingJobFailedrecordings';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/recording/jobs/{jobId}/failedrecordings', 
+			'GET', 
+			{ 'jobId': jobId }, 
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] }, 
 			{  }, 
 			{  }, 
 			null, 

@@ -27,6 +27,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getRecordingCrossplatformMediaretentionpolicies**](RecordingApi.html#getRecordingCrossplatformMediaretentionpolicies) | **GET** /api/v2/recording/crossplatform/mediaretentionpolicies | Gets media retention policy list with query options to filter on name and enabled.
 [**getRecordingCrossplatformMediaretentionpolicy**](RecordingApi.html#getRecordingCrossplatformMediaretentionpolicy) | **GET** /api/v2/recording/crossplatform/mediaretentionpolicies/{policyId} | Get a media retention policy
 [**getRecordingJob**](RecordingApi.html#getRecordingJob) | **GET** /api/v2/recording/jobs/{jobId} | Get the status of the job associated with the job id.
+[**getRecordingJobFailedrecordings**](RecordingApi.html#getRecordingJobFailedrecordings) | **GET** /api/v2/recording/jobs/{jobId}/failedrecordings | Get IDs of recordings that the bulk job failed for
 [**getRecordingJobs**](RecordingApi.html#getRecordingJobs) | **GET** /api/v2/recording/jobs | Get the status of all jobs within the user&#39;s organization
 [**getRecordingLocalkeysSetting**](RecordingApi.html#getRecordingLocalkeysSetting) | **GET** /api/v2/recording/localkeys/settings/{settingsId} | Get the local encryption settings
 [**getRecordingLocalkeysSettings**](RecordingApi.html#getRecordingLocalkeysSettings) | **GET** /api/v2/recording/localkeys/settings | gets a list local key settings data
@@ -1207,6 +1208,65 @@ apiInstance.getRecordingJob(jobId)
 ### Return type
 
 **RecordingJob**
+
+<a name="getRecordingJobFailedrecordings"></a>
+
+# FailedRecordingsEntityListing getRecordingJobFailedrecordings(jobId, opts)
+
+
+
+GET /api/v2/recording/jobs/{jobId}/failedrecordings
+
+Get IDs of recordings that the bulk job failed for
+
+
+
+Requires ALL permissions: 
+
+* recording:job:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.RecordingApi();
+
+let jobId = "jobId_example"; // String | jobId
+let opts = { 
+  'pageSize': 25, // Number | Page size. Maximum is 100.
+  'pageNumber': 1 // Number | Page number
+};
+
+apiInstance.getRecordingJobFailedrecordings(jobId, opts)
+  .then((data) => {
+    console.log(`getRecordingJobFailedrecordings success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getRecordingJobFailedrecordings');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **jobId** | **String** | jobId |  |
+ **pageSize** | **Number** | Page size. Maximum is 100. | [optional] [default to 25] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+{: class="table table-striped"}
+
+### Return type
+
+**FailedRecordingsEntityListing**
 
 <a name="getRecordingJobs"></a>
 

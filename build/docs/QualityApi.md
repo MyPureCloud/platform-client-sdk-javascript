@@ -15,7 +15,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getQualityAgentsActivity**](QualityApi.html#getQualityAgentsActivity) | **GET** /api/v2/quality/agents/activity | Gets a list of Agent Activities
 [**getQualityCalibration**](QualityApi.html#getQualityCalibration) | **GET** /api/v2/quality/calibrations/{calibrationId} | Get a calibration by id.  Requires either calibrator id or conversation id
 [**getQualityCalibrations**](QualityApi.html#getQualityCalibrations) | **GET** /api/v2/quality/calibrations | Get the list of calibrations
-[**getQualityConversationAudits**](QualityApi.html#getQualityConversationAudits) | **GET** /api/v2/quality/conversations/{conversationId}/audits | Get audits for conversation or recording
 [**getQualityConversationEvaluation**](QualityApi.html#getQualityConversationEvaluation) | **GET** /api/v2/quality/conversations/{conversationId}/evaluations/{evaluationId} | Get an evaluation
 [**getQualityConversationSurveys**](QualityApi.html#getQualityConversationSurveys) | **GET** /api/v2/quality/conversations/{conversationId}/surveys | Get the surveys for a conversation
 [**getQualityConversationsAuditsQueryTransactionId**](QualityApi.html#getQualityConversationsAuditsQueryTransactionId) | **GET** /api/v2/quality/conversations/audits/query/{transactionId} | Get status of audit query execution
@@ -544,82 +543,6 @@ apiInstance.getQualityCalibrations(calibratorId, opts)
 ### Return type
 
 **CalibrationEntityListing**
-
-<a name="getQualityConversationAudits"></a>
-
-# QualityAuditPage getQualityConversationAudits(conversationId, opts)
-
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
-
-GET /api/v2/quality/conversations/{conversationId}/audits
-
-Get audits for conversation or recording
-
-Different permissions are required for viewing different resource audit entries.  The quality:evaluation:viewAudit permission is required to view evaluation audits, the recording:recording:viewAudit permission is required to view recording audits, and so on.This endpoint is deprecated. Use following async endpoints, To query for audits POST /api/v2/quality/conversations/audits/queryTo get status of audit query GET /api/v2/quality/conversations/audits/query/{transactionId}To get results of audit query GET /api/v2/quality/conversations/audits/query/{transactionId}/results
-
-Requires ANY permissions: 
-
-* quality:calibration:viewAudit
-* quality:evaluation:viewAudit
-* quality:survey:viewAudit
-* recording:recording:viewAudit
-* recording:annotation:viewAudit
-* recording:screenRecording:viewAudit
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.QualityApi();
-
-let conversationId = "conversationId_example"; // String | Conversation ID
-let opts = { 
-  'pageSize': 25, // Number | The total page size requested
-  'pageNumber': 1, // Number | The page number requested
-  'sortBy': "sortBy_example", // String | variable name requested to sort by
-  'expand': ["expand_example"], // [String] | variable name requested by expand list
-  'nextPage': "nextPage_example", // String | next page token
-  'previousPage': "previousPage_example", // String | Previous page token
-  'recordingId': "recordingId_example", // String | id of the recording
-  'entityType': "Recording" // String | entity type options: Recording, Calibration, Evaluation, Annotation, Screen_Recording
-};
-
-apiInstance.getQualityConversationAudits(conversationId, opts)
-  .then((data) => {
-    console.log(`getQualityConversationAudits success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch((err) => {
-    console.log('There was a failure calling getQualityConversationAudits');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **conversationId** | **String** | Conversation ID |  |
- **pageSize** | **Number** | The total page size requested | [optional] [default to 25] |
- **pageNumber** | **Number** | The page number requested | [optional] [default to 1] |
- **sortBy** | **String** | variable name requested to sort by | [optional]  |
- **expand** | **[String]** | variable name requested by expand list | [optional]  |
- **nextPage** | **String** | next page token | [optional]  |
- **previousPage** | **String** | Previous page token | [optional]  |
- **recordingId** | **String** | id of the recording | [optional]  |
- **entityType** | **String** | entity type options: Recording, Calibration, Evaluation, Annotation, Screen_Recording | [optional] [default to Recording] |
-{: class="table table-striped"}
-
-### Return type
-
-**QualityAuditPage**
 
 <a name="getQualityConversationEvaluation"></a>
 

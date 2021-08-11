@@ -1412,6 +1412,8 @@ declare class GamificationApi {
   	getGamificationTemplate(templateId: string): Promise<Models.ObjectiveTemplate>; 
   	getGamificationTemplates(): Promise<Models.GetTemplatesResponse>; 
   	postGamificationMetrics(body: Models.Metric): Promise<Models.Metric>; 
+  	postGamificationProfileActivate(performanceProfileId: string): Promise<Models.PerformanceProfile>; 
+  	postGamificationProfileDeactivate(performanceProfileId: string): Promise<Models.PerformanceProfile>; 
   	putGamificationMetric(metricId: string, body: Models.Metric, opts?: GamificationApi.putGamificationMetricOptions): Promise<Models.Metric>; 
   	putGamificationProfile(performanceProfileId: string, opts?: GamificationApi.putGamificationProfileOptions): Promise<Models.PerformanceProfile>; 
   	putGamificationStatus(status: Models.GamificationStatus): Promise<Models.GamificationStatus>;
@@ -2117,6 +2119,7 @@ declare class LearningApi {
   	getLearningModuleVersion(moduleId: string, versionId: string, opts?: LearningApi.getLearningModuleVersionOptions): Promise<Models.LearningModule>; 
   	getLearningModules(opts?: LearningApi.getLearningModulesOptions): Promise<Models.LearningModulesDomainEntityListing>; 
   	patchLearningAssignment(assignmentId: string, opts?: LearningApi.patchLearningAssignmentOptions): Promise<Models.LearningAssignment>; 
+  	postLearningAssessmentsScoring(body: Models.LearningAssessmentScoringRequest): Promise<Models.AssessmentScoringSet>; 
   	postLearningAssignments(opts?: LearningApi.postLearningAssignmentsOptions): Promise<Models.LearningAssignment>; 
   	postLearningAssignmentsAggregatesQuery(body: Models.LearningAssignmentAggregateParam): Promise<Models.LearningAssignmentAggregateResponse>; 
   	postLearningAssignmentsBulkadd(opts?: LearningApi.postLearningAssignmentsBulkaddOptions): Promise<Models.LearningAssignmentBulkAddResponse>; 
@@ -2139,6 +2142,9 @@ declare namespace LearningApi {
 		"overdue"?: string;
 		"pageSize"?: number;
 		"pageNumber"?: number;
+		"pass"?: string;
+		"minPercentageScore"?: number;
+		"maxPercentageScore"?: number;
 		"sortOrder"?: string;
 		"sortBy"?: string;
 		"userId"?: Array<string>;
@@ -2153,6 +2159,9 @@ declare namespace LearningApi {
 		"overdue"?: string;
 		"pageSize"?: number;
 		"pageNumber"?: number;
+		"pass"?: string;
+		"minPercentageScore"?: number;
+		"maxPercentageScore"?: number;
 		"sortOrder"?: string;
 		"sortBy"?: string;
 		"types"?: Array<string>;
@@ -2174,6 +2183,7 @@ declare namespace LearningApi {
 		"sortBy"?: string;
 		"searchTerm"?: string;
 		"expand"?: Array<string>;
+		"isPublished"?: string;
 	}
 	export interface patchLearningAssignmentOptions { 
 		"body"?: Models.LearningAssignmentUpdate;
@@ -2736,6 +2746,7 @@ declare namespace OutboundApi {
 		"pageNumber"?: number;
 		"sortOrder"?: string;
 		"name"?: string;
+		"type"?: string;
 		"id"?: Array<string>;
 		"senderSmsPhoneNumber"?: string;
 	}
@@ -2808,7 +2819,6 @@ declare class QualityApi {
   	getQualityAgentsActivity(opts?: QualityApi.getQualityAgentsActivityOptions): Promise<Models.AgentActivityEntityListing>; 
   	getQualityCalibration(calibrationId: string, opts?: QualityApi.getQualityCalibrationOptions): Promise<Models.Calibration>; 
   	getQualityCalibrations(calibratorId: string, opts?: QualityApi.getQualityCalibrationsOptions): Promise<Models.CalibrationEntityListing>; 
-  	getQualityConversationAudits(conversationId: string, opts?: QualityApi.getQualityConversationAuditsOptions): Promise<Models.QualityAuditPage>; 
   	getQualityConversationEvaluation(conversationId: string, evaluationId: string, opts?: QualityApi.getQualityConversationEvaluationOptions): Promise<Models.Evaluation>; 
   	getQualityConversationSurveys(conversationId: string): Promise<Array<Models.Survey>>; 
   	getQualityConversationsAuditsQueryTransactionId(transactionId: string): Promise<Models.QualityAuditQueryExecutionStatusResponse>; 
@@ -2888,16 +2898,6 @@ declare namespace QualityApi {
 		"conversationId"?: string;
 		"startTime"?: string;
 		"endTime"?: string;
-	}
-	export interface getQualityConversationAuditsOptions { 
-		"pageSize"?: number;
-		"pageNumber"?: number;
-		"sortBy"?: string;
-		"expand"?: Array<string>;
-		"nextPage"?: string;
-		"previousPage"?: string;
-		"recordingId"?: string;
-		"entityType"?: string;
 	}
 	export interface getQualityConversationEvaluationOptions { 
 		"expand"?: string;
@@ -3036,6 +3036,7 @@ declare class RecordingApi {
   	getRecordingCrossplatformMediaretentionpolicies(opts?: RecordingApi.getRecordingCrossplatformMediaretentionpoliciesOptions): Promise<Models.PolicyEntityListing>; 
   	getRecordingCrossplatformMediaretentionpolicy(policyId: string): Promise<Models.CrossPlatformPolicy>; 
   	getRecordingJob(jobId: string): Promise<Models.RecordingJob>; 
+  	getRecordingJobFailedrecordings(jobId: string, opts?: RecordingApi.getRecordingJobFailedrecordingsOptions): Promise<Models.FailedRecordingsEntityListing>; 
   	getRecordingJobs(opts?: RecordingApi.getRecordingJobsOptions): Promise<Models.RecordingJobEntityListing>; 
   	getRecordingLocalkeysSetting(settingsId: string): Promise<Models.LocalEncryptionConfiguration>; 
   	getRecordingLocalkeysSettings(): Promise<Models.LocalEncryptionConfigurationListing>; 
@@ -3115,6 +3116,10 @@ declare namespace RecordingApi {
 		"enabled"?: boolean;
 		"summary"?: boolean;
 		"hasErrors"?: boolean;
+	}
+	export interface getRecordingJobFailedrecordingsOptions { 
+		"pageSize"?: number;
+		"pageNumber"?: number;
 	}
 	export interface getRecordingJobsOptions { 
 		"pageSize"?: number;
@@ -4459,8 +4464,6 @@ declare class UtilitiesApi {
   	getDate(): Promise<Models.ServerDate>; 
   	getIpranges(): Promise<Models.IpAddressRangeListing>; 
   	getTimezones(opts?: UtilitiesApi.getTimezonesOptions): Promise<Models.TimeZoneEntityListing>; 
-  	getUploadsV1Publicasset(): Promise<void>; 
-  	getWebdeploymentsV1SubResources(): Promise<void>; 
   	postCertificateDetails(body: Models.Certificate): Promise<Models.ParsedCertificate>;
 }
 
@@ -4562,6 +4565,28 @@ declare namespace WebChatApi {
 		"before"?: string;
 		"sortOrder"?: string;
 		"maxResults"?: number;
+	}
+}
+
+declare class WebDeploymentsApi {  
+  	deleteWebdeploymentsConfiguration(configurationId: string): Promise<void>; 
+  	deleteWebdeploymentsDeployment(deploymentId: string): Promise<void>; 
+  	getWebdeploymentsConfigurationVersion(configurationId: string, versionId: string): Promise<Models.WebDeploymentConfigurationVersion>; 
+  	getWebdeploymentsConfigurationVersions(configurationId: string): Promise<Models.WebDeploymentConfigurationVersionEntityListing>; 
+  	getWebdeploymentsConfigurationVersionsDraft(configurationId: string): Promise<Models.WebDeploymentConfigurationVersion>; 
+  	getWebdeploymentsConfigurations(opts?: WebDeploymentsApi.getWebdeploymentsConfigurationsOptions): Promise<Models.WebDeploymentConfigurationVersionEntityListing>; 
+  	getWebdeploymentsDeployment(deploymentId: string): Promise<Models.WebDeployment>; 
+  	getWebdeploymentsDeployments(): Promise<Models.WebDeploymentEntityListing>; 
+  	postWebdeploymentsConfigurationVersionsDraftPublish(configurationId: string): Promise<Models.WebDeploymentConfigurationVersion>; 
+  	postWebdeploymentsConfigurations(configurationVersion: Models.WebDeploymentConfigurationVersion): Promise<Models.WebDeploymentConfigurationVersion>; 
+  	postWebdeploymentsDeployments(deployment: Models.WebDeployment): Promise<Models.WebDeployment>; 
+  	putWebdeploymentsConfigurationVersionsDraft(configurationId: string, configurationVersion: Models.WebDeploymentConfigurationVersion): Promise<Models.WebDeploymentConfigurationVersion>; 
+  	putWebdeploymentsDeployment(deploymentId: string, deployment: Models.WebDeployment): Promise<Models.WebDeployment>;
+}
+
+declare namespace WebDeploymentsApi { 
+	export interface getWebdeploymentsConfigurationsOptions { 
+		"showOnlyPublished"?: boolean;
 	}
 }
 
@@ -6407,6 +6432,11 @@ declare namespace Models {
 		"id": string;
 		"name"?: string;
 		"display"?: string;
+	}
+	
+	export interface AuthenticationSettings { 
+		"enabled": boolean;
+		"integrationId": string;
 	}
 	
 	export interface AuthzDivision { 
@@ -12078,6 +12108,9 @@ declare namespace Models {
 	
 	export interface DevelopmentActivityAggregateQueryResponseStatistics { 
 		"count"?: number;
+		"min"?: number;
+		"max"?: number;
+		"sum"?: number;
 	}
 	
 	export interface DevelopmentActivityAggregateResponse { 
@@ -14312,8 +14345,8 @@ declare namespace Models {
 		"commentsRequired"?: boolean;
 		"visibilityCondition"?: Models.VisibilityCondition;
 		"answerOptions"?: Array<Models.AnswerOption>;
-		"isCritical"?: boolean;
 		"isKill"?: boolean;
+		"isCritical"?: boolean;
 	}
 	
 	export interface EvaluationQuestionGroup { 
@@ -14717,6 +14750,19 @@ declare namespace Models {
 		"errorCode"?: string;
 	}
 	
+	export interface FailedRecordingsEntityListing { 
+		"entities"?: Array<Models.RecordingJobFailedRecording>;
+		"pageSize"?: number;
+		"pageNumber"?: number;
+		"total"?: number;
+		"firstUri"?: string;
+		"selfUri"?: string;
+		"nextUri"?: string;
+		"previousUri"?: string;
+		"lastUri"?: string;
+		"pageCount"?: number;
+	}
+	
 	export interface FaxDocument { 
 		"id"?: string;
 		"name"?: string;
@@ -14855,6 +14901,15 @@ declare namespace Models {
 		"state"?: string;
 		"type"?: string;
 		"required"?: boolean;
+	}
+	
+	export interface FileUploadMode { 
+		"fileTypes"?: Array<string>;
+		"maxFileSizeKB"?: number;
+	}
+	
+	export interface FileUploadSettings { 
+		"modes"?: Array<Models.FileUploadMode>;
 	}
 	
 	export interface Filter { 
@@ -15210,6 +15265,13 @@ declare namespace Models {
 	
 	export interface Format { 
 		"flags"?: Array<string>;
+	}
+	
+	export interface FormsTrackTrigger { 
+		"selector": string;
+		"formName": string;
+		"captureDataOnFormAbandon": boolean;
+		"captureDataOnFormSubmit": boolean;
 	}
 	
 	export interface FreeSeatingConfiguration { 
@@ -15765,8 +15827,8 @@ declare namespace Models {
 		"completed"?: string;
 		"entities"?: Array<Models.HistoryEntry>;
 		"total"?: number;
-		"pageNumber"?: number;
 		"pageSize"?: number;
+		"pageNumber"?: number;
 		"pageCount"?: number;
 	}
 	
@@ -15869,6 +15931,11 @@ declare namespace Models {
 		"certificates"?: Array<string>;
 		"relyingPartyIdentifier"?: string;
 		"selfUri"?: string;
+	}
+	
+	export interface IdleEventTrigger { 
+		"eventName": string;
+		"idleAfterSeconds"?: number;
 	}
 	
 	export interface IgnoredActivityCategories { 
@@ -16308,6 +16375,19 @@ declare namespace Models {
 		"type": string;
 	}
 	
+	export interface JourneyEventsSettings { 
+		"enabled"?: boolean;
+		"excludedQueryParameters"?: Array<string>;
+		"shouldKeepUrlFragment"?: boolean;
+		"searchQueryParameters"?: Array<string>;
+		"pageviewConfig"?: string;
+		"clickEvents"?: Array<Models.SelectorEventTrigger>;
+		"formsTrackEvents"?: Array<Models.FormsTrackTrigger>;
+		"idleEvents"?: Array<Models.IdleEventTrigger>;
+		"inViewportEvents"?: Array<Models.SelectorEventTrigger>;
+		"scrollDepthEvents"?: Array<Models.ScrollPercentageEventTrigger>;
+	}
+	
 	export interface JourneyPattern { 
 		"criteria": Array<Models.Criteria>;
 		"count"?: number;
@@ -16663,6 +16743,10 @@ declare namespace Models {
 		"selfUri"?: string;
 	}
 	
+	export interface LauncherButtonSettings { 
+		"visibility"?: string;
+	}
+	
 	export interface Leaderboard { 
 		"division"?: Models.Division;
 		"metric"?: Models.AddressableEntityRef;
@@ -16689,21 +16773,30 @@ declare namespace Models {
 		"dateSubmitted"?: string;
 	}
 	
+	export interface LearningAssessmentScoringRequest { 
+		"assessmentForm": Models.AssessmentForm;
+		"answers": Models.AssessmentScoringSet;
+	}
+	
 	export interface LearningAssignment { 
 		"id"?: string;
+		"assessment"?: Models.LearningAssessment;
 		"createdBy"?: Models.UserReference;
 		"dateCreated"?: string;
 		"modifiedBy"?: Models.UserReference;
 		"dateModified"?: string;
 		"isOverdue"?: boolean;
+		"percentageScore"?: number;
 		"isRule"?: boolean;
 		"isManual"?: boolean;
+		"isPassed"?: boolean;
 		"selfUri"?: string;
 		"state"?: string;
 		"dateRecommendedForCompletion"?: string;
 		"version"?: number;
 		"module"?: Models.LearningModule;
 		"user"?: Models.UserReference;
+		"assessmentForm"?: Models.AssessmentForm;
 	}
 	
 	export interface LearningAssignmentAggregateParam { 
@@ -16745,6 +16838,9 @@ declare namespace Models {
 	
 	export interface LearningAssignmentAggregateQueryResponseStats { 
 		"count"?: number;
+		"min"?: number;
+		"max"?: number;
+		"sum"?: number;
 	}
 	
 	export interface LearningAssignmentAggregateResponse { 
@@ -16877,7 +16973,10 @@ declare namespace Models {
 		"isPublished"?: boolean;
 		"description"?: string;
 		"completionTimeInDays": number;
+		"type"?: string;
 		"informSteps"?: Array<Models.LearningModuleInformStep>;
+		"assessmentForm"?: Models.AssessmentForm;
+		"summaryData"?: Models.LearningModuleSummary;
 	}
 	
 	export interface LearningModuleInformStep { 
@@ -16909,6 +17008,8 @@ declare namespace Models {
 		"description"?: string;
 		"completionTimeInDays": number;
 		"informSteps"?: Array<Models.LearningModuleInformStepRequest>;
+		"type"?: string;
+		"assessmentForm"?: Models.AssessmentForm;
 	}
 	
 	export interface LearningModuleRule { 
@@ -17929,6 +18030,17 @@ declare namespace Models {
 	export interface MessagingTemplateRequest { 
 		"responseId"?: string;
 		"parameters"?: Array<Models.TemplateParameter>;
+	}
+	
+	export interface MessengerSettings { 
+		"enabled"?: boolean;
+		"styles"?: Models.MessengerStyles;
+		"launcherButton"?: Models.LauncherButtonSettings;
+		"fileUpload"?: Models.FileUploadSettings;
+	}
+	
+	export interface MessengerStyles { 
+		"primaryColor"?: string;
 	}
 	
 	export interface MetaData { 
@@ -20137,21 +20249,6 @@ declare namespace Models {
 		"sort"?: Array<Models.AuditQuerySort>;
 	}
 	
-	export interface QualityAudit { 
-		"id"?: string;
-		"name"?: string;
-		"user"?: Models.User;
-		"jobId"?: string;
-		"level"?: string;
-		"entity"?: Models.AuditEntity;
-		"action"?: string;
-		"timestamp"?: string;
-		"status"?: string;
-		"changes"?: Array<Models.Change>;
-		"entityType"?: string;
-		"selfUri"?: string;
-	}
-	
 	export interface QualityAuditLogMessage { 
 		"id"?: string;
 		"userHomeOrgId"?: string;
@@ -20169,19 +20266,6 @@ declare namespace Models {
 		"entityType"?: string;
 		"propertyChanges"?: Array<Models.PropertyChange>;
 		"context"?: { [key: string]: string; };
-	}
-	
-	export interface QualityAuditPage { 
-		"entities"?: Array<Models.QualityAudit>;
-		"pageSize"?: number;
-		"pageNumber"?: number;
-		"total"?: number;
-		"firstUri"?: string;
-		"selfUri"?: string;
-		"nextUri"?: string;
-		"previousUri"?: string;
-		"lastUri"?: string;
-		"pageCount"?: number;
 	}
 	
 	export interface QualityAuditQueryExecutionResultsResponse { 
@@ -22668,6 +22752,7 @@ declare namespace Models {
 		"sessionId"?: string;
 		"users"?: Array<Models.User>;
 		"recordingFileRole"?: string;
+		"recordingErrorStatus"?: string;
 		"selfUri"?: string;
 	}
 	
@@ -22726,6 +22811,7 @@ declare namespace Models {
 		"totalProcessedRecordings"?: number;
 		"percentProgress"?: number;
 		"errorMessage"?: string;
+		"failedRecordings"?: string;
 		"selfUri"?: string;
 		"user"?: Models.AddressableEntityRef;
 	}
@@ -22741,6 +22827,11 @@ declare namespace Models {
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"pageCount"?: number;
+	}
+	
+	export interface RecordingJobFailedRecording { 
+		"conversation"?: Models.AddressableEntityRef;
+		"recording"?: Models.AddressableEntityRef;
 	}
 	
 	export interface RecordingJobsQuery { 
@@ -23974,6 +24065,11 @@ declare namespace Models {
 		"pageCount"?: number;
 	}
 	
+	export interface ScrollPercentageEventTrigger { 
+		"percentage": number;
+		"eventName": string;
+	}
+	
 	export interface SearchAggregation { 
 		"field"?: string;
 		"name"?: string;
@@ -24115,6 +24211,11 @@ declare namespace Models {
 	export interface SelectedColumns { 
 		"columnOrder"?: number;
 		"columnName"?: string;
+	}
+	
+	export interface SelectorEventTrigger { 
+		"selector": string;
+		"eventName": string;
 	}
 	
 	export interface SendAgentlessOutboundMessageRequest { 
@@ -27307,6 +27408,9 @@ declare namespace Models {
 		"botSlotList"?: Array<string>;
 		"botResultList"?: Array<string>;
 		"blockedReasons"?: Array<string>;
+		"isRecorded"?: boolean;
+		"hasEvaluation"?: boolean;
+		"hasScoredEvaluation"?: boolean;
 	}
 	
 	export interface VisibilityCondition { 
@@ -27589,6 +27693,61 @@ declare namespace Models {
 		"conversation": Models.WebChatConversation;
 		"sender": Models.WebChatMemberInfo;
 		"timestamp": string;
+	}
+	
+	export interface WebDeployment { 
+		"id"?: string;
+		"name": string;
+		"description"?: string;
+		"configuration": Models.WebDeploymentConfigurationVersionEntityRef;
+		"allowAllDomains"?: boolean;
+		"allowedDomains"?: Array<string>;
+		"snippet"?: string;
+		"dateCreated"?: string;
+		"dateModified"?: string;
+		"lastModifiedUser"?: Models.AddressableEntityRef;
+		"flow"?: Models.DomainEntityRef;
+		"status"?: string;
+		"selfUri"?: string;
+	}
+	
+	export interface WebDeploymentConfigurationVersion { 
+		"id"?: string;
+		"name": string;
+		"version"?: string;
+		"description"?: string;
+		"languages"?: Array<string>;
+		"defaultLanguage"?: string;
+		"messenger"?: Models.MessengerSettings;
+		"journeyEvents"?: Models.JourneyEventsSettings;
+		"authenticationSettings"?: Models.AuthenticationSettings;
+		"dateCreated"?: string;
+		"dateModified"?: string;
+		"datePublished"?: string;
+		"lastModifiedUser"?: Models.AddressableEntityRef;
+		"createdUser"?: Models.AddressableEntityRef;
+		"publishedUser"?: Models.AddressableEntityRef;
+		"status"?: string;
+		"selfUri"?: string;
+	}
+	
+	export interface WebDeploymentConfigurationVersionEntityListing { 
+		"total"?: number;
+		"entities"?: Array<Models.WebDeploymentConfigurationVersion>;
+		"selfUri"?: string;
+	}
+	
+	export interface WebDeploymentConfigurationVersionEntityRef { 
+		"id": string;
+		"name"?: string;
+		"selfUri"?: string;
+		"version": string;
+	}
+	
+	export interface WebDeploymentEntityListing { 
+		"total"?: number;
+		"entities"?: Array<Models.WebDeployment>;
+		"selfUri"?: string;
 	}
 	
 	export interface WebDeploymentsConfigTopicWebMessagingConfigChangeEventBody { 

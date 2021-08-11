@@ -5,7 +5,7 @@ class GamificationApi {
 	/**
 	 * Gamification service.
 	 * @module purecloud-platform-client-v2/api/GamificationApi
-	 * @version 118.0.0
+	 * @version 119.0.0
 	 */
 
 	/**
@@ -924,6 +924,56 @@ class GamificationApi {
 			{  }, 
 			{  }, 
 			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Activate a performance profile
+	 * 
+	 * @param {String} performanceProfileId Performance Profile Id
+	 */
+	postGamificationProfileActivate(performanceProfileId) { 
+		// verify the required parameter 'performanceProfileId' is set
+		if (performanceProfileId === undefined || performanceProfileId === null) {
+			throw 'Missing the required parameter "performanceProfileId" when calling postGamificationProfileActivate';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/gamification/profiles/{performanceProfileId}/activate', 
+			'POST', 
+			{ 'performanceProfileId': performanceProfileId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Deactivate a performance profile
+	 * 
+	 * @param {String} performanceProfileId Performance Profile Id
+	 */
+	postGamificationProfileDeactivate(performanceProfileId) { 
+		// verify the required parameter 'performanceProfileId' is set
+		if (performanceProfileId === undefined || performanceProfileId === null) {
+			throw 'Missing the required parameter "performanceProfileId" when calling postGamificationProfileDeactivate';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/gamification/profiles/{performanceProfileId}/deactivate', 
+			'POST', 
+			{ 'performanceProfileId': performanceProfileId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
 			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']

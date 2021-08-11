@@ -3458,9 +3458,10 @@ Get a basic Messaging Campaign information object
 
 This returns a simplified version of a Messaging Campaign, consisting of id, name, and division.
 
-Requires ALL permissions: 
+Requires ANY permissions: 
 
 * outbound:messagingCampaign:search
+* outbound:emailCampaign:search
 
 ### Example Usage
 
@@ -3511,9 +3512,10 @@ Query a list of basic Messaging Campaign information objects
 
 This returns a listing of simplified Messaging Campaigns, each consisting of id, name, and division.
 
-Requires ALL permissions: 
+Requires ANY permissions: 
 
 * outbound:messagingCampaign:search
+* outbound:emailCampaign:search
 
 ### Example Usage
 
@@ -3533,6 +3535,7 @@ let opts = {
   'pageNumber': 1, // Number | Page number
   'sortOrder': "a", // String | The direction to sort
   'name': "name_example", // String | Name
+  'type': "type_example", // String | Campaign Type
   'id': ["id_example"], // [String] | id
   'senderSmsPhoneNumber': "senderSmsPhoneNumber_example" // String | Sender SMS Phone Number
 };
@@ -3556,6 +3559,7 @@ apiInstance.getOutboundMessagingcampaignsDivisionviews(opts)
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **sortOrder** | **String** | The direction to sort | [optional] [default to a]<br />**Values**: ascending, descending |
  **name** | **String** | Name | [optional]  |
+ **type** | **String** | Campaign Type | [optional] <br />**Values**: EMAIL, SMS |
  **id** | **[String]** | id | [optional]  |
  **senderSmsPhoneNumber** | **String** | Sender SMS Phone Number | [optional]  |
 {: class="table table-striped"}

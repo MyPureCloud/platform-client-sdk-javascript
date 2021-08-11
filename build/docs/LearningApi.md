@@ -17,6 +17,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getLearningModuleVersion**](LearningApi.html#getLearningModuleVersion) | **GET** /api/v2/learning/modules/{moduleId}/versions/{versionId} | Get specific version of a published module
 [**getLearningModules**](LearningApi.html#getLearningModules) | **GET** /api/v2/learning/modules | Get all learning modules of an organization
 [**patchLearningAssignment**](LearningApi.html#patchLearningAssignment) | **PATCH** /api/v2/learning/assignments/{assignmentId} | Update Learning Assignment
+[**postLearningAssessmentsScoring**](LearningApi.html#postLearningAssessmentsScoring) | **POST** /api/v2/learning/assessments/scoring | Score learning assessment for preview
 [**postLearningAssignments**](LearningApi.html#postLearningAssignments) | **POST** /api/v2/learning/assignments | Create Learning Assignment
 [**postLearningAssignmentsAggregatesQuery**](LearningApi.html#postLearningAssignmentsAggregatesQuery) | **POST** /api/v2/learning/assignments/aggregates/query | Retrieve aggregated assignment data
 [**postLearningAssignmentsBulkadd**](LearningApi.html#postLearningAssignmentsBulkadd) | **POST** /api/v2/learning/assignments/bulkadd | Add multiple learning assignments
@@ -227,6 +228,9 @@ let opts = {
   'overdue': "Any", // String | Specifies if only the non-overdue (overdue is \"False\") or overdue (overdue is \"True\") assignments are returned. If overdue is \"Any\" or if the overdue parameter is not supplied, all assignments are returned
   'pageSize': 25, // Number | Page size
   'pageNumber': 1, // Number | Page number
+  'pass': "Any", // String | Specifies if only the failed (pass is \"False\") or passed (pass is \"True\") assignments (completed with assessment)are returned. If pass is \"Any\" or if the pass parameter is not supplied, all assignments are returned
+  'minPercentageScore': 3.4, // Number | The minimum assessment score for an assignment (completed with assessment) to be included in the results (inclusive)
+  'maxPercentageScore': 3.4, // Number | The maximum assessment score for an assignment (completed with assessment) to be included in the results (inclusive)
   'sortOrder': "Desc", // String | Specifies result set sort order; if not specified, default sort order is descending (Desc)
   'sortBy': "sortBy_example", // String | Specifies which field to sort the results by, default sort is by recommendedCompletionDate
   'userId': ["userId_example"], // [String] | Specifies the list of user IDs to be queried, up to 100 user IDs.
@@ -256,6 +260,9 @@ apiInstance.getLearningAssignments(opts)
  **overdue** | **String** | Specifies if only the non-overdue (overdue is \&quot;False\&quot;) or overdue (overdue is \&quot;True\&quot;) assignments are returned. If overdue is \&quot;Any\&quot; or if the overdue parameter is not supplied, all assignments are returned | [optional] [default to Any]<br />**Values**: True, False, Any |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **pass** | **String** | Specifies if only the failed (pass is \&quot;False\&quot;) or passed (pass is \&quot;True\&quot;) assignments (completed with assessment)are returned. If pass is \&quot;Any\&quot; or if the pass parameter is not supplied, all assignments are returned | [optional] [default to Any]<br />**Values**: True, False, Any |
+ **minPercentageScore** | **Number** | The minimum assessment score for an assignment (completed with assessment) to be included in the results (inclusive) | [optional]  |
+ **maxPercentageScore** | **Number** | The maximum assessment score for an assignment (completed with assessment) to be included in the results (inclusive) | [optional]  |
  **sortOrder** | **String** | Specifies result set sort order; if not specified, default sort order is descending (Desc) | [optional] [default to Desc]<br />**Values**: Asc, Desc |
  **sortBy** | **String** | Specifies which field to sort the results by, default sort is by recommendedCompletionDate | [optional] <br />**Values**: RecommendedCompletionDate, DateModified |
  **userId** | **[String]** | Specifies the list of user IDs to be queried, up to 100 user IDs. | [optional]  |
@@ -303,6 +310,9 @@ let opts = {
   'overdue': "Any", // String | Specifies if only the non-overdue (overdue is \"False\") or overdue (overdue is \"True\") assignments are returned. If overdue is \"Any\" or if the overdue parameter is not supplied, all assignments are returned
   'pageSize': 25, // Number | Page size
   'pageNumber': 1, // Number | Page number
+  'pass': "Any", // String | Specifies if only the failed (pass is \"False\") or passed (pass is \"True\") assignments (completed with assessment)are returned. If pass is \"Any\" or if the pass parameter is not supplied, all assignments are returned
+  'minPercentageScore': 3.4, // Number | The minimum assessment score for an assignment (completed with assessment) to be included in the results (inclusive)
+  'maxPercentageScore': 3.4, // Number | The maximum assessment score for an assignment (completed with assessment) to be included in the results (inclusive)
   'sortOrder': "Desc", // String | Specifies result set sort order; if not specified, default sort order is descending (Desc)
   'sortBy': "sortBy_example", // String | Specifies which field to sort the results by, default sort is by recommendedCompletionDate
   'types': ["types_example"], // [String] | Specifies the assignment types, currently not supported and will be ignored. For now, all learning assignments regardless of types will be returned
@@ -331,6 +341,9 @@ apiInstance.getLearningAssignmentsMe(opts)
  **overdue** | **String** | Specifies if only the non-overdue (overdue is \&quot;False\&quot;) or overdue (overdue is \&quot;True\&quot;) assignments are returned. If overdue is \&quot;Any\&quot; or if the overdue parameter is not supplied, all assignments are returned | [optional] [default to Any]<br />**Values**: True, False, Any |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **pass** | **String** | Specifies if only the failed (pass is \&quot;False\&quot;) or passed (pass is \&quot;True\&quot;) assignments (completed with assessment)are returned. If pass is \&quot;Any\&quot; or if the pass parameter is not supplied, all assignments are returned | [optional] [default to Any]<br />**Values**: True, False, Any |
+ **minPercentageScore** | **Number** | The minimum assessment score for an assignment (completed with assessment) to be included in the results (inclusive) | [optional]  |
+ **maxPercentageScore** | **Number** | The maximum assessment score for an assignment (completed with assessment) to be included in the results (inclusive) | [optional]  |
  **sortOrder** | **String** | Specifies result set sort order; if not specified, default sort order is descending (Desc) | [optional] [default to Desc]<br />**Values**: Asc, Desc |
  **sortBy** | **String** | Specifies which field to sort the results by, default sort is by recommendedCompletionDate | [optional] <br />**Values**: RecommendedCompletionDate, DateModified |
  **types** | **[String]** | Specifies the assignment types, currently not supported and will be ignored. For now, all learning assignments regardless of types will be returned | [optional] <br />**Values**: Informational, AssessedContent, Questionnaire, Assessment |
@@ -548,7 +561,8 @@ let opts = {
   'sortOrder': "ascending", // String | Sort order
   'sortBy': "name", // String | Sort by
   'searchTerm': "searchTerm_example", // String | Search Term (searchable by name)
-  'expand': ["expand_example"] // [String] | Fields to expand in response(case insensitive)
+  'expand': ["expand_example"], // [String] | Fields to expand in response(case insensitive)
+  'isPublished': "Any" // String | Specifies if only the Unpublished (isPublished is \"False\") or Published (isPublished is \"True\") modules are returned. If isPublished is \"Any\" or omitted, both types are returned
 };
 
 apiInstance.getLearningModules(opts)
@@ -574,6 +588,7 @@ apiInstance.getLearningModules(opts)
  **sortBy** | **String** | Sort by | [optional] [default to name]<br />**Values**: name |
  **searchTerm** | **String** | Search Term (searchable by name) | [optional]  |
  **expand** | **[String]** | Fields to expand in response(case insensitive) | [optional] <br />**Values**: rule, summaryData |
+ **isPublished** | **String** | Specifies if only the Unpublished (isPublished is \&quot;False\&quot;) or Published (isPublished is \&quot;True\&quot;) modules are returned. If isPublished is \&quot;Any\&quot; or omitted, both types are returned | [optional] [default to Any]<br />**Values**: True, False, Any |
 {: class="table table-striped"}
 
 ### Return type
@@ -635,6 +650,61 @@ apiInstance.patchLearningAssignment(assignmentId, opts)
 ### Return type
 
 **LearningAssignment**
+
+<a name="postLearningAssessmentsScoring"></a>
+
+# AssessmentScoringSet postLearningAssessmentsScoring(body)
+
+
+
+POST /api/v2/learning/assessments/scoring
+
+Score learning assessment for preview
+
+
+
+Requires ANY permissions: 
+
+* learning:module:view
+* learning:module:add
+* learning:module:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.LearningApi();
+
+let body = {}; // Object | Assessment form and answers to score
+
+apiInstance.postLearningAssessmentsScoring(body)
+  .then((data) => {
+    console.log(`postLearningAssessmentsScoring success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postLearningAssessmentsScoring');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | Assessment form and answers to score |  |
+{: class="table table-striped"}
+
+### Return type
+
+**AssessmentScoringSet**
 
 <a name="postLearningAssignments"></a>
 
