@@ -5,7 +5,7 @@ class AnalyticsApi {
 	/**
 	 * Analytics service.
 	 * @module purecloud-platform-client-v2/api/AnalyticsApi
-	 * @version 119.0.0
+	 * @version 119.1.0
 	 */
 
 	/**
@@ -86,6 +86,38 @@ class AnalyticsApi {
 			'DELETE', 
 			{ 'jobId': jobId }, 
 			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get Reporting Turns.
+	 * 
+	 * @param {String} botFlowId ID of the bot flow.
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.after The cursor that points to the ID of the last item in the list of entities that has been returned.
+	 * @param {String} opts.pageSize Max number of entities to return. Maximum of 250 (default to 50)
+	 * @param {String} opts.actionId Optional action ID to get the reporting turns associated to a particular flow action
+	 * @param {String} opts.sessionId Optional session ID to get the reporting turns for a particular session
+	 */
+	getAnalyticsBotflowReportingturns(botFlowId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'botFlowId' is set
+		if (botFlowId === undefined || botFlowId === null) {
+			throw 'Missing the required parameter "botFlowId" when calling getAnalyticsBotflowReportingturns';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/botflows/{botFlowId}/reportingturns', 
+			'GET', 
+			{ 'botFlowId': botFlowId }, 
+			{ 'after': opts['after'],'pageSize': opts['pageSize'],'actionId': opts['actionId'],'sessionId': opts['sessionId'] }, 
 			{  }, 
 			{  }, 
 			null, 

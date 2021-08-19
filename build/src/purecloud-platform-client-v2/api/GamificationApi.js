@@ -5,7 +5,7 @@ class GamificationApi {
 	/**
 	 * Gamification service.
 	 * @module purecloud-platform-client-v2/api/GamificationApi
-	 * @version 119.0.0
+	 * @version 119.1.0
 	 */
 
 	/**
@@ -58,7 +58,7 @@ class GamificationApi {
 	 * Leaderboard by filter type
 	 * 
 	 * @param {Object} filterType Filter type for the query request.
-	 * @param {String} filterId ID for the filter type. For example, division Id
+	 * @param {String} filterId ID for the filter type. For example, division or performance profile Id
 	 * @param {String} startWorkday Start workday to retrieve for the leaderboard. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 * @param {String} endWorkday End workday to retrieve for the leaderboard. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 * @param {Object} opts Optional parameters
@@ -99,10 +99,10 @@ class GamificationApi {
 	}
 
 	/**
-	 * Best Points by division
+	 * Best Points by division or performance profile
 	 * 
 	 * @param {Object} filterType Filter type for the query request.
-	 * @param {String} filterId ID for the filter type. For example, division Id
+	 * @param {String} filterId ID for the filter type. For example, division or performance profile Id
 	 */
 	getGamificationLeaderboardAllBestpoints(filterType, filterId) { 
 		// verify the required parameter 'filterType' is set
@@ -129,7 +129,7 @@ class GamificationApi {
 	}
 
 	/**
-	 * Best Points of the requesting user&#39;s division
+	 * Best Points of the requesting user&#39;s current performance profile or division
 	 * 
 	 */
 	getGamificationLeaderboardBestpoints() { 
@@ -274,6 +274,99 @@ class GamificationApi {
 	}
 
 	/**
+	 * Performance profile gamified metric by id
+	 * 
+	 * @param {String} profileId Performance Profile Id
+	 * @param {String} metricId Metric Id
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.workday The objective query workday. If not specified, then it retrieves the current objective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 */
+	getGamificationProfileMetric(profileId, metricId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'profileId' is set
+		if (profileId === undefined || profileId === null) {
+			throw 'Missing the required parameter "profileId" when calling getGamificationProfileMetric';
+		}
+		// verify the required parameter 'metricId' is set
+		if (metricId === undefined || metricId === null) {
+			throw 'Missing the required parameter "metricId" when calling getGamificationProfileMetric';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/gamification/profiles/{profileId}/metrics/{metricId}', 
+			'GET', 
+			{ 'profileId': profileId,'metricId': metricId }, 
+			{ 'workday': opts['workday'] }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * All gamified metrics for a given performance profile
+	 * 
+	 * @param {String} profileId Performance Profile Id
+	 * @param {Object} opts Optional parameters
+	 * @param {Array.<String>} opts.expand Which fields, if any, to expand.
+	 * @param {String} opts.workday The objective query workday. If not specified, then it retrieves the current objective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 */
+	getGamificationProfileMetrics(profileId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'profileId' is set
+		if (profileId === undefined || profileId === null) {
+			throw 'Missing the required parameter "profileId" when calling getGamificationProfileMetrics';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/gamification/profiles/{profileId}/metrics', 
+			'GET', 
+			{ 'profileId': profileId }, 
+			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'workday': opts['workday'] }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * All metrics for a given performance profile with objective details such as order and maxPoints
+	 * 
+	 * @param {String} profileId Performance Profile Id
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.workday The objective query workday. If not specified, then it retrieves the current objective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 */
+	getGamificationProfileMetricsObjectivedetails(profileId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'profileId' is set
+		if (profileId === undefined || profileId === null) {
+			throw 'Missing the required parameter "profileId" when calling getGamificationProfileMetricsObjectivedetails';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/gamification/profiles/{profileId}/metrics/objectivedetails', 
+			'GET', 
+			{ 'profileId': profileId }, 
+			{ 'workday': opts['workday'] }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
 	 * All performance profiles
 	 * 
 	 */
@@ -284,6 +377,59 @@ class GamificationApi {
 			'GET', 
 			{  }, 
 			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Performance profile of a user
+	 * 
+	 * @param {String} userId 
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.workday Target querying workday. If not provided, then queries the current performance profile. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 */
+	getGamificationProfilesUser(userId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'userId' is set
+		if (userId === undefined || userId === null) {
+			throw 'Missing the required parameter "userId" when calling getGamificationProfilesUser';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/gamification/profiles/users/{userId}', 
+			'GET', 
+			{ 'userId': userId }, 
+			{ 'workday': opts['workday'] }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Performance profile of the requesting user
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.workday Target querying workday. If not provided, then queries the current performance profile. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 */
+	getGamificationProfilesUsersMe(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/gamification/profiles/users/me', 
+			'GET', 
+			{  }, 
+			{ 'workday': opts['workday'] }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -981,6 +1127,36 @@ class GamificationApi {
 	}
 
 	/**
+	 * Creates a gamified metric with a given metric definition and metric objective under in a performance profile
+	 * 
+	 * @param {String} profileId Performance Profile Id
+	 * @param {Object} body Metric
+	 */
+	postGamificationProfileMetrics(profileId, body) { 
+		// verify the required parameter 'profileId' is set
+		if (profileId === undefined || profileId === null) {
+			throw 'Missing the required parameter "profileId" when calling postGamificationProfileMetrics';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postGamificationProfileMetrics';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/gamification/profiles/{profileId}/metrics', 
+			'POST', 
+			{ 'profileId': profileId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
 	 * Updates a metric
 	 * 
 	 * @param {String} metricId metric Id
@@ -1037,6 +1213,41 @@ class GamificationApi {
 			{  }, 
 			{  }, 
 			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Updates a metric in performance profile
+	 * 
+	 * @param {String} profileId Performance Profile Id
+	 * @param {String} metricId Metric Id
+	 * @param {Object} body Metric
+	 */
+	putGamificationProfileMetric(profileId, metricId, body) { 
+		// verify the required parameter 'profileId' is set
+		if (profileId === undefined || profileId === null) {
+			throw 'Missing the required parameter "profileId" when calling putGamificationProfileMetric';
+		}
+		// verify the required parameter 'metricId' is set
+		if (metricId === undefined || metricId === null) {
+			throw 'Missing the required parameter "metricId" when calling putGamificationProfileMetric';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putGamificationProfileMetric';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/gamification/profiles/{profileId}/metrics/{metricId}', 
+			'PUT', 
+			{ 'profileId': profileId,'metricId': metricId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
 			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']

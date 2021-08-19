@@ -10,6 +10,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**deleteAnalyticsConversationsDetailsJob**](AnalyticsApi.html#deleteAnalyticsConversationsDetailsJob) | **DELETE** /api/v2/analytics/conversations/details/jobs/{jobId} | Delete/cancel an async request
 [**deleteAnalyticsReportingSchedule**](AnalyticsApi.html#deleteAnalyticsReportingSchedule) | **DELETE** /api/v2/analytics/reporting/schedules/{scheduleId} | Delete a scheduled report job.
 [**deleteAnalyticsUsersDetailsJob**](AnalyticsApi.html#deleteAnalyticsUsersDetailsJob) | **DELETE** /api/v2/analytics/users/details/jobs/{jobId} | Delete/cancel an async request
+[**getAnalyticsBotflowReportingturns**](AnalyticsApi.html#getAnalyticsBotflowReportingturns) | **GET** /api/v2/analytics/botflows/{botFlowId}/reportingturns | Get Reporting Turns.
 [**getAnalyticsConversationDetails**](AnalyticsApi.html#getAnalyticsConversationDetails) | **GET** /api/v2/analytics/conversations/{conversationId}/details | Get a conversation by id
 [**getAnalyticsConversationsDetails**](AnalyticsApi.html#getAnalyticsConversationsDetails) | **GET** /api/v2/analytics/conversations/details | Gets multiple conversations by id
 [**getAnalyticsConversationsDetailsJob**](AnalyticsApi.html#getAnalyticsConversationsDetailsJob) | **GET** /api/v2/analytics/conversations/details/jobs/{jobId} | Get status for async query for conversation details
@@ -209,6 +210,69 @@ apiInstance.deleteAnalyticsUsersDetailsJob(jobId)
 ### Return type
 
 void (no response body)
+
+<a name="getAnalyticsBotflowReportingturns"></a>
+
+# ReportingTurnsResponse getAnalyticsBotflowReportingturns(botFlowId, opts)
+
+
+
+GET /api/v2/analytics/botflows/{botFlowId}/reportingturns
+
+Get Reporting Turns.
+
+
+
+Requires ANY permissions: 
+
+* analytics:botFlowReportingTurn:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AnalyticsApi();
+
+let botFlowId = "botFlowId_example"; // String | ID of the bot flow.
+let opts = { 
+  'after': "after_example", // String | The cursor that points to the ID of the last item in the list of entities that has been returned.
+  'pageSize': "50", // String | Max number of entities to return. Maximum of 250
+  'actionId': "actionId_example", // String | Optional action ID to get the reporting turns associated to a particular flow action
+  'sessionId': "sessionId_example" // String | Optional session ID to get the reporting turns for a particular session
+};
+
+apiInstance.getAnalyticsBotflowReportingturns(botFlowId, opts)
+  .then((data) => {
+    console.log(`getAnalyticsBotflowReportingturns success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getAnalyticsBotflowReportingturns');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **botFlowId** | **String** | ID of the bot flow. |  |
+ **after** | **String** | The cursor that points to the ID of the last item in the list of entities that has been returned. | [optional]  |
+ **pageSize** | **String** | Max number of entities to return. Maximum of 250 | [optional] [default to 50] |
+ **actionId** | **String** | Optional action ID to get the reporting turns associated to a particular flow action | [optional]  |
+ **sessionId** | **String** | Optional session ID to get the reporting turns for a particular session | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**ReportingTurnsResponse**
 
 <a name="getAnalyticsConversationDetails"></a>
 

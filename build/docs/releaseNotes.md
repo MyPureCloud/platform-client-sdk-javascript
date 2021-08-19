@@ -1,283 +1,238 @@
-Platform API version: 4893
+Platform API version: 4903
 
 
-# Major Changes (14 changes)
-
-**/uploads/v1/publicassets/{subResources}** (1 change)
-
-* Path /uploads/v1/publicassets/{subResources} was removed
-
-**/webdeployments/v1/{subResources}** (1 change)
-
-* Path /webdeployments/v1/{subResources} was removed
-
-**/api/v2/quality/conversations/{conversationId}/audits** (1 change)
-
-* Path /api/v2/quality/conversations/{conversationId}/audits was removed
-
-**GET /api/v2/outbound/messagingcampaigns/divisionviews** (1 change)
-
-* Parameter type was added
-
-**GET /api/v2/learning/assignments** (3 changes)
-
-* Parameter pass was added
-* Parameter minPercentageScore was added
-* Parameter maxPercentageScore was added
-
-**GET /api/v2/learning/assignments/me** (3 changes)
-
-* Parameter pass was added
-* Parameter minPercentageScore was added
-* Parameter maxPercentageScore was added
-
-**GET /api/v2/learning/modules** (1 change)
-
-* Parameter isPublished was added
-
-**QualityAudit** (1 change)
-
-* Model QualityAudit was removed
-
-**QualityAuditPage** (1 change)
-
-* Model QualityAuditPage was removed
-
-**Edge** (1 change)
-
-* Enum value BYOH was removed from property edgeDeploymentType
+# Major Changes (0 changes)
 
 
-# Minor Changes (85 changes)
+# Minor Changes (67 changes)
 
-**/api/v2/gamification/profiles/{performanceProfileId}/activate** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/gamification/profiles/{performanceProfileId}/deactivate** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/recording/jobs/{jobId}/failedrecordings** (2 changes)
+**/api/v2/analytics/botflows/{botFlowId}/reportingturns** (2 changes)
 
 * Path was added
 * Operation GET was added
 
-**/api/v2/webdeployments/configurations/{configurationId}** (2 changes)
-
-* Path was added
-* Operation DELETE was added
-
-**/api/v2/webdeployments/configurations** (3 changes)
-
-* Path was added
-* Operation GET was added
-* Operation POST was added
-
-**/api/v2/webdeployments/configurations/{configurationId}/versions** (2 changes)
+**/api/v2/gamification/profiles/users/me** (2 changes)
 
 * Path was added
 * Operation GET was added
 
-**/api/v2/webdeployments/configurations/{configurationId}/versions/{versionId}** (2 changes)
+**/api/v2/gamification/profiles/users/{userId}** (2 changes)
 
 * Path was added
 * Operation GET was added
 
-**/api/v2/webdeployments/configurations/{configurationId}/versions/draft** (3 changes)
+**/api/v2/gamification/profiles/{profileId}/metrics/{metricId}** (3 changes)
 
 * Path was added
 * Operation GET was added
 * Operation PUT was added
 
-**/api/v2/webdeployments/configurations/{configurationId}/versions/draft/publish** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/webdeployments/deployments/{deploymentId}** (4 changes)
+**/api/v2/gamification/profiles/{profileId}/metrics/objectivedetails** (2 changes)
 
 * Path was added
 * Operation GET was added
-* Operation PUT was added
-* Operation DELETE was added
 
-**/api/v2/webdeployments/deployments** (3 changes)
+**/api/v2/gamification/profiles/{profileId}/metrics** (3 changes)
 
 * Path was added
 * Operation GET was added
 * Operation POST was added
 
-**/api/v2/learning/assessments/scoring** (2 changes)
+**PUT /api/v2/quality/forms/evaluations/{formId}** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/quality/forms/evaluations** (1 change)
+
+* Response 409 was added
+
+**PUT /api/v2/quality/forms/surveys/{formId}** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/quality/forms/surveys** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/quality/forms** (1 change)
+
+* Response 409 was added
+
+**/api/v2/speechandtextanalytics/topics/dialects** (2 changes)
 
 * Path was added
-* Operation POST was added
+* Operation GET was added
 
-**ViewFilter** (3 changes)
+**ConversationAggregationQuery** (3 changes)
 
-* Optional property isRecorded was added
-* Optional property hasEvaluation was added
-* Optional property hasScoredEvaluation was added
+* Enum value tCoaching was added to property metrics
+* Enum value tCoachingComplete was added to property metrics
+* Enum value tMonitoringComplete was added to property metrics
 
-**AuditLogMessage** (1 change)
+**ConversationAggregationView** (3 changes)
 
-* Enum value DynamicGroup was added to property entityType
+* Enum value tCoaching was added to property target
+* Enum value tCoachingComplete was added to property target
+* Enum value tMonitoringComplete was added to property target
 
-**AuditQueryEntity** (1 change)
+**AnalyticsConversationSegment** (1 change)
 
-* Enum value DynamicGroup was added to property name
+* Enum value coaching was added to property segmentType
 
-**EventLog** (1 change)
+**AnalyticsEvaluation** (1 change)
 
-* Enum value MESSAGE_RESTRICTION was added to property category
+* Optional property released was added
 
-**EventMessage** (1 change)
+**AnalyticsSession** (1 change)
 
-* Enum value INVALID_EMAIL_ADDRESS was added to property code
+* Optional property coachedParticipantId was added
 
-**Recording** (1 change)
+**ConversationDetailQueryPredicate** (3 changes)
 
-* Optional property recordingErrorStatus was added
+* Enum value tCoaching was added to property metric
+* Enum value tCoachingComplete was added to property metric
+* Enum value tMonitoringComplete was added to property metric
 
-**FailedRecordingsEntityListing** (1 change)
+**EvaluationDetailQueryPredicate** (1 change)
 
-* Model was added
+* Enum value released was added to property dimension
 
-**RecordingJobFailedRecording** (1 change)
+**SegmentDetailQueryPredicate** (1 change)
 
-* Model was added
+* Enum value coachedParticipantId was added to property dimension
 
-**RecordingJob** (1 change)
+**EvaluationAggregateQueryPredicate** (3 changes)
 
-* Optional property failedRecordings was added
+* Enum value conversationStart was added to property dimension
+* Enum value evaluationReleaseDate was added to property dimension
+* Enum value released was added to property dimension
 
-**Edge** (1 change)
+**EvaluationAggregationQuery** (5 changes)
 
-* Enum value CHS was added to property edgeDeploymentType
+* Enum value conversationStart was added to property groupBy
+* Enum value evaluationReleaseDate was added to property groupBy
+* Enum value released was added to property groupBy
+* Enum value conversationStart was added to property alternateTimeDimension
+* Enum value evaluationReleaseDate was added to property alternateTimeDimension
 
-**AuthenticationSettings** (1 change)
-
-* Model was added
-
-**FileUploadMode** (1 change)
-
-* Model was added
-
-**FileUploadSettings** (1 change)
-
-* Model was added
-
-**FormsTrackTrigger** (1 change)
+**ReportingTurn** (1 change)
 
 * Model was added
 
-**IdleEventTrigger** (1 change)
+**ReportingTurnAction** (1 change)
 
 * Model was added
 
-**JourneyEventsSettings** (1 change)
+**ReportingTurnIntent** (1 change)
 
 * Model was added
 
-**LauncherButtonSettings** (1 change)
+**ReportingTurnIntentSlot** (1 change)
 
 * Model was added
 
-**MessengerSettings** (1 change)
+**ReportingTurnKnowledge** (1 change)
 
 * Model was added
 
-**MessengerStyles** (1 change)
+**ReportingTurnKnowledgeDocument** (1 change)
 
 * Model was added
 
-**ScrollPercentageEventTrigger** (1 change)
+**ReportingTurnKnowledgeFeedback** (1 change)
 
 * Model was added
 
-**SelectorEventTrigger** (1 change)
+**ReportingTurnKnowledgeSearch** (1 change)
 
 * Model was added
 
-**WebDeploymentConfigurationVersion** (1 change)
+**ReportingTurnsResponse** (1 change)
 
 * Model was added
 
-**WebDeploymentConfigurationVersionEntityListing** (1 change)
+**AuditLogMessage** (2 changes)
+
+* Enum value Assign was added to property action
+* Enum value Unassign was added to property action
+
+**AuditQueryEntity** (2 changes)
+
+* Enum value Assign was added to property actions
+* Enum value Unassign was added to property actions
+
+**ConversationMessageContent** (2 changes)
+
+* Enum value GenericTemplate was added to property contentType
+* Optional property generic was added
+
+**ConversationMessagingChannelMetadata** (1 change)
 
 * Model was added
 
-**WebDeployment** (1 change)
+**ChannelMetadata** (1 change)
 
 * Model was added
 
-**WebDeploymentConfigurationVersionEntityRef** (1 change)
+**DialerContact** (1 change)
+
+* Optional property latestSmsEvaluations was added
+
+**MessageEvaluation** (1 change)
+
+* Optional property messageType was added
+
+**WritableDialerContact** (1 change)
+
+* Optional property latestSmsEvaluations was added
+
+**GetMetricResponse** (1 change)
 
 * Model was added
 
-**WebDeploymentEntityListing** (1 change)
+**EntityListing** (1 change)
 
 * Model was added
 
-**DevelopmentActivityAggregateQueryResponseMetric** (3 changes)
+**RecordingJob** (2 changes)
 
-* Enum value nPassedActivities was added to property metric
-* Enum value nFailedActivities was added to property metric
-* Enum value oActivityScore was added to property metric
-
-**DevelopmentActivityAggregateQueryResponseStatistics** (3 changes)
-
-* Optional property min was added
-* Optional property max was added
-* Optional property sum was added
-
-**DevelopmentActivityAggregateParam** (3 changes)
-
-* Enum value nPassedActivities was added to property metrics
-* Enum value nFailedActivities was added to property metrics
-* Enum value oActivityScore was added to property metrics
-
-**LearningAssessmentScoringRequest** (1 change)
-
-* Model was added
-
-**LearningAssignmentAggregateQueryResponseMetric** (3 changes)
-
-* Enum value nPassedActivities was added to property metric
-* Enum value nFailedActivities was added to property metric
-* Enum value oActivityScore was added to property metric
-
-**LearningAssignmentAggregateQueryResponseStats** (3 changes)
-
-* Optional property min was added
-* Optional property max was added
-* Optional property sum was added
-
-**LearningAssignmentAggregateParam** (3 changes)
-
-* Enum value nPassedActivities was added to property metrics
-* Enum value nFailedActivities was added to property metrics
-* Enum value oActivityScore was added to property metrics
-
-**LearningAssignment** (4 changes)
-
-* Optional property assessment was added
-* Optional property percentageScore was added
-* Optional property isPassed was added
-* Optional property assessmentForm was added
-
-**LearningModule** (3 changes)
-
-* Optional property type was added
-* Optional property assessmentForm was added
-* Optional property summaryData was added
-
-**LearningModuleRequest** (2 changes)
-
-* Optional property type was added
-* Optional property assessmentForm was added
+* Optional property totalSkippedRecordings was added
+* Optional property totalFailedRecordings was added
 
 
-# Point Changes (0 changes)
+# Point Changes (11 changes)
+
+**PUT /api/v2/outbound/rulesets/{ruleSetId}** (1 change)
+
+* Summary was changed
+
+**DELETE /api/v2/outbound/rulesets/{ruleSetId}** (1 change)
+
+* Summary was changed
+
+**POST /api/v2/outbound/rulesets** (1 change)
+
+* Summary was changed
+
+**GET /api/v2/gamification/leaderboard/bestpoints** (1 change)
+
+* Summary was changed
+
+**GET /api/v2/gamification/leaderboard/all** (1 change)
+
+* Description was changed for parameter filterId
+
+**GET /api/v2/gamification/leaderboard/all/bestpoints** (2 changes)
+
+* Summary was changed
+* Description was changed for parameter filterId
+
+**GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts** (2 changes)
+
+* Description was changed
+* Description was changed for parameter weekDateId
+
+**GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules** (2 changes)
+
+* Description was changed
+* Description was changed for parameter weekId

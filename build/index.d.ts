@@ -81,6 +81,7 @@ declare class AnalyticsApi {
   	deleteAnalyticsConversationsDetailsJob(jobId: string): Promise<void>; 
   	deleteAnalyticsReportingSchedule(scheduleId: string): Promise<void>; 
   	deleteAnalyticsUsersDetailsJob(jobId: string): Promise<void>; 
+  	getAnalyticsBotflowReportingturns(botFlowId: string, opts?: AnalyticsApi.getAnalyticsBotflowReportingturnsOptions): Promise<Models.ReportingTurnsResponse>; 
   	getAnalyticsConversationDetails(conversationId: string): Promise<Models.AnalyticsConversationWithoutAttributes>; 
   	getAnalyticsConversationsDetails(opts?: AnalyticsApi.getAnalyticsConversationsDetailsOptions): Promise<Models.AnalyticsConversationWithoutAttributesMultiGetResponse>; 
   	getAnalyticsConversationsDetailsJob(jobId: string): Promise<Models.AsyncQueryStatus>; 
@@ -124,6 +125,12 @@ declare class AnalyticsApi {
 }
 
 declare namespace AnalyticsApi { 
+	export interface getAnalyticsBotflowReportingturnsOptions { 
+		"after"?: string;
+		"pageSize"?: string;
+		"actionId"?: string;
+		"sessionId"?: string;
+	}
 	export interface getAnalyticsConversationsDetailsOptions { 
 		"id"?: Array<string>;
 	}
@@ -1390,7 +1397,12 @@ declare class GamificationApi {
   	getGamificationMetricdefinitions(): Promise<Models.GetMetricDefinitionsResponse>; 
   	getGamificationMetrics(opts?: GamificationApi.getGamificationMetricsOptions): Promise<Models.GetMetricsResponse>; 
   	getGamificationProfile(performanceProfileId: string): Promise<Models.PerformanceProfile>; 
+  	getGamificationProfileMetric(profileId: string, metricId: string, opts?: GamificationApi.getGamificationProfileMetricOptions): Promise<Models.Metric>; 
+  	getGamificationProfileMetrics(profileId: string, opts?: GamificationApi.getGamificationProfileMetricsOptions): Promise<Models.GetMetricResponse>; 
+  	getGamificationProfileMetricsObjectivedetails(profileId: string, opts?: GamificationApi.getGamificationProfileMetricsObjectivedetailsOptions): Promise<Models.GetMetricsResponse>; 
   	getGamificationProfiles(): Promise<Models.GetProfilesResponse>; 
+  	getGamificationProfilesUser(userId: string, opts?: GamificationApi.getGamificationProfilesUserOptions): Promise<Models.PerformanceProfile>; 
+  	getGamificationProfilesUsersMe(opts?: GamificationApi.getGamificationProfilesUsersMeOptions): Promise<Models.PerformanceProfile>; 
   	getGamificationScorecards(workday: string, opts?: GamificationApi.getGamificationScorecardsOptions): Promise<Models.WorkdayMetricListing>; 
   	getGamificationScorecardsAttendance(startWorkday: string, endWorkday: string): Promise<Models.AttendanceStatusListing>; 
   	getGamificationScorecardsBestpoints(): Promise<Models.UserBestPoints>; 
@@ -1414,8 +1426,10 @@ declare class GamificationApi {
   	postGamificationMetrics(body: Models.Metric): Promise<Models.Metric>; 
   	postGamificationProfileActivate(performanceProfileId: string): Promise<Models.PerformanceProfile>; 
   	postGamificationProfileDeactivate(performanceProfileId: string): Promise<Models.PerformanceProfile>; 
+  	postGamificationProfileMetrics(profileId: string, body: Models.Metric): Promise<Models.Metric>; 
   	putGamificationMetric(metricId: string, body: Models.Metric, opts?: GamificationApi.putGamificationMetricOptions): Promise<Models.Metric>; 
   	putGamificationProfile(performanceProfileId: string, opts?: GamificationApi.putGamificationProfileOptions): Promise<Models.PerformanceProfile>; 
+  	putGamificationProfileMetric(profileId: string, metricId: string, body: Models.Metric): Promise<Models.Metric>; 
   	putGamificationStatus(status: Models.GamificationStatus): Promise<Models.GamificationStatus>;
 }
 
@@ -1432,6 +1446,22 @@ declare namespace GamificationApi {
 	}
 	export interface getGamificationMetricsOptions { 
 		"performanceProfileId"?: string;
+		"workday"?: string;
+	}
+	export interface getGamificationProfileMetricOptions { 
+		"workday"?: string;
+	}
+	export interface getGamificationProfileMetricsOptions { 
+		"expand"?: Array<string>;
+		"workday"?: string;
+	}
+	export interface getGamificationProfileMetricsObjectivedetailsOptions { 
+		"workday"?: string;
+	}
+	export interface getGamificationProfilesUserOptions { 
+		"workday"?: string;
+	}
+	export interface getGamificationProfilesUsersMeOptions { 
 		"workday"?: string;
 	}
 	export interface getGamificationScorecardsOptions { 
@@ -3741,6 +3771,7 @@ declare class SpeechTextAnalyticsApi {
   	getSpeechandtextanalyticsSettings(): Promise<Models.SpeechTextAnalyticsSettingsResponse>; 
   	getSpeechandtextanalyticsTopic(topicId: string): Promise<Models.Topic>; 
   	getSpeechandtextanalyticsTopics(opts?: SpeechTextAnalyticsApi.getSpeechandtextanalyticsTopicsOptions): Promise<Models.TopicsEntityListing>; 
+  	getSpeechandtextanalyticsTopicsDialects(): Promise<Models.EntityListing>; 
   	getSpeechandtextanalyticsTopicsGeneral(opts?: SpeechTextAnalyticsApi.getSpeechandtextanalyticsTopicsGeneralOptions): Promise<Models.GeneralTopicsEntityListing>; 
   	getSpeechandtextanalyticsTopicsPublishjob(jobId: string): Promise<Models.TopicJob>; 
   	patchSpeechandtextanalyticsSettings(body: Models.SpeechTextAnalyticsSettingsRequest): Promise<Models.SpeechTextAnalyticsSettingsResponse>; 
@@ -5523,6 +5554,7 @@ declare namespace Models {
 		"formId"?: string;
 		"formName"?: string;
 		"queueId"?: string;
+		"released"?: boolean;
 		"rescored"?: boolean;
 		"userId"?: string;
 		"oTotalCriticalScore"?: number;
@@ -5647,6 +5679,7 @@ declare namespace Models {
 		"callbackNumbers"?: Array<string>;
 		"callbackScheduledTime"?: string;
 		"callbackUserName"?: string;
+		"coachedParticipantId"?: string;
 		"cobrowseRole"?: string;
 		"cobrowseRoomId"?: string;
 		"deliveryStatus"?: string;
@@ -8258,6 +8291,9 @@ declare namespace Models {
 		"entities"?: Array<Models.Channel>;
 	}
 	
+	export interface ChannelMetadata { 
+	}
+	
 	export interface ChannelTopic { 
 		"id"?: string;
 		"selfUri"?: string;
@@ -10474,6 +10510,7 @@ declare namespace Models {
 		"quickReply"?: Models.ConversationContentQuickReply;
 		"template"?: Models.ConversationContentNotificationTemplate;
 		"buttonResponse"?: Models.ConversationContentButtonResponse;
+		"generic"?: Models.ContentGeneric;
 	}
 	
 	export interface ConversationMessageEventTopicConversationRoutingData { 
@@ -10628,6 +10665,9 @@ declare namespace Models {
 		"time"?: string;
 		"dateModified"?: string;
 		"dateDeleted"?: string;
+	}
+	
+	export interface ConversationMessagingChannelMetadata { 
 	}
 	
 	export interface ConversationMessagingFromRecipient { 
@@ -12338,6 +12378,7 @@ declare namespace Models {
 		"contactListId": string;
 		"data": { [key: string]: object; };
 		"callRecords"?: { [key: string]: Models.CallRecord; };
+		"latestSmsEvaluations"?: { [key: string]: Models.MessageEvaluation; };
 		"callable"?: boolean;
 		"phoneNumberStatus"?: { [key: string]: Models.PhoneNumberStatus; };
 		"contactColumnTimeZones"?: { [key: string]: Models.ContactColumnTimeZone; };
@@ -14110,6 +14151,10 @@ declare namespace Models {
 		"id"?: string;
 	}
 	
+	export interface EntityListing { 
+		"entities"?: Array<object>;
+	}
+	
 	export interface EntityTypeCriteria { 
 		"key": string;
 		"values": Array<string>;
@@ -15484,6 +15529,12 @@ declare namespace Models {
 	export interface GetMetricDefinitionsResponse { 
 		"total"?: number;
 		"entities"?: Array<Models.MetricDefinition>;
+		"selfUri"?: string;
+	}
+	
+	export interface GetMetricResponse { 
+		"total"?: number;
+		"entities"?: Array<Models.Metric>;
 		"selfUri"?: string;
 	}
 	
@@ -17804,6 +17855,7 @@ declare namespace Models {
 	export interface MessageEvaluation { 
 		"contactColumn"?: string;
 		"contactAddress"?: string;
+		"messageType"?: string;
 		"wrapupCodeId"?: string;
 		"timestamp"?: string;
 	}
@@ -22808,6 +22860,8 @@ declare namespace Models {
 		"dateCreated"?: string;
 		"totalConversations"?: number;
 		"totalRecordings"?: number;
+		"totalSkippedRecordings"?: number;
+		"totalFailedRecordings"?: number;
 		"totalProcessedRecordings"?: number;
 		"percentProgress"?: number;
 		"errorMessage"?: string;
@@ -23151,6 +23205,70 @@ declare namespace Models {
 	export interface ReportingInterval { 
 		"intervalType": string;
 		"intervalValue": number;
+	}
+	
+	export interface ReportingTurn { 
+		"userInput"?: string;
+		"botPrompts"?: Array<string>;
+		"sessionId"?: string;
+		"askAction"?: Models.ReportingTurnAction;
+		"intent"?: Models.ReportingTurnIntent;
+		"knowledge"?: Models.ReportingTurnKnowledge;
+		"dateCreated"?: string;
+		"askActionResult"?: string;
+		"conversation"?: Models.AddressableEntityRef;
+	}
+	
+	export interface ReportingTurnAction { 
+		"actionId"?: string;
+		"actionName"?: string;
+		"actionNumber"?: number;
+		"actionType"?: string;
+	}
+	
+	export interface ReportingTurnIntent { 
+		"name"?: string;
+		"confidence"?: number;
+		"slots"?: Array<Models.ReportingTurnIntentSlot>;
+	}
+	
+	export interface ReportingTurnIntentSlot { 
+		"name"?: string;
+		"value"?: string;
+		"type"?: string;
+		"confidence"?: number;
+	}
+	
+	export interface ReportingTurnKnowledge { 
+		"knowledgeBaseId"?: string;
+		"feedback"?: Models.ReportingTurnKnowledgeFeedback;
+		"search"?: Models.ReportingTurnKnowledgeSearch;
+	}
+	
+	export interface ReportingTurnKnowledgeDocument { 
+		"id"?: string;
+		"question"?: string;
+		"answer"?: string;
+		"confidence"?: number;
+	}
+	
+	export interface ReportingTurnKnowledgeFeedback { 
+		"searchId"?: string;
+		"rating"?: number;
+		"documents"?: Array<Models.ReportingTurnKnowledgeDocument>;
+	}
+	
+	export interface ReportingTurnKnowledgeSearch { 
+		"searchId"?: string;
+		"documents"?: Array<Models.ReportingTurnKnowledgeDocument>;
+		"query"?: string;
+	}
+	
+	export interface ReportingTurnsResponse { 
+		"entities"?: Array<Models.ReportingTurn>;
+		"nextUri"?: string;
+		"selfUri"?: string;
+		"previousUri"?: string;
 	}
 	
 	export interface RequestConfig { 
@@ -29172,6 +29290,7 @@ declare namespace Models {
 		"id"?: string;
 		"contactListId": string;
 		"data": { [key: string]: object; };
+		"latestSmsEvaluations"?: { [key: string]: Models.MessageEvaluation; };
 		"callable"?: boolean;
 		"phoneNumberStatus"?: { [key: string]: Models.PhoneNumberStatus; };
 	}

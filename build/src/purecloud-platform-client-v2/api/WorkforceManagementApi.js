@@ -5,7 +5,7 @@ class WorkforceManagementApi {
 	/**
 	 * WorkforceManagement service.
 	 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-	 * @version 119.0.0
+	 * @version 119.1.0
 	 */
 
 	/**
@@ -939,9 +939,9 @@ class WorkforceManagementApi {
 
 	/**
 	 * Get the list of week schedules for the specified week
-	 * Use \&quot;recent\&quot; for the `weekId` path parameter to fetch all forecasts for +/- 26 weeks from the current date. Response will include any schedule which spans the specified week
+	 * Use \&quot;recent\&quot; (without quotes) for the `weekId` path parameter to fetch all forecasts for +/- 26 weeks from the current date. Response will include any schedule which spans the specified week
 	 * @param {String} businessUnitId The ID of the business unit
-	 * @param {String} weekId First day of schedule week in yyyy-MM-dd format, or &#39;recent&#39; to get recent schedules
+	 * @param {String} weekId First day of schedule week in yyyy-MM-dd format, or &#39;recent&#39; (without quotes) to get recent schedules
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.includeOnlyPublished includeOnlyPublished
 	 * @param {Object} opts.expand expand
@@ -1162,9 +1162,9 @@ class WorkforceManagementApi {
 
 	/**
 	 * Get short term forecasts
-	 * Use \&quot;recent\&quot; for the `weekDateId` path parameter to fetch all forecasts for +/- 26 weeks from the current date. Response will include any forecast which spans the specified week
+	 * Use \&quot;recent\&quot; (without quotes) for the `weekDateId` path parameter to fetch all forecasts for +/- 26 weeks from the current date. Response will include any forecast which spans the specified week
 	 * @param {String} businessUnitId The business unit ID of the business unit to which the forecast belongs
-	 * @param {String} weekDateId The week start date of the forecast in yyyy-MM-dd format or &#39;recent&#39; to fetch recent forecasts
+	 * @param {String} weekDateId The week start date of the forecast in yyyy-MM-dd format or &#39;recent&#39; (without quotes) to fetch recent forecasts
 	 */
 	getWorkforcemanagementBusinessunitWeekShorttermforecasts(businessUnitId, weekDateId) { 
 		// verify the required parameter 'businessUnitId' is set

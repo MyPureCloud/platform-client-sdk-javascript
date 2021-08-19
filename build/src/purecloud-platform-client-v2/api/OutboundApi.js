@@ -5,7 +5,7 @@ class OutboundApi {
 	/**
 	 * Outbound service.
 	 * @module purecloud-platform-client-v2/api/OutboundApi
-	 * @version 119.0.0
+	 * @version 119.1.0
 	 */
 
 	/**
@@ -356,7 +356,7 @@ class OutboundApi {
 	}
 
 	/**
-	 * Delete a Rule set.
+	 * Delete a Rule Set.
 	 * 
 	 * @param {String} ruleSetId Rule Set ID
 	 */
@@ -2491,7 +2491,7 @@ class OutboundApi {
 	}
 
 	/**
-	 * Create a Dialer Call Analysis Response Set.
+	 * Create a Rule Set.
 	 * 
 	 * @param {Object} body RuleSet
 	 */
@@ -2881,7 +2881,7 @@ class OutboundApi {
 	}
 
 	/**
-	 * Update a RuleSet.
+	 * Update a Rule Set.
 	 * 
 	 * @param {String} ruleSetId Rule Set ID
 	 * @param {Object} body RuleSet

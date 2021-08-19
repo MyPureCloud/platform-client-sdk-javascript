@@ -386,7 +386,7 @@ class Configuration {
 
 /**
  * @module purecloud-platform-client-v2/ApiClient
- * @version 119.0.0
+ * @version 119.1.0
  */
 class ApiClient {
 	/**
@@ -1333,7 +1333,7 @@ class ApiClient {
 
 				// set header parameters
 				request.set(that.defaultHeaders).set(that.normalizeParams(headerParams));
-				//request.set({ 'purecloud-sdk': '119.0.0' });
+				//request.set({ 'purecloud-sdk': '119.1.0' });
 
 				// set request timeout
 				request.timeout(that.timeout);
@@ -1433,7 +1433,7 @@ class AlertingApi {
 	/**
 	 * Alerting service.
 	 * @module purecloud-platform-client-v2/api/AlertingApi
-	 * @version 119.0.0
+	 * @version 119.1.0
 	 */
 
 	/**
@@ -1747,7 +1747,7 @@ class AnalyticsApi {
 	/**
 	 * Analytics service.
 	 * @module purecloud-platform-client-v2/api/AnalyticsApi
-	 * @version 119.0.0
+	 * @version 119.1.0
 	 */
 
 	/**
@@ -1828,6 +1828,38 @@ class AnalyticsApi {
 			'DELETE', 
 			{ 'jobId': jobId }, 
 			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get Reporting Turns.
+	 * 
+	 * @param {String} botFlowId ID of the bot flow.
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.after The cursor that points to the ID of the last item in the list of entities that has been returned.
+	 * @param {String} opts.pageSize Max number of entities to return. Maximum of 250 (default to 50)
+	 * @param {String} opts.actionId Optional action ID to get the reporting turns associated to a particular flow action
+	 * @param {String} opts.sessionId Optional session ID to get the reporting turns for a particular session
+	 */
+	getAnalyticsBotflowReportingturns(botFlowId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'botFlowId' is set
+		if (botFlowId === undefined || botFlowId === null) {
+			throw 'Missing the required parameter "botFlowId" when calling getAnalyticsBotflowReportingturns';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/botflows/{botFlowId}/reportingturns', 
+			'GET', 
+			{ 'botFlowId': botFlowId }, 
+			{ 'after': opts['after'],'pageSize': opts['pageSize'],'actionId': opts['actionId'],'sessionId': opts['sessionId'] }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -2852,7 +2884,7 @@ class ArchitectApi {
 	/**
 	 * Architect service.
 	 * @module purecloud-platform-client-v2/api/ArchitectApi
-	 * @version 119.0.0
+	 * @version 119.1.0
 	 */
 
 	/**
@@ -5785,7 +5817,7 @@ class AuditApi {
 	/**
 	 * Audit service.
 	 * @module purecloud-platform-client-v2/api/AuditApi
-	 * @version 119.0.0
+	 * @version 119.1.0
 	 */
 
 	/**
@@ -5956,7 +5988,7 @@ class AuthorizationApi {
 	/**
 	 * Authorization service.
 	 * @module purecloud-platform-client-v2/api/AuthorizationApi
-	 * @version 119.0.0
+	 * @version 119.1.0
 	 */
 
 	/**
@@ -7139,7 +7171,7 @@ class BillingApi {
 	/**
 	 * Billing service.
 	 * @module purecloud-platform-client-v2/api/BillingApi
-	 * @version 119.0.0
+	 * @version 119.1.0
 	 */
 
 	/**
@@ -7219,7 +7251,7 @@ class ChatApi {
 	/**
 	 * Chat service.
 	 * @module purecloud-platform-client-v2/api/ChatApi
-	 * @version 119.0.0
+	 * @version 119.1.0
 	 */
 
 	/**
@@ -7310,7 +7342,7 @@ class CoachingApi {
 	/**
 	 * Coaching service.
 	 * @module purecloud-platform-client-v2/api/CoachingApi
-	 * @version 119.0.0
+	 * @version 119.1.0
 	 */
 
 	/**
@@ -7885,7 +7917,7 @@ class ContentManagementApi {
 	/**
 	 * ContentManagement service.
 	 * @module purecloud-platform-client-v2/api/ContentManagementApi
-	 * @version 119.0.0
+	 * @version 119.1.0
 	 */
 
 	/**
@@ -9025,7 +9057,7 @@ class ConversationsApi {
 	/**
 	 * Conversations service.
 	 * @module purecloud-platform-client-v2/api/ConversationsApi
-	 * @version 119.0.0
+	 * @version 119.1.0
 	 */
 
 	/**
@@ -13359,7 +13391,7 @@ class DataExtensionsApi {
 	/**
 	 * DataExtensions service.
 	 * @module purecloud-platform-client-v2/api/DataExtensionsApi
-	 * @version 119.0.0
+	 * @version 119.1.0
 	 */
 
 	/**
@@ -13445,7 +13477,7 @@ class ExternalContactsApi {
 	/**
 	 * ExternalContacts service.
 	 * @module purecloud-platform-client-v2/api/ExternalContactsApi
-	 * @version 119.0.0
+	 * @version 119.1.0
 	 */
 
 	/**
@@ -15188,7 +15220,7 @@ class FaxApi {
 	/**
 	 * Fax service.
 	 * @module purecloud-platform-client-v2/api/FaxApi
-	 * @version 119.0.0
+	 * @version 119.1.0
 	 */
 
 	/**
@@ -15359,7 +15391,7 @@ class FlowsApi {
 	/**
 	 * Flows service.
 	 * @module purecloud-platform-client-v2/api/FlowsApi
-	 * @version 119.0.0
+	 * @version 119.1.0
 	 */
 
 	/**
@@ -15430,7 +15462,7 @@ class GamificationApi {
 	/**
 	 * Gamification service.
 	 * @module purecloud-platform-client-v2/api/GamificationApi
-	 * @version 119.0.0
+	 * @version 119.1.0
 	 */
 
 	/**
@@ -15483,7 +15515,7 @@ class GamificationApi {
 	 * Leaderboard by filter type
 	 * 
 	 * @param {Object} filterType Filter type for the query request.
-	 * @param {String} filterId ID for the filter type. For example, division Id
+	 * @param {String} filterId ID for the filter type. For example, division or performance profile Id
 	 * @param {String} startWorkday Start workday to retrieve for the leaderboard. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 * @param {String} endWorkday End workday to retrieve for the leaderboard. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 * @param {Object} opts Optional parameters
@@ -15524,10 +15556,10 @@ class GamificationApi {
 	}
 
 	/**
-	 * Best Points by division
+	 * Best Points by division or performance profile
 	 * 
 	 * @param {Object} filterType Filter type for the query request.
-	 * @param {String} filterId ID for the filter type. For example, division Id
+	 * @param {String} filterId ID for the filter type. For example, division or performance profile Id
 	 */
 	getGamificationLeaderboardAllBestpoints(filterType, filterId) { 
 		// verify the required parameter 'filterType' is set
@@ -15554,7 +15586,7 @@ class GamificationApi {
 	}
 
 	/**
-	 * Best Points of the requesting user&#39;s division
+	 * Best Points of the requesting user&#39;s current performance profile or division
 	 * 
 	 */
 	getGamificationLeaderboardBestpoints() { 
@@ -15699,6 +15731,99 @@ class GamificationApi {
 	}
 
 	/**
+	 * Performance profile gamified metric by id
+	 * 
+	 * @param {String} profileId Performance Profile Id
+	 * @param {String} metricId Metric Id
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.workday The objective query workday. If not specified, then it retrieves the current objective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 */
+	getGamificationProfileMetric(profileId, metricId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'profileId' is set
+		if (profileId === undefined || profileId === null) {
+			throw 'Missing the required parameter "profileId" when calling getGamificationProfileMetric';
+		}
+		// verify the required parameter 'metricId' is set
+		if (metricId === undefined || metricId === null) {
+			throw 'Missing the required parameter "metricId" when calling getGamificationProfileMetric';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/gamification/profiles/{profileId}/metrics/{metricId}', 
+			'GET', 
+			{ 'profileId': profileId,'metricId': metricId }, 
+			{ 'workday': opts['workday'] }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * All gamified metrics for a given performance profile
+	 * 
+	 * @param {String} profileId Performance Profile Id
+	 * @param {Object} opts Optional parameters
+	 * @param {Array.<String>} opts.expand Which fields, if any, to expand.
+	 * @param {String} opts.workday The objective query workday. If not specified, then it retrieves the current objective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 */
+	getGamificationProfileMetrics(profileId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'profileId' is set
+		if (profileId === undefined || profileId === null) {
+			throw 'Missing the required parameter "profileId" when calling getGamificationProfileMetrics';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/gamification/profiles/{profileId}/metrics', 
+			'GET', 
+			{ 'profileId': profileId }, 
+			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'workday': opts['workday'] }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * All metrics for a given performance profile with objective details such as order and maxPoints
+	 * 
+	 * @param {String} profileId Performance Profile Id
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.workday The objective query workday. If not specified, then it retrieves the current objective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 */
+	getGamificationProfileMetricsObjectivedetails(profileId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'profileId' is set
+		if (profileId === undefined || profileId === null) {
+			throw 'Missing the required parameter "profileId" when calling getGamificationProfileMetricsObjectivedetails';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/gamification/profiles/{profileId}/metrics/objectivedetails', 
+			'GET', 
+			{ 'profileId': profileId }, 
+			{ 'workday': opts['workday'] }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
 	 * All performance profiles
 	 * 
 	 */
@@ -15709,6 +15834,59 @@ class GamificationApi {
 			'GET', 
 			{  }, 
 			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Performance profile of a user
+	 * 
+	 * @param {String} userId 
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.workday Target querying workday. If not provided, then queries the current performance profile. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 */
+	getGamificationProfilesUser(userId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'userId' is set
+		if (userId === undefined || userId === null) {
+			throw 'Missing the required parameter "userId" when calling getGamificationProfilesUser';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/gamification/profiles/users/{userId}', 
+			'GET', 
+			{ 'userId': userId }, 
+			{ 'workday': opts['workday'] }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Performance profile of the requesting user
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.workday Target querying workday. If not provided, then queries the current performance profile. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 */
+	getGamificationProfilesUsersMe(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/gamification/profiles/users/me', 
+			'GET', 
+			{  }, 
+			{ 'workday': opts['workday'] }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -16406,6 +16584,36 @@ class GamificationApi {
 	}
 
 	/**
+	 * Creates a gamified metric with a given metric definition and metric objective under in a performance profile
+	 * 
+	 * @param {String} profileId Performance Profile Id
+	 * @param {Object} body Metric
+	 */
+	postGamificationProfileMetrics(profileId, body) { 
+		// verify the required parameter 'profileId' is set
+		if (profileId === undefined || profileId === null) {
+			throw 'Missing the required parameter "profileId" when calling postGamificationProfileMetrics';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postGamificationProfileMetrics';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/gamification/profiles/{profileId}/metrics', 
+			'POST', 
+			{ 'profileId': profileId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
 	 * Updates a metric
 	 * 
 	 * @param {String} metricId metric Id
@@ -16469,6 +16677,41 @@ class GamificationApi {
 	}
 
 	/**
+	 * Updates a metric in performance profile
+	 * 
+	 * @param {String} profileId Performance Profile Id
+	 * @param {String} metricId Metric Id
+	 * @param {Object} body Metric
+	 */
+	putGamificationProfileMetric(profileId, metricId, body) { 
+		// verify the required parameter 'profileId' is set
+		if (profileId === undefined || profileId === null) {
+			throw 'Missing the required parameter "profileId" when calling putGamificationProfileMetric';
+		}
+		// verify the required parameter 'metricId' is set
+		if (metricId === undefined || metricId === null) {
+			throw 'Missing the required parameter "metricId" when calling putGamificationProfileMetric';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putGamificationProfileMetric';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/gamification/profiles/{profileId}/metrics/{metricId}', 
+			'PUT', 
+			{ 'profileId': profileId,'metricId': metricId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
 	 * Update gamification activation status
 	 * 
 	 * @param {Object} status Gamification status
@@ -16499,7 +16742,7 @@ class GeneralDataProtectionRegulationApi {
 	/**
 	 * GeneralDataProtectionRegulation service.
 	 * @module purecloud-platform-client-v2/api/GeneralDataProtectionRegulationApi
-	 * @version 119.0.0
+	 * @version 119.1.0
 	 */
 
 	/**
@@ -16629,7 +16872,7 @@ class GeolocationApi {
 	/**
 	 * Geolocation service.
 	 * @module purecloud-platform-client-v2/api/GeolocationApi
-	 * @version 119.0.0
+	 * @version 119.1.0
 	 */
 
 	/**
@@ -16760,7 +17003,7 @@ class GreetingsApi {
 	/**
 	 * Greetings service.
 	 * @module purecloud-platform-client-v2/api/GreetingsApi
-	 * @version 119.0.0
+	 * @version 119.1.0
 	 */
 
 	/**
@@ -17215,7 +17458,7 @@ class GroupsApi {
 	/**
 	 * Groups service.
 	 * @module purecloud-platform-client-v2/api/GroupsApi
-	 * @version 119.0.0
+	 * @version 119.1.0
 	 */
 
 	/**
@@ -17620,7 +17863,7 @@ class IdentityProviderApi {
 	/**
 	 * IdentityProvider service.
 	 * @module purecloud-platform-client-v2/api/IdentityProviderApi
-	 * @version 119.0.0
+	 * @version 119.1.0
 	 */
 
 	/**
@@ -18376,7 +18619,7 @@ class IntegrationsApi {
 	/**
 	 * Integrations service.
 	 * @module purecloud-platform-client-v2/api/IntegrationsApi
-	 * @version 119.0.0
+	 * @version 119.1.0
 	 */
 
 	/**
@@ -20022,7 +20265,7 @@ class JourneyApi {
 	/**
 	 * Journey service.
 	 * @module purecloud-platform-client-v2/api/JourneyApi
-	 * @version 119.0.0
+	 * @version 119.1.0
 	 */
 
 	/**
@@ -20683,7 +20926,7 @@ class KnowledgeApi {
 	/**
 	 * Knowledge service.
 	 * @module purecloud-platform-client-v2/api/KnowledgeApi
-	 * @version 119.0.0
+	 * @version 119.1.0
 	 */
 
 	/**
@@ -21579,7 +21822,7 @@ class LanguageUnderstandingApi {
 	/**
 	 * LanguageUnderstanding service.
 	 * @module purecloud-platform-client-v2/api/LanguageUnderstandingApi
-	 * @version 119.0.0
+	 * @version 119.1.0
 	 */
 
 	/**
@@ -22483,7 +22726,7 @@ class LanguagesApi {
 	/**
 	 * Languages service.
 	 * @module purecloud-platform-client-v2/api/LanguagesApi
-	 * @version 119.0.0
+	 * @version 119.1.0
 	 */
 
 	/**
@@ -22751,7 +22994,7 @@ class LearningApi {
 	/**
 	 * Learning service.
 	 * @module purecloud-platform-client-v2/api/LearningApi
-	 * @version 119.0.0
+	 * @version 119.1.0
 	 */
 
 	/**
@@ -23342,7 +23585,7 @@ class LicenseApi {
 	/**
 	 * License service.
 	 * @module purecloud-platform-client-v2/api/LicenseApi
-	 * @version 119.0.0
+	 * @version 119.1.0
 	 */
 
 	/**
@@ -23580,7 +23823,7 @@ class LocationsApi {
 	/**
 	 * Locations service.
 	 * @module purecloud-platform-client-v2/api/LocationsApi
-	 * @version 119.0.0
+	 * @version 119.1.0
 	 */
 
 	/**
@@ -23816,7 +24059,7 @@ class MobileDevicesApi {
 	/**
 	 * MobileDevices service.
 	 * @module purecloud-platform-client-v2/api/MobileDevicesApi
-	 * @version 119.0.0
+	 * @version 119.1.0
 	 */
 
 	/**
@@ -23967,7 +24210,7 @@ class NotificationsApi {
 	/**
 	 * Notifications service.
 	 * @module purecloud-platform-client-v2/api/NotificationsApi
-	 * @version 119.0.0
+	 * @version 119.1.0
 	 */
 
 	/**
@@ -24192,7 +24435,7 @@ class OAuthApi {
 	/**
 	 * OAuth service.
 	 * @module purecloud-platform-client-v2/api/OAuthApi
-	 * @version 119.0.0
+	 * @version 119.1.0
 	 */
 
 	/**
@@ -24550,7 +24793,7 @@ class ObjectsApi {
 	/**
 	 * Objects service.
 	 * @module purecloud-platform-client-v2/api/ObjectsApi
-	 * @version 119.0.0
+	 * @version 119.1.0
 	 */
 
 	/**
@@ -24821,7 +25064,7 @@ class OrganizationApi {
 	/**
 	 * Organization service.
 	 * @module purecloud-platform-client-v2/api/OrganizationApi
-	 * @version 119.0.0
+	 * @version 119.1.0
 	 */
 
 	/**
@@ -25224,7 +25467,7 @@ class OrganizationAuthorizationApi {
 	/**
 	 * OrganizationAuthorization service.
 	 * @module purecloud-platform-client-v2/api/OrganizationAuthorizationApi
-	 * @version 119.0.0
+	 * @version 119.1.0
 	 */
 
 	/**
@@ -25934,7 +26177,7 @@ class OutboundApi {
 	/**
 	 * Outbound service.
 	 * @module purecloud-platform-client-v2/api/OutboundApi
-	 * @version 119.0.0
+	 * @version 119.1.0
 	 */
 
 	/**
@@ -26285,7 +26528,7 @@ class OutboundApi {
 	}
 
 	/**
-	 * Delete a Rule set.
+	 * Delete a Rule Set.
 	 * 
 	 * @param {String} ruleSetId Rule Set ID
 	 */
@@ -28420,7 +28663,7 @@ class OutboundApi {
 	}
 
 	/**
-	 * Create a Dialer Call Analysis Response Set.
+	 * Create a Rule Set.
 	 * 
 	 * @param {Object} body RuleSet
 	 */
@@ -28810,7 +29053,7 @@ class OutboundApi {
 	}
 
 	/**
-	 * Update a RuleSet.
+	 * Update a Rule Set.
 	 * 
 	 * @param {String} ruleSetId Rule Set ID
 	 * @param {Object} body RuleSet
@@ -28960,7 +29203,7 @@ class PresenceApi {
 	/**
 	 * Presence service.
 	 * @module purecloud-platform-client-v2/api/PresenceApi
-	 * @version 119.0.0
+	 * @version 119.1.0
 	 */
 
 	/**
@@ -29332,7 +29575,7 @@ class QualityApi {
 	/**
 	 * Quality service.
 	 * @module purecloud-platform-client-v2/api/QualityApi
-	 * @version 119.0.0
+	 * @version 119.1.0
 	 */
 
 	/**
@@ -30860,7 +31103,7 @@ class RecordingApi {
 	/**
 	 * Recording service.
 	 * @module purecloud-platform-client-v2/api/RecordingApi
-	 * @version 119.0.0
+	 * @version 119.1.0
 	 */
 
 	/**
@@ -32379,7 +32622,7 @@ class ResponseManagementApi {
 	/**
 	 * ResponseManagement service.
 	 * @module purecloud-platform-client-v2/api/ResponseManagementApi
-	 * @version 119.0.0
+	 * @version 119.1.0
 	 */
 
 	/**
@@ -32704,7 +32947,7 @@ class RoutingApi {
 	/**
 	 * Routing service.
 	 * @module purecloud-platform-client-v2/api/RoutingApi
-	 * @version 119.0.0
+	 * @version 119.1.0
 	 */
 
 	/**
@@ -35612,7 +35855,7 @@ class SCIMApi {
 	/**
 	 * SCIM service.
 	 * @module purecloud-platform-client-v2/api/SCIMApi
-	 * @version 119.0.0
+	 * @version 119.1.0
 	 */
 
 	/**
@@ -36489,7 +36732,7 @@ class ScriptsApi {
 	/**
 	 * Scripts service.
 	 * @module purecloud-platform-client-v2/api/ScriptsApi
-	 * @version 119.0.0
+	 * @version 119.1.0
 	 */
 
 	/**
@@ -36842,7 +37085,7 @@ class SearchApi {
 	/**
 	 * Search service.
 	 * @module purecloud-platform-client-v2/api/SearchApi
-	 * @version 119.0.0
+	 * @version 119.1.0
 	 */
 
 	/**
@@ -37377,7 +37620,7 @@ class SpeechTextAnalyticsApi {
 	/**
 	 * SpeechTextAnalytics service.
 	 * @module purecloud-platform-client-v2/api/SpeechTextAnalyticsApi
-	 * @version 119.0.0
+	 * @version 119.1.0
 	 */
 
 	/**
@@ -37770,6 +38013,26 @@ class SpeechTextAnalyticsApi {
 	}
 
 	/**
+	 * Get list of supported Speech &amp; Text Analytics topics dialects
+	 * 
+	 */
+	getSpeechandtextanalyticsTopicsDialects() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/speechandtextanalytics/topics/dialects', 
+			'GET', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get the Speech &amp; Text Analytics general topics for a given dialect
 	 * 
 	 * @param {Object} opts Optional parameters
@@ -38114,7 +38377,7 @@ class StationsApi {
 	/**
 	 * Stations service.
 	 * @module purecloud-platform-client-v2/api/StationsApi
-	 * @version 119.0.0
+	 * @version 119.1.0
 	 */
 
 	/**
@@ -38261,7 +38524,7 @@ class SuggestApi {
 	/**
 	 * Suggest service.
 	 * @module purecloud-platform-client-v2/api/SuggestApi
-	 * @version 119.0.0
+	 * @version 119.1.0
 	 */
 
 	/**
@@ -38400,7 +38663,7 @@ class TelephonyApi {
 	/**
 	 * Telephony service.
 	 * @module purecloud-platform-client-v2/api/TelephonyApi
-	 * @version 119.0.0
+	 * @version 119.1.0
 	 */
 
 	/**
@@ -38508,7 +38771,7 @@ class TelephonyProvidersEdgeApi {
 	/**
 	 * TelephonyProvidersEdge service.
 	 * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-	 * @version 119.0.0
+	 * @version 119.1.0
 	 */
 
 	/**
@@ -42121,7 +42384,7 @@ class TextbotsApi {
 	/**
 	 * Textbots service.
 	 * @module purecloud-platform-client-v2/api/TextbotsApi
-	 * @version 119.0.0
+	 * @version 119.1.0
 	 */
 
 	/**
@@ -42222,7 +42485,7 @@ class TokensApi {
 	/**
 	 * Tokens service.
 	 * @module purecloud-platform-client-v2/api/TokensApi
-	 * @version 119.0.0
+	 * @version 119.1.0
 	 */
 
 	/**
@@ -42328,7 +42591,7 @@ class UploadsApi {
 	/**
 	 * Uploads service.
 	 * @module purecloud-platform-client-v2/api/UploadsApi
-	 * @version 119.0.0
+	 * @version 119.1.0
 	 */
 
 	/**
@@ -42504,7 +42767,7 @@ class UsageApi {
 	/**
 	 * Usage service.
 	 * @module purecloud-platform-client-v2/api/UsageApi
-	 * @version 119.0.0
+	 * @version 119.1.0
 	 */
 
 	/**
@@ -42575,7 +42838,7 @@ class UserRecordingsApi {
 	/**
 	 * UserRecordings service.
 	 * @module purecloud-platform-client-v2/api/UserRecordingsApi
-	 * @version 119.0.0
+	 * @version 119.1.0
 	 */
 
 	/**
@@ -42759,7 +43022,7 @@ class UsersApi {
 	/**
 	 * Users service.
 	 * @module purecloud-platform-client-v2/api/UsersApi
-	 * @version 119.0.0
+	 * @version 119.1.0
 	 */
 
 	/**
@@ -45006,7 +45269,7 @@ class UtilitiesApi {
 	/**
 	 * Utilities service.
 	 * @module purecloud-platform-client-v2/api/UtilitiesApi
-	 * @version 119.0.0
+	 * @version 119.1.0
 	 */
 
 	/**
@@ -45117,7 +45380,7 @@ class VoicemailApi {
 	/**
 	 * Voicemail service.
 	 * @module purecloud-platform-client-v2/api/VoicemailApi
-	 * @version 119.0.0
+	 * @version 119.1.0
 	 */
 
 	/**
@@ -45754,7 +46017,7 @@ class WebChatApi {
 	/**
 	 * WebChat service.
 	 * @module purecloud-platform-client-v2/api/WebChatApi
-	 * @version 119.0.0
+	 * @version 119.1.0
 	 */
 
 	/**
@@ -46298,7 +46561,7 @@ class WebDeploymentsApi {
 	/**
 	 * WebDeployments service.
 	 * @module purecloud-platform-client-v2/api/WebDeploymentsApi
-	 * @version 119.0.0
+	 * @version 119.1.0
 	 */
 
 	/**
@@ -46653,7 +46916,7 @@ class WidgetsApi {
 	/**
 	 * Widgets service.
 	 * @module purecloud-platform-client-v2/api/WidgetsApi
-	 * @version 119.0.0
+	 * @version 119.1.0
 	 */
 
 	/**
@@ -46799,7 +47062,7 @@ class WorkforceManagementApi {
 	/**
 	 * WorkforceManagement service.
 	 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-	 * @version 119.0.0
+	 * @version 119.1.0
 	 */
 
 	/**
@@ -47733,9 +47996,9 @@ class WorkforceManagementApi {
 
 	/**
 	 * Get the list of week schedules for the specified week
-	 * Use \&quot;recent\&quot; for the `weekId` path parameter to fetch all forecasts for +/- 26 weeks from the current date. Response will include any schedule which spans the specified week
+	 * Use \&quot;recent\&quot; (without quotes) for the `weekId` path parameter to fetch all forecasts for +/- 26 weeks from the current date. Response will include any schedule which spans the specified week
 	 * @param {String} businessUnitId The ID of the business unit
-	 * @param {String} weekId First day of schedule week in yyyy-MM-dd format, or &#39;recent&#39; to get recent schedules
+	 * @param {String} weekId First day of schedule week in yyyy-MM-dd format, or &#39;recent&#39; (without quotes) to get recent schedules
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.includeOnlyPublished includeOnlyPublished
 	 * @param {Object} opts.expand expand
@@ -47956,9 +48219,9 @@ class WorkforceManagementApi {
 
 	/**
 	 * Get short term forecasts
-	 * Use \&quot;recent\&quot; for the `weekDateId` path parameter to fetch all forecasts for +/- 26 weeks from the current date. Response will include any forecast which spans the specified week
+	 * Use \&quot;recent\&quot; (without quotes) for the `weekDateId` path parameter to fetch all forecasts for +/- 26 weeks from the current date. Response will include any forecast which spans the specified week
 	 * @param {String} businessUnitId The business unit ID of the business unit to which the forecast belongs
-	 * @param {String} weekDateId The week start date of the forecast in yyyy-MM-dd format or &#39;recent&#39; to fetch recent forecasts
+	 * @param {String} weekDateId The week start date of the forecast in yyyy-MM-dd format or &#39;recent&#39; (without quotes) to fetch recent forecasts
 	 */
 	getWorkforcemanagementBusinessunitWeekShorttermforecasts(businessUnitId, weekDateId) { 
 		// verify the required parameter 'businessUnitId' is set
@@ -50358,7 +50621,7 @@ class WorkforceManagementApi {
  * </pre>
  * </p>
  * @module purecloud-platform-client-v2/index
- * @version 119.0.0
+ * @version 119.1.0
  */
 class platformClient {
 	constructor() {
