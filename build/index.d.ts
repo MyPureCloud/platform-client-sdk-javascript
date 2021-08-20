@@ -1,5 +1,4 @@
 import platformClient = require('purecloud-platform-client-v2');
-import Configuration from './src/purecloud-platform-client-v2/configuration';
 
 declare module 'purecloud-platform-client-v2' {
 	export const ApiClient: ApiClientClass;
@@ -37,6 +36,34 @@ declare class ProxyConfig {
 	host: string;
 	port: number;
 	protocol: string;
+}
+
+declare class Configuration {
+	instance: Configuration;
+	configPath: string;
+	refresh_access_token: boolean;
+	refresh_token_wait_max: number;
+	live_reload_config: boolean;
+	host: string;
+	environment: string;
+	basePath: string;
+	authUrl: string;
+	logger: Logger;
+	config: any;
+	setEnvironment(environment: string): void;
+}
+
+declare class Logger {
+	log_level: string;
+	log_format: string;
+	log_file_path: string;
+	log_to_console: boolean;
+	log_response_body: boolean;
+	log_request_body: boolean;
+	logLevels: any;
+	logLevelEnum: any;
+	logFormatEnum: any;
+	setLogger(): void;
 }
 
 declare class AlertingApi {  
@@ -8261,8 +8288,8 @@ declare namespace Models {
 		"expirationDate"?: string;
 		"issueDate"?: string;
 		"expired"?: boolean;
-		"signatureValid"?: boolean;
 		"valid"?: boolean;
+		"signatureValid"?: boolean;
 	}
 	
 	export interface Change { 
@@ -14225,6 +14252,7 @@ declare namespace Models {
 		"resourceType"?: string;
 		"redacted"?: boolean;
 		"isScoringIndex"?: boolean;
+		"authorizedActions"?: Array<string>;
 		"selfUri"?: string;
 	}
 	
@@ -18139,6 +18167,7 @@ declare namespace Models {
 		"id"?: string;
 		"name": string;
 		"metricDefinitionId"?: string;
+		"externalMetricDefinitionId"?: string;
 		"objective"?: Models.Objective;
 		"performanceProfileId"?: string;
 		"linkedMetric"?: Models.AddressableEntityRef;
@@ -18166,11 +18195,14 @@ declare namespace Models {
 		"order"?: number;
 		"metricDefinitionName"?: string;
 		"metricDefinitionId"?: string;
+		"externalMetricDefinitionId"?: string;
 		"unitType"?: string;
 		"enabled"?: boolean;
 		"templateName"?: string;
 		"maxPoints"?: number;
 		"performanceProfileId"?: string;
+		"unitDefinition"?: string;
+		"precision"?: number;
 		"selfUri"?: string;
 	}
 	
@@ -25354,7 +25386,7 @@ declare namespace Models {
 	export interface Team { 
 		"id"?: string;
 		"name": string;
-		"division"?: Models.Division;
+		"division"?: Models.WritableDivision;
 		"description"?: string;
 		"dateModified"?: string;
 		"memberCount"?: number;
