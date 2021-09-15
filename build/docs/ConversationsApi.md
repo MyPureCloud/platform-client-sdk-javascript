@@ -57,7 +57,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getConversationsEmails**](ConversationsApi.html#getConversationsEmails) | **GET** /api/v2/conversations/emails | Get active email conversations for the logged in user
 [**getConversationsMessage**](ConversationsApi.html#getConversationsMessage) | **GET** /api/v2/conversations/messages/{conversationId} | Get message conversation
 [**getConversationsMessageCommunicationMessagesMediaMediaId**](ConversationsApi.html#getConversationsMessageCommunicationMessagesMediaMediaId) | **GET** /api/v2/conversations/messages/{conversationId}/communications/{communicationId}/messages/media/{mediaId} | Get media
-[**getConversationsMessageMessage**](ConversationsApi.html#getConversationsMessageMessage) | **GET** /api/v2/conversations/messages/{conversationId}/messages/{messageId} | Get message
+[**getConversationsMessageDetails**](ConversationsApi.html#getConversationsMessageDetails) | **GET** /api/v2/conversations/messages/{messageId}/details | Get message
+[**getConversationsMessageMessage**](ConversationsApi.html#getConversationsMessageMessage) | **GET** /api/v2/conversations/messages/{conversationId}/messages/{messageId} | Get conversation message
 [**getConversationsMessageParticipantWrapup**](ConversationsApi.html#getConversationsMessageParticipantWrapup) | **GET** /api/v2/conversations/messages/{conversationId}/participants/{participantId}/wrapup | Get the wrap-up for this conversation participant. 
 [**getConversationsMessageParticipantWrapupcodes**](ConversationsApi.html#getConversationsMessageParticipantWrapupcodes) | **GET** /api/v2/conversations/messages/{conversationId}/participants/{participantId}/wrapupcodes | Get list of wrapup codes for this conversation participant
 [**getConversationsMessages**](ConversationsApi.html#getConversationsMessages) | **GET** /api/v2/conversations/messages | Get active message conversations for the logged in user
@@ -2834,6 +2835,60 @@ apiInstance.getConversationsMessageCommunicationMessagesMediaMediaId(conversatio
 
 **MessageMediaData**
 
+<a name="getConversationsMessageDetails"></a>
+
+# MessageData getConversationsMessageDetails(messageId)
+
+
+
+GET /api/v2/conversations/messages/{messageId}/details
+
+Get message
+
+
+
+Requires ANY permissions: 
+
+* conversation:message:view
+* conversation:webmessaging:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let messageId = "messageId_example"; // String | messageId
+
+apiInstance.getConversationsMessageDetails(messageId)
+  .then((data) => {
+    console.log(`getConversationsMessageDetails success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getConversationsMessageDetails');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **messageId** | **String** | messageId |  |
+{: class="table table-striped"}
+
+### Return type
+
+**MessageData**
+
 <a name="getConversationsMessageMessage"></a>
 
 # MessageData getConversationsMessageMessage(conversationId, messageId)
@@ -2842,7 +2897,7 @@ apiInstance.getConversationsMessageCommunicationMessagesMediaMediaId(conversatio
 
 GET /api/v2/conversations/messages/{conversationId}/messages/{messageId}
 
-Get message
+Get conversation message
 
 
 

@@ -5319,6 +5319,7 @@ Get progress for a list of messaging campaigns
 Requires ANY permissions: 
 
 * outbound:messagingCampaign:view
+* outbound:emailCampaign:view
 
 ### Example Usage
 

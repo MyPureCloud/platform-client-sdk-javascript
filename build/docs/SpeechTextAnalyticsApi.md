@@ -822,9 +822,11 @@ let apiInstance = new platformClient.SpeechTextAnalyticsApi();
 let opts = { 
   'nextPage': "nextPage_example", // String | The key for listing the next page
   'pageSize': 20, // Number | The page size for the listing
-  'state': "state_example", // String | Topic state
+  'state': "state_example", // String | Topic state. Defaults to latest
   'name': "name_example", // String | Case insensitive partial name to filter by
-  'ids': ["ids_example"] // [String] | Comma separated Topic IDs to filter by. Cannot be used with other filters. Maximum of 50 IDs allowed.
+  'ids': ["ids_example"], // [String] | Comma separated Topic IDs to filter by. Cannot be used with other filters. Maximum of 50 IDs allowed.
+  'sortBy': "sortBy_example", // String | Sort results by. Defaults to name
+  'sortOrder': "sortOrder_example" // String | Sort order. Defaults to asc
 };
 
 apiInstance.getSpeechandtextanalyticsTopics(opts)
@@ -844,9 +846,11 @@ apiInstance.getSpeechandtextanalyticsTopics(opts)
 | ------------- | ------------- | ------------- | ------------- |
  **nextPage** | **String** | The key for listing the next page | [optional]  |
  **pageSize** | **Number** | The page size for the listing | [optional] [default to 20] |
- **state** | **String** | Topic state | [optional] <br />**Values**: latest, published |
+ **state** | **String** | Topic state. Defaults to latest | [optional] <br />**Values**: latest, published |
  **name** | **String** | Case insensitive partial name to filter by | [optional]  |
  **ids** | **[String]** | Comma separated Topic IDs to filter by. Cannot be used with other filters. Maximum of 50 IDs allowed. | [optional]  |
+ **sortBy** | **String** | Sort results by. Defaults to name | [optional] <br />**Values**: name |
+ **sortOrder** | **String** | Sort order. Defaults to asc | [optional] <br />**Values**: asc, desc |
 {: class="table table-striped"}
 
 ### Return type
@@ -948,7 +952,7 @@ apiInstance.getSpeechandtextanalyticsTopicsGeneral(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **dialect** | **String** | The dialect of the general topics, dialect format is {language}-{country} where language follows ISO 639-1 standard and country follows ISO 3166-1 alpha 2 standard | [optional] <br />**Values**: en-US, es-US, en-AU, en-GB, en-ZA, es-ES, en-IN |
+ **dialect** | **String** | The dialect of the general topics, dialect format is {language}-{country} where language follows ISO 639-1 standard and country follows ISO 3166-1 alpha 2 standard | [optional] <br />**Values**: en-US, es-US, en-AU, en-GB, en-ZA, es-ES, en-IN, fr-FR, fr-CA, it-IT, de-DE, pt-BR |
 {: class="table table-striped"}
 
 ### Return type

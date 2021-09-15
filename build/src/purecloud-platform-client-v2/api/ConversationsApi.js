@@ -5,7 +5,7 @@ class ConversationsApi {
 	/**
 	 * Conversations service.
 	 * @module purecloud-platform-client-v2/api/ConversationsApi
-	 * @version 120.0.0
+	 * @version 121.0.0
 	 */
 
 	/**
@@ -1393,6 +1393,31 @@ class ConversationsApi {
 
 	/**
 	 * Get message
+	 * 
+	 * @param {String} messageId messageId
+	 */
+	getConversationsMessageDetails(messageId) { 
+		// verify the required parameter 'messageId' is set
+		if (messageId === undefined || messageId === null) {
+			throw 'Missing the required parameter "messageId" when calling getConversationsMessageDetails';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/messages/{messageId}/details', 
+			'GET', 
+			{ 'messageId': messageId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get conversation message
 	 * 
 	 * @param {String} conversationId conversationId
 	 * @param {String} messageId messageId

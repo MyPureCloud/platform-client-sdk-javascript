@@ -5,7 +5,7 @@ class AnalyticsApi {
 	/**
 	 * Analytics service.
 	 * @module purecloud-platform-client-v2/api/AnalyticsApi
-	 * @version 120.0.0
+	 * @version 121.0.0
 	 */
 
 	/**
@@ -595,6 +595,31 @@ class AnalyticsApi {
 			{  }, 
 			{  }, 
 			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Patch AnalyticsReportingSettings values for an organization
+	 * 
+	 * @param {Object} body AnalyticsReportingSettingsRequest
+	 */
+	patchAnalyticsReportingSettings(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchAnalyticsReportingSettings';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/reporting/settings', 
+			'PATCH', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
 			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']

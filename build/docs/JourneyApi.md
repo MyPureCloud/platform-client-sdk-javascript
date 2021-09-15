@@ -21,6 +21,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getJourneyOutcomes**](JourneyApi.html#getJourneyOutcomes) | **GET** /api/v2/journey/outcomes | Retrieve all outcomes.
 [**getJourneySegment**](JourneyApi.html#getJourneySegment) | **GET** /api/v2/journey/segments/{segmentId} | Retrieve a single segment.
 [**getJourneySegments**](JourneyApi.html#getJourneySegments) | **GET** /api/v2/journey/segments | Retrieve all segments.
+[**getJourneySession**](JourneyApi.html#getJourneySession) | **GET** /api/v2/journey/sessions/{sessionId} | Retrieve a single session.
+[**getJourneySessionOutcomescores**](JourneyApi.html#getJourneySessionOutcomescores) | **GET** /api/v2/journey/sessions/{sessionId}/outcomescores | Retrieve latest outcome score associated with a session for all outcomes.
 [**patchJourneyActionmap**](JourneyApi.html#patchJourneyActionmap) | **PATCH** /api/v2/journey/actionmaps/{actionMapId} | Update single action map.
 [**patchJourneyActiontarget**](JourneyApi.html#patchJourneyActiontarget) | **PATCH** /api/v2/journey/actiontargets/{actionTargetId} | Update a single action target.
 [**patchJourneyActiontemplate**](JourneyApi.html#patchJourneyActiontemplate) | **PATCH** /api/v2/journey/actiontemplates/{actionTemplateId} | Update a single action template.
@@ -838,6 +840,112 @@ apiInstance.getJourneySegments(opts)
 ### Return type
 
 **SegmentListing**
+
+<a name="getJourneySession"></a>
+
+# Session getJourneySession(sessionId)
+
+
+
+GET /api/v2/journey/sessions/{sessionId}
+
+Retrieve a single session.
+
+
+
+Requires ANY permissions: 
+
+* journey:session:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.JourneyApi();
+
+let sessionId = "sessionId_example"; // String | ID of the session.
+
+apiInstance.getJourneySession(sessionId)
+  .then((data) => {
+    console.log(`getJourneySession success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getJourneySession');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **sessionId** | **String** | ID of the session. |  |
+{: class="table table-striped"}
+
+### Return type
+
+**Session**
+
+<a name="getJourneySessionOutcomescores"></a>
+
+# OutcomeScoresResult getJourneySessionOutcomescores(sessionId)
+
+
+
+GET /api/v2/journey/sessions/{sessionId}/outcomescores
+
+Retrieve latest outcome score associated with a session for all outcomes.
+
+
+
+Requires ANY permissions: 
+
+* journey:outcomescores:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.JourneyApi();
+
+let sessionId = "sessionId_example"; // String | ID of the session.
+
+apiInstance.getJourneySessionOutcomescores(sessionId)
+  .then((data) => {
+    console.log(`getJourneySessionOutcomescores success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getJourneySessionOutcomescores');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **sessionId** | **String** | ID of the session. |  |
+{: class="table table-striped"}
+
+### Return type
+
+**OutcomeScoresResult**
 
 <a name="patchJourneyActionmap"></a>
 

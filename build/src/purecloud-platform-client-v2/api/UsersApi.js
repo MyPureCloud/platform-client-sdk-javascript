@@ -5,7 +5,7 @@ class UsersApi {
 	/**
 	 * Users service.
 	 * @module purecloud-platform-client-v2/api/UsersApi
-	 * @version 120.0.0
+	 * @version 121.0.0
 	 */
 
 	/**
@@ -1028,7 +1028,7 @@ class UsersApi {
 	 * @param {Array.<String>} opts.jabberId A list of jabberIds to fetch by bulk (cannot be used with the \&quot;id\&quot; parameter)
 	 * @param {Object} opts.sortOrder Ascending or descending sort order (default to ASC)
 	 * @param {Array.<String>} opts.expand Which fields, if any, to expand
-	 * @param {Object} opts.integrationPresenceSource Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an \&quot;expand\&quot;. When using this parameter the maximum number of users that can be returned is 10.
+	 * @param {Object} opts.integrationPresenceSource Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an \&quot;expand\&quot;. When using this parameter the maximum number of users that can be returned is 100.
 	 * @param {Object} opts.state Only list users of this state (default to active)
 	 */
 	getUsers(opts) { 

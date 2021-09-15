@@ -5,7 +5,7 @@ class NotificationsApi {
 	/**
 	 * Notifications service.
 	 * @module purecloud-platform-client-v2/api/NotificationsApi
-	 * @version 120.0.0
+	 * @version 121.0.0
 	 */
 
 	/**
@@ -121,7 +121,7 @@ class NotificationsApi {
 
 	/**
 	 * Verify a channel still exists and is valid
-	 * 
+	 * Returns a 200 OK if channel exists, and a 404 Not Found if it doesn&#39;t
 	 * @param {String} channelId Channel ID
 	 */
 	headNotificationsChannel(channelId) { 

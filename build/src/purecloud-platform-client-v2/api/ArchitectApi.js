@@ -5,7 +5,7 @@ class ArchitectApi {
 	/**
 	 * Architect service.
 	 * @module purecloud-platform-client-v2/api/ArchitectApi
-	 * @version 120.0.0
+	 * @version 121.0.0
 	 */
 
 	/**
@@ -1638,6 +1638,65 @@ class ArchitectApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/flows/datatables', 
+			'GET', 
+			{  }, 
+			{ 'expand': opts['expand'],'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi'),'name': opts['name'] }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Returns a specific datatable by id
+	 * Given a datatableId returns the datatable object and schema associated with it.
+	 * @param {String} datatableId id of datatable
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.expand Expand instructions for the result
+	 */
+	getFlowsDatatablesDivisionview(datatableId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'datatableId' is set
+		if (datatableId === undefined || datatableId === null) {
+			throw 'Missing the required parameter "datatableId" when calling getFlowsDatatablesDivisionview';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/flows/datatables/divisionviews/{datatableId}', 
+			'GET', 
+			{ 'datatableId': datatableId }, 
+			{ 'expand': opts['expand'] }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Retrieve a list of datatables for the org
+	 * Returns a metadata list of the datatables associated with this org, including datatableId, name and description.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.expand Expand instructions for the result
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {Object} opts.sortBy Sort by (default to id)
+	 * @param {String} opts.sortOrder Sort order (default to ascending)
+	 * @param {Array.<String>} opts.divisionId division ID(s)
+	 * @param {String} opts.name Name to filter by
+	 */
+	getFlowsDatatablesDivisionviews(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/flows/datatables/divisionviews', 
 			'GET', 
 			{  }, 
 			{ 'expand': opts['expand'],'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi'),'name': opts['name'] }, 

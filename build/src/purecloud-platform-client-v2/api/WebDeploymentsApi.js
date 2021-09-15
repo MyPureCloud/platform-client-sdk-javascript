@@ -5,7 +5,7 @@ class WebDeploymentsApi {
 	/**
 	 * WebDeployments service.
 	 * @module purecloud-platform-client-v2/api/WebDeploymentsApi
-	 * @version 120.0.0
+	 * @version 121.0.0
 	 */
 
 	/**

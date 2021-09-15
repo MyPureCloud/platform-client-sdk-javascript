@@ -26,18 +26,18 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getGamificationScorecardsAttendance**](GamificationApi.html#getGamificationScorecardsAttendance) | **GET** /api/v2/gamification/scorecards/attendance | Attendance status metrics of the requesting user
 [**getGamificationScorecardsBestpoints**](GamificationApi.html#getGamificationScorecardsBestpoints) | **GET** /api/v2/gamification/scorecards/bestpoints | Best points of the requesting user
 [**getGamificationScorecardsPointsAlltime**](GamificationApi.html#getGamificationScorecardsPointsAlltime) | **GET** /api/v2/gamification/scorecards/points/alltime | All-time points of the requesting user
-[**getGamificationScorecardsPointsAverage**](GamificationApi.html#getGamificationScorecardsPointsAverage) | **GET** /api/v2/gamification/scorecards/points/average | Average points of the requesting user&#39;s division
+[**getGamificationScorecardsPointsAverage**](GamificationApi.html#getGamificationScorecardsPointsAverage) | **GET** /api/v2/gamification/scorecards/points/average | Average points of the requesting user&#39;s division or performance profile
 [**getGamificationScorecardsPointsTrends**](GamificationApi.html#getGamificationScorecardsPointsTrends) | **GET** /api/v2/gamification/scorecards/points/trends | Points trends of the requesting user
 [**getGamificationScorecardsUser**](GamificationApi.html#getGamificationScorecardsUser) | **GET** /api/v2/gamification/scorecards/users/{userId} | Workday performance metrics for a user
 [**getGamificationScorecardsUserAttendance**](GamificationApi.html#getGamificationScorecardsUserAttendance) | **GET** /api/v2/gamification/scorecards/users/{userId}/attendance | Attendance status metrics for a user
 [**getGamificationScorecardsUserBestpoints**](GamificationApi.html#getGamificationScorecardsUserBestpoints) | **GET** /api/v2/gamification/scorecards/users/{userId}/bestpoints | Best points of a user
 [**getGamificationScorecardsUserPointsAlltime**](GamificationApi.html#getGamificationScorecardsUserPointsAlltime) | **GET** /api/v2/gamification/scorecards/users/{userId}/points/alltime | All-time points for a user
 [**getGamificationScorecardsUserPointsTrends**](GamificationApi.html#getGamificationScorecardsUserPointsTrends) | **GET** /api/v2/gamification/scorecards/users/{userId}/points/trends | Points trend for a user
-[**getGamificationScorecardsUserValuesTrends**](GamificationApi.html#getGamificationScorecardsUserValuesTrends) | **GET** /api/v2/gamification/scorecards/users/{userId}/values/trends | Values Trends of a user
+[**getGamificationScorecardsUserValuesTrends**](GamificationApi.html#getGamificationScorecardsUserValuesTrends) | **GET** /api/v2/gamification/scorecards/users/{userId}/values/trends | Values trends of a user
 [**getGamificationScorecardsUsersPointsAverage**](GamificationApi.html#getGamificationScorecardsUsersPointsAverage) | **GET** /api/v2/gamification/scorecards/users/points/average | Workday average points by target group
 [**getGamificationScorecardsUsersValuesAverage**](GamificationApi.html#getGamificationScorecardsUsersValuesAverage) | **GET** /api/v2/gamification/scorecards/users/values/average | Workday average values by target group
 [**getGamificationScorecardsUsersValuesTrends**](GamificationApi.html#getGamificationScorecardsUsersValuesTrends) | **GET** /api/v2/gamification/scorecards/users/values/trends | Values trend by target group
-[**getGamificationScorecardsValuesAverage**](GamificationApi.html#getGamificationScorecardsValuesAverage) | **GET** /api/v2/gamification/scorecards/values/average | Average values of the requesting user&#39;s division
+[**getGamificationScorecardsValuesAverage**](GamificationApi.html#getGamificationScorecardsValuesAverage) | **GET** /api/v2/gamification/scorecards/values/average | Average values of the requesting user&#39;s division or performance profile
 [**getGamificationScorecardsValuesTrends**](GamificationApi.html#getGamificationScorecardsValuesTrends) | **GET** /api/v2/gamification/scorecards/values/trends | Values trends of the requesting user or group
 [**getGamificationStatus**](GamificationApi.html#getGamificationStatus) | **GET** /api/v2/gamification/status | Gamification activation status
 [**getGamificationTemplate**](GamificationApi.html#getGamificationTemplate) | **GET** /api/v2/gamification/templates/{templateId} | Objective template by id
@@ -46,6 +46,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postGamificationProfileActivate**](GamificationApi.html#postGamificationProfileActivate) | **POST** /api/v2/gamification/profiles/{performanceProfileId}/activate | Activate a performance profile
 [**postGamificationProfileDeactivate**](GamificationApi.html#postGamificationProfileDeactivate) | **POST** /api/v2/gamification/profiles/{performanceProfileId}/deactivate | Deactivate a performance profile
 [**postGamificationProfileMetrics**](GamificationApi.html#postGamificationProfileMetrics) | **POST** /api/v2/gamification/profiles/{profileId}/metrics | Creates a gamified metric with a given metric definition and metric objective under in a performance profile
+[**postGamificationProfiles**](GamificationApi.html#postGamificationProfiles) | **POST** /api/v2/gamification/profiles | Create a new custom performance profile
 [**putGamificationMetric**](GamificationApi.html#putGamificationMetric) | **PUT** /api/v2/gamification/metrics/{metricId} | Updates a metric
 [**putGamificationProfile**](GamificationApi.html#putGamificationProfile) | **PUT** /api/v2/gamification/profiles/{performanceProfileId} | Updates a performance profile
 [**putGamificationProfileMetric**](GamificationApi.html#putGamificationProfileMetric) | **PUT** /api/v2/gamification/profiles/{profileId}/metrics/{metricId} | Updates a metric in performance profile
@@ -795,6 +796,8 @@ Performance profile of a user
 Requires ANY permissions: 
 
 * gamification:profile:view
+* gamification:scorecard:viewAll
+* gamification:leaderboard:viewAll
 
 ### Example Usage
 
@@ -1112,7 +1115,7 @@ apiInstance.getGamificationScorecardsPointsAlltime(endWorkday)
 
 GET /api/v2/gamification/scorecards/points/average
 
-Average points of the requesting user&#39;s division
+Average points of the requesting user&#39;s division or performance profile
 
 
 
@@ -1509,7 +1512,7 @@ apiInstance.getGamificationScorecardsUserPointsTrends(userId, startWorkday, endW
 
 GET /api/v2/gamification/scorecards/users/{userId}/values/trends
 
-Values Trends of a user
+Values trends of a user
 
 
 
@@ -1751,7 +1754,7 @@ apiInstance.getGamificationScorecardsUsersValuesTrends(filterType, filterId, sta
 
 GET /api/v2/gamification/scorecards/values/average
 
-Average values of the requesting user&#39;s division
+Average values of the requesting user&#39;s division or performance profile
 
 
 
@@ -1833,6 +1836,7 @@ let startWorkday = "2013-10-20"; // String | Start workday of querying workdays 
 let endWorkday = "2013-10-20"; // String | End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 let opts = { 
   'filterType': "filterType_example", // String | Filter type for the query request. If not set, then the request is for the requesting user.
+  'referenceWorkday': "2013-10-20", // String | Reference workday for the trend. Used to determine the profile of the user as of this date. If not set, then the user's current profile will be used. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
   'timeZone': "UTC" // String | Timezone for the workday. Defaults to UTC
 };
 
@@ -1854,6 +1858,7 @@ apiInstance.getGamificationScorecardsValuesTrends(startWorkday, endWorkday, opts
  **startWorkday** | **String** | Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **endWorkday** | **String** | End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **filterType** | **String** | Filter type for the query request. If not set, then the request is for the requesting user. | [optional] <br />**Values**: PerformanceProfile, Division |
+ **referenceWorkday** | **String** | Reference workday for the trend. Used to determine the profile of the user as of this date. If not set, then the user&#39;s current profile will be used. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | [optional]  |
  **timeZone** | **String** | Timezone for the workday. Defaults to UTC | [optional] [default to UTC] |
 {: class="table table-striped"}
 
@@ -2225,6 +2230,59 @@ apiInstance.postGamificationProfileMetrics(profileId, body)
 ### Return type
 
 **Metric**
+
+<a name="postGamificationProfiles"></a>
+
+# GetProfilesResponse postGamificationProfiles(body)
+
+
+
+POST /api/v2/gamification/profiles
+
+Create a new custom performance profile
+
+
+
+Requires ANY permissions: 
+
+* gamification:profile:update
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.GamificationApi();
+
+let body = {}; // Object | performanceProfile
+
+apiInstance.postGamificationProfiles(body)
+  .then((data) => {
+    console.log(`postGamificationProfiles success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postGamificationProfiles');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | performanceProfile |  |
+{: class="table table-striped"}
+
+### Return type
+
+**GetProfilesResponse**
 
 <a name="putGamificationMetric"></a>
 

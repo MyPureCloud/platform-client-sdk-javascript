@@ -5,7 +5,7 @@ class GamificationApi {
 	/**
 	 * Gamification service.
 	 * @module purecloud-platform-client-v2/api/GamificationApi
-	 * @version 120.0.0
+	 * @version 121.0.0
 	 */
 
 	/**
@@ -544,7 +544,7 @@ class GamificationApi {
 	}
 
 	/**
-	 * Average points of the requesting user&#39;s division
+	 * Average points of the requesting user&#39;s division or performance profile
 	 * 
 	 * @param {String} workday The target workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 */
@@ -766,7 +766,7 @@ class GamificationApi {
 	}
 
 	/**
-	 * Values Trends of a user
+	 * Values trends of a user
 	 * 
 	 * @param {String} userId 
 	 * @param {String} startWorkday Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
@@ -923,7 +923,7 @@ class GamificationApi {
 	}
 
 	/**
-	 * Average values of the requesting user&#39;s division
+	 * Average values of the requesting user&#39;s division or performance profile
 	 * 
 	 * @param {String} workday The target workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 * @param {Object} opts Optional parameters
@@ -958,6 +958,7 @@ class GamificationApi {
 	 * @param {String} endWorkday End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.filterType Filter type for the query request. If not set, then the request is for the requesting user.
+	 * @param {String} opts.referenceWorkday Reference workday for the trend. Used to determine the profile of the user as of this date. If not set, then the user&#39;s current profile will be used. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 * @param {String} opts.timeZone Timezone for the workday. Defaults to UTC (default to UTC)
 	 */
 	getGamificationScorecardsValuesTrends(startWorkday, endWorkday, opts) { 
@@ -976,7 +977,7 @@ class GamificationApi {
 			'/api/v2/gamification/scorecards/values/trends', 
 			'GET', 
 			{  }, 
-			{ 'filterType': opts['filterType'],'startWorkday': startWorkday,'endWorkday': endWorkday,'timeZone': opts['timeZone'] }, 
+			{ 'filterType': opts['filterType'],'referenceWorkday': opts['referenceWorkday'],'startWorkday': startWorkday,'endWorkday': endWorkday,'timeZone': opts['timeZone'] }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -1146,6 +1147,31 @@ class GamificationApi {
 			'/api/v2/gamification/profiles/{profileId}/metrics', 
 			'POST', 
 			{ 'profileId': profileId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Create a new custom performance profile
+	 * 
+	 * @param {Object} body performanceProfile
+	 */
+	postGamificationProfiles(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postGamificationProfiles';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/gamification/profiles', 
+			'POST', 
+			{  }, 
 			{  }, 
 			{  }, 
 			{  }, 

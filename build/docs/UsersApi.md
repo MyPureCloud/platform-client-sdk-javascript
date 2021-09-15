@@ -2120,7 +2120,7 @@ let opts = {
   'jabberId': ["jabberId_example"], // [String] | A list of jabberIds to fetch by bulk (cannot be used with the \"id\" parameter)
   'sortOrder': "ASC", // String | Ascending or descending sort order
   'expand': ["expand_example"], // [String] | Which fields, if any, to expand
-  'integrationPresenceSource': "integrationPresenceSource_example", // String | Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an \"expand\". When using this parameter the maximum number of users that can be returned is 10.
+  'integrationPresenceSource': "integrationPresenceSource_example", // String | Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an \"expand\". When using this parameter the maximum number of users that can be returned is 100.
   'state': "active" // String | Only list users of this state
 };
 
@@ -2145,7 +2145,7 @@ apiInstance.getUsers(opts)
  **jabberId** | **[String]** | A list of jabberIds to fetch by bulk (cannot be used with the \&quot;id\&quot; parameter) | [optional]  |
  **sortOrder** | **String** | Ascending or descending sort order | [optional] [default to ASC]<br />**Values**: ascending, descending |
  **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography |
- **integrationPresenceSource** | **String** | Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an \&quot;expand\&quot;. When using this parameter the maximum number of users that can be returned is 10. | [optional] <br />**Values**: MicrosoftTeams, ZoomPhone, RingCentral |
+ **integrationPresenceSource** | **String** | Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an \&quot;expand\&quot;. When using this parameter the maximum number of users that can be returned is 100. | [optional] <br />**Values**: MicrosoftTeams, ZoomPhone, RingCentral |
  **state** | **String** | Only list users of this state | [optional] [default to active]<br />**Values**: active, inactive, deleted, any |
 {: class="table table-striped"}
 
@@ -2427,7 +2427,7 @@ Search users using the q64 value returned from a previous search
 
 Requires ANY permissions: 
 
-* directory:user:divisionview
+* directory:user:view
 
 ### Example Usage
 
@@ -3099,7 +3099,7 @@ Query for user details
 
 Requires ANY permissions: 
 
-* analytics:userObservation:view
+* analytics:userDetail:view
 
 ### Example Usage
 
@@ -3822,7 +3822,7 @@ Search users
 
 Requires ANY permissions: 
 
-* directory:user:divisionview
+* directory:user:view
 
 ### Example Usage
 

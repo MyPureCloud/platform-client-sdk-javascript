@@ -233,7 +233,7 @@ apiInstance.getNotificationsChannels(opts)
 
 <a name="headNotificationsChannel"></a>
 
-# **&#39;Boolean&#39;** headNotificationsChannel(channelId)
+# void headNotificationsChannel(channelId)
 
 
 
@@ -241,7 +241,7 @@ HEAD /api/v2/notifications/channels/{channelId}
 
 Verify a channel still exists and is valid
 
-
+Returns a 200 OK if channel exists, and a 404 Not Found if it doesn&#39;t
 
 Requires NO permissions: 
 
@@ -262,8 +262,8 @@ let apiInstance = new platformClient.NotificationsApi();
 let channelId = "channelId_example"; // String | Channel ID
 
 apiInstance.headNotificationsChannel(channelId)
-  .then((data) => {
-    console.log(`headNotificationsChannel success! data: ${JSON.stringify(data, null, 2)}`);
+  .then(() => {
+    console.log('headNotificationsChannel returned successfully.');
   })
   .catch((err) => {
     console.log('There was a failure calling headNotificationsChannel');
@@ -281,7 +281,7 @@ apiInstance.headNotificationsChannel(channelId)
 
 ### Return type
 
-**&#39;Boolean&#39;**
+void (no response body)
 
 <a name="postNotificationsChannelSubscriptions"></a>
 

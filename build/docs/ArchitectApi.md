@@ -62,6 +62,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getFlowsDatatableRow**](ArchitectApi.html#getFlowsDatatableRow) | **GET** /api/v2/flows/datatables/{datatableId}/rows/{rowId} | Returns a specific row for the datatable
 [**getFlowsDatatableRows**](ArchitectApi.html#getFlowsDatatableRows) | **GET** /api/v2/flows/datatables/{datatableId}/rows | Returns the rows for the datatable with the given id
 [**getFlowsDatatables**](ArchitectApi.html#getFlowsDatatables) | **GET** /api/v2/flows/datatables | Retrieve a list of datatables for the org
+[**getFlowsDatatablesDivisionview**](ArchitectApi.html#getFlowsDatatablesDivisionview) | **GET** /api/v2/flows/datatables/divisionviews/{datatableId} | Returns a specific datatable by id
+[**getFlowsDatatablesDivisionviews**](ArchitectApi.html#getFlowsDatatablesDivisionviews) | **GET** /api/v2/flows/datatables/divisionviews | Retrieve a list of datatables for the org
 [**getFlowsDivisionviews**](ArchitectApi.html#getFlowsDivisionviews) | **GET** /api/v2/flows/divisionviews | Get a pageable list of basic flow information objects filterable by query parameters.
 [**getFlowsExecution**](ArchitectApi.html#getFlowsExecution) | **GET** /api/v2/flows/executions/{flowExecutionId} | Get a flow execution&#39;s details. Flow execution details are available for several days after the flow is started.
 [**getFlowsMilestone**](ArchitectApi.html#getFlowsMilestone) | **GET** /api/v2/flows/milestones/{milestoneId} | Get a flow milestone
@@ -3346,6 +3348,130 @@ apiInstance.getFlowsDatatables(opts)
   })
   .catch((err) => {
     console.log('There was a failure calling getFlowsDatatables');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **expand** | **String** | Expand instructions for the result | [optional] <br />**Values**: schema |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **sortBy** | **String** | Sort by | [optional] [default to id]<br />**Values**: id, name |
+ **sortOrder** | **String** | Sort order | [optional] [default to ascending] |
+ **divisionId** | **[String]** | division ID(s) | [optional]  |
+ **name** | **String** | Name to filter by | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**DataTablesDomainEntityListing**
+
+<a name="getFlowsDatatablesDivisionview"></a>
+
+# DataTable getFlowsDatatablesDivisionview(datatableId, opts)
+
+
+
+GET /api/v2/flows/datatables/divisionviews/{datatableId}
+
+Returns a specific datatable by id
+
+Given a datatableId returns the datatable object and schema associated with it.
+
+Requires ALL permissions: 
+
+* architect:datatable:search
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ArchitectApi();
+
+let datatableId = "datatableId_example"; // String | id of datatable
+let opts = { 
+  'expand': "expand_example" // String | Expand instructions for the result
+};
+
+apiInstance.getFlowsDatatablesDivisionview(datatableId, opts)
+  .then((data) => {
+    console.log(`getFlowsDatatablesDivisionview success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getFlowsDatatablesDivisionview');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **datatableId** | **String** | id of datatable |  |
+ **expand** | **String** | Expand instructions for the result | [optional] <br />**Values**: schema |
+{: class="table table-striped"}
+
+### Return type
+
+**DataTable**
+
+<a name="getFlowsDatatablesDivisionviews"></a>
+
+# DataTablesDomainEntityListing getFlowsDatatablesDivisionviews(opts)
+
+
+
+GET /api/v2/flows/datatables/divisionviews
+
+Retrieve a list of datatables for the org
+
+Returns a metadata list of the datatables associated with this org, including datatableId, name and description.
+
+Requires ALL permissions: 
+
+* architect:datatable:search
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ArchitectApi();
+
+let opts = { 
+  'expand': "expand_example", // String | Expand instructions for the result
+  'pageNumber': 1, // Number | Page number
+  'pageSize': 25, // Number | Page size
+  'sortBy': "id", // String | Sort by
+  'sortOrder': "ascending", // String | Sort order
+  'divisionId': ["divisionId_example"], // [String] | division ID(s)
+  'name': "name_example" // String | Name to filter by
+};
+
+apiInstance.getFlowsDatatablesDivisionviews(opts)
+  .then((data) => {
+    console.log(`getFlowsDatatablesDivisionviews success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getFlowsDatatablesDivisionviews');
     console.error(err);
   });
 ```

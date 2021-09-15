@@ -30,6 +30,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getAnalyticsUsersDetailsJob**](AnalyticsApi.html#getAnalyticsUsersDetailsJob) | **GET** /api/v2/analytics/users/details/jobs/{jobId} | Get status for async query for user details
 [**getAnalyticsUsersDetailsJobResults**](AnalyticsApi.html#getAnalyticsUsersDetailsJobResults) | **GET** /api/v2/analytics/users/details/jobs/{jobId}/results | Fetch a page of results for an async query
 [**getAnalyticsUsersDetailsJobsAvailability**](AnalyticsApi.html#getAnalyticsUsersDetailsJobsAvailability) | **GET** /api/v2/analytics/users/details/jobs/availability | Lookup the datalake availability date and time
+[**patchAnalyticsReportingSettings**](AnalyticsApi.html#patchAnalyticsReportingSettings) | **PATCH** /api/v2/analytics/reporting/settings | Patch AnalyticsReportingSettings values for an organization
 [**postAnalyticsBotsAggregatesQuery**](AnalyticsApi.html#postAnalyticsBotsAggregatesQuery) | **POST** /api/v2/analytics/bots/aggregates/query | Query for bot aggregates
 [**postAnalyticsConversationDetailsProperties**](AnalyticsApi.html#postAnalyticsConversationDetailsProperties) | **POST** /api/v2/analytics/conversations/{conversationId}/details/properties | Index conversation properties
 [**postAnalyticsConversationsAggregatesQuery**](AnalyticsApi.html#postAnalyticsConversationsAggregatesQuery) | **POST** /api/v2/analytics/conversations/aggregates/query | Query for conversation aggregates
@@ -1290,6 +1291,61 @@ This endpoint does not need any parameter.
 
 **DataAvailabilityResponse**
 
+<a name="patchAnalyticsReportingSettings"></a>
+
+# AnalyticsReportingSettings patchAnalyticsReportingSettings(body)
+
+
+
+PATCH /api/v2/analytics/reporting/settings
+
+Patch AnalyticsReportingSettings values for an organization
+
+
+
+Requires ANY permissions: 
+
+* recording:recordingSegment:view
+* analytics:conversationDetail:view
+* analytics:dashboardConfigurations:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AnalyticsApi();
+
+let body = {}; // Object | AnalyticsReportingSettingsRequest
+
+apiInstance.patchAnalyticsReportingSettings(body)
+  .then((data) => {
+    console.log(`patchAnalyticsReportingSettings success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchAnalyticsReportingSettings');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | AnalyticsReportingSettingsRequest |  |
+{: class="table table-striped"}
+
+### Return type
+
+**AnalyticsReportingSettings**
+
 <a name="postAnalyticsBotsAggregatesQuery"></a>
 
 # BotAggregateQueryResponse postAnalyticsBotsAggregatesQuery(body)
@@ -2260,7 +2316,7 @@ Query for user details
 
 Requires ANY permissions: 
 
-* analytics:userObservation:view
+* analytics:userDetail:view
 
 ### Example Usage
 

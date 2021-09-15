@@ -5,7 +5,7 @@ class JourneyApi {
 	/**
 	 * Journey service.
 	 * @module purecloud-platform-client-v2/api/JourneyApi
-	 * @version 120.0.0
+	 * @version 121.0.0
 	 */
 
 	/**
@@ -385,6 +385,56 @@ class JourneyApi {
 			'GET', 
 			{  }, 
 			{ 'sortBy': opts['sortBy'],'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'isActive': opts['isActive'],'segmentIds': this.apiClient.buildCollectionParam(opts['segmentIds'], 'multi'),'queryFields': this.apiClient.buildCollectionParam(opts['queryFields'], 'multi'),'queryValue': opts['queryValue'] }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Retrieve a single session.
+	 * 
+	 * @param {String} sessionId ID of the session.
+	 */
+	getJourneySession(sessionId) { 
+		// verify the required parameter 'sessionId' is set
+		if (sessionId === undefined || sessionId === null) {
+			throw 'Missing the required parameter "sessionId" when calling getJourneySession';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/sessions/{sessionId}', 
+			'GET', 
+			{ 'sessionId': sessionId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Retrieve latest outcome score associated with a session for all outcomes.
+	 * 
+	 * @param {String} sessionId ID of the session.
+	 */
+	getJourneySessionOutcomescores(sessionId) { 
+		// verify the required parameter 'sessionId' is set
+		if (sessionId === undefined || sessionId === null) {
+			throw 'Missing the required parameter "sessionId" when calling getJourneySessionOutcomescores';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/sessions/{sessionId}/outcomescores', 
+			'GET', 
+			{ 'sessionId': sessionId }, 
+			{  }, 
 			{  }, 
 			{  }, 
 			null, 

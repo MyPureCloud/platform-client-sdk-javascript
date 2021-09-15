@@ -252,7 +252,7 @@ Search using the q64 value returned from a previous search.
 
 Requires ANY permissions: 
 
-* directory:user:divisionview
+* directory:user:view
 
 ### Example Usage
 
@@ -311,7 +311,7 @@ Suggest resources using the q64 value returned from a previous suggest query.
 
 Requires ANY permissions: 
 
-* directory:user:divisionview
+* directory:user:view
 
 ### Example Usage
 
@@ -370,7 +370,7 @@ Search users using the q64 value returned from a previous search
 
 Requires ANY permissions: 
 
-* directory:user:divisionview
+* directory:user:view
 
 ### Example Usage
 
@@ -797,7 +797,7 @@ Search resources.
 
 Requires ANY permissions: 
 
-* directory:user:divisionview
+* directory:user:view
 
 ### Example Usage
 
@@ -854,7 +854,7 @@ Suggest resources.
 
 Requires ANY permissions: 
 
-* directory:user:divisionview
+* directory:user:view
 
 ### Example Usage
 
@@ -965,7 +965,7 @@ Search users
 
 Requires ANY permissions: 
 
-* directory:user:divisionview
+* directory:user:view
 
 ### Example Usage
 
