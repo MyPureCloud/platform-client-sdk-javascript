@@ -150,6 +150,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postConversationsMessagingIntegrationsTwitter**](ConversationsApi.html#postConversationsMessagingIntegrationsTwitter) | **POST** /api/v2/conversations/messaging/integrations/twitter | Create a Twitter Integration
 [**postConversationsMessagingIntegrationsWhatsapp**](ConversationsApi.html#postConversationsMessagingIntegrationsWhatsapp) | **POST** /api/v2/conversations/messaging/integrations/whatsapp | Create a WhatsApp Integration
 [**putConversationParticipantFlaggedreason**](ConversationsApi.html#putConversationParticipantFlaggedreason) | **PUT** /api/v2/conversations/{conversationId}/participants/{participantId}/flaggedreason | Set flagged reason on conversation participant to indicate bad conversation quality.
+[**putConversationTags**](ConversationsApi.html#putConversationTags) | **PUT** /api/v2/conversations/{conversationId}/tags | Update the tags on a conversation.
 [**putConversationsCallParticipantCommunicationUuidata**](ConversationsApi.html#putConversationsCallParticipantCommunicationUuidata) | **PUT** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/communications/{communicationId}/uuidata | Set uuiData to be sent on future commands.
 [**putConversationsEmailMessagesDraft**](ConversationsApi.html#putConversationsEmailMessagesDraft) | **PUT** /api/v2/conversations/emails/{conversationId}/messages/draft | Update conversation draft reply
 [**putConversationsMessagingIntegrationsLineIntegrationId**](ConversationsApi.html#putConversationsMessagingIntegrationsLineIntegrationId) | **PUT** /api/v2/conversations/messaging/integrations/line/{integrationId} | Update a LINE messenger integration
@@ -8015,6 +8016,61 @@ apiInstance.putConversationParticipantFlaggedreason(conversationId, participantI
 ### Return type
 
 void (no response body)
+
+<a name="putConversationTags"></a>
+
+# **&#39;String&#39;** putConversationTags(conversationId, body)
+
+
+
+PUT /api/v2/conversations/{conversationId}/tags
+
+Update the tags on a conversation.
+
+
+
+Requires ANY permissions: 
+
+* conversation:externalTag:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let conversationId = "conversationId_example"; // String | conversation ID
+let body = {}; // Object | Conversation Tags
+
+apiInstance.putConversationTags(conversationId, body)
+  .then((data) => {
+    console.log(`putConversationTags success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putConversationTags');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | conversation ID |  |
+ **body** | **Object** | Conversation Tags |  |
+{: class="table table-striped"}
+
+### Return type
+
+**&#39;String&#39;**
 
 <a name="putConversationsCallParticipantCommunicationUuidata"></a>
 

@@ -1118,6 +1118,7 @@ declare class ConversationsApi {
   	postConversationsMessagingIntegrationsTwitter(body: Models.TwitterIntegrationRequest): Promise<Models.TwitterIntegration>; 
   	postConversationsMessagingIntegrationsWhatsapp(body: Models.WhatsAppIntegrationRequest): Promise<Models.WhatsAppIntegration>; 
   	putConversationParticipantFlaggedreason(conversationId: string, participantId: string): Promise<void>; 
+  	putConversationTags(conversationId: string, body: Models.ConversationTagsUpdate): Promise<string>; 
   	putConversationsCallParticipantCommunicationUuidata(conversationId: string, participantId: string, communicationId: string, body: Models.SetUuiDataRequest): Promise<Models.Empty>; 
   	putConversationsEmailMessagesDraft(conversationId: string, body: Models.EmailMessage): Promise<Models.EmailMessage>; 
   	putConversationsMessagingIntegrationsLineIntegrationId(integrationId: string, body: Models.LineIntegrationRequest): Promise<Models.LineIntegration>; 
@@ -4365,6 +4366,7 @@ declare class UsersApi {
   	getUserRoutinglanguages(userId: string, opts?: UsersApi.getUserRoutinglanguagesOptions): Promise<Models.UserLanguageEntityListing>; 
   	getUserRoutingskills(userId: string, opts?: UsersApi.getUserRoutingskillsOptions): Promise<Models.UserSkillEntityListing>; 
   	getUserRoutingstatus(userId: string): Promise<Models.RoutingStatus>; 
+  	getUserState(userId: string): Promise<Models.UserState>; 
   	getUserStation(userId: string): Promise<Models.UserStations>; 
   	getUserSuperiors(userId: string, opts?: UsersApi.getUserSuperiorsOptions): Promise<Array<Models.User>>; 
   	getUserTrustors(userId: string, opts?: UsersApi.getUserTrustorsOptions): Promise<Models.TrustorEntityListing>; 
@@ -4407,6 +4409,7 @@ declare class UsersApi {
   	putUserRoutingskill(userId: string, skillId: string, body: Models.UserRoutingSkill): Promise<Models.UserRoutingSkill>; 
   	putUserRoutingskillsBulk(userId: string, body: Array<Models.UserRoutingSkillPost>): Promise<Models.UserSkillEntityListing>; 
   	putUserRoutingstatus(userId: string, body: Models.RoutingStatus): Promise<Models.RoutingStatus>; 
+  	putUserState(userId: string, body: Models.UserState): Promise<Models.UserState>; 
   	putUserStationAssociatedstationStationId(userId: string, stationId: string): Promise<void>; 
   	putUserStationDefaultstationStationId(userId: string, stationId: string): Promise<void>;
 }
@@ -5743,6 +5746,7 @@ declare namespace Models {
 		"cobrowseRoomId"?: string;
 		"deliveryStatus"?: string;
 		"deliveryStatusChangeDate"?: string;
+		"destinationAddresses"?: Array<string>;
 		"direction"?: string;
 		"dispositionAnalyzer"?: string;
 		"dispositionName"?: string;
@@ -7225,6 +7229,10 @@ declare namespace Models {
 		"entities"?: Array<Models.BuScheduleRun>;
 	}
 	
+	export interface BuSchedulingSettings { 
+		"messageSeverities"?: Array<Models.SchedulerMessageTypeSeverity>;
+	}
+	
 	export interface BuSearchAgentSchedulesRequest { 
 		"startDate": string;
 		"endDate": string;
@@ -8333,8 +8341,8 @@ declare namespace Models {
 		"expirationDate"?: string;
 		"issueDate"?: string;
 		"expired"?: boolean;
-		"signatureValid"?: boolean;
 		"valid"?: boolean;
+		"signatureValid"?: boolean;
 	}
 	
 	export interface Change { 
@@ -10441,6 +10449,7 @@ declare namespace Models {
 		"wrapup"?: Models.ConversationEventTopicWrapup;
 		"afterCallWork"?: Models.ConversationEventTopicAfterCallWork;
 		"afterCallWorkRequired"?: boolean;
+		"agentAssistantId"?: string;
 		"additionalProperties"?: object;
 	}
 	
@@ -11108,6 +11117,10 @@ declare namespace Models {
 		"durationSeconds"?: number;
 		"endTime"?: string;
 		"additionalProperties"?: object;
+	}
+	
+	export interface ConversationTagsUpdate { 
+		"externalTag": string;
 	}
 	
 	export interface ConversationThreadingWindow { 
@@ -13620,6 +13633,7 @@ declare namespace Models {
 		"durationTarget"?: string;
 		"durationOperator"?: string;
 		"durationRange"?: string;
+		"durationMode"?: string;
 	}
 	
 	export interface Edge { 
@@ -16016,9 +16030,9 @@ declare namespace Models {
 		"started"?: string;
 		"completed"?: string;
 		"entities"?: Array<Models.HistoryEntry>;
+		"total"?: number;
 		"pageNumber"?: number;
 		"pageSize"?: number;
-		"total"?: number;
 		"pageCount"?: number;
 	}
 	
@@ -21568,6 +21582,7 @@ declare namespace Models {
 		"wrapup"?: Models.QueueConversationEventTopicWrapup;
 		"afterCallWork"?: Models.QueueConversationEventTopicAfterCallWork;
 		"afterCallWorkRequired"?: boolean;
+		"agentAssistantId"?: string;
 		"additionalProperties"?: object;
 	}
 	
@@ -22240,6 +22255,7 @@ declare namespace Models {
 		"wrapup"?: Models.QueueConversationSocialExpressionEventTopicWrapup;
 		"afterCallWork"?: Models.QueueConversationSocialExpressionEventTopicAfterCallWork;
 		"afterCallWorkRequired"?: boolean;
+		"agentAssistantId"?: string;
 		"additionalProperties"?: object;
 	}
 	
@@ -22649,6 +22665,7 @@ declare namespace Models {
 		"wrapup"?: Models.QueueConversationVideoEventTopicWrapup;
 		"afterCallWork"?: Models.QueueConversationVideoEventTopicAfterCallWork;
 		"afterCallWorkRequired"?: boolean;
+		"agentAssistantId"?: string;
 		"additionalProperties"?: object;
 	}
 	
@@ -23026,6 +23043,7 @@ declare namespace Models {
 		"users"?: Array<Models.User>;
 		"recordingFileRole"?: string;
 		"recordingErrorStatus"?: string;
+		"originalRecordingStartTime"?: string;
 		"selfUri"?: string;
 	}
 	
@@ -23756,6 +23774,7 @@ declare namespace Models {
 		"skillIds"?: Array<string>;
 		"preferredAgentIds"?: Array<string>;
 		"scoredAgents"?: Array<Models.ScoredAgent>;
+		"routingFlags"?: Array<string>;
 	}
 	
 	export interface RoutingRule { 
@@ -23974,6 +23993,20 @@ declare namespace Models {
 	export interface SchedulerMessageArgument { 
 		"type"?: string;
 		"value"?: string;
+	}
+	
+	export interface SchedulerMessageTypeSeverity { 
+		"type"?: string;
+		"severity"?: string;
+	}
+	
+	export interface SchedulingNoForecastOptionsRequest { 
+		"shiftLength"?: string;
+		"shiftStart"?: string;
+	}
+	
+	export interface SchedulingOptionsRequest { 
+		"noForecastOptions"?: Models.SchedulingNoForecastOptionsRequest;
 	}
 	
 	export interface SchedulingProcessingError { 
@@ -25696,6 +25729,7 @@ declare namespace Models {
 		"reason": string;
 		"reasonExtendedInfo"?: string;
 		"flowLocation"?: Models.TextBotFlowLocation;
+		"flowOutcomes"?: Array<Models.TextBotFlowOutcome>;
 	}
 	
 	export interface TextBotErrorInputEvent { 
@@ -25709,6 +25743,7 @@ declare namespace Models {
 		"activeIntent"?: string;
 		"flowLocation"?: Models.TextBotFlowLocation;
 		"outputData"?: Models.TextBotInputOutputData;
+		"flowOutcomes"?: Array<Models.TextBotFlowOutcome>;
 	}
 	
 	export interface TextBotFlow { 
@@ -25731,6 +25766,20 @@ declare namespace Models {
 		"actionName": string;
 		"actionNumber": number;
 		"sequenceName": string;
+	}
+	
+	export interface TextBotFlowMilestone { 
+		"id": string;
+		"dateReached": string;
+		"sequence": number;
+	}
+	
+	export interface TextBotFlowOutcome { 
+		"outcomeId"?: string;
+		"outcomeValue"?: string;
+		"dateStart"?: string;
+		"dateEnd"?: string;
+		"milestones"?: Array<Models.TextBotFlowMilestone>;
 	}
 	
 	export interface TextBotFlowTurnRequest { 
@@ -25797,7 +25846,7 @@ declare namespace Models {
 	
 	export interface TextBotUserInputEvent { 
 		"mode": string;
-		"alternatives"?: Array<Models.TextBotUserInputAlternative>;
+		"alternatives": Array<Models.TextBotUserInputAlternative>;
 	}
 	
 	export interface TextBotWaitForInputAction { 
@@ -27561,6 +27610,13 @@ declare namespace Models {
 		"pageCount"?: number;
 	}
 	
+	export interface UserState { 
+		"state"?: string;
+		"version"?: number;
+		"stateChangeReason"?: string;
+		"stateChangeDate"?: string;
+	}
+	
 	export interface UserStation { 
 		"id"?: string;
 		"name"?: string;
@@ -27821,6 +27877,7 @@ declare namespace Models {
 		"isRecorded"?: boolean;
 		"hasEvaluation"?: boolean;
 		"hasScoredEvaluation"?: boolean;
+		"emailDeliveryStatusList"?: Array<string>;
 		"isAgentOwnedCallback"?: boolean;
 		"agentCallbackOwnerIds"?: Array<string>;
 	}

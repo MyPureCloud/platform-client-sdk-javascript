@@ -5,7 +5,7 @@ class ConversationsApi {
 	/**
 	 * Conversations service.
 	 * @module purecloud-platform-client-v2/api/ConversationsApi
-	 * @version 121.0.0
+	 * @version 122.0.0
 	 */
 
 	/**
@@ -4227,6 +4227,36 @@ class ConversationsApi {
 			{  }, 
 			{  }, 
 			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update the tags on a conversation.
+	 * 
+	 * @param {String} conversationId conversation ID
+	 * @param {Object} body Conversation Tags
+	 */
+	putConversationTags(conversationId, body) { 
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null) {
+			throw 'Missing the required parameter "conversationId" when calling putConversationTags';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putConversationTags';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/{conversationId}/tags', 
+			'PUT', 
+			{ 'conversationId': conversationId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
 			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']

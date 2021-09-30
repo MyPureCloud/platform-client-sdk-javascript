@@ -1,370 +1,205 @@
-Platform API version: 5002
+Platform API version: 5038
 
 
-# Major Changes (14 changes)
+# Major Changes (3 changes)
 
-**PUT /api/v2/conversations/calls/{conversationId}/participants/{participantId}/communications/{communicationId}/uuidata** (1 change)
+**DevelopmentActivity** (1 change)
 
-* Response 204 was removed
+* Enum value Questionnaire was removed from property type
 
-**GET /api/v2/gamification/scorecards/values/trends** (1 change)
+**LearningModule** (1 change)
 
-* Parameter referenceWorkday was added
+* Enum value Questionnaire was removed from property type
 
-**HEAD /api/v2/notifications/channels/{channelId}** (1 change)
+**LearningModuleRequest** (1 change)
 
-* Response 200 was removed
-
-**GET /api/v2/speechandtextanalytics/topics** (2 changes)
-
-* Parameter sortBy was added
-* Parameter sortOrder was added
-
-**AssignmentGroup** (1 change)
-
-* Model AssignmentGroup was removed
-
-**Metric** (1 change)
-
-* Property dateCreated was changed from string to integer
-
-**PerformanceProfile** (1 change)
-
-* active has been made readonly
-
-**DevelopmentActivityAggregateQueryResponseStatistics** (3 changes)
-
-* Property min was changed from integer to number
-* Property max was changed from integer to number
-* Property sum was changed from integer to number
-
-**LearningAssignmentAggregateQueryResponseStats** (3 changes)
-
-* Property min was changed from integer to number
-* Property max was changed from integer to number
-* Property sum was changed from integer to number
+* Enum value Questionnaire was removed from property type
 
 
-# Minor Changes (93 changes)
+# Minor Changes (60 changes)
 
-**/api/v2/analytics/reporting/settings** (2 changes)
+**/api/v2/conversations/{conversationId}/tags** (2 changes)
 
 * Path was added
-* Operation PATCH was added
+* Operation PUT was added
 
-**/api/v2/conversations/messages/{messageId}/details** (2 changes)
+**PATCH /api/v2/journey/actionmaps/{actionMapId}** (1 change)
 
-* Path was added
-* Operation GET was added
+* Response 409 was added
 
-**/api/v2/flows/datatables/divisionviews/{datatableId}** (2 changes)
+**POST /api/v2/journey/actionmaps** (1 change)
+
+* Response 409 was added
+
+**PATCH /api/v2/journey/actiontemplates/{actionTemplateId}** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/journey/actiontemplates** (1 change)
+
+* Response 409 was added
+
+**PATCH /api/v2/journey/outcomes/{outcomeId}** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/journey/outcomes** (1 change)
+
+* Response 409 was added
+
+**PATCH /api/v2/journey/segments/{segmentId}** (1 change)
+
+* Response 409 was added
+
+**POST /api/v2/journey/segments** (1 change)
+
+* Response 409 was added
+
+**/api/v2/users/{userId}/state** (3 changes)
 
 * Path was added
 * Operation GET was added
+* Operation PUT was added
 
-**/api/v2/flows/datatables/divisionviews** (2 changes)
+**ConversationAggregateQueryPredicate** (1 change)
 
-* Path was added
-* Operation GET was added
+* Enum value destinationAddress was added to property dimension
 
-**/api/v2/gamification/profiles** (1 change)
+**ConversationAggregationQuery** (1 change)
 
-* Operation post was added. Summary: Create a new custom performance profile
+* Enum value destinationAddress was added to property groupBy
 
-**/api/v2/journey/sessions/{sessionId}/outcomescores** (2 changes)
+**AnalyticsSession** (1 change)
 
-* Path was added
-* Operation GET was added
+* Optional property destinationAddresses was added
 
-**/api/v2/journey/sessions/{sessionId}** (2 changes)
+**SegmentDetailQueryPredicate** (1 change)
 
-* Path was added
-* Operation GET was added
+* Enum value destinationAddress was added to property dimension
 
-**HEAD /api/v2/notifications/channels/{channelId}** (1 change)
+**FlowAggregateQueryPredicate** (1 change)
 
-* Response default was added
+* Enum value destinationAddress was added to property dimension
 
-**POST /api/v2/users/development/activities/aggregates/query** (1 change)
+**FlowAggregationQuery** (1 change)
 
-* Response 501 was added
+* Enum value destinationAddress was added to property groupBy
 
-**POST /api/v2/learning/assignments/aggregates/query** (1 change)
+**ViewFilter** (1 change)
 
-* Response 501 was added
+* Optional property emailDeliveryStatusList was added
 
-**ReportingTurnAction** (1 change)
+**ReportingExportJobResponse** (6 changes)
 
-* Enum value GetExternalOrganizationAction was added to property actionType
+* Enum value AGENT_TOPIC_SUMMARY_VIEW was added to property viewType
+* Enum value AGENT_TOPIC_DETAIL_VIEW was added to property viewType
+* Enum value QUEUE_TOPIC_SUMMARY_VIEW was added to property viewType
+* Enum value QUEUE_TOPIC_DETAIL_VIEW was added to property viewType
+* Enum value FLOW_TOPIC_SUMMARY_VIEW was added to property viewType
+* Enum value FLOW_TOPIC_DETAIL_VIEW was added to property viewType
 
-**AnalyticsReportingSettings** (1 change)
+**ReportingExportMetadataJobResponse** (6 changes)
 
-* Model was added
+* Enum value AGENT_TOPIC_SUMMARY_VIEW was added to property viewType
+* Enum value AGENT_TOPIC_DETAIL_VIEW was added to property viewType
+* Enum value QUEUE_TOPIC_SUMMARY_VIEW was added to property viewType
+* Enum value QUEUE_TOPIC_DETAIL_VIEW was added to property viewType
+* Enum value FLOW_TOPIC_SUMMARY_VIEW was added to property viewType
+* Enum value FLOW_TOPIC_DETAIL_VIEW was added to property viewType
 
-**ViewFilter** (4 changes)
+**ReportingExportJobRequest** (6 changes)
 
-* Enum value Assessment was added to property developmentTypeList
-* Enum value AssessedContent was added to property developmentTypeList
-* Optional property isAgentOwnedCallback was added
-* Optional property agentCallbackOwnerIds was added
+* Enum value AGENT_TOPIC_SUMMARY_VIEW was added to property viewType
+* Enum value AGENT_TOPIC_DETAIL_VIEW was added to property viewType
+* Enum value QUEUE_TOPIC_SUMMARY_VIEW was added to property viewType
+* Enum value QUEUE_TOPIC_DETAIL_VIEW was added to property viewType
+* Enum value FLOW_TOPIC_SUMMARY_VIEW was added to property viewType
+* Enum value FLOW_TOPIC_DETAIL_VIEW was added to property viewType
 
-**ReportingExportJobResponse** (2 changes)
+**AuditLogMessage** (3 changes)
 
-* Enum value FLOW_MILESTONE_PERFORMANCE_DETAIL_VIEW was added to property viewType
-* Enum value FLOW_MILESTONE_PERFORMANCE_INTERVAL_DETAIL_VIEW was added to property viewType
+* Enum value Directory was added to property serviceName
+* Enum value Profile was added to property entityType
+* Enum value ProfileMembers was added to property entityType
 
-**ReportingExportMetadataJobResponse** (2 changes)
+**AuditRealtimeQueryRequest** (1 change)
 
-* Enum value FLOW_MILESTONE_PERFORMANCE_DETAIL_VIEW was added to property viewType
-* Enum value FLOW_MILESTONE_PERFORMANCE_INTERVAL_DETAIL_VIEW was added to property viewType
+* Enum value Directory was added to property serviceName
 
-**ReportingExportJobRequest** (2 changes)
+**AuditQueryExecutionStatusResponse** (1 change)
 
-* Enum value FLOW_MILESTONE_PERFORMANCE_DETAIL_VIEW was added to property viewType
-* Enum value FLOW_MILESTONE_PERFORMANCE_INTERVAL_DETAIL_VIEW was added to property viewType
-
-**FieldList** (1 change)
-
-* Optional property gdpr was added
-
-**AuditLogMessage** (2 changes)
-
-* Enum value Verify was added to property action
-* Enum value Location was added to property entityType
+* Enum value Directory was added to property serviceName
 
 **AuditQueryEntity** (2 changes)
 
-* Enum value Location was added to property name
-* Enum value Verify was added to property actions
+* Enum value Profile was added to property name
+* Enum value ProfileMembers was added to property name
 
-**MemberGroup** (1 change)
+**AuditQueryService** (1 change)
 
-* Model was added
+* Enum value Directory was added to property name
 
-**Queue** (2 changes)
+**AuditQueryRequest** (1 change)
 
-* Optional property emailInQueueFlow was added
-* Optional property messageInQueueFlow was added
+* Enum value Directory was added to property serviceName
 
-**DataSchema** (1 change)
+**DurationCondition** (1 change)
 
-* id is no longer readonly
+* Optional property durationMode was added
 
-**Message** (2 changes)
-
-* Optional property authenticated was added
-* Optional property agentAssistantId was added
-
-**ConversationReason** (1 change)
-
-* Enum value RecipientOptedOut was added to property code
-
-**MessageData** (1 change)
-
-* Optional property conversationId was added
-
-**MessageMediaParticipant** (1 change)
-
-* Optional property authenticated was added
-
-**PerformanceProfile** (1 change)
-
-* Optional property memberCount was added
-
-**Metrics** (4 changes)
-
-* Optional property linkedMetric was added
-* Optional property dateCreated was added
-* Optional property dateUnlinked was added
-* Optional property sourcePerformanceProfile was added
-
-**CreatePerformanceProfile** (1 change)
+**ConversationTagsUpdate** (1 change)
 
 * Model was added
 
-**CustomEventAttribute** (1 change)
+**RoutingData** (1 change)
+
+* Optional property routingFlags was added
+
+**Recording** (1 change)
+
+* Optional property originalRecordingStartTime was added
+
+**TextBotDisconnectAction** (1 change)
+
+* Optional property flowOutcomes was added
+
+**TextBotExitAction** (1 change)
+
+* Optional property flowOutcomes was added
+
+**TextBotFlowMilestone** (1 change)
 
 * Model was added
 
-**CustomEventAttributeList** (1 change)
+**TextBotFlowOutcome** (1 change)
 
 * Model was added
 
-**Browser** (1 change)
+**UserState** (1 change)
 
 * Model was added
 
-**Device** (1 change)
+**BuSchedulingSettings** (1 change)
 
 * Model was added
 
-**JourneyCampaign** (1 change)
+**SchedulerMessageTypeSeverity** (1 change)
 
 * Model was added
 
-**JourneyGeolocation** (1 change)
+**SchedulingNoForecastOptionsRequest** (1 change)
 
 * Model was added
 
-**JourneyPage** (1 change)
+**SchedulingOptionsRequest** (1 change)
 
 * Model was added
 
-**Referrer** (1 change)
 
-* Model was added
+# Point Changes (3 changes)
 
-**OutcomeEventScore** (1 change)
-
-* Model was added
-
-**OutcomeScoresResult** (1 change)
-
-* Model was added
-
-**AchievedOutcome** (1 change)
-
-* Model was added
-
-**AssignedSegment** (1 change)
-
-* Model was added
-
-**ConnectedQueue** (1 change)
-
-* Model was added
-
-**ConnectedUser** (1 change)
-
-* Model was added
-
-**ConversationChannel** (1 change)
-
-* Model was added
-
-**ConversationUserDisposition** (1 change)
-
-* Model was added
-
-**OutcomeAchievement** (1 change)
-
-* Model was added
-
-**Session** (1 change)
-
-* Model was added
-
-**SessionLastEvent** (1 change)
-
-* Model was added
-
-**SessionSegmentAssignment** (1 change)
-
-* Model was added
-
-**CustomerInteractionCenter** (1 change)
-
-* Optional property relyingPartyIdentifier was added
-
-**Okta** (1 change)
-
-* Optional property relyingPartyIdentifier was added
-
-**OneLogin** (1 change)
-
-* Optional property relyingPartyIdentifier was added
-
-**PureEngage** (1 change)
-
-* Optional property relyingPartyIdentifier was added
-
-**Salesforce** (1 change)
-
-* Optional property relyingPartyIdentifier was added
-
-**QueueRequest** (2 changes)
-
-* Optional property emailInQueueFlow was added
-* Optional property messageInQueueFlow was added
-
-**UserQueue** (2 changes)
-
-* Optional property emailInQueueFlow was added
-* Optional property messageInQueueFlow was added
-
-**CreateQueueRequest** (2 changes)
-
-* Optional property emailInQueueFlow was added
-* Optional property messageInQueueFlow was added
-
-**Predictor** (1 change)
-
-* Optional property errorCode was added
-
-**PredictorSchedule** (1 change)
-
-* Enum value OngoingValueMonitoring was added to property scheduleType
-
-**GeneralProgramJobRequest** (5 changes)
-
-* Enum value fr-FR was added to property dialect
-* Enum value fr-CA was added to property dialect
-* Enum value it-IT was added to property dialect
-* Enum value de-DE was added to property dialect
-* Enum value pt-BR was added to property dialect
-
-**TopicsEntityListing** (1 change)
-
-* Optional property total was added
-
-**TextBotPromptSegment** (2 changes)
-
-* Enum value RichMedia was added to property type
-* Optional property content was added
-
-**CobrowseSettings** (1 change)
-
-* Model was added
-
-**WebDeploymentConfigurationVersion** (1 change)
-
-* Optional property cobrowse was added
-
-**DevelopmentActivityAggregateQueryRequestPredicate** (1 change)
-
-* Enum value isPassed was added to property dimension
-
-**LearningAssignmentAggregateQueryRequestPredicate** (1 change)
-
-* Enum value isPassed was added to property dimension
-
-
-# Point Changes (7 changes)
-
-**GET /api/v2/conversations/messages/{conversationId}/messages/{messageId}** (1 change)
-
-* Summary was changed
-
-**GET /api/v2/gamification/scorecards/points/average** (1 change)
-
-* Summary was changed
-
-**GET /api/v2/gamification/scorecards/values/average** (1 change)
-
-* Summary was changed
-
-**GET /api/v2/gamification/scorecards/users/{userId}/values/trends** (1 change)
-
-* Summary was changed
-
-**HEAD /api/v2/notifications/channels/{channelId}** (1 change)
+**GET /api/v2/quality/agents/activity** (3 changes)
 
 * Description was changed
-
-**GET /api/v2/speechandtextanalytics/topics** (1 change)
-
-* Description was changed for parameter state
-
-**GET /api/v2/users** (1 change)
-
-* Description was changed for parameter integrationPresenceSource
+* Description was changed for parameter startTime
+* Description was changed for parameter endTime

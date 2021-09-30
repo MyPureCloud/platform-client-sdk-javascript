@@ -345,7 +345,7 @@ GET /api/v2/quality/agents/activity
 
 Gets a list of Agent Activities
 
-Including the number of evaluations and average evaluation score
+Includes the number of evaluations and average evaluation score. These statistics include released evaluations only when evaluatorUserId is provided. In the absence of evaluatorUserId in the request, the api excludes evaluations which are set to never release for the calculation of evaluation statistics. 
 
 Requires ANY permissions: 
 
@@ -371,8 +371,8 @@ let opts = {
   'expand': ["expand_example"], // [String] | variable name requested by expand list
   'nextPage': "nextPage_example", // String | next page token
   'previousPage': "previousPage_example", // String | Previous page token
-  'startTime': new Date("2013-10-20T19:20:30+01:00"), // Date | Start time of agent activity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
-  'endTime': new Date("2013-10-20T19:20:30+01:00"), // Date | End time of agent activity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+  'startTime': new Date("2013-10-20T19:20:30+01:00"), // Date | Start time of agent activity based on assigned date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+  'endTime': new Date("2013-10-20T19:20:30+01:00"), // Date | End time of agent activity based on assigned date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
   'agentUserId': ["agentUserId_example"], // [String] | user id of agent requested
   'evaluatorUserId': "evaluatorUserId_example", // String | user id of the evaluator
   'name': "name_example", // String | name
@@ -400,8 +400,8 @@ apiInstance.getQualityAgentsActivity(opts)
  **expand** | **[String]** | variable name requested by expand list | [optional]  |
  **nextPage** | **String** | next page token | [optional]  |
  **previousPage** | **String** | Previous page token | [optional]  |
- **startTime** | **Date** | Start time of agent activity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional]  |
- **endTime** | **Date** | End time of agent activity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional]  |
+ **startTime** | **Date** | Start time of agent activity based on assigned date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional]  |
+ **endTime** | **Date** | End time of agent activity based on assigned date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional]  |
  **agentUserId** | **[String]** | user id of agent requested | [optional]  |
  **evaluatorUserId** | **String** | user id of the evaluator | [optional]  |
  **name** | **String** | name | [optional]  |

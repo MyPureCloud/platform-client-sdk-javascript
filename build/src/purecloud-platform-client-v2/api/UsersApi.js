@@ -5,7 +5,7 @@ class UsersApi {
 	/**
 	 * Users service.
 	 * @module purecloud-platform-client-v2/api/UsersApi
-	 * @version 121.0.0
+	 * @version 122.0.0
 	 */
 
 	/**
@@ -922,6 +922,31 @@ class UsersApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/users/{userId}/routingstatus', 
+			'GET', 
+			{ 'userId': userId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get user state information.
+	 * 
+	 * @param {String} userId User ID
+	 */
+	getUserState(userId) { 
+		// verify the required parameter 'userId' is set
+		if (userId === undefined || userId === null) {
+			throw 'Missing the required parameter "userId" when calling getUserState';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/users/{userId}/state', 
 			'GET', 
 			{ 'userId': userId }, 
 			{  }, 
@@ -2174,6 +2199,36 @@ class UsersApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/users/{userId}/routingstatus', 
+			'PUT', 
+			{ 'userId': userId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update user state information.
+	 * 
+	 * @param {String} userId User ID
+	 * @param {Object} body User
+	 */
+	putUserState(userId, body) { 
+		// verify the required parameter 'userId' is set
+		if (userId === undefined || userId === null) {
+			throw 'Missing the required parameter "userId" when calling putUserState';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putUserState';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/users/{userId}/state', 
 			'PUT', 
 			{ 'userId': userId }, 
 			{  }, 
