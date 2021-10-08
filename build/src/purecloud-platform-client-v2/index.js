@@ -59,6 +59,7 @@ import UtilitiesApi from './api/UtilitiesApi.js';
 import VoicemailApi from './api/VoicemailApi.js';
 import WebChatApi from './api/WebChatApi.js';
 import WebDeploymentsApi from './api/WebDeploymentsApi.js';
+import WebMessagingApi from './api/WebMessagingApi.js';
 import WidgetsApi from './api/WidgetsApi.js';
 import WorkforceManagementApi from './api/WorkforceManagementApi.js';
 
@@ -92,7 +93,7 @@ import WorkforceManagementApi from './api/WorkforceManagementApi.js';
  * </pre>
  * </p>
  * @module purecloud-platform-client-v2/index
- * @version 122.0.0
+ * @version 123.0.0
  */
 class platformClient {
 	constructor() {
@@ -396,6 +397,11 @@ class platformClient {
 		 * @property {module:purecloud-platform-client-v2/api/WebDeploymentsApi}
 		 */
 		this.WebDeploymentsApi = WebDeploymentsApi;
+		/**
+		 * The WebMessagingApi service constructor.
+		 * @property {module:purecloud-platform-client-v2/api/WebMessagingApi}
+		 */
+		this.WebMessagingApi = WebMessagingApi;
 		/**
 		 * The WidgetsApi service constructor.
 		 * @property {module:purecloud-platform-client-v2/api/WidgetsApi}

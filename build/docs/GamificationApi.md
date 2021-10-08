@@ -514,6 +514,8 @@ Performance profile by id
 Requires ANY permissions: 
 
 * gamification:profile:view
+* gamification:leaderboard:viewAll
+* gamification:scorecard:viewAll
 
 ### Example Usage
 
@@ -748,6 +750,8 @@ All performance profiles
 Requires ANY permissions: 
 
 * gamification:profile:view
+* gamification:leaderboard:viewAll
+* gamification:scorecard:viewAll
 
 ### Example Usage
 

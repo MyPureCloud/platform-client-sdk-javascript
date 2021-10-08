@@ -138,7 +138,7 @@ apiInstance.deleteKnowledgeKnowledgebaseLanguageCategory(categoryId, knowledgeBa
 | ------------- | ------------- | ------------- | ------------- |
  **categoryId** | **String** | Category ID |  |
  **knowledgeBaseId** | **String** | Knowledge base ID |  |
- **languageCode** | **String** | Language code, format: iso2-LOCALE | <br />**Values**: en-US, de-DE |
+ **languageCode** | **String** | Language code, format: iso2-LOCALE | <br />**Values**: en-US, en-UK, en-AU, de-DE |
 {: class="table table-striped"}
 
 ### Return type
@@ -195,7 +195,7 @@ apiInstance.deleteKnowledgeKnowledgebaseLanguageDocument(documentId, knowledgeBa
 | ------------- | ------------- | ------------- | ------------- |
  **documentId** | **String** | Document ID |  |
  **knowledgeBaseId** | **String** | Knowledge base ID |  |
- **languageCode** | **String** | Language code, format: iso2-LOCALE | <br />**Values**: en-US, de-DE |
+ **languageCode** | **String** | Language code, format: iso2-LOCALE | <br />**Values**: en-US, en-UK, en-AU, de-DE |
 {: class="table table-striped"}
 
 ### Return type
@@ -251,7 +251,7 @@ apiInstance.deleteKnowledgeKnowledgebaseLanguageDocumentsImport(knowledgeBaseId,
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **knowledgeBaseId** | **String** | Knowledge base ID |  |
- **languageCode** | **String** | Language code, format: iso2-LOCALE | <br />**Values**: en-US, de-DE |
+ **languageCode** | **String** | Language code, format: iso2-LOCALE | <br />**Values**: en-US, en-UK, en-AU, de-DE |
  **importId** | **String** | Import ID |  |
 {: class="table table-striped"}
 
@@ -367,7 +367,7 @@ apiInstance.getKnowledgeKnowledgebaseLanguageCategories(knowledgeBaseId, languag
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **knowledgeBaseId** | **String** | Knowledge base ID |  |
- **languageCode** | **String** | Language code, format: iso2-LOCALE | <br />**Values**: en-US, de-DE |
+ **languageCode** | **String** | Language code, format: iso2-LOCALE | <br />**Values**: en-US, en-UK, en-AU, de-DE |
  **before** | **String** | The cursor that points to the start of the set of entities that has been returned. | [optional]  |
  **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
  **limit** | **String** | Number of entities to return. Maximum of 200. Deprecated in favour of pageSize, use CursorQueryParameters instead. | [optional]  |
@@ -429,7 +429,7 @@ apiInstance.getKnowledgeKnowledgebaseLanguageCategory(categoryId, knowledgeBaseI
 | ------------- | ------------- | ------------- | ------------- |
  **categoryId** | **String** | Category ID |  |
  **knowledgeBaseId** | **String** | Knowledge base ID |  |
- **languageCode** | **String** | Language code, format: iso2-LOCALE | <br />**Values**: en-US, de-DE |
+ **languageCode** | **String** | Language code, format: iso2-LOCALE | <br />**Values**: en-US, en-UK, en-AU, de-DE |
 {: class="table table-striped"}
 
 ### Return type
@@ -486,7 +486,7 @@ apiInstance.getKnowledgeKnowledgebaseLanguageDocument(documentId, knowledgeBaseI
 | ------------- | ------------- | ------------- | ------------- |
  **documentId** | **String** | Document ID |  |
  **knowledgeBaseId** | **String** | Knowledge base ID |  |
- **languageCode** | **String** | Language code, format: iso2-LOCALE | <br />**Values**: en-US, de-DE |
+ **languageCode** | **String** | Language code, format: iso2-LOCALE | <br />**Values**: en-US, en-UK, en-AU, de-DE |
 {: class="table table-striped"}
 
 ### Return type
@@ -531,6 +531,8 @@ let opts = {
   'pageSize': "pageSize_example", // String | Number of entities to return. Maximum of 200.
   'categories': "categories_example", // String | Filter by categories ids, comma separated values expected.
   'title': "title_example", // String | Filter by document title.
+  'sortBy': "sortBy_example", // String | Sort by.
+  'sortOrder': "sortOrder_example", // String | Sort Order.
   'documentIds': ["documentIds_example"] // [String] | Comma-separated list of document identifiers to fetch by.
 };
 
@@ -550,13 +552,15 @@ apiInstance.getKnowledgeKnowledgebaseLanguageDocuments(knowledgeBaseId, language
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **knowledgeBaseId** | **String** | Knowledge base ID |  |
- **languageCode** | **String** | Language code, format: iso2-LOCALE | <br />**Values**: en-US, de-DE |
+ **languageCode** | **String** | Language code, format: iso2-LOCALE | <br />**Values**: en-US, en-UK, en-AU, de-DE |
  **before** | **String** | The cursor that points to the start of the set of entities that has been returned. | [optional]  |
  **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
  **limit** | **String** | Number of entities to return. Maximum of 200. Deprecated in favour of pageSize, use CursorQueryParameters instead. | [optional]  |
  **pageSize** | **String** | Number of entities to return. Maximum of 200. | [optional]  |
  **categories** | **String** | Filter by categories ids, comma separated values expected. | [optional]  |
  **title** | **String** | Filter by document title. | [optional]  |
+ **sortBy** | **String** | Sort by. | [optional] <br />**Values**: Title, Date |
+ **sortOrder** | **String** | Sort Order. | [optional] <br />**Values**: ASC, ascending, DESC, descending |
  **documentIds** | **[String]** | Comma-separated list of document identifiers to fetch by. | [optional]  |
 {: class="table table-striped"}
 
@@ -613,7 +617,7 @@ apiInstance.getKnowledgeKnowledgebaseLanguageDocumentsImport(knowledgeBaseId, la
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **knowledgeBaseId** | **String** | Knowledge base ID |  |
- **languageCode** | **String** | Language code, format: iso2-LOCALE | <br />**Values**: en-US, de-DE |
+ **languageCode** | **String** | Language code, format: iso2-LOCALE | <br />**Values**: en-US, en-UK, en-AU, de-DE |
  **importId** | **String** | Import ID |  |
 {: class="table table-striped"}
 
@@ -670,7 +674,7 @@ apiInstance.getKnowledgeKnowledgebaseLanguageTraining(knowledgeBaseId, languageC
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **knowledgeBaseId** | **String** | Knowledge base ID |  |
- **languageCode** | **String** | Language code, format: iso2-LOCALE | <br />**Values**: en-US, de-DE |
+ **languageCode** | **String** | Language code, format: iso2-LOCALE | <br />**Values**: en-US, en-UK, en-AU, de-DE |
  **trainingId** | **String** | Training ID |  |
 {: class="table table-striped"}
 
@@ -733,7 +737,7 @@ apiInstance.getKnowledgeKnowledgebaseLanguageTrainings(knowledgeBaseId, language
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **knowledgeBaseId** | **String** | Knowledge base ID |  |
- **languageCode** | **String** | Language code, format: iso2-LOCALE | <br />**Values**: en-US, de-DE |
+ **languageCode** | **String** | Language code, format: iso2-LOCALE | <br />**Values**: en-US, en-UK, en-AU, de-DE |
  **before** | **String** | The cursor that points to the start of the set of entities that has been returned. | [optional]  |
  **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
  **limit** | **String** | Number of entities to return. Maximum of 200. Deprecated in favour of pageSize, use CursorQueryParameters instead. | [optional]  |
@@ -781,7 +785,9 @@ let opts = {
   'pageSize': "pageSize_example", // String | Number of entities to return. Maximum of 200.
   'name': "name_example", // String | Filter by Name.
   'coreLanguage': "coreLanguage_example", // String | Filter by core language.
-  'published': true // Boolean | Filter by published status.
+  'published': true, // Boolean | Filter by published status.
+  'sortBy': "sortBy_example", // String | Sort by.
+  'sortOrder': "sortOrder_example" // String | Sort Order.
 };
 
 apiInstance.getKnowledgeKnowledgebases(opts)
@@ -804,8 +810,10 @@ apiInstance.getKnowledgeKnowledgebases(opts)
  **limit** | **String** | Number of entities to return. Maximum of 200. Deprecated in favour of pageSize, use CursorQueryParameters instead. | [optional]  |
  **pageSize** | **String** | Number of entities to return. Maximum of 200. | [optional]  |
  **name** | **String** | Filter by Name. | [optional]  |
- **coreLanguage** | **String** | Filter by core language. | [optional] <br />**Values**: en-US, de-DE |
+ **coreLanguage** | **String** | Filter by core language. | [optional] <br />**Values**: en-US, en-UK, en-AU, de-DE |
  **published** | **Boolean** | Filter by published status. | [optional]  |
+ **sortBy** | **String** | Sort by. | [optional] <br />**Values**: Name, Date |
+ **sortOrder** | **String** | Sort Order. | [optional] <br />**Values**: ASC, ascending, DESC, descending |
 {: class="table table-striped"}
 
 ### Return type
@@ -918,7 +926,7 @@ apiInstance.patchKnowledgeKnowledgebaseLanguageCategory(categoryId, knowledgeBas
 | ------------- | ------------- | ------------- | ------------- |
  **categoryId** | **String** | Category ID |  |
  **knowledgeBaseId** | **String** | Knowledge base ID |  |
- **languageCode** | **String** | Language code, format: iso2-LOCALE | <br />**Values**: en-US, de-DE |
+ **languageCode** | **String** | Language code, format: iso2-LOCALE | <br />**Values**: en-US, en-UK, en-AU, de-DE |
  **body** | **Object** |  |  |
 {: class="table table-striped"}
 
@@ -977,7 +985,7 @@ apiInstance.patchKnowledgeKnowledgebaseLanguageDocument(documentId, knowledgeBas
 | ------------- | ------------- | ------------- | ------------- |
  **documentId** | **String** | Document ID |  |
  **knowledgeBaseId** | **String** | Knowledge base ID |  |
- **languageCode** | **String** | Language code, format: iso2-LOCALE | <br />**Values**: en-US, de-DE |
+ **languageCode** | **String** | Language code, format: iso2-LOCALE | <br />**Values**: en-US, en-UK, en-AU, de-DE |
  **body** | **Object** |  |  |
 {: class="table table-striped"}
 
@@ -1034,7 +1042,7 @@ apiInstance.patchKnowledgeKnowledgebaseLanguageDocuments(knowledgeBaseId, langua
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **knowledgeBaseId** | **String** | Knowledge base ID |  |
- **languageCode** | **String** | Language code, format: iso2-LOCALE | <br />**Values**: en-US, de-DE |
+ **languageCode** | **String** | Language code, format: iso2-LOCALE | <br />**Values**: en-US, en-UK, en-AU, de-DE |
  **body** | **Object** |  |  |
 {: class="table table-striped"}
 
@@ -1093,7 +1101,7 @@ apiInstance.patchKnowledgeKnowledgebaseLanguageDocumentsImport(knowledgeBaseId, 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **knowledgeBaseId** | **String** | Knowledge base ID |  |
- **languageCode** | **String** | Language code, format: iso2-LOCALE | <br />**Values**: en-US, de-DE |
+ **languageCode** | **String** | Language code, format: iso2-LOCALE | <br />**Values**: en-US, en-UK, en-AU, de-DE |
  **importId** | **String** | Import ID |  |
  **body** | **Object** |  |  |
 {: class="table table-striped"}
@@ -1204,7 +1212,7 @@ apiInstance.postKnowledgeKnowledgebaseLanguageCategories(knowledgeBaseId, langua
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **knowledgeBaseId** | **String** | Knowledge base ID |  |
- **languageCode** | **String** | Language code, format: iso2-LOCALE | <br />**Values**: en-US, de-DE |
+ **languageCode** | **String** | Language code, format: iso2-LOCALE | <br />**Values**: en-US, en-UK, en-AU, de-DE |
  **body** | **Object** |  |  |
 {: class="table table-striped"}
 
@@ -1261,7 +1269,7 @@ apiInstance.postKnowledgeKnowledgebaseLanguageDocuments(knowledgeBaseId, languag
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **knowledgeBaseId** | **String** | Knowledge base ID |  |
- **languageCode** | **String** | Language code, format: iso2-LOCALE | <br />**Values**: en-US, de-DE |
+ **languageCode** | **String** | Language code, format: iso2-LOCALE | <br />**Values**: en-US, en-UK, en-AU, de-DE |
  **body** | **Object** |  |  |
 {: class="table table-striped"}
 
@@ -1318,7 +1326,7 @@ apiInstance.postKnowledgeKnowledgebaseLanguageDocumentsImports(knowledgeBaseId, 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **knowledgeBaseId** | **String** | Knowledge base ID |  |
- **languageCode** | **String** | Language code, format: iso2-LOCALE | <br />**Values**: en-US, de-DE |
+ **languageCode** | **String** | Language code, format: iso2-LOCALE | <br />**Values**: en-US, en-UK, en-AU, de-DE |
  **body** | **Object** |  |  |
 {: class="table table-striped"}
 
@@ -1375,7 +1383,7 @@ apiInstance.postKnowledgeKnowledgebaseLanguageTrainingPromote(knowledgeBaseId, l
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **knowledgeBaseId** | **String** | Knowledge base ID |  |
- **languageCode** | **String** | Language code, format: iso2-LOCALE | <br />**Values**: en-US, de-DE |
+ **languageCode** | **String** | Language code, format: iso2-LOCALE | <br />**Values**: en-US, en-UK, en-AU, de-DE |
  **trainingId** | **String** | Training ID |  |
 {: class="table table-striped"}
 
@@ -1431,7 +1439,7 @@ apiInstance.postKnowledgeKnowledgebaseLanguageTrainings(knowledgeBaseId, languag
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **knowledgeBaseId** | **String** | Knowledge base ID |  |
- **languageCode** | **String** | Language code, format: iso2-LOCALE | <br />**Values**: en-US, de-DE |
+ **languageCode** | **String** | Language code, format: iso2-LOCALE | <br />**Values**: en-US, en-UK, en-AU, de-DE |
 {: class="table table-striped"}
 
 ### Return type

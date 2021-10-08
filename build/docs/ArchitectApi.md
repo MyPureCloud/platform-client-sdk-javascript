@@ -5849,7 +5849,7 @@ apiInstance.putFlow(flowId, body)
 
 <a name="putFlowsDatatable"></a>
 
-# DataTable putFlowsDatatable(datatableId, opts)
+# DataTable putFlowsDatatable(datatableId, body, opts)
 
 
 
@@ -5877,12 +5877,12 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ArchitectApi();
 
 let datatableId = "datatableId_example"; // String | id of datatable
+let body = {}; // Object | datatable json-schema
 let opts = { 
-  'expand': "expand_example", // String | Expand instructions for the result
-  'body': {} // Object | datatable json-schema
+  'expand': "expand_example" // String | Expand instructions for the result
 };
 
-apiInstance.putFlowsDatatable(datatableId, opts)
+apiInstance.putFlowsDatatable(datatableId, body, opts)
   .then((data) => {
     console.log(`putFlowsDatatable success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -5898,8 +5898,8 @@ apiInstance.putFlowsDatatable(datatableId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **datatableId** | **String** | id of datatable |  |
+ **body** | **Object** | datatable json-schema |  |
  **expand** | **String** | Expand instructions for the result | [optional] <br />**Values**: schema |
- **body** | **Object** | datatable json-schema | [optional]  |
 {: class="table table-striped"}
 
 ### Return type

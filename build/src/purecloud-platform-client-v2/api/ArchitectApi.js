@@ -5,7 +5,7 @@ class ArchitectApi {
 	/**
 	 * Architect service.
 	 * @module purecloud-platform-client-v2/api/ArchitectApi
-	 * @version 122.0.0
+	 * @version 123.0.0
 	 */
 
 	/**
@@ -2873,16 +2873,20 @@ class ArchitectApi {
 	 * Updates a specific datatable by id
 	 * Updates a schema for a datatable with the given datatableId -updates allow only new fields to be added in the schema, no changes or removals of existing fields.
 	 * @param {String} datatableId id of datatable
+	 * @param {Object} body datatable json-schema
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.expand Expand instructions for the result
-	 * @param {Object} opts.body datatable json-schema
 	 */
-	putFlowsDatatable(datatableId, opts) { 
+	putFlowsDatatable(datatableId, body, opts) { 
 		opts = opts || {};
 		
 		// verify the required parameter 'datatableId' is set
 		if (datatableId === undefined || datatableId === null) {
 			throw 'Missing the required parameter "datatableId" when calling putFlowsDatatable';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putFlowsDatatable';
 		}
 
 		return this.apiClient.callApi(
@@ -2892,7 +2896,7 @@ class ArchitectApi {
 			{ 'expand': opts['expand'] }, 
 			{  }, 
 			{  }, 
-			opts['body'], 
+			body, 
 			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']

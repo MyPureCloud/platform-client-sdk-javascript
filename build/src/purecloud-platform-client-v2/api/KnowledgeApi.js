@@ -5,7 +5,7 @@ class KnowledgeApi {
 	/**
 	 * Knowledge service.
 	 * @module purecloud-platform-client-v2/api/KnowledgeApi
-	 * @version 122.0.0
+	 * @version 123.0.0
 	 */
 
 	/**
@@ -295,6 +295,8 @@ class KnowledgeApi {
 	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
 	 * @param {String} opts.categories Filter by categories ids, comma separated values expected.
 	 * @param {String} opts.title Filter by document title.
+	 * @param {Object} opts.sortBy Sort by.
+	 * @param {Object} opts.sortOrder Sort Order.
 	 * @param {Array.<String>} opts.documentIds Comma-separated list of document identifiers to fetch by.
 	 */
 	getKnowledgeKnowledgebaseLanguageDocuments(knowledgeBaseId, languageCode, opts) { 
@@ -313,7 +315,7 @@ class KnowledgeApi {
 			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents', 
 			'GET', 
 			{ 'knowledgeBaseId': knowledgeBaseId,'languageCode': languageCode }, 
-			{ 'before': opts['before'],'after': opts['after'],'limit': opts['limit'],'pageSize': opts['pageSize'],'categories': opts['categories'],'title': opts['title'],'documentIds': this.apiClient.buildCollectionParam(opts['documentIds'], 'multi') }, 
+			{ 'before': opts['before'],'after': opts['after'],'limit': opts['limit'],'pageSize': opts['pageSize'],'categories': opts['categories'],'title': opts['title'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'documentIds': this.apiClient.buildCollectionParam(opts['documentIds'], 'multi') }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -442,6 +444,8 @@ class KnowledgeApi {
 	 * @param {String} opts.name Filter by Name.
 	 * @param {Object} opts.coreLanguage Filter by core language.
 	 * @param {Boolean} opts.published Filter by published status.
+	 * @param {Object} opts.sortBy Sort by.
+	 * @param {Object} opts.sortOrder Sort Order.
 	 */
 	getKnowledgeKnowledgebases(opts) { 
 		opts = opts || {};
@@ -451,7 +455,7 @@ class KnowledgeApi {
 			'/api/v2/knowledge/knowledgebases', 
 			'GET', 
 			{  }, 
-			{ 'before': opts['before'],'after': opts['after'],'limit': opts['limit'],'pageSize': opts['pageSize'],'name': opts['name'],'coreLanguage': opts['coreLanguage'],'published': opts['published'] }, 
+			{ 'before': opts['before'],'after': opts['after'],'limit': opts['limit'],'pageSize': opts['pageSize'],'name': opts['name'],'coreLanguage': opts['coreLanguage'],'published': opts['published'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] }, 
 			{  }, 
 			{  }, 
 			null, 

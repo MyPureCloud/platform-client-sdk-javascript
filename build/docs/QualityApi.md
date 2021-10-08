@@ -1534,7 +1534,7 @@ apiInstance.getQualityFormsSurveysBulk(id)
 
 <a name="getQualityFormsSurveysBulkContexts"></a>
 
-# SurveyFormEntityListing getQualityFormsSurveysBulkContexts(contextId, opts)
+# [SurveyForm] getQualityFormsSurveysBulkContexts(contextId, opts)
 
 
 
@@ -1587,7 +1587,7 @@ apiInstance.getQualityFormsSurveysBulkContexts(contextId, opts)
 
 ### Return type
 
-**SurveyFormEntityListing**
+**[SurveyForm]**
 
 <a name="getQualityPublishedform"></a>
 

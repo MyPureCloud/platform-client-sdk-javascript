@@ -5,7 +5,7 @@ class ConversationsApi {
 	/**
 	 * Conversations service.
 	 * @module purecloud-platform-client-v2/api/ConversationsApi
-	 * @version 122.0.0
+	 * @version 123.0.0
 	 */
 
 	/**
@@ -3074,7 +3074,7 @@ class ConversationsApi {
 	}
 
 	/**
-	 * Attempts to manually assign a specified conversation to a specified agent.  Ignores bullseye ring, PAR score, skills, and languages.
+	 * Attempts to manually assign a specified conversation to a specified user.  Ignores bullseye ring, PAR score, skills, and languages.
 	 * 
 	 * @param {String} conversationId conversation ID
 	 * @param {Object} body Targeted user
