@@ -172,6 +172,7 @@ Delete/cancel an async request
 Requires ANY permissions: 
 
 * analytics:conversationDetail:view
+* analytics:agentConversationDetail:view
 
 ### Example Usage
 
@@ -816,6 +817,7 @@ Get status for async query for conversation details
 Requires ANY permissions: 
 
 * analytics:conversationDetail:view
+* analytics:agentConversationDetail:view
 
 ### Example Usage
 
@@ -869,6 +871,7 @@ Fetch a page of results for an async query
 Requires ANY permissions: 
 
 * analytics:conversationDetail:view
+* analytics:agentConversationDetail:view
 
 ### Example Usage
 
@@ -5780,6 +5783,7 @@ Query for conversation details asynchronously
 Requires ANY permissions: 
 
 * analytics:conversationDetail:view
+* analytics:agentConversationDetail:view
 
 ### Example Usage
 
@@ -5833,6 +5837,7 @@ Query for conversation details
 Requires ANY permissions: 
 
 * analytics:conversationDetail:view
+* analytics:agentConversationDetail:view
 
 ### Example Usage
 

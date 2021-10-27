@@ -79,8 +79,9 @@ Delete integration.
 
 
 
-Requires NO permissions: 
+Requires ANY permissions: 
 
+* integrations:integration:delete
 
 ### Example Usage
 
@@ -289,8 +290,9 @@ Get integration.
 
 
 
-Requires NO permissions: 
+Requires ANY permissions: 
 
+* integrations:integration:view
 
 ### Example Usage
 
@@ -355,8 +357,9 @@ Get integration configuration.
 
 
 
-Requires NO permissions: 
+Requires ANY permissions: 
 
+* integrations:integration:view
 
 ### Example Usage
 
@@ -407,8 +410,9 @@ List integrations
 
 
 
-Requires NO permissions: 
+Requires ANY permissions: 
 
+* integrations:integration:view
 
 ### Example Usage
 
@@ -2222,8 +2226,9 @@ Get integration type.
 
 
 
-Requires NO permissions: 
+Requires ANY permissions: 
 
+* integrations:integration:view
 
 ### Example Usage
 
@@ -2274,8 +2279,9 @@ Get properties config schema for an integration type.
 
 
 
-Requires NO permissions: 
+Requires ANY permissions: 
 
+* integrations:integration:view
 
 ### Example Usage
 
@@ -2328,8 +2334,9 @@ List integration types
 
 
 
-Requires NO permissions: 
+Requires ANY permissions: 
 
+* integrations:integration:view
 
 ### Example Usage
 
@@ -2458,8 +2465,9 @@ Update an integration.
 
 
 
-Requires NO permissions: 
+Requires ANY permissions: 
 
+* integrations:integration:edit
 
 ### Example Usage
 
@@ -2636,8 +2644,9 @@ Create an integration.
 
 
 
-Requires NO permissions: 
+Requires ANY permissions: 
 
+* integrations:integration:add
 
 ### Example Usage
 
@@ -3179,8 +3188,9 @@ Update integration configuration.
 
 
 
-Requires NO permissions: 
+Requires ANY permissions: 
 
+* integrations:integration:edit
 
 ### Example Usage
 

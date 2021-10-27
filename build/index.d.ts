@@ -4584,7 +4584,8 @@ declare class VoicemailApi {
   	postVoicemailMessages(opts?: VoicemailApi.postVoicemailMessagesOptions): Promise<Models.VoicemailMessage>; 
   	postVoicemailSearch(body: Models.VoicemailSearchRequest): Promise<Models.VoicemailsSearchResponse>; 
   	putVoicemailMessage(messageId: string, body: Models.VoicemailMessage): Promise<Models.VoicemailMessage>; 
-  	putVoicemailPolicy(body: Models.VoicemailOrganizationPolicy): Promise<Models.VoicemailOrganizationPolicy>;
+  	putVoicemailPolicy(body: Models.VoicemailOrganizationPolicy): Promise<Models.VoicemailOrganizationPolicy>; 
+  	putVoicemailUserpolicy(userId: string, body: Models.VoicemailUserPolicy): Promise<Models.VoicemailUserPolicy>;
 }
 
 declare namespace VoicemailApi { 
@@ -5041,6 +5042,58 @@ declare namespace Models {
 		"selfUri"?: string;
 	}
 	
+	export interface AcdEndDetailEventTopicAcdEndEvent { 
+		"eventTime"?: number;
+		"conversationId"?: string;
+		"participantId"?: string;
+		"sessionId"?: string;
+		"disconnectType"?: string;
+		"mediaType"?: string;
+		"provider"?: string;
+		"direction"?: string;
+		"ani"?: string;
+		"dnis"?: string;
+		"addressTo"?: string;
+		"addressFrom"?: string;
+		"callbackUserName"?: string;
+		"callbackNumbers"?: Array<string>;
+		"callbackScheduledTime"?: number;
+		"subject"?: string;
+		"messageType"?: string;
+		"queueId"?: string;
+		"divisionId"?: string;
+		"acdOutcome"?: string;
+		"answeredUserId"?: string;
+		"requestedRoutings"?: Array<string>;
+		"usedRouting"?: string;
+		"requestedRoutingSkillIds"?: Array<string>;
+		"requestedLanguageId"?: string;
+		"requestedRoutingUserIds"?: Array<string>;
+		"routingPriority"?: number;
+		"connectedDurationMs"?: number;
+	}
+	
+	export interface AcdStartDetailEventTopicAcdStartEvent { 
+		"eventTime"?: number;
+		"conversationId"?: string;
+		"participantId"?: string;
+		"sessionId"?: string;
+		"mediaType"?: string;
+		"provider"?: string;
+		"direction"?: string;
+		"ani"?: string;
+		"dnis"?: string;
+		"addressTo"?: string;
+		"addressFrom"?: string;
+		"callbackUserName"?: string;
+		"callbackNumbers"?: Array<string>;
+		"callbackScheduledTime"?: number;
+		"subject"?: string;
+		"messageType"?: string;
+		"queueId"?: string;
+		"divisionId"?: string;
+	}
+	
 	export interface AchievedOutcome { 
 		"id"?: string;
 		"outcome"?: Models.AddressableEntityRef;
@@ -5257,6 +5310,29 @@ declare namespace Models {
 	export interface ActivityCodeContainer { 
 		"activityCodes"?: { [key: string]: Models.ActivityCode; };
 		"metadata": Models.WfmVersionedEntityMetadata;
+	}
+	
+	export interface AcwDetailEventTopicAfterCallWorkEvent { 
+		"eventTime"?: number;
+		"conversationId"?: string;
+		"participantId"?: string;
+		"sessionId"?: string;
+		"mediaType"?: string;
+		"provider"?: string;
+		"direction"?: string;
+		"ani"?: string;
+		"dnis"?: string;
+		"addressTo"?: string;
+		"addressFrom"?: string;
+		"callbackUserName"?: string;
+		"callbackNumbers"?: Array<string>;
+		"callbackScheduledTime"?: number;
+		"subject"?: string;
+		"messageType"?: string;
+		"userId"?: string;
+		"queueId"?: string;
+		"wrapupCode"?: string;
+		"wrapupDurationMs"?: number;
 	}
 	
 	export interface AcwSettings { 
@@ -6330,6 +6406,13 @@ declare namespace Models {
 		"modifiedBy"?: Models.DomainEntityRef;
 		"dateModified"?: string;
 		"selfUri"?: string;
+	}
+	
+	export interface AttributeDetailEventTopicAttributeUpdateEvent { 
+		"eventTime"?: number;
+		"conversationId"?: string;
+		"participantId"?: string;
+		"attributes"?: { [key: string]: string; };
 	}
 	
 	export interface AttributeFilterItem { 
@@ -11420,6 +11503,7 @@ declare namespace Models {
 		"conversationIds"?: Array<string>;
 		"participants"?: Array<Models.Destination>;
 		"uuiData"?: string;
+		"externalContactId"?: string;
 	}
 	
 	export interface CreateCallResponse { 
@@ -11488,6 +11572,7 @@ declare namespace Models {
 		"direction"?: string;
 		"htmlBody"?: string;
 		"textBody"?: string;
+		"externalContactId"?: string;
 	}
 	
 	export interface CreateIntegrationRequest { 
@@ -11520,7 +11605,6 @@ declare namespace Models {
 		"toAddressMessengerType": string;
 		"useExistingConversation"?: boolean;
 		"externalContactId"?: string;
-		"externalOrganizationId"?: string;
 	}
 	
 	export interface CreatePerformanceProfile { 
@@ -11931,6 +12015,29 @@ declare namespace Models {
 		"values": Array<string>;
 	}
 	
+	export interface CustomerEndDetailEventTopicCustomerEndEvent { 
+		"eventTime"?: number;
+		"conversationId"?: string;
+		"participantId"?: string;
+		"sessionId"?: string;
+		"disconnectType"?: string;
+		"mediaType"?: string;
+		"externalOrganizationId"?: string;
+		"externalContactId"?: string;
+		"provider"?: string;
+		"direction"?: string;
+		"ani"?: string;
+		"dnis"?: string;
+		"addressTo"?: string;
+		"addressFrom"?: string;
+		"callbackUserName"?: string;
+		"callbackNumbers"?: Array<string>;
+		"callbackScheduledTime"?: number;
+		"subject"?: string;
+		"messageType"?: string;
+		"interactingDurationMs"?: number;
+	}
+	
 	export interface CustomerInteractionCenter { 
 		"id"?: string;
 		"name"?: string;
@@ -11943,6 +12050,27 @@ declare namespace Models {
 		"certificate"?: string;
 		"certificates"?: Array<string>;
 		"selfUri"?: string;
+	}
+	
+	export interface CustomerStartDetailEventTopicCustomerStartEvent { 
+		"eventTime"?: number;
+		"conversationId"?: string;
+		"participantId"?: string;
+		"sessionId"?: string;
+		"mediaType"?: string;
+		"externalOrganizationId"?: string;
+		"externalContactId"?: string;
+		"provider"?: string;
+		"direction"?: string;
+		"ani"?: string;
+		"dnis"?: string;
+		"addressTo"?: string;
+		"addressFrom"?: string;
+		"callbackUserName"?: string;
+		"callbackNumbers"?: Array<string>;
+		"callbackScheduledTime"?: number;
+		"subject"?: string;
+		"messageType"?: string;
 	}
 	
 	export interface DID { 
@@ -15285,6 +15413,28 @@ declare namespace Models {
 		"pageCount"?: number;
 	}
 	
+	export interface FlowEndDetailEventTopicFlowEndEvent { 
+		"eventTime"?: number;
+		"conversationId"?: string;
+		"participantId"?: string;
+		"sessionId"?: string;
+		"disconnectType"?: string;
+		"mediaType"?: string;
+		"provider"?: string;
+		"direction"?: string;
+		"ani"?: string;
+		"dnis"?: string;
+		"addressTo"?: string;
+		"addressFrom"?: string;
+		"subject"?: string;
+		"messageType"?: string;
+		"flowType"?: string;
+		"flowId"?: string;
+		"divisionId"?: string;
+		"flowVersion"?: string;
+		"connectedDurationMs"?: number;
+	}
+	
 	export interface FlowEntityListing { 
 		"entities"?: Array<Models.Flow>;
 		"pageSize"?: number;
@@ -15441,6 +15591,26 @@ declare namespace Models {
 		"outputData"?: { [key: string]: object; };
 		"conversation"?: Models.DomainEntityRef;
 		"selfUri"?: string;
+	}
+	
+	export interface FlowStartDetailEventTopicFlowStartEvent { 
+		"eventTime"?: number;
+		"conversationId"?: string;
+		"participantId"?: string;
+		"sessionId"?: string;
+		"mediaType"?: string;
+		"provider"?: string;
+		"direction"?: string;
+		"ani"?: string;
+		"dnis"?: string;
+		"addressTo"?: string;
+		"addressFrom"?: string;
+		"subject"?: string;
+		"messageType"?: string;
+		"flowType"?: string;
+		"flowId"?: string;
+		"divisionId"?: string;
+		"flowVersion"?: string;
 	}
 	
 	export interface FlowVersion { 
@@ -15653,6 +15823,33 @@ declare namespace Models {
 		"certificate"?: string;
 		"certificates"?: Array<string>;
 		"selfUri"?: string;
+	}
+	
+	export interface GamificationScorecardChangeTopicMetric { 
+		"id"?: string;
+	}
+	
+	export interface GamificationScorecardChangeTopicPerformanceMetric { 
+		"metric"?: Models.GamificationScorecardChangeTopicMetric;
+		"points"?: number;
+		"value"?: number;
+		"punctualityEvents"?: Array<Models.GamificationScorecardChangeTopicPunctualityEvent>;
+	}
+	
+	export interface GamificationScorecardChangeTopicPunctualityEvent { 
+		"dateStart"?: string;
+		"dateScheduleStart"?: string;
+		"activityCode"?: string;
+		"points"?: number;
+	}
+	
+	export interface GamificationScorecardChangeTopicScorecardChange { 
+		"workday"?: string;
+		"divisionId"?: string;
+		"teamId"?: string;
+		"performanceProfileId"?: string;
+		"userId"?: string;
+		"performanceMetrics"?: Array<Models.GamificationScorecardChangeTopicPerformanceMetric>;
 	}
 	
 	export interface GamificationStatus { 
@@ -16091,9 +16288,9 @@ declare namespace Models {
 		"started"?: string;
 		"completed"?: string;
 		"entities"?: Array<Models.HistoryEntry>;
+		"pageSize"?: number;
 		"total"?: number;
 		"pageNumber"?: number;
-		"pageSize"?: number;
 		"pageCount"?: number;
 	}
 	
@@ -16290,7 +16487,7 @@ declare namespace Models {
 		"skills"?: Array<Models.DomainEntityRef>;
 		"language"?: Models.DomainEntityRef;
 		"fromName": string;
-		"fromEmail": string;
+		"fromEmail"?: string;
 		"flow"?: Models.DomainEntityRef;
 		"replyEmailAddress"?: Models.QueueEmailAddress;
 		"autoBcc"?: Array<Models.EmailAddress>;
@@ -16677,6 +16874,136 @@ declare namespace Models {
 		"timezone"?: string;
 	}
 	
+	export interface JourneyOutcomeEventsNotificationActionMap { 
+		"id"?: string;
+		"selfUri"?: string;
+	}
+	
+	export interface JourneyOutcomeEventsNotificationBrowser { 
+		"family"?: string;
+		"version"?: string;
+		"lang"?: string;
+		"fingerprint"?: string;
+		"viewHeight"?: number;
+		"viewWidth"?: number;
+		"featuresFlash"?: boolean;
+		"featuresJava"?: boolean;
+		"featuresPdf"?: boolean;
+		"featuresWebrtc"?: boolean;
+	}
+	
+	export interface JourneyOutcomeEventsNotificationDevice { 
+		"type"?: string;
+		"isMobile"?: boolean;
+		"screenHeight"?: number;
+		"screenWidth"?: number;
+		"fingerprint"?: string;
+		"osFamily"?: string;
+		"osVersion"?: string;
+		"category"?: string;
+	}
+	
+	export interface JourneyOutcomeEventsNotificationExternalContact { 
+		"id"?: string;
+		"selfUri"?: string;
+	}
+	
+	export interface JourneyOutcomeEventsNotificationGeoLocation { 
+		"country"?: string;
+		"countryName"?: string;
+		"latitude"?: number;
+		"longitude"?: number;
+		"locality"?: string;
+		"postalCode"?: string;
+		"region"?: string;
+		"regionName"?: string;
+		"timezone"?: string;
+		"source"?: string;
+	}
+	
+	export interface JourneyOutcomeEventsNotificationMktCampaign { 
+		"content"?: string;
+		"medium"?: string;
+		"name"?: string;
+		"source"?: string;
+		"term"?: string;
+		"clickId"?: string;
+		"network"?: string;
+	}
+	
+	export interface JourneyOutcomeEventsNotificationOutcome { 
+		"id"?: string;
+		"selfUri"?: string;
+		"displayName"?: string;
+	}
+	
+	export interface JourneyOutcomeEventsNotificationOutcomeAchievedMessage { 
+		"outcome"?: Models.JourneyOutcomeEventsNotificationOutcome;
+		"browser"?: Models.JourneyOutcomeEventsNotificationBrowser;
+		"visitCreatedDate"?: string;
+		"ipAddress"?: string;
+		"ipOrganization"?: string;
+		"userAgentString"?: string;
+		"device"?: Models.JourneyOutcomeEventsNotificationDevice;
+		"geolocation"?: Models.JourneyOutcomeEventsNotificationGeoLocation;
+		"mktCampaign"?: Models.JourneyOutcomeEventsNotificationMktCampaign;
+		"visitReferrer"?: Models.JourneyOutcomeEventsNotificationReferrer;
+	}
+	
+	export interface JourneyOutcomeEventsNotificationOutcomeAttributionMessage { 
+		"outcome"?: Models.JourneyOutcomeEventsNotificationOutcome;
+		"outcomeTouchpoints"?: Array<Models.JourneyOutcomeEventsNotificationOutcomeTouchpoint>;
+		"segmentAssignments"?: Array<Models.JourneyOutcomeEventsNotificationSegment>;
+	}
+	
+	export interface JourneyOutcomeEventsNotificationOutcomeEventsNotification { 
+		"id"?: string;
+		"correlationId"?: string;
+		"externalContact"?: Models.JourneyOutcomeEventsNotificationExternalContact;
+		"createdDate"?: string;
+		"customerId"?: string;
+		"customerIdType"?: string;
+		"eventType"?: string;
+		"session"?: Models.JourneyOutcomeEventsNotificationSession;
+		"outcomeAchievedEvent"?: Models.JourneyOutcomeEventsNotificationOutcomeAchievedMessage;
+		"outcomeAttributionEventMessage"?: Models.JourneyOutcomeEventsNotificationOutcomeAttributionMessage;
+	}
+	
+	export interface JourneyOutcomeEventsNotificationOutcomeTouchpoint { 
+		"id"?: string;
+		"channels"?: Array<Models.JourneyOutcomeEventsNotificationOutcomeTouchpointChannel>;
+		"createdDate"?: string;
+		"actionMap"?: Models.JourneyOutcomeEventsNotificationActionMap;
+	}
+	
+	export interface JourneyOutcomeEventsNotificationOutcomeTouchpointChannel { 
+		"type"?: string;
+	}
+	
+	export interface JourneyOutcomeEventsNotificationReferrer { 
+		"url"?: string;
+		"domain"?: string;
+		"hostname"?: string;
+		"keywords"?: string;
+		"pathname"?: string;
+		"queryString"?: string;
+		"fragment"?: string;
+		"name"?: string;
+		"medium"?: string;
+	}
+	
+	export interface JourneyOutcomeEventsNotificationSegment { 
+		"id"?: string;
+		"selfUri"?: string;
+		"assignedDate"?: string;
+	}
+	
+	export interface JourneyOutcomeEventsNotificationSession { 
+		"id"?: string;
+		"selfUri"?: string;
+		"type"?: string;
+	}
+	
 	export interface JourneyPage { 
 		"url": string;
 		"title"?: string;
@@ -16722,6 +17049,324 @@ declare namespace Models {
 		"customerProperty"?: string;
 		"choices"?: Array<string>;
 		"isMandatory"?: boolean;
+	}
+	
+	export interface JourneyWebActionEventsNotificationActionMap { 
+		"id"?: string;
+		"selfUri"?: string;
+	}
+	
+	export interface JourneyWebActionEventsNotificationActionMapPageUrlCondition { 
+		"values"?: Array<string>;
+		"operator"?: string;
+	}
+	
+	export interface JourneyWebActionEventsNotificationActionTarget { 
+		"id"?: string;
+		"selfUri"?: string;
+	}
+	
+	export interface JourneyWebActionEventsNotificationBlockedWebActionOfferMessage { 
+		"action"?: Models.JourneyWebActionEventsNotificationEventAction;
+		"actionMap"?: Models.JourneyWebActionEventsNotificationActionMap;
+		"actionTarget"?: Models.JourneyWebActionEventsNotificationActionTarget;
+		"blockingReason"?: string;
+		"blockingActionMap"?: Models.JourneyWebActionEventsNotificationActionMap;
+		"blockingAction"?: Models.JourneyWebActionEventsNotificationEventAction;
+		"blockingFrequencyCapBehaviour"?: string;
+		"blockingPageUrlConditions"?: Array<Models.JourneyWebActionEventsNotificationActionMapPageUrlCondition>;
+		"blockingScheduleGroup"?: Models.JourneyWebActionEventsNotificationScheduleGroup;
+		"blockingEmergencyScheduleGroup"?: Models.JourneyWebActionEventsNotificationEmergencyGroup;
+	}
+	
+	export interface JourneyWebActionEventsNotificationBrowser { 
+		"family"?: string;
+		"version"?: string;
+		"lang"?: string;
+		"fingerprint"?: string;
+		"viewHeight"?: number;
+		"viewWidth"?: number;
+		"featuresFlash"?: boolean;
+		"featuresJava"?: boolean;
+		"featuresPdf"?: boolean;
+		"featuresWebrtc"?: boolean;
+	}
+	
+	export interface JourneyWebActionEventsNotificationDevice { 
+		"type"?: string;
+		"isMobile"?: boolean;
+		"screenHeight"?: number;
+		"screenWidth"?: number;
+		"fingerprint"?: string;
+		"osFamily"?: string;
+		"osVersion"?: string;
+		"category"?: string;
+	}
+	
+	export interface JourneyWebActionEventsNotificationEmergencyGroup { 
+		"id"?: string;
+		"selfUri"?: string;
+	}
+	
+	export interface JourneyWebActionEventsNotificationEventAction { 
+		"id"?: string;
+	}
+	
+	export interface JourneyWebActionEventsNotificationExternalContact { 
+		"id"?: string;
+		"selfUri"?: string;
+	}
+	
+	export interface JourneyWebActionEventsNotificationGeoLocation { 
+		"country"?: string;
+		"countryName"?: string;
+		"latitude"?: number;
+		"longitude"?: number;
+		"locality"?: string;
+		"postalCode"?: string;
+		"region"?: string;
+		"regionName"?: string;
+		"timezone"?: string;
+		"source"?: string;
+	}
+	
+	export interface JourneyWebActionEventsNotificationMktCampaign { 
+		"content"?: string;
+		"medium"?: string;
+		"name"?: string;
+		"source"?: string;
+		"term"?: string;
+		"clickId"?: string;
+		"network"?: string;
+	}
+	
+	export interface JourneyWebActionEventsNotificationReferrer { 
+		"url"?: string;
+		"domain"?: string;
+		"hostname"?: string;
+		"keywords"?: string;
+		"pathname"?: string;
+		"queryString"?: string;
+		"fragment"?: string;
+		"name"?: string;
+		"medium"?: string;
+	}
+	
+	export interface JourneyWebActionEventsNotificationScheduleGroup { 
+		"id"?: string;
+		"selfUri"?: string;
+	}
+	
+	export interface JourneyWebActionEventsNotificationSession { 
+		"id"?: string;
+		"selfUri"?: string;
+		"type"?: string;
+	}
+	
+	export interface JourneyWebActionEventsNotificationWebActionEventsNotification { 
+		"id"?: string;
+		"correlationId"?: string;
+		"externalContact"?: Models.JourneyWebActionEventsNotificationExternalContact;
+		"createdDate"?: string;
+		"customerId"?: string;
+		"customerIdType"?: string;
+		"eventType"?: string;
+		"session"?: Models.JourneyWebActionEventsNotificationSession;
+		"webActionEvent"?: Models.JourneyWebActionEventsNotificationWebActionMessage;
+		"blockedWebActionOfferEvent"?: Models.JourneyWebActionEventsNotificationBlockedWebActionOfferMessage;
+	}
+	
+	export interface JourneyWebActionEventsNotificationWebActionMessage { 
+		"action"?: Models.JourneyWebActionEventsNotificationEventAction;
+		"actionTarget"?: Models.JourneyWebActionEventsNotificationActionTarget;
+		"actionMap"?: Models.JourneyWebActionEventsNotificationActionMap;
+		"errorCode"?: string;
+		"errorMessage"?: string;
+		"userAgentString"?: string;
+		"ipAddress"?: string;
+		"ipOrganization"?: string;
+		"browser"?: Models.JourneyWebActionEventsNotificationBrowser;
+		"device"?: Models.JourneyWebActionEventsNotificationDevice;
+		"geolocation"?: Models.JourneyWebActionEventsNotificationGeoLocation;
+		"mktCampaign"?: Models.JourneyWebActionEventsNotificationMktCampaign;
+		"visitReferrer"?: Models.JourneyWebActionEventsNotificationReferrer;
+	}
+	
+	export interface JourneyWebEventsNotificationActionMap { 
+		"id"?: string;
+		"selfUri"?: string;
+		"displayName"?: string;
+		"version"?: number;
+	}
+	
+	export interface JourneyWebEventsNotificationActionTarget { 
+		"id"?: string;
+		"selfUri"?: string;
+	}
+	
+	export interface JourneyWebEventsNotificationBrowser { 
+		"family"?: string;
+		"version"?: string;
+		"lang"?: string;
+		"fingerprint"?: string;
+		"viewHeight"?: number;
+		"viewWidth"?: number;
+		"featuresFlash"?: boolean;
+		"featuresJava"?: boolean;
+		"featuresPdf"?: boolean;
+		"featuresWebrtc"?: boolean;
+	}
+	
+	export interface JourneyWebEventsNotificationCustomEventAttribute { 
+		"value"?: string;
+		"dataType"?: string;
+	}
+	
+	export interface JourneyWebEventsNotificationDevice { 
+		"type"?: string;
+		"isMobile"?: boolean;
+		"screenHeight"?: number;
+		"screenWidth"?: number;
+		"fingerprint"?: string;
+		"osFamily"?: string;
+		"osVersion"?: string;
+		"category"?: string;
+	}
+	
+	export interface JourneyWebEventsNotificationEventAction { 
+		"id"?: string;
+		"createdDate"?: string;
+		"state"?: string;
+		"mediaType"?: string;
+		"prompt"?: string;
+	}
+	
+	export interface JourneyWebEventsNotificationExternalContact { 
+		"id"?: string;
+		"selfUri"?: string;
+	}
+	
+	export interface JourneyWebEventsNotificationGeoLocation { 
+		"country"?: string;
+		"countryName"?: string;
+		"latitude"?: number;
+		"longitude"?: number;
+		"locality"?: string;
+		"postalCode"?: string;
+		"region"?: string;
+		"regionName"?: string;
+		"timezone"?: string;
+		"source"?: string;
+	}
+	
+	export interface JourneyWebEventsNotificationMktCampaign { 
+		"content"?: string;
+		"medium"?: string;
+		"name"?: string;
+		"source"?: string;
+		"term"?: string;
+		"clickId"?: string;
+		"network"?: string;
+	}
+	
+	export interface JourneyWebEventsNotificationOutcome { 
+		"id"?: string;
+		"selfUri"?: string;
+		"displayName"?: string;
+		"version"?: string;
+	}
+	
+	export interface JourneyWebEventsNotificationOutcomeAchievedMessage { 
+		"outcome"?: Models.JourneyWebEventsNotificationOutcome;
+		"browser"?: Models.JourneyWebEventsNotificationBrowser;
+		"visitCreatedDate"?: string;
+		"ipAddress"?: string;
+		"ipOrganization"?: string;
+		"userAgentString"?: string;
+		"device"?: Models.JourneyWebEventsNotificationDevice;
+		"geolocation"?: Models.JourneyWebEventsNotificationGeoLocation;
+		"mktCampaign"?: Models.JourneyWebEventsNotificationMktCampaign;
+		"visitReferrer"?: Models.JourneyWebEventsNotificationReferrer;
+	}
+	
+	export interface JourneyWebEventsNotificationPage { 
+		"url"?: string;
+		"title"?: string;
+		"domain"?: string;
+		"fragment"?: string;
+		"hostname"?: string;
+		"keywords"?: string;
+		"lang"?: string;
+		"pathname"?: string;
+		"queryString"?: string;
+		"breadcrumb"?: Array<string>;
+	}
+	
+	export interface JourneyWebEventsNotificationReferrer { 
+		"url"?: string;
+		"domain"?: string;
+		"hostname"?: string;
+		"keywords"?: string;
+		"pathname"?: string;
+		"queryString"?: string;
+		"fragment"?: string;
+		"name"?: string;
+		"medium"?: string;
+	}
+	
+	export interface JourneyWebEventsNotificationSession { 
+		"id"?: string;
+		"selfUri"?: string;
+		"type"?: string;
+	}
+	
+	export interface JourneyWebEventsNotificationWebActionMessage { 
+		"action"?: Models.JourneyWebEventsNotificationEventAction;
+		"actionTarget"?: Models.JourneyWebEventsNotificationActionTarget;
+		"actionMap"?: Models.JourneyWebEventsNotificationActionMap;
+		"errorCode"?: string;
+		"errorMessage"?: string;
+		"userAgentString"?: string;
+		"ipAddress"?: string;
+		"ipOrganization"?: string;
+		"browser"?: Models.JourneyWebEventsNotificationBrowser;
+		"device"?: Models.JourneyWebEventsNotificationDevice;
+		"geolocation"?: Models.JourneyWebEventsNotificationGeoLocation;
+		"mktCampaign"?: Models.JourneyWebEventsNotificationMktCampaign;
+		"visitReferrer"?: Models.JourneyWebEventsNotificationReferrer;
+	}
+	
+	export interface JourneyWebEventsNotificationWebEventsNotification { 
+		"id"?: string;
+		"correlationId"?: string;
+		"externalContact"?: Models.JourneyWebEventsNotificationExternalContact;
+		"createdDate"?: string;
+		"customerId"?: string;
+		"customerIdType"?: string;
+		"eventType"?: string;
+		"session"?: Models.JourneyWebEventsNotificationSession;
+		"webEvent"?: Models.JourneyWebEventsNotificationWebMessage;
+		"webActionEvent"?: Models.JourneyWebEventsNotificationWebActionMessage;
+		"outcomeAchievedEvent"?: Models.JourneyWebEventsNotificationOutcomeAchievedMessage;
+	}
+	
+	export interface JourneyWebEventsNotificationWebMessage { 
+		"eventName"?: string;
+		"totalEventCount"?: number;
+		"totalPageviewCount"?: number;
+		"userAgentString"?: string;
+		"ipAddress"?: string;
+		"ipOrganization"?: string;
+		"searchQuery"?: string;
+		"authenticated"?: boolean;
+		"browser"?: Models.JourneyWebEventsNotificationBrowser;
+		"device"?: Models.JourneyWebEventsNotificationDevice;
+		"geolocation"?: Models.JourneyWebEventsNotificationGeoLocation;
+		"mktCampaign"?: Models.JourneyWebEventsNotificationMktCampaign;
+		"page"?: Models.JourneyWebEventsNotificationPage;
+		"referrer"?: Models.JourneyWebEventsNotificationReferrer;
+		"attributes"?: { [key: string]: Models.JourneyWebEventsNotificationCustomEventAttribute; };
+		"traits"?: { [key: string]: Models.JourneyWebEventsNotificationCustomEventAttribute; };
 	}
 	
 	export interface JsonNode { 
@@ -19323,6 +19968,26 @@ declare namespace Models {
 	
 	export interface OutOfOfficeEventUser { 
 		"id"?: string;
+	}
+	
+	export interface OutboundDetailEventTopicOutboundInitEvent { 
+		"eventTime"?: number;
+		"conversationId"?: string;
+		"participantId"?: string;
+		"sessionId"?: string;
+		"mediaType"?: string;
+		"provider"?: string;
+		"direction"?: string;
+		"ani"?: string;
+		"dnis"?: string;
+		"addressTo"?: string;
+		"addressFrom"?: string;
+		"subject"?: string;
+		"messageType"?: string;
+		"outboundCampaignId"?: string;
+		"divisionId"?: string;
+		"outboundContactListId"?: string;
+		"outboundContactId"?: string;
 	}
 	
 	export interface OutboundMessagingMessagingCampaignConfigChangeContactSort { 
@@ -23230,6 +23895,8 @@ declare namespace Models {
 		"messageText"?: string;
 		"messageMediaAttachments"?: Array<Models.MessageMediaAttachment>;
 		"messageStickerAttachments"?: Array<Models.MessageStickerAttachment>;
+		"quickReplies"?: Array<Models.QuickReply>;
+		"buttonResponse"?: Models.ButtonResponse;
 	}
 	
 	export interface RecordingMetadata { 
@@ -23993,7 +24660,7 @@ declare namespace Models {
 		"createdByApp"?: string;
 		"start": string;
 		"end": string;
-		"rrule": string;
+		"rrule"?: string;
 		"selfUri"?: string;
 	}
 	
@@ -24082,6 +24749,11 @@ declare namespace Models {
 		"value"?: string;
 	}
 	
+	export interface SchedulerMessageSeverityCount { 
+		"severity"?: string;
+		"count"?: number;
+	}
+	
 	export interface SchedulerMessageTypeSeverity { 
 		"type"?: string;
 		"severity"?: string;
@@ -24130,6 +24802,7 @@ declare namespace Models {
 		"delayScheduling"?: boolean;
 		"failScheduling"?: boolean;
 		"populateWarnings"?: boolean;
+		"populateDeprecatedWarnings"?: boolean;
 	}
 	
 	export interface Schema { 
@@ -25360,6 +26033,7 @@ declare namespace Models {
 		"webRtcMediaDscp"?: number;
 		"webRtcPersistentEnabled"?: boolean;
 		"webRtcForceTurn"?: boolean;
+		"webRtcCallAppearances"?: number;
 		"selfUri"?: string;
 	}
 	
@@ -27260,6 +27934,34 @@ declare namespace Models {
 		"selfUri"?: string;
 	}
 	
+	export interface UserEndDetailEventTopicUserEndEvent { 
+		"eventTime"?: number;
+		"conversationId"?: string;
+		"participantId"?: string;
+		"sessionId"?: string;
+		"disconnectType"?: string;
+		"mediaType"?: string;
+		"provider"?: string;
+		"direction"?: string;
+		"ani"?: string;
+		"dnis"?: string;
+		"addressTo"?: string;
+		"addressFrom"?: string;
+		"callbackUserName"?: string;
+		"callbackNumbers"?: Array<string>;
+		"callbackScheduledTime"?: number;
+		"subject"?: string;
+		"messageType"?: string;
+		"userId"?: string;
+		"divisionId"?: string;
+		"queueId"?: string;
+		"interactingDurationMs"?: number;
+		"heldDurationMs"?: number;
+		"alertingDurationMs"?: number;
+		"contactingDurationMs"?: number;
+		"dialingDurationMs"?: number;
+	}
+	
 	export interface UserEntityListing { 
 		"entities"?: Array<Models.User>;
 		"pageSize"?: number;
@@ -27708,6 +28410,28 @@ declare namespace Models {
 		"pageCount"?: number;
 	}
 	
+	export interface UserStartDetailEventTopicUserStartEvent { 
+		"eventTime"?: number;
+		"conversationId"?: string;
+		"participantId"?: string;
+		"sessionId"?: string;
+		"mediaType"?: string;
+		"provider"?: string;
+		"direction"?: string;
+		"ani"?: string;
+		"dnis"?: string;
+		"addressTo"?: string;
+		"addressFrom"?: string;
+		"callbackUserName"?: string;
+		"callbackNumbers"?: Array<string>;
+		"callbackScheduledTime"?: number;
+		"subject"?: string;
+		"messageType"?: string;
+		"userId"?: string;
+		"divisionId"?: string;
+		"queueId"?: string;
+	}
+	
 	export interface UserState { 
 		"state"?: string;
 		"version"?: number;
@@ -27980,6 +28704,19 @@ declare namespace Models {
 		"isAgentOwnedCallback"?: boolean;
 		"agentCallbackOwnerIds"?: Array<string>;
 		"transcriptTopics"?: Array<Models.TranscriptTopics>;
+		"journeyFrequencyCapReasons"?: Array<string>;
+		"journeyBlockingActionMapIds"?: Array<string>;
+		"journeyActionTargetIds"?: Array<string>;
+		"journeyBlockingScheduleGroupIds"?: Array<string>;
+		"journeyBlockingEmergencyScheduleGroupIds"?: Array<string>;
+		"journeyUrlEqualConditions"?: Array<string>;
+		"journeyUrlNotEqualConditions"?: Array<string>;
+		"journeyUrlStartsWithConditions"?: Array<string>;
+		"journeyUrlEndsWithConditions"?: Array<string>;
+		"journeyUrlContainsAnyConditions"?: Array<string>;
+		"journeyUrlNotContainsAnyConditions"?: Array<string>;
+		"journeyUrlContainsAllConditions"?: Array<string>;
+		"journeyUrlNotContainsAllConditions"?: Array<string>;
 	}
 	
 	export interface VisibilityCondition { 
@@ -28003,6 +28740,23 @@ declare namespace Models {
 		"user"?: Models.User;
 		"group"?: Models.Group;
 		"date"?: string;
+	}
+	
+	export interface VoicemailEndDetailEventTopicVoicemailEndEvent { 
+		"eventTime"?: number;
+		"conversationId"?: string;
+		"participantId"?: string;
+		"sessionId"?: string;
+		"disconnectType"?: string;
+		"mediaType"?: string;
+		"provider"?: string;
+		"direction"?: string;
+		"ani"?: string;
+		"dnis"?: string;
+		"userId"?: string;
+		"queueId"?: string;
+		"divisionId"?: string;
+		"voicemailDurationMs"?: number;
 	}
 	
 	export interface VoicemailGroupPolicy { 
@@ -28133,6 +28887,21 @@ declare namespace Models {
 		"sort"?: Array<Models.SearchSort>;
 		"expand"?: Array<string>;
 		"query"?: Array<Models.VoicemailSearchCriteria>;
+	}
+	
+	export interface VoicemailStartDetailEventTopicVoicemailStartEvent { 
+		"eventTime"?: number;
+		"conversationId"?: string;
+		"participantId"?: string;
+		"sessionId"?: string;
+		"mediaType"?: string;
+		"provider"?: string;
+		"direction"?: string;
+		"ani"?: string;
+		"dnis"?: string;
+		"userId"?: string;
+		"queueId"?: string;
+		"divisionId"?: string;
 	}
 	
 	export interface VoicemailUserPolicy { 
@@ -29690,11 +30459,13 @@ declare namespace Models {
 	export interface WorkdayValuesTrend { 
 		"dateStartWorkday"?: string;
 		"dateEndWorkday"?: string;
+		"dateReferenceWorkday"?: string;
 		"division"?: Models.Division;
 		"user"?: Models.UserReference;
 		"timezone"?: string;
 		"results"?: Array<Models.WorkdayValuesMetricItem>;
 		"performanceProfile"?: Models.AddressableEntityRef;
+		"metric"?: Models.AddressableEntityRef;
 	}
 	
 	export interface WorkdayValuesTrendItem { 

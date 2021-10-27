@@ -65,6 +65,58 @@
       "class": "TranscriptionTopicTranscriptionMessage"
     },
     {
+      "topic": "v2.detail.events.conversation.{id}.acd.end",
+      "class": "AcdEndDetailEventTopicAcdEndEvent"
+    },
+    {
+      "topic": "v2.detail.events.conversation.{id}.acd.start",
+      "class": "AcdStartDetailEventTopicAcdStartEvent"
+    },
+    {
+      "topic": "v2.detail.events.conversation.{id}.acw",
+      "class": "AcwDetailEventTopicAfterCallWorkEvent"
+    },
+    {
+      "topic": "v2.detail.events.conversation.{id}.attributes",
+      "class": "AttributeDetailEventTopicAttributeUpdateEvent"
+    },
+    {
+      "topic": "v2.detail.events.conversation.{id}.customer.end",
+      "class": "CustomerEndDetailEventTopicCustomerEndEvent"
+    },
+    {
+      "topic": "v2.detail.events.conversation.{id}.customer.start",
+      "class": "CustomerStartDetailEventTopicCustomerStartEvent"
+    },
+    {
+      "topic": "v2.detail.events.conversation.{id}.flow.end",
+      "class": "FlowEndDetailEventTopicFlowEndEvent"
+    },
+    {
+      "topic": "v2.detail.events.conversation.{id}.flow.start",
+      "class": "FlowStartDetailEventTopicFlowStartEvent"
+    },
+    {
+      "topic": "v2.detail.events.conversation.{id}.outbound",
+      "class": "OutboundDetailEventTopicOutboundInitEvent"
+    },
+    {
+      "topic": "v2.detail.events.conversation.{id}.user.end",
+      "class": "UserEndDetailEventTopicUserEndEvent"
+    },
+    {
+      "topic": "v2.detail.events.conversation.{id}.user.start",
+      "class": "UserStartDetailEventTopicUserStartEvent"
+    },
+    {
+      "topic": "v2.detail.events.conversation.{id}.voicemail.end",
+      "class": "VoicemailEndDetailEventTopicVoicemailEndEvent"
+    },
+    {
+      "topic": "v2.detail.events.conversation.{id}.voicemail.start",
+      "class": "VoicemailStartDetailEventTopicVoicemailStartEvent"
+    },
+    {
       "topic": "v2.flows.outcomes.{id}",
       "class": "ArchitectFlowOutcomeNotificationFlowOutcomeNotification"
     },
@@ -73,8 +125,24 @@
       "class": "ArchitectFlowNotificationFlowNotification"
     },
     {
+      "topic": "v2.gamification.scorecards.users.{id}",
+      "class": "GamificationScorecardChangeTopicScorecardChange"
+    },
+    {
       "topic": "v2.groups.{id}.greetings",
       "class": "GroupGreetingEventGreeting"
+    },
+    {
+      "topic": "v2.journey.sessions.{id}.action.events",
+      "class": "JourneyWebActionEventsNotificationWebActionEventsNotification"
+    },
+    {
+      "topic": "v2.journey.sessions.{id}.outcome.events",
+      "class": "JourneyOutcomeEventsNotificationOutcomeEventsNotification"
+    },
+    {
+      "topic": "v2.journey.sessions.{id}.web.events",
+      "class": "JourneyWebEventsNotificationWebEventsNotification"
     },
     {
       "topic": "v2.managementunits.{id}.workforcemanagement.intraday",

@@ -5,7 +5,7 @@ class VoicemailApi {
 	/**
 	 * Voicemail service.
 	 * @module purecloud-platform-client-v2/api/VoicemailApi
-	 * @version 123.0.0
+	 * @version 124.0.0
 	 */
 
 	/**
@@ -626,6 +626,36 @@ class VoicemailApi {
 			'/api/v2/voicemail/policy', 
 			'PUT', 
 			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update a user&#39;s voicemail policy
+	 * 
+	 * @param {String} userId User ID
+	 * @param {Object} body The user&#39;s voicemail policy
+	 */
+	putVoicemailUserpolicy(userId, body) { 
+		// verify the required parameter 'userId' is set
+		if (userId === undefined || userId === null) {
+			throw 'Missing the required parameter "userId" when calling putVoicemailUserpolicy';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putVoicemailUserpolicy';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/voicemail/userpolicies/{userId}', 
+			'PUT', 
+			{ 'userId': userId }, 
 			{  }, 
 			{  }, 
 			{  }, 

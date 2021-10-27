@@ -117,7 +117,7 @@ apiInstance.getNotificationsAvailabletopics(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: description, enforced, schema, visibility, transports, publicApiTemplateUriPaths, requiresPermissions, permissionDetails |
+ **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: description, enforced, schema, visibility, transports, publicApiTemplateUriPaths, requiresPermissions, permissionDetails, topicParameters |
  **includePreview** | **Boolean** | Whether or not to include Preview topics | [optional] [default to true] |
 {: class="table table-striped"}
 

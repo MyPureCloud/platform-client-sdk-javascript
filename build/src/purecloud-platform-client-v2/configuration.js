@@ -73,9 +73,9 @@ class Configuration {
 
 	updateConfigFromFile() {
 		const ConfigParser = require('configparser');
-		var configparser = new ConfigParser();
 
 		try {
+			var configparser = new ConfigParser();
 			configparser.read(this.configPath); // If no error catched, indicates it's INI format
 			this.config = configparser;
 		} catch (error) {

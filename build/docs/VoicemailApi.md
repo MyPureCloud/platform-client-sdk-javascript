@@ -31,6 +31,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postVoicemailSearch**](VoicemailApi.html#postVoicemailSearch) | **POST** /api/v2/voicemail/search | Search voicemails
 [**putVoicemailMessage**](VoicemailApi.html#putVoicemailMessage) | **PUT** /api/v2/voicemail/messages/{messageId} | Update a voicemail message
 [**putVoicemailPolicy**](VoicemailApi.html#putVoicemailPolicy) | **PUT** /api/v2/voicemail/policy | Update a policy
+[**putVoicemailUserpolicy**](VoicemailApi.html#putVoicemailUserpolicy) | **PUT** /api/v2/voicemail/userpolicies/{userId} | Update a user&#39;s voicemail policy
 {: class="table table-striped"}
 
 <a name="deleteVoicemailMessage"></a>
@@ -1304,4 +1305,59 @@ apiInstance.putVoicemailPolicy(body)
 ### Return type
 
 **VoicemailOrganizationPolicy**
+
+<a name="putVoicemailUserpolicy"></a>
+
+# VoicemailUserPolicy putVoicemailUserpolicy(userId, body)
+
+
+
+PUT /api/v2/voicemail/userpolicies/{userId}
+
+Update a user&#39;s voicemail policy
+
+
+
+Requires ALL permissions: 
+
+* telephony:plugin:all
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.VoicemailApi();
+
+let userId = "userId_example"; // String | User ID
+let body = {}; // Object | The user's voicemail policy
+
+apiInstance.putVoicemailUserpolicy(userId, body)
+  .then((data) => {
+    console.log(`putVoicemailUserpolicy success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putVoicemailUserpolicy');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **userId** | **String** | User ID |  |
+ **body** | **Object** | The user&#39;s voicemail policy |  |
+{: class="table table-striped"}
+
+### Return type
+
+**VoicemailUserPolicy**
 

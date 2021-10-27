@@ -5,7 +5,7 @@ class RoutingApi {
 	/**
 	 * Routing service.
 	 * @module purecloud-platform-client-v2/api/RoutingApi
-	 * @version 123.0.0
+	 * @version 124.0.0
 	 */
 
 	/**
@@ -1657,7 +1657,7 @@ class RoutingApi {
 
 	/**
 	 * Update attributes of an in-queue conversation
-	 * Returns an object indicating the updated values of all settable attributes. Supported attributes: priority (each point of priority is equivalent to one minute of time in queue), skillIds and languageId.
+	 * Returns an object indicating the updated values of all settable attributes. Supported attributes: skillIds, languageId, and priority.
 	 * @param {String} conversationId Conversation ID
 	 * @param {Object} body Conversation Attributes
 	 */
