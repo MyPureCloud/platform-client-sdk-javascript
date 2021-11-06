@@ -1,172 +1,150 @@
-Platform API version: 5137
+Platform API version: 5152
 
 
-# Major Changes (2 changes)
+# Major Changes (4 changes)
 
-**MemberGroup** (1 change)
+**PUT /api/v2/routing/sms/phonenumbers/{addressId}** (1 change)
 
-* memberCount has been made readonly
+* Parameter async was added
 
-**CreateOutboundMessagingConversationRequest** (1 change)
+**DELETE /api/v2/routing/sms/phonenumbers/{addressId}** (2 changes)
 
-* Property externalOrganizationId was removed
+* Parameter async was added
+* Response 200 was removed
+
+**POST /api/v2/routing/sms/phonenumbers** (1 change)
+
+* Parameter async was added
 
 
-# Minor Changes (81 changes)
+# Minor Changes (43 changes)
 
-**/api/v2/voicemail/userpolicies/{userId}** (1 change)
+**/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/contexts/{contextId}** (2 changes)
 
-* Operation put was added. Summary: Update a user's voicemail policy
+* Path was added
+* Operation PATCH was added
 
-**Station** (1 change)
+**/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/contexts/{contextId}/values/{contextValueId}** (2 changes)
 
-* Optional property webRtcCallAppearances was added
+* Path was added
+* Operation PATCH was added
 
-**ReportingTurn** (1 change)
+**PUT /api/v2/routing/sms/phonenumbers/{addressId}** (3 changes)
 
-* Enum value ExpressionError was added to property askActionResult
+* Response 202 was added
+* Response 409 was added
+* Response 501 was added
 
-**ReportingTurnAction** (1 change)
+**DELETE /api/v2/routing/sms/phonenumbers/{addressId}** (3 changes)
 
-* Enum value GetResponseAction was added to property actionType
+* Response 202 was added
+* Response 409 was added
+* Response 501 was added
 
-**ViewFilter** (13 changes)
+**POST /api/v2/routing/sms/phonenumbers** (3 changes)
 
-* Optional property journeyFrequencyCapReasons was added
-* Optional property journeyBlockingActionMapIds was added
-* Optional property journeyActionTargetIds was added
-* Optional property journeyBlockingScheduleGroupIds was added
-* Optional property journeyBlockingEmergencyScheduleGroupIds was added
-* Optional property journeyUrlEqualConditions was added
-* Optional property journeyUrlNotEqualConditions was added
-* Optional property journeyUrlStartsWithConditions was added
-* Optional property journeyUrlEndsWithConditions was added
-* Optional property journeyUrlContainsAnyConditions was added
-* Optional property journeyUrlNotContainsAnyConditions was added
-* Optional property journeyUrlContainsAllConditions was added
-* Optional property journeyUrlNotContainsAllConditions was added
+* Response 202 was added
+* Response 409 was added
+* Response 501 was added
 
-**AuditLogMessage** (5 changes)
+**/api/v2/speechandtextanalytics/sentimentfeedback/{sentimentFeedbackId}** (2 changes)
 
-* Enum value AgentRoutingInfo was added to property entityType
-* Enum value ConversationAttributes was added to property entityType
-* Enum value RoutingUtilizationTag was added to property entityType
-* Enum value ShiftTrade was added to property entityType
-* Enum value TimeOffRequest was added to property entityType
+* Path was added
+* Operation DELETE was added
 
-**AuditQueryEntity** (5 changes)
+**/api/v2/speechandtextanalytics/sentimentfeedback** (4 changes)
 
-* Enum value AgentRoutingInfo was added to property name
-* Enum value ConversationAttributes was added to property name
-* Enum value RoutingUtilizationTag was added to property name
-* Enum value ShiftTrade was added to property name
-* Enum value TimeOffRequest was added to property name
+* Path was added
+* Operation GET was added
+* Operation POST was added
+* Operation DELETE was added
 
-**MemberGroup** (1 change)
+**User** (1 change)
 
-* Enum value GROUP was added to property type
+* Optional property dateLastLogin was added
 
-**CreateCallRequest** (1 change)
+**ViewFilter** (1 change)
 
-* Optional property externalContactId was added
+* Optional property flowMilestoneIds was added
 
-**CreateEmailRequest** (1 change)
+**ReportingExportJobResponse** (1 change)
 
-* Optional property externalContactId was added
+* Enum value AGENT_INTERACTIONS_ME_VIEW was added to property viewType
 
-**OpenNormalizedMessage** (5 changes)
+**ReportingExportMetadataJobResponse** (1 change)
 
-* id is no longer readonly
-* status is no longer readonly
-* reasons is no longer readonly
-* isFinalReceipt is no longer readonly
-* direction is no longer readonly
+* Enum value AGENT_INTERACTIONS_ME_VIEW was added to property viewType
 
-**WorkdayValuesTrend** (2 changes)
+**ReportingExportJobRequest** (1 change)
 
-* Optional property dateReferenceWorkday was added
-* Optional property metric was added
+* Enum value AGENT_INTERACTIONS_ME_VIEW was added to property viewType
 
-**RecordingMessagingMessage** (2 changes)
+**OrgUser** (1 change)
 
-* Optional property quickReplies was added
-* Optional property buttonResponse was added
+* Optional property dateLastLogin was added
 
-**LearningModuleInformStep** (1 change)
-
-* Enum value RichText was added to property type
-
-**LearningModuleInformStepRequest** (1 change)
-
-* Enum value RichText was added to property type
-
-**SchedulerMessageTypeSeverity** (19 changes)
-
-* Enum value UnableToScheduleMaxConsecutiveWorkingDaysFromAgentHistory was added to property type
-* Enum value UnableToScheduleMaxConsecutiveWorkingWeekendsFromAgentHistory was added to property type
-* Enum value UnableToScheduleMaxWeeklyPaidTimeFromTimeOff was added to property type
-* Enum value UnableToScheduleMaxWorkDayPaidTimeFromTimeOff was added to property type
-* Enum value UnableToScheduleMinIntershiftTimeFromAgentHistory was added to property type
-* Enum value UnableToScheduleMinIntershiftTimeFromDst was added to property type
-* Enum value UnableToScheduleMinShiftStartDistanceFromAgentHistory was added to property type
-* Enum value UnableToScheduleMinShiftStartDistanceFromDst was added to property type
-* Enum value UnableToScheduleMinWeeklyPaidTimeFromTimeOff was added to property type
-* Enum value UnableToScheduleMinWeeklyWorkDaysFromTimeOff was added to property type
-* Enum value UnableToScheduleMinWorkDayPaidTimeFromTimeOff was added to property type
-* Enum value UnableToSchedulePlanningPeriodMaxDaysOffFromAgentHistory was added to property type
-* Enum value UnableToSchedulePlanningPeriodMaxDaysOffFromTimeOff was added to property type
-* Enum value UnableToSchedulePlanningPeriodMaxPaidTimeFromAgentHistory was added to property type
-* Enum value UnableToSchedulePlanningPeriodMaxPaidTimeFromTimeOff was added to property type
-* Enum value UnableToSchedulePlanningPeriodMinDaysOffFromAgentHistory was added to property type
-* Enum value UnableToSchedulePlanningPeriodMinPaidTimeFromAgentHistory was added to property type
-* Enum value UnableToSchedulePlanningPeriodMinPaidTimeFromTimeOff was added to property type
-* Enum value UnableToScheduleWorkDayFromTimeOff was added to property type
-
-**SchedulerMessageSeverityCount** (1 change)
+**ConversationContentStory** (1 change)
 
 * Model was added
 
-**ScheduleGenerationMessage** (19 changes)
+**ConversationEventCoBrowse** (1 change)
 
-* Enum value UnableToScheduleMaxConsecutiveWorkingDaysFromAgentHistory was added to property type
-* Enum value UnableToScheduleMaxConsecutiveWorkingWeekendsFromAgentHistory was added to property type
-* Enum value UnableToScheduleMaxWeeklyPaidTimeFromTimeOff was added to property type
-* Enum value UnableToScheduleMaxWorkDayPaidTimeFromTimeOff was added to property type
-* Enum value UnableToScheduleMinIntershiftTimeFromAgentHistory was added to property type
-* Enum value UnableToScheduleMinIntershiftTimeFromDst was added to property type
-* Enum value UnableToScheduleMinShiftStartDistanceFromAgentHistory was added to property type
-* Enum value UnableToScheduleMinShiftStartDistanceFromDst was added to property type
-* Enum value UnableToScheduleMinWeeklyPaidTimeFromTimeOff was added to property type
-* Enum value UnableToScheduleMinWeeklyWorkDaysFromTimeOff was added to property type
-* Enum value UnableToScheduleMinWorkDayPaidTimeFromTimeOff was added to property type
-* Enum value UnableToSchedulePlanningPeriodMaxDaysOffFromAgentHistory was added to property type
-* Enum value UnableToSchedulePlanningPeriodMaxDaysOffFromTimeOff was added to property type
-* Enum value UnableToSchedulePlanningPeriodMaxPaidTimeFromAgentHistory was added to property type
-* Enum value UnableToSchedulePlanningPeriodMaxPaidTimeFromTimeOff was added to property type
-* Enum value UnableToSchedulePlanningPeriodMinDaysOffFromAgentHistory was added to property type
-* Enum value UnableToSchedulePlanningPeriodMinPaidTimeFromAgentHistory was added to property type
-* Enum value UnableToSchedulePlanningPeriodMinPaidTimeFromTimeOff was added to property type
-* Enum value UnableToScheduleWorkDayFromTimeOff was added to property type
+* Model was added
 
-**SchedulingTestingOptionsRequest** (1 change)
+**ConversationMessageContent** (2 changes)
 
-* Optional property populateDeprecatedWarnings was added
+* Enum value Story was added to property contentType
+* Optional property story was added
+
+**ConversationMessageEvent** (1 change)
+
+* Model was added
+
+**ConversationNormalizedMessage** (2 changes)
+
+* Enum value Event was added to property type
+* Optional property events was added
+
+**KnowledgeContextResponse** (1 change)
+
+* Model was added
+
+**KnowledgeContextValueResponse** (1 change)
+
+* Model was added
+
+**KnowledgeContextRequest** (1 change)
+
+* Model was added
+
+**KnowledgeContextValueRequest** (1 change)
+
+* Model was added
+
+**TrustUser** (1 change)
+
+* Optional property dateLastLogin was added
+
+**SmsPhoneNumber** (2 changes)
+
+* Enum value INITIATED was added to property phoneNumberStatus
+* Optional property provisioningStatus was added
+
+**SmsProvisioningStatus** (1 change)
+
+* Model was added
+
+**SentimentFeedback** (1 change)
+
+* Model was added
+
+**SentimentFeedbackEntityListing** (1 change)
+
+* Model was added
+
+**UserMe** (1 change)
+
+* Optional property dateLastLogin was added
 
 
-# Point Changes (4 changes)
-
-**POST /api/v2/conversations/messaging/integrations/facebook** (1 change)
-
-* Response 202 was changed from Accepted - If async is true, the integration creation in progress. to Accepted - The integration creation in progress.
-
-**POST /api/v2/conversations/messaging/integrations/line** (1 change)
-
-* Response 202 was changed from Accepted - If async is true, the integration creation in progress. to Accepted - The integration creation in progress.
-
-**POST /api/v2/conversations/messaging/integrations/twitter** (1 change)
-
-* Response 202 was changed from Accepted - If async is true, the integration creation is in progress. to Accepted - The integration creation is in progress.
-
-**PATCH /api/v2/routing/conversations/{conversationId}** (1 change)
-
-* Description was changed
+# Point Changes (0 changes)

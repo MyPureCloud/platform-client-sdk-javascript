@@ -1,6 +1,4 @@
 require=(function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
-
-},{}],2:[function(require,module,exports){
 'use strict'
 
 exports.byteLength = byteLength
@@ -152,7 +150,7 @@ function fromByteArray (uint8) {
   return parts.join('')
 }
 
-},{}],3:[function(require,module,exports){
+},{}],2:[function(require,module,exports){
 (function (Buffer){(function (){
 /*!
  * The buffer module from node.js, for the browser.
@@ -1933,7 +1931,7 @@ function numberIsNaN (obj) {
 }
 
 }).call(this)}).call(this,require("buffer").Buffer)
-},{"base64-js":2,"buffer":3,"ieee754":4}],4:[function(require,module,exports){
+},{"base64-js":1,"buffer":2,"ieee754":3}],3:[function(require,module,exports){
 /*! ieee754. BSD-3-Clause License. Feross Aboukhadijeh <https://feross.org/opensource> */
 exports.read = function (buffer, offset, isLE, mLen, nBytes) {
   var e, m
@@ -2020,7 +2018,7 @@ exports.write = function (buffer, value, offset, isLE, mLen, nBytes) {
   buffer[offset + i - d] |= s * 128
 }
 
-},{}],5:[function(require,module,exports){
+},{}],4:[function(require,module,exports){
 exports.endianness = function () { return 'LE' };
 
 exports.hostname = function () {
@@ -2071,7 +2069,7 @@ exports.homedir = function () {
 	return '/'
 };
 
-},{}],6:[function(require,module,exports){
+},{}],5:[function(require,module,exports){
 (function (process){(function (){
 // .dirname, .basename, and .extname methods are extracted from Node.js v8.11.1,
 // backported and transplited with Babel, with backwards-compat fixes
@@ -2377,7 +2375,7 @@ var substr = 'ab'.substr(-1) === 'b'
 ;
 
 }).call(this)}).call(this,require('_process'))
-},{"_process":7}],7:[function(require,module,exports){
+},{"_process":6}],6:[function(require,module,exports){
 // shim for using process in browser
 var process = module.exports = {};
 
@@ -2563,629 +2561,7 @@ process.chdir = function (dir) {
 };
 process.umask = function() { return 0; };
 
-},{}],8:[function(require,module,exports){
-if (typeof Object.create === 'function') {
-  // implementation from standard node.js 'util' module
-  module.exports = function inherits(ctor, superCtor) {
-    ctor.super_ = superCtor
-    ctor.prototype = Object.create(superCtor.prototype, {
-      constructor: {
-        value: ctor,
-        enumerable: false,
-        writable: true,
-        configurable: true
-      }
-    });
-  };
-} else {
-  // old school shim for old browsers
-  module.exports = function inherits(ctor, superCtor) {
-    ctor.super_ = superCtor
-    var TempCtor = function () {}
-    TempCtor.prototype = superCtor.prototype
-    ctor.prototype = new TempCtor()
-    ctor.prototype.constructor = ctor
-  }
-}
-
-},{}],9:[function(require,module,exports){
-module.exports = function isBuffer(arg) {
-  return arg && typeof arg === 'object'
-    && typeof arg.copy === 'function'
-    && typeof arg.fill === 'function'
-    && typeof arg.readUInt8 === 'function';
-}
-},{}],10:[function(require,module,exports){
-(function (process,global){(function (){
-// Copyright Joyent, Inc. and other Node contributors.
-//
-// Permission is hereby granted, free of charge, to any person obtaining a
-// copy of this software and associated documentation files (the
-// "Software"), to deal in the Software without restriction, including
-// without limitation the rights to use, copy, modify, merge, publish,
-// distribute, sublicense, and/or sell copies of the Software, and to permit
-// persons to whom the Software is furnished to do so, subject to the
-// following conditions:
-//
-// The above copyright notice and this permission notice shall be included
-// in all copies or substantial portions of the Software.
-//
-// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
-// OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN
-// NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
-// DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
-// OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
-// USE OR OTHER DEALINGS IN THE SOFTWARE.
-
-var formatRegExp = /%[sdj%]/g;
-exports.format = function(f) {
-  if (!isString(f)) {
-    var objects = [];
-    for (var i = 0; i < arguments.length; i++) {
-      objects.push(inspect(arguments[i]));
-    }
-    return objects.join(' ');
-  }
-
-  var i = 1;
-  var args = arguments;
-  var len = args.length;
-  var str = String(f).replace(formatRegExp, function(x) {
-    if (x === '%%') return '%';
-    if (i >= len) return x;
-    switch (x) {
-      case '%s': return String(args[i++]);
-      case '%d': return Number(args[i++]);
-      case '%j':
-        try {
-          return JSON.stringify(args[i++]);
-        } catch (_) {
-          return '[Circular]';
-        }
-      default:
-        return x;
-    }
-  });
-  for (var x = args[i]; i < len; x = args[++i]) {
-    if (isNull(x) || !isObject(x)) {
-      str += ' ' + x;
-    } else {
-      str += ' ' + inspect(x);
-    }
-  }
-  return str;
-};
-
-
-// Mark that a method should not be used.
-// Returns a modified function which warns once by default.
-// If --no-deprecation is set, then it is a no-op.
-exports.deprecate = function(fn, msg) {
-  // Allow for deprecating things in the process of starting up.
-  if (isUndefined(global.process)) {
-    return function() {
-      return exports.deprecate(fn, msg).apply(this, arguments);
-    };
-  }
-
-  if (process.noDeprecation === true) {
-    return fn;
-  }
-
-  var warned = false;
-  function deprecated() {
-    if (!warned) {
-      if (process.throwDeprecation) {
-        throw new Error(msg);
-      } else if (process.traceDeprecation) {
-        console.trace(msg);
-      } else {
-        console.error(msg);
-      }
-      warned = true;
-    }
-    return fn.apply(this, arguments);
-  }
-
-  return deprecated;
-};
-
-
-var debugs = {};
-var debugEnviron;
-exports.debuglog = function(set) {
-  if (isUndefined(debugEnviron))
-    debugEnviron = process.env.NODE_DEBUG || '';
-  set = set.toUpperCase();
-  if (!debugs[set]) {
-    if (new RegExp('\\b' + set + '\\b', 'i').test(debugEnviron)) {
-      var pid = process.pid;
-      debugs[set] = function() {
-        var msg = exports.format.apply(exports, arguments);
-        console.error('%s %d: %s', set, pid, msg);
-      };
-    } else {
-      debugs[set] = function() {};
-    }
-  }
-  return debugs[set];
-};
-
-
-/**
- * Echos the value of a value. Trys to print the value out
- * in the best way possible given the different types.
- *
- * @param {Object} obj The object to print out.
- * @param {Object} opts Optional options object that alters the output.
- */
-/* legacy: obj, showHidden, depth, colors*/
-function inspect(obj, opts) {
-  // default options
-  var ctx = {
-    seen: [],
-    stylize: stylizeNoColor
-  };
-  // legacy...
-  if (arguments.length >= 3) ctx.depth = arguments[2];
-  if (arguments.length >= 4) ctx.colors = arguments[3];
-  if (isBoolean(opts)) {
-    // legacy...
-    ctx.showHidden = opts;
-  } else if (opts) {
-    // got an "options" object
-    exports._extend(ctx, opts);
-  }
-  // set default options
-  if (isUndefined(ctx.showHidden)) ctx.showHidden = false;
-  if (isUndefined(ctx.depth)) ctx.depth = 2;
-  if (isUndefined(ctx.colors)) ctx.colors = false;
-  if (isUndefined(ctx.customInspect)) ctx.customInspect = true;
-  if (ctx.colors) ctx.stylize = stylizeWithColor;
-  return formatValue(ctx, obj, ctx.depth);
-}
-exports.inspect = inspect;
-
-
-// http://en.wikipedia.org/wiki/ANSI_escape_code#graphics
-inspect.colors = {
-  'bold' : [1, 22],
-  'italic' : [3, 23],
-  'underline' : [4, 24],
-  'inverse' : [7, 27],
-  'white' : [37, 39],
-  'grey' : [90, 39],
-  'black' : [30, 39],
-  'blue' : [34, 39],
-  'cyan' : [36, 39],
-  'green' : [32, 39],
-  'magenta' : [35, 39],
-  'red' : [31, 39],
-  'yellow' : [33, 39]
-};
-
-// Don't use 'blue' not visible on cmd.exe
-inspect.styles = {
-  'special': 'cyan',
-  'number': 'yellow',
-  'boolean': 'yellow',
-  'undefined': 'grey',
-  'null': 'bold',
-  'string': 'green',
-  'date': 'magenta',
-  // "name": intentionally not styling
-  'regexp': 'red'
-};
-
-
-function stylizeWithColor(str, styleType) {
-  var style = inspect.styles[styleType];
-
-  if (style) {
-    return '\u001b[' + inspect.colors[style][0] + 'm' + str +
-           '\u001b[' + inspect.colors[style][1] + 'm';
-  } else {
-    return str;
-  }
-}
-
-
-function stylizeNoColor(str, styleType) {
-  return str;
-}
-
-
-function arrayToHash(array) {
-  var hash = {};
-
-  array.forEach(function(val, idx) {
-    hash[val] = true;
-  });
-
-  return hash;
-}
-
-
-function formatValue(ctx, value, recurseTimes) {
-  // Provide a hook for user-specified inspect functions.
-  // Check that value is an object with an inspect function on it
-  if (ctx.customInspect &&
-      value &&
-      isFunction(value.inspect) &&
-      // Filter out the util module, it's inspect function is special
-      value.inspect !== exports.inspect &&
-      // Also filter out any prototype objects using the circular check.
-      !(value.constructor && value.constructor.prototype === value)) {
-    var ret = value.inspect(recurseTimes, ctx);
-    if (!isString(ret)) {
-      ret = formatValue(ctx, ret, recurseTimes);
-    }
-    return ret;
-  }
-
-  // Primitive types cannot have properties
-  var primitive = formatPrimitive(ctx, value);
-  if (primitive) {
-    return primitive;
-  }
-
-  // Look up the keys of the object.
-  var keys = Object.keys(value);
-  var visibleKeys = arrayToHash(keys);
-
-  if (ctx.showHidden) {
-    keys = Object.getOwnPropertyNames(value);
-  }
-
-  // IE doesn't make error fields non-enumerable
-  // http://msdn.microsoft.com/en-us/library/ie/dww52sbt(v=vs.94).aspx
-  if (isError(value)
-      && (keys.indexOf('message') >= 0 || keys.indexOf('description') >= 0)) {
-    return formatError(value);
-  }
-
-  // Some type of object without properties can be shortcutted.
-  if (keys.length === 0) {
-    if (isFunction(value)) {
-      var name = value.name ? ': ' + value.name : '';
-      return ctx.stylize('[Function' + name + ']', 'special');
-    }
-    if (isRegExp(value)) {
-      return ctx.stylize(RegExp.prototype.toString.call(value), 'regexp');
-    }
-    if (isDate(value)) {
-      return ctx.stylize(Date.prototype.toString.call(value), 'date');
-    }
-    if (isError(value)) {
-      return formatError(value);
-    }
-  }
-
-  var base = '', array = false, braces = ['{', '}'];
-
-  // Make Array say that they are Array
-  if (isArray(value)) {
-    array = true;
-    braces = ['[', ']'];
-  }
-
-  // Make functions say that they are functions
-  if (isFunction(value)) {
-    var n = value.name ? ': ' + value.name : '';
-    base = ' [Function' + n + ']';
-  }
-
-  // Make RegExps say that they are RegExps
-  if (isRegExp(value)) {
-    base = ' ' + RegExp.prototype.toString.call(value);
-  }
-
-  // Make dates with properties first say the date
-  if (isDate(value)) {
-    base = ' ' + Date.prototype.toUTCString.call(value);
-  }
-
-  // Make error with message first say the error
-  if (isError(value)) {
-    base = ' ' + formatError(value);
-  }
-
-  if (keys.length === 0 && (!array || value.length == 0)) {
-    return braces[0] + base + braces[1];
-  }
-
-  if (recurseTimes < 0) {
-    if (isRegExp(value)) {
-      return ctx.stylize(RegExp.prototype.toString.call(value), 'regexp');
-    } else {
-      return ctx.stylize('[Object]', 'special');
-    }
-  }
-
-  ctx.seen.push(value);
-
-  var output;
-  if (array) {
-    output = formatArray(ctx, value, recurseTimes, visibleKeys, keys);
-  } else {
-    output = keys.map(function(key) {
-      return formatProperty(ctx, value, recurseTimes, visibleKeys, key, array);
-    });
-  }
-
-  ctx.seen.pop();
-
-  return reduceToSingleString(output, base, braces);
-}
-
-
-function formatPrimitive(ctx, value) {
-  if (isUndefined(value))
-    return ctx.stylize('undefined', 'undefined');
-  if (isString(value)) {
-    var simple = '\'' + JSON.stringify(value).replace(/^"|"$/g, '')
-                                             .replace(/'/g, "\\'")
-                                             .replace(/\\"/g, '"') + '\'';
-    return ctx.stylize(simple, 'string');
-  }
-  if (isNumber(value))
-    return ctx.stylize('' + value, 'number');
-  if (isBoolean(value))
-    return ctx.stylize('' + value, 'boolean');
-  // For some reason typeof null is "object", so special case here.
-  if (isNull(value))
-    return ctx.stylize('null', 'null');
-}
-
-
-function formatError(value) {
-  return '[' + Error.prototype.toString.call(value) + ']';
-}
-
-
-function formatArray(ctx, value, recurseTimes, visibleKeys, keys) {
-  var output = [];
-  for (var i = 0, l = value.length; i < l; ++i) {
-    if (hasOwnProperty(value, String(i))) {
-      output.push(formatProperty(ctx, value, recurseTimes, visibleKeys,
-          String(i), true));
-    } else {
-      output.push('');
-    }
-  }
-  keys.forEach(function(key) {
-    if (!key.match(/^\d+$/)) {
-      output.push(formatProperty(ctx, value, recurseTimes, visibleKeys,
-          key, true));
-    }
-  });
-  return output;
-}
-
-
-function formatProperty(ctx, value, recurseTimes, visibleKeys, key, array) {
-  var name, str, desc;
-  desc = Object.getOwnPropertyDescriptor(value, key) || { value: value[key] };
-  if (desc.get) {
-    if (desc.set) {
-      str = ctx.stylize('[Getter/Setter]', 'special');
-    } else {
-      str = ctx.stylize('[Getter]', 'special');
-    }
-  } else {
-    if (desc.set) {
-      str = ctx.stylize('[Setter]', 'special');
-    }
-  }
-  if (!hasOwnProperty(visibleKeys, key)) {
-    name = '[' + key + ']';
-  }
-  if (!str) {
-    if (ctx.seen.indexOf(desc.value) < 0) {
-      if (isNull(recurseTimes)) {
-        str = formatValue(ctx, desc.value, null);
-      } else {
-        str = formatValue(ctx, desc.value, recurseTimes - 1);
-      }
-      if (str.indexOf('\n') > -1) {
-        if (array) {
-          str = str.split('\n').map(function(line) {
-            return '  ' + line;
-          }).join('\n').substr(2);
-        } else {
-          str = '\n' + str.split('\n').map(function(line) {
-            return '   ' + line;
-          }).join('\n');
-        }
-      }
-    } else {
-      str = ctx.stylize('[Circular]', 'special');
-    }
-  }
-  if (isUndefined(name)) {
-    if (array && key.match(/^\d+$/)) {
-      return str;
-    }
-    name = JSON.stringify('' + key);
-    if (name.match(/^"([a-zA-Z_][a-zA-Z_0-9]*)"$/)) {
-      name = name.substr(1, name.length - 2);
-      name = ctx.stylize(name, 'name');
-    } else {
-      name = name.replace(/'/g, "\\'")
-                 .replace(/\\"/g, '"')
-                 .replace(/(^"|"$)/g, "'");
-      name = ctx.stylize(name, 'string');
-    }
-  }
-
-  return name + ': ' + str;
-}
-
-
-function reduceToSingleString(output, base, braces) {
-  var numLinesEst = 0;
-  var length = output.reduce(function(prev, cur) {
-    numLinesEst++;
-    if (cur.indexOf('\n') >= 0) numLinesEst++;
-    return prev + cur.replace(/\u001b\[\d\d?m/g, '').length + 1;
-  }, 0);
-
-  if (length > 60) {
-    return braces[0] +
-           (base === '' ? '' : base + '\n ') +
-           ' ' +
-           output.join(',\n  ') +
-           ' ' +
-           braces[1];
-  }
-
-  return braces[0] + base + ' ' + output.join(', ') + ' ' + braces[1];
-}
-
-
-// NOTE: These type checking functions intentionally don't use `instanceof`
-// because it is fragile and can be easily faked with `Object.create()`.
-function isArray(ar) {
-  return Array.isArray(ar);
-}
-exports.isArray = isArray;
-
-function isBoolean(arg) {
-  return typeof arg === 'boolean';
-}
-exports.isBoolean = isBoolean;
-
-function isNull(arg) {
-  return arg === null;
-}
-exports.isNull = isNull;
-
-function isNullOrUndefined(arg) {
-  return arg == null;
-}
-exports.isNullOrUndefined = isNullOrUndefined;
-
-function isNumber(arg) {
-  return typeof arg === 'number';
-}
-exports.isNumber = isNumber;
-
-function isString(arg) {
-  return typeof arg === 'string';
-}
-exports.isString = isString;
-
-function isSymbol(arg) {
-  return typeof arg === 'symbol';
-}
-exports.isSymbol = isSymbol;
-
-function isUndefined(arg) {
-  return arg === void 0;
-}
-exports.isUndefined = isUndefined;
-
-function isRegExp(re) {
-  return isObject(re) && objectToString(re) === '[object RegExp]';
-}
-exports.isRegExp = isRegExp;
-
-function isObject(arg) {
-  return typeof arg === 'object' && arg !== null;
-}
-exports.isObject = isObject;
-
-function isDate(d) {
-  return isObject(d) && objectToString(d) === '[object Date]';
-}
-exports.isDate = isDate;
-
-function isError(e) {
-  return isObject(e) &&
-      (objectToString(e) === '[object Error]' || e instanceof Error);
-}
-exports.isError = isError;
-
-function isFunction(arg) {
-  return typeof arg === 'function';
-}
-exports.isFunction = isFunction;
-
-function isPrimitive(arg) {
-  return arg === null ||
-         typeof arg === 'boolean' ||
-         typeof arg === 'number' ||
-         typeof arg === 'string' ||
-         typeof arg === 'symbol' ||  // ES6 symbol
-         typeof arg === 'undefined';
-}
-exports.isPrimitive = isPrimitive;
-
-exports.isBuffer = require('./support/isBuffer');
-
-function objectToString(o) {
-  return Object.prototype.toString.call(o);
-}
-
-
-function pad(n) {
-  return n < 10 ? '0' + n.toString(10) : n.toString(10);
-}
-
-
-var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep',
-              'Oct', 'Nov', 'Dec'];
-
-// 26 Feb 16:19:34
-function timestamp() {
-  var d = new Date();
-  var time = [pad(d.getHours()),
-              pad(d.getMinutes()),
-              pad(d.getSeconds())].join(':');
-  return [d.getDate(), months[d.getMonth()], time].join(' ');
-}
-
-
-// log is just a thin wrapper to console.log that prepends a timestamp
-exports.log = function() {
-  console.log('%s - %s', timestamp(), exports.format.apply(exports, arguments));
-};
-
-
-/**
- * Inherit the prototype methods from one constructor into another.
- *
- * The Function.prototype.inherits from lang.js rewritten as a standalone
- * function (not on Function.prototype). NOTE: If this file is to be loaded
- * during bootstrapping this function needs to be rewritten using some native
- * functions as prototype setup using normal JavaScript does not work as
- * expected during bootstrapping (see mirror.js in r114903).
- *
- * @param {function} ctor Constructor function which needs to inherit the
- *     prototype.
- * @param {function} superCtor Constructor function to inherit prototype from.
- */
-exports.inherits = require('inherits');
-
-exports._extend = function(origin, add) {
-  // Don't do anything if add isn't an object
-  if (!add || !isObject(add)) return origin;
-
-  var keys = Object.keys(add);
-  var i = keys.length;
-  while (i--) {
-    origin[keys[i]] = add[keys[i]];
-  }
-  return origin;
-};
-
-function hasOwnProperty(obj, prop) {
-  return Object.prototype.hasOwnProperty.call(obj, prop);
-}
-
-}).call(this)}).call(this,require('_process'),typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"./support/isBuffer":9,"_process":7,"inherits":8}],11:[function(require,module,exports){
+},{}],7:[function(require,module,exports){
 
 /**
  * Expose `Emitter`.
@@ -3362,533 +2738,7 @@ Emitter.prototype.hasListeners = function(event){
   return !! this.listeners(event).length;
 };
 
-},{}],12:[function(require,module,exports){
-const util = require('util');
-const fs = require('fs');
-const path = require('path');
-const mkdirp = require('mkdirp');
-const errors = require('./errors');
-const interpolation = require('./interpolation');
-
-/**
- * Regular Expression to match section headers.
- * @type {RegExp}
- * @private
- */
-const SECTION = new RegExp(/\s*\[([^\]]+)]/);
-
-/**
- * Regular expression to match key, value pairs.
- * @type {RegExp}
- * @private
- */
-const KEY = new RegExp(/\s*(.*?)\s*[=:]\s*(.*)/);
-
-/**
- * Regular expression to match comments. Either starting with a
- * semi-colon or a hash.
- * @type {RegExp}
- * @private
- */
-const COMMENT = new RegExp(/^\s*[;#]/);
-
-// RL1.6 Line Boundaries (for unicode)
-// ... it shall recognize not only CRLF, LF, CR,
-// but also NEL, PS and LS.
-const LINE_BOUNDARY = new RegExp(/\r\n|[\n\r\u0085\u2028\u2029]/g);
-
-const readFileAsync = util.promisify(fs.readFile);
-const writeFileAsync = util.promisify(fs.writeFile);
-const statAsync = util.promisify(fs.stat);
-const mkdirAsync = util.promisify(mkdirp);
-
-/**
- * @constructor
- */
-function ConfigParser() {
-    this._sections = {};
-}
-
-/**
- * Returns an array of the sections.
- * @returns {Array}
- */
-ConfigParser.prototype.sections = function() {
-    return Object.keys(this._sections);
-};
-
-/**
- * Adds a section named section to the instance. If the section already
- * exists, a DuplicateSectionError is thrown.
- * @param {string} section - Section Name
- */
-ConfigParser.prototype.addSection = function(section) {
-    if(this._sections.hasOwnProperty(section)){
-        throw new errors.DuplicateSectionError(section)
-    }
-    this._sections[section] = {};
-};
-
-/**
- * Indicates whether the section is present in the configuration
- * file.
- * @param {string} section - Section Name
- * @returns {boolean}
- */
-ConfigParser.prototype.hasSection = function(section) {
-    return this._sections.hasOwnProperty(section);
-};
-
-/**
- * Returns an array of all keys in the specified section.
- * @param {string} section - Section Name
- * @returns {Array}
- */
-ConfigParser.prototype.keys = function(section) {
-    try {
-        return Object.keys(this._sections[section]);
-    } catch(err){
-        throw new errors.NoSectionError(section);
-    }
-};
-
-/**
- * Indicates whether the specified key is in the section.
- * @param {string} section - Section Name
- * @param {string} key - Key Name
- * @returns {boolean}
- */
-ConfigParser.prototype.hasKey = function (section, key) {
-    return this._sections.hasOwnProperty(section) &&
-        this._sections[section].hasOwnProperty(key);
-};
-
-/**
- * Reads a file and parses the configuration data.
- * @param {string|Buffer|int} file - Filename or File Descriptor
- */
-ConfigParser.prototype.read = function(file) {
-    const lines = fs.readFileSync(file)
-        .toString('utf8')
-        .split(LINE_BOUNDARY);
-    parseLines.call(this, file, lines);
-};
-
-/**
- * Reads a file asynchronously and parses the configuration data.
- * @param {string|Buffer|int} file - Filename or File Descriptor
- */
-ConfigParser.prototype.readAsync = async function(file) {
-    const lines = (await readFileAsync(file))
-        .toString('utf8')
-        .split(LINE_BOUNDARY);
-    parseLines.call(this, file, lines);
-}
-
-/**
- * Gets the value for the key in the named section.
- * @param {string} section - Section Name
- * @param {string} key - Key Name
- * @param {boolean} [raw=false] - Whether or not to replace placeholders
- * @returns {string|undefined}
- */
-ConfigParser.prototype.get = function(section, key, raw) {
-    if(this._sections.hasOwnProperty(section)){
-        if(raw){
-            return this._sections[section][key];
-        } else {
-            return interpolation.interpolate(this, section, key);
-        }
-    }
-    return undefined;
-};
-
-/**
- * Coerces value to an integer of the specified radix.
- * @param {string} section - Section Name
- * @param {string} key - Key Name
- * @param {int} [radix=10] - An integer between 2 and 36 that represents the base of the string.
- * @returns {number|undefined|NaN}
- */
-ConfigParser.prototype.getInt = function(section, key, radix) {
-    if(this._sections.hasOwnProperty(section)){
-        if(!radix) radix = 10;
-        return parseInt(this._sections[section][key], radix);
-    }
-    return undefined;
-};
-
-/**
- * Coerces value to a float.
- * @param {string} section - Section Name
- * @param {string} key - Key Name
- * @returns {number|undefined|NaN}
- */
-ConfigParser.prototype.getFloat = function(section, key) {
-    if(this._sections.hasOwnProperty(section)){
-        return parseFloat(this._sections[section][key]);
-    }
-    return undefined;
-};
-
-/**
- * Returns an object with every key, value pair for the named section.
- * @param {string} section - Section Name
- * @returns {Object}
- */
-ConfigParser.prototype.items = function(section) {
-    return this._sections[section];
-};
-
-/**
- * Sets the given key to the specified value.
- * @param {string} section - Section Name
- * @param {string} key - Key Name
- * @param {*} value - New Key Value
- */
-ConfigParser.prototype.set = function(section, key, value) {
-    if(this._sections.hasOwnProperty(section)){
-        this._sections[section][key] = value;
-    }
-};
-
-/**
- * Removes the property specified by key in the named section.
- * @param {string} section - Section Name
- * @param {string} key - Key Name
- * @returns {boolean}
- */
-ConfigParser.prototype.removeKey = function(section, key) {
-    // delete operator returns true if the property doesn't not exist
-    if(this._sections.hasOwnProperty(section) &&
-        this._sections[section].hasOwnProperty(key)){
-        return delete this._sections[section][key];
-    }
-    return false;
-};
-
-/**
- * Removes the named section (and associated key, value pairs).
- * @param {string} section - Section Name
- * @returns {boolean}
- */
-ConfigParser.prototype.removeSection = function(section) {
-    if(this._sections.hasOwnProperty(section)){
-        return delete this._sections[section];
-    }
-    return false;
-};
-
-/**
- * Writes the representation of the config file to the
- * specified file. Comments are not preserved.
- * @param {string|Buffer|int} file - Filename or File Descriptor
- * @param {bool} [createMissingDirs=false] - Whether to create the directories in the path if they don't exist
- */
-ConfigParser.prototype.write = function(file, createMissingDirs = false) {
-    if (createMissingDirs) {
-        const dir = path.dirname(file);
-        mkdirp.sync(dir);
-    }
-
-    fs.writeFileSync(file, getSectionsAsString.call(this));
-};
-
-/**
- * Writes the representation of the config file to the
- * specified file asynchronously. Comments are not preserved.
- * @param {string|Buffer|int} file - Filename or File Descriptor
- * @param {bool} [createMissingDirs=false] - Whether to create the directories in the path if they don't exist
- * @returns {Promise}
- */
-ConfigParser.prototype.writeAsync = async function(file, createMissingDirs = false) {
-    if (createMissingDirs) {
-        const dir = path.dirname(file);
-        await mkdirAsync(dir);
-    }
-
-    await writeFileAsync(file, getSectionsAsString.call(this));
-}
-
-function parseLines(file, lines) {
-    let curSec = null;
-    lines.forEach((line, lineNumber) => {
-        if(!line || line.match(COMMENT)) return;
-        let res = SECTION.exec(line);
-        if(res){
-            const header = res[1];
-            curSec = {};
-            this._sections[header] = curSec;
-        } else if(!curSec) {
-            throw new errors.MissingSectionHeaderError(file, lineNumber, line);
-        } else {
-            res = KEY.exec(line);
-            if(res){
-                const key = res[1];
-                curSec[key] = res[2];
-            } else {
-                throw new errors.ParseError(file, lineNumber, line);
-            }
-        }
-    });
-}
-
-function getSectionsAsString() {
-    let out = '';
-    let section;
-    for(section in this._sections){
-        if(!this._sections.hasOwnProperty(section)) continue;
-        out += ('[' + section + ']\n');
-        const keys = this._sections[section];
-        let key;
-        for(key in keys){
-            if(!keys.hasOwnProperty(key)) continue;
-            let value = keys[key];
-            out += (key + '=' + value + '\n');
-        }
-        out += '\n';
-    }
-    return out;
-}
-
-module.exports = ConfigParser;
-
-},{"./errors":13,"./interpolation":14,"fs":1,"mkdirp":15,"path":6,"util":10}],13:[function(require,module,exports){
-/**
- * Error thrown when addSection is called with a section
- * that already exists.
- * @param {string} section - Section Name
- * @constructor
- */
-function DuplicateSectionError(section) {
-    this.name = 'DuplicateSectionError';
-    this.message = section + ' already exists';
-    Error.captureStackTrace(this, this.constructor);
-}
-
-/**
- * Error thrown when the section being accessed, does
- * not exist.
- * @param {string} section - Section Name
- * @constructor
- */
-function NoSectionError(section) {
-    this.name = this.constructor.name;
-    this.message =  'Section ' + section + ' does not exist.';
-    Error.captureStackTrace(this, this.constructor);
-}
-
-/**
- * Error thrown when a file is being parsed.
- * @param {string} filename - File name
- * @param {int} lineNumber - Line Number
- * @param {string} line - Contents of the line
- * @constructor
- */
-function ParseError(filename, lineNumber, line) {
-    this.name = this.constructor.name;
-    this.message = 'Source contains parsing errors.\nfile: ' + filename +
-        ' line: ' + lineNumber + '\n' + line;
-    Error.captureStackTrace(this, this.constructor);
-}
-
-/**
- * Error thrown when there are no section headers present
- * in a file.
- * @param {string} filename - File name
- * @param {int} lineNumber - Line Number
- * @param {string} line - Contents of the line
- * @constructor
- */
-function MissingSectionHeaderError(filename, lineNumber, line) {
-    this.name = this.constructor.name;
-    this.message = 'File contains no section headers.\nfile: ' + filename +
-        ' line: ' + lineNumber + '\n' + line;
-    Error.captureStackTrace(this, this.constructor);
-}
-
-/**
- * Error thrown when the interpolate function exceeds the maximum recursion
- * depth.
- * @param {string} section - Section Name
- * @param {string} key - Key Name
- * @param {string} value - Key Value
- * @param {int} maxDepth - Maximum recursion depth
- * @constructor
- */
-function MaximumInterpolationDepthError(section, key, value, maxDepth) {
-    this.name = this.constructor.name;
-    this.message = 'Exceeded Maximum Recursion Depth (' + maxDepth +
-        ') for key ' + key + ' in section ' + section + '\nvalue: ' + value;
-    Error.captureStackTrace(this, this.constructor);
-}
-
-module.exports = {
-    DuplicateSectionError,
-    NoSectionError,
-    ParseError,
-    MissingSectionHeaderError,
-    MaximumInterpolationDepthError
-};
-},{}],14:[function(require,module,exports){
-const errors = require('./errors');
-
-/**
- * Regular Expression to match placeholders.
- * @type {RegExp}
- * @private
- */
-const PLACEHOLDER = new RegExp(/%\(([\w-]+)\)s/);
-
-/**
- * Maximum recursion depth for parseValue
- * @type {number}
- */
-const MAXIMUM_INTERPOLATION_DEPTH = 50;
-
-/**
- * Recursively parses a string and replaces the placeholder ( %(key)s )
- * with the value the key points to.
- * @param {ParserConfig} parser - Parser Config Object
- * @param {string} section - Section Name
- * @param {string} key - Key Name
- */
-function interpolate(parser, section, key) {
-    return interpolateRecurse(parser, section, key, 1);
-}
-
-/**
- * Interpolate Recurse
- * @param parser
- * @param section
- * @param key
- * @param depth
- * @private
- */
-function interpolateRecurse(parser, section, key, depth) {
-    let value = parser.get(section, key, true);
-    if(depth > MAXIMUM_INTERPOLATION_DEPTH){
-        throw new errors.MaximumInterpolationDepthError(section, key, value, MAXIMUM_INTERPOLATION_DEPTH);
-    }
-    let res = PLACEHOLDER.exec(value);
-    while(res !== null){
-        const placeholder = res[1];
-        const rep = interpolateRecurse(parser, section, placeholder, depth + 1);
-        // replace %(key)s with the returned value next
-        value = value.substr(0, res.index) + rep +
-            value.substr(res.index + res[0].length);
-        // get next placeholder
-        res = PLACEHOLDER.exec(value);
-    }
-    return value;
-}
-
-module.exports = {
-    interpolate,
-    MAXIMUM_INTERPOLATION_DEPTH
-};
-},{"./errors":13}],15:[function(require,module,exports){
-var path = require('path');
-var fs = require('fs');
-var _0777 = parseInt('0777', 8);
-
-module.exports = mkdirP.mkdirp = mkdirP.mkdirP = mkdirP;
-
-function mkdirP (p, opts, f, made) {
-    if (typeof opts === 'function') {
-        f = opts;
-        opts = {};
-    }
-    else if (!opts || typeof opts !== 'object') {
-        opts = { mode: opts };
-    }
-    
-    var mode = opts.mode;
-    var xfs = opts.fs || fs;
-    
-    if (mode === undefined) {
-        mode = _0777
-    }
-    if (!made) made = null;
-    
-    var cb = f || function () {};
-    p = path.resolve(p);
-    
-    xfs.mkdir(p, mode, function (er) {
-        if (!er) {
-            made = made || p;
-            return cb(null, made);
-        }
-        switch (er.code) {
-            case 'ENOENT':
-                if (path.dirname(p) === p) return cb(er);
-                mkdirP(path.dirname(p), opts, function (er, made) {
-                    if (er) cb(er, made);
-                    else mkdirP(p, opts, cb, made);
-                });
-                break;
-
-            // In the case of any other error, just see if there's a dir
-            // there already.  If so, then hooray!  If not, then something
-            // is borked.
-            default:
-                xfs.stat(p, function (er2, stat) {
-                    // if the stat fails, then that's super weird.
-                    // let the original error be the failure reason.
-                    if (er2 || !stat.isDirectory()) cb(er, made)
-                    else cb(null, made);
-                });
-                break;
-        }
-    });
-}
-
-mkdirP.sync = function sync (p, opts, made) {
-    if (!opts || typeof opts !== 'object') {
-        opts = { mode: opts };
-    }
-    
-    var mode = opts.mode;
-    var xfs = opts.fs || fs;
-    
-    if (mode === undefined) {
-        mode = _0777
-    }
-    if (!made) made = null;
-
-    p = path.resolve(p);
-
-    try {
-        xfs.mkdirSync(p, mode);
-        made = made || p;
-    }
-    catch (err0) {
-        switch (err0.code) {
-            case 'ENOENT' :
-                made = sync(path.dirname(p), opts, made);
-                sync(p, opts, made);
-                break;
-
-            // In the case of any other error, just see if there's a dir
-            // there already.  If so, then hooray!  If not, then something
-            // is borked.
-            default:
-                var stat;
-                try {
-                    stat = xfs.statSync(p);
-                }
-                catch (err1) {
-                    throw err0;
-                }
-                if (!stat.isDirectory()) throw err0;
-                break;
-        }
-    }
-
-    return made;
-};
-
-},{"fs":1,"path":6}],16:[function(require,module,exports){
+},{}],8:[function(require,module,exports){
 function Agent() {
   this._defaults = [];
 }
@@ -3910,7 +2760,7 @@ Agent.prototype._setDefaults = function(req) {
 
 module.exports = Agent;
 
-},{}],17:[function(require,module,exports){
+},{}],9:[function(require,module,exports){
 /**
  * Root reference for iframes.
  */
@@ -4832,7 +3682,7 @@ request.put = function(url, data, fn) {
   return req;
 };
 
-},{"./agent-base":16,"./is-object":18,"./request-base":19,"./response-base":20,"component-emitter":11}],18:[function(require,module,exports){
+},{"./agent-base":8,"./is-object":10,"./request-base":11,"./response-base":12,"component-emitter":7}],10:[function(require,module,exports){
 'use strict';
 
 /**
@@ -4849,7 +3699,7 @@ function isObject(obj) {
 
 module.exports = isObject;
 
-},{}],19:[function(require,module,exports){
+},{}],11:[function(require,module,exports){
 'use strict';
 
 /**
@@ -5545,7 +4395,7 @@ RequestBase.prototype._setTimeouts = function() {
   }
 };
 
-},{"./is-object":18}],20:[function(require,module,exports){
+},{"./is-object":10}],12:[function(require,module,exports){
 'use strict';
 
 /**
@@ -5683,7 +4533,7 @@ ResponseBase.prototype._setStatusProperties = function(status){
     this.unprocessableEntity = 422 == status;
 };
 
-},{"./utils":21}],21:[function(require,module,exports){
+},{"./utils":13}],13:[function(require,module,exports){
 'use strict';
 
 /**
@@ -7931,26 +6781,7 @@ class Configuration {
 
 	liveLoadConfig() {
 		// If in browser, don't read config file, use default values
-		if (typeof window !== 'undefined') {
-			this.configPath = '';
-			return;
-		}
-
-		this.updateConfigFromFile();
-
-		if (this.live_reload_config && this.live_reload_config === true) {
-			try {
-				const fs = require('fs');
-				fs.watchFile(this.configPath, { persistent: false }, (eventType, filename) => {
-					this.updateConfigFromFile();
-					if (!this.live_reload_config) {
-						fs.unwatchFile(this.configPath);
-					}
-				});
-			} catch (err) {
-				// do nothing
-			}
-		}
+		this.configPath = '';
 	}
 
 	setConfigPath(path) {
@@ -7961,24 +6792,6 @@ class Configuration {
 	}
 
 	updateConfigFromFile() {
-		const ConfigParser = require('configparser');
-
-		try {
-			var configparser = new ConfigParser();
-			configparser.read(this.configPath); // If no error catched, indicates it's INI format
-			this.config = configparser;
-		} catch (error) {
-			if (error.name && error.name === 'MissingSectionHeaderError') {
-				// Not INI format, see if it's JSON format
-				const fs = require('fs');
-				var configData = fs.readFileSync(this.configPath, 'utf8');
-				this.config = {
-					_sections: JSON.parse(configData), // To match INI data format
-				};
-			}
-		}
-
-		if (this.config) this.updateConfigValues();
 	}
 
 	updateConfigValues() {
@@ -8060,7 +6873,7 @@ class Configuration {
 
 /**
  * @module purecloud-platform-client-v2/ApiClient
- * @version 124.0.0
+ * @version 125.0.0
  */
 class ApiClient {
 	/**
@@ -9000,7 +7813,7 @@ class ApiClient {
 
 				// set header parameters
 				request.set(that.defaultHeaders).set(that.normalizeParams(headerParams));
-				//request.set({ 'purecloud-sdk': '124.0.0' });
+				//request.set({ 'purecloud-sdk': '125.0.0' });
 
 				// set request timeout
 				request.timeout(that.timeout);
@@ -9100,7 +7913,7 @@ class AlertingApi {
 	/**
 	 * Alerting service.
 	 * @module purecloud-platform-client-v2/api/AlertingApi
-	 * @version 124.0.0
+	 * @version 125.0.0
 	 */
 
 	/**
@@ -9414,7 +8227,7 @@ class AnalyticsApi {
 	/**
 	 * Analytics service.
 	 * @module purecloud-platform-client-v2/api/AnalyticsApi
-	 * @version 124.0.0
+	 * @version 125.0.0
 	 */
 
 	/**
@@ -10576,7 +9389,7 @@ class ArchitectApi {
 	/**
 	 * Architect service.
 	 * @module purecloud-platform-client-v2/api/ArchitectApi
-	 * @version 124.0.0
+	 * @version 125.0.0
 	 */
 
 	/**
@@ -13572,7 +12385,7 @@ class AuditApi {
 	/**
 	 * Audit service.
 	 * @module purecloud-platform-client-v2/api/AuditApi
-	 * @version 124.0.0
+	 * @version 125.0.0
 	 */
 
 	/**
@@ -13743,7 +12556,7 @@ class AuthorizationApi {
 	/**
 	 * Authorization service.
 	 * @module purecloud-platform-client-v2/api/AuthorizationApi
-	 * @version 124.0.0
+	 * @version 125.0.0
 	 */
 
 	/**
@@ -14926,7 +13739,7 @@ class BillingApi {
 	/**
 	 * Billing service.
 	 * @module purecloud-platform-client-v2/api/BillingApi
-	 * @version 124.0.0
+	 * @version 125.0.0
 	 */
 
 	/**
@@ -15006,7 +13819,7 @@ class ChatApi {
 	/**
 	 * Chat service.
 	 * @module purecloud-platform-client-v2/api/ChatApi
-	 * @version 124.0.0
+	 * @version 125.0.0
 	 */
 
 	/**
@@ -15097,7 +13910,7 @@ class CoachingApi {
 	/**
 	 * Coaching service.
 	 * @module purecloud-platform-client-v2/api/CoachingApi
-	 * @version 124.0.0
+	 * @version 125.0.0
 	 */
 
 	/**
@@ -15672,7 +14485,7 @@ class ContentManagementApi {
 	/**
 	 * ContentManagement service.
 	 * @module purecloud-platform-client-v2/api/ContentManagementApi
-	 * @version 124.0.0
+	 * @version 125.0.0
 	 */
 
 	/**
@@ -16812,7 +15625,7 @@ class ConversationsApi {
 	/**
 	 * Conversations service.
 	 * @module purecloud-platform-client-v2/api/ConversationsApi
-	 * @version 124.0.0
+	 * @version 125.0.0
 	 */
 
 	/**
@@ -21201,7 +20014,7 @@ class DataExtensionsApi {
 	/**
 	 * DataExtensions service.
 	 * @module purecloud-platform-client-v2/api/DataExtensionsApi
-	 * @version 124.0.0
+	 * @version 125.0.0
 	 */
 
 	/**
@@ -21287,7 +20100,7 @@ class ExternalContactsApi {
 	/**
 	 * ExternalContacts service.
 	 * @module purecloud-platform-client-v2/api/ExternalContactsApi
-	 * @version 124.0.0
+	 * @version 125.0.0
 	 */
 
 	/**
@@ -23030,7 +21843,7 @@ class FaxApi {
 	/**
 	 * Fax service.
 	 * @module purecloud-platform-client-v2/api/FaxApi
-	 * @version 124.0.0
+	 * @version 125.0.0
 	 */
 
 	/**
@@ -23201,7 +22014,7 @@ class FlowsApi {
 	/**
 	 * Flows service.
 	 * @module purecloud-platform-client-v2/api/FlowsApi
-	 * @version 124.0.0
+	 * @version 125.0.0
 	 */
 
 	/**
@@ -23272,7 +22085,7 @@ class GamificationApi {
 	/**
 	 * Gamification service.
 	 * @module purecloud-platform-client-v2/api/GamificationApi
-	 * @version 124.0.0
+	 * @version 125.0.0
 	 */
 
 	/**
@@ -24578,7 +23391,7 @@ class GeneralDataProtectionRegulationApi {
 	/**
 	 * GeneralDataProtectionRegulation service.
 	 * @module purecloud-platform-client-v2/api/GeneralDataProtectionRegulationApi
-	 * @version 124.0.0
+	 * @version 125.0.0
 	 */
 
 	/**
@@ -24708,7 +23521,7 @@ class GeolocationApi {
 	/**
 	 * Geolocation service.
 	 * @module purecloud-platform-client-v2/api/GeolocationApi
-	 * @version 124.0.0
+	 * @version 125.0.0
 	 */
 
 	/**
@@ -24839,7 +23652,7 @@ class GreetingsApi {
 	/**
 	 * Greetings service.
 	 * @module purecloud-platform-client-v2/api/GreetingsApi
-	 * @version 124.0.0
+	 * @version 125.0.0
 	 */
 
 	/**
@@ -25294,7 +24107,7 @@ class GroupsApi {
 	/**
 	 * Groups service.
 	 * @module purecloud-platform-client-v2/api/GroupsApi
-	 * @version 124.0.0
+	 * @version 125.0.0
 	 */
 
 	/**
@@ -25699,7 +24512,7 @@ class IdentityProviderApi {
 	/**
 	 * IdentityProvider service.
 	 * @module purecloud-platform-client-v2/api/IdentityProviderApi
-	 * @version 124.0.0
+	 * @version 125.0.0
 	 */
 
 	/**
@@ -26455,7 +25268,7 @@ class IntegrationsApi {
 	/**
 	 * Integrations service.
 	 * @module purecloud-platform-client-v2/api/IntegrationsApi
-	 * @version 124.0.0
+	 * @version 125.0.0
 	 */
 
 	/**
@@ -28101,7 +26914,7 @@ class JourneyApi {
 	/**
 	 * Journey service.
 	 * @module purecloud-platform-client-v2/api/JourneyApi
-	 * @version 124.0.0
+	 * @version 125.0.0
 	 */
 
 	/**
@@ -28812,7 +27625,7 @@ class KnowledgeApi {
 	/**
 	 * Knowledge service.
 	 * @module purecloud-platform-client-v2/api/KnowledgeApi
-	 * @version 124.0.0
+	 * @version 125.0.0
 	 */
 
 	/**
@@ -29303,6 +28116,79 @@ class KnowledgeApi {
 	}
 
 	/**
+	 * Update specific context data of the knowledge base.
+	 * 
+	 * @param {String} knowledgeBaseId Knowledge base ID.
+	 * @param {String} contextId Context ID.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body 
+	 */
+	patchKnowledgeKnowledgebaseContext(knowledgeBaseId, contextId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'knowledgeBaseId' is set
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+			throw 'Missing the required parameter "knowledgeBaseId" when calling patchKnowledgeKnowledgebaseContext';
+		}
+		// verify the required parameter 'contextId' is set
+		if (contextId === undefined || contextId === null) {
+			throw 'Missing the required parameter "contextId" when calling patchKnowledgeKnowledgebaseContext';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/contexts/{contextId}', 
+			'PATCH', 
+			{ 'knowledgeBaseId': knowledgeBaseId,'contextId': contextId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update context value.
+	 * 
+	 * @param {String} knowledgeBaseId Knowledge base ID.
+	 * @param {String} contextId Context ID.
+	 * @param {String} contextValueId Context Value ID.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body 
+	 */
+	patchKnowledgeKnowledgebaseContextValue(knowledgeBaseId, contextId, contextValueId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'knowledgeBaseId' is set
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+			throw 'Missing the required parameter "knowledgeBaseId" when calling patchKnowledgeKnowledgebaseContextValue';
+		}
+		// verify the required parameter 'contextId' is set
+		if (contextId === undefined || contextId === null) {
+			throw 'Missing the required parameter "contextId" when calling patchKnowledgeKnowledgebaseContextValue';
+		}
+		// verify the required parameter 'contextValueId' is set
+		if (contextValueId === undefined || contextValueId === null) {
+			throw 'Missing the required parameter "contextValueId" when calling patchKnowledgeKnowledgebaseContextValue';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/contexts/{contextId}/values/{contextValueId}', 
+			'PATCH', 
+			{ 'knowledgeBaseId': knowledgeBaseId,'contextId': contextId,'contextValueId': contextValueId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
 	 * Update category
 	 * 
 	 * @param {String} categoryId Category ID
@@ -29712,7 +28598,7 @@ class LanguageUnderstandingApi {
 	/**
 	 * LanguageUnderstanding service.
 	 * @module purecloud-platform-client-v2/api/LanguageUnderstandingApi
-	 * @version 124.0.0
+	 * @version 125.0.0
 	 */
 
 	/**
@@ -30616,7 +29502,7 @@ class LanguagesApi {
 	/**
 	 * Languages service.
 	 * @module purecloud-platform-client-v2/api/LanguagesApi
-	 * @version 124.0.0
+	 * @version 125.0.0
 	 */
 
 	/**
@@ -30884,7 +29770,7 @@ class LearningApi {
 	/**
 	 * Learning service.
 	 * @module purecloud-platform-client-v2/api/LearningApi
-	 * @version 124.0.0
+	 * @version 125.0.0
 	 */
 
 	/**
@@ -31475,7 +30361,7 @@ class LicenseApi {
 	/**
 	 * License service.
 	 * @module purecloud-platform-client-v2/api/LicenseApi
-	 * @version 124.0.0
+	 * @version 125.0.0
 	 */
 
 	/**
@@ -31713,7 +30599,7 @@ class LocationsApi {
 	/**
 	 * Locations service.
 	 * @module purecloud-platform-client-v2/api/LocationsApi
-	 * @version 124.0.0
+	 * @version 125.0.0
 	 */
 
 	/**
@@ -31949,7 +30835,7 @@ class MobileDevicesApi {
 	/**
 	 * MobileDevices service.
 	 * @module purecloud-platform-client-v2/api/MobileDevicesApi
-	 * @version 124.0.0
+	 * @version 125.0.0
 	 */
 
 	/**
@@ -32100,7 +30986,7 @@ class NotificationsApi {
 	/**
 	 * Notifications service.
 	 * @module purecloud-platform-client-v2/api/NotificationsApi
-	 * @version 124.0.0
+	 * @version 125.0.0
 	 */
 
 	/**
@@ -32325,7 +31211,7 @@ class OAuthApi {
 	/**
 	 * OAuth service.
 	 * @module purecloud-platform-client-v2/api/OAuthApi
-	 * @version 124.0.0
+	 * @version 125.0.0
 	 */
 
 	/**
@@ -32683,7 +31569,7 @@ class ObjectsApi {
 	/**
 	 * Objects service.
 	 * @module purecloud-platform-client-v2/api/ObjectsApi
-	 * @version 124.0.0
+	 * @version 125.0.0
 	 */
 
 	/**
@@ -32954,7 +31840,7 @@ class OrganizationApi {
 	/**
 	 * Organization service.
 	 * @module purecloud-platform-client-v2/api/OrganizationApi
-	 * @version 124.0.0
+	 * @version 125.0.0
 	 */
 
 	/**
@@ -33357,7 +32243,7 @@ class OrganizationAuthorizationApi {
 	/**
 	 * OrganizationAuthorization service.
 	 * @module purecloud-platform-client-v2/api/OrganizationAuthorizationApi
-	 * @version 124.0.0
+	 * @version 125.0.0
 	 */
 
 	/**
@@ -34067,7 +32953,7 @@ class OutboundApi {
 	/**
 	 * Outbound service.
 	 * @module purecloud-platform-client-v2/api/OutboundApi
-	 * @version 124.0.0
+	 * @version 125.0.0
 	 */
 
 	/**
@@ -37093,7 +35979,7 @@ class PresenceApi {
 	/**
 	 * Presence service.
 	 * @module purecloud-platform-client-v2/api/PresenceApi
-	 * @version 124.0.0
+	 * @version 125.0.0
 	 */
 
 	/**
@@ -37465,7 +36351,7 @@ class QualityApi {
 	/**
 	 * Quality service.
 	 * @module purecloud-platform-client-v2/api/QualityApi
-	 * @version 124.0.0
+	 * @version 125.0.0
 	 */
 
 	/**
@@ -38993,7 +37879,7 @@ class RecordingApi {
 	/**
 	 * Recording service.
 	 * @module purecloud-platform-client-v2/api/RecordingApi
-	 * @version 124.0.0
+	 * @version 125.0.0
 	 */
 
 	/**
@@ -40512,7 +39398,7 @@ class ResponseManagementApi {
 	/**
 	 * ResponseManagement service.
 	 * @module purecloud-platform-client-v2/api/ResponseManagementApi
-	 * @version 124.0.0
+	 * @version 125.0.0
 	 */
 
 	/**
@@ -40837,7 +39723,7 @@ class RoutingApi {
 	/**
 	 * Routing service.
 	 * @module purecloud-platform-client-v2/api/RoutingApi
-	 * @version 124.0.0
+	 * @version 125.0.0
 	 */
 
 	/**
@@ -41150,8 +40036,12 @@ class RoutingApi {
 	 * Delete a phone number provisioned for SMS.
 	 * 
 	 * @param {String} addressId Address ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.async Delete a phone number for SMS in an asynchronous manner. If the async parameter value is true, this initiates the deletion of a provisioned phone number.  (default to false)
 	 */
-	deleteRoutingSmsPhonenumber(addressId) { 
+	deleteRoutingSmsPhonenumber(addressId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'addressId' is set
 		if (addressId === undefined || addressId === null) {
 			throw 'Missing the required parameter "addressId" when calling deleteRoutingSmsPhonenumber';
@@ -41161,7 +40051,7 @@ class RoutingApi {
 			'/api/v2/routing/sms/phonenumbers/{addressId}', 
 			'DELETE', 
 			{ 'addressId': addressId }, 
-			{  }, 
+			{ 'async': opts['async'] }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -43308,8 +42198,12 @@ class RoutingApi {
 	 * Provision a phone number for SMS
 	 * 
 	 * @param {Object} body SmsPhoneNumber
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.async Provision a new phone number for SMS in an asynchronous manner. If the async parameter value is true, this initiates the provisioning of a new phone number. Check the phoneNumber&#39;s provisioningStatus for completion of this request. (default to false)
 	 */
-	postRoutingSmsPhonenumbers(body) { 
+	postRoutingSmsPhonenumbers(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postRoutingSmsPhonenumbers';
@@ -43319,7 +42213,7 @@ class RoutingApi {
 			'/api/v2/routing/sms/phonenumbers', 
 			'POST', 
 			{  }, 
-			{  }, 
+			{ 'async': opts['async'] }, 
 			{  }, 
 			{  }, 
 			body, 
@@ -43564,8 +42458,12 @@ class RoutingApi {
 	 * 
 	 * @param {String} addressId Address ID
 	 * @param {Object} body SmsPhoneNumber
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.async Update an existing phone number for SMS in an asynchronous manner. If the async parameter value is true, this initiates the update of a provisioned phone number. Check the phoneNumber&#39;s provisioningStatus for the progress of this request. (default to false)
 	 */
-	putRoutingSmsPhonenumber(addressId, body) { 
+	putRoutingSmsPhonenumber(addressId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'addressId' is set
 		if (addressId === undefined || addressId === null) {
 			throw 'Missing the required parameter "addressId" when calling putRoutingSmsPhonenumber';
@@ -43579,7 +42477,7 @@ class RoutingApi {
 			'/api/v2/routing/sms/phonenumbers/{addressId}', 
 			'PUT', 
 			{ 'addressId': addressId }, 
-			{  }, 
+			{ 'async': opts['async'] }, 
 			{  }, 
 			{  }, 
 			body, 
@@ -43745,7 +42643,7 @@ class SCIMApi {
 	/**
 	 * SCIM service.
 	 * @module purecloud-platform-client-v2/api/SCIMApi
-	 * @version 124.0.0
+	 * @version 125.0.0
 	 */
 
 	/**
@@ -44622,7 +43520,7 @@ class ScriptsApi {
 	/**
 	 * Scripts service.
 	 * @module purecloud-platform-client-v2/api/ScriptsApi
-	 * @version 124.0.0
+	 * @version 125.0.0
 	 */
 
 	/**
@@ -44975,7 +43873,7 @@ class SearchApi {
 	/**
 	 * Search service.
 	 * @module purecloud-platform-client-v2/api/SearchApi
-	 * @version 124.0.0
+	 * @version 125.0.0
 	 */
 
 	/**
@@ -45510,7 +44408,7 @@ class SpeechTextAnalyticsApi {
 	/**
 	 * SpeechTextAnalytics service.
 	 * @module purecloud-platform-client-v2/api/SpeechTextAnalyticsApi
-	 * @version 124.0.0
+	 * @version 125.0.0
 	 */
 
 	/**
@@ -45545,6 +44443,51 @@ class SpeechTextAnalyticsApi {
 			'DELETE', 
 			{ 'programId': programId }, 
 			{ 'forceDelete': opts['forceDelete'] }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete All Speech &amp; Text Analytics SentimentFeedback
+	 * 
+	 */
+	deleteSpeechandtextanalyticsSentimentfeedback() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/speechandtextanalytics/sentimentfeedback', 
+			'DELETE', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete a Speech &amp; Text Analytics SentimentFeedback by Id
+	 * 
+	 * @param {String} sentimentFeedbackId The Id of the SentimentFeedback
+	 */
+	deleteSpeechandtextanalyticsSentimentfeedbackSentimentFeedbackId(sentimentFeedbackId) { 
+		// verify the required parameter 'sentimentFeedbackId' is set
+		if (sentimentFeedbackId === undefined || sentimentFeedbackId === null) {
+			throw 'Missing the required parameter "sentimentFeedbackId" when calling deleteSpeechandtextanalyticsSentimentfeedbackSentimentFeedbackId';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/speechandtextanalytics/sentimentfeedback/{sentimentFeedbackId}', 
+			'DELETE', 
+			{ 'sentimentFeedbackId': sentimentFeedbackId }, 
+			{  }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -45830,6 +44773,30 @@ class SpeechTextAnalyticsApi {
 	}
 
 	/**
+	 * Get the list of Speech &amp; Text Analytics SentimentFeedback
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.dialect The key for filter the listing by dialect, dialect format is {language}-{country} where language follows ISO 639-1 standard and country follows ISO 3166-1 alpha 2 standard
+	 */
+	getSpeechandtextanalyticsSentimentfeedback(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/speechandtextanalytics/sentimentfeedback', 
+			'GET', 
+			{  }, 
+			{ 'dialect': opts['dialect'] }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get Speech And Text Analytics Settings
 	 * 
 	 */
@@ -46074,6 +45041,31 @@ class SpeechTextAnalyticsApi {
 	}
 
 	/**
+	 * Create a Speech &amp; Text Analytics SentimentFeedback
+	 * 
+	 * @param {Object} body The SentimentFeedback to create
+	 */
+	postSpeechandtextanalyticsSentimentfeedback(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postSpeechandtextanalyticsSentimentfeedback';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/speechandtextanalytics/sentimentfeedback', 
+			'POST', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
 	 * Create new Speech &amp; Text Analytics topic
 	 * 
 	 * @param {Object} body The topic to create
@@ -46269,7 +45261,7 @@ class StationsApi {
 	/**
 	 * Stations service.
 	 * @module purecloud-platform-client-v2/api/StationsApi
-	 * @version 124.0.0
+	 * @version 125.0.0
 	 */
 
 	/**
@@ -46416,7 +45408,7 @@ class SuggestApi {
 	/**
 	 * Suggest service.
 	 * @module purecloud-platform-client-v2/api/SuggestApi
-	 * @version 124.0.0
+	 * @version 125.0.0
 	 */
 
 	/**
@@ -46555,7 +45547,7 @@ class TelephonyApi {
 	/**
 	 * Telephony service.
 	 * @module purecloud-platform-client-v2/api/TelephonyApi
-	 * @version 124.0.0
+	 * @version 125.0.0
 	 */
 
 	/**
@@ -46663,7 +45655,7 @@ class TelephonyProvidersEdgeApi {
 	/**
 	 * TelephonyProvidersEdge service.
 	 * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-	 * @version 124.0.0
+	 * @version 125.0.0
 	 */
 
 	/**
@@ -50276,7 +49268,7 @@ class TextbotsApi {
 	/**
 	 * Textbots service.
 	 * @module purecloud-platform-client-v2/api/TextbotsApi
-	 * @version 124.0.0
+	 * @version 125.0.0
 	 */
 
 	/**
@@ -50377,7 +49369,7 @@ class TokensApi {
 	/**
 	 * Tokens service.
 	 * @module purecloud-platform-client-v2/api/TokensApi
-	 * @version 124.0.0
+	 * @version 125.0.0
 	 */
 
 	/**
@@ -50483,7 +49475,7 @@ class UploadsApi {
 	/**
 	 * Uploads service.
 	 * @module purecloud-platform-client-v2/api/UploadsApi
-	 * @version 124.0.0
+	 * @version 125.0.0
 	 */
 
 	/**
@@ -50659,7 +49651,7 @@ class UsageApi {
 	/**
 	 * Usage service.
 	 * @module purecloud-platform-client-v2/api/UsageApi
-	 * @version 124.0.0
+	 * @version 125.0.0
 	 */
 
 	/**
@@ -50730,7 +49722,7 @@ class UserRecordingsApi {
 	/**
 	 * UserRecordings service.
 	 * @module purecloud-platform-client-v2/api/UserRecordingsApi
-	 * @version 124.0.0
+	 * @version 125.0.0
 	 */
 
 	/**
@@ -50914,7 +49906,7 @@ class UsersApi {
 	/**
 	 * Users service.
 	 * @module purecloud-platform-client-v2/api/UsersApi
-	 * @version 124.0.0
+	 * @version 125.0.0
 	 */
 
 	/**
@@ -53216,7 +52208,7 @@ class UtilitiesApi {
 	/**
 	 * Utilities service.
 	 * @module purecloud-platform-client-v2/api/UtilitiesApi
-	 * @version 124.0.0
+	 * @version 125.0.0
 	 */
 
 	/**
@@ -53327,7 +52319,7 @@ class VoicemailApi {
 	/**
 	 * Voicemail service.
 	 * @module purecloud-platform-client-v2/api/VoicemailApi
-	 * @version 124.0.0
+	 * @version 125.0.0
 	 */
 
 	/**
@@ -53994,7 +52986,7 @@ class WebChatApi {
 	/**
 	 * WebChat service.
 	 * @module purecloud-platform-client-v2/api/WebChatApi
-	 * @version 124.0.0
+	 * @version 125.0.0
 	 */
 
 	/**
@@ -54538,7 +53530,7 @@ class WebDeploymentsApi {
 	/**
 	 * WebDeployments service.
 	 * @module purecloud-platform-client-v2/api/WebDeploymentsApi
-	 * @version 124.0.0
+	 * @version 125.0.0
 	 */
 
 	/**
@@ -54893,7 +53885,7 @@ class WebMessagingApi {
 	/**
 	 * WebMessaging service.
 	 * @module purecloud-platform-client-v2/api/WebMessagingApi
-	 * @version 124.0.0
+	 * @version 125.0.0
 	 */
 
 	/**
@@ -54939,7 +53931,7 @@ class WidgetsApi {
 	/**
 	 * Widgets service.
 	 * @module purecloud-platform-client-v2/api/WidgetsApi
-	 * @version 124.0.0
+	 * @version 125.0.0
 	 */
 
 	/**
@@ -55085,7 +54077,7 @@ class WorkforceManagementApi {
 	/**
 	 * WorkforceManagement service.
 	 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-	 * @version 124.0.0
+	 * @version 125.0.0
 	 */
 
 	/**
@@ -58644,7 +57636,7 @@ class WorkforceManagementApi {
  * </pre>
  * </p>
  * @module purecloud-platform-client-v2/index
- * @version 124.0.0
+ * @version 125.0.0
  */
 class platformClient {
 	constructor() {
@@ -58979,4 +57971,4 @@ var index = new platformClient();
 module.exports = index;
 
 }).call(this)}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {},require("buffer").Buffer)
-},{"buffer":3,"configparser":12,"fs":1,"os":5,"path":6,"superagent":17}]},{},[]);
+},{"buffer":2,"os":4,"path":5,"superagent":9}]},{},[]);

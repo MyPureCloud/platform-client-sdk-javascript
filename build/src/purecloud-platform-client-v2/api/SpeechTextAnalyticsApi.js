@@ -5,7 +5,7 @@ class SpeechTextAnalyticsApi {
 	/**
 	 * SpeechTextAnalytics service.
 	 * @module purecloud-platform-client-v2/api/SpeechTextAnalyticsApi
-	 * @version 124.0.0
+	 * @version 125.0.0
 	 */
 
 	/**
@@ -40,6 +40,51 @@ class SpeechTextAnalyticsApi {
 			'DELETE', 
 			{ 'programId': programId }, 
 			{ 'forceDelete': opts['forceDelete'] }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete All Speech &amp; Text Analytics SentimentFeedback
+	 * 
+	 */
+	deleteSpeechandtextanalyticsSentimentfeedback() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/speechandtextanalytics/sentimentfeedback', 
+			'DELETE', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete a Speech &amp; Text Analytics SentimentFeedback by Id
+	 * 
+	 * @param {String} sentimentFeedbackId The Id of the SentimentFeedback
+	 */
+	deleteSpeechandtextanalyticsSentimentfeedbackSentimentFeedbackId(sentimentFeedbackId) { 
+		// verify the required parameter 'sentimentFeedbackId' is set
+		if (sentimentFeedbackId === undefined || sentimentFeedbackId === null) {
+			throw 'Missing the required parameter "sentimentFeedbackId" when calling deleteSpeechandtextanalyticsSentimentfeedbackSentimentFeedbackId';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/speechandtextanalytics/sentimentfeedback/{sentimentFeedbackId}', 
+			'DELETE', 
+			{ 'sentimentFeedbackId': sentimentFeedbackId }, 
+			{  }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -325,6 +370,30 @@ class SpeechTextAnalyticsApi {
 	}
 
 	/**
+	 * Get the list of Speech &amp; Text Analytics SentimentFeedback
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.dialect The key for filter the listing by dialect, dialect format is {language}-{country} where language follows ISO 639-1 standard and country follows ISO 3166-1 alpha 2 standard
+	 */
+	getSpeechandtextanalyticsSentimentfeedback(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/speechandtextanalytics/sentimentfeedback', 
+			'GET', 
+			{  }, 
+			{ 'dialect': opts['dialect'] }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get Speech And Text Analytics Settings
 	 * 
 	 */
@@ -556,6 +625,31 @@ class SpeechTextAnalyticsApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/speechandtextanalytics/programs/publishjobs', 
+			'POST', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Create a Speech &amp; Text Analytics SentimentFeedback
+	 * 
+	 * @param {Object} body The SentimentFeedback to create
+	 */
+	postSpeechandtextanalyticsSentimentfeedback(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postSpeechandtextanalyticsSentimentfeedback';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/speechandtextanalytics/sentimentfeedback', 
 			'POST', 
 			{  }, 
 			{  }, 

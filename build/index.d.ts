@@ -2036,6 +2036,8 @@ declare class KnowledgeApi {
   	getKnowledgeKnowledgebaseLanguageTrainings(knowledgeBaseId: string, languageCode: string, opts?: KnowledgeApi.getKnowledgeKnowledgebaseLanguageTrainingsOptions): Promise<Models.TrainingListing>; 
   	getKnowledgeKnowledgebases(opts?: KnowledgeApi.getKnowledgeKnowledgebasesOptions): Promise<Models.KnowledgeBaseListing>; 
   	patchKnowledgeKnowledgebase(knowledgeBaseId: string, body: Models.KnowledgeBase): Promise<Models.KnowledgeBase>; 
+  	patchKnowledgeKnowledgebaseContext(knowledgeBaseId: string, contextId: string, opts?: KnowledgeApi.patchKnowledgeKnowledgebaseContextOptions): Promise<Models.KnowledgeContextResponse>; 
+  	patchKnowledgeKnowledgebaseContextValue(knowledgeBaseId: string, contextId: string, contextValueId: string, opts?: KnowledgeApi.patchKnowledgeKnowledgebaseContextValueOptions): Promise<Models.KnowledgeContextValueResponse>; 
   	patchKnowledgeKnowledgebaseLanguageCategory(categoryId: string, knowledgeBaseId: string, languageCode: string, body: Models.KnowledgeCategoryRequest): Promise<Models.KnowledgeExtendedCategory>; 
   	patchKnowledgeKnowledgebaseLanguageDocument(documentId: string, knowledgeBaseId: string, languageCode: string, body: Models.KnowledgeDocumentRequest): Promise<Models.KnowledgeDocument>; 
   	patchKnowledgeKnowledgebaseLanguageDocuments(knowledgeBaseId: string, languageCode: string, body: Array<Models.KnowledgeDocumentBulkRequest>): Promise<Models.DocumentListing>; 
@@ -2086,6 +2088,12 @@ declare namespace KnowledgeApi {
 		"published"?: boolean;
 		"sortBy"?: string;
 		"sortOrder"?: string;
+	}
+	export interface patchKnowledgeKnowledgebaseContextOptions { 
+		"body"?: Models.KnowledgeContextRequest;
+	}
+	export interface patchKnowledgeKnowledgebaseContextValueOptions { 
+		"body"?: Models.KnowledgeContextValueRequest;
 	}
 	export interface postKnowledgeKnowledgebaseSearchOptions { 
 		"body"?: Models.KnowledgeSearchRequest;
@@ -3293,7 +3301,7 @@ declare class RoutingApi {
   	deleteRoutingSettings(): Promise<void>; 
   	deleteRoutingSkill(skillId: string): Promise<void>; 
   	deleteRoutingSmsAddress(addressId: string): Promise<void>; 
-  	deleteRoutingSmsPhonenumber(addressId: string): Promise<void>; 
+  	deleteRoutingSmsPhonenumber(addressId: string, opts?: RoutingApi.deleteRoutingSmsPhonenumberOptions): Promise<void>; 
   	deleteRoutingUserUtilization(userId: string): Promise<void>; 
   	deleteRoutingUtilization(): Promise<void>; 
   	deleteRoutingWrapupcode(codeId: string): Promise<void>; 
@@ -3371,7 +3379,7 @@ declare class RoutingApi {
   	postRoutingQueues(body: Models.CreateQueueRequest): Promise<Models.Queue>; 
   	postRoutingSkills(body: Models.RoutingSkill): Promise<Models.RoutingSkill>; 
   	postRoutingSmsAddresses(body: Models.SmsAddressProvision): Promise<Models.SmsAddress>; 
-  	postRoutingSmsPhonenumbers(body: Models.SmsPhoneNumberProvision): Promise<Models.SmsPhoneNumber>; 
+  	postRoutingSmsPhonenumbers(body: Models.SmsPhoneNumberProvision, opts?: RoutingApi.postRoutingSmsPhonenumbersOptions): Promise<Models.SmsPhoneNumber>; 
   	postRoutingWrapupcodes(body: Models.WrapupCode): Promise<Models.WrapupCode>; 
   	postUserRoutinglanguages(userId: string, body: Models.UserRoutingLanguagePost): Promise<Models.UserRoutingLanguage>; 
   	postUserRoutingskills(userId: string, body: Models.UserRoutingSkillPost): Promise<Models.UserRoutingSkill>; 
@@ -3380,7 +3388,7 @@ declare class RoutingApi {
   	putRoutingQueue(queueId: string, body: Models.QueueRequest): Promise<Models.Queue>; 
   	putRoutingSettings(body: Models.RoutingSettings): Promise<Models.RoutingSettings>; 
   	putRoutingSettingsTranscription(body: Models.TranscriptionSettings): Promise<Models.TranscriptionSettings>; 
-  	putRoutingSmsPhonenumber(addressId: string, body: Models.SmsPhoneNumber): Promise<Models.SmsPhoneNumber>; 
+  	putRoutingSmsPhonenumber(addressId: string, body: Models.SmsPhoneNumber, opts?: RoutingApi.putRoutingSmsPhonenumberOptions): Promise<Models.SmsPhoneNumber>; 
   	putRoutingUserUtilization(userId: string, body: Models.Utilization): Promise<Models.AgentMaxUtilization>; 
   	putRoutingUtilization(body: Models.Utilization): Promise<Models.Utilization>; 
   	putRoutingWrapupcode(codeId: string, body: Models.WrapupCode): Promise<Models.WrapupCode>; 
@@ -3391,6 +3399,9 @@ declare class RoutingApi {
 declare namespace RoutingApi { 
 	export interface deleteRoutingQueueOptions { 
 		"forceDelete"?: boolean;
+	}
+	export interface deleteRoutingSmsPhonenumberOptions { 
+		"async"?: boolean;
 	}
 	export interface getRoutingAssessmentsOptions { 
 		"before"?: string;
@@ -3559,6 +3570,12 @@ declare namespace RoutingApi {
 	}
 	export interface postRoutingQueueUsersOptions { 
 		"_delete"?: boolean;
+	}
+	export interface postRoutingSmsPhonenumbersOptions { 
+		"async"?: boolean;
+	}
+	export interface putRoutingSmsPhonenumberOptions { 
+		"async"?: boolean;
 	}
 }
 
@@ -3808,6 +3825,8 @@ declare namespace SearchApi {
 
 declare class SpeechTextAnalyticsApi {  
   	deleteSpeechandtextanalyticsProgram(programId: string, opts?: SpeechTextAnalyticsApi.deleteSpeechandtextanalyticsProgramOptions): Promise<void>; 
+  	deleteSpeechandtextanalyticsSentimentfeedback(): Promise<void>; 
+  	deleteSpeechandtextanalyticsSentimentfeedbackSentimentFeedbackId(sentimentFeedbackId: string): Promise<void>; 
   	deleteSpeechandtextanalyticsTopic(topicId: string): Promise<void>; 
   	getSpeechandtextanalyticsConversation(conversationId: string): Promise<Models.ConversationMetrics>; 
   	getSpeechandtextanalyticsConversationCommunicationTranscripturl(conversationId: string, communicationId: string): Promise<Models.TranscriptUrl>; 
@@ -3819,6 +3838,7 @@ declare class SpeechTextAnalyticsApi {
   	getSpeechandtextanalyticsProgramsMappings(opts?: SpeechTextAnalyticsApi.getSpeechandtextanalyticsProgramsMappingsOptions): Promise<Models.ProgramsMappingsEntityListing>; 
   	getSpeechandtextanalyticsProgramsPublishjob(jobId: string): Promise<Models.ProgramJob>; 
   	getSpeechandtextanalyticsProgramsUnpublished(opts?: SpeechTextAnalyticsApi.getSpeechandtextanalyticsProgramsUnpublishedOptions): Promise<Models.UnpublishedProgramsEntityListing>; 
+  	getSpeechandtextanalyticsSentimentfeedback(opts?: SpeechTextAnalyticsApi.getSpeechandtextanalyticsSentimentfeedbackOptions): Promise<Models.SentimentFeedbackEntityListing>; 
   	getSpeechandtextanalyticsSettings(): Promise<Models.SpeechTextAnalyticsSettingsResponse>; 
   	getSpeechandtextanalyticsTopic(topicId: string): Promise<Models.Topic>; 
   	getSpeechandtextanalyticsTopics(opts?: SpeechTextAnalyticsApi.getSpeechandtextanalyticsTopicsOptions): Promise<Models.TopicsEntityListing>; 
@@ -3829,6 +3849,7 @@ declare class SpeechTextAnalyticsApi {
   	postSpeechandtextanalyticsPrograms(body: Models.ProgramRequest): Promise<Models.Program>; 
   	postSpeechandtextanalyticsProgramsGeneralJobs(body: Models.GeneralProgramJobRequest): Promise<Models.GeneralProgramJob>; 
   	postSpeechandtextanalyticsProgramsPublishjobs(body: Models.ProgramJobRequest): Promise<Models.ProgramJob>; 
+  	postSpeechandtextanalyticsSentimentfeedback(body: Models.SentimentFeedback): Promise<Models.SentimentFeedback>; 
   	postSpeechandtextanalyticsTopics(body: Models.TopicRequest): Promise<Models.Topic>; 
   	postSpeechandtextanalyticsTopicsPublishjobs(body: Models.TopicJobRequest): Promise<Models.TopicJob>; 
   	postSpeechandtextanalyticsTranscriptsSearch(body: Models.TranscriptSearchRequest): Promise<Models.JsonSearchResponse>; 
@@ -3853,6 +3874,9 @@ declare namespace SpeechTextAnalyticsApi {
 	export interface getSpeechandtextanalyticsProgramsUnpublishedOptions { 
 		"nextPage"?: string;
 		"pageSize"?: number;
+	}
+	export interface getSpeechandtextanalyticsSentimentfeedbackOptions { 
+		"dialect"?: string;
 	}
 	export interface getSpeechandtextanalyticsTopicsOptions { 
 		"nextPage"?: string;
@@ -10145,6 +10169,12 @@ declare namespace Models {
 		"action"?: string;
 	}
 	
+	export interface ConversationContentStory { 
+		"type"?: string;
+		"url"?: string;
+		"replyToId"?: string;
+	}
+	
 	export interface ConversationDeletionProtectionQuery { 
 		"conversationIds": Array<string>;
 	}
@@ -10320,6 +10350,12 @@ declare namespace Models {
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"pageCount"?: number;
+	}
+	
+	export interface ConversationEventCoBrowse { 
+		"type": string;
+		"sessionId"?: string;
+		"sessionJoinToken"?: string;
 	}
 	
 	export interface ConversationEventTopicAddress { 
@@ -10735,11 +10771,17 @@ declare namespace Models {
 	export interface ConversationMessageContent { 
 		"contentType": string;
 		"location"?: Models.ConversationContentLocation;
+		"story"?: Models.ConversationContentStory;
 		"attachment"?: Models.ConversationContentAttachment;
 		"quickReply"?: Models.ConversationContentQuickReply;
 		"template"?: Models.ConversationContentNotificationTemplate;
 		"buttonResponse"?: Models.ConversationContentButtonResponse;
 		"generic"?: Models.ConversationContentGeneric;
+	}
+	
+	export interface ConversationMessageEvent { 
+		"eventType": string;
+		"coBrowse"?: Models.ConversationEventCoBrowse;
 	}
 	
 	export interface ConversationMessageEventTopicConversationRoutingData { 
@@ -10931,6 +10973,7 @@ declare namespace Models {
 		"type": string;
 		"text"?: string;
 		"content"?: Array<Models.ConversationMessageContent>;
+		"events"?: Array<Models.ConversationMessageEvent>;
 		"status"?: string;
 		"reasons"?: Array<Models.ConversationReason>;
 		"originatingEntity"?: string;
@@ -16289,8 +16332,8 @@ declare namespace Models {
 		"completed"?: string;
 		"entities"?: Array<Models.HistoryEntry>;
 		"pageSize"?: number;
-		"total"?: number;
 		"pageNumber"?: number;
+		"total"?: number;
 		"pageCount"?: number;
 	}
 	
@@ -17547,6 +17590,35 @@ declare namespace Models {
 		"name": string;
 		"description"?: string;
 		"parent"?: Models.DocumentCategoryInput;
+		"selfUri"?: string;
+	}
+	
+	export interface KnowledgeContextRequest { 
+		"name": string;
+		"description"?: string;
+	}
+	
+	export interface KnowledgeContextResponse { 
+		"id"?: string;
+		"name": string;
+		"description"?: string;
+		"dateCreated": string;
+		"dateModified": string;
+		"values": Array<Models.KnowledgeContextValueResponse>;
+		"selfUri"?: string;
+	}
+	
+	export interface KnowledgeContextValueRequest { 
+		"name": string;
+		"description"?: string;
+	}
+	
+	export interface KnowledgeContextValueResponse { 
+		"id": string;
+		"name": string;
+		"description"?: string;
+		"dateCreated": string;
+		"dateModified": string;
 		"selfUri"?: string;
 	}
 	
@@ -19822,6 +19894,7 @@ declare namespace Models {
 		"acdAutoAnswer"?: boolean;
 		"languagePreference"?: string;
 		"lastTokenIssued"?: Models.OAuthLastTokenIssued;
+		"dateLastLogin"?: string;
 		"organization"?: Models.Organization;
 	}
 	
@@ -25385,6 +25458,19 @@ declare namespace Models {
 		"user"?: Models.AddressableEntityRef;
 	}
 	
+	export interface SentimentFeedback { 
+		"id"?: string;
+		"phrase": string;
+		"dialect": string;
+		"feedbackValue": string;
+		"dateCreated"?: string;
+		"createdBy"?: Models.AddressableEntityRef;
+	}
+	
+	export interface SentimentFeedbackEntityListing { 
+		"entities"?: Array<Models.SentimentFeedback>;
+	}
+	
 	export interface SequenceSchedule { 
 		"id"?: string;
 		"name"?: string;
@@ -25844,6 +25930,7 @@ declare namespace Models {
 		"autoRenewable"?: string;
 		"addressId"?: Models.SmsAddress;
 		"shortCodeBillingType"?: string;
+		"provisioningStatus"?: Models.SmsProvisioningStatus;
 		"selfUri"?: string;
 	}
 	
@@ -25873,6 +25960,13 @@ declare namespace Models {
 	export interface SmsPhoneNumberRef { 
 		"phoneNumber": string;
 		"selfUri"?: string;
+	}
+	
+	export interface SmsProvisioningStatus { 
+		"action"?: string;
+		"state"?: string;
+		"error"?: Models.ErrorBody;
+		"version"?: number;
 	}
 	
 	export interface SocialExpression { 
@@ -27314,6 +27408,7 @@ declare namespace Models {
 		"acdAutoAnswer"?: boolean;
 		"languagePreference"?: string;
 		"lastTokenIssued"?: Models.OAuthLastTokenIssued;
+		"dateLastLogin"?: string;
 		"trustUserDetails"?: Models.TrustUserDetails;
 	}
 	
@@ -27729,6 +27824,7 @@ declare namespace Models {
 		"acdAutoAnswer"?: boolean;
 		"languagePreference"?: string;
 		"lastTokenIssued"?: Models.OAuthLastTokenIssued;
+		"dateLastLogin"?: string;
 		"selfUri"?: string;
 	}
 	
@@ -28077,6 +28173,7 @@ declare namespace Models {
 		"acdAutoAnswer"?: boolean;
 		"languagePreference"?: string;
 		"lastTokenIssued"?: Models.OAuthLastTokenIssued;
+		"dateLastLogin"?: string;
 		"date"?: Models.ServerDate;
 		"geolocationSettings"?: Models.GeolocationSettings;
 		"organization"?: Models.Organization;
@@ -28717,6 +28814,7 @@ declare namespace Models {
 		"journeyUrlNotContainsAnyConditions"?: Array<string>;
 		"journeyUrlContainsAllConditions"?: Array<string>;
 		"journeyUrlNotContainsAllConditions"?: Array<string>;
+		"flowMilestoneIds"?: Array<string>;
 	}
 	
 	export interface VisibilityCondition { 

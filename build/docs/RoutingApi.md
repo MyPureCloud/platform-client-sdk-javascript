@@ -708,7 +708,7 @@ void (no response body)
 
 <a name="deleteRoutingSmsPhonenumber"></a>
 
-# void deleteRoutingSmsPhonenumber(addressId)
+# void deleteRoutingSmsPhonenumber(addressId, opts)
 
 
 
@@ -736,8 +736,11 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.RoutingApi();
 
 let addressId = "addressId_example"; // String | Address ID
+let opts = { 
+  'async': false // Boolean | Delete a phone number for SMS in an asynchronous manner. If the async parameter value is true, this initiates the deletion of a provisioned phone number. 
+};
 
-apiInstance.deleteRoutingSmsPhonenumber(addressId)
+apiInstance.deleteRoutingSmsPhonenumber(addressId, opts)
   .then(() => {
     console.log('deleteRoutingSmsPhonenumber returned successfully.');
   })
@@ -753,6 +756,7 @@ apiInstance.deleteRoutingSmsPhonenumber(addressId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **addressId** | **String** | Address ID |  |
+ **async** | **Boolean** | Delete a phone number for SMS in an asynchronous manner. If the async parameter value is true, this initiates the deletion of a provisioned phone number.  | [optional] [default to false] |
 {: class="table table-striped"}
 
 ### Return type
@@ -2193,7 +2197,7 @@ apiInstance.getRoutingQueueMembers(queueId, opts)
  **pageNumber** | **Number** |  | [optional] [default to 1] |
  **pageSize** | **Number** | Max value is 100 | [optional] [default to 25] |
  **sortOrder** | **String** | Note: results are sorted by name. | [optional] [default to asc]<br />**Values**: asc, desc |
- **expand** | **[String]** | Which fields, if any, to expand. | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography |
+ **expand** | **[String]** | Which fields, if any, to expand. | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, dateLastLogin, authorization.unusedRoles, team, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography |
  **name** | **String** | Filter by queue member name | [optional]  |
  **profileSkills** | **[String]** | Filter by profile skill | [optional]  |
  **skills** | **[String]** | Filter by skill | [optional]  |
@@ -2272,7 +2276,7 @@ apiInstance.getRoutingQueueUsers(queueId, opts)
  **pageNumber** | **Number** |  | [optional] [default to 1] |
  **pageSize** | **Number** | Max value is 100 | [optional] [default to 25] |
  **sortOrder** | **String** | Note: results are sorted by name. | [optional] [default to asc]<br />**Values**: asc, desc |
- **expand** | **[String]** | Which fields, if any, to expand. | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography |
+ **expand** | **[String]** | Which fields, if any, to expand. | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, dateLastLogin, authorization.unusedRoles, team, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography |
  **joined** | **Boolean** | Filter by joined status | [optional]  |
  **name** | **String** | Filter by queue member name | [optional]  |
  **profileSkills** | **[String]** | Filter by profile skill | [optional]  |
@@ -5114,7 +5118,7 @@ apiInstance.postRoutingSmsAddresses(body)
 
 <a name="postRoutingSmsPhonenumbers"></a>
 
-# SmsPhoneNumber postRoutingSmsPhonenumbers(body)
+# SmsPhoneNumber postRoutingSmsPhonenumbers(body, opts)
 
 
 
@@ -5142,8 +5146,11 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.RoutingApi();
 
 let body = {}; // Object | SmsPhoneNumber
+let opts = { 
+  'async': false // Boolean | Provision a new phone number for SMS in an asynchronous manner. If the async parameter value is true, this initiates the provisioning of a new phone number. Check the phoneNumber's provisioningStatus for completion of this request.
+};
 
-apiInstance.postRoutingSmsPhonenumbers(body)
+apiInstance.postRoutingSmsPhonenumbers(body, opts)
   .then((data) => {
     console.log(`postRoutingSmsPhonenumbers success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -5159,6 +5166,7 @@ apiInstance.postRoutingSmsPhonenumbers(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | SmsPhoneNumber |  |
+ **async** | **Boolean** | Provision a new phone number for SMS in an asynchronous manner. If the async parameter value is true, this initiates the provisioning of a new phone number. Check the phoneNumber&#39;s provisioningStatus for completion of this request. | [optional] [default to false] |
 {: class="table table-striped"}
 
 ### Return type
@@ -5604,7 +5612,7 @@ apiInstance.putRoutingSettingsTranscription(body)
 
 <a name="putRoutingSmsPhonenumber"></a>
 
-# SmsPhoneNumber putRoutingSmsPhonenumber(addressId, body)
+# SmsPhoneNumber putRoutingSmsPhonenumber(addressId, body, opts)
 
 
 
@@ -5633,8 +5641,11 @@ let apiInstance = new platformClient.RoutingApi();
 
 let addressId = "addressId_example"; // String | Address ID
 let body = {}; // Object | SmsPhoneNumber
+let opts = { 
+  'async': false // Boolean | Update an existing phone number for SMS in an asynchronous manner. If the async parameter value is true, this initiates the update of a provisioned phone number. Check the phoneNumber's provisioningStatus for the progress of this request.
+};
 
-apiInstance.putRoutingSmsPhonenumber(addressId, body)
+apiInstance.putRoutingSmsPhonenumber(addressId, body, opts)
   .then((data) => {
     console.log(`putRoutingSmsPhonenumber success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -5651,6 +5662,7 @@ apiInstance.putRoutingSmsPhonenumber(addressId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **addressId** | **String** | Address ID |  |
  **body** | **Object** | SmsPhoneNumber |  |
+ **async** | **Boolean** | Update an existing phone number for SMS in an asynchronous manner. If the async parameter value is true, this initiates the update of a provisioned phone number. Check the phoneNumber&#39;s provisioningStatus for the progress of this request. | [optional] [default to false] |
 {: class="table table-striped"}
 
 ### Return type

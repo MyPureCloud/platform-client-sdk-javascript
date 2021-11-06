@@ -5,7 +5,7 @@ class RoutingApi {
 	/**
 	 * Routing service.
 	 * @module purecloud-platform-client-v2/api/RoutingApi
-	 * @version 124.0.0
+	 * @version 125.0.0
 	 */
 
 	/**
@@ -318,8 +318,12 @@ class RoutingApi {
 	 * Delete a phone number provisioned for SMS.
 	 * 
 	 * @param {String} addressId Address ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.async Delete a phone number for SMS in an asynchronous manner. If the async parameter value is true, this initiates the deletion of a provisioned phone number.  (default to false)
 	 */
-	deleteRoutingSmsPhonenumber(addressId) { 
+	deleteRoutingSmsPhonenumber(addressId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'addressId' is set
 		if (addressId === undefined || addressId === null) {
 			throw 'Missing the required parameter "addressId" when calling deleteRoutingSmsPhonenumber';
@@ -329,7 +333,7 @@ class RoutingApi {
 			'/api/v2/routing/sms/phonenumbers/{addressId}', 
 			'DELETE', 
 			{ 'addressId': addressId }, 
-			{  }, 
+			{ 'async': opts['async'] }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -2476,8 +2480,12 @@ class RoutingApi {
 	 * Provision a phone number for SMS
 	 * 
 	 * @param {Object} body SmsPhoneNumber
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.async Provision a new phone number for SMS in an asynchronous manner. If the async parameter value is true, this initiates the provisioning of a new phone number. Check the phoneNumber&#39;s provisioningStatus for completion of this request. (default to false)
 	 */
-	postRoutingSmsPhonenumbers(body) { 
+	postRoutingSmsPhonenumbers(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postRoutingSmsPhonenumbers';
@@ -2487,7 +2495,7 @@ class RoutingApi {
 			'/api/v2/routing/sms/phonenumbers', 
 			'POST', 
 			{  }, 
-			{  }, 
+			{ 'async': opts['async'] }, 
 			{  }, 
 			{  }, 
 			body, 
@@ -2732,8 +2740,12 @@ class RoutingApi {
 	 * 
 	 * @param {String} addressId Address ID
 	 * @param {Object} body SmsPhoneNumber
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.async Update an existing phone number for SMS in an asynchronous manner. If the async parameter value is true, this initiates the update of a provisioned phone number. Check the phoneNumber&#39;s provisioningStatus for the progress of this request. (default to false)
 	 */
-	putRoutingSmsPhonenumber(addressId, body) { 
+	putRoutingSmsPhonenumber(addressId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'addressId' is set
 		if (addressId === undefined || addressId === null) {
 			throw 'Missing the required parameter "addressId" when calling putRoutingSmsPhonenumber';
@@ -2747,7 +2759,7 @@ class RoutingApi {
 			'/api/v2/routing/sms/phonenumbers/{addressId}', 
 			'PUT', 
 			{ 'addressId': addressId }, 
-			{  }, 
+			{ 'async': opts['async'] }, 
 			{  }, 
 			{  }, 
 			body, 
