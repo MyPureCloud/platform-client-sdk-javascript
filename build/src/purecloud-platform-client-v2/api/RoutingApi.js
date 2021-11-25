@@ -5,7 +5,7 @@ class RoutingApi {
 	/**
 	 * Routing service.
 	 * @module purecloud-platform-client-v2/api/RoutingApi
-	 * @version 125.0.0
+	 * @version 126.0.0
 	 */
 
 	/**
@@ -1161,12 +1161,11 @@ class RoutingApi {
 	}
 
 	/**
-	 * Get a paged listing of simplified queue objects.  Can be used to get a digest of all queues in an organization.
+	 * Get a paged listing of simplified queue objects, sorted by name.  Can be used to get a digest of all queues in an organization.
 	 * 
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize Page size [max value is 500] (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
-	 * @param {Object} opts.sortBy Sort by (default to name)
 	 * @param {Object} opts.sortOrder Sort order (default to asc)
 	 */
 	getRoutingQueuesDivisionviewsAll(opts) { 
@@ -1177,7 +1176,7 @@ class RoutingApi {
 			'/api/v2/routing/queues/divisionviews/all', 
 			'GET', 
 			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] }, 
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortOrder': opts['sortOrder'] }, 
 			{  }, 
 			{  }, 
 			null, 

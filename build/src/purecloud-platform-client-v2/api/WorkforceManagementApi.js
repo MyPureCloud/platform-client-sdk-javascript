@@ -5,7 +5,7 @@ class WorkforceManagementApi {
 	/**
 	 * WorkforceManagement service.
 	 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-	 * @version 125.0.0
+	 * @version 126.0.0
 	 */
 
 	/**
@@ -270,6 +270,66 @@ class WorkforceManagementApi {
 			'/api/v2/workforcemanagement/managementunits/{managementUnitId}', 
 			'DELETE', 
 			{ 'managementUnitId': managementUnitId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Deletes a time off limit object
+	 * 
+	 * @param {String} managementUnitId The management unit ID of the management unit.
+	 * @param {String} timeOffLimitId The ID of the time off limit object to delete
+	 */
+	deleteWorkforcemanagementManagementunitTimeofflimit(managementUnitId, timeOffLimitId) { 
+		// verify the required parameter 'managementUnitId' is set
+		if (managementUnitId === undefined || managementUnitId === null) {
+			throw 'Missing the required parameter "managementUnitId" when calling deleteWorkforcemanagementManagementunitTimeofflimit';
+		}
+		// verify the required parameter 'timeOffLimitId' is set
+		if (timeOffLimitId === undefined || timeOffLimitId === null) {
+			throw 'Missing the required parameter "timeOffLimitId" when calling deleteWorkforcemanagementManagementunitTimeofflimit';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits/{timeOffLimitId}', 
+			'DELETE', 
+			{ 'managementUnitId': managementUnitId,'timeOffLimitId': timeOffLimitId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Deletes a time off plan
+	 * 
+	 * @param {String} managementUnitId The management unit ID.
+	 * @param {String} timeOffPlanId The ID of the time off plan to delete
+	 */
+	deleteWorkforcemanagementManagementunitTimeoffplan(managementUnitId, timeOffPlanId) { 
+		// verify the required parameter 'managementUnitId' is set
+		if (managementUnitId === undefined || managementUnitId === null) {
+			throw 'Missing the required parameter "managementUnitId" when calling deleteWorkforcemanagementManagementunitTimeoffplan';
+		}
+		// verify the required parameter 'timeOffPlanId' is set
+		if (timeOffPlanId === undefined || timeOffPlanId === null) {
+			throw 'Missing the required parameter "timeOffPlanId" when calling deleteWorkforcemanagementManagementunitTimeoffplan';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffplans/{timeOffPlanId}', 
+			'DELETE', 
+			{ 'managementUnitId': managementUnitId,'timeOffPlanId': timeOffPlanId }, 
 			{  }, 
 			{  }, 
 			{  }, 
@@ -1522,6 +1582,116 @@ class WorkforceManagementApi {
 	}
 
 	/**
+	 * Gets a time off limit object
+	 * Returns properties of time off limit object, but not daily values.
+	 * @param {String} managementUnitId The management unit ID of the management unit.
+	 * @param {String} timeOffLimitId The ID of the time off limit to fetch
+	 */
+	getWorkforcemanagementManagementunitTimeofflimit(managementUnitId, timeOffLimitId) { 
+		// verify the required parameter 'managementUnitId' is set
+		if (managementUnitId === undefined || managementUnitId === null) {
+			throw 'Missing the required parameter "managementUnitId" when calling getWorkforcemanagementManagementunitTimeofflimit';
+		}
+		// verify the required parameter 'timeOffLimitId' is set
+		if (timeOffLimitId === undefined || timeOffLimitId === null) {
+			throw 'Missing the required parameter "timeOffLimitId" when calling getWorkforcemanagementManagementunitTimeofflimit';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits/{timeOffLimitId}', 
+			'GET', 
+			{ 'managementUnitId': managementUnitId,'timeOffLimitId': timeOffLimitId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Gets a list of time off limit objects under management unit.
+	 * Currently only one time off limit object is allowed under management unit, so the list contains either 0 or 1 element.
+	 * @param {String} managementUnitId The management unit ID of the management unit.
+	 */
+	getWorkforcemanagementManagementunitTimeofflimits(managementUnitId) { 
+		// verify the required parameter 'managementUnitId' is set
+		if (managementUnitId === undefined || managementUnitId === null) {
+			throw 'Missing the required parameter "managementUnitId" when calling getWorkforcemanagementManagementunitTimeofflimits';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits', 
+			'GET', 
+			{ 'managementUnitId': managementUnitId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Gets a time off plan
+	 * 
+	 * @param {String} managementUnitId The management unit ID.
+	 * @param {String} timeOffPlanId The ID of the time off plan to fetch
+	 */
+	getWorkforcemanagementManagementunitTimeoffplan(managementUnitId, timeOffPlanId) { 
+		// verify the required parameter 'managementUnitId' is set
+		if (managementUnitId === undefined || managementUnitId === null) {
+			throw 'Missing the required parameter "managementUnitId" when calling getWorkforcemanagementManagementunitTimeoffplan';
+		}
+		// verify the required parameter 'timeOffPlanId' is set
+		if (timeOffPlanId === undefined || timeOffPlanId === null) {
+			throw 'Missing the required parameter "timeOffPlanId" when calling getWorkforcemanagementManagementunitTimeoffplan';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffplans/{timeOffPlanId}', 
+			'GET', 
+			{ 'managementUnitId': managementUnitId,'timeOffPlanId': timeOffPlanId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Gets a list of time off plans
+	 * 
+	 * @param {String} managementUnitId The management unit ID.
+	 */
+	getWorkforcemanagementManagementunitTimeoffplans(managementUnitId) { 
+		// verify the required parameter 'managementUnitId' is set
+		if (managementUnitId === undefined || managementUnitId === null) {
+			throw 'Missing the required parameter "managementUnitId" when calling getWorkforcemanagementManagementunitTimeoffplans';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffplans', 
+			'GET', 
+			{ 'managementUnitId': managementUnitId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get a time off request
 	 * 
 	 * @param {String} managementUnitId The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
@@ -1544,6 +1714,41 @@ class WorkforceManagementApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/users/{userId}/timeoffrequests/{timeOffRequestId}', 
+			'GET', 
+			{ 'managementUnitId': managementUnitId,'userId': userId,'timeOffRequestId': timeOffRequestId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Retrieves time off limit, allocated and waitlisted values according to specific time off request
+	 * 
+	 * @param {String} managementUnitId The management unit ID of the management unit.
+	 * @param {String} userId The userId to whom the time off request applies.
+	 * @param {String} timeOffRequestId The ID of the time off request, which dates and activityCodeId determine limit values to retrieve
+	 */
+	getWorkforcemanagementManagementunitUserTimeoffrequestTimeofflimits(managementUnitId, userId, timeOffRequestId) { 
+		// verify the required parameter 'managementUnitId' is set
+		if (managementUnitId === undefined || managementUnitId === null) {
+			throw 'Missing the required parameter "managementUnitId" when calling getWorkforcemanagementManagementunitUserTimeoffrequestTimeofflimits';
+		}
+		// verify the required parameter 'userId' is set
+		if (userId === undefined || userId === null) {
+			throw 'Missing the required parameter "userId" when calling getWorkforcemanagementManagementunitUserTimeoffrequestTimeofflimits';
+		}
+		// verify the required parameter 'timeOffRequestId' is set
+		if (timeOffRequestId === undefined || timeOffRequestId === null) {
+			throw 'Missing the required parameter "timeOffRequestId" when calling getWorkforcemanagementManagementunitUserTimeoffrequestTimeofflimits';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/users/{userId}/timeoffrequests/{timeOffRequestId}/timeofflimits', 
 			'GET', 
 			{ 'managementUnitId': managementUnitId,'userId': userId,'timeOffRequestId': timeOffRequestId }, 
 			{  }, 
@@ -1990,6 +2195,31 @@ class WorkforceManagementApi {
 	}
 
 	/**
+	 * Get the daily waitlist positions of a time off request for the current user
+	 * 
+	 * @param {String} timeOffRequestId Time Off Request Id
+	 */
+	getWorkforcemanagementTimeoffrequestWaitlistpositions(timeOffRequestId) { 
+		// verify the required parameter 'timeOffRequestId' is set
+		if (timeOffRequestId === undefined || timeOffRequestId === null) {
+			throw 'Missing the required parameter "timeOffRequestId" when calling getWorkforcemanagementTimeoffrequestWaitlistpositions';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/timeoffrequests/{timeOffRequestId}/waitlistpositions', 
+			'GET', 
+			{ 'timeOffRequestId': timeOffRequestId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get a list of time off requests for the current user
 	 * 
 	 * @param {Object} opts Optional parameters
@@ -2197,6 +2427,74 @@ class WorkforceManagementApi {
 			'/api/v2/workforcemanagement/managementunits/{managementUnitId}', 
 			'PATCH', 
 			{ 'managementUnitId': managementUnitId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Updates a time off limit object.
+	 * Updates time off limit object properties, but not daily values.
+	 * @param {String} managementUnitId The management unit ID of the management unit.
+	 * @param {String} timeOffLimitId The id of time off limit object to update
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body body
+	 */
+	patchWorkforcemanagementManagementunitTimeofflimit(managementUnitId, timeOffLimitId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'managementUnitId' is set
+		if (managementUnitId === undefined || managementUnitId === null) {
+			throw 'Missing the required parameter "managementUnitId" when calling patchWorkforcemanagementManagementunitTimeofflimit';
+		}
+		// verify the required parameter 'timeOffLimitId' is set
+		if (timeOffLimitId === undefined || timeOffLimitId === null) {
+			throw 'Missing the required parameter "timeOffLimitId" when calling patchWorkforcemanagementManagementunitTimeofflimit';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits/{timeOffLimitId}', 
+			'PATCH', 
+			{ 'managementUnitId': managementUnitId,'timeOffLimitId': timeOffLimitId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Updates a time off plan
+	 * 
+	 * @param {String} managementUnitId The management unit ID.
+	 * @param {String} timeOffPlanId The ID of the time off plan to update
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body body
+	 */
+	patchWorkforcemanagementManagementunitTimeoffplan(managementUnitId, timeOffPlanId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'managementUnitId' is set
+		if (managementUnitId === undefined || managementUnitId === null) {
+			throw 'Missing the required parameter "managementUnitId" when calling patchWorkforcemanagementManagementunitTimeoffplan';
+		}
+		// verify the required parameter 'timeOffPlanId' is set
+		if (timeOffPlanId === undefined || timeOffPlanId === null) {
+			throw 'Missing the required parameter "timeOffPlanId" when calling patchWorkforcemanagementManagementunitTimeoffplan';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffplans/{timeOffPlanId}', 
+			'PATCH', 
+			{ 'managementUnitId': managementUnitId,'timeOffPlanId': timeOffPlanId }, 
 			{  }, 
 			{  }, 
 			{  }, 
@@ -3069,6 +3367,93 @@ class WorkforceManagementApi {
 	}
 
 	/**
+	 * Creates a new time off limit object under management unit.
+	 * Only one limit object is allowed under management unit, so an attempt to create second object will fail.
+	 * @param {String} managementUnitId The management unit ID of the management unit.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body body
+	 */
+	postWorkforcemanagementManagementunitTimeofflimits(managementUnitId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'managementUnitId' is set
+		if (managementUnitId === undefined || managementUnitId === null) {
+			throw 'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitTimeofflimits';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits', 
+			'POST', 
+			{ 'managementUnitId': managementUnitId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Retrieves time off limit related values based on a given set of filters.
+	 * 
+	 * @param {String} managementUnitId The management unit ID of the management unit.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body body
+	 */
+	postWorkforcemanagementManagementunitTimeofflimitsValuesQuery(managementUnitId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'managementUnitId' is set
+		if (managementUnitId === undefined || managementUnitId === null) {
+			throw 'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitTimeofflimitsValuesQuery';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits/values/query', 
+			'POST', 
+			{ 'managementUnitId': managementUnitId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Creates a new time off plan
+	 * 
+	 * @param {String} managementUnitId The management unit ID.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body body
+	 */
+	postWorkforcemanagementManagementunitTimeoffplans(managementUnitId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'managementUnitId' is set
+		if (managementUnitId === undefined || managementUnitId === null) {
+			throw 'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitTimeoffplans';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffplans', 
+			'POST', 
+			{ 'managementUnitId': managementUnitId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
 	 * Create a new time off request
 	 * 
 	 * @param {String} managementUnitId The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
@@ -3114,6 +3499,35 @@ class WorkforceManagementApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffrequests/query', 
+			'POST', 
+			{ 'managementUnitId': managementUnitId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Retrieves daily waitlist position for a list of time off requests
+	 * 
+	 * @param {String} managementUnitId The management unit ID of the management unit.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body body
+	 */
+	postWorkforcemanagementManagementunitTimeoffrequestsWaitlistpositionsQuery(managementUnitId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'managementUnitId' is set
+		if (managementUnitId === undefined || managementUnitId === null) {
+			throw 'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitTimeoffrequestsWaitlistpositionsQuery';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffrequests/waitlistpositions/query', 
 			'POST', 
 			{ 'managementUnitId': managementUnitId }, 
 			{  }, 
@@ -3510,6 +3924,30 @@ class WorkforceManagementApi {
 	}
 
 	/**
+	 * Queries available time off for the current user
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body body
+	 */
+	postWorkforcemanagementTimeofflimitsAvailableQuery(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/timeofflimits/available/query', 
+			'POST', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
 	 * Create a time off request for the current user
 	 * 
 	 * @param {Object} opts Optional parameters
@@ -3523,6 +3961,40 @@ class WorkforceManagementApi {
 			'/api/v2/workforcemanagement/timeoffrequests', 
 			'POST', 
 			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Sets daily values for a date range of time off limit object
+	 * Note that only limit daily values can be set through API, allocated and waitlisted values are read-only for time off limit API
+	 * @param {String} managementUnitId The management unit ID of the management unit.
+	 * @param {String} timeOffLimitId The ID of the time off limit object to set values for
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body body
+	 */
+	putWorkforcemanagementManagementunitTimeofflimitValues(managementUnitId, timeOffLimitId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'managementUnitId' is set
+		if (managementUnitId === undefined || managementUnitId === null) {
+			throw 'Missing the required parameter "managementUnitId" when calling putWorkforcemanagementManagementunitTimeofflimitValues';
+		}
+		// verify the required parameter 'timeOffLimitId' is set
+		if (timeOffLimitId === undefined || timeOffLimitId === null) {
+			throw 'Missing the required parameter "timeOffLimitId" when calling putWorkforcemanagementManagementunitTimeofflimitValues';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits/{timeOffLimitId}/values', 
+			'PUT', 
+			{ 'managementUnitId': managementUnitId,'timeOffLimitId': timeOffLimitId }, 
 			{  }, 
 			{  }, 
 			{  }, 

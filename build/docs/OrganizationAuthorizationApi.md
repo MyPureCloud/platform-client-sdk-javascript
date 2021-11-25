@@ -8,17 +8,23 @@ All URIs are relative to *https://api.mypurecloud.com*
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
 [**deleteOrgauthorizationTrustee**](OrganizationAuthorizationApi.html#deleteOrgauthorizationTrustee) | **DELETE** /api/v2/orgauthorization/trustees/{trusteeOrgId} | Delete Org Trust
+[**deleteOrgauthorizationTrusteeCloneduser**](OrganizationAuthorizationApi.html#deleteOrgauthorizationTrusteeCloneduser) | **DELETE** /api/v2/orgauthorization/trustees/{trusteeOrgId}/clonedusers/{trusteeUserId} | Deletes cloned user
 [**deleteOrgauthorizationTrusteeUser**](OrganizationAuthorizationApi.html#deleteOrgauthorizationTrusteeUser) | **DELETE** /api/v2/orgauthorization/trustees/{trusteeOrgId}/users/{trusteeUserId} | Delete Trustee User
 [**deleteOrgauthorizationTrusteeUserRoles**](OrganizationAuthorizationApi.html#deleteOrgauthorizationTrusteeUserRoles) | **DELETE** /api/v2/orgauthorization/trustees/{trusteeOrgId}/users/{trusteeUserId}/roles | Delete Trustee User Roles
 [**deleteOrgauthorizationTrustor**](OrganizationAuthorizationApi.html#deleteOrgauthorizationTrustor) | **DELETE** /api/v2/orgauthorization/trustors/{trustorOrgId} | Delete Org Trust
+[**deleteOrgauthorizationTrustorCloneduser**](OrganizationAuthorizationApi.html#deleteOrgauthorizationTrustorCloneduser) | **DELETE** /api/v2/orgauthorization/trustors/{trustorOrgId}/clonedusers/{trusteeUserId} | Delete Cloned User
 [**deleteOrgauthorizationTrustorUser**](OrganizationAuthorizationApi.html#deleteOrgauthorizationTrustorUser) | **DELETE** /api/v2/orgauthorization/trustors/{trustorOrgId}/users/{trusteeUserId} | Delete Trustee User
 [**getOrgauthorizationPairing**](OrganizationAuthorizationApi.html#getOrgauthorizationPairing) | **GET** /api/v2/orgauthorization/pairings/{pairingId} | Get Pairing Info
 [**getOrgauthorizationTrustee**](OrganizationAuthorizationApi.html#getOrgauthorizationTrustee) | **GET** /api/v2/orgauthorization/trustees/{trusteeOrgId} | Get Org Trust
+[**getOrgauthorizationTrusteeClonedusers**](OrganizationAuthorizationApi.html#getOrgauthorizationTrusteeClonedusers) | **GET** /api/v2/orgauthorization/trustees/{trusteeOrgId}/clonedusers | The list of cloned users from the trustee organization (i.e. users with a native user record).
 [**getOrgauthorizationTrusteeUser**](OrganizationAuthorizationApi.html#getOrgauthorizationTrusteeUser) | **GET** /api/v2/orgauthorization/trustees/{trusteeOrgId}/users/{trusteeUserId} | Get Trustee User
 [**getOrgauthorizationTrusteeUserRoles**](OrganizationAuthorizationApi.html#getOrgauthorizationTrusteeUserRoles) | **GET** /api/v2/orgauthorization/trustees/{trusteeOrgId}/users/{trusteeUserId}/roles | Get Trustee User Roles
 [**getOrgauthorizationTrusteeUsers**](OrganizationAuthorizationApi.html#getOrgauthorizationTrusteeUsers) | **GET** /api/v2/orgauthorization/trustees/{trusteeOrgId}/users | The list of trustee users for this organization (i.e. users granted access to this organization).
 [**getOrgauthorizationTrustees**](OrganizationAuthorizationApi.html#getOrgauthorizationTrustees) | **GET** /api/v2/orgauthorization/trustees | The list of trustees for this organization (i.e. organizations granted access to this organization).
+[**getOrgauthorizationTrusteesDefault**](OrganizationAuthorizationApi.html#getOrgauthorizationTrusteesDefault) | **GET** /api/v2/orgauthorization/trustees/default | Get organization authorization trust with Customer Care, if one exists.
 [**getOrgauthorizationTrustor**](OrganizationAuthorizationApi.html#getOrgauthorizationTrustor) | **GET** /api/v2/orgauthorization/trustors/{trustorOrgId} | Get Org Trust
+[**getOrgauthorizationTrustorCloneduser**](OrganizationAuthorizationApi.html#getOrgauthorizationTrustorCloneduser) | **GET** /api/v2/orgauthorization/trustors/{trustorOrgId}/clonedusers/{trusteeUserId} | Get Cloned User
+[**getOrgauthorizationTrustorClonedusers**](OrganizationAuthorizationApi.html#getOrgauthorizationTrustorClonedusers) | **GET** /api/v2/orgauthorization/trustors/{trustorOrgId}/clonedusers | The list of cloned users in the trustor organization (i.e. users with a native user record).
 [**getOrgauthorizationTrustorUser**](OrganizationAuthorizationApi.html#getOrgauthorizationTrustorUser) | **GET** /api/v2/orgauthorization/trustors/{trustorOrgId}/users/{trusteeUserId} | Get Trustee User
 [**getOrgauthorizationTrustorUsers**](OrganizationAuthorizationApi.html#getOrgauthorizationTrustorUsers) | **GET** /api/v2/orgauthorization/trustors/{trustorOrgId}/users | The list of users in the trustor organization (i.e. users granted access).
 [**getOrgauthorizationTrustors**](OrganizationAuthorizationApi.html#getOrgauthorizationTrustors) | **GET** /api/v2/orgauthorization/trustors | The list of organizations that have authorized/trusted your organization.
@@ -26,10 +32,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postOrgauthorizationTrusteeUsers**](OrganizationAuthorizationApi.html#postOrgauthorizationTrusteeUsers) | **POST** /api/v2/orgauthorization/trustees/{trusteeOrgId}/users | Add a user to the trust.
 [**postOrgauthorizationTrustees**](OrganizationAuthorizationApi.html#postOrgauthorizationTrustees) | **POST** /api/v2/orgauthorization/trustees | Create a new organization authorization trust. This is required to grant other organizations access to your organization.
 [**postOrgauthorizationTrusteesAudits**](OrganizationAuthorizationApi.html#postOrgauthorizationTrusteesAudits) | **POST** /api/v2/orgauthorization/trustees/audits | Get Org Trustee Audits
+[**postOrgauthorizationTrusteesDefault**](OrganizationAuthorizationApi.html#postOrgauthorizationTrusteesDefault) | **POST** /api/v2/orgauthorization/trustees/default | Create a new organization authorization trust with Customer Care. This is required to grant your regional Customer Care organization access to your organization.
 [**postOrgauthorizationTrustorAudits**](OrganizationAuthorizationApi.html#postOrgauthorizationTrustorAudits) | **POST** /api/v2/orgauthorization/trustor/audits | Get Org Trustor Audits
 [**putOrgauthorizationTrustee**](OrganizationAuthorizationApi.html#putOrgauthorizationTrustee) | **PUT** /api/v2/orgauthorization/trustees/{trusteeOrgId} | Update Org Trust
 [**putOrgauthorizationTrusteeUserRoledivisions**](OrganizationAuthorizationApi.html#putOrgauthorizationTrusteeUserRoledivisions) | **PUT** /api/v2/orgauthorization/trustees/{trusteeOrgId}/users/{trusteeUserId}/roledivisions | Update Trustee User Roles
 [**putOrgauthorizationTrusteeUserRoles**](OrganizationAuthorizationApi.html#putOrgauthorizationTrusteeUserRoles) | **PUT** /api/v2/orgauthorization/trustees/{trusteeOrgId}/users/{trusteeUserId}/roles | Update Trustee User Roles
+[**putOrgauthorizationTrustorCloneduser**](OrganizationAuthorizationApi.html#putOrgauthorizationTrustorCloneduser) | **PUT** /api/v2/orgauthorization/trustors/{trustorOrgId}/clonedusers/{trusteeUserId} | Creates a clone of the trustee user in the trustor org.
 [**putOrgauthorizationTrustorUser**](OrganizationAuthorizationApi.html#putOrgauthorizationTrustorUser) | **PUT** /api/v2/orgauthorization/trustors/{trustorOrgId}/users/{trusteeUserId} | Add a Trustee user to the trust.
 {: class="table table-striped"}
 
@@ -80,6 +88,61 @@ apiInstance.deleteOrgauthorizationTrustee(trusteeOrgId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **trusteeOrgId** | **String** | Trustee Organization Id |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
+
+<a name="deleteOrgauthorizationTrusteeCloneduser"></a>
+
+# void deleteOrgauthorizationTrusteeCloneduser(trusteeOrgId, trusteeUserId)
+
+
+
+DELETE /api/v2/orgauthorization/trustees/{trusteeOrgId}/clonedusers/{trusteeUserId}
+
+Deletes cloned user
+
+
+
+Requires ANY permissions: 
+
+* directory:user:delete
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OrganizationAuthorizationApi();
+
+let trusteeOrgId = "trusteeOrgId_example"; // String | Trustee Organization Id
+let trusteeUserId = "trusteeUserId_example"; // String | Id of the cloned user to delete
+
+apiInstance.deleteOrgauthorizationTrusteeCloneduser(trusteeOrgId, trusteeUserId)
+  .then(() => {
+    console.log('deleteOrgauthorizationTrusteeCloneduser returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteOrgauthorizationTrusteeCloneduser');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **trusteeOrgId** | **String** | Trustee Organization Id |  |
+ **trusteeUserId** | **String** | Id of the cloned user to delete |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -249,6 +312,61 @@ apiInstance.deleteOrgauthorizationTrustor(trustorOrgId)
 
 void (no response body)
 
+<a name="deleteOrgauthorizationTrustorCloneduser"></a>
+
+# void deleteOrgauthorizationTrustorCloneduser(trustorOrgId, trusteeUserId)
+
+
+
+DELETE /api/v2/orgauthorization/trustors/{trustorOrgId}/clonedusers/{trusteeUserId}
+
+Delete Cloned User
+
+
+
+Requires ANY permissions: 
+
+* authorization:orgTrusteeUser:delete
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OrganizationAuthorizationApi();
+
+let trustorOrgId = "trustorOrgId_example"; // String | Trustor Organization Id
+let trusteeUserId = "trusteeUserId_example"; // String | Trustee User Id
+
+apiInstance.deleteOrgauthorizationTrustorCloneduser(trustorOrgId, trusteeUserId)
+  .then(() => {
+    console.log('deleteOrgauthorizationTrustorCloneduser returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteOrgauthorizationTrustorCloneduser');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **trustorOrgId** | **String** | Trustor Organization Id |  |
+ **trusteeUserId** | **String** | Trustee User Id |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
+
 <a name="deleteOrgauthorizationTrustorUser"></a>
 
 # void deleteOrgauthorizationTrustorUser(trustorOrgId, trusteeUserId)
@@ -410,6 +528,59 @@ apiInstance.getOrgauthorizationTrustee(trusteeOrgId)
 ### Return type
 
 **Trustee**
+
+<a name="getOrgauthorizationTrusteeClonedusers"></a>
+
+# ClonedUserEntityListing getOrgauthorizationTrusteeClonedusers(trusteeOrgId)
+
+
+
+GET /api/v2/orgauthorization/trustees/{trusteeOrgId}/clonedusers
+
+The list of cloned users from the trustee organization (i.e. users with a native user record).
+
+There can be no more than 5 cloned users per organization, so results are represented as simple list and not paged
+
+Requires ANY permissions: 
+
+* directory:user:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OrganizationAuthorizationApi();
+
+let trusteeOrgId = "trusteeOrgId_example"; // String | Trustee Organization Id
+
+apiInstance.getOrgauthorizationTrusteeClonedusers(trusteeOrgId)
+  .then((data) => {
+    console.log(`getOrgauthorizationTrusteeClonedusers success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getOrgauthorizationTrusteeClonedusers');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **trusteeOrgId** | **String** | Trustee Organization Id |  |
+{: class="table table-striped"}
+
+### Return type
+
+**ClonedUserEntityListing**
 
 <a name="getOrgauthorizationTrusteeUser"></a>
 
@@ -637,6 +808,55 @@ apiInstance.getOrgauthorizationTrustees(opts)
 
 **TrustEntityListing**
 
+<a name="getOrgauthorizationTrusteesDefault"></a>
+
+# Trustee getOrgauthorizationTrusteesDefault()
+
+
+
+GET /api/v2/orgauthorization/trustees/default
+
+Get organization authorization trust with Customer Care, if one exists.
+
+
+
+Requires ANY permissions: 
+
+* authorization:orgTrustee:view
+* authorization:orgTrusteeUser:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OrganizationAuthorizationApi();
+
+apiInstance.getOrgauthorizationTrusteesDefault()
+  .then((data) => {
+    console.log(`getOrgauthorizationTrusteesDefault success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getOrgauthorizationTrusteesDefault');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+
+### Return type
+
+**Trustee**
+
 <a name="getOrgauthorizationTrustor"></a>
 
 # Trustor getOrgauthorizationTrustor(trustorOrgId)
@@ -689,6 +909,114 @@ apiInstance.getOrgauthorizationTrustor(trustorOrgId)
 ### Return type
 
 **Trustor**
+
+<a name="getOrgauthorizationTrustorCloneduser"></a>
+
+# ClonedUser getOrgauthorizationTrustorCloneduser(trustorOrgId, trusteeUserId)
+
+
+
+GET /api/v2/orgauthorization/trustors/{trustorOrgId}/clonedusers/{trusteeUserId}
+
+Get Cloned User
+
+
+
+Requires ANY permissions: 
+
+* authorization:orgTrusteeUser:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OrganizationAuthorizationApi();
+
+let trustorOrgId = "trustorOrgId_example"; // String | Trustor Organization Id
+let trusteeUserId = "trusteeUserId_example"; // String | Trustee User Id
+
+apiInstance.getOrgauthorizationTrustorCloneduser(trustorOrgId, trusteeUserId)
+  .then((data) => {
+    console.log(`getOrgauthorizationTrustorCloneduser success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getOrgauthorizationTrustorCloneduser');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **trustorOrgId** | **String** | Trustor Organization Id |  |
+ **trusteeUserId** | **String** | Trustee User Id |  |
+{: class="table table-striped"}
+
+### Return type
+
+**ClonedUser**
+
+<a name="getOrgauthorizationTrustorClonedusers"></a>
+
+# ClonedUserEntityListing getOrgauthorizationTrustorClonedusers(trustorOrgId)
+
+
+
+GET /api/v2/orgauthorization/trustors/{trustorOrgId}/clonedusers
+
+The list of cloned users in the trustor organization (i.e. users with a native user record).
+
+
+
+Requires ANY permissions: 
+
+* authorization:orgTrusteeUser:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OrganizationAuthorizationApi();
+
+let trustorOrgId = "trustorOrgId_example"; // String | Trustor Organization Id
+
+apiInstance.getOrgauthorizationTrustorClonedusers(trustorOrgId)
+  .then((data) => {
+    console.log(`getOrgauthorizationTrustorClonedusers success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getOrgauthorizationTrustorClonedusers');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **trustorOrgId** | **String** | Trustor Organization Id |  |
+{: class="table table-striped"}
+
+### Return type
+
+**ClonedUserEntityListing**
 
 <a name="getOrgauthorizationTrustorUser"></a>
 
@@ -1086,6 +1414,64 @@ apiInstance.postOrgauthorizationTrusteesAudits(body, opts)
 
 **AuditQueryResponse**
 
+<a name="postOrgauthorizationTrusteesDefault"></a>
+
+# Trustee postOrgauthorizationTrusteesDefault(opts)
+
+
+
+POST /api/v2/orgauthorization/trustees/default
+
+Create a new organization authorization trust with Customer Care. This is required to grant your regional Customer Care organization access to your organization.
+
+
+
+Requires ALL permissions: 
+
+* authorization:orgTrustee:add
+* authorization:orgTrusteeUser:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OrganizationAuthorizationApi();
+
+let opts = { 
+  'assignDefaultRole': true, // Boolean | Assign Admin role to default pairing with Customer Care
+  'autoExpire': true // Boolean | Automatically expire pairing after 30 days
+};
+
+apiInstance.postOrgauthorizationTrusteesDefault(opts)
+  .then((data) => {
+    console.log(`postOrgauthorizationTrusteesDefault success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postOrgauthorizationTrusteesDefault');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **assignDefaultRole** | **Boolean** | Assign Admin role to default pairing with Customer Care | [optional]  |
+ **autoExpire** | **Boolean** | Automatically expire pairing after 30 days | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**Trustee**
+
 <a name="postOrgauthorizationTrustorAudits"></a>
 
 # AuditQueryResponse postOrgauthorizationTrustorAudits(body, opts)
@@ -1317,6 +1703,61 @@ apiInstance.putOrgauthorizationTrusteeUserRoles(trusteeOrgId, trusteeUserId, bod
 ### Return type
 
 **UserAuthorization**
+
+<a name="putOrgauthorizationTrustorCloneduser"></a>
+
+# ClonedUser putOrgauthorizationTrustorCloneduser(trustorOrgId, trusteeUserId)
+
+
+
+PUT /api/v2/orgauthorization/trustors/{trustorOrgId}/clonedusers/{trusteeUserId}
+
+Creates a clone of the trustee user in the trustor org.
+
+
+
+Requires ALL permissions: 
+
+* authorization:orgTrusteeUser:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OrganizationAuthorizationApi();
+
+let trustorOrgId = "trustorOrgId_example"; // String | Trustor Organization Id
+let trusteeUserId = "trusteeUserId_example"; // String | Trustee User Id
+
+apiInstance.putOrgauthorizationTrustorCloneduser(trustorOrgId, trusteeUserId)
+  .then((data) => {
+    console.log(`putOrgauthorizationTrustorCloneduser success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putOrgauthorizationTrustorCloneduser');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **trustorOrgId** | **String** | Trustor Organization Id |  |
+ **trusteeUserId** | **String** | Trustee User Id |  |
+{: class="table table-striped"}
+
+### Return type
+
+**ClonedUser**
 
 <a name="putOrgauthorizationTrustorUser"></a>
 

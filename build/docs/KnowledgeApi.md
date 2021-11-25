@@ -21,8 +21,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getKnowledgeKnowledgebaseLanguageTrainings**](KnowledgeApi.html#getKnowledgeKnowledgebaseLanguageTrainings) | **GET** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/trainings | Get all trainings information for a knowledgebase
 [**getKnowledgeKnowledgebases**](KnowledgeApi.html#getKnowledgeKnowledgebases) | **GET** /api/v2/knowledge/knowledgebases | Get knowledge bases
 [**patchKnowledgeKnowledgebase**](KnowledgeApi.html#patchKnowledgeKnowledgebase) | **PATCH** /api/v2/knowledge/knowledgebases/{knowledgeBaseId} | Update knowledge base
-[**patchKnowledgeKnowledgebaseContext**](KnowledgeApi.html#patchKnowledgeKnowledgebaseContext) | **PATCH** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/contexts/{contextId} | Update specific context data of the knowledge base.
-[**patchKnowledgeKnowledgebaseContextValue**](KnowledgeApi.html#patchKnowledgeKnowledgebaseContextValue) | **PATCH** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/contexts/{contextId}/values/{contextValueId} | Update context value.
 [**patchKnowledgeKnowledgebaseLanguageCategory**](KnowledgeApi.html#patchKnowledgeKnowledgebaseLanguageCategory) | **PATCH** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/categories/{categoryId} | Update category
 [**patchKnowledgeKnowledgebaseLanguageDocument**](KnowledgeApi.html#patchKnowledgeKnowledgebaseLanguageDocument) | **PATCH** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/{documentId} | Update document
 [**patchKnowledgeKnowledgebaseLanguageDocuments**](KnowledgeApi.html#patchKnowledgeKnowledgebaseLanguageDocuments) | **PATCH** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents | Update documents collection
@@ -876,126 +874,6 @@ apiInstance.patchKnowledgeKnowledgebase(knowledgeBaseId, body)
 ### Return type
 
 **KnowledgeBase**
-
-<a name="patchKnowledgeKnowledgebaseContext"></a>
-
-# KnowledgeContextResponse patchKnowledgeKnowledgebaseContext(knowledgeBaseId, contextId, opts)
-
-
-
-PATCH /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/contexts/{contextId}
-
-Update specific context data of the knowledge base.
-
-
-
-Requires ALL permissions: 
-
-* knowledge:context:edit
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.KnowledgeApi();
-
-let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID.
-let contextId = "contextId_example"; // String | Context ID.
-let opts = { 
-  'body': {} // Object | 
-};
-
-apiInstance.patchKnowledgeKnowledgebaseContext(knowledgeBaseId, contextId, opts)
-  .then((data) => {
-    console.log(`patchKnowledgeKnowledgebaseContext success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch((err) => {
-    console.log('There was a failure calling patchKnowledgeKnowledgebaseContext');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **knowledgeBaseId** | **String** | Knowledge base ID. |  |
- **contextId** | **String** | Context ID. |  |
- **body** | **Object** |  | [optional]  |
-{: class="table table-striped"}
-
-### Return type
-
-**KnowledgeContextResponse**
-
-<a name="patchKnowledgeKnowledgebaseContextValue"></a>
-
-# KnowledgeContextValueResponse patchKnowledgeKnowledgebaseContextValue(knowledgeBaseId, contextId, contextValueId, opts)
-
-
-
-PATCH /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/contexts/{contextId}/values/{contextValueId}
-
-Update context value.
-
-
-
-Requires ALL permissions: 
-
-* knowledge:context:edit
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.KnowledgeApi();
-
-let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID.
-let contextId = "contextId_example"; // String | Context ID.
-let contextValueId = "contextValueId_example"; // String | Context Value ID.
-let opts = { 
-  'body': {} // Object | 
-};
-
-apiInstance.patchKnowledgeKnowledgebaseContextValue(knowledgeBaseId, contextId, contextValueId, opts)
-  .then((data) => {
-    console.log(`patchKnowledgeKnowledgebaseContextValue success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch((err) => {
-    console.log('There was a failure calling patchKnowledgeKnowledgebaseContextValue');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **knowledgeBaseId** | **String** | Knowledge base ID. |  |
- **contextId** | **String** | Context ID. |  |
- **contextValueId** | **String** | Context Value ID. |  |
- **body** | **Object** |  | [optional]  |
-{: class="table table-striped"}
-
-### Return type
-
-**KnowledgeContextValueResponse**
 
 <a name="patchKnowledgeKnowledgebaseLanguageCategory"></a>
 

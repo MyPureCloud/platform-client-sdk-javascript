@@ -5,7 +5,7 @@ class OrganizationAuthorizationApi {
 	/**
 	 * OrganizationAuthorization service.
 	 * @module purecloud-platform-client-v2/api/OrganizationAuthorizationApi
-	 * @version 125.0.0
+	 * @version 126.0.0
 	 */
 
 	/**
@@ -35,6 +35,36 @@ class OrganizationAuthorizationApi {
 			'/api/v2/orgauthorization/trustees/{trusteeOrgId}', 
 			'DELETE', 
 			{ 'trusteeOrgId': trusteeOrgId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Deletes cloned user
+	 * 
+	 * @param {String} trusteeOrgId Trustee Organization Id
+	 * @param {String} trusteeUserId Id of the cloned user to delete
+	 */
+	deleteOrgauthorizationTrusteeCloneduser(trusteeOrgId, trusteeUserId) { 
+		// verify the required parameter 'trusteeOrgId' is set
+		if (trusteeOrgId === undefined || trusteeOrgId === null) {
+			throw 'Missing the required parameter "trusteeOrgId" when calling deleteOrgauthorizationTrusteeCloneduser';
+		}
+		// verify the required parameter 'trusteeUserId' is set
+		if (trusteeUserId === undefined || trusteeUserId === null) {
+			throw 'Missing the required parameter "trusteeUserId" when calling deleteOrgauthorizationTrusteeCloneduser';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/orgauthorization/trustees/{trusteeOrgId}/clonedusers/{trusteeUserId}', 
+			'DELETE', 
+			{ 'trusteeOrgId': trusteeOrgId,'trusteeUserId': trusteeUserId }, 
 			{  }, 
 			{  }, 
 			{  }, 
@@ -131,6 +161,36 @@ class OrganizationAuthorizationApi {
 	}
 
 	/**
+	 * Delete Cloned User
+	 * 
+	 * @param {String} trustorOrgId Trustor Organization Id
+	 * @param {String} trusteeUserId Trustee User Id
+	 */
+	deleteOrgauthorizationTrustorCloneduser(trustorOrgId, trusteeUserId) { 
+		// verify the required parameter 'trustorOrgId' is set
+		if (trustorOrgId === undefined || trustorOrgId === null) {
+			throw 'Missing the required parameter "trustorOrgId" when calling deleteOrgauthorizationTrustorCloneduser';
+		}
+		// verify the required parameter 'trusteeUserId' is set
+		if (trusteeUserId === undefined || trusteeUserId === null) {
+			throw 'Missing the required parameter "trusteeUserId" when calling deleteOrgauthorizationTrustorCloneduser';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/orgauthorization/trustors/{trustorOrgId}/clonedusers/{trusteeUserId}', 
+			'DELETE', 
+			{ 'trustorOrgId': trustorOrgId,'trusteeUserId': trusteeUserId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
 	 * Delete Trustee User
 	 * 
 	 * @param {String} trustorOrgId Trustor Organization Id
@@ -198,6 +258,31 @@ class OrganizationAuthorizationApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/orgauthorization/trustees/{trusteeOrgId}', 
+			'GET', 
+			{ 'trusteeOrgId': trusteeOrgId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * The list of cloned users from the trustee organization (i.e. users with a native user record).
+	 * There can be no more than 5 cloned users per organization, so results are represented as simple list and not paged
+	 * @param {String} trusteeOrgId Trustee Organization Id
+	 */
+	getOrgauthorizationTrusteeClonedusers(trusteeOrgId) { 
+		// verify the required parameter 'trusteeOrgId' is set
+		if (trusteeOrgId === undefined || trusteeOrgId === null) {
+			throw 'Missing the required parameter "trusteeOrgId" when calling getOrgauthorizationTrusteeClonedusers';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/orgauthorization/trustees/{trusteeOrgId}/clonedusers', 
 			'GET', 
 			{ 'trusteeOrgId': trusteeOrgId }, 
 			{  }, 
@@ -326,6 +411,26 @@ class OrganizationAuthorizationApi {
 	}
 
 	/**
+	 * Get organization authorization trust with Customer Care, if one exists.
+	 * 
+	 */
+	getOrgauthorizationTrusteesDefault() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/orgauthorization/trustees/default', 
+			'GET', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get Org Trust
 	 * 
 	 * @param {String} trustorOrgId Trustor Organization Id
@@ -338,6 +443,61 @@ class OrganizationAuthorizationApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/orgauthorization/trustors/{trustorOrgId}', 
+			'GET', 
+			{ 'trustorOrgId': trustorOrgId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get Cloned User
+	 * 
+	 * @param {String} trustorOrgId Trustor Organization Id
+	 * @param {String} trusteeUserId Trustee User Id
+	 */
+	getOrgauthorizationTrustorCloneduser(trustorOrgId, trusteeUserId) { 
+		// verify the required parameter 'trustorOrgId' is set
+		if (trustorOrgId === undefined || trustorOrgId === null) {
+			throw 'Missing the required parameter "trustorOrgId" when calling getOrgauthorizationTrustorCloneduser';
+		}
+		// verify the required parameter 'trusteeUserId' is set
+		if (trusteeUserId === undefined || trusteeUserId === null) {
+			throw 'Missing the required parameter "trusteeUserId" when calling getOrgauthorizationTrustorCloneduser';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/orgauthorization/trustors/{trustorOrgId}/clonedusers/{trusteeUserId}', 
+			'GET', 
+			{ 'trustorOrgId': trustorOrgId,'trusteeUserId': trusteeUserId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * The list of cloned users in the trustor organization (i.e. users with a native user record).
+	 * 
+	 * @param {String} trustorOrgId Trustor Organization Id
+	 */
+	getOrgauthorizationTrustorClonedusers(trustorOrgId) { 
+		// verify the required parameter 'trustorOrgId' is set
+		if (trustorOrgId === undefined || trustorOrgId === null) {
+			throw 'Missing the required parameter "trustorOrgId" when calling getOrgauthorizationTrustorClonedusers';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/orgauthorization/trustors/{trustorOrgId}/clonedusers', 
 			'GET', 
 			{ 'trustorOrgId': trustorOrgId }, 
 			{  }, 
@@ -548,6 +708,31 @@ class OrganizationAuthorizationApi {
 	}
 
 	/**
+	 * Create a new organization authorization trust with Customer Care. This is required to grant your regional Customer Care organization access to your organization.
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.assignDefaultRole Assign Admin role to default pairing with Customer Care
+	 * @param {Boolean} opts.autoExpire Automatically expire pairing after 30 days
+	 */
+	postOrgauthorizationTrusteesDefault(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/orgauthorization/trustees/default', 
+			'POST', 
+			{  }, 
+			{ 'assignDefaultRole': opts['assignDefaultRole'],'autoExpire': opts['autoExpire'] }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get Org Trustor Audits
 	 * 
 	 * @param {Object} body Values to scope the request.
@@ -673,6 +858,36 @@ class OrganizationAuthorizationApi {
 			{  }, 
 			{  }, 
 			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Creates a clone of the trustee user in the trustor org.
+	 * 
+	 * @param {String} trustorOrgId Trustor Organization Id
+	 * @param {String} trusteeUserId Trustee User Id
+	 */
+	putOrgauthorizationTrustorCloneduser(trustorOrgId, trusteeUserId) { 
+		// verify the required parameter 'trustorOrgId' is set
+		if (trustorOrgId === undefined || trustorOrgId === null) {
+			throw 'Missing the required parameter "trustorOrgId" when calling putOrgauthorizationTrustorCloneduser';
+		}
+		// verify the required parameter 'trusteeUserId' is set
+		if (trusteeUserId === undefined || trusteeUserId === null) {
+			throw 'Missing the required parameter "trusteeUserId" when calling putOrgauthorizationTrustorCloneduser';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/orgauthorization/trustors/{trustorOrgId}/clonedusers/{trusteeUserId}', 
+			'PUT', 
+			{ 'trustorOrgId': trustorOrgId,'trusteeUserId': trusteeUserId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
 			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']

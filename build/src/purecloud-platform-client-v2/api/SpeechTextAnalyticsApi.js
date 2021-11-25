@@ -5,7 +5,7 @@ class SpeechTextAnalyticsApi {
 	/**
 	 * SpeechTextAnalytics service.
 	 * @module purecloud-platform-client-v2/api/SpeechTextAnalyticsApi
-	 * @version 125.0.0
+	 * @version 126.0.0
 	 */
 
 	/**
@@ -176,7 +176,7 @@ class SpeechTextAnalyticsApi {
 
 	/**
 	 * Get list of supported Speech &amp; Text Analytics dialects
-	 * 
+	 * This api has been deprecated. Use api/v2/topics/dialects instead
 	 */
 	getSpeechandtextanalyticsDialects() { 
 

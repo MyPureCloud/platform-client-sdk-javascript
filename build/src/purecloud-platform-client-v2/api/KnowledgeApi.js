@@ -5,7 +5,7 @@ class KnowledgeApi {
 	/**
 	 * Knowledge service.
 	 * @module purecloud-platform-client-v2/api/KnowledgeApi
-	 * @version 125.0.0
+	 * @version 126.0.0
 	 */
 
 	/**
@@ -489,79 +489,6 @@ class KnowledgeApi {
 			{  }, 
 			{  }, 
 			body, 
-			['PureCloud OAuth'], 
-			['application/json'], 
-			['application/json']
-		);
-	}
-
-	/**
-	 * Update specific context data of the knowledge base.
-	 * 
-	 * @param {String} knowledgeBaseId Knowledge base ID.
-	 * @param {String} contextId Context ID.
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body 
-	 */
-	patchKnowledgeKnowledgebaseContext(knowledgeBaseId, contextId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
-			throw 'Missing the required parameter "knowledgeBaseId" when calling patchKnowledgeKnowledgebaseContext';
-		}
-		// verify the required parameter 'contextId' is set
-		if (contextId === undefined || contextId === null) {
-			throw 'Missing the required parameter "contextId" when calling patchKnowledgeKnowledgebaseContext';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/contexts/{contextId}', 
-			'PATCH', 
-			{ 'knowledgeBaseId': knowledgeBaseId,'contextId': contextId }, 
-			{  }, 
-			{  }, 
-			{  }, 
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'], 
-			['application/json']
-		);
-	}
-
-	/**
-	 * Update context value.
-	 * 
-	 * @param {String} knowledgeBaseId Knowledge base ID.
-	 * @param {String} contextId Context ID.
-	 * @param {String} contextValueId Context Value ID.
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body 
-	 */
-	patchKnowledgeKnowledgebaseContextValue(knowledgeBaseId, contextId, contextValueId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
-			throw 'Missing the required parameter "knowledgeBaseId" when calling patchKnowledgeKnowledgebaseContextValue';
-		}
-		// verify the required parameter 'contextId' is set
-		if (contextId === undefined || contextId === null) {
-			throw 'Missing the required parameter "contextId" when calling patchKnowledgeKnowledgebaseContextValue';
-		}
-		// verify the required parameter 'contextValueId' is set
-		if (contextValueId === undefined || contextValueId === null) {
-			throw 'Missing the required parameter "contextValueId" when calling patchKnowledgeKnowledgebaseContextValue';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/contexts/{contextId}/values/{contextValueId}', 
-			'PATCH', 
-			{ 'knowledgeBaseId': knowledgeBaseId,'contextId': contextId,'contextValueId': contextValueId }, 
-			{  }, 
-			{  }, 
-			{  }, 
-			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']

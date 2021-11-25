@@ -5,7 +5,7 @@ class LanguageUnderstandingApi {
 	/**
 	 * LanguageUnderstanding service.
 	 * @module purecloud-platform-client-v2/api/LanguageUnderstandingApi
-	 * @version 125.0.0
+	 * @version 126.0.0
 	 */
 
 	/**
@@ -571,7 +571,7 @@ class LanguageUnderstandingApi {
 	}
 
 	/**
-	 * Save information for the draft
+	 * Save information for the draft. Either topic draft or intent draft should be sent.
 	 * 
 	 * @param {String} minerId Miner ID
 	 * @param {String} draftId Draft ID
@@ -815,7 +815,7 @@ class LanguageUnderstandingApi {
 	}
 
 	/**
-	 * Start the mining process. Specify date range pair with mediaType and queueIds for mining data from Genesys Cloud. Specify only uploadKey for mining through an external file.
+	 * Start the mining process. Specify date range pair with mediaType, queueIds, participantType for mining data from Genesys Cloud. Specify only uploadKey for mining through an external file.
 	 * 
 	 * @param {String} minerId Miner ID
 	 * @param {Object} opts Optional parameters

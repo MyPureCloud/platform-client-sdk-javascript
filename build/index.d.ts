@@ -128,7 +128,6 @@ declare class AnalyticsApi {
   	getAnalyticsUsersDetailsJob(jobId: string): Promise<Models.AsyncQueryStatus>; 
   	getAnalyticsUsersDetailsJobResults(jobId: string, opts?: AnalyticsApi.getAnalyticsUsersDetailsJobResultsOptions): Promise<Models.AnalyticsUserDetailsAsyncQueryResponse>; 
   	getAnalyticsUsersDetailsJobsAvailability(): Promise<Models.DataAvailabilityResponse>; 
-  	patchAnalyticsReportingSettings(body: Models.AnalyticsReportingSettings): Promise<Models.AnalyticsReportingSettings>; 
   	postAnalyticsBotsAggregatesQuery(body: Models.BotAggregationQuery): Promise<Models.BotAggregateQueryResponse>; 
   	postAnalyticsConversationDetailsProperties(conversationId: string, body: Models.PropertyIndexRequest): Promise<Models.PropertyIndexRequest>; 
   	postAnalyticsConversationsAggregatesQuery(body: Models.ConversationAggregationQuery): Promise<Models.ConversationAggregateQueryResponse>; 
@@ -2036,8 +2035,6 @@ declare class KnowledgeApi {
   	getKnowledgeKnowledgebaseLanguageTrainings(knowledgeBaseId: string, languageCode: string, opts?: KnowledgeApi.getKnowledgeKnowledgebaseLanguageTrainingsOptions): Promise<Models.TrainingListing>; 
   	getKnowledgeKnowledgebases(opts?: KnowledgeApi.getKnowledgeKnowledgebasesOptions): Promise<Models.KnowledgeBaseListing>; 
   	patchKnowledgeKnowledgebase(knowledgeBaseId: string, body: Models.KnowledgeBase): Promise<Models.KnowledgeBase>; 
-  	patchKnowledgeKnowledgebaseContext(knowledgeBaseId: string, contextId: string, opts?: KnowledgeApi.patchKnowledgeKnowledgebaseContextOptions): Promise<Models.KnowledgeContextResponse>; 
-  	patchKnowledgeKnowledgebaseContextValue(knowledgeBaseId: string, contextId: string, contextValueId: string, opts?: KnowledgeApi.patchKnowledgeKnowledgebaseContextValueOptions): Promise<Models.KnowledgeContextValueResponse>; 
   	patchKnowledgeKnowledgebaseLanguageCategory(categoryId: string, knowledgeBaseId: string, languageCode: string, body: Models.KnowledgeCategoryRequest): Promise<Models.KnowledgeExtendedCategory>; 
   	patchKnowledgeKnowledgebaseLanguageDocument(documentId: string, knowledgeBaseId: string, languageCode: string, body: Models.KnowledgeDocumentRequest): Promise<Models.KnowledgeDocument>; 
   	patchKnowledgeKnowledgebaseLanguageDocuments(knowledgeBaseId: string, languageCode: string, body: Array<Models.KnowledgeDocumentBulkRequest>): Promise<Models.DocumentListing>; 
@@ -2088,12 +2085,6 @@ declare namespace KnowledgeApi {
 		"published"?: boolean;
 		"sortBy"?: string;
 		"sortOrder"?: string;
-	}
-	export interface patchKnowledgeKnowledgebaseContextOptions { 
-		"body"?: Models.KnowledgeContextRequest;
-	}
-	export interface patchKnowledgeKnowledgebaseContextValueOptions { 
-		"body"?: Models.KnowledgeContextValueRequest;
 	}
 	export interface postKnowledgeKnowledgebaseSearchOptions { 
 		"body"?: Models.KnowledgeSearchRequest;
@@ -2480,17 +2471,23 @@ declare namespace OrganizationApi {
 
 declare class OrganizationAuthorizationApi {  
   	deleteOrgauthorizationTrustee(trusteeOrgId: string): Promise<void>; 
+  	deleteOrgauthorizationTrusteeCloneduser(trusteeOrgId: string, trusteeUserId: string): Promise<void>; 
   	deleteOrgauthorizationTrusteeUser(trusteeOrgId: string, trusteeUserId: string): Promise<void>; 
   	deleteOrgauthorizationTrusteeUserRoles(trusteeOrgId: string, trusteeUserId: string): Promise<void>; 
   	deleteOrgauthorizationTrustor(trustorOrgId: string): Promise<void>; 
+  	deleteOrgauthorizationTrustorCloneduser(trustorOrgId: string, trusteeUserId: string): Promise<void>; 
   	deleteOrgauthorizationTrustorUser(trustorOrgId: string, trusteeUserId: string): Promise<void>; 
   	getOrgauthorizationPairing(pairingId: string): Promise<Models.TrustRequest>; 
   	getOrgauthorizationTrustee(trusteeOrgId: string): Promise<Models.Trustee>; 
+  	getOrgauthorizationTrusteeClonedusers(trusteeOrgId: string): Promise<Models.ClonedUserEntityListing>; 
   	getOrgauthorizationTrusteeUser(trusteeOrgId: string, trusteeUserId: string): Promise<Models.TrustUser>; 
   	getOrgauthorizationTrusteeUserRoles(trusteeOrgId: string, trusteeUserId: string): Promise<Models.UserAuthorization>; 
   	getOrgauthorizationTrusteeUsers(trusteeOrgId: string, opts?: OrganizationAuthorizationApi.getOrgauthorizationTrusteeUsersOptions): Promise<Models.TrustUserEntityListing>; 
   	getOrgauthorizationTrustees(opts?: OrganizationAuthorizationApi.getOrgauthorizationTrusteesOptions): Promise<Models.TrustEntityListing>; 
+  	getOrgauthorizationTrusteesDefault(): Promise<Models.Trustee>; 
   	getOrgauthorizationTrustor(trustorOrgId: string): Promise<Models.Trustor>; 
+  	getOrgauthorizationTrustorCloneduser(trustorOrgId: string, trusteeUserId: string): Promise<Models.ClonedUser>; 
+  	getOrgauthorizationTrustorClonedusers(trustorOrgId: string): Promise<Models.ClonedUserEntityListing>; 
   	getOrgauthorizationTrustorUser(trustorOrgId: string, trusteeUserId: string): Promise<Models.TrustUser>; 
   	getOrgauthorizationTrustorUsers(trustorOrgId: string, opts?: OrganizationAuthorizationApi.getOrgauthorizationTrustorUsersOptions): Promise<Models.TrustUserEntityListing>; 
   	getOrgauthorizationTrustors(opts?: OrganizationAuthorizationApi.getOrgauthorizationTrustorsOptions): Promise<Models.TrustorEntityListing>; 
@@ -2498,10 +2495,12 @@ declare class OrganizationAuthorizationApi {
   	postOrgauthorizationTrusteeUsers(trusteeOrgId: string, body: Models.TrustMemberCreate): Promise<Models.TrustUser>; 
   	postOrgauthorizationTrustees(body: Models.TrustCreate): Promise<Models.Trustee>; 
   	postOrgauthorizationTrusteesAudits(body: Models.TrusteeAuditQueryRequest, opts?: OrganizationAuthorizationApi.postOrgauthorizationTrusteesAuditsOptions): Promise<Models.AuditQueryResponse>; 
+  	postOrgauthorizationTrusteesDefault(opts?: OrganizationAuthorizationApi.postOrgauthorizationTrusteesDefaultOptions): Promise<Models.Trustee>; 
   	postOrgauthorizationTrustorAudits(body: Models.TrustorAuditQueryRequest, opts?: OrganizationAuthorizationApi.postOrgauthorizationTrustorAuditsOptions): Promise<Models.AuditQueryResponse>; 
   	putOrgauthorizationTrustee(trusteeOrgId: string, body: Models.TrustUpdate): Promise<Models.Trustee>; 
   	putOrgauthorizationTrusteeUserRoledivisions(trusteeOrgId: string, trusteeUserId: string, body: Models.RoleDivisionGrants): Promise<Models.UserAuthorization>; 
   	putOrgauthorizationTrusteeUserRoles(trusteeOrgId: string, trusteeUserId: string, body: Array<string>): Promise<Models.UserAuthorization>; 
+  	putOrgauthorizationTrustorCloneduser(trustorOrgId: string, trusteeUserId: string): Promise<Models.ClonedUser>; 
   	putOrgauthorizationTrustorUser(trustorOrgId: string, trusteeUserId: string): Promise<Models.TrustUser>;
 }
 
@@ -2527,6 +2526,10 @@ declare namespace OrganizationAuthorizationApi {
 		"pageNumber"?: number;
 		"sortBy"?: string;
 		"sortOrder"?: string;
+	}
+	export interface postOrgauthorizationTrusteesDefaultOptions { 
+		"assignDefaultRole"?: boolean;
+		"autoExpire"?: boolean;
 	}
 	export interface postOrgauthorizationTrustorAuditsOptions { 
 		"pageSize"?: number;
@@ -3491,7 +3494,6 @@ declare namespace RoutingApi {
 	export interface getRoutingQueuesDivisionviewsAllOptions { 
 		"pageSize"?: number;
 		"pageNumber"?: number;
-		"sortBy"?: string;
 		"sortOrder"?: string;
 	}
 	export interface getRoutingQueuesMeOptions { 
@@ -4733,6 +4735,8 @@ declare class WorkforceManagementApi {
   	deleteWorkforcemanagementBusinessunitWeekShorttermforecast(businessUnitId: string, weekDateId: string, forecastId: string): Promise<void>; 
   	deleteWorkforcemanagementCalendarUrlIcs(): Promise<void>; 
   	deleteWorkforcemanagementManagementunit(managementUnitId: string): Promise<void>; 
+  	deleteWorkforcemanagementManagementunitTimeofflimit(managementUnitId: string, timeOffLimitId: string): Promise<void>; 
+  	deleteWorkforcemanagementManagementunitTimeoffplan(managementUnitId: string, timeOffPlanId: string): Promise<void>; 
   	deleteWorkforcemanagementManagementunitWorkplan(managementUnitId: string, workPlanId: string): Promise<void>; 
   	deleteWorkforcemanagementManagementunitWorkplanrotation(managementUnitId: string, workPlanRotationId: string): Promise<void>; 
   	getWorkforcemanagementAdherence(userId: Array<string>): Promise<Array<Models.UserScheduleAdherence>>; 
@@ -4775,7 +4779,12 @@ declare class WorkforceManagementApi {
   	getWorkforcemanagementManagementunitAgentShifttrades(managementUnitId: string, agentId: string): Promise<Models.ShiftTradeListResponse>; 
   	getWorkforcemanagementManagementunitShifttradesMatched(managementUnitId: string): Promise<Models.ShiftTradeMatchesSummaryResponse>; 
   	getWorkforcemanagementManagementunitShifttradesUsers(managementUnitId: string): Promise<Models.WfmUserEntityListing>; 
+  	getWorkforcemanagementManagementunitTimeofflimit(managementUnitId: string, timeOffLimitId: string): Promise<Models.TimeOffLimit>; 
+  	getWorkforcemanagementManagementunitTimeofflimits(managementUnitId: string): Promise<Models.TimeOffLimitListing>; 
+  	getWorkforcemanagementManagementunitTimeoffplan(managementUnitId: string, timeOffPlanId: string): Promise<Models.TimeOffPlan>; 
+  	getWorkforcemanagementManagementunitTimeoffplans(managementUnitId: string): Promise<Models.TimeOffPlanListing>; 
   	getWorkforcemanagementManagementunitUserTimeoffrequest(managementUnitId: string, userId: string, timeOffRequestId: string): Promise<Models.TimeOffRequestResponse>; 
+  	getWorkforcemanagementManagementunitUserTimeoffrequestTimeofflimits(managementUnitId: string, userId: string, timeOffRequestId: string): Promise<Models.QueryTimeOffLimitValuesResponse>; 
   	getWorkforcemanagementManagementunitUserTimeoffrequests(managementUnitId: string, userId: string, opts?: WorkforceManagementApi.getWorkforcemanagementManagementunitUserTimeoffrequestsOptions): Promise<Models.TimeOffRequestList>; 
   	getWorkforcemanagementManagementunitUsers(managementUnitId: string): Promise<Models.WfmUserEntityListing>; 
   	getWorkforcemanagementManagementunitWeekSchedule(managementUnitId: string, weekId: string, scheduleId: string, opts?: WorkforceManagementApi.getWorkforcemanagementManagementunitWeekScheduleOptions): Promise<Models.WeekScheduleResponse>; 
@@ -4791,6 +4800,7 @@ declare class WorkforceManagementApi {
   	getWorkforcemanagementSchedulingjob(jobId: string): Promise<Models.SchedulingStatusResponse>; 
   	getWorkforcemanagementShifttrades(): Promise<Models.ShiftTradeListResponse>; 
   	getWorkforcemanagementTimeoffrequest(timeOffRequestId: string): Promise<Models.TimeOffRequestResponse>; 
+  	getWorkforcemanagementTimeoffrequestWaitlistpositions(timeOffRequestId: string): Promise<Models.WaitlistPositionListing>; 
   	getWorkforcemanagementTimeoffrequests(opts?: WorkforceManagementApi.getWorkforcemanagementTimeoffrequestsOptions): Promise<Models.TimeOffRequestList>; 
   	patchWorkforcemanagementBusinessunit(businessUnitId: string, opts?: WorkforceManagementApi.patchWorkforcemanagementBusinessunitOptions): Promise<Models.BusinessUnit>; 
   	patchWorkforcemanagementBusinessunitActivitycode(businessUnitId: string, activityCodeId: string, opts?: WorkforceManagementApi.patchWorkforcemanagementBusinessunitActivitycodeOptions): Promise<Models.BusinessUnitActivityCode>; 
@@ -4798,6 +4808,8 @@ declare class WorkforceManagementApi {
   	patchWorkforcemanagementBusinessunitSchedulingRun(businessUnitId: string, runId: string, opts?: WorkforceManagementApi.patchWorkforcemanagementBusinessunitSchedulingRunOptions): Promise<void>; 
   	patchWorkforcemanagementBusinessunitServicegoaltemplate(businessUnitId: string, serviceGoalTemplateId: string, opts?: WorkforceManagementApi.patchWorkforcemanagementBusinessunitServicegoaltemplateOptions): Promise<Models.ServiceGoalTemplate>; 
   	patchWorkforcemanagementManagementunit(managementUnitId: string, opts?: WorkforceManagementApi.patchWorkforcemanagementManagementunitOptions): Promise<Models.ManagementUnit>; 
+  	patchWorkforcemanagementManagementunitTimeofflimit(managementUnitId: string, timeOffLimitId: string, opts?: WorkforceManagementApi.patchWorkforcemanagementManagementunitTimeofflimitOptions): Promise<Models.TimeOffLimit>; 
+  	patchWorkforcemanagementManagementunitTimeoffplan(managementUnitId: string, timeOffPlanId: string, opts?: WorkforceManagementApi.patchWorkforcemanagementManagementunitTimeoffplanOptions): Promise<Models.TimeOffPlan>; 
   	patchWorkforcemanagementManagementunitUserTimeoffrequest(managementUnitId: string, userId: string, timeOffRequestId: string, opts?: WorkforceManagementApi.patchWorkforcemanagementManagementunitUserTimeoffrequestOptions): Promise<Models.TimeOffRequestResponse>; 
   	patchWorkforcemanagementManagementunitWeekShifttrade(managementUnitId: string, weekDateId: string, body: Models.PatchShiftTradeRequest, tradeId: string): Promise<Models.ShiftTradeResponse>; 
   	patchWorkforcemanagementManagementunitWorkplan(managementUnitId: string, workPlanId: string, opts?: WorkforceManagementApi.patchWorkforcemanagementManagementunitWorkplanOptions): Promise<Models.WorkPlan>; 
@@ -4825,8 +4837,12 @@ declare class WorkforceManagementApi {
   	postWorkforcemanagementManagementunitHistoricaladherencequery(managementUnitId: string, opts?: WorkforceManagementApi.postWorkforcemanagementManagementunitHistoricaladherencequeryOptions): Promise<Models.WfmHistoricalAdherenceResponse>; 
   	postWorkforcemanagementManagementunitMove(managementUnitId: string, opts?: WorkforceManagementApi.postWorkforcemanagementManagementunitMoveOptions): Promise<Models.MoveManagementUnitResponse>; 
   	postWorkforcemanagementManagementunitSchedulesSearch(managementUnitId: string, opts?: WorkforceManagementApi.postWorkforcemanagementManagementunitSchedulesSearchOptions): Promise<Models.UserScheduleContainer>; 
+  	postWorkforcemanagementManagementunitTimeofflimits(managementUnitId: string, opts?: WorkforceManagementApi.postWorkforcemanagementManagementunitTimeofflimitsOptions): Promise<Models.TimeOffLimit>; 
+  	postWorkforcemanagementManagementunitTimeofflimitsValuesQuery(managementUnitId: string, opts?: WorkforceManagementApi.postWorkforcemanagementManagementunitTimeofflimitsValuesQueryOptions): Promise<Models.QueryTimeOffLimitValuesResponse>; 
+  	postWorkforcemanagementManagementunitTimeoffplans(managementUnitId: string, opts?: WorkforceManagementApi.postWorkforcemanagementManagementunitTimeoffplansOptions): Promise<Models.TimeOffPlan>; 
   	postWorkforcemanagementManagementunitTimeoffrequests(managementUnitId: string, opts?: WorkforceManagementApi.postWorkforcemanagementManagementunitTimeoffrequestsOptions): Promise<Models.TimeOffRequestList>; 
   	postWorkforcemanagementManagementunitTimeoffrequestsQuery(managementUnitId: string, opts?: WorkforceManagementApi.postWorkforcemanagementManagementunitTimeoffrequestsQueryOptions): Promise<Models.TimeOffRequestListing>; 
+  	postWorkforcemanagementManagementunitTimeoffrequestsWaitlistpositionsQuery(managementUnitId: string, opts?: WorkforceManagementApi.postWorkforcemanagementManagementunitTimeoffrequestsWaitlistpositionsQueryOptions): Promise<Models.WaitlistPositionListing>; 
   	postWorkforcemanagementManagementunitWeekShifttradeMatch(managementUnitId: string, weekDateId: string, body: Models.MatchShiftTradeRequest, tradeId: string): Promise<Models.MatchShiftTradeResponse>; 
   	postWorkforcemanagementManagementunitWeekShifttrades(managementUnitId: string, weekDateId: string, body: Models.AddShiftTradeRequest): Promise<Models.ShiftTradeResponse>; 
   	postWorkforcemanagementManagementunitWeekShifttradesSearch(managementUnitId: string, weekDateId: string, body: Models.SearchShiftTradesRequest): Promise<Models.SearchShiftTradesResponse>; 
@@ -4839,7 +4855,9 @@ declare class WorkforceManagementApi {
   	postWorkforcemanagementManagementunits(opts?: WorkforceManagementApi.postWorkforcemanagementManagementunitsOptions): Promise<Models.ManagementUnit>; 
   	postWorkforcemanagementNotificationsUpdate(opts?: WorkforceManagementApi.postWorkforcemanagementNotificationsUpdateOptions): Promise<Models.UpdateNotificationsResponse>; 
   	postWorkforcemanagementSchedules(opts?: WorkforceManagementApi.postWorkforcemanagementSchedulesOptions): Promise<Models.UserScheduleContainer>; 
-  	postWorkforcemanagementTimeoffrequests(opts?: WorkforceManagementApi.postWorkforcemanagementTimeoffrequestsOptions): Promise<Models.TimeOffRequestResponse>;
+  	postWorkforcemanagementTimeofflimitsAvailableQuery(opts?: WorkforceManagementApi.postWorkforcemanagementTimeofflimitsAvailableQueryOptions): Promise<Models.AvailableTimeOffResponse>; 
+  	postWorkforcemanagementTimeoffrequests(opts?: WorkforceManagementApi.postWorkforcemanagementTimeoffrequestsOptions): Promise<Models.TimeOffRequestResponse>; 
+  	putWorkforcemanagementManagementunitTimeofflimitValues(managementUnitId: string, timeOffLimitId: string, opts?: WorkforceManagementApi.putWorkforcemanagementManagementunitTimeofflimitValuesOptions): Promise<Models.TimeOffLimit>;
 }
 
 declare namespace WorkforceManagementApi { 
@@ -4941,6 +4959,12 @@ declare namespace WorkforceManagementApi {
 	export interface patchWorkforcemanagementManagementunitOptions { 
 		"body"?: Models.UpdateManagementUnitRequest;
 	}
+	export interface patchWorkforcemanagementManagementunitTimeofflimitOptions { 
+		"body"?: Models.UpdateTimeOffLimitRequest;
+	}
+	export interface patchWorkforcemanagementManagementunitTimeoffplanOptions { 
+		"body"?: Models.UpdateTimeOffPlanRequest;
+	}
 	export interface patchWorkforcemanagementManagementunitUserTimeoffrequestOptions { 
 		"body"?: Models.AdminTimeOffRequestPatch;
 	}
@@ -5011,11 +5035,23 @@ declare namespace WorkforceManagementApi {
 	export interface postWorkforcemanagementManagementunitSchedulesSearchOptions { 
 		"body"?: Models.UserListScheduleRequestBody;
 	}
+	export interface postWorkforcemanagementManagementunitTimeofflimitsOptions { 
+		"body"?: Models.CreateTimeOffLimitRequest;
+	}
+	export interface postWorkforcemanagementManagementunitTimeofflimitsValuesQueryOptions { 
+		"body"?: Models.QueryTimeOffLimitValuesRequest;
+	}
+	export interface postWorkforcemanagementManagementunitTimeoffplansOptions { 
+		"body"?: Models.CreateTimeOffPlanRequest;
+	}
 	export interface postWorkforcemanagementManagementunitTimeoffrequestsOptions { 
 		"body"?: Models.CreateAdminTimeOffRequest;
 	}
 	export interface postWorkforcemanagementManagementunitTimeoffrequestsQueryOptions { 
 		"body"?: Models.TimeOffRequestQueryBody;
+	}
+	export interface postWorkforcemanagementManagementunitTimeoffrequestsWaitlistpositionsQueryOptions { 
+		"body"?: Models.QueryWaitlistPositionsRequest;
 	}
 	export interface postWorkforcemanagementManagementunitWeekShifttradesStateBulkOptions { 
 		"forceAsync"?: boolean;
@@ -5046,8 +5082,14 @@ declare namespace WorkforceManagementApi {
 	export interface postWorkforcemanagementSchedulesOptions { 
 		"body"?: Models.CurrentUserScheduleRequestBody;
 	}
+	export interface postWorkforcemanagementTimeofflimitsAvailableQueryOptions { 
+		"body"?: Models.AvailableTimeOffRequest;
+	}
 	export interface postWorkforcemanagementTimeoffrequestsOptions { 
 		"body"?: Models.CreateAgentTimeOffRequest;
+	}
+	export interface putWorkforcemanagementManagementunitTimeofflimitValuesOptions { 
+		"body"?: Models.SetTimeOffLimitValuesRequest;
 	}
 }
 
@@ -5120,7 +5162,6 @@ declare namespace Models {
 	
 	export interface AchievedOutcome { 
 		"id"?: string;
-		"outcome"?: Models.AddressableEntityRef;
 		"selfUri"?: string;
 	}
 	
@@ -5202,6 +5243,7 @@ declare namespace Models {
 		"mediaType"?: string;
 		"architectFlowFields"?: Models.ArchitectFlowFields;
 		"webMessagingOfferFields"?: Models.WebMessagingOfferFields;
+		"openActionFields"?: Models.OpenActionFields;
 	}
 	
 	export interface ActionMapActionTemplate { 
@@ -5817,10 +5859,6 @@ declare namespace Models {
 		"ranges"?: Array<Models.AggregationRange>;
 	}
 	
-	export interface AnalyticsReportingSettings { 
-		"piiMaskingEnabled"?: boolean;
-	}
-	
 	export interface AnalyticsResolution { 
 		"eventTime"?: string;
 		"queueId"?: string;
@@ -6316,7 +6354,6 @@ declare namespace Models {
 	
 	export interface AssignedSegment { 
 		"id"?: string;
-		"segment"?: Models.AddressableEntityRef;
 		"selfUri"?: string;
 	}
 	
@@ -6326,6 +6363,11 @@ declare namespace Models {
 		"tags"?: Array<string>;
 		"durationSeconds"?: number;
 		"endTime"?: string;
+	}
+	
+	export interface AssociatedValueField { 
+		"dataType": string;
+		"name": string;
 	}
 	
 	export interface AsyncConversationQuery { 
@@ -6730,6 +6772,24 @@ declare namespace Models {
 		"isPaid"?: boolean;
 		"activityCategory"?: string;
 		"wfmSchedule"?: Models.WfmScheduleReference;
+	}
+	
+	export interface AvailableTimeOffRange { 
+		"timeOffLimit"?: Models.TimeOffLimitReference;
+		"startDate"?: string;
+		"granularity"?: string;
+		"availableMinutesPerInterval"?: Array<number>;
+		"waitlistedRequestsPerInterval"?: Array<number>;
+		"waitlistEnabled"?: boolean;
+	}
+	
+	export interface AvailableTimeOffRequest { 
+		"activityCodeId": string;
+		"dateRanges"?: Array<Models.LocalDateRange>;
+	}
+	
+	export interface AvailableTimeOffResponse { 
+		"values"?: Array<Models.AvailableTimeOffRange>;
 	}
 	
 	export interface AvailableTopic { 
@@ -7693,6 +7753,7 @@ declare namespace Models {
 		"type"?: string;
 		"text"?: string;
 		"payload"?: string;
+		"messageType"?: string;
 	}
 	
 	export interface CalendarUrlResponse { 
@@ -8463,8 +8524,8 @@ declare namespace Models {
 		"expirationDate"?: string;
 		"issueDate"?: string;
 		"expired"?: boolean;
-		"signatureValid"?: boolean;
 		"valid"?: boolean;
+		"signatureValid"?: boolean;
 	}
 	
 	export interface Change { 
@@ -8655,6 +8716,19 @@ declare namespace Models {
 		"pageCount"?: number;
 	}
 	
+	export interface ClonedUser { 
+		"id"?: string;
+		"name"?: string;
+		"trustor"?: Models.DomainEntityRef;
+		"selfUri"?: string;
+	}
+	
+	export interface ClonedUserEntityListing { 
+		"total"?: number;
+		"entities"?: Array<Models.ClonedUser>;
+		"selfUri"?: string;
+	}
+	
 	export interface CloseButtonStyleProperties { 
 		"color"?: string;
 		"opacity"?: number;
@@ -8797,12 +8871,14 @@ declare namespace Models {
 		"lengthInMinutes": number;
 		"attendeeIds": Array<string>;
 		"facilitatorIds"?: Array<string>;
+		"interruptibleAppointmentIds"?: Array<string>;
 	}
 	
 	export interface CoachingSlotsResponse { 
 		"suggestedSlots"?: Array<Models.CoachingSlot>;
 		"attendeeSchedules"?: Array<Models.UserAvailableTimes>;
 		"facilitatorSchedules"?: Array<Models.UserAvailableTimes>;
+		"wfmScheduleActivities"?: Array<Models.WfmScheduleActivity>;
 	}
 	
 	export interface CobrowseConversation { 
@@ -10965,6 +11041,7 @@ declare namespace Models {
 		"conversation"?: Models.AddressableEntityRef;
 		"sentimentScore"?: number;
 		"sentimentTrend"?: number;
+		"sentimentTrendClass"?: string;
 	}
 	
 	export interface ConversationNormalizedMessage { 
@@ -11688,6 +11765,7 @@ declare namespace Models {
 		"modifiedBy"?: string;
 		"createdBy"?: string;
 		"memberCount"?: number;
+		"userMemberCount"?: number;
 		"joinedMemberCount"?: number;
 		"mediaSettings"?: { [key: string]: Models.MediaSetting; };
 		"routingRules"?: Array<Models.RoutingRule>;
@@ -11749,6 +11827,20 @@ declare namespace Models {
 		"succeeded"?: Array<Models.Share>;
 		"failed"?: Array<Models.Share>;
 		"selfUri"?: string;
+	}
+	
+	export interface CreateTimeOffLimitRequest { 
+		"granularity"?: string;
+		"defaultLimitMinutes"?: number;
+	}
+	
+	export interface CreateTimeOffPlanRequest { 
+		"name": string;
+		"activityCodeIds"?: Array<string>;
+		"timeOffLimitIds"?: Array<string>;
+		"autoApprovalRule": string;
+		"daysBeforeStartToExpireFromWaitlist"?: number;
+		"active": boolean;
 	}
 	
 	export interface CreateUser { 
@@ -13843,6 +13935,14 @@ declare namespace Models {
 	
 	export interface DraftRequest { 
 		"intents"?: Array<Models.DraftIntents>;
+		"topic"?: Array<Models.DraftTopics>;
+	}
+	
+	export interface DraftTopics { 
+		"id": string;
+		"name": string;
+		"phrases": Array<string>;
+		"selfUri"?: string;
 	}
 	
 	export interface DraftValidationResult { 
@@ -15757,6 +15857,15 @@ declare namespace Models {
 		"localPart"?: string;
 	}
 	
+	export interface FullDayTimeOffMarker { 
+		"businessUnitDate"?: string;
+		"lengthMinutes"?: number;
+		"description"?: string;
+		"activityCodeId"?: string;
+		"paid"?: boolean;
+		"timeOffRequestId"?: string;
+	}
+	
 	export interface GDPRJourneyCustomer { 
 		"type"?: string;
 		"id"?: string;
@@ -15944,6 +16053,14 @@ declare namespace Models {
 		"endpointCompression"?: boolean;
 		"nameIdentifierFormat"?: string;
 		"selfUri"?: string;
+	}
+	
+	export interface GenericTemplate { 
+		"title"?: string;
+		"description"?: string;
+		"url"?: string;
+		"components"?: Array<Models.RecordingButtonComponent>;
+		"actions"?: Models.RecordingContentActions;
 	}
 	
 	export interface GenesysBotConnector { 
@@ -17593,35 +17710,6 @@ declare namespace Models {
 		"selfUri"?: string;
 	}
 	
-	export interface KnowledgeContextRequest { 
-		"name": string;
-		"description"?: string;
-	}
-	
-	export interface KnowledgeContextResponse { 
-		"id"?: string;
-		"name": string;
-		"description"?: string;
-		"dateCreated": string;
-		"dateModified": string;
-		"values": Array<Models.KnowledgeContextValueResponse>;
-		"selfUri"?: string;
-	}
-	
-	export interface KnowledgeContextValueRequest { 
-		"name": string;
-		"description"?: string;
-	}
-	
-	export interface KnowledgeContextValueResponse { 
-		"id": string;
-		"name": string;
-		"description"?: string;
-		"dateCreated": string;
-		"dateModified": string;
-		"selfUri"?: string;
-	}
-	
 	export interface KnowledgeDocument { 
 		"id"?: string;
 		"name"?: string;
@@ -18390,6 +18478,11 @@ declare namespace Models {
 		"selfUri"?: string;
 	}
 	
+	export interface LocalDateRange { 
+		"startDate"?: string;
+		"endDate"?: string;
+	}
+	
 	export interface LocalEncryptionConfiguration { 
 		"id"?: string;
 		"name"?: string;
@@ -19128,7 +19221,7 @@ declare namespace Models {
 		"objective"?: Models.Objective;
 		"performanceProfileId"?: string;
 		"linkedMetric"?: Models.AddressableEntityRef;
-		"dateCreated"?: number;
+		"dateCreated"?: string;
 		"dateUnlinked"?: string;
 		"sourcePerformanceProfile"?: Models.PerformanceProfile;
 		"selfUri"?: string;
@@ -19159,7 +19252,7 @@ declare namespace Models {
 		"maxPoints"?: number;
 		"performanceProfileId"?: string;
 		"linkedMetric"?: Models.AddressableEntityRef;
-		"dateCreated"?: number;
+		"dateCreated"?: string;
 		"dateUnlinked"?: string;
 		"sourcePerformanceProfile"?: Models.PerformanceProfile;
 		"unitDefinition"?: string;
@@ -19736,6 +19829,11 @@ declare namespace Models {
 		"selfUri"?: string;
 	}
 	
+	export interface OpenActionFields { 
+		"openAction": Models.DomainEntityRef;
+		"configurationFields"?: { [key: string]: object; };
+	}
+	
 	export interface OpenIntegration { 
 		"id": string;
 		"name": string;
@@ -19797,6 +19895,7 @@ declare namespace Models {
 		"to": Models.OpenMessagingToRecipient;
 		"from": Models.OpenMessagingFromRecipient;
 		"time": string;
+		"metadata"?: Models.ChannelMetadata;
 	}
 	
 	export interface OpenMessagingFromRecipient { 
@@ -20239,6 +20338,7 @@ declare namespace Models {
 		"isPositive"?: boolean;
 		"context"?: Models.Context;
 		"journey"?: Models.Journey;
+		"associatedValueField"?: Models.AssociatedValueField;
 		"selfUri"?: string;
 		"createdDate"?: string;
 		"modifiedDate"?: string;
@@ -20437,6 +20537,7 @@ declare namespace Models {
 		"actionTemplate"?: Models.ActionMapActionTemplate;
 		"architectFlowFields"?: Models.ArchitectFlowFields;
 		"webMessagingOfferFields"?: Models.WebMessagingOfferFields;
+		"openActionFields"?: Models.OpenActionFields;
 	}
 	
 	export interface PatchActionMap { 
@@ -20581,6 +20682,7 @@ declare namespace Models {
 		"isPositive"?: boolean;
 		"context"?: Models.Context;
 		"journey"?: Models.Journey;
+		"associatedValueField"?: Models.AssociatedValueField;
 		"selfUri"?: string;
 		"createdDate"?: string;
 		"modifiedDate"?: string;
@@ -21455,6 +21557,20 @@ declare namespace Models {
 		"facetInfo"?: Models.QueryFacetInfo;
 	}
 	
+	export interface QueryTimeOffLimitValuesRequest { 
+		"timeOffLimitId"?: string;
+		"activityCodeId"?: string;
+		"dateRanges": Array<Models.LocalDateRange>;
+	}
+	
+	export interface QueryTimeOffLimitValuesResponse { 
+		"values"?: Array<Models.TimeOffLimitValueRange>;
+	}
+	
+	export interface QueryWaitlistPositionsRequest { 
+		"timeOffRequests": Array<Models.UserTimeOffRequestReference>;
+	}
+	
 	export interface Queue { 
 		"id"?: string;
 		"name"?: string;
@@ -21465,6 +21581,7 @@ declare namespace Models {
 		"modifiedBy"?: string;
 		"createdBy"?: string;
 		"memberCount"?: number;
+		"userMemberCount"?: number;
 		"joinedMemberCount"?: number;
 		"mediaSettings"?: { [key: string]: Models.MediaSetting; };
 		"routingRules"?: Array<Models.RoutingRule>;
@@ -23736,6 +23853,7 @@ declare namespace Models {
 		"modifiedBy"?: string;
 		"createdBy"?: string;
 		"memberCount"?: number;
+		"userMemberCount"?: number;
 		"joinedMemberCount"?: number;
 		"mediaSettings"?: { [key: string]: Models.MediaSetting; };
 		"routingRules"?: Array<Models.RoutingRule>;
@@ -23884,6 +24002,18 @@ declare namespace Models {
 		"mediaUris"?: Array<Models.RecordingArchiveRestoreTopicMediaResult>;
 		"estimatedTranscodeTimeMs"?: number;
 		"actualTranscodeTimeMs"?: number;
+	}
+	
+	export interface RecordingButtonComponent { 
+		"title"?: string;
+		"actions"?: Models.RecordingContentActions;
+		"isSelected"?: boolean;
+	}
+	
+	export interface RecordingContentActions { 
+		"url"?: string;
+		"urlTarget"?: string;
+		"textback"?: string;
 	}
 	
 	export interface RecordingEmailMessage { 
@@ -24737,6 +24867,17 @@ declare namespace Models {
 		"selfUri"?: string;
 	}
 	
+	export interface ScheduleActivity { 
+		"dateStart"?: string;
+		"lengthMinutes"?: number;
+		"description"?: string;
+		"activityCodeId"?: string;
+		"paid"?: boolean;
+		"timeOffRequestId"?: string;
+		"externalActivityId"?: string;
+		"externalActivityType"?: string;
+	}
+	
 	export interface ScheduleEntityListing { 
 		"entities"?: Array<Models.Schedule>;
 		"pageSize"?: number;
@@ -25443,6 +25584,7 @@ declare namespace Models {
 		"toAddressMessengerType": string;
 		"textBody"?: string;
 		"messagingTemplate"?: Models.MessagingTemplateRequest;
+		"useExistingActiveConversation"?: boolean;
 	}
 	
 	export interface SendAgentlessOutboundMessageResponse { 
@@ -25453,6 +25595,7 @@ declare namespace Models {
 		"messengerType"?: string;
 		"textBody"?: string;
 		"messagingTemplate"?: Models.MessagingTemplateRequest;
+		"useExistingActiveConversation"?: boolean;
 		"timestamp"?: string;
 		"selfUri"?: string;
 		"user"?: Models.AddressableEntityRef;
@@ -25569,6 +25712,11 @@ declare namespace Models {
 		"assignedDate"?: string;
 	}
 	
+	export interface SetTimeOffLimitValuesRequest { 
+		"values"?: Array<Models.TimeOffLimitRange>;
+		"metadata": Models.WfmVersionedEntityMetadata;
+	}
+	
 	export interface SetUuiDataRequest { 
 		"uuiData"?: string;
 	}
@@ -25579,6 +25727,10 @@ declare namespace Models {
 	
 	export interface SetWrapperRoutePathRequest { 
 		"values"?: Array<Models.RoutePathRequest>;
+	}
+	
+	export interface SetWrapperString { 
+		"values"?: Array<string>;
 	}
 	
 	export interface Share { 
@@ -26750,6 +26902,56 @@ declare namespace Models {
 		"hours"?: number;
 	}
 	
+	export interface TimeOffLimit { 
+		"id"?: string;
+		"granularity"?: string;
+		"defaultLimitMinutes"?: number;
+		"metadata"?: Models.WfmVersionedEntityMetadata;
+		"selfUri"?: string;
+	}
+	
+	export interface TimeOffLimitListing { 
+		"entities"?: Array<Models.TimeOffLimit>;
+	}
+	
+	export interface TimeOffLimitRange { 
+		"startDate": string;
+		"granularity": string;
+		"limitMinutesPerInterval": Array<number>;
+	}
+	
+	export interface TimeOffLimitReference { 
+		"id"?: string;
+		"selfUri"?: string;
+	}
+	
+	export interface TimeOffLimitValueRange { 
+		"timeOffLimit"?: Models.TimeOffLimitReference;
+		"startDate": string;
+		"granularity": string;
+		"limitMinutesPerInterval"?: Array<number>;
+		"allocatedMinutesPerInterval"?: Array<number>;
+		"waitlistedMinutesPerInterval"?: Array<number>;
+		"waitlistedRequestsPerInterval"?: Array<number>;
+		"metadata"?: Models.WfmVersionedEntityMetadata;
+	}
+	
+	export interface TimeOffPlan { 
+		"id"?: string;
+		"name"?: string;
+		"activityCodeIds"?: Array<string>;
+		"timeOffLimits"?: Array<Models.TimeOffLimitReference>;
+		"autoApprovalRule"?: string;
+		"daysBeforeStartToExpireFromWaitlist"?: number;
+		"active"?: boolean;
+		"metadata"?: Models.WfmVersionedEntityMetadata;
+		"selfUri"?: string;
+	}
+	
+	export interface TimeOffPlanListing { 
+		"entities"?: Array<Models.TimeOffPlan>;
+	}
+	
 	export interface TimeOffRequest { 
 		"id": string;
 		"user": Models.UserReference;
@@ -26793,6 +26995,11 @@ declare namespace Models {
 		"userIds"?: Array<string>;
 		"statuses"?: Array<string>;
 		"dateRange"?: Models.DateRange;
+	}
+	
+	export interface TimeOffRequestReference { 
+		"id"?: string;
+		"selfUri"?: string;
 	}
 	
 	export interface TimeOffRequestResponse { 
@@ -27713,6 +27920,21 @@ declare namespace Models {
 		"metadata": Models.WfmVersionedEntityMetadata;
 	}
 	
+	export interface UpdateTimeOffLimitRequest { 
+		"defaultLimitMinutes"?: number;
+		"metadata": Models.WfmVersionedEntityMetadata;
+	}
+	
+	export interface UpdateTimeOffPlanRequest { 
+		"name"?: string;
+		"activityCodeIds"?: Models.SetWrapperString;
+		"timeOffLimitIds"?: Models.SetWrapperString;
+		"autoApprovalRule"?: string;
+		"daysBeforeStartToExpireFromWaitlist"?: number;
+		"active"?: boolean;
+		"metadata": Models.WfmVersionedEntityMetadata;
+	}
+	
 	export interface UpdateUser { 
 		"id"?: string;
 		"name"?: string;
@@ -28275,6 +28497,7 @@ declare namespace Models {
 		"modifiedBy"?: string;
 		"createdBy"?: string;
 		"memberCount"?: number;
+		"userMemberCount"?: number;
 		"joinedMemberCount"?: number;
 		"mediaSettings"?: { [key: string]: Models.MediaSetting; };
 		"routingRules"?: Array<Models.RoutingRule>;
@@ -28565,6 +28788,12 @@ declare namespace Models {
 		"effectiveStation"?: Models.UserStation;
 		"defaultStation"?: Models.UserStation;
 		"lastAssociatedStation"?: Models.UserStation;
+	}
+	
+	export interface UserTimeOffRequestReference { 
+		"id"?: string;
+		"user": Models.UserReference;
+		"selfUri"?: string;
 	}
 	
 	export interface UserTokensTopicTokenNotification { 
@@ -29020,6 +29249,17 @@ declare namespace Models {
 		"nextPage"?: string;
 		"types": Array<string>;
 		"results": Array<Models.VoicemailMessage>;
+	}
+	
+	export interface WaitlistPosition { 
+		"timeOffRequest"?: Models.TimeOffRequestReference;
+		"timeOffLimit"?: Models.TimeOffLimitReference;
+		"date"?: string;
+		"waitlistPosition"?: number;
+	}
+	
+	export interface WaitlistPositionListing { 
+		"entities"?: Array<Models.WaitlistPosition>;
 	}
 	
 	export interface WebChatConfig { 
@@ -29514,12 +29754,18 @@ declare namespace Models {
 		"schedulingCanceledBy"?: Models.WfmBuScheduleRunTopicUserReference;
 		"schedulingCompletedTime"?: string;
 		"messageCount"?: number;
+		"messageSeverityCounts"?: Array<Models.WfmBuScheduleRunTopicSchedulerMessageSeverityCount>;
 	}
 	
 	export interface WfmBuScheduleRunTopicBuSchedulingRunProgressNotification { 
 		"status"?: string;
 		"operationId"?: string;
 		"result"?: Models.WfmBuScheduleRunTopicBuScheduleRun;
+	}
+	
+	export interface WfmBuScheduleRunTopicSchedulerMessageSeverityCount { 
+		"severity"?: string;
+		"count"?: number;
 	}
 	
 	export interface WfmBuScheduleRunTopicUserReference { 
@@ -29544,6 +29790,7 @@ declare namespace Models {
 		"failed"?: boolean;
 		"runId"?: string;
 		"messageCount"?: number;
+		"messageSeverityCounts"?: Array<Models.WfmBuScheduleTopicSchedulerMessageSeverityCount>;
 	}
 	
 	export interface WfmBuScheduleTopicBuScheduleMetadata { 
@@ -29572,6 +29819,11 @@ declare namespace Models {
 	
 	export interface WfmBuScheduleTopicManagementUnit { 
 		"id"?: string;
+	}
+	
+	export interface WfmBuScheduleTopicSchedulerMessageSeverityCount { 
+		"severity"?: string;
+		"count"?: number;
 	}
 	
 	export interface WfmBuScheduleTopicUserReference { 
@@ -30002,6 +30254,12 @@ declare namespace Models {
 	export interface WfmMoveManagementUnitTopicMoveManagementUnitNotification { 
 		"businessUnit"?: Models.WfmMoveManagementUnitTopicBusinessUnit;
 		"status"?: string;
+	}
+	
+	export interface WfmScheduleActivity { 
+		"userReference"?: Models.UserReference;
+		"activities"?: Array<Models.ScheduleActivity>;
+		"fullDayTimeOffMarkers"?: Array<Models.FullDayTimeOffMarker>;
 	}
 	
 	export interface WfmScheduleReference { 
