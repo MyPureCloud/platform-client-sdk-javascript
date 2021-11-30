@@ -8524,8 +8524,8 @@ declare namespace Models {
 		"expirationDate"?: string;
 		"issueDate"?: string;
 		"expired"?: boolean;
-		"valid"?: boolean;
 		"signatureValid"?: boolean;
+		"valid"?: boolean;
 	}
 	
 	export interface Change { 
@@ -16449,8 +16449,8 @@ declare namespace Models {
 		"completed"?: string;
 		"entities"?: Array<Models.HistoryEntry>;
 		"pageSize"?: number;
-		"pageNumber"?: number;
 		"total"?: number;
+		"pageNumber"?: number;
 		"pageCount"?: number;
 	}
 	
