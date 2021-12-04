@@ -3128,7 +3128,7 @@ declare class RecordingApi {
   	getRecordingCrossplatformMediaretentionpolicies(opts?: RecordingApi.getRecordingCrossplatformMediaretentionpoliciesOptions): Promise<Models.PolicyEntityListing>; 
   	getRecordingCrossplatformMediaretentionpolicy(policyId: string): Promise<Models.CrossPlatformPolicy>; 
   	getRecordingJob(jobId: string): Promise<Models.RecordingJob>; 
-  	getRecordingJobFailedrecordings(jobId: string, opts?: RecordingApi.getRecordingJobFailedrecordingsOptions): Promise<Models.FailedRecordingsEntityListing>; 
+  	getRecordingJobFailedrecordings(jobId: string, opts?: RecordingApi.getRecordingJobFailedrecordingsOptions): Promise<Models.FailedRecordingEntityListing>; 
   	getRecordingJobs(opts?: RecordingApi.getRecordingJobsOptions): Promise<Models.RecordingJobEntityListing>; 
   	getRecordingLocalkeysSetting(settingsId: string): Promise<Models.LocalEncryptionConfiguration>; 
   	getRecordingLocalkeysSettings(): Promise<Models.LocalEncryptionConfigurationListing>; 
@@ -3212,6 +3212,8 @@ declare namespace RecordingApi {
 	export interface getRecordingJobFailedrecordingsOptions { 
 		"pageSize"?: number;
 		"pageNumber"?: number;
+		"includeTotal"?: boolean;
+		"cursor"?: string;
 	}
 	export interface getRecordingJobsOptions { 
 		"pageSize"?: number;
@@ -3220,6 +3222,8 @@ declare namespace RecordingApi {
 		"state"?: string;
 		"showOnlyMyJobs"?: boolean;
 		"jobType"?: string;
+		"includeTotal"?: boolean;
+		"cursor"?: string;
 	}
 	export interface getRecordingMediaretentionpoliciesOptions { 
 		"pageSize"?: number;
@@ -3840,6 +3844,7 @@ declare class SpeechTextAnalyticsApi {
   	getSpeechandtextanalyticsProgramsMappings(opts?: SpeechTextAnalyticsApi.getSpeechandtextanalyticsProgramsMappingsOptions): Promise<Models.ProgramsMappingsEntityListing>; 
   	getSpeechandtextanalyticsProgramsPublishjob(jobId: string): Promise<Models.ProgramJob>; 
   	getSpeechandtextanalyticsProgramsUnpublished(opts?: SpeechTextAnalyticsApi.getSpeechandtextanalyticsProgramsUnpublishedOptions): Promise<Models.UnpublishedProgramsEntityListing>; 
+  	getSpeechandtextanalyticsSentimentDialects(): Promise<Models.EntityListing>; 
   	getSpeechandtextanalyticsSentimentfeedback(opts?: SpeechTextAnalyticsApi.getSpeechandtextanalyticsSentimentfeedbackOptions): Promise<Models.SentimentFeedbackEntityListing>; 
   	getSpeechandtextanalyticsSettings(): Promise<Models.SpeechTextAnalyticsSettingsResponse>; 
   	getSpeechandtextanalyticsTopic(topicId: string): Promise<Models.Topic>; 
@@ -8524,8 +8529,8 @@ declare namespace Models {
 		"expirationDate"?: string;
 		"issueDate"?: string;
 		"expired"?: boolean;
-		"signatureValid"?: boolean;
 		"valid"?: boolean;
+		"signatureValid"?: boolean;
 	}
 	
 	export interface Change { 
@@ -11042,6 +11047,7 @@ declare namespace Models {
 		"sentimentScore"?: number;
 		"sentimentTrend"?: number;
 		"sentimentTrendClass"?: string;
+		"participantMetrics"?: Models.ParticipantMetrics;
 	}
 	
 	export interface ConversationNormalizedMessage { 
@@ -13940,7 +13946,12 @@ declare namespace Models {
 	
 	export interface DraftTopics { 
 		"id": string;
-		"name": string;
+		"name"?: string;
+		"miner"?: Models.Miner;
+		"conversationCount"?: number;
+		"conversationPercent"?: number;
+		"utteranceCount"?: number;
+		"phraseCount"?: number;
 		"phrases": Array<string>;
 		"selfUri"?: string;
 	}
@@ -14872,8 +14883,8 @@ declare namespace Models {
 		"commentsRequired"?: boolean;
 		"visibilityCondition"?: Models.VisibilityCondition;
 		"answerOptions"?: Array<Models.AnswerOption>;
-		"isKill"?: boolean;
 		"isCritical"?: boolean;
+		"isKill"?: boolean;
 	}
 	
 	export interface EvaluationQuestionGroup { 
@@ -15279,17 +15290,8 @@ declare namespace Models {
 		"errorCode"?: string;
 	}
 	
-	export interface FailedRecordingsEntityListing { 
+	export interface FailedRecordingEntityListing { 
 		"entities"?: Array<Models.RecordingJobFailedRecording>;
-		"pageSize"?: number;
-		"pageNumber"?: number;
-		"total"?: number;
-		"firstUri"?: string;
-		"selfUri"?: string;
-		"nextUri"?: string;
-		"previousUri"?: string;
-		"lastUri"?: string;
-		"pageCount"?: number;
 	}
 	
 	export interface FaxDocument { 
@@ -19161,11 +19163,18 @@ declare namespace Models {
 		"parameters"?: Array<Models.TemplateParameter>;
 	}
 	
+	export interface MessengerPositionSettings { 
+		"alignment"?: string;
+		"sideSpace"?: number;
+		"bottomSpace"?: number;
+	}
+	
 	export interface MessengerSettings { 
 		"enabled"?: boolean;
 		"styles"?: Models.MessengerStyles;
 		"launcherButton"?: Models.LauncherButtonSettings;
 		"fileUpload"?: Models.FileUploadSettings;
+		"position"?: Models.MessengerPositionSettings;
 	}
 	
 	export interface MessengerStyles { 
@@ -20530,6 +20539,14 @@ declare namespace Models {
 	}
 	
 	export interface ParticipantMetrics { 
+		"agentDurationPercentage"?: number;
+		"customerDurationPercentage"?: number;
+		"silenceDurationPercentage"?: number;
+		"ivrDurationPercentage"?: number;
+		"acdDurationPercentage"?: number;
+		"overtalkDurationPercentage"?: number;
+		"otherDurationPercentage"?: number;
+		"overtalkCount"?: number;
 	}
 	
 	export interface PatchAction { 
@@ -21158,6 +21175,9 @@ declare namespace Models {
 		"intent"?: string;
 		"formula": string;
 		"estimatedWaitTimeSeconds": number;
+	}
+	
+	export interface PredictiveRouting { 
 	}
 	
 	export interface Predictor { 
@@ -24064,15 +24084,6 @@ declare namespace Models {
 	
 	export interface RecordingJobEntityListing { 
 		"entities"?: Array<Models.RecordingJob>;
-		"pageSize"?: number;
-		"pageNumber"?: number;
-		"total"?: number;
-		"firstUri"?: string;
-		"selfUri"?: string;
-		"nextUri"?: string;
-		"previousUri"?: string;
-		"lastUri"?: string;
-		"pageCount"?: number;
 	}
 	
 	export interface RecordingJobFailedRecording { 

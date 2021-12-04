@@ -5,7 +5,7 @@ class RecordingApi {
 	/**
 	 * Recording service.
 	 * @module purecloud-platform-client-v2/api/RecordingApi
-	 * @version 126.1.0
+	 * @version 127.0.0
 	 */
 
 	/**
@@ -601,6 +601,8 @@ class RecordingApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize Page size. Maximum is 100. (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Boolean} opts.includeTotal If false, cursor will be used to locate the page instead of pageNumber.
+	 * @param {String} opts.cursor Indicates where to resume query results (not required for first page)
 	 */
 	getRecordingJobFailedrecordings(jobId, opts) { 
 		opts = opts || {};
@@ -614,7 +616,7 @@ class RecordingApi {
 			'/api/v2/recording/jobs/{jobId}/failedrecordings', 
 			'GET', 
 			{ 'jobId': jobId }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] }, 
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'includeTotal': opts['includeTotal'],'cursor': opts['cursor'] }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -634,6 +636,8 @@ class RecordingApi {
 	 * @param {Object} opts.state Filter by state
 	 * @param {Boolean} opts.showOnlyMyJobs Show only my jobs
 	 * @param {Object} opts.jobType Job Type (Can be left empty for both)
+	 * @param {Boolean} opts.includeTotal If false, cursor will be used to locate the page instead of pageNumber.
+	 * @param {String} opts.cursor Indicates where to resume query results (not required for first page)
 	 */
 	getRecordingJobs(opts) { 
 		opts = opts || {};
@@ -643,7 +647,7 @@ class RecordingApi {
 			'/api/v2/recording/jobs', 
 			'GET', 
 			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'state': opts['state'],'showOnlyMyJobs': opts['showOnlyMyJobs'],'jobType': opts['jobType'] }, 
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'state': opts['state'],'showOnlyMyJobs': opts['showOnlyMyJobs'],'jobType': opts['jobType'],'includeTotal': opts['includeTotal'],'cursor': opts['cursor'] }, 
 			{  }, 
 			{  }, 
 			null, 

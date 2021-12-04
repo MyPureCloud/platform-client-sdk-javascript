@@ -5,7 +5,7 @@ class WebMessagingApi {
 	/**
 	 * WebMessaging service.
 	 * @module purecloud-platform-client-v2/api/WebMessagingApi
-	 * @version 126.1.0
+	 * @version 127.0.0
 	 */
 
 	/**

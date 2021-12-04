@@ -5,7 +5,7 @@ class FaxApi {
 	/**
 	 * Fax service.
 	 * @module purecloud-platform-client-v2/api/FaxApi
-	 * @version 126.1.0
+	 * @version 127.0.0
 	 */
 
 	/**

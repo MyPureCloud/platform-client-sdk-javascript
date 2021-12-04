@@ -21,6 +21,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getSpeechandtextanalyticsProgramsMappings**](SpeechTextAnalyticsApi.html#getSpeechandtextanalyticsProgramsMappings) | **GET** /api/v2/speechandtextanalytics/programs/mappings | Get the list of Speech &amp; Text Analytics programs mappings to queues and flows
 [**getSpeechandtextanalyticsProgramsPublishjob**](SpeechTextAnalyticsApi.html#getSpeechandtextanalyticsProgramsPublishjob) | **GET** /api/v2/speechandtextanalytics/programs/publishjobs/{jobId} | Get a Speech &amp; Text Analytics publish programs job by id
 [**getSpeechandtextanalyticsProgramsUnpublished**](SpeechTextAnalyticsApi.html#getSpeechandtextanalyticsProgramsUnpublished) | **GET** /api/v2/speechandtextanalytics/programs/unpublished | Get the list of Speech &amp; Text Analytics unpublished programs
+[**getSpeechandtextanalyticsSentimentDialects**](SpeechTextAnalyticsApi.html#getSpeechandtextanalyticsSentimentDialects) | **GET** /api/v2/speechandtextanalytics/sentiment/dialects | Get the list of Speech &amp; Text Analytics sentiment supported dialects
 [**getSpeechandtextanalyticsSentimentfeedback**](SpeechTextAnalyticsApi.html#getSpeechandtextanalyticsSentimentfeedback) | **GET** /api/v2/speechandtextanalytics/sentimentfeedback | Get the list of Speech &amp; Text Analytics SentimentFeedback
 [**getSpeechandtextanalyticsSettings**](SpeechTextAnalyticsApi.html#getSpeechandtextanalyticsSettings) | **GET** /api/v2/speechandtextanalytics/settings | Get Speech And Text Analytics Settings
 [**getSpeechandtextanalyticsTopic**](SpeechTextAnalyticsApi.html#getSpeechandtextanalyticsTopic) | **GET** /api/v2/speechandtextanalytics/topics/{topicId} | Get a Speech &amp; Text Analytics topic by id
@@ -793,6 +794,53 @@ apiInstance.getSpeechandtextanalyticsProgramsUnpublished(opts)
 ### Return type
 
 **UnpublishedProgramsEntityListing**
+
+<a name="getSpeechandtextanalyticsSentimentDialects"></a>
+
+# EntityListing getSpeechandtextanalyticsSentimentDialects()
+
+
+
+GET /api/v2/speechandtextanalytics/sentiment/dialects
+
+Get the list of Speech &amp; Text Analytics sentiment supported dialects
+
+
+
+Requires NO permissions: 
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.SpeechTextAnalyticsApi();
+
+apiInstance.getSpeechandtextanalyticsSentimentDialects()
+  .then((data) => {
+    console.log(`getSpeechandtextanalyticsSentimentDialects success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getSpeechandtextanalyticsSentimentDialects');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+
+### Return type
+
+**EntityListing**
 
 <a name="getSpeechandtextanalyticsSentimentfeedback"></a>
 

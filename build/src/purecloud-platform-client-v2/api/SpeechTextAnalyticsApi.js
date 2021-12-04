@@ -5,7 +5,7 @@ class SpeechTextAnalyticsApi {
 	/**
 	 * SpeechTextAnalytics service.
 	 * @module purecloud-platform-client-v2/api/SpeechTextAnalyticsApi
-	 * @version 126.1.0
+	 * @version 127.0.0
 	 */
 
 	/**
@@ -360,6 +360,26 @@ class SpeechTextAnalyticsApi {
 			'GET', 
 			{  }, 
 			{ 'nextPage': opts['nextPage'],'pageSize': opts['pageSize'] }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get the list of Speech &amp; Text Analytics sentiment supported dialects
+	 * 
+	 */
+	getSpeechandtextanalyticsSentimentDialects() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/speechandtextanalytics/sentiment/dialects', 
+			'GET', 
+			{  }, 
+			{  }, 
 			{  }, 
 			{  }, 
 			null, 
