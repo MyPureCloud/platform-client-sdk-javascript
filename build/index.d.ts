@@ -4302,12 +4302,19 @@ declare namespace TelephonyProvidersEdgeApi {
 }
 
 declare class TextbotsApi {  
+  	getTextbotsBotsSearch(opts?: TextbotsApi.getTextbotsBotsSearchOptions): Promise<Models.BotSearchResponseEntityListing>; 
   	postTextbotsBotflowsSessionTurns(sessionId: string, turnRequest: Models.TextBotFlowTurnRequest): Promise<Models.TextBotFlowTurnResponse>; 
   	postTextbotsBotflowsSessions(launchRequest: Models.TextBotFlowLaunchRequest): Promise<Models.TextBotFlowLaunchResponse>; 
   	postTextbotsBotsExecute(postTextRequest: Models.PostTextRequest): Promise<Models.PostTextResponse>;
 }
 
 declare namespace TextbotsApi { 
+	export interface getTextbotsBotsSearchOptions { 
+		"botType"?: Array<string>;
+		"botName"?: string;
+		"botId"?: Array<string>;
+		"pageSize"?: number;
+	}
 }
 
 declare class TokensApi {  
@@ -5695,9 +5702,11 @@ declare namespace Models {
 		"conversationStart"?: string;
 		"divisionIds"?: Array<string>;
 		"externalTag"?: string;
+		"knowledgeBaseIds"?: Array<string>;
 		"mediaStatsMinConversationMos"?: number;
 		"mediaStatsMinConversationRFactor"?: number;
 		"originatingDirection"?: string;
+		"selfServed"?: boolean;
 		"evaluations"?: Array<Models.AnalyticsEvaluation>;
 		"surveys"?: Array<Models.AnalyticsSurvey>;
 		"resolutions"?: Array<Models.AnalyticsResolution>;
@@ -5750,9 +5759,11 @@ declare namespace Models {
 		"conversationStart"?: string;
 		"divisionIds"?: Array<string>;
 		"externalTag"?: string;
+		"knowledgeBaseIds"?: Array<string>;
 		"mediaStatsMinConversationMos"?: number;
 		"mediaStatsMinConversationRFactor"?: number;
 		"originatingDirection"?: string;
+		"selfServed"?: boolean;
 		"evaluations"?: Array<Models.AnalyticsEvaluation>;
 		"surveys"?: Array<Models.AnalyticsSurvey>;
 		"resolutions"?: Array<Models.AnalyticsResolution>;
@@ -6107,7 +6118,6 @@ declare namespace Models {
 	}
 	
 	export interface ArchitectFlowNotificationErrorMessageParams { 
-		"additionalProperties"?: { [key: string]: string; };
 	}
 	
 	export interface ArchitectFlowNotificationFlowNotification { 
@@ -6163,7 +6173,6 @@ declare namespace Models {
 	}
 	
 	export interface ArchitectFlowOutcomeNotificationErrorMessageParams { 
-		"additionalProperties"?: { [key: string]: string; };
 	}
 	
 	export interface ArchitectFlowOutcomeNotificationFlowOutcomeNotification { 
@@ -6211,7 +6220,6 @@ declare namespace Models {
 	}
 	
 	export interface ArchitectPromptNotificationErrorMessageParams { 
-		"additionalProperties"?: { [key: string]: string; };
 	}
 	
 	export interface ArchitectPromptNotificationHomeOrganization { 
@@ -7012,6 +7020,18 @@ declare namespace Models {
 	
 	export interface BotList { 
 		"chatBots": Array<Models.BotConnectorBot>;
+	}
+	
+	export interface BotSearchResponse { 
+		"id": string;
+		"name": string;
+		"botType": string;
+		"description"?: string;
+		"selfUri"?: string;
+	}
+	
+	export interface BotSearchResponseEntityListing { 
+		"entities"?: Array<Models.BotSearchResponse>;
 	}
 	
 	export interface BotSlot { 
@@ -9050,6 +9070,7 @@ declare namespace Models {
 		"kpiTotalOff"?: number;
 		"interactionCountOn"?: number;
 		"interactionCountOff"?: number;
+		"kpiResults"?: Array<Models.KpiResult>;
 		"selfUri"?: string;
 	}
 	
@@ -9314,7 +9335,6 @@ declare namespace Models {
 	export interface ContactlistDownloadReadyExportUri { 
 		"uri"?: string;
 		"exportTimestamp"?: string;
-		"additionalProperties"?: object;
 	}
 	
 	export interface ContactlistImportStatusImportStatus { 
@@ -9323,7 +9343,6 @@ declare namespace Models {
 		"completedRecords"?: number;
 		"percentageComplete"?: number;
 		"failureReason"?: string;
-		"additionalProperties"?: object;
 	}
 	
 	export interface ContentActions { 
@@ -9778,7 +9797,6 @@ declare namespace Models {
 		"tags"?: Array<string>;
 		"durationSeconds"?: number;
 		"endTime"?: string;
-		"additionalProperties"?: object;
 	}
 	
 	export interface ConversationCallbackEventTopicCallbackConversation { 
@@ -9855,7 +9873,6 @@ declare namespace Models {
 		"contactListId"?: string;
 		"campaignId"?: string;
 		"phoneNumberColumns"?: Array<Models.ConversationCallbackEventTopicPhoneNumberColumn>;
-		"additionalProperties"?: object;
 	}
 	
 	export interface ConversationCallbackEventTopicErrorBody { 
@@ -9900,7 +9917,6 @@ declare namespace Models {
 	export interface ConversationCallbackEventTopicPhoneNumberColumn { 
 		"columnName"?: string;
 		"type"?: string;
-		"additionalProperties"?: object;
 	}
 	
 	export interface ConversationCallbackEventTopicScoredAgent { 
@@ -9924,7 +9940,6 @@ declare namespace Models {
 		"tags"?: Array<string>;
 		"durationSeconds"?: number;
 		"endTime"?: string;
-		"additionalProperties"?: object;
 	}
 	
 	export interface ConversationChannel { 
@@ -10071,7 +10086,6 @@ declare namespace Models {
 		"tags"?: Array<string>;
 		"durationSeconds"?: number;
 		"endTime"?: string;
-		"additionalProperties"?: object;
 	}
 	
 	export interface ConversationCobrowseEventTopicCobrowseConversation { 
@@ -10193,7 +10207,6 @@ declare namespace Models {
 		"tags"?: Array<string>;
 		"durationSeconds"?: number;
 		"endTime"?: string;
-		"additionalProperties"?: object;
 	}
 	
 	export interface ConversationContentActions { 
@@ -10294,7 +10307,6 @@ declare namespace Models {
 		"contentUri"?: string;
 		"contentType"?: string;
 		"contentLength"?: number;
-		"additionalProperties"?: object;
 	}
 	
 	export interface ConversationEmailEventTopicConversationRoutingData { 
@@ -10417,7 +10429,6 @@ declare namespace Models {
 		"tags"?: Array<string>;
 		"durationSeconds"?: number;
 		"endTime"?: string;
-		"additionalProperties"?: object;
 	}
 	
 	export interface ConversationEntityListing { 
@@ -10445,7 +10456,6 @@ declare namespace Models {
 		"addressNormalized"?: string;
 		"addressRaw"?: string;
 		"addressDisplayable"?: string;
-		"additionalProperties"?: object;
 	}
 	
 	export interface ConversationEventTopicAfterCallWork { 
@@ -10460,7 +10470,6 @@ declare namespace Models {
 		"contentUri"?: string;
 		"contentType"?: string;
 		"contentLength"?: number;
-		"additionalProperties"?: object;
 	}
 	
 	export interface ConversationEventTopicCall { 
@@ -10490,7 +10499,6 @@ declare namespace Models {
 		"afterCallWork"?: Models.ConversationEventTopicAfterCallWork;
 		"afterCallWorkRequired"?: boolean;
 		"agentAssistantId"?: string;
-		"additionalProperties"?: object;
 	}
 	
 	export interface ConversationEventTopicCallback { 
@@ -10519,7 +10527,6 @@ declare namespace Models {
 		"afterCallWorkRequired"?: boolean;
 		"callerId"?: string;
 		"callerIdName"?: string;
-		"additionalProperties"?: object;
 	}
 	
 	export interface ConversationEventTopicChat { 
@@ -10539,7 +10546,6 @@ declare namespace Models {
 		"wrapup"?: Models.ConversationEventTopicWrapup;
 		"afterCallWork"?: Models.ConversationEventTopicAfterCallWork;
 		"afterCallWorkRequired"?: boolean;
-		"additionalProperties"?: object;
 	}
 	
 	export interface ConversationEventTopicCobrowse { 
@@ -10561,7 +10567,6 @@ declare namespace Models {
 		"wrapup"?: Models.ConversationEventTopicWrapup;
 		"afterCallWork"?: Models.ConversationEventTopicAfterCallWork;
 		"afterCallWorkRequired"?: boolean;
-		"additionalProperties"?: object;
 	}
 	
 	export interface ConversationEventTopicConversation { 
@@ -10587,7 +10592,6 @@ declare namespace Models {
 		"contactListId"?: string;
 		"campaignId"?: string;
 		"phoneNumberColumns"?: Array<Models.ConversationEventTopicPhoneNumberColumn>;
-		"additionalProperties"?: object;
 	}
 	
 	export interface ConversationEventTopicDisconnectReason { 
@@ -10618,7 +10622,6 @@ declare namespace Models {
 		"wrapup"?: Models.ConversationEventTopicWrapup;
 		"afterCallWork"?: Models.ConversationEventTopicAfterCallWork;
 		"afterCallWorkRequired"?: boolean;
-		"additionalProperties"?: object;
 	}
 	
 	export interface ConversationEventTopicErrorDetails { 
@@ -10629,7 +10632,6 @@ declare namespace Models {
 		"messageParams"?: { [key: string]: string; };
 		"contextId"?: string;
 		"uri"?: string;
-		"additionalProperties"?: object;
 	}
 	
 	export interface ConversationEventTopicFaxStatus { 
@@ -10693,7 +10695,6 @@ declare namespace Models {
 		"afterCallWork"?: Models.ConversationEventTopicAfterCallWork;
 		"afterCallWorkRequired"?: boolean;
 		"agentAssistantId"?: string;
-		"additionalProperties"?: object;
 	}
 	
 	export interface ConversationEventTopicMessageDetails { 
@@ -10755,13 +10756,11 @@ declare namespace Models {
 		"screenshares"?: Array<Models.ConversationEventTopicScreenshare>;
 		"socialExpressions"?: Array<Models.ConversationEventTopicSocialExpression>;
 		"videos"?: Array<Models.ConversationEventTopicVideo>;
-		"additionalProperties"?: object;
 	}
 	
 	export interface ConversationEventTopicPhoneNumberColumn { 
 		"columnName"?: string;
 		"type"?: string;
-		"additionalProperties"?: object;
 	}
 	
 	export interface ConversationEventTopicScoredAgent { 
@@ -10784,7 +10783,6 @@ declare namespace Models {
 		"wrapup"?: Models.ConversationEventTopicWrapup;
 		"afterCallWork"?: Models.ConversationEventTopicAfterCallWork;
 		"afterCallWorkRequired"?: boolean;
-		"additionalProperties"?: object;
 	}
 	
 	export interface ConversationEventTopicSocialExpression { 
@@ -10806,7 +10804,6 @@ declare namespace Models {
 		"wrapup"?: Models.ConversationEventTopicWrapup;
 		"afterCallWork"?: Models.ConversationEventTopicAfterCallWork;
 		"afterCallWorkRequired"?: boolean;
-		"additionalProperties"?: object;
 	}
 	
 	export interface ConversationEventTopicUriReference { 
@@ -10832,7 +10829,6 @@ declare namespace Models {
 		"wrapup"?: Models.ConversationEventTopicWrapup;
 		"afterCallWork"?: Models.ConversationEventTopicAfterCallWork;
 		"afterCallWorkRequired"?: boolean;
-		"additionalProperties"?: object;
 	}
 	
 	export interface ConversationEventTopicVoicemail { 
@@ -10846,7 +10842,6 @@ declare namespace Models {
 		"tags"?: Array<string>;
 		"durationSeconds"?: number;
 		"endTime"?: string;
-		"additionalProperties"?: object;
 	}
 	
 	export interface ConversationMessageContent { 
@@ -11005,7 +11000,6 @@ declare namespace Models {
 		"tags"?: Array<string>;
 		"durationSeconds"?: number;
 		"endTime"?: string;
-		"additionalProperties"?: object;
 	}
 	
 	export interface ConversationMessagingChannel { 
@@ -11248,7 +11242,6 @@ declare namespace Models {
 		"tags"?: Array<string>;
 		"durationSeconds"?: number;
 		"endTime"?: string;
-		"additionalProperties"?: object;
 	}
 	
 	export interface ConversationSocialExpressionEventTopicConversationRoutingData { 
@@ -11369,7 +11362,6 @@ declare namespace Models {
 		"tags"?: Array<string>;
 		"durationSeconds"?: number;
 		"endTime"?: string;
-		"additionalProperties"?: object;
 	}
 	
 	export interface ConversationTagsUpdate { 
@@ -11517,7 +11509,6 @@ declare namespace Models {
 		"tags"?: Array<string>;
 		"durationSeconds"?: number;
 		"endTime"?: string;
-		"additionalProperties"?: object;
 	}
 	
 	export interface CopyAttachmentsRequest { 
@@ -11782,6 +11773,7 @@ declare namespace Models {
 		"emailInQueueFlow"?: Models.DomainEntityRef;
 		"messageInQueueFlow"?: Models.DomainEntityRef;
 		"whisperPrompt"?: Models.DomainEntityRef;
+		"onHoldPrompt"?: Models.DomainEntityRef;
 		"autoAnswerOnly"?: boolean;
 		"enableTranscription"?: boolean;
 		"enableManualAssignment"?: boolean;
@@ -12643,24 +12635,22 @@ declare namespace Models {
 	}
 	
 	export interface DialerAttemptLimitsConfigChangeAttemptLimits { 
-		"id"?: string;
-		"name"?: string;
-		"dateCreated"?: string;
-		"dateModified"?: string;
-		"version"?: number;
 		"maxAttemptsPerContact"?: number;
 		"maxAttemptsPerNumber"?: number;
 		"timeZoneId"?: string;
 		"resetPeriod"?: string;
 		"recallEntries"?: { [key: string]: Models.DialerAttemptLimitsConfigChangeRecallEntry; };
 		"breadthFirstRecalls"?: boolean;
-		"additionalProperties"?: object;
+		"id"?: string;
+		"name"?: string;
+		"dateCreated"?: string;
+		"dateModified"?: string;
+		"version"?: number;
 	}
 	
 	export interface DialerAttemptLimitsConfigChangeRecallEntry { 
 		"nbrAttempts"?: number;
 		"minutesBetweenAttempts"?: number;
-		"additionalProperties"?: object;
 	}
 	
 	export interface DialerAuditRequest { 
@@ -12673,32 +12663,24 @@ declare namespace Models {
 	export interface DialerCallabletimesetConfigChangeCallableTime { 
 		"timeSlots"?: Array<Models.DialerCallabletimesetConfigChangeTimeSlot>;
 		"timeZoneId"?: string;
-		"additionalProperties"?: object;
 	}
 	
 	export interface DialerCallabletimesetConfigChangeCallableTimeSet { 
+		"callableTimes"?: Array<Models.DialerCallabletimesetConfigChangeCallableTime>;
 		"id"?: string;
 		"name"?: string;
 		"dateCreated"?: string;
 		"dateModified"?: string;
 		"version"?: number;
-		"callableTimes"?: Array<Models.DialerCallabletimesetConfigChangeCallableTime>;
-		"additionalProperties"?: object;
 	}
 	
 	export interface DialerCallabletimesetConfigChangeTimeSlot { 
 		"startTime"?: string;
 		"stopTime"?: string;
 		"day"?: number;
-		"additionalProperties"?: object;
 	}
 	
 	export interface DialerCampaignConfigChangeCampaign { 
-		"id"?: string;
-		"name"?: string;
-		"dateCreated"?: string;
-		"dateModified"?: string;
-		"version"?: number;
 		"contactList"?: Models.DialerCampaignConfigChangeUriReference;
 		"queue"?: Models.DialerCampaignConfigChangeUriReference;
 		"dialingMode"?: string;
@@ -12727,26 +12709,27 @@ declare namespace Models {
 		"contactListFilters"?: Array<Models.DialerCampaignConfigChangeUriReference>;
 		"division"?: Models.DialerCampaignConfigChangeUriReference;
 		"agentOwnedColumn"?: string;
-		"additionalProperties"?: object;
+		"id"?: string;
+		"name"?: string;
+		"dateCreated"?: string;
+		"dateModified"?: string;
+		"version"?: number;
 	}
 	
 	export interface DialerCampaignConfigChangeContactSort { 
 		"fieldName"?: string;
 		"direction"?: string;
 		"numeric"?: boolean;
-		"additionalProperties"?: object;
 	}
 	
 	export interface DialerCampaignConfigChangePhoneColumn { 
 		"columnName"?: string;
 		"type"?: string;
-		"additionalProperties"?: object;
 	}
 	
 	export interface DialerCampaignConfigChangeRestErrorDetail { 
 		"error"?: string;
 		"details"?: string;
-		"additionalProperties"?: object;
 	}
 	
 	export interface DialerCampaignConfigChangeUriReference { 
@@ -12760,7 +12743,6 @@ declare namespace Models {
 		"numberOfContactsMessaged"?: number;
 		"totalNumberOfContacts"?: number;
 		"percentage"?: number;
-		"additionalProperties"?: object;
 	}
 	
 	export interface DialerCampaignProgressEventUriReference { 
@@ -12769,17 +12751,16 @@ declare namespace Models {
 	}
 	
 	export interface DialerCampaignRuleConfigChangeCampaignRule { 
-		"id"?: string;
-		"name"?: string;
-		"dateCreated"?: string;
-		"dateModified"?: string;
-		"version"?: number;
 		"campaignRuleEntities"?: Models.DialerCampaignRuleConfigChangeCampaignRuleEntities;
 		"campaignRuleConditions"?: Array<Models.DialerCampaignRuleConfigChangeCampaignRuleCondition>;
 		"campaignRuleActions"?: Array<Models.DialerCampaignRuleConfigChangeCampaignRuleAction>;
 		"matchAnyConditions"?: boolean;
 		"enabled"?: boolean;
-		"additionalProperties"?: object;
+		"id"?: string;
+		"name"?: string;
+		"dateCreated"?: string;
+		"dateModified"?: string;
+		"version"?: number;
 	}
 	
 	export interface DialerCampaignRuleConfigChangeCampaignRuleAction { 
@@ -12787,21 +12768,18 @@ declare namespace Models {
 		"parameters"?: { [key: string]: string; };
 		"actionType"?: string;
 		"campaignRuleActionEntities"?: Models.DialerCampaignRuleConfigChangeCampaignRuleActionEntities;
-		"additionalProperties"?: object;
 	}
 	
 	export interface DialerCampaignRuleConfigChangeCampaignRuleActionEntities { 
+		"useTriggeringEntity"?: boolean;
 		"campaigns"?: Array<Models.DialerCampaignRuleConfigChangeUriReference>;
 		"sequences"?: Array<Models.DialerCampaignRuleConfigChangeUriReference>;
-		"useTriggeringEntity"?: boolean;
-		"additionalProperties"?: object;
 	}
 	
 	export interface DialerCampaignRuleConfigChangeCampaignRuleCondition { 
 		"id"?: string;
 		"parameters"?: { [key: string]: string; };
 		"conditionType"?: string;
-		"additionalProperties"?: object;
 	}
 	
 	export interface DialerCampaignRuleConfigChangeCampaignRuleEntities { 
@@ -12815,21 +12793,19 @@ declare namespace Models {
 	}
 	
 	export interface DialerCampaignScheduleConfigChangeCampaignSchedule { 
+		"intervals"?: Array<Models.DialerCampaignScheduleConfigChangeScheduleInterval>;
+		"timeZone"?: string;
+		"campaign"?: Models.DialerCampaignScheduleConfigChangeUriReference;
 		"id"?: string;
 		"name"?: string;
 		"dateCreated"?: string;
 		"dateModified"?: string;
 		"version"?: number;
-		"intervals"?: Array<Models.DialerCampaignScheduleConfigChangeScheduleInterval>;
-		"timeZone"?: string;
-		"campaign"?: Models.DialerCampaignScheduleConfigChangeUriReference;
-		"additionalProperties"?: object;
 	}
 	
 	export interface DialerCampaignScheduleConfigChangeScheduleInterval { 
 		"start"?: string;
 		"end"?: string;
-		"additionalProperties"?: object;
 	}
 	
 	export interface DialerCampaignScheduleConfigChangeUriReference { 
@@ -12857,11 +12833,6 @@ declare namespace Models {
 	}
 	
 	export interface DialerContactlistConfigChangeContactList { 
-		"id"?: string;
-		"name"?: string;
-		"dateCreated"?: string;
-		"dateModified"?: string;
-		"version"?: number;
 		"columnNames"?: Array<string>;
 		"phoneColumns"?: Array<Models.DialerContactlistConfigChangeContactPhoneNumberColumn>;
 		"emailColumns"?: Array<Models.DialerContactlistConfigChangeEmailColumn>;
@@ -12873,20 +12844,22 @@ declare namespace Models {
 		"automaticTimeZoneMapping"?: boolean;
 		"zipCodeColumnName"?: string;
 		"division"?: Models.DialerContactlistConfigChangeUriReference;
-		"additionalProperties"?: object;
+		"id"?: string;
+		"name"?: string;
+		"dateCreated"?: string;
+		"dateModified"?: string;
+		"version"?: number;
 	}
 	
 	export interface DialerContactlistConfigChangeContactPhoneNumberColumn { 
 		"columnName"?: string;
 		"type"?: string;
 		"callableTimeColumn"?: string;
-		"additionalProperties"?: object;
 	}
 	
 	export interface DialerContactlistConfigChangeEmailColumn { 
 		"columnName"?: string;
 		"type"?: string;
-		"additionalProperties"?: object;
 	}
 	
 	export interface DialerContactlistConfigChangeImportStatus { 
@@ -12895,7 +12868,6 @@ declare namespace Models {
 		"completedRecords"?: number;
 		"percentageComplete"?: number;
 		"failureReason"?: string;
-		"additionalProperties"?: object;
 	}
 	
 	export interface DialerContactlistConfigChangeUriReference { 
@@ -12904,22 +12876,20 @@ declare namespace Models {
 	}
 	
 	export interface DialerContactlistfilterConfigChangeContactListFilter { 
+		"contactList"?: Models.DialerContactlistfilterConfigChangeUriReference;
+		"contactListColumns"?: Array<string>;
+		"clauses"?: Array<Models.DialerContactlistfilterConfigChangeFilterClause>;
+		"filterType"?: string;
 		"id"?: string;
 		"name"?: string;
 		"dateCreated"?: string;
 		"dateModified"?: string;
 		"version"?: number;
-		"contactList"?: Models.DialerContactlistfilterConfigChangeUriReference;
-		"contactListColumns"?: Array<string>;
-		"clauses"?: Array<Models.DialerContactlistfilterConfigChangeFilterClause>;
-		"filterType"?: string;
-		"additionalProperties"?: object;
 	}
 	
 	export interface DialerContactlistfilterConfigChangeFilterClause { 
 		"filterType"?: string;
 		"predicates"?: Array<Models.DialerContactlistfilterConfigChangeFilterPredicate>;
-		"additionalProperties"?: object;
 	}
 	
 	export interface DialerContactlistfilterConfigChangeFilterPredicate { 
@@ -12929,7 +12899,6 @@ declare namespace Models {
 		"value"?: string;
 		"range"?: Models.DialerContactlistfilterConfigChangeRange;
 		"inverted"?: boolean;
-		"additionalProperties"?: object;
 	}
 	
 	export interface DialerContactlistfilterConfigChangeRange { 
@@ -12938,7 +12907,6 @@ declare namespace Models {
 		"minInclusive"?: boolean;
 		"maxInclusive"?: boolean;
 		"inSet"?: Array<string>;
-		"additionalProperties"?: object;
 	}
 	
 	export interface DialerContactlistfilterConfigChangeUriReference { 
@@ -12947,11 +12915,6 @@ declare namespace Models {
 	}
 	
 	export interface DialerDnclistConfigChangeDncList { 
-		"id"?: string;
-		"name"?: string;
-		"dateCreated"?: string;
-		"dateModified"?: string;
-		"version"?: number;
 		"importStatus"?: Models.DialerDnclistConfigChangeImportStatus;
 		"size"?: number;
 		"dncSourceType"?: string;
@@ -12960,7 +12923,11 @@ declare namespace Models {
 		"licenseId"?: string;
 		"contactMethod"?: string;
 		"division"?: Models.DialerDnclistConfigChangeUriReference;
-		"additionalProperties"?: object;
+		"id"?: string;
+		"name"?: string;
+		"dateCreated"?: string;
+		"dateModified"?: string;
+		"version"?: number;
 	}
 	
 	export interface DialerDnclistConfigChangeImportStatus { 
@@ -12969,7 +12936,6 @@ declare namespace Models {
 		"completedRecords"?: number;
 		"percentageComplete"?: number;
 		"failureReason"?: string;
-		"additionalProperties"?: object;
 	}
 	
 	export interface DialerDnclistConfigChangeUriReference { 
@@ -12996,9 +12962,9 @@ declare namespace Models {
 	}
 	
 	export interface DialerOutboundSettingsConfigChangeAtzmTimeSlotWithTimeZone { 
+		"timeZoneId"?: string;
 		"earliestCallableTime"?: string;
 		"latestCallableTime"?: string;
-		"timeZoneId"?: string;
 	}
 	
 	export interface DialerOutboundSettingsConfigChangeAutomaticTimeZoneMappingSettings { 
@@ -13011,16 +12977,16 @@ declare namespace Models {
 	}
 	
 	export interface DialerOutboundSettingsConfigChangeOutboundSettings { 
-		"id"?: string;
-		"name"?: string;
-		"dateCreated"?: string;
-		"dateModified"?: string;
-		"version"?: number;
 		"maxCallsPerAgent"?: number;
 		"maxLineUtilization"?: number;
 		"abandonSeconds"?: number;
 		"complianceAbandonRateDenominator"?: string;
 		"automaticTimeZoneMapping"?: Models.DialerOutboundSettingsConfigChangeAutomaticTimeZoneMappingSettings;
+		"id"?: string;
+		"name"?: string;
+		"dateCreated"?: string;
+		"dateModified"?: string;
+		"version"?: number;
 	}
 	
 	export interface DialerPreview { 
@@ -13035,18 +13001,16 @@ declare namespace Models {
 		"data"?: string;
 		"name"?: string;
 		"reactionType"?: string;
-		"additionalProperties"?: object;
 	}
 	
 	export interface DialerResponsesetConfigChangeResponseSet { 
+		"responses"?: { [key: string]: Models.DialerResponsesetConfigChangeReaction; };
+		"beepDetectionEnabled"?: boolean;
 		"id"?: string;
 		"name"?: string;
 		"dateCreated"?: string;
 		"dateModified"?: string;
 		"version"?: number;
-		"responses"?: { [key: string]: Models.DialerResponsesetConfigChangeReaction; };
-		"beepDetectionEnabled"?: boolean;
-		"additionalProperties"?: object;
 	}
 	
 	export interface DialerRule { 
@@ -13063,10 +13027,10 @@ declare namespace Models {
 		"actionTypeName"?: string;
 		"updateOption"?: string;
 		"properties"?: { [key: string]: string; };
-		"additionalProperties"?: object;
 	}
 	
 	export interface DialerRulesetConfigChangeCondition { 
+		"dataAction"?: Models.DialerRulesetConfigChangeUriReference;
 		"type"?: string;
 		"inverted"?: boolean;
 		"attributeName"?: string;
@@ -13082,14 +13046,11 @@ declare namespace Models {
 		"agentWrapupField"?: string;
 		"contactColumnToDataActionFieldMappings"?: Array<Models.DialerRulesetConfigChangeContactColumnToDataActionFieldMapping>;
 		"predicates"?: Array<Models.DialerRulesetConfigChangeDataActionConditionPredicate>;
-		"dataAction"?: Models.DialerRulesetConfigChangeUriReference;
-		"additionalProperties"?: object;
 	}
 	
 	export interface DialerRulesetConfigChangeContactColumnToDataActionFieldMapping { 
 		"contactColumnName"?: string;
 		"dataActionField"?: string;
-		"additionalProperties"?: object;
 	}
 	
 	export interface DialerRulesetConfigChangeDataActionConditionPredicate { 
@@ -13098,29 +13059,26 @@ declare namespace Models {
 		"comparisonValue"?: string;
 		"outputFieldMissingResolution"?: boolean;
 		"inverted"?: boolean;
-		"additionalProperties"?: object;
 	}
 	
 	export interface DialerRulesetConfigChangeRule { 
+		"conditions"?: Array<Models.DialerRulesetConfigChangeCondition>;
 		"id"?: string;
 		"name"?: string;
 		"order"?: number;
 		"category"?: string;
 		"actions"?: Array<Models.DialerRulesetConfigChangeAction>;
-		"conditions"?: Array<Models.DialerRulesetConfigChangeCondition>;
-		"additionalProperties"?: object;
 	}
 	
 	export interface DialerRulesetConfigChangeRuleSet { 
+		"contactList"?: Models.DialerRulesetConfigChangeUriReference;
+		"queue"?: Models.DialerRulesetConfigChangeUriReference;
+		"rules"?: Array<Models.DialerRulesetConfigChangeRule>;
 		"id"?: string;
 		"name"?: string;
 		"dateCreated"?: string;
 		"dateModified"?: string;
 		"version"?: number;
-		"contactList"?: Models.DialerRulesetConfigChangeUriReference;
-		"queue"?: Models.DialerRulesetConfigChangeUriReference;
-		"rules"?: Array<Models.DialerRulesetConfigChangeRule>;
-		"additionalProperties"?: object;
 	}
 	
 	export interface DialerRulesetConfigChangeUriReference { 
@@ -13129,17 +13087,16 @@ declare namespace Models {
 	}
 	
 	export interface DialerSequenceConfigChangeCampaignSequence { 
-		"id"?: string;
-		"name"?: string;
-		"dateCreated"?: string;
-		"dateModified"?: string;
-		"version"?: number;
 		"campaigns"?: Array<Models.DialerSequenceConfigChangeUriReference>;
 		"currentCampaign"?: number;
 		"status"?: string;
 		"stopMessage"?: string;
 		"repeat"?: boolean;
-		"additionalProperties"?: object;
+		"id"?: string;
+		"name"?: string;
+		"dateCreated"?: string;
+		"dateModified"?: string;
+		"version"?: number;
 	}
 	
 	export interface DialerSequenceConfigChangeUriReference { 
@@ -13150,19 +13107,17 @@ declare namespace Models {
 	export interface DialerSequenceScheduleConfigChangeScheduleInterval { 
 		"start"?: string;
 		"end"?: string;
-		"additionalProperties"?: object;
 	}
 	
 	export interface DialerSequenceScheduleConfigChangeSequenceSchedule { 
+		"intervals"?: Array<Models.DialerSequenceScheduleConfigChangeScheduleInterval>;
+		"timeZone"?: string;
+		"sequence"?: Models.DialerSequenceScheduleConfigChangeUriReference;
 		"id"?: string;
 		"name"?: string;
 		"dateCreated"?: string;
 		"dateModified"?: string;
 		"version"?: number;
-		"intervals"?: Array<Models.DialerSequenceScheduleConfigChangeScheduleInterval>;
-		"timeZone"?: string;
-		"sequence"?: Models.DialerSequenceScheduleConfigChangeUriReference;
-		"additionalProperties"?: object;
 	}
 	
 	export interface DialerSequenceScheduleConfigChangeUriReference { 
@@ -13359,7 +13314,6 @@ declare namespace Models {
 	export interface DnclistDownloadReadyExportUri { 
 		"uri"?: string;
 		"exportTimestamp"?: string;
-		"additionalProperties"?: object;
 	}
 	
 	export interface DnclistImportStatusImportStatus { 
@@ -13368,7 +13322,6 @@ declare namespace Models {
 		"completedRecords"?: number;
 		"percentageComplete"?: number;
 		"failureReason"?: string;
-		"additionalProperties"?: object;
 	}
 	
 	export interface Document { 
@@ -14883,8 +14836,8 @@ declare namespace Models {
 		"commentsRequired"?: boolean;
 		"visibilityCondition"?: Models.VisibilityCondition;
 		"answerOptions"?: Array<Models.AnswerOption>;
-		"isCritical"?: boolean;
 		"isKill"?: boolean;
+		"isCritical"?: boolean;
 	}
 	
 	export interface EvaluationQuestionGroup { 
@@ -17125,8 +17078,8 @@ declare namespace Models {
 		"createdDate"?: string;
 		"customerId"?: string;
 		"customerIdType"?: string;
-		"eventType"?: string;
 		"session"?: Models.JourneyOutcomeEventsNotificationSession;
+		"eventType"?: string;
 		"outcomeAchievedEvent"?: Models.JourneyOutcomeEventsNotificationOutcomeAchievedMessage;
 		"outcomeAttributionEventMessage"?: Models.JourneyOutcomeEventsNotificationOutcomeAttributionMessage;
 	}
@@ -17332,8 +17285,8 @@ declare namespace Models {
 		"createdDate"?: string;
 		"customerId"?: string;
 		"customerIdType"?: string;
-		"eventType"?: string;
 		"session"?: Models.JourneyWebActionEventsNotificationSession;
+		"eventType"?: string;
 		"webActionEvent"?: Models.JourneyWebActionEventsNotificationWebActionMessage;
 		"blockedWebActionOfferEvent"?: Models.JourneyWebActionEventsNotificationBlockedWebActionOfferMessage;
 	}
@@ -17505,8 +17458,8 @@ declare namespace Models {
 		"createdDate"?: string;
 		"customerId"?: string;
 		"customerIdType"?: string;
-		"eventType"?: string;
 		"session"?: Models.JourneyWebEventsNotificationSession;
+		"eventType"?: string;
 		"webEvent"?: Models.JourneyWebEventsNotificationWebMessage;
 		"webActionEvent"?: Models.JourneyWebEventsNotificationWebActionMessage;
 		"outcomeAchievedEvent"?: Models.JourneyWebEventsNotificationOutcomeAchievedMessage;
@@ -17672,6 +17625,11 @@ declare namespace Models {
 		"displayName"?: string;
 	}
 	
+	export interface Knowledge { 
+		"enabled"?: boolean;
+		"knowledgeBase"?: Models.AddressableEntityRef;
+	}
+	
 	export interface KnowledgeBase { 
 		"id"?: string;
 		"name"?: string;
@@ -17817,6 +17775,14 @@ declare namespace Models {
 		"knowledgeDocumentsState"?: string;
 		"datePromoted"?: string;
 		"selfUri"?: string;
+	}
+	
+	export interface KpiResult { 
+		"kpiTotalOn"?: number;
+		"kpiTotalOff"?: number;
+		"interactionCountOn"?: number;
+		"interactionCountOff"?: number;
+		"mediaType"?: string;
 	}
 	
 	export interface Language { 
@@ -18825,7 +18791,7 @@ declare namespace Models {
 	export interface MemberGroup { 
 		"id"?: string;
 		"name"?: string;
-		"division"?: Models.Division;
+		"division"?: Models.WritableDivision;
 		"type"?: string;
 		"memberCount"?: number;
 		"selfUri"?: string;
@@ -19163,6 +19129,10 @@ declare namespace Models {
 		"parameters"?: Array<Models.TemplateParameter>;
 	}
 	
+	export interface MessengerApps { 
+		"knowledge"?: Models.Knowledge;
+	}
+	
 	export interface MessengerPositionSettings { 
 		"alignment"?: string;
 		"sideSpace"?: number;
@@ -19174,6 +19144,7 @@ declare namespace Models {
 		"styles"?: Models.MessengerStyles;
 		"launcherButton"?: Models.LauncherButtonSettings;
 		"fileUpload"?: Models.FileUploadSettings;
+		"apps"?: Models.MessengerApps;
 		"position"?: Models.MessengerPositionSettings;
 	}
 	
@@ -19531,6 +19502,7 @@ declare namespace Models {
 		"domain"?: Models.AddressableEntityRef;
 		"version"?: Models.NluDomainVersion;
 		"intents"?: Array<Models.Intent>;
+		"engineVersion"?: string;
 	}
 	
 	export interface NluQualityReportSummary { 
@@ -20175,7 +20147,6 @@ declare namespace Models {
 		"fieldName"?: string;
 		"direction"?: string;
 		"numeric"?: boolean;
-		"additionalProperties"?: object;
 	}
 	
 	export interface OutboundMessagingMessagingCampaignConfigChangeEmailConfig { 
@@ -20197,12 +20168,6 @@ declare namespace Models {
 	}
 	
 	export interface OutboundMessagingMessagingCampaignConfigChangeMessagingCampaign { 
-		"id"?: string;
-		"division"?: Models.OutboundMessagingMessagingCampaignConfigChangeUriReference;
-		"name"?: string;
-		"dateCreated"?: string;
-		"dateModified"?: string;
-		"version"?: number;
 		"campaignStatus"?: string;
 		"callableTimeSet"?: Models.OutboundMessagingMessagingCampaignConfigChangeUriReference;
 		"contactList"?: Models.OutboundMessagingMessagingCampaignConfigChangeUriReference;
@@ -20214,6 +20179,12 @@ declare namespace Models {
 		"smsConfig"?: Models.OutboundMessagingMessagingCampaignConfigChangeSmsConfig;
 		"emailConfig"?: Models.OutboundMessagingMessagingCampaignConfigChangeEmailConfig;
 		"errors"?: Array<Models.OutboundMessagingMessagingCampaignConfigChangeErrorDetail>;
+		"id"?: string;
+		"division"?: Models.OutboundMessagingMessagingCampaignConfigChangeUriReference;
+		"name"?: string;
+		"dateCreated"?: string;
+		"dateModified"?: string;
+		"version"?: number;
 	}
 	
 	export interface OutboundMessagingMessagingCampaignConfigChangeReplyToEmailAddress { 
@@ -20247,7 +20218,6 @@ declare namespace Models {
 		"numberOfContactsMessaged"?: number;
 		"totalNumberOfContacts"?: number;
 		"percentage"?: number;
-		"additionalProperties"?: object;
 	}
 	
 	export interface OutboundMessagingMessagingCampaignProgressEventUriReference { 
@@ -21612,6 +21582,7 @@ declare namespace Models {
 		"emailInQueueFlow"?: Models.DomainEntityRef;
 		"messageInQueueFlow"?: Models.DomainEntityRef;
 		"whisperPrompt"?: Models.DomainEntityRef;
+		"onHoldPrompt"?: Models.DomainEntityRef;
 		"autoAnswerOnly"?: boolean;
 		"enableTranscription"?: boolean;
 		"enableManualAssignment"?: boolean;
@@ -21762,7 +21733,6 @@ declare namespace Models {
 		"tags"?: Array<string>;
 		"durationSeconds"?: number;
 		"endTime"?: string;
-		"additionalProperties"?: object;
 	}
 	
 	export interface QueueConversationCallbackEventTopicCallbackConversation { 
@@ -21839,7 +21809,6 @@ declare namespace Models {
 		"contactListId"?: string;
 		"campaignId"?: string;
 		"phoneNumberColumns"?: Array<Models.QueueConversationCallbackEventTopicPhoneNumberColumn>;
-		"additionalProperties"?: object;
 	}
 	
 	export interface QueueConversationCallbackEventTopicErrorBody { 
@@ -21884,7 +21853,6 @@ declare namespace Models {
 	export interface QueueConversationCallbackEventTopicPhoneNumberColumn { 
 		"columnName"?: string;
 		"type"?: string;
-		"additionalProperties"?: object;
 	}
 	
 	export interface QueueConversationCallbackEventTopicScoredAgent { 
@@ -21908,7 +21876,6 @@ declare namespace Models {
 		"tags"?: Array<string>;
 		"durationSeconds"?: number;
 		"endTime"?: string;
-		"additionalProperties"?: object;
 	}
 	
 	export interface QueueConversationChatEventTopicChatConversation { 
@@ -22027,7 +21994,6 @@ declare namespace Models {
 		"tags"?: Array<string>;
 		"durationSeconds"?: number;
 		"endTime"?: string;
-		"additionalProperties"?: object;
 	}
 	
 	export interface QueueConversationCobrowseEventTopicCobrowseConversation { 
@@ -22149,7 +22115,6 @@ declare namespace Models {
 		"tags"?: Array<string>;
 		"durationSeconds"?: number;
 		"endTime"?: string;
-		"additionalProperties"?: object;
 	}
 	
 	export interface QueueConversationEmailEventTopicAttachment { 
@@ -22158,7 +22123,6 @@ declare namespace Models {
 		"contentUri"?: string;
 		"contentType"?: string;
 		"contentLength"?: number;
-		"additionalProperties"?: object;
 	}
 	
 	export interface QueueConversationEmailEventTopicConversationRoutingData { 
@@ -22281,7 +22245,6 @@ declare namespace Models {
 		"tags"?: Array<string>;
 		"durationSeconds"?: number;
 		"endTime"?: string;
-		"additionalProperties"?: object;
 	}
 	
 	export interface QueueConversationEventTopicAddress { 
@@ -22290,7 +22253,6 @@ declare namespace Models {
 		"addressNormalized"?: string;
 		"addressRaw"?: string;
 		"addressDisplayable"?: string;
-		"additionalProperties"?: object;
 	}
 	
 	export interface QueueConversationEventTopicAfterCallWork { 
@@ -22305,7 +22267,6 @@ declare namespace Models {
 		"contentUri"?: string;
 		"contentType"?: string;
 		"contentLength"?: number;
-		"additionalProperties"?: object;
 	}
 	
 	export interface QueueConversationEventTopicCall { 
@@ -22335,7 +22296,6 @@ declare namespace Models {
 		"afterCallWork"?: Models.QueueConversationEventTopicAfterCallWork;
 		"afterCallWorkRequired"?: boolean;
 		"agentAssistantId"?: string;
-		"additionalProperties"?: object;
 	}
 	
 	export interface QueueConversationEventTopicCallback { 
@@ -22364,7 +22324,6 @@ declare namespace Models {
 		"afterCallWorkRequired"?: boolean;
 		"callerId"?: string;
 		"callerIdName"?: string;
-		"additionalProperties"?: object;
 	}
 	
 	export interface QueueConversationEventTopicChat { 
@@ -22384,7 +22343,6 @@ declare namespace Models {
 		"wrapup"?: Models.QueueConversationEventTopicWrapup;
 		"afterCallWork"?: Models.QueueConversationEventTopicAfterCallWork;
 		"afterCallWorkRequired"?: boolean;
-		"additionalProperties"?: object;
 	}
 	
 	export interface QueueConversationEventTopicCobrowse { 
@@ -22406,7 +22364,6 @@ declare namespace Models {
 		"wrapup"?: Models.QueueConversationEventTopicWrapup;
 		"afterCallWork"?: Models.QueueConversationEventTopicAfterCallWork;
 		"afterCallWorkRequired"?: boolean;
-		"additionalProperties"?: object;
 	}
 	
 	export interface QueueConversationEventTopicConversation { 
@@ -22432,7 +22389,6 @@ declare namespace Models {
 		"contactListId"?: string;
 		"campaignId"?: string;
 		"phoneNumberColumns"?: Array<Models.QueueConversationEventTopicPhoneNumberColumn>;
-		"additionalProperties"?: object;
 	}
 	
 	export interface QueueConversationEventTopicDisconnectReason { 
@@ -22463,7 +22419,6 @@ declare namespace Models {
 		"wrapup"?: Models.QueueConversationEventTopicWrapup;
 		"afterCallWork"?: Models.QueueConversationEventTopicAfterCallWork;
 		"afterCallWorkRequired"?: boolean;
-		"additionalProperties"?: object;
 	}
 	
 	export interface QueueConversationEventTopicErrorDetails { 
@@ -22474,7 +22429,6 @@ declare namespace Models {
 		"messageParams"?: { [key: string]: string; };
 		"contextId"?: string;
 		"uri"?: string;
-		"additionalProperties"?: object;
 	}
 	
 	export interface QueueConversationEventTopicFaxStatus { 
@@ -22538,7 +22492,6 @@ declare namespace Models {
 		"afterCallWork"?: Models.QueueConversationEventTopicAfterCallWork;
 		"afterCallWorkRequired"?: boolean;
 		"agentAssistantId"?: string;
-		"additionalProperties"?: object;
 	}
 	
 	export interface QueueConversationEventTopicMessageDetails { 
@@ -22600,13 +22553,11 @@ declare namespace Models {
 		"screenshares"?: Array<Models.QueueConversationEventTopicScreenshare>;
 		"socialExpressions"?: Array<Models.QueueConversationEventTopicSocialExpression>;
 		"videos"?: Array<Models.QueueConversationEventTopicVideo>;
-		"additionalProperties"?: object;
 	}
 	
 	export interface QueueConversationEventTopicPhoneNumberColumn { 
 		"columnName"?: string;
 		"type"?: string;
-		"additionalProperties"?: object;
 	}
 	
 	export interface QueueConversationEventTopicScoredAgent { 
@@ -22629,7 +22580,6 @@ declare namespace Models {
 		"wrapup"?: Models.QueueConversationEventTopicWrapup;
 		"afterCallWork"?: Models.QueueConversationEventTopicAfterCallWork;
 		"afterCallWorkRequired"?: boolean;
-		"additionalProperties"?: object;
 	}
 	
 	export interface QueueConversationEventTopicSocialExpression { 
@@ -22651,7 +22601,6 @@ declare namespace Models {
 		"wrapup"?: Models.QueueConversationEventTopicWrapup;
 		"afterCallWork"?: Models.QueueConversationEventTopicAfterCallWork;
 		"afterCallWorkRequired"?: boolean;
-		"additionalProperties"?: object;
 	}
 	
 	export interface QueueConversationEventTopicUriReference { 
@@ -22677,7 +22626,6 @@ declare namespace Models {
 		"wrapup"?: Models.QueueConversationEventTopicWrapup;
 		"afterCallWork"?: Models.QueueConversationEventTopicAfterCallWork;
 		"afterCallWorkRequired"?: boolean;
-		"additionalProperties"?: object;
 	}
 	
 	export interface QueueConversationEventTopicVoicemail { 
@@ -22691,7 +22639,6 @@ declare namespace Models {
 		"tags"?: Array<string>;
 		"durationSeconds"?: number;
 		"endTime"?: string;
-		"additionalProperties"?: object;
 	}
 	
 	export interface QueueConversationMessageEventTopicConversationRoutingData { 
@@ -22834,7 +22781,6 @@ declare namespace Models {
 		"tags"?: Array<string>;
 		"durationSeconds"?: number;
 		"endTime"?: string;
-		"additionalProperties"?: object;
 	}
 	
 	export interface QueueConversationScreenShareEventTopicConversationRoutingData { 
@@ -22954,7 +22900,6 @@ declare namespace Models {
 		"tags"?: Array<string>;
 		"durationSeconds"?: number;
 		"endTime"?: string;
-		"additionalProperties"?: object;
 	}
 	
 	export interface QueueConversationSocialExpressionEventTopicAddress { 
@@ -22963,7 +22908,6 @@ declare namespace Models {
 		"addressNormalized"?: string;
 		"addressRaw"?: string;
 		"addressDisplayable"?: string;
-		"additionalProperties"?: object;
 	}
 	
 	export interface QueueConversationSocialExpressionEventTopicAfterCallWork { 
@@ -22978,7 +22922,6 @@ declare namespace Models {
 		"contentUri"?: string;
 		"contentType"?: string;
 		"contentLength"?: number;
-		"additionalProperties"?: object;
 	}
 	
 	export interface QueueConversationSocialExpressionEventTopicCall { 
@@ -23008,7 +22951,6 @@ declare namespace Models {
 		"afterCallWork"?: Models.QueueConversationSocialExpressionEventTopicAfterCallWork;
 		"afterCallWorkRequired"?: boolean;
 		"agentAssistantId"?: string;
-		"additionalProperties"?: object;
 	}
 	
 	export interface QueueConversationSocialExpressionEventTopicCallback { 
@@ -23037,7 +22979,6 @@ declare namespace Models {
 		"afterCallWorkRequired"?: boolean;
 		"callerId"?: string;
 		"callerIdName"?: string;
-		"additionalProperties"?: object;
 	}
 	
 	export interface QueueConversationSocialExpressionEventTopicChat { 
@@ -23057,7 +22998,6 @@ declare namespace Models {
 		"wrapup"?: Models.QueueConversationSocialExpressionEventTopicWrapup;
 		"afterCallWork"?: Models.QueueConversationSocialExpressionEventTopicAfterCallWork;
 		"afterCallWorkRequired"?: boolean;
-		"additionalProperties"?: object;
 	}
 	
 	export interface QueueConversationSocialExpressionEventTopicCobrowse { 
@@ -23079,7 +23019,6 @@ declare namespace Models {
 		"wrapup"?: Models.QueueConversationSocialExpressionEventTopicWrapup;
 		"afterCallWork"?: Models.QueueConversationSocialExpressionEventTopicAfterCallWork;
 		"afterCallWorkRequired"?: boolean;
-		"additionalProperties"?: object;
 	}
 	
 	export interface QueueConversationSocialExpressionEventTopicConversation { 
@@ -23105,7 +23044,6 @@ declare namespace Models {
 		"contactListId"?: string;
 		"campaignId"?: string;
 		"phoneNumberColumns"?: Array<Models.QueueConversationSocialExpressionEventTopicPhoneNumberColumn>;
-		"additionalProperties"?: object;
 	}
 	
 	export interface QueueConversationSocialExpressionEventTopicDisconnectReason { 
@@ -23136,7 +23074,6 @@ declare namespace Models {
 		"wrapup"?: Models.QueueConversationSocialExpressionEventTopicWrapup;
 		"afterCallWork"?: Models.QueueConversationSocialExpressionEventTopicAfterCallWork;
 		"afterCallWorkRequired"?: boolean;
-		"additionalProperties"?: object;
 	}
 	
 	export interface QueueConversationSocialExpressionEventTopicErrorDetails { 
@@ -23147,7 +23084,6 @@ declare namespace Models {
 		"messageParams"?: { [key: string]: string; };
 		"contextId"?: string;
 		"uri"?: string;
-		"additionalProperties"?: object;
 	}
 	
 	export interface QueueConversationSocialExpressionEventTopicFaxStatus { 
@@ -23211,7 +23147,6 @@ declare namespace Models {
 		"afterCallWork"?: Models.QueueConversationSocialExpressionEventTopicAfterCallWork;
 		"afterCallWorkRequired"?: boolean;
 		"agentAssistantId"?: string;
-		"additionalProperties"?: object;
 	}
 	
 	export interface QueueConversationSocialExpressionEventTopicMessageDetails { 
@@ -23273,13 +23208,11 @@ declare namespace Models {
 		"screenshares"?: Array<Models.QueueConversationSocialExpressionEventTopicScreenshare>;
 		"socialExpressions"?: Array<Models.QueueConversationSocialExpressionEventTopicSocialExpression>;
 		"videos"?: Array<Models.QueueConversationSocialExpressionEventTopicVideo>;
-		"additionalProperties"?: object;
 	}
 	
 	export interface QueueConversationSocialExpressionEventTopicPhoneNumberColumn { 
 		"columnName"?: string;
 		"type"?: string;
-		"additionalProperties"?: object;
 	}
 	
 	export interface QueueConversationSocialExpressionEventTopicScoredAgent { 
@@ -23302,7 +23235,6 @@ declare namespace Models {
 		"wrapup"?: Models.QueueConversationSocialExpressionEventTopicWrapup;
 		"afterCallWork"?: Models.QueueConversationSocialExpressionEventTopicAfterCallWork;
 		"afterCallWorkRequired"?: boolean;
-		"additionalProperties"?: object;
 	}
 	
 	export interface QueueConversationSocialExpressionEventTopicSocialExpression { 
@@ -23324,7 +23256,6 @@ declare namespace Models {
 		"wrapup"?: Models.QueueConversationSocialExpressionEventTopicWrapup;
 		"afterCallWork"?: Models.QueueConversationSocialExpressionEventTopicAfterCallWork;
 		"afterCallWorkRequired"?: boolean;
-		"additionalProperties"?: object;
 	}
 	
 	export interface QueueConversationSocialExpressionEventTopicUriReference { 
@@ -23350,7 +23281,6 @@ declare namespace Models {
 		"wrapup"?: Models.QueueConversationSocialExpressionEventTopicWrapup;
 		"afterCallWork"?: Models.QueueConversationSocialExpressionEventTopicAfterCallWork;
 		"afterCallWorkRequired"?: boolean;
-		"additionalProperties"?: object;
 	}
 	
 	export interface QueueConversationSocialExpressionEventTopicVoicemail { 
@@ -23364,7 +23294,6 @@ declare namespace Models {
 		"tags"?: Array<string>;
 		"durationSeconds"?: number;
 		"endTime"?: string;
-		"additionalProperties"?: object;
 	}
 	
 	export interface QueueConversationVideoEventTopicAddress { 
@@ -23373,7 +23302,6 @@ declare namespace Models {
 		"addressNormalized"?: string;
 		"addressRaw"?: string;
 		"addressDisplayable"?: string;
-		"additionalProperties"?: object;
 	}
 	
 	export interface QueueConversationVideoEventTopicAfterCallWork { 
@@ -23388,7 +23316,6 @@ declare namespace Models {
 		"contentUri"?: string;
 		"contentType"?: string;
 		"contentLength"?: number;
-		"additionalProperties"?: object;
 	}
 	
 	export interface QueueConversationVideoEventTopicCall { 
@@ -23418,7 +23345,6 @@ declare namespace Models {
 		"afterCallWork"?: Models.QueueConversationVideoEventTopicAfterCallWork;
 		"afterCallWorkRequired"?: boolean;
 		"agentAssistantId"?: string;
-		"additionalProperties"?: object;
 	}
 	
 	export interface QueueConversationVideoEventTopicCallback { 
@@ -23447,7 +23373,6 @@ declare namespace Models {
 		"afterCallWorkRequired"?: boolean;
 		"callerId"?: string;
 		"callerIdName"?: string;
-		"additionalProperties"?: object;
 	}
 	
 	export interface QueueConversationVideoEventTopicChat { 
@@ -23467,7 +23392,6 @@ declare namespace Models {
 		"wrapup"?: Models.QueueConversationVideoEventTopicWrapup;
 		"afterCallWork"?: Models.QueueConversationVideoEventTopicAfterCallWork;
 		"afterCallWorkRequired"?: boolean;
-		"additionalProperties"?: object;
 	}
 	
 	export interface QueueConversationVideoEventTopicCobrowse { 
@@ -23489,7 +23413,6 @@ declare namespace Models {
 		"wrapup"?: Models.QueueConversationVideoEventTopicWrapup;
 		"afterCallWork"?: Models.QueueConversationVideoEventTopicAfterCallWork;
 		"afterCallWorkRequired"?: boolean;
-		"additionalProperties"?: object;
 	}
 	
 	export interface QueueConversationVideoEventTopicConversation { 
@@ -23515,7 +23438,6 @@ declare namespace Models {
 		"contactListId"?: string;
 		"campaignId"?: string;
 		"phoneNumberColumns"?: Array<Models.QueueConversationVideoEventTopicPhoneNumberColumn>;
-		"additionalProperties"?: object;
 	}
 	
 	export interface QueueConversationVideoEventTopicDisconnectReason { 
@@ -23546,7 +23468,6 @@ declare namespace Models {
 		"wrapup"?: Models.QueueConversationVideoEventTopicWrapup;
 		"afterCallWork"?: Models.QueueConversationVideoEventTopicAfterCallWork;
 		"afterCallWorkRequired"?: boolean;
-		"additionalProperties"?: object;
 	}
 	
 	export interface QueueConversationVideoEventTopicErrorDetails { 
@@ -23557,7 +23478,6 @@ declare namespace Models {
 		"messageParams"?: { [key: string]: string; };
 		"contextId"?: string;
 		"uri"?: string;
-		"additionalProperties"?: object;
 	}
 	
 	export interface QueueConversationVideoEventTopicFaxStatus { 
@@ -23621,7 +23541,6 @@ declare namespace Models {
 		"afterCallWork"?: Models.QueueConversationVideoEventTopicAfterCallWork;
 		"afterCallWorkRequired"?: boolean;
 		"agentAssistantId"?: string;
-		"additionalProperties"?: object;
 	}
 	
 	export interface QueueConversationVideoEventTopicMessageDetails { 
@@ -23683,13 +23602,11 @@ declare namespace Models {
 		"screenshares"?: Array<Models.QueueConversationVideoEventTopicScreenshare>;
 		"socialExpressions"?: Array<Models.QueueConversationVideoEventTopicSocialExpression>;
 		"videos"?: Array<Models.QueueConversationVideoEventTopicVideo>;
-		"additionalProperties"?: object;
 	}
 	
 	export interface QueueConversationVideoEventTopicPhoneNumberColumn { 
 		"columnName"?: string;
 		"type"?: string;
-		"additionalProperties"?: object;
 	}
 	
 	export interface QueueConversationVideoEventTopicScoredAgent { 
@@ -23712,7 +23629,6 @@ declare namespace Models {
 		"wrapup"?: Models.QueueConversationVideoEventTopicWrapup;
 		"afterCallWork"?: Models.QueueConversationVideoEventTopicAfterCallWork;
 		"afterCallWorkRequired"?: boolean;
-		"additionalProperties"?: object;
 	}
 	
 	export interface QueueConversationVideoEventTopicSocialExpression { 
@@ -23734,7 +23650,6 @@ declare namespace Models {
 		"wrapup"?: Models.QueueConversationVideoEventTopicWrapup;
 		"afterCallWork"?: Models.QueueConversationVideoEventTopicAfterCallWork;
 		"afterCallWorkRequired"?: boolean;
-		"additionalProperties"?: object;
 	}
 	
 	export interface QueueConversationVideoEventTopicUriReference { 
@@ -23760,7 +23675,6 @@ declare namespace Models {
 		"wrapup"?: Models.QueueConversationVideoEventTopicWrapup;
 		"afterCallWork"?: Models.QueueConversationVideoEventTopicAfterCallWork;
 		"afterCallWorkRequired"?: boolean;
-		"additionalProperties"?: object;
 	}
 	
 	export interface QueueConversationVideoEventTopicVoicemail { 
@@ -23774,7 +23688,6 @@ declare namespace Models {
 		"tags"?: Array<string>;
 		"durationSeconds"?: number;
 		"endTime"?: string;
-		"additionalProperties"?: object;
 	}
 	
 	export interface QueueEmailAddress { 
@@ -23884,6 +23797,7 @@ declare namespace Models {
 		"emailInQueueFlow"?: Models.DomainEntityRef;
 		"messageInQueueFlow"?: Models.DomainEntityRef;
 		"whisperPrompt"?: Models.DomainEntityRef;
+		"onHoldPrompt"?: Models.DomainEntityRef;
 		"autoAnswerOnly"?: boolean;
 		"enableTranscription"?: boolean;
 		"enableManualAssignment"?: boolean;
@@ -24036,6 +23950,12 @@ declare namespace Models {
 		"textback"?: string;
 	}
 	
+	export interface RecordingContentStory { 
+		"type"?: string;
+		"url"?: string;
+		"replyToId"?: string;
+	}
+	
 	export interface RecordingEmailMessage { 
 		"htmlBody"?: string;
 		"textBody"?: string;
@@ -24111,6 +24031,7 @@ declare namespace Models {
 		"messageStickerAttachments"?: Array<Models.MessageStickerAttachment>;
 		"quickReplies"?: Array<Models.QuickReply>;
 		"buttonResponse"?: Models.ButtonResponse;
+		"story"?: Models.RecordingContentStory;
 	}
 	
 	export interface RecordingMetadata { 
@@ -26414,6 +26335,10 @@ declare namespace Models {
 		"query": Array<Models.SuggestSearchCriteria>;
 	}
 	
+	export interface SupportCenterSettings { 
+		"enabled"?: boolean;
+	}
+	
 	export interface SupportedContentReference { 
 		"id": string;
 		"name"?: string;
@@ -28519,6 +28444,7 @@ declare namespace Models {
 		"emailInQueueFlow"?: Models.DomainEntityRef;
 		"messageInQueueFlow"?: Models.DomainEntityRef;
 		"whisperPrompt"?: Models.DomainEntityRef;
+		"onHoldPrompt"?: Models.DomainEntityRef;
 		"enableTranscription"?: boolean;
 		"enableManualAssignment"?: boolean;
 		"callingPartyName"?: string;
@@ -28626,7 +28552,6 @@ declare namespace Models {
 	export interface UserRoutingStatusUserParam { 
 		"key"?: string;
 		"value"?: string;
-		"additionalProperties"?: object;
 	}
 	
 	export interface UserRoutingStatusUserRoutingStatus { 
@@ -29408,6 +29333,7 @@ declare namespace Models {
 		"languages"?: Array<string>;
 		"defaultLanguage"?: string;
 		"messenger"?: Models.MessengerSettings;
+		"supportCenter"?: Models.SupportCenterSettings;
 		"cobrowse"?: Models.CobrowseSettings;
 		"journeyEvents"?: Models.JourneyEventsSettings;
 		"authenticationSettings"?: Models.AuthenticationSettings;
