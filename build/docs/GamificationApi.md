@@ -16,6 +16,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getGamificationMetricdefinitions**](GamificationApi.html#getGamificationMetricdefinitions) | **GET** /api/v2/gamification/metricdefinitions | All metric definitions
 [**getGamificationMetrics**](GamificationApi.html#getGamificationMetrics) | **GET** /api/v2/gamification/metrics | All gamified metrics for a given profile
 [**getGamificationProfile**](GamificationApi.html#getGamificationProfile) | **GET** /api/v2/gamification/profiles/{performanceProfileId} | Performance profile by id
+[**getGamificationProfileMembers**](GamificationApi.html#getGamificationProfileMembers) | **GET** /api/v2/gamification/profiles/{performanceProfileId}/members | Members of a given performance profile
 [**getGamificationProfileMetric**](GamificationApi.html#getGamificationProfileMetric) | **GET** /api/v2/gamification/profiles/{profileId}/metrics/{metricId} | Performance profile gamified metric by id
 [**getGamificationProfileMetrics**](GamificationApi.html#getGamificationProfileMetrics) | **GET** /api/v2/gamification/profiles/{profileId}/metrics | All gamified metrics for a given performance profile
 [**getGamificationProfileMetricsObjectivedetails**](GamificationApi.html#getGamificationProfileMetricsObjectivedetails) | **GET** /api/v2/gamification/profiles/{profileId}/metrics/objectivedetails | All metrics for a given performance profile with objective details such as order and maxPoints
@@ -45,6 +46,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postGamificationMetrics**](GamificationApi.html#postGamificationMetrics) | **POST** /api/v2/gamification/metrics | Creates a gamified metric with a given metric definition and metric objective
 [**postGamificationProfileActivate**](GamificationApi.html#postGamificationProfileActivate) | **POST** /api/v2/gamification/profiles/{performanceProfileId}/activate | Activate a performance profile
 [**postGamificationProfileDeactivate**](GamificationApi.html#postGamificationProfileDeactivate) | **POST** /api/v2/gamification/profiles/{performanceProfileId}/deactivate | Deactivate a performance profile
+[**postGamificationProfileMembers**](GamificationApi.html#postGamificationProfileMembers) | **POST** /api/v2/gamification/profiles/{performanceProfileId}/members | Assign members to a given performance profile
+[**postGamificationProfileMembersValidate**](GamificationApi.html#postGamificationProfileMembersValidate) | **POST** /api/v2/gamification/profiles/{performanceProfileId}/members/validate | Validate member assignment
+[**postGamificationProfileMetricLink**](GamificationApi.html#postGamificationProfileMetricLink) | **POST** /api/v2/gamification/profiles/{sourceProfileId}/metrics/{sourceMetricId}/link | Creates a linked metric
 [**postGamificationProfileMetrics**](GamificationApi.html#postGamificationProfileMetrics) | **POST** /api/v2/gamification/profiles/{profileId}/metrics | Creates a gamified metric with a given metric definition and metric objective under in a performance profile
 [**postGamificationProfiles**](GamificationApi.html#postGamificationProfiles) | **POST** /api/v2/gamification/profiles | Create a new custom performance profile
 [**putGamificationMetric**](GamificationApi.html#putGamificationMetric) | **PUT** /api/v2/gamification/metrics/{metricId} | Updates a metric
@@ -553,6 +557,59 @@ apiInstance.getGamificationProfile(performanceProfileId)
 ### Return type
 
 **PerformanceProfile**
+
+<a name="getGamificationProfileMembers"></a>
+
+# MemberListing getGamificationProfileMembers(performanceProfileId)
+
+
+
+GET /api/v2/gamification/profiles/{performanceProfileId}/members
+
+Members of a given performance profile
+
+
+
+Requires ANY permissions: 
+
+* gamification:profile:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.GamificationApi();
+
+let performanceProfileId = "performanceProfileId_example"; // String | Performance Profile Id
+
+apiInstance.getGamificationProfileMembers(performanceProfileId)
+  .then((data) => {
+    console.log(`getGamificationProfileMembers success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getGamificationProfileMembers');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **performanceProfileId** | **String** | Performance Profile Id |  |
+{: class="table table-striped"}
+
+### Return type
+
+**MemberListing**
 
 <a name="getGamificationProfileMetric"></a>
 
@@ -2179,6 +2236,173 @@ apiInstance.postGamificationProfileDeactivate(performanceProfileId)
 ### Return type
 
 **PerformanceProfile**
+
+<a name="postGamificationProfileMembers"></a>
+
+# Assignment postGamificationProfileMembers(performanceProfileId, body)
+
+
+
+POST /api/v2/gamification/profiles/{performanceProfileId}/members
+
+Assign members to a given performance profile
+
+
+
+Requires ANY permissions: 
+
+* gamification:profile:update
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.GamificationApi();
+
+let performanceProfileId = "performanceProfileId_example"; // String | Performance Profile Id
+let body = {}; // Object | assignUsers
+
+apiInstance.postGamificationProfileMembers(performanceProfileId, body)
+  .then((data) => {
+    console.log(`postGamificationProfileMembers success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postGamificationProfileMembers');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **performanceProfileId** | **String** | Performance Profile Id |  |
+ **body** | **Object** | assignUsers |  |
+{: class="table table-striped"}
+
+### Return type
+
+**Assignment**
+
+<a name="postGamificationProfileMembersValidate"></a>
+
+# AssignmentValidation postGamificationProfileMembersValidate(performanceProfileId, body)
+
+
+
+POST /api/v2/gamification/profiles/{performanceProfileId}/members/validate
+
+Validate member assignment
+
+
+
+Requires ANY permissions: 
+
+* gamification:profile:update
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.GamificationApi();
+
+let performanceProfileId = "performanceProfileId_example"; // String | Performance Profile Id
+let body = {}; // Object | memberAssignments
+
+apiInstance.postGamificationProfileMembersValidate(performanceProfileId, body)
+  .then((data) => {
+    console.log(`postGamificationProfileMembersValidate success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postGamificationProfileMembersValidate');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **performanceProfileId** | **String** | Performance Profile Id |  |
+ **body** | **Object** | memberAssignments |  |
+{: class="table table-striped"}
+
+### Return type
+
+**AssignmentValidation**
+
+<a name="postGamificationProfileMetricLink"></a>
+
+# Metric postGamificationProfileMetricLink(sourceProfileId, sourceMetricId, body)
+
+
+
+POST /api/v2/gamification/profiles/{sourceProfileId}/metrics/{sourceMetricId}/link
+
+Creates a linked metric
+
+
+
+Requires ANY permissions: 
+
+* gamification:profile:update
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.GamificationApi();
+
+let sourceProfileId = "sourceProfileId_example"; // String | Source Performance Profile Id
+let sourceMetricId = "sourceMetricId_example"; // String | Source Metric Id
+let body = {}; // Object | linkedMetric
+
+apiInstance.postGamificationProfileMetricLink(sourceProfileId, sourceMetricId, body)
+  .then((data) => {
+    console.log(`postGamificationProfileMetricLink success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postGamificationProfileMetricLink');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **sourceProfileId** | **String** | Source Performance Profile Id |  |
+ **sourceMetricId** | **String** | Source Metric Id |  |
+ **body** | **Object** | linkedMetric |  |
+{: class="table table-striped"}
+
+### Return type
+
+**Metric**
 
 <a name="postGamificationProfileMetrics"></a>
 

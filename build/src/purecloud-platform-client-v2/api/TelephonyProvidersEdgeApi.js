@@ -5,7 +5,7 @@ class TelephonyProvidersEdgeApi {
 	/**
 	 * TelephonyProvidersEdge service.
 	 * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-	 * @version 128.0.0
+	 * @version 129.0.0
 	 */
 
 	/**
@@ -1331,6 +1331,26 @@ class TelephonyProvidersEdgeApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/telephony/providers/edges/edgeversionreport', 
+			'GET', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * List of edges more than 4 edge versions behind the latest software.
+	 * 
+	 */
+	getTelephonyProvidersEdgesExpired() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/telephony/providers/edges/expired', 
 			'GET', 
 			{  }, 
 			{  }, 

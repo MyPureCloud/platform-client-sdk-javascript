@@ -1439,6 +1439,7 @@ declare class GamificationApi {
   	getGamificationMetricdefinitions(): Promise<Models.GetMetricDefinitionsResponse>; 
   	getGamificationMetrics(opts?: GamificationApi.getGamificationMetricsOptions): Promise<Models.GetMetricsResponse>; 
   	getGamificationProfile(performanceProfileId: string): Promise<Models.PerformanceProfile>; 
+  	getGamificationProfileMembers(performanceProfileId: string): Promise<Models.MemberListing>; 
   	getGamificationProfileMetric(profileId: string, metricId: string, opts?: GamificationApi.getGamificationProfileMetricOptions): Promise<Models.Metric>; 
   	getGamificationProfileMetrics(profileId: string, opts?: GamificationApi.getGamificationProfileMetricsOptions): Promise<Models.GetMetricResponse>; 
   	getGamificationProfileMetricsObjectivedetails(profileId: string, opts?: GamificationApi.getGamificationProfileMetricsObjectivedetailsOptions): Promise<Models.GetMetricsResponse>; 
@@ -1468,6 +1469,9 @@ declare class GamificationApi {
   	postGamificationMetrics(body: Models.Metric): Promise<Models.Metric>; 
   	postGamificationProfileActivate(performanceProfileId: string): Promise<Models.PerformanceProfile>; 
   	postGamificationProfileDeactivate(performanceProfileId: string): Promise<Models.PerformanceProfile>; 
+  	postGamificationProfileMembers(performanceProfileId: string, body: Models.AssignUsers): Promise<Models.Assignment>; 
+  	postGamificationProfileMembersValidate(performanceProfileId: string, body: Models.ValidateAssignUsers): Promise<Models.AssignmentValidation>; 
+  	postGamificationProfileMetricLink(sourceProfileId: string, sourceMetricId: string, body: Models.TargetPerformanceProfile): Promise<Models.Metric>; 
   	postGamificationProfileMetrics(profileId: string, body: Models.Metric): Promise<Models.Metric>; 
   	postGamificationProfiles(body: Models.CreatePerformanceProfile): Promise<Models.GetProfilesResponse>; 
   	putGamificationMetric(metricId: string, body: Models.Metric, opts?: GamificationApi.putGamificationMetricOptions): Promise<Models.Metric>; 
@@ -1719,6 +1723,7 @@ declare class IntegrationsApi {
   	getIntegrationsBotconnectorIntegrationIdBots(integrationId: string): Promise<Models.BotList>; 
   	getIntegrationsBotconnectorIntegrationIdBotsSummaries(integrationId: string, opts?: IntegrationsApi.getIntegrationsBotconnectorIntegrationIdBotsSummariesOptions): Promise<Models.BotConnectorBotSummaryEntityListing>; 
   	getIntegrationsClientapps(opts?: IntegrationsApi.getIntegrationsClientappsOptions): Promise<Models.ClientAppEntityListing>; 
+  	getIntegrationsClientappsUnifiedcommunications(opts?: IntegrationsApi.getIntegrationsClientappsUnifiedcommunicationsOptions): Promise<Models.UCIntegrationListing>; 
   	getIntegrationsCredential(credentialId: string): Promise<Models.Credential>; 
   	getIntegrationsCredentials(opts?: IntegrationsApi.getIntegrationsCredentialsOptions): Promise<Models.CredentialInfoListing>; 
   	getIntegrationsCredentialsTypes(): Promise<Models.CredentialTypeListing>; 
@@ -1827,6 +1832,14 @@ declare namespace IntegrationsApi {
 		"pageSize"?: number;
 	}
 	export interface getIntegrationsClientappsOptions { 
+		"pageSize"?: number;
+		"pageNumber"?: number;
+		"sortBy"?: string;
+		"expand"?: Array<string>;
+		"nextPage"?: string;
+		"previousPage"?: string;
+	}
+	export interface getIntegrationsClientappsUnifiedcommunicationsOptions { 
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"sortBy"?: string;
@@ -4008,6 +4021,7 @@ declare class TelephonyProvidersEdgeApi {
   	getTelephonyProvidersEdgesEdgegroupEdgetrunkbase(edgegroupId: string, edgetrunkbaseId: string): Promise<Models.EdgeTrunkBase>; 
   	getTelephonyProvidersEdgesEdgegroups(opts?: TelephonyProvidersEdgeApi.getTelephonyProvidersEdgesEdgegroupsOptions): Promise<Models.EdgeGroupEntityListing>; 
   	getTelephonyProvidersEdgesEdgeversionreport(): Promise<Models.EdgeVersionReport>; 
+  	getTelephonyProvidersEdgesExpired(): Promise<Models.ExpiredEdgeListing>; 
   	getTelephonyProvidersEdgesExtension(extensionId: string): Promise<Models.Extension>; 
   	getTelephonyProvidersEdgesExtensionpool(extensionPoolId: string): Promise<Models.ExtensionPool>; 
   	getTelephonyProvidersEdgesExtensionpools(opts?: TelephonyProvidersEdgeApi.getTelephonyProvidersEdgesExtensionpoolsOptions): Promise<Models.ExtensionPoolEntityListing>; 
@@ -5390,6 +5404,13 @@ declare namespace Models {
 		"metadata": Models.WfmVersionedEntityMetadata;
 	}
 	
+	export interface ActivityCodeReference { 
+		"id": string;
+		"name"?: string;
+		"secondaryPresences"?: Array<Models.SecondaryPresence>;
+		"selfUri"?: string;
+	}
+	
 	export interface AcwDetailEventTopicAfterCallWorkEvent { 
 		"eventTime"?: number;
 		"conversationId"?: string;
@@ -6365,6 +6386,11 @@ declare namespace Models {
 		"isPassed"?: boolean;
 	}
 	
+	export interface AssignUsers { 
+		"membersToAssign": Array<string>;
+		"membersToRemove": Array<string>;
+	}
+	
 	export interface AssignedSegment { 
 		"id"?: string;
 		"selfUri"?: string;
@@ -6376,6 +6402,24 @@ declare namespace Models {
 		"tags"?: Array<string>;
 		"durationSeconds"?: number;
 		"endTime"?: string;
+	}
+	
+	export interface Assignment { 
+		"assignedMembers"?: Array<Models.UserReference>;
+		"removedMembers"?: Array<Models.UserReference>;
+		"assignmentErrors"?: Array<Models.AssignmentError>;
+	}
+	
+	export interface AssignmentError { 
+		"user"?: Models.UserReference;
+		"message"?: string;
+	}
+	
+	export interface AssignmentValidation { 
+		"membersNotAssigned"?: Array<Models.UserReference>;
+		"membersAlreadyAssigned"?: Array<Models.UserReference>;
+		"membersAlreadyAssignedToOther"?: Array<Models.OtherProfileAssignment>;
+		"invalidMemberAssignments"?: Array<Models.InvalidAssignment>;
 	}
 	
 	export interface AssociatedValueField { 
@@ -8549,8 +8593,8 @@ declare namespace Models {
 		"expirationDate"?: string;
 		"issueDate"?: string;
 		"expired"?: boolean;
-		"valid"?: boolean;
 		"signatureValid"?: boolean;
+		"valid"?: boolean;
 	}
 	
 	export interface Change { 
@@ -8995,6 +9039,10 @@ declare namespace Models {
 		"afterCallWorkRequired"?: boolean;
 	}
 	
+	export interface ColumnStatus { 
+		"contactable"?: boolean;
+	}
+	
 	export interface CommandStatus { 
 		"id"?: string;
 		"name"?: string;
@@ -9330,6 +9378,11 @@ declare namespace Models {
 		"fieldName"?: string;
 		"direction"?: string;
 		"numeric"?: boolean;
+	}
+	
+	export interface ContactableStatus { 
+		"contactable"?: boolean;
+		"columnStatus"?: { [key: string]: Models.ColumnStatus; };
 	}
 	
 	export interface ContactlistDownloadReadyExportUri { 
@@ -14034,6 +14087,11 @@ declare namespace Models {
 		"pageCount"?: number;
 	}
 	
+	export interface EdgeIdNamePair { 
+		"id"?: string;
+		"name"?: string;
+	}
+	
 	export interface EdgeInterface { 
 		"type"?: string;
 		"ipAddress"?: string;
@@ -14960,6 +15018,10 @@ declare namespace Models {
 	export interface ExpansionCriterium { 
 		"type"?: string;
 		"threshold"?: number;
+	}
+	
+	export interface ExpiredEdgeListing { 
+		"entities"?: Array<Models.EdgeIdNamePair>;
 	}
 	
 	export interface ExportScriptRequest { 
@@ -16403,9 +16465,9 @@ declare namespace Models {
 		"started"?: string;
 		"completed"?: string;
 		"entities"?: Array<Models.HistoryEntry>;
+		"pageNumber"?: number;
 		"pageSize"?: number;
 		"total"?: number;
-		"pageNumber"?: number;
 		"pageCount"?: number;
 	}
 	
@@ -16850,6 +16912,11 @@ declare namespace Models {
 		"categories": Array<string>;
 		"planningGroupIds"?: Array<string>;
 		"intervalLengthMinutes"?: number;
+	}
+	
+	export interface InvalidAssignment { 
+		"user"?: Models.UserReference;
+		"message"?: string;
 	}
 	
 	export interface IpAddressAuthentication { 
@@ -18414,6 +18481,10 @@ declare namespace Models {
 		"values"?: Array<string>;
 	}
 	
+	export interface ListWrapperSecondaryPresence { 
+		"values"?: Array<Models.SecondaryPresence>;
+	}
+	
 	export interface ListWrapperShiftStartVariance { 
 		"values"?: Array<Models.ShiftStartVariance>;
 	}
@@ -18784,6 +18855,11 @@ declare namespace Models {
 		"includeNonAcd"?: boolean;
 	}
 	
+	export interface Member { 
+		"id": string;
+		"selfUri"?: string;
+	}
+	
 	export interface MemberEntity { 
 		"id"?: string;
 	}
@@ -18795,6 +18871,10 @@ declare namespace Models {
 		"type"?: string;
 		"memberCount"?: number;
 		"selfUri"?: string;
+	}
+	
+	export interface MemberListing { 
+		"entities"?: Array<Models.Member>;
 	}
 	
 	export interface MergeOperation { 
@@ -20098,6 +20178,12 @@ declare namespace Models {
 		"archiveDate"?: string;
 		"deleteDate"?: string;
 		"conversationId"?: string;
+	}
+	
+	export interface OtherProfileAssignment { 
+		"id"?: string;
+		"currentProfile"?: Models.DomainEntityRef;
+		"selfUri"?: string;
 	}
 	
 	export interface OutOfOffice { 
@@ -25416,6 +25502,11 @@ declare namespace Models {
 		"sortBy"?: string;
 	}
 	
+	export interface SecondaryPresence { 
+		"id": string;
+		"selfUri"?: string;
+	}
+	
 	export interface Section { 
 		"fieldList"?: Array<Models.FieldList>;
 		"instructionText"?: string;
@@ -26619,6 +26710,10 @@ declare namespace Models {
 		"pageCount"?: number;
 	}
 	
+	export interface TargetPerformanceProfile { 
+		"targetPerformanceProfileId": string;
+	}
+	
 	export interface Team { 
 		"id"?: string;
 		"name": string;
@@ -27757,6 +27852,38 @@ declare namespace Models {
 		"selfUri"?: string;
 	}
 	
+	export interface UCI10n { 
+		"name"?: string;
+	}
+	
+	export interface UCIcon { 
+		"vector": string;
+	}
+	
+	export interface UCIntegration { 
+		"id"?: string;
+		"name"?: string;
+		"ucIntegrationKey": string;
+		"integrationPresenceSource": string;
+		"pbxPermission": string;
+		"icon": Models.UCIcon;
+		"i10n": { [key: string]: Models.UCI10n; };
+		"selfUri"?: string;
+	}
+	
+	export interface UCIntegrationListing { 
+		"entities"?: Array<Models.UCIntegration>;
+		"pageSize"?: number;
+		"pageNumber"?: number;
+		"total"?: number;
+		"firstUri"?: string;
+		"selfUri"?: string;
+		"nextUri"?: string;
+		"previousUri"?: string;
+		"lastUri"?: string;
+		"pageCount"?: number;
+	}
+	
 	export interface UnpublishedProgramsEntityListing { 
 		"entities"?: Array<Models.Program>;
 		"pageSize"?: number;
@@ -28581,6 +28708,7 @@ declare namespace Models {
 		"id"?: string;
 		"name"?: string;
 		"user"?: Models.UserReference;
+		"businessUnit"?: Models.BusinessUnit;
 		"managementUnit"?: Models.ManagementUnit;
 		"team"?: Models.Team;
 		"scheduledActivityCategory"?: string;
@@ -28776,6 +28904,10 @@ declare namespace Models {
 		"response"?: Models.SubscriberResponse;
 	}
 	
+	export interface ValidateAssignUsers { 
+		"membersToAssign": Array<string>;
+	}
+	
 	export interface ValidateWorkPlanMessages { 
 		"violationMessages"?: Array<Models.WorkPlanConfigurationViolationMessage>;
 		"constraintConflictMessage"?: Models.ConstraintConflictMessage;
@@ -28798,8 +28930,7 @@ declare namespace Models {
 	
 	export interface ValidationServiceRequest { 
 		"dateImportEnded": string;
-		"fileUrl"?: string;
-		"uploadKey"?: string;
+		"uploadKey": string;
 	}
 	
 	export interface ValueWrapperDate { 
@@ -28980,6 +29111,7 @@ declare namespace Models {
 		"journeyUrlContainsAllConditions"?: Array<string>;
 		"journeyUrlNotContainsAllConditions"?: Array<string>;
 		"flowMilestoneIds"?: Array<string>;
+		"isAssessmentPassed"?: boolean;
 	}
 	
 	export interface VisibilityCondition { 
@@ -30395,6 +30527,8 @@ declare namespace Models {
 		"version": number;
 		"modifiedBy"?: Models.UserReference;
 		"dateModified"?: string;
+		"createdBy"?: Models.UserReference;
+		"dateCreated"?: string;
 	}
 	
 	export interface WhatsAppDefinition { 

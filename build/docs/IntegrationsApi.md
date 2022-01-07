@@ -29,6 +29,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getIntegrationsBotconnectorIntegrationIdBots**](IntegrationsApi.html#getIntegrationsBotconnectorIntegrationIdBots) | **GET** /api/v2/integrations/botconnector/{integrationId}/bots | Get a list of botConnector bots for this integration
 [**getIntegrationsBotconnectorIntegrationIdBotsSummaries**](IntegrationsApi.html#getIntegrationsBotconnectorIntegrationIdBotsSummaries) | **GET** /api/v2/integrations/botconnector/{integrationId}/bots/summaries | Get a summary list of botConnector bots for this integration
 [**getIntegrationsClientapps**](IntegrationsApi.html#getIntegrationsClientapps) | **GET** /api/v2/integrations/clientapps | List permitted client app integrations for the logged in user
+[**getIntegrationsClientappsUnifiedcommunications**](IntegrationsApi.html#getIntegrationsClientappsUnifiedcommunications) | **GET** /api/v2/integrations/clientapps/unifiedcommunications | UC integration client application configuration.
 [**getIntegrationsCredential**](IntegrationsApi.html#getIntegrationsCredential) | **GET** /api/v2/integrations/credentials/{credentialId} | Get a single credential with sensitive fields redacted
 [**getIntegrationsCredentials**](IntegrationsApi.html#getIntegrationsCredentials) | **GET** /api/v2/integrations/credentials | List multiple sets of credentials
 [**getIntegrationsCredentialsTypes**](IntegrationsApi.html#getIntegrationsCredentialsTypes) | **GET** /api/v2/integrations/credentials/types | List all credential types
@@ -1371,6 +1372,71 @@ apiInstance.getIntegrationsClientapps(opts)
 ### Return type
 
 **ClientAppEntityListing**
+
+<a name="getIntegrationsClientappsUnifiedcommunications"></a>
+
+# UCIntegrationListing getIntegrationsClientappsUnifiedcommunications(opts)
+
+
+
+GET /api/v2/integrations/clientapps/unifiedcommunications
+
+UC integration client application configuration.
+
+This endpoint returns basic UI configuration data for all Unified Communications integrations client applications enabled for the current organization.
+
+Requires ANY permissions: 
+
+* integration:unifiedCommunications:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.IntegrationsApi();
+
+let opts = { 
+  'pageSize': 25, // Number | The total page size requested
+  'pageNumber': 1, // Number | The page number requested
+  'sortBy': "sortBy_example", // String | variable name requested to sort by
+  'expand': ["expand_example"], // [String] | variable name requested by expand list
+  'nextPage': "nextPage_example", // String | next page token
+  'previousPage': "previousPage_example" // String | Previous page token
+};
+
+apiInstance.getIntegrationsClientappsUnifiedcommunications(opts)
+  .then((data) => {
+    console.log(`getIntegrationsClientappsUnifiedcommunications success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getIntegrationsClientappsUnifiedcommunications');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **pageSize** | **Number** | The total page size requested | [optional] [default to 25] |
+ **pageNumber** | **Number** | The page number requested | [optional] [default to 1] |
+ **sortBy** | **String** | variable name requested to sort by | [optional]  |
+ **expand** | **[String]** | variable name requested by expand list | [optional]  |
+ **nextPage** | **String** | next page token | [optional]  |
+ **previousPage** | **String** | Previous page token | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**UCIntegrationListing**
 
 <a name="getIntegrationsCredential"></a>
 

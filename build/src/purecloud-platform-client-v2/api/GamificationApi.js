@@ -5,7 +5,7 @@ class GamificationApi {
 	/**
 	 * Gamification service.
 	 * @module purecloud-platform-client-v2/api/GamificationApi
-	 * @version 128.0.0
+	 * @version 129.0.0
 	 */
 
 	/**
@@ -261,6 +261,31 @@ class GamificationApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/gamification/profiles/{performanceProfileId}', 
+			'GET', 
+			{ 'performanceProfileId': performanceProfileId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Members of a given performance profile
+	 * 
+	 * @param {String} performanceProfileId Performance Profile Id
+	 */
+	getGamificationProfileMembers(performanceProfileId) { 
+		// verify the required parameter 'performanceProfileId' is set
+		if (performanceProfileId === undefined || performanceProfileId === null) {
+			throw 'Missing the required parameter "performanceProfileId" when calling getGamificationProfileMembers';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/gamification/profiles/{performanceProfileId}/members', 
 			'GET', 
 			{ 'performanceProfileId': performanceProfileId }, 
 			{  }, 
@@ -1121,6 +1146,101 @@ class GamificationApi {
 			{  }, 
 			{  }, 
 			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Assign members to a given performance profile
+	 * 
+	 * @param {String} performanceProfileId Performance Profile Id
+	 * @param {Object} body assignUsers
+	 */
+	postGamificationProfileMembers(performanceProfileId, body) { 
+		// verify the required parameter 'performanceProfileId' is set
+		if (performanceProfileId === undefined || performanceProfileId === null) {
+			throw 'Missing the required parameter "performanceProfileId" when calling postGamificationProfileMembers';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postGamificationProfileMembers';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/gamification/profiles/{performanceProfileId}/members', 
+			'POST', 
+			{ 'performanceProfileId': performanceProfileId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Validate member assignment
+	 * 
+	 * @param {String} performanceProfileId Performance Profile Id
+	 * @param {Object} body memberAssignments
+	 */
+	postGamificationProfileMembersValidate(performanceProfileId, body) { 
+		// verify the required parameter 'performanceProfileId' is set
+		if (performanceProfileId === undefined || performanceProfileId === null) {
+			throw 'Missing the required parameter "performanceProfileId" when calling postGamificationProfileMembersValidate';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postGamificationProfileMembersValidate';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/gamification/profiles/{performanceProfileId}/members/validate', 
+			'POST', 
+			{ 'performanceProfileId': performanceProfileId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Creates a linked metric
+	 * 
+	 * @param {String} sourceProfileId Source Performance Profile Id
+	 * @param {String} sourceMetricId Source Metric Id
+	 * @param {Object} body linkedMetric
+	 */
+	postGamificationProfileMetricLink(sourceProfileId, sourceMetricId, body) { 
+		// verify the required parameter 'sourceProfileId' is set
+		if (sourceProfileId === undefined || sourceProfileId === null) {
+			throw 'Missing the required parameter "sourceProfileId" when calling postGamificationProfileMetricLink';
+		}
+		// verify the required parameter 'sourceMetricId' is set
+		if (sourceMetricId === undefined || sourceMetricId === null) {
+			throw 'Missing the required parameter "sourceMetricId" when calling postGamificationProfileMetricLink';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postGamificationProfileMetricLink';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/gamification/profiles/{sourceProfileId}/metrics/{sourceMetricId}/link', 
+			'POST', 
+			{ 'sourceProfileId': sourceProfileId,'sourceMetricId': sourceMetricId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
 			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']
