@@ -5,7 +5,7 @@ class RoutingApi {
 	/**
 	 * Routing service.
 	 * @module purecloud-platform-client-v2/api/RoutingApi
-	 * @version 129.0.0
+	 * @version 130.0.0
 	 */
 
 	/**
@@ -1443,10 +1443,14 @@ class RoutingApi {
 	 * 
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.phoneNumber Filter on phone number address. Allowable characters are the digits &#39;0-9&#39; and the wild card character &#39;\\*&#39;. If just digits are present, a contains search is done on the address pattern. For example, &#39;317&#39; could be matched anywhere in the address. An &#39;\\*&#39; will match multiple digits. For example, to match a specific area code within the US a pattern like &#39;1317*&#39; could be used.
-	 * @param {Object} opts.phoneNumberType Filter on phone number type
-	 * @param {Object} opts.phoneNumberStatus Filter on phone number status
+	 * @param {Array.<String>} opts.phoneNumberType Filter on phone number type
+	 * @param {Array.<String>} opts.phoneNumberStatus Filter on phone number status
+	 * @param {Array.<String>} opts.countryCode Filter on country code
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Object} opts.sortBy Optional field to sort results
+	 * @param {Object} opts.sortOrder Sort order
+	 * @param {String} opts.language A language tag (which is sometimes referred to as a \&quot;locale identifier\&quot;) to use to localize country field and sort operations (default to en-US)
 	 */
 	getRoutingSmsPhonenumbers(opts) { 
 		opts = opts || {};
@@ -1456,7 +1460,7 @@ class RoutingApi {
 			'/api/v2/routing/sms/phonenumbers', 
 			'GET', 
 			{  }, 
-			{ 'phoneNumber': opts['phoneNumber'],'phoneNumberType': opts['phoneNumberType'],'phoneNumberStatus': opts['phoneNumberStatus'],'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] }, 
+			{ 'phoneNumber': opts['phoneNumber'],'phoneNumberType': this.apiClient.buildCollectionParam(opts['phoneNumberType'], 'multi'),'phoneNumberStatus': this.apiClient.buildCollectionParam(opts['phoneNumberStatus'], 'multi'),'countryCode': this.apiClient.buildCollectionParam(opts['countryCode'], 'multi'),'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'language': opts['language'] }, 
 			{  }, 
 			{  }, 
 			null, 

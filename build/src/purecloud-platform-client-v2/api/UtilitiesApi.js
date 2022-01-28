@@ -5,7 +5,7 @@ class UtilitiesApi {
 	/**
 	 * Utilities service.
 	 * @module purecloud-platform-client-v2/api/UtilitiesApi
-	 * @version 129.0.0
+	 * @version 130.0.0
 	 */
 
 	/**
@@ -41,7 +41,7 @@ class UtilitiesApi {
 	}
 
 	/**
-	 * Get public ip address ranges for PureCloud
+	 * Get public ip address ranges for Genesys Cloud
 	 * 
 	 */
 	getIpranges() { 

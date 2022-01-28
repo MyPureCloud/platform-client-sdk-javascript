@@ -3117,10 +3117,14 @@ let apiInstance = new platformClient.RoutingApi();
 
 let opts = { 
   'phoneNumber': "phoneNumber_example", // String | Filter on phone number address. Allowable characters are the digits '0-9' and the wild card character '\\*'. If just digits are present, a contains search is done on the address pattern. For example, '317' could be matched anywhere in the address. An '\\*' will match multiple digits. For example, to match a specific area code within the US a pattern like '1317*' could be used.
-  'phoneNumberType': "phoneNumberType_example", // String | Filter on phone number type
-  'phoneNumberStatus': "phoneNumberStatus_example", // String | Filter on phone number status
+  'phoneNumberType': ["phoneNumberType_example"], // [String] | Filter on phone number type
+  'phoneNumberStatus': ["phoneNumberStatus_example"], // [String] | Filter on phone number status
+  'countryCode': ["countryCode_example"], // [String] | Filter on country code
   'pageSize': 25, // Number | Page size
-  'pageNumber': 1 // Number | Page number
+  'pageNumber': 1, // Number | Page number
+  'sortBy': "sortBy_example", // String | Optional field to sort results
+  'sortOrder': "sortOrder_example", // String | Sort order
+  'language': "en-US" // String | A language tag (which is sometimes referred to as a \"locale identifier\") to use to localize country field and sort operations
 };
 
 apiInstance.getRoutingSmsPhonenumbers(opts)
@@ -3139,10 +3143,14 @@ apiInstance.getRoutingSmsPhonenumbers(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **phoneNumber** | **String** | Filter on phone number address. Allowable characters are the digits &#39;0-9&#39; and the wild card character &#39;\\*&#39;. If just digits are present, a contains search is done on the address pattern. For example, &#39;317&#39; could be matched anywhere in the address. An &#39;\\*&#39; will match multiple digits. For example, to match a specific area code within the US a pattern like &#39;1317*&#39; could be used. | [optional]  |
- **phoneNumberType** | **String** | Filter on phone number type | [optional] <br />**Values**: local, mobile, tollfree, shortcode |
- **phoneNumberStatus** | **String** | Filter on phone number status | [optional] <br />**Values**: active, invalid, porting |
+ **phoneNumberType** | **[String]** | Filter on phone number type | [optional] <br />**Values**: local, mobile, tollfree, shortcode |
+ **phoneNumberStatus** | **[String]** | Filter on phone number status | [optional] <br />**Values**: active, invalid, initiated, porting, pending, pending-cancellation |
+ **countryCode** | **[String]** | Filter on country code | [optional]  |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **sortBy** | **String** | Optional field to sort results | [optional] <br />**Values**: phoneNumber, countryCode, country, phoneNumberStatus, phoneNumberType, purchaseDate, supportsMms, supportsSms, supportsVoice |
+ **sortOrder** | **String** | Sort order | [optional] <br />**Values**: ascending, descending |
+ **language** | **String** | A language tag (which is sometimes referred to as a \&quot;locale identifier\&quot;) to use to localize country field and sort operations | [optional] [default to en-US] |
 {: class="table table-striped"}
 
 ### Return type

@@ -17,7 +17,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getConversationRecording**](RecordingApi.html#getConversationRecording) | **GET** /api/v2/conversations/{conversationId}/recordings/{recordingId} | Gets a specific recording.
 [**getConversationRecordingAnnotation**](RecordingApi.html#getConversationRecordingAnnotation) | **GET** /api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations/{annotationId} | Get annotation
 [**getConversationRecordingAnnotations**](RecordingApi.html#getConversationRecordingAnnotations) | **GET** /api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations | Get annotations for recording
-[**getConversationRecordingmetadata**](RecordingApi.html#getConversationRecordingmetadata) | **GET** /api/v2/conversations/{conversationId}/recordingmetadata | Get recording metadata for a conversation. Does not return playable media.
+[**getConversationRecordingmetadata**](RecordingApi.html#getConversationRecordingmetadata) | **GET** /api/v2/conversations/{conversationId}/recordingmetadata | Get recording metadata for a conversation. Does not return playable media. Annotations won&#39;t be included in the response if recording:recording:view permission is missing.
 [**getConversationRecordingmetadataRecordingId**](RecordingApi.html#getConversationRecordingmetadataRecordingId) | **GET** /api/v2/conversations/{conversationId}/recordingmetadata/{recordingId} | Get metadata for a specific recording. Does not return playable media.
 [**getConversationRecordings**](RecordingApi.html#getConversationRecordings) | **GET** /api/v2/conversations/{conversationId}/recordings | Get all of a Conversation&#39;s Recordings.
 [**getOrphanrecording**](RecordingApi.html#getOrphanrecording) | **GET** /api/v2/orphanrecordings/{orphanId} | Gets a single orphan recording
@@ -453,6 +453,7 @@ Gets a specific recording.
 Requires ANY permissions: 
 
 * recording:recording:view
+* recording:recordingSegment:view
 
 ### Example Usage
 
@@ -470,11 +471,11 @@ let apiInstance = new platformClient.RecordingApi();
 let conversationId = "conversationId_example"; // String | Conversation ID
 let recordingId = "recordingId_example"; // String | Recording ID
 let opts = { 
-  'formatId': "WEBM", // String | The desired media format.
-  'emailFormatId': "EML", // String | The desired media format when downloading an email recording.
-  'chatFormatId': "ZIP", // String | The desired media format when downloading a chat recording.
-  'messageFormatId': "ZIP", // String | The desired media format when downloading a message recording.
-  'download': false, // Boolean | requesting a download format of the recording
+  'formatId': "WEBM", // String | The desired media format. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3,NONE
+  'emailFormatId': "EML", // String | The desired media format when downloading an email recording. Valid values:EML,NONE
+  'chatFormatId': "ZIP", // String | The desired media format when downloading a chat recording. Valid values:ZIP,NONE 
+  'messageFormatId': "ZIP", // String | The desired media format when downloading a message recording. Valid values:ZIP,NONE
+  'download': false, // Boolean | requesting a download format of the recording. Valid values:true,false
   'fileName': "fileName_example", // String | the name of the downloaded fileName
   'locale': "locale_example" // String | The locale for the requested file when downloading, as an ISO 639-1 code
 };
@@ -496,11 +497,11 @@ apiInstance.getConversationRecording(conversationId, recordingId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | Conversation ID |  |
  **recordingId** | **String** | Recording ID |  |
- **formatId** | **String** | The desired media format. | [optional] [default to WEBM]<br />**Values**: WAV, WEBM, WAV_ULAW, OGG_VORBIS, OGG_OPUS, MP3, NONE |
- **emailFormatId** | **String** | The desired media format when downloading an email recording. | [optional] [default to EML]<br />**Values**: EML, NONE |
- **chatFormatId** | **String** | The desired media format when downloading a chat recording. | [optional] [default to ZIP]<br />**Values**: ZIP, NONE |
- **messageFormatId** | **String** | The desired media format when downloading a message recording. | [optional] [default to ZIP]<br />**Values**: ZIP, NONE |
- **download** | **Boolean** | requesting a download format of the recording | [optional] [default to false] |
+ **formatId** | **String** | The desired media format. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3,NONE | [optional] [default to WEBM]<br />**Values**: WAV, WEBM, WAV_ULAW, OGG_VORBIS, OGG_OPUS, MP3, NONE |
+ **emailFormatId** | **String** | The desired media format when downloading an email recording. Valid values:EML,NONE | [optional] [default to EML]<br />**Values**: EML, NONE |
+ **chatFormatId** | **String** | The desired media format when downloading a chat recording. Valid values:ZIP,NONE  | [optional] [default to ZIP]<br />**Values**: ZIP, NONE |
+ **messageFormatId** | **String** | The desired media format when downloading a message recording. Valid values:ZIP,NONE | [optional] [default to ZIP]<br />**Values**: ZIP, NONE |
+ **download** | **Boolean** | requesting a download format of the recording. Valid values:true,false | [optional] [default to false] |
  **fileName** | **String** | the name of the downloaded fileName | [optional]  |
  **locale** | **String** | The locale for the requested file when downloading, as an ISO 639-1 code | [optional]  |
 {: class="table table-striped"}
@@ -629,12 +630,14 @@ apiInstance.getConversationRecordingAnnotations(conversationId, recordingId)
 
 GET /api/v2/conversations/{conversationId}/recordingmetadata
 
-Get recording metadata for a conversation. Does not return playable media.
+Get recording metadata for a conversation. Does not return playable media. Annotations won&#39;t be included in the response if recording:recording:view permission is missing.
 
 
 
-Requires NO permissions: 
+Requires ANY permissions: 
 
+* recording:recording:view
+* recording:recordingSegment:view
 
 ### Example Usage
 
@@ -688,6 +691,7 @@ Get metadata for a specific recording. Does not return playable media.
 Requires ANY permissions: 
 
 * recording:recording:view
+* recording:recordingSegment:view
 
 ### Example Usage
 
@@ -740,9 +744,10 @@ Get all of a Conversation&#39;s Recordings.
 
 
 
-Requires ALL permissions: 
+Requires ANY permissions: 
 
 * recording:recording:view
+* recording:recordingSegment:view
 
 ### Example Usage
 
@@ -760,7 +765,7 @@ let apiInstance = new platformClient.RecordingApi();
 let conversationId = "conversationId_example"; // String | Conversation ID
 let opts = { 
   'maxWaitMs': 5000, // Number | The maximum number of milliseconds to wait for the recording to be ready. Must be a positive value.
-  'formatId': "WEBM" // String | The desired media format
+  'formatId': "WEBM" // String | The desired media format . Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3,NONE.
 };
 
 apiInstance.getConversationRecordings(conversationId, opts)
@@ -780,7 +785,7 @@ apiInstance.getConversationRecordings(conversationId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | Conversation ID |  |
  **maxWaitMs** | **Number** | The maximum number of milliseconds to wait for the recording to be ready. Must be a positive value. | [optional] [default to 5000] |
- **formatId** | **String** | The desired media format | [optional] [default to WEBM]<br />**Values**: WAV, WEBM, WAV_ULAW, OGG_VORBIS, OGG_OPUS, MP3, NONE |
+ **formatId** | **String** | The desired media format . Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3,NONE. | [optional] [default to WEBM]<br />**Values**: WAV, WEBM, WAV_ULAW, OGG_VORBIS, OGG_OPUS, MP3, NONE |
 {: class="table table-striped"}
 
 ### Return type
@@ -2605,6 +2610,8 @@ Update annotation
 Requires ANY permissions: 
 
 * recording:annotation:edit
+* recording:recording:view
+* recording:recordingSegment:view
 
 ### Example Usage
 

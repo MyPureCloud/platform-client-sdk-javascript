@@ -5,7 +5,7 @@ class RecordingApi {
 	/**
 	 * Recording service.
 	 * @module purecloud-platform-client-v2/api/RecordingApi
-	 * @version 129.0.0
+	 * @version 130.0.0
 	 */
 
 	/**
@@ -211,11 +211,11 @@ class RecordingApi {
 	 * @param {String} conversationId Conversation ID
 	 * @param {String} recordingId Recording ID
 	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.formatId The desired media format. (default to WEBM)
-	 * @param {Object} opts.emailFormatId The desired media format when downloading an email recording. (default to EML)
-	 * @param {Object} opts.chatFormatId The desired media format when downloading a chat recording. (default to ZIP)
-	 * @param {Object} opts.messageFormatId The desired media format when downloading a message recording. (default to ZIP)
-	 * @param {Boolean} opts.download requesting a download format of the recording (default to false)
+	 * @param {Object} opts.formatId The desired media format. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3,NONE (default to WEBM)
+	 * @param {Object} opts.emailFormatId The desired media format when downloading an email recording. Valid values:EML,NONE (default to EML)
+	 * @param {Object} opts.chatFormatId The desired media format when downloading a chat recording. Valid values:ZIP,NONE  (default to ZIP)
+	 * @param {Object} opts.messageFormatId The desired media format when downloading a message recording. Valid values:ZIP,NONE (default to ZIP)
+	 * @param {Boolean} opts.download requesting a download format of the recording. Valid values:true,false (default to false)
 	 * @param {String} opts.fileName the name of the downloaded fileName
 	 * @param {String} opts.locale The locale for the requested file when downloading, as an ISO 639-1 code
 	 */
@@ -311,7 +311,7 @@ class RecordingApi {
 	}
 
 	/**
-	 * Get recording metadata for a conversation. Does not return playable media.
+	 * Get recording metadata for a conversation. Does not return playable media. Annotations won&#39;t be included in the response if recording:recording:view permission is missing.
 	 * 
 	 * @param {String} conversationId Conversation ID
 	 */
@@ -371,7 +371,7 @@ class RecordingApi {
 	 * @param {String} conversationId Conversation ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.maxWaitMs The maximum number of milliseconds to wait for the recording to be ready. Must be a positive value. (default to 5000)
-	 * @param {Object} opts.formatId The desired media format (default to WEBM)
+	 * @param {Object} opts.formatId The desired media format . Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3,NONE. (default to WEBM)
 	 */
 	getConversationRecordings(conversationId, opts) { 
 		opts = opts || {};

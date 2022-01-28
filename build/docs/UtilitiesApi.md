@@ -8,7 +8,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
 [**getDate**](UtilitiesApi.html#getDate) | **GET** /api/v2/date | Get the current system date/time
-[**getIpranges**](UtilitiesApi.html#getIpranges) | **GET** /api/v2/ipranges | Get public ip address ranges for PureCloud
+[**getIpranges**](UtilitiesApi.html#getIpranges) | **GET** /api/v2/ipranges | Get public ip address ranges for Genesys Cloud
 [**getTimezones**](UtilitiesApi.html#getTimezones) | **GET** /api/v2/timezones | Get time zones list
 [**postCertificateDetails**](UtilitiesApi.html#postCertificateDetails) | **POST** /api/v2/certificate/details | Returns the information about an X509 PEM encoded certificate or certificate chain.
 {: class="table table-striped"}
@@ -68,7 +68,7 @@ This endpoint does not need any parameter.
 
 GET /api/v2/ipranges
 
-Get public ip address ranges for PureCloud
+Get public ip address ranges for Genesys Cloud
 
 
 

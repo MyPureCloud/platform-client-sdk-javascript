@@ -404,7 +404,8 @@ let opts = {
   'sortOrder': "sortOrder_example", // String | Sort (by due date) either Asc or Desc
   'relationships': ["relationships_example"], // [String] | Relationships to filter by
   'completionInterval': "completionInterval_example", // String | Appointment completion start and end to filter by. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
-  'overdue': "overdue_example" // String | Overdue status to filter by
+  'overdue': "overdue_example", // String | Overdue status to filter by
+  'intervalCondition': "intervalCondition_example" // String | Filter condition for interval
 };
 
 apiInstance.getCoachingAppointments(userIds, opts)
@@ -432,6 +433,7 @@ apiInstance.getCoachingAppointments(userIds, opts)
  **relationships** | **[String]** | Relationships to filter by | [optional] <br />**Values**: Creator, Facilitator, Attendee |
  **completionInterval** | **String** | Appointment completion start and end to filter by. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss | [optional]  |
  **overdue** | **String** | Overdue status to filter by | [optional] <br />**Values**: True, False, Any |
+ **intervalCondition** | **String** | Filter condition for interval | [optional] <br />**Values**: StartsIn, Overlaps |
 {: class="table table-striped"}
 
 ### Return type
@@ -475,7 +477,8 @@ let opts = {
   'sortOrder': "sortOrder_example", // String | Sort (by due date) either Asc or Desc
   'relationships': ["relationships_example"], // [String] | Relationships to filter by
   'completionInterval': "completionInterval_example", // String | Appointment completion start and end to filter by. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
-  'overdue': "overdue_example" // String | Overdue status to filter by
+  'overdue': "overdue_example", // String | Overdue status to filter by
+  'intervalCondition': "intervalCondition_example" // String | Filter condition for interval
 };
 
 apiInstance.getCoachingAppointmentsMe(opts)
@@ -502,6 +505,7 @@ apiInstance.getCoachingAppointmentsMe(opts)
  **relationships** | **[String]** | Relationships to filter by | [optional] <br />**Values**: Creator, Facilitator, Attendee |
  **completionInterval** | **String** | Appointment completion start and end to filter by. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss | [optional]  |
  **overdue** | **String** | Overdue status to filter by | [optional] <br />**Values**: True, False, Any |
+ **intervalCondition** | **String** | Filter condition for interval | [optional] <br />**Values**: StartsIn, Overlaps |
 {: class="table table-striped"}
 
 ### Return type
