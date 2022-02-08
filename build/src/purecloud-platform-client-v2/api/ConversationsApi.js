@@ -5,7 +5,7 @@ class ConversationsApi {
 	/**
 	 * Conversations service.
 	 * @module purecloud-platform-client-v2/api/ConversationsApi
-	 * @version 130.0.0
+	 * @version 131.0.0
 	 */
 
 	/**
@@ -285,6 +285,31 @@ class ConversationsApi {
 			'/api/v2/conversations/messaging/integrations/whatsapp/{integrationId}', 
 			'DELETE', 
 			{ 'integrationId': integrationId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete a supported content profile
+	 * 
+	 * @param {String} supportedContentId Supported Content ID
+	 */
+	deleteConversationsMessagingSupportedcontentSupportedContentId(supportedContentId) { 
+		// verify the required parameter 'supportedContentId' is set
+		if (supportedContentId === undefined || supportedContentId === null) {
+			throw 'Missing the required parameter "supportedContentId" when calling deleteConversationsMessagingSupportedcontentSupportedContentId';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/messaging/supportedcontent/{supportedContentId}', 
+			'DELETE', 
+			{ 'supportedContentId': supportedContentId }, 
 			{  }, 
 			{  }, 
 			{  }, 
@@ -1888,6 +1913,76 @@ class ConversationsApi {
 	}
 
 	/**
+	 * Get a list of Supported Content profiles
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 */
+	getConversationsMessagingSupportedcontent(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/messaging/supportedcontent', 
+			'GET', 
+			{  }, 
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get the organization&#39;s default supported content profile that will be used as the default when creating an integration.
+	 * When an integration is created a supported content ID may be assigned to it. If the supported content ID is not supplied, the default supported content profile will be assigned to it.
+	 */
+	getConversationsMessagingSupportedcontentDefault() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/messaging/supportedcontent/default', 
+			'GET', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a supported content profile
+	 * 
+	 * @param {String} supportedContentId Supported Content ID
+	 */
+	getConversationsMessagingSupportedcontentSupportedContentId(supportedContentId) { 
+		// verify the required parameter 'supportedContentId' is set
+		if (supportedContentId === undefined || supportedContentId === null) {
+			throw 'Missing the required parameter "supportedContentId" when calling getConversationsMessagingSupportedcontentSupportedContentId';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/messaging/supportedcontent/{supportedContentId}', 
+			'GET', 
+			{ 'supportedContentId': supportedContentId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get conversation threading window timeline for each messaging type
 	 * Conversation messaging threading timeline is a setting defined for each messenger type in your organization. This setting will dictate whether a new message is added to the most recent existing conversation, or creates a new Conversation. If the existing Conversation is still in a connected state the threading timeline setting will never play a role. After the conversation is disconnected, if an inbound message is received or an outbound message is sent after the setting for threading timeline expires, a new conversation is created.
 	 */
@@ -2958,6 +3053,36 @@ class ConversationsApi {
 			'/api/v2/conversations/messaging/integrations/whatsapp/{integrationId}', 
 			'PATCH', 
 			{ 'integrationId': integrationId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update a supported content profile
+	 * 
+	 * @param {String} supportedContentId Supported Content ID
+	 * @param {Object} body SupportedContent
+	 */
+	patchConversationsMessagingSupportedcontentSupportedContentId(supportedContentId, body) { 
+		// verify the required parameter 'supportedContentId' is set
+		if (supportedContentId === undefined || supportedContentId === null) {
+			throw 'Missing the required parameter "supportedContentId" when calling patchConversationsMessagingSupportedcontentSupportedContentId';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchConversationsMessagingSupportedcontentSupportedContentId';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/messaging/supportedcontent/{supportedContentId}', 
+			'PATCH', 
+			{ 'supportedContentId': supportedContentId }, 
 			{  }, 
 			{  }, 
 			{  }, 
@@ -4204,6 +4329,31 @@ class ConversationsApi {
 	}
 
 	/**
+	 * Create a Supported Content profile
+	 * 
+	 * @param {Object} body SupportedContent
+	 */
+	postConversationsMessagingSupportedcontent(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postConversationsMessagingSupportedcontent';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/messaging/supportedcontent', 
+			'POST', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
 	 * Set flagged reason on conversation participant to indicate bad conversation quality.
 	 * 
 	 * @param {String} conversationId conversation ID
@@ -4353,6 +4503,31 @@ class ConversationsApi {
 			'/api/v2/conversations/messaging/integrations/line/{integrationId}', 
 			'PUT', 
 			{ 'integrationId': integrationId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Set the organization&#39;s default supported content profile that may be assigned to an integration when it is created.
+	 * When an integration is created a supported content ID may be assigned to it. If the supported content ID is not supplied, the default supported content profile will be assigned to it.
+	 * @param {Object} body SupportedContent
+	 */
+	putConversationsMessagingSupportedcontentDefault(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putConversationsMessagingSupportedcontentDefault';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/messaging/supportedcontent/default', 
+			'PUT', 
+			{  }, 
 			{  }, 
 			{  }, 
 			{  }, 

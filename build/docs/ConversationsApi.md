@@ -17,6 +17,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**deleteConversationsMessagingIntegrationsOpenIntegrationId**](ConversationsApi.html#deleteConversationsMessagingIntegrationsOpenIntegrationId) | **DELETE** /api/v2/conversations/messaging/integrations/open/{integrationId} | Delete an Open messaging integration
 [**deleteConversationsMessagingIntegrationsTwitterIntegrationId**](ConversationsApi.html#deleteConversationsMessagingIntegrationsTwitterIntegrationId) | **DELETE** /api/v2/conversations/messaging/integrations/twitter/{integrationId} | Delete a Twitter messaging integration
 [**deleteConversationsMessagingIntegrationsWhatsappIntegrationId**](ConversationsApi.html#deleteConversationsMessagingIntegrationsWhatsappIntegrationId) | **DELETE** /api/v2/conversations/messaging/integrations/whatsapp/{integrationId} | Delete a WhatsApp messaging integration
+[**deleteConversationsMessagingSupportedcontentSupportedContentId**](ConversationsApi.html#deleteConversationsMessagingSupportedcontentSupportedContentId) | **DELETE** /api/v2/conversations/messaging/supportedcontent/{supportedContentId} | Delete a supported content profile
 [**getAnalyticsConversationDetails**](ConversationsApi.html#getAnalyticsConversationDetails) | **GET** /api/v2/analytics/conversations/{conversationId}/details | Get a conversation by id
 [**getAnalyticsConversationsDetails**](ConversationsApi.html#getAnalyticsConversationsDetails) | **GET** /api/v2/analytics/conversations/details | Gets multiple conversations by id
 [**getAnalyticsConversationsDetailsJob**](ConversationsApi.html#getAnalyticsConversationsDetailsJob) | **GET** /api/v2/analytics/conversations/details/jobs/{jobId} | Get status for async query for conversation details
@@ -75,6 +76,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getConversationsMessagingIntegrationsWhatsapp**](ConversationsApi.html#getConversationsMessagingIntegrationsWhatsapp) | **GET** /api/v2/conversations/messaging/integrations/whatsapp | Get a list of WhatsApp Integrations
 [**getConversationsMessagingIntegrationsWhatsappIntegrationId**](ConversationsApi.html#getConversationsMessagingIntegrationsWhatsappIntegrationId) | **GET** /api/v2/conversations/messaging/integrations/whatsapp/{integrationId} | Get a WhatsApp messaging integration
 [**getConversationsMessagingSticker**](ConversationsApi.html#getConversationsMessagingSticker) | **GET** /api/v2/conversations/messaging/stickers/{messengerType} | Get a list of Messaging Stickers
+[**getConversationsMessagingSupportedcontent**](ConversationsApi.html#getConversationsMessagingSupportedcontent) | **GET** /api/v2/conversations/messaging/supportedcontent | Get a list of Supported Content profiles
+[**getConversationsMessagingSupportedcontentDefault**](ConversationsApi.html#getConversationsMessagingSupportedcontentDefault) | **GET** /api/v2/conversations/messaging/supportedcontent/default | Get the organization&#39;s default supported content profile that will be used as the default when creating an integration.
+[**getConversationsMessagingSupportedcontentSupportedContentId**](ConversationsApi.html#getConversationsMessagingSupportedcontentSupportedContentId) | **GET** /api/v2/conversations/messaging/supportedcontent/{supportedContentId} | Get a supported content profile
 [**getConversationsMessagingThreadingtimeline**](ConversationsApi.html#getConversationsMessagingThreadingtimeline) | **GET** /api/v2/conversations/messaging/threadingtimeline | Get conversation threading window timeline for each messaging type
 [**patchConversationParticipant**](ConversationsApi.html#patchConversationParticipant) | **PATCH** /api/v2/conversations/{conversationId}/participants/{participantId} | Update a participant.
 [**patchConversationParticipantAttributes**](ConversationsApi.html#patchConversationParticipantAttributes) | **PATCH** /api/v2/conversations/{conversationId}/participants/{participantId}/attributes | Update the attributes on a conversation participant.
@@ -107,6 +111,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**patchConversationsMessagingIntegrationsOpenIntegrationId**](ConversationsApi.html#patchConversationsMessagingIntegrationsOpenIntegrationId) | **PATCH** /api/v2/conversations/messaging/integrations/open/{integrationId} | Update an Open messaging integration
 [**patchConversationsMessagingIntegrationsTwitterIntegrationId**](ConversationsApi.html#patchConversationsMessagingIntegrationsTwitterIntegrationId) | **PATCH** /api/v2/conversations/messaging/integrations/twitter/{integrationId} | Update Twitter messaging integration
 [**patchConversationsMessagingIntegrationsWhatsappIntegrationId**](ConversationsApi.html#patchConversationsMessagingIntegrationsWhatsappIntegrationId) | **PATCH** /api/v2/conversations/messaging/integrations/whatsapp/{integrationId} | Update or activate a WhatsApp messaging integration.
+[**patchConversationsMessagingSupportedcontentSupportedContentId**](ConversationsApi.html#patchConversationsMessagingSupportedcontentSupportedContentId) | **PATCH** /api/v2/conversations/messaging/supportedcontent/{supportedContentId} | Update a supported content profile
 [**postAnalyticsConversationDetailsProperties**](ConversationsApi.html#postAnalyticsConversationDetailsProperties) | **POST** /api/v2/analytics/conversations/{conversationId}/details/properties | Index conversation properties
 [**postAnalyticsConversationsAggregatesQuery**](ConversationsApi.html#postAnalyticsConversationsAggregatesQuery) | **POST** /api/v2/analytics/conversations/aggregates/query | Query for conversation aggregates
 [**postAnalyticsConversationsDetailsJobs**](ConversationsApi.html#postAnalyticsConversationsDetailsJobs) | **POST** /api/v2/analytics/conversations/details/jobs | Query for conversation details asynchronously
@@ -149,11 +154,13 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postConversationsMessagingIntegrationsOpen**](ConversationsApi.html#postConversationsMessagingIntegrationsOpen) | **POST** /api/v2/conversations/messaging/integrations/open | Create an Open messaging integration
 [**postConversationsMessagingIntegrationsTwitter**](ConversationsApi.html#postConversationsMessagingIntegrationsTwitter) | **POST** /api/v2/conversations/messaging/integrations/twitter | Create a Twitter Integration
 [**postConversationsMessagingIntegrationsWhatsapp**](ConversationsApi.html#postConversationsMessagingIntegrationsWhatsapp) | **POST** /api/v2/conversations/messaging/integrations/whatsapp | Create a WhatsApp Integration
+[**postConversationsMessagingSupportedcontent**](ConversationsApi.html#postConversationsMessagingSupportedcontent) | **POST** /api/v2/conversations/messaging/supportedcontent | Create a Supported Content profile
 [**putConversationParticipantFlaggedreason**](ConversationsApi.html#putConversationParticipantFlaggedreason) | **PUT** /api/v2/conversations/{conversationId}/participants/{participantId}/flaggedreason | Set flagged reason on conversation participant to indicate bad conversation quality.
 [**putConversationTags**](ConversationsApi.html#putConversationTags) | **PUT** /api/v2/conversations/{conversationId}/tags | Update the tags on a conversation.
 [**putConversationsCallParticipantCommunicationUuidata**](ConversationsApi.html#putConversationsCallParticipantCommunicationUuidata) | **PUT** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/communications/{communicationId}/uuidata | Set uuiData to be sent on future commands.
 [**putConversationsEmailMessagesDraft**](ConversationsApi.html#putConversationsEmailMessagesDraft) | **PUT** /api/v2/conversations/emails/{conversationId}/messages/draft | Update conversation draft reply
 [**putConversationsMessagingIntegrationsLineIntegrationId**](ConversationsApi.html#putConversationsMessagingIntegrationsLineIntegrationId) | **PUT** /api/v2/conversations/messaging/integrations/line/{integrationId} | Update a LINE messenger integration
+[**putConversationsMessagingSupportedcontentDefault**](ConversationsApi.html#putConversationsMessagingSupportedcontentDefault) | **PUT** /api/v2/conversations/messaging/supportedcontent/default | Set the organization&#39;s default supported content profile that may be assigned to an integration when it is created.
 [**putConversationsMessagingThreadingtimeline**](ConversationsApi.html#putConversationsMessagingThreadingtimeline) | **PUT** /api/v2/conversations/messaging/threadingtimeline | Update conversation threading window timeline for each messaging type
 {: class="table table-striped"}
 
@@ -694,6 +701,59 @@ apiInstance.deleteConversationsMessagingIntegrationsWhatsappIntegrationId(integr
 
 **WhatsAppIntegration**
 
+<a name="deleteConversationsMessagingSupportedcontentSupportedContentId"></a>
+
+# void deleteConversationsMessagingSupportedcontentSupportedContentId(supportedContentId)
+
+
+
+DELETE /api/v2/conversations/messaging/supportedcontent/{supportedContentId}
+
+Delete a supported content profile
+
+
+
+Requires ALL permissions: 
+
+* messaging:supportedContent:delete
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let supportedContentId = "supportedContentId_example"; // String | Supported Content ID
+
+apiInstance.deleteConversationsMessagingSupportedcontentSupportedContentId(supportedContentId)
+  .then(() => {
+    console.log('deleteConversationsMessagingSupportedcontentSupportedContentId returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteConversationsMessagingSupportedcontentSupportedContentId');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **supportedContentId** | **String** | Supported Content ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
+
 <a name="getAnalyticsConversationDetails"></a>
 
 # AnalyticsConversationWithoutAttributes getAnalyticsConversationDetails(conversationId)
@@ -709,6 +769,7 @@ Get a conversation by id
 Requires ANY permissions: 
 
 * analytics:conversationDetail:view
+* analytics:agentConversationDetail:view
 
 ### Example Usage
 
@@ -762,6 +823,7 @@ Gets multiple conversations by id
 Requires ANY permissions: 
 
 * analytics:conversationDetail:view
+* analytics:agentConversationDetail:view
 
 ### Example Usage
 
@@ -3866,6 +3928,164 @@ apiInstance.getConversationsMessagingSticker(messengerType, opts)
 
 **MessagingStickerEntityListing**
 
+<a name="getConversationsMessagingSupportedcontent"></a>
+
+# SupportedContentListing getConversationsMessagingSupportedcontent(opts)
+
+
+
+GET /api/v2/conversations/messaging/supportedcontent
+
+Get a list of Supported Content profiles
+
+
+
+Requires ALL permissions: 
+
+* messaging:supportedContent:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let opts = { 
+  'pageSize': 25, // Number | Page size
+  'pageNumber': 1 // Number | Page number
+};
+
+apiInstance.getConversationsMessagingSupportedcontent(opts)
+  .then((data) => {
+    console.log(`getConversationsMessagingSupportedcontent success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getConversationsMessagingSupportedcontent');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+{: class="table table-striped"}
+
+### Return type
+
+**SupportedContentListing**
+
+<a name="getConversationsMessagingSupportedcontentDefault"></a>
+
+# SupportedContent getConversationsMessagingSupportedcontentDefault()
+
+
+
+GET /api/v2/conversations/messaging/supportedcontent/default
+
+Get the organization&#39;s default supported content profile that will be used as the default when creating an integration.
+
+When an integration is created a supported content ID may be assigned to it. If the supported content ID is not supplied, the default supported content profile will be assigned to it.
+
+Requires ALL permissions: 
+
+* messaging:supportedContent:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+apiInstance.getConversationsMessagingSupportedcontentDefault()
+  .then((data) => {
+    console.log(`getConversationsMessagingSupportedcontentDefault success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getConversationsMessagingSupportedcontentDefault');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+
+### Return type
+
+**SupportedContent**
+
+<a name="getConversationsMessagingSupportedcontentSupportedContentId"></a>
+
+# SupportedContent getConversationsMessagingSupportedcontentSupportedContentId(supportedContentId)
+
+
+
+GET /api/v2/conversations/messaging/supportedcontent/{supportedContentId}
+
+Get a supported content profile
+
+
+
+Requires ALL permissions: 
+
+* messaging:supportedContent:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let supportedContentId = "supportedContentId_example"; // String | Supported Content ID
+
+apiInstance.getConversationsMessagingSupportedcontentSupportedContentId(supportedContentId)
+  .then((data) => {
+    console.log(`getConversationsMessagingSupportedcontentSupportedContentId success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getConversationsMessagingSupportedcontentSupportedContentId');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **supportedContentId** | **String** | Supported Content ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+**SupportedContent**
+
 <a name="getConversationsMessagingThreadingtimeline"></a>
 
 # ConversationThreadingWindow getConversationsMessagingThreadingtimeline()
@@ -5659,6 +5879,61 @@ apiInstance.patchConversationsMessagingIntegrationsWhatsappIntegrationId(integra
 ### Return type
 
 **WhatsAppIntegration**
+
+<a name="patchConversationsMessagingSupportedcontentSupportedContentId"></a>
+
+# SupportedContent patchConversationsMessagingSupportedcontentSupportedContentId(supportedContentId, body)
+
+
+
+PATCH /api/v2/conversations/messaging/supportedcontent/{supportedContentId}
+
+Update a supported content profile
+
+
+
+Requires ALL permissions: 
+
+* messaging:supportedContent:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let supportedContentId = "supportedContentId_example"; // String | Supported Content ID
+let body = {}; // Object | SupportedContent
+
+apiInstance.patchConversationsMessagingSupportedcontentSupportedContentId(supportedContentId, body)
+  .then((data) => {
+    console.log(`patchConversationsMessagingSupportedcontentSupportedContentId success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchConversationsMessagingSupportedcontentSupportedContentId');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **supportedContentId** | **String** | Supported Content ID |  |
+ **body** | **Object** | SupportedContent |  |
+{: class="table table-striped"}
+
+### Return type
+
+**SupportedContent**
 
 <a name="postAnalyticsConversationDetailsProperties"></a>
 
@@ -7968,6 +8243,59 @@ apiInstance.postConversationsMessagingIntegrationsWhatsapp(body)
 
 **WhatsAppIntegration**
 
+<a name="postConversationsMessagingSupportedcontent"></a>
+
+# SupportedContent postConversationsMessagingSupportedcontent(body)
+
+
+
+POST /api/v2/conversations/messaging/supportedcontent
+
+Create a Supported Content profile
+
+
+
+Requires ANY permissions: 
+
+* messaging:supportedContent:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let body = {}; // Object | SupportedContent
+
+apiInstance.postConversationsMessagingSupportedcontent(body)
+  .then((data) => {
+    console.log(`postConversationsMessagingSupportedcontent success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postConversationsMessagingSupportedcontent');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | SupportedContent |  |
+{: class="table table-striped"}
+
+### Return type
+
+**SupportedContent**
+
 <a name="putConversationParticipantFlaggedreason"></a>
 
 # void putConversationParticipantFlaggedreason(conversationId, participantId)
@@ -8243,6 +8571,59 @@ apiInstance.putConversationsMessagingIntegrationsLineIntegrationId(integrationId
 ### Return type
 
 **LineIntegration**
+
+<a name="putConversationsMessagingSupportedcontentDefault"></a>
+
+# SupportedContent putConversationsMessagingSupportedcontentDefault(body)
+
+
+
+PUT /api/v2/conversations/messaging/supportedcontent/default
+
+Set the organization&#39;s default supported content profile that may be assigned to an integration when it is created.
+
+When an integration is created a supported content ID may be assigned to it. If the supported content ID is not supplied, the default supported content profile will be assigned to it.
+
+Requires ALL permissions: 
+
+* messaging:supportedContent:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let body = {}; // Object | SupportedContent
+
+apiInstance.putConversationsMessagingSupportedcontentDefault(body)
+  .then((data) => {
+    console.log(`putConversationsMessagingSupportedcontentDefault success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putConversationsMessagingSupportedcontentDefault');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | SupportedContent |  |
+{: class="table table-striped"}
+
+### Return type
+
+**SupportedContent**
 
 <a name="putConversationsMessagingThreadingtimeline"></a>
 

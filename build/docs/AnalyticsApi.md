@@ -290,6 +290,7 @@ Get a conversation by id
 Requires ANY permissions: 
 
 * analytics:conversationDetail:view
+* analytics:agentConversationDetail:view
 
 ### Example Usage
 
@@ -343,6 +344,7 @@ Gets multiple conversations by id
 Requires ANY permissions: 
 
 * analytics:conversationDetail:view
+* analytics:agentConversationDetail:view
 
 ### Example Usage
 

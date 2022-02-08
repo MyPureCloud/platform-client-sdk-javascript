@@ -5,7 +5,7 @@ class SpeechTextAnalyticsApi {
 	/**
 	 * SpeechTextAnalytics service.
 	 * @module purecloud-platform-client-v2/api/SpeechTextAnalyticsApi
-	 * @version 130.0.0
+	 * @version 131.0.0
 	 */
 
 	/**
@@ -164,26 +164,6 @@ class SpeechTextAnalyticsApi {
 			'/api/v2/speechandtextanalytics/conversations/{conversationId}/communications/{communicationId}/transcripturl', 
 			'GET', 
 			{ 'conversationId': conversationId,'communicationId': communicationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'], 
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get list of supported Speech &amp; Text Analytics dialects
-	 * This api has been deprecated. Use api/v2/topics/dialects instead
-	 */
-	getSpeechandtextanalyticsDialects() { 
-
-		return this.apiClient.callApi(
-			'/api/v2/speechandtextanalytics/dialects', 
-			'GET', 
-			{  }, 
 			{  }, 
 			{  }, 
 			{  }, 

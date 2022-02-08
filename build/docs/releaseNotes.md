@@ -1,304 +1,144 @@
-Platform API version: 5336
+Platform API version: 5365
 
 
-# Major Changes (13 changes)
+# Major Changes (3 changes)
 
-**GET /api/v2/routing/sms/phonenumbers** (6 changes)
+**/api/v2/speechandtextanalytics/dialects** (1 change)
 
-* Parameter phoneNumberType was changed from string to array
-* Parameter phoneNumberStatus was changed from string to array
-* Parameter countryCode was added
-* Parameter sortBy was added
-* Parameter sortOrder was added
-* Parameter language was added
+* Path /api/v2/speechandtextanalytics/dialects was removed
 
-**GET /api/v2/coaching/appointments** (1 change)
+**MessengerPositionSettings** (1 change)
 
-* Parameter intervalCondition was added
+* Model MessengerPositionSettings was removed
 
-**GET /api/v2/coaching/appointments/me** (1 change)
+**MessengerSettings** (1 change)
 
-* Parameter intervalCondition was added
-
-**ScoredAgent** (1 change)
-
-* Property agent was changed from AddressableEntityRef to DomainEntityRef
-
-**DraftRequest** (1 change)
-
-* Property topic was removed
-
-**KpiResult** (3 changes)
-
-* Enum value Voice was removed from property mediaType
-* Enum value Email was removed from property mediaType
-* Enum value Message was removed from property mediaType
+* Property position was removed
 
 
-# Minor Changes (93 changes)
+# Minor Changes (41 changes)
 
-**BotAggregationQuery** (1 change)
+**/api/v2/conversations/messaging/supportedcontent/default** (3 changes)
 
-* Enum value oBotSessionQuery was added to property metrics
+* Path was added
+* Operation GET was added
+* Operation PUT was added
 
-**BotAggregationView** (1 change)
+**/api/v2/conversations/messaging/supportedcontent/{supportedContentId}** (4 changes)
 
-* Enum value oBotSessionQuery was added to property target
+* Path was added
+* Operation GET was added
+* Operation DELETE was added
+* Operation PATCH was added
 
-**ConversationAggregateQueryPredicate** (2 changes)
+**/api/v2/conversations/messaging/supportedcontent** (3 changes)
 
-* Enum value conversationInitiator was added to property dimension
-* Enum value extendedDeliveryStatus was added to property dimension
+* Path was added
+* Operation GET was added
+* Operation POST was added
 
-**ConversationAggregationQuery** (2 changes)
+**/api/v2/messaging/supportedcontent/{supportedContentId}** (4 changes)
 
-* Enum value conversationInitiator was added to property groupBy
-* Enum value extendedDeliveryStatus was added to property groupBy
+* Path was added
+* Operation GET was added
+* Operation DELETE was added
+* Operation PATCH was added
 
-**AnalyticsConversationWithoutAttributes** (1 change)
+**/api/v2/messaging/supportedcontent** (3 changes)
 
-* Optional property conversationInitiator was added
+* Path was added
+* Operation GET was added
+* Operation POST was added
 
-**AnalyticsSession** (1 change)
+**POST /api/v2/speechandtextanalytics/programs/general/jobs** (1 change)
 
-* Optional property extendedDeliveryStatus was added
+* Response 409 was added
 
-**SegmentDetailQueryPredicate** (1 change)
+**ViewFilter** (1 change)
 
-* Enum value extendedDeliveryStatus was added to property dimension
+* Optional property managementUnitIds was added
 
-**AnalyticsConversation** (1 change)
+**MessageData** (2 changes)
 
-* Optional property conversationInitiator was added
+* Optional property normalizedMessage was added
+* Optional property normalizedReceipts was added
 
-**FlowAggregateQueryPredicate** (2 changes)
+**MessagingIntegration** (1 change)
 
-* Enum value conversationInitiator was added to property dimension
-* Enum value extendedDeliveryStatus was added to property dimension
+* Optional property supportedContent was added
 
-**FlowAggregationQuery** (2 changes)
+**FacebookIntegration** (1 change)
 
-* Enum value conversationInitiator was added to property groupBy
-* Enum value extendedDeliveryStatus was added to property groupBy
+* Optional property supportedContent was added
 
-**AuditQueryExecutionStatusResponse** (1 change)
+**FacebookIntegrationUpdateRequest** (1 change)
 
-* Enum value SCIM was added to property serviceName
+* Optional property supportedContent was added
 
-**AuditQueryRequest** (1 change)
+**FacebookIntegrationRequest** (1 change)
 
-* Enum value SCIM was added to property serviceName
+* Optional property supportedContent was added
 
-**AuditLogMessage** (6 changes)
+**LineIntegration** (1 change)
 
-* Enum value SCIM was added to property serviceName
-* Enum value AnalyticsReportingSettings was added to property entityType
-* Enum value Credential was added to property entityType
-* Enum value ResponseAsset was added to property entityType
-* Enum value TimeOffLimit was added to property entityType
-* Enum value TimeOffPlan was added to property entityType
+* Optional property supportedContent was added
 
-**AuditRealtimeQueryRequest** (1 change)
+**LineIntegrationRequest** (1 change)
 
-* Enum value SCIM was added to property serviceName
+* Optional property supportedContent was added
 
-**AuditQueryEntity** (5 changes)
+**OpenIntegration** (1 change)
 
-* Enum value AnalyticsReportingSettings was added to property name
-* Enum value Credential was added to property name
-* Enum value ResponseAsset was added to property name
-* Enum value TimeOffLimit was added to property name
-* Enum value TimeOffPlan was added to property name
+* Optional property supportedContent was added
 
-**AuditQueryService** (1 change)
+**OpenIntegrationUpdateRequest** (1 change)
 
-* Enum value SCIM was added to property name
+* Optional property supportedContent was added
 
-**DefaultObjective** (2 changes)
+**OpenIntegrationRequest** (1 change)
 
-* Optional property topics was added
-* Optional property topicIdsFilterType was added
+* Optional property supportedContent was added
 
-**Objective** (2 changes)
-
-* Optional property topics was added
-* Optional property topicIdsFilterType was added
-
-**CreateMetric** (1 change)
+**SupportedContent** (1 change)
 
 * Model was added
 
-**CreateObjective** (1 change)
+**SupportedContentListing** (1 change)
 
 * Model was added
 
-**Miner** (1 change)
+**TwitterIntegration** (1 change)
 
-* Enum value Message was added to property mediaType
+* Optional property supportedContent was added
 
-**DraftTopicRequest** (1 change)
+**TwitterIntegrationRequest** (1 change)
 
-* Model was added
+* Optional property supportedContent was added
 
-**MinerExecuteRequest** (1 change)
+**WhatsAppIntegration** (1 change)
 
-* Enum value Message was added to property mediaType
+* Optional property supportedContent was added
 
-**OrphanUpdateRequest** (2 changes)
+**WhatsAppIntegrationUpdateRequest** (1 change)
 
-* Optional property exportDate was added
-* Optional property integrationId was added
+* Optional property supportedContent was added
 
-**FailedRecordingEntityListing** (9 changes)
+**WhatsAppIntegrationRequest** (1 change)
 
-* Optional property pageSize was added
-* Optional property pageNumber was added
-* Optional property total was added
-* Optional property firstUri was added
-* Optional property selfUri was added
-* Optional property nextUri was added
-* Optional property previousUri was added
-* Optional property lastUri was added
-* Optional property pageCount was added
+* Optional property supportedContent was added
 
-**RecordingJobEntityListing** (9 changes)
-
-* Optional property pageSize was added
-* Optional property pageNumber was added
-* Optional property total was added
-* Optional property firstUri was added
-* Optional property selfUri was added
-* Optional property nextUri was added
-* Optional property previousUri was added
-* Optional property lastUri was added
-* Optional property pageCount was added
-
-**KpiResult** (3 changes)
-
-* Enum value voice was added to property mediaType
-* Enum value email was added to property mediaType
-* Enum value message was added to property mediaType
-
-**RoutingConversationAttributesResponse** (1 change)
-
-* Optional property scoredAgents was added
-
-**RequestScoredAgent** (1 change)
+**PositionSettings** (1 change)
 
 * Model was added
 
-**RoutingConversationAttributesRequest** (1 change)
+**WebDeploymentConfigurationVersion** (1 change)
 
-* Optional property requestScoredAgents was added
+* Optional property position was added
 
-**SmsPhoneNumber** (4 changes)
+**DevelopmentActivity** (2 changes)
 
-* Optional property country was added
-* Optional property supportsSms was added
-* Optional property supportsMms was added
-* Optional property supportsVoice was added
-
-**GeneralProgramJobRequest** (1 change)
-
-* Enum value pl-PL was added to property dialect
-
-**Dependency** (1 change)
-
-* Enum value KNOWLEDGEBASEDOCUMENT was added to property type
-
-**DependencyObject** (1 change)
-
-* Enum value KNOWLEDGEBASEDOCUMENT was added to property type
-
-**FlowDivisionView** (2 changes)
-
-* Optional property description was added
-* Optional property supportedLanguages was added
-
-**ConversationAppSettings** (1 change)
-
-* Model was added
-
-**MessengerApps** (1 change)
-
-* Optional property conversations was added
-
-**WebMessagingEvent** (1 change)
-
-* Model was added
-
-**WebMessagingEventCoBrowse** (1 change)
-
-* Model was added
-
-**WebMessagingMessage** (2 changes)
-
-* Enum value Event was added to property type
-* Optional property events was added
-
-**CoachingAppointmentResponse** (3 changes)
-
-* Optional property wfmSchedule was added
-* Optional property dateCompleted was added
-* Optional property externalLinks was added
-
-**UpdateCoachingAppointmentRequest** (2 changes)
-
-* Optional property wfmSchedule was added
-* Optional property externalLinks was added
-
-**CreateCoachingAppointmentRequest** (2 changes)
-
-* Optional property wfmSchedule was added
-* Optional property externalLinks was added
-
-**DevelopmentActivity** (1 change)
-
-* Enum value NotCompleted was added to property status
-
-**DevelopmentActivityAggregateQueryResponseMetric** (1 change)
-
-* Enum value nNotCompletedActivities was added to property metric
-
-**DevelopmentActivityAggregateParam** (1 change)
-
-* Enum value nNotCompletedActivities was added to property metrics
-
-**LearningAssignmentAggregateQueryResponseMetric** (1 change)
-
-* Enum value nNotCompletedActivities was added to property metric
-
-**LearningAssignmentAggregateParam** (1 change)
-
-* Enum value nNotCompletedActivities was added to property metrics
-
-**LearningAssignment** (1 change)
-
-* Enum value NotCompleted was added to property state
-
-**LearningAssignmentUpdate** (1 change)
-
-* Enum value NotCompleted was added to property state
+* Optional property percentageScore was added
+* Optional property isPassed was added
 
 
-# Point Changes (8 changes)
-
-**GET /api/v2/ipranges** (1 change)
-
-* Summary was changed
-
-**GET /api/v2/conversations/{conversationId}/recordings/{recordingId}** (5 changes)
-
-* Description was changed for parameter formatId
-* Description was changed for parameter emailFormatId
-* Description was changed for parameter chatFormatId
-* Description was changed for parameter messageFormatId
-* Description was changed for parameter download
-
-**GET /api/v2/conversations/{conversationId}/recordingmetadata** (1 change)
-
-* Summary was changed
-
-**GET /api/v2/conversations/{conversationId}/recordings** (1 change)
-
-* Description was changed for parameter formatId
+# Point Changes (0 changes)

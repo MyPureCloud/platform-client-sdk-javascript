@@ -27,7 +27,7 @@ For direct use in a browser script:
 
 ```{"language":"html"}
 <!-- Include the CJS SDK -->
-<script src="https://sdk-cdn.mypurecloud.com/javascript/130.0.0/purecloud-platform-client-v2.min.js"></script>
+<script src="https://sdk-cdn.mypurecloud.com/javascript/131.0.0/purecloud-platform-client-v2.min.js"></script>
 
 <script type="text/javascript">
   // Obtain a reference to the platformClient object
@@ -44,7 +44,7 @@ For direct use in a browser script:
 
 <script type="text/javascript">
   // Obtain a reference to the platformClient object
-  requirejs(['https://sdk-cdn.mypurecloud.com/javascript/amd/130.0.0/purecloud-platform-client-v2.min.js'], (platformClient) => {
+  requirejs(['https://sdk-cdn.mypurecloud.com/javascript/amd/131.0.0/purecloud-platform-client-v2.min.js'], (platformClient) => {
     console.log(platformClient);
   });
 </script>
@@ -358,9 +358,6 @@ Extended response object example (`body` and `text` have been truncated):
   "status": 200,
   "statusText": "",
   "headers": {
-    "inin-ratelimit-allowed": "180",
-    "inin-ratelimit-count": "3",
-    "inin-ratelimit-reset": "3",
     "pragma": "no-cache",
     "inin-correlation-id": "ec35f2a8-289b-42d4-8893-c50eaf81a3c1",
     "content-type": "application/json",
@@ -409,9 +406,6 @@ Example error response object:
   "status": 404,
   "statusText": "",
   "headers": {
-    "inin-ratelimit-allowed": "300",
-    "inin-ratelimit-count": "6",
-    "inin-ratelimit-reset": "38",
     "pragma": "no-cache",
     "inin-correlation-id": "d11bd3b3-ab7e-4fd4-9687-d04af9f30a63",
     "content-type": "application/json",

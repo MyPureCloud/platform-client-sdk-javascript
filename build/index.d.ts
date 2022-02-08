@@ -13,6 +13,8 @@ declare class ApiClientClass {
 	callApi(path: string, httpMethod: string, pathParams: { [key: string]: string; }, queryParams: { [key: string]: object; }, headerParams: { [key: string]: object; }, formParams: { [key: string]: object; }, bodyParam: any, authNames: Array<string>, contentTypes: Array<string>, accepts: Array<string>): Promise<any>;
 	loginClientCredentialsGrant(clientId: string, clientSecret: string): Promise<AuthData>;
 	loginImplicitGrant(clientId: string, redirectUri: string, opts?: LoginImplicitGrantOptions): Promise<AuthData>;
+	loginCodeAuthorizationGrant(clientId: string, clientSecret: string, authCode: string, redirectUri: string): Promise<AuthData>;
+	refreshCodeAuthorizationGrant(clientId: string, clientSecret: string, refreshToken: string): Promise<AuthData>;
 	logout(logoutRedirectUri: string): void;
 	setAccessToken(token: string): void;
 	setEnvironment(environment: string): void;
@@ -985,6 +987,7 @@ declare class ConversationsApi {
   	deleteConversationsMessagingIntegrationsOpenIntegrationId(integrationId: string): Promise<void>; 
   	deleteConversationsMessagingIntegrationsTwitterIntegrationId(integrationId: string): Promise<void>; 
   	deleteConversationsMessagingIntegrationsWhatsappIntegrationId(integrationId: string): Promise<Models.WhatsAppIntegration>; 
+  	deleteConversationsMessagingSupportedcontentSupportedContentId(supportedContentId: string): Promise<void>; 
   	getAnalyticsConversationDetails(conversationId: string): Promise<Models.AnalyticsConversationWithoutAttributes>; 
   	getAnalyticsConversationsDetails(opts?: ConversationsApi.getAnalyticsConversationsDetailsOptions): Promise<Models.AnalyticsConversationWithoutAttributesMultiGetResponse>; 
   	getAnalyticsConversationsDetailsJob(jobId: string): Promise<Models.AsyncQueryStatus>; 
@@ -1043,6 +1046,9 @@ declare class ConversationsApi {
   	getConversationsMessagingIntegrationsWhatsapp(opts?: ConversationsApi.getConversationsMessagingIntegrationsWhatsappOptions): Promise<Models.WhatsAppIntegrationEntityListing>; 
   	getConversationsMessagingIntegrationsWhatsappIntegrationId(integrationId: string, opts?: ConversationsApi.getConversationsMessagingIntegrationsWhatsappIntegrationIdOptions): Promise<Models.WhatsAppIntegration>; 
   	getConversationsMessagingSticker(messengerType: string, opts?: ConversationsApi.getConversationsMessagingStickerOptions): Promise<Models.MessagingStickerEntityListing>; 
+  	getConversationsMessagingSupportedcontent(opts?: ConversationsApi.getConversationsMessagingSupportedcontentOptions): Promise<Models.SupportedContentListing>; 
+  	getConversationsMessagingSupportedcontentDefault(): Promise<Models.SupportedContent>; 
+  	getConversationsMessagingSupportedcontentSupportedContentId(supportedContentId: string): Promise<Models.SupportedContent>; 
   	getConversationsMessagingThreadingtimeline(): Promise<Models.ConversationThreadingWindow>; 
   	patchConversationParticipant(conversationId: string, participantId: string, body: Models.MediaParticipantRequest): Promise<void>; 
   	patchConversationParticipantAttributes(conversationId: string, participantId: string, body: Models.ParticipantAttributes): Promise<void>; 
@@ -1075,6 +1081,7 @@ declare class ConversationsApi {
   	patchConversationsMessagingIntegrationsOpenIntegrationId(integrationId: string, body: Models.OpenIntegrationUpdateRequest): Promise<Models.OpenIntegration>; 
   	patchConversationsMessagingIntegrationsTwitterIntegrationId(integrationId: string, body: Models.TwitterIntegrationRequest): Promise<Models.TwitterIntegration>; 
   	patchConversationsMessagingIntegrationsWhatsappIntegrationId(integrationId: string, body: Models.WhatsAppIntegrationUpdateRequest): Promise<Models.WhatsAppIntegration>; 
+  	patchConversationsMessagingSupportedcontentSupportedContentId(supportedContentId: string, body: Models.SupportedContent): Promise<Models.SupportedContent>; 
   	postAnalyticsConversationDetailsProperties(conversationId: string, body: Models.PropertyIndexRequest): Promise<Models.PropertyIndexRequest>; 
   	postAnalyticsConversationsAggregatesQuery(body: Models.ConversationAggregationQuery): Promise<Models.ConversationAggregateQueryResponse>; 
   	postAnalyticsConversationsDetailsJobs(body: Models.AsyncConversationQuery): Promise<Models.AsyncQueryResponse>; 
@@ -1117,11 +1124,13 @@ declare class ConversationsApi {
   	postConversationsMessagingIntegrationsOpen(body: Models.OpenIntegrationRequest): Promise<Models.OpenIntegration>; 
   	postConversationsMessagingIntegrationsTwitter(body: Models.TwitterIntegrationRequest): Promise<Models.TwitterIntegration>; 
   	postConversationsMessagingIntegrationsWhatsapp(body: Models.WhatsAppIntegrationRequest): Promise<Models.WhatsAppIntegration>; 
+  	postConversationsMessagingSupportedcontent(body: Models.SupportedContent): Promise<Models.SupportedContent>; 
   	putConversationParticipantFlaggedreason(conversationId: string, participantId: string): Promise<void>; 
   	putConversationTags(conversationId: string, body: Models.ConversationTagsUpdate): Promise<string>; 
   	putConversationsCallParticipantCommunicationUuidata(conversationId: string, participantId: string, communicationId: string, body: Models.SetUuiDataRequest): Promise<Models.Empty>; 
   	putConversationsEmailMessagesDraft(conversationId: string, body: Models.EmailMessage): Promise<Models.EmailMessage>; 
   	putConversationsMessagingIntegrationsLineIntegrationId(integrationId: string, body: Models.LineIntegrationRequest): Promise<Models.LineIntegration>; 
+  	putConversationsMessagingSupportedcontentDefault(body: Models.SupportedContentReference): Promise<Models.SupportedContent>; 
   	putConversationsMessagingThreadingtimeline(body: Models.ConversationThreadingWindow): Promise<Models.ConversationThreadingWindow>;
 }
 
@@ -1221,6 +1230,10 @@ declare namespace ConversationsApi {
 		"expand"?: string;
 	}
 	export interface getConversationsMessagingStickerOptions { 
+		"pageSize"?: number;
+		"pageNumber"?: number;
+	}
+	export interface getConversationsMessagingSupportedcontentOptions { 
 		"pageSize"?: number;
 		"pageNumber"?: number;
 	}
@@ -2345,6 +2358,21 @@ declare namespace LocationsApi {
 	}
 	export interface getLocationsSearchOptions { 
 		"expand"?: Array<string>;
+	}
+}
+
+declare class MessagingApi {  
+  	deleteMessagingSupportedcontentSupportedContentId(supportedContentId: string): Promise<void>; 
+  	getMessagingSupportedcontent(opts?: MessagingApi.getMessagingSupportedcontentOptions): Promise<Models.SupportedContentListing>; 
+  	getMessagingSupportedcontentSupportedContentId(supportedContentId: string): Promise<Models.SupportedContent>; 
+  	patchMessagingSupportedcontentSupportedContentId(supportedContentId: string, body: Models.SupportedContent): Promise<Models.SupportedContent>; 
+  	postMessagingSupportedcontent(body: Models.SupportedContent): Promise<Models.SupportedContent>;
+}
+
+declare namespace MessagingApi { 
+	export interface getMessagingSupportedcontentOptions { 
+		"pageSize"?: number;
+		"pageNumber"?: number;
 	}
 }
 
@@ -3855,7 +3883,6 @@ declare class SpeechTextAnalyticsApi {
   	deleteSpeechandtextanalyticsTopic(topicId: string): Promise<void>; 
   	getSpeechandtextanalyticsConversation(conversationId: string): Promise<Models.ConversationMetrics>; 
   	getSpeechandtextanalyticsConversationCommunicationTranscripturl(conversationId: string, communicationId: string): Promise<Models.TranscriptUrl>; 
-  	getSpeechandtextanalyticsDialects(): Promise<Array<object>>; 
   	getSpeechandtextanalyticsProgram(programId: string): Promise<Models.Program>; 
   	getSpeechandtextanalyticsProgramMappings(programId: string): Promise<Models.ProgramMappings>; 
   	getSpeechandtextanalyticsPrograms(opts?: SpeechTextAnalyticsApi.getSpeechandtextanalyticsProgramsOptions): Promise<Models.ProgramsEntityListing>; 
@@ -8602,8 +8629,8 @@ declare namespace Models {
 		"expirationDate"?: string;
 		"issueDate"?: string;
 		"expired"?: boolean;
-		"signatureValid"?: boolean;
 		"valid"?: boolean;
+		"signatureValid"?: boolean;
 	}
 	
 	export interface Change { 
@@ -12637,6 +12664,8 @@ declare namespace Models {
 		"dateCompleted"?: string;
 		"createdBy"?: Models.UserReference;
 		"dateCreated"?: string;
+		"percentageScore"?: number;
+		"isPassed"?: boolean;
 		"selfUri"?: string;
 		"name"?: string;
 		"type"?: string;
@@ -15245,6 +15274,7 @@ declare namespace Models {
 	export interface FacebookIntegration { 
 		"id": string;
 		"name": string;
+		"supportedContent"?: Models.SupportedContentReference;
 		"appId": string;
 		"pageId"?: string;
 		"pageName"?: string;
@@ -15277,6 +15307,7 @@ declare namespace Models {
 	export interface FacebookIntegrationRequest { 
 		"id"?: string;
 		"name": string;
+		"supportedContent"?: Models.SupportedContentReference;
 		"pageAccessToken"?: string;
 		"userAccessToken"?: string;
 		"pageId"?: string;
@@ -15288,6 +15319,7 @@ declare namespace Models {
 	export interface FacebookIntegrationUpdateRequest { 
 		"id"?: string;
 		"name"?: string;
+		"supportedContent"?: Models.SupportedContentReference;
 		"pageAccessToken"?: string;
 		"userAccessToken"?: string;
 		"selfUri"?: string;
@@ -18474,6 +18506,7 @@ declare namespace Models {
 	export interface LineIntegration { 
 		"id": string;
 		"name": string;
+		"supportedContent"?: Models.SupportedContentReference;
 		"channelId": string;
 		"webhookUri": string;
 		"status"?: string;
@@ -18504,6 +18537,7 @@ declare namespace Models {
 	export interface LineIntegrationRequest { 
 		"id"?: string;
 		"name": string;
+		"supportedContent"?: Models.SupportedContentReference;
 		"channelId"?: string;
 		"channelSecret"?: string;
 		"switcherSecret"?: string;
@@ -19017,6 +19051,8 @@ declare namespace Models {
 		"status": string;
 		"media"?: Array<Models.MessageMedia>;
 		"stickers"?: Array<Models.MessageSticker>;
+		"normalizedMessage"?: Models.ConversationNormalizedMessage;
+		"normalizedReceipts"?: Array<Models.ConversationNormalizedMessage>;
 		"createdBy"?: Models.User;
 		"conversationId"?: string;
 		"selfUri"?: string;
@@ -19196,6 +19232,7 @@ declare namespace Models {
 	export interface MessagingIntegration { 
 		"id": string;
 		"name": string;
+		"supportedContent"?: Models.SupportedContentReference;
 		"status"?: string;
 		"messengerType": string;
 		"recipient"?: Models.DomainEntityRef;
@@ -19270,19 +19307,12 @@ declare namespace Models {
 		"knowledge"?: Models.Knowledge;
 	}
 	
-	export interface MessengerPositionSettings { 
-		"alignment"?: string;
-		"sideSpace"?: number;
-		"bottomSpace"?: number;
-	}
-	
 	export interface MessengerSettings { 
 		"enabled"?: boolean;
 		"styles"?: Models.MessengerStyles;
 		"launcherButton"?: Models.LauncherButtonSettings;
 		"fileUpload"?: Models.FileUploadSettings;
 		"apps"?: Models.MessengerApps;
-		"position"?: Models.MessengerPositionSettings;
 	}
 	
 	export interface MessengerStyles { 
@@ -19957,6 +19987,7 @@ declare namespace Models {
 	export interface OpenIntegration { 
 		"id": string;
 		"name": string;
+		"supportedContent"?: Models.SupportedContentReference;
 		"outboundNotificationWebhookUrl": string;
 		"outboundNotificationWebhookSignatureSecretToken": string;
 		"webhookHeaders"?: { [key: string]: string; };
@@ -19987,6 +20018,7 @@ declare namespace Models {
 	export interface OpenIntegrationRequest { 
 		"id"?: string;
 		"name": string;
+		"supportedContent"?: Models.SupportedContentReference;
 		"outboundNotificationWebhookUrl": string;
 		"outboundNotificationWebhookSignatureSecretToken": string;
 		"webhookHeaders"?: { [key: string]: string; };
@@ -19996,6 +20028,7 @@ declare namespace Models {
 	export interface OpenIntegrationUpdateRequest { 
 		"id"?: string;
 		"name": string;
+		"supportedContent"?: Models.SupportedContentReference;
 		"outboundNotificationWebhookUrl"?: string;
 		"outboundNotificationWebhookSignatureSecretToken"?: string;
 		"webhookHeaders"?: { [key: string]: string; };
@@ -21233,6 +21266,12 @@ declare namespace Models {
 	
 	export interface PolicyUpdate { 
 		"enabled"?: boolean;
+	}
+	
+	export interface PositionSettings { 
+		"alignment"?: string;
+		"sideSpace"?: number;
+		"bottomSpace"?: number;
 	}
 	
 	export interface PostActionInput { 
@@ -26511,6 +26550,31 @@ declare namespace Models {
 		"enabled"?: boolean;
 	}
 	
+	export interface SupportedContent { 
+		"id": string;
+		"name": string;
+		"dateCreated"?: string;
+		"dateModified"?: string;
+		"createdBy"?: Models.DomainEntityRef;
+		"modifiedBy"?: Models.DomainEntityRef;
+		"version"?: number;
+		"mediaTypes"?: Models.MediaTypes;
+		"selfUri"?: string;
+	}
+	
+	export interface SupportedContentListing { 
+		"entities"?: Array<Models.SupportedContent>;
+		"pageSize"?: number;
+		"pageNumber"?: number;
+		"total"?: number;
+		"firstUri"?: string;
+		"selfUri"?: string;
+		"nextUri"?: string;
+		"previousUri"?: string;
+		"lastUri"?: string;
+		"pageCount"?: number;
+	}
+	
 	export interface SupportedContentReference { 
 		"id": string;
 		"name"?: string;
@@ -27890,6 +27954,7 @@ declare namespace Models {
 	export interface TwitterIntegration { 
 		"id": string;
 		"name": string;
+		"supportedContent"?: Models.SupportedContentReference;
 		"accessTokenKey": string;
 		"consumerKey": string;
 		"username"?: string;
@@ -27924,6 +27989,7 @@ declare namespace Models {
 	export interface TwitterIntegrationRequest { 
 		"id"?: string;
 		"name": string;
+		"supportedContent"?: Models.SupportedContentReference;
 		"accessTokenKey": string;
 		"accessTokenSecret": string;
 		"consumerKey": string;
@@ -29070,6 +29136,7 @@ declare namespace Models {
 		"filterQueuesByUserIds"?: Array<string>;
 		"filterUsersByQueueIds"?: Array<string>;
 		"userIds"?: Array<string>;
+		"managementUnitIds"?: Array<string>;
 		"addressTos"?: Array<string>;
 		"addressFroms"?: Array<string>;
 		"outboundCampaignIds"?: Array<string>;
@@ -29548,6 +29615,7 @@ declare namespace Models {
 		"languages"?: Array<string>;
 		"defaultLanguage"?: string;
 		"messenger"?: Models.MessengerSettings;
+		"position"?: Models.PositionSettings;
 		"supportCenter"?: Models.SupportCenterSettings;
 		"cobrowse"?: Models.CobrowseSettings;
 		"journeyEvents"?: Models.JourneyEventsSettings;
@@ -30670,6 +30738,7 @@ declare namespace Models {
 	export interface WhatsAppIntegration { 
 		"id": string;
 		"name": string;
+		"supportedContent"?: Models.SupportedContentReference;
 		"phoneNumber": string;
 		"status"?: string;
 		"recipient"?: Models.DomainEntityRef;
@@ -30701,6 +30770,7 @@ declare namespace Models {
 	export interface WhatsAppIntegrationRequest { 
 		"id"?: string;
 		"name": string;
+		"supportedContent"?: Models.SupportedContentReference;
 		"phoneNumber": string;
 		"wabaCertificate": string;
 		"selfUri"?: string;
@@ -30709,6 +30779,7 @@ declare namespace Models {
 	export interface WhatsAppIntegrationUpdateRequest { 
 		"id"?: string;
 		"name"?: string;
+		"supportedContent"?: Models.SupportedContentReference;
 		"action"?: string;
 		"authenticationMethod"?: string;
 		"confirmationCode"?: string;
