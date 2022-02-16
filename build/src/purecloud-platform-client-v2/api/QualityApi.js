@@ -5,7 +5,7 @@ class QualityApi {
 	/**
 	 * Quality service.
 	 * @module purecloud-platform-client-v2/api/QualityApi
-	 * @version 131.0.0
+	 * @version 131.1.0
 	 */
 
 	/**
@@ -625,6 +625,31 @@ class QualityApi {
 	}
 
 	/**
+	 * Retrieve a list of the latest published evaluation form versions by context ids
+	 * 
+	 * @param {Array.<String>} contextId A comma-delimited list of valid evaluation form context ids
+	 */
+	getQualityFormsEvaluationsBulkContexts(contextId) { 
+		// verify the required parameter 'contextId' is set
+		if (contextId === undefined || contextId === null) {
+			throw 'Missing the required parameter "contextId" when calling getQualityFormsEvaluationsBulkContexts';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/quality/forms/evaluations/bulk/contexts', 
+			'GET', 
+			{  }, 
+			{ 'contextId': this.apiClient.buildCollectionParam(contextId, 'multi') }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get a survey form
 	 * 
 	 * @param {String} formId Form ID
@@ -1126,6 +1151,31 @@ class QualityApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/quality/conversations/audits/query', 
+			'POST', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Query for evaluation aggregates for the current user
+	 * 
+	 * @param {Object} body query
+	 */
+	postQualityEvaluationsAggregatesQueryMe(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postQualityEvaluationsAggregatesQueryMe';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/quality/evaluations/aggregates/query/me', 
 			'POST', 
 			{  }, 
 			{  }, 

@@ -5,7 +5,7 @@ class LanguageUnderstandingApi {
 	/**
 	 * LanguageUnderstanding service.
 	 * @module purecloud-platform-client-v2/api/LanguageUnderstandingApi
-	 * @version 131.0.0
+	 * @version 131.1.0
 	 */
 
 	/**
@@ -463,7 +463,7 @@ class LanguageUnderstandingApi {
 	 * @param {String} minerId Miner ID
 	 * @param {String} intentId The ID of the intent to be retrieved.
 	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.expand Option to fetch utterances
+	 * @param {Object} opts.expand Option to fetch utterances
 	 */
 	getLanguageunderstandingMinerIntent(minerId, intentId, opts) { 
 		opts = opts || {};
@@ -496,7 +496,7 @@ class LanguageUnderstandingApi {
 	 * 
 	 * @param {String} minerId Miner ID
 	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.expand Option to fetch utterances.
+	 * @param {Object} opts.expand Option to fetch utterances.
 	 */
 	getLanguageunderstandingMinerIntents(minerId, opts) { 
 		opts = opts || {};

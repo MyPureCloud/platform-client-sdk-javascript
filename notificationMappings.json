@@ -1,6 +1,10 @@
 {
   "notifications": [
     {
+      "topic": "v2.analytics.conversation.{id}.metrics",
+      "class": "ConversationMetricsTopicConversationMetricRecord"
+    },
+    {
       "topic": "v2.analytics.conversations.details.jobs.availability",
       "class": "ConversationDetailsDatalakeAvailabilityTopicDataAvailabilityChangeNotification"
     },
@@ -277,12 +281,16 @@
       "class": "QueueUserEventTopicQueueMember"
     },
     {
+      "topic": "v2.speechandtextanalytics.programs.general.jobs.{id}",
+      "class": "CreateGeneralProgramTopicsDefinitionsJob"
+    },
+    {
       "topic": "v2.speechandtextanalytics.programs.publishjobs.{id}",
-      "class": "PublishProgramPublishJob"
+      "class": "PublishProgramTopicsDefinitionsJob"
     },
     {
       "topic": "v2.speechandtextanalytics.topics.publishjobs.{id}",
-      "class": "PublishTopicPublishJob"
+      "class": "PublishTopicTopicsDefinitionsJob"
     },
     {
       "topic": "v2.system.no_longer_subscribed.{id}",

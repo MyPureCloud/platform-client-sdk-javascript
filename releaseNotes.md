@@ -1,144 +1,203 @@
-Platform API version: 5365
+Platform API version: 5413
 
 
-# Major Changes (3 changes)
-
-**/api/v2/speechandtextanalytics/dialects** (1 change)
-
-* Path /api/v2/speechandtextanalytics/dialects was removed
-
-**MessengerPositionSettings** (1 change)
-
-* Model MessengerPositionSettings was removed
-
-**MessengerSettings** (1 change)
-
-* Property position was removed
+# Major Changes (0 changes)
 
 
-# Minor Changes (41 changes)
+# Minor Changes (61 changes)
 
-**/api/v2/conversations/messaging/supportedcontent/default** (3 changes)
+**/api/v2/analytics/reporting/settings** (3 changes)
 
 * Path was added
 * Operation GET was added
-* Operation PUT was added
-
-**/api/v2/conversations/messaging/supportedcontent/{supportedContentId}** (4 changes)
-
-* Path was added
-* Operation GET was added
-* Operation DELETE was added
 * Operation PATCH was added
 
-**/api/v2/conversations/messaging/supportedcontent** (3 changes)
-
-* Path was added
-* Operation GET was added
-* Operation POST was added
-
-**/api/v2/messaging/supportedcontent/{supportedContentId}** (4 changes)
-
-* Path was added
-* Operation GET was added
-* Operation DELETE was added
-* Operation PATCH was added
-
-**/api/v2/messaging/supportedcontent** (3 changes)
-
-* Path was added
-* Operation GET was added
-* Operation POST was added
-
-**POST /api/v2/speechandtextanalytics/programs/general/jobs** (1 change)
+**POST /api/v2/conversations/messaging/integrations/facebook** (1 change)
 
 * Response 409 was added
 
-**ViewFilter** (1 change)
+**/api/v2/quality/evaluations/aggregates/query/me** (2 changes)
 
-* Optional property managementUnitIds was added
+* Path was added
+* Operation POST was added
 
-**MessageData** (2 changes)
+**/api/v2/quality/forms/evaluations/bulk/contexts** (2 changes)
 
-* Optional property normalizedMessage was added
-* Optional property normalizedReceipts was added
+* Path was added
+* Operation GET was added
 
-**MessagingIntegration** (1 change)
+**User** (1 change)
 
-* Optional property supportedContent was added
+* Optional property integrationPresence was added
 
-**FacebookIntegration** (1 change)
+**ConversationAggregateQueryPredicate** (1 change)
 
-* Optional property supportedContent was added
+* Enum value customerParticipation was added to property dimension
 
-**FacebookIntegrationUpdateRequest** (1 change)
+**ConversationAggregationQuery** (1 change)
 
-* Optional property supportedContent was added
+* Enum value customerParticipation was added to property groupBy
 
-**FacebookIntegrationRequest** (1 change)
+**AnalyticsConversationWithoutAttributes** (1 change)
 
-* Optional property supportedContent was added
+* Optional property customerParticipation was added
 
-**LineIntegration** (1 change)
+**ConversationDetailQueryPredicate** (2 changes)
 
-* Optional property supportedContent was added
+* Enum value conversationInitiator was added to property dimension
+* Enum value customerParticipation was added to property dimension
 
-**LineIntegrationRequest** (1 change)
+**AnalyticsConversation** (1 change)
 
-* Optional property supportedContent was added
+* Optional property customerParticipation was added
 
-**OpenIntegration** (1 change)
+**FlowAggregateQueryPredicate** (1 change)
 
-* Optional property supportedContent was added
+* Enum value customerParticipation was added to property dimension
 
-**OpenIntegrationUpdateRequest** (1 change)
+**FlowAggregationQuery** (1 change)
 
-* Optional property supportedContent was added
+* Enum value customerParticipation was added to property groupBy
 
-**OpenIntegrationRequest** (1 change)
+**JourneyAggregateQueryPredicate** (1 change)
 
-* Optional property supportedContent was added
+* Enum value journeySessionId was added to property dimension
 
-**SupportedContent** (1 change)
+**JourneyAggregationQuery** (1 change)
 
-* Model was added
+* Enum value journeySessionId was added to property groupBy
 
-**SupportedContentListing** (1 change)
-
-* Model was added
-
-**TwitterIntegration** (1 change)
-
-* Optional property supportedContent was added
-
-**TwitterIntegrationRequest** (1 change)
-
-* Optional property supportedContent was added
-
-**WhatsAppIntegration** (1 change)
-
-* Optional property supportedContent was added
-
-**WhatsAppIntegrationUpdateRequest** (1 change)
-
-* Optional property supportedContent was added
-
-**WhatsAppIntegrationRequest** (1 change)
-
-* Optional property supportedContent was added
-
-**PositionSettings** (1 change)
+**AnalyticsReportingSettings** (1 change)
 
 * Model was added
 
-**WebDeploymentConfigurationVersion** (1 change)
+**AuditLogMessage** (1 change)
 
-* Optional property position was added
+* Enum value Reset was added to property action
 
-**DevelopmentActivity** (2 changes)
+**AuditQueryEntity** (1 change)
 
-* Optional property percentageScore was added
-* Optional property isPassed was added
+* Enum value Reset was added to property actions
+
+**EmailMediaPolicyConditions** (1 change)
+
+* Optional property customerParticipation was added
+
+**MessageMediaPolicyConditions** (1 change)
+
+* Optional property customerParticipation was added
+
+**OrgUser** (1 change)
+
+* Optional property integrationPresence was added
+
+**EventLog** (2 changes)
+
+* Enum value MESSAGING_CAMPAIGN_SCHEDULE was added to property category
+* Enum value EMAIL_CAMPAIGN_SCHEDULE was added to property category
+
+**MessagingCampaign** (1 change)
+
+* Optional property contactListFilters was added
+
+**SmsConfig** (1 change)
+
+* Optional property contentTemplate was added
+
+**UserExpands** (1 change)
+
+* Optional property integrationPresence was added
+
+**DefaultObjective** (2 changes)
+
+* Optional property mediaTypes was added
+* Optional property queues was added
+
+**Objective** (2 changes)
+
+* Optional property mediaTypes was added
+* Optional property queues was added
+
+**CreateObjective** (2 changes)
+
+* Optional property mediaTypes was added
+* Optional property queueIds was added
+
+**WorkdayValuesMetricItem** (1 change)
+
+* Optional property metric was added
+
+**ConversationChannel** (7 changes)
+
+* Enum value Voice was added to property type
+* Enum value Chat was added to property type
+* Enum value Cobrowse was added to property type
+* Enum value Video was added to property type
+* Enum value Screenshare was added to property type
+* Enum value Message was added to property type
+* Optional property messageType was added
+
+**Session** (3 changes)
+
+* Enum value Unknown was added to property originatingDirection
+* Optional property lastUserDisconnectType was added
+* Optional property lastAcdOutcome was added
+
+**TrustUser** (1 change)
+
+* Optional property integrationPresence was added
+
+**EvaluationAggregationQueryMe** (1 change)
+
+* Model was added
+
+**UserMe** (1 change)
+
+* Optional property integrationPresence was added
+
+**Dependency** (1 change)
+
+* Enum value OAUTHCLIENT was added to property type
+
+**DependencyObject** (1 change)
+
+* Enum value OAUTHCLIENT was added to property type
+
+**ConversationAppSettings** (1 change)
+
+* Optional property autoStartType was added
+
+**SupportCenterSettings** (1 change)
+
+* Optional property knowledgeBase was added
+
+**BusinessUnitSettings** (1 change)
+
+* Optional property scheduling was added
+
+**UpdateBusinessUnitSettings** (1 change)
+
+* Optional property scheduling was added
+
+**CreateBusinessUnitSettings** (1 change)
+
+* Optional property scheduling was added
+
+**BuScheduleRun** (1 change)
+
+* Optional property messageSeverityCounts was added
+
+**ScheduleGenerationResult** (1 change)
+
+* Optional property messageSeverities was added
+
+**ScheduleGenerationResultSummary** (1 change)
+
+* Optional property messageSeverityCounts was added
+
+**BuGenerateScheduleRequest** (1 change)
+
+* Optional property options was added
 
 
 # Point Changes (0 changes)

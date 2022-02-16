@@ -5,7 +5,7 @@ class TelephonyProvidersEdgeApi {
 	/**
 	 * TelephonyProvidersEdge service.
 	 * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-	 * @version 131.0.0
+	 * @version 131.1.0
 	 */
 
 	/**
@@ -1419,7 +1419,7 @@ class TelephonyProvidersEdgeApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
-	 * @param {String} opts.sortBy Sort by (default to startNumber)
+	 * @param {String} opts.sortBy Sort by
 	 * @param {String} opts._number Number
 	 */
 	getTelephonyProvidersEdgesExtensionpools(opts) { 

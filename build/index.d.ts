@@ -126,10 +126,12 @@ declare class AnalyticsApi {
   	getAnalyticsReportingScheduleHistoryLatest(scheduleId: string): Promise<Models.ReportRunEntry>; 
   	getAnalyticsReportingScheduleHistoryRunId(runId: string, scheduleId: string): Promise<Models.ReportRunEntry>; 
   	getAnalyticsReportingSchedules(opts?: AnalyticsApi.getAnalyticsReportingSchedulesOptions): Promise<Models.ReportScheduleEntityListing>; 
+  	getAnalyticsReportingSettings(): Promise<Models.AnalyticsReportingSettings>; 
   	getAnalyticsReportingTimeperiods(): Promise<Array<string>>; 
   	getAnalyticsUsersDetailsJob(jobId: string): Promise<Models.AsyncQueryStatus>; 
   	getAnalyticsUsersDetailsJobResults(jobId: string, opts?: AnalyticsApi.getAnalyticsUsersDetailsJobResultsOptions): Promise<Models.AnalyticsUserDetailsAsyncQueryResponse>; 
   	getAnalyticsUsersDetailsJobsAvailability(): Promise<Models.DataAvailabilityResponse>; 
+  	patchAnalyticsReportingSettings(body: Models.AnalyticsReportingSettings): Promise<Models.AnalyticsReportingSettings>; 
   	postAnalyticsBotsAggregatesQuery(body: Models.BotAggregationQuery): Promise<Models.BotAggregateQueryResponse>; 
   	postAnalyticsConversationDetailsProperties(conversationId: string, body: Models.PropertyIndexRequest): Promise<Models.PropertyIndexRequest>; 
   	postAnalyticsConversationsAggregatesQuery(body: Models.ConversationAggregationQuery): Promise<Models.ConversationAggregateQueryResponse>; 
@@ -2966,6 +2968,7 @@ declare class QualityApi {
   	getQualityFormsEvaluation(formId: string): Promise<Models.EvaluationForm>; 
   	getQualityFormsEvaluationVersions(formId: string, opts?: QualityApi.getQualityFormsEvaluationVersionsOptions): Promise<Models.EvaluationFormEntityListing>; 
   	getQualityFormsEvaluations(opts?: QualityApi.getQualityFormsEvaluationsOptions): Promise<Models.EvaluationFormEntityListing>; 
+  	getQualityFormsEvaluationsBulkContexts(contextId: Array<string>): Promise<Array<Models.EvaluationForm>>; 
   	getQualityFormsSurvey(formId: string): Promise<Models.SurveyForm>; 
   	getQualityFormsSurveyVersions(formId: string, opts?: QualityApi.getQualityFormsSurveyVersionsOptions): Promise<Models.SurveyFormEntityListing>; 
   	getQualityFormsSurveys(opts?: QualityApi.getQualityFormsSurveysOptions): Promise<Models.SurveyFormEntityListing>; 
@@ -2985,6 +2988,7 @@ declare class QualityApi {
   	postQualityCalibrations(body: Models.CalibrationCreate, opts?: QualityApi.postQualityCalibrationsOptions): Promise<Models.Calibration>; 
   	postQualityConversationEvaluations(conversationId: string, body: Models.Evaluation, opts?: QualityApi.postQualityConversationEvaluationsOptions): Promise<Models.Evaluation>; 
   	postQualityConversationsAuditsQuery(body: Models.QMAuditQueryRequest): Promise<Models.QualityAuditQueryExecutionStatusResponse>; 
+  	postQualityEvaluationsAggregatesQueryMe(body: Models.EvaluationAggregationQueryMe): Promise<Models.EvaluationAggregateQueryResponse>; 
   	postQualityEvaluationsScoring(body: Models.EvaluationFormAndScoringSet): Promise<Models.EvaluationScoringSet>; 
   	postQualityForms(body: Models.EvaluationForm): Promise<Models.EvaluationForm>; 
   	postQualityFormsEvaluations(body: Models.EvaluationForm): Promise<Models.EvaluationForm>; 
@@ -5755,6 +5759,7 @@ declare namespace Models {
 		"conversationId"?: string;
 		"conversationInitiator"?: string;
 		"conversationStart"?: string;
+		"customerParticipation"?: boolean;
 		"divisionIds"?: Array<string>;
 		"externalTag"?: string;
 		"knowledgeBaseIds"?: Array<string>;
@@ -5813,6 +5818,7 @@ declare namespace Models {
 		"conversationId"?: string;
 		"conversationInitiator"?: string;
 		"conversationStart"?: string;
+		"customerParticipation"?: boolean;
 		"divisionIds"?: Array<string>;
 		"externalTag"?: string;
 		"knowledgeBaseIds"?: Array<string>;
@@ -5929,6 +5935,11 @@ declare namespace Models {
 		"metric"?: string;
 		"size"?: number;
 		"ranges"?: Array<Models.AggregationRange>;
+	}
+	
+	export interface AnalyticsReportingSettings { 
+		"piiMaskingEnabled"?: boolean;
+		"queueAgentAccessObfuscation"?: boolean;
 	}
 	
 	export interface AnalyticsResolution { 
@@ -7356,8 +7367,9 @@ declare namespace Models {
 	
 	export interface BuGenerateScheduleRequest { 
 		"description": string;
-		"shortTermForecast": Models.BuShortTermForecastReference;
+		"shortTermForecast"?: Models.BuShortTermForecastReference;
 		"weekCount": number;
+		"options"?: Models.SchedulingOptionsRequest;
 	}
 	
 	export interface BuGetCurrentAgentScheduleRequest { 
@@ -7507,6 +7519,7 @@ declare namespace Models {
 		"schedulingCanceledBy"?: Models.UserReference;
 		"schedulingCompletedTime"?: string;
 		"messageCount"?: number;
+		"messageSeverityCounts"?: Array<Models.SchedulerMessageSeverityCount>;
 		"reschedulingOptions"?: Models.ReschedulingOptionsRunResponse;
 		"reschedulingResultExpiration"?: string;
 		"selfUri"?: string;
@@ -7846,6 +7859,7 @@ declare namespace Models {
 		"startDayOfWeek": string;
 		"timeZone": string;
 		"shortTermForecasting"?: Models.BuShortTermForecastingSettings;
+		"scheduling"?: Models.BuSchedulingSettings;
 		"metadata": Models.WfmVersionedEntityMetadata;
 	}
 	
@@ -8629,8 +8643,8 @@ declare namespace Models {
 		"expirationDate"?: string;
 		"issueDate"?: string;
 		"expired"?: boolean;
-		"valid"?: boolean;
 		"signatureValid"?: boolean;
+		"valid"?: boolean;
 	}
 	
 	export interface Change { 
@@ -9730,6 +9744,7 @@ declare namespace Models {
 	export interface ConversationAppSettings { 
 		"showAgentTypingIndicator"?: boolean;
 		"showUserTypingIndicator"?: boolean;
+		"autoStartType"?: string;
 	}
 	
 	export interface ConversationAssociation { 
@@ -10041,6 +10056,7 @@ declare namespace Models {
 	
 	export interface ConversationChannel { 
 		"type"?: string;
+		"messageType"?: string;
 		"platform"?: string;
 	}
 	
@@ -11141,6 +11157,97 @@ declare namespace Models {
 		"participantMetrics"?: Models.ParticipantMetrics;
 	}
 	
+	export interface ConversationMetricsTopicConversationMetricRecord { 
+		"metric"?: string;
+		"metricDate"?: string;
+		"value"?: number;
+		"recordId"?: string;
+		"activeSkillIds"?: Array<string>;
+		"addressFrom"?: string;
+		"addressTo"?: string;
+		"agentAssistantId"?: string;
+		"agentBullseyeRing"?: number;
+		"agentOwned"?: boolean;
+		"ani"?: string;
+		"assignerId"?: string;
+		"authenticated"?: boolean;
+		"conversationId"?: string;
+		"conversationInitiator"?: string;
+		"convertedFrom"?: string;
+		"convertedTo"?: string;
+		"deliveryStatus"?: string;
+		"destinationAddresses"?: Array<string>;
+		"direction"?: string;
+		"disconnectType"?: string;
+		"divisionIds"?: Array<string>;
+		"dnis"?: string;
+		"edgeId"?: string;
+		"eligibleAgentCounts"?: Array<number>;
+		"extendedDeliveryStatus"?: string;
+		"externalContactId"?: string;
+		"externalMediaCount"?: number;
+		"externalOrganizationId"?: string;
+		"externalTag"?: string;
+		"firstQueue"?: boolean;
+		"flaggedReason"?: string;
+		"flowInType"?: string;
+		"flowOutType"?: string;
+		"groupId"?: string;
+		"interactionType"?: string;
+		"journeyActionId"?: string;
+		"journeyActionMapId"?: string;
+		"journeyActionMapVersion"?: number;
+		"journeyCustomerId"?: string;
+		"journeyCustomerIdType"?: string;
+		"journeyCustomerSessionId"?: string;
+		"journeyCustomerSessionIdType"?: string;
+		"knowledgeBaseIds"?: Array<string>;
+		"mediaCount"?: number;
+		"mediaType"?: string;
+		"messageType"?: string;
+		"originatingDirection"?: string;
+		"outboundCampaignId"?: string;
+		"outboundContactId"?: string;
+		"outboundContactListId"?: string;
+		"participantName"?: string;
+		"peerId"?: string;
+		"provider"?: string;
+		"purpose"?: string;
+		"queueId"?: string;
+		"remote"?: string;
+		"removedSkillIds"?: Array<string>;
+		"reoffered"?: boolean;
+		"requestedLanguageId"?: string;
+		"requestedRoutingSkillIds"?: Array<string>;
+		"requestedRoutings"?: Array<string>;
+		"roomId"?: string;
+		"routingPriority"?: number;
+		"routingRing"?: number;
+		"selectedAgentId"?: string;
+		"selectedAgentRank"?: number;
+		"selfServed"?: boolean;
+		"sessionDnis"?: string;
+		"sessionId"?: string;
+		"stationId"?: string;
+		"teamId"?: string;
+		"usedRouting"?: string;
+		"userId"?: string;
+		"waitingInteractionCounts"?: Array<number>;
+		"wrapUpCode"?: string;
+		"proposedAgents"?: Array<Models.ConversationMetricsTopicConversationProposedAgent>;
+		"scoredAgents"?: Array<Models.ConversationMetricsTopicConversationScoredAgent>;
+	}
+	
+	export interface ConversationMetricsTopicConversationProposedAgent { 
+		"agentRank"?: number;
+		"proposedAgentId"?: string;
+	}
+	
+	export interface ConversationMetricsTopicConversationScoredAgent { 
+		"agentScore"?: number;
+		"scoredAgentId"?: string;
+	}
+	
 	export interface ConversationNormalizedMessage { 
 		"id"?: string;
 		"channel"?: Models.ConversationMessagingChannel;
@@ -11702,6 +11809,7 @@ declare namespace Models {
 		"startDayOfWeek": string;
 		"timeZone": string;
 		"shortTermForecasting"?: Models.BuShortTermForecastingSettings;
+		"scheduling"?: Models.BuSchedulingSettings;
 	}
 	
 	export interface CreateCallRequest { 
@@ -11791,6 +11899,11 @@ declare namespace Models {
 		"externalContactId"?: string;
 	}
 	
+	export interface CreateGeneralProgramTopicsDefinitionsJob { 
+		"id"?: string;
+		"state"?: string;
+	}
+	
 	export interface CreateIntegrationRequest { 
 		"id"?: string;
 		"name": string;
@@ -11829,6 +11942,8 @@ declare namespace Models {
 		"zones"?: Array<Models.ObjectiveZone>;
 		"enabled"?: boolean;
 		"topicIds"?: Array<string>;
+		"mediaTypes"?: Array<string>;
+		"queueIds"?: Array<string>;
 		"topicIdsFilterType"?: string;
 		"dateStart"?: string;
 	}
@@ -12538,6 +12653,8 @@ declare namespace Models {
 		"templateId"?: string;
 		"zones"?: Array<Models.ObjectiveZone>;
 		"enabled"?: boolean;
+		"mediaTypes"?: Array<string>;
+		"queues"?: Array<Models.AddressableEntityRef>;
 		"topics"?: Array<Models.AddressableEntityRef>;
 		"topicIdsFilterType"?: string;
 	}
@@ -14592,6 +14709,7 @@ declare namespace Models {
 		"wrapupCodes"?: Array<Models.WrapupCode>;
 		"languages"?: Array<Models.Language>;
 		"timeAllowed"?: Models.TimeAllowed;
+		"customerParticipation"?: string;
 	}
 	
 	export interface EmailMessage { 
@@ -14844,6 +14962,15 @@ declare namespace Models {
 		"flattenMultivaluedDimensions"?: boolean;
 		"views"?: Array<Models.EvaluationAggregationView>;
 		"alternateTimeDimension"?: string;
+	}
+	
+	export interface EvaluationAggregationQueryMe { 
+		"interval": string;
+		"timeZone"?: string;
+		"groupBy"?: Array<string>;
+		"metrics": Array<string>;
+		"alternateTimeDimension"?: string;
+		"contextId"?: string;
 	}
 	
 	export interface EvaluationAggregationView { 
@@ -19165,6 +19292,7 @@ declare namespace Models {
 		"wrapupCodes"?: Array<Models.WrapupCode>;
 		"languages"?: Array<Models.Language>;
 		"timeAllowed"?: Models.TimeAllowed;
+		"customerParticipation"?: string;
 	}
 	
 	export interface MessageSticker { 
@@ -19191,6 +19319,7 @@ declare namespace Models {
 		"alwaysRunning"?: boolean;
 		"contactSorts"?: Array<Models.ContactSort>;
 		"messagesPerMinute": number;
+		"contactListFilters"?: Array<Models.DomainEntityRef>;
 		"errors"?: Array<Models.RestErrorDetail>;
 		"smsConfig"?: Models.SmsConfig;
 		"selfUri"?: string;
@@ -19899,6 +20028,8 @@ declare namespace Models {
 		"templateId"?: string;
 		"zones"?: Array<Models.ObjectiveZone>;
 		"enabled"?: boolean;
+		"mediaTypes"?: Array<string>;
+		"queues"?: Array<Models.AddressableEntityRef>;
 		"topics"?: Array<Models.AddressableEntityRef>;
 		"topicIdsFilterType"?: string;
 		"dateStart"?: string;
@@ -20132,6 +20263,7 @@ declare namespace Models {
 		"employerInfo"?: Models.EmployerInfo;
 		"routingStatus"?: Models.RoutingStatus;
 		"presence"?: Models.UserPresence;
+		"integrationPresence"?: Models.UserPresence;
 		"conversationSummary"?: Models.UserConversationSummary;
 		"outOfOffice"?: Models.OutOfOffice;
 		"geolocation"?: Models.Geolocation;
@@ -21570,12 +21702,12 @@ declare namespace Models {
 		"id": string;
 	}
 	
-	export interface PublishProgramPublishJob { 
+	export interface PublishProgramTopicsDefinitionsJob { 
 		"id"?: string;
 		"state"?: string;
 	}
 	
-	export interface PublishTopicPublishJob { 
+	export interface PublishTopicTopicsDefinitionsJob { 
 		"id"?: string;
 		"state"?: string;
 	}
@@ -25035,12 +25167,14 @@ declare namespace Models {
 		"runId"?: string;
 		"messageCount"?: number;
 		"messages"?: Array<Models.ScheduleGenerationMessage>;
+		"messageSeverities"?: Array<Models.SchedulerMessageTypeSeverity>;
 	}
 	
 	export interface ScheduleGenerationResultSummary { 
 		"failed"?: boolean;
 		"runId"?: string;
 		"messageCount"?: number;
+		"messageSeverityCounts"?: Array<Models.SchedulerMessageSeverityCount>;
 	}
 	
 	export interface ScheduleGenerationWarning { 
@@ -25830,6 +25964,8 @@ declare namespace Models {
 		"conversationChannels"?: Array<Models.ConversationChannel>;
 		"originatingDirection"?: string;
 		"conversationSubject"?: string;
+		"lastUserDisconnectType"?: string;
+		"lastAcdOutcome"?: string;
 		"authenticated"?: boolean;
 		"selfUri"?: string;
 		"createdDate"?: string;
@@ -26199,6 +26335,7 @@ declare namespace Models {
 		"messageColumn": string;
 		"phoneColumn": string;
 		"senderSmsPhoneNumber": Models.SmsPhoneNumberRef;
+		"contentTemplate"?: Models.DomainEntityRef;
 	}
 	
 	export interface SmsPhoneNumber { 
@@ -26312,12 +26449,12 @@ declare namespace Models {
 		"expectedDialects"?: Array<string>;
 	}
 	
-	export interface StatEventCampaignTopicDatum { 
+	export interface StatEventCampaignTopicIntervalMetrics { 
 		"interval"?: string;
-		"metrics"?: Array<Models.StatEventCampaignTopicMetric>;
+		"metrics"?: Array<Models.StatEventCampaignTopicMetricStats>;
 	}
 	
-	export interface StatEventCampaignTopicMetric { 
+	export interface StatEventCampaignTopicMetricStats { 
 		"metric"?: string;
 		"qualifier"?: string;
 		"stats"?: { [key: string]: number; };
@@ -26325,15 +26462,15 @@ declare namespace Models {
 	
 	export interface StatEventCampaignTopicStatsNotification { 
 		"group"?: { [key: string]: string; };
-		"data"?: Array<Models.StatEventCampaignTopicDatum>;
+		"data"?: Array<Models.StatEventCampaignTopicIntervalMetrics>;
 	}
 	
-	export interface StatEventFlowOutcomeTopicDatum { 
+	export interface StatEventFlowOutcomeTopicIntervalMetrics { 
 		"interval"?: string;
-		"metrics"?: Array<Models.StatEventFlowOutcomeTopicMetric>;
+		"metrics"?: Array<Models.StatEventFlowOutcomeTopicMetricStats>;
 	}
 	
-	export interface StatEventFlowOutcomeTopicMetric { 
+	export interface StatEventFlowOutcomeTopicMetricStats { 
 		"metric"?: string;
 		"qualifier"?: string;
 		"stats"?: { [key: string]: number; };
@@ -26341,15 +26478,15 @@ declare namespace Models {
 	
 	export interface StatEventFlowOutcomeTopicStatsNotification { 
 		"group"?: { [key: string]: string; };
-		"data"?: Array<Models.StatEventFlowOutcomeTopicDatum>;
+		"data"?: Array<Models.StatEventFlowOutcomeTopicIntervalMetrics>;
 	}
 	
-	export interface StatEventFlowTopicDatum { 
+	export interface StatEventFlowTopicIntervalMetrics { 
 		"interval"?: string;
-		"metrics"?: Array<Models.StatEventFlowTopicMetric>;
+		"metrics"?: Array<Models.StatEventFlowTopicMetricStats>;
 	}
 	
-	export interface StatEventFlowTopicMetric { 
+	export interface StatEventFlowTopicMetricStats { 
 		"metric"?: string;
 		"qualifier"?: string;
 		"stats"?: { [key: string]: number; };
@@ -26357,15 +26494,15 @@ declare namespace Models {
 	
 	export interface StatEventFlowTopicStatsNotification { 
 		"group"?: { [key: string]: string; };
-		"data"?: Array<Models.StatEventFlowTopicDatum>;
+		"data"?: Array<Models.StatEventFlowTopicIntervalMetrics>;
 	}
 	
-	export interface StatEventQueueTopicDatum { 
+	export interface StatEventQueueTopicIntervalMetrics { 
 		"interval"?: string;
-		"metrics"?: Array<Models.StatEventQueueTopicMetric>;
+		"metrics"?: Array<Models.StatEventQueueTopicMetricStats>;
 	}
 	
-	export interface StatEventQueueTopicMetric { 
+	export interface StatEventQueueTopicMetricStats { 
 		"metric"?: string;
 		"qualifier"?: string;
 		"stats"?: { [key: string]: number; };
@@ -26373,15 +26510,15 @@ declare namespace Models {
 	
 	export interface StatEventQueueTopicStatsNotification { 
 		"group"?: { [key: string]: string; };
-		"data"?: Array<Models.StatEventQueueTopicDatum>;
+		"data"?: Array<Models.StatEventQueueTopicIntervalMetrics>;
 	}
 	
-	export interface StatEventUserTopicDatum { 
+	export interface StatEventUserTopicIntervalMetrics { 
 		"interval"?: string;
-		"metrics"?: Array<Models.StatEventUserTopicMetric>;
+		"metrics"?: Array<Models.StatEventUserTopicMetricStats>;
 	}
 	
-	export interface StatEventUserTopicMetric { 
+	export interface StatEventUserTopicMetricStats { 
 		"metric"?: string;
 		"qualifier"?: string;
 		"stats"?: { [key: string]: number; };
@@ -26389,15 +26526,15 @@ declare namespace Models {
 	
 	export interface StatEventUserTopicStatsNotification { 
 		"group"?: { [key: string]: string; };
-		"data"?: Array<Models.StatEventUserTopicDatum>;
+		"data"?: Array<Models.StatEventUserTopicIntervalMetrics>;
 	}
 	
-	export interface StatEventWrapUpCodeTopicDatum { 
+	export interface StatEventWrapUpCodeTopicIntervalMetrics { 
 		"interval"?: string;
-		"metrics"?: Array<Models.StatEventWrapUpCodeTopicMetric>;
+		"metrics"?: Array<Models.StatEventWrapUpCodeTopicMetricStats>;
 	}
 	
-	export interface StatEventWrapUpCodeTopicMetric { 
+	export interface StatEventWrapUpCodeTopicMetricStats { 
 		"metric"?: string;
 		"qualifier"?: string;
 		"stats"?: { [key: string]: number; };
@@ -26405,7 +26542,7 @@ declare namespace Models {
 	
 	export interface StatEventWrapUpCodeTopicStatsNotification { 
 		"group"?: { [key: string]: string; };
-		"data"?: Array<Models.StatEventWrapUpCodeTopicDatum>;
+		"data"?: Array<Models.StatEventWrapUpCodeTopicIntervalMetrics>;
 	}
 	
 	export interface Station { 
@@ -26548,6 +26685,7 @@ declare namespace Models {
 	
 	export interface SupportCenterSettings { 
 		"enabled"?: boolean;
+		"knowledgeBase"?: Models.AddressableEntityRef;
 	}
 	
 	export interface SupportedContent { 
@@ -27777,6 +27915,7 @@ declare namespace Models {
 		"employerInfo"?: Models.EmployerInfo;
 		"routingStatus"?: Models.RoutingStatus;
 		"presence"?: Models.UserPresence;
+		"integrationPresence"?: Models.UserPresence;
 		"conversationSummary"?: Models.UserConversationSummary;
 		"outOfOffice"?: Models.OutOfOffice;
 		"geolocation"?: Models.Geolocation;
@@ -28074,6 +28213,7 @@ declare namespace Models {
 		"startDayOfWeek"?: string;
 		"timeZone"?: string;
 		"shortTermForecasting"?: Models.BuShortTermForecastingSettings;
+		"scheduling"?: Models.BuSchedulingSettings;
 		"metadata": Models.WfmVersionedEntityMetadata;
 	}
 	
@@ -28244,6 +28384,7 @@ declare namespace Models {
 		"employerInfo"?: Models.EmployerInfo;
 		"routingStatus"?: Models.RoutingStatus;
 		"presence"?: Models.UserPresence;
+		"integrationPresence"?: Models.UserPresence;
 		"conversationSummary"?: Models.UserConversationSummary;
 		"outOfOffice"?: Models.OutOfOffice;
 		"geolocation"?: Models.Geolocation;
@@ -28508,6 +28649,7 @@ declare namespace Models {
 	export interface UserExpands { 
 		"routingStatus"?: Models.RoutingStatus;
 		"presence"?: Models.UserPresence;
+		"integrationPresence"?: Models.UserPresence;
 		"conversationSummary"?: Models.UserConversationSummary;
 		"outOfOffice"?: Models.OutOfOffice;
 		"geolocation"?: Models.Geolocation;
@@ -28593,6 +28735,7 @@ declare namespace Models {
 		"employerInfo"?: Models.EmployerInfo;
 		"routingStatus"?: Models.RoutingStatus;
 		"presence"?: Models.UserPresence;
+		"integrationPresence"?: Models.UserPresence;
 		"conversationSummary"?: Models.UserConversationSummary;
 		"outOfOffice"?: Models.OutOfOffice;
 		"geolocation"?: Models.Geolocation;
@@ -31073,6 +31216,7 @@ declare namespace Models {
 	}
 	
 	export interface WorkdayValuesMetricItem { 
+		"metric"?: Models.AddressableEntityRef;
 		"metricDefinition"?: Models.DomainEntityRef;
 		"average"?: number;
 		"unitType"?: string;

@@ -2989,7 +2989,7 @@ let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 let opts = { 
   'pageSize': 25, // Number | Page size
   'pageNumber': 1, // Number | Page number
-  'sortBy': "startNumber", // String | Sort by
+  'sortBy': "sortBy_example", // String | Sort by
   '_number': "_number_example" // String | Number
 };
 
@@ -3010,7 +3010,7 @@ apiInstance.getTelephonyProvidersEdgesExtensionpools(opts)
 | ------------- | ------------- | ------------- | ------------- |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
- **sortBy** | **String** | Sort by | [optional] [default to startNumber] |
+ **sortBy** | **String** | Sort by | [optional]  |
  **_number** | **String** | Number | [optional]  |
 {: class="table table-striped"}
 

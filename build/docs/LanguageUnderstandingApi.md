@@ -952,7 +952,7 @@ apiInstance.getLanguageunderstandingMinerIntent(minerId, intentId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **minerId** | **String** | Miner ID |  |
  **intentId** | **String** | The ID of the intent to be retrieved. |  |
- **expand** | **String** | Option to fetch utterances | [optional]  |
+ **expand** | **String** | Option to fetch utterances | [optional] <br />**Values**: phrases, utterances |
 {: class="table table-striped"}
 
 ### Return type
@@ -1009,7 +1009,7 @@ apiInstance.getLanguageunderstandingMinerIntents(minerId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **minerId** | **String** | Miner ID |  |
- **expand** | **String** | Option to fetch utterances. | [optional]  |
+ **expand** | **String** | Option to fetch utterances. | [optional] <br />**Values**: phrases, utterances |
 {: class="table table-striped"}
 
 ### Return type

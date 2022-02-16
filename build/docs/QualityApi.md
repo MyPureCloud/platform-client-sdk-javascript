@@ -27,6 +27,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getQualityFormsEvaluation**](QualityApi.html#getQualityFormsEvaluation) | **GET** /api/v2/quality/forms/evaluations/{formId} | Get an evaluation form
 [**getQualityFormsEvaluationVersions**](QualityApi.html#getQualityFormsEvaluationVersions) | **GET** /api/v2/quality/forms/evaluations/{formId}/versions | Gets all the revisions for a specific evaluation.
 [**getQualityFormsEvaluations**](QualityApi.html#getQualityFormsEvaluations) | **GET** /api/v2/quality/forms/evaluations | Get the list of evaluation forms
+[**getQualityFormsEvaluationsBulkContexts**](QualityApi.html#getQualityFormsEvaluationsBulkContexts) | **GET** /api/v2/quality/forms/evaluations/bulk/contexts | Retrieve a list of the latest published evaluation form versions by context ids
 [**getQualityFormsSurvey**](QualityApi.html#getQualityFormsSurvey) | **GET** /api/v2/quality/forms/surveys/{formId} | Get a survey form
 [**getQualityFormsSurveyVersions**](QualityApi.html#getQualityFormsSurveyVersions) | **GET** /api/v2/quality/forms/surveys/{formId}/versions | Gets all the revisions for a specific survey.
 [**getQualityFormsSurveys**](QualityApi.html#getQualityFormsSurveys) | **GET** /api/v2/quality/forms/surveys | Get the list of survey forms
@@ -46,6 +47,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postQualityCalibrations**](QualityApi.html#postQualityCalibrations) | **POST** /api/v2/quality/calibrations | Create a calibration
 [**postQualityConversationEvaluations**](QualityApi.html#postQualityConversationEvaluations) | **POST** /api/v2/quality/conversations/{conversationId}/evaluations | Create an evaluation
 [**postQualityConversationsAuditsQuery**](QualityApi.html#postQualityConversationsAuditsQuery) | **POST** /api/v2/quality/conversations/audits/query | Create audit query execution
+[**postQualityEvaluationsAggregatesQueryMe**](QualityApi.html#postQualityEvaluationsAggregatesQueryMe) | **POST** /api/v2/quality/evaluations/aggregates/query/me | Query for evaluation aggregates for the current user
 [**postQualityEvaluationsScoring**](QualityApi.html#postQualityEvaluationsScoring) | **POST** /api/v2/quality/evaluations/scoring | Score evaluation
 [**postQualityForms**](QualityApi.html#postQualityForms) | **POST** /api/v2/quality/forms | Create an evaluation form.
 [**postQualityFormsEvaluations**](QualityApi.html#postQualityFormsEvaluations) | **POST** /api/v2/quality/forms/evaluations | Create an evaluation form.
@@ -1298,6 +1300,59 @@ apiInstance.getQualityFormsEvaluations(opts)
 
 **EvaluationFormEntityListing**
 
+<a name="getQualityFormsEvaluationsBulkContexts"></a>
+
+# [EvaluationForm] getQualityFormsEvaluationsBulkContexts(contextId)
+
+
+
+GET /api/v2/quality/forms/evaluations/bulk/contexts
+
+Retrieve a list of the latest published evaluation form versions by context ids
+
+
+
+Requires ALL permissions: 
+
+* quality:evaluationForm:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.QualityApi();
+
+let contextId = ["contextId_example"]; // [String] | A comma-delimited list of valid evaluation form context ids
+
+apiInstance.getQualityFormsEvaluationsBulkContexts(contextId)
+  .then((data) => {
+    console.log(`getQualityFormsEvaluationsBulkContexts success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getQualityFormsEvaluationsBulkContexts');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **contextId** | **[String]** | A comma-delimited list of valid evaluation form context ids |  |
+{: class="table table-striped"}
+
+### Return type
+
+**[EvaluationForm]**
+
 <a name="getQualityFormsSurvey"></a>
 
 # SurveyForm getQualityFormsSurvey(formId)
@@ -2362,6 +2417,58 @@ apiInstance.postQualityConversationsAuditsQuery(body)
 ### Return type
 
 **QualityAuditQueryExecutionStatusResponse**
+
+<a name="postQualityEvaluationsAggregatesQueryMe"></a>
+
+# EvaluationAggregateQueryResponse postQualityEvaluationsAggregatesQueryMe(body)
+
+
+
+POST /api/v2/quality/evaluations/aggregates/query/me
+
+Query for evaluation aggregates for the current user
+
+
+
+Requires NO permissions: 
+
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.QualityApi();
+
+let body = {}; // Object | query
+
+apiInstance.postQualityEvaluationsAggregatesQueryMe(body)
+  .then((data) => {
+    console.log(`postQualityEvaluationsAggregatesQueryMe success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postQualityEvaluationsAggregatesQueryMe');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | query |  |
+{: class="table table-striped"}
+
+### Return type
+
+**EvaluationAggregateQueryResponse**
 
 <a name="postQualityEvaluationsScoring"></a>
 
