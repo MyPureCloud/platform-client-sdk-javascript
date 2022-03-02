@@ -5144,7 +5144,7 @@ apiInstance.postOutboundDnclistExport(dncListId)
 
 <a name="postOutboundDnclistPhonenumbers"></a>
 
-# void postOutboundDnclistPhonenumbers(dncListId, body)
+# void postOutboundDnclistPhonenumbers(dncListId, body, opts)
 
 
 
@@ -5173,8 +5173,11 @@ let apiInstance = new platformClient.OutboundApi();
 
 let dncListId = "dncListId_example"; // String | DncList ID
 let body = [{}]; // Object | DNC Phone Numbers
+let opts = { 
+  'expirationDateTime': "expirationDateTime_example" // String | Expiration date for DNC phone numbers in yyyy-MM-ddTHH:mmZ format
+};
 
-apiInstance.postOutboundDnclistPhonenumbers(dncListId, body)
+apiInstance.postOutboundDnclistPhonenumbers(dncListId, body, opts)
   .then(() => {
     console.log('postOutboundDnclistPhonenumbers returned successfully.');
   })
@@ -5191,6 +5194,7 @@ apiInstance.postOutboundDnclistPhonenumbers(dncListId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **dncListId** | **String** | DncList ID |  |
  **body** | **Object** | DNC Phone Numbers |  |
+ **expirationDateTime** | **String** | Expiration date for DNC phone numbers in yyyy-MM-ddTHH:mmZ format | [optional]  |
 {: class="table table-striped"}
 
 ### Return type

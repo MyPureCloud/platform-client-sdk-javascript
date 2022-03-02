@@ -1,6 +1,6 @@
-import resolve from 'rollup-plugin-node-resolve';
-import commonjs from 'rollup-plugin-commonjs';
-import json from 'rollup-plugin-json';
+import { nodeResolve } from '@rollup/plugin-node-resolve';
+import commonjs from '@rollup/plugin-commonjs';
+import json from '@rollup/plugin-json';
 import replace from 'rollup-plugin-re';
 import builtins from 'rollup-plugin-node-builtins';
 import globals from 'rollup-plugin-node-globals';
@@ -32,7 +32,7 @@ export default {
 	},
 	plugins: [ 
 		builtins(),
-		resolve(),
+		nodeResolve(),
 		replace({
 			// https://github.com/rollup/rollup-plugin-commonjs/issues/166#issuecomment-328853157
 			// do replace before commonjs

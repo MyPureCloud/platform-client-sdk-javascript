@@ -1,203 +1,164 @@
-Platform API version: 5413
+Platform API version: 5460
 
 
-# Major Changes (0 changes)
+# Major Changes (30 changes)
+
+**POST /api/v2/outbound/dnclists/{dncListId}/phonenumbers** (1 change)
+
+* Parameter expirationDateTime was added
+
+**POST /api/v2/gamification/profiles** (1 change)
+
+* Parameter copyMetrics was added
+
+**GET /api/v2/orphanrecordings/{orphanId}/media** (1 change)
+
+* Parameter mediaFormats was added
+
+**GET /api/v2/conversations/{conversationId}/recordings/{recordingId}** (1 change)
+
+* Parameter mediaFormats was added
+
+**GET /api/v2/conversations/{conversationId}/recordings** (1 change)
+
+* Parameter mediaFormats was added
+
+**GET /api/v2/routing/queues/{queueId}/users** (1 change)
+
+* Response 200 type was changed from QueueMemberEntityListing to QueueMemberEntityListingV1
+
+**PATCH /api/v2/routing/queues/{queueId}/users** (1 change)
+
+* Response 200 type was changed from QueueMemberEntityListing to QueueMemberEntityListingV1
+
+**POST /api/v2/telephony/providers/edges/extensionpools** (1 change)
+
+* Response 409 was removed
+
+**EdgeIdNamePair** (1 change)
+
+* Model EdgeIdNamePair was removed
+
+**CreateOutboundMessagingConversationRequest** (7 changes)
+
+* Enum value facebook was removed from property toAddressMessengerType
+* Enum value twitter was removed from property toAddressMessengerType
+* Enum value line was removed from property toAddressMessengerType
+* Enum value whatsapp was removed from property toAddressMessengerType
+* Enum value webmessaging was removed from property toAddressMessengerType
+* Enum value instagram was removed from property toAddressMessengerType
+* Enum value open was removed from property toAddressMessengerType
+
+**SendAgentlessOutboundMessageResponse** (5 changes)
+
+* Enum value facebook was removed from property messengerType
+* Enum value twitter was removed from property messengerType
+* Enum value line was removed from property messengerType
+* Enum value webmessaging was removed from property messengerType
+* Enum value instagram was removed from property messengerType
+
+**SendAgentlessOutboundMessageRequest** (5 changes)
+
+* Enum value facebook was removed from property toAddressMessengerType
+* Enum value twitter was removed from property toAddressMessengerType
+* Enum value line was removed from property toAddressMessengerType
+* Enum value webmessaging was removed from property toAddressMessengerType
+* Enum value instagram was removed from property toAddressMessengerType
+
+**QueueMemberEntityListing** (3 changes)
+
+* Property total was removed
+* Property lastUri was removed
+* Property pageCount was removed
+
+**ExpiredEdgeListing** (1 change)
+
+* Property entities was changed from EdgeIdNamePair[] to DomainEntityRef[]
 
 
-# Minor Changes (61 changes)
+# Minor Changes (19 changes)
 
-**/api/v2/analytics/reporting/settings** (3 changes)
+**Team** (1 change)
 
-* Path was added
-* Operation GET was added
-* Operation PATCH was added
+* Optional property dateCreated was added
 
-**POST /api/v2/conversations/messaging/integrations/facebook** (1 change)
+**UserStation** (1 change)
 
-* Response 409 was added
+* Optional property webRtcCallAppearances was added
 
-**/api/v2/quality/evaluations/aggregates/query/me** (2 changes)
+**PredictiveRouting** (1 change)
 
-* Path was added
-* Operation POST was added
+* Optional property respectSkills was added
 
-**/api/v2/quality/forms/evaluations/bulk/contexts** (2 changes)
+**AnswerOption** (1 change)
 
-* Path was added
-* Operation GET was added
+* Optional property assistanceConditions was added
 
-**User** (1 change)
-
-* Optional property integrationPresence was added
-
-**ConversationAggregateQueryPredicate** (1 change)
-
-* Enum value customerParticipation was added to property dimension
-
-**ConversationAggregationQuery** (1 change)
-
-* Enum value customerParticipation was added to property groupBy
-
-**AnalyticsConversationWithoutAttributes** (1 change)
-
-* Optional property customerParticipation was added
-
-**ConversationDetailQueryPredicate** (2 changes)
-
-* Enum value conversationInitiator was added to property dimension
-* Enum value customerParticipation was added to property dimension
-
-**AnalyticsConversation** (1 change)
-
-* Optional property customerParticipation was added
-
-**FlowAggregateQueryPredicate** (1 change)
-
-* Enum value customerParticipation was added to property dimension
-
-**FlowAggregationQuery** (1 change)
-
-* Enum value customerParticipation was added to property groupBy
-
-**JourneyAggregateQueryPredicate** (1 change)
-
-* Enum value journeySessionId was added to property dimension
-
-**JourneyAggregationQuery** (1 change)
-
-* Enum value journeySessionId was added to property groupBy
-
-**AnalyticsReportingSettings** (1 change)
+**AssistanceCondition** (1 change)
 
 * Model was added
 
-**AuditLogMessage** (1 change)
+**EvaluationQuestionScore** (1 change)
 
-* Enum value Reset was added to property action
+* Optional property assistedAnswerId was added
 
-**AuditQueryEntity** (1 change)
+**EvaluationScoringSet** (1 change)
 
-* Enum value Reset was added to property actions
+* Optional property transcriptTopics was added
 
-**EmailMediaPolicyConditions** (1 change)
-
-* Optional property customerParticipation was added
-
-**MessageMediaPolicyConditions** (1 change)
-
-* Optional property customerParticipation was added
-
-**OrgUser** (1 change)
-
-* Optional property integrationPresence was added
-
-**EventLog** (2 changes)
-
-* Enum value MESSAGING_CAMPAIGN_SCHEDULE was added to property category
-* Enum value EMAIL_CAMPAIGN_SCHEDULE was added to property category
-
-**MessagingCampaign** (1 change)
-
-* Optional property contactListFilters was added
-
-**SmsConfig** (1 change)
-
-* Optional property contentTemplate was added
-
-**UserExpands** (1 change)
-
-* Optional property integrationPresence was added
-
-**DefaultObjective** (2 changes)
-
-* Optional property mediaTypes was added
-* Optional property queues was added
-
-**Objective** (2 changes)
-
-* Optional property mediaTypes was added
-* Optional property queues was added
-
-**CreateObjective** (2 changes)
-
-* Optional property mediaTypes was added
-* Optional property queueIds was added
-
-**WorkdayValuesMetricItem** (1 change)
-
-* Optional property metric was added
-
-**ConversationChannel** (7 changes)
-
-* Enum value Voice was added to property type
-* Enum value Chat was added to property type
-* Enum value Cobrowse was added to property type
-* Enum value Video was added to property type
-* Enum value Screenshare was added to property type
-* Enum value Message was added to property type
-* Optional property messageType was added
-
-**Session** (3 changes)
-
-* Enum value Unknown was added to property originatingDirection
-* Optional property lastUserDisconnectType was added
-* Optional property lastAcdOutcome was added
-
-**TrustUser** (1 change)
-
-* Optional property integrationPresence was added
-
-**EvaluationAggregationQueryMe** (1 change)
+**TopicDuration** (1 change)
 
 * Model was added
 
-**UserMe** (1 change)
+**TranscriptTopic** (1 change)
 
-* Optional property integrationPresence was added
+* Model was added
 
-**Dependency** (1 change)
+**ConversationEventTyping** (1 change)
 
-* Enum value OAUTHCLIENT was added to property type
+* Model was added
 
-**DependencyObject** (1 change)
+**ConversationMessageEvent** (2 changes)
 
-* Enum value OAUTHCLIENT was added to property type
+* Enum value Typing was added to property eventType
+* Optional property typing was added
 
-**ConversationAppSettings** (1 change)
+**DncListDivisionView** (1 change)
 
-* Optional property autoStartType was added
+* Optional property dncSourceType was added
 
-**SupportCenterSettings** (1 change)
+**EventMessage** (2 changes)
 
-* Optional property knowledgeBase was added
+* Enum value DATA_ACTION_TOO_MANY_REQUESTS was added to property code
+* Enum value DATA_ACTION_TOO_MANY_REQUESTS_REMOTE was added to property code
 
-**BusinessUnitSettings** (1 change)
+**AutomaticTimeZoneMappingSettings** (1 change)
 
-* Optional property scheduling was added
+* Optional property supportedCountries was added
 
-**UpdateBusinessUnitSettings** (1 change)
+**SurveyQuestionScore** (1 change)
 
-* Optional property scheduling was added
+* Optional property assistedAnswerId was added
 
-**CreateBusinessUnitSettings** (1 change)
+**QueueMemberEntityListingV1** (1 change)
 
-* Optional property scheduling was added
+* Model was added
 
-**BuScheduleRun** (1 change)
+**LearningModuleReassignSummary** (1 change)
 
-* Optional property messageSeverityCounts was added
-
-**ScheduleGenerationResult** (1 change)
-
-* Optional property messageSeverities was added
-
-**ScheduleGenerationResultSummary** (1 change)
-
-* Optional property messageSeverityCounts was added
-
-**BuGenerateScheduleRequest** (1 change)
-
-* Optional property options was added
+* Model was added
 
 
-# Point Changes (0 changes)
+# Point Changes (3 changes)
+
+**POST /api/v2/conversations/messages/agentless** (1 change)
+
+* Description was changed
+
+**GET /api/v2/quality/agents/activity** (1 change)
+
+* Description was changed
+
+**GET /api/v2/conversations/{conversationId}/recordings** (1 change)
+
+* Description was changed for parameter formatId

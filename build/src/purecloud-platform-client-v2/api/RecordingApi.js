@@ -5,7 +5,7 @@ class RecordingApi {
 	/**
 	 * Recording service.
 	 * @module purecloud-platform-client-v2/api/RecordingApi
-	 * @version 131.1.0
+	 * @version 132.0.0
 	 */
 
 	/**
@@ -218,6 +218,7 @@ class RecordingApi {
 	 * @param {Boolean} opts.download requesting a download format of the recording. Valid values:true,false (default to false)
 	 * @param {String} opts.fileName the name of the downloaded fileName
 	 * @param {String} opts.locale The locale for the requested file when downloading, as an ISO 639-1 code
+	 * @param {Array.<String>} opts.mediaFormats All acceptable media formats. Overrides formatId. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3
 	 */
 	getConversationRecording(conversationId, recordingId, opts) { 
 		opts = opts || {};
@@ -235,7 +236,7 @@ class RecordingApi {
 			'/api/v2/conversations/{conversationId}/recordings/{recordingId}', 
 			'GET', 
 			{ 'conversationId': conversationId,'recordingId': recordingId }, 
-			{ 'formatId': opts['formatId'],'emailFormatId': opts['emailFormatId'],'chatFormatId': opts['chatFormatId'],'messageFormatId': opts['messageFormatId'],'download': opts['download'],'fileName': opts['fileName'],'locale': opts['locale'] }, 
+			{ 'formatId': opts['formatId'],'emailFormatId': opts['emailFormatId'],'chatFormatId': opts['chatFormatId'],'messageFormatId': opts['messageFormatId'],'download': opts['download'],'fileName': opts['fileName'],'locale': opts['locale'],'mediaFormats': this.apiClient.buildCollectionParam(opts['mediaFormats'], 'multi') }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -371,7 +372,8 @@ class RecordingApi {
 	 * @param {String} conversationId Conversation ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.maxWaitMs The maximum number of milliseconds to wait for the recording to be ready. Must be a positive value. (default to 5000)
-	 * @param {Object} opts.formatId The desired media format . Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3,NONE. (default to WEBM)
+	 * @param {Object} opts.formatId The desired media format. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3,NONE. (default to WEBM)
+	 * @param {Array.<String>} opts.mediaFormats All acceptable media formats. Overrides formatId. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3.
 	 */
 	getConversationRecordings(conversationId, opts) { 
 		opts = opts || {};
@@ -385,7 +387,7 @@ class RecordingApi {
 			'/api/v2/conversations/{conversationId}/recordings', 
 			'GET', 
 			{ 'conversationId': conversationId }, 
-			{ 'maxWaitMs': opts['maxWaitMs'],'formatId': opts['formatId'] }, 
+			{ 'maxWaitMs': opts['maxWaitMs'],'formatId': opts['formatId'],'mediaFormats': this.apiClient.buildCollectionParam(opts['mediaFormats'], 'multi') }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -432,6 +434,7 @@ class RecordingApi {
 	 * @param {Boolean} opts.download requesting a download format of the recording (default to false)
 	 * @param {String} opts.fileName the name of the downloaded fileName
 	 * @param {String} opts.locale The locale for the requested file when downloading, as an ISO 639-1 code
+	 * @param {Array.<String>} opts.mediaFormats All acceptable media formats. Overrides formatId. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3
 	 */
 	getOrphanrecordingMedia(orphanId, opts) { 
 		opts = opts || {};
@@ -445,7 +448,7 @@ class RecordingApi {
 			'/api/v2/orphanrecordings/{orphanId}/media', 
 			'GET', 
 			{ 'orphanId': orphanId }, 
-			{ 'formatId': opts['formatId'],'emailFormatId': opts['emailFormatId'],'chatFormatId': opts['chatFormatId'],'messageFormatId': opts['messageFormatId'],'download': opts['download'],'fileName': opts['fileName'],'locale': opts['locale'] }, 
+			{ 'formatId': opts['formatId'],'emailFormatId': opts['emailFormatId'],'chatFormatId': opts['chatFormatId'],'messageFormatId': opts['messageFormatId'],'download': opts['download'],'fileName': opts['fileName'],'locale': opts['locale'],'mediaFormats': this.apiClient.buildCollectionParam(opts['mediaFormats'], 'multi') }, 
 			{  }, 
 			{  }, 
 			null, 

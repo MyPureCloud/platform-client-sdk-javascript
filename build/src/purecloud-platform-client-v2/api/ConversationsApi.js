@@ -5,7 +5,7 @@ class ConversationsApi {
 	/**
 	 * Conversations service.
 	 * @module purecloud-platform-client-v2/api/ConversationsApi
-	 * @version 131.1.0
+	 * @version 132.0.0
 	 */
 
 	/**
@@ -4155,7 +4155,7 @@ class ConversationsApi {
 
 	/**
 	 * Send an agentless outbound message
-	 * Send an agentlesss (api participant) outbound message using a client credential grant. In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least messaging scope. This will generate a new Conversation, if there is an existing active Conversation between the fromAddress and toAddress already, then this POST will fail.
+	 * Send an agentless (api participant) outbound message using a client credential grant. In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least messaging scope. This will generate a new Conversation, if there is an existing active Conversation between the fromAddress and toAddress already, then this POST will fail.
 	 * @param {Object} body Create agentless outbound messaging request
 	 */
 	postConversationsMessagesAgentless(body) { 

@@ -477,7 +477,8 @@ let opts = {
   'messageFormatId': "ZIP", // String | The desired media format when downloading a message recording. Valid values:ZIP,NONE
   'download': false, // Boolean | requesting a download format of the recording. Valid values:true,false
   'fileName': "fileName_example", // String | the name of the downloaded fileName
-  'locale': "locale_example" // String | The locale for the requested file when downloading, as an ISO 639-1 code
+  'locale': "locale_example", // String | The locale for the requested file when downloading, as an ISO 639-1 code
+  'mediaFormats': ["mediaFormats_example"] // [String] | All acceptable media formats. Overrides formatId. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3
 };
 
 apiInstance.getConversationRecording(conversationId, recordingId, opts)
@@ -504,6 +505,7 @@ apiInstance.getConversationRecording(conversationId, recordingId, opts)
  **download** | **Boolean** | requesting a download format of the recording. Valid values:true,false | [optional] [default to false] |
  **fileName** | **String** | the name of the downloaded fileName | [optional]  |
  **locale** | **String** | The locale for the requested file when downloading, as an ISO 639-1 code | [optional]  |
+ **mediaFormats** | **[String]** | All acceptable media formats. Overrides formatId. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3 | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -765,7 +767,8 @@ let apiInstance = new platformClient.RecordingApi();
 let conversationId = "conversationId_example"; // String | Conversation ID
 let opts = { 
   'maxWaitMs': 5000, // Number | The maximum number of milliseconds to wait for the recording to be ready. Must be a positive value.
-  'formatId': "WEBM" // String | The desired media format . Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3,NONE.
+  'formatId': "WEBM", // String | The desired media format. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3,NONE.
+  'mediaFormats': ["mediaFormats_example"] // [String] | All acceptable media formats. Overrides formatId. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3.
 };
 
 apiInstance.getConversationRecordings(conversationId, opts)
@@ -785,7 +788,8 @@ apiInstance.getConversationRecordings(conversationId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | Conversation ID |  |
  **maxWaitMs** | **Number** | The maximum number of milliseconds to wait for the recording to be ready. Must be a positive value. | [optional] [default to 5000] |
- **formatId** | **String** | The desired media format . Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3,NONE. | [optional] [default to WEBM]<br />**Values**: WAV, WEBM, WAV_ULAW, OGG_VORBIS, OGG_OPUS, MP3, NONE |
+ **formatId** | **String** | The desired media format. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3,NONE. | [optional] [default to WEBM]<br />**Values**: WAV, WEBM, WAV_ULAW, OGG_VORBIS, OGG_OPUS, MP3, NONE |
+ **mediaFormats** | **[String]** | All acceptable media formats. Overrides formatId. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3. | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -882,7 +886,8 @@ let opts = {
   'messageFormatId': "ZIP", // String | The desired media format when downloading a message recording.
   'download': false, // Boolean | requesting a download format of the recording
   'fileName': "fileName_example", // String | the name of the downloaded fileName
-  'locale': "locale_example" // String | The locale for the requested file when downloading, as an ISO 639-1 code
+  'locale': "locale_example", // String | The locale for the requested file when downloading, as an ISO 639-1 code
+  'mediaFormats': ["mediaFormats_example"] // [String] | All acceptable media formats. Overrides formatId. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3
 };
 
 apiInstance.getOrphanrecordingMedia(orphanId, opts)
@@ -908,6 +913,7 @@ apiInstance.getOrphanrecordingMedia(orphanId, opts)
  **download** | **Boolean** | requesting a download format of the recording | [optional] [default to false] |
  **fileName** | **String** | the name of the downloaded fileName | [optional]  |
  **locale** | **String** | The locale for the requested file when downloading, as an ISO 639-1 code | [optional]  |
+ **mediaFormats** | **[String]** | All acceptable media formats. Overrides formatId. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3 | [optional]  |
 {: class="table table-striped"}
 
 ### Return type

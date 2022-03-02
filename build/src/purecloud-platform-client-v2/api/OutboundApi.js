@@ -5,7 +5,7 @@ class OutboundApi {
 	/**
 	 * Outbound service.
 	 * @module purecloud-platform-client-v2/api/OutboundApi
-	 * @version 131.1.0
+	 * @version 132.0.0
 	 */
 
 	/**
@@ -2390,8 +2390,12 @@ class OutboundApi {
 	 * Only Internal DNC lists may be appended to
 	 * @param {String} dncListId DncList ID
 	 * @param {Array.<Object>} body DNC Phone Numbers
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.expirationDateTime Expiration date for DNC phone numbers in yyyy-MM-ddTHH:mmZ format
 	 */
-	postOutboundDnclistPhonenumbers(dncListId, body) { 
+	postOutboundDnclistPhonenumbers(dncListId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'dncListId' is set
 		if (dncListId === undefined || dncListId === null) {
 			throw 'Missing the required parameter "dncListId" when calling postOutboundDnclistPhonenumbers';
@@ -2405,7 +2409,7 @@ class OutboundApi {
 			'/api/v2/outbound/dnclists/{dncListId}/phonenumbers', 
 			'POST', 
 			{ 'dncListId': dncListId }, 
-			{  }, 
+			{ 'expirationDateTime': opts['expirationDateTime'] }, 
 			{  }, 
 			{  }, 
 			body, 

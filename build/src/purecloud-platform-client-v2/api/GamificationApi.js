@@ -5,7 +5,7 @@ class GamificationApi {
 	/**
 	 * Gamification service.
 	 * @module purecloud-platform-client-v2/api/GamificationApi
-	 * @version 131.1.0
+	 * @version 132.0.0
 	 */
 
 	/**
@@ -1281,8 +1281,12 @@ class GamificationApi {
 	 * Create a new custom performance profile
 	 * 
 	 * @param {Object} body performanceProfile
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.copyMetrics Flag to copy metrics. If set to false, there will be no metrics associated with the new profile. If set to true or is absent (the default behavior), all metrics from the default profile will be copied over into the new profile. (default to true)
 	 */
-	postGamificationProfiles(body) { 
+	postGamificationProfiles(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postGamificationProfiles';
@@ -1292,7 +1296,7 @@ class GamificationApi {
 			'/api/v2/gamification/profiles', 
 			'POST', 
 			{  }, 
-			{  }, 
+			{ 'copyMetrics': opts['copyMetrics'] }, 
 			{  }, 
 			{  }, 
 			body, 

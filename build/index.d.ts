@@ -1490,7 +1490,7 @@ declare class GamificationApi {
   	postGamificationProfileMembersValidate(performanceProfileId: string, body: Models.ValidateAssignUsers): Promise<Models.AssignmentValidation>; 
   	postGamificationProfileMetricLink(sourceProfileId: string, sourceMetricId: string, body: Models.TargetPerformanceProfile): Promise<Models.Metric>; 
   	postGamificationProfileMetrics(profileId: string, body: Models.CreateMetric): Promise<Models.Metric>; 
-  	postGamificationProfiles(body: Models.CreatePerformanceProfile): Promise<Models.GetProfilesResponse>; 
+  	postGamificationProfiles(body: Models.CreatePerformanceProfile, opts?: GamificationApi.postGamificationProfilesOptions): Promise<Models.GetProfilesResponse>; 
   	putGamificationMetric(metricId: string, body: Models.CreateMetric, opts?: GamificationApi.putGamificationMetricOptions): Promise<Models.Metric>; 
   	putGamificationProfile(performanceProfileId: string, opts?: GamificationApi.putGamificationProfileOptions): Promise<Models.PerformanceProfile>; 
   	putGamificationProfileMetric(profileId: string, metricId: string, body: Models.CreateMetric): Promise<Models.Metric>; 
@@ -1556,6 +1556,9 @@ declare namespace GamificationApi {
 		"filterType"?: string;
 		"referenceWorkday"?: string;
 		"timeZone"?: string;
+	}
+	export interface postGamificationProfilesOptions { 
+		"copyMetrics"?: boolean;
 	}
 	export interface putGamificationMetricOptions { 
 		"performanceProfileId"?: string;
@@ -2673,7 +2676,7 @@ declare class OutboundApi {
   	postOutboundContactlists(body: Models.ContactList): Promise<Models.ContactList>; 
   	postOutboundConversationDnc(conversationId: string): Promise<void>; 
   	postOutboundDnclistExport(dncListId: string): Promise<Models.DomainEntityRef>; 
-  	postOutboundDnclistPhonenumbers(dncListId: string, body: Array<string>): Promise<void>; 
+  	postOutboundDnclistPhonenumbers(dncListId: string, body: Array<string>, opts?: OutboundApi.postOutboundDnclistPhonenumbersOptions): Promise<void>; 
   	postOutboundDnclists(body: Models.DncListCreate): Promise<Models.DncList>; 
   	postOutboundMessagingcampaigns(body: Models.MessagingCampaign): Promise<Models.MessagingCampaign>; 
   	postOutboundMessagingcampaignsProgress(body: Array<string>): Promise<Array<Models.CampaignProgress>>; 
@@ -2916,6 +2919,9 @@ declare namespace OutboundApi {
 		"priority"?: boolean;
 		"clearSystemData"?: boolean;
 		"doNotQueue"?: boolean;
+	}
+	export interface postOutboundDnclistPhonenumbersOptions { 
+		"expirationDateTime"?: string;
 	}
 }
 
@@ -3220,10 +3226,12 @@ declare namespace RecordingApi {
 		"download"?: boolean;
 		"fileName"?: string;
 		"locale"?: string;
+		"mediaFormats"?: Array<string>;
 	}
 	export interface getConversationRecordingsOptions { 
 		"maxWaitMs"?: number;
 		"formatId"?: string;
+		"mediaFormats"?: Array<string>;
 	}
 	export interface getOrphanrecordingMediaOptions { 
 		"formatId"?: string;
@@ -3233,6 +3241,7 @@ declare namespace RecordingApi {
 		"download"?: boolean;
 		"fileName"?: string;
 		"locale"?: string;
+		"mediaFormats"?: Array<string>;
 	}
 	export interface getOrphanrecordingsOptions { 
 		"pageSize"?: number;
@@ -3382,7 +3391,7 @@ declare class RoutingApi {
   	getRoutingQueueEstimatedwaittime(queueId: string, opts?: RoutingApi.getRoutingQueueEstimatedwaittimeOptions): Promise<Models.EstimatedWaitTimePredictions>; 
   	getRoutingQueueMediatypeEstimatedwaittime(queueId: string, mediaType: string): Promise<Models.EstimatedWaitTimePredictions>; 
   	getRoutingQueueMembers(queueId: string, opts?: RoutingApi.getRoutingQueueMembersOptions): Promise<Models.QueueMemberEntityListing>; 
-  	getRoutingQueueUsers(queueId: string, opts?: RoutingApi.getRoutingQueueUsersOptions): Promise<Models.QueueMemberEntityListing>; 
+  	getRoutingQueueUsers(queueId: string, opts?: RoutingApi.getRoutingQueueUsersOptions): Promise<Models.QueueMemberEntityListingV1>; 
   	getRoutingQueueWrapupcodes(queueId: string, opts?: RoutingApi.getRoutingQueueWrapupcodesOptions): Promise<Models.WrapupCodeEntityListing>; 
   	getRoutingQueues(opts?: RoutingApi.getRoutingQueuesOptions): Promise<Models.QueueEntityListing>; 
   	getRoutingQueuesDivisionviews(opts?: RoutingApi.getRoutingQueuesDivisionviewsOptions): Promise<Models.QueueEntityListing>; 
@@ -3412,7 +3421,7 @@ declare class RoutingApi {
   	patchRoutingQueueMember(queueId: string, memberId: string, body: Models.QueueMember): Promise<void>; 
   	patchRoutingQueueMembers(queueId: string, body: Array<Models.QueueMember>): Promise<Models.QueueMemberEntityListing>; 
   	patchRoutingQueueUser(queueId: string, memberId: string, body: Models.QueueMember): Promise<void>; 
-  	patchRoutingQueueUsers(queueId: string, body: Array<Models.QueueMember>): Promise<Models.QueueMemberEntityListing>; 
+  	patchRoutingQueueUsers(queueId: string, body: Array<Models.QueueMember>): Promise<Models.QueueMemberEntityListingV1>; 
   	patchRoutingSettingsContactcenter(body: Models.ContactCenterSettings): Promise<void>; 
   	patchUserQueue(queueId: string, userId: string, body: Models.UserQueue): Promise<Models.UserQueue>; 
   	patchUserQueues(userId: string, body: Array<Models.UserQueue>, opts?: RoutingApi.patchUserQueuesOptions): Promise<Models.UserQueueEntityListing>; 
@@ -6101,6 +6110,7 @@ declare namespace Models {
 		"id"?: string;
 		"text"?: string;
 		"value"?: number;
+		"assistanceConditions"?: Array<Models.AssistanceCondition>;
 	}
 	
 	export interface ApiUsageQuery { 
@@ -6467,6 +6477,11 @@ declare namespace Models {
 		"membersAlreadyAssigned"?: Array<Models.UserReference>;
 		"membersAlreadyAssignedToOther"?: Array<Models.OtherProfileAssignment>;
 		"invalidMemberAssignments"?: Array<Models.InvalidAssignment>;
+	}
+	
+	export interface AssistanceCondition { 
+		"operator"?: string;
+		"topicIds"?: Array<string>;
 	}
 	
 	export interface AssociatedValueField { 
@@ -6864,6 +6879,7 @@ declare namespace Models {
 	
 	export interface AutomaticTimeZoneMappingSettings { 
 		"callableWindows"?: Array<Models.CallableWindow>;
+		"supportedCountries"?: Array<string>;
 	}
 	
 	export interface AvailableLanguageList { 
@@ -10957,6 +10973,10 @@ declare namespace Models {
 		"endTime"?: string;
 	}
 	
+	export interface ConversationEventTyping { 
+		"type": string;
+	}
+	
 	export interface ConversationMessageContent { 
 		"contentType": string;
 		"location"?: Models.ConversationContentLocation;
@@ -10971,6 +10991,7 @@ declare namespace Models {
 	export interface ConversationMessageEvent { 
 		"eventType": string;
 		"coBrowse"?: Models.ConversationEventCoBrowse;
+		"typing"?: Models.ConversationEventTyping;
 	}
 	
 	export interface ConversationMessageEventTopicConversationRoutingData { 
@@ -13520,6 +13541,7 @@ declare namespace Models {
 		"division"?: Models.Division;
 		"importStatus"?: Models.ImportStatus;
 		"size"?: number;
+		"dncSourceType"?: string;
 		"selfUri"?: string;
 	}
 	
@@ -14276,11 +14298,6 @@ declare namespace Models {
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"pageCount"?: number;
-	}
-	
-	export interface EdgeIdNamePair { 
-		"id"?: string;
-		"name"?: string;
 	}
 	
 	export interface EdgeInterface { 
@@ -15135,6 +15152,7 @@ declare namespace Models {
 		"answerId"?: string;
 		"score"?: number;
 		"markedNA"?: boolean;
+		"assistedAnswerId"?: string;
 		"failedKillQuestion"?: boolean;
 		"comments"?: string;
 	}
@@ -15147,6 +15165,7 @@ declare namespace Models {
 		"anyFailedKillQuestions"?: boolean;
 		"comments"?: string;
 		"agentComments"?: string;
+		"transcriptTopics"?: Array<Models.TranscriptTopic>;
 	}
 	
 	export interface EvaluatorActivity { 
@@ -15222,7 +15241,7 @@ declare namespace Models {
 	}
 	
 	export interface ExpiredEdgeListing { 
-		"entities"?: Array<Models.EdgeIdNamePair>;
+		"entities"?: Array<Models.DomainEntityRef>;
 	}
 	
 	export interface ExportScriptRequest { 
@@ -18361,6 +18380,14 @@ declare namespace Models {
 		"selfUri"?: string;
 	}
 	
+	export interface LearningModuleReassignSummary { 
+		"totalReassigned"?: number;
+		"completedCount"?: number;
+		"inProgressCount"?: number;
+		"assignedCount"?: number;
+		"notCompletedCount"?: number;
+	}
+	
 	export interface LearningModuleRequest { 
 		"name": string;
 		"description"?: string;
@@ -21466,6 +21493,7 @@ declare namespace Models {
 	}
 	
 	export interface PredictiveRouting { 
+		"respectSkills"?: boolean;
 	}
 	
 	export interface Predictor { 
@@ -24038,6 +24066,16 @@ declare namespace Models {
 	}
 	
 	export interface QueueMemberEntityListing { 
+		"entities"?: Array<Models.QueueMember>;
+		"pageNumber"?: number;
+		"pageSize"?: number;
+		"firstUri"?: string;
+		"selfUri"?: string;
+		"nextUri"?: string;
+		"previousUri"?: string;
+	}
+	
+	export interface QueueMemberEntityListingV1 { 
 		"entities"?: Array<Models.QueueMember>;
 		"pageSize"?: number;
 		"pageNumber"?: number;
@@ -26886,6 +26924,7 @@ declare namespace Models {
 		"answerId"?: string;
 		"score"?: number;
 		"markedNA"?: boolean;
+		"assistedAnswerId"?: string;
 		"npsScore"?: number;
 		"npsTextAnswer"?: string;
 		"freeTextAnswer"?: string;
@@ -27002,6 +27041,7 @@ declare namespace Models {
 		"name": string;
 		"division"?: Models.WritableDivision;
 		"description"?: string;
+		"dateCreated"?: string;
 		"dateModified"?: string;
 		"memberCount"?: number;
 		"selfUri"?: string;
@@ -27405,6 +27445,10 @@ declare namespace Models {
 		"selfUri"?: string;
 	}
 	
+	export interface TopicDuration { 
+		"totalMilliseconds"?: number;
+	}
+	
 	export interface TopicJob { 
 		"id"?: string;
 		"state"?: string;
@@ -27536,6 +27580,16 @@ declare namespace Models {
 		"returnFields"?: Array<string>;
 		"types": Array<string>;
 		"query"?: Array<Models.TranscriptSearchCriteria>;
+	}
+	
+	export interface TranscriptTopic { 
+		"id"?: string;
+		"name"?: string;
+		"topicPhrase"?: string;
+		"transcriptPhrase"?: string;
+		"confidence"?: number;
+		"startTimeMilliseconds"?: number;
+		"duration"?: Models.TopicDuration;
 	}
 	
 	export interface TranscriptTopics { 
@@ -29123,6 +29177,7 @@ declare namespace Models {
 		"associatedDate"?: string;
 		"defaultUser"?: Models.User;
 		"providerInfo"?: { [key: string]: string; };
+		"webRtcCallAppearances"?: number;
 	}
 	
 	export interface UserStationChangeTopicUser { 

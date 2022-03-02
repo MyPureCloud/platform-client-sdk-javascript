@@ -2216,7 +2216,7 @@ apiInstance.getRoutingQueueMembers(queueId, opts)
 
 <a name="getRoutingQueueUsers"></a>
 
-# QueueMemberEntityListing getRoutingQueueUsers(queueId, opts)
+# QueueMemberEntityListingV1 getRoutingQueueUsers(queueId, opts)
 
 <span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
@@ -2290,7 +2290,7 @@ apiInstance.getRoutingQueueUsers(queueId, opts)
 
 ### Return type
 
-**QueueMemberEntityListing**
+**QueueMemberEntityListingV1**
 
 <a name="getRoutingQueueWrapupcodes"></a>
 
@@ -3958,7 +3958,7 @@ void (no response body)
 
 <a name="patchRoutingQueueUsers"></a>
 
-# QueueMemberEntityListing patchRoutingQueueUsers(queueId, body)
+# QueueMemberEntityListingV1 patchRoutingQueueUsers(queueId, body)
 
 <span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
@@ -4010,7 +4010,7 @@ apiInstance.patchRoutingQueueUsers(queueId, body)
 
 ### Return type
 
-**QueueMemberEntityListing**
+**QueueMemberEntityListingV1**
 
 <a name="patchRoutingSettingsContactcenter"></a>
 

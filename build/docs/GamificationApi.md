@@ -2461,7 +2461,7 @@ apiInstance.postGamificationProfileMetrics(profileId, body)
 
 <a name="postGamificationProfiles"></a>
 
-# GetProfilesResponse postGamificationProfiles(body)
+# GetProfilesResponse postGamificationProfiles(body, opts)
 
 
 
@@ -2489,8 +2489,11 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.GamificationApi();
 
 let body = {}; // Object | performanceProfile
+let opts = { 
+  'copyMetrics': true // Boolean | Flag to copy metrics. If set to false, there will be no metrics associated with the new profile. If set to true or is absent (the default behavior), all metrics from the default profile will be copied over into the new profile.
+};
 
-apiInstance.postGamificationProfiles(body)
+apiInstance.postGamificationProfiles(body, opts)
   .then((data) => {
     console.log(`postGamificationProfiles success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2506,6 +2509,7 @@ apiInstance.postGamificationProfiles(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | performanceProfile |  |
+ **copyMetrics** | **Boolean** | Flag to copy metrics. If set to false, there will be no metrics associated with the new profile. If set to true or is absent (the default behavior), all metrics from the default profile will be copied over into the new profile. | [optional] [default to true] |
 {: class="table table-striped"}
 
 ### Return type

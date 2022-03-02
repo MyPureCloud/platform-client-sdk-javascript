@@ -1,8 +1,10 @@
 'use strict';
 
-function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
+var superagent = require('superagent');
 
-var superagent = _interopDefault(require('superagent'));
+function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
+
+var superagent__default = /*#__PURE__*/_interopDefaultLegacy(superagent);
 
 var PureCloudRegionHosts = {
 	us_east_1: 'mypurecloud.com',
@@ -910,7 +912,7 @@ function arrayIndexOf (arr, val, byteOffset, encoding, dir) {
     }
   }
 
-  function read$$1 (buf, i) {
+  function read (buf, i) {
     if (indexSize === 1) {
       return buf[i]
     } else {
@@ -922,7 +924,7 @@ function arrayIndexOf (arr, val, byteOffset, encoding, dir) {
   if (dir) {
     var foundIndex = -1;
     for (i = byteOffset; i < arrLength; i++) {
-      if (read$$1(arr, i) === read$$1(val, foundIndex === -1 ? 0 : i - foundIndex)) {
+      if (read(arr, i) === read(val, foundIndex === -1 ? 0 : i - foundIndex)) {
         if (foundIndex === -1) foundIndex = i;
         if (i - foundIndex + 1 === valLength) return foundIndex * indexSize
       } else {
@@ -935,7 +937,7 @@ function arrayIndexOf (arr, val, byteOffset, encoding, dir) {
     for (i = byteOffset; i >= 0; i--) {
       var found = true;
       for (var j = 0; j < valLength; j++) {
-        if (read$$1(arr, i + j) !== read$$1(val, j)) {
+        if (read(arr, i + j) !== read(val, j)) {
           found = false;
           break
         }
@@ -1006,7 +1008,7 @@ function ucs2Write (buf, string, offset, length) {
   return blitBuffer(utf16leToBytes(string, buf.length - offset), buf, offset, length)
 }
 
-Buffer.prototype.write = function write$$1 (string, offset, length, encoding) {
+Buffer.prototype.write = function write (string, offset, length, encoding) {
   // Buffer#write(string)
   if (offset === undefined) {
     encoding = 'utf8';
@@ -1675,7 +1677,7 @@ function checkIEEE754 (buf, value, offset, ext, max, min) {
 
 function writeFloat (buf, value, offset, littleEndian, noAssert) {
   if (!noAssert) {
-    checkIEEE754(buf, value, offset, 4, 3.4028234663852886e+38, -3.4028234663852886e+38);
+    checkIEEE754(buf, value, offset, 4);
   }
   write(buf, value, offset, littleEndian, 23, 4);
   return offset + 4
@@ -1691,7 +1693,7 @@ Buffer.prototype.writeFloatBE = function writeFloatBE (value, offset, noAssert) 
 
 function writeDouble (buf, value, offset, littleEndian, noAssert) {
   if (!noAssert) {
-    checkIEEE754(buf, value, offset, 8, 1.7976931348623157E+308, -1.7976931348623157E+308);
+    checkIEEE754(buf, value, offset, 8);
   }
   write(buf, value, offset, littleEndian, 52, 8);
   return offset + 8
@@ -2263,7 +2265,7 @@ class Configuration {
 
 /**
  * @module purecloud-platform-client-v2/ApiClient
- * @version 131.1.0
+ * @version 132.0.0
  */
 class ApiClient {
 	/**
@@ -2367,7 +2369,7 @@ class ApiClient {
 		this.settingsPrefix = 'purecloud';
 
 		// Expose superagent module for use with superagent-proxy
-		this.superagent = superagent;
+		this.superagent = superagent__default["default"];
 
 		// Transparently request a new access token when it expires (Code Authorization only)
 		this.refreshInProgress = false;
@@ -2538,7 +2540,7 @@ class ApiClient {
 			}
 
 			// Build token request
-			var request = superagent('POST', `https://login.${this.config.environment}/oauth/token`);
+			var request = superagent__default["default"]('POST', `https://login.${this.config.environment}/oauth/token`);
 			if (this.proxy && request.proxy) {
 				request.proxy(this.proxy);
 			}
@@ -2794,7 +2796,7 @@ class ApiClient {
 	 * @param {string} encodedData - Base64 encoded client and clientSecret pair
 	 */
 	_formAuthRequest(encodedData) {
-		var request = superagent('POST', `https://login.${this.config.environment}/oauth/token`);
+		var request = superagent__default["default"]('POST', `https://login.${this.config.environment}/oauth/token`);
 		// Set the headers
 		request.set('Authorization', 'Basic ' + encodedData);
 		request.set('Content-Type', 'application/x-www-form-urlencoded');
@@ -3189,7 +3191,7 @@ class ApiClient {
 			sendRequest(this);
 			function sendRequest(that) {
 				var url = that.buildUrl(path, pathParams);
-				var request = superagent(httpMethod, url);
+				var request = superagent__default["default"](httpMethod, url);
 
 				if (that.proxy && request.proxy) {
 					request.proxy(that.proxy);
@@ -3203,7 +3205,7 @@ class ApiClient {
 
 				// set header parameters
 				request.set(that.defaultHeaders).set(that.normalizeParams(headerParams));
-				//request.set({ 'purecloud-sdk': '131.1.0' });
+				//request.set({ 'purecloud-sdk': '132.0.0' });
 
 				// set request timeout
 				request.timeout(that.timeout);
@@ -3303,7 +3305,7 @@ class AlertingApi {
 	/**
 	 * Alerting service.
 	 * @module purecloud-platform-client-v2/api/AlertingApi
-	 * @version 131.1.0
+	 * @version 132.0.0
 	 */
 
 	/**
@@ -3617,7 +3619,7 @@ class AnalyticsApi {
 	/**
 	 * Analytics service.
 	 * @module purecloud-platform-client-v2/api/AnalyticsApi
-	 * @version 131.1.0
+	 * @version 132.0.0
 	 */
 
 	/**
@@ -4799,7 +4801,7 @@ class ArchitectApi {
 	/**
 	 * Architect service.
 	 * @module purecloud-platform-client-v2/api/ArchitectApi
-	 * @version 131.1.0
+	 * @version 132.0.0
 	 */
 
 	/**
@@ -7795,7 +7797,7 @@ class AuditApi {
 	/**
 	 * Audit service.
 	 * @module purecloud-platform-client-v2/api/AuditApi
-	 * @version 131.1.0
+	 * @version 132.0.0
 	 */
 
 	/**
@@ -7966,7 +7968,7 @@ class AuthorizationApi {
 	/**
 	 * Authorization service.
 	 * @module purecloud-platform-client-v2/api/AuthorizationApi
-	 * @version 131.1.0
+	 * @version 132.0.0
 	 */
 
 	/**
@@ -9149,7 +9151,7 @@ class BillingApi {
 	/**
 	 * Billing service.
 	 * @module purecloud-platform-client-v2/api/BillingApi
-	 * @version 131.1.0
+	 * @version 132.0.0
 	 */
 
 	/**
@@ -9229,7 +9231,7 @@ class ChatApi {
 	/**
 	 * Chat service.
 	 * @module purecloud-platform-client-v2/api/ChatApi
-	 * @version 131.1.0
+	 * @version 132.0.0
 	 */
 
 	/**
@@ -9320,7 +9322,7 @@ class CoachingApi {
 	/**
 	 * Coaching service.
 	 * @module purecloud-platform-client-v2/api/CoachingApi
-	 * @version 131.1.0
+	 * @version 132.0.0
 	 */
 
 	/**
@@ -9897,7 +9899,7 @@ class ContentManagementApi {
 	/**
 	 * ContentManagement service.
 	 * @module purecloud-platform-client-v2/api/ContentManagementApi
-	 * @version 131.1.0
+	 * @version 132.0.0
 	 */
 
 	/**
@@ -11037,7 +11039,7 @@ class ConversationsApi {
 	/**
 	 * Conversations service.
 	 * @module purecloud-platform-client-v2/api/ConversationsApi
-	 * @version 131.1.0
+	 * @version 132.0.0
 	 */
 
 	/**
@@ -15187,7 +15189,7 @@ class ConversationsApi {
 
 	/**
 	 * Send an agentless outbound message
-	 * Send an agentlesss (api participant) outbound message using a client credential grant. In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least messaging scope. This will generate a new Conversation, if there is an existing active Conversation between the fromAddress and toAddress already, then this POST will fail.
+	 * Send an agentless (api participant) outbound message using a client credential grant. In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least messaging scope. This will generate a new Conversation, if there is an existing active Conversation between the fromAddress and toAddress already, then this POST will fail.
 	 * @param {Object} body Create agentless outbound messaging request
 	 */
 	postConversationsMessagesAgentless(body) { 
@@ -15601,7 +15603,7 @@ class DataExtensionsApi {
 	/**
 	 * DataExtensions service.
 	 * @module purecloud-platform-client-v2/api/DataExtensionsApi
-	 * @version 131.1.0
+	 * @version 132.0.0
 	 */
 
 	/**
@@ -15687,7 +15689,7 @@ class ExternalContactsApi {
 	/**
 	 * ExternalContacts service.
 	 * @module purecloud-platform-client-v2/api/ExternalContactsApi
-	 * @version 131.1.0
+	 * @version 132.0.0
 	 */
 
 	/**
@@ -17430,7 +17432,7 @@ class FaxApi {
 	/**
 	 * Fax service.
 	 * @module purecloud-platform-client-v2/api/FaxApi
-	 * @version 131.1.0
+	 * @version 132.0.0
 	 */
 
 	/**
@@ -17601,7 +17603,7 @@ class FlowsApi {
 	/**
 	 * Flows service.
 	 * @module purecloud-platform-client-v2/api/FlowsApi
-	 * @version 131.1.0
+	 * @version 132.0.0
 	 */
 
 	/**
@@ -17672,7 +17674,7 @@ class GamificationApi {
 	/**
 	 * Gamification service.
 	 * @module purecloud-platform-client-v2/api/GamificationApi
-	 * @version 131.1.0
+	 * @version 132.0.0
 	 */
 
 	/**
@@ -18948,8 +18950,12 @@ class GamificationApi {
 	 * Create a new custom performance profile
 	 * 
 	 * @param {Object} body performanceProfile
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.copyMetrics Flag to copy metrics. If set to false, there will be no metrics associated with the new profile. If set to true or is absent (the default behavior), all metrics from the default profile will be copied over into the new profile. (default to true)
 	 */
-	postGamificationProfiles(body) { 
+	postGamificationProfiles(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postGamificationProfiles';
@@ -18959,7 +18965,7 @@ class GamificationApi {
 			'/api/v2/gamification/profiles', 
 			'POST', 
 			{  }, 
-			{  }, 
+			{ 'copyMetrics': opts['copyMetrics'] }, 
 			{  }, 
 			{  }, 
 			body, 
@@ -19098,7 +19104,7 @@ class GeneralDataProtectionRegulationApi {
 	/**
 	 * GeneralDataProtectionRegulation service.
 	 * @module purecloud-platform-client-v2/api/GeneralDataProtectionRegulationApi
-	 * @version 131.1.0
+	 * @version 132.0.0
 	 */
 
 	/**
@@ -19228,7 +19234,7 @@ class GeolocationApi {
 	/**
 	 * Geolocation service.
 	 * @module purecloud-platform-client-v2/api/GeolocationApi
-	 * @version 131.1.0
+	 * @version 132.0.0
 	 */
 
 	/**
@@ -19359,7 +19365,7 @@ class GreetingsApi {
 	/**
 	 * Greetings service.
 	 * @module purecloud-platform-client-v2/api/GreetingsApi
-	 * @version 131.1.0
+	 * @version 132.0.0
 	 */
 
 	/**
@@ -19814,7 +19820,7 @@ class GroupsApi {
 	/**
 	 * Groups service.
 	 * @module purecloud-platform-client-v2/api/GroupsApi
-	 * @version 131.1.0
+	 * @version 132.0.0
 	 */
 
 	/**
@@ -20219,7 +20225,7 @@ class IdentityProviderApi {
 	/**
 	 * IdentityProvider service.
 	 * @module purecloud-platform-client-v2/api/IdentityProviderApi
-	 * @version 131.1.0
+	 * @version 132.0.0
 	 */
 
 	/**
@@ -20975,7 +20981,7 @@ class IntegrationsApi {
 	/**
 	 * Integrations service.
 	 * @module purecloud-platform-client-v2/api/IntegrationsApi
-	 * @version 131.1.0
+	 * @version 132.0.0
 	 */
 
 	/**
@@ -22650,7 +22656,7 @@ class JourneyApi {
 	/**
 	 * Journey service.
 	 * @module purecloud-platform-client-v2/api/JourneyApi
-	 * @version 131.1.0
+	 * @version 132.0.0
 	 */
 
 	/**
@@ -23361,7 +23367,7 @@ class KnowledgeApi {
 	/**
 	 * Knowledge service.
 	 * @module purecloud-platform-client-v2/api/KnowledgeApi
-	 * @version 131.1.0
+	 * @version 132.0.0
 	 */
 
 	/**
@@ -24261,7 +24267,7 @@ class LanguageUnderstandingApi {
 	/**
 	 * LanguageUnderstanding service.
 	 * @module purecloud-platform-client-v2/api/LanguageUnderstandingApi
-	 * @version 131.1.0
+	 * @version 132.0.0
 	 */
 
 	/**
@@ -25165,7 +25171,7 @@ class LanguagesApi {
 	/**
 	 * Languages service.
 	 * @module purecloud-platform-client-v2/api/LanguagesApi
-	 * @version 131.1.0
+	 * @version 132.0.0
 	 */
 
 	/**
@@ -25433,7 +25439,7 @@ class LearningApi {
 	/**
 	 * Learning service.
 	 * @module purecloud-platform-client-v2/api/LearningApi
-	 * @version 131.1.0
+	 * @version 132.0.0
 	 */
 
 	/**
@@ -26024,7 +26030,7 @@ class LicenseApi {
 	/**
 	 * License service.
 	 * @module purecloud-platform-client-v2/api/LicenseApi
-	 * @version 131.1.0
+	 * @version 132.0.0
 	 */
 
 	/**
@@ -26262,7 +26268,7 @@ class LocationsApi {
 	/**
 	 * Locations service.
 	 * @module purecloud-platform-client-v2/api/LocationsApi
-	 * @version 131.1.0
+	 * @version 132.0.0
 	 */
 
 	/**
@@ -26498,7 +26504,7 @@ class MessagingApi {
 	/**
 	 * Messaging service.
 	 * @module purecloud-platform-client-v2/api/MessagingApi
-	 * @version 131.1.0
+	 * @version 132.0.0
 	 */
 
 	/**
@@ -26649,7 +26655,7 @@ class MobileDevicesApi {
 	/**
 	 * MobileDevices service.
 	 * @module purecloud-platform-client-v2/api/MobileDevicesApi
-	 * @version 131.1.0
+	 * @version 132.0.0
 	 */
 
 	/**
@@ -26800,7 +26806,7 @@ class NotificationsApi {
 	/**
 	 * Notifications service.
 	 * @module purecloud-platform-client-v2/api/NotificationsApi
-	 * @version 131.1.0
+	 * @version 132.0.0
 	 */
 
 	/**
@@ -27025,7 +27031,7 @@ class OAuthApi {
 	/**
 	 * OAuth service.
 	 * @module purecloud-platform-client-v2/api/OAuthApi
-	 * @version 131.1.0
+	 * @version 132.0.0
 	 */
 
 	/**
@@ -27383,7 +27389,7 @@ class ObjectsApi {
 	/**
 	 * Objects service.
 	 * @module purecloud-platform-client-v2/api/ObjectsApi
-	 * @version 131.1.0
+	 * @version 132.0.0
 	 */
 
 	/**
@@ -27654,7 +27660,7 @@ class OrganizationApi {
 	/**
 	 * Organization service.
 	 * @module purecloud-platform-client-v2/api/OrganizationApi
-	 * @version 131.1.0
+	 * @version 132.0.0
 	 */
 
 	/**
@@ -28057,7 +28063,7 @@ class OrganizationAuthorizationApi {
 	/**
 	 * OrganizationAuthorization service.
 	 * @module purecloud-platform-client-v2/api/OrganizationAuthorizationApi
-	 * @version 131.1.0
+	 * @version 132.0.0
 	 */
 
 	/**
@@ -28982,7 +28988,7 @@ class OutboundApi {
 	/**
 	 * Outbound service.
 	 * @module purecloud-platform-client-v2/api/OutboundApi
-	 * @version 131.1.0
+	 * @version 132.0.0
 	 */
 
 	/**
@@ -31367,8 +31373,12 @@ class OutboundApi {
 	 * Only Internal DNC lists may be appended to
 	 * @param {String} dncListId DncList ID
 	 * @param {Array.<Object>} body DNC Phone Numbers
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.expirationDateTime Expiration date for DNC phone numbers in yyyy-MM-ddTHH:mmZ format
 	 */
-	postOutboundDnclistPhonenumbers(dncListId, body) { 
+	postOutboundDnclistPhonenumbers(dncListId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'dncListId' is set
 		if (dncListId === undefined || dncListId === null) {
 			throw 'Missing the required parameter "dncListId" when calling postOutboundDnclistPhonenumbers';
@@ -31382,7 +31392,7 @@ class OutboundApi {
 			'/api/v2/outbound/dnclists/{dncListId}/phonenumbers', 
 			'POST', 
 			{ 'dncListId': dncListId }, 
-			{  }, 
+			{ 'expirationDateTime': opts['expirationDateTime'] }, 
 			{  }, 
 			{  }, 
 			body, 
@@ -32008,7 +32018,7 @@ class PresenceApi {
 	/**
 	 * Presence service.
 	 * @module purecloud-platform-client-v2/api/PresenceApi
-	 * @version 131.1.0
+	 * @version 132.0.0
 	 */
 
 	/**
@@ -32380,7 +32390,7 @@ class QualityApi {
 	/**
 	 * Quality service.
 	 * @module purecloud-platform-client-v2/api/QualityApi
-	 * @version 131.1.0
+	 * @version 132.0.0
 	 */
 
 	/**
@@ -32536,7 +32546,7 @@ class QualityApi {
 
 	/**
 	 * Gets a list of Agent Activities
-	 * Includes the number of evaluations and average evaluation score. These statistics include released evaluations only when evaluatorUserId is provided. In the absence of evaluatorUserId in the request, the api excludes evaluations which are set to never release for the calculation of evaluation statistics. 
+	 * Each item on the list shows one agent&#39;s evaluation activity comprised of the number of evaluations and the highest, average, and lowest standard and critical scores, as well as a sub list showing the number and average score of evaluations for each evaluator for that agent.  evaluatorUserId, startTime, and endTime are all filtering criteria. If specified, the only evaluations used to compile the agent activity response will be ones that match the filtering criteria. agentUserId, name, group, and agentTeamId are all agent selection criteria. criteria.  If one or more agent selection criteria are specified, then the returned activity will include users that match the criteria even if those users did not have any agent activity or evaluations that do not match any filtering criteria.  If no agent selection criteria are specified but an evaluatorUserId is, then the returned activity will be only for those agents that had evaluations where the evaluator is the evaluatorUserId.  If no agent selection criteria are specified and no evaluatorUserId is specified, then the returned activity will be for all users
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize The total page size requested (default to 25)
 	 * @param {Number} opts.pageNumber The page number requested (default to 1)
@@ -33958,7 +33968,7 @@ class RecordingApi {
 	/**
 	 * Recording service.
 	 * @module purecloud-platform-client-v2/api/RecordingApi
-	 * @version 131.1.0
+	 * @version 132.0.0
 	 */
 
 	/**
@@ -34171,6 +34181,7 @@ class RecordingApi {
 	 * @param {Boolean} opts.download requesting a download format of the recording. Valid values:true,false (default to false)
 	 * @param {String} opts.fileName the name of the downloaded fileName
 	 * @param {String} opts.locale The locale for the requested file when downloading, as an ISO 639-1 code
+	 * @param {Array.<String>} opts.mediaFormats All acceptable media formats. Overrides formatId. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3
 	 */
 	getConversationRecording(conversationId, recordingId, opts) { 
 		opts = opts || {};
@@ -34188,7 +34199,7 @@ class RecordingApi {
 			'/api/v2/conversations/{conversationId}/recordings/{recordingId}', 
 			'GET', 
 			{ 'conversationId': conversationId,'recordingId': recordingId }, 
-			{ 'formatId': opts['formatId'],'emailFormatId': opts['emailFormatId'],'chatFormatId': opts['chatFormatId'],'messageFormatId': opts['messageFormatId'],'download': opts['download'],'fileName': opts['fileName'],'locale': opts['locale'] }, 
+			{ 'formatId': opts['formatId'],'emailFormatId': opts['emailFormatId'],'chatFormatId': opts['chatFormatId'],'messageFormatId': opts['messageFormatId'],'download': opts['download'],'fileName': opts['fileName'],'locale': opts['locale'],'mediaFormats': this.apiClient.buildCollectionParam(opts['mediaFormats'], 'multi') }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -34324,7 +34335,8 @@ class RecordingApi {
 	 * @param {String} conversationId Conversation ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.maxWaitMs The maximum number of milliseconds to wait for the recording to be ready. Must be a positive value. (default to 5000)
-	 * @param {Object} opts.formatId The desired media format . Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3,NONE. (default to WEBM)
+	 * @param {Object} opts.formatId The desired media format. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3,NONE. (default to WEBM)
+	 * @param {Array.<String>} opts.mediaFormats All acceptable media formats. Overrides formatId. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3.
 	 */
 	getConversationRecordings(conversationId, opts) { 
 		opts = opts || {};
@@ -34338,7 +34350,7 @@ class RecordingApi {
 			'/api/v2/conversations/{conversationId}/recordings', 
 			'GET', 
 			{ 'conversationId': conversationId }, 
-			{ 'maxWaitMs': opts['maxWaitMs'],'formatId': opts['formatId'] }, 
+			{ 'maxWaitMs': opts['maxWaitMs'],'formatId': opts['formatId'],'mediaFormats': this.apiClient.buildCollectionParam(opts['mediaFormats'], 'multi') }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -34385,6 +34397,7 @@ class RecordingApi {
 	 * @param {Boolean} opts.download requesting a download format of the recording (default to false)
 	 * @param {String} opts.fileName the name of the downloaded fileName
 	 * @param {String} opts.locale The locale for the requested file when downloading, as an ISO 639-1 code
+	 * @param {Array.<String>} opts.mediaFormats All acceptable media formats. Overrides formatId. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3
 	 */
 	getOrphanrecordingMedia(orphanId, opts) { 
 		opts = opts || {};
@@ -34398,7 +34411,7 @@ class RecordingApi {
 			'/api/v2/orphanrecordings/{orphanId}/media', 
 			'GET', 
 			{ 'orphanId': orphanId }, 
-			{ 'formatId': opts['formatId'],'emailFormatId': opts['emailFormatId'],'chatFormatId': opts['chatFormatId'],'messageFormatId': opts['messageFormatId'],'download': opts['download'],'fileName': opts['fileName'],'locale': opts['locale'] }, 
+			{ 'formatId': opts['formatId'],'emailFormatId': opts['emailFormatId'],'chatFormatId': opts['chatFormatId'],'messageFormatId': opts['messageFormatId'],'download': opts['download'],'fileName': opts['fileName'],'locale': opts['locale'],'mediaFormats': this.apiClient.buildCollectionParam(opts['mediaFormats'], 'multi') }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -35481,7 +35494,7 @@ class ResponseManagementApi {
 	/**
 	 * ResponseManagement service.
 	 * @module purecloud-platform-client-v2/api/ResponseManagementApi
-	 * @version 131.1.0
+	 * @version 132.0.0
 	 */
 
 	/**
@@ -35806,7 +35819,7 @@ class RoutingApi {
 	/**
 	 * Routing service.
 	 * @module purecloud-platform-client-v2/api/RoutingApi
-	 * @version 131.1.0
+	 * @version 132.0.0
 	 */
 
 	/**
@@ -38729,7 +38742,7 @@ class SCIMApi {
 	/**
 	 * SCIM service.
 	 * @module purecloud-platform-client-v2/api/SCIMApi
-	 * @version 131.1.0
+	 * @version 132.0.0
 	 */
 
 	/**
@@ -39606,7 +39619,7 @@ class ScriptsApi {
 	/**
 	 * Scripts service.
 	 * @module purecloud-platform-client-v2/api/ScriptsApi
-	 * @version 131.1.0
+	 * @version 132.0.0
 	 */
 
 	/**
@@ -39959,7 +39972,7 @@ class SearchApi {
 	/**
 	 * Search service.
 	 * @module purecloud-platform-client-v2/api/SearchApi
-	 * @version 131.1.0
+	 * @version 132.0.0
 	 */
 
 	/**
@@ -40494,7 +40507,7 @@ class SpeechTextAnalyticsApi {
 	/**
 	 * SpeechTextAnalytics service.
 	 * @module purecloud-platform-client-v2/api/SpeechTextAnalyticsApi
-	 * @version 131.1.0
+	 * @version 132.0.0
 	 */
 
 	/**
@@ -41347,7 +41360,7 @@ class StationsApi {
 	/**
 	 * Stations service.
 	 * @module purecloud-platform-client-v2/api/StationsApi
-	 * @version 131.1.0
+	 * @version 132.0.0
 	 */
 
 	/**
@@ -41494,7 +41507,7 @@ class SuggestApi {
 	/**
 	 * Suggest service.
 	 * @module purecloud-platform-client-v2/api/SuggestApi
-	 * @version 131.1.0
+	 * @version 132.0.0
 	 */
 
 	/**
@@ -41633,7 +41646,7 @@ class TelephonyApi {
 	/**
 	 * Telephony service.
 	 * @module purecloud-platform-client-v2/api/TelephonyApi
-	 * @version 131.1.0
+	 * @version 132.0.0
 	 */
 
 	/**
@@ -41741,7 +41754,7 @@ class TelephonyProvidersEdgeApi {
 	/**
 	 * TelephonyProvidersEdge service.
 	 * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-	 * @version 131.1.0
+	 * @version 132.0.0
 	 */
 
 	/**
@@ -45374,7 +45387,7 @@ class TextbotsApi {
 	/**
 	 * Textbots service.
 	 * @module purecloud-platform-client-v2/api/TextbotsApi
-	 * @version 131.1.0
+	 * @version 132.0.0
 	 */
 
 	/**
@@ -45502,7 +45515,7 @@ class TokensApi {
 	/**
 	 * Tokens service.
 	 * @module purecloud-platform-client-v2/api/TokensApi
-	 * @version 131.1.0
+	 * @version 132.0.0
 	 */
 
 	/**
@@ -45608,7 +45621,7 @@ class UploadsApi {
 	/**
 	 * Uploads service.
 	 * @module purecloud-platform-client-v2/api/UploadsApi
-	 * @version 131.1.0
+	 * @version 132.0.0
 	 */
 
 	/**
@@ -45784,7 +45797,7 @@ class UsageApi {
 	/**
 	 * Usage service.
 	 * @module purecloud-platform-client-v2/api/UsageApi
-	 * @version 131.1.0
+	 * @version 132.0.0
 	 */
 
 	/**
@@ -45855,7 +45868,7 @@ class UserRecordingsApi {
 	/**
 	 * UserRecordings service.
 	 * @module purecloud-platform-client-v2/api/UserRecordingsApi
-	 * @version 131.1.0
+	 * @version 132.0.0
 	 */
 
 	/**
@@ -46039,7 +46052,7 @@ class UsersApi {
 	/**
 	 * Users service.
 	 * @module purecloud-platform-client-v2/api/UsersApi
-	 * @version 131.1.0
+	 * @version 132.0.0
 	 */
 
 	/**
@@ -48341,7 +48354,7 @@ class UtilitiesApi {
 	/**
 	 * Utilities service.
 	 * @module purecloud-platform-client-v2/api/UtilitiesApi
-	 * @version 131.1.0
+	 * @version 132.0.0
 	 */
 
 	/**
@@ -48452,7 +48465,7 @@ class VoicemailApi {
 	/**
 	 * Voicemail service.
 	 * @module purecloud-platform-client-v2/api/VoicemailApi
-	 * @version 131.1.0
+	 * @version 132.0.0
 	 */
 
 	/**
@@ -49119,7 +49132,7 @@ class WebChatApi {
 	/**
 	 * WebChat service.
 	 * @module purecloud-platform-client-v2/api/WebChatApi
-	 * @version 131.1.0
+	 * @version 132.0.0
 	 */
 
 	/**
@@ -49663,7 +49676,7 @@ class WebDeploymentsApi {
 	/**
 	 * WebDeployments service.
 	 * @module purecloud-platform-client-v2/api/WebDeploymentsApi
-	 * @version 131.1.0
+	 * @version 132.0.0
 	 */
 
 	/**
@@ -50018,7 +50031,7 @@ class WebMessagingApi {
 	/**
 	 * WebMessaging service.
 	 * @module purecloud-platform-client-v2/api/WebMessagingApi
-	 * @version 131.1.0
+	 * @version 132.0.0
 	 */
 
 	/**
@@ -50064,7 +50077,7 @@ class WidgetsApi {
 	/**
 	 * Widgets service.
 	 * @module purecloud-platform-client-v2/api/WidgetsApi
-	 * @version 131.1.0
+	 * @version 132.0.0
 	 */
 
 	/**
@@ -50210,7 +50223,7 @@ class WorkforceManagementApi {
 	/**
 	 * WorkforceManagement service.
 	 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-	 * @version 131.1.0
+	 * @version 132.0.0
 	 */
 
 	/**
@@ -54241,7 +54254,7 @@ class WorkforceManagementApi {
  * </pre>
  * </p>
  * @module purecloud-platform-client-v2/index
- * @version 131.1.0
+ * @version 132.0.0
  */
 class platformClient {
 	constructor() {

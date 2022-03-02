@@ -455,8 +455,9 @@ Fetch user licenses in a batch.
 
 
 
-Requires NO permissions: 
+Requires ANY permissions: 
 
+* authorization:grant:add
 
 ### Example Usage
 

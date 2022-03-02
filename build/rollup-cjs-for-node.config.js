@@ -1,6 +1,6 @@
-import resolve from 'rollup-plugin-node-resolve';
-import commonjs from 'rollup-plugin-commonjs';
-import json from 'rollup-plugin-json';
+import { nodeResolve } from '@rollup/plugin-node-resolve';
+import commonjs from '@rollup/plugin-commonjs';
+import json from '@rollup/plugin-json';
 import replace from 'rollup-plugin-re';
 
 export default {
@@ -10,7 +10,7 @@ export default {
 		format: 'cjs'
 	},
 	plugins: [ 
-		resolve(),
+		nodeResolve(),
 		json()
 	],
 	external: [
