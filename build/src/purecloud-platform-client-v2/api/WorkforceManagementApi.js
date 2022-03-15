@@ -5,7 +5,7 @@ class WorkforceManagementApi {
 	/**
 	 * WorkforceManagement service.
 	 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-	 * @version 132.0.0
+	 * @version 133.0.0
 	 */
 
 	/**
@@ -2106,7 +2106,7 @@ class WorkforceManagementApi {
 
 	/**
 	 * Get a list of notifications for the current user
-	 * 
+	 * Notifications are only initially sent if you have the relevant Notify and Edit permissions
 	 */
 	getWorkforcemanagementNotifications() { 
 

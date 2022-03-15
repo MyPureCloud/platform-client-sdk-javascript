@@ -2461,7 +2461,7 @@ apiInstance.postGamificationProfileMetrics(profileId, body)
 
 <a name="postGamificationProfiles"></a>
 
-# GetProfilesResponse postGamificationProfiles(body, opts)
+# PerformanceProfile postGamificationProfiles(body, opts)
 
 
 
@@ -2514,7 +2514,7 @@ apiInstance.postGamificationProfiles(body, opts)
 
 ### Return type
 
-**GetProfilesResponse**
+**PerformanceProfile**
 
 <a name="putGamificationMetric"></a>
 

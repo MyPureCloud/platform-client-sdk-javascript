@@ -1,164 +1,214 @@
-Platform API version: 5460
+Platform API version: 5516
 
 
-# Major Changes (30 changes)
-
-**POST /api/v2/outbound/dnclists/{dncListId}/phonenumbers** (1 change)
-
-* Parameter expirationDateTime was added
+# Major Changes (8 changes)
 
 **POST /api/v2/gamification/profiles** (1 change)
 
-* Parameter copyMetrics was added
+* Response 200 was removed
 
-**GET /api/v2/orphanrecordings/{orphanId}/media** (1 change)
+**ContactColumnToDataActionFieldMapping** (2 changes)
 
-* Parameter mediaFormats was added
+* Required property contactColumnName was added
+* Required property dataActionField was added
 
-**GET /api/v2/conversations/{conversationId}/recordings/{recordingId}** (1 change)
+**DataActionConditionPredicate** (5 changes)
 
-* Parameter mediaFormats was added
+* Required property outputField was added
+* Required property outputOperator was added
+* Required property comparisonValue was added
+* Required property inverted was added
+* Required property outputFieldMissingResolution was added
 
-**GET /api/v2/conversations/{conversationId}/recordings** (1 change)
 
-* Parameter mediaFormats was added
+# Minor Changes (82 changes)
 
-**GET /api/v2/routing/queues/{queueId}/users** (1 change)
+**/api/v2/conversations/emails/{conversationId}/settings** (2 changes)
 
-* Response 200 type was changed from QueueMemberEntityListing to QueueMemberEntityListingV1
-
-**PATCH /api/v2/routing/queues/{queueId}/users** (1 change)
-
-* Response 200 type was changed from QueueMemberEntityListing to QueueMemberEntityListingV1
+* Path was added
+* Operation GET was added
 
 **POST /api/v2/telephony/providers/edges/extensionpools** (1 change)
 
-* Response 409 was removed
+* Response 409 was added
 
-**EdgeIdNamePair** (1 change)
+**Condition** (7 changes)
 
-* Model EdgeIdNamePair was removed
+* Optional property dataAction was added
+* Optional property dataNotFoundResolution was added
+* Optional property contactIdField was added
+* Optional property callAnalysisResultField was added
+* Optional property agentWrapupField was added
+* Optional property contactColumnToDataActionFieldMappings was added
+* Optional property predicates was added
 
-**CreateOutboundMessagingConversationRequest** (7 changes)
+**AnalyticsFlow** (1 change)
 
-* Enum value facebook was removed from property toAddressMessengerType
-* Enum value twitter was removed from property toAddressMessengerType
-* Enum value line was removed from property toAddressMessengerType
-* Enum value whatsapp was removed from property toAddressMessengerType
-* Enum value webmessaging was removed from property toAddressMessengerType
-* Enum value instagram was removed from property toAddressMessengerType
-* Enum value open was removed from property toAddressMessengerType
+* Enum value DIGITALBOT was added to property flowType
 
-**SendAgentlessOutboundMessageResponse** (5 changes)
+**AnalyticsSession** (2 changes)
 
-* Enum value facebook was removed from property messengerType
-* Enum value twitter was removed from property messengerType
-* Enum value line was removed from property messengerType
-* Enum value webmessaging was removed from property messengerType
-* Enum value instagram was removed from property messengerType
+* Enum value Conditional was added to property requestedRoutings
+* Enum value Conditional was added to property usedRouting
 
-**SendAgentlessOutboundMessageRequest** (5 changes)
+**ObservationValue** (2 changes)
 
-* Enum value facebook was removed from property toAddressMessengerType
-* Enum value twitter was removed from property toAddressMessengerType
-* Enum value line was removed from property toAddressMessengerType
-* Enum value webmessaging was removed from property toAddressMessengerType
-* Enum value instagram was removed from property toAddressMessengerType
+* Enum value Conditional was added to property requestedRoutings
+* Enum value Conditional was added to property usedRouting
 
-**QueueMemberEntityListing** (3 changes)
+**ViewFilter** (5 changes)
 
-* Property total was removed
-* Property lastUri was removed
-* Property pageCount was removed
+* Enum value Conditional was added to property usedRoutingTypes
+* Enum value Conditional was added to property requestedRoutingTypes
+* Optional property conversationInitiator was added
+* Optional property hasCustomerParticipated was added
+* Optional property isAcdInteraction was added
 
-**ExpiredEdgeListing** (1 change)
+**AuditLogMessage** (2 changes)
 
-* Property entities was changed from EdgeIdNamePair[] to DomainEntityRef[]
+* Enum value Action was added to property entityType
+* Enum value ActionDraft was added to property entityType
 
+**AuditQueryEntity** (2 changes)
 
-# Minor Changes (19 changes)
+* Enum value Action was added to property name
+* Enum value ActionDraft was added to property name
 
-**Team** (1 change)
+**EncryptionKey** (1 change)
 
-* Optional property dateCreated was added
+* Optional property keyConfigurationType was added
 
-**UserStation** (1 change)
-
-* Optional property webRtcCallAppearances was added
-
-**PredictiveRouting** (1 change)
-
-* Optional property respectSkills was added
-
-**AnswerOption** (1 change)
-
-* Optional property assistanceConditions was added
-
-**AssistanceCondition** (1 change)
+**ContactAddressableEntityRef** (1 change)
 
 * Model was added
 
-**EvaluationQuestionScore** (1 change)
+**Participant** (1 change)
 
-* Optional property assistedAnswerId was added
+* Optional property bargedParticipantId was added
 
-**EvaluationScoringSet** (1 change)
+**CallMediaParticipant** (2 changes)
 
-* Optional property transcriptTopics was added
+* Optional property bargedParticipantId was added
+* Optional property bargedTime was added
 
-**TopicDuration** (1 change)
-
-* Model was added
-
-**TranscriptTopic** (1 change)
+**EmailsSettings** (1 change)
 
 * Model was added
 
-**ConversationEventTyping** (1 change)
+**ResponseSet** (1 change)
 
-* Model was added
+* Optional property beepDetectionEnabled was added
 
-**ConversationMessageEvent** (2 changes)
+**ParticipantBasic** (1 change)
 
-* Enum value Typing was added to property eventType
-* Optional property typing was added
+* Optional property bargedParticipantId was added
 
 **DncListDivisionView** (1 change)
 
-* Optional property dncSourceType was added
+* Optional property contactMethod was added
 
-**EventMessage** (2 changes)
+**DncList** (1 change)
 
-* Enum value DATA_ACTION_TOO_MANY_REQUESTS was added to property code
-* Enum value DATA_ACTION_TOO_MANY_REQUESTS_REMOTE was added to property code
+* Optional property contactMethod was added
 
-**AutomaticTimeZoneMappingSettings** (1 change)
+**DncListCreate** (1 change)
 
-* Optional property supportedCountries was added
+* Optional property contactMethod was added
 
-**SurveyQuestionScore** (1 change)
+**DialerAction** (5 changes)
 
-* Optional property assistedAnswerId was added
+* Optional property dataAction was added
+* Optional property contactColumnToDataActionFieldMappings was added
+* Optional property contactIdField was added
+* Optional property callAnalysisResultField was added
+* Optional property agentWrapupField was added
 
-**QueueMemberEntityListingV1** (1 change)
+**KnowledgeBase** (6 changes)
 
-* Model was added
+* Enum value es-US was added to property coreLanguage
+* Enum value es-ES was added to property coreLanguage
+* Enum value fr-FR was added to property coreLanguage
+* Enum value pt-BR was added to property coreLanguage
+* Enum value nl-NL was added to property coreLanguage
+* Enum value it-IT was added to property coreLanguage
 
-**LearningModuleReassignSummary** (1 change)
+**KnowledgeCategory** (6 changes)
 
-* Model was added
+* Enum value es-US was added to property languageCode
+* Enum value es-ES was added to property languageCode
+* Enum value fr-FR was added to property languageCode
+* Enum value pt-BR was added to property languageCode
+* Enum value nl-NL was added to property languageCode
+* Enum value it-IT was added to property languageCode
+
+**KnowledgeSearchDocument** (6 changes)
+
+* Enum value es-US was added to property languageCode
+* Enum value es-ES was added to property languageCode
+* Enum value fr-FR was added to property languageCode
+* Enum value pt-BR was added to property languageCode
+* Enum value nl-NL was added to property languageCode
+* Enum value it-IT was added to property languageCode
+
+**KnowledgeExtendedCategory** (6 changes)
+
+* Enum value es-US was added to property languageCode
+* Enum value es-ES was added to property languageCode
+* Enum value fr-FR was added to property languageCode
+* Enum value pt-BR was added to property languageCode
+* Enum value nl-NL was added to property languageCode
+* Enum value it-IT was added to property languageCode
+
+**KnowledgeImport** (6 changes)
+
+* Enum value es-US was added to property languageCode
+* Enum value es-ES was added to property languageCode
+* Enum value fr-FR was added to property languageCode
+* Enum value pt-BR was added to property languageCode
+* Enum value nl-NL was added to property languageCode
+* Enum value it-IT was added to property languageCode
+
+**KnowledgeDocument** (6 changes)
+
+* Enum value es-US was added to property languageCode
+* Enum value es-ES was added to property languageCode
+* Enum value fr-FR was added to property languageCode
+* Enum value pt-BR was added to property languageCode
+* Enum value nl-NL was added to property languageCode
+* Enum value it-IT was added to property languageCode
+
+**Flow** (2 changes)
+
+* Enum value DIGITALBOT was added to property type
+* Enum value DIGITALBOT was added to property compatibleFlowTypes
+
+**FlowVersion** (1 change)
+
+* Enum value DIGITALBOT was added to property compatibleFlowTypes
+
+**Dependency** (1 change)
+
+* Enum value DIGITALBOTFLOW was added to property type
+
+**DependencyObject** (1 change)
+
+* Enum value DIGITALBOTFLOW was added to property type
+
+**FlowDivisionView** (1 change)
+
+* Enum value DIGITALBOT was added to property type
 
 
 # Point Changes (3 changes)
 
-**POST /api/v2/conversations/messages/agentless** (1 change)
+**PUT /api/v2/quality/conversations/{conversationId}/evaluations/{evaluationId}** (1 change)
+
+* Description was changed for parameter expand
+
+**DELETE /api/v2/quality/conversations/{conversationId}/evaluations/{evaluationId}** (1 change)
+
+* Description was changed for parameter expand
+
+**GET /api/v2/workforcemanagement/notifications** (1 change)
 
 * Description was changed
-
-**GET /api/v2/quality/agents/activity** (1 change)
-
-* Description was changed
-
-**GET /api/v2/conversations/{conversationId}/recordings** (1 change)
-
-* Description was changed for parameter formatId

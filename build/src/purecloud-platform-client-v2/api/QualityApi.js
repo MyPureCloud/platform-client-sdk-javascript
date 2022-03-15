@@ -5,7 +5,7 @@ class QualityApi {
 	/**
 	 * Quality service.
 	 * @module purecloud-platform-client-v2/api/QualityApi
-	 * @version 132.0.0
+	 * @version 133.0.0
 	 */
 
 	/**
@@ -56,7 +56,7 @@ class QualityApi {
 	 * @param {String} conversationId conversationId
 	 * @param {String} evaluationId evaluationId
 	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.expand evaluatorId
+	 * @param {String} opts.expand evaluatorId, evaluationForm
 	 */
 	deleteQualityConversationEvaluation(conversationId, evaluationId, opts) { 
 		opts = opts || {};
@@ -1425,7 +1425,7 @@ class QualityApi {
 	 * @param {String} evaluationId evaluationId
 	 * @param {Object} body evaluation
 	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.expand evaluatorId
+	 * @param {String} opts.expand evaluatorId, evaluationForm
 	 */
 	putQualityConversationEvaluation(conversationId, evaluationId, body, opts) { 
 		opts = opts || {};

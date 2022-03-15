@@ -5,7 +5,7 @@ class ConversationsApi {
 	/**
 	 * Conversations service.
 	 * @module purecloud-platform-client-v2/api/ConversationsApi
-	 * @version 132.0.0
+	 * @version 133.0.0
 	 */
 
 	/**
@@ -1326,6 +1326,31 @@ class ConversationsApi {
 			'/api/v2/conversations/emails/{conversationId}/participants/{participantId}/wrapupcodes', 
 			'GET', 
 			{ 'conversationId': conversationId,'participantId': participantId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get emails settings for a given conversation
+	 * 
+	 * @param {String} conversationId conversationId
+	 */
+	getConversationsEmailSettings(conversationId) { 
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null) {
+			throw 'Missing the required parameter "conversationId" when calling getConversationsEmailSettings';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/emails/{conversationId}/settings', 
+			'GET', 
+			{ 'conversationId': conversationId }, 
 			{  }, 
 			{  }, 
 			{  }, 

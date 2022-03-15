@@ -151,7 +151,7 @@ let apiInstance = new platformClient.QualityApi();
 let conversationId = "conversationId_example"; // String | conversationId
 let evaluationId = "evaluationId_example"; // String | evaluationId
 let opts = { 
-  'expand': "expand_example" // String | evaluatorId
+  'expand': "expand_example" // String | evaluatorId, evaluationForm
 };
 
 apiInstance.deleteQualityConversationEvaluation(conversationId, evaluationId, opts)
@@ -171,7 +171,7 @@ apiInstance.deleteQualityConversationEvaluation(conversationId, evaluationId, op
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
  **evaluationId** | **String** | evaluationId |  |
- **expand** | **String** | evaluatorId | [optional]  |
+ **expand** | **String** | evaluatorId, evaluationForm | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2982,7 +2982,7 @@ let conversationId = "conversationId_example"; // String | conversationId
 let evaluationId = "evaluationId_example"; // String | evaluationId
 let body = {}; // Object | evaluation
 let opts = { 
-  'expand': "expand_example" // String | evaluatorId
+  'expand': "expand_example" // String | evaluatorId, evaluationForm
 };
 
 apiInstance.putQualityConversationEvaluation(conversationId, evaluationId, body, opts)
@@ -3003,7 +3003,7 @@ apiInstance.putQualityConversationEvaluation(conversationId, evaluationId, body,
  **conversationId** | **String** | conversationId |  |
  **evaluationId** | **String** | evaluationId |  |
  **body** | **Object** | evaluation |  |
- **expand** | **String** | evaluatorId | [optional]  |
+ **expand** | **String** | evaluatorId, evaluationForm | [optional]  |
 {: class="table table-striped"}
 
 ### Return type

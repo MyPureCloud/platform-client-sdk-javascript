@@ -1027,6 +1027,7 @@ declare class ConversationsApi {
   	getConversationsEmailMessagesDraft(conversationId: string): Promise<Models.EmailMessage>; 
   	getConversationsEmailParticipantWrapup(conversationId: string, participantId: string, opts?: ConversationsApi.getConversationsEmailParticipantWrapupOptions): Promise<Models.AssignedWrapupCode>; 
   	getConversationsEmailParticipantWrapupcodes(conversationId: string, participantId: string): Promise<Array<Models.WrapupCode>>; 
+  	getConversationsEmailSettings(conversationId: string): Promise<Models.EmailsSettings>; 
   	getConversationsEmails(): Promise<Models.EmailConversationEntityListing>; 
   	getConversationsMessage(conversationId: string): Promise<Models.MessageConversation>; 
   	getConversationsMessageCommunicationMessagesMediaMediaId(conversationId: string, communicationId: string, mediaId: string): Promise<Models.MessageMediaData>; 
@@ -1490,7 +1491,7 @@ declare class GamificationApi {
   	postGamificationProfileMembersValidate(performanceProfileId: string, body: Models.ValidateAssignUsers): Promise<Models.AssignmentValidation>; 
   	postGamificationProfileMetricLink(sourceProfileId: string, sourceMetricId: string, body: Models.TargetPerformanceProfile): Promise<Models.Metric>; 
   	postGamificationProfileMetrics(profileId: string, body: Models.CreateMetric): Promise<Models.Metric>; 
-  	postGamificationProfiles(body: Models.CreatePerformanceProfile, opts?: GamificationApi.postGamificationProfilesOptions): Promise<Models.GetProfilesResponse>; 
+  	postGamificationProfiles(body: Models.CreatePerformanceProfile, opts?: GamificationApi.postGamificationProfilesOptions): Promise<Models.PerformanceProfile>; 
   	putGamificationMetric(metricId: string, body: Models.CreateMetric, opts?: GamificationApi.putGamificationMetricOptions): Promise<Models.Metric>; 
   	putGamificationProfile(performanceProfileId: string, opts?: GamificationApi.putGamificationProfileOptions): Promise<Models.PerformanceProfile>; 
   	putGamificationProfileMetric(profileId: string, metricId: string, body: Models.CreateMetric): Promise<Models.Metric>; 
@@ -5477,6 +5478,7 @@ declare namespace Models {
 		"userId"?: string;
 		"queueId"?: string;
 		"wrapupCode"?: string;
+		"wrapupNotes"?: string;
 		"wrapupDurationMs"?: number;
 	}
 	
@@ -8175,8 +8177,10 @@ declare namespace Models {
 		"faxStatus"?: Models.FaxStatus;
 		"monitoredParticipantId"?: string;
 		"coachedParticipantId"?: string;
+		"bargedParticipantId"?: string;
 		"consultParticipantId"?: string;
 		"uuiData"?: string;
+		"bargedTime"?: string;
 	}
 	
 	export interface CallMediaPolicy { 
@@ -9207,6 +9211,13 @@ declare namespace Models {
 		"codes"?: Array<string>;
 		"property"?: string;
 		"propertyType"?: string;
+		"dataAction"?: Models.DomainEntityRef;
+		"dataNotFoundResolution"?: boolean;
+		"contactIdField"?: string;
+		"callAnalysisResultField"?: string;
+		"agentWrapupField"?: string;
+		"contactColumnToDataActionFieldMappings"?: Array<Models.ContactColumnToDataActionFieldMapping>;
+		"predicates"?: Array<Models.DataActionConditionPredicate>;
 	}
 	
 	export interface ConfigurationOverrides { 
@@ -9301,6 +9312,11 @@ declare namespace Models {
 		"countryCode"?: string;
 	}
 	
+	export interface ContactAddressableEntityRef { 
+		"id"?: string;
+		"selfUri"?: string;
+	}
+	
 	export interface ContactCallbackRequest { 
 		"campaignId": string;
 		"contactListId": string;
@@ -9319,6 +9335,29 @@ declare namespace Models {
 	}
 	
 	export interface ContactColumnToDataActionFieldMapping { 
+		"contactColumnName": string;
+		"dataActionField": string;
+	}
+	
+	export interface ContactDetailEventTopicContactUpdateEvent { 
+		"eventTime"?: number;
+		"conversationId"?: string;
+		"participantId"?: string;
+		"sessionId"?: string;
+		"mediaType"?: string;
+		"externalOrganizationId"?: string;
+		"externalContactId"?: string;
+		"provider"?: string;
+		"direction"?: string;
+		"ani"?: string;
+		"dnis"?: string;
+		"addressTo"?: string;
+		"addressFrom"?: string;
+		"callbackUserName"?: string;
+		"callbackNumbers"?: Array<string>;
+		"callbackScheduledTime"?: number;
+		"subject"?: string;
+		"messageType"?: string;
 	}
 	
 	export interface ContactList { 
@@ -11196,6 +11235,7 @@ declare namespace Models {
 		"conversationInitiator"?: string;
 		"convertedFrom"?: string;
 		"convertedTo"?: string;
+		"customerParticipation"?: boolean;
 		"deliveryStatus"?: string;
 		"destinationAddresses"?: Array<string>;
 		"direction"?: string;
@@ -12550,6 +12590,11 @@ declare namespace Models {
 	}
 	
 	export interface DataActionConditionPredicate { 
+		"outputField": string;
+		"outputOperator": string;
+		"comparisonValue": string;
+		"inverted": boolean;
+		"outputFieldMissingResolution": boolean;
 	}
 	
 	export interface DataAvailabilityResponse { 
@@ -12891,6 +12936,11 @@ declare namespace Models {
 		"actionTypeName": string;
 		"updateOption"?: string;
 		"properties"?: { [key: string]: string; };
+		"dataAction"?: Models.DomainEntityRef;
+		"contactColumnToDataActionFieldMappings"?: Array<Models.ContactColumnToDataActionFieldMapping>;
+		"contactIdField"?: string;
+		"callAnalysisResultField"?: string;
+		"agentWrapupField"?: string;
 	}
 	
 	export interface DialerAttemptLimitsConfigChangeAttemptLimits { 
@@ -13512,6 +13562,7 @@ declare namespace Models {
 		"importStatus"?: Models.ImportStatus;
 		"size"?: number;
 		"dncSourceType": string;
+		"contactMethod"?: string;
 		"loginId"?: string;
 		"dncCodes"?: Array<string>;
 		"licenseId"?: string;
@@ -13528,6 +13579,7 @@ declare namespace Models {
 		"importStatus"?: Models.ImportStatus;
 		"size"?: number;
 		"dncSourceType": string;
+		"contactMethod"?: string;
 		"loginId"?: string;
 		"dncCodes"?: Array<string>;
 		"licenseId"?: string;
@@ -13542,6 +13594,7 @@ declare namespace Models {
 		"importStatus"?: Models.ImportStatus;
 		"size"?: number;
 		"dncSourceType"?: string;
+		"contactMethod"?: string;
 		"selfUri"?: string;
 	}
 	
@@ -14763,6 +14816,10 @@ declare namespace Models {
 		"rootDomain"?: string;
 	}
 	
+	export interface EmailsSettings { 
+		"sendingSizeLimit"?: number;
+	}
+	
 	export interface EmbeddedIntegration { 
 		"enableWhitelist"?: boolean;
 		"domainWhitelist"?: Array<string>;
@@ -14821,6 +14878,7 @@ declare namespace Models {
 		"keydataSummary"?: string;
 		"user"?: Models.User;
 		"localEncryptionConfiguration"?: Models.LocalEncryptionConfiguration;
+		"keyConfigurationType"?: string;
 		"selfUri"?: string;
 	}
 	
@@ -15112,8 +15170,8 @@ declare namespace Models {
 		"commentsRequired"?: boolean;
 		"visibilityCondition"?: Models.VisibilityCondition;
 		"answerOptions"?: Array<Models.AnswerOption>;
-		"isKill"?: boolean;
 		"isCritical"?: boolean;
+		"isKill"?: boolean;
 	}
 	
 	export interface EvaluationQuestionGroup { 
@@ -15854,6 +15912,98 @@ declare namespace Models {
 		"name"?: string;
 		"flowVersion"?: Models.DomainEntityRef;
 		"selfUri"?: string;
+	}
+	
+	export interface FlowMetricsTopicConversationMetricRecord { 
+		"metric"?: string;
+		"metricDate"?: string;
+		"value"?: number;
+		"recordId"?: string;
+		"activeSkillIds"?: Array<string>;
+		"addressFrom"?: string;
+		"addressTo"?: string;
+		"agentAssistantId"?: string;
+		"agentBullseyeRing"?: number;
+		"agentOwned"?: boolean;
+		"ani"?: string;
+		"assignerId"?: string;
+		"authenticated"?: boolean;
+		"conversationId"?: string;
+		"conversationInitiator"?: string;
+		"convertedFrom"?: string;
+		"convertedTo"?: string;
+		"customerParticipation"?: boolean;
+		"deliveryStatus"?: string;
+		"destinationAddresses"?: Array<string>;
+		"direction"?: string;
+		"disconnectType"?: string;
+		"divisionIds"?: Array<string>;
+		"dnis"?: string;
+		"edgeId"?: string;
+		"eligibleAgentCounts"?: Array<number>;
+		"extendedDeliveryStatus"?: string;
+		"externalContactId"?: string;
+		"externalMediaCount"?: number;
+		"externalOrganizationId"?: string;
+		"externalTag"?: string;
+		"firstQueue"?: boolean;
+		"flaggedReason"?: string;
+		"flowInType"?: string;
+		"flowOutType"?: string;
+		"groupId"?: string;
+		"interactionType"?: string;
+		"journeyActionId"?: string;
+		"journeyActionMapId"?: string;
+		"journeyActionMapVersion"?: number;
+		"journeyCustomerId"?: string;
+		"journeyCustomerIdType"?: string;
+		"journeyCustomerSessionId"?: string;
+		"journeyCustomerSessionIdType"?: string;
+		"knowledgeBaseIds"?: Array<string>;
+		"mediaCount"?: number;
+		"mediaType"?: string;
+		"messageType"?: string;
+		"originatingDirection"?: string;
+		"outboundCampaignId"?: string;
+		"outboundContactId"?: string;
+		"outboundContactListId"?: string;
+		"participantName"?: string;
+		"peerId"?: string;
+		"provider"?: string;
+		"purpose"?: string;
+		"queueId"?: string;
+		"remote"?: string;
+		"removedSkillIds"?: Array<string>;
+		"reoffered"?: boolean;
+		"requestedLanguageId"?: string;
+		"requestedRoutingSkillIds"?: Array<string>;
+		"requestedRoutings"?: Array<string>;
+		"roomId"?: string;
+		"routingPriority"?: number;
+		"routingRing"?: number;
+		"selectedAgentId"?: string;
+		"selectedAgentRank"?: number;
+		"selfServed"?: boolean;
+		"sessionDnis"?: string;
+		"sessionId"?: string;
+		"stationId"?: string;
+		"teamId"?: string;
+		"usedRouting"?: string;
+		"userId"?: string;
+		"waitingInteractionCounts"?: Array<number>;
+		"wrapUpCode"?: string;
+		"proposedAgents"?: Array<Models.FlowMetricsTopicConversationProposedAgent>;
+		"scoredAgents"?: Array<Models.FlowMetricsTopicConversationScoredAgent>;
+	}
+	
+	export interface FlowMetricsTopicConversationProposedAgent { 
+		"agentRank"?: number;
+		"proposedAgentId"?: string;
+	}
+	
+	export interface FlowMetricsTopicConversationScoredAgent { 
+		"agentScore"?: number;
+		"scoredAgentId"?: string;
 	}
 	
 	export interface FlowMilestone { 
@@ -20793,6 +20943,7 @@ declare namespace Models {
 		"flaggedReason"?: string;
 		"startAcwTime"?: string;
 		"endAcwTime"?: string;
+		"bargedParticipantId"?: string;
 	}
 	
 	export interface ParticipantAttributes { 
@@ -20845,6 +20996,7 @@ declare namespace Models {
 		"flaggedReason"?: string;
 		"startAcwTime"?: string;
 		"endAcwTime"?: string;
+		"bargedParticipantId"?: string;
 	}
 	
 	export interface ParticipantMetrics { 
@@ -24931,6 +25083,7 @@ declare namespace Models {
 		"dateModified"?: string;
 		"version"?: number;
 		"responses": { [key: string]: Models.Reaction; };
+		"beepDetectionEnabled"?: boolean;
 		"selfUri"?: string;
 	}
 	
@@ -29460,6 +29613,9 @@ declare namespace Models {
 		"journeyUrlNotContainsAllConditions"?: Array<string>;
 		"flowMilestoneIds"?: Array<string>;
 		"isAssessmentPassed"?: boolean;
+		"conversationInitiator"?: string;
+		"hasCustomerParticipated"?: boolean;
+		"isAcdInteraction"?: boolean;
 	}
 	
 	export interface VisibilityCondition { 
@@ -31405,6 +31561,29 @@ declare namespace Models {
 		"previousUri"?: string;
 		"lastUri"?: string;
 		"pageCount"?: number;
+	}
+	
+	export interface WrapupDetailEventTopicWrapupEvent { 
+		"eventTime"?: number;
+		"conversationId"?: string;
+		"participantId"?: string;
+		"sessionId"?: string;
+		"mediaType"?: string;
+		"provider"?: string;
+		"direction"?: string;
+		"ani"?: string;
+		"dnis"?: string;
+		"addressTo"?: string;
+		"addressFrom"?: string;
+		"callbackUserName"?: string;
+		"callbackNumbers"?: Array<string>;
+		"callbackScheduledTime"?: number;
+		"subject"?: string;
+		"messageType"?: string;
+		"queueId"?: string;
+		"wrapupCode"?: string;
+		"wrapupNotes"?: string;
+		"wrapupDurationMs"?: number;
 	}
 	
 	export interface WritableDialerContact { 
