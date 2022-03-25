@@ -1,0 +1,27 @@
+// Browser
+const  = require('');
+// Node
+const  = require('');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new .GetGamificationScorecardsValuesTrendsRequest();
+
+let startWorkday = "2013-10-20"; // String | Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+let endWorkday = "2013-10-20"; // String | End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+let opts = { 
+  'filterType': "filterType_example", // String | Filter type for the query request. If not set, then the request is for the requesting user.
+  'referenceWorkday': "2013-10-20", // String | Reference workday for the trend. Used to determine the profile of the user as of this date. If not set, then the user's current profile will be used. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+  'timeZone': "UTC" // String | Timezone for the workday. Defaults to UTC
+};
+
+
+let callback = (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getGamificationScorecardsValuesTrends(startWorkday, endWorkday, opts, callback);

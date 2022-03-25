@@ -1,0 +1,30 @@
+// Browser
+const  = require('');
+// Node
+const  = require('');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new .GetArchitectDependencytrackingRequest();
+
+let name = "name_example"; // String | Object name to search for
+let opts = { 
+  'pageNumber': 1, // Number | Page number
+  'pageSize': 25, // Number | Page size
+  'objectType': ["objectType_example"], // [String] | Object type(s) to search for
+  'consumedResources': true, // Boolean | Include resources each result item consumes
+  'consumingResources': true, // Boolean | Include resources that consume each result item
+  'consumedResourceType': ["consumedResourceType_example"], // [String] | Types of consumed resources to return, if consumed resources are requested
+  'consumingResourceType': ["consumingResourceType_example"] // [String] | Types of consuming resources to return, if consuming resources are requested
+};
+
+
+let callback = (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getArchitectDependencytracking(name, opts, callback);

@@ -1,0 +1,26 @@
+// Browser
+const  = require('');
+// Node
+const  = require('');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new .GetFlowsDatatableRowsRequest();
+
+let datatableId = "datatableId_example"; // String | id of datatable
+let opts = { 
+  'pageNumber': 1, // Number | Page number
+  'pageSize': 25, // Number | Page size
+  'showbrief': true // Boolean | If true returns just the key value of the row
+};
+
+
+let callback = (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getFlowsDatatableRows(datatableId, opts, callback);

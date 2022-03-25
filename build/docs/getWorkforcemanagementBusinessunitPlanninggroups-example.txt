@@ -1,0 +1,21 @@
+// Browser
+const  = require('');
+// Node
+const  = require('');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new .GetWorkforcemanagementBusinessunitPlanninggroupsRequest();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit.
+
+
+let callback = (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getWorkforcemanagementBusinessunitPlanninggroups(businessUnitId, callback);

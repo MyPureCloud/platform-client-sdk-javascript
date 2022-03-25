@@ -1,0 +1,24 @@
+// Browser
+const  = require('');
+// Node
+const  = require('');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new .PostFlowsActionsPublishRequest();
+
+let flow = "flow_example"; // String | Flow ID
+let opts = { 
+  'version': "version_example" // String | version
+};
+
+
+let callback = (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.postFlowsActionsPublish(flow, opts, callback);

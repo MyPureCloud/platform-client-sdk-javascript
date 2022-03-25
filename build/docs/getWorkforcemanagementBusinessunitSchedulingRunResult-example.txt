@@ -1,0 +1,24 @@
+// Browser
+const  = require('');
+// Node
+const  = require('');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new .GetWorkforcemanagementBusinessunitSchedulingRunResultRequest();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+let runId = "runId_example"; // String | The ID of the schedule run
+let managementUnitIds = ["managementUnitIds_example"]; // [String] | The IDs of the management units for which to fetch the reschedule results
+let expand = ["expand_example"]; // [String] | The fields to expand. Omitting will return an empty response
+
+
+let callback = (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getWorkforcemanagementBusinessunitSchedulingRunResult(businessUnitId, runId, managementUnitIds, expand, callback);

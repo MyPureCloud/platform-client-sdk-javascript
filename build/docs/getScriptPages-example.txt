@@ -1,0 +1,24 @@
+// Browser
+const  = require('');
+// Node
+const  = require('');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new .GetScriptPagesRequest();
+
+let scriptId = "scriptId_example"; // String | Script ID
+let opts = { 
+  'scriptDataVersion': "scriptDataVersion_example" // String | Advanced usage - controls the data version of the script
+};
+
+
+let callback = (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getScriptPages(scriptId, opts, callback);

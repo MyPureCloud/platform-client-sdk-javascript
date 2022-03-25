@@ -1,0 +1,27 @@
+// Browser
+const  = require('');
+// Node
+const  = require('');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new .GetIntegrationsSpeechTtsEnginesRequest();
+
+let opts = { 
+  'pageNumber': 1, // Number | Page number
+  'pageSize': 25, // Number | Page size
+  'includeVoices': false, // Boolean | Include voices for the engine
+  'name': "name_example", // String | Filter on engine name
+  'language': "language_example" // String | Filter on supported language. If includeVoices=true then the voices are also filtered.
+};
+
+
+let callback = (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getIntegrationsSpeechTtsEngines(opts, callback);

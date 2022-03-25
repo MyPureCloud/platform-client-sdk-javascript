@@ -1,0 +1,25 @@
+// Browser
+const  = require('');
+// Node
+const  = require('');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new .GetGamificationLeaderboardRequest();
+
+let startWorkday = "2013-10-20"; // String | Start workday to retrieve for the leaderboard. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+let endWorkday = "2013-10-20"; // String | End workday to retrieve for the leaderboard. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+let opts = { 
+  'metricId': "metricId_example" // String | Metric Id for which the leaderboard is to be generated. The total points is used if nothing is given.
+};
+
+
+let callback = (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getGamificationLeaderboard(startWorkday, endWorkday, opts, callback);

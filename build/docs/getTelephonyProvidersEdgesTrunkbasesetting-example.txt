@@ -1,0 +1,24 @@
+// Browser
+const  = require('');
+// Node
+const  = require('');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new .GetTelephonyProvidersEdgesTrunkbasesettingRequest();
+
+let trunkBaseSettingsId = "trunkBaseSettingsId_example"; // String | Trunk Base ID
+let opts = { 
+  'ignoreHidden': true // Boolean | Set this to true to not receive trunk properties that are meant to be hidden or for internal system usage only.
+};
+
+
+let callback = (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getTelephonyProvidersEdgesTrunkbasesetting(trunkBaseSettingsId, opts, callback);

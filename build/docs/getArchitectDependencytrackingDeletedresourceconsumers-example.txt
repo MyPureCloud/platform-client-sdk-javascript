@@ -1,0 +1,29 @@
+// Browser
+const  = require('');
+// Node
+const  = require('');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new .GetArchitectDependencytrackingDeletedresourceconsumersRequest();
+
+let opts = { 
+  'name': "name_example", // String | Name to search for
+  'objectType': ["objectType_example"], // [String] | Object type(s) to search for
+  'flowFilter': "flowFilter_example", // String | Show only checkedIn or published flows
+  'consumedResources': false, // Boolean | Return consumed resources?
+  'consumedResourceType': ["consumedResourceType_example"], // [String] | Resource type(s) to return
+  'pageNumber': 1, // Number | Page number
+  'pageSize': 25 // Number | Page size
+};
+
+
+let callback = (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getArchitectDependencytrackingDeletedresourceconsumers(opts, callback);

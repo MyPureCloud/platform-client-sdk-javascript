@@ -1,0 +1,24 @@
+// Browser
+const  = require('');
+// Node
+const  = require('');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new .GetOauthScopeRequest();
+
+let scopeId = "scopeId_example"; // String | Scope ID
+let opts = { 
+  'acceptLanguage': "en-us" // String | The language with which to display the scope description.
+};
+
+
+let callback = (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getOauthScope(scopeId, opts, callback);

@@ -1,0 +1,28 @@
+// Browser
+const  = require('');
+// Node
+const  = require('');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new .GetArchitectDependencytrackingConsumedresourcesRequest();
+
+let id = "id_example"; // String | Consuming object ID
+let version = "version_example"; // String | Consuming object version
+let objectType = "objectType_example"; // String | Consuming object type.  Only versioned types are allowed here.
+let opts = { 
+  'resourceType': ["resourceType_example"], // [String] | Types of consumed resources to show
+  'pageNumber': 1, // Number | Page number
+  'pageSize': 25 // Number | Page size
+};
+
+
+let callback = (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getArchitectDependencytrackingConsumedresources(id, version, objectType, opts, callback);

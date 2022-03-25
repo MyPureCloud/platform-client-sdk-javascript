@@ -1,0 +1,24 @@
+// Browser
+const  = require('');
+// Node
+const  = require('');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new .GetFlowLatestconfigurationRequest();
+
+let flowId = "flowId_example"; // String | Flow ID
+let opts = { 
+  'deleted': false // Boolean | Deleted flows
+};
+
+
+let callback = (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getFlowLatestconfiguration(flowId, opts, callback);

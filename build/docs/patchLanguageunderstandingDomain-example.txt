@@ -1,0 +1,22 @@
+// Browser
+const  = require('');
+// Node
+const  = require('');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new .PatchLanguageunderstandingDomainRequest();
+
+let domainId = "domainId_example"; // String | ID of the NLU domain.
+let body = {}; // Object | The updated NLU Domain.
+
+
+let callback = (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.patchLanguageunderstandingDomain(domainId, body, callback);

@@ -1,0 +1,27 @@
+// Browser
+const  = require('');
+// Node
+const  = require('');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new .GetWorkforcemanagementManagementunitWeekSchedulesRequest();
+
+let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+let weekId = "weekId_example"; // String | First day of schedule week in yyyy-MM-dd format.
+let opts = { 
+  'includeOnlyPublished': true, // Boolean | Return only published schedules
+  'earliestWeekDate': "earliestWeekDate_example", // String | The start date of the earliest week to query in yyyy-MM-dd format
+  'latestWeekDate': "latestWeekDate_example" // String | The start date of the latest week to query in yyyy-MM-dd format
+};
+
+
+let callback = (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getWorkforcemanagementManagementunitWeekSchedules(managementUnitId, weekId, opts, callback);

@@ -1,0 +1,40 @@
+// Browser
+const  = require('');
+// Node
+const  = require('');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new .GetQualityEvaluationsQueryRequest();
+
+let opts = { 
+  'pageSize': 25, // Number | The total page size requested
+  'pageNumber': 1, // Number | The page number requested
+  'sortBy': "sortBy_example", // String | variable name requested to sort by
+  'expand': ["expand_example"], // [String] | variable name requested by expand list
+  'nextPage': "nextPage_example", // String | next page token
+  'previousPage': "previousPage_example", // String | Previous page token
+  'conversationId': "conversationId_example", // String | conversationId specified
+  'agentUserId': "agentUserId_example", // String | user id of the agent
+  'evaluatorUserId': "evaluatorUserId_example", // String | evaluator user id
+  'queueId': "queueId_example", // String | queue id
+  'startTime': "startTime_example", // String | start time of the evaluation query
+  'endTime': "endTime_example", // String | end time of the evaluation query
+  'evaluationState': ["evaluationState_example"], // [String] | 
+  'isReleased': true, // Boolean | the evaluation has been released
+  'agentHasRead': true, // Boolean | agent has the evaluation
+  'expandAnswerTotalScores': true, // Boolean | get the total scores for evaluations
+  'maximum': 56, // Number | maximum
+  'sortOrder': "sortOrder_example" // String | sort order options for agentUserId or evaluatorUserId query. Valid options are 'a', 'asc', 'ascending', 'd', 'desc', 'descending'
+};
+
+
+let callback = (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getQualityEvaluationsQuery(opts, callback);

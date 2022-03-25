@@ -1,0 +1,32 @@
+// Browser
+const  = require('');
+// Node
+const  = require('');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new .GetIntegrationsActionsRequest();
+
+let opts = { 
+  'pageSize': 25, // Number | The total page size requested
+  'pageNumber': 1, // Number | The page number requested
+  'nextPage': "nextPage_example", // String | next page token
+  'previousPage': "previousPage_example", // String | Previous page token
+  'sortBy': "sortBy_example", // String | Root level field name to sort on.
+  'sortOrder': "asc", // String | Direction to sort 'sortBy' field.
+  'category': "category_example", // String | Filter by category name
+  'name': "name_example", // String | Filter by action name. Provide full or just the first part of name.
+  'secure': "secure_example", // String | Filter to only include secure actions. True will only include actions marked secured. False will include only unsecure actions. Do not use filter if you want all Actions.
+  'includeAuthActions': "false" // String | Whether or not to include authentication actions in the response. These actions are not directly executable. Some integrations create them and will run them as needed to refresh authentication information for other actions.
+};
+
+
+let callback = (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getIntegrationsActions(opts, callback);

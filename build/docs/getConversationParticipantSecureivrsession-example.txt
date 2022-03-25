@@ -1,0 +1,23 @@
+// Browser
+const  = require('');
+// Node
+const  = require('');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new .GetConversationParticipantSecureivrsessionRequest();
+
+let conversationId = "conversationId_example"; // String | conversation ID
+let participantId = "participantId_example"; // String | participant ID
+let secureSessionId = "secureSessionId_example"; // String | secure IVR session ID
+
+
+let callback = (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getConversationParticipantSecureivrsession(conversationId, participantId, secureSessionId, callback);

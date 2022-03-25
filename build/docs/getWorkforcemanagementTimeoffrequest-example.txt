@@ -1,0 +1,21 @@
+// Browser
+const  = require('');
+// Node
+const  = require('');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new .GetWorkforcemanagementTimeoffrequestRequest();
+
+let timeOffRequestId = "timeOffRequestId_example"; // String | Time Off Request Id
+
+
+let callback = (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getWorkforcemanagementTimeoffrequest(timeOffRequestId, callback);

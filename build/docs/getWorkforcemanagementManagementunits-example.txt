@@ -1,0 +1,27 @@
+// Browser
+const  = require('');
+// Node
+const  = require('');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new .GetWorkforcemanagementManagementunitsRequest();
+
+let opts = { 
+  'pageSize': 56, // Number | Deprecated, paging is not supported
+  'pageNumber': 56, // Number | Deprecated, paging is not supported
+  'expand': "expand_example", // String | Deprecated, expand settings on the single MU route
+  'feature': "feature_example", // String | 
+  'divisionId': "divisionId_example" // String | 
+};
+
+
+let callback = (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getWorkforcemanagementManagementunits(opts, callback);

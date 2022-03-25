@@ -1,0 +1,29 @@
+// Browser
+const  = require('');
+// Node
+const  = require('');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new .GetKnowledgeKnowledgebaseLanguageCategoriesRequest();
+
+let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
+let languageCode = "en-US"; // String | Language code, format: iso2-LOCALE
+let opts = { 
+  'before': "before_example", // String | The cursor that points to the start of the set of entities that has been returned.
+  'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
+  'limit': "limit_example", // String | Number of entities to return. Maximum of 200. Deprecated in favour of pageSize, use CursorQueryParameters instead.
+  'pageSize': "pageSize_example", // String | Number of entities to return. Maximum of 200.
+  'name': "name_example" // String | Filter to return the categories that starts with the given category name.
+};
+
+
+let callback = (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getKnowledgeKnowledgebaseLanguageCategories(knowledgeBaseId, languageCode, opts, callback);

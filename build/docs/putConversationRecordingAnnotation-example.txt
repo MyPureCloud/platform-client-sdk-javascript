@@ -1,0 +1,24 @@
+// Browser
+const  = require('');
+// Node
+const  = require('');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new .PutConversationRecordingAnnotationRequest();
+
+let conversationId = "conversationId_example"; // String | Conversation ID
+let recordingId = "recordingId_example"; // String | Recording ID
+let annotationId = "annotationId_example"; // String | Annotation ID
+let body = {}; // Object | annotation
+
+
+let callback = (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.putConversationRecordingAnnotation(conversationId, recordingId, annotationId, body, callback);

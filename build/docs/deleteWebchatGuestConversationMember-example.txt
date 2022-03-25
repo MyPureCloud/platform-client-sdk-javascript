@@ -1,0 +1,25 @@
+// Browser
+const  = require('');
+// Node
+const  = require('');
+
+// Configure API key authorization: Guest Chat JWT
+let Guest Chat JWT = .ApiClient.instance.authentications['Guest Chat JWT'];
+Guest Chat JWT.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to void)
+//Guest Chat JWT.apiKeyPrefix = 'Token';
+
+let apiInstance = new .DeleteWebchatGuestConversationMemberRequest();
+
+let conversationId = "conversationId_example"; // String | conversationId
+let memberId = "memberId_example"; // String | memberId
+
+
+let callback = (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+apiInstance.deleteWebchatGuestConversationMember(conversationId, memberId, callback);

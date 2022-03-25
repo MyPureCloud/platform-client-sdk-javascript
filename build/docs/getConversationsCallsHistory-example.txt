@@ -1,0 +1,26 @@
+// Browser
+const  = require('');
+// Node
+const  = require('');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new .GetConversationsCallsHistoryRequest();
+
+let opts = { 
+  'pageSize': 25, // Number | Page size, maximum 50
+  'pageNumber': 1, // Number | Page number
+  'interval': "interval_example", // String | Interval string; format is ISO-8601. Separate start and end times with forward slash '/'
+  'expand': ["expand_example"] // [String] | Which fields, if any, to expand.
+};
+
+
+let callback = (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getConversationsCallsHistory(opts, callback);

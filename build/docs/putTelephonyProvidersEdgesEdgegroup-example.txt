@@ -1,0 +1,22 @@
+// Browser
+const  = require('');
+// Node
+const  = require('');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new .PutTelephonyProvidersEdgesEdgegroupRequest();
+
+let edgeGroupId = "edgeGroupId_example"; // String | Edge group ID
+let body = {}; // Object | EdgeGroup
+
+
+let callback = (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.putTelephonyProvidersEdgesEdgegroup(edgeGroupId, body, callback);

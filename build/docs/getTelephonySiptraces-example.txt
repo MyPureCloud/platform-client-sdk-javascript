@@ -1,0 +1,28 @@
+// Browser
+const  = require('');
+// Node
+const  = require('');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new .GetTelephonySiptracesRequest();
+
+let dateStart = new Date("2013-10-20T19:20:30+01:00"); // Date | Start date of the search. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+let dateEnd = new Date("2013-10-20T19:20:30+01:00"); // Date | End date of the search. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+let opts = { 
+  'callId': "callId_example", // String | unique identification of the placed call
+  'toUser': "toUser_example", // String | User to who the call was placed
+  'fromUser': "fromUser_example", // String | user who placed the call
+  'conversationId': "conversationId_example" // String | Unique identification of the conversation
+};
+
+
+let callback = (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getTelephonySiptraces(dateStart, dateEnd, opts, callback);

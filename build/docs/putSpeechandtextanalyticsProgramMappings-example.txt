@@ -1,0 +1,22 @@
+// Browser
+const  = require('');
+// Node
+const  = require('');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new .PutSpeechandtextanalyticsProgramMappingsRequest();
+
+let programId = "programId_example"; // String | The id of the program
+let body = {}; // Object | The program to set mappings for
+
+
+let callback = (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.putSpeechandtextanalyticsProgramMappings(programId, body, callback);

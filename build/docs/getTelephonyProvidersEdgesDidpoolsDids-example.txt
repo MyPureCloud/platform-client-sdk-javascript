@@ -1,0 +1,28 @@
+// Browser
+const  = require('');
+// Node
+const  = require('');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new .GetTelephonyProvidersEdgesDidpoolsDidsRequest();
+
+let type = "type_example"; // String | The type of numbers to return.
+let opts = { 
+  'id': ["id_example"], // [String] | Filter by a specific list of DID Pools.  If this is not provided, numbers from all DID Pools will be returned.
+  'numberMatch': "numberMatch_example", // String | A number to filter the results by.
+  'pageSize': 25, // Number | Page size
+  'pageNumber': 1, // Number | Page number
+  'sortOrder': "ascending" // String | Sort order
+};
+
+
+let callback = (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getTelephonyProvidersEdgesDidpoolsDids(type, opts, callback);

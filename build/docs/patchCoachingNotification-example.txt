@@ -1,0 +1,22 @@
+// Browser
+const  = require('');
+// Node
+const  = require('');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new .PatchCoachingNotificationRequest();
+
+let notificationId = "notificationId_example"; // String | The ID of the notification.
+let body = {}; // Object | Change the read state of a notification
+
+
+let callback = (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.patchCoachingNotification(notificationId, body, callback);

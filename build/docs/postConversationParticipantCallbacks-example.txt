@@ -1,0 +1,25 @@
+// Browser
+const  = require('');
+// Node
+const  = require('');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new .PostConversationParticipantCallbacksRequest();
+
+let conversationId = "conversationId_example"; // String | conversation ID
+let participantId = "participantId_example"; // String | participant ID
+let opts = { 
+  'body': {} // Object | 
+};
+
+
+let callback = (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+apiInstance.postConversationParticipantCallbacks(conversationId, participantId, opts, callback);

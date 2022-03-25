@@ -1,0 +1,22 @@
+// Browser
+const  = require('');
+// Node
+const  = require('');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new .PostFlowsDatatableImportJobsRequest();
+
+let datatableId = "datatableId_example"; // String | id of datatable
+let body = {}; // Object | import job information
+
+
+let callback = (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.postFlowsDatatableImportJobs(datatableId, body, callback);

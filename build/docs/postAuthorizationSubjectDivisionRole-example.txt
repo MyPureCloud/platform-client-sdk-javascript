@@ -1,0 +1,26 @@
+// Browser
+const  = require('');
+// Node
+const  = require('');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new .PostAuthorizationSubjectDivisionRoleRequest();
+
+let subjectId = "subjectId_example"; // String | Subject ID (user or group)
+let divisionId = "divisionId_example"; // String | the id of the division to which to make the grant
+let roleId = "roleId_example"; // String | the id of the role to grant
+let opts = { 
+  'subjectType': "PC_USER" // String | what the type of the subject is: PC_GROUP, PC_USER or PC_OAUTH_CLIENT (note: for cross-org authorization, please use the Organization Authorization endpoints)
+};
+
+
+let callback = (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+apiInstance.postAuthorizationSubjectDivisionRole(subjectId, divisionId, roleId, opts, callback);

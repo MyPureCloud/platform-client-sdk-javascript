@@ -1,0 +1,30 @@
+// Browser
+const  = require('');
+// Node
+const  = require('');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new .GetArchitectDependencytrackingObjectRequest();
+
+let id = "id_example"; // String | Object ID
+let opts = { 
+  'version': "version_example", // String | Object version
+  'objectType': "objectType_example", // String | Object type
+  'consumedResources': true, // Boolean | Include resources this item consumes
+  'consumingResources': true, // Boolean | Include resources that consume this item
+  'consumedResourceType': ["consumedResourceType_example"], // [String] | Types of consumed resources to return, if consumed resources are requested
+  'consumingResourceType': ["consumingResourceType_example"], // [String] | Types of consuming resources to return, if consuming resources are requested
+  'consumedResourceRequest': true // Boolean | Indicate that this is going to look up a consumed resource object
+};
+
+
+let callback = (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getArchitectDependencytrackingObject(id, opts, callback);

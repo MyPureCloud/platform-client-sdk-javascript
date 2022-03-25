@@ -1,0 +1,31 @@
+// Browser
+const  = require('');
+// Node
+const  = require('');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new .GetKnowledgeKnowledgebasesRequest();
+
+let opts = { 
+  'before': "before_example", // String | The cursor that points to the start of the set of entities that has been returned.
+  'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
+  'limit': "limit_example", // String | Number of entities to return. Maximum of 200. Deprecated in favour of pageSize, use CursorQueryParameters instead.
+  'pageSize': "pageSize_example", // String | Number of entities to return. Maximum of 200.
+  'name': "name_example", // String | Filter by Name.
+  'coreLanguage': "coreLanguage_example", // String | Filter by core language.
+  'published': true, // Boolean | Filter by published status.
+  'sortBy': "sortBy_example", // String | Sort by.
+  'sortOrder': "sortOrder_example" // String | Sort Order.
+};
+
+
+let callback = (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getKnowledgeKnowledgebases(opts, callback);

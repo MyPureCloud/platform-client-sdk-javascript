@@ -1,0 +1,28 @@
+// Browser
+const  = require('');
+// Node
+const  = require('');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new .GetRoutingQueuesRequest();
+
+let opts = { 
+  'pageNumber': 1, // Number | Page number
+  'pageSize': 25, // Number | Page size
+  'sortOrder': "asc", // String | Note: results are sorted by name.
+  'name': "name_example", // String | Filter by queue name
+  'id': ["id_example"], // [String] | Filter by queue ID(s)
+  'divisionId': ["divisionId_example"] // [String] | Filter by queue division ID(s)
+};
+
+
+let callback = (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getRoutingQueues(opts, callback);

@@ -1,0 +1,29 @@
+// Browser
+const  = require('');
+// Node
+const  = require('');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new .GetFlowsOutcomesDivisionviewsRequest();
+
+let opts = { 
+  'pageNumber': 1, // Number | Page number
+  'pageSize': 25, // Number | Page size
+  'sortBy': "id", // String | Sort by
+  'sortOrder': "asc", // String | Sort order
+  'id': ["id_example"], // [String] | ID
+  'name': "name_example", // String | Name
+  'divisionId': ["divisionId_example"] // [String] | division ID(s)
+};
+
+
+let callback = (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getFlowsOutcomesDivisionviews(opts, callback);

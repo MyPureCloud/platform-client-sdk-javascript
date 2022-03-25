@@ -1,0 +1,26 @@
+// Browser
+const  = require('');
+// Node
+const  = require('');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new .GetTextbotsBotsSearchRequest();
+
+let opts = { 
+  'botType': ["botType_example"], // [String] | Bot types
+  'botName': "botName_example", // String | Bot name
+  'botId': ["botId_example"], // [String] | Bot IDs
+  'pageSize': 25 // Number | The maximum results to return
+};
+
+
+let callback = (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getTextbotsBotsSearch(opts, callback);

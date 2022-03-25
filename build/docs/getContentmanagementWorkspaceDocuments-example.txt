@@ -1,0 +1,28 @@
+// Browser
+const  = require('');
+// Node
+const  = require('');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new .GetContentmanagementWorkspaceDocumentsRequest();
+
+let workspaceId = "workspaceId_example"; // String | Workspace ID
+let opts = { 
+  'expand': ["expand_example"], // [String] | Which fields, if any, to expand.
+  'pageSize': 25, // Number | Page size
+  'pageNumber': 1, // Number | Page number
+  'sortBy': "sortBy_example", // String | name or dateCreated
+  'sortOrder': "ascending" // String | ascending or descending
+};
+
+
+let callback = (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getContentmanagementWorkspaceDocuments(workspaceId, opts, callback);

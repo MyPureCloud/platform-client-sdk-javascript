@@ -1,0 +1,23 @@
+// Browser
+const  = require('');
+// Node
+const  = require('');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new .GetTelephonyProvidersEdgesTrunkswithrecordingRequest();
+
+let opts = { 
+  'trunkType': "trunkType_example" // String | The type of this trunk base.
+};
+
+
+let callback = (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getTelephonyProvidersEdgesTrunkswithrecording(opts, callback);

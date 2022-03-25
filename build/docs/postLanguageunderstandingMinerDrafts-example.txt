@@ -1,0 +1,22 @@
+// Browser
+const  = require('');
+// Node
+const  = require('');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new .PostLanguageunderstandingMinerDraftsRequest();
+
+let minerId = "minerId_example"; // String | Miner ID
+let body = {}; // Object | Details for creating draft resource
+
+
+let callback = (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.postLanguageunderstandingMinerDrafts(minerId, body, callback);

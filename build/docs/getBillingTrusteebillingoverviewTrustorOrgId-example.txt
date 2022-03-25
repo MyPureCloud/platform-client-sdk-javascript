@@ -1,0 +1,24 @@
+// Browser
+const  = require('');
+// Node
+const  = require('');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new .GetBillingTrusteebillingoverviewTrustorOrgIdRequest();
+
+let trustorOrgId = "trustorOrgId_example"; // String | The organization ID of the trustor (customer) organization.
+let opts = { 
+  'billingPeriodIndex': 0 // Number | 0 for active period (overview data may change until period closes). 1 for prior completed billing period. 2 for two billing cycles prior, and so on.
+};
+
+
+let callback = (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getBillingTrusteebillingoverviewTrustorOrgId(trustorOrgId, opts, callback);

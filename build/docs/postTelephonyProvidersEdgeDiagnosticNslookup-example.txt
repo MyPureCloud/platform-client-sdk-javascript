@@ -1,0 +1,22 @@
+// Browser
+const  = require('');
+// Node
+const  = require('');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new .PostTelephonyProvidersEdgeDiagnosticNslookupRequest();
+
+let edgeId = "edgeId_example"; // String | Edge Id
+let body = {}; // Object | request payload to get network diagnostic
+
+
+let callback = (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.postTelephonyProvidersEdgeDiagnosticNslookup(edgeId, body, callback);

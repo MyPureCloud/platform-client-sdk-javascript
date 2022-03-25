@@ -1,0 +1,26 @@
+// Browser
+const  = require('');
+// Node
+const  = require('');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new .GetLanguageunderstandingDomainVersionsRequest();
+
+let domainId = "domainId_example"; // String | ID of the NLU domain.
+let opts = { 
+  'includeUtterances': true, // Boolean | Whether utterances for intent definition should be included when marshalling response.
+  'pageNumber': 1, // Number | Page number
+  'pageSize': 25 // Number | Page size
+};
+
+
+let callback = (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getLanguageunderstandingDomainVersions(domainId, opts, callback);

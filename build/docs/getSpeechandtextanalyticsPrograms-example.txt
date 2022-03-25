@@ -1,0 +1,24 @@
+// Browser
+const  = require('');
+// Node
+const  = require('');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new .GetSpeechandtextanalyticsProgramsRequest();
+
+let opts = { 
+  'nextPage': "nextPage_example", // String | The key for listing the next page
+  'pageSize': 20 // Number | The page size for the listing
+};
+
+
+let callback = (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getSpeechandtextanalyticsPrograms(opts, callback);
