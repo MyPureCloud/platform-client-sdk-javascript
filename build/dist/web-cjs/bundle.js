@@ -2265,7 +2265,7 @@ class Configuration {
 
 /**
  * @module purecloud-platform-client-v2/ApiClient
- * @version 133.0.2
+ * @version 134.0.0
  */
 class ApiClient {
 	/**
@@ -3205,7 +3205,7 @@ class ApiClient {
 
 				// set header parameters
 				request.set(that.defaultHeaders).set(that.normalizeParams(headerParams));
-				//request.set({ 'purecloud-sdk': '133.0.2' });
+				//request.set({ 'purecloud-sdk': '134.0.0' });
 
 				// set request timeout
 				request.timeout(that.timeout);
@@ -3305,7 +3305,7 @@ class AlertingApi {
 	/**
 	 * Alerting service.
 	 * @module purecloud-platform-client-v2/api/AlertingApi
-	 * @version 133.0.2
+	 * @version 134.0.0
 	 */
 
 	/**
@@ -3619,7 +3619,7 @@ class AnalyticsApi {
 	/**
 	 * Analytics service.
 	 * @module purecloud-platform-client-v2/api/AnalyticsApi
-	 * @version 133.0.2
+	 * @version 134.0.0
 	 */
 
 	/**
@@ -4801,7 +4801,7 @@ class ArchitectApi {
 	/**
 	 * Architect service.
 	 * @module purecloud-platform-client-v2/api/ArchitectApi
-	 * @version 133.0.2
+	 * @version 134.0.0
 	 */
 
 	/**
@@ -7797,7 +7797,7 @@ class AuditApi {
 	/**
 	 * Audit service.
 	 * @module purecloud-platform-client-v2/api/AuditApi
-	 * @version 133.0.2
+	 * @version 134.0.0
 	 */
 
 	/**
@@ -7968,7 +7968,7 @@ class AuthorizationApi {
 	/**
 	 * Authorization service.
 	 * @module purecloud-platform-client-v2/api/AuthorizationApi
-	 * @version 133.0.2
+	 * @version 134.0.0
 	 */
 
 	/**
@@ -9151,7 +9151,7 @@ class BillingApi {
 	/**
 	 * Billing service.
 	 * @module purecloud-platform-client-v2/api/BillingApi
-	 * @version 133.0.2
+	 * @version 134.0.0
 	 */
 
 	/**
@@ -9231,7 +9231,7 @@ class ChatApi {
 	/**
 	 * Chat service.
 	 * @module purecloud-platform-client-v2/api/ChatApi
-	 * @version 133.0.2
+	 * @version 134.0.0
 	 */
 
 	/**
@@ -9322,7 +9322,7 @@ class CoachingApi {
 	/**
 	 * Coaching service.
 	 * @module purecloud-platform-client-v2/api/CoachingApi
-	 * @version 133.0.2
+	 * @version 134.0.0
 	 */
 
 	/**
@@ -9899,7 +9899,7 @@ class ContentManagementApi {
 	/**
 	 * ContentManagement service.
 	 * @module purecloud-platform-client-v2/api/ContentManagementApi
-	 * @version 133.0.2
+	 * @version 134.0.0
 	 */
 
 	/**
@@ -11039,7 +11039,7 @@ class ConversationsApi {
 	/**
 	 * Conversations service.
 	 * @module purecloud-platform-client-v2/api/ConversationsApi
-	 * @version 133.0.2
+	 * @version 134.0.0
 	 */
 
 	/**
@@ -13447,6 +13447,31 @@ class ConversationsApi {
 	}
 
 	/**
+	 * Update a scheduled callback
+	 * 
+	 * @param {Object} body PatchCallbackRequest
+	 */
+	patchConversationsCallbacks(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchConversationsCallbacks';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/callbacks', 
+			'PATCH', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
 	 * Update a conversation by disconnecting all of the participants
 	 * 
 	 * @param {String} conversationId conversationId
@@ -14700,6 +14725,56 @@ class ConversationsApi {
 	}
 
 	/**
+	 * Disconnect multiple scheduled callbacks
+	 * 
+	 * @param {Object} body BulkCallbackDisconnectRequest
+	 */
+	postConversationsCallbacksBulkDisconnect(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postConversationsCallbacksBulkDisconnect';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/callbacks/bulk/disconnect', 
+			'POST', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update multiple scheduled callbacks
+	 * 
+	 * @param {Object} body BulkCallbackPatchRequest
+	 */
+	postConversationsCallbacksBulkUpdate(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postConversationsCallbacksBulkUpdate';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/callbacks/bulk/update', 
+			'POST', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
 	 * Create a call conversation
 	 * 
 	 * @param {Object} body Call request
@@ -15628,7 +15703,7 @@ class DataExtensionsApi {
 	/**
 	 * DataExtensions service.
 	 * @module purecloud-platform-client-v2/api/DataExtensionsApi
-	 * @version 133.0.2
+	 * @version 134.0.0
 	 */
 
 	/**
@@ -15714,7 +15789,7 @@ class ExternalContactsApi {
 	/**
 	 * ExternalContacts service.
 	 * @module purecloud-platform-client-v2/api/ExternalContactsApi
-	 * @version 133.0.2
+	 * @version 134.0.0
 	 */
 
 	/**
@@ -17457,7 +17532,7 @@ class FaxApi {
 	/**
 	 * Fax service.
 	 * @module purecloud-platform-client-v2/api/FaxApi
-	 * @version 133.0.2
+	 * @version 134.0.0
 	 */
 
 	/**
@@ -17628,7 +17703,7 @@ class FlowsApi {
 	/**
 	 * Flows service.
 	 * @module purecloud-platform-client-v2/api/FlowsApi
-	 * @version 133.0.2
+	 * @version 134.0.0
 	 */
 
 	/**
@@ -17699,7 +17774,7 @@ class GamificationApi {
 	/**
 	 * Gamification service.
 	 * @module purecloud-platform-client-v2/api/GamificationApi
-	 * @version 133.0.2
+	 * @version 134.0.0
 	 */
 
 	/**
@@ -19129,7 +19204,7 @@ class GeneralDataProtectionRegulationApi {
 	/**
 	 * GeneralDataProtectionRegulation service.
 	 * @module purecloud-platform-client-v2/api/GeneralDataProtectionRegulationApi
-	 * @version 133.0.2
+	 * @version 134.0.0
 	 */
 
 	/**
@@ -19259,7 +19334,7 @@ class GeolocationApi {
 	/**
 	 * Geolocation service.
 	 * @module purecloud-platform-client-v2/api/GeolocationApi
-	 * @version 133.0.2
+	 * @version 134.0.0
 	 */
 
 	/**
@@ -19390,7 +19465,7 @@ class GreetingsApi {
 	/**
 	 * Greetings service.
 	 * @module purecloud-platform-client-v2/api/GreetingsApi
-	 * @version 133.0.2
+	 * @version 134.0.0
 	 */
 
 	/**
@@ -19845,7 +19920,7 @@ class GroupsApi {
 	/**
 	 * Groups service.
 	 * @module purecloud-platform-client-v2/api/GroupsApi
-	 * @version 133.0.2
+	 * @version 134.0.0
 	 */
 
 	/**
@@ -20250,7 +20325,7 @@ class IdentityProviderApi {
 	/**
 	 * IdentityProvider service.
 	 * @module purecloud-platform-client-v2/api/IdentityProviderApi
-	 * @version 133.0.2
+	 * @version 134.0.0
 	 */
 
 	/**
@@ -21006,7 +21081,7 @@ class IntegrationsApi {
 	/**
 	 * Integrations service.
 	 * @module purecloud-platform-client-v2/api/IntegrationsApi
-	 * @version 133.0.2
+	 * @version 134.0.0
 	 */
 
 	/**
@@ -22681,7 +22756,7 @@ class JourneyApi {
 	/**
 	 * Journey service.
 	 * @module purecloud-platform-client-v2/api/JourneyApi
-	 * @version 133.0.2
+	 * @version 134.0.0
 	 */
 
 	/**
@@ -23392,7 +23467,7 @@ class KnowledgeApi {
 	/**
 	 * Knowledge service.
 	 * @module purecloud-platform-client-v2/api/KnowledgeApi
-	 * @version 133.0.2
+	 * @version 134.0.0
 	 */
 
 	/**
@@ -24292,7 +24367,7 @@ class LanguageUnderstandingApi {
 	/**
 	 * LanguageUnderstanding service.
 	 * @module purecloud-platform-client-v2/api/LanguageUnderstandingApi
-	 * @version 133.0.2
+	 * @version 134.0.0
 	 */
 
 	/**
@@ -25196,7 +25271,7 @@ class LanguagesApi {
 	/**
 	 * Languages service.
 	 * @module purecloud-platform-client-v2/api/LanguagesApi
-	 * @version 133.0.2
+	 * @version 134.0.0
 	 */
 
 	/**
@@ -25464,7 +25539,7 @@ class LearningApi {
 	/**
 	 * Learning service.
 	 * @module purecloud-platform-client-v2/api/LearningApi
-	 * @version 133.0.2
+	 * @version 134.0.0
 	 */
 
 	/**
@@ -26055,7 +26130,7 @@ class LicenseApi {
 	/**
 	 * License service.
 	 * @module purecloud-platform-client-v2/api/LicenseApi
-	 * @version 133.0.2
+	 * @version 134.0.0
 	 */
 
 	/**
@@ -26293,7 +26368,7 @@ class LocationsApi {
 	/**
 	 * Locations service.
 	 * @module purecloud-platform-client-v2/api/LocationsApi
-	 * @version 133.0.2
+	 * @version 134.0.0
 	 */
 
 	/**
@@ -26529,7 +26604,7 @@ class MessagingApi {
 	/**
 	 * Messaging service.
 	 * @module purecloud-platform-client-v2/api/MessagingApi
-	 * @version 133.0.2
+	 * @version 134.0.0
 	 */
 
 	/**
@@ -26680,7 +26755,7 @@ class MobileDevicesApi {
 	/**
 	 * MobileDevices service.
 	 * @module purecloud-platform-client-v2/api/MobileDevicesApi
-	 * @version 133.0.2
+	 * @version 134.0.0
 	 */
 
 	/**
@@ -26831,7 +26906,7 @@ class NotificationsApi {
 	/**
 	 * Notifications service.
 	 * @module purecloud-platform-client-v2/api/NotificationsApi
-	 * @version 133.0.2
+	 * @version 134.0.0
 	 */
 
 	/**
@@ -27056,7 +27131,7 @@ class OAuthApi {
 	/**
 	 * OAuth service.
 	 * @module purecloud-platform-client-v2/api/OAuthApi
-	 * @version 133.0.2
+	 * @version 134.0.0
 	 */
 
 	/**
@@ -27100,8 +27175,12 @@ class OAuthApi {
 	 * Get a client that is authorized by the resource owner
 	 * 
 	 * @param {String} clientId The ID of client
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.acceptLanguage The language in which to display the client descriptions. (default to en-us)
 	 */
-	getOauthAuthorization(clientId) { 
+	getOauthAuthorization(clientId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'clientId' is set
 		if (clientId === undefined || clientId === null) {
 			throw 'Missing the required parameter "clientId" when calling getOauthAuthorization';
@@ -27112,7 +27191,7 @@ class OAuthApi {
 			'GET', 
 			{ 'clientId': clientId }, 
 			{  }, 
-			{  }, 
+			{ 'Accept-Language': opts['acceptLanguage'] }, 
 			{  }, 
 			null, 
 			['PureCloud OAuth'], 
@@ -27122,17 +27201,21 @@ class OAuthApi {
 	}
 
 	/**
-	 * List clients that are authorized by the resource owner
+	 * List clients that have been authorized, requested, or revoked by the resource owner
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.acceptLanguage The language in which to display the client descriptions. (default to en-us)
 	 */
-	getOauthAuthorizations() { 
+	getOauthAuthorizations(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/oauth/authorizations', 
 			'GET', 
 			{  }, 
 			{  }, 
-			{  }, 
+			{ 'Accept-Language': opts['acceptLanguage'] }, 
 			{  }, 
 			null, 
 			['PureCloud OAuth'], 
@@ -27414,7 +27497,7 @@ class ObjectsApi {
 	/**
 	 * Objects service.
 	 * @module purecloud-platform-client-v2/api/ObjectsApi
-	 * @version 133.0.2
+	 * @version 134.0.0
 	 */
 
 	/**
@@ -27685,7 +27768,7 @@ class OrganizationApi {
 	/**
 	 * Organization service.
 	 * @module purecloud-platform-client-v2/api/OrganizationApi
-	 * @version 133.0.2
+	 * @version 134.0.0
 	 */
 
 	/**
@@ -28088,7 +28171,7 @@ class OrganizationAuthorizationApi {
 	/**
 	 * OrganizationAuthorization service.
 	 * @module purecloud-platform-client-v2/api/OrganizationAuthorizationApi
-	 * @version 133.0.2
+	 * @version 134.0.0
 	 */
 
 	/**
@@ -29013,7 +29096,7 @@ class OutboundApi {
 	/**
 	 * Outbound service.
 	 * @module purecloud-platform-client-v2/api/OutboundApi
-	 * @version 133.0.2
+	 * @version 134.0.0
 	 */
 
 	/**
@@ -32043,7 +32126,7 @@ class PresenceApi {
 	/**
 	 * Presence service.
 	 * @module purecloud-platform-client-v2/api/PresenceApi
-	 * @version 133.0.2
+	 * @version 134.0.0
 	 */
 
 	/**
@@ -32415,7 +32498,7 @@ class QualityApi {
 	/**
 	 * Quality service.
 	 * @module purecloud-platform-client-v2/api/QualityApi
-	 * @version 133.0.2
+	 * @version 134.0.0
 	 */
 
 	/**
@@ -33993,7 +34076,7 @@ class RecordingApi {
 	/**
 	 * Recording service.
 	 * @module purecloud-platform-client-v2/api/RecordingApi
-	 * @version 133.0.2
+	 * @version 134.0.0
 	 */
 
 	/**
@@ -35519,7 +35602,7 @@ class ResponseManagementApi {
 	/**
 	 * ResponseManagement service.
 	 * @module purecloud-platform-client-v2/api/ResponseManagementApi
-	 * @version 133.0.2
+	 * @version 134.0.0
 	 */
 
 	/**
@@ -35574,6 +35657,31 @@ class ResponseManagementApi {
 			'/api/v2/responsemanagement/responses/{responseId}', 
 			'DELETE', 
 			{ 'responseId': responseId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete response asset
+	 * 
+	 * @param {String} responseAssetId Asset Id
+	 */
+	deleteResponsemanagementResponseasset(responseAssetId) { 
+		// verify the required parameter 'responseAssetId' is set
+		if (responseAssetId === undefined || responseAssetId === null) {
+			throw 'Missing the required parameter "responseAssetId" when calling deleteResponsemanagementResponseasset';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/responsemanagement/responseassets/{responseAssetId}', 
+			'DELETE', 
+			{ 'responseAssetId': responseAssetId }, 
 			{  }, 
 			{  }, 
 			{  }, 
@@ -35665,6 +35773,56 @@ class ResponseManagementApi {
 	}
 
 	/**
+	 * Get response asset information
+	 * 
+	 * @param {String} responseAssetId Asset Id
+	 */
+	getResponsemanagementResponseasset(responseAssetId) { 
+		// verify the required parameter 'responseAssetId' is set
+		if (responseAssetId === undefined || responseAssetId === null) {
+			throw 'Missing the required parameter "responseAssetId" when calling getResponsemanagementResponseasset';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/responsemanagement/responseassets/{responseAssetId}', 
+			'GET', 
+			{ 'responseAssetId': responseAssetId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get response asset upload status
+	 * 
+	 * @param {String} statusId Status Id
+	 */
+	getResponsemanagementResponseassetsStatusStatusId(statusId) { 
+		// verify the required parameter 'statusId' is set
+		if (statusId === undefined || statusId === null) {
+			throw 'Missing the required parameter "statusId" when calling getResponsemanagementResponseassetsStatusStatusId';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/responsemanagement/responseassets/status/{statusId}', 
+			'GET', 
+			{ 'statusId': statusId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
 	 * Gets a list of existing responses.
 	 * 
 	 * @param {String} libraryId Library ID
@@ -35708,6 +35866,60 @@ class ResponseManagementApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/responsemanagement/libraries', 
+			'POST', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Search response assets
+	 * 
+	 * @param {Object} body request
+	 * @param {Object} opts Optional parameters
+	 * @param {Array.<String>} opts.expand Which fields, if any, to expand
+	 */
+	postResponsemanagementResponseassetsSearch(body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postResponsemanagementResponseassetsSearch';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/responsemanagement/responseassets/search', 
+			'POST', 
+			{  }, 
+			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Creates pre-signed url for uploading response asset
+	 * 
+	 * @param {Object} body request
+	 */
+	postResponsemanagementResponseassetsUploads(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postResponsemanagementResponseassetsUploads';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/responsemanagement/responseassets/uploads', 
 			'POST', 
 			{  }, 
 			{  }, 
@@ -35838,13 +36050,43 @@ class ResponseManagementApi {
 		);
 	}
 
+	/**
+	 * Update response asset
+	 * 
+	 * @param {String} responseAssetId Asset Id
+	 * @param {Object} body request
+	 */
+	putResponsemanagementResponseasset(responseAssetId, body) { 
+		// verify the required parameter 'responseAssetId' is set
+		if (responseAssetId === undefined || responseAssetId === null) {
+			throw 'Missing the required parameter "responseAssetId" when calling putResponsemanagementResponseasset';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putResponsemanagementResponseasset';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/responsemanagement/responseassets/{responseAssetId}', 
+			'PUT', 
+			{ 'responseAssetId': responseAssetId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
 }
 
 class RoutingApi {
 	/**
 	 * Routing service.
 	 * @module purecloud-platform-client-v2/api/RoutingApi
-	 * @version 133.0.2
+	 * @version 134.0.0
 	 */
 
 	/**
@@ -38767,7 +39009,7 @@ class SCIMApi {
 	/**
 	 * SCIM service.
 	 * @module purecloud-platform-client-v2/api/SCIMApi
-	 * @version 133.0.2
+	 * @version 134.0.0
 	 */
 
 	/**
@@ -39644,7 +39886,7 @@ class ScriptsApi {
 	/**
 	 * Scripts service.
 	 * @module purecloud-platform-client-v2/api/ScriptsApi
-	 * @version 133.0.2
+	 * @version 134.0.0
 	 */
 
 	/**
@@ -39997,7 +40239,7 @@ class SearchApi {
 	/**
 	 * Search service.
 	 * @module purecloud-platform-client-v2/api/SearchApi
-	 * @version 133.0.2
+	 * @version 134.0.0
 	 */
 
 	/**
@@ -40532,7 +40774,7 @@ class SpeechTextAnalyticsApi {
 	/**
 	 * SpeechTextAnalytics service.
 	 * @module purecloud-platform-client-v2/api/SpeechTextAnalyticsApi
-	 * @version 133.0.2
+	 * @version 134.0.0
 	 */
 
 	/**
@@ -41385,7 +41627,7 @@ class StationsApi {
 	/**
 	 * Stations service.
 	 * @module purecloud-platform-client-v2/api/StationsApi
-	 * @version 133.0.2
+	 * @version 134.0.0
 	 */
 
 	/**
@@ -41532,7 +41774,7 @@ class SuggestApi {
 	/**
 	 * Suggest service.
 	 * @module purecloud-platform-client-v2/api/SuggestApi
-	 * @version 133.0.2
+	 * @version 134.0.0
 	 */
 
 	/**
@@ -41671,7 +41913,7 @@ class TelephonyApi {
 	/**
 	 * Telephony service.
 	 * @module purecloud-platform-client-v2/api/TelephonyApi
-	 * @version 133.0.2
+	 * @version 134.0.0
 	 */
 
 	/**
@@ -41779,7 +42021,7 @@ class TelephonyProvidersEdgeApi {
 	/**
 	 * TelephonyProvidersEdge service.
 	 * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-	 * @version 133.0.2
+	 * @version 134.0.0
 	 */
 
 	/**
@@ -45412,7 +45654,7 @@ class TextbotsApi {
 	/**
 	 * Textbots service.
 	 * @module purecloud-platform-client-v2/api/TextbotsApi
-	 * @version 133.0.2
+	 * @version 134.0.0
 	 */
 
 	/**
@@ -45540,7 +45782,7 @@ class TokensApi {
 	/**
 	 * Tokens service.
 	 * @module purecloud-platform-client-v2/api/TokensApi
-	 * @version 133.0.2
+	 * @version 134.0.0
 	 */
 
 	/**
@@ -45646,7 +45888,7 @@ class UploadsApi {
 	/**
 	 * Uploads service.
 	 * @module purecloud-platform-client-v2/api/UploadsApi
-	 * @version 133.0.2
+	 * @version 134.0.0
 	 */
 
 	/**
@@ -45791,38 +46033,13 @@ class UploadsApi {
 		);
 	}
 
-	/**
-	 * Creates presigned url for uploading WFM historical data file. Requires data in json format.
-	 * 
-	 * @param {Object} body query
-	 */
-	postUploadsWorkforcemanagementHistoricaldataJson(body) { 
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postUploadsWorkforcemanagementHistoricaldataJson';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/uploads/workforcemanagement/historicaldata/json', 
-			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'], 
-			['application/json']
-		);
-	}
-
 }
 
 class UsageApi {
 	/**
 	 * Usage service.
 	 * @module purecloud-platform-client-v2/api/UsageApi
-	 * @version 133.0.2
+	 * @version 134.0.0
 	 */
 
 	/**
@@ -45893,7 +46110,7 @@ class UserRecordingsApi {
 	/**
 	 * UserRecordings service.
 	 * @module purecloud-platform-client-v2/api/UserRecordingsApi
-	 * @version 133.0.2
+	 * @version 134.0.0
 	 */
 
 	/**
@@ -46077,7 +46294,7 @@ class UsersApi {
 	/**
 	 * Users service.
 	 * @module purecloud-platform-client-v2/api/UsersApi
-	 * @version 133.0.2
+	 * @version 134.0.0
 	 */
 
 	/**
@@ -48379,7 +48596,7 @@ class UtilitiesApi {
 	/**
 	 * Utilities service.
 	 * @module purecloud-platform-client-v2/api/UtilitiesApi
-	 * @version 133.0.2
+	 * @version 134.0.0
 	 */
 
 	/**
@@ -48490,7 +48707,7 @@ class VoicemailApi {
 	/**
 	 * Voicemail service.
 	 * @module purecloud-platform-client-v2/api/VoicemailApi
-	 * @version 133.0.2
+	 * @version 134.0.0
 	 */
 
 	/**
@@ -49157,7 +49374,7 @@ class WebChatApi {
 	/**
 	 * WebChat service.
 	 * @module purecloud-platform-client-v2/api/WebChatApi
-	 * @version 133.0.2
+	 * @version 134.0.0
 	 */
 
 	/**
@@ -49701,7 +49918,7 @@ class WebDeploymentsApi {
 	/**
 	 * WebDeployments service.
 	 * @module purecloud-platform-client-v2/api/WebDeploymentsApi
-	 * @version 133.0.2
+	 * @version 134.0.0
 	 */
 
 	/**
@@ -50056,7 +50273,7 @@ class WebMessagingApi {
 	/**
 	 * WebMessaging service.
 	 * @module purecloud-platform-client-v2/api/WebMessagingApi
-	 * @version 133.0.2
+	 * @version 134.0.0
 	 */
 
 	/**
@@ -50102,7 +50319,7 @@ class WidgetsApi {
 	/**
 	 * Widgets service.
 	 * @module purecloud-platform-client-v2/api/WidgetsApi
-	 * @version 133.0.2
+	 * @version 134.0.0
 	 */
 
 	/**
@@ -50248,7 +50465,7 @@ class WorkforceManagementApi {
 	/**
 	 * WorkforceManagement service.
 	 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-	 * @version 133.0.2
+	 * @version 134.0.0
 	 */
 
 	/**
@@ -53247,6 +53464,86 @@ class WorkforceManagementApi {
 	}
 
 	/**
+	 * Starts processing a schedule update
+	 * Call after uploading the schedule data to the url supplied by the /update/uploadurl route
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} weekId First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 * @param {String} scheduleId The ID of the schedule
+	 * @param {Object} body body
+	 */
+	postWorkforcemanagementBusinessunitWeekScheduleUpdate(businessUnitId, weekId, scheduleId, body) { 
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null) {
+			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitWeekScheduleUpdate';
+		}
+		// verify the required parameter 'weekId' is set
+		if (weekId === undefined || weekId === null) {
+			throw 'Missing the required parameter "weekId" when calling postWorkforcemanagementBusinessunitWeekScheduleUpdate';
+		}
+		// verify the required parameter 'scheduleId' is set
+		if (scheduleId === undefined || scheduleId === null) {
+			throw 'Missing the required parameter "scheduleId" when calling postWorkforcemanagementBusinessunitWeekScheduleUpdate';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitWeekScheduleUpdate';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/update', 
+			'POST', 
+			{ 'businessUnitId': businessUnitId,'weekId': weekId,'scheduleId': scheduleId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Creates a signed upload URL for updating a schedule
+	 * Once the upload is complete, call the /{scheduleId}/update route to start the schedule update process
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} weekId First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 * @param {String} scheduleId The ID of the schedule
+	 * @param {Object} body body
+	 */
+	postWorkforcemanagementBusinessunitWeekScheduleUpdateUploadurl(businessUnitId, weekId, scheduleId, body) { 
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null) {
+			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitWeekScheduleUpdateUploadurl';
+		}
+		// verify the required parameter 'weekId' is set
+		if (weekId === undefined || weekId === null) {
+			throw 'Missing the required parameter "weekId" when calling postWorkforcemanagementBusinessunitWeekScheduleUpdateUploadurl';
+		}
+		// verify the required parameter 'scheduleId' is set
+		if (scheduleId === undefined || scheduleId === null) {
+			throw 'Missing the required parameter "scheduleId" when calling postWorkforcemanagementBusinessunitWeekScheduleUpdateUploadurl';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitWeekScheduleUpdateUploadurl';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/update/uploadurl', 
+			'POST', 
+			{ 'businessUnitId': businessUnitId,'weekId': weekId,'scheduleId': scheduleId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
 	 * Create a blank schedule
 	 * 
 	 * @param {String} businessUnitId The ID of the business unit
@@ -53304,6 +53601,76 @@ class WorkforceManagementApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/generate', 
+			'POST', 
+			{ 'businessUnitId': businessUnitId,'weekId': weekId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Starts processing a schedule import
+	 * Call after uploading the schedule data to the url supplied by the /import/uploadurl route
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} weekId First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 * @param {Object} body 
+	 */
+	postWorkforcemanagementBusinessunitWeekSchedulesImport(businessUnitId, weekId, body) { 
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null) {
+			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitWeekSchedulesImport';
+		}
+		// verify the required parameter 'weekId' is set
+		if (weekId === undefined || weekId === null) {
+			throw 'Missing the required parameter "weekId" when calling postWorkforcemanagementBusinessunitWeekSchedulesImport';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitWeekSchedulesImport';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/import', 
+			'POST', 
+			{ 'businessUnitId': businessUnitId,'weekId': weekId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Creates a signed upload URL for importing a schedule
+	 * Once the upload is complete, call the /import route to start the schedule import process
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} weekId First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 * @param {Object} body body
+	 */
+	postWorkforcemanagementBusinessunitWeekSchedulesImportUploadurl(businessUnitId, weekId, body) { 
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null) {
+			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitWeekSchedulesImportUploadurl';
+		}
+		// verify the required parameter 'weekId' is set
+		if (weekId === undefined || weekId === null) {
+			throw 'Missing the required parameter "weekId" when calling postWorkforcemanagementBusinessunitWeekSchedulesImportUploadurl';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitWeekSchedulesImportUploadurl';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/import/uploadurl', 
 			'POST', 
 			{ 'businessUnitId': businessUnitId,'weekId': weekId }, 
 			{  }, 
@@ -53390,6 +53757,76 @@ class WorkforceManagementApi {
 			'POST', 
 			{ 'businessUnitId': businessUnitId,'weekDateId': weekDateId }, 
 			{ 'forceAsync': opts['forceAsync'] }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Starts importing the uploaded short term forecast
+	 * Call after uploading the forecast data to the url supplied by the /import/uploadurl route
+	 * @param {String} businessUnitId The business unit ID of the business unit to which the forecast belongs
+	 * @param {String} weekDateId First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 * @param {Object} body 
+	 */
+	postWorkforcemanagementBusinessunitWeekShorttermforecastsImport(businessUnitId, weekDateId, body) { 
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null) {
+			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitWeekShorttermforecastsImport';
+		}
+		// verify the required parameter 'weekDateId' is set
+		if (weekDateId === undefined || weekDateId === null) {
+			throw 'Missing the required parameter "weekDateId" when calling postWorkforcemanagementBusinessunitWeekShorttermforecastsImport';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitWeekShorttermforecastsImport';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/import', 
+			'POST', 
+			{ 'businessUnitId': businessUnitId,'weekDateId': weekDateId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Creates a signed upload URL for importing a short term forecast
+	 * Once the upload is complete, call the /import route to start the short term forecast import process
+	 * @param {String} businessUnitId The business unit ID of the business unit to which the forecast belongs
+	 * @param {String} weekDateId First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 * @param {Object} body body
+	 */
+	postWorkforcemanagementBusinessunitWeekShorttermforecastsImportUploadurl(businessUnitId, weekDateId, body) { 
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null) {
+			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitWeekShorttermforecastsImportUploadurl';
+		}
+		// verify the required parameter 'weekDateId' is set
+		if (weekDateId === undefined || weekDateId === null) {
+			throw 'Missing the required parameter "weekDateId" when calling postWorkforcemanagementBusinessunitWeekShorttermforecastsImportUploadurl';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitWeekShorttermforecastsImportUploadurl';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/import/uploadurl', 
+			'POST', 
+			{ 'businessUnitId': businessUnitId,'weekDateId': weekDateId }, 
+			{  }, 
 			{  }, 
 			{  }, 
 			body, 
@@ -54279,7 +54716,7 @@ class WorkforceManagementApi {
  * </pre>
  * </p>
  * @module purecloud-platform-client-v2/index
- * @version 133.0.2
+ * @version 134.0.0
  */
 class platformClient {
 	constructor() {

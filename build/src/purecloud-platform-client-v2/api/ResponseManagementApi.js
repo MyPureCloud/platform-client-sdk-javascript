@@ -5,7 +5,7 @@ class ResponseManagementApi {
 	/**
 	 * ResponseManagement service.
 	 * @module purecloud-platform-client-v2/api/ResponseManagementApi
-	 * @version 133.0.2
+	 * @version 134.0.0
 	 */
 
 	/**
@@ -60,6 +60,31 @@ class ResponseManagementApi {
 			'/api/v2/responsemanagement/responses/{responseId}', 
 			'DELETE', 
 			{ 'responseId': responseId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete response asset
+	 * 
+	 * @param {String} responseAssetId Asset Id
+	 */
+	deleteResponsemanagementResponseasset(responseAssetId) { 
+		// verify the required parameter 'responseAssetId' is set
+		if (responseAssetId === undefined || responseAssetId === null) {
+			throw 'Missing the required parameter "responseAssetId" when calling deleteResponsemanagementResponseasset';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/responsemanagement/responseassets/{responseAssetId}', 
+			'DELETE', 
+			{ 'responseAssetId': responseAssetId }, 
 			{  }, 
 			{  }, 
 			{  }, 
@@ -151,6 +176,56 @@ class ResponseManagementApi {
 	}
 
 	/**
+	 * Get response asset information
+	 * 
+	 * @param {String} responseAssetId Asset Id
+	 */
+	getResponsemanagementResponseasset(responseAssetId) { 
+		// verify the required parameter 'responseAssetId' is set
+		if (responseAssetId === undefined || responseAssetId === null) {
+			throw 'Missing the required parameter "responseAssetId" when calling getResponsemanagementResponseasset';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/responsemanagement/responseassets/{responseAssetId}', 
+			'GET', 
+			{ 'responseAssetId': responseAssetId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get response asset upload status
+	 * 
+	 * @param {String} statusId Status Id
+	 */
+	getResponsemanagementResponseassetsStatusStatusId(statusId) { 
+		// verify the required parameter 'statusId' is set
+		if (statusId === undefined || statusId === null) {
+			throw 'Missing the required parameter "statusId" when calling getResponsemanagementResponseassetsStatusStatusId';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/responsemanagement/responseassets/status/{statusId}', 
+			'GET', 
+			{ 'statusId': statusId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
 	 * Gets a list of existing responses.
 	 * 
 	 * @param {String} libraryId Library ID
@@ -194,6 +269,60 @@ class ResponseManagementApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/responsemanagement/libraries', 
+			'POST', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Search response assets
+	 * 
+	 * @param {Object} body request
+	 * @param {Object} opts Optional parameters
+	 * @param {Array.<String>} opts.expand Which fields, if any, to expand
+	 */
+	postResponsemanagementResponseassetsSearch(body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postResponsemanagementResponseassetsSearch';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/responsemanagement/responseassets/search', 
+			'POST', 
+			{  }, 
+			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Creates pre-signed url for uploading response asset
+	 * 
+	 * @param {Object} body request
+	 */
+	postResponsemanagementResponseassetsUploads(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postResponsemanagementResponseassetsUploads';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/responsemanagement/responseassets/uploads', 
 			'POST', 
 			{  }, 
 			{  }, 
@@ -315,6 +444,36 @@ class ResponseManagementApi {
 			'PUT', 
 			{ 'responseId': responseId }, 
 			{ 'expand': opts['expand'] }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update response asset
+	 * 
+	 * @param {String} responseAssetId Asset Id
+	 * @param {Object} body request
+	 */
+	putResponsemanagementResponseasset(responseAssetId, body) { 
+		// verify the required parameter 'responseAssetId' is set
+		if (responseAssetId === undefined || responseAssetId === null) {
+			throw 'Missing the required parameter "responseAssetId" when calling putResponsemanagementResponseasset';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putResponsemanagementResponseasset';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/responsemanagement/responseassets/{responseAssetId}', 
+			'PUT', 
+			{ 'responseAssetId': responseAssetId }, 
+			{  }, 
 			{  }, 
 			{  }, 
 			body, 

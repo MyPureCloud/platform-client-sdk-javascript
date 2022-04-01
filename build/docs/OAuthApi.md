@@ -9,7 +9,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | ------------- | ------------- | ------------- |
 [**deleteOauthClient**](OAuthApi.html#deleteOauthClient) | **DELETE** /api/v2/oauth/clients/{clientId} | Delete OAuth Client
 [**getOauthAuthorization**](OAuthApi.html#getOauthAuthorization) | **GET** /api/v2/oauth/authorizations/{clientId} | Get a client that is authorized by the resource owner
-[**getOauthAuthorizations**](OAuthApi.html#getOauthAuthorizations) | **GET** /api/v2/oauth/authorizations | List clients that are authorized by the resource owner
+[**getOauthAuthorizations**](OAuthApi.html#getOauthAuthorizations) | **GET** /api/v2/oauth/authorizations | List clients that have been authorized, requested, or revoked by the resource owner
 [**getOauthClient**](OAuthApi.html#getOauthClient) | **GET** /api/v2/oauth/clients/{clientId} | Get OAuth Client
 [**getOauthClientUsageQueryResult**](OAuthApi.html#getOauthClientUsageQueryResult) | **GET** /api/v2/oauth/clients/{clientId}/usage/query/results/{executionId} | Get the results of a usage query
 [**getOauthClientUsageSummary**](OAuthApi.html#getOauthClientUsageSummary) | **GET** /api/v2/oauth/clients/{clientId}/usage/summary | Get a summary of OAuth client API usage
@@ -77,7 +77,7 @@ void (no response body)
 
 <a name="getOauthAuthorization"></a>
 
-# OAuthAuthorization getOauthAuthorization(clientId)
+# OAuthAuthorization getOauthAuthorization(clientId, opts)
 
 
 
@@ -105,8 +105,11 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.OAuthApi();
 
 let clientId = "clientId_example"; // String | The ID of client
+let opts = { 
+  'acceptLanguage': "en-us" // String | The language in which to display the client descriptions.
+};
 
-apiInstance.getOauthAuthorization(clientId)
+apiInstance.getOauthAuthorization(clientId, opts)
   .then((data) => {
     console.log(`getOauthAuthorization success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -122,6 +125,7 @@ apiInstance.getOauthAuthorization(clientId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **clientId** | **String** | The ID of client |  |
+ **acceptLanguage** | **String** | The language in which to display the client descriptions. | [optional] [default to en-us] |
 {: class="table table-striped"}
 
 ### Return type
@@ -130,13 +134,13 @@ apiInstance.getOauthAuthorization(clientId)
 
 <a name="getOauthAuthorizations"></a>
 
-# OAuthAuthorizationListing getOauthAuthorizations()
+# OAuthAuthorizationListing getOauthAuthorizations(opts)
 
 
 
 GET /api/v2/oauth/authorizations
 
-List clients that are authorized by the resource owner
+List clients that have been authorized, requested, or revoked by the resource owner
 
 
 
@@ -157,7 +161,11 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OAuthApi();
 
-apiInstance.getOauthAuthorizations()
+let opts = { 
+  'acceptLanguage': "en-us" // String | The language in which to display the client descriptions.
+};
+
+apiInstance.getOauthAuthorizations(opts)
   .then((data) => {
     console.log(`getOauthAuthorizations success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -169,8 +177,11 @@ apiInstance.getOauthAuthorizations()
 
 ### Parameters
 
-This endpoint does not need any parameter.
 
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **acceptLanguage** | **String** | The language in which to display the client descriptions. | [optional] [default to en-us] |
+{: class="table table-striped"}
 
 ### Return type
 

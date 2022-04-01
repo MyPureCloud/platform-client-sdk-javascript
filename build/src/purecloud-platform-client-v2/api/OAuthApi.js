@@ -5,7 +5,7 @@ class OAuthApi {
 	/**
 	 * OAuth service.
 	 * @module purecloud-platform-client-v2/api/OAuthApi
-	 * @version 133.0.2
+	 * @version 134.0.0
 	 */
 
 	/**
@@ -49,8 +49,12 @@ class OAuthApi {
 	 * Get a client that is authorized by the resource owner
 	 * 
 	 * @param {String} clientId The ID of client
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.acceptLanguage The language in which to display the client descriptions. (default to en-us)
 	 */
-	getOauthAuthorization(clientId) { 
+	getOauthAuthorization(clientId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'clientId' is set
 		if (clientId === undefined || clientId === null) {
 			throw 'Missing the required parameter "clientId" when calling getOauthAuthorization';
@@ -61,7 +65,7 @@ class OAuthApi {
 			'GET', 
 			{ 'clientId': clientId }, 
 			{  }, 
-			{  }, 
+			{ 'Accept-Language': opts['acceptLanguage'] }, 
 			{  }, 
 			null, 
 			['PureCloud OAuth'], 
@@ -71,17 +75,21 @@ class OAuthApi {
 	}
 
 	/**
-	 * List clients that are authorized by the resource owner
+	 * List clients that have been authorized, requested, or revoked by the resource owner
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.acceptLanguage The language in which to display the client descriptions. (default to en-us)
 	 */
-	getOauthAuthorizations() { 
+	getOauthAuthorizations(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/oauth/authorizations', 
 			'GET', 
 			{  }, 
 			{  }, 
-			{  }, 
+			{ 'Accept-Language': opts['acceptLanguage'] }, 
 			{  }, 
 			null, 
 			['PureCloud OAuth'], 

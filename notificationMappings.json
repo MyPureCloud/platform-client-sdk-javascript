@@ -405,6 +405,10 @@
       "class": "ConversationEmailEventTopicEmailConversation"
     },
     {
+      "topic": "v2.users.{id}.conversations.inbound.typing.event",
+      "class": "V2ConversationMessageTypingEventForUserTopicMessageData"
+    },
+    {
       "topic": "v2.users.{id}.conversations.messages",
       "class": "ConversationMessageEventTopicMessageConversation"
     },
@@ -523,6 +527,10 @@
     {
       "topic": "v2.wem.learning.assignments.modules.{id}",
       "class": "LearningAssignmentRuleRunTopicLearningAssignmentRuleRunNotification"
+    },
+    {
+      "topic": "v2.workflows.{id}.conversations.inbound.typing.event",
+      "class": "V2ConversationMessageTypingEventForWorkflowTopicMessageData"
     },
     {
       "topic": "v2.workforcemanagement.agents",

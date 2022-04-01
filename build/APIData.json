@@ -7111,6 +7111,20 @@
     "return": "Empty",
     "example": "// Browser\nconst  = require('');\n// Node\nconst  = require('');\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\n.ApiClient.instance.setAccessToken(yourAccessToken);\n\nlet apiInstance = new .PatchConversationsCallbackParticipantCommunicationRequest();\n\nlet conversationId = \"conversationId_example\"; // String | conversationId\nlet participantId = \"participantId_example\"; // String | participantId\nlet communicationId = \"communicationId_example\"; // String | communicationId\nlet body = {}; // Object | Participant\n\n\nlet callback = (error, data, response) => {\n  if (error) {\n    console.error(error);\n  } else {\n    console.log('API called successfully. Returned data: ' + data);\n  }\n};\napiInstance.patchConversationsCallbackParticipantCommunication(conversationId, participantId, communicationId, body, callback);"
   },
+  "patchconversationscallbacks": {
+    "operationId": "patchconversationscallbacks",
+    "functionName": "patchConversationsCallbacks",
+    "signature": "patchConversationsCallbacks(body)",
+    "parameters": [
+      {
+        "name": "body",
+        "type": "Object",
+        "required": "true"
+      }
+    ],
+    "return": "PatchCallbackResponse",
+    "example": "// Browser\nconst  = require('');\n// Node\nconst  = require('');\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\n.ApiClient.instance.setAccessToken(yourAccessToken);\n\nlet apiInstance = new .PatchConversationsCallbacksRequest();\n\nlet body = {}; // Object | PatchCallbackRequest\n\n\nlet callback = (error, data, response) => {\n  if (error) {\n    console.error(error);\n  } else {\n    console.log('API called successfully. Returned data: ' + data);\n  }\n};\napiInstance.patchConversationsCallbacks(body, callback);"
+  },
   "patchconversationschat": {
     "operationId": "patchconversationschat",
     "functionName": "patchConversationsChat",
@@ -7865,6 +7879,33 @@
     ],
     "return": "CreateCallbackResponse",
     "example": "// Browser\nconst  = require('');\n// Node\nconst  = require('');\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\n.ApiClient.instance.setAccessToken(yourAccessToken);\n\nlet apiInstance = new .PostConversationsCallbacksRequest();\n\nlet body = {}; // Object | Callback\n\n\nlet callback = (error, data, response) => {\n  if (error) {\n    console.error(error);\n  } else {\n    console.log('API called successfully. Returned data: ' + data);\n  }\n};\napiInstance.postConversationsCallbacks(body, callback);"
+  },
+  "postconversationscallbacksbulkdisconnect": {
+    "operationId": "postconversationscallbacksbulkdisconnect",
+    "functionName": "postConversationsCallbacksBulkDisconnect",
+    "signature": "postConversationsCallbacksBulkDisconnect(body)",
+    "parameters": [
+      {
+        "name": "body",
+        "type": "Object",
+        "required": "true"
+      }
+    ],
+    "example": "// Browser\nconst  = require('');\n// Node\nconst  = require('');\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\n.ApiClient.instance.setAccessToken(yourAccessToken);\n\nlet apiInstance = new .PostConversationsCallbacksBulkDisconnectRequest();\n\nlet body = {}; // Object | BulkCallbackDisconnectRequest\n\n\nlet callback = (error, data, response) => {\n  if (error) {\n    console.error(error);\n  } else {\n    console.log('API called successfully.');\n  }\n};\napiInstance.postConversationsCallbacksBulkDisconnect(body, callback);"
+  },
+  "postconversationscallbacksbulkupdate": {
+    "operationId": "postconversationscallbacksbulkupdate",
+    "functionName": "postConversationsCallbacksBulkUpdate",
+    "signature": "postConversationsCallbacksBulkUpdate(body)",
+    "parameters": [
+      {
+        "name": "body",
+        "type": "Object",
+        "required": "true"
+      }
+    ],
+    "return": "BulkCallbackPatchResponse",
+    "example": "// Browser\nconst  = require('');\n// Node\nconst  = require('');\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\n.ApiClient.instance.setAccessToken(yourAccessToken);\n\nlet apiInstance = new .PostConversationsCallbacksBulkUpdateRequest();\n\nlet body = {}; // Object | BulkCallbackPatchRequest\n\n\nlet callback = (error, data, response) => {\n  if (error) {\n    console.error(error);\n  } else {\n    console.log('API called successfully. Returned data: ' + data);\n  }\n};\napiInstance.postConversationsCallbacksBulkUpdate(body, callback);"
   },
   "postconversationscalls": {
     "operationId": "postconversationscalls",
@@ -15960,23 +16001,35 @@
   "getoauthauthorization": {
     "operationId": "getoauthauthorization",
     "functionName": "getOauthAuthorization",
-    "signature": "getOauthAuthorization(clientId)",
+    "signature": "getOauthAuthorization(clientId, acceptLanguage)",
     "parameters": [
       {
         "name": "clientId",
         "type": "String",
         "required": "true"
+      },
+      {
+        "name": "acceptLanguage",
+        "type": "String",
+        "required": "false"
       }
     ],
     "return": "OAuthAuthorization",
-    "example": "// Browser\nconst  = require('');\n// Node\nconst  = require('');\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\n.ApiClient.instance.setAccessToken(yourAccessToken);\n\nlet apiInstance = new .GetOauthAuthorizationRequest();\n\nlet clientId = \"clientId_example\"; // String | The ID of client\n\n\nlet callback = (error, data, response) => {\n  if (error) {\n    console.error(error);\n  } else {\n    console.log('API called successfully. Returned data: ' + data);\n  }\n};\napiInstance.getOauthAuthorization(clientId, callback);"
+    "example": "// Browser\nconst  = require('');\n// Node\nconst  = require('');\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\n.ApiClient.instance.setAccessToken(yourAccessToken);\n\nlet apiInstance = new .GetOauthAuthorizationRequest();\n\nlet clientId = \"clientId_example\"; // String | The ID of client\nlet opts = { \n  'acceptLanguage': \"en-us\" // String | The language in which to display the client descriptions.\n};\n\n\nlet callback = (error, data, response) => {\n  if (error) {\n    console.error(error);\n  } else {\n    console.log('API called successfully. Returned data: ' + data);\n  }\n};\napiInstance.getOauthAuthorization(clientId, opts, callback);"
   },
   "getoauthauthorizations": {
     "operationId": "getoauthauthorizations",
     "functionName": "getOauthAuthorizations",
-    "signature": "getOauthAuthorizations()",
+    "signature": "getOauthAuthorizations(acceptLanguage)",
+    "parameters": [
+      {
+        "name": "acceptLanguage",
+        "type": "String",
+        "required": "false"
+      }
+    ],
     "return": "OAuthAuthorizationListing",
-    "example": "// Browser\nconst  = require('');\n// Node\nconst  = require('');\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\n.ApiClient.instance.setAccessToken(yourAccessToken);\n\nlet apiInstance = new .GetOauthAuthorizationsRequest();\n\n\nlet callback = (error, data, response) => {\n  if (error) {\n    console.error(error);\n  } else {\n    console.log('API called successfully. Returned data: ' + data);\n  }\n};\napiInstance.getOauthAuthorizations(callback);"
+    "example": "// Browser\nconst  = require('');\n// Node\nconst  = require('');\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\n.ApiClient.instance.setAccessToken(yourAccessToken);\n\nlet apiInstance = new .GetOauthAuthorizationsRequest();\n\nlet opts = { \n  'acceptLanguage': \"en-us\" // String | The language in which to display the client descriptions.\n};\n\n\nlet callback = (error, data, response) => {\n  if (error) {\n    console.error(error);\n  } else {\n    console.log('API called successfully. Returned data: ' + data);\n  }\n};\napiInstance.getOauthAuthorizations(opts, callback);"
   },
   "getoauthclient": {
     "operationId": "getoauthclient",
@@ -21942,6 +21995,19 @@
     ],
     "example": "// Browser\nconst  = require('');\n// Node\nconst  = require('');\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\n.ApiClient.instance.setAccessToken(yourAccessToken);\n\nlet apiInstance = new .DeleteResponsemanagementResponseRequest();\n\nlet responseId = \"responseId_example\"; // String | Response ID\n\n\nlet callback = (error, data, response) => {\n  if (error) {\n    console.error(error);\n  } else {\n    console.log('API called successfully.');\n  }\n};\napiInstance.deleteResponsemanagementResponse(responseId, callback);"
   },
+  "deleteresponsemanagementresponseasset": {
+    "operationId": "deleteresponsemanagementresponseasset",
+    "functionName": "deleteResponsemanagementResponseasset",
+    "signature": "deleteResponsemanagementResponseasset(responseAssetId)",
+    "parameters": [
+      {
+        "name": "responseAssetId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "example": "// Browser\nconst  = require('');\n// Node\nconst  = require('');\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\n.ApiClient.instance.setAccessToken(yourAccessToken);\n\nlet apiInstance = new .DeleteResponsemanagementResponseassetRequest();\n\nlet responseAssetId = \"responseAssetId_example\"; // String | Asset Id\n\n\nlet callback = (error, data, response) => {\n  if (error) {\n    console.error(error);\n  } else {\n    console.log('API called successfully.');\n  }\n};\napiInstance.deleteResponsemanagementResponseasset(responseAssetId, callback);"
+  },
   "getresponsemanagementlibraries": {
     "operationId": "getresponsemanagementlibraries",
     "functionName": "getResponsemanagementLibraries",
@@ -21999,6 +22065,34 @@
     "return": "Response",
     "example": "// Browser\nconst  = require('');\n// Node\nconst  = require('');\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\n.ApiClient.instance.setAccessToken(yourAccessToken);\n\nlet apiInstance = new .GetResponsemanagementResponseRequest();\n\nlet responseId = \"responseId_example\"; // String | Response ID\nlet opts = { \n  'expand': \"expand_example\" // String | Expand instructions for the return value.\n};\n\n\nlet callback = (error, data, response) => {\n  if (error) {\n    console.error(error);\n  } else {\n    console.log('API called successfully. Returned data: ' + data);\n  }\n};\napiInstance.getResponsemanagementResponse(responseId, opts, callback);"
   },
+  "getresponsemanagementresponseasset": {
+    "operationId": "getresponsemanagementresponseasset",
+    "functionName": "getResponsemanagementResponseasset",
+    "signature": "getResponsemanagementResponseasset(responseAssetId)",
+    "parameters": [
+      {
+        "name": "responseAssetId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "return": "ResponseAsset",
+    "example": "// Browser\nconst  = require('');\n// Node\nconst  = require('');\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\n.ApiClient.instance.setAccessToken(yourAccessToken);\n\nlet apiInstance = new .GetResponsemanagementResponseassetRequest();\n\nlet responseAssetId = \"responseAssetId_example\"; // String | Asset Id\n\n\nlet callback = (error, data, response) => {\n  if (error) {\n    console.error(error);\n  } else {\n    console.log('API called successfully. Returned data: ' + data);\n  }\n};\napiInstance.getResponsemanagementResponseasset(responseAssetId, callback);"
+  },
+  "getresponsemanagementresponseassetsstatusstatusid": {
+    "operationId": "getresponsemanagementresponseassetsstatusstatusid",
+    "functionName": "getResponsemanagementResponseassetsStatusStatusId",
+    "signature": "getResponsemanagementResponseassetsStatusStatusId(statusId)",
+    "parameters": [
+      {
+        "name": "statusId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "return": "ResponseAssetStatus",
+    "example": "// Browser\nconst  = require('');\n// Node\nconst  = require('');\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\n.ApiClient.instance.setAccessToken(yourAccessToken);\n\nlet apiInstance = new .GetResponsemanagementResponseassetsStatusStatusIdRequest();\n\nlet statusId = \"statusId_example\"; // String | Status Id\n\n\nlet callback = (error, data, response) => {\n  if (error) {\n    console.error(error);\n  } else {\n    console.log('API called successfully. Returned data: ' + data);\n  }\n};\napiInstance.getResponsemanagementResponseassetsStatusStatusId(statusId, callback);"
+  },
   "getresponsemanagementresponses": {
     "operationId": "getresponsemanagementresponses",
     "functionName": "getResponsemanagementResponses",
@@ -22041,6 +22135,39 @@
     ],
     "return": "Library",
     "example": "// Browser\nconst  = require('');\n// Node\nconst  = require('');\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\n.ApiClient.instance.setAccessToken(yourAccessToken);\n\nlet apiInstance = new .PostResponsemanagementLibrariesRequest();\n\nlet body = {}; // Object | Library\n\n\nlet callback = (error, data, response) => {\n  if (error) {\n    console.error(error);\n  } else {\n    console.log('API called successfully. Returned data: ' + data);\n  }\n};\napiInstance.postResponsemanagementLibraries(body, callback);"
+  },
+  "postresponsemanagementresponseassetssearch": {
+    "operationId": "postresponsemanagementresponseassetssearch",
+    "functionName": "postResponsemanagementResponseassetsSearch",
+    "signature": "postResponsemanagementResponseassetsSearch(body, expand)",
+    "parameters": [
+      {
+        "name": "body",
+        "type": "Object",
+        "required": "true"
+      },
+      {
+        "name": "expand",
+        "type": "[String]",
+        "required": "false"
+      }
+    ],
+    "return": "ResponseAssetSearchResults",
+    "example": "// Browser\nconst  = require('');\n// Node\nconst  = require('');\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\n.ApiClient.instance.setAccessToken(yourAccessToken);\n\nlet apiInstance = new .PostResponsemanagementResponseassetsSearchRequest();\n\nlet body = {}; // Object | request\nlet opts = { \n  'expand': [\"expand_example\"] // [String] | Which fields, if any, to expand\n};\n\n\nlet callback = (error, data, response) => {\n  if (error) {\n    console.error(error);\n  } else {\n    console.log('API called successfully. Returned data: ' + data);\n  }\n};\napiInstance.postResponsemanagementResponseassetsSearch(body, opts, callback);"
+  },
+  "postresponsemanagementresponseassetsuploads": {
+    "operationId": "postresponsemanagementresponseassetsuploads",
+    "functionName": "postResponsemanagementResponseassetsUploads",
+    "signature": "postResponsemanagementResponseassetsUploads(body)",
+    "parameters": [
+      {
+        "name": "body",
+        "type": "Object",
+        "required": "true"
+      }
+    ],
+    "return": "CreateResponseAssetResponse",
+    "example": "// Browser\nconst  = require('');\n// Node\nconst  = require('');\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\n.ApiClient.instance.setAccessToken(yourAccessToken);\n\nlet apiInstance = new .PostResponsemanagementResponseassetsUploadsRequest();\n\nlet body = {}; // Object | request\n\n\nlet callback = (error, data, response) => {\n  if (error) {\n    console.error(error);\n  } else {\n    console.log('API called successfully. Returned data: ' + data);\n  }\n};\napiInstance.postResponsemanagementResponseassetsUploads(body, callback);"
   },
   "postresponsemanagementresponses": {
     "operationId": "postresponsemanagementresponses",
@@ -22117,6 +22244,25 @@
     ],
     "return": "Response",
     "example": "// Browser\nconst  = require('');\n// Node\nconst  = require('');\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\n.ApiClient.instance.setAccessToken(yourAccessToken);\n\nlet apiInstance = new .PutResponsemanagementResponseRequest();\n\nlet responseId = \"responseId_example\"; // String | Response ID\nlet body = {}; // Object | Response\nlet opts = { \n  'expand': \"expand_example\" // String | Expand instructions for the return value.\n};\n\n\nlet callback = (error, data, response) => {\n  if (error) {\n    console.error(error);\n  } else {\n    console.log('API called successfully. Returned data: ' + data);\n  }\n};\napiInstance.putResponsemanagementResponse(responseId, body, opts, callback);"
+  },
+  "putresponsemanagementresponseasset": {
+    "operationId": "putresponsemanagementresponseasset",
+    "functionName": "putResponsemanagementResponseasset",
+    "signature": "putResponsemanagementResponseasset(responseAssetId, body)",
+    "parameters": [
+      {
+        "name": "responseAssetId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "Object",
+        "required": "true"
+      }
+    ],
+    "return": "ResponseAsset",
+    "example": "// Browser\nconst  = require('');\n// Node\nconst  = require('');\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\n.ApiClient.instance.setAccessToken(yourAccessToken);\n\nlet apiInstance = new .PutResponsemanagementResponseassetRequest();\n\nlet responseAssetId = \"responseAssetId_example\"; // String | Asset Id\nlet body = {}; // Object | request\n\n\nlet callback = (error, data, response) => {\n  if (error) {\n    console.error(error);\n  } else {\n    console.log('API called successfully. Returned data: ' + data);\n  }\n};\napiInstance.putResponsemanagementResponseasset(responseAssetId, body, callback);"
   },
   "deleteroutingassessment": {
     "operationId": "deleteroutingassessment",
@@ -28751,20 +28897,6 @@
     "return": "UploadUrlResponse",
     "example": "// Browser\nconst  = require('');\n// Node\nconst  = require('');\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\n.ApiClient.instance.setAccessToken(yourAccessToken);\n\nlet apiInstance = new .PostUploadsWorkforcemanagementHistoricaldataCsvRequest();\n\nlet body = {}; // Object | query\n\n\nlet callback = (error, data, response) => {\n  if (error) {\n    console.error(error);\n  } else {\n    console.log('API called successfully. Returned data: ' + data);\n  }\n};\napiInstance.postUploadsWorkforcemanagementHistoricaldataCsv(body, callback);"
   },
-  "postuploadsworkforcemanagementhistoricaldatajson": {
-    "operationId": "postuploadsworkforcemanagementhistoricaldatajson",
-    "functionName": "postUploadsWorkforcemanagementHistoricaldataJson",
-    "signature": "postUploadsWorkforcemanagementHistoricaldataJson(body)",
-    "parameters": [
-      {
-        "name": "body",
-        "type": "Object",
-        "required": "true"
-      }
-    ],
-    "return": "UploadUrlResponse",
-    "example": "// Browser\nconst  = require('');\n// Node\nconst  = require('');\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\n.ApiClient.instance.setAccessToken(yourAccessToken);\n\nlet apiInstance = new .PostUploadsWorkforcemanagementHistoricaldataJsonRequest();\n\nlet body = {}; // Object | query\n\n\nlet callback = (error, data, response) => {\n  if (error) {\n    console.error(error);\n  } else {\n    console.log('API called successfully. Returned data: ' + data);\n  }\n};\napiInstance.postUploadsWorkforcemanagementHistoricaldataJson(body, callback);"
-  },
   "getusagequeryexecutionidresults": {
     "operationId": "getusagequeryexecutionidresults",
     "functionName": "getUsageQueryExecutionIdResults",
@@ -32677,6 +32809,64 @@
     "return": "BuAsyncScheduleRunResponse",
     "example": "// Browser\nconst  = require('');\n// Node\nconst  = require('');\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\n.ApiClient.instance.setAccessToken(yourAccessToken);\n\nlet apiInstance = new .PostWorkforcemanagementBusinessunitWeekScheduleRescheduleRequest();\n\nlet businessUnitId = \"businessUnitId_example\"; // String | The ID of the business unit\nlet weekId = \"2013-10-20\"; // String | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\nlet scheduleId = \"scheduleId_example\"; // String | The ID of the schedule\nlet body = {}; // Object | body\n\n\nlet callback = (error, data, response) => {\n  if (error) {\n    console.error(error);\n  } else {\n    console.log('API called successfully. Returned data: ' + data);\n  }\n};\napiInstance.postWorkforcemanagementBusinessunitWeekScheduleReschedule(businessUnitId, weekId, scheduleId, body, callback);"
   },
+  "postworkforcemanagementbusinessunitweekscheduleupdate": {
+    "operationId": "postworkforcemanagementbusinessunitweekscheduleupdate",
+    "functionName": "postWorkforcemanagementBusinessunitWeekScheduleUpdate",
+    "signature": "postWorkforcemanagementBusinessunitWeekScheduleUpdate(businessUnitId, weekId, scheduleId, body)",
+    "parameters": [
+      {
+        "name": "businessUnitId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "weekId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "scheduleId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "Object",
+        "required": "true"
+      }
+    ],
+    "return": "BuAsyncScheduleResponse",
+    "example": "// Browser\nconst  = require('');\n// Node\nconst  = require('');\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\n.ApiClient.instance.setAccessToken(yourAccessToken);\n\nlet apiInstance = new .PostWorkforcemanagementBusinessunitWeekScheduleUpdateRequest();\n\nlet businessUnitId = \"businessUnitId_example\"; // String | The ID of the business unit\nlet weekId = \"2013-10-20\"; // String | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\nlet scheduleId = \"scheduleId_example\"; // String | The ID of the schedule\nlet body = {}; // Object | body\n\n\nlet callback = (error, data, response) => {\n  if (error) {\n    console.error(error);\n  } else {\n    console.log('API called successfully. Returned data: ' + data);\n  }\n};\napiInstance.postWorkforcemanagementBusinessunitWeekScheduleUpdate(businessUnitId, weekId, scheduleId, body, callback);"
+  },
+  "postworkforcemanagementbusinessunitweekscheduleupdateuploadurl": {
+    "operationId": "postworkforcemanagementbusinessunitweekscheduleupdateuploadurl",
+    "functionName": "postWorkforcemanagementBusinessunitWeekScheduleUpdateUploadurl",
+    "signature": "postWorkforcemanagementBusinessunitWeekScheduleUpdateUploadurl(businessUnitId, weekId, scheduleId, body)",
+    "parameters": [
+      {
+        "name": "businessUnitId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "weekId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "scheduleId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "Object",
+        "required": "true"
+      }
+    ],
+    "return": "UpdateScheduleUploadResponse",
+    "example": "// Browser\nconst  = require('');\n// Node\nconst  = require('');\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\n.ApiClient.instance.setAccessToken(yourAccessToken);\n\nlet apiInstance = new .PostWorkforcemanagementBusinessunitWeekScheduleUpdateUploadurlRequest();\n\nlet businessUnitId = \"businessUnitId_example\"; // String | The ID of the business unit\nlet weekId = \"2013-10-20\"; // String | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\nlet scheduleId = \"scheduleId_example\"; // String | The ID of the schedule\nlet body = {}; // Object | body\n\n\nlet callback = (error, data, response) => {\n  if (error) {\n    console.error(error);\n  } else {\n    console.log('API called successfully. Returned data: ' + data);\n  }\n};\napiInstance.postWorkforcemanagementBusinessunitWeekScheduleUpdateUploadurl(businessUnitId, weekId, scheduleId, body, callback);"
+  },
   "postworkforcemanagementbusinessunitweekschedules": {
     "operationId": "postworkforcemanagementbusinessunitweekschedules",
     "functionName": "postWorkforcemanagementBusinessunitWeekSchedules",
@@ -32724,6 +32914,54 @@
     ],
     "return": "BuAsyncScheduleRunResponse",
     "example": "// Browser\nconst  = require('');\n// Node\nconst  = require('');\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\n.ApiClient.instance.setAccessToken(yourAccessToken);\n\nlet apiInstance = new .PostWorkforcemanagementBusinessunitWeekSchedulesGenerateRequest();\n\nlet businessUnitId = \"businessUnitId_example\"; // String | The ID of the business unit\nlet weekId = \"2013-10-20\"; // String | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\nlet body = {}; // Object | body\n\n\nlet callback = (error, data, response) => {\n  if (error) {\n    console.error(error);\n  } else {\n    console.log('API called successfully. Returned data: ' + data);\n  }\n};\napiInstance.postWorkforcemanagementBusinessunitWeekSchedulesGenerate(businessUnitId, weekId, body, callback);"
+  },
+  "postworkforcemanagementbusinessunitweekschedulesimport": {
+    "operationId": "postworkforcemanagementbusinessunitweekschedulesimport",
+    "functionName": "postWorkforcemanagementBusinessunitWeekSchedulesImport",
+    "signature": "postWorkforcemanagementBusinessunitWeekSchedulesImport(businessUnitId, weekId, body)",
+    "parameters": [
+      {
+        "name": "businessUnitId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "weekId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "Object",
+        "required": "true"
+      }
+    ],
+    "return": "ScheduleUploadProcessingResponse",
+    "example": "// Browser\nconst  = require('');\n// Node\nconst  = require('');\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\n.ApiClient.instance.setAccessToken(yourAccessToken);\n\nlet apiInstance = new .PostWorkforcemanagementBusinessunitWeekSchedulesImportRequest();\n\nlet businessUnitId = \"businessUnitId_example\"; // String | The ID of the business unit\nlet weekId = \"2013-10-20\"; // String | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\nlet body = {}; // Object | \n\n\nlet callback = (error, data, response) => {\n  if (error) {\n    console.error(error);\n  } else {\n    console.log('API called successfully. Returned data: ' + data);\n  }\n};\napiInstance.postWorkforcemanagementBusinessunitWeekSchedulesImport(businessUnitId, weekId, body, callback);"
+  },
+  "postworkforcemanagementbusinessunitweekschedulesimportuploadurl": {
+    "operationId": "postworkforcemanagementbusinessunitweekschedulesimportuploadurl",
+    "functionName": "postWorkforcemanagementBusinessunitWeekSchedulesImportUploadurl",
+    "signature": "postWorkforcemanagementBusinessunitWeekSchedulesImportUploadurl(businessUnitId, weekId, body)",
+    "parameters": [
+      {
+        "name": "businessUnitId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "weekId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "Object",
+        "required": "true"
+      }
+    ],
+    "return": "ImportScheduleUploadResponse",
+    "example": "// Browser\nconst  = require('');\n// Node\nconst  = require('');\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\n.ApiClient.instance.setAccessToken(yourAccessToken);\n\nlet apiInstance = new .PostWorkforcemanagementBusinessunitWeekSchedulesImportUploadurlRequest();\n\nlet businessUnitId = \"businessUnitId_example\"; // String | The ID of the business unit\nlet weekId = \"2013-10-20\"; // String | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\nlet body = {}; // Object | body\n\n\nlet callback = (error, data, response) => {\n  if (error) {\n    console.error(error);\n  } else {\n    console.log('API called successfully. Returned data: ' + data);\n  }\n};\napiInstance.postWorkforcemanagementBusinessunitWeekSchedulesImportUploadurl(businessUnitId, weekId, body, callback);"
   },
   "postworkforcemanagementbusinessunitweekshorttermforecastcopy": {
     "operationId": "postworkforcemanagementbusinessunitweekshorttermforecastcopy",
@@ -32787,6 +33025,54 @@
     ],
     "return": "AsyncForecastOperationResult",
     "example": "// Browser\nconst  = require('');\n// Node\nconst  = require('');\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\n.ApiClient.instance.setAccessToken(yourAccessToken);\n\nlet apiInstance = new .PostWorkforcemanagementBusinessunitWeekShorttermforecastsGenerateRequest();\n\nlet businessUnitId = \"businessUnitId_example\"; // String | The business unit ID of the business unit to which the forecast belongs\nlet weekDateId = \"2013-10-20\"; // String | The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\nlet body = {}; // Object | \nlet opts = { \n  'forceAsync': true // Boolean | Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes\n};\n\n\nlet callback = (error, data, response) => {\n  if (error) {\n    console.error(error);\n  } else {\n    console.log('API called successfully. Returned data: ' + data);\n  }\n};\napiInstance.postWorkforcemanagementBusinessunitWeekShorttermforecastsGenerate(businessUnitId, weekDateId, body, opts, callback);"
+  },
+  "postworkforcemanagementbusinessunitweekshorttermforecastsimport": {
+    "operationId": "postworkforcemanagementbusinessunitweekshorttermforecastsimport",
+    "functionName": "postWorkforcemanagementBusinessunitWeekShorttermforecastsImport",
+    "signature": "postWorkforcemanagementBusinessunitWeekShorttermforecastsImport(businessUnitId, weekDateId, body)",
+    "parameters": [
+      {
+        "name": "businessUnitId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "weekDateId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "Object",
+        "required": "true"
+      }
+    ],
+    "return": "ImportForecastResponse",
+    "example": "// Browser\nconst  = require('');\n// Node\nconst  = require('');\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\n.ApiClient.instance.setAccessToken(yourAccessToken);\n\nlet apiInstance = new .PostWorkforcemanagementBusinessunitWeekShorttermforecastsImportRequest();\n\nlet businessUnitId = \"businessUnitId_example\"; // String | The business unit ID of the business unit to which the forecast belongs\nlet weekDateId = \"2013-10-20\"; // String | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\nlet body = {}; // Object | \n\n\nlet callback = (error, data, response) => {\n  if (error) {\n    console.error(error);\n  } else {\n    console.log('API called successfully. Returned data: ' + data);\n  }\n};\napiInstance.postWorkforcemanagementBusinessunitWeekShorttermforecastsImport(businessUnitId, weekDateId, body, callback);"
+  },
+  "postworkforcemanagementbusinessunitweekshorttermforecastsimportuploadurl": {
+    "operationId": "postworkforcemanagementbusinessunitweekshorttermforecastsimportuploadurl",
+    "functionName": "postWorkforcemanagementBusinessunitWeekShorttermforecastsImportUploadurl",
+    "signature": "postWorkforcemanagementBusinessunitWeekShorttermforecastsImportUploadurl(businessUnitId, weekDateId, body)",
+    "parameters": [
+      {
+        "name": "businessUnitId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "weekDateId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "Object",
+        "required": "true"
+      }
+    ],
+    "return": "ImportForecastUploadResponse",
+    "example": "// Browser\nconst  = require('');\n// Node\nconst  = require('');\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\n.ApiClient.instance.setAccessToken(yourAccessToken);\n\nlet apiInstance = new .PostWorkforcemanagementBusinessunitWeekShorttermforecastsImportUploadurlRequest();\n\nlet businessUnitId = \"businessUnitId_example\"; // String | The business unit ID of the business unit to which the forecast belongs\nlet weekDateId = \"2013-10-20\"; // String | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\nlet body = {}; // Object | body\n\n\nlet callback = (error, data, response) => {\n  if (error) {\n    console.error(error);\n  } else {\n    console.log('API called successfully. Returned data: ' + data);\n  }\n};\napiInstance.postWorkforcemanagementBusinessunitWeekShorttermforecastsImportUploadurl(businessUnitId, weekDateId, body, callback);"
   },
   "postworkforcemanagementbusinessunits": {
     "operationId": "postworkforcemanagementbusinessunits",

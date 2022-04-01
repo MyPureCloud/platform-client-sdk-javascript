@@ -92,6 +92,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**patchConversationsCallbackParticipant**](ConversationsApi.html#patchConversationsCallbackParticipant) | **PATCH** /api/v2/conversations/callbacks/{conversationId}/participants/{participantId} | Update conversation participant
 [**patchConversationsCallbackParticipantAttributes**](ConversationsApi.html#patchConversationsCallbackParticipantAttributes) | **PATCH** /api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/attributes | Update the attributes on a conversation participant.
 [**patchConversationsCallbackParticipantCommunication**](ConversationsApi.html#patchConversationsCallbackParticipantCommunication) | **PATCH** /api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/communications/{communicationId} | Update conversation participant&#39;s communication by disconnecting it.
+[**patchConversationsCallbacks**](ConversationsApi.html#patchConversationsCallbacks) | **PATCH** /api/v2/conversations/callbacks | Update a scheduled callback
 [**patchConversationsChat**](ConversationsApi.html#patchConversationsChat) | **PATCH** /api/v2/conversations/chats/{conversationId} | Update a conversation by disconnecting all of the participants
 [**patchConversationsChatParticipant**](ConversationsApi.html#patchConversationsChatParticipant) | **PATCH** /api/v2/conversations/chats/{conversationId}/participants/{participantId} | Update conversation participant
 [**patchConversationsChatParticipantAttributes**](ConversationsApi.html#patchConversationsChatParticipantAttributes) | **PATCH** /api/v2/conversations/chats/{conversationId}/participants/{participantId}/attributes | Update the attributes on a conversation participant.
@@ -131,6 +132,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postConversationsCallParticipants**](ConversationsApi.html#postConversationsCallParticipants) | **POST** /api/v2/conversations/calls/{conversationId}/participants | Add participants to a conversation
 [**postConversationsCallbackParticipantReplace**](ConversationsApi.html#postConversationsCallbackParticipantReplace) | **POST** /api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/replace | Replace this participant with the specified user and/or address
 [**postConversationsCallbacks**](ConversationsApi.html#postConversationsCallbacks) | **POST** /api/v2/conversations/callbacks | Create a Callback
+[**postConversationsCallbacksBulkDisconnect**](ConversationsApi.html#postConversationsCallbacksBulkDisconnect) | **POST** /api/v2/conversations/callbacks/bulk/disconnect | Disconnect multiple scheduled callbacks
+[**postConversationsCallbacksBulkUpdate**](ConversationsApi.html#postConversationsCallbacksBulkUpdate) | **POST** /api/v2/conversations/callbacks/bulk/update | Update multiple scheduled callbacks
 [**postConversationsCalls**](ConversationsApi.html#postConversationsCalls) | **POST** /api/v2/conversations/calls | Create a call conversation
 [**postConversationsChatCommunicationMessages**](ConversationsApi.html#postConversationsChatCommunicationMessages) | **POST** /api/v2/conversations/chats/{conversationId}/communications/{communicationId}/messages | Send a message on behalf of a communication in a chat conversation.
 [**postConversationsChatCommunicationTyping**](ConversationsApi.html#postConversationsChatCommunicationTyping) | **POST** /api/v2/conversations/chats/{conversationId}/communications/{communicationId}/typing | Send a typing-indicator on behalf of a communication in a chat conversation.
@@ -4805,6 +4808,59 @@ apiInstance.patchConversationsCallbackParticipantCommunication(conversationId, p
 
 **Empty**
 
+<a name="patchConversationsCallbacks"></a>
+
+# PatchCallbackResponse patchConversationsCallbacks(body)
+
+
+
+PATCH /api/v2/conversations/callbacks
+
+Update a scheduled callback
+
+
+
+Requires ANY permissions: 
+
+* conversation:callback:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let body = {}; // Object | PatchCallbackRequest
+
+apiInstance.patchConversationsCallbacks(body)
+  .then((data) => {
+    console.log(`patchConversationsCallbacks success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchConversationsCallbacks');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | PatchCallbackRequest |  |
+{: class="table table-striped"}
+
+### Return type
+
+**PatchCallbackResponse**
+
 <a name="patchConversationsChat"></a>
 
 # Conversation patchConversationsChat(conversationId, body)
@@ -6990,6 +7046,112 @@ apiInstance.postConversationsCallbacks(body)
 ### Return type
 
 **CreateCallbackResponse**
+
+<a name="postConversationsCallbacksBulkDisconnect"></a>
+
+# void postConversationsCallbacksBulkDisconnect(body)
+
+
+
+POST /api/v2/conversations/callbacks/bulk/disconnect
+
+Disconnect multiple scheduled callbacks
+
+
+
+Requires ANY permissions: 
+
+* conversation:communication:disconnect
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let body = {}; // Object | BulkCallbackDisconnectRequest
+
+apiInstance.postConversationsCallbacksBulkDisconnect(body)
+  .then(() => {
+    console.log('postConversationsCallbacksBulkDisconnect returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postConversationsCallbacksBulkDisconnect');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | BulkCallbackDisconnectRequest |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
+
+<a name="postConversationsCallbacksBulkUpdate"></a>
+
+# BulkCallbackPatchResponse postConversationsCallbacksBulkUpdate(body)
+
+
+
+POST /api/v2/conversations/callbacks/bulk/update
+
+Update multiple scheduled callbacks
+
+
+
+Requires ANY permissions: 
+
+* conversation:callback:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let body = {}; // Object | BulkCallbackPatchRequest
+
+apiInstance.postConversationsCallbacksBulkUpdate(body)
+  .then((data) => {
+    console.log(`postConversationsCallbacksBulkUpdate success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postConversationsCallbacksBulkUpdate');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | BulkCallbackPatchRequest |  |
+{: class="table table-striped"}
+
+### Return type
+
+**BulkCallbackPatchResponse**
 
 <a name="postConversationsCalls"></a>
 

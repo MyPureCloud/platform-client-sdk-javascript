@@ -5,7 +5,7 @@ class ConversationsApi {
 	/**
 	 * Conversations service.
 	 * @module purecloud-platform-client-v2/api/ConversationsApi
-	 * @version 133.0.2
+	 * @version 134.0.0
 	 */
 
 	/**
@@ -2413,6 +2413,31 @@ class ConversationsApi {
 	}
 
 	/**
+	 * Update a scheduled callback
+	 * 
+	 * @param {Object} body PatchCallbackRequest
+	 */
+	patchConversationsCallbacks(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchConversationsCallbacks';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/callbacks', 
+			'PATCH', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
 	 * Update a conversation by disconnecting all of the participants
 	 * 
 	 * @param {String} conversationId conversationId
@@ -3653,6 +3678,56 @@ class ConversationsApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/conversations/callbacks', 
+			'POST', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Disconnect multiple scheduled callbacks
+	 * 
+	 * @param {Object} body BulkCallbackDisconnectRequest
+	 */
+	postConversationsCallbacksBulkDisconnect(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postConversationsCallbacksBulkDisconnect';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/callbacks/bulk/disconnect', 
+			'POST', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update multiple scheduled callbacks
+	 * 
+	 * @param {Object} body BulkCallbackPatchRequest
+	 */
+	postConversationsCallbacksBulkUpdate(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postConversationsCallbacksBulkUpdate';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/callbacks/bulk/update', 
 			'POST', 
 			{  }, 
 			{  }, 

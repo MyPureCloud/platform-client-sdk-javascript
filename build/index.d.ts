@@ -1064,6 +1064,7 @@ declare class ConversationsApi {
   	patchConversationsCallbackParticipant(conversationId: string, participantId: string, body: Models.MediaParticipantRequest): Promise<void>; 
   	patchConversationsCallbackParticipantAttributes(conversationId: string, participantId: string, body: Models.ParticipantAttributes): Promise<void>; 
   	patchConversationsCallbackParticipantCommunication(conversationId: string, participantId: string, communicationId: string, body: Models.MediaParticipantRequest): Promise<Models.Empty>; 
+  	patchConversationsCallbacks(body: Models.PatchCallbackRequest): Promise<Models.PatchCallbackResponse>; 
   	patchConversationsChat(conversationId: string, body: Models.Conversation): Promise<Models.Conversation>; 
   	patchConversationsChatParticipant(conversationId: string, participantId: string, body: Models.MediaParticipantRequest): Promise<void>; 
   	patchConversationsChatParticipantAttributes(conversationId: string, participantId: string, body: Models.ParticipantAttributes): Promise<void>; 
@@ -1103,6 +1104,8 @@ declare class ConversationsApi {
   	postConversationsCallParticipants(conversationId: string, body: Models.Conversation): Promise<Models.Conversation>; 
   	postConversationsCallbackParticipantReplace(conversationId: string, participantId: string, body: Models.TransferRequest): Promise<void>; 
   	postConversationsCallbacks(body: Models.CreateCallbackCommand): Promise<Models.CreateCallbackResponse>; 
+  	postConversationsCallbacksBulkDisconnect(body: Models.BulkCallbackDisconnectRequest): Promise<void>; 
+  	postConversationsCallbacksBulkUpdate(body: Models.BulkCallbackPatchRequest): Promise<Models.BulkCallbackPatchResponse>; 
   	postConversationsCalls(body: Models.CreateCallRequest): Promise<Models.CreateCallResponse>; 
   	postConversationsChatCommunicationMessages(conversationId: string, communicationId: string, body: Models.CreateWebChatMessageRequest): Promise<Models.WebChatMessage>; 
   	postConversationsChatCommunicationTyping(conversationId: string, communicationId: string): Promise<Models.WebChatTyping>; 
@@ -2424,8 +2427,8 @@ declare namespace NotificationsApi {
 
 declare class OAuthApi {  
   	deleteOauthClient(clientId: string): Promise<void>; 
-  	getOauthAuthorization(clientId: string): Promise<Models.OAuthAuthorization>; 
-  	getOauthAuthorizations(): Promise<Models.OAuthAuthorizationListing>; 
+  	getOauthAuthorization(clientId: string, opts?: OAuthApi.getOauthAuthorizationOptions): Promise<Models.OAuthAuthorization>; 
+  	getOauthAuthorizations(opts?: OAuthApi.getOauthAuthorizationsOptions): Promise<Models.OAuthAuthorizationListing>; 
   	getOauthClient(clientId: string): Promise<Models.OAuthClient>; 
   	getOauthClientUsageQueryResult(executionId: string, clientId: string): Promise<Models.ApiUsageQueryResult>; 
   	getOauthClientUsageSummary(clientId: string, opts?: OAuthApi.getOauthClientUsageSummaryOptions): Promise<Models.UsageExecutionResult>; 
@@ -2439,6 +2442,12 @@ declare class OAuthApi {
 }
 
 declare namespace OAuthApi { 
+	export interface getOauthAuthorizationOptions { 
+		"acceptLanguage"?: string;
+	}
+	export interface getOauthAuthorizationsOptions { 
+		"acceptLanguage"?: string;
+	}
 	export interface getOauthClientUsageSummaryOptions { 
 		"days"?: string;
 	}
@@ -3320,15 +3329,21 @@ declare namespace RecordingApi {
 declare class ResponseManagementApi {  
   	deleteResponsemanagementLibrary(libraryId: string): Promise<void>; 
   	deleteResponsemanagementResponse(responseId: string): Promise<void>; 
+  	deleteResponsemanagementResponseasset(responseAssetId: string): Promise<void>; 
   	getResponsemanagementLibraries(opts?: ResponseManagementApi.getResponsemanagementLibrariesOptions): Promise<Models.LibraryEntityListing>; 
   	getResponsemanagementLibrary(libraryId: string): Promise<Models.Library>; 
   	getResponsemanagementResponse(responseId: string, opts?: ResponseManagementApi.getResponsemanagementResponseOptions): Promise<Models.Response>; 
+  	getResponsemanagementResponseasset(responseAssetId: string): Promise<Models.ResponseAsset>; 
+  	getResponsemanagementResponseassetsStatusStatusId(statusId: string): Promise<Models.ResponseAssetStatus>; 
   	getResponsemanagementResponses(libraryId: string, opts?: ResponseManagementApi.getResponsemanagementResponsesOptions): Promise<Models.ResponseEntityListing>; 
   	postResponsemanagementLibraries(body: Models.Library): Promise<Models.Library>; 
+  	postResponsemanagementResponseassetsSearch(body: Models.ResponseAssetSearchRequest, opts?: ResponseManagementApi.postResponsemanagementResponseassetsSearchOptions): Promise<Models.ResponseAssetSearchResults>; 
+  	postResponsemanagementResponseassetsUploads(body: Models.CreateResponseAssetRequest): Promise<Models.CreateResponseAssetResponse>; 
   	postResponsemanagementResponses(body: Models.Response, opts?: ResponseManagementApi.postResponsemanagementResponsesOptions): Promise<Models.Response>; 
   	postResponsemanagementResponsesQuery(body: Models.ResponseQueryRequest): Promise<Models.ResponseQueryResults>; 
   	putResponsemanagementLibrary(libraryId: string, body: Models.Library): Promise<Models.Library>; 
-  	putResponsemanagementResponse(responseId: string, body: Models.Response, opts?: ResponseManagementApi.putResponsemanagementResponseOptions): Promise<Models.Response>;
+  	putResponsemanagementResponse(responseId: string, body: Models.Response, opts?: ResponseManagementApi.putResponsemanagementResponseOptions): Promise<Models.Response>; 
+  	putResponsemanagementResponseasset(responseAssetId: string, body: Models.ResponseAssetRequest): Promise<Models.ResponseAsset>;
 }
 
 declare namespace ResponseManagementApi { 
@@ -3344,6 +3359,9 @@ declare namespace ResponseManagementApi {
 		"pageNumber"?: number;
 		"pageSize"?: number;
 		"expand"?: string;
+	}
+	export interface postResponsemanagementResponseassetsSearchOptions { 
+		"expand"?: Array<string>;
 	}
 	export interface postResponsemanagementResponsesOptions { 
 		"expand"?: string;
@@ -4393,8 +4411,7 @@ declare class UploadsApi {
   	postLanguageunderstandingMinerUploads(minerId: string, body: Models.Empty): Promise<Models.UploadUrlResponse>; 
   	postUploadsPublicassetsImages(body: Models.UploadUrlRequest): Promise<Models.UploadUrlResponse>; 
   	postUploadsRecordings(body: Models.UploadUrlRequest): Promise<Models.UploadUrlResponse>; 
-  	postUploadsWorkforcemanagementHistoricaldataCsv(body: Models.UploadUrlRequest): Promise<Models.UploadUrlResponse>; 
-  	postUploadsWorkforcemanagementHistoricaldataJson(body: Models.UploadUrlRequest): Promise<Models.UploadUrlResponse>;
+  	postUploadsWorkforcemanagementHistoricaldataCsv(body: Models.UploadUrlRequest): Promise<Models.UploadUrlResponse>;
 }
 
 declare namespace UploadsApi { 
@@ -4898,10 +4915,16 @@ declare class WorkforceManagementApi {
   	postWorkforcemanagementBusinessunitWeekScheduleAgentschedulesQuery(businessUnitId: string, weekId: string, scheduleId: string, body: Models.BuQueryAgentSchedulesRequest, opts?: WorkforceManagementApi.postWorkforcemanagementBusinessunitWeekScheduleAgentschedulesQueryOptions): Promise<Models.BuAsyncAgentSchedulesQueryResponse>; 
   	postWorkforcemanagementBusinessunitWeekScheduleCopy(businessUnitId: string, weekId: string, scheduleId: string, body: Models.BuCopyScheduleRequest): Promise<Models.BuAsyncScheduleResponse>; 
   	postWorkforcemanagementBusinessunitWeekScheduleReschedule(businessUnitId: string, weekId: string, scheduleId: string, body: Models.BuRescheduleRequest): Promise<Models.BuAsyncScheduleRunResponse>; 
+  	postWorkforcemanagementBusinessunitWeekScheduleUpdate(businessUnitId: string, weekId: string, scheduleId: string, body: Models.ProcessScheduleUpdateUploadRequest): Promise<Models.BuAsyncScheduleResponse>; 
+  	postWorkforcemanagementBusinessunitWeekScheduleUpdateUploadurl(businessUnitId: string, weekId: string, scheduleId: string, body: Models.UploadUrlRequestBody): Promise<Models.UpdateScheduleUploadResponse>; 
   	postWorkforcemanagementBusinessunitWeekSchedules(businessUnitId: string, weekId: string, body: Models.BuCreateBlankScheduleRequest): Promise<Models.BuScheduleMetadata>; 
   	postWorkforcemanagementBusinessunitWeekSchedulesGenerate(businessUnitId: string, weekId: string, body: Models.BuGenerateScheduleRequest): Promise<Models.BuAsyncScheduleRunResponse>; 
+  	postWorkforcemanagementBusinessunitWeekSchedulesImport(businessUnitId: string, weekId: string, body: Models.WfmProcessUploadRequest): Promise<Models.ScheduleUploadProcessingResponse>; 
+  	postWorkforcemanagementBusinessunitWeekSchedulesImportUploadurl(businessUnitId: string, weekId: string, body: Models.UploadUrlRequestBody): Promise<Models.ImportScheduleUploadResponse>; 
   	postWorkforcemanagementBusinessunitWeekShorttermforecastCopy(businessUnitId: string, weekDateId: string, forecastId: string, body: Models.CopyBuForecastRequest, opts?: WorkforceManagementApi.postWorkforcemanagementBusinessunitWeekShorttermforecastCopyOptions): Promise<Models.AsyncForecastOperationResult>; 
   	postWorkforcemanagementBusinessunitWeekShorttermforecastsGenerate(businessUnitId: string, weekDateId: string, body: Models.GenerateBuForecastRequest, opts?: WorkforceManagementApi.postWorkforcemanagementBusinessunitWeekShorttermforecastsGenerateOptions): Promise<Models.AsyncForecastOperationResult>; 
+  	postWorkforcemanagementBusinessunitWeekShorttermforecastsImport(businessUnitId: string, weekDateId: string, body: Models.WfmProcessUploadRequest): Promise<Models.ImportForecastResponse>; 
+  	postWorkforcemanagementBusinessunitWeekShorttermforecastsImportUploadurl(businessUnitId: string, weekDateId: string, body: Models.UploadUrlRequestBody): Promise<Models.ImportForecastUploadResponse>; 
   	postWorkforcemanagementBusinessunits(opts?: WorkforceManagementApi.postWorkforcemanagementBusinessunitsOptions): Promise<Models.BusinessUnit>; 
   	postWorkforcemanagementCalendarUrlIcs(opts?: WorkforceManagementApi.postWorkforcemanagementCalendarUrlIcsOptions): Promise<Models.CalendarUrlResponse>; 
   	postWorkforcemanagementHistoricaldataDeletejob(): Promise<Models.HistoricalImportDeleteJobResponse>; 
@@ -7405,6 +7428,22 @@ declare namespace Models {
 		"downloadUrl"?: string;
 	}
 	
+	export interface BuImportAgentScheduleUploadSchema { 
+		"userId": string;
+		"workPlanId"?: Models.ValueWrapperString;
+		"workPlanIdsPerWeek"?: Models.ListWrapperString;
+		"shifts"?: Array<Models.BuAgentScheduleShift>;
+		"fullDayTimeOffMarkers"?: Array<Models.BuFullDayTimeOffMarker>;
+	}
+	
+	export interface BuImportShortTermForecastSchema { 
+		"description": string;
+		"weekCount": number;
+		"planningGroups": Array<Models.ForecastPlanningGroupData>;
+		"longTermPlanningGroups"?: Array<Models.LongTermForecastPlanningGroupData>;
+		"canUseForScheduling"?: boolean;
+	}
+	
 	export interface BuIntradayDataGroup { 
 		"mediaType"?: string;
 		"forecastDataSummary"?: Models.BuIntradayForecastData;
@@ -7609,6 +7648,30 @@ declare namespace Models {
 		"defaultHistoryWeeks"?: number;
 	}
 	
+	export interface BuUpdateAgentScheduleUploadSchema { 
+		"userId": string;
+		"workPlanId"?: Models.ValueWrapperString;
+		"workPlanIdsPerWeek"?: Models.ListWrapperString;
+		"shifts"?: Array<Models.BuAgentScheduleShift>;
+		"fullDayTimeOffMarkers"?: Array<Models.BuFullDayTimeOffMarker>;
+		"metadata"?: Models.WfmVersionedEntityMetadata;
+		"delete"?: boolean;
+	}
+	
+	export interface BulkCallbackDisconnectRequest { 
+		"callbackDisconnectIdentifiers": Array<Models.CallbackDisconnectIdentifier>;
+	}
+	
+	export interface BulkCallbackPatchRequest { 
+		"patchCallbackRequests": Array<Models.PatchCallbackRequest>;
+	}
+	
+	export interface BulkCallbackPatchResponse { 
+		"results"?: Array<Models.BulkResult>;
+		"errorCount"?: number;
+		"errorIndexes"?: Array<number>;
+	}
+	
 	export interface BulkContactsRequest { 
 		"entities"?: Array<Models.ExternalContact>;
 	}
@@ -7623,6 +7686,11 @@ declare namespace Models {
 		"results"?: Array<Models.BulkResponseResultVoidEntity>;
 		"errorCount"?: number;
 		"errorIndexes"?: Array<number>;
+	}
+	
+	export interface BulkError { 
+		"message"?: string;
+		"code"?: string;
 	}
 	
 	export interface BulkErrorDetail { 
@@ -7795,6 +7863,11 @@ declare namespace Models {
 		"success"?: boolean;
 		"entity"?: Models.ModelVoid;
 		"error"?: Models.BulkErrorEntity;
+	}
+	
+	export interface BulkResult { 
+		"error"?: Models.BulkError;
+		"entity"?: object;
 	}
 	
 	export interface BulkShiftTradeStateUpdateRequest { 
@@ -8340,6 +8413,11 @@ declare namespace Models {
 		"pageCount"?: number;
 	}
 	
+	export interface CallbackDisconnectIdentifier { 
+		"conversationId": string;
+		"callbackId"?: string;
+	}
+	
 	export interface CallbackIdentifier { 
 		"type": string;
 		"id": string;
@@ -8663,8 +8741,8 @@ declare namespace Models {
 		"expirationDate"?: string;
 		"issueDate"?: string;
 		"expired"?: boolean;
-		"signatureValid"?: boolean;
 		"valid"?: boolean;
+		"signatureValid"?: boolean;
 	}
 	
 	export interface Change { 
@@ -9879,6 +9957,8 @@ declare namespace Models {
 		"documentId"?: string;
 		"monitoredParticipantId"?: string;
 		"coachedParticipantId"?: string;
+		"bargedParticipantId"?: string;
+		"bargedTime"?: string;
 		"consultParticipantId"?: string;
 		"faxStatus"?: Models.ConversationCallEventTopicFaxStatus;
 	}
@@ -10618,6 +10698,10 @@ declare namespace Models {
 		"sessionJoinToken"?: string;
 	}
 	
+	export interface ConversationEventPresence { 
+		"type": string;
+	}
+	
 	export interface ConversationEventTopicAddress { 
 		"name"?: string;
 		"nameRaw"?: string;
@@ -10663,6 +10747,7 @@ declare namespace Models {
 		"disconnectReasons"?: Array<Models.ConversationEventTopicDisconnectReason>;
 		"faxStatus"?: Models.ConversationEventTopicFaxStatus;
 		"uuiData"?: string;
+		"bargedTime"?: string;
 		"wrapup"?: Models.ConversationEventTopicWrapup;
 		"afterCallWork"?: Models.ConversationEventTopicAfterCallWork;
 		"afterCallWorkRequired"?: boolean;
@@ -10887,6 +10972,9 @@ declare namespace Models {
 		"id"?: string;
 	}
 	
+	export interface ConversationEventTopicObject { 
+	}
+	
 	export interface ConversationEventTopicParticipant { 
 		"id"?: string;
 		"connectedTime"?: string;
@@ -10912,6 +11000,7 @@ declare namespace Models {
 		"alertingTimeoutMs"?: number;
 		"monitoredParticipantId"?: string;
 		"coachedParticipantId"?: string;
+		"bargedParticipantId"?: string;
 		"screenRecordingState"?: string;
 		"flaggedReason"?: string;
 		"attributes"?: { [key: string]: string; };
@@ -10945,6 +11034,7 @@ declare namespace Models {
 		"provider"?: string;
 		"scriptId"?: string;
 		"peerId"?: string;
+		"peerCount"?: Models.ConversationEventTopicObject;
 		"disconnectType"?: string;
 		"connectedTime"?: string;
 		"disconnectedTime"?: string;
@@ -10987,6 +11077,7 @@ declare namespace Models {
 		"audioMuted"?: boolean;
 		"videoMuted"?: boolean;
 		"sharingScreen"?: boolean;
+		"peerCount"?: Models.ConversationEventTopicObject;
 		"provider"?: string;
 		"scriptId"?: string;
 		"peerId"?: string;
@@ -11031,6 +11122,7 @@ declare namespace Models {
 		"eventType": string;
 		"coBrowse"?: Models.ConversationEventCoBrowse;
 		"typing"?: Models.ConversationEventTyping;
+		"presence"?: Models.ConversationEventPresence;
 	}
 	
 	export interface ConversationMessageEventTopicConversationRoutingData { 
@@ -11197,6 +11289,7 @@ declare namespace Models {
 		"firstName"?: string;
 		"lastName"?: string;
 		"email"?: string;
+		"additionalIds"?: Array<Models.ConversationRecipientAdditionalIdentifier>;
 	}
 	
 	export interface ConversationMessagingToRecipient { 
@@ -11207,6 +11300,7 @@ declare namespace Models {
 		"firstName"?: string;
 		"lastName"?: string;
 		"email"?: string;
+		"additionalIds"?: Array<Models.ConversationRecipientAdditionalIdentifier>;
 	}
 	
 	export interface ConversationMetrics { 
@@ -11375,6 +11469,11 @@ declare namespace Models {
 	export interface ConversationReason { 
 		"code"?: string;
 		"message": string;
+	}
+	
+	export interface ConversationRecipientAdditionalIdentifier { 
+		"type": string;
+		"value": string;
 	}
 	
 	export interface ConversationReference { 
@@ -12077,6 +12176,18 @@ declare namespace Models {
 		"outboundEmailAddress"?: Models.QueueEmailAddress;
 		"sourceQueueId"?: string;
 		"selfUri"?: string;
+	}
+	
+	export interface CreateResponseAssetRequest { 
+		"name": string;
+		"divisionId"?: string;
+		"contentMd5"?: string;
+	}
+	
+	export interface CreateResponseAssetResponse { 
+		"id"?: string;
+		"url"?: string;
+		"headers"?: { [key: string]: string; };
 	}
 	
 	export interface CreateSecureSession { 
@@ -14879,6 +14990,7 @@ declare namespace Models {
 		"user"?: Models.User;
 		"localEncryptionConfiguration"?: Models.LocalEncryptionConfiguration;
 		"keyConfigurationType"?: string;
+		"kmsKeyArn"?: string;
 		"selfUri"?: string;
 	}
 	
@@ -15170,8 +15282,8 @@ declare namespace Models {
 		"commentsRequired"?: boolean;
 		"visibilityCondition"?: Models.VisibilityCondition;
 		"answerOptions"?: Array<Models.AnswerOption>;
-		"isCritical"?: boolean;
 		"isKill"?: boolean;
+		"isCritical"?: boolean;
 	}
 	
 	export interface EvaluationQuestionGroup { 
@@ -16782,7 +16894,7 @@ declare namespace Models {
 		"scheduledActivityCategory"?: string;
 		"actualActivityCategory"?: string;
 		"systemPresence"?: string;
-		"routingStatus"?: Models.RoutingStatus;
+		"routingStatus"?: string;
 		"impact"?: string;
 		"secondaryPresenceLookupId"?: string;
 	}
@@ -16971,11 +17083,40 @@ declare namespace Models {
 		"line"?: number;
 	}
 	
+	export interface ImportForecastResponse { 
+		"status"?: string;
+		"operationId"?: string;
+		"result"?: Models.BuShortTermForecast;
+	}
+	
+	export interface ImportForecastUploadResponse { 
+		"uploadKey"?: string;
+		"url"?: string;
+		"headers"?: { [key: string]: string; };
+		"uploadBodySchema"?: Models.BuImportShortTermForecastSchema;
+	}
+	
 	export interface ImportReport { 
 		"errors"?: Array<Models.ImportError>;
 		"validated"?: Models.ResultCounters;
 		"imported"?: Models.ResultCounters;
 		"totalDocuments"?: number;
+	}
+	
+	export interface ImportScheduleUploadResponse { 
+		"uploadKey"?: string;
+		"url"?: string;
+		"headers"?: { [key: string]: string; };
+		"uploadBodySchema"?: Models.ImportScheduleUploadSchema;
+	}
+	
+	export interface ImportScheduleUploadSchema { 
+		"description": string;
+		"weekCount": number;
+		"published"?: boolean;
+		"shortTermForecast"?: Models.BuShortTermForecastReference;
+		"headcountForecast"?: Models.BuHeadcountForecast;
+		"agentSchedules"?: Array<Models.BuImportAgentScheduleUploadSchema>;
 	}
 	
 	export interface ImportScriptStatusResponse { 
@@ -18883,6 +19024,10 @@ declare namespace Models {
 		"values"?: Array<Models.ShiftStartVariance>;
 	}
 	
+	export interface ListWrapperString { 
+		"values"?: Array<string>;
+	}
+	
 	export interface ListedProgram { 
 		"id"?: string;
 		"name"?: string;
@@ -20084,12 +20229,14 @@ declare namespace Models {
 	export interface OAuthAuthorization { 
 		"client"?: Models.OAuthClient;
 		"scope"?: Array<string>;
+		"roles"?: Array<string>;
 		"resourceOwner"?: Models.DomainEntityRef;
 		"dateCreated"?: string;
 		"dateModified"?: string;
 		"createdBy"?: Models.DomainEntityRef;
 		"modifiedBy"?: Models.DomainEntityRef;
 		"pending"?: boolean;
+		"state"?: string;
 		"selfUri"?: string;
 	}
 	
@@ -21091,6 +21238,18 @@ declare namespace Models {
 		"target"?: string;
 	}
 	
+	export interface PatchCallbackRequest { 
+		"conversationId": string;
+		"queueId"?: string;
+		"agentId": string;
+		"callbackScheduledTime"?: string;
+	}
+	
+	export interface PatchCallbackResponse { 
+		"conversation": Models.DomainEntityRef;
+		"callbackIdentifiers": Array<Models.CallbackIdentifier>;
+	}
+	
 	export interface PatchCloseButtonStyleProperties { 
 		"color"?: string;
 		"opacity"?: number;
@@ -21724,6 +21883,12 @@ declare namespace Models {
 		"selfUri"?: string;
 	}
 	
+	export interface ProcessScheduleUpdateUploadRequest { 
+		"uploadKey": string;
+		"teamIds"?: Array<string>;
+		"managementUnitIdsForAddedTeamUsers"?: Array<string>;
+	}
+	
 	export interface Program { 
 		"id"?: string;
 		"name"?: string;
@@ -22146,6 +22311,8 @@ declare namespace Models {
 		"documentId"?: string;
 		"monitoredParticipantId"?: string;
 		"coachedParticipantId"?: string;
+		"bargedParticipantId"?: string;
+		"bargedTime"?: string;
 		"consultParticipantId"?: string;
 		"faxStatus"?: Models.QueueConversationCallEventTopicFaxStatus;
 	}
@@ -22790,6 +22957,7 @@ declare namespace Models {
 		"disconnectReasons"?: Array<Models.QueueConversationEventTopicDisconnectReason>;
 		"faxStatus"?: Models.QueueConversationEventTopicFaxStatus;
 		"uuiData"?: string;
+		"bargedTime"?: string;
 		"wrapup"?: Models.QueueConversationEventTopicWrapup;
 		"afterCallWork"?: Models.QueueConversationEventTopicAfterCallWork;
 		"afterCallWorkRequired"?: boolean;
@@ -23014,6 +23182,9 @@ declare namespace Models {
 		"id"?: string;
 	}
 	
+	export interface QueueConversationEventTopicObject { 
+	}
+	
 	export interface QueueConversationEventTopicParticipant { 
 		"id"?: string;
 		"connectedTime"?: string;
@@ -23039,6 +23210,7 @@ declare namespace Models {
 		"alertingTimeoutMs"?: number;
 		"monitoredParticipantId"?: string;
 		"coachedParticipantId"?: string;
+		"bargedParticipantId"?: string;
 		"screenRecordingState"?: string;
 		"flaggedReason"?: string;
 		"attributes"?: { [key: string]: string; };
@@ -23072,6 +23244,7 @@ declare namespace Models {
 		"provider"?: string;
 		"scriptId"?: string;
 		"peerId"?: string;
+		"peerCount"?: Models.QueueConversationEventTopicObject;
 		"disconnectType"?: string;
 		"connectedTime"?: string;
 		"disconnectedTime"?: string;
@@ -23114,6 +23287,7 @@ declare namespace Models {
 		"audioMuted"?: boolean;
 		"videoMuted"?: boolean;
 		"sharingScreen"?: boolean;
+		"peerCount"?: Models.QueueConversationEventTopicObject;
 		"provider"?: string;
 		"scriptId"?: string;
 		"peerId"?: string;
@@ -23445,6 +23619,7 @@ declare namespace Models {
 		"disconnectReasons"?: Array<Models.QueueConversationSocialExpressionEventTopicDisconnectReason>;
 		"faxStatus"?: Models.QueueConversationSocialExpressionEventTopicFaxStatus;
 		"uuiData"?: string;
+		"bargedTime"?: string;
 		"wrapup"?: Models.QueueConversationSocialExpressionEventTopicWrapup;
 		"afterCallWork"?: Models.QueueConversationSocialExpressionEventTopicAfterCallWork;
 		"afterCallWorkRequired"?: boolean;
@@ -23669,6 +23844,9 @@ declare namespace Models {
 		"id"?: string;
 	}
 	
+	export interface QueueConversationSocialExpressionEventTopicObject { 
+	}
+	
 	export interface QueueConversationSocialExpressionEventTopicParticipant { 
 		"id"?: string;
 		"connectedTime"?: string;
@@ -23694,6 +23872,7 @@ declare namespace Models {
 		"alertingTimeoutMs"?: number;
 		"monitoredParticipantId"?: string;
 		"coachedParticipantId"?: string;
+		"bargedParticipantId"?: string;
 		"screenRecordingState"?: string;
 		"flaggedReason"?: string;
 		"attributes"?: { [key: string]: string; };
@@ -23727,6 +23906,7 @@ declare namespace Models {
 		"provider"?: string;
 		"scriptId"?: string;
 		"peerId"?: string;
+		"peerCount"?: Models.QueueConversationSocialExpressionEventTopicObject;
 		"disconnectType"?: string;
 		"connectedTime"?: string;
 		"disconnectedTime"?: string;
@@ -23769,6 +23949,7 @@ declare namespace Models {
 		"audioMuted"?: boolean;
 		"videoMuted"?: boolean;
 		"sharingScreen"?: boolean;
+		"peerCount"?: Models.QueueConversationSocialExpressionEventTopicObject;
 		"provider"?: string;
 		"scriptId"?: string;
 		"peerId"?: string;
@@ -23839,6 +24020,7 @@ declare namespace Models {
 		"disconnectReasons"?: Array<Models.QueueConversationVideoEventTopicDisconnectReason>;
 		"faxStatus"?: Models.QueueConversationVideoEventTopicFaxStatus;
 		"uuiData"?: string;
+		"bargedTime"?: string;
 		"wrapup"?: Models.QueueConversationVideoEventTopicWrapup;
 		"afterCallWork"?: Models.QueueConversationVideoEventTopicAfterCallWork;
 		"afterCallWorkRequired"?: boolean;
@@ -24063,6 +24245,9 @@ declare namespace Models {
 		"id"?: string;
 	}
 	
+	export interface QueueConversationVideoEventTopicObject { 
+	}
+	
 	export interface QueueConversationVideoEventTopicParticipant { 
 		"id"?: string;
 		"connectedTime"?: string;
@@ -24088,6 +24273,7 @@ declare namespace Models {
 		"alertingTimeoutMs"?: number;
 		"monitoredParticipantId"?: string;
 		"coachedParticipantId"?: string;
+		"bargedParticipantId"?: string;
 		"screenRecordingState"?: string;
 		"flaggedReason"?: string;
 		"attributes"?: { [key: string]: string; };
@@ -24121,6 +24307,7 @@ declare namespace Models {
 		"provider"?: string;
 		"scriptId"?: string;
 		"peerId"?: string;
+		"peerCount"?: Models.QueueConversationVideoEventTopicObject;
 		"disconnectType"?: string;
 		"connectedTime"?: string;
 		"disconnectedTime"?: string;
@@ -24163,6 +24350,7 @@ declare namespace Models {
 		"audioMuted"?: boolean;
 		"videoMuted"?: boolean;
 		"sharingScreen"?: boolean;
+		"peerCount"?: Models.QueueConversationVideoEventTopicObject;
 		"provider"?: string;
 		"scriptId"?: string;
 		"peerId"?: string;
@@ -24317,12 +24505,15 @@ declare namespace Models {
 		"selfUri"?: string;
 	}
 	
+	export interface QueueUserEventTopicObject { 
+	}
+	
 	export interface QueueUserEventTopicQueueMember { 
 		"id"?: string;
 		"user"?: Models.QueueUserEventTopicUserReference;
 		"queueId"?: string;
 		"joined"?: boolean;
-		"additionalProperties"?: object;
+		"additionalProperties"?: { [key: string]: Models.QueueUserEventTopicObject; };
 	}
 	
 	export interface QueueUserEventTopicUserReference { 
@@ -24375,6 +24566,11 @@ declare namespace Models {
 		"modifiedBy"?: Models.User;
 		"messengerType"?: string;
 		"selfUri"?: string;
+	}
+	
+	export interface RecipientAdditionalIdentifier { 
+		"type": string;
+		"value": string;
 	}
 	
 	export interface RecipientListing { 
@@ -25027,6 +25223,58 @@ declare namespace Models {
 		"selfUri"?: string;
 	}
 	
+	export interface ResponseAsset { 
+		"id"?: string;
+		"name"?: string;
+		"division"?: Models.Division;
+		"contentLength"?: number;
+		"contentLocation"?: string;
+		"contentType"?: string;
+		"dateCreated"?: string;
+		"createdBy"?: Models.DomainEntityRef;
+		"dateModified"?: string;
+		"modifiedBy"?: Models.DomainEntityRef;
+		"responses"?: Array<Models.DomainEntityRef>;
+		"selfUri"?: string;
+	}
+	
+	export interface ResponseAssetFilter { 
+		"endValue"?: string;
+		"values"?: Array<string>;
+		"startValue"?: string;
+		"fields"?: Array<string>;
+		"value"?: string;
+		"type"?: string;
+	}
+	
+	export interface ResponseAssetRequest { 
+		"name": string;
+		"divisionId"?: string;
+	}
+	
+	export interface ResponseAssetSearchRequest { 
+		"pageSize"?: number;
+		"pageNumber"?: number;
+		"sortOrder"?: string;
+		"sortBy"?: string;
+		"query": Array<Models.ResponseAssetFilter>;
+	}
+	
+	export interface ResponseAssetSearchResults { 
+		"total"?: number;
+		"pageCount"?: number;
+		"pageSize"?: number;
+		"pageNumber"?: number;
+		"results"?: Array<Models.ResponseAsset>;
+	}
+	
+	export interface ResponseAssetStatus { 
+		"id"?: string;
+		"status"?: string;
+		"errorCode"?: string;
+		"errorMessage"?: string;
+	}
+	
 	export interface ResponseConfig { 
 		"translationMap"?: { [key: string]: string; };
 		"translationMapDefaults"?: { [key: string]: string; };
@@ -25415,6 +25663,12 @@ declare namespace Models {
 	export interface ScheduleInterval { 
 		"start": string;
 		"end": string;
+	}
+	
+	export interface ScheduleUploadProcessingResponse { 
+		"status"?: string;
+		"operationId"?: string;
+		"result"?: Models.BuScheduleMetadata;
 	}
 	
 	export interface SchedulerMessageArgument { 
@@ -27089,6 +27343,9 @@ declare namespace Models {
 		"questionGroupScores"?: Array<Models.SurveyQuestionGroupScore>;
 	}
 	
+	export interface SystemMessageObject { 
+	}
+	
 	export interface SystemMessageSystemMessage { 
 		"channelId"?: string;
 		"systemTopicType"?: string;
@@ -27098,7 +27355,7 @@ declare namespace Models {
 		"oauthClientId"?: string;
 		"reason"?: string;
 		"message"?: string;
-		"data"?: object;
+		"data"?: { [key: string]: Models.SystemMessageObject; };
 	}
 	
 	export interface SystemPresence { 
@@ -28471,6 +28728,22 @@ declare namespace Models {
 		"metadata": Models.WfmVersionedEntityMetadata;
 	}
 	
+	export interface UpdateScheduleUploadResponse { 
+		"uploadKey"?: string;
+		"url"?: string;
+		"headers"?: { [key: string]: string; };
+		"uploadBodySchema"?: Models.UpdateScheduleUploadSchema;
+	}
+	
+	export interface UpdateScheduleUploadSchema { 
+		"description"?: string;
+		"published"?: boolean;
+		"shortTermForecast"?: Models.BuShortTermForecastReference;
+		"headcountForecast"?: Models.BuHeadcountForecast;
+		"agentSchedules"?: Array<Models.BuUpdateAgentScheduleUploadSchema>;
+		"metadata": Models.WfmVersionedEntityMetadata;
+	}
+	
 	export interface UpdateServiceGoalTemplate { 
 		"name"?: string;
 		"serviceLevel"?: Models.BuServiceLevel;
@@ -28539,6 +28812,10 @@ declare namespace Models {
 		"contentMd5"?: string;
 		"signedUrlTimeoutSeconds"?: number;
 		"serverSideEncryption"?: string;
+	}
+	
+	export interface UploadUrlRequestBody { 
+		"contentLengthBytes": number;
 	}
 	
 	export interface UploadUrlResponse { 
@@ -29170,6 +29447,9 @@ declare namespace Models {
 		"userParams"?: Array<Models.UserRoutingStatusUserParam>;
 	}
 	
+	export interface UserRoutingStatusObject { 
+	}
+	
 	export interface UserRoutingStatusRoutingStatus { 
 		"status"?: string;
 		"startTime"?: string;
@@ -29181,6 +29461,7 @@ declare namespace Models {
 	}
 	
 	export interface UserRoutingStatusUserRoutingStatus { 
+		"id"?: Models.UserRoutingStatusObject;
 		"routingStatus"?: Models.UserRoutingStatusRoutingStatus;
 		"errorInfo"?: Models.UserRoutingStatusErrorInfo;
 	}
@@ -29393,6 +29674,366 @@ declare namespace Models {
 	
 	export interface Utterance { 
 		"utteranceText"?: string;
+	}
+	
+	export interface V2ConversationMessageTypingEventForUserTopicConversationButtonComponent { 
+		"title"?: string;
+		"actions"?: Models.V2ConversationMessageTypingEventForUserTopicConversationContentActions;
+	}
+	
+	export interface V2ConversationMessageTypingEventForUserTopicConversationContentActions { 
+		"url"?: string;
+		"urlTarget"?: string;
+		"textback"?: string;
+	}
+	
+	export interface V2ConversationMessageTypingEventForUserTopicConversationContentAttachment { 
+		"id"?: string;
+		"mediaType"?: string;
+		"url"?: string;
+		"mime"?: string;
+		"text"?: string;
+		"sha256"?: string;
+		"filename"?: string;
+	}
+	
+	export interface V2ConversationMessageTypingEventForUserTopicConversationContentButtonResponse { 
+		"type"?: string;
+		"text"?: string;
+		"payload"?: string;
+	}
+	
+	export interface V2ConversationMessageTypingEventForUserTopicConversationContentGeneric { 
+		"title"?: string;
+		"description"?: string;
+		"image"?: string;
+		"video"?: string;
+		"actions"?: Models.V2ConversationMessageTypingEventForUserTopicConversationContentActions;
+		"components"?: Array<Models.V2ConversationMessageTypingEventForUserTopicConversationButtonComponent>;
+	}
+	
+	export interface V2ConversationMessageTypingEventForUserTopicConversationContentLocation { 
+		"url"?: string;
+		"address"?: string;
+		"text"?: string;
+		"latitude"?: number;
+		"longitude"?: number;
+	}
+	
+	export interface V2ConversationMessageTypingEventForUserTopicConversationContentNotificationTemplate { 
+		"id"?: string;
+		"language"?: string;
+		"header"?: Models.V2ConversationMessageTypingEventForUserTopicConversationNotificationTemplateHeader;
+		"body"?: Models.V2ConversationMessageTypingEventForUserTopicConversationNotificationTemplateBody;
+		"footer"?: Models.V2ConversationMessageTypingEventForUserTopicConversationNotificationTemplateFooter;
+	}
+	
+	export interface V2ConversationMessageTypingEventForUserTopicConversationContentQuickReply { 
+		"text"?: string;
+		"payload"?: string;
+		"image"?: string;
+		"action"?: string;
+	}
+	
+	export interface V2ConversationMessageTypingEventForUserTopicConversationContentStory { 
+		"type"?: string;
+		"url"?: string;
+		"replyToId"?: string;
+	}
+	
+	export interface V2ConversationMessageTypingEventForUserTopicConversationEventCoBrowse { 
+		"type"?: string;
+		"sessionId"?: string;
+		"sessionJoinToken"?: string;
+	}
+	
+	export interface V2ConversationMessageTypingEventForUserTopicConversationEventTyping { 
+		"type"?: string;
+		"duration"?: number;
+	}
+	
+	export interface V2ConversationMessageTypingEventForUserTopicConversationMessageContent { 
+		"contentType"?: string;
+		"location"?: Models.V2ConversationMessageTypingEventForUserTopicConversationContentLocation;
+		"story"?: Models.V2ConversationMessageTypingEventForUserTopicConversationContentStory;
+		"attachment"?: Models.V2ConversationMessageTypingEventForUserTopicConversationContentAttachment;
+		"quickReply"?: Models.V2ConversationMessageTypingEventForUserTopicConversationContentQuickReply;
+		"template"?: Models.V2ConversationMessageTypingEventForUserTopicConversationContentNotificationTemplate;
+		"buttonResponse"?: Models.V2ConversationMessageTypingEventForUserTopicConversationContentButtonResponse;
+		"generic"?: Models.V2ConversationMessageTypingEventForUserTopicConversationContentGeneric;
+	}
+	
+	export interface V2ConversationMessageTypingEventForUserTopicConversationMessageEvent { 
+		"eventType"?: string;
+		"coBrowse"?: Models.V2ConversationMessageTypingEventForUserTopicConversationEventCoBrowse;
+		"typing"?: Models.V2ConversationMessageTypingEventForUserTopicConversationEventTyping;
+	}
+	
+	export interface V2ConversationMessageTypingEventForUserTopicConversationMessagingChannel { 
+		"id"?: string;
+		"platform"?: string;
+		"messageId"?: string;
+		"to"?: Models.V2ConversationMessageTypingEventForUserTopicConversationMessagingToRecipient;
+		"from"?: Models.V2ConversationMessageTypingEventForUserTopicConversationMessagingFromRecipient;
+		"time"?: string;
+		"metadata"?: Models.V2ConversationMessageTypingEventForUserTopicConversationMessagingChannelMetadata;
+	}
+	
+	export interface V2ConversationMessageTypingEventForUserTopicConversationMessagingChannelMetadata { 
+		"customAttributes"?: { [key: string]: string; };
+	}
+	
+	export interface V2ConversationMessageTypingEventForUserTopicConversationMessagingFromRecipient { 
+		"nickname"?: string;
+		"id"?: string;
+		"idType"?: string;
+		"image"?: string;
+		"firstName"?: string;
+		"lastName"?: string;
+		"email"?: string;
+		"additionalIds"?: Array<Models.V2ConversationMessageTypingEventForUserTopicConversationRecipientAdditionalIdentifier>;
+	}
+	
+	export interface V2ConversationMessageTypingEventForUserTopicConversationMessagingToRecipient { 
+		"nickname"?: string;
+		"id"?: string;
+		"idType"?: string;
+		"image"?: string;
+		"firstName"?: string;
+		"lastName"?: string;
+		"email"?: string;
+		"additionalIds"?: Array<Models.V2ConversationMessageTypingEventForUserTopicConversationRecipientAdditionalIdentifier>;
+	}
+	
+	export interface V2ConversationMessageTypingEventForUserTopicConversationNormalizedMessage { 
+		"id"?: string;
+		"channel"?: Models.V2ConversationMessageTypingEventForUserTopicConversationMessagingChannel;
+		"type"?: string;
+		"text"?: string;
+		"content"?: Array<Models.V2ConversationMessageTypingEventForUserTopicConversationMessageContent>;
+		"events"?: Array<Models.V2ConversationMessageTypingEventForUserTopicConversationMessageEvent>;
+		"status"?: string;
+		"reasons"?: Array<Models.V2ConversationMessageTypingEventForUserTopicConversationReason>;
+		"originatingEntity"?: string;
+		"isFinalReceipt"?: boolean;
+		"direction"?: string;
+		"metadata"?: { [key: string]: string; };
+	}
+	
+	export interface V2ConversationMessageTypingEventForUserTopicConversationNotificationTemplateBody { 
+		"text"?: string;
+		"parameters"?: Array<Models.V2ConversationMessageTypingEventForUserTopicConversationNotificationTemplateParameter>;
+	}
+	
+	export interface V2ConversationMessageTypingEventForUserTopicConversationNotificationTemplateFooter { 
+		"text"?: string;
+	}
+	
+	export interface V2ConversationMessageTypingEventForUserTopicConversationNotificationTemplateHeader { 
+		"type"?: string;
+		"text"?: string;
+		"media"?: Models.V2ConversationMessageTypingEventForUserTopicConversationContentAttachment;
+		"parameters"?: Array<Models.V2ConversationMessageTypingEventForUserTopicConversationNotificationTemplateParameter>;
+	}
+	
+	export interface V2ConversationMessageTypingEventForUserTopicConversationNotificationTemplateParameter { 
+		"name"?: string;
+		"text"?: string;
+	}
+	
+	export interface V2ConversationMessageTypingEventForUserTopicConversationReason { 
+		"code"?: string;
+		"message"?: string;
+	}
+	
+	export interface V2ConversationMessageTypingEventForUserTopicConversationRecipientAdditionalIdentifier { 
+		"type"?: string;
+		"value"?: string;
+	}
+	
+	export interface V2ConversationMessageTypingEventForUserTopicMessageData { 
+		"conversationId"?: string;
+		"normalizedMessage"?: Models.V2ConversationMessageTypingEventForUserTopicConversationNormalizedMessage;
+	}
+	
+	export interface V2ConversationMessageTypingEventForWorkflowTopicConversationButtonComponent { 
+		"title"?: string;
+		"actions"?: Models.V2ConversationMessageTypingEventForWorkflowTopicConversationContentActions;
+	}
+	
+	export interface V2ConversationMessageTypingEventForWorkflowTopicConversationContentActions { 
+		"url"?: string;
+		"urlTarget"?: string;
+		"textback"?: string;
+	}
+	
+	export interface V2ConversationMessageTypingEventForWorkflowTopicConversationContentAttachment { 
+		"id"?: string;
+		"mediaType"?: string;
+		"url"?: string;
+		"mime"?: string;
+		"text"?: string;
+		"sha256"?: string;
+		"filename"?: string;
+	}
+	
+	export interface V2ConversationMessageTypingEventForWorkflowTopicConversationContentButtonResponse { 
+		"type"?: string;
+		"text"?: string;
+		"payload"?: string;
+	}
+	
+	export interface V2ConversationMessageTypingEventForWorkflowTopicConversationContentGeneric { 
+		"title"?: string;
+		"description"?: string;
+		"image"?: string;
+		"video"?: string;
+		"actions"?: Models.V2ConversationMessageTypingEventForWorkflowTopicConversationContentActions;
+		"components"?: Array<Models.V2ConversationMessageTypingEventForWorkflowTopicConversationButtonComponent>;
+	}
+	
+	export interface V2ConversationMessageTypingEventForWorkflowTopicConversationContentLocation { 
+		"url"?: string;
+		"address"?: string;
+		"text"?: string;
+		"latitude"?: number;
+		"longitude"?: number;
+	}
+	
+	export interface V2ConversationMessageTypingEventForWorkflowTopicConversationContentNotificationTemplate { 
+		"id"?: string;
+		"language"?: string;
+		"header"?: Models.V2ConversationMessageTypingEventForWorkflowTopicConversationNotificationTemplateHeader;
+		"body"?: Models.V2ConversationMessageTypingEventForWorkflowTopicConversationNotificationTemplateBody;
+		"footer"?: Models.V2ConversationMessageTypingEventForWorkflowTopicConversationNotificationTemplateFooter;
+	}
+	
+	export interface V2ConversationMessageTypingEventForWorkflowTopicConversationContentQuickReply { 
+		"text"?: string;
+		"payload"?: string;
+		"image"?: string;
+		"action"?: string;
+	}
+	
+	export interface V2ConversationMessageTypingEventForWorkflowTopicConversationContentStory { 
+		"type"?: string;
+		"url"?: string;
+		"replyToId"?: string;
+	}
+	
+	export interface V2ConversationMessageTypingEventForWorkflowTopicConversationEventCoBrowse { 
+		"type"?: string;
+		"sessionId"?: string;
+		"sessionJoinToken"?: string;
+	}
+	
+	export interface V2ConversationMessageTypingEventForWorkflowTopicConversationEventTyping { 
+		"type"?: string;
+		"duration"?: number;
+	}
+	
+	export interface V2ConversationMessageTypingEventForWorkflowTopicConversationMessageContent { 
+		"contentType"?: string;
+		"location"?: Models.V2ConversationMessageTypingEventForWorkflowTopicConversationContentLocation;
+		"story"?: Models.V2ConversationMessageTypingEventForWorkflowTopicConversationContentStory;
+		"attachment"?: Models.V2ConversationMessageTypingEventForWorkflowTopicConversationContentAttachment;
+		"quickReply"?: Models.V2ConversationMessageTypingEventForWorkflowTopicConversationContentQuickReply;
+		"template"?: Models.V2ConversationMessageTypingEventForWorkflowTopicConversationContentNotificationTemplate;
+		"buttonResponse"?: Models.V2ConversationMessageTypingEventForWorkflowTopicConversationContentButtonResponse;
+		"generic"?: Models.V2ConversationMessageTypingEventForWorkflowTopicConversationContentGeneric;
+	}
+	
+	export interface V2ConversationMessageTypingEventForWorkflowTopicConversationMessageEvent { 
+		"eventType"?: string;
+		"coBrowse"?: Models.V2ConversationMessageTypingEventForWorkflowTopicConversationEventCoBrowse;
+		"typing"?: Models.V2ConversationMessageTypingEventForWorkflowTopicConversationEventTyping;
+	}
+	
+	export interface V2ConversationMessageTypingEventForWorkflowTopicConversationMessagingChannel { 
+		"id"?: string;
+		"platform"?: string;
+		"messageId"?: string;
+		"to"?: Models.V2ConversationMessageTypingEventForWorkflowTopicConversationMessagingToRecipient;
+		"from"?: Models.V2ConversationMessageTypingEventForWorkflowTopicConversationMessagingFromRecipient;
+		"time"?: string;
+		"metadata"?: Models.V2ConversationMessageTypingEventForWorkflowTopicConversationMessagingChannelMetadata;
+	}
+	
+	export interface V2ConversationMessageTypingEventForWorkflowTopicConversationMessagingChannelMetadata { 
+		"customAttributes"?: { [key: string]: string; };
+	}
+	
+	export interface V2ConversationMessageTypingEventForWorkflowTopicConversationMessagingFromRecipient { 
+		"nickname"?: string;
+		"id"?: string;
+		"idType"?: string;
+		"image"?: string;
+		"firstName"?: string;
+		"lastName"?: string;
+		"email"?: string;
+		"additionalIds"?: Array<Models.V2ConversationMessageTypingEventForWorkflowTopicConversationRecipientAdditionalIdentifier>;
+	}
+	
+	export interface V2ConversationMessageTypingEventForWorkflowTopicConversationMessagingToRecipient { 
+		"nickname"?: string;
+		"id"?: string;
+		"idType"?: string;
+		"image"?: string;
+		"firstName"?: string;
+		"lastName"?: string;
+		"email"?: string;
+		"additionalIds"?: Array<Models.V2ConversationMessageTypingEventForWorkflowTopicConversationRecipientAdditionalIdentifier>;
+	}
+	
+	export interface V2ConversationMessageTypingEventForWorkflowTopicConversationNormalizedMessage { 
+		"id"?: string;
+		"channel"?: Models.V2ConversationMessageTypingEventForWorkflowTopicConversationMessagingChannel;
+		"type"?: string;
+		"text"?: string;
+		"content"?: Array<Models.V2ConversationMessageTypingEventForWorkflowTopicConversationMessageContent>;
+		"events"?: Array<Models.V2ConversationMessageTypingEventForWorkflowTopicConversationMessageEvent>;
+		"status"?: string;
+		"reasons"?: Array<Models.V2ConversationMessageTypingEventForWorkflowTopicConversationReason>;
+		"originatingEntity"?: string;
+		"isFinalReceipt"?: boolean;
+		"direction"?: string;
+		"metadata"?: { [key: string]: string; };
+	}
+	
+	export interface V2ConversationMessageTypingEventForWorkflowTopicConversationNotificationTemplateBody { 
+		"text"?: string;
+		"parameters"?: Array<Models.V2ConversationMessageTypingEventForWorkflowTopicConversationNotificationTemplateParameter>;
+	}
+	
+	export interface V2ConversationMessageTypingEventForWorkflowTopicConversationNotificationTemplateFooter { 
+		"text"?: string;
+	}
+	
+	export interface V2ConversationMessageTypingEventForWorkflowTopicConversationNotificationTemplateHeader { 
+		"type"?: string;
+		"text"?: string;
+		"media"?: Models.V2ConversationMessageTypingEventForWorkflowTopicConversationContentAttachment;
+		"parameters"?: Array<Models.V2ConversationMessageTypingEventForWorkflowTopicConversationNotificationTemplateParameter>;
+	}
+	
+	export interface V2ConversationMessageTypingEventForWorkflowTopicConversationNotificationTemplateParameter { 
+		"name"?: string;
+		"text"?: string;
+	}
+	
+	export interface V2ConversationMessageTypingEventForWorkflowTopicConversationReason { 
+		"code"?: string;
+		"message"?: string;
+	}
+	
+	export interface V2ConversationMessageTypingEventForWorkflowTopicConversationRecipientAdditionalIdentifier { 
+		"type"?: string;
+		"value"?: string;
+	}
+	
+	export interface V2ConversationMessageTypingEventForWorkflowTopicMessageData { 
+		"conversationId"?: string;
+		"normalizedMessage"?: Models.V2ConversationMessageTypingEventForWorkflowTopicConversationNormalizedMessage;
 	}
 	
 	export interface ValidateAddressRequest { 
@@ -29613,7 +30254,7 @@ declare namespace Models {
 		"journeyUrlNotContainsAllConditions"?: Array<string>;
 		"flowMilestoneIds"?: Array<string>;
 		"isAssessmentPassed"?: boolean;
-		"conversationInitiator"?: string;
+		"conversationInitiators"?: Array<string>;
 		"hasCustomerParticipated"?: boolean;
 		"isAcdInteraction"?: boolean;
 	}
@@ -30057,12 +30698,17 @@ declare namespace Models {
 	export interface WebMessagingEvent { 
 		"eventType": string;
 		"coBrowse"?: Models.WebMessagingEventCoBrowse;
+		"presence"?: Models.WebMessagingEventPresence;
 	}
 	
 	export interface WebMessagingEventCoBrowse { 
 		"type": string;
 		"sessionId"?: string;
 		"sessionJoinToken"?: string;
+	}
+	
+	export interface WebMessagingEventPresence { 
+		"type": string;
 	}
 	
 	export interface WebMessagingGeneric { 
@@ -30108,6 +30754,7 @@ declare namespace Models {
 		"firstName"?: string;
 		"lastName"?: string;
 		"nickname"?: string;
+		"additionalIds"?: Array<Models.RecipientAdditionalIdentifier>;
 	}
 	
 	export interface WeekSchedule { 
@@ -30840,6 +31487,10 @@ declare namespace Models {
 	export interface WfmMoveManagementUnitTopicMoveManagementUnitNotification { 
 		"businessUnit"?: Models.WfmMoveManagementUnitTopicBusinessUnit;
 		"status"?: string;
+	}
+	
+	export interface WfmProcessUploadRequest { 
+		"uploadKey": string;
 	}
 	
 	export interface WfmScheduleActivity { 

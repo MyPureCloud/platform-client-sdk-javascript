@@ -5,7 +5,7 @@ class UploadsApi {
 	/**
 	 * Uploads service.
 	 * @module purecloud-platform-client-v2/api/UploadsApi
-	 * @version 133.0.2
+	 * @version 134.0.0
 	 */
 
 	/**
@@ -138,31 +138,6 @@ class UploadsApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/uploads/workforcemanagement/historicaldata/csv', 
-			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'], 
-			['application/json']
-		);
-	}
-
-	/**
-	 * Creates presigned url for uploading WFM historical data file. Requires data in json format.
-	 * 
-	 * @param {Object} body query
-	 */
-	postUploadsWorkforcemanagementHistoricaldataJson(body) { 
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postUploadsWorkforcemanagementHistoricaldataJson';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/uploads/workforcemanagement/historicaldata/json', 
 			'POST', 
 			{  }, 
 			{  }, 
