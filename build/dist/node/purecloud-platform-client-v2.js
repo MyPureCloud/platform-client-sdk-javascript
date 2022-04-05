@@ -395,7 +395,7 @@ class Configuration {
 
 /**
  * @module purecloud-platform-client-v2/ApiClient
- * @version 134.0.0
+ * @version 134.0.1
  */
 class ApiClient {
 	/**
@@ -1342,7 +1342,7 @@ class ApiClient {
 
 				// set header parameters
 				request.set(that.defaultHeaders).set(that.normalizeParams(headerParams));
-				//request.set({ 'purecloud-sdk': '134.0.0' });
+				//request.set({ 'purecloud-sdk': '134.0.1' });
 
 				// set request timeout
 				request.timeout(that.timeout);
@@ -1442,7 +1442,7 @@ class AlertingApi {
 	/**
 	 * Alerting service.
 	 * @module purecloud-platform-client-v2/api/AlertingApi
-	 * @version 134.0.0
+	 * @version 134.0.1
 	 */
 
 	/**
@@ -1756,7 +1756,7 @@ class AnalyticsApi {
 	/**
 	 * Analytics service.
 	 * @module purecloud-platform-client-v2/api/AnalyticsApi
-	 * @version 134.0.0
+	 * @version 134.0.1
 	 */
 
 	/**
@@ -2938,7 +2938,7 @@ class ArchitectApi {
 	/**
 	 * Architect service.
 	 * @module purecloud-platform-client-v2/api/ArchitectApi
-	 * @version 134.0.0
+	 * @version 134.0.1
 	 */
 
 	/**
@@ -5934,7 +5934,7 @@ class AuditApi {
 	/**
 	 * Audit service.
 	 * @module purecloud-platform-client-v2/api/AuditApi
-	 * @version 134.0.0
+	 * @version 134.0.1
 	 */
 
 	/**
@@ -6105,7 +6105,7 @@ class AuthorizationApi {
 	/**
 	 * Authorization service.
 	 * @module purecloud-platform-client-v2/api/AuthorizationApi
-	 * @version 134.0.0
+	 * @version 134.0.1
 	 */
 
 	/**
@@ -7288,7 +7288,7 @@ class BillingApi {
 	/**
 	 * Billing service.
 	 * @module purecloud-platform-client-v2/api/BillingApi
-	 * @version 134.0.0
+	 * @version 134.0.1
 	 */
 
 	/**
@@ -7368,7 +7368,7 @@ class ChatApi {
 	/**
 	 * Chat service.
 	 * @module purecloud-platform-client-v2/api/ChatApi
-	 * @version 134.0.0
+	 * @version 134.0.1
 	 */
 
 	/**
@@ -7459,7 +7459,7 @@ class CoachingApi {
 	/**
 	 * Coaching service.
 	 * @module purecloud-platform-client-v2/api/CoachingApi
-	 * @version 134.0.0
+	 * @version 134.0.1
 	 */
 
 	/**
@@ -8036,7 +8036,7 @@ class ContentManagementApi {
 	/**
 	 * ContentManagement service.
 	 * @module purecloud-platform-client-v2/api/ContentManagementApi
-	 * @version 134.0.0
+	 * @version 134.0.1
 	 */
 
 	/**
@@ -9176,7 +9176,7 @@ class ConversationsApi {
 	/**
 	 * Conversations service.
 	 * @module purecloud-platform-client-v2/api/ConversationsApi
-	 * @version 134.0.0
+	 * @version 134.0.1
 	 */
 
 	/**
@@ -13840,7 +13840,7 @@ class DataExtensionsApi {
 	/**
 	 * DataExtensions service.
 	 * @module purecloud-platform-client-v2/api/DataExtensionsApi
-	 * @version 134.0.0
+	 * @version 134.0.1
 	 */
 
 	/**
@@ -13926,7 +13926,7 @@ class ExternalContactsApi {
 	/**
 	 * ExternalContacts service.
 	 * @module purecloud-platform-client-v2/api/ExternalContactsApi
-	 * @version 134.0.0
+	 * @version 134.0.1
 	 */
 
 	/**
@@ -15669,7 +15669,7 @@ class FaxApi {
 	/**
 	 * Fax service.
 	 * @module purecloud-platform-client-v2/api/FaxApi
-	 * @version 134.0.0
+	 * @version 134.0.1
 	 */
 
 	/**
@@ -15840,7 +15840,7 @@ class FlowsApi {
 	/**
 	 * Flows service.
 	 * @module purecloud-platform-client-v2/api/FlowsApi
-	 * @version 134.0.0
+	 * @version 134.0.1
 	 */
 
 	/**
@@ -15911,7 +15911,7 @@ class GamificationApi {
 	/**
 	 * Gamification service.
 	 * @module purecloud-platform-client-v2/api/GamificationApi
-	 * @version 134.0.0
+	 * @version 134.0.1
 	 */
 
 	/**
@@ -17341,7 +17341,7 @@ class GeneralDataProtectionRegulationApi {
 	/**
 	 * GeneralDataProtectionRegulation service.
 	 * @module purecloud-platform-client-v2/api/GeneralDataProtectionRegulationApi
-	 * @version 134.0.0
+	 * @version 134.0.1
 	 */
 
 	/**
@@ -17471,7 +17471,7 @@ class GeolocationApi {
 	/**
 	 * Geolocation service.
 	 * @module purecloud-platform-client-v2/api/GeolocationApi
-	 * @version 134.0.0
+	 * @version 134.0.1
 	 */
 
 	/**
@@ -17602,7 +17602,7 @@ class GreetingsApi {
 	/**
 	 * Greetings service.
 	 * @module purecloud-platform-client-v2/api/GreetingsApi
-	 * @version 134.0.0
+	 * @version 134.0.1
 	 */
 
 	/**
@@ -18057,7 +18057,7 @@ class GroupsApi {
 	/**
 	 * Groups service.
 	 * @module purecloud-platform-client-v2/api/GroupsApi
-	 * @version 134.0.0
+	 * @version 134.0.1
 	 */
 
 	/**
@@ -18462,7 +18462,7 @@ class IdentityProviderApi {
 	/**
 	 * IdentityProvider service.
 	 * @module purecloud-platform-client-v2/api/IdentityProviderApi
-	 * @version 134.0.0
+	 * @version 134.0.1
 	 */
 
 	/**
@@ -19218,7 +19218,7 @@ class IntegrationsApi {
 	/**
 	 * Integrations service.
 	 * @module purecloud-platform-client-v2/api/IntegrationsApi
-	 * @version 134.0.0
+	 * @version 134.0.1
 	 */
 
 	/**
@@ -20893,7 +20893,7 @@ class JourneyApi {
 	/**
 	 * Journey service.
 	 * @module purecloud-platform-client-v2/api/JourneyApi
-	 * @version 134.0.0
+	 * @version 134.0.1
 	 */
 
 	/**
@@ -21604,7 +21604,7 @@ class KnowledgeApi {
 	/**
 	 * Knowledge service.
 	 * @module purecloud-platform-client-v2/api/KnowledgeApi
-	 * @version 134.0.0
+	 * @version 134.0.1
 	 */
 
 	/**
@@ -22504,7 +22504,7 @@ class LanguageUnderstandingApi {
 	/**
 	 * LanguageUnderstanding service.
 	 * @module purecloud-platform-client-v2/api/LanguageUnderstandingApi
-	 * @version 134.0.0
+	 * @version 134.0.1
 	 */
 
 	/**
@@ -23408,7 +23408,7 @@ class LanguagesApi {
 	/**
 	 * Languages service.
 	 * @module purecloud-platform-client-v2/api/LanguagesApi
-	 * @version 134.0.0
+	 * @version 134.0.1
 	 */
 
 	/**
@@ -23676,7 +23676,7 @@ class LearningApi {
 	/**
 	 * Learning service.
 	 * @module purecloud-platform-client-v2/api/LearningApi
-	 * @version 134.0.0
+	 * @version 134.0.1
 	 */
 
 	/**
@@ -24267,7 +24267,7 @@ class LicenseApi {
 	/**
 	 * License service.
 	 * @module purecloud-platform-client-v2/api/LicenseApi
-	 * @version 134.0.0
+	 * @version 134.0.1
 	 */
 
 	/**
@@ -24505,7 +24505,7 @@ class LocationsApi {
 	/**
 	 * Locations service.
 	 * @module purecloud-platform-client-v2/api/LocationsApi
-	 * @version 134.0.0
+	 * @version 134.0.1
 	 */
 
 	/**
@@ -24741,7 +24741,7 @@ class MessagingApi {
 	/**
 	 * Messaging service.
 	 * @module purecloud-platform-client-v2/api/MessagingApi
-	 * @version 134.0.0
+	 * @version 134.0.1
 	 */
 
 	/**
@@ -24892,7 +24892,7 @@ class MobileDevicesApi {
 	/**
 	 * MobileDevices service.
 	 * @module purecloud-platform-client-v2/api/MobileDevicesApi
-	 * @version 134.0.0
+	 * @version 134.0.1
 	 */
 
 	/**
@@ -25043,7 +25043,7 @@ class NotificationsApi {
 	/**
 	 * Notifications service.
 	 * @module purecloud-platform-client-v2/api/NotificationsApi
-	 * @version 134.0.0
+	 * @version 134.0.1
 	 */
 
 	/**
@@ -25268,7 +25268,7 @@ class OAuthApi {
 	/**
 	 * OAuth service.
 	 * @module purecloud-platform-client-v2/api/OAuthApi
-	 * @version 134.0.0
+	 * @version 134.0.1
 	 */
 
 	/**
@@ -25634,7 +25634,7 @@ class ObjectsApi {
 	/**
 	 * Objects service.
 	 * @module purecloud-platform-client-v2/api/ObjectsApi
-	 * @version 134.0.0
+	 * @version 134.0.1
 	 */
 
 	/**
@@ -25905,7 +25905,7 @@ class OrganizationApi {
 	/**
 	 * Organization service.
 	 * @module purecloud-platform-client-v2/api/OrganizationApi
-	 * @version 134.0.0
+	 * @version 134.0.1
 	 */
 
 	/**
@@ -26308,7 +26308,7 @@ class OrganizationAuthorizationApi {
 	/**
 	 * OrganizationAuthorization service.
 	 * @module purecloud-platform-client-v2/api/OrganizationAuthorizationApi
-	 * @version 134.0.0
+	 * @version 134.0.1
 	 */
 
 	/**
@@ -27233,7 +27233,7 @@ class OutboundApi {
 	/**
 	 * Outbound service.
 	 * @module purecloud-platform-client-v2/api/OutboundApi
-	 * @version 134.0.0
+	 * @version 134.0.1
 	 */
 
 	/**
@@ -30263,7 +30263,7 @@ class PresenceApi {
 	/**
 	 * Presence service.
 	 * @module purecloud-platform-client-v2/api/PresenceApi
-	 * @version 134.0.0
+	 * @version 134.0.1
 	 */
 
 	/**
@@ -30635,7 +30635,7 @@ class QualityApi {
 	/**
 	 * Quality service.
 	 * @module purecloud-platform-client-v2/api/QualityApi
-	 * @version 134.0.0
+	 * @version 134.0.1
 	 */
 
 	/**
@@ -32213,7 +32213,7 @@ class RecordingApi {
 	/**
 	 * Recording service.
 	 * @module purecloud-platform-client-v2/api/RecordingApi
-	 * @version 134.0.0
+	 * @version 134.0.1
 	 */
 
 	/**
@@ -33739,7 +33739,7 @@ class ResponseManagementApi {
 	/**
 	 * ResponseManagement service.
 	 * @module purecloud-platform-client-v2/api/ResponseManagementApi
-	 * @version 134.0.0
+	 * @version 134.0.1
 	 */
 
 	/**
@@ -34223,7 +34223,7 @@ class RoutingApi {
 	/**
 	 * Routing service.
 	 * @module purecloud-platform-client-v2/api/RoutingApi
-	 * @version 134.0.0
+	 * @version 134.0.1
 	 */
 
 	/**
@@ -37146,7 +37146,7 @@ class SCIMApi {
 	/**
 	 * SCIM service.
 	 * @module purecloud-platform-client-v2/api/SCIMApi
-	 * @version 134.0.0
+	 * @version 134.0.1
 	 */
 
 	/**
@@ -38023,7 +38023,7 @@ class ScriptsApi {
 	/**
 	 * Scripts service.
 	 * @module purecloud-platform-client-v2/api/ScriptsApi
-	 * @version 134.0.0
+	 * @version 134.0.1
 	 */
 
 	/**
@@ -38376,7 +38376,7 @@ class SearchApi {
 	/**
 	 * Search service.
 	 * @module purecloud-platform-client-v2/api/SearchApi
-	 * @version 134.0.0
+	 * @version 134.0.1
 	 */
 
 	/**
@@ -38911,7 +38911,7 @@ class SpeechTextAnalyticsApi {
 	/**
 	 * SpeechTextAnalytics service.
 	 * @module purecloud-platform-client-v2/api/SpeechTextAnalyticsApi
-	 * @version 134.0.0
+	 * @version 134.0.1
 	 */
 
 	/**
@@ -39764,7 +39764,7 @@ class StationsApi {
 	/**
 	 * Stations service.
 	 * @module purecloud-platform-client-v2/api/StationsApi
-	 * @version 134.0.0
+	 * @version 134.0.1
 	 */
 
 	/**
@@ -39911,7 +39911,7 @@ class SuggestApi {
 	/**
 	 * Suggest service.
 	 * @module purecloud-platform-client-v2/api/SuggestApi
-	 * @version 134.0.0
+	 * @version 134.0.1
 	 */
 
 	/**
@@ -40050,7 +40050,7 @@ class TelephonyApi {
 	/**
 	 * Telephony service.
 	 * @module purecloud-platform-client-v2/api/TelephonyApi
-	 * @version 134.0.0
+	 * @version 134.0.1
 	 */
 
 	/**
@@ -40158,7 +40158,7 @@ class TelephonyProvidersEdgeApi {
 	/**
 	 * TelephonyProvidersEdge service.
 	 * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-	 * @version 134.0.0
+	 * @version 134.0.1
 	 */
 
 	/**
@@ -43791,7 +43791,7 @@ class TextbotsApi {
 	/**
 	 * Textbots service.
 	 * @module purecloud-platform-client-v2/api/TextbotsApi
-	 * @version 134.0.0
+	 * @version 134.0.1
 	 */
 
 	/**
@@ -43919,7 +43919,7 @@ class TokensApi {
 	/**
 	 * Tokens service.
 	 * @module purecloud-platform-client-v2/api/TokensApi
-	 * @version 134.0.0
+	 * @version 134.0.1
 	 */
 
 	/**
@@ -44025,7 +44025,7 @@ class UploadsApi {
 	/**
 	 * Uploads service.
 	 * @module purecloud-platform-client-v2/api/UploadsApi
-	 * @version 134.0.0
+	 * @version 134.0.1
 	 */
 
 	/**
@@ -44176,7 +44176,7 @@ class UsageApi {
 	/**
 	 * Usage service.
 	 * @module purecloud-platform-client-v2/api/UsageApi
-	 * @version 134.0.0
+	 * @version 134.0.1
 	 */
 
 	/**
@@ -44247,7 +44247,7 @@ class UserRecordingsApi {
 	/**
 	 * UserRecordings service.
 	 * @module purecloud-platform-client-v2/api/UserRecordingsApi
-	 * @version 134.0.0
+	 * @version 134.0.1
 	 */
 
 	/**
@@ -44431,7 +44431,7 @@ class UsersApi {
 	/**
 	 * Users service.
 	 * @module purecloud-platform-client-v2/api/UsersApi
-	 * @version 134.0.0
+	 * @version 134.0.1
 	 */
 
 	/**
@@ -46733,7 +46733,7 @@ class UtilitiesApi {
 	/**
 	 * Utilities service.
 	 * @module purecloud-platform-client-v2/api/UtilitiesApi
-	 * @version 134.0.0
+	 * @version 134.0.1
 	 */
 
 	/**
@@ -46844,7 +46844,7 @@ class VoicemailApi {
 	/**
 	 * Voicemail service.
 	 * @module purecloud-platform-client-v2/api/VoicemailApi
-	 * @version 134.0.0
+	 * @version 134.0.1
 	 */
 
 	/**
@@ -47511,7 +47511,7 @@ class WebChatApi {
 	/**
 	 * WebChat service.
 	 * @module purecloud-platform-client-v2/api/WebChatApi
-	 * @version 134.0.0
+	 * @version 134.0.1
 	 */
 
 	/**
@@ -48055,7 +48055,7 @@ class WebDeploymentsApi {
 	/**
 	 * WebDeployments service.
 	 * @module purecloud-platform-client-v2/api/WebDeploymentsApi
-	 * @version 134.0.0
+	 * @version 134.0.1
 	 */
 
 	/**
@@ -48410,7 +48410,7 @@ class WebMessagingApi {
 	/**
 	 * WebMessaging service.
 	 * @module purecloud-platform-client-v2/api/WebMessagingApi
-	 * @version 134.0.0
+	 * @version 134.0.1
 	 */
 
 	/**
@@ -48456,7 +48456,7 @@ class WidgetsApi {
 	/**
 	 * Widgets service.
 	 * @module purecloud-platform-client-v2/api/WidgetsApi
-	 * @version 134.0.0
+	 * @version 134.0.1
 	 */
 
 	/**
@@ -48602,7 +48602,7 @@ class WorkforceManagementApi {
 	/**
 	 * WorkforceManagement service.
 	 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-	 * @version 134.0.0
+	 * @version 134.0.1
 	 */
 
 	/**
@@ -52853,7 +52853,7 @@ class WorkforceManagementApi {
  * </pre>
  * </p>
  * @module purecloud-platform-client-v2/index
- * @version 134.0.0
+ * @version 134.0.1
  */
 class platformClient {
 	constructor() {
