@@ -5,7 +5,7 @@ class RecordingApi {
 	/**
 	 * Recording service.
 	 * @module purecloud-platform-client-v2/api/RecordingApi
-	 * @version 134.0.1
+	 * @version 135.0.0
 	 */
 
 	/**
@@ -528,6 +528,7 @@ class RecordingApi {
 	 * @param {Boolean} opts.enabled checks to see if policy is enabled - use enabled = true or enabled = false
 	 * @param {Boolean} opts.summary provides a less verbose response of policy lists. (default to false)
 	 * @param {Boolean} opts.hasErrors provides a way to fetch all policies with errors or policies that do not have errors
+	 * @param {Number} opts.deleteDaysThreshold provides a way to fetch all policies with any actions having deleteDays exceeding the provided value
 	 */
 	getRecordingCrossplatformMediaretentionpolicies(opts) { 
 		opts = opts || {};
@@ -537,7 +538,7 @@ class RecordingApi {
 			'/api/v2/recording/crossplatform/mediaretentionpolicies', 
 			'GET', 
 			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'nextPage': opts['nextPage'],'previousPage': opts['previousPage'],'name': opts['name'],'enabled': opts['enabled'],'summary': opts['summary'],'hasErrors': opts['hasErrors'] }, 
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'nextPage': opts['nextPage'],'previousPage': opts['previousPage'],'name': opts['name'],'enabled': opts['enabled'],'summary': opts['summary'],'hasErrors': opts['hasErrors'],'deleteDaysThreshold': opts['deleteDaysThreshold'] }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -719,6 +720,7 @@ class RecordingApi {
 	 * @param {Boolean} opts.enabled checks to see if policy is enabled - use enabled = true or enabled = false
 	 * @param {Boolean} opts.summary provides a less verbose response of policy lists. (default to false)
 	 * @param {Boolean} opts.hasErrors provides a way to fetch all policies with errors or policies that do not have errors
+	 * @param {Number} opts.deleteDaysThreshold provides a way to fetch all policies with any actions having deleteDays exceeding the provided value
 	 */
 	getRecordingMediaretentionpolicies(opts) { 
 		opts = opts || {};
@@ -728,7 +730,7 @@ class RecordingApi {
 			'/api/v2/recording/mediaretentionpolicies', 
 			'GET', 
 			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'nextPage': opts['nextPage'],'previousPage': opts['previousPage'],'name': opts['name'],'enabled': opts['enabled'],'summary': opts['summary'],'hasErrors': opts['hasErrors'] }, 
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'nextPage': opts['nextPage'],'previousPage': opts['previousPage'],'name': opts['name'],'enabled': opts['enabled'],'summary': opts['summary'],'hasErrors': opts['hasErrors'],'deleteDaysThreshold': opts['deleteDaysThreshold'] }, 
 			{  }, 
 			{  }, 
 			null, 

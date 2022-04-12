@@ -9675,7 +9675,7 @@ class Configuration {
 
 /**
  * @module purecloud-platform-client-v2/ApiClient
- * @version 134.0.1
+ * @version 135.0.0
  */
 class ApiClient {
 	/**
@@ -10615,7 +10615,7 @@ class ApiClient {
 
 				// set header parameters
 				request.set(that.defaultHeaders).set(that.normalizeParams(headerParams));
-				//request.set({ 'purecloud-sdk': '134.0.1' });
+				//request.set({ 'purecloud-sdk': '135.0.0' });
 
 				// set request timeout
 				request.timeout(that.timeout);
@@ -10715,7 +10715,7 @@ class AlertingApi {
 	/**
 	 * Alerting service.
 	 * @module purecloud-platform-client-v2/api/AlertingApi
-	 * @version 134.0.1
+	 * @version 135.0.0
 	 */
 
 	/**
@@ -11029,7 +11029,7 @@ class AnalyticsApi {
 	/**
 	 * Analytics service.
 	 * @module purecloud-platform-client-v2/api/AnalyticsApi
-	 * @version 134.0.1
+	 * @version 135.0.0
 	 */
 
 	/**
@@ -12211,7 +12211,7 @@ class ArchitectApi {
 	/**
 	 * Architect service.
 	 * @module purecloud-platform-client-v2/api/ArchitectApi
-	 * @version 134.0.1
+	 * @version 135.0.0
 	 */
 
 	/**
@@ -15207,7 +15207,7 @@ class AuditApi {
 	/**
 	 * Audit service.
 	 * @module purecloud-platform-client-v2/api/AuditApi
-	 * @version 134.0.1
+	 * @version 135.0.0
 	 */
 
 	/**
@@ -15378,7 +15378,7 @@ class AuthorizationApi {
 	/**
 	 * Authorization service.
 	 * @module purecloud-platform-client-v2/api/AuthorizationApi
-	 * @version 134.0.1
+	 * @version 135.0.0
 	 */
 
 	/**
@@ -16561,7 +16561,7 @@ class BillingApi {
 	/**
 	 * Billing service.
 	 * @module purecloud-platform-client-v2/api/BillingApi
-	 * @version 134.0.1
+	 * @version 135.0.0
 	 */
 
 	/**
@@ -16641,7 +16641,7 @@ class ChatApi {
 	/**
 	 * Chat service.
 	 * @module purecloud-platform-client-v2/api/ChatApi
-	 * @version 134.0.1
+	 * @version 135.0.0
 	 */
 
 	/**
@@ -16732,7 +16732,7 @@ class CoachingApi {
 	/**
 	 * Coaching service.
 	 * @module purecloud-platform-client-v2/api/CoachingApi
-	 * @version 134.0.1
+	 * @version 135.0.0
 	 */
 
 	/**
@@ -17309,7 +17309,7 @@ class ContentManagementApi {
 	/**
 	 * ContentManagement service.
 	 * @module purecloud-platform-client-v2/api/ContentManagementApi
-	 * @version 134.0.1
+	 * @version 135.0.0
 	 */
 
 	/**
@@ -18449,7 +18449,7 @@ class ConversationsApi {
 	/**
 	 * Conversations service.
 	 * @module purecloud-platform-client-v2/api/ConversationsApi
-	 * @version 134.0.1
+	 * @version 135.0.0
 	 */
 
 	/**
@@ -20354,7 +20354,7 @@ class ConversationsApi {
 	/**
 	 * Get a list of Messaging Stickers
 	 * 
-	 * @param {String} messengerType Messenger Type
+	 * @param {Object} messengerType Messenger Type
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
@@ -20542,7 +20542,7 @@ class ConversationsApi {
 	}
 
 	/**
-	 * Update a conversation by setting it&#39;s recording state, merging in other conversations to create a conference, or disconnecting all of the participants
+	 * Update a conversation by setting its recording state, merging in other conversations to create a conference, or disconnecting all of the participants
 	 * 
 	 * @param {String} conversationId conversationId
 	 * @param {Object} body Conversation
@@ -23113,7 +23113,7 @@ class DataExtensionsApi {
 	/**
 	 * DataExtensions service.
 	 * @module purecloud-platform-client-v2/api/DataExtensionsApi
-	 * @version 134.0.1
+	 * @version 135.0.0
 	 */
 
 	/**
@@ -23199,7 +23199,7 @@ class ExternalContactsApi {
 	/**
 	 * ExternalContacts service.
 	 * @module purecloud-platform-client-v2/api/ExternalContactsApi
-	 * @version 134.0.1
+	 * @version 135.0.0
 	 */
 
 	/**
@@ -24942,7 +24942,7 @@ class FaxApi {
 	/**
 	 * Fax service.
 	 * @module purecloud-platform-client-v2/api/FaxApi
-	 * @version 134.0.1
+	 * @version 135.0.0
 	 */
 
 	/**
@@ -25113,7 +25113,7 @@ class FlowsApi {
 	/**
 	 * Flows service.
 	 * @module purecloud-platform-client-v2/api/FlowsApi
-	 * @version 134.0.1
+	 * @version 135.0.0
 	 */
 
 	/**
@@ -25184,7 +25184,7 @@ class GamificationApi {
 	/**
 	 * Gamification service.
 	 * @module purecloud-platform-client-v2/api/GamificationApi
-	 * @version 134.0.1
+	 * @version 135.0.0
 	 */
 
 	/**
@@ -26614,7 +26614,7 @@ class GeneralDataProtectionRegulationApi {
 	/**
 	 * GeneralDataProtectionRegulation service.
 	 * @module purecloud-platform-client-v2/api/GeneralDataProtectionRegulationApi
-	 * @version 134.0.1
+	 * @version 135.0.0
 	 */
 
 	/**
@@ -26744,7 +26744,7 @@ class GeolocationApi {
 	/**
 	 * Geolocation service.
 	 * @module purecloud-platform-client-v2/api/GeolocationApi
-	 * @version 134.0.1
+	 * @version 135.0.0
 	 */
 
 	/**
@@ -26875,7 +26875,7 @@ class GreetingsApi {
 	/**
 	 * Greetings service.
 	 * @module purecloud-platform-client-v2/api/GreetingsApi
-	 * @version 134.0.1
+	 * @version 135.0.0
 	 */
 
 	/**
@@ -27330,7 +27330,7 @@ class GroupsApi {
 	/**
 	 * Groups service.
 	 * @module purecloud-platform-client-v2/api/GroupsApi
-	 * @version 134.0.1
+	 * @version 135.0.0
 	 */
 
 	/**
@@ -27735,7 +27735,7 @@ class IdentityProviderApi {
 	/**
 	 * IdentityProvider service.
 	 * @module purecloud-platform-client-v2/api/IdentityProviderApi
-	 * @version 134.0.1
+	 * @version 135.0.0
 	 */
 
 	/**
@@ -28491,7 +28491,7 @@ class IntegrationsApi {
 	/**
 	 * Integrations service.
 	 * @module purecloud-platform-client-v2/api/IntegrationsApi
-	 * @version 134.0.1
+	 * @version 135.0.0
 	 */
 
 	/**
@@ -30166,7 +30166,7 @@ class JourneyApi {
 	/**
 	 * Journey service.
 	 * @module purecloud-platform-client-v2/api/JourneyApi
-	 * @version 134.0.1
+	 * @version 135.0.0
 	 */
 
 	/**
@@ -30877,7 +30877,7 @@ class KnowledgeApi {
 	/**
 	 * Knowledge service.
 	 * @module purecloud-platform-client-v2/api/KnowledgeApi
-	 * @version 134.0.1
+	 * @version 135.0.0
 	 */
 
 	/**
@@ -31777,7 +31777,7 @@ class LanguageUnderstandingApi {
 	/**
 	 * LanguageUnderstanding service.
 	 * @module purecloud-platform-client-v2/api/LanguageUnderstandingApi
-	 * @version 134.0.1
+	 * @version 135.0.0
 	 */
 
 	/**
@@ -32681,7 +32681,7 @@ class LanguagesApi {
 	/**
 	 * Languages service.
 	 * @module purecloud-platform-client-v2/api/LanguagesApi
-	 * @version 134.0.1
+	 * @version 135.0.0
 	 */
 
 	/**
@@ -32949,7 +32949,7 @@ class LearningApi {
 	/**
 	 * Learning service.
 	 * @module purecloud-platform-client-v2/api/LearningApi
-	 * @version 134.0.1
+	 * @version 135.0.0
 	 */
 
 	/**
@@ -33540,7 +33540,7 @@ class LicenseApi {
 	/**
 	 * License service.
 	 * @module purecloud-platform-client-v2/api/LicenseApi
-	 * @version 134.0.1
+	 * @version 135.0.0
 	 */
 
 	/**
@@ -33778,7 +33778,7 @@ class LocationsApi {
 	/**
 	 * Locations service.
 	 * @module purecloud-platform-client-v2/api/LocationsApi
-	 * @version 134.0.1
+	 * @version 135.0.0
 	 */
 
 	/**
@@ -34014,7 +34014,7 @@ class MessagingApi {
 	/**
 	 * Messaging service.
 	 * @module purecloud-platform-client-v2/api/MessagingApi
-	 * @version 134.0.1
+	 * @version 135.0.0
 	 */
 
 	/**
@@ -34165,7 +34165,7 @@ class MobileDevicesApi {
 	/**
 	 * MobileDevices service.
 	 * @module purecloud-platform-client-v2/api/MobileDevicesApi
-	 * @version 134.0.1
+	 * @version 135.0.0
 	 */
 
 	/**
@@ -34316,7 +34316,7 @@ class NotificationsApi {
 	/**
 	 * Notifications service.
 	 * @module purecloud-platform-client-v2/api/NotificationsApi
-	 * @version 134.0.1
+	 * @version 135.0.0
 	 */
 
 	/**
@@ -34541,7 +34541,7 @@ class OAuthApi {
 	/**
 	 * OAuth service.
 	 * @module purecloud-platform-client-v2/api/OAuthApi
-	 * @version 134.0.1
+	 * @version 135.0.0
 	 */
 
 	/**
@@ -34907,7 +34907,7 @@ class ObjectsApi {
 	/**
 	 * Objects service.
 	 * @module purecloud-platform-client-v2/api/ObjectsApi
-	 * @version 134.0.1
+	 * @version 135.0.0
 	 */
 
 	/**
@@ -35178,7 +35178,7 @@ class OrganizationApi {
 	/**
 	 * Organization service.
 	 * @module purecloud-platform-client-v2/api/OrganizationApi
-	 * @version 134.0.1
+	 * @version 135.0.0
 	 */
 
 	/**
@@ -35581,7 +35581,7 @@ class OrganizationAuthorizationApi {
 	/**
 	 * OrganizationAuthorization service.
 	 * @module purecloud-platform-client-v2/api/OrganizationAuthorizationApi
-	 * @version 134.0.1
+	 * @version 135.0.0
 	 */
 
 	/**
@@ -36506,7 +36506,7 @@ class OutboundApi {
 	/**
 	 * Outbound service.
 	 * @module purecloud-platform-client-v2/api/OutboundApi
-	 * @version 134.0.1
+	 * @version 135.0.0
 	 */
 
 	/**
@@ -36844,6 +36844,31 @@ class OutboundApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/outbound/messagingcampaigns/{messagingCampaignId}', 
+			'DELETE', 
+			{ 'messagingCampaignId': messagingCampaignId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Reset messaging campaign progress and recycle the messaging campaign
+	 * 
+	 * @param {String} messagingCampaignId The Messaging Campaign ID
+	 */
+	deleteOutboundMessagingcampaignProgress(messagingCampaignId) { 
+		// verify the required parameter 'messagingCampaignId' is set
+		if (messagingCampaignId === undefined || messagingCampaignId === null) {
+			throw 'Missing the required parameter "messagingCampaignId" when calling deleteOutboundMessagingcampaignProgress';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/outbound/messagingcampaigns/{messagingCampaignId}/progress', 
 			'DELETE', 
 			{ 'messagingCampaignId': messagingCampaignId }, 
 			{  }, 
@@ -39536,7 +39561,7 @@ class PresenceApi {
 	/**
 	 * Presence service.
 	 * @module purecloud-platform-client-v2/api/PresenceApi
-	 * @version 134.0.1
+	 * @version 135.0.0
 	 */
 
 	/**
@@ -39683,31 +39708,6 @@ class PresenceApi {
 	}
 
 	/**
-	 * Get a user&#39;s Microsoft Teams presence.
-	 * Gets the presence for a Microsoft Teams user.  This will return the Microsoft Teams presence mapped to Genesys Cloud presence with additional activity details in the message field. This presence source is read-only.
-	 * @param {String} userId user Id
-	 */
-	getUserPresencesMicrosoftteams(userId) { 
-		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
-			throw 'Missing the required parameter "userId" when calling getUserPresencesMicrosoftteams';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/users/{userId}/presences/microsoftteams', 
-			'GET', 
-			{ 'userId': userId }, 
-			{  }, 
-			{  }, 
-			{  }, 
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'], 
-			['application/json']
-		);
-	}
-
-	/**
 	 * Get a user&#39;s Genesys Cloud presence.
 	 * Get the default Genesys Cloud user presence source PURECLOUD
 	 * @param {String} userId user Id
@@ -39720,31 +39720,6 @@ class PresenceApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/users/{userId}/presences/purecloud', 
-			'GET', 
-			{ 'userId': userId }, 
-			{  }, 
-			{  }, 
-			{  }, 
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'], 
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get a user&#39;s Zoom Phone presence.
-	 * Gets the presence for a Zoom user.  This will return the Zoom Phone presence mapped to Genesys Cloud presence with additional activity details in the message field. This presence source is read-only.
-	 * @param {String} userId user Id
-	 */
-	getUserPresencesZoomphone(userId) { 
-		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
-			throw 'Missing the required parameter "userId" when calling getUserPresencesZoomphone';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/users/{userId}/presences/zoomphone', 
 			'GET', 
 			{ 'userId': userId }, 
 			{  }, 
@@ -39908,7 +39883,7 @@ class QualityApi {
 	/**
 	 * Quality service.
 	 * @module purecloud-platform-client-v2/api/QualityApi
-	 * @version 134.0.1
+	 * @version 135.0.0
 	 */
 
 	/**
@@ -41486,7 +41461,7 @@ class RecordingApi {
 	/**
 	 * Recording service.
 	 * @module purecloud-platform-client-v2/api/RecordingApi
-	 * @version 134.0.1
+	 * @version 135.0.0
 	 */
 
 	/**
@@ -42009,6 +41984,7 @@ class RecordingApi {
 	 * @param {Boolean} opts.enabled checks to see if policy is enabled - use enabled = true or enabled = false
 	 * @param {Boolean} opts.summary provides a less verbose response of policy lists. (default to false)
 	 * @param {Boolean} opts.hasErrors provides a way to fetch all policies with errors or policies that do not have errors
+	 * @param {Number} opts.deleteDaysThreshold provides a way to fetch all policies with any actions having deleteDays exceeding the provided value
 	 */
 	getRecordingCrossplatformMediaretentionpolicies(opts) { 
 		opts = opts || {};
@@ -42018,7 +41994,7 @@ class RecordingApi {
 			'/api/v2/recording/crossplatform/mediaretentionpolicies', 
 			'GET', 
 			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'nextPage': opts['nextPage'],'previousPage': opts['previousPage'],'name': opts['name'],'enabled': opts['enabled'],'summary': opts['summary'],'hasErrors': opts['hasErrors'] }, 
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'nextPage': opts['nextPage'],'previousPage': opts['previousPage'],'name': opts['name'],'enabled': opts['enabled'],'summary': opts['summary'],'hasErrors': opts['hasErrors'],'deleteDaysThreshold': opts['deleteDaysThreshold'] }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -42200,6 +42176,7 @@ class RecordingApi {
 	 * @param {Boolean} opts.enabled checks to see if policy is enabled - use enabled = true or enabled = false
 	 * @param {Boolean} opts.summary provides a less verbose response of policy lists. (default to false)
 	 * @param {Boolean} opts.hasErrors provides a way to fetch all policies with errors or policies that do not have errors
+	 * @param {Number} opts.deleteDaysThreshold provides a way to fetch all policies with any actions having deleteDays exceeding the provided value
 	 */
 	getRecordingMediaretentionpolicies(opts) { 
 		opts = opts || {};
@@ -42209,7 +42186,7 @@ class RecordingApi {
 			'/api/v2/recording/mediaretentionpolicies', 
 			'GET', 
 			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'nextPage': opts['nextPage'],'previousPage': opts['previousPage'],'name': opts['name'],'enabled': opts['enabled'],'summary': opts['summary'],'hasErrors': opts['hasErrors'] }, 
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'nextPage': opts['nextPage'],'previousPage': opts['previousPage'],'name': opts['name'],'enabled': opts['enabled'],'summary': opts['summary'],'hasErrors': opts['hasErrors'],'deleteDaysThreshold': opts['deleteDaysThreshold'] }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -43012,7 +42989,7 @@ class ResponseManagementApi {
 	/**
 	 * ResponseManagement service.
 	 * @module purecloud-platform-client-v2/api/ResponseManagementApi
-	 * @version 134.0.1
+	 * @version 135.0.0
 	 */
 
 	/**
@@ -43496,7 +43473,7 @@ class RoutingApi {
 	/**
 	 * Routing service.
 	 * @module purecloud-platform-client-v2/api/RoutingApi
-	 * @version 134.0.1
+	 * @version 135.0.0
 	 */
 
 	/**
@@ -46419,7 +46396,7 @@ class SCIMApi {
 	/**
 	 * SCIM service.
 	 * @module purecloud-platform-client-v2/api/SCIMApi
-	 * @version 134.0.1
+	 * @version 135.0.0
 	 */
 
 	/**
@@ -47296,7 +47273,7 @@ class ScriptsApi {
 	/**
 	 * Scripts service.
 	 * @module purecloud-platform-client-v2/api/ScriptsApi
-	 * @version 134.0.1
+	 * @version 135.0.0
 	 */
 
 	/**
@@ -47412,6 +47389,7 @@ class ScriptsApi {
 	 * @param {Object} opts.sortBy SortBy
 	 * @param {Object} opts.sortOrder SortOrder
 	 * @param {String} opts.scriptDataVersion Advanced usage - controls the data version of the script
+	 * @param {String} opts.divisionIds Filters scripts to requested divisionIds
 	 */
 	getScripts(opts) { 
 		opts = opts || {};
@@ -47421,7 +47399,40 @@ class ScriptsApi {
 			'/api/v2/scripts', 
 			'GET', 
 			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'expand': opts['expand'],'name': opts['name'],'feature': opts['feature'],'flowId': opts['flowId'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'scriptDataVersion': opts['scriptDataVersion'] }, 
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'expand': opts['expand'],'name': opts['name'],'feature': opts['feature'],'flowId': opts['flowId'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'scriptDataVersion': opts['scriptDataVersion'],'divisionIds': opts['divisionIds'] }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get the metadata for a list of scripts
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {String} opts.expand Expand
+	 * @param {String} opts.name Name filter
+	 * @param {String} opts.feature Feature filter
+	 * @param {String} opts.flowId Secure flow id filter
+	 * @param {Object} opts.sortBy SortBy
+	 * @param {Object} opts.sortOrder SortOrder
+	 * @param {String} opts.scriptDataVersion Advanced usage - controls the data version of the script
+	 * @param {String} opts.divisionIds Filters scripts to requested divisionIds
+	 */
+	getScriptsDivisionviews(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/scripts/divisionviews', 
+			'GET', 
+			{  }, 
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'expand': opts['expand'],'name': opts['name'],'feature': opts['feature'],'flowId': opts['flowId'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'scriptDataVersion': opts['scriptDataVersion'],'divisionIds': opts['divisionIds'] }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -47442,6 +47453,7 @@ class ScriptsApi {
 	 * @param {String} opts.feature Feature filter
 	 * @param {String} opts.flowId Secure flow id filter
 	 * @param {String} opts.scriptDataVersion Advanced usage - controls the data version of the script
+	 * @param {String} opts.divisionIds Filters scripts to requested divisionIds
 	 */
 	getScriptsPublished(opts) { 
 		opts = opts || {};
@@ -47451,7 +47463,38 @@ class ScriptsApi {
 			'/api/v2/scripts/published', 
 			'GET', 
 			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'expand': opts['expand'],'name': opts['name'],'feature': opts['feature'],'flowId': opts['flowId'],'scriptDataVersion': opts['scriptDataVersion'] }, 
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'expand': opts['expand'],'name': opts['name'],'feature': opts['feature'],'flowId': opts['flowId'],'scriptDataVersion': opts['scriptDataVersion'],'divisionIds': opts['divisionIds'] }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get the published scripts metadata.
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {String} opts.expand Expand
+	 * @param {String} opts.name Name filter
+	 * @param {String} opts.feature Feature filter
+	 * @param {String} opts.flowId Secure flow id filter
+	 * @param {String} opts.scriptDataVersion Advanced usage - controls the data version of the script
+	 * @param {String} opts.divisionIds Filters scripts to requested divisionIds
+	 */
+	getScriptsPublishedDivisionviews(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/scripts/published/divisionviews', 
+			'GET', 
+			{  }, 
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'expand': opts['expand'],'name': opts['name'],'feature': opts['feature'],'flowId': opts['flowId'],'scriptDataVersion': opts['scriptDataVersion'],'divisionIds': opts['divisionIds'] }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -47649,7 +47692,7 @@ class SearchApi {
 	/**
 	 * Search service.
 	 * @module purecloud-platform-client-v2/api/SearchApi
-	 * @version 134.0.1
+	 * @version 135.0.0
 	 */
 
 	/**
@@ -48184,7 +48227,7 @@ class SpeechTextAnalyticsApi {
 	/**
 	 * SpeechTextAnalytics service.
 	 * @module purecloud-platform-client-v2/api/SpeechTextAnalyticsApi
-	 * @version 134.0.1
+	 * @version 135.0.0
 	 */
 
 	/**
@@ -49037,7 +49080,7 @@ class StationsApi {
 	/**
 	 * Stations service.
 	 * @module purecloud-platform-client-v2/api/StationsApi
-	 * @version 134.0.1
+	 * @version 135.0.0
 	 */
 
 	/**
@@ -49184,7 +49227,7 @@ class SuggestApi {
 	/**
 	 * Suggest service.
 	 * @module purecloud-platform-client-v2/api/SuggestApi
-	 * @version 134.0.1
+	 * @version 135.0.0
 	 */
 
 	/**
@@ -49323,7 +49366,7 @@ class TelephonyApi {
 	/**
 	 * Telephony service.
 	 * @module purecloud-platform-client-v2/api/TelephonyApi
-	 * @version 134.0.1
+	 * @version 135.0.0
 	 */
 
 	/**
@@ -49431,7 +49474,7 @@ class TelephonyProvidersEdgeApi {
 	/**
 	 * TelephonyProvidersEdge service.
 	 * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-	 * @version 134.0.1
+	 * @version 135.0.0
 	 */
 
 	/**
@@ -50846,7 +50889,7 @@ class TelephonyProvidersEdgeApi {
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {String} opts.sortBy Sort by
-	 * @param {String} opts._number Number
+	 * @param {String} opts._number Deprecated, filtering by number not supported
 	 */
 	getTelephonyProvidersEdgesExtensionpools(opts) { 
 		opts = opts || {};
@@ -53064,7 +53107,7 @@ class TextbotsApi {
 	/**
 	 * Textbots service.
 	 * @module purecloud-platform-client-v2/api/TextbotsApi
-	 * @version 134.0.1
+	 * @version 135.0.0
 	 */
 
 	/**
@@ -53192,7 +53235,7 @@ class TokensApi {
 	/**
 	 * Tokens service.
 	 * @module purecloud-platform-client-v2/api/TokensApi
-	 * @version 134.0.1
+	 * @version 135.0.0
 	 */
 
 	/**
@@ -53298,7 +53341,7 @@ class UploadsApi {
 	/**
 	 * Uploads service.
 	 * @module purecloud-platform-client-v2/api/UploadsApi
-	 * @version 134.0.1
+	 * @version 135.0.0
 	 */
 
 	/**
@@ -53449,7 +53492,7 @@ class UsageApi {
 	/**
 	 * Usage service.
 	 * @module purecloud-platform-client-v2/api/UsageApi
-	 * @version 134.0.1
+	 * @version 135.0.0
 	 */
 
 	/**
@@ -53520,7 +53563,7 @@ class UserRecordingsApi {
 	/**
 	 * UserRecordings service.
 	 * @module purecloud-platform-client-v2/api/UserRecordingsApi
-	 * @version 134.0.1
+	 * @version 135.0.0
 	 */
 
 	/**
@@ -53704,7 +53747,7 @@ class UsersApi {
 	/**
 	 * Users service.
 	 * @module purecloud-platform-client-v2/api/UsersApi
-	 * @version 134.0.1
+	 * @version 135.0.0
 	 */
 
 	/**
@@ -56006,7 +56049,7 @@ class UtilitiesApi {
 	/**
 	 * Utilities service.
 	 * @module purecloud-platform-client-v2/api/UtilitiesApi
-	 * @version 134.0.1
+	 * @version 135.0.0
 	 */
 
 	/**
@@ -56117,7 +56160,7 @@ class VoicemailApi {
 	/**
 	 * Voicemail service.
 	 * @module purecloud-platform-client-v2/api/VoicemailApi
-	 * @version 134.0.1
+	 * @version 135.0.0
 	 */
 
 	/**
@@ -56784,7 +56827,7 @@ class WebChatApi {
 	/**
 	 * WebChat service.
 	 * @module purecloud-platform-client-v2/api/WebChatApi
-	 * @version 134.0.1
+	 * @version 135.0.0
 	 */
 
 	/**
@@ -57328,7 +57371,7 @@ class WebDeploymentsApi {
 	/**
 	 * WebDeployments service.
 	 * @module purecloud-platform-client-v2/api/WebDeploymentsApi
-	 * @version 134.0.1
+	 * @version 135.0.0
 	 */
 
 	/**
@@ -57683,7 +57726,7 @@ class WebMessagingApi {
 	/**
 	 * WebMessaging service.
 	 * @module purecloud-platform-client-v2/api/WebMessagingApi
-	 * @version 134.0.1
+	 * @version 135.0.0
 	 */
 
 	/**
@@ -57729,7 +57772,7 @@ class WidgetsApi {
 	/**
 	 * Widgets service.
 	 * @module purecloud-platform-client-v2/api/WidgetsApi
-	 * @version 134.0.1
+	 * @version 135.0.0
 	 */
 
 	/**
@@ -57875,7 +57918,7 @@ class WorkforceManagementApi {
 	/**
 	 * WorkforceManagement service.
 	 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-	 * @version 134.0.1
+	 * @version 135.0.0
 	 */
 
 	/**
@@ -58073,7 +58116,7 @@ class WorkforceManagementApi {
 	/**
 	 * Delete a short term forecast
 	 * Must not be tied to any schedules
-	 * @param {String} businessUnitId The business unit ID of the business unit to which the forecast belongs
+	 * @param {String} businessUnitId The ID of the business unit to which the forecast belongs
 	 * @param {String} weekDateId The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 * @param {String} forecastId The ID of the forecast
 	 */
@@ -58153,7 +58196,7 @@ class WorkforceManagementApi {
 	/**
 	 * Deletes a time off limit object
 	 * 
-	 * @param {String} managementUnitId The management unit ID of the management unit.
+	 * @param {String} managementUnitId The ID of the management unit.
 	 * @param {String} timeOffLimitId The ID of the time off limit object to delete
 	 */
 	deleteWorkforcemanagementManagementunitTimeofflimit(managementUnitId, timeOffLimitId) { 
@@ -58183,7 +58226,7 @@ class WorkforceManagementApi {
 	/**
 	 * Deletes a time off plan
 	 * 
-	 * @param {String} managementUnitId The management unit ID.
+	 * @param {String} managementUnitId The ID of the management unit
 	 * @param {String} timeOffPlanId The ID of the time off plan to delete
 	 */
 	deleteWorkforcemanagementManagementunitTimeoffplan(managementUnitId, timeOffPlanId) { 
@@ -58452,7 +58495,7 @@ class WorkforceManagementApi {
 	/**
 	 * Get intraday planning groups for the given date
 	 * 
-	 * @param {String} businessUnitId The business unit ID of the business unit
+	 * @param {String} businessUnitId The ID of the business unit
 	 * @param {String} _date yyyy-MM-dd date string interpreted in the configured business unit time zone. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 */
 	getWorkforcemanagementBusinessunitIntradayPlanninggroups(businessUnitId, _date) { 
@@ -58905,7 +58948,7 @@ class WorkforceManagementApi {
 	/**
 	 * Get a short term forecast
 	 * 
-	 * @param {String} businessUnitId The business unit ID of the business unit to which the forecast belongs
+	 * @param {String} businessUnitId The ID of the business unit to which the forecast belongs
 	 * @param {String} weekDateId The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 * @param {String} forecastId The ID of the forecast
 	 * @param {Object} opts Optional parameters
@@ -58944,7 +58987,7 @@ class WorkforceManagementApi {
 	/**
 	 * Get the result of a short term forecast calculation
 	 * Includes modifications unless you pass the doNotApplyModifications query parameter
-	 * @param {String} businessUnitId The business unit ID of the business unit to which the forecast belongs
+	 * @param {String} businessUnitId The ID of the business unit to which the forecast belongs
 	 * @param {String} weekDateId The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 * @param {String} forecastId The ID of the forecast
 	 * @param {Object} opts Optional parameters
@@ -58984,7 +59027,7 @@ class WorkforceManagementApi {
 	/**
 	 * Gets the forecast generation results
 	 * 
-	 * @param {String} businessUnitId The business unit ID of the business unit to which the forecast belongs
+	 * @param {String} businessUnitId The ID of the business unit to which the forecast belongs
 	 * @param {String} weekDateId The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 * @param {String} forecastId The ID of the forecast
 	 */
@@ -59019,7 +59062,7 @@ class WorkforceManagementApi {
 	/**
 	 * Get the result of a long term forecast calculation
 	 * Includes modifications unless you pass the doNotApplyModifications query parameter
-	 * @param {String} businessUnitId The business unit ID of the business unit to which the forecast belongs
+	 * @param {String} businessUnitId The ID of the business unit to which the forecast belongs
 	 * @param {String} weekDateId The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 * @param {String} forecastId The ID of the forecast
 	 * @param {Object} opts Optional parameters
@@ -59058,7 +59101,7 @@ class WorkforceManagementApi {
 	/**
 	 * Gets the forecast planning group snapshot
 	 * 
-	 * @param {String} businessUnitId The business unit ID of the business unit to which the forecast belongs
+	 * @param {String} businessUnitId The ID of the business unit to which the forecast belongs
 	 * @param {String} weekDateId The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 * @param {String} forecastId The ID of the forecast
 	 */
@@ -59093,7 +59136,7 @@ class WorkforceManagementApi {
 	/**
 	 * Get short term forecasts
 	 * Use \&quot;recent\&quot; (without quotes) for the `weekDateId` path parameter to fetch all forecasts for +/- 26 weeks from the current date. Response will include any forecast which spans the specified week
-	 * @param {String} businessUnitId The business unit ID of the business unit to which the forecast belongs
+	 * @param {String} businessUnitId The ID of the business unit to which the forecast belongs
 	 * @param {String} weekDateId The week start date of the forecast in yyyy-MM-dd format or &#39;recent&#39; (without quotes) to fetch recent forecasts
 	 */
 	getWorkforcemanagementBusinessunitWeekShorttermforecasts(businessUnitId, weekDateId) { 
@@ -59311,7 +59354,7 @@ class WorkforceManagementApi {
 	/**
 	 * Get a list of user schedule adherence records for the requested management unit
 	 * 
-	 * @param {String} managementUnitId The management unit ID of the management unit.
+	 * @param {String} managementUnitId The ID of the management unit
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.forceDownloadService Force the result of this operation to be sent via download service.  For testing/app development purposes
 	 */
@@ -59340,7 +59383,7 @@ class WorkforceManagementApi {
 	/**
 	 * Get data for agent in the management unit
 	 * 
-	 * @param {String} managementUnitId The id of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+	 * @param {String} managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
 	 * @param {String} agentId The agent id
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.excludeCapabilities Excludes all capabilities of the agent such as queues, languages, and skills
@@ -59374,7 +59417,7 @@ class WorkforceManagementApi {
 	/**
 	 * Gets all the shift trades for a given agent
 	 * 
-	 * @param {String} managementUnitId The id of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+	 * @param {String} managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
 	 * @param {String} agentId The agent id
 	 */
 	getWorkforcemanagementManagementunitAgentShifttrades(managementUnitId, agentId) { 
@@ -59404,7 +59447,7 @@ class WorkforceManagementApi {
 	/**
 	 * Gets a summary of all shift trades in the matched state
 	 * 
-	 * @param {String} managementUnitId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+	 * @param {String} managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
 	 */
 	getWorkforcemanagementManagementunitShifttradesMatched(managementUnitId) { 
 		// verify the required parameter 'managementUnitId' is set
@@ -59429,7 +59472,7 @@ class WorkforceManagementApi {
 	/**
 	 * Gets list of users available for whom you can send direct shift trade requests
 	 * 
-	 * @param {String} managementUnitId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+	 * @param {String} managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
 	 */
 	getWorkforcemanagementManagementunitShifttradesUsers(managementUnitId) { 
 		// verify the required parameter 'managementUnitId' is set
@@ -59454,7 +59497,7 @@ class WorkforceManagementApi {
 	/**
 	 * Gets a time off limit object
 	 * Returns properties of time off limit object, but not daily values.
-	 * @param {String} managementUnitId The management unit ID of the management unit.
+	 * @param {String} managementUnitId The ID of the management unit.
 	 * @param {String} timeOffLimitId The ID of the time off limit to fetch
 	 */
 	getWorkforcemanagementManagementunitTimeofflimit(managementUnitId, timeOffLimitId) { 
@@ -59484,7 +59527,7 @@ class WorkforceManagementApi {
 	/**
 	 * Gets a list of time off limit objects under management unit.
 	 * Currently only one time off limit object is allowed under management unit, so the list contains either 0 or 1 element.
-	 * @param {String} managementUnitId The management unit ID of the management unit.
+	 * @param {String} managementUnitId The ID of the management unit.
 	 */
 	getWorkforcemanagementManagementunitTimeofflimits(managementUnitId) { 
 		// verify the required parameter 'managementUnitId' is set
@@ -59509,7 +59552,7 @@ class WorkforceManagementApi {
 	/**
 	 * Gets a time off plan
 	 * 
-	 * @param {String} managementUnitId The management unit ID.
+	 * @param {String} managementUnitId The ID of the management unit
 	 * @param {String} timeOffPlanId The ID of the time off plan to fetch
 	 */
 	getWorkforcemanagementManagementunitTimeoffplan(managementUnitId, timeOffPlanId) { 
@@ -59539,7 +59582,7 @@ class WorkforceManagementApi {
 	/**
 	 * Gets a list of time off plans
 	 * 
-	 * @param {String} managementUnitId The management unit ID.
+	 * @param {String} managementUnitId The ID of the management unit
 	 */
 	getWorkforcemanagementManagementunitTimeoffplans(managementUnitId) { 
 		// verify the required parameter 'managementUnitId' is set
@@ -59564,7 +59607,7 @@ class WorkforceManagementApi {
 	/**
 	 * Get a time off request
 	 * 
-	 * @param {String} managementUnitId The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+	 * @param {String} managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
 	 * @param {String} userId The userId to whom the Time Off Request applies.
 	 * @param {String} timeOffRequestId Time Off Request Id
 	 */
@@ -59599,7 +59642,7 @@ class WorkforceManagementApi {
 	/**
 	 * Retrieves time off limit, allocated and waitlisted values according to specific time off request
 	 * 
-	 * @param {String} managementUnitId The management unit ID of the management unit.
+	 * @param {String} managementUnitId The ID of the management unit.
 	 * @param {String} userId The userId to whom the time off request applies.
 	 * @param {String} timeOffRequestId The ID of the time off request, which dates and activityCodeId determine limit values to retrieve
 	 */
@@ -59634,7 +59677,7 @@ class WorkforceManagementApi {
 	/**
 	 * Get a list of time off requests for a given user
 	 * 
-	 * @param {String} managementUnitId The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+	 * @param {String} managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
 	 * @param {String} userId The userId to whom the Time Off Request applies.
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.recentlyReviewed Limit results to requests that have been reviewed within the preceding 30 days (default to false)
@@ -59668,7 +59711,7 @@ class WorkforceManagementApi {
 	/**
 	 * Get users in the management unit
 	 * 
-	 * @param {String} managementUnitId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+	 * @param {String} managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
 	 */
 	getWorkforcemanagementManagementunitUsers(managementUnitId) { 
 		// verify the required parameter 'managementUnitId' is set
@@ -59769,7 +59812,7 @@ class WorkforceManagementApi {
 	/**
 	 * Gets all the shift trades for a given week
 	 * 
-	 * @param {String} managementUnitId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+	 * @param {String} managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
 	 * @param {String} weekDateId The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.evaluateMatches Whether to evaluate the matches for violations (default to true)
@@ -60042,7 +60085,7 @@ class WorkforceManagementApi {
 	/**
 	 * Get a time off request for the current user
 	 * 
-	 * @param {String} timeOffRequestId Time Off Request Id
+	 * @param {String} timeOffRequestId The ID of the time off request
 	 */
 	getWorkforcemanagementTimeoffrequest(timeOffRequestId) { 
 		// verify the required parameter 'timeOffRequestId' is set
@@ -60067,7 +60110,7 @@ class WorkforceManagementApi {
 	/**
 	 * Get the daily waitlist positions of a time off request for the current user
 	 * 
-	 * @param {String} timeOffRequestId Time Off Request Id
+	 * @param {String} timeOffRequestId The ID of the time off request
 	 */
 	getWorkforcemanagementTimeoffrequestWaitlistpositions(timeOffRequestId) { 
 		// verify the required parameter 'timeOffRequestId' is set
@@ -60310,7 +60353,7 @@ class WorkforceManagementApi {
 	/**
 	 * Updates a time off limit object.
 	 * Updates time off limit object properties, but not daily values.
-	 * @param {String} managementUnitId The management unit ID of the management unit.
+	 * @param {String} managementUnitId The ID of the management unit.
 	 * @param {String} timeOffLimitId The id of time off limit object to update
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body body
@@ -60344,7 +60387,7 @@ class WorkforceManagementApi {
 	/**
 	 * Updates a time off plan
 	 * 
-	 * @param {String} managementUnitId The management unit ID.
+	 * @param {String} managementUnitId The ID of the management unit
 	 * @param {String} timeOffPlanId The ID of the time off plan to update
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body body
@@ -60378,7 +60421,7 @@ class WorkforceManagementApi {
 	/**
 	 * Update a time off request
 	 * 
-	 * @param {String} managementUnitId The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+	 * @param {String} managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
 	 * @param {String} userId The id of the user the requested time off request belongs to
 	 * @param {String} timeOffRequestId The id of the time off request to update
 	 * @param {Object} opts Optional parameters
@@ -60417,7 +60460,7 @@ class WorkforceManagementApi {
 	/**
 	 * Updates a shift trade. This route can only be called by the initiating agent
 	 * 
-	 * @param {String} managementUnitId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+	 * @param {String} managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
 	 * @param {String} weekDateId The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 * @param {Object} body body
 	 * @param {String} tradeId The ID of the shift trade to update
@@ -60526,7 +60569,7 @@ class WorkforceManagementApi {
 	/**
 	 * Update a time off request for the current user
 	 * 
-	 * @param {String} timeOffRequestId Time Off Request Id
+	 * @param {String} timeOffRequestId The ID of the time off request
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body body
 	 */
@@ -60663,7 +60706,7 @@ class WorkforceManagementApi {
 	/**
 	 * Get intraday data for the given date for the requested planningGroupIds
 	 * 
-	 * @param {String} businessUnitId The business unit ID of the business unit
+	 * @param {String} businessUnitId The ID of the business unit
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.forceAsync Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes
 	 * @param {Object} opts.body body
@@ -61096,7 +61139,7 @@ class WorkforceManagementApi {
 	/**
 	 * Copy a short term forecast
 	 * 
-	 * @param {String} businessUnitId The business unit ID of the business unit to which the forecast belongs
+	 * @param {String} businessUnitId The ID of the business unit to which the forecast belongs
 	 * @param {String} weekDateId The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 * @param {String} forecastId The ID of the forecast to copy
 	 * @param {Object} body body
@@ -61140,7 +61183,7 @@ class WorkforceManagementApi {
 	/**
 	 * Generate a short term forecast
 	 * 
-	 * @param {String} businessUnitId The business unit ID of the business unit to which the forecast belongs
+	 * @param {String} businessUnitId The ID of the business unit to which the forecast belongs
 	 * @param {String} weekDateId The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 * @param {Object} body 
 	 * @param {Object} opts Optional parameters
@@ -61179,7 +61222,7 @@ class WorkforceManagementApi {
 	/**
 	 * Starts importing the uploaded short term forecast
 	 * Call after uploading the forecast data to the url supplied by the /import/uploadurl route
-	 * @param {String} businessUnitId The business unit ID of the business unit to which the forecast belongs
+	 * @param {String} businessUnitId The ID of the business unit to which the forecast belongs
 	 * @param {String} weekDateId First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 * @param {Object} body 
 	 */
@@ -61214,7 +61257,7 @@ class WorkforceManagementApi {
 	/**
 	 * Creates a signed upload URL for importing a short term forecast
 	 * Once the upload is complete, call the /import route to start the short term forecast import process
-	 * @param {String} businessUnitId The business unit ID of the business unit to which the forecast belongs
+	 * @param {String} businessUnitId The ID of the business unit to which the forecast belongs
 	 * @param {String} weekDateId First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 * @param {Object} body body
 	 */
@@ -61341,7 +61384,7 @@ class WorkforceManagementApi {
 	/**
 	 * Query published schedules for given given time range for set of users
 	 * 
-	 * @param {String} managementUnitId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+	 * @param {String} managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body body
 	 * @param {Boolean} opts.forceAsync Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes
@@ -61372,7 +61415,7 @@ class WorkforceManagementApi {
 	/**
 	 * Request a historical adherence report
 	 * The maximum supported range for historical adherence queries is 31 days, or 7 days with includeExceptions = true
-	 * @param {String} managementUnitId The management unit ID of the management unit
+	 * @param {String} managementUnitId The ID of the management unit
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body body
 	 */
@@ -61430,7 +61473,7 @@ class WorkforceManagementApi {
 	/**
 	 * Query published schedules for given given time range for set of users
 	 * 
-	 * @param {String} managementUnitId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+	 * @param {String} managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body body
 	 */
@@ -61459,7 +61502,7 @@ class WorkforceManagementApi {
 	/**
 	 * Creates a new time off limit object under management unit.
 	 * Only one limit object is allowed under management unit, so an attempt to create second object will fail.
-	 * @param {String} managementUnitId The management unit ID of the management unit.
+	 * @param {String} managementUnitId The ID of the management unit.
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body body
 	 */
@@ -61488,7 +61531,7 @@ class WorkforceManagementApi {
 	/**
 	 * Retrieves time off limit related values based on a given set of filters.
 	 * 
-	 * @param {String} managementUnitId The management unit ID of the management unit.
+	 * @param {String} managementUnitId The ID of the management unit.
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body body
 	 */
@@ -61517,7 +61560,7 @@ class WorkforceManagementApi {
 	/**
 	 * Creates a new time off plan
 	 * 
-	 * @param {String} managementUnitId The management unit ID.
+	 * @param {String} managementUnitId The ID of the management unit
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body body
 	 */
@@ -61546,7 +61589,7 @@ class WorkforceManagementApi {
 	/**
 	 * Create a new time off request
 	 * 
-	 * @param {String} managementUnitId The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+	 * @param {String} managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body body
 	 */
@@ -61575,7 +61618,7 @@ class WorkforceManagementApi {
 	/**
 	 * Fetches time off requests matching the conditions specified in the request body
 	 * Request body requires one of the following: User ID is specified, statuses == [Pending] or date range to be specified and less than or equal to 33 days.  All other fields are filters
-	 * @param {String} managementUnitId The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+	 * @param {String} managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body body
 	 */
@@ -61604,7 +61647,7 @@ class WorkforceManagementApi {
 	/**
 	 * Retrieves daily waitlist position for a list of time off requests
 	 * 
-	 * @param {String} managementUnitId The management unit ID of the management unit.
+	 * @param {String} managementUnitId The ID of the management unit.
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body body
 	 */
@@ -61633,7 +61676,7 @@ class WorkforceManagementApi {
 	/**
 	 * Matches a shift trade. This route can only be called by the receiving agent
 	 * 
-	 * @param {String} managementUnitId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+	 * @param {String} managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
 	 * @param {String} weekDateId The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 * @param {Object} body body
 	 * @param {String} tradeId The ID of the shift trade to update
@@ -61673,7 +61716,7 @@ class WorkforceManagementApi {
 	/**
 	 * Adds a shift trade
 	 * 
-	 * @param {String} managementUnitId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+	 * @param {String} managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
 	 * @param {String} weekDateId The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 * @param {Object} body body
 	 */
@@ -61708,7 +61751,7 @@ class WorkforceManagementApi {
 	/**
 	 * Searches for potential shift trade matches for the current agent
 	 * 
-	 * @param {String} managementUnitId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+	 * @param {String} managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
 	 * @param {String} weekDateId The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 * @param {Object} body body
 	 */
@@ -61743,7 +61786,7 @@ class WorkforceManagementApi {
 	/**
 	 * Updates the state of a batch of shift trades
 	 * Admin functionality is not supported with \&quot;mine\&quot;.
-	 * @param {String} managementUnitId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+	 * @param {String} managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
 	 * @param {String} weekDateId The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 * @param {Object} body body
 	 * @param {Object} opts Optional parameters
@@ -62064,7 +62107,7 @@ class WorkforceManagementApi {
 	/**
 	 * Sets daily values for a date range of time off limit object
 	 * Note that only limit daily values can be set through API, allocated and waitlisted values are read-only for time off limit API
-	 * @param {String} managementUnitId The management unit ID of the management unit.
+	 * @param {String} managementUnitId The ID of the management unit.
 	 * @param {String} timeOffLimitId The ID of the time off limit object to set values for
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body body
@@ -62126,7 +62169,7 @@ class WorkforceManagementApi {
  * </pre>
  * </p>
  * @module purecloud-platform-client-v2/index
- * @version 134.0.1
+ * @version 135.0.0
  */
 class platformClient {
 	constructor() {

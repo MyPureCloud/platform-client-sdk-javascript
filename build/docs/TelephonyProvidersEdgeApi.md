@@ -2990,7 +2990,7 @@ let opts = {
   'pageSize': 25, // Number | Page size
   'pageNumber': 1, // Number | Page number
   'sortBy': "sortBy_example", // String | Sort by
-  '_number': "_number_example" // String | Number
+  '_number': "_number_example" // String | Deprecated, filtering by number not supported
 };
 
 apiInstance.getTelephonyProvidersEdgesExtensionpools(opts)
@@ -3011,7 +3011,7 @@ apiInstance.getTelephonyProvidersEdgesExtensionpools(opts)
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **sortBy** | **String** | Sort by | [optional]  |
- **_number** | **String** | Number | [optional]  |
+ **_number** | **String** | Deprecated, filtering by number not supported | [optional]  |
 {: class="table table-striped"}
 
 ### Return type

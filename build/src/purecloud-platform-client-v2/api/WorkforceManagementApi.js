@@ -5,7 +5,7 @@ class WorkforceManagementApi {
 	/**
 	 * WorkforceManagement service.
 	 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-	 * @version 134.0.1
+	 * @version 135.0.0
 	 */
 
 	/**
@@ -203,7 +203,7 @@ class WorkforceManagementApi {
 	/**
 	 * Delete a short term forecast
 	 * Must not be tied to any schedules
-	 * @param {String} businessUnitId The business unit ID of the business unit to which the forecast belongs
+	 * @param {String} businessUnitId The ID of the business unit to which the forecast belongs
 	 * @param {String} weekDateId The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 * @param {String} forecastId The ID of the forecast
 	 */
@@ -283,7 +283,7 @@ class WorkforceManagementApi {
 	/**
 	 * Deletes a time off limit object
 	 * 
-	 * @param {String} managementUnitId The management unit ID of the management unit.
+	 * @param {String} managementUnitId The ID of the management unit.
 	 * @param {String} timeOffLimitId The ID of the time off limit object to delete
 	 */
 	deleteWorkforcemanagementManagementunitTimeofflimit(managementUnitId, timeOffLimitId) { 
@@ -313,7 +313,7 @@ class WorkforceManagementApi {
 	/**
 	 * Deletes a time off plan
 	 * 
-	 * @param {String} managementUnitId The management unit ID.
+	 * @param {String} managementUnitId The ID of the management unit
 	 * @param {String} timeOffPlanId The ID of the time off plan to delete
 	 */
 	deleteWorkforcemanagementManagementunitTimeoffplan(managementUnitId, timeOffPlanId) { 
@@ -582,7 +582,7 @@ class WorkforceManagementApi {
 	/**
 	 * Get intraday planning groups for the given date
 	 * 
-	 * @param {String} businessUnitId The business unit ID of the business unit
+	 * @param {String} businessUnitId The ID of the business unit
 	 * @param {String} _date yyyy-MM-dd date string interpreted in the configured business unit time zone. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 */
 	getWorkforcemanagementBusinessunitIntradayPlanninggroups(businessUnitId, _date) { 
@@ -1035,7 +1035,7 @@ class WorkforceManagementApi {
 	/**
 	 * Get a short term forecast
 	 * 
-	 * @param {String} businessUnitId The business unit ID of the business unit to which the forecast belongs
+	 * @param {String} businessUnitId The ID of the business unit to which the forecast belongs
 	 * @param {String} weekDateId The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 * @param {String} forecastId The ID of the forecast
 	 * @param {Object} opts Optional parameters
@@ -1074,7 +1074,7 @@ class WorkforceManagementApi {
 	/**
 	 * Get the result of a short term forecast calculation
 	 * Includes modifications unless you pass the doNotApplyModifications query parameter
-	 * @param {String} businessUnitId The business unit ID of the business unit to which the forecast belongs
+	 * @param {String} businessUnitId The ID of the business unit to which the forecast belongs
 	 * @param {String} weekDateId The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 * @param {String} forecastId The ID of the forecast
 	 * @param {Object} opts Optional parameters
@@ -1114,7 +1114,7 @@ class WorkforceManagementApi {
 	/**
 	 * Gets the forecast generation results
 	 * 
-	 * @param {String} businessUnitId The business unit ID of the business unit to which the forecast belongs
+	 * @param {String} businessUnitId The ID of the business unit to which the forecast belongs
 	 * @param {String} weekDateId The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 * @param {String} forecastId The ID of the forecast
 	 */
@@ -1149,7 +1149,7 @@ class WorkforceManagementApi {
 	/**
 	 * Get the result of a long term forecast calculation
 	 * Includes modifications unless you pass the doNotApplyModifications query parameter
-	 * @param {String} businessUnitId The business unit ID of the business unit to which the forecast belongs
+	 * @param {String} businessUnitId The ID of the business unit to which the forecast belongs
 	 * @param {String} weekDateId The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 * @param {String} forecastId The ID of the forecast
 	 * @param {Object} opts Optional parameters
@@ -1188,7 +1188,7 @@ class WorkforceManagementApi {
 	/**
 	 * Gets the forecast planning group snapshot
 	 * 
-	 * @param {String} businessUnitId The business unit ID of the business unit to which the forecast belongs
+	 * @param {String} businessUnitId The ID of the business unit to which the forecast belongs
 	 * @param {String} weekDateId The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 * @param {String} forecastId The ID of the forecast
 	 */
@@ -1223,7 +1223,7 @@ class WorkforceManagementApi {
 	/**
 	 * Get short term forecasts
 	 * Use \&quot;recent\&quot; (without quotes) for the `weekDateId` path parameter to fetch all forecasts for +/- 26 weeks from the current date. Response will include any forecast which spans the specified week
-	 * @param {String} businessUnitId The business unit ID of the business unit to which the forecast belongs
+	 * @param {String} businessUnitId The ID of the business unit to which the forecast belongs
 	 * @param {String} weekDateId The week start date of the forecast in yyyy-MM-dd format or &#39;recent&#39; (without quotes) to fetch recent forecasts
 	 */
 	getWorkforcemanagementBusinessunitWeekShorttermforecasts(businessUnitId, weekDateId) { 
@@ -1441,7 +1441,7 @@ class WorkforceManagementApi {
 	/**
 	 * Get a list of user schedule adherence records for the requested management unit
 	 * 
-	 * @param {String} managementUnitId The management unit ID of the management unit.
+	 * @param {String} managementUnitId The ID of the management unit
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.forceDownloadService Force the result of this operation to be sent via download service.  For testing/app development purposes
 	 */
@@ -1470,7 +1470,7 @@ class WorkforceManagementApi {
 	/**
 	 * Get data for agent in the management unit
 	 * 
-	 * @param {String} managementUnitId The id of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+	 * @param {String} managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
 	 * @param {String} agentId The agent id
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.excludeCapabilities Excludes all capabilities of the agent such as queues, languages, and skills
@@ -1504,7 +1504,7 @@ class WorkforceManagementApi {
 	/**
 	 * Gets all the shift trades for a given agent
 	 * 
-	 * @param {String} managementUnitId The id of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+	 * @param {String} managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
 	 * @param {String} agentId The agent id
 	 */
 	getWorkforcemanagementManagementunitAgentShifttrades(managementUnitId, agentId) { 
@@ -1534,7 +1534,7 @@ class WorkforceManagementApi {
 	/**
 	 * Gets a summary of all shift trades in the matched state
 	 * 
-	 * @param {String} managementUnitId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+	 * @param {String} managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
 	 */
 	getWorkforcemanagementManagementunitShifttradesMatched(managementUnitId) { 
 		// verify the required parameter 'managementUnitId' is set
@@ -1559,7 +1559,7 @@ class WorkforceManagementApi {
 	/**
 	 * Gets list of users available for whom you can send direct shift trade requests
 	 * 
-	 * @param {String} managementUnitId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+	 * @param {String} managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
 	 */
 	getWorkforcemanagementManagementunitShifttradesUsers(managementUnitId) { 
 		// verify the required parameter 'managementUnitId' is set
@@ -1584,7 +1584,7 @@ class WorkforceManagementApi {
 	/**
 	 * Gets a time off limit object
 	 * Returns properties of time off limit object, but not daily values.
-	 * @param {String} managementUnitId The management unit ID of the management unit.
+	 * @param {String} managementUnitId The ID of the management unit.
 	 * @param {String} timeOffLimitId The ID of the time off limit to fetch
 	 */
 	getWorkforcemanagementManagementunitTimeofflimit(managementUnitId, timeOffLimitId) { 
@@ -1614,7 +1614,7 @@ class WorkforceManagementApi {
 	/**
 	 * Gets a list of time off limit objects under management unit.
 	 * Currently only one time off limit object is allowed under management unit, so the list contains either 0 or 1 element.
-	 * @param {String} managementUnitId The management unit ID of the management unit.
+	 * @param {String} managementUnitId The ID of the management unit.
 	 */
 	getWorkforcemanagementManagementunitTimeofflimits(managementUnitId) { 
 		// verify the required parameter 'managementUnitId' is set
@@ -1639,7 +1639,7 @@ class WorkforceManagementApi {
 	/**
 	 * Gets a time off plan
 	 * 
-	 * @param {String} managementUnitId The management unit ID.
+	 * @param {String} managementUnitId The ID of the management unit
 	 * @param {String} timeOffPlanId The ID of the time off plan to fetch
 	 */
 	getWorkforcemanagementManagementunitTimeoffplan(managementUnitId, timeOffPlanId) { 
@@ -1669,7 +1669,7 @@ class WorkforceManagementApi {
 	/**
 	 * Gets a list of time off plans
 	 * 
-	 * @param {String} managementUnitId The management unit ID.
+	 * @param {String} managementUnitId The ID of the management unit
 	 */
 	getWorkforcemanagementManagementunitTimeoffplans(managementUnitId) { 
 		// verify the required parameter 'managementUnitId' is set
@@ -1694,7 +1694,7 @@ class WorkforceManagementApi {
 	/**
 	 * Get a time off request
 	 * 
-	 * @param {String} managementUnitId The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+	 * @param {String} managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
 	 * @param {String} userId The userId to whom the Time Off Request applies.
 	 * @param {String} timeOffRequestId Time Off Request Id
 	 */
@@ -1729,7 +1729,7 @@ class WorkforceManagementApi {
 	/**
 	 * Retrieves time off limit, allocated and waitlisted values according to specific time off request
 	 * 
-	 * @param {String} managementUnitId The management unit ID of the management unit.
+	 * @param {String} managementUnitId The ID of the management unit.
 	 * @param {String} userId The userId to whom the time off request applies.
 	 * @param {String} timeOffRequestId The ID of the time off request, which dates and activityCodeId determine limit values to retrieve
 	 */
@@ -1764,7 +1764,7 @@ class WorkforceManagementApi {
 	/**
 	 * Get a list of time off requests for a given user
 	 * 
-	 * @param {String} managementUnitId The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+	 * @param {String} managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
 	 * @param {String} userId The userId to whom the Time Off Request applies.
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.recentlyReviewed Limit results to requests that have been reviewed within the preceding 30 days (default to false)
@@ -1798,7 +1798,7 @@ class WorkforceManagementApi {
 	/**
 	 * Get users in the management unit
 	 * 
-	 * @param {String} managementUnitId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+	 * @param {String} managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
 	 */
 	getWorkforcemanagementManagementunitUsers(managementUnitId) { 
 		// verify the required parameter 'managementUnitId' is set
@@ -1899,7 +1899,7 @@ class WorkforceManagementApi {
 	/**
 	 * Gets all the shift trades for a given week
 	 * 
-	 * @param {String} managementUnitId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+	 * @param {String} managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
 	 * @param {String} weekDateId The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.evaluateMatches Whether to evaluate the matches for violations (default to true)
@@ -2172,7 +2172,7 @@ class WorkforceManagementApi {
 	/**
 	 * Get a time off request for the current user
 	 * 
-	 * @param {String} timeOffRequestId Time Off Request Id
+	 * @param {String} timeOffRequestId The ID of the time off request
 	 */
 	getWorkforcemanagementTimeoffrequest(timeOffRequestId) { 
 		// verify the required parameter 'timeOffRequestId' is set
@@ -2197,7 +2197,7 @@ class WorkforceManagementApi {
 	/**
 	 * Get the daily waitlist positions of a time off request for the current user
 	 * 
-	 * @param {String} timeOffRequestId Time Off Request Id
+	 * @param {String} timeOffRequestId The ID of the time off request
 	 */
 	getWorkforcemanagementTimeoffrequestWaitlistpositions(timeOffRequestId) { 
 		// verify the required parameter 'timeOffRequestId' is set
@@ -2440,7 +2440,7 @@ class WorkforceManagementApi {
 	/**
 	 * Updates a time off limit object.
 	 * Updates time off limit object properties, but not daily values.
-	 * @param {String} managementUnitId The management unit ID of the management unit.
+	 * @param {String} managementUnitId The ID of the management unit.
 	 * @param {String} timeOffLimitId The id of time off limit object to update
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body body
@@ -2474,7 +2474,7 @@ class WorkforceManagementApi {
 	/**
 	 * Updates a time off plan
 	 * 
-	 * @param {String} managementUnitId The management unit ID.
+	 * @param {String} managementUnitId The ID of the management unit
 	 * @param {String} timeOffPlanId The ID of the time off plan to update
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body body
@@ -2508,7 +2508,7 @@ class WorkforceManagementApi {
 	/**
 	 * Update a time off request
 	 * 
-	 * @param {String} managementUnitId The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+	 * @param {String} managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
 	 * @param {String} userId The id of the user the requested time off request belongs to
 	 * @param {String} timeOffRequestId The id of the time off request to update
 	 * @param {Object} opts Optional parameters
@@ -2547,7 +2547,7 @@ class WorkforceManagementApi {
 	/**
 	 * Updates a shift trade. This route can only be called by the initiating agent
 	 * 
-	 * @param {String} managementUnitId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+	 * @param {String} managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
 	 * @param {String} weekDateId The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 * @param {Object} body body
 	 * @param {String} tradeId The ID of the shift trade to update
@@ -2656,7 +2656,7 @@ class WorkforceManagementApi {
 	/**
 	 * Update a time off request for the current user
 	 * 
-	 * @param {String} timeOffRequestId Time Off Request Id
+	 * @param {String} timeOffRequestId The ID of the time off request
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body body
 	 */
@@ -2793,7 +2793,7 @@ class WorkforceManagementApi {
 	/**
 	 * Get intraday data for the given date for the requested planningGroupIds
 	 * 
-	 * @param {String} businessUnitId The business unit ID of the business unit
+	 * @param {String} businessUnitId The ID of the business unit
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.forceAsync Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes
 	 * @param {Object} opts.body body
@@ -3226,7 +3226,7 @@ class WorkforceManagementApi {
 	/**
 	 * Copy a short term forecast
 	 * 
-	 * @param {String} businessUnitId The business unit ID of the business unit to which the forecast belongs
+	 * @param {String} businessUnitId The ID of the business unit to which the forecast belongs
 	 * @param {String} weekDateId The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 * @param {String} forecastId The ID of the forecast to copy
 	 * @param {Object} body body
@@ -3270,7 +3270,7 @@ class WorkforceManagementApi {
 	/**
 	 * Generate a short term forecast
 	 * 
-	 * @param {String} businessUnitId The business unit ID of the business unit to which the forecast belongs
+	 * @param {String} businessUnitId The ID of the business unit to which the forecast belongs
 	 * @param {String} weekDateId The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 * @param {Object} body 
 	 * @param {Object} opts Optional parameters
@@ -3309,7 +3309,7 @@ class WorkforceManagementApi {
 	/**
 	 * Starts importing the uploaded short term forecast
 	 * Call after uploading the forecast data to the url supplied by the /import/uploadurl route
-	 * @param {String} businessUnitId The business unit ID of the business unit to which the forecast belongs
+	 * @param {String} businessUnitId The ID of the business unit to which the forecast belongs
 	 * @param {String} weekDateId First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 * @param {Object} body 
 	 */
@@ -3344,7 +3344,7 @@ class WorkforceManagementApi {
 	/**
 	 * Creates a signed upload URL for importing a short term forecast
 	 * Once the upload is complete, call the /import route to start the short term forecast import process
-	 * @param {String} businessUnitId The business unit ID of the business unit to which the forecast belongs
+	 * @param {String} businessUnitId The ID of the business unit to which the forecast belongs
 	 * @param {String} weekDateId First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 * @param {Object} body body
 	 */
@@ -3471,7 +3471,7 @@ class WorkforceManagementApi {
 	/**
 	 * Query published schedules for given given time range for set of users
 	 * 
-	 * @param {String} managementUnitId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+	 * @param {String} managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body body
 	 * @param {Boolean} opts.forceAsync Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes
@@ -3502,7 +3502,7 @@ class WorkforceManagementApi {
 	/**
 	 * Request a historical adherence report
 	 * The maximum supported range for historical adherence queries is 31 days, or 7 days with includeExceptions = true
-	 * @param {String} managementUnitId The management unit ID of the management unit
+	 * @param {String} managementUnitId The ID of the management unit
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body body
 	 */
@@ -3560,7 +3560,7 @@ class WorkforceManagementApi {
 	/**
 	 * Query published schedules for given given time range for set of users
 	 * 
-	 * @param {String} managementUnitId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+	 * @param {String} managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body body
 	 */
@@ -3589,7 +3589,7 @@ class WorkforceManagementApi {
 	/**
 	 * Creates a new time off limit object under management unit.
 	 * Only one limit object is allowed under management unit, so an attempt to create second object will fail.
-	 * @param {String} managementUnitId The management unit ID of the management unit.
+	 * @param {String} managementUnitId The ID of the management unit.
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body body
 	 */
@@ -3618,7 +3618,7 @@ class WorkforceManagementApi {
 	/**
 	 * Retrieves time off limit related values based on a given set of filters.
 	 * 
-	 * @param {String} managementUnitId The management unit ID of the management unit.
+	 * @param {String} managementUnitId The ID of the management unit.
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body body
 	 */
@@ -3647,7 +3647,7 @@ class WorkforceManagementApi {
 	/**
 	 * Creates a new time off plan
 	 * 
-	 * @param {String} managementUnitId The management unit ID.
+	 * @param {String} managementUnitId The ID of the management unit
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body body
 	 */
@@ -3676,7 +3676,7 @@ class WorkforceManagementApi {
 	/**
 	 * Create a new time off request
 	 * 
-	 * @param {String} managementUnitId The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+	 * @param {String} managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body body
 	 */
@@ -3705,7 +3705,7 @@ class WorkforceManagementApi {
 	/**
 	 * Fetches time off requests matching the conditions specified in the request body
 	 * Request body requires one of the following: User ID is specified, statuses == [Pending] or date range to be specified and less than or equal to 33 days.  All other fields are filters
-	 * @param {String} managementUnitId The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+	 * @param {String} managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body body
 	 */
@@ -3734,7 +3734,7 @@ class WorkforceManagementApi {
 	/**
 	 * Retrieves daily waitlist position for a list of time off requests
 	 * 
-	 * @param {String} managementUnitId The management unit ID of the management unit.
+	 * @param {String} managementUnitId The ID of the management unit.
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body body
 	 */
@@ -3763,7 +3763,7 @@ class WorkforceManagementApi {
 	/**
 	 * Matches a shift trade. This route can only be called by the receiving agent
 	 * 
-	 * @param {String} managementUnitId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+	 * @param {String} managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
 	 * @param {String} weekDateId The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 * @param {Object} body body
 	 * @param {String} tradeId The ID of the shift trade to update
@@ -3803,7 +3803,7 @@ class WorkforceManagementApi {
 	/**
 	 * Adds a shift trade
 	 * 
-	 * @param {String} managementUnitId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+	 * @param {String} managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
 	 * @param {String} weekDateId The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 * @param {Object} body body
 	 */
@@ -3838,7 +3838,7 @@ class WorkforceManagementApi {
 	/**
 	 * Searches for potential shift trade matches for the current agent
 	 * 
-	 * @param {String} managementUnitId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+	 * @param {String} managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
 	 * @param {String} weekDateId The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 * @param {Object} body body
 	 */
@@ -3873,7 +3873,7 @@ class WorkforceManagementApi {
 	/**
 	 * Updates the state of a batch of shift trades
 	 * Admin functionality is not supported with \&quot;mine\&quot;.
-	 * @param {String} managementUnitId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+	 * @param {String} managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
 	 * @param {String} weekDateId The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 * @param {Object} body body
 	 * @param {Object} opts Optional parameters
@@ -4194,7 +4194,7 @@ class WorkforceManagementApi {
 	/**
 	 * Sets daily values for a date range of time off limit object
 	 * Note that only limit daily values can be set through API, allocated and waitlisted values are read-only for time off limit API
-	 * @param {String} managementUnitId The management unit ID of the management unit.
+	 * @param {String} managementUnitId The ID of the management unit.
 	 * @param {String} timeOffLimitId The ID of the time off limit object to set values for
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body body

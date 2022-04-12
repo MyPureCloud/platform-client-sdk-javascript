@@ -5,7 +5,7 @@ class ConversationsApi {
 	/**
 	 * Conversations service.
 	 * @module purecloud-platform-client-v2/api/ConversationsApi
-	 * @version 134.0.1
+	 * @version 135.0.0
 	 */
 
 	/**
@@ -1910,7 +1910,7 @@ class ConversationsApi {
 	/**
 	 * Get a list of Messaging Stickers
 	 * 
-	 * @param {String} messengerType Messenger Type
+	 * @param {Object} messengerType Messenger Type
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
@@ -2098,7 +2098,7 @@ class ConversationsApi {
 	}
 
 	/**
-	 * Update a conversation by setting it&#39;s recording state, merging in other conversations to create a conference, or disconnecting all of the participants
+	 * Update a conversation by setting its recording state, merging in other conversations to create a conference, or disconnecting all of the participants
 	 * 
 	 * @param {String} conversationId conversationId
 	 * @param {Object} body Conversation

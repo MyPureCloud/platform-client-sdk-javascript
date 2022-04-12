@@ -506,7 +506,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
-let businessUnitId = "businessUnitId_example"; // String | The business unit ID of the business unit to which the forecast belongs
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit to which the forecast belongs
 let weekDateId = "2013-10-20"; // String | The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 let forecastId = "forecastId_example"; // String | The ID of the forecast
 
@@ -525,7 +525,7 @@ apiInstance.deleteWorkforcemanagementBusinessunitWeekShorttermforecast(businessU
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **businessUnitId** | **String** | The business unit ID of the business unit to which the forecast belongs |  |
+ **businessUnitId** | **String** | The ID of the business unit to which the forecast belongs |  |
  **weekDateId** | **String** | The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **forecastId** | **String** | The ID of the forecast |  |
 {: class="table table-striped"}
@@ -664,7 +664,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
-let managementUnitId = "managementUnitId_example"; // String | The management unit ID of the management unit.
+let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit.
 let timeOffLimitId = "timeOffLimitId_example"; // String | The ID of the time off limit object to delete
 
 apiInstance.deleteWorkforcemanagementManagementunitTimeofflimit(managementUnitId, timeOffLimitId)
@@ -682,7 +682,7 @@ apiInstance.deleteWorkforcemanagementManagementunitTimeofflimit(managementUnitId
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **managementUnitId** | **String** | The management unit ID of the management unit. |  |
+ **managementUnitId** | **String** | The ID of the management unit. |  |
  **timeOffLimitId** | **String** | The ID of the time off limit object to delete |  |
 {: class="table table-striped"}
 
@@ -719,7 +719,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
-let managementUnitId = "managementUnitId_example"; // String | The management unit ID.
+let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit
 let timeOffPlanId = "timeOffPlanId_example"; // String | The ID of the time off plan to delete
 
 apiInstance.deleteWorkforcemanagementManagementunitTimeoffplan(managementUnitId, timeOffPlanId)
@@ -737,7 +737,7 @@ apiInstance.deleteWorkforcemanagementManagementunitTimeoffplan(managementUnitId,
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **managementUnitId** | **String** | The management unit ID. |  |
+ **managementUnitId** | **String** | The ID of the management unit |  |
  **timeOffPlanId** | **String** | The ID of the time off plan to delete |  |
 {: class="table table-striped"}
 
@@ -1437,7 +1437,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
-let businessUnitId = "businessUnitId_example"; // String | The business unit ID of the business unit
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
 let _date = "2013-10-20"; // String | yyyy-MM-dd date string interpreted in the configured business unit time zone. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 
 apiInstance.getWorkforcemanagementBusinessunitIntradayPlanninggroups(businessUnitId, _date)
@@ -1455,7 +1455,7 @@ apiInstance.getWorkforcemanagementBusinessunitIntradayPlanninggroups(businessUni
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **businessUnitId** | **String** | The business unit ID of the business unit |  |
+ **businessUnitId** | **String** | The ID of the business unit |  |
  **_date** | **String** | yyyy-MM-dd date string interpreted in the configured business unit time zone. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
 {: class="table table-striped"}
 
@@ -2247,7 +2247,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
-let businessUnitId = "businessUnitId_example"; // String | The business unit ID of the business unit to which the forecast belongs
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit to which the forecast belongs
 let weekDateId = "2013-10-20"; // String | The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 let forecastId = "forecastId_example"; // String | The ID of the forecast
 let opts = { 
@@ -2269,7 +2269,7 @@ apiInstance.getWorkforcemanagementBusinessunitWeekShorttermforecast(businessUnit
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **businessUnitId** | **String** | The business unit ID of the business unit to which the forecast belongs |  |
+ **businessUnitId** | **String** | The ID of the business unit to which the forecast belongs |  |
  **weekDateId** | **String** | The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **forecastId** | **String** | The ID of the forecast |  |
  **expand** | **[String]** |  | [optional] <br />**Values**: planningGroups, generationResults |
@@ -2308,7 +2308,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
-let businessUnitId = "businessUnitId_example"; // String | The business unit ID of the business unit to which the forecast belongs
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit to which the forecast belongs
 let weekDateId = "2013-10-20"; // String | The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 let forecastId = "forecastId_example"; // String | The ID of the forecast
 let opts = { 
@@ -2331,7 +2331,7 @@ apiInstance.getWorkforcemanagementBusinessunitWeekShorttermforecastData(business
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **businessUnitId** | **String** | The business unit ID of the business unit to which the forecast belongs |  |
+ **businessUnitId** | **String** | The ID of the business unit to which the forecast belongs |  |
  **weekDateId** | **String** | The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **forecastId** | **String** | The ID of the forecast |  |
  **weekNumber** | **Number** | The week number to fetch (for multi-week forecasts) | [optional]  |
@@ -2371,7 +2371,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
-let businessUnitId = "businessUnitId_example"; // String | The business unit ID of the business unit to which the forecast belongs
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit to which the forecast belongs
 let weekDateId = "2013-10-20"; // String | The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 let forecastId = "forecastId_example"; // String | The ID of the forecast
 
@@ -2390,7 +2390,7 @@ apiInstance.getWorkforcemanagementBusinessunitWeekShorttermforecastGenerationres
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **businessUnitId** | **String** | The business unit ID of the business unit to which the forecast belongs |  |
+ **businessUnitId** | **String** | The ID of the business unit to which the forecast belongs |  |
  **weekDateId** | **String** | The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **forecastId** | **String** | The ID of the forecast |  |
 {: class="table table-striped"}
@@ -2428,7 +2428,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
-let businessUnitId = "businessUnitId_example"; // String | The business unit ID of the business unit to which the forecast belongs
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit to which the forecast belongs
 let weekDateId = "2013-10-20"; // String | The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 let forecastId = "forecastId_example"; // String | The ID of the forecast
 let opts = { 
@@ -2450,7 +2450,7 @@ apiInstance.getWorkforcemanagementBusinessunitWeekShorttermforecastLongtermforec
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **businessUnitId** | **String** | The business unit ID of the business unit to which the forecast belongs |  |
+ **businessUnitId** | **String** | The ID of the business unit to which the forecast belongs |  |
  **weekDateId** | **String** | The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **forecastId** | **String** | The ID of the forecast |  |
  **forceDownloadService** | **Boolean** | Force the result of this operation to be sent via download service.  For testing/app development purposes | [optional]  |
@@ -2491,7 +2491,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
-let businessUnitId = "businessUnitId_example"; // String | The business unit ID of the business unit to which the forecast belongs
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit to which the forecast belongs
 let weekDateId = "2013-10-20"; // String | The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 let forecastId = "forecastId_example"; // String | The ID of the forecast
 
@@ -2510,7 +2510,7 @@ apiInstance.getWorkforcemanagementBusinessunitWeekShorttermforecastPlanninggroup
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **businessUnitId** | **String** | The business unit ID of the business unit to which the forecast belongs |  |
+ **businessUnitId** | **String** | The ID of the business unit to which the forecast belongs |  |
  **weekDateId** | **String** | The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **forecastId** | **String** | The ID of the forecast |  |
 {: class="table table-striped"}
@@ -2549,7 +2549,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
-let businessUnitId = "businessUnitId_example"; // String | The business unit ID of the business unit to which the forecast belongs
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit to which the forecast belongs
 let weekDateId = "weekDateId_example"; // String | The week start date of the forecast in yyyy-MM-dd format or 'recent' (without quotes) to fetch recent forecasts
 
 apiInstance.getWorkforcemanagementBusinessunitWeekShorttermforecasts(businessUnitId, weekDateId)
@@ -2567,7 +2567,7 @@ apiInstance.getWorkforcemanagementBusinessunitWeekShorttermforecasts(businessUni
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **businessUnitId** | **String** | The business unit ID of the business unit to which the forecast belongs |  |
+ **businessUnitId** | **String** | The ID of the business unit to which the forecast belongs |  |
  **weekDateId** | **String** | The week start date of the forecast in yyyy-MM-dd format or &#39;recent&#39; (without quotes) to fetch recent forecasts |  |
 {: class="table table-striped"}
 
@@ -3116,7 +3116,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
-let managementUnitId = "managementUnitId_example"; // String | The management unit ID of the management unit.
+let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit
 let opts = { 
   'forceDownloadService': true // Boolean | Force the result of this operation to be sent via download service.  For testing/app development purposes
 };
@@ -3136,7 +3136,7 @@ apiInstance.getWorkforcemanagementManagementunitAdherence(managementUnitId, opts
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **managementUnitId** | **String** | The management unit ID of the management unit. |  |
+ **managementUnitId** | **String** | The ID of the management unit |  |
  **forceDownloadService** | **Boolean** | Force the result of this operation to be sent via download service.  For testing/app development purposes | [optional]  |
 {: class="table table-striped"}
 
@@ -3173,7 +3173,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
-let managementUnitId = "managementUnitId_example"; // String | The id of the management unit, or 'mine' for the management unit of the logged-in user.
+let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 let agentId = "agentId_example"; // String | The agent id
 let opts = { 
   'excludeCapabilities': true // Boolean | Excludes all capabilities of the agent such as queues, languages, and skills
@@ -3194,7 +3194,7 @@ apiInstance.getWorkforcemanagementManagementunitAgent(managementUnitId, agentId,
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **managementUnitId** | **String** | The id of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+ **managementUnitId** | **String** | The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
  **agentId** | **String** | The agent id |  |
  **excludeCapabilities** | **Boolean** | Excludes all capabilities of the agent such as queues, languages, and skills | [optional]  |
 {: class="table table-striped"}
@@ -3233,7 +3233,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
-let managementUnitId = "managementUnitId_example"; // String | The id of the management unit, or 'mine' for the management unit of the logged-in user.
+let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 let agentId = "agentId_example"; // String | The agent id
 
 apiInstance.getWorkforcemanagementManagementunitAgentShifttrades(managementUnitId, agentId)
@@ -3251,7 +3251,7 @@ apiInstance.getWorkforcemanagementManagementunitAgentShifttrades(managementUnitI
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **managementUnitId** | **String** | The id of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+ **managementUnitId** | **String** | The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
  **agentId** | **String** | The agent id |  |
 {: class="table table-striped"}
 
@@ -3289,7 +3289,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
-let managementUnitId = "managementUnitId_example"; // String | The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user.
+let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 
 apiInstance.getWorkforcemanagementManagementunitShifttradesMatched(managementUnitId)
   .then((data) => {
@@ -3306,7 +3306,7 @@ apiInstance.getWorkforcemanagementManagementunitShifttradesMatched(managementUni
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **managementUnitId** | **String** | The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+ **managementUnitId** | **String** | The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -3342,7 +3342,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
-let managementUnitId = "managementUnitId_example"; // String | The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user.
+let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 
 apiInstance.getWorkforcemanagementManagementunitShifttradesUsers(managementUnitId)
   .then((data) => {
@@ -3359,7 +3359,7 @@ apiInstance.getWorkforcemanagementManagementunitShifttradesUsers(managementUnitI
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **managementUnitId** | **String** | The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+ **managementUnitId** | **String** | The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -3395,7 +3395,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
-let managementUnitId = "managementUnitId_example"; // String | The management unit ID of the management unit.
+let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit.
 let timeOffLimitId = "timeOffLimitId_example"; // String | The ID of the time off limit to fetch
 
 apiInstance.getWorkforcemanagementManagementunitTimeofflimit(managementUnitId, timeOffLimitId)
@@ -3413,7 +3413,7 @@ apiInstance.getWorkforcemanagementManagementunitTimeofflimit(managementUnitId, t
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **managementUnitId** | **String** | The management unit ID of the management unit. |  |
+ **managementUnitId** | **String** | The ID of the management unit. |  |
  **timeOffLimitId** | **String** | The ID of the time off limit to fetch |  |
 {: class="table table-striped"}
 
@@ -3451,7 +3451,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
-let managementUnitId = "managementUnitId_example"; // String | The management unit ID of the management unit.
+let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit.
 
 apiInstance.getWorkforcemanagementManagementunitTimeofflimits(managementUnitId)
   .then((data) => {
@@ -3468,7 +3468,7 @@ apiInstance.getWorkforcemanagementManagementunitTimeofflimits(managementUnitId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **managementUnitId** | **String** | The management unit ID of the management unit. |  |
+ **managementUnitId** | **String** | The ID of the management unit. |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -3504,7 +3504,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
-let managementUnitId = "managementUnitId_example"; // String | The management unit ID.
+let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit
 let timeOffPlanId = "timeOffPlanId_example"; // String | The ID of the time off plan to fetch
 
 apiInstance.getWorkforcemanagementManagementunitTimeoffplan(managementUnitId, timeOffPlanId)
@@ -3522,7 +3522,7 @@ apiInstance.getWorkforcemanagementManagementunitTimeoffplan(managementUnitId, ti
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **managementUnitId** | **String** | The management unit ID. |  |
+ **managementUnitId** | **String** | The ID of the management unit |  |
  **timeOffPlanId** | **String** | The ID of the time off plan to fetch |  |
 {: class="table table-striped"}
 
@@ -3559,7 +3559,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
-let managementUnitId = "managementUnitId_example"; // String | The management unit ID.
+let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit
 
 apiInstance.getWorkforcemanagementManagementunitTimeoffplans(managementUnitId)
   .then((data) => {
@@ -3576,7 +3576,7 @@ apiInstance.getWorkforcemanagementManagementunitTimeoffplans(managementUnitId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **managementUnitId** | **String** | The management unit ID. |  |
+ **managementUnitId** | **String** | The ID of the management unit |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -3612,7 +3612,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
-let managementUnitId = "managementUnitId_example"; // String | The muId of the management unit, or 'mine' for the management unit of the logged-in user.
+let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 let userId = "userId_example"; // String | The userId to whom the Time Off Request applies.
 let timeOffRequestId = "timeOffRequestId_example"; // String | Time Off Request Id
 
@@ -3631,7 +3631,7 @@ apiInstance.getWorkforcemanagementManagementunitUserTimeoffrequest(managementUni
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **managementUnitId** | **String** | The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+ **managementUnitId** | **String** | The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
  **userId** | **String** | The userId to whom the Time Off Request applies. |  |
  **timeOffRequestId** | **String** | Time Off Request Id |  |
 {: class="table table-striped"}
@@ -3670,7 +3670,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
-let managementUnitId = "managementUnitId_example"; // String | The management unit ID of the management unit.
+let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit.
 let userId = "userId_example"; // String | The userId to whom the time off request applies.
 let timeOffRequestId = "timeOffRequestId_example"; // String | The ID of the time off request, which dates and activityCodeId determine limit values to retrieve
 
@@ -3689,7 +3689,7 @@ apiInstance.getWorkforcemanagementManagementunitUserTimeoffrequestTimeofflimits(
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **managementUnitId** | **String** | The management unit ID of the management unit. |  |
+ **managementUnitId** | **String** | The ID of the management unit. |  |
  **userId** | **String** | The userId to whom the time off request applies. |  |
  **timeOffRequestId** | **String** | The ID of the time off request, which dates and activityCodeId determine limit values to retrieve |  |
 {: class="table table-striped"}
@@ -3727,7 +3727,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
-let managementUnitId = "managementUnitId_example"; // String | The muId of the management unit, or 'mine' for the management unit of the logged-in user.
+let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 let userId = "userId_example"; // String | The userId to whom the Time Off Request applies.
 let opts = { 
   'recentlyReviewed': false // Boolean | Limit results to requests that have been reviewed within the preceding 30 days
@@ -3748,7 +3748,7 @@ apiInstance.getWorkforcemanagementManagementunitUserTimeoffrequests(managementUn
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **managementUnitId** | **String** | The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+ **managementUnitId** | **String** | The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
  **userId** | **String** | The userId to whom the Time Off Request applies. |  |
  **recentlyReviewed** | **Boolean** | Limit results to requests that have been reviewed within the preceding 30 days | [optional] [default to false] |
 {: class="table table-striped"}
@@ -3793,7 +3793,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
-let managementUnitId = "managementUnitId_example"; // String | The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user.
+let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 
 apiInstance.getWorkforcemanagementManagementunitUsers(managementUnitId)
   .then((data) => {
@@ -3810,7 +3810,7 @@ apiInstance.getWorkforcemanagementManagementunitUsers(managementUnitId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **managementUnitId** | **String** | The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+ **managementUnitId** | **String** | The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -3975,7 +3975,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
-let managementUnitId = "managementUnitId_example"; // String | The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user.
+let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 let weekDateId = "2013-10-20"; // String | The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 let opts = { 
   'evaluateMatches': true // Boolean | Whether to evaluate the matches for violations
@@ -3996,7 +3996,7 @@ apiInstance.getWorkforcemanagementManagementunitWeekShifttrades(managementUnitId
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **managementUnitId** | **String** | The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+ **managementUnitId** | **String** | The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
  **weekDateId** | **String** | The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **evaluateMatches** | **Boolean** | Whether to evaluate the matches for violations | [optional] [default to true] |
 {: class="table table-striped"}
@@ -4537,7 +4537,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
-let timeOffRequestId = "timeOffRequestId_example"; // String | Time Off Request Id
+let timeOffRequestId = "timeOffRequestId_example"; // String | The ID of the time off request
 
 apiInstance.getWorkforcemanagementTimeoffrequest(timeOffRequestId)
   .then((data) => {
@@ -4554,7 +4554,7 @@ apiInstance.getWorkforcemanagementTimeoffrequest(timeOffRequestId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **timeOffRequestId** | **String** | Time Off Request Id |  |
+ **timeOffRequestId** | **String** | The ID of the time off request |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -4590,7 +4590,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
-let timeOffRequestId = "timeOffRequestId_example"; // String | Time Off Request Id
+let timeOffRequestId = "timeOffRequestId_example"; // String | The ID of the time off request
 
 apiInstance.getWorkforcemanagementTimeoffrequestWaitlistpositions(timeOffRequestId)
   .then((data) => {
@@ -4607,7 +4607,7 @@ apiInstance.getWorkforcemanagementTimeoffrequestWaitlistpositions(timeOffRequest
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **timeOffRequestId** | **String** | Time Off Request Id |  |
+ **timeOffRequestId** | **String** | The ID of the time off request |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -5049,7 +5049,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
-let managementUnitId = "managementUnitId_example"; // String | The management unit ID of the management unit.
+let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit.
 let timeOffLimitId = "timeOffLimitId_example"; // String | The id of time off limit object to update
 let opts = { 
   'body': {} // Object | body
@@ -5070,7 +5070,7 @@ apiInstance.patchWorkforcemanagementManagementunitTimeofflimit(managementUnitId,
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **managementUnitId** | **String** | The management unit ID of the management unit. |  |
+ **managementUnitId** | **String** | The ID of the management unit. |  |
  **timeOffLimitId** | **String** | The id of time off limit object to update |  |
  **body** | **Object** | body | [optional]  |
 {: class="table table-striped"}
@@ -5108,7 +5108,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
-let managementUnitId = "managementUnitId_example"; // String | The management unit ID.
+let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit
 let timeOffPlanId = "timeOffPlanId_example"; // String | The ID of the time off plan to update
 let opts = { 
   'body': {} // Object | body
@@ -5129,7 +5129,7 @@ apiInstance.patchWorkforcemanagementManagementunitTimeoffplan(managementUnitId, 
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **managementUnitId** | **String** | The management unit ID. |  |
+ **managementUnitId** | **String** | The ID of the management unit |  |
  **timeOffPlanId** | **String** | The ID of the time off plan to update |  |
  **body** | **Object** | body | [optional]  |
 {: class="table table-striped"}
@@ -5167,7 +5167,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
-let managementUnitId = "managementUnitId_example"; // String | The muId of the management unit, or 'mine' for the management unit of the logged-in user.
+let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 let userId = "userId_example"; // String | The id of the user the requested time off request belongs to
 let timeOffRequestId = "timeOffRequestId_example"; // String | The id of the time off request to update
 let opts = { 
@@ -5189,7 +5189,7 @@ apiInstance.patchWorkforcemanagementManagementunitUserTimeoffrequest(managementU
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **managementUnitId** | **String** | The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+ **managementUnitId** | **String** | The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
  **userId** | **String** | The id of the user the requested time off request belongs to |  |
  **timeOffRequestId** | **String** | The id of the time off request to update |  |
  **body** | **Object** | body | [optional]  |
@@ -5228,7 +5228,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
-let managementUnitId = "managementUnitId_example"; // String | The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user.
+let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 let weekDateId = "2013-10-20"; // String | The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 let body = {}; // Object | body
 let tradeId = "tradeId_example"; // String | The ID of the shift trade to update
@@ -5248,7 +5248,7 @@ apiInstance.patchWorkforcemanagementManagementunitWeekShifttrade(managementUnitI
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **managementUnitId** | **String** | The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+ **managementUnitId** | **String** | The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
  **weekDateId** | **String** | The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **body** | **Object** | body |  |
  **tradeId** | **String** | The ID of the shift trade to update |  |
@@ -5407,7 +5407,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
-let timeOffRequestId = "timeOffRequestId_example"; // String | Time Off Request Id
+let timeOffRequestId = "timeOffRequestId_example"; // String | The ID of the time off request
 let opts = { 
   'body': {} // Object | body
 };
@@ -5427,7 +5427,7 @@ apiInstance.patchWorkforcemanagementTimeoffrequest(timeOffRequestId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **timeOffRequestId** | **String** | Time Off Request Id |  |
+ **timeOffRequestId** | **String** | The ID of the time off request |  |
  **body** | **Object** | body | [optional]  |
 {: class="table table-striped"}
 
@@ -5693,7 +5693,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
-let businessUnitId = "businessUnitId_example"; // String | The business unit ID of the business unit
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
 let opts = { 
   'forceAsync': true, // Boolean | Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes
   'body': {} // Object | body
@@ -5714,7 +5714,7 @@ apiInstance.postWorkforcemanagementBusinessunitIntraday(businessUnitId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **businessUnitId** | **String** | The business unit ID of the business unit |  |
+ **businessUnitId** | **String** | The ID of the business unit |  |
  **forceAsync** | **Boolean** | Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes | [optional]  |
  **body** | **Object** | body | [optional]  |
 {: class="table table-striped"}
@@ -6396,7 +6396,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
-let businessUnitId = "businessUnitId_example"; // String | The business unit ID of the business unit to which the forecast belongs
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit to which the forecast belongs
 let weekDateId = "2013-10-20"; // String | The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 let forecastId = "forecastId_example"; // String | The ID of the forecast to copy
 let body = {}; // Object | body
@@ -6419,7 +6419,7 @@ apiInstance.postWorkforcemanagementBusinessunitWeekShorttermforecastCopy(busines
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **businessUnitId** | **String** | The business unit ID of the business unit to which the forecast belongs |  |
+ **businessUnitId** | **String** | The ID of the business unit to which the forecast belongs |  |
  **weekDateId** | **String** | The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **forecastId** | **String** | The ID of the forecast to copy |  |
  **body** | **Object** | body |  |
@@ -6459,7 +6459,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
-let businessUnitId = "businessUnitId_example"; // String | The business unit ID of the business unit to which the forecast belongs
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit to which the forecast belongs
 let weekDateId = "2013-10-20"; // String | The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 let body = {}; // Object | 
 let opts = { 
@@ -6481,7 +6481,7 @@ apiInstance.postWorkforcemanagementBusinessunitWeekShorttermforecastsGenerate(bu
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **businessUnitId** | **String** | The business unit ID of the business unit to which the forecast belongs |  |
+ **businessUnitId** | **String** | The ID of the business unit to which the forecast belongs |  |
  **weekDateId** | **String** | The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **body** | **Object** |  |  |
  **forceAsync** | **Boolean** | Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes | [optional]  |
@@ -6520,7 +6520,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
-let businessUnitId = "businessUnitId_example"; // String | The business unit ID of the business unit to which the forecast belongs
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit to which the forecast belongs
 let weekDateId = "2013-10-20"; // String | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 let body = {}; // Object | 
 
@@ -6539,7 +6539,7 @@ apiInstance.postWorkforcemanagementBusinessunitWeekShorttermforecastsImport(busi
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **businessUnitId** | **String** | The business unit ID of the business unit to which the forecast belongs |  |
+ **businessUnitId** | **String** | The ID of the business unit to which the forecast belongs |  |
  **weekDateId** | **String** | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **body** | **Object** |  |  |
 {: class="table table-striped"}
@@ -6577,7 +6577,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
-let businessUnitId = "businessUnitId_example"; // String | The business unit ID of the business unit to which the forecast belongs
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit to which the forecast belongs
 let weekDateId = "2013-10-20"; // String | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 let body = {}; // Object | body
 
@@ -6596,7 +6596,7 @@ apiInstance.postWorkforcemanagementBusinessunitWeekShorttermforecastsImportUploa
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **businessUnitId** | **String** | The business unit ID of the business unit to which the forecast belongs |  |
+ **businessUnitId** | **String** | The ID of the business unit to which the forecast belongs |  |
  **weekDateId** | **String** | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **body** | **Object** | body |  |
 {: class="table table-striped"}
@@ -6849,7 +6849,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
-let managementUnitId = "managementUnitId_example"; // String | The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user.
+let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 let opts = { 
   'body': {}, // Object | body
   'forceAsync': true, // Boolean | Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes
@@ -6871,7 +6871,7 @@ apiInstance.postWorkforcemanagementManagementunitAgentschedulesSearch(management
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **managementUnitId** | **String** | The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+ **managementUnitId** | **String** | The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
  **body** | **Object** | body | [optional]  |
  **forceAsync** | **Boolean** | Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes | [optional]  |
  **forceDownloadService** | **Boolean** | Force the result of this operation to be sent via download service.  For testing/app development purposes | [optional]  |
@@ -6910,7 +6910,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
-let managementUnitId = "managementUnitId_example"; // String | The management unit ID of the management unit
+let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit
 let opts = { 
   'body': {} // Object | body
 };
@@ -6930,7 +6930,7 @@ apiInstance.postWorkforcemanagementManagementunitHistoricaladherencequery(manage
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **managementUnitId** | **String** | The management unit ID of the management unit |  |
+ **managementUnitId** | **String** | The ID of the management unit |  |
  **body** | **Object** | body | [optional]  |
 {: class="table table-striped"}
 
@@ -7025,7 +7025,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
-let managementUnitId = "managementUnitId_example"; // String | The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user.
+let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 let opts = { 
   'body': {} // Object | body
 };
@@ -7045,7 +7045,7 @@ apiInstance.postWorkforcemanagementManagementunitSchedulesSearch(managementUnitI
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **managementUnitId** | **String** | The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+ **managementUnitId** | **String** | The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
  **body** | **Object** | body | [optional]  |
 {: class="table table-striped"}
 
@@ -7082,7 +7082,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
-let managementUnitId = "managementUnitId_example"; // String | The management unit ID of the management unit.
+let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit.
 let opts = { 
   'body': {} // Object | body
 };
@@ -7102,7 +7102,7 @@ apiInstance.postWorkforcemanagementManagementunitTimeofflimits(managementUnitId,
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **managementUnitId** | **String** | The management unit ID of the management unit. |  |
+ **managementUnitId** | **String** | The ID of the management unit. |  |
  **body** | **Object** | body | [optional]  |
 {: class="table table-striped"}
 
@@ -7139,7 +7139,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
-let managementUnitId = "managementUnitId_example"; // String | The management unit ID of the management unit.
+let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit.
 let opts = { 
   'body': {} // Object | body
 };
@@ -7159,7 +7159,7 @@ apiInstance.postWorkforcemanagementManagementunitTimeofflimitsValuesQuery(manage
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **managementUnitId** | **String** | The management unit ID of the management unit. |  |
+ **managementUnitId** | **String** | The ID of the management unit. |  |
  **body** | **Object** | body | [optional]  |
 {: class="table table-striped"}
 
@@ -7196,7 +7196,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
-let managementUnitId = "managementUnitId_example"; // String | The management unit ID.
+let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit
 let opts = { 
   'body': {} // Object | body
 };
@@ -7216,7 +7216,7 @@ apiInstance.postWorkforcemanagementManagementunitTimeoffplans(managementUnitId, 
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **managementUnitId** | **String** | The management unit ID. |  |
+ **managementUnitId** | **String** | The ID of the management unit |  |
  **body** | **Object** | body | [optional]  |
 {: class="table table-striped"}
 
@@ -7253,7 +7253,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
-let managementUnitId = "managementUnitId_example"; // String | The muId of the management unit, or 'mine' for the management unit of the logged-in user.
+let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 let opts = { 
   'body': {} // Object | body
 };
@@ -7273,7 +7273,7 @@ apiInstance.postWorkforcemanagementManagementunitTimeoffrequests(managementUnitI
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **managementUnitId** | **String** | The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+ **managementUnitId** | **String** | The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
  **body** | **Object** | body | [optional]  |
 {: class="table table-striped"}
 
@@ -7310,7 +7310,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
-let managementUnitId = "managementUnitId_example"; // String | The muId of the management unit, or 'mine' for the management unit of the logged-in user.
+let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 let opts = { 
   'body': {} // Object | body
 };
@@ -7330,7 +7330,7 @@ apiInstance.postWorkforcemanagementManagementunitTimeoffrequestsQuery(management
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **managementUnitId** | **String** | The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+ **managementUnitId** | **String** | The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
  **body** | **Object** | body | [optional]  |
 {: class="table table-striped"}
 
@@ -7367,7 +7367,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
-let managementUnitId = "managementUnitId_example"; // String | The management unit ID of the management unit.
+let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit.
 let opts = { 
   'body': {} // Object | body
 };
@@ -7387,7 +7387,7 @@ apiInstance.postWorkforcemanagementManagementunitTimeoffrequestsWaitlistposition
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **managementUnitId** | **String** | The management unit ID of the management unit. |  |
+ **managementUnitId** | **String** | The ID of the management unit. |  |
  **body** | **Object** | body | [optional]  |
 {: class="table table-striped"}
 
@@ -7424,7 +7424,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
-let managementUnitId = "managementUnitId_example"; // String | The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user.
+let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 let weekDateId = "2013-10-20"; // String | The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 let body = {}; // Object | body
 let tradeId = "tradeId_example"; // String | The ID of the shift trade to update
@@ -7444,7 +7444,7 @@ apiInstance.postWorkforcemanagementManagementunitWeekShifttradeMatch(managementU
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **managementUnitId** | **String** | The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+ **managementUnitId** | **String** | The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
  **weekDateId** | **String** | The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **body** | **Object** | body |  |
  **tradeId** | **String** | The ID of the shift trade to update |  |
@@ -7483,7 +7483,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
-let managementUnitId = "managementUnitId_example"; // String | The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user.
+let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 let weekDateId = "2013-10-20"; // String | The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 let body = {}; // Object | body
 
@@ -7502,7 +7502,7 @@ apiInstance.postWorkforcemanagementManagementunitWeekShifttrades(managementUnitI
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **managementUnitId** | **String** | The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+ **managementUnitId** | **String** | The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
  **weekDateId** | **String** | The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **body** | **Object** | body |  |
 {: class="table table-striped"}
@@ -7540,7 +7540,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
-let managementUnitId = "managementUnitId_example"; // String | The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user.
+let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 let weekDateId = "2013-10-20"; // String | The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 let body = {}; // Object | body
 
@@ -7559,7 +7559,7 @@ apiInstance.postWorkforcemanagementManagementunitWeekShifttradesSearch(managemen
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **managementUnitId** | **String** | The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+ **managementUnitId** | **String** | The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
  **weekDateId** | **String** | The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **body** | **Object** | body |  |
 {: class="table table-striped"}
@@ -7598,7 +7598,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
-let managementUnitId = "managementUnitId_example"; // String | The management unit ID of the management unit, or 'mine' for the management unit of the logged-in user.
+let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 let weekDateId = "2013-10-20"; // String | The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 let body = {}; // Object | body
 let opts = { 
@@ -7620,7 +7620,7 @@ apiInstance.postWorkforcemanagementManagementunitWeekShifttradesStateBulk(manage
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **managementUnitId** | **String** | The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+ **managementUnitId** | **String** | The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
  **weekDateId** | **String** | The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **body** | **Object** | body |  |
  **forceAsync** | **Boolean** | Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes | [optional]  |
@@ -8229,7 +8229,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
-let managementUnitId = "managementUnitId_example"; // String | The management unit ID of the management unit.
+let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit.
 let timeOffLimitId = "timeOffLimitId_example"; // String | The ID of the time off limit object to set values for
 let opts = { 
   'body': {} // Object | body
@@ -8250,7 +8250,7 @@ apiInstance.putWorkforcemanagementManagementunitTimeofflimitValues(managementUni
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **managementUnitId** | **String** | The management unit ID of the management unit. |  |
+ **managementUnitId** | **String** | The ID of the management unit. |  |
  **timeOffLimitId** | **String** | The ID of the time off limit object to set values for |  |
  **body** | **Object** | body | [optional]  |
 {: class="table table-striped"}

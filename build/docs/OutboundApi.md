@@ -20,6 +20,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**deleteOutboundContactlists**](OutboundApi.html#deleteOutboundContactlists) | **DELETE** /api/v2/outbound/contactlists | Delete multiple contact lists.
 [**deleteOutboundDnclist**](OutboundApi.html#deleteOutboundDnclist) | **DELETE** /api/v2/outbound/dnclists/{dncListId} | Delete dialer DNC list
 [**deleteOutboundMessagingcampaign**](OutboundApi.html#deleteOutboundMessagingcampaign) | **DELETE** /api/v2/outbound/messagingcampaigns/{messagingCampaignId} | Delete an Outbound Messaging Campaign
+[**deleteOutboundMessagingcampaignProgress**](OutboundApi.html#deleteOutboundMessagingcampaignProgress) | **DELETE** /api/v2/outbound/messagingcampaigns/{messagingCampaignId}/progress | Reset messaging campaign progress and recycle the messaging campaign
 [**deleteOutboundRuleset**](OutboundApi.html#deleteOutboundRuleset) | **DELETE** /api/v2/outbound/rulesets/{ruleSetId} | Delete a Rule Set.
 [**deleteOutboundSchedulesCampaign**](OutboundApi.html#deleteOutboundSchedulesCampaign) | **DELETE** /api/v2/outbound/schedules/campaigns/{campaignId} | Delete a dialer campaign schedule.
 [**deleteOutboundSchedulesSequence**](OutboundApi.html#deleteOutboundSchedulesSequence) | **DELETE** /api/v2/outbound/schedules/sequences/{sequenceId} | Delete a dialer sequence schedule.
@@ -812,6 +813,60 @@ apiInstance.deleteOutboundMessagingcampaign(messagingCampaignId)
 ### Return type
 
 **MessagingCampaign**
+
+<a name="deleteOutboundMessagingcampaignProgress"></a>
+
+# void deleteOutboundMessagingcampaignProgress(messagingCampaignId)
+
+
+
+DELETE /api/v2/outbound/messagingcampaigns/{messagingCampaignId}/progress
+
+Reset messaging campaign progress and recycle the messaging campaign
+
+
+
+Requires ANY permissions: 
+
+* outbound:messagingCampaign:edit
+* outbound:emailCampaign:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OutboundApi();
+
+let messagingCampaignId = "messagingCampaignId_example"; // String | The Messaging Campaign ID
+
+apiInstance.deleteOutboundMessagingcampaignProgress(messagingCampaignId)
+  .then(() => {
+    console.log('deleteOutboundMessagingcampaignProgress returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteOutboundMessagingcampaignProgress');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **messagingCampaignId** | **String** | The Messaging Campaign ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
 
 <a name="deleteOutboundRuleset"></a>
 

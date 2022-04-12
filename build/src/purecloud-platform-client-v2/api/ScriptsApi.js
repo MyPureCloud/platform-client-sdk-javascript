@@ -5,7 +5,7 @@ class ScriptsApi {
 	/**
 	 * Scripts service.
 	 * @module purecloud-platform-client-v2/api/ScriptsApi
-	 * @version 134.0.1
+	 * @version 135.0.0
 	 */
 
 	/**
@@ -121,6 +121,7 @@ class ScriptsApi {
 	 * @param {Object} opts.sortBy SortBy
 	 * @param {Object} opts.sortOrder SortOrder
 	 * @param {String} opts.scriptDataVersion Advanced usage - controls the data version of the script
+	 * @param {String} opts.divisionIds Filters scripts to requested divisionIds
 	 */
 	getScripts(opts) { 
 		opts = opts || {};
@@ -130,7 +131,40 @@ class ScriptsApi {
 			'/api/v2/scripts', 
 			'GET', 
 			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'expand': opts['expand'],'name': opts['name'],'feature': opts['feature'],'flowId': opts['flowId'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'scriptDataVersion': opts['scriptDataVersion'] }, 
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'expand': opts['expand'],'name': opts['name'],'feature': opts['feature'],'flowId': opts['flowId'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'scriptDataVersion': opts['scriptDataVersion'],'divisionIds': opts['divisionIds'] }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get the metadata for a list of scripts
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {String} opts.expand Expand
+	 * @param {String} opts.name Name filter
+	 * @param {String} opts.feature Feature filter
+	 * @param {String} opts.flowId Secure flow id filter
+	 * @param {Object} opts.sortBy SortBy
+	 * @param {Object} opts.sortOrder SortOrder
+	 * @param {String} opts.scriptDataVersion Advanced usage - controls the data version of the script
+	 * @param {String} opts.divisionIds Filters scripts to requested divisionIds
+	 */
+	getScriptsDivisionviews(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/scripts/divisionviews', 
+			'GET', 
+			{  }, 
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'expand': opts['expand'],'name': opts['name'],'feature': opts['feature'],'flowId': opts['flowId'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'scriptDataVersion': opts['scriptDataVersion'],'divisionIds': opts['divisionIds'] }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -151,6 +185,7 @@ class ScriptsApi {
 	 * @param {String} opts.feature Feature filter
 	 * @param {String} opts.flowId Secure flow id filter
 	 * @param {String} opts.scriptDataVersion Advanced usage - controls the data version of the script
+	 * @param {String} opts.divisionIds Filters scripts to requested divisionIds
 	 */
 	getScriptsPublished(opts) { 
 		opts = opts || {};
@@ -160,7 +195,38 @@ class ScriptsApi {
 			'/api/v2/scripts/published', 
 			'GET', 
 			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'expand': opts['expand'],'name': opts['name'],'feature': opts['feature'],'flowId': opts['flowId'],'scriptDataVersion': opts['scriptDataVersion'] }, 
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'expand': opts['expand'],'name': opts['name'],'feature': opts['feature'],'flowId': opts['flowId'],'scriptDataVersion': opts['scriptDataVersion'],'divisionIds': opts['divisionIds'] }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get the published scripts metadata.
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {String} opts.expand Expand
+	 * @param {String} opts.name Name filter
+	 * @param {String} opts.feature Feature filter
+	 * @param {String} opts.flowId Secure flow id filter
+	 * @param {String} opts.scriptDataVersion Advanced usage - controls the data version of the script
+	 * @param {String} opts.divisionIds Filters scripts to requested divisionIds
+	 */
+	getScriptsPublishedDivisionviews(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/scripts/published/divisionviews', 
+			'GET', 
+			{  }, 
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'expand': opts['expand'],'name': opts['name'],'feature': opts['feature'],'flowId': opts['flowId'],'scriptDataVersion': opts['scriptDataVersion'],'divisionIds': opts['divisionIds'] }, 
 			{  }, 
 			{  }, 
 			null, 

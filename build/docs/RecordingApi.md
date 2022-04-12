@@ -1080,7 +1080,8 @@ let opts = {
   'name': "name_example", // String | the policy name - used for filtering results in searches.
   'enabled': true, // Boolean | checks to see if policy is enabled - use enabled = true or enabled = false
   'summary': false, // Boolean | provides a less verbose response of policy lists.
-  'hasErrors': true // Boolean | provides a way to fetch all policies with errors or policies that do not have errors
+  'hasErrors': true, // Boolean | provides a way to fetch all policies with errors or policies that do not have errors
+  'deleteDaysThreshold': 56 // Number | provides a way to fetch all policies with any actions having deleteDays exceeding the provided value
 };
 
 apiInstance.getRecordingCrossplatformMediaretentionpolicies(opts)
@@ -1108,6 +1109,7 @@ apiInstance.getRecordingCrossplatformMediaretentionpolicies(opts)
  **enabled** | **Boolean** | checks to see if policy is enabled - use enabled = true or enabled = false | [optional]  |
  **summary** | **Boolean** | provides a less verbose response of policy lists. | [optional] [default to false] |
  **hasErrors** | **Boolean** | provides a way to fetch all policies with errors or policies that do not have errors | [optional]  |
+ **deleteDaysThreshold** | **Number** | provides a way to fetch all policies with any actions having deleteDays exceeding the provided value | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1492,7 +1494,8 @@ let opts = {
   'name': "name_example", // String | the policy name - used for filtering results in searches.
   'enabled': true, // Boolean | checks to see if policy is enabled - use enabled = true or enabled = false
   'summary': false, // Boolean | provides a less verbose response of policy lists.
-  'hasErrors': true // Boolean | provides a way to fetch all policies with errors or policies that do not have errors
+  'hasErrors': true, // Boolean | provides a way to fetch all policies with errors or policies that do not have errors
+  'deleteDaysThreshold': 56 // Number | provides a way to fetch all policies with any actions having deleteDays exceeding the provided value
 };
 
 apiInstance.getRecordingMediaretentionpolicies(opts)
@@ -1520,6 +1523,7 @@ apiInstance.getRecordingMediaretentionpolicies(opts)
  **enabled** | **Boolean** | checks to see if policy is enabled - use enabled = true or enabled = false | [optional]  |
  **summary** | **Boolean** | provides a less verbose response of policy lists. | [optional] [default to false] |
  **hasErrors** | **Boolean** | provides a way to fetch all policies with errors or policies that do not have errors | [optional]  |
+ **deleteDaysThreshold** | **Number** | provides a way to fetch all policies with any actions having deleteDays exceeding the provided value | [optional]  |
 {: class="table table-striped"}
 
 ### Return type

@@ -5,7 +5,7 @@ class PresenceApi {
 	/**
 	 * Presence service.
 	 * @module purecloud-platform-client-v2/api/PresenceApi
-	 * @version 134.0.1
+	 * @version 135.0.0
 	 */
 
 	/**
@@ -152,31 +152,6 @@ class PresenceApi {
 	}
 
 	/**
-	 * Get a user&#39;s Microsoft Teams presence.
-	 * Gets the presence for a Microsoft Teams user.  This will return the Microsoft Teams presence mapped to Genesys Cloud presence with additional activity details in the message field. This presence source is read-only.
-	 * @param {String} userId user Id
-	 */
-	getUserPresencesMicrosoftteams(userId) { 
-		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
-			throw 'Missing the required parameter "userId" when calling getUserPresencesMicrosoftteams';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/users/{userId}/presences/microsoftteams', 
-			'GET', 
-			{ 'userId': userId }, 
-			{  }, 
-			{  }, 
-			{  }, 
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'], 
-			['application/json']
-		);
-	}
-
-	/**
 	 * Get a user&#39;s Genesys Cloud presence.
 	 * Get the default Genesys Cloud user presence source PURECLOUD
 	 * @param {String} userId user Id
@@ -189,31 +164,6 @@ class PresenceApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/users/{userId}/presences/purecloud', 
-			'GET', 
-			{ 'userId': userId }, 
-			{  }, 
-			{  }, 
-			{  }, 
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'], 
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get a user&#39;s Zoom Phone presence.
-	 * Gets the presence for a Zoom user.  This will return the Zoom Phone presence mapped to Genesys Cloud presence with additional activity details in the message field. This presence source is read-only.
-	 * @param {String} userId user Id
-	 */
-	getUserPresencesZoomphone(userId) { 
-		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
-			throw 'Missing the required parameter "userId" when calling getUserPresencesZoomphone';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/users/{userId}/presences/zoomphone', 
 			'GET', 
 			{ 'userId': userId }, 
 			{  }, 

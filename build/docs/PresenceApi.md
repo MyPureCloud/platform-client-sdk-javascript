@@ -12,9 +12,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getPresencedefinitions**](PresenceApi.html#getPresencedefinitions) | **GET** /api/v2/presencedefinitions | Get an Organization&#39;s list of Presence Definitions
 [**getSystempresences**](PresenceApi.html#getSystempresences) | **GET** /api/v2/systempresences | Get the list of SystemPresences
 [**getUserPresence**](PresenceApi.html#getUserPresence) | **GET** /api/v2/users/{userId}/presences/{sourceId} | Get a user&#39;s Presence
-[**getUserPresencesMicrosoftteams**](PresenceApi.html#getUserPresencesMicrosoftteams) | **GET** /api/v2/users/{userId}/presences/microsoftteams | Get a user&#39;s Microsoft Teams presence.
 [**getUserPresencesPurecloud**](PresenceApi.html#getUserPresencesPurecloud) | **GET** /api/v2/users/{userId}/presences/purecloud | Get a user&#39;s Genesys Cloud presence.
-[**getUserPresencesZoomphone**](PresenceApi.html#getUserPresencesZoomphone) | **GET** /api/v2/users/{userId}/presences/zoomphone | Get a user&#39;s Zoom Phone presence.
 [**patchUserPresence**](PresenceApi.html#patchUserPresence) | **PATCH** /api/v2/users/{userId}/presences/{sourceId} | Patch a user&#39;s Presence
 [**patchUserPresencesPurecloud**](PresenceApi.html#patchUserPresencesPurecloud) | **PATCH** /api/v2/users/{userId}/presences/purecloud | Patch a Genesys Cloud user&#39;s presence
 [**postPresencedefinitions**](PresenceApi.html#postPresencedefinitions) | **POST** /api/v2/presencedefinitions | Create a Presence Definition
@@ -292,60 +290,6 @@ apiInstance.getUserPresence(userId, sourceId)
 
 **UserPresence**
 
-<a name="getUserPresencesMicrosoftteams"></a>
-
-# PresenceExpand getUserPresencesMicrosoftteams(userId)
-
-
-
-GET /api/v2/users/{userId}/presences/microsoftteams
-
-Get a user&#39;s Microsoft Teams presence.
-
-Gets the presence for a Microsoft Teams user.  This will return the Microsoft Teams presence mapped to Genesys Cloud presence with additional activity details in the message field. This presence source is read-only.
-
-Requires ANY permissions: 
-
-* integration:microsoftTeams:view
-* integrations:integration:view
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.PresenceApi();
-
-let userId = "userId_example"; // String | user Id
-
-apiInstance.getUserPresencesMicrosoftteams(userId)
-  .then((data) => {
-    console.log(`getUserPresencesMicrosoftteams success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch((err) => {
-    console.log('There was a failure calling getUserPresencesMicrosoftteams');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **userId** | **String** | user Id |  |
-{: class="table table-striped"}
-
-### Return type
-
-**PresenceExpand**
-
 <a name="getUserPresencesPurecloud"></a>
 
 # UserPresence getUserPresencesPurecloud(userId)
@@ -397,60 +341,6 @@ apiInstance.getUserPresencesPurecloud(userId)
 ### Return type
 
 **UserPresence**
-
-<a name="getUserPresencesZoomphone"></a>
-
-# PresenceExpand getUserPresencesZoomphone(userId)
-
-
-
-GET /api/v2/users/{userId}/presences/zoomphone
-
-Get a user&#39;s Zoom Phone presence.
-
-Gets the presence for a Zoom user.  This will return the Zoom Phone presence mapped to Genesys Cloud presence with additional activity details in the message field. This presence source is read-only.
-
-Requires ANY permissions: 
-
-* integration:zoomPhone:view
-* integrations:integration:view
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.PresenceApi();
-
-let userId = "userId_example"; // String | user Id
-
-apiInstance.getUserPresencesZoomphone(userId)
-  .then((data) => {
-    console.log(`getUserPresencesZoomphone success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch((err) => {
-    console.log('There was a failure calling getUserPresencesZoomphone');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **userId** | **String** | user Id |  |
-{: class="table table-striped"}
-
-### Return type
-
-**PresenceExpand**
 
 <a name="patchUserPresence"></a>
 

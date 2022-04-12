@@ -5,7 +5,7 @@ class OutboundApi {
 	/**
 	 * Outbound service.
 	 * @module purecloud-platform-client-v2/api/OutboundApi
-	 * @version 134.0.1
+	 * @version 135.0.0
 	 */
 
 	/**
@@ -343,6 +343,31 @@ class OutboundApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/outbound/messagingcampaigns/{messagingCampaignId}', 
+			'DELETE', 
+			{ 'messagingCampaignId': messagingCampaignId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Reset messaging campaign progress and recycle the messaging campaign
+	 * 
+	 * @param {String} messagingCampaignId The Messaging Campaign ID
+	 */
+	deleteOutboundMessagingcampaignProgress(messagingCampaignId) { 
+		// verify the required parameter 'messagingCampaignId' is set
+		if (messagingCampaignId === undefined || messagingCampaignId === null) {
+			throw 'Missing the required parameter "messagingCampaignId" when calling deleteOutboundMessagingcampaignProgress';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/outbound/messagingcampaigns/{messagingCampaignId}/progress', 
 			'DELETE', 
 			{ 'messagingCampaignId': messagingCampaignId }, 
 			{  }, 
