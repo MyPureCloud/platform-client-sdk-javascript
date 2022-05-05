@@ -5,7 +5,7 @@ class IntegrationsApi {
 	/**
 	 * Integrations service.
 	 * @module purecloud-platform-client-v2/api/IntegrationsApi
-	 * @version 135.0.0
+	 * @version 136.0.0
 	 */
 
 	/**
@@ -423,9 +423,10 @@ class IntegrationsApi {
 	 * @param {String} opts.previousPage Previous page token
 	 * @param {String} opts.sortBy Root level field name to sort on.
 	 * @param {Object} opts.sortOrder Direction to sort &#39;sortBy&#39; field. (default to asc)
-	 * @param {String} opts.category Filter by category name
-	 * @param {String} opts.name Filter by action name. Provide full or just the first part of name.
-	 * @param {Object} opts.secure Filter to only include secure actions. True will only include actions marked secured. False will include only unsecure actions. Do not use filter if you want all Actions.
+	 * @param {String} opts.category Filter by category name.
+	 * @param {String} opts.name Filter by partial or complete action name.
+	 * @param {String} opts.ids Filter by action Id. Can be a comma separated list to request multiple actions.  Limit of 50 Ids.
+	 * @param {Object} opts.secure Filter based on &#39;secure&#39; configuration option. True will only return actions marked as secure. False will return only non-secure actions. Do not use filter if you want all Actions.
 	 * @param {Object} opts.includeAuthActions Whether or not to include authentication actions in the response. These actions are not directly executable. Some integrations create them and will run them as needed to refresh authentication information for other actions. (default to false)
 	 */
 	getIntegrationsActions(opts) { 
@@ -436,7 +437,7 @@ class IntegrationsApi {
 			'/api/v2/integrations/actions', 
 			'GET', 
 			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'nextPage': opts['nextPage'],'previousPage': opts['previousPage'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'category': opts['category'],'name': opts['name'],'secure': opts['secure'],'includeAuthActions': opts['includeAuthActions'] }, 
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'nextPage': opts['nextPage'],'previousPage': opts['previousPage'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'category': opts['category'],'name': opts['name'],'ids': opts['ids'],'secure': opts['secure'],'includeAuthActions': opts['includeAuthActions'] }, 
 			{  }, 
 			{  }, 
 			null, 
@@ -486,9 +487,10 @@ class IntegrationsApi {
 	 * @param {String} opts.previousPage Previous page token
 	 * @param {String} opts.sortBy Root level field name to sort on.
 	 * @param {Object} opts.sortOrder Direction to sort &#39;sortBy&#39; field. (default to asc)
-	 * @param {String} opts.category Filter by category name
-	 * @param {String} opts.name Filter by action name. Provide full or just the first part of name.
-	 * @param {Object} opts.secure Filter to only include secure actions. True will only include actions marked secured. False will include only unsecure actions. Do not use filter if you want all Actions.
+	 * @param {String} opts.category Filter by category name.
+	 * @param {String} opts.name Filter by partial or complete action name.
+	 * @param {String} opts.ids Filter by action Id. Can be a comma separated list to request multiple actions.  Limit of 50 Ids.
+	 * @param {Object} opts.secure Filter based on &#39;secure&#39; configuration option. True will only return actions marked as secure. False will return only non-secure actions. Do not use filter if you want all Actions.
 	 * @param {Object} opts.includeAuthActions Whether or not to include authentication actions in the response. These actions are not directly executable. Some integrations create them and will run them as needed to refresh authentication information for other actions. (default to false)
 	 */
 	getIntegrationsActionsDrafts(opts) { 
@@ -499,7 +501,7 @@ class IntegrationsApi {
 			'/api/v2/integrations/actions/drafts', 
 			'GET', 
 			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'nextPage': opts['nextPage'],'previousPage': opts['previousPage'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'category': opts['category'],'name': opts['name'],'secure': opts['secure'],'includeAuthActions': opts['includeAuthActions'] }, 
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'nextPage': opts['nextPage'],'previousPage': opts['previousPage'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'category': opts['category'],'name': opts['name'],'ids': opts['ids'],'secure': opts['secure'],'includeAuthActions': opts['includeAuthActions'] }, 
 			{  }, 
 			{  }, 
 			null, 

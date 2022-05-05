@@ -5,7 +5,7 @@ class NotificationsApi {
 	/**
 	 * Notifications service.
 	 * @module purecloud-platform-client-v2/api/NotificationsApi
-	 * @version 135.0.0
+	 * @version 136.0.0
 	 */
 
 	/**

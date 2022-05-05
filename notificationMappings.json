@@ -14,7 +14,7 @@
     },
     {
       "topic": "v2.analytics.flow.{id}.metrics",
-      "class": "FlowMetricsTopicConversationMetricRecord"
+      "class": "FlowMetricsTopicFlowMetricRecord"
     },
     {
       "topic": "v2.analytics.flowoutcome.{id}.aggregates",

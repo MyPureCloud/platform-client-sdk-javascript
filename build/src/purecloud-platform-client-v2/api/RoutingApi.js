@@ -5,7 +5,7 @@ class RoutingApi {
 	/**
 	 * Routing service.
 	 * @module purecloud-platform-client-v2/api/RoutingApi
-	 * @version 135.0.0
+	 * @version 136.0.0
 	 */
 
 	/**
@@ -664,14 +664,18 @@ class RoutingApi {
 	/**
 	 * Get domains
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.excludeStatus Exclude MX record data (default to false)
 	 */
-	getRoutingEmailDomains() { 
+	getRoutingEmailDomains(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/routing/email/domains', 
 			'GET', 
 			{  }, 
-			{  }, 
+			{ 'excludeStatus': opts['excludeStatus'] }, 
 			{  }, 
 			{  }, 
 			null, 

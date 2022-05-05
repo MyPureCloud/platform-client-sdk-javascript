@@ -5,7 +5,7 @@ class RecordingApi {
 	/**
 	 * Recording service.
 	 * @module purecloud-platform-client-v2/api/RecordingApi
-	 * @version 135.0.0
+	 * @version 136.0.0
 	 */
 
 	/**
@@ -662,6 +662,51 @@ class RecordingApi {
 	}
 
 	/**
+	 * Get the encryption key configurations
+	 * 
+	 * @param {String} keyConfigurationId Key Configurations Id
+	 */
+	getRecordingKeyconfiguration(keyConfigurationId) { 
+		// verify the required parameter 'keyConfigurationId' is set
+		if (keyConfigurationId === undefined || keyConfigurationId === null) {
+			throw 'Missing the required parameter "keyConfigurationId" when calling getRecordingKeyconfiguration';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/recording/keyconfigurations/{keyConfigurationId}', 
+			'GET', 
+			{ 'keyConfigurationId': keyConfigurationId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a list of key configurations data
+	 * 
+	 */
+	getRecordingKeyconfigurations() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/recording/keyconfigurations', 
+			'GET', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get the local encryption settings
 	 * 
 	 * @param {String} settingsId Settings Id
@@ -1034,8 +1079,8 @@ class RecordingApi {
 	}
 
 	/**
-	 * Create a recording bulk job
-	 * 
+	 * Create a recording bulk job.
+	 * Each organization can run up to a maximum of two concurrent jobs that are either in pending or processing state.
 	 * @param {Object} body query
 	 */
 	postRecordingJobs(body) { 
@@ -1046,6 +1091,56 @@ class RecordingApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/recording/jobs', 
+			'POST', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Setup configurations for encryption key creation
+	 * 
+	 * @param {Object} body Encryption Configuration
+	 */
+	postRecordingKeyconfigurations(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postRecordingKeyconfigurations';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/recording/keyconfigurations', 
+			'POST', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Validate encryption key configurations without saving it
+	 * 
+	 * @param {Object} body Encryption Configuration
+	 */
+	postRecordingKeyconfigurationsValidate(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postRecordingKeyconfigurationsValidate';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/recording/keyconfigurations/validate', 
 			'POST', 
 			{  }, 
 			{  }, 
@@ -1382,6 +1477,36 @@ class RecordingApi {
 			'/api/v2/recording/jobs/{jobId}', 
 			'PUT', 
 			{ 'jobId': jobId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update the encryption key configurations
+	 * 
+	 * @param {String} keyConfigurationId Key Configurations Id
+	 * @param {Object} body Encryption key configuration metadata
+	 */
+	putRecordingKeyconfiguration(keyConfigurationId, body) { 
+		// verify the required parameter 'keyConfigurationId' is set
+		if (keyConfigurationId === undefined || keyConfigurationId === null) {
+			throw 'Missing the required parameter "keyConfigurationId" when calling putRecordingKeyconfiguration';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putRecordingKeyconfiguration';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/recording/keyconfigurations/{keyConfigurationId}', 
+			'PUT', 
+			{ 'keyConfigurationId': keyConfigurationId }, 
 			{  }, 
 			{  }, 
 			{  }, 

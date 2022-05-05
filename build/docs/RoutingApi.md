@@ -1424,7 +1424,7 @@ apiInstance.getRoutingEmailDomainRoutes(domainName, opts)
 
 <a name="getRoutingEmailDomains"></a>
 
-# InboundDomainEntityListing getRoutingEmailDomains()
+# InboundDomainEntityListing getRoutingEmailDomains(opts)
 
 
 
@@ -1451,7 +1451,11 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.RoutingApi();
 
-apiInstance.getRoutingEmailDomains()
+let opts = { 
+  'excludeStatus': false // Boolean | Exclude MX record data
+};
+
+apiInstance.getRoutingEmailDomains(opts)
   .then((data) => {
     console.log(`getRoutingEmailDomains success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1463,8 +1467,11 @@ apiInstance.getRoutingEmailDomains()
 
 ### Parameters
 
-This endpoint does not need any parameter.
 
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **excludeStatus** | **Boolean** | Exclude MX record data | [optional] [default to false] |
+{: class="table table-striped"}
 
 ### Return type
 

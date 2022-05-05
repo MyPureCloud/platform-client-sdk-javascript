@@ -15,7 +15,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getGamificationMetricdefinition**](GamificationApi.html#getGamificationMetricdefinition) | **GET** /api/v2/gamification/metricdefinitions/{metricDefinitionId} | Metric definition by id
 [**getGamificationMetricdefinitions**](GamificationApi.html#getGamificationMetricdefinitions) | **GET** /api/v2/gamification/metricdefinitions | All metric definitions
 [**getGamificationMetrics**](GamificationApi.html#getGamificationMetrics) | **GET** /api/v2/gamification/metrics | All gamified metrics for a given profile
-[**getGamificationProfile**](GamificationApi.html#getGamificationProfile) | **GET** /api/v2/gamification/profiles/{performanceProfileId} | Performance profile by id
+[**getGamificationProfile**](GamificationApi.html#getGamificationProfile) | **GET** /api/v2/gamification/profiles/{profileId} | Performance profile by id
 [**getGamificationProfileMembers**](GamificationApi.html#getGamificationProfileMembers) | **GET** /api/v2/gamification/profiles/{performanceProfileId}/members | Members of a given performance profile
 [**getGamificationProfileMetric**](GamificationApi.html#getGamificationProfileMetric) | **GET** /api/v2/gamification/profiles/{profileId}/metrics/{metricId} | Performance profile gamified metric by id
 [**getGamificationProfileMetrics**](GamificationApi.html#getGamificationProfileMetrics) | **GET** /api/v2/gamification/profiles/{profileId}/metrics | All gamified metrics for a given performance profile
@@ -44,15 +44,15 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getGamificationTemplate**](GamificationApi.html#getGamificationTemplate) | **GET** /api/v2/gamification/templates/{templateId} | Objective template by id
 [**getGamificationTemplates**](GamificationApi.html#getGamificationTemplates) | **GET** /api/v2/gamification/templates | All objective templates
 [**postGamificationMetrics**](GamificationApi.html#postGamificationMetrics) | **POST** /api/v2/gamification/metrics | Creates a gamified metric with a given metric definition and metric objective
-[**postGamificationProfileActivate**](GamificationApi.html#postGamificationProfileActivate) | **POST** /api/v2/gamification/profiles/{performanceProfileId}/activate | Activate a performance profile
-[**postGamificationProfileDeactivate**](GamificationApi.html#postGamificationProfileDeactivate) | **POST** /api/v2/gamification/profiles/{performanceProfileId}/deactivate | Deactivate a performance profile
+[**postGamificationProfileActivate**](GamificationApi.html#postGamificationProfileActivate) | **POST** /api/v2/gamification/profiles/{profileId}/activate | Activate a performance profile
+[**postGamificationProfileDeactivate**](GamificationApi.html#postGamificationProfileDeactivate) | **POST** /api/v2/gamification/profiles/{profileId}/deactivate | Deactivate a performance profile
 [**postGamificationProfileMembers**](GamificationApi.html#postGamificationProfileMembers) | **POST** /api/v2/gamification/profiles/{performanceProfileId}/members | Assign members to a given performance profile
 [**postGamificationProfileMembersValidate**](GamificationApi.html#postGamificationProfileMembersValidate) | **POST** /api/v2/gamification/profiles/{performanceProfileId}/members/validate | Validate member assignment
 [**postGamificationProfileMetricLink**](GamificationApi.html#postGamificationProfileMetricLink) | **POST** /api/v2/gamification/profiles/{sourceProfileId}/metrics/{sourceMetricId}/link | Creates a linked metric
 [**postGamificationProfileMetrics**](GamificationApi.html#postGamificationProfileMetrics) | **POST** /api/v2/gamification/profiles/{profileId}/metrics | Creates a gamified metric with a given metric definition and metric objective under in a performance profile
 [**postGamificationProfiles**](GamificationApi.html#postGamificationProfiles) | **POST** /api/v2/gamification/profiles | Create a new custom performance profile
 [**putGamificationMetric**](GamificationApi.html#putGamificationMetric) | **PUT** /api/v2/gamification/metrics/{metricId} | Updates a metric
-[**putGamificationProfile**](GamificationApi.html#putGamificationProfile) | **PUT** /api/v2/gamification/profiles/{performanceProfileId} | Updates a performance profile
+[**putGamificationProfile**](GamificationApi.html#putGamificationProfile) | **PUT** /api/v2/gamification/profiles/{profileId} | Updates a performance profile
 [**putGamificationProfileMetric**](GamificationApi.html#putGamificationProfileMetric) | **PUT** /api/v2/gamification/profiles/{profileId}/metrics/{metricId} | Updates a metric in performance profile
 [**putGamificationStatus**](GamificationApi.html#putGamificationStatus) | **PUT** /api/v2/gamification/status | Update gamification activation status
 {: class="table table-striped"}
@@ -505,11 +505,11 @@ apiInstance.getGamificationMetrics(opts)
 
 <a name="getGamificationProfile"></a>
 
-# PerformanceProfile getGamificationProfile(performanceProfileId)
+# PerformanceProfile getGamificationProfile(profileId)
 
 
 
-GET /api/v2/gamification/profiles/{performanceProfileId}
+GET /api/v2/gamification/profiles/{profileId}
 
 Performance profile by id
 
@@ -534,9 +534,9 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.GamificationApi();
 
-let performanceProfileId = "performanceProfileId_example"; // String | Performance Profile Id
+let profileId = "profileId_example"; // String | performanceProfileId
 
-apiInstance.getGamificationProfile(performanceProfileId)
+apiInstance.getGamificationProfile(profileId)
   .then((data) => {
     console.log(`getGamificationProfile success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -551,7 +551,7 @@ apiInstance.getGamificationProfile(performanceProfileId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **performanceProfileId** | **String** | Performance Profile Id |  |
+ **profileId** | **String** | performanceProfileId |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2133,11 +2133,11 @@ apiInstance.postGamificationMetrics(body)
 
 <a name="postGamificationProfileActivate"></a>
 
-# PerformanceProfile postGamificationProfileActivate(performanceProfileId)
+# PerformanceProfile postGamificationProfileActivate(profileId)
 
 
 
-POST /api/v2/gamification/profiles/{performanceProfileId}/activate
+POST /api/v2/gamification/profiles/{profileId}/activate
 
 Activate a performance profile
 
@@ -2160,9 +2160,9 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.GamificationApi();
 
-let performanceProfileId = "performanceProfileId_example"; // String | Performance Profile Id
+let profileId = "profileId_example"; // String | performanceProfileId
 
-apiInstance.postGamificationProfileActivate(performanceProfileId)
+apiInstance.postGamificationProfileActivate(profileId)
   .then((data) => {
     console.log(`postGamificationProfileActivate success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2177,7 +2177,7 @@ apiInstance.postGamificationProfileActivate(performanceProfileId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **performanceProfileId** | **String** | Performance Profile Id |  |
+ **profileId** | **String** | performanceProfileId |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2186,11 +2186,11 @@ apiInstance.postGamificationProfileActivate(performanceProfileId)
 
 <a name="postGamificationProfileDeactivate"></a>
 
-# PerformanceProfile postGamificationProfileDeactivate(performanceProfileId)
+# PerformanceProfile postGamificationProfileDeactivate(profileId)
 
 
 
-POST /api/v2/gamification/profiles/{performanceProfileId}/deactivate
+POST /api/v2/gamification/profiles/{profileId}/deactivate
 
 Deactivate a performance profile
 
@@ -2213,9 +2213,9 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.GamificationApi();
 
-let performanceProfileId = "performanceProfileId_example"; // String | Performance Profile Id
+let profileId = "profileId_example"; // String | performanceProfileId
 
-apiInstance.postGamificationProfileDeactivate(performanceProfileId)
+apiInstance.postGamificationProfileDeactivate(profileId)
   .then((data) => {
     console.log(`postGamificationProfileDeactivate success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2230,7 +2230,7 @@ apiInstance.postGamificationProfileDeactivate(performanceProfileId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **performanceProfileId** | **String** | Performance Profile Id |  |
+ **profileId** | **String** | performanceProfileId |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2577,11 +2577,11 @@ apiInstance.putGamificationMetric(metricId, body, opts)
 
 <a name="putGamificationProfile"></a>
 
-# PerformanceProfile putGamificationProfile(performanceProfileId, opts)
+# PerformanceProfile putGamificationProfile(profileId, opts)
 
 
 
-PUT /api/v2/gamification/profiles/{performanceProfileId}
+PUT /api/v2/gamification/profiles/{profileId}
 
 Updates a performance profile
 
@@ -2604,12 +2604,12 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.GamificationApi();
 
-let performanceProfileId = "performanceProfileId_example"; // String | Performance Profile Id
+let profileId = "profileId_example"; // String | performanceProfileId
 let opts = { 
   'body': {} // Object | performanceProfile
 };
 
-apiInstance.putGamificationProfile(performanceProfileId, opts)
+apiInstance.putGamificationProfile(profileId, opts)
   .then((data) => {
     console.log(`putGamificationProfile success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2624,7 +2624,7 @@ apiInstance.putGamificationProfile(performanceProfileId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **performanceProfileId** | **String** | Performance Profile Id |  |
+ **profileId** | **String** | performanceProfileId |  |
  **body** | **Object** | performanceProfile | [optional]  |
 {: class="table table-striped"}
 

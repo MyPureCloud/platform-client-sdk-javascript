@@ -5,7 +5,7 @@ class GamificationApi {
 	/**
 	 * Gamification service.
 	 * @module purecloud-platform-client-v2/api/GamificationApi
-	 * @version 135.0.0
+	 * @version 136.0.0
 	 */
 
 	/**
@@ -251,18 +251,18 @@ class GamificationApi {
 	/**
 	 * Performance profile by id
 	 * 
-	 * @param {String} performanceProfileId Performance Profile Id
+	 * @param {String} profileId performanceProfileId
 	 */
-	getGamificationProfile(performanceProfileId) { 
-		// verify the required parameter 'performanceProfileId' is set
-		if (performanceProfileId === undefined || performanceProfileId === null) {
-			throw 'Missing the required parameter "performanceProfileId" when calling getGamificationProfile';
+	getGamificationProfile(profileId) { 
+		// verify the required parameter 'profileId' is set
+		if (profileId === undefined || profileId === null) {
+			throw 'Missing the required parameter "profileId" when calling getGamificationProfile';
 		}
 
 		return this.apiClient.callApi(
-			'/api/v2/gamification/profiles/{performanceProfileId}', 
+			'/api/v2/gamification/profiles/{profileId}', 
 			'GET', 
-			{ 'performanceProfileId': performanceProfileId }, 
+			{ 'profileId': profileId }, 
 			{  }, 
 			{  }, 
 			{  }, 
@@ -1105,18 +1105,18 @@ class GamificationApi {
 	/**
 	 * Activate a performance profile
 	 * 
-	 * @param {String} performanceProfileId Performance Profile Id
+	 * @param {String} profileId performanceProfileId
 	 */
-	postGamificationProfileActivate(performanceProfileId) { 
-		// verify the required parameter 'performanceProfileId' is set
-		if (performanceProfileId === undefined || performanceProfileId === null) {
-			throw 'Missing the required parameter "performanceProfileId" when calling postGamificationProfileActivate';
+	postGamificationProfileActivate(profileId) { 
+		// verify the required parameter 'profileId' is set
+		if (profileId === undefined || profileId === null) {
+			throw 'Missing the required parameter "profileId" when calling postGamificationProfileActivate';
 		}
 
 		return this.apiClient.callApi(
-			'/api/v2/gamification/profiles/{performanceProfileId}/activate', 
+			'/api/v2/gamification/profiles/{profileId}/activate', 
 			'POST', 
-			{ 'performanceProfileId': performanceProfileId }, 
+			{ 'profileId': profileId }, 
 			{  }, 
 			{  }, 
 			{  }, 
@@ -1130,18 +1130,18 @@ class GamificationApi {
 	/**
 	 * Deactivate a performance profile
 	 * 
-	 * @param {String} performanceProfileId Performance Profile Id
+	 * @param {String} profileId performanceProfileId
 	 */
-	postGamificationProfileDeactivate(performanceProfileId) { 
-		// verify the required parameter 'performanceProfileId' is set
-		if (performanceProfileId === undefined || performanceProfileId === null) {
-			throw 'Missing the required parameter "performanceProfileId" when calling postGamificationProfileDeactivate';
+	postGamificationProfileDeactivate(profileId) { 
+		// verify the required parameter 'profileId' is set
+		if (profileId === undefined || profileId === null) {
+			throw 'Missing the required parameter "profileId" when calling postGamificationProfileDeactivate';
 		}
 
 		return this.apiClient.callApi(
-			'/api/v2/gamification/profiles/{performanceProfileId}/deactivate', 
+			'/api/v2/gamification/profiles/{profileId}/deactivate', 
 			'POST', 
-			{ 'performanceProfileId': performanceProfileId }, 
+			{ 'profileId': profileId }, 
 			{  }, 
 			{  }, 
 			{  }, 
@@ -1343,22 +1343,22 @@ class GamificationApi {
 	/**
 	 * Updates a performance profile
 	 * 
-	 * @param {String} performanceProfileId Performance Profile Id
+	 * @param {String} profileId performanceProfileId
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body performanceProfile
 	 */
-	putGamificationProfile(performanceProfileId, opts) { 
+	putGamificationProfile(profileId, opts) { 
 		opts = opts || {};
 		
-		// verify the required parameter 'performanceProfileId' is set
-		if (performanceProfileId === undefined || performanceProfileId === null) {
-			throw 'Missing the required parameter "performanceProfileId" when calling putGamificationProfile';
+		// verify the required parameter 'profileId' is set
+		if (profileId === undefined || profileId === null) {
+			throw 'Missing the required parameter "profileId" when calling putGamificationProfile';
 		}
 
 		return this.apiClient.callApi(
-			'/api/v2/gamification/profiles/{performanceProfileId}', 
+			'/api/v2/gamification/profiles/{profileId}', 
 			'PUT', 
-			{ 'performanceProfileId': performanceProfileId }, 
+			{ 'profileId': profileId }, 
 			{  }, 
 			{  }, 
 			{  }, 

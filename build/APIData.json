@@ -7575,7 +7575,7 @@
       }
     ],
     "return": "WhatsAppIntegration",
-    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.ConversationsApi();\n\nlet integrationId = \"integrationId_example\"; // String | Integration ID\nlet body = {}; // Object | WhatsAppIntegrationUpdateRequest\n\n// Update or activate a WhatsApp messaging integration.\napiInstance.patchConversationsMessagingIntegrationsWhatsappIntegrationId(integrationId, body)\n  .then((data) => {\n    console.log(`patchConversationsMessagingIntegrationsWhatsappIntegrationId success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling patchConversationsMessagingIntegrationsWhatsappIntegrationId\");\n    console.error(err);\n  });"
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.ConversationsApi();\n\nlet integrationId = \"integrationId_example\"; // String | Integration ID\nlet body = {}; // Object | WhatsAppIntegrationUpdateRequest\n\n// Update or activate a WhatsApp messaging integration\napiInstance.patchConversationsMessagingIntegrationsWhatsappIntegrationId(integrationId, body)\n  .then((data) => {\n    console.log(`patchConversationsMessagingIntegrationsWhatsappIntegrationId success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling patchConversationsMessagingIntegrationsWhatsappIntegrationId\");\n    console.error(err);\n  });"
   },
   "patchconversationsmessagingsupportedcontentsupportedcontentid": {
     "operationId": "patchconversationsmessagingsupportedcontentsupportedcontentid",
@@ -9890,16 +9890,16 @@
   "getgamificationprofile": {
     "operationId": "getgamificationprofile",
     "functionName": "getGamificationProfile",
-    "signature": "getGamificationProfile(performanceProfileId)",
+    "signature": "getGamificationProfile(profileId)",
     "parameters": [
       {
-        "name": "performanceProfileId",
+        "name": "profileId",
         "type": "String",
         "required": "true"
       }
     ],
     "return": "PerformanceProfile",
-    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.GamificationApi();\n\nlet performanceProfileId = \"performanceProfileId_example\"; // String | Performance Profile Id\n\n// Performance profile by id\napiInstance.getGamificationProfile(performanceProfileId)\n  .then((data) => {\n    console.log(`getGamificationProfile success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getGamificationProfile\");\n    console.error(err);\n  });"
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.GamificationApi();\n\nlet profileId = \"profileId_example\"; // String | performanceProfileId\n\n// Performance profile by id\napiInstance.getGamificationProfile(profileId)\n  .then((data) => {\n    console.log(`getGamificationProfile success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getGamificationProfile\");\n    console.error(err);\n  });"
   },
   "getgamificationprofilemembers": {
     "operationId": "getgamificationprofilemembers",
@@ -10443,30 +10443,30 @@
   "postgamificationprofileactivate": {
     "operationId": "postgamificationprofileactivate",
     "functionName": "postGamificationProfileActivate",
-    "signature": "postGamificationProfileActivate(performanceProfileId)",
+    "signature": "postGamificationProfileActivate(profileId)",
     "parameters": [
       {
-        "name": "performanceProfileId",
+        "name": "profileId",
         "type": "String",
         "required": "true"
       }
     ],
     "return": "PerformanceProfile",
-    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.GamificationApi();\n\nlet performanceProfileId = \"performanceProfileId_example\"; // String | Performance Profile Id\n\n// Activate a performance profile\napiInstance.postGamificationProfileActivate(performanceProfileId)\n  .then((data) => {\n    console.log(`postGamificationProfileActivate success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling postGamificationProfileActivate\");\n    console.error(err);\n  });"
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.GamificationApi();\n\nlet profileId = \"profileId_example\"; // String | performanceProfileId\n\n// Activate a performance profile\napiInstance.postGamificationProfileActivate(profileId)\n  .then((data) => {\n    console.log(`postGamificationProfileActivate success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling postGamificationProfileActivate\");\n    console.error(err);\n  });"
   },
   "postgamificationprofiledeactivate": {
     "operationId": "postgamificationprofiledeactivate",
     "functionName": "postGamificationProfileDeactivate",
-    "signature": "postGamificationProfileDeactivate(performanceProfileId)",
+    "signature": "postGamificationProfileDeactivate(profileId)",
     "parameters": [
       {
-        "name": "performanceProfileId",
+        "name": "profileId",
         "type": "String",
         "required": "true"
       }
     ],
     "return": "PerformanceProfile",
-    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.GamificationApi();\n\nlet performanceProfileId = \"performanceProfileId_example\"; // String | Performance Profile Id\n\n// Deactivate a performance profile\napiInstance.postGamificationProfileDeactivate(performanceProfileId)\n  .then((data) => {\n    console.log(`postGamificationProfileDeactivate success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling postGamificationProfileDeactivate\");\n    console.error(err);\n  });"
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.GamificationApi();\n\nlet profileId = \"profileId_example\"; // String | performanceProfileId\n\n// Deactivate a performance profile\napiInstance.postGamificationProfileDeactivate(profileId)\n  .then((data) => {\n    console.log(`postGamificationProfileDeactivate success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling postGamificationProfileDeactivate\");\n    console.error(err);\n  });"
   },
   "postgamificationprofilemembers": {
     "operationId": "postgamificationprofilemembers",
@@ -10595,10 +10595,10 @@
   "putgamificationprofile": {
     "operationId": "putgamificationprofile",
     "functionName": "putGamificationProfile",
-    "signature": "putGamificationProfile(performanceProfileId, body)",
+    "signature": "putGamificationProfile(profileId, body)",
     "parameters": [
       {
-        "name": "performanceProfileId",
+        "name": "profileId",
         "type": "String",
         "required": "true"
       },
@@ -10609,7 +10609,7 @@
       }
     ],
     "return": "PerformanceProfile",
-    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.GamificationApi();\n\nlet performanceProfileId = \"performanceProfileId_example\"; // String | Performance Profile Id\nlet opts = { \n  \"body\": {} // Object | performanceProfile\n};\n\n// Updates a performance profile\napiInstance.putGamificationProfile(performanceProfileId, opts)\n  .then((data) => {\n    console.log(`putGamificationProfile success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling putGamificationProfile\");\n    console.error(err);\n  });"
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.GamificationApi();\n\nlet profileId = \"profileId_example\"; // String | performanceProfileId\nlet opts = { \n  \"body\": {} // Object | performanceProfile\n};\n\n// Updates a performance profile\napiInstance.putGamificationProfile(profileId, opts)\n  .then((data) => {\n    console.log(`putGamificationProfile success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling putGamificationProfile\");\n    console.error(err);\n  });"
   },
   "putgamificationprofilemetric": {
     "operationId": "putgamificationprofilemetric",
@@ -11936,7 +11936,7 @@
   "getintegrationsactions": {
     "operationId": "getintegrationsactions",
     "functionName": "getIntegrationsActions",
-    "signature": "getIntegrationsActions(pageSize, pageNumber, nextPage, previousPage, sortBy, sortOrder, category, name, secure, includeAuthActions)",
+    "signature": "getIntegrationsActions(pageSize, pageNumber, nextPage, previousPage, sortBy, sortOrder, category, name, ids, secure, includeAuthActions)",
     "parameters": [
       {
         "name": "pageSize",
@@ -11979,6 +11979,11 @@
         "required": "false"
       },
       {
+        "name": "ids",
+        "type": "String",
+        "required": "false"
+      },
+      {
         "name": "secure",
         "type": "String",
         "required": "false"
@@ -11990,7 +11995,7 @@
       }
     ],
     "return": "ActionEntityListing",
-    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.IntegrationsApi();\n\nlet opts = { \n  \"pageSize\": 25, // Number | The total page size requested\n  \"pageNumber\": 1, // Number | The page number requested\n  \"nextPage\": \"nextPage_example\", // String | next page token\n  \"previousPage\": \"previousPage_example\", // String | Previous page token\n  \"sortBy\": \"sortBy_example\", // String | Root level field name to sort on.\n  \"sortOrder\": \"asc\", // String | Direction to sort 'sortBy' field.\n  \"category\": \"category_example\", // String | Filter by category name\n  \"name\": \"name_example\", // String | Filter by action name. Provide full or just the first part of name.\n  \"secure\": \"secure_example\", // String | Filter to only include secure actions. True will only include actions marked secured. False will include only unsecure actions. Do not use filter if you want all Actions.\n  \"includeAuthActions\": \"false\" // String | Whether or not to include authentication actions in the response. These actions are not directly executable. Some integrations create them and will run them as needed to refresh authentication information for other actions.\n};\n\n// Retrieves all actions associated with filters passed in via query param.\napiInstance.getIntegrationsActions(opts)\n  .then((data) => {\n    console.log(`getIntegrationsActions success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getIntegrationsActions\");\n    console.error(err);\n  });"
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.IntegrationsApi();\n\nlet opts = { \n  \"pageSize\": 25, // Number | The total page size requested\n  \"pageNumber\": 1, // Number | The page number requested\n  \"nextPage\": \"nextPage_example\", // String | next page token\n  \"previousPage\": \"previousPage_example\", // String | Previous page token\n  \"sortBy\": \"sortBy_example\", // String | Root level field name to sort on.\n  \"sortOrder\": \"asc\", // String | Direction to sort 'sortBy' field.\n  \"category\": \"category_example\", // String | Filter by category name.\n  \"name\": \"name_example\", // String | Filter by partial or complete action name.\n  \"ids\": \"ids_example\", // String | Filter by action Id. Can be a comma separated list to request multiple actions.  Limit of 50 Ids.\n  \"secure\": \"secure_example\", // String | Filter based on 'secure' configuration option. True will only return actions marked as secure. False will return only non-secure actions. Do not use filter if you want all Actions.\n  \"includeAuthActions\": \"false\" // String | Whether or not to include authentication actions in the response. These actions are not directly executable. Some integrations create them and will run them as needed to refresh authentication information for other actions.\n};\n\n// Retrieves all actions associated with filters passed in via query param.\napiInstance.getIntegrationsActions(opts)\n  .then((data) => {\n    console.log(`getIntegrationsActions success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getIntegrationsActions\");\n    console.error(err);\n  });"
   },
   "getintegrationsactionscategories": {
     "operationId": "getintegrationsactionscategories",
@@ -12039,7 +12044,7 @@
   "getintegrationsactionsdrafts": {
     "operationId": "getintegrationsactionsdrafts",
     "functionName": "getIntegrationsActionsDrafts",
-    "signature": "getIntegrationsActionsDrafts(pageSize, pageNumber, nextPage, previousPage, sortBy, sortOrder, category, name, secure, includeAuthActions)",
+    "signature": "getIntegrationsActionsDrafts(pageSize, pageNumber, nextPage, previousPage, sortBy, sortOrder, category, name, ids, secure, includeAuthActions)",
     "parameters": [
       {
         "name": "pageSize",
@@ -12082,6 +12087,11 @@
         "required": "false"
       },
       {
+        "name": "ids",
+        "type": "String",
+        "required": "false"
+      },
+      {
         "name": "secure",
         "type": "String",
         "required": "false"
@@ -12093,7 +12103,7 @@
       }
     ],
     "return": "ActionEntityListing",
-    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.IntegrationsApi();\n\nlet opts = { \n  \"pageSize\": 25, // Number | The total page size requested\n  \"pageNumber\": 1, // Number | The page number requested\n  \"nextPage\": \"nextPage_example\", // String | next page token\n  \"previousPage\": \"previousPage_example\", // String | Previous page token\n  \"sortBy\": \"sortBy_example\", // String | Root level field name to sort on.\n  \"sortOrder\": \"asc\", // String | Direction to sort 'sortBy' field.\n  \"category\": \"category_example\", // String | Filter by category name\n  \"name\": \"name_example\", // String | Filter by action name. Provide full or just the first part of name.\n  \"secure\": \"secure_example\", // String | Filter to only include secure actions. True will only include actions marked secured. False will include only unsecure actions. Do not use filter if you want all Actions.\n  \"includeAuthActions\": \"false\" // String | Whether or not to include authentication actions in the response. These actions are not directly executable. Some integrations create them and will run them as needed to refresh authentication information for other actions.\n};\n\n// Retrieves all action drafts associated with the filters passed in via query param.\napiInstance.getIntegrationsActionsDrafts(opts)\n  .then((data) => {\n    console.log(`getIntegrationsActionsDrafts success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getIntegrationsActionsDrafts\");\n    console.error(err);\n  });"
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.IntegrationsApi();\n\nlet opts = { \n  \"pageSize\": 25, // Number | The total page size requested\n  \"pageNumber\": 1, // Number | The page number requested\n  \"nextPage\": \"nextPage_example\", // String | next page token\n  \"previousPage\": \"previousPage_example\", // String | Previous page token\n  \"sortBy\": \"sortBy_example\", // String | Root level field name to sort on.\n  \"sortOrder\": \"asc\", // String | Direction to sort 'sortBy' field.\n  \"category\": \"category_example\", // String | Filter by category name.\n  \"name\": \"name_example\", // String | Filter by partial or complete action name.\n  \"ids\": \"ids_example\", // String | Filter by action Id. Can be a comma separated list to request multiple actions.  Limit of 50 Ids.\n  \"secure\": \"secure_example\", // String | Filter based on 'secure' configuration option. True will only return actions marked as secure. False will return only non-secure actions. Do not use filter if you want all Actions.\n  \"includeAuthActions\": \"false\" // String | Whether or not to include authentication actions in the response. These actions are not directly executable. Some integrations create them and will run them as needed to refresh authentication information for other actions.\n};\n\n// Retrieves all action drafts associated with the filters passed in via query param.\napiInstance.getIntegrationsActionsDrafts(opts)\n  .then((data) => {\n    console.log(`getIntegrationsActionsDrafts success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getIntegrationsActionsDrafts\");\n    console.error(err);\n  });"
   },
   "getintegrationsbotconnectorintegrationidbot": {
     "operationId": "getintegrationsbotconnectorintegrationidbot",
@@ -21401,6 +21411,27 @@
     "return": "RecordingJobEntityListing",
     "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.RecordingApi();\n\nlet opts = { \n  \"pageSize\": 25, // Number | Page size\n  \"pageNumber\": 1, // Number | Page number\n  \"sortBy\": \"userId\", // String | Sort by\n  \"state\": \"state_example\", // String | Filter by state\n  \"showOnlyMyJobs\": true, // Boolean | Show only my jobs\n  \"jobType\": \"jobType_example\", // String | Job Type (Can be left empty for both)\n  \"includeTotal\": true, // Boolean | If false, cursor will be used to locate the page instead of pageNumber.\n  \"cursor\": \"cursor_example\" // String | Indicates where to resume query results (not required for first page)\n};\n\n// Get the status of all jobs within the user's organization\napiInstance.getRecordingJobs(opts)\n  .then((data) => {\n    console.log(`getRecordingJobs success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getRecordingJobs\");\n    console.error(err);\n  });"
   },
+  "getrecordingkeyconfiguration": {
+    "operationId": "getrecordingkeyconfiguration",
+    "functionName": "getRecordingKeyconfiguration",
+    "signature": "getRecordingKeyconfiguration(keyConfigurationId)",
+    "parameters": [
+      {
+        "name": "keyConfigurationId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "return": "RecordingEncryptionConfiguration",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.RecordingApi();\n\nlet keyConfigurationId = \"keyConfigurationId_example\"; // String | Key Configurations Id\n\n// Get the encryption key configurations\napiInstance.getRecordingKeyconfiguration(keyConfigurationId)\n  .then((data) => {\n    console.log(`getRecordingKeyconfiguration success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getRecordingKeyconfiguration\");\n    console.error(err);\n  });"
+  },
+  "getrecordingkeyconfigurations": {
+    "operationId": "getrecordingkeyconfigurations",
+    "functionName": "getRecordingKeyconfigurations",
+    "signature": "getRecordingKeyconfigurations()",
+    "return": "RecordingEncryptionConfigurationListing",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.RecordingApi();\n\n// Get a list of key configurations data\napiInstance.getRecordingKeyconfigurations()\n  .then((data) => {\n    console.log(`getRecordingKeyconfigurations success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getRecordingKeyconfigurations\");\n    console.error(err);\n  });"
+  },
   "getrecordinglocalkeyssetting": {
     "operationId": "getrecordinglocalkeyssetting",
     "functionName": "getRecordingLocalkeysSetting",
@@ -21679,7 +21710,35 @@
       }
     ],
     "return": "RecordingJob",
-    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.RecordingApi();\n\nlet body = {}; // Object | query\n\n// Create a recording bulk job\napiInstance.postRecordingJobs(body)\n  .then((data) => {\n    console.log(`postRecordingJobs success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling postRecordingJobs\");\n    console.error(err);\n  });"
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.RecordingApi();\n\nlet body = {}; // Object | query\n\n// Create a recording bulk job.\napiInstance.postRecordingJobs(body)\n  .then((data) => {\n    console.log(`postRecordingJobs success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling postRecordingJobs\");\n    console.error(err);\n  });"
+  },
+  "postrecordingkeyconfigurations": {
+    "operationId": "postrecordingkeyconfigurations",
+    "functionName": "postRecordingKeyconfigurations",
+    "signature": "postRecordingKeyconfigurations(body)",
+    "parameters": [
+      {
+        "name": "body",
+        "type": "Object",
+        "required": "true"
+      }
+    ],
+    "return": "RecordingEncryptionConfiguration",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.RecordingApi();\n\nlet body = {}; // Object | Encryption Configuration\n\n// Setup configurations for encryption key creation\napiInstance.postRecordingKeyconfigurations(body)\n  .then((data) => {\n    console.log(`postRecordingKeyconfigurations success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling postRecordingKeyconfigurations\");\n    console.error(err);\n  });"
+  },
+  "postrecordingkeyconfigurationsvalidate": {
+    "operationId": "postrecordingkeyconfigurationsvalidate",
+    "functionName": "postRecordingKeyconfigurationsValidate",
+    "signature": "postRecordingKeyconfigurationsValidate(body)",
+    "parameters": [
+      {
+        "name": "body",
+        "type": "Object",
+        "required": "true"
+      }
+    ],
+    "return": "RecordingEncryptionConfiguration",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.RecordingApi();\n\nlet body = {}; // Object | Encryption Configuration\n\n// Validate encryption key configurations without saving it\napiInstance.postRecordingKeyconfigurationsValidate(body)\n  .then((data) => {\n    console.log(`postRecordingKeyconfigurationsValidate success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling postRecordingKeyconfigurationsValidate\");\n    console.error(err);\n  });"
   },
   "postrecordinglocalkeys": {
     "operationId": "postrecordinglocalkeys",
@@ -21879,6 +21938,25 @@
     ],
     "return": "RecordingJob",
     "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.RecordingApi();\n\nlet jobId = \"jobId_example\"; // String | jobId\nlet body = {}; // Object | query\n\n// Execute the recording bulk job.\napiInstance.putRecordingJob(jobId, body)\n  .then((data) => {\n    console.log(`putRecordingJob success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling putRecordingJob\");\n    console.error(err);\n  });"
+  },
+  "putrecordingkeyconfiguration": {
+    "operationId": "putrecordingkeyconfiguration",
+    "functionName": "putRecordingKeyconfiguration",
+    "signature": "putRecordingKeyconfiguration(keyConfigurationId, body)",
+    "parameters": [
+      {
+        "name": "keyConfigurationId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "Object",
+        "required": "true"
+      }
+    ],
+    "return": "RecordingEncryptionConfiguration",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.RecordingApi();\n\nlet keyConfigurationId = \"keyConfigurationId_example\"; // String | Key Configurations Id\nlet body = {}; // Object | Encryption key configuration metadata\n\n// Update the encryption key configurations\napiInstance.putRecordingKeyconfiguration(keyConfigurationId, body)\n  .then((data) => {\n    console.log(`putRecordingKeyconfiguration success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling putRecordingKeyconfiguration\");\n    console.error(err);\n  });"
   },
   "putrecordinglocalkeyssetting": {
     "operationId": "putrecordinglocalkeyssetting",
@@ -22647,9 +22725,16 @@
   "getroutingemaildomains": {
     "operationId": "getroutingemaildomains",
     "functionName": "getRoutingEmailDomains",
-    "signature": "getRoutingEmailDomains()",
+    "signature": "getRoutingEmailDomains(excludeStatus)",
+    "parameters": [
+      {
+        "name": "excludeStatus",
+        "type": "Boolean",
+        "required": "false"
+      }
+    ],
     "return": "InboundDomainEntityListing",
-    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.RoutingApi();\n\n// Get domains\napiInstance.getRoutingEmailDomains()\n  .then((data) => {\n    console.log(`getRoutingEmailDomains success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getRoutingEmailDomains\");\n    console.error(err);\n  });"
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.RoutingApi();\n\nlet opts = { \n  \"excludeStatus\": false // Boolean | Exclude MX record data\n};\n\n// Get domains\napiInstance.getRoutingEmailDomains(opts)\n  .then((data) => {\n    console.log(`getRoutingEmailDomains success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getRoutingEmailDomains\");\n    console.error(err);\n  });"
   },
   "getroutingemailsetup": {
     "operationId": "getroutingemailsetup",

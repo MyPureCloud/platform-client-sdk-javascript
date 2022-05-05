@@ -898,9 +898,10 @@ let opts = {
   'previousPage': "previousPage_example", // String | Previous page token
   'sortBy': "sortBy_example", // String | Root level field name to sort on.
   'sortOrder': "asc", // String | Direction to sort 'sortBy' field.
-  'category': "category_example", // String | Filter by category name
-  'name': "name_example", // String | Filter by action name. Provide full or just the first part of name.
-  'secure': "secure_example", // String | Filter to only include secure actions. True will only include actions marked secured. False will include only unsecure actions. Do not use filter if you want all Actions.
+  'category': "category_example", // String | Filter by category name.
+  'name': "name_example", // String | Filter by partial or complete action name.
+  'ids': "ids_example", // String | Filter by action Id. Can be a comma separated list to request multiple actions.  Limit of 50 Ids.
+  'secure': "secure_example", // String | Filter based on 'secure' configuration option. True will only return actions marked as secure. False will return only non-secure actions. Do not use filter if you want all Actions.
   'includeAuthActions': "false" // String | Whether or not to include authentication actions in the response. These actions are not directly executable. Some integrations create them and will run them as needed to refresh authentication information for other actions.
 };
 
@@ -925,9 +926,10 @@ apiInstance.getIntegrationsActions(opts)
  **previousPage** | **String** | Previous page token | [optional]  |
  **sortBy** | **String** | Root level field name to sort on. | [optional]  |
  **sortOrder** | **String** | Direction to sort &#39;sortBy&#39; field. | [optional] [default to asc]<br />**Values**: ASC, DESC |
- **category** | **String** | Filter by category name | [optional]  |
- **name** | **String** | Filter by action name. Provide full or just the first part of name. | [optional]  |
- **secure** | **String** | Filter to only include secure actions. True will only include actions marked secured. False will include only unsecure actions. Do not use filter if you want all Actions. | [optional] <br />**Values**: true, false |
+ **category** | **String** | Filter by category name. | [optional]  |
+ **name** | **String** | Filter by partial or complete action name. | [optional]  |
+ **ids** | **String** | Filter by action Id. Can be a comma separated list to request multiple actions.  Limit of 50 Ids. | [optional]  |
+ **secure** | **String** | Filter based on &#39;secure&#39; configuration option. True will only return actions marked as secure. False will return only non-secure actions. Do not use filter if you want all Actions. | [optional] <br />**Values**: true, false |
  **includeAuthActions** | **String** | Whether or not to include authentication actions in the response. These actions are not directly executable. Some integrations create them and will run them as needed to refresh authentication information for other actions. | [optional] [default to false]<br />**Values**: true, false |
 {: class="table table-striped"}
 
@@ -1040,9 +1042,10 @@ let opts = {
   'previousPage': "previousPage_example", // String | Previous page token
   'sortBy': "sortBy_example", // String | Root level field name to sort on.
   'sortOrder': "asc", // String | Direction to sort 'sortBy' field.
-  'category': "category_example", // String | Filter by category name
-  'name': "name_example", // String | Filter by action name. Provide full or just the first part of name.
-  'secure': "secure_example", // String | Filter to only include secure actions. True will only include actions marked secured. False will include only unsecure actions. Do not use filter if you want all Actions.
+  'category': "category_example", // String | Filter by category name.
+  'name': "name_example", // String | Filter by partial or complete action name.
+  'ids': "ids_example", // String | Filter by action Id. Can be a comma separated list to request multiple actions.  Limit of 50 Ids.
+  'secure': "secure_example", // String | Filter based on 'secure' configuration option. True will only return actions marked as secure. False will return only non-secure actions. Do not use filter if you want all Actions.
   'includeAuthActions': "false" // String | Whether or not to include authentication actions in the response. These actions are not directly executable. Some integrations create them and will run them as needed to refresh authentication information for other actions.
 };
 
@@ -1067,9 +1070,10 @@ apiInstance.getIntegrationsActionsDrafts(opts)
  **previousPage** | **String** | Previous page token | [optional]  |
  **sortBy** | **String** | Root level field name to sort on. | [optional]  |
  **sortOrder** | **String** | Direction to sort &#39;sortBy&#39; field. | [optional] [default to asc]<br />**Values**: ASC, DESC |
- **category** | **String** | Filter by category name | [optional]  |
- **name** | **String** | Filter by action name. Provide full or just the first part of name. | [optional]  |
- **secure** | **String** | Filter to only include secure actions. True will only include actions marked secured. False will include only unsecure actions. Do not use filter if you want all Actions. | [optional] <br />**Values**: true, false |
+ **category** | **String** | Filter by category name. | [optional]  |
+ **name** | **String** | Filter by partial or complete action name. | [optional]  |
+ **ids** | **String** | Filter by action Id. Can be a comma separated list to request multiple actions.  Limit of 50 Ids. | [optional]  |
+ **secure** | **String** | Filter based on &#39;secure&#39; configuration option. True will only return actions marked as secure. False will return only non-secure actions. Do not use filter if you want all Actions. | [optional] <br />**Values**: true, false |
  **includeAuthActions** | **String** | Whether or not to include authentication actions in the response. These actions are not directly executable. Some integrations create them and will run them as needed to refresh authentication information for other actions. | [optional] [default to false]<br />**Values**: true, false |
 {: class="table table-striped"}
 
