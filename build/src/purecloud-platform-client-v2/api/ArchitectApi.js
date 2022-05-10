@@ -5,7 +5,7 @@ class ArchitectApi {
 	/**
 	 * Architect service.
 	 * @module purecloud-platform-client-v2/api/ArchitectApi
-	 * @version 136.0.0
+	 * @version 136.1.0
 	 */
 
 	/**
@@ -1770,6 +1770,35 @@ class ArchitectApi {
 	}
 
 	/**
+	 * Fetch Architect Job Status
+	 * 
+	 * @param {String} jobId Job ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Array.<String>} opts.expand Which fields, if any, to expand.
+	 */
+	getFlowsJob(jobId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null) {
+			throw 'Missing the required parameter "jobId" when calling getFlowsJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/flows/jobs/{jobId}', 
+			'GET', 
+			{ 'jobId': jobId }, 
+			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get a flow milestone
 	 * Returns a specified flow milestone
 	 * @param {String} milestoneId flow milestone ID
@@ -2565,6 +2594,26 @@ class ArchitectApi {
 			{  }, 
 			{  }, 
 			flowLaunchRequest, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Register Architect Job. Returns a URL where a file, such as an Architect flow YAML file, can be PUT which will then initiate the job.
+	 * 
+	 */
+	postFlowsJobs() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/flows/jobs', 
+			'POST', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
 			['PureCloud OAuth'], 
 			['application/json'], 
 			['application/json']

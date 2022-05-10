@@ -133,6 +133,14 @@
       "class": "WrapupDetailEventTopicWrapupEvent"
     },
     {
+      "topic": "v2.externalcontacts.contacts.{id}",
+      "class": "ExternalContactsContactChangedTopicEntity"
+    },
+    {
+      "topic": "v2.externalcontacts.contacts.{id}.unresolved",
+      "class": "ExternalContactsUnresolvedContactChangedTopicEntity"
+    },
+    {
       "topic": "v2.flows.outcomes.{id}",
       "class": "ArchitectFlowOutcomeNotificationFlowOutcomeNotification"
     },

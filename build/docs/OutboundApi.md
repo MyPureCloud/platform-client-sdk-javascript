@@ -23,6 +23,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**deleteOutboundMessagingcampaignProgress**](OutboundApi.html#deleteOutboundMessagingcampaignProgress) | **DELETE** /api/v2/outbound/messagingcampaigns/{messagingCampaignId}/progress | Reset messaging campaign progress and recycle the messaging campaign
 [**deleteOutboundRuleset**](OutboundApi.html#deleteOutboundRuleset) | **DELETE** /api/v2/outbound/rulesets/{ruleSetId} | Delete a Rule Set.
 [**deleteOutboundSchedulesCampaign**](OutboundApi.html#deleteOutboundSchedulesCampaign) | **DELETE** /api/v2/outbound/schedules/campaigns/{campaignId} | Delete a dialer campaign schedule.
+[**deleteOutboundSchedulesEmailcampaign**](OutboundApi.html#deleteOutboundSchedulesEmailcampaign) | **DELETE** /api/v2/outbound/schedules/emailcampaigns/{emailCampaignId} | Delete an email campaign schedule.
+[**deleteOutboundSchedulesMessagingcampaign**](OutboundApi.html#deleteOutboundSchedulesMessagingcampaign) | **DELETE** /api/v2/outbound/schedules/messagingcampaigns/{messagingCampaignId} | Delete a messaging campaign schedule.
 [**deleteOutboundSchedulesSequence**](OutboundApi.html#deleteOutboundSchedulesSequence) | **DELETE** /api/v2/outbound/schedules/sequences/{sequenceId} | Delete a dialer sequence schedule.
 [**deleteOutboundSequence**](OutboundApi.html#deleteOutboundSequence) | **DELETE** /api/v2/outbound/sequences/{sequenceId} | Delete a dialer campaign sequence.
 [**getOutboundAttemptlimit**](OutboundApi.html#getOutboundAttemptlimit) | **GET** /api/v2/outbound/attemptlimits/{attemptLimitsId} | Get attempt limits
@@ -71,6 +73,10 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getOutboundRulesets**](OutboundApi.html#getOutboundRulesets) | **GET** /api/v2/outbound/rulesets | Query a list of Rule Sets.
 [**getOutboundSchedulesCampaign**](OutboundApi.html#getOutboundSchedulesCampaign) | **GET** /api/v2/outbound/schedules/campaigns/{campaignId} | Get a dialer campaign schedule.
 [**getOutboundSchedulesCampaigns**](OutboundApi.html#getOutboundSchedulesCampaigns) | **GET** /api/v2/outbound/schedules/campaigns | Query for a list of dialer campaign schedules.
+[**getOutboundSchedulesEmailcampaign**](OutboundApi.html#getOutboundSchedulesEmailcampaign) | **GET** /api/v2/outbound/schedules/emailcampaigns/{emailCampaignId} | Get an email campaign schedule.
+[**getOutboundSchedulesEmailcampaigns**](OutboundApi.html#getOutboundSchedulesEmailcampaigns) | **GET** /api/v2/outbound/schedules/emailcampaigns | Query for a list of email campaign schedules.
+[**getOutboundSchedulesMessagingcampaign**](OutboundApi.html#getOutboundSchedulesMessagingcampaign) | **GET** /api/v2/outbound/schedules/messagingcampaigns/{messagingCampaignId} | Get a messaging campaign schedule.
+[**getOutboundSchedulesMessagingcampaigns**](OutboundApi.html#getOutboundSchedulesMessagingcampaigns) | **GET** /api/v2/outbound/schedules/messagingcampaigns | Query for a list of messaging campaign schedules.
 [**getOutboundSchedulesSequence**](OutboundApi.html#getOutboundSchedulesSequence) | **GET** /api/v2/outbound/schedules/sequences/{sequenceId} | Get a dialer sequence schedule.
 [**getOutboundSchedulesSequences**](OutboundApi.html#getOutboundSchedulesSequences) | **GET** /api/v2/outbound/schedules/sequences | Query for a list of dialer sequence schedules.
 [**getOutboundSequence**](OutboundApi.html#getOutboundSequence) | **GET** /api/v2/outbound/sequences/{sequenceId} | Get a dialer campaign sequence.
@@ -115,6 +121,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**putOutboundMessagingcampaign**](OutboundApi.html#putOutboundMessagingcampaign) | **PUT** /api/v2/outbound/messagingcampaigns/{messagingCampaignId} | Update an Outbound Messaging Campaign
 [**putOutboundRuleset**](OutboundApi.html#putOutboundRuleset) | **PUT** /api/v2/outbound/rulesets/{ruleSetId} | Update a Rule Set.
 [**putOutboundSchedulesCampaign**](OutboundApi.html#putOutboundSchedulesCampaign) | **PUT** /api/v2/outbound/schedules/campaigns/{campaignId} | Update a new campaign schedule.
+[**putOutboundSchedulesEmailcampaign**](OutboundApi.html#putOutboundSchedulesEmailcampaign) | **PUT** /api/v2/outbound/schedules/emailcampaigns/{emailCampaignId} | Update an email campaign schedule.
+[**putOutboundSchedulesMessagingcampaign**](OutboundApi.html#putOutboundSchedulesMessagingcampaign) | **PUT** /api/v2/outbound/schedules/messagingcampaigns/{messagingCampaignId} | Update a new messaging campaign schedule.
 [**putOutboundSchedulesSequence**](OutboundApi.html#putOutboundSchedulesSequence) | **PUT** /api/v2/outbound/schedules/sequences/{sequenceId} | Update a new sequence schedule.
 [**putOutboundSequence**](OutboundApi.html#putOutboundSequence) | **PUT** /api/v2/outbound/sequences/{sequenceId} | Update a new campaign sequence.
 [**putOutboundWrapupcodemappings**](OutboundApi.html#putOutboundWrapupcodemappings) | **PUT** /api/v2/outbound/wrapupcodemappings | Update the Dialer wrap up code mapping.
@@ -968,6 +976,112 @@ apiInstance.deleteOutboundSchedulesCampaign(campaignId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **campaignId** | **String** | Campaign ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
+
+<a name="deleteOutboundSchedulesEmailcampaign"></a>
+
+# void deleteOutboundSchedulesEmailcampaign(emailCampaignId)
+
+
+
+DELETE /api/v2/outbound/schedules/emailcampaigns/{emailCampaignId}
+
+Delete an email campaign schedule.
+
+
+
+Requires ANY permissions: 
+
+* outbound:emailCampaignSchedule:delete
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OutboundApi();
+
+let emailCampaignId = "emailCampaignId_example"; // String | Email Campaign ID
+
+apiInstance.deleteOutboundSchedulesEmailcampaign(emailCampaignId)
+  .then(() => {
+    console.log('deleteOutboundSchedulesEmailcampaign returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteOutboundSchedulesEmailcampaign');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **emailCampaignId** | **String** | Email Campaign ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
+
+<a name="deleteOutboundSchedulesMessagingcampaign"></a>
+
+# void deleteOutboundSchedulesMessagingcampaign(messagingCampaignId)
+
+
+
+DELETE /api/v2/outbound/schedules/messagingcampaigns/{messagingCampaignId}
+
+Delete a messaging campaign schedule.
+
+
+
+Requires ANY permissions: 
+
+* outbound:messagingCampaignSchedule:delete
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OutboundApi();
+
+let messagingCampaignId = "messagingCampaignId_example"; // String | Messaging Campaign ID
+
+apiInstance.deleteOutboundSchedulesMessagingcampaign(messagingCampaignId)
+  .then(() => {
+    console.log('deleteOutboundSchedulesMessagingcampaign returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteOutboundSchedulesMessagingcampaign');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **messagingCampaignId** | **String** | Messaging Campaign ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -3844,6 +3958,208 @@ This endpoint does not need any parameter.
 
 **[CampaignSchedule]**
 
+<a name="getOutboundSchedulesEmailcampaign"></a>
+
+# EmailCampaignSchedule getOutboundSchedulesEmailcampaign(emailCampaignId)
+
+
+
+GET /api/v2/outbound/schedules/emailcampaigns/{emailCampaignId}
+
+Get an email campaign schedule.
+
+
+
+Requires ANY permissions: 
+
+* outbound:emailCampaignSchedule:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OutboundApi();
+
+let emailCampaignId = "emailCampaignId_example"; // String | Email Campaign ID
+
+apiInstance.getOutboundSchedulesEmailcampaign(emailCampaignId)
+  .then((data) => {
+    console.log(`getOutboundSchedulesEmailcampaign success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getOutboundSchedulesEmailcampaign');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **emailCampaignId** | **String** | Email Campaign ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+**EmailCampaignSchedule**
+
+<a name="getOutboundSchedulesEmailcampaigns"></a>
+
+# MessagingCampaignScheduleEntityListing getOutboundSchedulesEmailcampaigns()
+
+
+
+GET /api/v2/outbound/schedules/emailcampaigns
+
+Query for a list of email campaign schedules.
+
+
+
+Requires ANY permissions: 
+
+* outbound:emailCampaignSchedule:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OutboundApi();
+
+apiInstance.getOutboundSchedulesEmailcampaigns()
+  .then((data) => {
+    console.log(`getOutboundSchedulesEmailcampaigns success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getOutboundSchedulesEmailcampaigns');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+
+### Return type
+
+**MessagingCampaignScheduleEntityListing**
+
+<a name="getOutboundSchedulesMessagingcampaign"></a>
+
+# MessagingCampaignSchedule getOutboundSchedulesMessagingcampaign(messagingCampaignId)
+
+
+
+GET /api/v2/outbound/schedules/messagingcampaigns/{messagingCampaignId}
+
+Get a messaging campaign schedule.
+
+
+
+Requires ANY permissions: 
+
+* outbound:messagingCampaignSchedule:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OutboundApi();
+
+let messagingCampaignId = "messagingCampaignId_example"; // String | Messaging Campaign ID
+
+apiInstance.getOutboundSchedulesMessagingcampaign(messagingCampaignId)
+  .then((data) => {
+    console.log(`getOutboundSchedulesMessagingcampaign success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getOutboundSchedulesMessagingcampaign');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **messagingCampaignId** | **String** | Messaging Campaign ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+**MessagingCampaignSchedule**
+
+<a name="getOutboundSchedulesMessagingcampaigns"></a>
+
+# MessagingCampaignScheduleEntityListing getOutboundSchedulesMessagingcampaigns()
+
+
+
+GET /api/v2/outbound/schedules/messagingcampaigns
+
+Query for a list of messaging campaign schedules.
+
+
+
+Requires ANY permissions: 
+
+* outbound:messagingCampaignSchedule:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OutboundApi();
+
+apiInstance.getOutboundSchedulesMessagingcampaigns()
+  .then((data) => {
+    console.log(`getOutboundSchedulesMessagingcampaigns success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getOutboundSchedulesMessagingcampaigns');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+
+### Return type
+
+**MessagingCampaignScheduleEntityListing**
+
 <a name="getOutboundSchedulesSequence"></a>
 
 # SequenceSchedule getOutboundSchedulesSequence(sequenceId)
@@ -6241,6 +6557,116 @@ apiInstance.putOutboundSchedulesCampaign(campaignId, body)
 ### Return type
 
 **CampaignSchedule**
+
+<a name="putOutboundSchedulesEmailcampaign"></a>
+
+# EmailCampaignSchedule putOutboundSchedulesEmailcampaign(emailCampaignId, body)
+
+
+
+PUT /api/v2/outbound/schedules/emailcampaigns/{emailCampaignId}
+
+Update an email campaign schedule.
+
+
+
+Requires ANY permissions: 
+
+* outbound:emailCampaignSchedule:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OutboundApi();
+
+let emailCampaignId = "emailCampaignId_example"; // String | Email Campaign ID
+let body = {}; // Object | EmailCampaignSchedule
+
+apiInstance.putOutboundSchedulesEmailcampaign(emailCampaignId, body)
+  .then((data) => {
+    console.log(`putOutboundSchedulesEmailcampaign success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putOutboundSchedulesEmailcampaign');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **emailCampaignId** | **String** | Email Campaign ID |  |
+ **body** | **Object** | EmailCampaignSchedule |  |
+{: class="table table-striped"}
+
+### Return type
+
+**EmailCampaignSchedule**
+
+<a name="putOutboundSchedulesMessagingcampaign"></a>
+
+# MessagingCampaignSchedule putOutboundSchedulesMessagingcampaign(messagingCampaignId, body)
+
+
+
+PUT /api/v2/outbound/schedules/messagingcampaigns/{messagingCampaignId}
+
+Update a new messaging campaign schedule.
+
+
+
+Requires ANY permissions: 
+
+* outbound:messagingCampaignSchedule:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OutboundApi();
+
+let messagingCampaignId = "messagingCampaignId_example"; // String | Messaging Campaign ID
+let body = {}; // Object | MessagingCampaignSchedule
+
+apiInstance.putOutboundSchedulesMessagingcampaign(messagingCampaignId, body)
+  .then((data) => {
+    console.log(`putOutboundSchedulesMessagingcampaign success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putOutboundSchedulesMessagingcampaign');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **messagingCampaignId** | **String** | Messaging Campaign ID |  |
+ **body** | **Object** | MessagingCampaignSchedule |  |
+{: class="table table-striped"}
+
+### Return type
+
+**MessagingCampaignSchedule**
 
 <a name="putOutboundSchedulesSequence"></a>
 

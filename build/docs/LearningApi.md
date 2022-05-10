@@ -185,7 +185,7 @@ apiInstance.getLearningAssignment(assignmentId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **assignmentId** | **String** | The ID of Learning Assignment |  |
- **expand** | **[String]** | Fields to expand in response | [optional] <br />**Values**: module, assessment, assessmentForm |
+ **expand** | **[String]** | Fields to expand in response | [optional] <br />**Values**: module, assessment, assessmentForm, module.coverArt |
 {: class="table table-striped"}
 
 ### Return type
@@ -405,7 +405,7 @@ apiInstance.getLearningModule(moduleId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **moduleId** | **String** | The ID of the learning module |  |
- **expand** | **[String]** | Fields to expand in response(case insensitive) | [optional] <br />**Values**: assessmentForm |
+ **expand** | **[String]** | Fields to expand in response(case insensitive) | [optional] <br />**Values**: assessmentForm, coverArt |
 {: class="table table-striped"}
 
 ### Return type
@@ -517,7 +517,7 @@ apiInstance.getLearningModuleVersion(moduleId, versionId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **moduleId** | **String** | The ID of the learning module |  |
  **versionId** | **String** | The version of learning module |  |
- **expand** | **[String]** | Fields to expand in response(case insensitive) | [optional] <br />**Values**: assessmentForm |
+ **expand** | **[String]** | Fields to expand in response(case insensitive) | [optional] <br />**Values**: assessmentForm, coverArt |
 {: class="table table-striped"}
 
 ### Return type

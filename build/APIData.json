@@ -2474,6 +2474,25 @@
     "return": "FlowRuntimeExecution",
     "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.ArchitectApi();\n\nlet flowExecutionId = \"flowExecutionId_example\"; // String | flow execution ID\n\n// Get a flow execution's details. Flow execution details are available for several days after the flow is started.\napiInstance.getFlowsExecution(flowExecutionId)\n  .then((data) => {\n    console.log(`getFlowsExecution success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getFlowsExecution\");\n    console.error(err);\n  });"
   },
+  "getflowsjob": {
+    "operationId": "getflowsjob",
+    "functionName": "getFlowsJob",
+    "signature": "getFlowsJob(jobId, expand)",
+    "parameters": [
+      {
+        "name": "jobId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "expand",
+        "type": "[String]",
+        "required": "false"
+      }
+    ],
+    "return": "ArchitectJobStateResponse",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.ArchitectApi();\n\nlet jobId = \"jobId_example\"; // String | Job ID\nlet opts = { \n  \"expand\": [\"expand_example\"] // [String] | Which fields, if any, to expand.\n};\n\n// Fetch Architect Job Status\napiInstance.getFlowsJob(jobId, opts)\n  .then((data) => {\n    console.log(`getFlowsJob success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getFlowsJob\");\n    console.error(err);\n  });"
+  },
   "getflowsmilestone": {
     "operationId": "getflowsmilestone",
     "functionName": "getFlowsMilestone",
@@ -3060,6 +3079,13 @@
     ],
     "return": "FlowExecutionLaunchResponse",
     "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.ArchitectApi();\n\nlet flowLaunchRequest = {}; // Object | \n\n// Launch an instance of a flow definition, for flow types that support it such as the 'workflow' type.\napiInstance.postFlowsExecutions(flowLaunchRequest)\n  .then((data) => {\n    console.log(`postFlowsExecutions success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling postFlowsExecutions\");\n    console.error(err);\n  });"
+  },
+  "postflowsjobs": {
+    "operationId": "postflowsjobs",
+    "functionName": "postFlowsJobs",
+    "signature": "postFlowsJobs()",
+    "return": "RegisterArchitectJobResponse",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.ArchitectApi();\n\n// Register Architect Job. Returns a URL where a file, such as an Architect flow YAML file, can be PUT which will then initiate the job.\napiInstance.postFlowsJobs()\n  .then((data) => {\n    console.log(`postFlowsJobs success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling postFlowsJobs\");\n    console.error(err);\n  });"
   },
   "postflowsmilestones": {
     "operationId": "postflowsmilestones",
@@ -17218,6 +17244,32 @@
     ],
     "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.OutboundApi();\n\nlet campaignId = \"campaignId_example\"; // String | Campaign ID\n\n// Delete a dialer campaign schedule.\napiInstance.deleteOutboundSchedulesCampaign(campaignId)\n  .then(() => {\n    console.log(\"deleteOutboundSchedulesCampaign returned successfully.\");\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling deleteOutboundSchedulesCampaign\");\n    console.error(err);\n  });"
   },
+  "deleteoutboundschedulesemailcampaign": {
+    "operationId": "deleteoutboundschedulesemailcampaign",
+    "functionName": "deleteOutboundSchedulesEmailcampaign",
+    "signature": "deleteOutboundSchedulesEmailcampaign(emailCampaignId)",
+    "parameters": [
+      {
+        "name": "emailCampaignId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.OutboundApi();\n\nlet emailCampaignId = \"emailCampaignId_example\"; // String | Email Campaign ID\n\n// Delete an email campaign schedule.\napiInstance.deleteOutboundSchedulesEmailcampaign(emailCampaignId)\n  .then(() => {\n    console.log(\"deleteOutboundSchedulesEmailcampaign returned successfully.\");\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling deleteOutboundSchedulesEmailcampaign\");\n    console.error(err);\n  });"
+  },
+  "deleteoutboundschedulesmessagingcampaign": {
+    "operationId": "deleteoutboundschedulesmessagingcampaign",
+    "functionName": "deleteOutboundSchedulesMessagingcampaign",
+    "signature": "deleteOutboundSchedulesMessagingcampaign(messagingCampaignId)",
+    "parameters": [
+      {
+        "name": "messagingCampaignId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.OutboundApi();\n\nlet messagingCampaignId = \"messagingCampaignId_example\"; // String | Messaging Campaign ID\n\n// Delete a messaging campaign schedule.\napiInstance.deleteOutboundSchedulesMessagingcampaign(messagingCampaignId)\n  .then(() => {\n    console.log(\"deleteOutboundSchedulesMessagingcampaign returned successfully.\");\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling deleteOutboundSchedulesMessagingcampaign\");\n    console.error(err);\n  });"
+  },
   "deleteoutboundschedulessequence": {
     "operationId": "deleteoutboundschedulessequence",
     "functionName": "deleteOutboundSchedulesSequence",
@@ -18561,6 +18613,48 @@
     "return": "[CampaignSchedule]",
     "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.OutboundApi();\n\n// Query for a list of dialer campaign schedules.\napiInstance.getOutboundSchedulesCampaigns()\n  .then((data) => {\n    console.log(`getOutboundSchedulesCampaigns success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getOutboundSchedulesCampaigns\");\n    console.error(err);\n  });"
   },
+  "getoutboundschedulesemailcampaign": {
+    "operationId": "getoutboundschedulesemailcampaign",
+    "functionName": "getOutboundSchedulesEmailcampaign",
+    "signature": "getOutboundSchedulesEmailcampaign(emailCampaignId)",
+    "parameters": [
+      {
+        "name": "emailCampaignId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "return": "EmailCampaignSchedule",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.OutboundApi();\n\nlet emailCampaignId = \"emailCampaignId_example\"; // String | Email Campaign ID\n\n// Get an email campaign schedule.\napiInstance.getOutboundSchedulesEmailcampaign(emailCampaignId)\n  .then((data) => {\n    console.log(`getOutboundSchedulesEmailcampaign success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getOutboundSchedulesEmailcampaign\");\n    console.error(err);\n  });"
+  },
+  "getoutboundschedulesemailcampaigns": {
+    "operationId": "getoutboundschedulesemailcampaigns",
+    "functionName": "getOutboundSchedulesEmailcampaigns",
+    "signature": "getOutboundSchedulesEmailcampaigns()",
+    "return": "MessagingCampaignScheduleEntityListing",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.OutboundApi();\n\n// Query for a list of email campaign schedules.\napiInstance.getOutboundSchedulesEmailcampaigns()\n  .then((data) => {\n    console.log(`getOutboundSchedulesEmailcampaigns success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getOutboundSchedulesEmailcampaigns\");\n    console.error(err);\n  });"
+  },
+  "getoutboundschedulesmessagingcampaign": {
+    "operationId": "getoutboundschedulesmessagingcampaign",
+    "functionName": "getOutboundSchedulesMessagingcampaign",
+    "signature": "getOutboundSchedulesMessagingcampaign(messagingCampaignId)",
+    "parameters": [
+      {
+        "name": "messagingCampaignId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "return": "MessagingCampaignSchedule",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.OutboundApi();\n\nlet messagingCampaignId = \"messagingCampaignId_example\"; // String | Messaging Campaign ID\n\n// Get a messaging campaign schedule.\napiInstance.getOutboundSchedulesMessagingcampaign(messagingCampaignId)\n  .then((data) => {\n    console.log(`getOutboundSchedulesMessagingcampaign success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getOutboundSchedulesMessagingcampaign\");\n    console.error(err);\n  });"
+  },
+  "getoutboundschedulesmessagingcampaigns": {
+    "operationId": "getoutboundschedulesmessagingcampaigns",
+    "functionName": "getOutboundSchedulesMessagingcampaigns",
+    "signature": "getOutboundSchedulesMessagingcampaigns()",
+    "return": "MessagingCampaignScheduleEntityListing",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.OutboundApi();\n\n// Query for a list of messaging campaign schedules.\napiInstance.getOutboundSchedulesMessagingcampaigns()\n  .then((data) => {\n    console.log(`getOutboundSchedulesMessagingcampaigns success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getOutboundSchedulesMessagingcampaigns\");\n    console.error(err);\n  });"
+  },
   "getoutboundschedulessequence": {
     "operationId": "getoutboundschedulessequence",
     "functionName": "getOutboundSchedulesSequence",
@@ -19321,6 +19415,44 @@
     ],
     "return": "CampaignSchedule",
     "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.OutboundApi();\n\nlet campaignId = \"campaignId_example\"; // String | Campaign ID\nlet body = {}; // Object | CampaignSchedule\n\n// Update a new campaign schedule.\napiInstance.putOutboundSchedulesCampaign(campaignId, body)\n  .then((data) => {\n    console.log(`putOutboundSchedulesCampaign success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling putOutboundSchedulesCampaign\");\n    console.error(err);\n  });"
+  },
+  "putoutboundschedulesemailcampaign": {
+    "operationId": "putoutboundschedulesemailcampaign",
+    "functionName": "putOutboundSchedulesEmailcampaign",
+    "signature": "putOutboundSchedulesEmailcampaign(emailCampaignId, body)",
+    "parameters": [
+      {
+        "name": "emailCampaignId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "Object",
+        "required": "true"
+      }
+    ],
+    "return": "EmailCampaignSchedule",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.OutboundApi();\n\nlet emailCampaignId = \"emailCampaignId_example\"; // String | Email Campaign ID\nlet body = {}; // Object | EmailCampaignSchedule\n\n// Update an email campaign schedule.\napiInstance.putOutboundSchedulesEmailcampaign(emailCampaignId, body)\n  .then((data) => {\n    console.log(`putOutboundSchedulesEmailcampaign success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling putOutboundSchedulesEmailcampaign\");\n    console.error(err);\n  });"
+  },
+  "putoutboundschedulesmessagingcampaign": {
+    "operationId": "putoutboundschedulesmessagingcampaign",
+    "functionName": "putOutboundSchedulesMessagingcampaign",
+    "signature": "putOutboundSchedulesMessagingcampaign(messagingCampaignId, body)",
+    "parameters": [
+      {
+        "name": "messagingCampaignId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "Object",
+        "required": "true"
+      }
+    ],
+    "return": "MessagingCampaignSchedule",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.OutboundApi();\n\nlet messagingCampaignId = \"messagingCampaignId_example\"; // String | Messaging Campaign ID\nlet body = {}; // Object | MessagingCampaignSchedule\n\n// Update a new messaging campaign schedule.\napiInstance.putOutboundSchedulesMessagingcampaign(messagingCampaignId, body)\n  .then((data) => {\n    console.log(`putOutboundSchedulesMessagingcampaign success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling putOutboundSchedulesMessagingcampaign\");\n    console.error(err);\n  });"
   },
   "putoutboundschedulessequence": {
     "operationId": "putoutboundschedulessequence",
@@ -20838,6 +20970,642 @@
     ],
     "return": "ScorableSurvey",
     "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\nlet apiInstance = new platformClient.QualityApi();\n\nlet body = {}; // Object | survey\nlet customerSurveyUrl = \"customerSurveyUrl_example\"; // String | customerSurveyUrl\n\n// Update a survey as an end-customer, for the purposes of scoring it.\napiInstance.putQualitySurveysScorable(body, customerSurveyUrl)\n  .then((data) => {\n    console.log(`putQualitySurveysScorable success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling putQualitySurveysScorable\");\n    console.error(err);\n  });"
+  },
+  "deletescimuser": {
+    "operationId": "deletescimuser",
+    "functionName": "deleteScimUser",
+    "signature": "deleteScimUser(userId, ifMatch)",
+    "parameters": [
+      {
+        "name": "userId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "ifMatch",
+        "type": "String",
+        "required": "false"
+      }
+    ],
+    "return": "Empty",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.SCIMApi();\n\nlet userId = \"userId_example\"; // String | The ID of a user. Returned with GET /api/v2/scim/users.\nlet opts = { \n  \"ifMatch\": \"ifMatch_example\" // String | The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/users/{userId}. Example: \\\"42\\\". If the ETag is different from the version on the server, returns 400 with a \\\"scimType\\\" of \\\"invalidVers\\\".\n};\n\n// Delete a user\napiInstance.deleteScimUser(userId, opts)\n  .then((data) => {\n    console.log(`deleteScimUser success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling deleteScimUser\");\n    console.error(err);\n  });"
+  },
+  "deletescimv2user": {
+    "operationId": "deletescimv2user",
+    "functionName": "deleteScimV2User",
+    "signature": "deleteScimV2User(userId, ifMatch)",
+    "parameters": [
+      {
+        "name": "userId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "ifMatch",
+        "type": "String",
+        "required": "false"
+      }
+    ],
+    "return": "Empty",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.SCIMApi();\n\nlet userId = \"userId_example\"; // String | The ID of a user. Returned with GET /api/v2/scim/v2/users.\nlet opts = { \n  \"ifMatch\": \"ifMatch_example\" // String | The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/users/{userId}. Example: \\\"42\\\". If the ETag is different from the version on the server, returns 400 with a \\\"scimType\\\" of \\\"invalidVers\\\".\n};\n\n// Delete a user\napiInstance.deleteScimV2User(userId, opts)\n  .then((data) => {\n    console.log(`deleteScimV2User success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling deleteScimV2User\");\n    console.error(err);\n  });"
+  },
+  "getscimgroup": {
+    "operationId": "getscimgroup",
+    "functionName": "getScimGroup",
+    "signature": "getScimGroup(groupId, attributes, excludedAttributes, ifNoneMatch)",
+    "parameters": [
+      {
+        "name": "groupId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "attributes",
+        "type": "[String]",
+        "required": "false"
+      },
+      {
+        "name": "excludedAttributes",
+        "type": "[String]",
+        "required": "false"
+      },
+      {
+        "name": "ifNoneMatch",
+        "type": "String",
+        "required": "false"
+      }
+    ],
+    "return": "ScimV2Group",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.SCIMApi();\n\nlet groupId = \"groupId_example\"; // String | The ID of a group. Returned with GET /api/v2/scim/groups.\nlet opts = { \n  \"attributes\": [\"attributes_example\"], // [String] | Indicates which attributes to include. Returns these attributes and the \\\"id\\\", \\\"active\\\", and \\\"meta\\\" attributes. Use \\\"attributes\\\" to avoid expensive secondary calls for the default attributes.\n  \"excludedAttributes\": [\"excludedAttributes_example\"], // [String] | Indicates which attributes to exclude. Returns the default attributes minus \\\"excludedAttributes\\\". Always returns \\\"id\\\", \\\"active\\\", and \\\"meta\\\" attributes. Use \\\"excludedAttributes\\\" to avoid expensive secondary calls for the default attributes.\n  \"ifNoneMatch\": \"ifNoneMatch_example\" // String | The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/groups/{groupId}. Example: \\\"42\\\". If the ETag is different from the version on the server, returns the current configuration of the resource. If the ETag is current, returns 304 Not Modified.\n};\n\n// Get a group\napiInstance.getScimGroup(groupId, opts)\n  .then((data) => {\n    console.log(`getScimGroup success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getScimGroup\");\n    console.error(err);\n  });"
+  },
+  "getscimgroups": {
+    "operationId": "getscimgroups",
+    "functionName": "getScimGroups",
+    "signature": "getScimGroups(startIndex, count, attributes, excludedAttributes, filter)",
+    "parameters": [
+      {
+        "name": "startIndex",
+        "type": "Number",
+        "required": "false"
+      },
+      {
+        "name": "count",
+        "type": "Number",
+        "required": "false"
+      },
+      {
+        "name": "attributes",
+        "type": "[String]",
+        "required": "false"
+      },
+      {
+        "name": "excludedAttributes",
+        "type": "[String]",
+        "required": "false"
+      },
+      {
+        "name": "filter",
+        "type": "String",
+        "required": "false"
+      }
+    ],
+    "return": "ScimGroupListResponse",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.SCIMApi();\n\nlet opts = { \n  \"startIndex\": 1, // Number | The 1-based index of the first query result.\n  \"count\": 25, // Number | The requested number of items per page. A value of 0 returns \\\"totalResults\\\". A page size over 25 may exceed internal resource limits and return a 429 error. For a page size over 25, use the \\\"excludedAttributes\\\" or \\\"attributes\\\" query parameters to exclude or only include secondary lookup values such as \\\"externalId\\\",  \\\"roles\\\", \\\"urn:ietf:params:scim:schemas:extension:genesys:purecloud:2.0:User:routingLanguages\\\", or \\\"urn:ietf:params:scim:schemas:extension:genesys:purecloud:2.0:User:routingSkills\\\".\n  \"attributes\": [\"attributes_example\"], // [String] | Indicates which attributes to include. Returns these attributes and the \\\"id\\\", \\\"active\\\", and \\\"meta\\\" attributes. Use \\\"attributes\\\" to avoid expensive secondary calls for the default attributes.\n  \"excludedAttributes\": [\"excludedAttributes_example\"], // [String] | Indicates which attributes to exclude. Returns the default attributes minus \\\"excludedAttributes\\\". Always returns \\\"id\\\", \\\"active\\\", and \\\"meta\\\" attributes. Use \\\"excludedAttributes\\\" to avoid expensive secondary calls for the default attributes.\n  \"filter\": \"displayName eq groupName\" // String | Filters results. If nothing is specified, returns all groups. Examples of valid values: \\\"id eq 5f4bc742-a019-4e38-8e2a-d39d5bc0b0f3\\\", \\\"displayname eq Sales\\\".\n};\n\n// Get a list of groups\napiInstance.getScimGroups(opts)\n  .then((data) => {\n    console.log(`getScimGroups success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getScimGroups\");\n    console.error(err);\n  });"
+  },
+  "getscimresourcetype": {
+    "operationId": "getscimresourcetype",
+    "functionName": "getScimResourcetype",
+    "signature": "getScimResourcetype(resourceType)",
+    "parameters": [
+      {
+        "name": "resourceType",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "return": "ScimConfigResourceType",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.SCIMApi();\n\nlet resourceType = \"resourceType_example\"; // String | The type of resource. Returned with GET /api/v2/scim/resourcetypes.\n\n// Get a resource type\napiInstance.getScimResourcetype(resourceType)\n  .then((data) => {\n    console.log(`getScimResourcetype success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getScimResourcetype\");\n    console.error(err);\n  });"
+  },
+  "getscimresourcetypes": {
+    "operationId": "getscimresourcetypes",
+    "functionName": "getScimResourcetypes",
+    "signature": "getScimResourcetypes()",
+    "return": "ScimConfigResourceTypesListResponse",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.SCIMApi();\n\n// Get a list of resource types\napiInstance.getScimResourcetypes()\n  .then((data) => {\n    console.log(`getScimResourcetypes success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getScimResourcetypes\");\n    console.error(err);\n  });"
+  },
+  "getscimschema": {
+    "operationId": "getscimschema",
+    "functionName": "getScimSchema",
+    "signature": "getScimSchema(schemaId)",
+    "parameters": [
+      {
+        "name": "schemaId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "return": "ScimV2SchemaDefinition",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.SCIMApi();\n\nlet schemaId = \"schemaId_example\"; // String | The ID of a schema. Returned with GET /api/v2/scim/schemas.\n\n// Get a SCIM schema\napiInstance.getScimSchema(schemaId)\n  .then((data) => {\n    console.log(`getScimSchema success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getScimSchema\");\n    console.error(err);\n  });"
+  },
+  "getscimschemas": {
+    "operationId": "getscimschemas",
+    "functionName": "getScimSchemas",
+    "signature": "getScimSchemas(filter)",
+    "parameters": [
+      {
+        "name": "filter",
+        "type": "String",
+        "required": "false"
+      }
+    ],
+    "return": "ScimV2SchemaListResponse",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.SCIMApi();\n\nlet opts = { \n  \"filter\": \"displayName eq groupName\" // String | Filtered results are invalid and return 403 Unauthorized.\n};\n\n// Get a list of SCIM schemas\napiInstance.getScimSchemas(opts)\n  .then((data) => {\n    console.log(`getScimSchemas success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getScimSchemas\");\n    console.error(err);\n  });"
+  },
+  "getscimserviceproviderconfig": {
+    "operationId": "getscimserviceproviderconfig",
+    "functionName": "getScimServiceproviderconfig",
+    "signature": "getScimServiceproviderconfig(ifNoneMatch)",
+    "parameters": [
+      {
+        "name": "ifNoneMatch",
+        "type": "String",
+        "required": "false"
+      }
+    ],
+    "return": "ScimServiceProviderConfig",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.SCIMApi();\n\nlet opts = { \n  \"ifNoneMatch\": \"ifNoneMatch_example\" // String | The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/serviceproviderconfig. Example: \\\"42\\\". If the ETag is different from the version on the server, returns the current configuration of the resource. If the ETag is current, returns 304 Not Modified. \n};\n\n// Get a service provider's configuration\napiInstance.getScimServiceproviderconfig(opts)\n  .then((data) => {\n    console.log(`getScimServiceproviderconfig success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getScimServiceproviderconfig\");\n    console.error(err);\n  });"
+  },
+  "getscimuser": {
+    "operationId": "getscimuser",
+    "functionName": "getScimUser",
+    "signature": "getScimUser(userId, attributes, excludedAttributes, ifNoneMatch)",
+    "parameters": [
+      {
+        "name": "userId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "attributes",
+        "type": "[String]",
+        "required": "false"
+      },
+      {
+        "name": "excludedAttributes",
+        "type": "[String]",
+        "required": "false"
+      },
+      {
+        "name": "ifNoneMatch",
+        "type": "String",
+        "required": "false"
+      }
+    ],
+    "return": "ScimV2User",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.SCIMApi();\n\nlet userId = \"userId_example\"; // String | The ID of a user. Returned with GET /api/v2/scim/users.\nlet opts = { \n  \"attributes\": [\"attributes_example\"], // [String] | Indicates which attributes to include. Returns these attributes and the \\\"id\\\", \\\"userName\\\", \\\"active\\\", and \\\"meta\\\" attributes. Use \\\"attributes\\\" to avoid expensive secondary calls for the default attributes.\n  \"excludedAttributes\": [\"excludedAttributes_example\"], // [String] | Indicates which attributes to exclude. Returns the default attributes minus \\\"excludedAttributes\\\". Always returns the \\\"id\\\", \\\"userName\\\", \\\"active\\\", and \\\"meta\\\" attributes. Use \\\"excludedAttributes\\\" to avoid expensive secondary calls for the default attributes.\n  \"ifNoneMatch\": \"ifNoneMatch_example\" // String | The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/users/{userId}. Example: \\\"42\\\". If the ETag is different from the version on the server, returns the current configuration of the resource. If the ETag is current, returns 304 Not Modified.\n};\n\n// Get a user\napiInstance.getScimUser(userId, opts)\n  .then((data) => {\n    console.log(`getScimUser success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getScimUser\");\n    console.error(err);\n  });"
+  },
+  "getscimusers": {
+    "operationId": "getscimusers",
+    "functionName": "getScimUsers",
+    "signature": "getScimUsers(startIndex, count, attributes, excludedAttributes, filter)",
+    "parameters": [
+      {
+        "name": "startIndex",
+        "type": "Number",
+        "required": "false"
+      },
+      {
+        "name": "count",
+        "type": "Number",
+        "required": "false"
+      },
+      {
+        "name": "attributes",
+        "type": "[String]",
+        "required": "false"
+      },
+      {
+        "name": "excludedAttributes",
+        "type": "[String]",
+        "required": "false"
+      },
+      {
+        "name": "filter",
+        "type": "String",
+        "required": "false"
+      }
+    ],
+    "return": "ScimUserListResponse",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.SCIMApi();\n\nlet opts = { \n  \"startIndex\": 1, // Number | The 1-based index of the first query result.\n  \"count\": 25, // Number | The requested number of items per page. A value of 0 returns \\\"totalResults\\\". A page size over 25 may exceed internal resource limits and return a 429 error. For a page size over 25, use the \\\"excludedAttributes\\\" or \\\"attributes\\\" query parameters to exclude or only include secondary lookup values such as \\\"externalId\\\",  \\\"roles\\\", \\\"urn:ietf:params:scim:schemas:extension:genesys:purecloud:2.0:User:routingLanguages\\\", or \\\"urn:ietf:params:scim:schemas:extension:genesys:purecloud:2.0:User:routingSkills\\\".\n  \"attributes\": [\"attributes_example\"], // [String] | Indicates which attributes to include. Returns these attributes and the \\\"id\\\", \\\"userName\\\", \\\"active\\\", and \\\"meta\\\" attributes. Use \\\"attributes\\\" to avoid expensive secondary calls for the default attributes.\n  \"excludedAttributes\": [\"excludedAttributes_example\"], // [String] | Indicates which attributes to exclude. Returns the default attributes minus \\\"excludedAttributes\\\". Always returns the \\\"id\\\", \\\"userName\\\", \\\"active\\\", and \\\"meta\\\" attributes. Use \\\"excludedAttributes\\\" to avoid expensive secondary calls for the default attributes.\n  \"filter\": \"filter_example\" // String | Filters results. If nothing is specified, returns all active users. Examples of valid values: \\\"id eq 857449b0-d9e7-4cd0-acbf-a6adfb9ef1e9\\\", \\\"userName eq search@sample.org\\\", \\\"manager eq 16e10e2f-1136-43fe-bb84-eac073168a49\\\", \\\"email eq search@sample.org\\\", \\\"division eq divisionName\\\", \\\"externalId eq 167844\\\", \\\"active eq false\\\", \\\"employeeNumber eq 9876543210\\\".\n};\n\n// Get a list of users\napiInstance.getScimUsers(opts)\n  .then((data) => {\n    console.log(`getScimUsers success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getScimUsers\");\n    console.error(err);\n  });"
+  },
+  "getscimv2group": {
+    "operationId": "getscimv2group",
+    "functionName": "getScimV2Group",
+    "signature": "getScimV2Group(groupId, attributes, excludedAttributes, ifNoneMatch)",
+    "parameters": [
+      {
+        "name": "groupId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "attributes",
+        "type": "[String]",
+        "required": "false"
+      },
+      {
+        "name": "excludedAttributes",
+        "type": "[String]",
+        "required": "false"
+      },
+      {
+        "name": "ifNoneMatch",
+        "type": "String",
+        "required": "false"
+      }
+    ],
+    "return": "ScimV2Group",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.SCIMApi();\n\nlet groupId = \"groupId_example\"; // String | The ID of a group. Returned with GET /api/v2/scim/v2/groups.\nlet opts = { \n  \"attributes\": [\"attributes_example\"], // [String] | Indicates which attributes to include. Returns these attributes and the \\\"id\\\", \\\"active\\\", and \\\"meta\\\" attributes. Use \\\"attributes\\\" to avoid expensive secondary calls for the default attributes.\n  \"excludedAttributes\": [\"excludedAttributes_example\"], // [String] | Indicates which attributes to exclude. Returns the default attributes minus \\\"excludedAttributes\\\". Always returns \\\"id\\\", \\\"active\\\", and \\\"meta\\\" attributes. Use \\\"excludedAttributes\\\" to avoid expensive secondary calls for the default attributes.\n  \"ifNoneMatch\": \"ifNoneMatch_example\" // String | The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/groups/{groupId}. Example: \\\"42\\\". If the ETag is different from the version on the server, returns the current configuration of the resource. If the ETag is current, returns 304 Not Modified.\n};\n\n// Get a group\napiInstance.getScimV2Group(groupId, opts)\n  .then((data) => {\n    console.log(`getScimV2Group success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getScimV2Group\");\n    console.error(err);\n  });"
+  },
+  "getscimv2groups": {
+    "operationId": "getscimv2groups",
+    "functionName": "getScimV2Groups",
+    "signature": "getScimV2Groups(filter, startIndex, count, attributes, excludedAttributes)",
+    "parameters": [
+      {
+        "name": "filter",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "startIndex",
+        "type": "Number",
+        "required": "false"
+      },
+      {
+        "name": "count",
+        "type": "Number",
+        "required": "false"
+      },
+      {
+        "name": "attributes",
+        "type": "[String]",
+        "required": "false"
+      },
+      {
+        "name": "excludedAttributes",
+        "type": "[String]",
+        "required": "false"
+      }
+    ],
+    "return": "ScimGroupListResponse",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.SCIMApi();\n\nlet filter = \"displayName eq groupName\"; // String | Filters results. If nothing is specified, returns all groups. Examples of valid values: \\\"id eq 5f4bc742-a019-4e38-8e2a-d39d5bc0b0f3\\\", \\\"displayname eq Sales\\\".\nlet opts = { \n  \"startIndex\": 1, // Number | The 1-based index of the first query result.\n  \"count\": 25, // Number | The requested number of items per page. A value of 0 returns \\\"totalResults\\\". A page size over 25 may exceed internal resource limits and return a 429 error. For a page size over 25, use the \\\"excludedAttributes\\\" or \\\"attributes\\\" query parameters to exclude or only include secondary lookup values such as \\\"externalId\\\",  \\\"roles\\\", \\\"urn:ietf:params:scim:schemas:extension:genesys:purecloud:2.0:User:routingLanguages\\\", or \\\"urn:ietf:params:scim:schemas:extension:genesys:purecloud:2.0:User:routingSkills\\\".\n  \"attributes\": [\"attributes_example\"], // [String] | Indicates which attributes to include. Returns these attributes and the \\\"id\\\", \\\"active\\\", and \\\"meta\\\" attributes. Use \\\"attributes\\\" to avoid expensive secondary calls for the default attributes.\n  \"excludedAttributes\": [\"excludedAttributes_example\"] // [String] | Indicates which attributes to exclude. Returns the default attributes minus \\\"excludedAttributes\\\". Always returns \\\"id\\\", \\\"active\\\", and \\\"meta\\\" attributes. Use \\\"excludedAttributes\\\" to avoid expensive secondary calls for the default attributes.\n};\n\n// Get a list of groups\napiInstance.getScimV2Groups(filter, opts)\n  .then((data) => {\n    console.log(`getScimV2Groups success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getScimV2Groups\");\n    console.error(err);\n  });"
+  },
+  "getscimv2resourcetype": {
+    "operationId": "getscimv2resourcetype",
+    "functionName": "getScimV2Resourcetype",
+    "signature": "getScimV2Resourcetype(resourceType)",
+    "parameters": [
+      {
+        "name": "resourceType",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "return": "ScimConfigResourceType",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.SCIMApi();\n\nlet resourceType = \"resourceType_example\"; // String | The type of resource. Returned with GET /api/v2/scim/v2/resourcetypes.\n\n// Get a resource type\napiInstance.getScimV2Resourcetype(resourceType)\n  .then((data) => {\n    console.log(`getScimV2Resourcetype success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getScimV2Resourcetype\");\n    console.error(err);\n  });"
+  },
+  "getscimv2resourcetypes": {
+    "operationId": "getscimv2resourcetypes",
+    "functionName": "getScimV2Resourcetypes",
+    "signature": "getScimV2Resourcetypes()",
+    "return": "ScimConfigResourceTypesListResponse",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.SCIMApi();\n\n// Get a list of resource types\napiInstance.getScimV2Resourcetypes()\n  .then((data) => {\n    console.log(`getScimV2Resourcetypes success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getScimV2Resourcetypes\");\n    console.error(err);\n  });"
+  },
+  "getscimv2schema": {
+    "operationId": "getscimv2schema",
+    "functionName": "getScimV2Schema",
+    "signature": "getScimV2Schema(schemaId)",
+    "parameters": [
+      {
+        "name": "schemaId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "return": "ScimV2SchemaDefinition",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.SCIMApi();\n\nlet schemaId = \"schemaId_example\"; // String | The ID of a schema. Returned with GET /api/v2/scim/v2/schemas.\n\n// Get a SCIM schema\napiInstance.getScimV2Schema(schemaId)\n  .then((data) => {\n    console.log(`getScimV2Schema success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getScimV2Schema\");\n    console.error(err);\n  });"
+  },
+  "getscimv2schemas": {
+    "operationId": "getscimv2schemas",
+    "functionName": "getScimV2Schemas",
+    "signature": "getScimV2Schemas(filter)",
+    "parameters": [
+      {
+        "name": "filter",
+        "type": "String",
+        "required": "false"
+      }
+    ],
+    "return": "ScimV2SchemaListResponse",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.SCIMApi();\n\nlet opts = { \n  \"filter\": \"displayName eq groupName\" // String | Filtered results are invalid and return 403 Unauthorized.\n};\n\n// Get a list of SCIM schemas\napiInstance.getScimV2Schemas(opts)\n  .then((data) => {\n    console.log(`getScimV2Schemas success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getScimV2Schemas\");\n    console.error(err);\n  });"
+  },
+  "getscimv2serviceproviderconfig": {
+    "operationId": "getscimv2serviceproviderconfig",
+    "functionName": "getScimV2Serviceproviderconfig",
+    "signature": "getScimV2Serviceproviderconfig(ifNoneMatch)",
+    "parameters": [
+      {
+        "name": "ifNoneMatch",
+        "type": "String",
+        "required": "false"
+      }
+    ],
+    "return": "ScimServiceProviderConfig",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.SCIMApi();\n\nlet opts = { \n  \"ifNoneMatch\": \"ifNoneMatch_example\" // String | The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/serviceproviderconfig. Example: \\\"42\\\". If the ETag is different from the version on the server, returns the current configuration of the resource. If the ETag is current, returns 304 Not Modified. \n};\n\n// Get a service provider's configuration\napiInstance.getScimV2Serviceproviderconfig(opts)\n  .then((data) => {\n    console.log(`getScimV2Serviceproviderconfig success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getScimV2Serviceproviderconfig\");\n    console.error(err);\n  });"
+  },
+  "getscimv2user": {
+    "operationId": "getscimv2user",
+    "functionName": "getScimV2User",
+    "signature": "getScimV2User(userId, attributes, excludedAttributes, ifNoneMatch)",
+    "parameters": [
+      {
+        "name": "userId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "attributes",
+        "type": "[String]",
+        "required": "false"
+      },
+      {
+        "name": "excludedAttributes",
+        "type": "[String]",
+        "required": "false"
+      },
+      {
+        "name": "ifNoneMatch",
+        "type": "String",
+        "required": "false"
+      }
+    ],
+    "return": "ScimV2User",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.SCIMApi();\n\nlet userId = \"userId_example\"; // String | The ID of a user. Returned with GET /api/v2/scim/v2/users.\nlet opts = { \n  \"attributes\": [\"attributes_example\"], // [String] | Indicates which attributes to include. Returns these attributes and the \\\"id\\\", \\\"userName\\\", \\\"active\\\", and \\\"meta\\\" attributes. Use \\\"attributes\\\" to avoid expensive secondary calls for the default attributes.\n  \"excludedAttributes\": [\"excludedAttributes_example\"], // [String] | Indicates which attributes to exclude. Returns the default attributes minus \\\"excludedAttributes\\\". Always returns the \\\"id\\\", \\\"userName\\\", \\\"active\\\", and \\\"meta\\\" attributes. Use \\\"excludedAttributes\\\" to avoid expensive secondary calls for the default attributes.\n  \"ifNoneMatch\": \"ifNoneMatch_example\" // String | The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/users/{userId}. Example: \\\"42\\\". If the ETag is different from the version on the server, returns the current configuration of the resource. If the ETag is current, returns 304 Not Modified.\n};\n\n// Get a user\napiInstance.getScimV2User(userId, opts)\n  .then((data) => {\n    console.log(`getScimV2User success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getScimV2User\");\n    console.error(err);\n  });"
+  },
+  "getscimv2users": {
+    "operationId": "getscimv2users",
+    "functionName": "getScimV2Users",
+    "signature": "getScimV2Users(startIndex, count, attributes, excludedAttributes, filter)",
+    "parameters": [
+      {
+        "name": "startIndex",
+        "type": "Number",
+        "required": "false"
+      },
+      {
+        "name": "count",
+        "type": "Number",
+        "required": "false"
+      },
+      {
+        "name": "attributes",
+        "type": "[String]",
+        "required": "false"
+      },
+      {
+        "name": "excludedAttributes",
+        "type": "[String]",
+        "required": "false"
+      },
+      {
+        "name": "filter",
+        "type": "String",
+        "required": "false"
+      }
+    ],
+    "return": "ScimUserListResponse",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.SCIMApi();\n\nlet opts = { \n  \"startIndex\": 1, // Number | The 1-based index of the first query result.\n  \"count\": 25, // Number | The requested number of items per page. A value of 0 returns \\\"totalResults\\\". A page size over 25 may exceed internal resource limits and return a 429 error. For a page size over 25, use the \\\"excludedAttributes\\\" or \\\"attributes\\\" query parameters to exclude or only include secondary lookup values such as \\\"externalId\\\",  \\\"roles\\\", \\\"urn:ietf:params:scim:schemas:extension:genesys:purecloud:2.0:User:routingLanguages\\\", or \\\"urn:ietf:params:scim:schemas:extension:genesys:purecloud:2.0:User:routingSkills\\\".\n  \"attributes\": [\"attributes_example\"], // [String] | Indicates which attributes to include. Returns these attributes and the \\\"id\\\", \\\"userName\\\", \\\"active\\\", and \\\"meta\\\" attributes. Use \\\"attributes\\\" to avoid expensive secondary calls for the default attributes.\n  \"excludedAttributes\": [\"excludedAttributes_example\"], // [String] | Indicates which attributes to exclude. Returns the default attributes minus \\\"excludedAttributes\\\". Always returns the \\\"id\\\", \\\"userName\\\", \\\"active\\\", and \\\"meta\\\" attributes. Use \\\"excludedAttributes\\\" to avoid expensive secondary calls for the default attributes.\n  \"filter\": \"filter_example\" // String | Filters results. If nothing is specified, returns all active users. Examples of valid values: \\\"id eq 857449b0-d9e7-4cd0-acbf-a6adfb9ef1e9\\\", \\\"userName eq search@sample.org\\\", \\\"manager eq 16e10e2f-1136-43fe-bb84-eac073168a49\\\", \\\"email eq search@sample.org\\\", \\\"division eq divisionName\\\", \\\"externalId eq 167844\\\", \\\"active eq false\\\", \\\"employeeNumber eq 9876543210\\\".\n};\n\n// Get a list of users\napiInstance.getScimV2Users(opts)\n  .then((data) => {\n    console.log(`getScimV2Users success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getScimV2Users\");\n    console.error(err);\n  });"
+  },
+  "patchscimgroup": {
+    "operationId": "patchscimgroup",
+    "functionName": "patchScimGroup",
+    "signature": "patchScimGroup(groupId, body, ifMatch)",
+    "parameters": [
+      {
+        "name": "groupId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "Object",
+        "required": "true"
+      },
+      {
+        "name": "ifMatch",
+        "type": "String",
+        "required": "false"
+      }
+    ],
+    "return": "ScimV2Group",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.SCIMApi();\n\nlet groupId = \"groupId_example\"; // String | The ID of a group. Returned with GET /api/v2/scim/groups.\nlet body = {}; // Object | The information used to modify a group.\nlet opts = { \n  \"ifMatch\": \"ifMatch_example\" // String | The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/groups/{groupId}. Example: \\\"42\\\". If the ETag is different from the version on the server, returns 400 with a \\\"scimType\\\" of \\\"invalidVers\\\".\n};\n\n// Modify a group\napiInstance.patchScimGroup(groupId, body, opts)\n  .then((data) => {\n    console.log(`patchScimGroup success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling patchScimGroup\");\n    console.error(err);\n  });"
+  },
+  "patchscimuser": {
+    "operationId": "patchscimuser",
+    "functionName": "patchScimUser",
+    "signature": "patchScimUser(userId, body, ifMatch)",
+    "parameters": [
+      {
+        "name": "userId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "Object",
+        "required": "true"
+      },
+      {
+        "name": "ifMatch",
+        "type": "String",
+        "required": "false"
+      }
+    ],
+    "return": "ScimV2User",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.SCIMApi();\n\nlet userId = \"userId_example\"; // String | The ID of a user. Returned with GET /api/v2/scim/users.\nlet body = {}; // Object | The information used to modify a user.\nlet opts = { \n  \"ifMatch\": \"ifMatch_example\" // String | The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/users/{userId}. Example: \\\"42\\\". If the ETag is different from the version on the server, returns 400 with a \\\"scimType\\\" of \\\"invalidVers\\\".\n};\n\n// Modify a user\napiInstance.patchScimUser(userId, body, opts)\n  .then((data) => {\n    console.log(`patchScimUser success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling patchScimUser\");\n    console.error(err);\n  });"
+  },
+  "patchscimv2group": {
+    "operationId": "patchscimv2group",
+    "functionName": "patchScimV2Group",
+    "signature": "patchScimV2Group(groupId, body, ifMatch)",
+    "parameters": [
+      {
+        "name": "groupId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "Object",
+        "required": "true"
+      },
+      {
+        "name": "ifMatch",
+        "type": "String",
+        "required": "false"
+      }
+    ],
+    "return": "ScimV2Group",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.SCIMApi();\n\nlet groupId = \"groupId_example\"; // String | The ID of a group. Returned with GET /api/v2/scim/v2/groups.\nlet body = {}; // Object | The information used to modify a group.\nlet opts = { \n  \"ifMatch\": \"ifMatch_example\" // String | The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/groups/{groupId}. Example: \\\"42\\\". If the ETag is different from the version on the server, returns 400 with a \\\"scimType\\\" of \\\"invalidVers\\\".\n};\n\n// Modify a group\napiInstance.patchScimV2Group(groupId, body, opts)\n  .then((data) => {\n    console.log(`patchScimV2Group success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling patchScimV2Group\");\n    console.error(err);\n  });"
+  },
+  "patchscimv2user": {
+    "operationId": "patchscimv2user",
+    "functionName": "patchScimV2User",
+    "signature": "patchScimV2User(userId, body, ifMatch)",
+    "parameters": [
+      {
+        "name": "userId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "Object",
+        "required": "true"
+      },
+      {
+        "name": "ifMatch",
+        "type": "String",
+        "required": "false"
+      }
+    ],
+    "return": "ScimV2User",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.SCIMApi();\n\nlet userId = \"userId_example\"; // String | The ID of a user. Returned with GET /api/v2/scim/v2/users.\nlet body = {}; // Object | The information used to modify a user.\nlet opts = { \n  \"ifMatch\": \"ifMatch_example\" // String | The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/users/{userId}. Example: \\\"42\\\". If the ETag is different from the version on the server, returns 400 with a \\\"scimType\\\" of \\\"invalidVers\\\".\n};\n\n// Modify a user\napiInstance.patchScimV2User(userId, body, opts)\n  .then((data) => {\n    console.log(`patchScimV2User success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling patchScimV2User\");\n    console.error(err);\n  });"
+  },
+  "postscimusers": {
+    "operationId": "postscimusers",
+    "functionName": "postScimUsers",
+    "signature": "postScimUsers(body)",
+    "parameters": [
+      {
+        "name": "body",
+        "type": "Object",
+        "required": "true"
+      }
+    ],
+    "return": "ScimV2User",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.SCIMApi();\n\nlet body = {}; // Object | The information used to create a user.\n\n// Create a user\napiInstance.postScimUsers(body)\n  .then((data) => {\n    console.log(`postScimUsers success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling postScimUsers\");\n    console.error(err);\n  });"
+  },
+  "postscimv2users": {
+    "operationId": "postscimv2users",
+    "functionName": "postScimV2Users",
+    "signature": "postScimV2Users(body)",
+    "parameters": [
+      {
+        "name": "body",
+        "type": "Object",
+        "required": "true"
+      }
+    ],
+    "return": "ScimV2User",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.SCIMApi();\n\nlet body = {}; // Object | The information used to create a user.\n\n// Create a user\napiInstance.postScimV2Users(body)\n  .then((data) => {\n    console.log(`postScimV2Users success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling postScimV2Users\");\n    console.error(err);\n  });"
+  },
+  "putscimgroup": {
+    "operationId": "putscimgroup",
+    "functionName": "putScimGroup",
+    "signature": "putScimGroup(groupId, body, ifMatch)",
+    "parameters": [
+      {
+        "name": "groupId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "Object",
+        "required": "true"
+      },
+      {
+        "name": "ifMatch",
+        "type": "String",
+        "required": "false"
+      }
+    ],
+    "return": "ScimV2Group",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.SCIMApi();\n\nlet groupId = \"groupId_example\"; // String | The ID of a group. Returned with GET /api/v2/scim/groups.\nlet body = {}; // Object | The information used to replace a group.\nlet opts = { \n  \"ifMatch\": \"ifMatch_example\" // String | The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/groups/{groupId}. Example: \\\"42\\\". If the ETag is different from the version on the server, returns 400 with a \\\"scimType\\\" of \\\"invalidVers\\\".\n};\n\n// Replace a group\napiInstance.putScimGroup(groupId, body, opts)\n  .then((data) => {\n    console.log(`putScimGroup success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling putScimGroup\");\n    console.error(err);\n  });"
+  },
+  "putscimuser": {
+    "operationId": "putscimuser",
+    "functionName": "putScimUser",
+    "signature": "putScimUser(userId, body, ifMatch)",
+    "parameters": [
+      {
+        "name": "userId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "Object",
+        "required": "true"
+      },
+      {
+        "name": "ifMatch",
+        "type": "String",
+        "required": "false"
+      }
+    ],
+    "return": "ScimV2User",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.SCIMApi();\n\nlet userId = \"userId_example\"; // String | The ID of a user. Returned with GET /api/v2/scim/users.\nlet body = {}; // Object | The information used to replace a user.\nlet opts = { \n  \"ifMatch\": \"ifMatch_example\" // String | The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/users/{userId}. Example: \\\"42\\\". If the ETag is different from the version on the server, returns 400 with a \\\"scimType\\\" of \\\"invalidVers\\\".\n};\n\n// Replace a user\napiInstance.putScimUser(userId, body, opts)\n  .then((data) => {\n    console.log(`putScimUser success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling putScimUser\");\n    console.error(err);\n  });"
+  },
+  "putscimv2group": {
+    "operationId": "putscimv2group",
+    "functionName": "putScimV2Group",
+    "signature": "putScimV2Group(groupId, body, ifMatch)",
+    "parameters": [
+      {
+        "name": "groupId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "Object",
+        "required": "true"
+      },
+      {
+        "name": "ifMatch",
+        "type": "String",
+        "required": "false"
+      }
+    ],
+    "return": "ScimV2Group",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.SCIMApi();\n\nlet groupId = \"groupId_example\"; // String | The ID of a group. Returned with GET /api/v2/scim/v2/groups.\nlet body = {}; // Object | The information used to replace a group.\nlet opts = { \n  \"ifMatch\": \"ifMatch_example\" // String | The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/groups/{groupId}. Example: \\\"42\\\". If the ETag is different from the version on the server, returns 400 with a \\\"scimType\\\" of \\\"invalidVers\\\".\n};\n\n// Replace a group\napiInstance.putScimV2Group(groupId, body, opts)\n  .then((data) => {\n    console.log(`putScimV2Group success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling putScimV2Group\");\n    console.error(err);\n  });"
+  },
+  "putscimv2user": {
+    "operationId": "putscimv2user",
+    "functionName": "putScimV2User",
+    "signature": "putScimV2User(userId, body, ifMatch)",
+    "parameters": [
+      {
+        "name": "userId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "Object",
+        "required": "true"
+      },
+      {
+        "name": "ifMatch",
+        "type": "String",
+        "required": "false"
+      }
+    ],
+    "return": "ScimV2User",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.SCIMApi();\n\nlet userId = \"userId_example\"; // String | The ID of a user. Returned with GET /api/v2/scim/v2/users.\nlet body = {}; // Object | The information used to replace a user.\nlet opts = { \n  \"ifMatch\": \"ifMatch_example\" // String | The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/users/{userId}. Example: \\\"42\\\". If the ETag is different from the version on the server, returns 400 with a \\\"scimType\\\" of \\\"invalidVers\\\".\n};\n\n// Replace a user\napiInstance.putScimV2User(userId, body, opts)\n  .then((data) => {\n    console.log(`putScimV2User success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling putScimV2User\");\n    console.error(err);\n  });"
   },
   "deleteconversationrecordingannotation": {
     "operationId": "deleteconversationrecordingannotation",
@@ -24405,642 +25173,6 @@
     ],
     "return": "UserSkillEntityListing",
     "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.UsersApi();\n\nlet userId = \"userId_example\"; // String | User ID\nlet body = [{}]; // Object | Skill\n\n// Replace all routing skills assigned to a user\napiInstance.putUserRoutingskillsBulk(userId, body)\n  .then((data) => {\n    console.log(`putUserRoutingskillsBulk success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling putUserRoutingskillsBulk\");\n    console.error(err);\n  });"
-  },
-  "deletescimuser": {
-    "operationId": "deletescimuser",
-    "functionName": "deleteScimUser",
-    "signature": "deleteScimUser(userId, ifMatch)",
-    "parameters": [
-      {
-        "name": "userId",
-        "type": "String",
-        "required": "true"
-      },
-      {
-        "name": "ifMatch",
-        "type": "String",
-        "required": "false"
-      }
-    ],
-    "return": "Empty",
-    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.SCIMApi();\n\nlet userId = \"userId_example\"; // String | The ID of a user. Returned with GET /api/v2/scim/users.\nlet opts = { \n  \"ifMatch\": \"ifMatch_example\" // String | The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/users/{userId}. Example: \\\"42\\\". If the ETag is different from the version on the server, returns 400 with a \\\"scimType\\\" of \\\"invalidVers\\\".\n};\n\n// Delete a user\napiInstance.deleteScimUser(userId, opts)\n  .then((data) => {\n    console.log(`deleteScimUser success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling deleteScimUser\");\n    console.error(err);\n  });"
-  },
-  "deletescimv2user": {
-    "operationId": "deletescimv2user",
-    "functionName": "deleteScimV2User",
-    "signature": "deleteScimV2User(userId, ifMatch)",
-    "parameters": [
-      {
-        "name": "userId",
-        "type": "String",
-        "required": "true"
-      },
-      {
-        "name": "ifMatch",
-        "type": "String",
-        "required": "false"
-      }
-    ],
-    "return": "Empty",
-    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.SCIMApi();\n\nlet userId = \"userId_example\"; // String | The ID of a user. Returned with GET /api/v2/scim/v2/users.\nlet opts = { \n  \"ifMatch\": \"ifMatch_example\" // String | The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/users/{userId}. Example: \\\"42\\\". If the ETag is different from the version on the server, returns 400 with a \\\"scimType\\\" of \\\"invalidVers\\\".\n};\n\n// Delete a user\napiInstance.deleteScimV2User(userId, opts)\n  .then((data) => {\n    console.log(`deleteScimV2User success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling deleteScimV2User\");\n    console.error(err);\n  });"
-  },
-  "getscimgroup": {
-    "operationId": "getscimgroup",
-    "functionName": "getScimGroup",
-    "signature": "getScimGroup(groupId, attributes, excludedAttributes, ifNoneMatch)",
-    "parameters": [
-      {
-        "name": "groupId",
-        "type": "String",
-        "required": "true"
-      },
-      {
-        "name": "attributes",
-        "type": "[String]",
-        "required": "false"
-      },
-      {
-        "name": "excludedAttributes",
-        "type": "[String]",
-        "required": "false"
-      },
-      {
-        "name": "ifNoneMatch",
-        "type": "String",
-        "required": "false"
-      }
-    ],
-    "return": "ScimV2Group",
-    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.SCIMApi();\n\nlet groupId = \"groupId_example\"; // String | The ID of a group. Returned with GET /api/v2/scim/groups.\nlet opts = { \n  \"attributes\": [\"attributes_example\"], // [String] | Indicates which attributes to include. Returns these attributes and the \\\"id\\\", \\\"active\\\", and \\\"meta\\\" attributes. Use \\\"attributes\\\" to avoid expensive secondary calls for the default attributes.\n  \"excludedAttributes\": [\"excludedAttributes_example\"], // [String] | Indicates which attributes to exclude. Returns the default attributes minus \\\"excludedAttributes\\\". Always returns \\\"id\\\", \\\"active\\\", and \\\"meta\\\" attributes. Use \\\"excludedAttributes\\\" to avoid expensive secondary calls for the default attributes.\n  \"ifNoneMatch\": \"ifNoneMatch_example\" // String | The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/groups/{groupId}. Example: \\\"42\\\". If the ETag is different from the version on the server, returns the current configuration of the resource. If the ETag is current, returns 304 Not Modified.\n};\n\n// Get a group\napiInstance.getScimGroup(groupId, opts)\n  .then((data) => {\n    console.log(`getScimGroup success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getScimGroup\");\n    console.error(err);\n  });"
-  },
-  "getscimgroups": {
-    "operationId": "getscimgroups",
-    "functionName": "getScimGroups",
-    "signature": "getScimGroups(startIndex, count, attributes, excludedAttributes, filter)",
-    "parameters": [
-      {
-        "name": "startIndex",
-        "type": "Number",
-        "required": "false"
-      },
-      {
-        "name": "count",
-        "type": "Number",
-        "required": "false"
-      },
-      {
-        "name": "attributes",
-        "type": "[String]",
-        "required": "false"
-      },
-      {
-        "name": "excludedAttributes",
-        "type": "[String]",
-        "required": "false"
-      },
-      {
-        "name": "filter",
-        "type": "String",
-        "required": "false"
-      }
-    ],
-    "return": "ScimGroupListResponse",
-    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.SCIMApi();\n\nlet opts = { \n  \"startIndex\": 1, // Number | The 1-based index of the first query result.\n  \"count\": 25, // Number | The requested number of items per page. A value of 0 returns \\\"totalResults\\\". A page size over 25 may exceed internal resource limits and return a 429 error. For a page size over 25, use the \\\"excludedAttributes\\\" or \\\"attributes\\\" query parameters to exclude or only include secondary lookup values such as \\\"externalId\\\",  \\\"roles\\\", \\\"urn:ietf:params:scim:schemas:extension:genesys:purecloud:2.0:User:routingLanguages\\\", or \\\"urn:ietf:params:scim:schemas:extension:genesys:purecloud:2.0:User:routingSkills\\\".\n  \"attributes\": [\"attributes_example\"], // [String] | Indicates which attributes to include. Returns these attributes and the \\\"id\\\", \\\"active\\\", and \\\"meta\\\" attributes. Use \\\"attributes\\\" to avoid expensive secondary calls for the default attributes.\n  \"excludedAttributes\": [\"excludedAttributes_example\"], // [String] | Indicates which attributes to exclude. Returns the default attributes minus \\\"excludedAttributes\\\". Always returns \\\"id\\\", \\\"active\\\", and \\\"meta\\\" attributes. Use \\\"excludedAttributes\\\" to avoid expensive secondary calls for the default attributes.\n  \"filter\": \"displayName eq groupName\" // String | Filters results. If nothing is specified, returns all groups. Examples of valid values: \\\"id eq 5f4bc742-a019-4e38-8e2a-d39d5bc0b0f3\\\", \\\"displayname eq Sales\\\".\n};\n\n// Get a list of groups\napiInstance.getScimGroups(opts)\n  .then((data) => {\n    console.log(`getScimGroups success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getScimGroups\");\n    console.error(err);\n  });"
-  },
-  "getscimresourcetype": {
-    "operationId": "getscimresourcetype",
-    "functionName": "getScimResourcetype",
-    "signature": "getScimResourcetype(resourceType)",
-    "parameters": [
-      {
-        "name": "resourceType",
-        "type": "String",
-        "required": "true"
-      }
-    ],
-    "return": "ScimConfigResourceType",
-    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.SCIMApi();\n\nlet resourceType = \"resourceType_example\"; // String | The type of resource. Returned with GET /api/v2/scim/resourcetypes.\n\n// Get a resource type\napiInstance.getScimResourcetype(resourceType)\n  .then((data) => {\n    console.log(`getScimResourcetype success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getScimResourcetype\");\n    console.error(err);\n  });"
-  },
-  "getscimresourcetypes": {
-    "operationId": "getscimresourcetypes",
-    "functionName": "getScimResourcetypes",
-    "signature": "getScimResourcetypes()",
-    "return": "ScimConfigResourceTypesListResponse",
-    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.SCIMApi();\n\n// Get a list of resource types\napiInstance.getScimResourcetypes()\n  .then((data) => {\n    console.log(`getScimResourcetypes success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getScimResourcetypes\");\n    console.error(err);\n  });"
-  },
-  "getscimschema": {
-    "operationId": "getscimschema",
-    "functionName": "getScimSchema",
-    "signature": "getScimSchema(schemaId)",
-    "parameters": [
-      {
-        "name": "schemaId",
-        "type": "String",
-        "required": "true"
-      }
-    ],
-    "return": "ScimV2SchemaDefinition",
-    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.SCIMApi();\n\nlet schemaId = \"schemaId_example\"; // String | The ID of a schema. Returned with GET /api/v2/scim/schemas.\n\n// Get a SCIM schema\napiInstance.getScimSchema(schemaId)\n  .then((data) => {\n    console.log(`getScimSchema success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getScimSchema\");\n    console.error(err);\n  });"
-  },
-  "getscimschemas": {
-    "operationId": "getscimschemas",
-    "functionName": "getScimSchemas",
-    "signature": "getScimSchemas(filter)",
-    "parameters": [
-      {
-        "name": "filter",
-        "type": "String",
-        "required": "false"
-      }
-    ],
-    "return": "ScimV2SchemaListResponse",
-    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.SCIMApi();\n\nlet opts = { \n  \"filter\": \"displayName eq groupName\" // String | Filtered results are invalid and return 403 Unauthorized.\n};\n\n// Get a list of SCIM schemas\napiInstance.getScimSchemas(opts)\n  .then((data) => {\n    console.log(`getScimSchemas success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getScimSchemas\");\n    console.error(err);\n  });"
-  },
-  "getscimserviceproviderconfig": {
-    "operationId": "getscimserviceproviderconfig",
-    "functionName": "getScimServiceproviderconfig",
-    "signature": "getScimServiceproviderconfig(ifNoneMatch)",
-    "parameters": [
-      {
-        "name": "ifNoneMatch",
-        "type": "String",
-        "required": "false"
-      }
-    ],
-    "return": "ScimServiceProviderConfig",
-    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.SCIMApi();\n\nlet opts = { \n  \"ifNoneMatch\": \"ifNoneMatch_example\" // String | The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/serviceproviderconfig. Example: \\\"42\\\". If the ETag is different from the version on the server, returns the current configuration of the resource. If the ETag is current, returns 304 Not Modified. \n};\n\n// Get a service provider's configuration\napiInstance.getScimServiceproviderconfig(opts)\n  .then((data) => {\n    console.log(`getScimServiceproviderconfig success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getScimServiceproviderconfig\");\n    console.error(err);\n  });"
-  },
-  "getscimuser": {
-    "operationId": "getscimuser",
-    "functionName": "getScimUser",
-    "signature": "getScimUser(userId, attributes, excludedAttributes, ifNoneMatch)",
-    "parameters": [
-      {
-        "name": "userId",
-        "type": "String",
-        "required": "true"
-      },
-      {
-        "name": "attributes",
-        "type": "[String]",
-        "required": "false"
-      },
-      {
-        "name": "excludedAttributes",
-        "type": "[String]",
-        "required": "false"
-      },
-      {
-        "name": "ifNoneMatch",
-        "type": "String",
-        "required": "false"
-      }
-    ],
-    "return": "ScimV2User",
-    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.SCIMApi();\n\nlet userId = \"userId_example\"; // String | The ID of a user. Returned with GET /api/v2/scim/users.\nlet opts = { \n  \"attributes\": [\"attributes_example\"], // [String] | Indicates which attributes to include. Returns these attributes and the \\\"id\\\", \\\"userName\\\", \\\"active\\\", and \\\"meta\\\" attributes. Use \\\"attributes\\\" to avoid expensive secondary calls for the default attributes.\n  \"excludedAttributes\": [\"excludedAttributes_example\"], // [String] | Indicates which attributes to exclude. Returns the default attributes minus \\\"excludedAttributes\\\". Always returns the \\\"id\\\", \\\"userName\\\", \\\"active\\\", and \\\"meta\\\" attributes. Use \\\"excludedAttributes\\\" to avoid expensive secondary calls for the default attributes.\n  \"ifNoneMatch\": \"ifNoneMatch_example\" // String | The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/users/{userId}. Example: \\\"42\\\". If the ETag is different from the version on the server, returns the current configuration of the resource. If the ETag is current, returns 304 Not Modified.\n};\n\n// Get a user\napiInstance.getScimUser(userId, opts)\n  .then((data) => {\n    console.log(`getScimUser success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getScimUser\");\n    console.error(err);\n  });"
-  },
-  "getscimusers": {
-    "operationId": "getscimusers",
-    "functionName": "getScimUsers",
-    "signature": "getScimUsers(startIndex, count, attributes, excludedAttributes, filter)",
-    "parameters": [
-      {
-        "name": "startIndex",
-        "type": "Number",
-        "required": "false"
-      },
-      {
-        "name": "count",
-        "type": "Number",
-        "required": "false"
-      },
-      {
-        "name": "attributes",
-        "type": "[String]",
-        "required": "false"
-      },
-      {
-        "name": "excludedAttributes",
-        "type": "[String]",
-        "required": "false"
-      },
-      {
-        "name": "filter",
-        "type": "String",
-        "required": "false"
-      }
-    ],
-    "return": "ScimUserListResponse",
-    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.SCIMApi();\n\nlet opts = { \n  \"startIndex\": 1, // Number | The 1-based index of the first query result.\n  \"count\": 25, // Number | The requested number of items per page. A value of 0 returns \\\"totalResults\\\". A page size over 25 may exceed internal resource limits and return a 429 error. For a page size over 25, use the \\\"excludedAttributes\\\" or \\\"attributes\\\" query parameters to exclude or only include secondary lookup values such as \\\"externalId\\\",  \\\"roles\\\", \\\"urn:ietf:params:scim:schemas:extension:genesys:purecloud:2.0:User:routingLanguages\\\", or \\\"urn:ietf:params:scim:schemas:extension:genesys:purecloud:2.0:User:routingSkills\\\".\n  \"attributes\": [\"attributes_example\"], // [String] | Indicates which attributes to include. Returns these attributes and the \\\"id\\\", \\\"userName\\\", \\\"active\\\", and \\\"meta\\\" attributes. Use \\\"attributes\\\" to avoid expensive secondary calls for the default attributes.\n  \"excludedAttributes\": [\"excludedAttributes_example\"], // [String] | Indicates which attributes to exclude. Returns the default attributes minus \\\"excludedAttributes\\\". Always returns the \\\"id\\\", \\\"userName\\\", \\\"active\\\", and \\\"meta\\\" attributes. Use \\\"excludedAttributes\\\" to avoid expensive secondary calls for the default attributes.\n  \"filter\": \"filter_example\" // String | Filters results. If nothing is specified, returns all active users. Examples of valid values: \\\"id eq 857449b0-d9e7-4cd0-acbf-a6adfb9ef1e9\\\", \\\"userName eq search@sample.org\\\", \\\"manager eq 16e10e2f-1136-43fe-bb84-eac073168a49\\\", \\\"email eq search@sample.org\\\", \\\"division eq divisionName\\\", \\\"externalId eq 167844\\\", \\\"active eq false\\\", \\\"employeeNumber eq 9876543210\\\".\n};\n\n// Get a list of users\napiInstance.getScimUsers(opts)\n  .then((data) => {\n    console.log(`getScimUsers success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getScimUsers\");\n    console.error(err);\n  });"
-  },
-  "getscimv2group": {
-    "operationId": "getscimv2group",
-    "functionName": "getScimV2Group",
-    "signature": "getScimV2Group(groupId, attributes, excludedAttributes, ifNoneMatch)",
-    "parameters": [
-      {
-        "name": "groupId",
-        "type": "String",
-        "required": "true"
-      },
-      {
-        "name": "attributes",
-        "type": "[String]",
-        "required": "false"
-      },
-      {
-        "name": "excludedAttributes",
-        "type": "[String]",
-        "required": "false"
-      },
-      {
-        "name": "ifNoneMatch",
-        "type": "String",
-        "required": "false"
-      }
-    ],
-    "return": "ScimV2Group",
-    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.SCIMApi();\n\nlet groupId = \"groupId_example\"; // String | The ID of a group. Returned with GET /api/v2/scim/v2/groups.\nlet opts = { \n  \"attributes\": [\"attributes_example\"], // [String] | Indicates which attributes to include. Returns these attributes and the \\\"id\\\", \\\"active\\\", and \\\"meta\\\" attributes. Use \\\"attributes\\\" to avoid expensive secondary calls for the default attributes.\n  \"excludedAttributes\": [\"excludedAttributes_example\"], // [String] | Indicates which attributes to exclude. Returns the default attributes minus \\\"excludedAttributes\\\". Always returns \\\"id\\\", \\\"active\\\", and \\\"meta\\\" attributes. Use \\\"excludedAttributes\\\" to avoid expensive secondary calls for the default attributes.\n  \"ifNoneMatch\": \"ifNoneMatch_example\" // String | The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/groups/{groupId}. Example: \\\"42\\\". If the ETag is different from the version on the server, returns the current configuration of the resource. If the ETag is current, returns 304 Not Modified.\n};\n\n// Get a group\napiInstance.getScimV2Group(groupId, opts)\n  .then((data) => {\n    console.log(`getScimV2Group success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getScimV2Group\");\n    console.error(err);\n  });"
-  },
-  "getscimv2groups": {
-    "operationId": "getscimv2groups",
-    "functionName": "getScimV2Groups",
-    "signature": "getScimV2Groups(filter, startIndex, count, attributes, excludedAttributes)",
-    "parameters": [
-      {
-        "name": "filter",
-        "type": "String",
-        "required": "true"
-      },
-      {
-        "name": "startIndex",
-        "type": "Number",
-        "required": "false"
-      },
-      {
-        "name": "count",
-        "type": "Number",
-        "required": "false"
-      },
-      {
-        "name": "attributes",
-        "type": "[String]",
-        "required": "false"
-      },
-      {
-        "name": "excludedAttributes",
-        "type": "[String]",
-        "required": "false"
-      }
-    ],
-    "return": "ScimGroupListResponse",
-    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.SCIMApi();\n\nlet filter = \"displayName eq groupName\"; // String | Filters results. If nothing is specified, returns all groups. Examples of valid values: \\\"id eq 5f4bc742-a019-4e38-8e2a-d39d5bc0b0f3\\\", \\\"displayname eq Sales\\\".\nlet opts = { \n  \"startIndex\": 1, // Number | The 1-based index of the first query result.\n  \"count\": 25, // Number | The requested number of items per page. A value of 0 returns \\\"totalResults\\\". A page size over 25 may exceed internal resource limits and return a 429 error. For a page size over 25, use the \\\"excludedAttributes\\\" or \\\"attributes\\\" query parameters to exclude or only include secondary lookup values such as \\\"externalId\\\",  \\\"roles\\\", \\\"urn:ietf:params:scim:schemas:extension:genesys:purecloud:2.0:User:routingLanguages\\\", or \\\"urn:ietf:params:scim:schemas:extension:genesys:purecloud:2.0:User:routingSkills\\\".\n  \"attributes\": [\"attributes_example\"], // [String] | Indicates which attributes to include. Returns these attributes and the \\\"id\\\", \\\"active\\\", and \\\"meta\\\" attributes. Use \\\"attributes\\\" to avoid expensive secondary calls for the default attributes.\n  \"excludedAttributes\": [\"excludedAttributes_example\"] // [String] | Indicates which attributes to exclude. Returns the default attributes minus \\\"excludedAttributes\\\". Always returns \\\"id\\\", \\\"active\\\", and \\\"meta\\\" attributes. Use \\\"excludedAttributes\\\" to avoid expensive secondary calls for the default attributes.\n};\n\n// Get a list of groups\napiInstance.getScimV2Groups(filter, opts)\n  .then((data) => {\n    console.log(`getScimV2Groups success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getScimV2Groups\");\n    console.error(err);\n  });"
-  },
-  "getscimv2resourcetype": {
-    "operationId": "getscimv2resourcetype",
-    "functionName": "getScimV2Resourcetype",
-    "signature": "getScimV2Resourcetype(resourceType)",
-    "parameters": [
-      {
-        "name": "resourceType",
-        "type": "String",
-        "required": "true"
-      }
-    ],
-    "return": "ScimConfigResourceType",
-    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.SCIMApi();\n\nlet resourceType = \"resourceType_example\"; // String | The type of resource. Returned with GET /api/v2/scim/v2/resourcetypes.\n\n// Get a resource type\napiInstance.getScimV2Resourcetype(resourceType)\n  .then((data) => {\n    console.log(`getScimV2Resourcetype success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getScimV2Resourcetype\");\n    console.error(err);\n  });"
-  },
-  "getscimv2resourcetypes": {
-    "operationId": "getscimv2resourcetypes",
-    "functionName": "getScimV2Resourcetypes",
-    "signature": "getScimV2Resourcetypes()",
-    "return": "ScimConfigResourceTypesListResponse",
-    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.SCIMApi();\n\n// Get a list of resource types\napiInstance.getScimV2Resourcetypes()\n  .then((data) => {\n    console.log(`getScimV2Resourcetypes success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getScimV2Resourcetypes\");\n    console.error(err);\n  });"
-  },
-  "getscimv2schema": {
-    "operationId": "getscimv2schema",
-    "functionName": "getScimV2Schema",
-    "signature": "getScimV2Schema(schemaId)",
-    "parameters": [
-      {
-        "name": "schemaId",
-        "type": "String",
-        "required": "true"
-      }
-    ],
-    "return": "ScimV2SchemaDefinition",
-    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.SCIMApi();\n\nlet schemaId = \"schemaId_example\"; // String | The ID of a schema. Returned with GET /api/v2/scim/v2/schemas.\n\n// Get a SCIM schema\napiInstance.getScimV2Schema(schemaId)\n  .then((data) => {\n    console.log(`getScimV2Schema success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getScimV2Schema\");\n    console.error(err);\n  });"
-  },
-  "getscimv2schemas": {
-    "operationId": "getscimv2schemas",
-    "functionName": "getScimV2Schemas",
-    "signature": "getScimV2Schemas(filter)",
-    "parameters": [
-      {
-        "name": "filter",
-        "type": "String",
-        "required": "false"
-      }
-    ],
-    "return": "ScimV2SchemaListResponse",
-    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.SCIMApi();\n\nlet opts = { \n  \"filter\": \"displayName eq groupName\" // String | Filtered results are invalid and return 403 Unauthorized.\n};\n\n// Get a list of SCIM schemas\napiInstance.getScimV2Schemas(opts)\n  .then((data) => {\n    console.log(`getScimV2Schemas success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getScimV2Schemas\");\n    console.error(err);\n  });"
-  },
-  "getscimv2serviceproviderconfig": {
-    "operationId": "getscimv2serviceproviderconfig",
-    "functionName": "getScimV2Serviceproviderconfig",
-    "signature": "getScimV2Serviceproviderconfig(ifNoneMatch)",
-    "parameters": [
-      {
-        "name": "ifNoneMatch",
-        "type": "String",
-        "required": "false"
-      }
-    ],
-    "return": "ScimServiceProviderConfig",
-    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.SCIMApi();\n\nlet opts = { \n  \"ifNoneMatch\": \"ifNoneMatch_example\" // String | The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/serviceproviderconfig. Example: \\\"42\\\". If the ETag is different from the version on the server, returns the current configuration of the resource. If the ETag is current, returns 304 Not Modified. \n};\n\n// Get a service provider's configuration\napiInstance.getScimV2Serviceproviderconfig(opts)\n  .then((data) => {\n    console.log(`getScimV2Serviceproviderconfig success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getScimV2Serviceproviderconfig\");\n    console.error(err);\n  });"
-  },
-  "getscimv2user": {
-    "operationId": "getscimv2user",
-    "functionName": "getScimV2User",
-    "signature": "getScimV2User(userId, attributes, excludedAttributes, ifNoneMatch)",
-    "parameters": [
-      {
-        "name": "userId",
-        "type": "String",
-        "required": "true"
-      },
-      {
-        "name": "attributes",
-        "type": "[String]",
-        "required": "false"
-      },
-      {
-        "name": "excludedAttributes",
-        "type": "[String]",
-        "required": "false"
-      },
-      {
-        "name": "ifNoneMatch",
-        "type": "String",
-        "required": "false"
-      }
-    ],
-    "return": "ScimV2User",
-    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.SCIMApi();\n\nlet userId = \"userId_example\"; // String | The ID of a user. Returned with GET /api/v2/scim/v2/users.\nlet opts = { \n  \"attributes\": [\"attributes_example\"], // [String] | Indicates which attributes to include. Returns these attributes and the \\\"id\\\", \\\"userName\\\", \\\"active\\\", and \\\"meta\\\" attributes. Use \\\"attributes\\\" to avoid expensive secondary calls for the default attributes.\n  \"excludedAttributes\": [\"excludedAttributes_example\"], // [String] | Indicates which attributes to exclude. Returns the default attributes minus \\\"excludedAttributes\\\". Always returns the \\\"id\\\", \\\"userName\\\", \\\"active\\\", and \\\"meta\\\" attributes. Use \\\"excludedAttributes\\\" to avoid expensive secondary calls for the default attributes.\n  \"ifNoneMatch\": \"ifNoneMatch_example\" // String | The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/users/{userId}. Example: \\\"42\\\". If the ETag is different from the version on the server, returns the current configuration of the resource. If the ETag is current, returns 304 Not Modified.\n};\n\n// Get a user\napiInstance.getScimV2User(userId, opts)\n  .then((data) => {\n    console.log(`getScimV2User success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getScimV2User\");\n    console.error(err);\n  });"
-  },
-  "getscimv2users": {
-    "operationId": "getscimv2users",
-    "functionName": "getScimV2Users",
-    "signature": "getScimV2Users(startIndex, count, attributes, excludedAttributes, filter)",
-    "parameters": [
-      {
-        "name": "startIndex",
-        "type": "Number",
-        "required": "false"
-      },
-      {
-        "name": "count",
-        "type": "Number",
-        "required": "false"
-      },
-      {
-        "name": "attributes",
-        "type": "[String]",
-        "required": "false"
-      },
-      {
-        "name": "excludedAttributes",
-        "type": "[String]",
-        "required": "false"
-      },
-      {
-        "name": "filter",
-        "type": "String",
-        "required": "false"
-      }
-    ],
-    "return": "ScimUserListResponse",
-    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.SCIMApi();\n\nlet opts = { \n  \"startIndex\": 1, // Number | The 1-based index of the first query result.\n  \"count\": 25, // Number | The requested number of items per page. A value of 0 returns \\\"totalResults\\\". A page size over 25 may exceed internal resource limits and return a 429 error. For a page size over 25, use the \\\"excludedAttributes\\\" or \\\"attributes\\\" query parameters to exclude or only include secondary lookup values such as \\\"externalId\\\",  \\\"roles\\\", \\\"urn:ietf:params:scim:schemas:extension:genesys:purecloud:2.0:User:routingLanguages\\\", or \\\"urn:ietf:params:scim:schemas:extension:genesys:purecloud:2.0:User:routingSkills\\\".\n  \"attributes\": [\"attributes_example\"], // [String] | Indicates which attributes to include. Returns these attributes and the \\\"id\\\", \\\"userName\\\", \\\"active\\\", and \\\"meta\\\" attributes. Use \\\"attributes\\\" to avoid expensive secondary calls for the default attributes.\n  \"excludedAttributes\": [\"excludedAttributes_example\"], // [String] | Indicates which attributes to exclude. Returns the default attributes minus \\\"excludedAttributes\\\". Always returns the \\\"id\\\", \\\"userName\\\", \\\"active\\\", and \\\"meta\\\" attributes. Use \\\"excludedAttributes\\\" to avoid expensive secondary calls for the default attributes.\n  \"filter\": \"filter_example\" // String | Filters results. If nothing is specified, returns all active users. Examples of valid values: \\\"id eq 857449b0-d9e7-4cd0-acbf-a6adfb9ef1e9\\\", \\\"userName eq search@sample.org\\\", \\\"manager eq 16e10e2f-1136-43fe-bb84-eac073168a49\\\", \\\"email eq search@sample.org\\\", \\\"division eq divisionName\\\", \\\"externalId eq 167844\\\", \\\"active eq false\\\", \\\"employeeNumber eq 9876543210\\\".\n};\n\n// Get a list of users\napiInstance.getScimV2Users(opts)\n  .then((data) => {\n    console.log(`getScimV2Users success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getScimV2Users\");\n    console.error(err);\n  });"
-  },
-  "patchscimgroup": {
-    "operationId": "patchscimgroup",
-    "functionName": "patchScimGroup",
-    "signature": "patchScimGroup(groupId, body, ifMatch)",
-    "parameters": [
-      {
-        "name": "groupId",
-        "type": "String",
-        "required": "true"
-      },
-      {
-        "name": "body",
-        "type": "Object",
-        "required": "true"
-      },
-      {
-        "name": "ifMatch",
-        "type": "String",
-        "required": "false"
-      }
-    ],
-    "return": "ScimV2Group",
-    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.SCIMApi();\n\nlet groupId = \"groupId_example\"; // String | The ID of a group. Returned with GET /api/v2/scim/groups.\nlet body = {}; // Object | The information used to modify a group.\nlet opts = { \n  \"ifMatch\": \"ifMatch_example\" // String | The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/groups/{groupId}. Example: \\\"42\\\". If the ETag is different from the version on the server, returns 400 with a \\\"scimType\\\" of \\\"invalidVers\\\".\n};\n\n// Modify a group\napiInstance.patchScimGroup(groupId, body, opts)\n  .then((data) => {\n    console.log(`patchScimGroup success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling patchScimGroup\");\n    console.error(err);\n  });"
-  },
-  "patchscimuser": {
-    "operationId": "patchscimuser",
-    "functionName": "patchScimUser",
-    "signature": "patchScimUser(userId, body, ifMatch)",
-    "parameters": [
-      {
-        "name": "userId",
-        "type": "String",
-        "required": "true"
-      },
-      {
-        "name": "body",
-        "type": "Object",
-        "required": "true"
-      },
-      {
-        "name": "ifMatch",
-        "type": "String",
-        "required": "false"
-      }
-    ],
-    "return": "ScimV2User",
-    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.SCIMApi();\n\nlet userId = \"userId_example\"; // String | The ID of a user. Returned with GET /api/v2/scim/users.\nlet body = {}; // Object | The information used to modify a user.\nlet opts = { \n  \"ifMatch\": \"ifMatch_example\" // String | The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/users/{userId}. Example: \\\"42\\\". If the ETag is different from the version on the server, returns 400 with a \\\"scimType\\\" of \\\"invalidVers\\\".\n};\n\n// Modify a user\napiInstance.patchScimUser(userId, body, opts)\n  .then((data) => {\n    console.log(`patchScimUser success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling patchScimUser\");\n    console.error(err);\n  });"
-  },
-  "patchscimv2group": {
-    "operationId": "patchscimv2group",
-    "functionName": "patchScimV2Group",
-    "signature": "patchScimV2Group(groupId, body, ifMatch)",
-    "parameters": [
-      {
-        "name": "groupId",
-        "type": "String",
-        "required": "true"
-      },
-      {
-        "name": "body",
-        "type": "Object",
-        "required": "true"
-      },
-      {
-        "name": "ifMatch",
-        "type": "String",
-        "required": "false"
-      }
-    ],
-    "return": "ScimV2Group",
-    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.SCIMApi();\n\nlet groupId = \"groupId_example\"; // String | The ID of a group. Returned with GET /api/v2/scim/v2/groups.\nlet body = {}; // Object | The information used to modify a group.\nlet opts = { \n  \"ifMatch\": \"ifMatch_example\" // String | The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/groups/{groupId}. Example: \\\"42\\\". If the ETag is different from the version on the server, returns 400 with a \\\"scimType\\\" of \\\"invalidVers\\\".\n};\n\n// Modify a group\napiInstance.patchScimV2Group(groupId, body, opts)\n  .then((data) => {\n    console.log(`patchScimV2Group success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling patchScimV2Group\");\n    console.error(err);\n  });"
-  },
-  "patchscimv2user": {
-    "operationId": "patchscimv2user",
-    "functionName": "patchScimV2User",
-    "signature": "patchScimV2User(userId, body, ifMatch)",
-    "parameters": [
-      {
-        "name": "userId",
-        "type": "String",
-        "required": "true"
-      },
-      {
-        "name": "body",
-        "type": "Object",
-        "required": "true"
-      },
-      {
-        "name": "ifMatch",
-        "type": "String",
-        "required": "false"
-      }
-    ],
-    "return": "ScimV2User",
-    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.SCIMApi();\n\nlet userId = \"userId_example\"; // String | The ID of a user. Returned with GET /api/v2/scim/v2/users.\nlet body = {}; // Object | The information used to modify a user.\nlet opts = { \n  \"ifMatch\": \"ifMatch_example\" // String | The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/users/{userId}. Example: \\\"42\\\". If the ETag is different from the version on the server, returns 400 with a \\\"scimType\\\" of \\\"invalidVers\\\".\n};\n\n// Modify a user\napiInstance.patchScimV2User(userId, body, opts)\n  .then((data) => {\n    console.log(`patchScimV2User success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling patchScimV2User\");\n    console.error(err);\n  });"
-  },
-  "postscimusers": {
-    "operationId": "postscimusers",
-    "functionName": "postScimUsers",
-    "signature": "postScimUsers(body)",
-    "parameters": [
-      {
-        "name": "body",
-        "type": "Object",
-        "required": "true"
-      }
-    ],
-    "return": "ScimV2User",
-    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.SCIMApi();\n\nlet body = {}; // Object | The information used to create a user.\n\n// Create a user\napiInstance.postScimUsers(body)\n  .then((data) => {\n    console.log(`postScimUsers success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling postScimUsers\");\n    console.error(err);\n  });"
-  },
-  "postscimv2users": {
-    "operationId": "postscimv2users",
-    "functionName": "postScimV2Users",
-    "signature": "postScimV2Users(body)",
-    "parameters": [
-      {
-        "name": "body",
-        "type": "Object",
-        "required": "true"
-      }
-    ],
-    "return": "ScimV2User",
-    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.SCIMApi();\n\nlet body = {}; // Object | The information used to create a user.\n\n// Create a user\napiInstance.postScimV2Users(body)\n  .then((data) => {\n    console.log(`postScimV2Users success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling postScimV2Users\");\n    console.error(err);\n  });"
-  },
-  "putscimgroup": {
-    "operationId": "putscimgroup",
-    "functionName": "putScimGroup",
-    "signature": "putScimGroup(groupId, body, ifMatch)",
-    "parameters": [
-      {
-        "name": "groupId",
-        "type": "String",
-        "required": "true"
-      },
-      {
-        "name": "body",
-        "type": "Object",
-        "required": "true"
-      },
-      {
-        "name": "ifMatch",
-        "type": "String",
-        "required": "false"
-      }
-    ],
-    "return": "ScimV2Group",
-    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.SCIMApi();\n\nlet groupId = \"groupId_example\"; // String | The ID of a group. Returned with GET /api/v2/scim/groups.\nlet body = {}; // Object | The information used to replace a group.\nlet opts = { \n  \"ifMatch\": \"ifMatch_example\" // String | The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/groups/{groupId}. Example: \\\"42\\\". If the ETag is different from the version on the server, returns 400 with a \\\"scimType\\\" of \\\"invalidVers\\\".\n};\n\n// Replace a group\napiInstance.putScimGroup(groupId, body, opts)\n  .then((data) => {\n    console.log(`putScimGroup success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling putScimGroup\");\n    console.error(err);\n  });"
-  },
-  "putscimuser": {
-    "operationId": "putscimuser",
-    "functionName": "putScimUser",
-    "signature": "putScimUser(userId, body, ifMatch)",
-    "parameters": [
-      {
-        "name": "userId",
-        "type": "String",
-        "required": "true"
-      },
-      {
-        "name": "body",
-        "type": "Object",
-        "required": "true"
-      },
-      {
-        "name": "ifMatch",
-        "type": "String",
-        "required": "false"
-      }
-    ],
-    "return": "ScimV2User",
-    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.SCIMApi();\n\nlet userId = \"userId_example\"; // String | The ID of a user. Returned with GET /api/v2/scim/users.\nlet body = {}; // Object | The information used to replace a user.\nlet opts = { \n  \"ifMatch\": \"ifMatch_example\" // String | The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/users/{userId}. Example: \\\"42\\\". If the ETag is different from the version on the server, returns 400 with a \\\"scimType\\\" of \\\"invalidVers\\\".\n};\n\n// Replace a user\napiInstance.putScimUser(userId, body, opts)\n  .then((data) => {\n    console.log(`putScimUser success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling putScimUser\");\n    console.error(err);\n  });"
-  },
-  "putscimv2group": {
-    "operationId": "putscimv2group",
-    "functionName": "putScimV2Group",
-    "signature": "putScimV2Group(groupId, body, ifMatch)",
-    "parameters": [
-      {
-        "name": "groupId",
-        "type": "String",
-        "required": "true"
-      },
-      {
-        "name": "body",
-        "type": "Object",
-        "required": "true"
-      },
-      {
-        "name": "ifMatch",
-        "type": "String",
-        "required": "false"
-      }
-    ],
-    "return": "ScimV2Group",
-    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.SCIMApi();\n\nlet groupId = \"groupId_example\"; // String | The ID of a group. Returned with GET /api/v2/scim/v2/groups.\nlet body = {}; // Object | The information used to replace a group.\nlet opts = { \n  \"ifMatch\": \"ifMatch_example\" // String | The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/groups/{groupId}. Example: \\\"42\\\". If the ETag is different from the version on the server, returns 400 with a \\\"scimType\\\" of \\\"invalidVers\\\".\n};\n\n// Replace a group\napiInstance.putScimV2Group(groupId, body, opts)\n  .then((data) => {\n    console.log(`putScimV2Group success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling putScimV2Group\");\n    console.error(err);\n  });"
-  },
-  "putscimv2user": {
-    "operationId": "putscimv2user",
-    "functionName": "putScimV2User",
-    "signature": "putScimV2User(userId, body, ifMatch)",
-    "parameters": [
-      {
-        "name": "userId",
-        "type": "String",
-        "required": "true"
-      },
-      {
-        "name": "body",
-        "type": "Object",
-        "required": "true"
-      },
-      {
-        "name": "ifMatch",
-        "type": "String",
-        "required": "false"
-      }
-    ],
-    "return": "ScimV2User",
-    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.SCIMApi();\n\nlet userId = \"userId_example\"; // String | The ID of a user. Returned with GET /api/v2/scim/v2/users.\nlet body = {}; // Object | The information used to replace a user.\nlet opts = { \n  \"ifMatch\": \"ifMatch_example\" // String | The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/users/{userId}. Example: \\\"42\\\". If the ETag is different from the version on the server, returns 400 with a \\\"scimType\\\" of \\\"invalidVers\\\".\n};\n\n// Replace a user\napiInstance.putScimV2User(userId, body, opts)\n  .then((data) => {\n    console.log(`putScimV2User success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling putScimV2User\");\n    console.error(err);\n  });"
   },
   "getscript": {
     "operationId": "getscript",

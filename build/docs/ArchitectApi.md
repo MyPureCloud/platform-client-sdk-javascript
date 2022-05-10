@@ -66,6 +66,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getFlowsDatatablesDivisionviews**](ArchitectApi.html#getFlowsDatatablesDivisionviews) | **GET** /api/v2/flows/datatables/divisionviews | Retrieve a list of datatables for the org
 [**getFlowsDivisionviews**](ArchitectApi.html#getFlowsDivisionviews) | **GET** /api/v2/flows/divisionviews | Get a pageable list of basic flow information objects filterable by query parameters.
 [**getFlowsExecution**](ArchitectApi.html#getFlowsExecution) | **GET** /api/v2/flows/executions/{flowExecutionId} | Get a flow execution&#39;s details. Flow execution details are available for several days after the flow is started.
+[**getFlowsJob**](ArchitectApi.html#getFlowsJob) | **GET** /api/v2/flows/jobs/{jobId} | Fetch Architect Job Status
 [**getFlowsMilestone**](ArchitectApi.html#getFlowsMilestone) | **GET** /api/v2/flows/milestones/{milestoneId} | Get a flow milestone
 [**getFlowsMilestones**](ArchitectApi.html#getFlowsMilestones) | **GET** /api/v2/flows/milestones | Get a pageable list of flow milestones, filtered by query parameters
 [**getFlowsMilestonesDivisionviews**](ArchitectApi.html#getFlowsMilestonesDivisionviews) | **GET** /api/v2/flows/milestones/divisionviews | Get a pageable list of basic flow milestone information objects filterable by query parameters.
@@ -96,6 +97,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postFlowsDatatableRows**](ArchitectApi.html#postFlowsDatatableRows) | **POST** /api/v2/flows/datatables/{datatableId}/rows | Create a new row entry for the datatable.
 [**postFlowsDatatables**](ArchitectApi.html#postFlowsDatatables) | **POST** /api/v2/flows/datatables | Create a new datatable with the specified json-schema definition
 [**postFlowsExecutions**](ArchitectApi.html#postFlowsExecutions) | **POST** /api/v2/flows/executions | Launch an instance of a flow definition, for flow types that support it such as the &#39;workflow&#39; type.
+[**postFlowsJobs**](ArchitectApi.html#postFlowsJobs) | **POST** /api/v2/flows/jobs | Register Architect Job. Returns a URL where a file, such as an Architect flow YAML file, can be PUT which will then initiate the job.
 [**postFlowsMilestones**](ArchitectApi.html#postFlowsMilestones) | **POST** /api/v2/flows/milestones | Create a flow milestone
 [**postFlowsOutcomes**](ArchitectApi.html#postFlowsOutcomes) | **POST** /api/v2/flows/outcomes | Create a flow outcome
 [**putArchitectEmergencygroup**](ArchitectApi.html#putArchitectEmergencygroup) | **PUT** /api/v2/architect/emergencygroups/{emergencyGroupId} | Updates a emergency group by ID
@@ -3630,6 +3632,63 @@ apiInstance.getFlowsExecution(flowExecutionId)
 
 **FlowRuntimeExecution**
 
+<a name="getFlowsJob"></a>
+
+# ArchitectJobStateResponse getFlowsJob(jobId, opts)
+
+
+
+GET /api/v2/flows/jobs/{jobId}
+
+Fetch Architect Job Status
+
+
+
+Requires ALL permissions: 
+
+* architect:job:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ArchitectApi();
+
+let jobId = "jobId_example"; // String | Job ID
+let opts = { 
+  'expand': ["expand_example"] // [String] | Which fields, if any, to expand.
+};
+
+apiInstance.getFlowsJob(jobId, opts)
+  .then((data) => {
+    console.log(`getFlowsJob success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getFlowsJob');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **jobId** | **String** | Job ID |  |
+ **expand** | **[String]** | Which fields, if any, to expand. | [optional] <br />**Values**: messages |
+{: class="table table-striped"}
+
+### Return type
+
+**ArchitectJobStateResponse**
+
 <a name="getFlowsMilestone"></a>
 
 # FlowMilestone getFlowsMilestone(milestoneId)
@@ -5301,6 +5360,54 @@ apiInstance.postFlowsExecutions(flowLaunchRequest)
 ### Return type
 
 **FlowExecutionLaunchResponse**
+
+<a name="postFlowsJobs"></a>
+
+# RegisterArchitectJobResponse postFlowsJobs()
+
+
+
+POST /api/v2/flows/jobs
+
+Register Architect Job. Returns a URL where a file, such as an Architect flow YAML file, can be PUT which will then initiate the job.
+
+
+
+Requires ALL permissions: 
+
+* architect:job:create
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ArchitectApi();
+
+apiInstance.postFlowsJobs()
+  .then((data) => {
+    console.log(`postFlowsJobs success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postFlowsJobs');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+
+### Return type
+
+**RegisterArchitectJobResponse**
 
 <a name="postFlowsMilestones"></a>
 

@@ -5,7 +5,7 @@ class OutboundApi {
 	/**
 	 * Outbound service.
 	 * @module purecloud-platform-client-v2/api/OutboundApi
-	 * @version 136.0.0
+	 * @version 136.1.0
 	 */
 
 	/**
@@ -420,6 +420,56 @@ class OutboundApi {
 			'/api/v2/outbound/schedules/campaigns/{campaignId}', 
 			'DELETE', 
 			{ 'campaignId': campaignId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete an email campaign schedule.
+	 * 
+	 * @param {String} emailCampaignId Email Campaign ID
+	 */
+	deleteOutboundSchedulesEmailcampaign(emailCampaignId) { 
+		// verify the required parameter 'emailCampaignId' is set
+		if (emailCampaignId === undefined || emailCampaignId === null) {
+			throw 'Missing the required parameter "emailCampaignId" when calling deleteOutboundSchedulesEmailcampaign';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/outbound/schedules/emailcampaigns/{emailCampaignId}', 
+			'DELETE', 
+			{ 'emailCampaignId': emailCampaignId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete a messaging campaign schedule.
+	 * 
+	 * @param {String} messagingCampaignId Messaging Campaign ID
+	 */
+	deleteOutboundSchedulesMessagingcampaign(messagingCampaignId) { 
+		// verify the required parameter 'messagingCampaignId' is set
+		if (messagingCampaignId === undefined || messagingCampaignId === null) {
+			throw 'Missing the required parameter "messagingCampaignId" when calling deleteOutboundSchedulesMessagingcampaign';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/outbound/schedules/messagingcampaigns/{messagingCampaignId}', 
+			'DELETE', 
+			{ 'messagingCampaignId': messagingCampaignId }, 
 			{  }, 
 			{  }, 
 			{  }, 
@@ -1767,6 +1817,96 @@ class OutboundApi {
 	}
 
 	/**
+	 * Get an email campaign schedule.
+	 * 
+	 * @param {String} emailCampaignId Email Campaign ID
+	 */
+	getOutboundSchedulesEmailcampaign(emailCampaignId) { 
+		// verify the required parameter 'emailCampaignId' is set
+		if (emailCampaignId === undefined || emailCampaignId === null) {
+			throw 'Missing the required parameter "emailCampaignId" when calling getOutboundSchedulesEmailcampaign';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/outbound/schedules/emailcampaigns/{emailCampaignId}', 
+			'GET', 
+			{ 'emailCampaignId': emailCampaignId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Query for a list of email campaign schedules.
+	 * 
+	 */
+	getOutboundSchedulesEmailcampaigns() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/outbound/schedules/emailcampaigns', 
+			'GET', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a messaging campaign schedule.
+	 * 
+	 * @param {String} messagingCampaignId Messaging Campaign ID
+	 */
+	getOutboundSchedulesMessagingcampaign(messagingCampaignId) { 
+		// verify the required parameter 'messagingCampaignId' is set
+		if (messagingCampaignId === undefined || messagingCampaignId === null) {
+			throw 'Missing the required parameter "messagingCampaignId" when calling getOutboundSchedulesMessagingcampaign';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/outbound/schedules/messagingcampaigns/{messagingCampaignId}', 
+			'GET', 
+			{ 'messagingCampaignId': messagingCampaignId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Query for a list of messaging campaign schedules.
+	 * 
+	 */
+	getOutboundSchedulesMessagingcampaigns() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/outbound/schedules/messagingcampaigns', 
+			'GET', 
+			{  }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get a dialer sequence schedule.
 	 * 
 	 * @param {String} sequenceId Sequence ID
@@ -2959,6 +3099,66 @@ class OutboundApi {
 			'/api/v2/outbound/schedules/campaigns/{campaignId}', 
 			'PUT', 
 			{ 'campaignId': campaignId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update an email campaign schedule.
+	 * 
+	 * @param {String} emailCampaignId Email Campaign ID
+	 * @param {Object} body EmailCampaignSchedule
+	 */
+	putOutboundSchedulesEmailcampaign(emailCampaignId, body) { 
+		// verify the required parameter 'emailCampaignId' is set
+		if (emailCampaignId === undefined || emailCampaignId === null) {
+			throw 'Missing the required parameter "emailCampaignId" when calling putOutboundSchedulesEmailcampaign';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putOutboundSchedulesEmailcampaign';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/outbound/schedules/emailcampaigns/{emailCampaignId}', 
+			'PUT', 
+			{ 'emailCampaignId': emailCampaignId }, 
+			{  }, 
+			{  }, 
+			{  }, 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'], 
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update a new messaging campaign schedule.
+	 * 
+	 * @param {String} messagingCampaignId Messaging Campaign ID
+	 * @param {Object} body MessagingCampaignSchedule
+	 */
+	putOutboundSchedulesMessagingcampaign(messagingCampaignId, body) { 
+		// verify the required parameter 'messagingCampaignId' is set
+		if (messagingCampaignId === undefined || messagingCampaignId === null) {
+			throw 'Missing the required parameter "messagingCampaignId" when calling putOutboundSchedulesMessagingcampaign';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putOutboundSchedulesMessagingcampaign';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/outbound/schedules/messagingcampaigns/{messagingCampaignId}', 
+			'PUT', 
+			{ 'messagingCampaignId': messagingCampaignId }, 
 			{  }, 
 			{  }, 
 			{  }, 
