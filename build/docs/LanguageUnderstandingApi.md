@@ -44,14 +44,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 # void deleteLanguageunderstandingDomain(domainId)
 
 
-
 DELETE /api/v2/languageunderstanding/domains/{domainId}
 
 Delete an NLU Domain.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * languageUnderstanding:nluDomain:delete
 * dialog:bot:delete
@@ -98,14 +95,11 @@ void (no response body)
 # void deleteLanguageunderstandingDomainFeedbackFeedbackId(domainId, feedbackId)
 
 
-
 DELETE /api/v2/languageunderstanding/domains/{domainId}/feedback/{feedbackId}
 
 Delete the feedback on the NLU Domain Version.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * languageUnderstanding:feedback:delete
 * dialog:bot:delete
@@ -154,14 +148,11 @@ void (no response body)
 # void deleteLanguageunderstandingDomainVersion(domainId, domainVersionId)
 
 
-
 DELETE /api/v2/languageunderstanding/domains/{domainId}/versions/{domainVersionId}
 
 Delete an NLU Domain Version
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * languageUnderstanding:nluDomainVersion:delete
 * dialog:botVersion:delete
@@ -210,14 +201,11 @@ void (no response body)
 # void deleteLanguageunderstandingMiner(minerId)
 
 
-
 DELETE /api/v2/languageunderstanding/miners/{minerId}
 
 Delete a miner.
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * languageUnderstanding:miner:delete
 
@@ -263,14 +251,11 @@ void (no response body)
 # void deleteLanguageunderstandingMinerDraft(minerId, draftId)
 
 
-
 DELETE /api/v2/languageunderstanding/miners/{minerId}/drafts/{draftId}
 
 Delete a draft
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * languageUnderstanding:draft:delete
 
@@ -318,14 +303,11 @@ void (no response body)
 # NluDomain getLanguageunderstandingDomain(domainId)
 
 
-
 GET /api/v2/languageunderstanding/domains/{domainId}
 
 Find an NLU Domain.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * languageUnderstanding:nluDomain:view
 * dialog:bot:view
@@ -372,14 +354,11 @@ apiInstance.getLanguageunderstandingDomain(domainId)
 # NluFeedbackListing getLanguageunderstandingDomainFeedback(domainId, opts)
 
 
-
 GET /api/v2/languageunderstanding/domains/{domainId}/feedback
 
 Get all feedback in the given NLU Domain Version.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * languageUnderstanding:feedback:view
 * dialog:bot:view
@@ -401,8 +380,8 @@ let domainId = "domainId_example"; // String | ID of the NLU domain.
 let opts = { 
   'intentName': "intentName_example", // String | The top intent name to retrieve feedback for.
   'assessment': "assessment_example", // String | The top assessment to retrieve feedback for.
-  'dateStart': "2013-10-20", // String | Begin of time window as ISO-8601 date.
-  'dateEnd': "2013-10-20", // String | End of time window as ISO-8601 date.
+  'dateStart': "dateStart_example", // String | Begin of time window as ISO-8601 date.
+  'dateEnd': "dateEnd_example", // String | End of time window as ISO-8601 date.
   'includeDeleted': true, // Boolean | Whether to include soft-deleted items in the result.
   'pageNumber': 1, // Number | Page number
   'pageSize': 25, // Number | Page size
@@ -448,14 +427,11 @@ apiInstance.getLanguageunderstandingDomainFeedback(domainId, opts)
 # NluFeedbackResponse getLanguageunderstandingDomainFeedbackFeedbackId(domainId, feedbackId, opts)
 
 
-
 GET /api/v2/languageunderstanding/domains/{domainId}/feedback/{feedbackId}
 
 Find a Feedback
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * languageUnderstanding:feedback:view
 * dialog:bot:view
@@ -508,14 +484,11 @@ apiInstance.getLanguageunderstandingDomainFeedbackFeedbackId(domainId, feedbackI
 # NluDomainVersion getLanguageunderstandingDomainVersion(domainId, domainVersionId, opts)
 
 
-
 GET /api/v2/languageunderstanding/domains/{domainId}/versions/{domainVersionId}
 
 Find an NLU Domain Version.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * languageUnderstanding:nluDomainVersion:view
 * dialog:botVersion:view
@@ -568,14 +541,11 @@ apiInstance.getLanguageunderstandingDomainVersion(domainId, domainVersionId, opt
 # NluDomainVersionQualityReport getLanguageunderstandingDomainVersionReport(domainId, domainVersionId)
 
 
-
 GET /api/v2/languageunderstanding/domains/{domainId}/versions/{domainVersionId}/report
 
 Retrieved quality report for the specified NLU Domain Version
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * languageUnderstanding:nluDomainVersion:view
 * dialog:botVersion:view
@@ -624,14 +594,11 @@ apiInstance.getLanguageunderstandingDomainVersionReport(domainId, domainVersionI
 # NluDomainVersionListing getLanguageunderstandingDomainVersions(domainId, opts)
 
 
-
 GET /api/v2/languageunderstanding/domains/{domainId}/versions
 
 Get all NLU Domain Versions for a given Domain.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * languageUnderstanding:nluDomainVersion:view
 * dialog:botVersion:view
@@ -686,14 +653,11 @@ apiInstance.getLanguageunderstandingDomainVersions(domainId, opts)
 # NluDomainListing getLanguageunderstandingDomains(opts)
 
 
-
 GET /api/v2/languageunderstanding/domains
 
 Get all NLU Domains.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * languageUnderstanding:nluDomain:view
 * dialog:bot:view
@@ -744,14 +708,11 @@ apiInstance.getLanguageunderstandingDomains(opts)
 # Miner getLanguageunderstandingMiner(minerId)
 
 
-
 GET /api/v2/languageunderstanding/miners/{minerId}
 
 Get information about a miner.
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * languageUnderstanding:miner:view
 
@@ -797,14 +758,11 @@ apiInstance.getLanguageunderstandingMiner(minerId)
 # Draft getLanguageunderstandingMinerDraft(minerId, draftId)
 
 
-
 GET /api/v2/languageunderstanding/miners/{minerId}/drafts/{draftId}
 
 Get information about a draft.
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * languageUnderstanding:draft:view
 
@@ -852,14 +810,11 @@ apiInstance.getLanguageunderstandingMinerDraft(minerId, draftId)
 # DraftListing getLanguageunderstandingMinerDrafts(minerId)
 
 
-
 GET /api/v2/languageunderstanding/miners/{minerId}/drafts
 
 Retrieve the list of drafts created.
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * languageUnderstanding:draft:view
 
@@ -905,14 +860,11 @@ apiInstance.getLanguageunderstandingMinerDrafts(minerId)
 # MinerIntent getLanguageunderstandingMinerIntent(minerId, intentId, opts)
 
 
-
 GET /api/v2/languageunderstanding/miners/{minerId}/intents/{intentId}
 
 Get information about a mined intent
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * languageUnderstanding:minerIntent:view
 
@@ -964,14 +916,11 @@ apiInstance.getLanguageunderstandingMinerIntent(minerId, intentId, opts)
 # MinedIntentsListing getLanguageunderstandingMinerIntents(minerId, opts)
 
 
-
 GET /api/v2/languageunderstanding/miners/{minerId}/intents
 
 Retrieve a list of mined intents.
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * languageUnderstanding:minerIntent:view
 
@@ -1021,14 +970,11 @@ apiInstance.getLanguageunderstandingMinerIntents(minerId, opts)
 # MinerListing getLanguageunderstandingMiners()
 
 
-
 GET /api/v2/languageunderstanding/miners
 
 Retrieve the list of miners created.
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * languageUnderstanding:miner:view
 
@@ -1069,14 +1015,11 @@ This endpoint does not need any parameter.
 # NluDomain patchLanguageunderstandingDomain(domainId, body)
 
 
-
 PATCH /api/v2/languageunderstanding/domains/{domainId}
 
 Update an NLU Domain.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * languageUnderstanding:nluDomain:edit
 * dialog:bot:edit
@@ -1125,14 +1068,11 @@ apiInstance.patchLanguageunderstandingDomain(domainId, body)
 # Draft patchLanguageunderstandingMinerDraft(minerId, draftId, opts)
 
 
-
 PATCH /api/v2/languageunderstanding/miners/{minerId}/drafts/{draftId}
 
 Save information for the draft. Either topic draft or intent draft should be sent.
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * languageUnderstanding:draft:edit
 
@@ -1184,14 +1124,11 @@ apiInstance.patchLanguageunderstandingMinerDraft(minerId, draftId, opts)
 # NluFeedbackResponse postLanguageunderstandingDomainFeedback(domainId, body)
 
 
-
 POST /api/v2/languageunderstanding/domains/{domainId}/feedback
 
 Create feedback for the NLU Domain Version.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * languageUnderstanding:feedback:add
 * dialog:bot:add
@@ -1240,14 +1177,11 @@ apiInstance.postLanguageunderstandingDomainFeedback(domainId, body)
 # NluDetectionResponse postLanguageunderstandingDomainVersionDetect(domainId, domainVersionId, body)
 
 
-
 POST /api/v2/languageunderstanding/domains/{domainId}/versions/{domainVersionId}/detect
 
 Detect intent, entities, etc. in the submitted text using the specified NLU domain version.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * languageUnderstanding:nluDomainVersion:view
 * dialog:botVersion:view
@@ -1298,14 +1232,11 @@ apiInstance.postLanguageunderstandingDomainVersionDetect(domainId, domainVersion
 # NluDomainVersion postLanguageunderstandingDomainVersionPublish(domainId, domainVersionId)
 
 
-
 POST /api/v2/languageunderstanding/domains/{domainId}/versions/{domainVersionId}/publish
 
 Publish the draft NLU Domain Version.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * languageUnderstanding:nluDomainVersion:add
 * dialog:botVersion:add
@@ -1354,14 +1285,11 @@ apiInstance.postLanguageunderstandingDomainVersionPublish(domainId, domainVersio
 # NluDomainVersionTrainingResponse postLanguageunderstandingDomainVersionTrain(domainId, domainVersionId)
 
 
-
 POST /api/v2/languageunderstanding/domains/{domainId}/versions/{domainVersionId}/train
 
 Train the draft NLU Domain Version.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * languageUnderstanding:nluDomainVersion:edit
 * dialog:botVersion:edit
@@ -1410,14 +1338,11 @@ apiInstance.postLanguageunderstandingDomainVersionTrain(domainId, domainVersionI
 # NluDomainVersion postLanguageunderstandingDomainVersions(domainId, body)
 
 
-
 POST /api/v2/languageunderstanding/domains/{domainId}/versions
 
 Create an NLU Domain Version.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * languageUnderstanding:nluDomainVersion:add
 * dialog:botVersion:add
@@ -1466,14 +1391,11 @@ apiInstance.postLanguageunderstandingDomainVersions(domainId, body)
 # NluDomain postLanguageunderstandingDomains(body)
 
 
-
 POST /api/v2/languageunderstanding/domains
 
 Create an NLU Domain.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * languageUnderstanding:nluDomain:add
 * dialog:bot:add
@@ -1520,14 +1442,11 @@ apiInstance.postLanguageunderstandingDomains(body)
 # Draft postLanguageunderstandingMinerDrafts(minerId, body)
 
 
-
 POST /api/v2/languageunderstanding/miners/{minerId}/drafts
 
 Create a new draft resource.
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * languageUnderstanding:draft:add
 
@@ -1575,14 +1494,11 @@ apiInstance.postLanguageunderstandingMinerDrafts(minerId, body)
 # Miner postLanguageunderstandingMinerExecute(minerId, opts)
 
 
-
 POST /api/v2/languageunderstanding/miners/{minerId}/execute
 
 Start the mining process. Specify date range pair with mediaType, queueIds, participantType for mining data from Genesys Cloud. Specify only uploadKey for mining through an external file.
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * languageUnderstanding:miner:execute
 
@@ -1632,14 +1548,11 @@ apiInstance.postLanguageunderstandingMinerExecute(minerId, opts)
 # Miner postLanguageunderstandingMiners(body)
 
 
-
 POST /api/v2/languageunderstanding/miners
 
 Create a unique miner.
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * languageUnderstanding:miner:add
 
@@ -1685,14 +1598,11 @@ apiInstance.postLanguageunderstandingMiners(body)
 # NluDomainVersion putLanguageunderstandingDomainVersion(domainId, domainVersionId, body)
 
 
-
 PUT /api/v2/languageunderstanding/domains/{domainId}/versions/{domainVersionId}
 
 Update an NLU Domain Version.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * languageUnderstanding:nluDomainVersion:edit
 * dialog:botVersion:edit

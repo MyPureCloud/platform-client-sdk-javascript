@@ -33,15 +33,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 # GKNDocumentationSearchResponse getDocumentationGknSearch(q64)
 
 
-
 GET /api/v2/documentation/gkn/search
 
 Search gkn documentation using the q64 value returned from a previous search
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -82,15 +78,11 @@ apiInstance.getDocumentationGknSearch(q64)
 # DocumentationSearchResponse getDocumentationSearch(q64)
 
 
-
 GET /api/v2/documentation/search
 
 Search documentation using the q64 value returned from a previous search
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -131,15 +123,11 @@ apiInstance.getDocumentationSearch(q64)
 # GroupsSearchResponse getGroupsSearch(q64, opts)
 
 
-
 GET /api/v2/groups/search
 
 Search groups using the q64 value returned from a previous search
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -187,15 +175,11 @@ apiInstance.getGroupsSearch(q64, opts)
 # LocationsSearchResponse getLocationsSearch(q64, opts)
 
 
-
 GET /api/v2/locations/search
 
 Search locations using the q64 value returned from a previous search
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -243,14 +227,11 @@ apiInstance.getLocationsSearch(q64, opts)
 # JsonNodeSearchResponse getSearch(q64, opts)
 
 
-
 GET /api/v2/search
 
 Search using the q64 value returned from a previous search.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * directory:user:view
 
@@ -302,14 +283,11 @@ apiInstance.getSearch(q64, opts)
 # JsonNodeSearchResponse getSearchSuggest(q64, opts)
 
 
-
 GET /api/v2/search/suggest
 
 Suggest resources using the q64 value returned from a previous suggest query.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * directory:user:view
 
@@ -361,14 +339,11 @@ apiInstance.getSearchSuggest(q64, opts)
 # UsersSearchResponse getUsersSearch(q64, opts)
 
 
-
 GET /api/v2/users/search
 
 Search users using the q64 value returned from a previous search
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * directory:user:view
 
@@ -420,15 +395,11 @@ apiInstance.getUsersSearch(q64, opts)
 # VoicemailsSearchResponse getVoicemailSearch(q64, opts)
 
 
-
 GET /api/v2/voicemail/search
 
 Search voicemails using the q64 value returned from a previous search
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -476,14 +447,11 @@ apiInstance.getVoicemailSearch(q64, opts)
 # AnalyticsConversationWithoutAttributesMultiGetResponse postAnalyticsConversationsTranscriptsQuery(body)
 
 
-
 POST /api/v2/analytics/conversations/transcripts/query
 
 Search resources.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * analytics:conversationDetail:view
 
@@ -529,15 +497,11 @@ apiInstance.postAnalyticsConversationsTranscriptsQuery(body)
 # GKNDocumentationSearchResponse postDocumentationGknSearch(body)
 
 
-
 POST /api/v2/documentation/gkn/search
 
 Search gkn documentation
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -578,15 +542,11 @@ apiInstance.postDocumentationGknSearch(body)
 # DocumentationSearchResponse postDocumentationSearch(body)
 
 
-
 POST /api/v2/documentation/search
 
 Search documentation
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -627,15 +587,11 @@ apiInstance.postDocumentationSearch(body)
 # GroupsSearchResponse postGroupsSearch(body)
 
 
-
 POST /api/v2/groups/search
 
 Search groups
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -679,14 +635,11 @@ apiInstance.postGroupsSearch(body)
 # KnowledgeSearchResponse postKnowledgeKnowledgebaseSearch(knowledgeBaseId, opts)
 
 
-
 POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/search
 
 Search Documents
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * knowledge:knowledgebase:search
 
@@ -736,15 +689,11 @@ apiInstance.postKnowledgeKnowledgebaseSearch(knowledgeBaseId, opts)
 # LocationsSearchResponse postLocationsSearch(body)
 
 
-
 POST /api/v2/locations/search
 
 Search locations
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -788,14 +737,11 @@ apiInstance.postLocationsSearch(body)
 # JsonNodeSearchResponse postSearch(body, opts)
 
 
-
 POST /api/v2/search
 
 Search resources.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * directory:user:view
 
@@ -845,14 +791,11 @@ apiInstance.postSearch(body, opts)
 # JsonNodeSearchResponse postSearchSuggest(body, opts)
 
 
-
 POST /api/v2/search/suggest
 
 Suggest resources.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * directory:user:view
 
@@ -902,14 +845,11 @@ apiInstance.postSearchSuggest(body, opts)
 # JsonSearchResponse postSpeechandtextanalyticsTranscriptsSearch(body)
 
 
-
 POST /api/v2/speechandtextanalytics/transcripts/search
 
 Search resources.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * analytics:conversationDetail:view
 * recording:recording:view
@@ -956,14 +896,11 @@ apiInstance.postSpeechandtextanalyticsTranscriptsSearch(body)
 # UsersSearchResponse postUsersSearch(body)
 
 
-
 POST /api/v2/users/search
 
 Search users
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * directory:user:view
 
@@ -1009,15 +946,11 @@ apiInstance.postUsersSearch(body)
 # VoicemailsSearchResponse postVoicemailSearch(body)
 
 
-
 POST /api/v2/voicemail/search
 
 Search voicemails
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 

@@ -5,7 +5,7 @@ class MessagingApi {
 	/**
 	 * Messaging service.
 	 * @module purecloud-platform-client-v2/api/MessagingApi
-	 * @version 136.1.0
+	 * @version 137.0.0
 	 */
 
 	/**
@@ -34,13 +34,13 @@ class MessagingApi {
 		return this.apiClient.callApi(
 			'/api/v2/messaging/supportedcontent/{supportedContentId}', 
 			'DELETE', 
-			{ 'supportedContentId': supportedContentId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'supportedContentId': supportedContentId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -59,13 +59,13 @@ class MessagingApi {
 		return this.apiClient.callApi(
 			'/api/v2/messaging/supportedcontent', 
 			'GET', 
-			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -84,13 +84,13 @@ class MessagingApi {
 		return this.apiClient.callApi(
 			'/api/v2/messaging/supportedcontent/{supportedContentId}', 
 			'GET', 
-			{ 'supportedContentId': supportedContentId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'supportedContentId': supportedContentId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -114,13 +114,13 @@ class MessagingApi {
 		return this.apiClient.callApi(
 			'/api/v2/messaging/supportedcontent/{supportedContentId}', 
 			'PATCH', 
-			{ 'supportedContentId': supportedContentId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'supportedContentId': supportedContentId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -139,13 +139,13 @@ class MessagingApi {
 		return this.apiClient.callApi(
 			'/api/v2/messaging/supportedcontent', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}

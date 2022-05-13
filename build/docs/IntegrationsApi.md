@@ -36,10 +36,10 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getIntegrationsEventlog**](IntegrationsApi.html#getIntegrationsEventlog) | **GET** /api/v2/integrations/eventlog | List all events
 [**getIntegrationsEventlogEventId**](IntegrationsApi.html#getIntegrationsEventlogEventId) | **GET** /api/v2/integrations/eventlog/{eventId} | Get a single event
 [**getIntegrationsSpeechDialogflowAgent**](IntegrationsApi.html#getIntegrationsSpeechDialogflowAgent) | **GET** /api/v2/integrations/speech/dialogflow/agents/{agentId} | Get details about a Dialogflow agent
-[**getIntegrationsSpeechDialogflowAgents**](IntegrationsApi.html#getIntegrationsSpeechDialogflowAgents) | **GET** /api/v2/integrations/speech/dialogflow/agents | Get a list of Dialogflow agents in the customers&#39; Google accounts
+[**getIntegrationsSpeechDialogflowAgents**](IntegrationsApi.html#getIntegrationsSpeechDialogflowAgents) | **GET** /api/v2/integrations/speech/dialogflow/agents | Get a list of Dialogflow agents in the customers' Google accounts
 [**getIntegrationsSpeechLexBotAlias**](IntegrationsApi.html#getIntegrationsSpeechLexBotAlias) | **GET** /api/v2/integrations/speech/lex/bot/alias/{aliasId} | Get details about a Lex bot alias
-[**getIntegrationsSpeechLexBotBotIdAliases**](IntegrationsApi.html#getIntegrationsSpeechLexBotBotIdAliases) | **GET** /api/v2/integrations/speech/lex/bot/{botId}/aliases | Get a list of aliases for a bot in the customer&#39;s AWS accounts
-[**getIntegrationsSpeechLexBots**](IntegrationsApi.html#getIntegrationsSpeechLexBots) | **GET** /api/v2/integrations/speech/lex/bots | Get a list of Lex bots in the customers&#39; AWS accounts
+[**getIntegrationsSpeechLexBotBotIdAliases**](IntegrationsApi.html#getIntegrationsSpeechLexBotBotIdAliases) | **GET** /api/v2/integrations/speech/lex/bot/{botId}/aliases | Get a list of aliases for a bot in the customer's AWS accounts
+[**getIntegrationsSpeechLexBots**](IntegrationsApi.html#getIntegrationsSpeechLexBots) | **GET** /api/v2/integrations/speech/lex/bots | Get a list of Lex bots in the customers' AWS accounts
 [**getIntegrationsSpeechTtsEngine**](IntegrationsApi.html#getIntegrationsSpeechTtsEngine) | **GET** /api/v2/integrations/speech/tts/engines/{engineId} | Get details about a TTS engine
 [**getIntegrationsSpeechTtsEngineVoice**](IntegrationsApi.html#getIntegrationsSpeechTtsEngineVoice) | **GET** /api/v2/integrations/speech/tts/engines/{engineId}/voices/{voiceId} | Get details about a specific voice for a TTS engine
 [**getIntegrationsSpeechTtsEngineVoices**](IntegrationsApi.html#getIntegrationsSpeechTtsEngineVoices) | **GET** /api/v2/integrations/speech/tts/engines/{engineId}/voices | Get a list of voices for a TTS engine
@@ -73,14 +73,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 # Integration deleteIntegration(integrationId)
 
 
-
 DELETE /api/v2/integrations/{integrationId}
 
 Delete integration.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * integrations:integration:delete
 
@@ -126,14 +123,11 @@ apiInstance.deleteIntegration(integrationId)
 # void deleteIntegrationsAction(actionId)
 
 
-
 DELETE /api/v2/integrations/actions/{actionId}
 
 Delete an Action
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * integrations:action:delete
 
@@ -179,14 +173,11 @@ void (no response body)
 # void deleteIntegrationsActionDraft(actionId)
 
 
-
 DELETE /api/v2/integrations/actions/{actionId}/draft
 
 Delete a Draft
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * integrations:action:delete
 
@@ -232,15 +223,11 @@ void (no response body)
 # void deleteIntegrationsCredential(credentialId)
 
 
-
 DELETE /api/v2/integrations/credentials/{credentialId}
 
 Delete a set of credentials
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -284,14 +271,11 @@ void (no response body)
 # Integration getIntegration(integrationId, opts)
 
 
-
 GET /api/v2/integrations/{integrationId}
 
 Get integration.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * integrations:integration:view
 
@@ -351,14 +335,11 @@ apiInstance.getIntegration(integrationId, opts)
 # IntegrationConfiguration getIntegrationConfigCurrent(integrationId)
 
 
-
 GET /api/v2/integrations/{integrationId}/config/current
 
 Get integration configuration.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * integrations:integration:view
 
@@ -404,14 +385,11 @@ apiInstance.getIntegrationConfigCurrent(integrationId)
 # IntegrationEntityListing getIntegrations(opts)
 
 
-
 GET /api/v2/integrations
 
 List integrations
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * integrations:integration:view
 
@@ -469,14 +447,11 @@ apiInstance.getIntegrations(opts)
 # Action getIntegrationsAction(actionId, opts)
 
 
-
 GET /api/v2/integrations/actions/{actionId}
 
 Retrieves a single Action matching id.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * integrations:action:view
 * bridge:actions:view
@@ -517,7 +492,7 @@ apiInstance.getIntegrationsAction(actionId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **actionId** | **String** | actionId |  |
  **expand** | **String** | Indicates a field in the response which should be expanded. | [optional] <br />**Values**: contract |
- **includeConfig** | **Boolean** | Return config in response. | [optional] [default to false] |
+ **includeConfig** | **Boolean** | Return config in response. | [optional] [default to false]<br />**Values**: true, false |
 {: class="table table-striped"}
 
 ### Return type
@@ -529,14 +504,11 @@ apiInstance.getIntegrationsAction(actionId, opts)
 # Action getIntegrationsActionDraft(actionId, opts)
 
 
-
 GET /api/v2/integrations/actions/{actionId}/draft
 
 Retrieve a Draft
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * integrations:action:view
 * bridge:actions:view
@@ -577,7 +549,7 @@ apiInstance.getIntegrationsActionDraft(actionId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **actionId** | **String** | actionId |  |
  **expand** | **String** | Indicates a field in the response which should be expanded. | [optional] <br />**Values**: contract |
- **includeConfig** | **Boolean** | Return config in response. | [optional] [default to false] |
+ **includeConfig** | **Boolean** | Return config in response. | [optional] [default to false]<br />**Values**: true, false |
 {: class="table table-striped"}
 
 ### Return type
@@ -589,14 +561,11 @@ apiInstance.getIntegrationsActionDraft(actionId, opts)
 # JsonSchemaDocument getIntegrationsActionDraftSchema(actionId, fileName)
 
 
-
 GET /api/v2/integrations/actions/{actionId}/draft/schemas/{fileName}
 
 Retrieve schema for a Draft based on filename.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * integrations:action:view
 * bridge:actions:view
@@ -645,14 +614,11 @@ apiInstance.getIntegrationsActionDraftSchema(actionId, fileName)
 # **&#39;String&#39;** getIntegrationsActionDraftTemplate(actionId, fileName)
 
 
-
 GET /api/v2/integrations/actions/{actionId}/draft/templates/{fileName}
 
 Retrieve templates for a Draft based on filename.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * integrations:action:view
 * bridge:actions:view
@@ -701,14 +667,11 @@ apiInstance.getIntegrationsActionDraftTemplate(actionId, fileName)
 # DraftValidationResult getIntegrationsActionDraftValidation(actionId)
 
 
-
 GET /api/v2/integrations/actions/{actionId}/draft/validation
 
 Validate current Draft configuration.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * integrations:action:edit
 
@@ -754,14 +717,11 @@ apiInstance.getIntegrationsActionDraftValidation(actionId)
 # JsonSchemaDocument getIntegrationsActionSchema(actionId, fileName)
 
 
-
 GET /api/v2/integrations/actions/{actionId}/schemas/{fileName}
 
 Retrieve schema for an action based on filename.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * integrations:action:view
 * bridge:actions:view
@@ -810,14 +770,11 @@ apiInstance.getIntegrationsActionSchema(actionId, fileName)
 # **&#39;String&#39;** getIntegrationsActionTemplate(actionId, fileName)
 
 
-
 GET /api/v2/integrations/actions/{actionId}/templates/{fileName}
 
 Retrieve text of templates for an action based on filename.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * integrations:action:view
 * bridge:actions:view
@@ -866,14 +823,11 @@ apiInstance.getIntegrationsActionTemplate(actionId, fileName)
 # ActionEntityListing getIntegrationsActions(opts)
 
 
-
 GET /api/v2/integrations/actions
 
 Retrieves all actions associated with filters passed in via query param.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * integrations:action:view
 * bridge:actions:view
@@ -925,11 +879,11 @@ apiInstance.getIntegrationsActions(opts)
  **nextPage** | **String** | next page token | [optional]  |
  **previousPage** | **String** | Previous page token | [optional]  |
  **sortBy** | **String** | Root level field name to sort on. | [optional]  |
- **sortOrder** | **String** | Direction to sort &#39;sortBy&#39; field. | [optional] [default to asc]<br />**Values**: ASC, DESC |
+ **sortOrder** | **String** | Direction to sort 'sortBy' field. | [optional] [default to asc]<br />**Values**: ASC, DESC |
  **category** | **String** | Filter by category name. | [optional]  |
  **name** | **String** | Filter by partial or complete action name. | [optional]  |
  **ids** | **String** | Filter by action Id. Can be a comma separated list to request multiple actions.  Limit of 50 Ids. | [optional]  |
- **secure** | **String** | Filter based on &#39;secure&#39; configuration option. True will only return actions marked as secure. False will return only non-secure actions. Do not use filter if you want all Actions. | [optional] <br />**Values**: true, false |
+ **secure** | **String** | Filter based on 'secure' configuration option. True will only return actions marked as secure. False will return only non-secure actions. Do not use filter if you want all Actions. | [optional] <br />**Values**: true, false |
  **includeAuthActions** | **String** | Whether or not to include authentication actions in the response. These actions are not directly executable. Some integrations create them and will run them as needed to refresh authentication information for other actions. | [optional] [default to false]<br />**Values**: true, false |
 {: class="table table-striped"}
 
@@ -942,14 +896,11 @@ apiInstance.getIntegrationsActions(opts)
 # CategoryEntityListing getIntegrationsActionsCategories(opts)
 
 
-
 GET /api/v2/integrations/actions/categories
 
 Retrieves all categories of available Actions
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * integrations:action:view
 * bridge:actions:view
@@ -996,8 +947,8 @@ apiInstance.getIntegrationsActionsCategories(opts)
  **pageNumber** | **Number** | The page number requested | [optional] [default to 1] |
  **nextPage** | **String** | next page token | [optional]  |
  **previousPage** | **String** | Previous page token | [optional]  |
- **sortBy** | **String** | Root level field name to sort on.  Only &#39;name&#39; is supported on this endpoint. | [optional]  |
- **sortOrder** | **String** | Direction to sort &#39;sortBy&#39; field. | [optional] [default to asc]<br />**Values**: ASC, DESC |
+ **sortBy** | **String** | Root level field name to sort on.  Only 'name' is supported on this endpoint. | [optional]  |
+ **sortOrder** | **String** | Direction to sort 'sortBy' field. | [optional] [default to asc]<br />**Values**: ASC, DESC |
  **secure** | **String** | Filter to only include secure actions. True will only include actions marked secured. False will include only unsecure actions. Do not use filter if you want all Actions. | [optional] <br />**Values**: true, false |
 {: class="table table-striped"}
 
@@ -1010,14 +961,11 @@ apiInstance.getIntegrationsActionsCategories(opts)
 # ActionEntityListing getIntegrationsActionsDrafts(opts)
 
 
-
 GET /api/v2/integrations/actions/drafts
 
 Retrieves all action drafts associated with the filters passed in via query param.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * integrations:action:view
 * bridge:actions:view
@@ -1069,11 +1017,11 @@ apiInstance.getIntegrationsActionsDrafts(opts)
  **nextPage** | **String** | next page token | [optional]  |
  **previousPage** | **String** | Previous page token | [optional]  |
  **sortBy** | **String** | Root level field name to sort on. | [optional]  |
- **sortOrder** | **String** | Direction to sort &#39;sortBy&#39; field. | [optional] [default to asc]<br />**Values**: ASC, DESC |
+ **sortOrder** | **String** | Direction to sort 'sortBy' field. | [optional] [default to asc]<br />**Values**: ASC, DESC |
  **category** | **String** | Filter by category name. | [optional]  |
  **name** | **String** | Filter by partial or complete action name. | [optional]  |
  **ids** | **String** | Filter by action Id. Can be a comma separated list to request multiple actions.  Limit of 50 Ids. | [optional]  |
- **secure** | **String** | Filter based on &#39;secure&#39; configuration option. True will only return actions marked as secure. False will return only non-secure actions. Do not use filter if you want all Actions. | [optional] <br />**Values**: true, false |
+ **secure** | **String** | Filter based on 'secure' configuration option. True will only return actions marked as secure. False will return only non-secure actions. Do not use filter if you want all Actions. | [optional] <br />**Values**: true, false |
  **includeAuthActions** | **String** | Whether or not to include authentication actions in the response. These actions are not directly executable. Some integrations create them and will run them as needed to refresh authentication information for other actions. | [optional] [default to false]<br />**Values**: true, false |
 {: class="table table-striped"}
 
@@ -1086,14 +1034,11 @@ apiInstance.getIntegrationsActionsDrafts(opts)
 # BotConnectorBot getIntegrationsBotconnectorIntegrationIdBot(integrationId, botId, opts)
 
 
-
 GET /api/v2/integrations/botconnector/{integrationId}/bots/{botId}
 
 Get a specific botConnector bot, plus versions, for this integration
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * integration:botconnector:view
 
@@ -1145,14 +1090,11 @@ apiInstance.getIntegrationsBotconnectorIntegrationIdBot(integrationId, botId, op
 # BotConnectorBotVersionSummaryEntityListing getIntegrationsBotconnectorIntegrationIdBotVersions(integrationId, botId, opts)
 
 
-
 GET /api/v2/integrations/botconnector/{integrationId}/bots/{botId}/versions
 
 Get a list of bot versions for a bot
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * integration:botconnector:view
 
@@ -1206,14 +1148,11 @@ apiInstance.getIntegrationsBotconnectorIntegrationIdBotVersions(integrationId, b
 # BotList getIntegrationsBotconnectorIntegrationIdBots(integrationId)
 
 
-
 GET /api/v2/integrations/botconnector/{integrationId}/bots
 
 Get a list of botConnector bots for this integration
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * integration:botconnector:view
 
@@ -1259,14 +1198,11 @@ apiInstance.getIntegrationsBotconnectorIntegrationIdBots(integrationId)
 # BotConnectorBotSummaryEntityListing getIntegrationsBotconnectorIntegrationIdBotsSummaries(integrationId, opts)
 
 
-
 GET /api/v2/integrations/botconnector/{integrationId}/bots/summaries
 
 Get a summary list of botConnector bots for this integration
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * integration:botconnector:view
 
@@ -1318,15 +1254,11 @@ apiInstance.getIntegrationsBotconnectorIntegrationIdBotsSummaries(integrationId,
 # ClientAppEntityListing getIntegrationsClientapps(opts)
 
 
-
 GET /api/v2/integrations/clientapps
 
 List permitted client app integrations for the logged in user
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -1382,14 +1314,13 @@ apiInstance.getIntegrationsClientapps(opts)
 # UCIntegrationListing getIntegrationsClientappsUnifiedcommunications(opts)
 
 
-
 GET /api/v2/integrations/clientapps/unifiedcommunications
 
 UC integration client application configuration.
 
 This endpoint returns basic UI configuration data for all Unified Communications integrations client applications enabled for the current organization.
 
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * integration:unifiedCommunications:view
 
@@ -1447,15 +1378,11 @@ apiInstance.getIntegrationsClientappsUnifiedcommunications(opts)
 # Credential getIntegrationsCredential(credentialId)
 
 
-
 GET /api/v2/integrations/credentials/{credentialId}
 
 Get a single credential with sensitive fields redacted
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -1499,15 +1426,11 @@ apiInstance.getIntegrationsCredential(credentialId)
 # CredentialInfoListing getIntegrationsCredentials(opts)
 
 
-
 GET /api/v2/integrations/credentials
 
 List multiple sets of credentials
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -1555,15 +1478,11 @@ apiInstance.getIntegrationsCredentials(opts)
 # CredentialTypeListing getIntegrationsCredentialsTypes()
 
 
-
 GET /api/v2/integrations/credentials/types
 
 List all credential types
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -1602,14 +1521,11 @@ This endpoint does not need any parameter.
 # IntegrationEventEntityListing getIntegrationsEventlog(opts)
 
 
-
 GET /api/v2/integrations/eventlog
 
 List all events
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * integrations:integration:view
 * bridge:notification:view
@@ -1666,14 +1582,11 @@ apiInstance.getIntegrationsEventlog(opts)
 # IntegrationEvent getIntegrationsEventlogEventId(eventId)
 
 
-
 GET /api/v2/integrations/eventlog/{eventId}
 
 Get a single event
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * integrations:integration:view
 * bridge:notification:view
@@ -1720,14 +1633,11 @@ apiInstance.getIntegrationsEventlogEventId(eventId)
 # DialogflowAgent getIntegrationsSpeechDialogflowAgent(agentId)
 
 
-
 GET /api/v2/integrations/speech/dialogflow/agents/{agentId}
 
 Get details about a Dialogflow agent
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * integrations:integration:view
 
@@ -1773,14 +1683,11 @@ apiInstance.getIntegrationsSpeechDialogflowAgent(agentId)
 # DialogflowAgentSummaryEntityListing getIntegrationsSpeechDialogflowAgents(opts)
 
 
-
 GET /api/v2/integrations/speech/dialogflow/agents
 
-Get a list of Dialogflow agents in the customers&#39; Google accounts
+Get a list of Dialogflow agents in the customers' Google accounts
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * integrations:integration:view
 
@@ -1832,14 +1739,11 @@ apiInstance.getIntegrationsSpeechDialogflowAgents(opts)
 # LexBotAlias getIntegrationsSpeechLexBotAlias(aliasId)
 
 
-
 GET /api/v2/integrations/speech/lex/bot/alias/{aliasId}
 
 Get details about a Lex bot alias
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * integrations:integration:view
 
@@ -1885,14 +1789,11 @@ apiInstance.getIntegrationsSpeechLexBotAlias(aliasId)
 # LexBotAliasEntityListing getIntegrationsSpeechLexBotBotIdAliases(botId, opts)
 
 
-
 GET /api/v2/integrations/speech/lex/bot/{botId}/aliases
 
-Get a list of aliases for a bot in the customer&#39;s AWS accounts
+Get a list of aliases for a bot in the customer's AWS accounts
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * integrations:integration:view
 
@@ -1948,14 +1849,11 @@ apiInstance.getIntegrationsSpeechLexBotBotIdAliases(botId, opts)
 # LexBotEntityListing getIntegrationsSpeechLexBots(opts)
 
 
-
 GET /api/v2/integrations/speech/lex/bots
 
-Get a list of Lex bots in the customers&#39; AWS accounts
+Get a list of Lex bots in the customers' AWS accounts
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * integrations:integration:view
 
@@ -2007,14 +1905,11 @@ apiInstance.getIntegrationsSpeechLexBots(opts)
 # TtsEngineEntity getIntegrationsSpeechTtsEngine(engineId, opts)
 
 
-
 GET /api/v2/integrations/speech/tts/engines/{engineId}
 
 Get details about a TTS engine
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * integrations:integration:view
 
@@ -2064,14 +1959,11 @@ apiInstance.getIntegrationsSpeechTtsEngine(engineId, opts)
 # TtsVoiceEntity getIntegrationsSpeechTtsEngineVoice(engineId, voiceId)
 
 
-
 GET /api/v2/integrations/speech/tts/engines/{engineId}/voices/{voiceId}
 
 Get details about a specific voice for a TTS engine
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * integrations:integration:view
 
@@ -2119,14 +2011,11 @@ apiInstance.getIntegrationsSpeechTtsEngineVoice(engineId, voiceId)
 # TtsVoiceEntityListing getIntegrationsSpeechTtsEngineVoices(engineId, opts)
 
 
-
 GET /api/v2/integrations/speech/tts/engines/{engineId}/voices
 
 Get a list of voices for a TTS engine
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * integrations:integration:view
 
@@ -2178,14 +2067,11 @@ apiInstance.getIntegrationsSpeechTtsEngineVoices(engineId, opts)
 # TtsEngineEntityListing getIntegrationsSpeechTtsEngines(opts)
 
 
-
 GET /api/v2/integrations/speech/tts/engines
 
 Get a list of TTS engines enabled for org
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * integrations:integration:view
 
@@ -2241,14 +2127,11 @@ apiInstance.getIntegrationsSpeechTtsEngines(opts)
 # TtsSettings getIntegrationsSpeechTtsSettings()
 
 
-
 GET /api/v2/integrations/speech/tts/settings
 
 Get TTS settings for an org
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * integrations:integration:view
 
@@ -2289,14 +2172,11 @@ This endpoint does not need any parameter.
 # IntegrationType getIntegrationsType(typeId)
 
 
-
 GET /api/v2/integrations/types/{typeId}
 
 Get integration type.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * integrations:integration:view
 
@@ -2342,14 +2222,11 @@ apiInstance.getIntegrationsType(typeId)
 # JsonSchemaDocument getIntegrationsTypeConfigschema(typeId, configType)
 
 
-
 GET /api/v2/integrations/types/{typeId}/configschemas/{configType}
 
 Get properties config schema for an integration type.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * integrations:integration:view
 
@@ -2397,14 +2274,11 @@ apiInstance.getIntegrationsTypeConfigschema(typeId, configType)
 # IntegrationTypeEntityListing getIntegrationsTypes(opts)
 
 
-
 GET /api/v2/integrations/types
 
 List integration types
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * integrations:integration:view
 
@@ -2462,15 +2336,11 @@ apiInstance.getIntegrationsTypes(opts)
 # UserAppEntityListing getIntegrationsUserapps(opts)
 
 
-
 GET /api/v2/integrations/userapps
 
 List permitted user app integrations for the logged in user
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -2528,14 +2398,11 @@ apiInstance.getIntegrationsUserapps(opts)
 # Integration patchIntegration(integrationId, opts)
 
 
-
 PATCH /api/v2/integrations/{integrationId}
 
 Update an integration.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * integrations:integration:edit
 
@@ -2554,13 +2421,13 @@ let apiInstance = new platformClient.IntegrationsApi();
 
 let integrationId = "integrationId_example"; // String | Integration Id
 let opts = { 
-  'body': {}, // Object | Integration Update
   'pageSize': 25, // Number | The total page size requested
   'pageNumber': 1, // Number | The page number requested
   'sortBy': "sortBy_example", // String | variable name requested to sort by
   'expand': ["expand_example"], // [String] | variable name requested by expand list
   'nextPage': "nextPage_example", // String | next page token
-  'previousPage': "previousPage_example" // String | Previous page token
+  'previousPage': "previousPage_example", // String | Previous page token
+  'body': {} // Object | Integration Update
 };
 
 apiInstance.patchIntegration(integrationId, opts)
@@ -2579,13 +2446,13 @@ apiInstance.patchIntegration(integrationId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **integrationId** | **String** | Integration Id |  |
- **body** | **Object** | Integration Update | [optional]  |
  **pageSize** | **Number** | The total page size requested | [optional] [default to 25] |
  **pageNumber** | **Number** | The page number requested | [optional] [default to 1] |
  **sortBy** | **String** | variable name requested to sort by | [optional]  |
  **expand** | **[String]** | variable name requested by expand list | [optional]  |
  **nextPage** | **String** | next page token | [optional]  |
  **previousPage** | **String** | Previous page token | [optional]  |
+ **body** | **Object** | Integration Update | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2597,14 +2464,11 @@ apiInstance.patchIntegration(integrationId, opts)
 # Action patchIntegrationsAction(actionId, body)
 
 
-
 PATCH /api/v2/integrations/actions/{actionId}
 
 Patch an Action
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * integrations:action:edit
 
@@ -2652,14 +2516,11 @@ apiInstance.patchIntegrationsAction(actionId, body)
 # Action patchIntegrationsActionDraft(actionId, body)
 
 
-
 PATCH /api/v2/integrations/actions/{actionId}/draft
 
 Update an existing Draft
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * integrations:action:edit
 
@@ -2707,14 +2568,11 @@ apiInstance.patchIntegrationsActionDraft(actionId, body)
 # Integration postIntegrations(opts)
 
 
-
 POST /api/v2/integrations
 
 Create an integration.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * integrations:integration:add
 
@@ -2762,14 +2620,11 @@ apiInstance.postIntegrations(opts)
 # Action postIntegrationsActionDraft(actionId)
 
 
-
 POST /api/v2/integrations/actions/{actionId}/draft
 
 Create a new Draft from existing Action
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * integrations:action:edit
 
@@ -2815,14 +2670,11 @@ apiInstance.postIntegrationsActionDraft(actionId)
 # Action postIntegrationsActionDraftPublish(actionId, body)
 
 
-
 POST /api/v2/integrations/actions/{actionId}/draft/publish
 
 Publish a Draft and make it the active Action configuration
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * integrations:action:edit
 
@@ -2870,14 +2722,11 @@ apiInstance.postIntegrationsActionDraftPublish(actionId, body)
 # TestExecutionResult postIntegrationsActionDraftTest(actionId, body)
 
 
-
 POST /api/v2/integrations/actions/{actionId}/draft/test
 
 Test the execution of a draft. Responses will show execution steps broken out with intermediate results to help in debugging.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * integrations:action:execute
 
@@ -2895,7 +2744,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.IntegrationsApi();
 
 let actionId = "actionId_example"; // String | actionId
-let body = null; // Object | Map of parameters used for variable substitution.
+let body = null; // {String: Object} | Map of parameters used for variable substitution.
 
 apiInstance.postIntegrationsActionDraftTest(actionId, body)
   .then((data) => {
@@ -2913,7 +2762,7 @@ apiInstance.postIntegrationsActionDraftTest(actionId, body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **actionId** | **String** | actionId |  |
- **body** | **Object** | Map of parameters used for variable substitution. |  |
+ **body** | **{String: Object}** | Map of parameters used for variable substitution. |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2925,14 +2774,11 @@ apiInstance.postIntegrationsActionDraftTest(actionId, body)
 # **Object** postIntegrationsActionExecute(actionId, body)
 
 
-
 POST /api/v2/integrations/actions/{actionId}/execute
 
 Execute Action and return response from 3rd party.  Responses will follow the schemas defined on the Action for success and error.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * integrations:action:execute
 * bridge:actions:execute
@@ -2951,7 +2797,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.IntegrationsApi();
 
 let actionId = "actionId_example"; // String | actionId
-let body = null; // Object | Map of parameters used for variable substitution.
+let body = null; // {String: Object} | Map of parameters used for variable substitution.
 
 apiInstance.postIntegrationsActionExecute(actionId, body)
   .then((data) => {
@@ -2969,7 +2815,7 @@ apiInstance.postIntegrationsActionExecute(actionId, body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **actionId** | **String** | actionId |  |
- **body** | **Object** | Map of parameters used for variable substitution. |  |
+ **body** | **{String: Object}** | Map of parameters used for variable substitution. |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2981,14 +2827,11 @@ apiInstance.postIntegrationsActionExecute(actionId, body)
 # TestExecutionResult postIntegrationsActionTest(actionId, body)
 
 
-
 POST /api/v2/integrations/actions/{actionId}/test
 
 Test the execution of an action. Responses will show execution steps broken out with intermediate results to help in debugging.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * integrations:action:execute
 * bridge:actions:execute
@@ -3007,7 +2850,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.IntegrationsApi();
 
 let actionId = "actionId_example"; // String | actionId
-let body = null; // Object | Map of parameters used for variable substitution.
+let body = null; // {String: Object} | Map of parameters used for variable substitution.
 
 apiInstance.postIntegrationsActionTest(actionId, body)
   .then((data) => {
@@ -3025,7 +2868,7 @@ apiInstance.postIntegrationsActionTest(actionId, body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **actionId** | **String** | actionId |  |
- **body** | **Object** | Map of parameters used for variable substitution. |  |
+ **body** | **{String: Object}** | Map of parameters used for variable substitution. |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -3037,14 +2880,11 @@ apiInstance.postIntegrationsActionTest(actionId, body)
 # Action postIntegrationsActions(body)
 
 
-
 POST /api/v2/integrations/actions
 
 Create a new Action
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * integrations:action:add
 
@@ -3090,14 +2930,11 @@ apiInstance.postIntegrationsActions(body)
 # Action postIntegrationsActionsDrafts(body)
 
 
-
 POST /api/v2/integrations/actions/drafts
 
 Create a new Draft
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * integrations:action:add
 
@@ -3143,15 +2980,11 @@ apiInstance.postIntegrationsActionsDrafts(body)
 # CredentialInfo postIntegrationsCredentials(opts)
 
 
-
 POST /api/v2/integrations/credentials
 
 Create a set of credentials
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -3197,15 +3030,11 @@ apiInstance.postIntegrationsCredentials(opts)
 # UserActionCategoryEntityListing postIntegrationsWorkforcemanagementVendorconnection(opts)
 
 
-
 POST /api/v2/integrations/workforcemanagement/vendorconnection
 
 Add a vendor connection
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -3251,14 +3080,11 @@ apiInstance.postIntegrationsWorkforcemanagementVendorconnection(opts)
 # IntegrationConfiguration putIntegrationConfigCurrent(integrationId, opts)
 
 
-
 PUT /api/v2/integrations/{integrationId}/config/current
 
 Update integration configuration.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * integrations:integration:edit
 
@@ -3308,14 +3134,11 @@ apiInstance.putIntegrationConfigCurrent(integrationId, opts)
 # void putIntegrationsBotconnectorIntegrationIdBots(integrationId, botList)
 
 
-
 PUT /api/v2/integrations/botconnector/{integrationId}/bots
 
 Set a list of botConnector bots plus versions for this integration
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * integration:botconnector:edit
 
@@ -3363,15 +3186,11 @@ void (no response body)
 # CredentialInfo putIntegrationsCredential(credentialId, opts)
 
 
-
 PUT /api/v2/integrations/credentials/{credentialId}
 
 Update a set of credentials
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -3419,14 +3238,11 @@ apiInstance.putIntegrationsCredential(credentialId, opts)
 # TtsSettings putIntegrationsSpeechTtsSettings(body)
 
 
-
 PUT /api/v2/integrations/speech/tts/settings
 
 Update TTS settings for an org
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * integrations:integration:edit
 

@@ -5,7 +5,7 @@ class StationsApi {
 	/**
 	 * Stations service.
 	 * @module purecloud-platform-client-v2/api/StationsApi
-	 * @version 136.1.0
+	 * @version 137.0.0
 	 */
 
 	/**
@@ -34,13 +34,13 @@ class StationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/stations/{stationId}/associateduser', 
 			'DELETE', 
-			{ 'stationId': stationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'stationId': stationId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -59,13 +59,13 @@ class StationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/stations/{stationId}', 
 			'GET', 
-			{ 'stationId': stationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'stationId': stationId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -90,19 +90,19 @@ class StationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/stations', 
 			'GET', 
-			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'name': opts['name'],'userSelectable': opts['userSelectable'],'webRtcUserId': opts['webRtcUserId'],'id': opts['id'],'lineAppearanceId': opts['lineAppearanceId'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'name': opts['name'],'userSelectable': opts['userSelectable'],'webRtcUserId': opts['webRtcUserId'],'id': opts['id'],'lineAppearanceId': opts['lineAppearanceId'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
 
 	/**
-	 * Get an organization&#39;s StationSettings
+	 * Get an organization's StationSettings
 	 * 
 	 */
 	getStationsSettings() { 
@@ -110,19 +110,19 @@ class StationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/stations/settings', 
 			'GET', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
 
 	/**
-	 * Patch an organization&#39;s StationSettings
+	 * Patch an organization's StationSettings
 	 * 
 	 * @param {Object} body Station settings
 	 */
@@ -135,13 +135,13 @@ class StationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/stations/settings', 
 			'PATCH', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}

@@ -5,7 +5,7 @@ class RoutingApi {
 	/**
 	 * Routing service.
 	 * @module purecloud-platform-client-v2/api/RoutingApi
-	 * @version 136.1.0
+	 * @version 137.0.0
 	 */
 
 	/**
@@ -34,13 +34,13 @@ class RoutingApi {
 		return this.apiClient.callApi(
 			'/api/v2/routing/assessments/{assessmentId}', 
 			'DELETE', 
-			{ 'assessmentId': assessmentId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'assessmentId': assessmentId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -59,13 +59,13 @@ class RoutingApi {
 		return this.apiClient.callApi(
 			'/api/v2/routing/email/domains/{domainId}', 
 			'DELETE', 
-			{ 'domainId': domainId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'domainId': domainId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -89,13 +89,13 @@ class RoutingApi {
 		return this.apiClient.callApi(
 			'/api/v2/routing/email/domains/{domainName}/routes/{routeId}', 
 			'DELETE', 
-			{ 'domainName': domainName,'routeId': routeId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'domainName': domainName,'routeId': routeId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -114,13 +114,13 @@ class RoutingApi {
 		return this.apiClient.callApi(
 			'/api/v2/routing/predictors/{predictorId}', 
 			'DELETE', 
-			{ 'predictorId': predictorId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'predictorId': predictorId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -143,13 +143,13 @@ class RoutingApi {
 		return this.apiClient.callApi(
 			'/api/v2/routing/queues/{queueId}', 
 			'DELETE', 
-			{ 'queueId': queueId }, 
-			{ 'forceDelete': opts['forceDelete'] }, 
-			{  }, 
-			{  }, 
+			{ 'queueId': queueId },
+			{ 'forceDelete': opts['forceDelete'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -173,13 +173,13 @@ class RoutingApi {
 		return this.apiClient.callApi(
 			'/api/v2/routing/queues/{queueId}/members/{memberId}', 
 			'DELETE', 
-			{ 'queueId': queueId,'memberId': memberId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'queueId': queueId,'memberId': memberId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -203,13 +203,13 @@ class RoutingApi {
 		return this.apiClient.callApi(
 			'/api/v2/routing/queues/{queueId}/users/{memberId}', 
 			'DELETE', 
-			{ 'queueId': queueId,'memberId': memberId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'queueId': queueId,'memberId': memberId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -233,19 +233,19 @@ class RoutingApi {
 		return this.apiClient.callApi(
 			'/api/v2/routing/queues/{queueId}/wrapupcodes/{codeId}', 
 			'DELETE', 
-			{ 'queueId': queueId,'codeId': codeId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'queueId': queueId,'codeId': codeId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
 
 	/**
-	 * Delete an organization&#39;s routing settings
+	 * Delete an organization's routing settings
 	 * 
 	 */
 	deleteRoutingSettings() { 
@@ -253,13 +253,13 @@ class RoutingApi {
 		return this.apiClient.callApi(
 			'/api/v2/routing/settings', 
 			'DELETE', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -278,13 +278,13 @@ class RoutingApi {
 		return this.apiClient.callApi(
 			'/api/v2/routing/skills/{skillId}', 
 			'DELETE', 
-			{ 'skillId': skillId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'skillId': skillId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -303,13 +303,13 @@ class RoutingApi {
 		return this.apiClient.callApi(
 			'/api/v2/routing/sms/addresses/{addressId}', 
 			'DELETE', 
-			{ 'addressId': addressId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'addressId': addressId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -332,19 +332,19 @@ class RoutingApi {
 		return this.apiClient.callApi(
 			'/api/v2/routing/sms/phonenumbers/{addressId}', 
 			'DELETE', 
-			{ 'addressId': addressId }, 
-			{ 'async': opts['async'] }, 
-			{  }, 
-			{  }, 
+			{ 'addressId': addressId },
+			{ 'async': opts['async'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
 
 	/**
-	 * Delete the user&#39;s max utilization settings and revert to the organization-wide default.
+	 * Delete the user's max utilization settings and revert to the organization-wide default.
 	 * 
 	 * @param {String} userId User ID
 	 */
@@ -357,13 +357,13 @@ class RoutingApi {
 		return this.apiClient.callApi(
 			'/api/v2/routing/users/{userId}/utilization', 
 			'DELETE', 
-			{ 'userId': userId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'userId': userId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -377,13 +377,13 @@ class RoutingApi {
 		return this.apiClient.callApi(
 			'/api/v2/routing/utilization', 
 			'DELETE', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -402,13 +402,13 @@ class RoutingApi {
 		return this.apiClient.callApi(
 			'/api/v2/routing/wrapupcodes/{codeId}', 
 			'DELETE', 
-			{ 'codeId': codeId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'codeId': codeId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -432,13 +432,13 @@ class RoutingApi {
 		return this.apiClient.callApi(
 			'/api/v2/users/{userId}/routinglanguages/{languageId}', 
 			'DELETE', 
-			{ 'userId': userId,'languageId': languageId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'userId': userId,'languageId': languageId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -462,13 +462,13 @@ class RoutingApi {
 		return this.apiClient.callApi(
 			'/api/v2/users/{userId}/routingskills/{skillId}', 
 			'DELETE', 
-			{ 'userId': userId,'skillId': skillId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'userId': userId,'skillId': skillId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -487,13 +487,13 @@ class RoutingApi {
 		return this.apiClient.callApi(
 			'/api/v2/routing/assessments/{assessmentId}', 
 			'GET', 
-			{ 'assessmentId': assessmentId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'assessmentId': assessmentId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -515,13 +515,13 @@ class RoutingApi {
 		return this.apiClient.callApi(
 			'/api/v2/routing/assessments', 
 			'GET', 
-			{  }, 
-			{ 'before': opts['before'],'after': opts['after'],'limit': opts['limit'],'pageSize': opts['pageSize'],'queueId': this.apiClient.buildCollectionParam(opts['queueId'], 'multi') }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'before': opts['before'],'after': opts['after'],'limit': opts['limit'],'pageSize': opts['pageSize'],'queueId': this.apiClient.buildCollectionParam(opts['queueId'], 'multi') },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -540,13 +540,13 @@ class RoutingApi {
 		return this.apiClient.callApi(
 			'/api/v2/routing/assessments/jobs/{jobId}', 
 			'GET', 
-			{ 'jobId': jobId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'jobId': jobId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -564,13 +564,13 @@ class RoutingApi {
 		return this.apiClient.callApi(
 			'/api/v2/routing/assessments/jobs', 
 			'GET', 
-			{  }, 
-			{ 'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi') }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi') },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -589,13 +589,13 @@ class RoutingApi {
 		return this.apiClient.callApi(
 			'/api/v2/routing/email/domains/{domainId}', 
 			'GET', 
-			{ 'domainId': domainId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'domainId': domainId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -619,13 +619,13 @@ class RoutingApi {
 		return this.apiClient.callApi(
 			'/api/v2/routing/email/domains/{domainName}/routes/{routeId}', 
 			'GET', 
-			{ 'domainName': domainName,'routeId': routeId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'domainName': domainName,'routeId': routeId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -637,7 +637,7 @@ class RoutingApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
-	 * @param {String} opts.pattern Filter routes by the route&#39;s pattern property
+	 * @param {String} opts.pattern Filter routes by the route's pattern property
 	 */
 	getRoutingEmailDomainRoutes(domainName, opts) { 
 		opts = opts || {};
@@ -650,13 +650,13 @@ class RoutingApi {
 		return this.apiClient.callApi(
 			'/api/v2/routing/email/domains/{domainName}/routes', 
 			'GET', 
-			{ 'domainName': domainName }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'pattern': opts['pattern'] }, 
-			{  }, 
-			{  }, 
+			{ 'domainName': domainName },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'pattern': opts['pattern'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -674,13 +674,13 @@ class RoutingApi {
 		return this.apiClient.callApi(
 			'/api/v2/routing/email/domains', 
 			'GET', 
-			{  }, 
-			{ 'excludeStatus': opts['excludeStatus'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'excludeStatus': opts['excludeStatus'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -694,13 +694,13 @@ class RoutingApi {
 		return this.apiClient.callApi(
 			'/api/v2/routing/email/setup', 
 			'GET', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -722,13 +722,13 @@ class RoutingApi {
 		return this.apiClient.callApi(
 			'/api/v2/routing/languages', 
 			'GET', 
-			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortOrder': opts['sortOrder'],'name': opts['name'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi') }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortOrder': opts['sortOrder'],'name': opts['name'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi') },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -747,13 +747,13 @@ class RoutingApi {
 		return this.apiClient.callApi(
 			'/api/v2/routing/message/recipients/{recipientId}', 
 			'GET', 
-			{ 'recipientId': recipientId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'recipientId': recipientId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -773,13 +773,13 @@ class RoutingApi {
 		return this.apiClient.callApi(
 			'/api/v2/routing/message/recipients', 
 			'GET', 
-			{  }, 
-			{ 'messengerType': opts['messengerType'],'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'messengerType': opts['messengerType'],'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -798,13 +798,13 @@ class RoutingApi {
 		return this.apiClient.callApi(
 			'/api/v2/routing/predictors/{predictorId}', 
 			'GET', 
-			{ 'predictorId': predictorId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'predictorId': predictorId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -826,13 +826,13 @@ class RoutingApi {
 		return this.apiClient.callApi(
 			'/api/v2/routing/predictors', 
 			'GET', 
-			{  }, 
-			{ 'before': opts['before'],'after': opts['after'],'limit': opts['limit'],'pageSize': opts['pageSize'],'queueId': this.apiClient.buildCollectionParam(opts['queueId'], 'multi') }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'before': opts['before'],'after': opts['after'],'limit': opts['limit'],'pageSize': opts['pageSize'],'queueId': this.apiClient.buildCollectionParam(opts['queueId'], 'multi') },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -846,13 +846,13 @@ class RoutingApi {
 		return this.apiClient.callApi(
 			'/api/v2/routing/predictors/keyperformanceindicators', 
 			'GET', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -871,13 +871,13 @@ class RoutingApi {
 		return this.apiClient.callApi(
 			'/api/v2/routing/queues/{queueId}', 
 			'GET', 
-			{ 'queueId': queueId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'queueId': queueId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -901,13 +901,13 @@ class RoutingApi {
 		return this.apiClient.callApi(
 			'/api/v2/routing/queues/{queueId}/comparisonperiods/{comparisonPeriodId}', 
 			'GET', 
-			{ 'queueId': queueId,'comparisonPeriodId': comparisonPeriodId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'queueId': queueId,'comparisonPeriodId': comparisonPeriodId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -926,13 +926,13 @@ class RoutingApi {
 		return this.apiClient.callApi(
 			'/api/v2/routing/queues/{queueId}/comparisonperiods', 
 			'GET', 
-			{ 'queueId': queueId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'queueId': queueId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -955,13 +955,13 @@ class RoutingApi {
 		return this.apiClient.callApi(
 			'/api/v2/routing/queues/{queueId}/estimatedwaittime', 
 			'GET', 
-			{ 'queueId': queueId }, 
-			{ 'conversationId': opts['conversationId'] }, 
-			{  }, 
-			{  }, 
+			{ 'queueId': queueId },
+			{ 'conversationId': opts['conversationId'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -985,13 +985,13 @@ class RoutingApi {
 		return this.apiClient.callApi(
 			'/api/v2/routing/queues/{queueId}/mediatypes/{mediaType}/estimatedwaittime', 
 			'GET', 
-			{ 'queueId': queueId,'mediaType': mediaType }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'queueId': queueId,'mediaType': mediaType },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1012,7 +1012,7 @@ class RoutingApi {
 	 * @param {Array.<String>} opts.routingStatus Filter by routing status
 	 * @param {Array.<String>} opts.presence Filter by presence
 	 * @param {Object} opts.memberBy Filter by member type
-	 * @param {Boolean} opts.joined Filter by joined status
+	 * @param {Object} opts.joined Filter by joined status
 	 */
 	getRoutingQueueMembers(queueId, opts) { 
 		opts = opts || {};
@@ -1025,13 +1025,13 @@ class RoutingApi {
 		return this.apiClient.callApi(
 			'/api/v2/routing/queues/{queueId}/members', 
 			'GET', 
-			{ 'queueId': queueId }, 
-			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortOrder': opts['sortOrder'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'name': opts['name'],'profileSkills': this.apiClient.buildCollectionParam(opts['profileSkills'], 'multi'),'skills': this.apiClient.buildCollectionParam(opts['skills'], 'multi'),'languages': this.apiClient.buildCollectionParam(opts['languages'], 'multi'),'routingStatus': this.apiClient.buildCollectionParam(opts['routingStatus'], 'multi'),'presence': this.apiClient.buildCollectionParam(opts['presence'], 'multi'),'memberBy': opts['memberBy'],'joined': opts['joined'] }, 
-			{  }, 
-			{  }, 
+			{ 'queueId': queueId },
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortOrder': opts['sortOrder'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'name': opts['name'],'profileSkills': this.apiClient.buildCollectionParam(opts['profileSkills'], 'multi'),'skills': this.apiClient.buildCollectionParam(opts['skills'], 'multi'),'languages': this.apiClient.buildCollectionParam(opts['languages'], 'multi'),'routingStatus': this.apiClient.buildCollectionParam(opts['routingStatus'], 'multi'),'presence': this.apiClient.buildCollectionParam(opts['presence'], 'multi'),'memberBy': opts['memberBy'],'joined': opts['joined'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1064,13 +1064,13 @@ class RoutingApi {
 		return this.apiClient.callApi(
 			'/api/v2/routing/queues/{queueId}/users', 
 			'GET', 
-			{ 'queueId': queueId }, 
-			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortOrder': opts['sortOrder'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'joined': opts['joined'],'name': opts['name'],'profileSkills': this.apiClient.buildCollectionParam(opts['profileSkills'], 'multi'),'skills': this.apiClient.buildCollectionParam(opts['skills'], 'multi'),'languages': this.apiClient.buildCollectionParam(opts['languages'], 'multi'),'routingStatus': this.apiClient.buildCollectionParam(opts['routingStatus'], 'multi'),'presence': this.apiClient.buildCollectionParam(opts['presence'], 'multi') }, 
-			{  }, 
-			{  }, 
+			{ 'queueId': queueId },
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortOrder': opts['sortOrder'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'joined': opts['joined'],'name': opts['name'],'profileSkills': this.apiClient.buildCollectionParam(opts['profileSkills'], 'multi'),'skills': this.apiClient.buildCollectionParam(opts['skills'], 'multi'),'languages': this.apiClient.buildCollectionParam(opts['languages'], 'multi'),'routingStatus': this.apiClient.buildCollectionParam(opts['routingStatus'], 'multi'),'presence': this.apiClient.buildCollectionParam(opts['presence'], 'multi') },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1094,13 +1094,13 @@ class RoutingApi {
 		return this.apiClient.callApi(
 			'/api/v2/routing/queues/{queueId}/wrapupcodes', 
 			'GET', 
-			{ 'queueId': queueId }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] }, 
-			{  }, 
-			{  }, 
+			{ 'queueId': queueId },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1123,13 +1123,13 @@ class RoutingApi {
 		return this.apiClient.callApi(
 			'/api/v2/routing/queues', 
 			'GET', 
-			{  }, 
-			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortOrder': opts['sortOrder'],'name': opts['name'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi') }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortOrder': opts['sortOrder'],'name': opts['name'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi') },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1153,13 +1153,13 @@ class RoutingApi {
 		return this.apiClient.callApi(
 			'/api/v2/routing/queues/divisionviews', 
 			'GET', 
-			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'name': opts['name'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi') }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'name': opts['name'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi') },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1179,13 +1179,13 @@ class RoutingApi {
 		return this.apiClient.callApi(
 			'/api/v2/routing/queues/divisionviews/all', 
 			'GET', 
-			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortOrder': opts['sortOrder'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortOrder': opts['sortOrder'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1196,7 +1196,7 @@ class RoutingApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Number} opts.pageSize Page size (default to 25)
-	 * @param {Boolean} opts.joined Filter by joined status.
+	 * @param {Object} opts.joined Filter by joined status.
 	 * @param {Object} opts.sortOrder Note: results are sorted by name. (default to asc)
 	 */
 	getRoutingQueuesMe(opts) { 
@@ -1206,19 +1206,19 @@ class RoutingApi {
 		return this.apiClient.callApi(
 			'/api/v2/routing/queues/me', 
 			'GET', 
-			{  }, 
-			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'joined': opts['joined'],'sortOrder': opts['sortOrder'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'joined': opts['joined'],'sortOrder': opts['sortOrder'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
 
 	/**
-	 * Get an organization&#39;s routing settings
+	 * Get an organization's routing settings
 	 * 
 	 */
 	getRoutingSettings() { 
@@ -1226,13 +1226,13 @@ class RoutingApi {
 		return this.apiClient.callApi(
 			'/api/v2/routing/settings', 
 			'GET', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1246,13 +1246,13 @@ class RoutingApi {
 		return this.apiClient.callApi(
 			'/api/v2/routing/settings/contactcenter', 
 			'GET', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1266,13 +1266,13 @@ class RoutingApi {
 		return this.apiClient.callApi(
 			'/api/v2/routing/settings/transcription', 
 			'GET', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1291,13 +1291,13 @@ class RoutingApi {
 		return this.apiClient.callApi(
 			'/api/v2/routing/skills/{skillId}', 
 			'GET', 
-			{ 'skillId': skillId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'skillId': skillId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1318,13 +1318,13 @@ class RoutingApi {
 		return this.apiClient.callApi(
 			'/api/v2/routing/skills', 
 			'GET', 
-			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'name': opts['name'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi') }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'name': opts['name'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi') },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1343,13 +1343,13 @@ class RoutingApi {
 		return this.apiClient.callApi(
 			'/api/v2/routing/sms/addresses/{addressId}', 
 			'GET', 
-			{ 'addressId': addressId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'addressId': addressId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1368,13 +1368,13 @@ class RoutingApi {
 		return this.apiClient.callApi(
 			'/api/v2/routing/sms/addresses', 
 			'GET', 
-			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1388,7 +1388,7 @@ class RoutingApi {
 	 * @param {String} opts.region Region/province/state that can be used to restrict the numbers returned
 	 * @param {String} opts.city City that can be used to restrict the numbers returned
 	 * @param {String} opts.areaCode Area code that can be used to restrict the numbers returned
-	 * @param {String} opts.pattern A pattern to match phone numbers. Valid characters are &#39;*&#39; and [0-9a-zA-Z]. The &#39;*&#39; character will match any single digit.
+	 * @param {String} opts.pattern A pattern to match phone numbers. Valid characters are '*' and [0-9a-zA-Z]. The '*' character will match any single digit.
 	 * @param {Object} opts.addressRequirement This indicates whether the phone number requires to have an Address registered.
 	 */
 	getRoutingSmsAvailablephonenumbers(countryCode, phoneNumberType, opts) { 
@@ -1406,13 +1406,13 @@ class RoutingApi {
 		return this.apiClient.callApi(
 			'/api/v2/routing/sms/availablephonenumbers', 
 			'GET', 
-			{  }, 
-			{ 'countryCode': countryCode,'region': opts['region'],'city': opts['city'],'areaCode': opts['areaCode'],'phoneNumberType': phoneNumberType,'pattern': opts['pattern'],'addressRequirement': opts['addressRequirement'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'countryCode': countryCode,'region': opts['region'],'city': opts['city'],'areaCode': opts['areaCode'],'phoneNumberType': phoneNumberType,'pattern': opts['pattern'],'addressRequirement': opts['addressRequirement'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1431,13 +1431,13 @@ class RoutingApi {
 		return this.apiClient.callApi(
 			'/api/v2/routing/sms/phonenumbers/{addressId}', 
 			'GET', 
-			{ 'addressId': addressId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'addressId': addressId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1446,7 +1446,7 @@ class RoutingApi {
 	 * Get a list of provisioned phone numbers.
 	 * 
 	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.phoneNumber Filter on phone number address. Allowable characters are the digits &#39;0-9&#39; and the wild card character &#39;\\*&#39;. If just digits are present, a contains search is done on the address pattern. For example, &#39;317&#39; could be matched anywhere in the address. An &#39;\\*&#39; will match multiple digits. For example, to match a specific area code within the US a pattern like &#39;1317*&#39; could be used.
+	 * @param {String} opts.phoneNumber Filter on phone number address. Allowable characters are the digits '0-9' and the wild card character '\\*'. If just digits are present, a contains search is done on the address pattern. For example, '317' could be matched anywhere in the address. An '\\*' will match multiple digits. For example, to match a specific area code within the US a pattern like '1317*' could be used.
 	 * @param {Array.<String>} opts.phoneNumberType Filter on phone number type
 	 * @param {Array.<String>} opts.phoneNumberStatus Filter on phone number status
 	 * @param {Array.<String>} opts.countryCode Filter on country code
@@ -1454,7 +1454,7 @@ class RoutingApi {
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Object} opts.sortBy Optional field to sort results
 	 * @param {Object} opts.sortOrder Sort order
-	 * @param {String} opts.language A language tag (which is sometimes referred to as a \&quot;locale identifier\&quot;) to use to localize country field and sort operations (default to en-US)
+	 * @param {String} opts.language A language tag (which is sometimes referred to as a locale identifier) to use to localize country field and sort operations (default to en-US)
 	 */
 	getRoutingSmsPhonenumbers(opts) { 
 		opts = opts || {};
@@ -1463,19 +1463,19 @@ class RoutingApi {
 		return this.apiClient.callApi(
 			'/api/v2/routing/sms/phonenumbers', 
 			'GET', 
-			{  }, 
-			{ 'phoneNumber': opts['phoneNumber'],'phoneNumberType': this.apiClient.buildCollectionParam(opts['phoneNumberType'], 'multi'),'phoneNumberStatus': this.apiClient.buildCollectionParam(opts['phoneNumberStatus'], 'multi'),'countryCode': this.apiClient.buildCollectionParam(opts['countryCode'], 'multi'),'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'language': opts['language'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'phoneNumber': opts['phoneNumber'],'phoneNumberType': this.apiClient.buildCollectionParam(opts['phoneNumberType'], 'multi'),'phoneNumberStatus': this.apiClient.buildCollectionParam(opts['phoneNumberStatus'], 'multi'),'countryCode': this.apiClient.buildCollectionParam(opts['countryCode'], 'multi'),'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'language': opts['language'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
 
 	/**
-	 * Get the user&#39;s max utilization settings.  If not configured, the organization-wide default is returned.
+	 * Get the user's max utilization settings.  If not configured, the organization-wide default is returned.
 	 * 
 	 * @param {String} userId User ID
 	 */
@@ -1488,13 +1488,13 @@ class RoutingApi {
 		return this.apiClient.callApi(
 			'/api/v2/routing/users/{userId}/utilization', 
 			'GET', 
-			{ 'userId': userId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'userId': userId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1508,13 +1508,13 @@ class RoutingApi {
 		return this.apiClient.callApi(
 			'/api/v2/routing/utilization', 
 			'GET', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1533,13 +1533,13 @@ class RoutingApi {
 		return this.apiClient.callApi(
 			'/api/v2/routing/wrapupcodes/{codeId}', 
 			'GET', 
-			{ 'codeId': codeId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'codeId': codeId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1552,7 +1552,7 @@ class RoutingApi {
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Object} opts.sortBy Sort by (default to name)
 	 * @param {Object} opts.sortOrder Sort order (default to ascending)
-	 * @param {String} opts.name Wrapup code&#39;s name (&#39;Sort by&#39; param is ignored unless this field is provided)
+	 * @param {String} opts.name Wrapup code's name ('Sort by' param is ignored unless this field is provided)
 	 */
 	getRoutingWrapupcodes(opts) { 
 		opts = opts || {};
@@ -1561,13 +1561,13 @@ class RoutingApi {
 		return this.apiClient.callApi(
 			'/api/v2/routing/wrapupcodes', 
 			'GET', 
-			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'name': opts['name'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'name': opts['name'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1593,13 +1593,13 @@ class RoutingApi {
 		return this.apiClient.callApi(
 			'/api/v2/users/{userId}/queues', 
 			'GET', 
-			{ 'userId': userId }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'joined': opts['joined'],'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi') }, 
-			{  }, 
-			{  }, 
+			{ 'userId': userId },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'joined': opts['joined'],'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi') },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1624,13 +1624,13 @@ class RoutingApi {
 		return this.apiClient.callApi(
 			'/api/v2/users/{userId}/routinglanguages', 
 			'GET', 
-			{ 'userId': userId }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortOrder': opts['sortOrder'] }, 
-			{  }, 
-			{  }, 
+			{ 'userId': userId },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortOrder': opts['sortOrder'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1655,13 +1655,13 @@ class RoutingApi {
 		return this.apiClient.callApi(
 			'/api/v2/users/{userId}/routingskills', 
 			'GET', 
-			{ 'userId': userId }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortOrder': opts['sortOrder'] }, 
-			{  }, 
-			{  }, 
+			{ 'userId': userId },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortOrder': opts['sortOrder'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1685,13 +1685,13 @@ class RoutingApi {
 		return this.apiClient.callApi(
 			'/api/v2/routing/conversations/{conversationId}', 
 			'PATCH', 
-			{ 'conversationId': conversationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1715,13 +1715,13 @@ class RoutingApi {
 		return this.apiClient.callApi(
 			'/api/v2/routing/email/domains/{domainId}', 
 			'PATCH', 
-			{ 'domainId': domainId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'domainId': domainId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1745,13 +1745,13 @@ class RoutingApi {
 		return this.apiClient.callApi(
 			'/api/v2/routing/email/domains/{domainId}/validate', 
 			'PATCH', 
-			{ 'domainId': domainId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'domainId': domainId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1774,13 +1774,13 @@ class RoutingApi {
 		return this.apiClient.callApi(
 			'/api/v2/routing/predictors/{predictorId}', 
 			'PATCH', 
-			{ 'predictorId': predictorId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'predictorId': predictorId },
+			{  },
+			{  },
+			{  },
 			opts['body'], 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1809,13 +1809,13 @@ class RoutingApi {
 		return this.apiClient.callApi(
 			'/api/v2/routing/queues/{queueId}/members/{memberId}', 
 			'PATCH', 
-			{ 'queueId': queueId,'memberId': memberId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'queueId': queueId,'memberId': memberId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1839,13 +1839,13 @@ class RoutingApi {
 		return this.apiClient.callApi(
 			'/api/v2/routing/queues/{queueId}/members', 
 			'PATCH', 
-			{ 'queueId': queueId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'queueId': queueId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1874,13 +1874,13 @@ class RoutingApi {
 		return this.apiClient.callApi(
 			'/api/v2/routing/queues/{queueId}/users/{memberId}', 
 			'PATCH', 
-			{ 'queueId': queueId,'memberId': memberId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'queueId': queueId,'memberId': memberId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1904,13 +1904,13 @@ class RoutingApi {
 		return this.apiClient.callApi(
 			'/api/v2/routing/queues/{queueId}/users', 
 			'PATCH', 
-			{ 'queueId': queueId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'queueId': queueId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1929,13 +1929,13 @@ class RoutingApi {
 		return this.apiClient.callApi(
 			'/api/v2/routing/settings/contactcenter', 
 			'PATCH', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1964,13 +1964,13 @@ class RoutingApi {
 		return this.apiClient.callApi(
 			'/api/v2/users/{userId}/queues/{queueId}', 
 			'PATCH', 
-			{ 'queueId': queueId,'userId': userId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'queueId': queueId,'userId': userId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1998,13 +1998,13 @@ class RoutingApi {
 		return this.apiClient.callApi(
 			'/api/v2/users/{userId}/queues', 
 			'PATCH', 
-			{ 'userId': userId }, 
-			{ 'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi') }, 
-			{  }, 
-			{  }, 
+			{ 'userId': userId },
+			{ 'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi') },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2033,13 +2033,13 @@ class RoutingApi {
 		return this.apiClient.callApi(
 			'/api/v2/users/{userId}/routinglanguages/{languageId}', 
 			'PATCH', 
-			{ 'userId': userId,'languageId': languageId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'userId': userId,'languageId': languageId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2063,13 +2063,13 @@ class RoutingApi {
 		return this.apiClient.callApi(
 			'/api/v2/users/{userId}/routinglanguages/bulk', 
 			'PATCH', 
-			{ 'userId': userId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'userId': userId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2093,13 +2093,13 @@ class RoutingApi {
 		return this.apiClient.callApi(
 			'/api/v2/users/{userId}/routingskills/bulk', 
 			'PATCH', 
-			{ 'userId': userId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'userId': userId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2118,13 +2118,13 @@ class RoutingApi {
 		return this.apiClient.callApi(
 			'/api/v2/analytics/queues/observations/query', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2142,13 +2142,13 @@ class RoutingApi {
 		return this.apiClient.callApi(
 			'/api/v2/routing/assessments', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			opts['body'], 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2166,13 +2166,13 @@ class RoutingApi {
 		return this.apiClient.callApi(
 			'/api/v2/routing/assessments/jobs', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			opts['body'], 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2196,13 +2196,13 @@ class RoutingApi {
 		return this.apiClient.callApi(
 			'/api/v2/routing/email/domains/{domainName}/routes', 
 			'POST', 
-			{ 'domainName': domainName }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'domainName': domainName },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2225,13 +2225,13 @@ class RoutingApi {
 		return this.apiClient.callApi(
 			'/api/v2/routing/email/domains/{domainId}/testconnection', 
 			'POST', 
-			{ 'domainId': domainId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'domainId': domainId },
+			{  },
+			{  },
+			{  },
 			opts['body'], 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2250,13 +2250,13 @@ class RoutingApi {
 		return this.apiClient.callApi(
 			'/api/v2/routing/email/domains', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2275,13 +2275,13 @@ class RoutingApi {
 		return this.apiClient.callApi(
 			'/api/v2/routing/languages', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2299,13 +2299,13 @@ class RoutingApi {
 		return this.apiClient.callApi(
 			'/api/v2/routing/predictors', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			opts['body'], 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2333,13 +2333,13 @@ class RoutingApi {
 		return this.apiClient.callApi(
 			'/api/v2/routing/queues/{queueId}/members', 
 			'POST', 
-			{ 'queueId': queueId }, 
-			{ 'delete': opts['_delete'] }, 
-			{  }, 
-			{  }, 
+			{ 'queueId': queueId },
+			{ 'delete': opts['_delete'] },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2367,13 +2367,13 @@ class RoutingApi {
 		return this.apiClient.callApi(
 			'/api/v2/routing/queues/{queueId}/users', 
 			'POST', 
-			{ 'queueId': queueId }, 
-			{ 'delete': opts['_delete'] }, 
-			{  }, 
-			{  }, 
+			{ 'queueId': queueId },
+			{ 'delete': opts['_delete'] },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2397,13 +2397,13 @@ class RoutingApi {
 		return this.apiClient.callApi(
 			'/api/v2/routing/queues/{queueId}/wrapupcodes', 
 			'POST', 
-			{ 'queueId': queueId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'queueId': queueId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2422,13 +2422,13 @@ class RoutingApi {
 		return this.apiClient.callApi(
 			'/api/v2/routing/queues', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2447,13 +2447,13 @@ class RoutingApi {
 		return this.apiClient.callApi(
 			'/api/v2/routing/skills', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2472,13 +2472,13 @@ class RoutingApi {
 		return this.apiClient.callApi(
 			'/api/v2/routing/sms/addresses', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2488,7 +2488,7 @@ class RoutingApi {
 	 * 
 	 * @param {Object} body SmsPhoneNumber
 	 * @param {Object} opts Optional parameters
-	 * @param {Boolean} opts.async Provision a new phone number for SMS in an asynchronous manner. If the async parameter value is true, this initiates the provisioning of a new phone number. Check the phoneNumber&#39;s provisioningStatus for completion of this request. (default to false)
+	 * @param {Boolean} opts.async Provision a new phone number for SMS in an asynchronous manner. If the async parameter value is true, this initiates the provisioning of a new phone number. Check the phoneNumber's provisioningStatus for completion of this request. (default to false)
 	 */
 	postRoutingSmsPhonenumbers(body, opts) { 
 		opts = opts || {};
@@ -2501,13 +2501,13 @@ class RoutingApi {
 		return this.apiClient.callApi(
 			'/api/v2/routing/sms/phonenumbers', 
 			'POST', 
-			{  }, 
-			{ 'async': opts['async'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'async': opts['async'] },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2526,13 +2526,13 @@ class RoutingApi {
 		return this.apiClient.callApi(
 			'/api/v2/routing/wrapupcodes', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2556,13 +2556,13 @@ class RoutingApi {
 		return this.apiClient.callApi(
 			'/api/v2/users/{userId}/routinglanguages', 
 			'POST', 
-			{ 'userId': userId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'userId': userId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2586,13 +2586,13 @@ class RoutingApi {
 		return this.apiClient.callApi(
 			'/api/v2/users/{userId}/routingskills', 
 			'POST', 
-			{ 'userId': userId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'userId': userId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2621,13 +2621,13 @@ class RoutingApi {
 		return this.apiClient.callApi(
 			'/api/v2/routing/email/domains/{domainName}/routes/{routeId}', 
 			'PUT', 
-			{ 'domainName': domainName,'routeId': routeId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'domainName': domainName,'routeId': routeId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2651,13 +2651,13 @@ class RoutingApi {
 		return this.apiClient.callApi(
 			'/api/v2/routing/message/recipients/{recipientId}', 
 			'PUT', 
-			{ 'recipientId': recipientId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'recipientId': recipientId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2681,19 +2681,19 @@ class RoutingApi {
 		return this.apiClient.callApi(
 			'/api/v2/routing/queues/{queueId}', 
 			'PUT', 
-			{ 'queueId': queueId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'queueId': queueId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
 
 	/**
-	 * Update an organization&#39;s routing settings
+	 * Update an organization's routing settings
 	 * 
 	 * @param {Object} body Organization Settings
 	 */
@@ -2706,13 +2706,13 @@ class RoutingApi {
 		return this.apiClient.callApi(
 			'/api/v2/routing/settings', 
 			'PUT', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2731,13 +2731,13 @@ class RoutingApi {
 		return this.apiClient.callApi(
 			'/api/v2/routing/settings/transcription', 
 			'PUT', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2748,7 +2748,7 @@ class RoutingApi {
 	 * @param {String} addressId Address ID
 	 * @param {Object} body SmsPhoneNumber
 	 * @param {Object} opts Optional parameters
-	 * @param {Boolean} opts.async Update an existing phone number for SMS in an asynchronous manner. If the async parameter value is true, this initiates the update of a provisioned phone number. Check the phoneNumber&#39;s provisioningStatus for the progress of this request. (default to false)
+	 * @param {Boolean} opts.async Update an existing phone number for SMS in an asynchronous manner. If the async parameter value is true, this initiates the update of a provisioned phone number. Check the phoneNumber's provisioningStatus for the progress of this request. (default to false)
 	 */
 	putRoutingSmsPhonenumber(addressId, body, opts) { 
 		opts = opts || {};
@@ -2765,19 +2765,19 @@ class RoutingApi {
 		return this.apiClient.callApi(
 			'/api/v2/routing/sms/phonenumbers/{addressId}', 
 			'PUT', 
-			{ 'addressId': addressId }, 
-			{ 'async': opts['async'] }, 
-			{  }, 
-			{  }, 
+			{ 'addressId': addressId },
+			{ 'async': opts['async'] },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
 
 	/**
-	 * Update the user&#39;s max utilization settings.  Include only those media types requiring custom configuration.
+	 * Update the user's max utilization settings.  Include only those media types requiring custom configuration.
 	 * 
 	 * @param {String} userId User ID
 	 * @param {Object} body utilization
@@ -2795,13 +2795,13 @@ class RoutingApi {
 		return this.apiClient.callApi(
 			'/api/v2/routing/users/{userId}/utilization', 
 			'PUT', 
-			{ 'userId': userId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'userId': userId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2820,13 +2820,13 @@ class RoutingApi {
 		return this.apiClient.callApi(
 			'/api/v2/routing/utilization', 
 			'PUT', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2850,13 +2850,13 @@ class RoutingApi {
 		return this.apiClient.callApi(
 			'/api/v2/routing/wrapupcodes/{codeId}', 
 			'PUT', 
-			{ 'codeId': codeId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'codeId': codeId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2885,13 +2885,13 @@ class RoutingApi {
 		return this.apiClient.callApi(
 			'/api/v2/users/{userId}/routingskills/{skillId}', 
 			'PUT', 
-			{ 'userId': userId,'skillId': skillId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'userId': userId,'skillId': skillId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2915,13 +2915,13 @@ class RoutingApi {
 		return this.apiClient.callApi(
 			'/api/v2/users/{userId}/routingskills/bulk', 
 			'PUT', 
-			{ 'userId': userId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'userId': userId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}

@@ -144,14 +144,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 # void deleteTelephonyProvidersEdge(edgeId)
 
 
-
 DELETE /api/v2/telephony/providers/edges/{edgeId}
 
 Delete a edge.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * telephony:plugin:all
 
@@ -197,14 +194,11 @@ void (no response body)
 # void deleteTelephonyProvidersEdgeLogicalinterface(edgeId, interfaceId)
 
 
-
 DELETE /api/v2/telephony/providers/edges/{edgeId}/logicalinterfaces/{interfaceId}
 
 Delete an edge logical interface
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * telephony:plugin:all
 
@@ -252,15 +246,11 @@ void (no response body)
 # void deleteTelephonyProvidersEdgeSoftwareupdate(edgeId)
 
 
-
 DELETE /api/v2/telephony/providers/edges/{edgeId}/softwareupdate
 
 Cancels any in-progress update for this edge.
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -304,14 +294,11 @@ void (no response body)
 # void deleteTelephonyProvidersEdgesCertificateauthority(certificateId)
 
 
-
 DELETE /api/v2/telephony/providers/edges/certificateauthorities/{certificateId}
 
 Delete a certificate authority.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * telephony:plugin:all
 
@@ -357,14 +344,11 @@ void (no response body)
 # void deleteTelephonyProvidersEdgesDidpool(didPoolId)
 
 
-
 DELETE /api/v2/telephony/providers/edges/didpools/{didPoolId}
 
 Delete a DID Pool by ID.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * telephony:plugin:all
 
@@ -410,14 +394,11 @@ void (no response body)
 # void deleteTelephonyProvidersEdgesEdgegroup(edgeGroupId)
 
 
-
 DELETE /api/v2/telephony/providers/edges/edgegroups/{edgeGroupId}
 
 Delete an edge group.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * telephony:plugin:all
 
@@ -463,14 +444,11 @@ void (no response body)
 # void deleteTelephonyProvidersEdgesExtensionpool(extensionPoolId)
 
 
-
 DELETE /api/v2/telephony/providers/edges/extensionpools/{extensionPoolId}
 
 Delete an extension pool by ID
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * telephony:plugin:all
 
@@ -523,7 +501,7 @@ Delete Outbound Route
 
 This route is deprecated, use /telephony/providers/edges/sites/{siteId}/outboundroutes/{outboundRouteId} instead.
 
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * telephony:plugin:all
 
@@ -569,14 +547,11 @@ void (no response body)
 # void deleteTelephonyProvidersEdgesPhone(phoneId)
 
 
-
 DELETE /api/v2/telephony/providers/edges/phones/{phoneId}
 
 Delete a Phone by ID
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * telephony:plugin:all
 
@@ -622,14 +597,11 @@ void (no response body)
 # void deleteTelephonyProvidersEdgesPhonebasesetting(phoneBaseId)
 
 
-
 DELETE /api/v2/telephony/providers/edges/phonebasesettings/{phoneBaseId}
 
 Delete a Phone Base Settings by ID
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * telephony:plugin:all
 
@@ -675,14 +647,11 @@ void (no response body)
 # void deleteTelephonyProvidersEdgesSite(siteId)
 
 
-
 DELETE /api/v2/telephony/providers/edges/sites/{siteId}
 
 Delete a Site by ID
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * telephony:plugin:all
 
@@ -728,14 +697,11 @@ void (no response body)
 # void deleteTelephonyProvidersEdgesSiteOutboundroute(siteId, outboundRouteId)
 
 
-
 DELETE /api/v2/telephony/providers/edges/sites/{siteId}/outboundroutes/{outboundRouteId}
 
 Delete Outbound Route
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * telephony:plugin:all
 
@@ -783,14 +749,11 @@ void (no response body)
 # void deleteTelephonyProvidersEdgesTrunkbasesetting(trunkBaseSettingsId)
 
 
-
 DELETE /api/v2/telephony/providers/edges/trunkbasesettings/{trunkBaseSettingsId}
 
 Delete a Trunk Base Settings object by ID
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * telephony:plugin:all
 
@@ -841,10 +804,7 @@ GET /api/v2/configuration/schemas/edges/vnext
 
 Lists available schema categories (Deprecated)
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -897,10 +857,7 @@ GET /api/v2/configuration/schemas/edges/vnext/{schemaCategory}
 
 List schemas of a specific category (Deprecated)
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -955,10 +912,7 @@ GET /api/v2/configuration/schemas/edges/vnext/{schemaCategory}/{schemaType}
 
 List schemas of a specific category (Deprecated)
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -1015,10 +969,7 @@ GET /api/v2/configuration/schemas/edges/vnext/{schemaCategory}/{schemaType}/{sch
 
 Get a json schema (Deprecated)
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -1071,10 +1022,7 @@ GET /api/v2/configuration/schemas/edges/vnext/{schemaCategory}/{schemaType}/{sch
 
 Get metadata for a schema (Deprecated)
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -1130,14 +1078,11 @@ apiInstance.getConfigurationSchemasEdgesVnextSchemaCategorySchemaTypeSchemaIdExt
 # Edge getTelephonyProvidersEdge(edgeId, opts)
 
 
-
 GET /api/v2/telephony/providers/edges/{edgeId}
 
 Get edge.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * telephony:plugin:all
 
@@ -1187,14 +1132,11 @@ apiInstance.getTelephonyProvidersEdge(edgeId, opts)
 # EdgeNetworkDiagnosticResponse getTelephonyProvidersEdgeDiagnosticNslookup(edgeId)
 
 
-
 GET /api/v2/telephony/providers/edges/{edgeId}/diagnostic/nslookup
 
 Get networking-related information from an Edge for a target IP or host.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * telephony:plugin:all
 
@@ -1240,14 +1182,11 @@ apiInstance.getTelephonyProvidersEdgeDiagnosticNslookup(edgeId)
 # EdgeNetworkDiagnosticResponse getTelephonyProvidersEdgeDiagnosticPing(edgeId)
 
 
-
 GET /api/v2/telephony/providers/edges/{edgeId}/diagnostic/ping
 
 Get networking-related information from an Edge for a target IP or host.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * telephony:plugin:all
 
@@ -1293,14 +1232,11 @@ apiInstance.getTelephonyProvidersEdgeDiagnosticPing(edgeId)
 # EdgeNetworkDiagnosticResponse getTelephonyProvidersEdgeDiagnosticRoute(edgeId)
 
 
-
 GET /api/v2/telephony/providers/edges/{edgeId}/diagnostic/route
 
 Get networking-related information from an Edge for a target IP or host.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * telephony:plugin:all
 
@@ -1346,14 +1282,11 @@ apiInstance.getTelephonyProvidersEdgeDiagnosticRoute(edgeId)
 # EdgeNetworkDiagnosticResponse getTelephonyProvidersEdgeDiagnosticTracepath(edgeId)
 
 
-
 GET /api/v2/telephony/providers/edges/{edgeId}/diagnostic/tracepath
 
 Get networking-related information from an Edge for a target IP or host.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * telephony:plugin:all
 
@@ -1404,9 +1337,7 @@ GET /api/v2/telephony/providers/edges/{edgeId}/lines/{lineId}
 
 Get line
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * telephony:plugin:all
 
@@ -1459,9 +1390,7 @@ GET /api/v2/telephony/providers/edges/{edgeId}/lines
 
 Get the list of lines.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * telephony:plugin:all
 
@@ -1513,14 +1442,11 @@ apiInstance.getTelephonyProvidersEdgeLines(edgeId, opts)
 # DomainLogicalInterface getTelephonyProvidersEdgeLogicalinterface(edgeId, interfaceId, opts)
 
 
-
 GET /api/v2/telephony/providers/edges/{edgeId}/logicalinterfaces/{interfaceId}
 
 Get an edge logical interface
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * telephony:plugin:all
 
@@ -1572,14 +1498,13 @@ apiInstance.getTelephonyProvidersEdgeLogicalinterface(edgeId, interfaceId, opts)
 # LogicalInterfaceEntityListing getTelephonyProvidersEdgeLogicalinterfaces(edgeId, opts)
 
 
-
 GET /api/v2/telephony/providers/edges/{edgeId}/logicalinterfaces
 
 Get edge logical interfaces.
 
 Retrieve a list of all configured logical interfaces from a specific edge.
 
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * telephony:plugin:all
 
@@ -1629,14 +1554,11 @@ apiInstance.getTelephonyProvidersEdgeLogicalinterfaces(edgeId, opts)
 # EdgeLogsJob getTelephonyProvidersEdgeLogsJob(edgeId, jobId)
 
 
-
 GET /api/v2/telephony/providers/edges/{edgeId}/logs/jobs/{jobId}
 
 Get an Edge logs job.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * telephony:plugin:all
 
@@ -1684,14 +1606,11 @@ apiInstance.getTelephonyProvidersEdgeLogsJob(edgeId, jobId)
 # EdgeMetrics getTelephonyProvidersEdgeMetrics(edgeId)
 
 
-
 GET /api/v2/telephony/providers/edges/{edgeId}/metrics
 
 Get the edge metrics.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * telephony:plugin:all
 
@@ -1737,14 +1656,13 @@ apiInstance.getTelephonyProvidersEdgeMetrics(edgeId)
 # DomainPhysicalInterface getTelephonyProvidersEdgePhysicalinterface(edgeId, interfaceId)
 
 
-
 GET /api/v2/telephony/providers/edges/{edgeId}/physicalinterfaces/{interfaceId}
 
 Get edge physical interface.
 
 Retrieve a physical interface from a specific edge.
 
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * telephony:plugin:all
 
@@ -1792,14 +1710,11 @@ apiInstance.getTelephonyProvidersEdgePhysicalinterface(edgeId, interfaceId)
 # PhysicalInterfaceEntityListing getTelephonyProvidersEdgePhysicalinterfaces(edgeId)
 
 
-
 GET /api/v2/telephony/providers/edges/{edgeId}/physicalinterfaces
 
 Retrieve a list of all configured physical interfaces from a specific edge.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * telephony:plugin:all
 
@@ -1845,14 +1760,11 @@ apiInstance.getTelephonyProvidersEdgePhysicalinterfaces(edgeId)
 # VmPairingInfo getTelephonyProvidersEdgeSetuppackage(edgeId)
 
 
-
 GET /api/v2/telephony/providers/edges/{edgeId}/setuppackage
 
 Get the setup package for a locally deployed edge device. This is needed to complete the setup process for the virtual edge.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * telephony:plugin:all
 
@@ -1898,15 +1810,11 @@ apiInstance.getTelephonyProvidersEdgeSetuppackage(edgeId)
 # DomainEdgeSoftwareUpdateDto getTelephonyProvidersEdgeSoftwareupdate(edgeId)
 
 
-
 GET /api/v2/telephony/providers/edges/{edgeId}/softwareupdate
 
 Gets software update status information about any edge.
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -1950,15 +1858,11 @@ apiInstance.getTelephonyProvidersEdgeSoftwareupdate(edgeId)
 # DomainEdgeSoftwareVersionDtoEntityListing getTelephonyProvidersEdgeSoftwareversions(edgeId)
 
 
-
 GET /api/v2/telephony/providers/edges/{edgeId}/softwareversions
 
 Gets all the available software versions for this edge.
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -2002,14 +1906,13 @@ apiInstance.getTelephonyProvidersEdgeSoftwareversions(edgeId)
 # TrunkEntityListing getTelephonyProvidersEdgeTrunks(edgeId, opts)
 
 
-
 GET /api/v2/telephony/providers/edges/{edgeId}/trunks
 
 Get the list of available trunks for the given Edge.
 
 Trunks are created by assigning trunk base settings to an Edge or Edge Group.
 
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * telephony:plugin:all
 
@@ -2069,14 +1972,11 @@ apiInstance.getTelephonyProvidersEdgeTrunks(edgeId, opts)
 # EdgeEntityListing getTelephonyProvidersEdges(opts)
 
 
-
 GET /api/v2/telephony/providers/edges
 
 Get the list of edges.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * telephony:plugin:all
 
@@ -2136,15 +2036,11 @@ apiInstance.getTelephonyProvidersEdges(opts)
 # AvailableLanguageList getTelephonyProvidersEdgesAvailablelanguages()
 
 
-
 GET /api/v2/telephony/providers/edges/availablelanguages
 
 Get the list of available languages.
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -2183,14 +2079,11 @@ This endpoint does not need any parameter.
 # CertificateAuthorityEntityListing getTelephonyProvidersEdgesCertificateauthorities()
 
 
-
 GET /api/v2/telephony/providers/edges/certificateauthorities
 
 Get the list of certificate authorities.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * telephony:plugin:all
 
@@ -2231,14 +2124,11 @@ This endpoint does not need any parameter.
 # DomainCertificateAuthority getTelephonyProvidersEdgesCertificateauthority(certificateId)
 
 
-
 GET /api/v2/telephony/providers/edges/certificateauthorities/{certificateId}
 
 Get a certificate authority.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * telephony:plugin:all
 
@@ -2284,14 +2174,11 @@ apiInstance.getTelephonyProvidersEdgesCertificateauthority(certificateId)
 # DID getTelephonyProvidersEdgesDid(didId)
 
 
-
 GET /api/v2/telephony/providers/edges/dids/{didId}
 
 Get a DID by ID.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * telephony:plugin:all
 
@@ -2337,14 +2224,11 @@ apiInstance.getTelephonyProvidersEdgesDid(didId)
 # DIDPool getTelephonyProvidersEdgesDidpool(didPoolId)
 
 
-
 GET /api/v2/telephony/providers/edges/didpools/{didPoolId}
 
 Get a DID Pool by ID.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * telephony:plugin:all
 
@@ -2390,14 +2274,11 @@ apiInstance.getTelephonyProvidersEdgesDidpool(didPoolId)
 # DIDPoolEntityListing getTelephonyProvidersEdgesDidpools(opts)
 
 
-
 GET /api/v2/telephony/providers/edges/didpools
 
 Get a listing of DID Pools
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * telephony:plugin:all
 
@@ -2439,7 +2320,7 @@ apiInstance.getTelephonyProvidersEdgesDidpools(opts)
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **sortBy** | **String** | Sort by | [optional] [default to number] |
- **id** | **[String]** | Filter by a specific list of ID&#39;s | [optional]  |
+ **id** | **[String]** | Filter by a specific list of ID's | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2451,14 +2332,11 @@ apiInstance.getTelephonyProvidersEdgesDidpools(opts)
 # DIDNumberEntityListing getTelephonyProvidersEdgesDidpoolsDids(type, opts)
 
 
-
 GET /api/v2/telephony/providers/edges/didpools/dids
 
 Get a listing of unassigned and/or assigned numbers in a set of DID Pools.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * telephony:plugin:all
 
@@ -2516,14 +2394,11 @@ apiInstance.getTelephonyProvidersEdgesDidpoolsDids(type, opts)
 # DIDEntityListing getTelephonyProvidersEdgesDids(opts)
 
 
-
 GET /api/v2/telephony/providers/edges/dids
 
 Get a listing of DIDs
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * telephony:plugin:all
 
@@ -2573,7 +2448,7 @@ apiInstance.getTelephonyProvidersEdgesDids(opts)
  **phoneNumber** | **String** | Filter by phoneNumber | [optional]  |
  **ownerId** | **String** | Filter by the owner of a phone number | [optional]  |
  **didPoolId** | **String** | Filter by the DID Pool assignment | [optional]  |
- **id** | **[String]** | Filter by a specific list of ID&#39;s | [optional]  |
+ **id** | **[String]** | Filter by a specific list of ID's | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2585,14 +2460,11 @@ apiInstance.getTelephonyProvidersEdgesDids(opts)
 # EdgeGroup getTelephonyProvidersEdgesEdgegroup(edgeGroupId, opts)
 
 
-
 GET /api/v2/telephony/providers/edges/edgegroups/{edgeGroupId}
 
 Get edge group.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * telephony:plugin:all
 
@@ -2642,14 +2514,11 @@ apiInstance.getTelephonyProvidersEdgesEdgegroup(edgeGroupId, opts)
 # EdgeTrunkBase getTelephonyProvidersEdgesEdgegroupEdgetrunkbase(edgegroupId, edgetrunkbaseId)
 
 
-
 GET /api/v2/telephony/providers/edges/edgegroups/{edgegroupId}/edgetrunkbases/{edgetrunkbaseId}
 
 Gets the edge trunk base associated with the edge group
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * telephony:plugin:all
 
@@ -2697,14 +2566,11 @@ apiInstance.getTelephonyProvidersEdgesEdgegroupEdgetrunkbase(edgegroupId, edgetr
 # EdgeGroupEntityListing getTelephonyProvidersEdgesEdgegroups(opts)
 
 
-
 GET /api/v2/telephony/providers/edges/edgegroups
 
 Get the list of edge groups.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * telephony:plugin:all
 
@@ -2760,15 +2626,13 @@ apiInstance.getTelephonyProvidersEdgesEdgegroups(opts)
 # EdgeVersionReport getTelephonyProvidersEdgesEdgeversionreport()
 
 
-
 GET /api/v2/telephony/providers/edges/edgeversionreport
 
 Get the edge version report.
 
 The report will not have consistent data about the edge version(s) until all edges have been reset.
 
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -2807,14 +2671,11 @@ This endpoint does not need any parameter.
 # ExpiredEdgeListing getTelephonyProvidersEdgesExpired()
 
 
-
 GET /api/v2/telephony/providers/edges/expired
 
 List of edges more than 4 edge versions behind the latest software.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * telephony:plugin:all
 * internal:edge:view
@@ -2856,14 +2717,11 @@ This endpoint does not need any parameter.
 # Extension getTelephonyProvidersEdgesExtension(extensionId)
 
 
-
 GET /api/v2/telephony/providers/edges/extensions/{extensionId}
 
 Get an extension by ID.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * telephony:plugin:all
 
@@ -2909,14 +2767,11 @@ apiInstance.getTelephonyProvidersEdgesExtension(extensionId)
 # ExtensionPool getTelephonyProvidersEdgesExtensionpool(extensionPoolId)
 
 
-
 GET /api/v2/telephony/providers/edges/extensionpools/{extensionPoolId}
 
 Get an extension pool by ID
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * telephony:plugin:all
 
@@ -2962,14 +2817,11 @@ apiInstance.getTelephonyProvidersEdgesExtensionpool(extensionPoolId)
 # ExtensionPoolEntityListing getTelephonyProvidersEdgesExtensionpools(opts)
 
 
-
 GET /api/v2/telephony/providers/edges/extensionpools
 
 Get a listing of extension pools
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * telephony:plugin:all
 
@@ -3023,14 +2875,11 @@ apiInstance.getTelephonyProvidersEdgesExtensionpools(opts)
 # ExtensionEntityListing getTelephonyProvidersEdgesExtensions(opts)
 
 
-
 GET /api/v2/telephony/providers/edges/extensions
 
 Get a listing of extensions
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * telephony:plugin:all
 
@@ -3086,14 +2935,11 @@ apiInstance.getTelephonyProvidersEdgesExtensions(opts)
 # Line getTelephonyProvidersEdgesLine(lineId)
 
 
-
 GET /api/v2/telephony/providers/edges/lines/{lineId}
 
 Get a Line by ID
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * telephony:plugin:all
 
@@ -3139,14 +2985,11 @@ apiInstance.getTelephonyProvidersEdgesLine(lineId)
 # LineBase getTelephonyProvidersEdgesLinebasesetting(lineBaseId)
 
 
-
 GET /api/v2/telephony/providers/edges/linebasesettings/{lineBaseId}
 
 Get a line base settings object by ID
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * telephony:plugin:all
 
@@ -3192,14 +3035,11 @@ apiInstance.getTelephonyProvidersEdgesLinebasesetting(lineBaseId)
 # LineBaseEntityListing getTelephonyProvidersEdgesLinebasesettings(opts)
 
 
-
 GET /api/v2/telephony/providers/edges/linebasesettings
 
 Get a listing of line base settings objects
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * telephony:plugin:all
 
@@ -3255,14 +3095,11 @@ apiInstance.getTelephonyProvidersEdgesLinebasesettings(opts)
 # LineEntityListing getTelephonyProvidersEdgesLines(opts)
 
 
-
 GET /api/v2/telephony/providers/edges/lines
 
 Get a list of Lines
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * telephony:plugin:all
 
@@ -3318,14 +3155,11 @@ apiInstance.getTelephonyProvidersEdgesLines(opts)
 # Line getTelephonyProvidersEdgesLinesTemplate(lineBaseSettingsId)
 
 
-
 GET /api/v2/telephony/providers/edges/lines/template
 
 Get a Line instance template based on a Line Base Settings object. This object can then be modified and saved as a new Line instance
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * telephony:plugin:all
 
@@ -3371,14 +3205,13 @@ apiInstance.getTelephonyProvidersEdgesLinesTemplate(lineBaseSettingsId)
 # LogicalInterfaceEntityListing getTelephonyProvidersEdgesLogicalinterfaces(edgeIds, opts)
 
 
-
 GET /api/v2/telephony/providers/edges/logicalinterfaces
 
 Get edge logical interfaces.
 
 Retrieve the configured logical interfaces for a list edges. Only 100 edges can be requested at a time.
 
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * telephony:plugin:all
 
@@ -3415,7 +3248,7 @@ apiInstance.getTelephonyProvidersEdgesLogicalinterfaces(edgeIds, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **edgeIds** | **String** | Comma separated list of Edge Id&#39;s |  |
+ **edgeIds** | **String** | Comma separated list of Edge Id's |  |
  **expand** | **[String]** | Field to expand in the response | [optional] <br />**Values**: externalTrunkBaseAssignments, phoneTrunkBaseAssignments |
 {: class="table table-striped"}
 
@@ -3428,14 +3261,11 @@ apiInstance.getTelephonyProvidersEdgesLogicalinterfaces(edgeIds, opts)
 # [EdgeMetrics] getTelephonyProvidersEdgesMetrics(edgeIds)
 
 
-
 GET /api/v2/telephony/providers/edges/metrics
 
 Get the metrics for a list of edges.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * telephony:plugin:all
 
@@ -3469,7 +3299,7 @@ apiInstance.getTelephonyProvidersEdgesMetrics(edgeIds)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **edgeIds** | **String** | Comma separated list of Edge Id&#39;s |  |
+ **edgeIds** | **String** | Comma separated list of Edge Id's |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -3488,7 +3318,7 @@ Get outbound route
 
 This route is deprecated, use /telephony/providers/edges/sites/{siteId}/outboundroutes/{outboundRouteId} instead.
 
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * telephony:plugin:all
 
@@ -3534,14 +3364,11 @@ apiInstance.getTelephonyProvidersEdgesOutboundroute(outboundRouteId)
 # OutboundRouteEntityListing getTelephonyProvidersEdgesOutboundroutes(opts)
 
 
-
 GET /api/v2/telephony/providers/edges/outboundroutes
 
 Get outbound routes
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * telephony:plugin:all
 
@@ -3599,14 +3426,11 @@ apiInstance.getTelephonyProvidersEdgesOutboundroutes(opts)
 # Phone getTelephonyProvidersEdgesPhone(phoneId)
 
 
-
 GET /api/v2/telephony/providers/edges/phones/{phoneId}
 
 Get a Phone by ID
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * telephony:plugin:all
 
@@ -3652,14 +3476,11 @@ apiInstance.getTelephonyProvidersEdgesPhone(phoneId)
 # PhoneBase getTelephonyProvidersEdgesPhonebasesetting(phoneBaseId)
 
 
-
 GET /api/v2/telephony/providers/edges/phonebasesettings/{phoneBaseId}
 
 Get a Phone Base Settings object by ID
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * telephony:plugin:all
 
@@ -3705,14 +3526,11 @@ apiInstance.getTelephonyProvidersEdgesPhonebasesetting(phoneBaseId)
 # PhoneBaseEntityListing getTelephonyProvidersEdgesPhonebasesettings(opts)
 
 
-
 GET /api/v2/telephony/providers/edges/phonebasesettings
 
 Get a list of Phone Base Settings objects
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * telephony:plugin:all
 
@@ -3770,14 +3588,11 @@ apiInstance.getTelephonyProvidersEdgesPhonebasesettings(opts)
 # PhoneMetaBaseEntityListing getTelephonyProvidersEdgesPhonebasesettingsAvailablemetabases(opts)
 
 
-
 GET /api/v2/telephony/providers/edges/phonebasesettings/availablemetabases
 
 Get a list of available makes and models to create a new Phone Base Settings
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * telephony:plugin:all
 
@@ -3827,14 +3642,11 @@ apiInstance.getTelephonyProvidersEdgesPhonebasesettingsAvailablemetabases(opts)
 # PhoneBase getTelephonyProvidersEdgesPhonebasesettingsTemplate(phoneMetabaseId)
 
 
-
 GET /api/v2/telephony/providers/edges/phonebasesettings/template
 
 Get a Phone Base Settings instance template from a given make and model. This object can then be modified and saved as a new Phone Base Settings instance
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * telephony:plugin:all
 
@@ -3880,14 +3692,11 @@ apiInstance.getTelephonyProvidersEdgesPhonebasesettingsTemplate(phoneMetabaseId)
 # PhoneEntityListing getTelephonyProvidersEdgesPhones(opts)
 
 
-
 GET /api/v2/telephony/providers/edges/phones
 
 Get a list of Phone Instances
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * telephony:plugin:all
 
@@ -3967,14 +3776,11 @@ apiInstance.getTelephonyProvidersEdgesPhones(opts)
 # Phone getTelephonyProvidersEdgesPhonesTemplate(phoneBaseSettingsId)
 
 
-
 GET /api/v2/telephony/providers/edges/phones/template
 
 Get a Phone instance template based on a Phone Base Settings object. This object can then be modified and saved as a new Phone instance
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * telephony:plugin:all
 
@@ -4020,14 +3826,13 @@ apiInstance.getTelephonyProvidersEdgesPhonesTemplate(phoneBaseSettingsId)
 # PhysicalInterfaceEntityListing getTelephonyProvidersEdgesPhysicalinterfaces(edgeIds)
 
 
-
 GET /api/v2/telephony/providers/edges/physicalinterfaces
 
 Get physical interfaces for edges.
 
 Retrieves a list of all configured physical interfaces for a list of edges. Only 100 edges can be requested at a time.
 
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * telephony:plugin:all
 
@@ -4061,7 +3866,7 @@ apiInstance.getTelephonyProvidersEdgesPhysicalinterfaces(edgeIds)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **edgeIds** | **String** | Comma separated list of Edge Id&#39;s |  |
+ **edgeIds** | **String** | Comma separated list of Edge Id's |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -4073,14 +3878,11 @@ apiInstance.getTelephonyProvidersEdgesPhysicalinterfaces(edgeIds)
 # Site getTelephonyProvidersEdgesSite(siteId)
 
 
-
 GET /api/v2/telephony/providers/edges/sites/{siteId}
 
 Get a Site by ID.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * telephony:plugin:all
 * telephony:sites:view
@@ -4127,14 +3929,11 @@ apiInstance.getTelephonyProvidersEdgesSite(siteId)
 # NumberPlan getTelephonyProvidersEdgesSiteNumberplan(siteId, numberPlanId)
 
 
-
 GET /api/v2/telephony/providers/edges/sites/{siteId}/numberplans/{numberPlanId}
 
 Get a Number Plan by ID.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * telephony:plugin:all
 
@@ -4182,14 +3981,11 @@ apiInstance.getTelephonyProvidersEdgesSiteNumberplan(siteId, numberPlanId)
 # [NumberPlan] getTelephonyProvidersEdgesSiteNumberplans(siteId)
 
 
-
 GET /api/v2/telephony/providers/edges/sites/{siteId}/numberplans
 
 Get the list of Number Plans for this Site. Only fetches the first 200 records.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * telephony:plugin:all
 
@@ -4235,14 +4031,11 @@ apiInstance.getTelephonyProvidersEdgesSiteNumberplans(siteId)
 # **[&#39;String&#39;]** getTelephonyProvidersEdgesSiteNumberplansClassifications(siteId, opts)
 
 
-
 GET /api/v2/telephony/providers/edges/sites/{siteId}/numberplans/classifications
 
 Get a list of Classifications for this Site
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * telephony:plugin:all
 
@@ -4292,14 +4085,11 @@ apiInstance.getTelephonyProvidersEdgesSiteNumberplansClassifications(siteId, opt
 # OutboundRouteBase getTelephonyProvidersEdgesSiteOutboundroute(siteId, outboundRouteId)
 
 
-
 GET /api/v2/telephony/providers/edges/sites/{siteId}/outboundroutes/{outboundRouteId}
 
 Get an outbound route
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * telephony:plugin:all
 
@@ -4347,14 +4137,11 @@ apiInstance.getTelephonyProvidersEdgesSiteOutboundroute(siteId, outboundRouteId)
 # OutboundRouteBaseEntityListing getTelephonyProvidersEdgesSiteOutboundroutes(siteId, opts)
 
 
-
 GET /api/v2/telephony/providers/edges/sites/{siteId}/outboundroutes
 
 Get outbound routes
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * telephony:plugin:all
 
@@ -4412,15 +4199,11 @@ apiInstance.getTelephonyProvidersEdgesSiteOutboundroutes(siteId, opts)
 # SiteEntityListing getTelephonyProvidersEdgesSites(opts)
 
 
-
 GET /api/v2/telephony/providers/edges/sites
 
 Get the list of Sites.
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -4478,15 +4261,11 @@ apiInstance.getTelephonyProvidersEdgesSites(opts)
 # TimeZoneEntityListing getTelephonyProvidersEdgesTimezones(opts)
 
 
-
 GET /api/v2/telephony/providers/edges/timezones
 
 Get a list of Edge-compatible time zones
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -4534,14 +4313,11 @@ apiInstance.getTelephonyProvidersEdgesTimezones(opts)
 # Trunk getTelephonyProvidersEdgesTrunk(trunkId)
 
 
-
 GET /api/v2/telephony/providers/edges/trunks/{trunkId}
 
 Get a Trunk by ID
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * telephony:plugin:all
 
@@ -4587,14 +4363,11 @@ apiInstance.getTelephonyProvidersEdgesTrunk(trunkId)
 # TrunkMetrics getTelephonyProvidersEdgesTrunkMetrics(trunkId)
 
 
-
 GET /api/v2/telephony/providers/edges/trunks/{trunkId}/metrics
 
 Get the trunk metrics.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * telephony:plugin:all
 
@@ -4640,14 +4413,13 @@ apiInstance.getTelephonyProvidersEdgesTrunkMetrics(trunkId)
 # TrunkBase getTelephonyProvidersEdgesTrunkbasesetting(trunkBaseSettingsId, opts)
 
 
-
 GET /api/v2/telephony/providers/edges/trunkbasesettings/{trunkBaseSettingsId}
 
 Get a Trunk Base Settings object by ID
 
 Managed properties will not be returned unless the user is assigned the internal:trunk:edit permission.
 
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * telephony:plugin:all
 
@@ -4697,14 +4469,13 @@ apiInstance.getTelephonyProvidersEdgesTrunkbasesetting(trunkBaseSettingsId, opts
 # TrunkBaseEntityListing getTelephonyProvidersEdgesTrunkbasesettings(opts)
 
 
-
 GET /api/v2/telephony/providers/edges/trunkbasesettings
 
 Get Trunk Base Settings listing
 
 Managed properties will not be returned unless the user is assigned the internal:trunk:edit permission.
 
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * telephony:plugin:all
 
@@ -4768,14 +4539,11 @@ apiInstance.getTelephonyProvidersEdgesTrunkbasesettings(opts)
 # TrunkMetabaseEntityListing getTelephonyProvidersEdgesTrunkbasesettingsAvailablemetabases(opts)
 
 
-
 GET /api/v2/telephony/providers/edges/trunkbasesettings/availablemetabases
 
 Get a list of available makes and models to create a new Trunk Base Settings
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * telephony:plugin:all
 
@@ -4827,14 +4595,11 @@ apiInstance.getTelephonyProvidersEdgesTrunkbasesettingsAvailablemetabases(opts)
 # TrunkBase getTelephonyProvidersEdgesTrunkbasesettingsTemplate(trunkMetabaseId)
 
 
-
 GET /api/v2/telephony/providers/edges/trunkbasesettings/template
 
 Get a Trunk Base Settings instance template from a given make and model. This object can then be modified and saved as a new Trunk Base Settings instance
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * telephony:plugin:all
 
@@ -4880,14 +4645,13 @@ apiInstance.getTelephonyProvidersEdgesTrunkbasesettingsTemplate(trunkMetabaseId)
 # TrunkEntityListing getTelephonyProvidersEdgesTrunks(opts)
 
 
-
 GET /api/v2/telephony/providers/edges/trunks
 
 Get the list of available trunks.
 
 Trunks are created by assigning trunk base settings to an Edge or Edge Group.
 
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * telephony:plugin:all
 
@@ -4947,14 +4711,11 @@ apiInstance.getTelephonyProvidersEdgesTrunks(opts)
 # [TrunkMetrics] getTelephonyProvidersEdgesTrunksMetrics(trunkIds)
 
 
-
 GET /api/v2/telephony/providers/edges/trunks/metrics
 
 Get the metrics for a list of trunks.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * telephony:plugin:all
 
@@ -4988,7 +4749,7 @@ apiInstance.getTelephonyProvidersEdgesTrunksMetrics(trunkIds)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **trunkIds** | **String** | Comma separated list of Trunk Id&#39;s |  |
+ **trunkIds** | **String** | Comma separated list of Trunk Id's |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -5000,14 +4761,11 @@ apiInstance.getTelephonyProvidersEdgesTrunksMetrics(trunkIds)
 # TrunkRecordingEnabledCount getTelephonyProvidersEdgesTrunkswithrecording(opts)
 
 
-
 GET /api/v2/telephony/providers/edges/trunkswithrecording
 
 Get Counts of trunks that have recording disabled or enabled
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * recording:retentionPolicy:view
 * telephony:plugin:all
@@ -5056,14 +4814,11 @@ apiInstance.getTelephonyProvidersEdgesTrunkswithrecording(opts)
 # EdgeNetworkDiagnostic postTelephonyProvidersEdgeDiagnosticNslookup(edgeId, body)
 
 
-
 POST /api/v2/telephony/providers/edges/{edgeId}/diagnostic/nslookup
 
 Nslookup request command to collect networking-related information from an Edge for a target IP or host.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * telephony:plugin:all
 
@@ -5111,14 +4866,11 @@ apiInstance.postTelephonyProvidersEdgeDiagnosticNslookup(edgeId, body)
 # EdgeNetworkDiagnostic postTelephonyProvidersEdgeDiagnosticPing(edgeId, body)
 
 
-
 POST /api/v2/telephony/providers/edges/{edgeId}/diagnostic/ping
 
 Ping Request command to collect networking-related information from an Edge for a target IP or host.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * telephony:plugin:all
 
@@ -5166,14 +4918,11 @@ apiInstance.postTelephonyProvidersEdgeDiagnosticPing(edgeId, body)
 # EdgeNetworkDiagnostic postTelephonyProvidersEdgeDiagnosticRoute(edgeId, body)
 
 
-
 POST /api/v2/telephony/providers/edges/{edgeId}/diagnostic/route
 
 Route request command to collect networking-related information from an Edge for a target IP or host.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * telephony:plugin:all
 
@@ -5221,14 +4970,11 @@ apiInstance.postTelephonyProvidersEdgeDiagnosticRoute(edgeId, body)
 # EdgeNetworkDiagnostic postTelephonyProvidersEdgeDiagnosticTracepath(edgeId, body)
 
 
-
 POST /api/v2/telephony/providers/edges/{edgeId}/diagnostic/tracepath
 
 Tracepath request command to collect networking-related information from an Edge for a target IP or host.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * telephony:plugin:all
 
@@ -5276,14 +5022,13 @@ apiInstance.postTelephonyProvidersEdgeDiagnosticTracepath(edgeId, body)
 # DomainLogicalInterface postTelephonyProvidersEdgeLogicalinterfaces(edgeId, body)
 
 
-
 POST /api/v2/telephony/providers/edges/{edgeId}/logicalinterfaces
 
 Create an edge logical interface.
 
 Create
 
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * telephony:plugin:all
 
@@ -5331,14 +5076,11 @@ apiInstance.postTelephonyProvidersEdgeLogicalinterfaces(edgeId, body)
 # void postTelephonyProvidersEdgeLogsJobUpload(edgeId, jobId, body)
 
 
-
 POST /api/v2/telephony/providers/edges/{edgeId}/logs/jobs/{jobId}/upload
 
 Request that the specified fileIds be uploaded from the Edge.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * telephony:plugin:all
 
@@ -5388,14 +5130,11 @@ void (no response body)
 # EdgeLogsJobResponse postTelephonyProvidersEdgeLogsJobs(edgeId, body)
 
 
-
 POST /api/v2/telephony/providers/edges/{edgeId}/logs/jobs
 
 Create a job to upload a list of Edge logs.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * telephony:plugin:all
 
@@ -5443,14 +5182,11 @@ apiInstance.postTelephonyProvidersEdgeLogsJobs(edgeId, body)
 # **&#39;String&#39;** postTelephonyProvidersEdgeReboot(edgeId, opts)
 
 
-
 POST /api/v2/telephony/providers/edges/{edgeId}/reboot
 
 Reboot an Edge
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * telephony:plugin:all
 
@@ -5500,15 +5236,11 @@ apiInstance.postTelephonyProvidersEdgeReboot(edgeId, opts)
 # DomainEdgeSoftwareUpdateDto postTelephonyProvidersEdgeSoftwareupdate(edgeId, body)
 
 
-
 POST /api/v2/telephony/providers/edges/{edgeId}/softwareupdate
 
 Starts a software update for this edge.
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -5554,14 +5286,11 @@ apiInstance.postTelephonyProvidersEdgeSoftwareupdate(edgeId, body)
 # **&#39;String&#39;** postTelephonyProvidersEdgeStatuscode(edgeId, opts)
 
 
-
 POST /api/v2/telephony/providers/edges/{edgeId}/statuscode
 
 Take an Edge in or out of service
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * telephony:plugin:all
 
@@ -5611,14 +5340,11 @@ apiInstance.postTelephonyProvidersEdgeStatuscode(edgeId, opts)
 # **&#39;String&#39;** postTelephonyProvidersEdgeUnpair(edgeId)
 
 
-
 POST /api/v2/telephony/providers/edges/{edgeId}/unpair
 
 Unpair an Edge
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * telephony:plugin:all
 
@@ -5664,14 +5390,11 @@ apiInstance.postTelephonyProvidersEdgeUnpair(edgeId)
 # Edge postTelephonyProvidersEdges(body)
 
 
-
 POST /api/v2/telephony/providers/edges
 
 Create an edge.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * telephony:plugin:all
 
@@ -5717,15 +5440,11 @@ apiInstance.postTelephonyProvidersEdges(body)
 # ValidateAddressResponse postTelephonyProvidersEdgesAddressvalidation(body)
 
 
-
 POST /api/v2/telephony/providers/edges/addressvalidation
 
 Validates a street address
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -5769,14 +5488,11 @@ apiInstance.postTelephonyProvidersEdgesAddressvalidation(body)
 # DomainCertificateAuthority postTelephonyProvidersEdgesCertificateauthorities(body)
 
 
-
 POST /api/v2/telephony/providers/edges/certificateauthorities
 
 Create a certificate authority.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * telephony:plugin:all
 
@@ -5822,14 +5538,11 @@ apiInstance.postTelephonyProvidersEdgesCertificateauthorities(body)
 # DIDPool postTelephonyProvidersEdgesDidpools(body)
 
 
-
 POST /api/v2/telephony/providers/edges/didpools
 
 Create a new DID pool
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * telephony:plugin:all
 
@@ -5875,14 +5588,11 @@ apiInstance.postTelephonyProvidersEdgesDidpools(body)
 # EdgeGroup postTelephonyProvidersEdgesEdgegroups(body)
 
 
-
 POST /api/v2/telephony/providers/edges/edgegroups
 
 Create an edge group.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * telephony:plugin:all
 
@@ -5928,14 +5638,11 @@ apiInstance.postTelephonyProvidersEdgesEdgegroups(body)
 # ExtensionPool postTelephonyProvidersEdgesExtensionpools(body)
 
 
-
 POST /api/v2/telephony/providers/edges/extensionpools
 
 Create a new extension pool
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * telephony:plugin:all
 
@@ -5988,7 +5695,7 @@ Create outbound rule
 
 This route is deprecated, use /telephony/providers/edges/sites/{siteId}/outboundroutes instead.
 
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * telephony:plugin:all
 
@@ -6034,14 +5741,11 @@ apiInstance.postTelephonyProvidersEdgesOutboundroutes(body)
 # void postTelephonyProvidersEdgesPhoneReboot(phoneId)
 
 
-
 POST /api/v2/telephony/providers/edges/phones/{phoneId}/reboot
 
 Reboot a Phone
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * telephony:plugin:all
 
@@ -6087,14 +5791,11 @@ void (no response body)
 # PhoneBase postTelephonyProvidersEdgesPhonebasesettings(body)
 
 
-
 POST /api/v2/telephony/providers/edges/phonebasesettings
 
 Create a new Phone Base Settings object
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * telephony:plugin:all
 
@@ -6140,14 +5841,11 @@ apiInstance.postTelephonyProvidersEdgesPhonebasesettings(body)
 # Phone postTelephonyProvidersEdgesPhones(body)
 
 
-
 POST /api/v2/telephony/providers/edges/phones
 
 Create a new Phone
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * telephony:plugin:all
 
@@ -6193,14 +5891,11 @@ apiInstance.postTelephonyProvidersEdgesPhones(body)
 # void postTelephonyProvidersEdgesPhonesReboot(body)
 
 
-
 POST /api/v2/telephony/providers/edges/phones/reboot
 
 Reboot Multiple Phones
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * telephony:plugin:all
 
@@ -6246,14 +5941,11 @@ void (no response body)
 # OutboundRouteBase postTelephonyProvidersEdgesSiteOutboundroutes(siteId, body)
 
 
-
 POST /api/v2/telephony/providers/edges/sites/{siteId}/outboundroutes
 
 Create outbound route
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * telephony:plugin:all
 
@@ -6301,14 +5993,11 @@ apiInstance.postTelephonyProvidersEdgesSiteOutboundroutes(siteId, body)
 # void postTelephonyProvidersEdgesSiteRebalance(siteId)
 
 
-
 POST /api/v2/telephony/providers/edges/sites/{siteId}/rebalance
 
 Triggers the rebalance operation.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * telephony:plugin:all
 
@@ -6354,14 +6043,11 @@ void (no response body)
 # Site postTelephonyProvidersEdgesSites(body)
 
 
-
 POST /api/v2/telephony/providers/edges/sites
 
 Create a Site.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * telephony:plugin:all
 
@@ -6407,14 +6093,11 @@ apiInstance.postTelephonyProvidersEdgesSites(body)
 # TrunkBase postTelephonyProvidersEdgesTrunkbasesettings(body)
 
 
-
 POST /api/v2/telephony/providers/edges/trunkbasesettings
 
 Create a Trunk Base Settings object
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * telephony:plugin:all
 
@@ -6460,14 +6143,11 @@ apiInstance.postTelephonyProvidersEdgesTrunkbasesettings(body)
 # Edge putTelephonyProvidersEdge(edgeId, body)
 
 
-
 PUT /api/v2/telephony/providers/edges/{edgeId}
 
 Update a edge.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * telephony:plugin:all
 
@@ -6520,9 +6200,7 @@ PUT /api/v2/telephony/providers/edges/{edgeId}/lines/{lineId}
 
 Update a line.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * telephony:plugin:all
 
@@ -6572,14 +6250,11 @@ apiInstance.putTelephonyProvidersEdgeLine(edgeId, lineId, body)
 # DomainLogicalInterface putTelephonyProvidersEdgeLogicalinterface(edgeId, interfaceId, body)
 
 
-
 PUT /api/v2/telephony/providers/edges/{edgeId}/logicalinterfaces/{interfaceId}
 
 Update an edge logical interface.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * telephony:plugin:all
 
@@ -6629,14 +6304,11 @@ apiInstance.putTelephonyProvidersEdgeLogicalinterface(edgeId, interfaceId, body)
 # DomainCertificateAuthority putTelephonyProvidersEdgesCertificateauthority(certificateId, body)
 
 
-
 PUT /api/v2/telephony/providers/edges/certificateauthorities/{certificateId}
 
 Update a certificate authority.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * telephony:plugin:all
 
@@ -6689,9 +6361,7 @@ PUT /api/v2/telephony/providers/edges/dids/{didId}
 
 Update a DID by ID.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * telephony:plugin:all
 
@@ -6739,14 +6409,11 @@ apiInstance.putTelephonyProvidersEdgesDid(didId, body)
 # DIDPool putTelephonyProvidersEdgesDidpool(didPoolId, body)
 
 
-
 PUT /api/v2/telephony/providers/edges/didpools/{didPoolId}
 
 Update a DID Pool by ID.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * telephony:plugin:all
 
@@ -6794,14 +6461,11 @@ apiInstance.putTelephonyProvidersEdgesDidpool(didPoolId, body)
 # EdgeGroup putTelephonyProvidersEdgesEdgegroup(edgeGroupId, body)
 
 
-
 PUT /api/v2/telephony/providers/edges/edgegroups/{edgeGroupId}
 
 Update an edge group.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * telephony:plugin:all
 
@@ -6849,14 +6513,11 @@ apiInstance.putTelephonyProvidersEdgesEdgegroup(edgeGroupId, body)
 # EdgeTrunkBase putTelephonyProvidersEdgesEdgegroupEdgetrunkbase(edgegroupId, edgetrunkbaseId, body)
 
 
-
 PUT /api/v2/telephony/providers/edges/edgegroups/{edgegroupId}/edgetrunkbases/{edgetrunkbaseId}
 
 Update the edge trunk base associated with the edge group
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * telephony:plugin:all
 
@@ -6911,9 +6572,7 @@ PUT /api/v2/telephony/providers/edges/extensions/{extensionId}
 
 Update an extension by ID.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * telephony:plugin:all
 
@@ -6961,14 +6620,11 @@ apiInstance.putTelephonyProvidersEdgesExtension(extensionId, body)
 # ExtensionPool putTelephonyProvidersEdgesExtensionpool(extensionPoolId, body)
 
 
-
 PUT /api/v2/telephony/providers/edges/extensionpools/{extensionPoolId}
 
 Update an extension pool by ID
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * telephony:plugin:all
 
@@ -7023,7 +6679,7 @@ Update outbound route
 
 This route is deprecated, use /telephony/providers/edges/sites/{siteId}/outboundroutes/{outboundRouteId} instead.
 
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * telephony:plugin:all
 
@@ -7071,14 +6727,11 @@ apiInstance.putTelephonyProvidersEdgesOutboundroute(outboundRouteId, body)
 # Phone putTelephonyProvidersEdgesPhone(phoneId, body)
 
 
-
 PUT /api/v2/telephony/providers/edges/phones/{phoneId}
 
 Update a Phone by ID
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * telephony:plugin:all
 
@@ -7126,14 +6779,11 @@ apiInstance.putTelephonyProvidersEdgesPhone(phoneId, body)
 # PhoneBase putTelephonyProvidersEdgesPhonebasesetting(phoneBaseId, body)
 
 
-
 PUT /api/v2/telephony/providers/edges/phonebasesettings/{phoneBaseId}
 
 Update a Phone Base Settings by ID
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * telephony:plugin:all
 
@@ -7181,14 +6831,11 @@ apiInstance.putTelephonyProvidersEdgesPhonebasesetting(phoneBaseId, body)
 # Site putTelephonyProvidersEdgesSite(siteId, body)
 
 
-
 PUT /api/v2/telephony/providers/edges/sites/{siteId}
 
 Update a Site by ID.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * telephony:plugin:all
 
@@ -7236,14 +6883,11 @@ apiInstance.putTelephonyProvidersEdgesSite(siteId, body)
 # [NumberPlan] putTelephonyProvidersEdgesSiteNumberplans(siteId, body)
 
 
-
 PUT /api/v2/telephony/providers/edges/sites/{siteId}/numberplans
 
 Update the list of Number Plans. A user can update maximum 200 number plans at a time.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * telephony:plugin:all
 
@@ -7291,14 +6935,11 @@ apiInstance.putTelephonyProvidersEdgesSiteNumberplans(siteId, body)
 # OutboundRouteBase putTelephonyProvidersEdgesSiteOutboundroute(siteId, outboundRouteId, body)
 
 
-
 PUT /api/v2/telephony/providers/edges/sites/{siteId}/outboundroutes/{outboundRouteId}
 
 Update outbound route
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * telephony:plugin:all
 
@@ -7348,14 +6989,11 @@ apiInstance.putTelephonyProvidersEdgesSiteOutboundroute(siteId, outboundRouteId,
 # TrunkBase putTelephonyProvidersEdgesTrunkbasesetting(trunkBaseSettingsId, body)
 
 
-
 PUT /api/v2/telephony/providers/edges/trunkbasesettings/{trunkBaseSettingsId}
 
 Update a Trunk Base Settings object by ID
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * telephony:plugin:all
 

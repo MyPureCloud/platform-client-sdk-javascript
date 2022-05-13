@@ -5,7 +5,7 @@ class KnowledgeApi {
 	/**
 	 * Knowledge service.
 	 * @module purecloud-platform-client-v2/api/KnowledgeApi
-	 * @version 136.1.0
+	 * @version 137.0.0
 	 */
 
 	/**
@@ -34,13 +34,13 @@ class KnowledgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}', 
 			'DELETE', 
-			{ 'knowledgeBaseId': knowledgeBaseId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'knowledgeBaseId': knowledgeBaseId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -69,13 +69,13 @@ class KnowledgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/categories/{categoryId}', 
 			'DELETE', 
-			{ 'categoryId': categoryId,'knowledgeBaseId': knowledgeBaseId,'languageCode': languageCode }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'categoryId': categoryId,'knowledgeBaseId': knowledgeBaseId,'languageCode': languageCode },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -104,13 +104,13 @@ class KnowledgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/{documentId}', 
 			'DELETE', 
-			{ 'documentId': documentId,'knowledgeBaseId': knowledgeBaseId,'languageCode': languageCode }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'documentId': documentId,'knowledgeBaseId': knowledgeBaseId,'languageCode': languageCode },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -139,13 +139,13 @@ class KnowledgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/imports/{importId}', 
 			'DELETE', 
-			{ 'knowledgeBaseId': knowledgeBaseId,'languageCode': languageCode,'importId': importId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'knowledgeBaseId': knowledgeBaseId,'languageCode': languageCode,'importId': importId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -164,13 +164,13 @@ class KnowledgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}', 
 			'GET', 
-			{ 'knowledgeBaseId': knowledgeBaseId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'knowledgeBaseId': knowledgeBaseId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -202,13 +202,13 @@ class KnowledgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/categories', 
 			'GET', 
-			{ 'knowledgeBaseId': knowledgeBaseId,'languageCode': languageCode }, 
-			{ 'before': opts['before'],'after': opts['after'],'limit': opts['limit'],'pageSize': opts['pageSize'],'name': opts['name'] }, 
-			{  }, 
-			{  }, 
+			{ 'knowledgeBaseId': knowledgeBaseId,'languageCode': languageCode },
+			{ 'before': opts['before'],'after': opts['after'],'limit': opts['limit'],'pageSize': opts['pageSize'],'name': opts['name'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -237,13 +237,13 @@ class KnowledgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/categories/{categoryId}', 
 			'GET', 
-			{ 'categoryId': categoryId,'knowledgeBaseId': knowledgeBaseId,'languageCode': languageCode }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'categoryId': categoryId,'knowledgeBaseId': knowledgeBaseId,'languageCode': languageCode },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -272,13 +272,13 @@ class KnowledgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/{documentId}', 
 			'GET', 
-			{ 'documentId': documentId,'knowledgeBaseId': knowledgeBaseId,'languageCode': languageCode }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'documentId': documentId,'knowledgeBaseId': knowledgeBaseId,'languageCode': languageCode },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -314,13 +314,13 @@ class KnowledgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents', 
 			'GET', 
-			{ 'knowledgeBaseId': knowledgeBaseId,'languageCode': languageCode }, 
-			{ 'before': opts['before'],'after': opts['after'],'limit': opts['limit'],'pageSize': opts['pageSize'],'categories': opts['categories'],'title': opts['title'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'documentIds': this.apiClient.buildCollectionParam(opts['documentIds'], 'multi') }, 
-			{  }, 
-			{  }, 
+			{ 'knowledgeBaseId': knowledgeBaseId,'languageCode': languageCode },
+			{ 'before': opts['before'],'after': opts['after'],'limit': opts['limit'],'pageSize': opts['pageSize'],'categories': opts['categories'],'title': opts['title'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'documentIds': this.apiClient.buildCollectionParam(opts['documentIds'], 'multi') },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -349,13 +349,13 @@ class KnowledgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/imports/{importId}', 
 			'GET', 
-			{ 'knowledgeBaseId': knowledgeBaseId,'languageCode': languageCode,'importId': importId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'knowledgeBaseId': knowledgeBaseId,'languageCode': languageCode,'importId': importId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -384,13 +384,13 @@ class KnowledgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/trainings/{trainingId}', 
 			'GET', 
-			{ 'knowledgeBaseId': knowledgeBaseId,'languageCode': languageCode,'trainingId': trainingId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'knowledgeBaseId': knowledgeBaseId,'languageCode': languageCode,'trainingId': trainingId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -422,13 +422,13 @@ class KnowledgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/trainings', 
 			'GET', 
-			{ 'knowledgeBaseId': knowledgeBaseId,'languageCode': languageCode }, 
-			{ 'before': opts['before'],'after': opts['after'],'limit': opts['limit'],'pageSize': opts['pageSize'],'knowledgeDocumentsState': opts['knowledgeDocumentsState'] }, 
-			{  }, 
-			{  }, 
+			{ 'knowledgeBaseId': knowledgeBaseId,'languageCode': languageCode },
+			{ 'before': opts['before'],'after': opts['after'],'limit': opts['limit'],'pageSize': opts['pageSize'],'knowledgeDocumentsState': opts['knowledgeDocumentsState'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -454,13 +454,13 @@ class KnowledgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/knowledge/knowledgebases', 
 			'GET', 
-			{  }, 
-			{ 'before': opts['before'],'after': opts['after'],'limit': opts['limit'],'pageSize': opts['pageSize'],'name': opts['name'],'coreLanguage': opts['coreLanguage'],'published': opts['published'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'before': opts['before'],'after': opts['after'],'limit': opts['limit'],'pageSize': opts['pageSize'],'name': opts['name'],'coreLanguage': opts['coreLanguage'],'published': opts['published'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -484,13 +484,13 @@ class KnowledgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}', 
 			'PATCH', 
-			{ 'knowledgeBaseId': knowledgeBaseId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'knowledgeBaseId': knowledgeBaseId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -524,13 +524,13 @@ class KnowledgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/categories/{categoryId}', 
 			'PATCH', 
-			{ 'categoryId': categoryId,'knowledgeBaseId': knowledgeBaseId,'languageCode': languageCode }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'categoryId': categoryId,'knowledgeBaseId': knowledgeBaseId,'languageCode': languageCode },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -564,13 +564,13 @@ class KnowledgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/{documentId}', 
 			'PATCH', 
-			{ 'documentId': documentId,'knowledgeBaseId': knowledgeBaseId,'languageCode': languageCode }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'documentId': documentId,'knowledgeBaseId': knowledgeBaseId,'languageCode': languageCode },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -599,13 +599,13 @@ class KnowledgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents', 
 			'PATCH', 
-			{ 'knowledgeBaseId': knowledgeBaseId,'languageCode': languageCode }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'knowledgeBaseId': knowledgeBaseId,'languageCode': languageCode },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -639,13 +639,13 @@ class KnowledgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/imports/{importId}', 
 			'PATCH', 
-			{ 'knowledgeBaseId': knowledgeBaseId,'languageCode': languageCode,'importId': importId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'knowledgeBaseId': knowledgeBaseId,'languageCode': languageCode,'importId': importId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -664,13 +664,13 @@ class KnowledgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/knowledge/documentuploads', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -699,13 +699,13 @@ class KnowledgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/categories', 
 			'POST', 
-			{ 'knowledgeBaseId': knowledgeBaseId,'languageCode': languageCode }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'knowledgeBaseId': knowledgeBaseId,'languageCode': languageCode },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -734,13 +734,13 @@ class KnowledgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents', 
 			'POST', 
-			{ 'knowledgeBaseId': knowledgeBaseId,'languageCode': languageCode }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'knowledgeBaseId': knowledgeBaseId,'languageCode': languageCode },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -769,13 +769,13 @@ class KnowledgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/imports', 
 			'POST', 
-			{ 'knowledgeBaseId': knowledgeBaseId,'languageCode': languageCode }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'knowledgeBaseId': knowledgeBaseId,'languageCode': languageCode },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -804,13 +804,13 @@ class KnowledgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/trainings/{trainingId}/promote', 
 			'POST', 
-			{ 'knowledgeBaseId': knowledgeBaseId,'languageCode': languageCode,'trainingId': trainingId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'knowledgeBaseId': knowledgeBaseId,'languageCode': languageCode,'trainingId': trainingId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -834,13 +834,13 @@ class KnowledgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/trainings', 
 			'POST', 
-			{ 'knowledgeBaseId': knowledgeBaseId,'languageCode': languageCode }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'knowledgeBaseId': knowledgeBaseId,'languageCode': languageCode },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -863,13 +863,13 @@ class KnowledgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/search', 
 			'POST', 
-			{ 'knowledgeBaseId': knowledgeBaseId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'knowledgeBaseId': knowledgeBaseId },
+			{  },
+			{  },
+			{  },
 			opts['body'], 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -888,13 +888,13 @@ class KnowledgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/knowledge/knowledgebases', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}

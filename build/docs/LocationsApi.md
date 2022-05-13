@@ -22,14 +22,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 # void deleteLocation(locationId)
 
 
-
 DELETE /api/v2/locations/{locationId}
 
 Delete a location
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * directory:location:delete
 
@@ -75,15 +72,11 @@ void (no response body)
 # LocationDefinition getLocation(locationId, opts)
 
 
-
 GET /api/v2/locations/{locationId}
 
 Get Location by ID.
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -131,15 +124,11 @@ apiInstance.getLocation(locationId, opts)
 # LocationEntityListing getLocationSublocations(locationId)
 
 
-
 GET /api/v2/locations/{locationId}/sublocations
 
 Get sublocations for location ID.
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -183,15 +172,11 @@ apiInstance.getLocationSublocations(locationId)
 # LocationEntityListing getLocations(opts)
 
 
-
 GET /api/v2/locations
 
 Get a list of all locations.
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -243,15 +228,11 @@ apiInstance.getLocations(opts)
 # LocationsSearchResponse getLocationsSearch(q64, opts)
 
 
-
 GET /api/v2/locations/search
 
 Search locations using the q64 value returned from a previous search
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -299,14 +280,11 @@ apiInstance.getLocationsSearch(q64, opts)
 # LocationDefinition patchLocation(locationId, body)
 
 
-
 PATCH /api/v2/locations/{locationId}
 
 Update a location
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * directory:location:edit
 
@@ -354,14 +332,11 @@ apiInstance.patchLocation(locationId, body)
 # LocationDefinition postLocations(body)
 
 
-
 POST /api/v2/locations
 
 Create a location
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * directory:location:add
 
@@ -407,15 +382,11 @@ apiInstance.postLocations(body)
 # LocationsSearchResponse postLocationsSearch(body)
 
 
-
 POST /api/v2/locations/search
 
 Search locations
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 

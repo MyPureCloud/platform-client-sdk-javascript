@@ -5,7 +5,7 @@ class FaxApi {
 	/**
 	 * Fax service.
 	 * @module purecloud-platform-client-v2/api/FaxApi
-	 * @version 136.1.0
+	 * @version 137.0.0
 	 */
 
 	/**
@@ -34,13 +34,13 @@ class FaxApi {
 		return this.apiClient.callApi(
 			'/api/v2/fax/documents/{documentId}', 
 			'DELETE', 
-			{ 'documentId': documentId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'documentId': documentId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -59,13 +59,13 @@ class FaxApi {
 		return this.apiClient.callApi(
 			'/api/v2/fax/documents/{documentId}', 
 			'GET', 
-			{ 'documentId': documentId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'documentId': documentId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -84,13 +84,13 @@ class FaxApi {
 		return this.apiClient.callApi(
 			'/api/v2/fax/documents/{documentId}/content', 
 			'GET', 
-			{ 'documentId': documentId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'documentId': documentId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -109,13 +109,13 @@ class FaxApi {
 		return this.apiClient.callApi(
 			'/api/v2/fax/documents', 
 			'GET', 
-			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -129,13 +129,13 @@ class FaxApi {
 		return this.apiClient.callApi(
 			'/api/v2/fax/summary', 
 			'GET', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -159,13 +159,13 @@ class FaxApi {
 		return this.apiClient.callApi(
 			'/api/v2/fax/documents/{documentId}', 
 			'PUT', 
-			{ 'documentId': documentId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'documentId': documentId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}

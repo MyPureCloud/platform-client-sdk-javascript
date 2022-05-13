@@ -5,7 +5,7 @@ class GreetingsApi {
 	/**
 	 * Greetings service.
 	 * @module purecloud-platform-client-v2/api/GreetingsApi
-	 * @version 136.1.0
+	 * @version 137.0.0
 	 */
 
 	/**
@@ -34,13 +34,13 @@ class GreetingsApi {
 		return this.apiClient.callApi(
 			'/api/v2/greetings/{greetingId}', 
 			'DELETE', 
-			{ 'greetingId': greetingId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'greetingId': greetingId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -59,13 +59,13 @@ class GreetingsApi {
 		return this.apiClient.callApi(
 			'/api/v2/greetings/{greetingId}', 
 			'GET', 
-			{ 'greetingId': greetingId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'greetingId': greetingId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -88,19 +88,19 @@ class GreetingsApi {
 		return this.apiClient.callApi(
 			'/api/v2/greetings/{greetingId}/media', 
 			'GET', 
-			{ 'greetingId': greetingId }, 
-			{ 'formatId': opts['formatId'] }, 
-			{  }, 
-			{  }, 
+			{ 'greetingId': greetingId },
+			{ 'formatId': opts['formatId'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
 
 	/**
-	 * Gets an Organization&#39;s Greetings
+	 * Gets an Organization's Greetings
 	 * 
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize Page size (default to 25)
@@ -113,19 +113,19 @@ class GreetingsApi {
 		return this.apiClient.callApi(
 			'/api/v2/greetings', 
 			'GET', 
-			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
 
 	/**
-	 * Get an Organization&#39;s DefaultGreetingList
+	 * Get an Organization's DefaultGreetingList
 	 * 
 	 */
 	getGreetingsDefaults() { 
@@ -133,19 +133,19 @@ class GreetingsApi {
 		return this.apiClient.callApi(
 			'/api/v2/greetings/defaults', 
 			'GET', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
 
 	/**
-	 * Get a list of the Group&#39;s Greetings
+	 * Get a list of the Group's Greetings
 	 * 
 	 * @param {String} groupId Group ID
 	 * @param {Object} opts Optional parameters
@@ -163,19 +163,19 @@ class GreetingsApi {
 		return this.apiClient.callApi(
 			'/api/v2/groups/{groupId}/greetings', 
 			'GET', 
-			{ 'groupId': groupId }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] }, 
-			{  }, 
-			{  }, 
+			{ 'groupId': groupId },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
 
 	/**
-	 * Grabs the list of Default Greetings given a Group&#39;s ID
+	 * Grabs the list of Default Greetings given a Group's ID
 	 * 
 	 * @param {String} groupId Group ID
 	 */
@@ -188,19 +188,19 @@ class GreetingsApi {
 		return this.apiClient.callApi(
 			'/api/v2/groups/{groupId}/greetings/defaults', 
 			'GET', 
-			{ 'groupId': groupId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'groupId': groupId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
 
 	/**
-	 * Get a list of the User&#39;s Greetings
+	 * Get a list of the User's Greetings
 	 * 
 	 * @param {String} userId User ID
 	 * @param {Object} opts Optional parameters
@@ -218,19 +218,19 @@ class GreetingsApi {
 		return this.apiClient.callApi(
 			'/api/v2/users/{userId}/greetings', 
 			'GET', 
-			{ 'userId': userId }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] }, 
-			{  }, 
-			{  }, 
+			{ 'userId': userId },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
 
 	/**
-	 * Grabs the list of Default Greetings given a User&#39;s ID
+	 * Grabs the list of Default Greetings given a User's ID
 	 * 
 	 * @param {String} userId User ID
 	 */
@@ -243,13 +243,13 @@ class GreetingsApi {
 		return this.apiClient.callApi(
 			'/api/v2/users/{userId}/greetings/defaults', 
 			'GET', 
-			{ 'userId': userId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'userId': userId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -268,13 +268,13 @@ class GreetingsApi {
 		return this.apiClient.callApi(
 			'/api/v2/greetings', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -298,13 +298,13 @@ class GreetingsApi {
 		return this.apiClient.callApi(
 			'/api/v2/groups/{groupId}/greetings', 
 			'POST', 
-			{ 'groupId': groupId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'groupId': groupId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -328,13 +328,13 @@ class GreetingsApi {
 		return this.apiClient.callApi(
 			'/api/v2/users/{userId}/greetings', 
 			'POST', 
-			{ 'userId': userId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'userId': userId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -358,19 +358,19 @@ class GreetingsApi {
 		return this.apiClient.callApi(
 			'/api/v2/greetings/{greetingId}', 
 			'PUT', 
-			{ 'greetingId': greetingId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'greetingId': greetingId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
 
 	/**
-	 * Update an Organization&#39;s DefaultGreetingList
+	 * Update an Organization's DefaultGreetingList
 	 * 
 	 * @param {Object} body The updated defaultGreetingList
 	 */
@@ -383,13 +383,13 @@ class GreetingsApi {
 		return this.apiClient.callApi(
 			'/api/v2/greetings/defaults', 
 			'PUT', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -413,13 +413,13 @@ class GreetingsApi {
 		return this.apiClient.callApi(
 			'/api/v2/groups/{groupId}/greetings/defaults', 
 			'PUT', 
-			{ 'groupId': groupId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'groupId': groupId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -443,13 +443,13 @@ class GreetingsApi {
 		return this.apiClient.callApi(
 			'/api/v2/users/{userId}/greetings/defaults', 
 			'PUT', 
-			{ 'userId': userId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'userId': userId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}

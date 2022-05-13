@@ -16,14 +16,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 # ApiUsageQueryResult getUsageQueryExecutionIdResults(executionId)
 
 
-
 GET /api/v2/usage/query/{executionId}/results
 
 Get the results of a usage query
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * oauth:client:view
 
@@ -69,14 +66,13 @@ apiInstance.getUsageQueryExecutionIdResults(executionId)
 # UsageExecutionResult postUsageQuery(body)
 
 
-
 POST /api/v2/usage/query
 
 Query organization API Usage - 
 
 After calling this method, you will then need to poll for the query results based on the returned execution Id
 
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * oauth:client:view
 

@@ -5,7 +5,7 @@ class AuthorizationApi {
 	/**
 	 * Authorization service.
 	 * @module purecloud-platform-client-v2/api/AuthorizationApi
-	 * @version 136.1.0
+	 * @version 137.0.0
 	 */
 
 	/**
@@ -38,13 +38,13 @@ class AuthorizationApi {
 		return this.apiClient.callApi(
 			'/api/v2/authorization/divisions/{divisionId}', 
 			'DELETE', 
-			{ 'divisionId': divisionId }, 
-			{ 'force': opts['force'] }, 
-			{  }, 
-			{  }, 
+			{ 'divisionId': divisionId },
+			{ 'force': opts['force'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -63,13 +63,13 @@ class AuthorizationApi {
 		return this.apiClient.callApi(
 			'/api/v2/authorization/roles/{roleId}', 
 			'DELETE', 
-			{ 'roleId': roleId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'roleId': roleId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -98,13 +98,13 @@ class AuthorizationApi {
 		return this.apiClient.callApi(
 			'/api/v2/authorization/subjects/{subjectId}/divisions/{divisionId}/roles/{roleId}', 
 			'DELETE', 
-			{ 'subjectId': subjectId,'divisionId': divisionId,'roleId': roleId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'subjectId': subjectId,'divisionId': divisionId,'roleId': roleId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -114,7 +114,7 @@ class AuthorizationApi {
 	 * 
 	 * @param {String} divisionId Division ID
 	 * @param {Object} opts Optional parameters
-	 * @param {Boolean} opts.objectCount Get count of objects in this division, grouped by type (default to false)
+	 * @param {Object} opts.objectCount Get count of objects in this division, grouped by type (default to false)
 	 */
 	getAuthorizationDivision(divisionId, opts) { 
 		opts = opts || {};
@@ -127,13 +127,13 @@ class AuthorizationApi {
 		return this.apiClient.callApi(
 			'/api/v2/authorization/divisions/{divisionId}', 
 			'GET', 
-			{ 'divisionId': divisionId }, 
-			{ 'objectCount': opts['objectCount'] }, 
-			{  }, 
-			{  }, 
+			{ 'divisionId': divisionId },
+			{ 'objectCount': opts['objectCount'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -157,20 +157,20 @@ class AuthorizationApi {
 		return this.apiClient.callApi(
 			'/api/v2/authorization/divisions/{divisionId}/grants', 
 			'GET', 
-			{ 'divisionId': divisionId }, 
-			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'] }, 
-			{  }, 
-			{  }, 
+			{ 'divisionId': divisionId },
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
 
 	/**
 	 * Retrieve a list of all divisions defined for the organization
-	 * Request specific divisions by id using a query param \&quot;id\&quot;, e.g.  ?id=5f777167-63be-4c24-ad41-374155d9e28b&amp;id=72e9fb25-c484-488d-9312-7acba82435b3
+	 * Request specific divisions by id using a query param "id", e.g.  ?id=5f777167-63be-4c24-ad41-374155d9e28b&id=72e9fb25-c484-488d-9312-7acba82435b3
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize The total page size requested (default to 25)
 	 * @param {Number} opts.pageNumber The page number requested (default to 1)
@@ -189,13 +189,13 @@ class AuthorizationApi {
 		return this.apiClient.callApi(
 			'/api/v2/authorization/divisions', 
 			'GET', 
-			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'nextPage': opts['nextPage'],'previousPage': opts['previousPage'],'objectCount': opts['objectCount'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'name': opts['name'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'nextPage': opts['nextPage'],'previousPage': opts['previousPage'],'objectCount': opts['objectCount'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'name': opts['name'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -209,13 +209,13 @@ class AuthorizationApi {
 		return this.apiClient.callApi(
 			'/api/v2/authorization/divisions/home', 
 			'GET', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -229,13 +229,13 @@ class AuthorizationApi {
 		return this.apiClient.callApi(
 			'/api/v2/authorization/divisions/limit', 
 			'GET', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -258,13 +258,13 @@ class AuthorizationApi {
 		return this.apiClient.callApi(
 			'/api/v2/authorization/divisionspermitted/me', 
 			'GET', 
-			{  }, 
-			{ 'name': opts['name'],'permission': permission }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'name': opts['name'],'permission': permission },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -288,13 +288,13 @@ class AuthorizationApi {
 		return this.apiClient.callApi(
 			'/api/v2/authorization/divisionspermitted/paged/me', 
 			'GET', 
-			{  }, 
-			{ 'permission': permission,'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'permission': permission,'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -323,13 +323,13 @@ class AuthorizationApi {
 		return this.apiClient.callApi(
 			'/api/v2/authorization/divisionspermitted/paged/{subjectId}', 
 			'GET', 
-			{ 'subjectId': subjectId }, 
-			{ 'permission': permission,'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'] }, 
-			{  }, 
-			{  }, 
+			{ 'subjectId': subjectId },
+			{ 'permission': permission,'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -350,13 +350,13 @@ class AuthorizationApi {
 		return this.apiClient.callApi(
 			'/api/v2/authorization/permissions', 
 			'GET', 
-			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'queryType': opts['queryType'],'query': opts['query'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'queryType': opts['queryType'],'query': opts['query'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -370,13 +370,13 @@ class AuthorizationApi {
 		return this.apiClient.callApi(
 			'/api/v2/authorization/products', 
 			'GET', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -386,7 +386,7 @@ class AuthorizationApi {
 	 * Get the organization role specified by its ID.
 	 * @param {String} roleId Role ID
 	 * @param {Object} opts Optional parameters
-	 * @param {Array.<String>} opts.expand Which fields, if any, to expand. \&quot;unusedPermissions\&quot; returns the permissions not used for the role
+	 * @param {Array.<String>} opts.expand Which fields, if any, to expand. unusedPermissions returns the permissions not used for the role
 	 */
 	getAuthorizationRole(roleId, opts) { 
 		opts = opts || {};
@@ -399,13 +399,13 @@ class AuthorizationApi {
 		return this.apiClient.callApi(
 			'/api/v2/authorization/roles/{roleId}', 
 			'GET', 
-			{ 'roleId': roleId }, 
-			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') }, 
-			{  }, 
-			{  }, 
+			{ 'roleId': roleId },
+			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -429,19 +429,19 @@ class AuthorizationApi {
 		return this.apiClient.callApi(
 			'/api/v2/authorization/roles/{leftRoleId}/comparedefault/{rightRoleId}', 
 			'GET', 
-			{ 'leftRoleId': leftRoleId,'rightRoleId': rightRoleId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'leftRoleId': leftRoleId,'rightRoleId': rightRoleId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
 
 	/**
-	 * Get the subjects&#39; granted divisions in the specified role.
+	 * Get the subjects' granted divisions in the specified role.
 	 * Includes the divisions for which the subject has a grant.
 	 * @param {String} roleId Role ID
 	 * @param {Object} opts Optional parameters
@@ -463,13 +463,13 @@ class AuthorizationApi {
 		return this.apiClient.callApi(
 			'/api/v2/authorization/roles/{roleId}/subjectgrants', 
 			'GET', 
-			{ 'roleId': roleId }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'nextPage': opts['nextPage'],'previousPage': opts['previousPage'] }, 
-			{  }, 
-			{  }, 
+			{ 'roleId': roleId },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'nextPage': opts['nextPage'],'previousPage': opts['previousPage'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -493,13 +493,13 @@ class AuthorizationApi {
 		return this.apiClient.callApi(
 			'/api/v2/authorization/roles/{roleId}/users', 
 			'GET', 
-			{ 'roleId': roleId }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] }, 
-			{  }, 
-			{  }, 
+			{ 'roleId': roleId },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -527,13 +527,13 @@ class AuthorizationApi {
 		return this.apiClient.callApi(
 			'/api/v2/authorization/roles', 
 			'GET', 
-			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'nextPage': opts['nextPage'],'previousPage': opts['previousPage'],'name': opts['name'],'permission': this.apiClient.buildCollectionParam(opts['permission'], 'multi'),'defaultRoleId': this.apiClient.buildCollectionParam(opts['defaultRoleId'], 'multi'),'userCount': opts['userCount'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi') }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'nextPage': opts['nextPage'],'previousPage': opts['previousPage'],'name': opts['name'],'permission': this.apiClient.buildCollectionParam(opts['permission'], 'multi'),'defaultRoleId': this.apiClient.buildCollectionParam(opts['defaultRoleId'], 'multi'),'userCount': opts['userCount'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi') },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -552,13 +552,13 @@ class AuthorizationApi {
 		return this.apiClient.callApi(
 			'/api/v2/authorization/subjects/{subjectId}', 
 			'GET', 
-			{ 'subjectId': subjectId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'subjectId': subjectId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -572,13 +572,13 @@ class AuthorizationApi {
 		return this.apiClient.callApi(
 			'/api/v2/authorization/subjects/me', 
 			'GET', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -596,13 +596,13 @@ class AuthorizationApi {
 		return this.apiClient.callApi(
 			'/api/v2/authorization/subjects/rolecounts', 
 			'GET', 
-			{  }, 
-			{ 'id': this.apiClient.buildCollectionParam(opts['id'], 'multi') }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'id': this.apiClient.buildCollectionParam(opts['id'], 'multi') },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -621,13 +621,13 @@ class AuthorizationApi {
 		return this.apiClient.callApi(
 			'/api/v2/users/{userId}/roles', 
 			'GET', 
-			{ 'userId': userId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'userId': userId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -651,23 +651,23 @@ class AuthorizationApi {
 		return this.apiClient.callApi(
 			'/api/v2/authorization/roles/{roleId}', 
 			'PATCH', 
-			{ 'roleId': roleId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'roleId': roleId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
 
 	/**
 	 * Assign a list of objects to a division
-	 * Set the division of a specified list of objects. The objects must all be of the same type, one of:  CAMPAIGN, MANAGEMENTUNIT, FLOW, QUEUE, DATATABLES or USER.  The body of the request is a list of object IDs, which are expected to be  GUIDs, e.g. [\&quot;206ce31f-61ec-40ed-a8b1-be6f06303998\&quot;,\&quot;250a754e-f5e4-4f51-800f-a92f09d3bf8c\&quot;]
+	 * Set the division of a specified list of objects. The objects must all be of the same type, one of:  CAMPAIGN, MANAGEMENTUNIT, FLOW, QUEUE, DATATABLES or USER.  The body of the request is a list of object IDs, which are expected to be  GUIDs, e.g. ["206ce31f-61ec-40ed-a8b1-be6f06303998","250a754e-f5e4-4f51-800f-a92f09d3bf8c"]
 	 * @param {String} divisionId Division ID
 	 * @param {Object} objectType The type of the objects. Must be one of the valid object types
-	 * @param {Array.<Object>} body Object Id List
+	 * @param {Array.<String>} body Object Id List
 	 */
 	postAuthorizationDivisionObject(divisionId, objectType, body) { 
 		// verify the required parameter 'divisionId' is set
@@ -686,13 +686,13 @@ class AuthorizationApi {
 		return this.apiClient.callApi(
 			'/api/v2/authorization/divisions/{divisionId}/objects/{objectType}', 
 			'POST', 
-			{ 'divisionId': divisionId,'objectType': objectType }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'divisionId': divisionId,'objectType': objectType },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -716,13 +716,13 @@ class AuthorizationApi {
 		return this.apiClient.callApi(
 			'/api/v2/authorization/divisions/{divisionId}/restore', 
 			'POST', 
-			{ 'divisionId': divisionId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'divisionId': divisionId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -741,13 +741,13 @@ class AuthorizationApi {
 		return this.apiClient.callApi(
 			'/api/v2/authorization/divisions', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -775,13 +775,13 @@ class AuthorizationApi {
 		return this.apiClient.callApi(
 			'/api/v2/authorization/roles/{roleId}', 
 			'POST', 
-			{ 'roleId': roleId }, 
-			{ 'subjectType': opts['subjectType'] }, 
-			{  }, 
-			{  }, 
+			{ 'roleId': roleId },
+			{ 'subjectType': opts['subjectType'] },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -810,13 +810,13 @@ class AuthorizationApi {
 		return this.apiClient.callApi(
 			'/api/v2/authorization/roles/{leftRoleId}/comparedefault/{rightRoleId}', 
 			'POST', 
-			{ 'leftRoleId': leftRoleId,'rightRoleId': rightRoleId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'leftRoleId': leftRoleId,'rightRoleId': rightRoleId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -835,13 +835,13 @@ class AuthorizationApi {
 		return this.apiClient.callApi(
 			'/api/v2/authorization/roles', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -859,13 +859,13 @@ class AuthorizationApi {
 		return this.apiClient.callApi(
 			'/api/v2/authorization/roles/default', 
 			'POST', 
-			{  }, 
-			{ 'force': opts['force'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'force': opts['force'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -893,13 +893,13 @@ class AuthorizationApi {
 		return this.apiClient.callApi(
 			'/api/v2/authorization/subjects/{subjectId}/bulkadd', 
 			'POST', 
-			{ 'subjectId': subjectId }, 
-			{ 'subjectType': opts['subjectType'] }, 
-			{  }, 
-			{  }, 
+			{ 'subjectId': subjectId },
+			{ 'subjectType': opts['subjectType'] },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -923,19 +923,19 @@ class AuthorizationApi {
 		return this.apiClient.callApi(
 			'/api/v2/authorization/subjects/{subjectId}/bulkremove', 
 			'POST', 
-			{ 'subjectId': subjectId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'subjectId': subjectId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
 
 	/**
-	 * Replace subject&#39;s roles and divisions with the exact list supplied in the request.
+	 * Replace subject's roles and divisions with the exact list supplied in the request.
 	 * This operation will not remove grants that are inherited from group membership. It will only set the grants directly applied to the subject.
 	 * @param {String} subjectId Subject ID (user or group)
 	 * @param {Object} body Pairs of role and division IDs
@@ -957,13 +957,13 @@ class AuthorizationApi {
 		return this.apiClient.callApi(
 			'/api/v2/authorization/subjects/{subjectId}/bulkreplace', 
 			'POST', 
-			{ 'subjectId': subjectId }, 
-			{ 'subjectType': opts['subjectType'] }, 
-			{  }, 
-			{  }, 
+			{ 'subjectId': subjectId },
+			{ 'subjectType': opts['subjectType'] },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -996,13 +996,13 @@ class AuthorizationApi {
 		return this.apiClient.callApi(
 			'/api/v2/authorization/subjects/{subjectId}/divisions/{divisionId}/roles/{roleId}', 
 			'POST', 
-			{ 'subjectId': subjectId,'divisionId': divisionId,'roleId': roleId }, 
-			{ 'subjectType': opts['subjectType'] }, 
-			{  }, 
-			{  }, 
+			{ 'subjectId': subjectId,'divisionId': divisionId,'roleId': roleId },
+			{ 'subjectType': opts['subjectType'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1026,13 +1026,13 @@ class AuthorizationApi {
 		return this.apiClient.callApi(
 			'/api/v2/authorization/divisions/{divisionId}', 
 			'PUT', 
-			{ 'divisionId': divisionId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'divisionId': divisionId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1056,13 +1056,13 @@ class AuthorizationApi {
 		return this.apiClient.callApi(
 			'/api/v2/authorization/roles/{roleId}', 
 			'PUT', 
-			{ 'roleId': roleId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'roleId': roleId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1071,7 +1071,7 @@ class AuthorizationApi {
 	 * Sets the users for the role
 	 * 
 	 * @param {String} roleId Role ID
-	 * @param {Array.<Object>} body List of user IDs
+	 * @param {Array.<String>} body List of user IDs
 	 */
 	putAuthorizationRoleUsersAdd(roleId, body) { 
 		// verify the required parameter 'roleId' is set
@@ -1086,13 +1086,13 @@ class AuthorizationApi {
 		return this.apiClient.callApi(
 			'/api/v2/authorization/roles/{roleId}/users/add', 
 			'PUT', 
-			{ 'roleId': roleId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'roleId': roleId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1101,7 +1101,7 @@ class AuthorizationApi {
 	 * Removes the users from the role
 	 * 
 	 * @param {String} roleId Role ID
-	 * @param {Array.<Object>} body List of user IDs
+	 * @param {Array.<String>} body List of user IDs
 	 */
 	putAuthorizationRoleUsersRemove(roleId, body) { 
 		// verify the required parameter 'roleId' is set
@@ -1116,13 +1116,13 @@ class AuthorizationApi {
 		return this.apiClient.callApi(
 			'/api/v2/authorization/roles/{roleId}/users/remove', 
 			'PUT', 
-			{ 'roleId': roleId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'roleId': roleId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1141,22 +1141,22 @@ class AuthorizationApi {
 		return this.apiClient.callApi(
 			'/api/v2/authorization/roles/default', 
 			'PUT', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
 
 	/**
-	 * Sets the user&#39;s roles
+	 * Sets the user's roles
 	 * 
 	 * @param {String} userId User ID
-	 * @param {Array.<Object>} body List of roles
+	 * @param {Array.<String>} body List of roles
 	 */
 	putUserRoles(userId, body) { 
 		// verify the required parameter 'userId' is set
@@ -1171,13 +1171,13 @@ class AuthorizationApi {
 		return this.apiClient.callApi(
 			'/api/v2/users/{userId}/roles', 
 			'PUT', 
-			{ 'userId': userId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'userId': userId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}

@@ -5,7 +5,7 @@ class LanguagesApi {
 	/**
 	 * Languages service.
 	 * @module purecloud-platform-client-v2/api/LanguagesApi
-	 * @version 136.1.0
+	 * @version 137.0.0
 	 */
 
 	/**
@@ -34,13 +34,13 @@ class LanguagesApi {
 		return this.apiClient.callApi(
 			'/api/v2/languages/{languageId}', 
 			'DELETE', 
-			{ 'languageId': languageId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'languageId': languageId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -59,13 +59,13 @@ class LanguagesApi {
 		return this.apiClient.callApi(
 			'/api/v2/routing/languages/{languageId}', 
 			'DELETE', 
-			{ 'languageId': languageId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'languageId': languageId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -84,13 +84,13 @@ class LanguagesApi {
 		return this.apiClient.callApi(
 			'/api/v2/languages/{languageId}', 
 			'GET', 
-			{ 'languageId': languageId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'languageId': languageId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -111,13 +111,13 @@ class LanguagesApi {
 		return this.apiClient.callApi(
 			'/api/v2/languages', 
 			'GET', 
-			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortOrder': opts['sortOrder'],'name': opts['name'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortOrder': opts['sortOrder'],'name': opts['name'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -131,13 +131,13 @@ class LanguagesApi {
 		return this.apiClient.callApi(
 			'/api/v2/languages/translations', 
 			'GET', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -156,13 +156,13 @@ class LanguagesApi {
 		return this.apiClient.callApi(
 			'/api/v2/languages/translations/builtin', 
 			'GET', 
-			{  }, 
-			{ 'language': language }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'language': language },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -181,13 +181,13 @@ class LanguagesApi {
 		return this.apiClient.callApi(
 			'/api/v2/languages/translations/organization', 
 			'GET', 
-			{  }, 
-			{ 'language': language }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'language': language },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -206,13 +206,13 @@ class LanguagesApi {
 		return this.apiClient.callApi(
 			'/api/v2/languages/translations/users/{userId}', 
 			'GET', 
-			{ 'userId': userId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'userId': userId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -231,13 +231,13 @@ class LanguagesApi {
 		return this.apiClient.callApi(
 			'/api/v2/routing/languages/{languageId}', 
 			'GET', 
-			{ 'languageId': languageId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'languageId': languageId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -256,13 +256,13 @@ class LanguagesApi {
 		return this.apiClient.callApi(
 			'/api/v2/languages', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}

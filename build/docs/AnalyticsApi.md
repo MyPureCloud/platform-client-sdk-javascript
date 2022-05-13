@@ -60,14 +60,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 # void deleteAnalyticsConversationsDetailsJob(jobId)
 
 
-
 DELETE /api/v2/analytics/conversations/details/jobs/{jobId}
 
 Delete/cancel an async request
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * analytics:conversationDetail:view
 * analytics:agentConversationDetail:view
@@ -114,15 +111,11 @@ void (no response body)
 # void deleteAnalyticsReportingSchedule(scheduleId)
 
 
-
 DELETE /api/v2/analytics/reporting/schedules/{scheduleId}
 
 Delete a scheduled report job.
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -166,14 +159,11 @@ void (no response body)
 # void deleteAnalyticsUsersDetailsJob(jobId)
 
 
-
 DELETE /api/v2/analytics/users/details/jobs/{jobId}
 
 Delete/cancel an async request
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * analytics:userDetail:view
 
@@ -219,14 +209,11 @@ void (no response body)
 # ReportingTurnsResponse getAnalyticsBotflowReportingturns(botFlowId, opts)
 
 
-
 GET /api/v2/analytics/botflows/{botFlowId}/reportingturns
 
 Get Reporting Turns.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * analytics:botFlowReportingTurn:view
 
@@ -282,14 +269,11 @@ apiInstance.getAnalyticsBotflowReportingturns(botFlowId, opts)
 # AnalyticsConversationWithoutAttributes getAnalyticsConversationDetails(conversationId)
 
 
-
 GET /api/v2/analytics/conversations/{conversationId}/details
 
 Get a conversation by id
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * analytics:conversationDetail:view
 * analytics:agentConversationDetail:view
@@ -336,14 +320,11 @@ apiInstance.getAnalyticsConversationDetails(conversationId)
 # AnalyticsConversationWithoutAttributesMultiGetResponse getAnalyticsConversationsDetails(opts)
 
 
-
 GET /api/v2/analytics/conversations/details
 
 Gets multiple conversations by id
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * analytics:conversationDetail:view
 * analytics:agentConversationDetail:view
@@ -392,14 +373,11 @@ apiInstance.getAnalyticsConversationsDetails(opts)
 # AsyncQueryStatus getAnalyticsConversationsDetailsJob(jobId)
 
 
-
 GET /api/v2/analytics/conversations/details/jobs/{jobId}
 
 Get status for async query for conversation details
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * analytics:conversationDetail:view
 * analytics:agentConversationDetail:view
@@ -446,14 +424,11 @@ apiInstance.getAnalyticsConversationsDetailsJob(jobId)
 # AnalyticsConversationAsyncQueryResponse getAnalyticsConversationsDetailsJobResults(jobId, opts)
 
 
-
 GET /api/v2/analytics/conversations/details/jobs/{jobId}/results
 
 Fetch a page of results for an async query
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * analytics:conversationDetail:view
 * analytics:agentConversationDetail:view
@@ -474,7 +449,7 @@ let apiInstance = new platformClient.AnalyticsApi();
 let jobId = "jobId_example"; // String | jobId
 let opts = { 
   'cursor': "cursor_example", // String | Indicates where to resume query results (not required for first page)
-  'pageSize': 56 // Number | The desired maximum number of results
+  'pageSize': 3.4 // Number | The desired maximum number of results
 };
 
 apiInstance.getAnalyticsConversationsDetailsJobResults(jobId, opts)
@@ -506,14 +481,11 @@ apiInstance.getAnalyticsConversationsDetailsJobResults(jobId, opts)
 # DataAvailabilityResponse getAnalyticsConversationsDetailsJobsAvailability()
 
 
-
 GET /api/v2/analytics/conversations/details/jobs/availability
 
 Lookup the datalake availability date and time
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * analytics:conversationDetail:view
 
@@ -554,14 +526,11 @@ This endpoint does not need any parameter.
 # ReportingExportJobListing getAnalyticsReportingExports(opts)
 
 
-
 GET /api/v2/analytics/reporting/exports
 
 Get all view export requests for a user
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * analytics:dataExport:view
 
@@ -611,14 +580,11 @@ apiInstance.getAnalyticsReportingExports(opts)
 # ReportingExportMetadataJobListing getAnalyticsReportingExportsMetadata()
 
 
-
 GET /api/v2/analytics/reporting/exports/metadata
 
 Get all export metadata
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * analytics:dataExport:view
 
@@ -659,14 +625,11 @@ This endpoint does not need any parameter.
 # ReportMetaDataEntityListing getAnalyticsReportingMetadata(opts)
 
 
-
 GET /api/v2/analytics/reporting/metadata
 
 Get list of reporting metadata.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * reporting:acd:view, reporting:status:view, reporting:interactions:view, reporting:outbound:view, reporting:quality:view, employee
 
@@ -718,14 +681,11 @@ apiInstance.getAnalyticsReportingMetadata(opts)
 # ReportMetaData getAnalyticsReportingReportIdMetadata(reportId, opts)
 
 
-
 GET /api/v2/analytics/reporting/{reportId}/metadata
 
 Get a reporting metadata.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * reporting:acd:view, reporting:status:view, reporting:interactions:view, reporting:outbound:view, reporting:quality:view, employee
 
@@ -775,15 +735,13 @@ apiInstance.getAnalyticsReportingReportIdMetadata(reportId, opts)
 # **[&#39;String&#39;]** getAnalyticsReportingReportformats()
 
 
-
 GET /api/v2/analytics/reporting/reportformats
 
 Get a list of report formats
 
 Get a list of report formats.
 
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -822,15 +780,11 @@ This endpoint does not need any parameter.
 # ReportSchedule getAnalyticsReportingSchedule(scheduleId)
 
 
-
 GET /api/v2/analytics/reporting/schedules/{scheduleId}
 
 Get a scheduled report job.
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -874,15 +828,11 @@ apiInstance.getAnalyticsReportingSchedule(scheduleId)
 # ReportRunEntryEntityDomainListing getAnalyticsReportingScheduleHistory(scheduleId, opts)
 
 
-
 GET /api/v2/analytics/reporting/schedules/{scheduleId}/history
 
 Get list of completed scheduled report jobs.
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -932,15 +882,11 @@ apiInstance.getAnalyticsReportingScheduleHistory(scheduleId, opts)
 # ReportRunEntry getAnalyticsReportingScheduleHistoryLatest(scheduleId)
 
 
-
 GET /api/v2/analytics/reporting/schedules/{scheduleId}/history/latest
 
 Get most recently completed scheduled report job.
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -984,15 +930,13 @@ apiInstance.getAnalyticsReportingScheduleHistoryLatest(scheduleId)
 # ReportRunEntry getAnalyticsReportingScheduleHistoryRunId(runId, scheduleId)
 
 
-
 GET /api/v2/analytics/reporting/schedules/{scheduleId}/history/{runId}
 
 A completed scheduled report job
 
 A completed scheduled report job.
 
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -1038,14 +982,13 @@ apiInstance.getAnalyticsReportingScheduleHistoryRunId(runId, scheduleId)
 # ReportScheduleEntityListing getAnalyticsReportingSchedules(opts)
 
 
-
 GET /api/v2/analytics/reporting/schedules
 
 Get a list of scheduled report jobs
 
 Get a list of scheduled report jobs.
 
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * reporting:acd:view, reporting:status:view, reporting:interactions:view, reporting:outbound:view, reporting:quality:view, employee
 
@@ -1095,15 +1038,11 @@ apiInstance.getAnalyticsReportingSchedules(opts)
 # AnalyticsReportingSettings getAnalyticsReportingSettings()
 
 
-
 GET /api/v2/analytics/reporting/settings
 
 Get AnalyticsReportingSettings for an organization
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -1142,15 +1081,11 @@ This endpoint does not need any parameter.
 # **[&#39;String&#39;]** getAnalyticsReportingTimeperiods()
 
 
-
 GET /api/v2/analytics/reporting/timeperiods
 
 Get a list of report time periods.
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -1189,14 +1124,11 @@ This endpoint does not need any parameter.
 # AsyncQueryStatus getAnalyticsUsersDetailsJob(jobId)
 
 
-
 GET /api/v2/analytics/users/details/jobs/{jobId}
 
 Get status for async query for user details
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * analytics:userDetail:view
 
@@ -1242,14 +1174,11 @@ apiInstance.getAnalyticsUsersDetailsJob(jobId)
 # AnalyticsUserDetailsAsyncQueryResponse getAnalyticsUsersDetailsJobResults(jobId, opts)
 
 
-
 GET /api/v2/analytics/users/details/jobs/{jobId}/results
 
 Fetch a page of results for an async query
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * analytics:userDetail:view
 
@@ -1269,7 +1198,7 @@ let apiInstance = new platformClient.AnalyticsApi();
 let jobId = "jobId_example"; // String | jobId
 let opts = { 
   'cursor': "cursor_example", // String | Indicates where to resume query results (not required for first page)
-  'pageSize': 56 // Number | The desired maximum number of results
+  'pageSize': 3.4 // Number | The desired maximum number of results
 };
 
 apiInstance.getAnalyticsUsersDetailsJobResults(jobId, opts)
@@ -1301,14 +1230,11 @@ apiInstance.getAnalyticsUsersDetailsJobResults(jobId, opts)
 # DataAvailabilityResponse getAnalyticsUsersDetailsJobsAvailability()
 
 
-
 GET /api/v2/analytics/users/details/jobs/availability
 
 Lookup the datalake availability date and time
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * analytics:userDetail:view
 
@@ -1349,14 +1275,11 @@ This endpoint does not need any parameter.
 # AnalyticsReportingSettings patchAnalyticsReportingSettings(body)
 
 
-
 PATCH /api/v2/analytics/reporting/settings
 
 Patch AnalyticsReportingSettings values for an organization
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * recording:recordingSegment:view
 * analytics:conversationDetail:view
@@ -1405,14 +1328,11 @@ apiInstance.patchAnalyticsReportingSettings(body)
 # BotAggregateQueryResponse postAnalyticsBotsAggregatesQuery(body)
 
 
-
 POST /api/v2/analytics/bots/aggregates/query
 
 Query for bot aggregates
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * analytics:botAggregate:view
 
@@ -1458,14 +1378,11 @@ apiInstance.postAnalyticsBotsAggregatesQuery(body)
 # PropertyIndexRequest postAnalyticsConversationDetailsProperties(conversationId, body)
 
 
-
 POST /api/v2/analytics/conversations/{conversationId}/details/properties
 
 Index conversation properties
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * analytics:conversationProperties:index
 
@@ -1513,14 +1430,11 @@ apiInstance.postAnalyticsConversationDetailsProperties(conversationId, body)
 # ConversationAggregateQueryResponse postAnalyticsConversationsAggregatesQuery(body)
 
 
-
 POST /api/v2/analytics/conversations/aggregates/query
 
 Query for conversation aggregates
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * analytics:conversationAggregate:view
 
@@ -1566,14 +1480,11 @@ apiInstance.postAnalyticsConversationsAggregatesQuery(body)
 # AsyncQueryResponse postAnalyticsConversationsDetailsJobs(body)
 
 
-
 POST /api/v2/analytics/conversations/details/jobs
 
 Query for conversation details asynchronously
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * analytics:conversationDetail:view
 * analytics:agentConversationDetail:view
@@ -1620,14 +1531,11 @@ apiInstance.postAnalyticsConversationsDetailsJobs(body)
 # AnalyticsConversationQueryResponse postAnalyticsConversationsDetailsQuery(body)
 
 
-
 POST /api/v2/analytics/conversations/details/query
 
 Query for conversation details
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * analytics:conversationDetail:view
 * analytics:agentConversationDetail:view
@@ -1674,14 +1582,11 @@ apiInstance.postAnalyticsConversationsDetailsQuery(body)
 # AnalyticsConversationWithoutAttributesMultiGetResponse postAnalyticsConversationsTranscriptsQuery(body)
 
 
-
 POST /api/v2/analytics/conversations/transcripts/query
 
 Search resources.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * analytics:conversationDetail:view
 
@@ -1727,14 +1632,11 @@ apiInstance.postAnalyticsConversationsTranscriptsQuery(body)
 # EvaluationAggregateQueryResponse postAnalyticsEvaluationsAggregatesQuery(body)
 
 
-
 POST /api/v2/analytics/evaluations/aggregates/query
 
 Query for evaluation aggregates
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * analytics:evaluationAggregate:view
 
@@ -1780,14 +1682,11 @@ apiInstance.postAnalyticsEvaluationsAggregatesQuery(body)
 # FlowAggregateQueryResponse postAnalyticsFlowsAggregatesQuery(body)
 
 
-
 POST /api/v2/analytics/flows/aggregates/query
 
 Query for flow aggregates
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * analytics:flowAggregate:view
 
@@ -1833,14 +1732,11 @@ apiInstance.postAnalyticsFlowsAggregatesQuery(body)
 # FlowObservationQueryResponse postAnalyticsFlowsObservationsQuery(body)
 
 
-
 POST /api/v2/analytics/flows/observations/query
 
 Query for flow observations
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * analytics:flowObservation:view
 
@@ -1886,14 +1782,11 @@ apiInstance.postAnalyticsFlowsObservationsQuery(body)
 # JourneyAggregateQueryResponse postAnalyticsJourneysAggregatesQuery(body)
 
 
-
 POST /api/v2/analytics/journeys/aggregates/query
 
 Query for journey aggregates
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * analytics:journeyAggregate:view
 
@@ -1939,14 +1832,11 @@ apiInstance.postAnalyticsJourneysAggregatesQuery(body)
 # QueueObservationQueryResponse postAnalyticsQueuesObservationsQuery(body)
 
 
-
 POST /api/v2/analytics/queues/observations/query
 
 Query for queue observations
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * analytics:queueObservation:view
 
@@ -1992,14 +1882,13 @@ apiInstance.postAnalyticsQueuesObservationsQuery(body)
 # ReportingExportJobResponse postAnalyticsReportingExports(body)
 
 
-
 POST /api/v2/analytics/reporting/exports
 
 Generate a view export request
 
 This API creates a reporting export but the desired way to export analytics data is to use the analytics query APIs instead
 
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * analytics:dataExport:add
 
@@ -2045,14 +1934,11 @@ apiInstance.postAnalyticsReportingExports(body)
 # RunNowResponse postAnalyticsReportingScheduleRunreport(scheduleId)
 
 
-
 POST /api/v2/analytics/reporting/schedules/{scheduleId}/runreport
 
 Place a scheduled report immediately into the reporting queue
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * reporting:acd:view, reporting:status:view, reporting:interactions:view, reporting:outbound:view, reporting:quality:view, employee
 
@@ -2098,14 +1984,13 @@ apiInstance.postAnalyticsReportingScheduleRunreport(scheduleId)
 # ReportSchedule postAnalyticsReportingSchedules(body)
 
 
-
 POST /api/v2/analytics/reporting/schedules
 
 Create a scheduled report job
 
 Create a scheduled report job.
 
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * reporting:acd:view, reporting:status:view, reporting:interactions:view, reporting:outbound:view, reporting:quality:view, employee
 
@@ -2151,14 +2036,11 @@ apiInstance.postAnalyticsReportingSchedules(body)
 # SurveyAggregateQueryResponse postAnalyticsSurveysAggregatesQuery(body)
 
 
-
 POST /api/v2/analytics/surveys/aggregates/query
 
 Query for survey aggregates
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * analytics:surveyAggregate:view
 
@@ -2204,14 +2086,11 @@ apiInstance.postAnalyticsSurveysAggregatesQuery(body)
 # TranscriptAggregateQueryResponse postAnalyticsTranscriptsAggregatesQuery(body)
 
 
-
 POST /api/v2/analytics/transcripts/aggregates/query
 
 Query for transcript aggregates
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * analytics:speechAndTextAnalyticsAggregates:view
 
@@ -2257,14 +2136,11 @@ apiInstance.postAnalyticsTranscriptsAggregatesQuery(body)
 # UserAggregateQueryResponse postAnalyticsUsersAggregatesQuery(body)
 
 
-
 POST /api/v2/analytics/users/aggregates/query
 
 Query for user aggregates
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * analytics:userAggregate:view
 
@@ -2310,14 +2186,11 @@ apiInstance.postAnalyticsUsersAggregatesQuery(body)
 # AsyncQueryResponse postAnalyticsUsersDetailsJobs(body)
 
 
-
 POST /api/v2/analytics/users/details/jobs
 
 Query for user details asynchronously
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * analytics:userDetail:view
 
@@ -2363,14 +2236,11 @@ apiInstance.postAnalyticsUsersDetailsJobs(body)
 # AnalyticsUserDetailsQueryResponse postAnalyticsUsersDetailsQuery(body)
 
 
-
 POST /api/v2/analytics/users/details/query
 
 Query for user details
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * analytics:userDetail:view
 
@@ -2416,14 +2286,11 @@ apiInstance.postAnalyticsUsersDetailsQuery(body)
 # UserObservationQueryResponse postAnalyticsUsersObservationsQuery(body)
 
 
-
 POST /api/v2/analytics/users/observations/query
 
 Query for user observations
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * analytics:userObservation:view
 
@@ -2469,14 +2336,11 @@ apiInstance.postAnalyticsUsersObservationsQuery(body)
 # ReportSchedule putAnalyticsReportingSchedule(scheduleId, body)
 
 
-
 PUT /api/v2/analytics/reporting/schedules/{scheduleId}
 
 Update a scheduled report job.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * reporting:acd:view, reporting:status:view, reporting:interactions:view, reporting:outbound:view, reporting:quality:view, employee
 

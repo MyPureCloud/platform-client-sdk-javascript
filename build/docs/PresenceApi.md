@@ -9,12 +9,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 | ------------- | ------------- | ------------- |
 [**deletePresencedefinition**](PresenceApi.html#deletePresencedefinition) | **DELETE** /api/v2/presencedefinitions/{presenceId} | Delete a Presence Definition
 [**getPresencedefinition**](PresenceApi.html#getPresencedefinition) | **GET** /api/v2/presencedefinitions/{presenceId} | Get a Presence Definition
-[**getPresencedefinitions**](PresenceApi.html#getPresencedefinitions) | **GET** /api/v2/presencedefinitions | Get an Organization&#39;s list of Presence Definitions
+[**getPresencedefinitions**](PresenceApi.html#getPresencedefinitions) | **GET** /api/v2/presencedefinitions | Get an Organization's list of Presence Definitions
 [**getSystempresences**](PresenceApi.html#getSystempresences) | **GET** /api/v2/systempresences | Get the list of SystemPresences
-[**getUserPresence**](PresenceApi.html#getUserPresence) | **GET** /api/v2/users/{userId}/presences/{sourceId} | Get a user&#39;s Presence
-[**getUserPresencesPurecloud**](PresenceApi.html#getUserPresencesPurecloud) | **GET** /api/v2/users/{userId}/presences/purecloud | Get a user&#39;s Genesys Cloud presence.
-[**patchUserPresence**](PresenceApi.html#patchUserPresence) | **PATCH** /api/v2/users/{userId}/presences/{sourceId} | Patch a user&#39;s Presence
-[**patchUserPresencesPurecloud**](PresenceApi.html#patchUserPresencesPurecloud) | **PATCH** /api/v2/users/{userId}/presences/purecloud | Patch a Genesys Cloud user&#39;s presence
+[**getUserPresence**](PresenceApi.html#getUserPresence) | **GET** /api/v2/users/{userId}/presences/{sourceId} | Get a user's Presence
+[**getUserPresencesPurecloud**](PresenceApi.html#getUserPresencesPurecloud) | **GET** /api/v2/users/{userId}/presences/purecloud | Get a user's Genesys Cloud presence.
+[**patchUserPresence**](PresenceApi.html#patchUserPresence) | **PATCH** /api/v2/users/{userId}/presences/{sourceId} | Patch a user's Presence
+[**patchUserPresencesPurecloud**](PresenceApi.html#patchUserPresencesPurecloud) | **PATCH** /api/v2/users/{userId}/presences/purecloud | Patch a Genesys Cloud user's presence
 [**postPresencedefinitions**](PresenceApi.html#postPresencedefinitions) | **POST** /api/v2/presencedefinitions | Create a Presence Definition
 [**putPresencedefinition**](PresenceApi.html#putPresencedefinition) | **PUT** /api/v2/presencedefinitions/{presenceId} | Update a Presence Definition
 [**putUsersPresencesBulk**](PresenceApi.html#putUsersPresencesBulk) | **PUT** /api/v2/users/presences/bulk | Update bulk user Presences
@@ -25,14 +25,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 # void deletePresencedefinition(presenceId)
 
 
-
 DELETE /api/v2/presencedefinitions/{presenceId}
 
 Delete a Presence Definition
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * presence:presenceDefinition:delete
 
@@ -78,15 +75,11 @@ void (no response body)
 # OrganizationPresence getPresencedefinition(presenceId, opts)
 
 
-
 GET /api/v2/presencedefinitions/{presenceId}
 
 Get a Presence Definition
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -134,15 +127,11 @@ apiInstance.getPresencedefinition(presenceId, opts)
 # OrganizationPresenceEntityListing getPresencedefinitions(opts)
 
 
-
 GET /api/v2/presencedefinitions
 
-Get an Organization&#39;s list of Presence Definitions
+Get an Organization's list of Presence Definitions
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -194,15 +183,11 @@ apiInstance.getPresencedefinitions(opts)
 # [SystemPresence] getSystempresences()
 
 
-
 GET /api/v2/systempresences
 
 Get the list of SystemPresences
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -241,15 +226,13 @@ This endpoint does not need any parameter.
 # UserPresence getUserPresence(userId, sourceId)
 
 
-
 GET /api/v2/users/{userId}/presences/{sourceId}
 
-Get a user&#39;s Presence
+Get a user's Presence
 
-Get a user&#39;s presence for the specified source that is not specifically listed.  Used to support custom presence sources.
+Get a users presence for the specified source that is not specifically listed.  Used to support custom presence sources.
 
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -295,15 +278,13 @@ apiInstance.getUserPresence(userId, sourceId)
 # UserPresence getUserPresencesPurecloud(userId)
 
 
-
 GET /api/v2/users/{userId}/presences/purecloud
 
-Get a user&#39;s Genesys Cloud presence.
+Get a user's Genesys Cloud presence.
 
 Get the default Genesys Cloud user presence source PURECLOUD
 
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -347,15 +328,13 @@ apiInstance.getUserPresencesPurecloud(userId)
 # UserPresence patchUserPresence(userId, sourceId, body)
 
 
-
 PATCH /api/v2/users/{userId}/presences/{sourceId}
 
-Patch a user&#39;s Presence
+Patch a user's Presence
 
-Patch a user&#39;s presence for the specified source that is not specifically listed. The presence object can be patched one of three ways. Option 1: Set the &#39;primary&#39; property to true. This will set the &#39;source&#39; defined in the path as the user&#39;s primary presence source. Option 2: Provide the presenceDefinition value. The &#39;id&#39; is the only value required within the presenceDefinition. Option 3: Provide the message value. Option 1 can be combined with Option 2 and/or Option 3.
+Patch a users presence for the specified source that is not specifically listed. The presence object can be patched one of three ways. Option 1: Set the primary property to true. This will set the source defined in the path as the users primary presence source. Option 2: Provide the presenceDefinition value. The id is the only value required within the presenceDefinition. Option 3: Provide the message value. Option 1 can be combined with Option 2 and/or Option 3.
 
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -403,15 +382,13 @@ apiInstance.patchUserPresence(userId, sourceId, body)
 # UserPresence patchUserPresencesPurecloud(userId, body)
 
 
-
 PATCH /api/v2/users/{userId}/presences/purecloud
 
-Patch a Genesys Cloud user&#39;s presence
+Patch a Genesys Cloud user's presence
 
-The presence object can be patched one of three ways. Option 1: Set the &#39;primary&#39; property to true. This will set the PURECLOUD source as the user&#39;s primary presence source. Option 2: Provide the presenceDefinition value. The &#39;id&#39; is the only value required within the presenceDefinition. Option 3: Provide the message value. Option 1 can be combined with Option 2 and/or Option 3.
+The presence object can be patched one of three ways. Option 1: Set the primary property to true. This will set the PURECLOUD source as the users primary presence source. Option 2: Provide the presenceDefinition value. The id is the only value required within the presenceDefinition. Option 3: Provide the message value. Option 1 can be combined with Option 2 and/or Option 3.
 
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -457,14 +434,11 @@ apiInstance.patchUserPresencesPurecloud(userId, body)
 # OrganizationPresence postPresencedefinitions(body)
 
 
-
 POST /api/v2/presencedefinitions
 
 Create a Presence Definition
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * presence:presenceDefinition:add
 
@@ -510,14 +484,11 @@ apiInstance.postPresencedefinitions(body)
 # OrganizationPresence putPresencedefinition(presenceId, body)
 
 
-
 PUT /api/v2/presencedefinitions/{presenceId}
 
 Update a Presence Definition
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * presence:presenceDefinition:edit
 
@@ -565,14 +536,11 @@ apiInstance.putPresencedefinition(presenceId, body)
 # [UserPresence] putUsersPresencesBulk(body)
 
 
-
 PUT /api/v2/users/presences/bulk
 
 Update bulk user Presences
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * presence:userPresence:edit
 

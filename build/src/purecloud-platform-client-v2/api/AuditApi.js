@@ -5,7 +5,7 @@ class AuditApi {
 	/**
 	 * Audit service.
 	 * @module purecloud-platform-client-v2/api/AuditApi
-	 * @version 136.1.0
+	 * @version 137.0.0
 	 */
 
 	/**
@@ -29,13 +29,13 @@ class AuditApi {
 		return this.apiClient.callApi(
 			'/api/v2/audits/query/realtime/servicemapping', 
 			'GET', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -49,13 +49,13 @@ class AuditApi {
 		return this.apiClient.callApi(
 			'/api/v2/audits/query/servicemapping', 
 			'GET', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -74,13 +74,13 @@ class AuditApi {
 		return this.apiClient.callApi(
 			'/api/v2/audits/query/{transactionId}', 
 			'GET', 
-			{ 'transactionId': transactionId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'transactionId': transactionId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -105,13 +105,13 @@ class AuditApi {
 		return this.apiClient.callApi(
 			'/api/v2/audits/query/{transactionId}/results', 
 			'GET', 
-			{ 'transactionId': transactionId }, 
-			{ 'cursor': opts['cursor'],'pageSize': opts['pageSize'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') }, 
-			{  }, 
-			{  }, 
+			{ 'transactionId': transactionId },
+			{ 'cursor': opts['cursor'],'pageSize': opts['pageSize'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -130,13 +130,13 @@ class AuditApi {
 		return this.apiClient.callApi(
 			'/api/v2/audits/query', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -159,13 +159,13 @@ class AuditApi {
 		return this.apiClient.callApi(
 			'/api/v2/audits/query/realtime', 
 			'POST', 
-			{  }, 
-			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}

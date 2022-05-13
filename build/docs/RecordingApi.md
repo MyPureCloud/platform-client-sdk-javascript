@@ -17,9 +17,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getConversationRecording**](RecordingApi.html#getConversationRecording) | **GET** /api/v2/conversations/{conversationId}/recordings/{recordingId} | Gets a specific recording.
 [**getConversationRecordingAnnotation**](RecordingApi.html#getConversationRecordingAnnotation) | **GET** /api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations/{annotationId} | Get annotation
 [**getConversationRecordingAnnotations**](RecordingApi.html#getConversationRecordingAnnotations) | **GET** /api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations | Get annotations for recording
-[**getConversationRecordingmetadata**](RecordingApi.html#getConversationRecordingmetadata) | **GET** /api/v2/conversations/{conversationId}/recordingmetadata | Get recording metadata for a conversation. Does not return playable media. Annotations won&#39;t be included in the response if recording:recording:view permission is missing.
+[**getConversationRecordingmetadata**](RecordingApi.html#getConversationRecordingmetadata) | **GET** /api/v2/conversations/{conversationId}/recordingmetadata | Get recording metadata for a conversation. Does not return playable media. Annotations won't be included in the response if recording:recording:view permission is missing.
 [**getConversationRecordingmetadataRecordingId**](RecordingApi.html#getConversationRecordingmetadataRecordingId) | **GET** /api/v2/conversations/{conversationId}/recordingmetadata/{recordingId} | Get metadata for a specific recording. Does not return playable media.
-[**getConversationRecordings**](RecordingApi.html#getConversationRecordings) | **GET** /api/v2/conversations/{conversationId}/recordings | Get all of a Conversation&#39;s Recordings.
+[**getConversationRecordings**](RecordingApi.html#getConversationRecordings) | **GET** /api/v2/conversations/{conversationId}/recordings | Get all of a Conversation's Recordings.
 [**getOrphanrecording**](RecordingApi.html#getOrphanrecording) | **GET** /api/v2/orphanrecordings/{orphanId} | Gets a single orphan recording
 [**getOrphanrecordingMedia**](RecordingApi.html#getOrphanrecordingMedia) | **GET** /api/v2/orphanrecordings/{orphanId}/media | Gets the media of a single orphan recording
 [**getOrphanrecordings**](RecordingApi.html#getOrphanrecordings) | **GET** /api/v2/orphanrecordings | Gets all orphan recordings
@@ -28,7 +28,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getRecordingCrossplatformMediaretentionpolicy**](RecordingApi.html#getRecordingCrossplatformMediaretentionpolicy) | **GET** /api/v2/recording/crossplatform/mediaretentionpolicies/{policyId} | Get a media retention policy
 [**getRecordingJob**](RecordingApi.html#getRecordingJob) | **GET** /api/v2/recording/jobs/{jobId} | Get the status of the job associated with the job id.
 [**getRecordingJobFailedrecordings**](RecordingApi.html#getRecordingJobFailedrecordings) | **GET** /api/v2/recording/jobs/{jobId}/failedrecordings | Get IDs of recordings that the bulk job failed for
-[**getRecordingJobs**](RecordingApi.html#getRecordingJobs) | **GET** /api/v2/recording/jobs | Get the status of all jobs within the user&#39;s organization
+[**getRecordingJobs**](RecordingApi.html#getRecordingJobs) | **GET** /api/v2/recording/jobs | Get the status of all jobs within the user's organization
 [**getRecordingKeyconfiguration**](RecordingApi.html#getRecordingKeyconfiguration) | **GET** /api/v2/recording/keyconfigurations/{keyConfigurationId} | Get the encryption key configurations
 [**getRecordingKeyconfigurations**](RecordingApi.html#getRecordingKeyconfigurations) | **GET** /api/v2/recording/keyconfigurations | Get a list of key configurations data
 [**getRecordingLocalkeysSetting**](RecordingApi.html#getRecordingLocalkeysSetting) | **GET** /api/v2/recording/localkeys/settings/{settingsId} | Get the local encryption settings
@@ -73,14 +73,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 # void deleteConversationRecordingAnnotation(conversationId, recordingId, annotationId)
 
 
-
 DELETE /api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations/{annotationId}
 
 Delete annotation
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * recording:annotation:delete
 
@@ -130,14 +127,11 @@ void (no response body)
 # OrphanRecording deleteOrphanrecording(orphanId)
 
 
-
 DELETE /api/v2/orphanrecordings/{orphanId}
 
 Deletes a single orphan recording
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * recording:orphan:delete
 
@@ -183,14 +177,13 @@ apiInstance.deleteOrphanrecording(orphanId)
 # void deleteRecordingCrossplatformMediaretentionpolicies(ids)
 
 
-
 DELETE /api/v2/recording/crossplatform/mediaretentionpolicies
 
 Delete media retention policies
 
 Bulk delete of media retention policies, this will only delete the polices that match the ids specified in the query param.
 
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * recording:crossPlatformRetentionPolicy:delete
 
@@ -236,14 +229,11 @@ void (no response body)
 # void deleteRecordingCrossplatformMediaretentionpolicy(policyId)
 
 
-
 DELETE /api/v2/recording/crossplatform/mediaretentionpolicies/{policyId}
 
 Delete a media retention policy
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * recording:crossPlatformRetentionPolicy:delete
 
@@ -289,14 +279,11 @@ void (no response body)
 # void deleteRecordingJob(jobId)
 
 
-
 DELETE /api/v2/recording/jobs/{jobId}
 
 Delete the recording bulk job
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * recording:job:delete
 
@@ -342,14 +329,13 @@ void (no response body)
 # void deleteRecordingMediaretentionpolicies(ids)
 
 
-
 DELETE /api/v2/recording/mediaretentionpolicies
 
 Delete media retention policies
 
 Bulk delete of media retention policies, this will only delete the polices that match the ids specified in the query param.
 
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * recording:retentionPolicy:delete
 
@@ -395,14 +381,11 @@ void (no response body)
 # void deleteRecordingMediaretentionpolicy(policyId)
 
 
-
 DELETE /api/v2/recording/mediaretentionpolicies/{policyId}
 
 Delete a media retention policy
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * recording:retentionPolicy:delete
 
@@ -448,14 +431,11 @@ void (no response body)
 # Recording getConversationRecording(conversationId, recordingId, opts)
 
 
-
 GET /api/v2/conversations/{conversationId}/recordings/{recordingId}
 
 Gets a specific recording.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * recording:recording:view
 * recording:recordingSegment:view
@@ -507,7 +487,7 @@ apiInstance.getConversationRecording(conversationId, recordingId, opts)
  **emailFormatId** | **String** | The desired media format when downloading an email recording. Valid values:EML,NONE | [optional] [default to EML]<br />**Values**: EML, NONE |
  **chatFormatId** | **String** | The desired media format when downloading a chat recording. Valid values:ZIP,NONE  | [optional] [default to ZIP]<br />**Values**: ZIP, NONE |
  **messageFormatId** | **String** | The desired media format when downloading a message recording. Valid values:ZIP,NONE | [optional] [default to ZIP]<br />**Values**: ZIP, NONE |
- **download** | **Boolean** | requesting a download format of the recording. Valid values:true,false | [optional] [default to false] |
+ **download** | **Boolean** | requesting a download format of the recording. Valid values:true,false | [optional] [default to false]<br />**Values**: true, false |
  **fileName** | **String** | the name of the downloaded fileName | [optional]  |
  **locale** | **String** | The locale for the requested file when downloading, as an ISO 639-1 code | [optional]  |
  **mediaFormats** | **[String]** | All acceptable media formats. Overrides formatId. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3 | [optional]  |
@@ -522,14 +502,11 @@ apiInstance.getConversationRecording(conversationId, recordingId, opts)
 # Annotation getConversationRecordingAnnotation(conversationId, recordingId, annotationId)
 
 
-
 GET /api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations/{annotationId}
 
 Get annotation
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * recording:annotation:view
 
@@ -579,14 +556,11 @@ apiInstance.getConversationRecordingAnnotation(conversationId, recordingId, anno
 # [Annotation] getConversationRecordingAnnotations(conversationId, recordingId)
 
 
-
 GET /api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations
 
 Get annotations for recording
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * recording:annotation:view
 
@@ -634,14 +608,11 @@ apiInstance.getConversationRecordingAnnotations(conversationId, recordingId)
 # [RecordingMetadata] getConversationRecordingmetadata(conversationId)
 
 
-
 GET /api/v2/conversations/{conversationId}/recordingmetadata
 
-Get recording metadata for a conversation. Does not return playable media. Annotations won&#39;t be included in the response if recording:recording:view permission is missing.
+Get recording metadata for a conversation. Does not return playable media. Annotations won't be included in the response if recording:recording:view permission is missing.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * recording:recording:view
 * recording:recordingSegment:view
@@ -688,14 +659,11 @@ apiInstance.getConversationRecordingmetadata(conversationId)
 # RecordingMetadata getConversationRecordingmetadataRecordingId(conversationId, recordingId)
 
 
-
 GET /api/v2/conversations/{conversationId}/recordingmetadata/{recordingId}
 
 Get metadata for a specific recording. Does not return playable media.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * recording:recording:view
 * recording:recordingSegment:view
@@ -744,14 +712,11 @@ apiInstance.getConversationRecordingmetadataRecordingId(conversationId, recordin
 # [Recording] getConversationRecordings(conversationId, opts)
 
 
-
 GET /api/v2/conversations/{conversationId}/recordings
 
-Get all of a Conversation&#39;s Recordings.
+Get all of a Conversation's Recordings.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * recording:recording:view
 * recording:recordingSegment:view
@@ -806,14 +771,11 @@ apiInstance.getConversationRecordings(conversationId, opts)
 # OrphanRecording getOrphanrecording(orphanId)
 
 
-
 GET /api/v2/orphanrecordings/{orphanId}
 
 Gets a single orphan recording
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * recording:orphan:view
 
@@ -859,14 +821,13 @@ apiInstance.getOrphanrecording(orphanId)
 # Recording getOrphanrecordingMedia(orphanId, opts)
 
 
-
 GET /api/v2/orphanrecordings/{orphanId}/media
 
 Gets the media of a single orphan recording
 
 A 202 response means the orphaned media is currently transcoding and will be available shortly.A 200 response denotes the transcoded orphan media is available now and is contained in the response body.
 
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * recording:orphan:view
 
@@ -915,7 +876,7 @@ apiInstance.getOrphanrecordingMedia(orphanId, opts)
  **emailFormatId** | **String** | The desired media format when downloading an email recording. | [optional] [default to EML]<br />**Values**: EML, NONE |
  **chatFormatId** | **String** | The desired media format when downloading a chat recording. | [optional] [default to ZIP]<br />**Values**: ZIP, NONE |
  **messageFormatId** | **String** | The desired media format when downloading a message recording. | [optional] [default to ZIP]<br />**Values**: ZIP, NONE |
- **download** | **Boolean** | requesting a download format of the recording | [optional] [default to false] |
+ **download** | **Boolean** | requesting a download format of the recording | [optional] [default to false]<br />**Values**: true, false |
  **fileName** | **String** | the name of the downloaded fileName | [optional]  |
  **locale** | **String** | The locale for the requested file when downloading, as an ISO 639-1 code | [optional]  |
  **mediaFormats** | **[String]** | All acceptable media formats. Overrides formatId. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3 | [optional]  |
@@ -930,14 +891,11 @@ apiInstance.getOrphanrecordingMedia(orphanId, opts)
 # OrphanRecordingListing getOrphanrecordings(opts)
 
 
-
 GET /api/v2/orphanrecordings
 
 Gets all orphan recordings
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * recording:orphan:view
 
@@ -999,15 +957,11 @@ apiInstance.getOrphanrecordings(opts)
 # BatchDownloadJobStatusResult getRecordingBatchrequest(jobId)
 
 
-
 GET /api/v2/recording/batchrequests/{jobId}
 
 Get the status and results for a batch request job, only the user that submitted the job may retrieve results
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -1051,14 +1005,13 @@ apiInstance.getRecordingBatchrequest(jobId)
 # PolicyEntityListing getRecordingCrossplatformMediaretentionpolicies(opts)
 
 
-
 GET /api/v2/recording/crossplatform/mediaretentionpolicies
 
 Gets media retention policy list with query options to filter on name and enabled.
 
 for a less verbose response, add summary=true to this endpoint
 
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * recording:crossPlatformRetentionPolicy:view
 
@@ -1086,7 +1039,7 @@ let opts = {
   'enabled': true, // Boolean | checks to see if policy is enabled - use enabled = true or enabled = false
   'summary': false, // Boolean | provides a less verbose response of policy lists.
   'hasErrors': true, // Boolean | provides a way to fetch all policies with errors or policies that do not have errors
-  'deleteDaysThreshold': 56 // Number | provides a way to fetch all policies with any actions having deleteDays exceeding the provided value
+  'deleteDaysThreshold': 3.4 // Number | provides a way to fetch all policies with any actions having deleteDays exceeding the provided value
 };
 
 apiInstance.getRecordingCrossplatformMediaretentionpolicies(opts)
@@ -1126,14 +1079,11 @@ apiInstance.getRecordingCrossplatformMediaretentionpolicies(opts)
 # CrossPlatformPolicy getRecordingCrossplatformMediaretentionpolicy(policyId)
 
 
-
 GET /api/v2/recording/crossplatform/mediaretentionpolicies/{policyId}
 
 Get a media retention policy
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * recording:crossPlatformRetentionPolicy:view
 
@@ -1179,14 +1129,11 @@ apiInstance.getRecordingCrossplatformMediaretentionpolicy(policyId)
 # RecordingJob getRecordingJob(jobId)
 
 
-
 GET /api/v2/recording/jobs/{jobId}
 
 Get the status of the job associated with the job id.
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * recording:job:view
 
@@ -1232,14 +1179,11 @@ apiInstance.getRecordingJob(jobId)
 # FailedRecordingEntityListing getRecordingJobFailedrecordings(jobId, opts)
 
 
-
 GET /api/v2/recording/jobs/{jobId}/failedrecordings
 
 Get IDs of recordings that the bulk job failed for
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * recording:job:view
 
@@ -1295,14 +1239,11 @@ apiInstance.getRecordingJobFailedrecordings(jobId, opts)
 # RecordingJobEntityListing getRecordingJobs(opts)
 
 
-
 GET /api/v2/recording/jobs
 
-Get the status of all jobs within the user&#39;s organization
+Get the status of all jobs within the user's organization
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * recording:job:view
 
@@ -1364,14 +1305,11 @@ apiInstance.getRecordingJobs(opts)
 # RecordingEncryptionConfiguration getRecordingKeyconfiguration(keyConfigurationId)
 
 
-
 GET /api/v2/recording/keyconfigurations/{keyConfigurationId}
 
 Get the encryption key configurations
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * recording:encryptionKey:view
 
@@ -1417,14 +1355,11 @@ apiInstance.getRecordingKeyconfiguration(keyConfigurationId)
 # RecordingEncryptionConfigurationListing getRecordingKeyconfigurations()
 
 
-
 GET /api/v2/recording/keyconfigurations
 
 Get a list of key configurations data
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * recording:encryptionKey:view
 
@@ -1465,14 +1400,11 @@ This endpoint does not need any parameter.
 # LocalEncryptionConfiguration getRecordingLocalkeysSetting(settingsId)
 
 
-
 GET /api/v2/recording/localkeys/settings/{settingsId}
 
 Get the local encryption settings
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * recording:encryptionKey:view
 
@@ -1518,14 +1450,11 @@ apiInstance.getRecordingLocalkeysSetting(settingsId)
 # LocalEncryptionConfigurationListing getRecordingLocalkeysSettings()
 
 
-
 GET /api/v2/recording/localkeys/settings
 
 gets a list local key settings data
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * recording:encryptionKey:view
 
@@ -1566,14 +1495,13 @@ This endpoint does not need any parameter.
 # PolicyEntityListing getRecordingMediaretentionpolicies(opts)
 
 
-
 GET /api/v2/recording/mediaretentionpolicies
 
 Gets media retention policy list with query options to filter on name and enabled.
 
 for a less verbose response, add summary=true to this endpoint
 
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * recording:retentionPolicy:view
 
@@ -1601,7 +1529,7 @@ let opts = {
   'enabled': true, // Boolean | checks to see if policy is enabled - use enabled = true or enabled = false
   'summary': false, // Boolean | provides a less verbose response of policy lists.
   'hasErrors': true, // Boolean | provides a way to fetch all policies with errors or policies that do not have errors
-  'deleteDaysThreshold': 56 // Number | provides a way to fetch all policies with any actions having deleteDays exceeding the provided value
+  'deleteDaysThreshold': 3.4 // Number | provides a way to fetch all policies with any actions having deleteDays exceeding the provided value
 };
 
 apiInstance.getRecordingMediaretentionpolicies(opts)
@@ -1641,14 +1569,11 @@ apiInstance.getRecordingMediaretentionpolicies(opts)
 # Policy getRecordingMediaretentionpolicy(policyId)
 
 
-
 GET /api/v2/recording/mediaretentionpolicies/{policyId}
 
 Get a media retention policy
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * recording:retentionPolicy:view
 
@@ -1694,14 +1619,11 @@ apiInstance.getRecordingMediaretentionpolicy(policyId)
 # EncryptionKeyEntityListing getRecordingRecordingkeys(opts)
 
 
-
 GET /api/v2/recording/recordingkeys
 
 Get encryption key list
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * recording:encryptionKey:view
 
@@ -1751,14 +1673,11 @@ apiInstance.getRecordingRecordingkeys(opts)
 # KeyRotationSchedule getRecordingRecordingkeysRotationschedule()
 
 
-
 GET /api/v2/recording/recordingkeys/rotationschedule
 
 Get key rotation schedule
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * recording:encryptionKey:view
 
@@ -1799,14 +1718,11 @@ This endpoint does not need any parameter.
 # RecordingSettings getRecordingSettings(opts)
 
 
-
 GET /api/v2/recording/settings
 
 Get the Recording Settings for the Organization
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * recording:screenRecording:view
 * recording:settings:editScreenRecordings
@@ -1855,14 +1771,11 @@ apiInstance.getRecordingSettings(opts)
 # ScreenRecordingSessionListing getRecordingsScreensessions(opts)
 
 
-
 GET /api/v2/recordings/screensessions
 
 Retrieves a paged listing of screen recording sessions
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * recording:screenRecording:view
 
@@ -1912,14 +1825,11 @@ apiInstance.getRecordingsScreensessions(opts)
 # CrossPlatformPolicy patchRecordingCrossplatformMediaretentionpolicy(policyId, body)
 
 
-
 PATCH /api/v2/recording/crossplatform/mediaretentionpolicies/{policyId}
 
 Patch a media retention policy
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * recording:crossPlatformRetentionPolicy:edit
 
@@ -1967,14 +1877,11 @@ apiInstance.patchRecordingCrossplatformMediaretentionpolicy(policyId, body)
 # Policy patchRecordingMediaretentionpolicy(policyId, body)
 
 
-
 PATCH /api/v2/recording/mediaretentionpolicies/{policyId}
 
 Patch a media retention policy
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * recording:retentionPolicy:edit
 
@@ -2022,14 +1929,11 @@ apiInstance.patchRecordingMediaretentionpolicy(policyId, body)
 # void patchRecordingsScreensession(recordingSessionId, opts)
 
 
-
 PATCH /api/v2/recordings/screensessions/{recordingSessionId}
 
 Update a screen recording session
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * recording:screenRecording:stop
 
@@ -2079,14 +1983,11 @@ void (no response body)
 # Annotation postConversationRecordingAnnotations(conversationId, recordingId, body)
 
 
-
 POST /api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations
 
 Create annotation
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * recording:annotation:add
 
@@ -2136,15 +2037,11 @@ apiInstance.postConversationRecordingAnnotations(conversationId, recordingId, bo
 # BatchDownloadJobSubmissionResult postRecordingBatchrequests(body)
 
 
-
 POST /api/v2/recording/batchrequests
 
 Submit a batch download request for recordings. Recordings in response will be in their original format/codec - configured in the Trunk configuration.
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -2188,14 +2085,13 @@ apiInstance.postRecordingBatchrequests(body)
 # CrossPlatformPolicy postRecordingCrossplatformMediaretentionpolicies(body)
 
 
-
 POST /api/v2/recording/crossplatform/mediaretentionpolicies
 
 Create media retention policy
 
 Policy does not work retroactively
 
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * recording:crossPlatformRetentionPolicy:add
 
@@ -2241,14 +2137,13 @@ apiInstance.postRecordingCrossplatformMediaretentionpolicies(body)
 # RecordingJob postRecordingJobs(body)
 
 
-
 POST /api/v2/recording/jobs
 
 Create a recording bulk job.
 
 Each organization can run up to a maximum of two concurrent jobs that are either in pending or processing state.
 
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * recording:job:add
 
@@ -2294,14 +2189,11 @@ apiInstance.postRecordingJobs(body)
 # RecordingEncryptionConfiguration postRecordingKeyconfigurations(body)
 
 
-
 POST /api/v2/recording/keyconfigurations
 
 Setup configurations for encryption key creation
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * recording:encryptionKey:edit
 
@@ -2347,14 +2239,11 @@ apiInstance.postRecordingKeyconfigurations(body)
 # RecordingEncryptionConfiguration postRecordingKeyconfigurationsValidate(body)
 
 
-
 POST /api/v2/recording/keyconfigurations/validate
 
 Validate encryption key configurations without saving it
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * recording:encryptionKey:edit
 
@@ -2400,14 +2289,11 @@ apiInstance.postRecordingKeyconfigurationsValidate(body)
 # EncryptionKey postRecordingLocalkeys(body)
 
 
-
 POST /api/v2/recording/localkeys
 
 create a local recording key
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * recording:encryptionKey:edit
 
@@ -2453,14 +2339,11 @@ apiInstance.postRecordingLocalkeys(body)
 # LocalEncryptionConfiguration postRecordingLocalkeysSettings(body)
 
 
-
 POST /api/v2/recording/localkeys/settings
 
 create settings for local key creation
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * recording:encryptionKey:edit
 
@@ -2506,14 +2389,13 @@ apiInstance.postRecordingLocalkeysSettings(body)
 # Policy postRecordingMediaretentionpolicies(body)
 
 
-
 POST /api/v2/recording/mediaretentionpolicies
 
 Create media retention policy
 
 Policy does not work retroactively
 
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * recording:retentionPolicy:add
 
@@ -2559,14 +2441,11 @@ apiInstance.postRecordingMediaretentionpolicies(body)
 # EncryptionKey postRecordingRecordingkeys()
 
 
-
 POST /api/v2/recording/recordingkeys
 
 Create encryption key
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * recording:encryptionKey:edit
 
@@ -2607,15 +2486,11 @@ This endpoint does not need any parameter.
 # [AddressableEntityRef] postRecordingsDeletionprotection(body)
 
 
-
 POST /api/v2/recordings/deletionprotection
 
 Get a list of conversations with protected recordings
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -2659,15 +2534,11 @@ apiInstance.postRecordingsDeletionprotection(body)
 # void postRecordingsScreensessionsAcknowledge(body)
 
 
-
 POST /api/v2/recordings/screensessions/acknowledge
 
 Acknowledge a screen recording.
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -2711,15 +2582,11 @@ void (no response body)
 # void postRecordingsScreensessionsMetadata(body)
 
 
-
 POST /api/v2/recordings/screensessions/metadata
 
 Provide meta-data a screen recording.
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -2763,14 +2630,13 @@ void (no response body)
 # Recording putConversationRecording(conversationId, recordingId, body)
 
 
-
 PUT /api/v2/conversations/{conversationId}/recordings/{recordingId}
 
 Updates the retention records on a recording.
 
 Currently supports updating and removing both archive and delete dates for eligible recordings. A request to change the archival date of an archived recording will result in a restoration of the recording until the new date set. The recording:recording:view permission is required for the recording, as well as either the recording:recording:editRetention or recording:screenRecording:editRetention permissions depending on the type of recording.
 
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * recording:recording:view
 * recording:recording:editRetention
@@ -2822,14 +2688,11 @@ apiInstance.putConversationRecording(conversationId, recordingId, body)
 # Annotation putConversationRecordingAnnotation(conversationId, recordingId, annotationId, body)
 
 
-
 PUT /api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations/{annotationId}
 
 Update annotation
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * recording:annotation:edit
 * recording:recording:view
@@ -2883,14 +2746,13 @@ apiInstance.putConversationRecordingAnnotation(conversationId, recordingId, anno
 # Recording putOrphanrecording(orphanId, opts)
 
 
-
 PUT /api/v2/orphanrecordings/{orphanId}
 
 Updates an orphan recording to a regular recording with retention values
 
 If this operation is successful the orphan will no longer exist. It will be replaced by the resulting recording in the response. This replacement recording is accessible by the normal Recording api.
 
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * recording:orphan:edit
 
@@ -2940,14 +2802,13 @@ apiInstance.putOrphanrecording(orphanId, opts)
 # CrossPlatformPolicy putRecordingCrossplatformMediaretentionpolicy(policyId, body)
 
 
-
 PUT /api/v2/recording/crossplatform/mediaretentionpolicies/{policyId}
 
 Update a media retention policy
 
 Policy does not work retroactively
 
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * recording:crossPlatformRetentionPolicy:edit
 
@@ -2995,14 +2856,13 @@ apiInstance.putRecordingCrossplatformMediaretentionpolicy(policyId, body)
 # RecordingJob putRecordingJob(jobId, body)
 
 
-
 PUT /api/v2/recording/jobs/{jobId}
 
 Execute the recording bulk job.
 
-A job must be executed by the same user whom originally created the job.  In addition, the user must have permission to update the recording&#39;s retention.
+A job must be executed by the same user whom originally created the job.  In addition, the user must have permission to update the recordings retention.
 
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * recording:job:edit
 * recording:recording:editRetention
@@ -3052,14 +2912,11 @@ apiInstance.putRecordingJob(jobId, body)
 # RecordingEncryptionConfiguration putRecordingKeyconfiguration(keyConfigurationId, body)
 
 
-
 PUT /api/v2/recording/keyconfigurations/{keyConfigurationId}
 
 Update the encryption key configurations
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * recording:encryptionKey:edit
 
@@ -3107,14 +2964,11 @@ apiInstance.putRecordingKeyconfiguration(keyConfigurationId, body)
 # LocalEncryptionConfiguration putRecordingLocalkeysSetting(settingsId, body)
 
 
-
 PUT /api/v2/recording/localkeys/settings/{settingsId}
 
 Update the local encryption settings
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * recording:encryptionKey:edit
 
@@ -3162,14 +3016,13 @@ apiInstance.putRecordingLocalkeysSetting(settingsId, body)
 # Policy putRecordingMediaretentionpolicy(policyId, body)
 
 
-
 PUT /api/v2/recording/mediaretentionpolicies/{policyId}
 
 Update a media retention policy
 
 Policy does not work retroactively
 
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * recording:retentionPolicy:edit
 
@@ -3217,14 +3070,11 @@ apiInstance.putRecordingMediaretentionpolicy(policyId, body)
 # KeyRotationSchedule putRecordingRecordingkeysRotationschedule(body)
 
 
-
 PUT /api/v2/recording/recordingkeys/rotationschedule
 
 Update key rotation schedule
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * recording:encryptionKey:edit
 
@@ -3270,14 +3120,11 @@ apiInstance.putRecordingRecordingkeysRotationschedule(body)
 # RecordingSettings putRecordingSettings(body)
 
 
-
 PUT /api/v2/recording/settings
 
 Update the Recording Settings for the Organization
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * recording:settings:editScreenRecordings
 
@@ -3323,14 +3170,11 @@ apiInstance.putRecordingSettings(body)
 # void putRecordingsDeletionprotection(opts)
 
 
-
 PUT /api/v2/recordings/deletionprotection
 
 Apply or revoke recording protection for conversations
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * recording:deletionProtection:apply
 * recording:deletionProtection:revoke

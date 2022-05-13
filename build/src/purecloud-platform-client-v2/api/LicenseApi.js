@@ -5,7 +5,7 @@ class LicenseApi {
 	/**
 	 * License service.
 	 * @module purecloud-platform-client-v2/api/LicenseApi
-	 * @version 136.1.0
+	 * @version 137.0.0
 	 */
 
 	/**
@@ -34,13 +34,13 @@ class LicenseApi {
 		return this.apiClient.callApi(
 			'/api/v2/license/definitions/{licenseId}', 
 			'GET', 
-			{ 'licenseId': licenseId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'licenseId': licenseId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -54,13 +54,13 @@ class LicenseApi {
 		return this.apiClient.callApi(
 			'/api/v2/license/definitions', 
 			'GET', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -79,13 +79,13 @@ class LicenseApi {
 		return this.apiClient.callApi(
 			'/api/v2/license/toggles/{featureName}', 
 			'GET', 
-			{ 'featureName': featureName }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'featureName': featureName },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -104,13 +104,13 @@ class LicenseApi {
 		return this.apiClient.callApi(
 			'/api/v2/license/users/{userId}', 
 			'GET', 
-			{ 'userId': userId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'userId': userId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -129,13 +129,13 @@ class LicenseApi {
 		return this.apiClient.callApi(
 			'/api/v2/license/users', 
 			'GET', 
-			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -144,7 +144,7 @@ class LicenseApi {
 	 * Get a list of licenses inferred based on a list of roleIds
 	 * 
 	 * @param {Object} opts Optional parameters
-	 * @param {Array.<Object>} opts.body The roleIds to use while inferring licenses
+	 * @param {Array.<String>} opts.body The roleIds to use while inferring licenses
 	 */
 	postLicenseInfer(opts) { 
 		opts = opts || {};
@@ -153,19 +153,19 @@ class LicenseApi {
 		return this.apiClient.callApi(
 			'/api/v2/license/infer', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			opts['body'], 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
 
 	/**
-	 * Update the organization&#39;s license assignments in a batch.
+	 * Update the organization's license assignments in a batch.
 	 * 
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body The license assignments to update.
@@ -177,13 +177,13 @@ class LicenseApi {
 		return this.apiClient.callApi(
 			'/api/v2/license/organization', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			opts['body'], 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -202,13 +202,13 @@ class LicenseApi {
 		return this.apiClient.callApi(
 			'/api/v2/license/toggles/{featureName}', 
 			'POST', 
-			{ 'featureName': featureName }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'featureName': featureName },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -217,7 +217,7 @@ class LicenseApi {
 	 * Fetch user licenses in a batch.
 	 * 
 	 * @param {Object} opts Optional parameters
-	 * @param {Array.<Object>} opts.body The user IDs to fetch.
+	 * @param {Array.<String>} opts.body The user IDs to fetch.
 	 */
 	postLicenseUsers(opts) { 
 		opts = opts || {};
@@ -226,13 +226,13 @@ class LicenseApi {
 		return this.apiClient.callApi(
 			'/api/v2/license/users', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			opts['body'], 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}

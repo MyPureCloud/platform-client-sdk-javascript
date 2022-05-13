@@ -5,7 +5,7 @@ class LocationsApi {
 	/**
 	 * Locations service.
 	 * @module purecloud-platform-client-v2/api/LocationsApi
-	 * @version 136.1.0
+	 * @version 137.0.0
 	 */
 
 	/**
@@ -34,13 +34,13 @@ class LocationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/locations/{locationId}', 
 			'DELETE', 
-			{ 'locationId': locationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'locationId': locationId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -63,13 +63,13 @@ class LocationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/locations/{locationId}', 
 			'GET', 
-			{ 'locationId': locationId }, 
-			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') }, 
-			{  }, 
-			{  }, 
+			{ 'locationId': locationId },
+			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -88,13 +88,13 @@ class LocationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/locations/{locationId}/sublocations', 
 			'GET', 
-			{ 'locationId': locationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'locationId': locationId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -115,13 +115,13 @@ class LocationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/locations', 
 			'GET', 
-			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'sortOrder': opts['sortOrder'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'sortOrder': opts['sortOrder'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -144,13 +144,13 @@ class LocationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/locations/search', 
 			'GET', 
-			{  }, 
-			{ 'q64': q64,'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'q64': q64,'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -174,13 +174,13 @@ class LocationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/locations/{locationId}', 
 			'PATCH', 
-			{ 'locationId': locationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'locationId': locationId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -199,13 +199,13 @@ class LocationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/locations', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -224,13 +224,13 @@ class LocationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/locations/search', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}

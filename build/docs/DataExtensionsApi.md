@@ -17,14 +17,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 # Coretype getDataextensionsCoretype(coretypeName)
 
 
-
 GET /api/v2/dataextensions/coretypes/{coretypeName}
 
 Get a specific named core type.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * externalContacts:customFields:view
 
@@ -58,7 +55,7 @@ apiInstance.getDataextensionsCoretype(coretypeName)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **coretypeName** | **String** | The core type&#39;s name | <br />**Values**: text, longtext, url, identifier, enum, date, datetime, integer, number, checkbox, tag |
+ **coretypeName** | **String** | The core type's name | <br />**Values**: text, longtext, url, identifier, enum, date, datetime, integer, number, checkbox, tag |
 {: class="table table-striped"}
 
 ### Return type
@@ -70,14 +67,11 @@ apiInstance.getDataextensionsCoretype(coretypeName)
 # CoretypeListing getDataextensionsCoretypes()
 
 
-
 GET /api/v2/dataextensions/coretypes
 
 Get the core types from which all schemas are built.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * externalContacts:customFields:view
 
@@ -118,14 +112,11 @@ This endpoint does not need any parameter.
 # SchemaQuantityLimits getDataextensionsLimits()
 
 
-
 GET /api/v2/dataextensions/limits
 
 Get quantitative limits on schemas
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * externalContacts:customFields:view
 

@@ -5,7 +5,7 @@ class AlertingApi {
 	/**
 	 * Alerting service.
 	 * @module purecloud-platform-client-v2/api/AlertingApi
-	 * @version 136.1.0
+	 * @version 137.0.0
 	 */
 
 	/**
@@ -34,13 +34,13 @@ class AlertingApi {
 		return this.apiClient.callApi(
 			'/api/v2/alerting/interactionstats/alerts/{alertId}', 
 			'DELETE', 
-			{ 'alertId': alertId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'alertId': alertId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -59,13 +59,13 @@ class AlertingApi {
 		return this.apiClient.callApi(
 			'/api/v2/alerting/interactionstats/rules/{ruleId}', 
 			'DELETE', 
-			{ 'ruleId': ruleId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'ruleId': ruleId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -79,13 +79,13 @@ class AlertingApi {
 		return this.apiClient.callApi(
 			'/api/v2/alerting/alerts/active', 
 			'GET', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -108,13 +108,13 @@ class AlertingApi {
 		return this.apiClient.callApi(
 			'/api/v2/alerting/interactionstats/alerts/{alertId}', 
 			'GET', 
-			{ 'alertId': alertId }, 
-			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') }, 
-			{  }, 
-			{  }, 
+			{ 'alertId': alertId },
+			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -132,13 +132,13 @@ class AlertingApi {
 		return this.apiClient.callApi(
 			'/api/v2/alerting/interactionstats/alerts', 
 			'GET', 
-			{  }, 
-			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -152,13 +152,13 @@ class AlertingApi {
 		return this.apiClient.callApi(
 			'/api/v2/alerting/interactionstats/alerts/unread', 
 			'GET', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -181,13 +181,13 @@ class AlertingApi {
 		return this.apiClient.callApi(
 			'/api/v2/alerting/interactionstats/rules/{ruleId}', 
 			'GET', 
-			{ 'ruleId': ruleId }, 
-			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') }, 
-			{  }, 
-			{  }, 
+			{ 'ruleId': ruleId },
+			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -205,13 +205,13 @@ class AlertingApi {
 		return this.apiClient.callApi(
 			'/api/v2/alerting/interactionstats/rules', 
 			'GET', 
-			{  }, 
-			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -234,13 +234,13 @@ class AlertingApi {
 		return this.apiClient.callApi(
 			'/api/v2/alerting/interactionstats/rules', 
 			'POST', 
-			{  }, 
-			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -268,13 +268,13 @@ class AlertingApi {
 		return this.apiClient.callApi(
 			'/api/v2/alerting/interactionstats/alerts/{alertId}', 
 			'PUT', 
-			{ 'alertId': alertId }, 
-			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') }, 
-			{  }, 
-			{  }, 
+			{ 'alertId': alertId },
+			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -302,13 +302,13 @@ class AlertingApi {
 		return this.apiClient.callApi(
 			'/api/v2/alerting/interactionstats/rules/{ruleId}', 
 			'PUT', 
-			{ 'ruleId': ruleId }, 
-			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') }, 
-			{  }, 
-			{  }, 
+			{ 'ruleId': ruleId },
+			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}

@@ -17,14 +17,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 # ChatSettings getChatSettings()
 
 
-
 GET /api/v2/chat/settings
 
 Get Chat Settings.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * chat:setting:view
 * chat:setting:edit
@@ -66,14 +63,11 @@ This endpoint does not need any parameter.
 # ChatSettings patchChatSettings(body)
 
 
-
 PATCH /api/v2/chat/settings
 
 Patch Chat Settings.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * chat:setting:edit
 
@@ -119,14 +113,11 @@ apiInstance.patchChatSettings(body)
 # ChatSettings putChatSettings(body)
 
 
-
 PUT /api/v2/chat/settings
 
 Update Chat Settings.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * chat:setting:edit
 

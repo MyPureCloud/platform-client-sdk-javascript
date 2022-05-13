@@ -65,7 +65,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getFlowsDatatablesDivisionview**](ArchitectApi.html#getFlowsDatatablesDivisionview) | **GET** /api/v2/flows/datatables/divisionviews/{datatableId} | Returns a specific datatable by id
 [**getFlowsDatatablesDivisionviews**](ArchitectApi.html#getFlowsDatatablesDivisionviews) | **GET** /api/v2/flows/datatables/divisionviews | Retrieve a list of datatables for the org
 [**getFlowsDivisionviews**](ArchitectApi.html#getFlowsDivisionviews) | **GET** /api/v2/flows/divisionviews | Get a pageable list of basic flow information objects filterable by query parameters.
-[**getFlowsExecution**](ArchitectApi.html#getFlowsExecution) | **GET** /api/v2/flows/executions/{flowExecutionId} | Get a flow execution&#39;s details. Flow execution details are available for several days after the flow is started.
+[**getFlowsExecution**](ArchitectApi.html#getFlowsExecution) | **GET** /api/v2/flows/executions/{flowExecutionId} | Get a flow execution's details. Flow execution details are available for several days after the flow is started.
 [**getFlowsJob**](ArchitectApi.html#getFlowsJob) | **GET** /api/v2/flows/jobs/{jobId} | Fetch Architect Job Status
 [**getFlowsMilestone**](ArchitectApi.html#getFlowsMilestone) | **GET** /api/v2/flows/milestones/{milestoneId} | Get a flow milestone
 [**getFlowsMilestones**](ArchitectApi.html#getFlowsMilestones) | **GET** /api/v2/flows/milestones | Get a pageable list of flow milestones, filtered by query parameters
@@ -96,7 +96,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postFlowsDatatableImportJobs**](ArchitectApi.html#postFlowsDatatableImportJobs) | **POST** /api/v2/flows/datatables/{datatableId}/import/jobs | Begin an import process for importing rows into a datatable
 [**postFlowsDatatableRows**](ArchitectApi.html#postFlowsDatatableRows) | **POST** /api/v2/flows/datatables/{datatableId}/rows | Create a new row entry for the datatable.
 [**postFlowsDatatables**](ArchitectApi.html#postFlowsDatatables) | **POST** /api/v2/flows/datatables | Create a new datatable with the specified json-schema definition
-[**postFlowsExecutions**](ArchitectApi.html#postFlowsExecutions) | **POST** /api/v2/flows/executions | Launch an instance of a flow definition, for flow types that support it such as the &#39;workflow&#39; type.
+[**postFlowsExecutions**](ArchitectApi.html#postFlowsExecutions) | **POST** /api/v2/flows/executions | Launch an instance of a flow definition, for flow types that support it such as the 'workflow' type.
 [**postFlowsJobs**](ArchitectApi.html#postFlowsJobs) | **POST** /api/v2/flows/jobs | Register Architect Job. Returns a URL where a file, such as an Architect flow YAML file, can be PUT which will then initiate the job.
 [**postFlowsMilestones**](ArchitectApi.html#postFlowsMilestones) | **POST** /api/v2/flows/milestones | Create a flow milestone
 [**postFlowsOutcomes**](ArchitectApi.html#postFlowsOutcomes) | **POST** /api/v2/flows/outcomes | Create a flow outcome
@@ -119,14 +119,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 # void deleteArchitectEmergencygroup(emergencyGroupId)
 
 
-
 DELETE /api/v2/architect/emergencygroups/{emergencyGroupId}
 
 Deletes a emergency group by ID
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * routing:emergencyGroup:delete
 
@@ -172,14 +169,11 @@ void (no response body)
 # void deleteArchitectIvr(ivrId)
 
 
-
 DELETE /api/v2/architect/ivrs/{ivrId}
 
 Delete an IVR Config.
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * routing:callRoute:delete
 
@@ -225,14 +219,11 @@ void (no response body)
 # void deleteArchitectPrompt(promptId, opts)
 
 
-
 DELETE /api/v2/architect/prompts/{promptId}
 
 Delete specified user prompt
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * architect:userPrompt:delete
 
@@ -282,14 +273,11 @@ void (no response body)
 # void deleteArchitectPromptResource(promptId, languageCode)
 
 
-
 DELETE /api/v2/architect/prompts/{promptId}/resources/{languageCode}
 
 Delete specified user prompt resource
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * architect:userPrompt:edit
 
@@ -337,14 +325,11 @@ void (no response body)
 # void deleteArchitectPromptResourceAudio(promptId, languageCode)
 
 
-
 DELETE /api/v2/architect/prompts/{promptId}/resources/{languageCode}/audio
 
 Delete specified user prompt resource audio
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * architect:userPrompt:edit
 
@@ -392,14 +377,13 @@ void (no response body)
 # Operation deleteArchitectPrompts(id)
 
 
-
 DELETE /api/v2/architect/prompts
 
 Batch-delete a list of prompts
 
 Multiple IDs can be specified, in which case all specified prompts will be deleted.  Asynchronous.  Notification topic: v2.architect.prompts.{promptId}
 
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * architect:userPrompt:delete
 
@@ -445,14 +429,11 @@ apiInstance.deleteArchitectPrompts(id)
 # void deleteArchitectSchedule(scheduleId)
 
 
-
 DELETE /api/v2/architect/schedules/{scheduleId}
 
 Delete a schedule by id
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * routing:schedule:delete
 
@@ -498,14 +479,11 @@ void (no response body)
 # void deleteArchitectSchedulegroup(scheduleGroupId)
 
 
-
 DELETE /api/v2/architect/schedulegroups/{scheduleGroupId}
 
 Deletes a schedule group by ID
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * routing:scheduleGroup:delete
 
@@ -551,14 +529,11 @@ void (no response body)
 # void deleteArchitectSystempromptResource(promptId, languageCode)
 
 
-
 DELETE /api/v2/architect/systemprompts/{promptId}/resources/{languageCode}
 
 Delete a system prompt resource override.
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * architect:systemPrompt:edit
 
@@ -606,14 +581,11 @@ void (no response body)
 # void deleteFlow(flowId)
 
 
-
 DELETE /api/v2/flows/{flowId}
 
 Delete flow
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * architect:flow:delete
 
@@ -659,14 +631,13 @@ void (no response body)
 # Operation deleteFlows(id)
 
 
-
 DELETE /api/v2/flows
 
 Batch-delete a list of flows
 
 Multiple IDs can be specified, in which case all specified flows will be deleted.  Asynchronous.  Notification topic: v2.flows.{flowId}
 
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * architect:flow:delete
 
@@ -712,14 +683,13 @@ apiInstance.deleteFlows(id)
 # void deleteFlowsDatatable(datatableId, opts)
 
 
-
 DELETE /api/v2/flows/datatables/{datatableId}
 
 deletes a specific datatable by id
 
 Deletes an entire datatable (including the schema and data) with a given datatableId
 
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * architect:datatable:delete
 
@@ -769,14 +739,13 @@ void (no response body)
 # void deleteFlowsDatatableRow(datatableId, rowId)
 
 
-
 DELETE /api/v2/flows/datatables/{datatableId}/rows/{rowId}
 
 Delete a row entry
 
 Deletes a row with a given rowId (the value of the key field).
 
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * architect:datatable:delete
 * architect:datatableRow:delete
@@ -822,17 +791,14 @@ void (no response body)
 
 <a name="deleteFlowsMilestone"></a>
 
-# Empty deleteFlowsMilestone(milestoneId)
-
+# **Object** deleteFlowsMilestone(milestoneId)
 
 
 DELETE /api/v2/flows/milestones/{milestoneId}
 
 Delete a flow milestone.
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * architect:flowMilestone:delete
 
@@ -871,21 +837,18 @@ apiInstance.deleteFlowsMilestone(milestoneId)
 
 ### Return type
 
-**Empty**
+**Object**
 
 <a name="getArchitectDependencytracking"></a>
 
 # DependencyObjectEntityListing getArchitectDependencytracking(name, opts)
 
 
-
 GET /api/v2/architect/dependencytracking
 
 Get Dependency Tracking objects that have a given display name
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * architect:dependencyTracking:view
 
@@ -947,14 +910,11 @@ apiInstance.getArchitectDependencytracking(name, opts)
 # DependencyStatus getArchitectDependencytrackingBuild()
 
 
-
 GET /api/v2/architect/dependencytracking/build
 
 Get Dependency Tracking build status for an organization
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * architect:dependencyTracking:view
 
@@ -995,14 +955,11 @@ This endpoint does not need any parameter.
 # ConsumedResourcesEntityListing getArchitectDependencytrackingConsumedresources(id, version, objectType, opts)
 
 
-
 GET /api/v2/architect/dependencytracking/consumedresources
 
 Get resources that are consumed by a given Dependency Tracking object
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * architect:dependencyTracking:view
 
@@ -1060,14 +1017,11 @@ apiInstance.getArchitectDependencytrackingConsumedresources(id, version, objectT
 # ConsumingResourcesEntityListing getArchitectDependencytrackingConsumingresources(id, objectType, opts)
 
 
-
 GET /api/v2/architect/dependencytracking/consumingresources
 
 Get resources that consume a given Dependency Tracking object
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * architect:dependencyTracking:view
 
@@ -1127,14 +1081,11 @@ apiInstance.getArchitectDependencytrackingConsumingresources(id, objectType, opt
 # DependencyObjectEntityListing getArchitectDependencytrackingDeletedresourceconsumers(opts)
 
 
-
 GET /api/v2/architect/dependencytracking/deletedresourceconsumers
 
 Get Dependency Tracking objects that consume deleted resources
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * architect:dependencyTracking:view
 
@@ -1194,14 +1145,11 @@ apiInstance.getArchitectDependencytrackingDeletedresourceconsumers(opts)
 # DependencyObject getArchitectDependencytrackingObject(id, opts)
 
 
-
 GET /api/v2/architect/dependencytracking/object
 
 Get a Dependency Tracking object
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * architect:dependencyTracking:view
 
@@ -1263,14 +1211,11 @@ apiInstance.getArchitectDependencytrackingObject(id, opts)
 # DependencyType getArchitectDependencytrackingType(typeId)
 
 
-
 GET /api/v2/architect/dependencytracking/types/{typeId}
 
 Get a Dependency Tracking type.
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * architect:dependencyTracking:view
 
@@ -1316,14 +1261,11 @@ apiInstance.getArchitectDependencytrackingType(typeId)
 # DependencyTypeEntityListing getArchitectDependencytrackingTypes(opts)
 
 
-
 GET /api/v2/architect/dependencytracking/types
 
 Get Dependency Tracking types.
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * architect:dependencyTracking:view
 
@@ -1373,14 +1315,11 @@ apiInstance.getArchitectDependencytrackingTypes(opts)
 # DependencyObjectEntityListing getArchitectDependencytrackingUpdatedresourceconsumers(opts)
 
 
-
 GET /api/v2/architect/dependencytracking/updatedresourceconsumers
 
 Get Dependency Tracking objects that depend on updated resources
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * architect:dependencyTracking:view
 
@@ -1438,14 +1377,11 @@ apiInstance.getArchitectDependencytrackingUpdatedresourceconsumers(opts)
 # EmergencyGroup getArchitectEmergencygroup(emergencyGroupId)
 
 
-
 GET /api/v2/architect/emergencygroups/{emergencyGroupId}
 
 Gets a emergency group by ID
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * routing:emergencyGroup:view
 
@@ -1491,14 +1427,11 @@ apiInstance.getArchitectEmergencygroup(emergencyGroupId)
 # EmergencyGroupListing getArchitectEmergencygroups(opts)
 
 
-
 GET /api/v2/architect/emergencygroups
 
 Get a list of emergency groups.
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * routing:emergencyGroup:view
 
@@ -1554,14 +1487,11 @@ apiInstance.getArchitectEmergencygroups(opts)
 # IVR getArchitectIvr(ivrId)
 
 
-
 GET /api/v2/architect/ivrs/{ivrId}
 
 Get an IVR config.
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * routing:callRoute:view
 
@@ -1607,14 +1537,11 @@ apiInstance.getArchitectIvr(ivrId)
 # IVREntityListing getArchitectIvrs(opts)
 
 
-
 GET /api/v2/architect/ivrs
 
 Get IVR configs.
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * routing:callRoute:view
 
@@ -1670,14 +1597,11 @@ apiInstance.getArchitectIvrs(opts)
 # Prompt getArchitectPrompt(promptId)
 
 
-
 GET /api/v2/architect/prompts/{promptId}
 
 Get specified user prompt
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * architect:userPrompt:view
 
@@ -1723,14 +1647,11 @@ apiInstance.getArchitectPrompt(promptId)
 # HistoryListing getArchitectPromptHistoryHistoryId(promptId, historyId, opts)
 
 
-
 GET /api/v2/architect/prompts/{promptId}/history/{historyId}
 
 Get generated prompt history
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * architect:userPrompt:view
 
@@ -1790,14 +1711,11 @@ apiInstance.getArchitectPromptHistoryHistoryId(promptId, historyId, opts)
 # PromptAsset getArchitectPromptResource(promptId, languageCode)
 
 
-
 GET /api/v2/architect/prompts/{promptId}/resources/{languageCode}
 
 Get specified user prompt resource
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * architect:userPrompt:view
 
@@ -1845,14 +1763,13 @@ apiInstance.getArchitectPromptResource(promptId, languageCode)
 # PromptAssetEntityListing getArchitectPromptResources(promptId, opts)
 
 
-
 GET /api/v2/architect/prompts/{promptId}/resources
 
 Get a pageable list of user prompt resources
 
 The returned list is pageable, and query parameters can be used for filtering.
 
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * architect:userPrompt:view
 
@@ -1904,14 +1821,13 @@ apiInstance.getArchitectPromptResources(promptId, opts)
 # PromptEntityListing getArchitectPrompts(opts)
 
 
-
 GET /api/v2/architect/prompts
 
 Get a pageable list of user prompts
 
 The returned list is pageable, and query parameters can be used for filtering.  Multiple names can be specified, in which case all matching prompts will be returned, and no other filters will be evaluated.
 
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * architect:userPrompt:view
 
@@ -1971,14 +1887,11 @@ apiInstance.getArchitectPrompts(opts)
 # Schedule getArchitectSchedule(scheduleId)
 
 
-
 GET /api/v2/architect/schedules/{scheduleId}
 
 Get a schedule by ID
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * routing:schedule:view
 
@@ -2024,14 +1937,11 @@ apiInstance.getArchitectSchedule(scheduleId)
 # ScheduleGroup getArchitectSchedulegroup(scheduleGroupId)
 
 
-
 GET /api/v2/architect/schedulegroups/{scheduleGroupId}
 
 Gets a schedule group by ID
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * routing:scheduleGroup:view
 
@@ -2077,14 +1987,11 @@ apiInstance.getArchitectSchedulegroup(scheduleGroupId)
 # ScheduleGroupEntityListing getArchitectSchedulegroups(opts)
 
 
-
 GET /api/v2/architect/schedulegroups
 
 Get a list of schedule groups.
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * routing:scheduleGroup:view
 
@@ -2144,14 +2051,11 @@ apiInstance.getArchitectSchedulegroups(opts)
 # ScheduleEntityListing getArchitectSchedules(opts)
 
 
-
 GET /api/v2/architect/schedules
 
 Get a list of schedules.
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * routing:schedule:view
 
@@ -2209,14 +2113,11 @@ apiInstance.getArchitectSchedules(opts)
 # SystemPrompt getArchitectSystemprompt(promptId)
 
 
-
 GET /api/v2/architect/systemprompts/{promptId}
 
 Get a system prompt
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * architect:systemPrompt:view
 
@@ -2262,14 +2163,11 @@ apiInstance.getArchitectSystemprompt(promptId)
 # HistoryListing getArchitectSystempromptHistoryHistoryId(promptId, historyId, opts)
 
 
-
 GET /api/v2/architect/systemprompts/{promptId}/history/{historyId}
 
 Get generated prompt history
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * architect:systemPrompt:view
 
@@ -2329,14 +2227,11 @@ apiInstance.getArchitectSystempromptHistoryHistoryId(promptId, historyId, opts)
 # SystemPromptAsset getArchitectSystempromptResource(promptId, languageCode)
 
 
-
 GET /api/v2/architect/systemprompts/{promptId}/resources/{languageCode}
 
 Get a system prompt resource.
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * architect:systemPrompt:view
 
@@ -2384,14 +2279,11 @@ apiInstance.getArchitectSystempromptResource(promptId, languageCode)
 # SystemPromptAssetEntityListing getArchitectSystempromptResources(promptId, opts)
 
 
-
 GET /api/v2/architect/systemprompts/{promptId}/resources
 
 Get system prompt resources.
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * architect:systemPrompt:view
 
@@ -2447,14 +2339,11 @@ apiInstance.getArchitectSystempromptResources(promptId, opts)
 # SystemPromptEntityListing getArchitectSystemprompts(opts)
 
 
-
 GET /api/v2/architect/systemprompts
 
 Get System Prompts
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * architect:systemPrompt:view
 
@@ -2514,14 +2403,11 @@ apiInstance.getArchitectSystemprompts(opts)
 # Flow getFlow(flowId, opts)
 
 
-
 GET /api/v2/flows/{flowId}
 
 Get flow
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * architect:flow:view
 
@@ -2571,14 +2457,11 @@ apiInstance.getFlow(flowId, opts)
 # HistoryListing getFlowHistoryHistoryId(flowId, historyId, opts)
 
 
-
 GET /api/v2/flows/{flowId}/history/{historyId}
 
 Get generated flow history
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * architect:flow:view
 
@@ -2638,14 +2521,11 @@ apiInstance.getFlowHistoryHistoryId(flowId, historyId, opts)
 # **Object** getFlowLatestconfiguration(flowId, opts)
 
 
-
 GET /api/v2/flows/{flowId}/latestconfiguration
 
 Get the latest configuration for flow
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * architect:flow:view
 
@@ -2695,14 +2575,11 @@ apiInstance.getFlowLatestconfiguration(flowId, opts)
 # FlowVersion getFlowVersion(flowId, versionId, opts)
 
 
-
 GET /api/v2/flows/{flowId}/versions/{versionId}
 
 Get flow version
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * architect:flow:view
 
@@ -2754,14 +2631,11 @@ apiInstance.getFlowVersion(flowId, versionId, opts)
 # **Object** getFlowVersionConfiguration(flowId, versionId, opts)
 
 
-
 GET /api/v2/flows/{flowId}/versions/{versionId}/configuration
 
 Create flow version configuration
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * architect:flow:view
 
@@ -2813,14 +2687,11 @@ apiInstance.getFlowVersionConfiguration(flowId, versionId, opts)
 # FlowVersionEntityListing getFlowVersions(flowId, opts)
 
 
-
 GET /api/v2/flows/{flowId}/versions
 
 Get flow version list
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * architect:flow:view
 
@@ -2874,14 +2745,13 @@ apiInstance.getFlowVersions(flowId, opts)
 # FlowEntityListing getFlows(opts)
 
 
-
 GET /api/v2/flows
 
 Get a pageable list of flows, filtered by query parameters
 
 If one or more IDs are specified, the search will fetch flows that match the given ID(s) and not use any additional supplied query parameters in the search.
 
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * architect:flow:view
 
@@ -2915,8 +2785,8 @@ let opts = {
   'secure': "secure_example", // String | Secure
   'deleted': false, // Boolean | Include deleted
   'includeSchemas': false, // Boolean | Include variable schemas
-  'publishedAfter': "2015-01-01T12:00:00-0600, 2015-01-01T18:00:00Z, 2015-01-01T12:00:00.000-0600, 2015-01-01T18:00:00.000Z, 2015-01-01", // String | Published after
-  'publishedBefore': "2015-01-01T12:00:00-0600, 2015-01-01T18:00:00Z, 2015-01-01T12:00:00.000-0600, 2015-01-01T18:00:00.000Z, 2015-01-01", // String | Published before
+  'publishedAfter': 2015-01-01T12:00:00-0600, 2015-01-01T18:00:00Z, 2015-01-01T12:00:00.000-0600, 2015-01-01T18:00:00.000Z, 2015-01-01, // String | Published after
+  'publishedBefore': 2015-01-01T12:00:00-0600, 2015-01-01T18:00:00Z, 2015-01-01T12:00:00.000-0600, 2015-01-01T18:00:00.000Z, 2015-01-01, // String | Published before
   'divisionId': ["divisionId_example"] // [String] | division ID(s)
 };
 
@@ -2965,14 +2835,13 @@ apiInstance.getFlows(opts)
 # DataTable getFlowsDatatable(datatableId, opts)
 
 
-
 GET /api/v2/flows/datatables/{datatableId}
 
 Returns a specific datatable by id
 
 Given a datatableId returns the datatable object and schema associated with it.
 
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * architect:datatable:view
 
@@ -3022,14 +2891,13 @@ apiInstance.getFlowsDatatable(datatableId, opts)
 # DataTableExportJob getFlowsDatatableExportJob(datatableId, exportJobId)
 
 
-
 GET /api/v2/flows/datatables/{datatableId}/export/jobs/{exportJobId}
 
 Returns the state information about an export job
 
 Returns the state information about an export job.
 
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * architect:datatable:view
 * architect:datatableRow:view
@@ -3078,14 +2946,13 @@ apiInstance.getFlowsDatatableExportJob(datatableId, exportJobId)
 # DataTableImportJob getFlowsDatatableImportJob(datatableId, importJobId)
 
 
-
 GET /api/v2/flows/datatables/{datatableId}/import/jobs/{importJobId}
 
 Returns the state information about an import job
 
 Returns the state information about an import job.
 
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * architect:datatable:view
 * architect:datatableRow:view
@@ -3134,14 +3001,13 @@ apiInstance.getFlowsDatatableImportJob(datatableId, importJobId)
 # DataTableImportEntityListing getFlowsDatatableImportJobs(datatableId, opts)
 
 
-
 GET /api/v2/flows/datatables/{datatableId}/import/jobs
 
 Get all recent import jobs
 
 Get all recent import jobs
 
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * architect:datatable:edit
 * architect:datatableRow:view
@@ -3194,14 +3060,13 @@ apiInstance.getFlowsDatatableImportJobs(datatableId, opts)
 # **{&#39;String&#39;: Object}** getFlowsDatatableRow(datatableId, rowId, opts)
 
 
-
 GET /api/v2/flows/datatables/{datatableId}/rows/{rowId}
 
 Returns a specific row for the datatable
 
 Given a datatableId and a rowId (the value of the key field) this will return the full row contents for that rowId.
 
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * architect:datatable:view
 * architect:datatableRow:view
@@ -3254,14 +3119,13 @@ apiInstance.getFlowsDatatableRow(datatableId, rowId, opts)
 # DataTableRowEntityListing getFlowsDatatableRows(datatableId, opts)
 
 
-
 GET /api/v2/flows/datatables/{datatableId}/rows
 
 Returns the rows for the datatable with the given id
 
 Returns all of the rows for the datatable with the given datatableId.  By default this will just be a truncated list returning the key for each row. Set showBrief to false to return all of the row contents.
 
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * architect:datatable:view
 * architect:datatableRow:view
@@ -3316,14 +3180,13 @@ apiInstance.getFlowsDatatableRows(datatableId, opts)
 # DataTablesDomainEntityListing getFlowsDatatables(opts)
 
 
-
 GET /api/v2/flows/datatables
 
 Retrieve a list of datatables for the org
 
 Returns a metadata list of the datatables associated with this org, including datatableId, name and description.
 
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * architect:datatable:view
 
@@ -3383,14 +3246,13 @@ apiInstance.getFlowsDatatables(opts)
 # DataTable getFlowsDatatablesDivisionview(datatableId, opts)
 
 
-
 GET /api/v2/flows/datatables/divisionviews/{datatableId}
 
 Returns a specific datatable by id
 
 Given a datatableId returns the datatable object and schema associated with it.
 
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * architect:datatable:search
 
@@ -3440,14 +3302,13 @@ apiInstance.getFlowsDatatablesDivisionview(datatableId, opts)
 # DataTablesDomainEntityListing getFlowsDatatablesDivisionviews(opts)
 
 
-
 GET /api/v2/flows/datatables/divisionviews
 
 Retrieve a list of datatables for the org
 
 Returns a metadata list of the datatables associated with this org, including datatableId, name and description.
 
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * architect:datatable:search
 
@@ -3507,14 +3368,13 @@ apiInstance.getFlowsDatatablesDivisionviews(opts)
 # FlowDivisionViewEntityListing getFlowsDivisionviews(opts)
 
 
-
 GET /api/v2/flows/divisionviews
 
 Get a pageable list of basic flow information objects filterable by query parameters.
 
 This returns a simplified version of /flow consisting of name and type. If one or more IDs are specified, the search will fetch flows that match the given ID(s) and not use any additional supplied query parameters in the search.
 
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * architect:flow:search
 
@@ -3540,8 +3400,8 @@ let opts = {
   'id': ["id_example"], // [String] | ID
   'name': "name_example", // String | Name
   'publishVersionId': "publishVersionId_example", // String | Publish version ID
-  'publishedAfter': "2015-01-01T12:00:00-0600, 2015-01-01T18:00:00Z, 2015-01-01T12:00:00.000-0600, 2015-01-01T18:00:00.000Z, 2015-01-01", // String | Published after
-  'publishedBefore': "2015-01-01T12:00:00-0600, 2015-01-01T18:00:00Z, 2015-01-01T12:00:00.000-0600, 2015-01-01T18:00:00.000Z, 2015-01-01", // String | Published before
+  'publishedAfter': 2015-01-01T12:00:00-0600, 2015-01-01T18:00:00Z, 2015-01-01T12:00:00.000-0600, 2015-01-01T18:00:00.000Z, 2015-01-01, // String | Published after
+  'publishedBefore': 2015-01-01T12:00:00-0600, 2015-01-01T18:00:00Z, 2015-01-01T12:00:00.000-0600, 2015-01-01T18:00:00.000Z, 2015-01-01, // String | Published before
   'divisionId': ["divisionId_example"], // [String] | division ID(s)
   'includeSchemas': false // Boolean | Include variable schemas
 };
@@ -3584,14 +3444,11 @@ apiInstance.getFlowsDivisionviews(opts)
 # FlowRuntimeExecution getFlowsExecution(flowExecutionId)
 
 
-
 GET /api/v2/flows/executions/{flowExecutionId}
 
-Get a flow execution&#39;s details. Flow execution details are available for several days after the flow is started.
+Get a flow execution's details. Flow execution details are available for several days after the flow is started.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * architect:flowExecution:view
 
@@ -3637,14 +3494,11 @@ apiInstance.getFlowsExecution(flowExecutionId)
 # ArchitectJobStateResponse getFlowsJob(jobId, opts)
 
 
-
 GET /api/v2/flows/jobs/{jobId}
 
 Fetch Architect Job Status
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * architect:job:view
 
@@ -3694,14 +3548,13 @@ apiInstance.getFlowsJob(jobId, opts)
 # FlowMilestone getFlowsMilestone(milestoneId)
 
 
-
 GET /api/v2/flows/milestones/{milestoneId}
 
 Get a flow milestone
 
 Returns a specified flow milestone
 
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * architect:flowMilestone:view
 
@@ -3747,14 +3600,13 @@ apiInstance.getFlowsMilestone(milestoneId)
 # FlowMilestoneListing getFlowsMilestones(opts)
 
 
-
 GET /api/v2/flows/milestones
 
 Get a pageable list of flow milestones, filtered by query parameters
 
 Multiple IDs can be specified, in which case all matching flow milestones will be returned, and no other parameters will be evaluated.
 
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * architect:flowMilestone:view
 
@@ -3818,14 +3670,13 @@ apiInstance.getFlowsMilestones(opts)
 # FlowMilestoneDivisionViewEntityListing getFlowsMilestonesDivisionviews(opts)
 
 
-
 GET /api/v2/flows/milestones/divisionviews
 
 Get a pageable list of basic flow milestone information objects filterable by query parameters.
 
 This returns flow milestones consisting of name and division. If one or more IDs are specified, the search will fetch flow milestones that match the given ID(s) and not use any additional supplied query parameters in the search.
 
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * architect:flowMilestone:search
 
@@ -3885,14 +3736,13 @@ apiInstance.getFlowsMilestonesDivisionviews(opts)
 # FlowOutcome getFlowsOutcome(flowOutcomeId)
 
 
-
 GET /api/v2/flows/outcomes/{flowOutcomeId}
 
 Get a flow outcome
 
 Returns a specified flow outcome
 
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * architect:flowOutcome:view
 
@@ -3938,14 +3788,13 @@ apiInstance.getFlowsOutcome(flowOutcomeId)
 # FlowOutcomeListing getFlowsOutcomes(opts)
 
 
-
 GET /api/v2/flows/outcomes
 
 Get a pageable list of flow outcomes, filtered by query parameters
 
 Multiple IDs can be specified, in which case all matching flow outcomes will be returned, and no other parameters will be evaluated.
 
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * architect:flowOutcome:view
 
@@ -4009,14 +3858,13 @@ apiInstance.getFlowsOutcomes(opts)
 # FlowOutcomeDivisionViewEntityListing getFlowsOutcomesDivisionviews(opts)
 
 
-
 GET /api/v2/flows/outcomes/divisionviews
 
 Get a pageable list of basic flow outcome information objects filterable by query parameters.
 
 This returns flow outcomes consisting of name and division. If one or more IDs are specified, the search will fetch flow outcomes that match the given ID(s) and not use any additional supplied query parameters in the search.
 
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * architect:flowOutcome:search
 
@@ -4076,14 +3924,13 @@ apiInstance.getFlowsOutcomesDivisionviews(opts)
 # void postArchitectDependencytrackingBuild()
 
 
-
 POST /api/v2/architect/dependencytracking/build
 
 Rebuild Dependency Tracking data for an organization
 
 Asynchronous.  Notification topic: v2.architect.dependencytracking.build
 
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * architect:dependencyTracking:rebuild
 
@@ -4124,14 +3971,11 @@ void (no response body)
 # EmergencyGroup postArchitectEmergencygroups(body)
 
 
-
 POST /api/v2/architect/emergencygroups
 
 Creates a new emergency group
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * routing:emergencyGroup:add
 
@@ -4177,14 +4021,11 @@ apiInstance.postArchitectEmergencygroups(body)
 # IVR postArchitectIvrs(body)
 
 
-
 POST /api/v2/architect/ivrs
 
 Create IVR config.
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * routing:callRoute:add
 
@@ -4230,14 +4071,13 @@ apiInstance.postArchitectIvrs(body)
 # Operation postArchitectPromptHistory(promptId)
 
 
-
 POST /api/v2/architect/prompts/{promptId}/history
 
 Generate prompt history
 
 Asynchronous.  Notification topic: v2.architect.prompts.{promptId}
 
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * architect:userPrompt:view
 
@@ -4283,14 +4123,11 @@ apiInstance.postArchitectPromptHistory(promptId)
 # PromptAsset postArchitectPromptResources(promptId, body)
 
 
-
 POST /api/v2/architect/prompts/{promptId}/resources
 
 Create a new user prompt resource
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * architect:userPrompt:edit
 
@@ -4338,14 +4175,11 @@ apiInstance.postArchitectPromptResources(promptId, body)
 # Prompt postArchitectPrompts(body)
 
 
-
 POST /api/v2/architect/prompts
 
 Create a new user prompt
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * architect:userPrompt:add
 
@@ -4391,14 +4225,11 @@ apiInstance.postArchitectPrompts(body)
 # ScheduleGroup postArchitectSchedulegroups(body)
 
 
-
 POST /api/v2/architect/schedulegroups
 
 Creates a new schedule group
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * routing:scheduleGroup:add
 
@@ -4444,14 +4275,11 @@ apiInstance.postArchitectSchedulegroups(body)
 # Schedule postArchitectSchedules(body)
 
 
-
 POST /api/v2/architect/schedules
 
 Create a new schedule.
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * routing:schedule:add
 
@@ -4497,14 +4325,13 @@ apiInstance.postArchitectSchedules(body)
 # Operation postArchitectSystempromptHistory(promptId)
 
 
-
 POST /api/v2/architect/systemprompts/{promptId}/history
 
 Generate system prompt history
 
 Asynchronous.  Notification topic: v2.architect.systemprompts.{systemPromptId}
 
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * architect:systemPrompt:view
 
@@ -4550,14 +4377,11 @@ apiInstance.postArchitectSystempromptHistory(promptId)
 # SystemPromptAsset postArchitectSystempromptResources(promptId, body)
 
 
-
 POST /api/v2/architect/systemprompts/{promptId}/resources
 
 Create system prompt resource override.
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * architect:systemPrompt:edit
 
@@ -4605,14 +4429,13 @@ apiInstance.postArchitectSystempromptResources(promptId, body)
 # Operation postFlowHistory(flowId)
 
 
-
 POST /api/v2/flows/{flowId}/history
 
 Generate flow history
 
 Asynchronous.  Notification topic: v2.flows.{flowId}
 
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * architect:flow:view
 
@@ -4658,14 +4481,11 @@ apiInstance.postFlowHistory(flowId)
 # FlowVersion postFlowVersions(flowId, body)
 
 
-
 POST /api/v2/flows/{flowId}/versions
 
 Create flow version
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * architect:flow:edit
 
@@ -4683,7 +4503,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ArchitectApi();
 
 let flowId = "flowId_example"; // String | Flow ID
-let body = null; // Object | 
+let body = null; // {String: Object} | 
 
 apiInstance.postFlowVersions(flowId, body)
   .then((data) => {
@@ -4701,7 +4521,7 @@ apiInstance.postFlowVersions(flowId, body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **flowId** | **String** | Flow ID |  |
- **body** | **Object** |  |  |
+ **body** | **{String: Object}** |  |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -4713,14 +4533,11 @@ apiInstance.postFlowVersions(flowId, body)
 # Flow postFlows(body, opts)
 
 
-
 POST /api/v2/flows
 
 Create flow
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * architect:flow:add
 
@@ -4770,14 +4587,13 @@ apiInstance.postFlows(body, opts)
 # Operation postFlowsActionsCheckin(flow)
 
 
-
 POST /api/v2/flows/actions/checkin
 
 Check-in flow
 
 Asynchronous.  Notification topic: v2.flows.{flowId}
 
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * architect:flow:edit
 * architect:flow:unlock
@@ -4824,14 +4640,11 @@ apiInstance.postFlowsActionsCheckin(flow)
 # Flow postFlowsActionsCheckout(flow)
 
 
-
 POST /api/v2/flows/actions/checkout
 
 Check-out flow
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * architect:flow:edit
 
@@ -4877,14 +4690,11 @@ apiInstance.postFlowsActionsCheckout(flow)
 # Flow postFlowsActionsDeactivate(flow)
 
 
-
 POST /api/v2/flows/actions/deactivate
 
 Deactivate flow
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * architect:flow:publish
 
@@ -4930,14 +4740,13 @@ apiInstance.postFlowsActionsDeactivate(flow)
 # Operation postFlowsActionsPublish(flow, opts)
 
 
-
 POST /api/v2/flows/actions/publish
 
 Publish flow
 
 Asynchronous.  Notification topic: v2.flows.{flowId}
 
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * architect:flow:unlock
 * architect:flow:publish
@@ -4988,14 +4797,11 @@ apiInstance.postFlowsActionsPublish(flow, opts)
 # Flow postFlowsActionsRevert(flow)
 
 
-
 POST /api/v2/flows/actions/revert
 
 Revert flow
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * architect:flow:edit
 
@@ -5041,14 +4847,13 @@ apiInstance.postFlowsActionsRevert(flow)
 # Flow postFlowsActionsUnlock(flow)
 
 
-
 POST /api/v2/flows/actions/unlock
 
 Unlock flow
 
 Allows for unlocking a flow in the case where there is no flow configuration available, and thus a check-in will not unlock the flow. The user must have Architect Admin permissions to perform this action.
 
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * architect:flow:unlock
 
@@ -5094,14 +4899,13 @@ apiInstance.postFlowsActionsUnlock(flow)
 # DataTableExportJob postFlowsDatatableExportJobs(datatableId)
 
 
-
 POST /api/v2/flows/datatables/{datatableId}/export/jobs
 
 Begin an export process for exporting all rows from a datatable
 
 Create an export job for exporting rows. The caller can then poll for status of the export using the token returned in the response
 
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * architect:datatable:view
 * architect:datatableRow:view
@@ -5148,14 +4952,13 @@ apiInstance.postFlowsDatatableExportJobs(datatableId)
 # DataTableImportJob postFlowsDatatableImportJobs(datatableId, body)
 
 
-
 POST /api/v2/flows/datatables/{datatableId}/import/jobs
 
 Begin an import process for importing rows into a datatable
 
 Create an import job for importing rows. The caller can then poll for status of the import using the token returned in the response
 
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * architect:datatable:edit
 * architect:datatableRow:add
@@ -5204,14 +5007,13 @@ apiInstance.postFlowsDatatableImportJobs(datatableId, body)
 # **{&#39;String&#39;: Object}** postFlowsDatatableRows(datatableId, dataTableRow)
 
 
-
 POST /api/v2/flows/datatables/{datatableId}/rows
 
 Create a new row entry for the datatable.
 
-Will add the passed in row entry to the datatable with the given datatableId after verifying it against the schema.  The DataTableRow should be a json-ized&#39; stream of key -&gt; value pairs {      \&quot;Field1\&quot;: \&quot;XYZZY\&quot;,      \&quot;Field2\&quot;: false,      \&quot;KEY\&quot;: \&quot;27272\&quot;  }
+Will add the passed in row entry to the datatable with the given datatableId after verifying it against the schema.  The DataTableRow should be a json-ized stream of key -> value pairs {      "Field1": "XYZZY",      "Field2": false,      "KEY": "27272"  }
 
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * architect:datatable:add
 * architect:datatableRow:add
@@ -5230,7 +5032,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ArchitectApi();
 
 let datatableId = "datatableId_example"; // String | id of datatable
-let dataTableRow = null; // Object | 
+let dataTableRow = null; // {String: Object} | 
 
 apiInstance.postFlowsDatatableRows(datatableId, dataTableRow)
   .then((data) => {
@@ -5248,7 +5050,7 @@ apiInstance.postFlowsDatatableRows(datatableId, dataTableRow)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **datatableId** | **String** | id of datatable |  |
- **dataTableRow** | **Object** |  |  |
+ **dataTableRow** | **{String: Object}** |  |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -5260,14 +5062,13 @@ apiInstance.postFlowsDatatableRows(datatableId, dataTableRow)
 # DataTable postFlowsDatatables(body)
 
 
-
 POST /api/v2/flows/datatables
 
 Create a new datatable with the specified json-schema definition
 
-This will create a new datatable with fields that match the property definitions in the JSON schema.  The schema&#39;s title field will be overridden by the name field in the DataTable object.  See also http://json-schema.org/
+This will create a new datatable with fields that match the property definitions in the JSON schema.  The schemas title field will be overridden by the name field in the DataTable object.  See also http://json-schema.org/
 
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * architect:datatable:add
 
@@ -5313,14 +5114,13 @@ apiInstance.postFlowsDatatables(body)
 # FlowExecutionLaunchResponse postFlowsExecutions(flowLaunchRequest)
 
 
-
 POST /api/v2/flows/executions
 
-Launch an instance of a flow definition, for flow types that support it such as the &#39;workflow&#39; type.
+Launch an instance of a flow definition, for flow types that support it such as the 'workflow' type.
 
 The launch is asynchronous, it returns as soon as the flow starts. You can use the returned ID to query its status if you need.
 
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * architect:flow:launch
 
@@ -5366,14 +5166,11 @@ apiInstance.postFlowsExecutions(flowLaunchRequest)
 # RegisterArchitectJobResponse postFlowsJobs()
 
 
-
 POST /api/v2/flows/jobs
 
 Register Architect Job. Returns a URL where a file, such as an Architect flow YAML file, can be PUT which will then initiate the job.
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * architect:job:create
 
@@ -5414,14 +5211,11 @@ This endpoint does not need any parameter.
 # FlowMilestone postFlowsMilestones(opts)
 
 
-
 POST /api/v2/flows/milestones
 
 Create a flow milestone
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * architect:flowMilestone:add
 
@@ -5469,14 +5263,13 @@ apiInstance.postFlowsMilestones(opts)
 # FlowOutcome postFlowsOutcomes(opts)
 
 
-
 POST /api/v2/flows/outcomes
 
 Create a flow outcome
 
 Asynchronous.  Notification topic: v2.flows.outcomes.{flowOutcomeId}
 
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * architect:flowOutcome:add
 
@@ -5524,14 +5317,11 @@ apiInstance.postFlowsOutcomes(opts)
 # EmergencyGroup putArchitectEmergencygroup(emergencyGroupId, body)
 
 
-
 PUT /api/v2/architect/emergencygroups/{emergencyGroupId}
 
 Updates a emergency group by ID
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * routing:emergencyGroup:edit
 
@@ -5579,14 +5369,11 @@ apiInstance.putArchitectEmergencygroup(emergencyGroupId, body)
 # IVR putArchitectIvr(ivrId, body)
 
 
-
 PUT /api/v2/architect/ivrs/{ivrId}
 
 Update an IVR Config.
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * routing:callRoute:edit
 
@@ -5634,14 +5421,11 @@ apiInstance.putArchitectIvr(ivrId, body)
 # Prompt putArchitectPrompt(promptId, body)
 
 
-
 PUT /api/v2/architect/prompts/{promptId}
 
 Update specified user prompt
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * architect:userPrompt:edit
 
@@ -5689,14 +5473,11 @@ apiInstance.putArchitectPrompt(promptId, body)
 # PromptAsset putArchitectPromptResource(promptId, languageCode, body)
 
 
-
 PUT /api/v2/architect/prompts/{promptId}/resources/{languageCode}
 
 Update specified user prompt resource
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * architect:userPrompt:edit
 
@@ -5746,14 +5527,11 @@ apiInstance.putArchitectPromptResource(promptId, languageCode, body)
 # Schedule putArchitectSchedule(scheduleId, body)
 
 
-
 PUT /api/v2/architect/schedules/{scheduleId}
 
 Update schedule by ID
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * routing:schedule:edit
 
@@ -5801,14 +5579,11 @@ apiInstance.putArchitectSchedule(scheduleId, body)
 # ScheduleGroup putArchitectSchedulegroup(scheduleGroupId, body)
 
 
-
 PUT /api/v2/architect/schedulegroups/{scheduleGroupId}
 
 Updates a schedule group by ID
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * routing:scheduleGroup:edit
 
@@ -5856,14 +5631,11 @@ apiInstance.putArchitectSchedulegroup(scheduleGroupId, body)
 # SystemPromptAsset putArchitectSystempromptResource(promptId, languageCode, body)
 
 
-
 PUT /api/v2/architect/systemprompts/{promptId}/resources/{languageCode}
 
 Updates a system prompt resource override.
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * architect:systemPrompt:edit
 
@@ -5913,14 +5685,11 @@ apiInstance.putArchitectSystempromptResource(promptId, languageCode, body)
 # Flow putFlow(flowId, body)
 
 
-
 PUT /api/v2/flows/{flowId}
 
 Update flow
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * architect:flow:edit
 
@@ -5968,14 +5737,13 @@ apiInstance.putFlow(flowId, body)
 # DataTable putFlowsDatatable(datatableId, body, opts)
 
 
-
 PUT /api/v2/flows/datatables/{datatableId}
 
 Updates a specific datatable by id
 
 Updates a schema for a datatable with the given datatableId -updates allow only new fields to be added in the schema, no changes or removals of existing fields.
 
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * architect:datatable:edit
 
@@ -6027,14 +5795,13 @@ apiInstance.putFlowsDatatable(datatableId, body, opts)
 # **{&#39;String&#39;: Object}** putFlowsDatatableRow(datatableId, rowId, opts)
 
 
-
 PUT /api/v2/flows/datatables/{datatableId}/rows/{rowId}
 
 Update a row entry
 
-Updates a row with the given rowId (the value of the key field) to the new values.  The DataTableRow should be a json-ized&#39; stream of key -&gt; value pairs {     \&quot;Field1\&quot;: \&quot;XYZZY\&quot;,     \&quot;Field2\&quot;: false,     \&quot;KEY\&quot;: \&quot;27272\&quot; }
+Updates a row with the given rowId (the value of the key field) to the new values.  The DataTableRow should be a json-ized stream of key -> value pairs {     "Field1": "XYZZY",     "Field2": false,     "KEY": "27272" }
 
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * architect:datatable:edit
 * architect:datatableRow:edit
@@ -6055,7 +5822,7 @@ let apiInstance = new platformClient.ArchitectApi();
 let datatableId = "datatableId_example"; // String | id of datatable
 let rowId = "rowId_example"; // String | the key for the row
 let opts = { 
-  'body': null // Object | datatable row
+  'body': null // {String: Object} | datatable row
 };
 
 apiInstance.putFlowsDatatableRow(datatableId, rowId, opts)
@@ -6075,7 +5842,7 @@ apiInstance.putFlowsDatatableRow(datatableId, rowId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **datatableId** | **String** | id of datatable |  |
  **rowId** | **String** | the key for the row |  |
- **body** | **Object** | datatable row | [optional]  |
+ **body** | **{String: Object}** | datatable row | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -6087,14 +5854,11 @@ apiInstance.putFlowsDatatableRow(datatableId, rowId, opts)
 # FlowMilestone putFlowsMilestone(milestoneId, opts)
 
 
-
 PUT /api/v2/flows/milestones/{milestoneId}
 
 Updates a flow milestone
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * architect:flowMilestone:edit
 
@@ -6144,14 +5908,13 @@ apiInstance.putFlowsMilestone(milestoneId, opts)
 # Operation putFlowsOutcome(flowOutcomeId, opts)
 
 
-
 PUT /api/v2/flows/outcomes/{flowOutcomeId}
 
 Updates a flow outcome
 
 Updates a flow outcome.  Asynchronous.  Notification topic: v2.flowoutcomes.{flowoutcomeId}
 
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * architect:flowOutcome:edit
 

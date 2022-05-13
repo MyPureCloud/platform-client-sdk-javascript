@@ -34,14 +34,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 # void deleteLearningAssignment(assignmentId)
 
 
-
 DELETE /api/v2/learning/assignments/{assignmentId}
 
 Delete a learning assignment
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * learning:assignment:delete
 
@@ -87,14 +84,13 @@ void (no response body)
 # void deleteLearningModule(moduleId)
 
 
-
 DELETE /api/v2/learning/modules/{moduleId}
 
 Delete a learning module
 
 This will delete a learning module if it is unpublished or it will delete a published and archived learning module
 
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * learning:module:delete
 
@@ -140,14 +136,13 @@ void (no response body)
 # LearningAssignment getLearningAssignment(assignmentId, opts)
 
 
-
 GET /api/v2/learning/assignments/{assignmentId}
 
 Get Learning Assignment
 
 Permission not required if you are the assigned user of the learning assignment
 
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * learning:assignment:view
 
@@ -197,14 +192,13 @@ apiInstance.getLearningAssignment(assignmentId, opts)
 # LearningAssignmentsDomainEntity getLearningAssignments(opts)
 
 
-
 GET /api/v2/learning/assignments
 
 List of Learning module Assignments
 
 Either moduleId or user value is required
 
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * learning:assignment:view
 
@@ -225,10 +219,10 @@ let opts = {
   'moduleId': "moduleId_example", // String | Specifies the ID of the learning module. Fetch assignments for learning module ID
   'interval': "interval_example", // String | Specifies the range of dueDates to be queried. Milliseconds will be truncated. A maximum of 1 year can be specified in the range. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
   'completionInterval': "completionInterval_example", // String | Specifies the range of completion dates to be used for filtering. A maximum of 1 year can be specified in the range. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
-  'overdue': "Any", // String | Specifies if only the non-overdue (overdue is \"False\") or overdue (overdue is \"True\") assignments are returned. If overdue is \"Any\" or if the overdue parameter is not supplied, all assignments are returned
+  'overdue': "Any", // String | Specifies if only the non-overdue (overdue is False) or overdue (overdue is True) assignments are returned. If overdue is Any or if the overdue parameter is not supplied, all assignments are returned
   'pageSize': 25, // Number | Page size
   'pageNumber': 1, // Number | Page number
-  'pass': "Any", // String | Specifies if only the failed (pass is \"False\") or passed (pass is \"True\") assignments (completed with assessment)are returned. If pass is \"Any\" or if the pass parameter is not supplied, all assignments are returned
+  'pass': "Any", // String | Specifies if only the failed (pass is False) or passed (pass is True) assignments (completed with assessment)are returned. If pass is Any or if the pass parameter is not supplied, all assignments are returned
   'minPercentageScore': 3.4, // Number | The minimum assessment score for an assignment (completed with assessment) to be included in the results (inclusive)
   'maxPercentageScore': 3.4, // Number | The maximum assessment score for an assignment (completed with assessment) to be included in the results (inclusive)
   'sortOrder': "Desc", // String | Specifies result set sort order; if not specified, default sort order is descending (Desc)
@@ -257,10 +251,10 @@ apiInstance.getLearningAssignments(opts)
  **moduleId** | **String** | Specifies the ID of the learning module. Fetch assignments for learning module ID | [optional]  |
  **interval** | **String** | Specifies the range of dueDates to be queried. Milliseconds will be truncated. A maximum of 1 year can be specified in the range. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss | [optional]  |
  **completionInterval** | **String** | Specifies the range of completion dates to be used for filtering. A maximum of 1 year can be specified in the range. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss | [optional]  |
- **overdue** | **String** | Specifies if only the non-overdue (overdue is \&quot;False\&quot;) or overdue (overdue is \&quot;True\&quot;) assignments are returned. If overdue is \&quot;Any\&quot; or if the overdue parameter is not supplied, all assignments are returned | [optional] [default to Any]<br />**Values**: True, False, Any |
+ **overdue** | **String** | Specifies if only the non-overdue (overdue is False) or overdue (overdue is True) assignments are returned. If overdue is Any or if the overdue parameter is not supplied, all assignments are returned | [optional] [default to Any]<br />**Values**: True, False, Any |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
- **pass** | **String** | Specifies if only the failed (pass is \&quot;False\&quot;) or passed (pass is \&quot;True\&quot;) assignments (completed with assessment)are returned. If pass is \&quot;Any\&quot; or if the pass parameter is not supplied, all assignments are returned | [optional] [default to Any]<br />**Values**: True, False, Any |
+ **pass** | **String** | Specifies if only the failed (pass is False) or passed (pass is True) assignments (completed with assessment)are returned. If pass is Any or if the pass parameter is not supplied, all assignments are returned | [optional] [default to Any]<br />**Values**: True, False, Any |
  **minPercentageScore** | **Number** | The minimum assessment score for an assignment (completed with assessment) to be included in the results (inclusive) | [optional]  |
  **maxPercentageScore** | **Number** | The maximum assessment score for an assignment (completed with assessment) to be included in the results (inclusive) | [optional]  |
  **sortOrder** | **String** | Specifies result set sort order; if not specified, default sort order is descending (Desc) | [optional] [default to Desc]<br />**Values**: Asc, Desc |
@@ -280,15 +274,11 @@ apiInstance.getLearningAssignments(opts)
 # LearningAssignmentsDomainEntity getLearningAssignmentsMe(opts)
 
 
-
 GET /api/v2/learning/assignments/me
 
 List of Learning Assignments assigned to current user
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -307,10 +297,10 @@ let opts = {
   'moduleId': "moduleId_example", // String | Specifies the ID of the learning module. Fetch assignments for learning module ID
   'interval': "interval_example", // String | Specifies the range of dueDates to be queried. Milliseconds will be truncated. A maximum of 1 year can be specified in the range. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
   'completionInterval': "completionInterval_example", // String | Specifies the range of completion dates to be used for filtering. A maximum of 1 year can be specified in the range. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
-  'overdue': "Any", // String | Specifies if only the non-overdue (overdue is \"False\") or overdue (overdue is \"True\") assignments are returned. If overdue is \"Any\" or if the overdue parameter is not supplied, all assignments are returned
+  'overdue': "Any", // String | Specifies if only the non-overdue (overdue is False) or overdue (overdue is True) assignments are returned. If overdue is Any or if the overdue parameter is not supplied, all assignments are returned
   'pageSize': 25, // Number | Page size
   'pageNumber': 1, // Number | Page number
-  'pass': "Any", // String | Specifies if only the failed (pass is \"False\") or passed (pass is \"True\") assignments (completed with assessment)are returned. If pass is \"Any\" or if the pass parameter is not supplied, all assignments are returned
+  'pass': "Any", // String | Specifies if only the failed (pass is False) or passed (pass is True) assignments (completed with assessment)are returned. If pass is Any or if the pass parameter is not supplied, all assignments are returned
   'minPercentageScore': 3.4, // Number | The minimum assessment score for an assignment (completed with assessment) to be included in the results (inclusive)
   'maxPercentageScore': 3.4, // Number | The maximum assessment score for an assignment (completed with assessment) to be included in the results (inclusive)
   'sortOrder': "Desc", // String | Specifies result set sort order; if not specified, default sort order is descending (Desc)
@@ -338,10 +328,10 @@ apiInstance.getLearningAssignmentsMe(opts)
  **moduleId** | **String** | Specifies the ID of the learning module. Fetch assignments for learning module ID | [optional]  |
  **interval** | **String** | Specifies the range of dueDates to be queried. Milliseconds will be truncated. A maximum of 1 year can be specified in the range. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss | [optional]  |
  **completionInterval** | **String** | Specifies the range of completion dates to be used for filtering. A maximum of 1 year can be specified in the range. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss | [optional]  |
- **overdue** | **String** | Specifies if only the non-overdue (overdue is \&quot;False\&quot;) or overdue (overdue is \&quot;True\&quot;) assignments are returned. If overdue is \&quot;Any\&quot; or if the overdue parameter is not supplied, all assignments are returned | [optional] [default to Any]<br />**Values**: True, False, Any |
+ **overdue** | **String** | Specifies if only the non-overdue (overdue is False) or overdue (overdue is True) assignments are returned. If overdue is Any or if the overdue parameter is not supplied, all assignments are returned | [optional] [default to Any]<br />**Values**: True, False, Any |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
- **pass** | **String** | Specifies if only the failed (pass is \&quot;False\&quot;) or passed (pass is \&quot;True\&quot;) assignments (completed with assessment)are returned. If pass is \&quot;Any\&quot; or if the pass parameter is not supplied, all assignments are returned | [optional] [default to Any]<br />**Values**: True, False, Any |
+ **pass** | **String** | Specifies if only the failed (pass is False) or passed (pass is True) assignments (completed with assessment)are returned. If pass is Any or if the pass parameter is not supplied, all assignments are returned | [optional] [default to Any]<br />**Values**: True, False, Any |
  **minPercentageScore** | **Number** | The minimum assessment score for an assignment (completed with assessment) to be included in the results (inclusive) | [optional]  |
  **maxPercentageScore** | **Number** | The maximum assessment score for an assignment (completed with assessment) to be included in the results (inclusive) | [optional]  |
  **sortOrder** | **String** | Specifies result set sort order; if not specified, default sort order is descending (Desc) | [optional] [default to Desc]<br />**Values**: Asc, Desc |
@@ -360,14 +350,11 @@ apiInstance.getLearningAssignmentsMe(opts)
 # LearningModule getLearningModule(moduleId, opts)
 
 
-
 GET /api/v2/learning/modules/{moduleId}
 
 Get a learning module
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * learning:module:view
 
@@ -417,14 +404,11 @@ apiInstance.getLearningModule(moduleId, opts)
 # LearningModuleRule getLearningModuleRule(moduleId)
 
 
-
 GET /api/v2/learning/modules/{moduleId}/rule
 
 Get a learning module rule
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * learning:rule:view
 
@@ -470,14 +454,11 @@ apiInstance.getLearningModuleRule(moduleId)
 # LearningModule getLearningModuleVersion(moduleId, versionId, opts)
 
 
-
 GET /api/v2/learning/modules/{moduleId}/versions/{versionId}
 
 Get specific version of a published module
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * learning:module:view
 
@@ -529,14 +510,11 @@ apiInstance.getLearningModuleVersion(moduleId, versionId, opts)
 # LearningModulesDomainEntityListing getLearningModules(opts)
 
 
-
 GET /api/v2/learning/modules
 
 Get all learning modules of an organization
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * learning:module:view
 
@@ -562,7 +540,7 @@ let opts = {
   'sortBy': "name", // String | Sort by
   'searchTerm': "searchTerm_example", // String | Search Term (searchable by name)
   'expand': ["expand_example"], // [String] | Fields to expand in response(case insensitive)
-  'isPublished': "Any" // String | Specifies if only the Unpublished (isPublished is \"False\") or Published (isPublished is \"True\") modules are returned. If isPublished is \"Any\" or omitted, both types are returned
+  'isPublished': "Any" // String | Specifies if only the Unpublished (isPublished is False) or Published (isPublished is True) modules are returned. If isPublished is Any or omitted, both types are returned
 };
 
 apiInstance.getLearningModules(opts)
@@ -588,7 +566,7 @@ apiInstance.getLearningModules(opts)
  **sortBy** | **String** | Sort by | [optional] [default to name]<br />**Values**: name |
  **searchTerm** | **String** | Search Term (searchable by name) | [optional]  |
  **expand** | **[String]** | Fields to expand in response(case insensitive) | [optional] <br />**Values**: rule, summaryData |
- **isPublished** | **String** | Specifies if only the Unpublished (isPublished is \&quot;False\&quot;) or Published (isPublished is \&quot;True\&quot;) modules are returned. If isPublished is \&quot;Any\&quot; or omitted, both types are returned | [optional] [default to Any]<br />**Values**: True, False, Any |
+ **isPublished** | **String** | Specifies if only the Unpublished (isPublished is False) or Published (isPublished is True) modules are returned. If isPublished is Any or omitted, both types are returned | [optional] [default to Any]<br />**Values**: True, False, Any |
 {: class="table table-striped"}
 
 ### Return type
@@ -600,15 +578,11 @@ apiInstance.getLearningModules(opts)
 # LearningAssignment patchLearningAssignment(assignmentId, opts)
 
 
-
 PATCH /api/v2/learning/assignments/{assignmentId}
 
 Update Learning Assignment
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -656,14 +630,11 @@ apiInstance.patchLearningAssignment(assignmentId, opts)
 # AssessmentScoringSet postLearningAssessmentsScoring(body)
 
 
-
 POST /api/v2/learning/assessments/scoring
 
 Score learning assessment for preview
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * learning:module:view
 * learning:module:add
@@ -711,14 +682,11 @@ apiInstance.postLearningAssessmentsScoring(body)
 # LearningAssignment postLearningAssignments(opts)
 
 
-
 POST /api/v2/learning/assignments
 
 Create Learning Assignment
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * learning:assignment:add
 
@@ -766,14 +734,11 @@ apiInstance.postLearningAssignments(opts)
 # LearningAssignmentAggregateResponse postLearningAssignmentsAggregatesQuery(body)
 
 
-
 POST /api/v2/learning/assignments/aggregates/query
 
 Retrieve aggregated assignment data
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * learning:assignment:view
 
@@ -819,14 +784,11 @@ apiInstance.postLearningAssignmentsAggregatesQuery(body)
 # LearningAssignmentBulkAddResponse postLearningAssignmentsBulkadd(opts)
 
 
-
 POST /api/v2/learning/assignments/bulkadd
 
 Add multiple learning assignments
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * learning:assignment:add
 
@@ -874,14 +836,11 @@ apiInstance.postLearningAssignmentsBulkadd(opts)
 # LearningAssignmentBulkRemoveResponse postLearningAssignmentsBulkremove(opts)
 
 
-
 POST /api/v2/learning/assignments/bulkremove
 
 Remove multiple Learning Assignments
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * learning:assignment:delete
 
@@ -899,7 +858,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.LearningApi();
 
 let opts = { 
-  'body': [{}] // Object | The IDs of the learning assignments to be removed
+  'body': ["body_example"] // [String] | The IDs of the learning assignments to be removed
 };
 
 apiInstance.postLearningAssignmentsBulkremove(opts)
@@ -917,7 +876,7 @@ apiInstance.postLearningAssignmentsBulkremove(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **Object** | The IDs of the learning assignments to be removed | [optional]  |
+ **body** | **[String]** | The IDs of the learning assignments to be removed | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -929,14 +888,11 @@ apiInstance.postLearningAssignmentsBulkremove(opts)
 # LearningModulePublishResponse postLearningModulePublish(moduleId)
 
 
-
 POST /api/v2/learning/modules/{moduleId}/publish
 
 Publish a Learning module
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * learning:module:publish
 
@@ -982,14 +938,13 @@ apiInstance.postLearningModulePublish(moduleId)
 # LearningModule postLearningModules(body)
 
 
-
 POST /api/v2/learning/modules
 
 Create a new learning module
 
 This will create a new unpublished learning module with the specified fields.
 
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * learning:module:add
 
@@ -1035,14 +990,13 @@ apiInstance.postLearningModules(body)
 # LearningAssignmentUserListing postLearningRulesQuery(pageSize, pageNumber, body)
 
 
-
 POST /api/v2/learning/rules/query
 
 Get users for learning module rule
 
 This will get the users who matches the given rule.
 
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * learning:rule:view
 
@@ -1092,14 +1046,13 @@ apiInstance.postLearningRulesQuery(pageSize, pageNumber, body)
 # LearningModule putLearningModule(moduleId, body)
 
 
-
 PUT /api/v2/learning/modules/{moduleId}
 
 Update a learning module
 
 This will update the name, description, completion time in days and inform steps for a learning module
 
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * learning:module:edit
 
@@ -1147,14 +1100,13 @@ apiInstance.putLearningModule(moduleId, body)
 # LearningModuleRule putLearningModuleRule(moduleId, body)
 
 
-
 PUT /api/v2/learning/modules/{moduleId}/rule
 
 Update a learning module rule
 
 This will update a learning module rule with the specified fields.
 
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * learning:rule:edit
 

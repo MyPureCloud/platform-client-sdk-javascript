@@ -39,7 +39,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getWorkforcemanagementBusinessunitWeekSchedule**](WorkforceManagementApi.html#getWorkforcemanagementBusinessunitWeekSchedule) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId} | Get the metadata for the schedule, describing which management units and agents are in the scheduleSchedule data can then be loaded with the query route
 [**getWorkforcemanagementBusinessunitWeekScheduleGenerationresults**](WorkforceManagementApi.html#getWorkforcemanagementBusinessunitWeekScheduleGenerationresults) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/generationresults | Get the generation results for a generated schedule
 [**getWorkforcemanagementBusinessunitWeekScheduleHeadcountforecast**](WorkforceManagementApi.html#getWorkforcemanagementBusinessunitWeekScheduleHeadcountforecast) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/headcountforecast | Get the headcount forecast by planning group for the schedule
-[**getWorkforcemanagementBusinessunitWeekScheduleHistoryAgent**](WorkforceManagementApi.html#getWorkforcemanagementBusinessunitWeekScheduleHistoryAgent) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/history/agents/{agentId} | Loads agent&#39;s schedule history.
+[**getWorkforcemanagementBusinessunitWeekScheduleHistoryAgent**](WorkforceManagementApi.html#getWorkforcemanagementBusinessunitWeekScheduleHistoryAgent) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/history/agents/{agentId} | Loads agent's schedule history.
 [**getWorkforcemanagementBusinessunitWeekSchedules**](WorkforceManagementApi.html#getWorkforcemanagementBusinessunitWeekSchedules) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules | Get the list of week schedules for the specified week
 [**getWorkforcemanagementBusinessunitWeekShorttermforecast**](WorkforceManagementApi.html#getWorkforcemanagementBusinessunitWeekShorttermforecast) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId} | Get a short term forecast
 [**getWorkforcemanagementBusinessunitWeekShorttermforecastData**](WorkforceManagementApi.html#getWorkforcemanagementBusinessunitWeekShorttermforecastData) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}/data | Get the result of a short term forecast calculation
@@ -152,14 +152,13 @@ All URIs are relative to *https://api.mypurecloud.com*
 # void deleteWorkforcemanagementBusinessunit(businessUnitId)
 
 
-
 DELETE /api/v2/workforcemanagement/businessunits/{businessUnitId}
 
 Delete business unit
 
 A business unit cannot be deleted if it contains one or more management units
 
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * wfm:businessUnit:delete
 
@@ -193,7 +192,7 @@ apiInstance.deleteWorkforcemanagementBusinessunit(businessUnitId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **businessUnitId** | **String** | The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user. |  |
+ **businessUnitId** | **String** | The ID of the business unit, or 'mine' for the business unit of the logged-in user. |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -205,14 +204,11 @@ void (no response body)
 # void deleteWorkforcemanagementBusinessunitActivitycode(businessUnitId, activityCodeId)
 
 
-
 DELETE /api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes/{activityCodeId}
 
 Deletes an activity code
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * wfm:activityCode:delete
 
@@ -247,7 +243,7 @@ apiInstance.deleteWorkforcemanagementBusinessunitActivitycode(businessUnitId, ac
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **businessUnitId** | **String** | The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user. |  |
+ **businessUnitId** | **String** | The ID of the business unit, or 'mine' for the business unit of the logged-in user. |  |
  **activityCodeId** | **String** | The ID of the activity code to delete |  |
 {: class="table table-striped"}
 
@@ -260,14 +256,11 @@ void (no response body)
 # void deleteWorkforcemanagementBusinessunitPlanninggroup(businessUnitId, planningGroupId)
 
 
-
 DELETE /api/v2/workforcemanagement/businessunits/{businessUnitId}/planninggroups/{planningGroupId}
 
 Deletes the planning group
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * wfm:planningGroup:delete
 
@@ -315,14 +308,11 @@ void (no response body)
 # void deleteWorkforcemanagementBusinessunitSchedulingRun(businessUnitId, runId)
 
 
-
 DELETE /api/v2/workforcemanagement/businessunits/{businessUnitId}/scheduling/runs/{runId}
 
 Cancel a scheduling run
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * wfm:schedule:generate
 
@@ -370,14 +360,11 @@ void (no response body)
 # void deleteWorkforcemanagementBusinessunitServicegoaltemplate(businessUnitId, serviceGoalTemplateId)
 
 
-
 DELETE /api/v2/workforcemanagement/businessunits/{businessUnitId}/servicegoaltemplates/{serviceGoalTemplateId}
 
 Delete a service goal template
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * wfm:serviceGoalTemplate:delete
 
@@ -425,14 +412,11 @@ void (no response body)
 # BuAsyncScheduleResponse deleteWorkforcemanagementBusinessunitWeekSchedule(businessUnitId, weekId, scheduleId)
 
 
-
 DELETE /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}
 
 Delete a schedule
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * wfm:schedule:delete
 
@@ -450,7 +434,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
-let weekId = "2013-10-20"; // String | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+let weekId = "weekId_example"; // String | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 let scheduleId = "scheduleId_example"; // String | The ID of the schedule
 
 apiInstance.deleteWorkforcemanagementBusinessunitWeekSchedule(businessUnitId, weekId, scheduleId)
@@ -482,14 +466,13 @@ apiInstance.deleteWorkforcemanagementBusinessunitWeekSchedule(businessUnitId, we
 # void deleteWorkforcemanagementBusinessunitWeekShorttermforecast(businessUnitId, weekDateId, forecastId)
 
 
-
 DELETE /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}
 
 Delete a short term forecast
 
 Must not be tied to any schedules
 
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * wfm:shortTermForecast:delete
 
@@ -507,7 +490,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit to which the forecast belongs
-let weekDateId = "2013-10-20"; // String | The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+let weekDateId = "weekDateId_example"; // String | The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 let forecastId = "forecastId_example"; // String | The ID of the forecast
 
 apiInstance.deleteWorkforcemanagementBusinessunitWeekShorttermforecast(businessUnitId, weekDateId, forecastId)
@@ -539,14 +522,11 @@ void (no response body)
 # void deleteWorkforcemanagementCalendarUrlIcs()
 
 
-
 DELETE /api/v2/workforcemanagement/calendar/url/ics
 
 Disable generated calendar link for the current user
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * wfm:agentSchedule:sync
 
@@ -587,14 +567,11 @@ void (no response body)
 # void deleteWorkforcemanagementManagementunit(managementUnitId)
 
 
-
 DELETE /api/v2/workforcemanagement/managementunits/{managementUnitId}
 
 Delete management unit
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * wfm:managementUnit:delete
 
@@ -628,7 +605,7 @@ apiInstance.deleteWorkforcemanagementManagementunit(managementUnitId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **managementUnitId** | **String** | The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+ **managementUnitId** | **String** | The ID of the management unit, or 'mine' for the management unit of the logged-in user. |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -640,14 +617,11 @@ void (no response body)
 # void deleteWorkforcemanagementManagementunitTimeofflimit(managementUnitId, timeOffLimitId)
 
 
-
 DELETE /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits/{timeOffLimitId}
 
 Deletes a time off limit object
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * wfm:timeOffLimit:delete
 
@@ -695,14 +669,11 @@ void (no response body)
 # void deleteWorkforcemanagementManagementunitTimeoffplan(managementUnitId, timeOffPlanId)
 
 
-
 DELETE /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffplans/{timeOffPlanId}
 
 Deletes a time off plan
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * wfm:timeOffPlan:delete
 
@@ -750,14 +721,11 @@ void (no response body)
 # void deleteWorkforcemanagementManagementunitWorkplan(managementUnitId, workPlanId)
 
 
-
 DELETE /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans/{workPlanId}
 
 Delete a work plan
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * wfm:workPlan:delete
 
@@ -792,7 +760,7 @@ apiInstance.deleteWorkforcemanagementManagementunitWorkplan(managementUnitId, wo
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **managementUnitId** | **String** | The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+ **managementUnitId** | **String** | The ID of the management unit, or 'mine' for the management unit of the logged-in user. |  |
  **workPlanId** | **String** | The ID of the work plan to delete |  |
 {: class="table table-striped"}
 
@@ -805,14 +773,11 @@ void (no response body)
 # void deleteWorkforcemanagementManagementunitWorkplanrotation(managementUnitId, workPlanRotationId)
 
 
-
 DELETE /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplanrotations/{workPlanRotationId}
 
 Delete a work plan rotation
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * wfm:workPlanRotation:delete
 
@@ -847,7 +812,7 @@ apiInstance.deleteWorkforcemanagementManagementunitWorkplanrotation(managementUn
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **managementUnitId** | **String** | The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+ **managementUnitId** | **String** | The ID of the management unit, or 'mine' for the management unit of the logged-in user. |  |
  **workPlanRotationId** | **String** | The ID of the work plan rotation to be deleted |  |
 {: class="table table-striped"}
 
@@ -860,14 +825,11 @@ void (no response body)
 # [UserScheduleAdherence] getWorkforcemanagementAdherence(userId)
 
 
-
 GET /api/v2/workforcemanagement/adherence
 
 Get a list of UserScheduleAdherence records for the requested users
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * wfm:realtimeAdherence:view
 
@@ -913,14 +875,11 @@ apiInstance.getWorkforcemanagementAdherence(userId)
 # ModelingStatusResponse getWorkforcemanagementAdhocmodelingjob(jobId)
 
 
-
 GET /api/v2/workforcemanagement/adhocmodelingjobs/{jobId}
 
 Get status of the modeling job
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * wfm:adhocModel:view
 
@@ -966,14 +925,11 @@ apiInstance.getWorkforcemanagementAdhocmodelingjob(jobId)
 # AgentManagementUnitReference getWorkforcemanagementAgentManagementunit(agentId)
 
 
-
 GET /api/v2/workforcemanagement/agents/{agentId}/managementunit
 
 Get the management unit to which the agent belongs
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * wfm:agent:view
 * wfm:publishedSchedule:view
@@ -1023,14 +979,11 @@ apiInstance.getWorkforcemanagementAgentManagementunit(agentId)
 # AgentManagementUnitReference getWorkforcemanagementAgentsMeManagementunit()
 
 
-
 GET /api/v2/workforcemanagement/agents/me/managementunit
 
 Get the management unit to which the currently logged in agent belongs
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * wfm:agentSchedule:view
 * wfm:agentTimeOffRequest:submit
@@ -1128,14 +1081,13 @@ This endpoint does not need any parameter.
 # BusinessUnit getWorkforcemanagementBusinessunit(businessUnitId, opts)
 
 
-
 GET /api/v2/workforcemanagement/businessunits/{businessUnitId}
 
 Get business unit
 
-Expanding \&quot;settings\&quot; will retrieve all settings.  All other expands will retrieve only the requested settings field(s).
+Expanding "settings" will retrieve all settings.  All other expands will retrieve only the requested settings field(s).
 
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * wfm:activityCode:add
 * wfm:activityCode:delete
@@ -1235,7 +1187,7 @@ apiInstance.getWorkforcemanagementBusinessunit(businessUnitId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **businessUnitId** | **String** | The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user. |  |
+ **businessUnitId** | **String** | The ID of the business unit, or 'mine' for the business unit of the logged-in user. |  |
  **expand** | **[String]** |  | [optional] <br />**Values**: settings, settings.timeZone, settings.startDayOfWeek, settings.shortTermForecasting, settings.scheduling |
 {: class="table table-striped"}
 
@@ -1248,14 +1200,11 @@ apiInstance.getWorkforcemanagementBusinessunit(businessUnitId, opts)
 # BusinessUnitActivityCode getWorkforcemanagementBusinessunitActivitycode(businessUnitId, activityCodeId)
 
 
-
 GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes/{activityCodeId}
 
 Get an activity code
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * wfm:activityCode:view
 
@@ -1290,7 +1239,7 @@ apiInstance.getWorkforcemanagementBusinessunitActivitycode(businessUnitId, activ
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **businessUnitId** | **String** | The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user. |  |
+ **businessUnitId** | **String** | The ID of the business unit, or 'mine' for the business unit of the logged-in user. |  |
  **activityCodeId** | **String** | The ID of the activity code to fetch |  |
 {: class="table table-striped"}
 
@@ -1303,14 +1252,11 @@ apiInstance.getWorkforcemanagementBusinessunitActivitycode(businessUnitId, activ
 # BusinessUnitActivityCodeListing getWorkforcemanagementBusinessunitActivitycodes(businessUnitId)
 
 
-
 GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes
 
 Get activity codes
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * wfm:agentSchedule:view
 * wfm:agentTimeOffRequest:submit
@@ -1401,7 +1347,7 @@ apiInstance.getWorkforcemanagementBusinessunitActivitycodes(businessUnitId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **businessUnitId** | **String** | The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user. |  |
+ **businessUnitId** | **String** | The ID of the business unit, or 'mine' for the business unit of the logged-in user. |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1413,14 +1359,11 @@ apiInstance.getWorkforcemanagementBusinessunitActivitycodes(businessUnitId)
 # WfmIntradayPlanningGroupListing getWorkforcemanagementBusinessunitIntradayPlanninggroups(businessUnitId, _date)
 
 
-
 GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/intraday/planninggroups
 
 Get intraday planning groups for the given date
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * wfm:intraday:view
 
@@ -1438,7 +1381,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
-let _date = "2013-10-20"; // String | yyyy-MM-dd date string interpreted in the configured business unit time zone. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+let _date = "_date_example"; // String | yyyy-MM-dd date string interpreted in the configured business unit time zone. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 
 apiInstance.getWorkforcemanagementBusinessunitIntradayPlanninggroups(businessUnitId, _date)
   .then((data) => {
@@ -1468,15 +1411,11 @@ apiInstance.getWorkforcemanagementBusinessunitIntradayPlanninggroups(businessUni
 # ManagementUnitListing getWorkforcemanagementBusinessunitManagementunits(businessUnitId, opts)
 
 
-
 GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/managementunits
 
 Get all authorized management units in the business unit
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -1512,7 +1451,7 @@ apiInstance.getWorkforcemanagementBusinessunitManagementunits(businessUnitId, op
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **businessUnitId** | **String** | The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user. |  |
+ **businessUnitId** | **String** | The ID of the business unit, or 'mine' for the business unit of the logged-in user. |  |
  **feature** | **String** |  | [optional] <br />**Values**: AgentSchedule, AgentTimeOffRequest, Coaching, CoachingDivisioned, ActivityCodes, Agents, BuActivityCodes, BusinessUnits, HistoricalAdherence, HistoricalShrinkage, IntradayMonitoring, BuIntradayMonitoring, ManagementUnits, RealTimeAdherence, Schedules, BuSchedules, ServiceGoalTemplates, PlanningGroups, ShiftTrading, ShortTermForecasts, BuShortTermForecasts, TimeOffPlans, TimeOffRequests, TimeOffLimits, WorkPlanRotations, WorkPlans |
  **divisionId** | **String** |  | [optional]  |
 {: class="table table-striped"}
@@ -1526,14 +1465,11 @@ apiInstance.getWorkforcemanagementBusinessunitManagementunits(businessUnitId, op
 # PlanningGroup getWorkforcemanagementBusinessunitPlanninggroup(businessUnitId, planningGroupId)
 
 
-
 GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/planninggroups/{planningGroupId}
 
 Get a planning group
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * wfm:planningGroup:view
 
@@ -1581,14 +1517,11 @@ apiInstance.getWorkforcemanagementBusinessunitPlanninggroup(businessUnitId, plan
 # PlanningGroupList getWorkforcemanagementBusinessunitPlanninggroups(businessUnitId)
 
 
-
 GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/planninggroups
 
 Gets list of planning groups
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * wfm:planningGroup:view
 * wfm:shortTermForecast:view
@@ -1639,14 +1572,11 @@ apiInstance.getWorkforcemanagementBusinessunitPlanninggroups(businessUnitId)
 # BuScheduleRun getWorkforcemanagementBusinessunitSchedulingRun(businessUnitId, runId)
 
 
-
 GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/scheduling/runs/{runId}
 
 Get a scheduling run
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * wfm:schedule:generate
 * wfm:schedule:edit
@@ -1695,14 +1625,11 @@ apiInstance.getWorkforcemanagementBusinessunitSchedulingRun(businessUnitId, runI
 # BuRescheduleResult getWorkforcemanagementBusinessunitSchedulingRunResult(businessUnitId, runId, managementUnitIds, expand)
 
 
-
 GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/scheduling/runs/{runId}/result
 
 Get the result of a rescheduling operation
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * wfm:schedule:edit
 * wfm:schedule:generate
@@ -1755,14 +1682,11 @@ apiInstance.getWorkforcemanagementBusinessunitSchedulingRunResult(businessUnitId
 # BuScheduleRunListing getWorkforcemanagementBusinessunitSchedulingRuns(businessUnitId)
 
 
-
 GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/scheduling/runs
 
 Get the list of scheduling runs
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * wfm:schedule:generate
 * wfm:schedule:edit
@@ -1809,14 +1733,11 @@ apiInstance.getWorkforcemanagementBusinessunitSchedulingRuns(businessUnitId)
 # ServiceGoalTemplate getWorkforcemanagementBusinessunitServicegoaltemplate(businessUnitId, serviceGoalTemplateId)
 
 
-
 GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/servicegoaltemplates/{serviceGoalTemplateId}
 
 Get a service goal template
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * wfm:serviceGoalTemplate:view
 
@@ -1864,14 +1785,11 @@ apiInstance.getWorkforcemanagementBusinessunitServicegoaltemplate(businessUnitId
 # ServiceGoalTemplateList getWorkforcemanagementBusinessunitServicegoaltemplates(businessUnitId)
 
 
-
 GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/servicegoaltemplates
 
 Gets list of service goal templates
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * wfm:serviceGoalTemplate:view
 * wfm:planningGroup:view
@@ -1919,14 +1837,11 @@ apiInstance.getWorkforcemanagementBusinessunitServicegoaltemplates(businessUnitI
 # BuScheduleMetadata getWorkforcemanagementBusinessunitWeekSchedule(businessUnitId, weekId, scheduleId, opts)
 
 
-
 GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}
 
 Get the metadata for the schedule, describing which management units and agents are in the scheduleSchedule data can then be loaded with the query route
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * wfm:schedule:view
 * wfm:publishedSchedule:view
@@ -1945,7 +1860,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
-let weekId = "2013-10-20"; // String | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+let weekId = "weekId_example"; // String | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 let scheduleId = "scheduleId_example"; // String | The ID of the schedule
 let opts = { 
   'expand': "expand_example" // String | expand
@@ -1981,14 +1896,11 @@ apiInstance.getWorkforcemanagementBusinessunitWeekSchedule(businessUnitId, weekI
 # ScheduleGenerationResult getWorkforcemanagementBusinessunitWeekScheduleGenerationresults(businessUnitId, weekId, scheduleId)
 
 
-
 GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/generationresults
 
 Get the generation results for a generated schedule
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * wfm:schedule:view
 * wfm:publishedSchedule:view
@@ -2007,7 +1919,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
-let weekId = "2013-10-20"; // String | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+let weekId = "weekId_example"; // String | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 let scheduleId = "scheduleId_example"; // String | The ID of the schedule
 
 apiInstance.getWorkforcemanagementBusinessunitWeekScheduleGenerationresults(businessUnitId, weekId, scheduleId)
@@ -2039,14 +1951,11 @@ apiInstance.getWorkforcemanagementBusinessunitWeekScheduleGenerationresults(busi
 # BuHeadcountForecastResponse getWorkforcemanagementBusinessunitWeekScheduleHeadcountforecast(businessUnitId, weekId, scheduleId, opts)
 
 
-
 GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/headcountforecast
 
 Get the headcount forecast by planning group for the schedule
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * wfm:schedule:view
 * wfm:publishedSchedule:view
@@ -2065,7 +1974,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
-let weekId = "2013-10-20"; // String | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+let weekId = "weekId_example"; // String | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 let scheduleId = "scheduleId_example"; // String | The ID of the schedule
 let opts = { 
   'forceDownload': true // Boolean | Whether to force the result to come via download url.  For testing purposes only
@@ -2101,14 +2010,11 @@ apiInstance.getWorkforcemanagementBusinessunitWeekScheduleHeadcountforecast(busi
 # BuAgentScheduleHistoryResponse getWorkforcemanagementBusinessunitWeekScheduleHistoryAgent(businessUnitId, weekId, scheduleId, agentId)
 
 
-
 GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/history/agents/{agentId}
 
-Loads agent&#39;s schedule history.
+Loads agent's schedule history.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * wfm:schedule:view
 * wfm:publishedSchedule:view
@@ -2127,7 +2033,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
-let weekId = "2013-10-20"; // String | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+let weekId = "weekId_example"; // String | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 let scheduleId = "scheduleId_example"; // String | The ID of the schedule
 let agentId = "agentId_example"; // String | THe ID of the agent
 
@@ -2161,14 +2067,13 @@ apiInstance.getWorkforcemanagementBusinessunitWeekScheduleHistoryAgent(businessU
 # BuScheduleListing getWorkforcemanagementBusinessunitWeekSchedules(businessUnitId, weekId, opts)
 
 
-
 GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules
 
 Get the list of week schedules for the specified week
 
-Use \&quot;recent\&quot; (without quotes) for the `weekId` path parameter to fetch all forecasts for +/- 26 weeks from the current date. Response will include any schedule which spans the specified week
+Use "recent" (without quotes) for the `weekId` path parameter to fetch all forecasts for +/- 26 weeks from the current date. Response will include any schedule which spans the specified week
 
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * wfm:schedule:view
 * wfm:publishedSchedule:view
@@ -2209,7 +2114,7 @@ apiInstance.getWorkforcemanagementBusinessunitWeekSchedules(businessUnitId, week
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **businessUnitId** | **String** | The ID of the business unit |  |
- **weekId** | **String** | First day of schedule week in yyyy-MM-dd format, or &#39;recent&#39; (without quotes) to get recent schedules |  |
+ **weekId** | **String** | First day of schedule week in yyyy-MM-dd format, or 'recent' (without quotes) to get recent schedules |  |
  **includeOnlyPublished** | **Boolean** | includeOnlyPublished | [optional]  |
  **expand** | **String** | expand | [optional] <br />**Values**: forecast.description |
 {: class="table table-striped"}
@@ -2223,14 +2128,11 @@ apiInstance.getWorkforcemanagementBusinessunitWeekSchedules(businessUnitId, week
 # BuShortTermForecast getWorkforcemanagementBusinessunitWeekShorttermforecast(businessUnitId, weekDateId, forecastId, opts)
 
 
-
 GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}
 
 Get a short term forecast
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * wfm:shortTermForecast:view
 
@@ -2248,7 +2150,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit to which the forecast belongs
-let weekDateId = "2013-10-20"; // String | The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+let weekDateId = "weekDateId_example"; // String | The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 let forecastId = "forecastId_example"; // String | The ID of the forecast
 let opts = { 
   'expand': ["expand_example"] // [String] | 
@@ -2284,14 +2186,13 @@ apiInstance.getWorkforcemanagementBusinessunitWeekShorttermforecast(businessUnit
 # BuForecastResultResponse getWorkforcemanagementBusinessunitWeekShorttermforecastData(businessUnitId, weekDateId, forecastId, opts)
 
 
-
 GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}/data
 
 Get the result of a short term forecast calculation
 
 Includes modifications unless you pass the doNotApplyModifications query parameter
 
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * wfm:shortTermForecast:view
 
@@ -2309,10 +2210,10 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit to which the forecast belongs
-let weekDateId = "2013-10-20"; // String | The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+let weekDateId = "weekDateId_example"; // String | The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 let forecastId = "forecastId_example"; // String | The ID of the forecast
 let opts = { 
-  'weekNumber': 56, // Number | The week number to fetch (for multi-week forecasts)
+  'weekNumber': 3.4, // Number | The week number to fetch (for multi-week forecasts)
   'forceDownloadService': true // Boolean | Force the result of this operation to be sent via download service.  For testing/app development purposes
 };
 
@@ -2347,14 +2248,11 @@ apiInstance.getWorkforcemanagementBusinessunitWeekShorttermforecastData(business
 # BuForecastGenerationResult getWorkforcemanagementBusinessunitWeekShorttermforecastGenerationresults(businessUnitId, weekDateId, forecastId)
 
 
-
 GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}/generationresults
 
 Gets the forecast generation results
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * wfm:shortTermForecast:view
 
@@ -2372,7 +2270,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit to which the forecast belongs
-let weekDateId = "2013-10-20"; // String | The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+let weekDateId = "weekDateId_example"; // String | The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 let forecastId = "forecastId_example"; // String | The ID of the forecast
 
 apiInstance.getWorkforcemanagementBusinessunitWeekShorttermforecastGenerationresults(businessUnitId, weekDateId, forecastId)
@@ -2404,14 +2302,13 @@ apiInstance.getWorkforcemanagementBusinessunitWeekShorttermforecastGenerationres
 # LongTermForecastResultResponse getWorkforcemanagementBusinessunitWeekShorttermforecastLongtermforecastdata(businessUnitId, weekDateId, forecastId, opts)
 
 
-
 GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}/longtermforecastdata
 
 Get the result of a long term forecast calculation
 
 Includes modifications unless you pass the doNotApplyModifications query parameter
 
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * wfm:shortTermForecast:view
 
@@ -2429,7 +2326,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit to which the forecast belongs
-let weekDateId = "2013-10-20"; // String | The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+let weekDateId = "weekDateId_example"; // String | The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 let forecastId = "forecastId_example"; // String | The ID of the forecast
 let opts = { 
   'forceDownloadService': true // Boolean | Force the result of this operation to be sent via download service.  For testing/app development purposes
@@ -2465,14 +2362,11 @@ apiInstance.getWorkforcemanagementBusinessunitWeekShorttermforecastLongtermforec
 # ForecastPlanningGroupsResponse getWorkforcemanagementBusinessunitWeekShorttermforecastPlanninggroups(businessUnitId, weekDateId, forecastId)
 
 
-
 GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}/planninggroups
 
 Gets the forecast planning group snapshot
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * wfm:shortTermForecast:view
 * wfm:schedule:view
@@ -2492,7 +2386,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit to which the forecast belongs
-let weekDateId = "2013-10-20"; // String | The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+let weekDateId = "weekDateId_example"; // String | The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 let forecastId = "forecastId_example"; // String | The ID of the forecast
 
 apiInstance.getWorkforcemanagementBusinessunitWeekShorttermforecastPlanninggroups(businessUnitId, weekDateId, forecastId)
@@ -2524,14 +2418,13 @@ apiInstance.getWorkforcemanagementBusinessunitWeekShorttermforecastPlanninggroup
 # BuShortTermForecastListing getWorkforcemanagementBusinessunitWeekShorttermforecasts(businessUnitId, weekDateId)
 
 
-
 GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts
 
 Get short term forecasts
 
-Use \&quot;recent\&quot; (without quotes) for the `weekDateId` path parameter to fetch all forecasts for +/- 26 weeks from the current date. Response will include any forecast which spans the specified week
+Use "recent" (without quotes) for the `weekDateId` path parameter to fetch all forecasts for +/- 26 weeks from the current date. Response will include any forecast which spans the specified week
 
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * wfm:schedule:generate
 * wfm:shortTermForecast:view
@@ -2568,7 +2461,7 @@ apiInstance.getWorkforcemanagementBusinessunitWeekShorttermforecasts(businessUni
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **businessUnitId** | **String** | The ID of the business unit to which the forecast belongs |  |
- **weekDateId** | **String** | The week start date of the forecast in yyyy-MM-dd format or &#39;recent&#39; (without quotes) to fetch recent forecasts |  |
+ **weekDateId** | **String** | The week start date of the forecast in yyyy-MM-dd format or 'recent' (without quotes) to fetch recent forecasts |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2580,15 +2473,11 @@ apiInstance.getWorkforcemanagementBusinessunitWeekShorttermforecasts(businessUni
 # BusinessUnitListing getWorkforcemanagementBusinessunits(opts)
 
 
-
 GET /api/v2/workforcemanagement/businessunits
 
 Get business units
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -2636,14 +2525,11 @@ apiInstance.getWorkforcemanagementBusinessunits(opts)
 # BusinessUnitListing getWorkforcemanagementBusinessunitsDivisionviews(opts)
 
 
-
 GET /api/v2/workforcemanagement/businessunits/divisionviews
 
 Get business units across divisions
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * wfm:businessUnit:search
 
@@ -2691,15 +2577,11 @@ apiInstance.getWorkforcemanagementBusinessunitsDivisionviews(opts)
 # **&#39;String&#39;** getWorkforcemanagementCalendarDataIcs(calendarId)
 
 
-
 GET /api/v2/workforcemanagement/calendar/data/ics
 
 Get ics formatted calendar based on shareable link
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -2740,14 +2622,11 @@ apiInstance.getWorkforcemanagementCalendarDataIcs(calendarId)
 # CalendarUrlResponse getWorkforcemanagementCalendarUrlIcs()
 
 
-
 GET /api/v2/workforcemanagement/calendar/url/ics
 
 Get existing calendar link for the current user
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * wfm:agentSchedule:sync
 * wfm:agentSchedule:view
@@ -2789,14 +2668,11 @@ This endpoint does not need any parameter.
 # HistoricalImportDeleteJobResponse getWorkforcemanagementHistoricaldataDeletejob()
 
 
-
 GET /api/v2/workforcemanagement/historicaldata/deletejob
 
 Retrieves delete job status for historical data imports of the organization
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * wfm:historicalData:upload
 
@@ -2837,14 +2713,11 @@ This endpoint does not need any parameter.
 # HistoricalImportStatusListing getWorkforcemanagementHistoricaldataImportstatus()
 
 
-
 GET /api/v2/workforcemanagement/historicaldata/importstatus
 
 Retrieves status of the historical data imports of the organization
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * wfm:historicalData:upload
 
@@ -2885,14 +2758,13 @@ This endpoint does not need any parameter.
 # ManagementUnit getWorkforcemanagementManagementunit(managementUnitId, opts)
 
 
-
 GET /api/v2/workforcemanagement/managementunits/{managementUnitId}
 
 Get management unit
 
 settings.shortTermForecasting is deprecated and now lives on the business unit
 
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * wfm:activityCode:add
 * wfm:activityCode:delete
@@ -2987,7 +2859,7 @@ apiInstance.getWorkforcemanagementManagementunit(managementUnitId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **managementUnitId** | **String** | The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+ **managementUnitId** | **String** | The ID of the management unit, or 'mine' for the management unit of the logged-in user. |  |
  **expand** | **[String]** |  | [optional] <br />**Values**: settings, settings.adherence, settings.timeOff, settings.scheduling, settings.shortTermForecasting, settings.shiftTrading |
 {: class="table table-striped"}
 
@@ -3005,9 +2877,7 @@ GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/activitycodes
 
 Get activity codes
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * wfm:activityCode:add
 * wfm:activityCode:delete
@@ -3080,7 +2950,7 @@ apiInstance.getWorkforcemanagementManagementunitActivitycodes(managementUnitId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **managementUnitId** | **String** | The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+ **managementUnitId** | **String** | The ID of the management unit, or 'mine' for the management unit of the logged-in user. |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -3092,14 +2962,11 @@ apiInstance.getWorkforcemanagementManagementunitActivitycodes(managementUnitId)
 # UserScheduleAdherenceListing getWorkforcemanagementManagementunitAdherence(managementUnitId, opts)
 
 
-
 GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/adherence
 
 Get a list of user schedule adherence records for the requested management unit
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * wfm:realtimeAdherence:view
 
@@ -3149,14 +3016,11 @@ apiInstance.getWorkforcemanagementManagementunitAdherence(managementUnitId, opts
 # WfmAgent getWorkforcemanagementManagementunitAgent(managementUnitId, agentId, opts)
 
 
-
 GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/agents/{agentId}
 
 Get data for agent in the management unit
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * wfm:agent:view
 
@@ -3194,7 +3058,7 @@ apiInstance.getWorkforcemanagementManagementunitAgent(managementUnitId, agentId,
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **managementUnitId** | **String** | The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+ **managementUnitId** | **String** | The ID of the management unit, or 'mine' for the management unit of the logged-in user. |  |
  **agentId** | **String** | The agent id |  |
  **excludeCapabilities** | **Boolean** | Excludes all capabilities of the agent such as queues, languages, and skills | [optional]  |
 {: class="table table-striped"}
@@ -3208,14 +3072,11 @@ apiInstance.getWorkforcemanagementManagementunitAgent(managementUnitId, agentId,
 # ShiftTradeListResponse getWorkforcemanagementManagementunitAgentShifttrades(managementUnitId, agentId)
 
 
-
 GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/agents/{agentId}/shifttrades
 
 Gets all the shift trades for a given agent
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * wfm:shiftTradeRequest:edit
 * wfm:shiftTradeRequest:view
@@ -3251,7 +3112,7 @@ apiInstance.getWorkforcemanagementManagementunitAgentShifttrades(managementUnitI
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **managementUnitId** | **String** | The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+ **managementUnitId** | **String** | The ID of the management unit, or 'mine' for the management unit of the logged-in user. |  |
  **agentId** | **String** | The agent id |  |
 {: class="table table-striped"}
 
@@ -3264,14 +3125,11 @@ apiInstance.getWorkforcemanagementManagementunitAgentShifttrades(managementUnitI
 # ShiftTradeMatchesSummaryResponse getWorkforcemanagementManagementunitShifttradesMatched(managementUnitId)
 
 
-
 GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/shifttrades/matched
 
 Gets a summary of all shift trades in the matched state
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * wfm:shiftTradeRequest:view
 * wfm:shiftTradeRequest:edit
@@ -3306,7 +3164,7 @@ apiInstance.getWorkforcemanagementManagementunitShifttradesMatched(managementUni
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **managementUnitId** | **String** | The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+ **managementUnitId** | **String** | The ID of the management unit, or 'mine' for the management unit of the logged-in user. |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -3318,14 +3176,11 @@ apiInstance.getWorkforcemanagementManagementunitShifttradesMatched(managementUni
 # WfmUserEntityListing getWorkforcemanagementManagementunitShifttradesUsers(managementUnitId)
 
 
-
 GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/shifttrades/users
 
 Gets list of users available for whom you can send direct shift trade requests
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * wfm:agentShiftTradeRequest:participate
 
@@ -3359,7 +3214,7 @@ apiInstance.getWorkforcemanagementManagementunitShifttradesUsers(managementUnitI
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **managementUnitId** | **String** | The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+ **managementUnitId** | **String** | The ID of the management unit, or 'mine' for the management unit of the logged-in user. |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -3371,14 +3226,13 @@ apiInstance.getWorkforcemanagementManagementunitShifttradesUsers(managementUnitI
 # TimeOffLimit getWorkforcemanagementManagementunitTimeofflimit(managementUnitId, timeOffLimitId)
 
 
-
 GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits/{timeOffLimitId}
 
 Gets a time off limit object
 
 Returns properties of time off limit object, but not daily values.
 
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * wfm:timeOffLimit:view
 
@@ -3426,14 +3280,13 @@ apiInstance.getWorkforcemanagementManagementunitTimeofflimit(managementUnitId, t
 # TimeOffLimitListing getWorkforcemanagementManagementunitTimeofflimits(managementUnitId)
 
 
-
 GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits
 
 Gets a list of time off limit objects under management unit.
 
 Currently only one time off limit object is allowed under management unit, so the list contains either 0 or 1 element.
 
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * wfm:timeOffLimit:view
 * wfm:timeOffPlan:view
@@ -3480,14 +3333,11 @@ apiInstance.getWorkforcemanagementManagementunitTimeofflimits(managementUnitId)
 # TimeOffPlan getWorkforcemanagementManagementunitTimeoffplan(managementUnitId, timeOffPlanId)
 
 
-
 GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffplans/{timeOffPlanId}
 
 Gets a time off plan
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * wfm:timeOffPlan:view
 
@@ -3535,14 +3385,11 @@ apiInstance.getWorkforcemanagementManagementunitTimeoffplan(managementUnitId, ti
 # TimeOffPlanListing getWorkforcemanagementManagementunitTimeoffplans(managementUnitId)
 
 
-
 GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffplans
 
 Gets a list of time off plans
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * wfm:timeOffPlan:view
 
@@ -3588,14 +3435,11 @@ apiInstance.getWorkforcemanagementManagementunitTimeoffplans(managementUnitId)
 # TimeOffRequestResponse getWorkforcemanagementManagementunitUserTimeoffrequest(managementUnitId, userId, timeOffRequestId)
 
 
-
 GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/users/{userId}/timeoffrequests/{timeOffRequestId}
 
 Get a time off request
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * wfm:timeOffRequest:view
 
@@ -3631,7 +3475,7 @@ apiInstance.getWorkforcemanagementManagementunitUserTimeoffrequest(managementUni
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **managementUnitId** | **String** | The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+ **managementUnitId** | **String** | The ID of the management unit, or 'mine' for the management unit of the logged-in user. |  |
  **userId** | **String** | The userId to whom the Time Off Request applies. |  |
  **timeOffRequestId** | **String** | Time Off Request Id |  |
 {: class="table table-striped"}
@@ -3645,14 +3489,11 @@ apiInstance.getWorkforcemanagementManagementunitUserTimeoffrequest(managementUni
 # QueryTimeOffLimitValuesResponse getWorkforcemanagementManagementunitUserTimeoffrequestTimeofflimits(managementUnitId, userId, timeOffRequestId)
 
 
-
 GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/users/{userId}/timeoffrequests/{timeOffRequestId}/timeofflimits
 
 Retrieves time off limit, allocated and waitlisted values according to specific time off request
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * wfm:timeOffRequest:view
 * wfm:timeOffLimit:view
@@ -3703,14 +3544,11 @@ apiInstance.getWorkforcemanagementManagementunitUserTimeoffrequestTimeofflimits(
 # TimeOffRequestList getWorkforcemanagementManagementunitUserTimeoffrequests(managementUnitId, userId, opts)
 
 
-
 GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/users/{userId}/timeoffrequests
 
 Get a list of time off requests for a given user
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * wfm:timeOffRequest:view
 
@@ -3748,7 +3586,7 @@ apiInstance.getWorkforcemanagementManagementunitUserTimeoffrequests(managementUn
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **managementUnitId** | **String** | The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+ **managementUnitId** | **String** | The ID of the management unit, or 'mine' for the management unit of the logged-in user. |  |
  **userId** | **String** | The userId to whom the Time Off Request applies. |  |
  **recentlyReviewed** | **Boolean** | Limit results to requests that have been reviewed within the preceding 30 days | [optional] [default to false] |
 {: class="table table-striped"}
@@ -3762,14 +3600,11 @@ apiInstance.getWorkforcemanagementManagementunitUserTimeoffrequests(managementUn
 # WfmUserEntityListing getWorkforcemanagementManagementunitUsers(managementUnitId)
 
 
-
 GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/users
 
 Get users in the management unit
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * wfm:agent:view
 * wfm:historicalAdherence:view
@@ -3810,7 +3645,7 @@ apiInstance.getWorkforcemanagementManagementunitUsers(managementUnitId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **managementUnitId** | **String** | The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+ **managementUnitId** | **String** | The ID of the management unit, or 'mine' for the management unit of the logged-in user. |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -3827,9 +3662,7 @@ GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekId
 
 Deprecated.  Use the equivalent business unit resource instead. Get a week schedule
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * wfm:publishedSchedule:view
 * wfm:schedule:view
@@ -3870,7 +3703,7 @@ apiInstance.getWorkforcemanagementManagementunitWeekSchedule(managementUnitId, w
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **managementUnitId** | **String** | The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+ **managementUnitId** | **String** | The ID of the management unit, or 'mine' for the management unit of the logged-in user. |  |
  **weekId** | **String** | First day of schedule week in yyyy-MM-dd format. |  |
  **scheduleId** | **String** | The ID of the schedule to fetch |  |
  **expand** | **String** | Which fields, if any, to expand | [optional] <br />**Values**: generationResults, headcountForecast |
@@ -3891,9 +3724,7 @@ GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekId
 
 Deprecated.  Use the equivalent business unit resource instead. Get the list of schedules in a week in management unit
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * wfm:publishedSchedule:view
 * wfm:schedule:view
@@ -3934,7 +3765,7 @@ apiInstance.getWorkforcemanagementManagementunitWeekSchedules(managementUnitId, 
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **managementUnitId** | **String** | The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+ **managementUnitId** | **String** | The ID of the management unit, or 'mine' for the management unit of the logged-in user. |  |
  **weekId** | **String** | First day of schedule week in yyyy-MM-dd format. |  |
  **includeOnlyPublished** | **Boolean** | Return only published schedules | [optional]  |
  **earliestWeekDate** | **String** | The start date of the earliest week to query in yyyy-MM-dd format | [optional]  |
@@ -3950,14 +3781,11 @@ apiInstance.getWorkforcemanagementManagementunitWeekSchedules(managementUnitId, 
 # WeekShiftTradeListResponse getWorkforcemanagementManagementunitWeekShifttrades(managementUnitId, weekDateId, opts)
 
 
-
 GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades
 
 Gets all the shift trades for a given week
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * wfm:shiftTradeRequest:view
 * wfm:shiftTradeRequest:edit
@@ -3976,7 +3804,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
-let weekDateId = "2013-10-20"; // String | The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+let weekDateId = "weekDateId_example"; // String | The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 let opts = { 
   'evaluateMatches': true // Boolean | Whether to evaluate the matches for violations
 };
@@ -3996,7 +3824,7 @@ apiInstance.getWorkforcemanagementManagementunitWeekShifttrades(managementUnitId
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **managementUnitId** | **String** | The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+ **managementUnitId** | **String** | The ID of the management unit, or 'mine' for the management unit of the logged-in user. |  |
  **weekDateId** | **String** | The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **evaluateMatches** | **Boolean** | Whether to evaluate the matches for violations | [optional] [default to true] |
 {: class="table table-striped"}
@@ -4010,14 +3838,11 @@ apiInstance.getWorkforcemanagementManagementunitWeekShifttrades(managementUnitId
 # WorkPlan getWorkforcemanagementManagementunitWorkplan(managementUnitId, workPlanId, opts)
 
 
-
 GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans/{workPlanId}
 
 Get a work plan
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * wfm:workPlanRotation:view
 * wfm:workPlan:view
@@ -4057,7 +3882,7 @@ apiInstance.getWorkforcemanagementManagementunitWorkplan(managementUnitId, workP
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **managementUnitId** | **String** | The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+ **managementUnitId** | **String** | The ID of the management unit, or 'mine' for the management unit of the logged-in user. |  |
  **workPlanId** | **String** | The ID of the work plan to fetch |  |
  **includeOnly** | **[String]** | limit response to the specified fields | [optional] <br />**Values**: agentCount, agents, optionalDays, shifts, shiftStartVariances |
 {: class="table table-striped"}
@@ -4071,14 +3896,11 @@ apiInstance.getWorkforcemanagementManagementunitWorkplan(managementUnitId, workP
 # WorkPlanRotationResponse getWorkforcemanagementManagementunitWorkplanrotation(managementUnitId, workPlanRotationId)
 
 
-
 GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplanrotations/{workPlanRotationId}
 
 Get a work plan rotation
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * wfm:workPlanRotation:view
 
@@ -4113,7 +3935,7 @@ apiInstance.getWorkforcemanagementManagementunitWorkplanrotation(managementUnitI
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **managementUnitId** | **String** | The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+ **managementUnitId** | **String** | The ID of the management unit, or 'mine' for the management unit of the logged-in user. |  |
  **workPlanRotationId** | **String** | The ID of the work plan rotation to fetch |  |
 {: class="table table-striped"}
 
@@ -4126,14 +3948,11 @@ apiInstance.getWorkforcemanagementManagementunitWorkplanrotation(managementUnitI
 # WorkPlanRotationListResponse getWorkforcemanagementManagementunitWorkplanrotations(managementUnitId, opts)
 
 
-
 GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplanrotations
 
 Get work plan rotations
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * wfm:agent:view
 * wfm:workPlanRotation:view
@@ -4171,7 +3990,7 @@ apiInstance.getWorkforcemanagementManagementunitWorkplanrotations(managementUnit
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **managementUnitId** | **String** | The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+ **managementUnitId** | **String** | The ID of the management unit, or 'mine' for the management unit of the logged-in user. |  |
  **expand** | **[String]** |  | [optional] <br />**Values**: agents |
 {: class="table table-striped"}
 
@@ -4184,14 +4003,13 @@ apiInstance.getWorkforcemanagementManagementunitWorkplanrotations(managementUnit
 # WorkPlanListResponse getWorkforcemanagementManagementunitWorkplans(managementUnitId, opts)
 
 
-
 GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans
 
 Get work plans
 
-\&quot;expand=details\&quot; is deprecated
+"expand=details" is deprecated
 
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * wfm:agent:view
 * wfm:publishedSchedule:view
@@ -4232,7 +4050,7 @@ apiInstance.getWorkforcemanagementManagementunitWorkplans(managementUnitId, opts
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **managementUnitId** | **String** | The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+ **managementUnitId** | **String** | The ID of the management unit, or 'mine' for the management unit of the logged-in user. |  |
  **expand** | **[String]** |  | [optional] <br />**Values**: agentCount, agents, optionalDays, shifts, shiftStartVariances, details |
 {: class="table table-striped"}
 
@@ -4245,15 +4063,11 @@ apiInstance.getWorkforcemanagementManagementunitWorkplans(managementUnitId, opts
 # ManagementUnitListing getWorkforcemanagementManagementunits(opts)
 
 
-
 GET /api/v2/workforcemanagement/managementunits
 
 Get management units
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -4269,8 +4083,8 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let opts = { 
-  'pageSize': 56, // Number | Deprecated, paging is not supported
-  'pageNumber': 56, // Number | Deprecated, paging is not supported
+  'pageSize': 3.4, // Number | Deprecated, paging is not supported
+  'pageNumber': 3.4, // Number | Deprecated, paging is not supported
   'expand': "expand_example", // String | Deprecated, expand settings on the single MU route
   'feature': "feature_example", // String | 
   'divisionId': "divisionId_example" // String | 
@@ -4307,14 +4121,11 @@ apiInstance.getWorkforcemanagementManagementunits(opts)
 # ManagementUnitListing getWorkforcemanagementManagementunitsDivisionviews(opts)
 
 
-
 GET /api/v2/workforcemanagement/managementunits/divisionviews
 
 Get management units across divisions
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * wfm:managementUnit:search
 
@@ -4362,15 +4173,13 @@ apiInstance.getWorkforcemanagementManagementunitsDivisionviews(opts)
 # NotificationsResponse getWorkforcemanagementNotifications()
 
 
-
 GET /api/v2/workforcemanagement/notifications
 
 Get a list of notifications for the current user
 
 Notifications are only initially sent if you have the relevant Notify and Edit permissions
 
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -4409,14 +4218,11 @@ This endpoint does not need any parameter.
 # SchedulingStatusResponse getWorkforcemanagementSchedulingjob(jobId)
 
 
-
 GET /api/v2/workforcemanagement/schedulingjobs/{jobId}
 
 Get status of the scheduling job
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * wfm:schedulingrequest:view
 
@@ -4462,14 +4268,11 @@ apiInstance.getWorkforcemanagementSchedulingjob(jobId)
 # ShiftTradeListResponse getWorkforcemanagementShifttrades()
 
 
-
 GET /api/v2/workforcemanagement/shifttrades
 
 Gets all of my shift trades
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * wfm:shiftTradeRequest:edit
 * wfm:shiftTradeRequest:view
@@ -4512,14 +4315,11 @@ This endpoint does not need any parameter.
 # TimeOffRequestResponse getWorkforcemanagementTimeoffrequest(timeOffRequestId)
 
 
-
 GET /api/v2/workforcemanagement/timeoffrequests/{timeOffRequestId}
 
 Get a time off request for the current user
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * wfm:agentSchedule:view
 * wfm:agentTimeOffRequest:submit
@@ -4566,14 +4366,11 @@ apiInstance.getWorkforcemanagementTimeoffrequest(timeOffRequestId)
 # WaitlistPositionListing getWorkforcemanagementTimeoffrequestWaitlistpositions(timeOffRequestId)
 
 
-
 GET /api/v2/workforcemanagement/timeoffrequests/{timeOffRequestId}/waitlistpositions
 
 Get the daily waitlist positions of a time off request for the current user
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * wfm:agentTimeOffRequest:submit
 
@@ -4619,14 +4416,11 @@ apiInstance.getWorkforcemanagementTimeoffrequestWaitlistpositions(timeOffRequest
 # TimeOffRequestList getWorkforcemanagementTimeoffrequests(opts)
 
 
-
 GET /api/v2/workforcemanagement/timeoffrequests
 
 Get a list of time off requests for the current user
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * wfm:agentSchedule:view
 * wfm:agentTimeOffRequest:submit
@@ -4675,14 +4469,11 @@ apiInstance.getWorkforcemanagementTimeoffrequests(opts)
 # BusinessUnit patchWorkforcemanagementBusinessunit(businessUnitId, opts)
 
 
-
 PATCH /api/v2/workforcemanagement/businessunits/{businessUnitId}
 
 Update business unit
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * wfm:businessUnit:edit
 
@@ -4719,7 +4510,7 @@ apiInstance.patchWorkforcemanagementBusinessunit(businessUnitId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **businessUnitId** | **String** | The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user. |  |
+ **businessUnitId** | **String** | The ID of the business unit, or 'mine' for the business unit of the logged-in user. |  |
  **body** | **Object** | body | [optional]  |
 {: class="table table-striped"}
 
@@ -4732,14 +4523,11 @@ apiInstance.patchWorkforcemanagementBusinessunit(businessUnitId, opts)
 # BusinessUnitActivityCode patchWorkforcemanagementBusinessunitActivitycode(businessUnitId, activityCodeId, opts)
 
 
-
 PATCH /api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes/{activityCodeId}
 
 Update an activity code
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * wfm:activityCode:edit
 
@@ -4777,7 +4565,7 @@ apiInstance.patchWorkforcemanagementBusinessunitActivitycode(businessUnitId, act
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **businessUnitId** | **String** | The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user. |  |
+ **businessUnitId** | **String** | The ID of the business unit, or 'mine' for the business unit of the logged-in user. |  |
  **activityCodeId** | **String** | The ID of the activity code to update |  |
  **body** | **Object** | body | [optional]  |
 {: class="table table-striped"}
@@ -4791,14 +4579,11 @@ apiInstance.patchWorkforcemanagementBusinessunitActivitycode(businessUnitId, act
 # PlanningGroup patchWorkforcemanagementBusinessunitPlanninggroup(businessUnitId, planningGroupId, opts)
 
 
-
 PATCH /api/v2/workforcemanagement/businessunits/{businessUnitId}/planninggroups/{planningGroupId}
 
 Updates the planning group
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * wfm:planningGroup:edit
 
@@ -4850,14 +4635,11 @@ apiInstance.patchWorkforcemanagementBusinessunitPlanninggroup(businessUnitId, pl
 # void patchWorkforcemanagementBusinessunitSchedulingRun(businessUnitId, runId, opts)
 
 
-
 PATCH /api/v2/workforcemanagement/businessunits/{businessUnitId}/scheduling/runs/{runId}
 
 Mark a schedule run as applied
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * wfm:schedule:edit
 
@@ -4909,14 +4691,11 @@ void (no response body)
 # ServiceGoalTemplate patchWorkforcemanagementBusinessunitServicegoaltemplate(businessUnitId, serviceGoalTemplateId, opts)
 
 
-
 PATCH /api/v2/workforcemanagement/businessunits/{businessUnitId}/servicegoaltemplates/{serviceGoalTemplateId}
 
 Updates a service goal template
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * wfm:serviceGoalTemplate:edit
 
@@ -4968,14 +4747,11 @@ apiInstance.patchWorkforcemanagementBusinessunitServicegoaltemplate(businessUnit
 # ManagementUnit patchWorkforcemanagementManagementunit(managementUnitId, opts)
 
 
-
 PATCH /api/v2/workforcemanagement/managementunits/{managementUnitId}
 
 Update the requested management unit
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * wfm:managementUnit:edit
 
@@ -5012,7 +4788,7 @@ apiInstance.patchWorkforcemanagementManagementunit(managementUnitId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **managementUnitId** | **String** | The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+ **managementUnitId** | **String** | The ID of the management unit, or 'mine' for the management unit of the logged-in user. |  |
  **body** | **Object** | body | [optional]  |
 {: class="table table-striped"}
 
@@ -5025,14 +4801,13 @@ apiInstance.patchWorkforcemanagementManagementunit(managementUnitId, opts)
 # TimeOffLimit patchWorkforcemanagementManagementunitTimeofflimit(managementUnitId, timeOffLimitId, opts)
 
 
-
 PATCH /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits/{timeOffLimitId}
 
 Updates a time off limit object.
 
 Updates time off limit object properties, but not daily values.
 
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * wfm:timeOffLimit:edit
 
@@ -5084,14 +4859,11 @@ apiInstance.patchWorkforcemanagementManagementunitTimeofflimit(managementUnitId,
 # TimeOffPlan patchWorkforcemanagementManagementunitTimeoffplan(managementUnitId, timeOffPlanId, opts)
 
 
-
 PATCH /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffplans/{timeOffPlanId}
 
 Updates a time off plan
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * wfm:timeOffPlan:edit
 
@@ -5143,14 +4915,11 @@ apiInstance.patchWorkforcemanagementManagementunitTimeoffplan(managementUnitId, 
 # TimeOffRequestResponse patchWorkforcemanagementManagementunitUserTimeoffrequest(managementUnitId, userId, timeOffRequestId, opts)
 
 
-
 PATCH /api/v2/workforcemanagement/managementunits/{managementUnitId}/users/{userId}/timeoffrequests/{timeOffRequestId}
 
 Update a time off request
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * wfm:timeOffRequest:edit
 
@@ -5189,7 +4958,7 @@ apiInstance.patchWorkforcemanagementManagementunitUserTimeoffrequest(managementU
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **managementUnitId** | **String** | The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+ **managementUnitId** | **String** | The ID of the management unit, or 'mine' for the management unit of the logged-in user. |  |
  **userId** | **String** | The id of the user the requested time off request belongs to |  |
  **timeOffRequestId** | **String** | The id of the time off request to update |  |
  **body** | **Object** | body | [optional]  |
@@ -5201,17 +4970,14 @@ apiInstance.patchWorkforcemanagementManagementunitUserTimeoffrequest(managementU
 
 <a name="patchWorkforcemanagementManagementunitWeekShifttrade"></a>
 
-# ShiftTradeResponse patchWorkforcemanagementManagementunitWeekShifttrade(managementUnitId, weekDateId, body, tradeId)
-
+# ShiftTradeResponse patchWorkforcemanagementManagementunitWeekShifttrade(managementUnitId, weekDateId, tradeId, body)
 
 
 PATCH /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades/{tradeId}
 
 Updates a shift trade. This route can only be called by the initiating agent
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * wfm:agentShiftTradeRequest:participate
 
@@ -5229,11 +4995,11 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
-let weekDateId = "2013-10-20"; // String | The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
-let body = {}; // Object | body
+let weekDateId = "weekDateId_example"; // String | The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 let tradeId = "tradeId_example"; // String | The ID of the shift trade to update
+let body = {}; // Object | body
 
-apiInstance.patchWorkforcemanagementManagementunitWeekShifttrade(managementUnitId, weekDateId, body, tradeId)
+apiInstance.patchWorkforcemanagementManagementunitWeekShifttrade(managementUnitId, weekDateId, tradeId, body)
   .then((data) => {
     console.log(`patchWorkforcemanagementManagementunitWeekShifttrade success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -5248,10 +5014,10 @@ apiInstance.patchWorkforcemanagementManagementunitWeekShifttrade(managementUnitI
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **managementUnitId** | **String** | The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+ **managementUnitId** | **String** | The ID of the management unit, or 'mine' for the management unit of the logged-in user. |  |
  **weekDateId** | **String** | The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
- **body** | **Object** | body |  |
  **tradeId** | **String** | The ID of the shift trade to update |  |
+ **body** | **Object** | body |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -5263,14 +5029,11 @@ apiInstance.patchWorkforcemanagementManagementunitWeekShifttrade(managementUnitI
 # WorkPlan patchWorkforcemanagementManagementunitWorkplan(managementUnitId, workPlanId, opts)
 
 
-
 PATCH /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans/{workPlanId}
 
 Update a work plan
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * wfm:workPlan:edit
 
@@ -5290,8 +5053,8 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 let workPlanId = "workPlanId_example"; // String | The ID of the work plan to update
 let opts = { 
-  'body': {}, // Object | body
-  'validationMode': "validationMode_example" // String | Allows to update work plan even if validation result is invalid
+  'validationMode': "validationMode_example", // String | Allows to update work plan even if validation result is invalid
+  'body': {} // Object | body
 };
 
 apiInstance.patchWorkforcemanagementManagementunitWorkplan(managementUnitId, workPlanId, opts)
@@ -5309,10 +5072,10 @@ apiInstance.patchWorkforcemanagementManagementunitWorkplan(managementUnitId, wor
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **managementUnitId** | **String** | The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+ **managementUnitId** | **String** | The ID of the management unit, or 'mine' for the management unit of the logged-in user. |  |
  **workPlanId** | **String** | The ID of the work plan to update |  |
- **body** | **Object** | body | [optional]  |
  **validationMode** | **String** | Allows to update work plan even if validation result is invalid | [optional] <br />**Values**: Ignore |
+ **body** | **Object** | body | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -5324,14 +5087,11 @@ apiInstance.patchWorkforcemanagementManagementunitWorkplan(managementUnitId, wor
 # WorkPlanRotationResponse patchWorkforcemanagementManagementunitWorkplanrotation(managementUnitId, workPlanRotationId, opts)
 
 
-
 PATCH /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplanrotations/{workPlanRotationId}
 
 Update a work plan rotation
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * wfm:workPlanRotation:edit
 
@@ -5369,7 +5129,7 @@ apiInstance.patchWorkforcemanagementManagementunitWorkplanrotation(managementUni
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **managementUnitId** | **String** | The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+ **managementUnitId** | **String** | The ID of the management unit, or 'mine' for the management unit of the logged-in user. |  |
  **workPlanRotationId** | **String** | The ID of the work plan rotation to update |  |
  **body** | **Object** | body | [optional]  |
 {: class="table table-striped"}
@@ -5383,14 +5143,11 @@ apiInstance.patchWorkforcemanagementManagementunitWorkplanrotation(managementUni
 # TimeOffRequestResponse patchWorkforcemanagementTimeoffrequest(timeOffRequestId, opts)
 
 
-
 PATCH /api/v2/workforcemanagement/timeoffrequests/{timeOffRequestId}
 
 Update a time off request for the current user
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * wfm:agentTimeOffRequest:submit
 
@@ -5440,14 +5197,11 @@ apiInstance.patchWorkforcemanagementTimeoffrequest(timeOffRequestId, opts)
 # WfmHistoricalAdherenceResponse postWorkforcemanagementAdherenceHistorical(opts)
 
 
-
 POST /api/v2/workforcemanagement/adherence/historical
 
 Request a historical adherence report for users across management units
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * wfm:historicalAdherence:view
 
@@ -5495,14 +5249,11 @@ apiInstance.postWorkforcemanagementAdherenceHistorical(opts)
 # BuCurrentAgentScheduleSearchResponse postWorkforcemanagementAgentschedulesMine(opts)
 
 
-
 POST /api/v2/workforcemanagement/agentschedules/mine
 
 Get published schedule for the current user
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * wfm:agentSchedule:view
 
@@ -5550,14 +5301,11 @@ apiInstance.postWorkforcemanagementAgentschedulesMine(opts)
 # BusinessUnitActivityCode postWorkforcemanagementBusinessunitActivitycodes(businessUnitId, opts)
 
 
-
 POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes
 
 Create a new activity code
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * wfm:activityCode:add
 
@@ -5594,7 +5342,7 @@ apiInstance.postWorkforcemanagementBusinessunitActivitycodes(businessUnitId, opt
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **businessUnitId** | **String** | The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user. |  |
+ **businessUnitId** | **String** | The ID of the business unit, or 'mine' for the business unit of the logged-in user. |  |
  **body** | **Object** | body | [optional]  |
 {: class="table table-striped"}
 
@@ -5607,14 +5355,11 @@ apiInstance.postWorkforcemanagementBusinessunitActivitycodes(businessUnitId, opt
 # BuAsyncAgentSchedulesSearchResponse postWorkforcemanagementBusinessunitAgentschedulesSearch(businessUnitId, opts)
 
 
-
 POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/agentschedules/search
 
 Search published schedules
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * wfm:schedule:view
 * wfm:publishedSchedule:view
@@ -5634,9 +5379,9 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
 let opts = { 
-  'body': {}, // Object | body
   'forceAsync': true, // Boolean | Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes
-  'forceDownloadService': true // Boolean | Force the result of this operation to be sent via download service.  For testing/app development purposes
+  'forceDownloadService': true, // Boolean | Force the result of this operation to be sent via download service.  For testing/app development purposes
+  'body': {} // Object | body
 };
 
 apiInstance.postWorkforcemanagementBusinessunitAgentschedulesSearch(businessUnitId, opts)
@@ -5655,9 +5400,9 @@ apiInstance.postWorkforcemanagementBusinessunitAgentschedulesSearch(businessUnit
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **businessUnitId** | **String** | The ID of the business unit |  |
- **body** | **Object** | body | [optional]  |
  **forceAsync** | **Boolean** | Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes | [optional]  |
  **forceDownloadService** | **Boolean** | Force the result of this operation to be sent via download service.  For testing/app development purposes | [optional]  |
+ **body** | **Object** | body | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -5669,14 +5414,11 @@ apiInstance.postWorkforcemanagementBusinessunitAgentschedulesSearch(businessUnit
 # AsyncIntradayResponse postWorkforcemanagementBusinessunitIntraday(businessUnitId, opts)
 
 
-
 POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/intraday
 
 Get intraday data for the given date for the requested planningGroupIds
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * wfm:intraday:view
 
@@ -5728,14 +5470,11 @@ apiInstance.postWorkforcemanagementBusinessunitIntraday(businessUnitId, opts)
 # PlanningGroup postWorkforcemanagementBusinessunitPlanninggroups(businessUnitId, opts)
 
 
-
 POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/planninggroups
 
 Adds a new planning group
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * wfm:planningGroup:add
 
@@ -5785,14 +5524,11 @@ apiInstance.postWorkforcemanagementBusinessunitPlanninggroups(businessUnitId, op
 # ServiceGoalTemplate postWorkforcemanagementBusinessunitServicegoaltemplates(businessUnitId, opts)
 
 
-
 POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/servicegoaltemplates
 
 Adds a new service goal template
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * wfm:serviceGoalTemplate:add
 
@@ -5842,14 +5578,11 @@ apiInstance.postWorkforcemanagementBusinessunitServicegoaltemplates(businessUnit
 # BuAsyncAgentSchedulesQueryResponse postWorkforcemanagementBusinessunitWeekScheduleAgentschedulesQuery(businessUnitId, weekId, scheduleId, body, opts)
 
 
-
 POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/agentschedules/query
 
 Loads agent schedule data from the schedule. Used in combination with the metadata route
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * wfm:schedule:view
 * wfm:publishedSchedule:view
@@ -5868,7 +5601,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
-let weekId = "2013-10-20"; // String | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+let weekId = "weekId_example"; // String | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 let scheduleId = "scheduleId_example"; // String | The ID of the schedule
 let body = {}; // Object | body
 let opts = { 
@@ -5908,14 +5641,11 @@ apiInstance.postWorkforcemanagementBusinessunitWeekScheduleAgentschedulesQuery(b
 # BuAsyncScheduleResponse postWorkforcemanagementBusinessunitWeekScheduleCopy(businessUnitId, weekId, scheduleId, body)
 
 
-
 POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/copy
 
 Copy a schedule
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * wfm:schedule:add
 
@@ -5933,7 +5663,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
-let weekId = "2013-10-20"; // String | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+let weekId = "weekId_example"; // String | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 let scheduleId = "scheduleId_example"; // String | The ID of the schedule to copy
 let body = {}; // Object | body
 
@@ -5967,14 +5697,11 @@ apiInstance.postWorkforcemanagementBusinessunitWeekScheduleCopy(businessUnitId, 
 # BuAsyncScheduleRunResponse postWorkforcemanagementBusinessunitWeekScheduleReschedule(businessUnitId, weekId, scheduleId, body)
 
 
-
 POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/reschedule
 
 Start a rescheduling run
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * wfm:schedule:generate
 
@@ -5992,7 +5719,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
-let weekId = "2013-10-20"; // String | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+let weekId = "weekId_example"; // String | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 let scheduleId = "scheduleId_example"; // String | The ID of the schedule
 let body = {}; // Object | body
 
@@ -6026,14 +5753,13 @@ apiInstance.postWorkforcemanagementBusinessunitWeekScheduleReschedule(businessUn
 # BuAsyncScheduleResponse postWorkforcemanagementBusinessunitWeekScheduleUpdate(businessUnitId, weekId, scheduleId, body)
 
 
-
 POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/update
 
 Starts processing a schedule update
 
 Call after uploading the schedule data to the url supplied by the /update/uploadurl route
 
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * wfm:schedule:edit
 
@@ -6051,7 +5777,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
-let weekId = "2013-10-20"; // String | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+let weekId = "weekId_example"; // String | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 let scheduleId = "scheduleId_example"; // String | The ID of the schedule
 let body = {}; // Object | body
 
@@ -6085,14 +5811,13 @@ apiInstance.postWorkforcemanagementBusinessunitWeekScheduleUpdate(businessUnitId
 # UpdateScheduleUploadResponse postWorkforcemanagementBusinessunitWeekScheduleUpdateUploadurl(businessUnitId, weekId, scheduleId, body)
 
 
-
 POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/update/uploadurl
 
 Creates a signed upload URL for updating a schedule
 
 Once the upload is complete, call the /{scheduleId}/update route to start the schedule update process
 
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * wfm:schedule:edit
 
@@ -6110,7 +5835,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
-let weekId = "2013-10-20"; // String | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+let weekId = "weekId_example"; // String | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 let scheduleId = "scheduleId_example"; // String | The ID of the schedule
 let body = {}; // Object | body
 
@@ -6144,14 +5869,11 @@ apiInstance.postWorkforcemanagementBusinessunitWeekScheduleUpdateUploadurl(busin
 # BuScheduleMetadata postWorkforcemanagementBusinessunitWeekSchedules(businessUnitId, weekId, body)
 
 
-
 POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules
 
 Create a blank schedule
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * wfm:schedule:add
 
@@ -6169,7 +5891,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
-let weekId = "2013-10-20"; // String | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+let weekId = "weekId_example"; // String | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 let body = {}; // Object | body
 
 apiInstance.postWorkforcemanagementBusinessunitWeekSchedules(businessUnitId, weekId, body)
@@ -6201,14 +5923,11 @@ apiInstance.postWorkforcemanagementBusinessunitWeekSchedules(businessUnitId, wee
 # BuAsyncScheduleRunResponse postWorkforcemanagementBusinessunitWeekSchedulesGenerate(businessUnitId, weekId, body)
 
 
-
 POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/generate
 
 Generate a schedule
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * wfm:schedule:generate
 
@@ -6226,7 +5945,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
-let weekId = "2013-10-20"; // String | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+let weekId = "weekId_example"; // String | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 let body = {}; // Object | body
 
 apiInstance.postWorkforcemanagementBusinessunitWeekSchedulesGenerate(businessUnitId, weekId, body)
@@ -6258,14 +5977,13 @@ apiInstance.postWorkforcemanagementBusinessunitWeekSchedulesGenerate(businessUni
 # ScheduleUploadProcessingResponse postWorkforcemanagementBusinessunitWeekSchedulesImport(businessUnitId, weekId, body)
 
 
-
 POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/import
 
 Starts processing a schedule import
 
 Call after uploading the schedule data to the url supplied by the /import/uploadurl route
 
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * wfm:schedule:add
 
@@ -6283,7 +6001,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
-let weekId = "2013-10-20"; // String | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+let weekId = "weekId_example"; // String | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 let body = {}; // Object | 
 
 apiInstance.postWorkforcemanagementBusinessunitWeekSchedulesImport(businessUnitId, weekId, body)
@@ -6315,14 +6033,13 @@ apiInstance.postWorkforcemanagementBusinessunitWeekSchedulesImport(businessUnitI
 # ImportScheduleUploadResponse postWorkforcemanagementBusinessunitWeekSchedulesImportUploadurl(businessUnitId, weekId, body)
 
 
-
 POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/import/uploadurl
 
 Creates a signed upload URL for importing a schedule
 
 Once the upload is complete, call the /import route to start the schedule import process
 
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * wfm:schedule:add
 
@@ -6340,7 +6057,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
-let weekId = "2013-10-20"; // String | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+let weekId = "weekId_example"; // String | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 let body = {}; // Object | body
 
 apiInstance.postWorkforcemanagementBusinessunitWeekSchedulesImportUploadurl(businessUnitId, weekId, body)
@@ -6372,14 +6089,11 @@ apiInstance.postWorkforcemanagementBusinessunitWeekSchedulesImportUploadurl(busi
 # AsyncForecastOperationResult postWorkforcemanagementBusinessunitWeekShorttermforecastCopy(businessUnitId, weekDateId, forecastId, body, opts)
 
 
-
 POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}/copy
 
 Copy a short term forecast
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * wfm:shortTermForecast:add
 
@@ -6397,7 +6111,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit to which the forecast belongs
-let weekDateId = "2013-10-20"; // String | The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+let weekDateId = "weekDateId_example"; // String | The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 let forecastId = "forecastId_example"; // String | The ID of the forecast to copy
 let body = {}; // Object | body
 let opts = { 
@@ -6435,14 +6149,11 @@ apiInstance.postWorkforcemanagementBusinessunitWeekShorttermforecastCopy(busines
 # AsyncForecastOperationResult postWorkforcemanagementBusinessunitWeekShorttermforecastsGenerate(businessUnitId, weekDateId, body, opts)
 
 
-
 POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/generate
 
 Generate a short term forecast
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * wfm:shortTermForecast:add
 
@@ -6460,7 +6171,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit to which the forecast belongs
-let weekDateId = "2013-10-20"; // String | The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+let weekDateId = "weekDateId_example"; // String | The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 let body = {}; // Object | 
 let opts = { 
   'forceAsync': true // Boolean | Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes
@@ -6496,14 +6207,13 @@ apiInstance.postWorkforcemanagementBusinessunitWeekShorttermforecastsGenerate(bu
 # ImportForecastResponse postWorkforcemanagementBusinessunitWeekShorttermforecastsImport(businessUnitId, weekDateId, body)
 
 
-
 POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/import
 
 Starts importing the uploaded short term forecast
 
 Call after uploading the forecast data to the url supplied by the /import/uploadurl route
 
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * wfm:shortTermForecast:add
 
@@ -6521,7 +6231,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit to which the forecast belongs
-let weekDateId = "2013-10-20"; // String | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+let weekDateId = "weekDateId_example"; // String | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 let body = {}; // Object | 
 
 apiInstance.postWorkforcemanagementBusinessunitWeekShorttermforecastsImport(businessUnitId, weekDateId, body)
@@ -6553,14 +6263,13 @@ apiInstance.postWorkforcemanagementBusinessunitWeekShorttermforecastsImport(busi
 # ImportForecastUploadResponse postWorkforcemanagementBusinessunitWeekShorttermforecastsImportUploadurl(businessUnitId, weekDateId, body)
 
 
-
 POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/import/uploadurl
 
 Creates a signed upload URL for importing a short term forecast
 
 Once the upload is complete, call the /import route to start the short term forecast import process
 
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * wfm:shortTermForecast:add
 
@@ -6578,7 +6287,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit to which the forecast belongs
-let weekDateId = "2013-10-20"; // String | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+let weekDateId = "weekDateId_example"; // String | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 let body = {}; // Object | body
 
 apiInstance.postWorkforcemanagementBusinessunitWeekShorttermforecastsImportUploadurl(businessUnitId, weekDateId, body)
@@ -6610,14 +6319,13 @@ apiInstance.postWorkforcemanagementBusinessunitWeekShorttermforecastsImportUploa
 # BusinessUnit postWorkforcemanagementBusinessunits(opts)
 
 
-
 POST /api/v2/workforcemanagement/businessunits
 
 Add a new business unit
 
 It may take a minute or two for a new business unit to be available for api operations
 
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * wfm:businessUnit:add
 
@@ -6665,14 +6373,11 @@ apiInstance.postWorkforcemanagementBusinessunits(opts)
 # CalendarUrlResponse postWorkforcemanagementCalendarUrlIcs(opts)
 
 
-
 POST /api/v2/workforcemanagement/calendar/url/ics
 
 Create a newly generated calendar link for the current user; if the current user has previously generated one, the generated link will be returned
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * wfm:agentSchedule:sync
 * wfm:agentSchedule:view
@@ -6691,7 +6396,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let opts = { 
-  'language': "en-US" // String | A language tag (which is sometimes referred to as a \"locale identifier\") to use to localize default activity code names in the ics-formatted calendar
+  'language': en-US // String | A language tag (which is sometimes referred to as a locale identifier) to use to localize default activity code names in the ics-formatted calendar
 };
 
 apiInstance.postWorkforcemanagementCalendarUrlIcs(opts)
@@ -6709,7 +6414,7 @@ apiInstance.postWorkforcemanagementCalendarUrlIcs(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **language** | **String** | A language tag (which is sometimes referred to as a \&quot;locale identifier\&quot;) to use to localize default activity code names in the ics-formatted calendar | [optional] [default to en-US] |
+ **language** | **String** | A language tag (which is sometimes referred to as a locale identifier) to use to localize default activity code names in the ics-formatted calendar | [optional] [default to en-US] |
 {: class="table table-striped"}
 
 ### Return type
@@ -6721,14 +6426,11 @@ apiInstance.postWorkforcemanagementCalendarUrlIcs(opts)
 # HistoricalImportDeleteJobResponse postWorkforcemanagementHistoricaldataDeletejob()
 
 
-
 POST /api/v2/workforcemanagement/historicaldata/deletejob
 
 Delete the entries of the historical data imports in the organization
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * wfm:historicalData:upload
 
@@ -6769,14 +6471,11 @@ This endpoint does not need any parameter.
 # void postWorkforcemanagementHistoricaldataValidate(opts)
 
 
-
 POST /api/v2/workforcemanagement/historicaldata/validate
 
 Trigger validation process for historical import
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * wfm:historicalData:upload
 
@@ -6824,14 +6523,11 @@ void (no response body)
 # BuAsyncAgentSchedulesSearchResponse postWorkforcemanagementManagementunitAgentschedulesSearch(managementUnitId, opts)
 
 
-
 POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/agentschedules/search
 
 Query published schedules for given given time range for set of users
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * wfm:publishedSchedule:view
 * wfm:schedule:view
@@ -6851,9 +6547,9 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 
 let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 let opts = { 
-  'body': {}, // Object | body
   'forceAsync': true, // Boolean | Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes
-  'forceDownloadService': true // Boolean | Force the result of this operation to be sent via download service.  For testing/app development purposes
+  'forceDownloadService': true, // Boolean | Force the result of this operation to be sent via download service.  For testing/app development purposes
+  'body': {} // Object | body
 };
 
 apiInstance.postWorkforcemanagementManagementunitAgentschedulesSearch(managementUnitId, opts)
@@ -6871,10 +6567,10 @@ apiInstance.postWorkforcemanagementManagementunitAgentschedulesSearch(management
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **managementUnitId** | **String** | The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
- **body** | **Object** | body | [optional]  |
+ **managementUnitId** | **String** | The ID of the management unit, or 'mine' for the management unit of the logged-in user. |  |
  **forceAsync** | **Boolean** | Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes | [optional]  |
  **forceDownloadService** | **Boolean** | Force the result of this operation to be sent via download service.  For testing/app development purposes | [optional]  |
+ **body** | **Object** | body | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -6886,14 +6582,13 @@ apiInstance.postWorkforcemanagementManagementunitAgentschedulesSearch(management
 # WfmHistoricalAdherenceResponse postWorkforcemanagementManagementunitHistoricaladherencequery(managementUnitId, opts)
 
 
-
 POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/historicaladherencequery
 
 Request a historical adherence report
 
 The maximum supported range for historical adherence queries is 31 days, or 7 days with includeExceptions = true
 
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * wfm:historicalAdherence:view
 
@@ -6943,14 +6638,13 @@ apiInstance.postWorkforcemanagementManagementunitHistoricaladherencequery(manage
 # MoveManagementUnitResponse postWorkforcemanagementManagementunitMove(managementUnitId, opts)
 
 
-
 POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/move
 
 Move the requested management unit to a new business unit
 
 Returns status 200 if the management unit is already in the requested business unit
 
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * wfm:managementUnit:edit
 
@@ -6987,7 +6681,7 @@ apiInstance.postWorkforcemanagementManagementunitMove(managementUnitId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **managementUnitId** | **String** | The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+ **managementUnitId** | **String** | The ID of the management unit, or 'mine' for the management unit of the logged-in user. |  |
  **body** | **Object** | body | [optional]  |
 {: class="table table-striped"}
 
@@ -7005,9 +6699,7 @@ POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/schedules/se
 
 Query published schedules for given given time range for set of users
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * wfm:publishedSchedule:view
 * wfm:schedule:view
@@ -7045,7 +6737,7 @@ apiInstance.postWorkforcemanagementManagementunitSchedulesSearch(managementUnitI
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **managementUnitId** | **String** | The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+ **managementUnitId** | **String** | The ID of the management unit, or 'mine' for the management unit of the logged-in user. |  |
  **body** | **Object** | body | [optional]  |
 {: class="table table-striped"}
 
@@ -7058,14 +6750,13 @@ apiInstance.postWorkforcemanagementManagementunitSchedulesSearch(managementUnitI
 # TimeOffLimit postWorkforcemanagementManagementunitTimeofflimits(managementUnitId, opts)
 
 
-
 POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits
 
 Creates a new time off limit object under management unit.
 
 Only one limit object is allowed under management unit, so an attempt to create second object will fail.
 
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * wfm:timeOffLimit:add
 
@@ -7115,14 +6806,11 @@ apiInstance.postWorkforcemanagementManagementunitTimeofflimits(managementUnitId,
 # QueryTimeOffLimitValuesResponse postWorkforcemanagementManagementunitTimeofflimitsValuesQuery(managementUnitId, opts)
 
 
-
 POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits/values/query
 
 Retrieves time off limit related values based on a given set of filters.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * wfm:timeOffLimit:view
 
@@ -7172,14 +6860,11 @@ apiInstance.postWorkforcemanagementManagementunitTimeofflimitsValuesQuery(manage
 # TimeOffPlan postWorkforcemanagementManagementunitTimeoffplans(managementUnitId, opts)
 
 
-
 POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffplans
 
 Creates a new time off plan
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * wfm:timeOffPlan:add
 
@@ -7229,14 +6914,11 @@ apiInstance.postWorkforcemanagementManagementunitTimeoffplans(managementUnitId, 
 # TimeOffRequestList postWorkforcemanagementManagementunitTimeoffrequests(managementUnitId, opts)
 
 
-
 POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffrequests
 
 Create a new time off request
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * wfm:timeOffRequest:add
 
@@ -7273,7 +6955,7 @@ apiInstance.postWorkforcemanagementManagementunitTimeoffrequests(managementUnitI
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **managementUnitId** | **String** | The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+ **managementUnitId** | **String** | The ID of the management unit, or 'mine' for the management unit of the logged-in user. |  |
  **body** | **Object** | body | [optional]  |
 {: class="table table-striped"}
 
@@ -7286,14 +6968,13 @@ apiInstance.postWorkforcemanagementManagementunitTimeoffrequests(managementUnitI
 # TimeOffRequestListing postWorkforcemanagementManagementunitTimeoffrequestsQuery(managementUnitId, opts)
 
 
-
 POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffrequests/query
 
 Fetches time off requests matching the conditions specified in the request body
 
 Request body requires one of the following: User ID is specified, statuses == [Pending] or date range to be specified and less than or equal to 33 days.  All other fields are filters
 
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * wfm:timeOffRequest:view
 
@@ -7330,7 +7011,7 @@ apiInstance.postWorkforcemanagementManagementunitTimeoffrequestsQuery(management
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **managementUnitId** | **String** | The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+ **managementUnitId** | **String** | The ID of the management unit, or 'mine' for the management unit of the logged-in user. |  |
  **body** | **Object** | body | [optional]  |
 {: class="table table-striped"}
 
@@ -7343,14 +7024,11 @@ apiInstance.postWorkforcemanagementManagementunitTimeoffrequestsQuery(management
 # WaitlistPositionListing postWorkforcemanagementManagementunitTimeoffrequestsWaitlistpositionsQuery(managementUnitId, opts)
 
 
-
 POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffrequests/waitlistpositions/query
 
 Retrieves daily waitlist position for a list of time off requests
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * wfm:timeOffRequest:view
 
@@ -7397,17 +7075,14 @@ apiInstance.postWorkforcemanagementManagementunitTimeoffrequestsWaitlistposition
 
 <a name="postWorkforcemanagementManagementunitWeekShifttradeMatch"></a>
 
-# MatchShiftTradeResponse postWorkforcemanagementManagementunitWeekShifttradeMatch(managementUnitId, weekDateId, body, tradeId)
-
+# MatchShiftTradeResponse postWorkforcemanagementManagementunitWeekShifttradeMatch(managementUnitId, weekDateId, tradeId, body)
 
 
 POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades/{tradeId}/match
 
 Matches a shift trade. This route can only be called by the receiving agent
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * wfm:agentShiftTradeRequest:participate
 
@@ -7425,11 +7100,11 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
-let weekDateId = "2013-10-20"; // String | The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
-let body = {}; // Object | body
+let weekDateId = "weekDateId_example"; // String | The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 let tradeId = "tradeId_example"; // String | The ID of the shift trade to update
+let body = {}; // Object | body
 
-apiInstance.postWorkforcemanagementManagementunitWeekShifttradeMatch(managementUnitId, weekDateId, body, tradeId)
+apiInstance.postWorkforcemanagementManagementunitWeekShifttradeMatch(managementUnitId, weekDateId, tradeId, body)
   .then((data) => {
     console.log(`postWorkforcemanagementManagementunitWeekShifttradeMatch success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -7444,10 +7119,10 @@ apiInstance.postWorkforcemanagementManagementunitWeekShifttradeMatch(managementU
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **managementUnitId** | **String** | The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+ **managementUnitId** | **String** | The ID of the management unit, or 'mine' for the management unit of the logged-in user. |  |
  **weekDateId** | **String** | The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
- **body** | **Object** | body |  |
  **tradeId** | **String** | The ID of the shift trade to update |  |
+ **body** | **Object** | body |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -7459,14 +7134,11 @@ apiInstance.postWorkforcemanagementManagementunitWeekShifttradeMatch(managementU
 # ShiftTradeResponse postWorkforcemanagementManagementunitWeekShifttrades(managementUnitId, weekDateId, body)
 
 
-
 POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades
 
 Adds a shift trade
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * wfm:agentShiftTradeRequest:participate
 
@@ -7484,7 +7156,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
-let weekDateId = "2013-10-20"; // String | The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+let weekDateId = "weekDateId_example"; // String | The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 let body = {}; // Object | body
 
 apiInstance.postWorkforcemanagementManagementunitWeekShifttrades(managementUnitId, weekDateId, body)
@@ -7502,7 +7174,7 @@ apiInstance.postWorkforcemanagementManagementunitWeekShifttrades(managementUnitI
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **managementUnitId** | **String** | The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+ **managementUnitId** | **String** | The ID of the management unit, or 'mine' for the management unit of the logged-in user. |  |
  **weekDateId** | **String** | The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **body** | **Object** | body |  |
 {: class="table table-striped"}
@@ -7516,14 +7188,11 @@ apiInstance.postWorkforcemanagementManagementunitWeekShifttrades(managementUnitI
 # SearchShiftTradesResponse postWorkforcemanagementManagementunitWeekShifttradesSearch(managementUnitId, weekDateId, body)
 
 
-
 POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades/search
 
 Searches for potential shift trade matches for the current agent
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * wfm:agentShiftTradeRequest:participate
 
@@ -7541,7 +7210,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
-let weekDateId = "2013-10-20"; // String | The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+let weekDateId = "weekDateId_example"; // String | The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 let body = {}; // Object | body
 
 apiInstance.postWorkforcemanagementManagementunitWeekShifttradesSearch(managementUnitId, weekDateId, body)
@@ -7559,7 +7228,7 @@ apiInstance.postWorkforcemanagementManagementunitWeekShifttradesSearch(managemen
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **managementUnitId** | **String** | The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+ **managementUnitId** | **String** | The ID of the management unit, or 'mine' for the management unit of the logged-in user. |  |
  **weekDateId** | **String** | The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **body** | **Object** | body |  |
 {: class="table table-striped"}
@@ -7573,14 +7242,13 @@ apiInstance.postWorkforcemanagementManagementunitWeekShifttradesSearch(managemen
 # BulkUpdateShiftTradeStateResponse postWorkforcemanagementManagementunitWeekShifttradesStateBulk(managementUnitId, weekDateId, body, opts)
 
 
-
 POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades/state/bulk
 
 Updates the state of a batch of shift trades
 
-Admin functionality is not supported with \&quot;mine\&quot;.
+Admin functionality is not supported with "mine".
 
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * wfm:agentShiftTradeRequest:participate
 * wfm:shiftTradeRequest:edit
@@ -7599,7 +7267,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
-let weekDateId = "2013-10-20"; // String | The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+let weekDateId = "weekDateId_example"; // String | The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 let body = {}; // Object | body
 let opts = { 
   'forceAsync': true // Boolean | Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes
@@ -7620,7 +7288,7 @@ apiInstance.postWorkforcemanagementManagementunitWeekShifttradesStateBulk(manage
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **managementUnitId** | **String** | The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+ **managementUnitId** | **String** | The ID of the management unit, or 'mine' for the management unit of the logged-in user. |  |
  **weekDateId** | **String** | The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **body** | **Object** | body |  |
  **forceAsync** | **Boolean** | Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes | [optional]  |
@@ -7635,14 +7303,11 @@ apiInstance.postWorkforcemanagementManagementunitWeekShifttradesStateBulk(manage
 # WorkPlan postWorkforcemanagementManagementunitWorkplanCopy(managementUnitId, workPlanId, opts)
 
 
-
 POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans/{workPlanId}/copy
 
 Create a copy of work plan
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * wfm:workPlan:add
 
@@ -7680,7 +7345,7 @@ apiInstance.postWorkforcemanagementManagementunitWorkplanCopy(managementUnitId, 
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **managementUnitId** | **String** | The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+ **managementUnitId** | **String** | The ID of the management unit, or 'mine' for the management unit of the logged-in user. |  |
  **workPlanId** | **String** | The ID of the work plan to create a copy |  |
  **body** | **Object** | body | [optional]  |
 {: class="table table-striped"}
@@ -7694,14 +7359,11 @@ apiInstance.postWorkforcemanagementManagementunitWorkplanCopy(managementUnitId, 
 # ValidateWorkPlanResponse postWorkforcemanagementManagementunitWorkplanValidate(managementUnitId, workPlanId, opts)
 
 
-
 POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans/{workPlanId}/validate
 
 Validate Work Plan
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * wfm:workPlan:add
 * wfm:workPlan:edit
@@ -7722,8 +7384,8 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 let workPlanId = "workPlanId_example"; // String | The ID of the work plan to validate. For new work plan, use the word 'new' for the ID.
 let opts = { 
-  'body': {}, // Object | body
-  'expand': ["expand_example"] // [String] | 
+  'expand': ["expand_example"], // [String] | 
+  'body': {} // Object | body
 };
 
 apiInstance.postWorkforcemanagementManagementunitWorkplanValidate(managementUnitId, workPlanId, opts)
@@ -7741,10 +7403,10 @@ apiInstance.postWorkforcemanagementManagementunitWorkplanValidate(managementUnit
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **managementUnitId** | **String** | The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
- **workPlanId** | **String** | The ID of the work plan to validate. For new work plan, use the word &#39;new&#39; for the ID. |  |
- **body** | **Object** | body | [optional]  |
+ **managementUnitId** | **String** | The ID of the management unit, or 'mine' for the management unit of the logged-in user. |  |
+ **workPlanId** | **String** | The ID of the work plan to validate. For new work plan, use the word 'new' for the ID. |  |
  **expand** | **[String]** |  | [optional] <br />**Values**: messages |
+ **body** | **Object** | body | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -7756,14 +7418,11 @@ apiInstance.postWorkforcemanagementManagementunitWorkplanValidate(managementUnit
 # WorkPlanRotationResponse postWorkforcemanagementManagementunitWorkplanrotationCopy(managementUnitId, workPlanRotationId, opts)
 
 
-
 POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplanrotations/{workPlanRotationId}/copy
 
 Create a copy of work plan rotation
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * wfm:workPlanRotation:add
 
@@ -7801,7 +7460,7 @@ apiInstance.postWorkforcemanagementManagementunitWorkplanrotationCopy(management
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **managementUnitId** | **String** | The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+ **managementUnitId** | **String** | The ID of the management unit, or 'mine' for the management unit of the logged-in user. |  |
  **workPlanRotationId** | **String** | The ID of the work plan rotation to create a copy |  |
  **body** | **Object** | body | [optional]  |
 {: class="table table-striped"}
@@ -7815,14 +7474,11 @@ apiInstance.postWorkforcemanagementManagementunitWorkplanrotationCopy(management
 # WorkPlanRotationResponse postWorkforcemanagementManagementunitWorkplanrotations(managementUnitId, opts)
 
 
-
 POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplanrotations
 
 Create a new work plan rotation
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * wfm:workPlanRotation:add
 
@@ -7859,7 +7515,7 @@ apiInstance.postWorkforcemanagementManagementunitWorkplanrotations(managementUni
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **managementUnitId** | **String** | The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+ **managementUnitId** | **String** | The ID of the management unit, or 'mine' for the management unit of the logged-in user. |  |
  **body** | **Object** | body | [optional]  |
 {: class="table table-striped"}
 
@@ -7872,14 +7528,11 @@ apiInstance.postWorkforcemanagementManagementunitWorkplanrotations(managementUni
 # WorkPlan postWorkforcemanagementManagementunitWorkplans(managementUnitId, opts)
 
 
-
 POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans
 
 Create a new work plan
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * wfm:workPlan:add
 
@@ -7898,8 +7551,8 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 
 let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 let opts = { 
-  'body': {}, // Object | body
-  'validationMode': "validationMode_example" // String | Allows to create work plan even if the validation result is invalid
+  'validationMode': "validationMode_example", // String | Allows to create work plan even if the validation result is invalid
+  'body': {} // Object | body
 };
 
 apiInstance.postWorkforcemanagementManagementunitWorkplans(managementUnitId, opts)
@@ -7917,9 +7570,9 @@ apiInstance.postWorkforcemanagementManagementunitWorkplans(managementUnitId, opt
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **managementUnitId** | **String** | The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
- **body** | **Object** | body | [optional]  |
+ **managementUnitId** | **String** | The ID of the management unit, or 'mine' for the management unit of the logged-in user. |  |
  **validationMode** | **String** | Allows to create work plan even if the validation result is invalid | [optional] <br />**Values**: Ignore |
+ **body** | **Object** | body | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -7931,14 +7584,13 @@ apiInstance.postWorkforcemanagementManagementunitWorkplans(managementUnitId, opt
 # ManagementUnit postWorkforcemanagementManagementunits(opts)
 
 
-
 POST /api/v2/workforcemanagement/managementunits
 
 Add a management unit
 
 It may take a minute or two for a new management unit to be available for api operations
 
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * wfm:managementUnit:add
 
@@ -7986,15 +7638,11 @@ apiInstance.postWorkforcemanagementManagementunits(opts)
 # UpdateNotificationsResponse postWorkforcemanagementNotificationsUpdate(opts)
 
 
-
 POST /api/v2/workforcemanagement/notifications/update
 
 Mark a list of notifications as read or unread
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -8045,9 +7693,7 @@ POST /api/v2/workforcemanagement/schedules
 
 Get published schedule for the current user
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * wfm:agentSchedule:view
 
@@ -8095,14 +7741,11 @@ apiInstance.postWorkforcemanagementSchedules(opts)
 # AvailableTimeOffResponse postWorkforcemanagementTimeofflimitsAvailableQuery(opts)
 
 
-
 POST /api/v2/workforcemanagement/timeofflimits/available/query
 
 Queries available time off for the current user
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * wfm:agentTimeOffRequest:submit
 
@@ -8150,14 +7793,11 @@ apiInstance.postWorkforcemanagementTimeofflimitsAvailableQuery(opts)
 # TimeOffRequestResponse postWorkforcemanagementTimeoffrequests(opts)
 
 
-
 POST /api/v2/workforcemanagement/timeoffrequests
 
 Create a time off request for the current user
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * wfm:agentTimeOffRequest:submit
 
@@ -8205,14 +7845,13 @@ apiInstance.postWorkforcemanagementTimeoffrequests(opts)
 # TimeOffLimit putWorkforcemanagementManagementunitTimeofflimitValues(managementUnitId, timeOffLimitId, opts)
 
 
-
 PUT /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits/{timeOffLimitId}/values
 
 Sets daily values for a date range of time off limit object
 
 Note that only limit daily values can be set through API, allocated and waitlisted values are read-only for time off limit API
 
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * wfm:timeOffLimit:edit
 

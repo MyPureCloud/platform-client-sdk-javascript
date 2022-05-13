@@ -5,7 +5,7 @@ class RecordingApi {
 	/**
 	 * Recording service.
 	 * @module purecloud-platform-client-v2/api/RecordingApi
-	 * @version 136.1.0
+	 * @version 137.0.0
 	 */
 
 	/**
@@ -44,13 +44,13 @@ class RecordingApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations/{annotationId}', 
 			'DELETE', 
-			{ 'conversationId': conversationId,'recordingId': recordingId,'annotationId': annotationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId,'recordingId': recordingId,'annotationId': annotationId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -69,13 +69,13 @@ class RecordingApi {
 		return this.apiClient.callApi(
 			'/api/v2/orphanrecordings/{orphanId}', 
 			'DELETE', 
-			{ 'orphanId': orphanId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'orphanId': orphanId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -94,13 +94,13 @@ class RecordingApi {
 		return this.apiClient.callApi(
 			'/api/v2/recording/crossplatform/mediaretentionpolicies', 
 			'DELETE', 
-			{  }, 
-			{ 'ids': ids }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'ids': ids },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -119,13 +119,13 @@ class RecordingApi {
 		return this.apiClient.callApi(
 			'/api/v2/recording/crossplatform/mediaretentionpolicies/{policyId}', 
 			'DELETE', 
-			{ 'policyId': policyId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'policyId': policyId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -144,13 +144,13 @@ class RecordingApi {
 		return this.apiClient.callApi(
 			'/api/v2/recording/jobs/{jobId}', 
 			'DELETE', 
-			{ 'jobId': jobId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'jobId': jobId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -169,13 +169,13 @@ class RecordingApi {
 		return this.apiClient.callApi(
 			'/api/v2/recording/mediaretentionpolicies', 
 			'DELETE', 
-			{  }, 
-			{ 'ids': ids }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'ids': ids },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -194,13 +194,13 @@ class RecordingApi {
 		return this.apiClient.callApi(
 			'/api/v2/recording/mediaretentionpolicies/{policyId}', 
 			'DELETE', 
-			{ 'policyId': policyId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'policyId': policyId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -215,7 +215,7 @@ class RecordingApi {
 	 * @param {Object} opts.emailFormatId The desired media format when downloading an email recording. Valid values:EML,NONE (default to EML)
 	 * @param {Object} opts.chatFormatId The desired media format when downloading a chat recording. Valid values:ZIP,NONE  (default to ZIP)
 	 * @param {Object} opts.messageFormatId The desired media format when downloading a message recording. Valid values:ZIP,NONE (default to ZIP)
-	 * @param {Boolean} opts.download requesting a download format of the recording. Valid values:true,false (default to false)
+	 * @param {Object} opts.download requesting a download format of the recording. Valid values:true,false (default to false)
 	 * @param {String} opts.fileName the name of the downloaded fileName
 	 * @param {String} opts.locale The locale for the requested file when downloading, as an ISO 639-1 code
 	 * @param {Array.<String>} opts.mediaFormats All acceptable media formats. Overrides formatId. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3
@@ -235,13 +235,13 @@ class RecordingApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/{conversationId}/recordings/{recordingId}', 
 			'GET', 
-			{ 'conversationId': conversationId,'recordingId': recordingId }, 
-			{ 'formatId': opts['formatId'],'emailFormatId': opts['emailFormatId'],'chatFormatId': opts['chatFormatId'],'messageFormatId': opts['messageFormatId'],'download': opts['download'],'fileName': opts['fileName'],'locale': opts['locale'],'mediaFormats': this.apiClient.buildCollectionParam(opts['mediaFormats'], 'multi') }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId,'recordingId': recordingId },
+			{ 'formatId': opts['formatId'],'emailFormatId': opts['emailFormatId'],'chatFormatId': opts['chatFormatId'],'messageFormatId': opts['messageFormatId'],'download': opts['download'],'fileName': opts['fileName'],'locale': opts['locale'],'mediaFormats': this.apiClient.buildCollectionParam(opts['mediaFormats'], 'multi') },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -270,13 +270,13 @@ class RecordingApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations/{annotationId}', 
 			'GET', 
-			{ 'conversationId': conversationId,'recordingId': recordingId,'annotationId': annotationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId,'recordingId': recordingId,'annotationId': annotationId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -300,19 +300,19 @@ class RecordingApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations', 
 			'GET', 
-			{ 'conversationId': conversationId,'recordingId': recordingId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId,'recordingId': recordingId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
 
 	/**
-	 * Get recording metadata for a conversation. Does not return playable media. Annotations won&#39;t be included in the response if recording:recording:view permission is missing.
+	 * Get recording metadata for a conversation. Does not return playable media. Annotations won't be included in the response if recording:recording:view permission is missing.
 	 * 
 	 * @param {String} conversationId Conversation ID
 	 */
@@ -325,13 +325,13 @@ class RecordingApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/{conversationId}/recordingmetadata', 
 			'GET', 
-			{ 'conversationId': conversationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -355,19 +355,19 @@ class RecordingApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/{conversationId}/recordingmetadata/{recordingId}', 
 			'GET', 
-			{ 'conversationId': conversationId,'recordingId': recordingId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId,'recordingId': recordingId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
 
 	/**
-	 * Get all of a Conversation&#39;s Recordings.
+	 * Get all of a Conversation's Recordings.
 	 * 
 	 * @param {String} conversationId Conversation ID
 	 * @param {Object} opts Optional parameters
@@ -386,13 +386,13 @@ class RecordingApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/{conversationId}/recordings', 
 			'GET', 
-			{ 'conversationId': conversationId }, 
-			{ 'maxWaitMs': opts['maxWaitMs'],'formatId': opts['formatId'],'mediaFormats': this.apiClient.buildCollectionParam(opts['mediaFormats'], 'multi') }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId },
+			{ 'maxWaitMs': opts['maxWaitMs'],'formatId': opts['formatId'],'mediaFormats': this.apiClient.buildCollectionParam(opts['mediaFormats'], 'multi') },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -411,13 +411,13 @@ class RecordingApi {
 		return this.apiClient.callApi(
 			'/api/v2/orphanrecordings/{orphanId}', 
 			'GET', 
-			{ 'orphanId': orphanId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'orphanId': orphanId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -431,7 +431,7 @@ class RecordingApi {
 	 * @param {Object} opts.emailFormatId The desired media format when downloading an email recording. (default to EML)
 	 * @param {Object} opts.chatFormatId The desired media format when downloading a chat recording. (default to ZIP)
 	 * @param {Object} opts.messageFormatId The desired media format when downloading a message recording. (default to ZIP)
-	 * @param {Boolean} opts.download requesting a download format of the recording (default to false)
+	 * @param {Object} opts.download requesting a download format of the recording (default to false)
 	 * @param {String} opts.fileName the name of the downloaded fileName
 	 * @param {String} opts.locale The locale for the requested file when downloading, as an ISO 639-1 code
 	 * @param {Array.<String>} opts.mediaFormats All acceptable media formats. Overrides formatId. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3
@@ -447,13 +447,13 @@ class RecordingApi {
 		return this.apiClient.callApi(
 			'/api/v2/orphanrecordings/{orphanId}/media', 
 			'GET', 
-			{ 'orphanId': orphanId }, 
-			{ 'formatId': opts['formatId'],'emailFormatId': opts['emailFormatId'],'chatFormatId': opts['chatFormatId'],'messageFormatId': opts['messageFormatId'],'download': opts['download'],'fileName': opts['fileName'],'locale': opts['locale'],'mediaFormats': this.apiClient.buildCollectionParam(opts['mediaFormats'], 'multi') }, 
-			{  }, 
-			{  }, 
+			{ 'orphanId': orphanId },
+			{ 'formatId': opts['formatId'],'emailFormatId': opts['emailFormatId'],'chatFormatId': opts['chatFormatId'],'messageFormatId': opts['messageFormatId'],'download': opts['download'],'fileName': opts['fileName'],'locale': opts['locale'],'mediaFormats': this.apiClient.buildCollectionParam(opts['mediaFormats'], 'multi') },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -478,13 +478,13 @@ class RecordingApi {
 		return this.apiClient.callApi(
 			'/api/v2/orphanrecordings', 
 			'GET', 
-			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'nextPage': opts['nextPage'],'previousPage': opts['previousPage'],'hasConversation': opts['hasConversation'],'media': opts['media'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'nextPage': opts['nextPage'],'previousPage': opts['previousPage'],'hasConversation': opts['hasConversation'],'media': opts['media'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -503,13 +503,13 @@ class RecordingApi {
 		return this.apiClient.callApi(
 			'/api/v2/recording/batchrequests/{jobId}', 
 			'GET', 
-			{ 'jobId': jobId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'jobId': jobId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -537,13 +537,13 @@ class RecordingApi {
 		return this.apiClient.callApi(
 			'/api/v2/recording/crossplatform/mediaretentionpolicies', 
 			'GET', 
-			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'nextPage': opts['nextPage'],'previousPage': opts['previousPage'],'name': opts['name'],'enabled': opts['enabled'],'summary': opts['summary'],'hasErrors': opts['hasErrors'],'deleteDaysThreshold': opts['deleteDaysThreshold'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'nextPage': opts['nextPage'],'previousPage': opts['previousPage'],'name': opts['name'],'enabled': opts['enabled'],'summary': opts['summary'],'hasErrors': opts['hasErrors'],'deleteDaysThreshold': opts['deleteDaysThreshold'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -562,13 +562,13 @@ class RecordingApi {
 		return this.apiClient.callApi(
 			'/api/v2/recording/crossplatform/mediaretentionpolicies/{policyId}', 
 			'GET', 
-			{ 'policyId': policyId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'policyId': policyId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -587,13 +587,13 @@ class RecordingApi {
 		return this.apiClient.callApi(
 			'/api/v2/recording/jobs/{jobId}', 
 			'GET', 
-			{ 'jobId': jobId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'jobId': jobId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -619,19 +619,19 @@ class RecordingApi {
 		return this.apiClient.callApi(
 			'/api/v2/recording/jobs/{jobId}/failedrecordings', 
 			'GET', 
-			{ 'jobId': jobId }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'includeTotal': opts['includeTotal'],'cursor': opts['cursor'] }, 
-			{  }, 
-			{  }, 
+			{ 'jobId': jobId },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'includeTotal': opts['includeTotal'],'cursor': opts['cursor'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
 
 	/**
-	 * Get the status of all jobs within the user&#39;s organization
+	 * Get the status of all jobs within the user's organization
 	 * 
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize Page size (default to 25)
@@ -650,13 +650,13 @@ class RecordingApi {
 		return this.apiClient.callApi(
 			'/api/v2/recording/jobs', 
 			'GET', 
-			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'state': opts['state'],'showOnlyMyJobs': opts['showOnlyMyJobs'],'jobType': opts['jobType'],'includeTotal': opts['includeTotal'],'cursor': opts['cursor'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'state': opts['state'],'showOnlyMyJobs': opts['showOnlyMyJobs'],'jobType': opts['jobType'],'includeTotal': opts['includeTotal'],'cursor': opts['cursor'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -675,13 +675,13 @@ class RecordingApi {
 		return this.apiClient.callApi(
 			'/api/v2/recording/keyconfigurations/{keyConfigurationId}', 
 			'GET', 
-			{ 'keyConfigurationId': keyConfigurationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'keyConfigurationId': keyConfigurationId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -695,13 +695,13 @@ class RecordingApi {
 		return this.apiClient.callApi(
 			'/api/v2/recording/keyconfigurations', 
 			'GET', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -720,13 +720,13 @@ class RecordingApi {
 		return this.apiClient.callApi(
 			'/api/v2/recording/localkeys/settings/{settingsId}', 
 			'GET', 
-			{ 'settingsId': settingsId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'settingsId': settingsId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -740,13 +740,13 @@ class RecordingApi {
 		return this.apiClient.callApi(
 			'/api/v2/recording/localkeys/settings', 
 			'GET', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -774,13 +774,13 @@ class RecordingApi {
 		return this.apiClient.callApi(
 			'/api/v2/recording/mediaretentionpolicies', 
 			'GET', 
-			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'nextPage': opts['nextPage'],'previousPage': opts['previousPage'],'name': opts['name'],'enabled': opts['enabled'],'summary': opts['summary'],'hasErrors': opts['hasErrors'],'deleteDaysThreshold': opts['deleteDaysThreshold'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'nextPage': opts['nextPage'],'previousPage': opts['previousPage'],'name': opts['name'],'enabled': opts['enabled'],'summary': opts['summary'],'hasErrors': opts['hasErrors'],'deleteDaysThreshold': opts['deleteDaysThreshold'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -799,13 +799,13 @@ class RecordingApi {
 		return this.apiClient.callApi(
 			'/api/v2/recording/mediaretentionpolicies/{policyId}', 
 			'GET', 
-			{ 'policyId': policyId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'policyId': policyId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -824,13 +824,13 @@ class RecordingApi {
 		return this.apiClient.callApi(
 			'/api/v2/recording/recordingkeys', 
 			'GET', 
-			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -844,13 +844,13 @@ class RecordingApi {
 		return this.apiClient.callApi(
 			'/api/v2/recording/recordingkeys/rotationschedule', 
 			'GET', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -868,13 +868,13 @@ class RecordingApi {
 		return this.apiClient.callApi(
 			'/api/v2/recording/settings', 
 			'GET', 
-			{  }, 
-			{ 'createDefault': opts['createDefault'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'createDefault': opts['createDefault'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -893,13 +893,13 @@ class RecordingApi {
 		return this.apiClient.callApi(
 			'/api/v2/recordings/screensessions', 
 			'GET', 
-			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -923,13 +923,13 @@ class RecordingApi {
 		return this.apiClient.callApi(
 			'/api/v2/recording/crossplatform/mediaretentionpolicies/{policyId}', 
 			'PATCH', 
-			{ 'policyId': policyId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'policyId': policyId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -953,13 +953,13 @@ class RecordingApi {
 		return this.apiClient.callApi(
 			'/api/v2/recording/mediaretentionpolicies/{policyId}', 
 			'PATCH', 
-			{ 'policyId': policyId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'policyId': policyId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -982,13 +982,13 @@ class RecordingApi {
 		return this.apiClient.callApi(
 			'/api/v2/recordings/screensessions/{recordingSessionId}', 
 			'PATCH', 
-			{ 'recordingSessionId': recordingSessionId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'recordingSessionId': recordingSessionId },
+			{  },
+			{  },
+			{  },
 			opts['body'], 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1017,13 +1017,13 @@ class RecordingApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations', 
 			'POST', 
-			{ 'conversationId': conversationId,'recordingId': recordingId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId,'recordingId': recordingId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1042,13 +1042,13 @@ class RecordingApi {
 		return this.apiClient.callApi(
 			'/api/v2/recording/batchrequests', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1067,13 +1067,13 @@ class RecordingApi {
 		return this.apiClient.callApi(
 			'/api/v2/recording/crossplatform/mediaretentionpolicies', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1092,13 +1092,13 @@ class RecordingApi {
 		return this.apiClient.callApi(
 			'/api/v2/recording/jobs', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1117,13 +1117,13 @@ class RecordingApi {
 		return this.apiClient.callApi(
 			'/api/v2/recording/keyconfigurations', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1142,13 +1142,13 @@ class RecordingApi {
 		return this.apiClient.callApi(
 			'/api/v2/recording/keyconfigurations/validate', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1167,13 +1167,13 @@ class RecordingApi {
 		return this.apiClient.callApi(
 			'/api/v2/recording/localkeys', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1192,13 +1192,13 @@ class RecordingApi {
 		return this.apiClient.callApi(
 			'/api/v2/recording/localkeys/settings', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1217,13 +1217,13 @@ class RecordingApi {
 		return this.apiClient.callApi(
 			'/api/v2/recording/mediaretentionpolicies', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1237,13 +1237,13 @@ class RecordingApi {
 		return this.apiClient.callApi(
 			'/api/v2/recording/recordingkeys', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1262,13 +1262,13 @@ class RecordingApi {
 		return this.apiClient.callApi(
 			'/api/v2/recordings/deletionprotection', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1287,13 +1287,13 @@ class RecordingApi {
 		return this.apiClient.callApi(
 			'/api/v2/recordings/screensessions/acknowledge', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1312,13 +1312,13 @@ class RecordingApi {
 		return this.apiClient.callApi(
 			'/api/v2/recordings/screensessions/metadata', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1347,13 +1347,13 @@ class RecordingApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/{conversationId}/recordings/{recordingId}', 
 			'PUT', 
-			{ 'conversationId': conversationId,'recordingId': recordingId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId,'recordingId': recordingId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1387,13 +1387,13 @@ class RecordingApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations/{annotationId}', 
 			'PUT', 
-			{ 'conversationId': conversationId,'recordingId': recordingId,'annotationId': annotationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId,'recordingId': recordingId,'annotationId': annotationId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1416,13 +1416,13 @@ class RecordingApi {
 		return this.apiClient.callApi(
 			'/api/v2/orphanrecordings/{orphanId}', 
 			'PUT', 
-			{ 'orphanId': orphanId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'orphanId': orphanId },
+			{  },
+			{  },
+			{  },
 			opts['body'], 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1446,20 +1446,20 @@ class RecordingApi {
 		return this.apiClient.callApi(
 			'/api/v2/recording/crossplatform/mediaretentionpolicies/{policyId}', 
 			'PUT', 
-			{ 'policyId': policyId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'policyId': policyId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
 
 	/**
 	 * Execute the recording bulk job.
-	 * A job must be executed by the same user whom originally created the job.  In addition, the user must have permission to update the recording&#39;s retention.
+	 * A job must be executed by the same user whom originally created the job.  In addition, the user must have permission to update the recordings retention.
 	 * @param {String} jobId jobId
 	 * @param {Object} body query
 	 */
@@ -1476,13 +1476,13 @@ class RecordingApi {
 		return this.apiClient.callApi(
 			'/api/v2/recording/jobs/{jobId}', 
 			'PUT', 
-			{ 'jobId': jobId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'jobId': jobId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1506,13 +1506,13 @@ class RecordingApi {
 		return this.apiClient.callApi(
 			'/api/v2/recording/keyconfigurations/{keyConfigurationId}', 
 			'PUT', 
-			{ 'keyConfigurationId': keyConfigurationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'keyConfigurationId': keyConfigurationId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1536,13 +1536,13 @@ class RecordingApi {
 		return this.apiClient.callApi(
 			'/api/v2/recording/localkeys/settings/{settingsId}', 
 			'PUT', 
-			{ 'settingsId': settingsId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'settingsId': settingsId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1566,13 +1566,13 @@ class RecordingApi {
 		return this.apiClient.callApi(
 			'/api/v2/recording/mediaretentionpolicies/{policyId}', 
 			'PUT', 
-			{ 'policyId': policyId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'policyId': policyId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1591,13 +1591,13 @@ class RecordingApi {
 		return this.apiClient.callApi(
 			'/api/v2/recording/recordingkeys/rotationschedule', 
 			'PUT', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1616,13 +1616,13 @@ class RecordingApi {
 		return this.apiClient.callApi(
 			'/api/v2/recording/settings', 
 			'PUT', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1641,13 +1641,13 @@ class RecordingApi {
 		return this.apiClient.callApi(
 			'/api/v2/recordings/deletionprotection', 
 			'PUT', 
-			{  }, 
-			{ 'protect': opts['protect'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'protect': opts['protect'] },
+			{  },
+			{  },
 			opts['body'], 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}

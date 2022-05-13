@@ -5,7 +5,7 @@ class ResponseManagementApi {
 	/**
 	 * ResponseManagement service.
 	 * @module purecloud-platform-client-v2/api/ResponseManagementApi
-	 * @version 136.1.0
+	 * @version 137.0.0
 	 */
 
 	/**
@@ -34,13 +34,13 @@ class ResponseManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/responsemanagement/libraries/{libraryId}', 
 			'DELETE', 
-			{ 'libraryId': libraryId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'libraryId': libraryId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -59,13 +59,13 @@ class ResponseManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/responsemanagement/responses/{responseId}', 
 			'DELETE', 
-			{ 'responseId': responseId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'responseId': responseId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -84,13 +84,13 @@ class ResponseManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/responsemanagement/responseassets/{responseAssetId}', 
 			'DELETE', 
-			{ 'responseAssetId': responseAssetId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'responseAssetId': responseAssetId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -110,13 +110,13 @@ class ResponseManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/responsemanagement/libraries', 
 			'GET', 
-			{  }, 
-			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'messagingTemplateFilter': opts['messagingTemplateFilter'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'messagingTemplateFilter': opts['messagingTemplateFilter'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -135,13 +135,13 @@ class ResponseManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/responsemanagement/libraries/{libraryId}', 
 			'GET', 
-			{ 'libraryId': libraryId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'libraryId': libraryId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -164,13 +164,13 @@ class ResponseManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/responsemanagement/responses/{responseId}', 
 			'GET', 
-			{ 'responseId': responseId }, 
-			{ 'expand': opts['expand'] }, 
-			{  }, 
-			{  }, 
+			{ 'responseId': responseId },
+			{ 'expand': opts['expand'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -189,13 +189,13 @@ class ResponseManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/responsemanagement/responseassets/{responseAssetId}', 
 			'GET', 
-			{ 'responseAssetId': responseAssetId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'responseAssetId': responseAssetId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -214,13 +214,13 @@ class ResponseManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/responsemanagement/responseassets/status/{statusId}', 
 			'GET', 
-			{ 'statusId': statusId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'statusId': statusId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -245,13 +245,13 @@ class ResponseManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/responsemanagement/responses', 
 			'GET', 
-			{  }, 
-			{ 'libraryId': libraryId,'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'expand': opts['expand'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'libraryId': libraryId,'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'expand': opts['expand'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -270,13 +270,13 @@ class ResponseManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/responsemanagement/libraries', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -299,13 +299,13 @@ class ResponseManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/responsemanagement/responseassets/search', 
 			'POST', 
-			{  }, 
-			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -324,13 +324,13 @@ class ResponseManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/responsemanagement/responseassets/uploads', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -353,13 +353,13 @@ class ResponseManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/responsemanagement/responses', 
 			'POST', 
-			{  }, 
-			{ 'expand': opts['expand'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'expand': opts['expand'] },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -378,13 +378,13 @@ class ResponseManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/responsemanagement/responses/query', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -408,13 +408,13 @@ class ResponseManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/responsemanagement/libraries/{libraryId}', 
 			'PUT', 
-			{ 'libraryId': libraryId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'libraryId': libraryId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -442,13 +442,13 @@ class ResponseManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/responsemanagement/responses/{responseId}', 
 			'PUT', 
-			{ 'responseId': responseId }, 
-			{ 'expand': opts['expand'] }, 
-			{  }, 
-			{  }, 
+			{ 'responseId': responseId },
+			{ 'expand': opts['expand'] },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -472,13 +472,13 @@ class ResponseManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/responsemanagement/responseassets/{responseAssetId}', 
 			'PUT', 
-			{ 'responseAssetId': responseAssetId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'responseAssetId': responseAssetId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}

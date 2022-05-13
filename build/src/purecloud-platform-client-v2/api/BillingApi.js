@@ -5,7 +5,7 @@ class BillingApi {
 	/**
 	 * Billing service.
 	 * @module purecloud-platform-client-v2/api/BillingApi
-	 * @version 136.1.0
+	 * @version 137.0.0
 	 */
 
 	/**
@@ -22,7 +22,7 @@ class BillingApi {
 
 	/**
 	 * Get a report of the billable license usages
-	 * Report is of the billable usages (e.g. licenses and devices utilized) for a given period. If response&#39;s status is InProgress, wait a few seconds, then try the same request again.
+	 * Report is of the billable usages (e.g. licenses and devices utilized) for a given period. If responses status is InProgress, wait a few seconds, then try the same request again.
 	 * @param {Date} startDate The period start date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 	 * @param {Date} endDate The period end date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 	 */
@@ -39,13 +39,13 @@ class BillingApi {
 		return this.apiClient.callApi(
 			'/api/v2/billing/reports/billableusage', 
 			'GET', 
-			{  }, 
-			{ 'startDate': startDate,'endDate': endDate }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'startDate': startDate,'endDate': endDate },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -68,13 +68,13 @@ class BillingApi {
 		return this.apiClient.callApi(
 			'/api/v2/billing/trusteebillingoverview/{trustorOrgId}', 
 			'GET', 
-			{ 'trustorOrgId': trustorOrgId }, 
-			{ 'billingPeriodIndex': opts['billingPeriodIndex'] }, 
-			{  }, 
-			{  }, 
+			{ 'trustorOrgId': trustorOrgId },
+			{ 'billingPeriodIndex': opts['billingPeriodIndex'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}

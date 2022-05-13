@@ -45,17 +45,14 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 <a name="deleteIdentityprovidersAdfs"></a>
 
-# Empty deleteIdentityprovidersAdfs()
-
+# **Object** deleteIdentityprovidersAdfs()
 
 
 DELETE /api/v2/identityproviders/adfs
 
 Delete ADFS Identity Provider
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * sso:provider:delete
 
@@ -89,21 +86,18 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-**Empty**
+**Object**
 
 <a name="deleteIdentityprovidersCic"></a>
 
-# Empty deleteIdentityprovidersCic()
-
+# **Object** deleteIdentityprovidersCic()
 
 
 DELETE /api/v2/identityproviders/cic
 
 Delete Customer Interaction Center (CIC) Identity Provider
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * sso:provider:delete
 
@@ -137,21 +131,18 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-**Empty**
+**Object**
 
 <a name="deleteIdentityprovidersGeneric"></a>
 
-# Empty deleteIdentityprovidersGeneric()
-
+# **Object** deleteIdentityprovidersGeneric()
 
 
 DELETE /api/v2/identityproviders/generic
 
 Delete Generic SAML Identity Provider
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * sso:provider:delete
 
@@ -185,21 +176,18 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-**Empty**
+**Object**
 
 <a name="deleteIdentityprovidersGsuite"></a>
 
-# Empty deleteIdentityprovidersGsuite()
-
+# **Object** deleteIdentityprovidersGsuite()
 
 
 DELETE /api/v2/identityproviders/gsuite
 
 Delete G Suite Identity Provider
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * sso:provider:delete
 
@@ -233,21 +221,18 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-**Empty**
+**Object**
 
 <a name="deleteIdentityprovidersIdentitynow"></a>
 
-# Empty deleteIdentityprovidersIdentitynow()
-
+# **Object** deleteIdentityprovidersIdentitynow()
 
 
 DELETE /api/v2/identityproviders/identitynow
 
 Delete IdentityNow Provider
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * sso:provider:delete
 
@@ -281,21 +266,18 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-**Empty**
+**Object**
 
 <a name="deleteIdentityprovidersOkta"></a>
 
-# Empty deleteIdentityprovidersOkta()
-
+# **Object** deleteIdentityprovidersOkta()
 
 
 DELETE /api/v2/identityproviders/okta
 
 Delete Okta Identity Provider
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * sso:provider:delete
 
@@ -329,21 +311,18 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-**Empty**
+**Object**
 
 <a name="deleteIdentityprovidersOnelogin"></a>
 
-# Empty deleteIdentityprovidersOnelogin()
-
+# **Object** deleteIdentityprovidersOnelogin()
 
 
 DELETE /api/v2/identityproviders/onelogin
 
 Delete OneLogin Identity Provider
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * sso:provider:delete
 
@@ -377,21 +356,18 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-**Empty**
+**Object**
 
 <a name="deleteIdentityprovidersPing"></a>
 
-# Empty deleteIdentityprovidersPing()
-
+# **Object** deleteIdentityprovidersPing()
 
 
 DELETE /api/v2/identityproviders/ping
 
 Delete Ping Identity Provider
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * sso:provider:delete
 
@@ -425,21 +401,18 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-**Empty**
+**Object**
 
 <a name="deleteIdentityprovidersPurecloud"></a>
 
-# Empty deleteIdentityprovidersPurecloud()
-
+# **Object** deleteIdentityprovidersPurecloud()
 
 
 DELETE /api/v2/identityproviders/purecloud
 
 Delete PureCloud Identity Provider
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * sso:provider:delete
 
@@ -473,21 +446,18 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-**Empty**
+**Object**
 
 <a name="deleteIdentityprovidersPureengage"></a>
 
-# Empty deleteIdentityprovidersPureengage()
-
+# **Object** deleteIdentityprovidersPureengage()
 
 
 DELETE /api/v2/identityproviders/pureengage
 
 Delete PureEngage Identity Provider
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * sso:provider:delete
 
@@ -521,21 +491,18 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-**Empty**
+**Object**
 
 <a name="deleteIdentityprovidersSalesforce"></a>
 
-# Empty deleteIdentityprovidersSalesforce()
-
+# **Object** deleteIdentityprovidersSalesforce()
 
 
 DELETE /api/v2/identityproviders/salesforce
 
 Delete Salesforce Identity Provider
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * sso:provider:delete
 
@@ -569,21 +536,18 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-**Empty**
+**Object**
 
 <a name="getIdentityproviders"></a>
 
 # OAuthProviderEntityListing getIdentityproviders()
 
 
-
 GET /api/v2/identityproviders
 
 The list of identity providers
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * sso:provider:view
 
@@ -624,14 +588,11 @@ This endpoint does not need any parameter.
 # ADFS getIdentityprovidersAdfs()
 
 
-
 GET /api/v2/identityproviders/adfs
 
 Get ADFS Identity Provider
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * sso:provider:view
 
@@ -672,14 +633,11 @@ This endpoint does not need any parameter.
 # CustomerInteractionCenter getIdentityprovidersCic()
 
 
-
 GET /api/v2/identityproviders/cic
 
 Get Customer Interaction Center (CIC) Identity Provider
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * sso:provider:view
 
@@ -720,14 +678,11 @@ This endpoint does not need any parameter.
 # GenericSAML getIdentityprovidersGeneric()
 
 
-
 GET /api/v2/identityproviders/generic
 
 Get Generic SAML Identity Provider
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * sso:provider:view
 
@@ -768,14 +723,11 @@ This endpoint does not need any parameter.
 # GSuite getIdentityprovidersGsuite()
 
 
-
 GET /api/v2/identityproviders/gsuite
 
 Get G Suite Identity Provider
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * sso:provider:view
 
@@ -816,14 +768,11 @@ This endpoint does not need any parameter.
 # IdentityNow getIdentityprovidersIdentitynow()
 
 
-
 GET /api/v2/identityproviders/identitynow
 
 Get IdentityNow Provider
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * sso:provider:view
 
@@ -864,14 +813,11 @@ This endpoint does not need any parameter.
 # Okta getIdentityprovidersOkta()
 
 
-
 GET /api/v2/identityproviders/okta
 
 Get Okta Identity Provider
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * sso:provider:view
 
@@ -912,14 +858,11 @@ This endpoint does not need any parameter.
 # OneLogin getIdentityprovidersOnelogin()
 
 
-
 GET /api/v2/identityproviders/onelogin
 
 Get OneLogin Identity Provider
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * sso:provider:view
 
@@ -960,14 +903,11 @@ This endpoint does not need any parameter.
 # PingIdentity getIdentityprovidersPing()
 
 
-
 GET /api/v2/identityproviders/ping
 
 Get Ping Identity Provider
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * sso:provider:view
 
@@ -1008,14 +948,11 @@ This endpoint does not need any parameter.
 # PureCloud getIdentityprovidersPurecloud()
 
 
-
 GET /api/v2/identityproviders/purecloud
 
 Get PureCloud Identity Provider
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * sso:provider:view
 
@@ -1056,14 +993,11 @@ This endpoint does not need any parameter.
 # PureEngage getIdentityprovidersPureengage()
 
 
-
 GET /api/v2/identityproviders/pureengage
 
 Get PureEngage Identity Provider
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * sso:provider:view
 
@@ -1104,14 +1038,11 @@ This endpoint does not need any parameter.
 # Salesforce getIdentityprovidersSalesforce()
 
 
-
 GET /api/v2/identityproviders/salesforce
 
 Get Salesforce Identity Provider
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * sso:provider:view
 
@@ -1152,14 +1083,11 @@ This endpoint does not need any parameter.
 # OAuthProvider putIdentityprovidersAdfs(body)
 
 
-
 PUT /api/v2/identityproviders/adfs
 
 Update/Create ADFS Identity Provider
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * sso:provider:add
 * sso:provider:edit
@@ -1206,14 +1134,11 @@ apiInstance.putIdentityprovidersAdfs(body)
 # OAuthProvider putIdentityprovidersCic(body)
 
 
-
 PUT /api/v2/identityproviders/cic
 
 Update/Create Customer Interaction Center (CIC) Identity Provider
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * sso:provider:add
 * sso:provider:edit
@@ -1260,14 +1185,11 @@ apiInstance.putIdentityprovidersCic(body)
 # OAuthProvider putIdentityprovidersGeneric(body)
 
 
-
 PUT /api/v2/identityproviders/generic
 
 Update/Create Generic SAML Identity Provider
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * sso:provider:add
 * sso:provider:edit
@@ -1314,14 +1236,11 @@ apiInstance.putIdentityprovidersGeneric(body)
 # OAuthProvider putIdentityprovidersGsuite(body)
 
 
-
 PUT /api/v2/identityproviders/gsuite
 
 Update/Create G Suite Identity Provider
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * sso:provider:add
 * sso:provider:edit
@@ -1368,14 +1287,11 @@ apiInstance.putIdentityprovidersGsuite(body)
 # IdentityNow putIdentityprovidersIdentitynow(body)
 
 
-
 PUT /api/v2/identityproviders/identitynow
 
 Update/Create IdentityNow Provider
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * sso:provider:add
 * sso:provider:edit
@@ -1422,14 +1338,11 @@ apiInstance.putIdentityprovidersIdentitynow(body)
 # OAuthProvider putIdentityprovidersOkta(body)
 
 
-
 PUT /api/v2/identityproviders/okta
 
 Update/Create Okta Identity Provider
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * sso:provider:add
 * sso:provider:edit
@@ -1476,14 +1389,11 @@ apiInstance.putIdentityprovidersOkta(body)
 # OAuthProvider putIdentityprovidersOnelogin(body)
 
 
-
 PUT /api/v2/identityproviders/onelogin
 
 Update/Create OneLogin Identity Provider
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * sso:provider:add
 * sso:provider:edit
@@ -1530,14 +1440,11 @@ apiInstance.putIdentityprovidersOnelogin(body)
 # OAuthProvider putIdentityprovidersPing(body)
 
 
-
 PUT /api/v2/identityproviders/ping
 
 Update/Create Ping Identity Provider
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * sso:provider:add
 * sso:provider:edit
@@ -1584,14 +1491,11 @@ apiInstance.putIdentityprovidersPing(body)
 # OAuthProvider putIdentityprovidersPurecloud(body)
 
 
-
 PUT /api/v2/identityproviders/purecloud
 
 Update/Create PureCloud Identity Provider
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * sso:provider:add
 * sso:provider:edit
@@ -1638,14 +1542,11 @@ apiInstance.putIdentityprovidersPurecloud(body)
 # OAuthProvider putIdentityprovidersPureengage(body)
 
 
-
 PUT /api/v2/identityproviders/pureengage
 
 Update/Create PureEngage Identity Provider
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * sso:provider:add
 * sso:provider:edit
@@ -1692,14 +1593,11 @@ apiInstance.putIdentityprovidersPureengage(body)
 # OAuthProvider putIdentityprovidersSalesforce(body)
 
 
-
 PUT /api/v2/identityproviders/salesforce
 
 Update/Create Salesforce Identity Provider
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * sso:provider:add
 * sso:provider:edit

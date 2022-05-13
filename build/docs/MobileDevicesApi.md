@@ -19,15 +19,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 # void deleteMobiledevice(deviceId)
 
 
-
 DELETE /api/v2/mobiledevices/{deviceId}
 
 Delete device
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -71,15 +67,11 @@ void (no response body)
 # UserDevice getMobiledevice(deviceId)
 
 
-
 GET /api/v2/mobiledevices/{deviceId}
 
 Get device
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -123,15 +115,11 @@ apiInstance.getMobiledevice(deviceId)
 # DirectoryUserDevicesListing getMobiledevices(opts)
 
 
-
 GET /api/v2/mobiledevices
 
 Get a list of all devices.
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -181,15 +169,11 @@ apiInstance.getMobiledevices(opts)
 # UserDevice postMobiledevices(body)
 
 
-
 POST /api/v2/mobiledevices
 
 Create User device
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -233,15 +217,11 @@ apiInstance.postMobiledevices(body)
 # UserDevice putMobiledevice(deviceId, opts)
 
 
-
 PUT /api/v2/mobiledevices/{deviceId}
 
 Update device
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 

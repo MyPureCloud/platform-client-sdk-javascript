@@ -27,14 +27,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 # void deleteOauthClient(clientId)
 
 
-
 DELETE /api/v2/oauth/clients/{clientId}
 
 Delete OAuth Client
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * oauth:client:delete
 
@@ -80,14 +77,11 @@ void (no response body)
 # OAuthAuthorization getOauthAuthorization(clientId, opts)
 
 
-
 GET /api/v2/oauth/authorizations/{clientId}
 
 Get a client that is authorized by the resource owner
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * oauth:client:authorize
 
@@ -137,14 +131,11 @@ apiInstance.getOauthAuthorization(clientId, opts)
 # OAuthAuthorizationListing getOauthAuthorizations(opts)
 
 
-
 GET /api/v2/oauth/authorizations
 
 List clients that have been authorized, requested, or revoked by the resource owner
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * oauth:client:authorize
 
@@ -192,14 +183,11 @@ apiInstance.getOauthAuthorizations(opts)
 # OAuthClient getOauthClient(clientId)
 
 
-
 GET /api/v2/oauth/clients/{clientId}
 
 Get OAuth Client
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * oauth:client:view
 
@@ -245,14 +233,11 @@ apiInstance.getOauthClient(clientId)
 # ApiUsageQueryResult getOauthClientUsageQueryResult(executionId, clientId)
 
 
-
 GET /api/v2/oauth/clients/{clientId}/usage/query/results/{executionId}
 
 Get the results of a usage query
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * oauth:client:view
 
@@ -300,14 +285,13 @@ apiInstance.getOauthClientUsageQueryResult(executionId, clientId)
 # UsageExecutionResult getOauthClientUsageSummary(clientId, opts)
 
 
-
 GET /api/v2/oauth/clients/{clientId}/usage/summary
 
 Get a summary of OAuth client API usage
 
 After calling this method, you will then need to poll for the query results based on the returned execution Id
 
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * oauth:client:view
 
@@ -357,14 +341,11 @@ apiInstance.getOauthClientUsageSummary(clientId, opts)
 # OAuthClientEntityListing getOauthClients()
 
 
-
 GET /api/v2/oauth/clients
 
 The list of OAuth clients
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * oauth:client:view
 
@@ -405,15 +386,11 @@ This endpoint does not need any parameter.
 # OAuthScope getOauthScope(scopeId, opts)
 
 
-
 GET /api/v2/oauth/scopes/{scopeId}
 
 An OAuth scope
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -461,15 +438,11 @@ apiInstance.getOauthScope(scopeId, opts)
 # OAuthScopeListing getOauthScopes(opts)
 
 
-
 GET /api/v2/oauth/scopes
 
 The list of OAuth scopes
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -515,14 +488,13 @@ apiInstance.getOauthScopes(opts)
 # OAuthClient postOauthClientSecret(clientId)
 
 
-
 POST /api/v2/oauth/clients/{clientId}/secret
 
 Regenerate Client Secret
 
 This operation will set the client secret to a randomly generated cryptographically random value. All clients must be updated with the new secret. This operation should be used with caution.
 
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * oauth:client:edit
 
@@ -568,14 +540,13 @@ apiInstance.postOauthClientSecret(clientId)
 # UsageExecutionResult postOauthClientUsageQuery(clientId, body)
 
 
-
 POST /api/v2/oauth/clients/{clientId}/usage/query
 
 Query for OAuth client API usage
 
 After calling this method, you will then need to poll for the query results based on the returned execution Id
 
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * oauth:client:view
 
@@ -623,14 +594,13 @@ apiInstance.postOauthClientUsageQuery(clientId, body)
 # OAuthClient postOauthClients(body)
 
 
-
 POST /api/v2/oauth/clients
 
 Create OAuth client
 
-The OAuth Grant/Client is required in order to create an authentication token and gain access to PureCloud.  The preferred authorizedGrantTypes is &#39;CODE&#39; which requires applications to send a client ID and client secret. This is typically a web server.  If the client is unable to secure the client secret then the &#39;TOKEN&#39; grant type aka IMPLICIT should be used. This is would be for browser or mobile apps.  If a client is to be used outside of the context of a user then the &#39;CLIENT-CREDENTIALS&#39; grant may be used. In this case the client must be granted roles  via the &#39;roleIds&#39; field.
+The OAuth Grant/Client is required in order to create an authentication token and gain access to PureCloud.  The preferred authorizedGrantTypes is CODE which requires applications to send a client ID and client secret. This is typically a web server.  If the client is unable to secure the client secret then the TOKEN grant type aka IMPLICIT should be used. This is would be for browser or mobile apps.  If a client is to be used outside of the context of a user then the CLIENT-CREDENTIALS grant may be used. In this case the client must be granted roles  via the roleIds field.
 
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * oauth:client:add
 
@@ -676,14 +646,11 @@ apiInstance.postOauthClients(body)
 # OAuthClient putOauthClient(clientId, body)
 
 
-
 PUT /api/v2/oauth/clients/{clientId}
 
 Update OAuth Client
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * oauth:client:edit
 

@@ -5,7 +5,7 @@ class GeneralDataProtectionRegulationApi {
 	/**
 	 * GeneralDataProtectionRegulation service.
 	 * @module purecloud-platform-client-v2/api/GeneralDataProtectionRegulationApi
-	 * @version 136.1.0
+	 * @version 137.0.0
 	 */
 
 	/**
@@ -34,13 +34,13 @@ class GeneralDataProtectionRegulationApi {
 		return this.apiClient.callApi(
 			'/api/v2/gdpr/requests/{requestId}', 
 			'GET', 
-			{ 'requestId': requestId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'requestId': requestId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -59,13 +59,13 @@ class GeneralDataProtectionRegulationApi {
 		return this.apiClient.callApi(
 			'/api/v2/gdpr/requests', 
 			'GET', 
-			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -89,13 +89,13 @@ class GeneralDataProtectionRegulationApi {
 		return this.apiClient.callApi(
 			'/api/v2/gdpr/subjects', 
 			'GET', 
-			{  }, 
-			{ 'searchType': searchType,'searchValue': searchValue }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'searchType': searchType,'searchValue': searchValue },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -118,13 +118,13 @@ class GeneralDataProtectionRegulationApi {
 		return this.apiClient.callApi(
 			'/api/v2/gdpr/requests', 
 			'POST', 
-			{  }, 
-			{ 'deleteConfirmed': opts['deleteConfirmed'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'deleteConfirmed': opts['deleteConfirmed'] },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}

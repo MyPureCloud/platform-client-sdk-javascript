@@ -22,15 +22,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 # void deleteNotificationsChannelSubscriptions(channelId)
 
 
-
 DELETE /api/v2/notifications/channels/{channelId}/subscriptions
 
 Remove all subscriptions
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -74,15 +70,11 @@ void (no response body)
 # AvailableTopicEntityListing getNotificationsAvailabletopics(opts)
 
 
-
 GET /api/v2/notifications/availabletopics
 
 Get available notification topics.
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -130,15 +122,11 @@ apiInstance.getNotificationsAvailabletopics(opts)
 # ChannelTopicEntityListing getNotificationsChannelSubscriptions(channelId)
 
 
-
 GET /api/v2/notifications/channels/{channelId}/subscriptions
 
 The list of all subscriptions for this channel
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -182,15 +170,11 @@ apiInstance.getNotificationsChannelSubscriptions(channelId)
 # ChannelEntityListing getNotificationsChannels(opts)
 
 
-
 GET /api/v2/notifications/channels
 
 The list of existing channels
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -224,7 +208,7 @@ apiInstance.getNotificationsChannels(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **includechannels** | **String** | Show user&#39;s channels for this specific token or across all tokens for this user and app.  Channel Ids for other access tokens will not be shown, but will be presented to show their existence. | [optional] [default to token]<br />**Values**: token, oauthclient |
+ **includechannels** | **String** | Show user's channels for this specific token or across all tokens for this user and app.  Channel Ids for other access tokens will not be shown, but will be presented to show their existence. | [optional] [default to token]<br />**Values**: token, oauthclient |
 {: class="table table-striped"}
 
 ### Return type
@@ -236,15 +220,13 @@ apiInstance.getNotificationsChannels(opts)
 # void headNotificationsChannel(channelId)
 
 
-
 HEAD /api/v2/notifications/channels/{channelId}
 
 Verify a channel still exists and is valid
 
-Returns a 200 OK if channel exists, and a 404 Not Found if it doesn&#39;t
+Returns a 200 OK if channel exists, and a 404 Not Found if it doesnt
 
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -288,15 +270,11 @@ void (no response body)
 # ChannelTopicEntityListing postNotificationsChannelSubscriptions(channelId, body)
 
 
-
 POST /api/v2/notifications/channels/{channelId}/subscriptions
 
 Add a list of subscriptions to the existing list of subscriptions
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -342,15 +320,13 @@ apiInstance.postNotificationsChannelSubscriptions(channelId, body)
 # Channel postNotificationsChannels()
 
 
-
 POST /api/v2/notifications/channels
 
 Create a new channel
 
 There is a limit of 20 channels per user/app combination. Creating a 21st channel will remove the channel with oldest last used date. Channels without an active connection will be removed first.
 
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -389,15 +365,11 @@ This endpoint does not need any parameter.
 # ChannelTopicEntityListing putNotificationsChannelSubscriptions(channelId, body)
 
 
-
 PUT /api/v2/notifications/channels/{channelId}/subscriptions
 
 Replace the current list of subscriptions with a new list.
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 

@@ -9,35 +9,34 @@ All URIs are relative to *https://api.mypurecloud.com*
 | ------------- | ------------- | ------------- |
 [**deleteVoicemailMessage**](VoicemailApi.html#deleteVoicemailMessage) | **DELETE** /api/v2/voicemail/messages/{messageId} | Delete a voicemail message.
 [**deleteVoicemailMessages**](VoicemailApi.html#deleteVoicemailMessages) | **DELETE** /api/v2/voicemail/messages | Delete all voicemail messages
-[**getVoicemailGroupMailbox**](VoicemailApi.html#getVoicemailGroupMailbox) | **GET** /api/v2/voicemail/groups/{groupId}/mailbox | Get the group&#39;s mailbox information
+[**getVoicemailGroupMailbox**](VoicemailApi.html#getVoicemailGroupMailbox) | **GET** /api/v2/voicemail/groups/{groupId}/mailbox | Get the group's mailbox information
 [**getVoicemailGroupMessages**](VoicemailApi.html#getVoicemailGroupMessages) | **GET** /api/v2/voicemail/groups/{groupId}/messages | List voicemail messages
-[**getVoicemailGroupPolicy**](VoicemailApi.html#getVoicemailGroupPolicy) | **GET** /api/v2/voicemail/groups/{groupId}/policy | Get a group&#39;s voicemail policy
-[**getVoicemailMailbox**](VoicemailApi.html#getVoicemailMailbox) | **GET** /api/v2/voicemail/mailbox | Get the current user&#39;s mailbox information
-[**getVoicemailMeMailbox**](VoicemailApi.html#getVoicemailMeMailbox) | **GET** /api/v2/voicemail/me/mailbox | Get the current user&#39;s mailbox information
+[**getVoicemailGroupPolicy**](VoicemailApi.html#getVoicemailGroupPolicy) | **GET** /api/v2/voicemail/groups/{groupId}/policy | Get a group's voicemail policy
+[**getVoicemailMailbox**](VoicemailApi.html#getVoicemailMailbox) | **GET** /api/v2/voicemail/mailbox | Get the current user's mailbox information
+[**getVoicemailMeMailbox**](VoicemailApi.html#getVoicemailMeMailbox) | **GET** /api/v2/voicemail/me/mailbox | Get the current user's mailbox information
 [**getVoicemailMeMessages**](VoicemailApi.html#getVoicemailMeMessages) | **GET** /api/v2/voicemail/me/messages | List voicemail messages
-[**getVoicemailMePolicy**](VoicemailApi.html#getVoicemailMePolicy) | **GET** /api/v2/voicemail/me/policy | Get the current user&#39;s voicemail policy
+[**getVoicemailMePolicy**](VoicemailApi.html#getVoicemailMePolicy) | **GET** /api/v2/voicemail/me/policy | Get the current user's voicemail policy
 [**getVoicemailMessage**](VoicemailApi.html#getVoicemailMessage) | **GET** /api/v2/voicemail/messages/{messageId} | Get a voicemail message
 [**getVoicemailMessageMedia**](VoicemailApi.html#getVoicemailMessageMedia) | **GET** /api/v2/voicemail/messages/{messageId}/media | Get media playback URI for this voicemail message
 [**getVoicemailMessages**](VoicemailApi.html#getVoicemailMessages) | **GET** /api/v2/voicemail/messages | List voicemail messages
 [**getVoicemailPolicy**](VoicemailApi.html#getVoicemailPolicy) | **GET** /api/v2/voicemail/policy | Get a policy
 [**getVoicemailQueueMessages**](VoicemailApi.html#getVoicemailQueueMessages) | **GET** /api/v2/voicemail/queues/{queueId}/messages | List voicemail messages
 [**getVoicemailSearch**](VoicemailApi.html#getVoicemailSearch) | **GET** /api/v2/voicemail/search | Search voicemails using the q64 value returned from a previous search
-[**getVoicemailUserpolicy**](VoicemailApi.html#getVoicemailUserpolicy) | **GET** /api/v2/voicemail/userpolicies/{userId} | Get a user&#39;s voicemail policy
-[**patchVoicemailGroupPolicy**](VoicemailApi.html#patchVoicemailGroupPolicy) | **PATCH** /api/v2/voicemail/groups/{groupId}/policy | Update a group&#39;s voicemail policy
-[**patchVoicemailMePolicy**](VoicemailApi.html#patchVoicemailMePolicy) | **PATCH** /api/v2/voicemail/me/policy | Update the current user&#39;s voicemail policy
+[**getVoicemailUserpolicy**](VoicemailApi.html#getVoicemailUserpolicy) | **GET** /api/v2/voicemail/userpolicies/{userId} | Get a user's voicemail policy
+[**patchVoicemailGroupPolicy**](VoicemailApi.html#patchVoicemailGroupPolicy) | **PATCH** /api/v2/voicemail/groups/{groupId}/policy | Update a group's voicemail policy
+[**patchVoicemailMePolicy**](VoicemailApi.html#patchVoicemailMePolicy) | **PATCH** /api/v2/voicemail/me/policy | Update the current user's voicemail policy
 [**patchVoicemailMessage**](VoicemailApi.html#patchVoicemailMessage) | **PATCH** /api/v2/voicemail/messages/{messageId} | Update a voicemail message
-[**patchVoicemailUserpolicy**](VoicemailApi.html#patchVoicemailUserpolicy) | **PATCH** /api/v2/voicemail/userpolicies/{userId} | Update a user&#39;s voicemail policy
+[**patchVoicemailUserpolicy**](VoicemailApi.html#patchVoicemailUserpolicy) | **PATCH** /api/v2/voicemail/userpolicies/{userId} | Update a user's voicemail policy
 [**postVoicemailMessages**](VoicemailApi.html#postVoicemailMessages) | **POST** /api/v2/voicemail/messages | Copy a voicemail message to a user or group
 [**postVoicemailSearch**](VoicemailApi.html#postVoicemailSearch) | **POST** /api/v2/voicemail/search | Search voicemails
 [**putVoicemailMessage**](VoicemailApi.html#putVoicemailMessage) | **PUT** /api/v2/voicemail/messages/{messageId} | Update a voicemail message
 [**putVoicemailPolicy**](VoicemailApi.html#putVoicemailPolicy) | **PUT** /api/v2/voicemail/policy | Update a policy
-[**putVoicemailUserpolicy**](VoicemailApi.html#putVoicemailUserpolicy) | **PUT** /api/v2/voicemail/userpolicies/{userId} | Update a user&#39;s voicemail policy
+[**putVoicemailUserpolicy**](VoicemailApi.html#putVoicemailUserpolicy) | **PUT** /api/v2/voicemail/userpolicies/{userId} | Update a user's voicemail policy
 {: class="table table-striped"}
 
 <a name="deleteVoicemailMessage"></a>
 
 # void deleteVoicemailMessage(messageId)
-
 
 
 DELETE /api/v2/voicemail/messages/{messageId}
@@ -46,8 +45,7 @@ Delete a voicemail message.
 
 A user voicemail can only be deleted by its associated user. A group voicemail can only be deleted by a user that is a member of the group. A queue voicemail can only be deleted by a user with the acd voicemail delete permission.
 
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -91,15 +89,11 @@ void (no response body)
 # void deleteVoicemailMessages()
 
 
-
 DELETE /api/v2/voicemail/messages
 
 Delete all voicemail messages
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -138,15 +132,11 @@ void (no response body)
 # VoicemailMailboxInfo getVoicemailGroupMailbox(groupId)
 
 
-
 GET /api/v2/voicemail/groups/{groupId}/mailbox
 
-Get the group&#39;s mailbox information
+Get the group's mailbox information
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -190,15 +180,11 @@ apiInstance.getVoicemailGroupMailbox(groupId)
 # VoicemailMessageEntityListing getVoicemailGroupMessages(groupId, opts)
 
 
-
 GET /api/v2/voicemail/groups/{groupId}/messages
 
 List voicemail messages
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -248,14 +234,11 @@ apiInstance.getVoicemailGroupMessages(groupId, opts)
 # VoicemailGroupPolicy getVoicemailGroupPolicy(groupId)
 
 
-
 GET /api/v2/voicemail/groups/{groupId}/policy
 
-Get a group&#39;s voicemail policy
+Get a group's voicemail policy
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * directory:group:add
 * directory:group:edit
@@ -302,15 +285,11 @@ apiInstance.getVoicemailGroupPolicy(groupId)
 # VoicemailMailboxInfo getVoicemailMailbox()
 
 
-
 GET /api/v2/voicemail/mailbox
 
-Get the current user&#39;s mailbox information
+Get the current user's mailbox information
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -349,15 +328,11 @@ This endpoint does not need any parameter.
 # VoicemailMailboxInfo getVoicemailMeMailbox()
 
 
-
 GET /api/v2/voicemail/me/mailbox
 
-Get the current user&#39;s mailbox information
+Get the current user's mailbox information
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -396,15 +371,11 @@ This endpoint does not need any parameter.
 # VoicemailMessageEntityListing getVoicemailMeMessages(opts)
 
 
-
 GET /api/v2/voicemail/me/messages
 
 List voicemail messages
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -452,15 +423,11 @@ apiInstance.getVoicemailMeMessages(opts)
 # VoicemailUserPolicy getVoicemailMePolicy()
 
 
-
 GET /api/v2/voicemail/me/policy
 
-Get the current user&#39;s voicemail policy
+Get the current user's voicemail policy
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -499,15 +466,11 @@ This endpoint does not need any parameter.
 # VoicemailMessage getVoicemailMessage(messageId, opts)
 
 
-
 GET /api/v2/voicemail/messages/{messageId}
 
 Get a voicemail message
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -555,15 +518,11 @@ apiInstance.getVoicemailMessage(messageId, opts)
 # VoicemailMediaInfo getVoicemailMessageMedia(messageId, opts)
 
 
-
 GET /api/v2/voicemail/messages/{messageId}/media
 
 Get media playback URI for this voicemail message
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -611,15 +570,11 @@ apiInstance.getVoicemailMessageMedia(messageId, opts)
 # VoicemailMessageEntityListing getVoicemailMessages(opts)
 
 
-
 GET /api/v2/voicemail/messages
 
 List voicemail messages
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -667,14 +622,11 @@ apiInstance.getVoicemailMessages(opts)
 # VoicemailOrganizationPolicy getVoicemailPolicy()
 
 
-
 GET /api/v2/voicemail/policy
 
 Get a policy
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * telephony:plugin:all
 
@@ -715,14 +667,11 @@ This endpoint does not need any parameter.
 # VoicemailMessageEntityListing getVoicemailQueueMessages(queueId, opts)
 
 
-
 GET /api/v2/voicemail/queues/{queueId}/messages
 
 List voicemail messages
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * voicemail:acdvoicemail:view
 
@@ -774,15 +723,11 @@ apiInstance.getVoicemailQueueMessages(queueId, opts)
 # VoicemailsSearchResponse getVoicemailSearch(q64, opts)
 
 
-
 GET /api/v2/voicemail/search
 
 Search voicemails using the q64 value returned from a previous search
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -830,15 +775,11 @@ apiInstance.getVoicemailSearch(q64, opts)
 # VoicemailUserPolicy getVoicemailUserpolicy(userId)
 
 
-
 GET /api/v2/voicemail/userpolicies/{userId}
 
-Get a user&#39;s voicemail policy
+Get a user's voicemail policy
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -882,14 +823,11 @@ apiInstance.getVoicemailUserpolicy(userId)
 # VoicemailGroupPolicy patchVoicemailGroupPolicy(groupId, body)
 
 
-
 PATCH /api/v2/voicemail/groups/{groupId}/policy
 
-Update a group&#39;s voicemail policy
+Update a group's voicemail policy
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * directory:group:add
 * directory:group:edit
@@ -926,7 +864,7 @@ apiInstance.patchVoicemailGroupPolicy(groupId, body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **groupId** | **String** | Group ID |  |
- **body** | **Object** | The group&#39;s voicemail policy |  |
+ **body** | **Object** | The group's voicemail policy |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -938,15 +876,11 @@ apiInstance.patchVoicemailGroupPolicy(groupId, body)
 # VoicemailUserPolicy patchVoicemailMePolicy(body)
 
 
-
 PATCH /api/v2/voicemail/me/policy
 
-Update the current user&#39;s voicemail policy
+Update the current user's voicemail policy
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -978,7 +912,7 @@ apiInstance.patchVoicemailMePolicy(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **Object** | The user&#39;s voicemail policy |  |
+ **body** | **Object** | The user's voicemail policy |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -990,15 +924,13 @@ apiInstance.patchVoicemailMePolicy(body)
 # VoicemailMessage patchVoicemailMessage(messageId, body)
 
 
-
 PATCH /api/v2/voicemail/messages/{messageId}
 
 Update a voicemail message
 
 A user voicemail can only be modified by its associated user. A group voicemail can only be modified by a user that is a member of the group. A queue voicemail can only be modified by a participant of the conversation the voicemail is associated with.
 
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -1044,15 +976,11 @@ apiInstance.patchVoicemailMessage(messageId, body)
 # VoicemailUserPolicy patchVoicemailUserpolicy(userId, body)
 
 
-
 PATCH /api/v2/voicemail/userpolicies/{userId}
 
-Update a user&#39;s voicemail policy
+Update a user's voicemail policy
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -1086,7 +1014,7 @@ apiInstance.patchVoicemailUserpolicy(userId, body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
- **body** | **Object** | The user&#39;s voicemail policy |  |
+ **body** | **Object** | The user's voicemail policy |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1098,15 +1026,11 @@ apiInstance.patchVoicemailUserpolicy(userId, body)
 # VoicemailMessage postVoicemailMessages(opts)
 
 
-
 POST /api/v2/voicemail/messages
 
 Copy a voicemail message to a user or group
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -1152,15 +1076,11 @@ apiInstance.postVoicemailMessages(opts)
 # VoicemailsSearchResponse postVoicemailSearch(body)
 
 
-
 POST /api/v2/voicemail/search
 
 Search voicemails
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -1204,15 +1124,13 @@ apiInstance.postVoicemailSearch(body)
 # VoicemailMessage putVoicemailMessage(messageId, body)
 
 
-
 PUT /api/v2/voicemail/messages/{messageId}
 
 Update a voicemail message
 
 A user voicemail can only be modified by its associated user. A group voicemail can only be modified by a user that is a member of the group. A queue voicemail can only be modified by a participant of the conversation the voicemail is associated with.
 
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -1258,14 +1176,11 @@ apiInstance.putVoicemailMessage(messageId, body)
 # VoicemailOrganizationPolicy putVoicemailPolicy(body)
 
 
-
 PUT /api/v2/voicemail/policy
 
 Update a policy
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * telephony:plugin:all
 
@@ -1311,14 +1226,11 @@ apiInstance.putVoicemailPolicy(body)
 # VoicemailUserPolicy putVoicemailUserpolicy(userId, body)
 
 
-
 PUT /api/v2/voicemail/userpolicies/{userId}
 
-Update a user&#39;s voicemail policy
+Update a user's voicemail policy
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * telephony:plugin:all
 
@@ -1354,7 +1266,7 @@ apiInstance.putVoicemailUserpolicy(userId, body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
- **body** | **Object** | The user&#39;s voicemail policy |  |
+ **body** | **Object** | The user's voicemail policy |  |
 {: class="table table-striped"}
 
 ### Return type

@@ -5,7 +5,7 @@ class UsersApi {
 	/**
 	 * Users service.
 	 * @module purecloud-platform-client-v2/api/UsersApi
-	 * @version 136.1.0
+	 * @version 137.0.0
 	 */
 
 	/**
@@ -34,13 +34,13 @@ class UsersApi {
 		return this.apiClient.callApi(
 			'/api/v2/analytics/users/details/jobs/{jobId}', 
 			'DELETE', 
-			{ 'jobId': jobId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'jobId': jobId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -69,19 +69,19 @@ class UsersApi {
 		return this.apiClient.callApi(
 			'/api/v2/authorization/subjects/{subjectId}/divisions/{divisionId}/roles/{roleId}', 
 			'DELETE', 
-			{ 'subjectId': subjectId,'divisionId': divisionId,'roleId': roleId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'subjectId': subjectId,'divisionId': divisionId,'roleId': roleId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
 
 	/**
-	 * Delete the user&#39;s max utilization settings and revert to the organization-wide default.
+	 * Delete the user's max utilization settings and revert to the organization-wide default.
 	 * 
 	 * @param {String} userId User ID
 	 */
@@ -94,13 +94,13 @@ class UsersApi {
 		return this.apiClient.callApi(
 			'/api/v2/routing/users/{userId}/utilization', 
 			'DELETE', 
-			{ 'userId': userId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'userId': userId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -119,13 +119,13 @@ class UsersApi {
 		return this.apiClient.callApi(
 			'/api/v2/users/{userId}', 
 			'DELETE', 
-			{ 'userId': userId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'userId': userId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -149,13 +149,13 @@ class UsersApi {
 		return this.apiClient.callApi(
 			'/api/v2/users/{userId}/routinglanguages/{languageId}', 
 			'DELETE', 
-			{ 'userId': userId,'languageId': languageId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'userId': userId,'languageId': languageId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -179,13 +179,13 @@ class UsersApi {
 		return this.apiClient.callApi(
 			'/api/v2/users/{userId}/routingskills/{skillId}', 
 			'DELETE', 
-			{ 'userId': userId,'skillId': skillId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'userId': userId,'skillId': skillId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -204,13 +204,13 @@ class UsersApi {
 		return this.apiClient.callApi(
 			'/api/v2/users/{userId}/station/associatedstation', 
 			'DELETE', 
-			{ 'userId': userId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'userId': userId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -229,13 +229,13 @@ class UsersApi {
 		return this.apiClient.callApi(
 			'/api/v2/users/{userId}/station/defaultstation', 
 			'DELETE', 
-			{ 'userId': userId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'userId': userId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -254,13 +254,13 @@ class UsersApi {
 		return this.apiClient.callApi(
 			'/api/v2/analytics/users/details/jobs/{jobId}', 
 			'GET', 
-			{ 'jobId': jobId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'jobId': jobId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -284,13 +284,13 @@ class UsersApi {
 		return this.apiClient.callApi(
 			'/api/v2/analytics/users/details/jobs/{jobId}/results', 
 			'GET', 
-			{ 'jobId': jobId }, 
-			{ 'cursor': opts['cursor'],'pageSize': opts['pageSize'] }, 
-			{  }, 
-			{  }, 
+			{ 'jobId': jobId },
+			{ 'cursor': opts['cursor'],'pageSize': opts['pageSize'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -304,13 +304,13 @@ class UsersApi {
 		return this.apiClient.callApi(
 			'/api/v2/analytics/users/details/jobs/availability', 
 			'GET', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -333,13 +333,13 @@ class UsersApi {
 		return this.apiClient.callApi(
 			'/api/v2/authorization/divisionspermitted/me', 
 			'GET', 
-			{  }, 
-			{ 'name': opts['name'],'permission': permission }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'name': opts['name'],'permission': permission },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -363,13 +363,13 @@ class UsersApi {
 		return this.apiClient.callApi(
 			'/api/v2/authorization/divisionspermitted/paged/me', 
 			'GET', 
-			{  }, 
-			{ 'permission': permission,'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'permission': permission,'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -398,13 +398,13 @@ class UsersApi {
 		return this.apiClient.callApi(
 			'/api/v2/authorization/divisionspermitted/paged/{subjectId}', 
 			'GET', 
-			{ 'subjectId': subjectId }, 
-			{ 'permission': permission,'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'] }, 
-			{  }, 
-			{  }, 
+			{ 'subjectId': subjectId },
+			{ 'permission': permission,'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -423,13 +423,13 @@ class UsersApi {
 		return this.apiClient.callApi(
 			'/api/v2/authorization/subjects/{subjectId}', 
 			'GET', 
-			{ 'subjectId': subjectId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'subjectId': subjectId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -443,13 +443,13 @@ class UsersApi {
 		return this.apiClient.callApi(
 			'/api/v2/authorization/subjects/me', 
 			'GET', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -468,13 +468,13 @@ class UsersApi {
 		return this.apiClient.callApi(
 			'/api/v2/fieldconfig', 
 			'GET', 
-			{  }, 
-			{ 'type': type }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'type': type },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -489,7 +489,7 @@ class UsersApi {
 	 * @param {Array.<String>} opts.jid jid
 	 * @param {Object} opts.sortOrder Ascending or descending sort order (default to ASC)
 	 * @param {Array.<String>} opts.expand Which fields, if any, to expand
-	 * @param {Object} opts.integrationPresenceSource Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an \&quot;expand\&quot;.
+	 * @param {Object} opts.integrationPresenceSource Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an expand.
 	 */
 	getProfilesUsers(opts) { 
 		opts = opts || {};
@@ -498,19 +498,19 @@ class UsersApi {
 		return this.apiClient.callApi(
 			'/api/v2/profiles/users', 
 			'GET', 
-			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'jid': this.apiClient.buildCollectionParam(opts['jid'], 'multi'),'sortOrder': opts['sortOrder'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'integrationPresenceSource': opts['integrationPresenceSource'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'jid': this.apiClient.buildCollectionParam(opts['jid'], 'multi'),'sortOrder': opts['sortOrder'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'integrationPresenceSource': opts['integrationPresenceSource'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
 
 	/**
-	 * Get the user&#39;s max utilization settings.  If not configured, the organization-wide default is returned.
+	 * Get the user's max utilization settings.  If not configured, the organization-wide default is returned.
 	 * 
 	 * @param {String} userId User ID
 	 */
@@ -523,13 +523,13 @@ class UsersApi {
 		return this.apiClient.callApi(
 			'/api/v2/routing/users/{userId}/utilization', 
 			'GET', 
-			{ 'userId': userId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'userId': userId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -554,13 +554,13 @@ class UsersApi {
 		return this.apiClient.callApi(
 			'/api/v2/users/{userId}', 
 			'GET', 
-			{ 'userId': userId }, 
-			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'integrationPresenceSource': opts['integrationPresenceSource'],'state': opts['state'] }, 
-			{  }, 
-			{  }, 
+			{ 'userId': userId },
+			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'integrationPresenceSource': opts['integrationPresenceSource'],'state': opts['state'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -583,19 +583,19 @@ class UsersApi {
 		return this.apiClient.callApi(
 			'/api/v2/users/{userId}/adjacents', 
 			'GET', 
-			{ 'userId': userId }, 
-			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') }, 
-			{  }, 
-			{  }, 
+			{ 'userId': userId },
+			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
 
 	/**
-	 * Get a user&#39;s CallForwarding
+	 * Get a user's CallForwarding
 	 * 
 	 * @param {String} userId User ID
 	 */
@@ -608,13 +608,13 @@ class UsersApi {
 		return this.apiClient.callApi(
 			'/api/v2/users/{userId}/callforwarding', 
 			'GET', 
-			{ 'userId': userId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'userId': userId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -637,13 +637,13 @@ class UsersApi {
 		return this.apiClient.callApi(
 			'/api/v2/users/{userId}/directreports', 
 			'GET', 
-			{ 'userId': userId }, 
-			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') }, 
-			{  }, 
-			{  }, 
+			{ 'userId': userId },
+			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -669,19 +669,19 @@ class UsersApi {
 		return this.apiClient.callApi(
 			'/api/v2/users/{userId}/favorites', 
 			'GET', 
-			{ 'userId': userId }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortOrder': opts['sortOrder'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') }, 
-			{  }, 
-			{  }, 
+			{ 'userId': userId },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortOrder': opts['sortOrder'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
 
 	/**
-	 * Get a user&#39;s Geolocation
+	 * Get a user's Geolocation
 	 * 
 	 * @param {String} userId user Id
 	 * @param {String} clientId client Id
@@ -699,13 +699,13 @@ class UsersApi {
 		return this.apiClient.callApi(
 			'/api/v2/users/{userId}/geolocations/{clientId}', 
 			'GET', 
-			{ 'userId': userId,'clientId': clientId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'userId': userId,'clientId': clientId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -724,13 +724,13 @@ class UsersApi {
 		return this.apiClient.callApi(
 			'/api/v2/users/{userId}/outofoffice', 
 			'GET', 
-			{ 'userId': userId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'userId': userId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -754,13 +754,13 @@ class UsersApi {
 		return this.apiClient.callApi(
 			'/api/v2/users/{userId}/profile', 
 			'GET', 
-			{ 'userId': userId }, 
-			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'integrationPresenceSource': opts['integrationPresenceSource'] }, 
-			{  }, 
-			{  }, 
+			{ 'userId': userId },
+			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'integrationPresenceSource': opts['integrationPresenceSource'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -779,13 +779,13 @@ class UsersApi {
 		return this.apiClient.callApi(
 			'/api/v2/users/{userId}/profileskills', 
 			'GET', 
-			{ 'userId': userId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'userId': userId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -811,13 +811,13 @@ class UsersApi {
 		return this.apiClient.callApi(
 			'/api/v2/users/{userId}/queues', 
 			'GET', 
-			{ 'userId': userId }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'joined': opts['joined'],'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi') }, 
-			{  }, 
-			{  }, 
+			{ 'userId': userId },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'joined': opts['joined'],'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi') },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -836,13 +836,13 @@ class UsersApi {
 		return this.apiClient.callApi(
 			'/api/v2/users/{userId}/roles', 
 			'GET', 
-			{ 'userId': userId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'userId': userId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -867,13 +867,13 @@ class UsersApi {
 		return this.apiClient.callApi(
 			'/api/v2/users/{userId}/routinglanguages', 
 			'GET', 
-			{ 'userId': userId }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortOrder': opts['sortOrder'] }, 
-			{  }, 
-			{  }, 
+			{ 'userId': userId },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortOrder': opts['sortOrder'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -898,13 +898,13 @@ class UsersApi {
 		return this.apiClient.callApi(
 			'/api/v2/users/{userId}/routingskills', 
 			'GET', 
-			{ 'userId': userId }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortOrder': opts['sortOrder'] }, 
-			{  }, 
-			{  }, 
+			{ 'userId': userId },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortOrder': opts['sortOrder'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -923,13 +923,13 @@ class UsersApi {
 		return this.apiClient.callApi(
 			'/api/v2/users/{userId}/routingstatus', 
 			'GET', 
-			{ 'userId': userId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'userId': userId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -948,13 +948,13 @@ class UsersApi {
 		return this.apiClient.callApi(
 			'/api/v2/users/{userId}/state', 
 			'GET', 
-			{ 'userId': userId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'userId': userId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -973,13 +973,13 @@ class UsersApi {
 		return this.apiClient.callApi(
 			'/api/v2/users/{userId}/station', 
 			'GET', 
-			{ 'userId': userId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'userId': userId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1002,13 +1002,13 @@ class UsersApi {
 		return this.apiClient.callApi(
 			'/api/v2/users/{userId}/superiors', 
 			'GET', 
-			{ 'userId': userId }, 
-			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') }, 
-			{  }, 
-			{  }, 
+			{ 'userId': userId },
+			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1032,13 +1032,13 @@ class UsersApi {
 		return this.apiClient.callApi(
 			'/api/v2/users/{userId}/trustors', 
 			'GET', 
-			{ 'userId': userId }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] }, 
-			{  }, 
-			{  }, 
+			{ 'userId': userId },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1050,10 +1050,10 @@ class UsersApi {
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Array.<String>} opts.id A list of user IDs to fetch by bulk
-	 * @param {Array.<String>} opts.jabberId A list of jabberIds to fetch by bulk (cannot be used with the \&quot;id\&quot; parameter)
+	 * @param {Array.<String>} opts.jabberId A list of jabberIds to fetch by bulk (cannot be used with the id parameter)
 	 * @param {Object} opts.sortOrder Ascending or descending sort order (default to ASC)
 	 * @param {Array.<String>} opts.expand Which fields, if any, to expand
-	 * @param {Object} opts.integrationPresenceSource Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an \&quot;expand\&quot;. When using this parameter the maximum number of users that can be returned is 100.
+	 * @param {Object} opts.integrationPresenceSource Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an expand. When using this parameter the maximum number of users that can be returned is 100.
 	 * @param {Object} opts.state Only list users of this state (default to active)
 	 */
 	getUsers(opts) { 
@@ -1063,13 +1063,13 @@ class UsersApi {
 		return this.apiClient.callApi(
 			'/api/v2/users', 
 			'GET', 
-			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'jabberId': this.apiClient.buildCollectionParam(opts['jabberId'], 'multi'),'sortOrder': opts['sortOrder'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'integrationPresenceSource': opts['integrationPresenceSource'],'state': opts['state'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'jabberId': this.apiClient.buildCollectionParam(opts['jabberId'], 'multi'),'sortOrder': opts['sortOrder'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'integrationPresenceSource': opts['integrationPresenceSource'],'state': opts['state'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1097,13 +1097,13 @@ class UsersApi {
 		return this.apiClient.callApi(
 			'/api/v2/users/development/activities', 
 			'GET', 
-			{  }, 
-			{ 'userId': this.apiClient.buildCollectionParam(opts['userId'], 'multi'),'moduleId': opts['moduleId'],'interval': opts['interval'],'completionInterval': opts['completionInterval'],'overdue': opts['overdue'],'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortOrder': opts['sortOrder'],'types': this.apiClient.buildCollectionParam(opts['types'], 'multi'),'statuses': this.apiClient.buildCollectionParam(opts['statuses'], 'multi'),'relationship': this.apiClient.buildCollectionParam(opts['relationship'], 'multi') }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'userId': this.apiClient.buildCollectionParam(opts['userId'], 'multi'),'moduleId': opts['moduleId'],'interval': opts['interval'],'completionInterval': opts['completionInterval'],'overdue': opts['overdue'],'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortOrder': opts['sortOrder'],'types': this.apiClient.buildCollectionParam(opts['types'], 'multi'),'statuses': this.apiClient.buildCollectionParam(opts['statuses'], 'multi'),'relationship': this.apiClient.buildCollectionParam(opts['relationship'], 'multi') },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1130,13 +1130,13 @@ class UsersApi {
 		return this.apiClient.callApi(
 			'/api/v2/users/development/activities/me', 
 			'GET', 
-			{  }, 
-			{ 'moduleId': opts['moduleId'],'interval': opts['interval'],'completionInterval': opts['completionInterval'],'overdue': opts['overdue'],'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortOrder': opts['sortOrder'],'types': this.apiClient.buildCollectionParam(opts['types'], 'multi'),'statuses': this.apiClient.buildCollectionParam(opts['statuses'], 'multi'),'relationship': this.apiClient.buildCollectionParam(opts['relationship'], 'multi') }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'moduleId': opts['moduleId'],'interval': opts['interval'],'completionInterval': opts['completionInterval'],'overdue': opts['overdue'],'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortOrder': opts['sortOrder'],'types': this.apiClient.buildCollectionParam(opts['types'], 'multi'),'statuses': this.apiClient.buildCollectionParam(opts['statuses'], 'multi'),'relationship': this.apiClient.buildCollectionParam(opts['relationship'], 'multi') },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1160,13 +1160,13 @@ class UsersApi {
 		return this.apiClient.callApi(
 			'/api/v2/users/development/activities/{activityId}', 
 			'GET', 
-			{ 'activityId': activityId }, 
-			{ 'type': type }, 
-			{  }, 
-			{  }, 
+			{ 'activityId': activityId },
+			{ 'type': type },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1176,7 +1176,7 @@ class UsersApi {
 	 * This request is not valid when using the Client Credentials OAuth grant.
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand Which fields, if any, to expand.
-	 * @param {Object} opts.integrationPresenceSource Get your presence for a given integration. This parameter will only be used when presence is provided as an \&quot;expand\&quot;.
+	 * @param {Object} opts.integrationPresenceSource Get your presence for a given integration. This parameter will only be used when presence is provided as an expand.
 	 */
 	getUsersMe(opts) { 
 		opts = opts || {};
@@ -1185,13 +1185,13 @@ class UsersApi {
 		return this.apiClient.callApi(
 			'/api/v2/users/me', 
 			'GET', 
-			{  }, 
-			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'integrationPresenceSource': opts['integrationPresenceSource'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'integrationPresenceSource': opts['integrationPresenceSource'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1215,13 +1215,13 @@ class UsersApi {
 		return this.apiClient.callApi(
 			'/api/v2/users/search', 
 			'GET', 
-			{  }, 
-			{ 'q64': q64,'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'integrationPresenceSource': opts['integrationPresenceSource'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'q64': q64,'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'integrationPresenceSource': opts['integrationPresenceSource'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1245,19 +1245,19 @@ class UsersApi {
 		return this.apiClient.callApi(
 			'/api/v2/users/{userId}', 
 			'PATCH', 
-			{ 'userId': userId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'userId': userId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
 
 	/**
-	 * Patch a user&#39;s CallForwarding
+	 * Patch a user's CallForwarding
 	 * 
 	 * @param {String} userId User ID
 	 * @param {Object} body Call forwarding
@@ -1275,20 +1275,20 @@ class UsersApi {
 		return this.apiClient.callApi(
 			'/api/v2/users/{userId}/callforwarding', 
 			'PATCH', 
-			{ 'userId': userId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'userId': userId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
 
 	/**
-	 * Patch a user&#39;s Geolocation
-	 * The geolocation object can be patched one of three ways. Option 1: Set the &#39;primary&#39; property to true. This will set the client as the user&#39;s primary geolocation source.  Option 2: Provide the &#39;latitude&#39; and &#39;longitude&#39; values.  This will enqueue an asynchronous update of the &#39;city&#39;, &#39;region&#39;, and &#39;country&#39;, generating a notification. A subsequent GET operation will include the new values for &#39;city&#39;, &#39;region&#39; and &#39;country&#39;.  Option 3:  Provide the &#39;city&#39;, &#39;region&#39;, &#39;country&#39; values.  Option 1 can be combined with Option 2 or Option 3.  For example, update the client as primary and provide latitude and longitude values.
+	 * Patch a user's Geolocation
+	 * The geolocation object can be patched one of three ways. Option 1: Set the primary property to true. This will set the client as the users primary geolocation source.  Option 2: Provide the latitude and longitude values.  This will enqueue an asynchronous update of the city, region, and country, generating a notification. A subsequent GET operation will include the new values for city, region and country.  Option 3:  Provide the city, region, country values.  Option 1 can be combined with Option 2 or Option 3.  For example, update the client as primary and provide latitude and longitude values.
 	 * @param {String} userId user Id
 	 * @param {String} clientId client Id
 	 * @param {Object} body Geolocation
@@ -1310,13 +1310,13 @@ class UsersApi {
 		return this.apiClient.callApi(
 			'/api/v2/users/{userId}/geolocations/{clientId}', 
 			'PATCH', 
-			{ 'userId': userId,'clientId': clientId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'userId': userId,'clientId': clientId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1345,13 +1345,13 @@ class UsersApi {
 		return this.apiClient.callApi(
 			'/api/v2/users/{userId}/queues/{queueId}', 
 			'PATCH', 
-			{ 'queueId': queueId,'userId': userId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'queueId': queueId,'userId': userId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1379,13 +1379,13 @@ class UsersApi {
 		return this.apiClient.callApi(
 			'/api/v2/users/{userId}/queues', 
 			'PATCH', 
-			{ 'userId': userId }, 
-			{ 'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi') }, 
-			{  }, 
-			{  }, 
+			{ 'userId': userId },
+			{ 'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi') },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1414,13 +1414,13 @@ class UsersApi {
 		return this.apiClient.callApi(
 			'/api/v2/users/{userId}/routinglanguages/{languageId}', 
 			'PATCH', 
-			{ 'userId': userId,'languageId': languageId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'userId': userId,'languageId': languageId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1444,13 +1444,13 @@ class UsersApi {
 		return this.apiClient.callApi(
 			'/api/v2/users/{userId}/routinglanguages/bulk', 
 			'PATCH', 
-			{ 'userId': userId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'userId': userId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1474,13 +1474,13 @@ class UsersApi {
 		return this.apiClient.callApi(
 			'/api/v2/users/{userId}/routingskills/bulk', 
 			'PATCH', 
-			{ 'userId': userId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'userId': userId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1499,13 +1499,13 @@ class UsersApi {
 		return this.apiClient.callApi(
 			'/api/v2/users/bulk', 
 			'PATCH', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1524,13 +1524,13 @@ class UsersApi {
 		return this.apiClient.callApi(
 			'/api/v2/analytics/users/aggregates/query', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1549,13 +1549,13 @@ class UsersApi {
 		return this.apiClient.callApi(
 			'/api/v2/analytics/users/details/jobs', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1574,13 +1574,13 @@ class UsersApi {
 		return this.apiClient.callApi(
 			'/api/v2/analytics/users/details/query', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1599,13 +1599,13 @@ class UsersApi {
 		return this.apiClient.callApi(
 			'/api/v2/analytics/users/observations/query', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1633,13 +1633,13 @@ class UsersApi {
 		return this.apiClient.callApi(
 			'/api/v2/authorization/subjects/{subjectId}/bulkadd', 
 			'POST', 
-			{ 'subjectId': subjectId }, 
-			{ 'subjectType': opts['subjectType'] }, 
-			{  }, 
-			{  }, 
+			{ 'subjectId': subjectId },
+			{ 'subjectType': opts['subjectType'] },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1663,19 +1663,19 @@ class UsersApi {
 		return this.apiClient.callApi(
 			'/api/v2/authorization/subjects/{subjectId}/bulkremove', 
 			'POST', 
-			{ 'subjectId': subjectId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'subjectId': subjectId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
 
 	/**
-	 * Replace subject&#39;s roles and divisions with the exact list supplied in the request.
+	 * Replace subject's roles and divisions with the exact list supplied in the request.
 	 * This operation will not remove grants that are inherited from group membership. It will only set the grants directly applied to the subject.
 	 * @param {String} subjectId Subject ID (user or group)
 	 * @param {Object} body Pairs of role and division IDs
@@ -1697,13 +1697,13 @@ class UsersApi {
 		return this.apiClient.callApi(
 			'/api/v2/authorization/subjects/{subjectId}/bulkreplace', 
 			'POST', 
-			{ 'subjectId': subjectId }, 
-			{ 'subjectType': opts['subjectType'] }, 
-			{  }, 
-			{  }, 
+			{ 'subjectId': subjectId },
+			{ 'subjectType': opts['subjectType'] },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1736,13 +1736,13 @@ class UsersApi {
 		return this.apiClient.callApi(
 			'/api/v2/authorization/subjects/{subjectId}/divisions/{divisionId}/roles/{roleId}', 
 			'POST', 
-			{ 'subjectId': subjectId,'divisionId': divisionId,'roleId': roleId }, 
-			{ 'subjectType': opts['subjectType'] }, 
-			{  }, 
-			{  }, 
+			{ 'subjectId': subjectId,'divisionId': divisionId,'roleId': roleId },
+			{ 'subjectType': opts['subjectType'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1765,13 +1765,13 @@ class UsersApi {
 		return this.apiClient.callApi(
 			'/api/v2/users/{userId}/invite', 
 			'POST', 
-			{ 'userId': userId }, 
-			{ 'force': opts['force'] }, 
-			{  }, 
-			{  }, 
+			{ 'userId': userId },
+			{ 'force': opts['force'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1795,13 +1795,13 @@ class UsersApi {
 		return this.apiClient.callApi(
 			'/api/v2/users/{userId}/password', 
 			'POST', 
-			{ 'userId': userId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'userId': userId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1825,13 +1825,13 @@ class UsersApi {
 		return this.apiClient.callApi(
 			'/api/v2/users/{userId}/routinglanguages', 
 			'POST', 
-			{ 'userId': userId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'userId': userId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1855,13 +1855,13 @@ class UsersApi {
 		return this.apiClient.callApi(
 			'/api/v2/users/{userId}/routingskills', 
 			'POST', 
-			{ 'userId': userId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'userId': userId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1880,13 +1880,13 @@ class UsersApi {
 		return this.apiClient.callApi(
 			'/api/v2/users', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1905,13 +1905,13 @@ class UsersApi {
 		return this.apiClient.callApi(
 			'/api/v2/users/development/activities/aggregates/query', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1930,13 +1930,13 @@ class UsersApi {
 		return this.apiClient.callApi(
 			'/api/v2/users/me/password', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1955,19 +1955,19 @@ class UsersApi {
 		return this.apiClient.callApi(
 			'/api/v2/users/search', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
 
 	/**
-	 * Update the user&#39;s max utilization settings.  Include only those media types requiring custom configuration.
+	 * Update the user's max utilization settings.  Include only those media types requiring custom configuration.
 	 * 
 	 * @param {String} userId User ID
 	 * @param {Object} body utilization
@@ -1985,19 +1985,19 @@ class UsersApi {
 		return this.apiClient.callApi(
 			'/api/v2/routing/users/{userId}/utilization', 
 			'PUT', 
-			{ 'userId': userId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'userId': userId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
 
 	/**
-	 * Update a user&#39;s CallForwarding
+	 * Update a user's CallForwarding
 	 * 
 	 * @param {String} userId User ID
 	 * @param {Object} body Call forwarding
@@ -2015,13 +2015,13 @@ class UsersApi {
 		return this.apiClient.callApi(
 			'/api/v2/users/{userId}/callforwarding', 
 			'PUT', 
-			{ 'userId': userId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'userId': userId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2045,13 +2045,13 @@ class UsersApi {
 		return this.apiClient.callApi(
 			'/api/v2/users/{userId}/outofoffice', 
 			'PUT', 
-			{ 'userId': userId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'userId': userId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2060,7 +2060,7 @@ class UsersApi {
 	 * Update profile skills for a user
 	 * 
 	 * @param {String} userId User ID
-	 * @param {Array.<Object>} body Skills
+	 * @param {Array.<String>} body Skills
 	 */
 	putUserProfileskills(userId, body) { 
 		// verify the required parameter 'userId' is set
@@ -2075,22 +2075,22 @@ class UsersApi {
 		return this.apiClient.callApi(
 			'/api/v2/users/{userId}/profileskills', 
 			'PUT', 
-			{ 'userId': userId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'userId': userId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
 
 	/**
-	 * Sets the user&#39;s roles
+	 * Sets the user's roles
 	 * 
 	 * @param {String} userId User ID
-	 * @param {Array.<Object>} body List of roles
+	 * @param {Array.<String>} body List of roles
 	 */
 	putUserRoles(userId, body) { 
 		// verify the required parameter 'userId' is set
@@ -2105,13 +2105,13 @@ class UsersApi {
 		return this.apiClient.callApi(
 			'/api/v2/users/{userId}/roles', 
 			'PUT', 
-			{ 'userId': userId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'userId': userId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2140,13 +2140,13 @@ class UsersApi {
 		return this.apiClient.callApi(
 			'/api/v2/users/{userId}/routingskills/{skillId}', 
 			'PUT', 
-			{ 'userId': userId,'skillId': skillId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'userId': userId,'skillId': skillId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2170,13 +2170,13 @@ class UsersApi {
 		return this.apiClient.callApi(
 			'/api/v2/users/{userId}/routingskills/bulk', 
 			'PUT', 
-			{ 'userId': userId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'userId': userId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2200,13 +2200,13 @@ class UsersApi {
 		return this.apiClient.callApi(
 			'/api/v2/users/{userId}/routingstatus', 
 			'PUT', 
-			{ 'userId': userId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'userId': userId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2230,13 +2230,13 @@ class UsersApi {
 		return this.apiClient.callApi(
 			'/api/v2/users/{userId}/state', 
 			'PUT', 
-			{ 'userId': userId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'userId': userId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2260,13 +2260,13 @@ class UsersApi {
 		return this.apiClient.callApi(
 			'/api/v2/users/{userId}/station/associatedstation/{stationId}', 
 			'PUT', 
-			{ 'userId': userId,'stationId': stationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'userId': userId,'stationId': stationId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2290,13 +2290,13 @@ class UsersApi {
 		return this.apiClient.callApi(
 			'/api/v2/users/{userId}/station/defaultstation/{stationId}', 
 			'PUT', 
-			{ 'userId': userId,'stationId': stationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'userId': userId,'stationId': stationId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}

@@ -5,7 +5,7 @@ class ObjectsApi {
 	/**
 	 * Objects service.
 	 * @module purecloud-platform-client-v2/api/ObjectsApi
-	 * @version 136.1.0
+	 * @version 137.0.0
 	 */
 
 	/**
@@ -38,13 +38,13 @@ class ObjectsApi {
 		return this.apiClient.callApi(
 			'/api/v2/authorization/divisions/{divisionId}', 
 			'DELETE', 
-			{ 'divisionId': divisionId }, 
-			{ 'force': opts['force'] }, 
-			{  }, 
-			{  }, 
+			{ 'divisionId': divisionId },
+			{ 'force': opts['force'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -54,7 +54,7 @@ class ObjectsApi {
 	 * 
 	 * @param {String} divisionId Division ID
 	 * @param {Object} opts Optional parameters
-	 * @param {Boolean} opts.objectCount Get count of objects in this division, grouped by type (default to false)
+	 * @param {Object} opts.objectCount Get count of objects in this division, grouped by type (default to false)
 	 */
 	getAuthorizationDivision(divisionId, opts) { 
 		opts = opts || {};
@@ -67,20 +67,20 @@ class ObjectsApi {
 		return this.apiClient.callApi(
 			'/api/v2/authorization/divisions/{divisionId}', 
 			'GET', 
-			{ 'divisionId': divisionId }, 
-			{ 'objectCount': opts['objectCount'] }, 
-			{  }, 
-			{  }, 
+			{ 'divisionId': divisionId },
+			{ 'objectCount': opts['objectCount'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
 
 	/**
 	 * Retrieve a list of all divisions defined for the organization
-	 * Request specific divisions by id using a query param \&quot;id\&quot;, e.g.  ?id=5f777167-63be-4c24-ad41-374155d9e28b&amp;id=72e9fb25-c484-488d-9312-7acba82435b3
+	 * Request specific divisions by id using a query param "id", e.g.  ?id=5f777167-63be-4c24-ad41-374155d9e28b&id=72e9fb25-c484-488d-9312-7acba82435b3
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize The total page size requested (default to 25)
 	 * @param {Number} opts.pageNumber The page number requested (default to 1)
@@ -99,13 +99,13 @@ class ObjectsApi {
 		return this.apiClient.callApi(
 			'/api/v2/authorization/divisions', 
 			'GET', 
-			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'nextPage': opts['nextPage'],'previousPage': opts['previousPage'],'objectCount': opts['objectCount'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'name': opts['name'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'nextPage': opts['nextPage'],'previousPage': opts['previousPage'],'objectCount': opts['objectCount'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'name': opts['name'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -119,13 +119,13 @@ class ObjectsApi {
 		return this.apiClient.callApi(
 			'/api/v2/authorization/divisions/home', 
 			'GET', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -139,23 +139,23 @@ class ObjectsApi {
 		return this.apiClient.callApi(
 			'/api/v2/authorization/divisions/limit', 
 			'GET', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
 
 	/**
 	 * Assign a list of objects to a division
-	 * Set the division of a specified list of objects. The objects must all be of the same type, one of:  CAMPAIGN, MANAGEMENTUNIT, FLOW, QUEUE, DATATABLES or USER.  The body of the request is a list of object IDs, which are expected to be  GUIDs, e.g. [\&quot;206ce31f-61ec-40ed-a8b1-be6f06303998\&quot;,\&quot;250a754e-f5e4-4f51-800f-a92f09d3bf8c\&quot;]
+	 * Set the division of a specified list of objects. The objects must all be of the same type, one of:  CAMPAIGN, MANAGEMENTUNIT, FLOW, QUEUE, DATATABLES or USER.  The body of the request is a list of object IDs, which are expected to be  GUIDs, e.g. ["206ce31f-61ec-40ed-a8b1-be6f06303998","250a754e-f5e4-4f51-800f-a92f09d3bf8c"]
 	 * @param {String} divisionId Division ID
 	 * @param {Object} objectType The type of the objects. Must be one of the valid object types
-	 * @param {Array.<Object>} body Object Id List
+	 * @param {Array.<String>} body Object Id List
 	 */
 	postAuthorizationDivisionObject(divisionId, objectType, body) { 
 		// verify the required parameter 'divisionId' is set
@@ -174,13 +174,13 @@ class ObjectsApi {
 		return this.apiClient.callApi(
 			'/api/v2/authorization/divisions/{divisionId}/objects/{objectType}', 
 			'POST', 
-			{ 'divisionId': divisionId,'objectType': objectType }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'divisionId': divisionId,'objectType': objectType },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -204,13 +204,13 @@ class ObjectsApi {
 		return this.apiClient.callApi(
 			'/api/v2/authorization/divisions/{divisionId}/restore', 
 			'POST', 
-			{ 'divisionId': divisionId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'divisionId': divisionId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -229,13 +229,13 @@ class ObjectsApi {
 		return this.apiClient.callApi(
 			'/api/v2/authorization/divisions', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -259,13 +259,13 @@ class ObjectsApi {
 		return this.apiClient.callApi(
 			'/api/v2/authorization/divisions/{divisionId}', 
 			'PUT', 
-			{ 'divisionId': divisionId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'divisionId': divisionId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}

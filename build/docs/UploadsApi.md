@@ -19,14 +19,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 # UploadUrlResponse postKnowledgeDocumentuploads(body)
 
 
-
 POST /api/v2/knowledge/documentuploads
 
 Creates a presigned URL for uploading a knowledge import file with a set of documents
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * knowledge:document:upload
 
@@ -72,14 +69,11 @@ apiInstance.postKnowledgeDocumentuploads(body)
 # UploadUrlResponse postLanguageunderstandingMinerUploads(minerId, body)
 
 
-
 POST /api/v2/languageunderstanding/miners/{minerId}/uploads
 
 Creates a presigned URL for uploading a chat corpus which will be used for mining by intent miner
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * languageUnderstanding:miner:upload
 
@@ -97,7 +91,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.UploadsApi();
 
 let minerId = "minerId_example"; // String | Miner ID
-let body = {}; // Object | query
+let body = null; // Object | query
 
 apiInstance.postLanguageunderstandingMinerUploads(minerId, body)
   .then((data) => {
@@ -127,14 +121,11 @@ apiInstance.postLanguageunderstandingMinerUploads(minerId, body)
 # UploadUrlResponse postUploadsPublicassetsImages(body)
 
 
-
 POST /api/v2/uploads/publicassets/images
 
 Creates presigned url for uploading a public asset image
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * uploads:publicasset:upload
 
@@ -180,14 +171,11 @@ apiInstance.postUploadsPublicassetsImages(body)
 # UploadUrlResponse postUploadsRecordings(body)
 
 
-
 POST /api/v2/uploads/recordings
 
 Creates presigned url for uploading a recording file
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * recording:recording:upload
 
@@ -233,14 +221,11 @@ apiInstance.postUploadsRecordings(body)
 # UploadUrlResponse postUploadsWorkforcemanagementHistoricaldataCsv(body)
 
 
-
 POST /api/v2/uploads/workforcemanagement/historicaldata/csv
 
 Creates presigned url for uploading WFM historical data file. Requires data in csv format.
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * wfm:historicalData:upload
 

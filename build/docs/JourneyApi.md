@@ -40,14 +40,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 # void deleteJourneyActionmap(actionMapId)
 
 
-
 DELETE /api/v2/journey/actionmaps/{actionMapId}
 
 Delete single action map.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * journey:actionmap:delete
 
@@ -93,14 +90,11 @@ void (no response body)
 # void deleteJourneyActiontemplate(actionTemplateId, opts)
 
 
-
 DELETE /api/v2/journey/actiontemplates/{actionTemplateId}
 
 Delete a single action template.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * journey:actiontemplate:delete
 
@@ -138,7 +132,7 @@ apiInstance.deleteJourneyActiontemplate(actionTemplateId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **actionTemplateId** | **String** | ID of the action template. |  |
- **hardDelete** | **Boolean** | Determines whether Action Template should be soft-deleted (have it&#39;s state set to deleted) or hard-deleted (permanently removed). Set to false (soft-delete) by default. | [optional]  |
+ **hardDelete** | **Boolean** | Determines whether Action Template should be soft-deleted (have it's state set to deleted) or hard-deleted (permanently removed). Set to false (soft-delete) by default. | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -150,14 +144,11 @@ void (no response body)
 # void deleteJourneyOutcome(outcomeId)
 
 
-
 DELETE /api/v2/journey/outcomes/{outcomeId}
 
 Delete an outcome.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * journey:outcome:delete
 
@@ -203,14 +194,11 @@ void (no response body)
 # void deleteJourneySegment(segmentId)
 
 
-
 DELETE /api/v2/journey/segments/{segmentId}
 
 Delete a segment.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * journey:segment:delete
 
@@ -256,14 +244,11 @@ void (no response body)
 # ActionMap getJourneyActionmap(actionMapId)
 
 
-
 GET /api/v2/journey/actionmaps/{actionMapId}
 
 Retrieve a single action map.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * journey:actionmap:view
 
@@ -309,14 +294,11 @@ apiInstance.getJourneyActionmap(actionMapId)
 # ActionMapListing getJourneyActionmaps(opts)
 
 
-
 GET /api/v2/journey/actionmaps
 
 Retrieve all action maps.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * journey:actionmap:view
 
@@ -361,12 +343,12 @@ apiInstance.getJourneyActionmaps(opts)
 | ------------- | ------------- | ------------- | ------------- |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
- **sortBy** | **String** | Field(s) to sort by. Prefix with &#39;-&#39; for descending (e.g. sortBy=displayName,-createdDate). | [optional]  |
- **filterField** | **String** | Field to filter by (e.g. filterField=weight or filterField=action.actionTemplate.id). Requires &#39;filterField&#39; to also be set. | [optional]  |
- **filterValue** | **String** | Value to filter by. Requires &#39;filterValue&#39; to also be set. | [optional]  |
+ **sortBy** | **String** | Field(s) to sort by. Prefix with '-' for descending (e.g. sortBy=displayName,-createdDate). | [optional]  |
+ **filterField** | **String** | Field to filter by (e.g. filterField=weight or filterField=action.actionTemplate.id). Requires 'filterField' to also be set. | [optional]  |
+ **filterValue** | **String** | Value to filter by. Requires 'filterValue' to also be set. | [optional]  |
  **actionMapIds** | **[String]** | IDs of action maps to return. Use of this parameter is not compatible with pagination, filtering, sorting or querying. A maximum of 100 action maps are allowed per request. | [optional]  |
- **queryFields** | **[String]** | Action Map field(s) to query on. Requires &#39;queryValue&#39; to also be set. | [optional]  |
- **queryValue** | **String** | Value to query on. Requires &#39;queryFields&#39; to also be set. | [optional]  |
+ **queryFields** | **[String]** | Action Map field(s) to query on. Requires 'queryValue' to also be set. | [optional]  |
+ **queryValue** | **String** | Value to query on. Requires 'queryFields' to also be set. | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -378,14 +360,11 @@ apiInstance.getJourneyActionmaps(opts)
 # ActionTarget getJourneyActiontarget(actionTargetId)
 
 
-
 GET /api/v2/journey/actiontargets/{actionTargetId}
 
 Retrieve a single action target.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * journey:actiontarget:view
 
@@ -431,14 +410,11 @@ apiInstance.getJourneyActiontarget(actionTargetId)
 # ActionTargetListing getJourneyActiontargets(opts)
 
 
-
 GET /api/v2/journey/actiontargets
 
 Retrieve all action targets.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * journey:actiontarget:view
 
@@ -488,14 +464,11 @@ apiInstance.getJourneyActiontargets(opts)
 # ActionTemplate getJourneyActiontemplate(actionTemplateId)
 
 
-
 GET /api/v2/journey/actiontemplates/{actionTemplateId}
 
 Retrieve a single action template.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * journey:actiontemplate:view
 
@@ -541,14 +514,11 @@ apiInstance.getJourneyActiontemplate(actionTemplateId)
 # ActionTemplateListing getJourneyActiontemplates(opts)
 
 
-
 GET /api/v2/journey/actiontemplates
 
 Retrieve all action templates.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * journey:actiontemplate:view
 
@@ -592,11 +562,11 @@ apiInstance.getJourneyActiontemplates(opts)
 | ------------- | ------------- | ------------- | ------------- |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
- **sortBy** | **String** | Field(s) to sort by. Prefix with &#39;-&#39; for descending (e.g. sortBy=name,-createdDate). | [optional]  |
+ **sortBy** | **String** | Field(s) to sort by. Prefix with '-' for descending (e.g. sortBy=name,-createdDate). | [optional]  |
  **mediaType** | **String** | Media type | [optional] <br />**Values**: webchat, webMessagingOffer, contentOffer, integrationAction, architectFlow, openAction |
  **state** | **String** | Action template state. | [optional] <br />**Values**: Active, Inactive, Deleted |
- **queryFields** | **[String]** | ActionTemplate field(s) to query on. Requires &#39;queryValue&#39; to also be set. | [optional]  |
- **queryValue** | **String** | Value to query on. Requires &#39;queryFields&#39; to also be set. | [optional]  |
+ **queryFields** | **[String]** | ActionTemplate field(s) to query on. Requires 'queryValue' to also be set. | [optional]  |
+ **queryValue** | **String** | Value to query on. Requires 'queryFields' to also be set. | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -608,14 +578,11 @@ apiInstance.getJourneyActiontemplates(opts)
 # Outcome getJourneyOutcome(outcomeId)
 
 
-
 GET /api/v2/journey/outcomes/{outcomeId}
 
 Retrieve a single outcome.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * journey:outcome:view
 
@@ -661,14 +628,11 @@ apiInstance.getJourneyOutcome(outcomeId)
 # OutcomeListing getJourneyOutcomes(opts)
 
 
-
 GET /api/v2/journey/outcomes
 
 Retrieve all outcomes.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * journey:outcome:view
 
@@ -711,10 +675,10 @@ apiInstance.getJourneyOutcomes(opts)
 | ------------- | ------------- | ------------- | ------------- |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
- **sortBy** | **String** | Field(s) to sort by. The response can be sorted by any first level property on the Outcome response. Prefix with &#39;-&#39; for descending (e.g. sortBy=displayName,-createdDate). | [optional]  |
+ **sortBy** | **String** | Field(s) to sort by. The response can be sorted by any first level property on the Outcome response. Prefix with '-' for descending (e.g. sortBy=displayName,-createdDate). | [optional]  |
  **outcomeIds** | **[String]** | IDs of outcomes to return. Use of this parameter is not compatible with pagination, sorting or querying. A maximum of 20 outcomes are allowed per request. | [optional]  |
- **queryFields** | **[String]** | Outcome field(s) to query on. Requires &#39;queryValue&#39; to also be set. | [optional]  |
- **queryValue** | **String** | Value to query on. Requires &#39;queryFields&#39; to also be set. | [optional]  |
+ **queryFields** | **[String]** | Outcome field(s) to query on. Requires 'queryValue' to also be set. | [optional]  |
+ **queryValue** | **String** | Value to query on. Requires 'queryFields' to also be set. | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -726,14 +690,11 @@ apiInstance.getJourneyOutcomes(opts)
 # JourneySegment getJourneySegment(segmentId)
 
 
-
 GET /api/v2/journey/segments/{segmentId}
 
 Retrieve a single segment.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * journey:segment:view
 
@@ -779,14 +740,11 @@ apiInstance.getJourneySegment(segmentId)
 # SegmentListing getJourneySegments(opts)
 
 
-
 GET /api/v2/journey/segments
 
 Retrieve all segments.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * journey:segment:view
 
@@ -828,13 +786,13 @@ apiInstance.getJourneySegments(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **sortBy** | **String** | Field(s) to sort by. The response can be sorted by any first level property on the Outcome response. Prefix with &#39;-&#39; for descending (e.g. sortBy=displayName,-createdDate). | [optional]  |
+ **sortBy** | **String** | Field(s) to sort by. The response can be sorted by any first level property on the Outcome response. Prefix with '-' for descending (e.g. sortBy=displayName,-createdDate). | [optional]  |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **isActive** | **Boolean** | Determines whether or not to show only active segments. | [optional]  |
  **segmentIds** | **[String]** | IDs of segments to return. Use of this parameter is not compatible with pagination, sorting or querying. A maximum of 100 segments are allowed per request. | [optional]  |
- **queryFields** | **[String]** | Segment field(s) to query on. Requires &#39;queryValue&#39; to also be set. | [optional]  |
- **queryValue** | **String** | Value to query on. Requires &#39;queryFields&#39; to also be set. | [optional]  |
+ **queryFields** | **[String]** | Segment field(s) to query on. Requires 'queryValue' to also be set. | [optional]  |
+ **queryValue** | **String** | Value to query on. Requires 'queryFields' to also be set. | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -846,14 +804,11 @@ apiInstance.getJourneySegments(opts)
 # Session getJourneySession(sessionId)
 
 
-
 GET /api/v2/journey/sessions/{sessionId}
 
 Retrieve a single session.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * journey:session:view
 
@@ -899,14 +854,11 @@ apiInstance.getJourneySession(sessionId)
 # OutcomeScoresResult getJourneySessionOutcomescores(sessionId)
 
 
-
 GET /api/v2/journey/sessions/{sessionId}/outcomescores
 
 Retrieve latest outcome score associated with a session for all outcomes.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * journey:outcomescores:view
 
@@ -952,14 +904,11 @@ apiInstance.getJourneySessionOutcomescores(sessionId)
 # ActionMap patchJourneyActionmap(actionMapId, opts)
 
 
-
 PATCH /api/v2/journey/actionmaps/{actionMapId}
 
 Update single action map.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * journey:actionmap:edit
 
@@ -1009,14 +958,11 @@ apiInstance.patchJourneyActionmap(actionMapId, opts)
 # ActionTarget patchJourneyActiontarget(actionTargetId, opts)
 
 
-
 PATCH /api/v2/journey/actiontargets/{actionTargetId}
 
 Update a single action target.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * journey:actiontarget:edit
 
@@ -1066,14 +1012,11 @@ apiInstance.patchJourneyActiontarget(actionTargetId, opts)
 # ActionTemplate patchJourneyActiontemplate(actionTemplateId, opts)
 
 
-
 PATCH /api/v2/journey/actiontemplates/{actionTemplateId}
 
 Update a single action template.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * journey:actiontemplate:edit
 
@@ -1123,14 +1066,11 @@ apiInstance.patchJourneyActiontemplate(actionTemplateId, opts)
 # Outcome patchJourneyOutcome(outcomeId, opts)
 
 
-
 PATCH /api/v2/journey/outcomes/{outcomeId}
 
 Update an outcome.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * journey:outcome:edit
 
@@ -1180,14 +1120,11 @@ apiInstance.patchJourneyOutcome(outcomeId, opts)
 # JourneySegment patchJourneySegment(segmentId, opts)
 
 
-
 PATCH /api/v2/journey/segments/{segmentId}
 
 Update a segment.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * journey:segment:edit
 
@@ -1237,14 +1174,11 @@ apiInstance.patchJourneySegment(segmentId, opts)
 # JourneyAggregateQueryResponse postAnalyticsJourneysAggregatesQuery(body)
 
 
-
 POST /api/v2/analytics/journeys/aggregates/query
 
 Query for journey aggregates
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * analytics:journeyAggregate:view
 
@@ -1290,14 +1224,11 @@ apiInstance.postAnalyticsJourneysAggregatesQuery(body)
 # ActionMap postJourneyActionmaps(opts)
 
 
-
 POST /api/v2/journey/actionmaps
 
 Create an action map.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * journey:actionmap:add
 
@@ -1345,14 +1276,11 @@ apiInstance.postJourneyActionmaps(opts)
 # ActionTemplate postJourneyActiontemplates(opts)
 
 
-
 POST /api/v2/journey/actiontemplates
 
 Create a single action template.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * journey:actiontemplate:add
 
@@ -1400,14 +1328,11 @@ apiInstance.postJourneyActiontemplates(opts)
 # Outcome postJourneyOutcomes(opts)
 
 
-
 POST /api/v2/journey/outcomes
 
 Create an outcome.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * journey:outcome:add
 
@@ -1455,14 +1380,11 @@ apiInstance.postJourneyOutcomes(opts)
 # JourneySegment postJourneySegments(opts)
 
 
-
 POST /api/v2/journey/segments
 
 Create a segment.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * journey:segment:add
 

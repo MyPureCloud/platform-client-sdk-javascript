@@ -5,7 +5,7 @@ class WebDeploymentsApi {
 	/**
 	 * WebDeployments service.
 	 * @module purecloud-platform-client-v2/api/WebDeploymentsApi
-	 * @version 136.1.0
+	 * @version 137.0.0
 	 */
 
 	/**
@@ -34,13 +34,13 @@ class WebDeploymentsApi {
 		return this.apiClient.callApi(
 			'/api/v2/webdeployments/configurations/{configurationId}', 
 			'DELETE', 
-			{ 'configurationId': configurationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'configurationId': configurationId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -59,13 +59,13 @@ class WebDeploymentsApi {
 		return this.apiClient.callApi(
 			'/api/v2/webdeployments/deployments/{deploymentId}', 
 			'DELETE', 
-			{ 'deploymentId': deploymentId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'deploymentId': deploymentId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -89,13 +89,13 @@ class WebDeploymentsApi {
 		return this.apiClient.callApi(
 			'/api/v2/webdeployments/configurations/{configurationId}/versions/{versionId}', 
 			'GET', 
-			{ 'configurationId': configurationId,'versionId': versionId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'configurationId': configurationId,'versionId': versionId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -114,13 +114,13 @@ class WebDeploymentsApi {
 		return this.apiClient.callApi(
 			'/api/v2/webdeployments/configurations/{configurationId}/versions', 
 			'GET', 
-			{ 'configurationId': configurationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'configurationId': configurationId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -139,13 +139,13 @@ class WebDeploymentsApi {
 		return this.apiClient.callApi(
 			'/api/v2/webdeployments/configurations/{configurationId}/versions/draft', 
 			'GET', 
-			{ 'configurationId': configurationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'configurationId': configurationId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -163,13 +163,13 @@ class WebDeploymentsApi {
 		return this.apiClient.callApi(
 			'/api/v2/webdeployments/configurations', 
 			'GET', 
-			{  }, 
-			{ 'showOnlyPublished': opts['showOnlyPublished'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'showOnlyPublished': opts['showOnlyPublished'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -188,13 +188,13 @@ class WebDeploymentsApi {
 		return this.apiClient.callApi(
 			'/api/v2/webdeployments/deployments/{deploymentId}', 
 			'GET', 
-			{ 'deploymentId': deploymentId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'deploymentId': deploymentId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -208,13 +208,13 @@ class WebDeploymentsApi {
 		return this.apiClient.callApi(
 			'/api/v2/webdeployments/deployments', 
 			'GET', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -233,13 +233,13 @@ class WebDeploymentsApi {
 		return this.apiClient.callApi(
 			'/api/v2/webdeployments/configurations/{configurationId}/versions/draft/publish', 
 			'POST', 
-			{ 'configurationId': configurationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'configurationId': configurationId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -258,13 +258,13 @@ class WebDeploymentsApi {
 		return this.apiClient.callApi(
 			'/api/v2/webdeployments/configurations', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			configurationVersion, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -283,13 +283,13 @@ class WebDeploymentsApi {
 		return this.apiClient.callApi(
 			'/api/v2/webdeployments/deployments', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			deployment, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -313,13 +313,13 @@ class WebDeploymentsApi {
 		return this.apiClient.callApi(
 			'/api/v2/webdeployments/configurations/{configurationId}/versions/draft', 
 			'PUT', 
-			{ 'configurationId': configurationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'configurationId': configurationId },
+			{  },
+			{  },
+			{  },
 			configurationVersion, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -343,13 +343,13 @@ class WebDeploymentsApi {
 		return this.apiClient.callApi(
 			'/api/v2/webdeployments/deployments/{deploymentId}', 
 			'PUT', 
-			{ 'deploymentId': deploymentId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'deploymentId': deploymentId },
+			{  },
+			{  },
+			{  },
 			deployment, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}

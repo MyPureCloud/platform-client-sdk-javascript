@@ -25,14 +25,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 # void deleteAlertingInteractionstatsAlert(alertId)
 
 
-
 DELETE /api/v2/alerting/interactionstats/alerts/{alertId}
 
 Delete an interaction stats alert
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * alerting:alert:delete
 
@@ -78,14 +75,11 @@ void (no response body)
 # void deleteAlertingInteractionstatsRule(ruleId)
 
 
-
 DELETE /api/v2/alerting/interactionstats/rules/{ruleId}
 
 Delete an interaction stats rule.
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * alerting:rule:delete
 
@@ -131,15 +125,11 @@ void (no response body)
 # ActiveAlertCount getAlertingAlertsActive()
 
 
-
 GET /api/v2/alerting/alerts/active
 
 Gets active alert count for a user.
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -178,14 +168,11 @@ This endpoint does not need any parameter.
 # InteractionStatsAlert getAlertingInteractionstatsAlert(alertId, opts)
 
 
-
 GET /api/v2/alerting/interactionstats/alerts/{alertId}
 
 Get an interaction stats alert
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * alerting:alert:view
 
@@ -235,14 +222,11 @@ apiInstance.getAlertingInteractionstatsAlert(alertId, opts)
 # InteractionStatsAlertContainer getAlertingInteractionstatsAlerts(opts)
 
 
-
 GET /api/v2/alerting/interactionstats/alerts
 
 Get interaction stats alert list.
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * alerting:alert:view
 
@@ -290,15 +274,11 @@ apiInstance.getAlertingInteractionstatsAlerts(opts)
 # UnreadMetric getAlertingInteractionstatsAlertsUnread()
 
 
-
 GET /api/v2/alerting/interactionstats/alerts/unread
 
 Gets user unread count of interaction stats alerts.
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -337,14 +317,11 @@ This endpoint does not need any parameter.
 # InteractionStatsRule getAlertingInteractionstatsRule(ruleId, opts)
 
 
-
 GET /api/v2/alerting/interactionstats/rules/{ruleId}
 
 Get an interaction stats rule.
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * alerting:rule:view
 
@@ -394,14 +371,11 @@ apiInstance.getAlertingInteractionstatsRule(ruleId, opts)
 # InteractionStatsRuleContainer getAlertingInteractionstatsRules(opts)
 
 
-
 GET /api/v2/alerting/interactionstats/rules
 
 Get an interaction stats rule list.
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * alerting:rule:view
 
@@ -449,14 +423,11 @@ apiInstance.getAlertingInteractionstatsRules(opts)
 # InteractionStatsRule postAlertingInteractionstatsRules(body, opts)
 
 
-
 POST /api/v2/alerting/interactionstats/rules
 
 Create an interaction stats rule.
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * alerting:rule:add
 
@@ -506,14 +477,11 @@ apiInstance.postAlertingInteractionstatsRules(body, opts)
 # UnreadStatus putAlertingInteractionstatsAlert(alertId, body, opts)
 
 
-
 PUT /api/v2/alerting/interactionstats/alerts/{alertId}
 
 Update an interaction stats alert read status
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * alerting:alert:edit
 
@@ -565,14 +533,11 @@ apiInstance.putAlertingInteractionstatsAlert(alertId, body, opts)
 # InteractionStatsRule putAlertingInteractionstatsRule(ruleId, body, opts)
 
 
-
 PUT /api/v2/alerting/interactionstats/rules/{ruleId}
 
 Update an interaction stats rule
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * alerting:rule:edit
 

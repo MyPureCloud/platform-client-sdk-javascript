@@ -5,7 +5,7 @@ class DataExtensionsApi {
 	/**
 	 * DataExtensions service.
 	 * @module purecloud-platform-client-v2/api/DataExtensionsApi
-	 * @version 136.1.0
+	 * @version 137.0.0
 	 */
 
 	/**
@@ -23,7 +23,7 @@ class DataExtensionsApi {
 	/**
 	 * Get a specific named core type.
 	 * 
-	 * @param {Object} coretypeName The core type&#39;s name
+	 * @param {Object} coretypeName The core type's name
 	 */
 	getDataextensionsCoretype(coretypeName) { 
 		// verify the required parameter 'coretypeName' is set
@@ -34,13 +34,13 @@ class DataExtensionsApi {
 		return this.apiClient.callApi(
 			'/api/v2/dataextensions/coretypes/{coretypeName}', 
 			'GET', 
-			{ 'coretypeName': coretypeName }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'coretypeName': coretypeName },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -54,13 +54,13 @@ class DataExtensionsApi {
 		return this.apiClient.callApi(
 			'/api/v2/dataextensions/coretypes', 
 			'GET', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -74,13 +74,13 @@ class DataExtensionsApi {
 		return this.apiClient.callApi(
 			'/api/v2/dataextensions/limits', 
 			'GET', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}

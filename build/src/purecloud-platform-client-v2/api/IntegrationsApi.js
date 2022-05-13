@@ -5,7 +5,7 @@ class IntegrationsApi {
 	/**
 	 * Integrations service.
 	 * @module purecloud-platform-client-v2/api/IntegrationsApi
-	 * @version 136.1.0
+	 * @version 137.0.0
 	 */
 
 	/**
@@ -34,13 +34,13 @@ class IntegrationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/integrations/{integrationId}', 
 			'DELETE', 
-			{ 'integrationId': integrationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'integrationId': integrationId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -59,13 +59,13 @@ class IntegrationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/integrations/actions/{actionId}', 
 			'DELETE', 
-			{ 'actionId': actionId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'actionId': actionId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -84,13 +84,13 @@ class IntegrationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/integrations/actions/{actionId}/draft', 
 			'DELETE', 
-			{ 'actionId': actionId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'actionId': actionId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -109,13 +109,13 @@ class IntegrationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/integrations/credentials/{credentialId}', 
 			'DELETE', 
-			{ 'credentialId': credentialId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'credentialId': credentialId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -143,13 +143,13 @@ class IntegrationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/integrations/{integrationId}', 
 			'GET', 
-			{ 'integrationId': integrationId }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'nextPage': opts['nextPage'],'previousPage': opts['previousPage'] }, 
-			{  }, 
-			{  }, 
+			{ 'integrationId': integrationId },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'nextPage': opts['nextPage'],'previousPage': opts['previousPage'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -168,13 +168,13 @@ class IntegrationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/integrations/{integrationId}/config/current', 
 			'GET', 
-			{ 'integrationId': integrationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'integrationId': integrationId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -197,13 +197,13 @@ class IntegrationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/integrations', 
 			'GET', 
-			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'nextPage': opts['nextPage'],'previousPage': opts['previousPage'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'nextPage': opts['nextPage'],'previousPage': opts['previousPage'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -214,7 +214,7 @@ class IntegrationsApi {
 	 * @param {String} actionId actionId
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.expand Indicates a field in the response which should be expanded.
-	 * @param {Boolean} opts.includeConfig Return config in response. (default to false)
+	 * @param {Object} opts.includeConfig Return config in response. (default to false)
 	 */
 	getIntegrationsAction(actionId, opts) { 
 		opts = opts || {};
@@ -227,13 +227,13 @@ class IntegrationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/integrations/actions/{actionId}', 
 			'GET', 
-			{ 'actionId': actionId }, 
-			{ 'expand': opts['expand'],'includeConfig': opts['includeConfig'] }, 
-			{  }, 
-			{  }, 
+			{ 'actionId': actionId },
+			{ 'expand': opts['expand'],'includeConfig': opts['includeConfig'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -244,7 +244,7 @@ class IntegrationsApi {
 	 * @param {String} actionId actionId
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.expand Indicates a field in the response which should be expanded.
-	 * @param {Boolean} opts.includeConfig Return config in response. (default to false)
+	 * @param {Object} opts.includeConfig Return config in response. (default to false)
 	 */
 	getIntegrationsActionDraft(actionId, opts) { 
 		opts = opts || {};
@@ -257,13 +257,13 @@ class IntegrationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/integrations/actions/{actionId}/draft', 
 			'GET', 
-			{ 'actionId': actionId }, 
-			{ 'expand': opts['expand'],'includeConfig': opts['includeConfig'] }, 
-			{  }, 
-			{  }, 
+			{ 'actionId': actionId },
+			{ 'expand': opts['expand'],'includeConfig': opts['includeConfig'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -287,13 +287,13 @@ class IntegrationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/integrations/actions/{actionId}/draft/schemas/{fileName}', 
 			'GET', 
-			{ 'actionId': actionId,'fileName': fileName }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'actionId': actionId,'fileName': fileName },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -317,13 +317,13 @@ class IntegrationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/integrations/actions/{actionId}/draft/templates/{fileName}', 
 			'GET', 
-			{ 'actionId': actionId,'fileName': fileName }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'actionId': actionId,'fileName': fileName },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['text/plain']
 		);
 	}
@@ -342,13 +342,13 @@ class IntegrationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/integrations/actions/{actionId}/draft/validation', 
 			'GET', 
-			{ 'actionId': actionId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'actionId': actionId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -372,13 +372,13 @@ class IntegrationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/integrations/actions/{actionId}/schemas/{fileName}', 
 			'GET', 
-			{ 'actionId': actionId,'fileName': fileName }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'actionId': actionId,'fileName': fileName },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -402,13 +402,13 @@ class IntegrationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/integrations/actions/{actionId}/templates/{fileName}', 
 			'GET', 
-			{ 'actionId': actionId,'fileName': fileName }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'actionId': actionId,'fileName': fileName },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['text/plain']
 		);
 	}
@@ -422,11 +422,11 @@ class IntegrationsApi {
 	 * @param {String} opts.nextPage next page token
 	 * @param {String} opts.previousPage Previous page token
 	 * @param {String} opts.sortBy Root level field name to sort on.
-	 * @param {Object} opts.sortOrder Direction to sort &#39;sortBy&#39; field. (default to asc)
+	 * @param {Object} opts.sortOrder Direction to sort 'sortBy' field. (default to asc)
 	 * @param {String} opts.category Filter by category name.
 	 * @param {String} opts.name Filter by partial or complete action name.
 	 * @param {String} opts.ids Filter by action Id. Can be a comma separated list to request multiple actions.  Limit of 50 Ids.
-	 * @param {Object} opts.secure Filter based on &#39;secure&#39; configuration option. True will only return actions marked as secure. False will return only non-secure actions. Do not use filter if you want all Actions.
+	 * @param {Object} opts.secure Filter based on 'secure' configuration option. True will only return actions marked as secure. False will return only non-secure actions. Do not use filter if you want all Actions.
 	 * @param {Object} opts.includeAuthActions Whether or not to include authentication actions in the response. These actions are not directly executable. Some integrations create them and will run them as needed to refresh authentication information for other actions. (default to false)
 	 */
 	getIntegrationsActions(opts) { 
@@ -436,13 +436,13 @@ class IntegrationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/integrations/actions', 
 			'GET', 
-			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'nextPage': opts['nextPage'],'previousPage': opts['previousPage'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'category': opts['category'],'name': opts['name'],'ids': opts['ids'],'secure': opts['secure'],'includeAuthActions': opts['includeAuthActions'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'nextPage': opts['nextPage'],'previousPage': opts['previousPage'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'category': opts['category'],'name': opts['name'],'ids': opts['ids'],'secure': opts['secure'],'includeAuthActions': opts['includeAuthActions'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -455,8 +455,8 @@ class IntegrationsApi {
 	 * @param {Number} opts.pageNumber The page number requested (default to 1)
 	 * @param {String} opts.nextPage next page token
 	 * @param {String} opts.previousPage Previous page token
-	 * @param {String} opts.sortBy Root level field name to sort on.  Only &#39;name&#39; is supported on this endpoint.
-	 * @param {Object} opts.sortOrder Direction to sort &#39;sortBy&#39; field. (default to asc)
+	 * @param {String} opts.sortBy Root level field name to sort on.  Only 'name' is supported on this endpoint.
+	 * @param {Object} opts.sortOrder Direction to sort 'sortBy' field. (default to asc)
 	 * @param {Object} opts.secure Filter to only include secure actions. True will only include actions marked secured. False will include only unsecure actions. Do not use filter if you want all Actions.
 	 */
 	getIntegrationsActionsCategories(opts) { 
@@ -466,13 +466,13 @@ class IntegrationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/integrations/actions/categories', 
 			'GET', 
-			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'nextPage': opts['nextPage'],'previousPage': opts['previousPage'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'secure': opts['secure'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'nextPage': opts['nextPage'],'previousPage': opts['previousPage'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'secure': opts['secure'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -486,11 +486,11 @@ class IntegrationsApi {
 	 * @param {String} opts.nextPage next page token
 	 * @param {String} opts.previousPage Previous page token
 	 * @param {String} opts.sortBy Root level field name to sort on.
-	 * @param {Object} opts.sortOrder Direction to sort &#39;sortBy&#39; field. (default to asc)
+	 * @param {Object} opts.sortOrder Direction to sort 'sortBy' field. (default to asc)
 	 * @param {String} opts.category Filter by category name.
 	 * @param {String} opts.name Filter by partial or complete action name.
 	 * @param {String} opts.ids Filter by action Id. Can be a comma separated list to request multiple actions.  Limit of 50 Ids.
-	 * @param {Object} opts.secure Filter based on &#39;secure&#39; configuration option. True will only return actions marked as secure. False will return only non-secure actions. Do not use filter if you want all Actions.
+	 * @param {Object} opts.secure Filter based on 'secure' configuration option. True will only return actions marked as secure. False will return only non-secure actions. Do not use filter if you want all Actions.
 	 * @param {Object} opts.includeAuthActions Whether or not to include authentication actions in the response. These actions are not directly executable. Some integrations create them and will run them as needed to refresh authentication information for other actions. (default to false)
 	 */
 	getIntegrationsActionsDrafts(opts) { 
@@ -500,13 +500,13 @@ class IntegrationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/integrations/actions/drafts', 
 			'GET', 
-			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'nextPage': opts['nextPage'],'previousPage': opts['previousPage'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'category': opts['category'],'name': opts['name'],'ids': opts['ids'],'secure': opts['secure'],'includeAuthActions': opts['includeAuthActions'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'nextPage': opts['nextPage'],'previousPage': opts['previousPage'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'category': opts['category'],'name': opts['name'],'ids': opts['ids'],'secure': opts['secure'],'includeAuthActions': opts['includeAuthActions'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -534,13 +534,13 @@ class IntegrationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/integrations/botconnector/{integrationId}/bots/{botId}', 
 			'GET', 
-			{ 'integrationId': integrationId,'botId': botId }, 
-			{ 'version': opts['version'] }, 
-			{  }, 
-			{  }, 
+			{ 'integrationId': integrationId,'botId': botId },
+			{ 'version': opts['version'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -569,13 +569,13 @@ class IntegrationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/integrations/botconnector/{integrationId}/bots/{botId}/versions', 
 			'GET', 
-			{ 'integrationId': integrationId,'botId': botId }, 
-			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'] }, 
-			{  }, 
-			{  }, 
+			{ 'integrationId': integrationId,'botId': botId },
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -594,13 +594,13 @@ class IntegrationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/integrations/botconnector/{integrationId}/bots', 
 			'GET', 
-			{ 'integrationId': integrationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'integrationId': integrationId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -624,13 +624,13 @@ class IntegrationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/integrations/botconnector/{integrationId}/bots/summaries', 
 			'GET', 
-			{ 'integrationId': integrationId }, 
-			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'] }, 
-			{  }, 
-			{  }, 
+			{ 'integrationId': integrationId },
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -653,13 +653,13 @@ class IntegrationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/integrations/clientapps', 
 			'GET', 
-			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'nextPage': opts['nextPage'],'previousPage': opts['previousPage'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'nextPage': opts['nextPage'],'previousPage': opts['previousPage'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -682,13 +682,13 @@ class IntegrationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/integrations/clientapps/unifiedcommunications', 
 			'GET', 
-			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'nextPage': opts['nextPage'],'previousPage': opts['previousPage'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'nextPage': opts['nextPage'],'previousPage': opts['previousPage'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -707,13 +707,13 @@ class IntegrationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/integrations/credentials/{credentialId}', 
 			'GET', 
-			{ 'credentialId': credentialId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'credentialId': credentialId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -732,13 +732,13 @@ class IntegrationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/integrations/credentials', 
 			'GET', 
-			{  }, 
-			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -752,13 +752,13 @@ class IntegrationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/integrations/credentials/types', 
 			'GET', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -780,13 +780,13 @@ class IntegrationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/integrations/eventlog', 
 			'GET', 
-			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'entityId': opts['entityId'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'entityId': opts['entityId'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -805,13 +805,13 @@ class IntegrationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/integrations/eventlog/{eventId}', 
 			'GET', 
-			{ 'eventId': eventId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'eventId': eventId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -830,19 +830,19 @@ class IntegrationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/integrations/speech/dialogflow/agents/{agentId}', 
 			'GET', 
-			{ 'agentId': agentId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'agentId': agentId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
 
 	/**
-	 * Get a list of Dialogflow agents in the customers&#39; Google accounts
+	 * Get a list of Dialogflow agents in the customers' Google accounts
 	 * 
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageNumber Page number (default to 1)
@@ -856,13 +856,13 @@ class IntegrationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/integrations/speech/dialogflow/agents', 
 			'GET', 
-			{  }, 
-			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'name': opts['name'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'name': opts['name'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -881,19 +881,19 @@ class IntegrationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/integrations/speech/lex/bot/alias/{aliasId}', 
 			'GET', 
-			{ 'aliasId': aliasId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'aliasId': aliasId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
 
 	/**
-	 * Get a list of aliases for a bot in the customer&#39;s AWS accounts
+	 * Get a list of aliases for a bot in the customer's AWS accounts
 	 * 
 	 * @param {String} botId The bot ID
 	 * @param {Object} opts Optional parameters
@@ -913,19 +913,19 @@ class IntegrationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/integrations/speech/lex/bot/{botId}/aliases', 
 			'GET', 
-			{ 'botId': botId }, 
-			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'status': opts['status'],'name': opts['name'] }, 
-			{  }, 
-			{  }, 
+			{ 'botId': botId },
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'status': opts['status'],'name': opts['name'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
 
 	/**
-	 * Get a list of Lex bots in the customers&#39; AWS accounts
+	 * Get a list of Lex bots in the customers' AWS accounts
 	 * 
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageNumber Page number (default to 1)
@@ -939,13 +939,13 @@ class IntegrationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/integrations/speech/lex/bots', 
 			'GET', 
-			{  }, 
-			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'name': opts['name'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'name': opts['name'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -968,13 +968,13 @@ class IntegrationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/integrations/speech/tts/engines/{engineId}', 
 			'GET', 
-			{ 'engineId': engineId }, 
-			{ 'includeVoices': opts['includeVoices'] }, 
-			{  }, 
-			{  }, 
+			{ 'engineId': engineId },
+			{ 'includeVoices': opts['includeVoices'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -998,13 +998,13 @@ class IntegrationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/integrations/speech/tts/engines/{engineId}/voices/{voiceId}', 
 			'GET', 
-			{ 'engineId': engineId,'voiceId': voiceId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'engineId': engineId,'voiceId': voiceId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1028,13 +1028,13 @@ class IntegrationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/integrations/speech/tts/engines/{engineId}/voices', 
 			'GET', 
-			{ 'engineId': engineId }, 
-			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'] }, 
-			{  }, 
-			{  }, 
+			{ 'engineId': engineId },
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1056,13 +1056,13 @@ class IntegrationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/integrations/speech/tts/engines', 
 			'GET', 
-			{  }, 
-			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'includeVoices': opts['includeVoices'],'name': opts['name'],'language': opts['language'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'includeVoices': opts['includeVoices'],'name': opts['name'],'language': opts['language'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1076,13 +1076,13 @@ class IntegrationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/integrations/speech/tts/settings', 
 			'GET', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1101,13 +1101,13 @@ class IntegrationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/integrations/types/{typeId}', 
 			'GET', 
-			{ 'typeId': typeId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'typeId': typeId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1131,13 +1131,13 @@ class IntegrationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/integrations/types/{typeId}/configschemas/{configType}', 
 			'GET', 
-			{ 'typeId': typeId,'configType': configType }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'typeId': typeId,'configType': configType },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1160,13 +1160,13 @@ class IntegrationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/integrations/types', 
 			'GET', 
-			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'nextPage': opts['nextPage'],'previousPage': opts['previousPage'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'nextPage': opts['nextPage'],'previousPage': opts['previousPage'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1190,13 +1190,13 @@ class IntegrationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/integrations/userapps', 
 			'GET', 
-			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'nextPage': opts['nextPage'],'previousPage': opts['previousPage'],'appHost': opts['appHost'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'nextPage': opts['nextPage'],'previousPage': opts['previousPage'],'appHost': opts['appHost'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1206,13 +1206,13 @@ class IntegrationsApi {
 	 * 
 	 * @param {String} integrationId Integration Id
 	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body Integration Update
 	 * @param {Number} opts.pageSize The total page size requested (default to 25)
 	 * @param {Number} opts.pageNumber The page number requested (default to 1)
 	 * @param {String} opts.sortBy variable name requested to sort by
 	 * @param {Array.<String>} opts.expand variable name requested by expand list
 	 * @param {String} opts.nextPage next page token
 	 * @param {String} opts.previousPage Previous page token
+	 * @param {Object} opts.body Integration Update
 	 */
 	patchIntegration(integrationId, opts) { 
 		opts = opts || {};
@@ -1225,13 +1225,13 @@ class IntegrationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/integrations/{integrationId}', 
 			'PATCH', 
-			{ 'integrationId': integrationId }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'nextPage': opts['nextPage'],'previousPage': opts['previousPage'] }, 
-			{  }, 
-			{  }, 
+			{ 'integrationId': integrationId },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'nextPage': opts['nextPage'],'previousPage': opts['previousPage'] },
+			{  },
+			{  },
 			opts['body'], 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1255,13 +1255,13 @@ class IntegrationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/integrations/actions/{actionId}', 
 			'PATCH', 
-			{ 'actionId': actionId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'actionId': actionId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1285,13 +1285,13 @@ class IntegrationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/integrations/actions/{actionId}/draft', 
 			'PATCH', 
-			{ 'actionId': actionId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'actionId': actionId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1309,13 +1309,13 @@ class IntegrationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/integrations', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			opts['body'], 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1334,13 +1334,13 @@ class IntegrationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/integrations/actions/{actionId}/draft', 
 			'POST', 
-			{ 'actionId': actionId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'actionId': actionId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1364,13 +1364,13 @@ class IntegrationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/integrations/actions/{actionId}/draft/publish', 
 			'POST', 
-			{ 'actionId': actionId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'actionId': actionId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1379,7 +1379,7 @@ class IntegrationsApi {
 	 * Test the execution of a draft. Responses will show execution steps broken out with intermediate results to help in debugging.
 	 * 
 	 * @param {String} actionId actionId
-	 * @param {Object} body Map of parameters used for variable substitution.
+	 * @param {Object.<String, {String: Object}>} body Map of parameters used for variable substitution.
 	 */
 	postIntegrationsActionDraftTest(actionId, body) { 
 		// verify the required parameter 'actionId' is set
@@ -1394,13 +1394,13 @@ class IntegrationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/integrations/actions/{actionId}/draft/test', 
 			'POST', 
-			{ 'actionId': actionId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'actionId': actionId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1409,7 +1409,7 @@ class IntegrationsApi {
 	 * Execute Action and return response from 3rd party.  Responses will follow the schemas defined on the Action for success and error.
 	 * 
 	 * @param {String} actionId actionId
-	 * @param {Object} body Map of parameters used for variable substitution.
+	 * @param {Object.<String, {String: Object}>} body Map of parameters used for variable substitution.
 	 */
 	postIntegrationsActionExecute(actionId, body) { 
 		// verify the required parameter 'actionId' is set
@@ -1424,13 +1424,13 @@ class IntegrationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/integrations/actions/{actionId}/execute', 
 			'POST', 
-			{ 'actionId': actionId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'actionId': actionId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1439,7 +1439,7 @@ class IntegrationsApi {
 	 * Test the execution of an action. Responses will show execution steps broken out with intermediate results to help in debugging.
 	 * 
 	 * @param {String} actionId actionId
-	 * @param {Object} body Map of parameters used for variable substitution.
+	 * @param {Object.<String, {String: Object}>} body Map of parameters used for variable substitution.
 	 */
 	postIntegrationsActionTest(actionId, body) { 
 		// verify the required parameter 'actionId' is set
@@ -1454,13 +1454,13 @@ class IntegrationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/integrations/actions/{actionId}/test', 
 			'POST', 
-			{ 'actionId': actionId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'actionId': actionId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1479,13 +1479,13 @@ class IntegrationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/integrations/actions', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1504,13 +1504,13 @@ class IntegrationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/integrations/actions/drafts', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1528,13 +1528,13 @@ class IntegrationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/integrations/credentials', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			opts['body'], 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1552,13 +1552,13 @@ class IntegrationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/integrations/workforcemanagement/vendorconnection', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			opts['body'], 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1581,13 +1581,13 @@ class IntegrationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/integrations/{integrationId}/config/current', 
 			'PUT', 
-			{ 'integrationId': integrationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'integrationId': integrationId },
+			{  },
+			{  },
+			{  },
 			opts['body'], 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1611,13 +1611,13 @@ class IntegrationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/integrations/botconnector/{integrationId}/bots', 
 			'PUT', 
-			{ 'integrationId': integrationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'integrationId': integrationId },
+			{  },
+			{  },
+			{  },
 			botList, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1640,13 +1640,13 @@ class IntegrationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/integrations/credentials/{credentialId}', 
 			'PUT', 
-			{ 'credentialId': credentialId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'credentialId': credentialId },
+			{  },
+			{  },
+			{  },
 			opts['body'], 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1665,13 +1665,13 @@ class IntegrationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/integrations/speech/tts/settings', 
 			'PUT', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}

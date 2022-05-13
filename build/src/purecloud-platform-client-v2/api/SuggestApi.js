@@ -5,7 +5,7 @@ class SuggestApi {
 	/**
 	 * Suggest service.
 	 * @module purecloud-platform-client-v2/api/SuggestApi
-	 * @version 136.1.0
+	 * @version 137.0.0
 	 */
 
 	/**
@@ -39,13 +39,13 @@ class SuggestApi {
 		return this.apiClient.callApi(
 			'/api/v2/search', 
 			'GET', 
-			{  }, 
-			{ 'q64': q64,'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'profile': opts['profile'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'q64': q64,'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'profile': opts['profile'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -69,13 +69,13 @@ class SuggestApi {
 		return this.apiClient.callApi(
 			'/api/v2/search/suggest', 
 			'GET', 
-			{  }, 
-			{ 'q64': q64,'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'profile': opts['profile'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'q64': q64,'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'profile': opts['profile'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -98,13 +98,13 @@ class SuggestApi {
 		return this.apiClient.callApi(
 			'/api/v2/search', 
 			'POST', 
-			{  }, 
-			{ 'profile': opts['profile'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'profile': opts['profile'] },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -127,13 +127,13 @@ class SuggestApi {
 		return this.apiClient.callApi(
 			'/api/v2/search/suggest', 
 			'POST', 
-			{  }, 
-			{ 'profile': opts['profile'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'profile': opts['profile'] },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}

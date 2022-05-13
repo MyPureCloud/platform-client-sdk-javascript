@@ -18,15 +18,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 # ServerDate getDate()
 
 
-
 GET /api/v2/date
 
 Get the current system date/time
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -65,15 +61,11 @@ This endpoint does not need any parameter.
 # IpAddressRangeListing getIpranges()
 
 
-
 GET /api/v2/ipranges
 
 Get public ip address ranges for Genesys Cloud
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -112,15 +104,11 @@ This endpoint does not need any parameter.
 # TimeZoneEntityListing getTimezones(opts)
 
 
-
 GET /api/v2/timezones
 
 Get time zones list
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -168,15 +156,11 @@ apiInstance.getTimezones(opts)
 # ParsedCertificate postCertificateDetails(body)
 
 
-
 POST /api/v2/certificate/details
 
 Returns the information about an X509 PEM encoded certificate or certificate chain.
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 

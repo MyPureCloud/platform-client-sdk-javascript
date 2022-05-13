@@ -19,14 +19,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 # void deleteWidgetsDeployment(deploymentId)
 
 
-
 DELETE /api/v2/widgets/deployments/{deploymentId}
 
 Delete a Widget deployment
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * widgets:deployment:delete
 * webchat:deployment:delete
@@ -73,14 +70,11 @@ void (no response body)
 # WidgetDeployment getWidgetsDeployment(deploymentId)
 
 
-
 GET /api/v2/widgets/deployments/{deploymentId}
 
 Get a Widget deployment
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * widgets:deployment:view
 * webchat:deployment:read
@@ -127,14 +121,11 @@ apiInstance.getWidgetsDeployment(deploymentId)
 # WidgetDeploymentEntityListing getWidgetsDeployments()
 
 
-
 GET /api/v2/widgets/deployments
 
 List Widget deployments
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * widgets:deployment:view
 * webchat:deployment:read
@@ -176,14 +167,11 @@ This endpoint does not need any parameter.
 # WidgetDeployment postWidgetsDeployments(body)
 
 
-
 POST /api/v2/widgets/deployments
 
 Create Widget deployment
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * widgets:deployment:add
 * webchat:deployment:create
@@ -230,14 +218,11 @@ apiInstance.postWidgetsDeployments(body)
 # WidgetDeployment putWidgetsDeployment(deploymentId, body)
 
 
-
 PUT /api/v2/widgets/deployments/{deploymentId}
 
 Update a Widget deployment
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * widgets:deployment:edit
 * webchat:deployment:update

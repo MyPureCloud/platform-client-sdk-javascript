@@ -69,14 +69,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 # Calibration deleteQualityCalibration(calibrationId, calibratorId)
 
 
-
 DELETE /api/v2/quality/calibrations/{calibrationId}
 
 Delete a calibration by id.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * quality:calibration:delete
 
@@ -124,14 +121,11 @@ apiInstance.deleteQualityCalibration(calibrationId, calibratorId)
 # Evaluation deleteQualityConversationEvaluation(conversationId, evaluationId, opts)
 
 
-
 DELETE /api/v2/quality/conversations/{conversationId}/evaluations/{evaluationId}
 
 Delete an evaluation
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * quality:evaluation:delete
 
@@ -188,9 +182,7 @@ DELETE /api/v2/quality/forms/{formId}
 
 Delete an evaluation form.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * quality:evaluationForm:delete
 
@@ -236,14 +228,11 @@ void (no response body)
 # void deleteQualityFormsEvaluation(formId)
 
 
-
 DELETE /api/v2/quality/forms/evaluations/{formId}
 
 Delete an evaluation form.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * quality:evaluationForm:delete
 
@@ -289,14 +278,11 @@ void (no response body)
 # void deleteQualityFormsSurvey(formId)
 
 
-
 DELETE /api/v2/quality/forms/surveys/{formId}
 
 Delete a survey form.
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * quality:surveyForm:delete
 
@@ -342,14 +328,13 @@ void (no response body)
 # AgentActivityEntityListing getQualityAgentsActivity(opts)
 
 
-
 GET /api/v2/quality/agents/activity
 
 Gets a list of Agent Activities
 
-Each item on the list shows one agent&#39;s evaluation activity comprised of the number of evaluations and the highest, average, and lowest standard and critical scores, as well as a sub list showing the number and average score of evaluations for each evaluator for that agent.  evaluatorUserId, startTime, and endTime are all filtering criteria. If specified, the only evaluations used to compile the agent activity response will be ones that match the filtering criteria. agentUserId, name, group, and agentTeamId are all agent selection criteria. criteria.  If one or more agent selection criteria are specified, then the returned activity will include users that match the criteria even if those users did not have any agent activity or evaluations that do not match any filtering criteria.  If no agent selection criteria are specified but an evaluatorUserId is, then the returned activity will be only for those agents that had evaluations where the evaluator is the evaluatorUserId.  If no agent selection criteria are specified and no evaluatorUserId is specified, then the returned activity will be for all users
+Each item on the list shows one agents evaluation activity comprised of the number of evaluations and the highest, average, and lowest standard and critical scores, as well as a sub list showing the number and average score of evaluations for each evaluator for that agent.  evaluatorUserId, startTime, and endTime are all filtering criteria. If specified, the only evaluations used to compile the agent activity response will be ones that match the filtering criteria. agentUserId, name, group, and agentTeamId are all agent selection criteria. criteria.  If one or more agent selection criteria are specified, then the returned activity will include users that match the criteria even if those users did not have any agent activity or evaluations that do not match any filtering criteria.  If no agent selection criteria are specified but an evaluatorUserId is, then the returned activity will be only for those agents that had evaluations where the evaluator is the evaluatorUserId.  If no agent selection criteria are specified and no evaluatorUserId is specified, then the returned activity will be for all users
 
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * quality:evaluation:view
 
@@ -419,14 +404,11 @@ apiInstance.getQualityAgentsActivity(opts)
 # Calibration getQualityCalibration(calibrationId, opts)
 
 
-
 GET /api/v2/quality/calibrations/{calibrationId}
 
 Get a calibration by id.  Requires either calibrator id or conversation id
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * quality:calibration:view
 
@@ -478,14 +460,11 @@ apiInstance.getQualityCalibration(calibrationId, opts)
 # CalibrationEntityListing getQualityCalibrations(calibratorId, opts)
 
 
-
 GET /api/v2/quality/calibrations
 
 Get the list of calibrations
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * quality:calibration:view
 
@@ -551,14 +530,11 @@ apiInstance.getQualityCalibrations(calibratorId, opts)
 # Evaluation getQualityConversationEvaluation(conversationId, evaluationId, opts)
 
 
-
 GET /api/v2/quality/conversations/{conversationId}/evaluations/{evaluationId}
 
 Get an evaluation
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * quality:evaluation:view
 
@@ -610,14 +586,11 @@ apiInstance.getQualityConversationEvaluation(conversationId, evaluationId, opts)
 # [Survey] getQualityConversationSurveys(conversationId)
 
 
-
 GET /api/v2/quality/conversations/{conversationId}/surveys
 
 Get the surveys for a conversation
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * quality:survey:view
 
@@ -663,14 +636,11 @@ apiInstance.getQualityConversationSurveys(conversationId)
 # QualityAuditQueryExecutionStatusResponse getQualityConversationsAuditsQueryTransactionId(transactionId)
 
 
-
 GET /api/v2/quality/conversations/audits/query/{transactionId}
 
 Get status of audit query execution
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * audits:interactionDetails:view
 
@@ -716,14 +686,11 @@ apiInstance.getQualityConversationsAuditsQueryTransactionId(transactionId)
 # QualityAuditQueryExecutionResultsResponse getQualityConversationsAuditsQueryTransactionIdResults(transactionId, opts)
 
 
-
 GET /api/v2/quality/conversations/audits/query/{transactionId}/results
 
 Get results of audit query
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * audits:interactionDetails:view
 
@@ -777,14 +744,13 @@ apiInstance.getQualityConversationsAuditsQueryTransactionIdResults(transactionId
 # EvaluationEntityListing getQualityEvaluationsQuery(opts)
 
 
-
 GET /api/v2/quality/evaluations/query
 
 Queries Evaluations and returns a paged list
 
-Query params must include one of conversationId, evaluatorUserId, or agentUserId. When querying by agentUserId (and not conversationId or evaluatorUserId), the results are sorted by release date. Evaluations set to &#39;Never Release&#39; are omitted in this case. When querying by evaluatorUserId or conversationId (including when combined with agentUserId), the results are sorted by assigned date.
+Query params must include one of conversationId, evaluatorUserId, or agentUserId. When querying by agentUserId (and not conversationId or evaluatorUserId), the results are sorted by release date. Evaluations set to Never Release are omitted in this case. When querying by evaluatorUserId or conversationId (including when combined with agentUserId), the results are sorted by assigned date.
 
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * quality:evaluation:view
 
@@ -818,7 +784,7 @@ let opts = {
   'isReleased': true, // Boolean | the evaluation has been released
   'agentHasRead': true, // Boolean | agent has the evaluation
   'expandAnswerTotalScores': true, // Boolean | get the total scores for evaluations
-  'maximum': 56, // Number | maximum
+  'maximum': 3.4, // Number | maximum
   'sortOrder': "sortOrder_example" // String | sort order options for agentUserId or evaluatorUserId query. Valid options are 'a', 'asc', 'ascending', 'd', 'desc', 'descending'
 };
 
@@ -854,7 +820,7 @@ apiInstance.getQualityEvaluationsQuery(opts)
  **agentHasRead** | **Boolean** | agent has the evaluation | [optional]  |
  **expandAnswerTotalScores** | **Boolean** | get the total scores for evaluations | [optional]  |
  **maximum** | **Number** | maximum | [optional]  |
- **sortOrder** | **String** | sort order options for agentUserId or evaluatorUserId query. Valid options are &#39;a&#39;, &#39;asc&#39;, &#39;ascending&#39;, &#39;d&#39;, &#39;desc&#39;, &#39;descending&#39; | [optional]  |
+ **sortOrder** | **String** | sort order options for agentUserId or evaluatorUserId query. Valid options are 'a', 'asc', 'ascending', 'd', 'desc', 'descending' | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -866,14 +832,11 @@ apiInstance.getQualityEvaluationsQuery(opts)
 # EvaluatorActivityEntityListing getQualityEvaluatorsActivity(opts)
 
 
-
 GET /api/v2/quality/evaluators/activity
 
 Get an evaluator activity
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * quality:evaluation:view
 
@@ -946,9 +909,7 @@ GET /api/v2/quality/forms/{formId}
 
 Get an evaluation form
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * quality:evaluationForm:view
 
@@ -999,9 +960,7 @@ GET /api/v2/quality/forms/{formId}/versions
 
 Gets all the revisions for a specific evaluation.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * quality:evaluationForm:view
 
@@ -1058,9 +1017,7 @@ GET /api/v2/quality/forms
 
 Get the list of evaluation forms
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * quality:evaluationForm:view
 
@@ -1122,14 +1079,11 @@ apiInstance.getQualityForms(opts)
 # EvaluationForm getQualityFormsEvaluation(formId)
 
 
-
 GET /api/v2/quality/forms/evaluations/{formId}
 
 Get an evaluation form
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * quality:evaluationForm:view
 
@@ -1175,14 +1129,11 @@ apiInstance.getQualityFormsEvaluation(formId)
 # EvaluationFormEntityListing getQualityFormsEvaluationVersions(formId, opts)
 
 
-
 GET /api/v2/quality/forms/evaluations/{formId}/versions
 
 Gets all the revisions for a specific evaluation.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * quality:evaluationForm:view
 
@@ -1236,14 +1187,11 @@ apiInstance.getQualityFormsEvaluationVersions(formId, opts)
 # EvaluationFormEntityListing getQualityFormsEvaluations(opts)
 
 
-
 GET /api/v2/quality/forms/evaluations
 
 Get the list of evaluation forms
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * quality:evaluationForm:view
 
@@ -1305,14 +1253,11 @@ apiInstance.getQualityFormsEvaluations(opts)
 # [EvaluationForm] getQualityFormsEvaluationsBulkContexts(contextId)
 
 
-
 GET /api/v2/quality/forms/evaluations/bulk/contexts
 
 Retrieve a list of the latest published evaluation form versions by context ids
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * quality:evaluationForm:view
 
@@ -1358,14 +1303,11 @@ apiInstance.getQualityFormsEvaluationsBulkContexts(contextId)
 # SurveyForm getQualityFormsSurvey(formId)
 
 
-
 GET /api/v2/quality/forms/surveys/{formId}
 
 Get a survey form
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * quality:surveyForm:view
 
@@ -1411,14 +1353,11 @@ apiInstance.getQualityFormsSurvey(formId)
 # SurveyFormEntityListing getQualityFormsSurveyVersions(formId, opts)
 
 
-
 GET /api/v2/quality/forms/surveys/{formId}/versions
 
 Gets all the revisions for a specific survey.
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * quality:surveyForm:view
 
@@ -1470,14 +1409,11 @@ apiInstance.getQualityFormsSurveyVersions(formId, opts)
 # SurveyFormEntityListing getQualityFormsSurveys(opts)
 
 
-
 GET /api/v2/quality/forms/surveys
 
 Get the list of survey forms
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * quality:surveyForm:view
 
@@ -1539,14 +1475,11 @@ apiInstance.getQualityFormsSurveys(opts)
 # SurveyFormEntityListing getQualityFormsSurveysBulk(id)
 
 
-
 GET /api/v2/quality/forms/surveys/bulk
 
 Retrieve a list of survey forms by their ids
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * quality:surveyForm:view
 
@@ -1592,14 +1525,11 @@ apiInstance.getQualityFormsSurveysBulk(id)
 # [SurveyForm] getQualityFormsSurveysBulkContexts(contextId, opts)
 
 
-
 GET /api/v2/quality/forms/surveys/bulk/contexts
 
 Retrieve a list of the latest form versions by context ids
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * quality:surveyForm:view
 
@@ -1654,9 +1584,7 @@ GET /api/v2/quality/publishedforms/{formId}
 
 Get the published evaluation forms.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * quality:evaluationForm:view
 
@@ -1707,9 +1635,7 @@ GET /api/v2/quality/publishedforms
 
 Get the published evaluation forms.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * quality:evaluationForm:view
 
@@ -1763,14 +1689,11 @@ apiInstance.getQualityPublishedforms(opts)
 # EvaluationForm getQualityPublishedformsEvaluation(formId)
 
 
-
 GET /api/v2/quality/publishedforms/evaluations/{formId}
 
 Get the most recent published version of an evaluation form.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * quality:evaluationForm:view
 
@@ -1816,14 +1739,11 @@ apiInstance.getQualityPublishedformsEvaluation(formId)
 # EvaluationFormEntityListing getQualityPublishedformsEvaluations(opts)
 
 
-
 GET /api/v2/quality/publishedforms/evaluations
 
 Get the published evaluation forms.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * quality:evaluationForm:view
 
@@ -1877,14 +1797,11 @@ apiInstance.getQualityPublishedformsEvaluations(opts)
 # SurveyForm getQualityPublishedformsSurvey(formId)
 
 
-
 GET /api/v2/quality/publishedforms/surveys/{formId}
 
 Get the most recent published version of a survey form.
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * quality:surveyForm:view
 
@@ -1930,14 +1847,11 @@ apiInstance.getQualityPublishedformsSurvey(formId)
 # SurveyFormEntityListing getQualityPublishedformsSurveys(opts)
 
 
-
 GET /api/v2/quality/publishedforms/surveys
 
 Get the published survey forms.
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * quality:surveyForm:view
 
@@ -1991,14 +1905,11 @@ apiInstance.getQualityPublishedformsSurveys(opts)
 # Survey getQualitySurvey(surveyId)
 
 
-
 GET /api/v2/quality/surveys/{surveyId}
 
 Get a survey for a conversation
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * quality:survey:view
 
@@ -2044,15 +1955,11 @@ apiInstance.getQualitySurvey(surveyId)
 # ScorableSurvey getQualitySurveysScorable(customerSurveyUrl)
 
 
-
 GET /api/v2/quality/surveys/scorable
 
 Get a survey as an end-customer, for the purposes of scoring it.
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -2093,14 +2000,11 @@ apiInstance.getQualitySurveysScorable(customerSurveyUrl)
 # SurveyForm patchQualityFormsSurvey(formId, body)
 
 
-
 PATCH /api/v2/quality/forms/surveys/{formId}
 
 Disable a particular version of a survey form and invalidates any invitations that have already been sent to customers using this version of the form.
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * quality:surveyForm:disable
 
@@ -2148,14 +2052,11 @@ apiInstance.patchQualityFormsSurvey(formId, body)
 # EvaluationAggregateQueryResponse postAnalyticsEvaluationsAggregatesQuery(body)
 
 
-
 POST /api/v2/analytics/evaluations/aggregates/query
 
 Query for evaluation aggregates
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * analytics:evaluationAggregate:view
 
@@ -2201,14 +2102,11 @@ apiInstance.postAnalyticsEvaluationsAggregatesQuery(body)
 # SurveyAggregateQueryResponse postAnalyticsSurveysAggregatesQuery(body)
 
 
-
 POST /api/v2/analytics/surveys/aggregates/query
 
 Query for survey aggregates
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * analytics:surveyAggregate:view
 
@@ -2254,14 +2152,11 @@ apiInstance.postAnalyticsSurveysAggregatesQuery(body)
 # Calibration postQualityCalibrations(body, opts)
 
 
-
 POST /api/v2/quality/calibrations
 
 Create a calibration
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * quality:calibration:add
 
@@ -2311,14 +2206,11 @@ apiInstance.postQualityCalibrations(body, opts)
 # Evaluation postQualityConversationEvaluations(conversationId, body, opts)
 
 
-
 POST /api/v2/quality/conversations/{conversationId}/evaluations
 
 Create an evaluation
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * quality:evaluation:add
 
@@ -2370,14 +2262,11 @@ apiInstance.postQualityConversationEvaluations(conversationId, body, opts)
 # QualityAuditQueryExecutionStatusResponse postQualityConversationsAuditsQuery(body)
 
 
-
 POST /api/v2/quality/conversations/audits/query
 
 Create audit query execution
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * audits:interactionDetails:view
 
@@ -2423,15 +2312,11 @@ apiInstance.postQualityConversationsAuditsQuery(body)
 # EvaluationAggregateQueryResponse postQualityEvaluationsAggregatesQueryMe(body)
 
 
-
 POST /api/v2/quality/evaluations/aggregates/query/me
 
 Query for evaluation aggregates for the current user
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -2475,15 +2360,11 @@ apiInstance.postQualityEvaluationsAggregatesQueryMe(body)
 # EvaluationScoringSet postQualityEvaluationsScoring(body)
 
 
-
 POST /api/v2/quality/evaluations/scoring
 
 Score evaluation
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -2532,9 +2413,7 @@ POST /api/v2/quality/forms
 
 Create an evaluation form.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * quality:evaluationForm:add
 
@@ -2580,14 +2459,11 @@ apiInstance.postQualityForms(body)
 # EvaluationForm postQualityFormsEvaluations(body)
 
 
-
 POST /api/v2/quality/forms/evaluations
 
 Create an evaluation form.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * quality:evaluationForm:add
 
@@ -2633,14 +2509,11 @@ apiInstance.postQualityFormsEvaluations(body)
 # SurveyForm postQualityFormsSurveys(body)
 
 
-
 POST /api/v2/quality/forms/surveys
 
 Create a survey form.
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * quality:surveyForm:add
 
@@ -2691,9 +2564,7 @@ POST /api/v2/quality/publishedforms
 
 Publish an evaluation form.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * quality:evaluationForm:add
 
@@ -2739,14 +2610,11 @@ apiInstance.postQualityPublishedforms(body)
 # EvaluationForm postQualityPublishedformsEvaluations(body)
 
 
-
 POST /api/v2/quality/publishedforms/evaluations
 
 Publish an evaluation form.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * quality:evaluationForm:add
 
@@ -2792,14 +2660,11 @@ apiInstance.postQualityPublishedformsEvaluations(body)
 # SurveyForm postQualityPublishedformsSurveys(body)
 
 
-
 POST /api/v2/quality/publishedforms/surveys
 
 Publish a survey form.
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * quality:surveyForm:add
 
@@ -2845,15 +2710,11 @@ apiInstance.postQualityPublishedformsSurveys(body)
 # SurveyScoringSet postQualitySurveysScoring(body)
 
 
-
 POST /api/v2/quality/surveys/scoring
 
 Score survey
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -2897,14 +2758,11 @@ apiInstance.postQualitySurveysScoring(body)
 # Calibration putQualityCalibration(calibrationId, body)
 
 
-
 PUT /api/v2/quality/calibrations/{calibrationId}
 
 Update a calibration to the specified calibration via PUT.  Editable fields include: evaluators, expertEvaluator, and scoringIndex
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * quality:calibration:edit
 
@@ -2952,14 +2810,13 @@ apiInstance.putQualityCalibration(calibrationId, body)
 # Evaluation putQualityConversationEvaluation(conversationId, evaluationId, body, opts)
 
 
-
 PUT /api/v2/quality/conversations/{conversationId}/evaluations/{evaluationId}
 
 Update an evaluation
 
 The quality:evaluation:edit permission allows modification of most fields, while the quality:evaluation:editScore permission allows an evaluator to change just the question scores, and the quality:evaluation:editAgentSignoff permission allows an agent to change the agent comments and sign off on the evaluation.
 
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * quality:evaluation:edit
 * quality:evaluation:editScore
@@ -3020,9 +2877,7 @@ PUT /api/v2/quality/forms/{formId}
 
 Update an evaluation form.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * quality:evaluationForm:edit
 
@@ -3070,14 +2925,11 @@ apiInstance.putQualityForm(formId, body)
 # EvaluationForm putQualityFormsEvaluation(formId, body)
 
 
-
 PUT /api/v2/quality/forms/evaluations/{formId}
 
 Update an evaluation form.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * quality:evaluationForm:edit
 
@@ -3125,14 +2977,11 @@ apiInstance.putQualityFormsEvaluation(formId, body)
 # SurveyForm putQualityFormsSurvey(formId, body)
 
 
-
 PUT /api/v2/quality/forms/surveys/{formId}
 
 Update a survey form.
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * quality:surveyForm:edit
 
@@ -3177,18 +3026,14 @@ apiInstance.putQualityFormsSurvey(formId, body)
 
 <a name="putQualitySurveysScorable"></a>
 
-# ScorableSurvey putQualitySurveysScorable(body, customerSurveyUrl)
-
+# ScorableSurvey putQualitySurveysScorable(customerSurveyUrl, body)
 
 
 PUT /api/v2/quality/surveys/scorable
 
 Update a survey as an end-customer, for the purposes of scoring it.
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -3200,10 +3045,10 @@ const platformClient = require('purecloud-platform-client-v2');
 
 let apiInstance = new platformClient.QualityApi();
 
-let body = {}; // Object | survey
 let customerSurveyUrl = "customerSurveyUrl_example"; // String | customerSurveyUrl
+let body = {}; // Object | survey
 
-apiInstance.putQualitySurveysScorable(body, customerSurveyUrl)
+apiInstance.putQualitySurveysScorable(customerSurveyUrl, body)
   .then((data) => {
     console.log(`putQualitySurveysScorable success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3218,8 +3063,8 @@ apiInstance.putQualitySurveysScorable(body, customerSurveyUrl)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **Object** | survey |  |
  **customerSurveyUrl** | **String** | customerSurveyUrl |  |
+ **body** | **Object** | survey |  |
 {: class="table table-striped"}
 
 ### Return type

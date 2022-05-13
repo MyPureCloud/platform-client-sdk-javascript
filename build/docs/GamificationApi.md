@@ -7,10 +7,10 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-[**getGamificationLeaderboard**](GamificationApi.html#getGamificationLeaderboard) | **GET** /api/v2/gamification/leaderboard | Leaderboard of the requesting user&#39;s division or performance profile
+[**getGamificationLeaderboard**](GamificationApi.html#getGamificationLeaderboard) | **GET** /api/v2/gamification/leaderboard | Leaderboard of the requesting user's division or performance profile
 [**getGamificationLeaderboardAll**](GamificationApi.html#getGamificationLeaderboardAll) | **GET** /api/v2/gamification/leaderboard/all | Leaderboard by filter type
 [**getGamificationLeaderboardAllBestpoints**](GamificationApi.html#getGamificationLeaderboardAllBestpoints) | **GET** /api/v2/gamification/leaderboard/all/bestpoints | Best Points by division or performance profile
-[**getGamificationLeaderboardBestpoints**](GamificationApi.html#getGamificationLeaderboardBestpoints) | **GET** /api/v2/gamification/leaderboard/bestpoints | Best Points of the requesting user&#39;s current performance profile or division
+[**getGamificationLeaderboardBestpoints**](GamificationApi.html#getGamificationLeaderboardBestpoints) | **GET** /api/v2/gamification/leaderboard/bestpoints | Best Points of the requesting user's current performance profile or division
 [**getGamificationMetric**](GamificationApi.html#getGamificationMetric) | **GET** /api/v2/gamification/metrics/{metricId} | Gamified metric by id
 [**getGamificationMetricdefinition**](GamificationApi.html#getGamificationMetricdefinition) | **GET** /api/v2/gamification/metricdefinitions/{metricDefinitionId} | Metric definition by id
 [**getGamificationMetricdefinitions**](GamificationApi.html#getGamificationMetricdefinitions) | **GET** /api/v2/gamification/metricdefinitions | All metric definitions
@@ -27,7 +27,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getGamificationScorecardsAttendance**](GamificationApi.html#getGamificationScorecardsAttendance) | **GET** /api/v2/gamification/scorecards/attendance | Attendance status metrics of the requesting user
 [**getGamificationScorecardsBestpoints**](GamificationApi.html#getGamificationScorecardsBestpoints) | **GET** /api/v2/gamification/scorecards/bestpoints | Best points of the requesting user
 [**getGamificationScorecardsPointsAlltime**](GamificationApi.html#getGamificationScorecardsPointsAlltime) | **GET** /api/v2/gamification/scorecards/points/alltime | All-time points of the requesting user
-[**getGamificationScorecardsPointsAverage**](GamificationApi.html#getGamificationScorecardsPointsAverage) | **GET** /api/v2/gamification/scorecards/points/average | Average points of the requesting user&#39;s division or performance profile
+[**getGamificationScorecardsPointsAverage**](GamificationApi.html#getGamificationScorecardsPointsAverage) | **GET** /api/v2/gamification/scorecards/points/average | Average points of the requesting user's division or performance profile
 [**getGamificationScorecardsPointsTrends**](GamificationApi.html#getGamificationScorecardsPointsTrends) | **GET** /api/v2/gamification/scorecards/points/trends | Points trends of the requesting user
 [**getGamificationScorecardsUser**](GamificationApi.html#getGamificationScorecardsUser) | **GET** /api/v2/gamification/scorecards/users/{userId} | Workday performance metrics for a user
 [**getGamificationScorecardsUserAttendance**](GamificationApi.html#getGamificationScorecardsUserAttendance) | **GET** /api/v2/gamification/scorecards/users/{userId}/attendance | Attendance status metrics for a user
@@ -38,7 +38,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getGamificationScorecardsUsersPointsAverage**](GamificationApi.html#getGamificationScorecardsUsersPointsAverage) | **GET** /api/v2/gamification/scorecards/users/points/average | Workday average points by target group
 [**getGamificationScorecardsUsersValuesAverage**](GamificationApi.html#getGamificationScorecardsUsersValuesAverage) | **GET** /api/v2/gamification/scorecards/users/values/average | Workday average values by target group
 [**getGamificationScorecardsUsersValuesTrends**](GamificationApi.html#getGamificationScorecardsUsersValuesTrends) | **GET** /api/v2/gamification/scorecards/users/values/trends | Values trend by target group
-[**getGamificationScorecardsValuesAverage**](GamificationApi.html#getGamificationScorecardsValuesAverage) | **GET** /api/v2/gamification/scorecards/values/average | Average values of the requesting user&#39;s division or performance profile
+[**getGamificationScorecardsValuesAverage**](GamificationApi.html#getGamificationScorecardsValuesAverage) | **GET** /api/v2/gamification/scorecards/values/average | Average values of the requesting user's division or performance profile
 [**getGamificationScorecardsValuesTrends**](GamificationApi.html#getGamificationScorecardsValuesTrends) | **GET** /api/v2/gamification/scorecards/values/trends | Values trends of the requesting user or group
 [**getGamificationStatus**](GamificationApi.html#getGamificationStatus) | **GET** /api/v2/gamification/status | Gamification activation status
 [**getGamificationTemplate**](GamificationApi.html#getGamificationTemplate) | **GET** /api/v2/gamification/templates/{templateId} | Objective template by id
@@ -62,14 +62,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 # Leaderboard getGamificationLeaderboard(startWorkday, endWorkday, opts)
 
 
-
 GET /api/v2/gamification/leaderboard
 
-Leaderboard of the requesting user&#39;s division or performance profile
+Leaderboard of the requesting user's division or performance profile
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * gamification:leaderboard:view
 
@@ -86,8 +83,8 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.GamificationApi();
 
-let startWorkday = "2013-10-20"; // String | Start workday to retrieve for the leaderboard. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
-let endWorkday = "2013-10-20"; // String | End workday to retrieve for the leaderboard. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+let startWorkday = "startWorkday_example"; // String | Start workday to retrieve for the leaderboard. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+let endWorkday = "endWorkday_example"; // String | End workday to retrieve for the leaderboard. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 let opts = { 
   'metricId': "metricId_example" // String | Metric Id for which the leaderboard is to be generated. The total points is used if nothing is given.
 };
@@ -121,14 +118,11 @@ apiInstance.getGamificationLeaderboard(startWorkday, endWorkday, opts)
 # Leaderboard getGamificationLeaderboardAll(filterType, filterId, startWorkday, endWorkday, opts)
 
 
-
 GET /api/v2/gamification/leaderboard/all
 
 Leaderboard by filter type
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * gamification:leaderboard:viewAll
 
@@ -147,8 +141,8 @@ let apiInstance = new platformClient.GamificationApi();
 
 let filterType = "filterType_example"; // String | Filter type for the query request.
 let filterId = "filterId_example"; // String | ID for the filter type. For example, division or performance profile Id
-let startWorkday = "2013-10-20"; // String | Start workday to retrieve for the leaderboard. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
-let endWorkday = "2013-10-20"; // String | End workday to retrieve for the leaderboard. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+let startWorkday = "startWorkday_example"; // String | Start workday to retrieve for the leaderboard. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+let endWorkday = "endWorkday_example"; // String | End workday to retrieve for the leaderboard. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 let opts = { 
   'metricId': "metricId_example" // String | Metric Id for which the leaderboard is to be generated. The total points is used if nothing is given.
 };
@@ -184,14 +178,11 @@ apiInstance.getGamificationLeaderboardAll(filterType, filterId, startWorkday, en
 # OverallBestPoints getGamificationLeaderboardAllBestpoints(filterType, filterId)
 
 
-
 GET /api/v2/gamification/leaderboard/all/bestpoints
 
 Best Points by division or performance profile
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * gamification:leaderboard:viewAll
 
@@ -239,14 +230,11 @@ apiInstance.getGamificationLeaderboardAllBestpoints(filterType, filterId)
 # OverallBestPoints getGamificationLeaderboardBestpoints()
 
 
-
 GET /api/v2/gamification/leaderboard/bestpoints
 
-Best Points of the requesting user&#39;s current performance profile or division
+Best Points of the requesting user's current performance profile or division
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * gamification:leaderboard:view
 
@@ -287,14 +275,11 @@ This endpoint does not need any parameter.
 # Metric getGamificationMetric(metricId, opts)
 
 
-
 GET /api/v2/gamification/metrics/{metricId}
 
 Gamified metric by id
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * gamification:profile:view
 * gamification:leaderboard:view
@@ -315,7 +300,7 @@ let apiInstance = new platformClient.GamificationApi();
 
 let metricId = "metricId_example"; // String | metric Id
 let opts = { 
-  'workday': "2013-10-20", // String | The objective query workday. If not specified, then it retrieves the current objective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+  'workday': "workday_example", // String | The objective query workday. If not specified, then it retrieves the current objective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
   'performanceProfileId': "performanceProfileId_example" // String | The profile id of the metrics you are trying to retrieve. The DEFAULT profile is used if nothing is given.
 };
 
@@ -348,14 +333,11 @@ apiInstance.getGamificationMetric(metricId, opts)
 # MetricDefinition getGamificationMetricdefinition(metricDefinitionId)
 
 
-
 GET /api/v2/gamification/metricdefinitions/{metricDefinitionId}
 
 Metric definition by id
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * gamification:profile:view
 
@@ -401,14 +383,13 @@ apiInstance.getGamificationMetricdefinition(metricDefinitionId)
 # GetMetricDefinitionsResponse getGamificationMetricdefinitions()
 
 
-
 GET /api/v2/gamification/metricdefinitions
 
 All metric definitions
 
 Retrieves the metric definitions and their corresponding default objectives used to create a gamified metric
 
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * gamification:profile:view
 
@@ -449,14 +430,11 @@ This endpoint does not need any parameter.
 # GetMetricsResponse getGamificationMetrics(opts)
 
 
-
 GET /api/v2/gamification/metrics
 
 All gamified metrics for a given profile
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * gamification:profile:view
 * gamification:leaderboard:view
@@ -477,7 +455,7 @@ let apiInstance = new platformClient.GamificationApi();
 
 let opts = { 
   'performanceProfileId': "performanceProfileId_example", // String | The profile id of the metrics you are trying to retrieve. The DEFAULT profile is used if nothing is given.
-  'workday': "2013-10-20" // String | The objective query workday. If not specified, then it retrieves the current objective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+  'workday': "workday_example" // String | The objective query workday. If not specified, then it retrieves the current objective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 };
 
 apiInstance.getGamificationMetrics(opts)
@@ -508,14 +486,11 @@ apiInstance.getGamificationMetrics(opts)
 # PerformanceProfile getGamificationProfile(profileId)
 
 
-
 GET /api/v2/gamification/profiles/{profileId}
 
 Performance profile by id
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * gamification:profile:view
 * gamification:leaderboard:viewAll
@@ -563,14 +538,11 @@ apiInstance.getGamificationProfile(profileId)
 # MemberListing getGamificationProfileMembers(performanceProfileId)
 
 
-
 GET /api/v2/gamification/profiles/{performanceProfileId}/members
 
 Members of a given performance profile
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * gamification:profile:view
 
@@ -616,14 +588,11 @@ apiInstance.getGamificationProfileMembers(performanceProfileId)
 # Metric getGamificationProfileMetric(profileId, metricId, opts)
 
 
-
 GET /api/v2/gamification/profiles/{profileId}/metrics/{metricId}
 
 Performance profile gamified metric by id
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * gamification:profile:view
 * gamification:leaderboard:view
@@ -645,7 +614,7 @@ let apiInstance = new platformClient.GamificationApi();
 let profileId = "profileId_example"; // String | Performance Profile Id
 let metricId = "metricId_example"; // String | Metric Id
 let opts = { 
-  'workday': "2013-10-20" // String | The objective query workday. If not specified, then it retrieves the current objective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+  'workday': "workday_example" // String | The objective query workday. If not specified, then it retrieves the current objective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 };
 
 apiInstance.getGamificationProfileMetric(profileId, metricId, opts)
@@ -677,14 +646,11 @@ apiInstance.getGamificationProfileMetric(profileId, metricId, opts)
 # GetMetricResponse getGamificationProfileMetrics(profileId, opts)
 
 
-
 GET /api/v2/gamification/profiles/{profileId}/metrics
 
 All gamified metrics for a given performance profile
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * gamification:profile:view
 * gamification:leaderboard:view
@@ -706,7 +672,7 @@ let apiInstance = new platformClient.GamificationApi();
 let profileId = "profileId_example"; // String | Performance Profile Id
 let opts = { 
   'expand': ["expand_example"], // [String] | Which fields, if any, to expand.
-  'workday': "2013-10-20" // String | The objective query workday. If not specified, then it retrieves the current objective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+  'workday': "workday_example" // String | The objective query workday. If not specified, then it retrieves the current objective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 };
 
 apiInstance.getGamificationProfileMetrics(profileId, opts)
@@ -738,14 +704,11 @@ apiInstance.getGamificationProfileMetrics(profileId, opts)
 # GetMetricsResponse getGamificationProfileMetricsObjectivedetails(profileId, opts)
 
 
-
 GET /api/v2/gamification/profiles/{profileId}/metrics/objectivedetails
 
 All metrics for a given performance profile with objective details such as order and maxPoints
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * gamification:profile:view
 * gamification:leaderboard:view
@@ -766,7 +729,7 @@ let apiInstance = new platformClient.GamificationApi();
 
 let profileId = "profileId_example"; // String | Performance Profile Id
 let opts = { 
-  'workday': "2013-10-20" // String | The objective query workday. If not specified, then it retrieves the current objective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+  'workday': "workday_example" // String | The objective query workday. If not specified, then it retrieves the current objective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 };
 
 apiInstance.getGamificationProfileMetricsObjectivedetails(profileId, opts)
@@ -797,14 +760,11 @@ apiInstance.getGamificationProfileMetricsObjectivedetails(profileId, opts)
 # GetProfilesResponse getGamificationProfiles()
 
 
-
 GET /api/v2/gamification/profiles
 
 All performance profiles
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * gamification:profile:view
 * gamification:leaderboard:viewAll
@@ -847,14 +807,11 @@ This endpoint does not need any parameter.
 # PerformanceProfile getGamificationProfilesUser(userId, opts)
 
 
-
 GET /api/v2/gamification/profiles/users/{userId}
 
 Performance profile of a user
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * gamification:profile:view
 * gamification:scorecard:viewAll
@@ -875,7 +832,7 @@ let apiInstance = new platformClient.GamificationApi();
 
 let userId = "userId_example"; // String | 
 let opts = { 
-  'workday': "2013-10-20" // String | Target querying workday. If not provided, then queries the current performance profile. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+  'workday': "workday_example" // String | Target querying workday. If not provided, then queries the current performance profile. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 };
 
 apiInstance.getGamificationProfilesUser(userId, opts)
@@ -906,15 +863,11 @@ apiInstance.getGamificationProfilesUser(userId, opts)
 # PerformanceProfile getGamificationProfilesUsersMe(opts)
 
 
-
 GET /api/v2/gamification/profiles/users/me
 
 Performance profile of the requesting user
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -930,7 +883,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.GamificationApi();
 
 let opts = { 
-  'workday': "2013-10-20" // String | Target querying workday. If not provided, then queries the current performance profile. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+  'workday': "workday_example" // String | Target querying workday. If not provided, then queries the current performance profile. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 };
 
 apiInstance.getGamificationProfilesUsersMe(opts)
@@ -960,14 +913,11 @@ apiInstance.getGamificationProfilesUsersMe(opts)
 # WorkdayMetricListing getGamificationScorecards(workday, opts)
 
 
-
 GET /api/v2/gamification/scorecards
 
 Workday performance metrics of the requesting user
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * gamification:scorecard:view
 
@@ -984,7 +934,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.GamificationApi();
 
-let workday = "2013-10-20"; // String | Target querying workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+let workday = "workday_example"; // String | Target querying workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 let opts = { 
   'expand': ["expand_example"] // [String] | Which fields, if any, to expand.
 };
@@ -1017,14 +967,11 @@ apiInstance.getGamificationScorecards(workday, opts)
 # AttendanceStatusListing getGamificationScorecardsAttendance(startWorkday, endWorkday)
 
 
-
 GET /api/v2/gamification/scorecards/attendance
 
 Attendance status metrics of the requesting user
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * gamification:scorecard:view
 
@@ -1041,8 +988,8 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.GamificationApi();
 
-let startWorkday = "2013-10-20"; // String | Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
-let endWorkday = "2013-10-20"; // String | End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+let startWorkday = "startWorkday_example"; // String | Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+let endWorkday = "endWorkday_example"; // String | End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 
 apiInstance.getGamificationScorecardsAttendance(startWorkday, endWorkday)
   .then((data) => {
@@ -1072,14 +1019,11 @@ apiInstance.getGamificationScorecardsAttendance(startWorkday, endWorkday)
 # UserBestPoints getGamificationScorecardsBestpoints()
 
 
-
 GET /api/v2/gamification/scorecards/bestpoints
 
 Best points of the requesting user
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * gamification:scorecard:view
 
@@ -1120,14 +1064,11 @@ This endpoint does not need any parameter.
 # AllTimePoints getGamificationScorecardsPointsAlltime(endWorkday)
 
 
-
 GET /api/v2/gamification/scorecards/points/alltime
 
 All-time points of the requesting user
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * gamification:scorecard:view
 
@@ -1144,7 +1085,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.GamificationApi();
 
-let endWorkday = "2013-10-20"; // String | End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+let endWorkday = "endWorkday_example"; // String | End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 
 apiInstance.getGamificationScorecardsPointsAlltime(endWorkday)
   .then((data) => {
@@ -1173,14 +1114,11 @@ apiInstance.getGamificationScorecardsPointsAlltime(endWorkday)
 # SingleWorkdayAveragePoints getGamificationScorecardsPointsAverage(workday)
 
 
-
 GET /api/v2/gamification/scorecards/points/average
 
-Average points of the requesting user&#39;s division or performance profile
+Average points of the requesting user's division or performance profile
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * gamification:scorecard:view
 
@@ -1197,7 +1135,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.GamificationApi();
 
-let workday = "2013-10-20"; // String | The target workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+let workday = "workday_example"; // String | The target workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 
 apiInstance.getGamificationScorecardsPointsAverage(workday)
   .then((data) => {
@@ -1226,14 +1164,11 @@ apiInstance.getGamificationScorecardsPointsAverage(workday)
 # WorkdayPointsTrend getGamificationScorecardsPointsTrends(startWorkday, endWorkday, opts)
 
 
-
 GET /api/v2/gamification/scorecards/points/trends
 
 Points trends of the requesting user
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * gamification:scorecard:view
 
@@ -1250,8 +1185,8 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.GamificationApi();
 
-let startWorkday = "2013-10-20"; // String | Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
-let endWorkday = "2013-10-20"; // String | End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+let startWorkday = "startWorkday_example"; // String | Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+let endWorkday = "endWorkday_example"; // String | End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 let opts = { 
   'dayOfWeek': "dayOfWeek_example" // String | Optional filter to specify which day of weeks to be included in the response
 };
@@ -1285,14 +1220,11 @@ apiInstance.getGamificationScorecardsPointsTrends(startWorkday, endWorkday, opts
 # WorkdayMetricListing getGamificationScorecardsUser(userId, workday, opts)
 
 
-
 GET /api/v2/gamification/scorecards/users/{userId}
 
 Workday performance metrics for a user
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * gamification:scorecard:viewAll
 
@@ -1310,7 +1242,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.GamificationApi();
 
 let userId = "userId_example"; // String | 
-let workday = "2013-10-20"; // String | Target querying workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+let workday = "workday_example"; // String | Target querying workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 let opts = { 
   'expand': ["expand_example"] // [String] | Which fields, if any, to expand.
 };
@@ -1344,14 +1276,11 @@ apiInstance.getGamificationScorecardsUser(userId, workday, opts)
 # AttendanceStatusListing getGamificationScorecardsUserAttendance(userId, startWorkday, endWorkday)
 
 
-
 GET /api/v2/gamification/scorecards/users/{userId}/attendance
 
 Attendance status metrics for a user
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * gamification:scorecard:viewAll
 
@@ -1369,8 +1298,8 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.GamificationApi();
 
 let userId = "userId_example"; // String | 
-let startWorkday = "2013-10-20"; // String | Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
-let endWorkday = "2013-10-20"; // String | End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+let startWorkday = "startWorkday_example"; // String | Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+let endWorkday = "endWorkday_example"; // String | End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 
 apiInstance.getGamificationScorecardsUserAttendance(userId, startWorkday, endWorkday)
   .then((data) => {
@@ -1401,14 +1330,11 @@ apiInstance.getGamificationScorecardsUserAttendance(userId, startWorkday, endWor
 # UserBestPoints getGamificationScorecardsUserBestpoints(userId)
 
 
-
 GET /api/v2/gamification/scorecards/users/{userId}/bestpoints
 
 Best points of a user
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * gamification:scorecard:viewAll
 
@@ -1454,14 +1380,11 @@ apiInstance.getGamificationScorecardsUserBestpoints(userId)
 # AllTimePoints getGamificationScorecardsUserPointsAlltime(userId, endWorkday)
 
 
-
 GET /api/v2/gamification/scorecards/users/{userId}/points/alltime
 
 All-time points for a user
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * gamification:scorecard:viewAll
 
@@ -1479,7 +1402,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.GamificationApi();
 
 let userId = "userId_example"; // String | 
-let endWorkday = "2013-10-20"; // String | End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+let endWorkday = "endWorkday_example"; // String | End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 
 apiInstance.getGamificationScorecardsUserPointsAlltime(userId, endWorkday)
   .then((data) => {
@@ -1509,14 +1432,11 @@ apiInstance.getGamificationScorecardsUserPointsAlltime(userId, endWorkday)
 # WorkdayPointsTrend getGamificationScorecardsUserPointsTrends(userId, startWorkday, endWorkday, opts)
 
 
-
 GET /api/v2/gamification/scorecards/users/{userId}/points/trends
 
 Points trend for a user
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * gamification:scorecard:viewAll
 
@@ -1534,8 +1454,8 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.GamificationApi();
 
 let userId = "userId_example"; // String | 
-let startWorkday = "2013-10-20"; // String | Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
-let endWorkday = "2013-10-20"; // String | End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+let startWorkday = "startWorkday_example"; // String | Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+let endWorkday = "endWorkday_example"; // String | End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 let opts = { 
   'dayOfWeek': "dayOfWeek_example" // String | Optional filter to specify which day of weeks to be included in the response
 };
@@ -1570,14 +1490,11 @@ apiInstance.getGamificationScorecardsUserPointsTrends(userId, startWorkday, endW
 # WorkdayValuesTrend getGamificationScorecardsUserValuesTrends(userId, startWorkday, endWorkday, opts)
 
 
-
 GET /api/v2/gamification/scorecards/users/{userId}/values/trends
 
 Values trends of a user
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * gamification:scorecard:viewAll
 
@@ -1595,8 +1512,8 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.GamificationApi();
 
 let userId = "userId_example"; // String | 
-let startWorkday = "2013-10-20"; // String | Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
-let endWorkday = "2013-10-20"; // String | End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+let startWorkday = "startWorkday_example"; // String | Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+let endWorkday = "endWorkday_example"; // String | End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 let opts = { 
   'timeZone': "UTC" // String | Timezone for the workday. Defaults to UTC
 };
@@ -1631,14 +1548,11 @@ apiInstance.getGamificationScorecardsUserValuesTrends(userId, startWorkday, endW
 # SingleWorkdayAveragePoints getGamificationScorecardsUsersPointsAverage(filterType, filterId, workday)
 
 
-
 GET /api/v2/gamification/scorecards/users/points/average
 
 Workday average points by target group
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * gamification:scorecard:viewAll
 
@@ -1657,7 +1571,7 @@ let apiInstance = new platformClient.GamificationApi();
 
 let filterType = "filterType_example"; // String | Filter type for the query request.
 let filterId = "filterId_example"; // String | ID for the filter type.
-let workday = "2013-10-20"; // String | The target workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+let workday = "workday_example"; // String | The target workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 
 apiInstance.getGamificationScorecardsUsersPointsAverage(filterType, filterId, workday)
   .then((data) => {
@@ -1688,14 +1602,11 @@ apiInstance.getGamificationScorecardsUsersPointsAverage(filterType, filterId, wo
 # SingleWorkdayAverageValues getGamificationScorecardsUsersValuesAverage(filterType, filterId, workday, opts)
 
 
-
 GET /api/v2/gamification/scorecards/users/values/average
 
 Workday average values by target group
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * gamification:scorecard:viewAll
 
@@ -1714,7 +1625,7 @@ let apiInstance = new platformClient.GamificationApi();
 
 let filterType = "filterType_example"; // String | Filter type for the query request.
 let filterId = "filterId_example"; // String | ID for the filter type. For example, division Id
-let workday = "2013-10-20"; // String | The target workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+let workday = "workday_example"; // String | The target workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 let opts = { 
   'timeZone': "UTC" // String | Timezone for the workday. Defaults to UTC
 };
@@ -1749,14 +1660,11 @@ apiInstance.getGamificationScorecardsUsersValuesAverage(filterType, filterId, wo
 # WorkdayValuesTrend getGamificationScorecardsUsersValuesTrends(filterType, filterId, startWorkday, endWorkday, opts)
 
 
-
 GET /api/v2/gamification/scorecards/users/values/trends
 
 Values trend by target group
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * gamification:scorecard:viewAll
 
@@ -1775,8 +1683,8 @@ let apiInstance = new platformClient.GamificationApi();
 
 let filterType = "filterType_example"; // String | Filter type for the query request.
 let filterId = "filterId_example"; // String | ID for the filter type.
-let startWorkday = "2013-10-20"; // String | Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
-let endWorkday = "2013-10-20"; // String | End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+let startWorkday = "startWorkday_example"; // String | Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+let endWorkday = "endWorkday_example"; // String | End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 let opts = { 
   'timeZone': "UTC" // String | Timezone for the workday. Defaults to UTC
 };
@@ -1812,14 +1720,11 @@ apiInstance.getGamificationScorecardsUsersValuesTrends(filterType, filterId, sta
 # SingleWorkdayAverageValues getGamificationScorecardsValuesAverage(workday, opts)
 
 
-
 GET /api/v2/gamification/scorecards/values/average
 
-Average values of the requesting user&#39;s division or performance profile
+Average values of the requesting user's division or performance profile
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * gamification:scorecard:view
 
@@ -1836,7 +1741,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.GamificationApi();
 
-let workday = "2013-10-20"; // String | The target workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+let workday = "workday_example"; // String | The target workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 let opts = { 
   'timeZone': "UTC" // String | Timezone for the workday. Defaults to UTC
 };
@@ -1869,14 +1774,11 @@ apiInstance.getGamificationScorecardsValuesAverage(workday, opts)
 # WorkdayValuesTrend getGamificationScorecardsValuesTrends(startWorkday, endWorkday, opts)
 
 
-
 GET /api/v2/gamification/scorecards/values/trends
 
 Values trends of the requesting user or group
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * gamification:scorecard:view
 
@@ -1893,11 +1795,11 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.GamificationApi();
 
-let startWorkday = "2013-10-20"; // String | Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
-let endWorkday = "2013-10-20"; // String | End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+let startWorkday = "startWorkday_example"; // String | Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+let endWorkday = "endWorkday_example"; // String | End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 let opts = { 
   'filterType': "filterType_example", // String | Filter type for the query request. If not set, then the request is for the requesting user.
-  'referenceWorkday': "2013-10-20", // String | Reference workday for the trend. Used to determine the profile of the user as of this date. If not set, then the user's current profile will be used. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+  'referenceWorkday': "referenceWorkday_example", // String | Reference workday for the trend. Used to determine the profile of the user as of this date. If not set, then the user's current profile will be used. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
   'timeZone': "UTC" // String | Timezone for the workday. Defaults to UTC
 };
 
@@ -1919,7 +1821,7 @@ apiInstance.getGamificationScorecardsValuesTrends(startWorkday, endWorkday, opts
  **startWorkday** | **String** | Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **endWorkday** | **String** | End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **filterType** | **String** | Filter type for the query request. If not set, then the request is for the requesting user. | [optional] <br />**Values**: PerformanceProfile, Division |
- **referenceWorkday** | **String** | Reference workday for the trend. Used to determine the profile of the user as of this date. If not set, then the user&#39;s current profile will be used. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | [optional]  |
+ **referenceWorkday** | **String** | Reference workday for the trend. Used to determine the profile of the user as of this date. If not set, then the user's current profile will be used. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | [optional]  |
  **timeZone** | **String** | Timezone for the workday. Defaults to UTC | [optional] [default to UTC] |
 {: class="table table-striped"}
 
@@ -1932,14 +1834,11 @@ apiInstance.getGamificationScorecardsValuesTrends(startWorkday, endWorkday, opts
 # GamificationStatus getGamificationStatus()
 
 
-
 GET /api/v2/gamification/status
 
 Gamification activation status
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * gamification:profile:view
 * gamification:profile:update
@@ -1982,14 +1881,11 @@ This endpoint does not need any parameter.
 # ObjectiveTemplate getGamificationTemplate(templateId)
 
 
-
 GET /api/v2/gamification/templates/{templateId}
 
 Objective template by id
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * gamification:profile:view
 
@@ -2035,14 +1931,11 @@ apiInstance.getGamificationTemplate(templateId)
 # GetTemplatesResponse getGamificationTemplates()
 
 
-
 GET /api/v2/gamification/templates
 
 All objective templates
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * gamification:profile:view
 
@@ -2083,14 +1976,11 @@ This endpoint does not need any parameter.
 # Metric postGamificationMetrics(body)
 
 
-
 POST /api/v2/gamification/metrics
 
 Creates a gamified metric with a given metric definition and metric objective
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * gamification:profile:update
 
@@ -2136,14 +2026,11 @@ apiInstance.postGamificationMetrics(body)
 # PerformanceProfile postGamificationProfileActivate(profileId)
 
 
-
 POST /api/v2/gamification/profiles/{profileId}/activate
 
 Activate a performance profile
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * gamification:profile:update
 
@@ -2189,14 +2076,11 @@ apiInstance.postGamificationProfileActivate(profileId)
 # PerformanceProfile postGamificationProfileDeactivate(profileId)
 
 
-
 POST /api/v2/gamification/profiles/{profileId}/deactivate
 
 Deactivate a performance profile
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * gamification:profile:update
 
@@ -2242,14 +2126,11 @@ apiInstance.postGamificationProfileDeactivate(profileId)
 # Assignment postGamificationProfileMembers(performanceProfileId, body)
 
 
-
 POST /api/v2/gamification/profiles/{performanceProfileId}/members
 
 Assign members to a given performance profile
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * gamification:profile:update
 
@@ -2297,14 +2178,11 @@ apiInstance.postGamificationProfileMembers(performanceProfileId, body)
 # AssignmentValidation postGamificationProfileMembersValidate(performanceProfileId, body)
 
 
-
 POST /api/v2/gamification/profiles/{performanceProfileId}/members/validate
 
 Validate member assignment
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * gamification:profile:update
 
@@ -2352,14 +2230,11 @@ apiInstance.postGamificationProfileMembersValidate(performanceProfileId, body)
 # Metric postGamificationProfileMetricLink(sourceProfileId, sourceMetricId, body)
 
 
-
 POST /api/v2/gamification/profiles/{sourceProfileId}/metrics/{sourceMetricId}/link
 
 Creates a linked metric
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * gamification:profile:update
 
@@ -2409,14 +2284,11 @@ apiInstance.postGamificationProfileMetricLink(sourceProfileId, sourceMetricId, b
 # Metric postGamificationProfileMetrics(profileId, body)
 
 
-
 POST /api/v2/gamification/profiles/{profileId}/metrics
 
 Creates a gamified metric with a given metric definition and metric objective under in a performance profile
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * gamification:profile:update
 
@@ -2464,14 +2336,11 @@ apiInstance.postGamificationProfileMetrics(profileId, body)
 # PerformanceProfile postGamificationProfiles(body, opts)
 
 
-
 POST /api/v2/gamification/profiles
 
 Create a new custom performance profile
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * gamification:profile:update
 
@@ -2521,14 +2390,11 @@ apiInstance.postGamificationProfiles(body, opts)
 # Metric putGamificationMetric(metricId, body, opts)
 
 
-
 PUT /api/v2/gamification/metrics/{metricId}
 
 Updates a metric
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * gamification:profile:update
 
@@ -2580,14 +2446,11 @@ apiInstance.putGamificationMetric(metricId, body, opts)
 # PerformanceProfile putGamificationProfile(profileId, opts)
 
 
-
 PUT /api/v2/gamification/profiles/{profileId}
 
 Updates a performance profile
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * gamification:profile:update
 
@@ -2637,14 +2500,11 @@ apiInstance.putGamificationProfile(profileId, opts)
 # Metric putGamificationProfileMetric(profileId, metricId, body)
 
 
-
 PUT /api/v2/gamification/profiles/{profileId}/metrics/{metricId}
 
 Updates a metric in performance profile
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * gamification:profile:update
 
@@ -2694,14 +2554,11 @@ apiInstance.putGamificationProfileMetric(profileId, metricId, body)
 # GamificationStatus putGamificationStatus(status)
 
 
-
 PUT /api/v2/gamification/status
 
 Update gamification activation status
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * gamification:profile:update
 

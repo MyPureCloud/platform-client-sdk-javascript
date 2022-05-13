@@ -5,7 +5,7 @@ class ScriptsApi {
 	/**
 	 * Scripts service.
 	 * @module purecloud-platform-client-v2/api/ScriptsApi
-	 * @version 136.1.0
+	 * @version 137.0.0
 	 */
 
 	/**
@@ -34,13 +34,13 @@ class ScriptsApi {
 		return this.apiClient.callApi(
 			'/api/v2/scripts/{scriptId}', 
 			'GET', 
-			{ 'scriptId': scriptId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'scriptId': scriptId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -68,13 +68,13 @@ class ScriptsApi {
 		return this.apiClient.callApi(
 			'/api/v2/scripts/{scriptId}/pages/{pageId}', 
 			'GET', 
-			{ 'scriptId': scriptId,'pageId': pageId }, 
-			{ 'scriptDataVersion': opts['scriptDataVersion'] }, 
-			{  }, 
-			{  }, 
+			{ 'scriptId': scriptId,'pageId': pageId },
+			{ 'scriptDataVersion': opts['scriptDataVersion'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -97,13 +97,13 @@ class ScriptsApi {
 		return this.apiClient.callApi(
 			'/api/v2/scripts/{scriptId}/pages', 
 			'GET', 
-			{ 'scriptId': scriptId }, 
-			{ 'scriptDataVersion': opts['scriptDataVersion'] }, 
-			{  }, 
-			{  }, 
+			{ 'scriptId': scriptId },
+			{ 'scriptDataVersion': opts['scriptDataVersion'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -130,13 +130,13 @@ class ScriptsApi {
 		return this.apiClient.callApi(
 			'/api/v2/scripts', 
 			'GET', 
-			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'expand': opts['expand'],'name': opts['name'],'feature': opts['feature'],'flowId': opts['flowId'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'scriptDataVersion': opts['scriptDataVersion'],'divisionIds': opts['divisionIds'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'expand': opts['expand'],'name': opts['name'],'feature': opts['feature'],'flowId': opts['flowId'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'scriptDataVersion': opts['scriptDataVersion'],'divisionIds': opts['divisionIds'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -163,13 +163,13 @@ class ScriptsApi {
 		return this.apiClient.callApi(
 			'/api/v2/scripts/divisionviews', 
 			'GET', 
-			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'expand': opts['expand'],'name': opts['name'],'feature': opts['feature'],'flowId': opts['flowId'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'scriptDataVersion': opts['scriptDataVersion'],'divisionIds': opts['divisionIds'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'expand': opts['expand'],'name': opts['name'],'feature': opts['feature'],'flowId': opts['flowId'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'scriptDataVersion': opts['scriptDataVersion'],'divisionIds': opts['divisionIds'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -194,13 +194,13 @@ class ScriptsApi {
 		return this.apiClient.callApi(
 			'/api/v2/scripts/published', 
 			'GET', 
-			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'expand': opts['expand'],'name': opts['name'],'feature': opts['feature'],'flowId': opts['flowId'],'scriptDataVersion': opts['scriptDataVersion'],'divisionIds': opts['divisionIds'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'expand': opts['expand'],'name': opts['name'],'feature': opts['feature'],'flowId': opts['flowId'],'scriptDataVersion': opts['scriptDataVersion'],'divisionIds': opts['divisionIds'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -225,13 +225,13 @@ class ScriptsApi {
 		return this.apiClient.callApi(
 			'/api/v2/scripts/published/divisionviews', 
 			'GET', 
-			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'expand': opts['expand'],'name': opts['name'],'feature': opts['feature'],'flowId': opts['flowId'],'scriptDataVersion': opts['scriptDataVersion'],'divisionIds': opts['divisionIds'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'expand': opts['expand'],'name': opts['name'],'feature': opts['feature'],'flowId': opts['flowId'],'scriptDataVersion': opts['scriptDataVersion'],'divisionIds': opts['divisionIds'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -254,13 +254,13 @@ class ScriptsApi {
 		return this.apiClient.callApi(
 			'/api/v2/scripts/published/{scriptId}', 
 			'GET', 
-			{ 'scriptId': scriptId }, 
-			{ 'scriptDataVersion': opts['scriptDataVersion'] }, 
-			{  }, 
-			{  }, 
+			{ 'scriptId': scriptId },
+			{ 'scriptDataVersion': opts['scriptDataVersion'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -288,13 +288,13 @@ class ScriptsApi {
 		return this.apiClient.callApi(
 			'/api/v2/scripts/published/{scriptId}/pages/{pageId}', 
 			'GET', 
-			{ 'scriptId': scriptId,'pageId': pageId }, 
-			{ 'scriptDataVersion': opts['scriptDataVersion'] }, 
-			{  }, 
-			{  }, 
+			{ 'scriptId': scriptId,'pageId': pageId },
+			{ 'scriptDataVersion': opts['scriptDataVersion'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -317,13 +317,13 @@ class ScriptsApi {
 		return this.apiClient.callApi(
 			'/api/v2/scripts/published/{scriptId}/pages', 
 			'GET', 
-			{ 'scriptId': scriptId }, 
-			{ 'scriptDataVersion': opts['scriptDataVersion'] }, 
-			{  }, 
-			{  }, 
+			{ 'scriptId': scriptId },
+			{ 'scriptDataVersion': opts['scriptDataVersion'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -349,13 +349,13 @@ class ScriptsApi {
 		return this.apiClient.callApi(
 			'/api/v2/scripts/published/{scriptId}/variables', 
 			'GET', 
-			{ 'scriptId': scriptId }, 
-			{ 'input': opts['input'],'output': opts['output'],'type': opts['type'],'scriptDataVersion': opts['scriptDataVersion'] }, 
-			{  }, 
-			{  }, 
+			{ 'scriptId': scriptId },
+			{ 'input': opts['input'],'output': opts['output'],'type': opts['type'],'scriptDataVersion': opts['scriptDataVersion'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -378,13 +378,13 @@ class ScriptsApi {
 		return this.apiClient.callApi(
 			'/api/v2/scripts/uploads/{uploadId}/status', 
 			'GET', 
-			{ 'uploadId': uploadId }, 
-			{ 'longPoll': opts['longPoll'] }, 
-			{  }, 
-			{  }, 
+			{ 'uploadId': uploadId },
+			{ 'longPoll': opts['longPoll'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -407,13 +407,13 @@ class ScriptsApi {
 		return this.apiClient.callApi(
 			'/api/v2/scripts/{scriptId}/export', 
 			'POST', 
-			{ 'scriptId': scriptId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'scriptId': scriptId },
+			{  },
+			{  },
+			{  },
 			opts['body'], 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}

@@ -5,7 +5,7 @@ class WidgetsApi {
 	/**
 	 * Widgets service.
 	 * @module purecloud-platform-client-v2/api/WidgetsApi
-	 * @version 136.1.0
+	 * @version 137.0.0
 	 */
 
 	/**
@@ -34,13 +34,13 @@ class WidgetsApi {
 		return this.apiClient.callApi(
 			'/api/v2/widgets/deployments/{deploymentId}', 
 			'DELETE', 
-			{ 'deploymentId': deploymentId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'deploymentId': deploymentId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -59,13 +59,13 @@ class WidgetsApi {
 		return this.apiClient.callApi(
 			'/api/v2/widgets/deployments/{deploymentId}', 
 			'GET', 
-			{ 'deploymentId': deploymentId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'deploymentId': deploymentId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -79,13 +79,13 @@ class WidgetsApi {
 		return this.apiClient.callApi(
 			'/api/v2/widgets/deployments', 
 			'GET', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -104,13 +104,13 @@ class WidgetsApi {
 		return this.apiClient.callApi(
 			'/api/v2/widgets/deployments', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -134,13 +134,13 @@ class WidgetsApi {
 		return this.apiClient.callApi(
 			'/api/v2/widgets/deployments/{deploymentId}', 
 			'PUT', 
-			{ 'deploymentId': deploymentId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'deploymentId': deploymentId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}

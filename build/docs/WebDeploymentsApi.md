@@ -27,14 +27,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 # void deleteWebdeploymentsConfiguration(configurationId)
 
 
-
 DELETE /api/v2/webdeployments/configurations/{configurationId}
 
 Delete all versions of a configuration
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * webDeployments:configuration:delete
 
@@ -80,14 +77,11 @@ void (no response body)
 # void deleteWebdeploymentsDeployment(deploymentId)
 
 
-
 DELETE /api/v2/webdeployments/deployments/{deploymentId}
 
 Delete a deployment
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * webDeployments:deployment:delete
 
@@ -133,14 +127,11 @@ void (no response body)
 # WebDeploymentConfigurationVersion getWebdeploymentsConfigurationVersion(configurationId, versionId)
 
 
-
 GET /api/v2/webdeployments/configurations/{configurationId}/versions/{versionId}
 
 Get a configuration version
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * webDeployments:configuration:view
 
@@ -188,14 +179,13 @@ apiInstance.getWebdeploymentsConfigurationVersion(configurationId, versionId)
 # WebDeploymentConfigurationVersionEntityListing getWebdeploymentsConfigurationVersions(configurationId)
 
 
-
 GET /api/v2/webdeployments/configurations/{configurationId}/versions
 
 Get the versions of a configuration
 
 This returns the 50 most recent versions for this configuration
 
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * webDeployments:configuration:view
 
@@ -241,14 +231,11 @@ apiInstance.getWebdeploymentsConfigurationVersions(configurationId)
 # WebDeploymentConfigurationVersion getWebdeploymentsConfigurationVersionsDraft(configurationId)
 
 
-
 GET /api/v2/webdeployments/configurations/{configurationId}/versions/draft
 
 Get the configuration draft
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * webDeployments:configuration:view
 
@@ -294,14 +281,11 @@ apiInstance.getWebdeploymentsConfigurationVersionsDraft(configurationId)
 # WebDeploymentConfigurationVersionEntityListing getWebdeploymentsConfigurations(opts)
 
 
-
 GET /api/v2/webdeployments/configurations
 
 View configuration drafts
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * webDeployments:configuration:view
 
@@ -349,14 +333,11 @@ apiInstance.getWebdeploymentsConfigurations(opts)
 # WebDeployment getWebdeploymentsDeployment(deploymentId)
 
 
-
 GET /api/v2/webdeployments/deployments/{deploymentId}
 
 Get a deployment
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * webDeployments:deployment:view
 
@@ -402,14 +383,11 @@ apiInstance.getWebdeploymentsDeployment(deploymentId)
 # WebDeploymentEntityListing getWebdeploymentsDeployments()
 
 
-
 GET /api/v2/webdeployments/deployments
 
 Get deployments
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * webDeployments:deployment:view
 
@@ -450,14 +428,11 @@ This endpoint does not need any parameter.
 # WebDeploymentConfigurationVersion postWebdeploymentsConfigurationVersionsDraftPublish(configurationId)
 
 
-
 POST /api/v2/webdeployments/configurations/{configurationId}/versions/draft/publish
 
 Publish the configuration draft and create a new version
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * webDeployments:configuration:edit
 * webDeployments:configuration:add
@@ -504,14 +479,11 @@ apiInstance.postWebdeploymentsConfigurationVersionsDraftPublish(configurationId)
 # WebDeploymentConfigurationVersion postWebdeploymentsConfigurations(configurationVersion)
 
 
-
 POST /api/v2/webdeployments/configurations
 
 Create a configuration draft
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * webDeployments:configuration:add
 
@@ -557,14 +529,11 @@ apiInstance.postWebdeploymentsConfigurations(configurationVersion)
 # WebDeployment postWebdeploymentsDeployments(deployment)
 
 
-
 POST /api/v2/webdeployments/deployments
 
 Create a deployment
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * webDeployments:deployment:add
 
@@ -610,14 +579,11 @@ apiInstance.postWebdeploymentsDeployments(deployment)
 # WebDeploymentConfigurationVersion putWebdeploymentsConfigurationVersionsDraft(configurationId, configurationVersion)
 
 
-
 PUT /api/v2/webdeployments/configurations/{configurationId}/versions/draft
 
 Update the configuration draft
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * webDeployments:configuration:edit
 
@@ -665,14 +631,11 @@ apiInstance.putWebdeploymentsConfigurationVersionsDraft(configurationId, configu
 # WebDeployment putWebdeploymentsDeployment(deploymentId, deployment)
 
 
-
 PUT /api/v2/webdeployments/deployments/{deploymentId}
 
 Update a deployment
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * webDeployments:deployment:edit
 

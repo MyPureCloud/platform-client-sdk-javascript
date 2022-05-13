@@ -40,14 +40,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 # KnowledgeBase deleteKnowledgeKnowledgebase(knowledgeBaseId)
 
 
-
 DELETE /api/v2/knowledge/knowledgebases/{knowledgeBaseId}
 
 Delete knowledge base
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * knowledge:knowledgebase:delete
 
@@ -93,14 +90,11 @@ apiInstance.deleteKnowledgeKnowledgebase(knowledgeBaseId)
 # KnowledgeCategory deleteKnowledgeKnowledgebaseLanguageCategory(categoryId, knowledgeBaseId, languageCode)
 
 
-
 DELETE /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/categories/{categoryId}
 
 Delete category
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * knowledge:category:delete
 
@@ -119,7 +113,7 @@ let apiInstance = new platformClient.KnowledgeApi();
 
 let categoryId = "categoryId_example"; // String | Category ID
 let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
-let languageCode = "en-US"; // String | Language code, format: iso2-LOCALE
+let languageCode = en-US; // String | Language code, format: iso2-LOCALE
 
 apiInstance.deleteKnowledgeKnowledgebaseLanguageCategory(categoryId, knowledgeBaseId, languageCode)
   .then((data) => {
@@ -150,14 +144,11 @@ apiInstance.deleteKnowledgeKnowledgebaseLanguageCategory(categoryId, knowledgeBa
 # KnowledgeDocument deleteKnowledgeKnowledgebaseLanguageDocument(documentId, knowledgeBaseId, languageCode)
 
 
-
 DELETE /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/{documentId}
 
 Delete document
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * knowledge:document:delete
 
@@ -176,7 +167,7 @@ let apiInstance = new platformClient.KnowledgeApi();
 
 let documentId = "documentId_example"; // String | Document ID
 let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
-let languageCode = "en-US"; // String | Language code, format: iso2-LOCALE
+let languageCode = en-US; // String | Language code, format: iso2-LOCALE
 
 apiInstance.deleteKnowledgeKnowledgebaseLanguageDocument(documentId, knowledgeBaseId, languageCode)
   .then((data) => {
@@ -207,14 +198,11 @@ apiInstance.deleteKnowledgeKnowledgebaseLanguageDocument(documentId, knowledgeBa
 # void deleteKnowledgeKnowledgebaseLanguageDocumentsImport(knowledgeBaseId, languageCode, importId)
 
 
-
 DELETE /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/imports/{importId}
 
 Delete import operation
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * knowledge:document:add
 
@@ -232,7 +220,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.KnowledgeApi();
 
 let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
-let languageCode = "en-US"; // String | Language code, format: iso2-LOCALE
+let languageCode = en-US; // String | Language code, format: iso2-LOCALE
 let importId = "importId_example"; // String | Import ID
 
 apiInstance.deleteKnowledgeKnowledgebaseLanguageDocumentsImport(knowledgeBaseId, languageCode, importId)
@@ -264,14 +252,11 @@ void (no response body)
 # KnowledgeBase getKnowledgeKnowledgebase(knowledgeBaseId)
 
 
-
 GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}
 
 Get knowledge base
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * knowledge:knowledgebase:view
 
@@ -317,14 +302,11 @@ apiInstance.getKnowledgeKnowledgebase(knowledgeBaseId)
 # CategoryListing getKnowledgeKnowledgebaseLanguageCategories(knowledgeBaseId, languageCode, opts)
 
 
-
 GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/categories
 
 Get categories
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * knowledge:category:view
 
@@ -342,7 +324,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.KnowledgeApi();
 
 let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
-let languageCode = "en-US"; // String | Language code, format: iso2-LOCALE
+let languageCode = en-US; // String | Language code, format: iso2-LOCALE
 let opts = { 
   'before': "before_example", // String | The cursor that points to the start of the set of entities that has been returned.
   'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
@@ -384,14 +366,11 @@ apiInstance.getKnowledgeKnowledgebaseLanguageCategories(knowledgeBaseId, languag
 # KnowledgeExtendedCategory getKnowledgeKnowledgebaseLanguageCategory(categoryId, knowledgeBaseId, languageCode)
 
 
-
 GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/categories/{categoryId}
 
 Get category
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * knowledge:category:view
 
@@ -410,7 +389,7 @@ let apiInstance = new platformClient.KnowledgeApi();
 
 let categoryId = "categoryId_example"; // String | Category ID
 let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
-let languageCode = "en-US"; // String | Language code, format: iso2-LOCALE
+let languageCode = en-US; // String | Language code, format: iso2-LOCALE
 
 apiInstance.getKnowledgeKnowledgebaseLanguageCategory(categoryId, knowledgeBaseId, languageCode)
   .then((data) => {
@@ -441,14 +420,11 @@ apiInstance.getKnowledgeKnowledgebaseLanguageCategory(categoryId, knowledgeBaseI
 # KnowledgeDocument getKnowledgeKnowledgebaseLanguageDocument(documentId, knowledgeBaseId, languageCode)
 
 
-
 GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/{documentId}
 
 Get document
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * knowledge:document:view
 
@@ -467,7 +443,7 @@ let apiInstance = new platformClient.KnowledgeApi();
 
 let documentId = "documentId_example"; // String | Document ID
 let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
-let languageCode = "en-US"; // String | Language code, format: iso2-LOCALE
+let languageCode = en-US; // String | Language code, format: iso2-LOCALE
 
 apiInstance.getKnowledgeKnowledgebaseLanguageDocument(documentId, knowledgeBaseId, languageCode)
   .then((data) => {
@@ -498,14 +474,11 @@ apiInstance.getKnowledgeKnowledgebaseLanguageDocument(documentId, knowledgeBaseI
 # DocumentListing getKnowledgeKnowledgebaseLanguageDocuments(knowledgeBaseId, languageCode, opts)
 
 
-
 GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents
 
 Get documents
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * knowledge:document:view
 
@@ -523,7 +496,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.KnowledgeApi();
 
 let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
-let languageCode = "en-US"; // String | Language code, format: iso2-LOCALE
+let languageCode = en-US; // String | Language code, format: iso2-LOCALE
 let opts = { 
   'before': "before_example", // String | The cursor that points to the start of the set of entities that has been returned.
   'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
@@ -573,14 +546,11 @@ apiInstance.getKnowledgeKnowledgebaseLanguageDocuments(knowledgeBaseId, language
 # KnowledgeImport getKnowledgeKnowledgebaseLanguageDocumentsImport(knowledgeBaseId, languageCode, importId)
 
 
-
 GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/imports/{importId}
 
 Get import operation report
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * knowledge:document:add
 
@@ -598,7 +568,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.KnowledgeApi();
 
 let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
-let languageCode = "en-US"; // String | Language code, format: iso2-LOCALE
+let languageCode = en-US; // String | Language code, format: iso2-LOCALE
 let importId = "importId_example"; // String | Import ID
 
 apiInstance.getKnowledgeKnowledgebaseLanguageDocumentsImport(knowledgeBaseId, languageCode, importId)
@@ -630,14 +600,11 @@ apiInstance.getKnowledgeKnowledgebaseLanguageDocumentsImport(knowledgeBaseId, la
 # KnowledgeTraining getKnowledgeKnowledgebaseLanguageTraining(knowledgeBaseId, languageCode, trainingId)
 
 
-
 GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/trainings/{trainingId}
 
 Get training detail
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * knowledge:training:view
 
@@ -655,7 +622,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.KnowledgeApi();
 
 let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
-let languageCode = "en-US"; // String | Language code, format: iso2-LOCALE
+let languageCode = en-US; // String | Language code, format: iso2-LOCALE
 let trainingId = "trainingId_example"; // String | Training ID
 
 apiInstance.getKnowledgeKnowledgebaseLanguageTraining(knowledgeBaseId, languageCode, trainingId)
@@ -687,14 +654,11 @@ apiInstance.getKnowledgeKnowledgebaseLanguageTraining(knowledgeBaseId, languageC
 # TrainingListing getKnowledgeKnowledgebaseLanguageTrainings(knowledgeBaseId, languageCode, opts)
 
 
-
 GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/trainings
 
 Get all trainings information for a knowledgebase
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * knowledge:training:view
 
@@ -712,7 +676,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.KnowledgeApi();
 
 let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
-let languageCode = "en-US"; // String | Language code, format: iso2-LOCALE
+let languageCode = en-US; // String | Language code, format: iso2-LOCALE
 let opts = { 
   'before': "before_example", // String | The cursor that points to the start of the set of entities that has been returned.
   'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
@@ -754,14 +718,11 @@ apiInstance.getKnowledgeKnowledgebaseLanguageTrainings(knowledgeBaseId, language
 # KnowledgeBaseListing getKnowledgeKnowledgebases(opts)
 
 
-
 GET /api/v2/knowledge/knowledgebases
 
 Get knowledge bases
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * knowledge:knowledgebase:view
 
@@ -825,14 +786,11 @@ apiInstance.getKnowledgeKnowledgebases(opts)
 # KnowledgeBase patchKnowledgeKnowledgebase(knowledgeBaseId, body)
 
 
-
 PATCH /api/v2/knowledge/knowledgebases/{knowledgeBaseId}
 
 Update knowledge base
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * knowledge:knowledgebase:edit
 
@@ -880,14 +838,11 @@ apiInstance.patchKnowledgeKnowledgebase(knowledgeBaseId, body)
 # KnowledgeExtendedCategory patchKnowledgeKnowledgebaseLanguageCategory(categoryId, knowledgeBaseId, languageCode, body)
 
 
-
 PATCH /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/categories/{categoryId}
 
 Update category
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * knowledge:category:edit
 
@@ -906,7 +861,7 @@ let apiInstance = new platformClient.KnowledgeApi();
 
 let categoryId = "categoryId_example"; // String | Category ID
 let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
-let languageCode = "en-US"; // String | Language code, format: iso2-LOCALE
+let languageCode = en-US; // String | Language code, format: iso2-LOCALE
 let body = {}; // Object | 
 
 apiInstance.patchKnowledgeKnowledgebaseLanguageCategory(categoryId, knowledgeBaseId, languageCode, body)
@@ -939,14 +894,11 @@ apiInstance.patchKnowledgeKnowledgebaseLanguageCategory(categoryId, knowledgeBas
 # KnowledgeDocument patchKnowledgeKnowledgebaseLanguageDocument(documentId, knowledgeBaseId, languageCode, body)
 
 
-
 PATCH /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/{documentId}
 
 Update document
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * knowledge:document:edit
 
@@ -965,7 +917,7 @@ let apiInstance = new platformClient.KnowledgeApi();
 
 let documentId = "documentId_example"; // String | Document ID
 let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
-let languageCode = "en-US"; // String | Language code, format: iso2-LOCALE
+let languageCode = en-US; // String | Language code, format: iso2-LOCALE
 let body = {}; // Object | 
 
 apiInstance.patchKnowledgeKnowledgebaseLanguageDocument(documentId, knowledgeBaseId, languageCode, body)
@@ -998,14 +950,11 @@ apiInstance.patchKnowledgeKnowledgebaseLanguageDocument(documentId, knowledgeBas
 # DocumentListing patchKnowledgeKnowledgebaseLanguageDocuments(knowledgeBaseId, languageCode, body)
 
 
-
 PATCH /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents
 
 Update documents collection
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * knowledge:document:edit
 
@@ -1023,7 +972,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.KnowledgeApi();
 
 let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
-let languageCode = "en-US"; // String | Language code, format: iso2-LOCALE
+let languageCode = en-US; // String | Language code, format: iso2-LOCALE
 let body = [{}]; // Object | 
 
 apiInstance.patchKnowledgeKnowledgebaseLanguageDocuments(knowledgeBaseId, languageCode, body)
@@ -1055,14 +1004,11 @@ apiInstance.patchKnowledgeKnowledgebaseLanguageDocuments(knowledgeBaseId, langua
 # KnowledgeImport patchKnowledgeKnowledgebaseLanguageDocumentsImport(knowledgeBaseId, languageCode, importId, body)
 
 
-
 PATCH /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/imports/{importId}
 
 Start import operation
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * knowledge:document:edit
 * knowledge:document:add
@@ -1081,7 +1027,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.KnowledgeApi();
 
 let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
-let languageCode = "en-US"; // String | Language code, format: iso2-LOCALE
+let languageCode = en-US; // String | Language code, format: iso2-LOCALE
 let importId = "importId_example"; // String | Import ID
 let body = {}; // Object | 
 
@@ -1115,14 +1061,11 @@ apiInstance.patchKnowledgeKnowledgebaseLanguageDocumentsImport(knowledgeBaseId, 
 # UploadUrlResponse postKnowledgeDocumentuploads(body)
 
 
-
 POST /api/v2/knowledge/documentuploads
 
 Creates a presigned URL for uploading a knowledge import file with a set of documents
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * knowledge:document:upload
 
@@ -1168,14 +1111,11 @@ apiInstance.postKnowledgeDocumentuploads(body)
 # KnowledgeExtendedCategory postKnowledgeKnowledgebaseLanguageCategories(knowledgeBaseId, languageCode, body)
 
 
-
 POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/categories
 
 Create new category
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * knowledge:category:add
 
@@ -1193,7 +1133,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.KnowledgeApi();
 
 let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
-let languageCode = "en-US"; // String | Language code, format: iso2-LOCALE
+let languageCode = en-US; // String | Language code, format: iso2-LOCALE
 let body = {}; // Object | 
 
 apiInstance.postKnowledgeKnowledgebaseLanguageCategories(knowledgeBaseId, languageCode, body)
@@ -1225,14 +1165,11 @@ apiInstance.postKnowledgeKnowledgebaseLanguageCategories(knowledgeBaseId, langua
 # KnowledgeDocument postKnowledgeKnowledgebaseLanguageDocuments(knowledgeBaseId, languageCode, body)
 
 
-
 POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents
 
 Create document
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * knowledge:document:add
 
@@ -1250,7 +1187,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.KnowledgeApi();
 
 let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
-let languageCode = "en-US"; // String | Language code, format: iso2-LOCALE
+let languageCode = en-US; // String | Language code, format: iso2-LOCALE
 let body = {}; // Object | 
 
 apiInstance.postKnowledgeKnowledgebaseLanguageDocuments(knowledgeBaseId, languageCode, body)
@@ -1282,14 +1219,11 @@ apiInstance.postKnowledgeKnowledgebaseLanguageDocuments(knowledgeBaseId, languag
 # KnowledgeImport postKnowledgeKnowledgebaseLanguageDocumentsImports(knowledgeBaseId, languageCode, body)
 
 
-
 POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/imports
 
 Create import operation
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * knowledge:document:add
 
@@ -1307,7 +1241,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.KnowledgeApi();
 
 let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
-let languageCode = "en-US"; // String | Language code, format: iso2-LOCALE
+let languageCode = en-US; // String | Language code, format: iso2-LOCALE
 let body = {}; // Object | 
 
 apiInstance.postKnowledgeKnowledgebaseLanguageDocumentsImports(knowledgeBaseId, languageCode, body)
@@ -1339,14 +1273,11 @@ apiInstance.postKnowledgeKnowledgebaseLanguageDocumentsImports(knowledgeBaseId, 
 # KnowledgeTraining postKnowledgeKnowledgebaseLanguageTrainingPromote(knowledgeBaseId, languageCode, trainingId)
 
 
-
 POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/trainings/{trainingId}/promote
 
 Promote trained documents from draft state to active.
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * knowledge:training:edit
 
@@ -1364,7 +1295,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.KnowledgeApi();
 
 let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
-let languageCode = "en-US"; // String | Language code, format: iso2-LOCALE
+let languageCode = en-US; // String | Language code, format: iso2-LOCALE
 let trainingId = "trainingId_example"; // String | Training ID
 
 apiInstance.postKnowledgeKnowledgebaseLanguageTrainingPromote(knowledgeBaseId, languageCode, trainingId)
@@ -1396,14 +1327,11 @@ apiInstance.postKnowledgeKnowledgebaseLanguageTrainingPromote(knowledgeBaseId, l
 # KnowledgeTraining postKnowledgeKnowledgebaseLanguageTrainings(knowledgeBaseId, languageCode)
 
 
-
 POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/trainings
 
 Trigger training
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * knowledge:training:create
 
@@ -1421,7 +1349,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.KnowledgeApi();
 
 let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
-let languageCode = "en-US"; // String | Language code, format: iso2-LOCALE
+let languageCode = en-US; // String | Language code, format: iso2-LOCALE
 
 apiInstance.postKnowledgeKnowledgebaseLanguageTrainings(knowledgeBaseId, languageCode)
   .then((data) => {
@@ -1451,14 +1379,11 @@ apiInstance.postKnowledgeKnowledgebaseLanguageTrainings(knowledgeBaseId, languag
 # KnowledgeSearchResponse postKnowledgeKnowledgebaseSearch(knowledgeBaseId, opts)
 
 
-
 POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/search
 
 Search Documents
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * knowledge:knowledgebase:search
 
@@ -1508,14 +1433,11 @@ apiInstance.postKnowledgeKnowledgebaseSearch(knowledgeBaseId, opts)
 # KnowledgeBase postKnowledgeKnowledgebases(body)
 
 
-
 POST /api/v2/knowledge/knowledgebases
 
 Create new knowledge base
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * knowledge:knowledgebase:add
 

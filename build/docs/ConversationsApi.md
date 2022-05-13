@@ -78,7 +78,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getConversationsMessagingIntegrationsWhatsappIntegrationId**](ConversationsApi.html#getConversationsMessagingIntegrationsWhatsappIntegrationId) | **GET** /api/v2/conversations/messaging/integrations/whatsapp/{integrationId} | Get a WhatsApp messaging integration
 [**getConversationsMessagingSticker**](ConversationsApi.html#getConversationsMessagingSticker) | **GET** /api/v2/conversations/messaging/stickers/{messengerType} | Get a list of Messaging Stickers
 [**getConversationsMessagingSupportedcontent**](ConversationsApi.html#getConversationsMessagingSupportedcontent) | **GET** /api/v2/conversations/messaging/supportedcontent | Get a list of Supported Content profiles
-[**getConversationsMessagingSupportedcontentDefault**](ConversationsApi.html#getConversationsMessagingSupportedcontentDefault) | **GET** /api/v2/conversations/messaging/supportedcontent/default | Get the organization&#39;s default supported content profile that will be used as the default when creating an integration.
+[**getConversationsMessagingSupportedcontentDefault**](ConversationsApi.html#getConversationsMessagingSupportedcontentDefault) | **GET** /api/v2/conversations/messaging/supportedcontent/default | Get the organization's default supported content profile that will be used as the default when creating an integration.
 [**getConversationsMessagingSupportedcontentSupportedContentId**](ConversationsApi.html#getConversationsMessagingSupportedcontentSupportedContentId) | **GET** /api/v2/conversations/messaging/supportedcontent/{supportedContentId} | Get a supported content profile
 [**getConversationsMessagingThreadingtimeline**](ConversationsApi.html#getConversationsMessagingThreadingtimeline) | **GET** /api/v2/conversations/messaging/threadingtimeline | Get conversation threading window timeline for each messaging type
 [**patchConversationParticipant**](ConversationsApi.html#patchConversationParticipant) | **PATCH** /api/v2/conversations/{conversationId}/participants/{participantId} | Update a participant.
@@ -86,29 +86,29 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**patchConversationsCall**](ConversationsApi.html#patchConversationsCall) | **PATCH** /api/v2/conversations/calls/{conversationId} | Update a conversation by setting its recording state, merging in other conversations to create a conference, or disconnecting all of the participants
 [**patchConversationsCallParticipant**](ConversationsApi.html#patchConversationsCallParticipant) | **PATCH** /api/v2/conversations/calls/{conversationId}/participants/{participantId} | Update conversation participant
 [**patchConversationsCallParticipantAttributes**](ConversationsApi.html#patchConversationsCallParticipantAttributes) | **PATCH** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/attributes | Update the attributes on a conversation participant.
-[**patchConversationsCallParticipantCommunication**](ConversationsApi.html#patchConversationsCallParticipantCommunication) | **PATCH** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/communications/{communicationId} | Update conversation participant&#39;s communication by disconnecting it.
+[**patchConversationsCallParticipantCommunication**](ConversationsApi.html#patchConversationsCallParticipantCommunication) | **PATCH** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/communications/{communicationId} | Update conversation participant's communication by disconnecting it.
 [**patchConversationsCallParticipantConsult**](ConversationsApi.html#patchConversationsCallParticipantConsult) | **PATCH** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult | Change who can speak
 [**patchConversationsCallback**](ConversationsApi.html#patchConversationsCallback) | **PATCH** /api/v2/conversations/callbacks/{conversationId} | Update a conversation by disconnecting all of the participants
 [**patchConversationsCallbackParticipant**](ConversationsApi.html#patchConversationsCallbackParticipant) | **PATCH** /api/v2/conversations/callbacks/{conversationId}/participants/{participantId} | Update conversation participant
 [**patchConversationsCallbackParticipantAttributes**](ConversationsApi.html#patchConversationsCallbackParticipantAttributes) | **PATCH** /api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/attributes | Update the attributes on a conversation participant.
-[**patchConversationsCallbackParticipantCommunication**](ConversationsApi.html#patchConversationsCallbackParticipantCommunication) | **PATCH** /api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/communications/{communicationId} | Update conversation participant&#39;s communication by disconnecting it.
+[**patchConversationsCallbackParticipantCommunication**](ConversationsApi.html#patchConversationsCallbackParticipantCommunication) | **PATCH** /api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/communications/{communicationId} | Update conversation participant's communication by disconnecting it.
 [**patchConversationsCallbacks**](ConversationsApi.html#patchConversationsCallbacks) | **PATCH** /api/v2/conversations/callbacks | Update a scheduled callback
 [**patchConversationsChat**](ConversationsApi.html#patchConversationsChat) | **PATCH** /api/v2/conversations/chats/{conversationId} | Update a conversation by disconnecting all of the participants
 [**patchConversationsChatParticipant**](ConversationsApi.html#patchConversationsChatParticipant) | **PATCH** /api/v2/conversations/chats/{conversationId}/participants/{participantId} | Update conversation participant
 [**patchConversationsChatParticipantAttributes**](ConversationsApi.html#patchConversationsChatParticipantAttributes) | **PATCH** /api/v2/conversations/chats/{conversationId}/participants/{participantId}/attributes | Update the attributes on a conversation participant.
-[**patchConversationsChatParticipantCommunication**](ConversationsApi.html#patchConversationsChatParticipantCommunication) | **PATCH** /api/v2/conversations/chats/{conversationId}/participants/{participantId}/communications/{communicationId} | Update conversation participant&#39;s communication by disconnecting it.
+[**patchConversationsChatParticipantCommunication**](ConversationsApi.html#patchConversationsChatParticipantCommunication) | **PATCH** /api/v2/conversations/chats/{conversationId}/participants/{participantId}/communications/{communicationId} | Update conversation participant's communication by disconnecting it.
 [**patchConversationsCobrowsesession**](ConversationsApi.html#patchConversationsCobrowsesession) | **PATCH** /api/v2/conversations/cobrowsesessions/{conversationId} | Update a conversation by disconnecting all of the participants
 [**patchConversationsCobrowsesessionParticipant**](ConversationsApi.html#patchConversationsCobrowsesessionParticipant) | **PATCH** /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId} | Update conversation participant
 [**patchConversationsCobrowsesessionParticipantAttributes**](ConversationsApi.html#patchConversationsCobrowsesessionParticipantAttributes) | **PATCH** /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/attributes | Update the attributes on a conversation participant.
-[**patchConversationsCobrowsesessionParticipantCommunication**](ConversationsApi.html#patchConversationsCobrowsesessionParticipantCommunication) | **PATCH** /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/communications/{communicationId} | Update conversation participant&#39;s communication by disconnecting it.
+[**patchConversationsCobrowsesessionParticipantCommunication**](ConversationsApi.html#patchConversationsCobrowsesessionParticipantCommunication) | **PATCH** /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/communications/{communicationId} | Update conversation participant's communication by disconnecting it.
 [**patchConversationsEmail**](ConversationsApi.html#patchConversationsEmail) | **PATCH** /api/v2/conversations/emails/{conversationId} | Update a conversation by disconnecting all of the participants
 [**patchConversationsEmailParticipant**](ConversationsApi.html#patchConversationsEmailParticipant) | **PATCH** /api/v2/conversations/emails/{conversationId}/participants/{participantId} | Update conversation participant
 [**patchConversationsEmailParticipantAttributes**](ConversationsApi.html#patchConversationsEmailParticipantAttributes) | **PATCH** /api/v2/conversations/emails/{conversationId}/participants/{participantId}/attributes | Update the attributes on a conversation participant.
-[**patchConversationsEmailParticipantCommunication**](ConversationsApi.html#patchConversationsEmailParticipantCommunication) | **PATCH** /api/v2/conversations/emails/{conversationId}/participants/{participantId}/communications/{communicationId} | Update conversation participant&#39;s communication by disconnecting it.
+[**patchConversationsEmailParticipantCommunication**](ConversationsApi.html#patchConversationsEmailParticipantCommunication) | **PATCH** /api/v2/conversations/emails/{conversationId}/participants/{participantId}/communications/{communicationId} | Update conversation participant's communication by disconnecting it.
 [**patchConversationsMessage**](ConversationsApi.html#patchConversationsMessage) | **PATCH** /api/v2/conversations/messages/{conversationId} | Update a conversation by disconnecting all of the participants
 [**patchConversationsMessageParticipant**](ConversationsApi.html#patchConversationsMessageParticipant) | **PATCH** /api/v2/conversations/messages/{conversationId}/participants/{participantId} | Update conversation participant
 [**patchConversationsMessageParticipantAttributes**](ConversationsApi.html#patchConversationsMessageParticipantAttributes) | **PATCH** /api/v2/conversations/messages/{conversationId}/participants/{participantId}/attributes | Update the attributes on a conversation participant.
-[**patchConversationsMessageParticipantCommunication**](ConversationsApi.html#patchConversationsMessageParticipantCommunication) | **PATCH** /api/v2/conversations/messages/{conversationId}/participants/{participantId}/communications/{communicationId} | Update conversation participant&#39;s communication by disconnecting it.
+[**patchConversationsMessageParticipantCommunication**](ConversationsApi.html#patchConversationsMessageParticipantCommunication) | **PATCH** /api/v2/conversations/messages/{conversationId}/participants/{participantId}/communications/{communicationId} | Update conversation participant's communication by disconnecting it.
 [**patchConversationsMessagingIntegrationsFacebookIntegrationId**](ConversationsApi.html#patchConversationsMessagingIntegrationsFacebookIntegrationId) | **PATCH** /api/v2/conversations/messaging/integrations/facebook/{integrationId} | Update Facebook messaging integration
 [**patchConversationsMessagingIntegrationsOpenIntegrationId**](ConversationsApi.html#patchConversationsMessagingIntegrationsOpenIntegrationId) | **PATCH** /api/v2/conversations/messaging/integrations/open/{integrationId} | Update an Open messaging integration
 [**patchConversationsMessagingIntegrationsTwitterIntegrationId**](ConversationsApi.html#patchConversationsMessagingIntegrationsTwitterIntegrationId) | **PATCH** /api/v2/conversations/messaging/integrations/twitter/{integrationId} | Update Twitter messaging integration
@@ -164,7 +164,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**putConversationsCallParticipantCommunicationUuidata**](ConversationsApi.html#putConversationsCallParticipantCommunicationUuidata) | **PUT** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/communications/{communicationId}/uuidata | Set uuiData to be sent on future commands.
 [**putConversationsEmailMessagesDraft**](ConversationsApi.html#putConversationsEmailMessagesDraft) | **PUT** /api/v2/conversations/emails/{conversationId}/messages/draft | Update conversation draft reply
 [**putConversationsMessagingIntegrationsLineIntegrationId**](ConversationsApi.html#putConversationsMessagingIntegrationsLineIntegrationId) | **PUT** /api/v2/conversations/messaging/integrations/line/{integrationId} | Update a LINE messenger integration
-[**putConversationsMessagingSupportedcontentDefault**](ConversationsApi.html#putConversationsMessagingSupportedcontentDefault) | **PUT** /api/v2/conversations/messaging/supportedcontent/default | Set the organization&#39;s default supported content profile that may be assigned to an integration when it is created.
+[**putConversationsMessagingSupportedcontentDefault**](ConversationsApi.html#putConversationsMessagingSupportedcontentDefault) | **PUT** /api/v2/conversations/messaging/supportedcontent/default | Set the organization's default supported content profile that may be assigned to an integration when it is created.
 [**putConversationsMessagingThreadingtimeline**](ConversationsApi.html#putConversationsMessagingThreadingtimeline) | **PUT** /api/v2/conversations/messaging/threadingtimeline | Update conversation threading window timeline for each messaging type
 {: class="table table-striped"}
 
@@ -173,14 +173,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 # void deleteAnalyticsConversationsDetailsJob(jobId)
 
 
-
 DELETE /api/v2/analytics/conversations/details/jobs/{jobId}
 
 Delete/cancel an async request
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * analytics:conversationDetail:view
 * analytics:agentConversationDetail:view
@@ -227,15 +224,11 @@ void (no response body)
 # void deleteConversationParticipantCode(conversationId, participantId, addCommunicationCode)
 
 
-
 DELETE /api/v2/conversations/{conversationId}/participants/{participantId}/codes/{addCommunicationCode}
 
 Delete a code used to add a communication to this participant
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -283,15 +276,11 @@ void (no response body)
 # void deleteConversationParticipantFlaggedreason(conversationId, participantId)
 
 
-
 DELETE /api/v2/conversations/{conversationId}/participants/{participantId}/flaggedreason
 
 Remove flagged reason from conversation participant.
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -337,15 +326,11 @@ void (no response body)
 # void deleteConversationsCallParticipantConsult(conversationId, participantId)
 
 
-
 DELETE /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult
 
 Cancel the transfer
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -391,15 +376,11 @@ void (no response body)
 # void deleteConversationsEmailMessagesDraftAttachment(conversationId, attachmentId)
 
 
-
 DELETE /api/v2/conversations/emails/{conversationId}/messages/draft/attachments/{attachmentId}
 
 Delete attachment from draft
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -445,14 +426,11 @@ void (no response body)
 # void deleteConversationsMessagingIntegrationsFacebookIntegrationId(integrationId)
 
 
-
 DELETE /api/v2/conversations/messaging/integrations/facebook/{integrationId}
 
 Delete a Facebook messaging integration
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * messaging:integration:delete
 
@@ -498,14 +476,11 @@ void (no response body)
 # void deleteConversationsMessagingIntegrationsLineIntegrationId(integrationId)
 
 
-
 DELETE /api/v2/conversations/messaging/integrations/line/{integrationId}
 
 Delete a LINE messenger integration
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * messaging:integration:delete
 
@@ -551,14 +526,13 @@ void (no response body)
 # void deleteConversationsMessagingIntegrationsOpenIntegrationId(integrationId)
 
 
-
 DELETE /api/v2/conversations/messaging/integrations/open/{integrationId}
 
 Delete an Open messaging integration
 
 See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
 
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * messaging:integration:delete
 
@@ -604,14 +578,11 @@ void (no response body)
 # void deleteConversationsMessagingIntegrationsTwitterIntegrationId(integrationId)
 
 
-
 DELETE /api/v2/conversations/messaging/integrations/twitter/{integrationId}
 
 Delete a Twitter messaging integration
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * messaging:integration:delete
 
@@ -657,14 +628,11 @@ void (no response body)
 # WhatsAppIntegration deleteConversationsMessagingIntegrationsWhatsappIntegrationId(integrationId)
 
 
-
 DELETE /api/v2/conversations/messaging/integrations/whatsapp/{integrationId}
 
 Delete a WhatsApp messaging integration
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * messaging:integration:delete
 
@@ -710,14 +678,11 @@ apiInstance.deleteConversationsMessagingIntegrationsWhatsappIntegrationId(integr
 # void deleteConversationsMessagingSupportedcontentSupportedContentId(supportedContentId)
 
 
-
 DELETE /api/v2/conversations/messaging/supportedcontent/{supportedContentId}
 
 Delete a supported content profile
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * messaging:supportedContent:delete
 
@@ -763,14 +728,11 @@ void (no response body)
 # AnalyticsConversationWithoutAttributes getAnalyticsConversationDetails(conversationId)
 
 
-
 GET /api/v2/analytics/conversations/{conversationId}/details
 
 Get a conversation by id
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * analytics:conversationDetail:view
 * analytics:agentConversationDetail:view
@@ -817,14 +779,11 @@ apiInstance.getAnalyticsConversationDetails(conversationId)
 # AnalyticsConversationWithoutAttributesMultiGetResponse getAnalyticsConversationsDetails(opts)
 
 
-
 GET /api/v2/analytics/conversations/details
 
 Gets multiple conversations by id
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * analytics:conversationDetail:view
 * analytics:agentConversationDetail:view
@@ -873,14 +832,11 @@ apiInstance.getAnalyticsConversationsDetails(opts)
 # AsyncQueryStatus getAnalyticsConversationsDetailsJob(jobId)
 
 
-
 GET /api/v2/analytics/conversations/details/jobs/{jobId}
 
 Get status for async query for conversation details
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * analytics:conversationDetail:view
 * analytics:agentConversationDetail:view
@@ -927,14 +883,11 @@ apiInstance.getAnalyticsConversationsDetailsJob(jobId)
 # AnalyticsConversationAsyncQueryResponse getAnalyticsConversationsDetailsJobResults(jobId, opts)
 
 
-
 GET /api/v2/analytics/conversations/details/jobs/{jobId}/results
 
 Fetch a page of results for an async query
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * analytics:conversationDetail:view
 * analytics:agentConversationDetail:view
@@ -955,7 +908,7 @@ let apiInstance = new platformClient.ConversationsApi();
 let jobId = "jobId_example"; // String | jobId
 let opts = { 
   'cursor': "cursor_example", // String | Indicates where to resume query results (not required for first page)
-  'pageSize': 56 // Number | The desired maximum number of results
+  'pageSize': 3.4 // Number | The desired maximum number of results
 };
 
 apiInstance.getAnalyticsConversationsDetailsJobResults(jobId, opts)
@@ -987,14 +940,11 @@ apiInstance.getAnalyticsConversationsDetailsJobResults(jobId, opts)
 # DataAvailabilityResponse getAnalyticsConversationsDetailsJobsAvailability()
 
 
-
 GET /api/v2/analytics/conversations/details/jobs/availability
 
 Lookup the datalake availability date and time
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * analytics:conversationDetail:view
 
@@ -1035,14 +985,11 @@ This endpoint does not need any parameter.
 # Conversation getConversation(conversationId)
 
 
-
 GET /api/v2/conversations/{conversationId}
 
 Get conversation
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * conversation:communication:view
 
@@ -1088,15 +1035,11 @@ apiInstance.getConversation(conversationId)
 # SecureSession getConversationParticipantSecureivrsession(conversationId, participantId, secureSessionId)
 
 
-
 GET /api/v2/conversations/{conversationId}/participants/{participantId}/secureivrsessions/{secureSessionId}
 
 Fetch info on a secure session
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -1144,15 +1087,11 @@ apiInstance.getConversationParticipantSecureivrsession(conversationId, participa
 # SecureSessionEntityListing getConversationParticipantSecureivrsessions(conversationId, participantId)
 
 
-
 GET /api/v2/conversations/{conversationId}/participants/{participantId}/secureivrsessions
 
 Get a list of secure sessions for this participant.
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -1198,15 +1137,11 @@ apiInstance.getConversationParticipantSecureivrsessions(conversationId, particip
 # AssignedWrapupCode getConversationParticipantWrapup(conversationId, participantId, opts)
 
 
-
 GET /api/v2/conversations/{conversationId}/participants/{participantId}/wrapup
 
 Get the wrap-up for this conversation participant. 
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -1256,15 +1191,11 @@ apiInstance.getConversationParticipantWrapup(conversationId, participantId, opts
 # [WrapupCode] getConversationParticipantWrapupcodes(conversationId, participantId)
 
 
-
 GET /api/v2/conversations/{conversationId}/participants/{participantId}/wrapupcodes
 
 Get list of wrapup codes for this conversation participant
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -1310,15 +1241,11 @@ apiInstance.getConversationParticipantWrapupcodes(conversationId, participantId)
 # ConversationEntityListing getConversations(opts)
 
 
-
 GET /api/v2/conversations
 
 Get active conversations for the logged in user
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -1364,15 +1291,11 @@ apiInstance.getConversations(opts)
 # CallConversation getConversationsCall(conversationId)
 
 
-
 GET /api/v2/conversations/calls/{conversationId}
 
 Get call conversation
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -1416,15 +1339,11 @@ apiInstance.getConversationsCall(conversationId)
 # AssignedWrapupCode getConversationsCallParticipantWrapup(conversationId, participantId, opts)
 
 
-
 GET /api/v2/conversations/calls/{conversationId}/participants/{participantId}/wrapup
 
 Get the wrap-up for this conversation participant. 
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -1474,15 +1393,11 @@ apiInstance.getConversationsCallParticipantWrapup(conversationId, participantId,
 # [WrapupCode] getConversationsCallParticipantWrapupcodes(conversationId, participantId)
 
 
-
 GET /api/v2/conversations/calls/{conversationId}/participants/{participantId}/wrapupcodes
 
 Get list of wrapup codes for this conversation participant
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -1528,15 +1443,11 @@ apiInstance.getConversationsCallParticipantWrapupcodes(conversationId, participa
 # CallbackConversation getConversationsCallback(conversationId)
 
 
-
 GET /api/v2/conversations/callbacks/{conversationId}
 
 Get callback conversation
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -1580,15 +1491,11 @@ apiInstance.getConversationsCallback(conversationId)
 # AssignedWrapupCode getConversationsCallbackParticipantWrapup(conversationId, participantId, opts)
 
 
-
 GET /api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/wrapup
 
 Get the wrap-up for this conversation participant. 
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -1638,15 +1545,11 @@ apiInstance.getConversationsCallbackParticipantWrapup(conversationId, participan
 # [WrapupCode] getConversationsCallbackParticipantWrapupcodes(conversationId, participantId)
 
 
-
 GET /api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/wrapupcodes
 
 Get list of wrapup codes for this conversation participant
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -1692,15 +1595,11 @@ apiInstance.getConversationsCallbackParticipantWrapupcodes(conversationId, parti
 # CallbackConversationEntityListing getConversationsCallbacks()
 
 
-
 GET /api/v2/conversations/callbacks
 
 Get active callback conversations for the logged in user
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -1739,15 +1638,11 @@ This endpoint does not need any parameter.
 # CallConversationEntityListing getConversationsCalls()
 
 
-
 GET /api/v2/conversations/calls
 
 Get active call conversations for the logged in user
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -1786,15 +1681,11 @@ This endpoint does not need any parameter.
 # CallHistoryConversationEntityListing getConversationsCallsHistory(opts)
 
 
-
 GET /api/v2/conversations/calls/history
 
 Get call history
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -1833,7 +1724,7 @@ apiInstance.getConversationsCallsHistory(opts)
 | ------------- | ------------- | ------------- | ------------- |
  **pageSize** | **Number** | Page size, maximum 50 | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
- **interval** | **String** | Interval string; format is ISO-8601. Separate start and end times with forward slash &#39;/&#39; | [optional]  |
+ **interval** | **String** | Interval string; format is ISO-8601. Separate start and end times with forward slash '/' | [optional]  |
  **expand** | **[String]** | Which fields, if any, to expand. | [optional] <br />**Values**: externalorganization, externalcontact, user, queue, group |
 {: class="table table-striped"}
 
@@ -1846,15 +1737,11 @@ apiInstance.getConversationsCallsHistory(opts)
 # MaxParticipants getConversationsCallsMaximumconferenceparties()
 
 
-
 GET /api/v2/conversations/calls/maximumconferenceparties
 
 Get the maximum number of participants that this user can have on a conference
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -1893,15 +1780,11 @@ This endpoint does not need any parameter.
 # ChatConversation getConversationsChat(conversationId)
 
 
-
 GET /api/v2/conversations/chats/{conversationId}
 
 Get chat conversation
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -1945,15 +1828,13 @@ apiInstance.getConversationsChat(conversationId)
 # WebChatMessage getConversationsChatMessage(conversationId, messageId)
 
 
-
 GET /api/v2/conversations/chats/{conversationId}/messages/{messageId}
 
 Get a web chat conversation message
 
 The current user must be involved with the conversation to get its messages.
 
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -1999,15 +1880,13 @@ apiInstance.getConversationsChatMessage(conversationId, messageId)
 # WebChatMessageEntityList getConversationsChatMessages(conversationId, opts)
 
 
-
 GET /api/v2/conversations/chats/{conversationId}/messages
 
 Get the messages of a chat conversation.
 
 The current user must be involved with the conversation to get its messages.
 
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -2061,15 +1940,11 @@ apiInstance.getConversationsChatMessages(conversationId, opts)
 # AssignedWrapupCode getConversationsChatParticipantWrapup(conversationId, participantId, opts)
 
 
-
 GET /api/v2/conversations/chats/{conversationId}/participants/{participantId}/wrapup
 
 Get the wrap-up for this conversation participant. 
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -2119,15 +1994,11 @@ apiInstance.getConversationsChatParticipantWrapup(conversationId, participantId,
 # [WrapupCode] getConversationsChatParticipantWrapupcodes(conversationId, participantId)
 
 
-
 GET /api/v2/conversations/chats/{conversationId}/participants/{participantId}/wrapupcodes
 
 Get list of wrapup codes for this conversation participant
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -2173,15 +2044,11 @@ apiInstance.getConversationsChatParticipantWrapupcodes(conversationId, participa
 # ChatConversationEntityListing getConversationsChats()
 
 
-
 GET /api/v2/conversations/chats
 
 Get active chat conversations for the logged in user
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -2220,15 +2087,11 @@ This endpoint does not need any parameter.
 # CobrowseConversation getConversationsCobrowsesession(conversationId)
 
 
-
 GET /api/v2/conversations/cobrowsesessions/{conversationId}
 
 Get cobrowse conversation
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -2272,15 +2135,11 @@ apiInstance.getConversationsCobrowsesession(conversationId)
 # AssignedWrapupCode getConversationsCobrowsesessionParticipantWrapup(conversationId, participantId, opts)
 
 
-
 GET /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/wrapup
 
 Get the wrap-up for this conversation participant. 
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -2330,15 +2189,11 @@ apiInstance.getConversationsCobrowsesessionParticipantWrapup(conversationId, par
 # [WrapupCode] getConversationsCobrowsesessionParticipantWrapupcodes(conversationId, participantId)
 
 
-
 GET /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/wrapupcodes
 
 Get list of wrapup codes for this conversation participant
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -2384,15 +2239,11 @@ apiInstance.getConversationsCobrowsesessionParticipantWrapupcodes(conversationId
 # CobrowseConversationEntityListing getConversationsCobrowsesessions()
 
 
-
 GET /api/v2/conversations/cobrowsesessions
 
 Get active cobrowse conversations for the logged in user
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -2431,15 +2282,11 @@ This endpoint does not need any parameter.
 # EmailConversation getConversationsEmail(conversationId)
 
 
-
 GET /api/v2/conversations/emails/{conversationId}
 
 Get email conversation
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -2483,15 +2330,11 @@ apiInstance.getConversationsEmail(conversationId)
 # EmailMessage getConversationsEmailMessage(conversationId, messageId)
 
 
-
 GET /api/v2/conversations/emails/{conversationId}/messages/{messageId}
 
 Get conversation message
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -2537,15 +2380,11 @@ apiInstance.getConversationsEmailMessage(conversationId, messageId)
 # EmailMessageListing getConversationsEmailMessages(conversationId)
 
 
-
 GET /api/v2/conversations/emails/{conversationId}/messages
 
 Get conversation messages
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -2589,15 +2428,11 @@ apiInstance.getConversationsEmailMessages(conversationId)
 # EmailMessage getConversationsEmailMessagesDraft(conversationId)
 
 
-
 GET /api/v2/conversations/emails/{conversationId}/messages/draft
 
 Get conversation draft reply
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -2641,15 +2476,11 @@ apiInstance.getConversationsEmailMessagesDraft(conversationId)
 # AssignedWrapupCode getConversationsEmailParticipantWrapup(conversationId, participantId, opts)
 
 
-
 GET /api/v2/conversations/emails/{conversationId}/participants/{participantId}/wrapup
 
 Get the wrap-up for this conversation participant. 
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -2699,15 +2530,11 @@ apiInstance.getConversationsEmailParticipantWrapup(conversationId, participantId
 # [WrapupCode] getConversationsEmailParticipantWrapupcodes(conversationId, participantId)
 
 
-
 GET /api/v2/conversations/emails/{conversationId}/participants/{participantId}/wrapupcodes
 
 Get list of wrapup codes for this conversation participant
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -2753,15 +2580,11 @@ apiInstance.getConversationsEmailParticipantWrapupcodes(conversationId, particip
 # EmailsSettings getConversationsEmailSettings(conversationId)
 
 
-
 GET /api/v2/conversations/emails/{conversationId}/settings
 
 Get emails settings for a given conversation
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -2805,15 +2628,11 @@ apiInstance.getConversationsEmailSettings(conversationId)
 # EmailConversationEntityListing getConversationsEmails()
 
 
-
 GET /api/v2/conversations/emails
 
 Get active email conversations for the logged in user
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -2852,15 +2671,11 @@ This endpoint does not need any parameter.
 # MessageConversation getConversationsMessage(conversationId)
 
 
-
 GET /api/v2/conversations/messages/{conversationId}
 
 Get message conversation
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -2904,14 +2719,13 @@ apiInstance.getConversationsMessage(conversationId)
 # MessageMediaData getConversationsMessageCommunicationMessagesMediaMediaId(conversationId, communicationId, mediaId)
 
 
-
 GET /api/v2/conversations/messages/{conversationId}/communications/{communicationId}/messages/media/{mediaId}
 
 Get media
 
 See https://developer.genesys.cloud/api/rest/v2/conversations/messaging-media-upload for example usage.
 
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * conversation:message:view
 * conversation:webmessaging:view
@@ -2962,14 +2776,11 @@ apiInstance.getConversationsMessageCommunicationMessagesMediaMediaId(conversatio
 # MessageData getConversationsMessageDetails(messageId)
 
 
-
 GET /api/v2/conversations/messages/{messageId}/details
 
 Get message
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * conversation:message:view
 * conversation:webmessaging:view
@@ -3016,14 +2827,11 @@ apiInstance.getConversationsMessageDetails(messageId)
 # MessageData getConversationsMessageMessage(conversationId, messageId)
 
 
-
 GET /api/v2/conversations/messages/{conversationId}/messages/{messageId}
 
 Get conversation message
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * conversation:message:view
 * conversation:webmessaging:view
@@ -3072,15 +2880,11 @@ apiInstance.getConversationsMessageMessage(conversationId, messageId)
 # AssignedWrapupCode getConversationsMessageParticipantWrapup(conversationId, participantId, opts)
 
 
-
 GET /api/v2/conversations/messages/{conversationId}/participants/{participantId}/wrapup
 
 Get the wrap-up for this conversation participant. 
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -3130,15 +2934,11 @@ apiInstance.getConversationsMessageParticipantWrapup(conversationId, participant
 # [WrapupCode] getConversationsMessageParticipantWrapupcodes(conversationId, participantId)
 
 
-
 GET /api/v2/conversations/messages/{conversationId}/participants/{participantId}/wrapupcodes
 
 Get list of wrapup codes for this conversation participant
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -3184,15 +2984,11 @@ apiInstance.getConversationsMessageParticipantWrapupcodes(conversationId, partic
 # MessageConversationEntityListing getConversationsMessages()
 
 
-
 GET /api/v2/conversations/messages
 
 Get active message conversations for the logged in user
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -3231,14 +3027,11 @@ This endpoint does not need any parameter.
 # FacebookAppCredentials getConversationsMessagingFacebookApp()
 
 
-
 GET /api/v2/conversations/messaging/facebook/app
 
 Get Genesys Facebook App Id
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * messaging:integration:add
 
@@ -3279,14 +3072,11 @@ This endpoint does not need any parameter.
 # MessagingIntegrationEntityListing getConversationsMessagingIntegrations(opts)
 
 
-
 GET /api/v2/conversations/messaging/integrations
 
 Get a list of Integrations
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * messaging:integration:view
 
@@ -3340,14 +3130,11 @@ apiInstance.getConversationsMessagingIntegrations(opts)
 # FacebookIntegrationEntityListing getConversationsMessagingIntegrationsFacebook(opts)
 
 
-
 GET /api/v2/conversations/messaging/integrations/facebook
 
 Get a list of Facebook Integrations
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * messaging:integration:view
 
@@ -3401,14 +3188,11 @@ apiInstance.getConversationsMessagingIntegrationsFacebook(opts)
 # FacebookIntegration getConversationsMessagingIntegrationsFacebookIntegrationId(integrationId, opts)
 
 
-
 GET /api/v2/conversations/messaging/integrations/facebook/{integrationId}
 
 Get a Facebook messaging integration
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * messaging:integration:view
 
@@ -3458,14 +3242,11 @@ apiInstance.getConversationsMessagingIntegrationsFacebookIntegrationId(integrati
 # LineIntegrationEntityListing getConversationsMessagingIntegrationsLine(opts)
 
 
-
 GET /api/v2/conversations/messaging/integrations/line
 
 Get a list of LINE messenger Integrations
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * messaging:integration:view
 
@@ -3519,14 +3300,11 @@ apiInstance.getConversationsMessagingIntegrationsLine(opts)
 # LineIntegration getConversationsMessagingIntegrationsLineIntegrationId(integrationId, opts)
 
 
-
 GET /api/v2/conversations/messaging/integrations/line/{integrationId}
 
 Get a LINE messenger integration
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * messaging:integration:view
 
@@ -3576,14 +3354,13 @@ apiInstance.getConversationsMessagingIntegrationsLineIntegrationId(integrationId
 # OpenIntegrationEntityListing getConversationsMessagingIntegrationsOpen(opts)
 
 
-
 GET /api/v2/conversations/messaging/integrations/open
 
 Get a list of Open messaging integrations
 
 See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
 
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * messaging:integration:view
 
@@ -3637,14 +3414,13 @@ apiInstance.getConversationsMessagingIntegrationsOpen(opts)
 # OpenIntegration getConversationsMessagingIntegrationsOpenIntegrationId(integrationId, opts)
 
 
-
 GET /api/v2/conversations/messaging/integrations/open/{integrationId}
 
 Get an Open messaging integration
 
 See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
 
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * messaging:integration:view
 
@@ -3694,14 +3470,11 @@ apiInstance.getConversationsMessagingIntegrationsOpenIntegrationId(integrationId
 # TwitterIntegrationEntityListing getConversationsMessagingIntegrationsTwitter(opts)
 
 
-
 GET /api/v2/conversations/messaging/integrations/twitter
 
 Get a list of Twitter Integrations
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * messaging:integration:view
 
@@ -3755,14 +3528,11 @@ apiInstance.getConversationsMessagingIntegrationsTwitter(opts)
 # TwitterIntegration getConversationsMessagingIntegrationsTwitterIntegrationId(integrationId, opts)
 
 
-
 GET /api/v2/conversations/messaging/integrations/twitter/{integrationId}
 
 Get a Twitter messaging integration
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * messaging:integration:view
 
@@ -3812,14 +3582,11 @@ apiInstance.getConversationsMessagingIntegrationsTwitterIntegrationId(integratio
 # WhatsAppIntegrationEntityListing getConversationsMessagingIntegrationsWhatsapp(opts)
 
 
-
 GET /api/v2/conversations/messaging/integrations/whatsapp
 
 Get a list of WhatsApp Integrations
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * messaging:integration:view
 
@@ -3873,14 +3640,11 @@ apiInstance.getConversationsMessagingIntegrationsWhatsapp(opts)
 # WhatsAppIntegration getConversationsMessagingIntegrationsWhatsappIntegrationId(integrationId, opts)
 
 
-
 GET /api/v2/conversations/messaging/integrations/whatsapp/{integrationId}
 
 Get a WhatsApp messaging integration
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * messaging:integration:view
 
@@ -3930,14 +3694,11 @@ apiInstance.getConversationsMessagingIntegrationsWhatsappIntegrationId(integrati
 # MessagingStickerEntityListing getConversationsMessagingSticker(messengerType, opts)
 
 
-
 GET /api/v2/conversations/messaging/stickers/{messengerType}
 
 Get a list of Messaging Stickers
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * conversation:message:create
 
@@ -3989,14 +3750,11 @@ apiInstance.getConversationsMessagingSticker(messengerType, opts)
 # SupportedContentListing getConversationsMessagingSupportedcontent(opts)
 
 
-
 GET /api/v2/conversations/messaging/supportedcontent
 
 Get a list of Supported Content profiles
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * messaging:supportedContent:view
 
@@ -4046,14 +3804,13 @@ apiInstance.getConversationsMessagingSupportedcontent(opts)
 # SupportedContent getConversationsMessagingSupportedcontentDefault()
 
 
-
 GET /api/v2/conversations/messaging/supportedcontent/default
 
-Get the organization&#39;s default supported content profile that will be used as the default when creating an integration.
+Get the organization's default supported content profile that will be used as the default when creating an integration.
 
 When an integration is created a supported content ID may be assigned to it. If the supported content ID is not supplied, the default supported content profile will be assigned to it.
 
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * messaging:supportedContent:view
 
@@ -4094,14 +3851,11 @@ This endpoint does not need any parameter.
 # SupportedContent getConversationsMessagingSupportedcontentSupportedContentId(supportedContentId)
 
 
-
 GET /api/v2/conversations/messaging/supportedcontent/{supportedContentId}
 
 Get a supported content profile
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * messaging:supportedContent:view
 
@@ -4147,14 +3901,13 @@ apiInstance.getConversationsMessagingSupportedcontentSupportedContentId(supporte
 # ConversationThreadingWindow getConversationsMessagingThreadingtimeline()
 
 
-
 GET /api/v2/conversations/messaging/threadingtimeline
 
 Get conversation threading window timeline for each messaging type
 
 Conversation messaging threading timeline is a setting defined for each messenger type in your organization. This setting will dictate whether a new message is added to the most recent existing conversation, or creates a new Conversation. If the existing Conversation is still in a connected state the threading timeline setting will never play a role. After the conversation is disconnected, if an inbound message is received or an outbound message is sent after the setting for threading timeline expires, a new conversation is created.
 
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * conversation:threadingTimeline:view
 
@@ -4195,15 +3948,13 @@ This endpoint does not need any parameter.
 # void patchConversationParticipant(conversationId, participantId, body)
 
 
-
 PATCH /api/v2/conversations/{conversationId}/participants/{participantId}
 
 Update a participant.
 
 Update conversation participant.
 
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -4251,15 +4002,11 @@ void (no response body)
 # void patchConversationParticipantAttributes(conversationId, participantId, body)
 
 
-
 PATCH /api/v2/conversations/{conversationId}/participants/{participantId}/attributes
 
 Update the attributes on a conversation participant.
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -4307,14 +4054,11 @@ void (no response body)
 # Conversation patchConversationsCall(conversationId, body)
 
 
-
 PATCH /api/v2/conversations/calls/{conversationId}
 
 Update a conversation by setting its recording state, merging in other conversations to create a conference, or disconnecting all of the participants
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * conversation:communication:disconnect
 
@@ -4362,15 +4106,11 @@ apiInstance.patchConversationsCall(conversationId, body)
 # void patchConversationsCallParticipant(conversationId, participantId, body)
 
 
-
 PATCH /api/v2/conversations/calls/{conversationId}/participants/{participantId}
 
 Update conversation participant
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -4418,15 +4158,11 @@ void (no response body)
 # void patchConversationsCallParticipantAttributes(conversationId, participantId, body)
 
 
-
 PATCH /api/v2/conversations/calls/{conversationId}/participants/{participantId}/attributes
 
 Update the attributes on a conversation participant.
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -4471,18 +4207,14 @@ void (no response body)
 
 <a name="patchConversationsCallParticipantCommunication"></a>
 
-# Empty patchConversationsCallParticipantCommunication(conversationId, participantId, communicationId, body)
-
+# **Object** patchConversationsCallParticipantCommunication(conversationId, participantId, communicationId, body)
 
 
 PATCH /api/v2/conversations/calls/{conversationId}/participants/{participantId}/communications/{communicationId}
 
-Update conversation participant&#39;s communication by disconnecting it.
+Update conversation participant's communication by disconnecting it.
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -4525,22 +4257,18 @@ apiInstance.patchConversationsCallParticipantCommunication(conversationId, parti
 
 ### Return type
 
-**Empty**
+**Object**
 
 <a name="patchConversationsCallParticipantConsult"></a>
 
 # ConsultTransferResponse patchConversationsCallParticipantConsult(conversationId, participantId, body)
 
 
-
 PATCH /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult
 
 Change who can speak
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -4588,14 +4316,11 @@ apiInstance.patchConversationsCallParticipantConsult(conversationId, participant
 # Conversation patchConversationsCallback(conversationId, body)
 
 
-
 PATCH /api/v2/conversations/callbacks/{conversationId}
 
 Update a conversation by disconnecting all of the participants
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * conversation:communication:disconnect
 
@@ -4643,15 +4368,11 @@ apiInstance.patchConversationsCallback(conversationId, body)
 # void patchConversationsCallbackParticipant(conversationId, participantId, body)
 
 
-
 PATCH /api/v2/conversations/callbacks/{conversationId}/participants/{participantId}
 
 Update conversation participant
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -4699,15 +4420,11 @@ void (no response body)
 # void patchConversationsCallbackParticipantAttributes(conversationId, participantId, body)
 
 
-
 PATCH /api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/attributes
 
 Update the attributes on a conversation participant.
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -4752,18 +4469,14 @@ void (no response body)
 
 <a name="patchConversationsCallbackParticipantCommunication"></a>
 
-# Empty patchConversationsCallbackParticipantCommunication(conversationId, participantId, communicationId, body)
-
+# **Object** patchConversationsCallbackParticipantCommunication(conversationId, participantId, communicationId, body)
 
 
 PATCH /api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/communications/{communicationId}
 
-Update conversation participant&#39;s communication by disconnecting it.
+Update conversation participant's communication by disconnecting it.
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -4806,21 +4519,18 @@ apiInstance.patchConversationsCallbackParticipantCommunication(conversationId, p
 
 ### Return type
 
-**Empty**
+**Object**
 
 <a name="patchConversationsCallbacks"></a>
 
 # PatchCallbackResponse patchConversationsCallbacks(body)
 
 
-
 PATCH /api/v2/conversations/callbacks
 
 Update a scheduled callback
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * conversation:callback:edit
 
@@ -4866,14 +4576,11 @@ apiInstance.patchConversationsCallbacks(body)
 # Conversation patchConversationsChat(conversationId, body)
 
 
-
 PATCH /api/v2/conversations/chats/{conversationId}
 
 Update a conversation by disconnecting all of the participants
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * conversation:communication:disconnect
 
@@ -4921,15 +4628,11 @@ apiInstance.patchConversationsChat(conversationId, body)
 # void patchConversationsChatParticipant(conversationId, participantId, body)
 
 
-
 PATCH /api/v2/conversations/chats/{conversationId}/participants/{participantId}
 
 Update conversation participant
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -4977,15 +4680,11 @@ void (no response body)
 # void patchConversationsChatParticipantAttributes(conversationId, participantId, body)
 
 
-
 PATCH /api/v2/conversations/chats/{conversationId}/participants/{participantId}/attributes
 
 Update the attributes on a conversation participant.
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -5030,18 +4729,14 @@ void (no response body)
 
 <a name="patchConversationsChatParticipantCommunication"></a>
 
-# Empty patchConversationsChatParticipantCommunication(conversationId, participantId, communicationId, body)
-
+# **Object** patchConversationsChatParticipantCommunication(conversationId, participantId, communicationId, body)
 
 
 PATCH /api/v2/conversations/chats/{conversationId}/participants/{participantId}/communications/{communicationId}
 
-Update conversation participant&#39;s communication by disconnecting it.
+Update conversation participant's communication by disconnecting it.
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -5084,21 +4779,18 @@ apiInstance.patchConversationsChatParticipantCommunication(conversationId, parti
 
 ### Return type
 
-**Empty**
+**Object**
 
 <a name="patchConversationsCobrowsesession"></a>
 
 # Conversation patchConversationsCobrowsesession(conversationId, body)
 
 
-
 PATCH /api/v2/conversations/cobrowsesessions/{conversationId}
 
 Update a conversation by disconnecting all of the participants
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * conversation:communication:disconnect
 
@@ -5146,15 +4838,11 @@ apiInstance.patchConversationsCobrowsesession(conversationId, body)
 # void patchConversationsCobrowsesessionParticipant(conversationId, participantId, opts)
 
 
-
 PATCH /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}
 
 Update conversation participant
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -5204,15 +4892,11 @@ void (no response body)
 # void patchConversationsCobrowsesessionParticipantAttributes(conversationId, participantId, opts)
 
 
-
 PATCH /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/attributes
 
 Update the attributes on a conversation participant.
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -5259,18 +4943,14 @@ void (no response body)
 
 <a name="patchConversationsCobrowsesessionParticipantCommunication"></a>
 
-# Empty patchConversationsCobrowsesessionParticipantCommunication(conversationId, participantId, communicationId, body)
-
+# **Object** patchConversationsCobrowsesessionParticipantCommunication(conversationId, participantId, communicationId, body)
 
 
 PATCH /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/communications/{communicationId}
 
-Update conversation participant&#39;s communication by disconnecting it.
+Update conversation participant's communication by disconnecting it.
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -5313,21 +4993,18 @@ apiInstance.patchConversationsCobrowsesessionParticipantCommunication(conversati
 
 ### Return type
 
-**Empty**
+**Object**
 
 <a name="patchConversationsEmail"></a>
 
 # Conversation patchConversationsEmail(conversationId, body)
 
 
-
 PATCH /api/v2/conversations/emails/{conversationId}
 
 Update a conversation by disconnecting all of the participants
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * conversation:communication:disconnect
 
@@ -5375,15 +5052,11 @@ apiInstance.patchConversationsEmail(conversationId, body)
 # void patchConversationsEmailParticipant(conversationId, participantId, body)
 
 
-
 PATCH /api/v2/conversations/emails/{conversationId}/participants/{participantId}
 
 Update conversation participant
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -5431,15 +5104,11 @@ void (no response body)
 # void patchConversationsEmailParticipantAttributes(conversationId, participantId, body)
 
 
-
 PATCH /api/v2/conversations/emails/{conversationId}/participants/{participantId}/attributes
 
 Update the attributes on a conversation participant.
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -5484,18 +5153,14 @@ void (no response body)
 
 <a name="patchConversationsEmailParticipantCommunication"></a>
 
-# Empty patchConversationsEmailParticipantCommunication(conversationId, participantId, communicationId, body)
-
+# **Object** patchConversationsEmailParticipantCommunication(conversationId, participantId, communicationId, body)
 
 
 PATCH /api/v2/conversations/emails/{conversationId}/participants/{participantId}/communications/{communicationId}
 
-Update conversation participant&#39;s communication by disconnecting it.
+Update conversation participant's communication by disconnecting it.
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -5538,21 +5203,18 @@ apiInstance.patchConversationsEmailParticipantCommunication(conversationId, part
 
 ### Return type
 
-**Empty**
+**Object**
 
 <a name="patchConversationsMessage"></a>
 
 # Conversation patchConversationsMessage(conversationId, body)
 
 
-
 PATCH /api/v2/conversations/messages/{conversationId}
 
 Update a conversation by disconnecting all of the participants
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * conversation:communication:disconnect
 
@@ -5600,15 +5262,11 @@ apiInstance.patchConversationsMessage(conversationId, body)
 # void patchConversationsMessageParticipant(conversationId, participantId, opts)
 
 
-
 PATCH /api/v2/conversations/messages/{conversationId}/participants/{participantId}
 
 Update conversation participant
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -5658,15 +5316,11 @@ void (no response body)
 # void patchConversationsMessageParticipantAttributes(conversationId, participantId, opts)
 
 
-
 PATCH /api/v2/conversations/messages/{conversationId}/participants/{participantId}/attributes
 
 Update the attributes on a conversation participant.
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -5713,18 +5367,14 @@ void (no response body)
 
 <a name="patchConversationsMessageParticipantCommunication"></a>
 
-# Empty patchConversationsMessageParticipantCommunication(conversationId, participantId, communicationId, body)
-
+# **Object** patchConversationsMessageParticipantCommunication(conversationId, participantId, communicationId, body)
 
 
 PATCH /api/v2/conversations/messages/{conversationId}/participants/{participantId}/communications/{communicationId}
 
-Update conversation participant&#39;s communication by disconnecting it.
+Update conversation participant's communication by disconnecting it.
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -5767,21 +5417,18 @@ apiInstance.patchConversationsMessageParticipantCommunication(conversationId, pa
 
 ### Return type
 
-**Empty**
+**Object**
 
 <a name="patchConversationsMessagingIntegrationsFacebookIntegrationId"></a>
 
 # FacebookIntegration patchConversationsMessagingIntegrationsFacebookIntegrationId(integrationId, body)
 
 
-
 PATCH /api/v2/conversations/messaging/integrations/facebook/{integrationId}
 
 Update Facebook messaging integration
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * messaging:integration:edit
 
@@ -5829,14 +5476,13 @@ apiInstance.patchConversationsMessagingIntegrationsFacebookIntegrationId(integra
 # OpenIntegration patchConversationsMessagingIntegrationsOpenIntegrationId(integrationId, body)
 
 
-
 PATCH /api/v2/conversations/messaging/integrations/open/{integrationId}
 
 Update an Open messaging integration
 
 See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
 
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * messaging:integration:edit
 
@@ -5884,14 +5530,11 @@ apiInstance.patchConversationsMessagingIntegrationsOpenIntegrationId(integration
 # TwitterIntegration patchConversationsMessagingIntegrationsTwitterIntegrationId(integrationId, body)
 
 
-
 PATCH /api/v2/conversations/messaging/integrations/twitter/{integrationId}
 
 Update Twitter messaging integration
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * messaging:integration:edit
 
@@ -5939,14 +5582,13 @@ apiInstance.patchConversationsMessagingIntegrationsTwitterIntegrationId(integrat
 # WhatsAppIntegration patchConversationsMessagingIntegrationsWhatsappIntegrationId(integrationId, body)
 
 
-
 PATCH /api/v2/conversations/messaging/integrations/whatsapp/{integrationId}
 
 Update or activate a WhatsApp messaging integration
 
 The following steps are required in order to fully activate a WhatsApp Integration: Initially, you will need to get an activation code by sending: an action set to Activate, and an authenticationMethod choosing from Sms or Voice. Finally, once you have been informed of an activation code on selected authenticationMethod, you will need to confirm the code by sending: an action set to Confirm, and the confirmationCode you have received from Whatsapp.
 
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * messaging:integration:edit
 
@@ -5994,14 +5636,11 @@ apiInstance.patchConversationsMessagingIntegrationsWhatsappIntegrationId(integra
 # SupportedContent patchConversationsMessagingSupportedcontentSupportedContentId(supportedContentId, body)
 
 
-
 PATCH /api/v2/conversations/messaging/supportedcontent/{supportedContentId}
 
 Update a supported content profile
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * messaging:supportedContent:edit
 
@@ -6049,14 +5688,11 @@ apiInstance.patchConversationsMessagingSupportedcontentSupportedContentId(suppor
 # PropertyIndexRequest postAnalyticsConversationDetailsProperties(conversationId, body)
 
 
-
 POST /api/v2/analytics/conversations/{conversationId}/details/properties
 
 Index conversation properties
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * analytics:conversationProperties:index
 
@@ -6104,14 +5740,11 @@ apiInstance.postAnalyticsConversationDetailsProperties(conversationId, body)
 # ConversationAggregateQueryResponse postAnalyticsConversationsAggregatesQuery(body)
 
 
-
 POST /api/v2/analytics/conversations/aggregates/query
 
 Query for conversation aggregates
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * analytics:conversationAggregate:view
 
@@ -6157,14 +5790,11 @@ apiInstance.postAnalyticsConversationsAggregatesQuery(body)
 # AsyncQueryResponse postAnalyticsConversationsDetailsJobs(body)
 
 
-
 POST /api/v2/analytics/conversations/details/jobs
 
 Query for conversation details asynchronously
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * analytics:conversationDetail:view
 * analytics:agentConversationDetail:view
@@ -6211,14 +5841,11 @@ apiInstance.postAnalyticsConversationsDetailsJobs(body)
 # AnalyticsConversationQueryResponse postAnalyticsConversationsDetailsQuery(body)
 
 
-
 POST /api/v2/analytics/conversations/details/query
 
 Query for conversation details
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * analytics:conversationDetail:view
 * analytics:agentConversationDetail:view
@@ -6265,14 +5892,11 @@ apiInstance.postAnalyticsConversationsDetailsQuery(body)
 # **&#39;String&#39;** postConversationAssign(conversationId, body)
 
 
-
 POST /api/v2/conversations/{conversationId}/assign
 
 Attempts to manually assign a specified conversation to a specified user.  Ignores bullseye ring, PAR score, skills, and languages.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * conversation:call:pull
 * conversation:call:assign
@@ -6329,14 +5953,11 @@ apiInstance.postConversationAssign(conversationId, body)
 # **&#39;String&#39;** postConversationDisconnect(conversationId)
 
 
-
 POST /api/v2/conversations/{conversationId}/disconnect
 
 Performs a full conversation teardown. Issues disconnect requests for any connected media. Applies a system wrap-up code to any participants that are pending wrap-up. This is not intended to be the normal way of ending interactions but is available in the event of problems with the application to allow a resynchronization of state across all components. It is recommended that users submit a support case if they are relying on this endpoint systematically as there is likely something that needs investigation.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * conversation:communication:disconnect
 
@@ -6382,14 +6003,11 @@ apiInstance.postConversationDisconnect(conversationId)
 # void postConversationParticipantCallbacks(conversationId, participantId, opts)
 
 
-
 POST /api/v2/conversations/{conversationId}/participants/{participantId}/callbacks
 
 Create a new callback for the specified participant on the conversation.
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * conversation:callback:create
 
@@ -6441,15 +6059,11 @@ void (no response body)
 # void postConversationParticipantDigits(conversationId, participantId, opts)
 
 
-
 POST /api/v2/conversations/{conversationId}/participants/{participantId}/digits
 
 Sends DTMF to the participant
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -6499,15 +6113,11 @@ void (no response body)
 # void postConversationParticipantReplace(conversationId, participantId, body)
 
 
-
 POST /api/v2/conversations/{conversationId}/participants/{participantId}/replace
 
 Replace this participant with the specified user and/or address
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -6555,15 +6165,11 @@ void (no response body)
 # SecureSession postConversationParticipantSecureivrsessions(conversationId, participantId, opts)
 
 
-
 POST /api/v2/conversations/{conversationId}/participants/{participantId}/secureivrsessions
 
 Create secure IVR session. Only a participant in the conversation can invoke a secure IVR.
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -6613,15 +6219,11 @@ apiInstance.postConversationParticipantSecureivrsessions(conversationId, partici
 # Conversation postConversationsCall(conversationId, body)
 
 
-
 POST /api/v2/conversations/calls/{conversationId}
 
 Place a new call as part of a callback conversation.
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -6667,14 +6269,11 @@ apiInstance.postConversationsCall(conversationId, body)
 # void postConversationsCallParticipantCoach(conversationId, participantId)
 
 
-
 POST /api/v2/conversations/calls/{conversationId}/participants/{participantId}/coach
 
 Listen in on the conversation from the point of view of a given participant while speaking to just the given participant.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * conversation:call:coach
 
@@ -6722,15 +6321,11 @@ void (no response body)
 # ConsultTransferResponse postConversationsCallParticipantConsult(conversationId, participantId, body)
 
 
-
 POST /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult
 
 Initiate and update consult transfer
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -6747,7 +6342,7 @@ let apiInstance = new platformClient.ConversationsApi();
 
 let conversationId = "conversationId_example"; // String | conversationId
 let participantId = "participantId_example"; // String | participantId
-let body = {}; // Object | Destination address & initial speak to
+let body = {}; // Object | Destination address and initial speak to
 
 apiInstance.postConversationsCallParticipantConsult(conversationId, participantId, body)
   .then((data) => {
@@ -6766,7 +6361,7 @@ apiInstance.postConversationsCallParticipantConsult(conversationId, participantI
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
  **participantId** | **String** | participantId |  |
- **body** | **Object** | Destination address &amp; initial speak to |  |
+ **body** | **Object** | Destination address and initial speak to |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -6778,14 +6373,11 @@ apiInstance.postConversationsCallParticipantConsult(conversationId, participantI
 # void postConversationsCallParticipantMonitor(conversationId, participantId)
 
 
-
 POST /api/v2/conversations/calls/{conversationId}/participants/{participantId}/monitor
 
 Listen in on the conversation from the point of view of a given participant.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * conversation:call:monitor
 
@@ -6833,15 +6425,11 @@ void (no response body)
 # void postConversationsCallParticipantReplace(conversationId, participantId, body)
 
 
-
 POST /api/v2/conversations/calls/{conversationId}/participants/{participantId}/replace
 
 Replace this participant with the specified user and/or address
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -6889,15 +6477,11 @@ void (no response body)
 # Conversation postConversationsCallParticipants(conversationId, body)
 
 
-
 POST /api/v2/conversations/calls/{conversationId}/participants
 
 Add participants to a conversation
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -6943,15 +6527,11 @@ apiInstance.postConversationsCallParticipants(conversationId, body)
 # void postConversationsCallbackParticipantReplace(conversationId, participantId, body)
 
 
-
 POST /api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/replace
 
 Replace this participant with the specified user and/or address
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -6999,14 +6579,11 @@ void (no response body)
 # CreateCallbackResponse postConversationsCallbacks(body)
 
 
-
 POST /api/v2/conversations/callbacks
 
 Create a Callback
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * conversation:callback:create
 
@@ -7052,14 +6629,11 @@ apiInstance.postConversationsCallbacks(body)
 # void postConversationsCallbacksBulkDisconnect(body)
 
 
-
 POST /api/v2/conversations/callbacks/bulk/disconnect
 
 Disconnect multiple scheduled callbacks
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * conversation:communication:disconnect
 
@@ -7105,14 +6679,11 @@ void (no response body)
 # BulkCallbackPatchResponse postConversationsCallbacksBulkUpdate(body)
 
 
-
 POST /api/v2/conversations/callbacks/bulk/update
 
 Update multiple scheduled callbacks
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * conversation:callback:edit
 
@@ -7158,14 +6729,11 @@ apiInstance.postConversationsCallbacksBulkUpdate(body)
 # CreateCallResponse postConversationsCalls(body)
 
 
-
 POST /api/v2/conversations/calls
 
 Create a call conversation
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * conversation:conference:add
 
@@ -7211,15 +6779,11 @@ apiInstance.postConversationsCalls(body)
 # WebChatMessage postConversationsChatCommunicationMessages(conversationId, communicationId, body)
 
 
-
 POST /api/v2/conversations/chats/{conversationId}/communications/{communicationId}/messages
 
 Send a message on behalf of a communication in a chat conversation.
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -7267,15 +6831,11 @@ apiInstance.postConversationsChatCommunicationMessages(conversationId, communica
 # WebChatTyping postConversationsChatCommunicationTyping(conversationId, communicationId)
 
 
-
 POST /api/v2/conversations/chats/{conversationId}/communications/{communicationId}/typing
 
 Send a typing-indicator on behalf of a communication in a chat conversation.
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -7321,15 +6881,11 @@ apiInstance.postConversationsChatCommunicationTyping(conversationId, communicati
 # void postConversationsChatParticipantReplace(conversationId, participantId, body)
 
 
-
 POST /api/v2/conversations/chats/{conversationId}/participants/{participantId}/replace
 
 Replace this participant with the specified user and/or address
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -7377,14 +6933,11 @@ void (no response body)
 # ChatConversation postConversationsChats(body)
 
 
-
 POST /api/v2/conversations/chats
 
 Create a web chat conversation
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * conversation:webchat:create
 
@@ -7430,15 +6983,11 @@ apiInstance.postConversationsChats(body)
 # void postConversationsCobrowsesessionParticipantReplace(conversationId, participantId, opts)
 
 
-
 POST /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/replace
 
 Replace this participant with the specified user and/or address
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -7488,15 +7037,11 @@ void (no response body)
 # EmailConversation postConversationsEmailInboundmessages(conversationId, body)
 
 
-
 POST /api/v2/conversations/emails/{conversationId}/inboundmessages
 
 Send an email to an external conversation. An external conversation is one where the provider is not PureCloud based. This endpoint allows the sender of the external email to reply or send a new message to the existing conversation. The new message will be treated as part of the existing conversation and chained to it.
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -7542,15 +7087,11 @@ apiInstance.postConversationsEmailInboundmessages(conversationId, body)
 # EmailMessage postConversationsEmailMessages(conversationId, body)
 
 
-
 POST /api/v2/conversations/emails/{conversationId}/messages
 
 Send an email reply
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -7596,15 +7137,11 @@ apiInstance.postConversationsEmailMessages(conversationId, body)
 # EmailMessage postConversationsEmailMessagesDraftAttachmentsCopy(conversationId, body)
 
 
-
 POST /api/v2/conversations/emails/{conversationId}/messages/draft/attachments/copy
 
 Copy attachments from an email message to the current draft.
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -7650,15 +7187,11 @@ apiInstance.postConversationsEmailMessagesDraftAttachmentsCopy(conversationId, b
 # void postConversationsEmailParticipantReplace(conversationId, participantId, body)
 
 
-
 POST /api/v2/conversations/emails/{conversationId}/participants/{participantId}/replace
 
 Replace this participant with the specified user and/or address
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -7706,14 +7239,13 @@ void (no response body)
 # EmailConversation postConversationsEmails(body)
 
 
-
 POST /api/v2/conversations/emails
 
 Create an email conversation
 
 If the direction of the request is INBOUND, this will create an external conversation with a third party provider. If the direction of the the request is OUTBOUND, this will create a conversation to send outbound emails on behalf of a queue.
 
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * conversation:email:create
 
@@ -7759,15 +7291,11 @@ apiInstance.postConversationsEmails(body)
 # FaxSendResponse postConversationsFaxes(body)
 
 
-
 POST /api/v2/conversations/faxes
 
 Create Fax Conversation
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -7811,14 +7339,13 @@ apiInstance.postConversationsFaxes(body)
 # MessageData postConversationsMessageCommunicationMessages(conversationId, communicationId, body)
 
 
-
 POST /api/v2/conversations/messages/{conversationId}/communications/{communicationId}/messages
 
 Send message
 
 Send message on existing conversation/communication. Only one message body field can be accepted, per request. Example: 1 textBody, 1 mediaId, 1 stickerId, or 1 messageTemplate.
 
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * conversation:message:create
 * conversation:webmessaging:create
@@ -7869,14 +7396,13 @@ apiInstance.postConversationsMessageCommunicationMessages(conversationId, commun
 # MessageMediaData postConversationsMessageCommunicationMessagesMedia(conversationId, communicationId)
 
 
-
 POST /api/v2/conversations/messages/{conversationId}/communications/{communicationId}/messages/media
 
 Create media
 
 See https://developer.genesys.cloud/api/rest/v2/conversations/messaging-media-upload for example usage.
 
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * conversation:message:create
 * conversation:webmessaging:create
@@ -7925,14 +7451,13 @@ apiInstance.postConversationsMessageCommunicationMessagesMedia(conversationId, c
 # TextMessageListing postConversationsMessageMessagesBulk(conversationId, opts)
 
 
-
 POST /api/v2/conversations/messages/{conversationId}/messages/bulk
 
 Get messages in batch
 
-The path parameter [conversationId] should contain the conversationId of the conversation being filtered. The body should contain the messageId(s) of messages being requested. For example: [\&quot;a3069a33b-bbb1-4703-9d68-061d9e9db96e\&quot;, \&quot;55bc6be3-078c-4a49-a4e6-1e05776ed7e8\&quot;]
+The path parameter [conversationId] should contain the conversationId of the conversation being filtered. The body should contain the messageId(s) of messages being requested. For example: ["a3069a33b-bbb1-4703-9d68-061d9e9db96e", "55bc6be3-078c-4a49-a4e6-1e05776ed7e8"]
 
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * conversation:message:view
 * conversation:webmessaging:view
@@ -7952,7 +7477,7 @@ let apiInstance = new platformClient.ConversationsApi();
 
 let conversationId = "conversationId_example"; // String | 
 let opts = { 
-  'body': [{}] // Object | messageIds
+  'body': ["body_example"] // [String] | messageIds
 };
 
 apiInstance.postConversationsMessageMessagesBulk(conversationId, opts)
@@ -7971,7 +7496,7 @@ apiInstance.postConversationsMessageMessagesBulk(conversationId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** |  |  |
- **body** | **Object** | messageIds | [optional]  |
+ **body** | **[String]** | messageIds | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -7983,15 +7508,11 @@ apiInstance.postConversationsMessageMessagesBulk(conversationId, opts)
 # void postConversationsMessageParticipantReplace(conversationId, participantId, body)
 
 
-
 POST /api/v2/conversations/messages/{conversationId}/participants/{participantId}/replace
 
 Replace this participant with the specified user and/or address
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -8039,14 +7560,13 @@ void (no response body)
 # MessageConversation postConversationsMessages(body)
 
 
-
 POST /api/v2/conversations/messages
 
 Create an outbound messaging conversation.
 
 If there is an existing conversation between the remote address and the address associated with the queue specified in createOutboundRequest then the result of this request depends on the state of that conversation and the useExistingConversation field of createOutboundRequest. If the existing conversation is in alerting or connected state, then the request will fail. If the existing conversation is disconnected but still within the conversation window then the request will fail unless useExistingConversation is set to true.
 
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * conversation:message:create
 
@@ -8092,14 +7612,13 @@ apiInstance.postConversationsMessages(body)
 # SendAgentlessOutboundMessageResponse postConversationsMessagesAgentless(body)
 
 
-
 POST /api/v2/conversations/messages/agentless
 
 Send an agentless outbound message
 
 Send an agentless (api participant) outbound message using a client credential grant. In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least messaging scope. This will generate a new Conversation, if there is an existing active Conversation between the fromAddress and toAddress already, then this POST will fail.
 
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * conversation:message:create
 
@@ -8145,14 +7664,13 @@ apiInstance.postConversationsMessagesAgentless(body)
 # OpenNormalizedMessage postConversationsMessagesInboundOpen(body)
 
 
-
 POST /api/v2/conversations/messages/inbound/open
 
 Send an inbound Open Message
 
 Send an inbound message to an Open Messaging integration. In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least messaging scope. This will either generate a new Conversation, or be a part of an existing conversation. See https://developer.genesys.cloud/api/digital/openmessaging/ for example usage.
 
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * conversation:message:receive
 
@@ -8198,14 +7716,11 @@ apiInstance.postConversationsMessagesInboundOpen(body)
 # FacebookIntegration postConversationsMessagingIntegrationsFacebook(body)
 
 
-
 POST /api/v2/conversations/messaging/integrations/facebook
 
 Create a Facebook Integration
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * messaging:integration:add
 
@@ -8251,14 +7766,11 @@ apiInstance.postConversationsMessagingIntegrationsFacebook(body)
 # LineIntegration postConversationsMessagingIntegrationsLine(body)
 
 
-
 POST /api/v2/conversations/messaging/integrations/line
 
 Create a LINE messenger Integration
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * messaging:integration:add
 
@@ -8304,14 +7816,13 @@ apiInstance.postConversationsMessagingIntegrationsLine(body)
 # OpenIntegration postConversationsMessagingIntegrationsOpen(body)
 
 
-
 POST /api/v2/conversations/messaging/integrations/open
 
 Create an Open messaging integration
 
 See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
 
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * messaging:integration:add
 
@@ -8357,14 +7868,11 @@ apiInstance.postConversationsMessagingIntegrationsOpen(body)
 # TwitterIntegration postConversationsMessagingIntegrationsTwitter(body)
 
 
-
 POST /api/v2/conversations/messaging/integrations/twitter
 
 Create a Twitter Integration
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * messaging:integration:add
 
@@ -8410,14 +7918,13 @@ apiInstance.postConversationsMessagingIntegrationsTwitter(body)
 # WhatsAppIntegration postConversationsMessagingIntegrationsWhatsapp(body)
 
 
-
 POST /api/v2/conversations/messaging/integrations/whatsapp
 
 Create a WhatsApp Integration
 
 You must be approved by WhatsApp to use this feature. Your approved e164-formatted phone number and valid WhatsApp certificate for your number are required. Your WhatsApp certificate must have valid base64 encoding. Please paste carefully and do not add any leading or trailing spaces. Do not alter any characters. An integration must be activated within 7 days of certificate generation. If you cannot complete the addition and activation of the number within 7 days, please obtain a new certificate before creating the integration. Integrations created with an invalid number or certificate may immediately incur additional integration fees. Please carefully enter your number and certificate as described.
 
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * messaging:whatsappIntegration:add
 
@@ -8463,14 +7970,11 @@ apiInstance.postConversationsMessagingIntegrationsWhatsapp(body)
 # SupportedContent postConversationsMessagingSupportedcontent(body)
 
 
-
 POST /api/v2/conversations/messaging/supportedcontent
 
 Create a Supported Content profile
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * messaging:supportedContent:add
 
@@ -8516,15 +8020,11 @@ apiInstance.postConversationsMessagingSupportedcontent(body)
 # void putConversationParticipantFlaggedreason(conversationId, participantId)
 
 
-
 PUT /api/v2/conversations/{conversationId}/participants/{participantId}/flaggedreason
 
 Set flagged reason on conversation participant to indicate bad conversation quality.
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -8570,14 +8070,11 @@ void (no response body)
 # **&#39;String&#39;** putConversationTags(conversationId, body)
 
 
-
 PUT /api/v2/conversations/{conversationId}/tags
 
 Update the tags on a conversation.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * conversation:externalTag:edit
 
@@ -8622,18 +8119,14 @@ apiInstance.putConversationTags(conversationId, body)
 
 <a name="putConversationsCallParticipantCommunicationUuidata"></a>
 
-# Empty putConversationsCallParticipantCommunicationUuidata(conversationId, participantId, communicationId, body)
-
+# **Object** putConversationsCallParticipantCommunicationUuidata(conversationId, participantId, communicationId, body)
 
 
 PUT /api/v2/conversations/calls/{conversationId}/participants/{participantId}/communications/{communicationId}/uuidata
 
 Set uuiData to be sent on future commands.
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -8676,22 +8169,18 @@ apiInstance.putConversationsCallParticipantCommunicationUuidata(conversationId, 
 
 ### Return type
 
-**Empty**
+**Object**
 
 <a name="putConversationsEmailMessagesDraft"></a>
 
 # EmailMessage putConversationsEmailMessagesDraft(conversationId, body)
 
 
-
 PUT /api/v2/conversations/emails/{conversationId}/messages/draft
 
 Update conversation draft reply
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -8737,14 +8226,11 @@ apiInstance.putConversationsEmailMessagesDraft(conversationId, body)
 # LineIntegration putConversationsMessagingIntegrationsLineIntegrationId(integrationId, body)
 
 
-
 PUT /api/v2/conversations/messaging/integrations/line/{integrationId}
 
 Update a LINE messenger integration
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * messaging:integration:edit
 
@@ -8792,14 +8278,13 @@ apiInstance.putConversationsMessagingIntegrationsLineIntegrationId(integrationId
 # SupportedContent putConversationsMessagingSupportedcontentDefault(body)
 
 
-
 PUT /api/v2/conversations/messaging/supportedcontent/default
 
-Set the organization&#39;s default supported content profile that may be assigned to an integration when it is created.
+Set the organization's default supported content profile that may be assigned to an integration when it is created.
 
 When an integration is created a supported content ID may be assigned to it. If the supported content ID is not supplied, the default supported content profile will be assigned to it.
 
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * messaging:supportedContent:edit
 
@@ -8845,14 +8330,13 @@ apiInstance.putConversationsMessagingSupportedcontentDefault(body)
 # ConversationThreadingWindow putConversationsMessagingThreadingtimeline(body)
 
 
-
 PUT /api/v2/conversations/messaging/threadingtimeline
 
 Update conversation threading window timeline for each messaging type
 
 PUT Conversation messaging threading timeline is intended to set the conversation threading settings for ALL messengerTypes. If you omit a messengerType in the request body then the setting for that messengerType will use the platform default value. The PUT replaces the existing setting(s) that were previously set for each messengerType.
 
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * conversation:threadingTimeline:edit
 

@@ -28,14 +28,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 # void deleteGroup(groupId)
 
 
-
 DELETE /api/v2/groups/{groupId}
 
 Delete group
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * directory:group:delete
 
@@ -78,18 +75,14 @@ void (no response body)
 
 <a name="deleteGroupMembers"></a>
 
-# Empty deleteGroupMembers(groupId, ids)
-
+# **Object** deleteGroupMembers(groupId, ids)
 
 
 DELETE /api/v2/groups/{groupId}/members
 
 Remove members
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -128,7 +121,7 @@ apiInstance.deleteGroupMembers(groupId, ids)
 
 ### Return type
 
-**Empty**
+**Object**
 
 <a name="getFieldconfig"></a>
 
@@ -140,10 +133,7 @@ GET /api/v2/fieldconfig
 
 Fetch field config for an entity type
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -187,15 +177,11 @@ apiInstance.getFieldconfig(type)
 # Group getGroup(groupId)
 
 
-
 GET /api/v2/groups/{groupId}
 
 Get group
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -239,15 +225,11 @@ apiInstance.getGroup(groupId)
 # UserEntityListing getGroupIndividuals(groupId)
 
 
-
 GET /api/v2/groups/{groupId}/individuals
 
 Get all individuals associated with the group
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -291,15 +273,11 @@ apiInstance.getGroupIndividuals(groupId)
 # UserEntityListing getGroupMembers(groupId, opts)
 
 
-
 GET /api/v2/groups/{groupId}/members
 
 Get group members, includes individuals, owners, and dynamically included people
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -360,8 +338,7 @@ Get group profile
 
 This api is deprecated. Use /api/v2/groups instead
 
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -409,15 +386,11 @@ apiInstance.getGroupProfile(groupId, opts)
 # GroupEntityListing getGroups(opts)
 
 
-
 GET /api/v2/groups
 
 Get a group list
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -436,7 +409,7 @@ let opts = {
   'pageSize': 25, // Number | Page size
   'pageNumber': 1, // Number | Page number
   'id': ["id_example"], // [String] | id
-  'jabberId': ["jabberId_example"], // [String] | A list of jabberIds to fetch by bulk (cannot be used with the \"id\" parameter)
+  'jabberId': ["jabberId_example"], // [String] | A list of jabberIds to fetch by bulk (cannot be used with the id parameter)
   'sortOrder': "ASC" // String | Ascending or descending sort order
 };
 
@@ -458,7 +431,7 @@ apiInstance.getGroups(opts)
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **id** | **[String]** | id | [optional]  |
- **jabberId** | **[String]** | A list of jabberIds to fetch by bulk (cannot be used with the \&quot;id\&quot; parameter) | [optional]  |
+ **jabberId** | **[String]** | A list of jabberIds to fetch by bulk (cannot be used with the id parameter) | [optional]  |
  **sortOrder** | **String** | Ascending or descending sort order | [optional] [default to ASC]<br />**Values**: ascending, descending |
 {: class="table table-striped"}
 
@@ -471,15 +444,11 @@ apiInstance.getGroups(opts)
 # GroupsSearchResponse getGroupsSearch(q64, opts)
 
 
-
 GET /api/v2/groups/search
 
 Search groups using the q64 value returned from a previous search
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -534,8 +503,7 @@ Get group profile listing
 
 This api is deprecated. Use /api/v2/groups instead.
 
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -584,18 +552,14 @@ apiInstance.getProfilesGroups(opts)
 
 <a name="postGroupMembers"></a>
 
-# Empty postGroupMembers(groupId, body)
-
+# **Object** postGroupMembers(groupId, body)
 
 
 POST /api/v2/groups/{groupId}/members
 
 Add members
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -634,21 +598,18 @@ apiInstance.postGroupMembers(groupId, body)
 
 ### Return type
 
-**Empty**
+**Object**
 
 <a name="postGroups"></a>
 
 # Group postGroups(body)
 
 
-
 POST /api/v2/groups
 
 Create a group
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * directory:group:add
 
@@ -694,15 +655,11 @@ apiInstance.postGroups(body)
 # GroupsSearchResponse postGroupsSearch(body)
 
 
-
 POST /api/v2/groups/search
 
 Search groups
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -746,14 +703,11 @@ apiInstance.postGroupsSearch(body)
 # Group putGroup(groupId, opts)
 
 
-
 PUT /api/v2/groups/{groupId}
 
 Update group
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * directory:group:edit
 

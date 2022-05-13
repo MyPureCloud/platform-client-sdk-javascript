@@ -5,7 +5,7 @@ class LearningApi {
 	/**
 	 * Learning service.
 	 * @module purecloud-platform-client-v2/api/LearningApi
-	 * @version 136.1.0
+	 * @version 137.0.0
 	 */
 
 	/**
@@ -34,13 +34,13 @@ class LearningApi {
 		return this.apiClient.callApi(
 			'/api/v2/learning/assignments/{assignmentId}', 
 			'DELETE', 
-			{ 'assignmentId': assignmentId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'assignmentId': assignmentId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -59,13 +59,13 @@ class LearningApi {
 		return this.apiClient.callApi(
 			'/api/v2/learning/modules/{moduleId}', 
 			'DELETE', 
-			{ 'moduleId': moduleId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'moduleId': moduleId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -88,13 +88,13 @@ class LearningApi {
 		return this.apiClient.callApi(
 			'/api/v2/learning/assignments/{assignmentId}', 
 			'GET', 
-			{ 'assignmentId': assignmentId }, 
-			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') }, 
-			{  }, 
-			{  }, 
+			{ 'assignmentId': assignmentId },
+			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -106,10 +106,10 @@ class LearningApi {
 	 * @param {String} opts.moduleId Specifies the ID of the learning module. Fetch assignments for learning module ID
 	 * @param {String} opts.interval Specifies the range of dueDates to be queried. Milliseconds will be truncated. A maximum of 1 year can be specified in the range. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
 	 * @param {String} opts.completionInterval Specifies the range of completion dates to be used for filtering. A maximum of 1 year can be specified in the range. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
-	 * @param {Object} opts.overdue Specifies if only the non-overdue (overdue is \&quot;False\&quot;) or overdue (overdue is \&quot;True\&quot;) assignments are returned. If overdue is \&quot;Any\&quot; or if the overdue parameter is not supplied, all assignments are returned (default to Any)
+	 * @param {Object} opts.overdue Specifies if only the non-overdue (overdue is False) or overdue (overdue is True) assignments are returned. If overdue is Any or if the overdue parameter is not supplied, all assignments are returned (default to Any)
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
-	 * @param {Object} opts.pass Specifies if only the failed (pass is \&quot;False\&quot;) or passed (pass is \&quot;True\&quot;) assignments (completed with assessment)are returned. If pass is \&quot;Any\&quot; or if the pass parameter is not supplied, all assignments are returned (default to Any)
+	 * @param {Object} opts.pass Specifies if only the failed (pass is False) or passed (pass is True) assignments (completed with assessment)are returned. If pass is Any or if the pass parameter is not supplied, all assignments are returned (default to Any)
 	 * @param {Number} opts.minPercentageScore The minimum assessment score for an assignment (completed with assessment) to be included in the results (inclusive)
 	 * @param {Number} opts.maxPercentageScore The maximum assessment score for an assignment (completed with assessment) to be included in the results (inclusive)
 	 * @param {Object} opts.sortOrder Specifies result set sort order; if not specified, default sort order is descending (Desc) (default to Desc)
@@ -126,13 +126,13 @@ class LearningApi {
 		return this.apiClient.callApi(
 			'/api/v2/learning/assignments', 
 			'GET', 
-			{  }, 
-			{ 'moduleId': opts['moduleId'],'interval': opts['interval'],'completionInterval': opts['completionInterval'],'overdue': opts['overdue'],'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'pass': opts['pass'],'minPercentageScore': opts['minPercentageScore'],'maxPercentageScore': opts['maxPercentageScore'],'sortOrder': opts['sortOrder'],'sortBy': opts['sortBy'],'userId': this.apiClient.buildCollectionParam(opts['userId'], 'multi'),'types': this.apiClient.buildCollectionParam(opts['types'], 'multi'),'states': this.apiClient.buildCollectionParam(opts['states'], 'multi'),'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'moduleId': opts['moduleId'],'interval': opts['interval'],'completionInterval': opts['completionInterval'],'overdue': opts['overdue'],'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'pass': opts['pass'],'minPercentageScore': opts['minPercentageScore'],'maxPercentageScore': opts['maxPercentageScore'],'sortOrder': opts['sortOrder'],'sortBy': opts['sortBy'],'userId': this.apiClient.buildCollectionParam(opts['userId'], 'multi'),'types': this.apiClient.buildCollectionParam(opts['types'], 'multi'),'states': this.apiClient.buildCollectionParam(opts['states'], 'multi'),'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -144,10 +144,10 @@ class LearningApi {
 	 * @param {String} opts.moduleId Specifies the ID of the learning module. Fetch assignments for learning module ID
 	 * @param {String} opts.interval Specifies the range of dueDates to be queried. Milliseconds will be truncated. A maximum of 1 year can be specified in the range. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
 	 * @param {String} opts.completionInterval Specifies the range of completion dates to be used for filtering. A maximum of 1 year can be specified in the range. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
-	 * @param {Object} opts.overdue Specifies if only the non-overdue (overdue is \&quot;False\&quot;) or overdue (overdue is \&quot;True\&quot;) assignments are returned. If overdue is \&quot;Any\&quot; or if the overdue parameter is not supplied, all assignments are returned (default to Any)
+	 * @param {Object} opts.overdue Specifies if only the non-overdue (overdue is False) or overdue (overdue is True) assignments are returned. If overdue is Any or if the overdue parameter is not supplied, all assignments are returned (default to Any)
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
-	 * @param {Object} opts.pass Specifies if only the failed (pass is \&quot;False\&quot;) or passed (pass is \&quot;True\&quot;) assignments (completed with assessment)are returned. If pass is \&quot;Any\&quot; or if the pass parameter is not supplied, all assignments are returned (default to Any)
+	 * @param {Object} opts.pass Specifies if only the failed (pass is False) or passed (pass is True) assignments (completed with assessment)are returned. If pass is Any or if the pass parameter is not supplied, all assignments are returned (default to Any)
 	 * @param {Number} opts.minPercentageScore The minimum assessment score for an assignment (completed with assessment) to be included in the results (inclusive)
 	 * @param {Number} opts.maxPercentageScore The maximum assessment score for an assignment (completed with assessment) to be included in the results (inclusive)
 	 * @param {Object} opts.sortOrder Specifies result set sort order; if not specified, default sort order is descending (Desc) (default to Desc)
@@ -163,13 +163,13 @@ class LearningApi {
 		return this.apiClient.callApi(
 			'/api/v2/learning/assignments/me', 
 			'GET', 
-			{  }, 
-			{ 'moduleId': opts['moduleId'],'interval': opts['interval'],'completionInterval': opts['completionInterval'],'overdue': opts['overdue'],'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'pass': opts['pass'],'minPercentageScore': opts['minPercentageScore'],'maxPercentageScore': opts['maxPercentageScore'],'sortOrder': opts['sortOrder'],'sortBy': opts['sortBy'],'types': this.apiClient.buildCollectionParam(opts['types'], 'multi'),'states': this.apiClient.buildCollectionParam(opts['states'], 'multi'),'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'moduleId': opts['moduleId'],'interval': opts['interval'],'completionInterval': opts['completionInterval'],'overdue': opts['overdue'],'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'pass': opts['pass'],'minPercentageScore': opts['minPercentageScore'],'maxPercentageScore': opts['maxPercentageScore'],'sortOrder': opts['sortOrder'],'sortBy': opts['sortBy'],'types': this.apiClient.buildCollectionParam(opts['types'], 'multi'),'states': this.apiClient.buildCollectionParam(opts['states'], 'multi'),'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -192,13 +192,13 @@ class LearningApi {
 		return this.apiClient.callApi(
 			'/api/v2/learning/modules/{moduleId}', 
 			'GET', 
-			{ 'moduleId': moduleId }, 
-			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') }, 
-			{  }, 
-			{  }, 
+			{ 'moduleId': moduleId },
+			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -217,13 +217,13 @@ class LearningApi {
 		return this.apiClient.callApi(
 			'/api/v2/learning/modules/{moduleId}/rule', 
 			'GET', 
-			{ 'moduleId': moduleId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'moduleId': moduleId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -251,13 +251,13 @@ class LearningApi {
 		return this.apiClient.callApi(
 			'/api/v2/learning/modules/{moduleId}/versions/{versionId}', 
 			'GET', 
-			{ 'moduleId': moduleId,'versionId': versionId }, 
-			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') }, 
-			{  }, 
-			{  }, 
+			{ 'moduleId': moduleId,'versionId': versionId },
+			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -274,7 +274,7 @@ class LearningApi {
 	 * @param {Object} opts.sortBy Sort by (default to name)
 	 * @param {String} opts.searchTerm Search Term (searchable by name)
 	 * @param {Array.<String>} opts.expand Fields to expand in response(case insensitive)
-	 * @param {Object} opts.isPublished Specifies if only the Unpublished (isPublished is \&quot;False\&quot;) or Published (isPublished is \&quot;True\&quot;) modules are returned. If isPublished is \&quot;Any\&quot; or omitted, both types are returned (default to Any)
+	 * @param {Object} opts.isPublished Specifies if only the Unpublished (isPublished is False) or Published (isPublished is True) modules are returned. If isPublished is Any or omitted, both types are returned (default to Any)
 	 */
 	getLearningModules(opts) { 
 		opts = opts || {};
@@ -283,13 +283,13 @@ class LearningApi {
 		return this.apiClient.callApi(
 			'/api/v2/learning/modules', 
 			'GET', 
-			{  }, 
-			{ 'isArchived': opts['isArchived'],'types': this.apiClient.buildCollectionParam(opts['types'], 'multi'),'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortOrder': opts['sortOrder'],'sortBy': opts['sortBy'],'searchTerm': opts['searchTerm'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'isPublished': opts['isPublished'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'isArchived': opts['isArchived'],'types': this.apiClient.buildCollectionParam(opts['types'], 'multi'),'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortOrder': opts['sortOrder'],'sortBy': opts['sortBy'],'searchTerm': opts['searchTerm'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'isPublished': opts['isPublished'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -312,13 +312,13 @@ class LearningApi {
 		return this.apiClient.callApi(
 			'/api/v2/learning/assignments/{assignmentId}', 
 			'PATCH', 
-			{ 'assignmentId': assignmentId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'assignmentId': assignmentId },
+			{  },
+			{  },
+			{  },
 			opts['body'], 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -337,13 +337,13 @@ class LearningApi {
 		return this.apiClient.callApi(
 			'/api/v2/learning/assessments/scoring', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -361,13 +361,13 @@ class LearningApi {
 		return this.apiClient.callApi(
 			'/api/v2/learning/assignments', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			opts['body'], 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -386,13 +386,13 @@ class LearningApi {
 		return this.apiClient.callApi(
 			'/api/v2/learning/assignments/aggregates/query', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -410,13 +410,13 @@ class LearningApi {
 		return this.apiClient.callApi(
 			'/api/v2/learning/assignments/bulkadd', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			opts['body'], 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -425,7 +425,7 @@ class LearningApi {
 	 * Remove multiple Learning Assignments
 	 * 
 	 * @param {Object} opts Optional parameters
-	 * @param {Array.<Object>} opts.body The IDs of the learning assignments to be removed
+	 * @param {Array.<String>} opts.body The IDs of the learning assignments to be removed
 	 */
 	postLearningAssignmentsBulkremove(opts) { 
 		opts = opts || {};
@@ -434,13 +434,13 @@ class LearningApi {
 		return this.apiClient.callApi(
 			'/api/v2/learning/assignments/bulkremove', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			opts['body'], 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -459,13 +459,13 @@ class LearningApi {
 		return this.apiClient.callApi(
 			'/api/v2/learning/modules/{moduleId}/publish', 
 			'POST', 
-			{ 'moduleId': moduleId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'moduleId': moduleId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -484,13 +484,13 @@ class LearningApi {
 		return this.apiClient.callApi(
 			'/api/v2/learning/modules', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -519,13 +519,13 @@ class LearningApi {
 		return this.apiClient.callApi(
 			'/api/v2/learning/rules/query', 
 			'POST', 
-			{  }, 
-			{ 'pageSize': pageSize,'pageNumber': pageNumber }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'pageSize': pageSize,'pageNumber': pageNumber },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -549,13 +549,13 @@ class LearningApi {
 		return this.apiClient.callApi(
 			'/api/v2/learning/modules/{moduleId}', 
 			'PUT', 
-			{ 'moduleId': moduleId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'moduleId': moduleId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -579,13 +579,13 @@ class LearningApi {
 		return this.apiClient.callApi(
 			'/api/v2/learning/modules/{moduleId}/rule', 
 			'PUT', 
-			{ 'moduleId': moduleId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'moduleId': moduleId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}

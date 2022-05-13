@@ -5,7 +5,7 @@ class IdentityProviderApi {
 	/**
 	 * IdentityProvider service.
 	 * @module purecloud-platform-client-v2/api/IdentityProviderApi
-	 * @version 136.1.0
+	 * @version 137.0.0
 	 */
 
 	/**
@@ -29,13 +29,13 @@ class IdentityProviderApi {
 		return this.apiClient.callApi(
 			'/api/v2/identityproviders/adfs', 
 			'DELETE', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -49,13 +49,13 @@ class IdentityProviderApi {
 		return this.apiClient.callApi(
 			'/api/v2/identityproviders/cic', 
 			'DELETE', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -69,13 +69,13 @@ class IdentityProviderApi {
 		return this.apiClient.callApi(
 			'/api/v2/identityproviders/generic', 
 			'DELETE', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -89,13 +89,13 @@ class IdentityProviderApi {
 		return this.apiClient.callApi(
 			'/api/v2/identityproviders/gsuite', 
 			'DELETE', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -109,13 +109,13 @@ class IdentityProviderApi {
 		return this.apiClient.callApi(
 			'/api/v2/identityproviders/identitynow', 
 			'DELETE', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -129,13 +129,13 @@ class IdentityProviderApi {
 		return this.apiClient.callApi(
 			'/api/v2/identityproviders/okta', 
 			'DELETE', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -149,13 +149,13 @@ class IdentityProviderApi {
 		return this.apiClient.callApi(
 			'/api/v2/identityproviders/onelogin', 
 			'DELETE', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -169,13 +169,13 @@ class IdentityProviderApi {
 		return this.apiClient.callApi(
 			'/api/v2/identityproviders/ping', 
 			'DELETE', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -189,13 +189,13 @@ class IdentityProviderApi {
 		return this.apiClient.callApi(
 			'/api/v2/identityproviders/purecloud', 
 			'DELETE', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -209,13 +209,13 @@ class IdentityProviderApi {
 		return this.apiClient.callApi(
 			'/api/v2/identityproviders/pureengage', 
 			'DELETE', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -229,13 +229,13 @@ class IdentityProviderApi {
 		return this.apiClient.callApi(
 			'/api/v2/identityproviders/salesforce', 
 			'DELETE', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -249,13 +249,13 @@ class IdentityProviderApi {
 		return this.apiClient.callApi(
 			'/api/v2/identityproviders', 
 			'GET', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -269,13 +269,13 @@ class IdentityProviderApi {
 		return this.apiClient.callApi(
 			'/api/v2/identityproviders/adfs', 
 			'GET', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -289,13 +289,13 @@ class IdentityProviderApi {
 		return this.apiClient.callApi(
 			'/api/v2/identityproviders/cic', 
 			'GET', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -309,13 +309,13 @@ class IdentityProviderApi {
 		return this.apiClient.callApi(
 			'/api/v2/identityproviders/generic', 
 			'GET', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -329,13 +329,13 @@ class IdentityProviderApi {
 		return this.apiClient.callApi(
 			'/api/v2/identityproviders/gsuite', 
 			'GET', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -349,13 +349,13 @@ class IdentityProviderApi {
 		return this.apiClient.callApi(
 			'/api/v2/identityproviders/identitynow', 
 			'GET', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -369,13 +369,13 @@ class IdentityProviderApi {
 		return this.apiClient.callApi(
 			'/api/v2/identityproviders/okta', 
 			'GET', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -389,13 +389,13 @@ class IdentityProviderApi {
 		return this.apiClient.callApi(
 			'/api/v2/identityproviders/onelogin', 
 			'GET', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -409,13 +409,13 @@ class IdentityProviderApi {
 		return this.apiClient.callApi(
 			'/api/v2/identityproviders/ping', 
 			'GET', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -429,13 +429,13 @@ class IdentityProviderApi {
 		return this.apiClient.callApi(
 			'/api/v2/identityproviders/purecloud', 
 			'GET', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -449,13 +449,13 @@ class IdentityProviderApi {
 		return this.apiClient.callApi(
 			'/api/v2/identityproviders/pureengage', 
 			'GET', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -469,13 +469,13 @@ class IdentityProviderApi {
 		return this.apiClient.callApi(
 			'/api/v2/identityproviders/salesforce', 
 			'GET', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -494,13 +494,13 @@ class IdentityProviderApi {
 		return this.apiClient.callApi(
 			'/api/v2/identityproviders/adfs', 
 			'PUT', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -519,13 +519,13 @@ class IdentityProviderApi {
 		return this.apiClient.callApi(
 			'/api/v2/identityproviders/cic', 
 			'PUT', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -544,13 +544,13 @@ class IdentityProviderApi {
 		return this.apiClient.callApi(
 			'/api/v2/identityproviders/generic', 
 			'PUT', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -569,13 +569,13 @@ class IdentityProviderApi {
 		return this.apiClient.callApi(
 			'/api/v2/identityproviders/gsuite', 
 			'PUT', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -594,13 +594,13 @@ class IdentityProviderApi {
 		return this.apiClient.callApi(
 			'/api/v2/identityproviders/identitynow', 
 			'PUT', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -619,13 +619,13 @@ class IdentityProviderApi {
 		return this.apiClient.callApi(
 			'/api/v2/identityproviders/okta', 
 			'PUT', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -644,13 +644,13 @@ class IdentityProviderApi {
 		return this.apiClient.callApi(
 			'/api/v2/identityproviders/onelogin', 
 			'PUT', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -669,13 +669,13 @@ class IdentityProviderApi {
 		return this.apiClient.callApi(
 			'/api/v2/identityproviders/ping', 
 			'PUT', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -694,13 +694,13 @@ class IdentityProviderApi {
 		return this.apiClient.callApi(
 			'/api/v2/identityproviders/purecloud', 
 			'PUT', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -719,13 +719,13 @@ class IdentityProviderApi {
 		return this.apiClient.callApi(
 			'/api/v2/identityproviders/pureengage', 
 			'PUT', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -744,13 +744,13 @@ class IdentityProviderApi {
 		return this.apiClient.callApi(
 			'/api/v2/identityproviders/salesforce', 
 			'PUT', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}

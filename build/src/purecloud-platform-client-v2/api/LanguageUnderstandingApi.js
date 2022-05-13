@@ -5,7 +5,7 @@ class LanguageUnderstandingApi {
 	/**
 	 * LanguageUnderstanding service.
 	 * @module purecloud-platform-client-v2/api/LanguageUnderstandingApi
-	 * @version 136.1.0
+	 * @version 137.0.0
 	 */
 
 	/**
@@ -34,13 +34,13 @@ class LanguageUnderstandingApi {
 		return this.apiClient.callApi(
 			'/api/v2/languageunderstanding/domains/{domainId}', 
 			'DELETE', 
-			{ 'domainId': domainId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'domainId': domainId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -64,13 +64,13 @@ class LanguageUnderstandingApi {
 		return this.apiClient.callApi(
 			'/api/v2/languageunderstanding/domains/{domainId}/feedback/{feedbackId}', 
 			'DELETE', 
-			{ 'domainId': domainId,'feedbackId': feedbackId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'domainId': domainId,'feedbackId': feedbackId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -94,13 +94,13 @@ class LanguageUnderstandingApi {
 		return this.apiClient.callApi(
 			'/api/v2/languageunderstanding/domains/{domainId}/versions/{domainVersionId}', 
 			'DELETE', 
-			{ 'domainId': domainId,'domainVersionId': domainVersionId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'domainId': domainId,'domainVersionId': domainVersionId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -119,13 +119,13 @@ class LanguageUnderstandingApi {
 		return this.apiClient.callApi(
 			'/api/v2/languageunderstanding/miners/{minerId}', 
 			'DELETE', 
-			{ 'minerId': minerId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'minerId': minerId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -149,13 +149,13 @@ class LanguageUnderstandingApi {
 		return this.apiClient.callApi(
 			'/api/v2/languageunderstanding/miners/{minerId}/drafts/{draftId}', 
 			'DELETE', 
-			{ 'minerId': minerId,'draftId': draftId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'minerId': minerId,'draftId': draftId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -174,13 +174,13 @@ class LanguageUnderstandingApi {
 		return this.apiClient.callApi(
 			'/api/v2/languageunderstanding/domains/{domainId}', 
 			'GET', 
-			{ 'domainId': domainId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'domainId': domainId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -212,13 +212,13 @@ class LanguageUnderstandingApi {
 		return this.apiClient.callApi(
 			'/api/v2/languageunderstanding/domains/{domainId}/feedback', 
 			'GET', 
-			{ 'domainId': domainId }, 
-			{ 'intentName': opts['intentName'],'assessment': opts['assessment'],'dateStart': opts['dateStart'],'dateEnd': opts['dateEnd'],'includeDeleted': opts['includeDeleted'],'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'enableCursorPagination': opts['enableCursorPagination'],'after': opts['after'],'fields': this.apiClient.buildCollectionParam(opts['fields'], 'multi') }, 
-			{  }, 
-			{  }, 
+			{ 'domainId': domainId },
+			{ 'intentName': opts['intentName'],'assessment': opts['assessment'],'dateStart': opts['dateStart'],'dateEnd': opts['dateEnd'],'includeDeleted': opts['includeDeleted'],'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'enableCursorPagination': opts['enableCursorPagination'],'after': opts['after'],'fields': this.apiClient.buildCollectionParam(opts['fields'], 'multi') },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -246,13 +246,13 @@ class LanguageUnderstandingApi {
 		return this.apiClient.callApi(
 			'/api/v2/languageunderstanding/domains/{domainId}/feedback/{feedbackId}', 
 			'GET', 
-			{ 'domainId': domainId,'feedbackId': feedbackId }, 
-			{ 'fields': this.apiClient.buildCollectionParam(opts['fields'], 'multi') }, 
-			{  }, 
-			{  }, 
+			{ 'domainId': domainId,'feedbackId': feedbackId },
+			{ 'fields': this.apiClient.buildCollectionParam(opts['fields'], 'multi') },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -280,13 +280,13 @@ class LanguageUnderstandingApi {
 		return this.apiClient.callApi(
 			'/api/v2/languageunderstanding/domains/{domainId}/versions/{domainVersionId}', 
 			'GET', 
-			{ 'domainId': domainId,'domainVersionId': domainVersionId }, 
-			{ 'includeUtterances': opts['includeUtterances'] }, 
-			{  }, 
-			{  }, 
+			{ 'domainId': domainId,'domainVersionId': domainVersionId },
+			{ 'includeUtterances': opts['includeUtterances'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -310,13 +310,13 @@ class LanguageUnderstandingApi {
 		return this.apiClient.callApi(
 			'/api/v2/languageunderstanding/domains/{domainId}/versions/{domainVersionId}/report', 
 			'GET', 
-			{ 'domainId': domainId,'domainVersionId': domainVersionId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'domainId': domainId,'domainVersionId': domainVersionId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -341,13 +341,13 @@ class LanguageUnderstandingApi {
 		return this.apiClient.callApi(
 			'/api/v2/languageunderstanding/domains/{domainId}/versions', 
 			'GET', 
-			{ 'domainId': domainId }, 
-			{ 'includeUtterances': opts['includeUtterances'],'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'] }, 
-			{  }, 
-			{  }, 
+			{ 'domainId': domainId },
+			{ 'includeUtterances': opts['includeUtterances'],'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -366,13 +366,13 @@ class LanguageUnderstandingApi {
 		return this.apiClient.callApi(
 			'/api/v2/languageunderstanding/domains', 
 			'GET', 
-			{  }, 
-			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -391,13 +391,13 @@ class LanguageUnderstandingApi {
 		return this.apiClient.callApi(
 			'/api/v2/languageunderstanding/miners/{minerId}', 
 			'GET', 
-			{ 'minerId': minerId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'minerId': minerId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -421,13 +421,13 @@ class LanguageUnderstandingApi {
 		return this.apiClient.callApi(
 			'/api/v2/languageunderstanding/miners/{minerId}/drafts/{draftId}', 
 			'GET', 
-			{ 'minerId': minerId,'draftId': draftId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'minerId': minerId,'draftId': draftId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -446,13 +446,13 @@ class LanguageUnderstandingApi {
 		return this.apiClient.callApi(
 			'/api/v2/languageunderstanding/miners/{minerId}/drafts', 
 			'GET', 
-			{ 'minerId': minerId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'minerId': minerId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -480,13 +480,13 @@ class LanguageUnderstandingApi {
 		return this.apiClient.callApi(
 			'/api/v2/languageunderstanding/miners/{minerId}/intents/{intentId}', 
 			'GET', 
-			{ 'minerId': minerId,'intentId': intentId }, 
-			{ 'expand': opts['expand'] }, 
-			{  }, 
-			{  }, 
+			{ 'minerId': minerId,'intentId': intentId },
+			{ 'expand': opts['expand'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -509,13 +509,13 @@ class LanguageUnderstandingApi {
 		return this.apiClient.callApi(
 			'/api/v2/languageunderstanding/miners/{minerId}/intents', 
 			'GET', 
-			{ 'minerId': minerId }, 
-			{ 'expand': opts['expand'] }, 
-			{  }, 
-			{  }, 
+			{ 'minerId': minerId },
+			{ 'expand': opts['expand'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -529,13 +529,13 @@ class LanguageUnderstandingApi {
 		return this.apiClient.callApi(
 			'/api/v2/languageunderstanding/miners', 
 			'GET', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -559,13 +559,13 @@ class LanguageUnderstandingApi {
 		return this.apiClient.callApi(
 			'/api/v2/languageunderstanding/domains/{domainId}', 
 			'PATCH', 
-			{ 'domainId': domainId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'domainId': domainId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -593,13 +593,13 @@ class LanguageUnderstandingApi {
 		return this.apiClient.callApi(
 			'/api/v2/languageunderstanding/miners/{minerId}/drafts/{draftId}', 
 			'PATCH', 
-			{ 'minerId': minerId,'draftId': draftId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'minerId': minerId,'draftId': draftId },
+			{  },
+			{  },
+			{  },
 			opts['body'], 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -623,13 +623,13 @@ class LanguageUnderstandingApi {
 		return this.apiClient.callApi(
 			'/api/v2/languageunderstanding/domains/{domainId}/feedback', 
 			'POST', 
-			{ 'domainId': domainId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'domainId': domainId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -658,13 +658,13 @@ class LanguageUnderstandingApi {
 		return this.apiClient.callApi(
 			'/api/v2/languageunderstanding/domains/{domainId}/versions/{domainVersionId}/detect', 
 			'POST', 
-			{ 'domainId': domainId,'domainVersionId': domainVersionId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'domainId': domainId,'domainVersionId': domainVersionId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -688,13 +688,13 @@ class LanguageUnderstandingApi {
 		return this.apiClient.callApi(
 			'/api/v2/languageunderstanding/domains/{domainId}/versions/{domainVersionId}/publish', 
 			'POST', 
-			{ 'domainId': domainId,'domainVersionId': domainVersionId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'domainId': domainId,'domainVersionId': domainVersionId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -718,13 +718,13 @@ class LanguageUnderstandingApi {
 		return this.apiClient.callApi(
 			'/api/v2/languageunderstanding/domains/{domainId}/versions/{domainVersionId}/train', 
 			'POST', 
-			{ 'domainId': domainId,'domainVersionId': domainVersionId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'domainId': domainId,'domainVersionId': domainVersionId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -748,13 +748,13 @@ class LanguageUnderstandingApi {
 		return this.apiClient.callApi(
 			'/api/v2/languageunderstanding/domains/{domainId}/versions', 
 			'POST', 
-			{ 'domainId': domainId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'domainId': domainId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -773,13 +773,13 @@ class LanguageUnderstandingApi {
 		return this.apiClient.callApi(
 			'/api/v2/languageunderstanding/domains', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -803,13 +803,13 @@ class LanguageUnderstandingApi {
 		return this.apiClient.callApi(
 			'/api/v2/languageunderstanding/miners/{minerId}/drafts', 
 			'POST', 
-			{ 'minerId': minerId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'minerId': minerId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -832,13 +832,13 @@ class LanguageUnderstandingApi {
 		return this.apiClient.callApi(
 			'/api/v2/languageunderstanding/miners/{minerId}/execute', 
 			'POST', 
-			{ 'minerId': minerId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'minerId': minerId },
+			{  },
+			{  },
+			{  },
 			opts['body'], 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -857,13 +857,13 @@ class LanguageUnderstandingApi {
 		return this.apiClient.callApi(
 			'/api/v2/languageunderstanding/miners', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -892,13 +892,13 @@ class LanguageUnderstandingApi {
 		return this.apiClient.callApi(
 			'/api/v2/languageunderstanding/domains/{domainId}/versions/{domainVersionId}', 
 			'PUT', 
-			{ 'domainId': domainId,'domainVersionId': domainVersionId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'domainId': domainId,'domainVersionId': domainVersionId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}

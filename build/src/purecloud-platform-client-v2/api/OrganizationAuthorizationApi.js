@@ -5,7 +5,7 @@ class OrganizationAuthorizationApi {
 	/**
 	 * OrganizationAuthorization service.
 	 * @module purecloud-platform-client-v2/api/OrganizationAuthorizationApi
-	 * @version 136.1.0
+	 * @version 137.0.0
 	 */
 
 	/**
@@ -34,13 +34,13 @@ class OrganizationAuthorizationApi {
 		return this.apiClient.callApi(
 			'/api/v2/orgauthorization/trustees/{trusteeOrgId}', 
 			'DELETE', 
-			{ 'trusteeOrgId': trusteeOrgId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'trusteeOrgId': trusteeOrgId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -64,13 +64,13 @@ class OrganizationAuthorizationApi {
 		return this.apiClient.callApi(
 			'/api/v2/orgauthorization/trustees/{trusteeOrgId}/clonedusers/{trusteeUserId}', 
 			'DELETE', 
-			{ 'trusteeOrgId': trusteeOrgId,'trusteeUserId': trusteeUserId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'trusteeOrgId': trusteeOrgId,'trusteeUserId': trusteeUserId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -94,13 +94,13 @@ class OrganizationAuthorizationApi {
 		return this.apiClient.callApi(
 			'/api/v2/orgauthorization/trustees/{trusteeOrgId}/users/{trusteeUserId}', 
 			'DELETE', 
-			{ 'trusteeOrgId': trusteeOrgId,'trusteeUserId': trusteeUserId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'trusteeOrgId': trusteeOrgId,'trusteeUserId': trusteeUserId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -124,13 +124,13 @@ class OrganizationAuthorizationApi {
 		return this.apiClient.callApi(
 			'/api/v2/orgauthorization/trustees/{trusteeOrgId}/users/{trusteeUserId}/roles', 
 			'DELETE', 
-			{ 'trusteeOrgId': trusteeOrgId,'trusteeUserId': trusteeUserId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'trusteeOrgId': trusteeOrgId,'trusteeUserId': trusteeUserId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -149,13 +149,13 @@ class OrganizationAuthorizationApi {
 		return this.apiClient.callApi(
 			'/api/v2/orgauthorization/trustors/{trustorOrgId}', 
 			'DELETE', 
-			{ 'trustorOrgId': trustorOrgId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'trustorOrgId': trustorOrgId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -179,13 +179,13 @@ class OrganizationAuthorizationApi {
 		return this.apiClient.callApi(
 			'/api/v2/orgauthorization/trustors/{trustorOrgId}/clonedusers/{trusteeUserId}', 
 			'DELETE', 
-			{ 'trustorOrgId': trustorOrgId,'trusteeUserId': trusteeUserId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'trustorOrgId': trustorOrgId,'trusteeUserId': trusteeUserId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -209,13 +209,13 @@ class OrganizationAuthorizationApi {
 		return this.apiClient.callApi(
 			'/api/v2/orgauthorization/trustors/{trustorOrgId}/users/{trusteeUserId}', 
 			'DELETE', 
-			{ 'trustorOrgId': trustorOrgId,'trusteeUserId': trusteeUserId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'trustorOrgId': trustorOrgId,'trusteeUserId': trusteeUserId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -234,13 +234,13 @@ class OrganizationAuthorizationApi {
 		return this.apiClient.callApi(
 			'/api/v2/orgauthorization/pairings/{pairingId}', 
 			'GET', 
-			{ 'pairingId': pairingId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'pairingId': pairingId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -259,13 +259,13 @@ class OrganizationAuthorizationApi {
 		return this.apiClient.callApi(
 			'/api/v2/orgauthorization/trustees/{trusteeOrgId}', 
 			'GET', 
-			{ 'trusteeOrgId': trusteeOrgId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'trusteeOrgId': trusteeOrgId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -284,13 +284,13 @@ class OrganizationAuthorizationApi {
 		return this.apiClient.callApi(
 			'/api/v2/orgauthorization/trustees/{trusteeOrgId}/clonedusers', 
 			'GET', 
-			{ 'trusteeOrgId': trusteeOrgId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'trusteeOrgId': trusteeOrgId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -314,13 +314,13 @@ class OrganizationAuthorizationApi {
 		return this.apiClient.callApi(
 			'/api/v2/orgauthorization/trustees/{trusteeOrgId}/users/{trusteeUserId}', 
 			'GET', 
-			{ 'trusteeOrgId': trusteeOrgId,'trusteeUserId': trusteeUserId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'trusteeOrgId': trusteeOrgId,'trusteeUserId': trusteeUserId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -344,13 +344,13 @@ class OrganizationAuthorizationApi {
 		return this.apiClient.callApi(
 			'/api/v2/orgauthorization/trustees/{trusteeOrgId}/users/{trusteeUserId}/roles', 
 			'GET', 
-			{ 'trusteeOrgId': trusteeOrgId,'trusteeUserId': trusteeUserId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'trusteeOrgId': trusteeOrgId,'trusteeUserId': trusteeUserId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -374,13 +374,13 @@ class OrganizationAuthorizationApi {
 		return this.apiClient.callApi(
 			'/api/v2/orgauthorization/trustees/{trusteeOrgId}/users', 
 			'GET', 
-			{ 'trusteeOrgId': trusteeOrgId }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] }, 
-			{  }, 
-			{  }, 
+			{ 'trusteeOrgId': trusteeOrgId },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -399,13 +399,13 @@ class OrganizationAuthorizationApi {
 		return this.apiClient.callApi(
 			'/api/v2/orgauthorization/trustees', 
 			'GET', 
-			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -419,13 +419,13 @@ class OrganizationAuthorizationApi {
 		return this.apiClient.callApi(
 			'/api/v2/orgauthorization/trustees/default', 
 			'GET', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -444,13 +444,13 @@ class OrganizationAuthorizationApi {
 		return this.apiClient.callApi(
 			'/api/v2/orgauthorization/trustors/{trustorOrgId}', 
 			'GET', 
-			{ 'trustorOrgId': trustorOrgId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'trustorOrgId': trustorOrgId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -474,13 +474,13 @@ class OrganizationAuthorizationApi {
 		return this.apiClient.callApi(
 			'/api/v2/orgauthorization/trustors/{trustorOrgId}/clonedusers/{trusteeUserId}', 
 			'GET', 
-			{ 'trustorOrgId': trustorOrgId,'trusteeUserId': trusteeUserId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'trustorOrgId': trustorOrgId,'trusteeUserId': trusteeUserId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -499,13 +499,13 @@ class OrganizationAuthorizationApi {
 		return this.apiClient.callApi(
 			'/api/v2/orgauthorization/trustors/{trustorOrgId}/clonedusers', 
 			'GET', 
-			{ 'trustorOrgId': trustorOrgId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'trustorOrgId': trustorOrgId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -529,13 +529,13 @@ class OrganizationAuthorizationApi {
 		return this.apiClient.callApi(
 			'/api/v2/orgauthorization/trustors/{trustorOrgId}/users/{trusteeUserId}', 
 			'GET', 
-			{ 'trustorOrgId': trustorOrgId,'trusteeUserId': trusteeUserId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'trustorOrgId': trustorOrgId,'trusteeUserId': trusteeUserId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -559,13 +559,13 @@ class OrganizationAuthorizationApi {
 		return this.apiClient.callApi(
 			'/api/v2/orgauthorization/trustors/{trustorOrgId}/users', 
 			'GET', 
-			{ 'trustorOrgId': trustorOrgId }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] }, 
-			{  }, 
-			{  }, 
+			{ 'trustorOrgId': trustorOrgId },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -584,13 +584,13 @@ class OrganizationAuthorizationApi {
 		return this.apiClient.callApi(
 			'/api/v2/orgauthorization/trustors', 
 			'GET', 
-			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -609,13 +609,13 @@ class OrganizationAuthorizationApi {
 		return this.apiClient.callApi(
 			'/api/v2/orgauthorization/pairings', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -639,13 +639,13 @@ class OrganizationAuthorizationApi {
 		return this.apiClient.callApi(
 			'/api/v2/orgauthorization/trustees/{trusteeOrgId}/users', 
 			'POST', 
-			{ 'trusteeOrgId': trusteeOrgId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'trusteeOrgId': trusteeOrgId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -664,13 +664,13 @@ class OrganizationAuthorizationApi {
 		return this.apiClient.callApi(
 			'/api/v2/orgauthorization/trustees', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -696,13 +696,13 @@ class OrganizationAuthorizationApi {
 		return this.apiClient.callApi(
 			'/api/v2/orgauthorization/trustees/audits', 
 			'POST', 
-			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -721,13 +721,13 @@ class OrganizationAuthorizationApi {
 		return this.apiClient.callApi(
 			'/api/v2/orgauthorization/trustees/default', 
 			'POST', 
-			{  }, 
-			{ 'assignDefaultRole': opts['assignDefaultRole'],'autoExpire': opts['autoExpire'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'assignDefaultRole': opts['assignDefaultRole'],'autoExpire': opts['autoExpire'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -753,13 +753,13 @@ class OrganizationAuthorizationApi {
 		return this.apiClient.callApi(
 			'/api/v2/orgauthorization/trustor/audits', 
 			'POST', 
-			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -783,13 +783,13 @@ class OrganizationAuthorizationApi {
 		return this.apiClient.callApi(
 			'/api/v2/orgauthorization/trustees/{trusteeOrgId}', 
 			'PUT', 
-			{ 'trusteeOrgId': trusteeOrgId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'trusteeOrgId': trusteeOrgId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -818,13 +818,13 @@ class OrganizationAuthorizationApi {
 		return this.apiClient.callApi(
 			'/api/v2/orgauthorization/trustees/{trusteeOrgId}/users/{trusteeUserId}/roledivisions', 
 			'PUT', 
-			{ 'trusteeOrgId': trusteeOrgId,'trusteeUserId': trusteeUserId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'trusteeOrgId': trusteeOrgId,'trusteeUserId': trusteeUserId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -834,7 +834,7 @@ class OrganizationAuthorizationApi {
 	 * 
 	 * @param {String} trusteeOrgId Trustee Organization Id
 	 * @param {String} trusteeUserId Trustee User Id
-	 * @param {Array.<Object>} body List of roles
+	 * @param {Array.<String>} body List of roles
 	 */
 	putOrgauthorizationTrusteeUserRoles(trusteeOrgId, trusteeUserId, body) { 
 		// verify the required parameter 'trusteeOrgId' is set
@@ -853,13 +853,13 @@ class OrganizationAuthorizationApi {
 		return this.apiClient.callApi(
 			'/api/v2/orgauthorization/trustees/{trusteeOrgId}/users/{trusteeUserId}/roles', 
 			'PUT', 
-			{ 'trusteeOrgId': trusteeOrgId,'trusteeUserId': trusteeUserId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'trusteeOrgId': trusteeOrgId,'trusteeUserId': trusteeUserId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -883,13 +883,13 @@ class OrganizationAuthorizationApi {
 		return this.apiClient.callApi(
 			'/api/v2/orgauthorization/trustors/{trustorOrgId}/clonedusers/{trusteeUserId}', 
 			'PUT', 
-			{ 'trustorOrgId': trustorOrgId,'trusteeUserId': trusteeUserId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'trustorOrgId': trustorOrgId,'trusteeUserId': trusteeUserId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -913,13 +913,13 @@ class OrganizationAuthorizationApi {
 		return this.apiClient.callApi(
 			'/api/v2/orgauthorization/trustors/{trustorOrgId}/users/{trusteeUserId}', 
 			'PUT', 
-			{ 'trustorOrgId': trustorOrgId,'trusteeUserId': trusteeUserId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'trustorOrgId': trustorOrgId,'trusteeUserId': trusteeUserId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}

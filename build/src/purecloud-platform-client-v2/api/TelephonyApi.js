@@ -5,7 +5,7 @@ class TelephonyApi {
 	/**
 	 * Telephony service.
 	 * @module purecloud-platform-client-v2/api/TelephonyApi
-	 * @version 136.1.0
+	 * @version 137.0.0
 	 */
 
 	/**
@@ -46,13 +46,13 @@ class TelephonyApi {
 		return this.apiClient.callApi(
 			'/api/v2/telephony/siptraces', 
 			'GET', 
-			{  }, 
-			{ 'callId': opts['callId'],'toUser': opts['toUser'],'fromUser': opts['fromUser'],'conversationId': opts['conversationId'],'dateStart': dateStart,'dateEnd': dateEnd }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'callId': opts['callId'],'toUser': opts['toUser'],'fromUser': opts['fromUser'],'conversationId': opts['conversationId'],'dateStart': dateStart,'dateEnd': dateEnd },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -71,13 +71,13 @@ class TelephonyApi {
 		return this.apiClient.callApi(
 			'/api/v2/telephony/siptraces/download/{downloadId}', 
 			'GET', 
-			{ 'downloadId': downloadId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'downloadId': downloadId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -96,13 +96,13 @@ class TelephonyApi {
 		return this.apiClient.callApi(
 			'/api/v2/telephony/siptraces/download', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			sIPSearchPublicRequest, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}

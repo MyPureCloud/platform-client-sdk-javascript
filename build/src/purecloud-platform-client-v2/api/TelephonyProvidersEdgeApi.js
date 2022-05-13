@@ -5,7 +5,7 @@ class TelephonyProvidersEdgeApi {
 	/**
 	 * TelephonyProvidersEdge service.
 	 * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-	 * @version 136.1.0
+	 * @version 137.0.0
 	 */
 
 	/**
@@ -34,13 +34,13 @@ class TelephonyProvidersEdgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/telephony/providers/edges/{edgeId}', 
 			'DELETE', 
-			{ 'edgeId': edgeId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'edgeId': edgeId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -64,13 +64,13 @@ class TelephonyProvidersEdgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/telephony/providers/edges/{edgeId}/logicalinterfaces/{interfaceId}', 
 			'DELETE', 
-			{ 'edgeId': edgeId,'interfaceId': interfaceId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'edgeId': edgeId,'interfaceId': interfaceId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -89,13 +89,13 @@ class TelephonyProvidersEdgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/telephony/providers/edges/{edgeId}/softwareupdate', 
 			'DELETE', 
-			{ 'edgeId': edgeId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'edgeId': edgeId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -114,13 +114,13 @@ class TelephonyProvidersEdgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/telephony/providers/edges/certificateauthorities/{certificateId}', 
 			'DELETE', 
-			{ 'certificateId': certificateId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'certificateId': certificateId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -139,13 +139,13 @@ class TelephonyProvidersEdgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/telephony/providers/edges/didpools/{didPoolId}', 
 			'DELETE', 
-			{ 'didPoolId': didPoolId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'didPoolId': didPoolId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -164,13 +164,13 @@ class TelephonyProvidersEdgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/telephony/providers/edges/edgegroups/{edgeGroupId}', 
 			'DELETE', 
-			{ 'edgeGroupId': edgeGroupId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'edgeGroupId': edgeGroupId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -189,13 +189,13 @@ class TelephonyProvidersEdgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/telephony/providers/edges/extensionpools/{extensionPoolId}', 
 			'DELETE', 
-			{ 'extensionPoolId': extensionPoolId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'extensionPoolId': extensionPoolId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -214,13 +214,13 @@ class TelephonyProvidersEdgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/telephony/providers/edges/outboundroutes/{outboundRouteId}', 
 			'DELETE', 
-			{ 'outboundRouteId': outboundRouteId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'outboundRouteId': outboundRouteId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -239,13 +239,13 @@ class TelephonyProvidersEdgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/telephony/providers/edges/phones/{phoneId}', 
 			'DELETE', 
-			{ 'phoneId': phoneId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'phoneId': phoneId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -264,13 +264,13 @@ class TelephonyProvidersEdgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/telephony/providers/edges/phonebasesettings/{phoneBaseId}', 
 			'DELETE', 
-			{ 'phoneBaseId': phoneBaseId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'phoneBaseId': phoneBaseId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -289,13 +289,13 @@ class TelephonyProvidersEdgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/telephony/providers/edges/sites/{siteId}', 
 			'DELETE', 
-			{ 'siteId': siteId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'siteId': siteId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -319,13 +319,13 @@ class TelephonyProvidersEdgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/telephony/providers/edges/sites/{siteId}/outboundroutes/{outboundRouteId}', 
 			'DELETE', 
-			{ 'siteId': siteId,'outboundRouteId': outboundRouteId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'siteId': siteId,'outboundRouteId': outboundRouteId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -344,13 +344,13 @@ class TelephonyProvidersEdgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/telephony/providers/edges/trunkbasesettings/{trunkBaseSettingsId}', 
 			'DELETE', 
-			{ 'trunkBaseSettingsId': trunkBaseSettingsId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'trunkBaseSettingsId': trunkBaseSettingsId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -369,13 +369,13 @@ class TelephonyProvidersEdgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/configuration/schemas/edges/vnext', 
 			'GET', 
-			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -399,13 +399,13 @@ class TelephonyProvidersEdgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/configuration/schemas/edges/vnext/{schemaCategory}', 
 			'GET', 
-			{ 'schemaCategory': schemaCategory }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] }, 
-			{  }, 
-			{  }, 
+			{ 'schemaCategory': schemaCategory },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -434,13 +434,13 @@ class TelephonyProvidersEdgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/configuration/schemas/edges/vnext/{schemaCategory}/{schemaType}', 
 			'GET', 
-			{ 'schemaCategory': schemaCategory,'schemaType': schemaType }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] }, 
-			{  }, 
-			{  }, 
+			{ 'schemaCategory': schemaCategory,'schemaType': schemaType },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -469,13 +469,13 @@ class TelephonyProvidersEdgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/configuration/schemas/edges/vnext/{schemaCategory}/{schemaType}/{schemaId}', 
 			'GET', 
-			{ 'schemaCategory': schemaCategory,'schemaType': schemaType,'schemaId': schemaId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'schemaCategory': schemaCategory,'schemaType': schemaType,'schemaId': schemaId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -518,13 +518,13 @@ class TelephonyProvidersEdgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/configuration/schemas/edges/vnext/{schemaCategory}/{schemaType}/{schemaId}/{extensionType}/{metadataId}', 
 			'GET', 
-			{ 'schemaCategory': schemaCategory,'schemaType': schemaType,'schemaId': schemaId,'extensionType': extensionType,'metadataId': metadataId }, 
-			{ 'type': opts['type'] }, 
-			{  }, 
-			{  }, 
+			{ 'schemaCategory': schemaCategory,'schemaType': schemaType,'schemaId': schemaId,'extensionType': extensionType,'metadataId': metadataId },
+			{ 'type': opts['type'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -547,13 +547,13 @@ class TelephonyProvidersEdgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/telephony/providers/edges/{edgeId}', 
 			'GET', 
-			{ 'edgeId': edgeId }, 
-			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') }, 
-			{  }, 
-			{  }, 
+			{ 'edgeId': edgeId },
+			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -572,13 +572,13 @@ class TelephonyProvidersEdgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/telephony/providers/edges/{edgeId}/diagnostic/nslookup', 
 			'GET', 
-			{ 'edgeId': edgeId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'edgeId': edgeId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -597,13 +597,13 @@ class TelephonyProvidersEdgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/telephony/providers/edges/{edgeId}/diagnostic/ping', 
 			'GET', 
-			{ 'edgeId': edgeId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'edgeId': edgeId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -622,13 +622,13 @@ class TelephonyProvidersEdgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/telephony/providers/edges/{edgeId}/diagnostic/route', 
 			'GET', 
-			{ 'edgeId': edgeId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'edgeId': edgeId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -647,13 +647,13 @@ class TelephonyProvidersEdgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/telephony/providers/edges/{edgeId}/diagnostic/tracepath', 
 			'GET', 
-			{ 'edgeId': edgeId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'edgeId': edgeId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -677,13 +677,13 @@ class TelephonyProvidersEdgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/telephony/providers/edges/{edgeId}/lines/{lineId}', 
 			'GET', 
-			{ 'edgeId': edgeId,'lineId': lineId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'edgeId': edgeId,'lineId': lineId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -707,13 +707,13 @@ class TelephonyProvidersEdgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/telephony/providers/edges/{edgeId}/lines', 
 			'GET', 
-			{ 'edgeId': edgeId }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] }, 
-			{  }, 
-			{  }, 
+			{ 'edgeId': edgeId },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -741,13 +741,13 @@ class TelephonyProvidersEdgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/telephony/providers/edges/{edgeId}/logicalinterfaces/{interfaceId}', 
 			'GET', 
-			{ 'edgeId': edgeId,'interfaceId': interfaceId }, 
-			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') }, 
-			{  }, 
-			{  }, 
+			{ 'edgeId': edgeId,'interfaceId': interfaceId },
+			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -770,13 +770,13 @@ class TelephonyProvidersEdgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/telephony/providers/edges/{edgeId}/logicalinterfaces', 
 			'GET', 
-			{ 'edgeId': edgeId }, 
-			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') }, 
-			{  }, 
-			{  }, 
+			{ 'edgeId': edgeId },
+			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -800,13 +800,13 @@ class TelephonyProvidersEdgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/telephony/providers/edges/{edgeId}/logs/jobs/{jobId}', 
 			'GET', 
-			{ 'edgeId': edgeId,'jobId': jobId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'edgeId': edgeId,'jobId': jobId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -825,13 +825,13 @@ class TelephonyProvidersEdgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/telephony/providers/edges/{edgeId}/metrics', 
 			'GET', 
-			{ 'edgeId': edgeId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'edgeId': edgeId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -855,13 +855,13 @@ class TelephonyProvidersEdgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/telephony/providers/edges/{edgeId}/physicalinterfaces/{interfaceId}', 
 			'GET', 
-			{ 'edgeId': edgeId,'interfaceId': interfaceId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'edgeId': edgeId,'interfaceId': interfaceId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -880,13 +880,13 @@ class TelephonyProvidersEdgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/telephony/providers/edges/{edgeId}/physicalinterfaces', 
 			'GET', 
-			{ 'edgeId': edgeId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'edgeId': edgeId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -905,13 +905,13 @@ class TelephonyProvidersEdgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/telephony/providers/edges/{edgeId}/setuppackage', 
 			'GET', 
-			{ 'edgeId': edgeId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'edgeId': edgeId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -930,13 +930,13 @@ class TelephonyProvidersEdgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/telephony/providers/edges/{edgeId}/softwareupdate', 
 			'GET', 
-			{ 'edgeId': edgeId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'edgeId': edgeId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -955,13 +955,13 @@ class TelephonyProvidersEdgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/telephony/providers/edges/{edgeId}/softwareversions', 
 			'GET', 
-			{ 'edgeId': edgeId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'edgeId': edgeId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -989,13 +989,13 @@ class TelephonyProvidersEdgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/telephony/providers/edges/{edgeId}/trunks', 
 			'GET', 
-			{ 'edgeId': edgeId }, 
-			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'trunkBase.id': opts['trunkBaseId'],'trunkType': opts['trunkType'] }, 
-			{  }, 
-			{  }, 
+			{ 'edgeId': edgeId },
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'trunkBase.id': opts['trunkBaseId'],'trunkType': opts['trunkType'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1019,13 +1019,13 @@ class TelephonyProvidersEdgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/telephony/providers/edges', 
 			'GET', 
-			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'name': opts['name'],'site.id': opts['siteId'],'edgeGroup.id': opts['edgeGroupId'],'sortBy': opts['sortBy'],'managed': opts['managed'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'name': opts['name'],'site.id': opts['siteId'],'edgeGroup.id': opts['edgeGroupId'],'sortBy': opts['sortBy'],'managed': opts['managed'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1039,13 +1039,13 @@ class TelephonyProvidersEdgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/telephony/providers/edges/availablelanguages', 
 			'GET', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1059,13 +1059,13 @@ class TelephonyProvidersEdgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/telephony/providers/edges/certificateauthorities', 
 			'GET', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1084,13 +1084,13 @@ class TelephonyProvidersEdgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/telephony/providers/edges/certificateauthorities/{certificateId}', 
 			'GET', 
-			{ 'certificateId': certificateId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'certificateId': certificateId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1109,13 +1109,13 @@ class TelephonyProvidersEdgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/telephony/providers/edges/dids/{didId}', 
 			'GET', 
-			{ 'didId': didId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'didId': didId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1134,13 +1134,13 @@ class TelephonyProvidersEdgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/telephony/providers/edges/didpools/{didPoolId}', 
 			'GET', 
-			{ 'didPoolId': didPoolId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'didPoolId': didPoolId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1152,7 +1152,7 @@ class TelephonyProvidersEdgeApi {
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {String} opts.sortBy Sort by (default to number)
-	 * @param {Array.<String>} opts.id Filter by a specific list of ID&#39;s
+	 * @param {Array.<String>} opts.id Filter by a specific list of ID's
 	 */
 	getTelephonyProvidersEdgesDidpools(opts) { 
 		opts = opts || {};
@@ -1161,13 +1161,13 @@ class TelephonyProvidersEdgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/telephony/providers/edges/didpools', 
 			'GET', 
-			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi') }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi') },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1194,13 +1194,13 @@ class TelephonyProvidersEdgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/telephony/providers/edges/didpools/dids', 
 			'GET', 
-			{  }, 
-			{ 'type': type,'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'numberMatch': opts['numberMatch'],'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortOrder': opts['sortOrder'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'type': type,'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'numberMatch': opts['numberMatch'],'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortOrder': opts['sortOrder'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1216,7 +1216,7 @@ class TelephonyProvidersEdgeApi {
 	 * @param {String} opts.phoneNumber Filter by phoneNumber
 	 * @param {String} opts.ownerId Filter by the owner of a phone number
 	 * @param {String} opts.didPoolId Filter by the DID Pool assignment
-	 * @param {Array.<String>} opts.id Filter by a specific list of ID&#39;s
+	 * @param {Array.<String>} opts.id Filter by a specific list of ID's
 	 */
 	getTelephonyProvidersEdgesDids(opts) { 
 		opts = opts || {};
@@ -1225,13 +1225,13 @@ class TelephonyProvidersEdgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/telephony/providers/edges/dids', 
 			'GET', 
-			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'phoneNumber': opts['phoneNumber'],'owner.id': opts['ownerId'],'didPool.id': opts['didPoolId'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi') }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'phoneNumber': opts['phoneNumber'],'owner.id': opts['ownerId'],'didPool.id': opts['didPoolId'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi') },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1254,13 +1254,13 @@ class TelephonyProvidersEdgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/telephony/providers/edges/edgegroups/{edgeGroupId}', 
 			'GET', 
-			{ 'edgeGroupId': edgeGroupId }, 
-			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') }, 
-			{  }, 
-			{  }, 
+			{ 'edgeGroupId': edgeGroupId },
+			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1284,13 +1284,13 @@ class TelephonyProvidersEdgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/telephony/providers/edges/edgegroups/{edgegroupId}/edgetrunkbases/{edgetrunkbaseId}', 
 			'GET', 
-			{ 'edgegroupId': edgegroupId,'edgetrunkbaseId': edgetrunkbaseId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'edgegroupId': edgegroupId,'edgetrunkbaseId': edgetrunkbaseId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1312,13 +1312,13 @@ class TelephonyProvidersEdgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/telephony/providers/edges/edgegroups', 
 			'GET', 
-			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'name': opts['name'],'sortBy': opts['sortBy'],'managed': opts['managed'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'name': opts['name'],'sortBy': opts['sortBy'],'managed': opts['managed'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1332,13 +1332,13 @@ class TelephonyProvidersEdgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/telephony/providers/edges/edgeversionreport', 
 			'GET', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1352,13 +1352,13 @@ class TelephonyProvidersEdgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/telephony/providers/edges/expired', 
 			'GET', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1377,13 +1377,13 @@ class TelephonyProvidersEdgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/telephony/providers/edges/extensions/{extensionId}', 
 			'GET', 
-			{ 'extensionId': extensionId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'extensionId': extensionId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1402,13 +1402,13 @@ class TelephonyProvidersEdgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/telephony/providers/edges/extensionpools/{extensionPoolId}', 
 			'GET', 
-			{ 'extensionPoolId': extensionPoolId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'extensionPoolId': extensionPoolId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1429,13 +1429,13 @@ class TelephonyProvidersEdgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/telephony/providers/edges/extensionpools', 
 			'GET', 
-			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'number': opts['_number'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'number': opts['_number'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1457,13 +1457,13 @@ class TelephonyProvidersEdgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/telephony/providers/edges/extensions', 
 			'GET', 
-			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'number': opts['_number'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'number': opts['_number'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1482,13 +1482,13 @@ class TelephonyProvidersEdgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/telephony/providers/edges/lines/{lineId}', 
 			'GET', 
-			{ 'lineId': lineId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'lineId': lineId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1507,13 +1507,13 @@ class TelephonyProvidersEdgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/telephony/providers/edges/linebasesettings/{lineBaseId}', 
 			'GET', 
-			{ 'lineBaseId': lineBaseId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'lineBaseId': lineBaseId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1535,13 +1535,13 @@ class TelephonyProvidersEdgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/telephony/providers/edges/linebasesettings', 
 			'GET', 
-			{  }, 
-			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1563,13 +1563,13 @@ class TelephonyProvidersEdgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/telephony/providers/edges/lines', 
 			'GET', 
-			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'name': opts['name'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'name': opts['name'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1588,13 +1588,13 @@ class TelephonyProvidersEdgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/telephony/providers/edges/lines/template', 
 			'GET', 
-			{  }, 
-			{ 'lineBaseSettingsId': lineBaseSettingsId }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'lineBaseSettingsId': lineBaseSettingsId },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1602,7 +1602,7 @@ class TelephonyProvidersEdgeApi {
 	/**
 	 * Get edge logical interfaces.
 	 * Retrieve the configured logical interfaces for a list edges. Only 100 edges can be requested at a time.
-	 * @param {String} edgeIds Comma separated list of Edge Id&#39;s
+	 * @param {String} edgeIds Comma separated list of Edge Id's
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand Field to expand in the response
 	 */
@@ -1617,13 +1617,13 @@ class TelephonyProvidersEdgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/telephony/providers/edges/logicalinterfaces', 
 			'GET', 
-			{  }, 
-			{ 'edgeIds': edgeIds,'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'edgeIds': edgeIds,'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1631,7 +1631,7 @@ class TelephonyProvidersEdgeApi {
 	/**
 	 * Get the metrics for a list of edges.
 	 * 
-	 * @param {String} edgeIds Comma separated list of Edge Id&#39;s
+	 * @param {String} edgeIds Comma separated list of Edge Id's
 	 */
 	getTelephonyProvidersEdgesMetrics(edgeIds) { 
 		// verify the required parameter 'edgeIds' is set
@@ -1642,13 +1642,13 @@ class TelephonyProvidersEdgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/telephony/providers/edges/metrics', 
 			'GET', 
-			{  }, 
-			{ 'edgeIds': edgeIds }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'edgeIds': edgeIds },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1667,13 +1667,13 @@ class TelephonyProvidersEdgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/telephony/providers/edges/outboundroutes/{outboundRouteId}', 
 			'GET', 
-			{ 'outboundRouteId': outboundRouteId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'outboundRouteId': outboundRouteId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1696,13 +1696,13 @@ class TelephonyProvidersEdgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/telephony/providers/edges/outboundroutes', 
 			'GET', 
-			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'name': opts['name'],'site.id': opts['siteId'],'externalTrunkBases.ids': opts['externalTrunkBasesIds'],'sortBy': opts['sortBy'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'name': opts['name'],'site.id': opts['siteId'],'externalTrunkBases.ids': opts['externalTrunkBasesIds'],'sortBy': opts['sortBy'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1721,13 +1721,13 @@ class TelephonyProvidersEdgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/telephony/providers/edges/phones/{phoneId}', 
 			'GET', 
-			{ 'phoneId': phoneId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'phoneId': phoneId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1746,13 +1746,13 @@ class TelephonyProvidersEdgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/telephony/providers/edges/phonebasesettings/{phoneBaseId}', 
 			'GET', 
-			{ 'phoneBaseId': phoneBaseId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'phoneBaseId': phoneBaseId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1775,13 +1775,13 @@ class TelephonyProvidersEdgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/telephony/providers/edges/phonebasesettings', 
 			'GET', 
-			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'name': opts['name'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'name': opts['name'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1800,13 +1800,13 @@ class TelephonyProvidersEdgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/telephony/providers/edges/phonebasesettings/availablemetabases', 
 			'GET', 
-			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1825,13 +1825,13 @@ class TelephonyProvidersEdgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/telephony/providers/edges/phonebasesettings/template', 
 			'GET', 
-			{  }, 
-			{ 'phoneMetabaseId': phoneMetabaseId }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'phoneMetabaseId': phoneMetabaseId },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1865,13 +1865,13 @@ class TelephonyProvidersEdgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/telephony/providers/edges/phones', 
 			'GET', 
-			{  }, 
-			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'site.id': opts['siteId'],'webRtcUser.id': opts['webRtcUserId'],'phoneBaseSettings.id': opts['phoneBaseSettingsId'],'lines.loggedInUser.id': opts['linesLoggedInUserId'],'lines.defaultForUser.id': opts['linesDefaultForUserId'],'phone_hardwareId': opts['phoneHardwareId'],'lines.id': opts['linesId'],'lines.name': opts['linesName'],'name': opts['name'],'status.operationalStatus': opts['statusOperationalStatus'],'secondaryStatus.operationalStatus': opts['secondaryStatusOperationalStatus'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'fields': this.apiClient.buildCollectionParam(opts['fields'], 'multi') }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'site.id': opts['siteId'],'webRtcUser.id': opts['webRtcUserId'],'phoneBaseSettings.id': opts['phoneBaseSettingsId'],'lines.loggedInUser.id': opts['linesLoggedInUserId'],'lines.defaultForUser.id': opts['linesDefaultForUserId'],'phone_hardwareId': opts['phoneHardwareId'],'lines.id': opts['linesId'],'lines.name': opts['linesName'],'name': opts['name'],'status.operationalStatus': opts['statusOperationalStatus'],'secondaryStatus.operationalStatus': opts['secondaryStatusOperationalStatus'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'fields': this.apiClient.buildCollectionParam(opts['fields'], 'multi') },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1890,13 +1890,13 @@ class TelephonyProvidersEdgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/telephony/providers/edges/phones/template', 
 			'GET', 
-			{  }, 
-			{ 'phoneBaseSettingsId': phoneBaseSettingsId }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'phoneBaseSettingsId': phoneBaseSettingsId },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1904,7 +1904,7 @@ class TelephonyProvidersEdgeApi {
 	/**
 	 * Get physical interfaces for edges.
 	 * Retrieves a list of all configured physical interfaces for a list of edges. Only 100 edges can be requested at a time.
-	 * @param {String} edgeIds Comma separated list of Edge Id&#39;s
+	 * @param {String} edgeIds Comma separated list of Edge Id's
 	 */
 	getTelephonyProvidersEdgesPhysicalinterfaces(edgeIds) { 
 		// verify the required parameter 'edgeIds' is set
@@ -1915,13 +1915,13 @@ class TelephonyProvidersEdgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/telephony/providers/edges/physicalinterfaces', 
 			'GET', 
-			{  }, 
-			{ 'edgeIds': edgeIds }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'edgeIds': edgeIds },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1940,13 +1940,13 @@ class TelephonyProvidersEdgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/telephony/providers/edges/sites/{siteId}', 
 			'GET', 
-			{ 'siteId': siteId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'siteId': siteId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1970,13 +1970,13 @@ class TelephonyProvidersEdgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/telephony/providers/edges/sites/{siteId}/numberplans/{numberPlanId}', 
 			'GET', 
-			{ 'siteId': siteId,'numberPlanId': numberPlanId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'siteId': siteId,'numberPlanId': numberPlanId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1995,13 +1995,13 @@ class TelephonyProvidersEdgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/telephony/providers/edges/sites/{siteId}/numberplans', 
 			'GET', 
-			{ 'siteId': siteId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'siteId': siteId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2024,13 +2024,13 @@ class TelephonyProvidersEdgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/telephony/providers/edges/sites/{siteId}/numberplans/classifications', 
 			'GET', 
-			{ 'siteId': siteId }, 
-			{ 'classification': opts['classification'] }, 
-			{  }, 
-			{  }, 
+			{ 'siteId': siteId },
+			{ 'classification': opts['classification'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2054,13 +2054,13 @@ class TelephonyProvidersEdgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/telephony/providers/edges/sites/{siteId}/outboundroutes/{outboundRouteId}', 
 			'GET', 
-			{ 'siteId': siteId,'outboundRouteId': outboundRouteId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'siteId': siteId,'outboundRouteId': outboundRouteId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2087,13 +2087,13 @@ class TelephonyProvidersEdgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/telephony/providers/edges/sites/{siteId}/outboundroutes', 
 			'GET', 
-			{ 'siteId': siteId }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'name': opts['name'],'externalTrunkBases.ids': opts['externalTrunkBasesIds'],'sortBy': opts['sortBy'] }, 
-			{  }, 
-			{  }, 
+			{ 'siteId': siteId },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'name': opts['name'],'externalTrunkBases.ids': opts['externalTrunkBasesIds'],'sortBy': opts['sortBy'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2117,13 +2117,13 @@ class TelephonyProvidersEdgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/telephony/providers/edges/sites', 
 			'GET', 
-			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'name': opts['name'],'location.id': opts['locationId'],'managed': opts['managed'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'name': opts['name'],'location.id': opts['locationId'],'managed': opts['managed'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2142,13 +2142,13 @@ class TelephonyProvidersEdgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/telephony/providers/edges/timezones', 
 			'GET', 
-			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2167,13 +2167,13 @@ class TelephonyProvidersEdgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/telephony/providers/edges/trunks/{trunkId}', 
 			'GET', 
-			{ 'trunkId': trunkId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'trunkId': trunkId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2192,13 +2192,13 @@ class TelephonyProvidersEdgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/telephony/providers/edges/trunks/{trunkId}/metrics', 
 			'GET', 
-			{ 'trunkId': trunkId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'trunkId': trunkId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2221,13 +2221,13 @@ class TelephonyProvidersEdgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/telephony/providers/edges/trunkbasesettings/{trunkBaseSettingsId}', 
 			'GET', 
-			{ 'trunkBaseSettingsId': trunkBaseSettingsId }, 
-			{ 'ignoreHidden': opts['ignoreHidden'] }, 
-			{  }, 
-			{  }, 
+			{ 'trunkBaseSettingsId': trunkBaseSettingsId },
+			{ 'ignoreHidden': opts['ignoreHidden'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2253,13 +2253,13 @@ class TelephonyProvidersEdgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/telephony/providers/edges/trunkbasesettings', 
 			'GET', 
-			{  }, 
-			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'recordingEnabled': opts['recordingEnabled'],'ignoreHidden': opts['ignoreHidden'],'managed': opts['managed'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'name': opts['name'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'recordingEnabled': opts['recordingEnabled'],'ignoreHidden': opts['ignoreHidden'],'managed': opts['managed'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'name': opts['name'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2279,13 +2279,13 @@ class TelephonyProvidersEdgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/telephony/providers/edges/trunkbasesettings/availablemetabases', 
 			'GET', 
-			{  }, 
-			{ 'type': opts['type'],'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'type': opts['type'],'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2304,13 +2304,13 @@ class TelephonyProvidersEdgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/telephony/providers/edges/trunkbasesettings/template', 
 			'GET', 
-			{  }, 
-			{ 'trunkMetabaseId': trunkMetabaseId }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'trunkMetabaseId': trunkMetabaseId },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2334,13 +2334,13 @@ class TelephonyProvidersEdgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/telephony/providers/edges/trunks', 
 			'GET', 
-			{  }, 
-			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'edge.id': opts['edgeId'],'trunkBase.id': opts['trunkBaseId'],'trunkType': opts['trunkType'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'edge.id': opts['edgeId'],'trunkBase.id': opts['trunkBaseId'],'trunkType': opts['trunkType'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2348,7 +2348,7 @@ class TelephonyProvidersEdgeApi {
 	/**
 	 * Get the metrics for a list of trunks.
 	 * 
-	 * @param {String} trunkIds Comma separated list of Trunk Id&#39;s
+	 * @param {String} trunkIds Comma separated list of Trunk Id's
 	 */
 	getTelephonyProvidersEdgesTrunksMetrics(trunkIds) { 
 		// verify the required parameter 'trunkIds' is set
@@ -2359,13 +2359,13 @@ class TelephonyProvidersEdgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/telephony/providers/edges/trunks/metrics', 
 			'GET', 
-			{  }, 
-			{ 'trunkIds': trunkIds }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'trunkIds': trunkIds },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2383,13 +2383,13 @@ class TelephonyProvidersEdgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/telephony/providers/edges/trunkswithrecording', 
 			'GET', 
-			{  }, 
-			{ 'trunkType': opts['trunkType'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'trunkType': opts['trunkType'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2413,13 +2413,13 @@ class TelephonyProvidersEdgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/telephony/providers/edges/{edgeId}/diagnostic/nslookup', 
 			'POST', 
-			{ 'edgeId': edgeId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'edgeId': edgeId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2443,13 +2443,13 @@ class TelephonyProvidersEdgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/telephony/providers/edges/{edgeId}/diagnostic/ping', 
 			'POST', 
-			{ 'edgeId': edgeId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'edgeId': edgeId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2473,13 +2473,13 @@ class TelephonyProvidersEdgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/telephony/providers/edges/{edgeId}/diagnostic/route', 
 			'POST', 
-			{ 'edgeId': edgeId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'edgeId': edgeId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2503,13 +2503,13 @@ class TelephonyProvidersEdgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/telephony/providers/edges/{edgeId}/diagnostic/tracepath', 
 			'POST', 
-			{ 'edgeId': edgeId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'edgeId': edgeId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2533,13 +2533,13 @@ class TelephonyProvidersEdgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/telephony/providers/edges/{edgeId}/logicalinterfaces', 
 			'POST', 
-			{ 'edgeId': edgeId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'edgeId': edgeId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2568,13 +2568,13 @@ class TelephonyProvidersEdgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/telephony/providers/edges/{edgeId}/logs/jobs/{jobId}/upload', 
 			'POST', 
-			{ 'edgeId': edgeId,'jobId': jobId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'edgeId': edgeId,'jobId': jobId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2598,13 +2598,13 @@ class TelephonyProvidersEdgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/telephony/providers/edges/{edgeId}/logs/jobs', 
 			'POST', 
-			{ 'edgeId': edgeId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'edgeId': edgeId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2627,13 +2627,13 @@ class TelephonyProvidersEdgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/telephony/providers/edges/{edgeId}/reboot', 
 			'POST', 
-			{ 'edgeId': edgeId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'edgeId': edgeId },
+			{  },
+			{  },
+			{  },
 			opts['body'], 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2657,13 +2657,13 @@ class TelephonyProvidersEdgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/telephony/providers/edges/{edgeId}/softwareupdate', 
 			'POST', 
-			{ 'edgeId': edgeId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'edgeId': edgeId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2686,13 +2686,13 @@ class TelephonyProvidersEdgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/telephony/providers/edges/{edgeId}/statuscode', 
 			'POST', 
-			{ 'edgeId': edgeId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'edgeId': edgeId },
+			{  },
+			{  },
+			{  },
 			opts['body'], 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2711,13 +2711,13 @@ class TelephonyProvidersEdgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/telephony/providers/edges/{edgeId}/unpair', 
 			'POST', 
-			{ 'edgeId': edgeId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'edgeId': edgeId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2736,13 +2736,13 @@ class TelephonyProvidersEdgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/telephony/providers/edges', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2761,13 +2761,13 @@ class TelephonyProvidersEdgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/telephony/providers/edges/addressvalidation', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2786,13 +2786,13 @@ class TelephonyProvidersEdgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/telephony/providers/edges/certificateauthorities', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2811,13 +2811,13 @@ class TelephonyProvidersEdgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/telephony/providers/edges/didpools', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2836,13 +2836,13 @@ class TelephonyProvidersEdgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/telephony/providers/edges/edgegroups', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2861,13 +2861,13 @@ class TelephonyProvidersEdgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/telephony/providers/edges/extensionpools', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2886,13 +2886,13 @@ class TelephonyProvidersEdgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/telephony/providers/edges/outboundroutes', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2911,13 +2911,13 @@ class TelephonyProvidersEdgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/telephony/providers/edges/phones/{phoneId}/reboot', 
 			'POST', 
-			{ 'phoneId': phoneId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'phoneId': phoneId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2936,13 +2936,13 @@ class TelephonyProvidersEdgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/telephony/providers/edges/phonebasesettings', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2961,13 +2961,13 @@ class TelephonyProvidersEdgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/telephony/providers/edges/phones', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2986,13 +2986,13 @@ class TelephonyProvidersEdgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/telephony/providers/edges/phones/reboot', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -3016,13 +3016,13 @@ class TelephonyProvidersEdgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/telephony/providers/edges/sites/{siteId}/outboundroutes', 
 			'POST', 
-			{ 'siteId': siteId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'siteId': siteId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -3041,13 +3041,13 @@ class TelephonyProvidersEdgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/telephony/providers/edges/sites/{siteId}/rebalance', 
 			'POST', 
-			{ 'siteId': siteId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'siteId': siteId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -3066,13 +3066,13 @@ class TelephonyProvidersEdgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/telephony/providers/edges/sites', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -3091,13 +3091,13 @@ class TelephonyProvidersEdgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/telephony/providers/edges/trunkbasesettings', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -3121,13 +3121,13 @@ class TelephonyProvidersEdgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/telephony/providers/edges/{edgeId}', 
 			'PUT', 
-			{ 'edgeId': edgeId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'edgeId': edgeId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -3156,13 +3156,13 @@ class TelephonyProvidersEdgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/telephony/providers/edges/{edgeId}/lines/{lineId}', 
 			'PUT', 
-			{ 'edgeId': edgeId,'lineId': lineId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'edgeId': edgeId,'lineId': lineId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -3191,13 +3191,13 @@ class TelephonyProvidersEdgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/telephony/providers/edges/{edgeId}/logicalinterfaces/{interfaceId}', 
 			'PUT', 
-			{ 'edgeId': edgeId,'interfaceId': interfaceId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'edgeId': edgeId,'interfaceId': interfaceId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -3221,13 +3221,13 @@ class TelephonyProvidersEdgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/telephony/providers/edges/certificateauthorities/{certificateId}', 
 			'PUT', 
-			{ 'certificateId': certificateId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'certificateId': certificateId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -3251,13 +3251,13 @@ class TelephonyProvidersEdgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/telephony/providers/edges/dids/{didId}', 
 			'PUT', 
-			{ 'didId': didId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'didId': didId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -3281,13 +3281,13 @@ class TelephonyProvidersEdgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/telephony/providers/edges/didpools/{didPoolId}', 
 			'PUT', 
-			{ 'didPoolId': didPoolId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'didPoolId': didPoolId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -3311,13 +3311,13 @@ class TelephonyProvidersEdgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/telephony/providers/edges/edgegroups/{edgeGroupId}', 
 			'PUT', 
-			{ 'edgeGroupId': edgeGroupId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'edgeGroupId': edgeGroupId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -3346,13 +3346,13 @@ class TelephonyProvidersEdgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/telephony/providers/edges/edgegroups/{edgegroupId}/edgetrunkbases/{edgetrunkbaseId}', 
 			'PUT', 
-			{ 'edgegroupId': edgegroupId,'edgetrunkbaseId': edgetrunkbaseId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'edgegroupId': edgegroupId,'edgetrunkbaseId': edgetrunkbaseId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -3376,13 +3376,13 @@ class TelephonyProvidersEdgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/telephony/providers/edges/extensions/{extensionId}', 
 			'PUT', 
-			{ 'extensionId': extensionId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'extensionId': extensionId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -3406,13 +3406,13 @@ class TelephonyProvidersEdgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/telephony/providers/edges/extensionpools/{extensionPoolId}', 
 			'PUT', 
-			{ 'extensionPoolId': extensionPoolId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'extensionPoolId': extensionPoolId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -3436,13 +3436,13 @@ class TelephonyProvidersEdgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/telephony/providers/edges/outboundroutes/{outboundRouteId}', 
 			'PUT', 
-			{ 'outboundRouteId': outboundRouteId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'outboundRouteId': outboundRouteId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -3466,13 +3466,13 @@ class TelephonyProvidersEdgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/telephony/providers/edges/phones/{phoneId}', 
 			'PUT', 
-			{ 'phoneId': phoneId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'phoneId': phoneId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -3496,13 +3496,13 @@ class TelephonyProvidersEdgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/telephony/providers/edges/phonebasesettings/{phoneBaseId}', 
 			'PUT', 
-			{ 'phoneBaseId': phoneBaseId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'phoneBaseId': phoneBaseId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -3526,13 +3526,13 @@ class TelephonyProvidersEdgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/telephony/providers/edges/sites/{siteId}', 
 			'PUT', 
-			{ 'siteId': siteId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'siteId': siteId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -3556,13 +3556,13 @@ class TelephonyProvidersEdgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/telephony/providers/edges/sites/{siteId}/numberplans', 
 			'PUT', 
-			{ 'siteId': siteId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'siteId': siteId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -3591,13 +3591,13 @@ class TelephonyProvidersEdgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/telephony/providers/edges/sites/{siteId}/outboundroutes/{outboundRouteId}', 
 			'PUT', 
-			{ 'siteId': siteId,'outboundRouteId': outboundRouteId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'siteId': siteId,'outboundRouteId': outboundRouteId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -3621,13 +3621,13 @@ class TelephonyProvidersEdgeApi {
 		return this.apiClient.callApi(
 			'/api/v2/telephony/providers/edges/trunkbasesettings/{trunkBaseSettingsId}', 
 			'PUT', 
-			{ 'trunkBaseSettingsId': trunkBaseSettingsId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'trunkBaseSettingsId': trunkBaseSettingsId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}

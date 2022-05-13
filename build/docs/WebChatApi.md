@@ -38,9 +38,7 @@ DELETE /api/v2/webchat/deployments/{deploymentId}
 
 Delete a WebChat deployment
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * webchat:deployment:delete
 
@@ -86,15 +84,11 @@ void (no response body)
 # void deleteWebchatGuestConversationMember(conversationId, memberId)
 
 
-
 DELETE /api/v2/webchat/guest/conversations/{conversationId}/members/{memberId}
 
 Remove a member from a chat conversation
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -143,14 +137,11 @@ void (no response body)
 # void deleteWebchatSettings()
 
 
-
 DELETE /api/v2/webchat/settings
 
 Remove WebChat deployment settings
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * webchat:deployment:delete
 
@@ -196,9 +187,7 @@ GET /api/v2/webchat/deployments/{deploymentId}
 
 Get a WebChat deployment
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * webchat:deployment:read
 
@@ -249,9 +238,7 @@ GET /api/v2/webchat/deployments
 
 List WebChat deployments
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * webchat:deployment:read
 
@@ -292,15 +279,11 @@ This endpoint does not need any parameter.
 # WebChatGuestMediaRequest getWebchatGuestConversationMediarequest(conversationId, mediaRequestId)
 
 
-
 GET /api/v2/webchat/guest/conversations/{conversationId}/mediarequests/{mediaRequestId}
 
 Get a media request in the conversation
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -349,15 +332,11 @@ apiInstance.getWebchatGuestConversationMediarequest(conversationId, mediaRequest
 # WebChatGuestMediaRequestEntityList getWebchatGuestConversationMediarequests(conversationId)
 
 
-
 GET /api/v2/webchat/guest/conversations/{conversationId}/mediarequests
 
 Get all media requests to the guest in the conversation
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -404,15 +383,11 @@ apiInstance.getWebchatGuestConversationMediarequests(conversationId)
 # WebChatMemberInfo getWebchatGuestConversationMember(conversationId, memberId)
 
 
-
 GET /api/v2/webchat/guest/conversations/{conversationId}/members/{memberId}
 
 Get a web chat conversation member
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -461,15 +436,11 @@ apiInstance.getWebchatGuestConversationMember(conversationId, memberId)
 # WebChatMemberInfoEntityList getWebchatGuestConversationMembers(conversationId, opts)
 
 
-
 GET /api/v2/webchat/guest/conversations/{conversationId}/members
 
 Get the members of a chat conversation.
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -524,15 +495,11 @@ apiInstance.getWebchatGuestConversationMembers(conversationId, opts)
 # WebChatMessage getWebchatGuestConversationMessage(conversationId, messageId)
 
 
-
 GET /api/v2/webchat/guest/conversations/{conversationId}/messages/{messageId}
 
 Get a web chat conversation message
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -581,15 +548,11 @@ apiInstance.getWebchatGuestConversationMessage(conversationId, messageId)
 # WebChatMessageEntityList getWebchatGuestConversationMessages(conversationId, opts)
 
 
-
 GET /api/v2/webchat/guest/conversations/{conversationId}/messages
 
 Get the messages of a chat conversation.
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -646,14 +609,11 @@ apiInstance.getWebchatGuestConversationMessages(conversationId, opts)
 # WebChatSettings getWebchatSettings()
 
 
-
 GET /api/v2/webchat/settings
 
 Get WebChat deployment settings
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * webchat:deployment:read
 
@@ -694,15 +654,11 @@ This endpoint does not need any parameter.
 # WebChatGuestMediaRequest patchWebchatGuestConversationMediarequest(conversationId, mediaRequestId, body)
 
 
-
 PATCH /api/v2/webchat/guest/conversations/{conversationId}/mediarequests/{mediaRequestId}
 
 Update a media request in the conversation, setting the state to ACCEPTED/DECLINED/ERRORED
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -758,9 +714,7 @@ POST /api/v2/webchat/deployments
 
 Create WebChat deployment
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * webchat:deployment:create
 
@@ -806,15 +760,11 @@ apiInstance.postWebchatDeployments(body)
 # WebChatMessage postWebchatGuestConversationMemberMessages(conversationId, memberId, body)
 
 
-
 POST /api/v2/webchat/guest/conversations/{conversationId}/members/{memberId}/messages
 
 Send a message in a chat conversation.
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -865,15 +815,11 @@ apiInstance.postWebchatGuestConversationMemberMessages(conversationId, memberId,
 # WebChatTyping postWebchatGuestConversationMemberTyping(conversationId, memberId)
 
 
-
 POST /api/v2/webchat/guest/conversations/{conversationId}/members/{memberId}/typing
 
 Send a typing-indicator in a chat conversation.
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -922,15 +868,13 @@ apiInstance.postWebchatGuestConversationMemberTyping(conversationId, memberId)
 # CreateWebChatConversationResponse postWebchatGuestConversations(body)
 
 
-
 POST /api/v2/webchat/guest/conversations
 
 Create an ACD chat conversation from an external customer.
 
-This endpoint will create a new ACD Chat conversation under the specified Chat Deployment.  The conversation will begin with a guest member in it (with a role=CUSTOMER) according to the customer information that is supplied. If the guest member is authenticated, the &#39;memberAuthToken&#39; field should include his JWT as generated by the &#39;POST /api/v2/signeddata&#39; resource; if the guest member is anonymous (and the Deployment permits it) this field can be omitted.  The returned data includes the IDs of the conversation created, along with a newly-create JWT token that you can supply to all future endpoints as authentication to perform operations against that conversation. After successfully creating a conversation, you should connect a websocket to the event stream named in the &#39;eventStreamUri&#39; field of the response; the conversation is not routed until the event stream is attached.
+This endpoint will create a new ACD Chat conversation under the specified Chat Deployment.  The conversation will begin with a guest member in it (with a role=CUSTOMER) according to the customer information that is supplied. If the guest member is authenticated, the memberAuthToken field should include his JWT as generated by the POST /api/v2/signeddata resource; if the guest member is anonymous (and the Deployment permits it) this field can be omitted.  The returned data includes the IDs of the conversation created, along with a newly-create JWT token that you can supply to all future endpoints as authentication to perform operations against that conversation. After successfully creating a conversation, you should connect a websocket to the event stream named in the eventStreamUri field of the response; the conversation is not routed until the event stream is attached.
 
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -976,9 +920,7 @@ PUT /api/v2/webchat/deployments/{deploymentId}
 
 Update a WebChat deployment
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * webchat:deployment:update
 
@@ -1026,14 +968,11 @@ apiInstance.putWebchatDeployment(deploymentId, body)
 # WebChatSettings putWebchatSettings(body)
 
 
-
 PUT /api/v2/webchat/settings
 
 Update WebChat deployment settings
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * webchat:deployment:update
 

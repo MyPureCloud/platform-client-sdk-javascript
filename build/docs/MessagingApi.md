@@ -19,14 +19,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 # void deleteMessagingSupportedcontentSupportedContentId(supportedContentId)
 
 
-
 DELETE /api/v2/messaging/supportedcontent/{supportedContentId}
 
 Delete a supported content profile
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * messaging:supportedContent:delete
 
@@ -72,14 +69,11 @@ void (no response body)
 # SupportedContentListing getMessagingSupportedcontent(opts)
 
 
-
 GET /api/v2/messaging/supportedcontent
 
 Get a list of Supported Content profiles
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * messaging:supportedContent:view
 
@@ -129,14 +123,11 @@ apiInstance.getMessagingSupportedcontent(opts)
 # SupportedContent getMessagingSupportedcontentSupportedContentId(supportedContentId)
 
 
-
 GET /api/v2/messaging/supportedcontent/{supportedContentId}
 
 Get a supported content profile
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * messaging:supportedContent:view
 
@@ -182,14 +173,11 @@ apiInstance.getMessagingSupportedcontentSupportedContentId(supportedContentId)
 # SupportedContent patchMessagingSupportedcontentSupportedContentId(supportedContentId, body)
 
 
-
 PATCH /api/v2/messaging/supportedcontent/{supportedContentId}
 
 Update a supported content profile
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * messaging:supportedContent:edit
 
@@ -237,14 +225,11 @@ apiInstance.patchMessagingSupportedcontentSupportedContentId(supportedContentId,
 # SupportedContent postMessagingSupportedcontent(body)
 
 
-
 POST /api/v2/messaging/supportedcontent
 
 Create a Supported Content profile
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * messaging:supportedContent:add
 

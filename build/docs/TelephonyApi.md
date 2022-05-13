@@ -17,14 +17,13 @@ All URIs are relative to *https://api.mypurecloud.com*
 # SipSearchResult getTelephonySiptraces(dateStart, dateEnd, opts)
 
 
-
 GET /api/v2/telephony/siptraces
 
 Fetch SIP metadata
 
 Fetch SIP metadata that matches a given parameter. If exactMatch is passed as a parameter only sip records that have exactly that value will be returned. For example, some records contain conversationId but not all relevant records for that call may contain the conversationId so only a partial view of the call will be reflected
 
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * telephony:pcap:view
 
@@ -82,14 +81,11 @@ apiInstance.getTelephonySiptraces(dateStart, dateEnd, opts)
 # SignedUrlResponse getTelephonySiptracesDownloadDownloadId(downloadId)
 
 
-
 GET /api/v2/telephony/siptraces/download/{downloadId}
 
 Get signed S3 URL for a pcap download
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * telephony:pcap:view
 
@@ -135,14 +131,11 @@ apiInstance.getTelephonySiptracesDownloadDownloadId(downloadId)
 # SipDownloadResponse postTelephonySiptracesDownload(sIPSearchPublicRequest)
 
 
-
 POST /api/v2/telephony/siptraces/download
 
 Request a download of a pcap file to S3
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * telephony:pcap:add
 

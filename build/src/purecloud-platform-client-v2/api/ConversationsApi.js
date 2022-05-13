@@ -5,7 +5,7 @@ class ConversationsApi {
 	/**
 	 * Conversations service.
 	 * @module purecloud-platform-client-v2/api/ConversationsApi
-	 * @version 136.1.0
+	 * @version 137.0.0
 	 */
 
 	/**
@@ -34,13 +34,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/analytics/conversations/details/jobs/{jobId}', 
 			'DELETE', 
-			{ 'jobId': jobId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'jobId': jobId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -69,13 +69,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/{conversationId}/participants/{participantId}/codes/{addCommunicationCode}', 
 			'DELETE', 
-			{ 'conversationId': conversationId,'participantId': participantId,'addCommunicationCode': addCommunicationCode }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId,'participantId': participantId,'addCommunicationCode': addCommunicationCode },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -99,13 +99,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/{conversationId}/participants/{participantId}/flaggedreason', 
 			'DELETE', 
-			{ 'conversationId': conversationId,'participantId': participantId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId,'participantId': participantId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -129,13 +129,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult', 
 			'DELETE', 
-			{ 'conversationId': conversationId,'participantId': participantId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId,'participantId': participantId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -159,13 +159,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/emails/{conversationId}/messages/draft/attachments/{attachmentId}', 
 			'DELETE', 
-			{ 'conversationId': conversationId,'attachmentId': attachmentId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId,'attachmentId': attachmentId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -184,13 +184,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/messaging/integrations/facebook/{integrationId}', 
 			'DELETE', 
-			{ 'integrationId': integrationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'integrationId': integrationId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -209,13 +209,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/messaging/integrations/line/{integrationId}', 
 			'DELETE', 
-			{ 'integrationId': integrationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'integrationId': integrationId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -234,13 +234,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/messaging/integrations/open/{integrationId}', 
 			'DELETE', 
-			{ 'integrationId': integrationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'integrationId': integrationId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -259,13 +259,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/messaging/integrations/twitter/{integrationId}', 
 			'DELETE', 
-			{ 'integrationId': integrationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'integrationId': integrationId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -284,13 +284,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/messaging/integrations/whatsapp/{integrationId}', 
 			'DELETE', 
-			{ 'integrationId': integrationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'integrationId': integrationId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -309,13 +309,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/messaging/supportedcontent/{supportedContentId}', 
 			'DELETE', 
-			{ 'supportedContentId': supportedContentId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'supportedContentId': supportedContentId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -334,13 +334,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/analytics/conversations/{conversationId}/details', 
 			'GET', 
-			{ 'conversationId': conversationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -358,13 +358,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/analytics/conversations/details', 
 			'GET', 
-			{  }, 
-			{ 'id': this.apiClient.buildCollectionParam(opts['id'], 'multi') }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'id': this.apiClient.buildCollectionParam(opts['id'], 'multi') },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -383,13 +383,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/analytics/conversations/details/jobs/{jobId}', 
 			'GET', 
-			{ 'jobId': jobId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'jobId': jobId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -413,13 +413,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/analytics/conversations/details/jobs/{jobId}/results', 
 			'GET', 
-			{ 'jobId': jobId }, 
-			{ 'cursor': opts['cursor'],'pageSize': opts['pageSize'] }, 
-			{  }, 
-			{  }, 
+			{ 'jobId': jobId },
+			{ 'cursor': opts['cursor'],'pageSize': opts['pageSize'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -433,13 +433,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/analytics/conversations/details/jobs/availability', 
 			'GET', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -458,13 +458,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/{conversationId}', 
 			'GET', 
-			{ 'conversationId': conversationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -493,13 +493,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/{conversationId}/participants/{participantId}/secureivrsessions/{secureSessionId}', 
 			'GET', 
-			{ 'conversationId': conversationId,'participantId': participantId,'secureSessionId': secureSessionId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId,'participantId': participantId,'secureSessionId': secureSessionId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -523,13 +523,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/{conversationId}/participants/{participantId}/secureivrsessions', 
 			'GET', 
-			{ 'conversationId': conversationId,'participantId': participantId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId,'participantId': participantId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -557,13 +557,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/{conversationId}/participants/{participantId}/wrapup', 
 			'GET', 
-			{ 'conversationId': conversationId,'participantId': participantId }, 
-			{ 'provisional': opts['provisional'] }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId,'participantId': participantId },
+			{ 'provisional': opts['provisional'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -587,13 +587,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/{conversationId}/participants/{participantId}/wrapupcodes', 
 			'GET', 
-			{ 'conversationId': conversationId,'participantId': participantId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId,'participantId': participantId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -611,13 +611,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations', 
 			'GET', 
-			{  }, 
-			{ 'communicationType': opts['communicationType'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'communicationType': opts['communicationType'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -636,13 +636,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/calls/{conversationId}', 
 			'GET', 
-			{ 'conversationId': conversationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -670,13 +670,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/calls/{conversationId}/participants/{participantId}/wrapup', 
 			'GET', 
-			{ 'conversationId': conversationId,'participantId': participantId }, 
-			{ 'provisional': opts['provisional'] }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId,'participantId': participantId },
+			{ 'provisional': opts['provisional'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -700,13 +700,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/calls/{conversationId}/participants/{participantId}/wrapupcodes', 
 			'GET', 
-			{ 'conversationId': conversationId,'participantId': participantId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId,'participantId': participantId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -725,13 +725,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/callbacks/{conversationId}', 
 			'GET', 
-			{ 'conversationId': conversationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -759,13 +759,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/wrapup', 
 			'GET', 
-			{ 'conversationId': conversationId,'participantId': participantId }, 
-			{ 'provisional': opts['provisional'] }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId,'participantId': participantId },
+			{ 'provisional': opts['provisional'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -789,13 +789,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/wrapupcodes', 
 			'GET', 
-			{ 'conversationId': conversationId,'participantId': participantId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId,'participantId': participantId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -809,13 +809,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/callbacks', 
 			'GET', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -829,13 +829,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/calls', 
 			'GET', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -846,7 +846,7 @@ class ConversationsApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize Page size, maximum 50 (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
-	 * @param {String} opts.interval Interval string; format is ISO-8601. Separate start and end times with forward slash &#39;/&#39;
+	 * @param {String} opts.interval Interval string; format is ISO-8601. Separate start and end times with forward slash '/'
 	 * @param {Array.<String>} opts.expand Which fields, if any, to expand.
 	 */
 	getConversationsCallsHistory(opts) { 
@@ -856,13 +856,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/calls/history', 
 			'GET', 
-			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'interval': opts['interval'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'interval': opts['interval'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -876,13 +876,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/calls/maximumconferenceparties', 
 			'GET', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -901,13 +901,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/chats/{conversationId}', 
 			'GET', 
-			{ 'conversationId': conversationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -931,13 +931,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/chats/{conversationId}/messages/{messageId}', 
 			'GET', 
-			{ 'conversationId': conversationId,'messageId': messageId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId,'messageId': messageId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -963,13 +963,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/chats/{conversationId}/messages', 
 			'GET', 
-			{ 'conversationId': conversationId }, 
-			{ 'after': opts['after'],'before': opts['before'],'sortOrder': opts['sortOrder'],'maxResults': opts['maxResults'] }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId },
+			{ 'after': opts['after'],'before': opts['before'],'sortOrder': opts['sortOrder'],'maxResults': opts['maxResults'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -997,13 +997,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/chats/{conversationId}/participants/{participantId}/wrapup', 
 			'GET', 
-			{ 'conversationId': conversationId,'participantId': participantId }, 
-			{ 'provisional': opts['provisional'] }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId,'participantId': participantId },
+			{ 'provisional': opts['provisional'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1027,13 +1027,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/chats/{conversationId}/participants/{participantId}/wrapupcodes', 
 			'GET', 
-			{ 'conversationId': conversationId,'participantId': participantId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId,'participantId': participantId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1047,13 +1047,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/chats', 
 			'GET', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1072,13 +1072,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/cobrowsesessions/{conversationId}', 
 			'GET', 
-			{ 'conversationId': conversationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1106,13 +1106,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/wrapup', 
 			'GET', 
-			{ 'conversationId': conversationId,'participantId': participantId }, 
-			{ 'provisional': opts['provisional'] }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId,'participantId': participantId },
+			{ 'provisional': opts['provisional'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1136,13 +1136,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/wrapupcodes', 
 			'GET', 
-			{ 'conversationId': conversationId,'participantId': participantId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId,'participantId': participantId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1156,13 +1156,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/cobrowsesessions', 
 			'GET', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1181,13 +1181,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/emails/{conversationId}', 
 			'GET', 
-			{ 'conversationId': conversationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1211,13 +1211,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/emails/{conversationId}/messages/{messageId}', 
 			'GET', 
-			{ 'conversationId': conversationId,'messageId': messageId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId,'messageId': messageId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1236,13 +1236,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/emails/{conversationId}/messages', 
 			'GET', 
-			{ 'conversationId': conversationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1261,13 +1261,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/emails/{conversationId}/messages/draft', 
 			'GET', 
-			{ 'conversationId': conversationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1295,13 +1295,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/emails/{conversationId}/participants/{participantId}/wrapup', 
 			'GET', 
-			{ 'conversationId': conversationId,'participantId': participantId }, 
-			{ 'provisional': opts['provisional'] }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId,'participantId': participantId },
+			{ 'provisional': opts['provisional'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1325,13 +1325,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/emails/{conversationId}/participants/{participantId}/wrapupcodes', 
 			'GET', 
-			{ 'conversationId': conversationId,'participantId': participantId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId,'participantId': participantId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1350,13 +1350,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/emails/{conversationId}/settings', 
 			'GET', 
-			{ 'conversationId': conversationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1370,13 +1370,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/emails', 
 			'GET', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1395,13 +1395,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/messages/{conversationId}', 
 			'GET', 
-			{ 'conversationId': conversationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1430,13 +1430,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/messages/{conversationId}/communications/{communicationId}/messages/media/{mediaId}', 
 			'GET', 
-			{ 'conversationId': conversationId,'communicationId': communicationId,'mediaId': mediaId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId,'communicationId': communicationId,'mediaId': mediaId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1455,13 +1455,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/messages/{messageId}/details', 
 			'GET', 
-			{ 'messageId': messageId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'messageId': messageId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1485,13 +1485,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/messages/{conversationId}/messages/{messageId}', 
 			'GET', 
-			{ 'conversationId': conversationId,'messageId': messageId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId,'messageId': messageId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1519,13 +1519,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/messages/{conversationId}/participants/{participantId}/wrapup', 
 			'GET', 
-			{ 'conversationId': conversationId,'participantId': participantId }, 
-			{ 'provisional': opts['provisional'] }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId,'participantId': participantId },
+			{ 'provisional': opts['provisional'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1549,13 +1549,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/messages/{conversationId}/participants/{participantId}/wrapupcodes', 
 			'GET', 
-			{ 'conversationId': conversationId,'participantId': participantId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId,'participantId': participantId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1569,13 +1569,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/messages', 
 			'GET', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1589,13 +1589,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/messaging/facebook/app', 
 			'GET', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1616,13 +1616,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/messaging/integrations', 
 			'GET', 
-			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'expand': opts['expand'],'supportedContent.id': opts['supportedContentId'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'expand': opts['expand'],'supportedContent.id': opts['supportedContentId'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1643,13 +1643,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/messaging/integrations/facebook', 
 			'GET', 
-			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'expand': opts['expand'],'supportedContent.id': opts['supportedContentId'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'expand': opts['expand'],'supportedContent.id': opts['supportedContentId'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1672,13 +1672,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/messaging/integrations/facebook/{integrationId}', 
 			'GET', 
-			{ 'integrationId': integrationId }, 
-			{ 'expand': opts['expand'] }, 
-			{  }, 
-			{  }, 
+			{ 'integrationId': integrationId },
+			{ 'expand': opts['expand'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1699,13 +1699,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/messaging/integrations/line', 
 			'GET', 
-			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'expand': opts['expand'],'supportedContent.id': opts['supportedContentId'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'expand': opts['expand'],'supportedContent.id': opts['supportedContentId'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1728,13 +1728,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/messaging/integrations/line/{integrationId}', 
 			'GET', 
-			{ 'integrationId': integrationId }, 
-			{ 'expand': opts['expand'] }, 
-			{  }, 
-			{  }, 
+			{ 'integrationId': integrationId },
+			{ 'expand': opts['expand'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1755,13 +1755,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/messaging/integrations/open', 
 			'GET', 
-			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'expand': opts['expand'],'supportedContent.id': opts['supportedContentId'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'expand': opts['expand'],'supportedContent.id': opts['supportedContentId'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1784,13 +1784,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/messaging/integrations/open/{integrationId}', 
 			'GET', 
-			{ 'integrationId': integrationId }, 
-			{ 'expand': opts['expand'] }, 
-			{  }, 
-			{  }, 
+			{ 'integrationId': integrationId },
+			{ 'expand': opts['expand'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1811,13 +1811,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/messaging/integrations/twitter', 
 			'GET', 
-			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'expand': opts['expand'],'supportedContent.id': opts['supportedContentId'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'expand': opts['expand'],'supportedContent.id': opts['supportedContentId'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1840,13 +1840,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/messaging/integrations/twitter/{integrationId}', 
 			'GET', 
-			{ 'integrationId': integrationId }, 
-			{ 'expand': opts['expand'] }, 
-			{  }, 
-			{  }, 
+			{ 'integrationId': integrationId },
+			{ 'expand': opts['expand'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1867,13 +1867,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/messaging/integrations/whatsapp', 
 			'GET', 
-			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'expand': opts['expand'],'supportedContent.id': opts['supportedContentId'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'expand': opts['expand'],'supportedContent.id': opts['supportedContentId'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1896,13 +1896,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/messaging/integrations/whatsapp/{integrationId}', 
 			'GET', 
-			{ 'integrationId': integrationId }, 
-			{ 'expand': opts['expand'] }, 
-			{  }, 
-			{  }, 
+			{ 'integrationId': integrationId },
+			{ 'expand': opts['expand'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1926,13 +1926,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/messaging/stickers/{messengerType}', 
 			'GET', 
-			{ 'messengerType': messengerType }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] }, 
-			{  }, 
-			{  }, 
+			{ 'messengerType': messengerType },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1951,19 +1951,19 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/messaging/supportedcontent', 
 			'GET', 
-			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
 
 	/**
-	 * Get the organization&#39;s default supported content profile that will be used as the default when creating an integration.
+	 * Get the organization's default supported content profile that will be used as the default when creating an integration.
 	 * When an integration is created a supported content ID may be assigned to it. If the supported content ID is not supplied, the default supported content profile will be assigned to it.
 	 */
 	getConversationsMessagingSupportedcontentDefault() { 
@@ -1971,13 +1971,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/messaging/supportedcontent/default', 
 			'GET', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1996,13 +1996,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/messaging/supportedcontent/{supportedContentId}', 
 			'GET', 
-			{ 'supportedContentId': supportedContentId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'supportedContentId': supportedContentId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2016,13 +2016,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/messaging/threadingtimeline', 
 			'GET', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2051,13 +2051,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/{conversationId}/participants/{participantId}', 
 			'PATCH', 
-			{ 'conversationId': conversationId,'participantId': participantId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId,'participantId': participantId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2086,13 +2086,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/{conversationId}/participants/{participantId}/attributes', 
 			'PATCH', 
-			{ 'conversationId': conversationId,'participantId': participantId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId,'participantId': participantId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2116,13 +2116,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/calls/{conversationId}', 
 			'PATCH', 
-			{ 'conversationId': conversationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2151,13 +2151,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/calls/{conversationId}/participants/{participantId}', 
 			'PATCH', 
-			{ 'conversationId': conversationId,'participantId': participantId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId,'participantId': participantId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2186,19 +2186,19 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/calls/{conversationId}/participants/{participantId}/attributes', 
 			'PATCH', 
-			{ 'conversationId': conversationId,'participantId': participantId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId,'participantId': participantId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
 
 	/**
-	 * Update conversation participant&#39;s communication by disconnecting it.
+	 * Update conversation participant's communication by disconnecting it.
 	 * 
 	 * @param {String} conversationId conversationId
 	 * @param {String} participantId participantId
@@ -2226,13 +2226,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/calls/{conversationId}/participants/{participantId}/communications/{communicationId}', 
 			'PATCH', 
-			{ 'conversationId': conversationId,'participantId': participantId,'communicationId': communicationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId,'participantId': participantId,'communicationId': communicationId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2261,13 +2261,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult', 
 			'PATCH', 
-			{ 'conversationId': conversationId,'participantId': participantId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId,'participantId': participantId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2291,13 +2291,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/callbacks/{conversationId}', 
 			'PATCH', 
-			{ 'conversationId': conversationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2326,13 +2326,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/callbacks/{conversationId}/participants/{participantId}', 
 			'PATCH', 
-			{ 'conversationId': conversationId,'participantId': participantId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId,'participantId': participantId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2361,19 +2361,19 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/attributes', 
 			'PATCH', 
-			{ 'conversationId': conversationId,'participantId': participantId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId,'participantId': participantId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
 
 	/**
-	 * Update conversation participant&#39;s communication by disconnecting it.
+	 * Update conversation participant's communication by disconnecting it.
 	 * 
 	 * @param {String} conversationId conversationId
 	 * @param {String} participantId participantId
@@ -2401,13 +2401,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/communications/{communicationId}', 
 			'PATCH', 
-			{ 'conversationId': conversationId,'participantId': participantId,'communicationId': communicationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId,'participantId': participantId,'communicationId': communicationId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2426,13 +2426,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/callbacks', 
 			'PATCH', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2456,13 +2456,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/chats/{conversationId}', 
 			'PATCH', 
-			{ 'conversationId': conversationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2491,13 +2491,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/chats/{conversationId}/participants/{participantId}', 
 			'PATCH', 
-			{ 'conversationId': conversationId,'participantId': participantId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId,'participantId': participantId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2526,19 +2526,19 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/chats/{conversationId}/participants/{participantId}/attributes', 
 			'PATCH', 
-			{ 'conversationId': conversationId,'participantId': participantId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId,'participantId': participantId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
 
 	/**
-	 * Update conversation participant&#39;s communication by disconnecting it.
+	 * Update conversation participant's communication by disconnecting it.
 	 * 
 	 * @param {String} conversationId conversationId
 	 * @param {String} participantId participantId
@@ -2566,13 +2566,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/chats/{conversationId}/participants/{participantId}/communications/{communicationId}', 
 			'PATCH', 
-			{ 'conversationId': conversationId,'participantId': participantId,'communicationId': communicationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId,'participantId': participantId,'communicationId': communicationId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2596,13 +2596,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/cobrowsesessions/{conversationId}', 
 			'PATCH', 
-			{ 'conversationId': conversationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2630,13 +2630,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}', 
 			'PATCH', 
-			{ 'conversationId': conversationId,'participantId': participantId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId,'participantId': participantId },
+			{  },
+			{  },
+			{  },
 			opts['body'], 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2664,19 +2664,19 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/attributes', 
 			'PATCH', 
-			{ 'conversationId': conversationId,'participantId': participantId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId,'participantId': participantId },
+			{  },
+			{  },
+			{  },
 			opts['body'], 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
 
 	/**
-	 * Update conversation participant&#39;s communication by disconnecting it.
+	 * Update conversation participant's communication by disconnecting it.
 	 * 
 	 * @param {String} conversationId conversationId
 	 * @param {String} participantId participantId
@@ -2704,13 +2704,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/communications/{communicationId}', 
 			'PATCH', 
-			{ 'conversationId': conversationId,'participantId': participantId,'communicationId': communicationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId,'participantId': participantId,'communicationId': communicationId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2734,13 +2734,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/emails/{conversationId}', 
 			'PATCH', 
-			{ 'conversationId': conversationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2769,13 +2769,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/emails/{conversationId}/participants/{participantId}', 
 			'PATCH', 
-			{ 'conversationId': conversationId,'participantId': participantId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId,'participantId': participantId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2804,19 +2804,19 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/emails/{conversationId}/participants/{participantId}/attributes', 
 			'PATCH', 
-			{ 'conversationId': conversationId,'participantId': participantId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId,'participantId': participantId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
 
 	/**
-	 * Update conversation participant&#39;s communication by disconnecting it.
+	 * Update conversation participant's communication by disconnecting it.
 	 * 
 	 * @param {String} conversationId conversationId
 	 * @param {String} participantId participantId
@@ -2844,13 +2844,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/emails/{conversationId}/participants/{participantId}/communications/{communicationId}', 
 			'PATCH', 
-			{ 'conversationId': conversationId,'participantId': participantId,'communicationId': communicationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId,'participantId': participantId,'communicationId': communicationId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2874,13 +2874,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/messages/{conversationId}', 
 			'PATCH', 
-			{ 'conversationId': conversationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2908,13 +2908,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/messages/{conversationId}/participants/{participantId}', 
 			'PATCH', 
-			{ 'conversationId': conversationId,'participantId': participantId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId,'participantId': participantId },
+			{  },
+			{  },
+			{  },
 			opts['body'], 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2942,19 +2942,19 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/messages/{conversationId}/participants/{participantId}/attributes', 
 			'PATCH', 
-			{ 'conversationId': conversationId,'participantId': participantId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId,'participantId': participantId },
+			{  },
+			{  },
+			{  },
 			opts['body'], 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
 
 	/**
-	 * Update conversation participant&#39;s communication by disconnecting it.
+	 * Update conversation participant's communication by disconnecting it.
 	 * 
 	 * @param {String} conversationId  conversationId
 	 * @param {String} participantId participantId
@@ -2982,13 +2982,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/messages/{conversationId}/participants/{participantId}/communications/{communicationId}', 
 			'PATCH', 
-			{ 'conversationId': conversationId,'participantId': participantId,'communicationId': communicationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId,'participantId': participantId,'communicationId': communicationId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -3012,13 +3012,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/messaging/integrations/facebook/{integrationId}', 
 			'PATCH', 
-			{ 'integrationId': integrationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'integrationId': integrationId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -3042,13 +3042,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/messaging/integrations/open/{integrationId}', 
 			'PATCH', 
-			{ 'integrationId': integrationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'integrationId': integrationId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -3072,13 +3072,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/messaging/integrations/twitter/{integrationId}', 
 			'PATCH', 
-			{ 'integrationId': integrationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'integrationId': integrationId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -3102,13 +3102,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/messaging/integrations/whatsapp/{integrationId}', 
 			'PATCH', 
-			{ 'integrationId': integrationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'integrationId': integrationId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -3132,13 +3132,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/messaging/supportedcontent/{supportedContentId}', 
 			'PATCH', 
-			{ 'supportedContentId': supportedContentId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'supportedContentId': supportedContentId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -3162,13 +3162,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/analytics/conversations/{conversationId}/details/properties', 
 			'POST', 
-			{ 'conversationId': conversationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -3187,13 +3187,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/analytics/conversations/aggregates/query', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -3212,13 +3212,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/analytics/conversations/details/jobs', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -3237,13 +3237,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/analytics/conversations/details/query', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -3267,13 +3267,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/{conversationId}/assign', 
 			'POST', 
-			{ 'conversationId': conversationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -3292,13 +3292,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/{conversationId}/disconnect', 
 			'POST', 
-			{ 'conversationId': conversationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -3326,13 +3326,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/{conversationId}/participants/{participantId}/callbacks', 
 			'POST', 
-			{ 'conversationId': conversationId,'participantId': participantId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId,'participantId': participantId },
+			{  },
+			{  },
+			{  },
 			opts['body'], 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -3360,13 +3360,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/{conversationId}/participants/{participantId}/digits', 
 			'POST', 
-			{ 'conversationId': conversationId,'participantId': participantId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId,'participantId': participantId },
+			{  },
+			{  },
+			{  },
 			opts['body'], 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -3395,13 +3395,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/{conversationId}/participants/{participantId}/replace', 
 			'POST', 
-			{ 'conversationId': conversationId,'participantId': participantId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId,'participantId': participantId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -3429,13 +3429,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/{conversationId}/participants/{participantId}/secureivrsessions', 
 			'POST', 
-			{ 'conversationId': conversationId,'participantId': participantId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId,'participantId': participantId },
+			{  },
+			{  },
+			{  },
 			opts['body'], 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -3459,13 +3459,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/calls/{conversationId}', 
 			'POST', 
-			{ 'conversationId': conversationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -3489,13 +3489,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/calls/{conversationId}/participants/{participantId}/coach', 
 			'POST', 
-			{ 'conversationId': conversationId,'participantId': participantId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId,'participantId': participantId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -3505,7 +3505,7 @@ class ConversationsApi {
 	 * 
 	 * @param {String} conversationId conversationId
 	 * @param {String} participantId participantId
-	 * @param {Object} body Destination address &amp; initial speak to
+	 * @param {Object} body Destination address and initial speak to
 	 */
 	postConversationsCallParticipantConsult(conversationId, participantId, body) { 
 		// verify the required parameter 'conversationId' is set
@@ -3524,13 +3524,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult', 
 			'POST', 
-			{ 'conversationId': conversationId,'participantId': participantId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId,'participantId': participantId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -3554,13 +3554,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/calls/{conversationId}/participants/{participantId}/monitor', 
 			'POST', 
-			{ 'conversationId': conversationId,'participantId': participantId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId,'participantId': participantId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -3589,13 +3589,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/calls/{conversationId}/participants/{participantId}/replace', 
 			'POST', 
-			{ 'conversationId': conversationId,'participantId': participantId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId,'participantId': participantId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -3619,13 +3619,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/calls/{conversationId}/participants', 
 			'POST', 
-			{ 'conversationId': conversationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -3654,13 +3654,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/replace', 
 			'POST', 
-			{ 'conversationId': conversationId,'participantId': participantId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId,'participantId': participantId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -3679,13 +3679,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/callbacks', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -3704,13 +3704,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/callbacks/bulk/disconnect', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -3729,13 +3729,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/callbacks/bulk/update', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -3754,13 +3754,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/calls', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -3789,13 +3789,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/chats/{conversationId}/communications/{communicationId}/messages', 
 			'POST', 
-			{ 'conversationId': conversationId,'communicationId': communicationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId,'communicationId': communicationId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -3819,13 +3819,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/chats/{conversationId}/communications/{communicationId}/typing', 
 			'POST', 
-			{ 'conversationId': conversationId,'communicationId': communicationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId,'communicationId': communicationId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -3854,13 +3854,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/chats/{conversationId}/participants/{participantId}/replace', 
 			'POST', 
-			{ 'conversationId': conversationId,'participantId': participantId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId,'participantId': participantId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -3879,13 +3879,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/chats', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -3913,13 +3913,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/replace', 
 			'POST', 
-			{ 'conversationId': conversationId,'participantId': participantId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId,'participantId': participantId },
+			{  },
+			{  },
+			{  },
 			opts['body'], 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -3943,13 +3943,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/emails/{conversationId}/inboundmessages', 
 			'POST', 
-			{ 'conversationId': conversationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -3973,13 +3973,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/emails/{conversationId}/messages', 
 			'POST', 
-			{ 'conversationId': conversationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -4003,13 +4003,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/emails/{conversationId}/messages/draft/attachments/copy', 
 			'POST', 
-			{ 'conversationId': conversationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -4038,13 +4038,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/emails/{conversationId}/participants/{participantId}/replace', 
 			'POST', 
-			{ 'conversationId': conversationId,'participantId': participantId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId,'participantId': participantId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -4063,13 +4063,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/emails', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -4088,13 +4088,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/faxes', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -4123,13 +4123,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/messages/{conversationId}/communications/{communicationId}/messages', 
 			'POST', 
-			{ 'conversationId': conversationId,'communicationId': communicationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId,'communicationId': communicationId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -4153,23 +4153,23 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/messages/{conversationId}/communications/{communicationId}/messages/media', 
 			'POST', 
-			{ 'conversationId': conversationId,'communicationId': communicationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId,'communicationId': communicationId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
 
 	/**
 	 * Get messages in batch
-	 * The path parameter [conversationId] should contain the conversationId of the conversation being filtered. The body should contain the messageId(s) of messages being requested. For example: [\&quot;a3069a33b-bbb1-4703-9d68-061d9e9db96e\&quot;, \&quot;55bc6be3-078c-4a49-a4e6-1e05776ed7e8\&quot;]
+	 * The path parameter [conversationId] should contain the conversationId of the conversation being filtered. The body should contain the messageId(s) of messages being requested. For example: ["a3069a33b-bbb1-4703-9d68-061d9e9db96e", "55bc6be3-078c-4a49-a4e6-1e05776ed7e8"]
 	 * @param {String} conversationId 
 	 * @param {Object} opts Optional parameters
-	 * @param {Array.<Object>} opts.body messageIds
+	 * @param {Array.<String>} opts.body messageIds
 	 */
 	postConversationsMessageMessagesBulk(conversationId, opts) { 
 		opts = opts || {};
@@ -4182,13 +4182,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/messages/{conversationId}/messages/bulk', 
 			'POST', 
-			{ 'conversationId': conversationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId },
+			{  },
+			{  },
+			{  },
 			opts['body'], 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -4217,13 +4217,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/messages/{conversationId}/participants/{participantId}/replace', 
 			'POST', 
-			{ 'conversationId': conversationId,'participantId': participantId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId,'participantId': participantId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -4242,13 +4242,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/messages', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -4267,13 +4267,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/messages/agentless', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -4292,13 +4292,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/messages/inbound/open', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -4317,13 +4317,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/messaging/integrations/facebook', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -4342,13 +4342,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/messaging/integrations/line', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -4367,13 +4367,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/messaging/integrations/open', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -4392,13 +4392,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/messaging/integrations/twitter', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -4417,13 +4417,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/messaging/integrations/whatsapp', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -4442,13 +4442,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/messaging/supportedcontent', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -4472,13 +4472,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/{conversationId}/participants/{participantId}/flaggedreason', 
 			'PUT', 
-			{ 'conversationId': conversationId,'participantId': participantId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId,'participantId': participantId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -4502,13 +4502,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/{conversationId}/tags', 
 			'PUT', 
-			{ 'conversationId': conversationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -4542,13 +4542,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/calls/{conversationId}/participants/{participantId}/communications/{communicationId}/uuidata', 
 			'PUT', 
-			{ 'conversationId': conversationId,'participantId': participantId,'communicationId': communicationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId,'participantId': participantId,'communicationId': communicationId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -4572,13 +4572,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/emails/{conversationId}/messages/draft', 
 			'PUT', 
-			{ 'conversationId': conversationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -4602,19 +4602,19 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/messaging/integrations/line/{integrationId}', 
 			'PUT', 
-			{ 'integrationId': integrationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'integrationId': integrationId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
 
 	/**
-	 * Set the organization&#39;s default supported content profile that may be assigned to an integration when it is created.
+	 * Set the organization's default supported content profile that may be assigned to an integration when it is created.
 	 * When an integration is created a supported content ID may be assigned to it. If the supported content ID is not supplied, the default supported content profile will be assigned to it.
 	 * @param {Object} body SupportedContent
 	 */
@@ -4627,13 +4627,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/messaging/supportedcontent/default', 
 			'PUT', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -4652,13 +4652,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/messaging/threadingtimeline', 
 			'PUT', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}

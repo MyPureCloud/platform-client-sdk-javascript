@@ -16,14 +16,13 @@ All URIs are relative to *https://api.mypurecloud.com*
 # BillingUsageReport getBillingReportsBillableusage(startDate, endDate)
 
 
-
 GET /api/v2/billing/reports/billableusage
 
 Get a report of the billable license usages
 
-Report is of the billable usages (e.g. licenses and devices utilized) for a given period. If response&#39;s status is InProgress, wait a few seconds, then try the same request again.
+Report is of the billable usages (e.g. licenses and devices utilized) for a given period. If responses status is InProgress, wait a few seconds, then try the same request again.
 
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * billing:subscription:read
 * billing:subscription:view
@@ -72,14 +71,13 @@ apiInstance.getBillingReportsBillableusage(startDate, endDate)
 # TrusteeBillingOverview getBillingTrusteebillingoverviewTrustorOrgId(trustorOrgId, opts)
 
 
-
 GET /api/v2/billing/trusteebillingoverview/{trustorOrgId}
 
 Get the billing overview for an organization that is managed by a partner.
 
 Tax Disclaimer: Prices returned by this API do not include applicable taxes. It is the responsibility of the customer to pay all taxes that are appropriate in their jurisdiction. See the PureCloud API Documentation in the Developer Center for more information about this API: https://developer.mypurecloud.com/api/rest/v2/
 
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * affiliateOrganization:clientBilling:view
 

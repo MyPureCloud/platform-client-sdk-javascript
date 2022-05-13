@@ -18,14 +18,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 # void deleteToken(userId)
 
 
-
 DELETE /api/v2/tokens/{userId}
 
 Delete all auth tokens for the specified user.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * oauth:token:delete
 
@@ -71,15 +68,11 @@ void (no response body)
 # void deleteTokensMe()
 
 
-
 DELETE /api/v2/tokens/me
 
 Delete auth token used to make the request.
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -118,15 +111,11 @@ void (no response body)
 # TokenInfo getTokensMe()
 
 
-
 GET /api/v2/tokens/me
 
 Fetch information about the current token
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -165,15 +154,11 @@ This endpoint does not need any parameter.
 # void headTokensMe()
 
 
-
 HEAD /api/v2/tokens/me
 
 Verify user token
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 

@@ -5,7 +5,7 @@ class OutboundApi {
 	/**
 	 * Outbound service.
 	 * @module purecloud-platform-client-v2/api/OutboundApi
-	 * @version 136.1.0
+	 * @version 137.0.0
 	 */
 
 	/**
@@ -34,13 +34,13 @@ class OutboundApi {
 		return this.apiClient.callApi(
 			'/api/v2/outbound/attemptlimits/{attemptLimitsId}', 
 			'DELETE', 
-			{ 'attemptLimitsId': attemptLimitsId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'attemptLimitsId': attemptLimitsId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -59,13 +59,13 @@ class OutboundApi {
 		return this.apiClient.callApi(
 			'/api/v2/outbound/callabletimesets/{callableTimeSetId}', 
 			'DELETE', 
-			{ 'callableTimeSetId': callableTimeSetId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'callableTimeSetId': callableTimeSetId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -84,13 +84,13 @@ class OutboundApi {
 		return this.apiClient.callApi(
 			'/api/v2/outbound/callanalysisresponsesets/{callAnalysisSetId}', 
 			'DELETE', 
-			{ 'callAnalysisSetId': callAnalysisSetId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'callAnalysisSetId': callAnalysisSetId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -109,13 +109,13 @@ class OutboundApi {
 		return this.apiClient.callApi(
 			'/api/v2/outbound/campaigns/{campaignId}', 
 			'DELETE', 
-			{ 'campaignId': campaignId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'campaignId': campaignId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -134,13 +134,13 @@ class OutboundApi {
 		return this.apiClient.callApi(
 			'/api/v2/outbound/campaigns/{campaignId}/progress', 
 			'DELETE', 
-			{ 'campaignId': campaignId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'campaignId': campaignId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -159,13 +159,13 @@ class OutboundApi {
 		return this.apiClient.callApi(
 			'/api/v2/outbound/campaignrules/{campaignRuleId}', 
 			'DELETE', 
-			{ 'campaignRuleId': campaignRuleId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'campaignRuleId': campaignRuleId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -184,13 +184,13 @@ class OutboundApi {
 		return this.apiClient.callApi(
 			'/api/v2/outbound/contactlists/{contactListId}', 
 			'DELETE', 
-			{ 'contactListId': contactListId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'contactListId': contactListId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -214,13 +214,13 @@ class OutboundApi {
 		return this.apiClient.callApi(
 			'/api/v2/outbound/contactlists/{contactListId}/contacts/{contactId}', 
 			'DELETE', 
-			{ 'contactListId': contactListId,'contactId': contactId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'contactListId': contactListId,'contactId': contactId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -244,13 +244,13 @@ class OutboundApi {
 		return this.apiClient.callApi(
 			'/api/v2/outbound/contactlists/{contactListId}/contacts', 
 			'DELETE', 
-			{ 'contactListId': contactListId }, 
-			{ 'contactIds': this.apiClient.buildCollectionParam(contactIds, 'multi') }, 
-			{  }, 
-			{  }, 
+			{ 'contactListId': contactListId },
+			{ 'contactIds': this.apiClient.buildCollectionParam(contactIds, 'multi') },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -269,13 +269,13 @@ class OutboundApi {
 		return this.apiClient.callApi(
 			'/api/v2/outbound/contactlistfilters/{contactListFilterId}', 
 			'DELETE', 
-			{ 'contactListFilterId': contactListFilterId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'contactListFilterId': contactListFilterId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -294,13 +294,13 @@ class OutboundApi {
 		return this.apiClient.callApi(
 			'/api/v2/outbound/contactlists', 
 			'DELETE', 
-			{  }, 
-			{ 'id': this.apiClient.buildCollectionParam(id, 'multi') }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'id': this.apiClient.buildCollectionParam(id, 'multi') },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -319,13 +319,13 @@ class OutboundApi {
 		return this.apiClient.callApi(
 			'/api/v2/outbound/dnclists/{dncListId}', 
 			'DELETE', 
-			{ 'dncListId': dncListId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'dncListId': dncListId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -344,13 +344,13 @@ class OutboundApi {
 		return this.apiClient.callApi(
 			'/api/v2/outbound/messagingcampaigns/{messagingCampaignId}', 
 			'DELETE', 
-			{ 'messagingCampaignId': messagingCampaignId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'messagingCampaignId': messagingCampaignId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -369,13 +369,13 @@ class OutboundApi {
 		return this.apiClient.callApi(
 			'/api/v2/outbound/messagingcampaigns/{messagingCampaignId}/progress', 
 			'DELETE', 
-			{ 'messagingCampaignId': messagingCampaignId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'messagingCampaignId': messagingCampaignId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -394,13 +394,13 @@ class OutboundApi {
 		return this.apiClient.callApi(
 			'/api/v2/outbound/rulesets/{ruleSetId}', 
 			'DELETE', 
-			{ 'ruleSetId': ruleSetId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'ruleSetId': ruleSetId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -419,13 +419,13 @@ class OutboundApi {
 		return this.apiClient.callApi(
 			'/api/v2/outbound/schedules/campaigns/{campaignId}', 
 			'DELETE', 
-			{ 'campaignId': campaignId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'campaignId': campaignId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -444,13 +444,13 @@ class OutboundApi {
 		return this.apiClient.callApi(
 			'/api/v2/outbound/schedules/emailcampaigns/{emailCampaignId}', 
 			'DELETE', 
-			{ 'emailCampaignId': emailCampaignId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'emailCampaignId': emailCampaignId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -469,13 +469,13 @@ class OutboundApi {
 		return this.apiClient.callApi(
 			'/api/v2/outbound/schedules/messagingcampaigns/{messagingCampaignId}', 
 			'DELETE', 
-			{ 'messagingCampaignId': messagingCampaignId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'messagingCampaignId': messagingCampaignId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -494,13 +494,13 @@ class OutboundApi {
 		return this.apiClient.callApi(
 			'/api/v2/outbound/schedules/sequences/{sequenceId}', 
 			'DELETE', 
-			{ 'sequenceId': sequenceId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'sequenceId': sequenceId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -519,13 +519,13 @@ class OutboundApi {
 		return this.apiClient.callApi(
 			'/api/v2/outbound/sequences/{sequenceId}', 
 			'DELETE', 
-			{ 'sequenceId': sequenceId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'sequenceId': sequenceId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -544,13 +544,13 @@ class OutboundApi {
 		return this.apiClient.callApi(
 			'/api/v2/outbound/attemptlimits/{attemptLimitsId}', 
 			'GET', 
-			{ 'attemptLimitsId': attemptLimitsId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'attemptLimitsId': attemptLimitsId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -574,13 +574,13 @@ class OutboundApi {
 		return this.apiClient.callApi(
 			'/api/v2/outbound/attemptlimits', 
 			'GET', 
-			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'allowEmptyResult': opts['allowEmptyResult'],'filterType': opts['filterType'],'name': opts['name'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'allowEmptyResult': opts['allowEmptyResult'],'filterType': opts['filterType'],'name': opts['name'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -599,13 +599,13 @@ class OutboundApi {
 		return this.apiClient.callApi(
 			'/api/v2/outbound/callabletimesets/{callableTimeSetId}', 
 			'GET', 
-			{ 'callableTimeSetId': callableTimeSetId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'callableTimeSetId': callableTimeSetId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -629,13 +629,13 @@ class OutboundApi {
 		return this.apiClient.callApi(
 			'/api/v2/outbound/callabletimesets', 
 			'GET', 
-			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'allowEmptyResult': opts['allowEmptyResult'],'filterType': opts['filterType'],'name': opts['name'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'allowEmptyResult': opts['allowEmptyResult'],'filterType': opts['filterType'],'name': opts['name'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -654,13 +654,13 @@ class OutboundApi {
 		return this.apiClient.callApi(
 			'/api/v2/outbound/callanalysisresponsesets/{callAnalysisSetId}', 
 			'GET', 
-			{ 'callAnalysisSetId': callAnalysisSetId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'callAnalysisSetId': callAnalysisSetId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -684,13 +684,13 @@ class OutboundApi {
 		return this.apiClient.callApi(
 			'/api/v2/outbound/callanalysisresponsesets', 
 			'GET', 
-			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'allowEmptyResult': opts['allowEmptyResult'],'filterType': opts['filterType'],'name': opts['name'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'allowEmptyResult': opts['allowEmptyResult'],'filterType': opts['filterType'],'name': opts['name'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -709,19 +709,19 @@ class OutboundApi {
 		return this.apiClient.callApi(
 			'/api/v2/outbound/campaigns/{campaignId}', 
 			'GET', 
-			{ 'campaignId': campaignId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'campaignId': campaignId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
 
 	/**
-	 * Get a preview of how agents will be mapped to this campaign&#39;s contact list.
+	 * Get a preview of how agents will be mapped to this campaign's contact list.
 	 * 
 	 * @param {String} campaignId Campaign ID
 	 */
@@ -734,13 +734,13 @@ class OutboundApi {
 		return this.apiClient.callApi(
 			'/api/v2/outbound/campaigns/{campaignId}/agentownedmappingpreview/results', 
 			'GET', 
-			{ 'campaignId': campaignId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'campaignId': campaignId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -759,13 +759,13 @@ class OutboundApi {
 		return this.apiClient.callApi(
 			'/api/v2/outbound/campaigns/{campaignId}/diagnostics', 
 			'GET', 
-			{ 'campaignId': campaignId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'campaignId': campaignId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -784,13 +784,13 @@ class OutboundApi {
 		return this.apiClient.callApi(
 			'/api/v2/outbound/campaigns/{campaignId}/interactions', 
 			'GET', 
-			{ 'campaignId': campaignId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'campaignId': campaignId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -809,13 +809,13 @@ class OutboundApi {
 		return this.apiClient.callApi(
 			'/api/v2/outbound/campaigns/{campaignId}/progress', 
 			'GET', 
-			{ 'campaignId': campaignId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'campaignId': campaignId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -834,13 +834,13 @@ class OutboundApi {
 		return this.apiClient.callApi(
 			'/api/v2/outbound/campaigns/{campaignId}/stats', 
 			'GET', 
-			{ 'campaignId': campaignId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'campaignId': campaignId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -859,13 +859,13 @@ class OutboundApi {
 		return this.apiClient.callApi(
 			'/api/v2/outbound/campaignrules/{campaignRuleId}', 
 			'GET', 
-			{ 'campaignRuleId': campaignRuleId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'campaignRuleId': campaignRuleId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -889,13 +889,13 @@ class OutboundApi {
 		return this.apiClient.callApi(
 			'/api/v2/outbound/campaignrules', 
 			'GET', 
-			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'allowEmptyResult': opts['allowEmptyResult'],'filterType': opts['filterType'],'name': opts['name'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'allowEmptyResult': opts['allowEmptyResult'],'filterType': opts['filterType'],'name': opts['name'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -925,13 +925,13 @@ class OutboundApi {
 		return this.apiClient.callApi(
 			'/api/v2/outbound/campaigns', 
 			'GET', 
-			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'filterType': opts['filterType'],'name': opts['name'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'contactListId': opts['contactListId'],'dncListIds': opts['dncListIds'],'distributionQueueId': opts['distributionQueueId'],'edgeGroupId': opts['edgeGroupId'],'callAnalysisResponseSetId': opts['callAnalysisResponseSetId'],'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi'),'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'filterType': opts['filterType'],'name': opts['name'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'contactListId': opts['contactListId'],'dncListIds': opts['dncListIds'],'distributionQueueId': opts['distributionQueueId'],'edgeGroupId': opts['edgeGroupId'],'callAnalysisResponseSetId': opts['callAnalysisResponseSetId'],'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi'),'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -955,13 +955,13 @@ class OutboundApi {
 		return this.apiClient.callApi(
 			'/api/v2/outbound/campaigns/all', 
 			'GET', 
-			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'name': opts['name'],'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi'),'mediaType': this.apiClient.buildCollectionParam(opts['mediaType'], 'multi'),'sortOrder': opts['sortOrder'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'name': opts['name'],'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi'),'mediaType': this.apiClient.buildCollectionParam(opts['mediaType'], 'multi'),'sortOrder': opts['sortOrder'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -985,13 +985,13 @@ class OutboundApi {
 		return this.apiClient.callApi(
 			'/api/v2/outbound/campaigns/all/divisionviews', 
 			'GET', 
-			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'name': opts['name'],'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi'),'mediaType': this.apiClient.buildCollectionParam(opts['mediaType'], 'multi'),'sortOrder': opts['sortOrder'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'name': opts['name'],'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi'),'mediaType': this.apiClient.buildCollectionParam(opts['mediaType'], 'multi'),'sortOrder': opts['sortOrder'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1010,13 +1010,13 @@ class OutboundApi {
 		return this.apiClient.callApi(
 			'/api/v2/outbound/campaigns/divisionviews/{campaignId}', 
 			'GET', 
-			{ 'campaignId': campaignId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'campaignId': campaignId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1040,13 +1040,13 @@ class OutboundApi {
 		return this.apiClient.callApi(
 			'/api/v2/outbound/campaigns/divisionviews', 
 			'GET', 
-			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'filterType': opts['filterType'],'name': opts['name'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'filterType': opts['filterType'],'name': opts['name'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1070,13 +1070,13 @@ class OutboundApi {
 		return this.apiClient.callApi(
 			'/api/v2/outbound/contactlists/{contactListId}', 
 			'GET', 
-			{ 'contactListId': contactListId }, 
-			{ 'includeImportStatus': opts['includeImportStatus'],'includeSize': opts['includeSize'] }, 
-			{  }, 
-			{  }, 
+			{ 'contactListId': contactListId },
+			{ 'includeImportStatus': opts['includeImportStatus'],'includeSize': opts['includeSize'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1100,13 +1100,13 @@ class OutboundApi {
 		return this.apiClient.callApi(
 			'/api/v2/outbound/contactlists/{contactListId}/contacts/{contactId}', 
 			'GET', 
-			{ 'contactListId': contactListId,'contactId': contactId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'contactListId': contactListId,'contactId': contactId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1129,13 +1129,13 @@ class OutboundApi {
 		return this.apiClient.callApi(
 			'/api/v2/outbound/contactlists/{contactListId}/export', 
 			'GET', 
-			{ 'contactListId': contactListId }, 
-			{ 'download': opts['download'] }, 
-			{  }, 
-			{  }, 
+			{ 'contactListId': contactListId },
+			{ 'download': opts['download'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1154,13 +1154,13 @@ class OutboundApi {
 		return this.apiClient.callApi(
 			'/api/v2/outbound/contactlists/{contactListId}/importstatus', 
 			'GET', 
-			{ 'contactListId': contactListId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'contactListId': contactListId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1179,13 +1179,13 @@ class OutboundApi {
 		return this.apiClient.callApi(
 			'/api/v2/outbound/contactlists/{contactListId}/timezonemappingpreview', 
 			'GET', 
-			{ 'contactListId': contactListId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'contactListId': contactListId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1204,13 +1204,13 @@ class OutboundApi {
 		return this.apiClient.callApi(
 			'/api/v2/outbound/contactlistfilters/{contactListFilterId}', 
 			'GET', 
-			{ 'contactListFilterId': contactListFilterId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'contactListFilterId': contactListFilterId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1235,13 +1235,13 @@ class OutboundApi {
 		return this.apiClient.callApi(
 			'/api/v2/outbound/contactlistfilters', 
 			'GET', 
-			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'allowEmptyResult': opts['allowEmptyResult'],'filterType': opts['filterType'],'name': opts['name'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'contactListId': opts['contactListId'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'allowEmptyResult': opts['allowEmptyResult'],'filterType': opts['filterType'],'name': opts['name'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'contactListId': opts['contactListId'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1269,13 +1269,13 @@ class OutboundApi {
 		return this.apiClient.callApi(
 			'/api/v2/outbound/contactlists', 
 			'GET', 
-			{  }, 
-			{ 'includeImportStatus': opts['includeImportStatus'],'includeSize': opts['includeSize'],'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'allowEmptyResult': opts['allowEmptyResult'],'filterType': opts['filterType'],'name': opts['name'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi'),'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'includeImportStatus': opts['includeImportStatus'],'includeSize': opts['includeSize'],'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'allowEmptyResult': opts['allowEmptyResult'],'filterType': opts['filterType'],'name': opts['name'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi'),'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1299,13 +1299,13 @@ class OutboundApi {
 		return this.apiClient.callApi(
 			'/api/v2/outbound/contactlists/divisionviews/{contactListId}', 
 			'GET', 
-			{ 'contactListId': contactListId }, 
-			{ 'includeImportStatus': opts['includeImportStatus'],'includeSize': opts['includeSize'] }, 
-			{  }, 
-			{  }, 
+			{ 'contactListId': contactListId },
+			{ 'includeImportStatus': opts['includeImportStatus'],'includeSize': opts['includeSize'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1331,13 +1331,13 @@ class OutboundApi {
 		return this.apiClient.callApi(
 			'/api/v2/outbound/contactlists/divisionviews', 
 			'GET', 
-			{  }, 
-			{ 'includeImportStatus': opts['includeImportStatus'],'includeSize': opts['includeSize'],'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'filterType': opts['filterType'],'name': opts['name'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'includeImportStatus': opts['includeImportStatus'],'includeSize': opts['includeSize'],'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'filterType': opts['filterType'],'name': opts['name'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1361,13 +1361,13 @@ class OutboundApi {
 		return this.apiClient.callApi(
 			'/api/v2/outbound/dnclists/{dncListId}', 
 			'GET', 
-			{ 'dncListId': dncListId }, 
-			{ 'includeImportStatus': opts['includeImportStatus'],'includeSize': opts['includeSize'] }, 
-			{  }, 
-			{  }, 
+			{ 'dncListId': dncListId },
+			{ 'includeImportStatus': opts['includeImportStatus'],'includeSize': opts['includeSize'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1390,13 +1390,13 @@ class OutboundApi {
 		return this.apiClient.callApi(
 			'/api/v2/outbound/dnclists/{dncListId}/export', 
 			'GET', 
-			{ 'dncListId': dncListId }, 
-			{ 'download': opts['download'] }, 
-			{  }, 
-			{  }, 
+			{ 'dncListId': dncListId },
+			{ 'download': opts['download'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1415,13 +1415,13 @@ class OutboundApi {
 		return this.apiClient.callApi(
 			'/api/v2/outbound/dnclists/{dncListId}/importstatus', 
 			'GET', 
-			{ 'dncListId': dncListId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'dncListId': dncListId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1449,13 +1449,13 @@ class OutboundApi {
 		return this.apiClient.callApi(
 			'/api/v2/outbound/dnclists', 
 			'GET', 
-			{  }, 
-			{ 'includeImportStatus': opts['includeImportStatus'],'includeSize': opts['includeSize'],'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'allowEmptyResult': opts['allowEmptyResult'],'filterType': opts['filterType'],'name': opts['name'],'dncSourceType': opts['dncSourceType'],'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi'),'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'includeImportStatus': opts['includeImportStatus'],'includeSize': opts['includeSize'],'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'allowEmptyResult': opts['allowEmptyResult'],'filterType': opts['filterType'],'name': opts['name'],'dncSourceType': opts['dncSourceType'],'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi'),'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1479,13 +1479,13 @@ class OutboundApi {
 		return this.apiClient.callApi(
 			'/api/v2/outbound/dnclists/divisionviews/{dncListId}', 
 			'GET', 
-			{ 'dncListId': dncListId }, 
-			{ 'includeImportStatus': opts['includeImportStatus'],'includeSize': opts['includeSize'] }, 
-			{  }, 
-			{  }, 
+			{ 'dncListId': dncListId },
+			{ 'includeImportStatus': opts['includeImportStatus'],'includeSize': opts['includeSize'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1512,13 +1512,13 @@ class OutboundApi {
 		return this.apiClient.callApi(
 			'/api/v2/outbound/dnclists/divisionviews', 
 			'GET', 
-			{  }, 
-			{ 'includeImportStatus': opts['includeImportStatus'],'includeSize': opts['includeSize'],'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'filterType': opts['filterType'],'name': opts['name'],'dncSourceType': opts['dncSourceType'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'includeImportStatus': opts['includeImportStatus'],'includeSize': opts['includeSize'],'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'filterType': opts['filterType'],'name': opts['name'],'dncSourceType': opts['dncSourceType'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1537,13 +1537,13 @@ class OutboundApi {
 		return this.apiClient.callApi(
 			'/api/v2/outbound/events/{eventId}', 
 			'GET', 
-			{ 'eventId': eventId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'eventId': eventId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1567,13 +1567,13 @@ class OutboundApi {
 		return this.apiClient.callApi(
 			'/api/v2/outbound/events', 
 			'GET', 
-			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'filterType': opts['filterType'],'category': opts['category'],'level': opts['level'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'filterType': opts['filterType'],'category': opts['category'],'level': opts['level'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1592,19 +1592,19 @@ class OutboundApi {
 		return this.apiClient.callApi(
 			'/api/v2/outbound/messagingcampaigns/{messagingCampaignId}', 
 			'GET', 
-			{ 'messagingCampaignId': messagingCampaignId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'messagingCampaignId': messagingCampaignId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
 
 	/**
-	 * Get messaging campaign&#39;s progress
+	 * Get messaging campaign's progress
 	 * 
 	 * @param {String} messagingCampaignId The Messaging Campaign ID
 	 */
@@ -1617,13 +1617,13 @@ class OutboundApi {
 		return this.apiClient.callApi(
 			'/api/v2/outbound/messagingcampaigns/{messagingCampaignId}/progress', 
 			'GET', 
-			{ 'messagingCampaignId': messagingCampaignId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'messagingCampaignId': messagingCampaignId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1650,13 +1650,13 @@ class OutboundApi {
 		return this.apiClient.callApi(
 			'/api/v2/outbound/messagingcampaigns', 
 			'GET', 
-			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'name': opts['name'],'contactListId': opts['contactListId'],'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi'),'type': opts['type'],'senderSmsPhoneNumber': opts['senderSmsPhoneNumber'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi') }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'name': opts['name'],'contactListId': opts['contactListId'],'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi'),'type': opts['type'],'senderSmsPhoneNumber': opts['senderSmsPhoneNumber'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi') },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1675,13 +1675,13 @@ class OutboundApi {
 		return this.apiClient.callApi(
 			'/api/v2/outbound/messagingcampaigns/divisionviews/{messagingCampaignId}', 
 			'GET', 
-			{ 'messagingCampaignId': messagingCampaignId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'messagingCampaignId': messagingCampaignId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1705,13 +1705,13 @@ class OutboundApi {
 		return this.apiClient.callApi(
 			'/api/v2/outbound/messagingcampaigns/divisionviews', 
 			'GET', 
-			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortOrder': opts['sortOrder'],'name': opts['name'],'type': opts['type'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'senderSmsPhoneNumber': opts['senderSmsPhoneNumber'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortOrder': opts['sortOrder'],'name': opts['name'],'type': opts['type'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'senderSmsPhoneNumber': opts['senderSmsPhoneNumber'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1730,13 +1730,13 @@ class OutboundApi {
 		return this.apiClient.callApi(
 			'/api/v2/outbound/rulesets/{ruleSetId}', 
 			'GET', 
-			{ 'ruleSetId': ruleSetId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'ruleSetId': ruleSetId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1760,13 +1760,13 @@ class OutboundApi {
 		return this.apiClient.callApi(
 			'/api/v2/outbound/rulesets', 
 			'GET', 
-			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'allowEmptyResult': opts['allowEmptyResult'],'filterType': opts['filterType'],'name': opts['name'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'allowEmptyResult': opts['allowEmptyResult'],'filterType': opts['filterType'],'name': opts['name'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1785,13 +1785,13 @@ class OutboundApi {
 		return this.apiClient.callApi(
 			'/api/v2/outbound/schedules/campaigns/{campaignId}', 
 			'GET', 
-			{ 'campaignId': campaignId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'campaignId': campaignId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1805,13 +1805,13 @@ class OutboundApi {
 		return this.apiClient.callApi(
 			'/api/v2/outbound/schedules/campaigns', 
 			'GET', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1830,13 +1830,13 @@ class OutboundApi {
 		return this.apiClient.callApi(
 			'/api/v2/outbound/schedules/emailcampaigns/{emailCampaignId}', 
 			'GET', 
-			{ 'emailCampaignId': emailCampaignId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'emailCampaignId': emailCampaignId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1850,13 +1850,13 @@ class OutboundApi {
 		return this.apiClient.callApi(
 			'/api/v2/outbound/schedules/emailcampaigns', 
 			'GET', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1875,13 +1875,13 @@ class OutboundApi {
 		return this.apiClient.callApi(
 			'/api/v2/outbound/schedules/messagingcampaigns/{messagingCampaignId}', 
 			'GET', 
-			{ 'messagingCampaignId': messagingCampaignId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'messagingCampaignId': messagingCampaignId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1895,13 +1895,13 @@ class OutboundApi {
 		return this.apiClient.callApi(
 			'/api/v2/outbound/schedules/messagingcampaigns', 
 			'GET', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1920,13 +1920,13 @@ class OutboundApi {
 		return this.apiClient.callApi(
 			'/api/v2/outbound/schedules/sequences/{sequenceId}', 
 			'GET', 
-			{ 'sequenceId': sequenceId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'sequenceId': sequenceId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1940,13 +1940,13 @@ class OutboundApi {
 		return this.apiClient.callApi(
 			'/api/v2/outbound/schedules/sequences', 
 			'GET', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1965,13 +1965,13 @@ class OutboundApi {
 		return this.apiClient.callApi(
 			'/api/v2/outbound/sequences/{sequenceId}', 
 			'GET', 
-			{ 'sequenceId': sequenceId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'sequenceId': sequenceId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1995,13 +1995,13 @@ class OutboundApi {
 		return this.apiClient.callApi(
 			'/api/v2/outbound/sequences', 
 			'GET', 
-			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'allowEmptyResult': opts['allowEmptyResult'],'filterType': opts['filterType'],'name': opts['name'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'allowEmptyResult': opts['allowEmptyResult'],'filterType': opts['filterType'],'name': opts['name'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2015,13 +2015,13 @@ class OutboundApi {
 		return this.apiClient.callApi(
 			'/api/v2/outbound/settings', 
 			'GET', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2035,13 +2035,13 @@ class OutboundApi {
 		return this.apiClient.callApi(
 			'/api/v2/outbound/wrapupcodemappings', 
 			'GET', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2060,13 +2060,13 @@ class OutboundApi {
 		return this.apiClient.callApi(
 			'/api/v2/outbound/settings', 
 			'PATCH', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2085,13 +2085,13 @@ class OutboundApi {
 		return this.apiClient.callApi(
 			'/api/v2/outbound/attemptlimits', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2118,13 +2118,13 @@ class OutboundApi {
 		return this.apiClient.callApi(
 			'/api/v2/outbound/audits', 
 			'POST', 
-			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'facetsOnly': opts['facetsOnly'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'facetsOnly': opts['facetsOnly'] },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2143,13 +2143,13 @@ class OutboundApi {
 		return this.apiClient.callApi(
 			'/api/v2/outbound/callabletimesets', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2168,19 +2168,19 @@ class OutboundApi {
 		return this.apiClient.callApi(
 			'/api/v2/outbound/callanalysisresponsesets', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
 
 	/**
-	 * Initiate request for a preview of how agents will be mapped to this campaign&#39;s contact list.
+	 * Initiate request for a preview of how agents will be mapped to this campaign's contact list.
 	 * 
 	 * @param {String} campaignId Campaign ID
 	 */
@@ -2193,20 +2193,20 @@ class OutboundApi {
 		return this.apiClient.callApi(
 			'/api/v2/outbound/campaigns/{campaignId}/agentownedmappingpreview', 
 			'POST', 
-			{ 'campaignId': campaignId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'campaignId': campaignId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
 
 	/**
 	 * Schedule a Callback for a Dialer Campaign (Deprecated)
-	 * This endpoint is deprecated and may have unexpected results. Please use \&quot;/conversations/{conversationId}/participants/{participantId}/callbacks instead.\&quot;
+	 * This endpoint is deprecated and may have unexpected results. Please use "/conversations/{conversationId}/participants/{participantId}/callbacks instead."
 	 * @param {String} campaignId Campaign ID
 	 * @param {Object} body ContactCallbackRequest
 	 */
@@ -2223,13 +2223,13 @@ class OutboundApi {
 		return this.apiClient.callApi(
 			'/api/v2/outbound/campaigns/{campaignId}/callback/schedule', 
 			'POST', 
-			{ 'campaignId': campaignId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'campaignId': campaignId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2248,13 +2248,13 @@ class OutboundApi {
 		return this.apiClient.callApi(
 			'/api/v2/outbound/campaignrules', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2273,13 +2273,13 @@ class OutboundApi {
 		return this.apiClient.callApi(
 			'/api/v2/outbound/campaigns', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2287,7 +2287,7 @@ class OutboundApi {
 	/**
 	 * Get progress for a list of campaigns
 	 * 
-	 * @param {Array.<Object>} body Campaign IDs
+	 * @param {Array.<String>} body Campaign IDs
 	 */
 	postOutboundCampaignsProgress(body) { 
 		// verify the required parameter 'body' is set
@@ -2298,13 +2298,13 @@ class OutboundApi {
 		return this.apiClient.callApi(
 			'/api/v2/outbound/campaigns/progress', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2323,13 +2323,13 @@ class OutboundApi {
 		return this.apiClient.callApi(
 			'/api/v2/outbound/contactlists/{contactListId}/clear', 
 			'POST', 
-			{ 'contactListId': contactListId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'contactListId': contactListId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2341,8 +2341,8 @@ class OutboundApi {
 	 * @param {Array.<Object>} body Contact
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.priority Contact priority. True means the contact(s) will be dialed next; false means the contact will go to the end of the contact queue.
-	 * @param {Boolean} opts.clearSystemData Clear system data. True means the system columns (attempts, callable status, etc) stored on the contact will be cleared if the contact already exists; false means they won&#39;t.
-	 * @param {Boolean} opts.doNotQueue Do not queue. True means that updated contacts will not have their positions in the queue altered, so contacts that have already been dialed will not be redialed. For new contacts, this parameter has no effect; False means that updated contacts will be re-queued, according to the &#39;priority&#39; parameter.
+	 * @param {Boolean} opts.clearSystemData Clear system data. True means the system columns (attempts, callable status, etc) stored on the contact will be cleared if the contact already exists; false means they won't.
+	 * @param {Boolean} opts.doNotQueue Do not queue. True means that updated contacts will not have their positions in the queue altered, so contacts that have already been dialed will not be redialed. For new contacts, this parameter has no effect; False means that updated contacts will be re-queued, according to the 'priority' parameter.
 	 */
 	postOutboundContactlistContacts(contactListId, body, opts) { 
 		opts = opts || {};
@@ -2359,13 +2359,13 @@ class OutboundApi {
 		return this.apiClient.callApi(
 			'/api/v2/outbound/contactlists/{contactListId}/contacts', 
 			'POST', 
-			{ 'contactListId': contactListId }, 
-			{ 'priority': opts['priority'],'clearSystemData': opts['clearSystemData'],'doNotQueue': opts['doNotQueue'] }, 
-			{  }, 
-			{  }, 
+			{ 'contactListId': contactListId },
+			{ 'priority': opts['priority'],'clearSystemData': opts['clearSystemData'],'doNotQueue': opts['doNotQueue'] },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2374,7 +2374,7 @@ class OutboundApi {
 	 * Get contacts from a contact list.
 	 * 
 	 * @param {String} contactListId Contact List ID
-	 * @param {Array.<Object>} body ContactIds to get.
+	 * @param {Array.<String>} body ContactIds to get.
 	 */
 	postOutboundContactlistContactsBulk(contactListId, body) { 
 		// verify the required parameter 'contactListId' is set
@@ -2389,13 +2389,13 @@ class OutboundApi {
 		return this.apiClient.callApi(
 			'/api/v2/outbound/contactlists/{contactListId}/contacts/bulk', 
 			'POST', 
-			{ 'contactListId': contactListId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'contactListId': contactListId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2414,13 +2414,13 @@ class OutboundApi {
 		return this.apiClient.callApi(
 			'/api/v2/outbound/contactlists/{contactListId}/export', 
 			'POST', 
-			{ 'contactListId': contactListId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'contactListId': contactListId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2439,13 +2439,13 @@ class OutboundApi {
 		return this.apiClient.callApi(
 			'/api/v2/outbound/contactlistfilters', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2464,13 +2464,13 @@ class OutboundApi {
 		return this.apiClient.callApi(
 			'/api/v2/outbound/contactlistfilters/preview', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2489,13 +2489,13 @@ class OutboundApi {
 		return this.apiClient.callApi(
 			'/api/v2/outbound/contactlists', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2514,13 +2514,13 @@ class OutboundApi {
 		return this.apiClient.callApi(
 			'/api/v2/outbound/conversations/{conversationId}/dnc', 
 			'POST', 
-			{ 'conversationId': conversationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2539,13 +2539,13 @@ class OutboundApi {
 		return this.apiClient.callApi(
 			'/api/v2/outbound/dnclists/{dncListId}/export', 
 			'POST', 
-			{ 'dncListId': dncListId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'dncListId': dncListId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2554,7 +2554,7 @@ class OutboundApi {
 	 * Add phone numbers to a DNC list.
 	 * Only Internal DNC lists may be appended to
 	 * @param {String} dncListId DncList ID
-	 * @param {Array.<Object>} body DNC Phone Numbers
+	 * @param {Array.<String>} body DNC Phone Numbers
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.expirationDateTime Expiration date for DNC phone numbers in yyyy-MM-ddTHH:mmZ format
 	 */
@@ -2573,13 +2573,13 @@ class OutboundApi {
 		return this.apiClient.callApi(
 			'/api/v2/outbound/dnclists/{dncListId}/phonenumbers', 
 			'POST', 
-			{ 'dncListId': dncListId }, 
-			{ 'expirationDateTime': opts['expirationDateTime'] }, 
-			{  }, 
-			{  }, 
+			{ 'dncListId': dncListId },
+			{ 'expirationDateTime': opts['expirationDateTime'] },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2598,13 +2598,13 @@ class OutboundApi {
 		return this.apiClient.callApi(
 			'/api/v2/outbound/dnclists', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2623,13 +2623,13 @@ class OutboundApi {
 		return this.apiClient.callApi(
 			'/api/v2/outbound/messagingcampaigns', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2637,7 +2637,7 @@ class OutboundApi {
 	/**
 	 * Get progress for a list of messaging campaigns
 	 * 
-	 * @param {Array.<Object>} body Messaging Campaign IDs
+	 * @param {Array.<String>} body Messaging Campaign IDs
 	 */
 	postOutboundMessagingcampaignsProgress(body) { 
 		// verify the required parameter 'body' is set
@@ -2648,13 +2648,13 @@ class OutboundApi {
 		return this.apiClient.callApi(
 			'/api/v2/outbound/messagingcampaigns/progress', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2673,13 +2673,13 @@ class OutboundApi {
 		return this.apiClient.callApi(
 			'/api/v2/outbound/rulesets', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2698,13 +2698,13 @@ class OutboundApi {
 		return this.apiClient.callApi(
 			'/api/v2/outbound/sequences', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2728,13 +2728,13 @@ class OutboundApi {
 		return this.apiClient.callApi(
 			'/api/v2/outbound/attemptlimits/{attemptLimitsId}', 
 			'PUT', 
-			{ 'attemptLimitsId': attemptLimitsId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'attemptLimitsId': attemptLimitsId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2758,13 +2758,13 @@ class OutboundApi {
 		return this.apiClient.callApi(
 			'/api/v2/outbound/callabletimesets/{callableTimeSetId}', 
 			'PUT', 
-			{ 'callableTimeSetId': callableTimeSetId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'callableTimeSetId': callableTimeSetId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2788,13 +2788,13 @@ class OutboundApi {
 		return this.apiClient.callApi(
 			'/api/v2/outbound/callanalysisresponsesets/{callAnalysisSetId}', 
 			'PUT', 
-			{ 'callAnalysisSetId': callAnalysisSetId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'callAnalysisSetId': callAnalysisSetId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2818,22 +2818,22 @@ class OutboundApi {
 		return this.apiClient.callApi(
 			'/api/v2/outbound/campaigns/{campaignId}', 
 			'PUT', 
-			{ 'campaignId': campaignId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'campaignId': campaignId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
 
 	/**
-	 * Send notification that an agent&#39;s state changed 
+	 * Send notification that an agent's state changed 
 	 * New agent state.
 	 * @param {String} campaignId Campaign ID
-	 * @param {String} userId Agent&#39;s user ID
+	 * @param {String} userId Agent's user ID
 	 * @param {Object} body agent
 	 */
 	putOutboundCampaignAgent(campaignId, userId, body) { 
@@ -2853,13 +2853,13 @@ class OutboundApi {
 		return this.apiClient.callApi(
 			'/api/v2/outbound/campaigns/{campaignId}/agents/{userId}', 
 			'PUT', 
-			{ 'campaignId': campaignId,'userId': userId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'campaignId': campaignId,'userId': userId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2883,13 +2883,13 @@ class OutboundApi {
 		return this.apiClient.callApi(
 			'/api/v2/outbound/campaignrules/{campaignRuleId}', 
 			'PUT', 
-			{ 'campaignRuleId': campaignRuleId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'campaignRuleId': campaignRuleId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2913,13 +2913,13 @@ class OutboundApi {
 		return this.apiClient.callApi(
 			'/api/v2/outbound/contactlists/{contactListId}', 
 			'PUT', 
-			{ 'contactListId': contactListId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'contactListId': contactListId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2948,13 +2948,13 @@ class OutboundApi {
 		return this.apiClient.callApi(
 			'/api/v2/outbound/contactlists/{contactListId}/contacts/{contactId}', 
 			'PUT', 
-			{ 'contactListId': contactListId,'contactId': contactId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'contactListId': contactListId,'contactId': contactId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2978,13 +2978,13 @@ class OutboundApi {
 		return this.apiClient.callApi(
 			'/api/v2/outbound/contactlistfilters/{contactListFilterId}', 
 			'PUT', 
-			{ 'contactListFilterId': contactListFilterId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'contactListFilterId': contactListFilterId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -3008,13 +3008,13 @@ class OutboundApi {
 		return this.apiClient.callApi(
 			'/api/v2/outbound/dnclists/{dncListId}', 
 			'PUT', 
-			{ 'dncListId': dncListId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'dncListId': dncListId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -3038,13 +3038,13 @@ class OutboundApi {
 		return this.apiClient.callApi(
 			'/api/v2/outbound/messagingcampaigns/{messagingCampaignId}', 
 			'PUT', 
-			{ 'messagingCampaignId': messagingCampaignId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'messagingCampaignId': messagingCampaignId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -3068,13 +3068,13 @@ class OutboundApi {
 		return this.apiClient.callApi(
 			'/api/v2/outbound/rulesets/{ruleSetId}', 
 			'PUT', 
-			{ 'ruleSetId': ruleSetId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'ruleSetId': ruleSetId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -3098,13 +3098,13 @@ class OutboundApi {
 		return this.apiClient.callApi(
 			'/api/v2/outbound/schedules/campaigns/{campaignId}', 
 			'PUT', 
-			{ 'campaignId': campaignId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'campaignId': campaignId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -3128,13 +3128,13 @@ class OutboundApi {
 		return this.apiClient.callApi(
 			'/api/v2/outbound/schedules/emailcampaigns/{emailCampaignId}', 
 			'PUT', 
-			{ 'emailCampaignId': emailCampaignId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'emailCampaignId': emailCampaignId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -3158,13 +3158,13 @@ class OutboundApi {
 		return this.apiClient.callApi(
 			'/api/v2/outbound/schedules/messagingcampaigns/{messagingCampaignId}', 
 			'PUT', 
-			{ 'messagingCampaignId': messagingCampaignId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'messagingCampaignId': messagingCampaignId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -3188,13 +3188,13 @@ class OutboundApi {
 		return this.apiClient.callApi(
 			'/api/v2/outbound/schedules/sequences/{sequenceId}', 
 			'PUT', 
-			{ 'sequenceId': sequenceId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'sequenceId': sequenceId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -3218,13 +3218,13 @@ class OutboundApi {
 		return this.apiClient.callApi(
 			'/api/v2/outbound/sequences/{sequenceId}', 
 			'PUT', 
-			{ 'sequenceId': sequenceId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'sequenceId': sequenceId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -3243,13 +3243,13 @@ class OutboundApi {
 		return this.apiClient.callApi(
 			'/api/v2/outbound/wrapupcodemappings', 
 			'PUT', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}

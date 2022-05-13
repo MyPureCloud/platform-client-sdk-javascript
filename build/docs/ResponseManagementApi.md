@@ -31,15 +31,13 @@ All URIs are relative to *https://api.mypurecloud.com*
 # void deleteResponsemanagementLibrary(libraryId)
 
 
-
 DELETE /api/v2/responsemanagement/libraries/{libraryId}
 
 Delete an existing response library.
 
 This will remove any responses associated with the library.
 
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -83,15 +81,13 @@ void (no response body)
 # void deleteResponsemanagementResponse(responseId)
 
 
-
 DELETE /api/v2/responsemanagement/responses/{responseId}
 
 Delete an existing response.
 
 This will remove the response from any libraries associated with it.
 
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -135,14 +131,11 @@ void (no response body)
 # void deleteResponsemanagementResponseasset(responseAssetId)
 
 
-
 DELETE /api/v2/responsemanagement/responseassets/{responseAssetId}
 
 Delete response asset
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * responseAssets:asset:delete
 
@@ -188,15 +181,11 @@ void (no response body)
 # LibraryEntityListing getResponsemanagementLibraries(opts)
 
 
-
 GET /api/v2/responsemanagement/libraries
 
 Gets a list of existing response libraries.
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -246,15 +235,11 @@ apiInstance.getResponsemanagementLibraries(opts)
 # Library getResponsemanagementLibrary(libraryId)
 
 
-
 GET /api/v2/responsemanagement/libraries/{libraryId}
 
 Get details about an existing response library.
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -298,15 +283,11 @@ apiInstance.getResponsemanagementLibrary(libraryId)
 # Response getResponsemanagementResponse(responseId, opts)
 
 
-
 GET /api/v2/responsemanagement/responses/{responseId}
 
 Get details about an existing response.
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -354,14 +335,11 @@ apiInstance.getResponsemanagementResponse(responseId, opts)
 # ResponseAsset getResponsemanagementResponseasset(responseAssetId)
 
 
-
 GET /api/v2/responsemanagement/responseassets/{responseAssetId}
 
 Get response asset information
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * responseAssets:asset:view
 
@@ -407,14 +385,11 @@ apiInstance.getResponsemanagementResponseasset(responseAssetId)
 # ResponseAssetStatus getResponsemanagementResponseassetsStatusStatusId(statusId)
 
 
-
 GET /api/v2/responsemanagement/responseassets/status/{statusId}
 
 Get response asset upload status
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * responseAssets:asset:view
 
@@ -460,15 +435,11 @@ apiInstance.getResponsemanagementResponseassetsStatusStatusId(statusId)
 # ResponseEntityListing getResponsemanagementResponses(libraryId, opts)
 
 
-
 GET /api/v2/responsemanagement/responses
 
 Gets a list of existing responses.
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -520,15 +491,11 @@ apiInstance.getResponsemanagementResponses(libraryId, opts)
 # Library postResponsemanagementLibraries(body)
 
 
-
 POST /api/v2/responsemanagement/libraries
 
 Create a response library.
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -572,14 +539,11 @@ apiInstance.postResponsemanagementLibraries(body)
 # ResponseAssetSearchResults postResponsemanagementResponseassetsSearch(body, opts)
 
 
-
 POST /api/v2/responsemanagement/responseassets/search
 
 Search response assets
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * responseAssets:asset:view
 
@@ -629,14 +593,11 @@ apiInstance.postResponsemanagementResponseassetsSearch(body, opts)
 # CreateResponseAssetResponse postResponsemanagementResponseassetsUploads(body)
 
 
-
 POST /api/v2/responsemanagement/responseassets/uploads
 
 Creates pre-signed url for uploading response asset
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * responseAssets:asset:add
 
@@ -682,15 +643,11 @@ apiInstance.postResponsemanagementResponseassetsUploads(body)
 # Response postResponsemanagementResponses(body, opts)
 
 
-
 POST /api/v2/responsemanagement/responses
 
 Create a response.
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -738,15 +695,11 @@ apiInstance.postResponsemanagementResponses(body, opts)
 # ResponseQueryResults postResponsemanagementResponsesQuery(body)
 
 
-
 POST /api/v2/responsemanagement/responses/query
 
 Query responses
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -790,15 +743,13 @@ apiInstance.postResponsemanagementResponsesQuery(body)
 # Library putResponsemanagementLibrary(libraryId, body)
 
 
-
 PUT /api/v2/responsemanagement/libraries/{libraryId}
 
 Update an existing response library.
 
 Fields that can be updated: name. The most recent version is required for updates.
 
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -844,15 +795,13 @@ apiInstance.putResponsemanagementLibrary(libraryId, body)
 # Response putResponsemanagementResponse(responseId, body, opts)
 
 
-
 PUT /api/v2/responsemanagement/responses/{responseId}
 
 Update an existing response.
 
 Fields that can be updated: name, libraries, and texts. The most recent version is required for updates.
 
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -902,14 +851,11 @@ apiInstance.putResponsemanagementResponse(responseId, body, opts)
 # ResponseAsset putResponsemanagementResponseasset(responseAssetId, body)
 
 
-
 PUT /api/v2/responsemanagement/responseassets/{responseAssetId}
 
 Update response asset
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * responseAssets:asset:edit
 

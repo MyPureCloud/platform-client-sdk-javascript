@@ -5,7 +5,7 @@ class PresenceApi {
 	/**
 	 * Presence service.
 	 * @module purecloud-platform-client-v2/api/PresenceApi
-	 * @version 136.1.0
+	 * @version 137.0.0
 	 */
 
 	/**
@@ -34,13 +34,13 @@ class PresenceApi {
 		return this.apiClient.callApi(
 			'/api/v2/presencedefinitions/{presenceId}', 
 			'DELETE', 
-			{ 'presenceId': presenceId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'presenceId': presenceId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -63,19 +63,19 @@ class PresenceApi {
 		return this.apiClient.callApi(
 			'/api/v2/presencedefinitions/{presenceId}', 
 			'GET', 
-			{ 'presenceId': presenceId }, 
-			{ 'localeCode': opts['localeCode'] }, 
-			{  }, 
-			{  }, 
+			{ 'presenceId': presenceId },
+			{ 'localeCode': opts['localeCode'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
 
 	/**
-	 * Get an Organization&#39;s list of Presence Definitions
+	 * Get an Organization's list of Presence Definitions
 	 * 
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageNumber Page number (default to 1)
@@ -90,13 +90,13 @@ class PresenceApi {
 		return this.apiClient.callApi(
 			'/api/v2/presencedefinitions', 
 			'GET', 
-			{  }, 
-			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'deleted': opts['deleted'],'localeCode': opts['localeCode'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'deleted': opts['deleted'],'localeCode': opts['localeCode'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -110,20 +110,20 @@ class PresenceApi {
 		return this.apiClient.callApi(
 			'/api/v2/systempresences', 
 			'GET', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
 
 	/**
-	 * Get a user&#39;s Presence
-	 * Get a user&#39;s presence for the specified source that is not specifically listed.  Used to support custom presence sources.
+	 * Get a user's Presence
+	 * Get a users presence for the specified source that is not specifically listed.  Used to support custom presence sources.
 	 * @param {String} userId user Id
 	 * @param {String} sourceId Presence source ID
 	 */
@@ -140,19 +140,19 @@ class PresenceApi {
 		return this.apiClient.callApi(
 			'/api/v2/users/{userId}/presences/{sourceId}', 
 			'GET', 
-			{ 'userId': userId,'sourceId': sourceId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'userId': userId,'sourceId': sourceId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
 
 	/**
-	 * Get a user&#39;s Genesys Cloud presence.
+	 * Get a user's Genesys Cloud presence.
 	 * Get the default Genesys Cloud user presence source PURECLOUD
 	 * @param {String} userId user Id
 	 */
@@ -165,20 +165,20 @@ class PresenceApi {
 		return this.apiClient.callApi(
 			'/api/v2/users/{userId}/presences/purecloud', 
 			'GET', 
-			{ 'userId': userId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'userId': userId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
 
 	/**
-	 * Patch a user&#39;s Presence
-	 * Patch a user&#39;s presence for the specified source that is not specifically listed. The presence object can be patched one of three ways. Option 1: Set the &#39;primary&#39; property to true. This will set the &#39;source&#39; defined in the path as the user&#39;s primary presence source. Option 2: Provide the presenceDefinition value. The &#39;id&#39; is the only value required within the presenceDefinition. Option 3: Provide the message value. Option 1 can be combined with Option 2 and/or Option 3.
+	 * Patch a user's Presence
+	 * Patch a users presence for the specified source that is not specifically listed. The presence object can be patched one of three ways. Option 1: Set the primary property to true. This will set the source defined in the path as the users primary presence source. Option 2: Provide the presenceDefinition value. The id is the only value required within the presenceDefinition. Option 3: Provide the message value. Option 1 can be combined with Option 2 and/or Option 3.
 	 * @param {String} userId user Id
 	 * @param {String} sourceId Presence source ID
 	 * @param {Object} body User presence
@@ -200,20 +200,20 @@ class PresenceApi {
 		return this.apiClient.callApi(
 			'/api/v2/users/{userId}/presences/{sourceId}', 
 			'PATCH', 
-			{ 'userId': userId,'sourceId': sourceId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'userId': userId,'sourceId': sourceId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
 
 	/**
-	 * Patch a Genesys Cloud user&#39;s presence
-	 * The presence object can be patched one of three ways. Option 1: Set the &#39;primary&#39; property to true. This will set the PURECLOUD source as the user&#39;s primary presence source. Option 2: Provide the presenceDefinition value. The &#39;id&#39; is the only value required within the presenceDefinition. Option 3: Provide the message value. Option 1 can be combined with Option 2 and/or Option 3.
+	 * Patch a Genesys Cloud user's presence
+	 * The presence object can be patched one of three ways. Option 1: Set the primary property to true. This will set the PURECLOUD source as the users primary presence source. Option 2: Provide the presenceDefinition value. The id is the only value required within the presenceDefinition. Option 3: Provide the message value. Option 1 can be combined with Option 2 and/or Option 3.
 	 * @param {String} userId user Id
 	 * @param {Object} body User presence
 	 */
@@ -230,13 +230,13 @@ class PresenceApi {
 		return this.apiClient.callApi(
 			'/api/v2/users/{userId}/presences/purecloud', 
 			'PATCH', 
-			{ 'userId': userId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'userId': userId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -255,13 +255,13 @@ class PresenceApi {
 		return this.apiClient.callApi(
 			'/api/v2/presencedefinitions', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -285,13 +285,13 @@ class PresenceApi {
 		return this.apiClient.callApi(
 			'/api/v2/presencedefinitions/{presenceId}', 
 			'PUT', 
-			{ 'presenceId': presenceId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'presenceId': presenceId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -310,13 +310,13 @@ class PresenceApi {
 		return this.apiClient.callApi(
 			'/api/v2/users/presences/bulk', 
 			'PUT', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}

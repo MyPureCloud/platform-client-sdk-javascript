@@ -5,7 +5,7 @@ class AnalyticsApi {
 	/**
 	 * Analytics service.
 	 * @module purecloud-platform-client-v2/api/AnalyticsApi
-	 * @version 136.1.0
+	 * @version 137.0.0
 	 */
 
 	/**
@@ -34,13 +34,13 @@ class AnalyticsApi {
 		return this.apiClient.callApi(
 			'/api/v2/analytics/conversations/details/jobs/{jobId}', 
 			'DELETE', 
-			{ 'jobId': jobId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'jobId': jobId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -59,13 +59,13 @@ class AnalyticsApi {
 		return this.apiClient.callApi(
 			'/api/v2/analytics/reporting/schedules/{scheduleId}', 
 			'DELETE', 
-			{ 'scheduleId': scheduleId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'scheduleId': scheduleId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -84,13 +84,13 @@ class AnalyticsApi {
 		return this.apiClient.callApi(
 			'/api/v2/analytics/users/details/jobs/{jobId}', 
 			'DELETE', 
-			{ 'jobId': jobId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'jobId': jobId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -116,13 +116,13 @@ class AnalyticsApi {
 		return this.apiClient.callApi(
 			'/api/v2/analytics/botflows/{botFlowId}/reportingturns', 
 			'GET', 
-			{ 'botFlowId': botFlowId }, 
-			{ 'after': opts['after'],'pageSize': opts['pageSize'],'actionId': opts['actionId'],'sessionId': opts['sessionId'] }, 
-			{  }, 
-			{  }, 
+			{ 'botFlowId': botFlowId },
+			{ 'after': opts['after'],'pageSize': opts['pageSize'],'actionId': opts['actionId'],'sessionId': opts['sessionId'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -141,13 +141,13 @@ class AnalyticsApi {
 		return this.apiClient.callApi(
 			'/api/v2/analytics/conversations/{conversationId}/details', 
 			'GET', 
-			{ 'conversationId': conversationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -165,13 +165,13 @@ class AnalyticsApi {
 		return this.apiClient.callApi(
 			'/api/v2/analytics/conversations/details', 
 			'GET', 
-			{  }, 
-			{ 'id': this.apiClient.buildCollectionParam(opts['id'], 'multi') }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'id': this.apiClient.buildCollectionParam(opts['id'], 'multi') },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -190,13 +190,13 @@ class AnalyticsApi {
 		return this.apiClient.callApi(
 			'/api/v2/analytics/conversations/details/jobs/{jobId}', 
 			'GET', 
-			{ 'jobId': jobId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'jobId': jobId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -220,13 +220,13 @@ class AnalyticsApi {
 		return this.apiClient.callApi(
 			'/api/v2/analytics/conversations/details/jobs/{jobId}/results', 
 			'GET', 
-			{ 'jobId': jobId }, 
-			{ 'cursor': opts['cursor'],'pageSize': opts['pageSize'] }, 
-			{  }, 
-			{  }, 
+			{ 'jobId': jobId },
+			{ 'cursor': opts['cursor'],'pageSize': opts['pageSize'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -240,13 +240,13 @@ class AnalyticsApi {
 		return this.apiClient.callApi(
 			'/api/v2/analytics/conversations/details/jobs/availability', 
 			'GET', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -265,13 +265,13 @@ class AnalyticsApi {
 		return this.apiClient.callApi(
 			'/api/v2/analytics/reporting/exports', 
 			'GET', 
-			{  }, 
-			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -285,13 +285,13 @@ class AnalyticsApi {
 		return this.apiClient.callApi(
 			'/api/v2/analytics/reporting/exports/metadata', 
 			'GET', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -311,13 +311,13 @@ class AnalyticsApi {
 		return this.apiClient.callApi(
 			'/api/v2/analytics/reporting/metadata', 
 			'GET', 
-			{  }, 
-			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'locale': opts['locale'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'locale': opts['locale'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -340,13 +340,13 @@ class AnalyticsApi {
 		return this.apiClient.callApi(
 			'/api/v2/analytics/reporting/{reportId}/metadata', 
 			'GET', 
-			{ 'reportId': reportId }, 
-			{ 'locale': opts['locale'] }, 
-			{  }, 
-			{  }, 
+			{ 'reportId': reportId },
+			{ 'locale': opts['locale'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -360,13 +360,13 @@ class AnalyticsApi {
 		return this.apiClient.callApi(
 			'/api/v2/analytics/reporting/reportformats', 
 			'GET', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -385,13 +385,13 @@ class AnalyticsApi {
 		return this.apiClient.callApi(
 			'/api/v2/analytics/reporting/schedules/{scheduleId}', 
 			'GET', 
-			{ 'scheduleId': scheduleId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'scheduleId': scheduleId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -415,13 +415,13 @@ class AnalyticsApi {
 		return this.apiClient.callApi(
 			'/api/v2/analytics/reporting/schedules/{scheduleId}/history', 
 			'GET', 
-			{ 'scheduleId': scheduleId }, 
-			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'] }, 
-			{  }, 
-			{  }, 
+			{ 'scheduleId': scheduleId },
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -440,13 +440,13 @@ class AnalyticsApi {
 		return this.apiClient.callApi(
 			'/api/v2/analytics/reporting/schedules/{scheduleId}/history/latest', 
 			'GET', 
-			{ 'scheduleId': scheduleId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'scheduleId': scheduleId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -470,13 +470,13 @@ class AnalyticsApi {
 		return this.apiClient.callApi(
 			'/api/v2/analytics/reporting/schedules/{scheduleId}/history/{runId}', 
 			'GET', 
-			{ 'runId': runId,'scheduleId': scheduleId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'runId': runId,'scheduleId': scheduleId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -495,13 +495,13 @@ class AnalyticsApi {
 		return this.apiClient.callApi(
 			'/api/v2/analytics/reporting/schedules', 
 			'GET', 
-			{  }, 
-			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -515,13 +515,13 @@ class AnalyticsApi {
 		return this.apiClient.callApi(
 			'/api/v2/analytics/reporting/settings', 
 			'GET', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -535,13 +535,13 @@ class AnalyticsApi {
 		return this.apiClient.callApi(
 			'/api/v2/analytics/reporting/timeperiods', 
 			'GET', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -560,13 +560,13 @@ class AnalyticsApi {
 		return this.apiClient.callApi(
 			'/api/v2/analytics/users/details/jobs/{jobId}', 
 			'GET', 
-			{ 'jobId': jobId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'jobId': jobId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -590,13 +590,13 @@ class AnalyticsApi {
 		return this.apiClient.callApi(
 			'/api/v2/analytics/users/details/jobs/{jobId}/results', 
 			'GET', 
-			{ 'jobId': jobId }, 
-			{ 'cursor': opts['cursor'],'pageSize': opts['pageSize'] }, 
-			{  }, 
-			{  }, 
+			{ 'jobId': jobId },
+			{ 'cursor': opts['cursor'],'pageSize': opts['pageSize'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -610,13 +610,13 @@ class AnalyticsApi {
 		return this.apiClient.callApi(
 			'/api/v2/analytics/users/details/jobs/availability', 
 			'GET', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -635,13 +635,13 @@ class AnalyticsApi {
 		return this.apiClient.callApi(
 			'/api/v2/analytics/reporting/settings', 
 			'PATCH', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -660,13 +660,13 @@ class AnalyticsApi {
 		return this.apiClient.callApi(
 			'/api/v2/analytics/bots/aggregates/query', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -690,13 +690,13 @@ class AnalyticsApi {
 		return this.apiClient.callApi(
 			'/api/v2/analytics/conversations/{conversationId}/details/properties', 
 			'POST', 
-			{ 'conversationId': conversationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -715,13 +715,13 @@ class AnalyticsApi {
 		return this.apiClient.callApi(
 			'/api/v2/analytics/conversations/aggregates/query', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -740,13 +740,13 @@ class AnalyticsApi {
 		return this.apiClient.callApi(
 			'/api/v2/analytics/conversations/details/jobs', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -765,13 +765,13 @@ class AnalyticsApi {
 		return this.apiClient.callApi(
 			'/api/v2/analytics/conversations/details/query', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -790,13 +790,13 @@ class AnalyticsApi {
 		return this.apiClient.callApi(
 			'/api/v2/analytics/conversations/transcripts/query', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -815,13 +815,13 @@ class AnalyticsApi {
 		return this.apiClient.callApi(
 			'/api/v2/analytics/evaluations/aggregates/query', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -840,13 +840,13 @@ class AnalyticsApi {
 		return this.apiClient.callApi(
 			'/api/v2/analytics/flows/aggregates/query', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -865,13 +865,13 @@ class AnalyticsApi {
 		return this.apiClient.callApi(
 			'/api/v2/analytics/flows/observations/query', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -890,13 +890,13 @@ class AnalyticsApi {
 		return this.apiClient.callApi(
 			'/api/v2/analytics/journeys/aggregates/query', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -915,13 +915,13 @@ class AnalyticsApi {
 		return this.apiClient.callApi(
 			'/api/v2/analytics/queues/observations/query', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -940,13 +940,13 @@ class AnalyticsApi {
 		return this.apiClient.callApi(
 			'/api/v2/analytics/reporting/exports', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -965,13 +965,13 @@ class AnalyticsApi {
 		return this.apiClient.callApi(
 			'/api/v2/analytics/reporting/schedules/{scheduleId}/runreport', 
 			'POST', 
-			{ 'scheduleId': scheduleId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'scheduleId': scheduleId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -990,13 +990,13 @@ class AnalyticsApi {
 		return this.apiClient.callApi(
 			'/api/v2/analytics/reporting/schedules', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1015,13 +1015,13 @@ class AnalyticsApi {
 		return this.apiClient.callApi(
 			'/api/v2/analytics/surveys/aggregates/query', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1040,13 +1040,13 @@ class AnalyticsApi {
 		return this.apiClient.callApi(
 			'/api/v2/analytics/transcripts/aggregates/query', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1065,13 +1065,13 @@ class AnalyticsApi {
 		return this.apiClient.callApi(
 			'/api/v2/analytics/users/aggregates/query', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1090,13 +1090,13 @@ class AnalyticsApi {
 		return this.apiClient.callApi(
 			'/api/v2/analytics/users/details/jobs', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1115,13 +1115,13 @@ class AnalyticsApi {
 		return this.apiClient.callApi(
 			'/api/v2/analytics/users/details/query', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1140,13 +1140,13 @@ class AnalyticsApi {
 		return this.apiClient.callApi(
 			'/api/v2/analytics/users/observations/query', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1170,13 +1170,13 @@ class AnalyticsApi {
 		return this.apiClient.callApi(
 			'/api/v2/analytics/reporting/schedules/{scheduleId}', 
 			'PUT', 
-			{ 'scheduleId': scheduleId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'scheduleId': scheduleId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}

@@ -15,15 +15,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 # WebMessagingMessageEntityList getWebmessagingMessages(opts)
 
 
-
 GET /api/v2/webmessaging/messages
 
 Get the messages for a web messaging session.
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 

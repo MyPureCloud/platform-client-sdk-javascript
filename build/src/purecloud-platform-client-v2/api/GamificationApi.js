@@ -5,7 +5,7 @@ class GamificationApi {
 	/**
 	 * Gamification service.
 	 * @module purecloud-platform-client-v2/api/GamificationApi
-	 * @version 136.1.0
+	 * @version 137.0.0
 	 */
 
 	/**
@@ -21,7 +21,7 @@ class GamificationApi {
 
 
 	/**
-	 * Leaderboard of the requesting user&#39;s division or performance profile
+	 * Leaderboard of the requesting user's division or performance profile
 	 * 
 	 * @param {String} startWorkday Start workday to retrieve for the leaderboard. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 * @param {String} endWorkday End workday to retrieve for the leaderboard. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
@@ -43,13 +43,13 @@ class GamificationApi {
 		return this.apiClient.callApi(
 			'/api/v2/gamification/leaderboard', 
 			'GET', 
-			{  }, 
-			{ 'startWorkday': startWorkday,'endWorkday': endWorkday,'metricId': opts['metricId'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'startWorkday': startWorkday,'endWorkday': endWorkday,'metricId': opts['metricId'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -87,13 +87,13 @@ class GamificationApi {
 		return this.apiClient.callApi(
 			'/api/v2/gamification/leaderboard/all', 
 			'GET', 
-			{  }, 
-			{ 'filterType': filterType,'filterId': filterId,'startWorkday': startWorkday,'endWorkday': endWorkday,'metricId': opts['metricId'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'filterType': filterType,'filterId': filterId,'startWorkday': startWorkday,'endWorkday': endWorkday,'metricId': opts['metricId'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -117,19 +117,19 @@ class GamificationApi {
 		return this.apiClient.callApi(
 			'/api/v2/gamification/leaderboard/all/bestpoints', 
 			'GET', 
-			{  }, 
-			{ 'filterType': filterType,'filterId': filterId }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'filterType': filterType,'filterId': filterId },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
 
 	/**
-	 * Best Points of the requesting user&#39;s current performance profile or division
+	 * Best Points of the requesting user's current performance profile or division
 	 * 
 	 */
 	getGamificationLeaderboardBestpoints() { 
@@ -137,13 +137,13 @@ class GamificationApi {
 		return this.apiClient.callApi(
 			'/api/v2/gamification/leaderboard/bestpoints', 
 			'GET', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -167,13 +167,13 @@ class GamificationApi {
 		return this.apiClient.callApi(
 			'/api/v2/gamification/metrics/{metricId}', 
 			'GET', 
-			{ 'metricId': metricId }, 
-			{ 'workday': opts['workday'],'performanceProfileId': opts['performanceProfileId'] }, 
-			{  }, 
-			{  }, 
+			{ 'metricId': metricId },
+			{ 'workday': opts['workday'],'performanceProfileId': opts['performanceProfileId'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -192,13 +192,13 @@ class GamificationApi {
 		return this.apiClient.callApi(
 			'/api/v2/gamification/metricdefinitions/{metricDefinitionId}', 
 			'GET', 
-			{ 'metricDefinitionId': metricDefinitionId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'metricDefinitionId': metricDefinitionId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -212,13 +212,13 @@ class GamificationApi {
 		return this.apiClient.callApi(
 			'/api/v2/gamification/metricdefinitions', 
 			'GET', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -237,13 +237,13 @@ class GamificationApi {
 		return this.apiClient.callApi(
 			'/api/v2/gamification/metrics', 
 			'GET', 
-			{  }, 
-			{ 'performanceProfileId': opts['performanceProfileId'],'workday': opts['workday'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'performanceProfileId': opts['performanceProfileId'],'workday': opts['workday'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -262,13 +262,13 @@ class GamificationApi {
 		return this.apiClient.callApi(
 			'/api/v2/gamification/profiles/{profileId}', 
 			'GET', 
-			{ 'profileId': profileId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'profileId': profileId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -287,13 +287,13 @@ class GamificationApi {
 		return this.apiClient.callApi(
 			'/api/v2/gamification/profiles/{performanceProfileId}/members', 
 			'GET', 
-			{ 'performanceProfileId': performanceProfileId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'performanceProfileId': performanceProfileId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -321,13 +321,13 @@ class GamificationApi {
 		return this.apiClient.callApi(
 			'/api/v2/gamification/profiles/{profileId}/metrics/{metricId}', 
 			'GET', 
-			{ 'profileId': profileId,'metricId': metricId }, 
-			{ 'workday': opts['workday'] }, 
-			{  }, 
-			{  }, 
+			{ 'profileId': profileId,'metricId': metricId },
+			{ 'workday': opts['workday'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -351,13 +351,13 @@ class GamificationApi {
 		return this.apiClient.callApi(
 			'/api/v2/gamification/profiles/{profileId}/metrics', 
 			'GET', 
-			{ 'profileId': profileId }, 
-			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'workday': opts['workday'] }, 
-			{  }, 
-			{  }, 
+			{ 'profileId': profileId },
+			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'workday': opts['workday'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -380,13 +380,13 @@ class GamificationApi {
 		return this.apiClient.callApi(
 			'/api/v2/gamification/profiles/{profileId}/metrics/objectivedetails', 
 			'GET', 
-			{ 'profileId': profileId }, 
-			{ 'workday': opts['workday'] }, 
-			{  }, 
-			{  }, 
+			{ 'profileId': profileId },
+			{ 'workday': opts['workday'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -400,13 +400,13 @@ class GamificationApi {
 		return this.apiClient.callApi(
 			'/api/v2/gamification/profiles', 
 			'GET', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -429,13 +429,13 @@ class GamificationApi {
 		return this.apiClient.callApi(
 			'/api/v2/gamification/profiles/users/{userId}', 
 			'GET', 
-			{ 'userId': userId }, 
-			{ 'workday': opts['workday'] }, 
-			{  }, 
-			{  }, 
+			{ 'userId': userId },
+			{ 'workday': opts['workday'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -453,13 +453,13 @@ class GamificationApi {
 		return this.apiClient.callApi(
 			'/api/v2/gamification/profiles/users/me', 
 			'GET', 
-			{  }, 
-			{ 'workday': opts['workday'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'workday': opts['workday'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -482,13 +482,13 @@ class GamificationApi {
 		return this.apiClient.callApi(
 			'/api/v2/gamification/scorecards', 
 			'GET', 
-			{  }, 
-			{ 'workday': workday,'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'workday': workday,'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -512,13 +512,13 @@ class GamificationApi {
 		return this.apiClient.callApi(
 			'/api/v2/gamification/scorecards/attendance', 
 			'GET', 
-			{  }, 
-			{ 'startWorkday': startWorkday,'endWorkday': endWorkday }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'startWorkday': startWorkday,'endWorkday': endWorkday },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -532,13 +532,13 @@ class GamificationApi {
 		return this.apiClient.callApi(
 			'/api/v2/gamification/scorecards/bestpoints', 
 			'GET', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -557,19 +557,19 @@ class GamificationApi {
 		return this.apiClient.callApi(
 			'/api/v2/gamification/scorecards/points/alltime', 
 			'GET', 
-			{  }, 
-			{ 'endWorkday': endWorkday }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'endWorkday': endWorkday },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
 
 	/**
-	 * Average points of the requesting user&#39;s division or performance profile
+	 * Average points of the requesting user's division or performance profile
 	 * 
 	 * @param {String} workday The target workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 */
@@ -582,13 +582,13 @@ class GamificationApi {
 		return this.apiClient.callApi(
 			'/api/v2/gamification/scorecards/points/average', 
 			'GET', 
-			{  }, 
-			{ 'workday': workday }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'workday': workday },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -616,13 +616,13 @@ class GamificationApi {
 		return this.apiClient.callApi(
 			'/api/v2/gamification/scorecards/points/trends', 
 			'GET', 
-			{  }, 
-			{ 'startWorkday': startWorkday,'endWorkday': endWorkday,'dayOfWeek': opts['dayOfWeek'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'startWorkday': startWorkday,'endWorkday': endWorkday,'dayOfWeek': opts['dayOfWeek'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -650,13 +650,13 @@ class GamificationApi {
 		return this.apiClient.callApi(
 			'/api/v2/gamification/scorecards/users/{userId}', 
 			'GET', 
-			{ 'userId': userId }, 
-			{ 'workday': workday,'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') }, 
-			{  }, 
-			{  }, 
+			{ 'userId': userId },
+			{ 'workday': workday,'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -685,13 +685,13 @@ class GamificationApi {
 		return this.apiClient.callApi(
 			'/api/v2/gamification/scorecards/users/{userId}/attendance', 
 			'GET', 
-			{ 'userId': userId }, 
-			{ 'startWorkday': startWorkday,'endWorkday': endWorkday }, 
-			{  }, 
-			{  }, 
+			{ 'userId': userId },
+			{ 'startWorkday': startWorkday,'endWorkday': endWorkday },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -710,13 +710,13 @@ class GamificationApi {
 		return this.apiClient.callApi(
 			'/api/v2/gamification/scorecards/users/{userId}/bestpoints', 
 			'GET', 
-			{ 'userId': userId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'userId': userId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -740,13 +740,13 @@ class GamificationApi {
 		return this.apiClient.callApi(
 			'/api/v2/gamification/scorecards/users/{userId}/points/alltime', 
 			'GET', 
-			{ 'userId': userId }, 
-			{ 'endWorkday': endWorkday }, 
-			{  }, 
-			{  }, 
+			{ 'userId': userId },
+			{ 'endWorkday': endWorkday },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -779,13 +779,13 @@ class GamificationApi {
 		return this.apiClient.callApi(
 			'/api/v2/gamification/scorecards/users/{userId}/points/trends', 
 			'GET', 
-			{ 'userId': userId }, 
-			{ 'startWorkday': startWorkday,'endWorkday': endWorkday,'dayOfWeek': opts['dayOfWeek'] }, 
-			{  }, 
-			{  }, 
+			{ 'userId': userId },
+			{ 'startWorkday': startWorkday,'endWorkday': endWorkday,'dayOfWeek': opts['dayOfWeek'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -818,13 +818,13 @@ class GamificationApi {
 		return this.apiClient.callApi(
 			'/api/v2/gamification/scorecards/users/{userId}/values/trends', 
 			'GET', 
-			{ 'userId': userId }, 
-			{ 'startWorkday': startWorkday,'endWorkday': endWorkday,'timeZone': opts['timeZone'] }, 
-			{  }, 
-			{  }, 
+			{ 'userId': userId },
+			{ 'startWorkday': startWorkday,'endWorkday': endWorkday,'timeZone': opts['timeZone'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -853,13 +853,13 @@ class GamificationApi {
 		return this.apiClient.callApi(
 			'/api/v2/gamification/scorecards/users/points/average', 
 			'GET', 
-			{  }, 
-			{ 'filterType': filterType,'filterId': filterId,'workday': workday }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'filterType': filterType,'filterId': filterId,'workday': workday },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -892,13 +892,13 @@ class GamificationApi {
 		return this.apiClient.callApi(
 			'/api/v2/gamification/scorecards/users/values/average', 
 			'GET', 
-			{  }, 
-			{ 'filterType': filterType,'filterId': filterId,'workday': workday,'timeZone': opts['timeZone'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'filterType': filterType,'filterId': filterId,'workday': workday,'timeZone': opts['timeZone'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -936,19 +936,19 @@ class GamificationApi {
 		return this.apiClient.callApi(
 			'/api/v2/gamification/scorecards/users/values/trends', 
 			'GET', 
-			{  }, 
-			{ 'filterType': filterType,'filterId': filterId,'startWorkday': startWorkday,'endWorkday': endWorkday,'timeZone': opts['timeZone'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'filterType': filterType,'filterId': filterId,'startWorkday': startWorkday,'endWorkday': endWorkday,'timeZone': opts['timeZone'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
 
 	/**
-	 * Average values of the requesting user&#39;s division or performance profile
+	 * Average values of the requesting user's division or performance profile
 	 * 
 	 * @param {String} workday The target workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 * @param {Object} opts Optional parameters
@@ -965,13 +965,13 @@ class GamificationApi {
 		return this.apiClient.callApi(
 			'/api/v2/gamification/scorecards/values/average', 
 			'GET', 
-			{  }, 
-			{ 'workday': workday,'timeZone': opts['timeZone'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'workday': workday,'timeZone': opts['timeZone'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -983,7 +983,7 @@ class GamificationApi {
 	 * @param {String} endWorkday End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.filterType Filter type for the query request. If not set, then the request is for the requesting user.
-	 * @param {String} opts.referenceWorkday Reference workday for the trend. Used to determine the profile of the user as of this date. If not set, then the user&#39;s current profile will be used. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 * @param {String} opts.referenceWorkday Reference workday for the trend. Used to determine the profile of the user as of this date. If not set, then the user's current profile will be used. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 * @param {String} opts.timeZone Timezone for the workday. Defaults to UTC (default to UTC)
 	 */
 	getGamificationScorecardsValuesTrends(startWorkday, endWorkday, opts) { 
@@ -1001,13 +1001,13 @@ class GamificationApi {
 		return this.apiClient.callApi(
 			'/api/v2/gamification/scorecards/values/trends', 
 			'GET', 
-			{  }, 
-			{ 'filterType': opts['filterType'],'referenceWorkday': opts['referenceWorkday'],'startWorkday': startWorkday,'endWorkday': endWorkday,'timeZone': opts['timeZone'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'filterType': opts['filterType'],'referenceWorkday': opts['referenceWorkday'],'startWorkday': startWorkday,'endWorkday': endWorkday,'timeZone': opts['timeZone'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1021,13 +1021,13 @@ class GamificationApi {
 		return this.apiClient.callApi(
 			'/api/v2/gamification/status', 
 			'GET', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1046,13 +1046,13 @@ class GamificationApi {
 		return this.apiClient.callApi(
 			'/api/v2/gamification/templates/{templateId}', 
 			'GET', 
-			{ 'templateId': templateId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'templateId': templateId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1066,13 +1066,13 @@ class GamificationApi {
 		return this.apiClient.callApi(
 			'/api/v2/gamification/templates', 
 			'GET', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1091,13 +1091,13 @@ class GamificationApi {
 		return this.apiClient.callApi(
 			'/api/v2/gamification/metrics', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1116,13 +1116,13 @@ class GamificationApi {
 		return this.apiClient.callApi(
 			'/api/v2/gamification/profiles/{profileId}/activate', 
 			'POST', 
-			{ 'profileId': profileId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'profileId': profileId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1141,13 +1141,13 @@ class GamificationApi {
 		return this.apiClient.callApi(
 			'/api/v2/gamification/profiles/{profileId}/deactivate', 
 			'POST', 
-			{ 'profileId': profileId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'profileId': profileId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1171,13 +1171,13 @@ class GamificationApi {
 		return this.apiClient.callApi(
 			'/api/v2/gamification/profiles/{performanceProfileId}/members', 
 			'POST', 
-			{ 'performanceProfileId': performanceProfileId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'performanceProfileId': performanceProfileId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1201,13 +1201,13 @@ class GamificationApi {
 		return this.apiClient.callApi(
 			'/api/v2/gamification/profiles/{performanceProfileId}/members/validate', 
 			'POST', 
-			{ 'performanceProfileId': performanceProfileId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'performanceProfileId': performanceProfileId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1236,13 +1236,13 @@ class GamificationApi {
 		return this.apiClient.callApi(
 			'/api/v2/gamification/profiles/{sourceProfileId}/metrics/{sourceMetricId}/link', 
 			'POST', 
-			{ 'sourceProfileId': sourceProfileId,'sourceMetricId': sourceMetricId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'sourceProfileId': sourceProfileId,'sourceMetricId': sourceMetricId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1266,13 +1266,13 @@ class GamificationApi {
 		return this.apiClient.callApi(
 			'/api/v2/gamification/profiles/{profileId}/metrics', 
 			'POST', 
-			{ 'profileId': profileId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'profileId': profileId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1295,13 +1295,13 @@ class GamificationApi {
 		return this.apiClient.callApi(
 			'/api/v2/gamification/profiles', 
 			'POST', 
-			{  }, 
-			{ 'copyMetrics': opts['copyMetrics'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'copyMetrics': opts['copyMetrics'] },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1329,13 +1329,13 @@ class GamificationApi {
 		return this.apiClient.callApi(
 			'/api/v2/gamification/metrics/{metricId}', 
 			'PUT', 
-			{ 'metricId': metricId }, 
-			{ 'performanceProfileId': opts['performanceProfileId'] }, 
-			{  }, 
-			{  }, 
+			{ 'metricId': metricId },
+			{ 'performanceProfileId': opts['performanceProfileId'] },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1358,13 +1358,13 @@ class GamificationApi {
 		return this.apiClient.callApi(
 			'/api/v2/gamification/profiles/{profileId}', 
 			'PUT', 
-			{ 'profileId': profileId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'profileId': profileId },
+			{  },
+			{  },
+			{  },
 			opts['body'], 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1393,13 +1393,13 @@ class GamificationApi {
 		return this.apiClient.callApi(
 			'/api/v2/gamification/profiles/{profileId}/metrics/{metricId}', 
 			'PUT', 
-			{ 'profileId': profileId,'metricId': metricId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'profileId': profileId,'metricId': metricId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1418,13 +1418,13 @@ class GamificationApi {
 		return this.apiClient.callApi(
 			'/api/v2/gamification/status', 
 			'PUT', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			status, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}

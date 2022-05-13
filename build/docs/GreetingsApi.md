@@ -10,17 +10,17 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**deleteGreeting**](GreetingsApi.html#deleteGreeting) | **DELETE** /api/v2/greetings/{greetingId} | Deletes a Greeting with the given GreetingId
 [**getGreeting**](GreetingsApi.html#getGreeting) | **GET** /api/v2/greetings/{greetingId} | Get a Greeting with the given GreetingId
 [**getGreetingMedia**](GreetingsApi.html#getGreetingMedia) | **GET** /api/v2/greetings/{greetingId}/media | Get media playback URI for this greeting
-[**getGreetings**](GreetingsApi.html#getGreetings) | **GET** /api/v2/greetings | Gets an Organization&#39;s Greetings
-[**getGreetingsDefaults**](GreetingsApi.html#getGreetingsDefaults) | **GET** /api/v2/greetings/defaults | Get an Organization&#39;s DefaultGreetingList
-[**getGroupGreetings**](GreetingsApi.html#getGroupGreetings) | **GET** /api/v2/groups/{groupId}/greetings | Get a list of the Group&#39;s Greetings
-[**getGroupGreetingsDefaults**](GreetingsApi.html#getGroupGreetingsDefaults) | **GET** /api/v2/groups/{groupId}/greetings/defaults | Grabs the list of Default Greetings given a Group&#39;s ID
-[**getUserGreetings**](GreetingsApi.html#getUserGreetings) | **GET** /api/v2/users/{userId}/greetings | Get a list of the User&#39;s Greetings
-[**getUserGreetingsDefaults**](GreetingsApi.html#getUserGreetingsDefaults) | **GET** /api/v2/users/{userId}/greetings/defaults | Grabs the list of Default Greetings given a User&#39;s ID
+[**getGreetings**](GreetingsApi.html#getGreetings) | **GET** /api/v2/greetings | Gets an Organization's Greetings
+[**getGreetingsDefaults**](GreetingsApi.html#getGreetingsDefaults) | **GET** /api/v2/greetings/defaults | Get an Organization's DefaultGreetingList
+[**getGroupGreetings**](GreetingsApi.html#getGroupGreetings) | **GET** /api/v2/groups/{groupId}/greetings | Get a list of the Group's Greetings
+[**getGroupGreetingsDefaults**](GreetingsApi.html#getGroupGreetingsDefaults) | **GET** /api/v2/groups/{groupId}/greetings/defaults | Grabs the list of Default Greetings given a Group's ID
+[**getUserGreetings**](GreetingsApi.html#getUserGreetings) | **GET** /api/v2/users/{userId}/greetings | Get a list of the User's Greetings
+[**getUserGreetingsDefaults**](GreetingsApi.html#getUserGreetingsDefaults) | **GET** /api/v2/users/{userId}/greetings/defaults | Grabs the list of Default Greetings given a User's ID
 [**postGreetings**](GreetingsApi.html#postGreetings) | **POST** /api/v2/greetings | Create a Greeting for an Organization
 [**postGroupGreetings**](GreetingsApi.html#postGroupGreetings) | **POST** /api/v2/groups/{groupId}/greetings | Creates a Greeting for a Group
 [**postUserGreetings**](GreetingsApi.html#postUserGreetings) | **POST** /api/v2/users/{userId}/greetings | Creates a Greeting for a User
 [**putGreeting**](GreetingsApi.html#putGreeting) | **PUT** /api/v2/greetings/{greetingId} | Updates the Greeting with the given GreetingId
-[**putGreetingsDefaults**](GreetingsApi.html#putGreetingsDefaults) | **PUT** /api/v2/greetings/defaults | Update an Organization&#39;s DefaultGreetingList
+[**putGreetingsDefaults**](GreetingsApi.html#putGreetingsDefaults) | **PUT** /api/v2/greetings/defaults | Update an Organization's DefaultGreetingList
 [**putGroupGreetingsDefaults**](GreetingsApi.html#putGroupGreetingsDefaults) | **PUT** /api/v2/groups/{groupId}/greetings/defaults | Updates the DefaultGreetingList of the specified Group
 [**putUserGreetingsDefaults**](GreetingsApi.html#putUserGreetingsDefaults) | **PUT** /api/v2/users/{userId}/greetings/defaults | Updates the DefaultGreetingList of the specified User
 {: class="table table-striped"}
@@ -30,15 +30,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 # void deleteGreeting(greetingId)
 
 
-
 DELETE /api/v2/greetings/{greetingId}
 
 Deletes a Greeting with the given GreetingId
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -82,15 +78,11 @@ void (no response body)
 # Greeting getGreeting(greetingId)
 
 
-
 GET /api/v2/greetings/{greetingId}
 
 Get a Greeting with the given GreetingId
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -134,15 +126,11 @@ apiInstance.getGreeting(greetingId)
 # GreetingMediaInfo getGreetingMedia(greetingId, opts)
 
 
-
 GET /api/v2/greetings/{greetingId}/media
 
 Get media playback URI for this greeting
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -190,15 +178,11 @@ apiInstance.getGreetingMedia(greetingId, opts)
 # DomainEntityListing getGreetings(opts)
 
 
-
 GET /api/v2/greetings
 
-Gets an Organization&#39;s Greetings
+Gets an Organization's Greetings
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -246,15 +230,11 @@ apiInstance.getGreetings(opts)
 # DefaultGreetingList getGreetingsDefaults()
 
 
-
 GET /api/v2/greetings/defaults
 
-Get an Organization&#39;s DefaultGreetingList
+Get an Organization's DefaultGreetingList
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -293,15 +273,11 @@ This endpoint does not need any parameter.
 # GreetingListing getGroupGreetings(groupId, opts)
 
 
-
 GET /api/v2/groups/{groupId}/greetings
 
-Get a list of the Group&#39;s Greetings
+Get a list of the Group's Greetings
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -351,15 +327,11 @@ apiInstance.getGroupGreetings(groupId, opts)
 # DefaultGreetingList getGroupGreetingsDefaults(groupId)
 
 
-
 GET /api/v2/groups/{groupId}/greetings/defaults
 
-Grabs the list of Default Greetings given a Group&#39;s ID
+Grabs the list of Default Greetings given a Group's ID
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -403,15 +375,11 @@ apiInstance.getGroupGreetingsDefaults(groupId)
 # DomainEntityListing getUserGreetings(userId, opts)
 
 
-
 GET /api/v2/users/{userId}/greetings
 
-Get a list of the User&#39;s Greetings
+Get a list of the User's Greetings
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -461,15 +429,11 @@ apiInstance.getUserGreetings(userId, opts)
 # DefaultGreetingList getUserGreetingsDefaults(userId)
 
 
-
 GET /api/v2/users/{userId}/greetings/defaults
 
-Grabs the list of Default Greetings given a User&#39;s ID
+Grabs the list of Default Greetings given a User's ID
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -513,15 +477,11 @@ apiInstance.getUserGreetingsDefaults(userId)
 # Greeting postGreetings(body)
 
 
-
 POST /api/v2/greetings
 
 Create a Greeting for an Organization
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -565,15 +525,11 @@ apiInstance.postGreetings(body)
 # Greeting postGroupGreetings(groupId, body)
 
 
-
 POST /api/v2/groups/{groupId}/greetings
 
 Creates a Greeting for a Group
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -619,15 +575,11 @@ apiInstance.postGroupGreetings(groupId, body)
 # Greeting postUserGreetings(userId, body)
 
 
-
 POST /api/v2/users/{userId}/greetings
 
 Creates a Greeting for a User
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -673,15 +625,11 @@ apiInstance.postUserGreetings(userId, body)
 # Greeting putGreeting(greetingId, body)
 
 
-
 PUT /api/v2/greetings/{greetingId}
 
 Updates the Greeting with the given GreetingId
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -727,15 +675,11 @@ apiInstance.putGreeting(greetingId, body)
 # DefaultGreetingList putGreetingsDefaults(body)
 
 
-
 PUT /api/v2/greetings/defaults
 
-Update an Organization&#39;s DefaultGreetingList
+Update an Organization's DefaultGreetingList
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -779,15 +723,11 @@ apiInstance.putGreetingsDefaults(body)
 # DefaultGreetingList putGroupGreetingsDefaults(groupId, body)
 
 
-
 PUT /api/v2/groups/{groupId}/greetings/defaults
 
 Updates the DefaultGreetingList of the specified Group
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -833,15 +773,11 @@ apiInstance.putGroupGreetingsDefaults(groupId, body)
 # DefaultGreetingList putUserGreetingsDefaults(userId, body)
 
 
-
 PUT /api/v2/users/{userId}/greetings/defaults
 
 Updates the DefaultGreetingList of the specified User
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 

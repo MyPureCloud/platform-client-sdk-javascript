@@ -5,7 +5,7 @@ class VoicemailApi {
 	/**
 	 * Voicemail service.
 	 * @module purecloud-platform-client-v2/api/VoicemailApi
-	 * @version 136.1.0
+	 * @version 137.0.0
 	 */
 
 	/**
@@ -34,13 +34,13 @@ class VoicemailApi {
 		return this.apiClient.callApi(
 			'/api/v2/voicemail/messages/{messageId}', 
 			'DELETE', 
-			{ 'messageId': messageId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'messageId': messageId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -54,19 +54,19 @@ class VoicemailApi {
 		return this.apiClient.callApi(
 			'/api/v2/voicemail/messages', 
 			'DELETE', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
 
 	/**
-	 * Get the group&#39;s mailbox information
+	 * Get the group's mailbox information
 	 * 
 	 * @param {String} groupId groupId
 	 */
@@ -79,13 +79,13 @@ class VoicemailApi {
 		return this.apiClient.callApi(
 			'/api/v2/voicemail/groups/{groupId}/mailbox', 
 			'GET', 
-			{ 'groupId': groupId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'groupId': groupId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -109,19 +109,19 @@ class VoicemailApi {
 		return this.apiClient.callApi(
 			'/api/v2/voicemail/groups/{groupId}/messages', 
 			'GET', 
-			{ 'groupId': groupId }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] }, 
-			{  }, 
-			{  }, 
+			{ 'groupId': groupId },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
 
 	/**
-	 * Get a group&#39;s voicemail policy
+	 * Get a group's voicemail policy
 	 * 
 	 * @param {String} groupId Group ID
 	 */
@@ -134,19 +134,19 @@ class VoicemailApi {
 		return this.apiClient.callApi(
 			'/api/v2/voicemail/groups/{groupId}/policy', 
 			'GET', 
-			{ 'groupId': groupId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'groupId': groupId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
 
 	/**
-	 * Get the current user&#39;s mailbox information
+	 * Get the current user's mailbox information
 	 * 
 	 */
 	getVoicemailMailbox() { 
@@ -154,19 +154,19 @@ class VoicemailApi {
 		return this.apiClient.callApi(
 			'/api/v2/voicemail/mailbox', 
 			'GET', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
 
 	/**
-	 * Get the current user&#39;s mailbox information
+	 * Get the current user's mailbox information
 	 * 
 	 */
 	getVoicemailMeMailbox() { 
@@ -174,13 +174,13 @@ class VoicemailApi {
 		return this.apiClient.callApi(
 			'/api/v2/voicemail/me/mailbox', 
 			'GET', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -199,19 +199,19 @@ class VoicemailApi {
 		return this.apiClient.callApi(
 			'/api/v2/voicemail/me/messages', 
 			'GET', 
-			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
 
 	/**
-	 * Get the current user&#39;s voicemail policy
+	 * Get the current user's voicemail policy
 	 * 
 	 */
 	getVoicemailMePolicy() { 
@@ -219,13 +219,13 @@ class VoicemailApi {
 		return this.apiClient.callApi(
 			'/api/v2/voicemail/me/policy', 
 			'GET', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -248,13 +248,13 @@ class VoicemailApi {
 		return this.apiClient.callApi(
 			'/api/v2/voicemail/messages/{messageId}', 
 			'GET', 
-			{ 'messageId': messageId }, 
-			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') }, 
-			{  }, 
-			{  }, 
+			{ 'messageId': messageId },
+			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -277,13 +277,13 @@ class VoicemailApi {
 		return this.apiClient.callApi(
 			'/api/v2/voicemail/messages/{messageId}/media', 
 			'GET', 
-			{ 'messageId': messageId }, 
-			{ 'formatId': opts['formatId'] }, 
-			{  }, 
-			{  }, 
+			{ 'messageId': messageId },
+			{ 'formatId': opts['formatId'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -302,13 +302,13 @@ class VoicemailApi {
 		return this.apiClient.callApi(
 			'/api/v2/voicemail/messages', 
 			'GET', 
-			{  }, 
-			{ 'ids': opts['ids'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'ids': opts['ids'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -322,13 +322,13 @@ class VoicemailApi {
 		return this.apiClient.callApi(
 			'/api/v2/voicemail/policy', 
 			'GET', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -352,13 +352,13 @@ class VoicemailApi {
 		return this.apiClient.callApi(
 			'/api/v2/voicemail/queues/{queueId}/messages', 
 			'GET', 
-			{ 'queueId': queueId }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] }, 
-			{  }, 
-			{  }, 
+			{ 'queueId': queueId },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -381,19 +381,19 @@ class VoicemailApi {
 		return this.apiClient.callApi(
 			'/api/v2/voicemail/search', 
 			'GET', 
-			{  }, 
-			{ 'q64': q64,'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'q64': q64,'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
 
 	/**
-	 * Get a user&#39;s voicemail policy
+	 * Get a user's voicemail policy
 	 * 
 	 * @param {String} userId User ID
 	 */
@@ -406,22 +406,22 @@ class VoicemailApi {
 		return this.apiClient.callApi(
 			'/api/v2/voicemail/userpolicies/{userId}', 
 			'GET', 
-			{ 'userId': userId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'userId': userId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
 
 	/**
-	 * Update a group&#39;s voicemail policy
+	 * Update a group's voicemail policy
 	 * 
 	 * @param {String} groupId Group ID
-	 * @param {Object} body The group&#39;s voicemail policy
+	 * @param {Object} body The group's voicemail policy
 	 */
 	patchVoicemailGroupPolicy(groupId, body) { 
 		// verify the required parameter 'groupId' is set
@@ -436,21 +436,21 @@ class VoicemailApi {
 		return this.apiClient.callApi(
 			'/api/v2/voicemail/groups/{groupId}/policy', 
 			'PATCH', 
-			{ 'groupId': groupId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'groupId': groupId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
 
 	/**
-	 * Update the current user&#39;s voicemail policy
+	 * Update the current user's voicemail policy
 	 * 
-	 * @param {Object} body The user&#39;s voicemail policy
+	 * @param {Object} body The user's voicemail policy
 	 */
 	patchVoicemailMePolicy(body) { 
 		// verify the required parameter 'body' is set
@@ -461,13 +461,13 @@ class VoicemailApi {
 		return this.apiClient.callApi(
 			'/api/v2/voicemail/me/policy', 
 			'PATCH', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -491,22 +491,22 @@ class VoicemailApi {
 		return this.apiClient.callApi(
 			'/api/v2/voicemail/messages/{messageId}', 
 			'PATCH', 
-			{ 'messageId': messageId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'messageId': messageId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
 
 	/**
-	 * Update a user&#39;s voicemail policy
+	 * Update a user's voicemail policy
 	 * 
 	 * @param {String} userId User ID
-	 * @param {Object} body The user&#39;s voicemail policy
+	 * @param {Object} body The user's voicemail policy
 	 */
 	patchVoicemailUserpolicy(userId, body) { 
 		// verify the required parameter 'userId' is set
@@ -521,13 +521,13 @@ class VoicemailApi {
 		return this.apiClient.callApi(
 			'/api/v2/voicemail/userpolicies/{userId}', 
 			'PATCH', 
-			{ 'userId': userId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'userId': userId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -545,13 +545,13 @@ class VoicemailApi {
 		return this.apiClient.callApi(
 			'/api/v2/voicemail/messages', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			opts['body'], 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -570,13 +570,13 @@ class VoicemailApi {
 		return this.apiClient.callApi(
 			'/api/v2/voicemail/search', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -600,13 +600,13 @@ class VoicemailApi {
 		return this.apiClient.callApi(
 			'/api/v2/voicemail/messages/{messageId}', 
 			'PUT', 
-			{ 'messageId': messageId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'messageId': messageId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -625,22 +625,22 @@ class VoicemailApi {
 		return this.apiClient.callApi(
 			'/api/v2/voicemail/policy', 
 			'PUT', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
 
 	/**
-	 * Update a user&#39;s voicemail policy
+	 * Update a user's voicemail policy
 	 * 
 	 * @param {String} userId User ID
-	 * @param {Object} body The user&#39;s voicemail policy
+	 * @param {Object} body The user's voicemail policy
 	 */
 	putVoicemailUserpolicy(userId, body) { 
 		// verify the required parameter 'userId' is set
@@ -655,13 +655,13 @@ class VoicemailApi {
 		return this.apiClient.callApi(
 			'/api/v2/voicemail/userpolicies/{userId}', 
 			'PUT', 
-			{ 'userId': userId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'userId': userId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}

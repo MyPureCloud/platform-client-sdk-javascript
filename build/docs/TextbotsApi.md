@@ -18,14 +18,13 @@ All URIs are relative to *https://api.mypurecloud.com*
 # BotSearchResponseEntityListing getTextbotsBotsSearch(opts)
 
 
-
 GET /api/v2/textbots/bots/search
 
 Find bots using the currently configured friendly name or ID.
 
 The name does allow case-insensitive partial string matches or by IDs (up to 50), but not both at the same time. Optionally you can limit the scope of the search by providing one or more bot types.  You can specify the maximum results to return, up to a limit of 100
 
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * integrations:integration:view
 
@@ -79,14 +78,13 @@ apiInstance.getTextbotsBotsSearch(opts)
 # TextBotFlowTurnResponse postTextbotsBotflowsSessionTurns(sessionId, turnRequest)
 
 
-
 POST /api/v2/textbots/botflows/sessions/{sessionId}/turns
 
 Issue a bot flow turn event
 
 Send a turn event to an executing bot flow and produce the next action to take.
 
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * textbots:botFlowSession:execute
 
@@ -121,7 +119,7 @@ apiInstance.postTextbotsBotflowsSessionTurns(sessionId, turnRequest)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **sessionId** | **String** | The bot flow session ID, typically obtained from &#39;POST /api/v2/textbots/botflows/sessions&#39; |  |
+ **sessionId** | **String** | The bot flow session ID, typically obtained from 'POST /api/v2/textbots/botflows/sessions' |  |
  **turnRequest** | **Object** |  |  |
 {: class="table table-striped"}
 
@@ -134,14 +132,13 @@ apiInstance.postTextbotsBotflowsSessionTurns(sessionId, turnRequest)
 # TextBotFlowLaunchResponse postTextbotsBotflowsSessions(launchRequest)
 
 
-
 POST /api/v2/textbots/botflows/sessions
 
 Create an execution instance of a bot flow definition.
 
-The launch is asynchronous; use the returned instance ID to post turns to it using &#39;POST /api/v2/textbots/botflows/sessions/{sessionId}/turns&#39;.
+The launch is asynchronous; use the returned instance ID to post turns to it using POST /api/v2/textbots/botflows/sessions/{sessionId}/turns.
 
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * textbots:botFlowSession:execute
 
@@ -187,14 +184,13 @@ apiInstance.postTextbotsBotflowsSessions(launchRequest)
 # PostTextResponse postTextbotsBotsExecute(postTextRequest)
 
 
-
 POST /api/v2/textbots/bots/execute
 
 Send an intent to a bot to start a dialog/interact with it via text
 
 This will either start a bot with the given id or relay a communication to an existing bot session.
 
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * textbots:session:execute
 

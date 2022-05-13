@@ -1,9 +1,10 @@
+
 import superagent from 'superagent';
 import Configuration from './configuration.js';
 
 /**
  * @module purecloud-platform-client-v2/ApiClient
- * @version 136.1.0
+ * @version 137.0.0
  */
 class ApiClient {
 	/**
@@ -85,10 +86,9 @@ class ApiClient {
 		 * @type {Array.<String>}
 		 */
 		this.authentications = {
-			'PureCloud OAuth': {type: 'oauth2'},
-			'Guest Chat JWT': {type: 'apiKey', 'in': 'header', name: 'Authorization'}
+			'Guest Chat JWT': {type: 'apiKey', 'in': 'header', name: 'Authorization'},
+			'PureCloud OAuth': {type: 'oauth2'}
 		};
-
 		/**
 		 * The default HTTP headers to be included for all API calls.
 		 * @type {Array.<String>}
@@ -356,6 +356,9 @@ class ApiClient {
 												{ grant_type: 'urn:ietf:params:oauth:grant-type:saml2-bearer' },
 										        { orgName: orgName },
 										        { assertion: assertion });
+			if (this.proxy && request.proxy) {
+				request.proxy(this.proxy);
+			}
 			var bodyParam = {
 				grant_type: 'urn:ietf:params:oauth:grant-type:saml2-bearer',
 				orgName: orgName,
@@ -434,6 +437,9 @@ class ApiClient {
 												{ grant_type: 'authorization_code' },
 									            { code: authCode },
 										        { redirect_uri: redirectUri });
+			if (this.proxy && request.proxy) {
+				request.proxy(this.proxy);
+			}
 			var bodyParam = {
 				grant_type: 'authorization_code',
 				code: authCode,
@@ -459,6 +465,9 @@ class ApiClient {
 			}
 			var encodedData = Buffer.from(clientId + ':' + clientSecret).toString('base64');
 			var request = this._formAuthRequest(encodedData, { grant_type: 'refresh_token' }, { refresh_token: refreshToken });
+			if (this.proxy && request.proxy) {
+				request.proxy(this.proxy);
+			}
 			var bodyParam = {
 				grant_type: 'refresh_token',
 				refresh_token: refreshToken,
@@ -950,7 +959,7 @@ class ApiClient {
 
 				// set header parameters
 				request.set(that.defaultHeaders).set(that.normalizeParams(headerParams));
-				//request.set({ 'purecloud-sdk': '136.1.0' });
+				//request.set({ 'purecloud-sdk': '137.0.0' });
 
 				// set request timeout
 				request.timeout(that.timeout);

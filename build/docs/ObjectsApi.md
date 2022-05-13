@@ -23,14 +23,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 # void deleteAuthorizationDivision(divisionId, opts)
 
 
-
 DELETE /api/v2/authorization/divisions/{divisionId}
 
 Delete a division.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * authorization:division:delete
 
@@ -80,15 +77,11 @@ void (no response body)
 # AuthzDivision getAuthorizationDivision(divisionId, opts)
 
 
-
 GET /api/v2/authorization/divisions/{divisionId}
 
 Returns an authorization division.
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -124,7 +117,7 @@ apiInstance.getAuthorizationDivision(divisionId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **divisionId** | **String** | Division ID |  |
- **objectCount** | **Boolean** | Get count of objects in this division, grouped by type | [optional] [default to false] |
+ **objectCount** | **Boolean** | Get count of objects in this division, grouped by type | [optional] [default to false]<br />**Values**: true, false |
 {: class="table table-striped"}
 
 ### Return type
@@ -136,15 +129,13 @@ apiInstance.getAuthorizationDivision(divisionId, opts)
 # AuthzDivisionEntityListing getAuthorizationDivisions(opts)
 
 
-
 GET /api/v2/authorization/divisions
 
 Retrieve a list of all divisions defined for the organization
 
-Request specific divisions by id using a query param \&quot;id\&quot;, e.g.  ?id=5f777167-63be-4c24-ad41-374155d9e28b&amp;id=72e9fb25-c484-488d-9312-7acba82435b3
+Request specific divisions by id using a query param "id", e.g.  ?id=5f777167-63be-4c24-ad41-374155d9e28b&id=72e9fb25-c484-488d-9312-7acba82435b3
 
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -206,15 +197,13 @@ apiInstance.getAuthorizationDivisions(opts)
 # AuthzDivision getAuthorizationDivisionsHome()
 
 
-
 GET /api/v2/authorization/divisions/home
 
 Retrieve the home division for the organization.
 
 Will not include object counts.
 
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -253,15 +242,11 @@ This endpoint does not need any parameter.
 # **&#39;Number&#39;** getAuthorizationDivisionsLimit()
 
 
-
 GET /api/v2/authorization/divisions/limit
 
 Returns the maximum allowed number of divisions.
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -300,15 +285,13 @@ This endpoint does not need any parameter.
 # void postAuthorizationDivisionObject(divisionId, objectType, body)
 
 
-
 POST /api/v2/authorization/divisions/{divisionId}/objects/{objectType}
 
 Assign a list of objects to a division
 
-Set the division of a specified list of objects. The objects must all be of the same type, one of:  CAMPAIGN, MANAGEMENTUNIT, FLOW, QUEUE, DATATABLES or USER.  The body of the request is a list of object IDs, which are expected to be  GUIDs, e.g. [\&quot;206ce31f-61ec-40ed-a8b1-be6f06303998\&quot;,\&quot;250a754e-f5e4-4f51-800f-a92f09d3bf8c\&quot;]
+Set the division of a specified list of objects. The objects must all be of the same type, one of:  CAMPAIGN, MANAGEMENTUNIT, FLOW, QUEUE, DATATABLES or USER.  The body of the request is a list of object IDs, which are expected to be  GUIDs, e.g. ["206ce31f-61ec-40ed-a8b1-be6f06303998","250a754e-f5e4-4f51-800f-a92f09d3bf8c"]
 
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -325,7 +308,7 @@ let apiInstance = new platformClient.ObjectsApi();
 
 let divisionId = "divisionId_example"; // String | Division ID
 let objectType = "objectType_example"; // String | The type of the objects. Must be one of the valid object types
-let body = [{}]; // Object | Object Id List
+let body = ["body_example"]; // [String] | Object Id List
 
 apiInstance.postAuthorizationDivisionObject(divisionId, objectType, body)
   .then(() => {
@@ -344,7 +327,7 @@ apiInstance.postAuthorizationDivisionObject(divisionId, objectType, body)
 | ------------- | ------------- | ------------- | ------------- |
  **divisionId** | **String** | Division ID |  |
  **objectType** | **String** | The type of the objects. Must be one of the valid object types | <br />**Values**: QUEUE, CAMPAIGN, CONTACTLIST, DNCLIST, EMAILCAMPAIGN, MESSAGINGCAMPAIGN, MANAGEMENTUNIT, BUSINESSUNIT, FLOW, FLOWMILESTONE, FLOWOUTCOME, USER, CALLROUTE, EMERGENCYGROUPS, ROUTINGSCHEDULES, ROUTINGSCHEDULEGROUPS, DATATABLES, TEAM, WORKBIN, WORKTYPE, EXTENSIONPOOL, SKILLGROUP, SCRIPT |
- **body** | **Object** | Object Id List |  |
+ **body** | **[String]** | Object Id List |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -356,14 +339,11 @@ void (no response body)
 # AuthzDivision postAuthorizationDivisionRestore(divisionId, body)
 
 
-
 POST /api/v2/authorization/divisions/{divisionId}/restore
 
 Recreate a previously deleted division.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * authorization:division:add
 
@@ -411,14 +391,11 @@ apiInstance.postAuthorizationDivisionRestore(divisionId, body)
 # AuthzDivision postAuthorizationDivisions(body)
 
 
-
 POST /api/v2/authorization/divisions
 
 Create a division.
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * authorization:division:add
 * authorization:grant:add
@@ -465,14 +442,11 @@ apiInstance.postAuthorizationDivisions(body)
 # AuthzDivision putAuthorizationDivision(divisionId, body)
 
 
-
 PUT /api/v2/authorization/divisions/{divisionId}
 
 Update a division.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * authorization:division:edit
 

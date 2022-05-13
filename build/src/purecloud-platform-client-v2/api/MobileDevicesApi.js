@@ -5,7 +5,7 @@ class MobileDevicesApi {
 	/**
 	 * MobileDevices service.
 	 * @module purecloud-platform-client-v2/api/MobileDevicesApi
-	 * @version 136.1.0
+	 * @version 137.0.0
 	 */
 
 	/**
@@ -34,13 +34,13 @@ class MobileDevicesApi {
 		return this.apiClient.callApi(
 			'/api/v2/mobiledevices/{deviceId}', 
 			'DELETE', 
-			{ 'deviceId': deviceId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'deviceId': deviceId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -59,13 +59,13 @@ class MobileDevicesApi {
 		return this.apiClient.callApi(
 			'/api/v2/mobiledevices/{deviceId}', 
 			'GET', 
-			{ 'deviceId': deviceId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'deviceId': deviceId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -85,13 +85,13 @@ class MobileDevicesApi {
 		return this.apiClient.callApi(
 			'/api/v2/mobiledevices', 
 			'GET', 
-			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortOrder': opts['sortOrder'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortOrder': opts['sortOrder'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -110,13 +110,13 @@ class MobileDevicesApi {
 		return this.apiClient.callApi(
 			'/api/v2/mobiledevices', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -139,13 +139,13 @@ class MobileDevicesApi {
 		return this.apiClient.callApi(
 			'/api/v2/mobiledevices/{deviceId}', 
 			'PUT', 
-			{ 'deviceId': deviceId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'deviceId': deviceId },
+			{  },
+			{  },
+			{  },
 			opts['body'], 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}

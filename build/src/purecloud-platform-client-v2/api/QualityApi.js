@@ -5,7 +5,7 @@ class QualityApi {
 	/**
 	 * Quality service.
 	 * @module purecloud-platform-client-v2/api/QualityApi
-	 * @version 136.1.0
+	 * @version 137.0.0
 	 */
 
 	/**
@@ -39,13 +39,13 @@ class QualityApi {
 		return this.apiClient.callApi(
 			'/api/v2/quality/calibrations/{calibrationId}', 
 			'DELETE', 
-			{ 'calibrationId': calibrationId }, 
-			{ 'calibratorId': calibratorId }, 
-			{  }, 
-			{  }, 
+			{ 'calibrationId': calibrationId },
+			{ 'calibratorId': calibratorId },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -73,13 +73,13 @@ class QualityApi {
 		return this.apiClient.callApi(
 			'/api/v2/quality/conversations/{conversationId}/evaluations/{evaluationId}', 
 			'DELETE', 
-			{ 'conversationId': conversationId,'evaluationId': evaluationId }, 
-			{ 'expand': opts['expand'] }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId,'evaluationId': evaluationId },
+			{ 'expand': opts['expand'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -98,13 +98,13 @@ class QualityApi {
 		return this.apiClient.callApi(
 			'/api/v2/quality/forms/{formId}', 
 			'DELETE', 
-			{ 'formId': formId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'formId': formId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -123,13 +123,13 @@ class QualityApi {
 		return this.apiClient.callApi(
 			'/api/v2/quality/forms/evaluations/{formId}', 
 			'DELETE', 
-			{ 'formId': formId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'formId': formId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -148,20 +148,20 @@ class QualityApi {
 		return this.apiClient.callApi(
 			'/api/v2/quality/forms/surveys/{formId}', 
 			'DELETE', 
-			{ 'formId': formId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'formId': formId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
 
 	/**
 	 * Gets a list of Agent Activities
-	 * Each item on the list shows one agent&#39;s evaluation activity comprised of the number of evaluations and the highest, average, and lowest standard and critical scores, as well as a sub list showing the number and average score of evaluations for each evaluator for that agent.  evaluatorUserId, startTime, and endTime are all filtering criteria. If specified, the only evaluations used to compile the agent activity response will be ones that match the filtering criteria. agentUserId, name, group, and agentTeamId are all agent selection criteria. criteria.  If one or more agent selection criteria are specified, then the returned activity will include users that match the criteria even if those users did not have any agent activity or evaluations that do not match any filtering criteria.  If no agent selection criteria are specified but an evaluatorUserId is, then the returned activity will be only for those agents that had evaluations where the evaluator is the evaluatorUserId.  If no agent selection criteria are specified and no evaluatorUserId is specified, then the returned activity will be for all users
+	 * Each item on the list shows one agents evaluation activity comprised of the number of evaluations and the highest, average, and lowest standard and critical scores, as well as a sub list showing the number and average score of evaluations for each evaluator for that agent.  evaluatorUserId, startTime, and endTime are all filtering criteria. If specified, the only evaluations used to compile the agent activity response will be ones that match the filtering criteria. agentUserId, name, group, and agentTeamId are all agent selection criteria. criteria.  If one or more agent selection criteria are specified, then the returned activity will include users that match the criteria even if those users did not have any agent activity or evaluations that do not match any filtering criteria.  If no agent selection criteria are specified but an evaluatorUserId is, then the returned activity will be only for those agents that had evaluations where the evaluator is the evaluatorUserId.  If no agent selection criteria are specified and no evaluatorUserId is specified, then the returned activity will be for all users
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize The total page size requested (default to 25)
 	 * @param {Number} opts.pageNumber The page number requested (default to 1)
@@ -183,13 +183,13 @@ class QualityApi {
 		return this.apiClient.callApi(
 			'/api/v2/quality/agents/activity', 
 			'GET', 
-			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'nextPage': opts['nextPage'],'previousPage': opts['previousPage'],'startTime': opts['startTime'],'endTime': opts['endTime'],'agentUserId': this.apiClient.buildCollectionParam(opts['agentUserId'], 'multi'),'evaluatorUserId': opts['evaluatorUserId'],'name': opts['name'],'group': opts['group'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'nextPage': opts['nextPage'],'previousPage': opts['previousPage'],'startTime': opts['startTime'],'endTime': opts['endTime'],'agentUserId': this.apiClient.buildCollectionParam(opts['agentUserId'], 'multi'),'evaluatorUserId': opts['evaluatorUserId'],'name': opts['name'],'group': opts['group'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -213,13 +213,13 @@ class QualityApi {
 		return this.apiClient.callApi(
 			'/api/v2/quality/calibrations/{calibrationId}', 
 			'GET', 
-			{ 'calibrationId': calibrationId }, 
-			{ 'calibratorId': opts['calibratorId'],'conversationId': opts['conversationId'] }, 
-			{  }, 
-			{  }, 
+			{ 'calibrationId': calibrationId },
+			{ 'calibratorId': opts['calibratorId'],'conversationId': opts['conversationId'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -250,13 +250,13 @@ class QualityApi {
 		return this.apiClient.callApi(
 			'/api/v2/quality/calibrations', 
 			'GET', 
-			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'nextPage': opts['nextPage'],'previousPage': opts['previousPage'],'conversationId': opts['conversationId'],'startTime': opts['startTime'],'endTime': opts['endTime'],'calibratorId': calibratorId }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'nextPage': opts['nextPage'],'previousPage': opts['previousPage'],'conversationId': opts['conversationId'],'startTime': opts['startTime'],'endTime': opts['endTime'],'calibratorId': calibratorId },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -284,13 +284,13 @@ class QualityApi {
 		return this.apiClient.callApi(
 			'/api/v2/quality/conversations/{conversationId}/evaluations/{evaluationId}', 
 			'GET', 
-			{ 'conversationId': conversationId,'evaluationId': evaluationId }, 
-			{ 'expand': opts['expand'] }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId,'evaluationId': evaluationId },
+			{ 'expand': opts['expand'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -309,13 +309,13 @@ class QualityApi {
 		return this.apiClient.callApi(
 			'/api/v2/quality/conversations/{conversationId}/surveys', 
 			'GET', 
-			{ 'conversationId': conversationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -334,13 +334,13 @@ class QualityApi {
 		return this.apiClient.callApi(
 			'/api/v2/quality/conversations/audits/query/{transactionId}', 
 			'GET', 
-			{ 'transactionId': transactionId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'transactionId': transactionId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -365,20 +365,20 @@ class QualityApi {
 		return this.apiClient.callApi(
 			'/api/v2/quality/conversations/audits/query/{transactionId}/results', 
 			'GET', 
-			{ 'transactionId': transactionId }, 
-			{ 'cursor': opts['cursor'],'pageSize': opts['pageSize'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') }, 
-			{  }, 
-			{  }, 
+			{ 'transactionId': transactionId },
+			{ 'cursor': opts['cursor'],'pageSize': opts['pageSize'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
 
 	/**
 	 * Queries Evaluations and returns a paged list
-	 * Query params must include one of conversationId, evaluatorUserId, or agentUserId. When querying by agentUserId (and not conversationId or evaluatorUserId), the results are sorted by release date. Evaluations set to &#39;Never Release&#39; are omitted in this case. When querying by evaluatorUserId or conversationId (including when combined with agentUserId), the results are sorted by assigned date.
+	 * Query params must include one of conversationId, evaluatorUserId, or agentUserId. When querying by agentUserId (and not conversationId or evaluatorUserId), the results are sorted by release date. Evaluations set to Never Release are omitted in this case. When querying by evaluatorUserId or conversationId (including when combined with agentUserId), the results are sorted by assigned date.
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize The total page size requested (default to 25)
 	 * @param {Number} opts.pageNumber The page number requested (default to 1)
@@ -397,7 +397,7 @@ class QualityApi {
 	 * @param {Boolean} opts.agentHasRead agent has the evaluation
 	 * @param {Boolean} opts.expandAnswerTotalScores get the total scores for evaluations
 	 * @param {Number} opts.maximum maximum
-	 * @param {String} opts.sortOrder sort order options for agentUserId or evaluatorUserId query. Valid options are &#39;a&#39;, &#39;asc&#39;, &#39;ascending&#39;, &#39;d&#39;, &#39;desc&#39;, &#39;descending&#39;
+	 * @param {String} opts.sortOrder sort order options for agentUserId or evaluatorUserId query. Valid options are 'a', 'asc', 'ascending', 'd', 'desc', 'descending'
 	 */
 	getQualityEvaluationsQuery(opts) { 
 		opts = opts || {};
@@ -406,13 +406,13 @@ class QualityApi {
 		return this.apiClient.callApi(
 			'/api/v2/quality/evaluations/query', 
 			'GET', 
-			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'nextPage': opts['nextPage'],'previousPage': opts['previousPage'],'conversationId': opts['conversationId'],'agentUserId': opts['agentUserId'],'evaluatorUserId': opts['evaluatorUserId'],'queueId': opts['queueId'],'startTime': opts['startTime'],'endTime': opts['endTime'],'evaluationState': this.apiClient.buildCollectionParam(opts['evaluationState'], 'multi'),'isReleased': opts['isReleased'],'agentHasRead': opts['agentHasRead'],'expandAnswerTotalScores': opts['expandAnswerTotalScores'],'maximum': opts['maximum'],'sortOrder': opts['sortOrder'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'nextPage': opts['nextPage'],'previousPage': opts['previousPage'],'conversationId': opts['conversationId'],'agentUserId': opts['agentUserId'],'evaluatorUserId': opts['evaluatorUserId'],'queueId': opts['queueId'],'startTime': opts['startTime'],'endTime': opts['endTime'],'evaluationState': this.apiClient.buildCollectionParam(opts['evaluationState'], 'multi'),'isReleased': opts['isReleased'],'agentHasRead': opts['agentHasRead'],'expandAnswerTotalScores': opts['expandAnswerTotalScores'],'maximum': opts['maximum'],'sortOrder': opts['sortOrder'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -440,13 +440,13 @@ class QualityApi {
 		return this.apiClient.callApi(
 			'/api/v2/quality/evaluators/activity', 
 			'GET', 
-			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'nextPage': opts['nextPage'],'previousPage': opts['previousPage'],'startTime': opts['startTime'],'endTime': opts['endTime'],'name': opts['name'],'permission': this.apiClient.buildCollectionParam(opts['permission'], 'multi'),'group': opts['group'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'nextPage': opts['nextPage'],'previousPage': opts['previousPage'],'startTime': opts['startTime'],'endTime': opts['endTime'],'name': opts['name'],'permission': this.apiClient.buildCollectionParam(opts['permission'], 'multi'),'group': opts['group'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -465,13 +465,13 @@ class QualityApi {
 		return this.apiClient.callApi(
 			'/api/v2/quality/forms/{formId}', 
 			'GET', 
-			{ 'formId': formId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'formId': formId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -495,13 +495,13 @@ class QualityApi {
 		return this.apiClient.callApi(
 			'/api/v2/quality/forms/{formId}/versions', 
 			'GET', 
-			{ 'formId': formId }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] }, 
-			{  }, 
-			{  }, 
+			{ 'formId': formId },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -526,13 +526,13 @@ class QualityApi {
 		return this.apiClient.callApi(
 			'/api/v2/quality/forms', 
 			'GET', 
-			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'nextPage': opts['nextPage'],'previousPage': opts['previousPage'],'expand': opts['expand'],'name': opts['name'],'sortOrder': opts['sortOrder'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'nextPage': opts['nextPage'],'previousPage': opts['previousPage'],'expand': opts['expand'],'name': opts['name'],'sortOrder': opts['sortOrder'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -551,13 +551,13 @@ class QualityApi {
 		return this.apiClient.callApi(
 			'/api/v2/quality/forms/evaluations/{formId}', 
 			'GET', 
-			{ 'formId': formId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'formId': formId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -582,13 +582,13 @@ class QualityApi {
 		return this.apiClient.callApi(
 			'/api/v2/quality/forms/evaluations/{formId}/versions', 
 			'GET', 
-			{ 'formId': formId }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortOrder': opts['sortOrder'] }, 
-			{  }, 
-			{  }, 
+			{ 'formId': formId },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortOrder': opts['sortOrder'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -613,13 +613,13 @@ class QualityApi {
 		return this.apiClient.callApi(
 			'/api/v2/quality/forms/evaluations', 
 			'GET', 
-			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'nextPage': opts['nextPage'],'previousPage': opts['previousPage'],'expand': opts['expand'],'name': opts['name'],'sortOrder': opts['sortOrder'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'nextPage': opts['nextPage'],'previousPage': opts['previousPage'],'expand': opts['expand'],'name': opts['name'],'sortOrder': opts['sortOrder'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -638,13 +638,13 @@ class QualityApi {
 		return this.apiClient.callApi(
 			'/api/v2/quality/forms/evaluations/bulk/contexts', 
 			'GET', 
-			{  }, 
-			{ 'contextId': this.apiClient.buildCollectionParam(contextId, 'multi') }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'contextId': this.apiClient.buildCollectionParam(contextId, 'multi') },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -663,13 +663,13 @@ class QualityApi {
 		return this.apiClient.callApi(
 			'/api/v2/quality/forms/surveys/{formId}', 
 			'GET', 
-			{ 'formId': formId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'formId': formId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -693,13 +693,13 @@ class QualityApi {
 		return this.apiClient.callApi(
 			'/api/v2/quality/forms/surveys/{formId}/versions', 
 			'GET', 
-			{ 'formId': formId }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] }, 
-			{  }, 
-			{  }, 
+			{ 'formId': formId },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -724,13 +724,13 @@ class QualityApi {
 		return this.apiClient.callApi(
 			'/api/v2/quality/forms/surveys', 
 			'GET', 
-			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'nextPage': opts['nextPage'],'previousPage': opts['previousPage'],'expand': opts['expand'],'name': opts['name'],'sortOrder': opts['sortOrder'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'nextPage': opts['nextPage'],'previousPage': opts['previousPage'],'expand': opts['expand'],'name': opts['name'],'sortOrder': opts['sortOrder'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -749,13 +749,13 @@ class QualityApi {
 		return this.apiClient.callApi(
 			'/api/v2/quality/forms/surveys/bulk', 
 			'GET', 
-			{  }, 
-			{ 'id': this.apiClient.buildCollectionParam(id, 'multi') }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'id': this.apiClient.buildCollectionParam(id, 'multi') },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -778,13 +778,13 @@ class QualityApi {
 		return this.apiClient.callApi(
 			'/api/v2/quality/forms/surveys/bulk/contexts', 
 			'GET', 
-			{  }, 
-			{ 'contextId': this.apiClient.buildCollectionParam(contextId, 'multi'),'published': opts['published'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'contextId': this.apiClient.buildCollectionParam(contextId, 'multi'),'published': opts['published'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -803,13 +803,13 @@ class QualityApi {
 		return this.apiClient.callApi(
 			'/api/v2/quality/publishedforms/{formId}', 
 			'GET', 
-			{ 'formId': formId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'formId': formId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -830,13 +830,13 @@ class QualityApi {
 		return this.apiClient.callApi(
 			'/api/v2/quality/publishedforms', 
 			'GET', 
-			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'name': opts['name'],'onlyLatestPerContext': opts['onlyLatestPerContext'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'name': opts['name'],'onlyLatestPerContext': opts['onlyLatestPerContext'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -855,13 +855,13 @@ class QualityApi {
 		return this.apiClient.callApi(
 			'/api/v2/quality/publishedforms/evaluations/{formId}', 
 			'GET', 
-			{ 'formId': formId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'formId': formId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -882,13 +882,13 @@ class QualityApi {
 		return this.apiClient.callApi(
 			'/api/v2/quality/publishedforms/evaluations', 
 			'GET', 
-			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'name': opts['name'],'onlyLatestPerContext': opts['onlyLatestPerContext'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'name': opts['name'],'onlyLatestPerContext': opts['onlyLatestPerContext'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -907,13 +907,13 @@ class QualityApi {
 		return this.apiClient.callApi(
 			'/api/v2/quality/publishedforms/surveys/{formId}', 
 			'GET', 
-			{ 'formId': formId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'formId': formId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -934,13 +934,13 @@ class QualityApi {
 		return this.apiClient.callApi(
 			'/api/v2/quality/publishedforms/surveys', 
 			'GET', 
-			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'name': opts['name'],'onlyLatestEnabledPerContext': opts['onlyLatestEnabledPerContext'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'name': opts['name'],'onlyLatestEnabledPerContext': opts['onlyLatestEnabledPerContext'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -959,13 +959,13 @@ class QualityApi {
 		return this.apiClient.callApi(
 			'/api/v2/quality/surveys/{surveyId}', 
 			'GET', 
-			{ 'surveyId': surveyId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'surveyId': surveyId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -984,13 +984,13 @@ class QualityApi {
 		return this.apiClient.callApi(
 			'/api/v2/quality/surveys/scorable', 
 			'GET', 
-			{  }, 
-			{ 'customerSurveyUrl': customerSurveyUrl }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'customerSurveyUrl': customerSurveyUrl },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1014,13 +1014,13 @@ class QualityApi {
 		return this.apiClient.callApi(
 			'/api/v2/quality/forms/surveys/{formId}', 
 			'PATCH', 
-			{ 'formId': formId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'formId': formId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1039,13 +1039,13 @@ class QualityApi {
 		return this.apiClient.callApi(
 			'/api/v2/analytics/evaluations/aggregates/query', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1064,13 +1064,13 @@ class QualityApi {
 		return this.apiClient.callApi(
 			'/api/v2/analytics/surveys/aggregates/query', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1093,13 +1093,13 @@ class QualityApi {
 		return this.apiClient.callApi(
 			'/api/v2/quality/calibrations', 
 			'POST', 
-			{  }, 
-			{ 'expand': opts['expand'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'expand': opts['expand'] },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1127,13 +1127,13 @@ class QualityApi {
 		return this.apiClient.callApi(
 			'/api/v2/quality/conversations/{conversationId}/evaluations', 
 			'POST', 
-			{ 'conversationId': conversationId }, 
-			{ 'expand': opts['expand'] }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId },
+			{ 'expand': opts['expand'] },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1152,13 +1152,13 @@ class QualityApi {
 		return this.apiClient.callApi(
 			'/api/v2/quality/conversations/audits/query', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1177,13 +1177,13 @@ class QualityApi {
 		return this.apiClient.callApi(
 			'/api/v2/quality/evaluations/aggregates/query/me', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1202,13 +1202,13 @@ class QualityApi {
 		return this.apiClient.callApi(
 			'/api/v2/quality/evaluations/scoring', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1227,13 +1227,13 @@ class QualityApi {
 		return this.apiClient.callApi(
 			'/api/v2/quality/forms', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1252,13 +1252,13 @@ class QualityApi {
 		return this.apiClient.callApi(
 			'/api/v2/quality/forms/evaluations', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1277,13 +1277,13 @@ class QualityApi {
 		return this.apiClient.callApi(
 			'/api/v2/quality/forms/surveys', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1302,13 +1302,13 @@ class QualityApi {
 		return this.apiClient.callApi(
 			'/api/v2/quality/publishedforms', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1327,13 +1327,13 @@ class QualityApi {
 		return this.apiClient.callApi(
 			'/api/v2/quality/publishedforms/evaluations', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1352,13 +1352,13 @@ class QualityApi {
 		return this.apiClient.callApi(
 			'/api/v2/quality/publishedforms/surveys', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1377,13 +1377,13 @@ class QualityApi {
 		return this.apiClient.callApi(
 			'/api/v2/quality/surveys/scoring', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1407,13 +1407,13 @@ class QualityApi {
 		return this.apiClient.callApi(
 			'/api/v2/quality/calibrations/{calibrationId}', 
 			'PUT', 
-			{ 'calibrationId': calibrationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'calibrationId': calibrationId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1446,13 +1446,13 @@ class QualityApi {
 		return this.apiClient.callApi(
 			'/api/v2/quality/conversations/{conversationId}/evaluations/{evaluationId}', 
 			'PUT', 
-			{ 'conversationId': conversationId,'evaluationId': evaluationId }, 
-			{ 'expand': opts['expand'] }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId,'evaluationId': evaluationId },
+			{ 'expand': opts['expand'] },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1476,13 +1476,13 @@ class QualityApi {
 		return this.apiClient.callApi(
 			'/api/v2/quality/forms/{formId}', 
 			'PUT', 
-			{ 'formId': formId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'formId': formId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1506,13 +1506,13 @@ class QualityApi {
 		return this.apiClient.callApi(
 			'/api/v2/quality/forms/evaluations/{formId}', 
 			'PUT', 
-			{ 'formId': formId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'formId': formId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1536,13 +1536,13 @@ class QualityApi {
 		return this.apiClient.callApi(
 			'/api/v2/quality/forms/surveys/{formId}', 
 			'PUT', 
-			{ 'formId': formId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'formId': formId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1550,29 +1550,29 @@ class QualityApi {
 	/**
 	 * Update a survey as an end-customer, for the purposes of scoring it.
 	 * 
-	 * @param {Object} body survey
 	 * @param {String} customerSurveyUrl customerSurveyUrl
+	 * @param {Object} body survey
 	 */
-	putQualitySurveysScorable(body, customerSurveyUrl) { 
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putQualitySurveysScorable';
-		}
+	putQualitySurveysScorable(customerSurveyUrl, body) { 
 		// verify the required parameter 'customerSurveyUrl' is set
 		if (customerSurveyUrl === undefined || customerSurveyUrl === null) {
 			throw 'Missing the required parameter "customerSurveyUrl" when calling putQualitySurveysScorable';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putQualitySurveysScorable';
 		}
 
 		return this.apiClient.callApi(
 			'/api/v2/quality/surveys/scorable', 
 			'PUT', 
-			{  }, 
-			{ 'customerSurveyUrl': customerSurveyUrl }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'customerSurveyUrl': customerSurveyUrl },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}

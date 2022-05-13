@@ -16,14 +16,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 # FlowAggregateQueryResponse postAnalyticsFlowsAggregatesQuery(body)
 
 
-
 POST /api/v2/analytics/flows/aggregates/query
 
 Query for flow aggregates
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * analytics:flowAggregate:view
 
@@ -69,14 +66,11 @@ apiInstance.postAnalyticsFlowsAggregatesQuery(body)
 # FlowObservationQueryResponse postAnalyticsFlowsObservationsQuery(body)
 
 
-
 POST /api/v2/analytics/flows/observations/query
 
 Query for flow observations
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * analytics:flowObservation:view
 

@@ -20,14 +20,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 # AuditQueryServiceMapping getAuditsQueryRealtimeServicemapping()
 
 
-
 GET /api/v2/audits/query/realtime/servicemapping
 
 Get service mapping information used in realtime audits.
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * audits:audit:view
 
@@ -68,14 +65,11 @@ This endpoint does not need any parameter.
 # AuditQueryServiceMapping getAuditsQueryServicemapping()
 
 
-
 GET /api/v2/audits/query/servicemapping
 
 Get service mapping information used in audits.
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * audits:audit:view
 
@@ -116,14 +110,11 @@ This endpoint does not need any parameter.
 # AuditQueryExecutionStatusResponse getAuditsQueryTransactionId(transactionId)
 
 
-
 GET /api/v2/audits/query/{transactionId}
 
 Get status of audit query execution
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * audits:audit:view
 
@@ -169,14 +160,11 @@ apiInstance.getAuditsQueryTransactionId(transactionId)
 # AuditQueryExecutionResultsResponse getAuditsQueryTransactionIdResults(transactionId, opts)
 
 
-
 GET /api/v2/audits/query/{transactionId}/results
 
 Get results of audit query
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * audits:audit:view
 
@@ -230,14 +218,11 @@ apiInstance.getAuditsQueryTransactionIdResults(transactionId, opts)
 # AuditQueryExecutionStatusResponse postAuditsQuery(body)
 
 
-
 POST /api/v2/audits/query
 
 Create audit query execution
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * audits:audit:view
 
@@ -283,14 +268,11 @@ apiInstance.postAuditsQuery(body)
 # AuditRealtimeQueryResultsResponse postAuditsQueryRealtime(body, opts)
 
 
-
 POST /api/v2/audits/query/realtime
 
 This endpoint will only retrieve 14 days worth of audits for certain services. Please use /query to get a full list and older audits.
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * audits:audit:view
 

@@ -35,10 +35,7 @@ GET /api/v2/fieldconfig
 
 Fetch field config for an entity type
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -82,15 +79,11 @@ apiInstance.getFieldconfig(type)
 # EmbeddedIntegration getOrganizationsEmbeddedintegration()
 
 
-
 GET /api/v2/organizations/embeddedintegration
 
 Get the list of domains that will be allowed to embed PureCloud applications
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -129,14 +122,11 @@ This endpoint does not need any parameter.
 # IpAddressAuthentication getOrganizationsIpaddressauthentication()
 
 
-
 GET /api/v2/organizations/ipaddressauthentication
 
 Get organization IP address whitelist settings
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * directory:organization:admin
 
@@ -177,14 +167,11 @@ This endpoint does not need any parameter.
 # LimitChangeRequestDetails getOrganizationsLimitsChangerequest(requestId)
 
 
-
 GET /api/v2/organizations/limits/changerequests/{requestId}
 
 Get a limit change request
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * limits:organization:view
 
@@ -230,14 +217,13 @@ apiInstance.getOrganizationsLimitsChangerequest(requestId)
 # LimitChangeRequestsEntityListing getOrganizationsLimitsChangerequests(opts)
 
 
-
 GET /api/v2/organizations/limits/changerequests
 
 Get the available limit change requests
 
 Timestamp interval defaults to the last 365 days if both query parameters are omitted. If only one parameter is omitted, the interval will default to a 180 day range in the specified direction.
 
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * limits:organization:view
 
@@ -255,8 +241,8 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.OrganizationApi();
 
 let opts = { 
-  'after': 789, // Number | Timestamp indicating the date to begin after when searching for requests.
-  'before': 789, // Number | Timestamp indicating the date to end before when searching for requests.
+  'after': 3.4, // Number | Timestamp indicating the date to begin after when searching for requests.
+  'before': 3.4, // Number | Timestamp indicating the date to end before when searching for requests.
   'status': "status_example", // String | Status of the request to be filtered by
   'pageSize': 25, // Number | Page Size
   'expand': ["expand_example"] // [String] | Which fields, if any, to expand.
@@ -293,15 +279,11 @@ apiInstance.getOrganizationsLimitsChangerequests(opts)
 # UrlResponse getOrganizationsLimitsDocs()
 
 
-
 GET /api/v2/organizations/limits/docs
 
 Get a link to the limit documentation
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -340,14 +322,11 @@ This endpoint does not need any parameter.
 # LimitsEntityListing getOrganizationsLimitsNamespace(namespaceName)
 
 
-
 GET /api/v2/organizations/limits/namespaces/{namespaceName}
 
 Get the effective limits in a namespace for an organization
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * limits:organization:view
 
@@ -393,15 +372,11 @@ apiInstance.getOrganizationsLimitsNamespace(namespaceName)
 # LimitsEntityListing getOrganizationsLimitsNamespaceDefaults(namespaceName)
 
 
-
 GET /api/v2/organizations/limits/namespaces/{namespaceName}/defaults
 
 Get the default limits in a namespace for an organization
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -442,17 +417,14 @@ apiInstance.getOrganizationsLimitsNamespaceDefaults(namespaceName)
 
 <a name="getOrganizationsLimitsNamespaces"></a>
 
-# PagedNamespaceListing getOrganizationsLimitsNamespaces(opts)
-
+# **Object** getOrganizationsLimitsNamespaces(opts)
 
 
 GET /api/v2/organizations/limits/namespaces
 
 Get the available limit namespaces
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * limits:organization:view
 
@@ -495,22 +467,18 @@ apiInstance.getOrganizationsLimitsNamespaces(opts)
 
 ### Return type
 
-**PagedNamespaceListing**
+**Object**
 
 <a name="getOrganizationsMe"></a>
 
 # Organization getOrganizationsMe()
 
 
-
 GET /api/v2/organizations/me
 
 Get organization.
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -554,10 +522,7 @@ GET /api/v2/organizations/whitelist
 
 Use PUT /api/v2/organizations/embeddedintegration instead
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -596,14 +561,11 @@ This endpoint does not need any parameter.
 # OrganizationFeatures patchOrganizationsFeature(featureName, enabled)
 
 
-
 PATCH /api/v2/organizations/features/{featureName}
 
 Update organization
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * directory:organization:admin
 
@@ -651,14 +613,11 @@ apiInstance.patchOrganizationsFeature(featureName, enabled)
 # EmbeddedIntegration putOrganizationsEmbeddedintegration(body)
 
 
-
 PUT /api/v2/organizations/embeddedintegration
 
 Update the list of domains that will be allowed to embed PureCloud applications
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * directory:organization:admin
 
@@ -704,14 +663,11 @@ apiInstance.putOrganizationsEmbeddedintegration(body)
 # IpAddressAuthentication putOrganizationsIpaddressauthentication(body)
 
 
-
 PUT /api/v2/organizations/ipaddressauthentication
 
 Update organization IP address whitelist settings
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * directory:organization:admin
 
@@ -757,14 +713,11 @@ apiInstance.putOrganizationsIpaddressauthentication(body)
 # Organization putOrganizationsMe(opts)
 
 
-
 PUT /api/v2/organizations/me
 
 Update organization.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * directory:organization:admin
 
@@ -817,9 +770,7 @@ PUT /api/v2/organizations/whitelist
 
 Use PUT /api/v2/organizations/embeddedintegration instead
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * directory:organization:admin
 

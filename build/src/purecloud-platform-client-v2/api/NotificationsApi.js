@@ -5,7 +5,7 @@ class NotificationsApi {
 	/**
 	 * Notifications service.
 	 * @module purecloud-platform-client-v2/api/NotificationsApi
-	 * @version 136.1.0
+	 * @version 137.0.0
 	 */
 
 	/**
@@ -34,13 +34,13 @@ class NotificationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/notifications/channels/{channelId}/subscriptions', 
 			'DELETE', 
-			{ 'channelId': channelId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'channelId': channelId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -59,13 +59,13 @@ class NotificationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/notifications/availabletopics', 
 			'GET', 
-			{  }, 
-			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'includePreview': opts['includePreview'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'includePreview': opts['includePreview'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -84,13 +84,13 @@ class NotificationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/notifications/channels/{channelId}/subscriptions', 
 			'GET', 
-			{ 'channelId': channelId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'channelId': channelId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -99,7 +99,7 @@ class NotificationsApi {
 	 * The list of existing channels
 	 * 
 	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.includechannels Show user&#39;s channels for this specific token or across all tokens for this user and app.  Channel Ids for other access tokens will not be shown, but will be presented to show their existence. (default to token)
+	 * @param {Object} opts.includechannels Show user's channels for this specific token or across all tokens for this user and app.  Channel Ids for other access tokens will not be shown, but will be presented to show their existence. (default to token)
 	 */
 	getNotificationsChannels(opts) { 
 		opts = opts || {};
@@ -108,20 +108,20 @@ class NotificationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/notifications/channels', 
 			'GET', 
-			{  }, 
-			{ 'includechannels': opts['includechannels'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'includechannels': opts['includechannels'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
 
 	/**
 	 * Verify a channel still exists and is valid
-	 * Returns a 200 OK if channel exists, and a 404 Not Found if it doesn&#39;t
+	 * Returns a 200 OK if channel exists, and a 404 Not Found if it doesnt
 	 * @param {String} channelId Channel ID
 	 */
 	headNotificationsChannel(channelId) { 
@@ -133,13 +133,13 @@ class NotificationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/notifications/channels/{channelId}', 
 			'HEAD', 
-			{ 'channelId': channelId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'channelId': channelId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -163,13 +163,13 @@ class NotificationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/notifications/channels/{channelId}/subscriptions', 
 			'POST', 
-			{ 'channelId': channelId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'channelId': channelId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -183,13 +183,13 @@ class NotificationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/notifications/channels', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -213,13 +213,13 @@ class NotificationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/notifications/channels/{channelId}/subscriptions', 
 			'PUT', 
-			{ 'channelId': channelId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'channelId': channelId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
