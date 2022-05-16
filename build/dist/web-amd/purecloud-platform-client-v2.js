@@ -393,7 +393,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 
 	/**
 	 * @module purecloud-platform-client-v2/ApiClient
-	 * @version 137.0.0
+	 * @version 137.0.1
 	 */
 	class ApiClient {
 		/**
@@ -1348,7 +1348,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 
 					// set header parameters
 					request.set(that.defaultHeaders).set(that.normalizeParams(headerParams));
-					//request.set({ 'purecloud-sdk': '137.0.0' });
+					//request.set({ 'purecloud-sdk': '137.0.1' });
 
 					// set request timeout
 					request.timeout(that.timeout);
@@ -1448,7 +1448,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Alerting service.
 		 * @module purecloud-platform-client-v2/api/AlertingApi
-		 * @version 137.0.0
+		 * @version 137.0.1
 		 */
 
 		/**
@@ -1762,7 +1762,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Analytics service.
 		 * @module purecloud-platform-client-v2/api/AnalyticsApi
-		 * @version 137.0.0
+		 * @version 137.0.1
 		 */
 
 		/**
@@ -2944,7 +2944,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Architect service.
 		 * @module purecloud-platform-client-v2/api/ArchitectApi
-		 * @version 137.0.0
+		 * @version 137.0.1
 		 */
 
 		/**
@@ -5989,7 +5989,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Audit service.
 		 * @module purecloud-platform-client-v2/api/AuditApi
-		 * @version 137.0.0
+		 * @version 137.0.1
 		 */
 
 		/**
@@ -6160,7 +6160,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Authorization service.
 		 * @module purecloud-platform-client-v2/api/AuthorizationApi
-		 * @version 137.0.0
+		 * @version 137.0.1
 		 */
 
 		/**
@@ -7343,7 +7343,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Billing service.
 		 * @module purecloud-platform-client-v2/api/BillingApi
-		 * @version 137.0.0
+		 * @version 137.0.1
 		 */
 
 		/**
@@ -7423,7 +7423,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Chat service.
 		 * @module purecloud-platform-client-v2/api/ChatApi
-		 * @version 137.0.0
+		 * @version 137.0.1
 		 */
 
 		/**
@@ -7514,7 +7514,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Coaching service.
 		 * @module purecloud-platform-client-v2/api/CoachingApi
-		 * @version 137.0.0
+		 * @version 137.0.1
 		 */
 
 		/**
@@ -8091,7 +8091,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * ContentManagement service.
 		 * @module purecloud-platform-client-v2/api/ContentManagementApi
-		 * @version 137.0.0
+		 * @version 137.0.1
 		 */
 
 		/**
@@ -9231,7 +9231,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Conversations service.
 		 * @module purecloud-platform-client-v2/api/ConversationsApi
-		 * @version 137.0.0
+		 * @version 137.0.1
 		 */
 
 		/**
@@ -13895,7 +13895,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * DataExtensions service.
 		 * @module purecloud-platform-client-v2/api/DataExtensionsApi
-		 * @version 137.0.0
+		 * @version 137.0.1
 		 */
 
 		/**
@@ -13981,7 +13981,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * ExternalContacts service.
 		 * @module purecloud-platform-client-v2/api/ExternalContactsApi
-		 * @version 137.0.0
+		 * @version 137.0.1
 		 */
 
 		/**
@@ -15724,7 +15724,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Fax service.
 		 * @module purecloud-platform-client-v2/api/FaxApi
-		 * @version 137.0.0
+		 * @version 137.0.1
 		 */
 
 		/**
@@ -15895,7 +15895,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Flows service.
 		 * @module purecloud-platform-client-v2/api/FlowsApi
-		 * @version 137.0.0
+		 * @version 137.0.1
 		 */
 
 		/**
@@ -15966,7 +15966,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Gamification service.
 		 * @module purecloud-platform-client-v2/api/GamificationApi
-		 * @version 137.0.0
+		 * @version 137.0.1
 		 */
 
 		/**
@@ -17396,7 +17396,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * GeneralDataProtectionRegulation service.
 		 * @module purecloud-platform-client-v2/api/GeneralDataProtectionRegulationApi
-		 * @version 137.0.0
+		 * @version 137.0.1
 		 */
 
 		/**
@@ -17526,7 +17526,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Geolocation service.
 		 * @module purecloud-platform-client-v2/api/GeolocationApi
-		 * @version 137.0.0
+		 * @version 137.0.1
 		 */
 
 		/**
@@ -17657,7 +17657,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Greetings service.
 		 * @module purecloud-platform-client-v2/api/GreetingsApi
-		 * @version 137.0.0
+		 * @version 137.0.1
 		 */
 
 		/**
@@ -18112,7 +18112,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Groups service.
 		 * @module purecloud-platform-client-v2/api/GroupsApi
-		 * @version 137.0.0
+		 * @version 137.0.1
 		 */
 
 		/**
@@ -18517,7 +18517,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * IdentityProvider service.
 		 * @module purecloud-platform-client-v2/api/IdentityProviderApi
-		 * @version 137.0.0
+		 * @version 137.0.1
 		 */
 
 		/**
@@ -19273,7 +19273,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Integrations service.
 		 * @module purecloud-platform-client-v2/api/IntegrationsApi
-		 * @version 137.0.0
+		 * @version 137.0.1
 		 */
 
 		/**
@@ -20950,7 +20950,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Journey service.
 		 * @module purecloud-platform-client-v2/api/JourneyApi
-		 * @version 137.0.0
+		 * @version 137.0.1
 		 */
 
 		/**
@@ -21661,7 +21661,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Knowledge service.
 		 * @module purecloud-platform-client-v2/api/KnowledgeApi
-		 * @version 137.0.0
+		 * @version 137.0.1
 		 */
 
 		/**
@@ -22561,7 +22561,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * LanguageUnderstanding service.
 		 * @module purecloud-platform-client-v2/api/LanguageUnderstandingApi
-		 * @version 137.0.0
+		 * @version 137.0.1
 		 */
 
 		/**
@@ -23465,7 +23465,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Languages service.
 		 * @module purecloud-platform-client-v2/api/LanguagesApi
-		 * @version 137.0.0
+		 * @version 137.0.1
 		 */
 
 		/**
@@ -23733,7 +23733,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Learning service.
 		 * @module purecloud-platform-client-v2/api/LearningApi
-		 * @version 137.0.0
+		 * @version 137.0.1
 		 */
 
 		/**
@@ -24324,7 +24324,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * License service.
 		 * @module purecloud-platform-client-v2/api/LicenseApi
-		 * @version 137.0.0
+		 * @version 137.0.1
 		 */
 
 		/**
@@ -24562,7 +24562,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Locations service.
 		 * @module purecloud-platform-client-v2/api/LocationsApi
-		 * @version 137.0.0
+		 * @version 137.0.1
 		 */
 
 		/**
@@ -24798,7 +24798,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Messaging service.
 		 * @module purecloud-platform-client-v2/api/MessagingApi
-		 * @version 137.0.0
+		 * @version 137.0.1
 		 */
 
 		/**
@@ -24949,7 +24949,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * MobileDevices service.
 		 * @module purecloud-platform-client-v2/api/MobileDevicesApi
-		 * @version 137.0.0
+		 * @version 137.0.1
 		 */
 
 		/**
@@ -25100,7 +25100,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Notifications service.
 		 * @module purecloud-platform-client-v2/api/NotificationsApi
-		 * @version 137.0.0
+		 * @version 137.0.1
 		 */
 
 		/**
@@ -25325,7 +25325,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * OAuth service.
 		 * @module purecloud-platform-client-v2/api/OAuthApi
-		 * @version 137.0.0
+		 * @version 137.0.1
 		 */
 
 		/**
@@ -25691,7 +25691,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Objects service.
 		 * @module purecloud-platform-client-v2/api/ObjectsApi
-		 * @version 137.0.0
+		 * @version 137.0.1
 		 */
 
 		/**
@@ -25962,7 +25962,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Organization service.
 		 * @module purecloud-platform-client-v2/api/OrganizationApi
-		 * @version 137.0.0
+		 * @version 137.0.1
 		 */
 
 		/**
@@ -26365,7 +26365,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * OrganizationAuthorization service.
 		 * @module purecloud-platform-client-v2/api/OrganizationAuthorizationApi
-		 * @version 137.0.0
+		 * @version 137.0.1
 		 */
 
 		/**
@@ -27290,7 +27290,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Outbound service.
 		 * @module purecloud-platform-client-v2/api/OutboundApi
-		 * @version 137.0.0
+		 * @version 137.0.1
 		 */
 
 		/**
@@ -30545,7 +30545,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Presence service.
 		 * @module purecloud-platform-client-v2/api/PresenceApi
-		 * @version 137.0.0
+		 * @version 137.0.1
 		 */
 
 		/**
@@ -30867,7 +30867,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Quality service.
 		 * @module purecloud-platform-client-v2/api/QualityApi
-		 * @version 137.0.0
+		 * @version 137.0.1
 		 */
 
 		/**
@@ -32445,7 +32445,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Recording service.
 		 * @module purecloud-platform-client-v2/api/RecordingApi
-		 * @version 137.0.0
+		 * @version 137.0.1
 		 */
 
 		/**
@@ -34098,7 +34098,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * ResponseManagement service.
 		 * @module purecloud-platform-client-v2/api/ResponseManagementApi
-		 * @version 137.0.0
+		 * @version 137.0.1
 		 */
 
 		/**
@@ -34582,7 +34582,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Routing service.
 		 * @module purecloud-platform-client-v2/api/RoutingApi
-		 * @version 137.0.0
+		 * @version 137.0.1
 		 */
 
 		/**
@@ -37509,7 +37509,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * SCIM service.
 		 * @module purecloud-platform-client-v2/api/SCIMApi
-		 * @version 137.0.0
+		 * @version 137.0.1
 		 */
 
 		/**
@@ -38386,7 +38386,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Scripts service.
 		 * @module purecloud-platform-client-v2/api/ScriptsApi
-		 * @version 137.0.0
+		 * @version 137.0.1
 		 */
 
 		/**
@@ -38805,7 +38805,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Search service.
 		 * @module purecloud-platform-client-v2/api/SearchApi
-		 * @version 137.0.0
+		 * @version 137.0.1
 		 */
 
 		/**
@@ -39340,7 +39340,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * SpeechTextAnalytics service.
 		 * @module purecloud-platform-client-v2/api/SpeechTextAnalyticsApi
-		 * @version 137.0.0
+		 * @version 137.0.1
 		 */
 
 		/**
@@ -40193,7 +40193,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Stations service.
 		 * @module purecloud-platform-client-v2/api/StationsApi
-		 * @version 137.0.0
+		 * @version 137.0.1
 		 */
 
 		/**
@@ -40340,7 +40340,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Suggest service.
 		 * @module purecloud-platform-client-v2/api/SuggestApi
-		 * @version 137.0.0
+		 * @version 137.0.1
 		 */
 
 		/**
@@ -40479,7 +40479,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Telephony service.
 		 * @module purecloud-platform-client-v2/api/TelephonyApi
-		 * @version 137.0.0
+		 * @version 137.0.1
 		 */
 
 		/**
@@ -40587,7 +40587,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * TelephonyProvidersEdge service.
 		 * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-		 * @version 137.0.0
+		 * @version 137.0.1
 		 */
 
 		/**
@@ -44220,7 +44220,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Textbots service.
 		 * @module purecloud-platform-client-v2/api/TextbotsApi
-		 * @version 137.0.0
+		 * @version 137.0.1
 		 */
 
 		/**
@@ -44348,7 +44348,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Tokens service.
 		 * @module purecloud-platform-client-v2/api/TokensApi
-		 * @version 137.0.0
+		 * @version 137.0.1
 		 */
 
 		/**
@@ -44454,7 +44454,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Uploads service.
 		 * @module purecloud-platform-client-v2/api/UploadsApi
-		 * @version 137.0.0
+		 * @version 137.0.1
 		 */
 
 		/**
@@ -44605,7 +44605,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Usage service.
 		 * @module purecloud-platform-client-v2/api/UsageApi
-		 * @version 137.0.0
+		 * @version 137.0.1
 		 */
 
 		/**
@@ -44676,7 +44676,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * UserRecordings service.
 		 * @module purecloud-platform-client-v2/api/UserRecordingsApi
-		 * @version 137.0.0
+		 * @version 137.0.1
 		 */
 
 		/**
@@ -44860,7 +44860,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Users service.
 		 * @module purecloud-platform-client-v2/api/UsersApi
-		 * @version 137.0.0
+		 * @version 137.0.1
 		 */
 
 		/**
@@ -47162,7 +47162,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Utilities service.
 		 * @module purecloud-platform-client-v2/api/UtilitiesApi
-		 * @version 137.0.0
+		 * @version 137.0.1
 		 */
 
 		/**
@@ -47273,7 +47273,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Voicemail service.
 		 * @module purecloud-platform-client-v2/api/VoicemailApi
-		 * @version 137.0.0
+		 * @version 137.0.1
 		 */
 
 		/**
@@ -47940,7 +47940,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * WebChat service.
 		 * @module purecloud-platform-client-v2/api/WebChatApi
-		 * @version 137.0.0
+		 * @version 137.0.1
 		 */
 
 		/**
@@ -48484,7 +48484,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * WebDeployments service.
 		 * @module purecloud-platform-client-v2/api/WebDeploymentsApi
-		 * @version 137.0.0
+		 * @version 137.0.1
 		 */
 
 		/**
@@ -48839,7 +48839,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * WebMessaging service.
 		 * @module purecloud-platform-client-v2/api/WebMessagingApi
-		 * @version 137.0.0
+		 * @version 137.0.1
 		 */
 
 		/**
@@ -48885,7 +48885,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Widgets service.
 		 * @module purecloud-platform-client-v2/api/WidgetsApi
-		 * @version 137.0.0
+		 * @version 137.0.1
 		 */
 
 		/**
@@ -49031,7 +49031,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * WorkforceManagement service.
 		 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-		 * @version 137.0.0
+		 * @version 137.0.1
 		 */
 
 		/**
@@ -53282,336 +53282,338 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 	 * </pre>
 	 * </p>
 	 * @module purecloud-platform-client-v2/index
-	 * @version 137.0.0
+	 * @version 137.0.1
 	 */
 	class platformClient {
-	    constructor() {
-	        /**
-	         * The ApiClient constructor.
-	         * @property {module:purecloud-platform-client-v2/ApiClient}
-	         */
-	        this.ApiClient = new ApiClient();
-	        /**
-	         * The ApiClient class.
-	         * @property {module:purecloud-platform-client-v2/ApiClient}
-	         */
-	        this.ApiClientClass = ApiClient;
-	        /**
+		constructor() {
+			/**
+			 * The ApiClient constructor.
+			 * @property {module:purecloud-platform-client-v2/ApiClient}
+			 */
+			this.ApiClient = new ApiClient();
+			/**
+			 * The ApiClient class.
+			 * @property {module:purecloud-platform-client-v2/ApiClient}
+			 */
+			this.ApiClientClass = ApiClient;
+			/**
 			 * The AlertingApi service constructor.
-			 * @property {module:purecloud-platform-client-v2/api/AlertingApi
+			 * @property {module:purecloud-platform-client-v2/api/AlertingApi}
 			 */
 			this.AlertingApi = AlertingApi;
 			/**
 			 * The AnalyticsApi service constructor.
-			 * @property {module:purecloud-platform-client-v2/api/AnalyticsApi
+			 * @property {module:purecloud-platform-client-v2/api/AnalyticsApi}
 			 */
 			this.AnalyticsApi = AnalyticsApi;
 			/**
 			 * The ArchitectApi service constructor.
-			 * @property {module:purecloud-platform-client-v2/api/ArchitectApi
+			 * @property {module:purecloud-platform-client-v2/api/ArchitectApi}
 			 */
 			this.ArchitectApi = ArchitectApi;
 			/**
 			 * The AuditApi service constructor.
-			 * @property {module:purecloud-platform-client-v2/api/AuditApi
+			 * @property {module:purecloud-platform-client-v2/api/AuditApi}
 			 */
 			this.AuditApi = AuditApi;
 			/**
 			 * The AuthorizationApi service constructor.
-			 * @property {module:purecloud-platform-client-v2/api/AuthorizationApi
+			 * @property {module:purecloud-platform-client-v2/api/AuthorizationApi}
 			 */
 			this.AuthorizationApi = AuthorizationApi;
 			/**
 			 * The BillingApi service constructor.
-			 * @property {module:purecloud-platform-client-v2/api/BillingApi
+			 * @property {module:purecloud-platform-client-v2/api/BillingApi}
 			 */
 			this.BillingApi = BillingApi;
 			/**
 			 * The ChatApi service constructor.
-			 * @property {module:purecloud-platform-client-v2/api/ChatApi
+			 * @property {module:purecloud-platform-client-v2/api/ChatApi}
 			 */
 			this.ChatApi = ChatApi;
 			/**
 			 * The CoachingApi service constructor.
-			 * @property {module:purecloud-platform-client-v2/api/CoachingApi
+			 * @property {module:purecloud-platform-client-v2/api/CoachingApi}
 			 */
 			this.CoachingApi = CoachingApi;
 			/**
 			 * The ContentManagementApi service constructor.
-			 * @property {module:purecloud-platform-client-v2/api/ContentManagementApi
+			 * @property {module:purecloud-platform-client-v2/api/ContentManagementApi}
 			 */
 			this.ContentManagementApi = ContentManagementApi;
 			/**
 			 * The ConversationsApi service constructor.
-			 * @property {module:purecloud-platform-client-v2/api/ConversationsApi
+			 * @property {module:purecloud-platform-client-v2/api/ConversationsApi}
 			 */
 			this.ConversationsApi = ConversationsApi;
 			/**
 			 * The DataExtensionsApi service constructor.
-			 * @property {module:purecloud-platform-client-v2/api/DataExtensionsApi
+			 * @property {module:purecloud-platform-client-v2/api/DataExtensionsApi}
 			 */
 			this.DataExtensionsApi = DataExtensionsApi;
 			/**
 			 * The ExternalContactsApi service constructor.
-			 * @property {module:purecloud-platform-client-v2/api/ExternalContactsApi
+			 * @property {module:purecloud-platform-client-v2/api/ExternalContactsApi}
 			 */
 			this.ExternalContactsApi = ExternalContactsApi;
 			/**
 			 * The FaxApi service constructor.
-			 * @property {module:purecloud-platform-client-v2/api/FaxApi
+			 * @property {module:purecloud-platform-client-v2/api/FaxApi}
 			 */
 			this.FaxApi = FaxApi;
 			/**
 			 * The FlowsApi service constructor.
-			 * @property {module:purecloud-platform-client-v2/api/FlowsApi
+			 * @property {module:purecloud-platform-client-v2/api/FlowsApi}
 			 */
 			this.FlowsApi = FlowsApi;
 			/**
 			 * The GamificationApi service constructor.
-			 * @property {module:purecloud-platform-client-v2/api/GamificationApi
+			 * @property {module:purecloud-platform-client-v2/api/GamificationApi}
 			 */
 			this.GamificationApi = GamificationApi;
 			/**
 			 * The GeneralDataProtectionRegulationApi service constructor.
-			 * @property {module:purecloud-platform-client-v2/api/GeneralDataProtectionRegulationApi
+			 * @property {module:purecloud-platform-client-v2/api/GeneralDataProtectionRegulationApi}
 			 */
 			this.GeneralDataProtectionRegulationApi = GeneralDataProtectionRegulationApi;
 			/**
 			 * The GeolocationApi service constructor.
-			 * @property {module:purecloud-platform-client-v2/api/GeolocationApi
+			 * @property {module:purecloud-platform-client-v2/api/GeolocationApi}
 			 */
 			this.GeolocationApi = GeolocationApi;
 			/**
 			 * The GreetingsApi service constructor.
-			 * @property {module:purecloud-platform-client-v2/api/GreetingsApi
+			 * @property {module:purecloud-platform-client-v2/api/GreetingsApi}
 			 */
 			this.GreetingsApi = GreetingsApi;
 			/**
 			 * The GroupsApi service constructor.
-			 * @property {module:purecloud-platform-client-v2/api/GroupsApi
+			 * @property {module:purecloud-platform-client-v2/api/GroupsApi}
 			 */
 			this.GroupsApi = GroupsApi;
 			/**
 			 * The IdentityProviderApi service constructor.
-			 * @property {module:purecloud-platform-client-v2/api/IdentityProviderApi
+			 * @property {module:purecloud-platform-client-v2/api/IdentityProviderApi}
 			 */
 			this.IdentityProviderApi = IdentityProviderApi;
 			/**
 			 * The IntegrationsApi service constructor.
-			 * @property {module:purecloud-platform-client-v2/api/IntegrationsApi
+			 * @property {module:purecloud-platform-client-v2/api/IntegrationsApi}
 			 */
 			this.IntegrationsApi = IntegrationsApi;
 			/**
 			 * The JourneyApi service constructor.
-			 * @property {module:purecloud-platform-client-v2/api/JourneyApi
+			 * @property {module:purecloud-platform-client-v2/api/JourneyApi}
 			 */
 			this.JourneyApi = JourneyApi;
 			/**
 			 * The KnowledgeApi service constructor.
-			 * @property {module:purecloud-platform-client-v2/api/KnowledgeApi
+			 * @property {module:purecloud-platform-client-v2/api/KnowledgeApi}
 			 */
 			this.KnowledgeApi = KnowledgeApi;
 			/**
 			 * The LanguageUnderstandingApi service constructor.
-			 * @property {module:purecloud-platform-client-v2/api/LanguageUnderstandingApi
+			 * @property {module:purecloud-platform-client-v2/api/LanguageUnderstandingApi}
 			 */
 			this.LanguageUnderstandingApi = LanguageUnderstandingApi;
 			/**
 			 * The LanguagesApi service constructor.
-			 * @property {module:purecloud-platform-client-v2/api/LanguagesApi
+			 * @property {module:purecloud-platform-client-v2/api/LanguagesApi}
 			 */
 			this.LanguagesApi = LanguagesApi;
 			/**
 			 * The LearningApi service constructor.
-			 * @property {module:purecloud-platform-client-v2/api/LearningApi
+			 * @property {module:purecloud-platform-client-v2/api/LearningApi}
 			 */
 			this.LearningApi = LearningApi;
 			/**
 			 * The LicenseApi service constructor.
-			 * @property {module:purecloud-platform-client-v2/api/LicenseApi
+			 * @property {module:purecloud-platform-client-v2/api/LicenseApi}
 			 */
 			this.LicenseApi = LicenseApi;
 			/**
 			 * The LocationsApi service constructor.
-			 * @property {module:purecloud-platform-client-v2/api/LocationsApi
+			 * @property {module:purecloud-platform-client-v2/api/LocationsApi}
 			 */
 			this.LocationsApi = LocationsApi;
 			/**
 			 * The MessagingApi service constructor.
-			 * @property {module:purecloud-platform-client-v2/api/MessagingApi
+			 * @property {module:purecloud-platform-client-v2/api/MessagingApi}
 			 */
 			this.MessagingApi = MessagingApi;
 			/**
 			 * The MobileDevicesApi service constructor.
-			 * @property {module:purecloud-platform-client-v2/api/MobileDevicesApi
+			 * @property {module:purecloud-platform-client-v2/api/MobileDevicesApi}
 			 */
 			this.MobileDevicesApi = MobileDevicesApi;
 			/**
 			 * The NotificationsApi service constructor.
-			 * @property {module:purecloud-platform-client-v2/api/NotificationsApi
+			 * @property {module:purecloud-platform-client-v2/api/NotificationsApi}
 			 */
 			this.NotificationsApi = NotificationsApi;
 			/**
 			 * The OAuthApi service constructor.
-			 * @property {module:purecloud-platform-client-v2/api/OAuthApi
+			 * @property {module:purecloud-platform-client-v2/api/OAuthApi}
 			 */
 			this.OAuthApi = OAuthApi;
 			/**
 			 * The ObjectsApi service constructor.
-			 * @property {module:purecloud-platform-client-v2/api/ObjectsApi
+			 * @property {module:purecloud-platform-client-v2/api/ObjectsApi}
 			 */
 			this.ObjectsApi = ObjectsApi;
 			/**
 			 * The OrganizationApi service constructor.
-			 * @property {module:purecloud-platform-client-v2/api/OrganizationApi
+			 * @property {module:purecloud-platform-client-v2/api/OrganizationApi}
 			 */
 			this.OrganizationApi = OrganizationApi;
 			/**
 			 * The OrganizationAuthorizationApi service constructor.
-			 * @property {module:purecloud-platform-client-v2/api/OrganizationAuthorizationApi
+			 * @property {module:purecloud-platform-client-v2/api/OrganizationAuthorizationApi}
 			 */
 			this.OrganizationAuthorizationApi = OrganizationAuthorizationApi;
 			/**
 			 * The OutboundApi service constructor.
-			 * @property {module:purecloud-platform-client-v2/api/OutboundApi
+			 * @property {module:purecloud-platform-client-v2/api/OutboundApi}
 			 */
 			this.OutboundApi = OutboundApi;
 			/**
 			 * The PresenceApi service constructor.
-			 * @property {module:purecloud-platform-client-v2/api/PresenceApi
+			 * @property {module:purecloud-platform-client-v2/api/PresenceApi}
 			 */
 			this.PresenceApi = PresenceApi;
 			/**
 			 * The QualityApi service constructor.
-			 * @property {module:purecloud-platform-client-v2/api/QualityApi
+			 * @property {module:purecloud-platform-client-v2/api/QualityApi}
 			 */
 			this.QualityApi = QualityApi;
 			/**
 			 * The RecordingApi service constructor.
-			 * @property {module:purecloud-platform-client-v2/api/RecordingApi
+			 * @property {module:purecloud-platform-client-v2/api/RecordingApi}
 			 */
 			this.RecordingApi = RecordingApi;
 			/**
 			 * The ResponseManagementApi service constructor.
-			 * @property {module:purecloud-platform-client-v2/api/ResponseManagementApi
+			 * @property {module:purecloud-platform-client-v2/api/ResponseManagementApi}
 			 */
 			this.ResponseManagementApi = ResponseManagementApi;
 			/**
 			 * The RoutingApi service constructor.
-			 * @property {module:purecloud-platform-client-v2/api/RoutingApi
+			 * @property {module:purecloud-platform-client-v2/api/RoutingApi}
 			 */
 			this.RoutingApi = RoutingApi;
 			/**
 			 * The SCIMApi service constructor.
-			 * @property {module:purecloud-platform-client-v2/api/SCIMApi
+			 * @property {module:purecloud-platform-client-v2/api/SCIMApi}
 			 */
 			this.SCIMApi = SCIMApi;
 			/**
 			 * The ScriptsApi service constructor.
-			 * @property {module:purecloud-platform-client-v2/api/ScriptsApi
+			 * @property {module:purecloud-platform-client-v2/api/ScriptsApi}
 			 */
 			this.ScriptsApi = ScriptsApi;
 			/**
 			 * The SearchApi service constructor.
-			 * @property {module:purecloud-platform-client-v2/api/SearchApi
+			 * @property {module:purecloud-platform-client-v2/api/SearchApi}
 			 */
 			this.SearchApi = SearchApi;
 			/**
 			 * The SpeechTextAnalyticsApi service constructor.
-			 * @property {module:purecloud-platform-client-v2/api/SpeechTextAnalyticsApi
+			 * @property {module:purecloud-platform-client-v2/api/SpeechTextAnalyticsApi}
 			 */
 			this.SpeechTextAnalyticsApi = SpeechTextAnalyticsApi;
 			/**
 			 * The StationsApi service constructor.
-			 * @property {module:purecloud-platform-client-v2/api/StationsApi
+			 * @property {module:purecloud-platform-client-v2/api/StationsApi}
 			 */
 			this.StationsApi = StationsApi;
 			/**
 			 * The SuggestApi service constructor.
-			 * @property {module:purecloud-platform-client-v2/api/SuggestApi
+			 * @property {module:purecloud-platform-client-v2/api/SuggestApi}
 			 */
 			this.SuggestApi = SuggestApi;
 			/**
 			 * The TelephonyApi service constructor.
-			 * @property {module:purecloud-platform-client-v2/api/TelephonyApi
+			 * @property {module:purecloud-platform-client-v2/api/TelephonyApi}
 			 */
 			this.TelephonyApi = TelephonyApi;
 			/**
 			 * The TelephonyProvidersEdgeApi service constructor.
-			 * @property {module:purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
+			 * @property {module:purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi}
 			 */
 			this.TelephonyProvidersEdgeApi = TelephonyProvidersEdgeApi;
 			/**
 			 * The TextbotsApi service constructor.
-			 * @property {module:purecloud-platform-client-v2/api/TextbotsApi
+			 * @property {module:purecloud-platform-client-v2/api/TextbotsApi}
 			 */
 			this.TextbotsApi = TextbotsApi;
 			/**
 			 * The TokensApi service constructor.
-			 * @property {module:purecloud-platform-client-v2/api/TokensApi
+			 * @property {module:purecloud-platform-client-v2/api/TokensApi}
 			 */
 			this.TokensApi = TokensApi;
 			/**
 			 * The UploadsApi service constructor.
-			 * @property {module:purecloud-platform-client-v2/api/UploadsApi
+			 * @property {module:purecloud-platform-client-v2/api/UploadsApi}
 			 */
 			this.UploadsApi = UploadsApi;
 			/**
 			 * The UsageApi service constructor.
-			 * @property {module:purecloud-platform-client-v2/api/UsageApi
+			 * @property {module:purecloud-platform-client-v2/api/UsageApi}
 			 */
 			this.UsageApi = UsageApi;
 			/**
 			 * The UserRecordingsApi service constructor.
-			 * @property {module:purecloud-platform-client-v2/api/UserRecordingsApi
+			 * @property {module:purecloud-platform-client-v2/api/UserRecordingsApi}
 			 */
 			this.UserRecordingsApi = UserRecordingsApi;
 			/**
 			 * The UsersApi service constructor.
-			 * @property {module:purecloud-platform-client-v2/api/UsersApi
+			 * @property {module:purecloud-platform-client-v2/api/UsersApi}
 			 */
 			this.UsersApi = UsersApi;
 			/**
 			 * The UtilitiesApi service constructor.
-			 * @property {module:purecloud-platform-client-v2/api/UtilitiesApi
+			 * @property {module:purecloud-platform-client-v2/api/UtilitiesApi}
 			 */
 			this.UtilitiesApi = UtilitiesApi;
 			/**
 			 * The VoicemailApi service constructor.
-			 * @property {module:purecloud-platform-client-v2/api/VoicemailApi
+			 * @property {module:purecloud-platform-client-v2/api/VoicemailApi}
 			 */
 			this.VoicemailApi = VoicemailApi;
 			/**
 			 * The WebChatApi service constructor.
-			 * @property {module:purecloud-platform-client-v2/api/WebChatApi
+			 * @property {module:purecloud-platform-client-v2/api/WebChatApi}
 			 */
 			this.WebChatApi = WebChatApi;
 			/**
 			 * The WebDeploymentsApi service constructor.
-			 * @property {module:purecloud-platform-client-v2/api/WebDeploymentsApi
+			 * @property {module:purecloud-platform-client-v2/api/WebDeploymentsApi}
 			 */
 			this.WebDeploymentsApi = WebDeploymentsApi;
 			/**
 			 * The WebMessagingApi service constructor.
-			 * @property {module:purecloud-platform-client-v2/api/WebMessagingApi
+			 * @property {module:purecloud-platform-client-v2/api/WebMessagingApi}
 			 */
 			this.WebMessagingApi = WebMessagingApi;
 			/**
 			 * The WidgetsApi service constructor.
-			 * @property {module:purecloud-platform-client-v2/api/WidgetsApi
+			 * @property {module:purecloud-platform-client-v2/api/WidgetsApi}
 			 */
 			this.WidgetsApi = WidgetsApi;
 			/**
 			 * The WorkforceManagementApi service constructor.
-			 * @property {module:purecloud-platform-client-v2/api/WorkforceManagementApi
+			 * @property {module:purecloud-platform-client-v2/api/WorkforceManagementApi}
 			 */
 			this.WorkforceManagementApi = WorkforceManagementApi;
-	        /**
-	         * The PureCloudRegionsHost Object.
-	         * @property {module:purecloud-platform-client-v2/MyPureCloudRegionHost}
-	         */
-	        this.PureCloudRegionHosts = PureCloudRegionHosts;
-	    }
+			/**
+			 * The PureCloudRegionsHost Object.
+			 * @property {module:purecloud-platform-client-v2/MyPureCloudRegionHost}
+			 */
+			this.PureCloudRegionHosts = PureCloudRegionHosts;
+			
+			
+		}
 	}
 
 	//export default platformClient;
