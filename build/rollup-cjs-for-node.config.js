@@ -29,6 +29,6 @@ export default {
 		'tty',
 		'crypto',
 		'os',
-		'superagent'
+		'axios'
 	]
 };

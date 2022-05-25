@@ -27,7 +27,7 @@ For direct use in a browser script:
 
 ```html
 <!-- Include the CJS SDK -->
-<script src="https://sdk-cdn.mypurecloud.com/javascript/137.0.1/purecloud-platform-client-v2.min.js"></script>
+<script src="https://sdk-cdn.mypurecloud.com/javascript/137.1.0/purecloud-platform-client-v2.min.js"></script>
 
 <script type="text/javascript">
   // Obtain a reference to the platformClient object
@@ -44,7 +44,7 @@ For direct use in a browser script:
 
 <script type="text/javascript">
   // Obtain a reference to the platformClient object
-  requirejs(['https://sdk-cdn.mypurecloud.com/javascript/amd/137.0.1/purecloud-platform-client-v2.min.js'], (platformClient) => {
+  requirejs(['https://sdk-cdn.mypurecloud.com/javascript/amd/137.1.0/purecloud-platform-client-v2.min.js'], (platformClient) => {
     console.log(platformClient);
   });
 </script>
@@ -376,24 +376,21 @@ Extended response object example (`body` and `text` have been truncated):
 
 ### Using a Proxy (Node.js only)
 
-Using a proxy is accomplished in two steps:
+Using a proxy is accomplished by setting the proxy settings on the `client` object
 
-1. Apply the `superagent-proxy` package to the `client.superagent` object
-2. Set proxy settings on the `client` object
-
-After both steps have been completed, the configured proxy server will be used for all requests.
-
-NOTE: SDK proxy configuration is only available in the node.js package due to `superagent-proxy`'s incompatibility with browserify. Additionally, `superagent-proxy` is not included a dependency of the SDK and must be provided by your node application's dependencies.
+NOTE: SDK proxy configuration is only available in the node.js package due to the axios proxy incompatibility with browsers.
 
 ```javascript
 const client = platformClient.ApiClient.instance;
-require('superagent-proxy')(client.superagent);
-// Configure settings for your proxy here
-// Documentation: https://www.npmjs.com/package/proxy-agent
+// Documentation: https://axios-http.com/docs/req_config
 client.proxy = {
   host: '172.1.1.100',
   port: 443,
   protocol: 'https',
+  auth: {
+    username: 'john_doe',
+    password: 'abc123'
+  }
 };
 ```
 

@@ -151,8 +151,6 @@ function fromByteArray (uint8) {
 }
 
 },{}],2:[function(require,module,exports){
-
-},{}],3:[function(require,module,exports){
 (function (Buffer){(function (){
 /*!
  * The buffer module from node.js, for the browser.
@@ -1933,7 +1931,7 @@ function numberIsNaN (obj) {
 }
 
 }).call(this)}).call(this,require("buffer").Buffer)
-},{"base64-js":1,"buffer":3,"ieee754":4}],4:[function(require,module,exports){
+},{"base64-js":1,"buffer":2,"ieee754":3}],3:[function(require,module,exports){
 /*! ieee754. BSD-3-Clause License. Feross Aboukhadijeh <https://feross.org/opensource> */
 exports.read = function (buffer, offset, isLE, mLen, nBytes) {
   var e, m
@@ -2020,7 +2018,7 @@ exports.write = function (buffer, value, offset, isLE, mLen, nBytes) {
   buffer[offset + i - d] |= s * 128
 }
 
-},{}],5:[function(require,module,exports){
+},{}],4:[function(require,module,exports){
 exports.endianness = function () { return 'LE' };
 
 exports.hostname = function () {
@@ -2071,7 +2069,7 @@ exports.homedir = function () {
 	return '/'
 };
 
-},{}],6:[function(require,module,exports){
+},{}],5:[function(require,module,exports){
 (function (process){(function (){
 // 'path' module extracted from Node.js v8.11.1 (only the posix part)
 // transplited with Babel
@@ -2604,7 +2602,7 @@ posix.posix = posix;
 module.exports = posix;
 
 }).call(this)}).call(this,require('_process'))
-},{"_process":7}],7:[function(require,module,exports){
+},{"_process":6}],6:[function(require,module,exports){
 // shim for using process in browser
 var process = module.exports = {};
 
@@ -2790,4630 +2788,2195 @@ process.chdir = function (dir) {
 };
 process.umask = function() { return 0; };
 
-},{}],8:[function(require,module,exports){
+},{}],7:[function(require,module,exports){
+module.exports = require('./lib/axios');
+},{"./lib/axios":9}],8:[function(require,module,exports){
 'use strict';
 
-var GetIntrinsic = require('get-intrinsic');
+var utils = require('./../utils');
+var settle = require('./../core/settle');
+var cookies = require('./../helpers/cookies');
+var buildURL = require('./../helpers/buildURL');
+var buildFullPath = require('../core/buildFullPath');
+var parseHeaders = require('./../helpers/parseHeaders');
+var isURLSameOrigin = require('./../helpers/isURLSameOrigin');
+var transitionalDefaults = require('../defaults/transitional');
+var AxiosError = require('../core/AxiosError');
+var CanceledError = require('../cancel/CanceledError');
+var parseProtocol = require('../helpers/parseProtocol');
 
-var callBind = require('./');
+module.exports = function xhrAdapter(config) {
+  return new Promise(function dispatchXhrRequest(resolve, reject) {
+    var requestData = config.data;
+    var requestHeaders = config.headers;
+    var responseType = config.responseType;
+    var onCanceled;
+    function done() {
+      if (config.cancelToken) {
+        config.cancelToken.unsubscribe(onCanceled);
+      }
 
-var $indexOf = callBind(GetIntrinsic('String.prototype.indexOf'));
-
-module.exports = function callBoundIntrinsic(name, allowMissing) {
-	var intrinsic = GetIntrinsic(name, !!allowMissing);
-	if (typeof intrinsic === 'function' && $indexOf(name, '.prototype.') > -1) {
-		return callBind(intrinsic);
-	}
-	return intrinsic;
-};
-
-},{"./":9,"get-intrinsic":14}],9:[function(require,module,exports){
-'use strict';
-
-var bind = require('function-bind');
-var GetIntrinsic = require('get-intrinsic');
-
-var $apply = GetIntrinsic('%Function.prototype.apply%');
-var $call = GetIntrinsic('%Function.prototype.call%');
-var $reflectApply = GetIntrinsic('%Reflect.apply%', true) || bind.call($call, $apply);
-
-var $gOPD = GetIntrinsic('%Object.getOwnPropertyDescriptor%', true);
-var $defineProperty = GetIntrinsic('%Object.defineProperty%', true);
-var $max = GetIntrinsic('%Math.max%');
-
-if ($defineProperty) {
-	try {
-		$defineProperty({}, 'a', { value: 1 });
-	} catch (e) {
-		// IE 8 has a broken defineProperty
-		$defineProperty = null;
-	}
-}
-
-module.exports = function callBind(originalFunction) {
-	var func = $reflectApply(bind, $call, arguments);
-	if ($gOPD && $defineProperty) {
-		var desc = $gOPD(func, 'length');
-		if (desc.configurable) {
-			// original length, plus the receiver, minus any additional arguments (after the receiver)
-			$defineProperty(
-				func,
-				'length',
-				{ value: 1 + $max(0, originalFunction.length - (arguments.length - 1)) }
-			);
-		}
-	}
-	return func;
-};
-
-var applyBind = function applyBind() {
-	return $reflectApply(bind, $apply, arguments);
-};
-
-if ($defineProperty) {
-	$defineProperty(module.exports, 'apply', { value: applyBind });
-} else {
-	module.exports.apply = applyBind;
-}
-
-},{"function-bind":13,"get-intrinsic":14}],10:[function(require,module,exports){
-
-/**
- * Expose `Emitter`.
- */
-
-if (typeof module !== 'undefined') {
-  module.exports = Emitter;
-}
-
-/**
- * Initialize a new `Emitter`.
- *
- * @api public
- */
-
-function Emitter(obj) {
-  if (obj) return mixin(obj);
-};
-
-/**
- * Mixin the emitter properties.
- *
- * @param {Object} obj
- * @return {Object}
- * @api private
- */
-
-function mixin(obj) {
-  for (var key in Emitter.prototype) {
-    obj[key] = Emitter.prototype[key];
-  }
-  return obj;
-}
-
-/**
- * Listen on the given `event` with `fn`.
- *
- * @param {String} event
- * @param {Function} fn
- * @return {Emitter}
- * @api public
- */
-
-Emitter.prototype.on =
-Emitter.prototype.addEventListener = function(event, fn){
-  this._callbacks = this._callbacks || {};
-  (this._callbacks['$' + event] = this._callbacks['$' + event] || [])
-    .push(fn);
-  return this;
-};
-
-/**
- * Adds an `event` listener that will be invoked a single
- * time then automatically removed.
- *
- * @param {String} event
- * @param {Function} fn
- * @return {Emitter}
- * @api public
- */
-
-Emitter.prototype.once = function(event, fn){
-  function on() {
-    this.off(event, on);
-    fn.apply(this, arguments);
-  }
-
-  on.fn = fn;
-  this.on(event, on);
-  return this;
-};
-
-/**
- * Remove the given callback for `event` or all
- * registered callbacks.
- *
- * @param {String} event
- * @param {Function} fn
- * @return {Emitter}
- * @api public
- */
-
-Emitter.prototype.off =
-Emitter.prototype.removeListener =
-Emitter.prototype.removeAllListeners =
-Emitter.prototype.removeEventListener = function(event, fn){
-  this._callbacks = this._callbacks || {};
-
-  // all
-  if (0 == arguments.length) {
-    this._callbacks = {};
-    return this;
-  }
-
-  // specific event
-  var callbacks = this._callbacks['$' + event];
-  if (!callbacks) return this;
-
-  // remove all handlers
-  if (1 == arguments.length) {
-    delete this._callbacks['$' + event];
-    return this;
-  }
-
-  // remove specific handler
-  var cb;
-  for (var i = 0; i < callbacks.length; i++) {
-    cb = callbacks[i];
-    if (cb === fn || cb.fn === fn) {
-      callbacks.splice(i, 1);
-      break;
+      if (config.signal) {
+        config.signal.removeEventListener('abort', onCanceled);
+      }
     }
-  }
 
-  // Remove event specific arrays for event types that no
-  // one is subscribed for to avoid memory leak.
-  if (callbacks.length === 0) {
-    delete this._callbacks['$' + event];
-  }
-
-  return this;
-};
-
-/**
- * Emit `event` with the given args.
- *
- * @param {String} event
- * @param {Mixed} ...
- * @return {Emitter}
- */
-
-Emitter.prototype.emit = function(event){
-  this._callbacks = this._callbacks || {};
-
-  var args = new Array(arguments.length - 1)
-    , callbacks = this._callbacks['$' + event];
-
-  for (var i = 1; i < arguments.length; i++) {
-    args[i - 1] = arguments[i];
-  }
-
-  if (callbacks) {
-    callbacks = callbacks.slice(0);
-    for (var i = 0, len = callbacks.length; i < len; ++i) {
-      callbacks[i].apply(this, args);
+    if (utils.isFormData(requestData) && utils.isStandardBrowserEnv()) {
+      delete requestHeaders['Content-Type']; // Let the browser set it
     }
-  }
 
-  return this;
-};
+    var request = new XMLHttpRequest();
 
-/**
- * Return array of callbacks for `event`.
- *
- * @param {String} event
- * @return {Array}
- * @api public
- */
+    // HTTP basic authentication
+    if (config.auth) {
+      var username = config.auth.username || '';
+      var password = config.auth.password ? unescape(encodeURIComponent(config.auth.password)) : '';
+      requestHeaders.Authorization = 'Basic ' + btoa(username + ':' + password);
+    }
 
-Emitter.prototype.listeners = function(event){
-  this._callbacks = this._callbacks || {};
-  return this._callbacks['$' + event] || [];
-};
+    var fullPath = buildFullPath(config.baseURL, config.url);
 
-/**
- * Check if this emitter has `event` handlers.
- *
- * @param {String} event
- * @return {Boolean}
- * @api public
- */
+    request.open(config.method.toUpperCase(), buildURL(fullPath, config.params, config.paramsSerializer), true);
 
-Emitter.prototype.hasListeners = function(event){
-  return !! this.listeners(event).length;
-};
+    // Set the request timeout in MS
+    request.timeout = config.timeout;
 
-},{}],11:[function(require,module,exports){
-module.exports = stringify
-stringify.default = stringify
-stringify.stable = deterministicStringify
-stringify.stableStringify = deterministicStringify
+    function onloadend() {
+      if (!request) {
+        return;
+      }
+      // Prepare the response
+      var responseHeaders = 'getAllResponseHeaders' in request ? parseHeaders(request.getAllResponseHeaders()) : null;
+      var responseData = !responseType || responseType === 'text' ||  responseType === 'json' ?
+        request.responseText : request.response;
+      var response = {
+        data: responseData,
+        status: request.status,
+        statusText: request.statusText,
+        headers: responseHeaders,
+        config: config,
+        request: request
+      };
 
-var LIMIT_REPLACE_NODE = '[...]'
-var CIRCULAR_REPLACE_NODE = '[Circular]'
+      settle(function _resolve(value) {
+        resolve(value);
+        done();
+      }, function _reject(err) {
+        reject(err);
+        done();
+      }, response);
 
-var arr = []
-var replacerStack = []
+      // Clean up request
+      request = null;
+    }
 
-function defaultOptions () {
-  return {
-    depthLimit: Number.MAX_SAFE_INTEGER,
-    edgesLimit: Number.MAX_SAFE_INTEGER
-  }
-}
-
-// Regular stringify
-function stringify (obj, replacer, spacer, options) {
-  if (typeof options === 'undefined') {
-    options = defaultOptions()
-  }
-
-  decirc(obj, '', 0, [], undefined, 0, options)
-  var res
-  try {
-    if (replacerStack.length === 0) {
-      res = JSON.stringify(obj, replacer, spacer)
+    if ('onloadend' in request) {
+      // Use onloadend if available
+      request.onloadend = onloadend;
     } else {
-      res = JSON.stringify(obj, replaceGetterValues(replacer), spacer)
-    }
-  } catch (_) {
-    return JSON.stringify('[unable to serialize, circular reference is too complex to analyze]')
-  } finally {
-    while (arr.length !== 0) {
-      var part = arr.pop()
-      if (part.length === 4) {
-        Object.defineProperty(part[0], part[1], part[3])
-      } else {
-        part[0][part[1]] = part[2]
-      }
-    }
-  }
-  return res
-}
-
-function setReplace (replace, val, k, parent) {
-  var propertyDescriptor = Object.getOwnPropertyDescriptor(parent, k)
-  if (propertyDescriptor.get !== undefined) {
-    if (propertyDescriptor.configurable) {
-      Object.defineProperty(parent, k, { value: replace })
-      arr.push([parent, k, val, propertyDescriptor])
-    } else {
-      replacerStack.push([val, k, replace])
-    }
-  } else {
-    parent[k] = replace
-    arr.push([parent, k, val])
-  }
-}
-
-function decirc (val, k, edgeIndex, stack, parent, depth, options) {
-  depth += 1
-  var i
-  if (typeof val === 'object' && val !== null) {
-    for (i = 0; i < stack.length; i++) {
-      if (stack[i] === val) {
-        setReplace(CIRCULAR_REPLACE_NODE, val, k, parent)
-        return
-      }
-    }
-
-    if (
-      typeof options.depthLimit !== 'undefined' &&
-      depth > options.depthLimit
-    ) {
-      setReplace(LIMIT_REPLACE_NODE, val, k, parent)
-      return
-    }
-
-    if (
-      typeof options.edgesLimit !== 'undefined' &&
-      edgeIndex + 1 > options.edgesLimit
-    ) {
-      setReplace(LIMIT_REPLACE_NODE, val, k, parent)
-      return
-    }
-
-    stack.push(val)
-    // Optimize for Arrays. Big arrays could kill the performance otherwise!
-    if (Array.isArray(val)) {
-      for (i = 0; i < val.length; i++) {
-        decirc(val[i], i, i, stack, val, depth, options)
-      }
-    } else {
-      var keys = Object.keys(val)
-      for (i = 0; i < keys.length; i++) {
-        var key = keys[i]
-        decirc(val[key], key, i, stack, val, depth, options)
-      }
-    }
-    stack.pop()
-  }
-}
-
-// Stable-stringify
-function compareFunction (a, b) {
-  if (a < b) {
-    return -1
-  }
-  if (a > b) {
-    return 1
-  }
-  return 0
-}
-
-function deterministicStringify (obj, replacer, spacer, options) {
-  if (typeof options === 'undefined') {
-    options = defaultOptions()
-  }
-
-  var tmp = deterministicDecirc(obj, '', 0, [], undefined, 0, options) || obj
-  var res
-  try {
-    if (replacerStack.length === 0) {
-      res = JSON.stringify(tmp, replacer, spacer)
-    } else {
-      res = JSON.stringify(tmp, replaceGetterValues(replacer), spacer)
-    }
-  } catch (_) {
-    return JSON.stringify('[unable to serialize, circular reference is too complex to analyze]')
-  } finally {
-    // Ensure that we restore the object as it was.
-    while (arr.length !== 0) {
-      var part = arr.pop()
-      if (part.length === 4) {
-        Object.defineProperty(part[0], part[1], part[3])
-      } else {
-        part[0][part[1]] = part[2]
-      }
-    }
-  }
-  return res
-}
-
-function deterministicDecirc (val, k, edgeIndex, stack, parent, depth, options) {
-  depth += 1
-  var i
-  if (typeof val === 'object' && val !== null) {
-    for (i = 0; i < stack.length; i++) {
-      if (stack[i] === val) {
-        setReplace(CIRCULAR_REPLACE_NODE, val, k, parent)
-        return
-      }
-    }
-    try {
-      if (typeof val.toJSON === 'function') {
-        return
-      }
-    } catch (_) {
-      return
-    }
-
-    if (
-      typeof options.depthLimit !== 'undefined' &&
-      depth > options.depthLimit
-    ) {
-      setReplace(LIMIT_REPLACE_NODE, val, k, parent)
-      return
-    }
-
-    if (
-      typeof options.edgesLimit !== 'undefined' &&
-      edgeIndex + 1 > options.edgesLimit
-    ) {
-      setReplace(LIMIT_REPLACE_NODE, val, k, parent)
-      return
-    }
-
-    stack.push(val)
-    // Optimize for Arrays. Big arrays could kill the performance otherwise!
-    if (Array.isArray(val)) {
-      for (i = 0; i < val.length; i++) {
-        deterministicDecirc(val[i], i, i, stack, val, depth, options)
-      }
-    } else {
-      // Create a temporary object in the required way
-      var tmp = {}
-      var keys = Object.keys(val).sort(compareFunction)
-      for (i = 0; i < keys.length; i++) {
-        var key = keys[i]
-        deterministicDecirc(val[key], key, i, stack, val, depth, options)
-        tmp[key] = val[key]
-      }
-      if (typeof parent !== 'undefined') {
-        arr.push([parent, k, val])
-        parent[k] = tmp
-      } else {
-        return tmp
-      }
-    }
-    stack.pop()
-  }
-}
-
-// wraps replacer function to handle values we couldn't replace
-// and mark them as replaced value
-function replaceGetterValues (replacer) {
-  replacer =
-    typeof replacer !== 'undefined'
-      ? replacer
-      : function (k, v) {
-        return v
-      }
-  return function (key, val) {
-    if (replacerStack.length > 0) {
-      for (var i = 0; i < replacerStack.length; i++) {
-        var part = replacerStack[i]
-        if (part[1] === key && part[0] === val) {
-          val = part[2]
-          replacerStack.splice(i, 1)
-          break
+      // Listen for ready state to emulate onloadend
+      request.onreadystatechange = function handleLoad() {
+        if (!request || request.readyState !== 4) {
+          return;
         }
-      }
-    }
-    return replacer.call(this, key, val)
-  }
-}
 
-},{}],12:[function(require,module,exports){
-'use strict';
-
-/* eslint no-invalid-this: 1 */
-
-var ERROR_MESSAGE = 'Function.prototype.bind called on incompatible ';
-var slice = Array.prototype.slice;
-var toStr = Object.prototype.toString;
-var funcType = '[object Function]';
-
-module.exports = function bind(that) {
-    var target = this;
-    if (typeof target !== 'function' || toStr.call(target) !== funcType) {
-        throw new TypeError(ERROR_MESSAGE + target);
-    }
-    var args = slice.call(arguments, 1);
-
-    var bound;
-    var binder = function () {
-        if (this instanceof bound) {
-            var result = target.apply(
-                this,
-                args.concat(slice.call(arguments))
-            );
-            if (Object(result) === result) {
-                return result;
-            }
-            return this;
-        } else {
-            return target.apply(
-                that,
-                args.concat(slice.call(arguments))
-            );
+        // The request errored out and we didn't get a response, this will be
+        // handled by onerror instead
+        // With one exception: request that using file: protocol, most browsers
+        // will return status as 0 even though it's a successful request
+        if (request.status === 0 && !(request.responseURL && request.responseURL.indexOf('file:') === 0)) {
+          return;
         }
+        // readystate handler is calling before onerror or ontimeout handlers,
+        // so we should call onloadend on the next 'tick'
+        setTimeout(onloadend);
+      };
+    }
+
+    // Handle browser request cancellation (as opposed to a manual cancellation)
+    request.onabort = function handleAbort() {
+      if (!request) {
+        return;
+      }
+
+      reject(new AxiosError('Request aborted', AxiosError.ECONNABORTED, config, request));
+
+      // Clean up request
+      request = null;
     };
 
-    var boundLength = Math.max(0, target.length - args.length);
-    var boundArgs = [];
-    for (var i = 0; i < boundLength; i++) {
-        boundArgs.push('$' + i);
+    // Handle low level network errors
+    request.onerror = function handleError() {
+      // Real errors are hidden from us by the browser
+      // onerror should only fire if it's a network error
+      reject(new AxiosError('Network Error', AxiosError.ERR_NETWORK, config, request, request));
+
+      // Clean up request
+      request = null;
+    };
+
+    // Handle timeout
+    request.ontimeout = function handleTimeout() {
+      var timeoutErrorMessage = config.timeout ? 'timeout of ' + config.timeout + 'ms exceeded' : 'timeout exceeded';
+      var transitional = config.transitional || transitionalDefaults;
+      if (config.timeoutErrorMessage) {
+        timeoutErrorMessage = config.timeoutErrorMessage;
+      }
+      reject(new AxiosError(
+        timeoutErrorMessage,
+        transitional.clarifyTimeoutError ? AxiosError.ETIMEDOUT : AxiosError.ECONNABORTED,
+        config,
+        request));
+
+      // Clean up request
+      request = null;
+    };
+
+    // Add xsrf header
+    // This is only done if running in a standard browser environment.
+    // Specifically not if we're in a web worker, or react-native.
+    if (utils.isStandardBrowserEnv()) {
+      // Add xsrf header
+      var xsrfValue = (config.withCredentials || isURLSameOrigin(fullPath)) && config.xsrfCookieName ?
+        cookies.read(config.xsrfCookieName) :
+        undefined;
+
+      if (xsrfValue) {
+        requestHeaders[config.xsrfHeaderName] = xsrfValue;
+      }
     }
 
-    bound = Function('binder', 'return function (' + boundArgs.join(',') + '){ return binder.apply(this,arguments); }')(binder);
-
-    if (target.prototype) {
-        var Empty = function Empty() {};
-        Empty.prototype = target.prototype;
-        bound.prototype = new Empty();
-        Empty.prototype = null;
+    // Add headers to the request
+    if ('setRequestHeader' in request) {
+      utils.forEach(requestHeaders, function setRequestHeader(val, key) {
+        if (typeof requestData === 'undefined' && key.toLowerCase() === 'content-type') {
+          // Remove Content-Type if data is undefined
+          delete requestHeaders[key];
+        } else {
+          // Otherwise add header to the request
+          request.setRequestHeader(key, val);
+        }
+      });
     }
 
-    return bound;
+    // Add withCredentials to request if needed
+    if (!utils.isUndefined(config.withCredentials)) {
+      request.withCredentials = !!config.withCredentials;
+    }
+
+    // Add responseType to request if needed
+    if (responseType && responseType !== 'json') {
+      request.responseType = config.responseType;
+    }
+
+    // Handle progress if needed
+    if (typeof config.onDownloadProgress === 'function') {
+      request.addEventListener('progress', config.onDownloadProgress);
+    }
+
+    // Not all browsers support upload events
+    if (typeof config.onUploadProgress === 'function' && request.upload) {
+      request.upload.addEventListener('progress', config.onUploadProgress);
+    }
+
+    if (config.cancelToken || config.signal) {
+      // Handle cancellation
+      // eslint-disable-next-line func-names
+      onCanceled = function(cancel) {
+        if (!request) {
+          return;
+        }
+        reject(!cancel || (cancel && cancel.type) ? new CanceledError() : cancel);
+        request.abort();
+        request = null;
+      };
+
+      config.cancelToken && config.cancelToken.subscribe(onCanceled);
+      if (config.signal) {
+        config.signal.aborted ? onCanceled() : config.signal.addEventListener('abort', onCanceled);
+      }
+    }
+
+    if (!requestData) {
+      requestData = null;
+    }
+
+    var protocol = parseProtocol(fullPath);
+
+    if (protocol && [ 'http', 'https', 'file' ].indexOf(protocol) === -1) {
+      reject(new AxiosError('Unsupported protocol ' + protocol + ':', AxiosError.ERR_BAD_REQUEST, config));
+      return;
+    }
+
+
+    // Send the request
+    request.send(requestData);
+  });
+};
+
+},{"../cancel/CanceledError":11,"../core/AxiosError":14,"../core/buildFullPath":16,"../defaults/transitional":22,"../helpers/parseProtocol":34,"./../core/settle":19,"./../helpers/buildURL":25,"./../helpers/cookies":27,"./../helpers/isURLSameOrigin":30,"./../helpers/parseHeaders":33,"./../utils":38}],9:[function(require,module,exports){
+'use strict';
+
+var utils = require('./utils');
+var bind = require('./helpers/bind');
+var Axios = require('./core/Axios');
+var mergeConfig = require('./core/mergeConfig');
+var defaults = require('./defaults');
+
+/**
+ * Create an instance of Axios
+ *
+ * @param {Object} defaultConfig The default config for the instance
+ * @return {Axios} A new instance of Axios
+ */
+function createInstance(defaultConfig) {
+  var context = new Axios(defaultConfig);
+  var instance = bind(Axios.prototype.request, context);
+
+  // Copy axios.prototype to instance
+  utils.extend(instance, Axios.prototype, context);
+
+  // Copy context to instance
+  utils.extend(instance, context);
+
+  // Factory for creating new instances
+  instance.create = function create(instanceConfig) {
+    return createInstance(mergeConfig(defaultConfig, instanceConfig));
+  };
+
+  return instance;
+}
+
+// Create the default instance to be exported
+var axios = createInstance(defaults);
+
+// Expose Axios class to allow class inheritance
+axios.Axios = Axios;
+
+// Expose Cancel & CancelToken
+axios.CanceledError = require('./cancel/CanceledError');
+axios.CancelToken = require('./cancel/CancelToken');
+axios.isCancel = require('./cancel/isCancel');
+axios.VERSION = require('./env/data').version;
+axios.toFormData = require('./helpers/toFormData');
+
+// Expose AxiosError class
+axios.AxiosError = require('../lib/core/AxiosError');
+
+// alias for CanceledError for backward compatibility
+axios.Cancel = axios.CanceledError;
+
+// Expose all/spread
+axios.all = function all(promises) {
+  return Promise.all(promises);
+};
+axios.spread = require('./helpers/spread');
+
+// Expose isAxiosError
+axios.isAxiosError = require('./helpers/isAxiosError');
+
+module.exports = axios;
+
+// Allow use of default import syntax in TypeScript
+module.exports.default = axios;
+
+},{"../lib/core/AxiosError":14,"./cancel/CancelToken":10,"./cancel/CanceledError":11,"./cancel/isCancel":12,"./core/Axios":13,"./core/mergeConfig":18,"./defaults":21,"./env/data":23,"./helpers/bind":24,"./helpers/isAxiosError":29,"./helpers/spread":35,"./helpers/toFormData":36,"./utils":38}],10:[function(require,module,exports){
+'use strict';
+
+var CanceledError = require('./CanceledError');
+
+/**
+ * A `CancelToken` is an object that can be used to request cancellation of an operation.
+ *
+ * @class
+ * @param {Function} executor The executor function.
+ */
+function CancelToken(executor) {
+  if (typeof executor !== 'function') {
+    throw new TypeError('executor must be a function.');
+  }
+
+  var resolvePromise;
+
+  this.promise = new Promise(function promiseExecutor(resolve) {
+    resolvePromise = resolve;
+  });
+
+  var token = this;
+
+  // eslint-disable-next-line func-names
+  this.promise.then(function(cancel) {
+    if (!token._listeners) return;
+
+    var i;
+    var l = token._listeners.length;
+
+    for (i = 0; i < l; i++) {
+      token._listeners[i](cancel);
+    }
+    token._listeners = null;
+  });
+
+  // eslint-disable-next-line func-names
+  this.promise.then = function(onfulfilled) {
+    var _resolve;
+    // eslint-disable-next-line func-names
+    var promise = new Promise(function(resolve) {
+      token.subscribe(resolve);
+      _resolve = resolve;
+    }).then(onfulfilled);
+
+    promise.cancel = function reject() {
+      token.unsubscribe(_resolve);
+    };
+
+    return promise;
+  };
+
+  executor(function cancel(message) {
+    if (token.reason) {
+      // Cancellation has already been requested
+      return;
+    }
+
+    token.reason = new CanceledError(message);
+    resolvePromise(token.reason);
+  });
+}
+
+/**
+ * Throws a `CanceledError` if cancellation has been requested.
+ */
+CancelToken.prototype.throwIfRequested = function throwIfRequested() {
+  if (this.reason) {
+    throw this.reason;
+  }
+};
+
+/**
+ * Subscribe to the cancel signal
+ */
+
+CancelToken.prototype.subscribe = function subscribe(listener) {
+  if (this.reason) {
+    listener(this.reason);
+    return;
+  }
+
+  if (this._listeners) {
+    this._listeners.push(listener);
+  } else {
+    this._listeners = [listener];
+  }
+};
+
+/**
+ * Unsubscribe from the cancel signal
+ */
+
+CancelToken.prototype.unsubscribe = function unsubscribe(listener) {
+  if (!this._listeners) {
+    return;
+  }
+  var index = this._listeners.indexOf(listener);
+  if (index !== -1) {
+    this._listeners.splice(index, 1);
+  }
+};
+
+/**
+ * Returns an object that contains a new `CancelToken` and a function that, when called,
+ * cancels the `CancelToken`.
+ */
+CancelToken.source = function source() {
+  var cancel;
+  var token = new CancelToken(function executor(c) {
+    cancel = c;
+  });
+  return {
+    token: token,
+    cancel: cancel
+  };
+};
+
+module.exports = CancelToken;
+
+},{"./CanceledError":11}],11:[function(require,module,exports){
+'use strict';
+
+var AxiosError = require('../core/AxiosError');
+var utils = require('../utils');
+
+/**
+ * A `CanceledError` is an object that is thrown when an operation is canceled.
+ *
+ * @class
+ * @param {string=} message The message.
+ */
+function CanceledError(message) {
+  // eslint-disable-next-line no-eq-null,eqeqeq
+  AxiosError.call(this, message == null ? 'canceled' : message, AxiosError.ERR_CANCELED);
+  this.name = 'CanceledError';
+}
+
+utils.inherits(CanceledError, AxiosError, {
+  __CANCEL__: true
+});
+
+module.exports = CanceledError;
+
+},{"../core/AxiosError":14,"../utils":38}],12:[function(require,module,exports){
+'use strict';
+
+module.exports = function isCancel(value) {
+  return !!(value && value.__CANCEL__);
 };
 
 },{}],13:[function(require,module,exports){
 'use strict';
 
-var implementation = require('./implementation');
-
-module.exports = Function.prototype.bind || implementation;
-
-},{"./implementation":12}],14:[function(require,module,exports){
-'use strict';
-
-var undefined;
-
-var $SyntaxError = SyntaxError;
-var $Function = Function;
-var $TypeError = TypeError;
-
-// eslint-disable-next-line consistent-return
-var getEvalledConstructor = function (expressionSyntax) {
-	try {
-		return $Function('"use strict"; return (' + expressionSyntax + ').constructor;')();
-	} catch (e) {}
-};
-
-var $gOPD = Object.getOwnPropertyDescriptor;
-if ($gOPD) {
-	try {
-		$gOPD({}, '');
-	} catch (e) {
-		$gOPD = null; // this is IE 8, which has a broken gOPD
-	}
-}
-
-var throwTypeError = function () {
-	throw new $TypeError();
-};
-var ThrowTypeError = $gOPD
-	? (function () {
-		try {
-			// eslint-disable-next-line no-unused-expressions, no-caller, no-restricted-properties
-			arguments.callee; // IE 8 does not throw here
-			return throwTypeError;
-		} catch (calleeThrows) {
-			try {
-				// IE 8 throws on Object.getOwnPropertyDescriptor(arguments, '')
-				return $gOPD(arguments, 'callee').get;
-			} catch (gOPDthrows) {
-				return throwTypeError;
-			}
-		}
-	}())
-	: throwTypeError;
-
-var hasSymbols = require('has-symbols')();
-
-var getProto = Object.getPrototypeOf || function (x) { return x.__proto__; }; // eslint-disable-line no-proto
-
-var needsEval = {};
-
-var TypedArray = typeof Uint8Array === 'undefined' ? undefined : getProto(Uint8Array);
-
-var INTRINSICS = {
-	'%AggregateError%': typeof AggregateError === 'undefined' ? undefined : AggregateError,
-	'%Array%': Array,
-	'%ArrayBuffer%': typeof ArrayBuffer === 'undefined' ? undefined : ArrayBuffer,
-	'%ArrayIteratorPrototype%': hasSymbols ? getProto([][Symbol.iterator]()) : undefined,
-	'%AsyncFromSyncIteratorPrototype%': undefined,
-	'%AsyncFunction%': needsEval,
-	'%AsyncGenerator%': needsEval,
-	'%AsyncGeneratorFunction%': needsEval,
-	'%AsyncIteratorPrototype%': needsEval,
-	'%Atomics%': typeof Atomics === 'undefined' ? undefined : Atomics,
-	'%BigInt%': typeof BigInt === 'undefined' ? undefined : BigInt,
-	'%Boolean%': Boolean,
-	'%DataView%': typeof DataView === 'undefined' ? undefined : DataView,
-	'%Date%': Date,
-	'%decodeURI%': decodeURI,
-	'%decodeURIComponent%': decodeURIComponent,
-	'%encodeURI%': encodeURI,
-	'%encodeURIComponent%': encodeURIComponent,
-	'%Error%': Error,
-	'%eval%': eval, // eslint-disable-line no-eval
-	'%EvalError%': EvalError,
-	'%Float32Array%': typeof Float32Array === 'undefined' ? undefined : Float32Array,
-	'%Float64Array%': typeof Float64Array === 'undefined' ? undefined : Float64Array,
-	'%FinalizationRegistry%': typeof FinalizationRegistry === 'undefined' ? undefined : FinalizationRegistry,
-	'%Function%': $Function,
-	'%GeneratorFunction%': needsEval,
-	'%Int8Array%': typeof Int8Array === 'undefined' ? undefined : Int8Array,
-	'%Int16Array%': typeof Int16Array === 'undefined' ? undefined : Int16Array,
-	'%Int32Array%': typeof Int32Array === 'undefined' ? undefined : Int32Array,
-	'%isFinite%': isFinite,
-	'%isNaN%': isNaN,
-	'%IteratorPrototype%': hasSymbols ? getProto(getProto([][Symbol.iterator]())) : undefined,
-	'%JSON%': typeof JSON === 'object' ? JSON : undefined,
-	'%Map%': typeof Map === 'undefined' ? undefined : Map,
-	'%MapIteratorPrototype%': typeof Map === 'undefined' || !hasSymbols ? undefined : getProto(new Map()[Symbol.iterator]()),
-	'%Math%': Math,
-	'%Number%': Number,
-	'%Object%': Object,
-	'%parseFloat%': parseFloat,
-	'%parseInt%': parseInt,
-	'%Promise%': typeof Promise === 'undefined' ? undefined : Promise,
-	'%Proxy%': typeof Proxy === 'undefined' ? undefined : Proxy,
-	'%RangeError%': RangeError,
-	'%ReferenceError%': ReferenceError,
-	'%Reflect%': typeof Reflect === 'undefined' ? undefined : Reflect,
-	'%RegExp%': RegExp,
-	'%Set%': typeof Set === 'undefined' ? undefined : Set,
-	'%SetIteratorPrototype%': typeof Set === 'undefined' || !hasSymbols ? undefined : getProto(new Set()[Symbol.iterator]()),
-	'%SharedArrayBuffer%': typeof SharedArrayBuffer === 'undefined' ? undefined : SharedArrayBuffer,
-	'%String%': String,
-	'%StringIteratorPrototype%': hasSymbols ? getProto(''[Symbol.iterator]()) : undefined,
-	'%Symbol%': hasSymbols ? Symbol : undefined,
-	'%SyntaxError%': $SyntaxError,
-	'%ThrowTypeError%': ThrowTypeError,
-	'%TypedArray%': TypedArray,
-	'%TypeError%': $TypeError,
-	'%Uint8Array%': typeof Uint8Array === 'undefined' ? undefined : Uint8Array,
-	'%Uint8ClampedArray%': typeof Uint8ClampedArray === 'undefined' ? undefined : Uint8ClampedArray,
-	'%Uint16Array%': typeof Uint16Array === 'undefined' ? undefined : Uint16Array,
-	'%Uint32Array%': typeof Uint32Array === 'undefined' ? undefined : Uint32Array,
-	'%URIError%': URIError,
-	'%WeakMap%': typeof WeakMap === 'undefined' ? undefined : WeakMap,
-	'%WeakRef%': typeof WeakRef === 'undefined' ? undefined : WeakRef,
-	'%WeakSet%': typeof WeakSet === 'undefined' ? undefined : WeakSet
-};
-
-var doEval = function doEval(name) {
-	var value;
-	if (name === '%AsyncFunction%') {
-		value = getEvalledConstructor('async function () {}');
-	} else if (name === '%GeneratorFunction%') {
-		value = getEvalledConstructor('function* () {}');
-	} else if (name === '%AsyncGeneratorFunction%') {
-		value = getEvalledConstructor('async function* () {}');
-	} else if (name === '%AsyncGenerator%') {
-		var fn = doEval('%AsyncGeneratorFunction%');
-		if (fn) {
-			value = fn.prototype;
-		}
-	} else if (name === '%AsyncIteratorPrototype%') {
-		var gen = doEval('%AsyncGenerator%');
-		if (gen) {
-			value = getProto(gen.prototype);
-		}
-	}
-
-	INTRINSICS[name] = value;
-
-	return value;
-};
-
-var LEGACY_ALIASES = {
-	'%ArrayBufferPrototype%': ['ArrayBuffer', 'prototype'],
-	'%ArrayPrototype%': ['Array', 'prototype'],
-	'%ArrayProto_entries%': ['Array', 'prototype', 'entries'],
-	'%ArrayProto_forEach%': ['Array', 'prototype', 'forEach'],
-	'%ArrayProto_keys%': ['Array', 'prototype', 'keys'],
-	'%ArrayProto_values%': ['Array', 'prototype', 'values'],
-	'%AsyncFunctionPrototype%': ['AsyncFunction', 'prototype'],
-	'%AsyncGenerator%': ['AsyncGeneratorFunction', 'prototype'],
-	'%AsyncGeneratorPrototype%': ['AsyncGeneratorFunction', 'prototype', 'prototype'],
-	'%BooleanPrototype%': ['Boolean', 'prototype'],
-	'%DataViewPrototype%': ['DataView', 'prototype'],
-	'%DatePrototype%': ['Date', 'prototype'],
-	'%ErrorPrototype%': ['Error', 'prototype'],
-	'%EvalErrorPrototype%': ['EvalError', 'prototype'],
-	'%Float32ArrayPrototype%': ['Float32Array', 'prototype'],
-	'%Float64ArrayPrototype%': ['Float64Array', 'prototype'],
-	'%FunctionPrototype%': ['Function', 'prototype'],
-	'%Generator%': ['GeneratorFunction', 'prototype'],
-	'%GeneratorPrototype%': ['GeneratorFunction', 'prototype', 'prototype'],
-	'%Int8ArrayPrototype%': ['Int8Array', 'prototype'],
-	'%Int16ArrayPrototype%': ['Int16Array', 'prototype'],
-	'%Int32ArrayPrototype%': ['Int32Array', 'prototype'],
-	'%JSONParse%': ['JSON', 'parse'],
-	'%JSONStringify%': ['JSON', 'stringify'],
-	'%MapPrototype%': ['Map', 'prototype'],
-	'%NumberPrototype%': ['Number', 'prototype'],
-	'%ObjectPrototype%': ['Object', 'prototype'],
-	'%ObjProto_toString%': ['Object', 'prototype', 'toString'],
-	'%ObjProto_valueOf%': ['Object', 'prototype', 'valueOf'],
-	'%PromisePrototype%': ['Promise', 'prototype'],
-	'%PromiseProto_then%': ['Promise', 'prototype', 'then'],
-	'%Promise_all%': ['Promise', 'all'],
-	'%Promise_reject%': ['Promise', 'reject'],
-	'%Promise_resolve%': ['Promise', 'resolve'],
-	'%RangeErrorPrototype%': ['RangeError', 'prototype'],
-	'%ReferenceErrorPrototype%': ['ReferenceError', 'prototype'],
-	'%RegExpPrototype%': ['RegExp', 'prototype'],
-	'%SetPrototype%': ['Set', 'prototype'],
-	'%SharedArrayBufferPrototype%': ['SharedArrayBuffer', 'prototype'],
-	'%StringPrototype%': ['String', 'prototype'],
-	'%SymbolPrototype%': ['Symbol', 'prototype'],
-	'%SyntaxErrorPrototype%': ['SyntaxError', 'prototype'],
-	'%TypedArrayPrototype%': ['TypedArray', 'prototype'],
-	'%TypeErrorPrototype%': ['TypeError', 'prototype'],
-	'%Uint8ArrayPrototype%': ['Uint8Array', 'prototype'],
-	'%Uint8ClampedArrayPrototype%': ['Uint8ClampedArray', 'prototype'],
-	'%Uint16ArrayPrototype%': ['Uint16Array', 'prototype'],
-	'%Uint32ArrayPrototype%': ['Uint32Array', 'prototype'],
-	'%URIErrorPrototype%': ['URIError', 'prototype'],
-	'%WeakMapPrototype%': ['WeakMap', 'prototype'],
-	'%WeakSetPrototype%': ['WeakSet', 'prototype']
-};
-
-var bind = require('function-bind');
-var hasOwn = require('has');
-var $concat = bind.call(Function.call, Array.prototype.concat);
-var $spliceApply = bind.call(Function.apply, Array.prototype.splice);
-var $replace = bind.call(Function.call, String.prototype.replace);
-var $strSlice = bind.call(Function.call, String.prototype.slice);
-
-/* adapted from https://github.com/lodash/lodash/blob/4.17.15/dist/lodash.js#L6735-L6744 */
-var rePropName = /[^%.[\]]+|\[(?:(-?\d+(?:\.\d+)?)|(["'])((?:(?!\2)[^\\]|\\.)*?)\2)\]|(?=(?:\.|\[\])(?:\.|\[\]|%$))/g;
-var reEscapeChar = /\\(\\)?/g; /** Used to match backslashes in property paths. */
-var stringToPath = function stringToPath(string) {
-	var first = $strSlice(string, 0, 1);
-	var last = $strSlice(string, -1);
-	if (first === '%' && last !== '%') {
-		throw new $SyntaxError('invalid intrinsic syntax, expected closing `%`');
-	} else if (last === '%' && first !== '%') {
-		throw new $SyntaxError('invalid intrinsic syntax, expected opening `%`');
-	}
-	var result = [];
-	$replace(string, rePropName, function (match, number, quote, subString) {
-		result[result.length] = quote ? $replace(subString, reEscapeChar, '$1') : number || match;
-	});
-	return result;
-};
-/* end adaptation */
-
-var getBaseIntrinsic = function getBaseIntrinsic(name, allowMissing) {
-	var intrinsicName = name;
-	var alias;
-	if (hasOwn(LEGACY_ALIASES, intrinsicName)) {
-		alias = LEGACY_ALIASES[intrinsicName];
-		intrinsicName = '%' + alias[0] + '%';
-	}
-
-	if (hasOwn(INTRINSICS, intrinsicName)) {
-		var value = INTRINSICS[intrinsicName];
-		if (value === needsEval) {
-			value = doEval(intrinsicName);
-		}
-		if (typeof value === 'undefined' && !allowMissing) {
-			throw new $TypeError('intrinsic ' + name + ' exists, but is not available. Please file an issue!');
-		}
-
-		return {
-			alias: alias,
-			name: intrinsicName,
-			value: value
-		};
-	}
-
-	throw new $SyntaxError('intrinsic ' + name + ' does not exist!');
-};
-
-module.exports = function GetIntrinsic(name, allowMissing) {
-	if (typeof name !== 'string' || name.length === 0) {
-		throw new $TypeError('intrinsic name must be a non-empty string');
-	}
-	if (arguments.length > 1 && typeof allowMissing !== 'boolean') {
-		throw new $TypeError('"allowMissing" argument must be a boolean');
-	}
-
-	var parts = stringToPath(name);
-	var intrinsicBaseName = parts.length > 0 ? parts[0] : '';
-
-	var intrinsic = getBaseIntrinsic('%' + intrinsicBaseName + '%', allowMissing);
-	var intrinsicRealName = intrinsic.name;
-	var value = intrinsic.value;
-	var skipFurtherCaching = false;
-
-	var alias = intrinsic.alias;
-	if (alias) {
-		intrinsicBaseName = alias[0];
-		$spliceApply(parts, $concat([0, 1], alias));
-	}
-
-	for (var i = 1, isOwn = true; i < parts.length; i += 1) {
-		var part = parts[i];
-		var first = $strSlice(part, 0, 1);
-		var last = $strSlice(part, -1);
-		if (
-			(
-				(first === '"' || first === "'" || first === '`')
-				|| (last === '"' || last === "'" || last === '`')
-			)
-			&& first !== last
-		) {
-			throw new $SyntaxError('property names with quotes must have matching quotes');
-		}
-		if (part === 'constructor' || !isOwn) {
-			skipFurtherCaching = true;
-		}
-
-		intrinsicBaseName += '.' + part;
-		intrinsicRealName = '%' + intrinsicBaseName + '%';
-
-		if (hasOwn(INTRINSICS, intrinsicRealName)) {
-			value = INTRINSICS[intrinsicRealName];
-		} else if (value != null) {
-			if (!(part in value)) {
-				if (!allowMissing) {
-					throw new $TypeError('base intrinsic for ' + name + ' exists, but the property is not available.');
-				}
-				return void undefined;
-			}
-			if ($gOPD && (i + 1) >= parts.length) {
-				var desc = $gOPD(value, part);
-				isOwn = !!desc;
-
-				// By convention, when a data property is converted to an accessor
-				// property to emulate a data property that does not suffer from
-				// the override mistake, that accessor's getter is marked with
-				// an `originalValue` property. Here, when we detect this, we
-				// uphold the illusion by pretending to see that original data
-				// property, i.e., returning the value rather than the getter
-				// itself.
-				if (isOwn && 'get' in desc && !('originalValue' in desc.get)) {
-					value = desc.get;
-				} else {
-					value = value[part];
-				}
-			} else {
-				isOwn = hasOwn(value, part);
-				value = value[part];
-			}
-
-			if (isOwn && !skipFurtherCaching) {
-				INTRINSICS[intrinsicRealName] = value;
-			}
-		}
-	}
-	return value;
-};
-
-},{"function-bind":13,"has":17,"has-symbols":15}],15:[function(require,module,exports){
-'use strict';
-
-var origSymbol = typeof Symbol !== 'undefined' && Symbol;
-var hasSymbolSham = require('./shams');
-
-module.exports = function hasNativeSymbols() {
-	if (typeof origSymbol !== 'function') { return false; }
-	if (typeof Symbol !== 'function') { return false; }
-	if (typeof origSymbol('foo') !== 'symbol') { return false; }
-	if (typeof Symbol('bar') !== 'symbol') { return false; }
-
-	return hasSymbolSham();
-};
-
-},{"./shams":16}],16:[function(require,module,exports){
-'use strict';
-
-/* eslint complexity: [2, 18], max-statements: [2, 33] */
-module.exports = function hasSymbols() {
-	if (typeof Symbol !== 'function' || typeof Object.getOwnPropertySymbols !== 'function') { return false; }
-	if (typeof Symbol.iterator === 'symbol') { return true; }
-
-	var obj = {};
-	var sym = Symbol('test');
-	var symObj = Object(sym);
-	if (typeof sym === 'string') { return false; }
-
-	if (Object.prototype.toString.call(sym) !== '[object Symbol]') { return false; }
-	if (Object.prototype.toString.call(symObj) !== '[object Symbol]') { return false; }
-
-	// temp disabled per https://github.com/ljharb/object.assign/issues/17
-	// if (sym instanceof Symbol) { return false; }
-	// temp disabled per https://github.com/WebReflection/get-own-property-symbols/issues/4
-	// if (!(symObj instanceof Symbol)) { return false; }
-
-	// if (typeof Symbol.prototype.toString !== 'function') { return false; }
-	// if (String(sym) !== Symbol.prototype.toString.call(sym)) { return false; }
-
-	var symVal = 42;
-	obj[sym] = symVal;
-	for (sym in obj) { return false; } // eslint-disable-line no-restricted-syntax, no-unreachable-loop
-	if (typeof Object.keys === 'function' && Object.keys(obj).length !== 0) { return false; }
-
-	if (typeof Object.getOwnPropertyNames === 'function' && Object.getOwnPropertyNames(obj).length !== 0) { return false; }
-
-	var syms = Object.getOwnPropertySymbols(obj);
-	if (syms.length !== 1 || syms[0] !== sym) { return false; }
-
-	if (!Object.prototype.propertyIsEnumerable.call(obj, sym)) { return false; }
-
-	if (typeof Object.getOwnPropertyDescriptor === 'function') {
-		var descriptor = Object.getOwnPropertyDescriptor(obj, sym);
-		if (descriptor.value !== symVal || descriptor.enumerable !== true) { return false; }
-	}
-
-	return true;
-};
-
-},{}],17:[function(require,module,exports){
-'use strict';
-
-var bind = require('function-bind');
-
-module.exports = bind.call(Function.call, Object.prototype.hasOwnProperty);
-
-},{"function-bind":13}],18:[function(require,module,exports){
-var hasMap = typeof Map === 'function' && Map.prototype;
-var mapSizeDescriptor = Object.getOwnPropertyDescriptor && hasMap ? Object.getOwnPropertyDescriptor(Map.prototype, 'size') : null;
-var mapSize = hasMap && mapSizeDescriptor && typeof mapSizeDescriptor.get === 'function' ? mapSizeDescriptor.get : null;
-var mapForEach = hasMap && Map.prototype.forEach;
-var hasSet = typeof Set === 'function' && Set.prototype;
-var setSizeDescriptor = Object.getOwnPropertyDescriptor && hasSet ? Object.getOwnPropertyDescriptor(Set.prototype, 'size') : null;
-var setSize = hasSet && setSizeDescriptor && typeof setSizeDescriptor.get === 'function' ? setSizeDescriptor.get : null;
-var setForEach = hasSet && Set.prototype.forEach;
-var hasWeakMap = typeof WeakMap === 'function' && WeakMap.prototype;
-var weakMapHas = hasWeakMap ? WeakMap.prototype.has : null;
-var hasWeakSet = typeof WeakSet === 'function' && WeakSet.prototype;
-var weakSetHas = hasWeakSet ? WeakSet.prototype.has : null;
-var hasWeakRef = typeof WeakRef === 'function' && WeakRef.prototype;
-var weakRefDeref = hasWeakRef ? WeakRef.prototype.deref : null;
-var booleanValueOf = Boolean.prototype.valueOf;
-var objectToString = Object.prototype.toString;
-var functionToString = Function.prototype.toString;
-var $match = String.prototype.match;
-var $slice = String.prototype.slice;
-var $replace = String.prototype.replace;
-var $toUpperCase = String.prototype.toUpperCase;
-var $toLowerCase = String.prototype.toLowerCase;
-var $test = RegExp.prototype.test;
-var $concat = Array.prototype.concat;
-var $join = Array.prototype.join;
-var $arrSlice = Array.prototype.slice;
-var $floor = Math.floor;
-var bigIntValueOf = typeof BigInt === 'function' ? BigInt.prototype.valueOf : null;
-var gOPS = Object.getOwnPropertySymbols;
-var symToString = typeof Symbol === 'function' && typeof Symbol.iterator === 'symbol' ? Symbol.prototype.toString : null;
-var hasShammedSymbols = typeof Symbol === 'function' && typeof Symbol.iterator === 'object';
-// ie, `has-tostringtag/shams
-var toStringTag = typeof Symbol === 'function' && Symbol.toStringTag && (typeof Symbol.toStringTag === hasShammedSymbols ? 'object' : 'symbol')
-    ? Symbol.toStringTag
-    : null;
-var isEnumerable = Object.prototype.propertyIsEnumerable;
-
-var gPO = (typeof Reflect === 'function' ? Reflect.getPrototypeOf : Object.getPrototypeOf) || (
-    [].__proto__ === Array.prototype // eslint-disable-line no-proto
-        ? function (O) {
-            return O.__proto__; // eslint-disable-line no-proto
-        }
-        : null
-);
-
-function addNumericSeparator(num, str) {
-    if (
-        num === Infinity
-        || num === -Infinity
-        || num !== num
-        || (num && num > -1000 && num < 1000)
-        || $test.call(/e/, str)
-    ) {
-        return str;
-    }
-    var sepRegex = /[0-9](?=(?:[0-9]{3})+(?![0-9]))/g;
-    if (typeof num === 'number') {
-        var int = num < 0 ? -$floor(-num) : $floor(num); // trunc(num)
-        if (int !== num) {
-            var intStr = String(int);
-            var dec = $slice.call(str, intStr.length + 1);
-            return $replace.call(intStr, sepRegex, '$&_') + '.' + $replace.call($replace.call(dec, /([0-9]{3})/g, '$&_'), /_$/, '');
-        }
-    }
-    return $replace.call(str, sepRegex, '$&_');
-}
-
-var inspectCustom = require('./util.inspect').custom;
-var inspectSymbol = inspectCustom && isSymbol(inspectCustom) ? inspectCustom : null;
-
-module.exports = function inspect_(obj, options, depth, seen) {
-    var opts = options || {};
-
-    if (has(opts, 'quoteStyle') && (opts.quoteStyle !== 'single' && opts.quoteStyle !== 'double')) {
-        throw new TypeError('option "quoteStyle" must be "single" or "double"');
-    }
-    if (
-        has(opts, 'maxStringLength') && (typeof opts.maxStringLength === 'number'
-            ? opts.maxStringLength < 0 && opts.maxStringLength !== Infinity
-            : opts.maxStringLength !== null
-        )
-    ) {
-        throw new TypeError('option "maxStringLength", if provided, must be a positive integer, Infinity, or `null`');
-    }
-    var customInspect = has(opts, 'customInspect') ? opts.customInspect : true;
-    if (typeof customInspect !== 'boolean' && customInspect !== 'symbol') {
-        throw new TypeError('option "customInspect", if provided, must be `true`, `false`, or `\'symbol\'`');
-    }
-
-    if (
-        has(opts, 'indent')
-        && opts.indent !== null
-        && opts.indent !== '\t'
-        && !(parseInt(opts.indent, 10) === opts.indent && opts.indent > 0)
-    ) {
-        throw new TypeError('option "indent" must be "\\t", an integer > 0, or `null`');
-    }
-    if (has(opts, 'numericSeparator') && typeof opts.numericSeparator !== 'boolean') {
-        throw new TypeError('option "numericSeparator", if provided, must be `true` or `false`');
-    }
-    var numericSeparator = opts.numericSeparator;
-
-    if (typeof obj === 'undefined') {
-        return 'undefined';
-    }
-    if (obj === null) {
-        return 'null';
-    }
-    if (typeof obj === 'boolean') {
-        return obj ? 'true' : 'false';
-    }
-
-    if (typeof obj === 'string') {
-        return inspectString(obj, opts);
-    }
-    if (typeof obj === 'number') {
-        if (obj === 0) {
-            return Infinity / obj > 0 ? '0' : '-0';
-        }
-        var str = String(obj);
-        return numericSeparator ? addNumericSeparator(obj, str) : str;
-    }
-    if (typeof obj === 'bigint') {
-        var bigIntStr = String(obj) + 'n';
-        return numericSeparator ? addNumericSeparator(obj, bigIntStr) : bigIntStr;
-    }
-
-    var maxDepth = typeof opts.depth === 'undefined' ? 5 : opts.depth;
-    if (typeof depth === 'undefined') { depth = 0; }
-    if (depth >= maxDepth && maxDepth > 0 && typeof obj === 'object') {
-        return isArray(obj) ? '[Array]' : '[Object]';
-    }
-
-    var indent = getIndent(opts, depth);
-
-    if (typeof seen === 'undefined') {
-        seen = [];
-    } else if (indexOf(seen, obj) >= 0) {
-        return '[Circular]';
-    }
-
-    function inspect(value, from, noIndent) {
-        if (from) {
-            seen = $arrSlice.call(seen);
-            seen.push(from);
-        }
-        if (noIndent) {
-            var newOpts = {
-                depth: opts.depth
-            };
-            if (has(opts, 'quoteStyle')) {
-                newOpts.quoteStyle = opts.quoteStyle;
-            }
-            return inspect_(value, newOpts, depth + 1, seen);
-        }
-        return inspect_(value, opts, depth + 1, seen);
-    }
-
-    if (typeof obj === 'function') {
-        var name = nameOf(obj);
-        var keys = arrObjKeys(obj, inspect);
-        return '[Function' + (name ? ': ' + name : ' (anonymous)') + ']' + (keys.length > 0 ? ' { ' + $join.call(keys, ', ') + ' }' : '');
-    }
-    if (isSymbol(obj)) {
-        var symString = hasShammedSymbols ? $replace.call(String(obj), /^(Symbol\(.*\))_[^)]*$/, '$1') : symToString.call(obj);
-        return typeof obj === 'object' && !hasShammedSymbols ? markBoxed(symString) : symString;
-    }
-    if (isElement(obj)) {
-        var s = '<' + $toLowerCase.call(String(obj.nodeName));
-        var attrs = obj.attributes || [];
-        for (var i = 0; i < attrs.length; i++) {
-            s += ' ' + attrs[i].name + '=' + wrapQuotes(quote(attrs[i].value), 'double', opts);
-        }
-        s += '>';
-        if (obj.childNodes && obj.childNodes.length) { s += '...'; }
-        s += '</' + $toLowerCase.call(String(obj.nodeName)) + '>';
-        return s;
-    }
-    if (isArray(obj)) {
-        if (obj.length === 0) { return '[]'; }
-        var xs = arrObjKeys(obj, inspect);
-        if (indent && !singleLineValues(xs)) {
-            return '[' + indentedJoin(xs, indent) + ']';
-        }
-        return '[ ' + $join.call(xs, ', ') + ' ]';
-    }
-    if (isError(obj)) {
-        var parts = arrObjKeys(obj, inspect);
-        if ('cause' in obj && !isEnumerable.call(obj, 'cause')) {
-            return '{ [' + String(obj) + '] ' + $join.call($concat.call('[cause]: ' + inspect(obj.cause), parts), ', ') + ' }';
-        }
-        if (parts.length === 0) { return '[' + String(obj) + ']'; }
-        return '{ [' + String(obj) + '] ' + $join.call(parts, ', ') + ' }';
-    }
-    if (typeof obj === 'object' && customInspect) {
-        if (inspectSymbol && typeof obj[inspectSymbol] === 'function') {
-            return obj[inspectSymbol]();
-        } else if (customInspect !== 'symbol' && typeof obj.inspect === 'function') {
-            return obj.inspect();
-        }
-    }
-    if (isMap(obj)) {
-        var mapParts = [];
-        mapForEach.call(obj, function (value, key) {
-            mapParts.push(inspect(key, obj, true) + ' => ' + inspect(value, obj));
-        });
-        return collectionOf('Map', mapSize.call(obj), mapParts, indent);
-    }
-    if (isSet(obj)) {
-        var setParts = [];
-        setForEach.call(obj, function (value) {
-            setParts.push(inspect(value, obj));
-        });
-        return collectionOf('Set', setSize.call(obj), setParts, indent);
-    }
-    if (isWeakMap(obj)) {
-        return weakCollectionOf('WeakMap');
-    }
-    if (isWeakSet(obj)) {
-        return weakCollectionOf('WeakSet');
-    }
-    if (isWeakRef(obj)) {
-        return weakCollectionOf('WeakRef');
-    }
-    if (isNumber(obj)) {
-        return markBoxed(inspect(Number(obj)));
-    }
-    if (isBigInt(obj)) {
-        return markBoxed(inspect(bigIntValueOf.call(obj)));
-    }
-    if (isBoolean(obj)) {
-        return markBoxed(booleanValueOf.call(obj));
-    }
-    if (isString(obj)) {
-        return markBoxed(inspect(String(obj)));
-    }
-    if (!isDate(obj) && !isRegExp(obj)) {
-        var ys = arrObjKeys(obj, inspect);
-        var isPlainObject = gPO ? gPO(obj) === Object.prototype : obj instanceof Object || obj.constructor === Object;
-        var protoTag = obj instanceof Object ? '' : 'null prototype';
-        var stringTag = !isPlainObject && toStringTag && Object(obj) === obj && toStringTag in obj ? $slice.call(toStr(obj), 8, -1) : protoTag ? 'Object' : '';
-        var constructorTag = isPlainObject || typeof obj.constructor !== 'function' ? '' : obj.constructor.name ? obj.constructor.name + ' ' : '';
-        var tag = constructorTag + (stringTag || protoTag ? '[' + $join.call($concat.call([], stringTag || [], protoTag || []), ': ') + '] ' : '');
-        if (ys.length === 0) { return tag + '{}'; }
-        if (indent) {
-            return tag + '{' + indentedJoin(ys, indent) + '}';
-        }
-        return tag + '{ ' + $join.call(ys, ', ') + ' }';
-    }
-    return String(obj);
-};
-
-function wrapQuotes(s, defaultStyle, opts) {
-    var quoteChar = (opts.quoteStyle || defaultStyle) === 'double' ? '"' : "'";
-    return quoteChar + s + quoteChar;
-}
-
-function quote(s) {
-    return $replace.call(String(s), /"/g, '&quot;');
-}
-
-function isArray(obj) { return toStr(obj) === '[object Array]' && (!toStringTag || !(typeof obj === 'object' && toStringTag in obj)); }
-function isDate(obj) { return toStr(obj) === '[object Date]' && (!toStringTag || !(typeof obj === 'object' && toStringTag in obj)); }
-function isRegExp(obj) { return toStr(obj) === '[object RegExp]' && (!toStringTag || !(typeof obj === 'object' && toStringTag in obj)); }
-function isError(obj) { return toStr(obj) === '[object Error]' && (!toStringTag || !(typeof obj === 'object' && toStringTag in obj)); }
-function isString(obj) { return toStr(obj) === '[object String]' && (!toStringTag || !(typeof obj === 'object' && toStringTag in obj)); }
-function isNumber(obj) { return toStr(obj) === '[object Number]' && (!toStringTag || !(typeof obj === 'object' && toStringTag in obj)); }
-function isBoolean(obj) { return toStr(obj) === '[object Boolean]' && (!toStringTag || !(typeof obj === 'object' && toStringTag in obj)); }
-
-// Symbol and BigInt do have Symbol.toStringTag by spec, so that can't be used to eliminate false positives
-function isSymbol(obj) {
-    if (hasShammedSymbols) {
-        return obj && typeof obj === 'object' && obj instanceof Symbol;
-    }
-    if (typeof obj === 'symbol') {
-        return true;
-    }
-    if (!obj || typeof obj !== 'object' || !symToString) {
-        return false;
-    }
-    try {
-        symToString.call(obj);
-        return true;
-    } catch (e) {}
-    return false;
-}
-
-function isBigInt(obj) {
-    if (!obj || typeof obj !== 'object' || !bigIntValueOf) {
-        return false;
-    }
-    try {
-        bigIntValueOf.call(obj);
-        return true;
-    } catch (e) {}
-    return false;
-}
-
-var hasOwn = Object.prototype.hasOwnProperty || function (key) { return key in this; };
-function has(obj, key) {
-    return hasOwn.call(obj, key);
-}
-
-function toStr(obj) {
-    return objectToString.call(obj);
-}
-
-function nameOf(f) {
-    if (f.name) { return f.name; }
-    var m = $match.call(functionToString.call(f), /^function\s*([\w$]+)/);
-    if (m) { return m[1]; }
-    return null;
-}
-
-function indexOf(xs, x) {
-    if (xs.indexOf) { return xs.indexOf(x); }
-    for (var i = 0, l = xs.length; i < l; i++) {
-        if (xs[i] === x) { return i; }
-    }
-    return -1;
-}
-
-function isMap(x) {
-    if (!mapSize || !x || typeof x !== 'object') {
-        return false;
-    }
-    try {
-        mapSize.call(x);
-        try {
-            setSize.call(x);
-        } catch (s) {
-            return true;
-        }
-        return x instanceof Map; // core-js workaround, pre-v2.5.0
-    } catch (e) {}
-    return false;
-}
-
-function isWeakMap(x) {
-    if (!weakMapHas || !x || typeof x !== 'object') {
-        return false;
-    }
-    try {
-        weakMapHas.call(x, weakMapHas);
-        try {
-            weakSetHas.call(x, weakSetHas);
-        } catch (s) {
-            return true;
-        }
-        return x instanceof WeakMap; // core-js workaround, pre-v2.5.0
-    } catch (e) {}
-    return false;
-}
-
-function isWeakRef(x) {
-    if (!weakRefDeref || !x || typeof x !== 'object') {
-        return false;
-    }
-    try {
-        weakRefDeref.call(x);
-        return true;
-    } catch (e) {}
-    return false;
-}
-
-function isSet(x) {
-    if (!setSize || !x || typeof x !== 'object') {
-        return false;
-    }
-    try {
-        setSize.call(x);
-        try {
-            mapSize.call(x);
-        } catch (m) {
-            return true;
-        }
-        return x instanceof Set; // core-js workaround, pre-v2.5.0
-    } catch (e) {}
-    return false;
-}
-
-function isWeakSet(x) {
-    if (!weakSetHas || !x || typeof x !== 'object') {
-        return false;
-    }
-    try {
-        weakSetHas.call(x, weakSetHas);
-        try {
-            weakMapHas.call(x, weakMapHas);
-        } catch (s) {
-            return true;
-        }
-        return x instanceof WeakSet; // core-js workaround, pre-v2.5.0
-    } catch (e) {}
-    return false;
-}
-
-function isElement(x) {
-    if (!x || typeof x !== 'object') { return false; }
-    if (typeof HTMLElement !== 'undefined' && x instanceof HTMLElement) {
-        return true;
-    }
-    return typeof x.nodeName === 'string' && typeof x.getAttribute === 'function';
-}
-
-function inspectString(str, opts) {
-    if (str.length > opts.maxStringLength) {
-        var remaining = str.length - opts.maxStringLength;
-        var trailer = '... ' + remaining + ' more character' + (remaining > 1 ? 's' : '');
-        return inspectString($slice.call(str, 0, opts.maxStringLength), opts) + trailer;
-    }
-    // eslint-disable-next-line no-control-regex
-    var s = $replace.call($replace.call(str, /(['\\])/g, '\\$1'), /[\x00-\x1f]/g, lowbyte);
-    return wrapQuotes(s, 'single', opts);
-}
-
-function lowbyte(c) {
-    var n = c.charCodeAt(0);
-    var x = {
-        8: 'b',
-        9: 't',
-        10: 'n',
-        12: 'f',
-        13: 'r'
-    }[n];
-    if (x) { return '\\' + x; }
-    return '\\x' + (n < 0x10 ? '0' : '') + $toUpperCase.call(n.toString(16));
-}
-
-function markBoxed(str) {
-    return 'Object(' + str + ')';
-}
-
-function weakCollectionOf(type) {
-    return type + ' { ? }';
-}
-
-function collectionOf(type, size, entries, indent) {
-    var joinedEntries = indent ? indentedJoin(entries, indent) : $join.call(entries, ', ');
-    return type + ' (' + size + ') {' + joinedEntries + '}';
-}
-
-function singleLineValues(xs) {
-    for (var i = 0; i < xs.length; i++) {
-        if (indexOf(xs[i], '\n') >= 0) {
-            return false;
-        }
-    }
-    return true;
-}
-
-function getIndent(opts, depth) {
-    var baseIndent;
-    if (opts.indent === '\t') {
-        baseIndent = '\t';
-    } else if (typeof opts.indent === 'number' && opts.indent > 0) {
-        baseIndent = $join.call(Array(opts.indent + 1), ' ');
-    } else {
-        return null;
-    }
-    return {
-        base: baseIndent,
-        prev: $join.call(Array(depth + 1), baseIndent)
-    };
-}
-
-function indentedJoin(xs, indent) {
-    if (xs.length === 0) { return ''; }
-    var lineJoiner = '\n' + indent.prev + indent.base;
-    return lineJoiner + $join.call(xs, ',' + lineJoiner) + '\n' + indent.prev;
-}
-
-function arrObjKeys(obj, inspect) {
-    var isArr = isArray(obj);
-    var xs = [];
-    if (isArr) {
-        xs.length = obj.length;
-        for (var i = 0; i < obj.length; i++) {
-            xs[i] = has(obj, i) ? inspect(obj[i], obj) : '';
-        }
-    }
-    var syms = typeof gOPS === 'function' ? gOPS(obj) : [];
-    var symMap;
-    if (hasShammedSymbols) {
-        symMap = {};
-        for (var k = 0; k < syms.length; k++) {
-            symMap['$' + syms[k]] = syms[k];
-        }
-    }
-
-    for (var key in obj) { // eslint-disable-line no-restricted-syntax
-        if (!has(obj, key)) { continue; } // eslint-disable-line no-restricted-syntax, no-continue
-        if (isArr && String(Number(key)) === key && key < obj.length) { continue; } // eslint-disable-line no-restricted-syntax, no-continue
-        if (hasShammedSymbols && symMap['$' + key] instanceof Symbol) {
-            // this is to prevent shammed Symbols, which are stored as strings, from being included in the string key section
-            continue; // eslint-disable-line no-restricted-syntax, no-continue
-        } else if ($test.call(/[^\w$]/, key)) {
-            xs.push(inspect(key, obj) + ': ' + inspect(obj[key], obj));
-        } else {
-            xs.push(key + ': ' + inspect(obj[key], obj));
-        }
-    }
-    if (typeof gOPS === 'function') {
-        for (var j = 0; j < syms.length; j++) {
-            if (isEnumerable.call(obj, syms[j])) {
-                xs.push('[' + inspect(syms[j]) + ']: ' + inspect(obj[syms[j]], obj));
-            }
-        }
-    }
-    return xs;
-}
-
-},{"./util.inspect":2}],19:[function(require,module,exports){
-'use strict';
-
-var replace = String.prototype.replace;
-var percentTwenties = /%20/g;
-
-var Format = {
-    RFC1738: 'RFC1738',
-    RFC3986: 'RFC3986'
-};
-
-module.exports = {
-    'default': Format.RFC3986,
-    formatters: {
-        RFC1738: function (value) {
-            return replace.call(value, percentTwenties, '+');
-        },
-        RFC3986: function (value) {
-            return String(value);
-        }
-    },
-    RFC1738: Format.RFC1738,
-    RFC3986: Format.RFC3986
-};
-
-},{}],20:[function(require,module,exports){
-'use strict';
-
-var stringify = require('./stringify');
-var parse = require('./parse');
-var formats = require('./formats');
-
-module.exports = {
-    formats: formats,
-    parse: parse,
-    stringify: stringify
-};
-
-},{"./formats":19,"./parse":21,"./stringify":22}],21:[function(require,module,exports){
-'use strict';
-
-var utils = require('./utils');
-
-var has = Object.prototype.hasOwnProperty;
-var isArray = Array.isArray;
-
-var defaults = {
-    allowDots: false,
-    allowPrototypes: false,
-    allowSparse: false,
-    arrayLimit: 20,
-    charset: 'utf-8',
-    charsetSentinel: false,
-    comma: false,
-    decoder: utils.decode,
-    delimiter: '&',
-    depth: 5,
-    ignoreQueryPrefix: false,
-    interpretNumericEntities: false,
-    parameterLimit: 1000,
-    parseArrays: true,
-    plainObjects: false,
-    strictNullHandling: false
-};
-
-var interpretNumericEntities = function (str) {
-    return str.replace(/&#(\d+);/g, function ($0, numberStr) {
-        return String.fromCharCode(parseInt(numberStr, 10));
-    });
-};
-
-var parseArrayValue = function (val, options) {
-    if (val && typeof val === 'string' && options.comma && val.indexOf(',') > -1) {
-        return val.split(',');
-    }
-
-    return val;
-};
-
-// This is what browsers will submit when the ✓ character occurs in an
-// application/x-www-form-urlencoded body and the encoding of the page containing
-// the form is iso-8859-1, or when the submitted form has an accept-charset
-// attribute of iso-8859-1. Presumably also with other charsets that do not contain
-// the ✓ character, such as us-ascii.
-var isoSentinel = 'utf8=%26%2310003%3B'; // encodeURIComponent('&#10003;')
-
-// These are the percent-encoded utf-8 octets representing a checkmark, indicating that the request actually is utf-8 encoded.
-var charsetSentinel = 'utf8=%E2%9C%93'; // encodeURIComponent('✓')
-
-var parseValues = function parseQueryStringValues(str, options) {
-    var obj = {};
-    var cleanStr = options.ignoreQueryPrefix ? str.replace(/^\?/, '') : str;
-    var limit = options.parameterLimit === Infinity ? undefined : options.parameterLimit;
-    var parts = cleanStr.split(options.delimiter, limit);
-    var skipIndex = -1; // Keep track of where the utf8 sentinel was found
-    var i;
-
-    var charset = options.charset;
-    if (options.charsetSentinel) {
-        for (i = 0; i < parts.length; ++i) {
-            if (parts[i].indexOf('utf8=') === 0) {
-                if (parts[i] === charsetSentinel) {
-                    charset = 'utf-8';
-                } else if (parts[i] === isoSentinel) {
-                    charset = 'iso-8859-1';
-                }
-                skipIndex = i;
-                i = parts.length; // The eslint settings do not allow break;
-            }
-        }
-    }
-
-    for (i = 0; i < parts.length; ++i) {
-        if (i === skipIndex) {
-            continue;
-        }
-        var part = parts[i];
-
-        var bracketEqualsPos = part.indexOf(']=');
-        var pos = bracketEqualsPos === -1 ? part.indexOf('=') : bracketEqualsPos + 1;
-
-        var key, val;
-        if (pos === -1) {
-            key = options.decoder(part, defaults.decoder, charset, 'key');
-            val = options.strictNullHandling ? null : '';
-        } else {
-            key = options.decoder(part.slice(0, pos), defaults.decoder, charset, 'key');
-            val = utils.maybeMap(
-                parseArrayValue(part.slice(pos + 1), options),
-                function (encodedVal) {
-                    return options.decoder(encodedVal, defaults.decoder, charset, 'value');
-                }
-            );
-        }
-
-        if (val && options.interpretNumericEntities && charset === 'iso-8859-1') {
-            val = interpretNumericEntities(val);
-        }
-
-        if (part.indexOf('[]=') > -1) {
-            val = isArray(val) ? [val] : val;
-        }
-
-        if (has.call(obj, key)) {
-            obj[key] = utils.combine(obj[key], val);
-        } else {
-            obj[key] = val;
-        }
-    }
-
-    return obj;
-};
-
-var parseObject = function (chain, val, options, valuesParsed) {
-    var leaf = valuesParsed ? val : parseArrayValue(val, options);
-
-    for (var i = chain.length - 1; i >= 0; --i) {
-        var obj;
-        var root = chain[i];
-
-        if (root === '[]' && options.parseArrays) {
-            obj = [].concat(leaf);
-        } else {
-            obj = options.plainObjects ? Object.create(null) : {};
-            var cleanRoot = root.charAt(0) === '[' && root.charAt(root.length - 1) === ']' ? root.slice(1, -1) : root;
-            var index = parseInt(cleanRoot, 10);
-            if (!options.parseArrays && cleanRoot === '') {
-                obj = { 0: leaf };
-            } else if (
-                !isNaN(index)
-                && root !== cleanRoot
-                && String(index) === cleanRoot
-                && index >= 0
-                && (options.parseArrays && index <= options.arrayLimit)
-            ) {
-                obj = [];
-                obj[index] = leaf;
-            } else if (cleanRoot !== '__proto__') {
-                obj[cleanRoot] = leaf;
-            }
-        }
-
-        leaf = obj;
-    }
-
-    return leaf;
-};
-
-var parseKeys = function parseQueryStringKeys(givenKey, val, options, valuesParsed) {
-    if (!givenKey) {
-        return;
-    }
-
-    // Transform dot notation to bracket notation
-    var key = options.allowDots ? givenKey.replace(/\.([^.[]+)/g, '[$1]') : givenKey;
-
-    // The regex chunks
-
-    var brackets = /(\[[^[\]]*])/;
-    var child = /(\[[^[\]]*])/g;
-
-    // Get the parent
-
-    var segment = options.depth > 0 && brackets.exec(key);
-    var parent = segment ? key.slice(0, segment.index) : key;
-
-    // Stash the parent if it exists
-
-    var keys = [];
-    if (parent) {
-        // If we aren't using plain objects, optionally prefix keys that would overwrite object prototype properties
-        if (!options.plainObjects && has.call(Object.prototype, parent)) {
-            if (!options.allowPrototypes) {
-                return;
-            }
-        }
-
-        keys.push(parent);
-    }
-
-    // Loop through children appending to the array until we hit depth
-
-    var i = 0;
-    while (options.depth > 0 && (segment = child.exec(key)) !== null && i < options.depth) {
-        i += 1;
-        if (!options.plainObjects && has.call(Object.prototype, segment[1].slice(1, -1))) {
-            if (!options.allowPrototypes) {
-                return;
-            }
-        }
-        keys.push(segment[1]);
-    }
-
-    // If there's a remainder, just add whatever is left
-
-    if (segment) {
-        keys.push('[' + key.slice(segment.index) + ']');
-    }
-
-    return parseObject(keys, val, options, valuesParsed);
-};
-
-var normalizeParseOptions = function normalizeParseOptions(opts) {
-    if (!opts) {
-        return defaults;
-    }
-
-    if (opts.decoder !== null && opts.decoder !== undefined && typeof opts.decoder !== 'function') {
-        throw new TypeError('Decoder has to be a function.');
-    }
-
-    if (typeof opts.charset !== 'undefined' && opts.charset !== 'utf-8' && opts.charset !== 'iso-8859-1') {
-        throw new TypeError('The charset option must be either utf-8, iso-8859-1, or undefined');
-    }
-    var charset = typeof opts.charset === 'undefined' ? defaults.charset : opts.charset;
-
-    return {
-        allowDots: typeof opts.allowDots === 'undefined' ? defaults.allowDots : !!opts.allowDots,
-        allowPrototypes: typeof opts.allowPrototypes === 'boolean' ? opts.allowPrototypes : defaults.allowPrototypes,
-        allowSparse: typeof opts.allowSparse === 'boolean' ? opts.allowSparse : defaults.allowSparse,
-        arrayLimit: typeof opts.arrayLimit === 'number' ? opts.arrayLimit : defaults.arrayLimit,
-        charset: charset,
-        charsetSentinel: typeof opts.charsetSentinel === 'boolean' ? opts.charsetSentinel : defaults.charsetSentinel,
-        comma: typeof opts.comma === 'boolean' ? opts.comma : defaults.comma,
-        decoder: typeof opts.decoder === 'function' ? opts.decoder : defaults.decoder,
-        delimiter: typeof opts.delimiter === 'string' || utils.isRegExp(opts.delimiter) ? opts.delimiter : defaults.delimiter,
-        // eslint-disable-next-line no-implicit-coercion, no-extra-parens
-        depth: (typeof opts.depth === 'number' || opts.depth === false) ? +opts.depth : defaults.depth,
-        ignoreQueryPrefix: opts.ignoreQueryPrefix === true,
-        interpretNumericEntities: typeof opts.interpretNumericEntities === 'boolean' ? opts.interpretNumericEntities : defaults.interpretNumericEntities,
-        parameterLimit: typeof opts.parameterLimit === 'number' ? opts.parameterLimit : defaults.parameterLimit,
-        parseArrays: opts.parseArrays !== false,
-        plainObjects: typeof opts.plainObjects === 'boolean' ? opts.plainObjects : defaults.plainObjects,
-        strictNullHandling: typeof opts.strictNullHandling === 'boolean' ? opts.strictNullHandling : defaults.strictNullHandling
-    };
-};
-
-module.exports = function (str, opts) {
-    var options = normalizeParseOptions(opts);
-
-    if (str === '' || str === null || typeof str === 'undefined') {
-        return options.plainObjects ? Object.create(null) : {};
-    }
-
-    var tempObj = typeof str === 'string' ? parseValues(str, options) : str;
-    var obj = options.plainObjects ? Object.create(null) : {};
-
-    // Iterate over the keys and setup the new object
-
-    var keys = Object.keys(tempObj);
-    for (var i = 0; i < keys.length; ++i) {
-        var key = keys[i];
-        var newObj = parseKeys(key, tempObj[key], options, typeof str === 'string');
-        obj = utils.merge(obj, newObj, options);
-    }
-
-    if (options.allowSparse === true) {
-        return obj;
-    }
-
-    return utils.compact(obj);
-};
-
-},{"./utils":23}],22:[function(require,module,exports){
-'use strict';
-
-var getSideChannel = require('side-channel');
-var utils = require('./utils');
-var formats = require('./formats');
-var has = Object.prototype.hasOwnProperty;
-
-var arrayPrefixGenerators = {
-    brackets: function brackets(prefix) {
-        return prefix + '[]';
-    },
-    comma: 'comma',
-    indices: function indices(prefix, key) {
-        return prefix + '[' + key + ']';
-    },
-    repeat: function repeat(prefix) {
-        return prefix;
-    }
-};
-
-var isArray = Array.isArray;
-var split = String.prototype.split;
-var push = Array.prototype.push;
-var pushToArray = function (arr, valueOrArray) {
-    push.apply(arr, isArray(valueOrArray) ? valueOrArray : [valueOrArray]);
-};
-
-var toISO = Date.prototype.toISOString;
-
-var defaultFormat = formats['default'];
-var defaults = {
-    addQueryPrefix: false,
-    allowDots: false,
-    charset: 'utf-8',
-    charsetSentinel: false,
-    delimiter: '&',
-    encode: true,
-    encoder: utils.encode,
-    encodeValuesOnly: false,
-    format: defaultFormat,
-    formatter: formats.formatters[defaultFormat],
-    // deprecated
-    indices: false,
-    serializeDate: function serializeDate(date) {
-        return toISO.call(date);
-    },
-    skipNulls: false,
-    strictNullHandling: false
-};
-
-var isNonNullishPrimitive = function isNonNullishPrimitive(v) {
-    return typeof v === 'string'
-        || typeof v === 'number'
-        || typeof v === 'boolean'
-        || typeof v === 'symbol'
-        || typeof v === 'bigint';
-};
-
-var sentinel = {};
-
-var stringify = function stringify(
-    object,
-    prefix,
-    generateArrayPrefix,
-    strictNullHandling,
-    skipNulls,
-    encoder,
-    filter,
-    sort,
-    allowDots,
-    serializeDate,
-    format,
-    formatter,
-    encodeValuesOnly,
-    charset,
-    sideChannel
-) {
-    var obj = object;
-
-    var tmpSc = sideChannel;
-    var step = 0;
-    var findFlag = false;
-    while ((tmpSc = tmpSc.get(sentinel)) !== void undefined && !findFlag) {
-        // Where object last appeared in the ref tree
-        var pos = tmpSc.get(object);
-        step += 1;
-        if (typeof pos !== 'undefined') {
-            if (pos === step) {
-                throw new RangeError('Cyclic object value');
-            } else {
-                findFlag = true; // Break while
-            }
-        }
-        if (typeof tmpSc.get(sentinel) === 'undefined') {
-            step = 0;
-        }
-    }
-
-    if (typeof filter === 'function') {
-        obj = filter(prefix, obj);
-    } else if (obj instanceof Date) {
-        obj = serializeDate(obj);
-    } else if (generateArrayPrefix === 'comma' && isArray(obj)) {
-        obj = utils.maybeMap(obj, function (value) {
-            if (value instanceof Date) {
-                return serializeDate(value);
-            }
-            return value;
-        });
-    }
-
-    if (obj === null) {
-        if (strictNullHandling) {
-            return encoder && !encodeValuesOnly ? encoder(prefix, defaults.encoder, charset, 'key', format) : prefix;
-        }
-
-        obj = '';
-    }
-
-    if (isNonNullishPrimitive(obj) || utils.isBuffer(obj)) {
-        if (encoder) {
-            var keyValue = encodeValuesOnly ? prefix : encoder(prefix, defaults.encoder, charset, 'key', format);
-            if (generateArrayPrefix === 'comma' && encodeValuesOnly) {
-                var valuesArray = split.call(String(obj), ',');
-                var valuesJoined = '';
-                for (var i = 0; i < valuesArray.length; ++i) {
-                    valuesJoined += (i === 0 ? '' : ',') + formatter(encoder(valuesArray[i], defaults.encoder, charset, 'value', format));
-                }
-                return [formatter(keyValue) + '=' + valuesJoined];
-            }
-            return [formatter(keyValue) + '=' + formatter(encoder(obj, defaults.encoder, charset, 'value', format))];
-        }
-        return [formatter(prefix) + '=' + formatter(String(obj))];
-    }
-
-    var values = [];
-
-    if (typeof obj === 'undefined') {
-        return values;
-    }
-
-    var objKeys;
-    if (generateArrayPrefix === 'comma' && isArray(obj)) {
-        // we need to join elements in
-        objKeys = [{ value: obj.length > 0 ? obj.join(',') || null : void undefined }];
-    } else if (isArray(filter)) {
-        objKeys = filter;
-    } else {
-        var keys = Object.keys(obj);
-        objKeys = sort ? keys.sort(sort) : keys;
-    }
-
-    for (var j = 0; j < objKeys.length; ++j) {
-        var key = objKeys[j];
-        var value = typeof key === 'object' && typeof key.value !== 'undefined' ? key.value : obj[key];
-
-        if (skipNulls && value === null) {
-            continue;
-        }
-
-        var keyPrefix = isArray(obj)
-            ? typeof generateArrayPrefix === 'function' ? generateArrayPrefix(prefix, key) : prefix
-            : prefix + (allowDots ? '.' + key : '[' + key + ']');
-
-        sideChannel.set(object, step);
-        var valueSideChannel = getSideChannel();
-        valueSideChannel.set(sentinel, sideChannel);
-        pushToArray(values, stringify(
-            value,
-            keyPrefix,
-            generateArrayPrefix,
-            strictNullHandling,
-            skipNulls,
-            encoder,
-            filter,
-            sort,
-            allowDots,
-            serializeDate,
-            format,
-            formatter,
-            encodeValuesOnly,
-            charset,
-            valueSideChannel
-        ));
-    }
-
-    return values;
-};
-
-var normalizeStringifyOptions = function normalizeStringifyOptions(opts) {
-    if (!opts) {
-        return defaults;
-    }
-
-    if (opts.encoder !== null && typeof opts.encoder !== 'undefined' && typeof opts.encoder !== 'function') {
-        throw new TypeError('Encoder has to be a function.');
-    }
-
-    var charset = opts.charset || defaults.charset;
-    if (typeof opts.charset !== 'undefined' && opts.charset !== 'utf-8' && opts.charset !== 'iso-8859-1') {
-        throw new TypeError('The charset option must be either utf-8, iso-8859-1, or undefined');
-    }
-
-    var format = formats['default'];
-    if (typeof opts.format !== 'undefined') {
-        if (!has.call(formats.formatters, opts.format)) {
-            throw new TypeError('Unknown format option provided.');
-        }
-        format = opts.format;
-    }
-    var formatter = formats.formatters[format];
-
-    var filter = defaults.filter;
-    if (typeof opts.filter === 'function' || isArray(opts.filter)) {
-        filter = opts.filter;
-    }
-
-    return {
-        addQueryPrefix: typeof opts.addQueryPrefix === 'boolean' ? opts.addQueryPrefix : defaults.addQueryPrefix,
-        allowDots: typeof opts.allowDots === 'undefined' ? defaults.allowDots : !!opts.allowDots,
-        charset: charset,
-        charsetSentinel: typeof opts.charsetSentinel === 'boolean' ? opts.charsetSentinel : defaults.charsetSentinel,
-        delimiter: typeof opts.delimiter === 'undefined' ? defaults.delimiter : opts.delimiter,
-        encode: typeof opts.encode === 'boolean' ? opts.encode : defaults.encode,
-        encoder: typeof opts.encoder === 'function' ? opts.encoder : defaults.encoder,
-        encodeValuesOnly: typeof opts.encodeValuesOnly === 'boolean' ? opts.encodeValuesOnly : defaults.encodeValuesOnly,
-        filter: filter,
-        format: format,
-        formatter: formatter,
-        serializeDate: typeof opts.serializeDate === 'function' ? opts.serializeDate : defaults.serializeDate,
-        skipNulls: typeof opts.skipNulls === 'boolean' ? opts.skipNulls : defaults.skipNulls,
-        sort: typeof opts.sort === 'function' ? opts.sort : null,
-        strictNullHandling: typeof opts.strictNullHandling === 'boolean' ? opts.strictNullHandling : defaults.strictNullHandling
-    };
-};
-
-module.exports = function (object, opts) {
-    var obj = object;
-    var options = normalizeStringifyOptions(opts);
-
-    var objKeys;
-    var filter;
-
-    if (typeof options.filter === 'function') {
-        filter = options.filter;
-        obj = filter('', obj);
-    } else if (isArray(options.filter)) {
-        filter = options.filter;
-        objKeys = filter;
-    }
-
-    var keys = [];
-
-    if (typeof obj !== 'object' || obj === null) {
-        return '';
-    }
-
-    var arrayFormat;
-    if (opts && opts.arrayFormat in arrayPrefixGenerators) {
-        arrayFormat = opts.arrayFormat;
-    } else if (opts && 'indices' in opts) {
-        arrayFormat = opts.indices ? 'indices' : 'repeat';
-    } else {
-        arrayFormat = 'indices';
-    }
-
-    var generateArrayPrefix = arrayPrefixGenerators[arrayFormat];
-
-    if (!objKeys) {
-        objKeys = Object.keys(obj);
-    }
-
-    if (options.sort) {
-        objKeys.sort(options.sort);
-    }
-
-    var sideChannel = getSideChannel();
-    for (var i = 0; i < objKeys.length; ++i) {
-        var key = objKeys[i];
-
-        if (options.skipNulls && obj[key] === null) {
-            continue;
-        }
-        pushToArray(keys, stringify(
-            obj[key],
-            key,
-            generateArrayPrefix,
-            options.strictNullHandling,
-            options.skipNulls,
-            options.encode ? options.encoder : null,
-            options.filter,
-            options.sort,
-            options.allowDots,
-            options.serializeDate,
-            options.format,
-            options.formatter,
-            options.encodeValuesOnly,
-            options.charset,
-            sideChannel
-        ));
-    }
-
-    var joined = keys.join(options.delimiter);
-    var prefix = options.addQueryPrefix === true ? '?' : '';
-
-    if (options.charsetSentinel) {
-        if (options.charset === 'iso-8859-1') {
-            // encodeURIComponent('&#10003;'), the "numeric entity" representation of a checkmark
-            prefix += 'utf8=%26%2310003%3B&';
-        } else {
-            // encodeURIComponent('✓')
-            prefix += 'utf8=%E2%9C%93&';
-        }
-    }
-
-    return joined.length > 0 ? prefix + joined : '';
-};
-
-},{"./formats":19,"./utils":23,"side-channel":24}],23:[function(require,module,exports){
-'use strict';
-
-var formats = require('./formats');
-
-var has = Object.prototype.hasOwnProperty;
-var isArray = Array.isArray;
-
-var hexTable = (function () {
-    var array = [];
-    for (var i = 0; i < 256; ++i) {
-        array.push('%' + ((i < 16 ? '0' : '') + i.toString(16)).toUpperCase());
-    }
-
-    return array;
-}());
-
-var compactQueue = function compactQueue(queue) {
-    while (queue.length > 1) {
-        var item = queue.pop();
-        var obj = item.obj[item.prop];
-
-        if (isArray(obj)) {
-            var compacted = [];
-
-            for (var j = 0; j < obj.length; ++j) {
-                if (typeof obj[j] !== 'undefined') {
-                    compacted.push(obj[j]);
-                }
-            }
-
-            item.obj[item.prop] = compacted;
-        }
-    }
-};
-
-var arrayToObject = function arrayToObject(source, options) {
-    var obj = options && options.plainObjects ? Object.create(null) : {};
-    for (var i = 0; i < source.length; ++i) {
-        if (typeof source[i] !== 'undefined') {
-            obj[i] = source[i];
-        }
-    }
-
-    return obj;
-};
-
-var merge = function merge(target, source, options) {
-    /* eslint no-param-reassign: 0 */
-    if (!source) {
-        return target;
-    }
-
-    if (typeof source !== 'object') {
-        if (isArray(target)) {
-            target.push(source);
-        } else if (target && typeof target === 'object') {
-            if ((options && (options.plainObjects || options.allowPrototypes)) || !has.call(Object.prototype, source)) {
-                target[source] = true;
-            }
-        } else {
-            return [target, source];
-        }
-
-        return target;
-    }
-
-    if (!target || typeof target !== 'object') {
-        return [target].concat(source);
-    }
-
-    var mergeTarget = target;
-    if (isArray(target) && !isArray(source)) {
-        mergeTarget = arrayToObject(target, options);
-    }
-
-    if (isArray(target) && isArray(source)) {
-        source.forEach(function (item, i) {
-            if (has.call(target, i)) {
-                var targetItem = target[i];
-                if (targetItem && typeof targetItem === 'object' && item && typeof item === 'object') {
-                    target[i] = merge(targetItem, item, options);
-                } else {
-                    target.push(item);
-                }
-            } else {
-                target[i] = item;
-            }
-        });
-        return target;
-    }
-
-    return Object.keys(source).reduce(function (acc, key) {
-        var value = source[key];
-
-        if (has.call(acc, key)) {
-            acc[key] = merge(acc[key], value, options);
-        } else {
-            acc[key] = value;
-        }
-        return acc;
-    }, mergeTarget);
-};
-
-var assign = function assignSingleSource(target, source) {
-    return Object.keys(source).reduce(function (acc, key) {
-        acc[key] = source[key];
-        return acc;
-    }, target);
-};
-
-var decode = function (str, decoder, charset) {
-    var strWithoutPlus = str.replace(/\+/g, ' ');
-    if (charset === 'iso-8859-1') {
-        // unescape never throws, no try...catch needed:
-        return strWithoutPlus.replace(/%[0-9a-f]{2}/gi, unescape);
-    }
-    // utf-8
-    try {
-        return decodeURIComponent(strWithoutPlus);
-    } catch (e) {
-        return strWithoutPlus;
-    }
-};
-
-var encode = function encode(str, defaultEncoder, charset, kind, format) {
-    // This code was originally written by Brian White (mscdex) for the io.js core querystring library.
-    // It has been adapted here for stricter adherence to RFC 3986
-    if (str.length === 0) {
-        return str;
-    }
-
-    var string = str;
-    if (typeof str === 'symbol') {
-        string = Symbol.prototype.toString.call(str);
-    } else if (typeof str !== 'string') {
-        string = String(str);
-    }
-
-    if (charset === 'iso-8859-1') {
-        return escape(string).replace(/%u[0-9a-f]{4}/gi, function ($0) {
-            return '%26%23' + parseInt($0.slice(2), 16) + '%3B';
-        });
-    }
-
-    var out = '';
-    for (var i = 0; i < string.length; ++i) {
-        var c = string.charCodeAt(i);
-
-        if (
-            c === 0x2D // -
-            || c === 0x2E // .
-            || c === 0x5F // _
-            || c === 0x7E // ~
-            || (c >= 0x30 && c <= 0x39) // 0-9
-            || (c >= 0x41 && c <= 0x5A) // a-z
-            || (c >= 0x61 && c <= 0x7A) // A-Z
-            || (format === formats.RFC1738 && (c === 0x28 || c === 0x29)) // ( )
-        ) {
-            out += string.charAt(i);
-            continue;
-        }
-
-        if (c < 0x80) {
-            out = out + hexTable[c];
-            continue;
-        }
-
-        if (c < 0x800) {
-            out = out + (hexTable[0xC0 | (c >> 6)] + hexTable[0x80 | (c & 0x3F)]);
-            continue;
-        }
-
-        if (c < 0xD800 || c >= 0xE000) {
-            out = out + (hexTable[0xE0 | (c >> 12)] + hexTable[0x80 | ((c >> 6) & 0x3F)] + hexTable[0x80 | (c & 0x3F)]);
-            continue;
-        }
-
-        i += 1;
-        c = 0x10000 + (((c & 0x3FF) << 10) | (string.charCodeAt(i) & 0x3FF));
-        /* eslint operator-linebreak: [2, "before"] */
-        out += hexTable[0xF0 | (c >> 18)]
-            + hexTable[0x80 | ((c >> 12) & 0x3F)]
-            + hexTable[0x80 | ((c >> 6) & 0x3F)]
-            + hexTable[0x80 | (c & 0x3F)];
-    }
-
-    return out;
-};
-
-var compact = function compact(value) {
-    var queue = [{ obj: { o: value }, prop: 'o' }];
-    var refs = [];
-
-    for (var i = 0; i < queue.length; ++i) {
-        var item = queue[i];
-        var obj = item.obj[item.prop];
-
-        var keys = Object.keys(obj);
-        for (var j = 0; j < keys.length; ++j) {
-            var key = keys[j];
-            var val = obj[key];
-            if (typeof val === 'object' && val !== null && refs.indexOf(val) === -1) {
-                queue.push({ obj: obj, prop: key });
-                refs.push(val);
-            }
-        }
-    }
-
-    compactQueue(queue);
-
-    return value;
-};
-
-var isRegExp = function isRegExp(obj) {
-    return Object.prototype.toString.call(obj) === '[object RegExp]';
-};
-
-var isBuffer = function isBuffer(obj) {
-    if (!obj || typeof obj !== 'object') {
-        return false;
-    }
-
-    return !!(obj.constructor && obj.constructor.isBuffer && obj.constructor.isBuffer(obj));
-};
-
-var combine = function combine(a, b) {
-    return [].concat(a, b);
-};
-
-var maybeMap = function maybeMap(val, fn) {
-    if (isArray(val)) {
-        var mapped = [];
-        for (var i = 0; i < val.length; i += 1) {
-            mapped.push(fn(val[i]));
-        }
-        return mapped;
-    }
-    return fn(val);
-};
-
-module.exports = {
-    arrayToObject: arrayToObject,
-    assign: assign,
-    combine: combine,
-    compact: compact,
-    decode: decode,
-    encode: encode,
-    isBuffer: isBuffer,
-    isRegExp: isRegExp,
-    maybeMap: maybeMap,
-    merge: merge
-};
-
-},{"./formats":19}],24:[function(require,module,exports){
-'use strict';
-
-var GetIntrinsic = require('get-intrinsic');
-var callBound = require('call-bind/callBound');
-var inspect = require('object-inspect');
-
-var $TypeError = GetIntrinsic('%TypeError%');
-var $WeakMap = GetIntrinsic('%WeakMap%', true);
-var $Map = GetIntrinsic('%Map%', true);
-
-var $weakMapGet = callBound('WeakMap.prototype.get', true);
-var $weakMapSet = callBound('WeakMap.prototype.set', true);
-var $weakMapHas = callBound('WeakMap.prototype.has', true);
-var $mapGet = callBound('Map.prototype.get', true);
-var $mapSet = callBound('Map.prototype.set', true);
-var $mapHas = callBound('Map.prototype.has', true);
-
-/*
- * This function traverses the list returning the node corresponding to the
- * given key.
+var utils = require('./../utils');
+var buildURL = require('../helpers/buildURL');
+var InterceptorManager = require('./InterceptorManager');
+var dispatchRequest = require('./dispatchRequest');
+var mergeConfig = require('./mergeConfig');
+var buildFullPath = require('./buildFullPath');
+var validator = require('../helpers/validator');
+
+var validators = validator.validators;
+/**
+ * Create a new instance of Axios
  *
- * That node is also moved to the head of the list, so that if it's accessed
- * again we don't need to traverse the whole list. By doing so, all the recently
- * used nodes can be accessed relatively quickly.
+ * @param {Object} instanceConfig The default config for the instance
  */
-var listGetNode = function (list, key) { // eslint-disable-line consistent-return
-	for (var prev = list, curr; (curr = prev.next) !== null; prev = curr) {
-		if (curr.key === key) {
-			prev.next = curr.next;
-			curr.next = list.next;
-			list.next = curr; // eslint-disable-line no-param-reassign
-			return curr;
-		}
-	}
-};
-
-var listGet = function (objects, key) {
-	var node = listGetNode(objects, key);
-	return node && node.value;
-};
-var listSet = function (objects, key, value) {
-	var node = listGetNode(objects, key);
-	if (node) {
-		node.value = value;
-	} else {
-		// Prepend the new node to the beginning of the list
-		objects.next = { // eslint-disable-line no-param-reassign
-			key: key,
-			next: objects.next,
-			value: value
-		};
-	}
-};
-var listHas = function (objects, key) {
-	return !!listGetNode(objects, key);
-};
-
-module.exports = function getSideChannel() {
-	var $wm;
-	var $m;
-	var $o;
-	var channel = {
-		assert: function (key) {
-			if (!channel.has(key)) {
-				throw new $TypeError('Side channel does not contain ' + inspect(key));
-			}
-		},
-		get: function (key) { // eslint-disable-line consistent-return
-			if ($WeakMap && key && (typeof key === 'object' || typeof key === 'function')) {
-				if ($wm) {
-					return $weakMapGet($wm, key);
-				}
-			} else if ($Map) {
-				if ($m) {
-					return $mapGet($m, key);
-				}
-			} else {
-				if ($o) { // eslint-disable-line no-lonely-if
-					return listGet($o, key);
-				}
-			}
-		},
-		has: function (key) {
-			if ($WeakMap && key && (typeof key === 'object' || typeof key === 'function')) {
-				if ($wm) {
-					return $weakMapHas($wm, key);
-				}
-			} else if ($Map) {
-				if ($m) {
-					return $mapHas($m, key);
-				}
-			} else {
-				if ($o) { // eslint-disable-line no-lonely-if
-					return listHas($o, key);
-				}
-			}
-			return false;
-		},
-		set: function (key, value) {
-			if ($WeakMap && key && (typeof key === 'object' || typeof key === 'function')) {
-				if (!$wm) {
-					$wm = new $WeakMap();
-				}
-				$weakMapSet($wm, key, value);
-			} else if ($Map) {
-				if (!$m) {
-					$m = new $Map();
-				}
-				$mapSet($m, key, value);
-			} else {
-				if (!$o) {
-					/*
-					 * Initialize the linked list as an empty node, so that we don't have
-					 * to special-case handling of the first node: we can always refer to
-					 * it as (previous node).next, instead of something like (list).head
-					 */
-					$o = { key: {}, next: null };
-				}
-				listSet($o, key, value);
-			}
-		}
-	};
-	return channel;
-};
-
-},{"call-bind/callBound":8,"get-intrinsic":14,"object-inspect":18}],25:[function(require,module,exports){
-"use strict";
-
-function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
-
-function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
-
-function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
-
-function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
-
-function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it.return != null) it.return(); } finally { if (didErr) throw err; } } }; }
-
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
-
-function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
-
-function Agent() {
-  this._defaults = [];
+function Axios(instanceConfig) {
+  this.defaults = instanceConfig;
+  this.interceptors = {
+    request: new InterceptorManager(),
+    response: new InterceptorManager()
+  };
 }
 
-var _loop = function _loop() {
-  var fn = _arr[_i];
+/**
+ * Dispatch a request
+ *
+ * @param {Object} config The config specific for this request (merged with this.defaults)
+ */
+Axios.prototype.request = function request(configOrUrl, config) {
+  /*eslint no-param-reassign:0*/
+  // Allow for axios('example/url'[, config]) a la fetch API
+  if (typeof configOrUrl === 'string') {
+    config = config || {};
+    config.url = configOrUrl;
+  } else {
+    config = configOrUrl || {};
+  }
 
-  // Default setting for all requests from this agent
-  Agent.prototype[fn] = function () {
-    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
+  config = mergeConfig(this.defaults, config);
+
+  // Set config.method
+  if (config.method) {
+    config.method = config.method.toLowerCase();
+  } else if (this.defaults.method) {
+    config.method = this.defaults.method.toLowerCase();
+  } else {
+    config.method = 'get';
+  }
+
+  var transitional = config.transitional;
+
+  if (transitional !== undefined) {
+    validator.assertOptions(transitional, {
+      silentJSONParsing: validators.transitional(validators.boolean),
+      forcedJSONParsing: validators.transitional(validators.boolean),
+      clarifyTimeoutError: validators.transitional(validators.boolean)
+    }, false);
+  }
+
+  // filter out skipped interceptors
+  var requestInterceptorChain = [];
+  var synchronousRequestInterceptors = true;
+  this.interceptors.request.forEach(function unshiftRequestInterceptors(interceptor) {
+    if (typeof interceptor.runWhen === 'function' && interceptor.runWhen(config) === false) {
+      return;
     }
 
-    this._defaults.push({
-      fn: fn,
-      args: args
-    });
+    synchronousRequestInterceptors = synchronousRequestInterceptors && interceptor.synchronous;
 
-    return this;
+    requestInterceptorChain.unshift(interceptor.fulfilled, interceptor.rejected);
+  });
+
+  var responseInterceptorChain = [];
+  this.interceptors.response.forEach(function pushResponseInterceptors(interceptor) {
+    responseInterceptorChain.push(interceptor.fulfilled, interceptor.rejected);
+  });
+
+  var promise;
+
+  if (!synchronousRequestInterceptors) {
+    var chain = [dispatchRequest, undefined];
+
+    Array.prototype.unshift.apply(chain, requestInterceptorChain);
+    chain = chain.concat(responseInterceptorChain);
+
+    promise = Promise.resolve(config);
+    while (chain.length) {
+      promise = promise.then(chain.shift(), chain.shift());
+    }
+
+    return promise;
+  }
+
+
+  var newConfig = config;
+  while (requestInterceptorChain.length) {
+    var onFulfilled = requestInterceptorChain.shift();
+    var onRejected = requestInterceptorChain.shift();
+    try {
+      newConfig = onFulfilled(newConfig);
+    } catch (error) {
+      onRejected(error);
+      break;
+    }
+  }
+
+  try {
+    promise = dispatchRequest(newConfig);
+  } catch (error) {
+    return Promise.reject(error);
+  }
+
+  while (responseInterceptorChain.length) {
+    promise = promise.then(responseInterceptorChain.shift(), responseInterceptorChain.shift());
+  }
+
+  return promise;
+};
+
+Axios.prototype.getUri = function getUri(config) {
+  config = mergeConfig(this.defaults, config);
+  var fullPath = buildFullPath(config.baseURL, config.url);
+  return buildURL(fullPath, config.params, config.paramsSerializer);
+};
+
+// Provide aliases for supported request methods
+utils.forEach(['delete', 'get', 'head', 'options'], function forEachMethodNoData(method) {
+  /*eslint func-names:0*/
+  Axios.prototype[method] = function(url, config) {
+    return this.request(mergeConfig(config || {}, {
+      method: method,
+      url: url,
+      data: (config || {}).data
+    }));
+  };
+});
+
+utils.forEach(['post', 'put', 'patch'], function forEachMethodWithData(method) {
+  /*eslint func-names:0*/
+
+  function generateHTTPMethod(isForm) {
+    return function httpMethod(url, data, config) {
+      return this.request(mergeConfig(config || {}, {
+        method: method,
+        headers: isForm ? {
+          'Content-Type': 'multipart/form-data'
+        } : {},
+        url: url,
+        data: data
+      }));
+    };
+  }
+
+  Axios.prototype[method] = generateHTTPMethod();
+
+  Axios.prototype[method + 'Form'] = generateHTTPMethod(true);
+});
+
+module.exports = Axios;
+
+},{"../helpers/buildURL":25,"../helpers/validator":37,"./../utils":38,"./InterceptorManager":15,"./buildFullPath":16,"./dispatchRequest":17,"./mergeConfig":18}],14:[function(require,module,exports){
+'use strict';
+
+var utils = require('../utils');
+
+/**
+ * Create an Error with the specified message, config, error code, request and response.
+ *
+ * @param {string} message The error message.
+ * @param {string} [code] The error code (for example, 'ECONNABORTED').
+ * @param {Object} [config] The config.
+ * @param {Object} [request] The request.
+ * @param {Object} [response] The response.
+ * @returns {Error} The created error.
+ */
+function AxiosError(message, code, config, request, response) {
+  Error.call(this);
+  this.message = message;
+  this.name = 'AxiosError';
+  code && (this.code = code);
+  config && (this.config = config);
+  request && (this.request = request);
+  response && (this.response = response);
+}
+
+utils.inherits(AxiosError, Error, {
+  toJSON: function toJSON() {
+    return {
+      // Standard
+      message: this.message,
+      name: this.name,
+      // Microsoft
+      description: this.description,
+      number: this.number,
+      // Mozilla
+      fileName: this.fileName,
+      lineNumber: this.lineNumber,
+      columnNumber: this.columnNumber,
+      stack: this.stack,
+      // Axios
+      config: this.config,
+      code: this.code,
+      status: this.response && this.response.status ? this.response.status : null
+    };
+  }
+});
+
+var prototype = AxiosError.prototype;
+var descriptors = {};
+
+[
+  'ERR_BAD_OPTION_VALUE',
+  'ERR_BAD_OPTION',
+  'ECONNABORTED',
+  'ETIMEDOUT',
+  'ERR_NETWORK',
+  'ERR_FR_TOO_MANY_REDIRECTS',
+  'ERR_DEPRECATED',
+  'ERR_BAD_RESPONSE',
+  'ERR_BAD_REQUEST',
+  'ERR_CANCELED'
+// eslint-disable-next-line func-names
+].forEach(function(code) {
+  descriptors[code] = {value: code};
+});
+
+Object.defineProperties(AxiosError, descriptors);
+Object.defineProperty(prototype, 'isAxiosError', {value: true});
+
+// eslint-disable-next-line func-names
+AxiosError.from = function(error, code, config, request, response, customProps) {
+  var axiosError = Object.create(prototype);
+
+  utils.toFlatObject(error, axiosError, function filter(obj) {
+    return obj !== Error.prototype;
+  });
+
+  AxiosError.call(axiosError, error.message, code, config, request, response);
+
+  axiosError.name = error.name;
+
+  customProps && Object.assign(axiosError, customProps);
+
+  return axiosError;
+};
+
+module.exports = AxiosError;
+
+},{"../utils":38}],15:[function(require,module,exports){
+'use strict';
+
+var utils = require('./../utils');
+
+function InterceptorManager() {
+  this.handlers = [];
+}
+
+/**
+ * Add a new interceptor to the stack
+ *
+ * @param {Function} fulfilled The function to handle `then` for a `Promise`
+ * @param {Function} rejected The function to handle `reject` for a `Promise`
+ *
+ * @return {Number} An ID used to remove interceptor later
+ */
+InterceptorManager.prototype.use = function use(fulfilled, rejected, options) {
+  this.handlers.push({
+    fulfilled: fulfilled,
+    rejected: rejected,
+    synchronous: options ? options.synchronous : false,
+    runWhen: options ? options.runWhen : null
+  });
+  return this.handlers.length - 1;
+};
+
+/**
+ * Remove an interceptor from the stack
+ *
+ * @param {Number} id The ID that was returned by `use`
+ */
+InterceptorManager.prototype.eject = function eject(id) {
+  if (this.handlers[id]) {
+    this.handlers[id] = null;
+  }
+};
+
+/**
+ * Iterate over all the registered interceptors
+ *
+ * This method is particularly useful for skipping over any
+ * interceptors that may have become `null` calling `eject`.
+ *
+ * @param {Function} fn The function to call for each interceptor
+ */
+InterceptorManager.prototype.forEach = function forEach(fn) {
+  utils.forEach(this.handlers, function forEachHandler(h) {
+    if (h !== null) {
+      fn(h);
+    }
+  });
+};
+
+module.exports = InterceptorManager;
+
+},{"./../utils":38}],16:[function(require,module,exports){
+'use strict';
+
+var isAbsoluteURL = require('../helpers/isAbsoluteURL');
+var combineURLs = require('../helpers/combineURLs');
+
+/**
+ * Creates a new URL by combining the baseURL with the requestedURL,
+ * only when the requestedURL is not already an absolute URL.
+ * If the requestURL is absolute, this function returns the requestedURL untouched.
+ *
+ * @param {string} baseURL The base URL
+ * @param {string} requestedURL Absolute or relative URL to combine
+ * @returns {string} The combined full path
+ */
+module.exports = function buildFullPath(baseURL, requestedURL) {
+  if (baseURL && !isAbsoluteURL(requestedURL)) {
+    return combineURLs(baseURL, requestedURL);
+  }
+  return requestedURL;
+};
+
+},{"../helpers/combineURLs":26,"../helpers/isAbsoluteURL":28}],17:[function(require,module,exports){
+'use strict';
+
+var utils = require('./../utils');
+var transformData = require('./transformData');
+var isCancel = require('../cancel/isCancel');
+var defaults = require('../defaults');
+var CanceledError = require('../cancel/CanceledError');
+
+/**
+ * Throws a `CanceledError` if cancellation has been requested.
+ */
+function throwIfCancellationRequested(config) {
+  if (config.cancelToken) {
+    config.cancelToken.throwIfRequested();
+  }
+
+  if (config.signal && config.signal.aborted) {
+    throw new CanceledError();
+  }
+}
+
+/**
+ * Dispatch a request to the server using the configured adapter.
+ *
+ * @param {object} config The config that is to be used for the request
+ * @returns {Promise} The Promise to be fulfilled
+ */
+module.exports = function dispatchRequest(config) {
+  throwIfCancellationRequested(config);
+
+  // Ensure headers exist
+  config.headers = config.headers || {};
+
+  // Transform request data
+  config.data = transformData.call(
+    config,
+    config.data,
+    config.headers,
+    config.transformRequest
+  );
+
+  // Flatten headers
+  config.headers = utils.merge(
+    config.headers.common || {},
+    config.headers[config.method] || {},
+    config.headers
+  );
+
+  utils.forEach(
+    ['delete', 'get', 'head', 'post', 'put', 'patch', 'common'],
+    function cleanHeaderConfig(method) {
+      delete config.headers[method];
+    }
+  );
+
+  var adapter = config.adapter || defaults.adapter;
+
+  return adapter(config).then(function onAdapterResolution(response) {
+    throwIfCancellationRequested(config);
+
+    // Transform response data
+    response.data = transformData.call(
+      config,
+      response.data,
+      response.headers,
+      config.transformResponse
+    );
+
+    return response;
+  }, function onAdapterRejection(reason) {
+    if (!isCancel(reason)) {
+      throwIfCancellationRequested(config);
+
+      // Transform response data
+      if (reason && reason.response) {
+        reason.response.data = transformData.call(
+          config,
+          reason.response.data,
+          reason.response.headers,
+          config.transformResponse
+        );
+      }
+    }
+
+    return Promise.reject(reason);
+  });
+};
+
+},{"../cancel/CanceledError":11,"../cancel/isCancel":12,"../defaults":21,"./../utils":38,"./transformData":20}],18:[function(require,module,exports){
+'use strict';
+
+var utils = require('../utils');
+
+/**
+ * Config-specific merge-function which creates a new config-object
+ * by merging two configuration objects together.
+ *
+ * @param {Object} config1
+ * @param {Object} config2
+ * @returns {Object} New object resulting from merging config2 to config1
+ */
+module.exports = function mergeConfig(config1, config2) {
+  // eslint-disable-next-line no-param-reassign
+  config2 = config2 || {};
+  var config = {};
+
+  function getMergedValue(target, source) {
+    if (utils.isPlainObject(target) && utils.isPlainObject(source)) {
+      return utils.merge(target, source);
+    } else if (utils.isPlainObject(source)) {
+      return utils.merge({}, source);
+    } else if (utils.isArray(source)) {
+      return source.slice();
+    }
+    return source;
+  }
+
+  // eslint-disable-next-line consistent-return
+  function mergeDeepProperties(prop) {
+    if (!utils.isUndefined(config2[prop])) {
+      return getMergedValue(config1[prop], config2[prop]);
+    } else if (!utils.isUndefined(config1[prop])) {
+      return getMergedValue(undefined, config1[prop]);
+    }
+  }
+
+  // eslint-disable-next-line consistent-return
+  function valueFromConfig2(prop) {
+    if (!utils.isUndefined(config2[prop])) {
+      return getMergedValue(undefined, config2[prop]);
+    }
+  }
+
+  // eslint-disable-next-line consistent-return
+  function defaultToConfig2(prop) {
+    if (!utils.isUndefined(config2[prop])) {
+      return getMergedValue(undefined, config2[prop]);
+    } else if (!utils.isUndefined(config1[prop])) {
+      return getMergedValue(undefined, config1[prop]);
+    }
+  }
+
+  // eslint-disable-next-line consistent-return
+  function mergeDirectKeys(prop) {
+    if (prop in config2) {
+      return getMergedValue(config1[prop], config2[prop]);
+    } else if (prop in config1) {
+      return getMergedValue(undefined, config1[prop]);
+    }
+  }
+
+  var mergeMap = {
+    'url': valueFromConfig2,
+    'method': valueFromConfig2,
+    'data': valueFromConfig2,
+    'baseURL': defaultToConfig2,
+    'transformRequest': defaultToConfig2,
+    'transformResponse': defaultToConfig2,
+    'paramsSerializer': defaultToConfig2,
+    'timeout': defaultToConfig2,
+    'timeoutMessage': defaultToConfig2,
+    'withCredentials': defaultToConfig2,
+    'adapter': defaultToConfig2,
+    'responseType': defaultToConfig2,
+    'xsrfCookieName': defaultToConfig2,
+    'xsrfHeaderName': defaultToConfig2,
+    'onUploadProgress': defaultToConfig2,
+    'onDownloadProgress': defaultToConfig2,
+    'decompress': defaultToConfig2,
+    'maxContentLength': defaultToConfig2,
+    'maxBodyLength': defaultToConfig2,
+    'beforeRedirect': defaultToConfig2,
+    'transport': defaultToConfig2,
+    'httpAgent': defaultToConfig2,
+    'httpsAgent': defaultToConfig2,
+    'cancelToken': defaultToConfig2,
+    'socketPath': defaultToConfig2,
+    'responseEncoding': defaultToConfig2,
+    'validateStatus': mergeDirectKeys
+  };
+
+  utils.forEach(Object.keys(config1).concat(Object.keys(config2)), function computeConfigValue(prop) {
+    var merge = mergeMap[prop] || mergeDeepProperties;
+    var configValue = merge(prop);
+    (utils.isUndefined(configValue) && merge !== mergeDirectKeys) || (config[prop] = configValue);
+  });
+
+  return config;
+};
+
+},{"../utils":38}],19:[function(require,module,exports){
+'use strict';
+
+var AxiosError = require('./AxiosError');
+
+/**
+ * Resolve or reject a Promise based on response status.
+ *
+ * @param {Function} resolve A function that resolves the promise.
+ * @param {Function} reject A function that rejects the promise.
+ * @param {object} response The response.
+ */
+module.exports = function settle(resolve, reject, response) {
+  var validateStatus = response.config.validateStatus;
+  if (!response.status || !validateStatus || validateStatus(response.status)) {
+    resolve(response);
+  } else {
+    reject(new AxiosError(
+      'Request failed with status code ' + response.status,
+      [AxiosError.ERR_BAD_REQUEST, AxiosError.ERR_BAD_RESPONSE][Math.floor(response.status / 100) - 4],
+      response.config,
+      response.request,
+      response
+    ));
+  }
+};
+
+},{"./AxiosError":14}],20:[function(require,module,exports){
+'use strict';
+
+var utils = require('./../utils');
+var defaults = require('../defaults');
+
+/**
+ * Transform the data for a request or a response
+ *
+ * @param {Object|String} data The data to be transformed
+ * @param {Array} headers The headers for the request or response
+ * @param {Array|Function} fns A single function or Array of functions
+ * @returns {*} The resulting transformed data
+ */
+module.exports = function transformData(data, headers, fns) {
+  var context = this || defaults;
+  /*eslint no-param-reassign:0*/
+  utils.forEach(fns, function transform(fn) {
+    data = fn.call(context, data, headers);
+  });
+
+  return data;
+};
+
+},{"../defaults":21,"./../utils":38}],21:[function(require,module,exports){
+(function (process){(function (){
+'use strict';
+
+var utils = require('../utils');
+var normalizeHeaderName = require('../helpers/normalizeHeaderName');
+var AxiosError = require('../core/AxiosError');
+var transitionalDefaults = require('./transitional');
+var toFormData = require('../helpers/toFormData');
+
+var DEFAULT_CONTENT_TYPE = {
+  'Content-Type': 'application/x-www-form-urlencoded'
+};
+
+function setContentTypeIfUnset(headers, value) {
+  if (!utils.isUndefined(headers) && utils.isUndefined(headers['Content-Type'])) {
+    headers['Content-Type'] = value;
+  }
+}
+
+function getDefaultAdapter() {
+  var adapter;
+  if (typeof XMLHttpRequest !== 'undefined') {
+    // For browsers use XHR adapter
+    adapter = require('../adapters/xhr');
+  } else if (typeof process !== 'undefined' && Object.prototype.toString.call(process) === '[object process]') {
+    // For node use HTTP adapter
+    adapter = require('../adapters/http');
+  }
+  return adapter;
+}
+
+function stringifySafely(rawValue, parser, encoder) {
+  if (utils.isString(rawValue)) {
+    try {
+      (parser || JSON.parse)(rawValue);
+      return utils.trim(rawValue);
+    } catch (e) {
+      if (e.name !== 'SyntaxError') {
+        throw e;
+      }
+    }
+  }
+
+  return (encoder || JSON.stringify)(rawValue);
+}
+
+var defaults = {
+
+  transitional: transitionalDefaults,
+
+  adapter: getDefaultAdapter(),
+
+  transformRequest: [function transformRequest(data, headers) {
+    normalizeHeaderName(headers, 'Accept');
+    normalizeHeaderName(headers, 'Content-Type');
+
+    if (utils.isFormData(data) ||
+      utils.isArrayBuffer(data) ||
+      utils.isBuffer(data) ||
+      utils.isStream(data) ||
+      utils.isFile(data) ||
+      utils.isBlob(data)
+    ) {
+      return data;
+    }
+    if (utils.isArrayBufferView(data)) {
+      return data.buffer;
+    }
+    if (utils.isURLSearchParams(data)) {
+      setContentTypeIfUnset(headers, 'application/x-www-form-urlencoded;charset=utf-8');
+      return data.toString();
+    }
+
+    var isObjectPayload = utils.isObject(data);
+    var contentType = headers && headers['Content-Type'];
+
+    var isFileList;
+
+    if ((isFileList = utils.isFileList(data)) || (isObjectPayload && contentType === 'multipart/form-data')) {
+      var _FormData = this.env && this.env.FormData;
+      return toFormData(isFileList ? {'files[]': data} : data, _FormData && new _FormData());
+    } else if (isObjectPayload || contentType === 'application/json') {
+      setContentTypeIfUnset(headers, 'application/json');
+      return stringifySafely(data);
+    }
+
+    return data;
+  }],
+
+  transformResponse: [function transformResponse(data) {
+    var transitional = this.transitional || defaults.transitional;
+    var silentJSONParsing = transitional && transitional.silentJSONParsing;
+    var forcedJSONParsing = transitional && transitional.forcedJSONParsing;
+    var strictJSONParsing = !silentJSONParsing && this.responseType === 'json';
+
+    if (strictJSONParsing || (forcedJSONParsing && utils.isString(data) && data.length)) {
+      try {
+        return JSON.parse(data);
+      } catch (e) {
+        if (strictJSONParsing) {
+          if (e.name === 'SyntaxError') {
+            throw AxiosError.from(e, AxiosError.ERR_BAD_RESPONSE, this, null, this.response);
+          }
+          throw e;
+        }
+      }
+    }
+
+    return data;
+  }],
+
+  /**
+   * A timeout in milliseconds to abort a request. If set to 0 (default) a
+   * timeout is not created.
+   */
+  timeout: 0,
+
+  xsrfCookieName: 'XSRF-TOKEN',
+  xsrfHeaderName: 'X-XSRF-TOKEN',
+
+  maxContentLength: -1,
+  maxBodyLength: -1,
+
+  env: {
+    FormData: require('./env/FormData')
+  },
+
+  validateStatus: function validateStatus(status) {
+    return status >= 200 && status < 300;
+  },
+
+  headers: {
+    common: {
+      'Accept': 'application/json, text/plain, */*'
+    }
+  }
+};
+
+utils.forEach(['delete', 'get', 'head'], function forEachMethodNoData(method) {
+  defaults.headers[method] = {};
+});
+
+utils.forEach(['post', 'put', 'patch'], function forEachMethodWithData(method) {
+  defaults.headers[method] = utils.merge(DEFAULT_CONTENT_TYPE);
+});
+
+module.exports = defaults;
+
+}).call(this)}).call(this,require('_process'))
+},{"../adapters/http":8,"../adapters/xhr":8,"../core/AxiosError":14,"../helpers/normalizeHeaderName":31,"../helpers/toFormData":36,"../utils":38,"./env/FormData":32,"./transitional":22,"_process":6}],22:[function(require,module,exports){
+'use strict';
+
+module.exports = {
+  silentJSONParsing: true,
+  forcedJSONParsing: true,
+  clarifyTimeoutError: false
+};
+
+},{}],23:[function(require,module,exports){
+module.exports = {
+  "version": "0.27.2"
+};
+},{}],24:[function(require,module,exports){
+'use strict';
+
+module.exports = function bind(fn, thisArg) {
+  return function wrap() {
+    var args = new Array(arguments.length);
+    for (var i = 0; i < args.length; i++) {
+      args[i] = arguments[i];
+    }
+    return fn.apply(thisArg, args);
   };
 };
 
-for (var _i = 0, _arr = ['use', 'on', 'once', 'set', 'query', 'type', 'accept', 'auth', 'withCredentials', 'sortQuery', 'retry', 'ok', 'redirects', 'timeout', 'buffer', 'serialize', 'parse', 'ca', 'key', 'pfx', 'cert', 'disableTLSCerts']; _i < _arr.length; _i++) {
-  _loop();
+},{}],25:[function(require,module,exports){
+'use strict';
+
+var utils = require('./../utils');
+
+function encode(val) {
+  return encodeURIComponent(val).
+    replace(/%3A/gi, ':').
+    replace(/%24/g, '$').
+    replace(/%2C/gi, ',').
+    replace(/%20/g, '+').
+    replace(/%5B/gi, '[').
+    replace(/%5D/gi, ']');
 }
 
-Agent.prototype._setDefaults = function (request) {
-  var _iterator = _createForOfIteratorHelper(this._defaults),
-      _step;
+/**
+ * Build a URL by appending params to the end
+ *
+ * @param {string} url The base of the url (e.g., http://www.google.com)
+ * @param {object} [params] The params to be appended
+ * @returns {string} The formatted url
+ */
+module.exports = function buildURL(url, params, paramsSerializer) {
+  /*eslint no-param-reassign:0*/
+  if (!params) {
+    return url;
+  }
 
-  try {
-    for (_iterator.s(); !(_step = _iterator.n()).done;) {
-      var def = _step.value;
-      request[def.fn].apply(request, _toConsumableArray(def.args));
+  var serializedParams;
+  if (paramsSerializer) {
+    serializedParams = paramsSerializer(params);
+  } else if (utils.isURLSearchParams(params)) {
+    serializedParams = params.toString();
+  } else {
+    var parts = [];
+
+    utils.forEach(params, function serialize(val, key) {
+      if (val === null || typeof val === 'undefined') {
+        return;
+      }
+
+      if (utils.isArray(val)) {
+        key = key + '[]';
+      } else {
+        val = [val];
+      }
+
+      utils.forEach(val, function parseValue(v) {
+        if (utils.isDate(v)) {
+          v = v.toISOString();
+        } else if (utils.isObject(v)) {
+          v = JSON.stringify(v);
+        }
+        parts.push(encode(key) + '=' + encode(v));
+      });
+    });
+
+    serializedParams = parts.join('&');
+  }
+
+  if (serializedParams) {
+    var hashmarkIndex = url.indexOf('#');
+    if (hashmarkIndex !== -1) {
+      url = url.slice(0, hashmarkIndex);
     }
-  } catch (err) {
-    _iterator.e(err);
-  } finally {
-    _iterator.f();
+
+    url += (url.indexOf('?') === -1 ? '?' : '&') + serializedParams;
   }
+
+  return url;
 };
 
-module.exports = Agent;
-
-},{}],26:[function(require,module,exports){
-"use strict";
-
-function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
-
-function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it.return != null) it.return(); } finally { if (didErr) throw err; } } }; }
-
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
-
-function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+},{"./../utils":38}],26:[function(require,module,exports){
+'use strict';
 
 /**
- * Root reference for iframes.
- */
-var root;
-
-if (typeof window !== 'undefined') {
-  // Browser window
-  root = window;
-} else if (typeof self === 'undefined') {
-  // Other environments
-  console.warn('Using browser-only version of superagent in non-browser environment');
-  root = void 0;
-} else {
-  // Web Worker
-  root = self;
-}
-
-var Emitter = require('component-emitter');
-
-var safeStringify = require('fast-safe-stringify');
-
-var qs = require('qs');
-
-var RequestBase = require('./request-base');
-
-var _require = require('./utils'),
-    isObject = _require.isObject,
-    mixin = _require.mixin,
-    hasOwn = _require.hasOwn;
-
-var ResponseBase = require('./response-base');
-
-var Agent = require('./agent-base');
-/**
- * Noop.
- */
-
-
-function noop() {}
-/**
- * Expose `request`.
- */
-
-
-module.exports = function (method, url) {
-  // callback
-  if (typeof url === 'function') {
-    return new exports.Request('GET', method).end(url);
-  } // url first
-
-
-  if (arguments.length === 1) {
-    return new exports.Request('GET', method);
-  }
-
-  return new exports.Request(method, url);
-};
-
-exports = module.exports;
-var request = exports;
-exports.Request = Request;
-/**
- * Determine XHR.
- */
-
-request.getXHR = function () {
-  if (root.XMLHttpRequest && (!root.location || root.location.protocol !== 'file:' || !root.ActiveXObject)) {
-    return new XMLHttpRequest();
-  }
-
-  try {
-    return new ActiveXObject('Microsoft.XMLHTTP');
-  } catch (_unused) {
-    /**/
-  }
-
-  try {
-    return new ActiveXObject('Msxml2.XMLHTTP.6.0');
-  } catch (_unused2) {
-    /**/
-  }
-
-  try {
-    return new ActiveXObject('Msxml2.XMLHTTP.3.0');
-  } catch (_unused3) {
-    /**/
-  }
-
-  try {
-    return new ActiveXObject('Msxml2.XMLHTTP');
-  } catch (_unused4) {
-    /**/
-  }
-
-  throw new Error('Browser-only version of superagent could not find XHR');
-};
-/**
- * Removes leading and trailing whitespace, added to support IE.
+ * Creates a new URL by combining the specified URLs
  *
- * @param {String} s
- * @return {String}
- * @api private
+ * @param {string} baseURL The base URL
+ * @param {string} relativeURL The relative URL
+ * @returns {string} The combined URL
  */
-
-
-var trim = ''.trim ? function (s) {
-  return s.trim();
-} : function (s) {
-  return s.replace(/(^\s*|\s*$)/g, '');
+module.exports = function combineURLs(baseURL, relativeURL) {
+  return relativeURL
+    ? baseURL.replace(/\/+$/, '') + '/' + relativeURL.replace(/^\/+/, '')
+    : baseURL;
 };
+
+},{}],27:[function(require,module,exports){
+'use strict';
+
+var utils = require('./../utils');
+
+module.exports = (
+  utils.isStandardBrowserEnv() ?
+
+  // Standard browser envs support document.cookie
+    (function standardBrowserEnv() {
+      return {
+        write: function write(name, value, expires, path, domain, secure) {
+          var cookie = [];
+          cookie.push(name + '=' + encodeURIComponent(value));
+
+          if (utils.isNumber(expires)) {
+            cookie.push('expires=' + new Date(expires).toGMTString());
+          }
+
+          if (utils.isString(path)) {
+            cookie.push('path=' + path);
+          }
+
+          if (utils.isString(domain)) {
+            cookie.push('domain=' + domain);
+          }
+
+          if (secure === true) {
+            cookie.push('secure');
+          }
+
+          document.cookie = cookie.join('; ');
+        },
+
+        read: function read(name) {
+          var match = document.cookie.match(new RegExp('(^|;\\s*)(' + name + ')=([^;]*)'));
+          return (match ? decodeURIComponent(match[3]) : null);
+        },
+
+        remove: function remove(name) {
+          this.write(name, '', Date.now() - 86400000);
+        }
+      };
+    })() :
+
+  // Non standard browser env (web workers, react-native) lack needed support.
+    (function nonStandardBrowserEnv() {
+      return {
+        write: function write() {},
+        read: function read() { return null; },
+        remove: function remove() {}
+      };
+    })()
+);
+
+},{"./../utils":38}],28:[function(require,module,exports){
+'use strict';
+
 /**
- * Serialize the given `obj`.
+ * Determines whether the specified URL is absolute
  *
+ * @param {string} url The URL to test
+ * @returns {boolean} True if the specified URL is absolute, otherwise false
+ */
+module.exports = function isAbsoluteURL(url) {
+  // A URL is considered absolute if it begins with "<scheme>://" or "//" (protocol-relative URL).
+  // RFC 3986 defines scheme name as a sequence of characters beginning with a letter and followed
+  // by any combination of letters, digits, plus, period, or hyphen.
+  return /^([a-z][a-z\d+\-.]*:)?\/\//i.test(url);
+};
+
+},{}],29:[function(require,module,exports){
+'use strict';
+
+var utils = require('./../utils');
+
+/**
+ * Determines whether the payload is an error thrown by Axios
+ *
+ * @param {*} payload The value to test
+ * @returns {boolean} True if the payload is an error thrown by Axios, otherwise false
+ */
+module.exports = function isAxiosError(payload) {
+  return utils.isObject(payload) && (payload.isAxiosError === true);
+};
+
+},{"./../utils":38}],30:[function(require,module,exports){
+'use strict';
+
+var utils = require('./../utils');
+
+module.exports = (
+  utils.isStandardBrowserEnv() ?
+
+  // Standard browser envs have full support of the APIs needed to test
+  // whether the request URL is of the same origin as current location.
+    (function standardBrowserEnv() {
+      var msie = /(msie|trident)/i.test(navigator.userAgent);
+      var urlParsingNode = document.createElement('a');
+      var originURL;
+
+      /**
+    * Parse a URL to discover it's components
+    *
+    * @param {String} url The URL to be parsed
+    * @returns {Object}
+    */
+      function resolveURL(url) {
+        var href = url;
+
+        if (msie) {
+        // IE needs attribute set twice to normalize properties
+          urlParsingNode.setAttribute('href', href);
+          href = urlParsingNode.href;
+        }
+
+        urlParsingNode.setAttribute('href', href);
+
+        // urlParsingNode provides the UrlUtils interface - http://url.spec.whatwg.org/#urlutils
+        return {
+          href: urlParsingNode.href,
+          protocol: urlParsingNode.protocol ? urlParsingNode.protocol.replace(/:$/, '') : '',
+          host: urlParsingNode.host,
+          search: urlParsingNode.search ? urlParsingNode.search.replace(/^\?/, '') : '',
+          hash: urlParsingNode.hash ? urlParsingNode.hash.replace(/^#/, '') : '',
+          hostname: urlParsingNode.hostname,
+          port: urlParsingNode.port,
+          pathname: (urlParsingNode.pathname.charAt(0) === '/') ?
+            urlParsingNode.pathname :
+            '/' + urlParsingNode.pathname
+        };
+      }
+
+      originURL = resolveURL(window.location.href);
+
+      /**
+    * Determine if a URL shares the same origin as the current location
+    *
+    * @param {String} requestURL The URL to test
+    * @returns {boolean} True if URL shares the same origin, otherwise false
+    */
+      return function isURLSameOrigin(requestURL) {
+        var parsed = (utils.isString(requestURL)) ? resolveURL(requestURL) : requestURL;
+        return (parsed.protocol === originURL.protocol &&
+            parsed.host === originURL.host);
+      };
+    })() :
+
+  // Non standard browser envs (web workers, react-native) lack needed support.
+    (function nonStandardBrowserEnv() {
+      return function isURLSameOrigin() {
+        return true;
+      };
+    })()
+);
+
+},{"./../utils":38}],31:[function(require,module,exports){
+'use strict';
+
+var utils = require('../utils');
+
+module.exports = function normalizeHeaderName(headers, normalizedName) {
+  utils.forEach(headers, function processHeader(value, name) {
+    if (name !== normalizedName && name.toUpperCase() === normalizedName.toUpperCase()) {
+      headers[normalizedName] = value;
+      delete headers[name];
+    }
+  });
+};
+
+},{"../utils":38}],32:[function(require,module,exports){
+// eslint-disable-next-line strict
+module.exports = null;
+
+},{}],33:[function(require,module,exports){
+'use strict';
+
+var utils = require('./../utils');
+
+// Headers whose duplicates are ignored by node
+// c.f. https://nodejs.org/api/http.html#http_message_headers
+var ignoreDuplicateOf = [
+  'age', 'authorization', 'content-length', 'content-type', 'etag',
+  'expires', 'from', 'host', 'if-modified-since', 'if-unmodified-since',
+  'last-modified', 'location', 'max-forwards', 'proxy-authorization',
+  'referer', 'retry-after', 'user-agent'
+];
+
+/**
+ * Parse headers into an object
+ *
+ * ```
+ * Date: Wed, 27 Aug 2014 08:58:49 GMT
+ * Content-Type: application/json
+ * Connection: keep-alive
+ * Transfer-Encoding: chunked
+ * ```
+ *
+ * @param {String} headers Headers needing to be parsed
+ * @returns {Object} Headers parsed into an object
+ */
+module.exports = function parseHeaders(headers) {
+  var parsed = {};
+  var key;
+  var val;
+  var i;
+
+  if (!headers) { return parsed; }
+
+  utils.forEach(headers.split('\n'), function parser(line) {
+    i = line.indexOf(':');
+    key = utils.trim(line.substr(0, i)).toLowerCase();
+    val = utils.trim(line.substr(i + 1));
+
+    if (key) {
+      if (parsed[key] && ignoreDuplicateOf.indexOf(key) >= 0) {
+        return;
+      }
+      if (key === 'set-cookie') {
+        parsed[key] = (parsed[key] ? parsed[key] : []).concat([val]);
+      } else {
+        parsed[key] = parsed[key] ? parsed[key] + ', ' + val : val;
+      }
+    }
+  });
+
+  return parsed;
+};
+
+},{"./../utils":38}],34:[function(require,module,exports){
+'use strict';
+
+module.exports = function parseProtocol(url) {
+  var match = /^([-+\w]{1,25})(:?\/\/|:)/.exec(url);
+  return match && match[1] || '';
+};
+
+},{}],35:[function(require,module,exports){
+'use strict';
+
+/**
+ * Syntactic sugar for invoking a function and expanding an array for arguments.
+ *
+ * Common use case would be to use `Function.prototype.apply`.
+ *
+ *  ```js
+ *  function f(x, y, z) {}
+ *  var args = [1, 2, 3];
+ *  f.apply(null, args);
+ *  ```
+ *
+ * With `spread` this example can be re-written.
+ *
+ *  ```js
+ *  spread(function(x, y, z) {})([1, 2, 3]);
+ *  ```
+ *
+ * @param {Function} callback
+ * @returns {Function}
+ */
+module.exports = function spread(callback) {
+  return function wrap(arr) {
+    return callback.apply(null, arr);
+  };
+};
+
+},{}],36:[function(require,module,exports){
+(function (Buffer){(function (){
+'use strict';
+
+var utils = require('../utils');
+
+/**
+ * Convert a data object to FormData
  * @param {Object} obj
- * @return {String}
- * @api private
- */
+ * @param {?Object} [formData]
+ * @returns {Object}
+ **/
 
-function serialize(object) {
-  if (!isObject(object)) return object;
-  var pairs = [];
+function toFormData(obj, formData) {
+  // eslint-disable-next-line no-param-reassign
+  formData = formData || new FormData();
 
-  for (var key in object) {
-    if (hasOwn(object, key)) pushEncodedKeyValuePair(pairs, key, object[key]);
+  var stack = [];
+
+  function convertValue(value) {
+    if (value === null) return '';
+
+    if (utils.isDate(value)) {
+      return value.toISOString();
+    }
+
+    if (utils.isArrayBuffer(value) || utils.isTypedArray(value)) {
+      return typeof Blob === 'function' ? new Blob([value]) : Buffer.from(value);
+    }
+
+    return value;
   }
 
-  return pairs.join('&');
+  function build(data, parentKey) {
+    if (utils.isPlainObject(data) || utils.isArray(data)) {
+      if (stack.indexOf(data) !== -1) {
+        throw Error('Circular reference detected in ' + parentKey);
+      }
+
+      stack.push(data);
+
+      utils.forEach(data, function each(value, key) {
+        if (utils.isUndefined(value)) return;
+        var fullKey = parentKey ? parentKey + '.' + key : key;
+        var arr;
+
+        if (value && !parentKey && typeof value === 'object') {
+          if (utils.endsWith(key, '{}')) {
+            // eslint-disable-next-line no-param-reassign
+            value = JSON.stringify(value);
+          } else if (utils.endsWith(key, '[]') && (arr = utils.toArray(value))) {
+            // eslint-disable-next-line func-names
+            arr.forEach(function(el) {
+              !utils.isUndefined(el) && formData.append(fullKey, convertValue(el));
+            });
+            return;
+          }
+        }
+
+        build(value, fullKey);
+      });
+
+      stack.pop();
+    } else {
+      formData.append(parentKey, convertValue(data));
+    }
+  }
+
+  build(obj);
+
+  return formData;
 }
+
+module.exports = toFormData;
+
+}).call(this)}).call(this,require("buffer").Buffer)
+},{"../utils":38,"buffer":2}],37:[function(require,module,exports){
+'use strict';
+
+var VERSION = require('../env/data').version;
+var AxiosError = require('../core/AxiosError');
+
+var validators = {};
+
+// eslint-disable-next-line func-names
+['object', 'boolean', 'number', 'function', 'string', 'symbol'].forEach(function(type, i) {
+  validators[type] = function validator(thing) {
+    return typeof thing === type || 'a' + (i < 1 ? 'n ' : ' ') + type;
+  };
+});
+
+var deprecatedWarnings = {};
+
 /**
- * Helps 'serialize' with serializing arrays.
- * Mutates the pairs array.
- *
- * @param {Array} pairs
- * @param {String} key
- * @param {Mixed} val
+ * Transitional option validator
+ * @param {function|boolean?} validator - set to false if the transitional option has been removed
+ * @param {string?} version - deprecated version / removed since version
+ * @param {string?} message - some message with additional info
+ * @returns {function}
+ */
+validators.transitional = function transitional(validator, version, message) {
+  function formatMessage(opt, desc) {
+    return '[Axios v' + VERSION + '] Transitional option \'' + opt + '\'' + desc + (message ? '. ' + message : '');
+  }
+
+  // eslint-disable-next-line func-names
+  return function(value, opt, opts) {
+    if (validator === false) {
+      throw new AxiosError(
+        formatMessage(opt, ' has been removed' + (version ? ' in ' + version : '')),
+        AxiosError.ERR_DEPRECATED
+      );
+    }
+
+    if (version && !deprecatedWarnings[opt]) {
+      deprecatedWarnings[opt] = true;
+      // eslint-disable-next-line no-console
+      console.warn(
+        formatMessage(
+          opt,
+          ' has been deprecated since v' + version + ' and will be removed in the near future'
+        )
+      );
+    }
+
+    return validator ? validator(value, opt, opts) : true;
+  };
+};
+
+/**
+ * Assert object's properties type
+ * @param {object} options
+ * @param {object} schema
+ * @param {boolean?} allowUnknown
  */
 
+function assertOptions(options, schema, allowUnknown) {
+  if (typeof options !== 'object') {
+    throw new AxiosError('options must be an object', AxiosError.ERR_BAD_OPTION_VALUE);
+  }
+  var keys = Object.keys(options);
+  var i = keys.length;
+  while (i-- > 0) {
+    var opt = keys[i];
+    var validator = schema[opt];
+    if (validator) {
+      var value = options[opt];
+      var result = value === undefined || validator(value, opt, options);
+      if (result !== true) {
+        throw new AxiosError('option ' + opt + ' must be ' + result, AxiosError.ERR_BAD_OPTION_VALUE);
+      }
+      continue;
+    }
+    if (allowUnknown !== true) {
+      throw new AxiosError('Unknown option ' + opt, AxiosError.ERR_BAD_OPTION);
+    }
+  }
+}
 
-function pushEncodedKeyValuePair(pairs, key, value) {
-  if (value === undefined) return;
+module.exports = {
+  assertOptions: assertOptions,
+  validators: validators
+};
 
-  if (value === null) {
-    pairs.push(encodeURI(key));
+},{"../core/AxiosError":14,"../env/data":23}],38:[function(require,module,exports){
+'use strict';
+
+var bind = require('./helpers/bind');
+
+// utils is a library of generic helper functions non-specific to axios
+
+var toString = Object.prototype.toString;
+
+// eslint-disable-next-line func-names
+var kindOf = (function(cache) {
+  // eslint-disable-next-line func-names
+  return function(thing) {
+    var str = toString.call(thing);
+    return cache[str] || (cache[str] = str.slice(8, -1).toLowerCase());
+  };
+})(Object.create(null));
+
+function kindOfTest(type) {
+  type = type.toLowerCase();
+  return function isKindOf(thing) {
+    return kindOf(thing) === type;
+  };
+}
+
+/**
+ * Determine if a value is an Array
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is an Array, otherwise false
+ */
+function isArray(val) {
+  return Array.isArray(val);
+}
+
+/**
+ * Determine if a value is undefined
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if the value is undefined, otherwise false
+ */
+function isUndefined(val) {
+  return typeof val === 'undefined';
+}
+
+/**
+ * Determine if a value is a Buffer
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is a Buffer, otherwise false
+ */
+function isBuffer(val) {
+  return val !== null && !isUndefined(val) && val.constructor !== null && !isUndefined(val.constructor)
+    && typeof val.constructor.isBuffer === 'function' && val.constructor.isBuffer(val);
+}
+
+/**
+ * Determine if a value is an ArrayBuffer
+ *
+ * @function
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is an ArrayBuffer, otherwise false
+ */
+var isArrayBuffer = kindOfTest('ArrayBuffer');
+
+
+/**
+ * Determine if a value is a view on an ArrayBuffer
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is a view on an ArrayBuffer, otherwise false
+ */
+function isArrayBufferView(val) {
+  var result;
+  if ((typeof ArrayBuffer !== 'undefined') && (ArrayBuffer.isView)) {
+    result = ArrayBuffer.isView(val);
+  } else {
+    result = (val) && (val.buffer) && (isArrayBuffer(val.buffer));
+  }
+  return result;
+}
+
+/**
+ * Determine if a value is a String
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is a String, otherwise false
+ */
+function isString(val) {
+  return typeof val === 'string';
+}
+
+/**
+ * Determine if a value is a Number
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is a Number, otherwise false
+ */
+function isNumber(val) {
+  return typeof val === 'number';
+}
+
+/**
+ * Determine if a value is an Object
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is an Object, otherwise false
+ */
+function isObject(val) {
+  return val !== null && typeof val === 'object';
+}
+
+/**
+ * Determine if a value is a plain Object
+ *
+ * @param {Object} val The value to test
+ * @return {boolean} True if value is a plain Object, otherwise false
+ */
+function isPlainObject(val) {
+  if (kindOf(val) !== 'object') {
+    return false;
+  }
+
+  var prototype = Object.getPrototypeOf(val);
+  return prototype === null || prototype === Object.prototype;
+}
+
+/**
+ * Determine if a value is a Date
+ *
+ * @function
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is a Date, otherwise false
+ */
+var isDate = kindOfTest('Date');
+
+/**
+ * Determine if a value is a File
+ *
+ * @function
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is a File, otherwise false
+ */
+var isFile = kindOfTest('File');
+
+/**
+ * Determine if a value is a Blob
+ *
+ * @function
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is a Blob, otherwise false
+ */
+var isBlob = kindOfTest('Blob');
+
+/**
+ * Determine if a value is a FileList
+ *
+ * @function
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is a File, otherwise false
+ */
+var isFileList = kindOfTest('FileList');
+
+/**
+ * Determine if a value is a Function
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is a Function, otherwise false
+ */
+function isFunction(val) {
+  return toString.call(val) === '[object Function]';
+}
+
+/**
+ * Determine if a value is a Stream
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is a Stream, otherwise false
+ */
+function isStream(val) {
+  return isObject(val) && isFunction(val.pipe);
+}
+
+/**
+ * Determine if a value is a FormData
+ *
+ * @param {Object} thing The value to test
+ * @returns {boolean} True if value is an FormData, otherwise false
+ */
+function isFormData(thing) {
+  var pattern = '[object FormData]';
+  return thing && (
+    (typeof FormData === 'function' && thing instanceof FormData) ||
+    toString.call(thing) === pattern ||
+    (isFunction(thing.toString) && thing.toString() === pattern)
+  );
+}
+
+/**
+ * Determine if a value is a URLSearchParams object
+ * @function
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is a URLSearchParams object, otherwise false
+ */
+var isURLSearchParams = kindOfTest('URLSearchParams');
+
+/**
+ * Trim excess whitespace off the beginning and end of a string
+ *
+ * @param {String} str The String to trim
+ * @returns {String} The String freed of excess whitespace
+ */
+function trim(str) {
+  return str.trim ? str.trim() : str.replace(/^\s+|\s+$/g, '');
+}
+
+/**
+ * Determine if we're running in a standard browser environment
+ *
+ * This allows axios to run in a web worker, and react-native.
+ * Both environments support XMLHttpRequest, but not fully standard globals.
+ *
+ * web workers:
+ *  typeof window -> undefined
+ *  typeof document -> undefined
+ *
+ * react-native:
+ *  navigator.product -> 'ReactNative'
+ * nativescript
+ *  navigator.product -> 'NativeScript' or 'NS'
+ */
+function isStandardBrowserEnv() {
+  if (typeof navigator !== 'undefined' && (navigator.product === 'ReactNative' ||
+                                           navigator.product === 'NativeScript' ||
+                                           navigator.product === 'NS')) {
+    return false;
+  }
+  return (
+    typeof window !== 'undefined' &&
+    typeof document !== 'undefined'
+  );
+}
+
+/**
+ * Iterate over an Array or an Object invoking a function for each item.
+ *
+ * If `obj` is an Array callback will be called passing
+ * the value, index, and complete array for each item.
+ *
+ * If 'obj' is an Object callback will be called passing
+ * the value, key, and complete object for each property.
+ *
+ * @param {Object|Array} obj The object to iterate
+ * @param {Function} fn The callback to invoke for each item
+ */
+function forEach(obj, fn) {
+  // Don't bother if no value provided
+  if (obj === null || typeof obj === 'undefined') {
     return;
   }
 
-  if (Array.isArray(value)) {
-    var _iterator = _createForOfIteratorHelper(value),
-        _step;
+  // Force an array if not already something iterable
+  if (typeof obj !== 'object') {
+    /*eslint no-param-reassign:0*/
+    obj = [obj];
+  }
 
-    try {
-      for (_iterator.s(); !(_step = _iterator.n()).done;) {
-        var v = _step.value;
-        pushEncodedKeyValuePair(pairs, key, v);
-      }
-    } catch (err) {
-      _iterator.e(err);
-    } finally {
-      _iterator.f();
-    }
-  } else if (isObject(value)) {
-    for (var subkey in value) {
-      if (hasOwn(value, subkey)) pushEncodedKeyValuePair(pairs, "".concat(key, "[").concat(subkey, "]"), value[subkey]);
+  if (isArray(obj)) {
+    // Iterate over array values
+    for (var i = 0, l = obj.length; i < l; i++) {
+      fn.call(null, obj[i], i, obj);
     }
   } else {
-    pairs.push(encodeURI(key) + '=' + encodeURIComponent(value));
-  }
-}
-/**
- * Expose serialization method.
- */
-
-
-request.serializeObject = serialize;
-/**
- * Parse the given x-www-form-urlencoded `str`.
- *
- * @param {String} str
- * @return {Object}
- * @api private
- */
-
-function parseString(string_) {
-  var object = {};
-  var pairs = string_.split('&');
-  var pair;
-  var pos;
-
-  for (var i = 0, length_ = pairs.length; i < length_; ++i) {
-    pair = pairs[i];
-    pos = pair.indexOf('=');
-
-    if (pos === -1) {
-      object[decodeURIComponent(pair)] = '';
-    } else {
-      object[decodeURIComponent(pair.slice(0, pos))] = decodeURIComponent(pair.slice(pos + 1));
-    }
-  }
-
-  return object;
-}
-/**
- * Expose parser.
- */
-
-
-request.parseString = parseString;
-/**
- * Default MIME type map.
- *
- *     superagent.types.xml = 'application/xml';
- *
- */
-
-request.types = {
-  html: 'text/html',
-  json: 'application/json',
-  xml: 'text/xml',
-  urlencoded: 'application/x-www-form-urlencoded',
-  form: 'application/x-www-form-urlencoded',
-  'form-data': 'application/x-www-form-urlencoded'
-};
-/**
- * Default serialization map.
- *
- *     superagent.serialize['application/xml'] = function(obj){
- *       return 'generated xml here';
- *     };
- *
- */
-
-request.serialize = {
-  'application/x-www-form-urlencoded': qs.stringify,
-  'application/json': safeStringify
-};
-/**
- * Default parsers.
- *
- *     superagent.parse['application/xml'] = function(str){
- *       return { object parsed from str };
- *     };
- *
- */
-
-request.parse = {
-  'application/x-www-form-urlencoded': parseString,
-  'application/json': JSON.parse
-};
-/**
- * Parse the given header `str` into
- * an object containing the mapped fields.
- *
- * @param {String} str
- * @return {Object}
- * @api private
- */
-
-function parseHeader(string_) {
-  var lines = string_.split(/\r?\n/);
-  var fields = {};
-  var index;
-  var line;
-  var field;
-  var value;
-
-  for (var i = 0, length_ = lines.length; i < length_; ++i) {
-    line = lines[i];
-    index = line.indexOf(':');
-
-    if (index === -1) {
-      // could be empty line, just skip it
-      continue;
-    }
-
-    field = line.slice(0, index).toLowerCase();
-    value = trim(line.slice(index + 1));
-    fields[field] = value;
-  }
-
-  return fields;
-}
-/**
- * Check if `mime` is json or has +json structured syntax suffix.
- *
- * @param {String} mime
- * @return {Boolean}
- * @api private
- */
-
-
-function isJSON(mime) {
-  // should match /json or +json
-  // but not /json-seq
-  return /[/+]json($|[^-\w])/i.test(mime);
-}
-/**
- * Initialize a new `Response` with the given `xhr`.
- *
- *  - set flags (.ok, .error, etc)
- *  - parse header
- *
- * Examples:
- *
- *  Aliasing `superagent` as `request` is nice:
- *
- *      request = superagent;
- *
- *  We can use the promise-like API, or pass callbacks:
- *
- *      request.get('/').end(function(res){});
- *      request.get('/', function(res){});
- *
- *  Sending data can be chained:
- *
- *      request
- *        .post('/user')
- *        .send({ name: 'tj' })
- *        .end(function(res){});
- *
- *  Or passed to `.send()`:
- *
- *      request
- *        .post('/user')
- *        .send({ name: 'tj' }, function(res){});
- *
- *  Or passed to `.post()`:
- *
- *      request
- *        .post('/user', { name: 'tj' })
- *        .end(function(res){});
- *
- * Or further reduced to a single call for simple cases:
- *
- *      request
- *        .post('/user', { name: 'tj' }, function(res){});
- *
- * @param {XMLHTTPRequest} xhr
- * @param {Object} options
- * @api private
- */
-
-
-function Response(request_) {
-  this.req = request_;
-  this.xhr = this.req.xhr; // responseText is accessible only if responseType is '' or 'text' and on older browsers
-
-  this.text = this.req.method !== 'HEAD' && (this.xhr.responseType === '' || this.xhr.responseType === 'text') || typeof this.xhr.responseType === 'undefined' ? this.xhr.responseText : null;
-  this.statusText = this.req.xhr.statusText;
-  var status = this.xhr.status; // handle IE9 bug: http://stackoverflow.com/questions/10046972/msie-returns-status-code-of-1223-for-ajax-request
-
-  if (status === 1223) {
-    status = 204;
-  }
-
-  this._setStatusProperties(status);
-
-  this.headers = parseHeader(this.xhr.getAllResponseHeaders());
-  this.header = this.headers; // getAllResponseHeaders sometimes falsely returns "" for CORS requests, but
-  // getResponseHeader still works. so we get content-type even if getting
-  // other headers fails.
-
-  this.header['content-type'] = this.xhr.getResponseHeader('content-type');
-
-  this._setHeaderProperties(this.header);
-
-  if (this.text === null && request_._responseType) {
-    this.body = this.xhr.response;
-  } else {
-    this.body = this.req.method === 'HEAD' ? null : this._parseBody(this.text ? this.text : this.xhr.response);
-  }
-}
-
-mixin(Response.prototype, ResponseBase.prototype);
-/**
- * Parse the given body `str`.
- *
- * Used for auto-parsing of bodies. Parsers
- * are defined on the `superagent.parse` object.
- *
- * @param {String} str
- * @return {Mixed}
- * @api private
- */
-
-Response.prototype._parseBody = function (string_) {
-  var parse = request.parse[this.type];
-
-  if (this.req._parser) {
-    return this.req._parser(this, string_);
-  }
-
-  if (!parse && isJSON(this.type)) {
-    parse = request.parse['application/json'];
-  }
-
-  return parse && string_ && (string_.length > 0 || string_ instanceof Object) ? parse(string_) : null;
-};
-/**
- * Return an `Error` representative of this response.
- *
- * @return {Error}
- * @api public
- */
-
-
-Response.prototype.toError = function () {
-  var req = this.req;
-  var method = req.method;
-  var url = req.url;
-  var message = "cannot ".concat(method, " ").concat(url, " (").concat(this.status, ")");
-  var error = new Error(message);
-  error.status = this.status;
-  error.method = method;
-  error.url = url;
-  return error;
-};
-/**
- * Expose `Response`.
- */
-
-
-request.Response = Response;
-/**
- * Initialize a new `Request` with the given `method` and `url`.
- *
- * @param {String} method
- * @param {String} url
- * @api public
- */
-
-function Request(method, url) {
-  var self = this;
-  this._query = this._query || [];
-  this.method = method;
-  this.url = url;
-  this.header = {}; // preserves header name case
-
-  this._header = {}; // coerces header names to lowercase
-
-  this.on('end', function () {
-    var error = null;
-    var res = null;
-
-    try {
-      res = new Response(self);
-    } catch (err) {
-      error = new Error('Parser is unable to parse the response');
-      error.parse = true;
-      error.original = err; // issue #675: return the raw response if the response parsing fails
-
-      if (self.xhr) {
-        // ie9 doesn't have 'response' property
-        error.rawResponse = typeof self.xhr.responseType === 'undefined' ? self.xhr.responseText : self.xhr.response; // issue #876: return the http status code if the response parsing fails
-
-        error.status = self.xhr.status ? self.xhr.status : null;
-        error.statusCode = error.status; // backwards-compat only
-      } else {
-        error.rawResponse = null;
-        error.status = null;
-      }
-
-      return self.callback(error);
-    }
-
-    self.emit('response', res);
-    var new_error;
-
-    try {
-      if (!self._isResponseOK(res)) {
-        new_error = new Error(res.statusText || res.text || 'Unsuccessful HTTP response');
-      }
-    } catch (err) {
-      new_error = err; // ok() callback can throw
-    } // #1000 don't catch errors from the callback to avoid double calling it
-
-
-    if (new_error) {
-      new_error.original = error;
-      new_error.response = res;
-      new_error.status = res.status;
-      self.callback(new_error, res);
-    } else {
-      self.callback(null, res);
-    }
-  });
-}
-/**
- * Mixin `Emitter` and `RequestBase`.
- */
-// eslint-disable-next-line new-cap
-
-
-Emitter(Request.prototype);
-mixin(Request.prototype, RequestBase.prototype);
-/**
- * Set Content-Type to `type`, mapping values from `request.types`.
- *
- * Examples:
- *
- *      superagent.types.xml = 'application/xml';
- *
- *      request.post('/')
- *        .type('xml')
- *        .send(xmlstring)
- *        .end(callback);
- *
- *      request.post('/')
- *        .type('application/xml')
- *        .send(xmlstring)
- *        .end(callback);
- *
- * @param {String} type
- * @return {Request} for chaining
- * @api public
- */
-
-Request.prototype.type = function (type) {
-  this.set('Content-Type', request.types[type] || type);
-  return this;
-};
-/**
- * Set Accept to `type`, mapping values from `request.types`.
- *
- * Examples:
- *
- *      superagent.types.json = 'application/json';
- *
- *      request.get('/agent')
- *        .accept('json')
- *        .end(callback);
- *
- *      request.get('/agent')
- *        .accept('application/json')
- *        .end(callback);
- *
- * @param {String} accept
- * @return {Request} for chaining
- * @api public
- */
-
-
-Request.prototype.accept = function (type) {
-  this.set('Accept', request.types[type] || type);
-  return this;
-};
-/**
- * Set Authorization field value with `user` and `pass`.
- *
- * @param {String} user
- * @param {String} [pass] optional in case of using 'bearer' as type
- * @param {Object} options with 'type' property 'auto', 'basic' or 'bearer' (default 'basic')
- * @return {Request} for chaining
- * @api public
- */
-
-
-Request.prototype.auth = function (user, pass, options) {
-  if (arguments.length === 1) pass = '';
-
-  if (_typeof(pass) === 'object' && pass !== null) {
-    // pass is optional and can be replaced with options
-    options = pass;
-    pass = '';
-  }
-
-  if (!options) {
-    options = {
-      type: typeof btoa === 'function' ? 'basic' : 'auto'
-    };
-  }
-
-  var encoder = options.encoder ? options.encoder : function (string) {
-    if (typeof btoa === 'function') {
-      return btoa(string);
-    }
-
-    throw new Error('Cannot use basic auth, btoa is not a function');
-  };
-  return this._auth(user, pass, options, encoder);
-};
-/**
- * Add query-string `val`.
- *
- * Examples:
- *
- *   request.get('/shoes')
- *     .query('size=10')
- *     .query({ color: 'blue' })
- *
- * @param {Object|String} val
- * @return {Request} for chaining
- * @api public
- */
-
-
-Request.prototype.query = function (value) {
-  if (typeof value !== 'string') value = serialize(value);
-  if (value) this._query.push(value);
-  return this;
-};
-/**
- * Queue the given `file` as an attachment to the specified `field`,
- * with optional `options` (or filename).
- *
- * ``` js
- * request.post('/upload')
- *   .attach('content', new Blob(['<a id="a"><b id="b">hey!</b></a>'], { type: "text/html"}))
- *   .end(callback);
- * ```
- *
- * @param {String} field
- * @param {Blob|File} file
- * @param {String|Object} options
- * @return {Request} for chaining
- * @api public
- */
-
-
-Request.prototype.attach = function (field, file, options) {
-  if (file) {
-    if (this._data) {
-      throw new Error("superagent can't mix .send() and .attach()");
-    }
-
-    this._getFormData().append(field, file, options || file.name);
-  }
-
-  return this;
-};
-
-Request.prototype._getFormData = function () {
-  if (!this._formData) {
-    this._formData = new root.FormData();
-  }
-
-  return this._formData;
-};
-/**
- * Invoke the callback with `err` and `res`
- * and handle arity check.
- *
- * @param {Error} err
- * @param {Response} res
- * @api private
- */
-
-
-Request.prototype.callback = function (error, res) {
-  if (this._shouldRetry(error, res)) {
-    return this._retry();
-  }
-
-  var fn = this._callback;
-  this.clearTimeout();
-
-  if (error) {
-    if (this._maxRetries) error.retries = this._retries - 1;
-    this.emit('error', error);
-  }
-
-  fn(error, res);
-};
-/**
- * Invoke callback with x-domain error.
- *
- * @api private
- */
-
-
-Request.prototype.crossDomainError = function () {
-  var error = new Error('Request has been terminated\nPossible causes: the network is offline, Origin is not allowed by Access-Control-Allow-Origin, the page is being unloaded, etc.');
-  error.crossDomain = true;
-  error.status = this.status;
-  error.method = this.method;
-  error.url = this.url;
-  this.callback(error);
-}; // This only warns, because the request is still likely to work
-
-
-Request.prototype.agent = function () {
-  console.warn('This is not supported in browser version of superagent');
-  return this;
-};
-
-Request.prototype.ca = Request.prototype.agent;
-Request.prototype.buffer = Request.prototype.ca; // This throws, because it can't send/receive data as expected
-
-Request.prototype.write = function () {
-  throw new Error('Streaming is not supported in browser version of superagent');
-};
-
-Request.prototype.pipe = Request.prototype.write;
-/**
- * Check if `obj` is a host object,
- * we don't want to serialize these :)
- *
- * @param {Object} obj host object
- * @return {Boolean} is a host object
- * @api private
- */
-
-Request.prototype._isHost = function (object) {
-  // Native objects stringify to [object File], [object Blob], [object FormData], etc.
-  return object && _typeof(object) === 'object' && !Array.isArray(object) && Object.prototype.toString.call(object) !== '[object Object]';
-};
-/**
- * Initiate request, invoking callback `fn(res)`
- * with an instanceof `Response`.
- *
- * @param {Function} fn
- * @return {Request} for chaining
- * @api public
- */
-
-
-Request.prototype.end = function (fn) {
-  if (this._endCalled) {
-    console.warn('Warning: .end() was called twice. This is not supported in superagent');
-  }
-
-  this._endCalled = true; // store callback
-
-  this._callback = fn || noop; // querystring
-
-  this._finalizeQueryString();
-
-  this._end();
-};
-
-Request.prototype._setUploadTimeout = function () {
-  var self = this; // upload timeout it's wokrs only if deadline timeout is off
-
-  if (this._uploadTimeout && !this._uploadTimeoutTimer) {
-    this._uploadTimeoutTimer = setTimeout(function () {
-      self._timeoutError('Upload timeout of ', self._uploadTimeout, 'ETIMEDOUT');
-    }, this._uploadTimeout);
-  }
-}; // eslint-disable-next-line complexity
-
-
-Request.prototype._end = function () {
-  if (this._aborted) return this.callback(new Error('The request has been aborted even before .end() was called'));
-  var self = this;
-  this.xhr = request.getXHR();
-  var xhr = this.xhr;
-  var data = this._formData || this._data;
-
-  this._setTimeouts(); // state change
-
-
-  xhr.addEventListener('readystatechange', function () {
-    var readyState = xhr.readyState;
-
-    if (readyState >= 2 && self._responseTimeoutTimer) {
-      clearTimeout(self._responseTimeoutTimer);
-    }
-
-    if (readyState !== 4) {
-      return;
-    } // In IE9, reads to any property (e.g. status) off of an aborted XHR will
-    // result in the error "Could not complete the operation due to error c00c023f"
-
-
-    var status;
-
-    try {
-      status = xhr.status;
-    } catch (_unused5) {
-      status = 0;
-    }
-
-    if (!status) {
-      if (self.timedout || self._aborted) return;
-      return self.crossDomainError();
-    }
-
-    self.emit('end');
-  }); // progress
-
-  var handleProgress = function handleProgress(direction, e) {
-    if (e.total > 0) {
-      e.percent = e.loaded / e.total * 100;
-
-      if (e.percent === 100) {
-        clearTimeout(self._uploadTimeoutTimer);
-      }
-    }
-
-    e.direction = direction;
-    self.emit('progress', e);
-  };
-
-  if (this.hasListeners('progress')) {
-    try {
-      xhr.addEventListener('progress', handleProgress.bind(null, 'download'));
-
-      if (xhr.upload) {
-        xhr.upload.addEventListener('progress', handleProgress.bind(null, 'upload'));
-      }
-    } catch (_unused6) {// Accessing xhr.upload fails in IE from a web worker, so just pretend it doesn't exist.
-      // Reported here:
-      // https://connect.microsoft.com/IE/feedback/details/837245/xmlhttprequest-upload-throws-invalid-argument-when-used-from-web-worker-context
-    }
-  }
-
-  if (xhr.upload) {
-    this._setUploadTimeout();
-  } // initiate request
-
-
-  try {
-    if (this.username && this.password) {
-      xhr.open(this.method, this.url, true, this.username, this.password);
-    } else {
-      xhr.open(this.method, this.url, true);
-    }
-  } catch (err) {
-    // see #1149
-    return this.callback(err);
-  } // CORS
-
-
-  if (this._withCredentials) xhr.withCredentials = true; // body
-
-  if (!this._formData && this.method !== 'GET' && this.method !== 'HEAD' && typeof data !== 'string' && !this._isHost(data)) {
-    // serialize stuff
-    var contentType = this._header['content-type'];
-
-    var _serialize = this._serializer || request.serialize[contentType ? contentType.split(';')[0] : ''];
-
-    if (!_serialize && isJSON(contentType)) {
-      _serialize = request.serialize['application/json'];
-    }
-
-    if (_serialize) data = _serialize(data);
-  } // set header fields
-
-
-  for (var field in this.header) {
-    if (this.header[field] === null) continue;
-    if (hasOwn(this.header, field)) xhr.setRequestHeader(field, this.header[field]);
-  }
-
-  if (this._responseType) {
-    xhr.responseType = this._responseType;
-  } // send stuff
-
-
-  this.emit('request', this); // IE11 xhr.send(undefined) sends 'undefined' string as POST payload (instead of nothing)
-  // We need null here if data is undefined
-
-  xhr.send(typeof data === 'undefined' ? null : data);
-};
-
-request.agent = function () {
-  return new Agent();
-};
-
-var _loop = function _loop() {
-  var method = _arr[_i];
-
-  Agent.prototype[method.toLowerCase()] = function (url, fn) {
-    var request_ = new request.Request(method, url);
-
-    this._setDefaults(request_);
-
-    if (fn) {
-      request_.end(fn);
-    }
-
-    return request_;
-  };
-};
-
-for (var _i = 0, _arr = ['GET', 'POST', 'OPTIONS', 'PATCH', 'PUT', 'DELETE']; _i < _arr.length; _i++) {
-  _loop();
-}
-
-Agent.prototype.del = Agent.prototype.delete;
-/**
- * GET `url` with optional callback `fn(res)`.
- *
- * @param {String} url
- * @param {Mixed|Function} [data] or fn
- * @param {Function} [fn]
- * @return {Request}
- * @api public
- */
-
-request.get = function (url, data, fn) {
-  var request_ = request('GET', url);
-
-  if (typeof data === 'function') {
-    fn = data;
-    data = null;
-  }
-
-  if (data) request_.query(data);
-  if (fn) request_.end(fn);
-  return request_;
-};
-/**
- * HEAD `url` with optional callback `fn(res)`.
- *
- * @param {String} url
- * @param {Mixed|Function} [data] or fn
- * @param {Function} [fn]
- * @return {Request}
- * @api public
- */
-
-
-request.head = function (url, data, fn) {
-  var request_ = request('HEAD', url);
-
-  if (typeof data === 'function') {
-    fn = data;
-    data = null;
-  }
-
-  if (data) request_.query(data);
-  if (fn) request_.end(fn);
-  return request_;
-};
-/**
- * OPTIONS query to `url` with optional callback `fn(res)`.
- *
- * @param {String} url
- * @param {Mixed|Function} [data] or fn
- * @param {Function} [fn]
- * @return {Request}
- * @api public
- */
-
-
-request.options = function (url, data, fn) {
-  var request_ = request('OPTIONS', url);
-
-  if (typeof data === 'function') {
-    fn = data;
-    data = null;
-  }
-
-  if (data) request_.send(data);
-  if (fn) request_.end(fn);
-  return request_;
-};
-/**
- * DELETE `url` with optional `data` and callback `fn(res)`.
- *
- * @param {String} url
- * @param {Mixed} [data]
- * @param {Function} [fn]
- * @return {Request}
- * @api public
- */
-
-
-function del(url, data, fn) {
-  var request_ = request('DELETE', url);
-
-  if (typeof data === 'function') {
-    fn = data;
-    data = null;
-  }
-
-  if (data) request_.send(data);
-  if (fn) request_.end(fn);
-  return request_;
-}
-
-request.del = del;
-request.delete = del;
-/**
- * PATCH `url` with optional `data` and callback `fn(res)`.
- *
- * @param {String} url
- * @param {Mixed} [data]
- * @param {Function} [fn]
- * @return {Request}
- * @api public
- */
-
-request.patch = function (url, data, fn) {
-  var request_ = request('PATCH', url);
-
-  if (typeof data === 'function') {
-    fn = data;
-    data = null;
-  }
-
-  if (data) request_.send(data);
-  if (fn) request_.end(fn);
-  return request_;
-};
-/**
- * POST `url` with optional `data` and callback `fn(res)`.
- *
- * @param {String} url
- * @param {Mixed} [data]
- * @param {Function} [fn]
- * @return {Request}
- * @api public
- */
-
-
-request.post = function (url, data, fn) {
-  var request_ = request('POST', url);
-
-  if (typeof data === 'function') {
-    fn = data;
-    data = null;
-  }
-
-  if (data) request_.send(data);
-  if (fn) request_.end(fn);
-  return request_;
-};
-/**
- * PUT `url` with optional `data` and callback `fn(res)`.
- *
- * @param {String} url
- * @param {Mixed|Function} [data] or fn
- * @param {Function} [fn]
- * @return {Request}
- * @api public
- */
-
-
-request.put = function (url, data, fn) {
-  var request_ = request('PUT', url);
-
-  if (typeof data === 'function') {
-    fn = data;
-    data = null;
-  }
-
-  if (data) request_.send(data);
-  if (fn) request_.end(fn);
-  return request_;
-};
-
-},{"./agent-base":25,"./request-base":27,"./response-base":28,"./utils":29,"component-emitter":10,"fast-safe-stringify":11,"qs":20}],27:[function(require,module,exports){
-(function (process){(function (){
-"use strict";
-
-function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
-
-var semver = require('semver');
-/**
- * Module of mixed-in functions shared between node and client code
- */
-
-
-var _require = require('./utils'),
-    isObject = _require.isObject,
-    hasOwn = _require.hasOwn;
-/**
- * Expose `RequestBase`.
- */
-
-
-module.exports = RequestBase;
-/**
- * Initialize a new `RequestBase`.
- *
- * @api public
- */
-
-function RequestBase() {}
-/**
- * Clear previous timeout.
- *
- * @return {Request} for chaining
- * @api public
- */
-
-
-RequestBase.prototype.clearTimeout = function () {
-  clearTimeout(this._timer);
-  clearTimeout(this._responseTimeoutTimer);
-  clearTimeout(this._uploadTimeoutTimer);
-  delete this._timer;
-  delete this._responseTimeoutTimer;
-  delete this._uploadTimeoutTimer;
-  return this;
-};
-/**
- * Override default response body parser
- *
- * This function will be called to convert incoming data into request.body
- *
- * @param {Function}
- * @api public
- */
-
-
-RequestBase.prototype.parse = function (fn) {
-  this._parser = fn;
-  return this;
-};
-/**
- * Set format of binary response body.
- * In browser valid formats are 'blob' and 'arraybuffer',
- * which return Blob and ArrayBuffer, respectively.
- *
- * In Node all values result in Buffer.
- *
- * Examples:
- *
- *      req.get('/')
- *        .responseType('blob')
- *        .end(callback);
- *
- * @param {String} val
- * @return {Request} for chaining
- * @api public
- */
-
-
-RequestBase.prototype.responseType = function (value) {
-  this._responseType = value;
-  return this;
-};
-/**
- * Override default request body serializer
- *
- * This function will be called to convert data set via .send or .attach into payload to send
- *
- * @param {Function}
- * @api public
- */
-
-
-RequestBase.prototype.serialize = function (fn) {
-  this._serializer = fn;
-  return this;
-};
-/**
- * Set timeouts.
- *
- * - response timeout is time between sending request and receiving the first byte of the response. Includes DNS and connection time.
- * - deadline is the time from start of the request to receiving response body in full. If the deadline is too short large files may not load at all on slow connections.
- * - upload is the time  since last bit of data was sent or received. This timeout works only if deadline timeout is off
- *
- * Value of 0 or false means no timeout.
- *
- * @param {Number|Object} ms or {response, deadline}
- * @return {Request} for chaining
- * @api public
- */
-
-
-RequestBase.prototype.timeout = function (options) {
-  if (!options || _typeof(options) !== 'object') {
-    this._timeout = options;
-    this._responseTimeout = 0;
-    this._uploadTimeout = 0;
-    return this;
-  }
-
-  for (var option in options) {
-    if (hasOwn(options, option)) {
-      switch (option) {
-        case 'deadline':
-          this._timeout = options.deadline;
-          break;
-
-        case 'response':
-          this._responseTimeout = options.response;
-          break;
-
-        case 'upload':
-          this._uploadTimeout = options.upload;
-          break;
-
-        default:
-          console.warn('Unknown timeout option', option);
+    // Iterate over object keys
+    for (var key in obj) {
+      if (Object.prototype.hasOwnProperty.call(obj, key)) {
+        fn.call(null, obj[key], key, obj);
       }
     }
   }
-
-  return this;
-};
-/**
- * Set number of retry attempts on error.
- *
- * Failed requests will be retried 'count' times if timeout or err.code >= 500.
- *
- * @param {Number} count
- * @param {Function} [fn]
- * @return {Request} for chaining
- * @api public
- */
-
-
-RequestBase.prototype.retry = function (count, fn) {
-  // Default to 1 if no count passed or true
-  if (arguments.length === 0 || count === true) count = 1;
-  if (count <= 0) count = 0;
-  this._maxRetries = count;
-  this._retries = 0;
-  this._retryCallback = fn;
-  return this;
-}; //
-// NOTE: we do not include ESOCKETTIMEDOUT because that is from `request` package
-//       <https://github.com/sindresorhus/got/pull/537>
-//
-// NOTE: we do not include EADDRINFO because it was removed from libuv in 2014
-//       <https://github.com/libuv/libuv/commit/02e1ebd40b807be5af46343ea873331b2ee4e9c1>
-//       <https://github.com/request/request/search?q=ESOCKETTIMEDOUT&unscoped_q=ESOCKETTIMEDOUT>
-//
-//
-// TODO: expose these as configurable defaults
-//
-
-
-var ERROR_CODES = new Set(['ETIMEDOUT', 'ECONNRESET', 'EADDRINUSE', 'ECONNREFUSED', 'EPIPE', 'ENOTFOUND', 'ENETUNREACH', 'EAI_AGAIN']);
-var STATUS_CODES = new Set([408, 413, 429, 500, 502, 503, 504, 521, 522, 524]); // TODO: we would need to make this easily configurable before adding it in (e.g. some might want to add POST)
-// const METHODS = new Set(['GET', 'PUT', 'HEAD', 'DELETE', 'OPTIONS', 'TRACE']);
+}
 
 /**
- * Determine if a request should be retried.
- * (Inspired by https://github.com/sindresorhus/got#retry)
+ * Accepts varargs expecting each argument to be an object, then
+ * immutably merges the properties of each object and returns result.
  *
- * @param {Error} err an error
- * @param {Response} [res] response
- * @returns {Boolean} if segment should be retried
- */
-
-RequestBase.prototype._shouldRetry = function (error, res) {
-  if (!this._maxRetries || this._retries++ >= this._maxRetries) {
-    return false;
-  }
-
-  if (this._retryCallback) {
-    try {
-      var override = this._retryCallback(error, res);
-
-      if (override === true) return true;
-      if (override === false) return false; // undefined falls back to defaults
-    } catch (err) {
-      console.error(err);
-    }
-  } // TODO: we would need to make this easily configurable before adding it in (e.g. some might want to add POST)
-
-  /*
-  if (
-    this.req &&
-    this.req.method &&
-    !METHODS.has(this.req.method.toUpperCase())
-  )
-    return false;
-  */
-
-
-  if (res && res.status && STATUS_CODES.has(res.status)) return true;
-
-  if (error) {
-    if (error.code && ERROR_CODES.has(error.code)) return true; // Superagent timeout
-
-    if (error.timeout && error.code === 'ECONNABORTED') return true;
-    if (error.crossDomain) return true;
-  }
-
-  return false;
-};
-/**
- * Retry request
- *
- * @return {Request} for chaining
- * @api private
- */
-
-
-RequestBase.prototype._retry = function () {
-  this.clearTimeout(); // node
-
-  if (this.req) {
-    this.req = null;
-    this.req = this.request();
-  }
-
-  this._aborted = false;
-  this.timedout = false;
-  this.timedoutError = null;
-  return this._end();
-};
-/**
- * Promise support
- *
- * @param {Function} resolve
- * @param {Function} [reject]
- * @return {Request}
- */
-
-
-RequestBase.prototype.then = function (resolve, reject) {
-  var _this = this;
-
-  if (!this._fullfilledPromise) {
-    var self = this;
-
-    if (this._endCalled) {
-      console.warn('Warning: superagent request was sent twice, because both .end() and .then() were called. Never call .end() if you use promises');
-    }
-
-    this._fullfilledPromise = new Promise(function (resolve, reject) {
-      self.on('abort', function () {
-        if (_this._maxRetries && _this._maxRetries > _this._retries) {
-          return;
-        }
-
-        if (_this.timedout && _this.timedoutError) {
-          reject(_this.timedoutError);
-          return;
-        }
-
-        var error = new Error('Aborted');
-        error.code = 'ABORTED';
-        error.status = _this.status;
-        error.method = _this.method;
-        error.url = _this.url;
-        reject(error);
-      });
-      self.end(function (error, res) {
-        if (error) reject(error);else resolve(res);
-      });
-    });
-  }
-
-  return this._fullfilledPromise.then(resolve, reject);
-};
-
-RequestBase.prototype.catch = function (callback) {
-  return this.then(undefined, callback);
-};
-/**
- * Allow for extension
- */
-
-
-RequestBase.prototype.use = function (fn) {
-  fn(this);
-  return this;
-};
-
-RequestBase.prototype.ok = function (callback) {
-  if (typeof callback !== 'function') throw new Error('Callback required');
-  this._okCallback = callback;
-  return this;
-};
-
-RequestBase.prototype._isResponseOK = function (res) {
-  if (!res) {
-    return false;
-  }
-
-  if (this._okCallback) {
-    return this._okCallback(res);
-  }
-
-  return res.status >= 200 && res.status < 300;
-};
-/**
- * Get request header `field`.
- * Case-insensitive.
- *
- * @param {String} field
- * @return {String}
- * @api public
- */
-
-
-RequestBase.prototype.get = function (field) {
-  return this._header[field.toLowerCase()];
-};
-/**
- * Get case-insensitive header `field` value.
- * This is a deprecated internal API. Use `.get(field)` instead.
- *
- * (getHeader is no longer used internally by the superagent code base)
- *
- * @param {String} field
- * @return {String}
- * @api private
- * @deprecated
- */
-
-
-RequestBase.prototype.getHeader = RequestBase.prototype.get;
-/**
- * Set header `field` to `val`, or multiple fields with one object.
- * Case-insensitive.
- *
- * Examples:
- *
- *      req.get('/')
- *        .set('Accept', 'application/json')
- *        .set('X-API-Key', 'foobar')
- *        .end(callback);
- *
- *      req.get('/')
- *        .set({ Accept: 'application/json', 'X-API-Key': 'foobar' })
- *        .end(callback);
- *
- * @param {String|Object} field
- * @param {String} val
- * @return {Request} for chaining
- * @api public
- */
-
-RequestBase.prototype.set = function (field, value) {
-  if (isObject(field)) {
-    for (var key in field) {
-      if (hasOwn(field, key)) this.set(key, field[key]);
-    }
-
-    return this;
-  }
-
-  this._header[field.toLowerCase()] = value;
-  this.header[field] = value;
-  return this;
-};
-/**
- * Remove header `field`.
- * Case-insensitive.
+ * When multiple objects contain the same key the later object in
+ * the arguments list will take precedence.
  *
  * Example:
  *
- *      req.get('/')
- *        .unset('User-Agent')
- *        .end(callback);
- *
- * @param {String} field field name
- */
-
-
-RequestBase.prototype.unset = function (field) {
-  delete this._header[field.toLowerCase()];
-  delete this.header[field];
-  return this;
-};
-/**
- * Write the field `name` and `val`, or multiple fields with one object
- * for "multipart/form-data" request bodies.
- *
- * ``` js
- * request.post('/upload')
- *   .field('foo', 'bar')
- *   .end(callback);
- *
- * request.post('/upload')
- *   .field({ foo: 'bar', baz: 'qux' })
- *   .end(callback);
+ * ```js
+ * var result = merge({foo: 123}, {foo: 456});
+ * console.log(result.foo); // outputs 456
  * ```
  *
- * @param {String|Object} name name of field
- * @param {String|Blob|File|Buffer|fs.ReadStream} val value of field
- * @param {String} options extra options, e.g. 'blob'
- * @return {Request} for chaining
- * @api public
+ * @param {Object} obj1 Object to merge
+ * @returns {Object} Result of all merge properties
  */
-
-
-RequestBase.prototype.field = function (name, value, options) {
-  // name should be either a string or an object.
-  if (name === null || undefined === name) {
-    throw new Error('.field(name, val) name can not be empty');
-  }
-
-  if (this._data) {
-    throw new Error(".field() can't be used if .send() is used. Please use only .send() or only .field() & .attach()");
-  }
-
-  if (isObject(name)) {
-    for (var key in name) {
-      if (hasOwn(name, key)) this.field(key, name[key]);
-    }
-
-    return this;
-  }
-
-  if (Array.isArray(value)) {
-    for (var i in value) {
-      if (hasOwn(value, i)) this.field(name, value[i]);
-    }
-
-    return this;
-  } // val should be defined now
-
-
-  if (value === null || undefined === value) {
-    throw new Error('.field(name, val) val can not be empty');
-  }
-
-  if (typeof value === 'boolean') {
-    value = String(value);
-  }
-
-  this._getFormData().append(name, value, options);
-
-  return this;
-};
-/**
- * Abort the request, and clear potential timeout.
- *
- * @return {Request} request
- * @api public
- */
-
-
-RequestBase.prototype.abort = function () {
-  if (this._aborted) {
-    return this;
-  }
-
-  this._aborted = true;
-  if (this.xhr) this.xhr.abort(); // browser
-
-  if (this.req) {
-    // Node v13 has major differences in `abort()`
-    // https://github.com/nodejs/node/blob/v12.x/lib/internal/streams/end-of-stream.js
-    // https://github.com/nodejs/node/blob/v13.x/lib/internal/streams/end-of-stream.js
-    // https://github.com/nodejs/node/blob/v14.x/lib/internal/streams/end-of-stream.js
-    // (if you run a diff across these you will see the differences)
-    //
-    // References:
-    // <https://github.com/nodejs/node/issues/31630>
-    // <https://github.com/visionmedia/superagent/pull/1084/commits/dc18679a7c5ccfc6046d882015e5126888973bc8>
-    //
-    // Thanks to @shadowgate15 and @niftylettuce
-    if (semver.gte(process.version, 'v13.0.0') && semver.lt(process.version, 'v14.0.0')) {
-      // Note that the reason this doesn't work is because in v13 as compared to v14
-      // there is no `callback = nop` set in end-of-stream.js above
-      throw new Error('Superagent does not work in v13 properly with abort() due to Node.js core changes');
-    } else if (semver.gte(process.version, 'v14.0.0')) {
-      // We have to manually set `destroyed` to `true` in order for this to work
-      // (see core internals of end-of-stream.js above in v14 branch as compared to v12)
-      this.req.destroyed = true;
-    }
-
-    this.req.abort(); // node
-  }
-
-  this.clearTimeout();
-  this.emit('abort');
-  return this;
-};
-
-RequestBase.prototype._auth = function (user, pass, options, base64Encoder) {
-  switch (options.type) {
-    case 'basic':
-      this.set('Authorization', "Basic ".concat(base64Encoder("".concat(user, ":").concat(pass))));
-      break;
-
-    case 'auto':
-      this.username = user;
-      this.password = pass;
-      break;
-
-    case 'bearer':
-      // usage would be .auth(accessToken, { type: 'bearer' })
-      this.set('Authorization', "Bearer ".concat(user));
-      break;
-
-    default:
-      break;
-  }
-
-  return this;
-};
-/**
- * Enable transmission of cookies with x-domain requests.
- *
- * Note that for this to work the origin must not be
- * using "Access-Control-Allow-Origin" with a wildcard,
- * and also must set "Access-Control-Allow-Credentials"
- * to "true".
- *
- * @api public
- */
-
-
-RequestBase.prototype.withCredentials = function (on) {
-  // This is browser-only functionality. Node side is no-op.
-  if (on === undefined) on = true;
-  this._withCredentials = on;
-  return this;
-};
-/**
- * Set the max redirects to `n`. Does nothing in browser XHR implementation.
- *
- * @param {Number} n
- * @return {Request} for chaining
- * @api public
- */
-
-
-RequestBase.prototype.redirects = function (n) {
-  this._maxRedirects = n;
-  return this;
-};
-/**
- * Maximum size of buffered response body, in bytes. Counts uncompressed size.
- * Default 200MB.
- *
- * @param {Number} n number of bytes
- * @return {Request} for chaining
- */
-
-
-RequestBase.prototype.maxResponseSize = function (n) {
-  if (typeof n !== 'number') {
-    throw new TypeError('Invalid argument');
-  }
-
-  this._maxResponseSize = n;
-  return this;
-};
-/**
- * Convert to a plain javascript object (not JSON string) of scalar properties.
- * Note as this method is designed to return a useful non-this value,
- * it cannot be chained.
- *
- * @return {Object} describing method, url, and data of this request
- * @api public
- */
-
-
-RequestBase.prototype.toJSON = function () {
-  return {
-    method: this.method,
-    url: this.url,
-    data: this._data,
-    headers: this._header
-  };
-};
-/**
- * Send `data` as the request body, defaulting the `.type()` to "json" when
- * an object is given.
- *
- * Examples:
- *
- *       // manual json
- *       request.post('/user')
- *         .type('json')
- *         .send('{"name":"tj"}')
- *         .end(callback)
- *
- *       // auto json
- *       request.post('/user')
- *         .send({ name: 'tj' })
- *         .end(callback)
- *
- *       // manual x-www-form-urlencoded
- *       request.post('/user')
- *         .type('form')
- *         .send('name=tj')
- *         .end(callback)
- *
- *       // auto x-www-form-urlencoded
- *       request.post('/user')
- *         .type('form')
- *         .send({ name: 'tj' })
- *         .end(callback)
- *
- *       // defaults to x-www-form-urlencoded
- *      request.post('/user')
- *        .send('name=tobi')
- *        .send('species=ferret')
- *        .end(callback)
- *
- * @param {String|Object} data
- * @return {Request} for chaining
- * @api public
- */
-// eslint-disable-next-line complexity
-
-
-RequestBase.prototype.send = function (data) {
-  var isObject_ = isObject(data);
-  var type = this._header['content-type'];
-
-  if (this._formData) {
-    throw new Error(".send() can't be used if .attach() or .field() is used. Please use only .send() or only .field() & .attach()");
-  }
-
-  if (isObject_ && !this._data) {
-    if (Array.isArray(data)) {
-      this._data = [];
-    } else if (!this._isHost(data)) {
-      this._data = {};
-    }
-  } else if (data && this._data && this._isHost(this._data)) {
-    throw new Error("Can't merge these send calls");
-  } // merge
-
-
-  if (isObject_ && isObject(this._data)) {
-    for (var key in data) {
-      if (hasOwn(data, key)) this._data[key] = data[key];
-    }
-  } else if (typeof data === 'string') {
-    // default to x-www-form-urlencoded
-    if (!type) this.type('form');
-    type = this._header['content-type'];
-    if (type) type = type.toLowerCase().trim();
-
-    if (type === 'application/x-www-form-urlencoded') {
-      this._data = this._data ? "".concat(this._data, "&").concat(data) : data;
+function merge(/* obj1, obj2, obj3, ... */) {
+  var result = {};
+  function assignValue(val, key) {
+    if (isPlainObject(result[key]) && isPlainObject(val)) {
+      result[key] = merge(result[key], val);
+    } else if (isPlainObject(val)) {
+      result[key] = merge({}, val);
+    } else if (isArray(val)) {
+      result[key] = val.slice();
     } else {
-      this._data = (this._data || '') + data;
+      result[key] = val;
     }
-  } else {
-    this._data = data;
   }
 
-  if (!isObject_ || this._isHost(data)) {
-    return this;
-  } // default to json
-
-
-  if (!type) this.type('json');
-  return this;
-};
-/**
- * Sort `querystring` by the sort function
- *
- *
- * Examples:
- *
- *       // default order
- *       request.get('/user')
- *         .query('name=Nick')
- *         .query('search=Manny')
- *         .sortQuery()
- *         .end(callback)
- *
- *       // customized sort function
- *       request.get('/user')
- *         .query('name=Nick')
- *         .query('search=Manny')
- *         .sortQuery(function(a, b){
- *           return a.length - b.length;
- *         })
- *         .end(callback)
- *
- *
- * @param {Function} sort
- * @return {Request} for chaining
- * @api public
- */
-
-
-RequestBase.prototype.sortQuery = function (sort) {
-  // _sort default to true but otherwise can be a function or boolean
-  this._sort = typeof sort === 'undefined' ? true : sort;
-  return this;
-};
-/**
- * Compose querystring to append to req.url
- *
- * @api private
- */
-
-
-RequestBase.prototype._finalizeQueryString = function () {
-  var query = this._query.join('&');
-
-  if (query) {
-    this.url += (this.url.includes('?') ? '&' : '?') + query;
+  for (var i = 0, l = arguments.length; i < l; i++) {
+    forEach(arguments[i], assignValue);
   }
+  return result;
+}
 
-  this._query.length = 0; // Makes the call idempotent
+/**
+ * Extends object a by mutably adding to it the properties of object b.
+ *
+ * @param {Object} a The object to be extended
+ * @param {Object} b The object to copy properties from
+ * @param {Object} thisArg The object to bind function to
+ * @return {Object} The resulting value of object a
+ */
+function extend(a, b, thisArg) {
+  forEach(b, function assignValue(val, key) {
+    if (thisArg && typeof val === 'function') {
+      a[key] = bind(val, thisArg);
+    } else {
+      a[key] = val;
+    }
+  });
+  return a;
+}
 
-  if (this._sort) {
-    var index = this.url.indexOf('?');
+/**
+ * Remove byte order marker. This catches EF BB BF (the UTF-8 BOM)
+ *
+ * @param {string} content with BOM
+ * @return {string} content value without BOM
+ */
+function stripBOM(content) {
+  if (content.charCodeAt(0) === 0xFEFF) {
+    content = content.slice(1);
+  }
+  return content;
+}
 
-    if (index >= 0) {
-      var queryArray = this.url.slice(index + 1).split('&');
+/**
+ * Inherit the prototype methods from one constructor into another
+ * @param {function} constructor
+ * @param {function} superConstructor
+ * @param {object} [props]
+ * @param {object} [descriptors]
+ */
 
-      if (typeof this._sort === 'function') {
-        queryArray.sort(this._sort);
-      } else {
-        queryArray.sort();
+function inherits(constructor, superConstructor, props, descriptors) {
+  constructor.prototype = Object.create(superConstructor.prototype, descriptors);
+  constructor.prototype.constructor = constructor;
+  props && Object.assign(constructor.prototype, props);
+}
+
+/**
+ * Resolve object with deep prototype chain to a flat object
+ * @param {Object} sourceObj source object
+ * @param {Object} [destObj]
+ * @param {Function} [filter]
+ * @returns {Object}
+ */
+
+function toFlatObject(sourceObj, destObj, filter) {
+  var props;
+  var i;
+  var prop;
+  var merged = {};
+
+  destObj = destObj || {};
+
+  do {
+    props = Object.getOwnPropertyNames(sourceObj);
+    i = props.length;
+    while (i-- > 0) {
+      prop = props[i];
+      if (!merged[prop]) {
+        destObj[prop] = sourceObj[prop];
+        merged[prop] = true;
       }
-
-      this.url = this.url.slice(0, index) + '?' + queryArray.join('&');
     }
-  }
-}; // For backwards compat only
+    sourceObj = Object.getPrototypeOf(sourceObj);
+  } while (sourceObj && (!filter || filter(sourceObj, destObj)) && sourceObj !== Object.prototype);
 
+  return destObj;
+}
 
-RequestBase.prototype._appendQueryString = function () {
-  console.warn('Unsupported');
-};
-/**
- * Invoke callback with timeout error.
- *
- * @api private
- */
-
-
-RequestBase.prototype._timeoutError = function (reason, timeout, errno) {
-  if (this._aborted) {
-    return;
-  }
-
-  var error = new Error("".concat(reason + timeout, "ms exceeded"));
-  error.timeout = timeout;
-  error.code = 'ECONNABORTED';
-  error.errno = errno;
-  this.timedout = true;
-  this.timedoutError = error;
-  this.abort();
-  this.callback(error);
-};
-
-RequestBase.prototype._setTimeouts = function () {
-  var self = this; // deadline
-
-  if (this._timeout && !this._timer) {
-    this._timer = setTimeout(function () {
-      self._timeoutError('Timeout of ', self._timeout, 'ETIME');
-    }, this._timeout);
-  } // response timeout
-
-
-  if (this._responseTimeout && !this._responseTimeoutTimer) {
-    this._responseTimeoutTimer = setTimeout(function () {
-      self._timeoutError('Response timeout of ', self._responseTimeout, 'ETIMEDOUT');
-    }, this._responseTimeout);
-  }
-};
-
-}).call(this)}).call(this,require('_process'))
-},{"./utils":29,"_process":7,"semver":2}],28:[function(require,module,exports){
-"use strict";
-
-/**
- * Module dependencies.
- */
-var utils = require('./utils');
-/**
- * Expose `ResponseBase`.
- */
-
-
-module.exports = ResponseBase;
-/**
- * Initialize a new `ResponseBase`.
- *
- * @api public
- */
-
-function ResponseBase() {}
-/**
- * Get case-insensitive `field` value.
- *
- * @param {String} field
- * @return {String}
- * @api public
- */
-
-
-ResponseBase.prototype.get = function (field) {
-  return this.header[field.toLowerCase()];
-};
-/**
- * Set header related properties:
- *
- *   - `.type` the content type without params
- *
- * A response of "Content-Type: text/plain; charset=utf-8"
- * will provide you with a `.type` of "text/plain".
- *
- * @param {Object} header
- * @api private
- */
-
-
-ResponseBase.prototype._setHeaderProperties = function (header) {
-  // TODO: moar!
-  // TODO: make this a util
-  // content-type
-  var ct = header['content-type'] || '';
-  this.type = utils.type(ct); // params
-
-  var parameters = utils.params(ct);
-
-  for (var key in parameters) {
-    if (Object.prototype.hasOwnProperty.call(parameters, key)) this[key] = parameters[key];
-  }
-
-  this.links = {}; // links
-
-  try {
-    if (header.link) {
-      this.links = utils.parseLinks(header.link);
-    }
-  } catch (_unused) {// ignore
-  }
-};
-/**
- * Set flags such as `.ok` based on `status`.
- *
- * For example a 2xx response will give you a `.ok` of __true__
- * whereas 5xx will be __false__ and `.error` will be __true__. The
- * `.clientError` and `.serverError` are also available to be more
- * specific, and `.statusType` is the class of error ranging from 1..5
- * sometimes useful for mapping respond colors etc.
- *
- * "sugar" properties are also defined for common cases. Currently providing:
- *
- *   - .noContent
- *   - .badRequest
- *   - .unauthorized
- *   - .notAcceptable
- *   - .notFound
- *
- * @param {Number} status
- * @api private
- */
-
-
-ResponseBase.prototype._setStatusProperties = function (status) {
-  var type = Math.trunc(status / 100); // status / class
-
-  this.statusCode = status;
-  this.status = this.statusCode;
-  this.statusType = type; // basics
-
-  this.info = type === 1;
-  this.ok = type === 2;
-  this.redirect = type === 3;
-  this.clientError = type === 4;
-  this.serverError = type === 5;
-  this.error = type === 4 || type === 5 ? this.toError() : false; // sugar
-
-  this.created = status === 201;
-  this.accepted = status === 202;
-  this.noContent = status === 204;
-  this.badRequest = status === 400;
-  this.unauthorized = status === 401;
-  this.notAcceptable = status === 406;
-  this.forbidden = status === 403;
-  this.notFound = status === 404;
-  this.unprocessableEntity = status === 422;
-};
-
-},{"./utils":29}],29:[function(require,module,exports){
-"use strict";
-
-function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
-
-function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it.return != null) it.return(); } finally { if (didErr) throw err; } } }; }
-
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
-
-function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
-
-/**
- * Return the mime type for the given `str`.
- *
+/*
+ * determines whether a string ends with the characters of a specified string
  * @param {String} str
- * @return {String}
- * @api private
+ * @param {String} searchString
+ * @param {Number} [position= 0]
+ * @returns {boolean}
  */
-exports.type = function (string_) {
-  return string_.split(/ *; */).shift();
-};
-/**
- * Return header field parameters.
- *
- * @param {String} str
- * @return {Object}
- * @api private
- */
-
-
-exports.params = function (value) {
-  var object = {};
-
-  var _iterator = _createForOfIteratorHelper(value.split(/ *; */)),
-      _step;
-
-  try {
-    for (_iterator.s(); !(_step = _iterator.n()).done;) {
-      var string_ = _step.value;
-      var parts = string_.split(/ *= */);
-      var key = parts.shift();
-
-      var _value = parts.shift();
-
-      if (key && _value) object[key] = _value;
-    }
-  } catch (err) {
-    _iterator.e(err);
-  } finally {
-    _iterator.f();
+function endsWith(str, searchString, position) {
+  str = String(str);
+  if (position === undefined || position > str.length) {
+    position = str.length;
   }
+  position -= searchString.length;
+  var lastIndex = str.indexOf(searchString, position);
+  return lastIndex !== -1 && lastIndex === position;
+}
 
-  return object;
-};
+
 /**
- * Parse Link header fields.
- *
- * @param {String} str
- * @return {Object}
- * @api private
+ * Returns new array from array like object
+ * @param {*} [thing]
+ * @returns {Array}
  */
-
-
-exports.parseLinks = function (value) {
-  var object = {};
-
-  var _iterator2 = _createForOfIteratorHelper(value.split(/ *, */)),
-      _step2;
-
-  try {
-    for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
-      var string_ = _step2.value;
-      var parts = string_.split(/ *; */);
-      var url = parts[0].slice(1, -1);
-      var rel = parts[1].split(/ *= */)[1].slice(1, -1);
-      object[rel] = url;
-    }
-  } catch (err) {
-    _iterator2.e(err);
-  } finally {
-    _iterator2.f();
+function toArray(thing) {
+  if (!thing) return null;
+  var i = thing.length;
+  if (isUndefined(i)) return null;
+  var arr = new Array(i);
+  while (i-- > 0) {
+    arr[i] = thing[i];
   }
+  return arr;
+}
 
-  return object;
-};
-/**
- * Strip content related fields from `header`.
- *
- * @param {Object} header
- * @return {Object} header
- * @api private
- */
+// eslint-disable-next-line func-names
+var isTypedArray = (function(TypedArray) {
+  // eslint-disable-next-line func-names
+  return function(thing) {
+    return TypedArray && thing instanceof TypedArray;
+  };
+})(typeof Uint8Array !== 'undefined' && Object.getPrototypeOf(Uint8Array));
 
-
-exports.cleanHeader = function (header, changesOrigin) {
-  delete header['content-type'];
-  delete header['content-length'];
-  delete header['transfer-encoding'];
-  delete header.host; // secuirty
-
-  if (changesOrigin) {
-    delete header.authorization;
-    delete header.cookie;
-  }
-
-  return header;
-};
-/**
- * Check if `obj` is an object.
- *
- * @param {Object} object
- * @return {Boolean}
- * @api private
- */
-
-
-exports.isObject = function (object) {
-  return object !== null && _typeof(object) === 'object';
-};
-/**
- * Object.hasOwn fallback/polyfill.
- *
- * @type {(object: object, property: string) => boolean} object
- * @api private
- */
-
-
-exports.hasOwn = Object.hasOwn || function (object, property) {
-  if (object == null) {
-    throw new TypeError('Cannot convert undefined or null to object');
-  }
-
-  return Object.prototype.hasOwnProperty.call(new Object(object), property);
+module.exports = {
+  isArray: isArray,
+  isArrayBuffer: isArrayBuffer,
+  isBuffer: isBuffer,
+  isFormData: isFormData,
+  isArrayBufferView: isArrayBufferView,
+  isString: isString,
+  isNumber: isNumber,
+  isObject: isObject,
+  isPlainObject: isPlainObject,
+  isUndefined: isUndefined,
+  isDate: isDate,
+  isFile: isFile,
+  isBlob: isBlob,
+  isFunction: isFunction,
+  isStream: isStream,
+  isURLSearchParams: isURLSearchParams,
+  isStandardBrowserEnv: isStandardBrowserEnv,
+  forEach: forEach,
+  merge: merge,
+  extend: extend,
+  trim: trim,
+  stripBOM: stripBOM,
+  inherits: inherits,
+  toFlatObject: toFlatObject,
+  kindOf: kindOf,
+  kindOfTest: kindOfTest,
+  endsWith: endsWith,
+  toArray: toArray,
+  isTypedArray: isTypedArray,
+  isFileList: isFileList
 };
 
-exports.mixin = function (target, source) {
-  for (var key in source) {
-    if (exports.hasOwn(source, key)) {
-      target[key] = source[key];
-    }
-  }
-};
-
-},{}],"platformClient":[function(require,module,exports){
+},{"./helpers/bind":24}],"platformClient":[function(require,module,exports){
 (function (global,Buffer){(function (){
 'use strict';
 
-var superagent = require('superagent');
+var axios = require('axios');
 
 function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 
-var superagent__default = /*#__PURE__*/_interopDefaultLegacy(superagent);
+var axios__default = /*#__PURE__*/_interopDefaultLegacy(axios);
 
 var PureCloudRegionHosts = {
 	us_east_1: 'mypurecloud.com',
@@ -9477,34 +7040,38 @@ class Logger {
 
 	formatLog(level, statusCode, method, url, requestHeaders, responseHeaders, requestBody, responseBody) {
 		var result;
-		if (requestHeaders) requestHeaders['Authorization'] = '[REDACTED]';
-		if (!this.log_request_body) requestBody = undefined;
-		if (!this.log_response_body) responseBody = undefined;
+		var localRequestHeaders = requestHeaders ? JSON.parse(JSON.stringify(requestHeaders)) : null;
+		var localResponseHeaders = responseHeaders ? JSON.parse(JSON.stringify(responseHeaders)) : null;
+		var localRequestBody = requestBody ? JSON.parse(JSON.stringify(requestBody)) : null;
+		var localResponseBody = responseBody ? JSON.parse(JSON.stringify(responseBody)) : null;
+		if (requestHeaders) localRequestHeaders['Authorization'] = '[REDACTED]';
+		if (!this.log_request_body) localRequestBody = undefined;
+		if (!this.log_response_body) localResponseBody = undefined;
 		if (this.log_format && this.log_format === logFormatEnum.formats.JSON) {
 			result = {
 				level: level,
 				date: new Date().toISOString(),
 				method: method,
 				url: decodeURIComponent(url),
-				correlationId: responseHeaders ? (responseHeaders['inin-correlation-id'] ? responseHeaders['inin-correlation-id'] : '') : '',
+				correlationId: localResponseHeaders ? (localResponseHeaders['inin-correlation-id'] ? localResponseHeaders['inin-correlation-id'] : '') : '',
 				statusCode: statusCode,
 			};
-			if (requestHeaders) result.requestHeaders = requestHeaders;
-			if (responseHeaders) result.responseHeaders = responseHeaders;
-			if (requestBody) result.requestBody = requestBody;
-			if (responseBody) result.responseBody = responseBody;
+			if (localRequestHeaders) result.requestHeaders = localRequestHeaders;
+			if (localResponseHeaders) result.responseHeaders = localResponseHeaders;
+			if (localRequestBody) result.requestBody = localRequestBody;
+			if (localResponseBody) result.responseBody = localResponseBody;
 		} else {
 			result = `${new Date().toISOString()}
 === REQUEST === 
 ${this.formatValue('URL', decodeURIComponent(url))}${this.formatValue('Method', method)}${this.formatValue(
 				'Headers',
-				this.formatHeaderString(requestHeaders)
-			)}${this.formatValue('Body', requestBody ? JSON.stringify(requestBody, null, 2) : '')}
+				this.formatHeaderString(localRequestHeaders)
+			)}${this.formatValue('Body', localRequestBody ? JSON.stringify(localRequestBody, null, 2) : '')}
 === RESPONSE ===
-${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.formatHeaderString(responseHeaders))}${this.formatValue(
+${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.formatHeaderString(localResponseHeaders))}${this.formatValue(
 				'CorrelationId',
-				responseHeaders ? (responseHeaders['inin-correlation-id'] ? responseHeaders['inin-correlation-id'] : '') : ''
-			)}${this.formatValue('Body', responseBody ? JSON.stringify(responseBody, null, 2) : '')}`;
+				localResponseHeaders ? (localResponseHeaders['inin-correlation-id'] ? localResponseHeaders['inin-correlation-id'] : '') : ''
+			)}${this.formatValue('Body', localResponseBody ? JSON.stringify(localResponseBody, null, 2) : '')}`;
 		}
 
 		return result;
@@ -9681,7 +7248,7 @@ class Configuration {
 
 /**
  * @module purecloud-platform-client-v2/ApiClient
- * @version 137.0.1
+ * @version 137.1.0
  */
 class ApiClient {
 	/**
@@ -9782,9 +7349,6 @@ class ApiClient {
 
 		this.authData = {};
 		this.settingsPrefix = 'purecloud';
-
-		// Expose superagent module for use with superagent-proxy
-		this.superagent = superagent__default["default"];
 
 		// Transparently request a new access token when it expires (Code Authorization only)
 		this.refreshInProgress = false;
@@ -9954,63 +7518,65 @@ class ApiClient {
 				return;
 			}
 
-			// Build token request
-			var request = superagent__default["default"]('POST', `https://login.${this.config.environment}/oauth/token`);
-			if (this.proxy && request.proxy) {
-				request.proxy(this.proxy);
-			}
-			request.set('Authorization', `Basic ${authHeader}`);
-			request.send('grant_type=client_credentials');
-
-			// Execute request
-			request.end((error, response) => {
-				if (error) {
-					// Log error
-					this.config.logger.log(
-						'error',
-						response.statusCode,
-						'POST',
-						`https://login.${this.config.environment}/oauth/token`,
-						request.header,
-						response.headers,
-						{ grant_type: 'client_credentials' },
-						response.body
-					);
-					reject(error);
-				} else {
+			const headers = {
+				'Authorization': `Basic ${authHeader}`
+			};
+			axios__default["default"]({
+				method: `POST`,
+				url: `https://login.${this.config.environment}/oauth/token`,
+				headers: headers,
+				data: 'grant_type=client_credentials',
+				proxy: this.proxy
+			})
+				.then((response) => {
 					// Logging
 					this.config.logger.log(
 						'trace',
-						response.statusCode,
+						response.status,
 						'POST',
 						`https://login.${this.config.environment}/oauth/token`,
-						request.header,
+						headers,
 						response.headers,
 						{ grant_type: 'client_credentials' },
 						undefined
 					);
 					this.config.logger.log(
 						'debug',
-						response.statusCode,
+						response.status,
 						'POST',
 						`https://login.${this.config.environment}/oauth/token`,
-						request.header,
+						headers,
 						undefined,
 						{ grant_type: 'client_credentials' },
 						undefined
 					);
 
 					// Save access token
-					this.setAccessToken(response.body['access_token']);
+					this.setAccessToken(response.data['access_token']);
 
 					// Set expiry time
-					this.authData.tokenExpiryTime = (new Date()).getTime() + (response.body['expires_in'] * 1000);
+					this.authData.tokenExpiryTime = (new Date()).getTime() + (response.data['expires_in'] * 1000);
 					this.authData.tokenExpiryTimeString = (new Date(this.authData.tokenExpiryTime)).toUTCString();
 
 					// Return auth data
 					resolve(this.authData);
-				}
-			});
+				})
+				.catch((error) => {
+					// Log error
+					if (error.response) {
+						this.config.logger.log(
+							'error',
+							error.response.status,
+							'POST',
+							`https://login.${this.config.environment}/oauth/token`,
+							headers,
+							error.response.headers,
+							{ grant_type: 'client_credentials' },
+							error.response.data
+						);
+					}
+					reject(error);
+				});
 		});
 	}
 
@@ -10033,9 +7599,7 @@ class ApiClient {
 												{ grant_type: 'urn:ietf:params:oauth:grant-type:saml2-bearer' },
 										        { orgName: orgName },
 										        { assertion: assertion });
-			if (this.proxy && request.proxy) {
-				request.proxy(this.proxy);
-			}
+			request.proxy = this.proxy;
 			var bodyParam = {
 				grant_type: 'urn:ietf:params:oauth:grant-type:saml2-bearer',
 				orgName: orgName,
@@ -10043,54 +7607,56 @@ class ApiClient {
 			};
 
 			// Handle response
-			request.end((error, response) => {
-				if (error) {
-					// Log error
-					this.config.logger.log(
-						'error',
-						response.statusCode,
-						'POST',
-						`https://login.${this.config.environment}/oauth/token`,
-						request.header,
-						response.headers,
-						bodyParam,
-						response.body
-					);
-					reject(error);
-				} else {
+			request
+				.then((response) => {
 					// Logging
 					this.config.logger.log(
 						'trace',
-						response.statusCode,
+						response.status,
 						'POST',
 						`https://login.${this.config.environment}/oauth/token`,
-						request.header,
+						request.headers,
 						response.headers,
 						bodyParam,
 						undefined
 					);
 					this.config.logger.log(
 						'debug',
-						response.statusCode,
+						response.status,
 						'POST',
 						`https://login.${this.config.environment}/oauth/token`,
-						request.header,
+						request.headers,
 						undefined,
 						bodyParam,
 						undefined
 					);
 
 					// Get access token from response
-					var access_token = response.body.access_token;
+					var access_token = response.data.access_token;
 
 					this.setAccessToken(access_token);
-					this.authData.tokenExpiryTime = new Date().getTime() + response.body['expires_in'] * 1000;
+					this.authData.tokenExpiryTime = new Date().getTime() + response.data['expires_in'] * 1000;
 					this.authData.tokenExpiryTimeString = new Date(this.authData.tokenExpiryTime).toUTCString();
 
 					// Return auth data
 					resolve(this.authData);
-				}
-			});
+				})
+				.catch((error) => {
+					// Log error
+					if (error.response) {
+						this.config.logger.log(
+							'error',
+							error.response.status,
+							'POST',
+							`https://login.${this.config.environment}/oauth/token`,
+							request.headers,
+							error.response.headers,
+							bodyParam,
+							error.response.data
+						);
+					}
+					reject(error);
+				});
 		});
 	}
 
@@ -10114,9 +7680,7 @@ class ApiClient {
 												{ grant_type: 'authorization_code' },
 									            { code: authCode },
 										        { redirect_uri: redirectUri });
-			if (this.proxy && request.proxy) {
-				request.proxy(this.proxy);
-			}
+			request.proxy = this.proxy;
 			var bodyParam = {
 				grant_type: 'authorization_code',
 				code: authCode,
@@ -10142,9 +7706,7 @@ class ApiClient {
 			}
 			var encodedData = Buffer.from(clientId + ':' + clientSecret).toString('base64');
 			var request = this._formAuthRequest(encodedData, { grant_type: 'refresh_token' }, { refresh_token: refreshToken });
-			if (this.proxy && request.proxy) {
-				request.proxy(this.proxy);
-			}
+			request.proxy = this.proxy;
 			var bodyParam = {
 				grant_type: 'refresh_token',
 				refresh_token: refreshToken,
@@ -10162,57 +7724,59 @@ class ApiClient {
 	 * @param {function} reject - Promise reject callback
 	 */
 	_handleCodeAuthorizationResponse(request, bodyParam, resolve, reject) {
-		request.end((error, response) => {
-			if (error) {
-				// Log error
-				this.config.logger.log(
-					'error',
-					response.statusCode,
-					'POST',
-					`https://login.${this.config.environment}/oauth/token`,
-					request.header,
-					response.headers,
-					bodyParam,
-					response.body
-				);
-
-				reject(error);
-			} else {
+		request
+			.then((response) => {
 				// Logging
 				this.config.logger.log(
 					'trace',
-					response.statusCode,
+					response.status,
 					'POST',
 					`https://login.${this.config.environment}/oauth/token`,
-					request.header,
+					request.headers,
 					response.headers,
 					bodyParam,
 					undefined
 				);
 				this.config.logger.log(
 					'debug',
-					response.statusCode,
+					response.status,
 					'POST',
 					`https://login.${this.config.environment}/oauth/token`,
-					request.header,
+					request.headers,
 					undefined,
 					bodyParam,
 					undefined
 				);
 
 				// Get access token from response
-				var access_token = response.body.access_token;
-				var refresh_token = response.body.refresh_token;
+				var access_token = response.data.access_token;
+				var refresh_token = response.data.refresh_token;
 
 				this.setAccessToken(access_token);
 				this.authData.refreshToken = refresh_token;
-				this.authData.tokenExpiryTime = new Date().getTime() + response.body['expires_in'] * 1000;
+				this.authData.tokenExpiryTime = new Date().getTime() + response.data['expires_in'] * 1000;
 				this.authData.tokenExpiryTimeString = new Date(this.authData.tokenExpiryTime).toUTCString();
 
 				// Return auth data
 				resolve(this.authData);
-			}
-		});
+			})
+			.catch((error) => {
+				// Log error
+				if (error.response) {
+					this.config.logger.log(
+						'error',
+						error.response.status,
+						'POST',
+						`https://login.${this.config.environment}/oauth/token`,
+						request.headers,
+						error.response.headers,
+						bodyParam,
+						error.response.data
+					);
+				}
+
+				reject(error);
+			});
 	}
 
 	/**
@@ -10220,15 +7784,15 @@ class ApiClient {
 	 * @param {string} encodedData - Base64 encoded client and clientSecret pair
 	 */
 	_formAuthRequest(encodedData) {
-		var request = superagent__default["default"]('POST', `https://login.${this.config.environment}/oauth/token`);
-		// Set the headers
-		request.set('Authorization', 'Basic ' + encodedData);
-		request.set('Content-Type', 'application/x-www-form-urlencoded');
-		// Add form data
-		request.type('form');
-		for (var i = 0; i < arguments.length; i++) {
-    		request.send(arguments[i]);
-  		}
+		var request = axios__default["default"]({
+			method: `POST`,
+			url: `https://login.${this.config.environment}/oauth/token`,
+			headers: {
+				'Authorization': 'Basic ' + encodedData,
+				'Content-Type': 'application/x-www-form-urlencoded'
+			},
+			data: arguments
+		});
 
 		return request;
 	}
@@ -10430,6 +7994,36 @@ class ApiClient {
 	}
 
 	/**
+	 * Returns query parameters serialized in the format needed for an axios request.
+	 * @param param The unserialized query parameters.
+	 * @returns {Object} The serialized representation the query parameters.
+	 */
+	serialize(obj) {
+		var result = {};
+		for (var p in obj) {
+			if (obj.hasOwnProperty(p)) {
+				result[encodeURIComponent(p)] = Array.isArray(obj[p]) ? obj[p].join(",") : this.paramToString(obj[p]);
+			}
+		}
+		return result
+	}
+
+	/**
+	 * Adds headers onto an existing header object (may be empty)
+	 * @param existingHeaders The existing header object.
+	 * @param newHeaders New headers.
+	 * @returns {Object} The combination of all headers.
+	 */
+	addHeaders(existingHeaders, ...newHeaders) {
+		if (existingHeaders) {
+			existingHeaders = Object.assign(existingHeaders, ...newHeaders);
+		} else {
+			existingHeaders = Object.assign(...newHeaders);
+		}
+		return existingHeaders;
+	}
+
+	/**
 	 * Builds full URL by appending the given path to the base URL and replacing path parameter place-holders with parameter values.
 	 * NOTE: query parameters are not handled here.
 	 * @param {String} path The path to append to the base URL.
@@ -10548,7 +8142,7 @@ class ApiClient {
 			case 'pipes':
 				return param.map(this.paramToString).join('|');
 			case 'multi':
-				// return the array directly as SuperAgent will handle it as expected
+				// return the array directly as axios will handle it as expected
 				return param.map(this.paramToString);
 			default:
 				throw new Error(`Unknown collection format: ${collectionFormat}`);
@@ -10557,7 +8151,7 @@ class ApiClient {
 
 	/**
 	 * Applies authentication headers to the request.
-	 * @param {Object} request The request object created by a <code>superagent()</code> call.
+	 * @param {Object} request The axios request config object.
 	 * @param {Array.<String>} authNames An array of authentication method names.
 	 */
 	applyAuthToRequest(request, authNames) {
@@ -10566,7 +8160,10 @@ class ApiClient {
 			switch (auth.type) {
 				case 'basic':
 					if (auth.username || auth.password) {
-						request.auth(auth.username || '', auth.password || '');
+						request.auth = {
+							username: auth.username || '',
+							password: auth.password || ''
+						};
 					}
 					break;
 				case 'apiKey':
@@ -10578,15 +8175,15 @@ class ApiClient {
 							data[auth.name] = auth.apiKey;
 						}
 						if (auth['in'] === 'header') {
-							request.set(data);
+							request.headers = this.addHeaders(request.headers, data);
 						} else {
-							request.query(data);
+							request.params = this.serialize(data);
 						}
 					}
 					break;
 				case 'oauth2':
 					if (auth.accessToken) {
-						request.set({'Authorization': `Bearer ${auth.accessToken}`});
+						request.headers = this.addHeaders(request.headers, {'Authorization': `Bearer ${auth.accessToken}`});
 					}
 					break;
 				default:
@@ -10615,86 +8212,71 @@ class ApiClient {
 			sendRequest(this);
 			function sendRequest(that) {
 				var url = that.buildUrl(path, pathParams);
-				var request = superagent__default["default"](httpMethod, url);
-
-				if (that.proxy && request.proxy) {
-					request.proxy(that.proxy);
-				}
+				var request = {
+					method: httpMethod,
+					url: url,
+					proxy: that.proxy,
+					timeout: that.timeout,
+					params: that.serialize(queryParams)
+				};
 
 				// apply authentications
 				that.applyAuthToRequest(request, authNames);
 
-				// set query parameters
-				request.query(that.normalizeParams(queryParams));
-
 				// set header parameters
-				request.set(that.defaultHeaders).set(that.normalizeParams(headerParams));
-				//request.set({ 'purecloud-sdk': '137.0.1' });
-
-				// set request timeout
-				request.timeout(that.timeout);
+				const defaultHeaders = that.defaultHeaders;
+				const normalizedHeaderParams = that.normalizeParams(headerParams);
+				request.headers = that.addHeaders(request.headers, defaultHeaders, normalizedHeaderParams);
 
 				var contentType = that.jsonPreferredMime(contentTypes);
 				if (contentType) {
-					request.type(contentType);
-				} else if (!request.header['Content-Type']) {
-					request.type('application/json');
+					request.headers['Content-Type'] = contentType;
+				} else if (!request.headers['Content-Type']) {
+					request.headers['Content-Type'] = 'application/json';
 				}
 
 				if (contentType === 'application/x-www-form-urlencoded') {
-					request.send(that.normalizeParams(formParams));
+					request.data = that.normalizeParams(formParams);
 				} else if (contentType == 'multipart/form-data') {
 					var _formParams = that.normalizeParams(formParams);
 					for (var key in _formParams) {
 						if (_formParams.hasOwnProperty(key)) {
-							if (that.isFileParam(_formParams[key])) {
-								// file field
-								request.attach(key, _formParams[key]);
-							} else {
-								request.field(key, _formParams[key]);
-							}
+							// Looks like axios handles files and forms the same way
+							var formData = new FormData();
+							formData.set(key, _formParams[key]);
+							request.data = formData;
 						}
 					}
 				} else if (bodyParam) {
-					request.send(bodyParam);
+					request.data = bodyParam;
 				}
 
 				var accept = that.jsonPreferredMime(accepts);
 				if (accept) {
-					request.accept(accept);
+					request.headers['Accept'] = accept;
 				}
-				request.end((error, response) => {
-					if (error) {
-						if (!response) {
-							reject({
-								status: 0,
-								statusText: 'error',
-								headers: [],
-								body: {},
-								text: 'error',
-								error: error
-							});
-							return;
-						}
-					}
+				axios__default["default"].request(request)
+					.then((response) => {
+						// Build response object
+						var data = (that.returnExtended === true) ? {
+							status: response.status,
+							statusText: response.statusText,
+							headers: response.headers,
+							body: response.data,
+							text: response.text,
+							error: null
+						} : response.data ? response.data : response.text;
 
-					// Build response object
-					var data = (that.returnExtended === true || error) ? {
-						status: response.status,
-						statusText: response.statusText,
-						headers: response.headers,
-						body: response.body,
-						text: response.text,
-						error: error
-					} : response.body ? response.body : response.text;
+						// Debug logging
+						that.config.logger.log('trace', response.status, httpMethod, url, request.headers, response.headers, bodyParam, undefined);
+						that.config.logger.log('debug', response.status, httpMethod, url, request.headers, undefined, bodyParam, undefined);
 
-					// Debug logging
-					that.config.logger.log('trace', response.statusCode, httpMethod, url, request.header, response.headers, bodyParam, undefined);
-					that.config.logger.log('debug', response.statusCode, httpMethod, url, request.header, undefined, bodyParam, undefined);
-
-					// Resolve promise
-					if (error) {
-						if (data.status == 401 && that.config.refresh_access_token && that.authData.refreshToken !== "") {
+						// Resolve promise
+						resolve(data);
+					})
+					.catch((error) => {
+						var data = error;
+						if (error.response && error.response.status == 401 && that.config.refresh_access_token && that.authData.refreshToken !== "") {
 							that._handleExpiredAccessToken()
 								.then(() => {
 									sendRequest(that);
@@ -10702,24 +8284,29 @@ class ApiClient {
 								.catch((err) => {
 									reject(err);
 								});
-						} else {
+						} else if (error.response) {
 							// Log error
 							that.config.logger.log(
 								'error',
-								response.statusCode,
+								error.response.status,
 								httpMethod,
 								url,
-								request.header,
-								response.headers,
+								request.headers,
+								error.response.headers,
 								bodyParam,
-								response.body
+								error.response.data
 							);
-							reject(data);
+							data = (that.returnExtended === true) ? {
+								status: error.response.status,
+								statusText: error.response.statusText,
+								headers: error.response.headers,
+								body: error.response.data,
+								text: error.response.text,
+								error: error
+							} : error.response.data ? error.response.data : error.response.text;
 						}
-					} else {
-						resolve(data);
-					}
-				});
+						reject(data);
+					});
 			}
 		});
 	}
@@ -10729,7 +8316,7 @@ class AlertingApi {
 	/**
 	 * Alerting service.
 	 * @module purecloud-platform-client-v2/api/AlertingApi
-	 * @version 137.0.1
+	 * @version 137.1.0
 	 */
 
 	/**
@@ -11043,7 +8630,7 @@ class AnalyticsApi {
 	/**
 	 * Analytics service.
 	 * @module purecloud-platform-client-v2/api/AnalyticsApi
-	 * @version 137.0.1
+	 * @version 137.1.0
 	 */
 
 	/**
@@ -12225,7 +9812,7 @@ class ArchitectApi {
 	/**
 	 * Architect service.
 	 * @module purecloud-platform-client-v2/api/ArchitectApi
-	 * @version 137.0.1
+	 * @version 137.1.0
 	 */
 
 	/**
@@ -15270,7 +12857,7 @@ class AuditApi {
 	/**
 	 * Audit service.
 	 * @module purecloud-platform-client-v2/api/AuditApi
-	 * @version 137.0.1
+	 * @version 137.1.0
 	 */
 
 	/**
@@ -15441,7 +13028,7 @@ class AuthorizationApi {
 	/**
 	 * Authorization service.
 	 * @module purecloud-platform-client-v2/api/AuthorizationApi
-	 * @version 137.0.1
+	 * @version 137.1.0
 	 */
 
 	/**
@@ -16624,7 +14211,7 @@ class BillingApi {
 	/**
 	 * Billing service.
 	 * @module purecloud-platform-client-v2/api/BillingApi
-	 * @version 137.0.1
+	 * @version 137.1.0
 	 */
 
 	/**
@@ -16704,7 +14291,7 @@ class ChatApi {
 	/**
 	 * Chat service.
 	 * @module purecloud-platform-client-v2/api/ChatApi
-	 * @version 137.0.1
+	 * @version 137.1.0
 	 */
 
 	/**
@@ -16795,7 +14382,7 @@ class CoachingApi {
 	/**
 	 * Coaching service.
 	 * @module purecloud-platform-client-v2/api/CoachingApi
-	 * @version 137.0.1
+	 * @version 137.1.0
 	 */
 
 	/**
@@ -17372,7 +14959,7 @@ class ContentManagementApi {
 	/**
 	 * ContentManagement service.
 	 * @module purecloud-platform-client-v2/api/ContentManagementApi
-	 * @version 137.0.1
+	 * @version 137.1.0
 	 */
 
 	/**
@@ -18512,7 +16099,7 @@ class ConversationsApi {
 	/**
 	 * Conversations service.
 	 * @module purecloud-platform-client-v2/api/ConversationsApi
-	 * @version 137.0.1
+	 * @version 137.1.0
 	 */
 
 	/**
@@ -23176,7 +20763,7 @@ class DataExtensionsApi {
 	/**
 	 * DataExtensions service.
 	 * @module purecloud-platform-client-v2/api/DataExtensionsApi
-	 * @version 137.0.1
+	 * @version 137.1.0
 	 */
 
 	/**
@@ -23262,7 +20849,7 @@ class ExternalContactsApi {
 	/**
 	 * ExternalContacts service.
 	 * @module purecloud-platform-client-v2/api/ExternalContactsApi
-	 * @version 137.0.1
+	 * @version 137.1.0
 	 */
 
 	/**
@@ -25005,7 +22592,7 @@ class FaxApi {
 	/**
 	 * Fax service.
 	 * @module purecloud-platform-client-v2/api/FaxApi
-	 * @version 137.0.1
+	 * @version 137.1.0
 	 */
 
 	/**
@@ -25176,7 +22763,7 @@ class FlowsApi {
 	/**
 	 * Flows service.
 	 * @module purecloud-platform-client-v2/api/FlowsApi
-	 * @version 137.0.1
+	 * @version 137.1.0
 	 */
 
 	/**
@@ -25247,7 +22834,7 @@ class GamificationApi {
 	/**
 	 * Gamification service.
 	 * @module purecloud-platform-client-v2/api/GamificationApi
-	 * @version 137.0.1
+	 * @version 137.1.0
 	 */
 
 	/**
@@ -26677,7 +24264,7 @@ class GeneralDataProtectionRegulationApi {
 	/**
 	 * GeneralDataProtectionRegulation service.
 	 * @module purecloud-platform-client-v2/api/GeneralDataProtectionRegulationApi
-	 * @version 137.0.1
+	 * @version 137.1.0
 	 */
 
 	/**
@@ -26807,7 +24394,7 @@ class GeolocationApi {
 	/**
 	 * Geolocation service.
 	 * @module purecloud-platform-client-v2/api/GeolocationApi
-	 * @version 137.0.1
+	 * @version 137.1.0
 	 */
 
 	/**
@@ -26938,7 +24525,7 @@ class GreetingsApi {
 	/**
 	 * Greetings service.
 	 * @module purecloud-platform-client-v2/api/GreetingsApi
-	 * @version 137.0.1
+	 * @version 137.1.0
 	 */
 
 	/**
@@ -27393,7 +24980,7 @@ class GroupsApi {
 	/**
 	 * Groups service.
 	 * @module purecloud-platform-client-v2/api/GroupsApi
-	 * @version 137.0.1
+	 * @version 137.1.0
 	 */
 
 	/**
@@ -27798,7 +25385,7 @@ class IdentityProviderApi {
 	/**
 	 * IdentityProvider service.
 	 * @module purecloud-platform-client-v2/api/IdentityProviderApi
-	 * @version 137.0.1
+	 * @version 137.1.0
 	 */
 
 	/**
@@ -28554,7 +26141,7 @@ class IntegrationsApi {
 	/**
 	 * Integrations service.
 	 * @module purecloud-platform-client-v2/api/IntegrationsApi
-	 * @version 137.0.1
+	 * @version 137.1.0
 	 */
 
 	/**
@@ -30231,7 +27818,7 @@ class JourneyApi {
 	/**
 	 * Journey service.
 	 * @module purecloud-platform-client-v2/api/JourneyApi
-	 * @version 137.0.1
+	 * @version 137.1.0
 	 */
 
 	/**
@@ -30942,7 +28529,7 @@ class KnowledgeApi {
 	/**
 	 * Knowledge service.
 	 * @module purecloud-platform-client-v2/api/KnowledgeApi
-	 * @version 137.0.1
+	 * @version 137.1.0
 	 */
 
 	/**
@@ -31842,7 +29429,7 @@ class LanguageUnderstandingApi {
 	/**
 	 * LanguageUnderstanding service.
 	 * @module purecloud-platform-client-v2/api/LanguageUnderstandingApi
-	 * @version 137.0.1
+	 * @version 137.1.0
 	 */
 
 	/**
@@ -32746,7 +30333,7 @@ class LanguagesApi {
 	/**
 	 * Languages service.
 	 * @module purecloud-platform-client-v2/api/LanguagesApi
-	 * @version 137.0.1
+	 * @version 137.1.0
 	 */
 
 	/**
@@ -33014,7 +30601,7 @@ class LearningApi {
 	/**
 	 * Learning service.
 	 * @module purecloud-platform-client-v2/api/LearningApi
-	 * @version 137.0.1
+	 * @version 137.1.0
 	 */
 
 	/**
@@ -33605,7 +31192,7 @@ class LicenseApi {
 	/**
 	 * License service.
 	 * @module purecloud-platform-client-v2/api/LicenseApi
-	 * @version 137.0.1
+	 * @version 137.1.0
 	 */
 
 	/**
@@ -33843,7 +31430,7 @@ class LocationsApi {
 	/**
 	 * Locations service.
 	 * @module purecloud-platform-client-v2/api/LocationsApi
-	 * @version 137.0.1
+	 * @version 137.1.0
 	 */
 
 	/**
@@ -34079,7 +31666,7 @@ class MessagingApi {
 	/**
 	 * Messaging service.
 	 * @module purecloud-platform-client-v2/api/MessagingApi
-	 * @version 137.0.1
+	 * @version 137.1.0
 	 */
 
 	/**
@@ -34230,7 +31817,7 @@ class MobileDevicesApi {
 	/**
 	 * MobileDevices service.
 	 * @module purecloud-platform-client-v2/api/MobileDevicesApi
-	 * @version 137.0.1
+	 * @version 137.1.0
 	 */
 
 	/**
@@ -34381,7 +31968,7 @@ class NotificationsApi {
 	/**
 	 * Notifications service.
 	 * @module purecloud-platform-client-v2/api/NotificationsApi
-	 * @version 137.0.1
+	 * @version 137.1.0
 	 */
 
 	/**
@@ -34606,7 +32193,7 @@ class OAuthApi {
 	/**
 	 * OAuth service.
 	 * @module purecloud-platform-client-v2/api/OAuthApi
-	 * @version 137.0.1
+	 * @version 137.1.0
 	 */
 
 	/**
@@ -34972,7 +32559,7 @@ class ObjectsApi {
 	/**
 	 * Objects service.
 	 * @module purecloud-platform-client-v2/api/ObjectsApi
-	 * @version 137.0.1
+	 * @version 137.1.0
 	 */
 
 	/**
@@ -35243,7 +32830,7 @@ class OrganizationApi {
 	/**
 	 * Organization service.
 	 * @module purecloud-platform-client-v2/api/OrganizationApi
-	 * @version 137.0.1
+	 * @version 137.1.0
 	 */
 
 	/**
@@ -35646,7 +33233,7 @@ class OrganizationAuthorizationApi {
 	/**
 	 * OrganizationAuthorization service.
 	 * @module purecloud-platform-client-v2/api/OrganizationAuthorizationApi
-	 * @version 137.0.1
+	 * @version 137.1.0
 	 */
 
 	/**
@@ -36571,7 +34158,7 @@ class OutboundApi {
 	/**
 	 * Outbound service.
 	 * @module purecloud-platform-client-v2/api/OutboundApi
-	 * @version 137.0.1
+	 * @version 137.1.0
 	 */
 
 	/**
@@ -39826,7 +37413,7 @@ class PresenceApi {
 	/**
 	 * Presence service.
 	 * @module purecloud-platform-client-v2/api/PresenceApi
-	 * @version 137.0.1
+	 * @version 137.1.0
 	 */
 
 	/**
@@ -40148,7 +37735,7 @@ class QualityApi {
 	/**
 	 * Quality service.
 	 * @module purecloud-platform-client-v2/api/QualityApi
-	 * @version 137.0.1
+	 * @version 137.1.0
 	 */
 
 	/**
@@ -41726,7 +39313,7 @@ class RecordingApi {
 	/**
 	 * Recording service.
 	 * @module purecloud-platform-client-v2/api/RecordingApi
-	 * @version 137.0.1
+	 * @version 137.1.0
 	 */
 
 	/**
@@ -43379,7 +40966,7 @@ class ResponseManagementApi {
 	/**
 	 * ResponseManagement service.
 	 * @module purecloud-platform-client-v2/api/ResponseManagementApi
-	 * @version 137.0.1
+	 * @version 137.1.0
 	 */
 
 	/**
@@ -43863,7 +41450,7 @@ class RoutingApi {
 	/**
 	 * Routing service.
 	 * @module purecloud-platform-client-v2/api/RoutingApi
-	 * @version 137.0.1
+	 * @version 137.1.0
 	 */
 
 	/**
@@ -46790,7 +44377,7 @@ class SCIMApi {
 	/**
 	 * SCIM service.
 	 * @module purecloud-platform-client-v2/api/SCIMApi
-	 * @version 137.0.1
+	 * @version 137.1.0
 	 */
 
 	/**
@@ -47667,7 +45254,7 @@ class ScriptsApi {
 	/**
 	 * Scripts service.
 	 * @module purecloud-platform-client-v2/api/ScriptsApi
-	 * @version 137.0.1
+	 * @version 137.1.0
 	 */
 
 	/**
@@ -48086,7 +45673,7 @@ class SearchApi {
 	/**
 	 * Search service.
 	 * @module purecloud-platform-client-v2/api/SearchApi
-	 * @version 137.0.1
+	 * @version 137.1.0
 	 */
 
 	/**
@@ -48621,7 +46208,7 @@ class SpeechTextAnalyticsApi {
 	/**
 	 * SpeechTextAnalytics service.
 	 * @module purecloud-platform-client-v2/api/SpeechTextAnalyticsApi
-	 * @version 137.0.1
+	 * @version 137.1.0
 	 */
 
 	/**
@@ -49474,7 +47061,7 @@ class StationsApi {
 	/**
 	 * Stations service.
 	 * @module purecloud-platform-client-v2/api/StationsApi
-	 * @version 137.0.1
+	 * @version 137.1.0
 	 */
 
 	/**
@@ -49621,7 +47208,7 @@ class SuggestApi {
 	/**
 	 * Suggest service.
 	 * @module purecloud-platform-client-v2/api/SuggestApi
-	 * @version 137.0.1
+	 * @version 137.1.0
 	 */
 
 	/**
@@ -49760,7 +47347,7 @@ class TelephonyApi {
 	/**
 	 * Telephony service.
 	 * @module purecloud-platform-client-v2/api/TelephonyApi
-	 * @version 137.0.1
+	 * @version 137.1.0
 	 */
 
 	/**
@@ -49868,7 +47455,7 @@ class TelephonyProvidersEdgeApi {
 	/**
 	 * TelephonyProvidersEdge service.
 	 * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-	 * @version 137.0.1
+	 * @version 137.1.0
 	 */
 
 	/**
@@ -53501,7 +51088,7 @@ class TextbotsApi {
 	/**
 	 * Textbots service.
 	 * @module purecloud-platform-client-v2/api/TextbotsApi
-	 * @version 137.0.1
+	 * @version 137.1.0
 	 */
 
 	/**
@@ -53629,7 +51216,7 @@ class TokensApi {
 	/**
 	 * Tokens service.
 	 * @module purecloud-platform-client-v2/api/TokensApi
-	 * @version 137.0.1
+	 * @version 137.1.0
 	 */
 
 	/**
@@ -53735,7 +51322,7 @@ class UploadsApi {
 	/**
 	 * Uploads service.
 	 * @module purecloud-platform-client-v2/api/UploadsApi
-	 * @version 137.0.1
+	 * @version 137.1.0
 	 */
 
 	/**
@@ -53886,7 +51473,7 @@ class UsageApi {
 	/**
 	 * Usage service.
 	 * @module purecloud-platform-client-v2/api/UsageApi
-	 * @version 137.0.1
+	 * @version 137.1.0
 	 */
 
 	/**
@@ -53957,7 +51544,7 @@ class UserRecordingsApi {
 	/**
 	 * UserRecordings service.
 	 * @module purecloud-platform-client-v2/api/UserRecordingsApi
-	 * @version 137.0.1
+	 * @version 137.1.0
 	 */
 
 	/**
@@ -54141,7 +51728,7 @@ class UsersApi {
 	/**
 	 * Users service.
 	 * @module purecloud-platform-client-v2/api/UsersApi
-	 * @version 137.0.1
+	 * @version 137.1.0
 	 */
 
 	/**
@@ -56443,7 +54030,7 @@ class UtilitiesApi {
 	/**
 	 * Utilities service.
 	 * @module purecloud-platform-client-v2/api/UtilitiesApi
-	 * @version 137.0.1
+	 * @version 137.1.0
 	 */
 
 	/**
@@ -56554,7 +54141,7 @@ class VoicemailApi {
 	/**
 	 * Voicemail service.
 	 * @module purecloud-platform-client-v2/api/VoicemailApi
-	 * @version 137.0.1
+	 * @version 137.1.0
 	 */
 
 	/**
@@ -57221,7 +54808,7 @@ class WebChatApi {
 	/**
 	 * WebChat service.
 	 * @module purecloud-platform-client-v2/api/WebChatApi
-	 * @version 137.0.1
+	 * @version 137.1.0
 	 */
 
 	/**
@@ -57765,7 +55352,7 @@ class WebDeploymentsApi {
 	/**
 	 * WebDeployments service.
 	 * @module purecloud-platform-client-v2/api/WebDeploymentsApi
-	 * @version 137.0.1
+	 * @version 137.1.0
 	 */
 
 	/**
@@ -58120,7 +55707,7 @@ class WebMessagingApi {
 	/**
 	 * WebMessaging service.
 	 * @module purecloud-platform-client-v2/api/WebMessagingApi
-	 * @version 137.0.1
+	 * @version 137.1.0
 	 */
 
 	/**
@@ -58166,7 +55753,7 @@ class WidgetsApi {
 	/**
 	 * Widgets service.
 	 * @module purecloud-platform-client-v2/api/WidgetsApi
-	 * @version 137.0.1
+	 * @version 137.1.0
 	 */
 
 	/**
@@ -58312,7 +55899,7 @@ class WorkforceManagementApi {
 	/**
 	 * WorkforceManagement service.
 	 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-	 * @version 137.0.1
+	 * @version 137.1.0
 	 */
 
 	/**
@@ -62563,7 +60150,7 @@ class WorkforceManagementApi {
  * </pre>
  * </p>
  * @module purecloud-platform-client-v2/index
- * @version 137.0.1
+ * @version 137.1.0
  */
 class platformClient {
 	constructor() {
@@ -62903,4 +60490,4 @@ var index = new platformClient();
 module.exports = index;
 
 }).call(this)}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {},require("buffer").Buffer)
-},{"buffer":3,"os":5,"path":6,"superagent":26}]},{},[]);
+},{"axios":7,"buffer":2,"os":4,"path":5}]},{},[]);

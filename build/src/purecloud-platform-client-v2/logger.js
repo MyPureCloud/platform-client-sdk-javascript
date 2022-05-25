@@ -126,34 +126,38 @@ class Logger {
 
 	formatLog(level, statusCode, method, url, requestHeaders, responseHeaders, requestBody, responseBody) {
 		var result;
-		if (requestHeaders) requestHeaders['Authorization'] = '[REDACTED]';
-		if (!this.log_request_body) requestBody = undefined;
-		if (!this.log_response_body) responseBody = undefined;
+		var localRequestHeaders = requestHeaders ? JSON.parse(JSON.stringify(requestHeaders)) : null;
+		var localResponseHeaders = responseHeaders ? JSON.parse(JSON.stringify(responseHeaders)) : null;
+		var localRequestBody = requestBody ? JSON.parse(JSON.stringify(requestBody)) : null;
+		var localResponseBody = responseBody ? JSON.parse(JSON.stringify(responseBody)) : null;
+		if (requestHeaders) localRequestHeaders['Authorization'] = '[REDACTED]';
+		if (!this.log_request_body) localRequestBody = undefined;
+		if (!this.log_response_body) localResponseBody = undefined;
 		if (this.log_format && this.log_format === logFormatEnum.formats.JSON) {
 			result = {
 				level: level,
 				date: new Date().toISOString(),
 				method: method,
 				url: decodeURIComponent(url),
-				correlationId: responseHeaders ? (responseHeaders['inin-correlation-id'] ? responseHeaders['inin-correlation-id'] : '') : '',
+				correlationId: localResponseHeaders ? (localResponseHeaders['inin-correlation-id'] ? localResponseHeaders['inin-correlation-id'] : '') : '',
 				statusCode: statusCode,
 			};
-			if (requestHeaders) result.requestHeaders = requestHeaders;
-			if (responseHeaders) result.responseHeaders = responseHeaders;
-			if (requestBody) result.requestBody = requestBody;
-			if (responseBody) result.responseBody = responseBody;
+			if (localRequestHeaders) result.requestHeaders = localRequestHeaders;
+			if (localResponseHeaders) result.responseHeaders = localResponseHeaders;
+			if (localRequestBody) result.requestBody = localRequestBody;
+			if (localResponseBody) result.responseBody = localResponseBody;
 		} else {
 			result = `${new Date().toISOString()}
 === REQUEST === 
 ${this.formatValue('URL', decodeURIComponent(url))}${this.formatValue('Method', method)}${this.formatValue(
 				'Headers',
-				this.formatHeaderString(requestHeaders)
-			)}${this.formatValue('Body', requestBody ? JSON.stringify(requestBody, null, 2) : '')}
+				this.formatHeaderString(localRequestHeaders)
+			)}${this.formatValue('Body', localRequestBody ? JSON.stringify(localRequestBody, null, 2) : '')}
 === RESPONSE ===
-${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.formatHeaderString(responseHeaders))}${this.formatValue(
+${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.formatHeaderString(localResponseHeaders))}${this.formatValue(
 				'CorrelationId',
-				responseHeaders ? (responseHeaders['inin-correlation-id'] ? responseHeaders['inin-correlation-id'] : '') : ''
-			)}${this.formatValue('Body', responseBody ? JSON.stringify(responseBody, null, 2) : '')}`;
+				localResponseHeaders ? (localResponseHeaders['inin-correlation-id'] ? localResponseHeaders['inin-correlation-id'] : '') : ''
+			)}${this.formatValue('Body', localResponseBody ? JSON.stringify(localResponseBody, null, 2) : '')}`;
 		}
 
 		return result;

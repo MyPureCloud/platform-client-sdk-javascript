@@ -27,7 +27,7 @@ export default {
 			'https',
 			'url',
 			'zlib',
-			'superagent'
+			'axios'
 		]
 	},
 	plugins: [ 
@@ -64,9 +64,6 @@ export default {
 		commonjs({
 			// non-CommonJS modules will be ignored, but you can also specifically include/exclude files
 			include: 'node_modules/**',  // Default: undefined
-			
-			// Exclude superagent. It will be resolved by browserify. Can't resolve it here or it runs into some issue where replace -> replace$$0 in superagent code. Causes runtime errors in the browser. This may be because of a circular dependency. There are two warnings about them during the rollup build when superagent is included.
-			exclude: ['node_modules/superagent/**'],
 
 			browser: true,
 			preferBuiltins: false,
@@ -95,6 +92,6 @@ export default {
 		'tty',
 		'crypto',
 		'os',
-		'superagent'
+		'axios'
 	]
 };

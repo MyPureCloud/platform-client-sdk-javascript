@@ -7,7 +7,6 @@ declare module 'purecloud-platform-client-v2' {
 declare class ApiClientClass {
 	instance: ApiClientClass;
 	proxy: ProxyConfig;
-	superagent: any;
 	config: Configuration;
 
 	callApi(path: string, httpMethod: string, pathParams: { [key: string]: string; }, queryParams: { [key: string]: object; }, headerParams: { [key: string]: object; }, formParams: { [key: string]: object; }, bodyParam: any, authNames: Array<string>, contentTypes: Array<string>, accepts: Array<string>): Promise<any>;
