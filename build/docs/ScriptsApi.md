@@ -668,9 +668,9 @@ apiInstance.getScriptsPublishedScriptIdVariables(scriptId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **scriptId** | **String** | Script ID |  |
- **input** | **String** | input | [optional]  |
- **output** | **String** | output | [optional]  |
- **type** | **String** | type | [optional]  |
+ **input** | **String** | input | [optional] <br />**Values**: true, false |
+ **output** | **String** | output | [optional] <br />**Values**: true, false |
+ **type** | **String** | type | [optional] <br />**Values**: string, number, boolean |
  **scriptDataVersion** | **String** | Advanced usage - controls the data version of the script | [optional]  |
 {: class="table table-striped"}
 

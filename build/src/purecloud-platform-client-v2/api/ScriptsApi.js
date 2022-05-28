@@ -5,7 +5,7 @@ class ScriptsApi {
 	/**
 	 * Scripts service.
 	 * @module purecloud-platform-client-v2/api/ScriptsApi
-	 * @version 137.1.0
+	 * @version 138.0.0
 	 */
 
 	/**
@@ -333,9 +333,9 @@ class ScriptsApi {
 	 * 
 	 * @param {String} scriptId Script ID
 	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.input input
-	 * @param {String} opts.output output
-	 * @param {String} opts.type type
+	 * @param {Object} opts.input input
+	 * @param {Object} opts.output output
+	 * @param {Object} opts.type type
 	 * @param {String} opts.scriptDataVersion Advanced usage - controls the data version of the script
 	 */
 	getScriptsPublishedScriptIdVariables(scriptId, opts) { 

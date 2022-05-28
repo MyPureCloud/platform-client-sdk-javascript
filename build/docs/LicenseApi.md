@@ -30,6 +30,7 @@ Get PureCloud license definition.
 Requires ANY permissions:
 
 * authorization:grant:add
+* authorization:license:view
 
 ### Example Usage
 
@@ -80,6 +81,7 @@ Get all PureCloud license definitions available for the organization.
 Requires ANY permissions:
 
 * authorization:grant:add
+* authorization:license:view
 
 ### Example Usage
 
@@ -175,6 +177,7 @@ Get licenses for specified user.
 Requires ANY permissions:
 
 * authorization:grant:add
+* authorization:license:view
 
 ### Example Usage
 
@@ -431,6 +434,7 @@ Fetch user licenses in a batch.
 Requires ANY permissions:
 
 * authorization:grant:add
+* authorization:license:view
 
 ### Example Usage
 
