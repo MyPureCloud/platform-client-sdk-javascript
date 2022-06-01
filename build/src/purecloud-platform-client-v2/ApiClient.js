@@ -3,7 +3,7 @@ import Configuration from './configuration.js';
 
 /**
  * @module purecloud-platform-client-v2/ApiClient
- * @version 138.0.0
+ * @version 138.0.1
  */
 class ApiClient {
 	/**
@@ -756,7 +756,7 @@ class ApiClient {
 	serialize(obj) {
 		var result = {};
 		for (var p in obj) {
-			if (obj.hasOwnProperty(p)) {
+			if (obj.hasOwnProperty(p) && obj[p] !== undefined) {
 				result[encodeURIComponent(p)] = Array.isArray(obj[p]) ? obj[p].join(",") : this.paramToString(obj[p]);
 			}
 		}
@@ -893,6 +893,9 @@ class ApiClient {
 	 */
 	buildCollectionParam(param, collectionFormat) {
 		if (!param) return;
+		if (!Array.isArray(param)) {
+			param = [param]
+		}
 
 		switch (collectionFormat) {
 			case 'csv':
