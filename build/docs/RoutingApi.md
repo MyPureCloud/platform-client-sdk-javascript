@@ -676,7 +676,7 @@ void (no response body)
 
 <a name="deleteRoutingSmsPhonenumber"></a>
 
-# void deleteRoutingSmsPhonenumber(addressId, opts)
+# void deleteRoutingSmsPhonenumber(addressId)
 
 
 DELETE /api/v2/routing/sms/phonenumbers/{addressId}
@@ -701,11 +701,8 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.RoutingApi();
 
 let addressId = "addressId_example"; // String | Address ID
-let opts = { 
-  'async': false // Boolean | Delete a phone number for SMS in an asynchronous manner. If the async parameter value is true, this initiates the deletion of a provisioned phone number. 
-};
 
-apiInstance.deleteRoutingSmsPhonenumber(addressId, opts)
+apiInstance.deleteRoutingSmsPhonenumber(addressId)
   .then(() => {
     console.log('deleteRoutingSmsPhonenumber returned successfully.');
   })
@@ -721,7 +718,6 @@ apiInstance.deleteRoutingSmsPhonenumber(addressId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **addressId** | **String** | Address ID |  |
- **async** | **Boolean** | Delete a phone number for SMS in an asynchronous manner. If the async parameter value is true, this initiates the deletion of a provisioned phone number.  | [optional] [default to false] |
 {: class="table table-striped"}
 
 ### Return type
@@ -1058,7 +1054,7 @@ let apiInstance = new platformClient.RoutingApi();
 let opts = { 
   'before': "before_example", // String | The cursor that points to the start of the set of entities that has been returned.
   'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
-  'limit': "limit_example", // String | Number of entities to return. Maximum of 200. Deprecated in favour of pageSize, use CursorQueryParameters instead.
+  'limit': "limit_example", // String | Number of entities to return. Maximum of 200. Deprecated in favour of pageSize
   'pageSize': "pageSize_example", // String | Number of entities to return. Maximum of 200.
   'queueId': ["queueId_example"] // [String] | Queue ID(s) to filter assessments by.
 };
@@ -1080,7 +1076,7 @@ apiInstance.getRoutingAssessments(opts)
 | ------------- | ------------- | ------------- | ------------- |
  **before** | **String** | The cursor that points to the start of the set of entities that has been returned. | [optional]  |
  **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
- **limit** | **String** | Number of entities to return. Maximum of 200. Deprecated in favour of pageSize, use CursorQueryParameters instead. | [optional]  |
+ **limit** | **String** | Number of entities to return. Maximum of 200. Deprecated in favour of pageSize | [optional]  |
  **pageSize** | **String** | Number of entities to return. Maximum of 200. | [optional]  |
  **queueId** | **[String]** | Queue ID(s) to filter assessments by. | [optional]  |
 {: class="table table-striped"}
@@ -1692,7 +1688,7 @@ let apiInstance = new platformClient.RoutingApi();
 let opts = { 
   'before': "before_example", // String | The cursor that points to the start of the set of entities that has been returned.
   'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
-  'limit': "limit_example", // String | Number of entities to return. Maximum of 200. Deprecated in favour of pageSize, use CursorQueryParameters instead.
+  'limit': "limit_example", // String | Number of entities to return. Maximum of 200. Deprecated in favour of pageSize
   'pageSize': "pageSize_example", // String | Number of entities to return. Maximum of 200.
   'queueId': ["queueId_example"] // [String] | Comma-separated list of queue Ids to filter by.
 };
@@ -1714,7 +1710,7 @@ apiInstance.getRoutingPredictors(opts)
 | ------------- | ------------- | ------------- | ------------- |
  **before** | **String** | The cursor that points to the start of the set of entities that has been returned. | [optional]  |
  **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
- **limit** | **String** | Number of entities to return. Maximum of 200. Deprecated in favour of pageSize, use CursorQueryParameters instead. | [optional]  |
+ **limit** | **String** | Number of entities to return. Maximum of 200. Deprecated in favour of pageSize | [optional]  |
  **pageSize** | **String** | Number of entities to return. Maximum of 200. | [optional]  |
  **queueId** | **[String]** | Comma-separated list of queue Ids to filter by. | [optional]  |
 {: class="table table-striped"}
@@ -2991,7 +2987,7 @@ apiInstance.getRoutingSmsPhonenumbers(opts)
  **countryCode** | **[String]** | Filter on country code | [optional]  |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
- **sortBy** | **String** | Optional field to sort results | [optional] <br />**Values**: phoneNumber, countryCode, country, phoneNumberStatus, phoneNumberType, purchaseDate, supportsMms, supportsSms, supportsVoice |
+ **sortBy** | **String** | Optional field to sort results | [optional] <br />**Values**: phoneNumber, countryCode, country, dateCreated, dateModified, phoneNumberStatus, phoneNumberType, purchaseDate, supportsMms, supportsSms, supportsVoice |
  **sortOrder** | **String** | Sort order | [optional] <br />**Values**: ascending, descending |
  **language** | **String** | A language tag (which is sometimes referred to as a locale identifier) to use to localize country field and sort operations | [optional] [default to en-US] |
 {: class="table table-striped"}
@@ -4869,7 +4865,7 @@ apiInstance.postRoutingSmsAddresses(body)
 
 <a name="postRoutingSmsPhonenumbers"></a>
 
-# SmsPhoneNumber postRoutingSmsPhonenumbers(body, opts)
+# SmsPhoneNumber postRoutingSmsPhonenumbers(body)
 
 
 POST /api/v2/routing/sms/phonenumbers
@@ -4894,11 +4890,8 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.RoutingApi();
 
 let body = {}; // Object | SmsPhoneNumber
-let opts = { 
-  'async': false // Boolean | Provision a new phone number for SMS in an asynchronous manner. If the async parameter value is true, this initiates the provisioning of a new phone number. Check the phoneNumber's provisioningStatus for completion of this request.
-};
 
-apiInstance.postRoutingSmsPhonenumbers(body, opts)
+apiInstance.postRoutingSmsPhonenumbers(body)
   .then((data) => {
     console.log(`postRoutingSmsPhonenumbers success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -4914,7 +4907,6 @@ apiInstance.postRoutingSmsPhonenumbers(body, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | SmsPhoneNumber |  |
- **async** | **Boolean** | Provision a new phone number for SMS in an asynchronous manner. If the async parameter value is true, this initiates the provisioning of a new phone number. Check the phoneNumber's provisioningStatus for completion of this request. | [optional] [default to false] |
 {: class="table table-striped"}
 
 ### Return type
@@ -5336,7 +5328,7 @@ apiInstance.putRoutingSettingsTranscription(body)
 
 <a name="putRoutingSmsPhonenumber"></a>
 
-# SmsPhoneNumber putRoutingSmsPhonenumber(addressId, body, opts)
+# SmsPhoneNumber putRoutingSmsPhonenumber(addressId, body)
 
 
 PUT /api/v2/routing/sms/phonenumbers/{addressId}
@@ -5362,11 +5354,8 @@ let apiInstance = new platformClient.RoutingApi();
 
 let addressId = "addressId_example"; // String | Address ID
 let body = {}; // Object | SmsPhoneNumber
-let opts = { 
-  'async': false // Boolean | Update an existing phone number for SMS in an asynchronous manner. If the async parameter value is true, this initiates the update of a provisioned phone number. Check the phoneNumber's provisioningStatus for the progress of this request.
-};
 
-apiInstance.putRoutingSmsPhonenumber(addressId, body, opts)
+apiInstance.putRoutingSmsPhonenumber(addressId, body)
   .then((data) => {
     console.log(`putRoutingSmsPhonenumber success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -5383,7 +5372,6 @@ apiInstance.putRoutingSmsPhonenumber(addressId, body, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **addressId** | **String** | Address ID |  |
  **body** | **Object** | SmsPhoneNumber |  |
- **async** | **Boolean** | Update an existing phone number for SMS in an asynchronous manner. If the async parameter value is true, this initiates the update of a provisioned phone number. Check the phoneNumber's provisioningStatus for the progress of this request. | [optional] [default to false] |
 {: class="table table-striped"}
 
 ### Return type

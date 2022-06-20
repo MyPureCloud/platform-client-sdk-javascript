@@ -5,7 +5,7 @@ class KnowledgeApi {
 	/**
 	 * Knowledge service.
 	 * @module purecloud-platform-client-v2/api/KnowledgeApi
-	 * @version 138.0.1
+	 * @version 139.0.0
 	 */
 
 	/**
@@ -183,7 +183,7 @@ class KnowledgeApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.before The cursor that points to the start of the set of entities that has been returned.
 	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
-	 * @param {String} opts.limit Number of entities to return. Maximum of 200. Deprecated in favour of pageSize, use CursorQueryParameters instead.
+	 * @param {String} opts.limit Number of entities to return. Maximum of 200. Deprecated in favour of pageSize
 	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
 	 * @param {String} opts.name Filter to return the categories that starts with the given category name.
 	 */
@@ -291,7 +291,7 @@ class KnowledgeApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.before The cursor that points to the start of the set of entities that has been returned.
 	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
-	 * @param {String} opts.limit Number of entities to return. Maximum of 200. Deprecated in favour of pageSize, use CursorQueryParameters instead.
+	 * @param {String} opts.limit Number of entities to return. Maximum of 200. Deprecated in favour of pageSize
 	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
 	 * @param {String} opts.categories Filter by categories ids, comma separated values expected.
 	 * @param {String} opts.title Filter by document title.
@@ -403,7 +403,7 @@ class KnowledgeApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.before The cursor that points to the start of the set of entities that has been returned.
 	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
-	 * @param {String} opts.limit Number of entities to return. Maximum of 200. Deprecated in favour of pageSize, use CursorQueryParameters instead.
+	 * @param {String} opts.limit Number of entities to return. Maximum of 200. Deprecated in favour of pageSize
 	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
 	 * @param {Object} opts.knowledgeDocumentsState Return the training with the specified state of the trained documents.
 	 */
@@ -439,7 +439,7 @@ class KnowledgeApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.before The cursor that points to the start of the set of entities that has been returned.
 	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
-	 * @param {String} opts.limit Number of entities to return. Maximum of 200. Deprecated in favour of pageSize, use CursorQueryParameters instead.
+	 * @param {String} opts.limit Number of entities to return. Maximum of 200. Deprecated in favour of pageSize
 	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
 	 * @param {String} opts.name Filter by Name.
 	 * @param {Object} opts.coreLanguage Filter by core language.

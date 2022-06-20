@@ -5,7 +5,7 @@ class RoutingApi {
 	/**
 	 * Routing service.
 	 * @module purecloud-platform-client-v2/api/RoutingApi
-	 * @version 138.0.1
+	 * @version 139.0.0
 	 */
 
 	/**
@@ -318,12 +318,8 @@ class RoutingApi {
 	 * Delete a phone number provisioned for SMS.
 	 * 
 	 * @param {String} addressId Address ID
-	 * @param {Object} opts Optional parameters
-	 * @param {Boolean} opts.async Delete a phone number for SMS in an asynchronous manner. If the async parameter value is true, this initiates the deletion of a provisioned phone number.  (default to false)
 	 */
-	deleteRoutingSmsPhonenumber(addressId, opts) { 
-		opts = opts || {};
-		
+	deleteRoutingSmsPhonenumber(addressId) { 
 		// verify the required parameter 'addressId' is set
 		if (addressId === undefined || addressId === null) {
 			throw 'Missing the required parameter "addressId" when calling deleteRoutingSmsPhonenumber';
@@ -333,7 +329,7 @@ class RoutingApi {
 			'/api/v2/routing/sms/phonenumbers/{addressId}', 
 			'DELETE', 
 			{ 'addressId': addressId },
-			{ 'async': opts['async'] },
+			{  },
 			{  },
 			{  },
 			null, 
@@ -504,7 +500,7 @@ class RoutingApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.before The cursor that points to the start of the set of entities that has been returned.
 	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
-	 * @param {String} opts.limit Number of entities to return. Maximum of 200. Deprecated in favour of pageSize, use CursorQueryParameters instead.
+	 * @param {String} opts.limit Number of entities to return. Maximum of 200. Deprecated in favour of pageSize
 	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
 	 * @param {Array.<String>} opts.queueId Queue ID(s) to filter assessments by.
 	 */
@@ -815,7 +811,7 @@ class RoutingApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.before The cursor that points to the start of the set of entities that has been returned.
 	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
-	 * @param {String} opts.limit Number of entities to return. Maximum of 200. Deprecated in favour of pageSize, use CursorQueryParameters instead.
+	 * @param {String} opts.limit Number of entities to return. Maximum of 200. Deprecated in favour of pageSize
 	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
 	 * @param {Array.<String>} opts.queueId Comma-separated list of queue Ids to filter by.
 	 */
@@ -2487,12 +2483,8 @@ class RoutingApi {
 	 * Provision a phone number for SMS
 	 * 
 	 * @param {Object} body SmsPhoneNumber
-	 * @param {Object} opts Optional parameters
-	 * @param {Boolean} opts.async Provision a new phone number for SMS in an asynchronous manner. If the async parameter value is true, this initiates the provisioning of a new phone number. Check the phoneNumber's provisioningStatus for completion of this request. (default to false)
 	 */
-	postRoutingSmsPhonenumbers(body, opts) { 
-		opts = opts || {};
-		
+	postRoutingSmsPhonenumbers(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postRoutingSmsPhonenumbers';
@@ -2502,7 +2494,7 @@ class RoutingApi {
 			'/api/v2/routing/sms/phonenumbers', 
 			'POST', 
 			{  },
-			{ 'async': opts['async'] },
+			{  },
 			{  },
 			{  },
 			body, 
@@ -2747,12 +2739,8 @@ class RoutingApi {
 	 * 
 	 * @param {String} addressId Address ID
 	 * @param {Object} body SmsPhoneNumber
-	 * @param {Object} opts Optional parameters
-	 * @param {Boolean} opts.async Update an existing phone number for SMS in an asynchronous manner. If the async parameter value is true, this initiates the update of a provisioned phone number. Check the phoneNumber's provisioningStatus for the progress of this request. (default to false)
 	 */
-	putRoutingSmsPhonenumber(addressId, body, opts) { 
-		opts = opts || {};
-		
+	putRoutingSmsPhonenumber(addressId, body) { 
 		// verify the required parameter 'addressId' is set
 		if (addressId === undefined || addressId === null) {
 			throw 'Missing the required parameter "addressId" when calling putRoutingSmsPhonenumber';
@@ -2766,7 +2754,7 @@ class RoutingApi {
 			'/api/v2/routing/sms/phonenumbers/{addressId}', 
 			'PUT', 
 			{ 'addressId': addressId },
-			{ 'async': opts['async'] },
+			{  },
 			{  },
 			{  },
 			body, 

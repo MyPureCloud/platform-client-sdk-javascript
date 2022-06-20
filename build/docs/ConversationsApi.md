@@ -162,10 +162,19 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**putConversationParticipantFlaggedreason**](ConversationsApi.html#putConversationParticipantFlaggedreason) | **PUT** /api/v2/conversations/{conversationId}/participants/{participantId}/flaggedreason | Set flagged reason on conversation participant to indicate bad conversation quality.
 [**putConversationTags**](ConversationsApi.html#putConversationTags) | **PUT** /api/v2/conversations/{conversationId}/tags | Update the tags on a conversation.
 [**putConversationsCallParticipantCommunicationUuidata**](ConversationsApi.html#putConversationsCallParticipantCommunicationUuidata) | **PUT** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/communications/{communicationId}/uuidata | Set uuiData to be sent on future commands.
+[**putConversationsCallRecordingstate**](ConversationsApi.html#putConversationsCallRecordingstate) | **PUT** /api/v2/conversations/calls/{conversationId}/recordingstate | Update a conversation by setting its recording state
+[**putConversationsCallbackRecordingstate**](ConversationsApi.html#putConversationsCallbackRecordingstate) | **PUT** /api/v2/conversations/callbacks/{conversationId}/recordingstate | Update a conversation by setting its recording state
+[**putConversationsChatRecordingstate**](ConversationsApi.html#putConversationsChatRecordingstate) | **PUT** /api/v2/conversations/chats/{conversationId}/recordingstate | Update a conversation by setting its recording state
+[**putConversationsCobrowsesessionRecordingstate**](ConversationsApi.html#putConversationsCobrowsesessionRecordingstate) | **PUT** /api/v2/conversations/cobrowsesessions/{conversationId}/recordingstate | Update a conversation by setting its recording state
 [**putConversationsEmailMessagesDraft**](ConversationsApi.html#putConversationsEmailMessagesDraft) | **PUT** /api/v2/conversations/emails/{conversationId}/messages/draft | Update conversation draft reply
+[**putConversationsEmailRecordingstate**](ConversationsApi.html#putConversationsEmailRecordingstate) | **PUT** /api/v2/conversations/emails/{conversationId}/recordingstate | Update a conversation by setting its recording state
+[**putConversationsMessageRecordingstate**](ConversationsApi.html#putConversationsMessageRecordingstate) | **PUT** /api/v2/conversations/messages/{conversationId}/recordingstate | Update a conversation by setting its recording state
 [**putConversationsMessagingIntegrationsLineIntegrationId**](ConversationsApi.html#putConversationsMessagingIntegrationsLineIntegrationId) | **PUT** /api/v2/conversations/messaging/integrations/line/{integrationId} | Update a LINE messenger integration
 [**putConversationsMessagingSupportedcontentDefault**](ConversationsApi.html#putConversationsMessagingSupportedcontentDefault) | **PUT** /api/v2/conversations/messaging/supportedcontent/default | Set the organization's default supported content profile that may be assigned to an integration when it is created.
 [**putConversationsMessagingThreadingtimeline**](ConversationsApi.html#putConversationsMessagingThreadingtimeline) | **PUT** /api/v2/conversations/messaging/threadingtimeline | Update conversation threading window timeline for each messaging type
+[**putConversationsScreenshareRecordingstate**](ConversationsApi.html#putConversationsScreenshareRecordingstate) | **PUT** /api/v2/conversations/screenshares/{conversationId}/recordingstate | Update a conversation by setting its recording state
+[**putConversationsSocialRecordingstate**](ConversationsApi.html#putConversationsSocialRecordingstate) | **PUT** /api/v2/conversations/socials/{conversationId}/recordingstate | Update a conversation by setting its recording state
+[**putConversationsVideoRecordingstate**](ConversationsApi.html#putConversationsVideoRecordingstate) | **PUT** /api/v2/conversations/videos/{conversationId}/recordingstate | Update a conversation by setting its recording state
 {: class="table table-striped"}
 
 <a name="deleteAnalyticsConversationsDetailsJob"></a>
@@ -8171,6 +8180,214 @@ apiInstance.putConversationsCallParticipantCommunicationUuidata(conversationId, 
 
 **Object**
 
+<a name="putConversationsCallRecordingstate"></a>
+
+# **&#39;String&#39;** putConversationsCallRecordingstate(conversationId, body)
+
+
+PUT /api/v2/conversations/calls/{conversationId}/recordingstate
+
+Update a conversation by setting its recording state
+
+Requires ANY permissions:
+
+* conversation:recording:pauseOthers
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let conversationId = "conversationId_example"; // String | conversationId
+let body = {}; // Object | SetRecordingState
+
+apiInstance.putConversationsCallRecordingstate(conversationId, body)
+  .then((data) => {
+    console.log(`putConversationsCallRecordingstate success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putConversationsCallRecordingstate');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | conversationId |  |
+ **body** | **Object** | SetRecordingState |  |
+{: class="table table-striped"}
+
+### Return type
+
+**&#39;String&#39;**
+
+<a name="putConversationsCallbackRecordingstate"></a>
+
+# **&#39;String&#39;** putConversationsCallbackRecordingstate(conversationId, body)
+
+
+PUT /api/v2/conversations/callbacks/{conversationId}/recordingstate
+
+Update a conversation by setting its recording state
+
+Requires ANY permissions:
+
+* conversation:recording:pauseOthers
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let conversationId = "conversationId_example"; // String | conversationId
+let body = {}; // Object | SetRecordingState
+
+apiInstance.putConversationsCallbackRecordingstate(conversationId, body)
+  .then((data) => {
+    console.log(`putConversationsCallbackRecordingstate success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putConversationsCallbackRecordingstate');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | conversationId |  |
+ **body** | **Object** | SetRecordingState |  |
+{: class="table table-striped"}
+
+### Return type
+
+**&#39;String&#39;**
+
+<a name="putConversationsChatRecordingstate"></a>
+
+# **&#39;String&#39;** putConversationsChatRecordingstate(conversationId, body)
+
+
+PUT /api/v2/conversations/chats/{conversationId}/recordingstate
+
+Update a conversation by setting its recording state
+
+Requires ANY permissions:
+
+* conversation:recording:pauseOthers
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let conversationId = "conversationId_example"; // String | conversationId
+let body = {}; // Object | SetRecordingState
+
+apiInstance.putConversationsChatRecordingstate(conversationId, body)
+  .then((data) => {
+    console.log(`putConversationsChatRecordingstate success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putConversationsChatRecordingstate');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | conversationId |  |
+ **body** | **Object** | SetRecordingState |  |
+{: class="table table-striped"}
+
+### Return type
+
+**&#39;String&#39;**
+
+<a name="putConversationsCobrowsesessionRecordingstate"></a>
+
+# **&#39;String&#39;** putConversationsCobrowsesessionRecordingstate(conversationId, body)
+
+
+PUT /api/v2/conversations/cobrowsesessions/{conversationId}/recordingstate
+
+Update a conversation by setting its recording state
+
+Requires ANY permissions:
+
+* conversation:recording:pauseOthers
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let conversationId = "conversationId_example"; // String | conversationId
+let body = {}; // Object | SetRecordingState
+
+apiInstance.putConversationsCobrowsesessionRecordingstate(conversationId, body)
+  .then((data) => {
+    console.log(`putConversationsCobrowsesessionRecordingstate success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putConversationsCobrowsesessionRecordingstate');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | conversationId |  |
+ **body** | **Object** | SetRecordingState |  |
+{: class="table table-striped"}
+
+### Return type
+
+**&#39;String&#39;**
+
 <a name="putConversationsEmailMessagesDraft"></a>
 
 # EmailMessage putConversationsEmailMessagesDraft(conversationId, body)
@@ -8220,6 +8437,110 @@ apiInstance.putConversationsEmailMessagesDraft(conversationId, body)
 ### Return type
 
 **EmailMessage**
+
+<a name="putConversationsEmailRecordingstate"></a>
+
+# **&#39;String&#39;** putConversationsEmailRecordingstate(conversationId, body)
+
+
+PUT /api/v2/conversations/emails/{conversationId}/recordingstate
+
+Update a conversation by setting its recording state
+
+Requires ANY permissions:
+
+* conversation:recording:pauseOthers
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let conversationId = "conversationId_example"; // String | conversationId
+let body = {}; // Object | SetRecordingState
+
+apiInstance.putConversationsEmailRecordingstate(conversationId, body)
+  .then((data) => {
+    console.log(`putConversationsEmailRecordingstate success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putConversationsEmailRecordingstate');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | conversationId |  |
+ **body** | **Object** | SetRecordingState |  |
+{: class="table table-striped"}
+
+### Return type
+
+**&#39;String&#39;**
+
+<a name="putConversationsMessageRecordingstate"></a>
+
+# **&#39;String&#39;** putConversationsMessageRecordingstate(conversationId, body)
+
+
+PUT /api/v2/conversations/messages/{conversationId}/recordingstate
+
+Update a conversation by setting its recording state
+
+Requires ANY permissions:
+
+* conversation:recording:pauseOthers
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let conversationId = "conversationId_example"; // String | conversationId
+let body = {}; // Object | SetRecordingState
+
+apiInstance.putConversationsMessageRecordingstate(conversationId, body)
+  .then((data) => {
+    console.log(`putConversationsMessageRecordingstate success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putConversationsMessageRecordingstate');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | conversationId |  |
+ **body** | **Object** | SetRecordingState |  |
+{: class="table table-striped"}
+
+### Return type
+
+**&#39;String&#39;**
 
 <a name="putConversationsMessagingIntegrationsLineIntegrationId"></a>
 
@@ -8376,4 +8697,160 @@ apiInstance.putConversationsMessagingThreadingtimeline(body)
 ### Return type
 
 **ConversationThreadingWindow**
+
+<a name="putConversationsScreenshareRecordingstate"></a>
+
+# **&#39;String&#39;** putConversationsScreenshareRecordingstate(conversationId, body)
+
+
+PUT /api/v2/conversations/screenshares/{conversationId}/recordingstate
+
+Update a conversation by setting its recording state
+
+Requires ANY permissions:
+
+* conversation:recording:pauseOthers
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let conversationId = "conversationId_example"; // String | conversationId
+let body = {}; // Object | SetRecordingState
+
+apiInstance.putConversationsScreenshareRecordingstate(conversationId, body)
+  .then((data) => {
+    console.log(`putConversationsScreenshareRecordingstate success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putConversationsScreenshareRecordingstate');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | conversationId |  |
+ **body** | **Object** | SetRecordingState |  |
+{: class="table table-striped"}
+
+### Return type
+
+**&#39;String&#39;**
+
+<a name="putConversationsSocialRecordingstate"></a>
+
+# **&#39;String&#39;** putConversationsSocialRecordingstate(conversationId, body)
+
+
+PUT /api/v2/conversations/socials/{conversationId}/recordingstate
+
+Update a conversation by setting its recording state
+
+Requires ANY permissions:
+
+* conversation:recording:pauseOthers
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let conversationId = "conversationId_example"; // String | conversationId
+let body = {}; // Object | SetRecordingState
+
+apiInstance.putConversationsSocialRecordingstate(conversationId, body)
+  .then((data) => {
+    console.log(`putConversationsSocialRecordingstate success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putConversationsSocialRecordingstate');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | conversationId |  |
+ **body** | **Object** | SetRecordingState |  |
+{: class="table table-striped"}
+
+### Return type
+
+**&#39;String&#39;**
+
+<a name="putConversationsVideoRecordingstate"></a>
+
+# **&#39;String&#39;** putConversationsVideoRecordingstate(conversationId, body)
+
+
+PUT /api/v2/conversations/videos/{conversationId}/recordingstate
+
+Update a conversation by setting its recording state
+
+Requires ANY permissions:
+
+* conversation:recording:pauseOthers
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let conversationId = "conversationId_example"; // String | conversationId
+let body = {}; // Object | SetRecordingState
+
+apiInstance.putConversationsVideoRecordingstate(conversationId, body)
+  .then((data) => {
+    console.log(`putConversationsVideoRecordingstate success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putConversationsVideoRecordingstate');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | conversationId |  |
+ **body** | **Object** | SetRecordingState |  |
+{: class="table table-striped"}
+
+### Return type
+
+**&#39;String&#39;**
 

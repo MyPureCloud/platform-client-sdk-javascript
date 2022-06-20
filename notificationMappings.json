@@ -134,11 +134,15 @@
     },
     {
       "topic": "v2.externalcontacts.contacts.{id}",
-      "class": "ExternalContactsContactChangedTopicEntity"
+      "class": "ExternalContactsContactChangedTopicContact"
+    },
+    {
+      "topic": "v2.externalcontacts.contacts.{id}.journey.sessions",
+      "class": "JourneySessionEventsNotificationSessionEvent"
     },
     {
       "topic": "v2.externalcontacts.contacts.{id}.unresolved",
-      "class": "ExternalContactsUnresolvedContactChangedTopicEntity"
+      "class": "ExternalContactsUnresolvedContactChangedTopicContact"
     },
     {
       "topic": "v2.flows.outcomes.{id}",

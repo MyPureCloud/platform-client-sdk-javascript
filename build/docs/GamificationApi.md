@@ -16,7 +16,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getGamificationMetricdefinitions**](GamificationApi.html#getGamificationMetricdefinitions) | **GET** /api/v2/gamification/metricdefinitions | All metric definitions
 [**getGamificationMetrics**](GamificationApi.html#getGamificationMetrics) | **GET** /api/v2/gamification/metrics | All gamified metrics for a given profile
 [**getGamificationProfile**](GamificationApi.html#getGamificationProfile) | **GET** /api/v2/gamification/profiles/{profileId} | Performance profile by id
-[**getGamificationProfileMembers**](GamificationApi.html#getGamificationProfileMembers) | **GET** /api/v2/gamification/profiles/{performanceProfileId}/members | Members of a given performance profile
+[**getGamificationProfileMembers**](GamificationApi.html#getGamificationProfileMembers) | **GET** /api/v2/gamification/profiles/{profileId}/members | Members of a given performance profile
 [**getGamificationProfileMetric**](GamificationApi.html#getGamificationProfileMetric) | **GET** /api/v2/gamification/profiles/{profileId}/metrics/{metricId} | Performance profile gamified metric by id
 [**getGamificationProfileMetrics**](GamificationApi.html#getGamificationProfileMetrics) | **GET** /api/v2/gamification/profiles/{profileId}/metrics | All gamified metrics for a given performance profile
 [**getGamificationProfileMetricsObjectivedetails**](GamificationApi.html#getGamificationProfileMetricsObjectivedetails) | **GET** /api/v2/gamification/profiles/{profileId}/metrics/objectivedetails | All metrics for a given performance profile with objective details such as order and maxPoints
@@ -46,8 +46,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postGamificationMetrics**](GamificationApi.html#postGamificationMetrics) | **POST** /api/v2/gamification/metrics | Creates a gamified metric with a given metric definition and metric objective
 [**postGamificationProfileActivate**](GamificationApi.html#postGamificationProfileActivate) | **POST** /api/v2/gamification/profiles/{profileId}/activate | Activate a performance profile
 [**postGamificationProfileDeactivate**](GamificationApi.html#postGamificationProfileDeactivate) | **POST** /api/v2/gamification/profiles/{profileId}/deactivate | Deactivate a performance profile
-[**postGamificationProfileMembers**](GamificationApi.html#postGamificationProfileMembers) | **POST** /api/v2/gamification/profiles/{performanceProfileId}/members | Assign members to a given performance profile
-[**postGamificationProfileMembersValidate**](GamificationApi.html#postGamificationProfileMembersValidate) | **POST** /api/v2/gamification/profiles/{performanceProfileId}/members/validate | Validate member assignment
+[**postGamificationProfileMembers**](GamificationApi.html#postGamificationProfileMembers) | **POST** /api/v2/gamification/profiles/{profileId}/members | Assign members to a given performance profile
+[**postGamificationProfileMembersValidate**](GamificationApi.html#postGamificationProfileMembersValidate) | **POST** /api/v2/gamification/profiles/{profileId}/members/validate | Validate member assignment
 [**postGamificationProfileMetricLink**](GamificationApi.html#postGamificationProfileMetricLink) | **POST** /api/v2/gamification/profiles/{sourceProfileId}/metrics/{sourceMetricId}/link | Creates a linked metric
 [**postGamificationProfileMetrics**](GamificationApi.html#postGamificationProfileMetrics) | **POST** /api/v2/gamification/profiles/{profileId}/metrics | Creates a gamified metric with a given metric definition and metric objective under in a performance profile
 [**postGamificationProfiles**](GamificationApi.html#postGamificationProfiles) | **POST** /api/v2/gamification/profiles | Create a new custom performance profile
@@ -535,10 +535,10 @@ apiInstance.getGamificationProfile(profileId)
 
 <a name="getGamificationProfileMembers"></a>
 
-# MemberListing getGamificationProfileMembers(performanceProfileId)
+# MemberListing getGamificationProfileMembers(profileId)
 
 
-GET /api/v2/gamification/profiles/{performanceProfileId}/members
+GET /api/v2/gamification/profiles/{profileId}/members
 
 Members of a given performance profile
 
@@ -559,9 +559,9 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.GamificationApi();
 
-let performanceProfileId = "performanceProfileId_example"; // String | Performance Profile Id
+let profileId = "profileId_example"; // String | Profile Id
 
-apiInstance.getGamificationProfileMembers(performanceProfileId)
+apiInstance.getGamificationProfileMembers(profileId)
   .then((data) => {
     console.log(`getGamificationProfileMembers success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -576,7 +576,7 @@ apiInstance.getGamificationProfileMembers(performanceProfileId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **performanceProfileId** | **String** | Performance Profile Id |  |
+ **profileId** | **String** | Profile Id |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -672,7 +672,8 @@ let apiInstance = new platformClient.GamificationApi();
 let profileId = "profileId_example"; // String | Performance Profile Id
 let opts = { 
   'expand': ["expand_example"], // [String] | Which fields, if any, to expand.
-  'workday': "workday_example" // String | The objective query workday. If not specified, then it retrieves the current objective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+  'workday': "workday_example", // String | The objective query workday. If not specified, then it retrieves the current objective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+  'metricIds': "metricIds_example" // String | List of metric ids to filter the response (Optional, comma-separated).
 };
 
 apiInstance.getGamificationProfileMetrics(profileId, opts)
@@ -693,6 +694,7 @@ apiInstance.getGamificationProfileMetrics(profileId, opts)
  **profileId** | **String** | Performance Profile Id |  |
  **expand** | **[String]** | Which fields, if any, to expand. | [optional] <br />**Values**: objective |
  **workday** | **String** | The objective query workday. If not specified, then it retrieves the current objective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | [optional]  |
+ **metricIds** | **String** | List of metric ids to filter the response (Optional, comma-separated). | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2123,10 +2125,10 @@ apiInstance.postGamificationProfileDeactivate(profileId)
 
 <a name="postGamificationProfileMembers"></a>
 
-# Assignment postGamificationProfileMembers(performanceProfileId, body)
+# Assignment postGamificationProfileMembers(profileId, body)
 
 
-POST /api/v2/gamification/profiles/{performanceProfileId}/members
+POST /api/v2/gamification/profiles/{profileId}/members
 
 Assign members to a given performance profile
 
@@ -2147,10 +2149,10 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.GamificationApi();
 
-let performanceProfileId = "performanceProfileId_example"; // String | Performance Profile Id
+let profileId = "profileId_example"; // String | Profile Id
 let body = {}; // Object | assignUsers
 
-apiInstance.postGamificationProfileMembers(performanceProfileId, body)
+apiInstance.postGamificationProfileMembers(profileId, body)
   .then((data) => {
     console.log(`postGamificationProfileMembers success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2165,7 +2167,7 @@ apiInstance.postGamificationProfileMembers(performanceProfileId, body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **performanceProfileId** | **String** | Performance Profile Id |  |
+ **profileId** | **String** | Profile Id |  |
  **body** | **Object** | assignUsers |  |
 {: class="table table-striped"}
 
@@ -2175,10 +2177,10 @@ apiInstance.postGamificationProfileMembers(performanceProfileId, body)
 
 <a name="postGamificationProfileMembersValidate"></a>
 
-# AssignmentValidation postGamificationProfileMembersValidate(performanceProfileId, body)
+# AssignmentValidation postGamificationProfileMembersValidate(profileId, body)
 
 
-POST /api/v2/gamification/profiles/{performanceProfileId}/members/validate
+POST /api/v2/gamification/profiles/{profileId}/members/validate
 
 Validate member assignment
 
@@ -2199,10 +2201,10 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.GamificationApi();
 
-let performanceProfileId = "performanceProfileId_example"; // String | Performance Profile Id
+let profileId = "profileId_example"; // String | Profile Id
 let body = {}; // Object | memberAssignments
 
-apiInstance.postGamificationProfileMembersValidate(performanceProfileId, body)
+apiInstance.postGamificationProfileMembersValidate(profileId, body)
   .then((data) => {
     console.log(`postGamificationProfileMembersValidate success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2217,7 +2219,7 @@ apiInstance.postGamificationProfileMembersValidate(performanceProfileId, body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **performanceProfileId** | **String** | Performance Profile Id |  |
+ **profileId** | **String** | Profile Id |  |
  **body** | **Object** | memberAssignments |  |
 {: class="table table-striped"}
 

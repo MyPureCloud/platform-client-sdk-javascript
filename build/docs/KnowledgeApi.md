@@ -328,7 +328,7 @@ let languageCode = en-US; // String | Language code, format: iso2-LOCALE
 let opts = { 
   'before': "before_example", // String | The cursor that points to the start of the set of entities that has been returned.
   'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
-  'limit': "limit_example", // String | Number of entities to return. Maximum of 200. Deprecated in favour of pageSize, use CursorQueryParameters instead.
+  'limit': "limit_example", // String | Number of entities to return. Maximum of 200. Deprecated in favour of pageSize
   'pageSize': "pageSize_example", // String | Number of entities to return. Maximum of 200.
   'name': "name_example" // String | Filter to return the categories that starts with the given category name.
 };
@@ -352,7 +352,7 @@ apiInstance.getKnowledgeKnowledgebaseLanguageCategories(knowledgeBaseId, languag
  **languageCode** | **String** | Language code, format: iso2-LOCALE | <br />**Values**: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT |
  **before** | **String** | The cursor that points to the start of the set of entities that has been returned. | [optional]  |
  **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
- **limit** | **String** | Number of entities to return. Maximum of 200. Deprecated in favour of pageSize, use CursorQueryParameters instead. | [optional]  |
+ **limit** | **String** | Number of entities to return. Maximum of 200. Deprecated in favour of pageSize | [optional]  |
  **pageSize** | **String** | Number of entities to return. Maximum of 200. | [optional]  |
  **name** | **String** | Filter to return the categories that starts with the given category name. | [optional]  |
 {: class="table table-striped"}
@@ -500,7 +500,7 @@ let languageCode = en-US; // String | Language code, format: iso2-LOCALE
 let opts = { 
   'before': "before_example", // String | The cursor that points to the start of the set of entities that has been returned.
   'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
-  'limit': "limit_example", // String | Number of entities to return. Maximum of 200. Deprecated in favour of pageSize, use CursorQueryParameters instead.
+  'limit': "limit_example", // String | Number of entities to return. Maximum of 200. Deprecated in favour of pageSize
   'pageSize': "pageSize_example", // String | Number of entities to return. Maximum of 200.
   'categories': "categories_example", // String | Filter by categories ids, comma separated values expected.
   'title': "title_example", // String | Filter by document title.
@@ -528,7 +528,7 @@ apiInstance.getKnowledgeKnowledgebaseLanguageDocuments(knowledgeBaseId, language
  **languageCode** | **String** | Language code, format: iso2-LOCALE | <br />**Values**: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT |
  **before** | **String** | The cursor that points to the start of the set of entities that has been returned. | [optional]  |
  **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
- **limit** | **String** | Number of entities to return. Maximum of 200. Deprecated in favour of pageSize, use CursorQueryParameters instead. | [optional]  |
+ **limit** | **String** | Number of entities to return. Maximum of 200. Deprecated in favour of pageSize | [optional]  |
  **pageSize** | **String** | Number of entities to return. Maximum of 200. | [optional]  |
  **categories** | **String** | Filter by categories ids, comma separated values expected. | [optional]  |
  **title** | **String** | Filter by document title. | [optional]  |
@@ -680,7 +680,7 @@ let languageCode = en-US; // String | Language code, format: iso2-LOCALE
 let opts = { 
   'before': "before_example", // String | The cursor that points to the start of the set of entities that has been returned.
   'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
-  'limit': "limit_example", // String | Number of entities to return. Maximum of 200. Deprecated in favour of pageSize, use CursorQueryParameters instead.
+  'limit': "limit_example", // String | Number of entities to return. Maximum of 200. Deprecated in favour of pageSize
   'pageSize': "pageSize_example", // String | Number of entities to return. Maximum of 200.
   'knowledgeDocumentsState': "knowledgeDocumentsState_example" // String | Return the training with the specified state of the trained documents.
 };
@@ -704,7 +704,7 @@ apiInstance.getKnowledgeKnowledgebaseLanguageTrainings(knowledgeBaseId, language
  **languageCode** | **String** | Language code, format: iso2-LOCALE | <br />**Values**: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT |
  **before** | **String** | The cursor that points to the start of the set of entities that has been returned. | [optional]  |
  **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
- **limit** | **String** | Number of entities to return. Maximum of 200. Deprecated in favour of pageSize, use CursorQueryParameters instead. | [optional]  |
+ **limit** | **String** | Number of entities to return. Maximum of 200. Deprecated in favour of pageSize | [optional]  |
  **pageSize** | **String** | Number of entities to return. Maximum of 200. | [optional]  |
  **knowledgeDocumentsState** | **String** | Return the training with the specified state of the trained documents. | [optional] <br />**Values**: Draft, Active, Discarded, Archived |
 {: class="table table-striped"}
@@ -742,7 +742,7 @@ let apiInstance = new platformClient.KnowledgeApi();
 let opts = { 
   'before': "before_example", // String | The cursor that points to the start of the set of entities that has been returned.
   'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
-  'limit': "limit_example", // String | Number of entities to return. Maximum of 200. Deprecated in favour of pageSize, use CursorQueryParameters instead.
+  'limit': "limit_example", // String | Number of entities to return. Maximum of 200. Deprecated in favour of pageSize
   'pageSize': "pageSize_example", // String | Number of entities to return. Maximum of 200.
   'name': "name_example", // String | Filter by Name.
   'coreLanguage': "coreLanguage_example", // String | Filter by core language.
@@ -768,7 +768,7 @@ apiInstance.getKnowledgeKnowledgebases(opts)
 | ------------- | ------------- | ------------- | ------------- |
  **before** | **String** | The cursor that points to the start of the set of entities that has been returned. | [optional]  |
  **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
- **limit** | **String** | Number of entities to return. Maximum of 200. Deprecated in favour of pageSize, use CursorQueryParameters instead. | [optional]  |
+ **limit** | **String** | Number of entities to return. Maximum of 200. Deprecated in favour of pageSize | [optional]  |
  **pageSize** | **String** | Number of entities to return. Maximum of 200. | [optional]  |
  **name** | **String** | Filter by Name. | [optional]  |
  **coreLanguage** | **String** | Filter by core language. | [optional] <br />**Values**: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT |

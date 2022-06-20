@@ -3,7 +3,7 @@ import Configuration from './configuration.js';
 
 /**
  * @module purecloud-platform-client-v2/ApiClient
- * @version 138.0.1
+ * @version 139.0.0
  */
 class ApiClient {
 	/**

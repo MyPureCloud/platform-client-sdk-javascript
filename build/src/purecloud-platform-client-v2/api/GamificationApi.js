@@ -5,7 +5,7 @@ class GamificationApi {
 	/**
 	 * Gamification service.
 	 * @module purecloud-platform-client-v2/api/GamificationApi
-	 * @version 138.0.1
+	 * @version 139.0.0
 	 */
 
 	/**
@@ -276,18 +276,18 @@ class GamificationApi {
 	/**
 	 * Members of a given performance profile
 	 * 
-	 * @param {String} performanceProfileId Performance Profile Id
+	 * @param {String} profileId Profile Id
 	 */
-	getGamificationProfileMembers(performanceProfileId) { 
-		// verify the required parameter 'performanceProfileId' is set
-		if (performanceProfileId === undefined || performanceProfileId === null) {
-			throw 'Missing the required parameter "performanceProfileId" when calling getGamificationProfileMembers';
+	getGamificationProfileMembers(profileId) { 
+		// verify the required parameter 'profileId' is set
+		if (profileId === undefined || profileId === null) {
+			throw 'Missing the required parameter "profileId" when calling getGamificationProfileMembers';
 		}
 
 		return this.apiClient.callApi(
-			'/api/v2/gamification/profiles/{performanceProfileId}/members', 
+			'/api/v2/gamification/profiles/{profileId}/members', 
 			'GET', 
-			{ 'performanceProfileId': performanceProfileId },
+			{ 'profileId': profileId },
 			{  },
 			{  },
 			{  },
@@ -339,6 +339,7 @@ class GamificationApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand Which fields, if any, to expand.
 	 * @param {String} opts.workday The objective query workday. If not specified, then it retrieves the current objective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 * @param {String} opts.metricIds List of metric ids to filter the response (Optional, comma-separated).
 	 */
 	getGamificationProfileMetrics(profileId, opts) { 
 		opts = opts || {};
@@ -352,7 +353,7 @@ class GamificationApi {
 			'/api/v2/gamification/profiles/{profileId}/metrics', 
 			'GET', 
 			{ 'profileId': profileId },
-			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'workday': opts['workday'] },
+			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'workday': opts['workday'],'metricIds': opts['metricIds'] },
 			{  },
 			{  },
 			null, 
@@ -1155,13 +1156,13 @@ class GamificationApi {
 	/**
 	 * Assign members to a given performance profile
 	 * 
-	 * @param {String} performanceProfileId Performance Profile Id
+	 * @param {String} profileId Profile Id
 	 * @param {Object} body assignUsers
 	 */
-	postGamificationProfileMembers(performanceProfileId, body) { 
-		// verify the required parameter 'performanceProfileId' is set
-		if (performanceProfileId === undefined || performanceProfileId === null) {
-			throw 'Missing the required parameter "performanceProfileId" when calling postGamificationProfileMembers';
+	postGamificationProfileMembers(profileId, body) { 
+		// verify the required parameter 'profileId' is set
+		if (profileId === undefined || profileId === null) {
+			throw 'Missing the required parameter "profileId" when calling postGamificationProfileMembers';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
@@ -1169,9 +1170,9 @@ class GamificationApi {
 		}
 
 		return this.apiClient.callApi(
-			'/api/v2/gamification/profiles/{performanceProfileId}/members', 
+			'/api/v2/gamification/profiles/{profileId}/members', 
 			'POST', 
-			{ 'performanceProfileId': performanceProfileId },
+			{ 'profileId': profileId },
 			{  },
 			{  },
 			{  },
@@ -1185,13 +1186,13 @@ class GamificationApi {
 	/**
 	 * Validate member assignment
 	 * 
-	 * @param {String} performanceProfileId Performance Profile Id
+	 * @param {String} profileId Profile Id
 	 * @param {Object} body memberAssignments
 	 */
-	postGamificationProfileMembersValidate(performanceProfileId, body) { 
-		// verify the required parameter 'performanceProfileId' is set
-		if (performanceProfileId === undefined || performanceProfileId === null) {
-			throw 'Missing the required parameter "performanceProfileId" when calling postGamificationProfileMembersValidate';
+	postGamificationProfileMembersValidate(profileId, body) { 
+		// verify the required parameter 'profileId' is set
+		if (profileId === undefined || profileId === null) {
+			throw 'Missing the required parameter "profileId" when calling postGamificationProfileMembersValidate';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
@@ -1199,9 +1200,9 @@ class GamificationApi {
 		}
 
 		return this.apiClient.callApi(
-			'/api/v2/gamification/profiles/{performanceProfileId}/members/validate', 
+			'/api/v2/gamification/profiles/{profileId}/members/validate', 
 			'POST', 
-			{ 'performanceProfileId': performanceProfileId },
+			{ 'profileId': profileId },
 			{  },
 			{  },
 			{  },

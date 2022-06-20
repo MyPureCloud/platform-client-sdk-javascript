@@ -5,7 +5,7 @@ class ConversationsApi {
 	/**
 	 * Conversations service.
 	 * @module purecloud-platform-client-v2/api/ConversationsApi
-	 * @version 138.0.1
+	 * @version 139.0.0
 	 */
 
 	/**
@@ -4554,6 +4554,126 @@ class ConversationsApi {
 	}
 
 	/**
+	 * Update a conversation by setting its recording state
+	 * 
+	 * @param {String} conversationId conversationId
+	 * @param {Object} body SetRecordingState
+	 */
+	putConversationsCallRecordingstate(conversationId, body) { 
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null) {
+			throw 'Missing the required parameter "conversationId" when calling putConversationsCallRecordingstate';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putConversationsCallRecordingstate';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/calls/{conversationId}/recordingstate', 
+			'PUT', 
+			{ 'conversationId': conversationId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update a conversation by setting its recording state
+	 * 
+	 * @param {String} conversationId conversationId
+	 * @param {Object} body SetRecordingState
+	 */
+	putConversationsCallbackRecordingstate(conversationId, body) { 
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null) {
+			throw 'Missing the required parameter "conversationId" when calling putConversationsCallbackRecordingstate';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putConversationsCallbackRecordingstate';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/callbacks/{conversationId}/recordingstate', 
+			'PUT', 
+			{ 'conversationId': conversationId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update a conversation by setting its recording state
+	 * 
+	 * @param {String} conversationId conversationId
+	 * @param {Object} body SetRecordingState
+	 */
+	putConversationsChatRecordingstate(conversationId, body) { 
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null) {
+			throw 'Missing the required parameter "conversationId" when calling putConversationsChatRecordingstate';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putConversationsChatRecordingstate';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/chats/{conversationId}/recordingstate', 
+			'PUT', 
+			{ 'conversationId': conversationId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update a conversation by setting its recording state
+	 * 
+	 * @param {String} conversationId conversationId
+	 * @param {Object} body SetRecordingState
+	 */
+	putConversationsCobrowsesessionRecordingstate(conversationId, body) { 
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null) {
+			throw 'Missing the required parameter "conversationId" when calling putConversationsCobrowsesessionRecordingstate';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putConversationsCobrowsesessionRecordingstate';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/cobrowsesessions/{conversationId}/recordingstate', 
+			'PUT', 
+			{ 'conversationId': conversationId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Update conversation draft reply
 	 * 
 	 * @param {String} conversationId conversationId
@@ -4571,6 +4691,66 @@ class ConversationsApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/conversations/emails/{conversationId}/messages/draft', 
+			'PUT', 
+			{ 'conversationId': conversationId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update a conversation by setting its recording state
+	 * 
+	 * @param {String} conversationId conversationId
+	 * @param {Object} body SetRecordingState
+	 */
+	putConversationsEmailRecordingstate(conversationId, body) { 
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null) {
+			throw 'Missing the required parameter "conversationId" when calling putConversationsEmailRecordingstate';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putConversationsEmailRecordingstate';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/emails/{conversationId}/recordingstate', 
+			'PUT', 
+			{ 'conversationId': conversationId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update a conversation by setting its recording state
+	 * 
+	 * @param {String} conversationId conversationId
+	 * @param {Object} body SetRecordingState
+	 */
+	putConversationsMessageRecordingstate(conversationId, body) { 
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null) {
+			throw 'Missing the required parameter "conversationId" when calling putConversationsMessageRecordingstate';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putConversationsMessageRecordingstate';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/messages/{conversationId}/recordingstate', 
 			'PUT', 
 			{ 'conversationId': conversationId },
 			{  },
@@ -4653,6 +4833,96 @@ class ConversationsApi {
 			'/api/v2/conversations/messaging/threadingtimeline', 
 			'PUT', 
 			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update a conversation by setting its recording state
+	 * 
+	 * @param {String} conversationId conversationId
+	 * @param {Object} body SetRecordingState
+	 */
+	putConversationsScreenshareRecordingstate(conversationId, body) { 
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null) {
+			throw 'Missing the required parameter "conversationId" when calling putConversationsScreenshareRecordingstate';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putConversationsScreenshareRecordingstate';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/screenshares/{conversationId}/recordingstate', 
+			'PUT', 
+			{ 'conversationId': conversationId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update a conversation by setting its recording state
+	 * 
+	 * @param {String} conversationId conversationId
+	 * @param {Object} body SetRecordingState
+	 */
+	putConversationsSocialRecordingstate(conversationId, body) { 
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null) {
+			throw 'Missing the required parameter "conversationId" when calling putConversationsSocialRecordingstate';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putConversationsSocialRecordingstate';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/socials/{conversationId}/recordingstate', 
+			'PUT', 
+			{ 'conversationId': conversationId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update a conversation by setting its recording state
+	 * 
+	 * @param {String} conversationId conversationId
+	 * @param {Object} body SetRecordingState
+	 */
+	putConversationsVideoRecordingstate(conversationId, body) { 
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null) {
+			throw 'Missing the required parameter "conversationId" when calling putConversationsVideoRecordingstate';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putConversationsVideoRecordingstate';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/videos/{conversationId}/recordingstate', 
+			'PUT', 
+			{ 'conversationId': conversationId },
 			{  },
 			{  },
 			{  },
