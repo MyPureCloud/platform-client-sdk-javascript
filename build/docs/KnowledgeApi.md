@@ -132,7 +132,7 @@ apiInstance.deleteKnowledgeKnowledgebaseLanguageCategory(categoryId, knowledgeBa
 | ------------- | ------------- | ------------- | ------------- |
  **categoryId** | **String** | Category ID |  |
  **knowledgeBaseId** | **String** | Knowledge base ID |  |
- **languageCode** | **String** | Language code, format: iso2-LOCALE | <br />**Values**: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT |
+ **languageCode** | **String** | Language code, format: iso2-LOCALE | <br />**Values**: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT, fr-CA |
 {: class="table table-striped"}
 
 ### Return type
@@ -186,7 +186,7 @@ apiInstance.deleteKnowledgeKnowledgebaseLanguageDocument(documentId, knowledgeBa
 | ------------- | ------------- | ------------- | ------------- |
  **documentId** | **String** | Document ID |  |
  **knowledgeBaseId** | **String** | Knowledge base ID |  |
- **languageCode** | **String** | Language code, format: iso2-LOCALE | <br />**Values**: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT |
+ **languageCode** | **String** | Language code, format: iso2-LOCALE | <br />**Values**: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT, fr-CA |
 {: class="table table-striped"}
 
 ### Return type
@@ -239,7 +239,7 @@ apiInstance.deleteKnowledgeKnowledgebaseLanguageDocumentsImport(knowledgeBaseId,
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **knowledgeBaseId** | **String** | Knowledge base ID |  |
- **languageCode** | **String** | Language code, format: iso2-LOCALE | <br />**Values**: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT |
+ **languageCode** | **String** | Language code, format: iso2-LOCALE | <br />**Values**: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT, fr-CA |
  **importId** | **String** | Import ID |  |
 {: class="table table-striped"}
 
@@ -349,7 +349,7 @@ apiInstance.getKnowledgeKnowledgebaseLanguageCategories(knowledgeBaseId, languag
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **knowledgeBaseId** | **String** | Knowledge base ID |  |
- **languageCode** | **String** | Language code, format: iso2-LOCALE | <br />**Values**: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT |
+ **languageCode** | **String** | Language code, format: iso2-LOCALE | <br />**Values**: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT, fr-CA |
  **before** | **String** | The cursor that points to the start of the set of entities that has been returned. | [optional]  |
  **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
  **limit** | **String** | Number of entities to return. Maximum of 200. Deprecated in favour of pageSize | [optional]  |
@@ -408,7 +408,7 @@ apiInstance.getKnowledgeKnowledgebaseLanguageCategory(categoryId, knowledgeBaseI
 | ------------- | ------------- | ------------- | ------------- |
  **categoryId** | **String** | Category ID |  |
  **knowledgeBaseId** | **String** | Knowledge base ID |  |
- **languageCode** | **String** | Language code, format: iso2-LOCALE | <br />**Values**: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT |
+ **languageCode** | **String** | Language code, format: iso2-LOCALE | <br />**Values**: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT, fr-CA |
 {: class="table table-striped"}
 
 ### Return type
@@ -462,7 +462,7 @@ apiInstance.getKnowledgeKnowledgebaseLanguageDocument(documentId, knowledgeBaseI
 | ------------- | ------------- | ------------- | ------------- |
  **documentId** | **String** | Document ID |  |
  **knowledgeBaseId** | **String** | Knowledge base ID |  |
- **languageCode** | **String** | Language code, format: iso2-LOCALE | <br />**Values**: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT |
+ **languageCode** | **String** | Language code, format: iso2-LOCALE | <br />**Values**: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT, fr-CA |
 {: class="table table-striped"}
 
 ### Return type
@@ -525,7 +525,7 @@ apiInstance.getKnowledgeKnowledgebaseLanguageDocuments(knowledgeBaseId, language
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **knowledgeBaseId** | **String** | Knowledge base ID |  |
- **languageCode** | **String** | Language code, format: iso2-LOCALE | <br />**Values**: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT |
+ **languageCode** | **String** | Language code, format: iso2-LOCALE | <br />**Values**: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT, fr-CA |
  **before** | **String** | The cursor that points to the start of the set of entities that has been returned. | [optional]  |
  **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
  **limit** | **String** | Number of entities to return. Maximum of 200. Deprecated in favour of pageSize | [optional]  |
@@ -587,7 +587,7 @@ apiInstance.getKnowledgeKnowledgebaseLanguageDocumentsImport(knowledgeBaseId, la
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **knowledgeBaseId** | **String** | Knowledge base ID |  |
- **languageCode** | **String** | Language code, format: iso2-LOCALE | <br />**Values**: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT |
+ **languageCode** | **String** | Language code, format: iso2-LOCALE | <br />**Values**: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT, fr-CA |
  **importId** | **String** | Import ID |  |
 {: class="table table-striped"}
 
@@ -641,7 +641,7 @@ apiInstance.getKnowledgeKnowledgebaseLanguageTraining(knowledgeBaseId, languageC
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **knowledgeBaseId** | **String** | Knowledge base ID |  |
- **languageCode** | **String** | Language code, format: iso2-LOCALE | <br />**Values**: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT |
+ **languageCode** | **String** | Language code, format: iso2-LOCALE | <br />**Values**: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT, fr-CA |
  **trainingId** | **String** | Training ID |  |
 {: class="table table-striped"}
 
@@ -701,7 +701,7 @@ apiInstance.getKnowledgeKnowledgebaseLanguageTrainings(knowledgeBaseId, language
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **knowledgeBaseId** | **String** | Knowledge base ID |  |
- **languageCode** | **String** | Language code, format: iso2-LOCALE | <br />**Values**: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT |
+ **languageCode** | **String** | Language code, format: iso2-LOCALE | <br />**Values**: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT, fr-CA |
  **before** | **String** | The cursor that points to the start of the set of entities that has been returned. | [optional]  |
  **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
  **limit** | **String** | Number of entities to return. Maximum of 200. Deprecated in favour of pageSize | [optional]  |
@@ -771,7 +771,7 @@ apiInstance.getKnowledgeKnowledgebases(opts)
  **limit** | **String** | Number of entities to return. Maximum of 200. Deprecated in favour of pageSize | [optional]  |
  **pageSize** | **String** | Number of entities to return. Maximum of 200. | [optional]  |
  **name** | **String** | Filter by Name. | [optional]  |
- **coreLanguage** | **String** | Filter by core language. | [optional] <br />**Values**: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT |
+ **coreLanguage** | **String** | Filter by core language. | [optional] <br />**Values**: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT, fr-CA |
  **published** | **Boolean** | Filter by published status. | [optional]  |
  **sortBy** | **String** | Sort by. | [optional] <br />**Values**: Name, Date |
  **sortOrder** | **String** | Sort Order. | [optional] <br />**Values**: ASC, ascending, DESC, descending |
@@ -881,7 +881,7 @@ apiInstance.patchKnowledgeKnowledgebaseLanguageCategory(categoryId, knowledgeBas
 | ------------- | ------------- | ------------- | ------------- |
  **categoryId** | **String** | Category ID |  |
  **knowledgeBaseId** | **String** | Knowledge base ID |  |
- **languageCode** | **String** | Language code, format: iso2-LOCALE | <br />**Values**: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT |
+ **languageCode** | **String** | Language code, format: iso2-LOCALE | <br />**Values**: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT, fr-CA |
  **body** | **Object** |  |  |
 {: class="table table-striped"}
 
@@ -937,7 +937,7 @@ apiInstance.patchKnowledgeKnowledgebaseLanguageDocument(documentId, knowledgeBas
 | ------------- | ------------- | ------------- | ------------- |
  **documentId** | **String** | Document ID |  |
  **knowledgeBaseId** | **String** | Knowledge base ID |  |
- **languageCode** | **String** | Language code, format: iso2-LOCALE | <br />**Values**: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT |
+ **languageCode** | **String** | Language code, format: iso2-LOCALE | <br />**Values**: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT, fr-CA |
  **body** | **Object** |  |  |
 {: class="table table-striped"}
 
@@ -991,7 +991,7 @@ apiInstance.patchKnowledgeKnowledgebaseLanguageDocuments(knowledgeBaseId, langua
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **knowledgeBaseId** | **String** | Knowledge base ID |  |
- **languageCode** | **String** | Language code, format: iso2-LOCALE | <br />**Values**: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT |
+ **languageCode** | **String** | Language code, format: iso2-LOCALE | <br />**Values**: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT, fr-CA |
  **body** | **Object** |  |  |
 {: class="table table-striped"}
 
@@ -1047,7 +1047,7 @@ apiInstance.patchKnowledgeKnowledgebaseLanguageDocumentsImport(knowledgeBaseId, 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **knowledgeBaseId** | **String** | Knowledge base ID |  |
- **languageCode** | **String** | Language code, format: iso2-LOCALE | <br />**Values**: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT |
+ **languageCode** | **String** | Language code, format: iso2-LOCALE | <br />**Values**: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT, fr-CA |
  **importId** | **String** | Import ID |  |
  **body** | **Object** |  |  |
 {: class="table table-striped"}
@@ -1152,7 +1152,7 @@ apiInstance.postKnowledgeKnowledgebaseLanguageCategories(knowledgeBaseId, langua
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **knowledgeBaseId** | **String** | Knowledge base ID |  |
- **languageCode** | **String** | Language code, format: iso2-LOCALE | <br />**Values**: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT |
+ **languageCode** | **String** | Language code, format: iso2-LOCALE | <br />**Values**: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT, fr-CA |
  **body** | **Object** |  |  |
 {: class="table table-striped"}
 
@@ -1206,7 +1206,7 @@ apiInstance.postKnowledgeKnowledgebaseLanguageDocuments(knowledgeBaseId, languag
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **knowledgeBaseId** | **String** | Knowledge base ID |  |
- **languageCode** | **String** | Language code, format: iso2-LOCALE | <br />**Values**: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT |
+ **languageCode** | **String** | Language code, format: iso2-LOCALE | <br />**Values**: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT, fr-CA |
  **body** | **Object** |  |  |
 {: class="table table-striped"}
 
@@ -1260,7 +1260,7 @@ apiInstance.postKnowledgeKnowledgebaseLanguageDocumentsImports(knowledgeBaseId, 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **knowledgeBaseId** | **String** | Knowledge base ID |  |
- **languageCode** | **String** | Language code, format: iso2-LOCALE | <br />**Values**: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT |
+ **languageCode** | **String** | Language code, format: iso2-LOCALE | <br />**Values**: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT, fr-CA |
  **body** | **Object** |  |  |
 {: class="table table-striped"}
 
@@ -1314,7 +1314,7 @@ apiInstance.postKnowledgeKnowledgebaseLanguageTrainingPromote(knowledgeBaseId, l
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **knowledgeBaseId** | **String** | Knowledge base ID |  |
- **languageCode** | **String** | Language code, format: iso2-LOCALE | <br />**Values**: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT |
+ **languageCode** | **String** | Language code, format: iso2-LOCALE | <br />**Values**: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT, fr-CA |
  **trainingId** | **String** | Training ID |  |
 {: class="table table-striped"}
 
@@ -1367,7 +1367,7 @@ apiInstance.postKnowledgeKnowledgebaseLanguageTrainings(knowledgeBaseId, languag
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **knowledgeBaseId** | **String** | Knowledge base ID |  |
- **languageCode** | **String** | Language code, format: iso2-LOCALE | <br />**Values**: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT |
+ **languageCode** | **String** | Language code, format: iso2-LOCALE | <br />**Values**: en-US, en-UK, en-AU, de-DE, es-US, es-ES, fr-FR, pt-BR, nl-NL, it-IT, fr-CA |
 {: class="table table-striped"}
 
 ### Return type

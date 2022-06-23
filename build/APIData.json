@@ -3934,16 +3934,16 @@
   "getuserroles": {
     "operationId": "getuserroles",
     "functionName": "getUserRoles",
-    "signature": "getUserRoles(userId)",
+    "signature": "getUserRoles(subjectId)",
     "parameters": [
       {
-        "name": "userId",
+        "name": "subjectId",
         "type": "String",
         "required": "true"
       }
     ],
     "return": "UserAuthorization",
-    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.UsersApi();\n\nlet userId = \"userId_example\"; // String | User ID\n\n// Returns a listing of roles and permissions for a user.\napiInstance.getUserRoles(userId)\n  .then((data) => {\n    console.log(`getUserRoles success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getUserRoles\");\n    console.error(err);\n  });"
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.UsersApi();\n\nlet subjectId = \"subjectId_example\"; // String | User ID\n\n// Returns a listing of roles and permissions for a user.\napiInstance.getUserRoles(subjectId)\n  .then((data) => {\n    console.log(`getUserRoles success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getUserRoles\");\n    console.error(err);\n  });"
   },
   "patchauthorizationrole": {
     "operationId": "patchauthorizationrole",
@@ -4280,10 +4280,10 @@
   "putuserroles": {
     "operationId": "putuserroles",
     "functionName": "putUserRoles",
-    "signature": "putUserRoles(userId, body)",
+    "signature": "putUserRoles(subjectId, body)",
     "parameters": [
       {
-        "name": "userId",
+        "name": "subjectId",
         "type": "String",
         "required": "true"
       },
@@ -4294,7 +4294,7 @@
       }
     ],
     "return": "UserAuthorization",
-    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.UsersApi();\n\nlet userId = \"userId_example\"; // String | User ID\nlet body = [\"body_example\"]; // [String] | List of roles\n\n// Sets the user's roles\napiInstance.putUserRoles(userId, body)\n  .then((data) => {\n    console.log(`putUserRoles success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling putUserRoles\");\n    console.error(err);\n  });"
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.UsersApi();\n\nlet subjectId = \"subjectId_example\"; // String | User ID\nlet body = [\"body_example\"]; // [String] | List of roles\n\n// Sets the user's roles\napiInstance.putUserRoles(subjectId, body)\n  .then((data) => {\n    console.log(`putUserRoles success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling putUserRoles\");\n    console.error(err);\n  });"
   },
   "getbillingreportsbillableusage": {
     "operationId": "getbillingreportsbillableusage",
@@ -15380,6 +15380,25 @@
     "return": "LearningModule",
     "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.LearningApi();\n\nlet moduleId = \"moduleId_example\"; // String | The ID of the learning module\nlet opts = { \n  \"expand\": [\"expand_example\"] // [String] | Fields to expand in response(case insensitive)\n};\n\n// Get a learning module\napiInstance.getLearningModule(moduleId, opts)\n  .then((data) => {\n    console.log(`getLearningModule success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getLearningModule\");\n    console.error(err);\n  });"
   },
+  "getlearningmodulejob": {
+    "operationId": "getlearningmodulejob",
+    "functionName": "getLearningModuleJob",
+    "signature": "getLearningModuleJob(moduleId, jobId)",
+    "parameters": [
+      {
+        "name": "moduleId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "jobId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "return": "LearningModuleJobResponse",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.LearningApi();\n\nlet moduleId = \"moduleId_example\"; // String | The ID of the learning module\nlet jobId = \"jobId_example\"; // String | The ID of the learning module job\n\n// Get a specific Learning Module job status\napiInstance.getLearningModuleJob(moduleId, jobId)\n  .then((data) => {\n    console.log(`getLearningModuleJob success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getLearningModuleJob\");\n    console.error(err);\n  });"
+  },
   "getlearningmodulerule": {
     "operationId": "getlearningmodulerule",
     "functionName": "getLearningModuleRule",
@@ -15505,6 +15524,34 @@
     "return": "AssessmentScoringSet",
     "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.LearningApi();\n\nlet body = {}; // Object | Assessment form and answers to score\n\n// Score learning assessment for preview\napiInstance.postLearningAssessmentsScoring(body)\n  .then((data) => {\n    console.log(`postLearningAssessmentsScoring success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling postLearningAssessmentsScoring\");\n    console.error(err);\n  });"
   },
+  "postlearningassignmentreassign": {
+    "operationId": "postlearningassignmentreassign",
+    "functionName": "postLearningAssignmentReassign",
+    "signature": "postLearningAssignmentReassign(assignmentId)",
+    "parameters": [
+      {
+        "name": "assignmentId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "return": "LearningAssignment",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.LearningApi();\n\nlet assignmentId = \"assignmentId_example\"; // String | The Learning Assignment ID\n\n// Reassign Learning Assignment\napiInstance.postLearningAssignmentReassign(assignmentId)\n  .then((data) => {\n    console.log(`postLearningAssignmentReassign success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling postLearningAssignmentReassign\");\n    console.error(err);\n  });"
+  },
+  "postlearningassignmentreset": {
+    "operationId": "postlearningassignmentreset",
+    "functionName": "postLearningAssignmentReset",
+    "signature": "postLearningAssignmentReset(assignmentId)",
+    "parameters": [
+      {
+        "name": "assignmentId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "return": "LearningAssignment",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.LearningApi();\n\nlet assignmentId = \"assignmentId_example\"; // String | The Learning Assignment ID\n\n// Reset Learning Assignment\napiInstance.postLearningAssignmentReset(assignmentId)\n  .then((data) => {\n    console.log(`postLearningAssignmentReset success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling postLearningAssignmentReset\");\n    console.error(err);\n  });"
+  },
   "postlearningassignments": {
     "operationId": "postlearningassignments",
     "functionName": "postLearningAssignments",
@@ -15560,6 +15607,25 @@
     ],
     "return": "LearningAssignmentBulkRemoveResponse",
     "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.LearningApi();\n\nlet opts = { \n  \"body\": [\"body_example\"] // [String] | The IDs of the learning assignments to be removed\n};\n\n// Remove multiple Learning Assignments\napiInstance.postLearningAssignmentsBulkremove(opts)\n  .then((data) => {\n    console.log(`postLearningAssignmentsBulkremove success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling postLearningAssignmentsBulkremove\");\n    console.error(err);\n  });"
+  },
+  "postlearningmodulejobs": {
+    "operationId": "postlearningmodulejobs",
+    "functionName": "postLearningModuleJobs",
+    "signature": "postLearningModuleJobs(moduleId, body)",
+    "parameters": [
+      {
+        "name": "moduleId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "Object",
+        "required": "true"
+      }
+    ],
+    "return": "LearningModuleJobResponse",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.LearningApi();\n\nlet moduleId = \"moduleId_example\"; // String | The ID of the learning module\nlet body = {}; // Object | The learning module job request\n\n// Starts a specified operation on learning module\napiInstance.postLearningModuleJobs(moduleId, body)\n  .then((data) => {\n    console.log(`postLearningModuleJobs success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling postLearningModuleJobs\");\n    console.error(err);\n  });"
   },
   "postlearningmodulepublish": {
     "operationId": "postlearningmodulepublish",
@@ -20662,7 +20728,7 @@
       }
     ],
     "return": "[SurveyForm]",
-    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.QualityApi();\n\nlet contextId = [\"contextId_example\"]; // [String] | A comma-delimited list of valid survey form context ids\nlet opts = { \n  \"published\": true // Boolean | If true, the latest published version will be included. If false, only the unpublished version will be included.\n};\n\n// Retrieve a list of the latest form versions by context ids\napiInstance.getQualityFormsSurveysBulkContexts(contextId, opts)\n  .then((data) => {\n    console.log(`getQualityFormsSurveysBulkContexts success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getQualityFormsSurveysBulkContexts\");\n    console.error(err);\n  });"
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.QualityApi();\n\nlet contextId = [\"contextId_example\"]; // [String] | A comma-delimited list of valid survey form context ids. The maximum number of ids allowed in this list is 100.\nlet opts = { \n  \"published\": true // Boolean | If true, the latest published version will be included. If false, only the unpublished version will be included.\n};\n\n// Retrieve a list of the latest form versions by context ids\napiInstance.getQualityFormsSurveysBulkContexts(contextId, opts)\n  .then((data) => {\n    console.log(`getQualityFormsSurveysBulkContexts success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getQualityFormsSurveysBulkContexts\");\n    console.error(err);\n  });"
   },
   "getqualitypublishedform": {
     "operationId": "getqualitypublishedform",
@@ -23169,9 +23235,16 @@
   "getroutingpredictorskeyperformanceindicators": {
     "operationId": "getroutingpredictorskeyperformanceindicators",
     "functionName": "getRoutingPredictorsKeyperformanceindicators",
-    "signature": "getRoutingPredictorsKeyperformanceindicators()",
+    "signature": "getRoutingPredictorsKeyperformanceindicators(kpiGroup)",
+    "parameters": [
+      {
+        "name": "kpiGroup",
+        "type": "String",
+        "required": "false"
+      }
+    ],
     "return": "[KeyPerformanceIndicator]",
-    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.RoutingApi();\n\n// Get a list of Key Performance Indicators available for the predictors.\napiInstance.getRoutingPredictorsKeyperformanceindicators()\n  .then((data) => {\n    console.log(`getRoutingPredictorsKeyperformanceindicators success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getRoutingPredictorsKeyperformanceindicators\");\n    console.error(err);\n  });"
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.RoutingApi();\n\nlet opts = { \n  \"kpiGroup\": \"kpiGroup_example\" // String | The Group of Key Performance Indicators to return\n};\n\n// Get a list of Key Performance Indicators\napiInstance.getRoutingPredictorsKeyperformanceindicators(opts)\n  .then((data) => {\n    console.log(`getRoutingPredictorsKeyperformanceindicators success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getRoutingPredictorsKeyperformanceindicators\");\n    console.error(err);\n  });"
   },
   "getroutingqueue": {
     "operationId": "getroutingqueue",

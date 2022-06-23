@@ -38,7 +38,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getRoutingMessageRecipients**](RoutingApi.html#getRoutingMessageRecipients) | **GET** /api/v2/routing/message/recipients | Get recipients
 [**getRoutingPredictor**](RoutingApi.html#getRoutingPredictor) | **GET** /api/v2/routing/predictors/{predictorId} | Retrieve a single predictor.
 [**getRoutingPredictors**](RoutingApi.html#getRoutingPredictors) | **GET** /api/v2/routing/predictors | Retrieve all predictors.
-[**getRoutingPredictorsKeyperformanceindicators**](RoutingApi.html#getRoutingPredictorsKeyperformanceindicators) | **GET** /api/v2/routing/predictors/keyperformanceindicators | Get a list of Key Performance Indicators available for the predictors.
+[**getRoutingPredictorsKeyperformanceindicators**](RoutingApi.html#getRoutingPredictorsKeyperformanceindicators) | **GET** /api/v2/routing/predictors/keyperformanceindicators | Get a list of Key Performance Indicators
 [**getRoutingQueue**](RoutingApi.html#getRoutingQueue) | **GET** /api/v2/routing/queues/{queueId} | Get details about this queue.
 [**getRoutingQueueComparisonperiod**](RoutingApi.html#getRoutingQueueComparisonperiod) | **GET** /api/v2/routing/queues/{queueId}/comparisonperiods/{comparisonPeriodId} | Get a Comparison Period.
 [**getRoutingQueueComparisonperiods**](RoutingApi.html#getRoutingQueueComparisonperiods) | **GET** /api/v2/routing/queues/{queueId}/comparisonperiods | Get list of comparison periods
@@ -1721,12 +1721,12 @@ apiInstance.getRoutingPredictors(opts)
 
 <a name="getRoutingPredictorsKeyperformanceindicators"></a>
 
-# [KeyPerformanceIndicator] getRoutingPredictorsKeyperformanceindicators()
+# [KeyPerformanceIndicator] getRoutingPredictorsKeyperformanceindicators(opts)
 
 
 GET /api/v2/routing/predictors/keyperformanceindicators
 
-Get a list of Key Performance Indicators available for the predictors.
+Get a list of Key Performance Indicators
 
 Requires ANY permissions:
 
@@ -1745,7 +1745,11 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.RoutingApi();
 
-apiInstance.getRoutingPredictorsKeyperformanceindicators()
+let opts = { 
+  'kpiGroup': "kpiGroup_example" // String | The Group of Key Performance Indicators to return
+};
+
+apiInstance.getRoutingPredictorsKeyperformanceindicators(opts)
   .then((data) => {
     console.log(`getRoutingPredictorsKeyperformanceindicators success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1757,8 +1761,11 @@ apiInstance.getRoutingPredictorsKeyperformanceindicators()
 
 ### Parameters
 
-This endpoint does not need any parameter.
 
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **kpiGroup** | **String** | The Group of Key Performance Indicators to return | [optional] <br />**Values**: Standard, Custom |
+{: class="table table-striped"}
 
 ### Return type
 

@@ -36,7 +36,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getUserProfile**](UsersApi.html#getUserProfile) | **GET** /api/v2/users/{userId}/profile | Get user profile
 [**getUserProfileskills**](UsersApi.html#getUserProfileskills) | **GET** /api/v2/users/{userId}/profileskills | List profile skills for a user
 [**getUserQueues**](UsersApi.html#getUserQueues) | **GET** /api/v2/users/{userId}/queues | Get queues for user
-[**getUserRoles**](UsersApi.html#getUserRoles) | **GET** /api/v2/users/{userId}/roles | Returns a listing of roles and permissions for a user.
+[**getUserRoles**](UsersApi.html#getUserRoles) | **GET** /api/v2/users/{subjectId}/roles | Returns a listing of roles and permissions for a user.
 [**getUserRoutinglanguages**](UsersApi.html#getUserRoutinglanguages) | **GET** /api/v2/users/{userId}/routinglanguages | List routing language for user
 [**getUserRoutingskills**](UsersApi.html#getUserRoutingskills) | **GET** /api/v2/users/{userId}/routingskills | List routing skills for user
 [**getUserRoutingstatus**](UsersApi.html#getUserRoutingstatus) | **GET** /api/v2/users/{userId}/routingstatus | Fetch the routing status of a user
@@ -79,7 +79,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**putUserCallforwarding**](UsersApi.html#putUserCallforwarding) | **PUT** /api/v2/users/{userId}/callforwarding | Update a user's CallForwarding
 [**putUserOutofoffice**](UsersApi.html#putUserOutofoffice) | **PUT** /api/v2/users/{userId}/outofoffice | Update an OutOfOffice
 [**putUserProfileskills**](UsersApi.html#putUserProfileskills) | **PUT** /api/v2/users/{userId}/profileskills | Update profile skills for a user
-[**putUserRoles**](UsersApi.html#putUserRoles) | **PUT** /api/v2/users/{userId}/roles | Sets the user's roles
+[**putUserRoles**](UsersApi.html#putUserRoles) | **PUT** /api/v2/users/{subjectId}/roles | Sets the user's roles
 [**putUserRoutingskill**](UsersApi.html#putUserRoutingskill) | **PUT** /api/v2/users/{userId}/routingskills/{skillId} | Update routing skill proficiency or state.
 [**putUserRoutingskillsBulk**](UsersApi.html#putUserRoutingskillsBulk) | **PUT** /api/v2/users/{userId}/routingskills/bulk | Replace all routing skills assigned to a user
 [**putUserRoutingstatus**](UsersApi.html#putUserRoutingstatus) | **PUT** /api/v2/users/{userId}/routingstatus | Update the routing status of a user
@@ -1609,10 +1609,10 @@ apiInstance.getUserQueues(userId, opts)
 
 <a name="getUserRoles"></a>
 
-# UserAuthorization getUserRoles(userId)
+# UserAuthorization getUserRoles(subjectId)
 
 
-GET /api/v2/users/{userId}/roles
+GET /api/v2/users/{subjectId}/roles
 
 Returns a listing of roles and permissions for a user.
 
@@ -1633,9 +1633,9 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.UsersApi();
 
-let userId = "userId_example"; // String | User ID
+let subjectId = "subjectId_example"; // String | User ID
 
-apiInstance.getUserRoles(userId)
+apiInstance.getUserRoles(subjectId)
   .then((data) => {
     console.log(`getUserRoles success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1650,7 +1650,7 @@ apiInstance.getUserRoles(userId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **userId** | **String** | User ID |  |
+ **subjectId** | **String** | User ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -3923,10 +3923,10 @@ apiInstance.putUserProfileskills(userId, body)
 
 <a name="putUserRoles"></a>
 
-# UserAuthorization putUserRoles(userId, body)
+# UserAuthorization putUserRoles(subjectId, body)
 
 
-PUT /api/v2/users/{userId}/roles
+PUT /api/v2/users/{subjectId}/roles
 
 Sets the user's roles
 
@@ -3947,10 +3947,10 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.UsersApi();
 
-let userId = "userId_example"; // String | User ID
+let subjectId = "subjectId_example"; // String | User ID
 let body = ["body_example"]; // [String] | List of roles
 
-apiInstance.putUserRoles(userId, body)
+apiInstance.putUserRoles(subjectId, body)
   .then((data) => {
     console.log(`putUserRoles success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3965,7 +3965,7 @@ apiInstance.putUserRoles(userId, body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **userId** | **String** | User ID |  |
+ **subjectId** | **String** | User ID |  |
  **body** | **[String]** | List of roles |  |
 {: class="table table-striped"}
 

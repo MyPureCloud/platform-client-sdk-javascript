@@ -13,15 +13,19 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getLearningAssignments**](LearningApi.html#getLearningAssignments) | **GET** /api/v2/learning/assignments | List of Learning module Assignments
 [**getLearningAssignmentsMe**](LearningApi.html#getLearningAssignmentsMe) | **GET** /api/v2/learning/assignments/me | List of Learning Assignments assigned to current user
 [**getLearningModule**](LearningApi.html#getLearningModule) | **GET** /api/v2/learning/modules/{moduleId} | Get a learning module
+[**getLearningModuleJob**](LearningApi.html#getLearningModuleJob) | **GET** /api/v2/learning/modules/{moduleId}/jobs/{jobId} | Get a specific Learning Module job status
 [**getLearningModuleRule**](LearningApi.html#getLearningModuleRule) | **GET** /api/v2/learning/modules/{moduleId}/rule | Get a learning module rule
 [**getLearningModuleVersion**](LearningApi.html#getLearningModuleVersion) | **GET** /api/v2/learning/modules/{moduleId}/versions/{versionId} | Get specific version of a published module
 [**getLearningModules**](LearningApi.html#getLearningModules) | **GET** /api/v2/learning/modules | Get all learning modules of an organization
 [**patchLearningAssignment**](LearningApi.html#patchLearningAssignment) | **PATCH** /api/v2/learning/assignments/{assignmentId} | Update Learning Assignment
 [**postLearningAssessmentsScoring**](LearningApi.html#postLearningAssessmentsScoring) | **POST** /api/v2/learning/assessments/scoring | Score learning assessment for preview
+[**postLearningAssignmentReassign**](LearningApi.html#postLearningAssignmentReassign) | **POST** /api/v2/learning/assignments/{assignmentId}/reassign | Reassign Learning Assignment
+[**postLearningAssignmentReset**](LearningApi.html#postLearningAssignmentReset) | **POST** /api/v2/learning/assignments/{assignmentId}/reset | Reset Learning Assignment
 [**postLearningAssignments**](LearningApi.html#postLearningAssignments) | **POST** /api/v2/learning/assignments | Create Learning Assignment
 [**postLearningAssignmentsAggregatesQuery**](LearningApi.html#postLearningAssignmentsAggregatesQuery) | **POST** /api/v2/learning/assignments/aggregates/query | Retrieve aggregated assignment data
 [**postLearningAssignmentsBulkadd**](LearningApi.html#postLearningAssignmentsBulkadd) | **POST** /api/v2/learning/assignments/bulkadd | Add multiple learning assignments
 [**postLearningAssignmentsBulkremove**](LearningApi.html#postLearningAssignmentsBulkremove) | **POST** /api/v2/learning/assignments/bulkremove | Remove multiple Learning Assignments
+[**postLearningModuleJobs**](LearningApi.html#postLearningModuleJobs) | **POST** /api/v2/learning/modules/{moduleId}/jobs | Starts a specified operation on learning module
 [**postLearningModulePublish**](LearningApi.html#postLearningModulePublish) | **POST** /api/v2/learning/modules/{moduleId}/publish | Publish a Learning module
 [**postLearningModules**](LearningApi.html#postLearningModules) | **POST** /api/v2/learning/modules | Create a new learning module
 [**postLearningRulesQuery**](LearningApi.html#postLearningRulesQuery) | **POST** /api/v2/learning/rules/query | Get users for learning module rule
@@ -399,6 +403,58 @@ apiInstance.getLearningModule(moduleId, opts)
 
 **LearningModule**
 
+<a name="getLearningModuleJob"></a>
+
+# LearningModuleJobResponse getLearningModuleJob(moduleId, jobId)
+
+
+GET /api/v2/learning/modules/{moduleId}/jobs/{jobId}
+
+Get a specific Learning Module job status
+
+Requires ANY permissions:
+
+* learning:module:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.LearningApi();
+
+let moduleId = "moduleId_example"; // String | The ID of the learning module
+let jobId = "jobId_example"; // String | The ID of the learning module job
+
+apiInstance.getLearningModuleJob(moduleId, jobId)
+  .then((data) => {
+    console.log(`getLearningModuleJob success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getLearningModuleJob');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **moduleId** | **String** | The ID of the learning module |  |
+ **jobId** | **String** | The ID of the learning module job |  |
+{: class="table table-striped"}
+
+### Return type
+
+**LearningModuleJobResponse**
+
 <a name="getLearningModuleRule"></a>
 
 # LearningModuleRule getLearningModuleRule(moduleId)
@@ -563,7 +619,7 @@ apiInstance.getLearningModules(opts)
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **sortOrder** | **String** | Sort order | [optional] [default to ascending]<br />**Values**: ascending, descending |
- **sortBy** | **String** | Sort by | [optional] [default to name]<br />**Values**: name |
+ **sortBy** | **String** | Sort by | [optional] [default to name]<br />**Values**: name, createddate, percentpassed, averagescore |
  **searchTerm** | **String** | Search Term (searchable by name) | [optional]  |
  **expand** | **[String]** | Fields to expand in response(case insensitive) | [optional] <br />**Values**: rule, summaryData |
  **isPublished** | **String** | Specifies if only the Unpublished (isPublished is False) or Published (isPublished is True) modules are returned. If isPublished is Any or omitted, both types are returned | [optional] [default to Any]<br />**Values**: True, False, Any |
@@ -676,6 +732,110 @@ apiInstance.postLearningAssessmentsScoring(body)
 ### Return type
 
 **AssessmentScoringSet**
+
+<a name="postLearningAssignmentReassign"></a>
+
+# LearningAssignment postLearningAssignmentReassign(assignmentId)
+
+
+POST /api/v2/learning/assignments/{assignmentId}/reassign
+
+Reassign Learning Assignment
+
+This will reassign the state of the assignment to Assigned and update the assignment to the latest version of the module
+
+Requires ANY permissions:
+
+* learning:assignment:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.LearningApi();
+
+let assignmentId = "assignmentId_example"; // String | The Learning Assignment ID
+
+apiInstance.postLearningAssignmentReassign(assignmentId)
+  .then((data) => {
+    console.log(`postLearningAssignmentReassign success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postLearningAssignmentReassign');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **assignmentId** | **String** | The Learning Assignment ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+**LearningAssignment**
+
+<a name="postLearningAssignmentReset"></a>
+
+# LearningAssignment postLearningAssignmentReset(assignmentId)
+
+
+POST /api/v2/learning/assignments/{assignmentId}/reset
+
+Reset Learning Assignment
+
+This will reset the state of the assignment to Assigned and remove the version of Learning module associated with the assignment
+
+Requires ANY permissions:
+
+* learning:assignment:reset
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.LearningApi();
+
+let assignmentId = "assignmentId_example"; // String | The Learning Assignment ID
+
+apiInstance.postLearningAssignmentReset(assignmentId)
+  .then((data) => {
+    console.log(`postLearningAssignmentReset success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postLearningAssignmentReset');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **assignmentId** | **String** | The Learning Assignment ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+**LearningAssignment**
 
 <a name="postLearningAssignments"></a>
 
@@ -882,6 +1042,60 @@ apiInstance.postLearningAssignmentsBulkremove(opts)
 ### Return type
 
 **LearningAssignmentBulkRemoveResponse**
+
+<a name="postLearningModuleJobs"></a>
+
+# LearningModuleJobResponse postLearningModuleJobs(moduleId, body)
+
+
+POST /api/v2/learning/modules/{moduleId}/jobs
+
+Starts a specified operation on learning module
+
+This will initiate operation specified in the request body for a learning module
+
+Requires ANY permissions:
+
+* learning:module:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.LearningApi();
+
+let moduleId = "moduleId_example"; // String | The ID of the learning module
+let body = {}; // Object | The learning module job request
+
+apiInstance.postLearningModuleJobs(moduleId, body)
+  .then((data) => {
+    console.log(`postLearningModuleJobs success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postLearningModuleJobs');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **moduleId** | **String** | The ID of the learning module |  |
+ **body** | **Object** | The learning module job request |  |
+{: class="table table-striped"}
+
+### Return type
+
+**LearningModuleJobResponse**
 
 <a name="postLearningModulePublish"></a>
 

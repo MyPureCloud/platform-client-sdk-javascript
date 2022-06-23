@@ -5,7 +5,7 @@ class LearningApi {
 	/**
 	 * Learning service.
 	 * @module purecloud-platform-client-v2/api/LearningApi
-	 * @version 139.0.0
+	 * @version 140.0.0
 	 */
 
 	/**
@@ -204,6 +204,36 @@ class LearningApi {
 	}
 
 	/**
+	 * Get a specific Learning Module job status
+	 * 
+	 * @param {String} moduleId The ID of the learning module
+	 * @param {String} jobId The ID of the learning module job
+	 */
+	getLearningModuleJob(moduleId, jobId) { 
+		// verify the required parameter 'moduleId' is set
+		if (moduleId === undefined || moduleId === null) {
+			throw 'Missing the required parameter "moduleId" when calling getLearningModuleJob';
+		}
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null) {
+			throw 'Missing the required parameter "jobId" when calling getLearningModuleJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/learning/modules/{moduleId}/jobs/{jobId}', 
+			'GET', 
+			{ 'moduleId': moduleId,'jobId': jobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get a learning module rule
 	 * 
 	 * @param {String} moduleId The ID of the learning module
@@ -349,6 +379,56 @@ class LearningApi {
 	}
 
 	/**
+	 * Reassign Learning Assignment
+	 * This will reassign the state of the assignment to Assigned and update the assignment to the latest version of the module
+	 * @param {String} assignmentId The Learning Assignment ID
+	 */
+	postLearningAssignmentReassign(assignmentId) { 
+		// verify the required parameter 'assignmentId' is set
+		if (assignmentId === undefined || assignmentId === null) {
+			throw 'Missing the required parameter "assignmentId" when calling postLearningAssignmentReassign';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/learning/assignments/{assignmentId}/reassign', 
+			'POST', 
+			{ 'assignmentId': assignmentId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Reset Learning Assignment
+	 * This will reset the state of the assignment to Assigned and remove the version of Learning module associated with the assignment
+	 * @param {String} assignmentId The Learning Assignment ID
+	 */
+	postLearningAssignmentReset(assignmentId) { 
+		// verify the required parameter 'assignmentId' is set
+		if (assignmentId === undefined || assignmentId === null) {
+			throw 'Missing the required parameter "assignmentId" when calling postLearningAssignmentReset';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/learning/assignments/{assignmentId}/reset', 
+			'POST', 
+			{ 'assignmentId': assignmentId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Create Learning Assignment
 	 * 
 	 * @param {Object} opts Optional parameters
@@ -439,6 +519,36 @@ class LearningApi {
 			{  },
 			{  },
 			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Starts a specified operation on learning module
+	 * This will initiate operation specified in the request body for a learning module
+	 * @param {String} moduleId The ID of the learning module
+	 * @param {Object} body The learning module job request
+	 */
+	postLearningModuleJobs(moduleId, body) { 
+		// verify the required parameter 'moduleId' is set
+		if (moduleId === undefined || moduleId === null) {
+			throw 'Missing the required parameter "moduleId" when calling postLearningModuleJobs';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postLearningModuleJobs';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/learning/modules/{moduleId}/jobs', 
+			'POST', 
+			{ 'moduleId': moduleId },
+			{  },
+			{  },
+			{  },
+			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']

@@ -28,7 +28,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getAuthorizationSubject**](AuthorizationApi.html#getAuthorizationSubject) | **GET** /api/v2/authorization/subjects/{subjectId} | Returns a listing of roles and permissions for a user.
 [**getAuthorizationSubjectsMe**](AuthorizationApi.html#getAuthorizationSubjectsMe) | **GET** /api/v2/authorization/subjects/me | Returns a listing of roles and permissions for the currently authenticated user.
 [**getAuthorizationSubjectsRolecounts**](AuthorizationApi.html#getAuthorizationSubjectsRolecounts) | **GET** /api/v2/authorization/subjects/rolecounts | Get the count of roles granted to a list of subjects
-[**getUserRoles**](AuthorizationApi.html#getUserRoles) | **GET** /api/v2/users/{userId}/roles | Returns a listing of roles and permissions for a user.
+[**getUserRoles**](AuthorizationApi.html#getUserRoles) | **GET** /api/v2/users/{subjectId}/roles | Returns a listing of roles and permissions for a user.
 [**patchAuthorizationRole**](AuthorizationApi.html#patchAuthorizationRole) | **PATCH** /api/v2/authorization/roles/{roleId} | Patch Organization Role for needsUpdate Field
 [**postAuthorizationDivisionObject**](AuthorizationApi.html#postAuthorizationDivisionObject) | **POST** /api/v2/authorization/divisions/{divisionId}/objects/{objectType} | Assign a list of objects to a division
 [**postAuthorizationDivisionRestore**](AuthorizationApi.html#postAuthorizationDivisionRestore) | **POST** /api/v2/authorization/divisions/{divisionId}/restore | Recreate a previously deleted division.
@@ -46,7 +46,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**putAuthorizationRoleUsersAdd**](AuthorizationApi.html#putAuthorizationRoleUsersAdd) | **PUT** /api/v2/authorization/roles/{roleId}/users/add | Sets the users for the role
 [**putAuthorizationRoleUsersRemove**](AuthorizationApi.html#putAuthorizationRoleUsersRemove) | **PUT** /api/v2/authorization/roles/{roleId}/users/remove | Removes the users from the role
 [**putAuthorizationRolesDefault**](AuthorizationApi.html#putAuthorizationRolesDefault) | **PUT** /api/v2/authorization/roles/default | Restore specified default roles
-[**putUserRoles**](AuthorizationApi.html#putUserRoles) | **PUT** /api/v2/users/{userId}/roles | Sets the user's roles
+[**putUserRoles**](AuthorizationApi.html#putUserRoles) | **PUT** /api/v2/users/{subjectId}/roles | Sets the user's roles
 {: class="table table-striped"}
 
 <a name="deleteAuthorizationDivision"></a>
@@ -1195,10 +1195,10 @@ apiInstance.getAuthorizationSubjectsRolecounts(opts)
 
 <a name="getUserRoles"></a>
 
-# UserAuthorization getUserRoles(userId)
+# UserAuthorization getUserRoles(subjectId)
 
 
-GET /api/v2/users/{userId}/roles
+GET /api/v2/users/{subjectId}/roles
 
 Returns a listing of roles and permissions for a user.
 
@@ -1219,9 +1219,9 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AuthorizationApi();
 
-let userId = "userId_example"; // String | User ID
+let subjectId = "subjectId_example"; // String | User ID
 
-apiInstance.getUserRoles(userId)
+apiInstance.getUserRoles(subjectId)
   .then((data) => {
     console.log(`getUserRoles success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1236,7 +1236,7 @@ apiInstance.getUserRoles(userId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **userId** | **String** | User ID |  |
+ **subjectId** | **String** | User ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2157,10 +2157,10 @@ apiInstance.putAuthorizationRolesDefault(body)
 
 <a name="putUserRoles"></a>
 
-# UserAuthorization putUserRoles(userId, body)
+# UserAuthorization putUserRoles(subjectId, body)
 
 
-PUT /api/v2/users/{userId}/roles
+PUT /api/v2/users/{subjectId}/roles
 
 Sets the user's roles
 
@@ -2181,10 +2181,10 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AuthorizationApi();
 
-let userId = "userId_example"; // String | User ID
+let subjectId = "subjectId_example"; // String | User ID
 let body = ["body_example"]; // [String] | List of roles
 
-apiInstance.putUserRoles(userId, body)
+apiInstance.putUserRoles(subjectId, body)
   .then((data) => {
     console.log(`putUserRoles success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2199,7 +2199,7 @@ apiInstance.putUserRoles(userId, body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **userId** | **String** | User ID |  |
+ **subjectId** | **String** | User ID |  |
  **body** | **[String]** | List of roles |  |
 {: class="table table-striped"}
 

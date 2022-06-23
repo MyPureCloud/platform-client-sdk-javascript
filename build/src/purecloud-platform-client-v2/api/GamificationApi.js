@@ -5,7 +5,7 @@ class GamificationApi {
 	/**
 	 * Gamification service.
 	 * @module purecloud-platform-client-v2/api/GamificationApi
-	 * @version 139.0.0
+	 * @version 140.0.0
 	 */
 
 	/**
@@ -150,7 +150,7 @@ class GamificationApi {
 
 	/**
 	 * Gamified metric by id
-	 * 
+	 * This API is deprecated. Use /api/v2/gamification/profiles/{profileId}/metrics/{metricId} instead.
 	 * @param {String} metricId metric Id
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.workday The objective query workday. If not specified, then it retrieves the current objective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
@@ -225,7 +225,7 @@ class GamificationApi {
 
 	/**
 	 * All gamified metrics for a given profile
-	 * 
+	 * This API is deprecated. Use /api/v2/gamification/profiles/{profileId}/metrics instead.
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.performanceProfileId The profile id of the metrics you are trying to retrieve. The DEFAULT profile is used if nothing is given.
 	 * @param {String} opts.workday The objective query workday. If not specified, then it retrieves the current objective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
@@ -1080,7 +1080,7 @@ class GamificationApi {
 
 	/**
 	 * Creates a gamified metric with a given metric definition and metric objective
-	 * 
+	 * This API is deprecated. Use /api/v2/gamification/profiles/{profileId}/metrics instead.
 	 * @param {Object} body Metric
 	 */
 	postGamificationMetrics(body) { 
@@ -1309,7 +1309,7 @@ class GamificationApi {
 
 	/**
 	 * Updates a metric
-	 * 
+	 * This API is deprecated. Use /api/v2/gamification/profiles/{profileId}/metrics/{metricId} instead.
 	 * @param {String} metricId metric Id
 	 * @param {Object} body Metric
 	 * @param {Object} opts Optional parameters

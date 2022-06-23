@@ -399,7 +399,7 @@ class Configuration {
 
 /**
  * @module purecloud-platform-client-v2/ApiClient
- * @version 139.0.0
+ * @version 140.0.0
  */
 class ApiClient {
 	/**
@@ -1477,7 +1477,7 @@ class AlertingApi {
 	/**
 	 * Alerting service.
 	 * @module purecloud-platform-client-v2/api/AlertingApi
-	 * @version 139.0.0
+	 * @version 140.0.0
 	 */
 
 	/**
@@ -1791,7 +1791,7 @@ class AnalyticsApi {
 	/**
 	 * Analytics service.
 	 * @module purecloud-platform-client-v2/api/AnalyticsApi
-	 * @version 139.0.0
+	 * @version 140.0.0
 	 */
 
 	/**
@@ -2973,7 +2973,7 @@ class ArchitectApi {
 	/**
 	 * Architect service.
 	 * @module purecloud-platform-client-v2/api/ArchitectApi
-	 * @version 139.0.0
+	 * @version 140.0.0
 	 */
 
 	/**
@@ -6018,7 +6018,7 @@ class AuditApi {
 	/**
 	 * Audit service.
 	 * @module purecloud-platform-client-v2/api/AuditApi
-	 * @version 139.0.0
+	 * @version 140.0.0
 	 */
 
 	/**
@@ -6189,7 +6189,7 @@ class AuthorizationApi {
 	/**
 	 * Authorization service.
 	 * @module purecloud-platform-client-v2/api/AuthorizationApi
-	 * @version 139.0.0
+	 * @version 140.0.0
 	 */
 
 	/**
@@ -6794,18 +6794,18 @@ class AuthorizationApi {
 	/**
 	 * Returns a listing of roles and permissions for a user.
 	 * 
-	 * @param {String} userId User ID
+	 * @param {String} subjectId User ID
 	 */
-	getUserRoles(userId) { 
-		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
-			throw 'Missing the required parameter "userId" when calling getUserRoles';
+	getUserRoles(subjectId) { 
+		// verify the required parameter 'subjectId' is set
+		if (subjectId === undefined || subjectId === null) {
+			throw 'Missing the required parameter "subjectId" when calling getUserRoles';
 		}
 
 		return this.apiClient.callApi(
-			'/api/v2/users/{userId}/roles', 
+			'/api/v2/users/{subjectId}/roles', 
 			'GET', 
-			{ 'userId': userId },
+			{ 'subjectId': subjectId },
 			{  },
 			{  },
 			{  },
@@ -7339,13 +7339,13 @@ class AuthorizationApi {
 	/**
 	 * Sets the user's roles
 	 * 
-	 * @param {String} userId User ID
+	 * @param {String} subjectId User ID
 	 * @param {Array.<String>} body List of roles
 	 */
-	putUserRoles(userId, body) { 
-		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
-			throw 'Missing the required parameter "userId" when calling putUserRoles';
+	putUserRoles(subjectId, body) { 
+		// verify the required parameter 'subjectId' is set
+		if (subjectId === undefined || subjectId === null) {
+			throw 'Missing the required parameter "subjectId" when calling putUserRoles';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
@@ -7353,9 +7353,9 @@ class AuthorizationApi {
 		}
 
 		return this.apiClient.callApi(
-			'/api/v2/users/{userId}/roles', 
+			'/api/v2/users/{subjectId}/roles', 
 			'PUT', 
-			{ 'userId': userId },
+			{ 'subjectId': subjectId },
 			{  },
 			{  },
 			{  },
@@ -7372,7 +7372,7 @@ class BillingApi {
 	/**
 	 * Billing service.
 	 * @module purecloud-platform-client-v2/api/BillingApi
-	 * @version 139.0.0
+	 * @version 140.0.0
 	 */
 
 	/**
@@ -7452,7 +7452,7 @@ class ChatApi {
 	/**
 	 * Chat service.
 	 * @module purecloud-platform-client-v2/api/ChatApi
-	 * @version 139.0.0
+	 * @version 140.0.0
 	 */
 
 	/**
@@ -7543,7 +7543,7 @@ class CoachingApi {
 	/**
 	 * Coaching service.
 	 * @module purecloud-platform-client-v2/api/CoachingApi
-	 * @version 139.0.0
+	 * @version 140.0.0
 	 */
 
 	/**
@@ -8120,7 +8120,7 @@ class ContentManagementApi {
 	/**
 	 * ContentManagement service.
 	 * @module purecloud-platform-client-v2/api/ContentManagementApi
-	 * @version 139.0.0
+	 * @version 140.0.0
 	 */
 
 	/**
@@ -9260,7 +9260,7 @@ class ConversationsApi {
 	/**
 	 * Conversations service.
 	 * @module purecloud-platform-client-v2/api/ConversationsApi
-	 * @version 139.0.0
+	 * @version 140.0.0
 	 */
 
 	/**
@@ -14194,7 +14194,7 @@ class DataExtensionsApi {
 	/**
 	 * DataExtensions service.
 	 * @module purecloud-platform-client-v2/api/DataExtensionsApi
-	 * @version 139.0.0
+	 * @version 140.0.0
 	 */
 
 	/**
@@ -14280,7 +14280,7 @@ class ExternalContactsApi {
 	/**
 	 * ExternalContacts service.
 	 * @module purecloud-platform-client-v2/api/ExternalContactsApi
-	 * @version 139.0.0
+	 * @version 140.0.0
 	 */
 
 	/**
@@ -16023,7 +16023,7 @@ class FaxApi {
 	/**
 	 * Fax service.
 	 * @module purecloud-platform-client-v2/api/FaxApi
-	 * @version 139.0.0
+	 * @version 140.0.0
 	 */
 
 	/**
@@ -16194,7 +16194,7 @@ class FlowsApi {
 	/**
 	 * Flows service.
 	 * @module purecloud-platform-client-v2/api/FlowsApi
-	 * @version 139.0.0
+	 * @version 140.0.0
 	 */
 
 	/**
@@ -16265,7 +16265,7 @@ class GamificationApi {
 	/**
 	 * Gamification service.
 	 * @module purecloud-platform-client-v2/api/GamificationApi
-	 * @version 139.0.0
+	 * @version 140.0.0
 	 */
 
 	/**
@@ -16410,7 +16410,7 @@ class GamificationApi {
 
 	/**
 	 * Gamified metric by id
-	 * 
+	 * This API is deprecated. Use /api/v2/gamification/profiles/{profileId}/metrics/{metricId} instead.
 	 * @param {String} metricId metric Id
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.workday The objective query workday. If not specified, then it retrieves the current objective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
@@ -16485,7 +16485,7 @@ class GamificationApi {
 
 	/**
 	 * All gamified metrics for a given profile
-	 * 
+	 * This API is deprecated. Use /api/v2/gamification/profiles/{profileId}/metrics instead.
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.performanceProfileId The profile id of the metrics you are trying to retrieve. The DEFAULT profile is used if nothing is given.
 	 * @param {String} opts.workday The objective query workday. If not specified, then it retrieves the current objective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
@@ -17340,7 +17340,7 @@ class GamificationApi {
 
 	/**
 	 * Creates a gamified metric with a given metric definition and metric objective
-	 * 
+	 * This API is deprecated. Use /api/v2/gamification/profiles/{profileId}/metrics instead.
 	 * @param {Object} body Metric
 	 */
 	postGamificationMetrics(body) { 
@@ -17569,7 +17569,7 @@ class GamificationApi {
 
 	/**
 	 * Updates a metric
-	 * 
+	 * This API is deprecated. Use /api/v2/gamification/profiles/{profileId}/metrics/{metricId} instead.
 	 * @param {String} metricId metric Id
 	 * @param {Object} body Metric
 	 * @param {Object} opts Optional parameters
@@ -17696,7 +17696,7 @@ class GeneralDataProtectionRegulationApi {
 	/**
 	 * GeneralDataProtectionRegulation service.
 	 * @module purecloud-platform-client-v2/api/GeneralDataProtectionRegulationApi
-	 * @version 139.0.0
+	 * @version 140.0.0
 	 */
 
 	/**
@@ -17826,7 +17826,7 @@ class GeolocationApi {
 	/**
 	 * Geolocation service.
 	 * @module purecloud-platform-client-v2/api/GeolocationApi
-	 * @version 139.0.0
+	 * @version 140.0.0
 	 */
 
 	/**
@@ -17957,7 +17957,7 @@ class GreetingsApi {
 	/**
 	 * Greetings service.
 	 * @module purecloud-platform-client-v2/api/GreetingsApi
-	 * @version 139.0.0
+	 * @version 140.0.0
 	 */
 
 	/**
@@ -18412,7 +18412,7 @@ class GroupsApi {
 	/**
 	 * Groups service.
 	 * @module purecloud-platform-client-v2/api/GroupsApi
-	 * @version 139.0.0
+	 * @version 140.0.0
 	 */
 
 	/**
@@ -18817,7 +18817,7 @@ class IdentityProviderApi {
 	/**
 	 * IdentityProvider service.
 	 * @module purecloud-platform-client-v2/api/IdentityProviderApi
-	 * @version 139.0.0
+	 * @version 140.0.0
 	 */
 
 	/**
@@ -19573,7 +19573,7 @@ class IntegrationsApi {
 	/**
 	 * Integrations service.
 	 * @module purecloud-platform-client-v2/api/IntegrationsApi
-	 * @version 139.0.0
+	 * @version 140.0.0
 	 */
 
 	/**
@@ -21250,7 +21250,7 @@ class JourneyApi {
 	/**
 	 * Journey service.
 	 * @module purecloud-platform-client-v2/api/JourneyApi
-	 * @version 139.0.0
+	 * @version 140.0.0
 	 */
 
 	/**
@@ -21961,7 +21961,7 @@ class KnowledgeApi {
 	/**
 	 * Knowledge service.
 	 * @module purecloud-platform-client-v2/api/KnowledgeApi
-	 * @version 139.0.0
+	 * @version 140.0.0
 	 */
 
 	/**
@@ -22861,7 +22861,7 @@ class LanguageUnderstandingApi {
 	/**
 	 * LanguageUnderstanding service.
 	 * @module purecloud-platform-client-v2/api/LanguageUnderstandingApi
-	 * @version 139.0.0
+	 * @version 140.0.0
 	 */
 
 	/**
@@ -23765,7 +23765,7 @@ class LanguagesApi {
 	/**
 	 * Languages service.
 	 * @module purecloud-platform-client-v2/api/LanguagesApi
-	 * @version 139.0.0
+	 * @version 140.0.0
 	 */
 
 	/**
@@ -24033,7 +24033,7 @@ class LearningApi {
 	/**
 	 * Learning service.
 	 * @module purecloud-platform-client-v2/api/LearningApi
-	 * @version 139.0.0
+	 * @version 140.0.0
 	 */
 
 	/**
@@ -24232,6 +24232,36 @@ class LearningApi {
 	}
 
 	/**
+	 * Get a specific Learning Module job status
+	 * 
+	 * @param {String} moduleId The ID of the learning module
+	 * @param {String} jobId The ID of the learning module job
+	 */
+	getLearningModuleJob(moduleId, jobId) { 
+		// verify the required parameter 'moduleId' is set
+		if (moduleId === undefined || moduleId === null) {
+			throw 'Missing the required parameter "moduleId" when calling getLearningModuleJob';
+		}
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null) {
+			throw 'Missing the required parameter "jobId" when calling getLearningModuleJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/learning/modules/{moduleId}/jobs/{jobId}', 
+			'GET', 
+			{ 'moduleId': moduleId,'jobId': jobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get a learning module rule
 	 * 
 	 * @param {String} moduleId The ID of the learning module
@@ -24377,6 +24407,56 @@ class LearningApi {
 	}
 
 	/**
+	 * Reassign Learning Assignment
+	 * This will reassign the state of the assignment to Assigned and update the assignment to the latest version of the module
+	 * @param {String} assignmentId The Learning Assignment ID
+	 */
+	postLearningAssignmentReassign(assignmentId) { 
+		// verify the required parameter 'assignmentId' is set
+		if (assignmentId === undefined || assignmentId === null) {
+			throw 'Missing the required parameter "assignmentId" when calling postLearningAssignmentReassign';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/learning/assignments/{assignmentId}/reassign', 
+			'POST', 
+			{ 'assignmentId': assignmentId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Reset Learning Assignment
+	 * This will reset the state of the assignment to Assigned and remove the version of Learning module associated with the assignment
+	 * @param {String} assignmentId The Learning Assignment ID
+	 */
+	postLearningAssignmentReset(assignmentId) { 
+		// verify the required parameter 'assignmentId' is set
+		if (assignmentId === undefined || assignmentId === null) {
+			throw 'Missing the required parameter "assignmentId" when calling postLearningAssignmentReset';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/learning/assignments/{assignmentId}/reset', 
+			'POST', 
+			{ 'assignmentId': assignmentId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Create Learning Assignment
 	 * 
 	 * @param {Object} opts Optional parameters
@@ -24467,6 +24547,36 @@ class LearningApi {
 			{  },
 			{  },
 			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Starts a specified operation on learning module
+	 * This will initiate operation specified in the request body for a learning module
+	 * @param {String} moduleId The ID of the learning module
+	 * @param {Object} body The learning module job request
+	 */
+	postLearningModuleJobs(moduleId, body) { 
+		// verify the required parameter 'moduleId' is set
+		if (moduleId === undefined || moduleId === null) {
+			throw 'Missing the required parameter "moduleId" when calling postLearningModuleJobs';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postLearningModuleJobs';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/learning/modules/{moduleId}/jobs', 
+			'POST', 
+			{ 'moduleId': moduleId },
+			{  },
+			{  },
+			{  },
+			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']
@@ -24624,7 +24734,7 @@ class LicenseApi {
 	/**
 	 * License service.
 	 * @module purecloud-platform-client-v2/api/LicenseApi
-	 * @version 139.0.0
+	 * @version 140.0.0
 	 */
 
 	/**
@@ -24862,7 +24972,7 @@ class LocationsApi {
 	/**
 	 * Locations service.
 	 * @module purecloud-platform-client-v2/api/LocationsApi
-	 * @version 139.0.0
+	 * @version 140.0.0
 	 */
 
 	/**
@@ -25098,7 +25208,7 @@ class MessagingApi {
 	/**
 	 * Messaging service.
 	 * @module purecloud-platform-client-v2/api/MessagingApi
-	 * @version 139.0.0
+	 * @version 140.0.0
 	 */
 
 	/**
@@ -25249,7 +25359,7 @@ class MobileDevicesApi {
 	/**
 	 * MobileDevices service.
 	 * @module purecloud-platform-client-v2/api/MobileDevicesApi
-	 * @version 139.0.0
+	 * @version 140.0.0
 	 */
 
 	/**
@@ -25400,7 +25510,7 @@ class NotificationsApi {
 	/**
 	 * Notifications service.
 	 * @module purecloud-platform-client-v2/api/NotificationsApi
-	 * @version 139.0.0
+	 * @version 140.0.0
 	 */
 
 	/**
@@ -25625,7 +25735,7 @@ class OAuthApi {
 	/**
 	 * OAuth service.
 	 * @module purecloud-platform-client-v2/api/OAuthApi
-	 * @version 139.0.0
+	 * @version 140.0.0
 	 */
 
 	/**
@@ -25991,7 +26101,7 @@ class ObjectsApi {
 	/**
 	 * Objects service.
 	 * @module purecloud-platform-client-v2/api/ObjectsApi
-	 * @version 139.0.0
+	 * @version 140.0.0
 	 */
 
 	/**
@@ -26262,7 +26372,7 @@ class OrganizationApi {
 	/**
 	 * Organization service.
 	 * @module purecloud-platform-client-v2/api/OrganizationApi
-	 * @version 139.0.0
+	 * @version 140.0.0
 	 */
 
 	/**
@@ -26665,7 +26775,7 @@ class OrganizationAuthorizationApi {
 	/**
 	 * OrganizationAuthorization service.
 	 * @module purecloud-platform-client-v2/api/OrganizationAuthorizationApi
-	 * @version 139.0.0
+	 * @version 140.0.0
 	 */
 
 	/**
@@ -27590,7 +27700,7 @@ class OutboundApi {
 	/**
 	 * Outbound service.
 	 * @module purecloud-platform-client-v2/api/OutboundApi
-	 * @version 139.0.0
+	 * @version 140.0.0
 	 */
 
 	/**
@@ -30845,7 +30955,7 @@ class PresenceApi {
 	/**
 	 * Presence service.
 	 * @module purecloud-platform-client-v2/api/PresenceApi
-	 * @version 139.0.0
+	 * @version 140.0.0
 	 */
 
 	/**
@@ -31167,7 +31277,7 @@ class QualityApi {
 	/**
 	 * Quality service.
 	 * @module purecloud-platform-client-v2/api/QualityApi
-	 * @version 139.0.0
+	 * @version 140.0.0
 	 */
 
 	/**
@@ -31925,7 +32035,7 @@ class QualityApi {
 	/**
 	 * Retrieve a list of the latest form versions by context ids
 	 * 
-	 * @param {Array.<String>} contextId A comma-delimited list of valid survey form context ids
+	 * @param {Array.<String>} contextId A comma-delimited list of valid survey form context ids. The maximum number of ids allowed in this list is 100.
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.published If true, the latest published version will be included. If false, only the unpublished version will be included. (default to true)
 	 */
@@ -32745,7 +32855,7 @@ class RecordingApi {
 	/**
 	 * Recording service.
 	 * @module purecloud-platform-client-v2/api/RecordingApi
-	 * @version 139.0.0
+	 * @version 140.0.0
 	 */
 
 	/**
@@ -34398,7 +34508,7 @@ class ResponseManagementApi {
 	/**
 	 * ResponseManagement service.
 	 * @module purecloud-platform-client-v2/api/ResponseManagementApi
-	 * @version 139.0.0
+	 * @version 140.0.0
 	 */
 
 	/**
@@ -34882,7 +34992,7 @@ class RoutingApi {
 	/**
 	 * Routing service.
 	 * @module purecloud-platform-client-v2/api/RoutingApi
-	 * @version 139.0.0
+	 * @version 140.0.0
 	 */
 
 	/**
@@ -35711,16 +35821,20 @@ class RoutingApi {
 	}
 
 	/**
-	 * Get a list of Key Performance Indicators available for the predictors.
+	 * Get a list of Key Performance Indicators
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.kpiGroup The Group of Key Performance Indicators to return
 	 */
-	getRoutingPredictorsKeyperformanceindicators() { 
+	getRoutingPredictorsKeyperformanceindicators(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/routing/predictors/keyperformanceindicators', 
 			'GET', 
 			{  },
-			{  },
+			{ 'kpiGroup': opts['kpiGroup'] },
 			{  },
 			{  },
 			null, 
@@ -37797,7 +37911,7 @@ class SCIMApi {
 	/**
 	 * SCIM service.
 	 * @module purecloud-platform-client-v2/api/SCIMApi
-	 * @version 139.0.0
+	 * @version 140.0.0
 	 */
 
 	/**
@@ -38674,7 +38788,7 @@ class ScriptsApi {
 	/**
 	 * Scripts service.
 	 * @module purecloud-platform-client-v2/api/ScriptsApi
-	 * @version 139.0.0
+	 * @version 140.0.0
 	 */
 
 	/**
@@ -39093,7 +39207,7 @@ class SearchApi {
 	/**
 	 * Search service.
 	 * @module purecloud-platform-client-v2/api/SearchApi
-	 * @version 139.0.0
+	 * @version 140.0.0
 	 */
 
 	/**
@@ -39628,7 +39742,7 @@ class SpeechTextAnalyticsApi {
 	/**
 	 * SpeechTextAnalytics service.
 	 * @module purecloud-platform-client-v2/api/SpeechTextAnalyticsApi
-	 * @version 139.0.0
+	 * @version 140.0.0
 	 */
 
 	/**
@@ -40481,7 +40595,7 @@ class StationsApi {
 	/**
 	 * Stations service.
 	 * @module purecloud-platform-client-v2/api/StationsApi
-	 * @version 139.0.0
+	 * @version 140.0.0
 	 */
 
 	/**
@@ -40628,7 +40742,7 @@ class SuggestApi {
 	/**
 	 * Suggest service.
 	 * @module purecloud-platform-client-v2/api/SuggestApi
-	 * @version 139.0.0
+	 * @version 140.0.0
 	 */
 
 	/**
@@ -40767,7 +40881,7 @@ class TelephonyApi {
 	/**
 	 * Telephony service.
 	 * @module purecloud-platform-client-v2/api/TelephonyApi
-	 * @version 139.0.0
+	 * @version 140.0.0
 	 */
 
 	/**
@@ -40875,7 +40989,7 @@ class TelephonyProvidersEdgeApi {
 	/**
 	 * TelephonyProvidersEdge service.
 	 * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-	 * @version 139.0.0
+	 * @version 140.0.0
 	 */
 
 	/**
@@ -44508,7 +44622,7 @@ class TextbotsApi {
 	/**
 	 * Textbots service.
 	 * @module purecloud-platform-client-v2/api/TextbotsApi
-	 * @version 139.0.0
+	 * @version 140.0.0
 	 */
 
 	/**
@@ -44636,7 +44750,7 @@ class TokensApi {
 	/**
 	 * Tokens service.
 	 * @module purecloud-platform-client-v2/api/TokensApi
-	 * @version 139.0.0
+	 * @version 140.0.0
 	 */
 
 	/**
@@ -44742,7 +44856,7 @@ class UploadsApi {
 	/**
 	 * Uploads service.
 	 * @module purecloud-platform-client-v2/api/UploadsApi
-	 * @version 139.0.0
+	 * @version 140.0.0
 	 */
 
 	/**
@@ -44893,7 +45007,7 @@ class UsageApi {
 	/**
 	 * Usage service.
 	 * @module purecloud-platform-client-v2/api/UsageApi
-	 * @version 139.0.0
+	 * @version 140.0.0
 	 */
 
 	/**
@@ -44964,7 +45078,7 @@ class UserRecordingsApi {
 	/**
 	 * UserRecordings service.
 	 * @module purecloud-platform-client-v2/api/UserRecordingsApi
-	 * @version 139.0.0
+	 * @version 140.0.0
 	 */
 
 	/**
@@ -45148,7 +45262,7 @@ class UsersApi {
 	/**
 	 * Users service.
 	 * @module purecloud-platform-client-v2/api/UsersApi
-	 * @version 139.0.0
+	 * @version 140.0.0
 	 */
 
 	/**
@@ -45968,18 +46082,18 @@ class UsersApi {
 	/**
 	 * Returns a listing of roles and permissions for a user.
 	 * 
-	 * @param {String} userId User ID
+	 * @param {String} subjectId User ID
 	 */
-	getUserRoles(userId) { 
-		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
-			throw 'Missing the required parameter "userId" when calling getUserRoles';
+	getUserRoles(subjectId) { 
+		// verify the required parameter 'subjectId' is set
+		if (subjectId === undefined || subjectId === null) {
+			throw 'Missing the required parameter "subjectId" when calling getUserRoles';
 		}
 
 		return this.apiClient.callApi(
-			'/api/v2/users/{userId}/roles', 
+			'/api/v2/users/{subjectId}/roles', 
 			'GET', 
-			{ 'userId': userId },
+			{ 'subjectId': subjectId },
 			{  },
 			{  },
 			{  },
@@ -47232,13 +47346,13 @@ class UsersApi {
 	/**
 	 * Sets the user's roles
 	 * 
-	 * @param {String} userId User ID
+	 * @param {String} subjectId User ID
 	 * @param {Array.<String>} body List of roles
 	 */
-	putUserRoles(userId, body) { 
-		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
-			throw 'Missing the required parameter "userId" when calling putUserRoles';
+	putUserRoles(subjectId, body) { 
+		// verify the required parameter 'subjectId' is set
+		if (subjectId === undefined || subjectId === null) {
+			throw 'Missing the required parameter "subjectId" when calling putUserRoles';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
@@ -47246,9 +47360,9 @@ class UsersApi {
 		}
 
 		return this.apiClient.callApi(
-			'/api/v2/users/{userId}/roles', 
+			'/api/v2/users/{subjectId}/roles', 
 			'PUT', 
-			{ 'userId': userId },
+			{ 'subjectId': subjectId },
 			{  },
 			{  },
 			{  },
@@ -47450,7 +47564,7 @@ class UtilitiesApi {
 	/**
 	 * Utilities service.
 	 * @module purecloud-platform-client-v2/api/UtilitiesApi
-	 * @version 139.0.0
+	 * @version 140.0.0
 	 */
 
 	/**
@@ -47561,7 +47675,7 @@ class VoicemailApi {
 	/**
 	 * Voicemail service.
 	 * @module purecloud-platform-client-v2/api/VoicemailApi
-	 * @version 139.0.0
+	 * @version 140.0.0
 	 */
 
 	/**
@@ -48228,7 +48342,7 @@ class WebChatApi {
 	/**
 	 * WebChat service.
 	 * @module purecloud-platform-client-v2/api/WebChatApi
-	 * @version 139.0.0
+	 * @version 140.0.0
 	 */
 
 	/**
@@ -48772,7 +48886,7 @@ class WebDeploymentsApi {
 	/**
 	 * WebDeployments service.
 	 * @module purecloud-platform-client-v2/api/WebDeploymentsApi
-	 * @version 139.0.0
+	 * @version 140.0.0
 	 */
 
 	/**
@@ -49127,7 +49241,7 @@ class WebMessagingApi {
 	/**
 	 * WebMessaging service.
 	 * @module purecloud-platform-client-v2/api/WebMessagingApi
-	 * @version 139.0.0
+	 * @version 140.0.0
 	 */
 
 	/**
@@ -49173,7 +49287,7 @@ class WidgetsApi {
 	/**
 	 * Widgets service.
 	 * @module purecloud-platform-client-v2/api/WidgetsApi
-	 * @version 139.0.0
+	 * @version 140.0.0
 	 */
 
 	/**
@@ -49319,7 +49433,7 @@ class WorkforceManagementApi {
 	/**
 	 * WorkforceManagement service.
 	 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-	 * @version 139.0.0
+	 * @version 140.0.0
 	 */
 
 	/**
@@ -53570,7 +53684,7 @@ class WorkforceManagementApi {
  * </pre>
  * </p>
  * @module purecloud-platform-client-v2/index
- * @version 139.0.0
+ * @version 140.0.0
  */
 class platformClient {
 	constructor() {

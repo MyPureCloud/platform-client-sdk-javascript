@@ -729,6 +729,7 @@ docs/getLearningAssignment-example.txt
 docs/getLearningAssignments-example.txt
 docs/getLearningAssignmentsMe-example.txt
 docs/getLearningModule-example.txt
+docs/getLearningModuleJob-example.txt
 docs/getLearningModuleRule-example.txt
 docs/getLearningModuleVersion-example.txt
 docs/getLearningModules-example.txt
@@ -1535,10 +1536,13 @@ docs/postLanguageunderstandingMinerExecute-example.txt
 docs/postLanguageunderstandingMinerUploads-example.txt
 docs/postLanguageunderstandingMiners-example.txt
 docs/postLearningAssessmentsScoring-example.txt
+docs/postLearningAssignmentReassign-example.txt
+docs/postLearningAssignmentReset-example.txt
 docs/postLearningAssignments-example.txt
 docs/postLearningAssignmentsAggregatesQuery-example.txt
 docs/postLearningAssignmentsBulkadd-example.txt
 docs/postLearningAssignmentsBulkremove-example.txt
+docs/postLearningModuleJobs-example.txt
 docs/postLearningModulePublish-example.txt
 docs/postLearningModules-example.txt
 docs/postLearningRulesQuery-example.txt

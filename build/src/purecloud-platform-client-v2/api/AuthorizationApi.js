@@ -5,7 +5,7 @@ class AuthorizationApi {
 	/**
 	 * Authorization service.
 	 * @module purecloud-platform-client-v2/api/AuthorizationApi
-	 * @version 139.0.0
+	 * @version 140.0.0
 	 */
 
 	/**
@@ -610,18 +610,18 @@ class AuthorizationApi {
 	/**
 	 * Returns a listing of roles and permissions for a user.
 	 * 
-	 * @param {String} userId User ID
+	 * @param {String} subjectId User ID
 	 */
-	getUserRoles(userId) { 
-		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
-			throw 'Missing the required parameter "userId" when calling getUserRoles';
+	getUserRoles(subjectId) { 
+		// verify the required parameter 'subjectId' is set
+		if (subjectId === undefined || subjectId === null) {
+			throw 'Missing the required parameter "subjectId" when calling getUserRoles';
 		}
 
 		return this.apiClient.callApi(
-			'/api/v2/users/{userId}/roles', 
+			'/api/v2/users/{subjectId}/roles', 
 			'GET', 
-			{ 'userId': userId },
+			{ 'subjectId': subjectId },
 			{  },
 			{  },
 			{  },
@@ -1155,13 +1155,13 @@ class AuthorizationApi {
 	/**
 	 * Sets the user's roles
 	 * 
-	 * @param {String} userId User ID
+	 * @param {String} subjectId User ID
 	 * @param {Array.<String>} body List of roles
 	 */
-	putUserRoles(userId, body) { 
-		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
-			throw 'Missing the required parameter "userId" when calling putUserRoles';
+	putUserRoles(subjectId, body) { 
+		// verify the required parameter 'subjectId' is set
+		if (subjectId === undefined || subjectId === null) {
+			throw 'Missing the required parameter "subjectId" when calling putUserRoles';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
@@ -1169,9 +1169,9 @@ class AuthorizationApi {
 		}
 
 		return this.apiClient.callApi(
-			'/api/v2/users/{userId}/roles', 
+			'/api/v2/users/{subjectId}/roles', 
 			'PUT', 
-			{ 'userId': userId },
+			{ 'subjectId': subjectId },
 			{  },
 			{  },
 			{  },

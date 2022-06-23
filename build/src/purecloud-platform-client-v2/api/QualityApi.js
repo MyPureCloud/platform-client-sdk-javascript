@@ -5,7 +5,7 @@ class QualityApi {
 	/**
 	 * Quality service.
 	 * @module purecloud-platform-client-v2/api/QualityApi
-	 * @version 139.0.0
+	 * @version 140.0.0
 	 */
 
 	/**
@@ -763,7 +763,7 @@ class QualityApi {
 	/**
 	 * Retrieve a list of the latest form versions by context ids
 	 * 
-	 * @param {Array.<String>} contextId A comma-delimited list of valid survey form context ids
+	 * @param {Array.<String>} contextId A comma-delimited list of valid survey form context ids. The maximum number of ids allowed in this list is 100.
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.published If true, the latest published version will be included. If false, only the unpublished version will be included. (default to true)
 	 */

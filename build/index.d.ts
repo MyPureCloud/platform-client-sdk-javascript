@@ -639,7 +639,7 @@ declare class AuthorizationApi {
   	getAuthorizationSubject(subjectId: string): Promise<Models.AuthzSubject>; 
   	getAuthorizationSubjectsMe(): Promise<Models.AuthzSubject>; 
   	getAuthorizationSubjectsRolecounts(opts?: AuthorizationApi.getAuthorizationSubjectsRolecountsOptions): Promise<{ [key: string]: object; }>; 
-  	getUserRoles(userId: string): Promise<Models.UserAuthorization>; 
+  	getUserRoles(subjectId: string): Promise<Models.UserAuthorization>; 
   	patchAuthorizationRole(roleId: string, body: Models.DomainOrganizationRole): Promise<Models.DomainOrganizationRole>; 
   	postAuthorizationDivisionObject(divisionId: string, objectType: string, body: Array<string>): Promise<void>; 
   	postAuthorizationDivisionRestore(divisionId: string, body: Models.AuthzDivision): Promise<Models.AuthzDivision>; 
@@ -657,7 +657,7 @@ declare class AuthorizationApi {
   	putAuthorizationRoleUsersAdd(roleId: string, body: Array<string>): Promise<Array<string>>; 
   	putAuthorizationRoleUsersRemove(roleId: string, body: Array<string>): Promise<Array<string>>; 
   	putAuthorizationRolesDefault(body: Array<Models.DomainOrganizationRole>): Promise<Models.OrganizationRoleEntityListing>; 
-  	putUserRoles(userId: string, body: Array<string>): Promise<Models.UserAuthorization>;
+  	putUserRoles(subjectId: string, body: Array<string>): Promise<Models.UserAuthorization>;
 }
 
 declare namespace AuthorizationApi { 
@@ -2248,15 +2248,19 @@ declare class LearningApi {
   	getLearningAssignments(opts?: LearningApi.getLearningAssignmentsOptions): Promise<Models.LearningAssignmentsDomainEntity>; 
   	getLearningAssignmentsMe(opts?: LearningApi.getLearningAssignmentsMeOptions): Promise<Models.LearningAssignmentsDomainEntity>; 
   	getLearningModule(moduleId: string, opts?: LearningApi.getLearningModuleOptions): Promise<Models.LearningModule>; 
+  	getLearningModuleJob(moduleId: string, jobId: string): Promise<Models.LearningModuleJobResponse>; 
   	getLearningModuleRule(moduleId: string): Promise<Models.LearningModuleRule>; 
   	getLearningModuleVersion(moduleId: string, versionId: string, opts?: LearningApi.getLearningModuleVersionOptions): Promise<Models.LearningModule>; 
   	getLearningModules(opts?: LearningApi.getLearningModulesOptions): Promise<Models.LearningModulesDomainEntityListing>; 
   	patchLearningAssignment(assignmentId: string, opts?: LearningApi.patchLearningAssignmentOptions): Promise<Models.LearningAssignment>; 
   	postLearningAssessmentsScoring(body: Models.LearningAssessmentScoringRequest): Promise<Models.AssessmentScoringSet>; 
+  	postLearningAssignmentReassign(assignmentId: string): Promise<Models.LearningAssignment>; 
+  	postLearningAssignmentReset(assignmentId: string): Promise<Models.LearningAssignment>; 
   	postLearningAssignments(opts?: LearningApi.postLearningAssignmentsOptions): Promise<Models.LearningAssignment>; 
   	postLearningAssignmentsAggregatesQuery(body: Models.LearningAssignmentAggregateParam): Promise<Models.LearningAssignmentAggregateResponse>; 
   	postLearningAssignmentsBulkadd(opts?: LearningApi.postLearningAssignmentsBulkaddOptions): Promise<Models.LearningAssignmentBulkAddResponse>; 
   	postLearningAssignmentsBulkremove(opts?: LearningApi.postLearningAssignmentsBulkremoveOptions): Promise<Models.LearningAssignmentBulkRemoveResponse>; 
+  	postLearningModuleJobs(moduleId: string, body: Models.LearningModuleJobRequest): Promise<Models.LearningModuleJobResponse>; 
   	postLearningModulePublish(moduleId: string): Promise<Models.LearningModulePublishResponse>; 
   	postLearningModules(body: Models.LearningModuleRequest): Promise<Models.LearningModule>; 
   	postLearningRulesQuery(pageSize: number, pageNumber: number, body: Models.LearningAssignmentUserQuery): Promise<Models.LearningAssignmentUserListing>; 
@@ -3433,7 +3437,7 @@ declare class RoutingApi {
   	getRoutingMessageRecipients(opts?: RoutingApi.getRoutingMessageRecipientsOptions): Promise<Models.RecipientListing>; 
   	getRoutingPredictor(predictorId: string): Promise<Models.Predictor>; 
   	getRoutingPredictors(opts?: RoutingApi.getRoutingPredictorsOptions): Promise<Models.PredictorListing>; 
-  	getRoutingPredictorsKeyperformanceindicators(): Promise<Array<Models.KeyPerformanceIndicator>>; 
+  	getRoutingPredictorsKeyperformanceindicators(opts?: RoutingApi.getRoutingPredictorsKeyperformanceindicatorsOptions): Promise<Array<Models.KeyPerformanceIndicator>>; 
   	getRoutingQueue(queueId: string): Promise<Models.Queue>; 
   	getRoutingQueueComparisonperiod(queueId: string, comparisonPeriodId: string): Promise<Models.ComparisonPeriod>; 
   	getRoutingQueueComparisonperiods(queueId: string): Promise<Models.ComparisonPeriodListing>; 
@@ -3548,6 +3552,9 @@ declare namespace RoutingApi {
 		"limit"?: string;
 		"pageSize"?: string;
 		"queueId"?: Array<string>;
+	}
+	export interface getRoutingPredictorsKeyperformanceindicatorsOptions { 
+		"kpiGroup"?: string;
 	}
 	export interface getRoutingQueueEstimatedwaittimeOptions { 
 		"conversationId"?: string;
@@ -4531,7 +4538,7 @@ declare class UsersApi {
   	getUserProfile(userId: string, opts?: UsersApi.getUserProfileOptions): Promise<Models.UserProfile>; 
   	getUserProfileskills(userId: string): Promise<Array<string>>; 
   	getUserQueues(userId: string, opts?: UsersApi.getUserQueuesOptions): Promise<Models.UserQueueEntityListing>; 
-  	getUserRoles(userId: string): Promise<Models.UserAuthorization>; 
+  	getUserRoles(subjectId: string): Promise<Models.UserAuthorization>; 
   	getUserRoutinglanguages(userId: string, opts?: UsersApi.getUserRoutinglanguagesOptions): Promise<Models.UserLanguageEntityListing>; 
   	getUserRoutingskills(userId: string, opts?: UsersApi.getUserRoutingskillsOptions): Promise<Models.UserSkillEntityListing>; 
   	getUserRoutingstatus(userId: string): Promise<Models.RoutingStatus>; 
@@ -4574,7 +4581,7 @@ declare class UsersApi {
   	putUserCallforwarding(userId: string, body: Models.CallForwarding): Promise<Models.CallForwarding>; 
   	putUserOutofoffice(userId: string, body: Models.OutOfOffice): Promise<Models.OutOfOffice>; 
   	putUserProfileskills(userId: string, body: Array<string>): Promise<Array<string>>; 
-  	putUserRoles(userId: string, body: Array<string>): Promise<Models.UserAuthorization>; 
+  	putUserRoles(subjectId: string, body: Array<string>): Promise<Models.UserAuthorization>; 
   	putUserRoutingskill(userId: string, skillId: string, body: Models.UserRoutingSkill): Promise<Models.UserRoutingSkill>; 
   	putUserRoutingskillsBulk(userId: string, body: Array<Models.UserRoutingSkillPost>): Promise<Models.UserSkillEntityListing>; 
   	putUserRoutingstatus(userId: string, body: Models.RoutingStatus): Promise<Models.RoutingStatus>; 
@@ -8844,8 +8851,8 @@ declare namespace Models {
 		"expirationDate"?: string;
 		"issueDate"?: string;
 		"expired"?: boolean;
-		"valid"?: boolean;
 		"signatureValid"?: boolean;
+		"valid"?: boolean;
 	}
 	
 	export interface Change { 
@@ -10906,6 +10913,7 @@ declare namespace Models {
 	export interface ConversationEventTopicCall { 
 		"id"?: string;
 		"state"?: string;
+		"initialState"?: string;
 		"recording"?: boolean;
 		"recordingState"?: string;
 		"muted"?: boolean;
@@ -10935,6 +10943,7 @@ declare namespace Models {
 	
 	export interface ConversationEventTopicCallback { 
 		"state"?: string;
+		"initialState"?: string;
 		"id"?: string;
 		"direction"?: string;
 		"held"?: boolean;
@@ -10963,6 +10972,7 @@ declare namespace Models {
 	
 	export interface ConversationEventTopicChat { 
 		"state"?: string;
+		"initialState"?: string;
 		"id"?: string;
 		"provider"?: string;
 		"scriptId"?: string;
@@ -10982,6 +10992,7 @@ declare namespace Models {
 	
 	export interface ConversationEventTopicCobrowse { 
 		"state"?: string;
+		"initialState"?: string;
 		"disconnectType"?: string;
 		"id"?: string;
 		"self"?: Models.ConversationEventTopicAddress;
@@ -11035,6 +11046,7 @@ declare namespace Models {
 	export interface ConversationEventTopicEmail { 
 		"id"?: string;
 		"state"?: string;
+		"initialState"?: string;
 		"held"?: boolean;
 		"autoGenerated"?: boolean;
 		"subject"?: string;
@@ -11106,6 +11118,7 @@ declare namespace Models {
 	export interface ConversationEventTopicMessage { 
 		"id"?: string;
 		"state"?: string;
+		"initialState"?: string;
 		"held"?: boolean;
 		"errorInfo"?: Models.ConversationEventTopicErrorDetails;
 		"provider"?: string;
@@ -11137,6 +11150,7 @@ declare namespace Models {
 		"media"?: Array<Models.ConversationEventTopicMessageMedia>;
 		"errorInfo"?: Models.ConversationEventTopicErrorDetails;
 		"stickers"?: Array<Models.ConversationEventTopicMessageSticker>;
+		"messageMetadata"?: Models.ConversationEventTopicMessageMetadata;
 	}
 	
 	export interface ConversationEventTopicMessageMedia { 
@@ -11145,6 +11159,22 @@ declare namespace Models {
 		"contentLengthBytes"?: number;
 		"name"?: string;
 		"id"?: string;
+	}
+	
+	export interface ConversationEventTopicMessageMetadata { 
+		"type"?: string;
+		"events"?: Array<Models.ConversationEventTopicMessageMetadataEvent>;
+		"content"?: Array<Models.ConversationEventTopicMessageMetadataContent>;
+	}
+	
+	export interface ConversationEventTopicMessageMetadataContent { 
+		"contentType"?: string;
+		"subType"?: string;
+	}
+	
+	export interface ConversationEventTopicMessageMetadataEvent { 
+		"eventType"?: string;
+		"subType"?: string;
 	}
 	
 	export interface ConversationEventTopicMessageSticker { 
@@ -11207,6 +11237,7 @@ declare namespace Models {
 	
 	export interface ConversationEventTopicScreenshare { 
 		"state"?: string;
+		"initialState"?: string;
 		"self"?: Models.ConversationEventTopicAddress;
 		"id"?: string;
 		"context"?: string;
@@ -11225,6 +11256,7 @@ declare namespace Models {
 	
 	export interface ConversationEventTopicSocialExpression { 
 		"state"?: string;
+		"initialState"?: string;
 		"id"?: string;
 		"socialMediaId"?: string;
 		"socialMediaHub"?: string;
@@ -11251,6 +11283,7 @@ declare namespace Models {
 	
 	export interface ConversationEventTopicVideo { 
 		"state"?: string;
+		"initialState"?: string;
 		"self"?: Models.ConversationEventTopicAddress;
 		"id"?: string;
 		"context"?: string;
@@ -11387,6 +11420,7 @@ declare namespace Models {
 		"media"?: Array<Models.ConversationMessageEventTopicMessageMedia>;
 		"stickers"?: Array<Models.ConversationMessageEventTopicMessageSticker>;
 		"errorInfo"?: Models.ConversationMessageEventTopicErrorDetails;
+		"messageMetadata"?: Models.ConversationMessageEventTopicMessageMetadata;
 	}
 	
 	export interface ConversationMessageEventTopicMessageMedia { 
@@ -11436,6 +11470,22 @@ declare namespace Models {
 		"type"?: string;
 		"recipientCountry"?: string;
 		"recipientType"?: string;
+	}
+	
+	export interface ConversationMessageEventTopicMessageMetadata { 
+		"type"?: string;
+		"events"?: Array<Models.ConversationMessageEventTopicMessageMetadataEvent>;
+		"content"?: Array<Models.ConversationMessageEventTopicMessageMetadataContent>;
+	}
+	
+	export interface ConversationMessageEventTopicMessageMetadataContent { 
+		"contentType"?: string;
+		"subType"?: string;
+	}
+	
+	export interface ConversationMessageEventTopicMessageMetadataEvent { 
+		"eventType"?: string;
+		"subType"?: string;
 	}
 	
 	export interface ConversationMessageEventTopicMessageSticker { 
@@ -15172,7 +15222,7 @@ declare namespace Models {
 	export interface EmergencyGroup { 
 		"id"?: string;
 		"name": string;
-		"division"?: Models.Division;
+		"division"?: Models.WritableDivision;
 		"description"?: string;
 		"version"?: number;
 		"dateCreated"?: string;
@@ -17443,7 +17493,7 @@ declare namespace Models {
 	export interface IVR { 
 		"id"?: string;
 		"name": string;
-		"division"?: Models.Division;
+		"division"?: Models.WritableDivision;
 		"description"?: string;
 		"version"?: number;
 		"dateCreated"?: string;
@@ -18737,6 +18787,15 @@ declare namespace Models {
 		"id"?: string;
 		"name"?: string;
 		"optimizationType"?: string;
+		"dateCreated"?: string;
+		"dateModified"?: string;
+		"description"?: string;
+		"kpiType"?: string;
+		"source"?: string;
+		"wrapUpCodeConfig"?: Models.WrapUpCodeConfig;
+		"status"?: string;
+		"kpiGroup"?: string;
+		"selfUri"?: string;
 	}
 	
 	export interface KeyPerformanceIndicatorAssessment { 
@@ -19301,6 +19360,16 @@ declare namespace Models {
 		"sharingUri"?: string;
 		"contentType"?: string;
 		"order": number;
+	}
+	
+	export interface LearningModuleJobRequest { 
+		"action": string;
+	}
+	
+	export interface LearningModuleJobResponse { 
+		"id"?: string;
+		"status"?: string;
+		"selfUri"?: string;
 	}
 	
 	export interface LearningModulePublishResponse { 
@@ -23634,6 +23703,7 @@ declare namespace Models {
 	export interface QueueConversationEventTopicCall { 
 		"id"?: string;
 		"state"?: string;
+		"initialState"?: string;
 		"recording"?: boolean;
 		"recordingState"?: string;
 		"muted"?: boolean;
@@ -23663,6 +23733,7 @@ declare namespace Models {
 	
 	export interface QueueConversationEventTopicCallback { 
 		"state"?: string;
+		"initialState"?: string;
 		"id"?: string;
 		"direction"?: string;
 		"held"?: boolean;
@@ -23691,6 +23762,7 @@ declare namespace Models {
 	
 	export interface QueueConversationEventTopicChat { 
 		"state"?: string;
+		"initialState"?: string;
 		"id"?: string;
 		"provider"?: string;
 		"scriptId"?: string;
@@ -23710,6 +23782,7 @@ declare namespace Models {
 	
 	export interface QueueConversationEventTopicCobrowse { 
 		"state"?: string;
+		"initialState"?: string;
 		"disconnectType"?: string;
 		"id"?: string;
 		"self"?: Models.QueueConversationEventTopicAddress;
@@ -23763,6 +23836,7 @@ declare namespace Models {
 	export interface QueueConversationEventTopicEmail { 
 		"id"?: string;
 		"state"?: string;
+		"initialState"?: string;
 		"held"?: boolean;
 		"autoGenerated"?: boolean;
 		"subject"?: string;
@@ -23834,6 +23908,7 @@ declare namespace Models {
 	export interface QueueConversationEventTopicMessage { 
 		"id"?: string;
 		"state"?: string;
+		"initialState"?: string;
 		"held"?: boolean;
 		"errorInfo"?: Models.QueueConversationEventTopicErrorDetails;
 		"provider"?: string;
@@ -23865,6 +23940,7 @@ declare namespace Models {
 		"media"?: Array<Models.QueueConversationEventTopicMessageMedia>;
 		"errorInfo"?: Models.QueueConversationEventTopicErrorDetails;
 		"stickers"?: Array<Models.QueueConversationEventTopicMessageSticker>;
+		"messageMetadata"?: Models.QueueConversationEventTopicMessageMetadata;
 	}
 	
 	export interface QueueConversationEventTopicMessageMedia { 
@@ -23873,6 +23949,22 @@ declare namespace Models {
 		"contentLengthBytes"?: number;
 		"name"?: string;
 		"id"?: string;
+	}
+	
+	export interface QueueConversationEventTopicMessageMetadata { 
+		"type"?: string;
+		"events"?: Array<Models.QueueConversationEventTopicMessageMetadataEvent>;
+		"content"?: Array<Models.QueueConversationEventTopicMessageMetadataContent>;
+	}
+	
+	export interface QueueConversationEventTopicMessageMetadataContent { 
+		"contentType"?: string;
+		"subType"?: string;
+	}
+	
+	export interface QueueConversationEventTopicMessageMetadataEvent { 
+		"eventType"?: string;
+		"subType"?: string;
 	}
 	
 	export interface QueueConversationEventTopicMessageSticker { 
@@ -23935,6 +24027,7 @@ declare namespace Models {
 	
 	export interface QueueConversationEventTopicScreenshare { 
 		"state"?: string;
+		"initialState"?: string;
 		"self"?: Models.QueueConversationEventTopicAddress;
 		"id"?: string;
 		"context"?: string;
@@ -23953,6 +24046,7 @@ declare namespace Models {
 	
 	export interface QueueConversationEventTopicSocialExpression { 
 		"state"?: string;
+		"initialState"?: string;
 		"id"?: string;
 		"socialMediaId"?: string;
 		"socialMediaHub"?: string;
@@ -23979,6 +24073,7 @@ declare namespace Models {
 	
 	export interface QueueConversationEventTopicVideo { 
 		"state"?: string;
+		"initialState"?: string;
 		"self"?: Models.QueueConversationEventTopicAddress;
 		"id"?: string;
 		"context"?: string;
@@ -24090,6 +24185,7 @@ declare namespace Models {
 		"media"?: Array<Models.QueueConversationMessageEventTopicMessageMedia>;
 		"stickers"?: Array<Models.QueueConversationMessageEventTopicMessageSticker>;
 		"errorInfo"?: Models.QueueConversationMessageEventTopicErrorDetails;
+		"messageMetadata"?: Models.QueueConversationMessageEventTopicMessageMetadata;
 	}
 	
 	export interface QueueConversationMessageEventTopicMessageMedia { 
@@ -24139,6 +24235,22 @@ declare namespace Models {
 		"type"?: string;
 		"recipientCountry"?: string;
 		"recipientType"?: string;
+	}
+	
+	export interface QueueConversationMessageEventTopicMessageMetadata { 
+		"type"?: string;
+		"events"?: Array<Models.QueueConversationMessageEventTopicMessageMetadataEvent>;
+		"content"?: Array<Models.QueueConversationMessageEventTopicMessageMetadataContent>;
+	}
+	
+	export interface QueueConversationMessageEventTopicMessageMetadataContent { 
+		"contentType"?: string;
+		"subType"?: string;
+	}
+	
+	export interface QueueConversationMessageEventTopicMessageMetadataEvent { 
+		"eventType"?: string;
+		"subType"?: string;
 	}
 	
 	export interface QueueConversationMessageEventTopicMessageSticker { 
@@ -24308,6 +24420,7 @@ declare namespace Models {
 	export interface QueueConversationSocialExpressionEventTopicCall { 
 		"id"?: string;
 		"state"?: string;
+		"initialState"?: string;
 		"recording"?: boolean;
 		"recordingState"?: string;
 		"muted"?: boolean;
@@ -24337,6 +24450,7 @@ declare namespace Models {
 	
 	export interface QueueConversationSocialExpressionEventTopicCallback { 
 		"state"?: string;
+		"initialState"?: string;
 		"id"?: string;
 		"direction"?: string;
 		"held"?: boolean;
@@ -24365,6 +24479,7 @@ declare namespace Models {
 	
 	export interface QueueConversationSocialExpressionEventTopicChat { 
 		"state"?: string;
+		"initialState"?: string;
 		"id"?: string;
 		"provider"?: string;
 		"scriptId"?: string;
@@ -24384,6 +24499,7 @@ declare namespace Models {
 	
 	export interface QueueConversationSocialExpressionEventTopicCobrowse { 
 		"state"?: string;
+		"initialState"?: string;
 		"disconnectType"?: string;
 		"id"?: string;
 		"self"?: Models.QueueConversationSocialExpressionEventTopicAddress;
@@ -24437,6 +24553,7 @@ declare namespace Models {
 	export interface QueueConversationSocialExpressionEventTopicEmail { 
 		"id"?: string;
 		"state"?: string;
+		"initialState"?: string;
 		"held"?: boolean;
 		"autoGenerated"?: boolean;
 		"subject"?: string;
@@ -24508,6 +24625,7 @@ declare namespace Models {
 	export interface QueueConversationSocialExpressionEventTopicMessage { 
 		"id"?: string;
 		"state"?: string;
+		"initialState"?: string;
 		"held"?: boolean;
 		"errorInfo"?: Models.QueueConversationSocialExpressionEventTopicErrorDetails;
 		"provider"?: string;
@@ -24539,6 +24657,7 @@ declare namespace Models {
 		"media"?: Array<Models.QueueConversationSocialExpressionEventTopicMessageMedia>;
 		"errorInfo"?: Models.QueueConversationSocialExpressionEventTopicErrorDetails;
 		"stickers"?: Array<Models.QueueConversationSocialExpressionEventTopicMessageSticker>;
+		"messageMetadata"?: Models.QueueConversationSocialExpressionEventTopicMessageMetadata;
 	}
 	
 	export interface QueueConversationSocialExpressionEventTopicMessageMedia { 
@@ -24547,6 +24666,22 @@ declare namespace Models {
 		"contentLengthBytes"?: number;
 		"name"?: string;
 		"id"?: string;
+	}
+	
+	export interface QueueConversationSocialExpressionEventTopicMessageMetadata { 
+		"type"?: string;
+		"events"?: Array<Models.QueueConversationSocialExpressionEventTopicMessageMetadataEvent>;
+		"content"?: Array<Models.QueueConversationSocialExpressionEventTopicMessageMetadataContent>;
+	}
+	
+	export interface QueueConversationSocialExpressionEventTopicMessageMetadataContent { 
+		"contentType"?: string;
+		"subType"?: string;
+	}
+	
+	export interface QueueConversationSocialExpressionEventTopicMessageMetadataEvent { 
+		"eventType"?: string;
+		"subType"?: string;
 	}
 	
 	export interface QueueConversationSocialExpressionEventTopicMessageSticker { 
@@ -24609,6 +24744,7 @@ declare namespace Models {
 	
 	export interface QueueConversationSocialExpressionEventTopicScreenshare { 
 		"state"?: string;
+		"initialState"?: string;
 		"self"?: Models.QueueConversationSocialExpressionEventTopicAddress;
 		"id"?: string;
 		"context"?: string;
@@ -24627,6 +24763,7 @@ declare namespace Models {
 	
 	export interface QueueConversationSocialExpressionEventTopicSocialExpression { 
 		"state"?: string;
+		"initialState"?: string;
 		"id"?: string;
 		"socialMediaId"?: string;
 		"socialMediaHub"?: string;
@@ -24653,6 +24790,7 @@ declare namespace Models {
 	
 	export interface QueueConversationSocialExpressionEventTopicVideo { 
 		"state"?: string;
+		"initialState"?: string;
 		"self"?: Models.QueueConversationSocialExpressionEventTopicAddress;
 		"id"?: string;
 		"context"?: string;
@@ -24710,6 +24848,7 @@ declare namespace Models {
 	export interface QueueConversationVideoEventTopicCall { 
 		"id"?: string;
 		"state"?: string;
+		"initialState"?: string;
 		"recording"?: boolean;
 		"recordingState"?: string;
 		"muted"?: boolean;
@@ -24739,6 +24878,7 @@ declare namespace Models {
 	
 	export interface QueueConversationVideoEventTopicCallback { 
 		"state"?: string;
+		"initialState"?: string;
 		"id"?: string;
 		"direction"?: string;
 		"held"?: boolean;
@@ -24767,6 +24907,7 @@ declare namespace Models {
 	
 	export interface QueueConversationVideoEventTopicChat { 
 		"state"?: string;
+		"initialState"?: string;
 		"id"?: string;
 		"provider"?: string;
 		"scriptId"?: string;
@@ -24786,6 +24927,7 @@ declare namespace Models {
 	
 	export interface QueueConversationVideoEventTopicCobrowse { 
 		"state"?: string;
+		"initialState"?: string;
 		"disconnectType"?: string;
 		"id"?: string;
 		"self"?: Models.QueueConversationVideoEventTopicAddress;
@@ -24839,6 +24981,7 @@ declare namespace Models {
 	export interface QueueConversationVideoEventTopicEmail { 
 		"id"?: string;
 		"state"?: string;
+		"initialState"?: string;
 		"held"?: boolean;
 		"autoGenerated"?: boolean;
 		"subject"?: string;
@@ -24910,6 +25053,7 @@ declare namespace Models {
 	export interface QueueConversationVideoEventTopicMessage { 
 		"id"?: string;
 		"state"?: string;
+		"initialState"?: string;
 		"held"?: boolean;
 		"errorInfo"?: Models.QueueConversationVideoEventTopicErrorDetails;
 		"provider"?: string;
@@ -24941,6 +25085,7 @@ declare namespace Models {
 		"media"?: Array<Models.QueueConversationVideoEventTopicMessageMedia>;
 		"errorInfo"?: Models.QueueConversationVideoEventTopicErrorDetails;
 		"stickers"?: Array<Models.QueueConversationVideoEventTopicMessageSticker>;
+		"messageMetadata"?: Models.QueueConversationVideoEventTopicMessageMetadata;
 	}
 	
 	export interface QueueConversationVideoEventTopicMessageMedia { 
@@ -24949,6 +25094,22 @@ declare namespace Models {
 		"contentLengthBytes"?: number;
 		"name"?: string;
 		"id"?: string;
+	}
+	
+	export interface QueueConversationVideoEventTopicMessageMetadata { 
+		"type"?: string;
+		"events"?: Array<Models.QueueConversationVideoEventTopicMessageMetadataEvent>;
+		"content"?: Array<Models.QueueConversationVideoEventTopicMessageMetadataContent>;
+	}
+	
+	export interface QueueConversationVideoEventTopicMessageMetadataContent { 
+		"contentType"?: string;
+		"subType"?: string;
+	}
+	
+	export interface QueueConversationVideoEventTopicMessageMetadataEvent { 
+		"eventType"?: string;
+		"subType"?: string;
 	}
 	
 	export interface QueueConversationVideoEventTopicMessageSticker { 
@@ -25011,6 +25172,7 @@ declare namespace Models {
 	
 	export interface QueueConversationVideoEventTopicScreenshare { 
 		"state"?: string;
+		"initialState"?: string;
 		"self"?: Models.QueueConversationVideoEventTopicAddress;
 		"id"?: string;
 		"context"?: string;
@@ -25029,6 +25191,7 @@ declare namespace Models {
 	
 	export interface QueueConversationVideoEventTopicSocialExpression { 
 		"state"?: string;
+		"initialState"?: string;
 		"id"?: string;
 		"socialMediaId"?: string;
 		"socialMediaHub"?: string;
@@ -25055,6 +25218,7 @@ declare namespace Models {
 	
 	export interface QueueConversationVideoEventTopicVideo { 
 		"state"?: string;
+		"initialState"?: string;
 		"self"?: Models.QueueConversationVideoEventTopicAddress;
 		"id"?: string;
 		"context"?: string;
@@ -25508,6 +25672,7 @@ declare namespace Models {
 	export interface RecordingSettings { 
 		"maxSimultaneousStreams"?: number;
 		"maxConfigurableScreenRecordingStreams"?: number;
+		"regionalRecordingStorageEnabled"?: boolean;
 	}
 	
 	export interface RecordingTranscodeCompleteTopicMediaResult { 
@@ -26299,7 +26464,7 @@ declare namespace Models {
 	export interface Schedule { 
 		"id"?: string;
 		"name": string;
-		"division"?: Models.Division;
+		"division"?: Models.WritableDivision;
 		"description"?: string;
 		"version"?: number;
 		"dateCreated"?: string;
@@ -26373,7 +26538,7 @@ declare namespace Models {
 	export interface ScheduleGroup { 
 		"id"?: string;
 		"name": string;
-		"division"?: Models.Division;
+		"division"?: Models.WritableDivision;
 		"description"?: string;
 		"version"?: number;
 		"dateCreated"?: string;
@@ -31560,6 +31725,7 @@ declare namespace Models {
 		"events"?: Array<Models.WebMessagingEvent>;
 		"direction"?: string;
 		"originatingEntity"?: string;
+		"metadata"?: { [key: string]: string; };
 	}
 	
 	export interface WebMessagingMessageEntityList { 
@@ -33065,6 +33231,10 @@ declare namespace Models {
 	export interface WorkspaceSummary { 
 		"totalDocumentCount"?: number;
 		"totalDocumentByteCount"?: number;
+	}
+	
+	export interface WrapUpCodeConfig { 
+		"values": Array<string>;
 	}
 	
 	export interface WrapUpCodeMapping { 

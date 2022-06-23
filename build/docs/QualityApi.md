@@ -1546,7 +1546,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.QualityApi();
 
-let contextId = ["contextId_example"]; // [String] | A comma-delimited list of valid survey form context ids
+let contextId = ["contextId_example"]; // [String] | A comma-delimited list of valid survey form context ids. The maximum number of ids allowed in this list is 100.
 let opts = { 
   'published': true // Boolean | If true, the latest published version will be included. If false, only the unpublished version will be included.
 };
@@ -1566,7 +1566,7 @@ apiInstance.getQualityFormsSurveysBulkContexts(contextId, opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **contextId** | **[String]** | A comma-delimited list of valid survey form context ids |  |
+ **contextId** | **[String]** | A comma-delimited list of valid survey form context ids. The maximum number of ids allowed in this list is 100. |  |
  **published** | **Boolean** | If true, the latest published version will be included. If false, only the unpublished version will be included. | [optional] [default to true] |
 {: class="table table-striped"}
 
