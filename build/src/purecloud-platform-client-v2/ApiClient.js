@@ -1,9 +1,10 @@
 import { default as axios } from 'axios';
 import Configuration from './configuration.js';
+import { default as qs } from 'qs';
 
 /**
  * @module purecloud-platform-client-v2/ApiClient
- * @version 140.0.0
+ * @version 140.0.1
  */
 class ApiClient {
 	/**
@@ -38,7 +39,7 @@ class ApiClient {
 
 		/**
 		 * Enumeration of collection format separator strategies.
-		 * @enum {String} 
+		 * @enum {String}
 		 * @readonly
 		 */
 		this.CollectionFormatEnum = {
@@ -185,7 +186,7 @@ class ApiClient {
 		// Load current auth data
 		const tempState = this.authData.state;
 		this.authData = localStorage.getItem(`${this.settingsPrefix}_auth_data`);
-		if (!this.authData) 
+		if (!this.authData)
 			this.authData = {};
 		else
 			this.authData = JSON.parse(this.authData);
@@ -205,7 +206,7 @@ class ApiClient {
 	 * @description Initiates the implicit grant login flow. Will attempt to load the token from local storage, if enabled.
 	 * @param {string} clientId - The client ID of an OAuth Implicit Grant client
 	 * @param {string} redirectUri - The redirect URI of the OAuth Implicit Grant client
-	 * @param {object} opts - (optional) Additional options 
+	 * @param {object} opts - (optional) Additional options
 	 * @param {string} opts.state - (optional) An arbitrary string to be passed back with the login response. Used for client apps to associate login responses with a request.
 	 * @param {string} opts.org - (optional) The organization name that would normally used when specifying an organization name when logging in. This is only used when a provider is also specified.
 	 * @param {string} opts.provider - (optional) Authentication provider to log in with e.g. okta, adfs, salesforce, onelogin. This is only used when an org is also specified.
@@ -351,9 +352,9 @@ class ApiClient {
 			}
 			var encodedData = Buffer.from(clientId + ':' + clientSecret).toString('base64');
 			var request = this._formAuthRequest(encodedData,
-												{ grant_type: 'urn:ietf:params:oauth:grant-type:saml2-bearer' },
-										        { orgName: orgName },
-										        { assertion: assertion });
+												{ grant_type: 'urn:ietf:params:oauth:grant-type:saml2-bearer',
+										        orgName: orgName,
+										        assertion: assertion });
 			request.proxy = this.proxy;
 			var bodyParam = {
 				grant_type: 'urn:ietf:params:oauth:grant-type:saml2-bearer',
@@ -432,9 +433,9 @@ class ApiClient {
 			}
 			var encodedData = Buffer.from(clientId + ':' + clientSecret).toString('base64');
 			var request = this._formAuthRequest(encodedData,
-												{ grant_type: 'authorization_code' },
-									            { code: authCode },
-										        { redirect_uri: redirectUri });
+												{ grant_type: 'authorization_code',
+									            code: authCode,
+										        redirect_uri: redirectUri });
 			request.proxy = this.proxy;
 			var bodyParam = {
 				grant_type: 'authorization_code',
@@ -460,7 +461,7 @@ class ApiClient {
 				return;
 			}
 			var encodedData = Buffer.from(clientId + ':' + clientSecret).toString('base64');
-			var request = this._formAuthRequest(encodedData, { grant_type: 'refresh_token' }, { refresh_token: refreshToken });
+			var request = this._formAuthRequest(encodedData, { grant_type: 'refresh_token' , refresh_token: refreshToken });
 			request.proxy = this.proxy;
 			var bodyParam = {
 				grant_type: 'refresh_token',
@@ -537,8 +538,9 @@ class ApiClient {
 	/**
 	 * @description Utility function to create the request for auth requests
 	 * @param {string} encodedData - Base64 encoded client and clientSecret pair
+	 * @param {object} data - data to url form encode
 	 */
-	_formAuthRequest(encodedData) {
+	_formAuthRequest(encodedData, data) {
 		var request = axios({
 			method: `POST`,
 			url: `https://login.${this.config.environment}/oauth/token`,
@@ -546,7 +548,7 @@ class ApiClient {
 				'Authorization': 'Basic ' + encodedData,
 				'Content-Type': 'application/x-www-form-urlencoded'
 			},
-			data: arguments
+			data: qs.stringify(data)
 		});
 
 		return request;
@@ -610,7 +612,7 @@ class ApiClient {
 			}
 
 			// Test token
-			this.callApi('/api/v2/tokens/me', 'GET', 
+			this.callApi('/api/v2/tokens/me', 'GET',
 				null, null, null, null, null, ['PureCloud OAuth'], ['application/json'], ['application/json'])
 				.then(() => {
 					resolve();
@@ -636,7 +638,7 @@ class ApiClient {
 			const match = hashRegex.exec(h);
 			if (match) hash[match[1]] = decodeURIComponent(decodeURIComponent(match[2].replace(/\+/g, '%20')));
 		});
-		
+
 		// Check for error
 		if (hash.error) {
 			return hash;
@@ -834,7 +836,7 @@ class ApiClient {
 	/**
 	 * Checks whether the given parameter value represents file-like content.
 	 * @param param The parameter to check.
-	 * @returns {Boolean} <code>true</code> if <code>param</code> represents a file. 
+	 * @returns {Boolean} <code>true</code> if <code>param</code> represents a file.
 	 */
 	isFileParam(param) {
 		// fs.ReadStream in Node.js (but not in runtime like browserify)

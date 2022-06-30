@@ -29,6 +29,7 @@ export default {
 		'tty',
 		'crypto',
 		'os',
-		'axios'
+		'axios',
+		'qs'
 	]
 };
