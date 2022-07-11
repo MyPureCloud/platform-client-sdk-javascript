@@ -5,7 +5,7 @@ class LearningApi {
 	/**
 	 * Learning service.
 	 * @module purecloud-platform-client-v2/api/LearningApi
-	 * @version 140.0.1
+	 * @version 141.0.0
 	 */
 
 	/**
@@ -315,6 +315,40 @@ class LearningApi {
 			'GET', 
 			{  },
 			{ 'isArchived': opts['isArchived'],'types': this.apiClient.buildCollectionParam(opts['types'], 'multi'),'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortOrder': opts['sortOrder'],'sortBy': opts['sortBy'],'searchTerm': opts['searchTerm'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'isPublished': opts['isPublished'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get all learning modules of an organization including assignments for a specific user
+	 * 
+	 * @param {Array.<String>} userIds The IDs of the users to include
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {String} opts.searchTerm Search Term (searches by name and description)
+	 * @param {Object} opts.overdue Specifies if only modules with overdue/not overdue (overdue is True or False) assignments are returned. If overdue is Any or omitted, both are returned and can including modules that are unassigned. (default to Any)
+	 * @param {Array.<String>} opts.assignmentStates Specifies the assignment states to return.
+	 * @param {Array.<String>} opts.expand Fields to expand in response(case insensitive)
+	 */
+	getLearningModulesAssignments(userIds, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'userIds' is set
+		if (userIds === undefined || userIds === null) {
+			throw 'Missing the required parameter "userIds" when calling getLearningModulesAssignments';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/learning/modules/assignments', 
+			'GET', 
+			{  },
+			{ 'userIds': this.apiClient.buildCollectionParam(userIds, 'multi'),'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'searchTerm': opts['searchTerm'],'overdue': opts['overdue'],'assignmentStates': this.apiClient.buildCollectionParam(opts['assignmentStates'], 'multi'),'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
 			{  },
 			{  },
 			null, 

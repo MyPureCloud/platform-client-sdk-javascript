@@ -398,7 +398,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 
 	/**
 	 * @module purecloud-platform-client-v2/ApiClient
-	 * @version 140.0.1
+	 * @version 141.0.0
 	 */
 	class ApiClient {
 		/**
@@ -1477,7 +1477,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Alerting service.
 		 * @module purecloud-platform-client-v2/api/AlertingApi
-		 * @version 140.0.1
+		 * @version 141.0.0
 		 */
 
 		/**
@@ -1791,7 +1791,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Analytics service.
 		 * @module purecloud-platform-client-v2/api/AnalyticsApi
-		 * @version 140.0.1
+		 * @version 141.0.0
 		 */
 
 		/**
@@ -2973,7 +2973,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Architect service.
 		 * @module purecloud-platform-client-v2/api/ArchitectApi
-		 * @version 140.0.1
+		 * @version 141.0.0
 		 */
 
 		/**
@@ -6018,7 +6018,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Audit service.
 		 * @module purecloud-platform-client-v2/api/AuditApi
-		 * @version 140.0.1
+		 * @version 141.0.0
 		 */
 
 		/**
@@ -6189,7 +6189,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Authorization service.
 		 * @module purecloud-platform-client-v2/api/AuthorizationApi
-		 * @version 140.0.1
+		 * @version 141.0.0
 		 */
 
 		/**
@@ -7372,7 +7372,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Billing service.
 		 * @module purecloud-platform-client-v2/api/BillingApi
-		 * @version 140.0.1
+		 * @version 141.0.0
 		 */
 
 		/**
@@ -7452,7 +7452,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Chat service.
 		 * @module purecloud-platform-client-v2/api/ChatApi
-		 * @version 140.0.1
+		 * @version 141.0.0
 		 */
 
 		/**
@@ -7543,7 +7543,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Coaching service.
 		 * @module purecloud-platform-client-v2/api/CoachingApi
-		 * @version 140.0.1
+		 * @version 141.0.0
 		 */
 
 		/**
@@ -8120,7 +8120,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * ContentManagement service.
 		 * @module purecloud-platform-client-v2/api/ContentManagementApi
-		 * @version 140.0.1
+		 * @version 141.0.0
 		 */
 
 		/**
@@ -9260,7 +9260,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Conversations service.
 		 * @module purecloud-platform-client-v2/api/ConversationsApi
-		 * @version 140.0.1
+		 * @version 141.0.0
 		 */
 
 		/**
@@ -14194,7 +14194,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * DataExtensions service.
 		 * @module purecloud-platform-client-v2/api/DataExtensionsApi
-		 * @version 140.0.1
+		 * @version 141.0.0
 		 */
 
 		/**
@@ -14280,7 +14280,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * ExternalContacts service.
 		 * @module purecloud-platform-client-v2/api/ExternalContactsApi
-		 * @version 140.0.1
+		 * @version 141.0.0
 		 */
 
 		/**
@@ -16023,7 +16023,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Fax service.
 		 * @module purecloud-platform-client-v2/api/FaxApi
-		 * @version 140.0.1
+		 * @version 141.0.0
 		 */
 
 		/**
@@ -16194,7 +16194,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Flows service.
 		 * @module purecloud-platform-client-v2/api/FlowsApi
-		 * @version 140.0.1
+		 * @version 141.0.0
 		 */
 
 		/**
@@ -16265,7 +16265,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Gamification service.
 		 * @module purecloud-platform-client-v2/api/GamificationApi
-		 * @version 140.0.1
+		 * @version 141.0.0
 		 */
 
 		/**
@@ -16879,6 +16879,157 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				'GET', 
 				{  },
 				{ 'startWorkday': startWorkday,'endWorkday': endWorkday,'dayOfWeek': opts['dayOfWeek'] },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Average performance values trends by metric of a user
+		 * 
+		 * @param {String} profileId performanceProfileId
+		 * @param {String} metricId metricId
+		 * @param {String} userId 
+		 * @param {String} startWorkday Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+		 * @param {String} endWorkday End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+		 * @param {Object} opts Optional parameters
+		 * @param {String} opts.referenceWorkday Reference workday for the trend. Used to determine the associated metric definition. If not set, then the value of endWorkday is used. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+		 * @param {String} opts.timeZone Timezone for the workday. Defaults to UTC (default to UTC)
+		 */
+		getGamificationScorecardsProfileMetricUserValuesTrends(profileId, metricId, userId, startWorkday, endWorkday, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'profileId' is set
+			if (profileId === undefined || profileId === null) {
+				throw 'Missing the required parameter "profileId" when calling getGamificationScorecardsProfileMetricUserValuesTrends';
+			}
+			// verify the required parameter 'metricId' is set
+			if (metricId === undefined || metricId === null) {
+				throw 'Missing the required parameter "metricId" when calling getGamificationScorecardsProfileMetricUserValuesTrends';
+			}
+			// verify the required parameter 'userId' is set
+			if (userId === undefined || userId === null) {
+				throw 'Missing the required parameter "userId" when calling getGamificationScorecardsProfileMetricUserValuesTrends';
+			}
+			// verify the required parameter 'startWorkday' is set
+			if (startWorkday === undefined || startWorkday === null) {
+				throw 'Missing the required parameter "startWorkday" when calling getGamificationScorecardsProfileMetricUserValuesTrends';
+			}
+			// verify the required parameter 'endWorkday' is set
+			if (endWorkday === undefined || endWorkday === null) {
+				throw 'Missing the required parameter "endWorkday" when calling getGamificationScorecardsProfileMetricUserValuesTrends';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/gamification/scorecards/profiles/{profileId}/metrics/{metricId}/users/{userId}/values/trends', 
+				'GET', 
+				{ 'profileId': profileId,'metricId': metricId,'userId': userId },
+				{ 'startWorkday': startWorkday,'endWorkday': endWorkday,'referenceWorkday': opts['referenceWorkday'],'timeZone': opts['timeZone'] },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Average performance values trends by metric of a division or a performance profile
+		 * 
+		 * @param {String} profileId performanceProfileId
+		 * @param {String} metricId metricId
+		 * @param {Object} filterType Filter type for the query request.
+		 * @param {String} filterId ID for the filter type. For example, division Id
+		 * @param {String} startWorkday Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+		 * @param {String} endWorkday End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+		 * @param {Object} opts Optional parameters
+		 * @param {String} opts.referenceWorkday Reference workday for the trend. Used to determine the associated metric definition. If not set, then the value of endWorkday is used. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+		 * @param {String} opts.timeZone Timezone for the workday. Defaults to UTC (default to UTC)
+		 */
+		getGamificationScorecardsProfileMetricUsersValuesTrends(profileId, metricId, filterType, filterId, startWorkday, endWorkday, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'profileId' is set
+			if (profileId === undefined || profileId === null) {
+				throw 'Missing the required parameter "profileId" when calling getGamificationScorecardsProfileMetricUsersValuesTrends';
+			}
+			// verify the required parameter 'metricId' is set
+			if (metricId === undefined || metricId === null) {
+				throw 'Missing the required parameter "metricId" when calling getGamificationScorecardsProfileMetricUsersValuesTrends';
+			}
+			// verify the required parameter 'filterType' is set
+			if (filterType === undefined || filterType === null) {
+				throw 'Missing the required parameter "filterType" when calling getGamificationScorecardsProfileMetricUsersValuesTrends';
+			}
+			// verify the required parameter 'filterId' is set
+			if (filterId === undefined || filterId === null) {
+				throw 'Missing the required parameter "filterId" when calling getGamificationScorecardsProfileMetricUsersValuesTrends';
+			}
+			// verify the required parameter 'startWorkday' is set
+			if (startWorkday === undefined || startWorkday === null) {
+				throw 'Missing the required parameter "startWorkday" when calling getGamificationScorecardsProfileMetricUsersValuesTrends';
+			}
+			// verify the required parameter 'endWorkday' is set
+			if (endWorkday === undefined || endWorkday === null) {
+				throw 'Missing the required parameter "endWorkday" when calling getGamificationScorecardsProfileMetricUsersValuesTrends';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/gamification/scorecards/profiles/{profileId}/metrics/{metricId}/users/values/trends', 
+				'GET', 
+				{ 'profileId': profileId,'metricId': metricId },
+				{ 'filterType': filterType,'filterId': filterId,'startWorkday': startWorkday,'endWorkday': endWorkday,'referenceWorkday': opts['referenceWorkday'],'timeZone': opts['timeZone'] },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Average performance values trends by metric of the requesting user
+		 * 
+		 * @param {String} profileId performanceProfileId
+		 * @param {String} metricId metricId
+		 * @param {String} startWorkday Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+		 * @param {String} endWorkday End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+		 * @param {Object} opts Optional parameters
+		 * @param {Object} opts.filterType Filter type for the query request. If not set, returns the values trends of the requesting user
+		 * @param {String} opts.referenceWorkday Reference workday for the trend. Used to determine the associated metric definition. If not set, then the value of endWorkday is used. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+		 * @param {String} opts.timeZone Timezone for the workday. Defaults to UTC (default to UTC)
+		 */
+		getGamificationScorecardsProfileMetricValuesTrends(profileId, metricId, startWorkday, endWorkday, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'profileId' is set
+			if (profileId === undefined || profileId === null) {
+				throw 'Missing the required parameter "profileId" when calling getGamificationScorecardsProfileMetricValuesTrends';
+			}
+			// verify the required parameter 'metricId' is set
+			if (metricId === undefined || metricId === null) {
+				throw 'Missing the required parameter "metricId" when calling getGamificationScorecardsProfileMetricValuesTrends';
+			}
+			// verify the required parameter 'startWorkday' is set
+			if (startWorkday === undefined || startWorkday === null) {
+				throw 'Missing the required parameter "startWorkday" when calling getGamificationScorecardsProfileMetricValuesTrends';
+			}
+			// verify the required parameter 'endWorkday' is set
+			if (endWorkday === undefined || endWorkday === null) {
+				throw 'Missing the required parameter "endWorkday" when calling getGamificationScorecardsProfileMetricValuesTrends';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/gamification/scorecards/profiles/{profileId}/metrics/{metricId}/values/trends', 
+				'GET', 
+				{ 'profileId': profileId,'metricId': metricId },
+				{ 'filterType': opts['filterType'],'startWorkday': startWorkday,'endWorkday': endWorkday,'referenceWorkday': opts['referenceWorkday'],'timeZone': opts['timeZone'] },
 				{  },
 				{  },
 				null, 
@@ -17696,7 +17847,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * GeneralDataProtectionRegulation service.
 		 * @module purecloud-platform-client-v2/api/GeneralDataProtectionRegulationApi
-		 * @version 140.0.1
+		 * @version 141.0.0
 		 */
 
 		/**
@@ -17826,7 +17977,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Geolocation service.
 		 * @module purecloud-platform-client-v2/api/GeolocationApi
-		 * @version 140.0.1
+		 * @version 141.0.0
 		 */
 
 		/**
@@ -17957,7 +18108,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Greetings service.
 		 * @module purecloud-platform-client-v2/api/GreetingsApi
-		 * @version 140.0.1
+		 * @version 141.0.0
 		 */
 
 		/**
@@ -18412,7 +18563,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Groups service.
 		 * @module purecloud-platform-client-v2/api/GroupsApi
-		 * @version 140.0.1
+		 * @version 141.0.0
 		 */
 
 		/**
@@ -18817,7 +18968,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * IdentityProvider service.
 		 * @module purecloud-platform-client-v2/api/IdentityProviderApi
-		 * @version 140.0.1
+		 * @version 141.0.0
 		 */
 
 		/**
@@ -19573,7 +19724,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Integrations service.
 		 * @module purecloud-platform-client-v2/api/IntegrationsApi
-		 * @version 140.0.1
+		 * @version 141.0.0
 		 */
 
 		/**
@@ -21250,7 +21401,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Journey service.
 		 * @module purecloud-platform-client-v2/api/JourneyApi
-		 * @version 140.0.1
+		 * @version 141.0.0
 		 */
 
 		/**
@@ -21961,7 +22112,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Knowledge service.
 		 * @module purecloud-platform-client-v2/api/KnowledgeApi
-		 * @version 140.0.1
+		 * @version 141.0.0
 		 */
 
 		/**
@@ -22861,7 +23012,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * LanguageUnderstanding service.
 		 * @module purecloud-platform-client-v2/api/LanguageUnderstandingApi
-		 * @version 140.0.1
+		 * @version 141.0.0
 		 */
 
 		/**
@@ -23765,7 +23916,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Languages service.
 		 * @module purecloud-platform-client-v2/api/LanguagesApi
-		 * @version 140.0.1
+		 * @version 141.0.0
 		 */
 
 		/**
@@ -24033,7 +24184,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Learning service.
 		 * @module purecloud-platform-client-v2/api/LearningApi
-		 * @version 140.0.1
+		 * @version 141.0.0
 		 */
 
 		/**
@@ -24343,6 +24494,40 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				'GET', 
 				{  },
 				{ 'isArchived': opts['isArchived'],'types': this.apiClient.buildCollectionParam(opts['types'], 'multi'),'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortOrder': opts['sortOrder'],'sortBy': opts['sortBy'],'searchTerm': opts['searchTerm'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'isPublished': opts['isPublished'] },
+				{  },
+				{  },
+				null, 
+				['PureCloud OAuth'], 
+				['application/json'],
+				['application/json']
+			);
+		}
+
+		/**
+		 * Get all learning modules of an organization including assignments for a specific user
+		 * 
+		 * @param {Array.<String>} userIds The IDs of the users to include
+		 * @param {Object} opts Optional parameters
+		 * @param {Number} opts.pageSize Page size (default to 25)
+		 * @param {Number} opts.pageNumber Page number (default to 1)
+		 * @param {String} opts.searchTerm Search Term (searches by name and description)
+		 * @param {Object} opts.overdue Specifies if only modules with overdue/not overdue (overdue is True or False) assignments are returned. If overdue is Any or omitted, both are returned and can including modules that are unassigned. (default to Any)
+		 * @param {Array.<String>} opts.assignmentStates Specifies the assignment states to return.
+		 * @param {Array.<String>} opts.expand Fields to expand in response(case insensitive)
+		 */
+		getLearningModulesAssignments(userIds, opts) { 
+			opts = opts || {};
+			
+			// verify the required parameter 'userIds' is set
+			if (userIds === undefined || userIds === null) {
+				throw 'Missing the required parameter "userIds" when calling getLearningModulesAssignments';
+			}
+
+			return this.apiClient.callApi(
+				'/api/v2/learning/modules/assignments', 
+				'GET', 
+				{  },
+				{ 'userIds': this.apiClient.buildCollectionParam(userIds, 'multi'),'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'searchTerm': opts['searchTerm'],'overdue': opts['overdue'],'assignmentStates': this.apiClient.buildCollectionParam(opts['assignmentStates'], 'multi'),'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
 				{  },
 				{  },
 				null, 
@@ -24734,7 +24919,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * License service.
 		 * @module purecloud-platform-client-v2/api/LicenseApi
-		 * @version 140.0.1
+		 * @version 141.0.0
 		 */
 
 		/**
@@ -24972,7 +25157,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Locations service.
 		 * @module purecloud-platform-client-v2/api/LocationsApi
-		 * @version 140.0.1
+		 * @version 141.0.0
 		 */
 
 		/**
@@ -25208,7 +25393,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Messaging service.
 		 * @module purecloud-platform-client-v2/api/MessagingApi
-		 * @version 140.0.1
+		 * @version 141.0.0
 		 */
 
 		/**
@@ -25359,7 +25544,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * MobileDevices service.
 		 * @module purecloud-platform-client-v2/api/MobileDevicesApi
-		 * @version 140.0.1
+		 * @version 141.0.0
 		 */
 
 		/**
@@ -25510,7 +25695,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Notifications service.
 		 * @module purecloud-platform-client-v2/api/NotificationsApi
-		 * @version 140.0.1
+		 * @version 141.0.0
 		 */
 
 		/**
@@ -25735,7 +25920,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * OAuth service.
 		 * @module purecloud-platform-client-v2/api/OAuthApi
-		 * @version 140.0.1
+		 * @version 141.0.0
 		 */
 
 		/**
@@ -26101,7 +26286,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Objects service.
 		 * @module purecloud-platform-client-v2/api/ObjectsApi
-		 * @version 140.0.1
+		 * @version 141.0.0
 		 */
 
 		/**
@@ -26372,7 +26557,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Organization service.
 		 * @module purecloud-platform-client-v2/api/OrganizationApi
-		 * @version 140.0.1
+		 * @version 141.0.0
 		 */
 
 		/**
@@ -26775,7 +26960,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * OrganizationAuthorization service.
 		 * @module purecloud-platform-client-v2/api/OrganizationAuthorizationApi
-		 * @version 140.0.1
+		 * @version 141.0.0
 		 */
 
 		/**
@@ -27700,7 +27885,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Outbound service.
 		 * @module purecloud-platform-client-v2/api/OutboundApi
-		 * @version 140.0.1
+		 * @version 141.0.0
 		 */
 
 		/**
@@ -30955,7 +31140,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Presence service.
 		 * @module purecloud-platform-client-v2/api/PresenceApi
-		 * @version 140.0.1
+		 * @version 141.0.0
 		 */
 
 		/**
@@ -31277,7 +31462,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Quality service.
 		 * @module purecloud-platform-client-v2/api/QualityApi
-		 * @version 140.0.1
+		 * @version 141.0.0
 		 */
 
 		/**
@@ -32855,7 +33040,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Recording service.
 		 * @module purecloud-platform-client-v2/api/RecordingApi
-		 * @version 140.0.1
+		 * @version 141.0.0
 		 */
 
 		/**
@@ -34508,7 +34693,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * ResponseManagement service.
 		 * @module purecloud-platform-client-v2/api/ResponseManagementApi
-		 * @version 140.0.1
+		 * @version 141.0.0
 		 */
 
 		/**
@@ -34992,7 +35177,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Routing service.
 		 * @module purecloud-platform-client-v2/api/RoutingApi
-		 * @version 140.0.1
+		 * @version 141.0.0
 		 */
 
 		/**
@@ -36102,6 +36287,8 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * @param {String} opts.name Filter by queue name
 		 * @param {Array.<String>} opts.id Filter by queue ID(s)
 		 * @param {Array.<String>} opts.divisionId Filter by queue division ID(s)
+		 * @param {Array.<String>} opts.peerId Filter by queue peer ID(s)
+		 * @param {Boolean} opts.hasPeer Filter by queues associated with peer
 		 */
 		getRoutingQueues(opts) { 
 			opts = opts || {};
@@ -36111,7 +36298,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				'/api/v2/routing/queues', 
 				'GET', 
 				{  },
-				{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortOrder': opts['sortOrder'],'name': opts['name'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi') },
+				{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortOrder': opts['sortOrder'],'name': opts['name'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi'),'peerId': this.apiClient.buildCollectionParam(opts['peerId'], 'multi'),'hasPeer': opts['hasPeer'] },
 				{  },
 				{  },
 				null, 
@@ -37911,7 +38098,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * SCIM service.
 		 * @module purecloud-platform-client-v2/api/SCIMApi
-		 * @version 140.0.1
+		 * @version 141.0.0
 		 */
 
 		/**
@@ -38788,7 +38975,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Scripts service.
 		 * @module purecloud-platform-client-v2/api/ScriptsApi
-		 * @version 140.0.1
+		 * @version 141.0.0
 		 */
 
 		/**
@@ -39207,7 +39394,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Search service.
 		 * @module purecloud-platform-client-v2/api/SearchApi
-		 * @version 140.0.1
+		 * @version 141.0.0
 		 */
 
 		/**
@@ -39742,7 +39929,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * SpeechTextAnalytics service.
 		 * @module purecloud-platform-client-v2/api/SpeechTextAnalyticsApi
-		 * @version 140.0.1
+		 * @version 141.0.0
 		 */
 
 		/**
@@ -40595,7 +40782,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Stations service.
 		 * @module purecloud-platform-client-v2/api/StationsApi
-		 * @version 140.0.1
+		 * @version 141.0.0
 		 */
 
 		/**
@@ -40742,7 +40929,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Suggest service.
 		 * @module purecloud-platform-client-v2/api/SuggestApi
-		 * @version 140.0.1
+		 * @version 141.0.0
 		 */
 
 		/**
@@ -40881,7 +41068,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Telephony service.
 		 * @module purecloud-platform-client-v2/api/TelephonyApi
-		 * @version 140.0.1
+		 * @version 141.0.0
 		 */
 
 		/**
@@ -40989,7 +41176,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * TelephonyProvidersEdge service.
 		 * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-		 * @version 140.0.1
+		 * @version 141.0.0
 		 */
 
 		/**
@@ -44622,7 +44809,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Textbots service.
 		 * @module purecloud-platform-client-v2/api/TextbotsApi
-		 * @version 140.0.1
+		 * @version 141.0.0
 		 */
 
 		/**
@@ -44750,7 +44937,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Tokens service.
 		 * @module purecloud-platform-client-v2/api/TokensApi
-		 * @version 140.0.1
+		 * @version 141.0.0
 		 */
 
 		/**
@@ -44856,7 +45043,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Uploads service.
 		 * @module purecloud-platform-client-v2/api/UploadsApi
-		 * @version 140.0.1
+		 * @version 141.0.0
 		 */
 
 		/**
@@ -45007,7 +45194,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Usage service.
 		 * @module purecloud-platform-client-v2/api/UsageApi
-		 * @version 140.0.1
+		 * @version 141.0.0
 		 */
 
 		/**
@@ -45078,7 +45265,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * UserRecordings service.
 		 * @module purecloud-platform-client-v2/api/UserRecordingsApi
-		 * @version 140.0.1
+		 * @version 141.0.0
 		 */
 
 		/**
@@ -45262,7 +45449,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Users service.
 		 * @module purecloud-platform-client-v2/api/UsersApi
-		 * @version 140.0.1
+		 * @version 141.0.0
 		 */
 
 		/**
@@ -47564,7 +47751,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Utilities service.
 		 * @module purecloud-platform-client-v2/api/UtilitiesApi
-		 * @version 140.0.1
+		 * @version 141.0.0
 		 */
 
 		/**
@@ -47675,7 +47862,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Voicemail service.
 		 * @module purecloud-platform-client-v2/api/VoicemailApi
-		 * @version 140.0.1
+		 * @version 141.0.0
 		 */
 
 		/**
@@ -48342,7 +48529,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * WebChat service.
 		 * @module purecloud-platform-client-v2/api/WebChatApi
-		 * @version 140.0.1
+		 * @version 141.0.0
 		 */
 
 		/**
@@ -48886,7 +49073,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * WebDeployments service.
 		 * @module purecloud-platform-client-v2/api/WebDeploymentsApi
-		 * @version 140.0.1
+		 * @version 141.0.0
 		 */
 
 		/**
@@ -49241,7 +49428,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * WebMessaging service.
 		 * @module purecloud-platform-client-v2/api/WebMessagingApi
-		 * @version 140.0.1
+		 * @version 141.0.0
 		 */
 
 		/**
@@ -49287,7 +49474,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Widgets service.
 		 * @module purecloud-platform-client-v2/api/WidgetsApi
-		 * @version 140.0.1
+		 * @version 141.0.0
 		 */
 
 		/**
@@ -49433,7 +49620,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * WorkforceManagement service.
 		 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-		 * @version 140.0.1
+		 * @version 141.0.0
 		 */
 
 		/**
@@ -53684,7 +53871,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 	 * </pre>
 	 * </p>
 	 * @module purecloud-platform-client-v2/index
-	 * @version 140.0.1
+	 * @version 141.0.0
 	 */
 	class platformClient {
 		constructor() {

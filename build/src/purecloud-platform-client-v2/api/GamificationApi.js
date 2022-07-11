@@ -5,7 +5,7 @@ class GamificationApi {
 	/**
 	 * Gamification service.
 	 * @module purecloud-platform-client-v2/api/GamificationApi
-	 * @version 140.0.1
+	 * @version 141.0.0
 	 */
 
 	/**
@@ -619,6 +619,157 @@ class GamificationApi {
 			'GET', 
 			{  },
 			{ 'startWorkday': startWorkday,'endWorkday': endWorkday,'dayOfWeek': opts['dayOfWeek'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Average performance values trends by metric of a user
+	 * 
+	 * @param {String} profileId performanceProfileId
+	 * @param {String} metricId metricId
+	 * @param {String} userId 
+	 * @param {String} startWorkday Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 * @param {String} endWorkday End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.referenceWorkday Reference workday for the trend. Used to determine the associated metric definition. If not set, then the value of endWorkday is used. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 * @param {String} opts.timeZone Timezone for the workday. Defaults to UTC (default to UTC)
+	 */
+	getGamificationScorecardsProfileMetricUserValuesTrends(profileId, metricId, userId, startWorkday, endWorkday, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'profileId' is set
+		if (profileId === undefined || profileId === null) {
+			throw 'Missing the required parameter "profileId" when calling getGamificationScorecardsProfileMetricUserValuesTrends';
+		}
+		// verify the required parameter 'metricId' is set
+		if (metricId === undefined || metricId === null) {
+			throw 'Missing the required parameter "metricId" when calling getGamificationScorecardsProfileMetricUserValuesTrends';
+		}
+		// verify the required parameter 'userId' is set
+		if (userId === undefined || userId === null) {
+			throw 'Missing the required parameter "userId" when calling getGamificationScorecardsProfileMetricUserValuesTrends';
+		}
+		// verify the required parameter 'startWorkday' is set
+		if (startWorkday === undefined || startWorkday === null) {
+			throw 'Missing the required parameter "startWorkday" when calling getGamificationScorecardsProfileMetricUserValuesTrends';
+		}
+		// verify the required parameter 'endWorkday' is set
+		if (endWorkday === undefined || endWorkday === null) {
+			throw 'Missing the required parameter "endWorkday" when calling getGamificationScorecardsProfileMetricUserValuesTrends';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/gamification/scorecards/profiles/{profileId}/metrics/{metricId}/users/{userId}/values/trends', 
+			'GET', 
+			{ 'profileId': profileId,'metricId': metricId,'userId': userId },
+			{ 'startWorkday': startWorkday,'endWorkday': endWorkday,'referenceWorkday': opts['referenceWorkday'],'timeZone': opts['timeZone'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Average performance values trends by metric of a division or a performance profile
+	 * 
+	 * @param {String} profileId performanceProfileId
+	 * @param {String} metricId metricId
+	 * @param {Object} filterType Filter type for the query request.
+	 * @param {String} filterId ID for the filter type. For example, division Id
+	 * @param {String} startWorkday Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 * @param {String} endWorkday End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.referenceWorkday Reference workday for the trend. Used to determine the associated metric definition. If not set, then the value of endWorkday is used. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 * @param {String} opts.timeZone Timezone for the workday. Defaults to UTC (default to UTC)
+	 */
+	getGamificationScorecardsProfileMetricUsersValuesTrends(profileId, metricId, filterType, filterId, startWorkday, endWorkday, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'profileId' is set
+		if (profileId === undefined || profileId === null) {
+			throw 'Missing the required parameter "profileId" when calling getGamificationScorecardsProfileMetricUsersValuesTrends';
+		}
+		// verify the required parameter 'metricId' is set
+		if (metricId === undefined || metricId === null) {
+			throw 'Missing the required parameter "metricId" when calling getGamificationScorecardsProfileMetricUsersValuesTrends';
+		}
+		// verify the required parameter 'filterType' is set
+		if (filterType === undefined || filterType === null) {
+			throw 'Missing the required parameter "filterType" when calling getGamificationScorecardsProfileMetricUsersValuesTrends';
+		}
+		// verify the required parameter 'filterId' is set
+		if (filterId === undefined || filterId === null) {
+			throw 'Missing the required parameter "filterId" when calling getGamificationScorecardsProfileMetricUsersValuesTrends';
+		}
+		// verify the required parameter 'startWorkday' is set
+		if (startWorkday === undefined || startWorkday === null) {
+			throw 'Missing the required parameter "startWorkday" when calling getGamificationScorecardsProfileMetricUsersValuesTrends';
+		}
+		// verify the required parameter 'endWorkday' is set
+		if (endWorkday === undefined || endWorkday === null) {
+			throw 'Missing the required parameter "endWorkday" when calling getGamificationScorecardsProfileMetricUsersValuesTrends';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/gamification/scorecards/profiles/{profileId}/metrics/{metricId}/users/values/trends', 
+			'GET', 
+			{ 'profileId': profileId,'metricId': metricId },
+			{ 'filterType': filterType,'filterId': filterId,'startWorkday': startWorkday,'endWorkday': endWorkday,'referenceWorkday': opts['referenceWorkday'],'timeZone': opts['timeZone'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Average performance values trends by metric of the requesting user
+	 * 
+	 * @param {String} profileId performanceProfileId
+	 * @param {String} metricId metricId
+	 * @param {String} startWorkday Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 * @param {String} endWorkday End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.filterType Filter type for the query request. If not set, returns the values trends of the requesting user
+	 * @param {String} opts.referenceWorkday Reference workday for the trend. Used to determine the associated metric definition. If not set, then the value of endWorkday is used. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 * @param {String} opts.timeZone Timezone for the workday. Defaults to UTC (default to UTC)
+	 */
+	getGamificationScorecardsProfileMetricValuesTrends(profileId, metricId, startWorkday, endWorkday, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'profileId' is set
+		if (profileId === undefined || profileId === null) {
+			throw 'Missing the required parameter "profileId" when calling getGamificationScorecardsProfileMetricValuesTrends';
+		}
+		// verify the required parameter 'metricId' is set
+		if (metricId === undefined || metricId === null) {
+			throw 'Missing the required parameter "metricId" when calling getGamificationScorecardsProfileMetricValuesTrends';
+		}
+		// verify the required parameter 'startWorkday' is set
+		if (startWorkday === undefined || startWorkday === null) {
+			throw 'Missing the required parameter "startWorkday" when calling getGamificationScorecardsProfileMetricValuesTrends';
+		}
+		// verify the required parameter 'endWorkday' is set
+		if (endWorkday === undefined || endWorkday === null) {
+			throw 'Missing the required parameter "endWorkday" when calling getGamificationScorecardsProfileMetricValuesTrends';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/gamification/scorecards/profiles/{profileId}/metrics/{metricId}/values/trends', 
+			'GET', 
+			{ 'profileId': profileId,'metricId': metricId },
+			{ 'filterType': opts['filterType'],'startWorkday': startWorkday,'endWorkday': endWorkday,'referenceWorkday': opts['referenceWorkday'],'timeZone': opts['timeZone'] },
 			{  },
 			{  },
 			null, 

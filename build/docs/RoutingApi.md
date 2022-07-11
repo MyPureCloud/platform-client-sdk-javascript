@@ -2274,7 +2274,9 @@ let opts = {
   'sortOrder': "asc", // String | Note: results are sorted by name.
   'name': "name_example", // String | Filter by queue name
   'id': ["id_example"], // [String] | Filter by queue ID(s)
-  'divisionId': ["divisionId_example"] // [String] | Filter by queue division ID(s)
+  'divisionId': ["divisionId_example"], // [String] | Filter by queue division ID(s)
+  'peerId': ["peerId_example"], // [String] | Filter by queue peer ID(s)
+  'hasPeer': true // Boolean | Filter by queues associated with peer
 };
 
 apiInstance.getRoutingQueues(opts)
@@ -2298,6 +2300,8 @@ apiInstance.getRoutingQueues(opts)
  **name** | **String** | Filter by queue name | [optional]  |
  **id** | **[String]** | Filter by queue ID(s) | [optional]  |
  **divisionId** | **[String]** | Filter by queue division ID(s) | [optional]  |
+ **peerId** | **[String]** | Filter by queue peer ID(s) | [optional]  |
+ **hasPeer** | **Boolean** | Filter by queues associated with peer | [optional]  |
 {: class="table table-striped"}
 
 ### Return type

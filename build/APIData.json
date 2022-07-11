@@ -10321,6 +10321,143 @@
     "return": "WorkdayPointsTrend",
     "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.GamificationApi();\n\nlet startWorkday = \"startWorkday_example\"; // String | Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\nlet endWorkday = \"endWorkday_example\"; // String | End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\nlet opts = { \n  \"dayOfWeek\": \"dayOfWeek_example\" // String | Optional filter to specify which day of weeks to be included in the response\n};\n\n// Points trends of the requesting user\napiInstance.getGamificationScorecardsPointsTrends(startWorkday, endWorkday, opts)\n  .then((data) => {\n    console.log(`getGamificationScorecardsPointsTrends success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getGamificationScorecardsPointsTrends\");\n    console.error(err);\n  });"
   },
+  "getgamificationscorecardsprofilemetricuservaluestrends": {
+    "operationId": "getgamificationscorecardsprofilemetricuservaluestrends",
+    "functionName": "getGamificationScorecardsProfileMetricUserValuesTrends",
+    "signature": "getGamificationScorecardsProfileMetricUserValuesTrends(profileId, metricId, userId, startWorkday, endWorkday, referenceWorkday, timeZone)",
+    "parameters": [
+      {
+        "name": "profileId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "metricId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "userId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "startWorkday",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "endWorkday",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "referenceWorkday",
+        "type": "String",
+        "required": "false"
+      },
+      {
+        "name": "timeZone",
+        "type": "String",
+        "required": "false"
+      }
+    ],
+    "return": "MetricValueTrendAverage",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.GamificationApi();\n\nlet profileId = \"profileId_example\"; // String | performanceProfileId\nlet metricId = \"metricId_example\"; // String | metricId\nlet userId = \"userId_example\"; // String | \nlet startWorkday = \"startWorkday_example\"; // String | Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\nlet endWorkday = \"endWorkday_example\"; // String | End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\nlet opts = { \n  \"referenceWorkday\": \"referenceWorkday_example\", // String | Reference workday for the trend. Used to determine the associated metric definition. If not set, then the value of endWorkday is used. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\n  \"timeZone\": \"UTC\" // String | Timezone for the workday. Defaults to UTC\n};\n\n// Average performance values trends by metric of a user\napiInstance.getGamificationScorecardsProfileMetricUserValuesTrends(profileId, metricId, userId, startWorkday, endWorkday, opts)\n  .then((data) => {\n    console.log(`getGamificationScorecardsProfileMetricUserValuesTrends success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getGamificationScorecardsProfileMetricUserValuesTrends\");\n    console.error(err);\n  });"
+  },
+  "getgamificationscorecardsprofilemetricusersvaluestrends": {
+    "operationId": "getgamificationscorecardsprofilemetricusersvaluestrends",
+    "functionName": "getGamificationScorecardsProfileMetricUsersValuesTrends",
+    "signature": "getGamificationScorecardsProfileMetricUsersValuesTrends(profileId, metricId, filterType, filterId, startWorkday, endWorkday, referenceWorkday, timeZone)",
+    "parameters": [
+      {
+        "name": "profileId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "metricId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "filterType",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "filterId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "startWorkday",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "endWorkday",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "referenceWorkday",
+        "type": "String",
+        "required": "false"
+      },
+      {
+        "name": "timeZone",
+        "type": "String",
+        "required": "false"
+      }
+    ],
+    "return": "MetricValueTrendAverage",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.GamificationApi();\n\nlet profileId = \"profileId_example\"; // String | performanceProfileId\nlet metricId = \"metricId_example\"; // String | metricId\nlet filterType = \"filterType_example\"; // String | Filter type for the query request.\nlet filterId = \"filterId_example\"; // String | ID for the filter type. For example, division Id\nlet startWorkday = \"startWorkday_example\"; // String | Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\nlet endWorkday = \"endWorkday_example\"; // String | End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\nlet opts = { \n  \"referenceWorkday\": \"referenceWorkday_example\", // String | Reference workday for the trend. Used to determine the associated metric definition. If not set, then the value of endWorkday is used. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\n  \"timeZone\": \"UTC\" // String | Timezone for the workday. Defaults to UTC\n};\n\n// Average performance values trends by metric of a division or a performance profile\napiInstance.getGamificationScorecardsProfileMetricUsersValuesTrends(profileId, metricId, filterType, filterId, startWorkday, endWorkday, opts)\n  .then((data) => {\n    console.log(`getGamificationScorecardsProfileMetricUsersValuesTrends success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getGamificationScorecardsProfileMetricUsersValuesTrends\");\n    console.error(err);\n  });"
+  },
+  "getgamificationscorecardsprofilemetricvaluestrends": {
+    "operationId": "getgamificationscorecardsprofilemetricvaluestrends",
+    "functionName": "getGamificationScorecardsProfileMetricValuesTrends",
+    "signature": "getGamificationScorecardsProfileMetricValuesTrends(profileId, metricId, startWorkday, endWorkday, filterType, referenceWorkday, timeZone)",
+    "parameters": [
+      {
+        "name": "profileId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "metricId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "startWorkday",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "endWorkday",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "filterType",
+        "type": "String",
+        "required": "false"
+      },
+      {
+        "name": "referenceWorkday",
+        "type": "String",
+        "required": "false"
+      },
+      {
+        "name": "timeZone",
+        "type": "String",
+        "required": "false"
+      }
+    ],
+    "return": "MetricValueTrendAverage",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.GamificationApi();\n\nlet profileId = \"profileId_example\"; // String | performanceProfileId\nlet metricId = \"metricId_example\"; // String | metricId\nlet startWorkday = \"startWorkday_example\"; // String | Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\nlet endWorkday = \"endWorkday_example\"; // String | End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\nlet opts = { \n  \"filterType\": \"filterType_example\", // String | Filter type for the query request. If not set, returns the values trends of the requesting user\n  \"referenceWorkday\": \"referenceWorkday_example\", // String | Reference workday for the trend. Used to determine the associated metric definition. If not set, then the value of endWorkday is used. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\n  \"timeZone\": \"UTC\" // String | Timezone for the workday. Defaults to UTC\n};\n\n// Average performance values trends by metric of the requesting user\napiInstance.getGamificationScorecardsProfileMetricValuesTrends(profileId, metricId, startWorkday, endWorkday, opts)\n  .then((data) => {\n    console.log(`getGamificationScorecardsProfileMetricValuesTrends success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getGamificationScorecardsProfileMetricValuesTrends\");\n    console.error(err);\n  });"
+  },
   "getgamificationscorecardsuser": {
     "operationId": "getgamificationscorecardsuser",
     "functionName": "getGamificationScorecardsUser",
@@ -15490,6 +15627,50 @@
     ],
     "return": "LearningModulesDomainEntityListing",
     "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.LearningApi();\n\nlet opts = { \n  \"isArchived\": false, // Boolean | Archive status\n  \"types\": [\"types_example\"], // [String] | Specifies the module types.\n  \"pageSize\": 25, // Number | Page size\n  \"pageNumber\": 1, // Number | Page number\n  \"sortOrder\": \"ascending\", // String | Sort order\n  \"sortBy\": \"name\", // String | Sort by\n  \"searchTerm\": \"searchTerm_example\", // String | Search Term (searchable by name)\n  \"expand\": [\"expand_example\"], // [String] | Fields to expand in response(case insensitive)\n  \"isPublished\": \"Any\" // String | Specifies if only the Unpublished (isPublished is False) or Published (isPublished is True) modules are returned. If isPublished is Any or omitted, both types are returned\n};\n\n// Get all learning modules of an organization\napiInstance.getLearningModules(opts)\n  .then((data) => {\n    console.log(`getLearningModules success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getLearningModules\");\n    console.error(err);\n  });"
+  },
+  "getlearningmodulesassignments": {
+    "operationId": "getlearningmodulesassignments",
+    "functionName": "getLearningModulesAssignments",
+    "signature": "getLearningModulesAssignments(userIds, pageSize, pageNumber, searchTerm, overdue, assignmentStates, expand)",
+    "parameters": [
+      {
+        "name": "userIds",
+        "type": "[String]",
+        "required": "true"
+      },
+      {
+        "name": "pageSize",
+        "type": "Number",
+        "required": "false"
+      },
+      {
+        "name": "pageNumber",
+        "type": "Number",
+        "required": "false"
+      },
+      {
+        "name": "searchTerm",
+        "type": "String",
+        "required": "false"
+      },
+      {
+        "name": "overdue",
+        "type": "String",
+        "required": "false"
+      },
+      {
+        "name": "assignmentStates",
+        "type": "[String]",
+        "required": "false"
+      },
+      {
+        "name": "expand",
+        "type": "[String]",
+        "required": "false"
+      }
+    ],
+    "return": "AssignedLearningModuleDomainEntityListing",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.LearningApi();\n\nlet userIds = [\"userIds_example\"]; // [String] | The IDs of the users to include\nlet opts = { \n  \"pageSize\": 25, // Number | Page size\n  \"pageNumber\": 1, // Number | Page number\n  \"searchTerm\": \"searchTerm_example\", // String | Search Term (searches by name and description)\n  \"overdue\": \"Any\", // String | Specifies if only modules with overdue/not overdue (overdue is True or False) assignments are returned. If overdue is Any or omitted, both are returned and can including modules that are unassigned.\n  \"assignmentStates\": [\"assignmentStates_example\"], // [String] | Specifies the assignment states to return.\n  \"expand\": [\"expand_example\"] // [String] | Fields to expand in response(case insensitive)\n};\n\n// Get all learning modules of an organization including assignments for a specific user\napiInstance.getLearningModulesAssignments(userIds, opts)\n  .then((data) => {\n    console.log(`getLearningModulesAssignments success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getLearningModulesAssignments\");\n    console.error(err);\n  });"
   },
   "patchlearningassignment": {
     "operationId": "patchlearningassignment",
@@ -23501,7 +23682,7 @@
   "getroutingqueues": {
     "operationId": "getroutingqueues",
     "functionName": "getRoutingQueues",
-    "signature": "getRoutingQueues(pageNumber, pageSize, sortOrder, name, id, divisionId)",
+    "signature": "getRoutingQueues(pageNumber, pageSize, sortOrder, name, id, divisionId, peerId, hasPeer)",
     "parameters": [
       {
         "name": "pageNumber",
@@ -23532,10 +23713,20 @@
         "name": "divisionId",
         "type": "[String]",
         "required": "false"
+      },
+      {
+        "name": "peerId",
+        "type": "[String]",
+        "required": "false"
+      },
+      {
+        "name": "hasPeer",
+        "type": "Boolean",
+        "required": "false"
       }
     ],
     "return": "QueueEntityListing",
-    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.RoutingApi();\n\nlet opts = { \n  \"pageNumber\": 1, // Number | Page number\n  \"pageSize\": 25, // Number | Page size\n  \"sortOrder\": \"asc\", // String | Note: results are sorted by name.\n  \"name\": \"name_example\", // String | Filter by queue name\n  \"id\": [\"id_example\"], // [String] | Filter by queue ID(s)\n  \"divisionId\": [\"divisionId_example\"] // [String] | Filter by queue division ID(s)\n};\n\n// Get list of queues.\napiInstance.getRoutingQueues(opts)\n  .then((data) => {\n    console.log(`getRoutingQueues success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getRoutingQueues\");\n    console.error(err);\n  });"
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.RoutingApi();\n\nlet opts = { \n  \"pageNumber\": 1, // Number | Page number\n  \"pageSize\": 25, // Number | Page size\n  \"sortOrder\": \"asc\", // String | Note: results are sorted by name.\n  \"name\": \"name_example\", // String | Filter by queue name\n  \"id\": [\"id_example\"], // [String] | Filter by queue ID(s)\n  \"divisionId\": [\"divisionId_example\"], // [String] | Filter by queue division ID(s)\n  \"peerId\": [\"peerId_example\"], // [String] | Filter by queue peer ID(s)\n  \"hasPeer\": true // Boolean | Filter by queues associated with peer\n};\n\n// Get list of queues.\napiInstance.getRoutingQueues(opts)\n  .then((data) => {\n    console.log(`getRoutingQueues success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getRoutingQueues\");\n    console.error(err);\n  });"
   },
   "getroutingqueuesdivisionviews": {
     "operationId": "getroutingqueuesdivisionviews",

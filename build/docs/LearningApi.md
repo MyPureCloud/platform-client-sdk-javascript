@@ -17,6 +17,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getLearningModuleRule**](LearningApi.html#getLearningModuleRule) | **GET** /api/v2/learning/modules/{moduleId}/rule | Get a learning module rule
 [**getLearningModuleVersion**](LearningApi.html#getLearningModuleVersion) | **GET** /api/v2/learning/modules/{moduleId}/versions/{versionId} | Get specific version of a published module
 [**getLearningModules**](LearningApi.html#getLearningModules) | **GET** /api/v2/learning/modules | Get all learning modules of an organization
+[**getLearningModulesAssignments**](LearningApi.html#getLearningModulesAssignments) | **GET** /api/v2/learning/modules/assignments | Get all learning modules of an organization including assignments for a specific user
 [**patchLearningAssignment**](LearningApi.html#patchLearningAssignment) | **PATCH** /api/v2/learning/assignments/{assignmentId} | Update Learning Assignment
 [**postLearningAssessmentsScoring**](LearningApi.html#postLearningAssessmentsScoring) | **POST** /api/v2/learning/assessments/scoring | Score learning assessment for preview
 [**postLearningAssignmentReassign**](LearningApi.html#postLearningAssignmentReassign) | **POST** /api/v2/learning/assignments/{assignmentId}/reassign | Reassign Learning Assignment
@@ -628,6 +629,71 @@ apiInstance.getLearningModules(opts)
 ### Return type
 
 **LearningModulesDomainEntityListing**
+
+<a name="getLearningModulesAssignments"></a>
+
+# AssignedLearningModuleDomainEntityListing getLearningModulesAssignments(userIds, opts)
+
+
+GET /api/v2/learning/modules/assignments
+
+Get all learning modules of an organization including assignments for a specific user
+
+Requires ALL permissions:
+
+* learning:module:view
+* learning:assignment:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.LearningApi();
+
+let userIds = ["userIds_example"]; // [String] | The IDs of the users to include
+let opts = { 
+  'pageSize': 25, // Number | Page size
+  'pageNumber': 1, // Number | Page number
+  'searchTerm': "searchTerm_example", // String | Search Term (searches by name and description)
+  'overdue': "Any", // String | Specifies if only modules with overdue/not overdue (overdue is True or False) assignments are returned. If overdue is Any or omitted, both are returned and can including modules that are unassigned.
+  'assignmentStates': ["assignmentStates_example"], // [String] | Specifies the assignment states to return.
+  'expand': ["expand_example"] // [String] | Fields to expand in response(case insensitive)
+};
+
+apiInstance.getLearningModulesAssignments(userIds, opts)
+  .then((data) => {
+    console.log(`getLearningModulesAssignments success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getLearningModulesAssignments');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **userIds** | **[String]** | The IDs of the users to include |  |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **searchTerm** | **String** | Search Term (searches by name and description) | [optional]  |
+ **overdue** | **String** | Specifies if only modules with overdue/not overdue (overdue is True or False) assignments are returned. If overdue is Any or omitted, both are returned and can including modules that are unassigned. | [optional] [default to Any]<br />**Values**: True, False, Any |
+ **assignmentStates** | **[String]** | Specifies the assignment states to return. | [optional] <br />**Values**: NotAssigned, Assigned, InProgress, Completed |
+ **expand** | **[String]** | Fields to expand in response(case insensitive) | [optional] <br />**Values**: coverArt |
+{: class="table table-striped"}
+
+### Return type
+
+**AssignedLearningModuleDomainEntityListing**
 
 <a name="patchLearningAssignment"></a>
 

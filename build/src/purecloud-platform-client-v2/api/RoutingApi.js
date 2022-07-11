@@ -5,7 +5,7 @@ class RoutingApi {
 	/**
 	 * Routing service.
 	 * @module purecloud-platform-client-v2/api/RoutingApi
-	 * @version 140.0.1
+	 * @version 141.0.0
 	 */
 
 	/**
@@ -1115,6 +1115,8 @@ class RoutingApi {
 	 * @param {String} opts.name Filter by queue name
 	 * @param {Array.<String>} opts.id Filter by queue ID(s)
 	 * @param {Array.<String>} opts.divisionId Filter by queue division ID(s)
+	 * @param {Array.<String>} opts.peerId Filter by queue peer ID(s)
+	 * @param {Boolean} opts.hasPeer Filter by queues associated with peer
 	 */
 	getRoutingQueues(opts) { 
 		opts = opts || {};
@@ -1124,7 +1126,7 @@ class RoutingApi {
 			'/api/v2/routing/queues', 
 			'GET', 
 			{  },
-			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortOrder': opts['sortOrder'],'name': opts['name'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi') },
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortOrder': opts['sortOrder'],'name': opts['name'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi'),'peerId': this.apiClient.buildCollectionParam(opts['peerId'], 'multi'),'hasPeer': opts['hasPeer'] },
 			{  },
 			{  },
 			null, 

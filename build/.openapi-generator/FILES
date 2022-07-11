@@ -603,6 +603,9 @@ docs/getGamificationScorecardsBestpoints-example.txt
 docs/getGamificationScorecardsPointsAlltime-example.txt
 docs/getGamificationScorecardsPointsAverage-example.txt
 docs/getGamificationScorecardsPointsTrends-example.txt
+docs/getGamificationScorecardsProfileMetricUserValuesTrends-example.txt
+docs/getGamificationScorecardsProfileMetricUsersValuesTrends-example.txt
+docs/getGamificationScorecardsProfileMetricValuesTrends-example.txt
 docs/getGamificationScorecardsUser-example.txt
 docs/getGamificationScorecardsUserAttendance-example.txt
 docs/getGamificationScorecardsUserBestpoints-example.txt
@@ -733,6 +736,7 @@ docs/getLearningModuleJob-example.txt
 docs/getLearningModuleRule-example.txt
 docs/getLearningModuleVersion-example.txt
 docs/getLearningModules-example.txt
+docs/getLearningModulesAssignments-example.txt
 docs/getLicenseDefinition-example.txt
 docs/getLicenseDefinitions-example.txt
 docs/getLicenseToggle-example.txt
