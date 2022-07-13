@@ -3955,6 +3955,7 @@ declare class SearchApi {
   	postSearch(body: Models.SearchRequest, opts?: SearchApi.postSearchOptions): Promise<Models.JsonNodeSearchResponse>; 
   	postSearchSuggest(body: Models.SuggestSearchRequest, opts?: SearchApi.postSearchSuggestOptions): Promise<Models.JsonNodeSearchResponse>; 
   	postSpeechandtextanalyticsTranscriptsSearch(body: Models.TranscriptSearchRequest): Promise<Models.JsonSearchResponse>; 
+  	postTeamsSearch(body: Models.TeamSearchRequest): Promise<Models.TeamsSearchResponse>; 
   	postUsersSearch(body: Models.UserSearchRequest): Promise<Models.UsersSearchResponse>; 
   	postVoicemailSearch(body: Models.VoicemailSearchRequest): Promise<Models.VoicemailsSearchResponse>;
 }
@@ -4103,6 +4104,25 @@ declare namespace SuggestApi {
 	}
 	export interface postSearchSuggestOptions { 
 		"profile"?: boolean;
+	}
+}
+
+declare class TeamsApi {  
+  	deleteTeam(teamId: string): Promise<void>; 
+  	getTeam(teamId: string): Promise<Models.Team>; 
+  	getTeams(opts?: TeamsApi.getTeamsOptions): Promise<Models.TeamEntityListing>; 
+  	patchTeam(teamId: string, body: Models.Team): Promise<Models.Team>; 
+  	postTeams(body: Models.Team): Promise<Models.Team>; 
+  	postTeamsSearch(body: Models.TeamSearchRequest): Promise<Models.TeamsSearchResponse>;
+}
+
+declare namespace TeamsApi { 
+	export interface getTeamsOptions { 
+		"pageSize"?: number;
+		"name"?: string;
+		"after"?: string;
+		"before"?: string;
+		"expand"?: string;
 	}
 }
 
@@ -4914,6 +4934,7 @@ declare class WorkforceManagementApi {
   	deleteWorkforcemanagementManagementunitWorkplan(managementUnitId: string, workPlanId: string): Promise<void>; 
   	deleteWorkforcemanagementManagementunitWorkplanrotation(managementUnitId: string, workPlanRotationId: string): Promise<void>; 
   	getWorkforcemanagementAdherence(userId: Array<string>): Promise<Array<Models.UserScheduleAdherence>>; 
+  	getWorkforcemanagementAdherenceHistoricalJob(jobId: string): Promise<Models.WfmHistoricalAdherenceResponse>; 
   	getWorkforcemanagementAdhocmodelingjob(jobId: string): Promise<Models.ModelingStatusResponse>; 
   	getWorkforcemanagementAgentManagementunit(agentId: string): Promise<Models.AgentManagementUnitReference>; 
   	getWorkforcemanagementAgentsMeManagementunit(): Promise<Models.AgentManagementUnitReference>; 
@@ -5885,6 +5906,11 @@ declare namespace Models {
 		"sessionAttributes"?: { [key: string]: string; };
 	}
 	
+	export interface AnalyticsAgentGroup { 
+		"agentGroupId"?: string;
+		"agentGroupType"?: string;
+	}
+	
 	export interface AnalyticsConversation { 
 		"conversationEnd"?: string;
 		"conversationId"?: string;
@@ -6162,6 +6188,7 @@ declare namespace Models {
 		"videoRoomId"?: string;
 		"waitingInteractionCounts"?: Array<number>;
 		"proposedAgents"?: Array<Models.AnalyticsProposedAgent>;
+		"agentGroups"?: Array<Models.AnalyticsAgentGroup>;
 		"mediaEndpointStats"?: Array<Models.AnalyticsMediaEndpointStat>;
 		"flow"?: Models.AnalyticsFlow;
 		"metrics"?: Array<Models.AnalyticsSessionMetric>;
@@ -8924,8 +8951,8 @@ declare namespace Models {
 		"expirationDate"?: string;
 		"issueDate"?: string;
 		"expired"?: boolean;
-		"valid"?: boolean;
 		"signatureValid"?: boolean;
+		"valid"?: boolean;
 	}
 	
 	export interface Change { 
@@ -12893,6 +12920,11 @@ declare namespace Models {
 		"values": Array<string>;
 	}
 	
+	export interface CustomI18nLabels { 
+		"language"?: string;
+		"localizedLabels"?: Array<Models.LocalizedLabels>;
+	}
+	
 	export interface CustomerEndDetailEventTopicCustomerEndEvent { 
 		"eventTime"?: number;
 		"conversationId"?: string;
@@ -14502,8 +14534,8 @@ declare namespace Models {
 		"permissionPolicies"?: Array<Models.DomainPermissionPolicy>;
 		"userCount"?: number;
 		"roleNeedsUpdate"?: boolean;
-		"default"?: boolean;
 		"base"?: boolean;
+		"default"?: boolean;
 		"selfUri"?: string;
 	}
 	
@@ -14517,8 +14549,8 @@ declare namespace Models {
 		"permissionPolicies"?: Array<Models.DomainPermissionPolicy>;
 		"userCount"?: number;
 		"roleNeedsUpdate"?: boolean;
-		"default"?: boolean;
 		"base"?: boolean;
+		"default"?: boolean;
 		"selfUri"?: string;
 	}
 	
@@ -14532,8 +14564,8 @@ declare namespace Models {
 		"permissionPolicies"?: Array<Models.DomainPermissionPolicy>;
 		"userCount"?: number;
 		"roleNeedsUpdate"?: boolean;
-		"default"?: boolean;
 		"base"?: boolean;
+		"default"?: boolean;
 		"selfUri"?: string;
 	}
 	
@@ -19875,6 +19907,11 @@ declare namespace Models {
 		"configId": string;
 		"publicKey": string;
 		"keypairId": string;
+	}
+	
+	export interface LocalizedLabels { 
+		"key"?: string;
+		"value"?: string;
 	}
 	
 	export interface Location { 
@@ -28531,9 +28568,49 @@ declare namespace Models {
 		"selfUri"?: string;
 	}
 	
+	export interface TeamEntityListing { 
+		"entities"?: Array<Models.Team>;
+		"nextUri"?: string;
+		"selfUri"?: string;
+		"previousUri"?: string;
+	}
+	
 	export interface TeamReference { 
 		"id"?: string;
 		"selfUri"?: string;
+	}
+	
+	export interface TeamSearchCriteria { 
+		"endValue"?: string;
+		"values"?: Array<string>;
+		"startValue"?: string;
+		"fields"?: Array<string>;
+		"value"?: string;
+		"operator"?: string;
+		"group"?: Array<Models.TeamSearchCriteria>;
+		"dateFormat"?: string;
+		"type": string;
+	}
+	
+	export interface TeamSearchRequest { 
+		"sortOrder"?: string;
+		"sortBy"?: string;
+		"pageSize"?: number;
+		"pageNumber"?: number;
+		"sort"?: Array<Models.SearchSort>;
+		"query": Array<Models.TeamSearchCriteria>;
+	}
+	
+	export interface TeamsSearchResponse { 
+		"total": number;
+		"pageCount": number;
+		"pageSize": number;
+		"pageNumber": number;
+		"previousPage"?: string;
+		"currentPage"?: string;
+		"nextPage"?: string;
+		"types": Array<string>;
+		"results": Array<Models.Team>;
 	}
 	
 	export interface TemplateParameter { 
@@ -31723,6 +31800,7 @@ declare namespace Models {
 		"description"?: string;
 		"languages"?: Array<string>;
 		"defaultLanguage"?: string;
+		"customI18nLabels"?: Array<Models.CustomI18nLabels>;
 		"messenger"?: Models.MessengerSettings;
 		"position"?: Models.PositionSettings;
 		"supportCenter"?: Models.SupportCenterSettings;

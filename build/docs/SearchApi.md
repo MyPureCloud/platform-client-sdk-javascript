@@ -24,6 +24,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postSearch**](SearchApi.html#postSearch) | **POST** /api/v2/search | Search resources.
 [**postSearchSuggest**](SearchApi.html#postSearchSuggest) | **POST** /api/v2/search/suggest | Suggest resources.
 [**postSpeechandtextanalyticsTranscriptsSearch**](SearchApi.html#postSpeechandtextanalyticsTranscriptsSearch) | **POST** /api/v2/speechandtextanalytics/transcripts/search | Search resources.
+[**postTeamsSearch**](SearchApi.html#postTeamsSearch) | **POST** /api/v2/teams/search | Search resources.
 [**postUsersSearch**](SearchApi.html#postUsersSearch) | **POST** /api/v2/users/search | Search users
 [**postVoicemailSearch**](SearchApi.html#postVoicemailSearch) | **POST** /api/v2/voicemail/search | Search voicemails
 {: class="table table-striped"}
@@ -890,6 +891,56 @@ apiInstance.postSpeechandtextanalyticsTranscriptsSearch(body)
 ### Return type
 
 **JsonSearchResponse**
+
+<a name="postTeamsSearch"></a>
+
+# TeamsSearchResponse postTeamsSearch(body)
+
+
+POST /api/v2/teams/search
+
+Search resources.
+
+Requires ANY permissions:
+
+* groups:team:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.SearchApi();
+
+let body = {}; // Object | Search request options
+
+apiInstance.postTeamsSearch(body)
+  .then((data) => {
+    console.log(`postTeamsSearch success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postTeamsSearch');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | Search request options |  |
+{: class="table table-striped"}
+
+### Return type
+
+**TeamsSearchResponse**
 
 <a name="postUsersSearch"></a>
 

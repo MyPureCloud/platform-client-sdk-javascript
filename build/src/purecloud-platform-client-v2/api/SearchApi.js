@@ -5,7 +5,7 @@ class SearchApi {
 	/**
 	 * Search service.
 	 * @module purecloud-platform-client-v2/api/SearchApi
-	 * @version 141.0.0
+	 * @version 141.1.0
 	 */
 
 	/**
@@ -472,6 +472,31 @@ class SearchApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/speechandtextanalytics/transcripts/search', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Search resources.
+	 * 
+	 * @param {Object} body Search request options
+	 */
+	postTeamsSearch(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postTeamsSearch';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/teams/search', 
 			'POST', 
 			{  },
 			{  },

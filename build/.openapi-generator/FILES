@@ -94,6 +94,8 @@ docs/StationsApi.json
 docs/StationsApi.md
 docs/SuggestApi.json
 docs/SuggestApi.md
+docs/TeamsApi.json
+docs/TeamsApi.md
 docs/TelephonyApi.json
 docs/TelephonyApi.md
 docs/TelephonyProvidersEdgeApi.json
@@ -282,6 +284,7 @@ docs/deleteSpeechandtextanalyticsSentimentfeedback-example.txt
 docs/deleteSpeechandtextanalyticsSentimentfeedbackSentimentFeedbackId-example.txt
 docs/deleteSpeechandtextanalyticsTopic-example.txt
 docs/deleteStationAssociateduser-example.txt
+docs/deleteTeam-example.txt
 docs/deleteTelephonyProvidersEdge-example.txt
 docs/deleteTelephonyProvidersEdgeLogicalinterface-example.txt
 docs/deleteTelephonyProvidersEdgeSoftwareupdate-example.txt
@@ -998,6 +1001,8 @@ docs/getStation-example.txt
 docs/getStations-example.txt
 docs/getStationsSettings-example.txt
 docs/getSystempresences-example.txt
+docs/getTeam-example.txt
+docs/getTeams-example.txt
 docs/getTelephonyProvidersEdge-example.txt
 docs/getTelephonyProvidersEdgeDiagnosticNslookup-example.txt
 docs/getTelephonyProvidersEdgeDiagnosticPing-example.txt
@@ -1145,6 +1150,7 @@ docs/getWebmessagingMessages-example.txt
 docs/getWidgetsDeployment-example.txt
 docs/getWidgetsDeployments-example.txt
 docs/getWorkforcemanagementAdherence-example.txt
+docs/getWorkforcemanagementAdherenceHistoricalJob-example.txt
 docs/getWorkforcemanagementAdhocmodelingjob-example.txt
 docs/getWorkforcemanagementAgentManagementunit-example.txt
 docs/getWorkforcemanagementAgentsMeManagementunit-example.txt
@@ -1289,6 +1295,7 @@ docs/patchScimV2Group-example.txt
 docs/patchScimV2User-example.txt
 docs/patchSpeechandtextanalyticsSettings-example.txt
 docs/patchStationsSettings-example.txt
+docs/patchTeam-example.txt
 docs/patchUser-example.txt
 docs/patchUserCallforwarding-example.txt
 docs/patchUserGeolocation-example.txt
@@ -1654,6 +1661,9 @@ docs/postSpeechandtextanalyticsTopics-example.txt
 docs/postSpeechandtextanalyticsTopicsPublishjobs-example.txt
 docs/postSpeechandtextanalyticsTranscriptsSearch-example.txt
 docs/postSpeechandtextanalyticsTranscriptsSearch-example.txt
+docs/postTeams-example.txt
+docs/postTeamsSearch-example.txt
+docs/postTeamsSearch-example.txt
 docs/postTelephonyProvidersEdgeDiagnosticNslookup-example.txt
 docs/postTelephonyProvidersEdgeDiagnosticPing-example.txt
 docs/postTelephonyProvidersEdgeDiagnosticRoute-example.txt
@@ -2000,6 +2010,7 @@ src/purecloud-platform-client-v2/api/SearchApi.js
 src/purecloud-platform-client-v2/api/SpeechTextAnalyticsApi.js
 src/purecloud-platform-client-v2/api/StationsApi.js
 src/purecloud-platform-client-v2/api/SuggestApi.js
+src/purecloud-platform-client-v2/api/TeamsApi.js
 src/purecloud-platform-client-v2/api/TelephonyApi.js
 src/purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi.js
 src/purecloud-platform-client-v2/api/TextbotsApi.js

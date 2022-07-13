@@ -5,7 +5,7 @@ class WorkforceManagementApi {
 	/**
 	 * WorkforceManagement service.
 	 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-	 * @version 141.0.0
+	 * @version 141.1.0
 	 */
 
 	/**
@@ -416,6 +416,31 @@ class WorkforceManagementApi {
 			'GET', 
 			{  },
 			{ 'userId': this.apiClient.buildCollectionParam(userId, 'multi') },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Query the status of a historical adherence request operation. Only the user who started the operation can query the status
+	 * Job details are only retained if the initial request returned a 202 ACCEPTED response
+	 * @param {String} jobId jobId
+	 */
+	getWorkforcemanagementAdherenceHistoricalJob(jobId) { 
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null) {
+			throw 'Missing the required parameter "jobId" when calling getWorkforcemanagementAdherenceHistoricalJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/adherence/historical/jobs/{jobId}', 
+			'GET', 
+			{ 'jobId': jobId },
+			{  },
 			{  },
 			{  },
 			null, 
