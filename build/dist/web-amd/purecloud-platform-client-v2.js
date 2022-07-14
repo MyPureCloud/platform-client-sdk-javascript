@@ -398,7 +398,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 
 	/**
 	 * @module purecloud-platform-client-v2/ApiClient
-	 * @version 141.1.0
+	 * @version 142.0.0
 	 */
 	class ApiClient {
 		/**
@@ -1477,7 +1477,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Alerting service.
 		 * @module purecloud-platform-client-v2/api/AlertingApi
-		 * @version 141.1.0
+		 * @version 142.0.0
 		 */
 
 		/**
@@ -1791,7 +1791,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Analytics service.
 		 * @module purecloud-platform-client-v2/api/AnalyticsApi
-		 * @version 141.1.0
+		 * @version 142.0.0
 		 */
 
 		/**
@@ -2973,7 +2973,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Architect service.
 		 * @module purecloud-platform-client-v2/api/ArchitectApi
-		 * @version 141.1.0
+		 * @version 142.0.0
 		 */
 
 		/**
@@ -6018,7 +6018,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Audit service.
 		 * @module purecloud-platform-client-v2/api/AuditApi
-		 * @version 141.1.0
+		 * @version 142.0.0
 		 */
 
 		/**
@@ -6189,7 +6189,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Authorization service.
 		 * @module purecloud-platform-client-v2/api/AuthorizationApi
-		 * @version 141.1.0
+		 * @version 142.0.0
 		 */
 
 		/**
@@ -7372,7 +7372,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Billing service.
 		 * @module purecloud-platform-client-v2/api/BillingApi
-		 * @version 141.1.0
+		 * @version 142.0.0
 		 */
 
 		/**
@@ -7452,7 +7452,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Chat service.
 		 * @module purecloud-platform-client-v2/api/ChatApi
-		 * @version 141.1.0
+		 * @version 142.0.0
 		 */
 
 		/**
@@ -7543,7 +7543,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Coaching service.
 		 * @module purecloud-platform-client-v2/api/CoachingApi
-		 * @version 141.1.0
+		 * @version 142.0.0
 		 */
 
 		/**
@@ -8120,7 +8120,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * ContentManagement service.
 		 * @module purecloud-platform-client-v2/api/ContentManagementApi
-		 * @version 141.1.0
+		 * @version 142.0.0
 		 */
 
 		/**
@@ -9260,7 +9260,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Conversations service.
 		 * @module purecloud-platform-client-v2/api/ConversationsApi
-		 * @version 141.1.0
+		 * @version 142.0.0
 		 */
 
 		/**
@@ -14194,7 +14194,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * DataExtensions service.
 		 * @module purecloud-platform-client-v2/api/DataExtensionsApi
-		 * @version 141.1.0
+		 * @version 142.0.0
 		 */
 
 		/**
@@ -14280,7 +14280,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * ExternalContacts service.
 		 * @module purecloud-platform-client-v2/api/ExternalContactsApi
-		 * @version 141.1.0
+		 * @version 142.0.0
 		 */
 
 		/**
@@ -16023,7 +16023,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Fax service.
 		 * @module purecloud-platform-client-v2/api/FaxApi
-		 * @version 141.1.0
+		 * @version 142.0.0
 		 */
 
 		/**
@@ -16194,7 +16194,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Flows service.
 		 * @module purecloud-platform-client-v2/api/FlowsApi
-		 * @version 141.1.0
+		 * @version 142.0.0
 		 */
 
 		/**
@@ -16265,7 +16265,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Gamification service.
 		 * @module purecloud-platform-client-v2/api/GamificationApi
-		 * @version 141.1.0
+		 * @version 142.0.0
 		 */
 
 		/**
@@ -17847,7 +17847,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * GeneralDataProtectionRegulation service.
 		 * @module purecloud-platform-client-v2/api/GeneralDataProtectionRegulationApi
-		 * @version 141.1.0
+		 * @version 142.0.0
 		 */
 
 		/**
@@ -17977,7 +17977,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Geolocation service.
 		 * @module purecloud-platform-client-v2/api/GeolocationApi
-		 * @version 141.1.0
+		 * @version 142.0.0
 		 */
 
 		/**
@@ -18108,7 +18108,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Greetings service.
 		 * @module purecloud-platform-client-v2/api/GreetingsApi
-		 * @version 141.1.0
+		 * @version 142.0.0
 		 */
 
 		/**
@@ -18563,7 +18563,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Groups service.
 		 * @module purecloud-platform-client-v2/api/GroupsApi
-		 * @version 141.1.0
+		 * @version 142.0.0
 		 */
 
 		/**
@@ -18968,7 +18968,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * IdentityProvider service.
 		 * @module purecloud-platform-client-v2/api/IdentityProviderApi
-		 * @version 141.1.0
+		 * @version 142.0.0
 		 */
 
 		/**
@@ -19724,7 +19724,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Integrations service.
 		 * @module purecloud-platform-client-v2/api/IntegrationsApi
-		 * @version 141.1.0
+		 * @version 142.0.0
 		 */
 
 		/**
@@ -21401,7 +21401,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Journey service.
 		 * @module purecloud-platform-client-v2/api/JourneyApi
-		 * @version 141.1.0
+		 * @version 142.0.0
 		 */
 
 		/**
@@ -22112,7 +22112,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Knowledge service.
 		 * @module purecloud-platform-client-v2/api/KnowledgeApi
-		 * @version 141.1.0
+		 * @version 142.0.0
 		 */
 
 		/**
@@ -23012,7 +23012,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * LanguageUnderstanding service.
 		 * @module purecloud-platform-client-v2/api/LanguageUnderstandingApi
-		 * @version 141.1.0
+		 * @version 142.0.0
 		 */
 
 		/**
@@ -23916,7 +23916,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Languages service.
 		 * @module purecloud-platform-client-v2/api/LanguagesApi
-		 * @version 141.1.0
+		 * @version 142.0.0
 		 */
 
 		/**
@@ -24184,7 +24184,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Learning service.
 		 * @module purecloud-platform-client-v2/api/LearningApi
-		 * @version 141.1.0
+		 * @version 142.0.0
 		 */
 
 		/**
@@ -24919,7 +24919,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * License service.
 		 * @module purecloud-platform-client-v2/api/LicenseApi
-		 * @version 141.1.0
+		 * @version 142.0.0
 		 */
 
 		/**
@@ -25157,7 +25157,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Locations service.
 		 * @module purecloud-platform-client-v2/api/LocationsApi
-		 * @version 141.1.0
+		 * @version 142.0.0
 		 */
 
 		/**
@@ -25393,7 +25393,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Messaging service.
 		 * @module purecloud-platform-client-v2/api/MessagingApi
-		 * @version 141.1.0
+		 * @version 142.0.0
 		 */
 
 		/**
@@ -25544,7 +25544,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * MobileDevices service.
 		 * @module purecloud-platform-client-v2/api/MobileDevicesApi
-		 * @version 141.1.0
+		 * @version 142.0.0
 		 */
 
 		/**
@@ -25695,7 +25695,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Notifications service.
 		 * @module purecloud-platform-client-v2/api/NotificationsApi
-		 * @version 141.1.0
+		 * @version 142.0.0
 		 */
 
 		/**
@@ -25920,7 +25920,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * OAuth service.
 		 * @module purecloud-platform-client-v2/api/OAuthApi
-		 * @version 141.1.0
+		 * @version 142.0.0
 		 */
 
 		/**
@@ -26286,7 +26286,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Objects service.
 		 * @module purecloud-platform-client-v2/api/ObjectsApi
-		 * @version 141.1.0
+		 * @version 142.0.0
 		 */
 
 		/**
@@ -26557,7 +26557,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Organization service.
 		 * @module purecloud-platform-client-v2/api/OrganizationApi
-		 * @version 141.1.0
+		 * @version 142.0.0
 		 */
 
 		/**
@@ -26960,7 +26960,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * OrganizationAuthorization service.
 		 * @module purecloud-platform-client-v2/api/OrganizationAuthorizationApi
-		 * @version 141.1.0
+		 * @version 142.0.0
 		 */
 
 		/**
@@ -27885,7 +27885,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Outbound service.
 		 * @module purecloud-platform-client-v2/api/OutboundApi
-		 * @version 141.1.0
+		 * @version 142.0.0
 		 */
 
 		/**
@@ -31140,7 +31140,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Presence service.
 		 * @module purecloud-platform-client-v2/api/PresenceApi
-		 * @version 141.1.0
+		 * @version 142.0.0
 		 */
 
 		/**
@@ -31462,7 +31462,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Quality service.
 		 * @module purecloud-platform-client-v2/api/QualityApi
-		 * @version 141.1.0
+		 * @version 142.0.0
 		 */
 
 		/**
@@ -33040,7 +33040,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Recording service.
 		 * @module purecloud-platform-client-v2/api/RecordingApi
-		 * @version 141.1.0
+		 * @version 142.0.0
 		 */
 
 		/**
@@ -34693,7 +34693,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * ResponseManagement service.
 		 * @module purecloud-platform-client-v2/api/ResponseManagementApi
-		 * @version 141.1.0
+		 * @version 142.0.0
 		 */
 
 		/**
@@ -35177,7 +35177,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Routing service.
 		 * @module purecloud-platform-client-v2/api/RoutingApi
-		 * @version 141.1.0
+		 * @version 142.0.0
 		 */
 
 		/**
@@ -38098,7 +38098,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * SCIM service.
 		 * @module purecloud-platform-client-v2/api/SCIMApi
-		 * @version 141.1.0
+		 * @version 142.0.0
 		 */
 
 		/**
@@ -38975,7 +38975,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Scripts service.
 		 * @module purecloud-platform-client-v2/api/ScriptsApi
-		 * @version 141.1.0
+		 * @version 142.0.0
 		 */
 
 		/**
@@ -39394,7 +39394,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Search service.
 		 * @module purecloud-platform-client-v2/api/SearchApi
-		 * @version 141.1.0
+		 * @version 142.0.0
 		 */
 
 		/**
@@ -39954,7 +39954,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * SpeechTextAnalytics service.
 		 * @module purecloud-platform-client-v2/api/SpeechTextAnalyticsApi
-		 * @version 141.1.0
+		 * @version 142.0.0
 		 */
 
 		/**
@@ -40179,6 +40179,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		 * @param {Object} opts Optional parameters
 		 * @param {String} opts.nextPage The key for listing the next page
 		 * @param {Number} opts.pageSize The page size for the listing (default to 20)
+		 * @param {Object} opts.state Program state. Defaults to Latest
 		 */
 		getSpeechandtextanalyticsPrograms(opts) { 
 			opts = opts || {};
@@ -40188,7 +40189,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 				'/api/v2/speechandtextanalytics/programs', 
 				'GET', 
 				{  },
-				{ 'nextPage': opts['nextPage'],'pageSize': opts['pageSize'] },
+				{ 'nextPage': opts['nextPage'],'pageSize': opts['pageSize'],'state': opts['state'] },
 				{  },
 				{  },
 				null, 
@@ -40807,7 +40808,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Stations service.
 		 * @module purecloud-platform-client-v2/api/StationsApi
-		 * @version 141.1.0
+		 * @version 142.0.0
 		 */
 
 		/**
@@ -40954,7 +40955,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Suggest service.
 		 * @module purecloud-platform-client-v2/api/SuggestApi
-		 * @version 141.1.0
+		 * @version 142.0.0
 		 */
 
 		/**
@@ -41093,7 +41094,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Teams service.
 		 * @module purecloud-platform-client-v2/api/TeamsApi
-		 * @version 141.1.0
+		 * @version 142.0.0
 		 */
 
 		/**
@@ -41272,7 +41273,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Telephony service.
 		 * @module purecloud-platform-client-v2/api/TelephonyApi
-		 * @version 141.1.0
+		 * @version 142.0.0
 		 */
 
 		/**
@@ -41380,7 +41381,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * TelephonyProvidersEdge service.
 		 * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-		 * @version 141.1.0
+		 * @version 142.0.0
 		 */
 
 		/**
@@ -45013,7 +45014,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Textbots service.
 		 * @module purecloud-platform-client-v2/api/TextbotsApi
-		 * @version 141.1.0
+		 * @version 142.0.0
 		 */
 
 		/**
@@ -45141,7 +45142,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Tokens service.
 		 * @module purecloud-platform-client-v2/api/TokensApi
-		 * @version 141.1.0
+		 * @version 142.0.0
 		 */
 
 		/**
@@ -45247,7 +45248,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Uploads service.
 		 * @module purecloud-platform-client-v2/api/UploadsApi
-		 * @version 141.1.0
+		 * @version 142.0.0
 		 */
 
 		/**
@@ -45398,7 +45399,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Usage service.
 		 * @module purecloud-platform-client-v2/api/UsageApi
-		 * @version 141.1.0
+		 * @version 142.0.0
 		 */
 
 		/**
@@ -45469,7 +45470,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * UserRecordings service.
 		 * @module purecloud-platform-client-v2/api/UserRecordingsApi
-		 * @version 141.1.0
+		 * @version 142.0.0
 		 */
 
 		/**
@@ -45653,7 +45654,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Users service.
 		 * @module purecloud-platform-client-v2/api/UsersApi
-		 * @version 141.1.0
+		 * @version 142.0.0
 		 */
 
 		/**
@@ -47955,7 +47956,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Utilities service.
 		 * @module purecloud-platform-client-v2/api/UtilitiesApi
-		 * @version 141.1.0
+		 * @version 142.0.0
 		 */
 
 		/**
@@ -48066,7 +48067,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Voicemail service.
 		 * @module purecloud-platform-client-v2/api/VoicemailApi
-		 * @version 141.1.0
+		 * @version 142.0.0
 		 */
 
 		/**
@@ -48733,7 +48734,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * WebChat service.
 		 * @module purecloud-platform-client-v2/api/WebChatApi
-		 * @version 141.1.0
+		 * @version 142.0.0
 		 */
 
 		/**
@@ -49277,7 +49278,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * WebDeployments service.
 		 * @module purecloud-platform-client-v2/api/WebDeploymentsApi
-		 * @version 141.1.0
+		 * @version 142.0.0
 		 */
 
 		/**
@@ -49632,7 +49633,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * WebMessaging service.
 		 * @module purecloud-platform-client-v2/api/WebMessagingApi
-		 * @version 141.1.0
+		 * @version 142.0.0
 		 */
 
 		/**
@@ -49678,7 +49679,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * Widgets service.
 		 * @module purecloud-platform-client-v2/api/WidgetsApi
-		 * @version 141.1.0
+		 * @version 142.0.0
 		 */
 
 		/**
@@ -49824,7 +49825,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 		/**
 		 * WorkforceManagement service.
 		 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-		 * @version 141.1.0
+		 * @version 142.0.0
 		 */
 
 		/**
@@ -54100,7 +54101,7 @@ ${this.formatValue('Status', statusCode)}${this.formatValue('Headers', this.form
 	 * </pre>
 	 * </p>
 	 * @module purecloud-platform-client-v2/index
-	 * @version 141.1.0
+	 * @version 142.0.0
 	 */
 	class platformClient {
 		constructor() {

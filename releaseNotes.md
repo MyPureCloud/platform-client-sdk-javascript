@@ -1,81 +1,32 @@
-Platform API version: 5897
+Platform API version: 5907
 
 
-# Major Changes (0 changes)
+# Major Changes (3 changes)
+
+**GET /api/v2/speechandtextanalytics/programs** (1 change)
+
+* Parameter state was added
+
+**LocalizedLabels** (2 changes)
+
+* Enum value MessengerHomeTitle was removed from property key
+* Enum value MessengerHomeSubTitle was removed from property key
 
 
-# Minor Changes (23 changes)
+# Minor Changes (4 changes)
 
-**/api/v2/teams/{teamId}** (4 changes)
+**PolicyConditions** (1 change)
 
-* Path was added
-* Operation GET was added
-* Operation DELETE was added
-* Operation PATCH was added
+* Optional property customerParticipation was added
 
-**/api/v2/teams** (3 changes)
+**PunctualityEvent** (1 change)
 
-* Path was added
-* Operation GET was added
-* Operation POST was added
+* Optional property activityName was added
 
-**/api/v2/teams/search** (2 changes)
+**LocalizedLabels** (2 changes)
 
-* Path was added
-* Operation POST was added
-
-**/api/v2/workforcemanagement/adherence/historical/jobs/{jobId}** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**BotAggregationQuery** (1 change)
-
-* Enum value oBotSessionQuerySelfServed was added to property metrics
-
-**BotAggregationView** (1 change)
-
-* Enum value oBotSessionQuerySelfServed was added to property target
-
-**AnalyticsAgentGroup** (1 change)
-
-* Model was added
-
-**AnalyticsSession** (1 change)
-
-* Optional property agentGroups was added
-
-**Miner** (1 change)
-
-* Enum value fr-fr was added to property language
-
-**TeamEntityListing** (1 change)
-
-* Model was added
-
-**TeamsSearchResponse** (1 change)
-
-* Model was added
-
-**TeamSearchCriteria** (1 change)
-
-* Model was added
-
-**TeamSearchRequest** (1 change)
-
-* Model was added
-
-**CustomI18nLabels** (1 change)
-
-* Model was added
-
-**LocalizedLabels** (1 change)
-
-* Model was added
-
-**WebDeploymentConfigurationVersion** (1 change)
-
-* Optional property customI18nLabels was added
+* Enum value MessengerHomeHeaderTitle was added to property key
+* Enum value MessengerHomeHeaderSubTitle was added to property key
 
 
 # Point Changes (0 changes)

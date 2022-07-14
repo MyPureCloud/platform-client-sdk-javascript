@@ -333,6 +333,10 @@
       "class": "SystemMessageSystemMessage"
     },
     {
+      "topic": "v2.taskmanagement.workitems.users.{id}",
+      "class": "WorkitemsUserEventsNotificationWorkitem"
+    },
+    {
       "topic": "v2.telephony.providers.edges.phones.{id}",
       "class": "PhoneChangeTopicPhone"
     },

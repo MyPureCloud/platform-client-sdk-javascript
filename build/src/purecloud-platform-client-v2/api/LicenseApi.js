@@ -5,7 +5,7 @@ class LicenseApi {
 	/**
 	 * License service.
 	 * @module purecloud-platform-client-v2/api/LicenseApi
-	 * @version 141.1.0
+	 * @version 142.0.0
 	 */
 
 	/**

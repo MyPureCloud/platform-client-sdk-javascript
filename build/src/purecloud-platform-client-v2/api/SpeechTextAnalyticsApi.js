@@ -5,7 +5,7 @@ class SpeechTextAnalyticsApi {
 	/**
 	 * SpeechTextAnalytics service.
 	 * @module purecloud-platform-client-v2/api/SpeechTextAnalyticsApi
-	 * @version 141.1.0
+	 * @version 142.0.0
 	 */
 
 	/**
@@ -230,6 +230,7 @@ class SpeechTextAnalyticsApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.nextPage The key for listing the next page
 	 * @param {Number} opts.pageSize The page size for the listing (default to 20)
+	 * @param {Object} opts.state Program state. Defaults to Latest
 	 */
 	getSpeechandtextanalyticsPrograms(opts) { 
 		opts = opts || {};
@@ -239,7 +240,7 @@ class SpeechTextAnalyticsApi {
 			'/api/v2/speechandtextanalytics/programs', 
 			'GET', 
 			{  },
-			{ 'nextPage': opts['nextPage'],'pageSize': opts['pageSize'] },
+			{ 'nextPage': opts['nextPage'],'pageSize': opts['pageSize'],'state': opts['state'] },
 			{  },
 			{  },
 			null, 

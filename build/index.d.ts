@@ -4036,6 +4036,7 @@ declare namespace SpeechTextAnalyticsApi {
 	export interface getSpeechandtextanalyticsProgramsOptions { 
 		"nextPage"?: string;
 		"pageSize"?: number;
+		"state"?: string;
 	}
 	export interface getSpeechandtextanalyticsProgramsMappingsOptions { 
 		"nextPage"?: string;
@@ -11323,6 +11324,7 @@ declare namespace Models {
 		"screenshares"?: Array<Models.ConversationEventTopicScreenshare>;
 		"socialExpressions"?: Array<Models.ConversationEventTopicSocialExpression>;
 		"videos"?: Array<Models.ConversationEventTopicVideo>;
+		"workflow"?: Models.ConversationEventTopicWorkflow;
 	}
 	
 	export interface ConversationEventTopicPhoneNumberColumn { 
@@ -11406,6 +11408,10 @@ declare namespace Models {
 	export interface ConversationEventTopicVoicemail { 
 		"id"?: string;
 		"uploadStatus"?: string;
+	}
+	
+	export interface ConversationEventTopicWorkflow { 
+		"workflowId"?: string;
 	}
 	
 	export interface ConversationEventTopicWrapup { 
@@ -14534,8 +14540,8 @@ declare namespace Models {
 		"permissionPolicies"?: Array<Models.DomainPermissionPolicy>;
 		"userCount"?: number;
 		"roleNeedsUpdate"?: boolean;
-		"base"?: boolean;
 		"default"?: boolean;
+		"base"?: boolean;
 		"selfUri"?: string;
 	}
 	
@@ -14549,8 +14555,8 @@ declare namespace Models {
 		"permissionPolicies"?: Array<Models.DomainPermissionPolicy>;
 		"userCount"?: number;
 		"roleNeedsUpdate"?: boolean;
-		"base"?: boolean;
 		"default"?: boolean;
+		"base"?: boolean;
 		"selfUri"?: string;
 	}
 	
@@ -14564,8 +14570,8 @@ declare namespace Models {
 		"permissionPolicies"?: Array<Models.DomainPermissionPolicy>;
 		"userCount"?: number;
 		"roleNeedsUpdate"?: boolean;
-		"base"?: boolean;
 		"default"?: boolean;
+		"base"?: boolean;
 		"selfUri"?: string;
 	}
 	
@@ -22596,6 +22602,7 @@ declare namespace Models {
 		"duration"?: Models.DurationCondition;
 		"wrapupCodes"?: Array<Models.WrapupCode>;
 		"timeAllowed"?: Models.TimeAllowed;
+		"customerParticipation"?: string;
 	}
 	
 	export interface PolicyCreate { 
@@ -22973,6 +22980,7 @@ declare namespace Models {
 		"description"?: string;
 		"activityCodeId"?: string;
 		"activityCode"?: string;
+		"activityName"?: string;
 		"category"?: string;
 		"points"?: number;
 		"delta"?: number;
@@ -24150,6 +24158,7 @@ declare namespace Models {
 		"screenshares"?: Array<Models.QueueConversationEventTopicScreenshare>;
 		"socialExpressions"?: Array<Models.QueueConversationEventTopicSocialExpression>;
 		"videos"?: Array<Models.QueueConversationEventTopicVideo>;
+		"workflow"?: Models.QueueConversationEventTopicWorkflow;
 	}
 	
 	export interface QueueConversationEventTopicPhoneNumberColumn { 
@@ -24233,6 +24242,10 @@ declare namespace Models {
 	export interface QueueConversationEventTopicVoicemail { 
 		"id"?: string;
 		"uploadStatus"?: string;
+	}
+	
+	export interface QueueConversationEventTopicWorkflow { 
+		"workflowId"?: string;
 	}
 	
 	export interface QueueConversationEventTopicWrapup { 
@@ -24867,6 +24880,7 @@ declare namespace Models {
 		"screenshares"?: Array<Models.QueueConversationSocialExpressionEventTopicScreenshare>;
 		"socialExpressions"?: Array<Models.QueueConversationSocialExpressionEventTopicSocialExpression>;
 		"videos"?: Array<Models.QueueConversationSocialExpressionEventTopicVideo>;
+		"workflow"?: Models.QueueConversationSocialExpressionEventTopicWorkflow;
 	}
 	
 	export interface QueueConversationSocialExpressionEventTopicPhoneNumberColumn { 
@@ -24950,6 +24964,10 @@ declare namespace Models {
 	export interface QueueConversationSocialExpressionEventTopicVoicemail { 
 		"id"?: string;
 		"uploadStatus"?: string;
+	}
+	
+	export interface QueueConversationSocialExpressionEventTopicWorkflow { 
+		"workflowId"?: string;
 	}
 	
 	export interface QueueConversationSocialExpressionEventTopicWrapup { 
@@ -25295,6 +25313,7 @@ declare namespace Models {
 		"screenshares"?: Array<Models.QueueConversationVideoEventTopicScreenshare>;
 		"socialExpressions"?: Array<Models.QueueConversationVideoEventTopicSocialExpression>;
 		"videos"?: Array<Models.QueueConversationVideoEventTopicVideo>;
+		"workflow"?: Models.QueueConversationVideoEventTopicWorkflow;
 	}
 	
 	export interface QueueConversationVideoEventTopicPhoneNumberColumn { 
@@ -25378,6 +25397,10 @@ declare namespace Models {
 	export interface QueueConversationVideoEventTopicVoicemail { 
 		"id"?: string;
 		"uploadStatus"?: string;
+	}
+	
+	export interface QueueConversationVideoEventTopicWorkflow { 
+		"workflowId"?: string;
 	}
 	
 	export interface QueueConversationVideoEventTopicWrapup { 
@@ -33367,6 +33390,42 @@ declare namespace Models {
 	export interface WorkdayValuesTrendItem { 
 		"dateWorkday"?: string;
 		"value"?: number;
+	}
+	
+	export interface WorkitemsUserEventsNotificationDelta { 
+		"op"?: string;
+		"field"?: string;
+		"oldValue"?: string;
+		"newValue"?: string;
+	}
+	
+	export interface WorkitemsUserEventsNotificationWorkitem { 
+		"id"?: string;
+		"name"?: string;
+		"typeId"?: string;
+		"description"?: string;
+		"languageId"?: string;
+		"priority"?: number;
+		"dateCreated"?: string;
+		"dateModified"?: string;
+		"dateDue"?: string;
+		"dateExpires"?: string;
+		"durationSeconds"?: number;
+		"ttl"?: number;
+		"statusId"?: string;
+		"dateClosed"?: string;
+		"workbinId"?: string;
+		"reporterId"?: string;
+		"assigneeId"?: string;
+		"externalContactId"?: string;
+		"externalTag"?: string;
+		"wrapupId"?: string;
+		"modifiedBy"?: string;
+		"operation"?: string;
+		"changes"?: Array<Models.WorkitemsUserEventsNotificationDelta>;
+		"assignmentState"?: string;
+		"assignmentId"?: string;
+		"alertTimeoutSeconds"?: number;
 	}
 	
 	export interface Workspace { 

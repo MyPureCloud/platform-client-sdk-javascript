@@ -471,7 +471,8 @@ let apiInstance = new platformClient.SpeechTextAnalyticsApi();
 
 let opts = { 
   'nextPage': "nextPage_example", // String | The key for listing the next page
-  'pageSize': 20 // Number | The page size for the listing
+  'pageSize': 20, // Number | The page size for the listing
+  'state': "state_example" // String | Program state. Defaults to Latest
 };
 
 apiInstance.getSpeechandtextanalyticsPrograms(opts)
@@ -491,6 +492,7 @@ apiInstance.getSpeechandtextanalyticsPrograms(opts)
 | ------------- | ------------- | ------------- | ------------- |
  **nextPage** | **String** | The key for listing the next page | [optional]  |
  **pageSize** | **Number** | The page size for the listing | [optional] [default to 20] |
+ **state** | **String** | Program state. Defaults to Latest | [optional] <br />**Values**: Latest, Published |
 {: class="table table-striped"}
 
 ### Return type

@@ -26361,7 +26361,7 @@
   "getspeechandtextanalyticsprograms": {
     "operationId": "getspeechandtextanalyticsprograms",
     "functionName": "getSpeechandtextanalyticsPrograms",
-    "signature": "getSpeechandtextanalyticsPrograms(nextPage, pageSize)",
+    "signature": "getSpeechandtextanalyticsPrograms(nextPage, pageSize, state)",
     "parameters": [
       {
         "name": "nextPage",
@@ -26372,10 +26372,15 @@
         "name": "pageSize",
         "type": "Number",
         "required": "false"
+      },
+      {
+        "name": "state",
+        "type": "String",
+        "required": "false"
       }
     ],
     "return": "ProgramsEntityListing",
-    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.SpeechTextAnalyticsApi();\n\nlet opts = { \n  \"nextPage\": \"nextPage_example\", // String | The key for listing the next page\n  \"pageSize\": 20 // Number | The page size for the listing\n};\n\n// Get the list of Speech and Text Analytics programs\napiInstance.getSpeechandtextanalyticsPrograms(opts)\n  .then((data) => {\n    console.log(`getSpeechandtextanalyticsPrograms success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getSpeechandtextanalyticsPrograms\");\n    console.error(err);\n  });"
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.SpeechTextAnalyticsApi();\n\nlet opts = { \n  \"nextPage\": \"nextPage_example\", // String | The key for listing the next page\n  \"pageSize\": 20, // Number | The page size for the listing\n  \"state\": \"state_example\" // String | Program state. Defaults to Latest\n};\n\n// Get the list of Speech and Text Analytics programs\napiInstance.getSpeechandtextanalyticsPrograms(opts)\n  .then((data) => {\n    console.log(`getSpeechandtextanalyticsPrograms success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getSpeechandtextanalyticsPrograms\");\n    console.error(err);\n  });"
   },
   "getspeechandtextanalyticsprogramsgeneraljob": {
     "operationId": "getspeechandtextanalyticsprogramsgeneraljob",
