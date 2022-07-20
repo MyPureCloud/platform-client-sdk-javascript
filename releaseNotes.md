@@ -1,32 +1,100 @@
-Platform API version: 5907
+Platform API version: 5922
 
 
-# Major Changes (3 changes)
+# Major Changes (1 change)
 
-**GET /api/v2/speechandtextanalytics/programs** (1 change)
+**HistoricalAdherenceQueryResult** (1 change)
 
-* Parameter state was added
-
-**LocalizedLabels** (2 changes)
-
-* Enum value MessengerHomeTitle was removed from property key
-* Enum value MessengerHomeSubTitle was removed from property key
+* Property actualsEndsDate was removed
 
 
-# Minor Changes (4 changes)
+# Minor Changes (29 changes)
 
-**PolicyConditions** (1 change)
+**/api/v2/employeeperformance/externalmetrics/data** (2 changes)
 
-* Optional property customerParticipation was added
+* Path was added
+* Operation POST was added
 
-**PunctualityEvent** (1 change)
+**/api/v2/employeeperformance/externalmetrics/definitions/{metricId}** (4 changes)
 
-* Optional property activityName was added
+* Path was added
+* Operation GET was added
+* Operation DELETE was added
+* Operation PATCH was added
 
-**LocalizedLabels** (2 changes)
+**/api/v2/employeeperformance/externalmetrics/definitions** (3 changes)
 
-* Enum value MessengerHomeHeaderTitle was added to property key
-* Enum value MessengerHomeHeaderSubTitle was added to property key
+* Path was added
+* Operation GET was added
+* Operation POST was added
+
+**DELETE /api/v2/languageunderstanding/domains/{domainId}** (1 change)
+
+* Response 409 was added
+
+**GET /api/v2/stations/settings** (1 change)
+
+* Response 410 was added
+
+**Queue** (2 changes)
+
+* Optional property memberGroups was added
+* Optional property agentOwnedRouting was added
+
+**Ring** (1 change)
+
+* Optional property memberGroups was added
+
+**ExternalMetricDataItem** (1 change)
+
+* Model was added
+
+**ExternalMetricDataUnprocessedItem** (1 change)
+
+* Model was added
+
+**ExternalMetricDataWriteResponse** (1 change)
+
+* Model was added
+
+**ExternalMetricDataWriteRequest** (1 change)
+
+* Model was added
+
+**ExternalMetricDefinition** (1 change)
+
+* Model was added
+
+**ExternalMetricDefinitionCreateRequest** (1 change)
+
+* Model was added
+
+**ExternalMetricDefinitionUpdateRequest** (1 change)
+
+* Model was added
+
+**ExternalMetricDefinitionListing** (1 change)
+
+* Model was added
+
+**QueueRequest** (2 changes)
+
+* Optional property memberGroups was added
+* Optional property agentOwnedRouting was added
+
+**UserQueue** (2 changes)
+
+* Optional property memberGroups was added
+* Optional property agentOwnedRouting was added
+
+**CreateQueueRequest** (2 changes)
+
+* Optional property memberGroups was added
+* Optional property agentOwnedRouting was added
+
+**HistoricalAdherenceQueryResult** (1 change)
+
+* Optional property actualsEndDate was added
 
 
 # Point Changes (0 changes)

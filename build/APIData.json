@@ -9936,6 +9936,52 @@
     "return": "FaxDocument",
     "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.FaxApi();\n\nlet documentId = \"documentId_example\"; // String | Document ID\nlet body = {}; // Object | Document\n\n// Update a fax document.\napiInstance.putFaxDocument(documentId, body)\n  .then((data) => {\n    console.log(`putFaxDocument success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling putFaxDocument\");\n    console.error(err);\n  });"
   },
+  "deleteemployeeperformanceexternalmetricsdefinition": {
+    "operationId": "deleteemployeeperformanceexternalmetricsdefinition",
+    "functionName": "deleteEmployeeperformanceExternalmetricsDefinition",
+    "signature": "deleteEmployeeperformanceExternalmetricsDefinition(metricId)",
+    "parameters": [
+      {
+        "name": "metricId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.GamificationApi();\n\nlet metricId = \"metricId_example\"; // String | Specifies the External Metric Definition ID\n\n// Delete an External Metric Definition\napiInstance.deleteEmployeeperformanceExternalmetricsDefinition(metricId)\n  .then(() => {\n    console.log(\"deleteEmployeeperformanceExternalmetricsDefinition returned successfully.\");\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling deleteEmployeeperformanceExternalmetricsDefinition\");\n    console.error(err);\n  });"
+  },
+  "getemployeeperformanceexternalmetricsdefinition": {
+    "operationId": "getemployeeperformanceexternalmetricsdefinition",
+    "functionName": "getEmployeeperformanceExternalmetricsDefinition",
+    "signature": "getEmployeeperformanceExternalmetricsDefinition(metricId)",
+    "parameters": [
+      {
+        "name": "metricId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "return": "ExternalMetricDefinition",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.GamificationApi();\n\nlet metricId = \"metricId_example\"; // String | Specifies the External Metric Definition ID\n\n// Get an External Metric Definition\napiInstance.getEmployeeperformanceExternalmetricsDefinition(metricId)\n  .then((data) => {\n    console.log(`getEmployeeperformanceExternalmetricsDefinition success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getEmployeeperformanceExternalmetricsDefinition\");\n    console.error(err);\n  });"
+  },
+  "getemployeeperformanceexternalmetricsdefinitions": {
+    "operationId": "getemployeeperformanceexternalmetricsdefinitions",
+    "functionName": "getEmployeeperformanceExternalmetricsDefinitions",
+    "signature": "getEmployeeperformanceExternalmetricsDefinitions(pageSize, pageNumber)",
+    "parameters": [
+      {
+        "name": "pageSize",
+        "type": "Number",
+        "required": "false"
+      },
+      {
+        "name": "pageNumber",
+        "type": "Number",
+        "required": "false"
+      }
+    ],
+    "return": "ExternalMetricDefinitionListing",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.GamificationApi();\n\nlet opts = { \n  \"pageSize\": 25, // Number | Page size\n  \"pageNumber\": 1 // Number | Page number\n};\n\n// Get a list of External Metric Definitions of an organization, sorted by name in ascending order\napiInstance.getEmployeeperformanceExternalmetricsDefinitions(opts)\n  .then((data) => {\n    console.log(`getEmployeeperformanceExternalmetricsDefinitions success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getEmployeeperformanceExternalmetricsDefinitions\");\n    console.error(err);\n  });"
+  },
   "getgamificationleaderboard": {
     "operationId": "getgamificationleaderboard",
     "functionName": "getGamificationLeaderboard",
@@ -10764,6 +10810,53 @@
     "signature": "getGamificationTemplates()",
     "return": "GetTemplatesResponse",
     "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.GamificationApi();\n\n// All objective templates\napiInstance.getGamificationTemplates()\n  .then((data) => {\n    console.log(`getGamificationTemplates success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getGamificationTemplates\");\n    console.error(err);\n  });"
+  },
+  "patchemployeeperformanceexternalmetricsdefinition": {
+    "operationId": "patchemployeeperformanceexternalmetricsdefinition",
+    "functionName": "patchEmployeeperformanceExternalmetricsDefinition",
+    "signature": "patchEmployeeperformanceExternalmetricsDefinition(metricId, body)",
+    "parameters": [
+      {
+        "name": "metricId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "Object",
+        "required": "true"
+      }
+    ],
+    "return": "ExternalMetricDefinition",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.GamificationApi();\n\nlet metricId = \"metricId_example\"; // String | Specifies the metric definition ID\nlet body = {}; // Object | The External Metric Definition parameters to be updated\n\n// Update External Metric Definition\napiInstance.patchEmployeeperformanceExternalmetricsDefinition(metricId, body)\n  .then((data) => {\n    console.log(`patchEmployeeperformanceExternalmetricsDefinition success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling patchEmployeeperformanceExternalmetricsDefinition\");\n    console.error(err);\n  });"
+  },
+  "postemployeeperformanceexternalmetricsdata": {
+    "operationId": "postemployeeperformanceexternalmetricsdata",
+    "functionName": "postEmployeeperformanceExternalmetricsData",
+    "signature": "postEmployeeperformanceExternalmetricsData(body)",
+    "parameters": [
+      {
+        "name": "body",
+        "type": "Object",
+        "required": "false"
+      }
+    ],
+    "return": "ExternalMetricDataWriteResponse",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.GamificationApi();\n\nlet opts = { \n  \"body\": {} // Object | The External Metric Data to be added\n};\n\n// Write External Metric Data\napiInstance.postEmployeeperformanceExternalmetricsData(opts)\n  .then((data) => {\n    console.log(`postEmployeeperformanceExternalmetricsData success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling postEmployeeperformanceExternalmetricsData\");\n    console.error(err);\n  });"
+  },
+  "postemployeeperformanceexternalmetricsdefinitions": {
+    "operationId": "postemployeeperformanceexternalmetricsdefinitions",
+    "functionName": "postEmployeeperformanceExternalmetricsDefinitions",
+    "signature": "postEmployeeperformanceExternalmetricsDefinitions(body)",
+    "parameters": [
+      {
+        "name": "body",
+        "type": "Object",
+        "required": "false"
+      }
+    ],
+    "return": "ExternalMetricDefinition",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.GamificationApi();\n\nlet opts = { \n  \"body\": {} // Object | The External Metric Definition to be created\n};\n\n// Create External Metric Definition\napiInstance.postEmployeeperformanceExternalmetricsDefinitions(opts)\n  .then((data) => {\n    console.log(`postEmployeeperformanceExternalmetricsDefinitions success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling postEmployeeperformanceExternalmetricsDefinitions\");\n    console.error(err);\n  });"
   },
   "postgamificationmetrics": {
     "operationId": "postgamificationmetrics",

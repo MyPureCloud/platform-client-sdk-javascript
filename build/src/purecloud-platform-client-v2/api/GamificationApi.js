@@ -5,7 +5,7 @@ class GamificationApi {
 	/**
 	 * Gamification service.
 	 * @module purecloud-platform-client-v2/api/GamificationApi
-	 * @version 142.0.0
+	 * @version 143.0.0
 	 */
 
 	/**
@@ -19,6 +19,81 @@ class GamificationApi {
 		this.apiClient = apiClient || ApiClient.instance;
 	}
 
+
+	/**
+	 * Delete an External Metric Definition
+	 * 
+	 * @param {String} metricId Specifies the External Metric Definition ID
+	 */
+	deleteEmployeeperformanceExternalmetricsDefinition(metricId) { 
+		// verify the required parameter 'metricId' is set
+		if (metricId === undefined || metricId === null) {
+			throw 'Missing the required parameter "metricId" when calling deleteEmployeeperformanceExternalmetricsDefinition';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/employeeperformance/externalmetrics/definitions/{metricId}', 
+			'DELETE', 
+			{ 'metricId': metricId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get an External Metric Definition
+	 * 
+	 * @param {String} metricId Specifies the External Metric Definition ID
+	 */
+	getEmployeeperformanceExternalmetricsDefinition(metricId) { 
+		// verify the required parameter 'metricId' is set
+		if (metricId === undefined || metricId === null) {
+			throw 'Missing the required parameter "metricId" when calling getEmployeeperformanceExternalmetricsDefinition';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/employeeperformance/externalmetrics/definitions/{metricId}', 
+			'GET', 
+			{ 'metricId': metricId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a list of External Metric Definitions of an organization, sorted by name in ascending order
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 */
+	getEmployeeperformanceExternalmetricsDefinitions(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/employeeperformance/externalmetrics/definitions', 
+			'GET', 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
 
 	/**
 	 * Leaderboard of the requesting user's division or performance profile
@@ -1223,6 +1298,84 @@ class GamificationApi {
 			{  },
 			{  },
 			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update External Metric Definition
+	 * 
+	 * @param {String} metricId Specifies the metric definition ID
+	 * @param {Object} body The External Metric Definition parameters to be updated
+	 */
+	patchEmployeeperformanceExternalmetricsDefinition(metricId, body) { 
+		// verify the required parameter 'metricId' is set
+		if (metricId === undefined || metricId === null) {
+			throw 'Missing the required parameter "metricId" when calling patchEmployeeperformanceExternalmetricsDefinition';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchEmployeeperformanceExternalmetricsDefinition';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/employeeperformance/externalmetrics/definitions/{metricId}', 
+			'PATCH', 
+			{ 'metricId': metricId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Write External Metric Data
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body The External Metric Data to be added
+	 */
+	postEmployeeperformanceExternalmetricsData(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/employeeperformance/externalmetrics/data', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Create External Metric Definition
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body The External Metric Definition to be created
+	 */
+	postEmployeeperformanceExternalmetricsDefinitions(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/employeeperformance/externalmetrics/definitions', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']

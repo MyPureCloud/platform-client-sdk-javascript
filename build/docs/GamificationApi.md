@@ -7,6 +7,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
+[**deleteEmployeeperformanceExternalmetricsDefinition**](GamificationApi.html#deleteEmployeeperformanceExternalmetricsDefinition) | **DELETE** /api/v2/employeeperformance/externalmetrics/definitions/{metricId} | Delete an External Metric Definition
+[**getEmployeeperformanceExternalmetricsDefinition**](GamificationApi.html#getEmployeeperformanceExternalmetricsDefinition) | **GET** /api/v2/employeeperformance/externalmetrics/definitions/{metricId} | Get an External Metric Definition
+[**getEmployeeperformanceExternalmetricsDefinitions**](GamificationApi.html#getEmployeeperformanceExternalmetricsDefinitions) | **GET** /api/v2/employeeperformance/externalmetrics/definitions | Get a list of External Metric Definitions of an organization, sorted by name in ascending order
 [**getGamificationLeaderboard**](GamificationApi.html#getGamificationLeaderboard) | **GET** /api/v2/gamification/leaderboard | Leaderboard of the requesting user's division or performance profile
 [**getGamificationLeaderboardAll**](GamificationApi.html#getGamificationLeaderboardAll) | **GET** /api/v2/gamification/leaderboard/all | Leaderboard by filter type
 [**getGamificationLeaderboardAllBestpoints**](GamificationApi.html#getGamificationLeaderboardAllBestpoints) | **GET** /api/v2/gamification/leaderboard/all/bestpoints | Best Points by division or performance profile
@@ -46,6 +49,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getGamificationStatus**](GamificationApi.html#getGamificationStatus) | **GET** /api/v2/gamification/status | Gamification activation status
 [**getGamificationTemplate**](GamificationApi.html#getGamificationTemplate) | **GET** /api/v2/gamification/templates/{templateId} | Objective template by id
 [**getGamificationTemplates**](GamificationApi.html#getGamificationTemplates) | **GET** /api/v2/gamification/templates | All objective templates
+[**patchEmployeeperformanceExternalmetricsDefinition**](GamificationApi.html#patchEmployeeperformanceExternalmetricsDefinition) | **PATCH** /api/v2/employeeperformance/externalmetrics/definitions/{metricId} | Update External Metric Definition
+[**postEmployeeperformanceExternalmetricsData**](GamificationApi.html#postEmployeeperformanceExternalmetricsData) | **POST** /api/v2/employeeperformance/externalmetrics/data | Write External Metric Data
+[**postEmployeeperformanceExternalmetricsDefinitions**](GamificationApi.html#postEmployeeperformanceExternalmetricsDefinitions) | **POST** /api/v2/employeeperformance/externalmetrics/definitions | Create External Metric Definition
 [**postGamificationMetrics**](GamificationApi.html#postGamificationMetrics) | **POST** /api/v2/gamification/metrics | Creates a gamified metric with a given metric definition and metric objective
 [**postGamificationProfileActivate**](GamificationApi.html#postGamificationProfileActivate) | **POST** /api/v2/gamification/profiles/{profileId}/activate | Activate a performance profile
 [**postGamificationProfileDeactivate**](GamificationApi.html#postGamificationProfileDeactivate) | **POST** /api/v2/gamification/profiles/{profileId}/deactivate | Deactivate a performance profile
@@ -59,6 +65,160 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**putGamificationProfileMetric**](GamificationApi.html#putGamificationProfileMetric) | **PUT** /api/v2/gamification/profiles/{profileId}/metrics/{metricId} | Updates a metric in performance profile
 [**putGamificationStatus**](GamificationApi.html#putGamificationStatus) | **PUT** /api/v2/gamification/status | Update gamification activation status
 {: class="table table-striped"}
+
+<a name="deleteEmployeeperformanceExternalmetricsDefinition"></a>
+
+# void deleteEmployeeperformanceExternalmetricsDefinition(metricId)
+
+
+DELETE /api/v2/employeeperformance/externalmetrics/definitions/{metricId}
+
+Delete an External Metric Definition
+
+Requires ANY permissions:
+
+* employeePerformance:externalMetricDefinition:delete
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.GamificationApi();
+
+let metricId = "metricId_example"; // String | Specifies the External Metric Definition ID
+
+apiInstance.deleteEmployeeperformanceExternalmetricsDefinition(metricId)
+  .then(() => {
+    console.log('deleteEmployeeperformanceExternalmetricsDefinition returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteEmployeeperformanceExternalmetricsDefinition');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **metricId** | **String** | Specifies the External Metric Definition ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
+
+<a name="getEmployeeperformanceExternalmetricsDefinition"></a>
+
+# ExternalMetricDefinition getEmployeeperformanceExternalmetricsDefinition(metricId)
+
+
+GET /api/v2/employeeperformance/externalmetrics/definitions/{metricId}
+
+Get an External Metric Definition
+
+Requires ANY permissions:
+
+* employeePerformance:externalMetricDefinition:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.GamificationApi();
+
+let metricId = "metricId_example"; // String | Specifies the External Metric Definition ID
+
+apiInstance.getEmployeeperformanceExternalmetricsDefinition(metricId)
+  .then((data) => {
+    console.log(`getEmployeeperformanceExternalmetricsDefinition success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getEmployeeperformanceExternalmetricsDefinition');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **metricId** | **String** | Specifies the External Metric Definition ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+**ExternalMetricDefinition**
+
+<a name="getEmployeeperformanceExternalmetricsDefinitions"></a>
+
+# ExternalMetricDefinitionListing getEmployeeperformanceExternalmetricsDefinitions(opts)
+
+
+GET /api/v2/employeeperformance/externalmetrics/definitions
+
+Get a list of External Metric Definitions of an organization, sorted by name in ascending order
+
+Requires ANY permissions:
+
+* employeePerformance:externalMetricDefinition:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.GamificationApi();
+
+let opts = { 
+  'pageSize': 25, // Number | Page size
+  'pageNumber': 1 // Number | Page number
+};
+
+apiInstance.getEmployeeperformanceExternalmetricsDefinitions(opts)
+  .then((data) => {
+    console.log(`getEmployeeperformanceExternalmetricsDefinitions success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getEmployeeperformanceExternalmetricsDefinitions');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+{: class="table table-striped"}
+
+### Return type
+
+**ExternalMetricDefinitionListing**
 
 <a name="getGamificationLeaderboard"></a>
 
@@ -2175,6 +2335,162 @@ This endpoint does not need any parameter.
 ### Return type
 
 **GetTemplatesResponse**
+
+<a name="patchEmployeeperformanceExternalmetricsDefinition"></a>
+
+# ExternalMetricDefinition patchEmployeeperformanceExternalmetricsDefinition(metricId, body)
+
+
+PATCH /api/v2/employeeperformance/externalmetrics/definitions/{metricId}
+
+Update External Metric Definition
+
+Requires ANY permissions:
+
+* employeePerformance:externalMetricDefinition:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.GamificationApi();
+
+let metricId = "metricId_example"; // String | Specifies the metric definition ID
+let body = {}; // Object | The External Metric Definition parameters to be updated
+
+apiInstance.patchEmployeeperformanceExternalmetricsDefinition(metricId, body)
+  .then((data) => {
+    console.log(`patchEmployeeperformanceExternalmetricsDefinition success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchEmployeeperformanceExternalmetricsDefinition');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **metricId** | **String** | Specifies the metric definition ID |  |
+ **body** | **Object** | The External Metric Definition parameters to be updated |  |
+{: class="table table-striped"}
+
+### Return type
+
+**ExternalMetricDefinition**
+
+<a name="postEmployeeperformanceExternalmetricsData"></a>
+
+# ExternalMetricDataWriteResponse postEmployeeperformanceExternalmetricsData(opts)
+
+
+POST /api/v2/employeeperformance/externalmetrics/data
+
+Write External Metric Data
+
+Requires ANY permissions:
+
+* employeePerformance:externalMetricData:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.GamificationApi();
+
+let opts = { 
+  'body': {} // Object | The External Metric Data to be added
+};
+
+apiInstance.postEmployeeperformanceExternalmetricsData(opts)
+  .then((data) => {
+    console.log(`postEmployeeperformanceExternalmetricsData success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postEmployeeperformanceExternalmetricsData');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | The External Metric Data to be added | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**ExternalMetricDataWriteResponse**
+
+<a name="postEmployeeperformanceExternalmetricsDefinitions"></a>
+
+# ExternalMetricDefinition postEmployeeperformanceExternalmetricsDefinitions(opts)
+
+
+POST /api/v2/employeeperformance/externalmetrics/definitions
+
+Create External Metric Definition
+
+Requires ANY permissions:
+
+* employeePerformance:externalMetricDefinition:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.GamificationApi();
+
+let opts = { 
+  'body': {} // Object | The External Metric Definition to be created
+};
+
+apiInstance.postEmployeeperformanceExternalmetricsDefinitions(opts)
+  .then((data) => {
+    console.log(`postEmployeeperformanceExternalmetricsDefinitions success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postEmployeeperformanceExternalmetricsDefinitions');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | The External Metric Definition to be created | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**ExternalMetricDefinition**
 
 <a name="postGamificationMetrics"></a>
 

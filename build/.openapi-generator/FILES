@@ -166,6 +166,7 @@ docs/deleteConversationsMessagingIntegrationsOpenIntegrationId-example.txt
 docs/deleteConversationsMessagingIntegrationsTwitterIntegrationId-example.txt
 docs/deleteConversationsMessagingIntegrationsWhatsappIntegrationId-example.txt
 docs/deleteConversationsMessagingSupportedcontentSupportedContentId-example.txt
+docs/deleteEmployeeperformanceExternalmetricsDefinition-example.txt
 docs/deleteExternalcontactsContact-example.txt
 docs/deleteExternalcontactsContactNote-example.txt
 docs/deleteExternalcontactsContactsSchema-example.txt
@@ -528,6 +529,8 @@ docs/getDataextensionsLimits-example.txt
 docs/getDate-example.txt
 docs/getDocumentationGknSearch-example.txt
 docs/getDocumentationSearch-example.txt
+docs/getEmployeeperformanceExternalmetricsDefinition-example.txt
+docs/getEmployeeperformanceExternalmetricsDefinitions-example.txt
 docs/getExternalcontactsContact-example.txt
 docs/getExternalcontactsContactNote-example.txt
 docs/getExternalcontactsContactNotes-example.txt
@@ -1255,6 +1258,7 @@ docs/patchConversationsMessagingIntegrationsOpenIntegrationId-example.txt
 docs/patchConversationsMessagingIntegrationsTwitterIntegrationId-example.txt
 docs/patchConversationsMessagingIntegrationsWhatsappIntegrationId-example.txt
 docs/patchConversationsMessagingSupportedcontentSupportedContentId-example.txt
+docs/patchEmployeeperformanceExternalmetricsDefinition-example.txt
 docs/patchGeolocationsSettings-example.txt
 docs/patchIntegration-example.txt
 docs/patchIntegrationsAction-example.txt
@@ -1456,6 +1460,8 @@ docs/postConversationsMessagingIntegrationsWhatsapp-example.txt
 docs/postConversationsMessagingSupportedcontent-example.txt
 docs/postDocumentationGknSearch-example.txt
 docs/postDocumentationSearch-example.txt
+docs/postEmployeeperformanceExternalmetricsData-example.txt
+docs/postEmployeeperformanceExternalmetricsDefinitions-example.txt
 docs/postExternalcontactsBulkContacts-example.txt
 docs/postExternalcontactsBulkContactsAdd-example.txt
 docs/postExternalcontactsBulkContactsRemove-example.txt
