@@ -5,7 +5,7 @@ class LearningApi {
 	/**
 	 * Learning service.
 	 * @module purecloud-platform-client-v2/api/LearningApi
-	 * @version 143.0.0
+	 * @version 144.0.0
 	 */
 
 	/**
@@ -349,6 +349,31 @@ class LearningApi {
 			'GET', 
 			{  },
 			{ 'userIds': this.apiClient.buildCollectionParam(userIds, 'multi'),'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'searchTerm': opts['searchTerm'],'overdue': opts['overdue'],'assignmentStates': this.apiClient.buildCollectionParam(opts['assignmentStates'], 'multi'),'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a specific Learning Module cover art using ID
+	 * 
+	 * @param {String} coverArtId Key identifier for the cover art
+	 */
+	getLearningModulesCoverartCoverArtId(coverArtId) { 
+		// verify the required parameter 'coverArtId' is set
+		if (coverArtId === undefined || coverArtId === null) {
+			throw 'Missing the required parameter "coverArtId" when calling getLearningModulesCoverartCoverArtId';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/learning/modules/coverart/{coverArtId}', 
+			'GET', 
+			{ 'coverArtId': coverArtId },
+			{  },
 			{  },
 			{  },
 			null, 

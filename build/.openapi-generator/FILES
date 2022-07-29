@@ -743,6 +743,7 @@ docs/getLearningModuleRule-example.txt
 docs/getLearningModuleVersion-example.txt
 docs/getLearningModules-example.txt
 docs/getLearningModulesAssignments-example.txt
+docs/getLearningModulesCoverartCoverArtId-example.txt
 docs/getLicenseDefinition-example.txt
 docs/getLicenseDefinitions-example.txt
 docs/getLicenseToggle-example.txt
@@ -1700,6 +1701,7 @@ docs/postTelephonySiptracesDownload-example.txt
 docs/postTextbotsBotflowsSessionTurns-example.txt
 docs/postTextbotsBotflowsSessions-example.txt
 docs/postTextbotsBotsExecute-example.txt
+docs/postUploadsLearningCoverart-example.txt
 docs/postUploadsPublicassetsImages-example.txt
 docs/postUploadsRecordings-example.txt
 docs/postUploadsWorkforcemanagementHistoricaldataCsv-example.txt

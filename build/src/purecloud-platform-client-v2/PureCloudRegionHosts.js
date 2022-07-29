@@ -10,4 +10,5 @@ export default {
 	eu_west_2: 'euw2.pure.cloud',
 	ap_south_1: 'aps1.pure.cloud',
 	us_east_2: 'use2.us-gov-pure.cloud',
+	sa_east_1: 'sae1.pure.cloud',
 };

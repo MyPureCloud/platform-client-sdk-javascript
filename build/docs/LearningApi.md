@@ -18,6 +18,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getLearningModuleVersion**](LearningApi.html#getLearningModuleVersion) | **GET** /api/v2/learning/modules/{moduleId}/versions/{versionId} | Get specific version of a published module
 [**getLearningModules**](LearningApi.html#getLearningModules) | **GET** /api/v2/learning/modules | Get all learning modules of an organization
 [**getLearningModulesAssignments**](LearningApi.html#getLearningModulesAssignments) | **GET** /api/v2/learning/modules/assignments | Get all learning modules of an organization including assignments for a specific user
+[**getLearningModulesCoverartCoverArtId**](LearningApi.html#getLearningModulesCoverartCoverArtId) | **GET** /api/v2/learning/modules/coverart/{coverArtId} | Get a specific Learning Module cover art using ID
 [**patchLearningAssignment**](LearningApi.html#patchLearningAssignment) | **PATCH** /api/v2/learning/assignments/{assignmentId} | Update Learning Assignment
 [**postLearningAssessmentsScoring**](LearningApi.html#postLearningAssessmentsScoring) | **POST** /api/v2/learning/assessments/scoring | Score learning assessment for preview
 [**postLearningAssignmentReassign**](LearningApi.html#postLearningAssignmentReassign) | **POST** /api/v2/learning/assignments/{assignmentId}/reassign | Reassign Learning Assignment
@@ -694,6 +695,56 @@ apiInstance.getLearningModulesAssignments(userIds, opts)
 ### Return type
 
 **AssignedLearningModuleDomainEntityListing**
+
+<a name="getLearningModulesCoverartCoverArtId"></a>
+
+# LearningModuleCoverArtResponse getLearningModulesCoverartCoverArtId(coverArtId)
+
+
+GET /api/v2/learning/modules/coverart/{coverArtId}
+
+Get a specific Learning Module cover art using ID
+
+Requires ANY permissions:
+
+* learning:coverart:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.LearningApi();
+
+let coverArtId = "coverArtId_example"; // String | Key identifier for the cover art
+
+apiInstance.getLearningModulesCoverartCoverArtId(coverArtId)
+  .then((data) => {
+    console.log(`getLearningModulesCoverartCoverArtId success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getLearningModulesCoverartCoverArtId');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **coverArtId** | **String** | Key identifier for the cover art |  |
+{: class="table table-striped"}
+
+### Return type
+
+**LearningModuleCoverArtResponse**
 
 <a name="patchLearningAssignment"></a>
 

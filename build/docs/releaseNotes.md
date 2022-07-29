@@ -1,100 +1,83 @@
-Platform API version: 5922
+Platform API version: 5941
 
 
-# Major Changes (1 change)
+# Major Changes (3 changes)
 
-**HistoricalAdherenceQueryResult** (1 change)
+**KnowledgeImport** (1 change)
 
-* Property actualsEndsDate was removed
+* Enum value Json was removed from property fileType
+
+**UCIntegration** (2 changes)
+
+* Required property polledPresence was added
+* Required property userPermissions was added
 
 
-# Minor Changes (29 changes)
+# Minor Changes (18 changes)
 
-**/api/v2/employeeperformance/externalmetrics/data** (2 changes)
+**/api/v2/uploads/learning/coverart** (2 changes)
 
 * Path was added
 * Operation POST was added
 
-**/api/v2/employeeperformance/externalmetrics/definitions/{metricId}** (4 changes)
+**GET /api/v2/gamification/scorecards/profiles/{profileId}/metrics/{metricId}/users/values/trends** (1 change)
+
+* Parameter filterId was made optional
+
+**/api/v2/learning/modules/coverart/{coverArtId}** (2 changes)
 
 * Path was added
 * Operation GET was added
-* Operation DELETE was added
-* Operation PATCH was added
 
-**/api/v2/employeeperformance/externalmetrics/definitions** (3 changes)
+**ReportingTurnAction** (2 changes)
 
-* Path was added
-* Operation GET was added
-* Operation POST was added
+* Enum value FindSystemPromptAction was added to property actionType
+* Enum value FindUserPromptAction was added to property actionType
 
-**DELETE /api/v2/languageunderstanding/domains/{domainId}** (1 change)
+**AuditQueryExecutionStatusResponse** (1 change)
 
-* Response 409 was added
+* Enum value Marketplace was added to property serviceName
 
-**GET /api/v2/stations/settings** (1 change)
+**AuditQueryRequest** (1 change)
 
-* Response 410 was added
+* Enum value Marketplace was added to property serviceName
 
-**Queue** (2 changes)
+**AuditLogMessage** (2 changes)
 
-* Optional property memberGroups was added
-* Optional property agentOwnedRouting was added
+* Enum value Marketplace was added to property serviceName
+* Enum value EnterpriseAgreement was added to property entityType
 
-**Ring** (1 change)
+**AuditRealtimeQueryRequest** (1 change)
 
-* Optional property memberGroups was added
+* Enum value Marketplace was added to property serviceName
 
-**ExternalMetricDataItem** (1 change)
+**AuditQueryEntity** (1 change)
 
-* Model was added
+* Enum value EnterpriseAgreement was added to property name
 
-**ExternalMetricDataUnprocessedItem** (1 change)
+**AuditQueryService** (1 change)
 
-* Model was added
+* Enum value Marketplace was added to property name
 
-**ExternalMetricDataWriteResponse** (1 change)
+**ConversationMessageMetadataEvent** (1 change)
 
-* Model was added
+* Enum value Disconnect was added to property subType
 
-**ExternalMetricDataWriteRequest** (1 change)
+**ConversationEventPresence** (1 change)
 
-* Model was added
+* Enum value Disconnect was added to property type
 
-**ExternalMetricDefinition** (1 change)
+**LearningCoverArtUploadUrlRequest** (1 change)
 
 * Model was added
 
-**ExternalMetricDefinitionCreateRequest** (1 change)
+**WebMessagingEventPresence** (1 change)
 
-* Model was added
-
-**ExternalMetricDefinitionUpdateRequest** (1 change)
-
-* Model was added
-
-**ExternalMetricDefinitionListing** (1 change)
-
-* Model was added
-
-**QueueRequest** (2 changes)
-
-* Optional property memberGroups was added
-* Optional property agentOwnedRouting was added
-
-**UserQueue** (2 changes)
-
-* Optional property memberGroups was added
-* Optional property agentOwnedRouting was added
-
-**CreateQueueRequest** (2 changes)
-
-* Optional property memberGroups was added
-* Optional property agentOwnedRouting was added
-
-**HistoricalAdherenceQueryResult** (1 change)
-
-* Optional property actualsEndDate was added
+* Enum value Disconnect was added to property type
 
 
-# Point Changes (0 changes)
+# Point Changes (1 change)
+
+**GET /api/v2/gamification/scorecards/profiles/{profileId}/metrics/{metricId}/users/values/trends** (1 change)
+
+* Description was changed for parameter filterId

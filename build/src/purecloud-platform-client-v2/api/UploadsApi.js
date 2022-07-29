@@ -5,7 +5,7 @@ class UploadsApi {
 	/**
 	 * Uploads service.
 	 * @module purecloud-platform-client-v2/api/UploadsApi
-	 * @version 143.0.0
+	 * @version 144.0.0
 	 */
 
 	/**
@@ -65,6 +65,31 @@ class UploadsApi {
 			'/api/v2/languageunderstanding/miners/{minerId}/uploads', 
 			'POST', 
 			{ 'minerId': minerId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Generates pre-signed URL to upload cover art for learning modules
+	 * 
+	 * @param {Object} body query
+	 */
+	postUploadsLearningCoverart(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postUploadsLearningCoverart';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/uploads/learning/coverart', 
+			'POST', 
+			{  },
 			{  },
 			{  },
 			{  },

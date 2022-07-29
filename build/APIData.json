@@ -10414,7 +10414,7 @@
   "getgamificationscorecardsprofilemetricusersvaluestrends": {
     "operationId": "getgamificationscorecardsprofilemetricusersvaluestrends",
     "functionName": "getGamificationScorecardsProfileMetricUsersValuesTrends",
-    "signature": "getGamificationScorecardsProfileMetricUsersValuesTrends(profileId, metricId, filterType, filterId, startWorkday, endWorkday, referenceWorkday, timeZone)",
+    "signature": "getGamificationScorecardsProfileMetricUsersValuesTrends(profileId, metricId, filterType, startWorkday, endWorkday, filterId, referenceWorkday, timeZone)",
     "parameters": [
       {
         "name": "profileId",
@@ -10432,11 +10432,6 @@
         "required": "true"
       },
       {
-        "name": "filterId",
-        "type": "String",
-        "required": "true"
-      },
-      {
         "name": "startWorkday",
         "type": "String",
         "required": "true"
@@ -10445,6 +10440,11 @@
         "name": "endWorkday",
         "type": "String",
         "required": "true"
+      },
+      {
+        "name": "filterId",
+        "type": "String",
+        "required": "false"
       },
       {
         "name": "referenceWorkday",
@@ -10458,7 +10458,7 @@
       }
     ],
     "return": "MetricValueTrendAverage",
-    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.GamificationApi();\n\nlet profileId = \"profileId_example\"; // String | performanceProfileId\nlet metricId = \"metricId_example\"; // String | metricId\nlet filterType = \"filterType_example\"; // String | Filter type for the query request.\nlet filterId = \"filterId_example\"; // String | ID for the filter type. For example, division Id\nlet startWorkday = \"startWorkday_example\"; // String | Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\nlet endWorkday = \"endWorkday_example\"; // String | End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\nlet opts = { \n  \"referenceWorkday\": \"referenceWorkday_example\", // String | Reference workday for the trend. Used to determine the associated metric definition. If not set, then the value of endWorkday is used. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\n  \"timeZone\": \"UTC\" // String | Timezone for the workday. Defaults to UTC\n};\n\n// Average performance values trends by metric of a division or a performance profile\napiInstance.getGamificationScorecardsProfileMetricUsersValuesTrends(profileId, metricId, filterType, filterId, startWorkday, endWorkday, opts)\n  .then((data) => {\n    console.log(`getGamificationScorecardsProfileMetricUsersValuesTrends success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getGamificationScorecardsProfileMetricUsersValuesTrends\");\n    console.error(err);\n  });"
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.GamificationApi();\n\nlet profileId = \"profileId_example\"; // String | performanceProfileId\nlet metricId = \"metricId_example\"; // String | metricId\nlet filterType = \"filterType_example\"; // String | Filter type for the query request.\nlet startWorkday = \"startWorkday_example\"; // String | Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\nlet endWorkday = \"endWorkday_example\"; // String | End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\nlet opts = { \n  \"filterId\": \"filterId_example\", // String | ID for the filter type. Only required when filterType is Division.\n  \"referenceWorkday\": \"referenceWorkday_example\", // String | Reference workday for the trend. Used to determine the associated metric definition. If not set, then the value of endWorkday is used. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\n  \"timeZone\": \"UTC\" // String | Timezone for the workday. Defaults to UTC\n};\n\n// Average performance values trends by metric of a division or a performance profile\napiInstance.getGamificationScorecardsProfileMetricUsersValuesTrends(profileId, metricId, filterType, startWorkday, endWorkday, opts)\n  .then((data) => {\n    console.log(`getGamificationScorecardsProfileMetricUsersValuesTrends success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getGamificationScorecardsProfileMetricUsersValuesTrends\");\n    console.error(err);\n  });"
   },
   "getgamificationscorecardsprofilemetricvaluestrends": {
     "operationId": "getgamificationscorecardsprofilemetricvaluestrends",
@@ -15764,6 +15764,20 @@
     ],
     "return": "AssignedLearningModuleDomainEntityListing",
     "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.LearningApi();\n\nlet userIds = [\"userIds_example\"]; // [String] | The IDs of the users to include\nlet opts = { \n  \"pageSize\": 25, // Number | Page size\n  \"pageNumber\": 1, // Number | Page number\n  \"searchTerm\": \"searchTerm_example\", // String | Search Term (searches by name and description)\n  \"overdue\": \"Any\", // String | Specifies if only modules with overdue/not overdue (overdue is True or False) assignments are returned. If overdue is Any or omitted, both are returned and can including modules that are unassigned.\n  \"assignmentStates\": [\"assignmentStates_example\"], // [String] | Specifies the assignment states to return.\n  \"expand\": [\"expand_example\"] // [String] | Fields to expand in response(case insensitive)\n};\n\n// Get all learning modules of an organization including assignments for a specific user\napiInstance.getLearningModulesAssignments(userIds, opts)\n  .then((data) => {\n    console.log(`getLearningModulesAssignments success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getLearningModulesAssignments\");\n    console.error(err);\n  });"
+  },
+  "getlearningmodulescoverartcoverartid": {
+    "operationId": "getlearningmodulescoverartcoverartid",
+    "functionName": "getLearningModulesCoverartCoverArtId",
+    "signature": "getLearningModulesCoverartCoverArtId(coverArtId)",
+    "parameters": [
+      {
+        "name": "coverArtId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "return": "LearningModuleCoverArtResponse",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.LearningApi();\n\nlet coverArtId = \"coverArtId_example\"; // String | Key identifier for the cover art\n\n// Get a specific Learning Module cover art using ID\napiInstance.getLearningModulesCoverartCoverArtId(coverArtId)\n  .then((data) => {\n    console.log(`getLearningModulesCoverartCoverArtId success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getLearningModulesCoverartCoverArtId\");\n    console.error(err);\n  });"
   },
   "patchlearningassignment": {
     "operationId": "patchlearningassignment",
@@ -29815,6 +29829,20 @@
     ],
     "return": "UploadUrlResponse",
     "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.UploadsApi();\n\nlet minerId = \"minerId_example\"; // String | Miner ID\nlet body = null; // Object | query\n\n// Creates a presigned URL for uploading a chat corpus which will be used for mining by intent miner\napiInstance.postLanguageunderstandingMinerUploads(minerId, body)\n  .then((data) => {\n    console.log(`postLanguageunderstandingMinerUploads success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling postLanguageunderstandingMinerUploads\");\n    console.error(err);\n  });"
+  },
+  "postuploadslearningcoverart": {
+    "operationId": "postuploadslearningcoverart",
+    "functionName": "postUploadsLearningCoverart",
+    "signature": "postUploadsLearningCoverart(body)",
+    "parameters": [
+      {
+        "name": "body",
+        "type": "Object",
+        "required": "true"
+      }
+    ],
+    "return": "UploadUrlResponse",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.UploadsApi();\n\nlet body = {}; // Object | query\n\n// Generates pre-signed URL to upload cover art for learning modules\napiInstance.postUploadsLearningCoverart(body)\n  .then((data) => {\n    console.log(`postUploadsLearningCoverart success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling postUploadsLearningCoverart\");\n    console.error(err);\n  });"
   },
   "postuploadspublicassetsimages": {
     "operationId": "postuploadspublicassetsimages",
