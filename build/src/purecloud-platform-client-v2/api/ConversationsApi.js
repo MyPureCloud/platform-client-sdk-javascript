@@ -5,7 +5,7 @@ class ConversationsApi {
 	/**
 	 * Conversations service.
 	 * @module purecloud-platform-client-v2/api/ConversationsApi
-	 * @version 144.0.0
+	 * @version 145.0.0
 	 */
 
 	/**
@@ -588,6 +588,31 @@ class ConversationsApi {
 			'/api/v2/conversations/{conversationId}/participants/{participantId}/wrapupcodes', 
 			'GET', 
 			{ 'conversationId': conversationId,'participantId': participantId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get the secure attributes on a conversation.
+	 * 
+	 * @param {String} conversationId conversation ID
+	 */
+	getConversationSecureattributes(conversationId) { 
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null) {
+			throw 'Missing the required parameter "conversationId" when calling getConversationSecureattributes';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/{conversationId}/secureattributes', 
+			'GET', 
+			{ 'conversationId': conversationId },
 			{  },
 			{  },
 			{  },
@@ -1382,6 +1407,51 @@ class ConversationsApi {
 	}
 
 	/**
+	 * Get the encryption key configurations
+	 * 
+	 * @param {String} keyconfigurationsId Key Configurations Id
+	 */
+	getConversationsKeyconfiguration(keyconfigurationsId) { 
+		// verify the required parameter 'keyconfigurationsId' is set
+		if (keyconfigurationsId === undefined || keyconfigurationsId === null) {
+			throw 'Missing the required parameter "keyconfigurationsId" when calling getConversationsKeyconfiguration';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/keyconfigurations/{keyconfigurationsId}', 
+			'GET', 
+			{ 'keyconfigurationsId': keyconfigurationsId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a list of key configurations data
+	 * 
+	 */
+	getConversationsKeyconfigurations() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/keyconfigurations', 
+			'GET', 
+			{  },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get message conversation
 	 * 
 	 * @param {String} conversationId conversationId
@@ -2087,6 +2157,36 @@ class ConversationsApi {
 			'/api/v2/conversations/{conversationId}/participants/{participantId}/attributes', 
 			'PATCH', 
 			{ 'conversationId': conversationId,'participantId': participantId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update the secure attributes on a conversation.
+	 * 
+	 * @param {String} conversationId conversation ID
+	 * @param {Object} body Conversation Secure Attributes
+	 */
+	patchConversationSecureattributes(conversationId, body) { 
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null) {
+			throw 'Missing the required parameter "conversationId" when calling patchConversationSecureattributes';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchConversationSecureattributes';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/{conversationId}/secureattributes', 
+			'PATCH', 
+			{ 'conversationId': conversationId },
 			{  },
 			{  },
 			{  },
@@ -4100,6 +4200,56 @@ class ConversationsApi {
 	}
 
 	/**
+	 * Setup configurations for encryption key creation
+	 * 
+	 * @param {Object} body Encryption Configuration
+	 */
+	postConversationsKeyconfigurations(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postConversationsKeyconfigurations';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/keyconfigurations', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Validate encryption key configurations without saving it
+	 * 
+	 * @param {Object} body Encryption Configuration
+	 */
+	postConversationsKeyconfigurationsValidate(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postConversationsKeyconfigurationsValidate';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/keyconfigurations/validate', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Send message
 	 * Send message on existing conversation/communication. Only one message body field can be accepted, per request. Example: 1 textBody, 1 mediaId, 1 stickerId, or 1 messageTemplate.
 	 * @param {String} conversationId conversationId
@@ -4484,6 +4634,36 @@ class ConversationsApi {
 	}
 
 	/**
+	 * Set the secure attributes on a conversation.
+	 * 
+	 * @param {String} conversationId conversation ID
+	 * @param {Object} body Conversation Secure Attributes
+	 */
+	putConversationSecureattributes(conversationId, body) { 
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null) {
+			throw 'Missing the required parameter "conversationId" when calling putConversationSecureattributes';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putConversationSecureattributes';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/{conversationId}/secureattributes', 
+			'PUT', 
+			{ 'conversationId': conversationId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Update the tags on a conversation.
 	 * 
 	 * @param {String} conversationId conversation ID
@@ -4723,6 +4903,36 @@ class ConversationsApi {
 			'/api/v2/conversations/emails/{conversationId}/recordingstate', 
 			'PUT', 
 			{ 'conversationId': conversationId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update the encryption key configurations
+	 * 
+	 * @param {String} keyconfigurationsId Key Configurations Id
+	 * @param {Object} body Encryption key configuration metadata
+	 */
+	putConversationsKeyconfiguration(keyconfigurationsId, body) { 
+		// verify the required parameter 'keyconfigurationsId' is set
+		if (keyconfigurationsId === undefined || keyconfigurationsId === null) {
+			throw 'Missing the required parameter "keyconfigurationsId" when calling putConversationsKeyconfiguration';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putConversationsKeyconfiguration';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/keyconfigurations/{keyconfigurationsId}', 
+			'PUT', 
+			{ 'keyconfigurationsId': keyconfigurationsId },
 			{  },
 			{  },
 			{  },

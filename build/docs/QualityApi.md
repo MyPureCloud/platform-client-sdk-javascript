@@ -118,7 +118,7 @@ apiInstance.deleteQualityCalibration(calibrationId, calibratorId)
 
 <a name="deleteQualityConversationEvaluation"></a>
 
-# Evaluation deleteQualityConversationEvaluation(conversationId, evaluationId, opts)
+# EvaluationResponse deleteQualityConversationEvaluation(conversationId, evaluationId, opts)
 
 
 DELETE /api/v2/quality/conversations/{conversationId}/evaluations/{evaluationId}
@@ -170,7 +170,7 @@ apiInstance.deleteQualityConversationEvaluation(conversationId, evaluationId, op
 
 ### Return type
 
-**Evaluation**
+**EvaluationResponse**
 
 <a name="deleteQualityForm"></a>
 
@@ -527,7 +527,7 @@ apiInstance.getQualityCalibrations(calibratorId, opts)
 
 <a name="getQualityConversationEvaluation"></a>
 
-# Evaluation getQualityConversationEvaluation(conversationId, evaluationId, opts)
+# EvaluationResponse getQualityConversationEvaluation(conversationId, evaluationId, opts)
 
 
 GET /api/v2/quality/conversations/{conversationId}/evaluations/{evaluationId}
@@ -579,7 +579,7 @@ apiInstance.getQualityConversationEvaluation(conversationId, evaluationId, opts)
 
 ### Return type
 
-**Evaluation**
+**EvaluationResponse**
 
 <a name="getQualityConversationSurveys"></a>
 
@@ -2807,7 +2807,7 @@ apiInstance.putQualityCalibration(calibrationId, body)
 
 <a name="putQualityConversationEvaluation"></a>
 
-# Evaluation putQualityConversationEvaluation(conversationId, evaluationId, body, opts)
+# EvaluationResponse putQualityConversationEvaluation(conversationId, evaluationId, body, opts)
 
 
 PUT /api/v2/quality/conversations/{conversationId}/evaluations/{evaluationId}
@@ -2865,7 +2865,7 @@ apiInstance.putQualityConversationEvaluation(conversationId, evaluationId, body,
 
 ### Return type
 
-**Evaluation**
+**EvaluationResponse**
 
 <a name="putQualityForm"></a>
 

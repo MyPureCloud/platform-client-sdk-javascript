@@ -470,6 +470,7 @@ docs/getConversationRecordingAnnotations-example.txt
 docs/getConversationRecordingmetadata-example.txt
 docs/getConversationRecordingmetadataRecordingId-example.txt
 docs/getConversationRecordings-example.txt
+docs/getConversationSecureattributes-example.txt
 docs/getConversations-example.txt
 docs/getConversationsCall-example.txt
 docs/getConversationsCallParticipantWrapup-example.txt
@@ -499,6 +500,8 @@ docs/getConversationsEmailParticipantWrapup-example.txt
 docs/getConversationsEmailParticipantWrapupcodes-example.txt
 docs/getConversationsEmailSettings-example.txt
 docs/getConversationsEmails-example.txt
+docs/getConversationsKeyconfiguration-example.txt
+docs/getConversationsKeyconfigurations-example.txt
 docs/getConversationsMessage-example.txt
 docs/getConversationsMessageCommunicationMessagesMediaMediaId-example.txt
 docs/getConversationsMessageDetails-example.txt
@@ -911,6 +914,7 @@ docs/getRoutingAssessment-example.txt
 docs/getRoutingAssessments-example.txt
 docs/getRoutingAssessmentsJob-example.txt
 docs/getRoutingAssessmentsJobs-example.txt
+docs/getRoutingAvailablemediatypes-example.txt
 docs/getRoutingEmailDomain-example.txt
 docs/getRoutingEmailDomainRoute-example.txt
 docs/getRoutingEmailDomainRoutes-example.txt
@@ -1228,6 +1232,7 @@ docs/patchCoachingAppointmentStatus-example.txt
 docs/patchCoachingNotification-example.txt
 docs/patchConversationParticipant-example.txt
 docs/patchConversationParticipantAttributes-example.txt
+docs/patchConversationSecureattributes-example.txt
 docs/patchConversationsCall-example.txt
 docs/patchConversationsCallParticipant-example.txt
 docs/patchConversationsCallParticipantAttributes-example.txt
@@ -1446,6 +1451,8 @@ docs/postConversationsEmailMessagesDraftAttachmentsCopy-example.txt
 docs/postConversationsEmailParticipantReplace-example.txt
 docs/postConversationsEmails-example.txt
 docs/postConversationsFaxes-example.txt
+docs/postConversationsKeyconfigurations-example.txt
+docs/postConversationsKeyconfigurationsValidate-example.txt
 docs/postConversationsMessageCommunicationMessages-example.txt
 docs/postConversationsMessageCommunicationMessagesMedia-example.txt
 docs/postConversationsMessageMessagesBulk-example.txt
@@ -1800,6 +1807,7 @@ docs/putContentmanagementWorkspaceTagvalue-example.txt
 docs/putConversationParticipantFlaggedreason-example.txt
 docs/putConversationRecording-example.txt
 docs/putConversationRecordingAnnotation-example.txt
+docs/putConversationSecureattributes-example.txt
 docs/putConversationTags-example.txt
 docs/putConversationsCallParticipantCommunicationUuidata-example.txt
 docs/putConversationsCallRecordingstate-example.txt
@@ -1808,6 +1816,7 @@ docs/putConversationsChatRecordingstate-example.txt
 docs/putConversationsCobrowsesessionRecordingstate-example.txt
 docs/putConversationsEmailMessagesDraft-example.txt
 docs/putConversationsEmailRecordingstate-example.txt
+docs/putConversationsKeyconfiguration-example.txt
 docs/putConversationsMessageRecordingstate-example.txt
 docs/putConversationsMessagingIntegrationsLineIntegrationId-example.txt
 docs/putConversationsMessagingSupportedcontentDefault-example.txt

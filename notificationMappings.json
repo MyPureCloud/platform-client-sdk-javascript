@@ -337,6 +337,10 @@
       "class": "WorkitemsUserEventsNotificationWorkitem"
     },
     {
+      "topic": "v2.taskmanagement.workitems.{id}",
+      "class": "WorkitemsEventsNotificationWorkitem"
+    },
+    {
       "topic": "v2.telephony.providers.edges.phones.{id}",
       "class": "PhoneChangeTopicPhone"
     },

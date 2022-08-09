@@ -5,7 +5,7 @@ class RoutingApi {
 	/**
 	 * Routing service.
 	 * @module purecloud-platform-client-v2/api/RoutingApi
-	 * @version 144.0.0
+	 * @version 145.0.0
 	 */
 
 	/**
@@ -562,6 +562,26 @@ class RoutingApi {
 			'GET', 
 			{  },
 			{ 'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi') },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get available media types
+	 * 
+	 */
+	getRoutingAvailablemediatypes() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/availablemediatypes', 
+			'GET', 
+			{  },
+			{  },
 			{  },
 			{  },
 			null, 

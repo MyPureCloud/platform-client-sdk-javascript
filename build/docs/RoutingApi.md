@@ -28,6 +28,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getRoutingAssessments**](RoutingApi.html#getRoutingAssessments) | **GET** /api/v2/routing/assessments | Retrieve all benefit assessments.
 [**getRoutingAssessmentsJob**](RoutingApi.html#getRoutingAssessmentsJob) | **GET** /api/v2/routing/assessments/jobs/{jobId} | Retrieve a single benefit assessments job.
 [**getRoutingAssessmentsJobs**](RoutingApi.html#getRoutingAssessmentsJobs) | **GET** /api/v2/routing/assessments/jobs | Retrieve all benefit assessment jobs.
+[**getRoutingAvailablemediatypes**](RoutingApi.html#getRoutingAvailablemediatypes) | **GET** /api/v2/routing/availablemediatypes | Get available media types
 [**getRoutingEmailDomain**](RoutingApi.html#getRoutingEmailDomain) | **GET** /api/v2/routing/email/domains/{domainId} | Get domain
 [**getRoutingEmailDomainRoute**](RoutingApi.html#getRoutingEmailDomainRoute) | **GET** /api/v2/routing/email/domains/{domainName}/routes/{routeId} | Get a route
 [**getRoutingEmailDomainRoutes**](RoutingApi.html#getRoutingEmailDomainRoutes) | **GET** /api/v2/routing/email/domains/{domainName}/routes | Get routes
@@ -1186,6 +1187,49 @@ apiInstance.getRoutingAssessmentsJobs(opts)
 ### Return type
 
 **AssessmentJobListing**
+
+<a name="getRoutingAvailablemediatypes"></a>
+
+# AvailableMediaTypeEntityListing getRoutingAvailablemediatypes()
+
+
+GET /api/v2/routing/availablemediatypes
+
+Get available media types
+
+Requires NO permissions:
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.RoutingApi();
+
+apiInstance.getRoutingAvailablemediatypes()
+  .then((data) => {
+    console.log(`getRoutingAvailablemediatypes success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getRoutingAvailablemediatypes');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+
+### Return type
+
+**AvailableMediaTypeEntityListing**
 
 <a name="getRoutingEmailDomain"></a>
 
