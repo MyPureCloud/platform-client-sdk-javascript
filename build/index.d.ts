@@ -373,6 +373,7 @@ declare namespace ArchitectApi {
 		"sortBy"?: string;
 		"sortOrder"?: string;
 		"name"?: string;
+		"dnis"?: string;
 	}
 	export interface getArchitectPromptHistoryHistoryIdOptions { 
 		"pageNumber"?: number;
@@ -2116,10 +2117,33 @@ declare namespace JourneyApi {
 
 declare class KnowledgeApi {  
   	deleteKnowledgeKnowledgebase(knowledgeBaseId: string): Promise<Models.KnowledgeBase>; 
+  	deleteKnowledgeKnowledgebaseCategory(knowledgeBaseId: string, categoryId: string): Promise<Models.CategoryResponse>; 
+  	deleteKnowledgeKnowledgebaseDocument(knowledgeBaseId: string, documentId: string): Promise<void>; 
+  	deleteKnowledgeKnowledgebaseDocumentVariation(documentVariationId: string, documentId: string, knowledgeBaseId: string): Promise<void>; 
+  	deleteKnowledgeKnowledgebaseExportJob(knowledgeBaseId: string, exportJobId: string): Promise<void>; 
+  	deleteKnowledgeKnowledgebaseImportJob(knowledgeBaseId: string, importJobId: string): Promise<void>; 
+  	deleteKnowledgeKnowledgebaseLabel(knowledgeBaseId: string, labelId: string): Promise<Models.LabelResponse>; 
   	deleteKnowledgeKnowledgebaseLanguageCategory(categoryId: string, knowledgeBaseId: string, languageCode: string): Promise<Models.KnowledgeCategory>; 
   	deleteKnowledgeKnowledgebaseLanguageDocument(documentId: string, knowledgeBaseId: string, languageCode: string): Promise<Models.KnowledgeDocument>; 
   	deleteKnowledgeKnowledgebaseLanguageDocumentsImport(knowledgeBaseId: string, languageCode: string, importId: string): Promise<void>; 
+  	getKnowledgeGuestSessionCategories(sessionId: string, opts?: KnowledgeApi.getKnowledgeGuestSessionCategoriesOptions): Promise<Models.GuestCategoryResponseListing>; 
+  	getKnowledgeGuestSessionDocument(sessionId: string, documentId: string): Promise<Models.KnowledgeGuestDocument>; 
+  	getKnowledgeGuestSessionDocuments(sessionId: string, opts?: KnowledgeApi.getKnowledgeGuestSessionDocumentsOptions): Promise<Models.KnowledgeGuestDocumentResponseListing>; 
   	getKnowledgeKnowledgebase(knowledgeBaseId: string): Promise<Models.KnowledgeBase>; 
+  	getKnowledgeKnowledgebaseCategories(knowledgeBaseId: string, opts?: KnowledgeApi.getKnowledgeKnowledgebaseCategoriesOptions): Promise<Models.CategoryResponseListing>; 
+  	getKnowledgeKnowledgebaseCategory(knowledgeBaseId: string, categoryId: string): Promise<Models.CategoryResponse>; 
+  	getKnowledgeKnowledgebaseDocument(knowledgeBaseId: string, documentId: string, opts?: KnowledgeApi.getKnowledgeKnowledgebaseDocumentOptions): Promise<Models.KnowledgeDocumentResponse>; 
+  	getKnowledgeKnowledgebaseDocumentVariation(documentVariationId: string, documentId: string, knowledgeBaseId: string, opts?: KnowledgeApi.getKnowledgeKnowledgebaseDocumentVariationOptions): Promise<Models.DocumentVariation>; 
+  	getKnowledgeKnowledgebaseDocumentVariations(knowledgeBaseId: string, documentId: string, opts?: KnowledgeApi.getKnowledgeKnowledgebaseDocumentVariationsOptions): Promise<Models.DocumentVariationListing>; 
+  	getKnowledgeKnowledgebaseDocumentVersion(knowledgeBaseId: string, documentId: string, versionId: string, opts?: KnowledgeApi.getKnowledgeKnowledgebaseDocumentVersionOptions): Promise<Models.KnowledgeDocumentVersion>; 
+  	getKnowledgeKnowledgebaseDocumentVersionVariation(knowledgeBaseId: string, documentId: string, versionId: string, variationId: string): Promise<Models.KnowledgeDocumentVersionVariation>; 
+  	getKnowledgeKnowledgebaseDocumentVersionVariations(knowledgeBaseId: string, documentId: string, versionId: string, opts?: KnowledgeApi.getKnowledgeKnowledgebaseDocumentVersionVariationsOptions): Promise<Models.KnowledgeDocumentVersionVariationListing>; 
+  	getKnowledgeKnowledgebaseDocumentVersions(knowledgeBaseId: string, documentId: string, opts?: KnowledgeApi.getKnowledgeKnowledgebaseDocumentVersionsOptions): Promise<Models.KnowledgeDocumentVersionListing>; 
+  	getKnowledgeKnowledgebaseDocuments(knowledgeBaseId: string, opts?: KnowledgeApi.getKnowledgeKnowledgebaseDocumentsOptions): Promise<Models.KnowledgeDocumentResponseListing>; 
+  	getKnowledgeKnowledgebaseExportJob(knowledgeBaseId: string, exportJobId: string): Promise<Models.KnowledgeExportJobResponse>; 
+  	getKnowledgeKnowledgebaseImportJob(knowledgeBaseId: string, importJobId: string): Promise<Models.KnowledgeImportJobResponse>; 
+  	getKnowledgeKnowledgebaseLabel(knowledgeBaseId: string, labelId: string): Promise<Models.LabelResponse>; 
+  	getKnowledgeKnowledgebaseLabels(knowledgeBaseId: string, opts?: KnowledgeApi.getKnowledgeKnowledgebaseLabelsOptions): Promise<Models.LabelListing>; 
   	getKnowledgeKnowledgebaseLanguageCategories(knowledgeBaseId: string, languageCode: string, opts?: KnowledgeApi.getKnowledgeKnowledgebaseLanguageCategoriesOptions): Promise<Models.CategoryListing>; 
   	getKnowledgeKnowledgebaseLanguageCategory(categoryId: string, knowledgeBaseId: string, languageCode: string): Promise<Models.KnowledgeExtendedCategory>; 
   	getKnowledgeKnowledgebaseLanguageDocument(documentId: string, knowledgeBaseId: string, languageCode: string): Promise<Models.KnowledgeDocument>; 
@@ -2127,13 +2151,36 @@ declare class KnowledgeApi {
   	getKnowledgeKnowledgebaseLanguageDocumentsImport(knowledgeBaseId: string, languageCode: string, importId: string): Promise<Models.KnowledgeImport>; 
   	getKnowledgeKnowledgebaseLanguageTraining(knowledgeBaseId: string, languageCode: string, trainingId: string): Promise<Models.KnowledgeTraining>; 
   	getKnowledgeKnowledgebaseLanguageTrainings(knowledgeBaseId: string, languageCode: string, opts?: KnowledgeApi.getKnowledgeKnowledgebaseLanguageTrainingsOptions): Promise<Models.TrainingListing>; 
+  	getKnowledgeKnowledgebaseUnansweredGroup(knowledgeBaseId: string, groupId: string, opts?: KnowledgeApi.getKnowledgeKnowledgebaseUnansweredGroupOptions): Promise<Models.UnansweredGroup>; 
+  	getKnowledgeKnowledgebaseUnansweredGroupPhrasegroup(knowledgeBaseId: string, groupId: string, phraseGroupId: string, opts?: KnowledgeApi.getKnowledgeKnowledgebaseUnansweredGroupPhrasegroupOptions): Promise<Models.UnansweredPhraseGroup>; 
+  	getKnowledgeKnowledgebaseUnansweredGroups(knowledgeBaseId: string, opts?: KnowledgeApi.getKnowledgeKnowledgebaseUnansweredGroupsOptions): Promise<Models.UnansweredGroups>; 
   	getKnowledgeKnowledgebases(opts?: KnowledgeApi.getKnowledgeKnowledgebasesOptions): Promise<Models.KnowledgeBaseListing>; 
+  	patchKnowledgeGuestSessionDocumentsSearchSearchId(sessionId: string, searchId: string, body: Models.SearchUpdateRequest): Promise<void>; 
   	patchKnowledgeKnowledgebase(knowledgeBaseId: string, body: Models.KnowledgeBase): Promise<Models.KnowledgeBase>; 
+  	patchKnowledgeKnowledgebaseCategory(knowledgeBaseId: string, categoryId: string, body: Models.CategoryRequest): Promise<Models.CategoryResponse>; 
+  	patchKnowledgeKnowledgebaseDocument(knowledgeBaseId: string, documentId: string, body: Models.KnowledgeDocumentReq): Promise<Models.KnowledgeDocumentResponse>; 
+  	patchKnowledgeKnowledgebaseDocumentVariation(documentVariationId: string, documentId: string, knowledgeBaseId: string, body: Models.DocumentVariation): Promise<Models.DocumentVariation>; 
+  	patchKnowledgeKnowledgebaseDocumentsSearchSearchId(knowledgeBaseId: string, searchId: string, opts?: KnowledgeApi.patchKnowledgeKnowledgebaseDocumentsSearchSearchIdOptions): Promise<void>; 
+  	patchKnowledgeKnowledgebaseImportJob(knowledgeBaseId: string, importJobId: string, body: Models.ImportStatusRequest): Promise<Models.KnowledgeImportJobResponse>; 
+  	patchKnowledgeKnowledgebaseLabel(knowledgeBaseId: string, labelId: string, body: Models.LabelUpdateRequest): Promise<Models.LabelResponse>; 
   	patchKnowledgeKnowledgebaseLanguageCategory(categoryId: string, knowledgeBaseId: string, languageCode: string, body: Models.KnowledgeCategoryRequest): Promise<Models.KnowledgeExtendedCategory>; 
   	patchKnowledgeKnowledgebaseLanguageDocument(documentId: string, knowledgeBaseId: string, languageCode: string, body: Models.KnowledgeDocumentRequest): Promise<Models.KnowledgeDocument>; 
   	patchKnowledgeKnowledgebaseLanguageDocuments(knowledgeBaseId: string, languageCode: string, body: Array<Models.KnowledgeDocumentBulkRequest>): Promise<Models.DocumentListing>; 
   	patchKnowledgeKnowledgebaseLanguageDocumentsImport(knowledgeBaseId: string, languageCode: string, importId: string, body: Models.ImportStatusRequest): Promise<Models.KnowledgeImport>; 
+  	patchKnowledgeKnowledgebaseUnansweredGroupPhrasegroup(knowledgeBaseId: string, groupId: string, phraseGroupId: string, body: Models.UnansweredPhraseGroupPatchRequestBody): Promise<Models.UnansweredPhraseGroupUpdateResponse>; 
   	postKnowledgeDocumentuploads(body: Models.UploadUrlRequest): Promise<Models.UploadUrlResponse>; 
+  	postKnowledgeGuestSessionDocumentsSearch(sessionId: string, opts?: KnowledgeApi.postKnowledgeGuestSessionDocumentsSearchOptions): Promise<Models.KnowledgeDocumentGuestSearch>; 
+  	postKnowledgeGuestSessionDocumentsSearchSuggestions(sessionId: string, opts?: KnowledgeApi.postKnowledgeGuestSessionDocumentsSearchSuggestionsOptions): Promise<Models.KnowledgeGuestDocumentSuggestion>; 
+  	postKnowledgeGuestSessions(body: Models.KnowledgeGuestSession): Promise<Models.KnowledgeGuestSession>; 
+  	postKnowledgeKnowledgebaseCategories(knowledgeBaseId: string, body: Models.CategoryRequest): Promise<Models.CategoryResponse>; 
+  	postKnowledgeKnowledgebaseDocumentVariations(knowledgeBaseId: string, documentId: string, body: Models.DocumentVariation): Promise<Models.DocumentVariation>; 
+  	postKnowledgeKnowledgebaseDocumentVersions(knowledgeBaseId: string, documentId: string, body: Models.KnowledgeDocumentVersion): Promise<Models.KnowledgeDocumentVersion>; 
+  	postKnowledgeKnowledgebaseDocuments(knowledgeBaseId: string, body: Models.KnowledgeDocumentReq): Promise<Models.KnowledgeDocumentResponse>; 
+  	postKnowledgeKnowledgebaseDocumentsSearch(knowledgeBaseId: string, opts?: KnowledgeApi.postKnowledgeKnowledgebaseDocumentsSearchOptions): Promise<Models.KnowledgeDocumentSearch>; 
+  	postKnowledgeKnowledgebaseDocumentsSearchSuggestions(knowledgeBaseId: string, opts?: KnowledgeApi.postKnowledgeKnowledgebaseDocumentsSearchSuggestionsOptions): Promise<Models.KnowledgeDocumentSuggestion>; 
+  	postKnowledgeKnowledgebaseExportJobs(knowledgeBaseId: string, body: Models.KnowledgeExportJobRequest): Promise<Models.KnowledgeExportJobResponse>; 
+  	postKnowledgeKnowledgebaseImportJobs(knowledgeBaseId: string, body: Models.KnowledgeImportJobRequest): Promise<Models.KnowledgeImportJobResponse>; 
+  	postKnowledgeKnowledgebaseLabels(knowledgeBaseId: string, body: Models.LabelCreateRequest): Promise<Models.LabelResponse>; 
   	postKnowledgeKnowledgebaseLanguageCategories(knowledgeBaseId: string, languageCode: string, body: Models.KnowledgeCategoryRequest): Promise<Models.KnowledgeExtendedCategory>; 
   	postKnowledgeKnowledgebaseLanguageDocuments(knowledgeBaseId: string, languageCode: string, body: Models.KnowledgeDocumentRequest): Promise<Models.KnowledgeDocument>; 
   	postKnowledgeKnowledgebaseLanguageDocumentsImports(knowledgeBaseId: string, languageCode: string, body: Models.KnowledgeImport): Promise<Models.KnowledgeImport>; 
@@ -2144,6 +2191,78 @@ declare class KnowledgeApi {
 }
 
 declare namespace KnowledgeApi { 
+	export interface getKnowledgeGuestSessionCategoriesOptions { 
+		"before"?: string;
+		"after"?: string;
+		"pageSize"?: string;
+		"parentId"?: string;
+		"isRoot"?: boolean;
+		"name"?: string;
+		"sortBy"?: string;
+		"expand"?: string;
+		"includeDocumentCount"?: boolean;
+	}
+	export interface getKnowledgeGuestSessionDocumentsOptions { 
+		"categoryId"?: Array<string>;
+		"includeSubcategories"?: boolean;
+		"pageSize"?: string;
+	}
+	export interface getKnowledgeKnowledgebaseCategoriesOptions { 
+		"before"?: string;
+		"after"?: string;
+		"pageSize"?: string;
+		"parentId"?: string;
+		"isRoot"?: boolean;
+		"name"?: string;
+		"sortBy"?: string;
+		"expand"?: string;
+		"includeDocumentCount"?: boolean;
+	}
+	export interface getKnowledgeKnowledgebaseDocumentOptions { 
+		"expand"?: Array<string>;
+		"state"?: string;
+	}
+	export interface getKnowledgeKnowledgebaseDocumentVariationOptions { 
+		"documentState"?: string;
+	}
+	export interface getKnowledgeKnowledgebaseDocumentVariationsOptions { 
+		"before"?: string;
+		"after"?: string;
+		"pageSize"?: string;
+		"documentState"?: string;
+	}
+	export interface getKnowledgeKnowledgebaseDocumentVersionOptions { 
+		"expand"?: Array<string>;
+	}
+	export interface getKnowledgeKnowledgebaseDocumentVersionVariationsOptions { 
+		"before"?: string;
+		"after"?: string;
+		"pageSize"?: string;
+	}
+	export interface getKnowledgeKnowledgebaseDocumentVersionsOptions { 
+		"before"?: string;
+		"after"?: string;
+		"pageSize"?: string;
+		"expand"?: Array<string>;
+	}
+	export interface getKnowledgeKnowledgebaseDocumentsOptions { 
+		"before"?: string;
+		"after"?: string;
+		"pageSize"?: string;
+		"interval"?: string;
+		"categoryId"?: Array<string>;
+		"includeSubcategories"?: boolean;
+		"includeDrafts"?: boolean;
+		"labelIds"?: Array<string>;
+		"expand"?: Array<string>;
+	}
+	export interface getKnowledgeKnowledgebaseLabelsOptions { 
+		"before"?: string;
+		"after"?: string;
+		"pageSize"?: string;
+		"name"?: string;
+		"includeDocumentCount"?: boolean;
+	}
 	export interface getKnowledgeKnowledgebaseLanguageCategoriesOptions { 
 		"before"?: string;
 		"after"?: string;
@@ -2169,6 +2288,15 @@ declare namespace KnowledgeApi {
 		"pageSize"?: string;
 		"knowledgeDocumentsState"?: string;
 	}
+	export interface getKnowledgeKnowledgebaseUnansweredGroupOptions { 
+		"app"?: string;
+	}
+	export interface getKnowledgeKnowledgebaseUnansweredGroupPhrasegroupOptions { 
+		"app"?: string;
+	}
+	export interface getKnowledgeKnowledgebaseUnansweredGroupsOptions { 
+		"app"?: string;
+	}
 	export interface getKnowledgeKnowledgebasesOptions { 
 		"before"?: string;
 		"after"?: string;
@@ -2179,6 +2307,23 @@ declare namespace KnowledgeApi {
 		"published"?: boolean;
 		"sortBy"?: string;
 		"sortOrder"?: string;
+	}
+	export interface patchKnowledgeKnowledgebaseDocumentsSearchSearchIdOptions { 
+		"body"?: Models.SearchUpdateRequest;
+	}
+	export interface postKnowledgeGuestSessionDocumentsSearchOptions { 
+		"expand"?: Array<string>;
+		"body"?: Models.KnowledgeDocumentGuestSearchRequest;
+	}
+	export interface postKnowledgeGuestSessionDocumentsSearchSuggestionsOptions { 
+		"body"?: Models.KnowledgeDocumentSuggestionRequest;
+	}
+	export interface postKnowledgeKnowledgebaseDocumentsSearchOptions { 
+		"expand"?: Array<string>;
+		"body"?: Models.KnowledgeDocumentSearchRequest;
+	}
+	export interface postKnowledgeKnowledgebaseDocumentsSearchSuggestionsOptions { 
+		"body"?: Models.KnowledgeDocumentSuggestionRequest;
 	}
 	export interface postKnowledgeKnowledgebaseSearchOptions { 
 		"body"?: Models.KnowledgeSearchRequest;
@@ -5471,6 +5616,9 @@ declare namespace Models {
 	export interface ActionMapAction { 
 		"actionTemplate"?: Models.ActionMapActionTemplate;
 		"mediaType"?: string;
+		"actionTargetId"?: string;
+		"isPacingEnabled"?: boolean;
+		"props"?: Models.ActionProperties;
 		"architectFlowFields"?: Models.ArchitectFlowFields;
 		"webMessagingOfferFields"?: Models.WebMessagingOfferFields;
 		"openActionFields"?: Models.OpenActionFields;
@@ -6888,6 +7036,7 @@ declare namespace Models {
 		"client"?: Models.AddressableEntityRef;
 		"remoteIp"?: Array<string>;
 		"serviceName"?: string;
+		"level"?: string;
 		"eventDate"?: string;
 		"message"?: Models.MessageInfo;
 		"action"?: string;
@@ -8966,6 +9115,40 @@ declare namespace Models {
 		"previousUri"?: string;
 	}
 	
+	export interface CategoryReference { 
+		"id": string;
+		"name"?: string;
+		"parentCategory"?: Models.CategoryReference;
+		"selfUri"?: string;
+	}
+	
+	export interface CategoryRequest { 
+		"id"?: string;
+		"name": string;
+		"description"?: string;
+		"parentCategoryId"?: string;
+		"selfUri"?: string;
+	}
+	
+	export interface CategoryResponse { 
+		"id"?: string;
+		"name": string;
+		"description"?: string;
+		"dateCreated"?: string;
+		"dateModified"?: string;
+		"parentCategory"?: Models.CategoryReference;
+		"documentCount"?: number;
+		"knowledgeBase"?: Models.KnowledgeBaseReference;
+		"selfUri"?: string;
+	}
+	
+	export interface CategoryResponseListing { 
+		"entities"?: Array<Models.CategoryResponse>;
+		"nextUri"?: string;
+		"selfUri"?: string;
+		"previousUri"?: string;
+	}
+	
 	export interface Certificate { 
 		"certificate": string;
 	}
@@ -10180,6 +10363,7 @@ declare namespace Models {
 		"autoStartType"?: string;
 		"autoStart"?: Models.AutoStart;
 		"markdown"?: Models.Markdown;
+		"conversationDisconnect"?: Models.ConversationDisconnectSettings;
 	}
 	
 	export interface ConversationAssociation { 
@@ -10866,6 +11050,11 @@ declare namespace Models {
 	
 	export interface ConversationDetailsDatalakeAvailabilityTopicDataAvailabilityChangeNotification { 
 		"dataAvailabilityDate"?: string;
+	}
+	
+	export interface ConversationDisconnectSettings { 
+		"enabled"?: boolean;
+		"type"?: string;
 	}
 	
 	export interface ConversationDivisionMembership { 
@@ -12681,7 +12870,7 @@ declare namespace Models {
 		"email": string;
 		"addresses"?: Array<Models.Contact>;
 		"title"?: string;
-		"password": string;
+		"password"?: string;
 		"divisionId": string;
 		"state"?: string;
 	}
@@ -14003,6 +14192,7 @@ declare namespace Models {
 		"languages"?: Array<string>;
 		"intents"?: Array<Models.DialogflowIntent>;
 		"environments"?: Array<string>;
+		"integration"?: Models.DomainEntityRef;
 		"selfUri"?: string;
 	}
 	
@@ -14117,6 +14307,7 @@ declare namespace Models {
 		"dncSourceType": string;
 		"contactMethod"?: string;
 		"loginId"?: string;
+		"campaignId"?: string;
 		"dncCodes"?: Array<string>;
 		"licenseId"?: string;
 		"division"?: Models.DomainEntityRef;
@@ -14134,6 +14325,7 @@ declare namespace Models {
 		"dncSourceType": string;
 		"contactMethod"?: string;
 		"loginId"?: string;
+		"campaignId"?: string;
 		"dncCodes"?: Array<string>;
 		"licenseId"?: string;
 		"division"?: Models.DomainEntityRef;
@@ -14267,8 +14459,47 @@ declare namespace Models {
 		"pageCount"?: number;
 	}
 	
+	export interface DocumentBody { 
+		"blocks": Array<Models.DocumentBodyBlock>;
+	}
+	
+	export interface DocumentBodyBlock { 
+		"type": string;
+		"paragraph": Models.DocumentBodyParagraph;
+		"image": Models.DocumentBodyImage;
+		"video": Models.DocumentBodyVideo;
+		"list": Models.DocumentBodyList;
+	}
+	
+	export interface DocumentBodyImage { 
+		"url": string;
+	}
+	
+	export interface DocumentBodyList { 
+		"blocks": Array<Models.DocumentBodyListBlock>;
+	}
+	
+	export interface DocumentBodyListBlock { 
+		"type": string;
+		"blocks": Array<Models.DocumentContentBlock>;
+	}
+	
+	export interface DocumentBodyParagraph { 
+		"blocks": Array<Models.DocumentContentBlock>;
+	}
+	
+	export interface DocumentBodyVideo { 
+		"url": string;
+	}
+	
 	export interface DocumentCategoryInput { 
 		"id": string;
+	}
+	
+	export interface DocumentContentBlock { 
+		"type": string;
+		"text": Models.DocumentText;
+		"image": Models.DocumentBodyImage;
 	}
 	
 	export interface DocumentEntityListing { 
@@ -14302,6 +14533,12 @@ declare namespace Models {
 		"selfUri"?: string;
 	}
 	
+	export interface DocumentText { 
+		"text": string;
+		"marks"?: Array<string>;
+		"hyperlink"?: string;
+	}
+	
 	export interface DocumentThumbnail { 
 		"resolution"?: string;
 		"imageUri"?: string;
@@ -14326,6 +14563,29 @@ declare namespace Models {
 		"workspace": Models.DomainEntityRef;
 		"tags"?: Array<string>;
 		"tagIds"?: Array<string>;
+	}
+	
+	export interface DocumentVariation { 
+		"id"?: string;
+		"body"?: Models.DocumentBody;
+		"dateCreated"?: string;
+		"dateModified"?: string;
+		"documentVersion"?: Models.AddressableEntityRef;
+		"contexts": Array<Models.DocumentVariationContext>;
+		"document"?: Models.KnowledgeDocumentReference;
+		"selfUri"?: string;
+	}
+	
+	export interface DocumentVariationContext { 
+		"context": Models.KnowledgeContextReference;
+		"values": Array<Models.KnowledgeContextValueReference>;
+	}
+	
+	export interface DocumentVariationListing { 
+		"entities"?: Array<Models.DocumentVariation>;
+		"nextUri"?: string;
+		"selfUri"?: string;
+		"previousUri"?: string;
 	}
 	
 	export interface DocumentationResult { 
@@ -15570,6 +15830,7 @@ declare namespace Models {
 		"redacted"?: boolean;
 		"isScoringIndex"?: boolean;
 		"authorizedActions"?: Array<string>;
+		"hasAssistanceFailed"?: boolean;
 		"selfUri"?: string;
 	}
 	
@@ -15755,8 +16016,8 @@ declare namespace Models {
 		"commentsRequired"?: boolean;
 		"visibilityCondition"?: Models.VisibilityCondition;
 		"answerOptions"?: Array<Models.AnswerOption>;
-		"isKill"?: boolean;
 		"isCritical"?: boolean;
+		"isKill"?: boolean;
 	}
 	
 	export interface EvaluationQuestionGroup { 
@@ -15825,6 +16086,7 @@ declare namespace Models {
 		"redacted"?: boolean;
 		"isScoringIndex"?: boolean;
 		"authorizedActions"?: Array<string>;
+		"hasAssistanceFailed"?: boolean;
 		"selfUri"?: string;
 	}
 	
@@ -15866,6 +16128,12 @@ declare namespace Models {
 		"pageCount"?: number;
 	}
 	
+	export interface EventCoBrowse { 
+		"type": string;
+		"sessionId"?: string;
+		"sessionJoinToken"?: string;
+	}
+	
 	export interface EventCondition { 
 		"key": string;
 		"values": Array<string>;
@@ -15902,9 +16170,18 @@ declare namespace Models {
 		"resourceURIs"?: Array<string>;
 	}
 	
+	export interface EventPresence { 
+		"type": string;
+	}
+	
 	export interface EventSetting { 
 		"typing"?: Models.TypingSetting;
 		"presence"?: Models.PresenceSetting;
+	}
+	
+	export interface EventTyping { 
+		"type": string;
+		"duration"?: number;
 	}
 	
 	export interface ExecuteRecordingJobsQuery { 
@@ -17044,6 +17321,8 @@ declare namespace Models {
 		"createdByClient"?: Models.DomainEntityRef;
 		"configurationUri"?: string;
 		"dateCreated"?: number;
+		"dateCheckedIn"?: number;
+		"dateSaved"?: number;
 		"generationId"?: string;
 		"publishResultUri"?: string;
 		"inputSchema"?: Models.JsonSchemaDocument;
@@ -17603,6 +17882,29 @@ declare namespace Models {
 		"nextPage"?: string;
 		"types": Array<string>;
 		"results": Array<Models.Group>;
+	}
+	
+	export interface GuestCategoryReference { 
+		"id"?: string;
+		"selfUri"?: string;
+	}
+	
+	export interface GuestCategoryResponse { 
+		"id"?: string;
+		"name": string;
+		"description"?: string;
+		"dateCreated"?: string;
+		"dateModified"?: string;
+		"parentCategory"?: Models.GuestCategoryReference;
+		"selfUri"?: string;
+	}
+	
+	export interface GuestCategoryResponseListing { 
+		"entities"?: Array<Models.GuestCategoryResponse>;
+		"nextUri"?: string;
+		"selfUri"?: string;
+		"previousUri"?: string;
+		"sessionId"?: string;
 	}
 	
 	export interface GuestMemberInfo { 
@@ -19222,6 +19524,11 @@ declare namespace Models {
 		"previousUri"?: string;
 	}
 	
+	export interface KnowledgeBaseReference { 
+		"id": string;
+		"selfUri"?: string;
+	}
+	
 	export interface KnowledgeCategory { 
 		"id"?: string;
 		"name": string;
@@ -19241,6 +19548,16 @@ declare namespace Models {
 		"selfUri"?: string;
 	}
 	
+	export interface KnowledgeContextReference { 
+		"id": string;
+		"selfUri"?: string;
+	}
+	
+	export interface KnowledgeContextValueReference { 
+		"id": string;
+		"selfUri"?: string;
+	}
+	
 	export interface KnowledgeDocument { 
 		"id"?: string;
 		"name"?: string;
@@ -19256,6 +19573,11 @@ declare namespace Models {
 		"selfUri"?: string;
 	}
 	
+	export interface KnowledgeDocumentAlternative { 
+		"phrase": string;
+		"autocomplete": boolean;
+	}
+	
 	export interface KnowledgeDocumentBulkRequest { 
 		"type": string;
 		"externalUrl"?: string;
@@ -19265,12 +19587,192 @@ declare namespace Models {
 		"id"?: string;
 	}
 	
+	export interface KnowledgeDocumentGuestSearch { 
+		"query": string;
+		"pageSize"?: number;
+		"pageNumber"?: number;
+		"searchId"?: string;
+		"total"?: number;
+		"pageCount"?: number;
+		"sessionId"?: string;
+		"results"?: Array<Models.KnowledgeDocumentGuestSearchResult>;
+	}
+	
+	export interface KnowledgeDocumentGuestSearchRequest { 
+		"query": string;
+		"pageSize"?: number;
+		"pageNumber"?: number;
+		"searchId"?: string;
+		"total"?: number;
+		"pageCount"?: number;
+		"sessionId"?: string;
+		"includeDraftDocuments"?: boolean;
+		"app"?: Models.KnowledgeGuestSessionApp;
+	}
+	
+	export interface KnowledgeDocumentGuestSearchResult { 
+		"confidence"?: number;
+		"document"?: Models.KnowledgeGuestDocument;
+	}
+	
+	export interface KnowledgeDocumentReference { 
+		"id": string;
+		"knowledgeBase": Models.KnowledgeBaseReference;
+		"selfUri"?: string;
+	}
+	
+	export interface KnowledgeDocumentReq { 
+		"id"?: string;
+		"title": string;
+		"visible"?: boolean;
+		"alternatives"?: Array<Models.KnowledgeDocumentAlternative>;
+		"categoryId"?: string;
+		"labelIds"?: Array<string>;
+		"selfUri"?: string;
+	}
+	
 	export interface KnowledgeDocumentRequest { 
 		"type": string;
 		"externalUrl"?: string;
 		"faq"?: Models.DocumentFaq;
 		"categories"?: Array<Models.DocumentCategoryInput>;
 		"article"?: Models.DocumentArticle;
+	}
+	
+	export interface KnowledgeDocumentResponse { 
+		"id"?: string;
+		"title"?: string;
+		"visible"?: boolean;
+		"alternatives"?: Array<Models.KnowledgeDocumentAlternative>;
+		"state"?: string;
+		"dateCreated"?: string;
+		"dateModified"?: string;
+		"lastPublishedVersionNumber"?: number;
+		"datePublished"?: string;
+		"createdBy"?: Models.UserReference;
+		"modifiedBy"?: Models.UserReference;
+		"documentVersion"?: Models.AddressableEntityRef;
+		"category"?: Models.CategoryResponse;
+		"labels"?: Array<Models.LabelResponse>;
+		"knowledgeBase"?: Models.KnowledgeBaseReference;
+		"variations"?: Array<Models.DocumentVariation>;
+		"selfUri"?: string;
+	}
+	
+	export interface KnowledgeDocumentResponseListing { 
+		"entities"?: Array<Models.KnowledgeDocumentResponse>;
+		"nextUri"?: string;
+		"selfUri"?: string;
+		"previousUri"?: string;
+	}
+	
+	export interface KnowledgeDocumentSearch { 
+		"query": string;
+		"pageSize"?: number;
+		"pageNumber"?: number;
+		"searchId"?: string;
+		"total"?: number;
+		"pageCount"?: number;
+		"results"?: Array<Models.KnowledgeDocumentSearchResult>;
+	}
+	
+	export interface KnowledgeDocumentSearchRequest { 
+		"query": string;
+		"pageSize"?: number;
+		"pageNumber"?: number;
+		"searchId"?: string;
+		"total"?: number;
+		"pageCount"?: number;
+		"includeDraftDocuments"?: boolean;
+	}
+	
+	export interface KnowledgeDocumentSearchResult { 
+		"confidence"?: number;
+		"document"?: Models.KnowledgeDocumentResponse;
+	}
+	
+	export interface KnowledgeDocumentSuggestion { 
+		"query": string;
+		"pageSize"?: number;
+		"results"?: Array<Models.KnowledgeDocumentSuggestionResult>;
+	}
+	
+	export interface KnowledgeDocumentSuggestionRequest { 
+		"query": string;
+		"pageSize"?: number;
+		"includeDraftDocuments"?: boolean;
+	}
+	
+	export interface KnowledgeDocumentSuggestionResult { 
+		"matchedPhrase"?: string;
+		"document"?: Models.KnowledgeDocumentSuggestionResultDocument;
+	}
+	
+	export interface KnowledgeDocumentSuggestionResultDocument { 
+		"id": string;
+		"knowledgeBase": Models.KnowledgeBaseReference;
+		"title": string;
+		"selfUri"?: string;
+	}
+	
+	export interface KnowledgeDocumentVersion { 
+		"id"?: string;
+		"datePublished"?: string;
+		"document"?: Models.KnowledgeDocumentResponse;
+		"restoreFromVersionId": string;
+		"versionNumber"?: number;
+		"dateExpires"?: string;
+		"selfUri"?: string;
+	}
+	
+	export interface KnowledgeDocumentVersionListing { 
+		"entities"?: Array<Models.KnowledgeDocumentVersion>;
+		"nextUri"?: string;
+		"selfUri"?: string;
+		"previousUri"?: string;
+	}
+	
+	export interface KnowledgeDocumentVersionVariation { 
+		"id"?: string;
+		"body"?: Models.DocumentBody;
+		"dateCreated"?: string;
+		"dateModified"?: string;
+		"contexts": Array<Models.DocumentVariationContext>;
+		"selfUri"?: string;
+		"documentVersion"?: Models.AddressableEntityRef;
+	}
+	
+	export interface KnowledgeDocumentVersionVariationListing { 
+		"entities"?: Array<Models.KnowledgeDocumentVersionVariation>;
+		"nextUri"?: string;
+		"selfUri"?: string;
+		"previousUri"?: string;
+	}
+	
+	export interface KnowledgeExportJobDocumentsFilter { 
+		"interval"?: string;
+	}
+	
+	export interface KnowledgeExportJobFilter { 
+		"documentsFilter"?: Models.KnowledgeExportJobDocumentsFilter;
+		"versionFilter": string;
+	}
+	
+	export interface KnowledgeExportJobRequest { 
+		"exportFilter": Models.KnowledgeExportJobFilter;
+	}
+	
+	export interface KnowledgeExportJobResponse { 
+		"id"?: string;
+		"downloadURL"?: string;
+		"countDocumentProcessed"?: number;
+		"exportFilter"?: Models.KnowledgeExportJobFilter;
+		"status"?: string;
+		"knowledgeBase"?: Models.KnowledgeBase;
+		"dateCreated"?: string;
+		"dateModified"?: string;
+		"errorInformation"?: Models.ErrorBody;
+		"selfUri"?: string;
 	}
 	
 	export interface KnowledgeExtendedCategory { 
@@ -19286,6 +19788,83 @@ declare namespace Models {
 		"selfUri"?: string;
 	}
 	
+	export interface KnowledgeGroupStatistics { 
+		"unlinkedPhraseCount"?: number;
+		"unlinkedPhraseHitCount"?: number;
+		"totalPhraseHitCount"?: number;
+	}
+	
+	export interface KnowledgeGuestDocument { 
+		"id"?: string;
+		"title"?: string;
+		"visible"?: boolean;
+		"alternatives"?: Array<Models.KnowledgeDocumentAlternative>;
+		"state"?: string;
+		"dateCreated"?: string;
+		"dateModified"?: string;
+		"lastPublishedVersionNumber"?: number;
+		"datePublished"?: string;
+		"createdBy"?: Models.UserReference;
+		"modifiedBy"?: Models.UserReference;
+		"documentVersion"?: Models.AddressableEntityRef;
+		"variations"?: Array<Models.KnowledgeGuestDocumentVariation>;
+		"sessionId"?: string;
+		"category"?: Models.GuestCategoryReference;
+		"selfUri"?: string;
+	}
+	
+	export interface KnowledgeGuestDocumentResponseListing { 
+		"entities"?: Array<Models.KnowledgeGuestDocument>;
+		"nextUri"?: string;
+		"selfUri"?: string;
+		"previousUri"?: string;
+	}
+	
+	export interface KnowledgeGuestDocumentSuggestion { 
+		"query": string;
+		"pageSize"?: number;
+		"sessionId"?: string;
+		"results"?: Array<Models.KnowledgeGuestDocumentSuggestionResult>;
+	}
+	
+	export interface KnowledgeGuestDocumentSuggestionResult { 
+		"matchedPhrase"?: string;
+	}
+	
+	export interface KnowledgeGuestDocumentVariation { 
+		"id"?: string;
+		"body"?: Models.DocumentBody;
+		"dateCreated"?: string;
+		"dateModified"?: string;
+		"documentVersion"?: Models.AddressableEntityRef;
+		"contexts": Array<Models.KnowledgeGuestDocumentVariationContext>;
+		"document"?: Models.AddressableEntityRef;
+		"selfUri"?: string;
+	}
+	
+	export interface KnowledgeGuestDocumentVariationContext { 
+		"context": Models.AddressableEntityRef;
+		"values": Array<Models.AddressableEntityRef>;
+	}
+	
+	export interface KnowledgeGuestSession { 
+		"id"?: string;
+		"app": Models.KnowledgeGuestSessionApp;
+		"customerId": string;
+		"pageUrl"?: string;
+		"contexts"?: Array<Models.KnowledgeGuestSessionContext>;
+	}
+	
+	export interface KnowledgeGuestSessionApp { 
+		"deploymentId": string;
+		"type": string;
+	}
+	
+	export interface KnowledgeGuestSessionContext { 
+		"id": string;
+		"values": Array<Models.Entity>;
+	}
+	
 	export interface KnowledgeImport { 
 		"id"?: string;
 		"name"?: string;
@@ -19299,6 +19878,62 @@ declare namespace Models {
 		"dateCreated"?: string;
 		"dateModified"?: string;
 		"selfUri"?: string;
+	}
+	
+	export interface KnowledgeImportJobError { 
+		"message"?: string;
+		"code"?: string;
+		"status"?: number;
+		"entityId"?: string;
+		"entityName"?: string;
+		"messageWithParams"?: string;
+		"messageParams"?: { [key: string]: string; };
+		"contextId"?: string;
+		"details"?: Array<Models.Detail>;
+		"errors"?: Array<Models.ErrorBody>;
+		"documentIndex"?: number;
+	}
+	
+	export interface KnowledgeImportJobReport { 
+		"errors"?: Array<Models.KnowledgeImportJobError>;
+		"statistics"?: Models.KnowledgeImportJobStatistics;
+	}
+	
+	export interface KnowledgeImportJobRequest { 
+		"uploadKey": string;
+		"fileType": string;
+		"settings"?: Models.KnowledgeImportJobSettings;
+	}
+	
+	export interface KnowledgeImportJobResponse { 
+		"id"?: string;
+		"uploadKey": string;
+		"fileType": string;
+		"settings"?: Models.KnowledgeImportJobSettings;
+		"status"?: string;
+		"report"?: Models.KnowledgeImportJobReport;
+		"knowledgeBase"?: Models.KnowledgeBase;
+		"dateCreated"?: string;
+		"dateModified"?: string;
+		"selfUri"?: string;
+	}
+	
+	export interface KnowledgeImportJobSettings { 
+		"importAsNew"?: boolean;
+		"visible"?: boolean;
+		"categoryId"?: string;
+		"labelIds"?: Array<string>;
+	}
+	
+	export interface KnowledgeImportJobStatistics { 
+		"countDocumentImportActivityCreate"?: number;
+		"countDocumentImportActivityUpdate"?: number;
+		"countDocumentStateDraft"?: number;
+		"countDocumentStatePublished"?: number;
+		"countDocumentValidationSuccess"?: number;
+		"countDocumentValidationFailure"?: number;
+		"countDocumentImportSuccess"?: number;
+		"countDocumentImportFailure"?: number;
 	}
 	
 	export interface KnowledgeSearchDocument { 
@@ -19354,6 +19989,37 @@ declare namespace Models {
 		"interactionCountOn"?: number;
 		"interactionCountOff"?: number;
 		"mediaType"?: string;
+	}
+	
+	export interface LabelCreateRequest { 
+		"id"?: string;
+		"name": string;
+		"color": string;
+		"selfUri"?: string;
+	}
+	
+	export interface LabelListing { 
+		"entities"?: Array<Models.LabelResponse>;
+		"nextUri"?: string;
+		"selfUri"?: string;
+		"previousUri"?: string;
+	}
+	
+	export interface LabelResponse { 
+		"id"?: string;
+		"name"?: string;
+		"color"?: string;
+		"dateCreated"?: string;
+		"dateModified"?: string;
+		"documentCount"?: number;
+		"selfUri"?: string;
+	}
+	
+	export interface LabelUpdateRequest { 
+		"id"?: string;
+		"name"?: string;
+		"color"?: string;
+		"selfUri"?: string;
 	}
 	
 	export interface Language { 
@@ -20555,6 +21221,13 @@ declare namespace Models {
 		"messageType"?: string;
 		"wrapupCodeId"?: string;
 		"timestamp"?: string;
+	}
+	
+	export interface MessageEvent { 
+		"eventType": string;
+		"coBrowse"?: Models.EventCoBrowse;
+		"typing"?: Models.EventTyping;
+		"presence"?: Models.EventPresence;
 	}
 	
 	export interface MessageInfo { 
@@ -21798,6 +22471,7 @@ declare namespace Models {
 		"recording"?: Models.Recording;
 		"orphanStatus"?: string;
 		"sourceOrphaningId"?: string;
+		"region"?: string;
 		"selfUri"?: string;
 	}
 	
@@ -22253,8 +22927,11 @@ declare namespace Models {
 	export interface PatchAction { 
 		"mediaType": string;
 		"actionTemplate"?: Models.ActionMapActionTemplate;
+		"actionTargetId"?: string;
+		"isPacingEnabled"?: boolean;
+		"props"?: Models.PatchActionProperties;
 		"architectFlowFields"?: Models.ArchitectFlowFields;
-		"webMessagingOfferFields"?: Models.WebMessagingOfferFields;
+		"webMessagingOfferFields"?: Models.PatchWebMessagingOfferFields;
 		"openActionFields"?: Models.OpenActionFields;
 	}
 	
@@ -22466,6 +23143,11 @@ declare namespace Models {
 	export interface PatchUser { 
 		"id"?: string;
 		"acdAutoAnswer"?: boolean;
+	}
+	
+	export interface PatchWebMessagingOfferFields { 
+		"offerText"?: string;
+		"architectFlow"?: Models.AddressableEntityRef;
 	}
 	
 	export interface PerformanceProfile { 
@@ -22693,6 +23375,11 @@ declare namespace Models {
 		"text": string;
 		"strictness"?: string;
 		"sentiment"?: string;
+	}
+	
+	export interface PhraseAssociations { 
+		"phraseId": string;
+		"documentId": string;
 	}
 	
 	export interface PhysicalInterfaceEntityListing { 
@@ -25973,7 +26660,7 @@ declare namespace Models {
 	
 	export interface RecordingJobsQuery { 
 		"action": string;
-		"actionDate": string;
+		"actionDate"?: string;
 		"integrationId"?: string;
 		"includeScreenRecordings"?: boolean;
 		"conversationQuery": Models.AsyncConversationQuery;
@@ -27455,6 +28142,12 @@ declare namespace Models {
 		"sortBy"?: string;
 	}
 	
+	export interface SearchUpdateRequest { 
+		"sessionId"?: string;
+		"answered": boolean;
+		"selectedAnswer"?: Models.SelectedAnswer;
+	}
+	
 	export interface SecondaryPresence { 
 		"id": string;
 		"selfUri"?: string;
@@ -27542,6 +28235,10 @@ declare namespace Models {
 		"nextUri"?: string;
 		"previousUri"?: string;
 		"pageCount"?: number;
+	}
+	
+	export interface SelectedAnswer { 
+		"document": Models.AddressableEntityRef;
 	}
 	
 	export interface SelectedColumns { 
@@ -30016,6 +30713,48 @@ declare namespace Models {
 		"nextUri"?: string;
 		"previousUri"?: string;
 		"pageCount"?: number;
+	}
+	
+	export interface UnansweredGroup { 
+		"id"?: string;
+		"label"?: string;
+		"phraseGroups"?: Array<Models.UnansweredPhraseGroup>;
+		"suggestedDocuments"?: Array<Models.UnansweredGroupSuggestedDocument>;
+		"statistics"?: Models.KnowledgeGroupStatistics;
+		"selfUri"?: string;
+	}
+	
+	export interface UnansweredGroupSuggestedDocument { 
+		"id"?: string;
+		"selfUri"?: string;
+	}
+	
+	export interface UnansweredGroups { 
+		"entities"?: Array<Models.UnansweredGroup>;
+	}
+	
+	export interface UnansweredPhrase { 
+		"id"?: string;
+		"text"?: string;
+		"unlinkedPhraseHitCount"?: number;
+	}
+	
+	export interface UnansweredPhraseGroup { 
+		"id"?: string;
+		"label"?: string;
+		"phrases"?: Array<Models.UnansweredPhrase>;
+		"unlinkedPhraseHitCount"?: number;
+		"unlinkedPhraseCount"?: number;
+		"selfUri"?: string;
+	}
+	
+	export interface UnansweredPhraseGroupPatchRequestBody { 
+		"phraseAssociations": Array<Models.PhraseAssociations>;
+	}
+	
+	export interface UnansweredPhraseGroupUpdateResponse { 
+		"phraseAssociations"?: Array<Models.PhraseAssociations>;
+		"group"?: Models.UnansweredGroup;
 	}
 	
 	export interface UnpublishedProgramsEntityListing { 

@@ -3523,6 +3523,8 @@ POST /api/v2/users
 
 Create user
 
+If user creation is successful but the provided password is invalid or configuration fails, POST api/v2/users/{userId}/password can be used to re-attempt password configuration.
+
 Requires ANY permissions:
 
 * directory:user:add

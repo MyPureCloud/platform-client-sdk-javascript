@@ -5,7 +5,7 @@ class UsersApi {
 	/**
 	 * Users service.
 	 * @module purecloud-platform-client-v2/api/UsersApi
-	 * @version 145.0.0
+	 * @version 146.0.0
 	 */
 
 	/**
@@ -1868,7 +1868,7 @@ class UsersApi {
 
 	/**
 	 * Create user
-	 * 
+	 * If user creation is successful but the provided password is invalid or configuration fails, POST api/v2/users/{userId}/password can be used to re-attempt password configuration.
 	 * @param {Object} body User
 	 */
 	postUsers(body) { 

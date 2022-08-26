@@ -1445,7 +1445,7 @@
   "getarchitectivrs": {
     "operationId": "getarchitectivrs",
     "functionName": "getArchitectIvrs",
-    "signature": "getArchitectIvrs(pageNumber, pageSize, sortBy, sortOrder, name)",
+    "signature": "getArchitectIvrs(pageNumber, pageSize, sortBy, sortOrder, name, dnis)",
     "parameters": [
       {
         "name": "pageNumber",
@@ -1471,10 +1471,15 @@
         "name": "name",
         "type": "String",
         "required": "false"
+      },
+      {
+        "name": "dnis",
+        "type": "String",
+        "required": "false"
       }
     ],
     "return": "IVREntityListing",
-    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.ArchitectApi();\n\nlet opts = { \n  \"pageNumber\": 1, // Number | Page number\n  \"pageSize\": 25, // Number | Page size\n  \"sortBy\": \"name\", // String | Sort by\n  \"sortOrder\": \"ASC\", // String | Sort order\n  \"name\": \"name_example\" // String | Name of the IVR to filter by.\n};\n\n// Get IVR configs.\napiInstance.getArchitectIvrs(opts)\n  .then((data) => {\n    console.log(`getArchitectIvrs success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getArchitectIvrs\");\n    console.error(err);\n  });"
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.ArchitectApi();\n\nlet opts = { \n  \"pageNumber\": 1, // Number | Page number\n  \"pageSize\": 25, // Number | Page size\n  \"sortBy\": \"name\", // String | Sort by\n  \"sortOrder\": \"ASC\", // String | Sort order\n  \"name\": \"name_example\", // String | Name of the IVR to filter by.\n  \"dnis\": \"dnis_example\" // String | The phone number of the IVR to filter by.\n};\n\n// Get IVR configs.\napiInstance.getArchitectIvrs(opts)\n  .then((data) => {\n    console.log(`getArchitectIvrs success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getArchitectIvrs\");\n    console.error(err);\n  });"
   },
   "getarchitectprompt": {
     "operationId": "getarchitectprompt",
@@ -14075,6 +14080,121 @@
     "return": "KnowledgeBase",
     "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.KnowledgeApi();\n\nlet knowledgeBaseId = \"knowledgeBaseId_example\"; // String | Knowledge base ID\n\n// Delete knowledge base\napiInstance.deleteKnowledgeKnowledgebase(knowledgeBaseId)\n  .then((data) => {\n    console.log(`deleteKnowledgeKnowledgebase success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling deleteKnowledgeKnowledgebase\");\n    console.error(err);\n  });"
   },
+  "deleteknowledgeknowledgebasecategory": {
+    "operationId": "deleteknowledgeknowledgebasecategory",
+    "functionName": "deleteKnowledgeKnowledgebaseCategory",
+    "signature": "deleteKnowledgeKnowledgebaseCategory(knowledgeBaseId, categoryId)",
+    "parameters": [
+      {
+        "name": "knowledgeBaseId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "categoryId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "return": "CategoryResponse",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.KnowledgeApi();\n\nlet knowledgeBaseId = \"knowledgeBaseId_example\"; // String | Knowledge base ID\nlet categoryId = \"categoryId_example\"; // String | Category ID\n\n// Delete category\napiInstance.deleteKnowledgeKnowledgebaseCategory(knowledgeBaseId, categoryId)\n  .then((data) => {\n    console.log(`deleteKnowledgeKnowledgebaseCategory success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling deleteKnowledgeKnowledgebaseCategory\");\n    console.error(err);\n  });"
+  },
+  "deleteknowledgeknowledgebasedocument": {
+    "operationId": "deleteknowledgeknowledgebasedocument",
+    "functionName": "deleteKnowledgeKnowledgebaseDocument",
+    "signature": "deleteKnowledgeKnowledgebaseDocument(knowledgeBaseId, documentId)",
+    "parameters": [
+      {
+        "name": "knowledgeBaseId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "documentId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.KnowledgeApi();\n\nlet knowledgeBaseId = \"knowledgeBaseId_example\"; // String | Knowledge base ID.\nlet documentId = \"documentId_example\"; // String | Document ID.\n\n// Delete document.\napiInstance.deleteKnowledgeKnowledgebaseDocument(knowledgeBaseId, documentId)\n  .then(() => {\n    console.log(\"deleteKnowledgeKnowledgebaseDocument returned successfully.\");\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling deleteKnowledgeKnowledgebaseDocument\");\n    console.error(err);\n  });"
+  },
+  "deleteknowledgeknowledgebasedocumentvariation": {
+    "operationId": "deleteknowledgeknowledgebasedocumentvariation",
+    "functionName": "deleteKnowledgeKnowledgebaseDocumentVariation",
+    "signature": "deleteKnowledgeKnowledgebaseDocumentVariation(documentVariationId, documentId, knowledgeBaseId)",
+    "parameters": [
+      {
+        "name": "documentVariationId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "documentId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "knowledgeBaseId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.KnowledgeApi();\n\nlet documentVariationId = \"documentVariationId_example\"; // String | Globally unique identifier for a document variation.\nlet documentId = \"documentId_example\"; // String | Globally unique identifier for a document.\nlet knowledgeBaseId = \"knowledgeBaseId_example\"; // String | Globally unique identifier for a knowledge base.\n\n// Delete a variation for a document.\napiInstance.deleteKnowledgeKnowledgebaseDocumentVariation(documentVariationId, documentId, knowledgeBaseId)\n  .then(() => {\n    console.log(\"deleteKnowledgeKnowledgebaseDocumentVariation returned successfully.\");\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling deleteKnowledgeKnowledgebaseDocumentVariation\");\n    console.error(err);\n  });"
+  },
+  "deleteknowledgeknowledgebaseexportjob": {
+    "operationId": "deleteknowledgeknowledgebaseexportjob",
+    "functionName": "deleteKnowledgeKnowledgebaseExportJob",
+    "signature": "deleteKnowledgeKnowledgebaseExportJob(knowledgeBaseId, exportJobId)",
+    "parameters": [
+      {
+        "name": "knowledgeBaseId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "exportJobId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.KnowledgeApi();\n\nlet knowledgeBaseId = \"knowledgeBaseId_example\"; // String | Knowledge base ID\nlet exportJobId = \"exportJobId_example\"; // String | Export job ID\n\n// Delete export job\napiInstance.deleteKnowledgeKnowledgebaseExportJob(knowledgeBaseId, exportJobId)\n  .then(() => {\n    console.log(\"deleteKnowledgeKnowledgebaseExportJob returned successfully.\");\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling deleteKnowledgeKnowledgebaseExportJob\");\n    console.error(err);\n  });"
+  },
+  "deleteknowledgeknowledgebaseimportjob": {
+    "operationId": "deleteknowledgeknowledgebaseimportjob",
+    "functionName": "deleteKnowledgeKnowledgebaseImportJob",
+    "signature": "deleteKnowledgeKnowledgebaseImportJob(knowledgeBaseId, importJobId)",
+    "parameters": [
+      {
+        "name": "knowledgeBaseId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "importJobId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.KnowledgeApi();\n\nlet knowledgeBaseId = \"knowledgeBaseId_example\"; // String | Knowledge base ID\nlet importJobId = \"importJobId_example\"; // String | Import job ID\n\n// Delete import job\napiInstance.deleteKnowledgeKnowledgebaseImportJob(knowledgeBaseId, importJobId)\n  .then(() => {\n    console.log(\"deleteKnowledgeKnowledgebaseImportJob returned successfully.\");\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling deleteKnowledgeKnowledgebaseImportJob\");\n    console.error(err);\n  });"
+  },
+  "deleteknowledgeknowledgebaselabel": {
+    "operationId": "deleteknowledgeknowledgebaselabel",
+    "functionName": "deleteKnowledgeKnowledgebaseLabel",
+    "signature": "deleteKnowledgeKnowledgebaseLabel(knowledgeBaseId, labelId)",
+    "parameters": [
+      {
+        "name": "knowledgeBaseId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "labelId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "return": "LabelResponse",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.KnowledgeApi();\n\nlet knowledgeBaseId = \"knowledgeBaseId_example\"; // String | Knowledge base ID\nlet labelId = \"labelId_example\"; // String | Label ID\n\n// Delete label\napiInstance.deleteKnowledgeKnowledgebaseLabel(knowledgeBaseId, labelId)\n  .then((data) => {\n    console.log(`deleteKnowledgeKnowledgebaseLabel success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling deleteKnowledgeKnowledgebaseLabel\");\n    console.error(err);\n  });"
+  },
   "deleteknowledgeknowledgebaselanguagecategory": {
     "operationId": "deleteknowledgeknowledgebaselanguagecategory",
     "functionName": "deleteKnowledgeKnowledgebaseLanguageCategory",
@@ -14146,6 +14266,113 @@
     ],
     "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.KnowledgeApi();\n\nlet knowledgeBaseId = \"knowledgeBaseId_example\"; // String | Knowledge base ID\nlet languageCode = en-US; // String | Language code, format: iso2-LOCALE\nlet importId = \"importId_example\"; // String | Import ID\n\n// Delete import operation\napiInstance.deleteKnowledgeKnowledgebaseLanguageDocumentsImport(knowledgeBaseId, languageCode, importId)\n  .then(() => {\n    console.log(\"deleteKnowledgeKnowledgebaseLanguageDocumentsImport returned successfully.\");\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling deleteKnowledgeKnowledgebaseLanguageDocumentsImport\");\n    console.error(err);\n  });"
   },
+  "getknowledgeguestsessioncategories": {
+    "operationId": "getknowledgeguestsessioncategories",
+    "functionName": "getKnowledgeGuestSessionCategories",
+    "signature": "getKnowledgeGuestSessionCategories(sessionId, before, after, pageSize, parentId, isRoot, name, sortBy, expand, includeDocumentCount)",
+    "parameters": [
+      {
+        "name": "sessionId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "before",
+        "type": "String",
+        "required": "false"
+      },
+      {
+        "name": "after",
+        "type": "String",
+        "required": "false"
+      },
+      {
+        "name": "pageSize",
+        "type": "String",
+        "required": "false"
+      },
+      {
+        "name": "parentId",
+        "type": "String",
+        "required": "false"
+      },
+      {
+        "name": "isRoot",
+        "type": "Boolean",
+        "required": "false"
+      },
+      {
+        "name": "name",
+        "type": "String",
+        "required": "false"
+      },
+      {
+        "name": "sortBy",
+        "type": "String",
+        "required": "false"
+      },
+      {
+        "name": "expand",
+        "type": "String",
+        "required": "false"
+      },
+      {
+        "name": "includeDocumentCount",
+        "type": "Boolean",
+        "required": "false"
+      }
+    ],
+    "return": "GuestCategoryResponseListing",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\nlet apiInstance = new platformClient.KnowledgeApi();\n\nlet sessionId = \"sessionId_example\"; // String | Knowledge guest session ID.\nlet opts = { \n  \"before\": \"before_example\", // String | The cursor that points to the start of the set of entities that has been returned.\n  \"after\": \"after_example\", // String | The cursor that points to the end of the set of entities that has been returned.\n  \"pageSize\": \"pageSize_example\", // String | Number of entities to return. Maximum of 200.\n  \"parentId\": \"parentId_example\", // String | If specified, retrieves the children categories by parent category ID.\n  \"isRoot\": true, // Boolean | If specified, retrieves only the root categories.\n  \"name\": \"name_example\", // String | Filter to return the categories that starts with the given category name.\n  \"sortBy\": \"Name\", // String | Name: sort by category names alphabetically; Hierarchy: sort by the full path of hierarchical category names alphabetically\n  \"expand\": \"expand_example\", // String | The specified entity attribute will be filled. Supported value:Ancestors: every ancestors will be filled via the parent attribute recursively,but only the id, name, parentId will be present for the ancestors.\n  \"includeDocumentCount\": true // Boolean | If specified, retrieves the number of documents related to category.\n};\n\n// Get categories\napiInstance.getKnowledgeGuestSessionCategories(sessionId, opts)\n  .then((data) => {\n    console.log(`getKnowledgeGuestSessionCategories success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getKnowledgeGuestSessionCategories\");\n    console.error(err);\n  });"
+  },
+  "getknowledgeguestsessiondocument": {
+    "operationId": "getknowledgeguestsessiondocument",
+    "functionName": "getKnowledgeGuestSessionDocument",
+    "signature": "getKnowledgeGuestSessionDocument(sessionId, documentId)",
+    "parameters": [
+      {
+        "name": "sessionId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "documentId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "return": "KnowledgeGuestDocument",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\nlet apiInstance = new platformClient.KnowledgeApi();\n\nlet sessionId = \"sessionId_example\"; // String | Knowledge guest session ID.\nlet documentId = \"documentId_example\"; // String | Document ID\n\n// Get a knowledge document by ID.\napiInstance.getKnowledgeGuestSessionDocument(sessionId, documentId)\n  .then((data) => {\n    console.log(`getKnowledgeGuestSessionDocument success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getKnowledgeGuestSessionDocument\");\n    console.error(err);\n  });"
+  },
+  "getknowledgeguestsessiondocuments": {
+    "operationId": "getknowledgeguestsessiondocuments",
+    "functionName": "getKnowledgeGuestSessionDocuments",
+    "signature": "getKnowledgeGuestSessionDocuments(sessionId, categoryId, includeSubcategories, pageSize)",
+    "parameters": [
+      {
+        "name": "sessionId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "categoryId",
+        "type": "[String]",
+        "required": "false"
+      },
+      {
+        "name": "includeSubcategories",
+        "type": "Boolean",
+        "required": "false"
+      },
+      {
+        "name": "pageSize",
+        "type": "String",
+        "required": "false"
+      }
+    ],
+    "return": "KnowledgeGuestDocumentResponseListing",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\nlet apiInstance = new platformClient.KnowledgeApi();\n\nlet sessionId = \"sessionId_example\"; // String | Knowledge guest session ID.\nlet opts = { \n  \"categoryId\": [\"categoryId_example\"], // [String] | If specified, retrieves documents associated with category ids, comma separated values expected.\n  \"includeSubcategories\": true, // Boolean | Works along with 'categoryId' query parameter. If specified, retrieves documents associated with category ids and its children categories.\n  \"pageSize\": \"pageSize_example\" // String | Number of entities to return. Maximum of 200.\n};\n\n// Get documents.\napiInstance.getKnowledgeGuestSessionDocuments(sessionId, opts)\n  .then((data) => {\n    console.log(`getKnowledgeGuestSessionDocuments success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getKnowledgeGuestSessionDocuments\");\n    console.error(err);\n  });"
+  },
   "getknowledgeknowledgebase": {
     "operationId": "getknowledgeknowledgebase",
     "functionName": "getKnowledgeKnowledgebase",
@@ -14159,6 +14386,472 @@
     ],
     "return": "KnowledgeBase",
     "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.KnowledgeApi();\n\nlet knowledgeBaseId = \"knowledgeBaseId_example\"; // String | Knowledge base ID\n\n// Get knowledge base\napiInstance.getKnowledgeKnowledgebase(knowledgeBaseId)\n  .then((data) => {\n    console.log(`getKnowledgeKnowledgebase success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getKnowledgeKnowledgebase\");\n    console.error(err);\n  });"
+  },
+  "getknowledgeknowledgebasecategories": {
+    "operationId": "getknowledgeknowledgebasecategories",
+    "functionName": "getKnowledgeKnowledgebaseCategories",
+    "signature": "getKnowledgeKnowledgebaseCategories(knowledgeBaseId, before, after, pageSize, parentId, isRoot, name, sortBy, expand, includeDocumentCount)",
+    "parameters": [
+      {
+        "name": "knowledgeBaseId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "before",
+        "type": "String",
+        "required": "false"
+      },
+      {
+        "name": "after",
+        "type": "String",
+        "required": "false"
+      },
+      {
+        "name": "pageSize",
+        "type": "String",
+        "required": "false"
+      },
+      {
+        "name": "parentId",
+        "type": "String",
+        "required": "false"
+      },
+      {
+        "name": "isRoot",
+        "type": "Boolean",
+        "required": "false"
+      },
+      {
+        "name": "name",
+        "type": "String",
+        "required": "false"
+      },
+      {
+        "name": "sortBy",
+        "type": "String",
+        "required": "false"
+      },
+      {
+        "name": "expand",
+        "type": "String",
+        "required": "false"
+      },
+      {
+        "name": "includeDocumentCount",
+        "type": "Boolean",
+        "required": "false"
+      }
+    ],
+    "return": "CategoryResponseListing",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.KnowledgeApi();\n\nlet knowledgeBaseId = \"knowledgeBaseId_example\"; // String | Knowledge base ID\nlet opts = { \n  \"before\": \"before_example\", // String | The cursor that points to the start of the set of entities that has been returned.\n  \"after\": \"after_example\", // String | The cursor that points to the end of the set of entities that has been returned.\n  \"pageSize\": \"pageSize_example\", // String | Number of entities to return. Maximum of 200.\n  \"parentId\": \"parentId_example\", // String | If specified, retrieves the children categories by parent category ID.\n  \"isRoot\": true, // Boolean | If specified, retrieves only the root categories.\n  \"name\": \"name_example\", // String | Filter to return the categories that starts with the given category name.\n  \"sortBy\": \"Name\", // String | Name: sort by category names alphabetically; Hierarchy: sort by the full path of hierarchical category names alphabetically\n  \"expand\": \"expand_example\", // String | The specified entity attribute will be filled. Supported value:Ancestors: every ancestors will be filled via the parent attribute recursively,but only the id, name, parentId will be present for the ancestors.\n  \"includeDocumentCount\": true // Boolean | If specified, retrieves the number of documents related to category.\n};\n\n// Get categories\napiInstance.getKnowledgeKnowledgebaseCategories(knowledgeBaseId, opts)\n  .then((data) => {\n    console.log(`getKnowledgeKnowledgebaseCategories success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getKnowledgeKnowledgebaseCategories\");\n    console.error(err);\n  });"
+  },
+  "getknowledgeknowledgebasecategory": {
+    "operationId": "getknowledgeknowledgebasecategory",
+    "functionName": "getKnowledgeKnowledgebaseCategory",
+    "signature": "getKnowledgeKnowledgebaseCategory(knowledgeBaseId, categoryId)",
+    "parameters": [
+      {
+        "name": "knowledgeBaseId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "categoryId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "return": "CategoryResponse",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.KnowledgeApi();\n\nlet knowledgeBaseId = \"knowledgeBaseId_example\"; // String | Knowledge base ID\nlet categoryId = \"categoryId_example\"; // String | Category ID\n\n// Get category\napiInstance.getKnowledgeKnowledgebaseCategory(knowledgeBaseId, categoryId)\n  .then((data) => {\n    console.log(`getKnowledgeKnowledgebaseCategory success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getKnowledgeKnowledgebaseCategory\");\n    console.error(err);\n  });"
+  },
+  "getknowledgeknowledgebasedocument": {
+    "operationId": "getknowledgeknowledgebasedocument",
+    "functionName": "getKnowledgeKnowledgebaseDocument",
+    "signature": "getKnowledgeKnowledgebaseDocument(knowledgeBaseId, documentId, expand, state)",
+    "parameters": [
+      {
+        "name": "knowledgeBaseId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "documentId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "expand",
+        "type": "[String]",
+        "required": "false"
+      },
+      {
+        "name": "state",
+        "type": "String",
+        "required": "false"
+      }
+    ],
+    "return": "KnowledgeDocumentResponse",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.KnowledgeApi();\n\nlet knowledgeBaseId = \"knowledgeBaseId_example\"; // String | Knowledge base ID.\nlet documentId = \"documentId_example\"; // String | Document ID.\nlet opts = { \n  \"expand\": [\"expand_example\"], // [String] | The specified entity attributes will be filled. Comma separated values expected. Max No. of variations that can be returned on expand is 20.\n  \"state\": \"state_example\" // String | when state is Draft, draft version of the document is returned,otherwise by default published version is returned in the response.\n};\n\n// Get document.\napiInstance.getKnowledgeKnowledgebaseDocument(knowledgeBaseId, documentId, opts)\n  .then((data) => {\n    console.log(`getKnowledgeKnowledgebaseDocument success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getKnowledgeKnowledgebaseDocument\");\n    console.error(err);\n  });"
+  },
+  "getknowledgeknowledgebasedocumentvariation": {
+    "operationId": "getknowledgeknowledgebasedocumentvariation",
+    "functionName": "getKnowledgeKnowledgebaseDocumentVariation",
+    "signature": "getKnowledgeKnowledgebaseDocumentVariation(documentVariationId, documentId, knowledgeBaseId, documentState)",
+    "parameters": [
+      {
+        "name": "documentVariationId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "documentId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "knowledgeBaseId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "documentState",
+        "type": "String",
+        "required": "false"
+      }
+    ],
+    "return": "DocumentVariation",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.KnowledgeApi();\n\nlet documentVariationId = \"documentVariationId_example\"; // String | Globally unique identifier for a document variation.\nlet documentId = \"documentId_example\"; // String | Globally unique identifier for a document.\nlet knowledgeBaseId = \"knowledgeBaseId_example\"; // String | Globally unique identifier for a knowledge base.\nlet opts = { \n  \"documentState\": \"documentState_example\" // String | The state of the document.\n};\n\n// Get a variation for a document.\napiInstance.getKnowledgeKnowledgebaseDocumentVariation(documentVariationId, documentId, knowledgeBaseId, opts)\n  .then((data) => {\n    console.log(`getKnowledgeKnowledgebaseDocumentVariation success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getKnowledgeKnowledgebaseDocumentVariation\");\n    console.error(err);\n  });"
+  },
+  "getknowledgeknowledgebasedocumentvariations": {
+    "operationId": "getknowledgeknowledgebasedocumentvariations",
+    "functionName": "getKnowledgeKnowledgebaseDocumentVariations",
+    "signature": "getKnowledgeKnowledgebaseDocumentVariations(knowledgeBaseId, documentId, before, after, pageSize, documentState)",
+    "parameters": [
+      {
+        "name": "knowledgeBaseId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "documentId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "before",
+        "type": "String",
+        "required": "false"
+      },
+      {
+        "name": "after",
+        "type": "String",
+        "required": "false"
+      },
+      {
+        "name": "pageSize",
+        "type": "String",
+        "required": "false"
+      },
+      {
+        "name": "documentState",
+        "type": "String",
+        "required": "false"
+      }
+    ],
+    "return": "DocumentVariationListing",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.KnowledgeApi();\n\nlet knowledgeBaseId = \"knowledgeBaseId_example\"; // String | Globally unique identifier for the knowledge base.\nlet documentId = \"documentId_example\"; // String | Globally unique identifier for the document.\nlet opts = { \n  \"before\": \"before_example\", // String | The cursor that points to the start of the set of entities that has been returned.\n  \"after\": \"after_example\", // String | The cursor that points to the end of the set of entities that has been returned.\n  \"pageSize\": \"pageSize_example\", // String | Number of entities to return. Maximum of 200.\n  \"documentState\": \"documentState_example\" // String | The state of the document.\n};\n\n// Get variations for a document.\napiInstance.getKnowledgeKnowledgebaseDocumentVariations(knowledgeBaseId, documentId, opts)\n  .then((data) => {\n    console.log(`getKnowledgeKnowledgebaseDocumentVariations success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getKnowledgeKnowledgebaseDocumentVariations\");\n    console.error(err);\n  });"
+  },
+  "getknowledgeknowledgebasedocumentversion": {
+    "operationId": "getknowledgeknowledgebasedocumentversion",
+    "functionName": "getKnowledgeKnowledgebaseDocumentVersion",
+    "signature": "getKnowledgeKnowledgebaseDocumentVersion(knowledgeBaseId, documentId, versionId, expand)",
+    "parameters": [
+      {
+        "name": "knowledgeBaseId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "documentId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "versionId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "expand",
+        "type": "[String]",
+        "required": "false"
+      }
+    ],
+    "return": "KnowledgeDocumentVersion",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.KnowledgeApi();\n\nlet knowledgeBaseId = \"knowledgeBaseId_example\"; // String | Globally unique identifier for the knowledge base.\nlet documentId = \"documentId_example\"; // String | Globally unique identifier for the document.\nlet versionId = \"versionId_example\"; // String | Globally unique identifier for the document version.\nlet opts = { \n  \"expand\": [\"expand_example\"] // [String] | The specified entity attributes will be filled. Comma separated values expected.\n};\n\n// Get document version.\napiInstance.getKnowledgeKnowledgebaseDocumentVersion(knowledgeBaseId, documentId, versionId, opts)\n  .then((data) => {\n    console.log(`getKnowledgeKnowledgebaseDocumentVersion success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getKnowledgeKnowledgebaseDocumentVersion\");\n    console.error(err);\n  });"
+  },
+  "getknowledgeknowledgebasedocumentversionvariation": {
+    "operationId": "getknowledgeknowledgebasedocumentversionvariation",
+    "functionName": "getKnowledgeKnowledgebaseDocumentVersionVariation",
+    "signature": "getKnowledgeKnowledgebaseDocumentVersionVariation(knowledgeBaseId, documentId, versionId, variationId)",
+    "parameters": [
+      {
+        "name": "knowledgeBaseId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "documentId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "versionId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "variationId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "return": "KnowledgeDocumentVersionVariation",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.KnowledgeApi();\n\nlet knowledgeBaseId = \"knowledgeBaseId_example\"; // String | Globally unique identifier for the knowledge base.\nlet documentId = \"documentId_example\"; // String | Globally unique identifier for the document.\nlet versionId = \"versionId_example\"; // String | Globally unique identifier for the document version.\nlet variationId = \"variationId_example\"; // String | Globally unique identifier for the document version variation.\n\n// Get variation for the given document version.\napiInstance.getKnowledgeKnowledgebaseDocumentVersionVariation(knowledgeBaseId, documentId, versionId, variationId)\n  .then((data) => {\n    console.log(`getKnowledgeKnowledgebaseDocumentVersionVariation success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getKnowledgeKnowledgebaseDocumentVersionVariation\");\n    console.error(err);\n  });"
+  },
+  "getknowledgeknowledgebasedocumentversionvariations": {
+    "operationId": "getknowledgeknowledgebasedocumentversionvariations",
+    "functionName": "getKnowledgeKnowledgebaseDocumentVersionVariations",
+    "signature": "getKnowledgeKnowledgebaseDocumentVersionVariations(knowledgeBaseId, documentId, versionId, before, after, pageSize)",
+    "parameters": [
+      {
+        "name": "knowledgeBaseId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "documentId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "versionId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "before",
+        "type": "String",
+        "required": "false"
+      },
+      {
+        "name": "after",
+        "type": "String",
+        "required": "false"
+      },
+      {
+        "name": "pageSize",
+        "type": "String",
+        "required": "false"
+      }
+    ],
+    "return": "KnowledgeDocumentVersionVariationListing",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.KnowledgeApi();\n\nlet knowledgeBaseId = \"knowledgeBaseId_example\"; // String | Globally unique identifier for the knowledge base.\nlet documentId = \"documentId_example\"; // String | Globally unique identifier for the document.\nlet versionId = \"versionId_example\"; // String | Globally unique identifier for the document version.\nlet opts = { \n  \"before\": \"before_example\", // String | The cursor that points to the start of the set of entities that has been returned.\n  \"after\": \"after_example\", // String | The cursor that points to the end of the set of entities that has been returned.\n  \"pageSize\": \"pageSize_example\" // String | Number of entities to return. Maximum of 200.\n};\n\n// Get variations for the given document version.\napiInstance.getKnowledgeKnowledgebaseDocumentVersionVariations(knowledgeBaseId, documentId, versionId, opts)\n  .then((data) => {\n    console.log(`getKnowledgeKnowledgebaseDocumentVersionVariations success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getKnowledgeKnowledgebaseDocumentVersionVariations\");\n    console.error(err);\n  });"
+  },
+  "getknowledgeknowledgebasedocumentversions": {
+    "operationId": "getknowledgeknowledgebasedocumentversions",
+    "functionName": "getKnowledgeKnowledgebaseDocumentVersions",
+    "signature": "getKnowledgeKnowledgebaseDocumentVersions(knowledgeBaseId, documentId, before, after, pageSize, expand)",
+    "parameters": [
+      {
+        "name": "knowledgeBaseId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "documentId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "before",
+        "type": "String",
+        "required": "false"
+      },
+      {
+        "name": "after",
+        "type": "String",
+        "required": "false"
+      },
+      {
+        "name": "pageSize",
+        "type": "String",
+        "required": "false"
+      },
+      {
+        "name": "expand",
+        "type": "[String]",
+        "required": "false"
+      }
+    ],
+    "return": "KnowledgeDocumentVersionListing",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.KnowledgeApi();\n\nlet knowledgeBaseId = \"knowledgeBaseId_example\"; // String | Globally unique identifier for the knowledge base.\nlet documentId = \"documentId_example\"; // String | Globally unique identifier for the document.\nlet opts = { \n  \"before\": \"before_example\", // String | The cursor that points to the start of the set of entities that has been returned.\n  \"after\": \"after_example\", // String | The cursor that points to the end of the set of entities that has been returned.\n  \"pageSize\": \"pageSize_example\", // String | Number of entities to return. Maximum of 200.\n  \"expand\": [\"expand_example\"] // [String] | The specified entity attributes will be filled. Comma separated values expected.\n};\n\n// Get document versions.\napiInstance.getKnowledgeKnowledgebaseDocumentVersions(knowledgeBaseId, documentId, opts)\n  .then((data) => {\n    console.log(`getKnowledgeKnowledgebaseDocumentVersions success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getKnowledgeKnowledgebaseDocumentVersions\");\n    console.error(err);\n  });"
+  },
+  "getknowledgeknowledgebasedocuments": {
+    "operationId": "getknowledgeknowledgebasedocuments",
+    "functionName": "getKnowledgeKnowledgebaseDocuments",
+    "signature": "getKnowledgeKnowledgebaseDocuments(knowledgeBaseId, before, after, pageSize, interval, categoryId, includeSubcategories, includeDrafts, labelIds, expand)",
+    "parameters": [
+      {
+        "name": "knowledgeBaseId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "before",
+        "type": "String",
+        "required": "false"
+      },
+      {
+        "name": "after",
+        "type": "String",
+        "required": "false"
+      },
+      {
+        "name": "pageSize",
+        "type": "String",
+        "required": "false"
+      },
+      {
+        "name": "interval",
+        "type": "String",
+        "required": "false"
+      },
+      {
+        "name": "categoryId",
+        "type": "[String]",
+        "required": "false"
+      },
+      {
+        "name": "includeSubcategories",
+        "type": "Boolean",
+        "required": "false"
+      },
+      {
+        "name": "includeDrafts",
+        "type": "Boolean",
+        "required": "false"
+      },
+      {
+        "name": "labelIds",
+        "type": "[String]",
+        "required": "false"
+      },
+      {
+        "name": "expand",
+        "type": "[String]",
+        "required": "false"
+      }
+    ],
+    "return": "KnowledgeDocumentResponseListing",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.KnowledgeApi();\n\nlet knowledgeBaseId = \"knowledgeBaseId_example\"; // String | Knowledge base ID\nlet opts = { \n  \"before\": \"before_example\", // String | The cursor that points to the start of the set of entities that has been returned.\n  \"after\": \"after_example\", // String | The cursor that points to the end of the set of entities that has been returned.\n  \"pageSize\": \"pageSize_example\", // String | Number of entities to return. Maximum of 200.\n  \"interval\": \"interval_example\", // String | Retrieves the documents modified in specified date and time range. If the after and before cursor parameters are within this interval, it would return valid data, otherwise it throws an error.The dates in the interval are represented in ISO-8601 format: YYYY-MM-DDThh:mm:ssZ/YYYY-MM-DDThh:mm:ssZ\n  \"categoryId\": [\"categoryId_example\"], // [String] | If specified, retrieves documents associated with category ids, comma separated values expected.\n  \"includeSubcategories\": true, // Boolean | Works along with 'categoryId' query parameter. If specified, retrieves documents associated with category ids and its children categories.\n  \"includeDrafts\": true, // Boolean | If includeDrafts is true, Documents in the draft state are also returned in the response.\n  \"labelIds\": [\"labelIds_example\"], // [String] | If specified, retrieves documents associated with label ids, comma separated values expected.\n  \"expand\": [\"expand_example\"] // [String] | The specified entity attributes will be filled. Comma separated values expected.\n};\n\n// Get documents.\napiInstance.getKnowledgeKnowledgebaseDocuments(knowledgeBaseId, opts)\n  .then((data) => {\n    console.log(`getKnowledgeKnowledgebaseDocuments success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getKnowledgeKnowledgebaseDocuments\");\n    console.error(err);\n  });"
+  },
+  "getknowledgeknowledgebaseexportjob": {
+    "operationId": "getknowledgeknowledgebaseexportjob",
+    "functionName": "getKnowledgeKnowledgebaseExportJob",
+    "signature": "getKnowledgeKnowledgebaseExportJob(knowledgeBaseId, exportJobId)",
+    "parameters": [
+      {
+        "name": "knowledgeBaseId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "exportJobId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "return": "KnowledgeExportJobResponse",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.KnowledgeApi();\n\nlet knowledgeBaseId = \"knowledgeBaseId_example\"; // String | Knowledge base ID\nlet exportJobId = \"exportJobId_example\"; // String | Export job ID\n\n// Get export job report\napiInstance.getKnowledgeKnowledgebaseExportJob(knowledgeBaseId, exportJobId)\n  .then((data) => {\n    console.log(`getKnowledgeKnowledgebaseExportJob success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getKnowledgeKnowledgebaseExportJob\");\n    console.error(err);\n  });"
+  },
+  "getknowledgeknowledgebaseimportjob": {
+    "operationId": "getknowledgeknowledgebaseimportjob",
+    "functionName": "getKnowledgeKnowledgebaseImportJob",
+    "signature": "getKnowledgeKnowledgebaseImportJob(knowledgeBaseId, importJobId)",
+    "parameters": [
+      {
+        "name": "knowledgeBaseId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "importJobId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "return": "KnowledgeImportJobResponse",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.KnowledgeApi();\n\nlet knowledgeBaseId = \"knowledgeBaseId_example\"; // String | Knowledge base ID\nlet importJobId = \"importJobId_example\"; // String | Import job ID\n\n// Get import job report\napiInstance.getKnowledgeKnowledgebaseImportJob(knowledgeBaseId, importJobId)\n  .then((data) => {\n    console.log(`getKnowledgeKnowledgebaseImportJob success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getKnowledgeKnowledgebaseImportJob\");\n    console.error(err);\n  });"
+  },
+  "getknowledgeknowledgebaselabel": {
+    "operationId": "getknowledgeknowledgebaselabel",
+    "functionName": "getKnowledgeKnowledgebaseLabel",
+    "signature": "getKnowledgeKnowledgebaseLabel(knowledgeBaseId, labelId)",
+    "parameters": [
+      {
+        "name": "knowledgeBaseId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "labelId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "return": "LabelResponse",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.KnowledgeApi();\n\nlet knowledgeBaseId = \"knowledgeBaseId_example\"; // String | Knowledge base ID\nlet labelId = \"labelId_example\"; // String | Label ID\n\n// Get label\napiInstance.getKnowledgeKnowledgebaseLabel(knowledgeBaseId, labelId)\n  .then((data) => {\n    console.log(`getKnowledgeKnowledgebaseLabel success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getKnowledgeKnowledgebaseLabel\");\n    console.error(err);\n  });"
+  },
+  "getknowledgeknowledgebaselabels": {
+    "operationId": "getknowledgeknowledgebaselabels",
+    "functionName": "getKnowledgeKnowledgebaseLabels",
+    "signature": "getKnowledgeKnowledgebaseLabels(knowledgeBaseId, before, after, pageSize, name, includeDocumentCount)",
+    "parameters": [
+      {
+        "name": "knowledgeBaseId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "before",
+        "type": "String",
+        "required": "false"
+      },
+      {
+        "name": "after",
+        "type": "String",
+        "required": "false"
+      },
+      {
+        "name": "pageSize",
+        "type": "String",
+        "required": "false"
+      },
+      {
+        "name": "name",
+        "type": "String",
+        "required": "false"
+      },
+      {
+        "name": "includeDocumentCount",
+        "type": "Boolean",
+        "required": "false"
+      }
+    ],
+    "return": "LabelListing",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.KnowledgeApi();\n\nlet knowledgeBaseId = \"knowledgeBaseId_example\"; // String | Knowledge base ID\nlet opts = { \n  \"before\": \"before_example\", // String | The cursor that points to the start of the set of entities that has been returned.\n  \"after\": \"after_example\", // String | The cursor that points to the end of the set of entities that has been returned.\n  \"pageSize\": \"pageSize_example\", // String | Number of entities to return. Maximum of 200.\n  \"name\": \"name_example\", // String | Filter to return the labels that contains the given phrase in the name.\n  \"includeDocumentCount\": true // Boolean | If specified, retrieves the number of documents related to label.\n};\n\n// Get labels\napiInstance.getKnowledgeKnowledgebaseLabels(knowledgeBaseId, opts)\n  .then((data) => {\n    console.log(`getKnowledgeKnowledgebaseLabels success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getKnowledgeKnowledgebaseLabels\");\n    console.error(err);\n  });"
   },
   "getknowledgeknowledgebaselanguagecategories": {
     "operationId": "getknowledgeknowledgebaselanguagecategories",
@@ -14408,6 +15101,78 @@
     "return": "TrainingListing",
     "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.KnowledgeApi();\n\nlet knowledgeBaseId = \"knowledgeBaseId_example\"; // String | Knowledge base ID\nlet languageCode = en-US; // String | Language code, format: iso2-LOCALE\nlet opts = { \n  \"before\": \"before_example\", // String | The cursor that points to the start of the set of entities that has been returned.\n  \"after\": \"after_example\", // String | The cursor that points to the end of the set of entities that has been returned.\n  \"limit\": \"limit_example\", // String | Number of entities to return. Maximum of 200. Deprecated in favour of pageSize\n  \"pageSize\": \"pageSize_example\", // String | Number of entities to return. Maximum of 200.\n  \"knowledgeDocumentsState\": \"knowledgeDocumentsState_example\" // String | Return the training with the specified state of the trained documents.\n};\n\n// Get all trainings information for a knowledgebase\napiInstance.getKnowledgeKnowledgebaseLanguageTrainings(knowledgeBaseId, languageCode, opts)\n  .then((data) => {\n    console.log(`getKnowledgeKnowledgebaseLanguageTrainings success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getKnowledgeKnowledgebaseLanguageTrainings\");\n    console.error(err);\n  });"
   },
+  "getknowledgeknowledgebaseunansweredgroup": {
+    "operationId": "getknowledgeknowledgebaseunansweredgroup",
+    "functionName": "getKnowledgeKnowledgebaseUnansweredGroup",
+    "signature": "getKnowledgeKnowledgebaseUnansweredGroup(knowledgeBaseId, groupId, app)",
+    "parameters": [
+      {
+        "name": "knowledgeBaseId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "groupId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "app",
+        "type": "String",
+        "required": "false"
+      }
+    ],
+    "return": "UnansweredGroup",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.KnowledgeApi();\n\nlet knowledgeBaseId = \"knowledgeBaseId_example\"; // String | Knowledge base ID\nlet groupId = \"groupId_example\"; // String | The ID of the group to be retrieved.\nlet opts = { \n  \"app\": \"app_example\" // String | The app value to be used for filtering phrases.\n};\n\n// Get knowledge base unanswered group for a particular groupId\napiInstance.getKnowledgeKnowledgebaseUnansweredGroup(knowledgeBaseId, groupId, opts)\n  .then((data) => {\n    console.log(`getKnowledgeKnowledgebaseUnansweredGroup success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getKnowledgeKnowledgebaseUnansweredGroup\");\n    console.error(err);\n  });"
+  },
+  "getknowledgeknowledgebaseunansweredgroupphrasegroup": {
+    "operationId": "getknowledgeknowledgebaseunansweredgroupphrasegroup",
+    "functionName": "getKnowledgeKnowledgebaseUnansweredGroupPhrasegroup",
+    "signature": "getKnowledgeKnowledgebaseUnansweredGroupPhrasegroup(knowledgeBaseId, groupId, phraseGroupId, app)",
+    "parameters": [
+      {
+        "name": "knowledgeBaseId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "groupId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "phraseGroupId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "app",
+        "type": "String",
+        "required": "false"
+      }
+    ],
+    "return": "UnansweredPhraseGroup",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.KnowledgeApi();\n\nlet knowledgeBaseId = \"knowledgeBaseId_example\"; // String | Knowledge base ID\nlet groupId = \"groupId_example\"; // String | The ID of the group to be retrieved.\nlet phraseGroupId = \"phraseGroupId_example\"; // String | The ID of the phraseGroup to be retrieved.\nlet opts = { \n  \"app\": \"app_example\" // String | The app value to be used for filtering phrases.\n};\n\n// Get knowledge base unanswered phrase group for a particular phraseGroupId\napiInstance.getKnowledgeKnowledgebaseUnansweredGroupPhrasegroup(knowledgeBaseId, groupId, phraseGroupId, opts)\n  .then((data) => {\n    console.log(`getKnowledgeKnowledgebaseUnansweredGroupPhrasegroup success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getKnowledgeKnowledgebaseUnansweredGroupPhrasegroup\");\n    console.error(err);\n  });"
+  },
+  "getknowledgeknowledgebaseunansweredgroups": {
+    "operationId": "getknowledgeknowledgebaseunansweredgroups",
+    "functionName": "getKnowledgeKnowledgebaseUnansweredGroups",
+    "signature": "getKnowledgeKnowledgebaseUnansweredGroups(knowledgeBaseId, app)",
+    "parameters": [
+      {
+        "name": "knowledgeBaseId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "app",
+        "type": "String",
+        "required": "false"
+      }
+    ],
+    "return": "UnansweredGroups",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.KnowledgeApi();\n\nlet knowledgeBaseId = \"knowledgeBaseId_example\"; // String | Knowledge base ID\nlet opts = { \n  \"app\": \"app_example\" // String | The app value to be used for filtering phrases.\n};\n\n// Get knowledge base unanswered groups\napiInstance.getKnowledgeKnowledgebaseUnansweredGroups(knowledgeBaseId, opts)\n  .then((data) => {\n    console.log(`getKnowledgeKnowledgebaseUnansweredGroups success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getKnowledgeKnowledgebaseUnansweredGroups\");\n    console.error(err);\n  });"
+  },
   "getknowledgeknowledgebases": {
     "operationId": "getknowledgeknowledgebases",
     "functionName": "getKnowledgeKnowledgebases",
@@ -14462,6 +15227,29 @@
     "return": "KnowledgeBaseListing",
     "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.KnowledgeApi();\n\nlet opts = { \n  \"before\": \"before_example\", // String | The cursor that points to the start of the set of entities that has been returned.\n  \"after\": \"after_example\", // String | The cursor that points to the end of the set of entities that has been returned.\n  \"limit\": \"limit_example\", // String | Number of entities to return. Maximum of 200. Deprecated in favour of pageSize\n  \"pageSize\": \"pageSize_example\", // String | Number of entities to return. Maximum of 200.\n  \"name\": \"name_example\", // String | Filter by Name.\n  \"coreLanguage\": \"coreLanguage_example\", // String | Filter by core language.\n  \"published\": true, // Boolean | Filter by published status.\n  \"sortBy\": \"sortBy_example\", // String | Sort by.\n  \"sortOrder\": \"sortOrder_example\" // String | Sort Order.\n};\n\n// Get knowledge bases\napiInstance.getKnowledgeKnowledgebases(opts)\n  .then((data) => {\n    console.log(`getKnowledgeKnowledgebases success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getKnowledgeKnowledgebases\");\n    console.error(err);\n  });"
   },
+  "patchknowledgeguestsessiondocumentssearchsearchid": {
+    "operationId": "patchknowledgeguestsessiondocumentssearchsearchid",
+    "functionName": "patchKnowledgeGuestSessionDocumentsSearchSearchId",
+    "signature": "patchKnowledgeGuestSessionDocumentsSearchSearchId(sessionId, searchId, body)",
+    "parameters": [
+      {
+        "name": "sessionId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "searchId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "Object",
+        "required": "true"
+      }
+    ],
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\nlet apiInstance = new platformClient.KnowledgeApi();\n\nlet sessionId = \"sessionId_example\"; // String | Knowledge guest session ID.\nlet searchId = \"searchId_example\"; // String | Search Result ID\nlet body = {}; // Object | \n\n// Update search result.\napiInstance.patchKnowledgeGuestSessionDocumentsSearchSearchId(sessionId, searchId, body)\n  .then(() => {\n    console.log(\"patchKnowledgeGuestSessionDocumentsSearchSearchId returned successfully.\");\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling patchKnowledgeGuestSessionDocumentsSearchSearchId\");\n    console.error(err);\n  });"
+  },
   "patchknowledgeknowledgebase": {
     "operationId": "patchknowledgeknowledgebase",
     "functionName": "patchKnowledgeKnowledgebase",
@@ -14480,6 +15268,154 @@
     ],
     "return": "KnowledgeBase",
     "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.KnowledgeApi();\n\nlet knowledgeBaseId = \"knowledgeBaseId_example\"; // String | Knowledge base ID\nlet body = {}; // Object | \n\n// Update knowledge base\napiInstance.patchKnowledgeKnowledgebase(knowledgeBaseId, body)\n  .then((data) => {\n    console.log(`patchKnowledgeKnowledgebase success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling patchKnowledgeKnowledgebase\");\n    console.error(err);\n  });"
+  },
+  "patchknowledgeknowledgebasecategory": {
+    "operationId": "patchknowledgeknowledgebasecategory",
+    "functionName": "patchKnowledgeKnowledgebaseCategory",
+    "signature": "patchKnowledgeKnowledgebaseCategory(knowledgeBaseId, categoryId, body)",
+    "parameters": [
+      {
+        "name": "knowledgeBaseId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "categoryId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "Object",
+        "required": "true"
+      }
+    ],
+    "return": "CategoryResponse",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.KnowledgeApi();\n\nlet knowledgeBaseId = \"knowledgeBaseId_example\"; // String | Knowledge base ID\nlet categoryId = \"categoryId_example\"; // String | Category ID\nlet body = {}; // Object | \n\n// Update category\napiInstance.patchKnowledgeKnowledgebaseCategory(knowledgeBaseId, categoryId, body)\n  .then((data) => {\n    console.log(`patchKnowledgeKnowledgebaseCategory success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling patchKnowledgeKnowledgebaseCategory\");\n    console.error(err);\n  });"
+  },
+  "patchknowledgeknowledgebasedocument": {
+    "operationId": "patchknowledgeknowledgebasedocument",
+    "functionName": "patchKnowledgeKnowledgebaseDocument",
+    "signature": "patchKnowledgeKnowledgebaseDocument(knowledgeBaseId, documentId, body)",
+    "parameters": [
+      {
+        "name": "knowledgeBaseId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "documentId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "Object",
+        "required": "true"
+      }
+    ],
+    "return": "KnowledgeDocumentResponse",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.KnowledgeApi();\n\nlet knowledgeBaseId = \"knowledgeBaseId_example\"; // String | Knowledge base ID.\nlet documentId = \"documentId_example\"; // String | Document ID.\nlet body = {}; // Object | \n\n// Update document.\napiInstance.patchKnowledgeKnowledgebaseDocument(knowledgeBaseId, documentId, body)\n  .then((data) => {\n    console.log(`patchKnowledgeKnowledgebaseDocument success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling patchKnowledgeKnowledgebaseDocument\");\n    console.error(err);\n  });"
+  },
+  "patchknowledgeknowledgebasedocumentvariation": {
+    "operationId": "patchknowledgeknowledgebasedocumentvariation",
+    "functionName": "patchKnowledgeKnowledgebaseDocumentVariation",
+    "signature": "patchKnowledgeKnowledgebaseDocumentVariation(documentVariationId, documentId, knowledgeBaseId, body)",
+    "parameters": [
+      {
+        "name": "documentVariationId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "documentId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "knowledgeBaseId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "Object",
+        "required": "true"
+      }
+    ],
+    "return": "DocumentVariation",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.KnowledgeApi();\n\nlet documentVariationId = \"documentVariationId_example\"; // String | Globally unique identifier for a document variation.\nlet documentId = \"documentId_example\"; // String | Globally unique identifier for a document.\nlet knowledgeBaseId = \"knowledgeBaseId_example\"; // String | Globally unique identifier for a knowledge base.\nlet body = {}; // Object | \n\n// Update a variation for a document.\napiInstance.patchKnowledgeKnowledgebaseDocumentVariation(documentVariationId, documentId, knowledgeBaseId, body)\n  .then((data) => {\n    console.log(`patchKnowledgeKnowledgebaseDocumentVariation success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling patchKnowledgeKnowledgebaseDocumentVariation\");\n    console.error(err);\n  });"
+  },
+  "patchknowledgeknowledgebasedocumentssearchsearchid": {
+    "operationId": "patchknowledgeknowledgebasedocumentssearchsearchid",
+    "functionName": "patchKnowledgeKnowledgebaseDocumentsSearchSearchId",
+    "signature": "patchKnowledgeKnowledgebaseDocumentsSearchSearchId(knowledgeBaseId, searchId, body)",
+    "parameters": [
+      {
+        "name": "knowledgeBaseId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "searchId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "Object",
+        "required": "false"
+      }
+    ],
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.KnowledgeApi();\n\nlet knowledgeBaseId = \"knowledgeBaseId_example\"; // String | The ID of knowledge base containing the documents to query.\nlet searchId = \"searchId_example\"; // String | Search Result ID\nlet opts = { \n  \"body\": {} // Object | \n};\n\n// Update search result.\napiInstance.patchKnowledgeKnowledgebaseDocumentsSearchSearchId(knowledgeBaseId, searchId, opts)\n  .then(() => {\n    console.log(\"patchKnowledgeKnowledgebaseDocumentsSearchSearchId returned successfully.\");\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling patchKnowledgeKnowledgebaseDocumentsSearchSearchId\");\n    console.error(err);\n  });"
+  },
+  "patchknowledgeknowledgebaseimportjob": {
+    "operationId": "patchknowledgeknowledgebaseimportjob",
+    "functionName": "patchKnowledgeKnowledgebaseImportJob",
+    "signature": "patchKnowledgeKnowledgebaseImportJob(knowledgeBaseId, importJobId, body)",
+    "parameters": [
+      {
+        "name": "knowledgeBaseId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "importJobId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "Object",
+        "required": "true"
+      }
+    ],
+    "return": "KnowledgeImportJobResponse",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.KnowledgeApi();\n\nlet knowledgeBaseId = \"knowledgeBaseId_example\"; // String | Knowledge base ID\nlet importJobId = \"importJobId_example\"; // String | Import job ID\nlet body = {}; // Object | \n\n// Start import job\napiInstance.patchKnowledgeKnowledgebaseImportJob(knowledgeBaseId, importJobId, body)\n  .then((data) => {\n    console.log(`patchKnowledgeKnowledgebaseImportJob success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling patchKnowledgeKnowledgebaseImportJob\");\n    console.error(err);\n  });"
+  },
+  "patchknowledgeknowledgebaselabel": {
+    "operationId": "patchknowledgeknowledgebaselabel",
+    "functionName": "patchKnowledgeKnowledgebaseLabel",
+    "signature": "patchKnowledgeKnowledgebaseLabel(knowledgeBaseId, labelId, body)",
+    "parameters": [
+      {
+        "name": "knowledgeBaseId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "labelId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "Object",
+        "required": "true"
+      }
+    ],
+    "return": "LabelResponse",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.KnowledgeApi();\n\nlet knowledgeBaseId = \"knowledgeBaseId_example\"; // String | Knowledge base ID\nlet labelId = \"labelId_example\"; // String | Label ID\nlet body = {}; // Object | \n\n// Update label\napiInstance.patchKnowledgeKnowledgebaseLabel(knowledgeBaseId, labelId, body)\n  .then((data) => {\n    console.log(`patchKnowledgeKnowledgebaseLabel success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling patchKnowledgeKnowledgebaseLabel\");\n    console.error(err);\n  });"
   },
   "patchknowledgeknowledgebaselanguagecategory": {
     "operationId": "patchknowledgeknowledgebaselanguagecategory",
@@ -14592,6 +15528,35 @@
     "return": "KnowledgeImport",
     "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.KnowledgeApi();\n\nlet knowledgeBaseId = \"knowledgeBaseId_example\"; // String | Knowledge base ID\nlet languageCode = en-US; // String | Language code, format: iso2-LOCALE\nlet importId = \"importId_example\"; // String | Import ID\nlet body = {}; // Object | \n\n// Start import operation\napiInstance.patchKnowledgeKnowledgebaseLanguageDocumentsImport(knowledgeBaseId, languageCode, importId, body)\n  .then((data) => {\n    console.log(`patchKnowledgeKnowledgebaseLanguageDocumentsImport success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling patchKnowledgeKnowledgebaseLanguageDocumentsImport\");\n    console.error(err);\n  });"
   },
+  "patchknowledgeknowledgebaseunansweredgroupphrasegroup": {
+    "operationId": "patchknowledgeknowledgebaseunansweredgroupphrasegroup",
+    "functionName": "patchKnowledgeKnowledgebaseUnansweredGroupPhrasegroup",
+    "signature": "patchKnowledgeKnowledgebaseUnansweredGroupPhrasegroup(knowledgeBaseId, groupId, phraseGroupId, body)",
+    "parameters": [
+      {
+        "name": "knowledgeBaseId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "groupId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "phraseGroupId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "Object",
+        "required": "true"
+      }
+    ],
+    "return": "UnansweredPhraseGroupUpdateResponse",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.KnowledgeApi();\n\nlet knowledgeBaseId = \"knowledgeBaseId_example\"; // String | Knowledge base ID\nlet groupId = \"groupId_example\"; // String | The ID of the group to be updated.\nlet phraseGroupId = \"phraseGroupId_example\"; // String | The ID of the phraseGroup to be updated.\nlet body = {}; // Object | Request body of the update unanswered group endpoint.\n\n// Update a Knowledge base unanswered phrase group\napiInstance.patchKnowledgeKnowledgebaseUnansweredGroupPhrasegroup(knowledgeBaseId, groupId, phraseGroupId, body)\n  .then((data) => {\n    console.log(`patchKnowledgeKnowledgebaseUnansweredGroupPhrasegroup success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling patchKnowledgeKnowledgebaseUnansweredGroupPhrasegroup\");\n    console.error(err);\n  });"
+  },
   "postknowledgedocumentuploads": {
     "operationId": "postknowledgedocumentuploads",
     "functionName": "postKnowledgeDocumentuploads",
@@ -14605,6 +15570,249 @@
     ],
     "return": "UploadUrlResponse",
     "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.UploadsApi();\n\nlet body = {}; // Object | query\n\n// Creates a presigned URL for uploading a knowledge import file with a set of documents\napiInstance.postKnowledgeDocumentuploads(body)\n  .then((data) => {\n    console.log(`postKnowledgeDocumentuploads success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling postKnowledgeDocumentuploads\");\n    console.error(err);\n  });"
+  },
+  "postknowledgeguestsessiondocumentssearch": {
+    "operationId": "postknowledgeguestsessiondocumentssearch",
+    "functionName": "postKnowledgeGuestSessionDocumentsSearch",
+    "signature": "postKnowledgeGuestSessionDocumentsSearch(sessionId, expand, body)",
+    "parameters": [
+      {
+        "name": "sessionId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "expand",
+        "type": "[String]",
+        "required": "false"
+      },
+      {
+        "name": "body",
+        "type": "Object",
+        "required": "false"
+      }
+    ],
+    "return": "KnowledgeDocumentGuestSearch",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\nlet apiInstance = new platformClient.KnowledgeApi();\n\nlet sessionId = \"sessionId_example\"; // String | Knowledge guest session ID.\nlet opts = { \n  \"expand\": [\"expand_example\"], // [String] | Fields, if any, to expand for each document in the search result matching the query.\n  \"body\": {} // Object | \n};\n\n// Search the documents in a guest session.\napiInstance.postKnowledgeGuestSessionDocumentsSearch(sessionId, opts)\n  .then((data) => {\n    console.log(`postKnowledgeGuestSessionDocumentsSearch success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling postKnowledgeGuestSessionDocumentsSearch\");\n    console.error(err);\n  });"
+  },
+  "postknowledgeguestsessiondocumentssearchsuggestions": {
+    "operationId": "postknowledgeguestsessiondocumentssearchsuggestions",
+    "functionName": "postKnowledgeGuestSessionDocumentsSearchSuggestions",
+    "signature": "postKnowledgeGuestSessionDocumentsSearchSuggestions(sessionId, body)",
+    "parameters": [
+      {
+        "name": "sessionId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "Object",
+        "required": "false"
+      }
+    ],
+    "return": "KnowledgeGuestDocumentSuggestion",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\nlet apiInstance = new platformClient.KnowledgeApi();\n\nlet sessionId = \"sessionId_example\"; // String | Knowledge guest session ID.\nlet opts = { \n  \"body\": {} // Object | \n};\n\n// Query the knowledge documents to provide suggestions for auto completion.\napiInstance.postKnowledgeGuestSessionDocumentsSearchSuggestions(sessionId, opts)\n  .then((data) => {\n    console.log(`postKnowledgeGuestSessionDocumentsSearchSuggestions success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling postKnowledgeGuestSessionDocumentsSearchSuggestions\");\n    console.error(err);\n  });"
+  },
+  "postknowledgeguestsessions": {
+    "operationId": "postknowledgeguestsessions",
+    "functionName": "postKnowledgeGuestSessions",
+    "signature": "postKnowledgeGuestSessions(body)",
+    "parameters": [
+      {
+        "name": "body",
+        "type": "Object",
+        "required": "true"
+      }
+    ],
+    "return": "KnowledgeGuestSession",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\nlet apiInstance = new platformClient.KnowledgeApi();\n\nlet body = {}; // Object | \n\n// Create guest session\napiInstance.postKnowledgeGuestSessions(body)\n  .then((data) => {\n    console.log(`postKnowledgeGuestSessions success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling postKnowledgeGuestSessions\");\n    console.error(err);\n  });"
+  },
+  "postknowledgeknowledgebasecategories": {
+    "operationId": "postknowledgeknowledgebasecategories",
+    "functionName": "postKnowledgeKnowledgebaseCategories",
+    "signature": "postKnowledgeKnowledgebaseCategories(knowledgeBaseId, body)",
+    "parameters": [
+      {
+        "name": "knowledgeBaseId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "Object",
+        "required": "true"
+      }
+    ],
+    "return": "CategoryResponse",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.KnowledgeApi();\n\nlet knowledgeBaseId = \"knowledgeBaseId_example\"; // String | Knowledge base ID\nlet body = {}; // Object | \n\n// Create new category\napiInstance.postKnowledgeKnowledgebaseCategories(knowledgeBaseId, body)\n  .then((data) => {\n    console.log(`postKnowledgeKnowledgebaseCategories success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling postKnowledgeKnowledgebaseCategories\");\n    console.error(err);\n  });"
+  },
+  "postknowledgeknowledgebasedocumentvariations": {
+    "operationId": "postknowledgeknowledgebasedocumentvariations",
+    "functionName": "postKnowledgeKnowledgebaseDocumentVariations",
+    "signature": "postKnowledgeKnowledgebaseDocumentVariations(knowledgeBaseId, documentId, body)",
+    "parameters": [
+      {
+        "name": "knowledgeBaseId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "documentId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "Object",
+        "required": "true"
+      }
+    ],
+    "return": "DocumentVariation",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.KnowledgeApi();\n\nlet knowledgeBaseId = \"knowledgeBaseId_example\"; // String | Globally unique identifier for the knowledge base.\nlet documentId = \"documentId_example\"; // String | Globally unique identifier for the document.\nlet body = {}; // Object | \n\n// Create a variation for a document.\napiInstance.postKnowledgeKnowledgebaseDocumentVariations(knowledgeBaseId, documentId, body)\n  .then((data) => {\n    console.log(`postKnowledgeKnowledgebaseDocumentVariations success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling postKnowledgeKnowledgebaseDocumentVariations\");\n    console.error(err);\n  });"
+  },
+  "postknowledgeknowledgebasedocumentversions": {
+    "operationId": "postknowledgeknowledgebasedocumentversions",
+    "functionName": "postKnowledgeKnowledgebaseDocumentVersions",
+    "signature": "postKnowledgeKnowledgebaseDocumentVersions(knowledgeBaseId, documentId, body)",
+    "parameters": [
+      {
+        "name": "knowledgeBaseId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "documentId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "Object",
+        "required": "true"
+      }
+    ],
+    "return": "KnowledgeDocumentVersion",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.KnowledgeApi();\n\nlet knowledgeBaseId = \"knowledgeBaseId_example\"; // String | Globally unique identifier for the knowledge base.\nlet documentId = \"documentId_example\"; // String | Globally unique identifier for the document.\nlet body = {}; // Object | \n\n// Creates or restores a document version.\napiInstance.postKnowledgeKnowledgebaseDocumentVersions(knowledgeBaseId, documentId, body)\n  .then((data) => {\n    console.log(`postKnowledgeKnowledgebaseDocumentVersions success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling postKnowledgeKnowledgebaseDocumentVersions\");\n    console.error(err);\n  });"
+  },
+  "postknowledgeknowledgebasedocuments": {
+    "operationId": "postknowledgeknowledgebasedocuments",
+    "functionName": "postKnowledgeKnowledgebaseDocuments",
+    "signature": "postKnowledgeKnowledgebaseDocuments(knowledgeBaseId, body)",
+    "parameters": [
+      {
+        "name": "knowledgeBaseId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "Object",
+        "required": "true"
+      }
+    ],
+    "return": "KnowledgeDocumentResponse",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.KnowledgeApi();\n\nlet knowledgeBaseId = \"knowledgeBaseId_example\"; // String | Knowledge base ID\nlet body = {}; // Object | \n\n// Create document.\napiInstance.postKnowledgeKnowledgebaseDocuments(knowledgeBaseId, body)\n  .then((data) => {\n    console.log(`postKnowledgeKnowledgebaseDocuments success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling postKnowledgeKnowledgebaseDocuments\");\n    console.error(err);\n  });"
+  },
+  "postknowledgeknowledgebasedocumentssearch": {
+    "operationId": "postknowledgeknowledgebasedocumentssearch",
+    "functionName": "postKnowledgeKnowledgebaseDocumentsSearch",
+    "signature": "postKnowledgeKnowledgebaseDocumentsSearch(knowledgeBaseId, expand, body)",
+    "parameters": [
+      {
+        "name": "knowledgeBaseId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "expand",
+        "type": "[String]",
+        "required": "false"
+      },
+      {
+        "name": "body",
+        "type": "Object",
+        "required": "false"
+      }
+    ],
+    "return": "KnowledgeDocumentSearch",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.KnowledgeApi();\n\nlet knowledgeBaseId = \"knowledgeBaseId_example\"; // String | The ID of knowledge base containing the documents to query.\nlet opts = { \n  \"expand\": [\"expand_example\"], // [String] | Fields, if any, to expand for each document in the search result matching the query.\n  \"body\": {} // Object | \n};\n\n// Search the documents in a knowledge base.\napiInstance.postKnowledgeKnowledgebaseDocumentsSearch(knowledgeBaseId, opts)\n  .then((data) => {\n    console.log(`postKnowledgeKnowledgebaseDocumentsSearch success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling postKnowledgeKnowledgebaseDocumentsSearch\");\n    console.error(err);\n  });"
+  },
+  "postknowledgeknowledgebasedocumentssearchsuggestions": {
+    "operationId": "postknowledgeknowledgebasedocumentssearchsuggestions",
+    "functionName": "postKnowledgeKnowledgebaseDocumentsSearchSuggestions",
+    "signature": "postKnowledgeKnowledgebaseDocumentsSearchSuggestions(knowledgeBaseId, body)",
+    "parameters": [
+      {
+        "name": "knowledgeBaseId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "Object",
+        "required": "false"
+      }
+    ],
+    "return": "KnowledgeDocumentSuggestion",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.KnowledgeApi();\n\nlet knowledgeBaseId = \"knowledgeBaseId_example\"; // String | The ID of knowledge base containing the documents to query.\nlet opts = { \n  \"body\": {} // Object | \n};\n\n// Query the knowledge documents to provide suggestions for auto completion.\napiInstance.postKnowledgeKnowledgebaseDocumentsSearchSuggestions(knowledgeBaseId, opts)\n  .then((data) => {\n    console.log(`postKnowledgeKnowledgebaseDocumentsSearchSuggestions success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling postKnowledgeKnowledgebaseDocumentsSearchSuggestions\");\n    console.error(err);\n  });"
+  },
+  "postknowledgeknowledgebaseexportjobs": {
+    "operationId": "postknowledgeknowledgebaseexportjobs",
+    "functionName": "postKnowledgeKnowledgebaseExportJobs",
+    "signature": "postKnowledgeKnowledgebaseExportJobs(knowledgeBaseId, body)",
+    "parameters": [
+      {
+        "name": "knowledgeBaseId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "Object",
+        "required": "true"
+      }
+    ],
+    "return": "KnowledgeExportJobResponse",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.KnowledgeApi();\n\nlet knowledgeBaseId = \"knowledgeBaseId_example\"; // String | Knowledge base ID\nlet body = {}; // Object | \n\n// Create export job\napiInstance.postKnowledgeKnowledgebaseExportJobs(knowledgeBaseId, body)\n  .then((data) => {\n    console.log(`postKnowledgeKnowledgebaseExportJobs success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling postKnowledgeKnowledgebaseExportJobs\");\n    console.error(err);\n  });"
+  },
+  "postknowledgeknowledgebaseimportjobs": {
+    "operationId": "postknowledgeknowledgebaseimportjobs",
+    "functionName": "postKnowledgeKnowledgebaseImportJobs",
+    "signature": "postKnowledgeKnowledgebaseImportJobs(knowledgeBaseId, body)",
+    "parameters": [
+      {
+        "name": "knowledgeBaseId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "Object",
+        "required": "true"
+      }
+    ],
+    "return": "KnowledgeImportJobResponse",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.KnowledgeApi();\n\nlet knowledgeBaseId = \"knowledgeBaseId_example\"; // String | Knowledge base ID\nlet body = {}; // Object | \n\n// Create import job\napiInstance.postKnowledgeKnowledgebaseImportJobs(knowledgeBaseId, body)\n  .then((data) => {\n    console.log(`postKnowledgeKnowledgebaseImportJobs success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling postKnowledgeKnowledgebaseImportJobs\");\n    console.error(err);\n  });"
+  },
+  "postknowledgeknowledgebaselabels": {
+    "operationId": "postknowledgeknowledgebaselabels",
+    "functionName": "postKnowledgeKnowledgebaseLabels",
+    "signature": "postKnowledgeKnowledgebaseLabels(knowledgeBaseId, body)",
+    "parameters": [
+      {
+        "name": "knowledgeBaseId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "Object",
+        "required": "true"
+      }
+    ],
+    "return": "LabelResponse",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.KnowledgeApi();\n\nlet knowledgeBaseId = \"knowledgeBaseId_example\"; // String | Knowledge base ID\nlet body = {}; // Object | \n\n// Create new label\napiInstance.postKnowledgeKnowledgebaseLabels(knowledgeBaseId, body)\n  .then((data) => {\n    console.log(`postKnowledgeKnowledgebaseLabels success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling postKnowledgeKnowledgebaseLabels\");\n    console.error(err);\n  });"
   },
   "postknowledgeknowledgebaselanguagecategories": {
     "operationId": "postknowledgeknowledgebaselanguagecategories",

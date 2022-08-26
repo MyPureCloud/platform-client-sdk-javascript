@@ -1563,7 +1563,8 @@ let opts = {
   'pageSize': 25, // Number | Page size
   'sortBy': "name", // String | Sort by
   'sortOrder': "ASC", // String | Sort order
-  'name': "name_example" // String | Name of the IVR to filter by.
+  'name': "name_example", // String | Name of the IVR to filter by.
+  'dnis': "dnis_example" // String | The phone number of the IVR to filter by.
 };
 
 apiInstance.getArchitectIvrs(opts)
@@ -1586,6 +1587,7 @@ apiInstance.getArchitectIvrs(opts)
  **sortBy** | **String** | Sort by | [optional] [default to name] |
  **sortOrder** | **String** | Sort order | [optional] [default to ASC] |
  **name** | **String** | Name of the IVR to filter by. | [optional]  |
+ **dnis** | **String** | The phone number of the IVR to filter by. | [optional]  |
 {: class="table table-striped"}
 
 ### Return type

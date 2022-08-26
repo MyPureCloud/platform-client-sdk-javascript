@@ -1,476 +1,724 @@
-Platform API version: 5990
+Platform API version: 6034
 
 
-# Major Changes (205 changes)
+# Major Changes (2 changes)
 
-**GET /api/v2/quality/conversations/{conversationId}/evaluations/{evaluationId}** (1 change)
+**GET /api/v2/architect/ivrs** (1 change)
 
-* Response 200 type was changed from Evaluation to EvaluationResponse
+* Parameter dnis was added
 
-**PUT /api/v2/quality/conversations/{conversationId}/evaluations/{evaluationId}** (1 change)
+**PatchAction** (1 change)
 
-* Response 200 type was changed from Evaluation to EvaluationResponse
+* Property webMessagingOfferFields was changed from WebMessagingOfferFields to PatchWebMessagingOfferFields
 
-**DELETE /api/v2/quality/conversations/{conversationId}/evaluations/{evaluationId}** (1 change)
 
-* Response 200 type was changed from Evaluation to EvaluationResponse
+# Minor Changes (291 changes)
 
-**EvaluationAggregationQuery** (2 changes)
-
-* Enum value evaluationCreatedDate was removed from property groupBy
-* Enum value evaluationReleaseDate was removed from property groupBy
-
-**BulkIdsRequest** (1 change)
-
-* Property entities was changed from Entity[] to WritableEntity[]
-
-**LimitChangeRequestDetails** (3 changes)
-
-* Property createdBy was removed
-* Property lastChangedBy was removed
-* Values are now constrained by enum members
-
-**StatusChange** (1 change)
-
-* Property changedBy was removed
-
-**EvaluationAggregationQueryMe** (2 changes)
-
-* Enum value evaluationCreatedDate was removed from property groupBy
-* Enum value evaluationReleaseDate was removed from property groupBy
-
-**Endpoint** (6 changes)
-
-* dateCreated has been made readonly
-* dateModified has been made readonly
-* modifiedBy has been made readonly
-* createdBy has been made readonly
-* modifiedByApp has been made readonly
-* createdByApp has been made readonly
-
-**ScimPhoneNumber** (1 change)
-
-* Enum value eighbyeight was removed from property type
-
-**DomainCertificateAuthority** (6 changes)
-
-* dateCreated has been made readonly
-* dateModified has been made readonly
-* modifiedBy has been made readonly
-* createdBy has been made readonly
-* modifiedByApp has been made readonly
-* createdByApp has been made readonly
-
-**Edge** (6 changes)
-
-* dateCreated has been made readonly
-* dateModified has been made readonly
-* modifiedBy has been made readonly
-* createdBy has been made readonly
-* modifiedByApp has been made readonly
-* createdByApp has been made readonly
-
-**EdgeGroup** (6 changes)
-
-* dateCreated has been made readonly
-* dateModified has been made readonly
-* modifiedBy has been made readonly
-* createdBy has been made readonly
-* modifiedByApp has been made readonly
-* createdByApp has been made readonly
-
-**Site** (6 changes)
-
-* dateCreated has been made readonly
-* dateModified has been made readonly
-* modifiedBy has been made readonly
-* createdBy has been made readonly
-* modifiedByApp has been made readonly
-* createdByApp has been made readonly
-
-**TrunkBase** (6 changes)
-
-* dateCreated has been made readonly
-* dateModified has been made readonly
-* modifiedBy has been made readonly
-* createdBy has been made readonly
-* modifiedByApp has been made readonly
-* createdByApp has been made readonly
-
-**DomainLogicalInterface** (6 changes)
-
-* dateCreated has been made readonly
-* dateModified has been made readonly
-* modifiedBy has been made readonly
-* createdBy has been made readonly
-* modifiedByApp has been made readonly
-* createdByApp has been made readonly
-
-**DomainPhysicalInterface** (6 changes)
-
-* dateCreated has been made readonly
-* dateModified has been made readonly
-* modifiedBy has been made readonly
-* createdBy has been made readonly
-* modifiedByApp has been made readonly
-* createdByApp has been made readonly
-
-**SchemaCategory** (6 changes)
-
-* dateCreated has been made readonly
-* dateModified has been made readonly
-* modifiedBy has been made readonly
-* createdBy has been made readonly
-* modifiedByApp has been made readonly
-* createdByApp has been made readonly
-
-**DomainSchemaReference** (6 changes)
-
-* dateCreated has been made readonly
-* dateModified has been made readonly
-* modifiedBy has been made readonly
-* createdBy has been made readonly
-* modifiedByApp has been made readonly
-* createdByApp has been made readonly
-
-**DIDPool** (6 changes)
-
-* dateCreated has been made readonly
-* dateModified has been made readonly
-* modifiedBy has been made readonly
-* createdBy has been made readonly
-* modifiedByApp has been made readonly
-* createdByApp has been made readonly
-
-**DID** (6 changes)
-
-* dateCreated has been made readonly
-* dateModified has been made readonly
-* modifiedBy has been made readonly
-* createdBy has been made readonly
-* modifiedByApp has been made readonly
-* createdByApp has been made readonly
-
-**EdgeTrunkBase** (6 changes)
-
-* dateCreated has been made readonly
-* dateModified has been made readonly
-* modifiedBy has been made readonly
-* createdBy has been made readonly
-* modifiedByApp has been made readonly
-* createdByApp has been made readonly
-
-**ExtensionPool** (6 changes)
-
-* dateCreated has been made readonly
-* dateModified has been made readonly
-* modifiedBy has been made readonly
-* createdBy has been made readonly
-* modifiedByApp has been made readonly
-* createdByApp has been made readonly
-
-**Extension** (6 changes)
-
-* dateCreated has been made readonly
-* dateModified has been made readonly
-* modifiedBy has been made readonly
-* createdBy has been made readonly
-* modifiedByApp has been made readonly
-* createdByApp has been made readonly
-
-**EdgeLine** (6 changes)
-
-* dateCreated has been made readonly
-* dateModified has been made readonly
-* modifiedBy has been made readonly
-* createdBy has been made readonly
-* modifiedByApp has been made readonly
-* createdByApp has been made readonly
-
-**LineBase** (6 changes)
-
-* dateCreated has been made readonly
-* dateModified has been made readonly
-* modifiedBy has been made readonly
-* createdBy has been made readonly
-* modifiedByApp has been made readonly
-* createdByApp has been made readonly
-
-**Line** (6 changes)
-
-* dateCreated has been made readonly
-* dateModified has been made readonly
-* modifiedBy has been made readonly
-* createdBy has been made readonly
-* modifiedByApp has been made readonly
-* createdByApp has been made readonly
-
-**EdgeLogsJob** (6 changes)
-
-* dateCreated has been made readonly
-* dateModified has been made readonly
-* modifiedBy has been made readonly
-* createdBy has been made readonly
-* modifiedByApp has been made readonly
-* createdByApp has been made readonly
-
-**EdgeLogsJobFile** (6 changes)
-
-* dateCreated has been made readonly
-* dateModified has been made readonly
-* modifiedBy has been made readonly
-* createdBy has been made readonly
-* modifiedByApp has been made readonly
-* createdByApp has been made readonly
-
-**EdgeLogsJobResponse** (6 changes)
-
-* dateCreated has been made readonly
-* dateModified has been made readonly
-* modifiedBy has been made readonly
-* createdBy has been made readonly
-* modifiedByApp has been made readonly
-* createdByApp has been made readonly
-
-**NumberPlan** (6 changes)
-
-* dateCreated has been made readonly
-* dateModified has been made readonly
-* modifiedBy has been made readonly
-* createdBy has been made readonly
-* modifiedByApp has been made readonly
-* createdByApp has been made readonly
-
-**OutboundRoute** (6 changes)
-
-* dateCreated has been made readonly
-* dateModified has been made readonly
-* modifiedBy has been made readonly
-* createdBy has been made readonly
-* modifiedByApp has been made readonly
-* createdByApp has been made readonly
-
-**PhoneBase** (6 changes)
-
-* dateCreated has been made readonly
-* dateModified has been made readonly
-* modifiedBy has been made readonly
-* createdBy has been made readonly
-* modifiedByApp has been made readonly
-* createdByApp has been made readonly
-
-**Metabase** (6 changes)
-
-* dateCreated has been made readonly
-* dateModified has been made readonly
-* modifiedBy has been made readonly
-* createdBy has been made readonly
-* modifiedByApp has been made readonly
-* createdByApp has been made readonly
-
-**Phone** (6 changes)
-
-* dateCreated has been made readonly
-* dateModified has been made readonly
-* modifiedBy has been made readonly
-* createdBy has been made readonly
-* modifiedByApp has been made readonly
-* createdByApp has been made readonly
-
-**OutboundRouteBase** (6 changes)
-
-* dateCreated has been made readonly
-* dateModified has been made readonly
-* modifiedBy has been made readonly
-* createdBy has been made readonly
-* modifiedByApp has been made readonly
-* createdByApp has been made readonly
-
-**Trunk** (6 changes)
-
-* dateCreated has been made readonly
-* dateModified has been made readonly
-* modifiedBy has been made readonly
-* createdBy has been made readonly
-* modifiedByApp has been made readonly
-* createdByApp has been made readonly
-
-**EmergencyGroup** (6 changes)
-
-* dateCreated has been made readonly
-* dateModified has been made readonly
-* modifiedBy has been made readonly
-* createdBy has been made readonly
-* modifiedByApp has been made readonly
-* createdByApp has been made readonly
-
-**IVR** (6 changes)
-
-* dateCreated has been made readonly
-* dateModified has been made readonly
-* modifiedBy has been made readonly
-* createdBy has been made readonly
-* modifiedByApp has been made readonly
-* createdByApp has been made readonly
-
-**ScheduleGroup** (6 changes)
-
-* dateCreated has been made readonly
-* dateModified has been made readonly
-* modifiedBy has been made readonly
-* createdBy has been made readonly
-* modifiedByApp has been made readonly
-* createdByApp has been made readonly
-
-**Schedule** (6 changes)
-
-* dateCreated has been made readonly
-* dateModified has been made readonly
-* modifiedBy has been made readonly
-* createdBy has been made readonly
-* modifiedByApp has been made readonly
-* createdByApp has been made readonly
-
-
-# Minor Changes (54 changes)
-
-**/api/v2/conversations/keyconfigurations/{keyconfigurationsId}** (3 changes)
-
-* Path was added
-* Operation GET was added
-* Operation PUT was added
-
-**/api/v2/conversations/keyconfigurations** (3 changes)
+**/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/categories** (3 changes)
 
 * Path was added
 * Operation GET was added
 * Operation POST was added
 
-**/api/v2/conversations/keyconfigurations/validate** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/conversations/{conversationId}/secureattributes** (4 changes)
+**/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/categories/{categoryId}** (4 changes)
 
 * Path was added
 * Operation GET was added
-* Operation PUT was added
+* Operation DELETE was added
 * Operation PATCH was added
 
-**/api/v2/routing/availablemediatypes** (2 changes)
+**/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/unanswered/groups/{groupId}** (2 changes)
 
 * Path was added
 * Operation GET was added
 
-**GET /api/v2/architect/dependencytracking/types/{typeId}** (1 change)
+**/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/unanswered/groups/{groupId}/phrasegroups/{phraseGroupId}** (3 changes)
 
-* Response 405 was added
+* Path was added
+* Operation GET was added
+* Operation PATCH was added
 
-**ConversationEncryptionConfiguration** (1 change)
+**/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/unanswered/groups** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/labels/{labelId}** (4 changes)
+
+* Path was added
+* Operation GET was added
+* Operation DELETE was added
+* Operation PATCH was added
+
+**/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/labels** (3 changes)
+
+* Path was added
+* Operation GET was added
+* Operation POST was added
+
+**/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}** (4 changes)
+
+* Path was added
+* Operation GET was added
+* Operation DELETE was added
+* Operation PATCH was added
+
+**/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/versions/{versionId}** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/versions** (3 changes)
+
+* Path was added
+* Operation GET was added
+* Operation POST was added
+
+**/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents** (3 changes)
+
+* Path was added
+* Operation GET was added
+* Operation POST was added
+
+**/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/variations/{documentVariationId}** (4 changes)
+
+* Path was added
+* Operation GET was added
+* Operation DELETE was added
+* Operation PATCH was added
+
+**/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/variations** (3 changes)
+
+* Path was added
+* Operation GET was added
+* Operation POST was added
+
+**/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/versions/{versionId}/variations/{variationId}** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/versions/{versionId}/variations** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/export/jobs/{exportJobId}** (3 changes)
+
+* Path was added
+* Operation GET was added
+* Operation DELETE was added
+
+**/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/export/jobs** (2 changes)
+
+* Path was added
+* Operation POST was added
+
+**/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/import/jobs/{importJobId}** (4 changes)
+
+* Path was added
+* Operation GET was added
+* Operation DELETE was added
+* Operation PATCH was added
+
+**/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/import/jobs** (2 changes)
+
+* Path was added
+* Operation POST was added
+
+**/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/search** (2 changes)
+
+* Path was added
+* Operation POST was added
+
+**/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/search/{searchId}** (2 changes)
+
+* Path was added
+* Operation PATCH was added
+
+**/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/search/suggestions** (2 changes)
+
+* Path was added
+* Operation POST was added
+
+**/api/v2/knowledge/guest/sessions/{sessionId}/documents/{documentId}** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/knowledge/guest/sessions/{sessionId}/categories** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/knowledge/guest/sessions/{sessionId}/documents** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/knowledge/guest/sessions/{sessionId}/documents/search** (2 changes)
+
+* Path was added
+* Operation POST was added
+
+**/api/v2/knowledge/guest/sessions/{sessionId}/documents/search/{searchId}** (2 changes)
+
+* Path was added
+* Operation PATCH was added
+
+**/api/v2/knowledge/guest/sessions/{sessionId}/documents/search/suggestions** (2 changes)
+
+* Path was added
+* Operation POST was added
+
+**/api/v2/knowledge/guest/sessions** (2 changes)
+
+* Path was added
+* Operation POST was added
+
+**POST /api/v2/recording/jobs** (1 change)
+
+* Response 501 was added
+
+**ReportingExportJobResponse** (1 change)
+
+* Enum value PREDICTIVE_ROUTING_IMPACT_VIEW was added to property viewType
+
+**ReportingExportMetadataJobResponse** (1 change)
+
+* Enum value PREDICTIVE_ROUTING_IMPACT_VIEW was added to property viewType
+
+**ReportingExportJobRequest** (1 change)
+
+* Enum value PREDICTIVE_ROUTING_IMPACT_VIEW was added to property viewType
+
+**KnowledgeBaseReference** (1 change)
 
 * Model was added
 
-**ConversationEncryptionConfigurationListing** (1 change)
+**AuditLogMessage** (5 changes)
 
-* Model was added
+* Optional property level was added
+* Enum value Rotate was added to property action
+* Enum value Restore was added to property action
+* Enum value RecordingKey was added to property entityType
+* Enum value RecordingKeyConfig was added to property entityType
 
-**CursorContactListing** (1 change)
+**AuditQueryEntity** (4 changes)
 
-* Optional property cursors was added
+* Enum value RecordingKey was added to property name
+* Enum value RecordingKeyConfig was added to property name
+* Enum value Rotate was added to property actions
+* Enum value Restore was added to property actions
 
-**CursorOrganizationListing** (1 change)
+**Evaluation** (1 change)
 
-* Optional property cursors was added
+* Optional property hasAssistanceFailed was added
 
-**CursorNoteListing** (1 change)
+**DncList** (1 change)
 
-* Optional property cursors was added
+* Optional property campaignId was added
 
-**CursorRelationshipListing** (1 change)
+**DncListCreate** (1 change)
 
-* Optional property cursors was added
+* Optional property campaignId was added
 
-**MessageDetails** (1 change)
-
-* Enum value removed was added to property messageStatus
-
-**ConversationSecureAttributes** (1 change)
-
-* Model was added
-
-**EmailMessage** (2 changes)
-
-* Optional property emailSizeBytes was added
-* Optional property maxEmailSizeBytes was added
-
-**MessageData** (1 change)
-
-* Enum value removed was added to property status
-
-**EventMessage** (3 changes)
-
-* Enum value IMPORT_FAILED_CONTACT_DATA_GREATER_THAN_MAX_LENGTH was added to property code
-* Enum value IMPORT_FAILED_CONTACT_DATA_NOT_WITHIN_MIN_MAX_RANGE was added to property code
-* Enum value IMPORT_FAILED_CONTACT_DATA_INVALID_DATATYPE was added to property code
-
-**DialogflowAgentSummary** (1 change)
+**DialogflowAgent** (1 change)
 
 * Optional property integration was added
 
+**ActionMapAction** (3 changes)
+
+* Optional property actionTargetId was added
+* Optional property isPacingEnabled was added
+* Optional property props was added
+
+**PatchAction** (3 changes)
+
+* Optional property actionTargetId was added
+* Optional property isPacingEnabled was added
+* Optional property props was added
+
+**PatchWebMessagingOfferFields** (1 change)
+
+* Model was added
+
+**CategoryReference** (1 change)
+
+* Model was added
+
+**CategoryResponse** (1 change)
+
+* Model was added
+
+**CategoryResponseListing** (1 change)
+
+* Model was added
+
+**CategoryRequest** (1 change)
+
+* Model was added
+
+**KnowledgeBase** (17 changes)
+
+* Enum value en-CA was added to property coreLanguage
+* Enum value en-HK was added to property coreLanguage
+* Enum value en-IN was added to property coreLanguage
+* Enum value en-IE was added to property coreLanguage
+* Enum value en-NZ was added to property coreLanguage
+* Enum value en-PH was added to property coreLanguage
+* Enum value en-SG was added to property coreLanguage
+* Enum value en-ZA was added to property coreLanguage
+* Enum value de-AT was added to property coreLanguage
+* Enum value de-CH was added to property coreLanguage
+* Enum value es-AR was added to property coreLanguage
+* Enum value es-CO was added to property coreLanguage
+* Enum value es-MX was added to property coreLanguage
+* Enum value fr-BE was added to property coreLanguage
+* Enum value fr-CH was added to property coreLanguage
+* Enum value pt-PT was added to property coreLanguage
+* Enum value nl-BE was added to property coreLanguage
+
+**KnowledgeCategory** (17 changes)
+
+* Enum value en-CA was added to property languageCode
+* Enum value en-HK was added to property languageCode
+* Enum value en-IN was added to property languageCode
+* Enum value en-IE was added to property languageCode
+* Enum value en-NZ was added to property languageCode
+* Enum value en-PH was added to property languageCode
+* Enum value en-SG was added to property languageCode
+* Enum value en-ZA was added to property languageCode
+* Enum value de-AT was added to property languageCode
+* Enum value de-CH was added to property languageCode
+* Enum value es-AR was added to property languageCode
+* Enum value es-CO was added to property languageCode
+* Enum value es-MX was added to property languageCode
+* Enum value fr-BE was added to property languageCode
+* Enum value fr-CH was added to property languageCode
+* Enum value pt-PT was added to property languageCode
+* Enum value nl-BE was added to property languageCode
+
+**KnowledgeSearchDocument** (17 changes)
+
+* Enum value en-CA was added to property languageCode
+* Enum value en-HK was added to property languageCode
+* Enum value en-IN was added to property languageCode
+* Enum value en-IE was added to property languageCode
+* Enum value en-NZ was added to property languageCode
+* Enum value en-PH was added to property languageCode
+* Enum value en-SG was added to property languageCode
+* Enum value en-ZA was added to property languageCode
+* Enum value de-AT was added to property languageCode
+* Enum value de-CH was added to property languageCode
+* Enum value es-AR was added to property languageCode
+* Enum value es-CO was added to property languageCode
+* Enum value es-MX was added to property languageCode
+* Enum value fr-BE was added to property languageCode
+* Enum value fr-CH was added to property languageCode
+* Enum value pt-PT was added to property languageCode
+* Enum value nl-BE was added to property languageCode
+
+**KnowledgeExtendedCategory** (17 changes)
+
+* Enum value en-CA was added to property languageCode
+* Enum value en-HK was added to property languageCode
+* Enum value en-IN was added to property languageCode
+* Enum value en-IE was added to property languageCode
+* Enum value en-NZ was added to property languageCode
+* Enum value en-PH was added to property languageCode
+* Enum value en-SG was added to property languageCode
+* Enum value en-ZA was added to property languageCode
+* Enum value de-AT was added to property languageCode
+* Enum value de-CH was added to property languageCode
+* Enum value es-AR was added to property languageCode
+* Enum value es-CO was added to property languageCode
+* Enum value es-MX was added to property languageCode
+* Enum value fr-BE was added to property languageCode
+* Enum value fr-CH was added to property languageCode
+* Enum value pt-PT was added to property languageCode
+* Enum value nl-BE was added to property languageCode
+
+**KnowledgeImport** (17 changes)
+
+* Enum value en-CA was added to property languageCode
+* Enum value en-HK was added to property languageCode
+* Enum value en-IN was added to property languageCode
+* Enum value en-IE was added to property languageCode
+* Enum value en-NZ was added to property languageCode
+* Enum value en-PH was added to property languageCode
+* Enum value en-SG was added to property languageCode
+* Enum value en-ZA was added to property languageCode
+* Enum value de-AT was added to property languageCode
+* Enum value de-CH was added to property languageCode
+* Enum value es-AR was added to property languageCode
+* Enum value es-CO was added to property languageCode
+* Enum value es-MX was added to property languageCode
+* Enum value fr-BE was added to property languageCode
+* Enum value fr-CH was added to property languageCode
+* Enum value pt-PT was added to property languageCode
+* Enum value nl-BE was added to property languageCode
+
+**KnowledgeDocument** (17 changes)
+
+* Enum value en-CA was added to property languageCode
+* Enum value en-HK was added to property languageCode
+* Enum value en-IN was added to property languageCode
+* Enum value en-IE was added to property languageCode
+* Enum value en-NZ was added to property languageCode
+* Enum value en-PH was added to property languageCode
+* Enum value en-SG was added to property languageCode
+* Enum value en-ZA was added to property languageCode
+* Enum value de-AT was added to property languageCode
+* Enum value de-CH was added to property languageCode
+* Enum value es-AR was added to property languageCode
+* Enum value es-CO was added to property languageCode
+* Enum value es-MX was added to property languageCode
+* Enum value fr-BE was added to property languageCode
+* Enum value fr-CH was added to property languageCode
+* Enum value pt-PT was added to property languageCode
+* Enum value nl-BE was added to property languageCode
+
+**KnowledgeGroupStatistics** (1 change)
+
+* Model was added
+
+**UnansweredGroup** (1 change)
+
+* Model was added
+
+**UnansweredGroupSuggestedDocument** (1 change)
+
+* Model was added
+
+**UnansweredPhrase** (1 change)
+
+* Model was added
+
+**UnansweredPhraseGroup** (1 change)
+
+* Model was added
+
+**PhraseAssociations** (1 change)
+
+* Model was added
+
+**UnansweredPhraseGroupUpdateResponse** (1 change)
+
+* Model was added
+
+**UnansweredPhraseGroupPatchRequestBody** (1 change)
+
+* Model was added
+
+**UnansweredGroups** (1 change)
+
+* Model was added
+
+**LabelResponse** (1 change)
+
+* Model was added
+
+**LabelUpdateRequest** (1 change)
+
+* Model was added
+
+**LabelCreateRequest** (1 change)
+
+* Model was added
+
+**LabelListing** (1 change)
+
+* Model was added
+
+**DocumentBody** (1 change)
+
+* Model was added
+
+**DocumentBodyBlock** (1 change)
+
+* Model was added
+
+**DocumentBodyImage** (1 change)
+
+* Model was added
+
+**DocumentBodyList** (1 change)
+
+* Model was added
+
+**DocumentBodyListBlock** (1 change)
+
+* Model was added
+
+**DocumentBodyParagraph** (1 change)
+
+* Model was added
+
+**DocumentBodyVideo** (1 change)
+
+* Model was added
+
+**DocumentContentBlock** (1 change)
+
+* Model was added
+
+**DocumentText** (1 change)
+
+* Model was added
+
+**DocumentVariation** (1 change)
+
+* Model was added
+
+**DocumentVariationContext** (1 change)
+
+* Model was added
+
+**KnowledgeContextReference** (1 change)
+
+* Model was added
+
+**KnowledgeContextValueReference** (1 change)
+
+* Model was added
+
+**KnowledgeDocumentAlternative** (1 change)
+
+* Model was added
+
+**KnowledgeDocumentReference** (1 change)
+
+* Model was added
+
+**KnowledgeDocumentResponse** (1 change)
+
+* Model was added
+
+**KnowledgeDocumentReq** (1 change)
+
+* Model was added
+
+**KnowledgeDocumentVersion** (1 change)
+
+* Model was added
+
+**KnowledgeDocumentVersionListing** (1 change)
+
+* Model was added
+
+**KnowledgeDocumentResponseListing** (1 change)
+
+* Model was added
+
+**DocumentVariationListing** (1 change)
+
+* Model was added
+
+**KnowledgeDocumentVersionVariation** (1 change)
+
+* Model was added
+
+**KnowledgeDocumentVersionVariationListing** (1 change)
+
+* Model was added
+
+**KnowledgeExportJobDocumentsFilter** (1 change)
+
+* Model was added
+
+**KnowledgeExportJobFilter** (1 change)
+
+* Model was added
+
+**KnowledgeExportJobResponse** (1 change)
+
+* Model was added
+
+**KnowledgeExportJobRequest** (1 change)
+
+* Model was added
+
+**KnowledgeImportJobError** (1 change)
+
+* Model was added
+
+**KnowledgeImportJobReport** (1 change)
+
+* Model was added
+
+**KnowledgeImportJobResponse** (1 change)
+
+* Model was added
+
+**KnowledgeImportJobSettings** (1 change)
+
+* Model was added
+
+**KnowledgeImportJobStatistics** (1 change)
+
+* Model was added
+
+**KnowledgeImportJobRequest** (1 change)
+
+* Model was added
+
+**KnowledgeDocumentSearch** (1 change)
+
+* Model was added
+
+**KnowledgeDocumentSearchResult** (1 change)
+
+* Model was added
+
+**KnowledgeDocumentSearchRequest** (1 change)
+
+* Model was added
+
+**SearchUpdateRequest** (1 change)
+
+* Model was added
+
+**SelectedAnswer** (1 change)
+
+* Model was added
+
+**KnowledgeDocumentSuggestion** (1 change)
+
+* Model was added
+
+**KnowledgeDocumentSuggestionResult** (1 change)
+
+* Model was added
+
+**KnowledgeDocumentSuggestionResultDocument** (1 change)
+
+* Model was added
+
+**KnowledgeDocumentSuggestionRequest** (1 change)
+
+* Model was added
+
 **Miner** (1 change)
 
-* Enum value fr-ca was added to property language
+* Enum value de-de was added to property language
 
-**LimitChangeRequestDetails** (5 changes)
+**LimitChangeRequestDetails** (1 change)
 
-* Enum value Pending was added to property status
-* Enum value SecondaryApprovalNamespacesAdded was added to property status
-* Enum value ReviewerApproved was added to property status
-* Enum value ReviewerRejected was added to property status
-* Enum value ReviewerRollback was added to property status
+* Enum value skills was added to property namespace
 
-**StatusChange** (11 changes)
+**StatusChange** (1 change)
 
-* Enum value Pending was added to property status
-* Enum value SecondaryApprovalNamespacesAdded was added to property status
-* Enum value ReviewerApproved was added to property status
-* Enum value ReviewerRejected was added to property status
-* Enum value ReviewerRollback was added to property status
-* Enum value Pending was added to property previousStatus
-* Enum value SecondaryApprovalNamespacesAdded was added to property previousStatus
-* Enum value ReviewerApproved was added to property previousStatus
-* Enum value ReviewerRejected was added to property previousStatus
-* Enum value ReviewerRollback was added to property previousStatus
-* Optional property namespace was added
+* Enum value skills was added to property namespace
 
-**IpAddressRange** (1 change)
+**GuestCategoryReference** (1 change)
 
-* Enum value audiohook was added to property service
+* Model was added
 
-**EvaluationFormResponse** (1 change)
+**KnowledgeGuestDocument** (1 change)
+
+* Model was added
+
+**KnowledgeGuestDocumentVariation** (1 change)
+
+* Model was added
+
+**KnowledgeGuestDocumentVariationContext** (1 change)
+
+* Model was added
+
+**GuestCategoryResponse** (1 change)
+
+* Model was added
+
+**GuestCategoryResponseListing** (1 change)
+
+* Model was added
+
+**KnowledgeGuestDocumentResponseListing** (1 change)
+
+* Model was added
+
+**KnowledgeDocumentGuestSearch** (1 change)
+
+* Model was added
+
+**KnowledgeDocumentGuestSearchResult** (1 change)
+
+* Model was added
+
+**KnowledgeDocumentGuestSearchRequest** (1 change)
+
+* Model was added
+
+**KnowledgeGuestSessionApp** (1 change)
+
+* Model was added
+
+**KnowledgeGuestDocumentSuggestion** (1 change)
+
+* Model was added
+
+**KnowledgeGuestDocumentSuggestionResult** (1 change)
+
+* Model was added
+
+**KnowledgeGuestSession** (1 change)
+
+* Model was added
+
+**KnowledgeGuestSessionContext** (1 change)
 
 * Model was added
 
 **EvaluationResponse** (1 change)
 
-* Model was added
+* Optional property hasAssistanceFailed was added
 
-**AvailableMediaType** (1 change)
-
-* Model was added
-
-**AvailableMediaTypeEntityListing** (1 change)
+**EventCoBrowse** (1 change)
 
 * Model was added
 
-**ScimPhoneNumber** (1 change)
+**EventPresence** (1 change)
 
-* Enum value eightbyeight was added to property type
+* Model was added
 
-**TextBotTextModeConstraints** (1 change)
+**EventTyping** (1 change)
 
-* Optional property noInputTimeoutMilliseconds was added
+* Model was added
+
+**MessageEvent** (1 change)
+
+* Model was added
+
+**OrphanRecording** (1 change)
+
+* Optional property region was added
+
+**FlowVersion** (2 changes)
+
+* Optional property dateCheckedIn was added
+* Optional property dateSaved was added
+
+**ConversationAppSettings** (1 change)
+
+* Optional property conversationDisconnect was added
+
+**ConversationDisconnectSettings** (1 change)
+
+* Model was added
+
+**LearningAssignmentAggregateQueryResponseMetric** (1 change)
+
+* Enum value nInvalidScheduleActivities was added to property metric
+
+**LearningAssignmentAggregateParam** (1 change)
+
+* Enum value nInvalidScheduleActivities was added to property metrics
 
 
-# Point Changes (0 changes)
+# Point Changes (1 change)
+
+**POST /api/v2/users** (1 change)
+
+* Description was changed
