@@ -37,7 +37,9 @@ Delete an existing response library.
 
 This will remove any responses associated with the library.
 
-Requires NO permissions:
+Requires ANY permissions:
+
+* responses:library:delete
 
 ### Example Usage
 
@@ -87,7 +89,9 @@ Delete an existing response.
 
 This will remove the response from any libraries associated with it.
 
-Requires NO permissions:
+Requires ANY permissions:
+
+* responses:response:delete
 
 ### Example Usage
 
@@ -185,7 +189,9 @@ GET /api/v2/responsemanagement/libraries
 
 Gets a list of existing response libraries.
 
-Requires NO permissions:
+Requires ANY permissions:
+
+* responses:library:view
 
 ### Example Usage
 
@@ -239,7 +245,9 @@ GET /api/v2/responsemanagement/libraries/{libraryId}
 
 Get details about an existing response library.
 
-Requires NO permissions:
+Requires ANY permissions:
+
+* responses:library:view
 
 ### Example Usage
 
@@ -287,7 +295,9 @@ GET /api/v2/responsemanagement/responses/{responseId}
 
 Get details about an existing response.
 
-Requires NO permissions:
+Requires ANY permissions:
+
+* responses:response:view
 
 ### Example Usage
 
@@ -439,7 +449,9 @@ GET /api/v2/responsemanagement/responses
 
 Gets a list of existing responses.
 
-Requires NO permissions:
+Requires ANY permissions:
+
+* responses:response:view
 
 ### Example Usage
 
@@ -495,7 +507,9 @@ POST /api/v2/responsemanagement/libraries
 
 Create a response library.
 
-Requires NO permissions:
+Requires ANY permissions:
+
+* responses:library:add
 
 ### Example Usage
 
@@ -647,7 +661,9 @@ POST /api/v2/responsemanagement/responses
 
 Create a response.
 
-Requires NO permissions:
+Requires ANY permissions:
+
+* responses:response:add
 
 ### Example Usage
 
@@ -699,7 +715,9 @@ POST /api/v2/responsemanagement/responses/query
 
 Query responses
 
-Requires NO permissions:
+Requires ANY permissions:
+
+* responses:response:view
 
 ### Example Usage
 
@@ -749,7 +767,9 @@ Update an existing response library.
 
 Fields that can be updated: name. The most recent version is required for updates.
 
-Requires NO permissions:
+Requires ANY permissions:
+
+* responses:library:edit
 
 ### Example Usage
 
@@ -801,7 +821,9 @@ Update an existing response.
 
 Fields that can be updated: name, libraries, and texts. The most recent version is required for updates.
 
-Requires NO permissions:
+Requires ANY permissions:
+
+* responses:response:edit
 
 ### Example Usage
 

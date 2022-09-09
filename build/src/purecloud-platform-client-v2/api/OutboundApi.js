@@ -5,7 +5,7 @@ class OutboundApi {
 	/**
 	 * Outbound service.
 	 * @module purecloud-platform-client-v2/api/OutboundApi
-	 * @version 146.0.0
+	 * @version 147.0.0
 	 */
 
 	/**
@@ -296,6 +296,31 @@ class OutboundApi {
 			'DELETE', 
 			{  },
 			{ 'id': this.apiClient.buildCollectionParam(id, 'multi') },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete an Outbound Digital Rule Set
+	 * 
+	 * @param {String} digitalRuleSetId The Digital Rule Set ID
+	 */
+	deleteOutboundDigitalruleset(digitalRuleSetId) { 
+		// verify the required parameter 'digitalRuleSetId' is set
+		if (digitalRuleSetId === undefined || digitalRuleSetId === null) {
+			throw 'Missing the required parameter "digitalRuleSetId" when calling deleteOutboundDigitalruleset';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/outbound/digitalrulesets/{digitalRuleSetId}', 
+			'DELETE', 
+			{ 'digitalRuleSetId': digitalRuleSetId },
+			{  },
 			{  },
 			{  },
 			null, 
@@ -1333,6 +1358,60 @@ class OutboundApi {
 			'GET', 
 			{  },
 			{ 'includeImportStatus': opts['includeImportStatus'],'includeSize': opts['includeSize'],'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'filterType': opts['filterType'],'name': opts['name'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get an Outbound Digital Rule Set
+	 * 
+	 * @param {String} digitalRuleSetId The Digital Rule Set ID
+	 */
+	getOutboundDigitalruleset(digitalRuleSetId) { 
+		// verify the required parameter 'digitalRuleSetId' is set
+		if (digitalRuleSetId === undefined || digitalRuleSetId === null) {
+			throw 'Missing the required parameter "digitalRuleSetId" when calling getOutboundDigitalruleset';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/outbound/digitalrulesets/{digitalRuleSetId}', 
+			'GET', 
+			{ 'digitalRuleSetId': digitalRuleSetId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Query a list of Outbound Digital Rule Sets
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageSize Page size. The max that will be returned is 100. (default to 25)
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Object} opts.sortBy The field to sort by (default to name)
+	 * @param {Object} opts.sortOrder The direction to sort (default to ascending)
+	 * @param {String} opts.name Name
+	 * @param {Array.<String>} opts.id A list of digital rule set ids to bulk fetch
+	 */
+	getOutboundDigitalrulesets(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/outbound/digitalrulesets', 
+			'GET', 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'name': opts['name'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi') },
 			{  },
 			{  },
 			null, 
@@ -2526,6 +2605,31 @@ class OutboundApi {
 	}
 
 	/**
+	 * Create an Outbound Digital Rule Set
+	 * 
+	 * @param {Object} body Digital Rule Set
+	 */
+	postOutboundDigitalrulesets(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postOutboundDigitalrulesets';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/outbound/digitalrulesets', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Initiate the export of a dnc list.
 	 * Returns 200 if received OK.
 	 * @param {String} dncListId DncList ID
@@ -2979,6 +3083,36 @@ class OutboundApi {
 			'/api/v2/outbound/contactlistfilters/{contactListFilterId}', 
 			'PUT', 
 			{ 'contactListFilterId': contactListFilterId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update an Outbound Digital Rule Set
+	 * 
+	 * @param {String} digitalRuleSetId The Digital Rule Set ID
+	 * @param {Object} body Digital Rule Set
+	 */
+	putOutboundDigitalruleset(digitalRuleSetId, body) { 
+		// verify the required parameter 'digitalRuleSetId' is set
+		if (digitalRuleSetId === undefined || digitalRuleSetId === null) {
+			throw 'Missing the required parameter "digitalRuleSetId" when calling putOutboundDigitalruleset';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putOutboundDigitalruleset';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/outbound/digitalrulesets/{digitalRuleSetId}', 
+			'PUT', 
+			{ 'digitalRuleSetId': digitalRuleSetId },
 			{  },
 			{  },
 			{  },

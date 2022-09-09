@@ -5,7 +5,7 @@ class KnowledgeApi {
 	/**
 	 * Knowledge service.
 	 * @module purecloud-platform-client-v2/api/KnowledgeApi
-	 * @version 146.0.0
+	 * @version 147.0.0
 	 */
 
 	/**
@@ -802,6 +802,7 @@ class KnowledgeApi {
 	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
 	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
 	 * @param {String} opts.interval Retrieves the documents modified in specified date and time range. If the after and before cursor parameters are within this interval, it would return valid data, otherwise it throws an error.The dates in the interval are represented in ISO-8601 format: YYYY-MM-DDThh:mm:ssZ/YYYY-MM-DDThh:mm:ssZ
+	 * @param {Array.<String>} opts.documentId Retrieves the specified documents, comma separated values expected.
 	 * @param {Array.<String>} opts.categoryId If specified, retrieves documents associated with category ids, comma separated values expected.
 	 * @param {Boolean} opts.includeSubcategories Works along with 'categoryId' query parameter. If specified, retrieves documents associated with category ids and its children categories.
 	 * @param {Boolean} opts.includeDrafts If includeDrafts is true, Documents in the draft state are also returned in the response.
@@ -820,7 +821,7 @@ class KnowledgeApi {
 			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents', 
 			'GET', 
 			{ 'knowledgeBaseId': knowledgeBaseId },
-			{ 'before': opts['before'],'after': opts['after'],'pageSize': opts['pageSize'],'interval': opts['interval'],'categoryId': this.apiClient.buildCollectionParam(opts['categoryId'], 'multi'),'includeSubcategories': opts['includeSubcategories'],'includeDrafts': opts['includeDrafts'],'labelIds': this.apiClient.buildCollectionParam(opts['labelIds'], 'multi'),'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+			{ 'before': opts['before'],'after': opts['after'],'pageSize': opts['pageSize'],'interval': opts['interval'],'documentId': this.apiClient.buildCollectionParam(opts['documentId'], 'multi'),'categoryId': this.apiClient.buildCollectionParam(opts['categoryId'], 'multi'),'includeSubcategories': opts['includeSubcategories'],'includeDrafts': opts['includeDrafts'],'labelIds': this.apiClient.buildCollectionParam(opts['labelIds'], 'multi'),'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
 			{  },
 			{  },
 			null, 

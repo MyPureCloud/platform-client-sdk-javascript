@@ -1393,6 +1393,7 @@ let opts = {
   'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
   'pageSize': "pageSize_example", // String | Number of entities to return. Maximum of 200.
   'interval': "interval_example", // String | Retrieves the documents modified in specified date and time range. If the after and before cursor parameters are within this interval, it would return valid data, otherwise it throws an error.The dates in the interval are represented in ISO-8601 format: YYYY-MM-DDThh:mm:ssZ/YYYY-MM-DDThh:mm:ssZ
+  'documentId': ["documentId_example"], // [String] | Retrieves the specified documents, comma separated values expected.
   'categoryId': ["categoryId_example"], // [String] | If specified, retrieves documents associated with category ids, comma separated values expected.
   'includeSubcategories': true, // Boolean | Works along with 'categoryId' query parameter. If specified, retrieves documents associated with category ids and its children categories.
   'includeDrafts': true, // Boolean | If includeDrafts is true, Documents in the draft state are also returned in the response.
@@ -1420,6 +1421,7 @@ apiInstance.getKnowledgeKnowledgebaseDocuments(knowledgeBaseId, opts)
  **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
  **pageSize** | **String** | Number of entities to return. Maximum of 200. | [optional]  |
  **interval** | **String** | Retrieves the documents modified in specified date and time range. If the after and before cursor parameters are within this interval, it would return valid data, otherwise it throws an error.The dates in the interval are represented in ISO-8601 format: YYYY-MM-DDThh:mm:ssZ/YYYY-MM-DDThh:mm:ssZ | [optional]  |
+ **documentId** | **[String]** | Retrieves the specified documents, comma separated values expected. | [optional]  |
  **categoryId** | **[String]** | If specified, retrieves documents associated with category ids, comma separated values expected. | [optional]  |
  **includeSubcategories** | **Boolean** | Works along with 'categoryId' query parameter. If specified, retrieves documents associated with category ids and its children categories. | [optional]  |
  **includeDrafts** | **Boolean** | If includeDrafts is true, Documents in the draft state are also returned in the response. | [optional]  |

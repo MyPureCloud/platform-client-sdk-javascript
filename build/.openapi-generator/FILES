@@ -244,6 +244,7 @@ docs/deleteOutboundContactlistContact-example.txt
 docs/deleteOutboundContactlistContacts-example.txt
 docs/deleteOutboundContactlistfilter-example.txt
 docs/deleteOutboundContactlists-example.txt
+docs/deleteOutboundDigitalruleset-example.txt
 docs/deleteOutboundDnclist-example.txt
 docs/deleteOutboundMessagingcampaign-example.txt
 docs/deleteOutboundMessagingcampaignProgress-example.txt
@@ -353,6 +354,7 @@ docs/getAnalyticsConversationsDetailsJobResults-example.txt
 docs/getAnalyticsConversationsDetailsJobResults-example.txt
 docs/getAnalyticsConversationsDetailsJobsAvailability-example.txt
 docs/getAnalyticsConversationsDetailsJobsAvailability-example.txt
+docs/getAnalyticsDataretentionSettings-example.txt
 docs/getAnalyticsReportingExports-example.txt
 docs/getAnalyticsReportingExportsMetadata-example.txt
 docs/getAnalyticsReportingMetadata-example.txt
@@ -854,6 +856,8 @@ docs/getOutboundContactlistfilters-example.txt
 docs/getOutboundContactlists-example.txt
 docs/getOutboundContactlistsDivisionview-example.txt
 docs/getOutboundContactlistsDivisionviews-example.txt
+docs/getOutboundDigitalruleset-example.txt
+docs/getOutboundDigitalrulesets-example.txt
 docs/getOutboundDnclist-example.txt
 docs/getOutboundDnclistExport-example.txt
 docs/getOutboundDnclistImportstatus-example.txt
@@ -929,6 +933,7 @@ docs/getRecordingMediaretentionpolicy-example.txt
 docs/getRecordingRecordingkeys-example.txt
 docs/getRecordingRecordingkeysRotationschedule-example.txt
 docs/getRecordingSettings-example.txt
+docs/getRecordingsRetentionQuery-example.txt
 docs/getRecordingsScreensessions-example.txt
 docs/getResponsemanagementLibraries-example.txt
 docs/getResponsemanagementLibrary-example.txt
@@ -1179,6 +1184,7 @@ docs/getWebdeploymentsConfigurationVersions-example.txt
 docs/getWebdeploymentsConfigurationVersionsDraft-example.txt
 docs/getWebdeploymentsConfigurations-example.txt
 docs/getWebdeploymentsDeployment-example.txt
+docs/getWebdeploymentsDeploymentConfigurations-example.txt
 docs/getWebdeploymentsDeployments-example.txt
 docs/getWebmessagingMessages-example.txt
 docs/getWidgetsDeployment-example.txt
@@ -1654,6 +1660,7 @@ docs/postOutboundContactlistfilters-example.txt
 docs/postOutboundContactlistfiltersPreview-example.txt
 docs/postOutboundContactlists-example.txt
 docs/postOutboundConversationDnc-example.txt
+docs/postOutboundDigitalrulesets-example.txt
 docs/postOutboundDnclistExport-example.txt
 docs/postOutboundDnclistPhonenumbers-example.txt
 docs/postOutboundDnclists-example.txt
@@ -1759,6 +1766,7 @@ docs/postUploadsPublicassetsImages-example.txt
 docs/postUploadsRecordings-example.txt
 docs/postUploadsWorkforcemanagementHistoricaldataCsv-example.txt
 docs/postUsageQuery-example.txt
+docs/postUserExternalid-example.txt
 docs/postUserGreetings-example.txt
 docs/postUserInvite-example.txt
 docs/postUserPassword-example.txt
@@ -1832,6 +1840,7 @@ docs/postWorkforcemanagementTimeofflimitsAvailableQuery-example.txt
 docs/postWorkforcemanagementTimeoffrequests-example.txt
 docs/putAlertingInteractionstatsAlert-example.txt
 docs/putAlertingInteractionstatsRule-example.txt
+docs/putAnalyticsDataretentionSettings-example.txt
 docs/putAnalyticsReportingSchedule-example.txt
 docs/putArchitectEmergencygroup-example.txt
 docs/putArchitectIvr-example.txt
@@ -1933,6 +1942,7 @@ docs/putOutboundCampaignrule-example.txt
 docs/putOutboundContactlist-example.txt
 docs/putOutboundContactlistContact-example.txt
 docs/putOutboundContactlistfilter-example.txt
+docs/putOutboundDigitalruleset-example.txt
 docs/putOutboundDnclist-example.txt
 docs/putOutboundMessagingcampaign-example.txt
 docs/putOutboundRuleset-example.txt

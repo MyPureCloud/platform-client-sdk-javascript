@@ -1040,7 +1040,7 @@ let opts = {
   'sortBy': "sortBy_example", // String | variable name requested to sort by
   'nextPage': "nextPage_example", // String | next page token
   'previousPage': "previousPage_example", // String | Previous page token
-  'expand': "expand_example", // String | Expand
+  'expand': "expand_example", // String | If 'expand=publishHistory', then each unpublished evaluation form includes a listing of its published versions
   'name': "name_example", // String | Name
   'sortOrder': "sortOrder_example" // String | Order to sort results, either asc or desc
 };
@@ -1065,7 +1065,7 @@ apiInstance.getQualityForms(opts)
  **sortBy** | **String** | variable name requested to sort by | [optional]  |
  **nextPage** | **String** | next page token | [optional]  |
  **previousPage** | **String** | Previous page token | [optional]  |
- **expand** | **String** | Expand | [optional]  |
+ **expand** | **String** | If 'expand=publishHistory', then each unpublished evaluation form includes a listing of its published versions | [optional] <br />**Values**: publishHistory |
  **name** | **String** | Name | [optional]  |
  **sortOrder** | **String** | Order to sort results, either asc or desc | [optional]  |
 {: class="table table-striped"}
@@ -1214,7 +1214,7 @@ let opts = {
   'sortBy': "sortBy_example", // String | variable name requested to sort by
   'nextPage': "nextPage_example", // String | next page token
   'previousPage': "previousPage_example", // String | Previous page token
-  'expand': "expand_example", // String | Expand
+  'expand': "expand_example", // String | If 'expand=publishHistory', then each unpublished evaluation form includes a listing of its published versions
   'name': "name_example", // String | Name
   'sortOrder': "sortOrder_example" // String | Order to sort results, either asc or desc
 };
@@ -1239,7 +1239,7 @@ apiInstance.getQualityFormsEvaluations(opts)
  **sortBy** | **String** | variable name requested to sort by | [optional]  |
  **nextPage** | **String** | next page token | [optional]  |
  **previousPage** | **String** | Previous page token | [optional]  |
- **expand** | **String** | Expand | [optional]  |
+ **expand** | **String** | If 'expand=publishHistory', then each unpublished evaluation form includes a listing of its published versions | [optional] <br />**Values**: publishHistory |
  **name** | **String** | Name | [optional]  |
  **sortOrder** | **String** | Order to sort results, either asc or desc | [optional]  |
 {: class="table table-striped"}
@@ -1436,7 +1436,7 @@ let opts = {
   'sortBy': "sortBy_example", // String | variable name requested to sort by
   'nextPage': "nextPage_example", // String | next page token
   'previousPage': "previousPage_example", // String | Previous page token
-  'expand': "expand_example", // String | Expand
+  'expand': "expand_example", // String | If 'expand=publishHistory', then each unpublished evaluation form includes a listing of its published versions
   'name': "name_example", // String | Name
   'sortOrder': "sortOrder_example" // String | Order to sort results, either asc or desc
 };
@@ -1461,7 +1461,7 @@ apiInstance.getQualityFormsSurveys(opts)
  **sortBy** | **String** | variable name requested to sort by | [optional]  |
  **nextPage** | **String** | next page token | [optional]  |
  **previousPage** | **String** | Previous page token | [optional]  |
- **expand** | **String** | Expand | [optional]  |
+ **expand** | **String** | If 'expand=publishHistory', then each unpublished evaluation form includes a listing of its published versions | [optional] <br />**Values**: publishHistory |
  **name** | **String** | Name | [optional]  |
  **sortOrder** | **String** | Order to sort results, either asc or desc | [optional]  |
 {: class="table table-striped"}

@@ -16,6 +16,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getAnalyticsConversationsDetailsJob**](AnalyticsApi.html#getAnalyticsConversationsDetailsJob) | **GET** /api/v2/analytics/conversations/details/jobs/{jobId} | Get status for async query for conversation details
 [**getAnalyticsConversationsDetailsJobResults**](AnalyticsApi.html#getAnalyticsConversationsDetailsJobResults) | **GET** /api/v2/analytics/conversations/details/jobs/{jobId}/results | Fetch a page of results for an async query
 [**getAnalyticsConversationsDetailsJobsAvailability**](AnalyticsApi.html#getAnalyticsConversationsDetailsJobsAvailability) | **GET** /api/v2/analytics/conversations/details/jobs/availability | Lookup the datalake availability date and time
+[**getAnalyticsDataretentionSettings**](AnalyticsApi.html#getAnalyticsDataretentionSettings) | **GET** /api/v2/analytics/dataretention/settings | Get analytics data retention setting
 [**getAnalyticsReportingExports**](AnalyticsApi.html#getAnalyticsReportingExports) | **GET** /api/v2/analytics/reporting/exports | Get all view export requests for a user
 [**getAnalyticsReportingExportsMetadata**](AnalyticsApi.html#getAnalyticsReportingExportsMetadata) | **GET** /api/v2/analytics/reporting/exports/metadata | Get all export metadata
 [**getAnalyticsReportingMetadata**](AnalyticsApi.html#getAnalyticsReportingMetadata) | **GET** /api/v2/analytics/reporting/metadata | Get list of reporting metadata.
@@ -52,6 +53,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postAnalyticsUsersDetailsJobs**](AnalyticsApi.html#postAnalyticsUsersDetailsJobs) | **POST** /api/v2/analytics/users/details/jobs | Query for user details asynchronously
 [**postAnalyticsUsersDetailsQuery**](AnalyticsApi.html#postAnalyticsUsersDetailsQuery) | **POST** /api/v2/analytics/users/details/query | Query for user details
 [**postAnalyticsUsersObservationsQuery**](AnalyticsApi.html#postAnalyticsUsersObservationsQuery) | **POST** /api/v2/analytics/users/observations/query | Query for user observations
+[**putAnalyticsDataretentionSettings**](AnalyticsApi.html#putAnalyticsDataretentionSettings) | **PUT** /api/v2/analytics/dataretention/settings | Update analytics data retention setting
 [**putAnalyticsReportingSchedule**](AnalyticsApi.html#putAnalyticsReportingSchedule) | **PUT** /api/v2/analytics/reporting/schedules/{scheduleId} | Update a scheduled report job.
 {: class="table table-striped"}
 
@@ -520,6 +522,51 @@ This endpoint does not need any parameter.
 ### Return type
 
 **DataAvailabilityResponse**
+
+<a name="getAnalyticsDataretentionSettings"></a>
+
+# AnalyticsDataRetentionResponse getAnalyticsDataretentionSettings()
+
+
+GET /api/v2/analytics/dataretention/settings
+
+Get analytics data retention setting
+
+Requires ANY permissions:
+
+* analytics:dataRetention:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AnalyticsApi();
+
+apiInstance.getAnalyticsDataretentionSettings()
+  .then((data) => {
+    console.log(`getAnalyticsDataretentionSettings success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getAnalyticsDataretentionSettings');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+
+### Return type
+
+**AnalyticsDataRetentionResponse**
 
 <a name="getAnalyticsReportingExports"></a>
 
@@ -2330,6 +2377,56 @@ apiInstance.postAnalyticsUsersObservationsQuery(body)
 ### Return type
 
 **UserObservationQueryResponse**
+
+<a name="putAnalyticsDataretentionSettings"></a>
+
+# AnalyticsDataRetentionResponse putAnalyticsDataretentionSettings(body)
+
+
+PUT /api/v2/analytics/dataretention/settings
+
+Update analytics data retention setting
+
+Requires ANY permissions:
+
+* analytics:dataRetention:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AnalyticsApi();
+
+let body = {}; // Object | retentionDays
+
+apiInstance.putAnalyticsDataretentionSettings(body)
+  .then((data) => {
+    console.log(`putAnalyticsDataretentionSettings success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putAnalyticsDataretentionSettings');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | retentionDays |  |
+{: class="table table-striped"}
+
+### Return type
+
+**AnalyticsDataRetentionResponse**
 
 <a name="putAnalyticsReportingSchedule"></a>
 

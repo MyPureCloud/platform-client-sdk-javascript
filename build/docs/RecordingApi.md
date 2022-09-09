@@ -38,6 +38,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getRecordingRecordingkeys**](RecordingApi.html#getRecordingRecordingkeys) | **GET** /api/v2/recording/recordingkeys | Get encryption key list
 [**getRecordingRecordingkeysRotationschedule**](RecordingApi.html#getRecordingRecordingkeysRotationschedule) | **GET** /api/v2/recording/recordingkeys/rotationschedule | Get key rotation schedule
 [**getRecordingSettings**](RecordingApi.html#getRecordingSettings) | **GET** /api/v2/recording/settings | Get the Recording Settings for the Organization
+[**getRecordingsRetentionQuery**](RecordingApi.html#getRecordingsRetentionQuery) | **GET** /api/v2/recordings/retention/query | Query for recording retention data
 [**getRecordingsScreensessions**](RecordingApi.html#getRecordingsScreensessions) | **GET** /api/v2/recordings/screensessions | Retrieves a paged listing of screen recording sessions
 [**patchRecordingCrossplatformMediaretentionpolicy**](RecordingApi.html#patchRecordingCrossplatformMediaretentionpolicy) | **PATCH** /api/v2/recording/crossplatform/mediaretentionpolicies/{policyId} | Patch a media retention policy
 [**patchRecordingMediaretentionpolicy**](RecordingApi.html#patchRecordingMediaretentionpolicy) | **PATCH** /api/v2/recording/mediaretentionpolicies/{policyId} | Patch a media retention policy
@@ -1765,6 +1766,62 @@ apiInstance.getRecordingSettings(opts)
 ### Return type
 
 **RecordingSettings**
+
+<a name="getRecordingsRetentionQuery"></a>
+
+# RecordingRetentionCursorEntityListing getRecordingsRetentionQuery(retentionThresholdDays, opts)
+
+
+GET /api/v2/recordings/retention/query
+
+Query for recording retention data
+
+Requires ANY permissions:
+
+* recording:recording:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.RecordingApi();
+
+let retentionThresholdDays = 3.4; // Number | Fetch retention data for recordings retained for more days than the provided value.
+let opts = { 
+  'cursor': "cursor_example", // String | Indicates where to resume query results (not required for first page)
+  'pageSize': 25 // Number | Page size. Maximum is 500.
+};
+
+apiInstance.getRecordingsRetentionQuery(retentionThresholdDays, opts)
+  .then((data) => {
+    console.log(`getRecordingsRetentionQuery success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getRecordingsRetentionQuery');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **retentionThresholdDays** | **Number** | Fetch retention data for recordings retained for more days than the provided value. |  |
+ **cursor** | **String** | Indicates where to resume query results (not required for first page) | [optional]  |
+ **pageSize** | **Number** | Page size. Maximum is 500. | [optional] [default to 25] |
+{: class="table table-striped"}
+
+### Return type
+
+**RecordingRetentionCursorEntityListing**
 
 <a name="getRecordingsScreensessions"></a>
 

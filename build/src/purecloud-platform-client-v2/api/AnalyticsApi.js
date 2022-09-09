@@ -5,7 +5,7 @@ class AnalyticsApi {
 	/**
 	 * Analytics service.
 	 * @module purecloud-platform-client-v2/api/AnalyticsApi
-	 * @version 146.0.0
+	 * @version 147.0.0
 	 */
 
 	/**
@@ -239,6 +239,26 @@ class AnalyticsApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/analytics/conversations/details/jobs/availability', 
+			'GET', 
+			{  },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get analytics data retention setting
+	 * 
+	 */
+	getAnalyticsDataretentionSettings() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/dataretention/settings', 
 			'GET', 
 			{  },
 			{  },
@@ -1140,6 +1160,31 @@ class AnalyticsApi {
 		return this.apiClient.callApi(
 			'/api/v2/analytics/users/observations/query', 
 			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update analytics data retention setting
+	 * 
+	 * @param {Object} body retentionDays
+	 */
+	putAnalyticsDataretentionSettings(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putAnalyticsDataretentionSettings';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/dataretention/settings', 
+			'PUT', 
 			{  },
 			{  },
 			{  },

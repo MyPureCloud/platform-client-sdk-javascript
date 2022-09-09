@@ -5,7 +5,7 @@ class RecordingApi {
 	/**
 	 * Recording service.
 	 * @module purecloud-platform-client-v2/api/RecordingApi
-	 * @version 146.0.0
+	 * @version 147.0.0
 	 */
 
 	/**
@@ -870,6 +870,36 @@ class RecordingApi {
 			'GET', 
 			{  },
 			{ 'createDefault': opts['createDefault'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Query for recording retention data
+	 * 
+	 * @param {Number} retentionThresholdDays Fetch retention data for recordings retained for more days than the provided value.
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.cursor Indicates where to resume query results (not required for first page)
+	 * @param {Number} opts.pageSize Page size. Maximum is 500. (default to 25)
+	 */
+	getRecordingsRetentionQuery(retentionThresholdDays, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'retentionThresholdDays' is set
+		if (retentionThresholdDays === undefined || retentionThresholdDays === null) {
+			throw 'Missing the required parameter "retentionThresholdDays" when calling getRecordingsRetentionQuery';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/recordings/retention/query', 
+			'GET', 
+			{  },
+			{ 'retentionThresholdDays': retentionThresholdDays,'cursor': opts['cursor'],'pageSize': opts['pageSize'] },
 			{  },
 			{  },
 			null, 

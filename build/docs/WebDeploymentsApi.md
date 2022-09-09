@@ -14,6 +14,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getWebdeploymentsConfigurationVersionsDraft**](WebDeploymentsApi.html#getWebdeploymentsConfigurationVersionsDraft) | **GET** /api/v2/webdeployments/configurations/{configurationId}/versions/draft | Get the configuration draft
 [**getWebdeploymentsConfigurations**](WebDeploymentsApi.html#getWebdeploymentsConfigurations) | **GET** /api/v2/webdeployments/configurations | View configuration drafts
 [**getWebdeploymentsDeployment**](WebDeploymentsApi.html#getWebdeploymentsDeployment) | **GET** /api/v2/webdeployments/deployments/{deploymentId} | Get a deployment
+[**getWebdeploymentsDeploymentConfigurations**](WebDeploymentsApi.html#getWebdeploymentsDeploymentConfigurations) | **GET** /api/v2/webdeployments/deployments/{deploymentId}/configurations | Get active configuration for a given deployment
 [**getWebdeploymentsDeployments**](WebDeploymentsApi.html#getWebdeploymentsDeployments) | **GET** /api/v2/webdeployments/deployments | Get deployments
 [**postWebdeploymentsConfigurationVersionsDraftPublish**](WebDeploymentsApi.html#postWebdeploymentsConfigurationVersionsDraftPublish) | **POST** /api/v2/webdeployments/configurations/{configurationId}/versions/draft/publish | Publish the configuration draft and create a new version
 [**postWebdeploymentsConfigurations**](WebDeploymentsApi.html#postWebdeploymentsConfigurations) | **POST** /api/v2/webdeployments/configurations | Create a configuration draft
@@ -377,6 +378,58 @@ apiInstance.getWebdeploymentsDeployment(deploymentId)
 ### Return type
 
 **WebDeployment**
+
+<a name="getWebdeploymentsDeploymentConfigurations"></a>
+
+# WebDeploymentActiveConfigurationOnDeployment getWebdeploymentsDeploymentConfigurations(deploymentId, opts)
+
+
+GET /api/v2/webdeployments/deployments/{deploymentId}/configurations
+
+Get active configuration for a given deployment
+
+Requires NO permissions:
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WebDeploymentsApi();
+
+let deploymentId = "deploymentId_example"; // String | The deployment ID
+let opts = { 
+  'type': "type_example" // String | Get active configuration on a deployment
+};
+
+apiInstance.getWebdeploymentsDeploymentConfigurations(deploymentId, opts)
+  .then((data) => {
+    console.log(`getWebdeploymentsDeploymentConfigurations success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getWebdeploymentsDeploymentConfigurations');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **deploymentId** | **String** | The deployment ID |  |
+ **type** | **String** | Get active configuration on a deployment | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**WebDeploymentActiveConfigurationOnDeployment**
 
 <a name="getWebdeploymentsDeployments"></a>
 

@@ -5,7 +5,7 @@ class QualityApi {
 	/**
 	 * Quality service.
 	 * @module purecloud-platform-client-v2/api/QualityApi
-	 * @version 146.0.0
+	 * @version 147.0.0
 	 */
 
 	/**
@@ -515,7 +515,7 @@ class QualityApi {
 	 * @param {String} opts.sortBy variable name requested to sort by
 	 * @param {String} opts.nextPage next page token
 	 * @param {String} opts.previousPage Previous page token
-	 * @param {String} opts.expand Expand
+	 * @param {Object} opts.expand If 'expand=publishHistory', then each unpublished evaluation form includes a listing of its published versions
 	 * @param {String} opts.name Name
 	 * @param {String} opts.sortOrder Order to sort results, either asc or desc
 	 */
@@ -602,7 +602,7 @@ class QualityApi {
 	 * @param {String} opts.sortBy variable name requested to sort by
 	 * @param {String} opts.nextPage next page token
 	 * @param {String} opts.previousPage Previous page token
-	 * @param {String} opts.expand Expand
+	 * @param {Object} opts.expand If 'expand=publishHistory', then each unpublished evaluation form includes a listing of its published versions
 	 * @param {String} opts.name Name
 	 * @param {String} opts.sortOrder Order to sort results, either asc or desc
 	 */
@@ -713,7 +713,7 @@ class QualityApi {
 	 * @param {String} opts.sortBy variable name requested to sort by
 	 * @param {String} opts.nextPage next page token
 	 * @param {String} opts.previousPage Previous page token
-	 * @param {String} opts.expand Expand
+	 * @param {Object} opts.expand If 'expand=publishHistory', then each unpublished evaluation form includes a listing of its published versions
 	 * @param {String} opts.name Name
 	 * @param {String} opts.sortOrder Order to sort results, either asc or desc
 	 */

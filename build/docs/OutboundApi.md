@@ -18,6 +18,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**deleteOutboundContactlistContacts**](OutboundApi.html#deleteOutboundContactlistContacts) | **DELETE** /api/v2/outbound/contactlists/{contactListId}/contacts | Delete contacts from a contact list.
 [**deleteOutboundContactlistfilter**](OutboundApi.html#deleteOutboundContactlistfilter) | **DELETE** /api/v2/outbound/contactlistfilters/{contactListFilterId} | Delete Contact List Filter
 [**deleteOutboundContactlists**](OutboundApi.html#deleteOutboundContactlists) | **DELETE** /api/v2/outbound/contactlists | Delete multiple contact lists.
+[**deleteOutboundDigitalruleset**](OutboundApi.html#deleteOutboundDigitalruleset) | **DELETE** /api/v2/outbound/digitalrulesets/{digitalRuleSetId} | Delete an Outbound Digital Rule Set
 [**deleteOutboundDnclist**](OutboundApi.html#deleteOutboundDnclist) | **DELETE** /api/v2/outbound/dnclists/{dncListId} | Delete dialer DNC list
 [**deleteOutboundMessagingcampaign**](OutboundApi.html#deleteOutboundMessagingcampaign) | **DELETE** /api/v2/outbound/messagingcampaigns/{messagingCampaignId} | Delete an Outbound Messaging Campaign
 [**deleteOutboundMessagingcampaignProgress**](OutboundApi.html#deleteOutboundMessagingcampaignProgress) | **DELETE** /api/v2/outbound/messagingcampaigns/{messagingCampaignId}/progress | Reset messaging campaign progress and recycle the messaging campaign
@@ -56,6 +57,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getOutboundContactlists**](OutboundApi.html#getOutboundContactlists) | **GET** /api/v2/outbound/contactlists | Query a list of contact lists.
 [**getOutboundContactlistsDivisionview**](OutboundApi.html#getOutboundContactlistsDivisionview) | **GET** /api/v2/outbound/contactlists/divisionviews/{contactListId} | Get a basic ContactList information object
 [**getOutboundContactlistsDivisionviews**](OutboundApi.html#getOutboundContactlistsDivisionviews) | **GET** /api/v2/outbound/contactlists/divisionviews | Query a list of simplified contact list objects.
+[**getOutboundDigitalruleset**](OutboundApi.html#getOutboundDigitalruleset) | **GET** /api/v2/outbound/digitalrulesets/{digitalRuleSetId} | Get an Outbound Digital Rule Set
+[**getOutboundDigitalrulesets**](OutboundApi.html#getOutboundDigitalrulesets) | **GET** /api/v2/outbound/digitalrulesets | Query a list of Outbound Digital Rule Sets
 [**getOutboundDnclist**](OutboundApi.html#getOutboundDnclist) | **GET** /api/v2/outbound/dnclists/{dncListId} | Get dialer DNC list
 [**getOutboundDnclistExport**](OutboundApi.html#getOutboundDnclistExport) | **GET** /api/v2/outbound/dnclists/{dncListId}/export | Get the URI of a DNC list export.
 [**getOutboundDnclistImportstatus**](OutboundApi.html#getOutboundDnclistImportstatus) | **GET** /api/v2/outbound/dnclists/{dncListId}/importstatus | Get dialer dncList import status.
@@ -101,6 +104,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postOutboundContactlistfiltersPreview**](OutboundApi.html#postOutboundContactlistfiltersPreview) | **POST** /api/v2/outbound/contactlistfilters/preview | Get a preview of the output of a contact list filter
 [**postOutboundContactlists**](OutboundApi.html#postOutboundContactlists) | **POST** /api/v2/outbound/contactlists | Create a contact List.
 [**postOutboundConversationDnc**](OutboundApi.html#postOutboundConversationDnc) | **POST** /api/v2/outbound/conversations/{conversationId}/dnc | Add phone numbers to a Dialer DNC list.
+[**postOutboundDigitalrulesets**](OutboundApi.html#postOutboundDigitalrulesets) | **POST** /api/v2/outbound/digitalrulesets | Create an Outbound Digital Rule Set
 [**postOutboundDnclistExport**](OutboundApi.html#postOutboundDnclistExport) | **POST** /api/v2/outbound/dnclists/{dncListId}/export | Initiate the export of a dnc list.
 [**postOutboundDnclistPhonenumbers**](OutboundApi.html#postOutboundDnclistPhonenumbers) | **POST** /api/v2/outbound/dnclists/{dncListId}/phonenumbers | Add phone numbers to a DNC list.
 [**postOutboundDnclists**](OutboundApi.html#postOutboundDnclists) | **POST** /api/v2/outbound/dnclists | Create dialer DNC list
@@ -117,6 +121,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**putOutboundContactlist**](OutboundApi.html#putOutboundContactlist) | **PUT** /api/v2/outbound/contactlists/{contactListId} | Update a contact list.
 [**putOutboundContactlistContact**](OutboundApi.html#putOutboundContactlistContact) | **PUT** /api/v2/outbound/contactlists/{contactListId}/contacts/{contactId} | Update a contact.
 [**putOutboundContactlistfilter**](OutboundApi.html#putOutboundContactlistfilter) | **PUT** /api/v2/outbound/contactlistfilters/{contactListFilterId} | Update Contact List Filter
+[**putOutboundDigitalruleset**](OutboundApi.html#putOutboundDigitalruleset) | **PUT** /api/v2/outbound/digitalrulesets/{digitalRuleSetId} | Update an Outbound Digital Rule Set
 [**putOutboundDnclist**](OutboundApi.html#putOutboundDnclist) | **PUT** /api/v2/outbound/dnclists/{dncListId} | Update dialer DNC list
 [**putOutboundMessagingcampaign**](OutboundApi.html#putOutboundMessagingcampaign) | **PUT** /api/v2/outbound/messagingcampaigns/{messagingCampaignId} | Update an Outbound Messaging Campaign
 [**putOutboundRuleset**](OutboundApi.html#putOutboundRuleset) | **PUT** /api/v2/outbound/rulesets/{ruleSetId} | Update a Rule Set.
@@ -676,6 +681,56 @@ apiInstance.deleteOutboundContactlists(id)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **id** | **[String]** | contact list id(s) to delete |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
+
+<a name="deleteOutboundDigitalruleset"></a>
+
+# void deleteOutboundDigitalruleset(digitalRuleSetId)
+
+
+DELETE /api/v2/outbound/digitalrulesets/{digitalRuleSetId}
+
+Delete an Outbound Digital Rule Set
+
+Requires ANY permissions:
+
+* outbound:digitalRuleSet:delete
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OutboundApi();
+
+let digitalRuleSetId = "digitalRuleSetId_example"; // String | The Digital Rule Set ID
+
+apiInstance.deleteOutboundDigitalruleset(digitalRuleSetId)
+  .then(() => {
+    console.log('deleteOutboundDigitalruleset returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteOutboundDigitalruleset');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **digitalRuleSetId** | **String** | The Digital Rule Set ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2796,6 +2851,118 @@ apiInstance.getOutboundContactlistsDivisionviews(opts)
 ### Return type
 
 **ContactListDivisionViewListing**
+
+<a name="getOutboundDigitalruleset"></a>
+
+# DigitalRuleSet getOutboundDigitalruleset(digitalRuleSetId)
+
+
+GET /api/v2/outbound/digitalrulesets/{digitalRuleSetId}
+
+Get an Outbound Digital Rule Set
+
+Requires ANY permissions:
+
+* outbound:digitalRuleSet:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OutboundApi();
+
+let digitalRuleSetId = "digitalRuleSetId_example"; // String | The Digital Rule Set ID
+
+apiInstance.getOutboundDigitalruleset(digitalRuleSetId)
+  .then((data) => {
+    console.log(`getOutboundDigitalruleset success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getOutboundDigitalruleset');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **digitalRuleSetId** | **String** | The Digital Rule Set ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+**DigitalRuleSet**
+
+<a name="getOutboundDigitalrulesets"></a>
+
+# DigitalRuleSetEntityListing getOutboundDigitalrulesets(opts)
+
+
+GET /api/v2/outbound/digitalrulesets
+
+Query a list of Outbound Digital Rule Sets
+
+Requires ANY permissions:
+
+* outbound:digitalRuleSet:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OutboundApi();
+
+let opts = { 
+  'pageSize': 25, // Number | Page size. The max that will be returned is 100.
+  'pageNumber': 1, // Number | Page number
+  'sortBy': "name", // String | The field to sort by
+  'sortOrder': "ascending", // String | The direction to sort
+  'name': "name_example", // String | Name
+  'id': ["id_example"] // [String] | A list of digital rule set ids to bulk fetch
+};
+
+apiInstance.getOutboundDigitalrulesets(opts)
+  .then((data) => {
+    console.log(`getOutboundDigitalrulesets success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getOutboundDigitalrulesets');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **pageSize** | **Number** | Page size. The max that will be returned is 100. | [optional] [default to 25] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **sortBy** | **String** | The field to sort by | [optional] [default to name]<br />**Values**: name |
+ **sortOrder** | **String** | The direction to sort | [optional] [default to ascending]<br />**Values**: ascending, descending |
+ **name** | **String** | Name | [optional]  |
+ **id** | **[String]** | A list of digital rule set ids to bulk fetch | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**DigitalRuleSetEntityListing**
 
 <a name="getOutboundDnclist"></a>
 
@@ -5197,6 +5364,56 @@ apiInstance.postOutboundConversationDnc(conversationId)
 
 void (no response body)
 
+<a name="postOutboundDigitalrulesets"></a>
+
+# DigitalRuleSet postOutboundDigitalrulesets(body)
+
+
+POST /api/v2/outbound/digitalrulesets
+
+Create an Outbound Digital Rule Set
+
+Requires ANY permissions:
+
+* outbound:digitalRuleSet:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OutboundApi();
+
+let body = {}; // Object | Digital Rule Set
+
+apiInstance.postOutboundDigitalrulesets(body)
+  .then((data) => {
+    console.log(`postOutboundDigitalrulesets success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postOutboundDigitalrulesets');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | Digital Rule Set |  |
+{: class="table table-striped"}
+
+### Return type
+
+**DigitalRuleSet**
+
 <a name="postOutboundDnclistExport"></a>
 
 # DomainEntityRef postOutboundDnclistExport(dncListId)
@@ -6031,6 +6248,58 @@ apiInstance.putOutboundContactlistfilter(contactListFilterId, body)
 ### Return type
 
 **ContactListFilter**
+
+<a name="putOutboundDigitalruleset"></a>
+
+# DigitalRuleSet putOutboundDigitalruleset(digitalRuleSetId, body)
+
+
+PUT /api/v2/outbound/digitalrulesets/{digitalRuleSetId}
+
+Update an Outbound Digital Rule Set
+
+Requires ANY permissions:
+
+* outbound:digitalRuleSet:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OutboundApi();
+
+let digitalRuleSetId = "digitalRuleSetId_example"; // String | The Digital Rule Set ID
+let body = {}; // Object | Digital Rule Set
+
+apiInstance.putOutboundDigitalruleset(digitalRuleSetId, body)
+  .then((data) => {
+    console.log(`putOutboundDigitalruleset success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putOutboundDigitalruleset');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **digitalRuleSetId** | **String** | The Digital Rule Set ID |  |
+ **body** | **Object** | Digital Rule Set |  |
+{: class="table table-striped"}
+
+### Return type
+
+**DigitalRuleSet**
 
 <a name="putOutboundDnclist"></a>
 

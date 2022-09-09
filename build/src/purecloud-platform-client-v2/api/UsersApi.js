@@ -5,7 +5,7 @@ class UsersApi {
 	/**
 	 * Users service.
 	 * @module purecloud-platform-client-v2/api/UsersApi
-	 * @version 146.0.0
+	 * @version 147.0.0
 	 */
 
 	/**
@@ -1741,6 +1741,36 @@ class UsersApi {
 			{  },
 			{  },
 			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Create mapping between external identifier and user. Limit 100 per entity.
+	 * Authority Name and External key are case sensitive.
+	 * @param {String} userId User ID
+	 * @param {Object} body 
+	 */
+	postUserExternalid(userId, body) { 
+		// verify the required parameter 'userId' is set
+		if (userId === undefined || userId === null) {
+			throw 'Missing the required parameter "userId" when calling postUserExternalid';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postUserExternalid';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/users/{userId}/externalid', 
+			'POST', 
+			{ 'userId': userId },
+			{  },
+			{  },
+			{  },
+			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']

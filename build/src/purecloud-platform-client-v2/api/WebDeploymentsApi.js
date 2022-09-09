@@ -5,7 +5,7 @@ class WebDeploymentsApi {
 	/**
 	 * WebDeployments service.
 	 * @module purecloud-platform-client-v2/api/WebDeploymentsApi
-	 * @version 146.0.0
+	 * @version 147.0.0
 	 */
 
 	/**
@@ -190,6 +190,35 @@ class WebDeploymentsApi {
 			'GET', 
 			{ 'deploymentId': deploymentId },
 			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get active configuration for a given deployment
+	 * 
+	 * @param {String} deploymentId The deployment ID
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.type Get active configuration on a deployment
+	 */
+	getWebdeploymentsDeploymentConfigurations(deploymentId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'deploymentId' is set
+		if (deploymentId === undefined || deploymentId === null) {
+			throw 'Missing the required parameter "deploymentId" when calling getWebdeploymentsDeploymentConfigurations';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/webdeployments/deployments/{deploymentId}/configurations', 
+			'GET', 
+			{ 'deploymentId': deploymentId },
+			{ 'type': opts['type'] },
 			{  },
 			{  },
 			null, 
