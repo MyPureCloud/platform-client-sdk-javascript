@@ -2098,7 +2098,10 @@ POST /api/v2/recording/batchrequests
 
 Submit a batch download request for recordings. Recordings in response will be in their original format/codec - configured in the Trunk configuration.
 
-Requires NO permissions:
+Requires ANY permissions:
+
+* recording:recording:view
+* recording:recordingSegment:view
 
 ### Example Usage
 

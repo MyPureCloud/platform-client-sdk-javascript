@@ -74,6 +74,8 @@ docs/OutboundApi.json
 docs/OutboundApi.md
 docs/PresenceApi.json
 docs/PresenceApi.md
+docs/ProcessAutomationApi.json
+docs/ProcessAutomationApi.md
 docs/QualityApi.json
 docs/QualityApi.md
 docs/RecordingApi.json
@@ -255,6 +257,7 @@ docs/deleteOutboundSchedulesMessagingcampaign-example.txt
 docs/deleteOutboundSchedulesSequence-example.txt
 docs/deleteOutboundSequence-example.txt
 docs/deletePresencedefinition-example.txt
+docs/deleteProcessautomationTrigger-example.txt
 docs/deleteQualityCalibration-example.txt
 docs/deleteQualityConversationEvaluation-example.txt
 docs/deleteQualityForm-example.txt
@@ -605,7 +608,6 @@ docs/getGamificationLeaderboardBestpoints-example.txt
 docs/getGamificationMetric-example.txt
 docs/getGamificationMetricdefinition-example.txt
 docs/getGamificationMetricdefinitions-example.txt
-docs/getGamificationMetrics-example.txt
 docs/getGamificationProfile-example.txt
 docs/getGamificationProfileMembers-example.txt
 docs/getGamificationProfileMetric-example.txt
@@ -688,8 +690,6 @@ docs/getIntegrationsClientappsUnifiedcommunications-example.txt
 docs/getIntegrationsCredential-example.txt
 docs/getIntegrationsCredentials-example.txt
 docs/getIntegrationsCredentialsTypes-example.txt
-docs/getIntegrationsEventlog-example.txt
-docs/getIntegrationsEventlogEventId-example.txt
 docs/getIntegrationsSpeechDialogflowAgent-example.txt
 docs/getIntegrationsSpeechDialogflowAgents-example.txt
 docs/getIntegrationsSpeechLexBotAlias-example.txt
@@ -707,6 +707,8 @@ docs/getIntegrationsUserapps-example.txt
 docs/getIpranges-example.txt
 docs/getJourneyActionmap-example.txt
 docs/getJourneyActionmaps-example.txt
+docs/getJourneyActionmapsEstimatesJob-example.txt
+docs/getJourneyActionmapsEstimatesJobResults-example.txt
 docs/getJourneyActiontarget-example.txt
 docs/getJourneyActiontargets-example.txt
 docs/getJourneyActiontemplate-example.txt
@@ -887,6 +889,9 @@ docs/getOutboundSettings-example.txt
 docs/getOutboundWrapupcodemappings-example.txt
 docs/getPresencedefinition-example.txt
 docs/getPresencedefinitions-example.txt
+docs/getProcessautomationTrigger-example.txt
+docs/getProcessautomationTriggers-example.txt
+docs/getProcessautomationTriggersTopics-example.txt
 docs/getProfilesGroups-example.txt
 docs/getProfilesUsers-example.txt
 docs/getQualityAgentsActivity-example.txt
@@ -1550,7 +1555,6 @@ docs/postFlowsExecutions-example.txt
 docs/postFlowsJobs-example.txt
 docs/postFlowsMilestones-example.txt
 docs/postFlowsOutcomes-example.txt
-docs/postGamificationMetrics-example.txt
 docs/postGamificationProfileActivate-example.txt
 docs/postGamificationProfileDeactivate-example.txt
 docs/postGamificationProfileMembers-example.txt
@@ -1574,8 +1578,8 @@ docs/postIntegrationsActionTest-example.txt
 docs/postIntegrationsActions-example.txt
 docs/postIntegrationsActionsDrafts-example.txt
 docs/postIntegrationsCredentials-example.txt
-docs/postIntegrationsWorkforcemanagementVendorconnection-example.txt
 docs/postJourneyActionmaps-example.txt
+docs/postJourneyActionmapsEstimatesJobs-example.txt
 docs/postJourneyActiontemplates-example.txt
 docs/postJourneyOutcomes-example.txt
 docs/postJourneySegments-example.txt
@@ -1669,6 +1673,9 @@ docs/postOutboundMessagingcampaignsProgress-example.txt
 docs/postOutboundRulesets-example.txt
 docs/postOutboundSequences-example.txt
 docs/postPresencedefinitions-example.txt
+docs/postProcessautomationTriggerTest-example.txt
+docs/postProcessautomationTriggers-example.txt
+docs/postProcessautomationTriggersTopicTest-example.txt
 docs/postQualityCalibrations-example.txt
 docs/postQualityConversationEvaluations-example.txt
 docs/postQualityConversationsAuditsQuery-example.txt
@@ -1953,6 +1960,7 @@ docs/putOutboundSchedulesSequence-example.txt
 docs/putOutboundSequence-example.txt
 docs/putOutboundWrapupcodemappings-example.txt
 docs/putPresencedefinition-example.txt
+docs/putProcessautomationTrigger-example.txt
 docs/putQualityCalibration-example.txt
 docs/putQualityConversationEvaluation-example.txt
 docs/putQualityForm-example.txt
@@ -2073,6 +2081,7 @@ src/purecloud-platform-client-v2/api/OrganizationApi.js
 src/purecloud-platform-client-v2/api/OrganizationAuthorizationApi.js
 src/purecloud-platform-client-v2/api/OutboundApi.js
 src/purecloud-platform-client-v2/api/PresenceApi.js
+src/purecloud-platform-client-v2/api/ProcessAutomationApi.js
 src/purecloud-platform-client-v2/api/QualityApi.js
 src/purecloud-platform-client-v2/api/RecordingApi.js
 src/purecloud-platform-client-v2/api/ResponseManagementApi.js

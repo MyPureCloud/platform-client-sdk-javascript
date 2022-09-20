@@ -1131,7 +1131,7 @@ This endpoint does not need any parameter.
 
 <a name="getWorkforcemanagementBusinessunit"></a>
 
-# BusinessUnit getWorkforcemanagementBusinessunit(businessUnitId, opts)
+# BusinessUnitResponse getWorkforcemanagementBusinessunit(businessUnitId, opts)
 
 
 GET /api/v2/workforcemanagement/businessunits/{businessUnitId}
@@ -1246,7 +1246,7 @@ apiInstance.getWorkforcemanagementBusinessunit(businessUnitId, opts)
 
 ### Return type
 
-**BusinessUnit**
+**BusinessUnitResponse**
 
 <a name="getWorkforcemanagementBusinessunitActivitycode"></a>
 
@@ -4519,7 +4519,7 @@ apiInstance.getWorkforcemanagementTimeoffrequests(opts)
 
 <a name="patchWorkforcemanagementBusinessunit"></a>
 
-# BusinessUnit patchWorkforcemanagementBusinessunit(businessUnitId, opts)
+# BusinessUnitResponse patchWorkforcemanagementBusinessunit(businessUnitId, opts)
 
 
 PATCH /api/v2/workforcemanagement/businessunits/{businessUnitId}
@@ -4569,7 +4569,7 @@ apiInstance.patchWorkforcemanagementBusinessunit(businessUnitId, opts)
 
 ### Return type
 
-**BusinessUnit**
+**BusinessUnitResponse**
 
 <a name="patchWorkforcemanagementBusinessunitActivitycode"></a>
 
@@ -6369,7 +6369,7 @@ apiInstance.postWorkforcemanagementBusinessunitWeekShorttermforecastsImportUploa
 
 <a name="postWorkforcemanagementBusinessunits"></a>
 
-# BusinessUnit postWorkforcemanagementBusinessunits(opts)
+# BusinessUnitResponse postWorkforcemanagementBusinessunits(opts)
 
 
 POST /api/v2/workforcemanagement/businessunits
@@ -6419,7 +6419,7 @@ apiInstance.postWorkforcemanagementBusinessunits(opts)
 
 ### Return type
 
-**BusinessUnit**
+**BusinessUnitResponse**
 
 <a name="postWorkforcemanagementCalendarUrlIcs"></a>
 

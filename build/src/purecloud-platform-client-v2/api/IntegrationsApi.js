@@ -5,7 +5,7 @@ class IntegrationsApi {
 	/**
 	 * Integrations service.
 	 * @module purecloud-platform-client-v2/api/IntegrationsApi
-	 * @version 147.0.0
+	 * @version 148.0.0
 	 */
 
 	/**
@@ -764,59 +764,6 @@ class IntegrationsApi {
 	}
 
 	/**
-	 * List all events
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Number} opts.pageSize Page size (default to 25)
-	 * @param {Number} opts.pageNumber Page number (default to 1)
-	 * @param {String} opts.sortBy Sort by (default to timestamp)
-	 * @param {String} opts.sortOrder Order by (default to descending)
-	 * @param {String} opts.entityId Include only events with this entity ID
-	 */
-	getIntegrationsEventlog(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/integrations/eventlog', 
-			'GET', 
-			{  },
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'entityId': opts['entityId'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get a single event
-	 * 
-	 * @param {String} eventId Event Id
-	 */
-	getIntegrationsEventlogEventId(eventId) { 
-		// verify the required parameter 'eventId' is set
-		if (eventId === undefined || eventId === null) {
-			throw 'Missing the required parameter "eventId" when calling getIntegrationsEventlogEventId';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/integrations/eventlog/{eventId}', 
-			'GET', 
-			{ 'eventId': eventId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Get details about a Dialogflow agent
 	 * 
 	 * @param {String} agentId The agent ID
@@ -1527,30 +1474,6 @@ class IntegrationsApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/integrations/credentials', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Add a vendor connection
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body 
-	 */
-	postIntegrationsWorkforcemanagementVendorconnection(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/integrations/workforcemanagement/vendorconnection', 
 			'POST', 
 			{  },
 			{  },

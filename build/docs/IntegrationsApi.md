@@ -33,8 +33,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getIntegrationsCredential**](IntegrationsApi.html#getIntegrationsCredential) | **GET** /api/v2/integrations/credentials/{credentialId} | Get a single credential with sensitive fields redacted
 [**getIntegrationsCredentials**](IntegrationsApi.html#getIntegrationsCredentials) | **GET** /api/v2/integrations/credentials | List multiple sets of credentials
 [**getIntegrationsCredentialsTypes**](IntegrationsApi.html#getIntegrationsCredentialsTypes) | **GET** /api/v2/integrations/credentials/types | List all credential types
-[**getIntegrationsEventlog**](IntegrationsApi.html#getIntegrationsEventlog) | **GET** /api/v2/integrations/eventlog | List all events
-[**getIntegrationsEventlogEventId**](IntegrationsApi.html#getIntegrationsEventlogEventId) | **GET** /api/v2/integrations/eventlog/{eventId} | Get a single event
 [**getIntegrationsSpeechDialogflowAgent**](IntegrationsApi.html#getIntegrationsSpeechDialogflowAgent) | **GET** /api/v2/integrations/speech/dialogflow/agents/{agentId} | Get details about a Dialogflow agent
 [**getIntegrationsSpeechDialogflowAgents**](IntegrationsApi.html#getIntegrationsSpeechDialogflowAgents) | **GET** /api/v2/integrations/speech/dialogflow/agents | Get a list of Dialogflow agents in the customers' Google accounts
 [**getIntegrationsSpeechLexBotAlias**](IntegrationsApi.html#getIntegrationsSpeechLexBotAlias) | **GET** /api/v2/integrations/speech/lex/bot/alias/{aliasId} | Get details about a Lex bot alias
@@ -61,7 +59,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postIntegrationsActions**](IntegrationsApi.html#postIntegrationsActions) | **POST** /api/v2/integrations/actions | Create a new Action
 [**postIntegrationsActionsDrafts**](IntegrationsApi.html#postIntegrationsActionsDrafts) | **POST** /api/v2/integrations/actions/drafts | Create a new Draft
 [**postIntegrationsCredentials**](IntegrationsApi.html#postIntegrationsCredentials) | **POST** /api/v2/integrations/credentials | Create a set of credentials
-[**postIntegrationsWorkforcemanagementVendorconnection**](IntegrationsApi.html#postIntegrationsWorkforcemanagementVendorconnection) | **POST** /api/v2/integrations/workforcemanagement/vendorconnection | Add a vendor connection
 [**putIntegrationConfigCurrent**](IntegrationsApi.html#putIntegrationConfigCurrent) | **PUT** /api/v2/integrations/{integrationId}/config/current | Update integration configuration.
 [**putIntegrationsBotconnectorIntegrationIdBots**](IntegrationsApi.html#putIntegrationsBotconnectorIntegrationIdBots) | **PUT** /api/v2/integrations/botconnector/{integrationId}/bots | Set a list of botConnector bots plus versions for this integration
 [**putIntegrationsCredential**](IntegrationsApi.html#putIntegrationsCredential) | **PUT** /api/v2/integrations/credentials/{credentialId} | Update a set of credentials
@@ -1516,118 +1513,6 @@ This endpoint does not need any parameter.
 
 **CredentialTypeListing**
 
-<a name="getIntegrationsEventlog"></a>
-
-# IntegrationEventEntityListing getIntegrationsEventlog(opts)
-
-
-GET /api/v2/integrations/eventlog
-
-List all events
-
-Requires ANY permissions:
-
-* integrations:integration:view
-* bridge:notification:view
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.IntegrationsApi();
-
-let opts = { 
-  'pageSize': 25, // Number | Page size
-  'pageNumber': 1, // Number | Page number
-  'sortBy': "timestamp", // String | Sort by
-  'sortOrder': "descending", // String | Order by
-  'entityId': "entityId_example" // String | Include only events with this entity ID
-};
-
-apiInstance.getIntegrationsEventlog(opts)
-  .then((data) => {
-    console.log(`getIntegrationsEventlog success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch((err) => {
-    console.log('There was a failure calling getIntegrationsEventlog');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **pageSize** | **Number** | Page size | [optional] [default to 25] |
- **pageNumber** | **Number** | Page number | [optional] [default to 1] |
- **sortBy** | **String** | Sort by | [optional] [default to timestamp] |
- **sortOrder** | **String** | Order by | [optional] [default to descending] |
- **entityId** | **String** | Include only events with this entity ID | [optional]  |
-{: class="table table-striped"}
-
-### Return type
-
-**IntegrationEventEntityListing**
-
-<a name="getIntegrationsEventlogEventId"></a>
-
-# IntegrationEvent getIntegrationsEventlogEventId(eventId)
-
-
-GET /api/v2/integrations/eventlog/{eventId}
-
-Get a single event
-
-Requires ANY permissions:
-
-* integrations:integration:view
-* bridge:notification:view
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.IntegrationsApi();
-
-let eventId = "eventId_example"; // String | Event Id
-
-apiInstance.getIntegrationsEventlogEventId(eventId)
-  .then((data) => {
-    console.log(`getIntegrationsEventlogEventId success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch((err) => {
-    console.log('There was a failure calling getIntegrationsEventlogEventId');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **eventId** | **String** | Event Id |  |
-{: class="table table-striped"}
-
-### Return type
-
-**IntegrationEvent**
-
 <a name="getIntegrationsSpeechDialogflowAgent"></a>
 
 # DialogflowAgent getIntegrationsSpeechDialogflowAgent(agentId)
@@ -3024,56 +2909,6 @@ apiInstance.postIntegrationsCredentials(opts)
 ### Return type
 
 **CredentialInfo**
-
-<a name="postIntegrationsWorkforcemanagementVendorconnection"></a>
-
-# UserActionCategoryEntityListing postIntegrationsWorkforcemanagementVendorconnection(opts)
-
-
-POST /api/v2/integrations/workforcemanagement/vendorconnection
-
-Add a vendor connection
-
-Requires NO permissions:
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.IntegrationsApi();
-
-let opts = { 
-  'body': {} // Object | 
-};
-
-apiInstance.postIntegrationsWorkforcemanagementVendorconnection(opts)
-  .then((data) => {
-    console.log(`postIntegrationsWorkforcemanagementVendorconnection success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch((err) => {
-    console.log('There was a failure calling postIntegrationsWorkforcemanagementVendorconnection');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **body** | **Object** |  | [optional]  |
-{: class="table table-striped"}
-
-### Return type
-
-**UserActionCategoryEntityListing**
 
 <a name="putIntegrationConfigCurrent"></a>
 

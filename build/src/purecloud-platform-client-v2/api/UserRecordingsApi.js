@@ -5,7 +5,7 @@ class UserRecordingsApi {
 	/**
 	 * UserRecordings service.
 	 * @module purecloud-platform-client-v2/api/UserRecordingsApi
-	 * @version 147.0.0
+	 * @version 148.0.0
 	 */
 
 	/**
@@ -80,6 +80,7 @@ class UserRecordingsApi {
 	 * @param {String} recordingId User Recording ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.formatId The desired media format. (default to WEBM)
+	 * @param {Boolean} opts.async When set to true, api will return 202 response until the recording is ready for download
 	 */
 	getUserrecordingMedia(recordingId, opts) { 
 		opts = opts || {};
@@ -93,7 +94,7 @@ class UserRecordingsApi {
 			'/api/v2/userrecordings/{recordingId}/media', 
 			'GET', 
 			{ 'recordingId': recordingId },
-			{ 'formatId': opts['formatId'] },
+			{ 'formatId': opts['formatId'],'async': opts['async'] },
 			{  },
 			{  },
 			null, 

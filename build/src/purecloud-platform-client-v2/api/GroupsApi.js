@@ -5,7 +5,7 @@ class GroupsApi {
 	/**
 	 * Groups service.
 	 * @module purecloud-platform-client-v2/api/GroupsApi
-	 * @version 147.0.0
+	 * @version 148.0.0
 	 */
 
 	/**
@@ -275,6 +275,7 @@ class GroupsApi {
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Array.<String>} opts.id id
+	 * @param {Array.<String>} opts.jabberId A list of jabberIds to fetch by bulk (cannot be used with the id parameter)
 	 * @param {Object} opts.sortOrder Ascending or descending sort order (default to ASC)
 	 */
 	getProfilesGroups(opts) { 
@@ -285,7 +286,7 @@ class GroupsApi {
 			'/api/v2/profiles/groups', 
 			'GET', 
 			{  },
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'sortOrder': opts['sortOrder'] },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'jabberId': this.apiClient.buildCollectionParam(opts['jabberId'], 'multi'),'sortOrder': opts['sortOrder'] },
 			{  },
 			{  },
 			null, 

@@ -1485,7 +1485,6 @@ declare class GamificationApi {
   	getGamificationMetric(metricId: string, opts?: GamificationApi.getGamificationMetricOptions): Promise<Models.Metric>; 
   	getGamificationMetricdefinition(metricDefinitionId: string): Promise<Models.MetricDefinition>; 
   	getGamificationMetricdefinitions(): Promise<Models.GetMetricDefinitionsResponse>; 
-  	getGamificationMetrics(opts?: GamificationApi.getGamificationMetricsOptions): Promise<Models.GetMetricsResponse>; 
   	getGamificationProfile(profileId: string): Promise<Models.PerformanceProfile>; 
   	getGamificationProfileMembers(profileId: string): Promise<Models.MemberListing>; 
   	getGamificationProfileMetric(profileId: string, metricId: string, opts?: GamificationApi.getGamificationProfileMetricOptions): Promise<Models.Metric>; 
@@ -1520,7 +1519,6 @@ declare class GamificationApi {
   	patchEmployeeperformanceExternalmetricsDefinition(metricId: string, body: Models.ExternalMetricDefinitionUpdateRequest): Promise<Models.ExternalMetricDefinition>; 
   	postEmployeeperformanceExternalmetricsData(opts?: GamificationApi.postEmployeeperformanceExternalmetricsDataOptions): Promise<Models.ExternalMetricDataWriteResponse>; 
   	postEmployeeperformanceExternalmetricsDefinitions(opts?: GamificationApi.postEmployeeperformanceExternalmetricsDefinitionsOptions): Promise<Models.ExternalMetricDefinition>; 
-  	postGamificationMetrics(body: Models.CreateMetric): Promise<Models.Metric>; 
   	postGamificationProfileActivate(profileId: string): Promise<Models.PerformanceProfile>; 
   	postGamificationProfileDeactivate(profileId: string): Promise<Models.PerformanceProfile>; 
   	postGamificationProfileMembers(profileId: string, body: Models.AssignUsers): Promise<Models.Assignment>; 
@@ -1548,10 +1546,6 @@ declare namespace GamificationApi {
 	export interface getGamificationMetricOptions { 
 		"workday"?: string;
 		"performanceProfileId"?: string;
-	}
-	export interface getGamificationMetricsOptions { 
-		"performanceProfileId"?: string;
-		"workday"?: string;
 	}
 	export interface getGamificationProfileMetricOptions { 
 		"workday"?: string;
@@ -1735,6 +1729,7 @@ declare namespace GroupsApi {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"id"?: Array<string>;
+		"jabberId"?: Array<string>;
 		"sortOrder"?: string;
 	}
 	export interface putGroupOptions { 
@@ -1809,8 +1804,6 @@ declare class IntegrationsApi {
   	getIntegrationsCredential(credentialId: string): Promise<Models.Credential>; 
   	getIntegrationsCredentials(opts?: IntegrationsApi.getIntegrationsCredentialsOptions): Promise<Models.CredentialInfoListing>; 
   	getIntegrationsCredentialsTypes(): Promise<Models.CredentialTypeListing>; 
-  	getIntegrationsEventlog(opts?: IntegrationsApi.getIntegrationsEventlogOptions): Promise<Models.IntegrationEventEntityListing>; 
-  	getIntegrationsEventlogEventId(eventId: string): Promise<Models.IntegrationEvent>; 
   	getIntegrationsSpeechDialogflowAgent(agentId: string): Promise<Models.DialogflowAgent>; 
   	getIntegrationsSpeechDialogflowAgents(opts?: IntegrationsApi.getIntegrationsSpeechDialogflowAgentsOptions): Promise<Models.DialogflowAgentSummaryEntityListing>; 
   	getIntegrationsSpeechLexBotAlias(aliasId: string): Promise<Models.LexBotAlias>; 
@@ -1837,7 +1830,6 @@ declare class IntegrationsApi {
   	postIntegrationsActions(body: Models.PostActionInput): Promise<Models.Action>; 
   	postIntegrationsActionsDrafts(body: Models.PostActionInput): Promise<Models.Action>; 
   	postIntegrationsCredentials(opts?: IntegrationsApi.postIntegrationsCredentialsOptions): Promise<Models.CredentialInfo>; 
-  	postIntegrationsWorkforcemanagementVendorconnection(opts?: IntegrationsApi.postIntegrationsWorkforcemanagementVendorconnectionOptions): Promise<Models.UserActionCategoryEntityListing>; 
   	putIntegrationConfigCurrent(integrationId: string, opts?: IntegrationsApi.putIntegrationConfigCurrentOptions): Promise<Models.IntegrationConfiguration>; 
   	putIntegrationsBotconnectorIntegrationIdBots(integrationId: string, botList: Models.BotList): Promise<void>; 
   	putIntegrationsCredential(credentialId: string, opts?: IntegrationsApi.putIntegrationsCredentialOptions): Promise<Models.CredentialInfo>; 
@@ -1935,13 +1927,6 @@ declare namespace IntegrationsApi {
 		"pageNumber"?: number;
 		"pageSize"?: number;
 	}
-	export interface getIntegrationsEventlogOptions { 
-		"pageSize"?: number;
-		"pageNumber"?: number;
-		"sortBy"?: string;
-		"sortOrder"?: string;
-		"entityId"?: string;
-	}
 	export interface getIntegrationsSpeechDialogflowAgentsOptions { 
 		"pageNumber"?: number;
 		"pageSize"?: number;
@@ -2004,9 +1989,6 @@ declare namespace IntegrationsApi {
 	export interface postIntegrationsCredentialsOptions { 
 		"body"?: Models.Credential;
 	}
-	export interface postIntegrationsWorkforcemanagementVendorconnectionOptions { 
-		"body"?: Models.VendorConnectionRequest;
-	}
 	export interface putIntegrationConfigCurrentOptions { 
 		"body"?: Models.IntegrationConfiguration;
 	}
@@ -2022,6 +2004,8 @@ declare class JourneyApi {
   	deleteJourneySegment(segmentId: string): Promise<void>; 
   	getJourneyActionmap(actionMapId: string): Promise<Models.ActionMap>; 
   	getJourneyActionmaps(opts?: JourneyApi.getJourneyActionmapsOptions): Promise<Models.ActionMapListing>; 
+  	getJourneyActionmapsEstimatesJob(jobId: string): Promise<string>; 
+  	getJourneyActionmapsEstimatesJobResults(jobId: string): Promise<Models.ActionMapEstimateResult>; 
   	getJourneyActiontarget(actionTargetId: string): Promise<Models.ActionTarget>; 
   	getJourneyActiontargets(opts?: JourneyApi.getJourneyActiontargetsOptions): Promise<Models.ActionTargetListing>; 
   	getJourneyActiontemplate(actionTemplateId: string): Promise<Models.ActionTemplate>; 
@@ -2039,6 +2023,7 @@ declare class JourneyApi {
   	patchJourneySegment(segmentId: string, opts?: JourneyApi.patchJourneySegmentOptions): Promise<Models.JourneySegment>; 
   	postAnalyticsJourneysAggregatesQuery(body: Models.JourneyAggregationQuery): Promise<Models.JourneyAggregateQueryResponse>; 
   	postJourneyActionmaps(opts?: JourneyApi.postJourneyActionmapsOptions): Promise<Models.ActionMap>; 
+  	postJourneyActionmapsEstimatesJobs(body: Models.ActionMapEstimateRequest): Promise<Models.EstimateJobAsyncResponse>; 
   	postJourneyActiontemplates(opts?: JourneyApi.postJourneyActiontemplatesOptions): Promise<Models.ActionTemplate>; 
   	postJourneyOutcomes(opts?: JourneyApi.postJourneyOutcomesOptions): Promise<Models.Outcome>; 
   	postJourneySegments(opts?: JourneyApi.postJourneySegmentsOptions): Promise<Models.JourneySegment>;
@@ -3199,6 +3184,38 @@ declare namespace PresenceApi {
 		"pageSize"?: number;
 		"deleted"?: string;
 		"localeCode"?: string;
+	}
+}
+
+declare class ProcessAutomationApi {  
+  	deleteProcessautomationTrigger(triggerId: string): Promise<void>; 
+  	getProcessautomationTrigger(triggerId: string): Promise<Models.Trigger>; 
+  	getProcessautomationTriggers(opts?: ProcessAutomationApi.getProcessautomationTriggersOptions): Promise<Models.TriggerEntityListing>; 
+  	getProcessautomationTriggersTopics(opts?: ProcessAutomationApi.getProcessautomationTriggersTopicsOptions): Promise<Models.TopicCursorEntityListing>; 
+  	postProcessautomationTriggerTest(triggerId: string, opts?: ProcessAutomationApi.postProcessautomationTriggerTestOptions): Promise<Models.TestModeResults>; 
+  	postProcessautomationTriggers(body: Models.CreateTriggerRequest): Promise<Models.Trigger>; 
+  	postProcessautomationTriggersTopicTest(topicName: string, opts?: ProcessAutomationApi.postProcessautomationTriggersTopicTestOptions): Promise<Models.TestModeEventResults>; 
+  	putProcessautomationTrigger(triggerId: string, body: Models.UpdateTriggerRequest): Promise<Models.Trigger>;
+}
+
+declare namespace ProcessAutomationApi { 
+	export interface getProcessautomationTriggersOptions { 
+		"before"?: string;
+		"after"?: string;
+		"pageSize"?: string;
+		"topicName"?: string;
+		"enabled"?: boolean;
+	}
+	export interface getProcessautomationTriggersTopicsOptions { 
+		"before"?: string;
+		"after"?: string;
+		"pageSize"?: string;
+	}
+	export interface postProcessautomationTriggerTestOptions { 
+		"body"?: string;
+	}
+	export interface postProcessautomationTriggersTopicTestOptions { 
+		"body"?: string;
 	}
 }
 
@@ -4739,6 +4756,7 @@ declare namespace UserRecordingsApi {
 	}
 	export interface getUserrecordingMediaOptions { 
 		"formatId"?: string;
+		"async"?: boolean;
 	}
 	export interface getUserrecordingsOptions { 
 		"pageSize"?: number;
@@ -5138,7 +5156,7 @@ declare class WorkforceManagementApi {
   	getWorkforcemanagementAdhocmodelingjob(jobId: string): Promise<Models.ModelingStatusResponse>; 
   	getWorkforcemanagementAgentManagementunit(agentId: string): Promise<Models.AgentManagementUnitReference>; 
   	getWorkforcemanagementAgentsMeManagementunit(): Promise<Models.AgentManagementUnitReference>; 
-  	getWorkforcemanagementBusinessunit(businessUnitId: string, opts?: WorkforceManagementApi.getWorkforcemanagementBusinessunitOptions): Promise<Models.BusinessUnit>; 
+  	getWorkforcemanagementBusinessunit(businessUnitId: string, opts?: WorkforceManagementApi.getWorkforcemanagementBusinessunitOptions): Promise<Models.BusinessUnitResponse>; 
   	getWorkforcemanagementBusinessunitActivitycode(businessUnitId: string, activityCodeId: string): Promise<Models.BusinessUnitActivityCode>; 
   	getWorkforcemanagementBusinessunitActivitycodes(businessUnitId: string): Promise<Models.BusinessUnitActivityCodeListing>; 
   	getWorkforcemanagementBusinessunitIntradayPlanninggroups(businessUnitId: string, _date: string): Promise<Models.WfmIntradayPlanningGroupListing>; 
@@ -5197,7 +5215,7 @@ declare class WorkforceManagementApi {
   	getWorkforcemanagementTimeoffrequest(timeOffRequestId: string): Promise<Models.TimeOffRequestResponse>; 
   	getWorkforcemanagementTimeoffrequestWaitlistpositions(timeOffRequestId: string): Promise<Models.WaitlistPositionListing>; 
   	getWorkforcemanagementTimeoffrequests(opts?: WorkforceManagementApi.getWorkforcemanagementTimeoffrequestsOptions): Promise<Models.TimeOffRequestList>; 
-  	patchWorkforcemanagementBusinessunit(businessUnitId: string, opts?: WorkforceManagementApi.patchWorkforcemanagementBusinessunitOptions): Promise<Models.BusinessUnit>; 
+  	patchWorkforcemanagementBusinessunit(businessUnitId: string, opts?: WorkforceManagementApi.patchWorkforcemanagementBusinessunitOptions): Promise<Models.BusinessUnitResponse>; 
   	patchWorkforcemanagementBusinessunitActivitycode(businessUnitId: string, activityCodeId: string, opts?: WorkforceManagementApi.patchWorkforcemanagementBusinessunitActivitycodeOptions): Promise<Models.BusinessUnitActivityCode>; 
   	patchWorkforcemanagementBusinessunitPlanninggroup(businessUnitId: string, planningGroupId: string, opts?: WorkforceManagementApi.patchWorkforcemanagementBusinessunitPlanninggroupOptions): Promise<Models.PlanningGroup>; 
   	patchWorkforcemanagementBusinessunitSchedulingRun(businessUnitId: string, runId: string, opts?: WorkforceManagementApi.patchWorkforcemanagementBusinessunitSchedulingRunOptions): Promise<void>; 
@@ -5230,7 +5248,7 @@ declare class WorkforceManagementApi {
   	postWorkforcemanagementBusinessunitWeekShorttermforecastsGenerate(businessUnitId: string, weekDateId: string, body: Models.GenerateBuForecastRequest, opts?: WorkforceManagementApi.postWorkforcemanagementBusinessunitWeekShorttermforecastsGenerateOptions): Promise<Models.AsyncForecastOperationResult>; 
   	postWorkforcemanagementBusinessunitWeekShorttermforecastsImport(businessUnitId: string, weekDateId: string, body: Models.WfmProcessUploadRequest): Promise<Models.ImportForecastResponse>; 
   	postWorkforcemanagementBusinessunitWeekShorttermforecastsImportUploadurl(businessUnitId: string, weekDateId: string, body: Models.UploadUrlRequestBody): Promise<Models.ImportForecastUploadResponse>; 
-  	postWorkforcemanagementBusinessunits(opts?: WorkforceManagementApi.postWorkforcemanagementBusinessunitsOptions): Promise<Models.BusinessUnit>; 
+  	postWorkforcemanagementBusinessunits(opts?: WorkforceManagementApi.postWorkforcemanagementBusinessunitsOptions): Promise<Models.BusinessUnitResponse>; 
   	postWorkforcemanagementCalendarUrlIcs(opts?: WorkforceManagementApi.postWorkforcemanagementCalendarUrlIcsOptions): Promise<Models.CalendarUrlResponse>; 
   	postWorkforcemanagementHistoricaldataDeletejob(): Promise<Models.HistoricalImportDeleteJobResponse>; 
   	postWorkforcemanagementHistoricaldataValidate(opts?: WorkforceManagementApi.postWorkforcemanagementHistoricaldataValidateOptions): Promise<void>; 
@@ -5604,11 +5622,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -5655,16 +5673,34 @@ declare namespace Models {
 		"selfUri"?: string;
 	}
 	
+	export interface ActionMapEstimateOutcomeCriteria { 
+		"outcomeId": string;
+		"maxProbability": number;
+		"probability"?: number;
+	}
+	
+	export interface ActionMapEstimateRequest { 
+		"segmentIds"?: Array<string>;
+		"outcomeCriteria"?: Models.ActionMapEstimateOutcomeCriteria;
+	}
+	
+	export interface ActionMapEstimateResult { 
+		"qualifiedSessionCount"?: number;
+		"totalSessionCount"?: number;
+		"perSegmentCounts"?: Array<Models.SegmentEstimateCount>;
+		"outcomesScoresCount"?: number;
+	}
+	
 	export interface ActionMapListing { 
 		"entities"?: Array<Models.ActionMap>;
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -5717,11 +5753,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -5729,6 +5765,7 @@ declare namespace Models {
 		"id"?: string;
 		"name": string;
 		"description"?: string;
+		"version"?: number;
 		"mediaType": string;
 		"state": string;
 		"contentOffer"?: Models.ContentOffer;
@@ -5742,11 +5779,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -6012,11 +6049,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -6849,6 +6886,7 @@ declare namespace Models {
 		"assessmentForm"?: Models.AssessmentForm;
 		"summaryData"?: Models.LearningModuleSummary;
 		"coverArt"?: Models.LearningModuleCoverArtResponse;
+		"archivalMode"?: string;
 	}
 	
 	export interface AssignedLearningModuleDomainEntityListing { 
@@ -6856,11 +6894,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -6980,11 +7018,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -7248,11 +7286,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -7528,11 +7566,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -7547,11 +7585,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -7997,7 +8035,11 @@ declare namespace Models {
 		"entities"?: Array<Models.BuScheduleRun>;
 	}
 	
-	export interface BuSchedulingSettings { 
+	export interface BuSchedulingSettingsRequest { 
+		"messageSeverities"?: Array<Models.SchedulerMessageTypeSeverity>;
+	}
+	
+	export interface BuSchedulingSettingsResponse { 
 		"messageSeverities"?: Array<Models.SchedulerMessageTypeSeverity>;
 	}
 	
@@ -8314,14 +8356,6 @@ declare namespace Models {
 		"rings"?: Array<Models.Ring>;
 	}
 	
-	export interface BusinessUnit { 
-		"id"?: string;
-		"name"?: string;
-		"settings"?: Models.BusinessUnitSettings;
-		"division"?: Models.DivisionReference;
-		"selfUri"?: string;
-	}
-	
 	export interface BusinessUnitActivityCode { 
 		"id"?: string;
 		"name"?: string;
@@ -8361,11 +8395,19 @@ declare namespace Models {
 		"selfUri"?: string;
 	}
 	
-	export interface BusinessUnitSettings { 
+	export interface BusinessUnitResponse { 
+		"id"?: string;
+		"name"?: string;
+		"settings"?: Models.BusinessUnitSettingsResponse;
+		"division"?: Models.DivisionReference;
+		"selfUri"?: string;
+	}
+	
+	export interface BusinessUnitSettingsResponse { 
 		"startDayOfWeek": string;
 		"timeZone": string;
 		"shortTermForecasting"?: Models.BuShortTermForecastingSettings;
-		"scheduling"?: Models.BuSchedulingSettings;
+		"scheduling"?: Models.BuSchedulingSettingsResponse;
 		"metadata": Models.WfmVersionedEntityMetadata;
 	}
 	
@@ -8436,11 +8478,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -8530,11 +8572,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -8592,11 +8634,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -8736,11 +8778,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -8824,11 +8866,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -8943,11 +8985,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -8956,11 +8998,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -9049,11 +9091,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -9095,11 +9137,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -9196,11 +9238,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -9210,8 +9252,8 @@ declare namespace Models {
 		"expirationDate"?: string;
 		"issueDate"?: string;
 		"expired"?: boolean;
-		"valid"?: boolean;
 		"signatureValid"?: boolean;
+		"valid"?: boolean;
 	}
 	
 	export interface Change { 
@@ -9279,11 +9321,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -9394,11 +9436,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -9442,11 +9484,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -9493,11 +9535,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -9539,11 +9581,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -9583,11 +9625,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -9688,11 +9730,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -9717,11 +9759,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -9730,11 +9772,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -9841,11 +9883,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -9854,11 +9896,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -9981,11 +10023,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -9994,11 +10036,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -10024,11 +10066,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -10054,11 +10096,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -11255,11 +11297,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -12622,14 +12664,14 @@ declare namespace Models {
 	export interface CreateBusinessUnitRequest { 
 		"name": string;
 		"divisionId": string;
-		"settings": Models.CreateBusinessUnitSettings;
+		"settings": Models.CreateBusinessUnitSettingsRequest;
 	}
 	
-	export interface CreateBusinessUnitSettings { 
+	export interface CreateBusinessUnitSettingsRequest { 
 		"startDayOfWeek": string;
 		"timeZone": string;
 		"shortTermForecasting"?: Models.BuShortTermForecastingSettings;
-		"scheduling"?: Models.BuSchedulingSettings;
+		"scheduling"?: Models.BuSchedulingSettingsRequest;
 	}
 	
 	export interface CreateCallRequest { 
@@ -12908,6 +12950,16 @@ declare namespace Models {
 		"active": boolean;
 	}
 	
+	export interface CreateTriggerRequest { 
+		"target": Models.TriggerTarget;
+		"enabled": boolean;
+		"matchCriteria"?: Array<Models.MatchCriteria>;
+		"name": string;
+		"topicName": string;
+		"eventTTLSeconds"?: number;
+		"description"?: string;
+	}
+	
 	export interface CreateUser { 
 		"name": string;
 		"department"?: string;
@@ -13044,11 +13096,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -13071,11 +13123,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -13309,11 +13361,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -13333,11 +13385,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -13366,11 +13418,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -13455,11 +13507,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -13468,11 +13520,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -13549,11 +13601,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -13582,11 +13634,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -13697,11 +13749,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -13916,6 +13968,7 @@ declare namespace Models {
 		"latestSmsEvaluations"?: { [key: string]: Models.MessageEvaluation; };
 		"callable"?: boolean;
 		"phoneNumberStatus"?: { [key: string]: Models.PhoneNumberStatus; };
+		"contactableStatus"?: { [key: string]: Models.ContactableStatus; };
 		"contactColumnTimeZones"?: { [key: string]: Models.ContactColumnTimeZone; };
 		"configurationOverrides"?: Models.ConfigurationOverrides;
 		"selfUri"?: string;
@@ -14042,11 +14095,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -14254,11 +14307,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -14327,11 +14380,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -14344,11 +14397,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -14385,11 +14438,11 @@ declare namespace Models {
 		"pageNumber"?: number;
 		"total"?: number;
 		"allDivsPermitted"?: boolean;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -14445,11 +14498,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -14458,11 +14511,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -14551,11 +14604,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -14607,11 +14660,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -14715,12 +14768,12 @@ declare namespace Models {
 		"endValue"?: string;
 		"values"?: Array<string>;
 		"startValue"?: string;
-		"fields"?: Array<string>;
 		"value"?: string;
 		"operator"?: string;
 		"group"?: Array<Models.DocumentationSearchCriteria>;
 		"dateFormat"?: string;
 		"type": string;
+		"fields"?: Array<string>;
 	}
 	
 	export interface DocumentationSearchRequest { 
@@ -14802,11 +14855,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -14821,11 +14874,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -14834,11 +14887,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -14847,11 +14900,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -14860,11 +14913,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -15229,11 +15282,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -15262,11 +15315,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -15310,11 +15363,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -15648,11 +15701,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -15737,11 +15790,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -15786,11 +15839,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -15821,11 +15874,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -15899,6 +15952,11 @@ declare namespace Models {
 	export interface ErrorInfo { 
 		"message"?: string;
 		"code"?: string;
+	}
+	
+	export interface EstimateJobAsyncResponse { 
+		"id"?: string;
+		"selfUri"?: string;
 	}
 	
 	export interface EstimatedWaitTimePredictions { 
@@ -16020,11 +16078,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -16049,11 +16107,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -16220,11 +16278,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -16241,11 +16299,6 @@ declare namespace Models {
 		"streamType": string;
 		"sessionType": string;
 		"eventName"?: string;
-	}
-	
-	export interface EventEntity { 
-		"entityType"?: string;
-		"id"?: string;
 	}
 	
 	export interface EventLog { 
@@ -16347,11 +16400,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -16378,11 +16431,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -16637,11 +16690,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -16682,11 +16735,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -16738,11 +16791,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -16831,11 +16884,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -16865,11 +16918,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -17097,11 +17150,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -17132,11 +17185,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -17287,11 +17340,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -17300,11 +17353,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -17363,11 +17416,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -17376,11 +17429,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -17447,11 +17500,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -17553,11 +17606,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -17579,11 +17632,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -17598,12 +17651,12 @@ declare namespace Models {
 		"endValue"?: string;
 		"values"?: Array<string>;
 		"startValue"?: string;
-		"fields"?: Array<string>;
 		"value"?: string;
 		"operator"?: string;
 		"group"?: Array<Models.GKNDocumentationSearchCriteria>;
 		"dateFormat"?: string;
 		"type": string;
+		"fields"?: Array<string>;
 	}
 	
 	export interface GKNDocumentationSearchRequest { 
@@ -17825,11 +17878,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -17892,11 +17945,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -17938,11 +17991,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -17950,12 +18003,12 @@ declare namespace Models {
 		"endValue"?: string;
 		"values"?: Array<string>;
 		"startValue"?: string;
-		"fields"?: Array<string>;
 		"value"?: string;
 		"operator"?: string;
 		"group"?: Array<Models.GroupSearchCriteria>;
 		"dateFormat"?: string;
 		"type": string;
+		"fields"?: Array<string>;
 	}
 	
 	export interface GroupSearchRequest { 
@@ -18226,11 +18279,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -18331,11 +18384,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -18385,11 +18438,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -18441,38 +18494,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
-		"pageCount"?: number;
-	}
-	
-	export interface IntegrationEvent { 
-		"id"?: string;
-		"selfUri"?: string;
-		"correlationId"?: string;
-		"timestamp"?: string;
-		"level"?: string;
-		"eventCode"?: string;
-		"message"?: Models.MessageInfo;
-		"entities"?: Array<Models.EventEntity>;
-		"contextAttributes"?: { [key: string]: string; };
-		"detailMessage"?: Models.MessageInfo;
-		"user"?: Models.User;
-	}
-	
-	export interface IntegrationEventEntityListing { 
-		"entities"?: Array<Models.IntegrationEvent>;
-		"pageSize"?: number;
-		"pageNumber"?: number;
-		"total"?: number;
-		"firstUri"?: string;
-		"selfUri"?: string;
-		"nextUri"?: string;
-		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -18520,11 +18546,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -18571,11 +18597,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -18601,11 +18627,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -20154,11 +20180,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -20328,6 +20354,11 @@ declare namespace Models {
 		"userId": string;
 	}
 	
+	export interface LearningAssignmentReassign { 
+		"recommendedCompletionDate"?: string;
+		"lengthInMinutes"?: number;
+	}
+	
 	export interface LearningAssignmentReference { 
 		"id"?: string;
 		"selfUri"?: string;
@@ -20387,11 +20418,11 @@ declare namespace Models {
 		"pageNumber"?: number;
 		"total"?: number;
 		"unfilteredTotal"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -20405,11 +20436,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -20447,6 +20478,7 @@ declare namespace Models {
 		"assessmentForm"?: Models.AssessmentForm;
 		"summaryData"?: Models.LearningModuleSummary;
 		"coverArt"?: Models.LearningModuleCoverArtResponse;
+		"archivalMode"?: string;
 	}
 	
 	export interface LearningModuleCoverArtRequest { 
@@ -20538,11 +20570,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -20570,11 +20602,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -20583,11 +20615,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -20620,11 +20652,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -20744,11 +20776,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -20757,11 +20789,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -20794,11 +20826,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -20977,11 +21009,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -20994,12 +21026,12 @@ declare namespace Models {
 		"endValue"?: string;
 		"values"?: Array<string>;
 		"startValue"?: string;
-		"fields"?: Array<string>;
 		"value"?: string;
 		"operator"?: string;
 		"group"?: Array<Models.LocationSearchCriteria>;
 		"dateFormat"?: string;
 		"type": string;
+		"fields"?: Array<string>;
 	}
 	
 	export interface LocationSearchRequest { 
@@ -21053,11 +21085,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -21104,11 +21136,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"nextUri"?: string;
 		"pageCount"?: number;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"selfUri"?: string;
 	}
 	
@@ -21151,6 +21183,23 @@ declare namespace Models {
 		"enabled"?: boolean;
 	}
 	
+	export interface MatchCriteria { 
+		"jsonPath"?: string;
+		"operator"?: string;
+		"value"?: object;
+		"values"?: Array<object>;
+	}
+	
+	export interface MatchCriteriaTestResult { 
+		"jsonPath"?: string;
+		"operator"?: string;
+		"value"?: object;
+		"values"?: Array<object>;
+		"generatedJsonPathCondition"?: string;
+		"match"?: boolean;
+		"jsonPathExtraction"?: Array<Models.MatchTestResult>;
+	}
+	
 	export interface MatchShiftTradeRequest { 
 		"receivingScheduleId": string;
 		"receivingShiftId"?: string;
@@ -21161,6 +21210,11 @@ declare namespace Models {
 		"trade"?: Models.ShiftTradeResponse;
 		"violations"?: Array<Models.ShiftTradeMatchViolation>;
 		"adminReviewViolations"?: Array<Models.ShiftTradeMatchViolation>;
+	}
+	
+	export interface MatchTestResult { 
+		"value"?: object;
+		"path"?: string;
 	}
 	
 	export interface MaxLength { 
@@ -21325,11 +21379,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -21514,11 +21568,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -21527,11 +21581,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -21552,11 +21606,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -21581,11 +21635,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -21635,11 +21689,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -21949,11 +22003,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -21980,11 +22034,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -22004,11 +22058,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -22069,11 +22123,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -22187,11 +22241,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -22243,11 +22297,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -22379,11 +22433,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -22583,11 +22637,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -22604,11 +22658,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -22634,11 +22688,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -22829,11 +22883,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -22842,11 +22896,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -22896,11 +22950,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -23138,6 +23192,7 @@ declare namespace Models {
 	export interface PatchActionTemplate { 
 		"name": string;
 		"description"?: string;
+		"version"?: number;
 		"mediaType"?: string;
 		"state"?: string;
 		"contentOffer"?: Models.PatchContentOffer;
@@ -23323,11 +23378,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -23396,11 +23451,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -23468,11 +23523,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -23481,11 +23536,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -23541,11 +23596,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -23648,11 +23703,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -23931,11 +23986,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -23944,11 +23999,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -26453,11 +26508,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -26487,11 +26542,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -26656,11 +26711,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -26806,11 +26861,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -26943,11 +26998,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -26994,11 +27049,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -27021,11 +27076,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -27054,11 +27109,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -27085,11 +27140,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -27152,11 +27207,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -27408,11 +27463,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -27421,11 +27476,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -27461,11 +27516,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -27630,11 +27685,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -27710,11 +27765,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -27774,11 +27829,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -27883,11 +27938,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -27913,11 +27968,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -28198,11 +28253,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -28254,11 +28309,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -28280,12 +28335,12 @@ declare namespace Models {
 		"endValue"?: string;
 		"values"?: Array<string>;
 		"startValue"?: string;
-		"fields"?: Array<string>;
 		"value"?: string;
 		"operator"?: string;
 		"group"?: Array<Models.SearchCriteria>;
 		"dateFormat"?: string;
 		"type"?: string;
+		"fields"?: Array<string>;
 	}
 	
 	export interface SearchRequest { 
@@ -28365,11 +28420,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -28403,16 +28458,21 @@ declare namespace Models {
 		"range"?: Models.NumericRange;
 	}
 	
+	export interface SegmentEstimateCount { 
+		"segmentId"?: string;
+		"count"?: number;
+	}
+	
 	export interface SegmentListing { 
 		"entities"?: Array<Models.JourneySegment>;
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -28601,6 +28661,10 @@ declare namespace Models {
 		"values"?: Array<string>;
 	}
 	
+	export interface SetWrapperSyncTimeOffProperty { 
+		"values"?: Array<string>;
+	}
+	
 	export interface SettingDirection { 
 		"inbound"?: string;
 		"outbound"?: string;
@@ -28625,11 +28689,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -28852,11 +28916,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -28865,11 +28929,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -28896,11 +28960,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -28969,11 +29033,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -29166,11 +29230,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -29236,11 +29300,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -29273,11 +29337,11 @@ declare namespace Models {
 		"endValue"?: string;
 		"values"?: Array<string>;
 		"startValue"?: string;
-		"fields"?: Array<string>;
 		"value"?: string;
 		"operator"?: string;
 		"group"?: Array<Models.SuggestSearchCriteria>;
 		"dateFormat"?: string;
+		"fields"?: Array<string>;
 	}
 	
 	export interface SuggestSearchRequest { 
@@ -29352,11 +29416,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -29491,11 +29555,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -29596,11 +29660,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -29609,11 +29673,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -29636,11 +29700,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -29675,11 +29739,11 @@ declare namespace Models {
 		"endValue"?: string;
 		"values"?: Array<string>;
 		"startValue"?: string;
-		"fields"?: Array<string>;
 		"value"?: string;
 		"operator"?: string;
 		"group"?: Array<Models.TeamSearchCriteria>;
 		"dateFormat"?: string;
+		"fields"?: Array<string>;
 		"type": string;
 	}
 	
@@ -29730,6 +29794,20 @@ declare namespace Models {
 		"success"?: boolean;
 	}
 	
+	export interface TestMatchesEventOperation { 
+		"name"?: string;
+		"step"?: number;
+		"matchedTriggers"?: Array<Models.TestModeTrigger>;
+		"unmatchedTriggers"?: Array<Models.TestModeTrigger>;
+	}
+	
+	export interface TestMatchesOperation { 
+		"name"?: string;
+		"step"?: number;
+		"matches"?: boolean;
+		"details"?: Array<Models.MatchCriteriaTestResult>;
+	}
+	
 	export interface TestMessage { 
 		"id"?: string;
 		"to": Array<Models.EmailAddress>;
@@ -29738,6 +29816,39 @@ declare namespace Models {
 		"textBody": string;
 		"htmlBody"?: string;
 		"time"?: string;
+	}
+	
+	export interface TestModeEventResults { 
+		"schemaValidation"?: Models.TestSchemaOperation;
+		"triggerMatchValidation"?: Models.TestMatchesEventOperation;
+	}
+	
+	export interface TestModeResults { 
+		"schemaValidation"?: Models.TestSchemaOperation;
+		"targetValidation"?: Models.TestTargetOperation;
+		"jsonPathValidation"?: Models.TestMatchesOperation;
+		"triggerMatches"?: boolean;
+	}
+	
+	export interface TestModeTrigger { 
+		"id"?: string;
+		"name"?: string;
+		"enabled"?: boolean;
+		"selfUri"?: string;
+	}
+	
+	export interface TestSchemaOperation { 
+		"name"?: string;
+		"step"?: number;
+		"matches"?: boolean;
+		"details"?: Array<string>;
+	}
+	
+	export interface TestTargetOperation { 
+		"name"?: string;
+		"step"?: number;
+		"matches"?: boolean;
+		"details"?: Array<string>;
 	}
 	
 	export interface TextBotChannel { 
@@ -29881,10 +29992,10 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"pageCount"?: number;
-		"lastUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
 	}
@@ -30058,11 +30169,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -30107,6 +30218,13 @@ declare namespace Models {
 		"publishedBy"?: Models.AddressableEntityRef;
 		"datePublished"?: string;
 		"selfUri"?: string;
+	}
+	
+	export interface TopicCursorEntityListing { 
+		"entities"?: Array<string>;
+		"nextUri"?: string;
+		"selfUri"?: string;
+		"previousUri"?: string;
 	}
 	
 	export interface TopicDuration { 
@@ -30210,11 +30328,11 @@ declare namespace Models {
 		"endValue"?: string;
 		"values"?: Array<string>;
 		"startValue"?: string;
-		"fields"?: Array<string>;
 		"value"?: string;
 		"operator"?: string;
 		"group"?: Array<Models.TranscriptConversationDetailSearchCriteria>;
 		"dateFormat"?: string;
+		"fields"?: Array<string>;
 		"type"?: string;
 	}
 	
@@ -30232,12 +30350,12 @@ declare namespace Models {
 		"endValue"?: string;
 		"values"?: Array<string>;
 		"startValue"?: string;
-		"fields"?: Array<string>;
 		"value"?: string;
 		"operator"?: string;
 		"group"?: Array<Models.TranscriptSearchCriteria>;
 		"dateFormat"?: string;
 		"type"?: string;
+		"fields"?: Array<string>;
 	}
 	
 	export interface TranscriptSearchRequest { 
@@ -30338,6 +30456,31 @@ declare namespace Models {
 		"voicemail"?: boolean;
 	}
 	
+	export interface Trigger { 
+		"id"?: string;
+		"name"?: string;
+		"topicName"?: string;
+		"target"?: Models.TriggerTarget;
+		"version"?: number;
+		"enabled"?: boolean;
+		"matchCriteria"?: Array<Models.MatchCriteria>;
+		"eventTTLSeconds"?: number;
+		"description"?: string;
+		"selfUri"?: string;
+	}
+	
+	export interface TriggerEntityListing { 
+		"entities"?: Array<Models.Trigger>;
+		"nextUri"?: string;
+		"selfUri"?: string;
+		"previousUri"?: string;
+	}
+	
+	export interface TriggerTarget { 
+		"type"?: string;
+		"id"?: string;
+	}
+	
 	export interface Trunk { 
 		"id"?: string;
 		"name": string;
@@ -30400,11 +30543,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -30418,11 +30561,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -30487,11 +30630,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -30570,11 +30713,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -30671,11 +30814,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -30749,11 +30892,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -30773,11 +30916,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -30801,11 +30944,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -30845,11 +30988,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -30898,11 +31041,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -30992,14 +31135,14 @@ declare namespace Models {
 	export interface UpdateBusinessUnitRequest { 
 		"name"?: string;
 		"divisionId"?: string;
-		"settings"?: Models.UpdateBusinessUnitSettings;
+		"settings"?: Models.UpdateBusinessUnitSettingsRequest;
 	}
 	
-	export interface UpdateBusinessUnitSettings { 
+	export interface UpdateBusinessUnitSettingsRequest { 
 		"startDayOfWeek"?: string;
 		"timeZone"?: string;
 		"shortTermForecasting"?: Models.BuShortTermForecastingSettings;
-		"scheduling"?: Models.BuSchedulingSettings;
+		"scheduling"?: Models.BuSchedulingSettingsRequest;
 		"metadata": Models.WfmVersionedEntityMetadata;
 	}
 	
@@ -31092,6 +31235,17 @@ declare namespace Models {
 		"daysBeforeStartToExpireFromWaitlist"?: number;
 		"active"?: boolean;
 		"metadata": Models.WfmVersionedEntityMetadata;
+	}
+	
+	export interface UpdateTriggerRequest { 
+		"version": number;
+		"enabled": boolean;
+		"target": Models.TriggerTarget;
+		"matchCriteria"?: Array<Models.MatchCriteria>;
+		"name": string;
+		"topicName": string;
+		"eventTTLSeconds"?: number;
+		"description"?: string;
 	}
 	
 	export interface UpdateUser { 
@@ -31215,25 +31369,6 @@ declare namespace Models {
 		"selfUri"?: string;
 	}
 	
-	export interface UserActionCategory { 
-		"id"?: string;
-		"name"?: string;
-		"selfUri"?: string;
-	}
-	
-	export interface UserActionCategoryEntityListing { 
-		"entities"?: Array<Models.UserActionCategory>;
-		"pageSize"?: number;
-		"pageNumber"?: number;
-		"total"?: number;
-		"firstUri"?: string;
-		"selfUri"?: string;
-		"nextUri"?: string;
-		"previousUri"?: string;
-		"lastUri"?: string;
-		"pageCount"?: number;
-	}
-	
 	export interface UserAgentInfo { 
 		"firmwareVersion"?: string;
 		"manufacturer"?: string;
@@ -31306,11 +31441,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -31451,11 +31586,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -31505,11 +31640,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -31653,11 +31788,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -31702,11 +31837,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -31731,11 +31866,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -31877,11 +32012,11 @@ declare namespace Models {
 		"endValue"?: string;
 		"values"?: Array<string>;
 		"startValue"?: string;
-		"fields"?: Array<string>;
 		"value"?: string;
 		"operator"?: string;
 		"group"?: Array<Models.UserSearchCriteria>;
 		"dateFormat"?: string;
+		"fields"?: Array<string>;
 		"type": string;
 	}
 	
@@ -31902,11 +32037,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -32426,12 +32561,6 @@ declare namespace Models {
 		"value"?: string;
 	}
 	
-	export interface VendorConnectionRequest { 
-		"publisher": string;
-		"type": string;
-		"name": string;
-	}
-	
 	export interface Video { 
 		"state"?: string;
 		"id"?: string;
@@ -32704,11 +32833,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -32759,11 +32888,11 @@ declare namespace Models {
 		"endValue"?: string;
 		"values"?: Array<string>;
 		"startValue"?: string;
-		"fields"?: Array<string>;
 		"value"?: string;
 		"operator"?: string;
 		"group"?: Array<Models.VoicemailSearchCriteria>;
 		"dateFormat"?: string;
+		"fields"?: Array<string>;
 		"type": string;
 	}
 	
@@ -32891,11 +33020,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -34191,11 +34320,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -34648,11 +34777,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -34673,11 +34802,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -34730,11 +34859,11 @@ declare namespace Models {
 		"pageSize"?: number;
 		"pageNumber"?: number;
 		"total"?: number;
+		"lastUri"?: string;
 		"firstUri"?: string;
 		"selfUri"?: string;
 		"nextUri"?: string;
 		"previousUri"?: string;
-		"lastUri"?: string;
 		"pageCount"?: number;
 	}
 	
@@ -34768,6 +34897,7 @@ declare namespace Models {
 		"latestSmsEvaluations"?: { [key: string]: Models.MessageEvaluation; };
 		"callable"?: boolean;
 		"phoneNumberStatus"?: { [key: string]: Models.PhoneNumberStatus; };
+		"contactableStatus"?: { [key: string]: Models.ContactableStatus; };
 	}
 	
 	export interface WritableDivision { 

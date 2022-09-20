@@ -1,288 +1,366 @@
-Platform API version: 6085
+Platform API version: 6135
 
 
-# Major Changes (25 changes)
+# Major Changes (23 changes)
 
-**GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents** (1 change)
+**/api/v2/gamification/metrics** (1 change)
 
-* Parameter documentId was added
+* Path /api/v2/gamification/metrics was removed
 
-**ConversationButtonComponent** (1 change)
+**/api/v2/integrations/eventlog** (1 change)
 
-* Model ConversationButtonComponent was removed
+* Path /api/v2/integrations/eventlog was removed
 
-**ConversationContentActions** (1 change)
+**/api/v2/integrations/eventlog/{eventId}** (1 change)
 
-* Model ConversationContentActions was removed
+* Path /api/v2/integrations/eventlog/{eventId} was removed
 
-**ConversationContentGeneric** (1 change)
+**/api/v2/integrations/workforcemanagement/vendorconnection** (1 change)
 
-* Model ConversationContentGeneric was removed
+* Path /api/v2/integrations/workforcemanagement/vendorconnection was removed
 
-**ConversationMessagingChannelMetadata** (1 change)
+**GET /api/v2/profiles/groups** (1 change)
 
-* Model ConversationMessagingChannelMetadata was removed
+* Parameter jabberId was added
 
-**ConversationMessageMetadataContent** (4 changes)
+**GET /api/v2/userrecordings/{recordingId}/media** (1 change)
 
-* Enum value GenericTemplate was removed from property contentType
-* Enum value ListTemplate was removed from property contentType
-* Enum value Postback was removed from property contentType
-* Enum value Reactions was removed from property contentType
+* Parameter async was added
 
-**ConversationMessageContent** (5 changes)
+**GET /api/v2/workforcemanagement/businessunits/{businessUnitId}** (1 change)
 
-* Property generic was removed
-* Enum value GenericTemplate was removed from property contentType
-* Enum value ListTemplate was removed from property contentType
-* Enum value Postback was removed from property contentType
-* Enum value Reactions was removed from property contentType
+* Response 200 type was changed from BusinessUnit to BusinessUnitResponse
 
-**FacebookIntegrationUpdateRequest** (1 change)
+**PATCH /api/v2/workforcemanagement/businessunits/{businessUnitId}** (1 change)
 
-* Property messagingSetting was changed from MessagingSettingReference to MessagingSettingRequestReference
+* Response 200 type was changed from BusinessUnit to BusinessUnitResponse
 
-**FacebookIntegrationRequest** (1 change)
+**POST /api/v2/workforcemanagement/businessunits** (2 changes)
 
-* Property messagingSetting was changed from MessagingSettingReference to MessagingSettingRequestReference
+* Response 200 type was changed from BusinessUnit to BusinessUnitResponse
+* Response 201 type was changed from BusinessUnit to BusinessUnitResponse
 
-**LineIntegrationRequest** (1 change)
+**UserActionCategory** (1 change)
 
-* Property messagingSetting was changed from MessagingSettingReference to MessagingSettingRequestReference
+* Model UserActionCategory was removed
 
-**OpenIntegrationUpdateRequest** (1 change)
+**UserActionCategoryEntityListing** (1 change)
 
-* Property messagingSetting was changed from MessagingSettingReference to MessagingSettingRequestReference
+* Model UserActionCategoryEntityListing was removed
 
-**OpenIntegrationRequest** (1 change)
+**EventEntity** (1 change)
 
-* Property messagingSetting was changed from MessagingSettingReference to MessagingSettingRequestReference
+* Model EventEntity was removed
 
-**TwitterIntegrationRequest** (1 change)
+**IntegrationEvent** (1 change)
 
-* Property messagingSetting was changed from MessagingSettingReference to MessagingSettingRequestReference
+* Model IntegrationEvent was removed
 
-**WhatsAppIntegrationUpdateRequest** (1 change)
+**IntegrationEventEntityListing** (1 change)
 
-* Property messagingSetting was changed from MessagingSettingReference to MessagingSettingRequestReference
+* Model IntegrationEventEntityListing was removed
 
-**WhatsAppIntegrationRequest** (1 change)
+**VendorConnectionRequest** (1 change)
 
-* Property messagingSetting was changed from MessagingSettingReference to MessagingSettingRequestReference
+* Model VendorConnectionRequest was removed
 
-**ExternalMetricDataWriteResponse** (1 change)
+**BuSchedulingSettings** (1 change)
 
-* Property processedEntities was changed from ExternalMetricDataItem[] to ExternalMetricDataProcessedItem[]
+* Model BuSchedulingSettings was removed
 
-**LimitChangeRequestDetails** (1 change)
+**BusinessUnit** (1 change)
 
-* Enum value skills was removed from property namespace
+* Model BusinessUnit was removed
 
-**StatusChange** (1 change)
+**BusinessUnitSettings** (1 change)
 
-* Enum value skills was removed from property namespace
+* Model BusinessUnitSettings was removed
+
+**UpdateBusinessUnitSettings** (1 change)
+
+* Model UpdateBusinessUnitSettings was removed
+
+**CreateBusinessUnitSettings** (1 change)
+
+* Model CreateBusinessUnitSettings was removed
+
+**UpdateBusinessUnitRequest** (1 change)
+
+* Property settings was changed from UpdateBusinessUnitSettings to UpdateBusinessUnitSettingsRequest
+
+**CreateBusinessUnitRequest** (1 change)
+
+* Property settings was changed from CreateBusinessUnitSettings to CreateBusinessUnitSettingsRequest
 
 
-# Minor Changes (61 changes)
+# Minor Changes (83 changes)
 
-**/api/v2/analytics/dataretention/settings** (3 changes)
+**/api/v2/journey/actionmaps/estimates/jobs/{jobId}** (2 changes)
 
 * Path was added
 * Operation GET was added
-* Operation PUT was added
 
-**/api/v2/outbound/digitalrulesets/{digitalRuleSetId}** (4 changes)
+**/api/v2/journey/actionmaps/estimates/jobs/{jobId}/results** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/journey/actionmaps/estimates/jobs** (2 changes)
+
+* Path was added
+* Operation POST was added
+
+**/api/v2/processautomation/triggers/topics/{topicName}/test** (2 changes)
+
+* Path was added
+* Operation POST was added
+
+**/api/v2/processautomation/triggers/topics** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/processautomation/triggers/{triggerId}** (4 changes)
 
 * Path was added
 * Operation GET was added
 * Operation PUT was added
 * Operation DELETE was added
 
-**/api/v2/outbound/digitalrulesets** (3 changes)
+**/api/v2/processautomation/triggers/{triggerId}/test** (2 changes)
+
+* Path was added
+* Operation POST was added
+
+**/api/v2/processautomation/triggers** (3 changes)
 
 * Path was added
 * Operation GET was added
 * Operation POST was added
 
-**/api/v2/recordings/retention/query** (2 changes)
+**GET /api/v2/userrecordings/{recordingId}/media** (1 change)
 
-* Path was added
-* Operation GET was added
+* Response 202 was added
 
-**/api/v2/users/{userId}/externalid** (2 changes)
+**POST /api/v2/learning/assignments/{assignmentId}/reset** (1 change)
 
-* Path was added
-* Operation POST was added
+* Response 409 was added
 
-**/api/v2/webdeployments/deployments/{deploymentId}/configurations** (2 changes)
+**POST /api/v2/learning/assignments/{assignmentId}/reassign** (1 change)
 
-* Path was added
-* Operation GET was added
+* Response 409 was added
 
-**ConversationAggregationQuery** (1 change)
+**ConversationAggregationQuery** (2 changes)
 
-* Enum value tBarging was added to property metrics
+* Enum value tFirstConnect was added to property metrics
+* Enum value tFirstDial was added to property metrics
 
-**ConversationAggregationView** (1 change)
+**ConversationAggregationView** (2 changes)
 
-* Enum value tBarging was added to property target
+* Enum value tFirstConnect was added to property target
+* Enum value tFirstDial was added to property target
 
-**AnalyticsConversationSegment** (1 change)
+**ConversationDetailQueryPredicate** (2 changes)
 
-* Enum value barging was added to property segmentType
+* Enum value tFirstConnect was added to property metric
+* Enum value tFirstDial was added to property metric
 
-**AnalyticsSession** (1 change)
+**AuditQueryExecutionStatusResponse** (1 change)
 
-* Optional property bargedParticipantId was added
+* Enum value LogCapture was added to property serviceName
 
-**ConversationDetailQueryPredicate** (1 change)
+**AuditQueryRequest** (1 change)
 
-* Enum value tBarging was added to property metric
+* Enum value LogCapture was added to property serviceName
 
-**SegmentDetailQueryPredicate** (1 change)
+**AuditLogMessage** (6 changes)
 
-* Enum value bargedParticipantId was added to property dimension
+* Enum value LogCapture was added to property serviceName
+* Enum value EnableCapture was added to property action
+* Enum value DownloadCapture was added to property action
+* Enum value DigitalRuleSet was added to property entityType
+* Enum value EmailCampaignSchedule was added to property entityType
+* Enum value MessagingCampaignSchedule was added to property entityType
 
-**ReportingTurnAction** (1 change)
+**AuditRealtimeQueryRequest** (1 change)
 
-* Enum value TransferPureMatchAction was added to property actionType
+* Enum value LogCapture was added to property serviceName
 
-**AnalyticsDataRetentionResponse** (1 change)
+**AuditQueryEntity** (5 changes)
 
-* Model was added
+* Enum value DigitalRuleSet was added to property name
+* Enum value EmailCampaignSchedule was added to property name
+* Enum value MessagingCampaignSchedule was added to property name
+* Enum value EnableCapture was added to property actions
+* Enum value DownloadCapture was added to property actions
 
-**UpdateAnalyticsDataRetentionRequest** (1 change)
+**AuditQueryService** (1 change)
 
-* Model was added
+* Enum value LogCapture was added to property name
 
-**TopicOffset** (1 change)
+**DialerContact** (1 change)
 
-* Model was added
+* Optional property contactableStatus was added
 
-**TranscriptTopic** (2 changes)
+**WritableDialerContact** (1 change)
 
-* Optional property offset was added
-* Optional property recordingLocation was added
+* Optional property contactableStatus was added
 
-**ConversationChannelMetadata** (1 change)
+**ActionTemplate** (1 change)
 
-* Model was added
+* Optional property version was added
 
-**ConversationContentAttachment** (1 change)
+**PatchActionTemplate** (1 change)
 
-* Optional property contentSizeBytes was added
+* Optional property version was added
 
-**MessagingSettingRequestReference** (1 change)
-
-* Model was added
-
-**AppendToDncActionSettings** (1 change)
-
-* Model was added
-
-**ContactAddressConditionSettings** (1 change)
-
-* Model was added
-
-**ContactAddressTypeConditionSettings** (1 change)
+**ActionMapEstimateResult** (1 change)
 
 * Model was added
 
-**ContactColumnConditionSettings** (1 change)
+**SegmentEstimateCount** (1 change)
 
 * Model was added
 
-**DigitalAction** (1 change)
+**EstimateJobAsyncResponse** (1 change)
 
 * Model was added
 
-**DigitalCondition** (1 change)
+**ActionMapEstimateOutcomeCriteria** (1 change)
 
 * Model was added
 
-**DigitalRule** (1 change)
+**ActionMapEstimateRequest** (1 change)
 
 * Model was added
 
-**DigitalRuleSet** (1 change)
+**LimitChangeRequestDetails** (1 change)
+
+* Enum value skills was added to property namespace
+
+**StatusChange** (1 change)
+
+* Enum value skills was added to property namespace
+
+**TestMatchesEventOperation** (1 change)
 
 * Model was added
 
-**LastAttemptByColumnConditionSettings** (1 change)
+**TestModeEventResults** (1 change)
 
 * Model was added
 
-**LastAttemptOverallConditionSettings** (1 change)
+**TestModeTrigger** (1 change)
 
 * Model was added
 
-**LastResultByColumnConditionSettings** (1 change)
+**TestSchemaOperation** (1 change)
 
 * Model was added
 
-**LastResultOverallConditionSettings** (1 change)
+**TopicCursorEntityListing** (1 change)
 
 * Model was added
 
-**MarkContactUncontactableActionSettings** (1 change)
+**MatchCriteria** (1 change)
 
 * Model was added
 
-**SetContentTemplateActionSettings** (1 change)
+**Trigger** (1 change)
 
 * Model was added
 
-**UpdateContactColumnActionSettings** (1 change)
+**TriggerTarget** (1 change)
 
 * Model was added
 
-**DigitalRuleSetEntityListing** (1 change)
+**UpdateTriggerRequest** (1 change)
 
 * Model was added
 
-**ExternalMetricDataProcessedItem** (1 change)
+**MatchCriteriaTestResult** (1 change)
 
 * Model was added
 
-**KnowledgeImportJobStatistics** (9 changes)
-
-* Optional property countCategoryValidationSuccess was added
-* Optional property countCategoryValidationFailure was added
-* Optional property countCategoryImportSuccess was added
-* Optional property countCategoryImportFailure was added
-* Optional property countLabelValidationSuccess was added
-* Optional property countLabelValidationFailure was added
-* Optional property countLabelImportSuccess was added
-* Optional property countLabelImportFailure was added
-* Optional property migrationDetected was added
-
-**RecordingRetention** (1 change)
+**MatchTestResult** (1 change)
 
 * Model was added
 
-**RecordingRetentionCursorEntityListing** (1 change)
+**TestMatchesOperation** (1 change)
 
 * Model was added
 
-**UserExternalIdentifier** (1 change)
+**TestModeResults** (1 change)
 
 * Model was added
 
-**WebDeploymentActiveConfigurationOnDeployment** (1 change)
+**TestTargetOperation** (1 change)
+
+* Model was added
+
+**TriggerEntityListing** (1 change)
+
+* Model was added
+
+**CreateTriggerRequest** (1 change)
+
+* Model was added
+
+**SearchCriteria** (1 change)
+
+* Enum value REGEX was added to property type
+
+**LearningAssignment** (1 change)
+
+* Enum value InvalidSchedule was added to property state
+
+**LearningModule** (1 change)
+
+* Optional property archivalMode was added
+
+**LearningAssignmentUpdate** (1 change)
+
+* Enum value InvalidSchedule was added to property state
+
+**LearningAssignmentReassign** (1 change)
+
+* Model was added
+
+**AssignedLearningModule** (1 change)
+
+* Optional property archivalMode was added
+
+**BuSchedulingSettingsResponse** (1 change)
+
+* Model was added
+
+**BusinessUnitResponse** (1 change)
+
+* Model was added
+
+**BusinessUnitSettingsResponse** (1 change)
+
+* Model was added
+
+**BuSchedulingSettingsRequest** (1 change)
+
+* Model was added
+
+**SetWrapperSyncTimeOffProperty** (1 change)
+
+* Model was added
+
+**UpdateBusinessUnitSettingsRequest** (1 change)
+
+* Model was added
+
+**CreateBusinessUnitSettingsRequest** (1 change)
 
 * Model was added
 
 
-# Point Changes (3 changes)
+# Point Changes (1 change)
 
-**GET /api/v2/quality/forms/evaluations** (1 change)
+**GET /api/v2/userrecordings/{recordingId}/media** (1 change)
 
-* Description was changed for parameter expand
-
-**GET /api/v2/quality/forms/surveys** (1 change)
-
-* Description was changed for parameter expand
-
-**GET /api/v2/quality/forms** (1 change)
-
-* Description was changed for parameter expand
+* Response 200 was changed from successful operation to Operation was successful

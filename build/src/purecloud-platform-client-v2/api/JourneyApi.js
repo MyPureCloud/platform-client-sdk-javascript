@@ -5,7 +5,7 @@ class JourneyApi {
 	/**
 	 * Journey service.
 	 * @module purecloud-platform-client-v2/api/JourneyApi
-	 * @version 147.0.0
+	 * @version 148.0.0
 	 */
 
 	/**
@@ -171,6 +171,56 @@ class JourneyApi {
 			'GET', 
 			{  },
 			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'filterField': opts['filterField'],'filterValue': opts['filterValue'],'actionMapIds': this.apiClient.buildCollectionParam(opts['actionMapIds'], 'multi'),'queryFields': this.apiClient.buildCollectionParam(opts['queryFields'], 'multi'),'queryValue': opts['queryValue'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get status of job.
+	 * 
+	 * @param {String} jobId ID of the job.
+	 */
+	getJourneyActionmapsEstimatesJob(jobId) { 
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null) {
+			throw 'Missing the required parameter "jobId" when calling getJourneyActionmapsEstimatesJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/actionmaps/estimates/jobs/{jobId}', 
+			'GET', 
+			{ 'jobId': jobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get estimates from completed job.
+	 * 
+	 * @param {String} jobId ID of the job.
+	 */
+	getJourneyActionmapsEstimatesJobResults(jobId) { 
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null) {
+			throw 'Missing the required parameter "jobId" when calling getJourneyActionmapsEstimatesJobResults';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/actionmaps/estimates/jobs/{jobId}/results', 
+			'GET', 
+			{ 'jobId': jobId },
+			{  },
 			{  },
 			{  },
 			null, 
@@ -632,6 +682,31 @@ class JourneyApi {
 			{  },
 			{  },
 			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Query for estimates
+	 * 
+	 * @param {Object} body audience estimator request
+	 */
+	postJourneyActionmapsEstimatesJobs(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postJourneyActionmapsEstimatesJobs';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/actionmaps/estimates/jobs', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']

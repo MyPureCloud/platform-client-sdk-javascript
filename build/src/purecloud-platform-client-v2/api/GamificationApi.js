@@ -5,7 +5,7 @@ class GamificationApi {
 	/**
 	 * Gamification service.
 	 * @module purecloud-platform-client-v2/api/GamificationApi
-	 * @version 147.0.0
+	 * @version 148.0.0
 	 */
 
 	/**
@@ -289,31 +289,6 @@ class GamificationApi {
 			'GET', 
 			{  },
 			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * All gamified metrics for a given profile
-	 * This API is deprecated. Use /api/v2/gamification/profiles/{profileId}/metrics instead.
-	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.performanceProfileId The profile id of the metrics you are trying to retrieve. The DEFAULT profile is used if nothing is given.
-	 * @param {String} opts.workday The objective query workday. If not specified, then it retrieves the current objective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
-	 */
-	getGamificationMetrics(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/gamification/metrics', 
-			'GET', 
-			{  },
-			{ 'performanceProfileId': opts['performanceProfileId'],'workday': opts['workday'] },
 			{  },
 			{  },
 			null, 
@@ -1372,31 +1347,6 @@ class GamificationApi {
 			{  },
 			{  },
 			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Creates a gamified metric with a given metric definition and metric objective
-	 * This API is deprecated. Use /api/v2/gamification/profiles/{profileId}/metrics instead.
-	 * @param {Object} body Metric
-	 */
-	postGamificationMetrics(body) { 
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postGamificationMetrics';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/gamification/metrics', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']

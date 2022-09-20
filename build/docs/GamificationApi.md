@@ -17,7 +17,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getGamificationMetric**](GamificationApi.html#getGamificationMetric) | **GET** /api/v2/gamification/metrics/{metricId} | Gamified metric by id
 [**getGamificationMetricdefinition**](GamificationApi.html#getGamificationMetricdefinition) | **GET** /api/v2/gamification/metricdefinitions/{metricDefinitionId} | Metric definition by id
 [**getGamificationMetricdefinitions**](GamificationApi.html#getGamificationMetricdefinitions) | **GET** /api/v2/gamification/metricdefinitions | All metric definitions
-[**getGamificationMetrics**](GamificationApi.html#getGamificationMetrics) | **GET** /api/v2/gamification/metrics | All gamified metrics for a given profile
 [**getGamificationProfile**](GamificationApi.html#getGamificationProfile) | **GET** /api/v2/gamification/profiles/{profileId} | Performance profile by id
 [**getGamificationProfileMembers**](GamificationApi.html#getGamificationProfileMembers) | **GET** /api/v2/gamification/profiles/{profileId}/members | Members of a given performance profile
 [**getGamificationProfileMetric**](GamificationApi.html#getGamificationProfileMetric) | **GET** /api/v2/gamification/profiles/{profileId}/metrics/{metricId} | Performance profile gamified metric by id
@@ -52,7 +51,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**patchEmployeeperformanceExternalmetricsDefinition**](GamificationApi.html#patchEmployeeperformanceExternalmetricsDefinition) | **PATCH** /api/v2/employeeperformance/externalmetrics/definitions/{metricId} | Update External Metric Definition
 [**postEmployeeperformanceExternalmetricsData**](GamificationApi.html#postEmployeeperformanceExternalmetricsData) | **POST** /api/v2/employeeperformance/externalmetrics/data | Write External Metric Data
 [**postEmployeeperformanceExternalmetricsDefinitions**](GamificationApi.html#postEmployeeperformanceExternalmetricsDefinitions) | **POST** /api/v2/employeeperformance/externalmetrics/definitions | Create External Metric Definition
-[**postGamificationMetrics**](GamificationApi.html#postGamificationMetrics) | **POST** /api/v2/gamification/metrics | Creates a gamified metric with a given metric definition and metric objective
 [**postGamificationProfileActivate**](GamificationApi.html#postGamificationProfileActivate) | **POST** /api/v2/gamification/profiles/{profileId}/activate | Activate a performance profile
 [**postGamificationProfileDeactivate**](GamificationApi.html#postGamificationProfileDeactivate) | **POST** /api/v2/gamification/profiles/{profileId}/deactivate | Deactivate a performance profile
 [**postGamificationProfileMembers**](GamificationApi.html#postGamificationProfileMembers) | **POST** /api/v2/gamification/profiles/{profileId}/members | Assign members to a given performance profile
@@ -590,65 +588,6 @@ This endpoint does not need any parameter.
 ### Return type
 
 **GetMetricDefinitionsResponse**
-
-<a name="getGamificationMetrics"></a>
-
-# GetMetricsResponse getGamificationMetrics(opts)
-
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
-
-GET /api/v2/gamification/metrics
-
-All gamified metrics for a given profile
-
-This API is deprecated. Use /api/v2/gamification/profiles/{profileId}/metrics instead.
-
-Requires ANY permissions:
-
-* gamification:profile:view
-* gamification:leaderboard:view
-* gamification:scorecard:view
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.GamificationApi();
-
-let opts = { 
-  'performanceProfileId': "performanceProfileId_example", // String | The profile id of the metrics you are trying to retrieve. The DEFAULT profile is used if nothing is given.
-  'workday': "workday_example" // String | The objective query workday. If not specified, then it retrieves the current objective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
-};
-
-apiInstance.getGamificationMetrics(opts)
-  .then((data) => {
-    console.log(`getGamificationMetrics success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch((err) => {
-    console.log('There was a failure calling getGamificationMetrics');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **performanceProfileId** | **String** | The profile id of the metrics you are trying to retrieve. The DEFAULT profile is used if nothing is given. | [optional]  |
- **workday** | **String** | The objective query workday. If not specified, then it retrieves the current objective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | [optional]  |
-{: class="table table-striped"}
-
-### Return type
-
-**GetMetricsResponse**
 
 <a name="getGamificationProfile"></a>
 
@@ -2491,59 +2430,6 @@ apiInstance.postEmployeeperformanceExternalmetricsDefinitions(opts)
 ### Return type
 
 **ExternalMetricDefinition**
-
-<a name="postGamificationMetrics"></a>
-
-# Metric postGamificationMetrics(body)
-
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
-
-POST /api/v2/gamification/metrics
-
-Creates a gamified metric with a given metric definition and metric objective
-
-This API is deprecated. Use /api/v2/gamification/profiles/{profileId}/metrics instead.
-
-Requires ALL permissions:
-
-* gamification:profile:update
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.GamificationApi();
-
-let body = {}; // Object | Metric
-
-apiInstance.postGamificationMetrics(body)
-  .then((data) => {
-    console.log(`postGamificationMetrics success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch((err) => {
-    console.log('There was a failure calling postGamificationMetrics');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **body** | **Object** | Metric |  |
-{: class="table table-striped"}
-
-### Return type
-
-**Metric**
 
 <a name="postGamificationProfileActivate"></a>
 

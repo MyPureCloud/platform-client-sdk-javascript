@@ -13,6 +13,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**deleteJourneySegment**](JourneyApi.html#deleteJourneySegment) | **DELETE** /api/v2/journey/segments/{segmentId} | Delete a segment.
 [**getJourneyActionmap**](JourneyApi.html#getJourneyActionmap) | **GET** /api/v2/journey/actionmaps/{actionMapId} | Retrieve a single action map.
 [**getJourneyActionmaps**](JourneyApi.html#getJourneyActionmaps) | **GET** /api/v2/journey/actionmaps | Retrieve all action maps.
+[**getJourneyActionmapsEstimatesJob**](JourneyApi.html#getJourneyActionmapsEstimatesJob) | **GET** /api/v2/journey/actionmaps/estimates/jobs/{jobId} | Get status of job.
+[**getJourneyActionmapsEstimatesJobResults**](JourneyApi.html#getJourneyActionmapsEstimatesJobResults) | **GET** /api/v2/journey/actionmaps/estimates/jobs/{jobId}/results | Get estimates from completed job.
 [**getJourneyActiontarget**](JourneyApi.html#getJourneyActiontarget) | **GET** /api/v2/journey/actiontargets/{actionTargetId} | Retrieve a single action target.
 [**getJourneyActiontargets**](JourneyApi.html#getJourneyActiontargets) | **GET** /api/v2/journey/actiontargets | Retrieve all action targets.
 [**getJourneyActiontemplate**](JourneyApi.html#getJourneyActiontemplate) | **GET** /api/v2/journey/actiontemplates/{actionTemplateId} | Retrieve a single action template.
@@ -30,6 +32,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**patchJourneySegment**](JourneyApi.html#patchJourneySegment) | **PATCH** /api/v2/journey/segments/{segmentId} | Update a segment.
 [**postAnalyticsJourneysAggregatesQuery**](JourneyApi.html#postAnalyticsJourneysAggregatesQuery) | **POST** /api/v2/analytics/journeys/aggregates/query | Query for journey aggregates
 [**postJourneyActionmaps**](JourneyApi.html#postJourneyActionmaps) | **POST** /api/v2/journey/actionmaps | Create an action map.
+[**postJourneyActionmapsEstimatesJobs**](JourneyApi.html#postJourneyActionmapsEstimatesJobs) | **POST** /api/v2/journey/actionmaps/estimates/jobs | Query for estimates
 [**postJourneyActiontemplates**](JourneyApi.html#postJourneyActiontemplates) | **POST** /api/v2/journey/actiontemplates | Create a single action template.
 [**postJourneyOutcomes**](JourneyApi.html#postJourneyOutcomes) | **POST** /api/v2/journey/outcomes | Create an outcome.
 [**postJourneySegments**](JourneyApi.html#postJourneySegments) | **POST** /api/v2/journey/segments | Create a segment.
@@ -354,6 +357,106 @@ apiInstance.getJourneyActionmaps(opts)
 ### Return type
 
 **ActionMapListing**
+
+<a name="getJourneyActionmapsEstimatesJob"></a>
+
+# **&#39;String&#39;** getJourneyActionmapsEstimatesJob(jobId)
+
+
+GET /api/v2/journey/actionmaps/estimates/jobs/{jobId}
+
+Get status of job.
+
+Requires ALL permissions:
+
+* journey:actionmapEstimateJob:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.JourneyApi();
+
+let jobId = "jobId_example"; // String | ID of the job.
+
+apiInstance.getJourneyActionmapsEstimatesJob(jobId)
+  .then((data) => {
+    console.log(`getJourneyActionmapsEstimatesJob success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getJourneyActionmapsEstimatesJob');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **jobId** | **String** | ID of the job. |  |
+{: class="table table-striped"}
+
+### Return type
+
+**&#39;String&#39;**
+
+<a name="getJourneyActionmapsEstimatesJobResults"></a>
+
+# ActionMapEstimateResult getJourneyActionmapsEstimatesJobResults(jobId)
+
+
+GET /api/v2/journey/actionmaps/estimates/jobs/{jobId}/results
+
+Get estimates from completed job.
+
+Requires ALL permissions:
+
+* journey:actionmapEstimate:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.JourneyApi();
+
+let jobId = "jobId_example"; // String | ID of the job.
+
+apiInstance.getJourneyActionmapsEstimatesJobResults(jobId)
+  .then((data) => {
+    console.log(`getJourneyActionmapsEstimatesJobResults success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getJourneyActionmapsEstimatesJobResults');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **jobId** | **String** | ID of the job. |  |
+{: class="table table-striped"}
+
+### Return type
+
+**ActionMapEstimateResult**
 
 <a name="getJourneyActiontarget"></a>
 
@@ -1271,6 +1374,56 @@ apiInstance.postJourneyActionmaps(opts)
 ### Return type
 
 **ActionMap**
+
+<a name="postJourneyActionmapsEstimatesJobs"></a>
+
+# EstimateJobAsyncResponse postJourneyActionmapsEstimatesJobs(body)
+
+
+POST /api/v2/journey/actionmaps/estimates/jobs
+
+Query for estimates
+
+Requires ANY permissions:
+
+* journey:actionmapEstimateJob:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.JourneyApi();
+
+let body = {}; // Object | audience estimator request
+
+apiInstance.postJourneyActionmapsEstimatesJobs(body)
+  .then((data) => {
+    console.log(`postJourneyActionmapsEstimatesJobs success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postJourneyActionmapsEstimatesJobs');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | audience estimator request |  |
+{: class="table table-striped"}
+
+### Return type
+
+**EstimateJobAsyncResponse**
 
 <a name="postJourneyActiontemplates"></a>
 

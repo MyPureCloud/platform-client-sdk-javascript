@@ -38,6 +38,7 @@ import OrganizationApi from './api/OrganizationApi.js';
 import OrganizationAuthorizationApi from './api/OrganizationAuthorizationApi.js';
 import OutboundApi from './api/OutboundApi.js';
 import PresenceApi from './api/PresenceApi.js';
+import ProcessAutomationApi from './api/ProcessAutomationApi.js';
 import QualityApi from './api/QualityApi.js';
 import RecordingApi from './api/RecordingApi.js';
 import ResponseManagementApi from './api/ResponseManagementApi.js';
@@ -96,7 +97,7 @@ import WorkforceManagementApi from './api/WorkforceManagementApi.js';
  * </pre>
  * </p>
  * @module purecloud-platform-client-v2/index
- * @version 147.0.0
+ * @version 148.0.0
  */
 class platformClient {
 	constructor() {
@@ -295,6 +296,11 @@ class platformClient {
 		 * @property {module:purecloud-platform-client-v2/api/PresenceApi}
 		 */
 		this.PresenceApi = PresenceApi;
+		/**
+		 * The ProcessAutomationApi service constructor.
+		 * @property {module:purecloud-platform-client-v2/api/ProcessAutomationApi}
+		 */
+		this.ProcessAutomationApi = ProcessAutomationApi;
 		/**
 		 * The QualityApi service constructor.
 		 * @property {module:purecloud-platform-client-v2/api/QualityApi}

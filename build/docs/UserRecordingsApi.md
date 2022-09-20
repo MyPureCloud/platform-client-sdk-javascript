@@ -141,7 +141,8 @@ let apiInstance = new platformClient.UserRecordingsApi();
 
 let recordingId = "recordingId_example"; // String | User Recording ID
 let opts = { 
-  'formatId': "WEBM" // String | The desired media format.
+  'formatId': "WEBM", // String | The desired media format.
+  'async': true // Boolean | When set to true, api will return 202 response until the recording is ready for download
 };
 
 apiInstance.getUserrecordingMedia(recordingId, opts)
@@ -161,6 +162,7 @@ apiInstance.getUserrecordingMedia(recordingId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **recordingId** | **String** | User Recording ID |  |
  **formatId** | **String** | The desired media format. | [optional] [default to WEBM]<br />**Values**: WAV, WEBM, WAV_ULAW, OGG_VORBIS, OGG_OPUS, MP3, NONE |
+ **async** | **Boolean** | When set to true, api will return 202 response until the recording is ready for download | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
