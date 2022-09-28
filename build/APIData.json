@@ -24079,7 +24079,7 @@
   "putconversationrecording": {
     "operationId": "putconversationrecording",
     "functionName": "putConversationRecording",
-    "signature": "putConversationRecording(conversationId, recordingId, body)",
+    "signature": "putConversationRecording(conversationId, recordingId, body, clearExport)",
     "parameters": [
       {
         "name": "conversationId",
@@ -24095,10 +24095,15 @@
         "name": "body",
         "type": "Object",
         "required": "true"
+      },
+      {
+        "name": "clearExport",
+        "type": "Boolean",
+        "required": "false"
       }
     ],
     "return": "Recording",
-    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.RecordingApi();\n\nlet conversationId = \"conversationId_example\"; // String | Conversation ID\nlet recordingId = \"recordingId_example\"; // String | Recording ID\nlet body = {}; // Object | recording\n\n// Updates the retention records on a recording.\napiInstance.putConversationRecording(conversationId, recordingId, body)\n  .then((data) => {\n    console.log(`putConversationRecording success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling putConversationRecording\");\n    console.error(err);\n  });"
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.RecordingApi();\n\nlet conversationId = \"conversationId_example\"; // String | Conversation ID\nlet recordingId = \"recordingId_example\"; // String | Recording ID\nlet body = {}; // Object | recording\nlet opts = { \n  \"clearExport\": true // Boolean | Whether to clear the pending export for the recording\n};\n\n// Updates the retention records on a recording.\napiInstance.putConversationRecording(conversationId, recordingId, body, opts)\n  .then((data) => {\n    console.log(`putConversationRecording success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling putConversationRecording\");\n    console.error(err);\n  });"
   },
   "putconversationrecordingannotation": {
     "operationId": "putconversationrecordingannotation",
@@ -25077,6 +25082,39 @@
     ],
     "return": "Predictor",
     "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.RoutingApi();\n\nlet predictorId = \"predictorId_example\"; // String | Predictor ID\n\n// Retrieve a single predictor.\napiInstance.getRoutingPredictor(predictorId)\n  .then((data) => {\n    console.log(`getRoutingPredictor success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getRoutingPredictor\");\n    console.error(err);\n  });"
+  },
+  "getroutingpredictormodelfeatures": {
+    "operationId": "getroutingpredictormodelfeatures",
+    "functionName": "getRoutingPredictorModelFeatures",
+    "signature": "getRoutingPredictorModelFeatures(predictorId, modelId)",
+    "parameters": [
+      {
+        "name": "predictorId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "modelId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "return": "PredictorModelFeatureListing",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.RoutingApi();\n\nlet predictorId = \"predictorId_example\"; // String | Predictor ID\nlet modelId = \"modelId_example\"; // String | Model ID\n\n// Retrieve Predictor Model Features.\napiInstance.getRoutingPredictorModelFeatures(predictorId, modelId)\n  .then((data) => {\n    console.log(`getRoutingPredictorModelFeatures success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getRoutingPredictorModelFeatures\");\n    console.error(err);\n  });"
+  },
+  "getroutingpredictormodels": {
+    "operationId": "getroutingpredictormodels",
+    "functionName": "getRoutingPredictorModels",
+    "signature": "getRoutingPredictorModels(predictorId)",
+    "parameters": [
+      {
+        "name": "predictorId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "return": "PredictorModels",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.RoutingApi();\n\nlet predictorId = \"predictorId_example\"; // String | Predictor ID\n\n// Retrieve Predictor Models and Top Features.\napiInstance.getRoutingPredictorModels(predictorId)\n  .then((data) => {\n    console.log(`getRoutingPredictorModels success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getRoutingPredictorModels\");\n    console.error(err);\n  });"
   },
   "getroutingpredictors": {
     "operationId": "getroutingpredictors",
@@ -33289,9 +33327,16 @@
   "getwebdeploymentsdeployments": {
     "operationId": "getwebdeploymentsdeployments",
     "functionName": "getWebdeploymentsDeployments",
-    "signature": "getWebdeploymentsDeployments()",
+    "signature": "getWebdeploymentsDeployments(expand)",
+    "parameters": [
+      {
+        "name": "expand",
+        "type": "[String]",
+        "required": "false"
+      }
+    ],
     "return": "WebDeploymentEntityListing",
-    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.WebDeploymentsApi();\n\n// Get deployments\napiInstance.getWebdeploymentsDeployments()\n  .then((data) => {\n    console.log(`getWebdeploymentsDeployments success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getWebdeploymentsDeployments\");\n    console.error(err);\n  });"
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.WebDeploymentsApi();\n\nlet opts = { \n  \"expand\": [\"expand_example\"] // [String] | The specified entity attributes will be filled. Comma separated values expected. Valid values:\n};\n\n// Get deployments\napiInstance.getWebdeploymentsDeployments(opts)\n  .then((data) => {\n    console.log(`getWebdeploymentsDeployments success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getWebdeploymentsDeployments\");\n    console.error(err);\n  });"
   },
   "postwebdeploymentsconfigurationversionsdraftpublish": {
     "operationId": "postwebdeploymentsconfigurationversionsdraftpublish",

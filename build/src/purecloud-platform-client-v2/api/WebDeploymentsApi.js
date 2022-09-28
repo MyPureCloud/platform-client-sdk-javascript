@@ -5,7 +5,7 @@ class WebDeploymentsApi {
 	/**
 	 * WebDeployments service.
 	 * @module purecloud-platform-client-v2/api/WebDeploymentsApi
-	 * @version 148.0.0
+	 * @version 149.0.0
 	 */
 
 	/**
@@ -231,14 +231,18 @@ class WebDeploymentsApi {
 	/**
 	 * Get deployments
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Array.<String>} opts.expand The specified entity attributes will be filled. Comma separated values expected. Valid values:
 	 */
-	getWebdeploymentsDeployments() { 
+	getWebdeploymentsDeployments(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/webdeployments/deployments', 
 			'GET', 
 			{  },
-			{  },
+			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
 			{  },
 			{  },
 			null, 

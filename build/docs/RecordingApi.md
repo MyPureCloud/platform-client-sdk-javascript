@@ -2687,7 +2687,7 @@ void (no response body)
 
 <a name="putConversationRecording"></a>
 
-# Recording putConversationRecording(conversationId, recordingId, body)
+# Recording putConversationRecording(conversationId, recordingId, body, opts)
 
 
 PUT /api/v2/conversations/{conversationId}/recordings/{recordingId}
@@ -2718,8 +2718,11 @@ let apiInstance = new platformClient.RecordingApi();
 let conversationId = "conversationId_example"; // String | Conversation ID
 let recordingId = "recordingId_example"; // String | Recording ID
 let body = {}; // Object | recording
+let opts = { 
+  'clearExport': true // Boolean | Whether to clear the pending export for the recording
+};
 
-apiInstance.putConversationRecording(conversationId, recordingId, body)
+apiInstance.putConversationRecording(conversationId, recordingId, body, opts)
   .then((data) => {
     console.log(`putConversationRecording success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2737,6 +2740,7 @@ apiInstance.putConversationRecording(conversationId, recordingId, body)
  **conversationId** | **String** | Conversation ID |  |
  **recordingId** | **String** | Recording ID |  |
  **body** | **Object** | recording |  |
+ **clearExport** | **Boolean** | Whether to clear the pending export for the recording | [optional]  |
 {: class="table table-striped"}
 
 ### Return type

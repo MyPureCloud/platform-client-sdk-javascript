@@ -38,6 +38,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getRoutingMessageRecipient**](RoutingApi.html#getRoutingMessageRecipient) | **GET** /api/v2/routing/message/recipients/{recipientId} | Get a recipient
 [**getRoutingMessageRecipients**](RoutingApi.html#getRoutingMessageRecipients) | **GET** /api/v2/routing/message/recipients | Get recipients
 [**getRoutingPredictor**](RoutingApi.html#getRoutingPredictor) | **GET** /api/v2/routing/predictors/{predictorId} | Retrieve a single predictor.
+[**getRoutingPredictorModelFeatures**](RoutingApi.html#getRoutingPredictorModelFeatures) | **GET** /api/v2/routing/predictors/{predictorId}/models/{modelId}/features | Retrieve Predictor Model Features.
+[**getRoutingPredictorModels**](RoutingApi.html#getRoutingPredictorModels) | **GET** /api/v2/routing/predictors/{predictorId}/models | Retrieve Predictor Models and Top Features.
 [**getRoutingPredictors**](RoutingApi.html#getRoutingPredictors) | **GET** /api/v2/routing/predictors | Retrieve all predictors.
 [**getRoutingPredictorsKeyperformanceindicators**](RoutingApi.html#getRoutingPredictorsKeyperformanceindicators) | **GET** /api/v2/routing/predictors/keyperformanceindicators | Get a list of Key Performance Indicators
 [**getRoutingQueue**](RoutingApi.html#getRoutingQueue) | **GET** /api/v2/routing/queues/{queueId} | Get details about this queue.
@@ -1701,6 +1703,108 @@ apiInstance.getRoutingPredictor(predictorId)
 ### Return type
 
 **Predictor**
+
+<a name="getRoutingPredictorModelFeatures"></a>
+
+# PredictorModelFeatureListing getRoutingPredictorModelFeatures(predictorId, modelId)
+
+
+GET /api/v2/routing/predictors/{predictorId}/models/{modelId}/features
+
+Retrieve Predictor Model Features.
+
+Requires ALL permissions:
+
+* routing:predictorModelFeature:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.RoutingApi();
+
+let predictorId = "predictorId_example"; // String | Predictor ID
+let modelId = "modelId_example"; // String | Model ID
+
+apiInstance.getRoutingPredictorModelFeatures(predictorId, modelId)
+  .then((data) => {
+    console.log(`getRoutingPredictorModelFeatures success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getRoutingPredictorModelFeatures');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **predictorId** | **String** | Predictor ID |  |
+ **modelId** | **String** | Model ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+**PredictorModelFeatureListing**
+
+<a name="getRoutingPredictorModels"></a>
+
+# PredictorModels getRoutingPredictorModels(predictorId)
+
+
+GET /api/v2/routing/predictors/{predictorId}/models
+
+Retrieve Predictor Models and Top Features.
+
+Requires ALL permissions:
+
+* routing:predictorModel:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.RoutingApi();
+
+let predictorId = "predictorId_example"; // String | Predictor ID
+
+apiInstance.getRoutingPredictorModels(predictorId)
+  .then((data) => {
+    console.log(`getRoutingPredictorModels success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getRoutingPredictorModels');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **predictorId** | **String** | Predictor ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+**PredictorModels**
 
 <a name="getRoutingPredictors"></a>
 

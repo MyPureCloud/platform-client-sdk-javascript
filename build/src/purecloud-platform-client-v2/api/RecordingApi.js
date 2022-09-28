@@ -5,7 +5,7 @@ class RecordingApi {
 	/**
 	 * Recording service.
 	 * @module purecloud-platform-client-v2/api/RecordingApi
-	 * @version 148.0.0
+	 * @version 149.0.0
 	 */
 
 	/**
@@ -1359,8 +1359,12 @@ class RecordingApi {
 	 * @param {String} conversationId Conversation ID
 	 * @param {String} recordingId Recording ID
 	 * @param {Object} body recording
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.clearExport Whether to clear the pending export for the recording
 	 */
-	putConversationRecording(conversationId, recordingId, body) { 
+	putConversationRecording(conversationId, recordingId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null) {
 			throw 'Missing the required parameter "conversationId" when calling putConversationRecording';
@@ -1378,7 +1382,7 @@ class RecordingApi {
 			'/api/v2/conversations/{conversationId}/recordings/{recordingId}', 
 			'PUT', 
 			{ 'conversationId': conversationId,'recordingId': recordingId },
-			{  },
+			{ 'clearExport': opts['clearExport'] },
 			{  },
 			{  },
 			body, 

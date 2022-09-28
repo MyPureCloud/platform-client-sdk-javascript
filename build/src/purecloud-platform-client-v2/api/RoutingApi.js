@@ -5,7 +5,7 @@ class RoutingApi {
 	/**
 	 * Routing service.
 	 * @module purecloud-platform-client-v2/api/RoutingApi
-	 * @version 148.0.0
+	 * @version 149.0.0
 	 */
 
 	/**
@@ -813,6 +813,61 @@ class RoutingApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/routing/predictors/{predictorId}', 
+			'GET', 
+			{ 'predictorId': predictorId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Retrieve Predictor Model Features.
+	 * 
+	 * @param {String} predictorId Predictor ID
+	 * @param {String} modelId Model ID
+	 */
+	getRoutingPredictorModelFeatures(predictorId, modelId) { 
+		// verify the required parameter 'predictorId' is set
+		if (predictorId === undefined || predictorId === null) {
+			throw 'Missing the required parameter "predictorId" when calling getRoutingPredictorModelFeatures';
+		}
+		// verify the required parameter 'modelId' is set
+		if (modelId === undefined || modelId === null) {
+			throw 'Missing the required parameter "modelId" when calling getRoutingPredictorModelFeatures';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/predictors/{predictorId}/models/{modelId}/features', 
+			'GET', 
+			{ 'predictorId': predictorId,'modelId': modelId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Retrieve Predictor Models and Top Features.
+	 * 
+	 * @param {String} predictorId Predictor ID
+	 */
+	getRoutingPredictorModels(predictorId) { 
+		// verify the required parameter 'predictorId' is set
+		if (predictorId === undefined || predictorId === null) {
+			throw 'Missing the required parameter "predictorId" when calling getRoutingPredictorModels';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/predictors/{predictorId}/models', 
 			'GET', 
 			{ 'predictorId': predictorId },
 			{  },

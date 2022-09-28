@@ -433,7 +433,7 @@ apiInstance.getWebdeploymentsDeploymentConfigurations(deploymentId, opts)
 
 <a name="getWebdeploymentsDeployments"></a>
 
-# WebDeploymentEntityListing getWebdeploymentsDeployments()
+# WebDeploymentEntityListing getWebdeploymentsDeployments(opts)
 
 
 GET /api/v2/webdeployments/deployments
@@ -457,7 +457,11 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WebDeploymentsApi();
 
-apiInstance.getWebdeploymentsDeployments()
+let opts = { 
+  'expand': ["expand_example"] // [String] | The specified entity attributes will be filled. Comma separated values expected. Valid values:
+};
+
+apiInstance.getWebdeploymentsDeployments(opts)
   .then((data) => {
     console.log(`getWebdeploymentsDeployments success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -469,8 +473,11 @@ apiInstance.getWebdeploymentsDeployments()
 
 ### Parameters
 
-This endpoint does not need any parameter.
 
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **expand** | **[String]** | The specified entity attributes will be filled. Comma separated values expected. Valid values: | [optional] <br />**Values**: Configuration |
+{: class="table table-striped"}
 
 ### Return type
 

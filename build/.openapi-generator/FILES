@@ -961,6 +961,8 @@ docs/getRoutingLanguages-example.txt
 docs/getRoutingMessageRecipient-example.txt
 docs/getRoutingMessageRecipients-example.txt
 docs/getRoutingPredictor-example.txt
+docs/getRoutingPredictorModelFeatures-example.txt
+docs/getRoutingPredictorModels-example.txt
 docs/getRoutingPredictors-example.txt
 docs/getRoutingPredictorsKeyperformanceindicators-example.txt
 docs/getRoutingQueue-example.txt
