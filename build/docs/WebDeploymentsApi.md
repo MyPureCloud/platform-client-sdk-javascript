@@ -433,7 +433,7 @@ apiInstance.getWebdeploymentsDeploymentConfigurations(deploymentId, opts)
 
 <a name="getWebdeploymentsDeployments"></a>
 
-# WebDeploymentEntityListing getWebdeploymentsDeployments(opts)
+# ExpandableWebDeploymentEntityListing getWebdeploymentsDeployments(opts)
 
 
 GET /api/v2/webdeployments/deployments
@@ -481,7 +481,7 @@ apiInstance.getWebdeploymentsDeployments(opts)
 
 ### Return type
 
-**WebDeploymentEntityListing**
+**ExpandableWebDeploymentEntityListing**
 
 <a name="postWebdeploymentsConfigurationVersionsDraftPublish"></a>
 

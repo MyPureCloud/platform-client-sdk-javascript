@@ -10,6 +10,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**deleteRoutingAssessment**](RoutingApi.html#deleteRoutingAssessment) | **DELETE** /api/v2/routing/assessments/{assessmentId} | Delete single benefit assessment.
 [**deleteRoutingEmailDomain**](RoutingApi.html#deleteRoutingEmailDomain) | **DELETE** /api/v2/routing/email/domains/{domainId} | Delete a domain
 [**deleteRoutingEmailDomainRoute**](RoutingApi.html#deleteRoutingEmailDomainRoute) | **DELETE** /api/v2/routing/email/domains/{domainName}/routes/{routeId} | Delete a route
+[**deleteRoutingEmailOutboundDomain**](RoutingApi.html#deleteRoutingEmailOutboundDomain) | **DELETE** /api/v2/routing/email/outbound/domains/{domainId} | Delete an outbound domain
 [**deleteRoutingPredictor**](RoutingApi.html#deleteRoutingPredictor) | **DELETE** /api/v2/routing/predictors/{predictorId} | Delete single predictor.
 [**deleteRoutingQueue**](RoutingApi.html#deleteRoutingQueue) | **DELETE** /api/v2/routing/queues/{queueId} | Delete a queue
 [**deleteRoutingQueueMember**](RoutingApi.html#deleteRoutingQueueMember) | **DELETE** /api/v2/routing/queues/{queueId}/members/{memberId} | Delete a queue member.
@@ -33,6 +34,10 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getRoutingEmailDomainRoute**](RoutingApi.html#getRoutingEmailDomainRoute) | **GET** /api/v2/routing/email/domains/{domainName}/routes/{routeId} | Get a route
 [**getRoutingEmailDomainRoutes**](RoutingApi.html#getRoutingEmailDomainRoutes) | **GET** /api/v2/routing/email/domains/{domainName}/routes | Get routes
 [**getRoutingEmailDomains**](RoutingApi.html#getRoutingEmailDomains) | **GET** /api/v2/routing/email/domains | Get domains
+[**getRoutingEmailOutboundDomain**](RoutingApi.html#getRoutingEmailOutboundDomain) | **GET** /api/v2/routing/email/outbound/domains/{domainId} | Get domain
+[**getRoutingEmailOutboundDomainActivation**](RoutingApi.html#getRoutingEmailOutboundDomainActivation) | **GET** /api/v2/routing/email/outbound/domains/{domainId}/activation | Get activation status (cname + dkim) of an outbound domain
+[**getRoutingEmailOutboundDomainSearch**](RoutingApi.html#getRoutingEmailOutboundDomainSearch) | **GET** /api/v2/routing/email/outbound/domains/{domainId}/search | Search a domain across organizations
+[**getRoutingEmailOutboundDomains**](RoutingApi.html#getRoutingEmailOutboundDomains) | **GET** /api/v2/routing/email/outbound/domains | Get outbound domains
 [**getRoutingEmailSetup**](RoutingApi.html#getRoutingEmailSetup) | **GET** /api/v2/routing/email/setup | Get email setup
 [**getRoutingLanguages**](RoutingApi.html#getRoutingLanguages) | **GET** /api/v2/routing/languages | Get the list of supported languages.
 [**getRoutingMessageRecipient**](RoutingApi.html#getRoutingMessageRecipient) | **GET** /api/v2/routing/message/recipients/{recipientId} | Get a recipient
@@ -91,6 +96,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postRoutingEmailDomainRoutes**](RoutingApi.html#postRoutingEmailDomainRoutes) | **POST** /api/v2/routing/email/domains/{domainName}/routes | Create a route
 [**postRoutingEmailDomainTestconnection**](RoutingApi.html#postRoutingEmailDomainTestconnection) | **POST** /api/v2/routing/email/domains/{domainId}/testconnection | Tests the custom SMTP server integration connection set on this domain
 [**postRoutingEmailDomains**](RoutingApi.html#postRoutingEmailDomains) | **POST** /api/v2/routing/email/domains | Create a domain
+[**postRoutingEmailOutboundDomains**](RoutingApi.html#postRoutingEmailOutboundDomains) | **POST** /api/v2/routing/email/outbound/domains | Create a domain
+[**postRoutingEmailOutboundDomainsSimulated**](RoutingApi.html#postRoutingEmailOutboundDomainsSimulated) | **POST** /api/v2/routing/email/outbound/domains/simulated | Create a simulated domain
 [**postRoutingLanguages**](RoutingApi.html#postRoutingLanguages) | **POST** /api/v2/routing/languages | Create Language
 [**postRoutingPredictors**](RoutingApi.html#postRoutingPredictors) | **POST** /api/v2/routing/predictors | Create a predictor.
 [**postRoutingQueueMembers**](RoutingApi.html#postRoutingQueueMembers) | **POST** /api/v2/routing/queues/{queueId}/members | Bulk add or delete up to 100 queue members
@@ -104,6 +111,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postUserRoutinglanguages**](RoutingApi.html#postUserRoutinglanguages) | **POST** /api/v2/users/{userId}/routinglanguages | Add routing language to user
 [**postUserRoutingskills**](RoutingApi.html#postUserRoutingskills) | **POST** /api/v2/users/{userId}/routingskills | Add routing skill to user
 [**putRoutingEmailDomainRoute**](RoutingApi.html#putRoutingEmailDomainRoute) | **PUT** /api/v2/routing/email/domains/{domainName}/routes/{routeId} | Update a route
+[**putRoutingEmailOutboundDomainActivation**](RoutingApi.html#putRoutingEmailOutboundDomainActivation) | **PUT** /api/v2/routing/email/outbound/domains/{domainId}/activation | Request an activation status (cname + dkim) update of an outbound domain
 [**putRoutingMessageRecipient**](RoutingApi.html#putRoutingMessageRecipient) | **PUT** /api/v2/routing/message/recipients/{recipientId} | Update a recipient
 [**putRoutingQueue**](RoutingApi.html#putRoutingQueue) | **PUT** /api/v2/routing/queues/{queueId} | Update a queue
 [**putRoutingSettings**](RoutingApi.html#putRoutingSettings) | **PUT** /api/v2/routing/settings | Update an organization's routing settings
@@ -262,6 +270,56 @@ apiInstance.deleteRoutingEmailDomainRoute(domainName, routeId)
 | ------------- | ------------- | ------------- | ------------- |
  **domainName** | **String** | email domain |  |
  **routeId** | **String** | route ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
+
+<a name="deleteRoutingEmailOutboundDomain"></a>
+
+# void deleteRoutingEmailOutboundDomain(domainId)
+
+
+DELETE /api/v2/routing/email/outbound/domains/{domainId}
+
+Delete an outbound domain
+
+Requires ALL permissions:
+
+* routing:email:manage
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.RoutingApi();
+
+let domainId = "domainId_example"; // String | domain ID
+
+apiInstance.deleteRoutingEmailOutboundDomain(domainId)
+  .then(() => {
+    console.log('deleteRoutingEmailOutboundDomain returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteRoutingEmailOutboundDomain');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **domainId** | **String** | domain ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1444,6 +1502,201 @@ apiInstance.getRoutingEmailDomains(opts)
 ### Return type
 
 **InboundDomainEntityListing**
+
+<a name="getRoutingEmailOutboundDomain"></a>
+
+# OutboundDomain getRoutingEmailOutboundDomain(domainId)
+
+
+GET /api/v2/routing/email/outbound/domains/{domainId}
+
+Get domain
+
+Requires ALL permissions:
+
+* routing:email:manage
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.RoutingApi();
+
+let domainId = "domainId_example"; // String | domain ID
+
+apiInstance.getRoutingEmailOutboundDomain(domainId)
+  .then((data) => {
+    console.log(`getRoutingEmailOutboundDomain success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getRoutingEmailOutboundDomain');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **domainId** | **String** | domain ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+**OutboundDomain**
+
+<a name="getRoutingEmailOutboundDomainActivation"></a>
+
+# EmailOutboundDomainResult getRoutingEmailOutboundDomainActivation(domainId)
+
+
+GET /api/v2/routing/email/outbound/domains/{domainId}/activation
+
+Get activation status (cname + dkim) of an outbound domain
+
+Requires ALL permissions:
+
+* routing:email:manage
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.RoutingApi();
+
+let domainId = "domainId_example"; // String | domain ID
+
+apiInstance.getRoutingEmailOutboundDomainActivation(domainId)
+  .then((data) => {
+    console.log(`getRoutingEmailOutboundDomainActivation success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getRoutingEmailOutboundDomainActivation');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **domainId** | **String** | domain ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+**EmailOutboundDomainResult**
+
+<a name="getRoutingEmailOutboundDomainSearch"></a>
+
+# OutboundDomain getRoutingEmailOutboundDomainSearch(domainId)
+
+
+GET /api/v2/routing/email/outbound/domains/{domainId}/search
+
+Search a domain across organizations
+
+Requires ALL permissions:
+
+* routing:email:manage
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.RoutingApi();
+
+let domainId = "domainId_example"; // String | domain ID
+
+apiInstance.getRoutingEmailOutboundDomainSearch(domainId)
+  .then((data) => {
+    console.log(`getRoutingEmailOutboundDomainSearch success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getRoutingEmailOutboundDomainSearch');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **domainId** | **String** | domain ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+**OutboundDomain**
+
+<a name="getRoutingEmailOutboundDomains"></a>
+
+# OutboundDomainEntityListing getRoutingEmailOutboundDomains()
+
+
+GET /api/v2/routing/email/outbound/domains
+
+Get outbound domains
+
+Requires ALL permissions:
+
+* routing:email:manage
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.RoutingApi();
+
+apiInstance.getRoutingEmailOutboundDomains()
+  .then((data) => {
+    console.log(`getRoutingEmailOutboundDomains success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getRoutingEmailOutboundDomains');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+
+### Return type
+
+**OutboundDomainEntityListing**
 
 <a name="getRoutingEmailSetup"></a>
 
@@ -4602,6 +4855,106 @@ apiInstance.postRoutingEmailDomains(body)
 
 **InboundDomain**
 
+<a name="postRoutingEmailOutboundDomains"></a>
+
+# EmailOutboundDomainResult postRoutingEmailOutboundDomains(body)
+
+
+POST /api/v2/routing/email/outbound/domains
+
+Create a domain
+
+Requires ALL permissions:
+
+* routing:email:manage
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.RoutingApi();
+
+let body = {}; // Object | Domain
+
+apiInstance.postRoutingEmailOutboundDomains(body)
+  .then((data) => {
+    console.log(`postRoutingEmailOutboundDomains success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postRoutingEmailOutboundDomains');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | Domain |  |
+{: class="table table-striped"}
+
+### Return type
+
+**EmailOutboundDomainResult**
+
+<a name="postRoutingEmailOutboundDomainsSimulated"></a>
+
+# EmailOutboundDomainResult postRoutingEmailOutboundDomainsSimulated(body)
+
+
+POST /api/v2/routing/email/outbound/domains/simulated
+
+Create a simulated domain
+
+Requires ALL permissions:
+
+* routing:email:manage
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.RoutingApi();
+
+let body = {}; // Object | Domain
+
+apiInstance.postRoutingEmailOutboundDomainsSimulated(body)
+  .then((data) => {
+    console.log(`postRoutingEmailOutboundDomainsSimulated success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postRoutingEmailOutboundDomainsSimulated');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | Domain |  |
+{: class="table table-striped"}
+
+### Return type
+
+**EmailOutboundDomainResult**
+
 <a name="postRoutingLanguages"></a>
 
 # Language postRoutingLanguages(body)
@@ -5280,6 +5633,56 @@ apiInstance.putRoutingEmailDomainRoute(domainName, routeId, body)
 ### Return type
 
 **InboundRoute**
+
+<a name="putRoutingEmailOutboundDomainActivation"></a>
+
+# EmailOutboundDomainResult putRoutingEmailOutboundDomainActivation(domainId)
+
+
+PUT /api/v2/routing/email/outbound/domains/{domainId}/activation
+
+Request an activation status (cname + dkim) update of an outbound domain
+
+Requires ALL permissions:
+
+* routing:email:manage
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.RoutingApi();
+
+let domainId = "domainId_example"; // String | domain ID
+
+apiInstance.putRoutingEmailOutboundDomainActivation(domainId)
+  .then((data) => {
+    console.log(`putRoutingEmailOutboundDomainActivation success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putRoutingEmailOutboundDomainActivation');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **domainId** | **String** | domain ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+**EmailOutboundDomainResult**
 
 <a name="putRoutingMessageRecipient"></a>
 

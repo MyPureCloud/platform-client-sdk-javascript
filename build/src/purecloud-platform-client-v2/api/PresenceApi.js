@@ -5,7 +5,7 @@ class PresenceApi {
 	/**
 	 * Presence service.
 	 * @module purecloud-platform-client-v2/api/PresenceApi
-	 * @version 149.1.0
+	 * @version 150.0.0
 	 */
 
 	/**
@@ -19,6 +19,31 @@ class PresenceApi {
 		this.apiClient = apiClient || ApiClient.instance;
 	}
 
+
+	/**
+	 * Delete a Presence Source
+	 * 
+	 * @param {String} sourceId Presence Source ID
+	 */
+	deletePresenceSource(sourceId) { 
+		// verify the required parameter 'sourceId' is set
+		if (sourceId === undefined || sourceId === null) {
+			throw 'Missing the required parameter "sourceId" when calling deletePresenceSource';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/presence/sources/{sourceId}', 
+			'DELETE', 
+			{ 'sourceId': sourceId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
 
 	/**
 	 * Delete a Presence Definition
@@ -35,6 +60,80 @@ class PresenceApi {
 			'/api/v2/presencedefinitions/{presenceId}', 
 			'DELETE', 
 			{ 'presenceId': presenceId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a Presence Source
+	 * 
+	 * @param {String} sourceId Presence Source ID
+	 */
+	getPresenceSource(sourceId) { 
+		// verify the required parameter 'sourceId' is set
+		if (sourceId === undefined || sourceId === null) {
+			throw 'Missing the required parameter "sourceId" when calling getPresenceSource';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/presence/sources/{sourceId}', 
+			'GET', 
+			{ 'sourceId': sourceId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a list of Presence Sources
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.deleted Deleted query can be TRUE or FALSE (default to false)
+	 */
+	getPresenceSources(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/presence/sources', 
+			'GET', 
+			{  },
+			{ 'deleted': opts['deleted'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a user's Primary Presence Source
+	 * 
+	 * @param {String} userId user ID
+	 */
+	getPresenceUserPrimarysource(userId) { 
+		// verify the required parameter 'userId' is set
+		if (userId === undefined || userId === null) {
+			throw 'Missing the required parameter "userId" when calling getPresenceUserPrimarysource';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/presence/users/{userId}/primarysource', 
+			'GET', 
+			{ 'userId': userId },
 			{  },
 			{  },
 			{  },
@@ -242,6 +341,31 @@ class PresenceApi {
 	}
 
 	/**
+	 * Create a Presence Source
+	 * 
+	 * @param {Object} body The Presence Source to create
+	 */
+	postPresenceSources(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postPresenceSources';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/presence/sources', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Create a Presence Definition
 	 * 
 	 * @param {Object} body The Presence Definition to create
@@ -256,6 +380,66 @@ class PresenceApi {
 			'/api/v2/presencedefinitions', 
 			'POST', 
 			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update a Presence Source
+	 * 
+	 * @param {String} sourceId Presence Source ID
+	 * @param {Object} body The updated Presence Source
+	 */
+	putPresenceSource(sourceId, body) { 
+		// verify the required parameter 'sourceId' is set
+		if (sourceId === undefined || sourceId === null) {
+			throw 'Missing the required parameter "sourceId" when calling putPresenceSource';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putPresenceSource';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/presence/sources/{sourceId}', 
+			'PUT', 
+			{ 'sourceId': sourceId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update a user's Primary Presence Source
+	 * 
+	 * @param {String} userId user ID
+	 * @param {Object} body Primary Source
+	 */
+	putPresenceUserPrimarysource(userId, body) { 
+		// verify the required parameter 'userId' is set
+		if (userId === undefined || userId === null) {
+			throw 'Missing the required parameter "userId" when calling putPresenceUserPrimarysource';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putPresenceUserPrimarysource';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/presence/users/{userId}/primarysource', 
+			'PUT', 
+			{ 'userId': userId },
 			{  },
 			{  },
 			{  },

@@ -5,7 +5,7 @@ class ExternalContactsApi {
 	/**
 	 * ExternalContacts service.
 	 * @module purecloud-platform-client-v2/api/ExternalContactsApi
-	 * @version 149.1.0
+	 * @version 150.0.0
 	 */
 
 	/**
@@ -235,6 +235,31 @@ class ExternalContactsApi {
 	}
 
 	/**
+	 * List the identifiers for a contact
+	 * 
+	 * @param {String} contactId ExternalContact ID
+	 */
+	getExternalcontactsContactIdentifiers(contactId) { 
+		// verify the required parameter 'contactId' is set
+		if (contactId === undefined || contactId === null) {
+			throw 'Missing the required parameter "contactId" when calling getExternalcontactsContactIdentifiers';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/externalcontacts/contacts/{contactId}/identifiers', 
+			'GET', 
+			{ 'contactId': contactId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Fetch a note for an external contact
 	 * 
 	 * @param {String} contactId ExternalContact Id
@@ -291,6 +316,35 @@ class ExternalContactsApi {
 			'GET', 
 			{ 'contactId': contactId },
 			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortOrder': opts['sortOrder'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Fetch an unresolved external contact
+	 * 
+	 * @param {String} contactId ExternalContact ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Array.<String>} opts.expand which fields, if any, to expand (externalOrganization,externalDataSources)
+	 */
+	getExternalcontactsContactUnresolved(contactId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'contactId' is set
+		if (contactId === undefined || contactId === null) {
+			throw 'Missing the required parameter "contactId" when calling getExternalcontactsContactUnresolved';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/externalcontacts/contacts/{contactId}/unresolved', 
+			'GET', 
+			{ 'contactId': contactId },
+			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
 			{  },
 			{  },
 			null, 
@@ -878,6 +932,36 @@ class ExternalContactsApi {
 	}
 
 	/**
+	 * Claim or release identifiers for a contact
+	 * 
+	 * @param {String} contactId ExternalContact ID
+	 * @param {Object} body ClaimRequest
+	 */
+	patchExternalcontactsContactIdentifiers(contactId, body) { 
+		// verify the required parameter 'contactId' is set
+		if (contactId === undefined || contactId === null) {
+			throw 'Missing the required parameter "contactId" when calling patchExternalcontactsContactIdentifiers';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchExternalcontactsContactIdentifiers';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/externalcontacts/contacts/{contactId}/identifiers', 
+			'PATCH', 
+			{ 'contactId': contactId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Bulk fetch contacts
 	 * 
 	 * @param {Object} body Contact ids
@@ -940,6 +1024,31 @@ class ExternalContactsApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/externalcontacts/bulk/contacts/remove', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Bulk fetch unresolved ancestor contacts
+	 * 
+	 * @param {Object} body Contact ids
+	 */
+	postExternalcontactsBulkContactsUnresolved(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postExternalcontactsBulkContactsUnresolved';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/externalcontacts/bulk/contacts/unresolved', 
 			'POST', 
 			{  },
 			{  },
@@ -1308,6 +1417,31 @@ class ExternalContactsApi {
 	}
 
 	/**
+	 * Promote an observed contact (ephemeral or identified) to a curated contact
+	 * 
+	 * @param {String} contactId ExternalContact ID
+	 */
+	postExternalcontactsContactPromotion(contactId) { 
+		// verify the required parameter 'contactId' is set
+		if (contactId === undefined || contactId === null) {
+			throw 'Missing the required parameter "contactId" when calling postExternalcontactsContactPromotion';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/externalcontacts/contacts/{contactId}/promotion', 
+			'POST', 
+			{ 'contactId': contactId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Create an external contact
 	 * 
 	 * @param {Object} body ExternalContact
@@ -1345,6 +1479,56 @@ class ExternalContactsApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/externalcontacts/contacts/schemas', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Fetch a contact using an identifier type and value.
+	 * Phone number identifier values must be provided with the country code and a leading + symbol. Example: "+1 704 298 4733"
+	 * @param {Object} identifier 
+	 */
+	postExternalcontactsIdentifierlookup(identifier) { 
+		// verify the required parameter 'identifier' is set
+		if (identifier === undefined || identifier === null) {
+			throw 'Missing the required parameter "identifier" when calling postExternalcontactsIdentifierlookup';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/externalcontacts/identifierlookup', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			identifier, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Merge two contacts into a new contact record
+	 * 
+	 * @param {Object} body MergeRequest
+	 */
+	postExternalcontactsMergeContacts(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postExternalcontactsMergeContacts';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/externalcontacts/merge/contacts', 
 			'POST', 
 			{  },
 			{  },

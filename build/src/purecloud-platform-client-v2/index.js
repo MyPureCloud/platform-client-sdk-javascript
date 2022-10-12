@@ -12,6 +12,8 @@ import CoachingApi from './api/CoachingApi.js';
 import ContentManagementApi from './api/ContentManagementApi.js';
 import ConversationsApi from './api/ConversationsApi.js';
 import DataExtensionsApi from './api/DataExtensionsApi.js';
+import DownloadsApi from './api/DownloadsApi.js';
+import EventsApi from './api/EventsApi.js';
 import ExternalContactsApi from './api/ExternalContactsApi.js';
 import FaxApi from './api/FaxApi.js';
 import FlowsApi from './api/FlowsApi.js';
@@ -97,7 +99,7 @@ import WorkforceManagementApi from './api/WorkforceManagementApi.js';
  * </pre>
  * </p>
  * @module purecloud-platform-client-v2/index
- * @version 149.1.0
+ * @version 150.0.0
  */
 class platformClient {
 	constructor() {
@@ -166,6 +168,16 @@ class platformClient {
 		 * @property {module:purecloud-platform-client-v2/api/DataExtensionsApi}
 		 */
 		this.DataExtensionsApi = DataExtensionsApi;
+		/**
+		 * The DownloadsApi service constructor.
+		 * @property {module:purecloud-platform-client-v2/api/DownloadsApi}
+		 */
+		this.DownloadsApi = DownloadsApi;
+		/**
+		 * The EventsApi service constructor.
+		 * @property {module:purecloud-platform-client-v2/api/EventsApi}
+		 */
+		this.EventsApi = EventsApi;
 		/**
 		 * The ExternalContactsApi service constructor.
 		 * @property {module:purecloud-platform-client-v2/api/ExternalContactsApi}

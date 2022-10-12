@@ -5,7 +5,7 @@ class ConversationsApi {
 	/**
 	 * Conversations service.
 	 * @module purecloud-platform-client-v2/api/ConversationsApi
-	 * @version 149.1.0
+	 * @version 150.0.0
 	 */
 
 	/**
@@ -1515,8 +1515,12 @@ class ConversationsApi {
 	 * Get message
 	 * 
 	 * @param {String} messageId messageId
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.useNormalizedMessage If true, response removes deprecated fields (textBody, media, stickers) (default to false)
 	 */
-	getConversationsMessageDetails(messageId) { 
+	getConversationsMessageDetails(messageId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'messageId' is set
 		if (messageId === undefined || messageId === null) {
 			throw 'Missing the required parameter "messageId" when calling getConversationsMessageDetails';
@@ -1526,7 +1530,7 @@ class ConversationsApi {
 			'/api/v2/conversations/messages/{messageId}/details', 
 			'GET', 
 			{ 'messageId': messageId },
-			{  },
+			{ 'useNormalizedMessage': opts['useNormalizedMessage'] },
 			{  },
 			{  },
 			null, 
@@ -1541,8 +1545,12 @@ class ConversationsApi {
 	 * 
 	 * @param {String} conversationId conversationId
 	 * @param {String} messageId messageId
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.useNormalizedMessage If true, response removes deprecated fields (textBody, media, stickers) (default to false)
 	 */
-	getConversationsMessageMessage(conversationId, messageId) { 
+	getConversationsMessageMessage(conversationId, messageId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null) {
 			throw 'Missing the required parameter "conversationId" when calling getConversationsMessageMessage';
@@ -1556,7 +1564,7 @@ class ConversationsApi {
 			'/api/v2/conversations/messages/{conversationId}/messages/{messageId}', 
 			'GET', 
 			{ 'conversationId': conversationId,'messageId': messageId },
-			{  },
+			{ 'useNormalizedMessage': opts['useNormalizedMessage'] },
 			{  },
 			{  },
 			null, 
@@ -4175,6 +4183,31 @@ class ConversationsApi {
 	}
 
 	/**
+	 * Create an email conversation, per API
+	 * 
+	 * @param {Object} body Create agentless email request
+	 */
+	postConversationsEmailsAgentless(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postConversationsEmailsAgentless';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/emails/agentless', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Create Fax Conversation
 	 * 
 	 * @param {Object} body Fax
@@ -4255,8 +4288,12 @@ class ConversationsApi {
 	 * @param {String} conversationId conversationId
 	 * @param {String} communicationId communicationId
 	 * @param {Object} body Message
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.useNormalizedMessage If true, response removes deprecated fields (textBody, media, stickers) (default to false)
 	 */
-	postConversationsMessageCommunicationMessages(conversationId, communicationId, body) { 
+	postConversationsMessageCommunicationMessages(conversationId, communicationId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null) {
 			throw 'Missing the required parameter "conversationId" when calling postConversationsMessageCommunicationMessages';
@@ -4274,7 +4311,7 @@ class ConversationsApi {
 			'/api/v2/conversations/messages/{conversationId}/communications/{communicationId}/messages', 
 			'POST', 
 			{ 'conversationId': conversationId,'communicationId': communicationId },
-			{  },
+			{ 'useNormalizedMessage': opts['useNormalizedMessage'] },
 			{  },
 			{  },
 			body, 
@@ -4319,6 +4356,7 @@ class ConversationsApi {
 	 * The path parameter [conversationId] should contain the conversationId of the conversation being filtered. The body should contain the messageId(s) of messages being requested. For example: ["a3069a33b-bbb1-4703-9d68-061d9e9db96e", "55bc6be3-078c-4a49-a4e6-1e05776ed7e8"]
 	 * @param {String} conversationId 
 	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.useNormalizedMessage If true, response removes deprecated fields (textBody, media, stickers) (default to false)
 	 * @param {Array.<String>} opts.body messageIds
 	 */
 	postConversationsMessageMessagesBulk(conversationId, opts) { 
@@ -4333,7 +4371,7 @@ class ConversationsApi {
 			'/api/v2/conversations/messages/{conversationId}/messages/bulk', 
 			'POST', 
 			{ 'conversationId': conversationId },
-			{  },
+			{ 'useNormalizedMessage': opts['useNormalizedMessage'] },
 			{  },
 			{  },
 			opts['body'], 

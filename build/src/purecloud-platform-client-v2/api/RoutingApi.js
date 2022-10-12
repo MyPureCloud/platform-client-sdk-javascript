@@ -5,7 +5,7 @@ class RoutingApi {
 	/**
 	 * Routing service.
 	 * @module purecloud-platform-client-v2/api/RoutingApi
-	 * @version 149.1.0
+	 * @version 150.0.0
 	 */
 
 	/**
@@ -90,6 +90,31 @@ class RoutingApi {
 			'/api/v2/routing/email/domains/{domainName}/routes/{routeId}', 
 			'DELETE', 
 			{ 'domainName': domainName,'routeId': routeId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete an outbound domain
+	 * 
+	 * @param {String} domainId domain ID
+	 */
+	deleteRoutingEmailOutboundDomain(domainId) { 
+		// verify the required parameter 'domainId' is set
+		if (domainId === undefined || domainId === null) {
+			throw 'Missing the required parameter "domainId" when calling deleteRoutingEmailOutboundDomain';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/email/outbound/domains/{domainId}', 
+			'DELETE', 
+			{ 'domainId': domainId },
 			{  },
 			{  },
 			{  },
@@ -692,6 +717,101 @@ class RoutingApi {
 			'GET', 
 			{  },
 			{ 'excludeStatus': opts['excludeStatus'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get domain
+	 * 
+	 * @param {String} domainId domain ID
+	 */
+	getRoutingEmailOutboundDomain(domainId) { 
+		// verify the required parameter 'domainId' is set
+		if (domainId === undefined || domainId === null) {
+			throw 'Missing the required parameter "domainId" when calling getRoutingEmailOutboundDomain';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/email/outbound/domains/{domainId}', 
+			'GET', 
+			{ 'domainId': domainId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get activation status (cname + dkim) of an outbound domain
+	 * 
+	 * @param {String} domainId domain ID
+	 */
+	getRoutingEmailOutboundDomainActivation(domainId) { 
+		// verify the required parameter 'domainId' is set
+		if (domainId === undefined || domainId === null) {
+			throw 'Missing the required parameter "domainId" when calling getRoutingEmailOutboundDomainActivation';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/email/outbound/domains/{domainId}/activation', 
+			'GET', 
+			{ 'domainId': domainId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Search a domain across organizations
+	 * 
+	 * @param {String} domainId domain ID
+	 */
+	getRoutingEmailOutboundDomainSearch(domainId) { 
+		// verify the required parameter 'domainId' is set
+		if (domainId === undefined || domainId === null) {
+			throw 'Missing the required parameter "domainId" when calling getRoutingEmailOutboundDomainSearch';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/email/outbound/domains/{domainId}/search', 
+			'GET', 
+			{ 'domainId': domainId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get outbound domains
+	 * 
+	 */
+	getRoutingEmailOutboundDomains() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/email/outbound/domains', 
+			'GET', 
+			{  },
+			{  },
 			{  },
 			{  },
 			null, 
@@ -2339,6 +2459,56 @@ class RoutingApi {
 	}
 
 	/**
+	 * Create a domain
+	 * 
+	 * @param {Object} body Domain
+	 */
+	postRoutingEmailOutboundDomains(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postRoutingEmailOutboundDomains';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/email/outbound/domains', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Create a simulated domain
+	 * 
+	 * @param {Object} body Domain
+	 */
+	postRoutingEmailOutboundDomainsSimulated(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postRoutingEmailOutboundDomainsSimulated';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/email/outbound/domains/simulated', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Create Language
 	 * 
 	 * @param {Object} body Language
@@ -2699,6 +2869,31 @@ class RoutingApi {
 			{  },
 			{  },
 			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Request an activation status (cname + dkim) update of an outbound domain
+	 * 
+	 * @param {String} domainId domain ID
+	 */
+	putRoutingEmailOutboundDomainActivation(domainId) { 
+		// verify the required parameter 'domainId' is set
+		if (domainId === undefined || domainId === null) {
+			throw 'Missing the required parameter "domainId" when calling putRoutingEmailOutboundDomainActivation';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/email/outbound/domains/{domainId}/activation', 
+			'PUT', 
+			{ 'domainId': domainId },
+			{  },
+			{  },
+			{  },
+			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']

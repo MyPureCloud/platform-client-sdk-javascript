@@ -22,6 +22,10 @@ docs/ConversationsApi.json
 docs/ConversationsApi.md
 docs/DataExtensionsApi.json
 docs/DataExtensionsApi.md
+docs/DownloadsApi.json
+docs/DownloadsApi.md
+docs/EventsApi.json
+docs/EventsApi.md
 docs/ExternalContactsApi.json
 docs/ExternalContactsApi.md
 docs/FaxApi.json
@@ -256,6 +260,7 @@ docs/deleteOutboundSchedulesEmailcampaign-example.txt
 docs/deleteOutboundSchedulesMessagingcampaign-example.txt
 docs/deleteOutboundSchedulesSequence-example.txt
 docs/deleteOutboundSequence-example.txt
+docs/deletePresenceSource-example.txt
 docs/deletePresencedefinition-example.txt
 docs/deleteProcessautomationTrigger-example.txt
 docs/deleteQualityCalibration-example.txt
@@ -274,6 +279,7 @@ docs/deleteResponsemanagementResponseasset-example.txt
 docs/deleteRoutingAssessment-example.txt
 docs/deleteRoutingEmailDomain-example.txt
 docs/deleteRoutingEmailDomainRoute-example.txt
+docs/deleteRoutingEmailOutboundDomain-example.txt
 docs/deleteRoutingLanguage-example.txt
 docs/deleteRoutingPredictor-example.txt
 docs/deleteRoutingQueue-example.txt
@@ -543,11 +549,14 @@ docs/getDataextensionsLimits-example.txt
 docs/getDate-example.txt
 docs/getDocumentationGknSearch-example.txt
 docs/getDocumentationSearch-example.txt
+docs/getDownload-example.txt
 docs/getEmployeeperformanceExternalmetricsDefinition-example.txt
 docs/getEmployeeperformanceExternalmetricsDefinitions-example.txt
 docs/getExternalcontactsContact-example.txt
+docs/getExternalcontactsContactIdentifiers-example.txt
 docs/getExternalcontactsContactNote-example.txt
 docs/getExternalcontactsContactNotes-example.txt
+docs/getExternalcontactsContactUnresolved-example.txt
 docs/getExternalcontactsContacts-example.txt
 docs/getExternalcontactsContactsSchema-example.txt
 docs/getExternalcontactsContactsSchemaVersion-example.txt
@@ -887,6 +896,9 @@ docs/getOutboundSequence-example.txt
 docs/getOutboundSequences-example.txt
 docs/getOutboundSettings-example.txt
 docs/getOutboundWrapupcodemappings-example.txt
+docs/getPresenceSource-example.txt
+docs/getPresenceSources-example.txt
+docs/getPresenceUserPrimarysource-example.txt
 docs/getPresencedefinition-example.txt
 docs/getPresencedefinitions-example.txt
 docs/getProcessautomationTrigger-example.txt
@@ -955,6 +967,10 @@ docs/getRoutingEmailDomain-example.txt
 docs/getRoutingEmailDomainRoute-example.txt
 docs/getRoutingEmailDomainRoutes-example.txt
 docs/getRoutingEmailDomains-example.txt
+docs/getRoutingEmailOutboundDomain-example.txt
+docs/getRoutingEmailOutboundDomainActivation-example.txt
+docs/getRoutingEmailOutboundDomainSearch-example.txt
+docs/getRoutingEmailOutboundDomains-example.txt
 docs/getRoutingEmailSetup-example.txt
 docs/getRoutingLanguage-example.txt
 docs/getRoutingLanguages-example.txt
@@ -1304,6 +1320,7 @@ docs/patchConversationsMessagingIntegrationsTwitterIntegrationId-example.txt
 docs/patchConversationsMessagingIntegrationsWhatsappIntegrationId-example.txt
 docs/patchConversationsMessagingSupportedcontentSupportedContentId-example.txt
 docs/patchEmployeeperformanceExternalmetricsDefinition-example.txt
+docs/patchExternalcontactsContactIdentifiers-example.txt
 docs/patchGeolocationsSettings-example.txt
 docs/patchIntegration-example.txt
 docs/patchIntegrationsAction-example.txt
@@ -1497,6 +1514,7 @@ docs/postConversationsEmailMessages-example.txt
 docs/postConversationsEmailMessagesDraftAttachmentsCopy-example.txt
 docs/postConversationsEmailParticipantReplace-example.txt
 docs/postConversationsEmails-example.txt
+docs/postConversationsEmailsAgentless-example.txt
 docs/postConversationsFaxes-example.txt
 docs/postConversationsKeyconfigurations-example.txt
 docs/postConversationsKeyconfigurationsValidate-example.txt
@@ -1517,9 +1535,13 @@ docs/postDocumentationGknSearch-example.txt
 docs/postDocumentationSearch-example.txt
 docs/postEmployeeperformanceExternalmetricsData-example.txt
 docs/postEmployeeperformanceExternalmetricsDefinitions-example.txt
+docs/postEventsConversations-example.txt
+docs/postEventsUsersPresence-example.txt
+docs/postEventsUsersRoutingstatus-example.txt
 docs/postExternalcontactsBulkContacts-example.txt
 docs/postExternalcontactsBulkContactsAdd-example.txt
 docs/postExternalcontactsBulkContactsRemove-example.txt
+docs/postExternalcontactsBulkContactsUnresolved-example.txt
 docs/postExternalcontactsBulkContactsUpdate-example.txt
 docs/postExternalcontactsBulkNotes-example.txt
 docs/postExternalcontactsBulkNotesAdd-example.txt
@@ -1534,8 +1556,11 @@ docs/postExternalcontactsBulkRelationshipsAdd-example.txt
 docs/postExternalcontactsBulkRelationshipsRemove-example.txt
 docs/postExternalcontactsBulkRelationshipsUpdate-example.txt
 docs/postExternalcontactsContactNotes-example.txt
+docs/postExternalcontactsContactPromotion-example.txt
 docs/postExternalcontactsContacts-example.txt
 docs/postExternalcontactsContactsSchemas-example.txt
+docs/postExternalcontactsIdentifierlookup-example.txt
+docs/postExternalcontactsMergeContacts-example.txt
 docs/postExternalcontactsOrganizationNotes-example.txt
 docs/postExternalcontactsOrganizations-example.txt
 docs/postExternalcontactsOrganizationsSchemas-example.txt
@@ -1674,6 +1699,7 @@ docs/postOutboundMessagingcampaigns-example.txt
 docs/postOutboundMessagingcampaignsProgress-example.txt
 docs/postOutboundRulesets-example.txt
 docs/postOutboundSequences-example.txt
+docs/postPresenceSources-example.txt
 docs/postPresencedefinitions-example.txt
 docs/postProcessautomationTriggerTest-example.txt
 docs/postProcessautomationTriggers-example.txt
@@ -1712,6 +1738,8 @@ docs/postRoutingAssessmentsJobs-example.txt
 docs/postRoutingEmailDomainRoutes-example.txt
 docs/postRoutingEmailDomainTestconnection-example.txt
 docs/postRoutingEmailDomains-example.txt
+docs/postRoutingEmailOutboundDomains-example.txt
+docs/postRoutingEmailOutboundDomainsSimulated-example.txt
 docs/postRoutingLanguages-example.txt
 docs/postRoutingPredictors-example.txt
 docs/postRoutingQueueMembers-example.txt
@@ -1961,6 +1989,8 @@ docs/putOutboundSchedulesMessagingcampaign-example.txt
 docs/putOutboundSchedulesSequence-example.txt
 docs/putOutboundSequence-example.txt
 docs/putOutboundWrapupcodemappings-example.txt
+docs/putPresenceSource-example.txt
+docs/putPresenceUserPrimarysource-example.txt
 docs/putPresencedefinition-example.txt
 docs/putProcessautomationTrigger-example.txt
 docs/putQualityCalibration-example.txt
@@ -1981,6 +2011,7 @@ docs/putResponsemanagementLibrary-example.txt
 docs/putResponsemanagementResponse-example.txt
 docs/putResponsemanagementResponseasset-example.txt
 docs/putRoutingEmailDomainRoute-example.txt
+docs/putRoutingEmailOutboundDomainActivation-example.txt
 docs/putRoutingMessageRecipient-example.txt
 docs/putRoutingQueue-example.txt
 docs/putRoutingSettings-example.txt
@@ -2057,6 +2088,8 @@ src/purecloud-platform-client-v2/api/CoachingApi.js
 src/purecloud-platform-client-v2/api/ContentManagementApi.js
 src/purecloud-platform-client-v2/api/ConversationsApi.js
 src/purecloud-platform-client-v2/api/DataExtensionsApi.js
+src/purecloud-platform-client-v2/api/DownloadsApi.js
+src/purecloud-platform-client-v2/api/EventsApi.js
 src/purecloud-platform-client-v2/api/ExternalContactsApi.js
 src/purecloud-platform-client-v2/api/FaxApi.js
 src/purecloud-platform-client-v2/api/FlowsApi.js

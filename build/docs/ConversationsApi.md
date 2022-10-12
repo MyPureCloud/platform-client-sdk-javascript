@@ -149,6 +149,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postConversationsEmailMessagesDraftAttachmentsCopy**](ConversationsApi.html#postConversationsEmailMessagesDraftAttachmentsCopy) | **POST** /api/v2/conversations/emails/{conversationId}/messages/draft/attachments/copy | Copy attachments from an email message to the current draft.
 [**postConversationsEmailParticipantReplace**](ConversationsApi.html#postConversationsEmailParticipantReplace) | **POST** /api/v2/conversations/emails/{conversationId}/participants/{participantId}/replace | Replace this participant with the specified user and/or address
 [**postConversationsEmails**](ConversationsApi.html#postConversationsEmails) | **POST** /api/v2/conversations/emails | Create an email conversation
+[**postConversationsEmailsAgentless**](ConversationsApi.html#postConversationsEmailsAgentless) | **POST** /api/v2/conversations/emails/agentless | Create an email conversation, per API
 [**postConversationsFaxes**](ConversationsApi.html#postConversationsFaxes) | **POST** /api/v2/conversations/faxes | Create Fax Conversation
 [**postConversationsKeyconfigurations**](ConversationsApi.html#postConversationsKeyconfigurations) | **POST** /api/v2/conversations/keyconfigurations | Setup configurations for encryption key creation
 [**postConversationsKeyconfigurationsValidate**](ConversationsApi.html#postConversationsKeyconfigurationsValidate) | **POST** /api/v2/conversations/keyconfigurations/validate | Validate encryption key configurations without saving it
@@ -2935,7 +2936,7 @@ apiInstance.getConversationsMessageCommunicationMessagesMediaMediaId(conversatio
 
 <a name="getConversationsMessageDetails"></a>
 
-# MessageData getConversationsMessageDetails(messageId)
+# MessageData getConversationsMessageDetails(messageId, opts)
 
 
 GET /api/v2/conversations/messages/{messageId}/details
@@ -2961,8 +2962,11 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ConversationsApi();
 
 let messageId = "messageId_example"; // String | messageId
+let opts = { 
+  'useNormalizedMessage': false // Boolean | If true, response removes deprecated fields (textBody, media, stickers)
+};
 
-apiInstance.getConversationsMessageDetails(messageId)
+apiInstance.getConversationsMessageDetails(messageId, opts)
   .then((data) => {
     console.log(`getConversationsMessageDetails success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2978,6 +2982,7 @@ apiInstance.getConversationsMessageDetails(messageId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **messageId** | **String** | messageId |  |
+ **useNormalizedMessage** | **Boolean** | If true, response removes deprecated fields (textBody, media, stickers) | [optional] [default to false] |
 {: class="table table-striped"}
 
 ### Return type
@@ -2986,7 +2991,7 @@ apiInstance.getConversationsMessageDetails(messageId)
 
 <a name="getConversationsMessageMessage"></a>
 
-# MessageData getConversationsMessageMessage(conversationId, messageId)
+# MessageData getConversationsMessageMessage(conversationId, messageId, opts)
 
 
 GET /api/v2/conversations/messages/{conversationId}/messages/{messageId}
@@ -3013,8 +3018,11 @@ let apiInstance = new platformClient.ConversationsApi();
 
 let conversationId = "conversationId_example"; // String | conversationId
 let messageId = "messageId_example"; // String | messageId
+let opts = { 
+  'useNormalizedMessage': false // Boolean | If true, response removes deprecated fields (textBody, media, stickers)
+};
 
-apiInstance.getConversationsMessageMessage(conversationId, messageId)
+apiInstance.getConversationsMessageMessage(conversationId, messageId, opts)
   .then((data) => {
     console.log(`getConversationsMessageMessage success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3031,6 +3039,7 @@ apiInstance.getConversationsMessageMessage(conversationId, messageId)
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
  **messageId** | **String** | messageId |  |
+ **useNormalizedMessage** | **Boolean** | If true, response removes deprecated fields (textBody, media, stickers) | [optional] [default to false] |
 {: class="table table-striped"}
 
 ### Return type
@@ -7500,6 +7509,57 @@ apiInstance.postConversationsEmails(body)
 
 **EmailConversation**
 
+<a name="postConversationsEmailsAgentless"></a>
+
+# AgentlessEmailSendResponseDto postConversationsEmailsAgentless(body)
+
+
+POST /api/v2/conversations/emails/agentless
+
+Create an email conversation, per API
+
+Requires ANY permissions:
+
+* conversation:email:create
+* conversation:agentlessEmail:send
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let body = {}; // Object | Create agentless email request
+
+apiInstance.postConversationsEmailsAgentless(body)
+  .then((data) => {
+    console.log(`postConversationsEmailsAgentless success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postConversationsEmailsAgentless');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | Create agentless email request |  |
+{: class="table table-striped"}
+
+### Return type
+
+**AgentlessEmailSendResponseDto**
+
 <a name="postConversationsFaxes"></a>
 
 # FaxSendResponse postConversationsFaxes(body)
@@ -7650,7 +7710,7 @@ apiInstance.postConversationsKeyconfigurationsValidate(body)
 
 <a name="postConversationsMessageCommunicationMessages"></a>
 
-# MessageData postConversationsMessageCommunicationMessages(conversationId, communicationId, body)
+# MessageData postConversationsMessageCommunicationMessages(conversationId, communicationId, body, opts)
 
 
 POST /api/v2/conversations/messages/{conversationId}/communications/{communicationId}/messages
@@ -7680,8 +7740,11 @@ let apiInstance = new platformClient.ConversationsApi();
 let conversationId = "conversationId_example"; // String | conversationId
 let communicationId = "communicationId_example"; // String | communicationId
 let body = {}; // Object | Message
+let opts = { 
+  'useNormalizedMessage': false // Boolean | If true, response removes deprecated fields (textBody, media, stickers)
+};
 
-apiInstance.postConversationsMessageCommunicationMessages(conversationId, communicationId, body)
+apiInstance.postConversationsMessageCommunicationMessages(conversationId, communicationId, body, opts)
   .then((data) => {
     console.log(`postConversationsMessageCommunicationMessages success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -7699,6 +7762,7 @@ apiInstance.postConversationsMessageCommunicationMessages(conversationId, commun
  **conversationId** | **String** | conversationId |  |
  **communicationId** | **String** | communicationId |  |
  **body** | **Object** | Message |  |
+ **useNormalizedMessage** | **Boolean** | If true, response removes deprecated fields (textBody, media, stickers) | [optional] [default to false] |
 {: class="table table-striped"}
 
 ### Return type
@@ -7791,6 +7855,7 @@ let apiInstance = new platformClient.ConversationsApi();
 
 let conversationId = "conversationId_example"; // String | 
 let opts = { 
+  'useNormalizedMessage': false, // Boolean | If true, response removes deprecated fields (textBody, media, stickers)
   'body': ["body_example"] // [String] | messageIds
 };
 
@@ -7810,6 +7875,7 @@ apiInstance.postConversationsMessageMessagesBulk(conversationId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** |  |  |
+ **useNormalizedMessage** | **Boolean** | If true, response removes deprecated fields (textBody, media, stickers) | [optional] [default to false] |
  **body** | **[String]** | messageIds | [optional]  |
 {: class="table table-striped"}
 
