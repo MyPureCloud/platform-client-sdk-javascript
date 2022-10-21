@@ -8338,6 +8338,29 @@
     "return": "MessageMediaData",
     "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.ConversationsApi();\n\nlet conversationId = \"conversationId_example\"; // String | conversationId\nlet communicationId = \"communicationId_example\"; // String | communicationId\n\n// Create media\napiInstance.postConversationsMessageCommunicationMessagesMedia(conversationId, communicationId)\n  .then((data) => {\n    console.log(`postConversationsMessageCommunicationMessagesMedia success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling postConversationsMessageCommunicationMessagesMedia\");\n    console.error(err);\n  });"
   },
+  "postconversationsmessagecommunicationtyping": {
+    "operationId": "postconversationsmessagecommunicationtyping",
+    "functionName": "postConversationsMessageCommunicationTyping",
+    "signature": "postConversationsMessageCommunicationTyping(conversationId, communicationId, body)",
+    "parameters": [
+      {
+        "name": "conversationId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "communicationId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "Object",
+        "required": "true"
+      }
+    ],
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.ConversationsApi();\n\nlet conversationId = \"conversationId_example\"; // String | conversationId\nlet communicationId = \"communicationId_example\"; // String | communicationId\nlet body = {}; // Object | MessageTypingEvent\n\n// Send message typing event\napiInstance.postConversationsMessageCommunicationTyping(conversationId, communicationId, body)\n  .then(() => {\n    console.log(\"postConversationsMessageCommunicationTyping returned successfully.\");\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling postConversationsMessageCommunicationTyping\");\n    console.error(err);\n  });"
+  },
   "postconversationsmessagemessagesbulk": {
     "operationId": "postconversationsmessagemessagesbulk",
     "functionName": "postConversationsMessageMessagesBulk",
@@ -9089,6 +9112,35 @@
     ],
     "return": "EntityListing",
     "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.ExternalContactsApi();\n\nlet contactId = \"contactId_example\"; // String | ExternalContact ID\n\n// List the identifiers for a contact\napiInstance.getExternalcontactsContactIdentifiers(contactId)\n  .then((data) => {\n    console.log(`getExternalcontactsContactIdentifiers success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getExternalcontactsContactIdentifiers\");\n    console.error(err);\n  });"
+  },
+  "getexternalcontactscontactjourneysessions": {
+    "operationId": "getexternalcontactscontactjourneysessions",
+    "functionName": "getExternalcontactsContactJourneySessions",
+    "signature": "getExternalcontactsContactJourneySessions(contactId, pageSize, after, includeMerged)",
+    "parameters": [
+      {
+        "name": "contactId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "pageSize",
+        "type": "String",
+        "required": "false"
+      },
+      {
+        "name": "after",
+        "type": "String",
+        "required": "false"
+      },
+      {
+        "name": "includeMerged",
+        "type": "Boolean",
+        "required": "false"
+      }
+    ],
+    "return": "SessionListing",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.ExternalContactsApi();\n\nlet contactId = \"contactId_example\"; // String | ExternalContact ID\nlet opts = { \n  \"pageSize\": \"pageSize_example\", // String | Number of entities to return. Maximum of 200.\n  \"after\": \"after_example\", // String | The cursor that points to the end of the set of entities that has been returned.\n  \"includeMerged\": true // Boolean | Indicates whether to return sessions from all external contacts in the merge-set of the given one.\n};\n\n// Retrieve all sessions for a given external contact.\napiInstance.getExternalcontactsContactJourneySessions(contactId, opts)\n  .then((data) => {\n    console.log(`getExternalcontactsContactJourneySessions success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getExternalcontactsContactJourneySessions\");\n    console.error(err);\n  });"
   },
   "getexternalcontactscontactnote": {
     "operationId": "getexternalcontactscontactnote",
@@ -21697,16 +21749,16 @@
   "getpresencesources": {
     "operationId": "getpresencesources",
     "functionName": "getPresenceSources",
-    "signature": "getPresenceSources(deleted)",
+    "signature": "getPresenceSources(deactivated)",
     "parameters": [
       {
-        "name": "deleted",
+        "name": "deactivated",
         "type": "String",
         "required": "false"
       }
     ],
     "return": "SourceEntityListing",
-    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.PresenceApi();\n\nlet opts = { \n  \"deleted\": \"false\" // String | Deleted query can be TRUE or FALSE\n};\n\n// Get a list of Presence Sources\napiInstance.getPresenceSources(opts)\n  .then((data) => {\n    console.log(`getPresenceSources success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getPresenceSources\");\n    console.error(err);\n  });"
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.PresenceApi();\n\nlet opts = { \n  \"deactivated\": \"false\" // String | Deactivated query can be TRUE or FALSE\n};\n\n// Get a list of Presence Sources\napiInstance.getPresenceSources(opts)\n  .then((data) => {\n    console.log(`getPresenceSources success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getPresenceSources\");\n    console.error(err);\n  });"
   },
   "getpresenceuserprimarysource": {
     "operationId": "getpresenceuserprimarysource",
@@ -21977,7 +22029,7 @@
       }
     ],
     "return": "Trigger",
-    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.ProcessAutomationApi();\n\nlet triggerId = \"triggerId_example\"; // String | triggerId\n\n// Retrieve a single Trigger matching id.\napiInstance.getProcessautomationTrigger(triggerId)\n  .then((data) => {\n    console.log(`getProcessautomationTrigger success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getProcessautomationTrigger\");\n    console.error(err);\n  });"
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.ProcessAutomationApi();\n\nlet triggerId = \"triggerId_example\"; // String | triggerId\n\n// Retrieve a single Trigger matching id\napiInstance.getProcessautomationTrigger(triggerId)\n  .then((data) => {\n    console.log(`getProcessautomationTrigger success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getProcessautomationTrigger\");\n    console.error(err);\n  });"
   },
   "getprocessautomationtriggers": {
     "operationId": "getprocessautomationtriggers",
@@ -22011,7 +22063,7 @@
       }
     ],
     "return": "TriggerEntityListing",
-    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.ProcessAutomationApi();\n\nlet opts = { \n  \"before\": \"before_example\", // String | The cursor that points to the start of the set of entities that has been returned.\n  \"after\": \"after_example\", // String | The cursor that points to the end of the set of entities that has been returned.\n  \"pageSize\": \"pageSize_example\", // String | Number of entities to return. Maximum of 200.\n  \"topicName\": \"topicName_example\", // String | Topic name\n  \"enabled\": true // Boolean | Boolean indicating desired enabled state of triggers\n};\n\n// Retrieves all triggers\napiInstance.getProcessautomationTriggers(opts)\n  .then((data) => {\n    console.log(`getProcessautomationTriggers success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getProcessautomationTriggers\");\n    console.error(err);\n  });"
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.ProcessAutomationApi();\n\nlet opts = { \n  \"before\": \"before_example\", // String | The cursor that points to the start of the set of entities that has been returned.\n  \"after\": \"after_example\", // String | The cursor that points to the end of the set of entities that has been returned.\n  \"pageSize\": \"pageSize_example\", // String | Number of entities to return. Maximum of 200.\n  \"topicName\": \"topicName_example\", // String | Topic name(s). Separated by commas\n  \"enabled\": true // Boolean | Boolean indicating desired enabled state of triggers\n};\n\n// Retrieves all triggers, optionally filtered by query parameters.\napiInstance.getProcessautomationTriggers(opts)\n  .then((data) => {\n    console.log(`getProcessautomationTriggers success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getProcessautomationTriggers\");\n    console.error(err);\n  });"
   },
   "getprocessautomationtriggerstopics": {
     "operationId": "getprocessautomationtriggerstopics",
@@ -28394,6 +28446,20 @@
     "return": "UsersSearchResponse",
     "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.UsersApi();\n\nlet body = {}; // Object | Search request options\n\n// Search users\napiInstance.postUsersSearch(body)\n  .then((data) => {\n    console.log(`postUsersSearch success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling postUsersSearch\");\n    console.error(err);\n  });"
   },
+  "postuserssearchteamsassign": {
+    "operationId": "postuserssearchteamsassign",
+    "functionName": "postUsersSearchTeamsAssign",
+    "signature": "postUsersSearchTeamsAssign(body)",
+    "parameters": [
+      {
+        "name": "body",
+        "type": "Object",
+        "required": "true"
+      }
+    ],
+    "return": "UsersSearchResponse",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.UsersApi();\n\nlet body = {}; // Object | Search request options\n\n// Search users assigned to teams\napiInstance.postUsersSearchTeamsAssign(body)\n  .then((data) => {\n    console.log(`postUsersSearchTeamsAssign success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling postUsersSearchTeamsAssign\");\n    console.error(err);\n  });"
+  },
   "postvoicemailsearch": {
     "operationId": "postvoicemailsearch",
     "functionName": "postVoicemailSearch",
@@ -29009,6 +29075,24 @@
     ],
     "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.TeamsApi();\n\nlet teamId = \"teamId_example\"; // String | Team ID\n\n// Delete team\napiInstance.deleteTeam(teamId)\n  .then(() => {\n    console.log(\"deleteTeam returned successfully.\");\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling deleteTeam\");\n    console.error(err);\n  });"
   },
+  "deleteteammembers": {
+    "operationId": "deleteteammembers",
+    "functionName": "deleteTeamMembers",
+    "signature": "deleteTeamMembers(teamId, id)",
+    "parameters": [
+      {
+        "name": "teamId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "id",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.TeamsApi();\n\nlet teamId = \"teamId_example\"; // String | Team ID\nlet id = \"id_example\"; // String | Comma separated list of member ids to remove\n\n// Delete team members\napiInstance.deleteTeamMembers(teamId, id)\n  .then(() => {\n    console.log(\"deleteTeamMembers returned successfully.\");\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling deleteTeamMembers\");\n    console.error(err);\n  });"
+  },
   "getteam": {
     "operationId": "getteam",
     "functionName": "getTeam",
@@ -29022,6 +29106,40 @@
     ],
     "return": "Team",
     "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.TeamsApi();\n\nlet teamId = \"teamId_example\"; // String | Team ID\n\n// Get team\napiInstance.getTeam(teamId)\n  .then((data) => {\n    console.log(`getTeam success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getTeam\");\n    console.error(err);\n  });"
+  },
+  "getteammembers": {
+    "operationId": "getteammembers",
+    "functionName": "getTeamMembers",
+    "signature": "getTeamMembers(teamId, pageSize, before, after, expand)",
+    "parameters": [
+      {
+        "name": "teamId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "pageSize",
+        "type": "Number",
+        "required": "false"
+      },
+      {
+        "name": "before",
+        "type": "String",
+        "required": "false"
+      },
+      {
+        "name": "after",
+        "type": "String",
+        "required": "false"
+      },
+      {
+        "name": "expand",
+        "type": "String",
+        "required": "false"
+      }
+    ],
+    "return": "TeamMemberEntityListing",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.TeamsApi();\n\nlet teamId = \"teamId_example\"; // String | Team ID\nlet opts = { \n  \"pageSize\": 25, // Number | Page size\n  \"before\": \"before_example\", // String | The cursor that points to the previous item in the complete list of teams\n  \"after\": \"after_example\", // String | The cursor that points to the next item in the complete list of teams\n  \"expand\": \"expand_example\" // String | Expand the name on each user\n};\n\n// Get team membership\napiInstance.getTeamMembers(teamId, opts)\n  .then((data) => {\n    console.log(`getTeamMembers success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getTeamMembers\");\n    console.error(err);\n  });"
   },
   "getteams": {
     "operationId": "getteams",
@@ -29075,6 +29193,25 @@
     ],
     "return": "Team",
     "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.TeamsApi();\n\nlet teamId = \"teamId_example\"; // String | Team ID\nlet body = {}; // Object | Team\n\n// Update team\napiInstance.patchTeam(teamId, body)\n  .then((data) => {\n    console.log(`patchTeam success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling patchTeam\");\n    console.error(err);\n  });"
+  },
+  "postteammembers": {
+    "operationId": "postteammembers",
+    "functionName": "postTeamMembers",
+    "signature": "postTeamMembers(teamId, body)",
+    "parameters": [
+      {
+        "name": "teamId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "Object",
+        "required": "true"
+      }
+    ],
+    "return": "TeamMemberAddListingResponse",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.TeamsApi();\n\nlet teamId = \"teamId_example\"; // String | Team ID\nlet body = {}; // Object | TeamMembers\n\n// Add team members\napiInstance.postTeamMembers(teamId, body)\n  .then((data) => {\n    console.log(`postTeamMembers success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling postTeamMembers\");\n    console.error(err);\n  });"
   },
   "postteams": {
     "operationId": "postteams",
@@ -36428,6 +36565,54 @@
     ],
     "return": "WaitlistPositionListing",
     "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.WorkforceManagementApi();\n\nlet managementUnitId = \"managementUnitId_example\"; // String | The ID of the management unit.\nlet opts = { \n  \"body\": {} // Object | body\n};\n\n// Retrieves daily waitlist position for a list of time off requests\napiInstance.postWorkforcemanagementManagementunitTimeoffrequestsWaitlistpositionsQuery(managementUnitId, opts)\n  .then((data) => {\n    console.log(`postWorkforcemanagementManagementunitTimeoffrequestsWaitlistpositionsQuery success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling postWorkforcemanagementManagementunitTimeoffrequestsWaitlistpositionsQuery\");\n    console.error(err);\n  });"
+  },
+  "postworkforcemanagementmanagementunitusertimeoffbalancejobs": {
+    "operationId": "postworkforcemanagementmanagementunitusertimeoffbalancejobs",
+    "functionName": "postWorkforcemanagementManagementunitUserTimeoffbalanceJobs",
+    "signature": "postWorkforcemanagementManagementunitUserTimeoffbalanceJobs(managementUnitId, userId, body)",
+    "parameters": [
+      {
+        "name": "managementUnitId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "userId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "Object",
+        "required": "true"
+      }
+    ],
+    "return": "TimeOffBalancesResponse",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.WorkforceManagementApi();\n\nlet managementUnitId = \"managementUnitId_example\"; // String | The ID of the management unit\nlet userId = \"userId_example\"; // String | The ID of the user\nlet body = {}; // Object | The request body\n\n// Query time off balances for a given user for specified activity code and dates\napiInstance.postWorkforcemanagementManagementunitUserTimeoffbalanceJobs(managementUnitId, userId, body)\n  .then((data) => {\n    console.log(`postWorkforcemanagementManagementunitUserTimeoffbalanceJobs success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling postWorkforcemanagementManagementunitUserTimeoffbalanceJobs\");\n    console.error(err);\n  });"
+  },
+  "postworkforcemanagementmanagementunitusertimeoffrequesttimeoffbalancejobs": {
+    "operationId": "postworkforcemanagementmanagementunitusertimeoffrequesttimeoffbalancejobs",
+    "functionName": "postWorkforcemanagementManagementunitUserTimeoffrequestTimeoffbalanceJobs",
+    "signature": "postWorkforcemanagementManagementunitUserTimeoffrequestTimeoffbalanceJobs(managementUnitId, userId, timeOffRequestId)",
+    "parameters": [
+      {
+        "name": "managementUnitId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "userId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "timeOffRequestId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "return": "TimeOffBalancesResponse",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.WorkforceManagementApi();\n\nlet managementUnitId = \"managementUnitId_example\"; // String | The ID of the management unit.\nlet userId = \"userId_example\"; // String | The userId to whom the time off request applies.\nlet timeOffRequestId = \"timeOffRequestId_example\"; // String | The time off request id.\n\n// Query time off balances for dates spanned by a given time off request\napiInstance.postWorkforcemanagementManagementunitUserTimeoffrequestTimeoffbalanceJobs(managementUnitId, userId, timeOffRequestId)\n  .then((data) => {\n    console.log(`postWorkforcemanagementManagementunitUserTimeoffrequestTimeoffbalanceJobs success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling postWorkforcemanagementManagementunitUserTimeoffrequestTimeoffbalanceJobs\");\n    console.error(err);\n  });"
   },
   "postworkforcemanagementmanagementunitweekshifttradematch": {
     "operationId": "postworkforcemanagementmanagementunitweekshifttradematch",

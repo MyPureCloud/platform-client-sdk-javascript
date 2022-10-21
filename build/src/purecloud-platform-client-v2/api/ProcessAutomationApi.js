@@ -5,7 +5,7 @@ class ProcessAutomationApi {
 	/**
 	 * ProcessAutomation service.
 	 * @module purecloud-platform-client-v2/api/ProcessAutomationApi
-	 * @version 150.0.0
+	 * @version 151.0.0
 	 */
 
 	/**
@@ -46,7 +46,7 @@ class ProcessAutomationApi {
 	}
 
 	/**
-	 * Retrieve a single Trigger matching id.
+	 * Retrieve a single Trigger matching id
 	 * 
 	 * @param {String} triggerId triggerId
 	 */
@@ -71,13 +71,13 @@ class ProcessAutomationApi {
 	}
 
 	/**
-	 * Retrieves all triggers
+	 * Retrieves all triggers, optionally filtered by query parameters.
 	 * 
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.before The cursor that points to the start of the set of entities that has been returned.
 	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
 	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
-	 * @param {String} opts.topicName Topic name
+	 * @param {String} opts.topicName Topic name(s). Separated by commas
 	 * @param {Boolean} opts.enabled Boolean indicating desired enabled state of triggers
 	 */
 	getProcessautomationTriggers(opts) { 

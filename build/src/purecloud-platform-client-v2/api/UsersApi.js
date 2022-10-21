@@ -5,7 +5,7 @@ class UsersApi {
 	/**
 	 * Users service.
 	 * @module purecloud-platform-client-v2/api/UsersApi
-	 * @version 150.0.0
+	 * @version 151.0.0
 	 */
 
 	/**
@@ -1984,6 +1984,31 @@ class UsersApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/users/search', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Search users assigned to teams
+	 * 
+	 * @param {Object} body Search request options
+	 */
+	postUsersSearchTeamsAssign(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postUsersSearchTeamsAssign';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/users/search/teams/assign', 
 			'POST', 
 			{  },
 			{  },

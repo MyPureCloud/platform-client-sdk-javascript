@@ -5,7 +5,7 @@ class PresenceApi {
 	/**
 	 * Presence service.
 	 * @module purecloud-platform-client-v2/api/PresenceApi
-	 * @version 150.0.0
+	 * @version 151.0.0
 	 */
 
 	/**
@@ -99,7 +99,7 @@ class PresenceApi {
 	 * Get a list of Presence Sources
 	 * 
 	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.deleted Deleted query can be TRUE or FALSE (default to false)
+	 * @param {String} opts.deactivated Deactivated query can be TRUE or FALSE (default to false)
 	 */
 	getPresenceSources(opts) { 
 		opts = opts || {};
@@ -109,7 +109,7 @@ class PresenceApi {
 			'/api/v2/presence/sources', 
 			'GET', 
 			{  },
-			{ 'deleted': opts['deleted'] },
+			{ 'deactivated': opts['deactivated'] },
 			{  },
 			{  },
 			null, 

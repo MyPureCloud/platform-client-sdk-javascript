@@ -8,9 +8,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
 [**deleteTeam**](TeamsApi.html#deleteTeam) | **DELETE** /api/v2/teams/{teamId} | Delete team
+[**deleteTeamMembers**](TeamsApi.html#deleteTeamMembers) | **DELETE** /api/v2/teams/{teamId}/members | Delete team members
 [**getTeam**](TeamsApi.html#getTeam) | **GET** /api/v2/teams/{teamId} | Get team
+[**getTeamMembers**](TeamsApi.html#getTeamMembers) | **GET** /api/v2/teams/{teamId}/members | Get team membership
 [**getTeams**](TeamsApi.html#getTeams) | **GET** /api/v2/teams | Get Team listing
 [**patchTeam**](TeamsApi.html#patchTeam) | **PATCH** /api/v2/teams/{teamId} | Update team
+[**postTeamMembers**](TeamsApi.html#postTeamMembers) | **POST** /api/v2/teams/{teamId}/members | Add team members
 [**postTeams**](TeamsApi.html#postTeams) | **POST** /api/v2/teams | Create a team
 [**postTeamsSearch**](TeamsApi.html#postTeamsSearch) | **POST** /api/v2/teams/search | Search resources.
 {: class="table table-striped"}
@@ -59,6 +62,58 @@ apiInstance.deleteTeam(teamId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **teamId** | **String** | Team ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
+
+<a name="deleteTeamMembers"></a>
+
+# void deleteTeamMembers(teamId, id)
+
+
+DELETE /api/v2/teams/{teamId}/members
+
+Delete team members
+
+Requires ANY permissions:
+
+* groups:team:assign
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.TeamsApi();
+
+let teamId = "teamId_example"; // String | Team ID
+let id = "id_example"; // String | Comma separated list of member ids to remove
+
+apiInstance.deleteTeamMembers(teamId, id)
+  .then(() => {
+    console.log('deleteTeamMembers returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteTeamMembers');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **teamId** | **String** | Team ID |  |
+ **id** | **String** | Comma separated list of member ids to remove |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -114,6 +169,66 @@ apiInstance.getTeam(teamId)
 ### Return type
 
 **Team**
+
+<a name="getTeamMembers"></a>
+
+# TeamMemberEntityListing getTeamMembers(teamId, opts)
+
+
+GET /api/v2/teams/{teamId}/members
+
+Get team membership
+
+Requires ANY permissions:
+
+* groups:team:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.TeamsApi();
+
+let teamId = "teamId_example"; // String | Team ID
+let opts = { 
+  'pageSize': 25, // Number | Page size
+  'before': "before_example", // String | The cursor that points to the previous item in the complete list of teams
+  'after': "after_example", // String | The cursor that points to the next item in the complete list of teams
+  'expand': "expand_example" // String | Expand the name on each user
+};
+
+apiInstance.getTeamMembers(teamId, opts)
+  .then((data) => {
+    console.log(`getTeamMembers success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getTeamMembers');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **teamId** | **String** | Team ID |  |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **before** | **String** | The cursor that points to the previous item in the complete list of teams | [optional]  |
+ **after** | **String** | The cursor that points to the next item in the complete list of teams | [optional]  |
+ **expand** | **String** | Expand the name on each user | [optional] <br />**Values**: entities |
+{: class="table table-striped"}
+
+### Return type
+
+**TeamMemberEntityListing**
 
 <a name="getTeams"></a>
 
@@ -226,6 +341,58 @@ apiInstance.patchTeam(teamId, body)
 ### Return type
 
 **Team**
+
+<a name="postTeamMembers"></a>
+
+# TeamMemberAddListingResponse postTeamMembers(teamId, body)
+
+
+POST /api/v2/teams/{teamId}/members
+
+Add team members
+
+Requires ANY permissions:
+
+* groups:team:assign
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.TeamsApi();
+
+let teamId = "teamId_example"; // String | Team ID
+let body = {}; // Object | TeamMembers
+
+apiInstance.postTeamMembers(teamId, body)
+  .then((data) => {
+    console.log(`postTeamMembers success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postTeamMembers');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **teamId** | **String** | Team ID |  |
+ **body** | **Object** | TeamMembers |  |
+{: class="table table-striped"}
+
+### Return type
+
+**TeamMemberAddListingResponse**
 
 <a name="postTeams"></a>
 

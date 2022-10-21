@@ -205,7 +205,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.PresenceApi();
 
 let opts = { 
-  'deleted': "false" // String | Deleted query can be TRUE or FALSE
+  'deactivated': "false" // String | Deactivated query can be TRUE or FALSE
 };
 
 apiInstance.getPresenceSources(opts)
@@ -223,7 +223,7 @@ apiInstance.getPresenceSources(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **deleted** | **String** | Deleted query can be TRUE or FALSE | [optional] [default to false] |
+ **deactivated** | **String** | Deactivated query can be TRUE or FALSE | [optional] [default to false] |
 {: class="table table-striped"}
 
 ### Return type

@@ -5,7 +5,7 @@ class TeamsApi {
 	/**
 	 * Teams service.
 	 * @module purecloud-platform-client-v2/api/TeamsApi
-	 * @version 150.0.0
+	 * @version 151.0.0
 	 */
 
 	/**
@@ -46,6 +46,36 @@ class TeamsApi {
 	}
 
 	/**
+	 * Delete team members
+	 * 
+	 * @param {String} teamId Team ID
+	 * @param {String} id Comma separated list of member ids to remove
+	 */
+	deleteTeamMembers(teamId, id) { 
+		// verify the required parameter 'teamId' is set
+		if (teamId === undefined || teamId === null) {
+			throw 'Missing the required parameter "teamId" when calling deleteTeamMembers';
+		}
+		// verify the required parameter 'id' is set
+		if (id === undefined || id === null) {
+			throw 'Missing the required parameter "id" when calling deleteTeamMembers';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/teams/{teamId}/members', 
+			'DELETE', 
+			{ 'teamId': teamId },
+			{ 'id': id },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get team
 	 * 
 	 * @param {String} teamId Team ID
@@ -61,6 +91,38 @@ class TeamsApi {
 			'GET', 
 			{ 'teamId': teamId },
 			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get team membership
+	 * 
+	 * @param {String} teamId Team ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {String} opts.before The cursor that points to the previous item in the complete list of teams
+	 * @param {String} opts.after The cursor that points to the next item in the complete list of teams
+	 * @param {Object} opts.expand Expand the name on each user
+	 */
+	getTeamMembers(teamId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'teamId' is set
+		if (teamId === undefined || teamId === null) {
+			throw 'Missing the required parameter "teamId" when calling getTeamMembers';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/teams/{teamId}/members', 
+			'GET', 
+			{ 'teamId': teamId },
+			{ 'pageSize': opts['pageSize'],'before': opts['before'],'after': opts['after'],'expand': opts['expand'] },
 			{  },
 			{  },
 			null, 
@@ -117,6 +179,36 @@ class TeamsApi {
 		return this.apiClient.callApi(
 			'/api/v2/teams/{teamId}', 
 			'PATCH', 
+			{ 'teamId': teamId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Add team members
+	 * 
+	 * @param {String} teamId Team ID
+	 * @param {Object} body TeamMembers
+	 */
+	postTeamMembers(teamId, body) { 
+		// verify the required parameter 'teamId' is set
+		if (teamId === undefined || teamId === null) {
+			throw 'Missing the required parameter "teamId" when calling postTeamMembers';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postTeamMembers';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/teams/{teamId}/members', 
+			'POST', 
 			{ 'teamId': teamId },
 			{  },
 			{  },

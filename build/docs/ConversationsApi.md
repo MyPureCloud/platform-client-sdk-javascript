@@ -155,6 +155,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postConversationsKeyconfigurationsValidate**](ConversationsApi.html#postConversationsKeyconfigurationsValidate) | **POST** /api/v2/conversations/keyconfigurations/validate | Validate encryption key configurations without saving it
 [**postConversationsMessageCommunicationMessages**](ConversationsApi.html#postConversationsMessageCommunicationMessages) | **POST** /api/v2/conversations/messages/{conversationId}/communications/{communicationId}/messages | Send message
 [**postConversationsMessageCommunicationMessagesMedia**](ConversationsApi.html#postConversationsMessageCommunicationMessagesMedia) | **POST** /api/v2/conversations/messages/{conversationId}/communications/{communicationId}/messages/media | Create media
+[**postConversationsMessageCommunicationTyping**](ConversationsApi.html#postConversationsMessageCommunicationTyping) | **POST** /api/v2/conversations/messages/{conversationId}/communications/{communicationId}/typing | Send message typing event
 [**postConversationsMessageMessagesBulk**](ConversationsApi.html#postConversationsMessageMessagesBulk) | **POST** /api/v2/conversations/messages/{conversationId}/messages/bulk | Get messages in batch
 [**postConversationsMessageParticipantReplace**](ConversationsApi.html#postConversationsMessageParticipantReplace) | **POST** /api/v2/conversations/messages/{conversationId}/participants/{participantId}/replace | Replace this participant with the specified user and/or address
 [**postConversationsMessages**](ConversationsApi.html#postConversationsMessages) | **POST** /api/v2/conversations/messages | Create an outbound messaging conversation.
@@ -4125,7 +4126,9 @@ Update a participant.
 
 Update conversation participant.
 
-Requires NO permissions:
+Requires ANY permissions:
+
+* conversation:participant:wrapup
 
 ### Example Usage
 
@@ -4333,7 +4336,9 @@ PATCH /api/v2/conversations/calls/{conversationId}/participants/{participantId}
 
 Update conversation participant
 
-Requires NO permissions:
+Requires ANY permissions:
+
+* conversation:participant:wrapup
 
 ### Example Usage
 
@@ -4595,7 +4600,9 @@ PATCH /api/v2/conversations/callbacks/{conversationId}/participants/{participant
 
 Update conversation participant
 
-Requires NO permissions:
+Requires ANY permissions:
+
+* conversation:participant:wrapup
 
 ### Example Usage
 
@@ -4855,7 +4862,9 @@ PATCH /api/v2/conversations/chats/{conversationId}/participants/{participantId}
 
 Update conversation participant
 
-Requires NO permissions:
+Requires ANY permissions:
+
+* conversation:participant:wrapup
 
 ### Example Usage
 
@@ -5065,7 +5074,9 @@ PATCH /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{part
 
 Update conversation participant
 
-Requires NO permissions:
+Requires ANY permissions:
+
+* conversation:participant:wrapup
 
 ### Example Usage
 
@@ -5279,7 +5290,9 @@ PATCH /api/v2/conversations/emails/{conversationId}/participants/{participantId}
 
 Update conversation participant
 
-Requires NO permissions:
+Requires ANY permissions:
+
+* conversation:participant:wrapup
 
 ### Example Usage
 
@@ -5489,7 +5502,9 @@ PATCH /api/v2/conversations/messages/{conversationId}/participants/{participantI
 
 Update conversation participant
 
-Requires NO permissions:
+Requires ANY permissions:
+
+* conversation:participant:wrapup
 
 ### Example Usage
 
@@ -7823,6 +7838,63 @@ apiInstance.postConversationsMessageCommunicationMessagesMedia(conversationId, c
 ### Return type
 
 **MessageMediaData**
+
+<a name="postConversationsMessageCommunicationTyping"></a>
+
+# void postConversationsMessageCommunicationTyping(conversationId, communicationId, body)
+
+
+POST /api/v2/conversations/messages/{conversationId}/communications/{communicationId}/typing
+
+Send message typing event
+
+Send message typing event for existing conversation/communication.
+
+Requires ANY permissions:
+
+* conversation:message:create
+* conversation:webmessaging:create
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let conversationId = "conversationId_example"; // String | conversationId
+let communicationId = "communicationId_example"; // String | communicationId
+let body = {}; // Object | MessageTypingEvent
+
+apiInstance.postConversationsMessageCommunicationTyping(conversationId, communicationId, body)
+  .then(() => {
+    console.log('postConversationsMessageCommunicationTyping returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postConversationsMessageCommunicationTyping');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | conversationId |  |
+ **communicationId** | **String** | communicationId |  |
+ **body** | **Object** | MessageTypingEvent |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
 
 <a name="postConversationsMessageMessagesBulk"></a>
 

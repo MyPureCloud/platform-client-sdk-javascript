@@ -8,8 +8,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
 [**deleteProcessautomationTrigger**](ProcessAutomationApi.html#deleteProcessautomationTrigger) | **DELETE** /api/v2/processautomation/triggers/{triggerId} | Delete a Trigger
-[**getProcessautomationTrigger**](ProcessAutomationApi.html#getProcessautomationTrigger) | **GET** /api/v2/processautomation/triggers/{triggerId} | Retrieve a single Trigger matching id.
-[**getProcessautomationTriggers**](ProcessAutomationApi.html#getProcessautomationTriggers) | **GET** /api/v2/processautomation/triggers | Retrieves all triggers
+[**getProcessautomationTrigger**](ProcessAutomationApi.html#getProcessautomationTrigger) | **GET** /api/v2/processautomation/triggers/{triggerId} | Retrieve a single Trigger matching id
+[**getProcessautomationTriggers**](ProcessAutomationApi.html#getProcessautomationTriggers) | **GET** /api/v2/processautomation/triggers | Retrieves all triggers, optionally filtered by query parameters.
 [**getProcessautomationTriggersTopics**](ProcessAutomationApi.html#getProcessautomationTriggersTopics) | **GET** /api/v2/processautomation/triggers/topics | Get topics available for organization
 [**postProcessautomationTriggerTest**](ProcessAutomationApi.html#postProcessautomationTriggerTest) | **POST** /api/v2/processautomation/triggers/{triggerId}/test | Test the matching of a Trigger based on provided event body
 [**postProcessautomationTriggers**](ProcessAutomationApi.html#postProcessautomationTriggers) | **POST** /api/v2/processautomation/triggers | Create a Trigger
@@ -74,7 +74,7 @@ void (no response body)
 
 GET /api/v2/processautomation/triggers/{triggerId}
 
-Retrieve a single Trigger matching id.
+Retrieve a single Trigger matching id
 
 Requires ANY permissions:
 
@@ -125,7 +125,7 @@ apiInstance.getProcessautomationTrigger(triggerId)
 
 GET /api/v2/processautomation/triggers
 
-Retrieves all triggers
+Retrieves all triggers, optionally filtered by query parameters.
 
 Requires ANY permissions:
 
@@ -149,7 +149,7 @@ let opts = {
   'before': "before_example", // String | The cursor that points to the start of the set of entities that has been returned.
   'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
   'pageSize': "pageSize_example", // String | Number of entities to return. Maximum of 200.
-  'topicName': "topicName_example", // String | Topic name
+  'topicName': "topicName_example", // String | Topic name(s). Separated by commas
   'enabled': true // Boolean | Boolean indicating desired enabled state of triggers
 };
 
@@ -171,7 +171,7 @@ apiInstance.getProcessautomationTriggers(opts)
  **before** | **String** | The cursor that points to the start of the set of entities that has been returned. | [optional]  |
  **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
  **pageSize** | **String** | Number of entities to return. Maximum of 200. | [optional]  |
- **topicName** | **String** | Topic name | [optional]  |
+ **topicName** | **String** | Topic name(s). Separated by commas | [optional]  |
  **enabled** | **Boolean** | Boolean indicating desired enabled state of triggers | [optional]  |
 {: class="table table-striped"}
 

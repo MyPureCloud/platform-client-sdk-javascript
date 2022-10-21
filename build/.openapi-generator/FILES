@@ -302,6 +302,7 @@ docs/deleteSpeechandtextanalyticsSentimentfeedbackSentimentFeedbackId-example.tx
 docs/deleteSpeechandtextanalyticsTopic-example.txt
 docs/deleteStationAssociateduser-example.txt
 docs/deleteTeam-example.txt
+docs/deleteTeamMembers-example.txt
 docs/deleteTelephonyProvidersEdge-example.txt
 docs/deleteTelephonyProvidersEdgeLogicalinterface-example.txt
 docs/deleteTelephonyProvidersEdgeSoftwareupdate-example.txt
@@ -554,6 +555,7 @@ docs/getEmployeeperformanceExternalmetricsDefinition-example.txt
 docs/getEmployeeperformanceExternalmetricsDefinitions-example.txt
 docs/getExternalcontactsContact-example.txt
 docs/getExternalcontactsContactIdentifiers-example.txt
+docs/getExternalcontactsContactJourneySessions-example.txt
 docs/getExternalcontactsContactNote-example.txt
 docs/getExternalcontactsContactNotes-example.txt
 docs/getExternalcontactsContactUnresolved-example.txt
@@ -1064,6 +1066,7 @@ docs/getStations-example.txt
 docs/getStationsSettings-example.txt
 docs/getSystempresences-example.txt
 docs/getTeam-example.txt
+docs/getTeamMembers-example.txt
 docs/getTeams-example.txt
 docs/getTelephonyProvidersEdge-example.txt
 docs/getTelephonyProvidersEdgeDiagnosticNslookup-example.txt
@@ -1520,6 +1523,7 @@ docs/postConversationsKeyconfigurations-example.txt
 docs/postConversationsKeyconfigurationsValidate-example.txt
 docs/postConversationsMessageCommunicationMessages-example.txt
 docs/postConversationsMessageCommunicationMessagesMedia-example.txt
+docs/postConversationsMessageCommunicationTyping-example.txt
 docs/postConversationsMessageMessagesBulk-example.txt
 docs/postConversationsMessageParticipantReplace-example.txt
 docs/postConversationsMessages-example.txt
@@ -1765,6 +1769,7 @@ docs/postSpeechandtextanalyticsTopics-example.txt
 docs/postSpeechandtextanalyticsTopicsPublishjobs-example.txt
 docs/postSpeechandtextanalyticsTranscriptsSearch-example.txt
 docs/postSpeechandtextanalyticsTranscriptsSearch-example.txt
+docs/postTeamMembers-example.txt
 docs/postTeams-example.txt
 docs/postTeamsSearch-example.txt
 docs/postTeamsSearch-example.txt
@@ -1816,6 +1821,8 @@ docs/postUsersDevelopmentActivitiesAggregatesQuery-example.txt
 docs/postUsersMePassword-example.txt
 docs/postUsersSearch-example.txt
 docs/postUsersSearch-example.txt
+docs/postUsersSearchTeamsAssign-example.txt
+docs/postUsersSearchTeamsAssign-example.txt
 docs/postVoicemailMessages-example.txt
 docs/postVoicemailSearch-example.txt
 docs/postVoicemailSearch-example.txt
@@ -1861,6 +1868,8 @@ docs/postWorkforcemanagementManagementunitTimeoffplans-example.txt
 docs/postWorkforcemanagementManagementunitTimeoffrequests-example.txt
 docs/postWorkforcemanagementManagementunitTimeoffrequestsQuery-example.txt
 docs/postWorkforcemanagementManagementunitTimeoffrequestsWaitlistpositionsQuery-example.txt
+docs/postWorkforcemanagementManagementunitUserTimeoffbalanceJobs-example.txt
+docs/postWorkforcemanagementManagementunitUserTimeoffrequestTimeoffbalanceJobs-example.txt
 docs/postWorkforcemanagementManagementunitWeekShifttradeMatch-example.txt
 docs/postWorkforcemanagementManagementunitWeekShifttrades-example.txt
 docs/postWorkforcemanagementManagementunitWeekShifttradesSearch-example.txt
