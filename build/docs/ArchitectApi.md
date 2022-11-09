@@ -3149,7 +3149,8 @@ let datatableId = "datatableId_example"; // String | id of datatable
 let opts = { 
   'pageNumber': 1, // Number | Page number
   'pageSize': 25, // Number | Page size
-  'showbrief': true // Boolean | If true returns just the key value of the row
+  'showbrief': true, // Boolean | If true returns just the key value of the row
+  'sortOrder': "ascending" // String | Sort order
 };
 
 apiInstance.getFlowsDatatableRows(datatableId, opts)
@@ -3171,6 +3172,7 @@ apiInstance.getFlowsDatatableRows(datatableId, opts)
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **showbrief** | **Boolean** | If true returns just the key value of the row | [optional] [default to true] |
+ **sortOrder** | **String** | Sort order | [optional] [default to ascending]<br />**Values**: ascending, descending |
 {: class="table table-striped"}
 
 ### Return type
@@ -3212,7 +3214,7 @@ let opts = {
   'sortBy': "id", // String | Sort by
   'sortOrder': "ascending", // String | Sort order
   'divisionId': ["divisionId_example"], // [String] | division ID(s)
-  'name': "name_example" // String | Name to filter by
+  'name': exactMatch, beginsWith*, *endsWith, *contains* // String | Filter by Name. The wildcard character * is supported within the filter. Matches are case-insensitive.
 };
 
 apiInstance.getFlowsDatatables(opts)
@@ -3236,7 +3238,7 @@ apiInstance.getFlowsDatatables(opts)
  **sortBy** | **String** | Sort by | [optional] [default to id]<br />**Values**: id, name |
  **sortOrder** | **String** | Sort order | [optional] [default to ascending] |
  **divisionId** | **[String]** | division ID(s) | [optional]  |
- **name** | **String** | Name to filter by | [optional]  |
+ **name** | **String** | Filter by Name. The wildcard character * is supported within the filter. Matches are case-insensitive. | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -3334,7 +3336,7 @@ let opts = {
   'sortBy': "id", // String | Sort by
   'sortOrder': "ascending", // String | Sort order
   'divisionId': ["divisionId_example"], // [String] | division ID(s)
-  'name': "name_example" // String | Name to filter by
+  'name': exactMatch, beginsWith*, *endsWith, *contains* // String | Filter by Name. The wildcard character * is supported within the filter. Matches are case-insensitive.
 };
 
 apiInstance.getFlowsDatatablesDivisionviews(opts)
@@ -3358,7 +3360,7 @@ apiInstance.getFlowsDatatablesDivisionviews(opts)
  **sortBy** | **String** | Sort by | [optional] [default to id]<br />**Values**: id, name |
  **sortOrder** | **String** | Sort order | [optional] [default to ascending] |
  **divisionId** | **[String]** | division ID(s) | [optional]  |
- **name** | **String** | Name to filter by | [optional]  |
+ **name** | **String** | Filter by Name. The wildcard character * is supported within the filter. Matches are case-insensitive. | [optional]  |
 {: class="table table-striped"}
 
 ### Return type

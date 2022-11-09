@@ -5,7 +5,7 @@ class AnalyticsApi {
 	/**
 	 * Analytics service.
 	 * @module purecloud-platform-client-v2/api/AnalyticsApi
-	 * @version 151.0.0
+	 * @version 152.0.0
 	 */
 
 	/**
@@ -104,6 +104,7 @@ class AnalyticsApi {
 	 * @param {String} opts.pageSize Max number of entities to return. Maximum of 250 (default to 50)
 	 * @param {String} opts.actionId Optional action ID to get the reporting turns associated to a particular flow action
 	 * @param {String} opts.sessionId Optional session ID to get the reporting turns for a particular session
+	 * @param {String} opts.language Optional language code to get the reporting turns for a particular language
 	 */
 	getAnalyticsBotflowReportingturns(botFlowId, opts) { 
 		opts = opts || {};
@@ -117,7 +118,7 @@ class AnalyticsApi {
 			'/api/v2/analytics/botflows/{botFlowId}/reportingturns', 
 			'GET', 
 			{ 'botFlowId': botFlowId },
-			{ 'after': opts['after'],'pageSize': opts['pageSize'],'actionId': opts['actionId'],'sessionId': opts['sessionId'] },
+			{ 'after': opts['after'],'pageSize': opts['pageSize'],'actionId': opts['actionId'],'sessionId': opts['sessionId'],'language': opts['language'] },
 			{  },
 			{  },
 			null, 
@@ -655,6 +656,31 @@ class AnalyticsApi {
 		return this.apiClient.callApi(
 			'/api/v2/analytics/reporting/settings', 
 			'PATCH', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Query for action aggregates
+	 * 
+	 * @param {Object} body query
+	 */
+	postAnalyticsActionsAggregatesQuery(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postAnalyticsActionsAggregatesQuery';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/actions/aggregates/query', 
+			'POST', 
 			{  },
 			{  },
 			{  },

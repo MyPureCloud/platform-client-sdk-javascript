@@ -1,166 +1,265 @@
-Platform API version: 6265
+Platform API version: 6309
 
 
-# Major Changes (6 changes)
+# Major Changes (16 changes)
 
-**GET /api/v2/presence/sources** (2 changes)
+**/api/v2/gamification/metrics/{metricId}** (1 change)
 
-* Parameter deleted was removed
-* Parameter deactivated was added
+* Path /api/v2/gamification/metrics/{metricId} was removed
 
-**ComparisonPeriod** (4 changes)
+**GET /api/v2/analytics/botflows/{botFlowId}/reportingturns** (1 change)
 
-* Property kpiTotalOn was removed
-* Property kpiTotalOff was removed
-* Property interactionCountOn was removed
-* Property interactionCountOff was removed
+* Parameter language was added
+
+**GET /api/v2/conversations/messaging/integrations** (2 changes)
+
+* Parameter expand was changed from string to array
+* Parameter messagingSetting.id was added
+
+**GET /api/v2/conversations/messaging/integrations/facebook** (1 change)
+
+* Parameter messagingSetting.id was added
+
+**GET /api/v2/conversations/messaging/integrations/line** (1 change)
+
+* Parameter messagingSetting.id was added
+
+**GET /api/v2/conversations/messaging/integrations/open** (1 change)
+
+* Parameter messagingSetting.id was added
+
+**GET /api/v2/conversations/messaging/integrations/twitter** (1 change)
+
+* Parameter messagingSetting.id was added
+
+**GET /api/v2/conversations/messaging/integrations/whatsapp** (1 change)
+
+* Parameter messagingSetting.id was added
+
+**GET /api/v2/flows/datatables/{datatableId}/rows** (1 change)
+
+* Parameter sortOrder was added
+
+**GET /api/v2/knowledge/guest/sessions/{sessionId}/documents** (1 change)
+
+* Parameter pageSize was changed from string to integer
+
+**KnowledgeExportJobResponse** (1 change)
+
+* Required property fileType was added
+
+**KnowledgeExportJobRequest** (1 change)
+
+* Required property fileType was added
+
+**KnowledgeDocumentSearchRequest** (3 changes)
+
+* Enum value ASC was removed from property sortOrder
+* Enum value DESC was removed from property sortOrder
+* Enum value SCORE was removed from property sortOrder
 
 
-# Minor Changes (48 changes)
+# Minor Changes (62 changes)
 
-**/api/v2/externalcontacts/contacts/{contactId}/journey/sessions** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/conversations/messages/{conversationId}/communications/{communicationId}/typing** (2 changes)
+**/api/v2/analytics/actions/aggregates/query** (2 changes)
 
 * Path was added
 * Operation POST was added
 
-**/api/v2/teams/{teamId}/members** (4 changes)
+**/api/v2/routing/skillgroups/{skillGroupId}/members/divisions** (3 changes)
 
 * Path was added
 * Operation GET was added
 * Operation POST was added
+
+**/api/v2/routing/skillgroups/{skillGroupId}/members** (2 changes)
+
+* Path was added
+* Operation GET was added
+
+**/api/v2/routing/skillgroups/{skillGroupId}** (4 changes)
+
+* Path was added
+* Operation GET was added
 * Operation DELETE was added
+* Operation PATCH was added
 
-**/api/v2/users/search/teams/assign** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/workforcemanagement/managementunits/{managementUnitId}/users/{userId}/timeoffrequests/{timeOffRequestId}/timeoffbalance/jobs** (2 changes)
+**/api/v2/routing/skillgroups** (3 changes)
 
 * Path was added
+* Operation GET was added
 * Operation POST was added
 
-**/api/v2/workforcemanagement/managementunits/{managementUnitId}/users/{userId}/timeoffbalance/jobs** (2 changes)
+**CommunicationEndedEvent** (2 changes)
 
-* Path was added
-* Operation POST was added
+* Enum value TransferACD was added to property disconnectType
+* Enum value TransferUser was added to property disconnectType
 
-**AuditQueryExecutionStatusResponse** (1 change)
-
-* Enum value Emails was added to property serviceName
-
-**AuditQueryRequest** (1 change)
-
-* Enum value Emails was added to property serviceName
-
-**AuditLogMessage** (5 changes)
-
-* Enum value Emails was added to property serviceName
-* Enum value InboundDomain was added to property entityType
-* Enum value InboundRoute was added to property entityType
-* Enum value OrganizationLimits was added to property entityType
-* Enum value OutboundDomain was added to property entityType
-
-**EntityChange** (4 changes)
-
-* Enum value InboundDomain was added to property entityType
-* Enum value InboundRoute was added to property entityType
-* Enum value OrganizationLimits was added to property entityType
-* Enum value OutboundDomain was added to property entityType
-
-**AuditRealtimeQueryRequest** (1 change)
-
-* Enum value Emails was added to property serviceName
-
-**AuditQueryEntity** (4 changes)
-
-* Enum value InboundDomain was added to property name
-* Enum value InboundRoute was added to property name
-* Enum value OrganizationLimits was added to property name
-* Enum value OutboundDomain was added to property name
-
-**AuditQueryService** (1 change)
-
-* Enum value Emails was added to property name
-
-**SessionListing** (1 change)
+**ActionAggregateDataContainer** (1 change)
 
 * Model was added
 
-**MessageTypingEventRequest** (1 change)
+**ActionAggregateQueryResponse** (1 change)
 
 * Model was added
 
-**KnowledgeSearchClientApplication** (1 change)
+**ActionAggregateQueryClause** (1 change)
 
 * Model was added
 
-**KnowledgeDocumentSearch** (1 change)
-
-* Optional property application was added
-
-**KnowledgeDocumentSearchRequest** (1 change)
-
-* Optional property application was added
-
-**PredictorWorkloadBalancing** (2 changes)
-
-* Optional property minimumOccupancy was added
-* Optional property maximumOccupancy was added
-
-**UserReferenceWithName** (1 change)
+**ActionAggregateQueryFilter** (1 change)
 
 * Model was added
 
-**TeamAddMemberFailure** (1 change)
+**ActionAggregateQueryPredicate** (1 change)
 
 * Model was added
 
-**TeamMemberAddListingResponse** (1 change)
+**ActionAggregationQuery** (1 change)
 
 * Model was added
 
-**TeamMembers** (1 change)
+**ActionAggregationView** (1 change)
 
 * Model was added
 
-**TeamMemberEntityListing** (1 change)
+**ReportingTurnAction** (2 changes)
+
+* Enum value FindQueueAction was added to property actionType
+* Enum value FindQueueByIdAction was added to property actionType
+
+**ViewFilter** (1 change)
+
+* Optional property integrationIds was added
+
+**AuditLogMessage** (3 changes)
+
+* Enum value Group was added to property entityType
+* Enum value Public was added to property entityType
+* Enum value Tag was added to property entityType
+
+**EntityChange** (3 changes)
+
+* Enum value Group was added to property entityType
+* Enum value Public was added to property entityType
+* Enum value Tag was added to property entityType
+
+**AuditQueryEntity** (3 changes)
+
+* Enum value Group was added to property name
+* Enum value Public was added to property name
+* Enum value Tag was added to property name
+
+**ExternalMetricDataProcessedItem** (3 changes)
+
+* Optional property type was added
+* Optional property totalValue was added
+* Optional property totalCount was added
+
+**ExternalMetricDataUnprocessedItem** (1 change)
+
+* Optional property type was added
+
+**ExternalMetricDataItem** (1 change)
+
+* Optional property type was added
+
+**KnowledgeImportJobResponse** (1 change)
+
+* Enum value Xlsx was added to property fileType
+
+**KnowledgeImportJobRequest** (1 change)
+
+* Enum value Xlsx was added to property fileType
+
+**KnowledgeDocumentSearchRequest** (2 changes)
+
+* Enum value Asc was added to property sortOrder
+* Enum value Desc was added to property sortOrder
+
+**IntentDefinition** (1 change)
+
+* Optional property id was added
+
+**NluUtterance** (1 change)
+
+* Optional property id was added
+
+**LimitChangeRequestDetails** (1 change)
+
+* Enum value secondary.automation.testing was added to property namespace
+
+**StatusChange** (1 change)
+
+* Enum value secondary.automation.testing was added to property namespace
+
+**NluInfo** (1 change)
+
+* Optional property nluData was added
+
+**Predictor** (1 change)
+
+* Optional property models was added
+
+**PredictorModelBrief** (1 change)
 
 * Model was added
 
-**HrisTimeOffType** (1 change)
+**PredictorModelRetrainingError** (1 change)
 
 * Model was added
 
-**TimeOffBalanceJobReference** (1 change)
+**SkillGroupMemberDivisions** (1 change)
 
 * Model was added
 
-**TimeOffBalanceResponse** (1 change)
+**SkillGroupMemberDivisionList** (1 change)
 
 * Model was added
 
-**TimeOffBalancesResponse** (1 change)
+**SkillGroupMemberEntityListing** (1 change)
 
 * Model was added
 
-**TimeOffBalanceRequest** (1 change)
+**SkillGroup** (1 change)
 
 * Model was added
+
+**SkillGroupCondition** (1 change)
+
+* Model was added
+
+**SkillGroupLanguageCondition** (1 change)
+
+* Model was added
+
+**SkillGroupRoutingCondition** (1 change)
+
+* Model was added
+
+**SkillGroupEntityListing** (1 change)
+
+* Model was added
+
+**TextBotFlowLaunchRequest** (1 change)
+
+* Optional property language was added
+
+**VoicemailGroupPolicy** (1 change)
+
+* Optional property includeEmailTranscriptions was added
 
 
 # Point Changes (3 changes)
 
-**GET /api/v2/processautomation/triggers/{triggerId}** (1 change)
+**GET /api/v2/flows/datatables/divisionviews** (1 change)
 
-* Summary was changed
+* Description was changed for parameter name
 
-**GET /api/v2/processautomation/triggers** (2 changes)
+**GET /api/v2/flows/datatables** (1 change)
 
-* Summary was changed
-* Description was changed for parameter topicName
+* Description was changed for parameter name
+
+**GET /api/v2/knowledge/guest/sessions/{sessionId}/documents** (1 change)
+
+* Description was changed for parameter includeSubcategories

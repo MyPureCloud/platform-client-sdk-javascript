@@ -18,6 +18,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**deleteRoutingQueueWrapupcode**](RoutingApi.html#deleteRoutingQueueWrapupcode) | **DELETE** /api/v2/routing/queues/{queueId}/wrapupcodes/{codeId} | Delete a wrap-up code from a queue
 [**deleteRoutingSettings**](RoutingApi.html#deleteRoutingSettings) | **DELETE** /api/v2/routing/settings | Delete an organization's routing settings
 [**deleteRoutingSkill**](RoutingApi.html#deleteRoutingSkill) | **DELETE** /api/v2/routing/skills/{skillId} | Delete Routing Skill
+[**deleteRoutingSkillgroup**](RoutingApi.html#deleteRoutingSkillgroup) | **DELETE** /api/v2/routing/skillgroups/{skillGroupId} | Remove skill group definition
 [**deleteRoutingSmsAddress**](RoutingApi.html#deleteRoutingSmsAddress) | **DELETE** /api/v2/routing/sms/addresses/{addressId} | Delete an Address by Id for SMS
 [**deleteRoutingSmsPhonenumber**](RoutingApi.html#deleteRoutingSmsPhonenumber) | **DELETE** /api/v2/routing/sms/phonenumbers/{addressId} | Delete a phone number provisioned for SMS.
 [**deleteRoutingUserUtilization**](RoutingApi.html#deleteRoutingUserUtilization) | **DELETE** /api/v2/routing/users/{userId}/utilization | Delete the user's max utilization settings and revert to the organization-wide default.
@@ -63,6 +64,10 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getRoutingSettingsContactcenter**](RoutingApi.html#getRoutingSettingsContactcenter) | **GET** /api/v2/routing/settings/contactcenter | Get Contact Center Settings
 [**getRoutingSettingsTranscription**](RoutingApi.html#getRoutingSettingsTranscription) | **GET** /api/v2/routing/settings/transcription | Get Transcription Settings
 [**getRoutingSkill**](RoutingApi.html#getRoutingSkill) | **GET** /api/v2/routing/skills/{skillId} | Get Routing Skill
+[**getRoutingSkillgroup**](RoutingApi.html#getRoutingSkillgroup) | **GET** /api/v2/routing/skillgroups/{skillGroupId} | Get skill group
+[**getRoutingSkillgroupMembers**](RoutingApi.html#getRoutingSkillgroupMembers) | **GET** /api/v2/routing/skillgroups/{skillGroupId}/members | Get skill group members
+[**getRoutingSkillgroupMembersDivisions**](RoutingApi.html#getRoutingSkillgroupMembersDivisions) | **GET** /api/v2/routing/skillgroups/{skillGroupId}/members/divisions | Get list of member divisions for this skill group.
+[**getRoutingSkillgroups**](RoutingApi.html#getRoutingSkillgroups) | **GET** /api/v2/routing/skillgroups | Get skill group listing
 [**getRoutingSkills**](RoutingApi.html#getRoutingSkills) | **GET** /api/v2/routing/skills | Get the list of routing skills.
 [**getRoutingSmsAddress**](RoutingApi.html#getRoutingSmsAddress) | **GET** /api/v2/routing/sms/addresses/{addressId} | Get an Address by Id for SMS
 [**getRoutingSmsAddresses**](RoutingApi.html#getRoutingSmsAddresses) | **GET** /api/v2/routing/sms/addresses | Get a list of Addresses for SMS
@@ -85,6 +90,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**patchRoutingQueueUser**](RoutingApi.html#patchRoutingQueueUser) | **PATCH** /api/v2/routing/queues/{queueId}/users/{memberId} | DEPRECATED: use PATCH /routing/queues/{queueId}/members/{memberId}.  Update the ring number OR joined status for a User in a Queue.
 [**patchRoutingQueueUsers**](RoutingApi.html#patchRoutingQueueUsers) | **PATCH** /api/v2/routing/queues/{queueId}/users | DEPRECATED: use PATCH /routing/queues/{queueId}/members.  Join or unjoin a set of users for a queue.
 [**patchRoutingSettingsContactcenter**](RoutingApi.html#patchRoutingSettingsContactcenter) | **PATCH** /api/v2/routing/settings/contactcenter | Update Contact Center Settings
+[**patchRoutingSkillgroup**](RoutingApi.html#patchRoutingSkillgroup) | **PATCH** /api/v2/routing/skillgroups/{skillGroupId} | Update skill group definition
 [**patchUserQueue**](RoutingApi.html#patchUserQueue) | **PATCH** /api/v2/users/{userId}/queues/{queueId} | Join or unjoin a queue for a user
 [**patchUserQueues**](RoutingApi.html#patchUserQueues) | **PATCH** /api/v2/users/{userId}/queues | Join or unjoin a set of queues for a user
 [**patchUserRoutinglanguage**](RoutingApi.html#patchUserRoutinglanguage) | **PATCH** /api/v2/users/{userId}/routinglanguages/{languageId} | Update routing language proficiency or state.
@@ -104,6 +110,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postRoutingQueueUsers**](RoutingApi.html#postRoutingQueueUsers) | **POST** /api/v2/routing/queues/{queueId}/users | DEPRECATED: use POST /routing/queues/{queueId}/members.  Bulk add or delete up to 100 queue members.
 [**postRoutingQueueWrapupcodes**](RoutingApi.html#postRoutingQueueWrapupcodes) | **POST** /api/v2/routing/queues/{queueId}/wrapupcodes | Add up to 100 wrap-up codes to a queue
 [**postRoutingQueues**](RoutingApi.html#postRoutingQueues) | **POST** /api/v2/routing/queues | Create a queue
+[**postRoutingSkillgroupMembersDivisions**](RoutingApi.html#postRoutingSkillgroupMembersDivisions) | **POST** /api/v2/routing/skillgroups/{skillGroupId}/members/divisions | Add or remove member divisions for this skill group.
+[**postRoutingSkillgroups**](RoutingApi.html#postRoutingSkillgroups) | **POST** /api/v2/routing/skillgroups | Create a skill group
 [**postRoutingSkills**](RoutingApi.html#postRoutingSkills) | **POST** /api/v2/routing/skills | Create Skill
 [**postRoutingSmsAddresses**](RoutingApi.html#postRoutingSmsAddresses) | **POST** /api/v2/routing/sms/addresses | Provision an Address for SMS
 [**postRoutingSmsPhonenumbers**](RoutingApi.html#postRoutingSmsPhonenumbers) | **POST** /api/v2/routing/sms/phonenumbers | Provision a phone number for SMS
@@ -679,6 +687,56 @@ apiInstance.deleteRoutingSkill(skillId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **skillId** | **String** | Skill ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
+
+<a name="deleteRoutingSkillgroup"></a>
+
+# void deleteRoutingSkillgroup(skillGroupId)
+
+
+DELETE /api/v2/routing/skillgroups/{skillGroupId}
+
+Remove skill group definition
+
+Requires ANY permissions:
+
+* routing:skillGroup:delete
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.RoutingApi();
+
+let skillGroupId = "skillGroupId_example"; // String | Skill Group ID
+
+apiInstance.deleteRoutingSkillgroup(skillGroupId)
+  .then(() => {
+    console.log('deleteRoutingSkillgroup returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteRoutingSkillgroup');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **skillGroupId** | **String** | Skill Group ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -3064,6 +3122,228 @@ apiInstance.getRoutingSkill(skillId)
 
 **RoutingSkill**
 
+<a name="getRoutingSkillgroup"></a>
+
+# SkillGroup getRoutingSkillgroup(skillGroupId)
+
+
+GET /api/v2/routing/skillgroups/{skillGroupId}
+
+Get skill group
+
+Requires ANY permissions:
+
+* routing:skillGroup:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.RoutingApi();
+
+let skillGroupId = "skillGroupId_example"; // String | Skill Group ID
+
+apiInstance.getRoutingSkillgroup(skillGroupId)
+  .then((data) => {
+    console.log(`getRoutingSkillgroup success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getRoutingSkillgroup');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **skillGroupId** | **String** | Skill Group ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+**SkillGroup**
+
+<a name="getRoutingSkillgroupMembers"></a>
+
+# SkillGroupMemberEntityListing getRoutingSkillgroupMembers(skillGroupId, opts)
+
+
+GET /api/v2/routing/skillgroups/{skillGroupId}/members
+
+Get skill group members
+
+Requires ANY permissions:
+
+* routing:skillGroup:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.RoutingApi();
+
+let skillGroupId = "skillGroupId_example"; // String | Skill Group ID
+let opts = { 
+  'pageSize': 25, // Number | Page size
+  'after': "after_example", // String | The cursor that points to the next item
+  'before': "before_example", // String | The cursor that points to the previous item
+  'expand': "expand_example" // String | Expand the name on each user
+};
+
+apiInstance.getRoutingSkillgroupMembers(skillGroupId, opts)
+  .then((data) => {
+    console.log(`getRoutingSkillgroupMembers success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getRoutingSkillgroupMembers');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **skillGroupId** | **String** | Skill Group ID |  |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **after** | **String** | The cursor that points to the next item | [optional]  |
+ **before** | **String** | The cursor that points to the previous item | [optional]  |
+ **expand** | **String** | Expand the name on each user | [optional] <br />**Values**: entities |
+{: class="table table-striped"}
+
+### Return type
+
+**SkillGroupMemberEntityListing**
+
+<a name="getRoutingSkillgroupMembersDivisions"></a>
+
+# SkillGroupMemberDivisionList getRoutingSkillgroupMembersDivisions(skillGroupId, opts)
+
+
+GET /api/v2/routing/skillgroups/{skillGroupId}/members/divisions
+
+Get list of member divisions for this skill group.
+
+Requires ANY permissions:
+
+* routing:skillGroup:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.RoutingApi();
+
+let skillGroupId = "skillGroupId_example"; // String | Skill Group ID
+let opts = { 
+  'expand': "expand_example" // String | Expand the name on each user
+};
+
+apiInstance.getRoutingSkillgroupMembersDivisions(skillGroupId, opts)
+  .then((data) => {
+    console.log(`getRoutingSkillgroupMembersDivisions success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getRoutingSkillgroupMembersDivisions');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **skillGroupId** | **String** | Skill Group ID |  |
+ **expand** | **String** | Expand the name on each user | [optional] <br />**Values**: entities |
+{: class="table table-striped"}
+
+### Return type
+
+**SkillGroupMemberDivisionList**
+
+<a name="getRoutingSkillgroups"></a>
+
+# SkillGroupEntityListing getRoutingSkillgroups(opts)
+
+
+GET /api/v2/routing/skillgroups
+
+Get skill group listing
+
+Requires ANY permissions:
+
+* routing:skillGroup:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.RoutingApi();
+
+let opts = { 
+  'pageSize': 25, // Number | Page size
+  'name': "name_example", // String | Return only skill group names whose names start with this value (case-insensitive matching)
+  'after': "after_example", // String | The cursor that points to the next item
+  'before': "before_example" // String | The cursor that points to the previous item
+};
+
+apiInstance.getRoutingSkillgroups(opts)
+  .then((data) => {
+    console.log(`getRoutingSkillgroups success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getRoutingSkillgroups');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **name** | **String** | Return only skill group names whose names start with this value (case-insensitive matching) | [optional]  |
+ **after** | **String** | The cursor that points to the next item | [optional]  |
+ **before** | **String** | The cursor that points to the previous item | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**SkillGroupEntityListing**
+
 <a name="getRoutingSkills"></a>
 
 # SkillEntityListing getRoutingSkills(opts)
@@ -4270,6 +4550,58 @@ apiInstance.patchRoutingSettingsContactcenter(body)
 
 void (no response body)
 
+<a name="patchRoutingSkillgroup"></a>
+
+# SkillGroup patchRoutingSkillgroup(skillGroupId, body)
+
+
+PATCH /api/v2/routing/skillgroups/{skillGroupId}
+
+Update skill group definition
+
+Requires ANY permissions:
+
+* routing:skillGroup:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.RoutingApi();
+
+let skillGroupId = "skillGroupId_example"; // String | Skill Group ID
+let body = {}; // Object | Update skill groups
+
+apiInstance.patchRoutingSkillgroup(skillGroupId, body)
+  .then((data) => {
+    console.log(`patchRoutingSkillgroup success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchRoutingSkillgroup');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **skillGroupId** | **String** | Skill Group ID |  |
+ **body** | **Object** | Update skill groups |  |
+{: class="table table-striped"}
+
+### Return type
+
+**SkillGroup**
+
 <a name="patchUserQueue"></a>
 
 # UserQueue patchUserQueue(queueId, userId, body)
@@ -5274,6 +5606,110 @@ apiInstance.postRoutingQueues(body)
 ### Return type
 
 **Queue**
+
+<a name="postRoutingSkillgroupMembersDivisions"></a>
+
+# void postRoutingSkillgroupMembersDivisions(skillGroupId, opts)
+
+
+POST /api/v2/routing/skillgroups/{skillGroupId}/members/divisions
+
+Add or remove member divisions for this skill group.
+
+Requires ALL permissions:
+
+* routing:skillGroup:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.RoutingApi();
+
+let skillGroupId = "skillGroupId_example"; // String | Skill Group ID
+let opts = { 
+  'body': {} // Object | 
+};
+
+apiInstance.postRoutingSkillgroupMembersDivisions(skillGroupId, opts)
+  .then(() => {
+    console.log('postRoutingSkillgroupMembersDivisions returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postRoutingSkillgroupMembersDivisions');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **skillGroupId** | **String** | Skill Group ID |  |
+ **body** | **Object** |  | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
+
+<a name="postRoutingSkillgroups"></a>
+
+# SkillGroup postRoutingSkillgroups(body)
+
+
+POST /api/v2/routing/skillgroups
+
+Create a skill group
+
+Requires ANY permissions:
+
+* routing:skillGroup:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.RoutingApi();
+
+let body = {}; // Object | Create skill group
+
+apiInstance.postRoutingSkillgroups(body)
+  .then((data) => {
+    console.log(`postRoutingSkillgroups success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postRoutingSkillgroups');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | Create skill group |  |
+{: class="table table-striped"}
+
+### Return type
+
+**SkillGroup**
 
 <a name="postRoutingSkills"></a>
 

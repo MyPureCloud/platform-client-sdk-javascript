@@ -288,6 +288,7 @@ docs/deleteRoutingQueueUser-example.txt
 docs/deleteRoutingQueueWrapupcode-example.txt
 docs/deleteRoutingSettings-example.txt
 docs/deleteRoutingSkill-example.txt
+docs/deleteRoutingSkillgroup-example.txt
 docs/deleteRoutingSmsAddress-example.txt
 docs/deleteRoutingSmsPhonenumber-example.txt
 docs/deleteRoutingUserUtilization-example.txt
@@ -616,7 +617,6 @@ docs/getGamificationLeaderboard-example.txt
 docs/getGamificationLeaderboardAll-example.txt
 docs/getGamificationLeaderboardAllBestpoints-example.txt
 docs/getGamificationLeaderboardBestpoints-example.txt
-docs/getGamificationMetric-example.txt
 docs/getGamificationMetricdefinition-example.txt
 docs/getGamificationMetricdefinitions-example.txt
 docs/getGamificationProfile-example.txt
@@ -999,6 +999,10 @@ docs/getRoutingSettings-example.txt
 docs/getRoutingSettingsContactcenter-example.txt
 docs/getRoutingSettingsTranscription-example.txt
 docs/getRoutingSkill-example.txt
+docs/getRoutingSkillgroup-example.txt
+docs/getRoutingSkillgroupMembers-example.txt
+docs/getRoutingSkillgroupMembersDivisions-example.txt
+docs/getRoutingSkillgroups-example.txt
 docs/getRoutingSkills-example.txt
 docs/getRoutingSmsAddress-example.txt
 docs/getRoutingSmsAddresses-example.txt
@@ -1366,6 +1370,7 @@ docs/patchRoutingQueueMembers-example.txt
 docs/patchRoutingQueueUser-example.txt
 docs/patchRoutingQueueUsers-example.txt
 docs/patchRoutingSettingsContactcenter-example.txt
+docs/patchRoutingSkillgroup-example.txt
 docs/patchScimGroup-example.txt
 docs/patchScimUser-example.txt
 docs/patchScimV2Group-example.txt
@@ -1409,6 +1414,7 @@ docs/patchWorkforcemanagementManagementunitWorkplan-example.txt
 docs/patchWorkforcemanagementManagementunitWorkplanrotation-example.txt
 docs/patchWorkforcemanagementTimeoffrequest-example.txt
 docs/postAlertingInteractionstatsRules-example.txt
+docs/postAnalyticsActionsAggregatesQuery-example.txt
 docs/postAnalyticsBotsAggregatesQuery-example.txt
 docs/postAnalyticsConversationDetailsProperties-example.txt
 docs/postAnalyticsConversationDetailsProperties-example.txt
@@ -1750,6 +1756,8 @@ docs/postRoutingQueueMembers-example.txt
 docs/postRoutingQueueUsers-example.txt
 docs/postRoutingQueueWrapupcodes-example.txt
 docs/postRoutingQueues-example.txt
+docs/postRoutingSkillgroupMembersDivisions-example.txt
+docs/postRoutingSkillgroups-example.txt
 docs/postRoutingSkills-example.txt
 docs/postRoutingSmsAddresses-example.txt
 docs/postRoutingSmsPhonenumbers-example.txt
@@ -1940,7 +1948,6 @@ docs/putFlowsDatatable-example.txt
 docs/putFlowsDatatableRow-example.txt
 docs/putFlowsMilestone-example.txt
 docs/putFlowsOutcome-example.txt
-docs/putGamificationMetric-example.txt
 docs/putGamificationProfile-example.txt
 docs/putGamificationProfileMetric-example.txt
 docs/putGamificationStatus-example.txt

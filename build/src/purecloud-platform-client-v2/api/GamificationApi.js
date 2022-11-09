@@ -5,7 +5,7 @@ class GamificationApi {
 	/**
 	 * Gamification service.
 	 * @module purecloud-platform-client-v2/api/GamificationApi
-	 * @version 151.0.0
+	 * @version 152.0.0
 	 */
 
 	/**
@@ -214,36 +214,6 @@ class GamificationApi {
 			'GET', 
 			{  },
 			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Gamified metric by id
-	 * This API is deprecated. Use /api/v2/gamification/profiles/{profileId}/metrics/{metricId} instead.
-	 * @param {String} metricId metric Id
-	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.workday The objective query workday. If not specified, then it retrieves the current objective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
-	 * @param {String} opts.performanceProfileId The profile id of the metrics you are trying to retrieve. The DEFAULT profile is used if nothing is given.
-	 */
-	getGamificationMetric(metricId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'metricId' is set
-		if (metricId === undefined || metricId === null) {
-			throw 'Missing the required parameter "metricId" when calling getGamificationMetric';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/gamification/metrics/{metricId}', 
-			'GET', 
-			{ 'metricId': metricId },
-			{ 'workday': opts['workday'],'performanceProfileId': opts['performanceProfileId'] },
 			{  },
 			{  },
 			null, 
@@ -1548,40 +1518,6 @@ class GamificationApi {
 			'POST', 
 			{  },
 			{ 'copyMetrics': opts['copyMetrics'] },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Updates a metric
-	 * This API is deprecated. Use /api/v2/gamification/profiles/{profileId}/metrics/{metricId} instead.
-	 * @param {String} metricId metric Id
-	 * @param {Object} body Metric
-	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.performanceProfileId The profile id of the metrics you are trying to retrieve. The DEFAULT profile is used if nothing is given.
-	 */
-	putGamificationMetric(metricId, body, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'metricId' is set
-		if (metricId === undefined || metricId === null) {
-			throw 'Missing the required parameter "metricId" when calling putGamificationMetric';
-		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putGamificationMetric';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/gamification/metrics/{metricId}', 
-			'PUT', 
-			{ 'metricId': metricId },
-			{ 'performanceProfileId': opts['performanceProfileId'] },
 			{  },
 			{  },
 			body, 

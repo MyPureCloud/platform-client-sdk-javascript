@@ -5,7 +5,7 @@ class ArchitectApi {
 	/**
 	 * Architect service.
 	 * @module purecloud-platform-client-v2/api/ArchitectApi
-	 * @version 151.0.0
+	 * @version 152.0.0
 	 */
 
 	/**
@@ -1598,6 +1598,7 @@ class ArchitectApi {
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Boolean} opts.showbrief If true returns just the key value of the row (default to true)
+	 * @param {Object} opts.sortOrder Sort order (default to ascending)
 	 */
 	getFlowsDatatableRows(datatableId, opts) { 
 		opts = opts || {};
@@ -1611,7 +1612,7 @@ class ArchitectApi {
 			'/api/v2/flows/datatables/{datatableId}/rows', 
 			'GET', 
 			{ 'datatableId': datatableId },
-			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'showbrief': opts['showbrief'] },
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'showbrief': opts['showbrief'],'sortOrder': opts['sortOrder'] },
 			{  },
 			{  },
 			null, 
@@ -1631,7 +1632,7 @@ class ArchitectApi {
 	 * @param {Object} opts.sortBy Sort by (default to id)
 	 * @param {String} opts.sortOrder Sort order (default to ascending)
 	 * @param {Array.<String>} opts.divisionId division ID(s)
-	 * @param {String} opts.name Name to filter by
+	 * @param {String} opts.name Filter by Name. The wildcard character * is supported within the filter. Matches are case-insensitive.
 	 */
 	getFlowsDatatables(opts) { 
 		opts = opts || {};
@@ -1690,7 +1691,7 @@ class ArchitectApi {
 	 * @param {Object} opts.sortBy Sort by (default to id)
 	 * @param {String} opts.sortOrder Sort order (default to ascending)
 	 * @param {Array.<String>} opts.divisionId division ID(s)
-	 * @param {String} opts.name Name to filter by
+	 * @param {String} opts.name Filter by Name. The wildcard character * is supported within the filter. Matches are case-insensitive.
 	 */
 	getFlowsDatatablesDivisionviews(opts) { 
 		opts = opts || {};

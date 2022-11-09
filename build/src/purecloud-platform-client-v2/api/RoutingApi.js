@@ -5,7 +5,7 @@ class RoutingApi {
 	/**
 	 * Routing service.
 	 * @module purecloud-platform-client-v2/api/RoutingApi
-	 * @version 151.0.0
+	 * @version 152.0.0
 	 */
 
 	/**
@@ -304,6 +304,31 @@ class RoutingApi {
 			'/api/v2/routing/skills/{skillId}', 
 			'DELETE', 
 			{ 'skillId': skillId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Remove skill group definition
+	 * 
+	 * @param {String} skillGroupId Skill Group ID
+	 */
+	deleteRoutingSkillgroup(skillGroupId) { 
+		// verify the required parameter 'skillGroupId' is set
+		if (skillGroupId === undefined || skillGroupId === null) {
+			throw 'Missing the required parameter "skillGroupId" when calling deleteRoutingSkillgroup';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/skillgroups/{skillGroupId}', 
+			'DELETE', 
+			{ 'skillGroupId': skillGroupId },
 			{  },
 			{  },
 			{  },
@@ -1500,6 +1525,119 @@ class RoutingApi {
 	}
 
 	/**
+	 * Get skill group
+	 * 
+	 * @param {String} skillGroupId Skill Group ID
+	 */
+	getRoutingSkillgroup(skillGroupId) { 
+		// verify the required parameter 'skillGroupId' is set
+		if (skillGroupId === undefined || skillGroupId === null) {
+			throw 'Missing the required parameter "skillGroupId" when calling getRoutingSkillgroup';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/skillgroups/{skillGroupId}', 
+			'GET', 
+			{ 'skillGroupId': skillGroupId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get skill group members
+	 * 
+	 * @param {String} skillGroupId Skill Group ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {String} opts.after The cursor that points to the next item
+	 * @param {String} opts.before The cursor that points to the previous item
+	 * @param {Object} opts.expand Expand the name on each user
+	 */
+	getRoutingSkillgroupMembers(skillGroupId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'skillGroupId' is set
+		if (skillGroupId === undefined || skillGroupId === null) {
+			throw 'Missing the required parameter "skillGroupId" when calling getRoutingSkillgroupMembers';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/skillgroups/{skillGroupId}/members', 
+			'GET', 
+			{ 'skillGroupId': skillGroupId },
+			{ 'pageSize': opts['pageSize'],'after': opts['after'],'before': opts['before'],'expand': opts['expand'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get list of member divisions for this skill group.
+	 * 
+	 * @param {String} skillGroupId Skill Group ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.expand Expand the name on each user
+	 */
+	getRoutingSkillgroupMembersDivisions(skillGroupId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'skillGroupId' is set
+		if (skillGroupId === undefined || skillGroupId === null) {
+			throw 'Missing the required parameter "skillGroupId" when calling getRoutingSkillgroupMembersDivisions';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/skillgroups/{skillGroupId}/members/divisions', 
+			'GET', 
+			{ 'skillGroupId': skillGroupId },
+			{ 'expand': opts['expand'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get skill group listing
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {String} opts.name Return only skill group names whose names start with this value (case-insensitive matching)
+	 * @param {String} opts.after The cursor that points to the next item
+	 * @param {String} opts.before The cursor that points to the previous item
+	 */
+	getRoutingSkillgroups(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/skillgroups', 
+			'GET', 
+			{  },
+			{ 'pageSize': opts['pageSize'],'name': opts['name'],'after': opts['after'],'before': opts['before'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get the list of routing skills.
 	 * 
 	 * @param {Object} opts Optional parameters
@@ -2138,6 +2276,36 @@ class RoutingApi {
 	}
 
 	/**
+	 * Update skill group definition
+	 * 
+	 * @param {String} skillGroupId Skill Group ID
+	 * @param {Object} body Update skill groups
+	 */
+	patchRoutingSkillgroup(skillGroupId, body) { 
+		// verify the required parameter 'skillGroupId' is set
+		if (skillGroupId === undefined || skillGroupId === null) {
+			throw 'Missing the required parameter "skillGroupId" when calling patchRoutingSkillgroup';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchRoutingSkillgroup';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/skillgroups/{skillGroupId}', 
+			'PATCH', 
+			{ 'skillGroupId': skillGroupId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Join or unjoin a queue for a user
 	 * 
 	 * @param {String} queueId Queue ID
@@ -2668,6 +2836,60 @@ class RoutingApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/routing/queues', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Add or remove member divisions for this skill group.
+	 * 
+	 * @param {String} skillGroupId Skill Group ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body 
+	 */
+	postRoutingSkillgroupMembersDivisions(skillGroupId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'skillGroupId' is set
+		if (skillGroupId === undefined || skillGroupId === null) {
+			throw 'Missing the required parameter "skillGroupId" when calling postRoutingSkillgroupMembersDivisions';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/skillgroups/{skillGroupId}/members/divisions', 
+			'POST', 
+			{ 'skillGroupId': skillGroupId },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Create a skill group
+	 * 
+	 * @param {Object} body Create skill group
+	 */
+	postRoutingSkillgroups(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postRoutingSkillgroups';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/skillgroups', 
 			'POST', 
 			{  },
 			{  },

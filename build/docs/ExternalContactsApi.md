@@ -3083,7 +3083,6 @@ Merge two contacts into a new contact record
 
 Requires ANY permissions:
 
-* externalContacts:contact:edit
 * externalContacts:identity:merge
 
 ### Example Usage

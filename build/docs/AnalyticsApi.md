@@ -33,6 +33,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getAnalyticsUsersDetailsJobResults**](AnalyticsApi.html#getAnalyticsUsersDetailsJobResults) | **GET** /api/v2/analytics/users/details/jobs/{jobId}/results | Fetch a page of results for an async query
 [**getAnalyticsUsersDetailsJobsAvailability**](AnalyticsApi.html#getAnalyticsUsersDetailsJobsAvailability) | **GET** /api/v2/analytics/users/details/jobs/availability | Lookup the datalake availability date and time
 [**patchAnalyticsReportingSettings**](AnalyticsApi.html#patchAnalyticsReportingSettings) | **PATCH** /api/v2/analytics/reporting/settings | Patch AnalyticsReportingSettings values for an organization
+[**postAnalyticsActionsAggregatesQuery**](AnalyticsApi.html#postAnalyticsActionsAggregatesQuery) | **POST** /api/v2/analytics/actions/aggregates/query | Query for action aggregates
 [**postAnalyticsBotsAggregatesQuery**](AnalyticsApi.html#postAnalyticsBotsAggregatesQuery) | **POST** /api/v2/analytics/bots/aggregates/query | Query for bot aggregates
 [**postAnalyticsConversationDetailsProperties**](AnalyticsApi.html#postAnalyticsConversationDetailsProperties) | **POST** /api/v2/analytics/conversations/{conversationId}/details/properties | Index conversation properties
 [**postAnalyticsConversationsAggregatesQuery**](AnalyticsApi.html#postAnalyticsConversationsAggregatesQuery) | **POST** /api/v2/analytics/conversations/aggregates/query | Query for conversation aggregates
@@ -237,7 +238,8 @@ let opts = {
   'after': "after_example", // String | The cursor that points to the ID of the last item in the list of entities that has been returned.
   'pageSize': "50", // String | Max number of entities to return. Maximum of 250
   'actionId': "actionId_example", // String | Optional action ID to get the reporting turns associated to a particular flow action
-  'sessionId': "sessionId_example" // String | Optional session ID to get the reporting turns for a particular session
+  'sessionId': "sessionId_example", // String | Optional session ID to get the reporting turns for a particular session
+  'language': en-us // String | Optional language code to get the reporting turns for a particular language
 };
 
 apiInstance.getAnalyticsBotflowReportingturns(botFlowId, opts)
@@ -260,6 +262,7 @@ apiInstance.getAnalyticsBotflowReportingturns(botFlowId, opts)
  **pageSize** | **String** | Max number of entities to return. Maximum of 250 | [optional] [default to 50] |
  **actionId** | **String** | Optional action ID to get the reporting turns associated to a particular flow action | [optional]  |
  **sessionId** | **String** | Optional session ID to get the reporting turns for a particular session | [optional]  |
+ **language** | **String** | Optional language code to get the reporting turns for a particular language | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1369,6 +1372,57 @@ apiInstance.patchAnalyticsReportingSettings(body)
 ### Return type
 
 **AnalyticsReportingSettings**
+
+<a name="postAnalyticsActionsAggregatesQuery"></a>
+
+# ActionAggregateQueryResponse postAnalyticsActionsAggregatesQuery(body)
+
+
+POST /api/v2/analytics/actions/aggregates/query
+
+Query for action aggregates
+
+Requires ANY permissions:
+
+* integrations:action:view
+* bridge:actions:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AnalyticsApi();
+
+let body = {}; // Object | query
+
+apiInstance.postAnalyticsActionsAggregatesQuery(body)
+  .then((data) => {
+    console.log(`postAnalyticsActionsAggregatesQuery success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postAnalyticsActionsAggregatesQuery');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | query |  |
+{: class="table table-striped"}
+
+### Return type
+
+**ActionAggregateQueryResponse**
 
 <a name="postAnalyticsBotsAggregatesQuery"></a>
 

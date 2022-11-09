@@ -5,7 +5,7 @@ class ConversationsApi {
 	/**
 	 * Conversations service.
 	 * @module purecloud-platform-client-v2/api/ConversationsApi
-	 * @version 151.0.0
+	 * @version 152.0.0
 	 */
 
 	/**
@@ -1684,8 +1684,9 @@ class ConversationsApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
-	 * @param {Object} opts.expand Expand instructions for the return value.
+	 * @param {Array.<String>} opts.expand Expand instructions for the return value.
 	 * @param {String} opts.supportedContentId Filter integrations returned based on the supported content ID
+	 * @param {String} opts.messagingSettingId Filter integrations returned based on the setting ID
 	 */
 	getConversationsMessagingIntegrations(opts) { 
 		opts = opts || {};
@@ -1695,7 +1696,7 @@ class ConversationsApi {
 			'/api/v2/conversations/messaging/integrations', 
 			'GET', 
 			{  },
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'expand': opts['expand'],'supportedContent.id': opts['supportedContentId'] },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'supportedContent.id': opts['supportedContentId'],'messagingSetting.id': opts['messagingSettingId'] },
 			{  },
 			{  },
 			null, 
@@ -1713,6 +1714,7 @@ class ConversationsApi {
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Object} opts.expand Expand instructions for the return value.
 	 * @param {String} opts.supportedContentId Filter integrations returned based on the supported content ID
+	 * @param {String} opts.messagingSettingId Filter integrations returned based on the setting ID
 	 */
 	getConversationsMessagingIntegrationsFacebook(opts) { 
 		opts = opts || {};
@@ -1722,7 +1724,7 @@ class ConversationsApi {
 			'/api/v2/conversations/messaging/integrations/facebook', 
 			'GET', 
 			{  },
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'expand': opts['expand'],'supportedContent.id': opts['supportedContentId'] },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'expand': opts['expand'],'supportedContent.id': opts['supportedContentId'],'messagingSetting.id': opts['messagingSettingId'] },
 			{  },
 			{  },
 			null, 
@@ -1769,6 +1771,7 @@ class ConversationsApi {
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Object} opts.expand Expand instructions for the return value.
 	 * @param {String} opts.supportedContentId Filter integrations returned based on the supported content ID
+	 * @param {String} opts.messagingSettingId Filter integrations returned based on the setting ID
 	 */
 	getConversationsMessagingIntegrationsLine(opts) { 
 		opts = opts || {};
@@ -1778,7 +1781,7 @@ class ConversationsApi {
 			'/api/v2/conversations/messaging/integrations/line', 
 			'GET', 
 			{  },
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'expand': opts['expand'],'supportedContent.id': opts['supportedContentId'] },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'expand': opts['expand'],'supportedContent.id': opts['supportedContentId'],'messagingSetting.id': opts['messagingSettingId'] },
 			{  },
 			{  },
 			null, 
@@ -1825,6 +1828,7 @@ class ConversationsApi {
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Object} opts.expand Expand instructions for the return value.
 	 * @param {String} opts.supportedContentId Filter integrations returned based on the supported content ID
+	 * @param {String} opts.messagingSettingId Filter integrations returned based on the setting ID
 	 */
 	getConversationsMessagingIntegrationsOpen(opts) { 
 		opts = opts || {};
@@ -1834,7 +1838,7 @@ class ConversationsApi {
 			'/api/v2/conversations/messaging/integrations/open', 
 			'GET', 
 			{  },
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'expand': opts['expand'],'supportedContent.id': opts['supportedContentId'] },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'expand': opts['expand'],'supportedContent.id': opts['supportedContentId'],'messagingSetting.id': opts['messagingSettingId'] },
 			{  },
 			{  },
 			null, 
@@ -1881,6 +1885,7 @@ class ConversationsApi {
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Object} opts.expand Expand instructions for the return value.
 	 * @param {String} opts.supportedContentId Filter integrations returned based on the supported content ID
+	 * @param {String} opts.messagingSettingId Filter integrations returned based on the setting ID
 	 */
 	getConversationsMessagingIntegrationsTwitter(opts) { 
 		opts = opts || {};
@@ -1890,7 +1895,7 @@ class ConversationsApi {
 			'/api/v2/conversations/messaging/integrations/twitter', 
 			'GET', 
 			{  },
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'expand': opts['expand'],'supportedContent.id': opts['supportedContentId'] },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'expand': opts['expand'],'supportedContent.id': opts['supportedContentId'],'messagingSetting.id': opts['messagingSettingId'] },
 			{  },
 			{  },
 			null, 
@@ -1937,6 +1942,7 @@ class ConversationsApi {
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Object} opts.expand Expand instructions for the return value.
 	 * @param {String} opts.supportedContentId Filter integrations returned based on the supported content ID
+	 * @param {String} opts.messagingSettingId Filter integrations returned based on the setting ID
 	 */
 	getConversationsMessagingIntegrationsWhatsapp(opts) { 
 		opts = opts || {};
@@ -1946,7 +1952,7 @@ class ConversationsApi {
 			'/api/v2/conversations/messaging/integrations/whatsapp', 
 			'GET', 
 			{  },
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'expand': opts['expand'],'supportedContent.id': opts['supportedContentId'] },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'expand': opts['expand'],'supportedContent.id': opts['supportedContentId'],'messagingSetting.id': opts['messagingSettingId'] },
 			{  },
 			{  },
 			null, 

@@ -3268,8 +3268,9 @@ let apiInstance = new platformClient.ConversationsApi();
 let opts = { 
   'pageSize': 25, // Number | Page size
   'pageNumber': 1, // Number | Page number
-  'expand': "expand_example", // String | Expand instructions for the return value.
-  'supportedContentId': "supportedContentId_example" // String | Filter integrations returned based on the supported content ID
+  'expand': ["expand_example"], // [String] | Expand instructions for the return value.
+  'supportedContentId': "supportedContentId_example", // String | Filter integrations returned based on the supported content ID
+  'messagingSettingId': "messagingSettingId_example" // String | Filter integrations returned based on the setting ID
 };
 
 apiInstance.getConversationsMessagingIntegrations(opts)
@@ -3289,8 +3290,9 @@ apiInstance.getConversationsMessagingIntegrations(opts)
 | ------------- | ------------- | ------------- | ------------- |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
- **expand** | **String** | Expand instructions for the return value. | [optional] <br />**Values**: supportedContent |
+ **expand** | **[String]** | Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting |
  **supportedContentId** | **String** | Filter integrations returned based on the supported content ID | [optional]  |
+ **messagingSettingId** | **String** | Filter integrations returned based on the setting ID | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -3327,7 +3329,8 @@ let opts = {
   'pageSize': 25, // Number | Page size
   'pageNumber': 1, // Number | Page number
   'expand': "expand_example", // String | Expand instructions for the return value.
-  'supportedContentId': "supportedContentId_example" // String | Filter integrations returned based on the supported content ID
+  'supportedContentId': "supportedContentId_example", // String | Filter integrations returned based on the supported content ID
+  'messagingSettingId': "messagingSettingId_example" // String | Filter integrations returned based on the setting ID
 };
 
 apiInstance.getConversationsMessagingIntegrationsFacebook(opts)
@@ -3347,8 +3350,9 @@ apiInstance.getConversationsMessagingIntegrationsFacebook(opts)
 | ------------- | ------------- | ------------- | ------------- |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
- **expand** | **String** | Expand instructions for the return value. | [optional] <br />**Values**: supportedContent |
+ **expand** | **String** | Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting |
  **supportedContentId** | **String** | Filter integrations returned based on the supported content ID | [optional]  |
+ **messagingSettingId** | **String** | Filter integrations returned based on the setting ID | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -3402,7 +3406,7 @@ apiInstance.getConversationsMessagingIntegrationsFacebookIntegrationId(integrati
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **integrationId** | **String** | Integration ID |  |
- **expand** | **String** | Expand instructions for the return value. | [optional] <br />**Values**: supportedContent |
+ **expand** | **String** | Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting |
 {: class="table table-striped"}
 
 ### Return type
@@ -3439,7 +3443,8 @@ let opts = {
   'pageSize': 25, // Number | Page size
   'pageNumber': 1, // Number | Page number
   'expand': "expand_example", // String | Expand instructions for the return value.
-  'supportedContentId': "supportedContentId_example" // String | Filter integrations returned based on the supported content ID
+  'supportedContentId': "supportedContentId_example", // String | Filter integrations returned based on the supported content ID
+  'messagingSettingId': "messagingSettingId_example" // String | Filter integrations returned based on the setting ID
 };
 
 apiInstance.getConversationsMessagingIntegrationsLine(opts)
@@ -3459,8 +3464,9 @@ apiInstance.getConversationsMessagingIntegrationsLine(opts)
 | ------------- | ------------- | ------------- | ------------- |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
- **expand** | **String** | Expand instructions for the return value. | [optional] <br />**Values**: supportedContent |
+ **expand** | **String** | Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting |
  **supportedContentId** | **String** | Filter integrations returned based on the supported content ID | [optional]  |
+ **messagingSettingId** | **String** | Filter integrations returned based on the setting ID | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -3514,7 +3520,7 @@ apiInstance.getConversationsMessagingIntegrationsLineIntegrationId(integrationId
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **integrationId** | **String** | Integration ID |  |
- **expand** | **String** | Expand instructions for the return value. | [optional] <br />**Values**: supportedContent |
+ **expand** | **String** | Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting |
 {: class="table table-striped"}
 
 ### Return type
@@ -3553,7 +3559,8 @@ let opts = {
   'pageSize': 25, // Number | Page size
   'pageNumber': 1, // Number | Page number
   'expand': "expand_example", // String | Expand instructions for the return value.
-  'supportedContentId': "supportedContentId_example" // String | Filter integrations returned based on the supported content ID
+  'supportedContentId': "supportedContentId_example", // String | Filter integrations returned based on the supported content ID
+  'messagingSettingId': "messagingSettingId_example" // String | Filter integrations returned based on the setting ID
 };
 
 apiInstance.getConversationsMessagingIntegrationsOpen(opts)
@@ -3573,8 +3580,9 @@ apiInstance.getConversationsMessagingIntegrationsOpen(opts)
 | ------------- | ------------- | ------------- | ------------- |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
- **expand** | **String** | Expand instructions for the return value. | [optional] <br />**Values**: supportedContent |
+ **expand** | **String** | Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting |
  **supportedContentId** | **String** | Filter integrations returned based on the supported content ID | [optional]  |
+ **messagingSettingId** | **String** | Filter integrations returned based on the setting ID | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -3630,7 +3638,7 @@ apiInstance.getConversationsMessagingIntegrationsOpenIntegrationId(integrationId
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **integrationId** | **String** | Integration ID |  |
- **expand** | **String** | Expand instructions for the return value. | [optional] <br />**Values**: supportedContent |
+ **expand** | **String** | Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting |
 {: class="table table-striped"}
 
 ### Return type
@@ -3667,7 +3675,8 @@ let opts = {
   'pageSize': 25, // Number | Page size
   'pageNumber': 1, // Number | Page number
   'expand': "expand_example", // String | Expand instructions for the return value.
-  'supportedContentId': "supportedContentId_example" // String | Filter integrations returned based on the supported content ID
+  'supportedContentId': "supportedContentId_example", // String | Filter integrations returned based on the supported content ID
+  'messagingSettingId': "messagingSettingId_example" // String | Filter integrations returned based on the setting ID
 };
 
 apiInstance.getConversationsMessagingIntegrationsTwitter(opts)
@@ -3687,8 +3696,9 @@ apiInstance.getConversationsMessagingIntegrationsTwitter(opts)
 | ------------- | ------------- | ------------- | ------------- |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
- **expand** | **String** | Expand instructions for the return value. | [optional] <br />**Values**: supportedContent |
+ **expand** | **String** | Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting |
  **supportedContentId** | **String** | Filter integrations returned based on the supported content ID | [optional]  |
+ **messagingSettingId** | **String** | Filter integrations returned based on the setting ID | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -3742,7 +3752,7 @@ apiInstance.getConversationsMessagingIntegrationsTwitterIntegrationId(integratio
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **integrationId** | **String** | Integration ID |  |
- **expand** | **String** | Expand instructions for the return value. | [optional] <br />**Values**: supportedContent |
+ **expand** | **String** | Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting |
 {: class="table table-striped"}
 
 ### Return type
@@ -3779,7 +3789,8 @@ let opts = {
   'pageSize': 25, // Number | Page size
   'pageNumber': 1, // Number | Page number
   'expand': "expand_example", // String | Expand instructions for the return value.
-  'supportedContentId': "supportedContentId_example" // String | Filter integrations returned based on the supported content ID
+  'supportedContentId': "supportedContentId_example", // String | Filter integrations returned based on the supported content ID
+  'messagingSettingId': "messagingSettingId_example" // String | Filter integrations returned based on the setting ID
 };
 
 apiInstance.getConversationsMessagingIntegrationsWhatsapp(opts)
@@ -3799,8 +3810,9 @@ apiInstance.getConversationsMessagingIntegrationsWhatsapp(opts)
 | ------------- | ------------- | ------------- | ------------- |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
- **expand** | **String** | Expand instructions for the return value. | [optional] <br />**Values**: supportedContent |
+ **expand** | **String** | Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting |
  **supportedContentId** | **String** | Filter integrations returned based on the supported content ID | [optional]  |
+ **messagingSettingId** | **String** | Filter integrations returned based on the setting ID | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -3854,7 +3866,7 @@ apiInstance.getConversationsMessagingIntegrationsWhatsappIntegrationId(integrati
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **integrationId** | **String** | Integration ID |  |
- **expand** | **String** | Expand instructions for the return value. | [optional] <br />**Values**: supportedContent |
+ **expand** | **String** | Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting |
 {: class="table table-striped"}
 
 ### Return type
