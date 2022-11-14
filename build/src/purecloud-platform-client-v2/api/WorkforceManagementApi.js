@@ -5,7 +5,7 @@ class WorkforceManagementApi {
 	/**
 	 * WorkforceManagement service.
 	 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-	 * @version 152.0.0
+	 * @version 153.0.0
 	 */
 
 	/**
@@ -426,6 +426,56 @@ class WorkforceManagementApi {
 	}
 
 	/**
+	 * Get an adherence explanation for the current user
+	 * 
+	 * @param {String} explanationId The ID of the explanation to update
+	 */
+	getWorkforcemanagementAdherenceExplanation(explanationId) { 
+		// verify the required parameter 'explanationId' is set
+		if (explanationId === undefined || explanationId === null) {
+			throw 'Missing the required parameter "explanationId" when calling getWorkforcemanagementAdherenceExplanation';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/adherence/explanations/{explanationId}', 
+			'GET', 
+			{ 'explanationId': explanationId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Query the status of an adherence explanation operation. Only the user who started the operation can query the status
+	 * Job details are only retained if the initial request returned a 202 ACCEPTED response
+	 * @param {String} jobId The ID of the job
+	 */
+	getWorkforcemanagementAdherenceExplanationsJob(jobId) { 
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null) {
+			throw 'Missing the required parameter "jobId" when calling getWorkforcemanagementAdherenceExplanationsJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/adherence/explanations/jobs/{jobId}', 
+			'GET', 
+			{ 'jobId': jobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Query the status of a historical adherence request operation. Only the user who started the operation can query the status
 	 * Job details are only retained if the initial request returned a 202 ACCEPTED response
 	 * @param {String} jobId jobId
@@ -465,6 +515,36 @@ class WorkforceManagementApi {
 			'/api/v2/workforcemanagement/adhocmodelingjobs/{jobId}', 
 			'GET', 
 			{ 'jobId': jobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get an adherence explanation
+	 * 
+	 * @param {String} agentId The ID of the agent to query
+	 * @param {String} explanationId The ID of the explanation to update
+	 */
+	getWorkforcemanagementAgentAdherenceExplanation(agentId, explanationId) { 
+		// verify the required parameter 'agentId' is set
+		if (agentId === undefined || agentId === null) {
+			throw 'Missing the required parameter "agentId" when calling getWorkforcemanagementAgentAdherenceExplanation';
+		}
+		// verify the required parameter 'explanationId' is set
+		if (explanationId === undefined || explanationId === null) {
+			throw 'Missing the required parameter "explanationId" when calling getWorkforcemanagementAgentAdherenceExplanation';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/agents/{agentId}/adherence/explanations/{explanationId}', 
+			'GET', 
+			{ 'agentId': agentId,'explanationId': explanationId },
 			{  },
 			{  },
 			{  },
@@ -2195,6 +2275,31 @@ class WorkforceManagementApi {
 	}
 
 	/**
+	 * Request to fetch the status of the historical shrinkage query
+	 * 
+	 * @param {String} jobId jobId
+	 */
+	getWorkforcemanagementShrinkageJob(jobId) { 
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null) {
+			throw 'Missing the required parameter "jobId" when calling getWorkforcemanagementShrinkageJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/shrinkage/jobs/{jobId}', 
+			'GET', 
+			{ 'jobId': jobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get a time off request for the current user
 	 * 
 	 * @param {String} timeOffRequestId The ID of the time off request
@@ -2262,6 +2367,41 @@ class WorkforceManagementApi {
 			{  },
 			{  },
 			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update an adherence explanation
+	 * 
+	 * @param {String} agentId The ID of the agent to query
+	 * @param {String} explanationId The ID of the explanation to update
+	 * @param {Object} body The request body
+	 */
+	patchWorkforcemanagementAgentAdherenceExplanation(agentId, explanationId, body) { 
+		// verify the required parameter 'agentId' is set
+		if (agentId === undefined || agentId === null) {
+			throw 'Missing the required parameter "agentId" when calling patchWorkforcemanagementAgentAdherenceExplanation';
+		}
+		// verify the required parameter 'explanationId' is set
+		if (explanationId === undefined || explanationId === null) {
+			throw 'Missing the required parameter "explanationId" when calling patchWorkforcemanagementAgentAdherenceExplanation';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchWorkforcemanagementAgentAdherenceExplanation';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/agents/{agentId}/adherence/explanations/{explanationId}', 
+			'PATCH', 
+			{ 'agentId': agentId,'explanationId': explanationId },
+			{  },
+			{  },
+			{  },
+			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']
@@ -2708,6 +2848,61 @@ class WorkforceManagementApi {
 	}
 
 	/**
+	 * Submit an adherence explanation for the current user
+	 * 
+	 * @param {Object} body The request body
+	 */
+	postWorkforcemanagementAdherenceExplanations(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postWorkforcemanagementAdherenceExplanations';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/adherence/explanations', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Query adherence explanations for the current user
+	 * 
+	 * @param {Object} body The request body
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.forceAsync Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes
+	 * @param {Boolean} opts.forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes
+	 */
+	postWorkforcemanagementAdherenceExplanationsQuery(body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postWorkforcemanagementAdherenceExplanationsQuery';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/adherence/explanations/query', 
+			'POST', 
+			{  },
+			{ 'forceAsync': opts['forceAsync'],'forceDownloadService': opts['forceDownloadService'] },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Request a historical adherence report for users across management units
 	 * 
 	 * @param {Object} opts Optional parameters
@@ -2725,6 +2920,71 @@ class WorkforceManagementApi {
 			{  },
 			{  },
 			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Add an adherence explanation for the requested user
+	 * 
+	 * @param {String} agentId The ID of the agent to query
+	 * @param {Object} body The request body
+	 */
+	postWorkforcemanagementAgentAdherenceExplanations(agentId, body) { 
+		// verify the required parameter 'agentId' is set
+		if (agentId === undefined || agentId === null) {
+			throw 'Missing the required parameter "agentId" when calling postWorkforcemanagementAgentAdherenceExplanations';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postWorkforcemanagementAgentAdherenceExplanations';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/agents/{agentId}/adherence/explanations', 
+			'POST', 
+			{ 'agentId': agentId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Query adherence explanations for the given agent across a specified range
+	 * 
+	 * @param {String} agentId The ID of the agent to query
+	 * @param {Object} body The request body
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.forceAsync Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes
+	 * @param {Boolean} opts.forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes
+	 */
+	postWorkforcemanagementAgentAdherenceExplanationsQuery(agentId, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'agentId' is set
+		if (agentId === undefined || agentId === null) {
+			throw 'Missing the required parameter "agentId" when calling postWorkforcemanagementAgentAdherenceExplanationsQuery';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postWorkforcemanagementAgentAdherenceExplanationsQuery';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/agents/{agentId}/adherence/explanations/query', 
+			'POST', 
+			{ 'agentId': agentId },
+			{ 'forceAsync': opts['forceAsync'],'forceDownloadService': opts['forceDownloadService'] },
+			{  },
+			{  },
+			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']
@@ -2778,6 +3038,41 @@ class WorkforceManagementApi {
 			{  },
 			{  },
 			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Query adherence explanations across an entire business unit for the requested period
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {Object} body The request body
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.forceAsync Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes
+	 * @param {Boolean} opts.forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes
+	 */
+	postWorkforcemanagementBusinessunitAdherenceExplanationsQuery(businessUnitId, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null) {
+			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitAdherenceExplanationsQuery';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitAdherenceExplanationsQuery';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/adherence/explanations/query', 
+			'POST', 
+			{ 'businessUnitId': businessUnitId },
+			{ 'forceAsync': opts['forceAsync'],'forceDownloadService': opts['forceDownloadService'] },
+			{  },
+			{  },
+			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']
@@ -3599,6 +3894,35 @@ class WorkforceManagementApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/schedules/search', 
+			'POST', 
+			{ 'managementUnitId': managementUnitId },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Request a historical shrinkage report
+	 * The maximum supported range for historical shrinkage queries is up to 32 days. Historical Shrinkage for a given date range can be queried in two modes - granular and aggregated. To see granular shrinkage information, provide granularity in the request body. 
+	 * @param {String} managementUnitId The ID of the management unit
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body body
+	 */
+	postWorkforcemanagementManagementunitShrinkageJobs(managementUnitId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'managementUnitId' is set
+		if (managementUnitId === undefined || managementUnitId === null) {
+			throw 'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitShrinkageJobs';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/shrinkage/jobs', 
 			'POST', 
 			{ 'managementUnitId': managementUnitId },
 			{  },

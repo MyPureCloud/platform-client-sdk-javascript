@@ -642,11 +642,13 @@ declare class AuthorizationApi {
   	getAuthorizationRoleSubjectgrants(roleId: string, opts?: AuthorizationApi.getAuthorizationRoleSubjectgrantsOptions): Promise<Models.SubjectDivisionGrantsEntityListing>; 
   	getAuthorizationRoleUsers(roleId: string, opts?: AuthorizationApi.getAuthorizationRoleUsersOptions): Promise<Models.UserEntityListing>; 
   	getAuthorizationRoles(opts?: AuthorizationApi.getAuthorizationRolesOptions): Promise<Models.OrganizationRoleEntityListing>; 
+  	getAuthorizationSettings(): Promise<Models.AuthorizationSettings>; 
   	getAuthorizationSubject(subjectId: string): Promise<Models.AuthzSubject>; 
   	getAuthorizationSubjectsMe(): Promise<Models.AuthzSubject>; 
   	getAuthorizationSubjectsRolecounts(opts?: AuthorizationApi.getAuthorizationSubjectsRolecountsOptions): Promise<{ [key: string]: object; }>; 
   	getUserRoles(subjectId: string): Promise<Models.UserAuthorization>; 
   	patchAuthorizationRole(roleId: string, body: Models.DomainOrganizationRole): Promise<Models.DomainOrganizationRole>; 
+  	patchAuthorizationSettings(body: Models.AuthorizationSettings): Promise<Models.AuthorizationSettings>; 
   	postAuthorizationDivisionObject(divisionId: string, objectType: string, body: Array<string>): Promise<void>; 
   	postAuthorizationDivisionRestore(divisionId: string, body: Models.AuthzDivision): Promise<Models.AuthzDivision>; 
   	postAuthorizationDivisions(body: Models.AuthzDivision): Promise<Models.AuthzDivision>; 
@@ -3847,6 +3849,8 @@ declare namespace RoutingApi {
 		"pattern"?: string;
 	}
 	export interface getRoutingEmailDomainsOptions { 
+		"pageSize"?: number;
+		"pageNumber"?: number;
 		"excludeStatus"?: boolean;
 	}
 	export interface getRoutingLanguagesOptions { 
@@ -5264,8 +5268,11 @@ declare class WorkforceManagementApi {
   	deleteWorkforcemanagementManagementunitWorkplan(managementUnitId: string, workPlanId: string): Promise<void>; 
   	deleteWorkforcemanagementManagementunitWorkplanrotation(managementUnitId: string, workPlanRotationId: string): Promise<void>; 
   	getWorkforcemanagementAdherence(userId: Array<string>): Promise<Array<Models.UserScheduleAdherence>>; 
+  	getWorkforcemanagementAdherenceExplanation(explanationId: string): Promise<Models.AdherenceExplanationResponse>; 
+  	getWorkforcemanagementAdherenceExplanationsJob(jobId: string): Promise<Models.AdherenceExplanationJob>; 
   	getWorkforcemanagementAdherenceHistoricalJob(jobId: string): Promise<Models.WfmHistoricalAdherenceResponse>; 
   	getWorkforcemanagementAdhocmodelingjob(jobId: string): Promise<Models.ModelingStatusResponse>; 
+  	getWorkforcemanagementAgentAdherenceExplanation(agentId: string, explanationId: string): Promise<Models.AdherenceExplanationResponse>; 
   	getWorkforcemanagementAgentManagementunit(agentId: string): Promise<Models.AgentManagementUnitReference>; 
   	getWorkforcemanagementAgentsMeManagementunit(): Promise<Models.AgentManagementUnitReference>; 
   	getWorkforcemanagementBusinessunit(businessUnitId: string, opts?: WorkforceManagementApi.getWorkforcemanagementBusinessunitOptions): Promise<Models.BusinessUnitResponse>; 
@@ -5324,9 +5331,11 @@ declare class WorkforceManagementApi {
   	getWorkforcemanagementNotifications(): Promise<Models.NotificationsResponse>; 
   	getWorkforcemanagementSchedulingjob(jobId: string): Promise<Models.SchedulingStatusResponse>; 
   	getWorkforcemanagementShifttrades(): Promise<Models.ShiftTradeListResponse>; 
+  	getWorkforcemanagementShrinkageJob(jobId: string): Promise<Models.WfmHistoricalShrinkageResponse>; 
   	getWorkforcemanagementTimeoffrequest(timeOffRequestId: string): Promise<Models.TimeOffRequestResponse>; 
   	getWorkforcemanagementTimeoffrequestWaitlistpositions(timeOffRequestId: string): Promise<Models.WaitlistPositionListing>; 
   	getWorkforcemanagementTimeoffrequests(opts?: WorkforceManagementApi.getWorkforcemanagementTimeoffrequestsOptions): Promise<Models.TimeOffRequestList>; 
+  	patchWorkforcemanagementAgentAdherenceExplanation(agentId: string, explanationId: string, body: Models.UpdateAdherenceExplanationStatusRequest): Promise<Models.AdherenceExplanationAsyncResponse>; 
   	patchWorkforcemanagementBusinessunit(businessUnitId: string, opts?: WorkforceManagementApi.patchWorkforcemanagementBusinessunitOptions): Promise<Models.BusinessUnitResponse>; 
   	patchWorkforcemanagementBusinessunitActivitycode(businessUnitId: string, activityCodeId: string, opts?: WorkforceManagementApi.patchWorkforcemanagementBusinessunitActivitycodeOptions): Promise<Models.BusinessUnitActivityCode>; 
   	patchWorkforcemanagementBusinessunitPlanninggroup(businessUnitId: string, planningGroupId: string, opts?: WorkforceManagementApi.patchWorkforcemanagementBusinessunitPlanninggroupOptions): Promise<Models.PlanningGroup>; 
@@ -5340,9 +5349,14 @@ declare class WorkforceManagementApi {
   	patchWorkforcemanagementManagementunitWorkplan(managementUnitId: string, workPlanId: string, opts?: WorkforceManagementApi.patchWorkforcemanagementManagementunitWorkplanOptions): Promise<Models.WorkPlan>; 
   	patchWorkforcemanagementManagementunitWorkplanrotation(managementUnitId: string, workPlanRotationId: string, opts?: WorkforceManagementApi.patchWorkforcemanagementManagementunitWorkplanrotationOptions): Promise<Models.WorkPlanRotationResponse>; 
   	patchWorkforcemanagementTimeoffrequest(timeOffRequestId: string, opts?: WorkforceManagementApi.patchWorkforcemanagementTimeoffrequestOptions): Promise<Models.TimeOffRequestResponse>; 
+  	postWorkforcemanagementAdherenceExplanations(body: Models.AddAdherenceExplanationAgentRequest): Promise<Models.AdherenceExplanationAsyncResponse>; 
+  	postWorkforcemanagementAdherenceExplanationsQuery(body: Models.AgentQueryAdherenceExplanationsRequest, opts?: WorkforceManagementApi.postWorkforcemanagementAdherenceExplanationsQueryOptions): Promise<Models.QueryAdherenceExplanationsResponse>; 
   	postWorkforcemanagementAdherenceHistorical(opts?: WorkforceManagementApi.postWorkforcemanagementAdherenceHistoricalOptions): Promise<Models.WfmHistoricalAdherenceResponse>; 
+  	postWorkforcemanagementAgentAdherenceExplanations(agentId: string, body: Models.AddAdherenceExplanationAdminRequest): Promise<Models.AdherenceExplanationAsyncResponse>; 
+  	postWorkforcemanagementAgentAdherenceExplanationsQuery(agentId: string, body: Models.AgentQueryAdherenceExplanationsRequest, opts?: WorkforceManagementApi.postWorkforcemanagementAgentAdherenceExplanationsQueryOptions): Promise<Models.AgentQueryAdherenceExplanationsResponse>; 
   	postWorkforcemanagementAgentschedulesMine(opts?: WorkforceManagementApi.postWorkforcemanagementAgentschedulesMineOptions): Promise<Models.BuCurrentAgentScheduleSearchResponse>; 
   	postWorkforcemanagementBusinessunitActivitycodes(businessUnitId: string, opts?: WorkforceManagementApi.postWorkforcemanagementBusinessunitActivitycodesOptions): Promise<Models.BusinessUnitActivityCode>; 
+  	postWorkforcemanagementBusinessunitAdherenceExplanationsQuery(businessUnitId: string, body: Models.BuQueryAdherenceExplanationsRequest, opts?: WorkforceManagementApi.postWorkforcemanagementBusinessunitAdherenceExplanationsQueryOptions): Promise<Models.BuQueryAdherenceExplanationsResponse>; 
   	postWorkforcemanagementBusinessunitAgentschedulesSearch(businessUnitId: string, opts?: WorkforceManagementApi.postWorkforcemanagementBusinessunitAgentschedulesSearchOptions): Promise<Models.BuAsyncAgentSchedulesSearchResponse>; 
   	postWorkforcemanagementBusinessunitIntraday(businessUnitId: string, opts?: WorkforceManagementApi.postWorkforcemanagementBusinessunitIntradayOptions): Promise<Models.AsyncIntradayResponse>; 
   	postWorkforcemanagementBusinessunitPlanninggroups(businessUnitId: string, opts?: WorkforceManagementApi.postWorkforcemanagementBusinessunitPlanninggroupsOptions): Promise<Models.PlanningGroup>; 
@@ -5368,6 +5382,7 @@ declare class WorkforceManagementApi {
   	postWorkforcemanagementManagementunitHistoricaladherencequery(managementUnitId: string, opts?: WorkforceManagementApi.postWorkforcemanagementManagementunitHistoricaladherencequeryOptions): Promise<Models.WfmHistoricalAdherenceResponse>; 
   	postWorkforcemanagementManagementunitMove(managementUnitId: string, opts?: WorkforceManagementApi.postWorkforcemanagementManagementunitMoveOptions): Promise<Models.MoveManagementUnitResponse>; 
   	postWorkforcemanagementManagementunitSchedulesSearch(managementUnitId: string, opts?: WorkforceManagementApi.postWorkforcemanagementManagementunitSchedulesSearchOptions): Promise<Models.UserScheduleContainer>; 
+  	postWorkforcemanagementManagementunitShrinkageJobs(managementUnitId: string, opts?: WorkforceManagementApi.postWorkforcemanagementManagementunitShrinkageJobsOptions): Promise<Models.WfmHistoricalShrinkageResponse>; 
   	postWorkforcemanagementManagementunitTimeofflimits(managementUnitId: string, opts?: WorkforceManagementApi.postWorkforcemanagementManagementunitTimeofflimitsOptions): Promise<Models.TimeOffLimit>; 
   	postWorkforcemanagementManagementunitTimeofflimitsValuesQuery(managementUnitId: string, opts?: WorkforceManagementApi.postWorkforcemanagementManagementunitTimeofflimitsValuesQueryOptions): Promise<Models.QueryTimeOffLimitValuesResponse>; 
   	postWorkforcemanagementManagementunitTimeoffplans(managementUnitId: string, opts?: WorkforceManagementApi.postWorkforcemanagementManagementunitTimeoffplansOptions): Promise<Models.TimeOffPlan>; 
@@ -5511,14 +5526,26 @@ declare namespace WorkforceManagementApi {
 	export interface patchWorkforcemanagementTimeoffrequestOptions { 
 		"body"?: Models.AgentTimeOffRequestPatch;
 	}
+	export interface postWorkforcemanagementAdherenceExplanationsQueryOptions { 
+		"forceAsync"?: boolean;
+		"forceDownloadService"?: boolean;
+	}
 	export interface postWorkforcemanagementAdherenceHistoricalOptions { 
 		"body"?: Models.WfmHistoricalAdherenceQueryForUsers;
+	}
+	export interface postWorkforcemanagementAgentAdherenceExplanationsQueryOptions { 
+		"forceAsync"?: boolean;
+		"forceDownloadService"?: boolean;
 	}
 	export interface postWorkforcemanagementAgentschedulesMineOptions { 
 		"body"?: Models.BuGetCurrentAgentScheduleRequest;
 	}
 	export interface postWorkforcemanagementBusinessunitActivitycodesOptions { 
 		"body"?: Models.CreateActivityCodeRequest;
+	}
+	export interface postWorkforcemanagementBusinessunitAdherenceExplanationsQueryOptions { 
+		"forceAsync"?: boolean;
+		"forceDownloadService"?: boolean;
 	}
 	export interface postWorkforcemanagementBusinessunitAgentschedulesSearchOptions { 
 		"forceAsync"?: boolean;
@@ -5567,6 +5594,9 @@ declare namespace WorkforceManagementApi {
 	}
 	export interface postWorkforcemanagementManagementunitSchedulesSearchOptions { 
 		"body"?: Models.UserListScheduleRequestBody;
+	}
+	export interface postWorkforcemanagementManagementunitShrinkageJobsOptions { 
+		"body"?: Models.WfmHistoricalShrinkageRequest;
 	}
 	export interface postWorkforcemanagementManagementunitTimeofflimitsOptions { 
 		"body"?: Models.CreateTimeOffLimitRequest;
@@ -6016,6 +6046,21 @@ declare namespace Models {
 		"timeoutMs"?: number;
 	}
 	
+	export interface AddAdherenceExplanationAdminRequest { 
+		"type": string;
+		"startDate": string;
+		"lengthMinutes": number;
+		"notes"?: string;
+		"status"?: string;
+	}
+	
+	export interface AddAdherenceExplanationAgentRequest { 
+		"type": string;
+		"startDate": string;
+		"lengthMinutes": number;
+		"notes"?: string;
+	}
+	
 	export interface AddConversationRequest { 
 		"conversationId": string;
 	}
@@ -6071,6 +6116,41 @@ declare namespace Models {
 		"selfUri"?: string;
 	}
 	
+	export interface AdherenceExplanationAsyncResponse { 
+		"job"?: Models.AdherenceExplanationJobReference;
+	}
+	
+	export interface AdherenceExplanationJob { 
+		"id"?: string;
+		"type"?: string;
+		"status"?: string;
+		"adherenceExplanation"?: Models.AdherenceExplanationResponse;
+		"downloadUrl"?: string;
+		"error"?: Models.ErrorBody;
+		"agentQueryResponseTemplate"?: Models.AdherenceExplanationListingAgentQueryResponse;
+		"buQueryResponseTemplate"?: Models.AdherenceExplanationListingBuQueryResponse;
+		"selfUri"?: string;
+	}
+	
+	export interface AdherenceExplanationJobReference { 
+		"id"?: string;
+		"type"?: string;
+		"status"?: string;
+		"selfUri"?: string;
+	}
+	
+	export interface AdherenceExplanationListing { 
+		"entities"?: Array<Models.AdherenceExplanationResponse>;
+	}
+	
+	export interface AdherenceExplanationListingAgentQueryResponse { 
+		"entities"?: Array<Models.AdherenceExplanationResponse>;
+	}
+	
+	export interface AdherenceExplanationListingBuQueryResponse { 
+		"entities"?: Array<Models.AdherenceExplanationResponse>;
+	}
+	
 	export interface AdherenceExplanationNotification { 
 		"id"?: string;
 		"agent"?: Models.UserReference;
@@ -6081,6 +6161,21 @@ declare namespace Models {
 		"status"?: string;
 		"type"?: string;
 		"notes"?: string;
+		"selfUri"?: string;
+	}
+	
+	export interface AdherenceExplanationResponse { 
+		"id"?: string;
+		"agent": Models.UserReference;
+		"managementUnit": Models.ManagementUnitReference;
+		"businessUnit": Models.BusinessUnitReference;
+		"type": string;
+		"status": string;
+		"startDate": string;
+		"lengthMinutes": number;
+		"notes"?: string;
+		"reviewedBy"?: Models.UserReference;
+		"reviewedDate"?: string;
 		"selfUri"?: string;
 	}
 	
@@ -6257,6 +6352,17 @@ declare namespace Models {
 		"enableAgentOwnedCallbacks"?: boolean;
 		"maxOwnedCallbackHours"?: number;
 		"maxOwnedCallbackDelayHours"?: number;
+	}
+	
+	export interface AgentQueryAdherenceExplanationsRequest { 
+		"startDate": string;
+		"endDate": string;
+	}
+	
+	export interface AgentQueryAdherenceExplanationsResponse { 
+		"job"?: Models.AdherenceExplanationJobReference;
+		"result"?: Models.AdherenceExplanationListingAgentQueryResponse;
+		"downloadUrl"?: string;
 	}
 	
 	export interface AgentTimeOffRequestPatch { 
@@ -7475,6 +7581,13 @@ declare namespace Models {
 		"integrationId": string;
 	}
 	
+	export interface AuthorizationSettings { 
+		"id"?: string;
+		"analysisEnabled"?: boolean;
+		"analysisDays"?: number;
+		"selfUri"?: string;
+	}
+	
 	export interface AuthzDivision { 
 		"id"?: string;
 		"name"?: string;
@@ -8175,6 +8288,19 @@ declare namespace Models {
 		"planningGroup"?: Models.PlanningGroupReference;
 		"requiredPerInterval"?: Array<number>;
 		"requiredWithoutShrinkagePerInterval"?: Array<number>;
+	}
+	
+	export interface BuQueryAdherenceExplanationsRequest { 
+		"startDate": string;
+		"endDate": string;
+		"managementUnitIds"?: Array<string>;
+		"agentIds"?: Array<string>;
+	}
+	
+	export interface BuQueryAdherenceExplanationsResponse { 
+		"job"?: Models.AdherenceExplanationJobReference;
+		"result"?: Models.AdherenceExplanationListingBuQueryResponse;
+		"downloadUrl"?: string;
 	}
 	
 	export interface BuQueryAgentSchedulesRequest { 
@@ -13737,6 +13863,19 @@ declare namespace Models {
 		"outputFieldMissingResolution": boolean;
 	}
 	
+	export interface DataActionConditionSettings { 
+		"dataActionId": string;
+		"contactIdField": string;
+		"dataNotFoundResolution": boolean;
+		"predicates"?: Array<Models.DigitalDataActionConditionPredicate>;
+		"contactColumnToDataActionFieldMappings"?: Array<Models.DataActionContactColumnFieldMapping>;
+	}
+	
+	export interface DataActionContactColumnFieldMapping { 
+		"contactColumnName": string;
+		"dataActionField": string;
+	}
+	
 	export interface DataAvailabilityResponse { 
 		"dataAvailabilityDate"?: string;
 	}
@@ -14656,6 +14795,15 @@ declare namespace Models {
 		"lastAttemptOverallConditionSettings"?: Models.LastAttemptOverallConditionSettings;
 		"lastResultByColumnConditionSettings"?: Models.LastResultByColumnConditionSettings;
 		"lastResultOverallConditionSettings"?: Models.LastResultOverallConditionSettings;
+	}
+	
+	export interface DigitalDataActionConditionPredicate { 
+		"outputField": string;
+		"outputOperator": string;
+		"comparisonValue": string;
+		"inverted": boolean;
+		"outputFieldMissingResolution": boolean;
+		"valueType": string;
 	}
 	
 	export interface DigitalRule { 
@@ -18545,6 +18693,7 @@ declare namespace Models {
 	
 	export interface HistoricalAdherenceQueryResult { 
 		"userId"?: string;
+		"managementUnitId"?: string;
 		"startDate"?: string;
 		"endDate"?: string;
 		"adherencePercentage"?: number;
@@ -18577,6 +18726,41 @@ declare namespace Models {
 	
 	export interface HistoricalImportStatusListing { 
 		"entities"?: Array<Models.HistoricalImportStatus>;
+	}
+	
+	export interface HistoricalShrinkageActivityCategoryResponse { 
+		"activityCategory"?: string;
+		"shrinkageForActivityCategory"?: Models.HistoricalShrinkageAggregateResponse;
+		"shrinkageForActivityCodes"?: Array<Models.HistoricalShrinkageActivityCodeResponse>;
+	}
+	
+	export interface HistoricalShrinkageActivityCodeResponse { 
+		"activityCodeId"?: string;
+		"shrinkageForActivityCode"?: Models.HistoricalShrinkageAggregateResponse;
+	}
+	
+	export interface HistoricalShrinkageAggregateResponse { 
+		"scheduledShrinkageSeconds"?: number;
+		"scheduledShrinkagePercent"?: number;
+		"actualShrinkageSeconds"?: number;
+		"actualShrinkagePercent"?: number;
+		"paidShrinkageSeconds"?: number;
+		"unpaidShrinkageSeconds"?: number;
+		"plannedShrinkageSeconds"?: number;
+		"unplannedShrinkageSeconds"?: number;
+	}
+	
+	export interface HistoricalShrinkageResult { 
+		"startDate"?: string;
+		"endDate"?: string;
+		"totalScheduledDurationSeconds"?: number;
+		"totalLoggedInDurationSeconds"?: number;
+		"aggregatedShrinkage"?: Models.HistoricalShrinkageAggregateResponse;
+		"shrinkageForActivityCategories"?: Array<Models.HistoricalShrinkageActivityCategoryResponse>;
+	}
+	
+	export interface HistoricalShrinkageResultListing { 
+		"entities"?: Array<Models.HistoricalShrinkageResult>;
 	}
 	
 	export interface HistoryEntry { 
@@ -24745,6 +24929,12 @@ declare namespace Models {
 		"value": string;
 	}
 	
+	export interface QueryAdherenceExplanationsResponse { 
+		"job"?: Models.AdherenceExplanationJobReference;
+		"result"?: Models.AdherenceExplanationListing;
+		"downloadUrl"?: string;
+	}
+	
 	export interface QueryDivision { 
 	}
 	
@@ -30279,7 +30469,7 @@ declare namespace Models {
 		"language": string;
 		"header"?: string;
 		"footer"?: string;
-		"questionGroups": Array<Models.SurveyQuestionGroup>;
+		"questionGroups"?: Array<Models.SurveyQuestionGroup>;
 		"publishedVersions"?: Models.DomainEntityListingSurveyForm;
 		"selfUri"?: string;
 	}
@@ -31912,6 +32102,10 @@ declare namespace Models {
 		"metadata": Models.WfmVersionedEntityMetadata;
 	}
 	
+	export interface UpdateAdherenceExplanationStatusRequest { 
+		"status"?: string;
+	}
+	
 	export interface UpdateAnalyticsDataRetentionRequest { 
 		"retentionDays": number;
 	}
@@ -32800,6 +32994,7 @@ declare namespace Models {
 		"isOutOfOffice"?: boolean;
 		"adherenceState"?: string;
 		"impact"?: string;
+		"adherenceExplanation"?: Models.RealTimeAdherenceExplanation;
 		"timeOfAdherenceChange"?: string;
 		"presenceUpdateTime"?: string;
 		"activeQueues"?: Array<Models.QueueReference>;
@@ -34747,7 +34942,7 @@ declare namespace Models {
 	export interface WfmHistoricalAdherenceQuery { 
 		"startDate": string;
 		"endDate"?: string;
-		"timeZone"?: string;
+		"timeZone": string;
 		"userIds"?: Array<string>;
 		"includeExceptions"?: boolean;
 		"teamIds"?: Array<string>;
@@ -34756,7 +34951,7 @@ declare namespace Models {
 	export interface WfmHistoricalAdherenceQueryForUsers { 
 		"startDate": string;
 		"endDate"?: string;
-		"timeZone"?: string;
+		"timeZone": string;
 		"userIds": Array<string>;
 		"includeExceptions"?: boolean;
 	}
@@ -34789,6 +34984,20 @@ declare namespace Models {
 		"error"?: string;
 		"active"?: boolean;
 		"type"?: string;
+	}
+	
+	export interface WfmHistoricalShrinkageRequest { 
+		"startDate": string;
+		"endDate"?: string;
+		"timeZone"?: string;
+		"granularity"?: string;
+	}
+	
+	export interface WfmHistoricalShrinkageResponse { 
+		"operationId"?: string;
+		"downloadUrls"?: Array<string>;
+		"downloadResult"?: Models.HistoricalShrinkageResultListing;
+		"state"?: string;
 	}
 	
 	export interface WfmIntradayDataUpdateTopicIntradayDataGroup { 

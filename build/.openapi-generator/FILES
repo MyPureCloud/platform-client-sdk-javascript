@@ -437,6 +437,7 @@ docs/getAuthorizationRoleComparedefaultRightRoleId-example.txt
 docs/getAuthorizationRoleSubjectgrants-example.txt
 docs/getAuthorizationRoleUsers-example.txt
 docs/getAuthorizationRoles-example.txt
+docs/getAuthorizationSettings-example.txt
 docs/getAuthorizationSubject-example.txt
 docs/getAuthorizationSubject-example.txt
 docs/getAuthorizationSubjectsMe-example.txt
@@ -1220,8 +1221,11 @@ docs/getWebmessagingMessages-example.txt
 docs/getWidgetsDeployment-example.txt
 docs/getWidgetsDeployments-example.txt
 docs/getWorkforcemanagementAdherence-example.txt
+docs/getWorkforcemanagementAdherenceExplanation-example.txt
+docs/getWorkforcemanagementAdherenceExplanationsJob-example.txt
 docs/getWorkforcemanagementAdherenceHistoricalJob-example.txt
 docs/getWorkforcemanagementAdhocmodelingjob-example.txt
+docs/getWorkforcemanagementAgentAdherenceExplanation-example.txt
 docs/getWorkforcemanagementAgentManagementunit-example.txt
 docs/getWorkforcemanagementAgentsMeManagementunit-example.txt
 docs/getWorkforcemanagementBusinessunit-example.txt
@@ -1280,6 +1284,7 @@ docs/getWorkforcemanagementManagementunitsDivisionviews-example.txt
 docs/getWorkforcemanagementNotifications-example.txt
 docs/getWorkforcemanagementSchedulingjob-example.txt
 docs/getWorkforcemanagementShifttrades-example.txt
+docs/getWorkforcemanagementShrinkageJob-example.txt
 docs/getWorkforcemanagementTimeoffrequest-example.txt
 docs/getWorkforcemanagementTimeoffrequestWaitlistpositions-example.txt
 docs/getWorkforcemanagementTimeoffrequests-example.txt
@@ -1287,6 +1292,7 @@ docs/headNotificationsChannel-example.txt
 docs/headTokensMe-example.txt
 docs/patchAnalyticsReportingSettings-example.txt
 docs/patchAuthorizationRole-example.txt
+docs/patchAuthorizationSettings-example.txt
 docs/patchChatSettings-example.txt
 docs/patchCoachingAppointment-example.txt
 docs/patchCoachingAppointmentAnnotation-example.txt
@@ -1400,6 +1406,7 @@ docs/patchVoicemailMePolicy-example.txt
 docs/patchVoicemailMessage-example.txt
 docs/patchVoicemailUserpolicy-example.txt
 docs/patchWebchatGuestConversationMediarequest-example.txt
+docs/patchWorkforcemanagementAgentAdherenceExplanation-example.txt
 docs/patchWorkforcemanagementBusinessunit-example.txt
 docs/patchWorkforcemanagementBusinessunitActivitycode-example.txt
 docs/patchWorkforcemanagementBusinessunitPlanninggroup-example.txt
@@ -1842,9 +1849,14 @@ docs/postWebdeploymentsConfigurationVersionsDraftPublish-example.txt
 docs/postWebdeploymentsConfigurations-example.txt
 docs/postWebdeploymentsDeployments-example.txt
 docs/postWidgetsDeployments-example.txt
+docs/postWorkforcemanagementAdherenceExplanations-example.txt
+docs/postWorkforcemanagementAdherenceExplanationsQuery-example.txt
 docs/postWorkforcemanagementAdherenceHistorical-example.txt
+docs/postWorkforcemanagementAgentAdherenceExplanations-example.txt
+docs/postWorkforcemanagementAgentAdherenceExplanationsQuery-example.txt
 docs/postWorkforcemanagementAgentschedulesMine-example.txt
 docs/postWorkforcemanagementBusinessunitActivitycodes-example.txt
+docs/postWorkforcemanagementBusinessunitAdherenceExplanationsQuery-example.txt
 docs/postWorkforcemanagementBusinessunitAgentschedulesSearch-example.txt
 docs/postWorkforcemanagementBusinessunitIntraday-example.txt
 docs/postWorkforcemanagementBusinessunitPlanninggroups-example.txt
@@ -1870,6 +1882,7 @@ docs/postWorkforcemanagementManagementunitAgentschedulesSearch-example.txt
 docs/postWorkforcemanagementManagementunitHistoricaladherencequery-example.txt
 docs/postWorkforcemanagementManagementunitMove-example.txt
 docs/postWorkforcemanagementManagementunitSchedulesSearch-example.txt
+docs/postWorkforcemanagementManagementunitShrinkageJobs-example.txt
 docs/postWorkforcemanagementManagementunitTimeofflimits-example.txt
 docs/postWorkforcemanagementManagementunitTimeofflimitsValuesQuery-example.txt
 docs/postWorkforcemanagementManagementunitTimeoffplans-example.txt

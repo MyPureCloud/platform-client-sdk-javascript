@@ -5,7 +5,7 @@ class AuthorizationApi {
 	/**
 	 * Authorization service.
 	 * @module purecloud-platform-client-v2/api/AuthorizationApi
-	 * @version 152.0.0
+	 * @version 153.0.0
 	 */
 
 	/**
@@ -539,6 +539,26 @@ class AuthorizationApi {
 	}
 
 	/**
+	 * Get authorization settings
+	 * 
+	 */
+	getAuthorizationSettings() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/authorization/settings', 
+			'GET', 
+			{  },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Returns a listing of roles and permissions for a user.
 	 * 
 	 * @param {String} subjectId Subject ID (user or group)
@@ -652,6 +672,31 @@ class AuthorizationApi {
 			'/api/v2/authorization/roles/{roleId}', 
 			'PATCH', 
 			{ 'roleId': roleId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Change authorization settings
+	 * Change authorization settings
+	 * @param {Object} body Authorization Settings
+	 */
+	patchAuthorizationSettings(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchAuthorizationSettings';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/authorization/settings', 
+			'PATCH', 
+			{  },
 			{  },
 			{  },
 			{  },

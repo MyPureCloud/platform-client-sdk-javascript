@@ -5,7 +5,7 @@ class AnalyticsApi {
 	/**
 	 * Analytics service.
 	 * @module purecloud-platform-client-v2/api/AnalyticsApi
-	 * @version 152.0.0
+	 * @version 153.0.0
 	 */
 
 	/**
@@ -21,7 +21,7 @@ class AnalyticsApi {
 
 
 	/**
-	 * Delete/cancel an async request
+	 * Delete/cancel an async details job
 	 * 
 	 * @param {String} jobId jobId
 	 */
@@ -203,7 +203,7 @@ class AnalyticsApi {
 	}
 
 	/**
-	 * Fetch a page of results for an async query
+	 * Fetch a page of results for an async details job
 	 * 
 	 * @param {String} jobId jobId
 	 * @param {Object} opts Optional parameters

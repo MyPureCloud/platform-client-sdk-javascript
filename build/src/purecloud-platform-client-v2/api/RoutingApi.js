@@ -5,7 +5,7 @@ class RoutingApi {
 	/**
 	 * Routing service.
 	 * @module purecloud-platform-client-v2/api/RoutingApi
-	 * @version 152.0.0
+	 * @version 153.0.0
 	 */
 
 	/**
@@ -731,6 +731,8 @@ class RoutingApi {
 	 * Get domains
 	 * 
 	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Boolean} opts.excludeStatus Exclude MX record data (default to false)
 	 */
 	getRoutingEmailDomains(opts) { 
@@ -741,7 +743,7 @@ class RoutingApi {
 			'/api/v2/routing/email/domains', 
 			'GET', 
 			{  },
-			{ 'excludeStatus': opts['excludeStatus'] },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'excludeStatus': opts['excludeStatus'] },
 			{  },
 			{  },
 			null, 

@@ -25,11 +25,13 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getAuthorizationRoleSubjectgrants**](AuthorizationApi.html#getAuthorizationRoleSubjectgrants) | **GET** /api/v2/authorization/roles/{roleId}/subjectgrants | Get the subjects' granted divisions in the specified role.
 [**getAuthorizationRoleUsers**](AuthorizationApi.html#getAuthorizationRoleUsers) | **GET** /api/v2/authorization/roles/{roleId}/users | Get a list of the users in a specified role.
 [**getAuthorizationRoles**](AuthorizationApi.html#getAuthorizationRoles) | **GET** /api/v2/authorization/roles | Retrieve a list of all roles defined for the organization
+[**getAuthorizationSettings**](AuthorizationApi.html#getAuthorizationSettings) | **GET** /api/v2/authorization/settings | Get authorization settings
 [**getAuthorizationSubject**](AuthorizationApi.html#getAuthorizationSubject) | **GET** /api/v2/authorization/subjects/{subjectId} | Returns a listing of roles and permissions for a user.
 [**getAuthorizationSubjectsMe**](AuthorizationApi.html#getAuthorizationSubjectsMe) | **GET** /api/v2/authorization/subjects/me | Returns a listing of roles and permissions for the currently authenticated user.
 [**getAuthorizationSubjectsRolecounts**](AuthorizationApi.html#getAuthorizationSubjectsRolecounts) | **GET** /api/v2/authorization/subjects/rolecounts | Get the count of roles granted to a list of subjects
 [**getUserRoles**](AuthorizationApi.html#getUserRoles) | **GET** /api/v2/users/{subjectId}/roles | Returns a listing of roles and permissions for a user.
 [**patchAuthorizationRole**](AuthorizationApi.html#patchAuthorizationRole) | **PATCH** /api/v2/authorization/roles/{roleId} | Patch Organization Role for needsUpdate Field
+[**patchAuthorizationSettings**](AuthorizationApi.html#patchAuthorizationSettings) | **PATCH** /api/v2/authorization/settings | Change authorization settings
 [**postAuthorizationDivisionObject**](AuthorizationApi.html#postAuthorizationDivisionObject) | **POST** /api/v2/authorization/divisions/{divisionId}/objects/{objectType} | Assign a list of objects to a division
 [**postAuthorizationDivisionRestore**](AuthorizationApi.html#postAuthorizationDivisionRestore) | **POST** /api/v2/authorization/divisions/{divisionId}/restore | Recreate a previously deleted division.
 [**postAuthorizationDivisions**](AuthorizationApi.html#postAuthorizationDivisions) | **POST** /api/v2/authorization/divisions | Create a division.
@@ -1048,6 +1050,52 @@ apiInstance.getAuthorizationRoles(opts)
 
 **OrganizationRoleEntityListing**
 
+<a name="getAuthorizationSettings"></a>
+
+# AuthorizationSettings getAuthorizationSettings()
+
+
+GET /api/v2/authorization/settings
+
+Get authorization settings
+
+Requires ANY permissions:
+
+* directory:organization:admin
+* authorization:settings:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AuthorizationApi();
+
+apiInstance.getAuthorizationSettings()
+  .then((data) => {
+    console.log(`getAuthorizationSettings success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getAuthorizationSettings');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+
+### Return type
+
+**AuthorizationSettings**
+
 <a name="getAuthorizationSubject"></a>
 
 # AuthzSubject getAuthorizationSubject(subjectId)
@@ -1296,6 +1344,59 @@ apiInstance.patchAuthorizationRole(roleId, body)
 ### Return type
 
 **DomainOrganizationRole**
+
+<a name="patchAuthorizationSettings"></a>
+
+# AuthorizationSettings patchAuthorizationSettings(body)
+
+
+PATCH /api/v2/authorization/settings
+
+Change authorization settings
+
+Change authorization settings
+
+Requires ANY permissions:
+
+* directory:organization:admin
+* authorization:settings:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AuthorizationApi();
+
+let body = {}; // Object | Authorization Settings
+
+apiInstance.patchAuthorizationSettings(body)
+  .then((data) => {
+    console.log(`patchAuthorizationSettings success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchAuthorizationSettings');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | Authorization Settings |  |
+{: class="table table-striped"}
+
+### Return type
+
+**AuthorizationSettings**
 
 <a name="postAuthorizationDivisionObject"></a>
 

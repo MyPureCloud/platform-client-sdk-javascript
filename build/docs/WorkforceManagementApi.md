@@ -21,8 +21,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**deleteWorkforcemanagementManagementunitWorkplan**](WorkforceManagementApi.html#deleteWorkforcemanagementManagementunitWorkplan) | **DELETE** /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans/{workPlanId} | Delete a work plan
 [**deleteWorkforcemanagementManagementunitWorkplanrotation**](WorkforceManagementApi.html#deleteWorkforcemanagementManagementunitWorkplanrotation) | **DELETE** /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplanrotations/{workPlanRotationId} | Delete a work plan rotation
 [**getWorkforcemanagementAdherence**](WorkforceManagementApi.html#getWorkforcemanagementAdherence) | **GET** /api/v2/workforcemanagement/adherence | Get a list of UserScheduleAdherence records for the requested users
+[**getWorkforcemanagementAdherenceExplanation**](WorkforceManagementApi.html#getWorkforcemanagementAdherenceExplanation) | **GET** /api/v2/workforcemanagement/adherence/explanations/{explanationId} | Get an adherence explanation for the current user
+[**getWorkforcemanagementAdherenceExplanationsJob**](WorkforceManagementApi.html#getWorkforcemanagementAdherenceExplanationsJob) | **GET** /api/v2/workforcemanagement/adherence/explanations/jobs/{jobId} | Query the status of an adherence explanation operation. Only the user who started the operation can query the status
 [**getWorkforcemanagementAdherenceHistoricalJob**](WorkforceManagementApi.html#getWorkforcemanagementAdherenceHistoricalJob) | **GET** /api/v2/workforcemanagement/adherence/historical/jobs/{jobId} | Query the status of a historical adherence request operation. Only the user who started the operation can query the status
 [**getWorkforcemanagementAdhocmodelingjob**](WorkforceManagementApi.html#getWorkforcemanagementAdhocmodelingjob) | **GET** /api/v2/workforcemanagement/adhocmodelingjobs/{jobId} | Get status of the modeling job
+[**getWorkforcemanagementAgentAdherenceExplanation**](WorkforceManagementApi.html#getWorkforcemanagementAgentAdherenceExplanation) | **GET** /api/v2/workforcemanagement/agents/{agentId}/adherence/explanations/{explanationId} | Get an adherence explanation
 [**getWorkforcemanagementAgentManagementunit**](WorkforceManagementApi.html#getWorkforcemanagementAgentManagementunit) | **GET** /api/v2/workforcemanagement/agents/{agentId}/managementunit | Get the management unit to which the agent belongs
 [**getWorkforcemanagementAgentsMeManagementunit**](WorkforceManagementApi.html#getWorkforcemanagementAgentsMeManagementunit) | **GET** /api/v2/workforcemanagement/agents/me/managementunit | Get the management unit to which the currently logged in agent belongs
 [**getWorkforcemanagementBusinessunit**](WorkforceManagementApi.html#getWorkforcemanagementBusinessunit) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId} | Get business unit
@@ -81,9 +84,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getWorkforcemanagementNotifications**](WorkforceManagementApi.html#getWorkforcemanagementNotifications) | **GET** /api/v2/workforcemanagement/notifications | Get a list of notifications for the current user
 [**getWorkforcemanagementSchedulingjob**](WorkforceManagementApi.html#getWorkforcemanagementSchedulingjob) | **GET** /api/v2/workforcemanagement/schedulingjobs/{jobId} | Get status of the scheduling job
 [**getWorkforcemanagementShifttrades**](WorkforceManagementApi.html#getWorkforcemanagementShifttrades) | **GET** /api/v2/workforcemanagement/shifttrades | Gets all of my shift trades
+[**getWorkforcemanagementShrinkageJob**](WorkforceManagementApi.html#getWorkforcemanagementShrinkageJob) | **GET** /api/v2/workforcemanagement/shrinkage/jobs/{jobId} | Request to fetch the status of the historical shrinkage query
 [**getWorkforcemanagementTimeoffrequest**](WorkforceManagementApi.html#getWorkforcemanagementTimeoffrequest) | **GET** /api/v2/workforcemanagement/timeoffrequests/{timeOffRequestId} | Get a time off request for the current user
 [**getWorkforcemanagementTimeoffrequestWaitlistpositions**](WorkforceManagementApi.html#getWorkforcemanagementTimeoffrequestWaitlistpositions) | **GET** /api/v2/workforcemanagement/timeoffrequests/{timeOffRequestId}/waitlistpositions | Get the daily waitlist positions of a time off request for the current user
 [**getWorkforcemanagementTimeoffrequests**](WorkforceManagementApi.html#getWorkforcemanagementTimeoffrequests) | **GET** /api/v2/workforcemanagement/timeoffrequests | Get a list of time off requests for the current user
+[**patchWorkforcemanagementAgentAdherenceExplanation**](WorkforceManagementApi.html#patchWorkforcemanagementAgentAdherenceExplanation) | **PATCH** /api/v2/workforcemanagement/agents/{agentId}/adherence/explanations/{explanationId} | Update an adherence explanation
 [**patchWorkforcemanagementBusinessunit**](WorkforceManagementApi.html#patchWorkforcemanagementBusinessunit) | **PATCH** /api/v2/workforcemanagement/businessunits/{businessUnitId} | Update business unit
 [**patchWorkforcemanagementBusinessunitActivitycode**](WorkforceManagementApi.html#patchWorkforcemanagementBusinessunitActivitycode) | **PATCH** /api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes/{activityCodeId} | Update an activity code
 [**patchWorkforcemanagementBusinessunitPlanninggroup**](WorkforceManagementApi.html#patchWorkforcemanagementBusinessunitPlanninggroup) | **PATCH** /api/v2/workforcemanagement/businessunits/{businessUnitId}/planninggroups/{planningGroupId} | Updates the planning group
@@ -97,9 +102,14 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**patchWorkforcemanagementManagementunitWorkplan**](WorkforceManagementApi.html#patchWorkforcemanagementManagementunitWorkplan) | **PATCH** /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans/{workPlanId} | Update a work plan
 [**patchWorkforcemanagementManagementunitWorkplanrotation**](WorkforceManagementApi.html#patchWorkforcemanagementManagementunitWorkplanrotation) | **PATCH** /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplanrotations/{workPlanRotationId} | Update a work plan rotation
 [**patchWorkforcemanagementTimeoffrequest**](WorkforceManagementApi.html#patchWorkforcemanagementTimeoffrequest) | **PATCH** /api/v2/workforcemanagement/timeoffrequests/{timeOffRequestId} | Update a time off request for the current user
+[**postWorkforcemanagementAdherenceExplanations**](WorkforceManagementApi.html#postWorkforcemanagementAdherenceExplanations) | **POST** /api/v2/workforcemanagement/adherence/explanations | Submit an adherence explanation for the current user
+[**postWorkforcemanagementAdherenceExplanationsQuery**](WorkforceManagementApi.html#postWorkforcemanagementAdherenceExplanationsQuery) | **POST** /api/v2/workforcemanagement/adherence/explanations/query | Query adherence explanations for the current user
 [**postWorkforcemanagementAdherenceHistorical**](WorkforceManagementApi.html#postWorkforcemanagementAdherenceHistorical) | **POST** /api/v2/workforcemanagement/adherence/historical | Request a historical adherence report for users across management units
+[**postWorkforcemanagementAgentAdherenceExplanations**](WorkforceManagementApi.html#postWorkforcemanagementAgentAdherenceExplanations) | **POST** /api/v2/workforcemanagement/agents/{agentId}/adherence/explanations | Add an adherence explanation for the requested user
+[**postWorkforcemanagementAgentAdherenceExplanationsQuery**](WorkforceManagementApi.html#postWorkforcemanagementAgentAdherenceExplanationsQuery) | **POST** /api/v2/workforcemanagement/agents/{agentId}/adherence/explanations/query | Query adherence explanations for the given agent across a specified range
 [**postWorkforcemanagementAgentschedulesMine**](WorkforceManagementApi.html#postWorkforcemanagementAgentschedulesMine) | **POST** /api/v2/workforcemanagement/agentschedules/mine | Get published schedule for the current user
 [**postWorkforcemanagementBusinessunitActivitycodes**](WorkforceManagementApi.html#postWorkforcemanagementBusinessunitActivitycodes) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes | Create a new activity code
+[**postWorkforcemanagementBusinessunitAdherenceExplanationsQuery**](WorkforceManagementApi.html#postWorkforcemanagementBusinessunitAdherenceExplanationsQuery) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/adherence/explanations/query | Query adherence explanations across an entire business unit for the requested period
 [**postWorkforcemanagementBusinessunitAgentschedulesSearch**](WorkforceManagementApi.html#postWorkforcemanagementBusinessunitAgentschedulesSearch) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/agentschedules/search | Search published schedules
 [**postWorkforcemanagementBusinessunitIntraday**](WorkforceManagementApi.html#postWorkforcemanagementBusinessunitIntraday) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/intraday | Get intraday data for the given date for the requested planningGroupIds
 [**postWorkforcemanagementBusinessunitPlanninggroups**](WorkforceManagementApi.html#postWorkforcemanagementBusinessunitPlanninggroups) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/planninggroups | Adds a new planning group
@@ -125,6 +135,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postWorkforcemanagementManagementunitHistoricaladherencequery**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitHistoricaladherencequery) | **POST** /api/v2/workforcemanagement/managementunits/{managementUnitId}/historicaladherencequery | Request a historical adherence report
 [**postWorkforcemanagementManagementunitMove**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitMove) | **POST** /api/v2/workforcemanagement/managementunits/{managementUnitId}/move | Move the requested management unit to a new business unit
 [**postWorkforcemanagementManagementunitSchedulesSearch**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitSchedulesSearch) | **POST** /api/v2/workforcemanagement/managementunits/{managementUnitId}/schedules/search | Query published schedules for given given time range for set of users
+[**postWorkforcemanagementManagementunitShrinkageJobs**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitShrinkageJobs) | **POST** /api/v2/workforcemanagement/managementunits/{managementUnitId}/shrinkage/jobs | Request a historical shrinkage report
 [**postWorkforcemanagementManagementunitTimeofflimits**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitTimeofflimits) | **POST** /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits | Creates a new time off limit object under management unit.
 [**postWorkforcemanagementManagementunitTimeofflimitsValuesQuery**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitTimeofflimitsValuesQuery) | **POST** /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits/values/query | Retrieves time off limit related values based on a given set of filters.
 [**postWorkforcemanagementManagementunitTimeoffplans**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitTimeoffplans) | **POST** /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffplans | Creates a new time off plan
@@ -873,6 +884,106 @@ apiInstance.getWorkforcemanagementAdherence(userId)
 
 **[UserScheduleAdherence]**
 
+<a name="getWorkforcemanagementAdherenceExplanation"></a>
+
+# AdherenceExplanationResponse getWorkforcemanagementAdherenceExplanation(explanationId)
+
+
+GET /api/v2/workforcemanagement/adherence/explanations/{explanationId}
+
+Get an adherence explanation for the current user
+
+Requires ANY permissions:
+
+* wfm:agentAdherenceExplanation:submit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let explanationId = "explanationId_example"; // String | The ID of the explanation to update
+
+apiInstance.getWorkforcemanagementAdherenceExplanation(explanationId)
+  .then((data) => {
+    console.log(`getWorkforcemanagementAdherenceExplanation success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getWorkforcemanagementAdherenceExplanation');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **explanationId** | **String** | The ID of the explanation to update |  |
+{: class="table table-striped"}
+
+### Return type
+
+**AdherenceExplanationResponse**
+
+<a name="getWorkforcemanagementAdherenceExplanationsJob"></a>
+
+# AdherenceExplanationJob getWorkforcemanagementAdherenceExplanationsJob(jobId)
+
+
+GET /api/v2/workforcemanagement/adherence/explanations/jobs/{jobId}
+
+Query the status of an adherence explanation operation. Only the user who started the operation can query the status
+
+Job details are only retained if the initial request returned a 202 ACCEPTED response
+
+Requires NO permissions:
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let jobId = "jobId_example"; // String | The ID of the job
+
+apiInstance.getWorkforcemanagementAdherenceExplanationsJob(jobId)
+  .then((data) => {
+    console.log(`getWorkforcemanagementAdherenceExplanationsJob success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getWorkforcemanagementAdherenceExplanationsJob');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **jobId** | **String** | The ID of the job |  |
+{: class="table table-striped"}
+
+### Return type
+
+**AdherenceExplanationJob**
+
 <a name="getWorkforcemanagementAdherenceHistoricalJob"></a>
 
 # WfmHistoricalAdherenceResponse getWorkforcemanagementAdherenceHistoricalJob(jobId)
@@ -974,6 +1085,58 @@ apiInstance.getWorkforcemanagementAdhocmodelingjob(jobId)
 ### Return type
 
 **ModelingStatusResponse**
+
+<a name="getWorkforcemanagementAgentAdherenceExplanation"></a>
+
+# AdherenceExplanationResponse getWorkforcemanagementAgentAdherenceExplanation(agentId, explanationId)
+
+
+GET /api/v2/workforcemanagement/agents/{agentId}/adherence/explanations/{explanationId}
+
+Get an adherence explanation
+
+Requires ANY permissions:
+
+* wfm:adherenceExplanation:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let agentId = "agentId_example"; // String | The ID of the agent to query
+let explanationId = "explanationId_example"; // String | The ID of the explanation to update
+
+apiInstance.getWorkforcemanagementAgentAdherenceExplanation(agentId, explanationId)
+  .then((data) => {
+    console.log(`getWorkforcemanagementAgentAdherenceExplanation success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getWorkforcemanagementAgentAdherenceExplanation');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **agentId** | **String** | The ID of the agent to query |  |
+ **explanationId** | **String** | The ID of the explanation to update |  |
+{: class="table table-striped"}
+
+### Return type
+
+**AdherenceExplanationResponse**
 
 <a name="getWorkforcemanagementAgentManagementunit"></a>
 
@@ -4369,6 +4532,54 @@ This endpoint does not need any parameter.
 
 **ShiftTradeListResponse**
 
+<a name="getWorkforcemanagementShrinkageJob"></a>
+
+# WfmHistoricalShrinkageResponse getWorkforcemanagementShrinkageJob(jobId)
+
+
+GET /api/v2/workforcemanagement/shrinkage/jobs/{jobId}
+
+Request to fetch the status of the historical shrinkage query
+
+Requires NO permissions:
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let jobId = "jobId_example"; // String | jobId
+
+apiInstance.getWorkforcemanagementShrinkageJob(jobId)
+  .then((data) => {
+    console.log(`getWorkforcemanagementShrinkageJob success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getWorkforcemanagementShrinkageJob');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **jobId** | **String** | jobId |  |
+{: class="table table-striped"}
+
+### Return type
+
+**WfmHistoricalShrinkageResponse**
+
 <a name="getWorkforcemanagementTimeoffrequest"></a>
 
 # TimeOffRequestResponse getWorkforcemanagementTimeoffrequest(timeOffRequestId)
@@ -4522,6 +4733,60 @@ apiInstance.getWorkforcemanagementTimeoffrequests(opts)
 ### Return type
 
 **TimeOffRequestList**
+
+<a name="patchWorkforcemanagementAgentAdherenceExplanation"></a>
+
+# AdherenceExplanationAsyncResponse patchWorkforcemanagementAgentAdherenceExplanation(agentId, explanationId, body)
+
+
+PATCH /api/v2/workforcemanagement/agents/{agentId}/adherence/explanations/{explanationId}
+
+Update an adherence explanation
+
+Requires ANY permissions:
+
+* wfm:adherenceExplanation:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let agentId = "agentId_example"; // String | The ID of the agent to query
+let explanationId = "explanationId_example"; // String | The ID of the explanation to update
+let body = {}; // Object | The request body
+
+apiInstance.patchWorkforcemanagementAgentAdherenceExplanation(agentId, explanationId, body)
+  .then((data) => {
+    console.log(`patchWorkforcemanagementAgentAdherenceExplanation success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchWorkforcemanagementAgentAdherenceExplanation');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **agentId** | **String** | The ID of the agent to query |  |
+ **explanationId** | **String** | The ID of the explanation to update |  |
+ **body** | **Object** | The request body |  |
+{: class="table table-striped"}
+
+### Return type
+
+**AdherenceExplanationAsyncResponse**
 
 <a name="patchWorkforcemanagementBusinessunit"></a>
 
@@ -5251,6 +5516,112 @@ apiInstance.patchWorkforcemanagementTimeoffrequest(timeOffRequestId, opts)
 
 **TimeOffRequestResponse**
 
+<a name="postWorkforcemanagementAdherenceExplanations"></a>
+
+# AdherenceExplanationAsyncResponse postWorkforcemanagementAdherenceExplanations(body)
+
+
+POST /api/v2/workforcemanagement/adherence/explanations
+
+Submit an adherence explanation for the current user
+
+Requires ANY permissions:
+
+* wfm:agentAdherenceExplanation:submit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let body = {}; // Object | The request body
+
+apiInstance.postWorkforcemanagementAdherenceExplanations(body)
+  .then((data) => {
+    console.log(`postWorkforcemanagementAdherenceExplanations success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postWorkforcemanagementAdherenceExplanations');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | The request body |  |
+{: class="table table-striped"}
+
+### Return type
+
+**AdherenceExplanationAsyncResponse**
+
+<a name="postWorkforcemanagementAdherenceExplanationsQuery"></a>
+
+# QueryAdherenceExplanationsResponse postWorkforcemanagementAdherenceExplanationsQuery(body, opts)
+
+
+POST /api/v2/workforcemanagement/adherence/explanations/query
+
+Query adherence explanations for the current user
+
+Requires ANY permissions:
+
+* wfm:agentAdherenceExplanation:submit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let body = {}; // Object | The request body
+let opts = { 
+  'forceAsync': true, // Boolean | Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes
+  'forceDownloadService': true // Boolean | Force the result of this operation to be sent via download service. For testing/app development purposes
+};
+
+apiInstance.postWorkforcemanagementAdherenceExplanationsQuery(body, opts)
+  .then((data) => {
+    console.log(`postWorkforcemanagementAdherenceExplanationsQuery success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postWorkforcemanagementAdherenceExplanationsQuery');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | The request body |  |
+ **forceAsync** | **Boolean** | Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes | [optional]  |
+ **forceDownloadService** | **Boolean** | Force the result of this operation to be sent via download service. For testing/app development purposes | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**QueryAdherenceExplanationsResponse**
+
 <a name="postWorkforcemanagementAdherenceHistorical"></a>
 
 # WfmHistoricalAdherenceResponse postWorkforcemanagementAdherenceHistorical(opts)
@@ -5302,6 +5673,116 @@ apiInstance.postWorkforcemanagementAdherenceHistorical(opts)
 ### Return type
 
 **WfmHistoricalAdherenceResponse**
+
+<a name="postWorkforcemanagementAgentAdherenceExplanations"></a>
+
+# AdherenceExplanationAsyncResponse postWorkforcemanagementAgentAdherenceExplanations(agentId, body)
+
+
+POST /api/v2/workforcemanagement/agents/{agentId}/adherence/explanations
+
+Add an adherence explanation for the requested user
+
+Requires ANY permissions:
+
+* wfm:adherenceExplanation:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let agentId = "agentId_example"; // String | The ID of the agent to query
+let body = {}; // Object | The request body
+
+apiInstance.postWorkforcemanagementAgentAdherenceExplanations(agentId, body)
+  .then((data) => {
+    console.log(`postWorkforcemanagementAgentAdherenceExplanations success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postWorkforcemanagementAgentAdherenceExplanations');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **agentId** | **String** | The ID of the agent to query |  |
+ **body** | **Object** | The request body |  |
+{: class="table table-striped"}
+
+### Return type
+
+**AdherenceExplanationAsyncResponse**
+
+<a name="postWorkforcemanagementAgentAdherenceExplanationsQuery"></a>
+
+# AgentQueryAdherenceExplanationsResponse postWorkforcemanagementAgentAdherenceExplanationsQuery(agentId, body, opts)
+
+
+POST /api/v2/workforcemanagement/agents/{agentId}/adherence/explanations/query
+
+Query adherence explanations for the given agent across a specified range
+
+Requires ANY permissions:
+
+* wfm:adherenceExplanation:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let agentId = "agentId_example"; // String | The ID of the agent to query
+let body = {}; // Object | The request body
+let opts = { 
+  'forceAsync': true, // Boolean | Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes
+  'forceDownloadService': true // Boolean | Force the result of this operation to be sent via download service. For testing/app development purposes
+};
+
+apiInstance.postWorkforcemanagementAgentAdherenceExplanationsQuery(agentId, body, opts)
+  .then((data) => {
+    console.log(`postWorkforcemanagementAgentAdherenceExplanationsQuery success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postWorkforcemanagementAgentAdherenceExplanationsQuery');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **agentId** | **String** | The ID of the agent to query |  |
+ **body** | **Object** | The request body |  |
+ **forceAsync** | **Boolean** | Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes | [optional]  |
+ **forceDownloadService** | **Boolean** | Force the result of this operation to be sent via download service. For testing/app development purposes | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**AgentQueryAdherenceExplanationsResponse**
 
 <a name="postWorkforcemanagementAgentschedulesMine"></a>
 
@@ -5408,6 +5889,64 @@ apiInstance.postWorkforcemanagementBusinessunitActivitycodes(businessUnitId, opt
 ### Return type
 
 **BusinessUnitActivityCode**
+
+<a name="postWorkforcemanagementBusinessunitAdherenceExplanationsQuery"></a>
+
+# BuQueryAdherenceExplanationsResponse postWorkforcemanagementBusinessunitAdherenceExplanationsQuery(businessUnitId, body, opts)
+
+
+POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/adherence/explanations/query
+
+Query adherence explanations across an entire business unit for the requested period
+
+Requires ANY permissions:
+
+* wfm:adherenceExplanation:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+let body = {}; // Object | The request body
+let opts = { 
+  'forceAsync': true, // Boolean | Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes
+  'forceDownloadService': true // Boolean | Force the result of this operation to be sent via download service. For testing/app development purposes
+};
+
+apiInstance.postWorkforcemanagementBusinessunitAdherenceExplanationsQuery(businessUnitId, body, opts)
+  .then((data) => {
+    console.log(`postWorkforcemanagementBusinessunitAdherenceExplanationsQuery success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postWorkforcemanagementBusinessunitAdherenceExplanationsQuery');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** | The ID of the business unit |  |
+ **body** | **Object** | The request body |  |
+ **forceAsync** | **Boolean** | Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes | [optional]  |
+ **forceDownloadService** | **Boolean** | Force the result of this operation to be sent via download service. For testing/app development purposes | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**BuQueryAdherenceExplanationsResponse**
 
 <a name="postWorkforcemanagementBusinessunitAgentschedulesSearch"></a>
 
@@ -6803,6 +7342,62 @@ apiInstance.postWorkforcemanagementManagementunitSchedulesSearch(managementUnitI
 ### Return type
 
 **UserScheduleContainer**
+
+<a name="postWorkforcemanagementManagementunitShrinkageJobs"></a>
+
+# WfmHistoricalShrinkageResponse postWorkforcemanagementManagementunitShrinkageJobs(managementUnitId, opts)
+
+
+POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/shrinkage/jobs
+
+Request a historical shrinkage report
+
+The maximum supported range for historical shrinkage queries is up to 32 days. Historical Shrinkage for a given date range can be queried in two modes - granular and aggregated. To see granular shrinkage information, provide granularity in the request body. 
+
+Requires ANY permissions:
+
+* wfm:shrinkage:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit
+let opts = { 
+  'body': {} // Object | body
+};
+
+apiInstance.postWorkforcemanagementManagementunitShrinkageJobs(managementUnitId, opts)
+  .then((data) => {
+    console.log(`postWorkforcemanagementManagementunitShrinkageJobs success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postWorkforcemanagementManagementunitShrinkageJobs');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **managementUnitId** | **String** | The ID of the management unit |  |
+ **body** | **Object** | body | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**WfmHistoricalShrinkageResponse**
 
 <a name="postWorkforcemanagementManagementunitTimeofflimits"></a>
 

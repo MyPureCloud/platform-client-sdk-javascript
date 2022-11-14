@@ -1536,6 +1536,8 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.RoutingApi();
 
 let opts = { 
+  'pageSize': 25, // Number | Page size
+  'pageNumber': 1, // Number | Page number
   'excludeStatus': false // Boolean | Exclude MX record data
 };
 
@@ -1554,6 +1556,8 @@ apiInstance.getRoutingEmailDomains(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **excludeStatus** | **Boolean** | Exclude MX record data | [optional] [default to false] |
 {: class="table table-striped"}
 

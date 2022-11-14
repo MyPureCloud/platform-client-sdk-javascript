@@ -1,265 +1,244 @@
-Platform API version: 6309
+Platform API version: 6333
 
 
-# Major Changes (16 changes)
+# Major Changes (9 changes)
 
-**/api/v2/gamification/metrics/{metricId}** (1 change)
+**GET /api/v2/routing/email/domains** (2 changes)
 
-* Path /api/v2/gamification/metrics/{metricId} was removed
-
-**GET /api/v2/analytics/botflows/{botFlowId}/reportingturns** (1 change)
-
-* Parameter language was added
-
-**GET /api/v2/conversations/messaging/integrations** (2 changes)
-
-* Parameter expand was changed from string to array
-* Parameter messagingSetting.id was added
-
-**GET /api/v2/conversations/messaging/integrations/facebook** (1 change)
-
-* Parameter messagingSetting.id was added
-
-**GET /api/v2/conversations/messaging/integrations/line** (1 change)
-
-* Parameter messagingSetting.id was added
-
-**GET /api/v2/conversations/messaging/integrations/open** (1 change)
-
-* Parameter messagingSetting.id was added
-
-**GET /api/v2/conversations/messaging/integrations/twitter** (1 change)
-
-* Parameter messagingSetting.id was added
-
-**GET /api/v2/conversations/messaging/integrations/whatsapp** (1 change)
-
-* Parameter messagingSetting.id was added
-
-**GET /api/v2/flows/datatables/{datatableId}/rows** (1 change)
-
-* Parameter sortOrder was added
-
-**GET /api/v2/knowledge/guest/sessions/{sessionId}/documents** (1 change)
-
-* Parameter pageSize was changed from string to integer
-
-**KnowledgeExportJobResponse** (1 change)
-
-* Required property fileType was added
-
-**KnowledgeExportJobRequest** (1 change)
-
-* Required property fileType was added
-
-**KnowledgeDocumentSearchRequest** (3 changes)
-
-* Enum value ASC was removed from property sortOrder
-* Enum value DESC was removed from property sortOrder
-* Enum value SCORE was removed from property sortOrder
-
-
-# Minor Changes (62 changes)
-
-**/api/v2/analytics/actions/aggregates/query** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/routing/skillgroups/{skillGroupId}/members/divisions** (3 changes)
-
-* Path was added
-* Operation GET was added
-* Operation POST was added
-
-**/api/v2/routing/skillgroups/{skillGroupId}/members** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/routing/skillgroups/{skillGroupId}** (4 changes)
-
-* Path was added
-* Operation GET was added
-* Operation DELETE was added
-* Operation PATCH was added
-
-**/api/v2/routing/skillgroups** (3 changes)
-
-* Path was added
-* Operation GET was added
-* Operation POST was added
+* Parameter pageSize was added
+* Parameter pageNumber was added
 
 **CommunicationEndedEvent** (2 changes)
 
-* Enum value TransferACD was added to property disconnectType
-* Enum value TransferUser was added to property disconnectType
+* Enum value TransferACD was removed from property disconnectType
+* Enum value TransferUser was removed from property disconnectType
 
-**ActionAggregateDataContainer** (1 change)
+**AuditQueryExecutionStatusResponse** (1 change)
 
-* Model was added
+* Enum value TopicsDefinitions was removed from property serviceName
 
-**ActionAggregateQueryResponse** (1 change)
+**AuditQueryRequest** (1 change)
 
-* Model was added
+* Enum value TopicsDefinitions was removed from property serviceName
 
-**ActionAggregateQueryClause** (1 change)
+**AuditLogMessage** (1 change)
 
-* Model was added
+* Enum value TopicsDefinitions was removed from property serviceName
 
-**ActionAggregateQueryFilter** (1 change)
+**AuditRealtimeQueryRequest** (1 change)
 
-* Model was added
+* Enum value TopicsDefinitions was removed from property serviceName
 
-**ActionAggregateQueryPredicate** (1 change)
+**AuditQueryService** (1 change)
 
-* Model was added
+* Enum value TopicsDefinitions was removed from property name
 
-**ActionAggregationQuery** (1 change)
 
-* Model was added
+# Minor Changes (61 changes)
 
-**ActionAggregationView** (1 change)
+**/api/v2/authorization/settings** (3 changes)
 
-* Model was added
+* Path was added
+* Operation GET was added
+* Operation PATCH was added
 
-**ReportingTurnAction** (2 changes)
+**/api/v2/workforcemanagement/adherence/explanations/jobs/{jobId}** (2 changes)
 
-* Enum value FindQueueAction was added to property actionType
-* Enum value FindQueueByIdAction was added to property actionType
+* Path was added
+* Operation GET was added
 
-**ViewFilter** (1 change)
+**/api/v2/workforcemanagement/agents/{agentId}/adherence/explanations/{explanationId}** (3 changes)
 
-* Optional property integrationIds was added
+* Path was added
+* Operation GET was added
+* Operation PATCH was added
 
-**AuditLogMessage** (3 changes)
+**/api/v2/workforcemanagement/agents/{agentId}/adherence/explanations/query** (2 changes)
 
-* Enum value Group was added to property entityType
-* Enum value Public was added to property entityType
-* Enum value Tag was added to property entityType
+* Path was added
+* Operation POST was added
 
-**EntityChange** (3 changes)
+**/api/v2/workforcemanagement/agents/{agentId}/adherence/explanations** (2 changes)
 
-* Enum value Group was added to property entityType
-* Enum value Public was added to property entityType
-* Enum value Tag was added to property entityType
+* Path was added
+* Operation POST was added
 
-**AuditQueryEntity** (3 changes)
+**/api/v2/workforcemanagement/businessunits/{businessUnitId}/adherence/explanations/query** (2 changes)
 
-* Enum value Group was added to property name
-* Enum value Public was added to property name
-* Enum value Tag was added to property name
+* Path was added
+* Operation POST was added
 
-**ExternalMetricDataProcessedItem** (3 changes)
+**/api/v2/workforcemanagement/adherence/explanations/{explanationId}** (2 changes)
 
-* Optional property type was added
-* Optional property totalValue was added
-* Optional property totalCount was added
+* Path was added
+* Operation GET was added
 
-**ExternalMetricDataUnprocessedItem** (1 change)
+**/api/v2/workforcemanagement/adherence/explanations/query** (2 changes)
 
-* Optional property type was added
+* Path was added
+* Operation POST was added
 
-**ExternalMetricDataItem** (1 change)
+**/api/v2/workforcemanagement/adherence/explanations** (2 changes)
 
-* Optional property type was added
+* Path was added
+* Operation POST was added
 
-**KnowledgeImportJobResponse** (1 change)
+**/api/v2/workforcemanagement/shrinkage/jobs/{jobId}** (2 changes)
 
-* Enum value Xlsx was added to property fileType
+* Path was added
+* Operation GET was added
 
-**KnowledgeImportJobRequest** (1 change)
+**/api/v2/workforcemanagement/managementunits/{managementUnitId}/shrinkage/jobs** (2 changes)
 
-* Enum value Xlsx was added to property fileType
+* Path was added
+* Operation POST was added
 
-**KnowledgeDocumentSearchRequest** (2 changes)
+**AnalyticsSession** (2 changes)
 
-* Enum value Asc was added to property sortOrder
-* Enum value Desc was added to property sortOrder
+* Enum value Vip was added to property requestedRoutings
+* Enum value Vip was added to property usedRouting
 
-**IntentDefinition** (1 change)
+**ObservationValue** (2 changes)
 
-* Optional property id was added
+* Enum value Vip was added to property requestedRoutings
+* Enum value Vip was added to property usedRouting
 
-**NluUtterance** (1 change)
+**ReportingTurnAction** (1 change)
 
-* Optional property id was added
+* Enum value SetLocaleAction was added to property actionType
 
-**LimitChangeRequestDetails** (1 change)
+**ViewFilter** (2 changes)
 
-* Enum value secondary.automation.testing was added to property namespace
+* Enum value Vip was added to property usedRoutingTypes
+* Enum value Vip was added to property requestedRoutingTypes
 
-**StatusChange** (1 change)
-
-* Enum value secondary.automation.testing was added to property namespace
-
-**NluInfo** (1 change)
-
-* Optional property nluData was added
-
-**Predictor** (1 change)
-
-* Optional property models was added
-
-**PredictorModelBrief** (1 change)
+**AuthorizationSettings** (1 change)
 
 * Model was added
 
-**PredictorModelRetrainingError** (1 change)
+**DataActionConditionSettings** (1 change)
 
 * Model was added
 
-**SkillGroupMemberDivisions** (1 change)
+**DataActionContactColumnFieldMapping** (1 change)
 
 * Model was added
 
-**SkillGroupMemberDivisionList** (1 change)
+**DigitalDataActionConditionPredicate** (1 change)
 
 * Model was added
 
-**SkillGroupMemberEntityListing** (1 change)
+**SurveyForm** (1 change)
+
+* published is no longer readonly
+
+**TextBotFlowTurnRequest** (1 change)
+
+* Enum value ClientSessionExpired was added to property inputEventType
+
+**AdherenceExplanationJob** (1 change)
 
 * Model was added
 
-**SkillGroup** (1 change)
+**AdherenceExplanationListingAgentQueryResponse** (1 change)
 
 * Model was added
 
-**SkillGroupCondition** (1 change)
+**AdherenceExplanationListingBuQueryResponse** (1 change)
 
 * Model was added
 
-**SkillGroupLanguageCondition** (1 change)
+**AdherenceExplanationResponse** (1 change)
 
 * Model was added
 
-**SkillGroupRoutingCondition** (1 change)
+**AdherenceExplanationJobReference** (1 change)
 
 * Model was added
 
-**SkillGroupEntityListing** (1 change)
+**AgentQueryAdherenceExplanationsResponse** (1 change)
 
 * Model was added
 
-**TextBotFlowLaunchRequest** (1 change)
+**AgentQueryAdherenceExplanationsRequest** (1 change)
 
-* Optional property language was added
+* Model was added
 
-**VoicemailGroupPolicy** (1 change)
+**AdherenceExplanationAsyncResponse** (1 change)
 
-* Optional property includeEmailTranscriptions was added
+* Model was added
+
+**AddAdherenceExplanationAdminRequest** (1 change)
+
+* Model was added
+
+**UpdateAdherenceExplanationStatusRequest** (1 change)
+
+* Model was added
+
+**BuQueryAdherenceExplanationsResponse** (1 change)
+
+* Model was added
+
+**BuQueryAdherenceExplanationsRequest** (1 change)
+
+* Model was added
+
+**AdherenceExplanationListing** (1 change)
+
+* Model was added
+
+**QueryAdherenceExplanationsResponse** (1 change)
+
+* Model was added
+
+**AddAdherenceExplanationAgentRequest** (1 change)
+
+* Model was added
+
+**HistoricalAdherenceQueryResult** (1 change)
+
+* Optional property managementUnitId was added
+
+**UserScheduleAdherence** (1 change)
+
+* Optional property adherenceExplanation was added
+
+**HistoricalShrinkageActivityCategoryResponse** (1 change)
+
+* Model was added
+
+**HistoricalShrinkageActivityCodeResponse** (1 change)
+
+* Model was added
+
+**HistoricalShrinkageAggregateResponse** (1 change)
+
+* Model was added
+
+**HistoricalShrinkageResult** (1 change)
+
+* Model was added
+
+**HistoricalShrinkageResultListing** (1 change)
+
+* Model was added
+
+**WfmHistoricalShrinkageResponse** (1 change)
+
+* Model was added
+
+**WfmHistoricalShrinkageRequest** (1 change)
+
+* Model was added
 
 
-# Point Changes (3 changes)
+# Point Changes (2 changes)
 
-**GET /api/v2/flows/datatables/divisionviews** (1 change)
+**DELETE /api/v2/analytics/conversations/details/jobs/{jobId}** (1 change)
 
-* Description was changed for parameter name
+* Summary was changed
 
-**GET /api/v2/flows/datatables** (1 change)
+**GET /api/v2/analytics/conversations/details/jobs/{jobId}/results** (1 change)
 
-* Description was changed for parameter name
-
-**GET /api/v2/knowledge/guest/sessions/{sessionId}/documents** (1 change)
-
-* Description was changed for parameter includeSubcategories
+* Summary was changed
