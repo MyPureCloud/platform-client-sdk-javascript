@@ -5,7 +5,7 @@ class OutboundApi {
 	/**
 	 * Outbound service.
 	 * @module purecloud-platform-client-v2/api/OutboundApi
-	 * @version 153.0.0
+	 * @version 154.0.0
 	 */
 
 	/**
@@ -2619,6 +2619,36 @@ class OutboundApi {
 			'/api/v2/outbound/digitalrulesets', 
 			'POST', 
 			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Add email addresses to a DNC list.
+	 * Only Internal DNC lists may be appended to
+	 * @param {String} dncListId DncList ID
+	 * @param {Array.<String>} body DNC email addresses
+	 */
+	postOutboundDnclistEmailaddresses(dncListId, body) { 
+		// verify the required parameter 'dncListId' is set
+		if (dncListId === undefined || dncListId === null) {
+			throw 'Missing the required parameter "dncListId" when calling postOutboundDnclistEmailaddresses';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postOutboundDnclistEmailaddresses';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/outbound/dnclists/{dncListId}/emailaddresses', 
+			'POST', 
+			{ 'dncListId': dncListId },
 			{  },
 			{  },
 			{  },

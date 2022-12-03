@@ -5,7 +5,7 @@ class LearningApi {
 	/**
 	 * Learning service.
 	 * @module purecloud-platform-client-v2/api/LearningApi
-	 * @version 153.0.0
+	 * @version 154.0.0
 	 */
 
 	/**
@@ -305,6 +305,7 @@ class LearningApi {
 	 * @param {String} opts.searchTerm Search Term (searchable by name)
 	 * @param {Array.<String>} opts.expand Fields to expand in response(case insensitive)
 	 * @param {Object} opts.isPublished Specifies if only the Unpublished (isPublished is False) or Published (isPublished is True) modules are returned. If isPublished is Any or omitted, both types are returned (default to Any)
+	 * @param {Array.<String>} opts.statuses Specifies the module statuses to filter by
 	 */
 	getLearningModules(opts) { 
 		opts = opts || {};
@@ -314,7 +315,7 @@ class LearningApi {
 			'/api/v2/learning/modules', 
 			'GET', 
 			{  },
-			{ 'isArchived': opts['isArchived'],'types': this.apiClient.buildCollectionParam(opts['types'], 'multi'),'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortOrder': opts['sortOrder'],'sortBy': opts['sortBy'],'searchTerm': opts['searchTerm'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'isPublished': opts['isPublished'] },
+			{ 'isArchived': opts['isArchived'],'types': this.apiClient.buildCollectionParam(opts['types'], 'multi'),'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortOrder': opts['sortOrder'],'sortBy': opts['sortBy'],'searchTerm': opts['searchTerm'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'isPublished': opts['isPublished'],'statuses': this.apiClient.buildCollectionParam(opts['statuses'], 'multi') },
 			{  },
 			{  },
 			null, 

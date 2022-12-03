@@ -1564,7 +1564,8 @@ let opts = {
   'sortBy': "name", // String | Sort by
   'sortOrder': "ASC", // String | Sort order
   'name': "name_example", // String | Name of the IVR to filter by.
-  'dnis': "dnis_example" // String | The phone number of the IVR to filter by.
+  'dnis': "dnis_example", // String | The phone number of the IVR to filter by.
+  'scheduleGroup': "scheduleGroup_example" // String | The Schedule Group of the IVR to filter by.
 };
 
 apiInstance.getArchitectIvrs(opts)
@@ -1588,6 +1589,7 @@ apiInstance.getArchitectIvrs(opts)
  **sortOrder** | **String** | Sort order | [optional] [default to ASC] |
  **name** | **String** | Name of the IVR to filter by. | [optional]  |
  **dnis** | **String** | The phone number of the IVR to filter by. | [optional]  |
+ **scheduleGroup** | **String** | The Schedule Group of the IVR to filter by. | [optional]  |
 {: class="table table-striped"}
 
 ### Return type

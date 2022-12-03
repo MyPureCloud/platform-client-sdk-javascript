@@ -214,7 +214,7 @@
   "getanalyticsbotflowreportingturns": {
     "operationId": "getanalyticsbotflowreportingturns",
     "functionName": "getAnalyticsBotflowReportingturns",
-    "signature": "getAnalyticsBotflowReportingturns(botFlowId, after, pageSize, actionId, sessionId, language)",
+    "signature": "getAnalyticsBotflowReportingturns(botFlowId, after, pageSize, actionId, sessionId, language, askActionResults)",
     "parameters": [
       {
         "name": "botFlowId",
@@ -245,10 +245,15 @@
         "name": "language",
         "type": "String",
         "required": "false"
+      },
+      {
+        "name": "askActionResults",
+        "type": "String",
+        "required": "false"
       }
     ],
     "return": "ReportingTurnsResponse",
-    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.AnalyticsApi();\n\nlet botFlowId = \"botFlowId_example\"; // String | ID of the bot flow.\nlet opts = { \n  \"after\": \"after_example\", // String | The cursor that points to the ID of the last item in the list of entities that has been returned.\n  \"pageSize\": \"50\", // String | Max number of entities to return. Maximum of 250\n  \"actionId\": \"actionId_example\", // String | Optional action ID to get the reporting turns associated to a particular flow action\n  \"sessionId\": \"sessionId_example\", // String | Optional session ID to get the reporting turns for a particular session\n  \"language\": en-us // String | Optional language code to get the reporting turns for a particular language\n};\n\n// Get Reporting Turns.\napiInstance.getAnalyticsBotflowReportingturns(botFlowId, opts)\n  .then((data) => {\n    console.log(`getAnalyticsBotflowReportingturns success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getAnalyticsBotflowReportingturns\");\n    console.error(err);\n  });"
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.AnalyticsApi();\n\nlet botFlowId = \"botFlowId_example\"; // String | ID of the bot flow.\nlet opts = { \n  \"after\": \"after_example\", // String | The cursor that points to the ID of the last item in the list of entities that has been returned.\n  \"pageSize\": \"50\", // String | Max number of entities to return. Maximum of 250\n  \"actionId\": \"actionId_example\", // String | Optional action ID to get the reporting turns associated to a particular flow action\n  \"sessionId\": \"sessionId_example\", // String | Optional session ID to get the reporting turns for a particular session\n  \"language\": en-us, // String | Optional language code to get the reporting turns for a particular language\n  \"askActionResults\": \"askActionResults_example\" // String | Optional case-insensitive comma separated list of ask action results to filter the reporting turns.\n};\n\n// Get Reporting Turns.\napiInstance.getAnalyticsBotflowReportingturns(botFlowId, opts)\n  .then((data) => {\n    console.log(`getAnalyticsBotflowReportingturns success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getAnalyticsBotflowReportingturns\");\n    console.error(err);\n  });"
   },
   "getanalyticsconversationdetails": {
     "operationId": "getanalyticsconversationdetails",
@@ -1485,7 +1490,7 @@
   "getarchitectivrs": {
     "operationId": "getarchitectivrs",
     "functionName": "getArchitectIvrs",
-    "signature": "getArchitectIvrs(pageNumber, pageSize, sortBy, sortOrder, name, dnis)",
+    "signature": "getArchitectIvrs(pageNumber, pageSize, sortBy, sortOrder, name, dnis, scheduleGroup)",
     "parameters": [
       {
         "name": "pageNumber",
@@ -1516,10 +1521,15 @@
         "name": "dnis",
         "type": "String",
         "required": "false"
+      },
+      {
+        "name": "scheduleGroup",
+        "type": "String",
+        "required": "false"
       }
     ],
     "return": "IVREntityListing",
-    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.ArchitectApi();\n\nlet opts = { \n  \"pageNumber\": 1, // Number | Page number\n  \"pageSize\": 25, // Number | Page size\n  \"sortBy\": \"name\", // String | Sort by\n  \"sortOrder\": \"ASC\", // String | Sort order\n  \"name\": \"name_example\", // String | Name of the IVR to filter by.\n  \"dnis\": \"dnis_example\" // String | The phone number of the IVR to filter by.\n};\n\n// Get IVR configs.\napiInstance.getArchitectIvrs(opts)\n  .then((data) => {\n    console.log(`getArchitectIvrs success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getArchitectIvrs\");\n    console.error(err);\n  });"
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.ArchitectApi();\n\nlet opts = { \n  \"pageNumber\": 1, // Number | Page number\n  \"pageSize\": 25, // Number | Page size\n  \"sortBy\": \"name\", // String | Sort by\n  \"sortOrder\": \"ASC\", // String | Sort order\n  \"name\": \"name_example\", // String | Name of the IVR to filter by.\n  \"dnis\": \"dnis_example\", // String | The phone number of the IVR to filter by.\n  \"scheduleGroup\": \"scheduleGroup_example\" // String | The Schedule Group of the IVR to filter by.\n};\n\n// Get IVR configs.\napiInstance.getArchitectIvrs(opts)\n  .then((data) => {\n    console.log(`getArchitectIvrs success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getArchitectIvrs\");\n    console.error(err);\n  });"
   },
   "getarchitectprompt": {
     "operationId": "getarchitectprompt",
@@ -17268,7 +17278,7 @@
   "getlearningmodules": {
     "operationId": "getlearningmodules",
     "functionName": "getLearningModules",
-    "signature": "getLearningModules(isArchived, types, pageSize, pageNumber, sortOrder, sortBy, searchTerm, expand, isPublished)",
+    "signature": "getLearningModules(isArchived, types, pageSize, pageNumber, sortOrder, sortBy, searchTerm, expand, isPublished, statuses)",
     "parameters": [
       {
         "name": "isArchived",
@@ -17314,10 +17324,15 @@
         "name": "isPublished",
         "type": "String",
         "required": "false"
+      },
+      {
+        "name": "statuses",
+        "type": "[String]",
+        "required": "false"
       }
     ],
     "return": "LearningModulesDomainEntityListing",
-    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.LearningApi();\n\nlet opts = { \n  \"isArchived\": false, // Boolean | Archive status\n  \"types\": [\"types_example\"], // [String] | Specifies the module types.\n  \"pageSize\": 25, // Number | Page size\n  \"pageNumber\": 1, // Number | Page number\n  \"sortOrder\": \"ascending\", // String | Sort order\n  \"sortBy\": \"name\", // String | Sort by\n  \"searchTerm\": \"searchTerm_example\", // String | Search Term (searchable by name)\n  \"expand\": [\"expand_example\"], // [String] | Fields to expand in response(case insensitive)\n  \"isPublished\": \"Any\" // String | Specifies if only the Unpublished (isPublished is False) or Published (isPublished is True) modules are returned. If isPublished is Any or omitted, both types are returned\n};\n\n// Get all learning modules of an organization\napiInstance.getLearningModules(opts)\n  .then((data) => {\n    console.log(`getLearningModules success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getLearningModules\");\n    console.error(err);\n  });"
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.LearningApi();\n\nlet opts = { \n  \"isArchived\": false, // Boolean | Archive status\n  \"types\": [\"types_example\"], // [String] | Specifies the module types.\n  \"pageSize\": 25, // Number | Page size\n  \"pageNumber\": 1, // Number | Page number\n  \"sortOrder\": \"ascending\", // String | Sort order\n  \"sortBy\": \"name\", // String | Sort by\n  \"searchTerm\": \"searchTerm_example\", // String | Search Term (searchable by name)\n  \"expand\": [\"expand_example\"], // [String] | Fields to expand in response(case insensitive)\n  \"isPublished\": \"Any\", // String | Specifies if only the Unpublished (isPublished is False) or Published (isPublished is True) modules are returned. If isPublished is Any or omitted, both types are returned\n  \"statuses\": [\"statuses_example\"] // [String] | Specifies the module statuses to filter by\n};\n\n// Get all learning modules of an organization\napiInstance.getLearningModules(opts)\n  .then((data) => {\n    console.log(`getLearningModules success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getLearningModules\");\n    console.error(err);\n  });"
   },
   "getlearningmodulesassignments": {
     "operationId": "getlearningmodulesassignments",
@@ -21260,6 +21275,24 @@
     "return": "DigitalRuleSet",
     "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.OutboundApi();\n\nlet body = {}; // Object | Digital Rule Set\n\n// Create an Outbound Digital Rule Set\napiInstance.postOutboundDigitalrulesets(body)\n  .then((data) => {\n    console.log(`postOutboundDigitalrulesets success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling postOutboundDigitalrulesets\");\n    console.error(err);\n  });"
   },
+  "postoutbounddnclistemailaddresses": {
+    "operationId": "postoutbounddnclistemailaddresses",
+    "functionName": "postOutboundDnclistEmailaddresses",
+    "signature": "postOutboundDnclistEmailaddresses(dncListId, body)",
+    "parameters": [
+      {
+        "name": "dncListId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "[String]",
+        "required": "true"
+      }
+    ],
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.OutboundApi();\n\nlet dncListId = \"dncListId_example\"; // String | DncList ID\nlet body = [\"body_example\"]; // [String] | DNC email addresses\n\n// Add email addresses to a DNC list.\napiInstance.postOutboundDnclistEmailaddresses(dncListId, body)\n  .then(() => {\n    console.log(\"postOutboundDnclistEmailaddresses returned successfully.\");\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling postOutboundDnclistEmailaddresses\");\n    console.error(err);\n  });"
+  },
   "postoutbounddnclistexport": {
     "operationId": "postoutbounddnclistexport",
     "functionName": "postOutboundDnclistExport",
@@ -24066,14 +24099,14 @@
       }
     ],
     "return": "LocalEncryptionConfiguration",
-    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.RecordingApi();\n\nlet settingsId = \"settingsId_example\"; // String | Settings Id\n\n// Get the local encryption settings\napiInstance.getRecordingLocalkeysSetting(settingsId)\n  .then((data) => {\n    console.log(`getRecordingLocalkeysSetting success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getRecordingLocalkeysSetting\");\n    console.error(err);\n  });"
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.RecordingApi();\n\nlet settingsId = \"settingsId_example\"; // String | Settings Id\n\n// Get the local encryption settings. Replaced by API recording/keyconfigurations/{keyConfigurationId}\napiInstance.getRecordingLocalkeysSetting(settingsId)\n  .then((data) => {\n    console.log(`getRecordingLocalkeysSetting success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getRecordingLocalkeysSetting\");\n    console.error(err);\n  });"
   },
   "getrecordinglocalkeyssettings": {
     "operationId": "getrecordinglocalkeyssettings",
     "functionName": "getRecordingLocalkeysSettings",
     "signature": "getRecordingLocalkeysSettings()",
     "return": "LocalEncryptionConfigurationListing",
-    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.RecordingApi();\n\n// gets a list local key settings data\napiInstance.getRecordingLocalkeysSettings()\n  .then((data) => {\n    console.log(`getRecordingLocalkeysSettings success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getRecordingLocalkeysSettings\");\n    console.error(err);\n  });"
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.RecordingApi();\n\n// gets a list local key settings data. Replaced by API recording/keyconfigurations\napiInstance.getRecordingLocalkeysSettings()\n  .then((data) => {\n    console.log(`getRecordingLocalkeysSettings success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getRecordingLocalkeysSettings\");\n    console.error(err);\n  });"
   },
   "getrecordingmediaretentionpolicies": {
     "operationId": "getrecordingmediaretentionpolicies",
@@ -24398,7 +24431,7 @@
       }
     ],
     "return": "EncryptionKey",
-    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.RecordingApi();\n\nlet body = {}; // Object | Local Encryption body\n\n// create a local recording key\napiInstance.postRecordingLocalkeys(body)\n  .then((data) => {\n    console.log(`postRecordingLocalkeys success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling postRecordingLocalkeys\");\n    console.error(err);\n  });"
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.RecordingApi();\n\nlet body = {}; // Object | Local Encryption body\n\n// create a local key management recording key\napiInstance.postRecordingLocalkeys(body)\n  .then((data) => {\n    console.log(`postRecordingLocalkeys success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling postRecordingLocalkeys\");\n    console.error(err);\n  });"
   },
   "postrecordinglocalkeyssettings": {
     "operationId": "postrecordinglocalkeyssettings",
@@ -24412,7 +24445,7 @@
       }
     ],
     "return": "LocalEncryptionConfiguration",
-    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.RecordingApi();\n\nlet body = {}; // Object | Local Encryption Configuration\n\n// create settings for local key creation\napiInstance.postRecordingLocalkeysSettings(body)\n  .then((data) => {\n    console.log(`postRecordingLocalkeysSettings success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling postRecordingLocalkeysSettings\");\n    console.error(err);\n  });"
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.RecordingApi();\n\nlet body = {}; // Object | Local Encryption Configuration\n\n// create settings for local key creation. Replaced by API recording/keyconfigurations\napiInstance.postRecordingLocalkeysSettings(body)\n  .then((data) => {\n    console.log(`postRecordingLocalkeysSettings success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling postRecordingLocalkeysSettings\");\n    console.error(err);\n  });"
   },
   "postrecordingmediaretentionpolicies": {
     "operationId": "postrecordingmediaretentionpolicies",
@@ -24626,7 +24659,7 @@
       }
     ],
     "return": "LocalEncryptionConfiguration",
-    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.RecordingApi();\n\nlet settingsId = \"settingsId_example\"; // String | Settings Id\nlet body = {}; // Object | Local Encryption metadata\n\n// Update the local encryption settings\napiInstance.putRecordingLocalkeysSetting(settingsId, body)\n  .then((data) => {\n    console.log(`putRecordingLocalkeysSetting success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling putRecordingLocalkeysSetting\");\n    console.error(err);\n  });"
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.RecordingApi();\n\nlet settingsId = \"settingsId_example\"; // String | Settings Id\nlet body = {}; // Object | Local Encryption metadata\n\n// Update the local encryption settings. Replaced by API recording/keyconfigurations/{keyConfigurationId}\napiInstance.putRecordingLocalkeysSetting(settingsId, body)\n  .then((data) => {\n    console.log(`putRecordingLocalkeysSetting success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling putRecordingLocalkeysSetting\");\n    console.error(err);\n  });"
   },
   "putrecordingmediaretentionpolicy": {
     "operationId": "putrecordingmediaretentionpolicy",

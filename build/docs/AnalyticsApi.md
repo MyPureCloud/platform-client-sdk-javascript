@@ -239,7 +239,8 @@ let opts = {
   'pageSize': "50", // String | Max number of entities to return. Maximum of 250
   'actionId': "actionId_example", // String | Optional action ID to get the reporting turns associated to a particular flow action
   'sessionId': "sessionId_example", // String | Optional session ID to get the reporting turns for a particular session
-  'language': en-us // String | Optional language code to get the reporting turns for a particular language
+  'language': en-us, // String | Optional language code to get the reporting turns for a particular language
+  'askActionResults': "askActionResults_example" // String | Optional case-insensitive comma separated list of ask action results to filter the reporting turns.
 };
 
 apiInstance.getAnalyticsBotflowReportingturns(botFlowId, opts)
@@ -263,6 +264,7 @@ apiInstance.getAnalyticsBotflowReportingturns(botFlowId, opts)
  **actionId** | **String** | Optional action ID to get the reporting turns associated to a particular flow action | [optional]  |
  **sessionId** | **String** | Optional session ID to get the reporting turns for a particular session | [optional]  |
  **language** | **String** | Optional language code to get the reporting turns for a particular language | [optional]  |
+ **askActionResults** | **String** | Optional case-insensitive comma separated list of ask action results to filter the reporting turns. | [optional] <br />**Values**: AgentRequestedByUser, ConfirmationRequired, DisambiguationRequired, Error, ExpressionError, NoInputCollection, NoInputConfirmation, NoInputDisambiguation, NoMatchCollection, NoMatchConfirmation, NoMatchDisambiguation, SuccessCollection, SuccessConfirmationNo, SuccessConfirmationYes, SuccessDisambiguation, SuccessDisambiguationNone |
 {: class="table table-striped"}
 
 ### Return type

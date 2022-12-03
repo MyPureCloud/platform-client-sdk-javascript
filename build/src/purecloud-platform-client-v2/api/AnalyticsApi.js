@@ -5,7 +5,7 @@ class AnalyticsApi {
 	/**
 	 * Analytics service.
 	 * @module purecloud-platform-client-v2/api/AnalyticsApi
-	 * @version 153.0.0
+	 * @version 154.0.0
 	 */
 
 	/**
@@ -105,6 +105,7 @@ class AnalyticsApi {
 	 * @param {String} opts.actionId Optional action ID to get the reporting turns associated to a particular flow action
 	 * @param {String} opts.sessionId Optional session ID to get the reporting turns for a particular session
 	 * @param {String} opts.language Optional language code to get the reporting turns for a particular language
+	 * @param {Object} opts.askActionResults Optional case-insensitive comma separated list of ask action results to filter the reporting turns.
 	 */
 	getAnalyticsBotflowReportingturns(botFlowId, opts) { 
 		opts = opts || {};
@@ -118,7 +119,7 @@ class AnalyticsApi {
 			'/api/v2/analytics/botflows/{botFlowId}/reportingturns', 
 			'GET', 
 			{ 'botFlowId': botFlowId },
-			{ 'after': opts['after'],'pageSize': opts['pageSize'],'actionId': opts['actionId'],'sessionId': opts['sessionId'],'language': opts['language'] },
+			{ 'after': opts['after'],'pageSize': opts['pageSize'],'actionId': opts['actionId'],'sessionId': opts['sessionId'],'language': opts['language'],'askActionResults': opts['askActionResults'] },
 			{  },
 			{  },
 			null, 

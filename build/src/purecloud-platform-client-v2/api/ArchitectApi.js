@@ -5,7 +5,7 @@ class ArchitectApi {
 	/**
 	 * Architect service.
 	 * @module purecloud-platform-client-v2/api/ArchitectApi
-	 * @version 153.0.0
+	 * @version 154.0.0
 	 */
 
 	/**
@@ -764,6 +764,7 @@ class ArchitectApi {
 	 * @param {String} opts.sortOrder Sort order (default to ASC)
 	 * @param {String} opts.name Name of the IVR to filter by.
 	 * @param {String} opts.dnis The phone number of the IVR to filter by.
+	 * @param {String} opts.scheduleGroup The Schedule Group of the IVR to filter by.
 	 */
 	getArchitectIvrs(opts) { 
 		opts = opts || {};
@@ -773,7 +774,7 @@ class ArchitectApi {
 			'/api/v2/architect/ivrs', 
 			'GET', 
 			{  },
-			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'name': opts['name'],'dnis': opts['dnis'] },
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'name': opts['name'],'dnis': opts['dnis'],'scheduleGroup': opts['scheduleGroup'] },
 			{  },
 			{  },
 			null, 

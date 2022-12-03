@@ -1,244 +1,204 @@
-Platform API version: 6333
+Platform API version: 6403
 
 
-# Major Changes (9 changes)
+# Major Changes (11 changes)
 
-**GET /api/v2/routing/email/domains** (2 changes)
+**GET /api/v2/analytics/botflows/{botFlowId}/reportingturns** (1 change)
 
-* Parameter pageSize was added
-* Parameter pageNumber was added
+* Parameter askActionResults was added
 
-**CommunicationEndedEvent** (2 changes)
+**GET /api/v2/recording/localkeys/settings/{settingsId}** (1 change)
 
-* Enum value TransferACD was removed from property disconnectType
-* Enum value TransferUser was removed from property disconnectType
+* Has been deprecated
 
-**AuditQueryExecutionStatusResponse** (1 change)
+**PUT /api/v2/recording/localkeys/settings/{settingsId}** (1 change)
 
-* Enum value TopicsDefinitions was removed from property serviceName
+* Has been deprecated
 
-**AuditQueryRequest** (1 change)
+**GET /api/v2/recording/localkeys/settings** (1 change)
 
-* Enum value TopicsDefinitions was removed from property serviceName
+* Has been deprecated
 
-**AuditLogMessage** (1 change)
+**POST /api/v2/recording/localkeys/settings** (1 change)
 
-* Enum value TopicsDefinitions was removed from property serviceName
+* Has been deprecated
 
-**AuditRealtimeQueryRequest** (1 change)
+**GET /api/v2/architect/ivrs** (1 change)
 
-* Enum value TopicsDefinitions was removed from property serviceName
+* Parameter scheduleGroup was added
 
-**AuditQueryService** (1 change)
+**GET /api/v2/learning/modules** (1 change)
 
-* Enum value TopicsDefinitions was removed from property name
+* Parameter statuses was added
 
+**OpenMessageEvent** (1 change)
 
-# Minor Changes (61 changes)
+* Model OpenMessageEvent was removed
 
-**/api/v2/authorization/settings** (3 changes)
+**OpenNormalizedMessage** (2 changes)
 
-* Path was added
-* Operation GET was added
-* Operation PATCH was added
-
-**/api/v2/workforcemanagement/adherence/explanations/jobs/{jobId}** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/workforcemanagement/agents/{agentId}/adherence/explanations/{explanationId}** (3 changes)
-
-* Path was added
-* Operation GET was added
-* Operation PATCH was added
-
-**/api/v2/workforcemanagement/agents/{agentId}/adherence/explanations/query** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/workforcemanagement/agents/{agentId}/adherence/explanations** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/workforcemanagement/businessunits/{businessUnitId}/adherence/explanations/query** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/workforcemanagement/adherence/explanations/{explanationId}** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/workforcemanagement/adherence/explanations/query** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/workforcemanagement/adherence/explanations** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/workforcemanagement/shrinkage/jobs/{jobId}** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/workforcemanagement/managementunits/{managementUnitId}/shrinkage/jobs** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**AnalyticsSession** (2 changes)
-
-* Enum value Vip was added to property requestedRoutings
-* Enum value Vip was added to property usedRouting
-
-**ObservationValue** (2 changes)
-
-* Enum value Vip was added to property requestedRoutings
-* Enum value Vip was added to property usedRouting
-
-**ReportingTurnAction** (1 change)
-
-* Enum value SetLocaleAction was added to property actionType
-
-**ViewFilter** (2 changes)
-
-* Enum value Vip was added to property usedRoutingTypes
-* Enum value Vip was added to property requestedRoutingTypes
-
-**AuthorizationSettings** (1 change)
-
-* Model was added
-
-**DataActionConditionSettings** (1 change)
-
-* Model was added
-
-**DataActionContactColumnFieldMapping** (1 change)
-
-* Model was added
+* Property events was removed
+* Enum value Event was removed from property type
 
 **DigitalDataActionConditionPredicate** (1 change)
 
+* Property valueType was removed
+
+
+# Minor Changes (46 changes)
+
+**/api/v2/outbound/dnclists/{dncListId}/emailaddresses** (2 changes)
+
+* Path was added
+* Operation POST was added
+
+**CommunicationEndedEvent** (2 changes)
+
+* Enum value TransferACD was added to property disconnectType
+* Enum value TransferUser was added to property disconnectType
+
+**IvrEstablishedEvent** (2 changes)
+
+* Optional property ani was added
+* Optional property dnis was added
+
+**PhoneEstablishedEvent** (2 changes)
+
+* Optional property ani was added
+* Optional property dnis was added
+
+**RoutingEstablishedEvent** (2 changes)
+
+* Optional property ani was added
+* Optional property dnis was added
+
+**UserEstablishedEvent** (2 changes)
+
+* Optional property ani was added
+* Optional property dnis was added
+
+**BotAggregateQueryPredicate** (2 changes)
+
+* Enum value askActionId was added to property dimension
+* Enum value askActionResult was added to property dimension
+
+**BotAggregationQuery** (3 changes)
+
+* Enum value askActionId was added to property groupBy
+* Enum value askActionResult was added to property groupBy
+* Enum value nBotSessionTurns was added to property metrics
+
+**BotAggregationView** (1 change)
+
+* Enum value nBotSessionTurns was added to property target
+
+**ViewFilter** (1 change)
+
+* Enum value GoogleSttBotFlow was added to property botProductList
+
+**AuditLogMessage** (1 change)
+
+* Enum value Organization was added to property entityType
+
+**EntityChange** (1 change)
+
+* Enum value Organization was added to property entityType
+
+**AuditQueryEntity** (1 change)
+
+* Enum value Organization was added to property name
+
+**ContactListDivisionView** (1 change)
+
+* Optional property emailColumns was added
+
+**DialerContact** (1 change)
+
+* Optional property latestEmailEvaluations was added
+
+**ContactList** (1 change)
+
+* Optional property emailColumns was added
+
+**WritableDialerContact** (1 change)
+
+* Optional property latestEmailEvaluations was added
+
+**DncListDivisionView** (2 changes)
+
+* Enum value rds_custom was added to property dncSourceType
+* Enum value Any was added to property contactMethod
+
+**DncList** (2 changes)
+
+* Enum value rds_custom was added to property dncSourceType
+* Enum value Any was added to property contactMethod
+
+**DncListCreate** (2 changes)
+
+* Enum value rds_custom was added to property dncSourceType
+* Enum value Any was added to property contactMethod
+
+**OutcomeEventScore** (2 changes)
+
+* Optional property percentile was added
+* Optional property sessionMaxPercentile was added
+
+**DocumentBodyImage** (1 change)
+
+* Optional property hyperlink was added
+
+**ApprovalNamespace** (1 change)
+
 * Model was added
 
-**SurveyForm** (1 change)
+**LimitChangeRequestDetails** (1 change)
 
-* published is no longer readonly
+* Optional property approvalNamespaces was added
 
-**TextBotFlowTurnRequest** (1 change)
+**Operation** (3 changes)
 
-* Enum value ClientSessionExpired was added to property inputEventType
+* Enum value CHECKOUT was added to property actionName
+* Enum value REVERT was added to property actionName
+* Enum value SAVE was added to property actionName
 
-**AdherenceExplanationJob** (1 change)
+**PredictorModelBrief** (1 change)
 
-* Model was added
+* Optional property state was added
 
-**AdherenceExplanationListingAgentQueryResponse** (1 change)
+**HistoryListing** (3 changes)
 
-* Model was added
+* Enum value CHECKOUT was added to property actionName
+* Enum value REVERT was added to property actionName
+* Enum value SAVE was added to property actionName
 
-**AdherenceExplanationListingBuQueryResponse** (1 change)
+**DevelopmentActivity** (1 change)
 
-* Model was added
+* Optional property isLatest was added
 
-**AdherenceExplanationResponse** (1 change)
+**TimeOffBalanceResponse** (1 change)
 
-* Model was added
-
-**AdherenceExplanationJobReference** (1 change)
-
-* Model was added
-
-**AgentQueryAdherenceExplanationsResponse** (1 change)
-
-* Model was added
-
-**AgentQueryAdherenceExplanationsRequest** (1 change)
-
-* Model was added
-
-**AdherenceExplanationAsyncResponse** (1 change)
-
-* Model was added
-
-**AddAdherenceExplanationAdminRequest** (1 change)
-
-* Model was added
-
-**UpdateAdherenceExplanationStatusRequest** (1 change)
-
-* Model was added
-
-**BuQueryAdherenceExplanationsResponse** (1 change)
-
-* Model was added
-
-**BuQueryAdherenceExplanationsRequest** (1 change)
-
-* Model was added
-
-**AdherenceExplanationListing** (1 change)
-
-* Model was added
-
-**QueryAdherenceExplanationsResponse** (1 change)
-
-* Model was added
-
-**AddAdherenceExplanationAgentRequest** (1 change)
-
-* Model was added
-
-**HistoricalAdherenceQueryResult** (1 change)
-
-* Optional property managementUnitId was added
-
-**UserScheduleAdherence** (1 change)
-
-* Optional property adherenceExplanation was added
-
-**HistoricalShrinkageActivityCategoryResponse** (1 change)
-
-* Model was added
-
-**HistoricalShrinkageActivityCodeResponse** (1 change)
-
-* Model was added
-
-**HistoricalShrinkageAggregateResponse** (1 change)
-
-* Model was added
-
-**HistoricalShrinkageResult** (1 change)
-
-* Model was added
-
-**HistoricalShrinkageResultListing** (1 change)
-
-* Model was added
-
-**WfmHistoricalShrinkageResponse** (1 change)
-
-* Model was added
-
-**WfmHistoricalShrinkageRequest** (1 change)
-
-* Model was added
+* Optional property hrisTimeOffTypeSecondaryId was added
 
 
-# Point Changes (2 changes)
+# Point Changes (5 changes)
 
-**DELETE /api/v2/analytics/conversations/details/jobs/{jobId}** (1 change)
+**POST /api/v2/recording/localkeys** (1 change)
 
 * Summary was changed
 
-**GET /api/v2/analytics/conversations/details/jobs/{jobId}/results** (1 change)
+**GET /api/v2/recording/localkeys/settings/{settingsId}** (1 change)
+
+* Summary was changed
+
+**PUT /api/v2/recording/localkeys/settings/{settingsId}** (1 change)
+
+* Summary was changed
+
+**GET /api/v2/recording/localkeys/settings** (1 change)
+
+* Summary was changed
+
+**POST /api/v2/recording/localkeys/settings** (1 change)
 
 * Summary was changed

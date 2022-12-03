@@ -598,7 +598,8 @@ let opts = {
   'sortBy': "name", // String | Sort by
   'searchTerm': "searchTerm_example", // String | Search Term (searchable by name)
   'expand': ["expand_example"], // [String] | Fields to expand in response(case insensitive)
-  'isPublished': "Any" // String | Specifies if only the Unpublished (isPublished is False) or Published (isPublished is True) modules are returned. If isPublished is Any or omitted, both types are returned
+  'isPublished': "Any", // String | Specifies if only the Unpublished (isPublished is False) or Published (isPublished is True) modules are returned. If isPublished is Any or omitted, both types are returned
+  'statuses': ["statuses_example"] // [String] | Specifies the module statuses to filter by
 };
 
 apiInstance.getLearningModules(opts)
@@ -625,6 +626,7 @@ apiInstance.getLearningModules(opts)
  **searchTerm** | **String** | Search Term (searchable by name) | [optional]  |
  **expand** | **[String]** | Fields to expand in response(case insensitive) | [optional] <br />**Values**: rule, summaryData |
  **isPublished** | **String** | Specifies if only the Unpublished (isPublished is False) or Published (isPublished is True) modules are returned. If isPublished is Any or omitted, both types are returned | [optional] [default to Any]<br />**Values**: True, False, Any |
+ **statuses** | **[String]** | Specifies the module statuses to filter by | [optional] <br />**Values**: Unpublished, Published, Archived |
 {: class="table table-striped"}
 
 ### Return type

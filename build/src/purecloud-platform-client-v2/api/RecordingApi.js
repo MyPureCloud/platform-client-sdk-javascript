@@ -5,7 +5,7 @@ class RecordingApi {
 	/**
 	 * Recording service.
 	 * @module purecloud-platform-client-v2/api/RecordingApi
-	 * @version 153.0.0
+	 * @version 154.0.0
 	 */
 
 	/**
@@ -707,7 +707,7 @@ class RecordingApi {
 	}
 
 	/**
-	 * Get the local encryption settings
+	 * Get the local encryption settings. Replaced by API recording/keyconfigurations/{keyConfigurationId}
 	 * 
 	 * @param {String} settingsId Settings Id
 	 */
@@ -732,7 +732,7 @@ class RecordingApi {
 	}
 
 	/**
-	 * gets a list local key settings data
+	 * gets a list local key settings data. Replaced by API recording/keyconfigurations
 	 * 
 	 */
 	getRecordingLocalkeysSettings() { 
@@ -1184,7 +1184,7 @@ class RecordingApi {
 	}
 
 	/**
-	 * create a local recording key
+	 * create a local key management recording key
 	 * 
 	 * @param {Object} body Local Encryption body
 	 */
@@ -1209,7 +1209,7 @@ class RecordingApi {
 	}
 
 	/**
-	 * create settings for local key creation
+	 * create settings for local key creation. Replaced by API recording/keyconfigurations
 	 * 
 	 * @param {Object} body Local Encryption Configuration
 	 */
@@ -1552,7 +1552,7 @@ class RecordingApi {
 	}
 
 	/**
-	 * Update the local encryption settings
+	 * Update the local encryption settings. Replaced by API recording/keyconfigurations/{keyConfigurationId}
 	 * 
 	 * @param {String} settingsId Settings Id
 	 * @param {Object} body Local Encryption metadata

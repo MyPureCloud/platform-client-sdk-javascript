@@ -373,6 +373,10 @@
       "class": "AgentActivityChangedTopicAgentActivity"
     },
     {
+      "topic": "v2.users.{id}.alerting.alerts",
+      "class": "V2MobiusAlertsTopicAlert"
+    },
+    {
       "topic": "v2.users.{id}.alerting.heartbeat.alerts",
       "class": "KlaxonHeartBeatAlertsTopicHeartBeatAlert"
     },
@@ -387,6 +391,10 @@
     {
       "topic": "v2.users.{id}.alerting.interactionstats.rules",
       "class": "KlaxonInteractionStatsRulesTopicInteractionStatRule"
+    },
+    {
+      "topic": "v2.users.{id}.alerting.rules",
+      "class": "V2MobiusRulesTopicRule"
     },
     {
       "topic": "v2.users.{id}.analytics.reporting.exports",
@@ -531,6 +539,10 @@
     {
       "topic": "v2.users.{id}.workforcemanagement.schedules",
       "class": "WfmAgentScheduleUpdateTopicWfmAgentScheduleUpdateNotification"
+    },
+    {
+      "topic": "v2.users.{id}.workforcemanagement.shrinkage.jobs",
+      "class": "WfmHistoricalShrinkageCalculationsCompleteTopicHistoricalShrinkageCalculationsCompleteNotification"
     },
     {
       "topic": "v2.users.{id}.workforcemanagement.timeoffrequests",
