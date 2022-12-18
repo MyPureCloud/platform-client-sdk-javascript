@@ -7,10 +7,56 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
+[**getTelephonyMediaregions**](TelephonyApi.html#getTelephonyMediaregions) | **GET** /api/v2/telephony/mediaregions | Retrieve the list of AWS regions media can stream through.
 [**getTelephonySiptraces**](TelephonyApi.html#getTelephonySiptraces) | **GET** /api/v2/telephony/siptraces | Fetch SIP metadata
 [**getTelephonySiptracesDownloadDownloadId**](TelephonyApi.html#getTelephonySiptracesDownloadDownloadId) | **GET** /api/v2/telephony/siptraces/download/{downloadId} | Get signed S3 URL for a pcap download
 [**postTelephonySiptracesDownload**](TelephonyApi.html#postTelephonySiptracesDownload) | **POST** /api/v2/telephony/siptraces/download | Request a download of a pcap file to S3
 {: class="table table-striped"}
+
+<a name="getTelephonyMediaregions"></a>
+
+# MediaRegions getTelephonyMediaregions()
+
+
+GET /api/v2/telephony/mediaregions
+
+Retrieve the list of AWS regions media can stream through.
+
+Requires ANY permissions:
+
+* telephony:plugin:all
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.TelephonyApi();
+
+apiInstance.getTelephonyMediaregions()
+  .then((data) => {
+    console.log(`getTelephonyMediaregions success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getTelephonyMediaregions');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+
+### Return type
+
+**MediaRegions**
 
 <a name="getTelephonySiptraces"></a>
 

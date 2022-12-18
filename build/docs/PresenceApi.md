@@ -440,7 +440,7 @@ GET /api/v2/users/{userId}/presences/{sourceId}
 
 Get a user's Presence
 
-Get a users presence for the specified source that is not specifically listed.  Used to support custom presence sources.
+Get a users presence for the specified source that is not specifically listed.  Used to support custom presence sources. This endpoint does not support registered presence sources.
 
 Requires NO permissions:
 
@@ -542,7 +542,7 @@ PATCH /api/v2/users/{userId}/presences/{sourceId}
 
 Patch a user's Presence
 
-Patch a users presence for the specified source that is not specifically listed. The presence object can be patched one of three ways. Option 1: Set the primary property to true. This will set the source defined in the path as the users primary presence source. Option 2: Provide the presenceDefinition value. The id is the only value required within the presenceDefinition. Option 3: Provide the message value. Option 1 can be combined with Option 2 and/or Option 3.
+Patch a users presence for the specified source that is not specifically listed. This endpoint does not support registered presence sources. The presence object can be patched one of three ways. Option 1: Set the primary property to true. This will set the source defined in the path as the users primary presence source. Option 2: Provide the presenceDefinition value. The id is the only value required within the presenceDefinition. Option 3: Provide the message value. Option 1 can be combined with Option 2 and/or Option 3.
 
 Requires NO permissions:
 

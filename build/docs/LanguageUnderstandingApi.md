@@ -24,6 +24,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getLanguageunderstandingMinerDrafts**](LanguageUnderstandingApi.html#getLanguageunderstandingMinerDrafts) | **GET** /api/v2/languageunderstanding/miners/{minerId}/drafts | Retrieve the list of drafts created.
 [**getLanguageunderstandingMinerIntent**](LanguageUnderstandingApi.html#getLanguageunderstandingMinerIntent) | **GET** /api/v2/languageunderstanding/miners/{minerId}/intents/{intentId} | Get information about a mined intent
 [**getLanguageunderstandingMinerIntents**](LanguageUnderstandingApi.html#getLanguageunderstandingMinerIntents) | **GET** /api/v2/languageunderstanding/miners/{minerId}/intents | Retrieve a list of mined intents.
+[**getLanguageunderstandingMinerTopic**](LanguageUnderstandingApi.html#getLanguageunderstandingMinerTopic) | **GET** /api/v2/languageunderstanding/miners/{minerId}/topics/{topicId} | Retrieves details of a particular topic.
+[**getLanguageunderstandingMinerTopicPhrase**](LanguageUnderstandingApi.html#getLanguageunderstandingMinerTopicPhrase) | **GET** /api/v2/languageunderstanding/miners/{minerId}/topics/{topicId}/phrases/{phraseId} | Retrieves utterances related to a phrase in a topic.
+[**getLanguageunderstandingMinerTopics**](LanguageUnderstandingApi.html#getLanguageunderstandingMinerTopics) | **GET** /api/v2/languageunderstanding/miners/{minerId}/topics | Retrieve a list of mined topics.
 [**getLanguageunderstandingMiners**](LanguageUnderstandingApi.html#getLanguageunderstandingMiners) | **GET** /api/v2/languageunderstanding/miners | Retrieve the list of miners created.
 [**patchLanguageunderstandingDomain**](LanguageUnderstandingApi.html#patchLanguageunderstandingDomain) | **PATCH** /api/v2/languageunderstanding/domains/{domainId} | Update an NLU Domain.
 [**patchLanguageunderstandingMinerDraft**](LanguageUnderstandingApi.html#patchLanguageunderstandingMinerDraft) | **PATCH** /api/v2/languageunderstanding/miners/{minerId}/drafts/{draftId} | Save information for the draft. Either topic draft or intent draft should be sent.
@@ -383,6 +386,7 @@ let opts = {
   'dateStart': "dateStart_example", // String | Begin of time window as ISO-8601 date.
   'dateEnd': "dateEnd_example", // String | End of time window as ISO-8601 date.
   'includeDeleted': true, // Boolean | Whether to include soft-deleted items in the result.
+  'language': "language_example", // String | Whether to filter response based on the language, e.g. en-us, pt-br.
   'pageNumber': 1, // Number | Page number
   'pageSize': 25, // Number | Page size
   'enableCursorPagination': false, // Boolean | Enable Cursor Pagination
@@ -411,6 +415,7 @@ apiInstance.getLanguageunderstandingDomainFeedback(domainId, opts)
  **dateStart** | **String** | Begin of time window as ISO-8601 date. | [optional]  |
  **dateEnd** | **String** | End of time window as ISO-8601 date. | [optional]  |
  **includeDeleted** | **Boolean** | Whether to include soft-deleted items in the result. | [optional]  |
+ **language** | **String** | Whether to filter response based on the language, e.g. en-us, pt-br. | [optional]  |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **enableCursorPagination** | **Boolean** | Enable Cursor Pagination | [optional] [default to false] |
@@ -755,7 +760,7 @@ apiInstance.getLanguageunderstandingMiner(minerId)
 
 <a name="getLanguageunderstandingMinerDraft"></a>
 
-# Draft getLanguageunderstandingMinerDraft(minerId, draftId)
+# Draft getLanguageunderstandingMinerDraft(minerId, draftId, opts)
 
 
 GET /api/v2/languageunderstanding/miners/{minerId}/drafts/{draftId}
@@ -781,8 +786,12 @@ let apiInstance = new platformClient.LanguageUnderstandingApi();
 
 let minerId = "minerId_example"; // String | Miner ID
 let draftId = "draftId_example"; // String | Draft ID
+let opts = { 
+  'draftIntentId': "draftIntentId_example", // String | Parameter to filter a specific intent.
+  'draftTopicId': "draftTopicId_example" // String | Parameter to filter a specific topic.
+};
 
-apiInstance.getLanguageunderstandingMinerDraft(minerId, draftId)
+apiInstance.getLanguageunderstandingMinerDraft(minerId, draftId, opts)
   .then((data) => {
     console.log(`getLanguageunderstandingMinerDraft success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -799,6 +808,8 @@ apiInstance.getLanguageunderstandingMinerDraft(minerId, draftId)
 | ------------- | ------------- | ------------- | ------------- |
  **minerId** | **String** | Miner ID |  |
  **draftId** | **String** | Draft ID |  |
+ **draftIntentId** | **String** | Parameter to filter a specific intent. | [optional]  |
+ **draftTopicId** | **String** | Parameter to filter a specific topic. | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -965,9 +976,169 @@ apiInstance.getLanguageunderstandingMinerIntents(minerId, opts)
 
 **MinedIntentsListing**
 
+<a name="getLanguageunderstandingMinerTopic"></a>
+
+# MinerTopic getLanguageunderstandingMinerTopic(minerId, topicId, opts)
+
+
+GET /api/v2/languageunderstanding/miners/{minerId}/topics/{topicId}
+
+Retrieves details of a particular topic.
+
+Requires ALL permissions:
+
+* languageUnderstanding:miner:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.LanguageUnderstandingApi();
+
+let minerId = "minerId_example"; // String | Miner ID
+let topicId = "topicId_example"; // String | The ID of the topic to be retrieved.
+let opts = { 
+  'expand': "expand_example" // String | Option to fetch phrases
+};
+
+apiInstance.getLanguageunderstandingMinerTopic(minerId, topicId, opts)
+  .then((data) => {
+    console.log(`getLanguageunderstandingMinerTopic success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getLanguageunderstandingMinerTopic');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **minerId** | **String** | Miner ID |  |
+ **topicId** | **String** | The ID of the topic to be retrieved. |  |
+ **expand** | **String** | Option to fetch phrases | [optional] <br />**Values**: phrases, utterances |
+{: class="table table-striped"}
+
+### Return type
+
+**MinerTopic**
+
+<a name="getLanguageunderstandingMinerTopicPhrase"></a>
+
+# MinerTopicPhrase getLanguageunderstandingMinerTopicPhrase(minerId, topicId, phraseId)
+
+
+GET /api/v2/languageunderstanding/miners/{minerId}/topics/{topicId}/phrases/{phraseId}
+
+Retrieves utterances related to a phrase in a topic.
+
+Requires ALL permissions:
+
+* languageUnderstanding:miner:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.LanguageUnderstandingApi();
+
+let minerId = "minerId_example"; // String | Miner ID
+let topicId = "topicId_example"; // String | The ID of the topic to be retrieved.
+let phraseId = "phraseId_example"; // String | The ID of the phrase to be retrieved.
+
+apiInstance.getLanguageunderstandingMinerTopicPhrase(minerId, topicId, phraseId)
+  .then((data) => {
+    console.log(`getLanguageunderstandingMinerTopicPhrase success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getLanguageunderstandingMinerTopicPhrase');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **minerId** | **String** | Miner ID |  |
+ **topicId** | **String** | The ID of the topic to be retrieved. |  |
+ **phraseId** | **String** | The ID of the phrase to be retrieved. |  |
+{: class="table table-striped"}
+
+### Return type
+
+**MinerTopicPhrase**
+
+<a name="getLanguageunderstandingMinerTopics"></a>
+
+# MinerTopicsListing getLanguageunderstandingMinerTopics(minerId)
+
+
+GET /api/v2/languageunderstanding/miners/{minerId}/topics
+
+Retrieve a list of mined topics.
+
+Requires ALL permissions:
+
+* languageUnderstanding:miner:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.LanguageUnderstandingApi();
+
+let minerId = "minerId_example"; // String | Miner ID
+
+apiInstance.getLanguageunderstandingMinerTopics(minerId)
+  .then((data) => {
+    console.log(`getLanguageunderstandingMinerTopics success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getLanguageunderstandingMinerTopics');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **minerId** | **String** | Miner ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+**MinerTopicsListing**
+
 <a name="getLanguageunderstandingMiners"></a>
 
-# MinerListing getLanguageunderstandingMiners()
+# MinerListing getLanguageunderstandingMiners(opts)
 
 
 GET /api/v2/languageunderstanding/miners
@@ -991,7 +1162,11 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.LanguageUnderstandingApi();
 
-apiInstance.getLanguageunderstandingMiners()
+let opts = { 
+  'minerType': "minerType_example" // String | Type of miner, either intent or topic
+};
+
+apiInstance.getLanguageunderstandingMiners(opts)
   .then((data) => {
     console.log(`getLanguageunderstandingMiners success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1003,8 +1178,11 @@ apiInstance.getLanguageunderstandingMiners()
 
 ### Parameters
 
-This endpoint does not need any parameter.
 
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **minerType** | **String** | Type of miner, either intent or topic | [optional]  |
+{: class="table table-striped"}
 
 ### Return type
 
@@ -1335,7 +1513,7 @@ apiInstance.postLanguageunderstandingDomainVersionTrain(domainId, domainVersionI
 
 <a name="postLanguageunderstandingDomainVersions"></a>
 
-# NluDomainVersion postLanguageunderstandingDomainVersions(domainId, body)
+# NluDomainVersion postLanguageunderstandingDomainVersions(domainId, body, opts)
 
 
 POST /api/v2/languageunderstanding/domains/{domainId}/versions
@@ -1362,8 +1540,11 @@ let apiInstance = new platformClient.LanguageUnderstandingApi();
 
 let domainId = "domainId_example"; // String | ID of the NLU domain.
 let body = {}; // Object | The NLU Domain Version to create.
+let opts = { 
+  'includeUtterances': true // Boolean | Whether utterances for intent definition should be included when marshalling response.
+};
 
-apiInstance.postLanguageunderstandingDomainVersions(domainId, body)
+apiInstance.postLanguageunderstandingDomainVersions(domainId, body, opts)
   .then((data) => {
     console.log(`postLanguageunderstandingDomainVersions success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1380,6 +1561,7 @@ apiInstance.postLanguageunderstandingDomainVersions(domainId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **domainId** | **String** | ID of the NLU domain. |  |
  **body** | **Object** | The NLU Domain Version to create. |  |
+ **includeUtterances** | **Boolean** | Whether utterances for intent definition should be included when marshalling response. | [optional]  |
 {: class="table table-striped"}
 
 ### Return type

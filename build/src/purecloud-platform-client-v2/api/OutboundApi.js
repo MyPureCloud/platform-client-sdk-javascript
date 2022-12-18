@@ -5,7 +5,7 @@ class OutboundApi {
 	/**
 	 * Outbound service.
 	 * @module purecloud-platform-client-v2/api/OutboundApi
-	 * @version 154.0.0
+	 * @version 155.0.0
 	 */
 
 	/**
@@ -346,6 +346,64 @@ class OutboundApi {
 			'DELETE', 
 			{ 'dncListId': dncListId },
 			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Deletes all or expired email addresses from a DNC list.
+	 * This operation is Only for Internal DNC lists of email addresses
+	 * @param {String} dncListId DncList ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.expiredOnly Set to true to only remove DNC entries that are expired (default to false)
+	 */
+	deleteOutboundDnclistEmailaddresses(dncListId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'dncListId' is set
+		if (dncListId === undefined || dncListId === null) {
+			throw 'Missing the required parameter "dncListId" when calling deleteOutboundDnclistEmailaddresses';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/outbound/dnclists/{dncListId}/emailaddresses', 
+			'DELETE', 
+			{ 'dncListId': dncListId },
+			{ 'expiredOnly': opts['expiredOnly'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Deletes all or expired phone numbers from a DNC list.
+	 * This operation is Only for Internal DNC lists of phone numbers
+	 * @param {String} dncListId DncList ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.expiredOnly Set to true to only remove DNC entries that are expired (default to false)
+	 */
+	deleteOutboundDnclistPhonenumbers(dncListId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'dncListId' is set
+		if (dncListId === undefined || dncListId === null) {
+			throw 'Missing the required parameter "dncListId" when calling deleteOutboundDnclistPhonenumbers';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/outbound/dnclists/{dncListId}/phonenumbers', 
+			'DELETE', 
+			{ 'dncListId': dncListId },
+			{ 'expiredOnly': opts['expiredOnly'] },
 			{  },
 			{  },
 			null, 
@@ -2119,6 +2177,66 @@ class OutboundApi {
 			{  },
 			{  },
 			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Add emails to or Delete emails from a DNC list.
+	 * Only Internal DNC lists may be added to or deleted from
+	 * @param {String} dncListId DncList ID
+	 * @param {Object} body DNC Emails
+	 */
+	patchOutboundDnclistEmailaddresses(dncListId, body) { 
+		// verify the required parameter 'dncListId' is set
+		if (dncListId === undefined || dncListId === null) {
+			throw 'Missing the required parameter "dncListId" when calling patchOutboundDnclistEmailaddresses';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchOutboundDnclistEmailaddresses';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/outbound/dnclists/{dncListId}/emailaddresses', 
+			'PATCH', 
+			{ 'dncListId': dncListId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Add numbers to or delete numbers from a DNC list.
+	 * Only Internal DNC lists may be added to deleted from
+	 * @param {String} dncListId DncList ID
+	 * @param {Object} body DNC Phone Numbers
+	 */
+	patchOutboundDnclistPhonenumbers(dncListId, body) { 
+		// verify the required parameter 'dncListId' is set
+		if (dncListId === undefined || dncListId === null) {
+			throw 'Missing the required parameter "dncListId" when calling patchOutboundDnclistPhonenumbers';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchOutboundDnclistPhonenumbers';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/outbound/dnclists/{dncListId}/phonenumbers', 
+			'PATCH', 
+			{ 'dncListId': dncListId },
+			{  },
+			{  },
+			{  },
+			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']

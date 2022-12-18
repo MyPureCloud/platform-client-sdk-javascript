@@ -16339,7 +16339,7 @@
   "getlanguageunderstandingdomainfeedback": {
     "operationId": "getlanguageunderstandingdomainfeedback",
     "functionName": "getLanguageunderstandingDomainFeedback",
-    "signature": "getLanguageunderstandingDomainFeedback(domainId, intentName, assessment, dateStart, dateEnd, includeDeleted, pageNumber, pageSize, enableCursorPagination, after, fields)",
+    "signature": "getLanguageunderstandingDomainFeedback(domainId, intentName, assessment, dateStart, dateEnd, includeDeleted, language, pageNumber, pageSize, enableCursorPagination, after, fields)",
     "parameters": [
       {
         "name": "domainId",
@@ -16372,6 +16372,11 @@
         "required": "false"
       },
       {
+        "name": "language",
+        "type": "String",
+        "required": "false"
+      },
+      {
         "name": "pageNumber",
         "type": "Number",
         "required": "false"
@@ -16398,7 +16403,7 @@
       }
     ],
     "return": "NluFeedbackListing",
-    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.LanguageUnderstandingApi();\n\nlet domainId = \"domainId_example\"; // String | ID of the NLU domain.\nlet opts = { \n  \"intentName\": \"intentName_example\", // String | The top intent name to retrieve feedback for.\n  \"assessment\": \"assessment_example\", // String | The top assessment to retrieve feedback for.\n  \"dateStart\": \"dateStart_example\", // String | Begin of time window as ISO-8601 date.\n  \"dateEnd\": \"dateEnd_example\", // String | End of time window as ISO-8601 date.\n  \"includeDeleted\": true, // Boolean | Whether to include soft-deleted items in the result.\n  \"pageNumber\": 1, // Number | Page number\n  \"pageSize\": 25, // Number | Page size\n  \"enableCursorPagination\": false, // Boolean | Enable Cursor Pagination\n  \"after\": \"after_example\", // String | The cursor that points to the end of the set of entities that has been returned. This is considered only when enableCursorPagination=true\n  \"fields\": [\"fields_example\"] // [String] | Fields and properties to get, comma-separated\n};\n\n// Get all feedback in the given NLU Domain Version.\napiInstance.getLanguageunderstandingDomainFeedback(domainId, opts)\n  .then((data) => {\n    console.log(`getLanguageunderstandingDomainFeedback success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getLanguageunderstandingDomainFeedback\");\n    console.error(err);\n  });"
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.LanguageUnderstandingApi();\n\nlet domainId = \"domainId_example\"; // String | ID of the NLU domain.\nlet opts = { \n  \"intentName\": \"intentName_example\", // String | The top intent name to retrieve feedback for.\n  \"assessment\": \"assessment_example\", // String | The top assessment to retrieve feedback for.\n  \"dateStart\": \"dateStart_example\", // String | Begin of time window as ISO-8601 date.\n  \"dateEnd\": \"dateEnd_example\", // String | End of time window as ISO-8601 date.\n  \"includeDeleted\": true, // Boolean | Whether to include soft-deleted items in the result.\n  \"language\": \"language_example\", // String | Whether to filter response based on the language, e.g. en-us, pt-br.\n  \"pageNumber\": 1, // Number | Page number\n  \"pageSize\": 25, // Number | Page size\n  \"enableCursorPagination\": false, // Boolean | Enable Cursor Pagination\n  \"after\": \"after_example\", // String | The cursor that points to the end of the set of entities that has been returned. This is considered only when enableCursorPagination=true\n  \"fields\": [\"fields_example\"] // [String] | Fields and properties to get, comma-separated\n};\n\n// Get all feedback in the given NLU Domain Version.\napiInstance.getLanguageunderstandingDomainFeedback(domainId, opts)\n  .then((data) => {\n    console.log(`getLanguageunderstandingDomainFeedback success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getLanguageunderstandingDomainFeedback\");\n    console.error(err);\n  });"
   },
   "getlanguageunderstandingdomainfeedbackfeedbackid": {
     "operationId": "getlanguageunderstandingdomainfeedbackfeedbackid",
@@ -16532,7 +16537,7 @@
   "getlanguageunderstandingminerdraft": {
     "operationId": "getlanguageunderstandingminerdraft",
     "functionName": "getLanguageunderstandingMinerDraft",
-    "signature": "getLanguageunderstandingMinerDraft(minerId, draftId)",
+    "signature": "getLanguageunderstandingMinerDraft(minerId, draftId, draftIntentId, draftTopicId)",
     "parameters": [
       {
         "name": "minerId",
@@ -16543,10 +16548,20 @@
         "name": "draftId",
         "type": "String",
         "required": "true"
+      },
+      {
+        "name": "draftIntentId",
+        "type": "String",
+        "required": "false"
+      },
+      {
+        "name": "draftTopicId",
+        "type": "String",
+        "required": "false"
       }
     ],
     "return": "Draft",
-    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.LanguageUnderstandingApi();\n\nlet minerId = \"minerId_example\"; // String | Miner ID\nlet draftId = \"draftId_example\"; // String | Draft ID\n\n// Get information about a draft.\napiInstance.getLanguageunderstandingMinerDraft(minerId, draftId)\n  .then((data) => {\n    console.log(`getLanguageunderstandingMinerDraft success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getLanguageunderstandingMinerDraft\");\n    console.error(err);\n  });"
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.LanguageUnderstandingApi();\n\nlet minerId = \"minerId_example\"; // String | Miner ID\nlet draftId = \"draftId_example\"; // String | Draft ID\nlet opts = { \n  \"draftIntentId\": \"draftIntentId_example\", // String | Parameter to filter a specific intent.\n  \"draftTopicId\": \"draftTopicId_example\" // String | Parameter to filter a specific topic.\n};\n\n// Get information about a draft.\napiInstance.getLanguageunderstandingMinerDraft(minerId, draftId, opts)\n  .then((data) => {\n    console.log(`getLanguageunderstandingMinerDraft success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getLanguageunderstandingMinerDraft\");\n    console.error(err);\n  });"
   },
   "getlanguageunderstandingminerdrafts": {
     "operationId": "getlanguageunderstandingminerdrafts",
@@ -16605,12 +16620,81 @@
     "return": "MinedIntentsListing",
     "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.LanguageUnderstandingApi();\n\nlet minerId = \"minerId_example\"; // String | Miner ID\nlet opts = { \n  \"expand\": \"expand_example\" // String | Option to fetch utterances.\n};\n\n// Retrieve a list of mined intents.\napiInstance.getLanguageunderstandingMinerIntents(minerId, opts)\n  .then((data) => {\n    console.log(`getLanguageunderstandingMinerIntents success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getLanguageunderstandingMinerIntents\");\n    console.error(err);\n  });"
   },
+  "getlanguageunderstandingminertopic": {
+    "operationId": "getlanguageunderstandingminertopic",
+    "functionName": "getLanguageunderstandingMinerTopic",
+    "signature": "getLanguageunderstandingMinerTopic(minerId, topicId, expand)",
+    "parameters": [
+      {
+        "name": "minerId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "topicId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "expand",
+        "type": "String",
+        "required": "false"
+      }
+    ],
+    "return": "MinerTopic",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.LanguageUnderstandingApi();\n\nlet minerId = \"minerId_example\"; // String | Miner ID\nlet topicId = \"topicId_example\"; // String | The ID of the topic to be retrieved.\nlet opts = { \n  \"expand\": \"expand_example\" // String | Option to fetch phrases\n};\n\n// Retrieves details of a particular topic.\napiInstance.getLanguageunderstandingMinerTopic(minerId, topicId, opts)\n  .then((data) => {\n    console.log(`getLanguageunderstandingMinerTopic success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getLanguageunderstandingMinerTopic\");\n    console.error(err);\n  });"
+  },
+  "getlanguageunderstandingminertopicphrase": {
+    "operationId": "getlanguageunderstandingminertopicphrase",
+    "functionName": "getLanguageunderstandingMinerTopicPhrase",
+    "signature": "getLanguageunderstandingMinerTopicPhrase(minerId, topicId, phraseId)",
+    "parameters": [
+      {
+        "name": "minerId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "topicId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "phraseId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "return": "MinerTopicPhrase",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.LanguageUnderstandingApi();\n\nlet minerId = \"minerId_example\"; // String | Miner ID\nlet topicId = \"topicId_example\"; // String | The ID of the topic to be retrieved.\nlet phraseId = \"phraseId_example\"; // String | The ID of the phrase to be retrieved.\n\n// Retrieves utterances related to a phrase in a topic.\napiInstance.getLanguageunderstandingMinerTopicPhrase(minerId, topicId, phraseId)\n  .then((data) => {\n    console.log(`getLanguageunderstandingMinerTopicPhrase success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getLanguageunderstandingMinerTopicPhrase\");\n    console.error(err);\n  });"
+  },
+  "getlanguageunderstandingminertopics": {
+    "operationId": "getlanguageunderstandingminertopics",
+    "functionName": "getLanguageunderstandingMinerTopics",
+    "signature": "getLanguageunderstandingMinerTopics(minerId)",
+    "parameters": [
+      {
+        "name": "minerId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "return": "MinerTopicsListing",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.LanguageUnderstandingApi();\n\nlet minerId = \"minerId_example\"; // String | Miner ID\n\n// Retrieve a list of mined topics.\napiInstance.getLanguageunderstandingMinerTopics(minerId)\n  .then((data) => {\n    console.log(`getLanguageunderstandingMinerTopics success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getLanguageunderstandingMinerTopics\");\n    console.error(err);\n  });"
+  },
   "getlanguageunderstandingminers": {
     "operationId": "getlanguageunderstandingminers",
     "functionName": "getLanguageunderstandingMiners",
-    "signature": "getLanguageunderstandingMiners()",
+    "signature": "getLanguageunderstandingMiners(minerType)",
+    "parameters": [
+      {
+        "name": "minerType",
+        "type": "String",
+        "required": "false"
+      }
+    ],
     "return": "MinerListing",
-    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.LanguageUnderstandingApi();\n\n// Retrieve the list of miners created.\napiInstance.getLanguageunderstandingMiners()\n  .then((data) => {\n    console.log(`getLanguageunderstandingMiners success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getLanguageunderstandingMiners\");\n    console.error(err);\n  });"
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.LanguageUnderstandingApi();\n\nlet opts = { \n  \"minerType\": \"minerType_example\" // String | Type of miner, either intent or topic\n};\n\n// Retrieve the list of miners created.\napiInstance.getLanguageunderstandingMiners(opts)\n  .then((data) => {\n    console.log(`getLanguageunderstandingMiners success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getLanguageunderstandingMiners\");\n    console.error(err);\n  });"
   },
   "patchlanguageunderstandingdomain": {
     "operationId": "patchlanguageunderstandingdomain",
@@ -16739,7 +16823,7 @@
   "postlanguageunderstandingdomainversions": {
     "operationId": "postlanguageunderstandingdomainversions",
     "functionName": "postLanguageunderstandingDomainVersions",
-    "signature": "postLanguageunderstandingDomainVersions(domainId, body)",
+    "signature": "postLanguageunderstandingDomainVersions(domainId, body, includeUtterances)",
     "parameters": [
       {
         "name": "domainId",
@@ -16750,10 +16834,15 @@
         "name": "body",
         "type": "Object",
         "required": "true"
+      },
+      {
+        "name": "includeUtterances",
+        "type": "Boolean",
+        "required": "false"
       }
     ],
     "return": "NluDomainVersion",
-    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.LanguageUnderstandingApi();\n\nlet domainId = \"domainId_example\"; // String | ID of the NLU domain.\nlet body = {}; // Object | The NLU Domain Version to create.\n\n// Create an NLU Domain Version.\napiInstance.postLanguageunderstandingDomainVersions(domainId, body)\n  .then((data) => {\n    console.log(`postLanguageunderstandingDomainVersions success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling postLanguageunderstandingDomainVersions\");\n    console.error(err);\n  });"
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.LanguageUnderstandingApi();\n\nlet domainId = \"domainId_example\"; // String | ID of the NLU domain.\nlet body = {}; // Object | The NLU Domain Version to create.\nlet opts = { \n  \"includeUtterances\": true // Boolean | Whether utterances for intent definition should be included when marshalling response.\n};\n\n// Create an NLU Domain Version.\napiInstance.postLanguageunderstandingDomainVersions(domainId, body, opts)\n  .then((data) => {\n    console.log(`postLanguageunderstandingDomainVersions success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling postLanguageunderstandingDomainVersions\");\n    console.error(err);\n  });"
   },
   "postlanguageunderstandingdomains": {
     "operationId": "postlanguageunderstandingdomains",
@@ -19347,6 +19436,42 @@
     ],
     "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.OutboundApi();\n\nlet dncListId = \"dncListId_example\"; // String | DncList ID\n\n// Delete dialer DNC list\napiInstance.deleteOutboundDnclist(dncListId)\n  .then(() => {\n    console.log(\"deleteOutboundDnclist returned successfully.\");\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling deleteOutboundDnclist\");\n    console.error(err);\n  });"
   },
+  "deleteoutbounddnclistemailaddresses": {
+    "operationId": "deleteoutbounddnclistemailaddresses",
+    "functionName": "deleteOutboundDnclistEmailaddresses",
+    "signature": "deleteOutboundDnclistEmailaddresses(dncListId, expiredOnly)",
+    "parameters": [
+      {
+        "name": "dncListId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "expiredOnly",
+        "type": "Boolean",
+        "required": "false"
+      }
+    ],
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.OutboundApi();\n\nlet dncListId = \"dncListId_example\"; // String | DncList ID\nlet opts = { \n  \"expiredOnly\": false // Boolean | Set to true to only remove DNC entries that are expired\n};\n\n// Deletes all or expired email addresses from a DNC list.\napiInstance.deleteOutboundDnclistEmailaddresses(dncListId, opts)\n  .then(() => {\n    console.log(\"deleteOutboundDnclistEmailaddresses returned successfully.\");\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling deleteOutboundDnclistEmailaddresses\");\n    console.error(err);\n  });"
+  },
+  "deleteoutbounddnclistphonenumbers": {
+    "operationId": "deleteoutbounddnclistphonenumbers",
+    "functionName": "deleteOutboundDnclistPhonenumbers",
+    "signature": "deleteOutboundDnclistPhonenumbers(dncListId, expiredOnly)",
+    "parameters": [
+      {
+        "name": "dncListId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "expiredOnly",
+        "type": "Boolean",
+        "required": "false"
+      }
+    ],
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.OutboundApi();\n\nlet dncListId = \"dncListId_example\"; // String | DncList ID\nlet opts = { \n  \"expiredOnly\": false // Boolean | Set to true to only remove DNC entries that are expired\n};\n\n// Deletes all or expired phone numbers from a DNC list.\napiInstance.deleteOutboundDnclistPhonenumbers(dncListId, opts)\n  .then(() => {\n    console.log(\"deleteOutboundDnclistPhonenumbers returned successfully.\");\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling deleteOutboundDnclistPhonenumbers\");\n    console.error(err);\n  });"
+  },
   "deleteoutboundmessagingcampaign": {
     "operationId": "deleteoutboundmessagingcampaign",
     "functionName": "deleteOutboundMessagingcampaign",
@@ -20956,6 +21081,42 @@
     "signature": "getOutboundWrapupcodemappings()",
     "return": "WrapUpCodeMapping",
     "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.OutboundApi();\n\n// Get the Dialer wrap up code mapping.\napiInstance.getOutboundWrapupcodemappings()\n  .then((data) => {\n    console.log(`getOutboundWrapupcodemappings success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getOutboundWrapupcodemappings\");\n    console.error(err);\n  });"
+  },
+  "patchoutbounddnclistemailaddresses": {
+    "operationId": "patchoutbounddnclistemailaddresses",
+    "functionName": "patchOutboundDnclistEmailaddresses",
+    "signature": "patchOutboundDnclistEmailaddresses(dncListId, body)",
+    "parameters": [
+      {
+        "name": "dncListId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "Object",
+        "required": "true"
+      }
+    ],
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.OutboundApi();\n\nlet dncListId = \"dncListId_example\"; // String | DncList ID\nlet body = {}; // Object | DNC Emails\n\n// Add emails to or Delete emails from a DNC list.\napiInstance.patchOutboundDnclistEmailaddresses(dncListId, body)\n  .then(() => {\n    console.log(\"patchOutboundDnclistEmailaddresses returned successfully.\");\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling patchOutboundDnclistEmailaddresses\");\n    console.error(err);\n  });"
+  },
+  "patchoutbounddnclistphonenumbers": {
+    "operationId": "patchoutbounddnclistphonenumbers",
+    "functionName": "patchOutboundDnclistPhonenumbers",
+    "signature": "patchOutboundDnclistPhonenumbers(dncListId, body)",
+    "parameters": [
+      {
+        "name": "dncListId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "Object",
+        "required": "true"
+      }
+    ],
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.OutboundApi();\n\nlet dncListId = \"dncListId_example\"; // String | DncList ID\nlet body = {}; // Object | DNC Phone Numbers\n\n// Add numbers to or delete numbers from a DNC list.\napiInstance.patchOutboundDnclistPhonenumbers(dncListId, body)\n  .then(() => {\n    console.log(\"patchOutboundDnclistPhonenumbers returned successfully.\");\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling patchOutboundDnclistPhonenumbers\");\n    console.error(err);\n  });"
   },
   "patchoutboundsettings": {
     "operationId": "patchoutboundsettings",
@@ -29456,6 +29617,13 @@
     ],
     "return": "Team",
     "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.TeamsApi();\n\nlet body = {}; // Object | Team\n\n// Create a team\napiInstance.postTeams(body)\n  .then((data) => {\n    console.log(`postTeams success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling postTeams\");\n    console.error(err);\n  });"
+  },
+  "gettelephonymediaregions": {
+    "operationId": "gettelephonymediaregions",
+    "functionName": "getTelephonyMediaregions",
+    "signature": "getTelephonyMediaregions()",
+    "return": "MediaRegions",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.TelephonyApi();\n\n// Retrieve the list of AWS regions media can stream through.\napiInstance.getTelephonyMediaregions()\n  .then((data) => {\n    console.log(`getTelephonyMediaregions success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getTelephonyMediaregions\");\n    console.error(err);\n  });"
   },
   "gettelephonysiptraces": {
     "operationId": "gettelephonysiptraces",

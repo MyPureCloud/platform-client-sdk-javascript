@@ -5,7 +5,7 @@ class TelephonyApi {
 	/**
 	 * Telephony service.
 	 * @module purecloud-platform-client-v2/api/TelephonyApi
-	 * @version 154.0.0
+	 * @version 155.0.0
 	 */
 
 	/**
@@ -19,6 +19,26 @@ class TelephonyApi {
 		this.apiClient = apiClient || ApiClient.instance;
 	}
 
+
+	/**
+	 * Retrieve the list of AWS regions media can stream through.
+	 * 
+	 */
+	getTelephonyMediaregions() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/telephony/mediaregions', 
+			'GET', 
+			{  },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
 
 	/**
 	 * Fetch SIP metadata

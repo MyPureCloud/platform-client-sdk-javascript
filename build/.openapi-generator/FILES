@@ -252,6 +252,8 @@ docs/deleteOutboundContactlistfilter-example.txt
 docs/deleteOutboundContactlists-example.txt
 docs/deleteOutboundDigitalruleset-example.txt
 docs/deleteOutboundDnclist-example.txt
+docs/deleteOutboundDnclistEmailaddresses-example.txt
+docs/deleteOutboundDnclistPhonenumbers-example.txt
 docs/deleteOutboundMessagingcampaign-example.txt
 docs/deleteOutboundMessagingcampaignProgress-example.txt
 docs/deleteOutboundRuleset-example.txt
@@ -778,6 +780,9 @@ docs/getLanguageunderstandingMinerDraft-example.txt
 docs/getLanguageunderstandingMinerDrafts-example.txt
 docs/getLanguageunderstandingMinerIntent-example.txt
 docs/getLanguageunderstandingMinerIntents-example.txt
+docs/getLanguageunderstandingMinerTopic-example.txt
+docs/getLanguageunderstandingMinerTopicPhrase-example.txt
+docs/getLanguageunderstandingMinerTopics-example.txt
 docs/getLanguageunderstandingMiners-example.txt
 docs/getLearningAssignment-example.txt
 docs/getLearningAssignments-example.txt
@@ -1073,6 +1078,7 @@ docs/getSystempresences-example.txt
 docs/getTeam-example.txt
 docs/getTeamMembers-example.txt
 docs/getTeams-example.txt
+docs/getTelephonyMediaregions-example.txt
 docs/getTelephonyProvidersEdge-example.txt
 docs/getTelephonyProvidersEdgeDiagnosticNslookup-example.txt
 docs/getTelephonyProvidersEdgeDiagnosticPing-example.txt
@@ -1362,6 +1368,8 @@ docs/patchLearningAssignment-example.txt
 docs/patchLocation-example.txt
 docs/patchMessagingSupportedcontentSupportedContentId-example.txt
 docs/patchOrganizationsFeature-example.txt
+docs/patchOutboundDnclistEmailaddresses-example.txt
+docs/patchOutboundDnclistPhonenumbers-example.txt
 docs/patchOutboundSettings-example.txt
 docs/patchQualityFormsSurvey-example.txt
 docs/patchRecordingCrossplatformMediaretentionpolicy-example.txt

@@ -20,6 +20,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**deleteOutboundContactlists**](OutboundApi.html#deleteOutboundContactlists) | **DELETE** /api/v2/outbound/contactlists | Delete multiple contact lists.
 [**deleteOutboundDigitalruleset**](OutboundApi.html#deleteOutboundDigitalruleset) | **DELETE** /api/v2/outbound/digitalrulesets/{digitalRuleSetId} | Delete an Outbound Digital Rule Set
 [**deleteOutboundDnclist**](OutboundApi.html#deleteOutboundDnclist) | **DELETE** /api/v2/outbound/dnclists/{dncListId} | Delete dialer DNC list
+[**deleteOutboundDnclistEmailaddresses**](OutboundApi.html#deleteOutboundDnclistEmailaddresses) | **DELETE** /api/v2/outbound/dnclists/{dncListId}/emailaddresses | Deletes all or expired email addresses from a DNC list.
+[**deleteOutboundDnclistPhonenumbers**](OutboundApi.html#deleteOutboundDnclistPhonenumbers) | **DELETE** /api/v2/outbound/dnclists/{dncListId}/phonenumbers | Deletes all or expired phone numbers from a DNC list.
 [**deleteOutboundMessagingcampaign**](OutboundApi.html#deleteOutboundMessagingcampaign) | **DELETE** /api/v2/outbound/messagingcampaigns/{messagingCampaignId} | Delete an Outbound Messaging Campaign
 [**deleteOutboundMessagingcampaignProgress**](OutboundApi.html#deleteOutboundMessagingcampaignProgress) | **DELETE** /api/v2/outbound/messagingcampaigns/{messagingCampaignId}/progress | Reset messaging campaign progress and recycle the messaging campaign
 [**deleteOutboundRuleset**](OutboundApi.html#deleteOutboundRuleset) | **DELETE** /api/v2/outbound/rulesets/{ruleSetId} | Delete a Rule Set.
@@ -86,6 +88,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getOutboundSequences**](OutboundApi.html#getOutboundSequences) | **GET** /api/v2/outbound/sequences | Query a list of dialer campaign sequences.
 [**getOutboundSettings**](OutboundApi.html#getOutboundSettings) | **GET** /api/v2/outbound/settings | Get the outbound settings for this organization
 [**getOutboundWrapupcodemappings**](OutboundApi.html#getOutboundWrapupcodemappings) | **GET** /api/v2/outbound/wrapupcodemappings | Get the Dialer wrap up code mapping.
+[**patchOutboundDnclistEmailaddresses**](OutboundApi.html#patchOutboundDnclistEmailaddresses) | **PATCH** /api/v2/outbound/dnclists/{dncListId}/emailaddresses | Add emails to or Delete emails from a DNC list.
+[**patchOutboundDnclistPhonenumbers**](OutboundApi.html#patchOutboundDnclistPhonenumbers) | **PATCH** /api/v2/outbound/dnclists/{dncListId}/phonenumbers | Add numbers to or delete numbers from a DNC list.
 [**patchOutboundSettings**](OutboundApi.html#patchOutboundSettings) | **PATCH** /api/v2/outbound/settings | Update the outbound settings for this organization
 [**postOutboundAttemptlimits**](OutboundApi.html#postOutboundAttemptlimits) | **POST** /api/v2/outbound/attemptlimits | Create attempt limits
 [**postOutboundAudits**](OutboundApi.html#postOutboundAudits) | **POST** /api/v2/outbound/audits | Retrieves audits for dialer.
@@ -782,6 +786,118 @@ apiInstance.deleteOutboundDnclist(dncListId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **dncListId** | **String** | DncList ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
+
+<a name="deleteOutboundDnclistEmailaddresses"></a>
+
+# void deleteOutboundDnclistEmailaddresses(dncListId, opts)
+
+
+DELETE /api/v2/outbound/dnclists/{dncListId}/emailaddresses
+
+Deletes all or expired email addresses from a DNC list.
+
+This operation is Only for Internal DNC lists of email addresses
+
+Requires ANY permissions:
+
+* outbound:dnc:delete
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OutboundApi();
+
+let dncListId = "dncListId_example"; // String | DncList ID
+let opts = { 
+  'expiredOnly': false // Boolean | Set to true to only remove DNC entries that are expired
+};
+
+apiInstance.deleteOutboundDnclistEmailaddresses(dncListId, opts)
+  .then(() => {
+    console.log('deleteOutboundDnclistEmailaddresses returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteOutboundDnclistEmailaddresses');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **dncListId** | **String** | DncList ID |  |
+ **expiredOnly** | **Boolean** | Set to true to only remove DNC entries that are expired | [optional] [default to false] |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
+
+<a name="deleteOutboundDnclistPhonenumbers"></a>
+
+# void deleteOutboundDnclistPhonenumbers(dncListId, opts)
+
+
+DELETE /api/v2/outbound/dnclists/{dncListId}/phonenumbers
+
+Deletes all or expired phone numbers from a DNC list.
+
+This operation is Only for Internal DNC lists of phone numbers
+
+Requires ANY permissions:
+
+* outbound:dnc:delete
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OutboundApi();
+
+let dncListId = "dncListId_example"; // String | DncList ID
+let opts = { 
+  'expiredOnly': false // Boolean | Set to true to only remove DNC entries that are expired
+};
+
+apiInstance.deleteOutboundDnclistPhonenumbers(dncListId, opts)
+  .then(() => {
+    console.log('deleteOutboundDnclistPhonenumbers returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteOutboundDnclistPhonenumbers');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **dncListId** | **String** | DncList ID |  |
+ **expiredOnly** | **Boolean** | Set to true to only remove DNC entries that are expired | [optional] [default to false] |
 {: class="table table-striped"}
 
 ### Return type
@@ -4432,6 +4548,114 @@ This endpoint does not need any parameter.
 ### Return type
 
 **WrapUpCodeMapping**
+
+<a name="patchOutboundDnclistEmailaddresses"></a>
+
+# void patchOutboundDnclistEmailaddresses(dncListId, body)
+
+
+PATCH /api/v2/outbound/dnclists/{dncListId}/emailaddresses
+
+Add emails to or Delete emails from a DNC list.
+
+Only Internal DNC lists may be added to or deleted from
+
+Requires ANY permissions:
+
+* outbound:dnc:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OutboundApi();
+
+let dncListId = "dncListId_example"; // String | DncList ID
+let body = {}; // Object | DNC Emails
+
+apiInstance.patchOutboundDnclistEmailaddresses(dncListId, body)
+  .then(() => {
+    console.log('patchOutboundDnclistEmailaddresses returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchOutboundDnclistEmailaddresses');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **dncListId** | **String** | DncList ID |  |
+ **body** | **Object** | DNC Emails |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
+
+<a name="patchOutboundDnclistPhonenumbers"></a>
+
+# void patchOutboundDnclistPhonenumbers(dncListId, body)
+
+
+PATCH /api/v2/outbound/dnclists/{dncListId}/phonenumbers
+
+Add numbers to or delete numbers from a DNC list.
+
+Only Internal DNC lists may be added to deleted from
+
+Requires ANY permissions:
+
+* outbound:dnc:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OutboundApi();
+
+let dncListId = "dncListId_example"; // String | DncList ID
+let body = {}; // Object | DNC Phone Numbers
+
+apiInstance.patchOutboundDnclistPhonenumbers(dncListId, body)
+  .then(() => {
+    console.log('patchOutboundDnclistPhonenumbers returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchOutboundDnclistPhonenumbers');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **dncListId** | **String** | DncList ID |  |
+ **body** | **Object** | DNC Phone Numbers |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
 
 <a name="patchOutboundSettings"></a>
 

@@ -5,7 +5,7 @@ class LanguageUnderstandingApi {
 	/**
 	 * LanguageUnderstanding service.
 	 * @module purecloud-platform-client-v2/api/LanguageUnderstandingApi
-	 * @version 154.0.0
+	 * @version 155.0.0
 	 */
 
 	/**
@@ -195,6 +195,7 @@ class LanguageUnderstandingApi {
 	 * @param {String} opts.dateStart Begin of time window as ISO-8601 date.
 	 * @param {String} opts.dateEnd End of time window as ISO-8601 date.
 	 * @param {Boolean} opts.includeDeleted Whether to include soft-deleted items in the result.
+	 * @param {String} opts.language Whether to filter response based on the language, e.g. en-us, pt-br.
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Boolean} opts.enableCursorPagination Enable Cursor Pagination (default to false)
@@ -213,7 +214,7 @@ class LanguageUnderstandingApi {
 			'/api/v2/languageunderstanding/domains/{domainId}/feedback', 
 			'GET', 
 			{ 'domainId': domainId },
-			{ 'intentName': opts['intentName'],'assessment': opts['assessment'],'dateStart': opts['dateStart'],'dateEnd': opts['dateEnd'],'includeDeleted': opts['includeDeleted'],'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'enableCursorPagination': opts['enableCursorPagination'],'after': opts['after'],'fields': this.apiClient.buildCollectionParam(opts['fields'], 'multi') },
+			{ 'intentName': opts['intentName'],'assessment': opts['assessment'],'dateStart': opts['dateStart'],'dateEnd': opts['dateEnd'],'includeDeleted': opts['includeDeleted'],'language': opts['language'],'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'enableCursorPagination': opts['enableCursorPagination'],'after': opts['after'],'fields': this.apiClient.buildCollectionParam(opts['fields'], 'multi') },
 			{  },
 			{  },
 			null, 
@@ -407,8 +408,13 @@ class LanguageUnderstandingApi {
 	 * 
 	 * @param {String} minerId Miner ID
 	 * @param {String} draftId Draft ID
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.draftIntentId Parameter to filter a specific intent.
+	 * @param {String} opts.draftTopicId Parameter to filter a specific topic.
 	 */
-	getLanguageunderstandingMinerDraft(minerId, draftId) { 
+	getLanguageunderstandingMinerDraft(minerId, draftId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'minerId' is set
 		if (minerId === undefined || minerId === null) {
 			throw 'Missing the required parameter "minerId" when calling getLanguageunderstandingMinerDraft';
@@ -422,7 +428,7 @@ class LanguageUnderstandingApi {
 			'/api/v2/languageunderstanding/miners/{minerId}/drafts/{draftId}', 
 			'GET', 
 			{ 'minerId': minerId,'draftId': draftId },
-			{  },
+			{ 'draftIntentId': opts['draftIntentId'],'draftTopicId': opts['draftTopicId'] },
 			{  },
 			{  },
 			null, 
@@ -521,16 +527,114 @@ class LanguageUnderstandingApi {
 	}
 
 	/**
+	 * Retrieves details of a particular topic.
+	 * 
+	 * @param {String} minerId Miner ID
+	 * @param {String} topicId The ID of the topic to be retrieved.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.expand Option to fetch phrases
+	 */
+	getLanguageunderstandingMinerTopic(minerId, topicId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'minerId' is set
+		if (minerId === undefined || minerId === null) {
+			throw 'Missing the required parameter "minerId" when calling getLanguageunderstandingMinerTopic';
+		}
+		// verify the required parameter 'topicId' is set
+		if (topicId === undefined || topicId === null) {
+			throw 'Missing the required parameter "topicId" when calling getLanguageunderstandingMinerTopic';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/languageunderstanding/miners/{minerId}/topics/{topicId}', 
+			'GET', 
+			{ 'minerId': minerId,'topicId': topicId },
+			{ 'expand': opts['expand'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Retrieves utterances related to a phrase in a topic.
+	 * 
+	 * @param {String} minerId Miner ID
+	 * @param {String} topicId The ID of the topic to be retrieved.
+	 * @param {String} phraseId The ID of the phrase to be retrieved.
+	 */
+	getLanguageunderstandingMinerTopicPhrase(minerId, topicId, phraseId) { 
+		// verify the required parameter 'minerId' is set
+		if (minerId === undefined || minerId === null) {
+			throw 'Missing the required parameter "minerId" when calling getLanguageunderstandingMinerTopicPhrase';
+		}
+		// verify the required parameter 'topicId' is set
+		if (topicId === undefined || topicId === null) {
+			throw 'Missing the required parameter "topicId" when calling getLanguageunderstandingMinerTopicPhrase';
+		}
+		// verify the required parameter 'phraseId' is set
+		if (phraseId === undefined || phraseId === null) {
+			throw 'Missing the required parameter "phraseId" when calling getLanguageunderstandingMinerTopicPhrase';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/languageunderstanding/miners/{minerId}/topics/{topicId}/phrases/{phraseId}', 
+			'GET', 
+			{ 'minerId': minerId,'topicId': topicId,'phraseId': phraseId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Retrieve a list of mined topics.
+	 * 
+	 * @param {String} minerId Miner ID
+	 */
+	getLanguageunderstandingMinerTopics(minerId) { 
+		// verify the required parameter 'minerId' is set
+		if (minerId === undefined || minerId === null) {
+			throw 'Missing the required parameter "minerId" when calling getLanguageunderstandingMinerTopics';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/languageunderstanding/miners/{minerId}/topics', 
+			'GET', 
+			{ 'minerId': minerId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Retrieve the list of miners created.
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.minerType Type of miner, either intent or topic
 	 */
-	getLanguageunderstandingMiners() { 
+	getLanguageunderstandingMiners(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/languageunderstanding/miners', 
 			'GET', 
 			{  },
-			{  },
+			{ 'minerType': opts['minerType'] },
 			{  },
 			{  },
 			null, 
@@ -734,8 +838,12 @@ class LanguageUnderstandingApi {
 	 * 
 	 * @param {String} domainId ID of the NLU domain.
 	 * @param {Object} body The NLU Domain Version to create.
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.includeUtterances Whether utterances for intent definition should be included when marshalling response.
 	 */
-	postLanguageunderstandingDomainVersions(domainId, body) { 
+	postLanguageunderstandingDomainVersions(domainId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'domainId' is set
 		if (domainId === undefined || domainId === null) {
 			throw 'Missing the required parameter "domainId" when calling postLanguageunderstandingDomainVersions';
@@ -749,7 +857,7 @@ class LanguageUnderstandingApi {
 			'/api/v2/languageunderstanding/domains/{domainId}/versions', 
 			'POST', 
 			{ 'domainId': domainId },
-			{  },
+			{ 'includeUtterances': opts['includeUtterances'] },
 			{  },
 			{  },
 			body, 

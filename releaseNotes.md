@@ -1,204 +1,343 @@
-Platform API version: 6403
+Platform API version: 6449
 
 
-# Major Changes (11 changes)
+# Major Changes (13 changes)
 
-**GET /api/v2/analytics/botflows/{botFlowId}/reportingturns** (1 change)
+**GET /api/v2/languageunderstanding/domains/{domainId}/feedback** (1 change)
 
-* Parameter askActionResults was added
+* Parameter language was added
 
-**GET /api/v2/recording/localkeys/settings/{settingsId}** (1 change)
+**GET /api/v2/languageunderstanding/miners/{minerId}/drafts/{draftId}** (2 changes)
 
-* Has been deprecated
+* Parameter draftIntentId was added
+* Parameter draftTopicId was added
 
-**PUT /api/v2/recording/localkeys/settings/{settingsId}** (1 change)
+**GET /api/v2/languageunderstanding/miners** (1 change)
 
-* Has been deprecated
+* Parameter minerType was added
 
-**GET /api/v2/recording/localkeys/settings** (1 change)
+**POST /api/v2/languageunderstanding/domains/{domainId}/versions** (1 change)
 
-* Has been deprecated
+* Parameter includeUtterances was added
 
-**POST /api/v2/recording/localkeys/settings** (1 change)
+**VipBackup** (1 change)
 
-* Has been deprecated
+* Model VipBackup was removed
 
-**GET /api/v2/architect/ivrs** (1 change)
+**VipCallMediaSettings** (1 change)
 
-* Parameter scheduleGroup was added
+* Model VipCallMediaSettings was removed
 
-**GET /api/v2/learning/modules** (1 change)
+**VipMediaSettings** (1 change)
 
-* Parameter statuses was added
+* Model VipMediaSettings was removed
 
-**OpenMessageEvent** (1 change)
+**VipRouting** (1 change)
 
-* Model OpenMessageEvent was removed
+* Model VipRouting was removed
 
-**OpenNormalizedMessage** (2 changes)
+**Queue** (1 change)
 
-* Property events was removed
-* Enum value Event was removed from property type
+* Property vipRouting was removed
 
-**DigitalDataActionConditionPredicate** (1 change)
+**QueueRequest** (1 change)
 
-* Property valueType was removed
+* Property vipRouting was removed
+
+**UserQueue** (1 change)
+
+* Property vipRouting was removed
+
+**CreateQueueRequest** (1 change)
+
+* Property vipRouting was removed
 
 
-# Minor Changes (46 changes)
+# Minor Changes (84 changes)
 
 **/api/v2/outbound/dnclists/{dncListId}/emailaddresses** (2 changes)
 
+* Operation delete was added. Summary: Deletes all or expired email addresses from a DNC list.
+* Operation patch was added. Summary: Add emails to or Delete emails from a DNC list.
+
+**GET /api/v2/outbound/dnclists/{dncListId}/export** (1 change)
+
+* Response 501 was added
+
+**POST /api/v2/outbound/dnclists/{dncListId}/export** (1 change)
+
+* Response 501 was added
+
+**/api/v2/outbound/dnclists/{dncListId}/phonenumbers** (2 changes)
+
+* Operation delete was added. Summary: Deletes all or expired phone numbers from a DNC list.
+* Operation patch was added. Summary: Add numbers to or delete numbers from a DNC list.
+
+**PUT /api/v2/outbound/dnclists/{dncListId}** (1 change)
+
+* Response 501 was added
+
+**POST /api/v2/outbound/dnclists** (1 change)
+
+* Response 501 was added
+
+**/api/v2/languageunderstanding/miners/{minerId}/topics/{topicId}** (2 changes)
+
 * Path was added
-* Operation POST was added
+* Operation GET was added
 
-**CommunicationEndedEvent** (2 changes)
+**/api/v2/languageunderstanding/miners/{minerId}/topics** (2 changes)
 
-* Enum value TransferACD was added to property disconnectType
-* Enum value TransferUser was added to property disconnectType
+* Path was added
+* Operation GET was added
 
-**IvrEstablishedEvent** (2 changes)
+**/api/v2/languageunderstanding/miners/{minerId}/topics/{topicId}/phrases/{phraseId}** (2 changes)
 
-* Optional property ani was added
-* Optional property dnis was added
+* Path was added
+* Operation GET was added
 
-**PhoneEstablishedEvent** (2 changes)
+**/api/v2/telephony/mediaregions** (2 changes)
 
-* Optional property ani was added
-* Optional property dnis was added
+* Path was added
+* Operation GET was added
 
-**RoutingEstablishedEvent** (2 changes)
+**ConversationAggregateQueryPredicate** (1 change)
 
-* Optional property ani was added
-* Optional property dnis was added
+* Enum value errorCode was added to property dimension
 
-**UserEstablishedEvent** (2 changes)
+**ConversationAggregationQuery** (1 change)
 
-* Optional property ani was added
-* Optional property dnis was added
+* Enum value errorCode was added to property groupBy
 
-**BotAggregateQueryPredicate** (2 changes)
+**FlowAggregateQueryPredicate** (1 change)
 
-* Enum value askActionId was added to property dimension
-* Enum value askActionResult was added to property dimension
+* Enum value errorCode was added to property dimension
 
-**BotAggregationQuery** (3 changes)
+**FlowAggregationQuery** (1 change)
 
-* Enum value askActionId was added to property groupBy
-* Enum value askActionResult was added to property groupBy
-* Enum value nBotSessionTurns was added to property metrics
+* Enum value errorCode was added to property groupBy
 
-**BotAggregationView** (1 change)
+**ReportingTurnAction** (1 change)
 
-* Enum value nBotSessionTurns was added to property target
+* Enum value FindGroupAction was added to property actionType
 
 **ViewFilter** (1 change)
 
-* Enum value GoogleSttBotFlow was added to property botProductList
+* Optional property stationErrors was added
 
-**AuditLogMessage** (1 change)
+**ReportingExportJobResponse** (2 changes)
 
-* Enum value Organization was added to property entityType
+* Enum value AGENT_SCORECARD_INSIGHTS_SUMMARY_VIEW was added to property viewType
+* Enum value AGENT_SCORECARD_INSIGHTS_DETAIL_VIEW was added to property viewType
 
-**EntityChange** (1 change)
+**ReportingExportMetadataJobResponse** (2 changes)
 
-* Enum value Organization was added to property entityType
+* Enum value AGENT_SCORECARD_INSIGHTS_SUMMARY_VIEW was added to property viewType
+* Enum value AGENT_SCORECARD_INSIGHTS_DETAIL_VIEW was added to property viewType
 
-**AuditQueryEntity** (1 change)
+**ReportingExportJobRequest** (2 changes)
 
-* Enum value Organization was added to property name
+* Enum value AGENT_SCORECARD_INSIGHTS_SUMMARY_VIEW was added to property viewType
+* Enum value AGENT_SCORECARD_INSIGHTS_DETAIL_VIEW was added to property viewType
 
-**ContactListDivisionView** (1 change)
+**AuditLogMessage** (3 changes)
 
-* Optional property emailColumns was added
+* Enum value Remove was added to property action
+* Enum value UserLanguage was added to property entityType
+* Enum value UserSkill was added to property entityType
 
-**DialerContact** (1 change)
+**EntityChange** (2 changes)
 
-* Optional property latestEmailEvaluations was added
+* Enum value UserLanguage was added to property entityType
+* Enum value UserSkill was added to property entityType
 
-**ContactList** (1 change)
+**InitiatingAction** (1 change)
 
-* Optional property emailColumns was added
+* Enum value Remove was added to property actionContext
 
-**WritableDialerContact** (1 change)
+**AuditQueryEntity** (3 changes)
 
-* Optional property latestEmailEvaluations was added
+* Enum value UserLanguage was added to property name
+* Enum value UserSkill was added to property name
+* Enum value Remove was added to property actions
 
-**DncListDivisionView** (2 changes)
-
-* Enum value rds_custom was added to property dncSourceType
-* Enum value Any was added to property contactMethod
-
-**DncList** (2 changes)
-
-* Enum value rds_custom was added to property dncSourceType
-* Enum value Any was added to property contactMethod
-
-**DncListCreate** (2 changes)
-
-* Enum value rds_custom was added to property dncSourceType
-* Enum value Any was added to property contactMethod
-
-**OutcomeEventScore** (2 changes)
-
-* Optional property percentile was added
-* Optional property sessionMaxPercentile was added
-
-**DocumentBodyImage** (1 change)
-
-* Optional property hyperlink was added
-
-**ApprovalNamespace** (1 change)
+**DirectRouting** (1 change)
 
 * Model was added
 
-**LimitChangeRequestDetails** (1 change)
+**DirectRoutingCallMediaSettings** (1 change)
 
-* Optional property approvalNamespaces was added
+* Model was added
 
-**Operation** (3 changes)
+**DirectRoutingMediaSettings** (1 change)
 
-* Enum value CHECKOUT was added to property actionName
-* Enum value REVERT was added to property actionName
-* Enum value SAVE was added to property actionName
+* Model was added
 
-**PredictorModelBrief** (1 change)
+**InboundRoute** (1 change)
 
-* Optional property state was added
+* Optional property historyInclusion was added
 
-**HistoryListing** (3 changes)
+**Queue** (1 change)
 
-* Enum value CHECKOUT was added to property actionName
-* Enum value REVERT was added to property actionName
-* Enum value SAVE was added to property actionName
+* Optional property directRouting was added
 
-**DevelopmentActivity** (1 change)
+**NoteListing** (1 change)
 
-* Optional property isLatest was added
+* Optional property partialResults was added
 
-**TimeOffBalanceResponse** (1 change)
+**ContactListing** (1 change)
 
-* Optional property hrisTimeOffTypeSecondaryId was added
+* Optional property partialResults was added
+
+**RelationshipListing** (1 change)
+
+* Optional property partialResults was added
+
+**ExternalOrganizationListing** (1 change)
+
+* Optional property partialResults was added
+
+**JourneyApp** (1 change)
+
+* Model was added
+
+**NetworkConnectivity** (1 change)
+
+* Model was added
+
+**SdkLibrary** (1 change)
+
+* Model was added
+
+**Campaign** (1 change)
+
+* Optional property dynamicContactQueueingSettings was added
+
+**ContactList** (1 change)
+
+* Optional property columnDataTypeSpecifications was added
+
+**DncPatchEmailsRequest** (1 change)
+
+* Model was added
+
+**DncPatchPhoneNumbersRequest** (1 change)
+
+* Model was added
+
+**MessagingCampaign** (1 change)
+
+* Optional property dynamicContactQueueingSettings was added
+
+**EventCondition** (1 change)
+
+* Enum value App was added to property streamType
+
+**JourneyPattern** (1 change)
+
+* Enum value App was added to property streamType
+
+**AdditionalLanguagesIntent** (1 change)
+
+* Model was added
+
+**AdditionalLanguagesSynonyms** (1 change)
+
+* Model was added
+
+**IntentDefinition** (1 change)
+
+* Optional property additionalLanguages was added
+
+**NamedEntityTypeItem** (1 change)
+
+* Optional property additionalLanguages was added
+
+**NluFeedbackResponse** (1 change)
+
+* Optional property language was added
+
+**NluFeedbackRequest** (1 change)
+
+* Optional property language was added
+
+**Draft** (1 change)
+
+* Optional property topics was added
+
+**Miner** (7 changes)
+
+* Optional property minerType was added
+* Optional property errorInfo was added
+* Optional property warningInfo was added
+* Optional property participantType was added
+* Optional property conversationsFetchedCount was added
+* Optional property conversationsValidCount was added
+* Optional property getminedItemCount was added
+
+**DraftRequest** (1 change)
+
+* Optional property topics was added
+
+**MinerExecuteRequest** (1 change)
+
+* Optional property participantType was added
+
+**MinerTopic** (1 change)
+
+* Model was added
+
+**TopicPhrase** (1 change)
+
+* Model was added
+
+**MinerTopicsListing** (1 change)
+
+* Model was added
+
+**MinerTopicPhrase** (1 change)
+
+* Model was added
+
+**NluDetectionInput** (1 change)
+
+* Optional property language was added
+
+**RecordingAnnotationFlow** (1 change)
+
+* Model was added
+
+**RecordingAnnotationQueue** (1 change)
+
+* Model was added
+
+**QueueRequest** (1 change)
+
+* Optional property directRouting was added
+
+**UserQueue** (1 change)
+
+* Optional property directRouting was added
+
+**CreateQueueRequest** (1 change)
+
+* Optional property directRouting was added
+
+**MediaRegions** (1 change)
+
+* Model was added
+
+**VoicemailOrganizationPolicy** (1 change)
+
+* Optional property maximumRecordingTimeSeconds was added
 
 
-# Point Changes (5 changes)
+# Point Changes (2 changes)
 
-**POST /api/v2/recording/localkeys** (1 change)
+**GET /api/v2/users/{userId}/presences/{sourceId}** (1 change)
 
-* Summary was changed
+* Description was changed
 
-**GET /api/v2/recording/localkeys/settings/{settingsId}** (1 change)
+**PATCH /api/v2/users/{userId}/presences/{sourceId}** (1 change)
 
-* Summary was changed
-
-**PUT /api/v2/recording/localkeys/settings/{settingsId}** (1 change)
-
-* Summary was changed
-
-**GET /api/v2/recording/localkeys/settings** (1 change)
-
-* Summary was changed
-
-**POST /api/v2/recording/localkeys/settings** (1 change)
-
-* Summary was changed
+* Description was changed

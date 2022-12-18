@@ -533,6 +533,10 @@
       "class": "WfmHistoricalAdherenceCalculationsCompleteTopicWfmHistoricalAdherenceCalculationsCompleteNotice"
     },
     {
+      "topic": "v2.users.{id}.workforcemanagement.integrations.hris.timeofftypes.jobs",
+      "class": "WfmIntegrationsHrisTimeOffTypesJobTopicHrisTimeOffTypesJobNotification"
+    },
+    {
       "topic": "v2.users.{id}.workforcemanagement.notifications",
       "class": "WfmUserNotificationTopicWfmUserNotification"
     },
@@ -543,6 +547,10 @@
     {
       "topic": "v2.users.{id}.workforcemanagement.shrinkage.jobs",
       "class": "WfmHistoricalShrinkageCalculationsCompleteTopicHistoricalShrinkageCalculationsCompleteNotification"
+    },
+    {
+      "topic": "v2.users.{id}.workforcemanagement.timeoffbalance.jobs",
+      "class": "WfmTimeOffBalanceJobTopicTimeOffBalanceJobNotification"
     },
     {
       "topic": "v2.users.{id}.workforcemanagement.timeoffrequests",
