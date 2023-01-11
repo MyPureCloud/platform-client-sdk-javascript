@@ -5,7 +5,7 @@ class ProcessAutomationApi {
 	/**
 	 * ProcessAutomation service.
 	 * @module purecloud-platform-client-v2/api/ProcessAutomationApi
-	 * @version 155.0.1
+	 * @version 156.0.0
 	 */
 
 	/**
@@ -79,6 +79,7 @@ class ProcessAutomationApi {
 	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
 	 * @param {String} opts.topicName Topic name(s). Separated by commas
 	 * @param {Boolean} opts.enabled Boolean indicating desired enabled state of triggers
+	 * @param {Boolean} opts.hasDelayBy Boolean to filter based on delayBySeconds being set in triggers. Default returns all, true returns only those with delayBySeconds set, false returns those without delayBySeconds set.
 	 */
 	getProcessautomationTriggers(opts) { 
 		opts = opts || {};
@@ -88,7 +89,7 @@ class ProcessAutomationApi {
 			'/api/v2/processautomation/triggers', 
 			'GET', 
 			{  },
-			{ 'before': opts['before'],'after': opts['after'],'pageSize': opts['pageSize'],'topicName': opts['topicName'],'enabled': opts['enabled'] },
+			{ 'before': opts['before'],'after': opts['after'],'pageSize': opts['pageSize'],'topicName': opts['topicName'],'enabled': opts['enabled'],'hasDelayBy': opts['hasDelayBy'] },
 			{  },
 			{  },
 			null, 

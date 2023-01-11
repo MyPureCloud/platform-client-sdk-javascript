@@ -11,6 +11,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**deleteRoutingEmailDomain**](RoutingApi.html#deleteRoutingEmailDomain) | **DELETE** /api/v2/routing/email/domains/{domainId} | Delete a domain
 [**deleteRoutingEmailDomainRoute**](RoutingApi.html#deleteRoutingEmailDomainRoute) | **DELETE** /api/v2/routing/email/domains/{domainName}/routes/{routeId} | Delete a route
 [**deleteRoutingEmailOutboundDomain**](RoutingApi.html#deleteRoutingEmailOutboundDomain) | **DELETE** /api/v2/routing/email/outbound/domains/{domainId} | Delete an outbound domain
+[**deleteRoutingLanguage**](RoutingApi.html#deleteRoutingLanguage) | **DELETE** /api/v2/routing/languages/{languageId} | Delete a routing language
 [**deleteRoutingPredictor**](RoutingApi.html#deleteRoutingPredictor) | **DELETE** /api/v2/routing/predictors/{predictorId} | Delete single predictor.
 [**deleteRoutingQueue**](RoutingApi.html#deleteRoutingQueue) | **DELETE** /api/v2/routing/queues/{queueId} | Delete a queue
 [**deleteRoutingQueueMember**](RoutingApi.html#deleteRoutingQueueMember) | **DELETE** /api/v2/routing/queues/{queueId}/members/{memberId} | Delete a queue member.
@@ -40,6 +41,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getRoutingEmailOutboundDomainSearch**](RoutingApi.html#getRoutingEmailOutboundDomainSearch) | **GET** /api/v2/routing/email/outbound/domains/{domainId}/search | Search a domain across organizations
 [**getRoutingEmailOutboundDomains**](RoutingApi.html#getRoutingEmailOutboundDomains) | **GET** /api/v2/routing/email/outbound/domains | Get outbound domains
 [**getRoutingEmailSetup**](RoutingApi.html#getRoutingEmailSetup) | **GET** /api/v2/routing/email/setup | Get email setup
+[**getRoutingLanguage**](RoutingApi.html#getRoutingLanguage) | **GET** /api/v2/routing/languages/{languageId} | Get a routing language
 [**getRoutingLanguages**](RoutingApi.html#getRoutingLanguages) | **GET** /api/v2/routing/languages | Get the list of supported languages.
 [**getRoutingMessageRecipient**](RoutingApi.html#getRoutingMessageRecipient) | **GET** /api/v2/routing/message/recipients/{recipientId} | Get a recipient
 [**getRoutingMessageRecipients**](RoutingApi.html#getRoutingMessageRecipients) | **GET** /api/v2/routing/message/recipients | Get recipients
@@ -328,6 +330,56 @@ apiInstance.deleteRoutingEmailOutboundDomain(domainId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **domainId** | **String** | domain ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
+
+<a name="deleteRoutingLanguage"></a>
+
+# void deleteRoutingLanguage(languageId)
+
+
+DELETE /api/v2/routing/languages/{languageId}
+
+Delete a routing language
+
+Requires ANY permissions:
+
+* routing:skill:manage
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.RoutingApi();
+
+let languageId = "languageId_example"; // String | Language ID
+
+apiInstance.deleteRoutingLanguage(languageId)
+  .then(() => {
+    console.log('deleteRoutingLanguage returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteRoutingLanguage');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **languageId** | **String** | Language ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1804,6 +1856,54 @@ This endpoint does not need any parameter.
 ### Return type
 
 **EmailSetup**
+
+<a name="getRoutingLanguage"></a>
+
+# Language getRoutingLanguage(languageId)
+
+
+GET /api/v2/routing/languages/{languageId}
+
+Get a routing language
+
+Requires NO permissions:
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.RoutingApi();
+
+let languageId = "languageId_example"; // String | Language ID
+
+apiInstance.getRoutingLanguage(languageId)
+  .then((data) => {
+    console.log(`getRoutingLanguage success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getRoutingLanguage');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **languageId** | **String** | Language ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+**Language**
 
 <a name="getRoutingLanguages"></a>
 

@@ -16947,19 +16947,6 @@
     ],
     "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.LanguagesApi();\n\nlet languageId = \"languageId_example\"; // String | Language ID\n\n// Delete Language (Deprecated)\napiInstance.deleteLanguage(languageId)\n  .then(() => {\n    console.log(\"deleteLanguage returned successfully.\");\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling deleteLanguage\");\n    console.error(err);\n  });"
   },
-  "deleteroutinglanguage": {
-    "operationId": "deleteroutinglanguage",
-    "functionName": "deleteRoutingLanguage",
-    "signature": "deleteRoutingLanguage(languageId)",
-    "parameters": [
-      {
-        "name": "languageId",
-        "type": "String",
-        "required": "true"
-      }
-    ],
-    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.LanguagesApi();\n\nlet languageId = \"languageId_example\"; // String | Language ID\n\n// Delete Language\napiInstance.deleteRoutingLanguage(languageId)\n  .then(() => {\n    console.log(\"deleteRoutingLanguage returned successfully.\");\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling deleteRoutingLanguage\");\n    console.error(err);\n  });"
-  },
   "getlanguage": {
     "operationId": "getlanguage",
     "functionName": "getLanguage",
@@ -16972,7 +16959,7 @@
       }
     ],
     "return": "Language",
-    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.LanguagesApi();\n\nlet languageId = \"languageId_example\"; // String | Language ID\n\n// Get language (Deprecated)\napiInstance.getLanguage(languageId)\n  .then((data) => {\n    console.log(`getLanguage success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getLanguage\");\n    console.error(err);\n  });"
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.LanguagesApi();\n\nlet languageId = \"languageId_example\"; // String | Language ID\n\n// Get Language (Deprecated)\napiInstance.getLanguage(languageId)\n  .then((data) => {\n    console.log(`getLanguage success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getLanguage\");\n    console.error(err);\n  });"
   },
   "getlanguages": {
     "operationId": "getlanguages",
@@ -17051,20 +17038,6 @@
     ],
     "return": "{'String': Object}",
     "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.LanguagesApi();\n\nlet userId = \"userId_example\"; // String | The user id\n\n// Get effective language translation for a user\napiInstance.getLanguagesTranslationsUser(userId)\n  .then((data) => {\n    console.log(`getLanguagesTranslationsUser success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getLanguagesTranslationsUser\");\n    console.error(err);\n  });"
-  },
-  "getroutinglanguage": {
-    "operationId": "getroutinglanguage",
-    "functionName": "getRoutingLanguage",
-    "signature": "getRoutingLanguage(languageId)",
-    "parameters": [
-      {
-        "name": "languageId",
-        "type": "String",
-        "required": "true"
-      }
-    ],
-    "return": "Language",
-    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.LanguagesApi();\n\nlet languageId = \"languageId_example\"; // String | Language ID\n\n// Get language\napiInstance.getRoutingLanguage(languageId)\n  .then((data) => {\n    console.log(`getRoutingLanguage success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getRoutingLanguage\");\n    console.error(err);\n  });"
   },
   "postlanguages": {
     "operationId": "postlanguages",
@@ -22255,7 +22228,7 @@
   "getprocessautomationtriggers": {
     "operationId": "getprocessautomationtriggers",
     "functionName": "getProcessautomationTriggers",
-    "signature": "getProcessautomationTriggers(before, after, pageSize, topicName, enabled)",
+    "signature": "getProcessautomationTriggers(before, after, pageSize, topicName, enabled, hasDelayBy)",
     "parameters": [
       {
         "name": "before",
@@ -22281,10 +22254,15 @@
         "name": "enabled",
         "type": "Boolean",
         "required": "false"
+      },
+      {
+        "name": "hasDelayBy",
+        "type": "Boolean",
+        "required": "false"
       }
     ],
     "return": "TriggerEntityListing",
-    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.ProcessAutomationApi();\n\nlet opts = { \n  \"before\": \"before_example\", // String | The cursor that points to the start of the set of entities that has been returned.\n  \"after\": \"after_example\", // String | The cursor that points to the end of the set of entities that has been returned.\n  \"pageSize\": \"pageSize_example\", // String | Number of entities to return. Maximum of 200.\n  \"topicName\": \"topicName_example\", // String | Topic name(s). Separated by commas\n  \"enabled\": true // Boolean | Boolean indicating desired enabled state of triggers\n};\n\n// Retrieves all triggers, optionally filtered by query parameters.\napiInstance.getProcessautomationTriggers(opts)\n  .then((data) => {\n    console.log(`getProcessautomationTriggers success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getProcessautomationTriggers\");\n    console.error(err);\n  });"
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.ProcessAutomationApi();\n\nlet opts = { \n  \"before\": \"before_example\", // String | The cursor that points to the start of the set of entities that has been returned.\n  \"after\": \"after_example\", // String | The cursor that points to the end of the set of entities that has been returned.\n  \"pageSize\": \"pageSize_example\", // String | Number of entities to return. Maximum of 200.\n  \"topicName\": \"topicName_example\", // String | Topic name(s). Separated by commas\n  \"enabled\": true, // Boolean | Boolean indicating desired enabled state of triggers\n  \"hasDelayBy\": true // Boolean | Boolean to filter based on delayBySeconds being set in triggers. Default returns all, true returns only those with delayBySeconds set, false returns those without delayBySeconds set.\n};\n\n// Retrieves all triggers, optionally filtered by query parameters.\napiInstance.getProcessautomationTriggers(opts)\n  .then((data) => {\n    console.log(`getProcessautomationTriggers success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getProcessautomationTriggers\");\n    console.error(err);\n  });"
   },
   "getprocessautomationtriggerstopics": {
     "operationId": "getprocessautomationtriggerstopics",
@@ -24387,6 +24365,20 @@
     "return": "RecordingSettings",
     "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.RecordingApi();\n\nlet opts = { \n  \"createDefault\": false // Boolean | If no settings are found, a new one is created with default values\n};\n\n// Get the Recording Settings for the Organization\napiInstance.getRecordingSettings(opts)\n  .then((data) => {\n    console.log(`getRecordingSettings success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getRecordingSettings\");\n    console.error(err);\n  });"
   },
+  "getrecordinguploadsreport": {
+    "operationId": "getrecordinguploadsreport",
+    "functionName": "getRecordingUploadsReport",
+    "signature": "getRecordingUploadsReport(reportId)",
+    "parameters": [
+      {
+        "name": "reportId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "return": "RecordingUploadReport",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.RecordingApi();\n\nlet reportId = \"reportId_example\"; // String | reportId\n\n// Get the status of a recording upload status report\napiInstance.getRecordingUploadsReport(reportId)\n  .then((data) => {\n    console.log(`getRecordingUploadsReport success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getRecordingUploadsReport\");\n    console.error(err);\n  });"
+  },
   "getrecordingsretentionquery": {
     "operationId": "getrecordingsretentionquery",
     "functionName": "getRecordingsRetentionQuery",
@@ -24628,6 +24620,20 @@
     "signature": "postRecordingRecordingkeys()",
     "return": "EncryptionKey",
     "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.RecordingApi();\n\n// Create encryption key\napiInstance.postRecordingRecordingkeys()\n  .then((data) => {\n    console.log(`postRecordingRecordingkeys success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling postRecordingRecordingkeys\");\n    console.error(err);\n  });"
+  },
+  "postrecordinguploadsreports": {
+    "operationId": "postrecordinguploadsreports",
+    "functionName": "postRecordingUploadsReports",
+    "signature": "postRecordingUploadsReports(body)",
+    "parameters": [
+      {
+        "name": "body",
+        "type": "Object",
+        "required": "true"
+      }
+    ],
+    "return": "RecordingUploadReport",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.RecordingApi();\n\nlet body = {}; // Object | Report parameters\n\n// Creates a recording upload status report\napiInstance.postRecordingUploadsReports(body)\n  .then((data) => {\n    console.log(`postRecordingUploadsReports success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling postRecordingUploadsReports\");\n    console.error(err);\n  });"
   },
   "postrecordingsdeletionprotection": {
     "operationId": "postrecordingsdeletionprotection",
@@ -25239,6 +25245,19 @@
     ],
     "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.RoutingApi();\n\nlet domainId = \"domainId_example\"; // String | domain ID\n\n// Delete an outbound domain\napiInstance.deleteRoutingEmailOutboundDomain(domainId)\n  .then(() => {\n    console.log(\"deleteRoutingEmailOutboundDomain returned successfully.\");\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling deleteRoutingEmailOutboundDomain\");\n    console.error(err);\n  });"
   },
+  "deleteroutinglanguage": {
+    "operationId": "deleteroutinglanguage",
+    "functionName": "deleteRoutingLanguage",
+    "signature": "deleteRoutingLanguage(languageId)",
+    "parameters": [
+      {
+        "name": "languageId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.RoutingApi();\n\nlet languageId = \"languageId_example\"; // String | Language ID\n\n// Delete a routing language\napiInstance.deleteRoutingLanguage(languageId)\n  .then(() => {\n    console.log(\"deleteRoutingLanguage returned successfully.\");\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling deleteRoutingLanguage\");\n    console.error(err);\n  });"
+  },
   "deleteroutingpredictor": {
     "operationId": "deleteroutingpredictor",
     "functionName": "deleteRoutingPredictor",
@@ -25674,6 +25693,20 @@
     "signature": "getRoutingEmailSetup()",
     "return": "EmailSetup",
     "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.RoutingApi();\n\n// Get email setup\napiInstance.getRoutingEmailSetup()\n  .then((data) => {\n    console.log(`getRoutingEmailSetup success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getRoutingEmailSetup\");\n    console.error(err);\n  });"
+  },
+  "getroutinglanguage": {
+    "operationId": "getroutinglanguage",
+    "functionName": "getRoutingLanguage",
+    "signature": "getRoutingLanguage(languageId)",
+    "parameters": [
+      {
+        "name": "languageId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "return": "Language",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.RoutingApi();\n\nlet languageId = \"languageId_example\"; // String | Language ID\n\n// Get a routing language\napiInstance.getRoutingLanguage(languageId)\n  .then((data) => {\n    console.log(`getRoutingLanguage success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getRoutingLanguage\");\n    console.error(err);\n  });"
   },
   "getroutinglanguages": {
     "operationId": "getroutinglanguages",

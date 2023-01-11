@@ -5,7 +5,7 @@ class RoutingApi {
 	/**
 	 * Routing service.
 	 * @module purecloud-platform-client-v2/api/RoutingApi
-	 * @version 155.0.1
+	 * @version 156.0.0
 	 */
 
 	/**
@@ -115,6 +115,31 @@ class RoutingApi {
 			'/api/v2/routing/email/outbound/domains/{domainId}', 
 			'DELETE', 
 			{ 'domainId': domainId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete a routing language
+	 * 
+	 * @param {String} languageId Language ID
+	 */
+	deleteRoutingLanguage(languageId) { 
+		// verify the required parameter 'languageId' is set
+		if (languageId === undefined || languageId === null) {
+			throw 'Missing the required parameter "languageId" when calling deleteRoutingLanguage';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/languages/{languageId}', 
+			'DELETE', 
+			{ 'languageId': languageId },
 			{  },
 			{  },
 			{  },
@@ -858,6 +883,31 @@ class RoutingApi {
 			'/api/v2/routing/email/setup', 
 			'GET', 
 			{  },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a routing language
+	 * 
+	 * @param {String} languageId Language ID
+	 */
+	getRoutingLanguage(languageId) { 
+		// verify the required parameter 'languageId' is set
+		if (languageId === undefined || languageId === null) {
+			throw 'Missing the required parameter "languageId" when calling getRoutingLanguage';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/languages/{languageId}', 
+			'GET', 
+			{ 'languageId': languageId },
 			{  },
 			{  },
 			{  },

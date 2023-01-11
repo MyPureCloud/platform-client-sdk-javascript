@@ -5,7 +5,7 @@ class LanguagesApi {
 	/**
 	 * Languages service.
 	 * @module purecloud-platform-client-v2/api/LanguagesApi
-	 * @version 155.0.1
+	 * @version 156.0.0
 	 */
 
 	/**
@@ -22,7 +22,7 @@ class LanguagesApi {
 
 	/**
 	 * Delete Language (Deprecated)
-	 * This endpoint is deprecated. It has been moved to /routing/languages/{languageId}
+	 * This endpoint is deprecated. Please see the Routing API (DELETE /api/v2/routing/languages/{languageId})
 	 * @param {String} languageId Language ID
 	 */
 	deleteLanguage(languageId) { 
@@ -46,33 +46,8 @@ class LanguagesApi {
 	}
 
 	/**
-	 * Delete Language
-	 * 
-	 * @param {String} languageId Language ID
-	 */
-	deleteRoutingLanguage(languageId) { 
-		// verify the required parameter 'languageId' is set
-		if (languageId === undefined || languageId === null) {
-			throw 'Missing the required parameter "languageId" when calling deleteRoutingLanguage';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/routing/languages/{languageId}', 
-			'DELETE', 
-			{ 'languageId': languageId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get language (Deprecated)
-	 * This endpoint is deprecated. It has been moved to /routing/languages/{languageId}
+	 * Get Language (Deprecated)
+	 * This endpoint is deprecated. Please see the Routing API (GET /api/v2/routing/languages/{languageId})
 	 * @param {String} languageId Language ID
 	 */
 	getLanguage(languageId) { 
@@ -97,7 +72,7 @@ class LanguagesApi {
 
 	/**
 	 * Get the list of supported languages. (Deprecated)
-	 * This endpoint is deprecated. It has been moved to /routing/languages
+	 * This endpoint is deprecated. Please see the Routing API (GET /api/v2/routing/languages)
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
@@ -218,33 +193,8 @@ class LanguagesApi {
 	}
 
 	/**
-	 * Get language
-	 * 
-	 * @param {String} languageId Language ID
-	 */
-	getRoutingLanguage(languageId) { 
-		// verify the required parameter 'languageId' is set
-		if (languageId === undefined || languageId === null) {
-			throw 'Missing the required parameter "languageId" when calling getRoutingLanguage';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/routing/languages/{languageId}', 
-			'GET', 
-			{ 'languageId': languageId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Create Language (Deprecated)
-	 * This endpoint is deprecated. It has been moved to /routing/languages
+	 * This endpoint is deprecated. Please see the Routing API. (POST /api/v2/routing/languages
 	 * @param {Object} body Language
 	 */
 	postLanguages(body) { 

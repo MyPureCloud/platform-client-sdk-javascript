@@ -958,6 +958,7 @@ docs/getRecordingMediaretentionpolicy-example.txt
 docs/getRecordingRecordingkeys-example.txt
 docs/getRecordingRecordingkeysRotationschedule-example.txt
 docs/getRecordingSettings-example.txt
+docs/getRecordingUploadsReport-example.txt
 docs/getRecordingsRetentionQuery-example.txt
 docs/getRecordingsScreensessions-example.txt
 docs/getResponsemanagementLibraries-example.txt
@@ -1751,6 +1752,7 @@ docs/postRecordingLocalkeys-example.txt
 docs/postRecordingLocalkeysSettings-example.txt
 docs/postRecordingMediaretentionpolicies-example.txt
 docs/postRecordingRecordingkeys-example.txt
+docs/postRecordingUploadsReports-example.txt
 docs/postRecordingsDeletionprotection-example.txt
 docs/postRecordingsScreensessionsAcknowledge-example.txt
 docs/postRecordingsScreensessionsMetadata-example.txt

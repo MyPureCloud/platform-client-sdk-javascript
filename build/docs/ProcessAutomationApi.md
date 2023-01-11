@@ -150,7 +150,8 @@ let opts = {
   'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
   'pageSize': "pageSize_example", // String | Number of entities to return. Maximum of 200.
   'topicName': "topicName_example", // String | Topic name(s). Separated by commas
-  'enabled': true // Boolean | Boolean indicating desired enabled state of triggers
+  'enabled': true, // Boolean | Boolean indicating desired enabled state of triggers
+  'hasDelayBy': true // Boolean | Boolean to filter based on delayBySeconds being set in triggers. Default returns all, true returns only those with delayBySeconds set, false returns those without delayBySeconds set.
 };
 
 apiInstance.getProcessautomationTriggers(opts)
@@ -173,6 +174,7 @@ apiInstance.getProcessautomationTriggers(opts)
  **pageSize** | **String** | Number of entities to return. Maximum of 200. | [optional]  |
  **topicName** | **String** | Topic name(s). Separated by commas | [optional]  |
  **enabled** | **Boolean** | Boolean indicating desired enabled state of triggers | [optional]  |
+ **hasDelayBy** | **Boolean** | Boolean to filter based on delayBySeconds being set in triggers. Default returns all, true returns only those with delayBySeconds set, false returns those without delayBySeconds set. | [optional]  |
 {: class="table table-striped"}
 
 ### Return type

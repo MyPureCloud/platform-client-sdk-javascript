@@ -38,6 +38,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getRecordingRecordingkeys**](RecordingApi.html#getRecordingRecordingkeys) | **GET** /api/v2/recording/recordingkeys | Get encryption key list
 [**getRecordingRecordingkeysRotationschedule**](RecordingApi.html#getRecordingRecordingkeysRotationschedule) | **GET** /api/v2/recording/recordingkeys/rotationschedule | Get key rotation schedule
 [**getRecordingSettings**](RecordingApi.html#getRecordingSettings) | **GET** /api/v2/recording/settings | Get the Recording Settings for the Organization
+[**getRecordingUploadsReport**](RecordingApi.html#getRecordingUploadsReport) | **GET** /api/v2/recording/uploads/reports/{reportId} | Get the status of a recording upload status report
 [**getRecordingsRetentionQuery**](RecordingApi.html#getRecordingsRetentionQuery) | **GET** /api/v2/recordings/retention/query | Query for recording retention data
 [**getRecordingsScreensessions**](RecordingApi.html#getRecordingsScreensessions) | **GET** /api/v2/recordings/screensessions | Retrieves a paged listing of screen recording sessions
 [**patchRecordingCrossplatformMediaretentionpolicy**](RecordingApi.html#patchRecordingCrossplatformMediaretentionpolicy) | **PATCH** /api/v2/recording/crossplatform/mediaretentionpolicies/{policyId} | Patch a media retention policy
@@ -53,6 +54,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postRecordingLocalkeysSettings**](RecordingApi.html#postRecordingLocalkeysSettings) | **POST** /api/v2/recording/localkeys/settings | create settings for local key creation. Replaced by API recording/keyconfigurations
 [**postRecordingMediaretentionpolicies**](RecordingApi.html#postRecordingMediaretentionpolicies) | **POST** /api/v2/recording/mediaretentionpolicies | Create media retention policy
 [**postRecordingRecordingkeys**](RecordingApi.html#postRecordingRecordingkeys) | **POST** /api/v2/recording/recordingkeys | Create encryption key
+[**postRecordingUploadsReports**](RecordingApi.html#postRecordingUploadsReports) | **POST** /api/v2/recording/uploads/reports | Creates a recording upload status report
 [**postRecordingsDeletionprotection**](RecordingApi.html#postRecordingsDeletionprotection) | **POST** /api/v2/recordings/deletionprotection | Get a list of conversations with protected recordings
 [**postRecordingsScreensessionsAcknowledge**](RecordingApi.html#postRecordingsScreensessionsAcknowledge) | **POST** /api/v2/recordings/screensessions/acknowledge | Acknowledge a screen recording.
 [**postRecordingsScreensessionsMetadata**](RecordingApi.html#postRecordingsScreensessionsMetadata) | **POST** /api/v2/recordings/screensessions/metadata | Provide meta-data a screen recording.
@@ -1769,6 +1771,56 @@ apiInstance.getRecordingSettings(opts)
 
 **RecordingSettings**
 
+<a name="getRecordingUploadsReport"></a>
+
+# RecordingUploadReport getRecordingUploadsReport(reportId)
+
+
+GET /api/v2/recording/uploads/reports/{reportId}
+
+Get the status of a recording upload status report
+
+Requires ALL permissions:
+
+* recording:uploadReport:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.RecordingApi();
+
+let reportId = "reportId_example"; // String | reportId
+
+apiInstance.getRecordingUploadsReport(reportId)
+  .then((data) => {
+    console.log(`getRecordingUploadsReport success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getRecordingUploadsReport');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **reportId** | **String** | reportId |  |
+{: class="table table-striped"}
+
+### Return type
+
+**RecordingUploadReport**
+
 <a name="getRecordingsRetentionQuery"></a>
 
 # RecordingRetentionCursorEntityListing getRecordingsRetentionQuery(retentionThresholdDays, opts)
@@ -2543,6 +2595,56 @@ This endpoint does not need any parameter.
 ### Return type
 
 **EncryptionKey**
+
+<a name="postRecordingUploadsReports"></a>
+
+# RecordingUploadReport postRecordingUploadsReports(body)
+
+
+POST /api/v2/recording/uploads/reports
+
+Creates a recording upload status report
+
+Requires ALL permissions:
+
+* recording:uploadReport:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.RecordingApi();
+
+let body = {}; // Object | Report parameters
+
+apiInstance.postRecordingUploadsReports(body)
+  .then((data) => {
+    console.log(`postRecordingUploadsReports success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postRecordingUploadsReports');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | Report parameters |  |
+{: class="table table-striped"}
+
+### Return type
+
+**RecordingUploadReport**
 
 <a name="postRecordingsDeletionprotection"></a>
 

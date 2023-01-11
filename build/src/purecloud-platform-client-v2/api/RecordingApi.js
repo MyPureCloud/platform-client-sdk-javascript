@@ -5,7 +5,7 @@ class RecordingApi {
 	/**
 	 * Recording service.
 	 * @module purecloud-platform-client-v2/api/RecordingApi
-	 * @version 155.0.1
+	 * @version 156.0.0
 	 */
 
 	/**
@@ -880,6 +880,31 @@ class RecordingApi {
 	}
 
 	/**
+	 * Get the status of a recording upload status report
+	 * 
+	 * @param {String} reportId reportId
+	 */
+	getRecordingUploadsReport(reportId) { 
+		// verify the required parameter 'reportId' is set
+		if (reportId === undefined || reportId === null) {
+			throw 'Missing the required parameter "reportId" when calling getRecordingUploadsReport';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/recording/uploads/reports/{reportId}', 
+			'GET', 
+			{ 'reportId': reportId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Query for recording retention data
 	 * 
 	 * @param {Number} retentionThresholdDays Fetch retention data for recordings retained for more days than the provided value.
@@ -1272,6 +1297,31 @@ class RecordingApi {
 			{  },
 			{  },
 			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Creates a recording upload status report
+	 * 
+	 * @param {Object} body Report parameters
+	 */
+	postRecordingUploadsReports(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postRecordingUploadsReports';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/recording/uploads/reports', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']
