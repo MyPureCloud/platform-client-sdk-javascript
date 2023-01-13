@@ -1,178 +1,122 @@
-Platform API version: 6504
+Platform API version: 6523
 
 
 # Major Changes (7 changes)
 
-**GET /api/v2/processautomation/triggers** (1 change)
+**KnowledgeDocumentSearchRequest** (6 changes)
 
-* Parameter hasDelayBy was added
+* Enum value CategoryId was removed from property sortBy
+* Enum value ContextId was removed from property sortBy
+* Enum value ContextName was removed from property sortBy
+* Enum value ContextValueId was removed from property sortBy
+* Enum value ContextValueName was removed from property sortBy
+* Enum value LabelId was removed from property sortBy
 
-**GET /api/v2/routing/languages/{languageId}** (2 changes)
+**Phone** (1 change)
 
-* Tag Languages was removed
-* Tag Routing was added
-
-**DELETE /api/v2/routing/languages/{languageId}** (2 changes)
-
-* Tag Languages was removed
-* Tag Routing was added
-
-**POST /api/v2/telephony/providers/edges/sites/{siteId}/rebalance** (1 change)
-
-* Has been deprecated
-
-**PostTextMessage** (1 change)
-
-* Property content was changed from MessageContent[] to ConversationMessageContent[]
+* Property phoneBaseSettings was changed from DomainEntityRef to PhoneBaseSettings
 
 
-# Minor Changes (40 changes)
+# Minor Changes (30 changes)
 
-**/api/v2/recording/uploads/reports/{reportId}** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/recording/uploads/reports** (2 changes)
+**/api/v2/webdeployments/token/refresh** (2 changes)
 
 * Path was added
 * Operation POST was added
 
-**ReportingTurnAction** (6 changes)
+**/api/v2/webdeployments/token/oauthcodegrantjwtexchange** (2 changes)
 
-* Enum value FindGrammarAction was added to property actionType
-* Enum value FindLanguageSkillAction was added to property actionType
-* Enum value FindSkillAction was added to property actionType
-* Enum value FindUserAction was added to property actionType
-* Enum value FindUserByIdAction was added to property actionType
-* Enum value FindUsersByIdAction was added to property actionType
+* Path was added
+* Operation POST was added
 
-**ViewFilter** (1 change)
+**/api/v2/webdeployments/token/revoke** (2 changes)
 
-* Optional property canonicalContactIds was added
+* Path was added
+* Operation DELETE was added
 
-**ReportingExportJobResponse** (1 change)
+**/api/v2/workforcemanagement/adherence/historical/bulk** (2 changes)
 
-* Enum value QUEUE_WRAPUP_DETAIL_VIEW was added to property viewType
+* Path was added
+* Operation POST was added
 
-**ReportingExportMetadataJobResponse** (1 change)
+**/api/v2/workforcemanagement/adherence/historical/bulk/jobs/{jobId}** (2 changes)
 
-* Enum value QUEUE_WRAPUP_DETAIL_VIEW was added to property viewType
+* Path was added
+* Operation GET was added
 
-**ReportingExportJobRequest** (1 change)
+**AuditLogMessage** (1 change)
 
-* Enum value QUEUE_WRAPUP_DETAIL_VIEW was added to property viewType
+* Enum value RoleSettings was added to property entityType
 
-**KnowledgeConversationContext** (1 change)
+**EntityChange** (1 change)
 
-* Model was added
+* Enum value RoleSettings was added to property entityType
 
-**KnowledgeConversationContextResponse** (1 change)
+**AuditQueryEntity** (1 change)
 
-* Model was added
+* Enum value RoleSettings was added to property name
 
-**KnowledgeDocumentSearch** (2 changes)
-
-* Optional property queryType was added
-* Optional property conversationContext was added
-
-**KnowledgeDocumentSearchRequest** (2 changes)
-
-* Optional property queryType was added
-* Optional property conversationContext was added
-
-**IpAddressRange** (1 change)
-
-* Enum value api was added to property service
-
-**KnowledgeDocumentGuestSearch** (1 change)
-
-* Optional property queryType was added
-
-**KnowledgeDocumentGuestSearchRequest** (1 change)
-
-* Optional property queryType was added
-
-**Trigger** (1 change)
-
-* Optional property delayBySeconds was added
-
-**UpdateTriggerRequest** (1 change)
-
-* Optional property delayBySeconds was added
-
-**CreateTriggerRequest** (1 change)
-
-* Optional property delayBySeconds was added
-
-**RecordingUploadReport** (1 change)
+**SignedData** (1 change)
 
 * Model was added
 
-**RecordingUploadReportRequest** (1 change)
+**WebDeploymentsRefreshJWTRequest** (1 change)
 
 * Model was added
 
-**GeneralProgramJobRequest** (1 change)
-
-* Enum value ja-JP was added to property dialect
-
-**Site** (4 changes)
-
-* Optional property mediaRegions was added
-* Optional property callerId was added
-* Optional property callerName was added
-* Optional property cloudProxyForceTurn was added
-
-**PostTextMessage** (2 changes)
-
-* Enum value Event was added to property type
-* Enum value Unknown was added to property type
-
-**VoicemailGroupPolicy** (1 change)
-
-* Optional property interactiveResponseRequired was added
-
-**Dependency** (1 change)
-
-* Enum value GRAMMAR was added to property type
-
-**DependencyObject** (1 change)
-
-* Enum value GRAMMAR was added to property type
-
-**ValueWrapperHrisTimeOffType** (1 change)
+**WebDeploymentsAuthorizationResponse** (1 change)
 
 * Model was added
 
-**HistoricalShrinkageResult** (1 change)
+**WebDeploymentsJourneyContext** (1 change)
 
-* Optional property businessUnitIds was added
+* Model was added
+
+**WebDeploymentsOAuthExchangeRequest** (1 change)
+
+* Model was added
+
+**WebDeploymentsOAuthRequestParameters** (1 change)
+
+* Model was added
+
+**RecordingJobsQuery** (3 changes)
+
+* Optional property actionAge was added
+* Optional property screenRecordingActionDate was added
+* Optional property screenRecordingActionAge was added
+
+**PhoneBaseSettings** (1 change)
+
+* Model was added
+
+**WfmHistoricalAdherenceBulkJobReference** (1 change)
+
+* Model was added
+
+**WfmHistoricalAdherenceBulkResponse** (1 change)
+
+* Model was added
+
+**WfmHistoricalAdherenceBulkResult** (1 change)
+
+* Model was added
+
+**WfmHistoricalAdherenceBulkUserDayMetrics** (1 change)
+
+* Model was added
+
+**WfmHistoricalAdherenceBulkUserResult** (1 change)
+
+* Model was added
+
+**WfmHistoricalAdherenceBulkItem** (1 change)
+
+* Model was added
+
+**WfmHistoricalAdherenceBulkQuery** (1 change)
+
+* Model was added
 
 
-# Point Changes (7 changes)
-
-**GET /api/v2/languages/{languageId}** (2 changes)
-
-* Description was changed
-* Summary was changed
-
-**DELETE /api/v2/languages/{languageId}** (1 change)
-
-* Description was changed
-
-**GET /api/v2/languages** (1 change)
-
-* Description was changed
-
-**POST /api/v2/languages** (1 change)
-
-* Description was changed
-
-**GET /api/v2/routing/languages/{languageId}** (1 change)
-
-* Summary was changed
-
-**DELETE /api/v2/routing/languages/{languageId}** (1 change)
-
-* Summary was changed
+# Point Changes (0 changes)

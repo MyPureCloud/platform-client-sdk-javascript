@@ -529,6 +529,10 @@
       "class": "WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate"
     },
     {
+      "topic": "v2.users.{id}.workforcemanagement.adherence.historical.bulk",
+      "class": "WfmHistoricalAdherenceBulkCalculationsCompleteTopicWfmHistoricalAdherenceBulkCalculationsCompleteNotification"
+    },
+    {
       "topic": "v2.users.{id}.workforcemanagement.historicaladherencequery",
       "class": "WfmHistoricalAdherenceCalculationsCompleteTopicWfmHistoricalAdherenceCalculationsCompleteNotice"
     },

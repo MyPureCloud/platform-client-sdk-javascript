@@ -34222,6 +34222,24 @@
     ],
     "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.WebDeploymentsApi();\n\nlet deploymentId = \"deploymentId_example\"; // String | The deployment ID\n\n// Delete a deployment\napiInstance.deleteWebdeploymentsDeployment(deploymentId)\n  .then(() => {\n    console.log(\"deleteWebdeploymentsDeployment returned successfully.\");\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling deleteWebdeploymentsDeployment\");\n    console.error(err);\n  });"
   },
+  "deletewebdeploymentstokenrevoke": {
+    "operationId": "deletewebdeploymentstokenrevoke",
+    "functionName": "deleteWebdeploymentsTokenRevoke",
+    "signature": "deleteWebdeploymentsTokenRevoke(xJourneySessionId, xJourneySessionType)",
+    "parameters": [
+      {
+        "name": "xJourneySessionId",
+        "type": "String",
+        "required": "false"
+      },
+      {
+        "name": "xJourneySessionType",
+        "type": "String",
+        "required": "false"
+      }
+    ],
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\nlet apiInstance = new platformClient.WebDeploymentsApi();\n\nlet opts = { \n  \"xJourneySessionId\": \"xJourneySessionId_example\", // String | The Customer's journey sessionId.\n  \"xJourneySessionType\": \"xJourneySessionType_example\" // String | The Customer's journey session type.\n};\n\n// Invalidate JWT\napiInstance.deleteWebdeploymentsTokenRevoke(opts)\n  .then(() => {\n    console.log(\"deleteWebdeploymentsTokenRevoke returned successfully.\");\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling deleteWebdeploymentsTokenRevoke\");\n    console.error(err);\n  });"
+  },
   "getwebdeploymentsconfigurationversion": {
     "operationId": "getwebdeploymentsconfigurationversion",
     "functionName": "getWebdeploymentsConfigurationVersion",
@@ -34371,6 +34389,34 @@
     ],
     "return": "WebDeployment",
     "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.WebDeploymentsApi();\n\nlet deployment = {}; // Object | \n\n// Create a deployment\napiInstance.postWebdeploymentsDeployments(deployment)\n  .then((data) => {\n    console.log(`postWebdeploymentsDeployments success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling postWebdeploymentsDeployments\");\n    console.error(err);\n  });"
+  },
+  "postwebdeploymentstokenoauthcodegrantjwtexchange": {
+    "operationId": "postwebdeploymentstokenoauthcodegrantjwtexchange",
+    "functionName": "postWebdeploymentsTokenOauthcodegrantjwtexchange",
+    "signature": "postWebdeploymentsTokenOauthcodegrantjwtexchange(body)",
+    "parameters": [
+      {
+        "name": "body",
+        "type": "Object",
+        "required": "true"
+      }
+    ],
+    "return": "WebDeploymentsAuthorizationResponse",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\nlet apiInstance = new platformClient.WebDeploymentsApi();\n\nlet body = {}; // Object | webDeploymentsOAuthExchangeRequest\n\n// Exchange an oAuth code (obtained using the Authorization Code Flow) for a JWT that can be used by webdeployments.\napiInstance.postWebdeploymentsTokenOauthcodegrantjwtexchange(body)\n  .then((data) => {\n    console.log(`postWebdeploymentsTokenOauthcodegrantjwtexchange success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling postWebdeploymentsTokenOauthcodegrantjwtexchange\");\n    console.error(err);\n  });"
+  },
+  "postwebdeploymentstokenrefresh": {
+    "operationId": "postwebdeploymentstokenrefresh",
+    "functionName": "postWebdeploymentsTokenRefresh",
+    "signature": "postWebdeploymentsTokenRefresh(body)",
+    "parameters": [
+      {
+        "name": "body",
+        "type": "Object",
+        "required": "false"
+      }
+    ],
+    "return": "SignedData",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\nlet apiInstance = new platformClient.WebDeploymentsApi();\n\nlet opts = { \n  \"body\": {} // Object | \n};\n\n// Refresh a JWT.\napiInstance.postWebdeploymentsTokenRefresh(opts)\n  .then((data) => {\n    console.log(`postWebdeploymentsTokenRefresh success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling postWebdeploymentsTokenRefresh\");\n    console.error(err);\n  });"
   },
   "putwebdeploymentsconfigurationversionsdraft": {
     "operationId": "putwebdeploymentsconfigurationversionsdraft",
@@ -34760,6 +34806,20 @@
     ],
     "return": "AdherenceExplanationJob",
     "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.WorkforceManagementApi();\n\nlet jobId = \"jobId_example\"; // String | The ID of the job\n\n// Query the status of an adherence explanation operation. Only the user who started the operation can query the status\napiInstance.getWorkforcemanagementAdherenceExplanationsJob(jobId)\n  .then((data) => {\n    console.log(`getWorkforcemanagementAdherenceExplanationsJob success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getWorkforcemanagementAdherenceExplanationsJob\");\n    console.error(err);\n  });"
+  },
+  "getworkforcemanagementadherencehistoricalbulkjob": {
+    "operationId": "getworkforcemanagementadherencehistoricalbulkjob",
+    "functionName": "getWorkforcemanagementAdherenceHistoricalBulkJob",
+    "signature": "getWorkforcemanagementAdherenceHistoricalBulkJob(jobId)",
+    "parameters": [
+      {
+        "name": "jobId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "return": "WfmHistoricalAdherenceBulkResponse",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.WorkforceManagementApi();\n\nlet jobId = \"jobId_example\"; // String | ID of the job to get\n\n// Request to fetch the status of the historical adherence bulk job. Only the user who started the operation can query the status\napiInstance.getWorkforcemanagementAdherenceHistoricalBulkJob(jobId)\n  .then((data) => {\n    console.log(`getWorkforcemanagementAdherenceHistoricalBulkJob success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getWorkforcemanagementAdherenceHistoricalBulkJob\");\n    console.error(err);\n  });"
   },
   "getworkforcemanagementadherencehistoricaljob": {
     "operationId": "getworkforcemanagementadherencehistoricaljob",
@@ -36385,6 +36445,20 @@
     ],
     "return": "WfmHistoricalAdherenceResponse",
     "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.WorkforceManagementApi();\n\nlet opts = { \n  \"body\": {} // Object | body\n};\n\n// Request a historical adherence report for users across management units\napiInstance.postWorkforcemanagementAdherenceHistorical(opts)\n  .then((data) => {\n    console.log(`postWorkforcemanagementAdherenceHistorical success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling postWorkforcemanagementAdherenceHistorical\");\n    console.error(err);\n  });"
+  },
+  "postworkforcemanagementadherencehistoricalbulk": {
+    "operationId": "postworkforcemanagementadherencehistoricalbulk",
+    "functionName": "postWorkforcemanagementAdherenceHistoricalBulk",
+    "signature": "postWorkforcemanagementAdherenceHistoricalBulk(body)",
+    "parameters": [
+      {
+        "name": "body",
+        "type": "Object",
+        "required": "false"
+      }
+    ],
+    "return": "WfmHistoricalAdherenceBulkResponse",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.WorkforceManagementApi();\n\nlet opts = { \n  \"body\": {} // Object | body\n};\n\n// Request a historical adherence report in bulk\napiInstance.postWorkforcemanagementAdherenceHistoricalBulk(opts)\n  .then((data) => {\n    console.log(`postWorkforcemanagementAdherenceHistoricalBulk success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling postWorkforcemanagementAdherenceHistoricalBulk\");\n    console.error(err);\n  });"
   },
   "postworkforcemanagementagentadherenceexplanations": {
     "operationId": "postworkforcemanagementagentadherenceexplanations",

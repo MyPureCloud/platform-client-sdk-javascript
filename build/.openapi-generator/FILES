@@ -336,6 +336,7 @@ docs/deleteWebchatGuestConversationMember-example.txt
 docs/deleteWebchatSettings-example.txt
 docs/deleteWebdeploymentsConfiguration-example.txt
 docs/deleteWebdeploymentsDeployment-example.txt
+docs/deleteWebdeploymentsTokenRevoke-example.txt
 docs/deleteWidgetsDeployment-example.txt
 docs/deleteWorkforcemanagementBusinessunit-example.txt
 docs/deleteWorkforcemanagementBusinessunitActivitycode-example.txt
@@ -1230,6 +1231,7 @@ docs/getWidgetsDeployments-example.txt
 docs/getWorkforcemanagementAdherence-example.txt
 docs/getWorkforcemanagementAdherenceExplanation-example.txt
 docs/getWorkforcemanagementAdherenceExplanationsJob-example.txt
+docs/getWorkforcemanagementAdherenceHistoricalBulkJob-example.txt
 docs/getWorkforcemanagementAdherenceHistoricalJob-example.txt
 docs/getWorkforcemanagementAdhocmodelingjob-example.txt
 docs/getWorkforcemanagementAgentAdherenceExplanation-example.txt
@@ -1859,10 +1861,13 @@ docs/postWebchatGuestConversations-example.txt
 docs/postWebdeploymentsConfigurationVersionsDraftPublish-example.txt
 docs/postWebdeploymentsConfigurations-example.txt
 docs/postWebdeploymentsDeployments-example.txt
+docs/postWebdeploymentsTokenOauthcodegrantjwtexchange-example.txt
+docs/postWebdeploymentsTokenRefresh-example.txt
 docs/postWidgetsDeployments-example.txt
 docs/postWorkforcemanagementAdherenceExplanations-example.txt
 docs/postWorkforcemanagementAdherenceExplanationsQuery-example.txt
 docs/postWorkforcemanagementAdherenceHistorical-example.txt
+docs/postWorkforcemanagementAdherenceHistoricalBulk-example.txt
 docs/postWorkforcemanagementAgentAdherenceExplanations-example.txt
 docs/postWorkforcemanagementAgentAdherenceExplanationsQuery-example.txt
 docs/postWorkforcemanagementAgentschedulesMine-example.txt

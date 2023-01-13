@@ -5,7 +5,7 @@ class WebDeploymentsApi {
 	/**
 	 * WebDeployments service.
 	 * @module purecloud-platform-client-v2/api/WebDeploymentsApi
-	 * @version 156.0.0
+	 * @version 157.0.0
 	 */
 
 	/**
@@ -62,6 +62,31 @@ class WebDeploymentsApi {
 			{ 'deploymentId': deploymentId },
 			{  },
 			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Invalidate JWT
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.xJourneySessionId The Customer's journey sessionId.
+	 * @param {String} opts.xJourneySessionType The Customer's journey session type.
+	 */
+	deleteWebdeploymentsTokenRevoke(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/webdeployments/token/revoke', 
+			'DELETE', 
+			{  },
+			{  },
+			{ 'X-Journey-Session-Id': opts['xJourneySessionId'],'X-Journey-Session-Type': opts['xJourneySessionType'] },
 			{  },
 			null, 
 			['PureCloud OAuth'], 
@@ -321,6 +346,55 @@ class WebDeploymentsApi {
 			{  },
 			{  },
 			deployment, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Exchange an oAuth code (obtained using the Authorization Code Flow) for a JWT that can be used by webdeployments.
+	 * 
+	 * @param {Object} body webDeploymentsOAuthExchangeRequest
+	 */
+	postWebdeploymentsTokenOauthcodegrantjwtexchange(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postWebdeploymentsTokenOauthcodegrantjwtexchange';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/webdeployments/token/oauthcodegrantjwtexchange', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Refresh a JWT.
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body 
+	 */
+	postWebdeploymentsTokenRefresh(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/webdeployments/token/refresh', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']

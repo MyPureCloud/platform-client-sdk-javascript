@@ -5240,6 +5240,7 @@ declare namespace WebChatApi {
 declare class WebDeploymentsApi {  
   	deleteWebdeploymentsConfiguration(configurationId: string): Promise<void>; 
   	deleteWebdeploymentsDeployment(deploymentId: string): Promise<void>; 
+  	deleteWebdeploymentsTokenRevoke(opts?: WebDeploymentsApi.deleteWebdeploymentsTokenRevokeOptions): Promise<void>; 
   	getWebdeploymentsConfigurationVersion(configurationId: string, versionId: string): Promise<Models.WebDeploymentConfigurationVersion>; 
   	getWebdeploymentsConfigurationVersions(configurationId: string): Promise<Models.WebDeploymentConfigurationVersionEntityListing>; 
   	getWebdeploymentsConfigurationVersionsDraft(configurationId: string): Promise<Models.WebDeploymentConfigurationVersion>; 
@@ -5250,11 +5251,17 @@ declare class WebDeploymentsApi {
   	postWebdeploymentsConfigurationVersionsDraftPublish(configurationId: string): Promise<Models.WebDeploymentConfigurationVersion>; 
   	postWebdeploymentsConfigurations(configurationVersion: Models.WebDeploymentConfigurationVersion): Promise<Models.WebDeploymentConfigurationVersion>; 
   	postWebdeploymentsDeployments(deployment: Models.WebDeployment): Promise<Models.WebDeployment>; 
+  	postWebdeploymentsTokenOauthcodegrantjwtexchange(body: Models.WebDeploymentsOAuthExchangeRequest): Promise<Models.WebDeploymentsAuthorizationResponse>; 
+  	postWebdeploymentsTokenRefresh(opts?: WebDeploymentsApi.postWebdeploymentsTokenRefreshOptions): Promise<Models.SignedData>; 
   	putWebdeploymentsConfigurationVersionsDraft(configurationId: string, configurationVersion: Models.WebDeploymentConfigurationVersion): Promise<Models.WebDeploymentConfigurationVersion>; 
   	putWebdeploymentsDeployment(deploymentId: string, deployment: Models.WebDeployment): Promise<Models.WebDeployment>;
 }
 
 declare namespace WebDeploymentsApi { 
+	export interface deleteWebdeploymentsTokenRevokeOptions { 
+		"xJourneySessionId"?: string;
+		"xJourneySessionType"?: string;
+	}
 	export interface getWebdeploymentsConfigurationsOptions { 
 		"showOnlyPublished"?: boolean;
 	}
@@ -5263,6 +5270,9 @@ declare namespace WebDeploymentsApi {
 	}
 	export interface getWebdeploymentsDeploymentsOptions { 
 		"expand"?: Array<string>;
+	}
+	export interface postWebdeploymentsTokenRefreshOptions { 
+		"body"?: Models.WebDeploymentsRefreshJWTRequest;
 	}
 }
 
@@ -5305,6 +5315,7 @@ declare class WorkforceManagementApi {
   	getWorkforcemanagementAdherence(userId: Array<string>): Promise<Array<Models.UserScheduleAdherence>>; 
   	getWorkforcemanagementAdherenceExplanation(explanationId: string): Promise<Models.AdherenceExplanationResponse>; 
   	getWorkforcemanagementAdherenceExplanationsJob(jobId: string): Promise<Models.AdherenceExplanationJob>; 
+  	getWorkforcemanagementAdherenceHistoricalBulkJob(jobId: string): Promise<Models.WfmHistoricalAdherenceBulkResponse>; 
   	getWorkforcemanagementAdherenceHistoricalJob(jobId: string): Promise<Models.WfmHistoricalAdherenceResponse>; 
   	getWorkforcemanagementAdhocmodelingjob(jobId: string): Promise<Models.ModelingStatusResponse>; 
   	getWorkforcemanagementAgentAdherenceExplanation(agentId: string, explanationId: string): Promise<Models.AdherenceExplanationResponse>; 
@@ -5387,6 +5398,7 @@ declare class WorkforceManagementApi {
   	postWorkforcemanagementAdherenceExplanations(body: Models.AddAdherenceExplanationAgentRequest): Promise<Models.AdherenceExplanationAsyncResponse>; 
   	postWorkforcemanagementAdherenceExplanationsQuery(body: Models.AgentQueryAdherenceExplanationsRequest, opts?: WorkforceManagementApi.postWorkforcemanagementAdherenceExplanationsQueryOptions): Promise<Models.QueryAdherenceExplanationsResponse>; 
   	postWorkforcemanagementAdherenceHistorical(opts?: WorkforceManagementApi.postWorkforcemanagementAdherenceHistoricalOptions): Promise<Models.WfmHistoricalAdherenceResponse>; 
+  	postWorkforcemanagementAdherenceHistoricalBulk(opts?: WorkforceManagementApi.postWorkforcemanagementAdherenceHistoricalBulkOptions): Promise<Models.WfmHistoricalAdherenceBulkResponse>; 
   	postWorkforcemanagementAgentAdherenceExplanations(agentId: string, body: Models.AddAdherenceExplanationAdminRequest): Promise<Models.AdherenceExplanationAsyncResponse>; 
   	postWorkforcemanagementAgentAdherenceExplanationsQuery(agentId: string, body: Models.AgentQueryAdherenceExplanationsRequest, opts?: WorkforceManagementApi.postWorkforcemanagementAgentAdherenceExplanationsQueryOptions): Promise<Models.AgentQueryAdherenceExplanationsResponse>; 
   	postWorkforcemanagementAgentschedulesMine(opts?: WorkforceManagementApi.postWorkforcemanagementAgentschedulesMineOptions): Promise<Models.BuCurrentAgentScheduleSearchResponse>; 
@@ -5567,6 +5579,9 @@ declare namespace WorkforceManagementApi {
 	}
 	export interface postWorkforcemanagementAdherenceHistoricalOptions { 
 		"body"?: Models.WfmHistoricalAdherenceQueryForUsers;
+	}
+	export interface postWorkforcemanagementAdherenceHistoricalBulkOptions { 
+		"body"?: Models.WfmHistoricalAdherenceBulkQuery;
 	}
 	export interface postWorkforcemanagementAgentAdherenceExplanationsQueryOptions { 
 		"forceAsync"?: boolean;
@@ -20012,8 +20027,6 @@ declare namespace Models {
 		"customerId"?: string;
 		"customerIdType"?: string;
 		"type"?: string;
-		"externalId"?: string;
-		"externalUrl"?: string;
 		"outcomeAchievements"?: Array<Models.JourneySessionEventsNotificationOutcomeAchievement>;
 		"segmentAssignments"?: Array<Models.JourneySessionEventsNotificationSegmentAssignment>;
 		"attributes"?: { [key: string]: Models.JourneySessionEventsNotificationCustomEventAttribute; };
@@ -24467,7 +24480,7 @@ declare namespace Models {
 		"modifiedByApp"?: string;
 		"createdByApp"?: string;
 		"site": Models.DomainEntityRef;
-		"phoneBaseSettings": Models.DomainEntityRef;
+		"phoneBaseSettings": Models.PhoneBaseSettings;
 		"lineBaseSettings"?: Models.DomainEntityRef;
 		"phoneMetaBase"?: Models.DomainEntityRef;
 		"lines": Array<Models.Line>;
@@ -24513,6 +24526,12 @@ declare namespace Models {
 		"lastUri"?: string;
 		"selfUri"?: string;
 		"pageCount"?: number;
+	}
+	
+	export interface PhoneBaseSettings { 
+		"id": string;
+		"name"?: string;
+		"selfUri"?: string;
 	}
 	
 	export interface PhoneCapabilities { 
@@ -28120,6 +28139,9 @@ declare namespace Models {
 	export interface RecordingJobsQuery { 
 		"action": string;
 		"actionDate"?: string;
+		"actionAge"?: number;
+		"screenRecordingActionDate"?: string;
+		"screenRecordingActionAge"?: number;
 		"integrationId"?: string;
 		"includeRecordingsWithSensitiveData"?: boolean;
 		"includeScreenRecordings"?: boolean;
@@ -28392,6 +28414,7 @@ declare namespace Models {
 		"emailStatuses"?: { [key: string]: string; };
 		"emailErrorDescription"?: string;
 		"scheduleExpression"?: string;
+		"scheduleStaticLinkUrl"?: string;
 	}
 	
 	export interface ReportingExportJobListing { 
@@ -30134,6 +30157,10 @@ declare namespace Models {
 		"enabled"?: boolean;
 		"cannedResponseId"?: string;
 		"alwaysIncluded"?: boolean;
+	}
+	
+	export interface SignedData { 
+		"jwt"?: string;
 	}
 	
 	export interface SignedUrlResponse { 
@@ -34776,6 +34803,11 @@ declare namespace Models {
 		"enabled"?: boolean;
 	}
 	
+	export interface WebDeploymentsAuthorizationResponse { 
+		"refreshToken"?: string;
+		"jwt"?: string;
+	}
+	
 	export interface WebDeploymentsConfigTopicWebMessagingConfigChangeEventBody { 
 		"id"?: string;
 		"version"?: string;
@@ -34792,6 +34824,31 @@ declare namespace Models {
 		"id"?: string;
 		"configuration"?: Models.WebDeploymentsDeploymentTopicWebMessagingConfigChangeEventBody;
 		"status"?: string;
+	}
+	
+	export interface WebDeploymentsJourneyContext { 
+		"customer"?: Models.JourneyCustomer;
+		"customerSession"?: Models.JourneyCustomerSession;
+	}
+	
+	export interface WebDeploymentsOAuthExchangeRequest { 
+		"deploymentId": string;
+		"journeyContext"?: Models.WebDeploymentsJourneyContext;
+		"oauth"?: Models.WebDeploymentsOAuthRequestParameters;
+	}
+	
+	export interface WebDeploymentsOAuthRequestParameters { 
+		"code": string;
+		"redirectUri": string;
+		"nonce"?: string;
+		"maxAge"?: number;
+		"codeVerifier"?: string;
+		"iss"?: string;
+	}
+	
+	export interface WebDeploymentsRefreshJWTRequest { 
+		"refreshToken": string;
+		"deploymentId": string;
 	}
 	
 	export interface WebMessagingAttachment { 
@@ -35483,6 +35540,68 @@ declare namespace Models {
 	export interface WfmForecastModificationIntervalOffsetValue { 
 		"intervalIndex": number;
 		"value": number;
+	}
+	
+	export interface WfmHistoricalAdherenceBulkCalculationsCompleteTopicWfmHistoricalAdherenceBulkCalculationsCompleteNotification { 
+		"id"?: string;
+		"downloadUrls"?: Array<string>;
+		"queryState"?: string;
+	}
+	
+	export interface WfmHistoricalAdherenceBulkItem { 
+		"managementUnitId": string;
+		"startDate": string;
+		"endDate": string;
+		"userIds"?: Array<string>;
+		"includeExceptions"?: boolean;
+	}
+	
+	export interface WfmHistoricalAdherenceBulkJobReference { 
+		"id"?: string;
+		"status"?: string;
+		"selfUri"?: string;
+	}
+	
+	export interface WfmHistoricalAdherenceBulkQuery { 
+		"items": Array<Models.WfmHistoricalAdherenceBulkItem>;
+		"timeZone": string;
+	}
+	
+	export interface WfmHistoricalAdherenceBulkResponse { 
+		"job"?: Models.WfmHistoricalAdherenceBulkJobReference;
+		"downloadUrls"?: Array<string>;
+		"downloadResult"?: Models.WfmHistoricalAdherenceBulkResult;
+	}
+	
+	export interface WfmHistoricalAdherenceBulkResult { 
+		"startDate"?: string;
+		"endDate"?: string;
+		"managementUnitId"?: string;
+		"userResults"?: Array<Models.WfmHistoricalAdherenceBulkUserResult>;
+		"lookupIdToSecondaryPresenceId"?: { [key: string]: string; };
+	}
+	
+	export interface WfmHistoricalAdherenceBulkUserDayMetrics { 
+		"dayStartOffsetSeconds"?: number;
+		"adherenceScheduleSeconds"?: number;
+		"conformanceScheduleSeconds"?: number;
+		"conformanceActualSeconds"?: number;
+		"exceptionCount"?: number;
+		"exceptionDurationSeconds"?: number;
+		"impactSeconds"?: number;
+		"scheduleLengthSeconds"?: number;
+		"actualLengthSeconds"?: number;
+		"adherencePercentage"?: number;
+		"conformancePercentage"?: number;
+	}
+	
+	export interface WfmHistoricalAdherenceBulkUserResult { 
+		"userId"?: string;
+		"adherencePercentage"?: number;
+		"conformancePercentage"?: number;
+		"impact"?: string;
+		"exceptionInfo"?: Array<Models.HistoricalAdherenceExceptionInfo>;
+		"dayMetrics"?: Array<Models.WfmHistoricalAdherenceBulkUserDayMetrics>;
 	}
 	
 	export interface WfmHistoricalAdherenceCalculationsCompleteTopicWfmHistoricalAdherenceCalculationsCompleteNotice { 

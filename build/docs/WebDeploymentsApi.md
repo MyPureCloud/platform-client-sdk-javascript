@@ -9,6 +9,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | ------------- | ------------- | ------------- |
 [**deleteWebdeploymentsConfiguration**](WebDeploymentsApi.html#deleteWebdeploymentsConfiguration) | **DELETE** /api/v2/webdeployments/configurations/{configurationId} | Delete all versions of a configuration
 [**deleteWebdeploymentsDeployment**](WebDeploymentsApi.html#deleteWebdeploymentsDeployment) | **DELETE** /api/v2/webdeployments/deployments/{deploymentId} | Delete a deployment
+[**deleteWebdeploymentsTokenRevoke**](WebDeploymentsApi.html#deleteWebdeploymentsTokenRevoke) | **DELETE** /api/v2/webdeployments/token/revoke | Invalidate JWT
 [**getWebdeploymentsConfigurationVersion**](WebDeploymentsApi.html#getWebdeploymentsConfigurationVersion) | **GET** /api/v2/webdeployments/configurations/{configurationId}/versions/{versionId} | Get a configuration version
 [**getWebdeploymentsConfigurationVersions**](WebDeploymentsApi.html#getWebdeploymentsConfigurationVersions) | **GET** /api/v2/webdeployments/configurations/{configurationId}/versions | Get the versions of a configuration
 [**getWebdeploymentsConfigurationVersionsDraft**](WebDeploymentsApi.html#getWebdeploymentsConfigurationVersionsDraft) | **GET** /api/v2/webdeployments/configurations/{configurationId}/versions/draft | Get the configuration draft
@@ -19,6 +20,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postWebdeploymentsConfigurationVersionsDraftPublish**](WebDeploymentsApi.html#postWebdeploymentsConfigurationVersionsDraftPublish) | **POST** /api/v2/webdeployments/configurations/{configurationId}/versions/draft/publish | Publish the configuration draft and create a new version
 [**postWebdeploymentsConfigurations**](WebDeploymentsApi.html#postWebdeploymentsConfigurations) | **POST** /api/v2/webdeployments/configurations | Create a configuration draft
 [**postWebdeploymentsDeployments**](WebDeploymentsApi.html#postWebdeploymentsDeployments) | **POST** /api/v2/webdeployments/deployments | Create a deployment
+[**postWebdeploymentsTokenOauthcodegrantjwtexchange**](WebDeploymentsApi.html#postWebdeploymentsTokenOauthcodegrantjwtexchange) | **POST** /api/v2/webdeployments/token/oauthcodegrantjwtexchange | Exchange an oAuth code (obtained using the Authorization Code Flow) for a JWT that can be used by webdeployments.
+[**postWebdeploymentsTokenRefresh**](WebDeploymentsApi.html#postWebdeploymentsTokenRefresh) | **POST** /api/v2/webdeployments/token/refresh | Refresh a JWT.
 [**putWebdeploymentsConfigurationVersionsDraft**](WebDeploymentsApi.html#putWebdeploymentsConfigurationVersionsDraft) | **PUT** /api/v2/webdeployments/configurations/{configurationId}/versions/draft | Update the configuration draft
 [**putWebdeploymentsDeployment**](WebDeploymentsApi.html#putWebdeploymentsDeployment) | **PUT** /api/v2/webdeployments/deployments/{deploymentId} | Update a deployment
 {: class="table table-striped"}
@@ -117,6 +120,55 @@ apiInstance.deleteWebdeploymentsDeployment(deploymentId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **deploymentId** | **String** | The deployment ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
+
+<a name="deleteWebdeploymentsTokenRevoke"></a>
+
+# void deleteWebdeploymentsTokenRevoke(opts)
+
+
+DELETE /api/v2/webdeployments/token/revoke
+
+Invalidate JWT
+
+Requires NO permissions:
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+let apiInstance = new platformClient.WebDeploymentsApi();
+
+let opts = { 
+  'xJourneySessionId': "xJourneySessionId_example", // String | The Customer's journey sessionId.
+  'xJourneySessionType': "xJourneySessionType_example" // String | The Customer's journey session type.
+};
+
+apiInstance.deleteWebdeploymentsTokenRevoke(opts)
+  .then(() => {
+    console.log('deleteWebdeploymentsTokenRevoke returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteWebdeploymentsTokenRevoke');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **xJourneySessionId** | **String** | The Customer's journey sessionId. | [optional]  |
+ **xJourneySessionType** | **String** | The Customer's journey session type. | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -633,6 +685,98 @@ apiInstance.postWebdeploymentsDeployments(deployment)
 ### Return type
 
 **WebDeployment**
+
+<a name="postWebdeploymentsTokenOauthcodegrantjwtexchange"></a>
+
+# WebDeploymentsAuthorizationResponse postWebdeploymentsTokenOauthcodegrantjwtexchange(body)
+
+
+POST /api/v2/webdeployments/token/oauthcodegrantjwtexchange
+
+Exchange an oAuth code (obtained using the Authorization Code Flow) for a JWT that can be used by webdeployments.
+
+Requires NO permissions:
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+let apiInstance = new platformClient.WebDeploymentsApi();
+
+let body = {}; // Object | webDeploymentsOAuthExchangeRequest
+
+apiInstance.postWebdeploymentsTokenOauthcodegrantjwtexchange(body)
+  .then((data) => {
+    console.log(`postWebdeploymentsTokenOauthcodegrantjwtexchange success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postWebdeploymentsTokenOauthcodegrantjwtexchange');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | webDeploymentsOAuthExchangeRequest |  |
+{: class="table table-striped"}
+
+### Return type
+
+**WebDeploymentsAuthorizationResponse**
+
+<a name="postWebdeploymentsTokenRefresh"></a>
+
+# SignedData postWebdeploymentsTokenRefresh(opts)
+
+
+POST /api/v2/webdeployments/token/refresh
+
+Refresh a JWT.
+
+Requires NO permissions:
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+let apiInstance = new platformClient.WebDeploymentsApi();
+
+let opts = { 
+  'body': {} // Object | 
+};
+
+apiInstance.postWebdeploymentsTokenRefresh(opts)
+  .then((data) => {
+    console.log(`postWebdeploymentsTokenRefresh success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postWebdeploymentsTokenRefresh');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** |  | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**SignedData**
 
 <a name="putWebdeploymentsConfigurationVersionsDraft"></a>
 
