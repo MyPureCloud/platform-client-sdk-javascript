@@ -9,12 +9,14 @@ All URIs are relative to *https://api.mypurecloud.com*
 | ------------- | ------------- | ------------- |
 [**deleteWebdeploymentsConfiguration**](WebDeploymentsApi.html#deleteWebdeploymentsConfiguration) | **DELETE** /api/v2/webdeployments/configurations/{configurationId} | Delete all versions of a configuration
 [**deleteWebdeploymentsDeployment**](WebDeploymentsApi.html#deleteWebdeploymentsDeployment) | **DELETE** /api/v2/webdeployments/deployments/{deploymentId} | Delete a deployment
+[**deleteWebdeploymentsDeploymentCobrowseSessionId**](WebDeploymentsApi.html#deleteWebdeploymentsDeploymentCobrowseSessionId) | **DELETE** /api/v2/webdeployments/deployments/{deploymentId}/cobrowse/{sessionId} | Deletes a cobrowse session
 [**deleteWebdeploymentsTokenRevoke**](WebDeploymentsApi.html#deleteWebdeploymentsTokenRevoke) | **DELETE** /api/v2/webdeployments/token/revoke | Invalidate JWT
 [**getWebdeploymentsConfigurationVersion**](WebDeploymentsApi.html#getWebdeploymentsConfigurationVersion) | **GET** /api/v2/webdeployments/configurations/{configurationId}/versions/{versionId} | Get a configuration version
 [**getWebdeploymentsConfigurationVersions**](WebDeploymentsApi.html#getWebdeploymentsConfigurationVersions) | **GET** /api/v2/webdeployments/configurations/{configurationId}/versions | Get the versions of a configuration
 [**getWebdeploymentsConfigurationVersionsDraft**](WebDeploymentsApi.html#getWebdeploymentsConfigurationVersionsDraft) | **GET** /api/v2/webdeployments/configurations/{configurationId}/versions/draft | Get the configuration draft
 [**getWebdeploymentsConfigurations**](WebDeploymentsApi.html#getWebdeploymentsConfigurations) | **GET** /api/v2/webdeployments/configurations | View configuration drafts
 [**getWebdeploymentsDeployment**](WebDeploymentsApi.html#getWebdeploymentsDeployment) | **GET** /api/v2/webdeployments/deployments/{deploymentId} | Get a deployment
+[**getWebdeploymentsDeploymentCobrowseSessionId**](WebDeploymentsApi.html#getWebdeploymentsDeploymentCobrowseSessionId) | **GET** /api/v2/webdeployments/deployments/{deploymentId}/cobrowse/{sessionId} | Retrieves a cobrowse session
 [**getWebdeploymentsDeploymentConfigurations**](WebDeploymentsApi.html#getWebdeploymentsDeploymentConfigurations) | **GET** /api/v2/webdeployments/deployments/{deploymentId}/configurations | Get active configuration for a given deployment
 [**getWebdeploymentsDeployments**](WebDeploymentsApi.html#getWebdeploymentsDeployments) | **GET** /api/v2/webdeployments/deployments | Get deployments
 [**postWebdeploymentsConfigurationVersionsDraftPublish**](WebDeploymentsApi.html#postWebdeploymentsConfigurationVersionsDraftPublish) | **POST** /api/v2/webdeployments/configurations/{configurationId}/versions/draft/publish | Publish the configuration draft and create a new version
@@ -125,6 +127,53 @@ apiInstance.deleteWebdeploymentsDeployment(deploymentId)
 ### Return type
 
 void (no response body)
+
+<a name="deleteWebdeploymentsDeploymentCobrowseSessionId"></a>
+
+# **Object** deleteWebdeploymentsDeploymentCobrowseSessionId(deploymentId, sessionId)
+
+
+DELETE /api/v2/webdeployments/deployments/{deploymentId}/cobrowse/{sessionId}
+
+Deletes a cobrowse session
+
+Requires NO permissions:
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+let apiInstance = new platformClient.WebDeploymentsApi();
+
+let deploymentId = "deploymentId_example"; // String | WebMessaging deployment ID
+let sessionId = "sessionId_example"; // String | Cobrowse session id or join code
+
+apiInstance.deleteWebdeploymentsDeploymentCobrowseSessionId(deploymentId, sessionId)
+  .then((data) => {
+    console.log(`deleteWebdeploymentsDeploymentCobrowseSessionId success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteWebdeploymentsDeploymentCobrowseSessionId');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **deploymentId** | **String** | WebMessaging deployment ID |  |
+ **sessionId** | **String** | Cobrowse session id or join code |  |
+{: class="table table-striped"}
+
+### Return type
+
+**Object**
 
 <a name="deleteWebdeploymentsTokenRevoke"></a>
 
@@ -430,6 +479,53 @@ apiInstance.getWebdeploymentsDeployment(deploymentId)
 ### Return type
 
 **WebDeployment**
+
+<a name="getWebdeploymentsDeploymentCobrowseSessionId"></a>
+
+# CobrowseWebMessagingSession getWebdeploymentsDeploymentCobrowseSessionId(deploymentId, sessionId)
+
+
+GET /api/v2/webdeployments/deployments/{deploymentId}/cobrowse/{sessionId}
+
+Retrieves a cobrowse session
+
+Requires NO permissions:
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+let apiInstance = new platformClient.WebDeploymentsApi();
+
+let deploymentId = "deploymentId_example"; // String | WebMessaging deployment ID
+let sessionId = "sessionId_example"; // String | Cobrowse session id or join code
+
+apiInstance.getWebdeploymentsDeploymentCobrowseSessionId(deploymentId, sessionId)
+  .then((data) => {
+    console.log(`getWebdeploymentsDeploymentCobrowseSessionId success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getWebdeploymentsDeploymentCobrowseSessionId');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **deploymentId** | **String** | WebMessaging deployment ID |  |
+ **sessionId** | **String** | Cobrowse session id or join code |  |
+{: class="table table-striped"}
+
+### Return type
+
+**CobrowseWebMessagingSession**
 
 <a name="getWebdeploymentsDeploymentConfigurations"></a>
 

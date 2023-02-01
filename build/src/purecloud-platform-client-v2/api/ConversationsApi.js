@@ -5,7 +5,7 @@ class ConversationsApi {
 	/**
 	 * Conversations service.
 	 * @module purecloud-platform-client-v2/api/ConversationsApi
-	 * @version 157.0.0
+	 * @version 158.0.0
 	 */
 
 	/**
@@ -3386,6 +3386,31 @@ class ConversationsApi {
 			{  },
 			{  },
 			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Creates a cobrowse session
+	 * 
+	 * @param {String} conversationId Conversation ID
+	 */
+	postConversationCobrowse(conversationId) { 
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null) {
+			throw 'Missing the required parameter "conversationId" when calling postConversationCobrowse';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/{conversationId}/cobrowse', 
+			'POST', 
+			{ 'conversationId': conversationId },
+			{  },
+			{  },
+			{  },
+			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']

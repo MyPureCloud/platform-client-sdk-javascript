@@ -5,7 +5,7 @@ class OrganizationAuthorizationApi {
 	/**
 	 * OrganizationAuthorization service.
 	 * @module purecloud-platform-client-v2/api/OrganizationAuthorizationApi
-	 * @version 157.0.0
+	 * @version 158.0.0
 	 */
 
 	/**
@@ -65,6 +65,66 @@ class OrganizationAuthorizationApi {
 			'/api/v2/orgauthorization/trustees/{trusteeOrgId}/clonedusers/{trusteeUserId}', 
 			'DELETE', 
 			{ 'trusteeOrgId': trusteeOrgId,'trusteeUserId': trusteeUserId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete Trustee Group
+	 * 
+	 * @param {String} trusteeOrgId Trustee Organization Id
+	 * @param {String} trusteeGroupId Trustee Group Id
+	 */
+	deleteOrgauthorizationTrusteeGroup(trusteeOrgId, trusteeGroupId) { 
+		// verify the required parameter 'trusteeOrgId' is set
+		if (trusteeOrgId === undefined || trusteeOrgId === null) {
+			throw 'Missing the required parameter "trusteeOrgId" when calling deleteOrgauthorizationTrusteeGroup';
+		}
+		// verify the required parameter 'trusteeGroupId' is set
+		if (trusteeGroupId === undefined || trusteeGroupId === null) {
+			throw 'Missing the required parameter "trusteeGroupId" when calling deleteOrgauthorizationTrusteeGroup';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/orgauthorization/trustees/{trusteeOrgId}/groups/{trusteeGroupId}', 
+			'DELETE', 
+			{ 'trusteeOrgId': trusteeOrgId,'trusteeGroupId': trusteeGroupId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete Trustee Group Roles
+	 * 
+	 * @param {String} trusteeOrgId Trustee Organization Id
+	 * @param {String} trusteeGroupId Trustee Group Id
+	 */
+	deleteOrgauthorizationTrusteeGroupRoles(trusteeOrgId, trusteeGroupId) { 
+		// verify the required parameter 'trusteeOrgId' is set
+		if (trusteeOrgId === undefined || trusteeOrgId === null) {
+			throw 'Missing the required parameter "trusteeOrgId" when calling deleteOrgauthorizationTrusteeGroupRoles';
+		}
+		// verify the required parameter 'trusteeGroupId' is set
+		if (trusteeGroupId === undefined || trusteeGroupId === null) {
+			throw 'Missing the required parameter "trusteeGroupId" when calling deleteOrgauthorizationTrusteeGroupRoles';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/orgauthorization/trustees/{trusteeOrgId}/groups/{trusteeGroupId}/roles', 
+			'DELETE', 
+			{ 'trusteeOrgId': trusteeOrgId,'trusteeGroupId': trusteeGroupId },
 			{  },
 			{  },
 			{  },
@@ -191,6 +251,36 @@ class OrganizationAuthorizationApi {
 	}
 
 	/**
+	 * Delete Trustee Group
+	 * 
+	 * @param {String} trustorOrgId Trustor Organization Id
+	 * @param {String} trustorGroupId Trustor Group Id
+	 */
+	deleteOrgauthorizationTrustorGroup(trustorOrgId, trustorGroupId) { 
+		// verify the required parameter 'trustorOrgId' is set
+		if (trustorOrgId === undefined || trustorOrgId === null) {
+			throw 'Missing the required parameter "trustorOrgId" when calling deleteOrgauthorizationTrustorGroup';
+		}
+		// verify the required parameter 'trustorGroupId' is set
+		if (trustorGroupId === undefined || trustorGroupId === null) {
+			throw 'Missing the required parameter "trustorGroupId" when calling deleteOrgauthorizationTrustorGroup';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/orgauthorization/trustors/{trustorOrgId}/groups/{trustorGroupId}', 
+			'DELETE', 
+			{ 'trustorOrgId': trustorOrgId,'trustorGroupId': trustorGroupId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Delete Trustee User
 	 * 
 	 * @param {String} trustorOrgId Trustor Organization Id
@@ -286,6 +376,96 @@ class OrganizationAuthorizationApi {
 			'GET', 
 			{ 'trusteeOrgId': trusteeOrgId },
 			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get Trustee Group
+	 * 
+	 * @param {String} trusteeOrgId Trustee Organization Id
+	 * @param {String} trusteeGroupId Trustee Group Id
+	 */
+	getOrgauthorizationTrusteeGroup(trusteeOrgId, trusteeGroupId) { 
+		// verify the required parameter 'trusteeOrgId' is set
+		if (trusteeOrgId === undefined || trusteeOrgId === null) {
+			throw 'Missing the required parameter "trusteeOrgId" when calling getOrgauthorizationTrusteeGroup';
+		}
+		// verify the required parameter 'trusteeGroupId' is set
+		if (trusteeGroupId === undefined || trusteeGroupId === null) {
+			throw 'Missing the required parameter "trusteeGroupId" when calling getOrgauthorizationTrusteeGroup';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/orgauthorization/trustees/{trusteeOrgId}/groups/{trusteeGroupId}', 
+			'GET', 
+			{ 'trusteeOrgId': trusteeOrgId,'trusteeGroupId': trusteeGroupId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get Trustee Group Roles
+	 * 
+	 * @param {String} trusteeOrgId Trustee Organization Id
+	 * @param {String} trusteeGroupId Trustee Group Id
+	 */
+	getOrgauthorizationTrusteeGroupRoles(trusteeOrgId, trusteeGroupId) { 
+		// verify the required parameter 'trusteeOrgId' is set
+		if (trusteeOrgId === undefined || trusteeOrgId === null) {
+			throw 'Missing the required parameter "trusteeOrgId" when calling getOrgauthorizationTrusteeGroupRoles';
+		}
+		// verify the required parameter 'trusteeGroupId' is set
+		if (trusteeGroupId === undefined || trusteeGroupId === null) {
+			throw 'Missing the required parameter "trusteeGroupId" when calling getOrgauthorizationTrusteeGroupRoles';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/orgauthorization/trustees/{trusteeOrgId}/groups/{trusteeGroupId}/roles', 
+			'GET', 
+			{ 'trusteeOrgId': trusteeOrgId,'trusteeGroupId': trusteeGroupId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * The list of trustee groups for this organization (i.e. groups granted access to this organization).
+	 * 
+	 * @param {String} trusteeOrgId Trustee Organization Id
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 */
+	getOrgauthorizationTrusteeGroups(trusteeOrgId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'trusteeOrgId' is set
+		if (trusteeOrgId === undefined || trusteeOrgId === null) {
+			throw 'Missing the required parameter "trusteeOrgId" when calling getOrgauthorizationTrusteeGroups';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/orgauthorization/trustees/{trusteeOrgId}/groups', 
+			'GET', 
+			{ 'trusteeOrgId': trusteeOrgId },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] },
 			{  },
 			{  },
 			null, 
@@ -511,6 +691,66 @@ class OrganizationAuthorizationApi {
 	}
 
 	/**
+	 * Get Trustee Group
+	 * 
+	 * @param {String} trustorOrgId Trustor Organization Id
+	 * @param {String} trustorGroupId Trustor Group Id
+	 */
+	getOrgauthorizationTrustorGroup(trustorOrgId, trustorGroupId) { 
+		// verify the required parameter 'trustorOrgId' is set
+		if (trustorOrgId === undefined || trustorOrgId === null) {
+			throw 'Missing the required parameter "trustorOrgId" when calling getOrgauthorizationTrustorGroup';
+		}
+		// verify the required parameter 'trustorGroupId' is set
+		if (trustorGroupId === undefined || trustorGroupId === null) {
+			throw 'Missing the required parameter "trustorGroupId" when calling getOrgauthorizationTrustorGroup';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/orgauthorization/trustors/{trustorOrgId}/groups/{trustorGroupId}', 
+			'GET', 
+			{ 'trustorOrgId': trustorOrgId,'trustorGroupId': trustorGroupId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * The list of groups in the trustor organization (i.e. groups granted access).
+	 * 
+	 * @param {String} trustorOrgId Trustee Organization Id
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 */
+	getOrgauthorizationTrustorGroups(trustorOrgId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'trustorOrgId' is set
+		if (trustorOrgId === undefined || trustorOrgId === null) {
+			throw 'Missing the required parameter "trustorOrgId" when calling getOrgauthorizationTrustorGroups';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/orgauthorization/trustors/{trustorOrgId}/groups', 
+			'GET', 
+			{ 'trustorOrgId': trustorOrgId },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get Trustee User
 	 * 
 	 * @param {String} trustorOrgId Trustor Organization Id
@@ -610,6 +850,36 @@ class OrganizationAuthorizationApi {
 			'/api/v2/orgauthorization/pairings', 
 			'POST', 
 			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Add a group to the trust.
+	 * 
+	 * @param {String} trusteeOrgId Trustee Organization Id
+	 * @param {Object} body Trust
+	 */
+	postOrgauthorizationTrusteeGroups(trusteeOrgId, body) { 
+		// verify the required parameter 'trusteeOrgId' is set
+		if (trusteeOrgId === undefined || trusteeOrgId === null) {
+			throw 'Missing the required parameter "trusteeOrgId" when calling postOrgauthorizationTrusteeGroups';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postOrgauthorizationTrusteeGroups';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/orgauthorization/trustees/{trusteeOrgId}/groups', 
+			'POST', 
+			{ 'trusteeOrgId': trusteeOrgId },
 			{  },
 			{  },
 			{  },
@@ -795,6 +1065,76 @@ class OrganizationAuthorizationApi {
 	}
 
 	/**
+	 * Update Trustee Group Roles
+	 * 
+	 * @param {String} trusteeOrgId Trustee Organization Id
+	 * @param {String} trusteeGroupId Trustee Group Id
+	 * @param {Object} body Set of roles with corresponding divisions to apply
+	 */
+	putOrgauthorizationTrusteeGroupRoledivisions(trusteeOrgId, trusteeGroupId, body) { 
+		// verify the required parameter 'trusteeOrgId' is set
+		if (trusteeOrgId === undefined || trusteeOrgId === null) {
+			throw 'Missing the required parameter "trusteeOrgId" when calling putOrgauthorizationTrusteeGroupRoledivisions';
+		}
+		// verify the required parameter 'trusteeGroupId' is set
+		if (trusteeGroupId === undefined || trusteeGroupId === null) {
+			throw 'Missing the required parameter "trusteeGroupId" when calling putOrgauthorizationTrusteeGroupRoledivisions';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putOrgauthorizationTrusteeGroupRoledivisions';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/orgauthorization/trustees/{trusteeOrgId}/groups/{trusteeGroupId}/roledivisions', 
+			'PUT', 
+			{ 'trusteeOrgId': trusteeOrgId,'trusteeGroupId': trusteeGroupId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update Trustee Group Roles
+	 * 
+	 * @param {String} trusteeOrgId Trustee Organization Id
+	 * @param {String} trusteeGroupId Trustee Group Id
+	 * @param {Array.<String>} body List of roles
+	 */
+	putOrgauthorizationTrusteeGroupRoles(trusteeOrgId, trusteeGroupId, body) { 
+		// verify the required parameter 'trusteeOrgId' is set
+		if (trusteeOrgId === undefined || trusteeOrgId === null) {
+			throw 'Missing the required parameter "trusteeOrgId" when calling putOrgauthorizationTrusteeGroupRoles';
+		}
+		// verify the required parameter 'trusteeGroupId' is set
+		if (trusteeGroupId === undefined || trusteeGroupId === null) {
+			throw 'Missing the required parameter "trusteeGroupId" when calling putOrgauthorizationTrusteeGroupRoles';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putOrgauthorizationTrusteeGroupRoles';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/orgauthorization/trustees/{trusteeOrgId}/groups/{trusteeGroupId}/roles', 
+			'PUT', 
+			{ 'trusteeOrgId': trusteeOrgId,'trusteeGroupId': trusteeGroupId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Update Trustee User Roles
 	 * 
 	 * @param {String} trusteeOrgId Trustee Organization Id
@@ -884,6 +1224,36 @@ class OrganizationAuthorizationApi {
 			'/api/v2/orgauthorization/trustors/{trustorOrgId}/clonedusers/{trusteeUserId}', 
 			'PUT', 
 			{ 'trustorOrgId': trustorOrgId,'trusteeUserId': trusteeUserId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Add a Trustee Group to the trust.
+	 * 
+	 * @param {String} trustorOrgId Trustor Organization Id
+	 * @param {String} trustorGroupId Trustor Group Id
+	 */
+	putOrgauthorizationTrustorGroup(trustorOrgId, trustorGroupId) { 
+		// verify the required parameter 'trustorOrgId' is set
+		if (trustorOrgId === undefined || trustorOrgId === null) {
+			throw 'Missing the required parameter "trustorOrgId" when calling putOrgauthorizationTrustorGroup';
+		}
+		// verify the required parameter 'trustorGroupId' is set
+		if (trustorGroupId === undefined || trustorGroupId === null) {
+			throw 'Missing the required parameter "trustorGroupId" when calling putOrgauthorizationTrustorGroup';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/orgauthorization/trustors/{trustorOrgId}/groups/{trustorGroupId}', 
+			'PUT', 
+			{ 'trustorOrgId': trustorOrgId,'trustorGroupId': trustorGroupId },
 			{  },
 			{  },
 			{  },

@@ -233,10 +233,13 @@ docs/deleteNotificationsChannelSubscriptions-example.txt
 docs/deleteOauthClient-example.txt
 docs/deleteOrgauthorizationTrustee-example.txt
 docs/deleteOrgauthorizationTrusteeCloneduser-example.txt
+docs/deleteOrgauthorizationTrusteeGroup-example.txt
+docs/deleteOrgauthorizationTrusteeGroupRoles-example.txt
 docs/deleteOrgauthorizationTrusteeUser-example.txt
 docs/deleteOrgauthorizationTrusteeUserRoles-example.txt
 docs/deleteOrgauthorizationTrustor-example.txt
 docs/deleteOrgauthorizationTrustorCloneduser-example.txt
+docs/deleteOrgauthorizationTrustorGroup-example.txt
 docs/deleteOrgauthorizationTrustorUser-example.txt
 docs/deleteOrphanrecording-example.txt
 docs/deleteOutboundAttemptlimit-example.txt
@@ -336,6 +339,7 @@ docs/deleteWebchatGuestConversationMember-example.txt
 docs/deleteWebchatSettings-example.txt
 docs/deleteWebdeploymentsConfiguration-example.txt
 docs/deleteWebdeploymentsDeployment-example.txt
+docs/deleteWebdeploymentsDeploymentCobrowseSessionId-example.txt
 docs/deleteWebdeploymentsTokenRevoke-example.txt
 docs/deleteWidgetsDeployment-example.txt
 docs/deleteWorkforcemanagementBusinessunit-example.txt
@@ -833,6 +837,9 @@ docs/getOrganizationsWhitelist-example.txt
 docs/getOrgauthorizationPairing-example.txt
 docs/getOrgauthorizationTrustee-example.txt
 docs/getOrgauthorizationTrusteeClonedusers-example.txt
+docs/getOrgauthorizationTrusteeGroup-example.txt
+docs/getOrgauthorizationTrusteeGroupRoles-example.txt
+docs/getOrgauthorizationTrusteeGroups-example.txt
 docs/getOrgauthorizationTrusteeUser-example.txt
 docs/getOrgauthorizationTrusteeUserRoles-example.txt
 docs/getOrgauthorizationTrusteeUsers-example.txt
@@ -841,6 +848,8 @@ docs/getOrgauthorizationTrusteesDefault-example.txt
 docs/getOrgauthorizationTrustor-example.txt
 docs/getOrgauthorizationTrustorCloneduser-example.txt
 docs/getOrgauthorizationTrustorClonedusers-example.txt
+docs/getOrgauthorizationTrustorGroup-example.txt
+docs/getOrgauthorizationTrustorGroups-example.txt
 docs/getOrgauthorizationTrustorUser-example.txt
 docs/getOrgauthorizationTrustorUsers-example.txt
 docs/getOrgauthorizationTrustors-example.txt
@@ -1223,6 +1232,7 @@ docs/getWebdeploymentsConfigurationVersions-example.txt
 docs/getWebdeploymentsConfigurationVersionsDraft-example.txt
 docs/getWebdeploymentsConfigurations-example.txt
 docs/getWebdeploymentsDeployment-example.txt
+docs/getWebdeploymentsDeploymentCobrowseSessionId-example.txt
 docs/getWebdeploymentsDeploymentConfigurations-example.txt
 docs/getWebdeploymentsDeployments-example.txt
 docs/getWebmessagingMessages-example.txt
@@ -1514,6 +1524,7 @@ docs/postContentmanagementWorkspaceTagvalues-example.txt
 docs/postContentmanagementWorkspaceTagvaluesQuery-example.txt
 docs/postContentmanagementWorkspaces-example.txt
 docs/postConversationAssign-example.txt
+docs/postConversationCobrowse-example.txt
 docs/postConversationDisconnect-example.txt
 docs/postConversationParticipantCallbacks-example.txt
 docs/postConversationParticipantDigits-example.txt
@@ -1697,6 +1708,7 @@ docs/postOauthClientSecret-example.txt
 docs/postOauthClientUsageQuery-example.txt
 docs/postOauthClients-example.txt
 docs/postOrgauthorizationPairings-example.txt
+docs/postOrgauthorizationTrusteeGroups-example.txt
 docs/postOrgauthorizationTrusteeUsers-example.txt
 docs/postOrgauthorizationTrustees-example.txt
 docs/postOrgauthorizationTrusteesAudits-example.txt
@@ -2010,9 +2022,12 @@ docs/putOrganizationsIpaddressauthentication-example.txt
 docs/putOrganizationsMe-example.txt
 docs/putOrganizationsWhitelist-example.txt
 docs/putOrgauthorizationTrustee-example.txt
+docs/putOrgauthorizationTrusteeGroupRoledivisions-example.txt
+docs/putOrgauthorizationTrusteeGroupRoles-example.txt
 docs/putOrgauthorizationTrusteeUserRoledivisions-example.txt
 docs/putOrgauthorizationTrusteeUserRoles-example.txt
 docs/putOrgauthorizationTrustorCloneduser-example.txt
+docs/putOrgauthorizationTrustorGroup-example.txt
 docs/putOrgauthorizationTrustorUser-example.txt
 docs/putOrphanrecording-example.txt
 docs/putOutboundAttemptlimit-example.txt

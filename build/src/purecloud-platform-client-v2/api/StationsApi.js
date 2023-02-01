@@ -5,7 +5,7 @@ class StationsApi {
 	/**
 	 * Stations service.
 	 * @module purecloud-platform-client-v2/api/StationsApi
-	 * @version 157.0.0
+	 * @version 158.0.0
 	 */
 
 	/**
@@ -103,7 +103,7 @@ class StationsApi {
 
 	/**
 	 * Get an organization's StationSettings
-	 * 
+	 * This route is deprecated as the FreeSeatingConfiguration feature it references has been removed
 	 */
 	getStationsSettings() { 
 
@@ -123,7 +123,7 @@ class StationsApi {
 
 	/**
 	 * Patch an organization's StationSettings
-	 * 
+	 * This route is deprecated as the FreeSeatingConfiguration feature it references has been removed
 	 * @param {Object} body Station settings
 	 */
 	patchStationsSettings(body) { 

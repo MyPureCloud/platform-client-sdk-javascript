@@ -1109,6 +1109,7 @@ declare class ConversationsApi {
   	postAnalyticsConversationsDetailsJobs(body: Models.AsyncConversationQuery): Promise<Models.AsyncQueryResponse>; 
   	postAnalyticsConversationsDetailsQuery(body: Models.ConversationQuery): Promise<Models.AnalyticsConversationQueryResponse>; 
   	postConversationAssign(conversationId: string, body: Models.ConversationUser): Promise<string>; 
+  	postConversationCobrowse(conversationId: string): Promise<Models.CobrowseWebMessagingSession>; 
   	postConversationDisconnect(conversationId: string): Promise<string>; 
   	postConversationParticipantCallbacks(conversationId: string, participantId: string, opts?: ConversationsApi.postConversationParticipantCallbacksOptions): Promise<void>; 
   	postConversationParticipantDigits(conversationId: string, participantId: string, opts?: ConversationsApi.postConversationParticipantDigitsOptions): Promise<void>; 
@@ -1131,7 +1132,7 @@ declare class ConversationsApi {
   	postConversationsChats(body: Models.CreateWebChatRequest): Promise<Models.ChatConversation>; 
   	postConversationsCobrowsesessionParticipantReplace(conversationId: string, participantId: string, opts?: ConversationsApi.postConversationsCobrowsesessionParticipantReplaceOptions): Promise<void>; 
   	postConversationsEmailInboundmessages(conversationId: string, body: Models.InboundMessageRequest): Promise<Models.EmailConversation>; 
-  	postConversationsEmailMessages(conversationId: string, body: Models.EmailMessage): Promise<Models.EmailMessage>; 
+  	postConversationsEmailMessages(conversationId: string, body: Models.EmailMessage): Promise<Models.EmailMessageReply>; 
   	postConversationsEmailMessagesDraftAttachmentsCopy(conversationId: string, body: Models.CopyAttachmentsRequest): Promise<Models.EmailMessage>; 
   	postConversationsEmailParticipantReplace(conversationId: string, participantId: string, body: Models.TransferRequest): Promise<void>; 
   	postConversationsEmails(body: Models.CreateEmailRequest): Promise<Models.EmailConversation>; 
@@ -2418,6 +2419,7 @@ declare namespace LanguageUnderstandingApi {
 		"pageNumber"?: number;
 		"pageSize"?: number;
 		"enableCursorPagination"?: boolean;
+		"includeTrainingUtterances"?: boolean;
 		"after"?: string;
 		"fields"?: Array<string>;
 	}
@@ -2803,14 +2805,20 @@ declare namespace OrganizationApi {
 declare class OrganizationAuthorizationApi {  
   	deleteOrgauthorizationTrustee(trusteeOrgId: string): Promise<void>; 
   	deleteOrgauthorizationTrusteeCloneduser(trusteeOrgId: string, trusteeUserId: string): Promise<void>; 
+  	deleteOrgauthorizationTrusteeGroup(trusteeOrgId: string, trusteeGroupId: string): Promise<void>; 
+  	deleteOrgauthorizationTrusteeGroupRoles(trusteeOrgId: string, trusteeGroupId: string): Promise<void>; 
   	deleteOrgauthorizationTrusteeUser(trusteeOrgId: string, trusteeUserId: string): Promise<void>; 
   	deleteOrgauthorizationTrusteeUserRoles(trusteeOrgId: string, trusteeUserId: string): Promise<void>; 
   	deleteOrgauthorizationTrustor(trustorOrgId: string): Promise<void>; 
   	deleteOrgauthorizationTrustorCloneduser(trustorOrgId: string, trusteeUserId: string): Promise<void>; 
+  	deleteOrgauthorizationTrustorGroup(trustorOrgId: string, trustorGroupId: string): Promise<void>; 
   	deleteOrgauthorizationTrustorUser(trustorOrgId: string, trusteeUserId: string): Promise<void>; 
   	getOrgauthorizationPairing(pairingId: string): Promise<Models.TrustRequest>; 
   	getOrgauthorizationTrustee(trusteeOrgId: string): Promise<Models.Trustee>; 
   	getOrgauthorizationTrusteeClonedusers(trusteeOrgId: string): Promise<Models.ClonedUserEntityListing>; 
+  	getOrgauthorizationTrusteeGroup(trusteeOrgId: string, trusteeGroupId: string): Promise<Models.TrustGroup>; 
+  	getOrgauthorizationTrusteeGroupRoles(trusteeOrgId: string, trusteeGroupId: string): Promise<Models.UserAuthorization>; 
+  	getOrgauthorizationTrusteeGroups(trusteeOrgId: string, opts?: OrganizationAuthorizationApi.getOrgauthorizationTrusteeGroupsOptions): Promise<Models.TrustGroupEntityListing>; 
   	getOrgauthorizationTrusteeUser(trusteeOrgId: string, trusteeUserId: string): Promise<Models.TrustUser>; 
   	getOrgauthorizationTrusteeUserRoles(trusteeOrgId: string, trusteeUserId: string): Promise<Models.UserAuthorization>; 
   	getOrgauthorizationTrusteeUsers(trusteeOrgId: string, opts?: OrganizationAuthorizationApi.getOrgauthorizationTrusteeUsersOptions): Promise<Models.TrustUserEntityListing>; 
@@ -2819,28 +2827,42 @@ declare class OrganizationAuthorizationApi {
   	getOrgauthorizationTrustor(trustorOrgId: string): Promise<Models.Trustor>; 
   	getOrgauthorizationTrustorCloneduser(trustorOrgId: string, trusteeUserId: string): Promise<Models.ClonedUser>; 
   	getOrgauthorizationTrustorClonedusers(trustorOrgId: string): Promise<Models.ClonedUserEntityListing>; 
+  	getOrgauthorizationTrustorGroup(trustorOrgId: string, trustorGroupId: string): Promise<Models.TrustGroup>; 
+  	getOrgauthorizationTrustorGroups(trustorOrgId: string, opts?: OrganizationAuthorizationApi.getOrgauthorizationTrustorGroupsOptions): Promise<Models.TrustGroupEntityListing>; 
   	getOrgauthorizationTrustorUser(trustorOrgId: string, trusteeUserId: string): Promise<Models.TrustUser>; 
   	getOrgauthorizationTrustorUsers(trustorOrgId: string, opts?: OrganizationAuthorizationApi.getOrgauthorizationTrustorUsersOptions): Promise<Models.TrustUserEntityListing>; 
   	getOrgauthorizationTrustors(opts?: OrganizationAuthorizationApi.getOrgauthorizationTrustorsOptions): Promise<Models.TrustorEntityListing>; 
   	postOrgauthorizationPairings(body: Models.TrustRequestCreate): Promise<Models.TrustRequest>; 
+  	postOrgauthorizationTrusteeGroups(trusteeOrgId: string, body: Models.TrustMemberCreate): Promise<Models.TrustGroup>; 
   	postOrgauthorizationTrusteeUsers(trusteeOrgId: string, body: Models.TrustMemberCreate): Promise<Models.TrustUser>; 
   	postOrgauthorizationTrustees(body: Models.TrustCreate): Promise<Models.Trustee>; 
   	postOrgauthorizationTrusteesAudits(body: Models.TrusteeAuditQueryRequest, opts?: OrganizationAuthorizationApi.postOrgauthorizationTrusteesAuditsOptions): Promise<object>; 
   	postOrgauthorizationTrusteesDefault(opts?: OrganizationAuthorizationApi.postOrgauthorizationTrusteesDefaultOptions): Promise<Models.Trustee>; 
   	postOrgauthorizationTrustorAudits(body: Models.TrustorAuditQueryRequest, opts?: OrganizationAuthorizationApi.postOrgauthorizationTrustorAuditsOptions): Promise<object>; 
   	putOrgauthorizationTrustee(trusteeOrgId: string, body: Models.TrustUpdate): Promise<Models.Trustee>; 
+  	putOrgauthorizationTrusteeGroupRoledivisions(trusteeOrgId: string, trusteeGroupId: string, body: Models.RoleDivisionGrants): Promise<Models.UserAuthorization>; 
+  	putOrgauthorizationTrusteeGroupRoles(trusteeOrgId: string, trusteeGroupId: string, body: Array<string>): Promise<Models.UserAuthorization>; 
   	putOrgauthorizationTrusteeUserRoledivisions(trusteeOrgId: string, trusteeUserId: string, body: Models.RoleDivisionGrants): Promise<Models.UserAuthorization>; 
   	putOrgauthorizationTrusteeUserRoles(trusteeOrgId: string, trusteeUserId: string, body: Array<string>): Promise<Models.UserAuthorization>; 
   	putOrgauthorizationTrustorCloneduser(trustorOrgId: string, trusteeUserId: string): Promise<Models.ClonedUser>; 
+  	putOrgauthorizationTrustorGroup(trustorOrgId: string, trustorGroupId: string): Promise<Models.TrustGroup>; 
   	putOrgauthorizationTrustorUser(trustorOrgId: string, trusteeUserId: string): Promise<Models.TrustUser>;
 }
 
 declare namespace OrganizationAuthorizationApi { 
+	export interface getOrgauthorizationTrusteeGroupsOptions { 
+		"pageSize"?: number;
+		"pageNumber"?: number;
+	}
 	export interface getOrgauthorizationTrusteeUsersOptions { 
 		"pageSize"?: number;
 		"pageNumber"?: number;
 	}
 	export interface getOrgauthorizationTrusteesOptions { 
+		"pageSize"?: number;
+		"pageNumber"?: number;
+	}
+	export interface getOrgauthorizationTrustorGroupsOptions { 
 		"pageSize"?: number;
 		"pageNumber"?: number;
 	}
@@ -5240,12 +5262,14 @@ declare namespace WebChatApi {
 declare class WebDeploymentsApi {  
   	deleteWebdeploymentsConfiguration(configurationId: string): Promise<void>; 
   	deleteWebdeploymentsDeployment(deploymentId: string): Promise<void>; 
+  	deleteWebdeploymentsDeploymentCobrowseSessionId(deploymentId: string, sessionId: string): Promise<object>; 
   	deleteWebdeploymentsTokenRevoke(opts?: WebDeploymentsApi.deleteWebdeploymentsTokenRevokeOptions): Promise<void>; 
   	getWebdeploymentsConfigurationVersion(configurationId: string, versionId: string): Promise<Models.WebDeploymentConfigurationVersion>; 
   	getWebdeploymentsConfigurationVersions(configurationId: string): Promise<Models.WebDeploymentConfigurationVersionEntityListing>; 
   	getWebdeploymentsConfigurationVersionsDraft(configurationId: string): Promise<Models.WebDeploymentConfigurationVersion>; 
   	getWebdeploymentsConfigurations(opts?: WebDeploymentsApi.getWebdeploymentsConfigurationsOptions): Promise<Models.WebDeploymentConfigurationVersionEntityListing>; 
   	getWebdeploymentsDeployment(deploymentId: string): Promise<Models.WebDeployment>; 
+  	getWebdeploymentsDeploymentCobrowseSessionId(deploymentId: string, sessionId: string): Promise<Models.CobrowseWebMessagingSession>; 
   	getWebdeploymentsDeploymentConfigurations(deploymentId: string, opts?: WebDeploymentsApi.getWebdeploymentsDeploymentConfigurationsOptions): Promise<Models.WebDeploymentActiveConfigurationOnDeployment>; 
   	getWebdeploymentsDeployments(opts?: WebDeploymentsApi.getWebdeploymentsDeploymentsOptions): Promise<Models.ExpandableWebDeploymentEntityListing>; 
   	postWebdeploymentsConfigurationVersionsDraftPublish(configurationId: string): Promise<Models.WebDeploymentConfigurationVersion>; 
@@ -6593,6 +6617,7 @@ declare namespace Models {
 		"contextId"?: string;
 		"deleted"?: boolean;
 		"evaluationId"?: string;
+		"evaluationStatus"?: string;
 		"evaluatorId"?: string;
 		"eventTime"?: string;
 		"formId"?: string;
@@ -9114,6 +9139,7 @@ declare namespace Models {
 		"held"?: boolean;
 		"wrapupRequired"?: boolean;
 		"wrapupPrompt"?: string;
+		"mediaRoles"?: Array<string>;
 		"user"?: Models.DomainEntityRef;
 		"queue"?: Models.DomainEntityRef;
 		"team"?: Models.DomainEntityRef;
@@ -9334,6 +9360,7 @@ declare namespace Models {
 		"held"?: boolean;
 		"wrapupRequired"?: boolean;
 		"wrapupPrompt"?: string;
+		"mediaRoles"?: Array<string>;
 		"user"?: Models.DomainEntityRef;
 		"queue"?: Models.DomainEntityRef;
 		"team"?: Models.DomainEntityRef;
@@ -9780,6 +9807,7 @@ declare namespace Models {
 		"held"?: boolean;
 		"wrapupRequired"?: boolean;
 		"wrapupPrompt"?: string;
+		"mediaRoles"?: Array<string>;
 		"user"?: Models.DomainEntityRef;
 		"queue"?: Models.DomainEntityRef;
 		"team"?: Models.DomainEntityRef;
@@ -10084,6 +10112,7 @@ declare namespace Models {
 		"held"?: boolean;
 		"wrapupRequired"?: boolean;
 		"wrapupPrompt"?: string;
+		"mediaRoles"?: Array<string>;
 		"user"?: Models.DomainEntityRef;
 		"queue"?: Models.DomainEntityRef;
 		"team"?: Models.DomainEntityRef;
@@ -10114,6 +10143,16 @@ declare namespace Models {
 		"enabled"?: boolean;
 		"allowAgentControl"?: boolean;
 		"maskSelectors"?: Array<string>;
+	}
+	
+	export interface CobrowseWebMessagingSession { 
+		"id"?: string;
+		"name"?: string;
+		"joinCode"?: string;
+		"websocketUrl"?: string;
+		"dateOfferEnds"?: string;
+		"communicationType"?: string;
+		"selfUri"?: string;
 	}
 	
 	export interface Cobrowsesession { 
@@ -10255,6 +10294,16 @@ declare namespace Models {
 		"total"?: number;
 		"entities"?: Array<Models.ComparisonPeriod>;
 		"selfUri"?: string;
+	}
+	
+	export interface Compliance { 
+		"stopSettings": Array<Models.StopSettings>;
+		"optInSettings": Array<Models.OptInSettings>;
+		"helpSettings": Array<Models.HelpSettings>;
+	}
+	
+	export interface ComplianceResponse { 
+		"message": string;
 	}
 	
 	export interface Condition { 
@@ -11022,6 +11071,7 @@ declare namespace Models {
 		"journeyContext"?: Models.ConversationCallEventTopicJourneyContext;
 		"startAcwTime"?: string;
 		"endAcwTime"?: string;
+		"mediaRoles"?: Array<string>;
 		"muted"?: boolean;
 		"confined"?: boolean;
 		"recording"?: boolean;
@@ -11168,6 +11218,7 @@ declare namespace Models {
 		"journeyContext"?: Models.ConversationCallbackEventTopicJourneyContext;
 		"startAcwTime"?: string;
 		"endAcwTime"?: string;
+		"mediaRoles"?: Array<string>;
 		"outboundPreview"?: Models.ConversationCallbackEventTopicDialerPreview;
 		"voicemail"?: Models.ConversationCallbackEventTopicVoicemail;
 		"callbackNumbers"?: Array<string>;
@@ -11351,6 +11402,7 @@ declare namespace Models {
 		"journeyContext"?: Models.ConversationChatEventTopicJourneyContext;
 		"startAcwTime"?: string;
 		"endAcwTime"?: string;
+		"mediaRoles"?: Array<string>;
 		"roomId"?: string;
 		"avatarImageUrl"?: string;
 	}
@@ -11474,6 +11526,7 @@ declare namespace Models {
 		"journeyContext"?: Models.ConversationCobrowseEventTopicJourneyContext;
 		"startAcwTime"?: string;
 		"endAcwTime"?: string;
+		"mediaRoles"?: Array<string>;
 		"cobrowseSessionId"?: string;
 		"cobrowseRole"?: string;
 		"viewerUrl"?: string;
@@ -11738,6 +11791,7 @@ declare namespace Models {
 		"journeyContext"?: Models.ConversationEmailEventTopicJourneyContext;
 		"startAcwTime"?: string;
 		"endAcwTime"?: string;
+		"mediaRoles"?: Array<string>;
 		"subject"?: string;
 		"messagesSent"?: number;
 		"autoGenerated"?: boolean;
@@ -12178,6 +12232,7 @@ declare namespace Models {
 		"monitoredParticipantId"?: string;
 		"coachedParticipantId"?: string;
 		"bargedParticipantId"?: string;
+		"mediaRoles"?: Array<string>;
 		"screenRecordingState"?: string;
 		"flaggedReason"?: string;
 		"attributes"?: { [key: string]: string; };
@@ -12448,6 +12503,7 @@ declare namespace Models {
 		"journeyContext"?: Models.ConversationMessageEventTopicJourneyContext;
 		"startAcwTime"?: string;
 		"endAcwTime"?: string;
+		"mediaRoles"?: Array<string>;
 		"messages"?: Array<Models.ConversationMessageEventTopicMessageDetails>;
 		"type"?: string;
 		"recipientCountry"?: string;
@@ -12838,6 +12894,7 @@ declare namespace Models {
 		"journeyContext"?: Models.ConversationScreenShareEventTopicJourneyContext;
 		"startAcwTime"?: string;
 		"endAcwTime"?: string;
+		"mediaRoles"?: Array<string>;
 		"context"?: string;
 		"peerCount"?: number;
 		"sharing"?: boolean;
@@ -12967,6 +13024,7 @@ declare namespace Models {
 		"journeyContext"?: Models.ConversationSocialExpressionEventTopicJourneyContext;
 		"startAcwTime"?: string;
 		"endAcwTime"?: string;
+		"mediaRoles"?: Array<string>;
 		"socialMediaId"?: string;
 		"socialMediaHub"?: string;
 		"socialUserName"?: string;
@@ -13122,6 +13180,7 @@ declare namespace Models {
 		"journeyContext"?: Models.ConversationVideoEventTopicJourneyContext;
 		"startAcwTime"?: string;
 		"endAcwTime"?: string;
+		"mediaRoles"?: Array<string>;
 		"audioMuted"?: boolean;
 		"videoMuted"?: boolean;
 		"sharingScreen"?: boolean;
@@ -13363,6 +13422,8 @@ declare namespace Models {
 		"objective"?: Models.CreateObjective;
 		"performanceProfileId"?: string;
 		"name": string;
+		"precision"?: number;
+		"timeDisplayUnit"?: string;
 	}
 	
 	export interface CreateObjective { 
@@ -16463,6 +16524,7 @@ declare namespace Models {
 		"held"?: boolean;
 		"wrapupRequired"?: boolean;
 		"wrapupPrompt"?: string;
+		"mediaRoles"?: Array<string>;
 		"user"?: Models.DomainEntityRef;
 		"queue"?: Models.DomainEntityRef;
 		"team"?: Models.DomainEntityRef;
@@ -16519,6 +16581,7 @@ declare namespace Models {
 		"htmlBody"?: string;
 		"time"?: string;
 		"historyIncluded"?: boolean;
+		"state"?: string;
 		"emailSizeBytes"?: number;
 		"maxEmailSizeBytes"?: number;
 		"selfUri"?: string;
@@ -16535,6 +16598,22 @@ declare namespace Models {
 		"lastUri"?: string;
 		"selfUri"?: string;
 		"pageCount"?: number;
+	}
+	
+	export interface EmailMessageReply { 
+		"to": Array<Models.EmailAddress>;
+		"cc"?: Array<Models.EmailAddress>;
+		"bcc"?: Array<Models.EmailAddress>;
+		"from": Models.EmailAddress;
+		"replyTo"?: Models.EmailAddress;
+		"subject"?: string;
+		"attachments"?: Array<Models.Attachment>;
+		"textBody": string;
+		"htmlBody"?: string;
+		"time"?: string;
+		"historyIncluded"?: boolean;
+		"emailSizeBytes"?: number;
+		"maxEmailSizeBytes"?: number;
 	}
 	
 	export interface EmailOutboundDomainResult { 
@@ -18918,6 +18997,11 @@ declare namespace Models {
 		"description"?: string;
 	}
 	
+	export interface HelpSettings { 
+		"keyword": Array<string>;
+		"response": Models.ComplianceResponse;
+	}
+	
 	export interface HistoricalAdherenceActuals { 
 		"actualActivityCategory"?: string;
 		"actualSecondaryPresenceLookupId"?: string;
@@ -20348,6 +20432,15 @@ declare namespace Models {
 		"medium"?: string;
 	}
 	
+	export interface JourneyWebEventsNotificationSegment { 
+		"id"?: string;
+		"selfUri"?: string;
+	}
+	
+	export interface JourneyWebEventsNotificationSegmentAssignmentMessage { 
+		"segment"?: Models.JourneyWebEventsNotificationSegment;
+	}
+	
 	export interface JourneyWebEventsNotificationSession { 
 		"id"?: string;
 		"selfUri"?: string;
@@ -20382,6 +20475,7 @@ declare namespace Models {
 		"webEvent"?: Models.JourneyWebEventsNotificationWebMessage;
 		"webActionEvent"?: Models.JourneyWebEventsNotificationWebActionMessage;
 		"outcomeAchievedEvent"?: Models.JourneyWebEventsNotificationOutcomeAchievedMessage;
+		"segmentAssignmentEvent"?: Models.JourneyWebEventsNotificationSegmentAssignmentMessage;
 	}
 	
 	export interface JourneyWebEventsNotificationWebMessage { 
@@ -20450,6 +20544,7 @@ declare namespace Models {
 		"kpiType"?: string;
 		"source"?: string;
 		"wrapUpCodeConfig"?: Models.WrapUpCodeConfig;
+		"outcomeConfig"?: Models.OutcomeConfig;
 		"status"?: string;
 		"kpiGroup"?: string;
 		"selfUri"?: string;
@@ -22462,6 +22557,7 @@ declare namespace Models {
 		"held"?: boolean;
 		"wrapupRequired"?: boolean;
 		"wrapupPrompt"?: string;
+		"mediaRoles"?: Array<string>;
 		"user"?: Models.DomainEntityRef;
 		"queue"?: Models.DomainEntityRef;
 		"team"?: Models.DomainEntityRef;
@@ -22767,6 +22863,8 @@ declare namespace Models {
 		"linkedMetric"?: Models.AddressableEntityRef;
 		"dateCreated"?: string;
 		"dateUnlinked"?: string;
+		"precision"?: number;
+		"timeDisplayUnit"?: string;
 		"sourcePerformanceProfile"?: Models.PerformanceProfile;
 		"selfUri"?: string;
 	}
@@ -23562,6 +23660,11 @@ declare namespace Models {
 		"actionStatus"?: string;
 	}
 	
+	export interface OptInSettings { 
+		"keyword": Array<string>;
+		"response": Models.ComplianceResponse;
+	}
+	
 	export interface OrgOAuthClient { 
 		"id"?: string;
 		"name": string;
@@ -24006,6 +24109,10 @@ declare namespace Models {
 		"achievedDate"?: string;
 	}
 	
+	export interface OutcomeConfig { 
+		"values"?: Array<string>;
+	}
+	
 	export interface OutcomeEventScore { 
 		"outcome"?: Models.AddressableEntityRef;
 		"sessionMaxProbability"?: number;
@@ -24115,6 +24222,7 @@ declare namespace Models {
 		"wrapupTimeoutMs"?: number;
 		"wrapupSkipped"?: boolean;
 		"wrapup"?: Models.Wrapup;
+		"mediaRoles"?: Array<string>;
 		"conversationRoutingData"?: Models.ConversationRoutingData;
 		"alertingTimeoutMs"?: number;
 		"monitoredParticipantId"?: string;
@@ -24168,6 +24276,7 @@ declare namespace Models {
 		"wrapupTimeoutMs"?: number;
 		"wrapupSkipped"?: boolean;
 		"wrapup"?: Models.Wrapup;
+		"mediaRoles"?: Array<string>;
 		"conversationRoutingData"?: Models.ConversationRoutingData;
 		"alertingTimeoutMs"?: number;
 		"monitoredParticipantId"?: string;
@@ -25458,6 +25567,7 @@ declare namespace Models {
 		"journeyContext"?: Models.QueueConversationCallEventTopicJourneyContext;
 		"startAcwTime"?: string;
 		"endAcwTime"?: string;
+		"mediaRoles"?: Array<string>;
 		"muted"?: boolean;
 		"confined"?: boolean;
 		"recording"?: boolean;
@@ -25604,6 +25714,7 @@ declare namespace Models {
 		"journeyContext"?: Models.QueueConversationCallbackEventTopicJourneyContext;
 		"startAcwTime"?: string;
 		"endAcwTime"?: string;
+		"mediaRoles"?: Array<string>;
 		"outboundPreview"?: Models.QueueConversationCallbackEventTopicDialerPreview;
 		"voicemail"?: Models.QueueConversationCallbackEventTopicVoicemail;
 		"callbackNumbers"?: Array<string>;
@@ -25754,6 +25865,7 @@ declare namespace Models {
 		"journeyContext"?: Models.QueueConversationChatEventTopicJourneyContext;
 		"startAcwTime"?: string;
 		"endAcwTime"?: string;
+		"mediaRoles"?: Array<string>;
 		"roomId"?: string;
 		"avatarImageUrl"?: string;
 	}
@@ -25877,6 +25989,7 @@ declare namespace Models {
 		"journeyContext"?: Models.QueueConversationCobrowseEventTopicJourneyContext;
 		"startAcwTime"?: string;
 		"endAcwTime"?: string;
+		"mediaRoles"?: Array<string>;
 		"cobrowseSessionId"?: string;
 		"cobrowseRole"?: string;
 		"viewerUrl"?: string;
@@ -26027,6 +26140,7 @@ declare namespace Models {
 		"journeyContext"?: Models.QueueConversationEmailEventTopicJourneyContext;
 		"startAcwTime"?: string;
 		"endAcwTime"?: string;
+		"mediaRoles"?: Array<string>;
 		"subject"?: string;
 		"messagesSent"?: number;
 		"autoGenerated"?: boolean;
@@ -26430,6 +26544,7 @@ declare namespace Models {
 		"monitoredParticipantId"?: string;
 		"coachedParticipantId"?: string;
 		"bargedParticipantId"?: string;
+		"mediaRoles"?: Array<string>;
 		"screenRecordingState"?: string;
 		"flaggedReason"?: string;
 		"attributes"?: { [key: string]: string; };
@@ -26674,6 +26789,7 @@ declare namespace Models {
 		"journeyContext"?: Models.QueueConversationMessageEventTopicJourneyContext;
 		"startAcwTime"?: string;
 		"endAcwTime"?: string;
+		"mediaRoles"?: Array<string>;
 		"messages"?: Array<Models.QueueConversationMessageEventTopicMessageDetails>;
 		"type"?: string;
 		"recipientCountry"?: string;
@@ -26828,6 +26944,7 @@ declare namespace Models {
 		"journeyContext"?: Models.QueueConversationScreenShareEventTopicJourneyContext;
 		"startAcwTime"?: string;
 		"endAcwTime"?: string;
+		"mediaRoles"?: Array<string>;
 		"context"?: string;
 		"peerCount"?: number;
 		"sharing"?: boolean;
@@ -27181,6 +27298,7 @@ declare namespace Models {
 		"monitoredParticipantId"?: string;
 		"coachedParticipantId"?: string;
 		"bargedParticipantId"?: string;
+		"mediaRoles"?: Array<string>;
 		"screenRecordingState"?: string;
 		"flaggedReason"?: string;
 		"attributes"?: { [key: string]: string; };
@@ -27632,6 +27750,7 @@ declare namespace Models {
 		"monitoredParticipantId"?: string;
 		"coachedParticipantId"?: string;
 		"bargedParticipantId"?: string;
+		"mediaRoles"?: Array<string>;
 		"screenRecordingState"?: string;
 		"flaggedReason"?: string;
 		"attributes"?: { [key: string]: string; };
@@ -30419,6 +30538,8 @@ declare namespace Models {
 		"supportsSms"?: boolean;
 		"supportsMms"?: boolean;
 		"supportsVoice"?: boolean;
+		"integration"?: Models.DomainEntityRef;
+		"compliance"?: Models.Compliance;
 		"selfUri"?: string;
 	}
 	
@@ -30437,10 +30558,10 @@ declare namespace Models {
 	
 	export interface SmsPhoneNumberProvision { 
 		"id"?: string;
-		"name"?: string;
 		"phoneNumber": string;
 		"phoneNumberType": string;
 		"countryCode": string;
+		"name"?: string;
 		"addressId"?: string;
 		"selfUri"?: string;
 	}
@@ -30686,6 +30807,11 @@ declare namespace Models {
 		"namespace"?: string;
 		"message"?: string;
 		"rejectReason"?: string;
+	}
+	
+	export interface StopSettings { 
+		"keyword": Array<string>;
+		"response": Models.ComplianceResponse;
 	}
 	
 	export interface StorySetting { 
@@ -32207,6 +32333,19 @@ declare namespace Models {
 		"owners"?: Array<Models.User>;
 		"dateCreated"?: string;
 		"createdBy"?: Models.OrgUser;
+	}
+	
+	export interface TrustGroupEntityListing { 
+		"entities"?: Array<Models.TrustGroup>;
+		"pageSize"?: number;
+		"pageNumber"?: number;
+		"total"?: number;
+		"firstUri"?: string;
+		"nextUri"?: string;
+		"previousUri"?: string;
+		"lastUri"?: string;
+		"selfUri"?: string;
+		"pageCount"?: number;
 	}
 	
 	export interface TrustMemberCreate { 

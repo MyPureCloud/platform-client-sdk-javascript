@@ -5,7 +5,7 @@ class WebDeploymentsApi {
 	/**
 	 * WebDeployments service.
 	 * @module purecloud-platform-client-v2/api/WebDeploymentsApi
-	 * @version 157.0.0
+	 * @version 158.0.0
 	 */
 
 	/**
@@ -60,6 +60,36 @@ class WebDeploymentsApi {
 			'/api/v2/webdeployments/deployments/{deploymentId}', 
 			'DELETE', 
 			{ 'deploymentId': deploymentId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Deletes a cobrowse session
+	 * 
+	 * @param {String} deploymentId WebMessaging deployment ID
+	 * @param {String} sessionId Cobrowse session id or join code
+	 */
+	deleteWebdeploymentsDeploymentCobrowseSessionId(deploymentId, sessionId) { 
+		// verify the required parameter 'deploymentId' is set
+		if (deploymentId === undefined || deploymentId === null) {
+			throw 'Missing the required parameter "deploymentId" when calling deleteWebdeploymentsDeploymentCobrowseSessionId';
+		}
+		// verify the required parameter 'sessionId' is set
+		if (sessionId === undefined || sessionId === null) {
+			throw 'Missing the required parameter "sessionId" when calling deleteWebdeploymentsDeploymentCobrowseSessionId';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/webdeployments/deployments/{deploymentId}/cobrowse/{sessionId}', 
+			'DELETE', 
+			{ 'deploymentId': deploymentId,'sessionId': sessionId },
 			{  },
 			{  },
 			{  },
@@ -214,6 +244,36 @@ class WebDeploymentsApi {
 			'/api/v2/webdeployments/deployments/{deploymentId}', 
 			'GET', 
 			{ 'deploymentId': deploymentId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Retrieves a cobrowse session
+	 * 
+	 * @param {String} deploymentId WebMessaging deployment ID
+	 * @param {String} sessionId Cobrowse session id or join code
+	 */
+	getWebdeploymentsDeploymentCobrowseSessionId(deploymentId, sessionId) { 
+		// verify the required parameter 'deploymentId' is set
+		if (deploymentId === undefined || deploymentId === null) {
+			throw 'Missing the required parameter "deploymentId" when calling getWebdeploymentsDeploymentCobrowseSessionId';
+		}
+		// verify the required parameter 'sessionId' is set
+		if (sessionId === undefined || sessionId === null) {
+			throw 'Missing the required parameter "sessionId" when calling getWebdeploymentsDeploymentCobrowseSessionId';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/webdeployments/deployments/{deploymentId}/cobrowse/{sessionId}', 
+			'GET', 
+			{ 'deploymentId': deploymentId,'sessionId': sessionId },
 			{  },
 			{  },
 			{  },

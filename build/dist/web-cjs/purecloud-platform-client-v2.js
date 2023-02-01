@@ -5162,6 +5162,8 @@ var INTRINSICS = {
 	'%AsyncIteratorPrototype%': needsEval,
 	'%Atomics%': typeof Atomics === 'undefined' ? undefined : Atomics,
 	'%BigInt%': typeof BigInt === 'undefined' ? undefined : BigInt,
+	'%BigInt64Array%': typeof BigInt64Array === 'undefined' ? undefined : BigInt64Array,
+	'%BigUint64Array%': typeof BigUint64Array === 'undefined' ? undefined : BigUint64Array,
 	'%Boolean%': Boolean,
 	'%DataView%': typeof DataView === 'undefined' ? undefined : DataView,
 	'%Date%': Date,
@@ -5216,6 +5218,14 @@ var INTRINSICS = {
 	'%WeakRef%': typeof WeakRef === 'undefined' ? undefined : WeakRef,
 	'%WeakSet%': typeof WeakSet === 'undefined' ? undefined : WeakSet
 };
+
+try {
+	null.error; // eslint-disable-line no-unused-expressions
+} catch (e) {
+	// https://github.com/tc39/proposal-shadowrealm/pull/384#issuecomment-1364264229
+	var errorProto = getProto(getProto(e));
+	INTRINSICS['%Error.prototype%'] = errorProto;
+}
 
 var doEval = function doEval(name) {
 	var value;
@@ -9311,7 +9321,7 @@ class Configuration {
 
 /**
  * @module purecloud-platform-client-v2/ApiClient
- * @version 157.0.0
+ * @version 158.0.0
  */
 class ApiClient {
 	/**
@@ -10383,7 +10393,7 @@ class AlertingApi {
 	/**
 	 * Alerting service.
 	 * @module purecloud-platform-client-v2/api/AlertingApi
-	 * @version 157.0.0
+	 * @version 158.0.0
 	 */
 
 	/**
@@ -10697,7 +10707,7 @@ class AnalyticsApi {
 	/**
 	 * Analytics service.
 	 * @module purecloud-platform-client-v2/api/AnalyticsApi
-	 * @version 157.0.0
+	 * @version 158.0.0
 	 */
 
 	/**
@@ -11951,7 +11961,7 @@ class ArchitectApi {
 	/**
 	 * Architect service.
 	 * @module purecloud-platform-client-v2/api/ArchitectApi
-	 * @version 157.0.0
+	 * @version 158.0.0
 	 */
 
 	/**
@@ -14999,7 +15009,7 @@ class AuditApi {
 	/**
 	 * Audit service.
 	 * @module purecloud-platform-client-v2/api/AuditApi
-	 * @version 157.0.0
+	 * @version 158.0.0
 	 */
 
 	/**
@@ -15170,7 +15180,7 @@ class AuthorizationApi {
 	/**
 	 * Authorization service.
 	 * @module purecloud-platform-client-v2/api/AuthorizationApi
-	 * @version 157.0.0
+	 * @version 158.0.0
 	 */
 
 	/**
@@ -16398,7 +16408,7 @@ class BillingApi {
 	/**
 	 * Billing service.
 	 * @module purecloud-platform-client-v2/api/BillingApi
-	 * @version 157.0.0
+	 * @version 158.0.0
 	 */
 
 	/**
@@ -16478,7 +16488,7 @@ class ChatApi {
 	/**
 	 * Chat service.
 	 * @module purecloud-platform-client-v2/api/ChatApi
-	 * @version 157.0.0
+	 * @version 158.0.0
 	 */
 
 	/**
@@ -16569,7 +16579,7 @@ class CoachingApi {
 	/**
 	 * Coaching service.
 	 * @module purecloud-platform-client-v2/api/CoachingApi
-	 * @version 157.0.0
+	 * @version 158.0.0
 	 */
 
 	/**
@@ -17146,7 +17156,7 @@ class ContentManagementApi {
 	/**
 	 * ContentManagement service.
 	 * @module purecloud-platform-client-v2/api/ContentManagementApi
-	 * @version 157.0.0
+	 * @version 158.0.0
 	 */
 
 	/**
@@ -18286,7 +18296,7 @@ class ConversationsApi {
 	/**
 	 * Conversations service.
 	 * @module purecloud-platform-client-v2/api/ConversationsApi
-	 * @version 157.0.0
+	 * @version 158.0.0
 	 */
 
 	/**
@@ -21674,6 +21684,31 @@ class ConversationsApi {
 	}
 
 	/**
+	 * Creates a cobrowse session
+	 * 
+	 * @param {String} conversationId Conversation ID
+	 */
+	postConversationCobrowse(conversationId) { 
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null) {
+			throw 'Missing the required parameter "conversationId" when calling postConversationCobrowse';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/{conversationId}/cobrowse', 
+			'POST', 
+			{ 'conversationId': conversationId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Performs a full conversation teardown. Issues disconnect requests for any connected media. Applies a system wrap-up code to any participants that are pending wrap-up. This is not intended to be the normal way of ending interactions but is available in the event of problems with the application to allow a resynchronization of state across all components. It is recommended that users submit a support case if they are relying on this endpoint systematically as there is likely something that needs investigation.
 	 * 
 	 * @param {String} conversationId conversation ID
@@ -23509,7 +23544,7 @@ class DataExtensionsApi {
 	/**
 	 * DataExtensions service.
 	 * @module purecloud-platform-client-v2/api/DataExtensionsApi
-	 * @version 157.0.0
+	 * @version 158.0.0
 	 */
 
 	/**
@@ -23595,7 +23630,7 @@ class DownloadsApi {
 	/**
 	 * Downloads service.
 	 * @module purecloud-platform-client-v2/api/DownloadsApi
-	 * @version 157.0.0
+	 * @version 158.0.0
 	 */
 
 	/**
@@ -23647,7 +23682,7 @@ class EventsApi {
 	/**
 	 * Events service.
 	 * @module purecloud-platform-client-v2/api/EventsApi
-	 * @version 157.0.0
+	 * @version 158.0.0
 	 */
 
 	/**
@@ -23743,7 +23778,7 @@ class ExternalContactsApi {
 	/**
 	 * ExternalContacts service.
 	 * @module purecloud-platform-client-v2/api/ExternalContactsApi
-	 * @version 157.0.0
+	 * @version 158.0.0
 	 */
 
 	/**
@@ -25701,7 +25736,7 @@ class FaxApi {
 	/**
 	 * Fax service.
 	 * @module purecloud-platform-client-v2/api/FaxApi
-	 * @version 157.0.0
+	 * @version 158.0.0
 	 */
 
 	/**
@@ -25872,7 +25907,7 @@ class FlowsApi {
 	/**
 	 * Flows service.
 	 * @module purecloud-platform-client-v2/api/FlowsApi
-	 * @version 157.0.0
+	 * @version 158.0.0
 	 */
 
 	/**
@@ -25943,7 +25978,7 @@ class GamificationApi {
 	/**
 	 * Gamification service.
 	 * @module purecloud-platform-client-v2/api/GamificationApi
-	 * @version 157.0.0
+	 * @version 158.0.0
 	 */
 
 	/**
@@ -27560,7 +27595,7 @@ class GeneralDataProtectionRegulationApi {
 	/**
 	 * GeneralDataProtectionRegulation service.
 	 * @module purecloud-platform-client-v2/api/GeneralDataProtectionRegulationApi
-	 * @version 157.0.0
+	 * @version 158.0.0
 	 */
 
 	/**
@@ -27690,7 +27725,7 @@ class GeolocationApi {
 	/**
 	 * Geolocation service.
 	 * @module purecloud-platform-client-v2/api/GeolocationApi
-	 * @version 157.0.0
+	 * @version 158.0.0
 	 */
 
 	/**
@@ -27821,7 +27856,7 @@ class GreetingsApi {
 	/**
 	 * Greetings service.
 	 * @module purecloud-platform-client-v2/api/GreetingsApi
-	 * @version 157.0.0
+	 * @version 158.0.0
 	 */
 
 	/**
@@ -28276,7 +28311,7 @@ class GroupsApi {
 	/**
 	 * Groups service.
 	 * @module purecloud-platform-client-v2/api/GroupsApi
-	 * @version 157.0.0
+	 * @version 158.0.0
 	 */
 
 	/**
@@ -28682,7 +28717,7 @@ class IdentityProviderApi {
 	/**
 	 * IdentityProvider service.
 	 * @module purecloud-platform-client-v2/api/IdentityProviderApi
-	 * @version 157.0.0
+	 * @version 158.0.0
 	 */
 
 	/**
@@ -29438,7 +29473,7 @@ class IntegrationsApi {
 	/**
 	 * Integrations service.
 	 * @module purecloud-platform-client-v2/api/IntegrationsApi
-	 * @version 157.0.0
+	 * @version 158.0.0
 	 */
 
 	/**
@@ -31038,7 +31073,7 @@ class JourneyApi {
 	/**
 	 * Journey service.
 	 * @module purecloud-platform-client-v2/api/JourneyApi
-	 * @version 157.0.0
+	 * @version 158.0.0
 	 */
 
 	/**
@@ -31824,7 +31859,7 @@ class KnowledgeApi {
 	/**
 	 * Knowledge service.
 	 * @module purecloud-platform-client-v2/api/KnowledgeApi
-	 * @version 157.0.0
+	 * @version 158.0.0
 	 */
 
 	/**
@@ -34257,7 +34292,7 @@ class LanguageUnderstandingApi {
 	/**
 	 * LanguageUnderstanding service.
 	 * @module purecloud-platform-client-v2/api/LanguageUnderstandingApi
-	 * @version 157.0.0
+	 * @version 158.0.0
 	 */
 
 	/**
@@ -34451,6 +34486,7 @@ class LanguageUnderstandingApi {
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Boolean} opts.enableCursorPagination Enable Cursor Pagination (default to false)
+	 * @param {Boolean} opts.includeTrainingUtterances Include Training Utterances. By default they're included. (default to true)
 	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned. This is considered only when enableCursorPagination=true
 	 * @param {Array.<String>} opts.fields Fields and properties to get, comma-separated
 	 */
@@ -34466,7 +34502,7 @@ class LanguageUnderstandingApi {
 			'/api/v2/languageunderstanding/domains/{domainId}/feedback', 
 			'GET', 
 			{ 'domainId': domainId },
-			{ 'intentName': opts['intentName'],'assessment': opts['assessment'],'dateStart': opts['dateStart'],'dateEnd': opts['dateEnd'],'includeDeleted': opts['includeDeleted'],'language': opts['language'],'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'enableCursorPagination': opts['enableCursorPagination'],'after': opts['after'],'fields': this.apiClient.buildCollectionParam(opts['fields'], 'multi') },
+			{ 'intentName': opts['intentName'],'assessment': opts['assessment'],'dateStart': opts['dateStart'],'dateEnd': opts['dateEnd'],'includeDeleted': opts['includeDeleted'],'language': opts['language'],'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'enableCursorPagination': opts['enableCursorPagination'],'includeTrainingUtterances': opts['includeTrainingUtterances'],'after': opts['after'],'fields': this.apiClient.buildCollectionParam(opts['fields'], 'multi') },
 			{  },
 			{  },
 			null, 
@@ -35269,7 +35305,7 @@ class LanguagesApi {
 	/**
 	 * Languages service.
 	 * @module purecloud-platform-client-v2/api/LanguagesApi
-	 * @version 157.0.0
+	 * @version 158.0.0
 	 */
 
 	/**
@@ -35487,7 +35523,7 @@ class LearningApi {
 	/**
 	 * Learning service.
 	 * @module purecloud-platform-client-v2/api/LearningApi
-	 * @version 157.0.0
+	 * @version 158.0.0
 	 */
 
 	/**
@@ -35597,7 +35633,7 @@ class LearningApi {
 	 * @param {Object} opts.sortOrder Specifies result set sort order; if not specified, default sort order is descending (Desc) (default to Desc)
 	 * @param {Object} opts.sortBy Specifies which field to sort the results by, default sort is by recommendedCompletionDate
 	 * @param {Array.<String>} opts.userId Specifies the list of user IDs to be queried, up to 100 user IDs.
-	 * @param {Array.<String>} opts.types Specifies the assignment types, currently not supported and will be ignored. For now, all learning assignments regardless of types will be returned
+	 * @param {Array.<String>} opts.types Specifies the module types to filter by
 	 * @param {Array.<String>} opts.states Specifies the assignment states to filter by
 	 * @param {Array.<String>} opts.expand Specifies the expand option for returning additional information
 	 */
@@ -35634,7 +35670,7 @@ class LearningApi {
 	 * @param {Number} opts.maxPercentageScore The maximum assessment score for an assignment (completed with assessment) to be included in the results (inclusive)
 	 * @param {Object} opts.sortOrder Specifies result set sort order; if not specified, default sort order is descending (Desc) (default to Desc)
 	 * @param {Object} opts.sortBy Specifies which field to sort the results by, default sort is by recommendedCompletionDate
-	 * @param {Array.<String>} opts.types Specifies the assignment types, currently not supported and will be ignored. For now, all learning assignments regardless of types will be returned
+	 * @param {Array.<String>} opts.types Specifies the module types to filter by
 	 * @param {Array.<String>} opts.states Specifies the assignment states to filter by
 	 * @param {Array.<String>} opts.expand Specifies the expand option for returning additional information
 	 */
@@ -36248,7 +36284,7 @@ class LicenseApi {
 	/**
 	 * License service.
 	 * @module purecloud-platform-client-v2/api/LicenseApi
-	 * @version 157.0.0
+	 * @version 158.0.0
 	 */
 
 	/**
@@ -36486,7 +36522,7 @@ class LocationsApi {
 	/**
 	 * Locations service.
 	 * @module purecloud-platform-client-v2/api/LocationsApi
-	 * @version 157.0.0
+	 * @version 158.0.0
 	 */
 
 	/**
@@ -36722,7 +36758,7 @@ class MessagingApi {
 	/**
 	 * Messaging service.
 	 * @module purecloud-platform-client-v2/api/MessagingApi
-	 * @version 157.0.0
+	 * @version 158.0.0
 	 */
 
 	/**
@@ -36873,7 +36909,7 @@ class MobileDevicesApi {
 	/**
 	 * MobileDevices service.
 	 * @module purecloud-platform-client-v2/api/MobileDevicesApi
-	 * @version 157.0.0
+	 * @version 158.0.0
 	 */
 
 	/**
@@ -37024,7 +37060,7 @@ class NotificationsApi {
 	/**
 	 * Notifications service.
 	 * @module purecloud-platform-client-v2/api/NotificationsApi
-	 * @version 157.0.0
+	 * @version 158.0.0
 	 */
 
 	/**
@@ -37249,7 +37285,7 @@ class OAuthApi {
 	/**
 	 * OAuth service.
 	 * @module purecloud-platform-client-v2/api/OAuthApi
-	 * @version 157.0.0
+	 * @version 158.0.0
 	 */
 
 	/**
@@ -37615,7 +37651,7 @@ class ObjectsApi {
 	/**
 	 * Objects service.
 	 * @module purecloud-platform-client-v2/api/ObjectsApi
-	 * @version 157.0.0
+	 * @version 158.0.0
 	 */
 
 	/**
@@ -37886,7 +37922,7 @@ class OrganizationApi {
 	/**
 	 * Organization service.
 	 * @module purecloud-platform-client-v2/api/OrganizationApi
-	 * @version 157.0.0
+	 * @version 158.0.0
 	 */
 
 	/**
@@ -38289,7 +38325,7 @@ class OrganizationAuthorizationApi {
 	/**
 	 * OrganizationAuthorization service.
 	 * @module purecloud-platform-client-v2/api/OrganizationAuthorizationApi
-	 * @version 157.0.0
+	 * @version 158.0.0
 	 */
 
 	/**
@@ -38349,6 +38385,66 @@ class OrganizationAuthorizationApi {
 			'/api/v2/orgauthorization/trustees/{trusteeOrgId}/clonedusers/{trusteeUserId}', 
 			'DELETE', 
 			{ 'trusteeOrgId': trusteeOrgId,'trusteeUserId': trusteeUserId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete Trustee Group
+	 * 
+	 * @param {String} trusteeOrgId Trustee Organization Id
+	 * @param {String} trusteeGroupId Trustee Group Id
+	 */
+	deleteOrgauthorizationTrusteeGroup(trusteeOrgId, trusteeGroupId) { 
+		// verify the required parameter 'trusteeOrgId' is set
+		if (trusteeOrgId === undefined || trusteeOrgId === null) {
+			throw 'Missing the required parameter "trusteeOrgId" when calling deleteOrgauthorizationTrusteeGroup';
+		}
+		// verify the required parameter 'trusteeGroupId' is set
+		if (trusteeGroupId === undefined || trusteeGroupId === null) {
+			throw 'Missing the required parameter "trusteeGroupId" when calling deleteOrgauthorizationTrusteeGroup';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/orgauthorization/trustees/{trusteeOrgId}/groups/{trusteeGroupId}', 
+			'DELETE', 
+			{ 'trusteeOrgId': trusteeOrgId,'trusteeGroupId': trusteeGroupId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete Trustee Group Roles
+	 * 
+	 * @param {String} trusteeOrgId Trustee Organization Id
+	 * @param {String} trusteeGroupId Trustee Group Id
+	 */
+	deleteOrgauthorizationTrusteeGroupRoles(trusteeOrgId, trusteeGroupId) { 
+		// verify the required parameter 'trusteeOrgId' is set
+		if (trusteeOrgId === undefined || trusteeOrgId === null) {
+			throw 'Missing the required parameter "trusteeOrgId" when calling deleteOrgauthorizationTrusteeGroupRoles';
+		}
+		// verify the required parameter 'trusteeGroupId' is set
+		if (trusteeGroupId === undefined || trusteeGroupId === null) {
+			throw 'Missing the required parameter "trusteeGroupId" when calling deleteOrgauthorizationTrusteeGroupRoles';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/orgauthorization/trustees/{trusteeOrgId}/groups/{trusteeGroupId}/roles', 
+			'DELETE', 
+			{ 'trusteeOrgId': trusteeOrgId,'trusteeGroupId': trusteeGroupId },
 			{  },
 			{  },
 			{  },
@@ -38475,6 +38571,36 @@ class OrganizationAuthorizationApi {
 	}
 
 	/**
+	 * Delete Trustee Group
+	 * 
+	 * @param {String} trustorOrgId Trustor Organization Id
+	 * @param {String} trustorGroupId Trustor Group Id
+	 */
+	deleteOrgauthorizationTrustorGroup(trustorOrgId, trustorGroupId) { 
+		// verify the required parameter 'trustorOrgId' is set
+		if (trustorOrgId === undefined || trustorOrgId === null) {
+			throw 'Missing the required parameter "trustorOrgId" when calling deleteOrgauthorizationTrustorGroup';
+		}
+		// verify the required parameter 'trustorGroupId' is set
+		if (trustorGroupId === undefined || trustorGroupId === null) {
+			throw 'Missing the required parameter "trustorGroupId" when calling deleteOrgauthorizationTrustorGroup';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/orgauthorization/trustors/{trustorOrgId}/groups/{trustorGroupId}', 
+			'DELETE', 
+			{ 'trustorOrgId': trustorOrgId,'trustorGroupId': trustorGroupId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Delete Trustee User
 	 * 
 	 * @param {String} trustorOrgId Trustor Organization Id
@@ -38570,6 +38696,96 @@ class OrganizationAuthorizationApi {
 			'GET', 
 			{ 'trusteeOrgId': trusteeOrgId },
 			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get Trustee Group
+	 * 
+	 * @param {String} trusteeOrgId Trustee Organization Id
+	 * @param {String} trusteeGroupId Trustee Group Id
+	 */
+	getOrgauthorizationTrusteeGroup(trusteeOrgId, trusteeGroupId) { 
+		// verify the required parameter 'trusteeOrgId' is set
+		if (trusteeOrgId === undefined || trusteeOrgId === null) {
+			throw 'Missing the required parameter "trusteeOrgId" when calling getOrgauthorizationTrusteeGroup';
+		}
+		// verify the required parameter 'trusteeGroupId' is set
+		if (trusteeGroupId === undefined || trusteeGroupId === null) {
+			throw 'Missing the required parameter "trusteeGroupId" when calling getOrgauthorizationTrusteeGroup';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/orgauthorization/trustees/{trusteeOrgId}/groups/{trusteeGroupId}', 
+			'GET', 
+			{ 'trusteeOrgId': trusteeOrgId,'trusteeGroupId': trusteeGroupId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get Trustee Group Roles
+	 * 
+	 * @param {String} trusteeOrgId Trustee Organization Id
+	 * @param {String} trusteeGroupId Trustee Group Id
+	 */
+	getOrgauthorizationTrusteeGroupRoles(trusteeOrgId, trusteeGroupId) { 
+		// verify the required parameter 'trusteeOrgId' is set
+		if (trusteeOrgId === undefined || trusteeOrgId === null) {
+			throw 'Missing the required parameter "trusteeOrgId" when calling getOrgauthorizationTrusteeGroupRoles';
+		}
+		// verify the required parameter 'trusteeGroupId' is set
+		if (trusteeGroupId === undefined || trusteeGroupId === null) {
+			throw 'Missing the required parameter "trusteeGroupId" when calling getOrgauthorizationTrusteeGroupRoles';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/orgauthorization/trustees/{trusteeOrgId}/groups/{trusteeGroupId}/roles', 
+			'GET', 
+			{ 'trusteeOrgId': trusteeOrgId,'trusteeGroupId': trusteeGroupId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * The list of trustee groups for this organization (i.e. groups granted access to this organization).
+	 * 
+	 * @param {String} trusteeOrgId Trustee Organization Id
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 */
+	getOrgauthorizationTrusteeGroups(trusteeOrgId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'trusteeOrgId' is set
+		if (trusteeOrgId === undefined || trusteeOrgId === null) {
+			throw 'Missing the required parameter "trusteeOrgId" when calling getOrgauthorizationTrusteeGroups';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/orgauthorization/trustees/{trusteeOrgId}/groups', 
+			'GET', 
+			{ 'trusteeOrgId': trusteeOrgId },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] },
 			{  },
 			{  },
 			null, 
@@ -38795,6 +39011,66 @@ class OrganizationAuthorizationApi {
 	}
 
 	/**
+	 * Get Trustee Group
+	 * 
+	 * @param {String} trustorOrgId Trustor Organization Id
+	 * @param {String} trustorGroupId Trustor Group Id
+	 */
+	getOrgauthorizationTrustorGroup(trustorOrgId, trustorGroupId) { 
+		// verify the required parameter 'trustorOrgId' is set
+		if (trustorOrgId === undefined || trustorOrgId === null) {
+			throw 'Missing the required parameter "trustorOrgId" when calling getOrgauthorizationTrustorGroup';
+		}
+		// verify the required parameter 'trustorGroupId' is set
+		if (trustorGroupId === undefined || trustorGroupId === null) {
+			throw 'Missing the required parameter "trustorGroupId" when calling getOrgauthorizationTrustorGroup';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/orgauthorization/trustors/{trustorOrgId}/groups/{trustorGroupId}', 
+			'GET', 
+			{ 'trustorOrgId': trustorOrgId,'trustorGroupId': trustorGroupId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * The list of groups in the trustor organization (i.e. groups granted access).
+	 * 
+	 * @param {String} trustorOrgId Trustee Organization Id
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 */
+	getOrgauthorizationTrustorGroups(trustorOrgId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'trustorOrgId' is set
+		if (trustorOrgId === undefined || trustorOrgId === null) {
+			throw 'Missing the required parameter "trustorOrgId" when calling getOrgauthorizationTrustorGroups';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/orgauthorization/trustors/{trustorOrgId}/groups', 
+			'GET', 
+			{ 'trustorOrgId': trustorOrgId },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get Trustee User
 	 * 
 	 * @param {String} trustorOrgId Trustor Organization Id
@@ -38894,6 +39170,36 @@ class OrganizationAuthorizationApi {
 			'/api/v2/orgauthorization/pairings', 
 			'POST', 
 			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Add a group to the trust.
+	 * 
+	 * @param {String} trusteeOrgId Trustee Organization Id
+	 * @param {Object} body Trust
+	 */
+	postOrgauthorizationTrusteeGroups(trusteeOrgId, body) { 
+		// verify the required parameter 'trusteeOrgId' is set
+		if (trusteeOrgId === undefined || trusteeOrgId === null) {
+			throw 'Missing the required parameter "trusteeOrgId" when calling postOrgauthorizationTrusteeGroups';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postOrgauthorizationTrusteeGroups';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/orgauthorization/trustees/{trusteeOrgId}/groups', 
+			'POST', 
+			{ 'trusteeOrgId': trusteeOrgId },
 			{  },
 			{  },
 			{  },
@@ -39079,6 +39385,76 @@ class OrganizationAuthorizationApi {
 	}
 
 	/**
+	 * Update Trustee Group Roles
+	 * 
+	 * @param {String} trusteeOrgId Trustee Organization Id
+	 * @param {String} trusteeGroupId Trustee Group Id
+	 * @param {Object} body Set of roles with corresponding divisions to apply
+	 */
+	putOrgauthorizationTrusteeGroupRoledivisions(trusteeOrgId, trusteeGroupId, body) { 
+		// verify the required parameter 'trusteeOrgId' is set
+		if (trusteeOrgId === undefined || trusteeOrgId === null) {
+			throw 'Missing the required parameter "trusteeOrgId" when calling putOrgauthorizationTrusteeGroupRoledivisions';
+		}
+		// verify the required parameter 'trusteeGroupId' is set
+		if (trusteeGroupId === undefined || trusteeGroupId === null) {
+			throw 'Missing the required parameter "trusteeGroupId" when calling putOrgauthorizationTrusteeGroupRoledivisions';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putOrgauthorizationTrusteeGroupRoledivisions';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/orgauthorization/trustees/{trusteeOrgId}/groups/{trusteeGroupId}/roledivisions', 
+			'PUT', 
+			{ 'trusteeOrgId': trusteeOrgId,'trusteeGroupId': trusteeGroupId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update Trustee Group Roles
+	 * 
+	 * @param {String} trusteeOrgId Trustee Organization Id
+	 * @param {String} trusteeGroupId Trustee Group Id
+	 * @param {Array.<String>} body List of roles
+	 */
+	putOrgauthorizationTrusteeGroupRoles(trusteeOrgId, trusteeGroupId, body) { 
+		// verify the required parameter 'trusteeOrgId' is set
+		if (trusteeOrgId === undefined || trusteeOrgId === null) {
+			throw 'Missing the required parameter "trusteeOrgId" when calling putOrgauthorizationTrusteeGroupRoles';
+		}
+		// verify the required parameter 'trusteeGroupId' is set
+		if (trusteeGroupId === undefined || trusteeGroupId === null) {
+			throw 'Missing the required parameter "trusteeGroupId" when calling putOrgauthorizationTrusteeGroupRoles';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putOrgauthorizationTrusteeGroupRoles';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/orgauthorization/trustees/{trusteeOrgId}/groups/{trusteeGroupId}/roles', 
+			'PUT', 
+			{ 'trusteeOrgId': trusteeOrgId,'trusteeGroupId': trusteeGroupId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Update Trustee User Roles
 	 * 
 	 * @param {String} trusteeOrgId Trustee Organization Id
@@ -39179,6 +39555,36 @@ class OrganizationAuthorizationApi {
 	}
 
 	/**
+	 * Add a Trustee Group to the trust.
+	 * 
+	 * @param {String} trustorOrgId Trustor Organization Id
+	 * @param {String} trustorGroupId Trustor Group Id
+	 */
+	putOrgauthorizationTrustorGroup(trustorOrgId, trustorGroupId) { 
+		// verify the required parameter 'trustorOrgId' is set
+		if (trustorOrgId === undefined || trustorOrgId === null) {
+			throw 'Missing the required parameter "trustorOrgId" when calling putOrgauthorizationTrustorGroup';
+		}
+		// verify the required parameter 'trustorGroupId' is set
+		if (trustorGroupId === undefined || trustorGroupId === null) {
+			throw 'Missing the required parameter "trustorGroupId" when calling putOrgauthorizationTrustorGroup';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/orgauthorization/trustors/{trustorOrgId}/groups/{trustorGroupId}', 
+			'PUT', 
+			{ 'trustorOrgId': trustorOrgId,'trustorGroupId': trustorGroupId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Add a Trustee user to the trust.
 	 * 
 	 * @param {String} trustorOrgId Trustor Organization Id
@@ -39214,7 +39620,7 @@ class OutboundApi {
 	/**
 	 * Outbound service.
 	 * @module purecloud-platform-client-v2/api/OutboundApi
-	 * @version 157.0.0
+	 * @version 158.0.0
 	 */
 
 	/**
@@ -42751,7 +43157,7 @@ class PresenceApi {
 	/**
 	 * Presence service.
 	 * @module purecloud-platform-client-v2/api/PresenceApi
-	 * @version 157.0.0
+	 * @version 158.0.0
 	 */
 
 	/**
@@ -43257,7 +43663,7 @@ class ProcessAutomationApi {
 	/**
 	 * ProcessAutomation service.
 	 * @module purecloud-platform-client-v2/api/ProcessAutomationApi
-	 * @version 157.0.0
+	 * @version 158.0.0
 	 */
 
 	/**
@@ -43496,7 +43902,7 @@ class QualityApi {
 	/**
 	 * Quality service.
 	 * @module purecloud-platform-client-v2/api/QualityApi
-	 * @version 157.0.0
+	 * @version 158.0.0
 	 */
 
 	/**
@@ -45074,7 +45480,7 @@ class RecordingApi {
 	/**
 	 * Recording service.
 	 * @module purecloud-platform-client-v2/api/RecordingApi
-	 * @version 157.0.0
+	 * @version 158.0.0
 	 */
 
 	/**
@@ -46811,7 +47217,7 @@ class ResponseManagementApi {
 	/**
 	 * ResponseManagement service.
 	 * @module purecloud-platform-client-v2/api/ResponseManagementApi
-	 * @version 157.0.0
+	 * @version 158.0.0
 	 */
 
 	/**
@@ -47295,7 +47701,7 @@ class RoutingApi {
 	/**
 	 * Routing service.
 	 * @module purecloud-platform-client-v2/api/RoutingApi
-	 * @version 157.0.0
+	 * @version 158.0.0
 	 */
 
 	/**
@@ -50760,7 +51166,7 @@ class SCIMApi {
 	/**
 	 * SCIM service.
 	 * @module purecloud-platform-client-v2/api/SCIMApi
-	 * @version 157.0.0
+	 * @version 158.0.0
 	 */
 
 	/**
@@ -51637,7 +52043,7 @@ class ScriptsApi {
 	/**
 	 * Scripts service.
 	 * @module purecloud-platform-client-v2/api/ScriptsApi
-	 * @version 157.0.0
+	 * @version 158.0.0
 	 */
 
 	/**
@@ -52056,7 +52462,7 @@ class SearchApi {
 	/**
 	 * Search service.
 	 * @module purecloud-platform-client-v2/api/SearchApi
-	 * @version 157.0.0
+	 * @version 158.0.0
 	 */
 
 	/**
@@ -52641,7 +53047,7 @@ class SpeechTextAnalyticsApi {
 	/**
 	 * SpeechTextAnalytics service.
 	 * @module purecloud-platform-client-v2/api/SpeechTextAnalyticsApi
-	 * @version 157.0.0
+	 * @version 158.0.0
 	 */
 
 	/**
@@ -53495,7 +53901,7 @@ class StationsApi {
 	/**
 	 * Stations service.
 	 * @module purecloud-platform-client-v2/api/StationsApi
-	 * @version 157.0.0
+	 * @version 158.0.0
 	 */
 
 	/**
@@ -53593,7 +53999,7 @@ class StationsApi {
 
 	/**
 	 * Get an organization's StationSettings
-	 * 
+	 * This route is deprecated as the FreeSeatingConfiguration feature it references has been removed
 	 */
 	getStationsSettings() { 
 
@@ -53613,7 +54019,7 @@ class StationsApi {
 
 	/**
 	 * Patch an organization's StationSettings
-	 * 
+	 * This route is deprecated as the FreeSeatingConfiguration feature it references has been removed
 	 * @param {Object} body Station settings
 	 */
 	patchStationsSettings(body) { 
@@ -53642,7 +54048,7 @@ class SuggestApi {
 	/**
 	 * Suggest service.
 	 * @module purecloud-platform-client-v2/api/SuggestApi
-	 * @version 157.0.0
+	 * @version 158.0.0
 	 */
 
 	/**
@@ -53781,7 +54187,7 @@ class TeamsApi {
 	/**
 	 * Teams service.
 	 * @module purecloud-platform-client-v2/api/TeamsApi
-	 * @version 157.0.0
+	 * @version 158.0.0
 	 */
 
 	/**
@@ -54052,7 +54458,7 @@ class TelephonyApi {
 	/**
 	 * Telephony service.
 	 * @module purecloud-platform-client-v2/api/TelephonyApi
-	 * @version 157.0.0
+	 * @version 158.0.0
 	 */
 
 	/**
@@ -54180,7 +54586,7 @@ class TelephonyProvidersEdgeApi {
 	/**
 	 * TelephonyProvidersEdge service.
 	 * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-	 * @version 157.0.0
+	 * @version 158.0.0
 	 */
 
 	/**
@@ -57813,7 +58219,7 @@ class TextbotsApi {
 	/**
 	 * Textbots service.
 	 * @module purecloud-platform-client-v2/api/TextbotsApi
-	 * @version 157.0.0
+	 * @version 158.0.0
 	 */
 
 	/**
@@ -57941,7 +58347,7 @@ class TokensApi {
 	/**
 	 * Tokens service.
 	 * @module purecloud-platform-client-v2/api/TokensApi
-	 * @version 157.0.0
+	 * @version 158.0.0
 	 */
 
 	/**
@@ -58047,7 +58453,7 @@ class UploadsApi {
 	/**
 	 * Uploads service.
 	 * @module purecloud-platform-client-v2/api/UploadsApi
-	 * @version 157.0.0
+	 * @version 158.0.0
 	 */
 
 	/**
@@ -58223,7 +58629,7 @@ class UsageApi {
 	/**
 	 * Usage service.
 	 * @module purecloud-platform-client-v2/api/UsageApi
-	 * @version 157.0.0
+	 * @version 158.0.0
 	 */
 
 	/**
@@ -58294,7 +58700,7 @@ class UserRecordingsApi {
 	/**
 	 * UserRecordings service.
 	 * @module purecloud-platform-client-v2/api/UserRecordingsApi
-	 * @version 157.0.0
+	 * @version 158.0.0
 	 */
 
 	/**
@@ -58479,7 +58885,7 @@ class UsersApi {
 	/**
 	 * Users service.
 	 * @module purecloud-platform-client-v2/api/UsersApi
-	 * @version 157.0.0
+	 * @version 158.0.0
 	 */
 
 	/**
@@ -60836,7 +61242,7 @@ class UtilitiesApi {
 	/**
 	 * Utilities service.
 	 * @module purecloud-platform-client-v2/api/UtilitiesApi
-	 * @version 157.0.0
+	 * @version 158.0.0
 	 */
 
 	/**
@@ -60947,7 +61353,7 @@ class VoicemailApi {
 	/**
 	 * Voicemail service.
 	 * @module purecloud-platform-client-v2/api/VoicemailApi
-	 * @version 157.0.0
+	 * @version 158.0.0
 	 */
 
 	/**
@@ -61614,7 +62020,7 @@ class WebChatApi {
 	/**
 	 * WebChat service.
 	 * @module purecloud-platform-client-v2/api/WebChatApi
-	 * @version 157.0.0
+	 * @version 158.0.0
 	 */
 
 	/**
@@ -62158,7 +62564,7 @@ class WebDeploymentsApi {
 	/**
 	 * WebDeployments service.
 	 * @module purecloud-platform-client-v2/api/WebDeploymentsApi
-	 * @version 157.0.0
+	 * @version 158.0.0
 	 */
 
 	/**
@@ -62213,6 +62619,36 @@ class WebDeploymentsApi {
 			'/api/v2/webdeployments/deployments/{deploymentId}', 
 			'DELETE', 
 			{ 'deploymentId': deploymentId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Deletes a cobrowse session
+	 * 
+	 * @param {String} deploymentId WebMessaging deployment ID
+	 * @param {String} sessionId Cobrowse session id or join code
+	 */
+	deleteWebdeploymentsDeploymentCobrowseSessionId(deploymentId, sessionId) { 
+		// verify the required parameter 'deploymentId' is set
+		if (deploymentId === undefined || deploymentId === null) {
+			throw 'Missing the required parameter "deploymentId" when calling deleteWebdeploymentsDeploymentCobrowseSessionId';
+		}
+		// verify the required parameter 'sessionId' is set
+		if (sessionId === undefined || sessionId === null) {
+			throw 'Missing the required parameter "sessionId" when calling deleteWebdeploymentsDeploymentCobrowseSessionId';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/webdeployments/deployments/{deploymentId}/cobrowse/{sessionId}', 
+			'DELETE', 
+			{ 'deploymentId': deploymentId,'sessionId': sessionId },
 			{  },
 			{  },
 			{  },
@@ -62367,6 +62803,36 @@ class WebDeploymentsApi {
 			'/api/v2/webdeployments/deployments/{deploymentId}', 
 			'GET', 
 			{ 'deploymentId': deploymentId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Retrieves a cobrowse session
+	 * 
+	 * @param {String} deploymentId WebMessaging deployment ID
+	 * @param {String} sessionId Cobrowse session id or join code
+	 */
+	getWebdeploymentsDeploymentCobrowseSessionId(deploymentId, sessionId) { 
+		// verify the required parameter 'deploymentId' is set
+		if (deploymentId === undefined || deploymentId === null) {
+			throw 'Missing the required parameter "deploymentId" when calling getWebdeploymentsDeploymentCobrowseSessionId';
+		}
+		// verify the required parameter 'sessionId' is set
+		if (sessionId === undefined || sessionId === null) {
+			throw 'Missing the required parameter "sessionId" when calling getWebdeploymentsDeploymentCobrowseSessionId';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/webdeployments/deployments/{deploymentId}/cobrowse/{sessionId}', 
+			'GET', 
+			{ 'deploymentId': deploymentId,'sessionId': sessionId },
 			{  },
 			{  },
 			{  },
@@ -62620,7 +63086,7 @@ class WebMessagingApi {
 	/**
 	 * WebMessaging service.
 	 * @module purecloud-platform-client-v2/api/WebMessagingApi
-	 * @version 157.0.0
+	 * @version 158.0.0
 	 */
 
 	/**
@@ -62666,7 +63132,7 @@ class WidgetsApi {
 	/**
 	 * Widgets service.
 	 * @module purecloud-platform-client-v2/api/WidgetsApi
-	 * @version 157.0.0
+	 * @version 158.0.0
 	 */
 
 	/**
@@ -62812,7 +63278,7 @@ class WorkforceManagementApi {
 	/**
 	 * WorkforceManagement service.
 	 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-	 * @version 157.0.0
+	 * @version 158.0.0
 	 */
 
 	/**
@@ -67531,7 +67997,7 @@ class WorkforceManagementApi {
  * </pre>
  * </p>
  * @module purecloud-platform-client-v2/index
- * @version 157.0.0
+ * @version 158.0.0
  */
 class platformClient {
 	constructor() {

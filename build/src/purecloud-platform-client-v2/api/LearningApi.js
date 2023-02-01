@@ -5,7 +5,7 @@ class LearningApi {
 	/**
 	 * Learning service.
 	 * @module purecloud-platform-client-v2/api/LearningApi
-	 * @version 157.0.0
+	 * @version 158.0.0
 	 */
 
 	/**
@@ -115,7 +115,7 @@ class LearningApi {
 	 * @param {Object} opts.sortOrder Specifies result set sort order; if not specified, default sort order is descending (Desc) (default to Desc)
 	 * @param {Object} opts.sortBy Specifies which field to sort the results by, default sort is by recommendedCompletionDate
 	 * @param {Array.<String>} opts.userId Specifies the list of user IDs to be queried, up to 100 user IDs.
-	 * @param {Array.<String>} opts.types Specifies the assignment types, currently not supported and will be ignored. For now, all learning assignments regardless of types will be returned
+	 * @param {Array.<String>} opts.types Specifies the module types to filter by
 	 * @param {Array.<String>} opts.states Specifies the assignment states to filter by
 	 * @param {Array.<String>} opts.expand Specifies the expand option for returning additional information
 	 */
@@ -152,7 +152,7 @@ class LearningApi {
 	 * @param {Number} opts.maxPercentageScore The maximum assessment score for an assignment (completed with assessment) to be included in the results (inclusive)
 	 * @param {Object} opts.sortOrder Specifies result set sort order; if not specified, default sort order is descending (Desc) (default to Desc)
 	 * @param {Object} opts.sortBy Specifies which field to sort the results by, default sort is by recommendedCompletionDate
-	 * @param {Array.<String>} opts.types Specifies the assignment types, currently not supported and will be ignored. For now, all learning assignments regardless of types will be returned
+	 * @param {Array.<String>} opts.types Specifies the module types to filter by
 	 * @param {Array.<String>} opts.states Specifies the assignment states to filter by
 	 * @param {Array.<String>} opts.expand Specifies the expand option for returning additional information
 	 */

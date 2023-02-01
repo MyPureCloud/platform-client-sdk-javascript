@@ -178,10 +178,13 @@ apiInstance.getStations(opts)
 
 # StationSettings getStationsSettings()
 
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 GET /api/v2/stations/settings
 
 Get an organization's StationSettings
+
+This route is deprecated as the FreeSeatingConfiguration feature it references has been removed
 
 Requires NO permissions:
 
@@ -221,10 +224,13 @@ This endpoint does not need any parameter.
 
 # StationSettings patchStationsSettings(body)
 
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 PATCH /api/v2/stations/settings
 
 Patch an organization's StationSettings
+
+This route is deprecated as the FreeSeatingConfiguration feature it references has been removed
 
 Requires ANY permissions:
 

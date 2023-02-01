@@ -7816,6 +7816,20 @@
     "return": "'String'",
     "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.ConversationsApi();\n\nlet conversationId = \"conversationId_example\"; // String | conversation ID\nlet body = {}; // Object | Targeted user\n\n// Attempts to manually assign a specified conversation to a specified user.  Ignores bullseye ring, PAR score, skills, and languages.\napiInstance.postConversationAssign(conversationId, body)\n  .then((data) => {\n    console.log(`postConversationAssign success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling postConversationAssign\");\n    console.error(err);\n  });"
   },
+  "postconversationcobrowse": {
+    "operationId": "postconversationcobrowse",
+    "functionName": "postConversationCobrowse",
+    "signature": "postConversationCobrowse(conversationId)",
+    "parameters": [
+      {
+        "name": "conversationId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "return": "CobrowseWebMessagingSession",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.ConversationsApi();\n\nlet conversationId = \"conversationId_example\"; // String | Conversation ID\n\n// Creates a cobrowse session\napiInstance.postConversationCobrowse(conversationId)\n  .then((data) => {\n    console.log(`postConversationCobrowse success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling postConversationCobrowse\");\n    console.error(err);\n  });"
+  },
   "postconversationdisconnect": {
     "operationId": "postconversationdisconnect",
     "functionName": "postConversationDisconnect",
@@ -8260,7 +8274,7 @@
         "required": "true"
       }
     ],
-    "return": "EmailMessage",
+    "return": "EmailMessageReply",
     "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.ConversationsApi();\n\nlet conversationId = \"conversationId_example\"; // String | conversationId\nlet body = {}; // Object | Reply\n\n// Send an email reply\napiInstance.postConversationsEmailMessages(conversationId, body)\n  .then((data) => {\n    console.log(`postConversationsEmailMessages success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling postConversationsEmailMessages\");\n    console.error(err);\n  });"
   },
   "postconversationsemailmessagesdraftattachmentscopy": {
@@ -16339,7 +16353,7 @@
   "getlanguageunderstandingdomainfeedback": {
     "operationId": "getlanguageunderstandingdomainfeedback",
     "functionName": "getLanguageunderstandingDomainFeedback",
-    "signature": "getLanguageunderstandingDomainFeedback(domainId, intentName, assessment, dateStart, dateEnd, includeDeleted, language, pageNumber, pageSize, enableCursorPagination, after, fields)",
+    "signature": "getLanguageunderstandingDomainFeedback(domainId, intentName, assessment, dateStart, dateEnd, includeDeleted, language, pageNumber, pageSize, enableCursorPagination, includeTrainingUtterances, after, fields)",
     "parameters": [
       {
         "name": "domainId",
@@ -16392,6 +16406,11 @@
         "required": "false"
       },
       {
+        "name": "includeTrainingUtterances",
+        "type": "Boolean",
+        "required": "false"
+      },
+      {
         "name": "after",
         "type": "String",
         "required": "false"
@@ -16403,7 +16422,7 @@
       }
     ],
     "return": "NluFeedbackListing",
-    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.LanguageUnderstandingApi();\n\nlet domainId = \"domainId_example\"; // String | ID of the NLU domain.\nlet opts = { \n  \"intentName\": \"intentName_example\", // String | The top intent name to retrieve feedback for.\n  \"assessment\": \"assessment_example\", // String | The top assessment to retrieve feedback for.\n  \"dateStart\": \"dateStart_example\", // String | Begin of time window as ISO-8601 date.\n  \"dateEnd\": \"dateEnd_example\", // String | End of time window as ISO-8601 date.\n  \"includeDeleted\": true, // Boolean | Whether to include soft-deleted items in the result.\n  \"language\": \"language_example\", // String | Whether to filter response based on the language, e.g. en-us, pt-br.\n  \"pageNumber\": 1, // Number | Page number\n  \"pageSize\": 25, // Number | Page size\n  \"enableCursorPagination\": false, // Boolean | Enable Cursor Pagination\n  \"after\": \"after_example\", // String | The cursor that points to the end of the set of entities that has been returned. This is considered only when enableCursorPagination=true\n  \"fields\": [\"fields_example\"] // [String] | Fields and properties to get, comma-separated\n};\n\n// Get all feedback in the given NLU Domain Version.\napiInstance.getLanguageunderstandingDomainFeedback(domainId, opts)\n  .then((data) => {\n    console.log(`getLanguageunderstandingDomainFeedback success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getLanguageunderstandingDomainFeedback\");\n    console.error(err);\n  });"
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.LanguageUnderstandingApi();\n\nlet domainId = \"domainId_example\"; // String | ID of the NLU domain.\nlet opts = { \n  \"intentName\": \"intentName_example\", // String | The top intent name to retrieve feedback for.\n  \"assessment\": \"assessment_example\", // String | The top assessment to retrieve feedback for.\n  \"dateStart\": \"dateStart_example\", // String | Begin of time window as ISO-8601 date.\n  \"dateEnd\": \"dateEnd_example\", // String | End of time window as ISO-8601 date.\n  \"includeDeleted\": true, // Boolean | Whether to include soft-deleted items in the result.\n  \"language\": \"language_example\", // String | Whether to filter response based on the language, e.g. en-us, pt-br.\n  \"pageNumber\": 1, // Number | Page number\n  \"pageSize\": 25, // Number | Page size\n  \"enableCursorPagination\": false, // Boolean | Enable Cursor Pagination\n  \"includeTrainingUtterances\": true, // Boolean | Include Training Utterances. By default they're included.\n  \"after\": \"after_example\", // String | The cursor that points to the end of the set of entities that has been returned. This is considered only when enableCursorPagination=true\n  \"fields\": [\"fields_example\"] // [String] | Fields and properties to get, comma-separated\n};\n\n// Get all feedback in the given NLU Domain Version.\napiInstance.getLanguageunderstandingDomainFeedback(domainId, opts)\n  .then((data) => {\n    console.log(`getLanguageunderstandingDomainFeedback success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getLanguageunderstandingDomainFeedback\");\n    console.error(err);\n  });"
   },
   "getlanguageunderstandingdomainfeedbackfeedbackid": {
     "operationId": "getlanguageunderstandingdomainfeedbackfeedbackid",
@@ -17180,7 +17199,7 @@
       }
     ],
     "return": "LearningAssignmentsDomainEntity",
-    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.LearningApi();\n\nlet opts = { \n  \"moduleId\": \"moduleId_example\", // String | Specifies the ID of the learning module. Fetch assignments for learning module ID\n  \"interval\": \"interval_example\", // String | Specifies the range of dueDates to be queried. Milliseconds will be truncated. A maximum of 1 year can be specified in the range. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss\n  \"completionInterval\": \"completionInterval_example\", // String | Specifies the range of completion dates to be used for filtering. A maximum of 1 year can be specified in the range. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss\n  \"overdue\": \"Any\", // String | Specifies if only the non-overdue (overdue is False) or overdue (overdue is True) assignments are returned. If overdue is Any or if the overdue parameter is not supplied, all assignments are returned\n  \"pageSize\": 25, // Number | Page size\n  \"pageNumber\": 1, // Number | Page number\n  \"pass\": \"Any\", // String | Specifies if only the failed (pass is False) or passed (pass is True) assignments (completed with assessment)are returned. If pass is Any or if the pass parameter is not supplied, all assignments are returned\n  \"minPercentageScore\": 3.4, // Number | The minimum assessment score for an assignment (completed with assessment) to be included in the results (inclusive)\n  \"maxPercentageScore\": 3.4, // Number | The maximum assessment score for an assignment (completed with assessment) to be included in the results (inclusive)\n  \"sortOrder\": \"Desc\", // String | Specifies result set sort order; if not specified, default sort order is descending (Desc)\n  \"sortBy\": \"sortBy_example\", // String | Specifies which field to sort the results by, default sort is by recommendedCompletionDate\n  \"userId\": [\"userId_example\"], // [String] | Specifies the list of user IDs to be queried, up to 100 user IDs.\n  \"types\": [\"types_example\"], // [String] | Specifies the assignment types, currently not supported and will be ignored. For now, all learning assignments regardless of types will be returned\n  \"states\": [\"states_example\"], // [String] | Specifies the assignment states to filter by\n  \"expand\": [\"expand_example\"] // [String] | Specifies the expand option for returning additional information\n};\n\n// List of Learning module Assignments\napiInstance.getLearningAssignments(opts)\n  .then((data) => {\n    console.log(`getLearningAssignments success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getLearningAssignments\");\n    console.error(err);\n  });"
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.LearningApi();\n\nlet opts = { \n  \"moduleId\": \"moduleId_example\", // String | Specifies the ID of the learning module. Fetch assignments for learning module ID\n  \"interval\": \"interval_example\", // String | Specifies the range of dueDates to be queried. Milliseconds will be truncated. A maximum of 1 year can be specified in the range. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss\n  \"completionInterval\": \"completionInterval_example\", // String | Specifies the range of completion dates to be used for filtering. A maximum of 1 year can be specified in the range. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss\n  \"overdue\": \"Any\", // String | Specifies if only the non-overdue (overdue is False) or overdue (overdue is True) assignments are returned. If overdue is Any or if the overdue parameter is not supplied, all assignments are returned\n  \"pageSize\": 25, // Number | Page size\n  \"pageNumber\": 1, // Number | Page number\n  \"pass\": \"Any\", // String | Specifies if only the failed (pass is False) or passed (pass is True) assignments (completed with assessment)are returned. If pass is Any or if the pass parameter is not supplied, all assignments are returned\n  \"minPercentageScore\": 3.4, // Number | The minimum assessment score for an assignment (completed with assessment) to be included in the results (inclusive)\n  \"maxPercentageScore\": 3.4, // Number | The maximum assessment score for an assignment (completed with assessment) to be included in the results (inclusive)\n  \"sortOrder\": \"Desc\", // String | Specifies result set sort order; if not specified, default sort order is descending (Desc)\n  \"sortBy\": \"sortBy_example\", // String | Specifies which field to sort the results by, default sort is by recommendedCompletionDate\n  \"userId\": [\"userId_example\"], // [String] | Specifies the list of user IDs to be queried, up to 100 user IDs.\n  \"types\": [\"types_example\"], // [String] | Specifies the module types to filter by\n  \"states\": [\"states_example\"], // [String] | Specifies the assignment states to filter by\n  \"expand\": [\"expand_example\"] // [String] | Specifies the expand option for returning additional information\n};\n\n// List of Learning module Assignments\napiInstance.getLearningAssignments(opts)\n  .then((data) => {\n    console.log(`getLearningAssignments success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getLearningAssignments\");\n    console.error(err);\n  });"
   },
   "getlearningassignmentsme": {
     "operationId": "getlearningassignmentsme",
@@ -17259,7 +17278,7 @@
       }
     ],
     "return": "LearningAssignmentsDomainEntity",
-    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.LearningApi();\n\nlet opts = { \n  \"moduleId\": \"moduleId_example\", // String | Specifies the ID of the learning module. Fetch assignments for learning module ID\n  \"interval\": \"interval_example\", // String | Specifies the range of dueDates to be queried. Milliseconds will be truncated. A maximum of 1 year can be specified in the range. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss\n  \"completionInterval\": \"completionInterval_example\", // String | Specifies the range of completion dates to be used for filtering. A maximum of 1 year can be specified in the range. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss\n  \"overdue\": \"Any\", // String | Specifies if only the non-overdue (overdue is False) or overdue (overdue is True) assignments are returned. If overdue is Any or if the overdue parameter is not supplied, all assignments are returned\n  \"pageSize\": 25, // Number | Page size\n  \"pageNumber\": 1, // Number | Page number\n  \"pass\": \"Any\", // String | Specifies if only the failed (pass is False) or passed (pass is True) assignments (completed with assessment)are returned. If pass is Any or if the pass parameter is not supplied, all assignments are returned\n  \"minPercentageScore\": 3.4, // Number | The minimum assessment score for an assignment (completed with assessment) to be included in the results (inclusive)\n  \"maxPercentageScore\": 3.4, // Number | The maximum assessment score for an assignment (completed with assessment) to be included in the results (inclusive)\n  \"sortOrder\": \"Desc\", // String | Specifies result set sort order; if not specified, default sort order is descending (Desc)\n  \"sortBy\": \"sortBy_example\", // String | Specifies which field to sort the results by, default sort is by recommendedCompletionDate\n  \"types\": [\"types_example\"], // [String] | Specifies the assignment types, currently not supported and will be ignored. For now, all learning assignments regardless of types will be returned\n  \"states\": [\"states_example\"], // [String] | Specifies the assignment states to filter by\n  \"expand\": [\"expand_example\"] // [String] | Specifies the expand option for returning additional information\n};\n\n// List of Learning Assignments assigned to current user\napiInstance.getLearningAssignmentsMe(opts)\n  .then((data) => {\n    console.log(`getLearningAssignmentsMe success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getLearningAssignmentsMe\");\n    console.error(err);\n  });"
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.LearningApi();\n\nlet opts = { \n  \"moduleId\": \"moduleId_example\", // String | Specifies the ID of the learning module. Fetch assignments for learning module ID\n  \"interval\": \"interval_example\", // String | Specifies the range of dueDates to be queried. Milliseconds will be truncated. A maximum of 1 year can be specified in the range. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss\n  \"completionInterval\": \"completionInterval_example\", // String | Specifies the range of completion dates to be used for filtering. A maximum of 1 year can be specified in the range. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss\n  \"overdue\": \"Any\", // String | Specifies if only the non-overdue (overdue is False) or overdue (overdue is True) assignments are returned. If overdue is Any or if the overdue parameter is not supplied, all assignments are returned\n  \"pageSize\": 25, // Number | Page size\n  \"pageNumber\": 1, // Number | Page number\n  \"pass\": \"Any\", // String | Specifies if only the failed (pass is False) or passed (pass is True) assignments (completed with assessment)are returned. If pass is Any or if the pass parameter is not supplied, all assignments are returned\n  \"minPercentageScore\": 3.4, // Number | The minimum assessment score for an assignment (completed with assessment) to be included in the results (inclusive)\n  \"maxPercentageScore\": 3.4, // Number | The maximum assessment score for an assignment (completed with assessment) to be included in the results (inclusive)\n  \"sortOrder\": \"Desc\", // String | Specifies result set sort order; if not specified, default sort order is descending (Desc)\n  \"sortBy\": \"sortBy_example\", // String | Specifies which field to sort the results by, default sort is by recommendedCompletionDate\n  \"types\": [\"types_example\"], // [String] | Specifies the module types to filter by\n  \"states\": [\"states_example\"], // [String] | Specifies the assignment states to filter by\n  \"expand\": [\"expand_example\"] // [String] | Specifies the expand option for returning additional information\n};\n\n// List of Learning Assignments assigned to current user\napiInstance.getLearningAssignmentsMe(opts)\n  .then((data) => {\n    console.log(`getLearningAssignmentsMe success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getLearningAssignmentsMe\");\n    console.error(err);\n  });"
   },
   "getlearningmodule": {
     "operationId": "getlearningmodule",
@@ -18666,6 +18685,42 @@
     ],
     "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.OrganizationAuthorizationApi();\n\nlet trusteeOrgId = \"trusteeOrgId_example\"; // String | Trustee Organization Id\nlet trusteeUserId = \"trusteeUserId_example\"; // String | Id of the cloned user to delete\n\n// Deletes cloned user\napiInstance.deleteOrgauthorizationTrusteeCloneduser(trusteeOrgId, trusteeUserId)\n  .then(() => {\n    console.log(\"deleteOrgauthorizationTrusteeCloneduser returned successfully.\");\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling deleteOrgauthorizationTrusteeCloneduser\");\n    console.error(err);\n  });"
   },
+  "deleteorgauthorizationtrusteegroup": {
+    "operationId": "deleteorgauthorizationtrusteegroup",
+    "functionName": "deleteOrgauthorizationTrusteeGroup",
+    "signature": "deleteOrgauthorizationTrusteeGroup(trusteeOrgId, trusteeGroupId)",
+    "parameters": [
+      {
+        "name": "trusteeOrgId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "trusteeGroupId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.OrganizationAuthorizationApi();\n\nlet trusteeOrgId = \"trusteeOrgId_example\"; // String | Trustee Organization Id\nlet trusteeGroupId = \"trusteeGroupId_example\"; // String | Trustee Group Id\n\n// Delete Trustee Group\napiInstance.deleteOrgauthorizationTrusteeGroup(trusteeOrgId, trusteeGroupId)\n  .then(() => {\n    console.log(\"deleteOrgauthorizationTrusteeGroup returned successfully.\");\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling deleteOrgauthorizationTrusteeGroup\");\n    console.error(err);\n  });"
+  },
+  "deleteorgauthorizationtrusteegrouproles": {
+    "operationId": "deleteorgauthorizationtrusteegrouproles",
+    "functionName": "deleteOrgauthorizationTrusteeGroupRoles",
+    "signature": "deleteOrgauthorizationTrusteeGroupRoles(trusteeOrgId, trusteeGroupId)",
+    "parameters": [
+      {
+        "name": "trusteeOrgId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "trusteeGroupId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.OrganizationAuthorizationApi();\n\nlet trusteeOrgId = \"trusteeOrgId_example\"; // String | Trustee Organization Id\nlet trusteeGroupId = \"trusteeGroupId_example\"; // String | Trustee Group Id\n\n// Delete Trustee Group Roles\napiInstance.deleteOrgauthorizationTrusteeGroupRoles(trusteeOrgId, trusteeGroupId)\n  .then(() => {\n    console.log(\"deleteOrgauthorizationTrusteeGroupRoles returned successfully.\");\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling deleteOrgauthorizationTrusteeGroupRoles\");\n    console.error(err);\n  });"
+  },
   "deleteorgauthorizationtrusteeuser": {
     "operationId": "deleteorgauthorizationtrusteeuser",
     "functionName": "deleteOrgauthorizationTrusteeUser",
@@ -18733,6 +18788,24 @@
     ],
     "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.OrganizationAuthorizationApi();\n\nlet trustorOrgId = \"trustorOrgId_example\"; // String | Trustor Organization Id\nlet trusteeUserId = \"trusteeUserId_example\"; // String | Trustee User Id\n\n// Delete Cloned User\napiInstance.deleteOrgauthorizationTrustorCloneduser(trustorOrgId, trusteeUserId)\n  .then(() => {\n    console.log(\"deleteOrgauthorizationTrustorCloneduser returned successfully.\");\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling deleteOrgauthorizationTrustorCloneduser\");\n    console.error(err);\n  });"
   },
+  "deleteorgauthorizationtrustorgroup": {
+    "operationId": "deleteorgauthorizationtrustorgroup",
+    "functionName": "deleteOrgauthorizationTrustorGroup",
+    "signature": "deleteOrgauthorizationTrustorGroup(trustorOrgId, trustorGroupId)",
+    "parameters": [
+      {
+        "name": "trustorOrgId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "trustorGroupId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.OrganizationAuthorizationApi();\n\nlet trustorOrgId = \"trustorOrgId_example\"; // String | Trustor Organization Id\nlet trustorGroupId = \"trustorGroupId_example\"; // String | Trustor Group Id\n\n// Delete Trustee Group\napiInstance.deleteOrgauthorizationTrustorGroup(trustorOrgId, trustorGroupId)\n  .then(() => {\n    console.log(\"deleteOrgauthorizationTrustorGroup returned successfully.\");\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling deleteOrgauthorizationTrustorGroup\");\n    console.error(err);\n  });"
+  },
   "deleteorgauthorizationtrustoruser": {
     "operationId": "deleteorgauthorizationtrustoruser",
     "functionName": "deleteOrgauthorizationTrustorUser",
@@ -18792,6 +18865,68 @@
     ],
     "return": "ClonedUserEntityListing",
     "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.OrganizationAuthorizationApi();\n\nlet trusteeOrgId = \"trusteeOrgId_example\"; // String | Trustee Organization Id\n\n// The list of cloned users from the trustee organization (i.e. users with a native user record).\napiInstance.getOrgauthorizationTrusteeClonedusers(trusteeOrgId)\n  .then((data) => {\n    console.log(`getOrgauthorizationTrusteeClonedusers success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getOrgauthorizationTrusteeClonedusers\");\n    console.error(err);\n  });"
+  },
+  "getorgauthorizationtrusteegroup": {
+    "operationId": "getorgauthorizationtrusteegroup",
+    "functionName": "getOrgauthorizationTrusteeGroup",
+    "signature": "getOrgauthorizationTrusteeGroup(trusteeOrgId, trusteeGroupId)",
+    "parameters": [
+      {
+        "name": "trusteeOrgId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "trusteeGroupId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "return": "TrustGroup",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.OrganizationAuthorizationApi();\n\nlet trusteeOrgId = \"trusteeOrgId_example\"; // String | Trustee Organization Id\nlet trusteeGroupId = \"trusteeGroupId_example\"; // String | Trustee Group Id\n\n// Get Trustee Group\napiInstance.getOrgauthorizationTrusteeGroup(trusteeOrgId, trusteeGroupId)\n  .then((data) => {\n    console.log(`getOrgauthorizationTrusteeGroup success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getOrgauthorizationTrusteeGroup\");\n    console.error(err);\n  });"
+  },
+  "getorgauthorizationtrusteegrouproles": {
+    "operationId": "getorgauthorizationtrusteegrouproles",
+    "functionName": "getOrgauthorizationTrusteeGroupRoles",
+    "signature": "getOrgauthorizationTrusteeGroupRoles(trusteeOrgId, trusteeGroupId)",
+    "parameters": [
+      {
+        "name": "trusteeOrgId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "trusteeGroupId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "return": "UserAuthorization",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.OrganizationAuthorizationApi();\n\nlet trusteeOrgId = \"trusteeOrgId_example\"; // String | Trustee Organization Id\nlet trusteeGroupId = \"trusteeGroupId_example\"; // String | Trustee Group Id\n\n// Get Trustee Group Roles\napiInstance.getOrgauthorizationTrusteeGroupRoles(trusteeOrgId, trusteeGroupId)\n  .then((data) => {\n    console.log(`getOrgauthorizationTrusteeGroupRoles success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getOrgauthorizationTrusteeGroupRoles\");\n    console.error(err);\n  });"
+  },
+  "getorgauthorizationtrusteegroups": {
+    "operationId": "getorgauthorizationtrusteegroups",
+    "functionName": "getOrgauthorizationTrusteeGroups",
+    "signature": "getOrgauthorizationTrusteeGroups(trusteeOrgId, pageSize, pageNumber)",
+    "parameters": [
+      {
+        "name": "trusteeOrgId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "pageSize",
+        "type": "Number",
+        "required": "false"
+      },
+      {
+        "name": "pageNumber",
+        "type": "Number",
+        "required": "false"
+      }
+    ],
+    "return": "TrustGroupEntityListing",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.OrganizationAuthorizationApi();\n\nlet trusteeOrgId = \"trusteeOrgId_example\"; // String | Trustee Organization Id\nlet opts = { \n  \"pageSize\": 25, // Number | Page size\n  \"pageNumber\": 1 // Number | Page number\n};\n\n// The list of trustee groups for this organization (i.e. groups granted access to this organization).\napiInstance.getOrgauthorizationTrusteeGroups(trusteeOrgId, opts)\n  .then((data) => {\n    console.log(`getOrgauthorizationTrusteeGroups success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getOrgauthorizationTrusteeGroups\");\n    console.error(err);\n  });"
   },
   "getorgauthorizationtrusteeuser": {
     "operationId": "getorgauthorizationtrusteeuser",
@@ -18928,6 +19063,49 @@
     "return": "ClonedUserEntityListing",
     "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.OrganizationAuthorizationApi();\n\nlet trustorOrgId = \"trustorOrgId_example\"; // String | Trustor Organization Id\n\n// The list of cloned users in the trustor organization (i.e. users with a native user record).\napiInstance.getOrgauthorizationTrustorClonedusers(trustorOrgId)\n  .then((data) => {\n    console.log(`getOrgauthorizationTrustorClonedusers success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getOrgauthorizationTrustorClonedusers\");\n    console.error(err);\n  });"
   },
+  "getorgauthorizationtrustorgroup": {
+    "operationId": "getorgauthorizationtrustorgroup",
+    "functionName": "getOrgauthorizationTrustorGroup",
+    "signature": "getOrgauthorizationTrustorGroup(trustorOrgId, trustorGroupId)",
+    "parameters": [
+      {
+        "name": "trustorOrgId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "trustorGroupId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "return": "TrustGroup",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.OrganizationAuthorizationApi();\n\nlet trustorOrgId = \"trustorOrgId_example\"; // String | Trustor Organization Id\nlet trustorGroupId = \"trustorGroupId_example\"; // String | Trustor Group Id\n\n// Get Trustee Group\napiInstance.getOrgauthorizationTrustorGroup(trustorOrgId, trustorGroupId)\n  .then((data) => {\n    console.log(`getOrgauthorizationTrustorGroup success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getOrgauthorizationTrustorGroup\");\n    console.error(err);\n  });"
+  },
+  "getorgauthorizationtrustorgroups": {
+    "operationId": "getorgauthorizationtrustorgroups",
+    "functionName": "getOrgauthorizationTrustorGroups",
+    "signature": "getOrgauthorizationTrustorGroups(trustorOrgId, pageSize, pageNumber)",
+    "parameters": [
+      {
+        "name": "trustorOrgId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "pageSize",
+        "type": "Number",
+        "required": "false"
+      },
+      {
+        "name": "pageNumber",
+        "type": "Number",
+        "required": "false"
+      }
+    ],
+    "return": "TrustGroupEntityListing",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.OrganizationAuthorizationApi();\n\nlet trustorOrgId = \"trustorOrgId_example\"; // String | Trustee Organization Id\nlet opts = { \n  \"pageSize\": 25, // Number | Page size\n  \"pageNumber\": 1 // Number | Page number\n};\n\n// The list of groups in the trustor organization (i.e. groups granted access).\napiInstance.getOrgauthorizationTrustorGroups(trustorOrgId, opts)\n  .then((data) => {\n    console.log(`getOrgauthorizationTrustorGroups success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getOrgauthorizationTrustorGroups\");\n    console.error(err);\n  });"
+  },
   "getorgauthorizationtrustoruser": {
     "operationId": "getorgauthorizationtrustoruser",
     "functionName": "getOrgauthorizationTrustorUser",
@@ -19003,6 +19181,25 @@
     ],
     "return": "TrustRequest",
     "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.OrganizationAuthorizationApi();\n\nlet body = {}; // Object | Pairing Info\n\n// A pairing id is created by the trustee and given to the trustor to create a trust.\napiInstance.postOrgauthorizationPairings(body)\n  .then((data) => {\n    console.log(`postOrgauthorizationPairings success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling postOrgauthorizationPairings\");\n    console.error(err);\n  });"
+  },
+  "postorgauthorizationtrusteegroups": {
+    "operationId": "postorgauthorizationtrusteegroups",
+    "functionName": "postOrgauthorizationTrusteeGroups",
+    "signature": "postOrgauthorizationTrusteeGroups(trusteeOrgId, body)",
+    "parameters": [
+      {
+        "name": "trusteeOrgId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "Object",
+        "required": "true"
+      }
+    ],
+    "return": "TrustGroup",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.OrganizationAuthorizationApi();\n\nlet trusteeOrgId = \"trusteeOrgId_example\"; // String | Trustee Organization Id\nlet body = {}; // Object | Trust\n\n// Add a group to the trust.\napiInstance.postOrgauthorizationTrusteeGroups(trusteeOrgId, body)\n  .then((data) => {\n    console.log(`postOrgauthorizationTrusteeGroups success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling postOrgauthorizationTrusteeGroups\");\n    console.error(err);\n  });"
   },
   "postorgauthorizationtrusteeusers": {
     "operationId": "postorgauthorizationtrusteeusers",
@@ -19143,6 +19340,54 @@
     "return": "Trustee",
     "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.OrganizationAuthorizationApi();\n\nlet trusteeOrgId = \"trusteeOrgId_example\"; // String | Trustee Organization Id\nlet body = {}; // Object | Client\n\n// Update Org Trust\napiInstance.putOrgauthorizationTrustee(trusteeOrgId, body)\n  .then((data) => {\n    console.log(`putOrgauthorizationTrustee success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling putOrgauthorizationTrustee\");\n    console.error(err);\n  });"
   },
+  "putorgauthorizationtrusteegrouproledivisions": {
+    "operationId": "putorgauthorizationtrusteegrouproledivisions",
+    "functionName": "putOrgauthorizationTrusteeGroupRoledivisions",
+    "signature": "putOrgauthorizationTrusteeGroupRoledivisions(trusteeOrgId, trusteeGroupId, body)",
+    "parameters": [
+      {
+        "name": "trusteeOrgId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "trusteeGroupId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "Object",
+        "required": "true"
+      }
+    ],
+    "return": "UserAuthorization",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.OrganizationAuthorizationApi();\n\nlet trusteeOrgId = \"trusteeOrgId_example\"; // String | Trustee Organization Id\nlet trusteeGroupId = \"trusteeGroupId_example\"; // String | Trustee Group Id\nlet body = {}; // Object | Set of roles with corresponding divisions to apply\n\n// Update Trustee Group Roles\napiInstance.putOrgauthorizationTrusteeGroupRoledivisions(trusteeOrgId, trusteeGroupId, body)\n  .then((data) => {\n    console.log(`putOrgauthorizationTrusteeGroupRoledivisions success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling putOrgauthorizationTrusteeGroupRoledivisions\");\n    console.error(err);\n  });"
+  },
+  "putorgauthorizationtrusteegrouproles": {
+    "operationId": "putorgauthorizationtrusteegrouproles",
+    "functionName": "putOrgauthorizationTrusteeGroupRoles",
+    "signature": "putOrgauthorizationTrusteeGroupRoles(trusteeOrgId, trusteeGroupId, body)",
+    "parameters": [
+      {
+        "name": "trusteeOrgId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "trusteeGroupId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "[String]",
+        "required": "true"
+      }
+    ],
+    "return": "UserAuthorization",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.OrganizationAuthorizationApi();\n\nlet trusteeOrgId = \"trusteeOrgId_example\"; // String | Trustee Organization Id\nlet trusteeGroupId = \"trusteeGroupId_example\"; // String | Trustee Group Id\nlet body = [\"body_example\"]; // [String] | List of roles\n\n// Update Trustee Group Roles\napiInstance.putOrgauthorizationTrusteeGroupRoles(trusteeOrgId, trusteeGroupId, body)\n  .then((data) => {\n    console.log(`putOrgauthorizationTrusteeGroupRoles success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling putOrgauthorizationTrusteeGroupRoles\");\n    console.error(err);\n  });"
+  },
   "putorgauthorizationtrusteeuserroledivisions": {
     "operationId": "putorgauthorizationtrusteeuserroledivisions",
     "functionName": "putOrgauthorizationTrusteeUserRoledivisions",
@@ -19209,6 +19454,25 @@
     ],
     "return": "ClonedUser",
     "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.OrganizationAuthorizationApi();\n\nlet trustorOrgId = \"trustorOrgId_example\"; // String | Trustor Organization Id\nlet trusteeUserId = \"trusteeUserId_example\"; // String | Trustee User Id\n\n// Creates a clone of the trustee user in the trustor org.\napiInstance.putOrgauthorizationTrustorCloneduser(trustorOrgId, trusteeUserId)\n  .then((data) => {\n    console.log(`putOrgauthorizationTrustorCloneduser success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling putOrgauthorizationTrustorCloneduser\");\n    console.error(err);\n  });"
+  },
+  "putorgauthorizationtrustorgroup": {
+    "operationId": "putorgauthorizationtrustorgroup",
+    "functionName": "putOrgauthorizationTrustorGroup",
+    "signature": "putOrgauthorizationTrustorGroup(trustorOrgId, trustorGroupId)",
+    "parameters": [
+      {
+        "name": "trustorOrgId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "trustorGroupId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "return": "TrustGroup",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.OrganizationAuthorizationApi();\n\nlet trustorOrgId = \"trustorOrgId_example\"; // String | Trustor Organization Id\nlet trustorGroupId = \"trustorGroupId_example\"; // String | Trustor Group Id\n\n// Add a Trustee Group to the trust.\napiInstance.putOrgauthorizationTrustorGroup(trustorOrgId, trustorGroupId)\n  .then((data) => {\n    console.log(`putOrgauthorizationTrustorGroup success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling putOrgauthorizationTrustorGroup\");\n    console.error(err);\n  });"
   },
   "putorgauthorizationtrustoruser": {
     "operationId": "putorgauthorizationtrustoruser",
@@ -34222,6 +34486,25 @@
     ],
     "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.WebDeploymentsApi();\n\nlet deploymentId = \"deploymentId_example\"; // String | The deployment ID\n\n// Delete a deployment\napiInstance.deleteWebdeploymentsDeployment(deploymentId)\n  .then(() => {\n    console.log(\"deleteWebdeploymentsDeployment returned successfully.\");\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling deleteWebdeploymentsDeployment\");\n    console.error(err);\n  });"
   },
+  "deletewebdeploymentsdeploymentcobrowsesessionid": {
+    "operationId": "deletewebdeploymentsdeploymentcobrowsesessionid",
+    "functionName": "deleteWebdeploymentsDeploymentCobrowseSessionId",
+    "signature": "deleteWebdeploymentsDeploymentCobrowseSessionId(deploymentId, sessionId)",
+    "parameters": [
+      {
+        "name": "deploymentId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "sessionId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "return": "Object",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\nlet apiInstance = new platformClient.WebDeploymentsApi();\n\nlet deploymentId = \"deploymentId_example\"; // String | WebMessaging deployment ID\nlet sessionId = \"sessionId_example\"; // String | Cobrowse session id or join code\n\n// Deletes a cobrowse session\napiInstance.deleteWebdeploymentsDeploymentCobrowseSessionId(deploymentId, sessionId)\n  .then((data) => {\n    console.log(`deleteWebdeploymentsDeploymentCobrowseSessionId success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling deleteWebdeploymentsDeploymentCobrowseSessionId\");\n    console.error(err);\n  });"
+  },
   "deletewebdeploymentstokenrevoke": {
     "operationId": "deletewebdeploymentstokenrevoke",
     "functionName": "deleteWebdeploymentsTokenRevoke",
@@ -34314,6 +34597,25 @@
     ],
     "return": "WebDeployment",
     "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.WebDeploymentsApi();\n\nlet deploymentId = \"deploymentId_example\"; // String | The deployment ID\n\n// Get a deployment\napiInstance.getWebdeploymentsDeployment(deploymentId)\n  .then((data) => {\n    console.log(`getWebdeploymentsDeployment success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getWebdeploymentsDeployment\");\n    console.error(err);\n  });"
+  },
+  "getwebdeploymentsdeploymentcobrowsesessionid": {
+    "operationId": "getwebdeploymentsdeploymentcobrowsesessionid",
+    "functionName": "getWebdeploymentsDeploymentCobrowseSessionId",
+    "signature": "getWebdeploymentsDeploymentCobrowseSessionId(deploymentId, sessionId)",
+    "parameters": [
+      {
+        "name": "deploymentId",
+        "type": "String",
+        "required": "true"
+      },
+      {
+        "name": "sessionId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "return": "CobrowseWebMessagingSession",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\nlet apiInstance = new platformClient.WebDeploymentsApi();\n\nlet deploymentId = \"deploymentId_example\"; // String | WebMessaging deployment ID\nlet sessionId = \"sessionId_example\"; // String | Cobrowse session id or join code\n\n// Retrieves a cobrowse session\napiInstance.getWebdeploymentsDeploymentCobrowseSessionId(deploymentId, sessionId)\n  .then((data) => {\n    console.log(`getWebdeploymentsDeploymentCobrowseSessionId success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getWebdeploymentsDeploymentCobrowseSessionId\");\n    console.error(err);\n  });"
   },
   "getwebdeploymentsdeploymentconfigurations": {
     "operationId": "getwebdeploymentsdeploymentconfigurations",

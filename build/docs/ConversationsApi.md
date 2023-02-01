@@ -123,6 +123,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postAnalyticsConversationsDetailsJobs**](ConversationsApi.html#postAnalyticsConversationsDetailsJobs) | **POST** /api/v2/analytics/conversations/details/jobs | Query for conversation details asynchronously
 [**postAnalyticsConversationsDetailsQuery**](ConversationsApi.html#postAnalyticsConversationsDetailsQuery) | **POST** /api/v2/analytics/conversations/details/query | Query for conversation details
 [**postConversationAssign**](ConversationsApi.html#postConversationAssign) | **POST** /api/v2/conversations/{conversationId}/assign | Attempts to manually assign a specified conversation to a specified user.  Ignores bullseye ring, PAR score, skills, and languages.
+[**postConversationCobrowse**](ConversationsApi.html#postConversationCobrowse) | **POST** /api/v2/conversations/{conversationId}/cobrowse | Creates a cobrowse session
 [**postConversationDisconnect**](ConversationsApi.html#postConversationDisconnect) | **POST** /api/v2/conversations/{conversationId}/disconnect | Performs a full conversation teardown. Issues disconnect requests for any connected media. Applies a system wrap-up code to any participants that are pending wrap-up. This is not intended to be the normal way of ending interactions but is available in the event of problems with the application to allow a resynchronization of state across all components. It is recommended that users submit a support case if they are relying on this endpoint systematically as there is likely something that needs investigation.
 [**postConversationParticipantCallbacks**](ConversationsApi.html#postConversationParticipantCallbacks) | **POST** /api/v2/conversations/{conversationId}/participants/{participantId}/callbacks | Create a new callback for the specified participant on the conversation.
 [**postConversationParticipantDigits**](ConversationsApi.html#postConversationParticipantDigits) | **POST** /api/v2/conversations/{conversationId}/participants/{participantId}/digits | Sends DTMF to the participant
@@ -6198,6 +6199,56 @@ apiInstance.postConversationAssign(conversationId, body)
 
 **&#39;String&#39;**
 
+<a name="postConversationCobrowse"></a>
+
+# CobrowseWebMessagingSession postConversationCobrowse(conversationId)
+
+
+POST /api/v2/conversations/{conversationId}/cobrowse
+
+Creates a cobrowse session
+
+Requires ANY permissions:
+
+* conversation:cobrowse:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let conversationId = "conversationId_example"; // String | Conversation ID
+
+apiInstance.postConversationCobrowse(conversationId)
+  .then((data) => {
+    console.log(`postConversationCobrowse success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postConversationCobrowse');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | Conversation ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+**CobrowseWebMessagingSession**
+
 <a name="postConversationDisconnect"></a>
 
 # **&#39;String&#39;** postConversationDisconnect(conversationId)
@@ -7334,7 +7385,7 @@ apiInstance.postConversationsEmailInboundmessages(conversationId, body)
 
 <a name="postConversationsEmailMessages"></a>
 
-# EmailMessage postConversationsEmailMessages(conversationId, body)
+# EmailMessageReply postConversationsEmailMessages(conversationId, body)
 
 
 POST /api/v2/conversations/emails/{conversationId}/messages
@@ -7380,7 +7431,7 @@ apiInstance.postConversationsEmailMessages(conversationId, body)
 
 ### Return type
 
-**EmailMessage**
+**EmailMessageReply**
 
 <a name="postConversationsEmailMessagesDraftAttachmentsCopy"></a>
 

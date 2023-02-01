@@ -234,7 +234,7 @@ let opts = {
   'sortOrder': "Desc", // String | Specifies result set sort order; if not specified, default sort order is descending (Desc)
   'sortBy': "sortBy_example", // String | Specifies which field to sort the results by, default sort is by recommendedCompletionDate
   'userId': ["userId_example"], // [String] | Specifies the list of user IDs to be queried, up to 100 user IDs.
-  'types': ["types_example"], // [String] | Specifies the assignment types, currently not supported and will be ignored. For now, all learning assignments regardless of types will be returned
+  'types': ["types_example"], // [String] | Specifies the module types to filter by
   'states': ["states_example"], // [String] | Specifies the assignment states to filter by
   'expand': ["expand_example"] // [String] | Specifies the expand option for returning additional information
 };
@@ -266,7 +266,7 @@ apiInstance.getLearningAssignments(opts)
  **sortOrder** | **String** | Specifies result set sort order; if not specified, default sort order is descending (Desc) | [optional] [default to Desc]<br />**Values**: Asc, Desc |
  **sortBy** | **String** | Specifies which field to sort the results by, default sort is by recommendedCompletionDate | [optional] <br />**Values**: RecommendedCompletionDate, DateModified |
  **userId** | **[String]** | Specifies the list of user IDs to be queried, up to 100 user IDs. | [optional]  |
- **types** | **[String]** | Specifies the assignment types, currently not supported and will be ignored. For now, all learning assignments regardless of types will be returned | [optional] <br />**Values**: Informational, AssessedContent, Assessment |
+ **types** | **[String]** | Specifies the module types to filter by | [optional] <br />**Values**: Informational, AssessedContent, Assessment |
  **states** | **[String]** | Specifies the assignment states to filter by | [optional] <br />**Values**: Assigned, InProgress, Completed, NotCompleted |
  **expand** | **[String]** | Specifies the expand option for returning additional information | [optional] <br />**Values**: ModuleSummary |
 {: class="table table-striped"}
@@ -311,7 +311,7 @@ let opts = {
   'maxPercentageScore': 3.4, // Number | The maximum assessment score for an assignment (completed with assessment) to be included in the results (inclusive)
   'sortOrder': "Desc", // String | Specifies result set sort order; if not specified, default sort order is descending (Desc)
   'sortBy': "sortBy_example", // String | Specifies which field to sort the results by, default sort is by recommendedCompletionDate
-  'types': ["types_example"], // [String] | Specifies the assignment types, currently not supported and will be ignored. For now, all learning assignments regardless of types will be returned
+  'types': ["types_example"], // [String] | Specifies the module types to filter by
   'states': ["states_example"], // [String] | Specifies the assignment states to filter by
   'expand': ["expand_example"] // [String] | Specifies the expand option for returning additional information
 };
@@ -342,7 +342,7 @@ apiInstance.getLearningAssignmentsMe(opts)
  **maxPercentageScore** | **Number** | The maximum assessment score for an assignment (completed with assessment) to be included in the results (inclusive) | [optional]  |
  **sortOrder** | **String** | Specifies result set sort order; if not specified, default sort order is descending (Desc) | [optional] [default to Desc]<br />**Values**: Asc, Desc |
  **sortBy** | **String** | Specifies which field to sort the results by, default sort is by recommendedCompletionDate | [optional] <br />**Values**: RecommendedCompletionDate, DateModified |
- **types** | **[String]** | Specifies the assignment types, currently not supported and will be ignored. For now, all learning assignments regardless of types will be returned | [optional] <br />**Values**: Informational, AssessedContent, Assessment |
+ **types** | **[String]** | Specifies the module types to filter by | [optional] <br />**Values**: Informational, AssessedContent, Assessment |
  **states** | **[String]** | Specifies the assignment states to filter by | [optional] <br />**Values**: Assigned, InProgress, Completed, NotCompleted |
  **expand** | **[String]** | Specifies the expand option for returning additional information | [optional] <br />**Values**: ModuleSummary |
 {: class="table table-striped"}
