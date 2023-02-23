@@ -537,6 +537,8 @@ Get an evaluation
 Requires ANY permissions:
 
 * quality:evaluation:view
+* quality:evaluation:assign
+* quality:evaluation:release
 
 ### Example Usage
 
@@ -554,7 +556,7 @@ let apiInstance = new platformClient.QualityApi();
 let conversationId = "conversationId_example"; // String | conversationId
 let evaluationId = "evaluationId_example"; // String | evaluationId
 let opts = { 
-  'expand': "expand_example" // String | agent, evaluator, evaluationForm
+  'expand': "expand_example" // String | agent, assignee, evaluator, evaluationForm
 };
 
 apiInstance.getQualityConversationEvaluation(conversationId, evaluationId, opts)
@@ -574,7 +576,7 @@ apiInstance.getQualityConversationEvaluation(conversationId, evaluationId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
  **evaluationId** | **String** | evaluationId |  |
- **expand** | **String** | agent, evaluator, evaluationForm | [optional]  |
+ **expand** | **String** | agent, assignee, evaluator, evaluationForm | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -748,7 +750,7 @@ GET /api/v2/quality/evaluations/query
 
 Queries Evaluations and returns a paged list
 
-Query params must include one of conversationId, evaluatorUserId, or agentUserId. When querying by agentUserId (and not conversationId or evaluatorUserId), the results are sorted by release date. Evaluations set to Never Release are omitted in this case. When querying by evaluatorUserId or conversationId (including when combined with agentUserId), the results are sorted by assigned date.
+Query params must include one of conversationId, evaluatorUserId, agentUserId or assigneeUserId. When querying by agentUserId (and not conversationId or evaluatorUserId), the results are sorted by release date. Evaluations set to Never Release are omitted in this case. When querying by evaluatorUserId or conversationId (including when combined with agentUserId), the results are sorted by assigned date.
 
 Requires ANY permissions:
 
@@ -777,6 +779,7 @@ let opts = {
   'conversationId': "conversationId_example", // String | conversationId specified
   'agentUserId': "agentUserId_example", // String | user id of the agent
   'evaluatorUserId': "evaluatorUserId_example", // String | evaluator user id
+  'assigneeUserId': "assigneeUserId_example", // String | assignee user id
   'queueId': "queueId_example", // String | queue id
   'startTime': "startTime_example", // String | start time of the evaluation query
   'endTime': "endTime_example", // String | end time of the evaluation query
@@ -812,6 +815,7 @@ apiInstance.getQualityEvaluationsQuery(opts)
  **conversationId** | **String** | conversationId specified | [optional]  |
  **agentUserId** | **String** | user id of the agent | [optional]  |
  **evaluatorUserId** | **String** | evaluator user id | [optional]  |
+ **assigneeUserId** | **String** | assignee user id | [optional]  |
  **queueId** | **String** | queue id | [optional]  |
  **startTime** | **String** | start time of the evaluation query | [optional]  |
  **endTime** | **String** | end time of the evaluation query | [optional]  |

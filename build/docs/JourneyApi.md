@@ -10,6 +10,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**deleteJourneyActionmap**](JourneyApi.html#deleteJourneyActionmap) | **DELETE** /api/v2/journey/actionmaps/{actionMapId} | Delete single action map.
 [**deleteJourneyActiontemplate**](JourneyApi.html#deleteJourneyActiontemplate) | **DELETE** /api/v2/journey/actiontemplates/{actionTemplateId} | Delete a single action template.
 [**deleteJourneyOutcome**](JourneyApi.html#deleteJourneyOutcome) | **DELETE** /api/v2/journey/outcomes/{outcomeId} | Delete an outcome.
+[**deleteJourneyOutcomesPredictor**](JourneyApi.html#deleteJourneyOutcomesPredictor) | **DELETE** /api/v2/journey/outcomes/predictors/{predictorId} | Delete an outcome predictor.
 [**deleteJourneySegment**](JourneyApi.html#deleteJourneySegment) | **DELETE** /api/v2/journey/segments/{segmentId} | Delete a segment.
 [**getJourneyActionmap**](JourneyApi.html#getJourneyActionmap) | **GET** /api/v2/journey/actionmaps/{actionMapId} | Retrieve a single action map.
 [**getJourneyActionmaps**](JourneyApi.html#getJourneyActionmaps) | **GET** /api/v2/journey/actionmaps | Retrieve all action maps.
@@ -21,6 +22,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getJourneyActiontemplates**](JourneyApi.html#getJourneyActiontemplates) | **GET** /api/v2/journey/actiontemplates | Retrieve all action templates.
 [**getJourneyOutcome**](JourneyApi.html#getJourneyOutcome) | **GET** /api/v2/journey/outcomes/{outcomeId} | Retrieve a single outcome.
 [**getJourneyOutcomes**](JourneyApi.html#getJourneyOutcomes) | **GET** /api/v2/journey/outcomes | Retrieve all outcomes.
+[**getJourneyOutcomesPredictor**](JourneyApi.html#getJourneyOutcomesPredictor) | **GET** /api/v2/journey/outcomes/predictors/{predictorId} | Retrieve a single outcome predictor.
+[**getJourneyOutcomesPredictors**](JourneyApi.html#getJourneyOutcomesPredictors) | **GET** /api/v2/journey/outcomes/predictors | Retrieve all outcome predictors.
 [**getJourneySegment**](JourneyApi.html#getJourneySegment) | **GET** /api/v2/journey/segments/{segmentId} | Retrieve a single segment.
 [**getJourneySegments**](JourneyApi.html#getJourneySegments) | **GET** /api/v2/journey/segments | Retrieve all segments.
 [**getJourneySession**](JourneyApi.html#getJourneySession) | **GET** /api/v2/journey/sessions/{sessionId} | Retrieve a single session.
@@ -35,6 +38,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postJourneyActionmapsEstimatesJobs**](JourneyApi.html#postJourneyActionmapsEstimatesJobs) | **POST** /api/v2/journey/actionmaps/estimates/jobs | Query for estimates
 [**postJourneyActiontemplates**](JourneyApi.html#postJourneyActiontemplates) | **POST** /api/v2/journey/actiontemplates | Create a single action template.
 [**postJourneyOutcomes**](JourneyApi.html#postJourneyOutcomes) | **POST** /api/v2/journey/outcomes | Create an outcome.
+[**postJourneyOutcomesPredictors**](JourneyApi.html#postJourneyOutcomesPredictors) | **POST** /api/v2/journey/outcomes/predictors | Create an outcome predictor.
 [**postJourneySegments**](JourneyApi.html#postJourneySegments) | **POST** /api/v2/journey/segments | Create a segment.
 {: class="table table-striped"}
 
@@ -186,6 +190,56 @@ apiInstance.deleteJourneyOutcome(outcomeId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **outcomeId** | **String** | ID of the outcome. |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
+
+<a name="deleteJourneyOutcomesPredictor"></a>
+
+# void deleteJourneyOutcomesPredictor(predictorId)
+
+
+DELETE /api/v2/journey/outcomes/predictors/{predictorId}
+
+Delete an outcome predictor.
+
+Requires ANY permissions:
+
+* journey:outcomepredictor:delete
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.JourneyApi();
+
+let predictorId = "predictorId_example"; // String | ID of predictor
+
+apiInstance.deleteJourneyOutcomesPredictor(predictorId)
+  .then(() => {
+    console.log('deleteJourneyOutcomesPredictor returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteJourneyOutcomesPredictor');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **predictorId** | **String** | ID of predictor |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -787,6 +841,101 @@ apiInstance.getJourneyOutcomes(opts)
 ### Return type
 
 **OutcomeListing**
+
+<a name="getJourneyOutcomesPredictor"></a>
+
+# OutcomePredictor getJourneyOutcomesPredictor(predictorId)
+
+
+GET /api/v2/journey/outcomes/predictors/{predictorId}
+
+Retrieve a single outcome predictor.
+
+Requires ANY permissions:
+
+* journey:outcomepredictor:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.JourneyApi();
+
+let predictorId = "predictorId_example"; // String | ID of predictor
+
+apiInstance.getJourneyOutcomesPredictor(predictorId)
+  .then((data) => {
+    console.log(`getJourneyOutcomesPredictor success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getJourneyOutcomesPredictor');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **predictorId** | **String** | ID of predictor |  |
+{: class="table table-striped"}
+
+### Return type
+
+**OutcomePredictor**
+
+<a name="getJourneyOutcomesPredictors"></a>
+
+# OutcomePredictorListing getJourneyOutcomesPredictors()
+
+
+GET /api/v2/journey/outcomes/predictors
+
+Retrieve all outcome predictors.
+
+Requires ANY permissions:
+
+* journey:outcomepredictor:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.JourneyApi();
+
+apiInstance.getJourneyOutcomesPredictors()
+  .then((data) => {
+    console.log(`getJourneyOutcomesPredictors success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getJourneyOutcomesPredictors');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+
+### Return type
+
+**OutcomePredictorListing**
 
 <a name="getJourneySegment"></a>
 
@@ -1528,6 +1677,58 @@ apiInstance.postJourneyOutcomes(opts)
 ### Return type
 
 **Outcome**
+
+<a name="postJourneyOutcomesPredictors"></a>
+
+# OutcomePredictor postJourneyOutcomesPredictors(opts)
+
+
+POST /api/v2/journey/outcomes/predictors
+
+Create an outcome predictor.
+
+Requires ANY permissions:
+
+* journey:outcomepredictor:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.JourneyApi();
+
+let opts = { 
+  'body': {} // Object | 
+};
+
+apiInstance.postJourneyOutcomesPredictors(opts)
+  .then((data) => {
+    console.log(`postJourneyOutcomesPredictors success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postJourneyOutcomesPredictors');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** |  | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**OutcomePredictor**
 
 <a name="postJourneySegments"></a>
 

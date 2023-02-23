@@ -5,7 +5,7 @@ class ConversationsApi {
 	/**
 	 * Conversations service.
 	 * @module purecloud-platform-client-v2/api/ConversationsApi
-	 * @version 158.0.0
+	 * @version 159.0.0
 	 */
 
 	/**
@@ -3393,7 +3393,7 @@ class ConversationsApi {
 	}
 
 	/**
-	 * Creates a cobrowse session
+	 * Creates a cobrowse session. Requires conversation:cobrowse:add (for web messaging) or conversation:cobrowsevoice:add permission.
 	 * 
 	 * @param {String} conversationId Conversation ID
 	 */

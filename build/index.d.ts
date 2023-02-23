@@ -2055,6 +2055,7 @@ declare class JourneyApi {
   	deleteJourneyActionmap(actionMapId: string): Promise<void>; 
   	deleteJourneyActiontemplate(actionTemplateId: string, opts?: JourneyApi.deleteJourneyActiontemplateOptions): Promise<void>; 
   	deleteJourneyOutcome(outcomeId: string): Promise<void>; 
+  	deleteJourneyOutcomesPredictor(predictorId: string): Promise<void>; 
   	deleteJourneySegment(segmentId: string): Promise<void>; 
   	getJourneyActionmap(actionMapId: string): Promise<Models.ActionMap>; 
   	getJourneyActionmaps(opts?: JourneyApi.getJourneyActionmapsOptions): Promise<Models.ActionMapListing>; 
@@ -2066,6 +2067,8 @@ declare class JourneyApi {
   	getJourneyActiontemplates(opts?: JourneyApi.getJourneyActiontemplatesOptions): Promise<Models.ActionTemplateListing>; 
   	getJourneyOutcome(outcomeId: string): Promise<Models.Outcome>; 
   	getJourneyOutcomes(opts?: JourneyApi.getJourneyOutcomesOptions): Promise<Models.OutcomeListing>; 
+  	getJourneyOutcomesPredictor(predictorId: string): Promise<Models.OutcomePredictor>; 
+  	getJourneyOutcomesPredictors(): Promise<Models.OutcomePredictorListing>; 
   	getJourneySegment(segmentId: string): Promise<Models.JourneySegment>; 
   	getJourneySegments(opts?: JourneyApi.getJourneySegmentsOptions): Promise<Models.SegmentListing>; 
   	getJourneySession(sessionId: string): Promise<Models.Session>; 
@@ -2080,6 +2083,7 @@ declare class JourneyApi {
   	postJourneyActionmapsEstimatesJobs(body: Models.ActionMapEstimateRequest): Promise<Models.EstimateJobAsyncResponse>; 
   	postJourneyActiontemplates(opts?: JourneyApi.postJourneyActiontemplatesOptions): Promise<Models.ActionTemplate>; 
   	postJourneyOutcomes(opts?: JourneyApi.postJourneyOutcomesOptions): Promise<Models.Outcome>; 
+  	postJourneyOutcomesPredictors(opts?: JourneyApi.postJourneyOutcomesPredictorsOptions): Promise<Models.OutcomePredictor>; 
   	postJourneySegments(opts?: JourneyApi.postJourneySegmentsOptions): Promise<Models.JourneySegment>;
 }
 
@@ -2150,6 +2154,9 @@ declare namespace JourneyApi {
 	}
 	export interface postJourneyOutcomesOptions { 
 		"body"?: Models.Outcome;
+	}
+	export interface postJourneyOutcomesPredictorsOptions { 
+		"body"?: Models.OutcomePredictorRequest;
 	}
 	export interface postJourneySegmentsOptions { 
 		"body"?: Models.JourneySegment;
@@ -2245,7 +2252,6 @@ declare namespace KnowledgeApi {
 	}
 	export interface getKnowledgeGuestSessionDocumentsOptions { 
 		"categoryId"?: Array<string>;
-		"includeSubcategories"?: boolean;
 		"pageSize"?: number;
 	}
 	export interface getKnowledgeKnowledgebaseCategoriesOptions { 
@@ -3441,6 +3447,7 @@ declare namespace QualityApi {
 		"conversationId"?: string;
 		"agentUserId"?: string;
 		"evaluatorUserId"?: string;
+		"assigneeUserId"?: string;
 		"queueId"?: string;
 		"startTime"?: string;
 		"endTime"?: string;
@@ -4699,6 +4706,7 @@ declare namespace TelephonyProvidersEdgeApi {
 		"edgeGroupId"?: string;
 		"sortBy"?: string;
 		"managed"?: boolean;
+		"showCloudMedia"?: boolean;
 	}
 	export interface getTelephonyProvidersEdgesDidpoolsOptions { 
 		"pageSize"?: number;
@@ -9022,6 +9030,7 @@ declare namespace Models {
 		"name"?: string;
 		"participants"?: Array<Models.CallMediaParticipant>;
 		"otherMediaUris"?: Array<string>;
+		"recentTransfers"?: Array<Models.TransferResponse>;
 		"recordingState"?: string;
 		"maxParticipants"?: number;
 		"selfUri"?: string;
@@ -9319,6 +9328,7 @@ declare namespace Models {
 		"name"?: string;
 		"participants"?: Array<Models.CallbackMediaParticipant>;
 		"otherMediaUris"?: Array<string>;
+		"recentTransfers"?: Array<Models.TransferResponse>;
 		"selfUri"?: string;
 	}
 	
@@ -9776,6 +9786,7 @@ declare namespace Models {
 		"name"?: string;
 		"participants"?: Array<Models.ChatMediaParticipant>;
 		"otherMediaUris"?: Array<string>;
+		"recentTransfers"?: Array<Models.TransferResponse>;
 		"selfUri"?: string;
 	}
 	
@@ -10081,6 +10092,7 @@ declare namespace Models {
 		"name"?: string;
 		"participants"?: Array<Models.CobrowseMediaParticipant>;
 		"otherMediaUris"?: Array<string>;
+		"recentTransfers"?: Array<Models.TransferResponse>;
 		"selfUri"?: string;
 	}
 	
@@ -10948,6 +10960,7 @@ declare namespace Models {
 		"recordingState"?: string;
 		"state"?: string;
 		"divisions"?: Array<Models.ConversationDivisionMembership>;
+		"recentTransfers"?: Array<Models.TransferResponse>;
 		"selfUri"?: string;
 	}
 	
@@ -16493,6 +16506,7 @@ declare namespace Models {
 		"name"?: string;
 		"participants"?: Array<Models.EmailMediaParticipant>;
 		"otherMediaUris"?: Array<string>;
+		"recentTransfers"?: Array<Models.TransferResponse>;
 		"selfUri"?: string;
 	}
 	
@@ -16582,6 +16596,7 @@ declare namespace Models {
 		"time"?: string;
 		"historyIncluded"?: boolean;
 		"state"?: string;
+		"draftType"?: string;
 		"emailSizeBytes"?: number;
 		"maxEmailSizeBytes"?: number;
 		"selfUri"?: string;
@@ -16823,6 +16838,7 @@ declare namespace Models {
 		"status"?: string;
 		"answers"?: Models.EvaluationScoringSet;
 		"agentHasRead"?: boolean;
+		"assignee"?: Models.User;
 		"releaseDate"?: string;
 		"assignedDate"?: string;
 		"changedDate"?: string;
@@ -16838,6 +16854,7 @@ declare namespace Models {
 		"isScoringIndex"?: boolean;
 		"authorizedActions"?: Array<string>;
 		"hasAssistanceFailed"?: boolean;
+		"evaluationSource"?: Models.EvaluationSource;
 		"selfUri"?: string;
 	}
 	
@@ -17079,6 +17096,7 @@ declare namespace Models {
 		"status"?: string;
 		"answers"?: Models.EvaluationScoringSet;
 		"agentHasRead"?: boolean;
+		"assignee"?: Models.User;
 		"releaseDate"?: string;
 		"assignedDate"?: string;
 		"changedDate"?: string;
@@ -17094,6 +17112,7 @@ declare namespace Models {
 		"isScoringIndex"?: boolean;
 		"authorizedActions"?: Array<string>;
 		"hasAssistanceFailed"?: boolean;
+		"evaluationSource"?: Models.EvaluationSource;
 		"selfUri"?: string;
 	}
 	
@@ -17104,8 +17123,16 @@ declare namespace Models {
 		"questionGroupScores"?: Array<Models.EvaluationQuestionGroupScore>;
 		"anyFailedKillQuestions"?: boolean;
 		"comments"?: string;
+		"privateComments"?: string;
 		"agentComments"?: string;
 		"transcriptTopics"?: Array<Models.TranscriptTopic>;
+	}
+	
+	export interface EvaluationSource { 
+		"id"?: string;
+		"name"?: string;
+		"type"?: string;
+		"selfUri"?: string;
 	}
 	
 	export interface EvaluatorActivity { 
@@ -19401,6 +19428,7 @@ declare namespace Models {
 		"spamFlow"?: Models.DomainEntityRef;
 		"signature"?: Models.Signature;
 		"historyInclusion"?: string;
+		"allowMultipleActions"?: boolean;
 		"selfUri"?: string;
 	}
 	
@@ -22445,6 +22473,7 @@ declare namespace Models {
 		"name"?: string;
 		"participants"?: Array<Models.MessageMediaParticipant>;
 		"otherMediaUris"?: Array<string>;
+		"recentTransfers"?: Array<Models.TransferResponse>;
 		"selfUri"?: string;
 	}
 	
@@ -24134,10 +24163,33 @@ declare namespace Models {
 		"pageCount"?: number;
 	}
 	
+	export interface OutcomePredictor { 
+		"id"?: string;
+		"outcome"?: Models.OutcomeRef;
+		"selfUri"?: string;
+	}
+	
+	export interface OutcomePredictorListing { 
+		"entities"?: Array<Models.OutcomePredictor>;
+	}
+	
+	export interface OutcomePredictorRequest { 
+		"outcome": Models.OutcomeRefRequest;
+	}
+	
 	export interface OutcomeProbabilityCondition { 
 		"outcomeId": string;
 		"maximumProbability": number;
 		"probability"?: number;
+	}
+	
+	export interface OutcomeRef { 
+		"id"?: string;
+		"selfUri"?: string;
+	}
+	
+	export interface OutcomeRefRequest { 
+		"id": string;
 	}
 	
 	export interface OutcomeScoresResult { 
@@ -30758,6 +30810,7 @@ declare namespace Models {
 		"webRtcPersistentEnabled"?: boolean;
 		"webRtcForceTurn"?: boolean;
 		"webRtcCallAppearances"?: number;
+		"webRtcRequireMediaHelper"?: boolean;
 		"selfUri"?: string;
 	}
 	
@@ -32043,12 +32096,31 @@ declare namespace Models {
 		"doesNotContain"?: Array<string>;
 	}
 	
+	export interface TransferDestination { 
+		"userId"?: string;
+		"address"?: string;
+	}
+	
+	export interface TransferInitiator { 
+		"userId"?: string;
+	}
+	
 	export interface TransferRequest { 
 		"userId"?: string;
 		"address"?: string;
 		"userName"?: string;
 		"queueId"?: string;
 		"voicemail"?: boolean;
+		"transferType"?: string;
+	}
+	
+	export interface TransferResponse { 
+		"id"?: string;
+		"state"?: string;
+		"dateIssued"?: string;
+		"initiator"?: Models.TransferInitiator;
+		"destination"?: Models.TransferDestination;
+		"transferType"?: string;
 	}
 	
 	export interface Trigger { 

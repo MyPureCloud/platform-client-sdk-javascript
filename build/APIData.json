@@ -7828,7 +7828,7 @@
       }
     ],
     "return": "CobrowseWebMessagingSession",
-    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.ConversationsApi();\n\nlet conversationId = \"conversationId_example\"; // String | Conversation ID\n\n// Creates a cobrowse session\napiInstance.postConversationCobrowse(conversationId)\n  .then((data) => {\n    console.log(`postConversationCobrowse success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling postConversationCobrowse\");\n    console.error(err);\n  });"
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.ConversationsApi();\n\nlet conversationId = \"conversationId_example\"; // String | Conversation ID\n\n// Creates a cobrowse session. Requires conversation:cobrowse:add (for web messaging) or conversation:cobrowsevoice:add permission.\napiInstance.postConversationCobrowse(conversationId)\n  .then((data) => {\n    console.log(`postConversationCobrowse success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling postConversationCobrowse\");\n    console.error(err);\n  });"
   },
   "postconversationdisconnect": {
     "operationId": "postconversationdisconnect",
@@ -13856,6 +13856,19 @@
     ],
     "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.JourneyApi();\n\nlet outcomeId = \"outcomeId_example\"; // String | ID of the outcome.\n\n// Delete an outcome.\napiInstance.deleteJourneyOutcome(outcomeId)\n  .then(() => {\n    console.log(\"deleteJourneyOutcome returned successfully.\");\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling deleteJourneyOutcome\");\n    console.error(err);\n  });"
   },
+  "deletejourneyoutcomespredictor": {
+    "operationId": "deletejourneyoutcomespredictor",
+    "functionName": "deleteJourneyOutcomesPredictor",
+    "signature": "deleteJourneyOutcomesPredictor(predictorId)",
+    "parameters": [
+      {
+        "name": "predictorId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.JourneyApi();\n\nlet predictorId = \"predictorId_example\"; // String | ID of predictor\n\n// Delete an outcome predictor.\napiInstance.deleteJourneyOutcomesPredictor(predictorId)\n  .then(() => {\n    console.log(\"deleteJourneyOutcomesPredictor returned successfully.\");\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling deleteJourneyOutcomesPredictor\");\n    console.error(err);\n  });"
+  },
   "deletejourneysegment": {
     "operationId": "deletejourneysegment",
     "functionName": "deleteJourneySegment",
@@ -14104,6 +14117,27 @@
     "return": "OutcomeListing",
     "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.JourneyApi();\n\nlet opts = { \n  \"pageNumber\": 1, // Number | Page number\n  \"pageSize\": 25, // Number | Page size\n  \"sortBy\": \"sortBy_example\", // String | Field(s) to sort by. The response can be sorted by any first level property on the Outcome response. Prefix with '-' for descending (e.g. sortBy=displayName,-createdDate).\n  \"outcomeIds\": [\"outcomeIds_example\"], // [String] | IDs of outcomes to return. Use of this parameter is not compatible with pagination, sorting or querying. A maximum of 20 outcomes are allowed per request.\n  \"queryFields\": [\"queryFields_example\"], // [String] | Outcome field(s) to query on. Requires 'queryValue' to also be set.\n  \"queryValue\": \"queryValue_example\" // String | Value to query on. Requires 'queryFields' to also be set.\n};\n\n// Retrieve all outcomes.\napiInstance.getJourneyOutcomes(opts)\n  .then((data) => {\n    console.log(`getJourneyOutcomes success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getJourneyOutcomes\");\n    console.error(err);\n  });"
   },
+  "getjourneyoutcomespredictor": {
+    "operationId": "getjourneyoutcomespredictor",
+    "functionName": "getJourneyOutcomesPredictor",
+    "signature": "getJourneyOutcomesPredictor(predictorId)",
+    "parameters": [
+      {
+        "name": "predictorId",
+        "type": "String",
+        "required": "true"
+      }
+    ],
+    "return": "OutcomePredictor",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.JourneyApi();\n\nlet predictorId = \"predictorId_example\"; // String | ID of predictor\n\n// Retrieve a single outcome predictor.\napiInstance.getJourneyOutcomesPredictor(predictorId)\n  .then((data) => {\n    console.log(`getJourneyOutcomesPredictor success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getJourneyOutcomesPredictor\");\n    console.error(err);\n  });"
+  },
+  "getjourneyoutcomespredictors": {
+    "operationId": "getjourneyoutcomespredictors",
+    "functionName": "getJourneyOutcomesPredictors",
+    "signature": "getJourneyOutcomesPredictors()",
+    "return": "OutcomePredictorListing",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.JourneyApi();\n\n// Retrieve all outcome predictors.\napiInstance.getJourneyOutcomesPredictors()\n  .then((data) => {\n    console.log(`getJourneyOutcomesPredictors success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getJourneyOutcomesPredictors\");\n    console.error(err);\n  });"
+  },
   "getjourneysegment": {
     "operationId": "getjourneysegment",
     "functionName": "getJourneySegment",
@@ -14340,6 +14374,20 @@
     ],
     "return": "Outcome",
     "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.JourneyApi();\n\nlet opts = { \n  \"body\": {} // Object | \n};\n\n// Create an outcome.\napiInstance.postJourneyOutcomes(opts)\n  .then((data) => {\n    console.log(`postJourneyOutcomes success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling postJourneyOutcomes\");\n    console.error(err);\n  });"
+  },
+  "postjourneyoutcomespredictors": {
+    "operationId": "postjourneyoutcomespredictors",
+    "functionName": "postJourneyOutcomesPredictors",
+    "signature": "postJourneyOutcomesPredictors(body)",
+    "parameters": [
+      {
+        "name": "body",
+        "type": "Object",
+        "required": "false"
+      }
+    ],
+    "return": "OutcomePredictor",
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.JourneyApi();\n\nlet opts = { \n  \"body\": {} // Object | \n};\n\n// Create an outcome predictor.\napiInstance.postJourneyOutcomesPredictors(opts)\n  .then((data) => {\n    console.log(`postJourneyOutcomesPredictors success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling postJourneyOutcomesPredictors\");\n    console.error(err);\n  });"
   },
   "postjourneysegments": {
     "operationId": "postjourneysegments",
@@ -14636,7 +14684,7 @@
   "getknowledgeguestsessiondocuments": {
     "operationId": "getknowledgeguestsessiondocuments",
     "functionName": "getKnowledgeGuestSessionDocuments",
-    "signature": "getKnowledgeGuestSessionDocuments(sessionId, categoryId, includeSubcategories, pageSize)",
+    "signature": "getKnowledgeGuestSessionDocuments(sessionId, categoryId, pageSize)",
     "parameters": [
       {
         "name": "sessionId",
@@ -14649,18 +14697,13 @@
         "required": "false"
       },
       {
-        "name": "includeSubcategories",
-        "type": "Boolean",
-        "required": "false"
-      },
-      {
         "name": "pageSize",
         "type": "Number",
         "required": "false"
       }
     ],
     "return": "KnowledgeGuestDocumentResponseListing",
-    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\nlet apiInstance = new platformClient.KnowledgeApi();\n\nlet sessionId = \"sessionId_example\"; // String | Knowledge guest session ID.\nlet opts = { \n  \"categoryId\": [\"categoryId_example\"], // [String] | If specified, retrieves documents associated with category ids, comma separated values expected.\n  \"includeSubcategories\": true, // Boolean | Deprecated - Do Not Use. Works along with 'categoryId' query parameter. If specified, retrieves documents associated with category ids and its children categories.\n  \"pageSize\": 10 // Number | Number of entities to return. Maximum of 200.\n};\n\n// Get documents.\napiInstance.getKnowledgeGuestSessionDocuments(sessionId, opts)\n  .then((data) => {\n    console.log(`getKnowledgeGuestSessionDocuments success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getKnowledgeGuestSessionDocuments\");\n    console.error(err);\n  });"
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\nlet apiInstance = new platformClient.KnowledgeApi();\n\nlet sessionId = \"sessionId_example\"; // String | Knowledge guest session ID.\nlet opts = { \n  \"categoryId\": [\"categoryId_example\"], // [String] | If specified, retrieves documents associated with category ids, comma separated values expected.\n  \"pageSize\": 10 // Number | Number of entities to return. Maximum of 200.\n};\n\n// Get documents.\napiInstance.getKnowledgeGuestSessionDocuments(sessionId, opts)\n  .then((data) => {\n    console.log(`getKnowledgeGuestSessionDocuments success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getKnowledgeGuestSessionDocuments\");\n    console.error(err);\n  });"
   },
   "getknowledgeknowledgebase": {
     "operationId": "getknowledgeknowledgebase",
@@ -22879,7 +22922,7 @@
       }
     ],
     "return": "EvaluationResponse",
-    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.QualityApi();\n\nlet conversationId = \"conversationId_example\"; // String | conversationId\nlet evaluationId = \"evaluationId_example\"; // String | evaluationId\nlet opts = { \n  \"expand\": \"expand_example\" // String | agent, evaluator, evaluationForm\n};\n\n// Get an evaluation\napiInstance.getQualityConversationEvaluation(conversationId, evaluationId, opts)\n  .then((data) => {\n    console.log(`getQualityConversationEvaluation success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getQualityConversationEvaluation\");\n    console.error(err);\n  });"
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.QualityApi();\n\nlet conversationId = \"conversationId_example\"; // String | conversationId\nlet evaluationId = \"evaluationId_example\"; // String | evaluationId\nlet opts = { \n  \"expand\": \"expand_example\" // String | agent, assignee, evaluator, evaluationForm\n};\n\n// Get an evaluation\napiInstance.getQualityConversationEvaluation(conversationId, evaluationId, opts)\n  .then((data) => {\n    console.log(`getQualityConversationEvaluation success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getQualityConversationEvaluation\");\n    console.error(err);\n  });"
   },
   "getqualityconversationsurveys": {
     "operationId": "getqualityconversationsurveys",
@@ -22941,7 +22984,7 @@
   "getqualityevaluationsquery": {
     "operationId": "getqualityevaluationsquery",
     "functionName": "getQualityEvaluationsQuery",
-    "signature": "getQualityEvaluationsQuery(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, conversationId, agentUserId, evaluatorUserId, queueId, startTime, endTime, evaluationState, isReleased, agentHasRead, expandAnswerTotalScores, maximum, sortOrder)",
+    "signature": "getQualityEvaluationsQuery(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, conversationId, agentUserId, evaluatorUserId, assigneeUserId, queueId, startTime, endTime, evaluationState, isReleased, agentHasRead, expandAnswerTotalScores, maximum, sortOrder)",
     "parameters": [
       {
         "name": "pageSize",
@@ -22985,6 +23028,11 @@
       },
       {
         "name": "evaluatorUserId",
+        "type": "String",
+        "required": "false"
+      },
+      {
+        "name": "assigneeUserId",
         "type": "String",
         "required": "false"
       },
@@ -23035,7 +23083,7 @@
       }
     ],
     "return": "EvaluationEntityListing",
-    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.QualityApi();\n\nlet opts = { \n  \"pageSize\": 25, // Number | The total page size requested\n  \"pageNumber\": 1, // Number | The page number requested\n  \"sortBy\": \"sortBy_example\", // String | variable name requested to sort by\n  \"expand\": [\"expand_example\"], // [String] | variable name requested by expand list\n  \"nextPage\": \"nextPage_example\", // String | next page token\n  \"previousPage\": \"previousPage_example\", // String | Previous page token\n  \"conversationId\": \"conversationId_example\", // String | conversationId specified\n  \"agentUserId\": \"agentUserId_example\", // String | user id of the agent\n  \"evaluatorUserId\": \"evaluatorUserId_example\", // String | evaluator user id\n  \"queueId\": \"queueId_example\", // String | queue id\n  \"startTime\": \"startTime_example\", // String | start time of the evaluation query\n  \"endTime\": \"endTime_example\", // String | end time of the evaluation query\n  \"evaluationState\": [\"evaluationState_example\"], // [String] | \n  \"isReleased\": true, // Boolean | the evaluation has been released\n  \"agentHasRead\": true, // Boolean | agent has the evaluation\n  \"expandAnswerTotalScores\": true, // Boolean | get the total scores for evaluations\n  \"maximum\": 3.4, // Number | maximum\n  \"sortOrder\": \"sortOrder_example\" // String | sort order options for agentUserId or evaluatorUserId query. Valid options are 'a', 'asc', 'ascending', 'd', 'desc', 'descending'\n};\n\n// Queries Evaluations and returns a paged list\napiInstance.getQualityEvaluationsQuery(opts)\n  .then((data) => {\n    console.log(`getQualityEvaluationsQuery success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getQualityEvaluationsQuery\");\n    console.error(err);\n  });"
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.QualityApi();\n\nlet opts = { \n  \"pageSize\": 25, // Number | The total page size requested\n  \"pageNumber\": 1, // Number | The page number requested\n  \"sortBy\": \"sortBy_example\", // String | variable name requested to sort by\n  \"expand\": [\"expand_example\"], // [String] | variable name requested by expand list\n  \"nextPage\": \"nextPage_example\", // String | next page token\n  \"previousPage\": \"previousPage_example\", // String | Previous page token\n  \"conversationId\": \"conversationId_example\", // String | conversationId specified\n  \"agentUserId\": \"agentUserId_example\", // String | user id of the agent\n  \"evaluatorUserId\": \"evaluatorUserId_example\", // String | evaluator user id\n  \"assigneeUserId\": \"assigneeUserId_example\", // String | assignee user id\n  \"queueId\": \"queueId_example\", // String | queue id\n  \"startTime\": \"startTime_example\", // String | start time of the evaluation query\n  \"endTime\": \"endTime_example\", // String | end time of the evaluation query\n  \"evaluationState\": [\"evaluationState_example\"], // [String] | \n  \"isReleased\": true, // Boolean | the evaluation has been released\n  \"agentHasRead\": true, // Boolean | agent has the evaluation\n  \"expandAnswerTotalScores\": true, // Boolean | get the total scores for evaluations\n  \"maximum\": 3.4, // Number | maximum\n  \"sortOrder\": \"sortOrder_example\" // String | sort order options for agentUserId or evaluatorUserId query. Valid options are 'a', 'asc', 'ascending', 'd', 'desc', 'descending'\n};\n\n// Queries Evaluations and returns a paged list\napiInstance.getQualityEvaluationsQuery(opts)\n  .then((data) => {\n    console.log(`getQualityEvaluationsQuery success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getQualityEvaluationsQuery\");\n    console.error(err);\n  });"
   },
   "getqualityevaluatorsactivity": {
     "operationId": "getqualityevaluatorsactivity",
@@ -30619,7 +30667,7 @@
   "gettelephonyprovidersedges": {
     "operationId": "gettelephonyprovidersedges",
     "functionName": "getTelephonyProvidersEdges",
-    "signature": "getTelephonyProvidersEdges(pageSize, pageNumber, name, siteId, edgeGroupId, sortBy, managed)",
+    "signature": "getTelephonyProvidersEdges(pageSize, pageNumber, name, siteId, edgeGroupId, sortBy, managed, showCloudMedia)",
     "parameters": [
       {
         "name": "pageSize",
@@ -30655,10 +30703,15 @@
         "name": "managed",
         "type": "Boolean",
         "required": "false"
+      },
+      {
+        "name": "showCloudMedia",
+        "type": "Boolean",
+        "required": "false"
       }
     ],
     "return": "EdgeEntityListing",
-    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.TelephonyProvidersEdgeApi();\n\nlet opts = { \n  \"pageSize\": 25, // Number | Page size\n  \"pageNumber\": 1, // Number | Page number\n  \"name\": \"name_example\", // String | Name\n  \"siteId\": \"siteId_example\", // String | Filter by site.id\n  \"edgeGroupId\": \"edgeGroupId_example\", // String | Filter by edgeGroup.id\n  \"sortBy\": \"name\", // String | Sort by\n  \"managed\": true // Boolean | Filter by managed\n};\n\n// Get the list of edges.\napiInstance.getTelephonyProvidersEdges(opts)\n  .then((data) => {\n    console.log(`getTelephonyProvidersEdges success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getTelephonyProvidersEdges\");\n    console.error(err);\n  });"
+    "example": "const platformClient = require(\"purecloud-platform-client-v2\");\n\nconst client = platformClient.ApiClient.instance;\nclient.setEnvironment(platformClient.PureCloudRegionHosts.us_east_1); // Genesys Cloud region\n\n// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)\nclient.setAccessToken(\"your_access_token\");\n\nlet apiInstance = new platformClient.TelephonyProvidersEdgeApi();\n\nlet opts = { \n  \"pageSize\": 25, // Number | Page size\n  \"pageNumber\": 1, // Number | Page number\n  \"name\": \"name_example\", // String | Name\n  \"siteId\": \"siteId_example\", // String | Filter by site.id\n  \"edgeGroupId\": \"edgeGroupId_example\", // String | Filter by edgeGroup.id\n  \"sortBy\": \"name\", // String | Sort by\n  \"managed\": true, // Boolean | Filter by managed\n  \"showCloudMedia\": true // Boolean | True to show the cloud media devices in the result.\n};\n\n// Get the list of edges.\napiInstance.getTelephonyProvidersEdges(opts)\n  .then((data) => {\n    console.log(`getTelephonyProvidersEdges success! data: ${JSON.stringify(data, null, 2)}`);\n  })\n  .catch((err) => {\n    console.log(\"There was a failure calling getTelephonyProvidersEdges\");\n    console.error(err);\n  });"
   },
   "gettelephonyprovidersedgesavailablelanguages": {
     "operationId": "gettelephonyprovidersedgesavailablelanguages",

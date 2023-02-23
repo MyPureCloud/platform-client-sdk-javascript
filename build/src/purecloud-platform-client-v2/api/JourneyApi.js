@@ -5,7 +5,7 @@ class JourneyApi {
 	/**
 	 * Journey service.
 	 * @module purecloud-platform-client-v2/api/JourneyApi
-	 * @version 158.0.0
+	 * @version 159.0.0
 	 */
 
 	/**
@@ -89,6 +89,31 @@ class JourneyApi {
 			'/api/v2/journey/outcomes/{outcomeId}', 
 			'DELETE', 
 			{ 'outcomeId': outcomeId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete an outcome predictor.
+	 * 
+	 * @param {String} predictorId ID of predictor
+	 */
+	deleteJourneyOutcomesPredictor(predictorId) { 
+		// verify the required parameter 'predictorId' is set
+		if (predictorId === undefined || predictorId === null) {
+			throw 'Missing the required parameter "predictorId" when calling deleteJourneyOutcomesPredictor';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/outcomes/predictors/{predictorId}', 
+			'DELETE', 
+			{ 'predictorId': predictorId },
 			{  },
 			{  },
 			{  },
@@ -380,6 +405,51 @@ class JourneyApi {
 			'GET', 
 			{  },
 			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'outcomeIds': this.apiClient.buildCollectionParam(opts['outcomeIds'], 'multi'),'queryFields': this.apiClient.buildCollectionParam(opts['queryFields'], 'multi'),'queryValue': opts['queryValue'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Retrieve a single outcome predictor.
+	 * 
+	 * @param {String} predictorId ID of predictor
+	 */
+	getJourneyOutcomesPredictor(predictorId) { 
+		// verify the required parameter 'predictorId' is set
+		if (predictorId === undefined || predictorId === null) {
+			throw 'Missing the required parameter "predictorId" when calling getJourneyOutcomesPredictor';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/outcomes/predictors/{predictorId}', 
+			'GET', 
+			{ 'predictorId': predictorId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Retrieve all outcome predictors.
+	 * 
+	 */
+	getJourneyOutcomesPredictors() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/outcomes/predictors', 
+			'GET', 
+			{  },
+			{  },
 			{  },
 			{  },
 			null, 
@@ -749,6 +819,30 @@ class JourneyApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/journey/outcomes', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Create an outcome predictor.
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body 
+	 */
+	postJourneyOutcomesPredictors(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/outcomes/predictors', 
 			'POST', 
 			{  },
 			{  },

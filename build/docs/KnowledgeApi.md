@@ -744,7 +744,6 @@ let apiInstance = new platformClient.KnowledgeApi();
 let sessionId = "sessionId_example"; // String | Knowledge guest session ID.
 let opts = { 
   'categoryId': ["categoryId_example"], // [String] | If specified, retrieves documents associated with category ids, comma separated values expected.
-  'includeSubcategories': true, // Boolean | Deprecated - Do Not Use. Works along with 'categoryId' query parameter. If specified, retrieves documents associated with category ids and its children categories.
   'pageSize': 10 // Number | Number of entities to return. Maximum of 200.
 };
 
@@ -765,7 +764,6 @@ apiInstance.getKnowledgeGuestSessionDocuments(sessionId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **sessionId** | **String** | Knowledge guest session ID. |  |
  **categoryId** | **[String]** | If specified, retrieves documents associated with category ids, comma separated values expected. | [optional]  |
- **includeSubcategories** | **Boolean** | Deprecated - Do Not Use. Works along with 'categoryId' query parameter. If specified, retrieves documents associated with category ids and its children categories. | [optional]  |
  **pageSize** | **Number** | Number of entities to return. Maximum of 200. | [optional] [default to 10] |
 {: class="table table-striped"}
 

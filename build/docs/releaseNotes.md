@@ -1,282 +1,194 @@
-Platform API version: 6586
+Platform API version: 6640
 
 
-# Major Changes (4 changes)
+# Major Changes (6 changes)
 
-**POST /api/v2/conversations/emails/{conversationId}/messages** (1 change)
+**GET /api/v2/knowledge/guest/sessions/{sessionId}/documents** (1 change)
 
-* Response 200 type was changed from EmailMessage to EmailMessageReply
+* Parameter includeSubcategories was removed
 
-**GET /api/v2/languageunderstanding/domains/{domainId}/feedback** (1 change)
+**GET /api/v2/quality/evaluations/query** (1 change)
 
-* Parameter includeTrainingUtterances was added
+* Parameter assigneeUserId was added
 
-**GET /api/v2/stations/settings** (1 change)
+**GET /api/v2/telephony/providers/edges** (1 change)
 
-* Has been deprecated
+* Parameter showCloudMedia was added
 
-**PATCH /api/v2/stations/settings** (1 change)
+**ApprovalNamespace** (1 change)
 
-* Has been deprecated
+* Enum value contacts was removed from property namespace
+
+**LimitChangeRequestDetails** (1 change)
+
+* Enum value contacts was removed from property namespace
+
+**StatusChange** (1 change)
+
+* Enum value contacts was removed from property namespace
 
 
-# Minor Changes (102 changes)
+# Minor Changes (45 changes)
 
-**/api/v2/conversations/{conversationId}/cobrowse** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**POST /api/v2/conversations/messaging/integrations/whatsapp** (1 change)
+**POST /api/v2/conversations/messages/{conversationId}/communications/{communicationId}/messages** (1 change)
 
 * Response 409 was added
 
-**/api/v2/webdeployments/deployments/{deploymentId}/cobrowse/{sessionId}** (3 changes)
+**POST /api/v2/conversations/messages/agentless** (1 change)
+
+* Response 409 was added
+
+**/api/v2/journey/outcomes/predictors/{predictorId}** (3 changes)
 
 * Path was added
 * Operation GET was added
 * Operation DELETE was added
 
-**/api/v2/orgauthorization/trustees/{trusteeOrgId}/groups/{trusteeGroupId}** (3 changes)
-
-* Path was added
-* Operation GET was added
-* Operation DELETE was added
-
-**/api/v2/orgauthorization/trustees/{trusteeOrgId}/groups/{trusteeGroupId}/roledivisions** (2 changes)
-
-* Path was added
-* Operation PUT was added
-
-**/api/v2/orgauthorization/trustees/{trusteeOrgId}/groups/{trusteeGroupId}/roles** (4 changes)
-
-* Path was added
-* Operation GET was added
-* Operation PUT was added
-* Operation DELETE was added
-
-**/api/v2/orgauthorization/trustees/{trusteeOrgId}/groups** (3 changes)
+**/api/v2/journey/outcomes/predictors** (3 changes)
 
 * Path was added
 * Operation GET was added
 * Operation POST was added
 
-**/api/v2/orgauthorization/trustors/{trustorOrgId}/groups/{trustorGroupId}** (4 changes)
+**Station** (1 change)
 
-* Path was added
-* Operation GET was added
-* Operation PUT was added
-* Operation DELETE was added
+* Optional property webRtcRequireMediaHelper was added
 
-**/api/v2/orgauthorization/trustors/{trustorOrgId}/groups** (2 changes)
+**AuditLogMessage** (2 changes)
 
-* Path was added
-* Operation GET was added
+* Enum value RestoreAll was added to property action
+* Enum value RestoreDeleted was added to property action
 
-**AnalyticsEvaluation** (1 change)
+**InitiatingAction** (2 changes)
 
-* Optional property evaluationStatus was added
+* Enum value RestoreAll was added to property actionContext
+* Enum value RestoreDeleted was added to property actionContext
 
-**JourneyAggregateQueryPredicate** (10 changes)
+**AuditQueryEntity** (2 changes)
 
-* Enum value journeyIpGeolocationCountry was added to property dimension
-* Enum value touchpointAgentId was added to property dimension
-* Enum value touchpointAttributionScope was added to property dimension
-* Enum value touchpointChannelMessageType was added to property dimension
-* Enum value touchpointChannelPlatform was added to property dimension
-* Enum value touchpointChannelType was added to property dimension
-* Enum value touchpointConversationId was added to property dimension
-* Enum value touchpointInteractionType was added to property dimension
-* Enum value touchpointQueueId was added to property dimension
-* Enum value touchpointWrapupCode was added to property dimension
+* Enum value RestoreAll was added to property actions
+* Enum value RestoreDeleted was added to property actions
 
-**JourneyAggregationView** (1 change)
+**InboundRoute** (1 change)
 
-* Enum value oJourneyOutcomeTouchpointValue was added to property target
+* Optional property allowMultipleActions was added
 
-**JourneyAggregationQuery** (11 changes)
+**Conversation** (1 change)
 
-* Enum value journeyIpGeolocationCountry was added to property groupBy
-* Enum value touchpointAgentId was added to property groupBy
-* Enum value touchpointAttributionScope was added to property groupBy
-* Enum value touchpointChannelMessageType was added to property groupBy
-* Enum value touchpointChannelPlatform was added to property groupBy
-* Enum value touchpointChannelType was added to property groupBy
-* Enum value touchpointConversationId was added to property groupBy
-* Enum value touchpointInteractionType was added to property groupBy
-* Enum value touchpointQueueId was added to property groupBy
-* Enum value touchpointWrapupCode was added to property groupBy
-* Enum value oJourneyOutcomeTouchpointValue was added to property metrics
+* Optional property recentTransfers was added
 
-**ReportingExportJobResponse** (1 change)
+**Evaluation** (2 changes)
 
-* Enum value INTERACTION_DETAIL_VIEW was added to property viewType
+* Optional property assignee was added
+* Optional property evaluationSource was added
 
-**ReportingExportMetadataJobResponse** (1 change)
+**EvaluationScoringSet** (1 change)
 
-* Enum value INTERACTION_DETAIL_VIEW was added to property viewType
+* Optional property privateComments was added
 
-**ReportingExportJobRequest** (1 change)
-
-* Enum value INTERACTION_DETAIL_VIEW was added to property viewType
-
-**AuditQueryExecutionStatusResponse** (1 change)
-
-* Enum value Scripter was added to property serviceName
-
-**AuditQueryRequest** (1 change)
-
-* Enum value Scripter was added to property serviceName
-
-**AuditLogMessage** (7 changes)
-
-* Enum value Scripter was added to property serviceName
-* Enum value ComposerPage was added to property entityType
-* Enum value ComposerScript was added to property entityType
-* Enum value ComposerPublishedScript was added to property entityType
-* Enum value ComposerTemplate was added to property entityType
-* Enum value IntentMiner was added to property entityType
-* Enum value TopicMiner was added to property entityType
-
-**EntityChange** (6 changes)
-
-* Enum value ComposerPage was added to property entityType
-* Enum value ComposerScript was added to property entityType
-* Enum value ComposerPublishedScript was added to property entityType
-* Enum value ComposerTemplate was added to property entityType
-* Enum value IntentMiner was added to property entityType
-* Enum value TopicMiner was added to property entityType
-
-**AuditRealtimeQueryRequest** (1 change)
-
-* Enum value Scripter was added to property serviceName
-
-**AuditQueryEntity** (6 changes)
-
-* Enum value ComposerPage was added to property name
-* Enum value ComposerScript was added to property name
-* Enum value ComposerPublishedScript was added to property name
-* Enum value ComposerTemplate was added to property name
-* Enum value IntentMiner was added to property name
-* Enum value TopicMiner was added to property name
-
-**AuditQueryService** (1 change)
-
-* Enum value Scripter was added to property name
-
-**CobrowseWebMessagingSession** (1 change)
+**EvaluationSource** (1 change)
 
 * Model was added
 
-**Participant** (1 change)
-
-* Optional property mediaRoles was added
-
-**CallMediaParticipant** (1 change)
-
-* Optional property mediaRoles was added
-
-**CallbackMediaParticipant** (1 change)
-
-* Optional property mediaRoles was added
-
-**ChatMediaParticipant** (1 change)
-
-* Optional property mediaRoles was added
-
-**CobrowseMediaParticipant** (1 change)
-
-* Optional property mediaRoles was added
-
-**EmailMessage** (1 change)
-
-* Optional property state was added
-
-**EmailMediaParticipant** (1 change)
-
-* Optional property mediaRoles was added
-
-**EmailMessageReply** (1 change)
+**TransferDestination** (1 change)
 
 * Model was added
 
-**MessageMediaParticipant** (1 change)
-
-* Optional property mediaRoles was added
-
-**ParticipantBasic** (1 change)
-
-* Optional property mediaRoles was added
-
-**Metric** (2 changes)
-
-* Optional property precision was added
-* Optional property timeDisplayUnit was added
-
-**CreateMetric** (2 changes)
-
-* Optional property precision was added
-* Optional property timeDisplayUnit was added
-
-**DocumentQueryPredicate** (1 change)
-
-* Enum value documentId was added to property fields
-
-**TrustGroupEntityListing** (1 change)
+**TransferInitiator** (1 change)
 
 * Model was added
 
-**Compliance** (1 change)
+**TransferResponse** (1 change)
 
 * Model was added
 
-**ComplianceResponse** (1 change)
+**CallConversation** (1 change)
+
+* Optional property recentTransfers was added
+
+**TransferRequest** (1 change)
+
+* Optional property transferType was added
+
+**CallbackConversation** (1 change)
+
+* Optional property recentTransfers was added
+
+**ChatConversation** (1 change)
+
+* Optional property recentTransfers was added
+
+**CobrowseConversation** (1 change)
+
+* Optional property recentTransfers was added
+
+**EmailMessage** (2 changes)
+
+* Enum value Edited was added to property state
+* Optional property draftType was added
+
+**EmailConversation** (1 change)
+
+* Optional property recentTransfers was added
+
+**MessageConversation** (1 change)
+
+* Optional property recentTransfers was added
+
+**DialerAction** (1 change)
+
+* Enum value APPEND_CUSTOM_ENTRY_TO_DNC_LIST was added to property actionTypeName
+
+**OutcomePredictor** (1 change)
 
 * Model was added
 
-**HelpSettings** (1 change)
+**OutcomeRef** (1 change)
 
 * Model was added
 
-**OptInSettings** (1 change)
+**OutcomePredictorRequest** (1 change)
 
 * Model was added
 
-**SmsPhoneNumber** (2 changes)
-
-* Optional property integration was added
-* Optional property compliance was added
-
-**StopSettings** (1 change)
+**OutcomeRefRequest** (1 change)
 
 * Model was added
 
-**KeyPerformanceIndicator** (4 changes)
-
-* Enum value SalesValue was added to property kpiType
-* Enum value Outcome was added to property source
-* Enum value None was added to property source
-* Optional property outcomeConfig was added
-
-**OutcomeConfig** (1 change)
+**OutcomePredictorListing** (1 change)
 
 * Model was added
+
+**EvaluationResponse** (2 changes)
+
+* Optional property assignee was added
+* Optional property evaluationSource was added
+
+**OrphanRecording** (3 changes)
+
+* Enum value ap-east-1 was added to property region
+* Enum value ap-southeast-3 was added to property region
+* Enum value eu-west-3 was added to property region
+
+**Check** (1 change)
+
+* Enum value SalesAmountValue was added to property type
 
 
 # Point Changes (4 changes)
 
-**GET /api/v2/stations/settings** (1 change)
+**POST /api/v2/conversations/{conversationId}/cobrowse** (1 change)
+
+* Summary was changed
+
+**GET /api/v2/quality/conversations/{conversationId}/evaluations/{evaluationId}** (1 change)
+
+* Description was changed for parameter expand
+
+**GET /api/v2/quality/evaluations/query** (1 change)
 
 * Description was changed
 
-**PATCH /api/v2/stations/settings** (1 change)
+**POST /api/v2/recording/jobs** (1 change)
 
 * Description was changed
-
-**GET /api/v2/learning/assignments** (1 change)
-
-* Description was changed for parameter types
-
-**GET /api/v2/learning/assignments/me** (1 change)
-
-* Description was changed for parameter types

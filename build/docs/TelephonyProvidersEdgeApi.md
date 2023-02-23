@@ -2000,7 +2000,8 @@ let opts = {
   'siteId': "siteId_example", // String | Filter by site.id
   'edgeGroupId': "edgeGroupId_example", // String | Filter by edgeGroup.id
   'sortBy': "name", // String | Sort by
-  'managed': true // Boolean | Filter by managed
+  'managed': true, // Boolean | Filter by managed
+  'showCloudMedia': true // Boolean | True to show the cloud media devices in the result.
 };
 
 apiInstance.getTelephonyProvidersEdges(opts)
@@ -2025,6 +2026,7 @@ apiInstance.getTelephonyProvidersEdges(opts)
  **edgeGroupId** | **String** | Filter by edgeGroup.id | [optional]  |
  **sortBy** | **String** | Sort by | [optional] [default to name] |
  **managed** | **Boolean** | Filter by managed | [optional]  |
+ **showCloudMedia** | **Boolean** | True to show the cloud media devices in the result. | [optional] [default to true] |
 {: class="table table-striped"}
 
 ### Return type

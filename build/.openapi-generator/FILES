@@ -207,6 +207,7 @@ docs/deleteIntegrationsCredential-example.txt
 docs/deleteJourneyActionmap-example.txt
 docs/deleteJourneyActiontemplate-example.txt
 docs/deleteJourneyOutcome-example.txt
+docs/deleteJourneyOutcomesPredictor-example.txt
 docs/deleteJourneySegment-example.txt
 docs/deleteKnowledgeKnowledgebase-example.txt
 docs/deleteKnowledgeKnowledgebaseCategory-example.txt
@@ -734,6 +735,8 @@ docs/getJourneyActiontemplate-example.txt
 docs/getJourneyActiontemplates-example.txt
 docs/getJourneyOutcome-example.txt
 docs/getJourneyOutcomes-example.txt
+docs/getJourneyOutcomesPredictor-example.txt
+docs/getJourneyOutcomesPredictors-example.txt
 docs/getJourneySegment-example.txt
 docs/getJourneySegments-example.txt
 docs/getJourneySession-example.txt
@@ -1648,6 +1651,7 @@ docs/postJourneyActionmaps-example.txt
 docs/postJourneyActionmapsEstimatesJobs-example.txt
 docs/postJourneyActiontemplates-example.txt
 docs/postJourneyOutcomes-example.txt
+docs/postJourneyOutcomesPredictors-example.txt
 docs/postJourneySegments-example.txt
 docs/postKnowledgeDocumentuploads-example.txt
 docs/postKnowledgeDocumentuploads-example.txt

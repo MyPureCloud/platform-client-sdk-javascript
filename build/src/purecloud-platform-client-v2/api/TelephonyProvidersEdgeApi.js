@@ -5,7 +5,7 @@ class TelephonyProvidersEdgeApi {
 	/**
 	 * TelephonyProvidersEdge service.
 	 * @module purecloud-platform-client-v2/api/TelephonyProvidersEdgeApi
-	 * @version 158.0.0
+	 * @version 159.0.0
 	 */
 
 	/**
@@ -1011,6 +1011,7 @@ class TelephonyProvidersEdgeApi {
 	 * @param {String} opts.edgeGroupId Filter by edgeGroup.id
 	 * @param {String} opts.sortBy Sort by (default to name)
 	 * @param {Boolean} opts.managed Filter by managed
+	 * @param {Boolean} opts.showCloudMedia True to show the cloud media devices in the result. (default to true)
 	 */
 	getTelephonyProvidersEdges(opts) { 
 		opts = opts || {};
@@ -1020,7 +1021,7 @@ class TelephonyProvidersEdgeApi {
 			'/api/v2/telephony/providers/edges', 
 			'GET', 
 			{  },
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'name': opts['name'],'site.id': opts['siteId'],'edgeGroup.id': opts['edgeGroupId'],'sortBy': opts['sortBy'],'managed': opts['managed'] },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'name': opts['name'],'site.id': opts['siteId'],'edgeGroup.id': opts['edgeGroupId'],'sortBy': opts['sortBy'],'managed': opts['managed'],'showCloudMedia': opts['showCloudMedia'] },
 			{  },
 			{  },
 			null, 
